@@ -1,0 +1,59 @@
+        {% strip %}
+        <nav>
+          <ul>
+            {% for collection in site.collections %}
+            {% if collection.docs.size > 0 %}
+
+            <li>
+            <h2>{{ collection.title }}</h2>
+
+            <ul>
+              {% assign sorted = collection.docs | sort: 'order' %}
+              {% for post in sorted %}
+              {% unless post.relative_path contains 'index.md' %}
+
+                {% capture slug    %}{{ post.url | split: "/"   | last }}{% endcapture %}
+                {% capture nested_path %}{{ post.url | remove: slug | remove: collection.label | remove: "//" }}{% endcapture %}
+
+                {% if nested_path == "" %}
+                <li>
+                {% if page.url == post.url %}
+                  <span class="current">{{ post.title }}</span>
+                {% else %}
+                  <a href="{{ post.url | prepend: site.baseurl }}"{% if page.url == post.url %} class="current"{% endif %}>{{ post.title }}</a>
+                {% endif %}
+
+                {% if post.folder and page.relative_path contains post.folder %}
+                  {% if post.numbered %}<ol>{% else %}<ul>{% endif %}
+                  {% for nested_post in sorted %}
+
+                    {% capture slug2 %}{{ nested_post.url | split: "/"   | last }}{% endcapture %}
+                    {% capture nested_path2 %}{{ nested_post.url | remove: slug2 | remove: collection.label | remove: "/" }}{% endcapture %}
+
+                    
+                    {% if nested_path2 == post.folder %}
+                    <li>
+                    {% if page.url == nested_post.url %}
+                      <span class="current">{{ nested_post.title }}</span>
+                    {% else %}
+                      <a href="{{ nested_post.url | prepend: site.baseurl }}" {% if page.url == nested_post.url %}class="current"{% endif %}>{{ nested_post.title }}</a>
+                    {% endif %}
+                    </li>
+                    {% endif %}
+
+                  {% endfor %}
+                  {% if post.numbered %}</ol>{% else %}</ul>{% endif %}
+                {% endif %}
+
+                </li>
+                {% endif %}
+
+              {% endunless %}
+              {% endfor %}
+            </ul>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </nav>
+        {% endstrip %}

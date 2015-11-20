@@ -1,0 +1,160 @@
+/**
+ * Reset some basic elements
+ */
+body, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Basic styling
+ */
+html,
+body {
+  // -webkit-font-smoothing: antialiased;
+  background-color: #fbfafb;
+  font-family: $font-family;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+ul li {
+  @include text-body();
+}
+
+p {
+  @include text-body();
+}
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $container-size;
+  padding: 0 $margin;
+
+  &.md {
+    max-width: 800px;
+  }
+}
+
+.wrap {
+  background-color: $color-white;
+  margin: 0 auto;
+}
+
+.centered {
+  text-align: center;
+
+  @include max-screen($mobile-breakpoint) {
+    text-align: left;
+  }
+}
+
+.align-right {
+  text-align: right;
+}
+
+.clearfix {
+  @include clearfix();
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .fill {
+    overflow: hidden;
+    width: auto;
+  }
+}
+
+/**
+ * Headings
+ */
+h1,
+h2,
+h3 {
+  color: $color-lightblue;
+  font-weight: 300;
+}
+
+h1 {
+  color: $color-midblue;
+  font-size: 43px;
+  font-weight: 300;
+}
+
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+
+
+/**
+ * Links
+ */
+a {
+  color: $color-lightblue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    color: $color-darkgrey;
+    border-left: 4px solid $color-lightgrey;
+    padding-left: 15px;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid $color-lightgrey;
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

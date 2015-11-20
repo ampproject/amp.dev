@@ -1,0 +1,109 @@
+header {
+  @include box-shadow(rgba(0, 0, 0, 0.15) 1px 1px 14px);
+  font-size: 14px;
+  font-weight: 300;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  .container {
+
+    @include max-screen($mobile-breakpoint) {
+      padding: 0 20px;
+    }
+
+  }
+
+  &.fixed {
+    @include transform(translateY(0%));
+    @include transition(all .25s ease);
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  &.hidden {
+    display: block;
+
+    // Auto-hide header on mobile only.
+    @include max-screen($mobile-breakpoint) {
+      @include transform(translateY(-100%));
+    }
+  }
+
+  .wrap {
+    background-color: white;
+
+    @include max-screen($mobile-breakpoint) {
+      color: transparent;
+    }
+  }
+
+  .content.mobile-show {
+    padding: 0 10px 5px;
+
+  }
+  .left-nav {
+
+    margin-left: 0;
+
+    .header-title {
+      color: $color-verydarkblue;
+      font-family: Roboto, verdana, arial, sans-serif;
+      letter-spacing: 2px;
+      padding-left: 0;
+      padding-top: 18px;
+      text-transform: uppercase;
+      width: 10%;
+
+      @include max-screen($mobile-baby-breakpoint) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .alt {
+    padding: 28px 0 32px;
+    text-align: right;
+
+    @include max-screen($mobile-breakpoint) {
+      padding-right: 0;
+    }
+
+  }
+
+  .tab {
+    color: $color-verydarkblue;
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+
+    @include max-screen($mobile-baby-breakpoint) {
+      font-size: 10px;
+    }
+  }
+
+  .tab.go-button {
+    @include box-shadow(-1px 6px 6px -3px rgba(0,0,0,0.22));
+    background-color: $color-verydarkblue;
+    border: 0;
+    border-radius: 4px;
+    color: $color-white;
+    font-family: Roboto, verdana, arial, sans-serif;
+    font-size: 14px;
+    padding: 15px 20px;
+    margin-left: 10px;
+    text-transform: uppercase;
+
+    &:hover{
+      background-color: $color-midblue;
+      text-decoration: none;
+    }
+  }
+
+}
+
+header + .wrap {
+  margin-top: 106px;
+}

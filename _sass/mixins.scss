@@ -1,0 +1,47 @@
+@mixin text-body() {
+  color: $color-black-54;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+
+  @include max-screen($mobile-breakpoint) {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin box-shadow($args){
+  -webkit-box-shadow: $args;
+  -moz-box-shadow: $args;
+  box-shadow: $args;
+}
+
+@mixin desaturate($amt){
+  filter: grayscale($amt);
+
+  -ms-filter: grayscale($amt);
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin transition($transitions) {
+  -moz-transition: $transitions;
+  -o-transition: $transitions;
+  -ms-transition: $transitions;
+  -webkit-transition: $transitions;
+  transition: $transitions;
+}
