@@ -7,6 +7,8 @@ order: 1
 Learn how to create a basic AMP HTML page,
 stage it, test it, and get it ready for publication.
 
+{% include toc.html %}
+
 ## Write the basic AMP HTML page
 
 The basic AMP HTML page includes the following mark-up:

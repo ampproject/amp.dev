@@ -11,7 +11,7 @@
 	}
 
 	.content {
-		ul {
+		ul, ol {
 			margin-left: 40px;
 		}
 	}
@@ -19,11 +19,11 @@
 }
 
 nav {
-	border-right: 2px solid #F5F5F5;
+	border-left: 2px solid #F5F5F5;
     padding: 20px;
-    padding-left: 0;
+    padding-right: 0;
     padding-top: 0;
-    margin-right: 30px;
+    margin-left: 30px;
     width: 200px;
     flex-shrink: 0;
     -webkit-flex-shrink: 0;
@@ -36,7 +36,7 @@ nav {
     }
 
     ul, ol {
-    	padding-left: 20px;
+
     	li {
     		margin-bottom: 10px;
     		list-style: none;
@@ -46,9 +46,15 @@ nav {
     			margin-left: 20px;
     			margin-bottom: 1.2em;
     			li {
-    				margin-bottom: 0;
+    				margin-bottom: 6px;
+                    font-size: 14px;
     				list-style: square;
                     color: #CECECE;
+
+                    &.current {
+                        color: #222;
+                    }
+
     				span {
     					font-weight: 400;
                         color: #222;
@@ -59,7 +65,7 @@ nav {
                         padding-left: 20px;
                         border-top: 1px solid #eee;
                         padding-top: 3px;
-                        padding-bottom: 10px;
+                        padding-bottom: 0px;
     				}
                     ol li {
                         list-style: decimal;

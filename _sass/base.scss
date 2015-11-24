@@ -20,7 +20,8 @@ body {
   padding: 0;
 }
 
-ul li {
+ul li,
+ol li {
   @include text-body();
 }
 

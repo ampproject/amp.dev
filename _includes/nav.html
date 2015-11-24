@@ -16,11 +16,12 @@
                 {% capture nested_path %}{{ post.url | remove: slug | remove: collection.label | remove: "//" }}{% endcapture %}
 
                 {% if nested_path == "" %}
-                <li>
                 {% if page.url == post.url %}
-                  <span class="current">{{ post.title }}</span>
+                <li class="current">
+                  <span>{{ post.title }}</span>
                 {% else %}
-                  <a href="{{ post.url | prepend: site.baseurl }}"{% if page.url == post.url %} class="current"{% endif %}>{{ post.title }}</a>
+                <li>
+                  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                 {% endif %}
 
                 {% if post.folder and page.relative_path contains post.folder %}
@@ -32,13 +33,16 @@
 
                     
                     {% if nested_path2 == post.folder %}
-                    <li>
+                    
                     {% if page.url == nested_post.url %}
-                      <span class="current">{{ nested_post.title }}</span>
-                    {% else %}
-                      <a href="{{ nested_post.url | prepend: site.baseurl }}" {% if page.url == nested_post.url %}class="current"{% endif %}>{{ nested_post.title }}</a>
-                    {% endif %}
+                    <li class="current">
+                      <span>{{ nested_post.title }}</span>
                     </li>
+                    {% else %}
+                    <li>
+                      <a href="{{ nested_post.url | prepend: site.baseurl }}">{{ nested_post.title }}</a>
+                    </li>
+                    {% endif %}
                     {% endif %}
 
                   {% endfor %}
