@@ -11,22 +11,55 @@
 	}
 
 	.content {
+
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
+        transition: all 0.25s ease;
+        transform: translate(0, 0);
+        will-change: transform;
+        word-break: break-word;
+
+        &.menu-open {
+            transform: translate(-243px, 0);
+        }
+
 		ul, ol {
 			margin-left: 40px;
 		}
 	}
 
+    .content {
+
+      /* These are technically the same, but use both */
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+
+      -ms-word-break: break-all;
+      /* This is the dangerous one in WebKit, as it breaks things wherever */
+      word-break: break-all;
+      /* Instead use this non-standard one: */
+      word-break: break-word;
+
+      /* Adds a hyphen where the word breaks, if supported (No Blink) */
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+
+    }
+
 }
 
 nav {
-	border-left: 2px solid #F5F5F5;
+    border-right: 2px solid #E6E6E6;
     padding: 20px;
-    padding-right: 0;
-    padding-top: 0;
-    margin-left: 30px;
+    margin-right: 30px;
     width: 200px;
     flex-shrink: 0;
     -webkit-flex-shrink: 0;
+    background: #F7F7F7;
+    margin-top: -40px;
+    margin-bottom: -30px;
 
     h2 {
         font-size: 20px;
@@ -76,4 +109,27 @@ nav {
 
     }
 
+}
+
+@include max-screen($mobile-breakpoint) {
+    nav {
+        -webkit-order: 1;
+        order: 1;
+        border-left: 2px solid #E6E6E6;
+        margin-left: 30px;
+        margin-right: 0;
+        border-right: none;
+        margin-top: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(243px, 0);
+        transition: all 0.25s ease;
+        will-change: transform;
+
+        &.menu-open {
+            transform: translate(0, 0);
+        }
+
+    }
 }

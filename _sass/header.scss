@@ -32,6 +32,10 @@ header {
     }
   }
 
+  &.menu-open {
+    transform: translate(-243px, 0px);
+  }
+
   .wrap {
     background-color: white;
 
@@ -56,21 +60,12 @@ header {
       padding-top: 18px;
       text-transform: uppercase;
       width: 10%;
-
-      @include max-screen($mobile-baby-breakpoint) {
-        font-size: 10px;
-      }
     }
   }
 
   .alt {
     padding: 28px 0 32px;
     text-align: right;
-
-    @include max-screen($mobile-breakpoint) {
-      padding-right: 0;
-    }
-
   }
 
   .tab {
@@ -78,10 +73,6 @@ header {
     display: inline-block;
     padding: 10px 10px;
     text-decoration: none;
-
-    @include max-screen($mobile-baby-breakpoint) {
-      font-size: 10px;
-    }
   }
 
   .tab.go-button {
@@ -100,6 +91,23 @@ header {
       background-color: $color-midblue;
       text-decoration: none;
     }
+  }
+
+  .tab.hamburger {
+    display: none;
+    font-size: 32px;
+    line-height: 0;
+    vertical-align: text-bottom;
+    padding-right: 0;
+  }
+
+  @include max-screen($mobile-breakpoint) {
+      .tab.desktop {
+        display: none;
+      }
+      .tab.hamburger {
+        display: inline-block;
+      }
   }
 
 }
