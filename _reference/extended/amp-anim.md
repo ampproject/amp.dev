@@ -1,6 +1,6 @@
 ---
 layout: page
-title: amp-img
+title: amp-anim
 order: 0
 ---
 <!---
@@ -21,19 +21,19 @@ limitations under the License.
 
 
 
-A runtime-managed replacement for the HTML `img` tag.
+A runtime-managed animated image - most typically a GIF.
 
 #### Behavior
 
-The runtime may choose to delay or prioritize resource loading based on the viewport position, system resources, connection bandwidth, or other factors. The `amp-img` components allows the runtime to effectively manage image resources this way.
+The `amp-anim` component is very similar to the `amp-image` element, and provides additional functionality to manage loading and playing of animated images such as GIFs.
 
-`amp-img` components, like all externally fetched AMP resources, must be given an
-explicit size (as in width / height) in advance, so that the aspect ratio can be known without fetching the image. Actual layout behavior is determined by the layout attribute. If the resource requested by the `amp-img` component fails to load, the space will be blank. A placeholder background color or other visual can be set using CSS selector and style on the element itself.
-
-The `amp-img` includes attributes for denoting attribution via the attribution attribute.
-
-Additional image features like captions can be implemented with standard HTML - using the `figure` and `figcaption` elements, for example.
-
+The `amp-anim` component can also have an optional placeholder child, to display while the `src` file is loading. The placeholder is specified via the `placeholder` attribute:
+{% highlight html %}
+<amp-anim width=400 height=300 src="my-gif.gif">
+  <amp-img placeholder width=400 height=300 src="my-gif-screencap.jpg">
+  </amp-img>
+</amp-anim>
+{% endhighlight %}
 #### Attributes
 
 **src**
@@ -44,7 +44,7 @@ URLs when ingesting AMP files to point to a cached version of the image.
 
 **srcset**
 
-Same as `srcset` attribute on the `img` tag. The behavior will be polyfilled where not natively supported.
+Same as `srcset` attribute on the `img` tag.
 
 **alt**
 
@@ -60,7 +60,7 @@ A string that indicates the attribution of the image. E.g. `attribution="CC cour
 `amp-img` can be styled directly via CSS properties. Setting a grey background
 placeholder for example could be achieved via:
 {% highlight css %}
-amp-img {
+amp-anim {
   background-color: grey;
 }
 {% endhighlight %}

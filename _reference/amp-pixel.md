@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-pixel
-order: 2
+order: 0
 ---
 <!---
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-### <a name="amp-pixel"></a> `amp-pixel`
+
 
 The `amp-pixel` element is meant to be used as a typical tracking pixel - to count page views.
 

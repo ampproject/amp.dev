@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-video
-order: 3
+order: 0
 ---
 <!---
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-### <a name="amp-video"></a> `amp-video`
+
 
 A replacement for the HTML5 `video` tag. Like all embedded external resources in a AMP file, the video is lazily loaded only when the `amp-video` element is in or near the viewport.
 
