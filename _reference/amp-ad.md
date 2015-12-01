@@ -13,6 +13,7 @@ Ads are loaded like all other resources in AMP documents, with a special
 custom element called `<amp-ad>`. No ad network provided JavaScript is allowed to run inside the AMP document. Instead the AMP runtime loads an iframe from a
 different origin (via iframe sandbox) as the AMP document and executes the ad
 network’s JS inside that iframe sandbox.
+
 <!---
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 

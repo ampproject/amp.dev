@@ -3,6 +3,7 @@ layout: page
 title: amp-lightbox
 order: 9
 ---
+
 <!---
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 

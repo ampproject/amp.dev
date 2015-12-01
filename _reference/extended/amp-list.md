@@ -3,6 +3,7 @@ layout: page
 title: amp-list
 order: 10
 ---
+
 <!---
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
@@ -69,9 +70,6 @@ An example:
 .list-overflow {
   position: absolute;
   bottom: 0;
-}
-.list-overflow.amp-hidden {
-  visibility: hidden;
 }
 {% endhighlight %}
 

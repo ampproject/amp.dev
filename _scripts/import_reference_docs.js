@@ -44,6 +44,9 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 	// strip out first heading
 	content = content.replace(headingToStrip === 1 ? (/^#{1}\s.+/m) : (/^#{3}\s.+/m), '');
 
+	// for comments to be parsed correctly as HTML, we need an extra line break
+	content = content.replace('<!---', '\n<!---');
+
 	// replace code
 	content = content.replace(/\`\`\`(.+)/g, '{% highlight $1 %}');
 	content = content.replace(/(\`\`\`)/g, '{% endhighlight %}');
