@@ -1,30 +1,47 @@
 AMP Project Documentation
-============
+=========================
 
 The official documentation for the AMP Project, including AMP JS,
   AMP HTML and more.
 
-Introduction
-------------
+How to build the site
+---------------------
 
-Pre-requisites
---------------
+First, install Jekyll by running `gem install jekyll` in your shell, then:
 
-<!--These should be learning materials, not software requirements; samples
-    should be entirely self-contained. Format as URLs in a list.-->
-- [Example](http://github.com/googlesamples/example)
+### Develop
 
-Getting Started
----------------
+```sh
+$ jekyll serve
+```
 
-Screenshots
------------
+You can now open http://127.0.0.1:4000/docs/ and continue working on the source files, then reload the page to see changes appear.
+
+### Deploy
+
+```sh
+$ jekyll build
+```
+
+This will generate a static, complete build of the site into the **_site* folder.
+
+### Import the reference docs
+
+Out of the box, the reference docs are not bundled with the rest of the documentation. To pull them in (automatically from the amphtml github repo), do the following:
+
+```sh
+$ cd _scripts/
+$ npm install octonode
+$ ./import_reference_docs.js {{github client secret }}
+```
+
+You'll need to register for a Github application [here](https://github.com/settings/applications/new) to get a client id and secret you can use for authentication. When you're done, open the file `import_reference_docs.js` and modify line 15 to point to your new client id, then pass in the client secret as argument, like shown above (we'll make this a little easier in the future).
 
 Support
 -------
 
-If you've found an error in this sample, please file an issue:
-https://github.com/ampproject/ampdocs/issues
+If you've found an error or inconsistency, please file an issue:
+https://github.com/ampproject/docs/issues
 
 Patches are encouraged, and may be submitted by forking this project and
 submitting a pull request through GitHub.
