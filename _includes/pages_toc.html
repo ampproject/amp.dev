@@ -1,0 +1,24 @@
+{% for collectionCandidate in site.collections %}
+	{% if collectionCandidate.label == page.collection %}
+		{% assign collection = collectionCandidate %}
+	{% endif %}
+{% endfor %}
+
+{% assign sorted = collection.docs | sort: 'order' %}
+
+{% if page.folder %}
+  {% if page.numbered %}<ol>{% else %}<ul>{% endif %}
+  {% for post in sorted %}
+
+    {% capture slug %}{{ post.url | split: "/"   | last }}{% endcapture %}
+    {% capture nested_path %}{{ post.url | remove: slug | remove: collection.label | remove: "/" }}{% endcapture %}
+
+    {% if nested_path == page.folder %}
+    <li>
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </li>
+    {% endif %}
+
+  {% endfor %}
+  {% if page.numbered %}</ol>{% else %}</ul>{% endif %}
+{% endif %}
