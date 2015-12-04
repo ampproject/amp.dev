@@ -21,7 +21,7 @@
                   <span>{{ post.title }}</span>
                 {% else %}
                 <li>
-                  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                  <a href="{% if post.goto %}{{ post.goto }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}">{{ post.title }}</a>
                 {% endif %}
 
                 {% if post.folder and page.relative_path contains post.folder %}

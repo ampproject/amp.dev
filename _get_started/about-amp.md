@@ -1,6 +1,6 @@
 ---
 layout: page
-title: What Is AMP HTML?
+title: What Is AMP?
 order: 0
 ---
 This will include a short video introducing AMP.

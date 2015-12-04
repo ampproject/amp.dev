@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-install-serviceworker
-order: 8
+order: 9
 ---
 
 <!---

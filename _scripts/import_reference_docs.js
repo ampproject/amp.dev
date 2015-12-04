@@ -4,8 +4,6 @@ var github = require('octonode');
 var fs = require('fs');
 var secret = process.argv[2] || process.env.AMP_DOC_SECRET;
 
-console.log(secret);
-
 if(!secret) {
 	console.error("This script requires a github app secret to run.");
 	process.exit(1);

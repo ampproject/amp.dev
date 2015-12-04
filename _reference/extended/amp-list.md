@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-list
-order: 10
+order: 11
 ---
 
 <!---

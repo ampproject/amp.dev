@@ -1,8 +1,10 @@
 ---
 layout: page
-title: AMP FAQs
+title: FAQ
 order: 0
 ---
+
+{% include toc.html %}
 
 ## Accelerated Mobile Pages Overview
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-image-lightbox
-order: 6
+order: 7
 ---
 
 <!---
@@ -52,6 +52,7 @@ at the bottom of the viewport. The caption is discovered as following:
 
 Among other things the `amp-image-lightbox` allows the following user manipulations:
 zooming, panning, showing/hiding of the description.
+Pressing the escape key on the keyboard will close the lightbox.
 
 #### Styling
 

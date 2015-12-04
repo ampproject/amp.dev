@@ -26,6 +26,7 @@ Current list of extended components:
 | --------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | [`amp-anim`](extended/amp-anim.html)                     | Runtime-managed animated image, most typically a GIF.                                       |
 | [`amp-audio`](extended/amp-audio.html)                      | Replacement for the HTML5 `audio` tag.                                                      |
+| [`amp-brightcove`](extended/amp-brightcove.html)             | Displays a Brightcove Video Cloud or Perform player. |
 | [`amp-carousel`](extended/amp-carousel.html)                | Generic carousel for displaying multiple similar pieces of content along a horizontal axis. |
 | [`amp-fit-text`](extended/amp-fit-text.html)                | Expand or shrink font size to fit the content within the space given.                       |
 | [`amp-font`](extended/amp-font.html)                | Trigger and monitor the loading of custom fonts.                       |
@@ -36,6 +37,7 @@ Current list of extended components:
 | [`amp-lightbox`](extended/amp-lightbox.html)             | Allows for a “lightbox” or similar experience.                                              |
 | [`amp-list`](extended/amp-list.html)             | A dynamic list that can download data and create list items using a template |
 | [`amp-twitter`](extended/amp-twitter.html)               | Displays a Twitter Tweet.                                                                   |
+| [`amp-vine`](extended/amp-vine.html)               | Displays a Vine simple embed.                                                                   |
 | [`amp-youtube`](extended/amp-youtube.html)               | Displays a Youtube video.                                                                   |
 
 

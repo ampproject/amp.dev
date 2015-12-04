@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Include Common Features
-order: 1
+title: Include Third-Party Content
+order: 2
 ---
 
 ## Embed a Tweet

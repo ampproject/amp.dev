@@ -1,7 +1,7 @@
 ---
 layout: page
-title: amp-slides
-order: 14
+title: amp-vine
+order: 16
 ---
 
 <!---
@@ -19,8 +19,22 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+ 
 
+ 
+Displays a Vine simple embed
 
+Example:
+{% highlight html %}
+<amp-vine width="400" height="400"
+  data-vineid="MdKjXez002d">
+</amp-vine>
+{% endhighlight %}
 
-WARNING: amp-slides is no longer supported. Please see [`amp-carousel`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-slides/../amp-carousel/amp-carousel.md)
-with `type=slides` attributes instead.
+A Vine simple embed has equal width and height.
+
+#### Attributes
+
+**data-vineid**
+
+The ID of the Vine. In a URL like https://vine.co/v/MdKjXez002d `MdKjXez002d` is the vineID.

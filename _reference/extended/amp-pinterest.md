@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-pinterest
-order: 12
+order: 13
 ---
 
 <!---

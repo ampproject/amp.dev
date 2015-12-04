@@ -2,6 +2,7 @@
 layout: page
 title: Create Responsive AMP Pages
 order: 0
+folder: responsive
 ---
 **Todo:** Need to make sure developers understand that AMP pages are web pages,
 and they should be responsive.
