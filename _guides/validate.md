@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Validate AMP Pages
-order: 3
+order: 4
 ---
 
 The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast and then **guarantees they’re fast**. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
@@ -18,7 +18,9 @@ The AMP validator comes bundled with the AMP JS library, so it is available on e
 
 <amp-img src="/docs/assets/validator_errors.png" width="1348" height="518" layout="responsive"></amp-img>
 
-If the AMP validation service that third parties use finds out that there’s something wrong with your page, it won’t get syndicated by third party websites and won’t appear in the AMP Cache.  That would be a shame, so let’s make sure it doesn’t happen!
+The AMP validator isn’t just a convenience for you during development. It’s also used by platforms like Twitter or Google who integrate your AMP pages into their content and search results. More so, they usually don’t request the pages directly from your server but make use of the AMP Cache, a free service that caches your pages and makes them available across the world, so they load even faster.
+
+If the AMP validation service detects that there’s something wrong with your page, it won’t get syndicated by third party websites and won’t appear in the AMP Cache.  So not only would you loose the speed benefits of the cache, it’s likely that your page will never be seen anywhere! That would be a shame, so let’s make sure it doesn’t happen.
 
 ## How do I fix validation errors?
 
