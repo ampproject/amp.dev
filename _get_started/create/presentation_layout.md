@@ -10,7 +10,7 @@ AMPs are web pages; any styling to the page and its elements is done using commo
 
 {% highlight html %}
     <style amp-custom>
-      /* any custom style goes here; and remember, body margin can not be declared */
+      /* any custom style goes here */
       body {
         background-color: white;
       }

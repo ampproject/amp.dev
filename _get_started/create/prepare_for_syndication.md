@@ -4,7 +4,7 @@ title: Prepare Your Page For Syndication
 order: 4
 ---
 
-In some cases, you might want to have both a non-AMP and an AMP version of the same page, i.e. a news article. Consider this: If Google Search finds the non-AMP version of that page, *how does it know there’s an AMP version of it*?
+In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, *how does it know there’s an AMP version of it*?
 
 ## Linking pages with `<link>`
 

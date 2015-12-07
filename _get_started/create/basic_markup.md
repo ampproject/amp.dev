@@ -34,22 +34,28 @@ The following markup is a decent starting point or boilerplate. Copy this and sa
 </html>
 {% endhighlight %}
 
-The content in the body, so far, is pretty straightforward. But there’s a lot of additional code in the head of the page that might not be immediately obvious. Let’s deconstruct:
+The content in the body, so far, is pretty straightforward. But there’s a lot of additional code in the head of the page that might not be immediately obvious. Let’s deconstruct the required mark-up.
 
 ## Required mark-up
 
 AMP HTML documents MUST:
 
-  - start with the doctype <!doctype html>.
-  - contain a top-level <html ⚡> tag (<html amp> is accepted as well).
-  - contain <head> and <body> tags (They are optional in HTML).
-  - contain a <link rel="canonical" href="$SOME_URL" /> tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists.
-  - contain a <meta charset="utf-8"> tag as the first child of their head tag.
-  - contain a <meta name="viewport" content="width=device-width,minimum-scale=1"> tag inside their head tag. It's also recommended to include initial-scale=1.
-  - contain a <script async src="https://cdn.ampproject.org/v0.js"></script> tag as the last element in their head (this includes and loads the AMP JS library).
-  - contain <style>body {opacity: 0}</style><noscript><style>body {opacity: 1}</style></noscript> in their head tag.
+  - Start with the doctype <!doctype html>.
+  - Contain a top-level <html ⚡> tag (<html amp> is accepted as well).
+  - Contain <head> and <body> tags (They are optional in HTML).
+  - Contain a <link rel="canonical" href="$SOME_URL" /> tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists.
+  - Contain a <meta charset="utf-8"> tag as the first child of their head tag.
+  - Contain a <meta name="viewport" content="width=device-width,minimum-scale=1"> tag inside their head tag. It's also recommended to include initial-scale=1.
+  - Contain a <script async src="https://cdn.ampproject.org/v0.js"></script> tag as the last element in their head (this includes and loads the AMP JS library).
+  - Contain <style>body {opacity: 0}</style><noscript><style>body {opacity: 1}</style></noscript> in their head tag.
+
+## Optional meta-data
 
 In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but is a requirement to get your content syndicated in certain places, for instance in the experimental [Google Search news carousel (try on your phone)](g.co/ampdemo).
+
+To learn more about all the meta-data you’ll need in various other places, i.e. Twitter, [explore our samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples).
+
+<hr>
 
 Good news! That’s all we need to create our first AMP page, but of course, there’s not a lot going on in the body yet. In the next section, we’ll cover how to add basics like images, custom AMP elements, how to style your page and work out a responsive layout.
 

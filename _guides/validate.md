@@ -6,12 +6,6 @@ order: 3
 
 The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast and then **guarantees they’re fast**. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
 
-## What happens if my page isn’t valid?
-
-<amp-img src="/docs/assets/validator_errors.png" width="1348" height="518" layout="responsive"></amp-img>
-
-If the AMP validation service that third parties use finds out that there’s something wrong with your page, it won’t get syndicated by third party websites and won’t appear in the AMP Cache.  That would be a shame, so let’s make sure it doesn’t happen!
-
 ## How do I check if my page is valid AMP?
 
 The AMP validator comes bundled with the AMP JS library, so it is available on every AMP page out of the box. To validate:
@@ -19,6 +13,12 @@ The AMP validator comes bundled with the AMP JS library, so it is available on e
   1. Open your page in your browser
   1. Add "`#development=1`" to the URL, for example, `http://localhost:8000/released.amp.html#development=1`.
   1. Open the [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) and check for validation errors.
+
+## What happens if my page isn’t valid?
+
+<amp-img src="/docs/assets/validator_errors.png" width="1348" height="518" layout="responsive"></amp-img>
+
+If the AMP validation service that third parties use finds out that there’s something wrong with your page, it won’t get syndicated by third party websites and won’t appear in the AMP Cache.  That would be a shame, so let’s make sure it doesn’t happen!
 
 ## How do I fix validation errors?
 
