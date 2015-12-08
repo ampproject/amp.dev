@@ -166,3 +166,21 @@ pre {
         padding-left: 0;
     }
 }
+
+table {
+  width: 100%;
+
+  & thead {
+    color: #ffffff;
+  }
+
+  & tr {
+    border-bottom: 1px solid #ffffff;
+  }
+
+  & td, & th {
+    border-right: 1px solid #ffffff;
+  }
+
+}
+
