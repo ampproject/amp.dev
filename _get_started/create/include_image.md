@@ -12,6 +12,6 @@ To demonstrate how additional markup could like like, here’s the code required
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 {% endhighlight %}
 
-To learn why we’re replacing tags like `<img>` with `<amp-img>`, and how many are available, head to [Including Iframes and Media](/docs/guides/amp_replacements.html).
+To learn why we’re replacing tags like `<img>` with `<amp-img>`, and how many are available, head to [Include Iframes and Media](/docs/guides/amp_replacements.html).
 
 {% include button.html title="Continue to Step 3" link="/docs/get_started/create/presentation_layout.html" %}

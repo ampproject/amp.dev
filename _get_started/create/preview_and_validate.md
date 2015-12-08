@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Preview And Validate
+title: Preview and Validate
 order: 3
 ---
 
@@ -8,7 +8,7 @@ Preview the AMP page just as you would preview any other static HTML site. There
 
   - **Open it directly in the browser from the file system** (certain elements might not work due to XMLHttpRequests failing).
   - **Use a local web server like Apache 2 or Nginx**.
-    *(Tip: For a quick web server, run `python -m SimpleHTTPServer`)*
+    *(Tip: For a quick web server, run `python -m SimpleHTTPServer`.)*
 
 Next, make sure that your AMP page **is actually valid AMP**, or it won’t get syndicated by third-party platforms like Google Search. To validate:
 
