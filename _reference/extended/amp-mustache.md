@@ -18,6 +18,7 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
 -->
 
 
@@ -32,6 +33,7 @@ for more details. Some of the core Mustache tags are:
 - `{{variable}}` - variable tag. It outputs the the HTML-escaped value of a variable;
 - `{{#section}}{{/section}}` - section tag. It can test existance of a variable and iterate over it if
 it's an array;
+
 - `{{^section}}{{/section}}` - inverted tag. It can test non-existance of a variable.
 
 #### Usage

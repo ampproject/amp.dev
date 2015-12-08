@@ -18,6 +18,7 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
 -->
 
 **This extension is still a work in progress. Details below can change.**
@@ -84,6 +85,7 @@ If more than one methods of specifying the config are used, the configs are merg
 ####  <a name="format"></a>Config Format
 
 At the top level, the config has following properties:
+
 - **host**: This is the domain:port pair to which the data is going to be sent.
 -  **requests**: This is a mapping of request name to request format. The request name is used in triggers defined below to specify the format that should be used to send the analytics data to the server. The request format uses the same format as [Amp Var Substitution](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 - **vars**: This property is a mapping of variable name to variable value. The values are then used to construct the requests from the request format strings.
@@ -97,6 +99,7 @@ At the top level, the config has following properties:
 
 **type**
 This optional attribute can be specified to use one of the built-in analytics providers. Currently supported types:
+
 - `googleanalytics`: This type defines the basic requests like `pageview`,  `event`, `social` and `timing`.
 
 **config**
