@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Syndicate your content
+title: Syndicate Your Content
 order: 3
 ---
 
