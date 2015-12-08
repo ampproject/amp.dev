@@ -29,7 +29,7 @@ The simplest AMP HTML file looks like this:
 <html ⚡>
  <head>
    <meta charset="utf-8">
-   <link rel="canonical" href="hello-world.html" >
+   <link rel="canonical" href="hello-world.html">
    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
    <style>body {opacity: 0}</style><noscript><style>body {opacity: 1}</style></noscript>
    <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -46,7 +46,7 @@ make common patterns easy to implement in a performant way.
 
 For example, the [`amp-img`](/docs/reference/amp-img.html) tag
 provides full `srcset` support even in browsers that don’t support it yet.
-Learn how to [create your first AMP HTML page](/docs/get_started/create/basic_markup.html).
+Learn how to [create your first AMP HTML page](/docs/get_started/create_page.html).
 
 ## AMP JS
 
@@ -79,12 +79,12 @@ from the same origin that is using
 
 AMP’s CDN also comes with a built-in 
 [validation system](https://github.com/ampproject/amphtml/tree/master/validator)
-which says the page works, it’s guaranteed to work,
-and it’s not dependent on external resources.
+which confirms that the page is guaranteed to work,
+and that it doesn't depend on external resources.
 The validation system runs a series of assertions
 confirming the page’s markup meets the AMP HTML specification. 
 
-Validation errors are logged to the browser’s console when the page is rendered,
+Another version of the validator comes bundled with every AMP page. This version can log validation errors directly to the browser’s console when the page is rendered,
 allowing you to see how complex changes in your code
 might impact performance and user experience.
 
