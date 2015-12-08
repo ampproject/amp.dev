@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-fit-text
-order: 4
+order: 5
 ---
 
 <!---

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-anim
-order: 0
+order: 1
 ---
 
 <!---
