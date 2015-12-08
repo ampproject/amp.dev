@@ -4,13 +4,15 @@ title: How to Contribute
 order: 3
 ---
 
-## Give feedback
+### AMP Issues
 
 Please file any feedback you have about the actual project at the [amphtml issue tracker](https://github.com/ampproject/amphtml/issues).
 
+### Documentation Issues
+
 For bugs or inconsistencies on this website, file a bug at the [docs issue tracker](https://github.com/ampproject/docs/issues) instead.
 
-## AMP HTML and AMP JS
+### Contribute source code
 
 Want to help fix bugs or make AMP even faster? We'd love your help.
 

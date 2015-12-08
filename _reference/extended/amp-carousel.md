@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-carousel
-order: 3
+order: 4
 ---
 
 <!---
@@ -18,6 +18,7 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
 -->
 
 
@@ -51,8 +52,10 @@ only display arrows at certain screen widths. On desktop, arrows will always be 
 unless only a single child is present.
 
 **type**
+
 - `carousel` (default) - All slides are shown and are scrollable horizontally.
   Be aware that `type=carousel` does not currently support `layout=responsive`.
+
 - `slides` - Shows a single slide at a time.
 
 **loop** (type=slides only)
@@ -69,6 +72,7 @@ If `autoplay` is present it will also attach the `loop` attribute to
 `amp-carousel` if `loop` is not already present.
 
 #### Styling
+
 - You may use the `amp-carousel` element selector to style it freely.
 - `.amp-carousel-button` by default uses an inlined svg as the background-image of the buttons.
 You may override this with your own svg or image like so:
@@ -89,6 +93,7 @@ You may override this with your own svg or image like so:
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M11.56 5.56L10.5 4.5 6 9l4.5 4.5 1.06-1.06L8.12 9z" fill="#fff" /></svg>');
 }
 {% endhighlight %}
+
 - By default the visual state of an `amp-carousel` button when it is disabled is that it is hidden.
   You may override this visual state of an `amp-carousel` button in the disabled state by:
 
