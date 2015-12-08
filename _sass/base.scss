@@ -168,19 +168,12 @@ pre {
 }
 
 table {
-  width: 100%;
+  border-collapse: collapse;
+}
 
-  & thead {
-    color: #ffffff;
-  }
-
-  & tr {
-    border-bottom: 1px solid #ffffff;
-  }
-
-  & td, & th {
-    border-right: 1px solid #ffffff;
-  }
-
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
 }
 
