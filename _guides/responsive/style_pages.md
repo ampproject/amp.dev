@@ -22,10 +22,12 @@ Having your styles in the `<head>` of the page effectively means that
 all your CSS becomes critical CSS that is loaded before the rest of the page is loaded,
 so only include what you need. 
 
-Learn more about critical CSS in this article,
-[Understanding Critical CSS](http://www.smashingmagazine.com/2015/08/understanding-critical-css/).
+Read on to learn how to style your AMP pages:
 
 {% include toc.html %}
+
+Learn more about critical CSS in this article,
+[Understanding Critical CSS](http://www.smashingmagazine.com/2015/08/understanding-critical-css/).
 
 ## Add styles to a page
 

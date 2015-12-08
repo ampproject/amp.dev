@@ -106,7 +106,7 @@ An example `amp-pixel` from the
 ## Display an ad
 
 Display an ad in your page
-using the [`amp-ad`](/docs/reference/extended/amp-ad.html) element.
+using the [`amp-ad`](/docs/reference/amp-ad.html) element.
 Only ads served via HTTPS are supported.
 
 No ad network provided JavaScript is allowed to run inside the AMP document.
