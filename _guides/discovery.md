@@ -4,11 +4,9 @@ title: Make your page discoverable
 order: 3
 ---
 
-## Make your AMP page discoverable
-
 In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, how does it know there’s an AMP version of it?
 
-### Linking pages with `<link>`
+### Linking pages with &lt;link&gt;
 
 In order to solve this problem, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
 
