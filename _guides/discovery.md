@@ -58,7 +58,7 @@ Example:
 
 More examples can be found in [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
 
-Note: This Schema.org definition is a requirement to make your content eligible to appear in the demo of the [Google Search news carousel](https://g.co/ampdemo).
+Note: This Schema.org definition is a requirement to make your content eligible to appear in the demo of the [Google Search news carousel (try on mobile)](https://g.co/ampdemo).
 
 ### Other metadata for even more platforms
 
