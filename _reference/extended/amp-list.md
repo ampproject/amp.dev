@@ -77,7 +77,7 @@ An example:
 #### Substitutions
 
 The `amp-list` allows all standard URL variable substitutions.
-See (Substitutions Guide)[../../spec/amp-var-substitutions.md] for more info.
+See [Substitutions Guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-list/../../spec/amp-var-substitutions.md) for more info.
 
 For instance:
 {% highlight html %}

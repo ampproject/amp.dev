@@ -44,7 +44,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 
 	// this regular expression is crazy. Adds a newline before lists so they are parsed
 	// as proper lists by Jekyll.
-	content = content.replace(/(\n(?![^\S\n]*\-)[^\n]+\n)([^\S\n]*?\-)/gm, '$1\n$2');
+	content = content.replace(/(\n(?![^\S\n]*\*[^\S\n])(?![^\S\n]*\-)[^\n]+\n)([^\S\n]*?(?!\*\*)[\-\*])/gm, '$1\n$2');
 
 	// for comments to be parsed correctly as HTML, we need an extra line break
 	content = content.replace('<!---', '\n<!---');

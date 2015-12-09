@@ -38,7 +38,7 @@ A simple URL to send a GET request to when the tracking pixel is loaded.
 #### Substitutions
 
 The `amp-pixel` allows all standard URL variable substitutions.
-See (Substitutions Guide)[../spec/amp-var-substitutions.md] for more info.
+See [Substitutions Guide](https://github.com/ampproject/amphtml/blob/master/builtins/../spec/amp-var-substitutions.md) for more info.
 
 For instance:
 {% highlight html %}
