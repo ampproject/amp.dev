@@ -15,15 +15,15 @@ var client = github.client({
 });
 var ghrepo = client.repo('ampproject/amphtml');
 
-function downloadPage(component, callback, headingToStrip) {
+function downloadPage(path, callback, headingToStrip) {
 
-	ghrepo.contents(component.path, function(err, data) {
+	ghrepo.contents(path, function(err, data) {
 
 		var encodedContent = new Buffer(data.content, 'base64')
 		var decodedContent = encodedContent.toString();
 
 		// we need to concert some of the markdown from Github flavor to Jekyll flavor
-		var relativePath = component.path.substr(0, component.path.lastIndexOf("/"))
+		var relativePath = path.substr(0, path.lastIndexOf("/"))
 		decodedContent = convertMarkdown(decodedContent, relativePath, headingToStrip);
 
 		callback(decodedContent);
@@ -50,8 +50,8 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 	content = content.replace('<!---', '\n<!---');
 
 	// replace code
-	content = content.replace(/\`\`\`(.+)/g, '{% highlight $1 %}');
-	content = content.replace(/(\`\`\`)/g, '{% endhighlight %}');
+	content = content.replace(/(\`\`\`)([A-z\-]+)?(\n((?!\`\`\`)[\s\S])+)(\`\`\`)/gm, '{% highlight $2 %}$3{% endhighlight %}');
+	content = content.replace(/\{\%\shighlight\s\s\%\}/g, '{% highlight html %}');
 
 	// create absolute urls from relative github urls
 	content = content.replace(/\[([^\]]+)\]\((?!http)([^\)]+)\)/g, '[$1](https://github.com/ampproject/amphtml/blob/master/' + relativePath + '/$2)');
@@ -61,6 +61,20 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 
 	return content;
 }
+
+
+// Download the specification
+downloadPage("spec/amp-html-format.md", function(pageContent) {
+	savePage({
+		destination: '../_reference/specification.md',
+		content: pageContent,
+		title: "AMP HTML Specification",
+		order: 5
+	}, function (err) {
+		if (err) throw err;
+		console.log('Successfully imported: AMP Specification');
+	});
+}, 1);
 
 
 ghrepo.contents('builtins', "master", function(err, data) {
@@ -81,10 +95,9 @@ ghrepo.contents('builtins', "master", function(err, data) {
 	var index = 0;
 	components.forEach(function(component) {
 
-		var frontMatter = "---\nlayout: page\ntitle: " + component.name.replace('.md', '') + "\norder: " + index + "\n---\n";
 		index++;
 
-		downloadPage(component, function(pageContent) {
+		downloadPage(component.path, function(pageContent) {
 			savePage({
 				destination: '../_reference/' + component.name,
 				content: pageContent,
@@ -115,7 +128,7 @@ ghrepo.contents('extensions', "master", function(err, data) {
 	}
 
 	// download the page contents
-	downloadPage(readme, function(pageContent) {
+	downloadPage(readme.path, function(pageContent) {
 		// save it
 		savePage({
 			destination: '../_reference/extended.md',
@@ -151,7 +164,7 @@ ghrepo.contents('extensions', "master", function(err, data) {
 			}
 
 			// download the page contents
-			downloadPage(component, function(pageContent) {
+			downloadPage(component.path, function(pageContent) {
 				// save it to the extended folder
 				savePage({
 					destination: '../_reference/extended/' + component.name,
