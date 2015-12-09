@@ -4,7 +4,7 @@ title: Validate AMP Pages
 order: 4
 ---
 
-The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast and then **guarantees they’re fast**. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
+The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be *validated*. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
 
 ## How do I check if my page is valid AMP?
 
