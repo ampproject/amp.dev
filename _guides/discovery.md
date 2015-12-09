@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Syndicate Your Content
+title: Make your page discoverable
 order: 3
 ---
 
@@ -60,8 +60,8 @@ Example:
 
 More examples can be found in [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
 
-Note: This Schema.org definition is a requirement to get your content syndicated in the [experimental Google Search news carousel](g.co/ampdemo).
+Note: This Schema.org definition is a requirement to make your content eligible to appear in the demo of the [Google Search news carousel](https://g.co/ampdemo).
 
 ### Other metadata for even more platforms
 
-Head to the [Social Discovery guide at Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) to learn about all the other different ways of preparing your content for syndication.
+Head to the [Social Discovery guide at Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) to learn about all the other different ways of preparing your content for discovery and distribution.

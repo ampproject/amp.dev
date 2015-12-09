@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Prepare Your Page For Syndication
+title: Prepare Your Page For Discovery and Distribution
 order: 4
 ---
 
