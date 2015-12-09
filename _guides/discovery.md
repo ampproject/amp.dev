@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Make your page discoverable
+title: Make Your Page Discoverable
 order: 3
 ---
 

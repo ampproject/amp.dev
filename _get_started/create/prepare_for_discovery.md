@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Prepare Your Page For Discovery and Distribution
+title: Prepare Your Page for Discovery and Distribution
 order: 4
 ---
 

@@ -20,9 +20,9 @@ Speed matters and instant is the ideal. [Research](https://www.soasta.com/blog/m
 
 ### How do Accelerated Mobile Pages work?
 
-Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview. AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.  
+Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview. AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.
 
-In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get a user’s mobile device. Under this type of framework, publishers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed users. Google has stated that it will provide a cache that can be used by anyone at no cost, though the cache (Google's or otherwise) is not required. Other companies may build their own cache as well.  
+In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has stated that it will provide a cache that can be used by anyone at no cost, and all AMPs will be cached by Google’s cache. Other companies may build their own cache as well.
 
 In summary, the goal is that that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development for publishers.
 
@@ -36,7 +36,9 @@ On October 7th, 2015, the Accelerated Mobile Pages Project announced the release
 
 ### Who will be able to use Accelerated Mobile Pages?
 
-The project is open to all players in the ecosystem - publishers, consumer platforms, and creators. In this early stage of the project, a group of publishers and platforms have come together to demonstrate how Accelerated Mobile Pages can transform the mobile web experience. They include platforms like Twitter and Google, tech players like ChartBeat and WordPress.com and publishers like Vox, The New York Times, The Guardian and Globo.
+The project is open to all players in the ecosystem - publishers, consumer platforms, and creators. In this early stage of the project, a group of publishers and platforms have come together to demonstrate how Accelerated Mobile Pages can transform the mobile web experience. They include platforms like Twitter and Google, tech players like ChartBeat and WordPress.com and publishers like Vox, The New York Times, The Guardian and Globo.  
+
+By using the AMP format, content producers are making the content in AMP files available to be crawled & indexed (subject to the robots exclusion protocol), displayed (subject to access restrictions), and cached by third parties.
 
 ### What type of content will work best using Accelerated Mobile Pages?
 

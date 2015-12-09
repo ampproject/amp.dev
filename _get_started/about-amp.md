@@ -51,7 +51,9 @@ Learn how to [create your first AMP HTML page](/docs/get_started/create_page.htm
 ## AMP JS
 
 The [AMP JS library](https://github.com/ampproject/amphtml/tree/master/src) implements
-all of [AMP's best performance practises](/docs/get_started/technical_overview.html), manages resource loading and gives you the custom tags mentioned above, all to ensure a fast rendering of your page.
+all of [AMP's best performance practices](/docs/get_started/technical_overview.html),
+manages resource loading and gives you the custom tags mentioned above,
+all to ensure a fast rendering of your page.
 
 Among the biggest optimizations is the fact that it makes everything that comes from external resources asynchronous, so nothing in the page can block anything from rendering.
 

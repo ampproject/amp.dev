@@ -8,9 +8,6 @@ The following optimizations combined are the reason AMP pages are so fast they a
 
 {% include toc.html %}
 
-
-## Video Summary
-
 If you'd rather listen than read, the following video by AMP engineering lead Malte Ubl gives a similar overview than the following paragraphs.
 
 <amp-youtube
@@ -19,9 +16,7 @@ If you'd rather listen than read, the following video by AMP engineering lead Ma
     width="480" height="270">
 </amp-youtube>
 
-## Optimizations
-
-### Allow only asynchronous scripts
+## Allow only asynchronous scripts
 
 JavaScript is powerful,
 it can modify just about every aspect of the page,
@@ -42,7 +37,7 @@ For example, if third-party JS uses the
 [super-bad-for-performance `document.write` API](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/),
 it does not block rendering the main page.
 
-### Size all resources statically
+## Size all resources statically
 
 External resources such as images, ads or iframes must state their size in the HTML
 so that AMP can determine each element’s size and position before resources are downloaded.
@@ -54,7 +49,7 @@ Only one HTTP request is needed to layout the entire doc
 Since AMP is optimized to avoid expensive style recalculations and layouts in the browser,
 there won’t be any re-layout when resources load.
 
-### Don’t let extension mechanisms block rendering
+## Don’t let extension mechanisms block rendering
 
 AMP doesn’t let extension mechanisms block page rendering.
 AMP supports extensions for things like
@@ -74,7 +69,7 @@ AMP creates the iframe box before it even knows what it will include:
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 {% endhighlight %}
 
-### Keep all third-party JavaScript out of the critical path
+## Keep all third-party JavaScript out of the critical path
 
 Third-party JS likes to use synchronous JS loading.
 They also like to `document.write` more sync scripts.
@@ -91,7 +86,7 @@ Style-recalculations and layouts are typical to DOM size,
 so the iframe recalculations are very fast compared
 to a recalculating styles and layout for the page.
 
-### All CSS must be inline and size-bound
+## All CSS must be inline and size-bound
 
 CSS blocks all rendering, it blocks page load, and it tends to get bloated.
 In AMP HTML pages, only inline styles are allowed.
@@ -102,7 +97,7 @@ Also, the inline style sheet has a maximum size of 50 kilobytes.
 While this size is big enough for very sophisticated pages,
 it still requires the page author to practice good CSS hygiene.
 
-### Font triggering must be efficient
+## Font triggering must be efficient
 
 Web fonts are super large, so
 [web font optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)
@@ -115,7 +110,7 @@ This is only possible because all JS in AMP has the async attribute
 and online inline style sheets are allow;
 there’s no HTTP requests blocking the browser from downloading fonts.
 
-### Minimize style recalculations
+## Minimize style recalculations
 
 Each time you measure something, it triggers style recalculations which are expensive
 because the browser has to layout the entire page.
@@ -125,7 +120,7 @@ This ensures there’s the max of one recalc of styles per frame.
 Learn more about impact of style and layout recalculations on
 [rendering performance](https://developers.google.com/web/fundamentals/performance/rendering/).
 
-### Only run GPU-accelerated animations
+## Only run GPU-accelerated animations
 
 The only way to have fast optimizations is to run them on the GPU.
 GPU knows about layers, it knows how to perform some things on these layers,
@@ -138,7 +133,7 @@ so that page layout isn’t required.
 Learn more about
 [using transform and opacity for animation changes](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count).
 
-### Prioritize resource loading
+## Prioritize resource loading
 
 AMP controls all resource downloads: it prioritizes resource loading,
 loading only what’s needed, and prefectches lazy-loaded resources. 
@@ -153,7 +148,7 @@ Resources are loaded as late as possible, but prefetched as early as possible.
 That way things load very fast but CPU is only used
 when resources are actually shown to users.
 
-### Load pages in an instant
+## Load pages in an instant
 
 The new [preconnect API](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
 is used heavily to ensure HTTP requests are as fast as possible when they are made.
