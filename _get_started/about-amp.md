@@ -8,10 +8,10 @@ AMP in action consists of three different parts:
 
 {% include toc.html %}
 
-AMP HTML is HTML with some restrictions for reliable performance
+**AMP HTML** is HTML with some restrictions for reliable performance
 and some extensions for building rich content beyond basic HTML.
-The AMP JS library ensures the fast rendering of AMP HTML pages.
-The AMP CDN delivers the AMP HTML pages.
+The **AMP JS** library ensures the fast rendering of AMP HTML pages.
+The **AMP CDN** (optionally) delivers the AMP HTML pages.
 
 <amp-youtube
     data-videoid="SOx1XfOjJPI"
@@ -50,24 +50,14 @@ Learn how to [create your first AMP HTML page](/docs/get_started/create_page.htm
 
 ## AMP JS
 
-The [AMP JS library](https://github.com/ampproject/amphtml/tree/master/src)
-manages the loading of external resources to ensure a fast rendering of the page.
-It makes everything that comes from external resources asynchronous.
-Nothing in the page can block anything from rendering.
-Everything is sandboxed.
+The [AMP JS library](https://github.com/ampproject/amphtml/tree/master/src) implements
+all of [AMP's best performance practises](/docs/get_started/technical_overview.html), manages resource loading and gives you the custom tags mentioned above, all to ensure a fast rendering of your page.
 
-AMP JS calculates the layout of every element on a page
-before any resources are loaded.
-Pages load and there’s no re-layout when the images load.
-AMP JS enforces limitations by design.
-AMP HTML pages can’t have user-authored JS,
-they can’t call out to external stylesheets. 
+Among the biggest optimizations is the fact that it makes everything that comes from external resources asynchronous, so nothing in the page can block anything from rendering.
 
-AMP JS only loads what’s needed.
-Images and ads are only downloaded
-if and when they are likely to be seen by the user above the fold,
-or if the user is likely to quickly engage with them.
-Learn more about [how AMP JS speeds up performance](/docs/get_started/technical_overview.html).
+Other performance techniques include the sandboxing of all iframes, the pre-calculation of the layout of every element on page before resources are loaded and the disabling of slow CSS selectors.
+
+To learn more about not just the [optimizations](/docs/get_started/technical_overview.html) but the limitations, [read the AMP HTML specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
 
 ## AMP CDN
 
