@@ -14,7 +14,7 @@ and the embedded style tag must be in the `<head>` of the page.
 These different kinds of limitations are there to improve the performance of your pages,
 but can be overwhelming at first.
 When in doubt,
-always test your styles using the [AMP validator](/docs/guides/validate).
+always test your styles using the [AMP validator](/docs/guides/validate.html).
 
 Even though inline stylesheets add bytes to every page,
 the saved round trip request to another external file would be even slower.
@@ -99,7 +99,7 @@ For example:
 {% endhighlight %}
 
 AMP HTML components that are more complex and nested,
-such as [`amp-iframe`](/docs/reference/extended/amp-iframe),
+such as [`amp-iframe`](/docs/reference/extended/amp-iframe.html),
 may define their own custom children that maybe styled separately,
 for example, iframe's `overflow` element.
 These custom children are typically defined either via special attribute names
@@ -145,7 +145,7 @@ For example, the
 [head.html](https://github.com/ampproject/docs/blob/master/_includes/head.html)
 includes all required AMP mark-up and the CSS from the `*.scss` source files.
 It also includes the custom element script for
-[`amp-youtube`](/docs/reference/extended/amp-youtube),
+[`amp-youtube`](/docs/reference/extended/amp-youtube.html),
 so that many pages across the site can include embedded youtube videos.
 
 {% highlight html %} {% raw %}
@@ -186,7 +186,7 @@ The following styles aren’t allowed in AMP pages:
     <tr>
       <td data-th="Banned style">Inline style attributes</td>
       <td data-th="Description">All styles must be defined in the <code>&lt;head&gt;</code> of the page,
-      	within a <code>&lt;style&gt;</code> tag.</td>
+      	within a <code>&lt;style amp-custom&gt;</code> tag.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>!</code>important qualifier </td>
