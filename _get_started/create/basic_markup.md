@@ -41,14 +41,14 @@ The content in the body, so far, is pretty straightforward. But there’s a lot 
 
 AMP HTML documents MUST:
 
-  - Start with the doctype <!doctype html>.
-  - Contain a top-level <html ⚡> tag (<html amp> is accepted as well).
-  - Contain <head> and <body> tags (They are optional in HTML).
-  - Contain a <link rel="canonical" href="$SOME_URL" /> tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists.
-  - Contain a <meta charset="utf-8"> tag as the first child of their head tag.
-  - Contain a <meta name="viewport" content="width=device-width,minimum-scale=1"> tag inside their head tag. It's also recommended to include initial-scale=1.
-  - Contain a <script async src="https://cdn.ampproject.org/v0.js"></script> tag as the last element in their head (this includes and loads the AMP JS library).
-  - Contain <style>body {opacity: 0}</style><noscript><style>body {opacity: 1}</style></noscript> in their head tag.
+  - Start with the doctype `<!doctype html>`.
+  - Contain a top-level `<html ⚡>` tag (`<html amp>` is accepted as well).
+  - Contain `<head>` and `<body>` tags (They are optional in HTML).
+  - Contain a `<link rel="canonical" href="$SOME_URL" />` tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists.
+  - Contain a `<meta charset="utf-8">` tag as the first child of their head tag.
+  - Contain a `<meta name="viewport" content="width=device-width,minimum-scale=1">` tag inside their head tag. It's also recommended to include initial-scale=1.
+  - Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag as the last element in their head (this includes and loads the AMP JS library).
+  - Contain `<style>body {opacity: 0}</style><noscript><style>body {opacity: 1}</style></noscript>` in their head tag.
 
 ## Optional meta-data
 
