@@ -66,7 +66,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 // Download the specification
 downloadPage("spec/amp-html-format.md", function(pageContent) {
 	savePage({
-		destination: '../_reference/specification.md',
+		destination: '../_reference/spec.md',
 		content: pageContent,
 		title: "AMP HTML Specification",
 		order: 5
