@@ -71,13 +71,26 @@ Optional attribute to pass configuration to the ad as an arbitrarily complex JSO
 
 #### Placeholder
 
-Optionally `amp-ad` supports a child element with the `placeholder` attribute. If supported by the ad network, this element is shown if no ad is available for this slot.
+Optionally `amp-ad` supports a child element with the `placeholder` attribute. If supported by the ad network, this element is shown until the ad is available for viewing.
 {% highlight html %}
 <amp-ad width=300 height=250
     type="foo">
   <div placeholder>Have a great day!</div>
 </amp-ad>
 {% endhighlight %}
+
+#### No Ad available
+
+- `amp-ad` supports a child element with the `fallback` attribute. If supported by the ad network, this element is shown if no ad is available for this slot.
+{% highlight html %}
+<amp-ad width=300 height=250
+    type="foo">
+  <div fallback>Have a great day!</div>
+</amp-ad>
+{% endhighlight %}
+
+- If there is no fallback element available, the amp-ad tag will be collapsed (set to display: none) if the ad sends a message that the ad slot cannot be filled and AMP determines that this operation can be performed without affecting the user's scroll position.
+
 #### Supported ad networks
 
 - [A9](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/a9.md)
@@ -97,4 +110,22 @@ To enable this, copy the file [remote.html](https://github.com/ampproject/amphtm
 <meta name="amp-3p-iframe-src" content="https://assets.your-domain.com/path/to/remote.html">
 {% endhighlight %}
 
-The `content` attribute of the meta tag is the absolute URL to your copy of the remote.html file on your web server. This URL must use a "https" schema. It is not allowed to reside on the same origin as your AMP files. E.g. if you host AMP files on "www.example.com", this URL must not be on "www.example.com" but e.g. "something-else.example.com" is OK.
+The `content` attribute of the meta tag is the absolute URL to your copy of the remote.html file on your web server. This URL must use a "https" schema. It is not allowed to reside on the same origin as your AMP files. E.g. if you host AMP files on "www.example.com", this URL must not be on "www.example.com" but e.g. "something-else.example.com" is OK. See the doc ["Iframe origin policy"](https://github.com/ampproject/amphtml/blob/master/builtins/../spec/amp-iframe-origin-policy.md) for further details on allowed origins for iframes.
+
+##### Enhance incoming ad configuration
+
+This is completely optional: It is sometimes desired to further process the incoming iframe configuration before drawing the ad using AMP's built-in system.
+
+This is supported by passing a callback to the `draw3p` function call in the [remote.html](https://github.com/ampproject/amphtml/blob/master/builtins/../3p/remote.html) file. The callback receives the incoming configuration as first argument and then receives another callback as second argument (Called `done` in the example below). This callback must be called with the updated config in order for ad rendering to proceed.
+
+Example:
+
+```JS
+draw3p(function(config, done) {
+  config.targeting = Math.random() > 0.5 ? 'sport' : 'fashion';
+  // Don't actually call setTimeout here. This should only serve as an
+  // example that is OK to call the done callback asynchronously.
+  setTimeout(function() {
+    done(config);
+  }, 100)
+});

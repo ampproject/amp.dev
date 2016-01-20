@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-brightcove
-order: 3
+order: 4
 ---
 
 <!---

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-instagram
-order: 9
+order: 12
 ---
 
 <!---

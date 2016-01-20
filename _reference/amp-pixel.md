@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-pixel
-order: 0
+order: 3
 ---
 
 <!---

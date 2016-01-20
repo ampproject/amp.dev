@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-font
-order: 6
+order: 9
 ---
 
 <!---

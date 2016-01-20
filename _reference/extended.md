@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Extended Components
+title: Extended components
 order: 4
 folder: extended
 ---
@@ -58,5 +58,4 @@ Current list of extended templates:
 
 | Component                                     | Description                                                                                 |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------
-|
 | [`amp-mustache`](extended/amp-mustache.html) | Mustache template.                                       |

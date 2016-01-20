@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-carousel
-order: 4
+order: 5
 ---
 
 <!---
