@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Extended components
+title: Extended Components
 order: 4
 folder: extended
 ---
