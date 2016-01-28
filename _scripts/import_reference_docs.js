@@ -152,28 +152,44 @@ ghrepo.contents('extensions', "master", function(err, data) {
 
 		var order = index;
 
+		// use the last part of the path as the component name
+		var nameIndex = component.path.lastIndexOf('/') + 1;
+		var componentName = component.path.slice(nameIndex);
+
 		ghrepo.contents(component.path, "master", function(err, data) {
 
-			// fish out the markdown file from the folder
-			var component;
+			// fish out the README file from the folder
+			var componentReadme;
 			for (var i = 0; i < data.length; i++) {
+				// Find the first `.md` file in the component path data. If there is a
+				// `README.md`, select that as the component README instead.
+				// NOTE: The selection of the first `.md` file is done to ensure
+				//   backwards compatibility with an older file structure in the
+				//   'extensions' directory. Rather than a `README.md`, each extension
+				//   had a `.md` file with the extension name (e.g. 'amp-font.md') which
+				//   was meant to be used as the README for that extension. When all
+				//   extension READMEs have been changed to `README.md`, this loop can
+				//   be simplified.
 				if(data[i].type === 'file' && /\.md$/.test(data[i].name)) {
-					component = data[i];
-					break;
+					if (!componentReadme) {
+						componentReadme = data[i];
+					} else if (data[i].name == 'README.md') {
+						componentReadme = data[i];
+					}
 				}
 			}
 
 			// download the page contents
-			downloadPage(component.path, function(pageContent) {
+			downloadPage(componentReadme.path, function(pageContent) {
 				// save it to the extended folder
 				savePage({
-					destination: '../_reference/extended/' + component.name,
+					destination: ('../_reference/extended/' + componentName + '.md'),
 					content: pageContent,
 					order: order,
-					title: component.name.replace('.md', '')
+					title: componentName
 				}, function (err) {
 					if (err) throw err;
-					console.log('Successfully imported: ' + component.name + ' (Extended)');
+					console.log('Successfully imported: ' + componentName + ' (Extended)');
 				});
 			});
 
