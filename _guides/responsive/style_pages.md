@@ -20,7 +20,7 @@ Even though inline stylesheets add bytes to every page,
 the saved round trip request to another external file would be even slower.
 Having your styles in the `<head>` of the page effectively means that
 all your CSS becomes critical CSS that is loaded before the rest of the page is loaded,
-so only include what you need. 
+so only include what you need.
 
 Read on to learn how to style your AMP pages:
 
@@ -42,7 +42,7 @@ For example:
     <meta charset="utf-8">
     <link rel="canonical" href="hello-world.html" >
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style>body {opacity: 0}</style><noscript><style>body {opacity: 1}</style></noscript>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
       /* any custom style goes here. */
       body {
@@ -137,7 +137,7 @@ The generated output of preprocessors works just as well in AMP as any other web
 For example, the [ampproject.org](https://www.ampproject.org/) site uses
 [Sass](http://sass-lang.com/).
 (We use [Jekyll](https://jekyllrb.com/) to build the static AMP pages
-that make up the [ampproject.org](https://www.ampproject.org/) site.) 
+that make up the [ampproject.org](https://www.ampproject.org/) site.)
 
 When using preprocessors,
 pay special attention to what you include; load only what your pages use.
@@ -158,8 +158,8 @@ so that many pages across the site can include embedded youtube videos.
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <style>body {opacity: 0}</style><noscript><style>body {opacity: 1}</style></noscript>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>  
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
   <style amp-custom>{% capture include_to_sassify %}{% include amp-custom.scss %}{% endcapture %}
     {{ include_to_sassify | scssify }}    </style>
