@@ -31,7 +31,7 @@ The simplest AMP HTML file looks like this:
    <meta charset="utf-8">
    <link rel="canonical" href="hello-world.html">
    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-   <style>body {opacity: 0}</style><noscript><style>body {opacity: 1}</style></noscript>
+   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
    <script async src="https://cdn.ampproject.org/v0.js"></script>
  </head>
  <body>Hello World!</body>
@@ -69,12 +69,12 @@ When using the AMP CDN, the document, all JS files and all images load
 from the same origin that is using
 [HTTP 2.0](https://http2.github.io/) for maximum efficiency.
 
-AMP’s CDN also comes with a built-in 
+AMP’s CDN also comes with a built-in
 [validation system](https://github.com/ampproject/amphtml/tree/master/validator)
 which confirms that the page is guaranteed to work,
 and that it doesn't depend on external resources.
 The validation system runs a series of assertions
-confirming the page’s markup meets the AMP HTML specification. 
+confirming the page’s markup meets the AMP HTML specification.
 
 Another version of the validator comes bundled with every AMP page. This version can log validation errors directly to the browser’s console when the page is rendered,
 allowing you to see how complex changes in your code
