@@ -82,7 +82,7 @@ they are also referenced in the [AMP specification](/docs/reference/spec.html).
   </tr>
 </table>
 
-The validator throws the `TAG_REQUIRED_BY_MISSING` error,
+The validator throws the `TAG_REQUIRED_BY_MISSING` error
 when it finds an extended component in the AMP document,
 but doesn't find it's equivalent `<script>`.
 
@@ -802,8 +802,8 @@ in an attribute value.
   </tr>
 </table>
 
-This error occurs anytime the validator finds unescaped
-[Mustache template syntax](https://mustache.github.io/mustache.5.html)
+This error occurs anytime the validator finds
+[unescaped Mustache template syntax](https://mustache.github.io/mustache.5.html)
 in an attribute value.
 
 ### Attribute contains template partial
@@ -823,7 +823,7 @@ in an attribute value.
   </tr>
 </table>
 
-This error occurs anytime the validator finds unescaped
+This error occurs anytime the validator finds a
 [Mustache partial](https://mustache.github.io/mustache.5.html)
 in an attribute value.
 
