@@ -41,6 +41,13 @@ Example `amp-twitter` from the
 Embed an Instagram in your page
 using the [`amp-instagram`](/docs/reference/extended/amp-instagram.html) element.
 
+To include an Instagram post in your page,
+first include the following script to the `<head>`:
+
+{% highlight html %}
+<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+{% endhighlight html %}
+
 Include the Instagram data-shortcode found in the Instagram photo URL.
 For example, in `https://instagram.com/p/fBwFP`,
 `fBwFP` is the data-shortcode.
