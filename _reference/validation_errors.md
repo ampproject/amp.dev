@@ -50,16 +50,15 @@ see the [AMP validator specification](https://github.com/ampproject/amphtml/blob
 
 The following tags must be present in all AMP docs:
 
-* `<!doctype html>`
-* `<html amp> or <html ⚡>`
-* `<head>`
-* `<link rel="canonical" href="$SOME_URL" />`
-* `<meta charset="utf-8">`
-* `<meta name="viewport" content="...">`
-* `<style amp-boilerplate>body{...}</style>`
-* `<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* `<script async src="https://cdn.ampproject.org/v0.js"></script>`
-* `<body>`
+* <a name="doctype"></a>`<!doctype html>`
+* <a name="html"></a>`<html amp> or <html ⚡>`
+* <a name="head"></a>`<head>`
+* <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL" />`
+* <a name="utf"></a>`<meta charset="utf-8">`
+* <a name="viewport"></a>`<meta name="viewport" content="...">`
+* <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+* <a name="body"></a>`<body>`
 
 These mandatory tags include a `mandatory: true` field in the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii">AMP validator spec</a>;
 they are also referenced in the [AMP specification](/docs/reference/spec.html).
@@ -183,13 +182,12 @@ to see if the attribute requires HTTPS.
 </table>
 
 Attributes are whitelisted, so there is no definitive list of all disallowed attributes.
+To check the supported attributes for each specific tag,
+search for HTML tag, and then `attrs`
+in the [AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
 
-View the latest lists of whitelisted attributes for an HTML tag in the
-[AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
-Simply search for the HTML tag, and then "whitelist"
-to see which attributes have been whitelisted for that tag.
-
-Note that in addition to a whitelist of specific attributes,
+In addition to a whitelist of specific attributes for each tag,
+all AMP tags can use any of the attributes white-listed under `$GLOBAL_ATTRS`;
 all attributes with a prefix of `"data-"` are also whitelisted.
 
 ### Mandatory text missing or incorrect
@@ -209,12 +207,13 @@ all attributes with a prefix of `"data-"` are also whitelisted.
   </tr>
 </table>
 
-Cdata is the content data between a start and end HTML tag
+CDATA is the content data between a start and end HTML tag
 and is currently evaluated with both whitelists and blacklists.
-Tags with mandatory cdata include:
+Tags with mandatory CDATA include:
 
-* `<style amp-boilerplate>body{...}</style>`
-* `<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+* ```html
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+```
 * `<style amp-custom>` - disallows a variety of specific css constructs like `@import` or `!important`.
 
 Detailed messages for this can be one of the following: 
@@ -252,7 +251,7 @@ Specific CSS data has been blacklisted
 to validate essential CSS AMP rules.
 
 The following is the list of blacklisted CSS data
-(see also [`blacklisted_cddata_regex in the AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
+(see also [`blacklisted_cdata_regex` in the AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
 
 * `"\\.i?-amp-"` ("CSS -amp- class name prefix")
 * `"!important"`
@@ -331,6 +330,67 @@ the following would result in an error:
 
 It should be: `<meta http-equiv=X-UA-Compatible" content="ie=edge">`
 
+### Missing URL
+
+<table>
+  <tr>
+    <td width="30%"><strong>Code</strong></td>
+    <td>MISSING_URL</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Format</strong></td>
+    <td>"Missing URL for attribute '%1' in tag '%2'."</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Fix</strong></td>
+    <td>Add the valid URL.</td>
+  </tr>
+</table>
+
+This error occurs when an attribute that requires a URL is missing it,
+for example, an empty `href` or `src` attribute.
+
+### Invalid URL
+
+<table>
+  <tr>
+    <td width="30%"><strong>Code</strong></td>
+    <td>INVALID_URL_PROTOCOL</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Format</strong></td>
+    <td>"Malformed URL '%3' for attribute '%1' in tag '%2'"</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Fix</strong></td>
+    <td>Fix the broken URL.</td>
+  </tr>
+</table>
+
+This error occurs when a attribute has a URL,
+but the URL is invalid.
+
+### Invalid URL protocol
+
+<table>
+  <tr>
+    <td width="30%"><strong>Code</strong></td>
+    <td>INVALID_URL_PROTOCOL</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Format</strong></td>
+    <td>Invalid URL protocol '%3:' for attribute '%1' in tag '%2'.</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Fix</strong></td>
+    <td>Change to a valid protocol, for example, `http` may need to be `https`.</td>
+  </tr>
+</table>
+
+This error occurs for tags that have an `href` or `src`
+that must be set to certain protocols.
+For example, many tags require `https`.
+
 ### Mandatory property missing from attribute
 
 <table>
@@ -376,10 +436,10 @@ They refer to expected tags:
   </tr>
 </table>
 
-This error occurs when one of the following tags has both of the mutually exclusive attributes;
-only one is allowed:
+This error occurs when a tag has both of the mutually exclusive attributes.
+For example, only one is allowed for the following tags:
 
-* [amp-twitter](/docs/reference/extended/amp-instagram.html): `data-tweetid` or `src`
+* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` or `src`
 * [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` or `src`
 * [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` or `srcdoc`
 * [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` or `data-videoid`
@@ -401,10 +461,11 @@ only one is allowed:
   </tr>
 </table>
 
-This error occurs when one of the following tags is missing one required attribute
-from two possible choices:
+This error occurs when a tag is missing one required attribute
+from multiple choices.
+For example, these tags require one attribute from two possible choices:
 
-* [amp-twitter](/docs/reference/extended/amp-instagram.html): `data-tweetid` or `src`
+* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` or `src`
 * [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` or `src`
 * [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` or `srcdoc`
 * [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` or `data-videoid`
@@ -430,17 +491,17 @@ Specific tags require an immediate parent (as opposed to distant ancestor).
 The following lists the required parent for specific tags
 (tag, parent):
 
-* `!doctype`, `root`
-* `html`, `!doctype`
-* `head`, `html`
-* `body`, `html`
-* `link`, `head`
-* `meta`, `head`
-* `style amp-custom`, `head`
-* `style`, `boilerplate (noscript)`
-* `noscript`, `head`
-* `script`, `head`
-* `source`, media tag (`amp-audio`, `amp-video`, etc.)
+* `!doctype` requires parent tag `root`.
+* `html` requires parent tag `!doctype`.
+* `head` requires parent tag `html`.
+* `body` requires parent tag `html`.
+* `link` requires parent tag `head`.
+* `meta` requires parent tag `head`.
+* `style amp-custom` requires parent tag `head`.
+* `style` requires parent tag `boilerplate (noscript)`.
+* `noscript` requires parent tag `head`.
+* `script` requires parent tag `head`.
+* `source` requires a media tag (`amp-audio`, `amp-video`, etc.).
 
 ### Disallowed tag ancestor
 
@@ -488,10 +549,10 @@ as `mandatory_ancestor`.
 The error occurs when the following tags
 are missing their `mandatory_ancestor` (tag, ancestor):
 
-* `img`, `noscript`
-* `video`, `noscript`
-* `audio`, `noscript`
-* `noscript`, `body`
+* `img` must be a descendant of `noscript`.
+* `video` must be a descendant of `noscript`.
+* `audio` must be a descendant of `noscript`.
+* `noscript` must be a descendant of `body`.
 
 ### Mandatory tag ancestor with hint
 
@@ -548,8 +609,7 @@ The full list of unique tags is known:
 * `<meta charset="utf-8">`
 * `<meta viewport>`
 * `<style amp-custom>`
-* `<style amp-boilerplate>body{...}</style>`
-* `<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+* `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
@@ -640,10 +700,12 @@ through an online CSS validator, for example,
   </tr>
 </table>
 
-Similar to CSS_SYNTAX error,
-this error occurs when you've CSS syntax errors
-in the specified tag.
-This error tells you the specific rule that's invalid,
+This error refers to the @-rules within CSS,
+for which AMP only allows a handful of rules.
+(see also the [AMP specification](/docs/reference/spec.html)).
+For example, <code>@import</code> isn't allowed.
+The validation error specifically
+tells you the rule that's invalid,
 making it easier to fix that rule.
 
 ### Implied layout isn't supported by AMP tag
@@ -668,6 +730,11 @@ and the implied layout (based on width, height, and sizes) isn't supported.
 Check the `supported_layout` values for the tag
 in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
 
+Actual layout behavior is determined by the `layout` attribute.
+For more on how layout works,
+see [How to Control Layout](/docs/guides/responsive/control_layout.html) and
+the [AMP HTML layout system specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+
 **Note:** If you don't specify the layout,
 and you don't include `width` and `height` values,
 the layout defaults to CONTAINER.
@@ -675,6 +742,29 @@ The validator throws an error
 as CONTAINER isn't supported in any AMP tags.
 Specify a layout other than CONTAINER,
 or add a `width` and/or `height` value and the error goes away.
+
+### Attribute not allowed by implied layout
+
+<table>
+  <tr>
+    <td width="30%"><strong>Code</strong></td>
+    <td>ATTR_DISALLOWED_BY_IMPLIED_LAYOUT</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Format</strong></td>
+    <td>"The attribute '%1' in tag '%2' is disallowed by implied layout '%3'."</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Fix</strong></td>
+    <td>Remove the disallowed attribute from the tag,
+      or else specify a layout that allows it.</td>
+  </tr>
+</table>
+
+This error occurs when you don't specify a layout for the AMP tag,
+and the implied layout contains a disallowed attribute.
+Disallowed attributes for layout types are described in the
+[AMP HTML layout system specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 ### Specified layout isn't supported by AMP tag
 
@@ -697,6 +787,34 @@ This error occurs when the specified layout
 for the tag isn't supported.
 Check the `supported_layout` values for the tag
 in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
+
+Actual layout behavior is determined by the `layout` attribute.
+For more on how layout works,
+see [How to Control Layout](/docs/guides/responsive/control_layout.html) and
+the [AMP HTML layout system specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+
+### Attribute not allowed by specified layout
+
+<table>
+  <tr>
+    <td width="30%"><strong>Code</strong></td>
+    <td>ATTR_DISALLOWED_BY_SPECIFIED_LAYOUT</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Format</strong></td>
+    <td>"The attribute '%1' in tag '%2' is disallowed by implied layout '%3'."</td>
+  </tr>
+   <tr>
+    <td width="30%"><strong>Fix</strong></td>
+    <td>Remove the disallowed attribute from the tag,
+      or else specify a layout that allows it.</td>
+  </tr>
+</table>
+
+This error occurs when you specify a layout for the AMP tag,
+and the layout contains a disallowed attribute.
+Disallowed attributes for layout types are described in the
+[AMP HTML layout system specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 ### Invalid value for attribute required by layout
 
@@ -828,29 +946,6 @@ This error occurs anytime the validator finds a
 in an attribute value.
 
 ## Deprecation errors
-
-### Development mode attribute obsolete
-
-<table>
-  <tr>
-  	<td width="30%"><strong>Code</strong></td>
-  	<td>DEV_MODE_ENABLED</td>
-  </tr>
-   <tr>
-  	<td width="30%"><strong>Format</strong></td>
-  	<td>"The attribute '%1' in tag '%2' enables the development mode. Please remove, this feature is obsolete."</td>
-  </tr>
-   <tr>
-  	<td width="30%"><strong>Fix</strong></td>
-  	<td>Remove development attribute from the runtime script.</td>
-  </tr>
-</table>
-
-This error triggers when the validator finds the development attribute
-inside the AMP HTML runtime script tag.
-Enabling developer mode in the script tag was an early feature of the runtime.
-Now developer mode is enabled by adding `#developer=1` to the AMP page's URL in the browser
-(see also [Preview and Validate docs](/docs/get_started/create/preview_and_validate.html)).
 
 ### Deprecated tag
 
