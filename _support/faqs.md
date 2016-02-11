@@ -38,6 +38,7 @@ On October 7th, 2015, the Accelerated Mobile Pages Project announced the release
 
 The project is open to all players in the ecosystem - publishers, consumer platforms, and creators. In this early stage of the project, a group of publishers and platforms have come together to demonstrate how Accelerated Mobile Pages can transform the mobile web experience. They include platforms like Twitter and Google, tech players like ChartBeat and WordPress.com and publishers like Vox, The New York Times, The Guardian and Globo.  
 
+### What are the consequences of using Accelerated Mobile Pages?
 By using the AMP format, content producers are making the content in AMP files available to be crawled, indexed & displayed (subject to the robots exclusion protocol) and cached by third parties.
 
 ### What type of content will work best using Accelerated Mobile Pages?
