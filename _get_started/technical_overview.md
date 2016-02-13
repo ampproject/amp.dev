@@ -79,7 +79,7 @@ you’re in 18 seconds of load time just for JS loading.
 
 AMP pages allow third-party JavaScript but only in sandboxed iframes.
 By banning them into iframes, they can’t block execution of the main page.
-Even if they trigger multiple style re-calcualtions,
+Even if they trigger multiple style re-calculations,
 their tiny iframes have very little DOM. 
 
 Style-recalculations and layouts are typical to DOM size,
@@ -153,7 +153,7 @@ when resources are actually shown to users.
 The new [preconnect API](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
 is used heavily to ensure HTTP requests are as fast as possible when they are made.
 With this,
-a page can be rendered before the user explicitely states they’d like to navigate to it;
+a page can be rendered before the user explicitly states they’d like to navigate to it;
 the page might already be available by the time the user actually selects it,
 leading to instant loading.
 
