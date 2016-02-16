@@ -73,16 +73,16 @@ AMP creates the iframe box before it even knows what it will include:
 
 Third-party JS likes to use synchronous JS loading.
 They also like to `document.write` more sync scripts.
-For example, If you five ads, and each does three sync loads,
-with a 1 second latency connection,
+For example, if you have five ads on your page, and each of them cause three synchronous loads,
+each with a 1 second latency connection,
 you’re in 18 seconds of load time just for JS loading. 
 
 AMP pages allow third-party JavaScript but only in sandboxed iframes.
-By banning them into iframes, they can’t block execution of the main page.
+By restricting them to iframes, they can’t block the execution of the main page.
 Even if they trigger multiple style re-calculations,
 their tiny iframes have very little DOM. 
 
-Style-recalculations and layouts are typical to DOM size,
+The time it takes to do style-recalculations and layouts are restricted by DOM size,
 so the iframe recalculations are very fast compared
 to a recalculating styles and layout for the page.
 
@@ -107,7 +107,7 @@ the browser waits and waits to start downloading these huge fonts until all this
 
 The AMP system declares zero HTTP requests until fonts start downloading.
 This is only possible because all JS in AMP has the async attribute
-and online inline style sheets are allow;
+and online inline style sheets are allowed;
 there’s no HTTP requests blocking the browser from downloading fonts.
 
 ## Minimize style recalculations
