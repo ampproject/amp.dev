@@ -136,7 +136,7 @@ Learn more about
 ## Prioritize resource loading
 
 AMP controls all resource downloads: it prioritizes resource loading,
-loading only what’s needed, and prefectches lazy-loaded resources. 
+loading only what’s needed, and prefetches lazy-loaded resources. 
 
 When AMP downloads resources, it optimizes downloads
 so that the currently most important resources are downloaded first.
