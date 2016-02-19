@@ -3,6 +3,12 @@ layout: page
 title: What Is AMP?
 order: 0
 ---
+<amp-youtube
+    data-videoid="lBTCB7yLs8Y"
+    layout="responsive"
+    width="480" height="270">
+</amp-youtube>
+
 AMP is a way to build web pages for static content that render fast.
 AMP in action consists of three different parts:
 
@@ -12,12 +18,6 @@ AMP in action consists of three different parts:
 and some extensions for building rich content beyond basic HTML.
 The **AMP JS** library ensures the fast rendering of AMP HTML pages.
 The **AMP CDN** (optionally) delivers the AMP HTML pages.
-
-<amp-youtube
-    data-videoid="SOx1XfOjJPI"
-    layout="responsive"
-    width="480" height="270">
-</amp-youtube>
 
 ## AMP HTML
 
