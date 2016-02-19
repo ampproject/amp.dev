@@ -10,6 +10,16 @@
 		margin-top: 0;
 	}
 
+    h1,h2,h3,h4,h5 {
+        &:before {
+            display: block;
+            content: " ";
+            margin-top: -106px;
+            height: 106px;
+            visibility: hidden;
+        }
+    }
+
 	.content {
 
         flex-grow: 1;
