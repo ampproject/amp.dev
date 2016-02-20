@@ -22,14 +22,14 @@ unless they do not specify allow-same-origin.
 To include an `amp-iframe` in your page,
 first include the following script to the `<head>`, which loads the additional code for the extended component:
 
-{% highlight html %}
+{% highlight html linenos %}
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 {% endhighlight html %}
 
 An example `amp-iframe` from the
 [released.amp example](https://github.com/ampproject/amphtml/blob/master/examples/released.amp.html):
 
-{% highlight html %}
+{% highlight html linenos %}
 <amp-iframe width=300 height=300
     sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
     layout="responsive"
@@ -54,19 +54,19 @@ using the [`amp-img`](/docs/reference/amp-img.html) element.
 
 Responsive image example:
 
-{% highlight html %}
+{% highlight html linenos %}
 <amp-img src="responsive.jpg" width=527 height=193 layout="responsive" ></amp-img>
 {% endhighlight html %}
 
 Fixed-size image example:
 
-{% highlight html %}
+{% highlight html linenos %}
 <amp-img id="img1" src="fixed.jpg" width=264 height=96></amp-img>
 {% endhighlight html %}
 
 Hidden image example:
 
-{% highlight html %}
+{% highlight html linenos %}
 <amp-img id="img2" src="hidden.jpg" width=527 height=193 layout="nodisplay"></amp-img>
 {% endhighlight html %}
 
@@ -79,7 +79,7 @@ the space will be blank.
 Set a placeholder background color or other visual
 using a CSS selector and style on the element itself:
 
-{% highlight css %}
+{% highlight css linenos %}
 amp-img {
   background-color: grey;
 }
@@ -97,7 +97,7 @@ of animated images such as GIFs.
 To include an `amp-anim` in your page,
 first include the following script to the `<head>`:
 
-{% highlight html %}
+{% highlight html linenos %}
 <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
 {% endhighlight html %}
 
@@ -105,7 +105,7 @@ The `amp-anim` component can also have an optional placeholder child
 to display while the `src` file is loading.
 The placeholder is specified via the `placeholder` attribute:
 
-{% highlight html %}
+{% highlight html linenos %}
 <amp-anim width=400 height=300 src="my-gif.gif">
   <amp-img placeholder width=400 height=300 src="my-gif-screencap.jpg">
   </amp-img>
@@ -124,7 +124,7 @@ at a time determined by the AMP HTML runtime.
 Include a placeholder before the video starts, and a fallback,
 if the browser doesn't support HTML5 video, for example:
 
-{% highlight html %}
+{% highlight html linenos %}
 <amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
     poster="myvideo-poster.jpg">
   <div fallback>
@@ -140,7 +140,7 @@ using the [`amp-audio`](/docs/reference/extended/amp-audio) element.
 
 You must include the following script in the `<head>`:
 
-{% highlight html %}
+{% highlight html linenos %}
 <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
 {% endhighlight html %}
 
@@ -152,7 +152,7 @@ at a time determined by the AMP HTML runtime.
 Include a placeholder before the audio starts, and a fallback,
 if the browser doesn't support HTML5 audio, for example:
 
-{% highlight html %}
+{% highlight html linenos %}
 <amp-audio width=400 height=300 src="https://yourhost.com/audios/myaudio.mp3">
   <div fallback>
     <p>Your browser doesn’t support HTML5 audio</p>

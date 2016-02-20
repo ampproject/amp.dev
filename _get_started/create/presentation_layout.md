@@ -8,7 +8,7 @@ order: 2
 
 AMPs are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors in an inline stylesheet in the `<head>`, called `<style amp-custom>`:
 
-{% highlight html %}
+{% highlight html linenos %}
 <style amp-custom>
   /* any custom style goes here */
   body {

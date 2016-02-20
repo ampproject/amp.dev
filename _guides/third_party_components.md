@@ -16,7 +16,7 @@ using the [`amp-twitter`](/docs/reference/extended/amp-twitter.html) element.
 To include a tweet in your page,
 first include the following script to the `<head>`:
 
-{% highlight html %}
+{% highlight html linenos %}
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 {% endhighlight html %}
 
@@ -29,7 +29,7 @@ to select the aspect ratio based on screen width.
 Example `amp-twitter` from the
 [twitter.amp example](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html):
 
-{% highlight html %}
+{% highlight html linenos %}
 <amp-twitter width=390 height=50
     layout="responsive"
     data-tweetid="638793490521001985">
@@ -47,7 +47,7 @@ For example, in `https://instagram.com/p/fBwFP`,
 Also, Instagram uses a fixed aspect ratio for responsive layouts,
 so the value for width and height should be universal
 
-{% highlight html %}
+{% highlight html linenos %}
 <amp-instagram
     data-shortcode="fBwFP"
     width="320"
@@ -63,7 +63,7 @@ using the [`amp-youtube`](/docs/reference/extended/amp-youtube.html) element.
 
 You must include the following script in the `<head>`:
 
-{% highlight html %}
+{% highlight html linenos %}
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 {% endhighlight html %}
 

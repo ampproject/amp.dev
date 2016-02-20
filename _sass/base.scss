@@ -153,17 +153,6 @@ code {
     padding: 1px 5px;
 }
 
-pre {
-    overflow: auto;
-    tab-size: 2;
-    word-break: normal;
-    line-height: 1.4;
-
-    > code {
-      white-space: pre;
-    }
-}
-
 table {
   border-collapse: collapse;
 }

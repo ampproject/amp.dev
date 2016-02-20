@@ -1,6 +1,25 @@
 /**
  * Syntax highlighting styles
  */
+pre {
+    overflow: auto;
+    tab-size: 2;
+    word-break: normal;
+    line-height: 1.4;
+    background: #F7F7F7;
+
+    > code {
+      white-space: pre;
+      word-wrap: initial;
+      display: block;
+
+      td {
+        border: 0;
+      }
+
+    }
+}
+
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #aaaaaa; font-style: italic } /* Comment */
 .highlight .err { color: #F00000; } /* Error */
