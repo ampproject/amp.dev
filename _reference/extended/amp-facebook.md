@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-facebook
-order: 7
+order: 9
 ---
 
 <!---
@@ -23,7 +23,56 @@ limitations under the License.
 
 
 
-Displays a Facebook Post or Video. 
+<table>
+  <tr>
+    <td width="40%"><strong>Description</strong></td>
+    <td>Displays a Facebook Post or Video. </td>
+  </tr>
+  <tr>
+    <td width="40%"><strong>Availability</strong></td>
+    <td>Stable.</td>
+  </tr>
+  <tr>
+    <td width="40%"><strong>Required Script</strong></td>
+    <td><code>&lt;script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js">&lt;/script></code></td>
+  </tr>
+  <tr>
+    <td width="40%"><strong>Examples</strong></td>
+    <td><a href="https://github.com/ampproject/amphtml/blob/master/examples/facebook.amp.html">facebook.amp.html</a></td>
+  </tr>
+</table>
+
+The following lists validation errors specific to the `amp-anim` tag
+(see also `amp-anim` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii):
+
+<table>
+  <tr>
+    <th width="40%"><strong>Validation Error</strong></th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">TAG_REQUIRED_BY_MISSING</a></td>
+    <td>Error thrown when required <code>amp-facebook</code> extension <code>.js</code> script tag is missing or incorrect.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#mandatory-attribute-missing">MANDATORY_ATTR_MISSING</a></td>
+    <td>Error thrown when <code>data-href</code> attribute is missing.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#implied-layout-isnt-supported-by-amp-tag">IMPLIED_LAYOUT_INVALID</a></td>
+    <td>Error thrown when implied layout is set to <code>CONTAINER</code>; this layout type isn't supported.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#specified-layout-isnt-supported-by-amp-tag">SPECIFIED_LAYOUT_INVALID</a></td>
+    <td>Error thrown when specified layout is set to <code>CONTAINER</code>; this layout type isn't supported.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#invalid-property-value">INVALID_PROPERTY_VALUE_IN_ATTR_VALUE</a></td>
+    <td>Error thrown when invalid value is given for attributes <code>height</code> or <code>width</code>. For example, <code>height=auto</code> triggers this error for all supported layout types, with the exception of <code>NODISPLAY</code>.</td>
+  </tr>
+</table>
+
+#### Examples
 
 Example - Embedding a post:
 {% highlight html %}
@@ -41,7 +90,6 @@ Example - Embedding a video:
     data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
 </amp-facebook>
 {% endhighlight %}
-
 
 #### Attributes
 

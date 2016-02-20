@@ -24,7 +24,7 @@ The **AMP CDN** (optionally) delivers the AMP HTML pages.
 AMP HTML is basically HTML extended with custom AMP properties.
 The simplest AMP HTML file looks like this:
 
-{% highlight html %}
+{% highlight html linenos %}
 <!doctype html>
 <html ⚡>
  <head>

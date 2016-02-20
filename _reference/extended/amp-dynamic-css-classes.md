@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-dynamic-css-classes
-order: 6
+order: 8
 ---
 
 <!---
@@ -23,8 +23,20 @@ limitations under the License.
 
 
 
-The AMP Dynamic CSS Classes extension adds several dynamic CSS class
-names onto the HTML element.
+<table>
+  <tr>
+    <td width="40%"><strong>Description</strong></td>
+    <td>Adds several dynamic CSS class names onto the HTML element.</td>
+  </tr>
+  <tr>
+    <td width="40%"><strong>Availability</strong></td>
+    <td><a href="/docs/reference/experimental.html">Experimental</a></td>
+  </tr>
+  <tr>
+    <td width="40%"><strong>Examples</strong></td>
+    <td>None</td>
+  </tr>
+</table>
 
 #### Behavior
 

@@ -143,12 +143,10 @@ blockquote {
 /**
  * Code formatting
  */
-pre,
 code {
     font-size: 15px;
     border: 1px solid $color-lightgrey;
     border-radius: 3px;
-    background-color: #eef;
 }
 
 code {
@@ -156,14 +154,13 @@ code {
 }
 
 pre {
-    padding: 8px 12px;
-    overflow-x: auto;
-    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 2;
+    word-break: normal;
+    line-height: 1.4;
 
     > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
+      white-space: pre;
     }
 }
 
@@ -172,8 +169,13 @@ table {
 }
 
 td, th {
-  border: 1px solid #999;
+  border: 1px solid #FFFFFF;
+  background: #F7F7F7;
   padding: 0.5rem;
   text-align: left;
+}
+
+th {
+  background: #eee;
 }
 

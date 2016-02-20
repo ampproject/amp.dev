@@ -33,7 +33,60 @@ limitations under the License.
 
 AMP documents only support ads served via HTTPS.
 
-#### Behavior
+<table>
+  <tr>
+    <td width="40%"><strong>Description</strong></td>
+    <td>A container to display an ad.</td>
+  </tr>
+  <tr>
+    <td width="40%"><strong>Availability</strong></td>
+    <td>Stable</td>
+  </tr>
+  <tr>
+    <td width="40%"><strong>Examples</strong></td>
+    <td><a href="https://github.com/ampproject/amphtml/blob/master/examples/ads.amp.html">ads.amp.html</a></td>
+  </tr>
+</table>
+
+The following lists validation errors specific to the `amp-ad` tag
+(see also `amp-ad` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii):
+
+<table>
+  <tr>
+    <th width="40%"><strong>Validation Error</strong></th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#mandatory-attribute-missing">MANDATORY_ATTR_MISSING</a></td>
+    <td>Error thrown when <code>type</code> attribute missing.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#missing-url">MISSING_URL</a></td>
+    <td>Error thrown when <code>src</code> attribute is missing it's URL.</td>
+  </tr>
+  <tr>
+  <td width="40%"><a href="/docs/reference/validation_errors.html#invalid-url">INVALID_URL</a></td>
+    <td>Error thrown when <code>src</code> attribute's URL is invalid.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#invalid-url-protocol">INVALID_URL_PROTOCOL</a></td>
+    <td>Error thrown <code>src</code> attribute's URL is <code>http</code>; <code>https</code> protocol required.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#implied-layout-isnt-supported-by-amp-tag">IMPLIED_LAYOUT_INVALID</a></td>
+    <td>Error thrown when implied set to <code>CONTAINER</code>; this layout type isn't supported.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#specified-layout-isnt-supported-by-amp-tag">SPECIFIED_LAYOUT_INVALID</a></td>
+    <td>Error thrown when specified layout set to <code>CONTAINER</code>; this layout type isn't supported.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#invalid-property-value">INVALID_PROPERTY_VALUE_IN_ATTR_VALUE</a></td>
+    <td>Error thrown when invalid value is given for attributes <code>height</code> or <code>width</code>. For example, <code>height=auto</code> triggers this error for all supported layout types, with the exception of <code>NODISPLAY</code>.</td>
+  </tr>
+</table>
+
+### Behavior
 
 The `<amp-ad>` requires width and height values to be specified like all
 resources in AMP. It requires a `type` argument that select what ad network is displayed. All `data-*` attributes on the tag are automatically passed as arguments to the code that eventually renders the ad. What `data-` attributes are required for a given type of network depends and must be documented with the ad network.
@@ -46,6 +99,21 @@ resources in AMP. It requires a `type` argument that select what ad network is d
 </amp-ad>
 {% endhighlight %}
 
+#### Supported ad networks
+
+- [A9](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/a9.md)
+- [Adform](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adform.md)
+- [AdReactor](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adreactor.md)
+- [AdSense](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adsense.md)
+- [AdTech](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adtech.md)
+- [Dot and Media](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/dotandads.md)
+- [Doubleclick](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/doubleclick.md)
+- [Flite](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/flite.md)
+- [plista](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/plista.md)
+- [Smart AdServer](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/smartadserver.md)
+- [Yieldmo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yieldmo.md)
+- [Revcontent](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/revcontent.md)
+
 #### Styling
 
 `<amp-ad>` elements may not themselves have or be placed in containers that have CSS `position: fixed` set (with the exception of `amp-lightbox`).
@@ -53,21 +121,25 @@ This is due to the UX implications of full page overlay ads. It may be considere
 
 #### Attributes
 
-**type**
+##### type
 
 Identifier for the ad network. This selects the template that is used for the ad tag.
 
-**src**
+##### src
 
 Optional src value for a script tag loaded for this ad network. This can be used with ad networks that require exactly a single script tag to be inserted in the page. The src value must have a prefix that is whitelisted for this ad network.
 
-**data-foo-bar**
+##### data-foo-bar
 
 Most ad networks require further configuration. This can be passed to the network using HTML `data-` attributes. The parameter names are subject to standard data attribute dash to camel case conversion. E.g. "data-foo-bar" is send to the ad for configuration as "fooBar".
 
-**json**
+##### json
 
 Optional attribute to pass configuration to the ad as an arbitrarily complex JSON object. The object is passed to the ad as-is with no mangling done on the names.
+
+##### data-consent-notification-id
+
+Optional attribute. If provided will require confirming the [amp-user-notification](https://github.com/ampproject/amphtml/blob/master/builtins/../extensions/amp-user-notification/amp-user-notification.md) with the given HTML-id until the "AMP client id" for the user (similar to a cookie) is passed to the ad. The means ad rendering is delayed until the user confirmed the notification.
 
 #### Placeholder
 
@@ -90,15 +162,6 @@ Optionally `amp-ad` supports a child element with the `placeholder` attribute. I
 {% endhighlight %}
 
 - If there is no fallback element available, the amp-ad tag will be collapsed (set to display: none) if the ad sends a message that the ad slot cannot be filled and AMP determines that this operation can be performed without affecting the user's scroll position.
-
-#### Supported ad networks
-
-- [A9](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/a9.md)
-- [AdReactor](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adreactor.md)
-- [AdSense](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adsense.md)
-- [AdTech](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adtech.md)
-- [Doubleclick](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/doubleclick.md)
-
 
 #### Running ads from a custom domain
 
