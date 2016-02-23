@@ -99,9 +99,11 @@ The `access-pingback-failed` event is issued when the Pingback endpoint has fail
 }
 {% endhighlight %}
 
-###### Login started trigger (`"on": "access-login-started"`)
+###### Login started trigger (`"on": "access-login[-type]-started"`)
 
-The `access-login-started` event is issued right before the Login dialog has been opened. Use these configurations to fire a request for this event.
+The `access-login[-type]-started` event is issued right before the Login dialog has been opened. Use these configurations to fire a request for this event.
+
+When only one Login URL is configured, the event is `access-login-started`. When multiple Login URLs are configured, the event is `access-login-type-started`, e.g. "access-login-signup-started". See [Login Page Spec](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/./amp-access-spec.md#login-page) for more info.
 
 {% highlight javascript %}
 "triggers": {
@@ -112,9 +114,11 @@ The `access-login-started` event is issued right before the Login dialog has bee
 }
 {% endhighlight %}
 
-###### Login success trigger (`"on": "access-login-success"`)
+###### Login success trigger (`"on": "access-login[-type]-success"`)
 
-The `access-login-success` event is issued when Login dialog has succeeded. Use these configurations to fire a request for this event.
+The `access-login[-type]-success` event is issued when Login dialog has succeeded. Use these configurations to fire a request for this event.
+
+When only one Login URL is configured, the event is `access-login-success`. When multiple Login URLs are configured, the event is `access-login-type-success`, e.g. "access-login-signup-success". See [Login Page Spec](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/./amp-access-spec.md#login-page) for more info.
 
 {% highlight javascript %}
 "triggers": {
@@ -125,9 +129,11 @@ The `access-login-success` event is issued when Login dialog has succeeded. Use 
 }
 {% endhighlight %}
 
-###### Login rejected trigger (`"on": "access-login-rejected"`)
+###### Login rejected trigger (`"on": "access-login[-type]-rejected"`)
 
-The `access-login-rejected` event is issued when Login dialog has been rejected by the user. Use these configurations to fire a request for this event.
+The `access-login[-type]-rejected` event is issued when Login dialog has been rejected by the user. Use these configurations to fire a request for this event.
+
+When only one Login URL is configured, the event is `access-login-rejected`. When multiple Login URLs are configured, the event is `access-login-type-rejected`, e.g. "access-login-signup-rejected". See [Login Page Spec](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/./amp-access-spec.md#login-page) for more info.
 
 {% highlight javascript %}
 "triggers": {
@@ -138,9 +144,11 @@ The `access-login-rejected` event is issued when Login dialog has been rejected 
 }
 {% endhighlight %}
 
-###### Login failed trigger (`"on": "access-login-failed"`)
+###### Login failed trigger (`"on": "access-login[-type]-failed"`)
 
-The `access-login-failed` event is issued when Login dialog has failed due to an unknown reason. Use these configurations to fire a request for this event.
+The `access-login[-type]-failed` event is issued when Login dialog has failed due to an unknown reason. Use these configurations to fire a request for this event.
+
+When only one Login URL is configured, the event is `access-login[-type]-rejected`. When multiple Login URLs are configured, the event is `access-login-type-rejected`, e.g. "access-login-signup-rejected". See [Login Page Spec](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/./amp-access-spec.md#login-page) for more info.
 
 {% highlight javascript %}
 "triggers": {
@@ -163,6 +171,6 @@ The `ACCESS_READER_ID` variable is substituted with the Reader ID used for acces
 
 The `AUTHDATA(field)` variable is substituted with the value of the field in the authorization response. The nested fields are allowed, such as `AUTHDATA(nested.field)`.
 
-This variable is replaced with empty string if queried before the authorization response is received.
+This variable will wait until authorization is complete before being available.
 
 Data contained in `AUTHDATA` may be sensitive and care should be taken in sharing it. Please ensure that any data you pass to a third party complies with its terms of service.
