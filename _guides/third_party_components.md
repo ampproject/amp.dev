@@ -14,7 +14,7 @@ Embed a Twitter Tweet in your page
 using the [`amp-twitter`](/docs/reference/extended/amp-twitter.html) element.
 
 To include a tweet in your page,
-first include the following script to the `<head>`:
+first include the following script in the `<head>`:
 
 {% highlight html linenos %}
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
@@ -41,6 +41,13 @@ Example `amp-twitter` from the
 Embed an Instagram in your page
 using the [`amp-instagram`](/docs/reference/extended/amp-instagram.html) element.
 
+To include an Instagram,
+first include the following script in the `<head>`:
+
+{% highlight html linenos %}
+<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+{% endhighlight html %}
+
 Include the Instagram data-shortcode found in the Instagram photo URL.
 For example, in `https://instagram.com/p/fBwFP`,
 `fBwFP` is the data-shortcode.
@@ -54,6 +61,36 @@ so the value for width and height should be universal
     height="392"
     layout="responsive">
 </amp-instagram>
+{% endhighlight html %}
+
+## Display Facebook post or video
+
+Display a Facebook post or video in your page
+using the [`amp-facebook`](/docs/reference/extended/amp-facebook.html) element.
+
+You must include the following script in the `<head>`:
+
+{% highlight html linenos %}
+<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>"></script>
+{% endhighlight html %}
+
+Example - Embedding a post:
+
+{% highlight html linenos %}
+<amp-facebook width=486 height=657
+    layout="responsive"
+    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+</amp-facebook>
+{% endhighlight html %}
+
+Example - Embedding a video: 
+
+{% highlight html linenos %}
+<amp-facebook width=552 height=574
+    layout="responsive"
+    data-embed-as="video"
+    data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
+</amp-facebook>
 {% endhighlight html %}
 
 ## Include a youtube video
@@ -79,28 +116,6 @@ Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
     layout="responsive"
     width="480" height="270">
 </amp-youtube>
-{% endhighlight html %}
-
-## Count user page views
-
-Count user page views
-using the [`amp-pixel`](/docs/reference/amp-pixel) element.
-
-The `amp-pixel` element takes a simple URL to send a GET request
-to when the tracking pixel is loaded.
-
-Use the special string `$RANDOM` to add a random number
-to the URL if required.
-
-For example, `<amp-pixel src="https://www.my-analytics.com/?rand=$RANDOM">`
-makes a request to something like `https://www.my-analytics.com/?rand=8390278471201`,
-where the $RANDOM value is randomly generated upon each impression.
-
-An example `amp-pixel` from the
-[everything.amp example](https://github.com/ampproject/amphtml/blob/master/examples/everything.amp.html):
-
-{% highlight html %}
-<amp-pixel src="https://pubads.g.doubleclick.net/activity;dc_iu=/12344/pixel;ord=$RANDOM?"></amp-pixel>
 {% endhighlight html %}
 
 ## Display an ad
