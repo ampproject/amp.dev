@@ -14,7 +14,7 @@ Embed a Twitter Tweet in your page
 using the [`amp-twitter`](/docs/reference/extended/amp-twitter.html) element.
 
 To include a tweet in your page,
-first include the following script to the `<head>`:
+first include the following script in the `<head>`:
 
 {% highlight html linenos %}
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
@@ -40,6 +40,13 @@ Example `amp-twitter` from the
 
 Embed an Instagram in your page
 using the [`amp-instagram`](/docs/reference/extended/amp-instagram.html) element.
+
+To include an Instagram,
+first include the following script in the `<head>`:
+
+{% highlight html linenos %}
+<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+{% endhighlight html %}
 
 Include the Instagram data-shortcode found in the Instagram photo URL.
 For example, in `https://instagram.com/p/fBwFP`,
