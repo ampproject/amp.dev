@@ -23,7 +23,7 @@ Current list of extended components:
 
 | Component | Description |
 | --------- | ----------- |
-| [`amp-access-spec`](extended/amp-access-spec.html) | Provides AMP paywall and subscription support.  |
+| [`amp-access`](extended/amp-access.html) | Provides AMP paywall and subscription support.  |
 | [`amp-accordion`](extended/amp-accordion.html) | Provides a way for viewers to have a glance at the outline of the content and jump to a section of their choice at will. |
 | [`amp-analytics`](extended/amp-analytics.html) | Captures analytics data from an AMP document. |
 | [`amp-anim`](extended/amp-anim.html) | Manages an animated image, typically a GIF. |
