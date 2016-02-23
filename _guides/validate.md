@@ -35,7 +35,7 @@ Most validation errors are easy to address and fix.  Consider this error:
 Carefully re-reading the spec, we realize that not only were we missing an important attribute, we also used a `<script>` tag for our own JavaScript, which isn’t allowed in the first place!
 
 To better understand the complete list of potential errors,
-see the [AMP Validation Errors guide](/docs/reference/validation_errors.html).
+see the [AMP Validation Errors guide](https://www.ampproject.org/docs/reference/validation_errors.html).
 Each AMP specification also provides a validation errors table
 that lists the errors specific to that component.
 If you’re still stuck after careful evaluation, [let us know](/docs/support/contribute.html) and we’ll try to help.
