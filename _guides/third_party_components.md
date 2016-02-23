@@ -81,28 +81,6 @@ Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 </amp-youtube>
 {% endhighlight html %}
 
-## Count user page views
-
-Count user page views
-using the [`amp-pixel`](/docs/reference/amp-pixel) element.
-
-The `amp-pixel` element takes a simple URL to send a GET request
-to when the tracking pixel is loaded.
-
-Use the special string `$RANDOM` to add a random number
-to the URL if required.
-
-For example, `<amp-pixel src="https://www.my-analytics.com/?rand=$RANDOM">`
-makes a request to something like `https://www.my-analytics.com/?rand=8390278471201`,
-where the $RANDOM value is randomly generated upon each impression.
-
-An example `amp-pixel` from the
-[everything.amp example](https://github.com/ampproject/amphtml/blob/master/examples/everything.amp.html):
-
-{% highlight html %}
-<amp-pixel src="https://pubads.g.doubleclick.net/activity;dc_iu=/12344/pixel;ord=$RANDOM?"></amp-pixel>
-{% endhighlight html %}
-
 ## Display an ad
 
 Display an ad in your page
