@@ -14,7 +14,7 @@ in case the user’s browser doesn’t support it.
 
 {% include toc.html %}
 
-## How AMP layouts its pages
+## How AMP lays out its pages
 
 The AMP layout system’s key goal is to ensure that every element can be displayed
 and its space properly preserved before any of the JavaScript
