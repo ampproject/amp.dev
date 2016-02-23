@@ -155,25 +155,25 @@ ghrepo.contents('extensions', "master", function(err, data) {
 		ghrepo.contents(component.path, "master", function(err, data) {
 
 			// fish out the markdown file from the folder
-			var component;
+			var subComponent;
 			for (var i = 0; i < data.length; i++) {
-				if(data[i].type === 'file' && /\.md$/.test(data[i].name)) {
-					component = data[i];
+				if(data[i].type === 'file' && data[i].name === component.name + '.md') {
+					subComponent = data[i];
 					break;
 				}
 			}
 
 			// download the page contents
-			downloadPage(component.path, function(pageContent) {
+			downloadPage(subComponent.path, function(pageContent) {
 				// save it to the extended folder
 				savePage({
-					destination: '../_reference/extended/' + component.name,
+					destination: '../_reference/extended/' + subComponent.name,
 					content: pageContent,
 					order: order,
-					title: component.name.replace('.md', '')
+					title: subComponent.name.replace('.md', '')
 				}, function (err) {
 					if (err) throw err;
-					console.log('Successfully imported: ' + component.name + ' (Extended)');
+					console.log('Successfully imported: ' + subComponent.name + ' (Extended)');
 				});
 			});
 
