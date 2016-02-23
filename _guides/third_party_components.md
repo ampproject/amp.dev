@@ -56,6 +56,36 @@ so the value for width and height should be universal
 </amp-instagram>
 {% endhighlight html %}
 
+## Display Facebook post or video
+
+Display a Facebook post or video in your page
+using the [`amp-facebook`](/docs/reference/extended/amp-facebook.html) element.
+
+You must include the following script in the `<head>`:
+
+{% highlight html linenos %}
+<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>"></script>
+{% endhighlight html %}
+
+Example - Embedding a post:
+
+{% highlight html linenos %}
+<amp-facebook width=486 height=657
+    layout="responsive"
+    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+</amp-facebook>
+{% endhighlight html %}
+
+Example - Embedding a video: 
+
+{% highlight html linenos %}
+<amp-facebook width=552 height=574
+    layout="responsive"
+    data-embed-as="video"
+    data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
+</amp-facebook>
+{% endhighlight html %}
+
 ## Include a youtube video
 
 Include a youtube video in your page
