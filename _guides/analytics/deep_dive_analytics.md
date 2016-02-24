@@ -68,7 +68,7 @@ to the appropriate vendor, as defind in the
 
 For example: `<amp-analytics type="googleanalytics">` sends analytics data
 to the third-party analytics provider, Google Analytics.
-To send data to publisher-owned endpoint,
+To send data to a publisher-owned endpoint,
 simply don’t include the `type` attribute;
 the analytics data is sent to the defined endpoints for each
 [request](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
@@ -94,9 +94,10 @@ Instead, you can can call out to a remote URL
 for all or part of the configurations.
 
 This allows you to do things like vary the configuration
-based on a specific request, for example, store a user's unique client ID.
-Since you have control over the remote file,
-you can do any server-side processing necessary to construct the configuration data.
+based on a specific request.
+If you as the publisher have control over the remote file,
+you can do any server-side processing necessary
+to construct the configuration data.
  
 The first step to loading remote configurations is
 to include the config attribute in the `amp-analytics` tag:
@@ -171,7 +172,7 @@ that can reference other requests or variables.
 Some analytics providers (including Google Analytics)
 have already provided configuration,
 which you use via the `type` attribute.
-If you are user an analytics provider,
+If you are using an analytics provider,
 you may not need to include `requests` information.
 See your vendor documentation to find out
 if `requests` need to be configured, and how.
@@ -305,7 +306,7 @@ then it will be used; otherwise, no request gets sent.
 AMP populates variables with values in an order of precendence:
 
 1. Remote configurations (via `config`).
-2. `vars` nested inside of a trigger withing `triggers`.
+2. `vars` nested inside of a trigger within `triggers`.
 3. `vars` at the top-level nested within `amp-analytics`.
 4. Platform-provided values.
 

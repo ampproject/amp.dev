@@ -25,7 +25,7 @@ in which case they will specify the exact URL endpoint.
 For most analytics solutions, use `amp-analytics`.
 Page view tracking works in `amp-analytics` too.
 But you can also track user engagement with any type of page content,
-including clicks on links, buttons, videos.
+including clicks on links and buttons.
 And you can measure how far on the page the user scrolled,
 whether or not the user engaged with social media, and more
 (see
@@ -33,7 +33,7 @@ whether or not the user engaged with social media, and more
 
 As part of integrating with the AMP platform,
 providers have offered pre-defined `amp-analytics` configurations
-so that's it's easy to capture data and push to their tracking tools.
+so that it's easy to capture data and push to their tracking tools.
 Access vendor documentation from the
 [amp-analytics specification](/docs/reference/extended/amp-analytics.html).
 
@@ -41,7 +41,7 @@ You can use both `amp-pixel` and `amp-analytics` in your pages:
 `amp-pixel` for simple page view tracking,
 and `amp-analytics` for everything else.
 You can also add multiples of each tag.
-If you're working with multiple analytics solutions,
+If you're working with multiple analytics providers,
 you will need one tag per solution.
 Keep in mind that simpler AMP pages are better for users,
 so if you don’t need the extra tags, don’t use them.
