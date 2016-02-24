@@ -18,9 +18,9 @@ The AMP validator comes bundled with the AMP JS library, so it is available on e
 
 <amp-img src="/docs/assets/validator_errors.png" width="1348" height="518" layout="responsive"></amp-img>
 
-The AMP validator isn’t just a convenience for you during development. It’s also used by platforms like Twitter or Google who integrate your AMP pages into their content and search results. More so, they usually don’t request the pages directly from your server but make use of the AMP Cache, a free service that caches your pages and makes them available across the world, so they load even faster.
+The AMP validator isn’t just a convenience for you during development. It’s also used by platforms like Twitter or Google who integrate your AMP pages into their content and search results. More so, they usually don’t request the pages directly from your server but make use of the Google AMP Cache, a free service that caches your pages and makes them available across the world, so they load even faster.
 
-If the AMP validation service detects that there’s something wrong with your page, it won’t get discovered and distributed by third party websites and won’t appear in the AMP Cache.  So not only would you lose the speed benefits of the cache, it’s likely that your page will not be seen in many places! That would be a shame, so let’s make sure it doesn’t happen.
+If the AMP validation service detects that there’s something wrong with your page, it won’t get discovered and distributed by third party websites and won’t appear in the Google AMP Cache.  So not only would you lose the speed benefits of the cache, it’s likely that your page will not be seen in many places! That would be a shame, so let’s make sure it doesn’t happen.
 
 ## How do I fix validation errors?
 
