@@ -90,7 +90,7 @@ May need to add something to this table based on technical review.
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 **CAVEAT**
 
@@ -106,7 +106,7 @@ Example:
 </amp-twitter>
 {% endhighlight %}
 
-#### Attributes
+## Attributes
 
 **data-tweetid**
 

@@ -78,7 +78,7 @@ The following lists validation errors specific to the `amp-ad` tag
   </tr>
 </table>
 
-### Behavior
+## Behavior
 
 Ads are loaded like all other resources in AMP documents, with a special
 custom element called `<amp-ad>`. No ad network provided JavaScript is allowed to run inside the AMP document. Instead the AMP runtime loads an iframe from a
@@ -97,7 +97,7 @@ resources in AMP. It requires a `type` argument that select what ad network is d
 </amp-ad>
 {% endhighlight %}
 
-#### Supported ad networks
+## Supported ad networks
 
 - [A9](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/a9.md)
 - [Adform](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adform.md)
@@ -112,34 +112,34 @@ resources in AMP. It requires a `type` argument that select what ad network is d
 - [Yieldmo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yieldmo.md)
 - [Revcontent](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/revcontent.md)
 
-#### Styling
+## Styling
 
 `<amp-ad>` elements may not themselves have or be placed in containers that have CSS `position: fixed` set (with the exception of `amp-lightbox`).
 This is due to the UX implications of full page overlay ads. It may be considered to allow similar ad formats in the future inside of AMP controlled containers that maintain certain UX invariants.
 
-#### Attributes
+## Attributes
 
-##### type
+### type
 
 Identifier for the ad network. This selects the template that is used for the ad tag.
 
-##### src
+### src
 
 Optional src value for a script tag loaded for this ad network. This can be used with ad networks that require exactly a single script tag to be inserted in the page. The src value must have a prefix that is whitelisted for this ad network.
 
-##### data-foo-bar
+### data-foo-bar
 
 Most ad networks require further configuration. This can be passed to the network using HTML `data-` attributes. The parameter names are subject to standard data attribute dash to camel case conversion. E.g. "data-foo-bar" is send to the ad for configuration as "fooBar".
 
-##### json
+### json
 
 Optional attribute to pass configuration to the ad as an arbitrarily complex JSON object. The object is passed to the ad as-is with no mangling done on the names.
 
-##### data-consent-notification-id
+### data-consent-notification-id
 
 Optional attribute. If provided will require confirming the [amp-user-notification](https://github.com/ampproject/amphtml/blob/master/builtins/../extensions/amp-user-notification/amp-user-notification.md) with the given HTML-id until the "AMP client id" for the user (similar to a cookie) is passed to the ad. The means ad rendering is delayed until the user confirmed the notification.
 
-#### Placeholder
+## Placeholder
 
 Optionally `amp-ad` supports a child element with the `placeholder` attribute. If supported by the ad network, this element is shown until the ad is available for viewing.
 {% highlight html %}
@@ -149,7 +149,7 @@ Optionally `amp-ad` supports a child element with the `placeholder` attribute. I
 </amp-ad>
 {% endhighlight %}
 
-#### No Ad available
+## No Ad available
 
 - `amp-ad` supports a child element with the `fallback` attribute. If supported by the ad network, this element is shown if no ad is available for this slot.
 {% highlight html %}
@@ -161,7 +161,7 @@ Optionally `amp-ad` supports a child element with the `placeholder` attribute. I
 
 - If there is no fallback element available, the amp-ad tag will be collapsed (set to display: none) if the ad sends a message that the ad slot cannot be filled and AMP determines that this operation can be performed without affecting the user's scroll position.
 
-#### Running ads from a custom domain
+## Running ads from a custom domain
 
 AMP supports loading the bootstrap iframe that is used to load ads from a custom domain such as your own domain.
 
@@ -173,7 +173,7 @@ To enable this, copy the file [remote.html](https://github.com/ampproject/amphtm
 
 The `content` attribute of the meta tag is the absolute URL to your copy of the remote.html file on your web server. This URL must use a "https" schema. It is not allowed to reside on the same origin as your AMP files. E.g. if you host AMP files on "www.example.com", this URL must not be on "www.example.com" but e.g. "something-else.example.com" is OK. See the doc ["Iframe origin policy"](https://github.com/ampproject/amphtml/blob/master/builtins/../spec/amp-iframe-origin-policy.md) for further details on allowed origins for iframes.
 
-##### Enhance incoming ad configuration
+### Enhance incoming ad configuration
 
 This is completely optional: It is sometimes desired to further process the incoming iframe configuration before drawing the ad using AMP's built-in system.
 

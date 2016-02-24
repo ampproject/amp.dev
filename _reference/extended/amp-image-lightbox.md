@@ -64,7 +64,7 @@ The following lists validation errors specific to the `amp-image-lightbox` tag
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 The typical scenario looks like this:
 {% highlight html %}
@@ -92,7 +92,7 @@ Among other things the `amp-image-lightbox` allows the following user manipulati
 zooming, panning, showing/hiding of the description.
 Pressing the escape key on the keyboard will close the lightbox.
 
-#### Styling
+## Styling
 
 The `amp-image-lightbox` component can be styled with standard CSS. Some of the
 properties that can be styled are `background` and `color`.

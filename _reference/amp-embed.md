@@ -24,7 +24,7 @@ limitations under the License.
 
 The `amp-embed` element is used to allow embedding elements in to the AMP page.
 
-#### Implementation
+## Implementation
 
 The `<amp-embed>` is actually an alias to the [`<amp-ad>`](https://github.com/ampproject/amphtml/blob/master/builtins/amp-ad.md) tag, deriving all of it's functionality with a different tag name.
 Can be used instead of `<amp-ad>` when that would be semantically more accurate.
@@ -39,6 +39,6 @@ Can be used instead of `<amp-ad>` when that would be semantically more accurate.
 </amp-embed>
 {% endhighlight %}
 
-#### Supported embed types
+## Supported embed types
 
 - [Taboola](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/taboola.md)

@@ -85,7 +85,7 @@ The following lists validation errors specific to the `amp-list` tag
   </tr>
 </table>
 
-#### Usage
+## Usage
 
 The `amp-list` defines data source using the following attributes:
 
@@ -138,7 +138,7 @@ The `amp-list` supports the following layouts: `fixed`, `fixed-height`,
 `responsive`, `fill`. See [AMP HTML Layout System](https://github.com/ampproject/amphtml/blob/master/extensions/amp-list/../../spec/amp-html-layout.md)
 for details.
 
-#### Substitutions
+## Substitutions
 
 The `amp-list` allows all standard URL variable substitutions.
 See [Substitutions Guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-list/../../spec/amp-var-substitutions.md) for more info.
@@ -149,7 +149,7 @@ For instance:
 {% endhighlight %}
 may make a request to something like `https://foo.com/list.json?0.8390278471201` where the RANDOM value is randomly generated upon each impression.
 
-#### Behavior
+## Behavior
 
 The loading is triggered using normal AMP rules depending on how far the element is from
 the current viewport.

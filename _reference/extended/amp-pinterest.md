@@ -71,7 +71,7 @@ The following lists validation errors specific to the `amp-pinterest` tag
   </tr>
 </table>
 
-### Examples:
+## Examples:
 
 Pin It button: `data-do="buttonPin"`
 

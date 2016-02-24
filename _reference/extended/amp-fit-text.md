@@ -68,7 +68,7 @@ The following lists validation errors specific to the `amp-fit-text` tag
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 The `amp-fit-text` component expects its content to be text or other inline
 content, but it can also contain non-inline content. For the given content
@@ -92,7 +92,7 @@ For example:
 {% endhighlight %}
 
 
-#### Attributes
+## Attributes
 
 **min-font-size**
 
@@ -103,7 +103,7 @@ The minimum font size as an integer that the `amp-fit-text` can use.
 The maximum font size as an integer that the `amp-fit-text` can use.
 
 
-#### Styling
+## Styling
 
 The `amp-fit-text` component can be styled with standard CSS. In particular,
 it's possible to use `text-align`, `font-weight`, `color` and many other CSS

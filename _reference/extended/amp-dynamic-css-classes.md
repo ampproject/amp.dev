@@ -38,7 +38,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 The AMP Dynamic CSS Classes extension adds the following CSS classes
 onto the HTML element:

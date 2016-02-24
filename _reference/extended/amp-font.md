@@ -72,7 +72,7 @@ The following lists validation errors specific to the `amp-font` tag
   </tr>
 </table>
 
-####Behavior
+## Behavior
 
 The `amp-font` extension should be used for controlling timeouts on font loading.
 
@@ -105,7 +105,7 @@ Using these classes authors can guard whether a font is displayed and get the fo
 
 The `amp-font` extension accepts the `layout` value:  `nodisplay`
 
-####Attributes
+## Attributes
 
 **font-family**
 

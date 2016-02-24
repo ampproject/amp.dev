@@ -88,7 +88,7 @@ The following lists validation errors specific to the `amp-iframe` tag
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 `amp-iframe` has several important differences from vanilla iframes that are designed to make it more secure and avoid AMP files that are dominated by a single iframe:
 
@@ -107,13 +107,13 @@ Example:
 </amp-iframe>
 {% endhighlight %}
 
-#### Attributes
+## Attributes
 
-##### src, srcdoc, frameborder, allowfullscreen, allowtransparency
+### src, srcdoc, frameborder, allowfullscreen, allowtransparency
 
 The attributes above should all behave like they do on standard iframes.
 
-##### sandbox
+### sandbox
 
 Iframes created by `amp-iframe` always have the `sandbox` attribute defined on them. By default the value is empty. That means that they are "maximum sandboxed" by default. By setting sandbox values, one can opt the iframe into being less sandboxed. All values supported by browsers are allowed. E.g. setting `sandbox="allow-scripts"` allows the iframe to run JavaScript, or `sandbox="allow-scripts allow-same-origin"` allows the iframe to run JavaScript, make non-CORS XHRs, and read/write cookies.
 
@@ -123,7 +123,7 @@ Note also, that the sandbox applies to all windows opened from a sandboxed ifram
 
 See the [the docs on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-sandbox) for further details on the sandbox attribute.
 
-#### Iframe Resizing
+## Iframe Resizing
 
 An `amp-iframe` must have static layout defined as is the case with any other AMP element. However,
 it's possible to resize an `amp-iframe` in runtime. To do so:
@@ -166,7 +166,7 @@ Here are some factors that affect how fast the resize will be executed:
 - Whether the resize is requested for a currently active Iframe;
 - Whether the resize is requested for an Iframe below the viewport or above the viewport.
 
-#### Iframe with Placeholder
+## Iframe with Placeholder
 It is possible to have an `amp-iframe` appear on the top of a document when the `amp-iframe` has a `placeholder` element as shown in the example below.
 
 {% highlight html %}
@@ -189,7 +189,7 @@ window.parent.postMessage({
 }, '*');
 {% endhighlight %}
 
-#### Iframe viewability
+## Iframe viewability
 
 Iframes can send a  `send-intersection` message to its parent to start receiving IntersectionObserver style [change records](http://rawgit.com/slightlyoff/IntersectionObserver/master/index.html#intersectionobserverentry) of the iframe's intersection with the parent viewport.
 
@@ -222,7 +222,7 @@ window.addEventListener('message', function(event) {
 
 The intersection message would be sent by the parent to the iframe when the iframe moves in or out of the viewport (or is partially visibile), when the iframe is scrolled or resized.
 
-#### Tracking/Analytics iframes
+## Tracking/Analytics iframes
 
 We strongly recommend using [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/../amp-analytics/amp-analytics.md) for analytics purposes, because it is significantly more robust, complete and efficient solution and can be configured for a wide range of analytics vendors.
 

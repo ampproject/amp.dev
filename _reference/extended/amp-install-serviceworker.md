@@ -76,7 +76,7 @@ The following lists validation errors specific to the `amp-install-serviceworker
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 Registers the ServiceWorker given by the `src` attribute. If the current origin is different from the origin of the ServiceWorker, this custom element does nothing (emits warning in development mode).
 
@@ -95,12 +95,12 @@ Example
 
 {% endhighlight %}
 
-#### Attributes
+## Attributes
 
-##### `src`
+### `src`
 
 URL of the ServiceWorker to register.
 
-##### `layout`
+### `layout`
 
 Must have the value `nodisplay`.

@@ -72,7 +72,7 @@ The following lists validation errors specific to the `amp-soundcloud` tag
   </tr>
 </table>
 
-#### Examples 
+## Examples 
 
 Visual Mode:
 {% highlight html %}
@@ -90,13 +90,13 @@ Classic Mode:
     data-color="ff5500"></amp-soundcloud>
 {% endhighlight %}
 
-#### Required attributes
+## Required attributes
 
 **data-trackid**
 
 The ID of the track, an integer.
 
-#### Optional attributes
+## Optional attributes
 
 **data-visual**
 

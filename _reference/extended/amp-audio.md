@@ -86,7 +86,7 @@ May need to add something to this table based on technical review.
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 The `amp-audio` component loads the audio resource specified by its `src` attribute at a time determined by the runtime. It can be controlled in much the same way as a standard HTML5 `audio` tag.
 Like all embedded external resources in an AMP file, the audio is "lazily" loaded, only when the `amp-audio` element is in or near the viewport.
@@ -110,7 +110,7 @@ For example:
 </amp-audio>
 {% endhighlight %}
 
-#### Attributes
+## Attributes
 
 **autoplay**
 

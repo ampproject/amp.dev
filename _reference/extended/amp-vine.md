@@ -72,7 +72,7 @@ The following lists validation errors specific to the `amp-vine` tag
   </tr>
 </table>
 
-#### Example
+## Example
 
 A Vine simple embed has equal width and height:
 
@@ -82,7 +82,7 @@ A Vine simple embed has equal width and height:
 </amp-vine>
 {% endhighlight %}
 
-#### Attributes
+## Attributes
 
 **data-vineid**
 

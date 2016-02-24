@@ -72,7 +72,7 @@ The following lists validation errors specific to the `amp-anim` tag
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 The `amp-anim` component is very similar to the `amp-image` element, and provides additional functionality to manage loading and playing of animated images such as GIFs.
 
@@ -83,7 +83,7 @@ The `amp-anim` component can also have an optional placeholder child, to display
   </amp-img>
 </amp-anim>
 {% endhighlight %}
-#### Attributes
+## Attributes
 
 **src**
 
@@ -104,7 +104,7 @@ A string of alternate text, similar to the `alt` attribute on `img`.
 A string that indicates the attribution of the image. E.g. `attribution="CC courtesy of Cats on Flicker"`
 
 
-#### Styling
+## Styling
 
 `amp-img` can be styled directly via CSS properties. Setting a grey background
 placeholder for example could be achieved via:

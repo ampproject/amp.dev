@@ -72,7 +72,7 @@ The following lists validation errors specific to the `amp-facebook` tag
   </tr>
 </table>
 
-#### Examples
+## Examples
 
 Example - Embedding a post:
 {% highlight html %}
@@ -91,7 +91,7 @@ Example - Embedding a video:
 </amp-facebook>
 {% endhighlight %}
 
-#### Attributes
+## Attributes
 
 **data-href**
 

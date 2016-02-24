@@ -72,17 +72,17 @@ The following lists validation errors specific to the `amp-pixel` tag
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 The `amp-pixel` component behaves like a simple tracking pixel `img`. It takes a single URL, but provides variables that can be replaced by the component in the URL string when making the request. See the `src` attribute for more information.
 
-#### Attributes
+## Attributes
 
 **src**
 
 A simple URL to send a GET request to when the tracking pixel is loaded.
 
-#### Substitutions
+## Substitutions
 
 The `amp-pixel` allows all standard URL variable substitutions.
 See [Substitutions Guide](https://github.com/ampproject/amphtml/blob/master/builtins/../spec/amp-var-substitutions.md) for more info.
@@ -93,6 +93,6 @@ For instance:
 {% endhighlight %}
 may make a request to something like `https://foo.com/pixel?0.8390278471201` where the RANDOM value is randomly generated upon each impression.
 
-#### Styling
+## Styling
 
 `amp-pixel` should not be styled.

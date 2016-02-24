@@ -76,7 +76,7 @@ The following lists validation errors specific to the `amp-video` tag
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 The `amp-video` component loads the video resource specified by its `src` attribute lazily, at a time determined by the runtime. It can be controlled much the same way as a standard HTML5 `video` tag.
 
@@ -100,7 +100,7 @@ For example:
 </amp-video>
 {% endhighlight %}
 
-#### Attributes
+## Attributes
 
 **src**
 

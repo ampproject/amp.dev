@@ -76,7 +76,7 @@ The following lists validation errors specific to the `amp-vimeo` tag
   </tr>
 </table>
 
-#### Example
+## Example
 
 With responsive layout, the width and height from the example should yield correct layouts for 16:9 aspect ratio videos:
 
@@ -87,7 +87,7 @@ With responsive layout, the width and height from the example should yield corre
     width="500" height="281"></amp-vimeo>
 {% endhighlight %}
 
-#### Attributes
+## Attributes
 
 **data-videoid**
 

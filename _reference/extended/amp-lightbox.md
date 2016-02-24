@@ -64,11 +64,11 @@ The following lists validation errors specific to the `amp-lightbox` tag
   </tr>
 </table>
 
-#### Behavior
+## Behavior
 
 The `amp-lightbox` component defines the child elements that will be displayed in a full-viewport overlay. It is triggered to take up the viewport when the user taps or clicks on an element with `on` attribute that targets `amp-lightbox` element’s `id`.
 
-#####Closing the lightbox
+### Closing the lightbox
 Pressing the escape key on the keyboard will close the lightbox.
 Alternatively setting the `on` attribute on one or more elements within the lightbox and setting it's method to `close` will close the lightbox when the element is tapped or clicked.
 
@@ -83,6 +83,6 @@ Example:
 </amp-lightbox>
 {% endhighlight %}
 
-#### Styling
+## Styling
 
 The `amp-lightbox` component can be styled with standard CSS.

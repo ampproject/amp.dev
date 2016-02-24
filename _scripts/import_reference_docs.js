@@ -106,7 +106,7 @@ ghrepo.contents('builtins', "master", function(err, data) {
 				if (err) throw err;
 				console.log('Successfully imported: ' + component.name + ' (Built-in)');
 			});
-		});
+		}, 1);
 
 	});
 });
@@ -175,7 +175,7 @@ ghrepo.contents('extensions', "master", function(err, data) {
 					if (err) throw err;
 					console.log('Successfully imported: ' + subComponent.name + ' (Extended)');
 				});
-			});
+			}, 1);
 
 		});
 
