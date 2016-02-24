@@ -26,6 +26,9 @@ and sends the analytics data to the third-party provider,
   "vars": {
     "account": "ABC123"
   },
+  "extraUrlParams": {
+    "cd1": "AMP"
+  },
   "triggers": {
     "trackPageview": {
       "on": "visible",
@@ -51,18 +54,18 @@ and sends the analytics data to the third-party provider,
 </amp-analytics>
 {% endhighlight %}
 
+**Note:** The above example code is to help you learn, but it's by no means a realistic sample. If you are working with analytics providers, it's likely that the above sample won't make sense; provider configurations remove complexity. Consult your analytics provider's documentation for sample configurations.
+
 ## Where to send analytics data: type attribute
 
 AMP is designed to support two common patterns of data collection:
 
 * Ingestion by a publisher-owned endpoint for in-house analytics systems.
 * Ingestion by a vendor-owned endpoint for interoperability with a vendor solution
-(for example, [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/),
-[Chartbeat](http://support.chartbeat.com/docs/),
-[Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)).
+(for example, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
 To send analytics data to an analytics provider,
-include the `type` attribute in the `amp-analytics tag` and set its value
+include the `type` attribute in the `amp-analytics` tag and set its value
 to the appropriate vendor, as defind in the
 [amp-analytics specification](/docs/reference/extended/amp-analytics.html).  
 
@@ -176,6 +179,20 @@ If you are using an analytics provider,
 you may not need to include `requests` information.
 See your vendor documentation to find out
 if `requests` need to be configured, and how.
+
+#### Appending request URL: Extra URL Params
+
+The [extraUrlParams](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#extra-url-params)
+attribute specifies additional parameters to append to the query string of the request URL via the usual "&foo=baz" convention.
+
+The `amp-analytics` example adds an additional parameter <code>cd1</code>
+to the request and sets the parameter value to "AMP":
+
+{% highlight html linenos %}
+  "extraUrlParams": {
+    "cd1": "AMP"
+  }
+{% endhighlight %}
 
 ### When data gets sent: triggers attribute
 

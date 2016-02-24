@@ -92,7 +92,7 @@ in the `<head>` of the AMP document (see also
 
 The following example is similar to the [`amp-pixel` example](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
 Everytime a page is visible,
-the pageview event triggers, and
+the trigger event fires, and
 sends the pageview data to a defined URL along with a random ID: 
 
 {% highlight html linenos %}
@@ -103,7 +103,7 @@ sends the pageview data to a defined URL along with a random ID:
     "pageview": "https://foo.com/pixel?RANDOM",
   },
   "triggers": {
-    "pixel emulation": {
+    "trackPageview": {
       "on": "visible",
       "request": "pageview"
     }
@@ -116,7 +116,7 @@ sends the pageview data to a defined URL along with a random ID:
 In the above example, we have defined a request called pageview to be https://foo.com/pixel?RANDOM. As discussed earlier, RANDOM is substituted by a random number, so the request will actually end up looking like https://foo.com/pixel?0.23479283687235653498734.
 
 When the page becomes visible
-(as specified by he use of the trigger keyword `visible`),
+(as specified by the use of the trigger keyword `visible`),
 an event triggers and the `pageview` request is sent.
 The triggers attribute determines when the pageview request fires.
 Learn more about [requests and triggers](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports).
@@ -169,7 +169,7 @@ within the `amp-analytics` configuration:
     "account": "ABC123",
   },
   "triggers": {
-    "some-event": {
+    "someEvent": {
       "on": "visible",
       "request": "pageview",
       "vars": {
