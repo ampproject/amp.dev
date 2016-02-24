@@ -5,10 +5,13 @@ order: 4
 folder: extended
 ---
 
-
 AMP Extensions are either extended components or extended templates.
 
+{% include toc.html %}
+
 ## AMP HTML Extended Components
+
+### Component inclusion declaration
 
 Extended components must be explicitly included into the document as custom elements.
 
@@ -18,6 +21,8 @@ include the following script in the `<head>`:
 {% highlight html %}
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 {% endhighlight %}
+
+### AMP HTML Extendende Components
 
 Current list of extended components:
 
