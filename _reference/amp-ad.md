@@ -181,7 +181,7 @@ This is supported by passing a callback to the `draw3p` function call in the [re
 
 Example:
 
-```JS
+{% highlight JS %}
 draw3p(function(config, done) {
   config.targeting = Math.random() > 0.5 ? 'sport' : 'fashion';
   // Don't actually call setTimeout here. This should only serve as an
@@ -190,3 +190,4 @@ draw3p(function(config, done) {
     done(config);
   }, 100)
 });
+{% endhighlight %}
