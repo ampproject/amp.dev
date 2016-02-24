@@ -32,8 +32,8 @@ If they have, simply link to their docs from the specification
 and start following the instructions.
 
 If the analytics vendor hasn’t integrated with AMP,
-we encourage you to
-[create an issue in the AMP project](https://github.com/ampproject/amphtml/issues/new)
+reach out to the vendor to ask for their support.
+We also encourage you to [create an issue in the AMP project](https://github.com/ampproject/amphtml/issues/new)
 requesting that the vendor be added.
 See also
 [Integrating your analytics tools in AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).

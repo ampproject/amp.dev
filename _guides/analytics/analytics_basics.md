@@ -27,9 +27,9 @@ Page view tracking works in `amp-analytics` too.
 But you can also track user engagement with any type of page content,
 including clicks on links, buttons, videos.
 And you can measure how far on the page the user scrolled,
-whether or not the user engaged with social media, and more.
-For more, check out the
-[Deep Dive into AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html).
+whether or not the user engaged with social media, and more
+(see
+[Deep Dive into AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html)).
 
 As part of integrating with the AMP platform,
 providers have offered pre-defined `amp-analytics` configurations
@@ -141,7 +141,7 @@ the `amp-pixel` tag can only include variables defined by the platform
 or that the AMP runtime can parse from the AMP page.
 In the above example,
 the platform populates the values for both
-`canonicalURL` and `clientId(site-user-id).
+`canonicalURL` and `clientId(site-user-id)`.
 The `amp-analytics` tag can include the same variables as `amp-pixel`,
 as well as uniquely defined variables inside the tag configuration.
 
@@ -185,7 +185,7 @@ within the `amp-analytics` configuration:
 In the above example,
 the variables, `account` and `title` are defined
 in the `amp-analytics` configuration.
-The `canonicalUrl` and clientId variables aren't defined in the configuration,
+The `canonicalUrl` and `clientId` variables aren't defined in the configuration,
 so their values get substituted by the platform.
 
 **Important:** Variable substitution is flexible;
@@ -195,7 +195,8 @@ and the AMP runtime will parse the values in this order of precedence
 
 ## User identification
 
-Websites use cookies to store information specific to a user using the browser. Cookies can be used to tell that a user has visited a site before.
+Websites use cookies to store information specific to a user in the browser.
+Cookies can be used to tell that a user has visited a site before.
 In AMP,
 pages can be served from either a publisher's website or a cache
 (like the Google AMP Cache).
@@ -214,17 +215,18 @@ for the user if that same user visits again.
 AMP manages reading and writing of the client ID in all cases.
 This is particularly notable in the case when a page is served
 via a cache or otherwise shown outside the viewing context
-of the publisher's original site,
-as in this circumstance access to the publisher site's cookies is unavailable.
+of the publisher's original site.
+In this circumstance, access to the publisher site's cookies is unavailable.
 
 When an AMP page is served from a publisher's site,
 the client ID framework that AMP uses can be told about a fallback cookie
 to look for and use.
 In this case,
-the cid-scope-cookie-fallback-name argument of the client ID variable,
-which may appear as either CLIENT_ID(cid-scope-cookie-fallback-name) or
-${clientId(cid-scope-cookie-fallback-name)},
-will be interpreted as a cookie name.
+the `cid-scope-cookie-fallback-name` argument of the `clientId` variable
+is interpreted as a cookie name.
+The formatting may appear as either
+`CLIENT_ID(cid-scope-cookie-fallback-name)` or
+`${clientId(cid-scope-cookie-fallback-name)}`.
 
 For example:
 
@@ -235,7 +237,7 @@ For example:
 If AMP finds that this cookie is set,
 then the client ID substitution will return the cookie's value.
 If the AMP finds that this cookie is not set,
-then AMP will generate a value of the form "amp-" followed
+then AMP will generate a value of the form `amp-` followed
 by a random base64 encoded string.
 
 Learn more about client ID substitution,

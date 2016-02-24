@@ -22,7 +22,7 @@ include the following script in the `<head>`:
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 {% endhighlight %}
 
-### AMP HTML Extendende Components
+### AMP HTML Extendend Components
 
 Current list of extended components:
 

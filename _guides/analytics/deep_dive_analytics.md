@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Deep Dive into Amp Analytics
+title: Deep Dive into AMP Analytics
 order: 1
 ---
 
@@ -61,13 +61,15 @@ AMP is designed to support two common patterns of data collection:
 [Chartbeat](http://support.chartbeat.com/docs/),
 [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)).
 
-To send analytics data to an analytics provider, include the type attribute in the
-`amp-analytics tag` and set its value to the appropriate vendor,
-as defind in the [amp-analytics specification](/docs/reference/extended/amp-analytics.html).  
+To send analytics data to an analytics provider,
+include the `type` attribute in the `amp-analytics tag` and set its value
+to the appropriate vendor, as defind in the
+[amp-analytics specification](/docs/reference/extended/amp-analytics.html).  
 
 For example: `<amp-analytics type="googleanalytics">` sends analytics data
 to the third-party analytics provider, Google Analytics.
-To send data to publisher-owned endpoint, simply don’t include the type attribute;
+To send data to publisher-owned endpoint,
+simply don’t include the `type` attribute;
 the analytics data is sent to the defined endpoints for each
 [request](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
 
@@ -86,11 +88,15 @@ learn more about
 
 ## Load remote configuration: config attribute
 
-You don’t have to include all `amp-analytics` configurations in your AMP pages.
-Instead,
-you can can call out to a remote URL for all or part of the configurations.
-One common use case is to call out to a remote URL for sensitive configurations,
-such as your account number with a specific analytics provider.
+You don't have to include all of the configuration
+for `amp-analytics` entirely on your AMP page.
+Instead, you can can call out to a remote URL
+for all or part of the configurations.
+
+This allows you to do things like vary the configuration
+based on a specific request, for example, store a user's unique client ID.
+Since you have control over the remote file,
+you can do any server-side processing necessary to construct the configuration data.
  
 The first step to loading remote configurations is
 to include the config attribute in the `amp-analytics` tag:
@@ -99,10 +105,10 @@ to include the config attribute in the `amp-analytics` tag:
 <amp-analytics config="https://example.com/analytics.account.config.json">
 {% endhighlight %}
 
-The next step is to create the `json` content that lives in the remote URL.
+The next step is to create the JSON content that lives in the remote URL.
 In this simple example,
-the only configuration in the
-remote URL is the variable value for the analytics account.
+the configuration contained in the JSON object is just the variable value for the analytics account.
+
 Example content in `https://example.com/analytics.account.config.json`:
 
 {% highlight html linenos %}
@@ -141,7 +147,7 @@ The `triggers` attribute describes when analytics data should be sent,
 for example, when a user views a page, when a user clicks on a link. 
 
 The `transport` attribute specifies how to send a request,
-more specifically, in what format. 
+more specifically, the protocol. 
 
 Read on to find out more about these configurations.
 (You can also read about these configurations in the
@@ -162,9 +168,13 @@ that can reference other requests or variables.
 }
 {% endhighlight %}
 
-Some analytics providers (including Google Analytics) simplify configuration
-such that you don’t need to include `requests` information.
-See your vendor documentation to find out if `requests` need to be configured, and how.
+Some analytics providers (including Google Analytics)
+have already provided configuration,
+which you use via the `type` attribute.
+If you are user an analytics provider,
+you may not need to include `requests` information.
+See your vendor documentation to find out
+if `requests` need to be configured, and how.
 
 ### When data gets sent: triggers attribute
 
@@ -293,7 +303,11 @@ then it will be used; otherwise, no request gets sent.
 ## Variable substitution ordering
 
 AMP populates variables with values in an order of precendence:
-Remote configurations > Triggers > Top-level > Platform.
+
+1. Remote configurations (via `config`).
+2. `vars` nested inside of a trigger withing `triggers`.
+3. `vars` at the top-level nested within `amp-analytics`.
+4. Platform-provided values.
 
 In this example, there’s a remote configuration,
 variables defined at the top-level, in triggers, and at the platform level:
@@ -324,7 +338,7 @@ variables defined at the top-level, in triggers, and at the platform level:
 {% endhighlight %}
 
 When the same `var` is defined in multiple locations,
-the variable order of precendence sets it's value once.
+the variable order of precendence sets its value once.
 Thus, if the remote configuration defined `account` as UA-XXXXX-Y in the example above,
 the values of various vars will be as follows:
 
