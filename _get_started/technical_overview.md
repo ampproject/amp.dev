@@ -107,7 +107,7 @@ the browser waits and waits to start downloading these huge fonts until all this
 
 The AMP system declares zero HTTP requests until fonts start downloading.
 This is only possible because all JS in AMP has the async attribute
-and online inline style sheets are allow;
+and only inline style sheets are allowed;
 there’s no HTTP requests blocking the browser from downloading fonts.
 
 ## Minimize style recalculations
