@@ -73,7 +73,7 @@ AMP creates the iframe box before it even knows what it will include:
 
 Third-party JS likes to use synchronous JS loading.
 They also like to `document.write` more sync scripts.
-For example, If you five ads, and each does three sync loads,
+For example, if you have five ads, and each does three sync loads
 with a 1 second latency connection,
 you’re in 18 seconds of load time just for JS loading. 
 
