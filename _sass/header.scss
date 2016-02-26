@@ -4,15 +4,18 @@ header {
   font-weight: 300;
   transform: translateZ(0);
   backface-visibility: hidden;
+  background-color: $color-white;
 
   .container {
+    padding: 0;
 
     @include max-screen($mobile-breakpoint) {
-      padding: 0 20px;
+      padding: 0 10px;
     }
 
   }
 
+  &.absolute,
   &.fixed {
     @include transform(translateY(0%));
     @include transition(all .25s ease);
@@ -22,6 +25,30 @@ header {
     width: 100%;
     z-index: 1000;
   }
+
+  &.absolute {
+    position: absolute;
+  }
+
+  &.nav--pinned,
+  &.nav--unpinned,
+  &.nav--top {
+    position: fixed;
+
+    @include max-screen($mobile-breakpoint) {
+      position: relative;
+    }
+  }
+
+  &.nav--pinned,
+  &.nav--unpinned {
+    background: $color-midblue;
+  }
+
+  &.nav--top {
+    background-color: transparent;
+  }
+
 
   &.hidden {
     display: block;
@@ -37,7 +64,7 @@ header {
   }
 
   .wrap {
-    background-color: white;
+    // background-color: white;
 
     @include max-screen($mobile-breakpoint) {
       color: transparent;
@@ -49,56 +76,118 @@ header {
 
   }
   .left-nav {
+    float: left;
 
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(flex-start);
     margin-left: 0;
+    letter-spacing: 0.04em;
+    font-size: 14px;
+
+    @include max-screen($mobile-breakpoint) {
+      width: auto;
+      text-align: left;
+      flex: 1 1 auto;
+      padding: 0 0 5px 0;
+      @include justify-content(flex-start);
+    }
 
     .header-title {
-      color: $color-verydarkblue;
+      color: $color-midblue;
       font-family: Roboto, verdana, arial, sans-serif;
-      letter-spacing: 2px;
-      padding-left: 0;
-      padding-top: 18px;
-      text-transform: uppercase;
-      width: 10%;
+      padding: 15px 10px 15px 50px;
+      margin: 10px 0;
+      width: auto;
+      text-transform: none;
+      white-space: nowrap;
+
+      @include max-screen($mobile-breakpoint) {
+        width: auto;
+        padding: 0;
+        padding-left: 45px;
+        line-height: 41px;
+        margin: 6px 0;
+      }
+
+      background-image: url('/docs/assets/logo-blue.svg');
+      background-repeat: no-repeat;
+      background-size: 40px 40px;
+      background-position: center left;
     }
+
+  }
+
+  .clearfix {
+      @include max-screen($mobile-breakpoint) {
+        display: flex;
+        flex-wrap: wrap-reverse;
+      }
   }
 
   .alt {
-    padding: 28px 0 32px;
+    padding: 15px 0;
     text-align: right;
+
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+
+    &.right {
+      letter-spacing: 0.04em;
+      font-size: 14px;
+
+      @include max-screen($mobile-breakpoint) {
+        float: right;
+        text-align: center;
+        flex: 0;
+        padding: 0 0 10px;
+        font-size: 12px;
+        display: inline-block;
+      }
+    }
   }
 
   .tab {
-    color: $color-verydarkblue;
+    color: $color-midblue;
     display: inline-block;
-    padding: 10px 10px;
+    padding: 10px 15px;
     text-decoration: none;
+    text-transform: uppercase;
+
+    @include max-screen($mobile-breakpoint) {
+      margin-left: auto;
+      padding: 10px 12px;
+    }
   }
 
   .tab.go-button {
     @include box-shadow(-1px 6px 6px -3px rgba(0,0,0,0.22));
-    background-color: $color-verydarkblue;
+    background-color: $color-midblue;
     border: 0;
     border-radius: 4px;
     color: $color-white;
     font-family: Roboto, verdana, arial, sans-serif;
     font-size: 14px;
-    padding: 15px 20px;
+    font-weight: 500;
+    padding: 10px 20px;
     margin-left: 10px;
     text-transform: uppercase;
 
+    @include max-screen($mobile-breakpoint) {
+      margin-right: 5px;
+      margin-left: auto;
+      padding: 8px 10px;
+    }
+
     &:hover{
-      background-color: $color-midblue;
       text-decoration: none;
     }
   }
 
   .tab.hamburger {
+    font-size: 30px;
     display: none;
-    font-size: 32px;
-    line-height: 0;
-    vertical-align: text-bottom;
-    padding-right: 0;
   }
 
   @include max-screen($mobile-breakpoint) {
@@ -110,8 +199,4 @@ header {
       }
   }
 
-}
-
-header + .wrap {
-  margin-top: 106px;
 }
