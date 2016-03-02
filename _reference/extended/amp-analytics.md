@@ -180,12 +180,11 @@ Adds support for SimpleReach.  Configuration details can be found at [simplereac
 ## <a name="attributes"></a>Attributes
 
   - `type` See [Analytics vendors](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/#analytics-vendors)
-  - `config` Optional attribute. This attribute can be used to load a configuration from a specified remote URL. The URL specified here should use https scheme. See also `data-include-credentials` attribute below. The URL may include [AMP URL vars](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../spec/amp-var-substitutions.md).
+  - `config` Optional attribute. This attribute can be used to load a configuration from a specified remote URL. The URL specified here should use https scheme. See also `data-include-credentials` attribute below. The URL may include [AMP URL vars](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../spec/amp-var-substitutions.md). The response must follow the [AMP CORS security guidelines](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../spec/amp-cors-requests.md).
 
     {% highlight html %}
     <amp-analytics config="https://example.com/analytics.config.json"></amp-analytics>
     {% endhighlight %}
-    The response must follow the [AMP CORS security guidelines](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../spec/amp-cors-requests.md).
 
   - `data-credentials` Optional attribute. If set to `include` turns on the ability to read and write cookies on the request specified via `config` above.
   - `data-consent-notification-id` Optional attribute. If provided, the page will not process analytics requests until an [amp-user-notification](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-user-notification/amp-user-notification.md) with
