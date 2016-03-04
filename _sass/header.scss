@@ -96,24 +96,23 @@ header {
     .header-title {
       color: $color-midblue;
       font-family: Roboto, verdana, arial, sans-serif;
-      padding: 15px 10px 15px 50px;
       margin: 10px 0;
-      width: auto;
+      padding: 15px 10px 15px 50px;
       text-transform: none;
       white-space: nowrap;
+      width: auto;
 
       @include max-screen($mobile-breakpoint) {
-        width: auto;
-        padding: 0;
-        padding-left: 45px;
         line-height: 41px;
         margin: 6px 0;
+        padding: 0 0 0 50px;
+        width: auto;
       }
 
-      background-image: url('/docs/assets/logo-blue.svg');
+      background-image: url('/docs/assets/logo.svg');
+      background-position: center left;
       background-repeat: no-repeat;
       background-size: 40px 40px;
-      background-position: center left;
     }
 
   }
