@@ -19,11 +19,31 @@ Copy this and save it to a file with a .html extension.
       {
         "@context": "http://schema.org",
         "@type": "NewsArticle",
-        "headline": "Open-source framework for publishing content",
-        "datePublished": "2015-10-07T12:02:41Z",
-        "image": [
-          "logo.jpg"
-        ]
+        "mainEntityOfPage": "http://cdn.ampproject.org/article-metadata.html",
+        "headline": "Lorem Ipsum",
+        "datePublished": "1907-05-05T12:02:41Z",
+        "dateModified": "1907-05-05T12:02:41Z",
+        "description": "The Catiline Orations continue to beguile engineers and designers alike -- but can it stand the test of time?",
+        "author": {
+          "@type": "Person",
+          "name": "Jordan M Adler"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Google",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "http://cdn.ampproject.org/logo.jpg",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "http://cdn.ampproject.org/leader.jpg",
+          "height": 2000,
+          "width": 800
+        }
       }
     </script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -55,7 +75,7 @@ AMP HTML documents MUST:
 
 In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but is a requirement to get your content distributed in certain places, for instance in the [Google Search news carousel demo (try on your phone)](https://g.co/ampdemo).
 
-To learn more about all the meta-data you’ll need in various other places, i.e. Twitter, [explore our samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples).
+To learn more about all the meta-data you’ll need in various other places, i.e. Twitter, [explore our samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). To learn specifically about AMP in Google Search, see [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories).
 
 <hr>
 

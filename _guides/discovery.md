@@ -47,11 +47,31 @@ Example:
   {
     "@context": "http://schema.org",
     "@type": "NewsArticle",
-    "headline": "Open-source framework for publishing content",
-    "datePublished": "2015-10-07T12:02:41Z",
-    "image": [
-      "logo.jpg"
-    ]
+    "mainEntityOfPage": "http://cdn.ampproject.org/article-metadata.html",
+    "headline": "Lorem Ipsum",
+    "datePublished": "1907-05-05T12:02:41Z",
+    "dateModified": "1907-05-05T12:02:41Z",
+    "description": "The Catiline Orations continue to beguile engineers and designers alike -- but can it stand the test of time?",
+    "author": {
+      "@type": "Person",
+      "name": "Jordan M Adler"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Google",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://cdn.ampproject.org/logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://cdn.ampproject.org/leader.jpg",
+      "height": 2000,
+      "width": 800
+    }
   }
 </script>
 {% endhighlight %}
@@ -59,6 +79,7 @@ Example:
 More examples can be found in [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
 
 Note: This Schema.org definition is a requirement to make your content eligible to appear in the demo of the [Google Search news carousel (try on mobile)](https://g.co/ampdemo).
+See also [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories).
 
 ### Other metadata for even more platforms
 
