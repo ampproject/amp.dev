@@ -51,7 +51,7 @@ Example:
     "headline": "Lorem Ipsum",
     "datePublished": "1907-05-05T12:02:41Z",
     "dateModified": "1907-05-05T12:02:41Z",
-    "description": "The Catiline Orations continue to begule engineers and designers alike -- but can it stand the test of time?",
+    "description": "The Catiline Orations continue to beguile engineers and designers alike -- but can it stand the test of time?",
     "author": {
       "@type": "Person",
       "name": "Jordan M Adler"
