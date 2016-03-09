@@ -135,7 +135,7 @@ Different ad types require different `data-*` attributes.
 
 {% highlight html %}
 <amp-ad width=300 height=250
-    type="a9"
+    type="example"
     data-aax_size="300x250"
     data-aax_pubname="test123"
     data-aax_src="302">
@@ -148,7 +148,7 @@ to be shown if no ad is available:
 
 {% highlight html %}
 <amp-ad width=300 height=250
-    type="a9"
+    type="example"
     data-aax_size="300x250"
     data-aax_pubname="test123"
     data-aax_src="302">
@@ -156,10 +156,4 @@ to be shown if no ad is available:
 </amp-ad>
 {% endhighlight html %}
 
-The following ad networks are supported in AMP HTML pages:
-
-- [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md)
-- [AdReactor](https://github.com/ampproject/amphtml/blob/master/ads/adreactor.md)
-- [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/adsense.md)
-- [AdTech](https://github.com/ampproject/amphtml/blob/master/ads/adtech.md)
-- [Doubleclick](https://github.com/ampproject/amphtml/blob/master/ads/doubleclick.md)
+AMP supports a wide range of ad networks. See [reference for a full list](/docs/reference/amp-ad.html#supported-ad-networks).
