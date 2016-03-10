@@ -38,6 +38,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Examples</strong></td>
+    <td><a href="https://ampbyexample.com/advanced/image_galleries_with_amp-carousel/">image_galleries_with_amp-carousel.html</a></td>
     <td><a href="https://github.com/ampproject/amphtml/blob/master/examples/everything.amp.html">everything.amp.html</a></td>
   </tr>
 </table>

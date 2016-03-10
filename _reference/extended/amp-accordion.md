@@ -38,7 +38,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Examples</strong></td>
-    <td>None</td>
+    <td><a href="https://ampbyexample.com/components/amp-accordion">amp-accordion.html</a></td>
   </tr>
 </table>
 
