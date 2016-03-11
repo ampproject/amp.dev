@@ -76,24 +76,29 @@ header {
 
   }
   .left-nav {
-    float: left;
-
-    @include display(flex);
     @include align-items(center);
+    @include display(flex);
     @include justify-content(flex-start);
-    margin-left: 0;
-    letter-spacing: 0.04em;
+
+    float: left;
     font-size: 14px;
+    letter-spacing: 0.04em;
+    margin-left: 0;
 
     @include max-screen($mobile-breakpoint) {
-      width: auto;
-      text-align: left;
+      @include justify-content(flex-start);
+
       flex: 1 1 auto;
       padding: 0 0 5px 0;
-      @include justify-content(flex-start);
+      text-align: left;
+      width: auto;
     }
 
     .header-title {
+      background-image: url('/docs/assets/logo-blue.svg');
+      background-position: center left;
+      background-repeat: no-repeat;
+      background-size: 40px 40px;
       color: $color-midblue;
       font-family: Roboto, verdana, arial, sans-serif;
       margin: 10px 0;
@@ -108,11 +113,6 @@ header {
         padding: 0 0 0 50px;
         width: auto;
       }
-
-      background-image: url('/docs/assets/logo.svg');
-      background-position: center left;
-      background-repeat: no-repeat;
-      background-size: 40px 40px;
     }
 
   }
