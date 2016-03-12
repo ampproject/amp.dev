@@ -12,13 +12,13 @@ In order to solve this problem, we add information about the AMP page to the non
 
 Add the following to the non-AMP page:
 
-{% highlight html linenos %}
+{% highlight html %}
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 {% endhighlight %}
 
 And this to the AMP page:
 
-{% highlight html linenos %}
+{% highlight html %}
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 {% endhighlight %}
 
@@ -26,7 +26,7 @@ And this to the AMP page:
 
 If you only have one page, and that page is an AMP page, you must still add the canonical link to it, which will then simply point to itself:
 
-{% highlight html linenos %}
+{% highlight html %}
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 {% endhighlight %}
 
@@ -42,7 +42,7 @@ This isn’t just relevant for AMP pages but for all web pages. For some platfor
 
 Example:
 
-{% highlight html linenos %}
+{% highlight html %}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",

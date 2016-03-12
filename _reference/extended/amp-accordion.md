@@ -30,7 +30,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Availability</strong></td>
-    <td>Stable; no validations yet.</td>
+    <td><a href="https://www.ampproject.org/docs/reference/experimental.html">Experimental</a>; no validations yet.</td>
   </tr>
   <tr>
     <td width="40%"><strong>Required Script</strong></td>
@@ -38,7 +38,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Examples</strong></td>
-    <td>None</td>
+    <td><a href="https://ampbyexample.com/components/amp-accordion">amp-accordion.html</a></td>
   </tr>
 </table>
 

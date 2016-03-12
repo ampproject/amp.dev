@@ -44,9 +44,9 @@ Valid values for the layout attribute are:
 <table>
   <thead>
     <tr>
-      <th data-th="Layout type" width="20%">Layout type</th>
-      <th data-th="Width/height required" width="20%">Width/height required</th>
-      <th data-th="Behavior" width="60%">Behavior</th>
+      <th data-th="Layout type" class="col-twenty">Layout type</th>
+      <th data-th="Width/height required" class="col-twenty">Width/height required</th>
+      <th data-th="Behavior">Behavior</th>
     </tr>
   </thead>
   <tbody>
@@ -117,7 +117,7 @@ but only impacts the specific element on a single page.
 For example, here we have 2 images with mutually exclusive media queries.
 Depending on the screen width, one or the other will be fetched and rendered.
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
@@ -127,7 +127,7 @@ Depending on the screen width, one or the other will be fetched and rendered.
 </amp-img>
 {% endhighlight %}
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
@@ -147,7 +147,7 @@ to specify which image assets to use based on varying screen sizes.
 In this simple example,
 `srcset` specifies which image to use based on the screen width:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-img
     src="wide.jpg"
     srcset="wide.jpg" 640w,
@@ -163,7 +163,7 @@ the user agent selects the most relative source supplied by the `srcset` attribu
 
 Consider the following example:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-img
     src="wide.jpg"
     srcset="wide.jpg" 640w,
@@ -195,7 +195,7 @@ The element marked with the `placeholder` attribute acts
 as a placeholder for the parent AMP element.
 If specified, a `placeholder` element must be a direct child of the AMP element.
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
     <amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
@@ -215,7 +215,7 @@ for any element the browser doesn’t support.
 For example, use the `fallback` attribute to communicate to the user
 that the browser doesn’t support a particular feature:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
     poster="myvideo-poster.jpg" >
   <div fallback>

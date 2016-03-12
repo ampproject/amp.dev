@@ -15,7 +15,7 @@ which tracks the page views and user clicks on links
 and sends the analytics data to the third-party provider,
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
 <script type="application/json">
 {
@@ -105,7 +105,7 @@ to construct the configuration data.
 The first step to loading remote configurations is
 to include the config attribute in the `amp-analytics` tag:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics config="https://example.com/analytics.account.config.json">
 {% endhighlight %}
 
@@ -115,7 +115,7 @@ the configuration contained in the JSON object is just the variable value for th
 
 Example content in `https://example.com/analytics.account.config.json`:
 
-{% highlight html linenos %}
+{% highlight html %}
 {
   "vars": {
     "account": "UA-XXXXX-Y"  // Replace with your property ID.
@@ -129,7 +129,7 @@ In both the `pageview` and `event` requests here,
 the `account` variable value is automatically set
 to the account value in the remote URL (`"account": "UA-XXXXX-Y"`):
 
-{% highlight html linenos %}
+{% highlight html %}
 "requests": {
   "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
   "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
@@ -165,7 +165,7 @@ The `request-value` is an `https` URL.
 These values may include placeholder tokens
 that can reference other requests or variables.
 
-{% highlight html linenos %}
+{% highlight html %}
 "requests": {
   "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
   "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
@@ -188,7 +188,7 @@ attribute specifies additional parameters to append to the query string of the r
 The `amp-analytics` example adds an additional parameter <code>cd1</code>
 to the request and sets the parameter value to "AMP":
 
-{% highlight html linenos %}
+{% highlight html %}
   "extraUrlParams": {
     "cd1": "AMP"
   }
@@ -206,7 +206,7 @@ the following `amp-analytics` element is configured to send a request to
 `https://example.com/analytics` when the document is first loaded,
 and each time an `a` tag is clicked:
 
-{% highlight html linenos %}
+{% highlight html %}
 "triggers": {
   "trackPageview": {
     "on": "visible",
@@ -229,8 +229,8 @@ AMP supports the following trigger configurations:
 <table>
   <thead>
     <tr>
-      <th data-th="Trigger Config" width="30%">Trigger Config</th>
-      <th data-th="Description" width="70%">Description</th>
+      <th data-th="Trigger Config" class="col-thirty">Trigger Config</th>
+      <th data-th="Description">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -273,8 +273,8 @@ The following three methods are enabled by default:
 <table>
   <thead>
     <tr>
-      <th data-th="Transport Method" width="30%">Transport Method</th>
-      <th data-th="Description" width="70%">Description</th>
+      <th data-th="Transport Method" class="col-thirty">Transport Method</th>
+      <th data-th="Description">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -310,7 +310,7 @@ so they will not be used even though they have higher precedence than `image`.
 If the client's user agent supports the `image` method,
 then it will be used; otherwise, no request gets sent.
 
-{% highlight html linenos %}
+{% highlight html %}
 'transport': {
   'beacon': false,
   'xhrpost': false,
@@ -330,7 +330,7 @@ AMP populates variables with values in an order of precendence:
 In this example, there’s a remote configuration,
 variables defined at the top-level, in triggers, and at the platform level:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics config="http://example.com/config.json">
 <script type="application/json">
 {
@@ -363,9 +363,9 @@ the values of various vars will be as follows:
 <table>
   <thead>
     <tr>
-      <th data-th="var" width="25%"><code>var</code></th>
-      <th data-th="Value" width="50%">Value</th>
-      <th data-th="Defined By" width="25%">Defined By</th>
+      <th data-th="var" class="col-thirty"><code>var</code></th>
+      <th data-th="Value">Value</th>
+      <th data-th="Defined By" class="col-thirty">Defined By</th>
     </tr>
   </thead>
   <tbody>

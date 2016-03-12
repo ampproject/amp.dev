@@ -7,7 +7,7 @@ order: 0
 The following markup is a decent starting point or boilerplate.
 Copy this and save it to a file with a .html extension.
 
-{% highlight html linenos %}
+{% highlight html %}
 <!doctype html>
 <html amp lang="en">
   <head>

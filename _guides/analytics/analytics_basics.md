@@ -57,7 +57,7 @@ Learn how to create a simple
 To create a simple `amp-pixel` configuration,
 insert something like the following into the body of your AMP page:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 {% endhighlight %}
 
@@ -86,7 +86,7 @@ you must first include this `custom-element` declaration
 in the `<head>` of the AMP document (see also
 [Component inclusion declaration](/docs/reference/extended.html#component-inclusion-declaration)):
 
-{% highlight html linenos %}
+{% highlight html %}
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 {% endhighlight %}
 
@@ -95,7 +95,7 @@ Everytime a page is visible,
 the trigger event fires, and
 sends the pageview data to a defined URL along with a random ID: 
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics>
 <script type="application/json">
 {
@@ -132,7 +132,7 @@ the page view request is sent to the URL,
 along with the current AMP document’s canonical URL, its title, and a
 [client ID](/docs/guides/analytics/analytics_basics.html#user-identification):
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 {% endhighlight %}
 
@@ -158,7 +158,7 @@ some provided by the platform,
 some defined inline,
 within the `amp-analytics` configuration:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics>
 <script type="application/json">
 {
@@ -230,7 +230,7 @@ The formatting may appear as either
 
 For example:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
 {% endhighlight %}
 

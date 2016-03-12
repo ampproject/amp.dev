@@ -164,7 +164,18 @@ td, th {
   text-align: left;
 }
 
+td.col-fourty {
+  width: 40%;
+}
+
+td.col-thirty {
+  width: 30%;
+}
+
 th {
   background: #eee;
 }
 
+th.col-twenty {
+  width: 20%;
+}

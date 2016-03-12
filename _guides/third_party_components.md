@@ -16,7 +16,7 @@ using the [`amp-twitter`](/docs/reference/extended/amp-twitter.html) element.
 To include a tweet in your page,
 first include the following script in the `<head>`:
 
-{% highlight html linenos %}
+{% highlight html %}
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 {% endhighlight html %}
 
@@ -29,7 +29,7 @@ to select the aspect ratio based on screen width.
 Example `amp-twitter` from the
 [twitter.amp example](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html):
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-twitter width=390 height=50
     layout="responsive"
     data-tweetid="638793490521001985">
@@ -44,7 +44,7 @@ using the [`amp-instagram`](/docs/reference/extended/amp-instagram.html) element
 To include an Instagram,
 first include the following script in the `<head>`:
 
-{% highlight html linenos %}
+{% highlight html %}
 <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 {% endhighlight html %}
 
@@ -54,7 +54,7 @@ For example, in `https://instagram.com/p/fBwFP`,
 Also, Instagram uses a fixed aspect ratio for responsive layouts,
 so the value for width and height should be universal
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-instagram
     data-shortcode="fBwFP"
     width="320"
@@ -70,13 +70,13 @@ using the [`amp-facebook`](/docs/reference/extended/amp-facebook.html) element.
 
 You must include the following script in the `<head>`:
 
-{% highlight html linenos %}
+{% highlight html %}
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>"></script>
 {% endhighlight html %}
 
 Example - Embedding a post:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-facebook width=486 height=657
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
@@ -85,7 +85,7 @@ Example - Embedding a post:
 
 Example - Embedding a video: 
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-facebook width=552 height=574
     layout="responsive"
     data-embed-as="video"
@@ -100,7 +100,7 @@ using the [`amp-youtube`](/docs/reference/extended/amp-youtube.html) element.
 
 You must include the following script in the `<head>`:
 
-{% highlight html linenos %}
+{% highlight html %}
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 {% endhighlight html %}
 

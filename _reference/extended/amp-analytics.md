@@ -42,24 +42,6 @@ limitations under the License.
   </tr>
 </table>
 
-The following lists validation errors specific to the `amp-analytics` tag
-(see also `amp-analytics` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
-
-<table>
-  <tr>
-    <th width="40%"><strong>Validation Error</strong></th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td width="40%"><a href="/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
-    <td>Error thrown when required <code>amp-analytics</code> extension <code>.js</code> script tag is missing or incorrect.</td>
-  </tr>
-  <tr>
-    <td width="40%"><a href="/docs/reference/validation_errors.html#invalid-attribute-value">The attribute 'example1' in tag 'example2' is set to the invalid value 'example3'.</a></td>
-    <td>Error thrown when the <code>src</code> attribute for the script tag is invalid. The value must be <code>"https://cdn.ampproject.org/v0/amp-analytics-0.1.js"</code>.</td>
-  </tr>
-</table>
-
 ## <a name="behavior"></a>Behavior
 
 The `<amp-analytics>` element is used to measure activity on an AMP document. The details concerning what is measured and how that data is sent to an analytics server is specified in a JSON configuration object. It comes pre-configured to support many [analytics vendors](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/#analytics-vendors) out of the box.
@@ -124,7 +106,7 @@ Adds support for AT Internet. More details for adding AT Internet support can be
 
 Type attribute value: `chartbeat`
 
-Adds support for Chartbeat. More details for adding Chartbeat support can be found at [support.chartbeat.com](http://support.chartbeat.com/docs/).
+Adds support for Chartbeat. More details for adding Chartbeat support can be found at [support.chartbeat.com](http://support.chartbeat.com/docs/integrations.html#amp).
 
 ### comScore
 
@@ -159,6 +141,12 @@ Type attribute value: `krux`
 
 Adds support for Krux.  Configuration details can be found at [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
 
+### Médiamétrie
+
+Type attribute value: `mediametrie`
+
+Adds support for Médiamétrie tracking pages. Requires defining *var* `serial`. Vars `level1` to `level4` are optional.
+
 ### Parsely
 
 Type attribute value: `parsely`
@@ -177,14 +165,21 @@ Type attribute value: `simplereach`
 
 Adds support for SimpleReach.  Configuration details can be found at [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation)
 
+### Webtrekk
+
+Type attribute value: `webtrekk`
+
+Adds support for Webtrekk. Configuration details can be found at [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/en/public/amp-analytics.html).
+
 ## <a name="attributes"></a>Attributes
 
   - `type` See [Analytics vendors](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/#analytics-vendors)
-  - `config` Optional attribute. This attribute can be used to load a configuration from a specified remote URL. The URL specified here should use https scheme. See also `data-include-credentials` attribute below. The URL may include [AMP URL vars](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../spec/amp-var-substitutions.md). The response must follow the [AMP CORS security guidelines](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../spec/amp-cors-requests.md).
+  - `config` Optional attribute. This attribute can be used to load a configuration from a specified remote URL. The URL specified here should use https scheme. See also `data-include-credentials` attribute below. The URL may include [AMP URL vars](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../spec/amp-var-substitutions.md).
 
     {% highlight html %}
     <amp-analytics config="https://example.com/analytics.config.json"></amp-analytics>
     {% endhighlight %}
+    The response must follow the [AMP CORS security guidelines](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../spec/amp-cors-requests.md).
 
   - `data-credentials` Optional attribute. If set to `include` turns on the ability to read and write cookies on the request specified via `config` above.
   - `data-consent-notification-id` Optional attribute. If provided, the page will not process analytics requests until an [amp-user-notification](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-user-notification/amp-user-notification.md) with
@@ -353,16 +348,48 @@ If more than one of the above transport methods are enabled, the precedence is `
 In the example below, `beacon` and `xhrpost` are set to `false`, so they will not be used even though they have higher precedence than `image`. `image` would be set `true` by default, but it is explicitly declared here. If the client's user agent supports the `image` method, then it will be used; otherwise, no request would be sent.
 
 {% highlight javascript %}
-'transport': {
-  'beacon': false,
-  'xhrpost': false,
-  'image': true
+"transport": {
+  "beacon": false,
+  "xhrpost": false,
+  "image": true
 }
 {% endhighlight %}
 
 
-# Extra URL Params
+### Extra URL Params
 
-The `extraUrlParams` attribute specifies additional parameters to append to the query string of the url via the usual "&foo=baz" convention.
+The `extraUrlParams` attribute specifies additional parameters to append to the query string of a request URL via the usual "&foo=baz" convention.
 
-The `extraUrlParamsReplaceMap` attribute specifies a map of keys and values that act as parameters to String.replace() to preprocess keys in the extraUrlParams map.
+Here's an example that would append `&a=1&b=2&c=3` to a request:
+
+{% highlight javascript %}
+"extraUrlParams": {
+  "a": "1",
+  "b": "2",
+  "c": "3"
+}
+{% endhighlight %}
+
+The `extraUrlParamsReplaceMap` attribute specifies a map of keys and values that act as parameters to String.replace() to preprocess keys in the extraUrlParams configuration. For example, if an `extraUrlParams` configuration defines `"page.title": "The title of my page"` and the `extraUrlParamsReplaceMap` defines `"page.": "_p_"`, then `&_p_title=The%20title%20of%20my%20page%20` will be appended to the request.
+
+`extraUrlParamsReplaceMap` is not required to use `extraUrlParams`. If `extraUrlParamsReplaceMap` is not defined, then no string substitution will happens and the strings defined in `extraUrlParams` are used as-is.
+
+## Validation errors
+
+The following lists validation errors specific to the `amp-analytics` tag
+(see also `amp-analytics` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
+
+<table>
+  <tr>
+    <th width="40%"><strong>Validation Error</strong></th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
+    <td>Error thrown when required <code>amp-analytics</code> extension <code>.js</code> script tag is missing or incorrect.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="/docs/reference/validation_errors.html#invalid-attribute-value">The attribute 'example1' in tag 'example2' is set to the invalid value 'example3'.</a></td>
+    <td>Error thrown when the <code>src</code> attribute for the script tag is invalid. The value must be <code>"https://cdn.ampproject.org/v0/amp-analytics-0.1.js"</code>.</td>
+  </tr>
+</table>
