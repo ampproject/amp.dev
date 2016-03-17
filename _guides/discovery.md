@@ -32,7 +32,7 @@ If you only have one page, and that page is an AMP page, you must still add the 
 
 ## Integrate with third-party platforms through additional metadata
 
-Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are thinks like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
+Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are things like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
 
 This isn’t just relevant for AMP pages but for all web pages. For some platforms, this metadata is additional, for others it is a requirement, meaning they **won’t show links to your content if you didn’t include the right metadata**. Make sure you include the right metadata for the platforms you want your content to appear on.
 
