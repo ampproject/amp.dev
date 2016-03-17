@@ -20,6 +20,10 @@ body {
   padding: 0;
 }
 
+body {
+  padding-top: 66px;
+}
+
 ul li,
 ol li {
   @include text-body();
