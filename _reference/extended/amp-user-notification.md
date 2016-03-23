@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-user-notification
-order: 24
+order: 28
 ---
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -148,7 +148,40 @@ will be passed in future requests to data-show-if-href)
 If not specified, AMP will not send a request upon dismissal and will only store "dismissed"
 flag for the specified ID locally.
 
----
+**data-persist-dismissal** (Optional)
+__Default: true__
+If set  to `false` AMP will not remember the user's dismissal of the notification. The notification
+will always show if the `data-show-if-href` result is show notification. If no `data-show-if-href` is provided
+the notification will always show.
+
+Example 1:
+{% highlight html %}
+<amp-user-notification
+      layout=nodisplay
+      id="amp-user-notification5"
+      data-persist-dismissal="false"
+      data-show-if-href="https://example.com/api/shouldShow?timestamp=TIMESTAMP"
+      data-dismiss-href="https://example.com/api/echo/post">
+This notification should ALWAYS show - if shouldShow endpoint response was true.
+<a href="#learn-more">Learn more.</a>
+<button on="tap:amp-user-notification5.dismiss">Dismiss</button>
+</amp-user-notification>
+{% endhighlight %}
+
+Example 2:
+{% highlight html %}
+<amp-user-notification
+      layout=nodisplay
+      id="amp-user-notification6"
+      data-persist-dismissal="false">
+This notification should ALWAYS show on every page visit.
+<a href="#learn-more">Learn more.</a>
+<button on="tap:amp-user-notification6.dismiss">Dismiss</button>
+</amp-user-notification>
+{% endhighlight %}
+
+
+--------
 
 ## JSON Fields
 

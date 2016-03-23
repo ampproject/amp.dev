@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-dailymotion
-order: 7
+order: 8
 ---
 
 <!---

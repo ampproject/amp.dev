@@ -25,19 +25,19 @@ limitations under the License.
 
 <table>
   <tr>
-    <td width="40%"><strong>Description</strong></td>
+    <td class="col-fourty"><strong>Description</strong></td>
     <td>Capture analytics data from an AMP document.</td>
   </tr>
   <tr>
-    <td width="40%"><strong>Availability</strong></td>
+    <td class="col-fourty"><strong>Availability</strong></td>
     <td>Stable</td>
   </tr>
   <tr>
-    <td width="40%"><strong>Required Script</strong></td>
+    <td class="col-fourty"><strong>Required Script</strong></td>
     <td><code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td width="40%"><strong>Examples</strong></td>
+    <td class="col-fourty"><strong>Examples</strong></td>
     <td><a href="https://github.com/ampproject/amphtml/blob/master/examples/analytics.amp.html">analytics.amp.html</a></td>
   </tr>
 </table>
@@ -153,6 +153,12 @@ Type attribute value: `parsely`
 
 Adds support for Parsely. Configuration details can be found at [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
 
+##### Piano
+
+Type attribute value: `piano`
+
+Adds support for Piano.  Configuration details can be found at [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+
 ### Quantcast Measurement
 
 Type attribute value: `quantcast`
@@ -164,6 +170,12 @@ Adds support for Quantcast Measurement. More details for adding Quantcast Measur
 Type attribute value: `simplereach`
 
 Adds support for SimpleReach.  Configuration details can be found at [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation)
+
+### Snowplow Analytics
+
+Type attribute value: `snowplow`
+
+Adds support for Snowplow Analytics. More details for adding Snowplow Analytics support can be found at [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
 
 ### Webtrekk
 
@@ -381,15 +393,15 @@ The following lists validation errors specific to the `amp-analytics` tag
 
 <table>
   <tr>
-    <th width="40%"><strong>Validation Error</strong></th>
+    <th class="col-fourty"><strong>Validation Error</strong></th>
     <th>Description</th>
   </tr>
   <tr>
-    <td width="40%"><a href="/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
+    <td class="col-fourty"><a href="/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
     <td>Error thrown when required <code>amp-analytics</code> extension <code>.js</code> script tag is missing or incorrect.</td>
   </tr>
   <tr>
-    <td width="40%"><a href="/docs/reference/validation_errors.html#invalid-attribute-value">The attribute 'example1' in tag 'example2' is set to the invalid value 'example3'.</a></td>
+    <td class="col-fourty"><a href="/docs/reference/validation_errors.html#invalid-attribute-value">The attribute 'example1' in tag 'example2' is set to the invalid value 'example3'.</a></td>
     <td>Error thrown when the <code>src</code> attribute for the script tag is invalid. The value must be <code>"https://cdn.ampproject.org/v0/amp-analytics-0.1.js"</code>.</td>
   </tr>
 </table>

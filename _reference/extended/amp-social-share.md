@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-social-share
-order: 21
+order: 24
 ---
 
 <!---

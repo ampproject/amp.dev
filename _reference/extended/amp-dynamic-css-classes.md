@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-dynamic-css-classes
-order: 8
+order: 9
 ---
 
 <!---

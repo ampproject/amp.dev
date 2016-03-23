@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-image-lightbox
-order: 13
+order: 14
 ---
 
 <!---

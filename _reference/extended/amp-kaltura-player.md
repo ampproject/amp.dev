@@ -1,11 +1,11 @@
 ---
 layout: page
-title: amp-vine
-order: 30
+title: amp-kaltura-player
+order: 17
 ---
 
 <!---
-Copyright 2015 The AMP HTML Authors. All Rights Reserved.
+Copyright 2016 Kaltura. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -20,13 +20,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 -->
- 
+
 
 
 <table>
   <tr>
     <td width="40%"><strong>Description</strong></td>
-    <td>Displays a Vine simple embed.</td>
+    <td>An <code>amp-kaltura-player</code> component displays the Kaltura Player as used in Kaltura's <a href="https://corp.kaltura.com/">Video Platform</a>.</td>
   </tr>
   <tr>
     <td width="40%"><strong>Availability</strong></td>
@@ -34,34 +34,16 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Required Script</strong></td>
-    <td><code>&lt;script async custom-element="amp-vine" src="https://cdn.ampproject.org/v0/amp-vine-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-kaltura-player" src="https://cdn.ampproject.org/v0/amp-kaltura-player-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td width="40%"><strong>Examples</strong></td>
-    <td><a href="https://ampbyexample.com/components/amp-vine/">amp-vine.html</a><br /><a href="https://github.com/ampproject/amphtml/blob/master/examples/vine.amp.html">vine.amp.html</a></td>
+    <td><a href="https://amp-by-example.appspot.com/amp-kaltura-player.html">amp-kaltura-player.html</a><br /><a href="https://github.com/ampproject/amphtml/blob/master/examples/kaltura.amp.html">kaltura.amp.html</a></td>
   </tr>
 </table>
 
-## Example
-
-A Vine simple embed has equal width and height:
-
-{% highlight html %}
-<amp-vine width="400" height="400"
-  data-vineid="MdKjXez002d">
-</amp-vine>
-{% endhighlight %}
-
-## Attributes
-
-**data-vineid**
-
-The ID of the Vine. In a URL like https://vine.co/v/MdKjXez002d `MdKjXez002d` is the vineID.
-
-## Validation errors
-
-The following lists validation errors specific to the `amp-vine` tag
-(see also `amp-vine` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
+The following lists validation errors specific to the `amp-kaltura-player` tag
+(see also `amp-kaltura-player` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
 
 <table>
   <tr>
@@ -70,14 +52,14 @@ The following lists validation errors specific to the `amp-vine` tag
   </tr>
   <tr>
     <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
-    <td>Error thrown when required <code>amp-vine</code> extension <code>.js</code> script tag is missing or incorrect.</td>
+    <td>Error thrown when required <code>amp-kaltura-player</code> extension <code>.js</code> script tag is missing or incorrect.</td>
   </tr>
   <tr>
     <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#mandatory-attribute-missing">The mandatory attribute 'example1' is missing in tag 'example2'.</a></td>
-    <td>Error thrown when required attribute, <code>data-vineid</code>, is missing.</td>
+    <td>Error thrown when <code>data-partner</code> attribute is missing.</td>
   </tr>
   <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#implied-layout-isnt-supported-by-amp-tag">The implied layout 'example1' is not supported by tag 'example2'.D</a></td>
+    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#implied-layout-isnt-supported-by-amp-tag">The implied layout 'example1' is not supported by tag 'example2'.</a></td>
     <td>Error thrown when implied layout is set to <code>CONTAINER</code>; this layout type isn't supported.</td>
   </tr>
   <tr>
@@ -89,3 +71,44 @@ The following lists validation errors specific to the `amp-vine` tag
     <td>Error thrown when invalid value is given for attributes <code>height</code> or <code>width</code>. For example, <code>height=auto</code> triggers this error for all supported layout types, with the exception of <code>NODISPLAY</code>.</td>
   </tr>
 </table>
+
+## Example
+
+The `width` and `height` attributes determine the aspect ratio of the player embedded in responsive layouts.
+
+Example:
+
+{% highlight html %}
+ <amp-kaltura-player
+      data-uiconf="33502051"
+      data-partner="1281471"
+      data-entryid="1_3ts1ms9c"
+      data-param-streamerType = "auto"
+      layout="responsive" width="480" height="270">
+  </amp-kaltura-player>
+{% endhighlight %}
+
+## Attributes
+
+**data-partner**
+
+The Kaltura partner id.
+
+**data-uiconf**
+
+The Kaltura player id - uiconf id.
+
+**data-entryid**
+
+The Kaltura entry id.
+
+
+**data-param-***
+
+All `data-param-*` attributes will be added as query parameter to the player iframe src. This may be used to pass custom values through to player plugins, such as ad parameters or video ids for Perform players.
+
+Keys and values will be URI encoded. Keys will be camel cased.
+
+- `data-param-streamerType="auto"` becomes `&flashvars[streamerType]=auto`
+
+

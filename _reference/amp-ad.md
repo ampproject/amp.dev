@@ -62,6 +62,7 @@ resources in AMP. It requires a `type` argument that select what ad network is d
 ## Supported ad networks
 
 - [A9](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/a9.md)
+- [Adblade](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adblade.md)
 - [Adform](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adform.md)
 - [AdReactor](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adreactor.md)
 - [AdSense](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adsense.md)
@@ -70,6 +71,8 @@ resources in AMP. It requires a `type` argument that select what ad network is d
 - [Dot and Media](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/dotandads.md)
 - [Doubleclick](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/doubleclick.md)
 - [Flite](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/flite.md)
+- [Industrybrains](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/industrybrains.md)
+- [OpenX](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/openx.md)
 - [plista](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/plista.md)
 - [Smart AdServer](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/smartadserver.md)
 - [Yieldmo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yieldmo.md)
@@ -77,6 +80,7 @@ resources in AMP. It requires a `type` argument that select what ad network is d
 - [TripleLift](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/triplelift.md)
 - [Teads](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/teads.md)
 - [I-Mobile](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/imobile.md)
+- [Webediads](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/webediads.md)
 
 ## Styling
 
