@@ -3,6 +3,12 @@ layout: page
 title: What Is AMP?
 order: 0
 ---
+<amp-youtube
+    data-videoid="lBTCB7yLs8Y"
+    layout="responsive"
+    width="480" height="270">
+</amp-youtube>
+
 AMP is a way to build web pages for static content that render fast.
 AMP in action consists of three different parts:
 
@@ -11,13 +17,7 @@ AMP in action consists of three different parts:
 **AMP HTML** is HTML with some restrictions for reliable performance
 and some extensions for building rich content beyond basic HTML.
 The **AMP JS** library ensures the fast rendering of AMP HTML pages.
-The **AMP CDN** (optionally) delivers the AMP HTML pages.
-
-<amp-youtube
-    data-videoid="SOx1XfOjJPI"
-    layout="responsive"
-    width="480" height="270">
-</amp-youtube>
+The **Google AMP Cache** (optionally) delivers the AMP HTML pages.
 
 ## AMP HTML
 
@@ -61,15 +61,16 @@ Other performance techniques include the sandboxing of all iframes, the pre-calc
 
 To learn more about not just the [optimizations](/docs/get_started/technical_overview.html) but the limitations, [read the AMP HTML specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
 
-## AMP CDN
+## Google AMP Cache
 
-The AMP CDN is a proxy-based CDN for delivering all valid AMP documents.
+The Google AMP Cache is a proxy-based content delivery network
+for delivering all valid AMP documents.
 It fetches AMP HTML pages, caches them, and improves page performance automatically.
-When using the AMP CDN, the document, all JS files and all images load
+When using the Google AMP Cache, the document, all JS files and all images load
 from the same origin that is using
 [HTTP 2.0](https://http2.github.io/) for maximum efficiency.
 
-AMP’s CDN also comes with a built-in
+The cache also comes with a built-in
 [validation system](https://github.com/ampproject/amphtml/tree/master/validator)
 which confirms that the page is guaranteed to work,
 and that it doesn't depend on external resources.

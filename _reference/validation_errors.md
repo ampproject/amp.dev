@@ -35,15 +35,15 @@ see the [AMP validator specification](https://github.com/ampproject/amphtml/blob
 
 <table>
    <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>MANDATORY_TAG_MISSING</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The mandatory tag '%1' is missing or incorrect."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Add (or correct) the mandatory HTML tag.</td>
   </tr>
 </table>
@@ -68,15 +68,15 @@ they are also referenced in the [AMP specification](/docs/reference/spec.html).
 <table>
   </tr>
    <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>TAG_REQUIRED_BY_MISSING</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The '%1' tag is missing or incorrect, but required by '%2'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Add (or correct) the required HTML tag.</td>
   </tr>
 </table>
@@ -94,15 +94,15 @@ copy it's required script, and paste it into the AMP document `<head>`.
 
 <table>
    <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>DISALLOWED_TAG</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The tag '%1' is disallowed."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove the disallowed tag.</td>
   </tr>
 </table>
@@ -115,15 +115,15 @@ broadly defines the set of disallowed tags.
 
 <table>
    <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>MANDATORY_ATTR_MISSING</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The mandatory attribute '%1' is missing in tag '%2'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Add mandatory attribute to tag.</td>
   </tr>
 </table>
@@ -140,15 +140,15 @@ within the tag's specification.
 
 <table>
    <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>INVALID_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The attribute '%1' in tag '%2' is set to the invalid value '%3'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Fix the attribute value to something that is valid.</td>
   </tr>
 </table>
@@ -168,15 +168,15 @@ to see if the attribute requires HTTPS.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>DISALLOWED_ATTR</td>
   </tr>
   <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The attribute '%1' may not appear in tag '%2'."</td>
   </tr>
   <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove the attribute from the HTML tag.</td>
   </tr>
 </table>
@@ -194,15 +194,15 @@ all attributes with a prefix of `"data-"` are also whitelisted.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>MANDATORY_CDATA_MISSING_OR_INCORRECT</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The mandatory text (CDATA) inside tag '%1' is missing or incorrect."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Add or correct the mandatory text inside the tag.</td>
   </tr>
 </table>
@@ -211,10 +211,15 @@ CDATA is the content data between a start and end HTML tag
 and is currently evaluated with both whitelists and blacklists.
 Tags with mandatory CDATA include:
 
-* ```html
+{% highlight html %}
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-```
-* `<style amp-custom>` - disallows a variety of specific css constructs like `@import` or `!important`.
+{% endhighlight %}
+
+And: 
+
+{% highlight html %}
+<style amp-custom \\ Disallows a variety of specific css constructs like @import or !important.>
+{% endhighlight %}
 
 Detailed messages for this can be one of the following: 
 
@@ -222,8 +227,8 @@ Detailed messages for this can be one of the following:
 * "Mandatory style boilerplate (noscript)"
 * "Disallowed -amp- CSS class name prefix"
 * "Disallowed !important attribute in CSS"
-* "Disallowed @charset in CSS"
-* "Disallowed @import in CSS"
+* "Disallowed &#64;charset in CSS"
+* "Disallowed &#64;import in CSS"
 * "Disallowed @namespace in CSS"
 * "Disallowed @supports in CSS"
 * "Disallowed @document in CSS"
@@ -234,15 +239,15 @@ Detailed messages for this can be one of the following:
 
 <table>
    <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>CDATA_VIOLATES_BLACKLIST</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The text (CDATA) inside tag '%1' matches '%2', which is disallowed."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove disallowed text.</td>
   </tr>
 </table>
@@ -256,7 +261,7 @@ The following is the list of blacklisted CSS data
 * `"\\.i?-amp-"` ("CSS -amp- class name prefix")
 * `"!important"`
 * `"charset"`
-* `"@import"`
+* `"&#64;import"`
 * `"@namespace"`
 * `"@document"`
 * `"@page"`
@@ -266,15 +271,15 @@ The following is the list of blacklisted CSS data
 
 <table>
    <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>DISALLOWED_PROPERTY_IN_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The property '%1' in attribute '%2' in tag '%3' is disallowed."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove disallowed property in the specified attribute.</td>
   </tr>
 </table>
@@ -300,15 +305,15 @@ It should be: `<meta http-equiv=X-UA-Compatible" content="ie=edge">`.
 
 <table>
    <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>INVALID_PROPERTY_VALUE_IN_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The property '%1' in attribute '%2' in tag '%3' is set to '%4', which is invalid."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Correct the invalid property value.</td>
   </tr>
 </table>
@@ -334,15 +339,15 @@ It should be: `<meta http-equiv=X-UA-Compatible" content="ie=edge">`
 
 <table>
   <tr>
-    <td width="30%"><strong>Code</strong></td>
+    <td class="col-thirty"><strong>Code</strong></td>
     <td>MISSING_URL</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Format</strong></td>
+    <td class="col-thirty"><strong>Format</strong></td>
     <td>"Missing URL for attribute '%1' in tag '%2'."</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Fix</strong></td>
+    <td class="col-thirty"><strong>Fix</strong></td>
     <td>Add the valid URL.</td>
   </tr>
 </table>
@@ -354,15 +359,15 @@ for example, an empty `href` or `src` attribute.
 
 <table>
   <tr>
-    <td width="30%"><strong>Code</strong></td>
+    <td class="col-thirty"><strong>Code</strong></td>
     <td>INVALID_URL_PROTOCOL</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Format</strong></td>
+    <td class="col-thirty"><strong>Format</strong></td>
     <td>"Malformed URL '%3' for attribute '%1' in tag '%2'"</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Fix</strong></td>
+    <td class="col-thirty"><strong>Fix</strong></td>
     <td>Fix the broken URL.</td>
   </tr>
 </table>
@@ -374,15 +379,15 @@ but the URL is invalid.
 
 <table>
   <tr>
-    <td width="30%"><strong>Code</strong></td>
+    <td class="col-thirty"><strong>Code</strong></td>
     <td>INVALID_URL_PROTOCOL</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Format</strong></td>
+    <td class="col-thirty"><strong>Format</strong></td>
     <td>Invalid URL protocol '%3:' for attribute '%1' in tag '%2'.</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Fix</strong></td>
+    <td class="col-thirty"><strong>Fix</strong></td>
     <td>Change to a valid protocol, for example, `http` may need to be `https`.</td>
   </tr>
 </table>
@@ -395,15 +400,15 @@ For example, many tags require `https`.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>MANDATORY_PROPERTY_MISSING_FROM_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The property '%1' is missing from attribute '%2' in tag '%3'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Add the missing property.</td>
   </tr>
 </table>
@@ -423,15 +428,15 @@ They refer to expected tags:
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>MUTUALLY_EXCLUSIVE_ATTRS</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"Mutually exclusive attributes encountered in tag '%1' - pick one of %2."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove one of the mutually exclusive attributes.</td>
   </tr>
 </table>
@@ -448,15 +453,15 @@ For example, only one is allowed for the following tags:
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>MANDATORY_ONEOF_ATTR_MISSING</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The tag '%1' is missing a mandatory attribute - pick one of %2." </td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Add the missing mandatory attribute from the choice of attributes provided.</td>
   </tr>
 </table>
@@ -474,15 +479,15 @@ For example, these tags require one attribute from two possible choices:
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>WRONG_PARENT_TAG</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The parent tag of tag '%1' is '%2', but it can only be '%3'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Make the tag a direct child of the required parent.</td>
   </tr>
 </table>
@@ -507,15 +512,15 @@ The following lists the required parent for specific tags
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>DISALLOWED_TAG_ANCESTOR</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The tag '%1' may not appear as a descendant of tag '%2'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove (or move) the disallowed nested tag.</td>
   </tr>
 </table>
@@ -529,15 +534,15 @@ which may not be nested under another <code>template</code> tag.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>MANDATORY_TAG_ANCESTOR</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The tag '%1' may only appear as a descendant of tag '%2'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Either remove the tag or make it a descendant of the specific tag.</td>
   </tr>
 </table>
@@ -558,15 +563,15 @@ are missing their `mandatory_ancestor` (tag, ancestor):
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>MANDATORY_TAG_ANCESTOR_WITH_HINT</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The tag '%1' may only appear as a descendant of tag '%2'. Did you mean '%3'?"</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove the tag, make it a descendate of the specific tag, or replace the tag with the hinted tag.</td>
   </tr>
 </table>
@@ -583,15 +588,15 @@ and isn't properly nested in it's mandatory parent:
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>DUPLICATE_UNIQUE_TAG</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The tag '%1' appears more than once in the document."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove one of the duplicate tags from the AMP document.</td>
   </tr>
 </table>
@@ -642,15 +647,15 @@ and it will check validation rules for the pre-defined layout.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>STYLESHEET_TOO_LONG</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The author stylesheet specified in tag 'style' is too long - we saw %1 bytes whereas the limit is %2 bytes."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Reduce the size of the stylesheet to be under 50,000 bytes.</td>
   </tr>
 </table>
@@ -663,15 +668,15 @@ within `<style amp-custom>` to exceed the 50,000 bytes limit.
 
 <table>
    <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>CSS_SYNTAX</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"CSS syntax error in tag '%1' - %2."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Fix the CSS syntax error.</td>
   </tr>
 </table>
@@ -687,15 +692,15 @@ through an online CSS validator, for example,
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>CSS_SYNTAX_INVALID_AT_RULE</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"CSS syntax error in tag '%1' - saw invalid at rule '%2'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Fix the specified CSS syntax error.</td>
   </tr>
 </table>
@@ -712,15 +717,15 @@ making it easier to fix that rule.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>IMPLIED_LAYOUT_INVALID</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The implied layout '%1' is not supported by tag '%2'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Provide a valid layout attribute for the tag.</td>
   </tr>
 </table>
@@ -747,15 +752,15 @@ or add a `width` and/or `height` value and the error goes away.
 
 <table>
   <tr>
-    <td width="30%"><strong>Code</strong></td>
+    <td class="col-thirty"><strong>Code</strong></td>
     <td>ATTR_DISALLOWED_BY_IMPLIED_LAYOUT</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Format</strong></td>
+    <td class="col-thirty"><strong>Format</strong></td>
     <td>"The attribute '%1' in tag '%2' is disallowed by implied layout '%3'."</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Fix</strong></td>
+    <td class="col-thirty"><strong>Fix</strong></td>
     <td>Remove the disallowed attribute from the tag,
       or else specify a layout that allows it.</td>
   </tr>
@@ -770,15 +775,15 @@ Disallowed attributes for layout types are described in the
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>SPECIFIED_LAYOUT_INVALID</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The specified layout '%1' is not supported by tag '%2'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Specify a layout that is supported by the tag.</td>
   </tr>
 </table>
@@ -797,15 +802,15 @@ the [AMP HTML layout system specification](https://github.com/ampproject/amphtml
 
 <table>
   <tr>
-    <td width="30%"><strong>Code</strong></td>
+    <td class="col-thirty"><strong>Code</strong></td>
     <td>ATTR_DISALLOWED_BY_SPECIFIED_LAYOUT</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Format</strong></td>
+    <td class="col-thirty"><strong>Format</strong></td>
     <td>"The attribute '%1' in tag '%2' is disallowed by implied layout '%3'."</td>
   </tr>
    <tr>
-    <td width="30%"><strong>Fix</strong></td>
+    <td class="col-thirty"><strong>Fix</strong></td>
     <td>Remove the disallowed attribute from the tag,
       or else specify a layout that allows it.</td>
   </tr>
@@ -820,15 +825,15 @@ Disallowed attributes for layout types are described in the
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>ATTR_VALUE_REQUIRED_BY_LAYOUT</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"Invalid value '%1' for attribute '%2' in tag '%3' - for layout '%4', set the attribute '%2' to value '%5'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Set the attribute to the specified value.</td>
   </tr>
 </table>
@@ -848,15 +853,15 @@ The validator throws the ATTR_VALUE_REQUIRED_BY_LAYOUT.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>INCONSISTENT_UNITS_FOR_WIDTH_AND_HEIGHT</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"Inconsistent units for width and height in tag '%1' - width is specified in '%2' whereas height is specified in '%3'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Provide consistent unit widths and heights.</td>
   </tr>
 </table>
@@ -886,15 +891,15 @@ so long as the generated output of those files doesn't contain the templates
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>TEMPLATE_IN_ATTR_NAME</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"Mustache template syntax in attribute name '%1' in tag '%2'."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove Mustache template syntax from the attribute.</td>
   </tr>
 </table>
@@ -907,15 +912,15 @@ in an attribute value.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>UNESCAPED_TEMPLATE_IN_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The attribute '%1' in tag '%2' is set to '%3', which contains unescaped Mustache template syntax."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Escape the mustache template.</td>
   </tr>
 </table>
@@ -928,15 +933,15 @@ in an attribute value.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>TEMPLATE_PARTIAL_IN_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The attribute '%1' in tag '%2' is set to '%3', which contains a Mustache template partial."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove the mustache partial.</td>
   </tr>
 </table>
@@ -951,15 +956,15 @@ in an attribute value.
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>DEPRECATED_TAG</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>No error message defined as yet (no deprecated tags).</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>Remove the deprecated tag.</td>
   </tr>
 </table>
@@ -972,15 +977,15 @@ Currently no deprecated tags exist; the warning is reserved for future deprecati
 
 <table>
   <tr>
-  	<td width="30%"><strong>Code</strong></td>
+  	<td class="col-thirty"><strong>Code</strong></td>
   	<td>DEPRECATED_ATTR</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Format</strong></td>
+  	<td class="col-thirty"><strong>Format</strong></td>
   	<td>"The attribute '%1' in tag '%2' is deprecated - use '%3' instead."</td>
   </tr>
    <tr>
-  	<td width="30%"><strong>Fix</strong></td>
+  	<td class="col-thirty"><strong>Fix</strong></td>
   	<td>As good practice, remove the deprecated attribute.</td>
   </tr>
 </table>

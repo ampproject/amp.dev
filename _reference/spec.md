@@ -1,7 +1,7 @@
 ---
 layout: page
 title: AMP HTML Specification
-order: 6
+order: 5
 ---
 
 <!---
@@ -18,7 +18,6 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 -->
 
 
@@ -105,8 +104,7 @@ AMP HTML documents MUST
 - <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](https://github.com/ampproject/amphtml/blob/master/spec/#chrs)
 - <a name="vprt"></a>contain a `<meta name="viewport" content="width=device-width,minimum-scale=1">` tag inside their head tag. It's also recommend to include `initial-scale=1` (1). [🔗](https://github.com/ampproject/amphtml/blob/master/spec/#vprt)
 - <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](https://github.com/ampproject/amphtml/blob/master/spec/#scrpt)
-- <a name="opacity"></a><a name="boilerplate"></a>contain the following in their `<head>` tag:
-  `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>` [🔗](https://github.com/ampproject/amphtml/blob/master/spec/#boilerplate)
+- <a name="boilerplate"></a>contain the [AMP boilerplate code](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) in their head tag. [🔗](https://github.com/ampproject/amphtml/blob/master/spec/#boilerplate)
 
 (1) `width=device-width,minimum-scale=1` is required to ensure [GPU rasterization](https://www.chromium.org/developers/design-documents/chromium-graphics/how-to-get-gpu-rasterization) is enabled.
 
@@ -120,28 +118,92 @@ We also recommend that AMP HTML documents are marked up with [schema.org/Creativ
 
 HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom tags (such as `<img>` and `<amp-img>`) and other tags are outright prohibited:
 
-| Tag       | Status in AMP HTML                             |
-|-----------|------------------------------------------------|
-| script    | Prohibited unless the type is `application/ld+json` (Other non-executable values may be added as needed.). Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components. |
-| base      | Prohibited |
-| img       | Replaced with amp-img |
-| video     | Replaced with amp-video |
-| audio     | Replaced with amp-audio |
-| iframe    | Replaced with amp-iframe |
-| frame     | Prohibited. |
-| frameset  | Prohibited. |
-| object    | Prohibited. |
-| param     | Prohibited. |
-| applet    | Prohibited. |
-| embed     | Prohibited. |
-| form      | Prohibited. |
-| input elements | Prohibited. Includes input, textarea, select, option. Notably, button element is allowed. |
-| button    | Allowed. |
-| <a name="cust"></a>style     | [Required style tags for adjusting opacity](https://github.com/ampproject/amphtml/blob/master/spec/#opacity) One additional style tag is allowed in head tag for the purpose of custom styling. This style tag must have the attribute `amp-custom`. [🔗](https://github.com/ampproject/amphtml/blob/master/spec/#cust) |
-| link      | Allowed for certain values of rel: `canonical`. `stylesheet` is generally disallowed, but some values may be whitelisted for font providers. |
-| meta      | The `http-equiv` attribute is banned. Otherwise allowed. |
-| <a name="ancr"></a>a         | The `href` attribute value must not begin with `javascript:`. If set, the `target` attribute value must be `_blank`. Otherwise allowed. [🔗](https://github.com/ampproject/amphtml/blob/master/spec/#ancr) |
-| svg       | Most SVG elements are allowed |
+<table>
+  <tr>
+    <th width="30%">Tag</th>
+    <th>Status in AMP HTML</th>
+  </tr>
+  <tr>
+    <td width="30%">script</td>
+    <td>Prohibited unless the type is <code>application/ld+json</code>. (Other non-executable values may be added as needed.) Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components.</td>
+  </tr>
+  <tr>
+    <td width="30%">base</td>
+    <td>Prohibited</td>
+  </tr>
+  <tr>
+    <td width="30%">img</td>
+    <td>Replaced with amp-img.</td>
+  </tr>
+  <tr>
+    <td width="30%">video</td>
+    <td>Replaced with amp-video.</td>
+  </tr>
+  <tr>
+    <td width="30%">audio</td>
+    <td>Replaced with amp-audio.</td>
+  </tr>
+  <tr>
+    <td width="30%">iframe</td>
+    <td>Replaced with amp-iframe.</td>
+  </tr>
+    <tr>
+    <td width="30%">frame</td>
+    <td>Prohibited.</td>
+  </tr>
+  <tr>
+    <td width="30%">frameset</td>
+    <td>Prohibited.</td>
+  </tr>
+  <tr>
+    <td width="30%">object</td>
+    <td>Prohibited.</td>
+  </tr>
+  <tr>
+    <td width="30%">param</td>
+    <td>Prohibited.</td>
+  </tr>
+  <tr>
+    <td width="30%">applet</td>
+    <td>Prohibited.</td>
+  </tr>
+  <tr>
+    <td width="30%">embed</td>
+    <td>Prohibited.</td>
+  </tr>
+  <tr>
+    <td width="30%">form</td>
+    <td>Prohibited. <a href="https://github.com/ampproject/amphtml/issues/1286">Support coming in the future</a>.</td>
+  </tr>
+  <tr>
+    <td width="30%">input elements</td>
+    <td>Prohibited. Includes input, textarea, select, option. Notably, button element is allowed.</td>
+  </tr>
+  <tr>
+    <td width="30%">button</td>
+    <td>Allowed.</td>
+  </tr>
+  <tr>
+    <td width="30%"><code><a name="cust"></a>style</code></td>
+    <td><a href="#opacity">Required style tags for adjusting opacity</a>. One additional style tag is allowed in head tag for the purpose of custom styling. This style tag must have the attribute <code>amp-custom</code>. [🔗](https://github.com/ampproject/amphtml/blob/master/spec/#cust)</td>
+  </tr>
+  <tr>
+    <td width="30%">link</td>
+    <td><code>rel</code> values registered on <a href="http://microformats.org/wiki/existing-rel-values">microformats.org</a> are allowed. If a <code>rel</code> value is missing from our whitelist, <a href="https://github.com/ampproject/amphtml/issues/new">please submit an issue</a>. <code>stylesheet</code> and other values like <code>preconnect</code>, <code>prerender</code> and <code>prefectch</code> that has side effects in the browser are disallowed. There is a special case for fetching stylesheets from whitelisted font providers.</td>
+  </tr>
+  <tr>
+    <td width="30%">meta</td>
+    <td>The <code>http-equiv</code> attribute is banned. Otherwise allowed.</td>
+  </tr>
+  <tr>
+    <td width="30%"><code><a name="ancr"></a>a</code></td>
+    <td>The <code>href</code> attribute value must not begin with <code>javascript:</code>. If set, the <code>target</code> attribute value must be <code>_blank</code>. Otherwise allowed. [🔗](https://github.com/ampproject/amphtml/blob/master/spec/#ancr)</td>
+  </tr>
+  <tr>
+    <td width="30%">svg</td>
+    <td>Most SVG elements are allowed.</td>
+  </tr>
+</table>
 
 Validator implementations should use a whitelist based on the HTML5 specification with the above tags removed. See [AMP Tag Addendum](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md).
 
@@ -154,6 +216,8 @@ Conditional HTML comments are not allowed.
 Attribute names starting with `on` (such as `onclick` or `onmouseover`) are disallowed in AMP HTML. The attribute with the literal name `on` (no suffix) is allowed.
 
 The `style` attribute must not be used.
+
+XML-related attributes, such as xmlns, xml:lang, xml:base, and xml:space are disallowed in AMP HTML.
 
 ### Links
 
@@ -169,7 +233,7 @@ The following @-rules are allowed in stylesheets:
 
 `@font-face`, `@keyframes`, `@media`, `@supports`.
 
-`@import` will not be allowed. Other may be added in the future.
+`@import` will not be allowed. Others may be added in the future.
 
 #### Author stylesheets
 
@@ -237,7 +301,7 @@ Font providers can be whitelisted if they support CSS-only integrations and serv
 - https://fast.fonts.net
 - https://fonts.googleapis.com
 
-IMPLEMENTERS NOTE: Adding to this list requires a change to the AMP CDN CSP rule.
+IMPLEMENTERS NOTE: Adding to this list requires a change to the Google AMP Cache CSP rule.
 
 Authors are free to include all custom fonts via a `@font-face` CSS instruction via their custom CSS. Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
 
@@ -291,11 +355,23 @@ See the [AMP Layout System](https://github.com/ampproject/amphtml/blob/master/sp
 
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
-The value for the syntax is a simple domain specific language of the form `eventName:targetId[.methodName]`.
+The value for the syntax is a simple domain specific language of the form:
+
+{% highlight html %}
+eventName:targetId[.methodName[(arg1=value, arg2=value)]]
+{% endhighlight %}
+
 Example: `on="tap:fooId.showLightbox"`
 
 If `methodName` is omitted the default method is executed if defined for the element.
 Example: `on="tap:fooId"`
+
+Some actions, if documented, may accept arguments. The arguments defined in the parenthesis in the `key=value` notation. The accepted values are:
+
+ - simple unquoted strings: `simple-value`;
+ - quoted strings: `"string value"` or `'string value'`;
+ - boolean values: `true` or `false`;
+ - numbers: `11` or `1.1`.
 
 
 ### Extended components

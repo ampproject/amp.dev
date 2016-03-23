@@ -178,7 +178,7 @@ The following styles aren’t allowed in AMP pages:
 <table>
   <thead>
     <tr>
-      <th data-th="Banned style" width="30%">Banned style</th>
+      <th data-th="Banned style">Banned style</th>
       <th data-th="Description">Description</th>
     </tr>
   </thead>

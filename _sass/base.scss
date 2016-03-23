@@ -20,6 +20,10 @@ body {
   padding: 0;
 }
 
+body {
+  padding-top: 66px;
+}
+
 ul li,
 ol li {
   @include text-body();
@@ -143,28 +147,14 @@ blockquote {
 /**
  * Code formatting
  */
-pre,
 code {
     font-size: 15px;
     border: 1px solid $color-lightgrey;
     border-radius: 3px;
-    background-color: #eef;
 }
 
 code {
     padding: 1px 5px;
-}
-
-pre {
-    padding: 8px 12px;
-    overflow-x: auto;
-    white-space: pre-wrap;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
 }
 
 table {
@@ -172,8 +162,13 @@ table {
 }
 
 td, th {
-  border: 1px solid #999;
+  border: 1px solid #FFFFFF;
+  background: #F7F7F7;
   padding: 0.5rem;
   text-align: left;
+}
+
+th {
+  background: #eee;
 }
 

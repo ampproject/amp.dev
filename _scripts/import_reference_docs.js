@@ -44,13 +44,13 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 
 	// this regular expression is crazy. Adds a newline before lists so they are parsed
 	// as proper lists by Jekyll.
-	content = content.replace(/(\n(?![^\S\n]*\*[^\S\n])(?![^\S\n]*\-)[^\n]+\n)([^\S\n]*?(?!\*\*)[\-\*])/gm, '$1\n$2');
+	content = content.replace(/(\n(?![^\S\n]*\*[^\S\n])(?![^\S\n]*\-)[^\n]+\n)([^\S\n]*?(?!\*\*)((\-\s)|(\*\s)|(1\.\s)))/gm, '$1\n$2');
 
 	// for comments to be parsed correctly as HTML, we need an extra line break
 	content = content.replace('<!---', '\n<!---');
 
 	// replace code
-	content = content.replace(/(\`\`\`)([A-z\-]+)?(\n((?!\`\`\`)[\s\S])+)(\`\`\`)/gm, '{% highlight $2 %}$3{% endhighlight %}');
+	content = content.replace(/(\`\`\`)(([A-z\-]*)\n)(((?!\`\`\`)[\s\S])+)(\`\`\`\n)/gm, '{% highlight $3 %}\n$4{% endhighlight %}\n');
 	content = content.replace(/\{\%\shighlight\s\s\%\}/g, '{% highlight html %}');
 
 	// create absolute urls from relative github urls
@@ -106,7 +106,7 @@ ghrepo.contents('builtins', "master", function(err, data) {
 				if (err) throw err;
 				console.log('Successfully imported: ' + component.name + ' (Built-in)');
 			});
-		});
+		}, 1);
 
 	});
 });
@@ -155,27 +155,27 @@ ghrepo.contents('extensions', "master", function(err, data) {
 		ghrepo.contents(component.path, "master", function(err, data) {
 
 			// fish out the markdown file from the folder
-			var component;
+			var subComponent;
 			for (var i = 0; i < data.length; i++) {
-				if(data[i].type === 'file' && /\.md$/.test(data[i].name)) {
-					component = data[i];
+				if(data[i].type === 'file' && data[i].name === component.name + '.md') {
+					subComponent = data[i];
 					break;
 				}
 			}
 
 			// download the page contents
-			downloadPage(component.path, function(pageContent) {
+			downloadPage(subComponent.path, function(pageContent) {
 				// save it to the extended folder
 				savePage({
-					destination: '../_reference/extended/' + component.name,
+					destination: '../_reference/extended/' + subComponent.name,
 					content: pageContent,
 					order: order,
-					title: component.name.replace('.md', '')
+					title: subComponent.name.replace('.md', '')
 				}, function (err) {
 					if (err) throw err;
-					console.log('Successfully imported: ' + component.name + ' (Extended)');
+					console.log('Successfully imported: ' + subComponent.name + ' (Extended)');
 				});
-			});
+			}, 1);
 
 		});
 

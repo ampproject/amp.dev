@@ -14,7 +14,7 @@ in case the user’s browser doesn’t support it.
 
 {% include toc.html %}
 
-## How AMP layouts its pages
+## How AMP lays out its pages
 
 The AMP layout system’s key goal is to ensure that every element can be displayed
 and its space properly preserved before any of the JavaScript
@@ -44,9 +44,9 @@ Valid values for the layout attribute are:
 <table>
   <thead>
     <tr>
-      <th data-th="Layout type" width="20%">Layout type</th>
-      <th data-th="Width/height required" width="20%">Width/height required</th>
-      <th data-th="Behavior" width="60%">Behavior</th>
+      <th data-th="Layout type" class="col-twenty">Layout type</th>
+      <th data-th="Width/height required" class="col-twenty">Width/height required</th>
+      <th data-th="Behavior">Behavior</th>
     </tr>
   </thead>
   <tbody>
