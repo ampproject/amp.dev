@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-youtube
-order: 26
+order: 31
 ---
 
 <!---
@@ -18,7 +18,6 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 -->
 
 
@@ -38,9 +37,30 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Examples</strong></td>
-    <td><a href="https://amp-by-example.appspot.com/amp-youtube.html">amp-youtube.html</a><br /><a href="https://github.com/ampproject/amphtml/blob/master/examples/everything.amp.html">everything.amp.html</a></td>
+    <td><a href="https://ampbyexample.com/components/amp-youtube">amp-youtube.html</a><br /><a href="https://github.com/ampproject/amphtml/blob/master/examples/everything.amp.html">everything.amp.html</a></td>
   </tr>
 </table>
+
+## Example
+
+With responsive layout the width and height from the example should yield correct layouts for 16:9 aspect ratio videos:
+
+{% highlight html %}
+<amp-youtube
+    data-videoid="mGENRKrdoGY"
+    layout="responsive"
+    width="480" height="270"></amp-youtube>
+{% endhighlight %}
+
+## Attributes
+
+**data-videoid**
+
+The Youtube video id found in every Youtube video page URL
+
+E.g. in https://www.youtube.com/watch?v=Z1q71gFeRqM Z1q71gFeRqM is the video id.
+
+## Validation errors
 
 The following lists validation errors specific to the `amp-youtube` tag
 (see also `amp-youtube` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
@@ -87,22 +107,3 @@ The following lists validation errors specific to the `amp-youtube` tag
     <td>The attribute <code>video-id</code> is deprecated - use <code>data-videoid</code> instead</td>
   </tr>
 </table>
-
-## Example
-
-With responsive layout the width and height from the example should yield correct layouts for 16:9 aspect ratio videos:
-
-{% highlight html %}
-<amp-youtube
-    data-videoid="mGENRKrdoGY"
-    layout="responsive"
-    width="480" height="270"></amp-youtube>
-{% endhighlight %}
-
-## Attributes
-
-**data-videoid**
-
-The Youtube video id found in every Youtube video page URL
-
-E.g. in https://www.youtube.com/watch?v=Z1q71gFeRqM Z1q71gFeRqM is the video id.

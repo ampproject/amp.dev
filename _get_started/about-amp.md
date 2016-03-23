@@ -24,7 +24,7 @@ The **Google AMP Cache** (optionally) delivers the AMP HTML pages.
 AMP HTML is basically HTML extended with custom AMP properties.
 The simplest AMP HTML file looks like this:
 
-{% highlight html linenos %}
+{% highlight html %}
 <!doctype html>
 <html ⚡>
  <head>

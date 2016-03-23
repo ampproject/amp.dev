@@ -12,13 +12,13 @@ In order to solve this problem, we add information about the AMP page to the non
 
 Add the following to the non-AMP page:
 
-{% highlight html linenos %}
+{% highlight html %}
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 {% endhighlight %}
 
 And this to the AMP page:
 
-{% highlight html linenos %}
+{% highlight html %}
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 {% endhighlight %}
 
@@ -26,13 +26,13 @@ And this to the AMP page:
 
 If you only have one page, and that page is an AMP page, you must still add the canonical link to it, which will then simply point to itself:
 
-{% highlight html linenos %}
+{% highlight html %}
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 {% endhighlight %}
 
 ## Integrate with third-party platforms through additional metadata
 
-Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are thinks like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
+Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are things like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
 
 This isn’t just relevant for AMP pages but for all web pages. For some platforms, this metadata is additional, for others it is a requirement, meaning they **won’t show links to your content if you didn’t include the right metadata**. Make sure you include the right metadata for the platforms you want your content to appear on.
 
@@ -42,16 +42,36 @@ This isn’t just relevant for AMP pages but for all web pages. For some platfor
 
 Example:
 
-{% highlight html linenos %}
+{% highlight html %}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "NewsArticle",
-    "headline": "Open-source framework for publishing content",
-    "datePublished": "2015-10-07T12:02:41Z",
-    "image": [
-      "logo.jpg"
-    ]
+    "mainEntityOfPage": "http://cdn.ampproject.org/article-metadata.html",
+    "headline": "Lorem Ipsum",
+    "datePublished": "1907-05-05T12:02:41Z",
+    "dateModified": "1907-05-05T12:02:41Z",
+    "description": "The Catiline Orations continue to beguile engineers and designers alike -- but can it stand the test of time?",
+    "author": {
+      "@type": "Person",
+      "name": "Jordan M Adler"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Google",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://cdn.ampproject.org/logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://cdn.ampproject.org/leader.jpg",
+      "height": 2000,
+      "width": 800
+    }
   }
 </script>
 {% endhighlight %}
@@ -59,6 +79,7 @@ Example:
 More examples can be found in [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
 
 Note: This Schema.org definition is a requirement to make your content eligible to appear in the demo of the [Google Search news carousel (try on mobile)](https://g.co/ampdemo).
+See also [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories).
 
 ### Other metadata for even more platforms
 

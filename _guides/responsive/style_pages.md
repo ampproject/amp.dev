@@ -35,7 +35,7 @@ Add any styles to an AMP page using a single `<style amp-custom>` tag
 in the head of the document.
 For example:
 
-{% highlight html linenos %}
+{% highlight html %}
 <!doctype html>
 <html ⚡>
   <head>
@@ -69,7 +69,7 @@ You can change the default styles with class or element selectors in
 `<style amp-custom>` using common CSS properties.
 For example:
 
-{% highlight html linenos %}
+{% highlight html %}
 <!doctype html>
 <html ⚡>
   <head>
@@ -106,7 +106,7 @@ These custom children are typically defined either via special attribute names
 such as `placeholder` or `overflow` or AMP class names.
 For example:
 
-{% highlight html linenos %}
+{% highlight html %}
 <!doctype html>
 <html ⚡>
   <head>
@@ -148,7 +148,7 @@ It also includes the custom element script for
 [`amp-youtube`](/docs/reference/extended/amp-youtube.html),
 so that many pages across the site can include embedded youtube videos.
 
-{% highlight html linenos %} {% raw %}
+{% highlight html %} {% raw %}
 <head>
   <meta charset="utf-8">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
@@ -178,7 +178,7 @@ The following styles aren’t allowed in AMP pages:
 <table>
   <thead>
     <tr>
-      <th data-th="Banned style" width="30%">Banned style</th>
+      <th data-th="Banned style">Banned style</th>
       <th data-th="Description">Description</th>
     </tr>
   </thead>
@@ -245,7 +245,7 @@ and allowed for font serving via link tags:
 
 Example link tag pointing to the whitelisted font provider, Google Fonts:
 
-{% highlight html linenos %}
+{% highlight html %}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 {% endhighlight html %}
 

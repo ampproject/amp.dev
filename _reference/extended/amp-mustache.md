@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-mustache
-order: 18
+order: 20
 ---
 
 <!---
@@ -18,7 +18,6 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 -->
 
 
@@ -35,28 +34,6 @@ limitations under the License.
   <tr>
     <td width="40%"><strong>Examples</strong></td>
     <td>None</td>
-  </tr>
-</table>
-
-The following lists validation errors specific to `amp-mustache`
-(see also `template` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
-
-<table>
-  <tr>
-    <th width="40%"><strong>Validation Error</strong></th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#attribute-contains-template-syntax">Mustache template syntax in attribute name 'example1' in tag 'example2'.</a></td>
-    <td>Mustache templates must be within the <code>amp-mustache</code> tag. Error thrown when templating syntax found in an attribute in another tag.</td>
-  </tr>
-  <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#attribute-contains-unescaped-template-syntax">The attribute 'example1' in tag 'example2' is set to 'example3', which contains unescaped Mustache template syntax.</a></td>
-    <td>Mustache templates must be within the <code>amp-mustache</code> tag. Error thrown when <a href="https://github.com/janl/mustache.js/#variables">unescaped templating syntax</a> found in an attribute in another tag.</td>
-  </tr>
-  <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#attribute-contains-template-partial">The attribute 'example1' in tag 'example2' is set to 'example3', which contains a Mustache template partial.</a></td>
-    <td>Mustache templates must be within the <code>amp-mustache</code> tag. Error thrown when <a href="https://github.com/janl/mustache.js/#partials">template partial</a> found in an attribute in another tag.</td>
   </tr>
 </table>
 
@@ -106,3 +83,27 @@ formatting tags such as `<b>`, `<i>`, and so on.
 Notice also that because the body of the template has to be specified within the `template` element, it is
 impossible to specify `{{&var}}` expressions - they will always be escaped as `{{&amp;var}}`. The triple-mustache
 `{{{var}}}` has to be used for these cases.
+
+## Validation errors
+
+The following lists validation errors specific to `amp-mustache`
+(see also `template` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
+
+<table>
+  <tr>
+    <th width="40%"><strong>Validation Error</strong></th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#attribute-contains-template-syntax">Mustache template syntax in attribute name 'example1' in tag 'example2'.</a></td>
+    <td>Mustache templates must be within the <code>amp-mustache</code> tag. Error thrown when templating syntax found in an attribute in another tag.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#attribute-contains-unescaped-template-syntax">The attribute 'example1' in tag 'example2' is set to 'example3', which contains unescaped Mustache template syntax.</a></td>
+    <td>Mustache templates must be within the <code>amp-mustache</code> tag. Error thrown when <a href="https://github.com/janl/mustache.js/#variables">unescaped templating syntax</a> found in an attribute in another tag.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#attribute-contains-template-partial">The attribute 'example1' in tag 'example2' is set to 'example3', which contains a Mustache template partial.</a></td>
+    <td>Mustache templates must be within the <code>amp-mustache</code> tag. Error thrown when <a href="https://github.com/janl/mustache.js/#partials">template partial</a> found in an attribute in another tag.</td>
+  </tr>
+</table>

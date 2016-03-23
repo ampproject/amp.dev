@@ -8,7 +8,7 @@ Most HTML tags can be used directly in AMP HTML, but certain tags, such as the `
 
 To demonstrate what additional markup could look like, here’s the code required to embed an image into the page:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 {% endhighlight %}
 

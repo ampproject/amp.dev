@@ -1,11 +1,11 @@
 ---
 layout: page
-title: amp-fit-text
-order: 11
+title: amp-kaltura-player
+order: 17
 ---
 
 <!---
-Copyright 2015 The AMP HTML Authors. All Rights Reserved.
+Copyright 2016 Kaltura. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ limitations under the License.
 <table>
   <tr>
     <td width="40%"><strong>Description</strong></td>
-    <td>Expands or shrinks its font size to fit the content within the space given to it.</td>
+    <td>An <code>amp-kaltura-player</code> component displays the Kaltura Player as used in Kaltura's <a href="https://corp.kaltura.com/">Video Platform</a>.</td>
   </tr>
   <tr>
     <td width="40%"><strong>Availability</strong></td>
@@ -33,59 +33,16 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Required Script</strong></td>
-    <td><code>&lt;script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-kaltura-player" src="https://cdn.ampproject.org/v0/amp-kaltura-player-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td width="40%"><strong>Examples</strong></td>
-    <td><a href="https://ampbyexample.com/advanced/image_galleries_with_amp-carousel/">image_galleries_with_amp-carousel.html</a><br /><a href="https://github.com/ampproject/amphtml/blob/master/examples/everything.amp.html">everything.amp.html</a></td>
+    <td><a href="https://amp-by-example.appspot.com/amp-kaltura-player.html">amp-kaltura-player.html</a><br /><a href="https://github.com/ampproject/amphtml/blob/master/examples/kaltura.amp.html">kaltura.amp.html</a></td>
   </tr>
 </table>
 
-## Behavior
-
-The `amp-fit-text` component expects its content to be text or other inline
-content, but it can also contain non-inline content. For the given content
-the `amp-fit-text` will try to find the best font size to fit all of the
-content within the available space.
-
-If content of the `amp-fit-text` is overflowing the available space event with
-the minimum font size, the overflowing content will be cut off and hidden. The
-WebKit and Blink-based browsers will show ellipsis in this case.
-
-The `amp-fit-text` accepts one of the following `layout` values: `fixed`,
-`fixed-height`, `responsive` or `fill`.
-
-For example:
-{% highlight html %}
-<amp-fit-text width="300" height="200" layout="responsive"
-    max-font-size="52">
-  Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque
-  inermis reprehendunt.
-</amp-fit-text>
-{% endhighlight %}
-
-
-## Attributes
-
-**min-font-size**
-
-The minimum font size as an integer that the `amp-fit-text` can use.
-
-**max-font-size**
-
-The maximum font size as an integer that the `amp-fit-text` can use.
-
-
-## Styling
-
-The `amp-fit-text` component can be styled with standard CSS. In particular,
-it's possible to use `text-align`, `font-weight`, `color` and many other CSS
-properties with the main exception of `font-size`.
-
-## Validation errors
-
-The following lists validation errors specific to the `amp-fit-text` tag
-(see also `amp-fit-text` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
+The following lists validation errors specific to the `amp-kaltura-player` tag
+(see also `amp-kaltura-player` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
 
 <table>
   <tr>
@@ -94,7 +51,11 @@ The following lists validation errors specific to the `amp-fit-text` tag
   </tr>
   <tr>
     <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
-    <td>Error thrown when required <code>amp-fit-text</code> extension <code>.js</code> script tag is missing or incorrect.</td>
+    <td>Error thrown when required <code>amp-kaltura-player</code> extension <code>.js</code> script tag is missing or incorrect.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#mandatory-attribute-missing">The mandatory attribute 'example1' is missing in tag 'example2'.</a></td>
+    <td>Error thrown when <code>data-partner</code> attribute is missing.</td>
   </tr>
   <tr>
     <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#implied-layout-isnt-supported-by-amp-tag">The implied layout 'example1' is not supported by tag 'example2'.</a></td>
@@ -109,3 +70,44 @@ The following lists validation errors specific to the `amp-fit-text` tag
     <td>Error thrown when invalid value is given for attributes <code>height</code> or <code>width</code>. For example, <code>height=auto</code> triggers this error for all supported layout types, with the exception of <code>NODISPLAY</code>.</td>
   </tr>
 </table>
+
+## Example
+
+The `width` and `height` attributes determine the aspect ratio of the player embedded in responsive layouts.
+
+Example:
+
+{% highlight html %}
+ <amp-kaltura-player
+      data-uiconf="33502051"
+      data-partner="1281471"
+      data-entryid="1_3ts1ms9c"
+      data-param-streamerType = "auto"
+      layout="responsive" width="480" height="270">
+  </amp-kaltura-player>
+{% endhighlight %}
+
+## Attributes
+
+**data-partner**
+
+The Kaltura partner id.
+
+**data-uiconf**
+
+The Kaltura player id - uiconf id.
+
+**data-entryid**
+
+The Kaltura entry id.
+
+
+**data-param-***
+
+All `data-param-*` attributes will be added as query parameter to the player iframe src. This may be used to pass custom values through to player plugins, such as ad parameters or video ids for Perform players.
+
+Keys and values will be URI encoded. Keys will be camel cased.
+
+- `data-param-streamerType="auto"` becomes `&flashvars[streamerType]=auto`
+
+

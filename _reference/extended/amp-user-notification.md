@@ -1,7 +1,7 @@
 ---
 layout: page
 title: amp-user-notification
-order: 23
+order: 28
 ---
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -17,7 +17,6 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 -->
 
 
@@ -37,29 +36,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Examples</strong></td>
-    <td><a href="https://amp-by-example.appspot.com/amp-user-notification_with_local_storage.html">amp-user-notification_with_local_storage.html</a><br /><a href="https://amp-by-example.appspot.com/amp-user-notification_with_server_endpoint.html">amp-user-notification_with_server_endpoint.html</a><br /><a href="https://github.com/ampproject/amphtml/blob/master/examples/user-notification.amp.html">user-notification.amp.html</a></td>
-  </tr>
-</table>
-
-The following lists validation errors specific to the `amp-user-notification` tag
-(see also `amp-user-notification` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
-
-<table>
-  <tr>
-    <th width="40%"><strong>Validation Error</strong></th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
-    <td>Error thrown when required <code>amp-user-notification</code> extension <code>.js</code> script tag is missing or incorrect.</td>
-  </tr>
-  <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#implied-layout-isnt-supported-by-amp-tag">The implied layout 'example1' is not supported by tag 'example2'.</a></td>
-    <td>The only supported layout type is <code>NODISPLAY</code>. Error thrown if implied layout is any other value.</td>
-  </tr>
-  <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#specified-layout-isnt-supported-by-amp-tag">The specified layout 'example1' is not supported by tag 'example2'.</a></td>
-    <td>The only supported layout type is <code>NODISPLAY</code>. Error thrown if specified layout is any other value.</td>
+    <td><a href="https://ampbyexample.com/components/amp-user-notification/">amp-user-notification_with_local_storage.html</a><br /><a href="https://ampbyexample.com/advanced/amp-user-notification_with_server_endpoint/">amp-user-notification_with_server_endpoint.html</a><br /><a href="https://github.com/ampproject/amphtml/blob/master/examples/user-notification.amp.html">user-notification.amp.html</a></td>
   </tr>
 </table>
 
@@ -170,7 +147,40 @@ will be passed in future requests to data-show-if-href)
 If not specified, AMP will not send a request upon dismissal and will only store "dismissed"
 flag for the specified ID locally.
 
----
+**data-persist-dismissal** (Optional)
+__Default: true__
+If set  to `false` AMP will not remember the user's dismissal of the notification. The notification
+will always show if the `data-show-if-href` result is show notification. If no `data-show-if-href` is provided
+the notification will always show.
+
+Example 1:
+{% highlight html %}
+<amp-user-notification
+      layout=nodisplay
+      id="amp-user-notification5"
+      data-persist-dismissal="false"
+      data-show-if-href="https://example.com/api/shouldShow?timestamp=TIMESTAMP"
+      data-dismiss-href="https://example.com/api/echo/post">
+This notification should ALWAYS show - if shouldShow endpoint response was true.
+<a href="#learn-more">Learn more.</a>
+<button on="tap:amp-user-notification5.dismiss">Dismiss</button>
+</amp-user-notification>
+{% endhighlight %}
+
+Example 2:
+{% highlight html %}
+<amp-user-notification
+      layout=nodisplay
+      id="amp-user-notification6"
+      data-persist-dismissal="false">
+This notification should ALWAYS show on every page visit.
+<a href="#learn-more">Learn more.</a>
+<button on="tap:amp-user-notification6.dismiss">Dismiss</button>
+</amp-user-notification>
+{% endhighlight %}
+
+
+--------
 
 ## JSON Fields
 
@@ -238,3 +248,27 @@ Optionally one can delay generation of Client IDs used for analytics and similar
 - [CLIENT_ID URL substitution.](https://github.com/ampproject/amphtml/blob/master/extensions/amp-user-notification/../../spec/amp-var-substitutions.md#CLIENT_ID)
 - [`amp-ad`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-user-notification/../../builtins/amp-ad.md)
 - [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-user-notification/../amp-analytics/amp-analytics.md)
+
+## Validation errors
+
+The following lists validation errors specific to the `amp-user-notification` tag
+(see also `amp-user-notification` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
+
+<table>
+  <tr>
+    <th width="40%"><strong>Validation Error</strong></th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
+    <td>Error thrown when required <code>amp-user-notification</code> extension <code>.js</code> script tag is missing or incorrect.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#implied-layout-isnt-supported-by-amp-tag">The implied layout 'example1' is not supported by tag 'example2'.</a></td>
+    <td>The only supported layout type is <code>NODISPLAY</code>. Error thrown if implied layout is any other value.</td>
+  </tr>
+  <tr>
+    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#specified-layout-isnt-supported-by-amp-tag">The specified layout 'example1' is not supported by tag 'example2'.</a></td>
+    <td>The only supported layout type is <code>NODISPLAY</code>. Error thrown if specified layout is any other value.</td>
+  </tr>
+</table>

@@ -23,7 +23,7 @@ Learn how to track page views using `amp-pixel` and `amp-analytics`.
 Send pageview data to a specified URL using
 [amp-pixel](/docs/reference/amp-pixel.html):
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
 {% endhighlight %}
 
@@ -32,7 +32,7 @@ Send pageview data to a specified URL using
 Send pageview data to a specified URL using
 [amp-analytics](/docs/reference/extended/amp-analytics.html):
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics>
 <script type="application/json">
 {
@@ -58,7 +58,7 @@ Send pageview data to a specified URL using
 Send pageview data to Google Analytics
 (see also [Page tracking in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics type="googleanalytics" id="analytics1">
 <script type="application/json">
 {
@@ -88,7 +88,7 @@ sending event data to a specified URL, and to
 The following example uses the `selector` attribute to send a `click` event
 to the specified URL everytime a user clicks on a link (`<a href>`):
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics>
 <script type="application/json">
 {
@@ -121,7 +121,7 @@ to send a `click` event to Google Analytics when a particular element is clicked
 (see also
 [AMP event tracking in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking)):
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics type="googleanalytics" id="analytics3">
 <script type="application/json">
 {
@@ -152,7 +152,7 @@ to the specified URL when page is scrolled vertically by 25%, 50% and 90%.
 The event also fires when the page is horizontally scrolled
 to 90% of `scroll` width:
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics>
 <script type="application/json">
 {
@@ -188,7 +188,7 @@ sending event data to a specified URL, and to
 The following example uses the `selector` attribute to send a `click` event
 to the specified URL everytime a user clicks on a tweet (`#tweet-link`):
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics>
 <script type="application/json">
 {
@@ -221,7 +221,7 @@ to send an event when a particular social button is clicked
 (see also
 [AMP social interactions tracking in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions)):
 
-{% highlight html linenos %}
+{% highlight html %}
 <amp-analytics type="googleanalytics" id="analytics4">
 <script type="application/json">
 {

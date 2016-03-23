@@ -44,13 +44,13 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 
 	// this regular expression is crazy. Adds a newline before lists so they are parsed
 	// as proper lists by Jekyll.
-	content = content.replace(/(\n(?![^\S\n]*\*[^\S\n])(?![^\S\n]*\-)[^\n]+\n)([^\S\n]*?(?!\*\*)[\-\*])/gm, '$1\n$2');
+	content = content.replace(/(\n(?![^\S\n]*\*[^\S\n])(?![^\S\n]*\-)[^\n]+\n)([^\S\n]*?(?!\*\*)((\-\s)|(\*\s)|(1\.\s)))/gm, '$1\n$2');
 
 	// for comments to be parsed correctly as HTML, we need an extra line break
 	content = content.replace('<!---', '\n<!---');
 
 	// replace code
-	content = content.replace(/(\`\`\`)([A-z\-]+)?(\n((?!\`\`\`)[\s\S])+)(\`\`\`)/gm, '{% highlight $2 %}$3{% endhighlight %}');
+	content = content.replace(/(\`\`\`)(([A-z\-]*)\n)(((?!\`\`\`)[\s\S])+)(\`\`\`\n)/gm, '{% highlight $3 %}\n$4{% endhighlight %}\n');
 	content = content.replace(/\{\%\shighlight\s\s\%\}/g, '{% highlight html %}');
 
 	// create absolute urls from relative github urls

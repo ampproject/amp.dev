@@ -28,6 +28,7 @@ Current list of extended components:
 | [`amp-analytics`](extended/amp-analytics.html) | Captures analytics data from an AMP document. |
 | [`amp-anim`](extended/amp-anim.html) | Manages an animated image, typically a GIF. |
 | [`amp-audio`](extended/amp-audio.html) | Replaces the HTML5 `audio` tag. |
+| [`amp-brid-player`](extended/amp-brid-player.html) | Displays a Brid.tv player. |
 | [`amp-brightcove`](extended/amp-brightcove.html) | Displays a Brightcove Video Cloud or Perform player. |
 | [`amp-carousel`](extended/amp-carousel.html) | Displays multiple similar pieces of content along a horizontal axis. |
 | [`amp-dailymotion`](extended/amp-dailymotion.html) | Displays a [Dailymotion](https://www.dailymotion.com) video. |
@@ -43,7 +44,9 @@ Current list of extended components:
 | [`amp-list`](extended/amp-list.html) | Dynamically downloads data and creates list items using a template. |
 | [`amp-mustache`](extended/amp-mustache.html) | Allows rendering of [`Mustache.js`](https://github.com/janl/mustache.js/) templates. |
 | [`amp-pinterest`](extended/amp-pinterest.html) | Displays a Pinterest widget or Pin It button. |
+| [`amp-reach-player`](extended/amp-reach-player.html) | Displays a [Beachfront Reach](https://beachfrontreach.com/) video player. |
 | [`amp-soundcloud`](extended/amp-soundcloud.html) | Displays a [Soundcloud](https://soundcloud.com/) clip. |
+| [`amp-springboard-player`](extended/amp-springboard-player.html) | Displays a Springboard Platform video player |
 | [`amp-twitter`](extended/amp-twitter.html) | Displays a Twitter tweet. |
 | [`amp-user-notification`](extended/amp-user-notification.html) | Displays a dismissable notification to the user. |
 | [`amp-vimeo`](extended/amp-vimeo.html) | Displays a Vimeo video. |

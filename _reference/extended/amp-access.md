@@ -22,47 +22,24 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 -->
 
 <table>
   <tr>
-    <td width="40%"><strong>Description</strong></td>
+    <td class="col-fourty"><strong>Description</strong></td>
     <td>AMP Access or “AMP paywall and subscription support” gives publishers control over which content can be accessed by a reader and with what restrictions, based on the reader’s subscription status, number of views, and other factors.</td>
   </tr>
   <tr>
-    <td width="40%"><strong>Availability</strong></td>
+    <td class="col-fourty"><strong>Availability</strong></td>
     <td><a href="https://www.ampproject.org/docs/reference/experimental.html">Experimental</a></td>
   </tr>
   <tr>
-    <td width="40%"><strong>Required Script</strong></td>
+    <td class="col-fourty"><strong>Required Script</strong></td>
     <td><code>&lt;script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td width="40%"><strong>Examples</strong></td>
+    <td class="col-fourty"><strong>Examples</strong></td>
     <td><a href="https://github.com/ampproject/amphtml/blob/master/examples/article-access.amp.html">article-access.amp.html</a></td>
-  </tr>
-</table>
-
-The following lists validation errors specific to the `amp-access` tag
-(see also `amp-access` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
-
-<table>
-  <tr>
-    <th width="40%"><strong>Validation Error</strong></th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
-    <td>Error thrown when required <code>amp-access</code> extension <code>.js</code> script tag is missing or incorrect.</td>
-  </tr>
-  <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#mandatory-attribute-missing">The mandatory attribute 'example1' is missing in tag 'example2'.</a></td>
-    <td>Error thrown when the <code>amp-access</code> extension <code>.json</code> script is missing the mandatory attribute, <code>type</code>.</td>
-  </tr>
-  <tr>
-    <td width="40%"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#invalid-attribute-value">The attribute 'example1' in tag 'example2' is set to the invalid value 'example3'.</a></td>
-    <td>Error thrown when the attribute, <code>type</code>, is any value other than the required value: <code>application/json</code>. Error also thrown when the <code>src</code> attribute for the script tag is invalid. The value must be <code>"https://cdn.ampproject.org/v0/amp-access-0.1.js"</code>.</td>
   </tr>
 </table>
 
@@ -115,11 +92,11 @@ Access Content Markup determines which sections are visible or hidden based on t
 
 ### Authorization Endpoint
 
-Authorization is an endpoint provided by the publisher and called by AMP Runtime or Google AMP Cache. It is a credentialed CORS endpoint. This endpoint returns the access parameters that can be used by the Content Markup to hide or show different parts of the document.
+Authorization is an endpoint provided by the publisher and called by AMP Runtime or Google AMP Cache. It is a credentialed CORS GET endpoint. This endpoint returns the access parameters that can be used by the Content Markup to hide or show different parts of the document.
 
 ### Pingback Endpoint
 
-Pingback is an endpoint provided by the publisher and called by AMP Runtime or Google AMP Cache. It is a credentialed CORS endpoint. AMP Runtime calls this endpoint automatically when the Reader has started viewing the document. On of the main goals of the Pingback is for the Publisher to update metering information.
+Pingback is an endpoint provided by the publisher and called by AMP Runtime or Google AMP Cache. It is a credentialed CORS POST endpoint. AMP Runtime calls this endpoint automatically when the Reader has started viewing the document. This endpoint is also called after the Reader has successfully completed the Login Flow. On of the main goals of the Pingback is for the Publisher to update metering information.
 
 ### Login Page and Login Link
 
@@ -127,7 +104,7 @@ Login Page is implemented and served by the Publisher and called by the AMP Runt
 
 Login Page is triggered when the Reader taps on the Login Link which can be placed by the Publisher anywhere in the document.
 
-## Specification v0.4
+## Specification v0.5
 
 ### Configuration
 
@@ -145,7 +122,6 @@ All of the endpoints are configured in the AMP document as a JSON object in the 
 The following properties are defined in this configuration:
 
 |Property       | Values               | Description |
-
 --------------  | -------------------- | --------------------------------- |
 | authorization | &lt;URL&gt;          | The HTTPS URL for the Authorization endpoint. |
 | pingback      | &lt;URL&gt;          | The HTTPS URL for the Pingback endpoint. |
@@ -262,7 +238,7 @@ And here’s an example that shows additional content to the premium subscribers
 
 ### Authorization Endpoint
 
-Authorization is configured via ```authorization``` property in the [AMP Access Configuration][8] section. It is a credentialed CORS endpoint. See [CORS Origin Security][9] for how this request should be secured.
+Authorization is configured via ```authorization``` property in the [AMP Access Configuration][8] section. It is a credentialed CORS GET endpoint. See [CORS Origin Security][9] for how this request should be secured.
 
 Authorization can take any parameters as defined in the [Access URL Variables][7] section. For instance, it could pass AMP Reader ID and document URL. Besides URL parameters, the Publisher may use any information naturally delivered via HTTP protocol, such as Reader’s IP address. The inclusion of the `READER_ID` is required.
 
@@ -308,6 +284,7 @@ This RPC may be called in the prerendering phase and thus it should not be used 
 Another important consideration is that in some cases AMP runtime may need to call Authorization endpoint multiple times per document impression. This can happen when AMP Runtime believes that the access parameters for the Reader have changed significantly, e.g. after a successful Login Flow.
 
 The authorization response may be used by AMP Runtime and extensions for three different purposes:
+
  1. When evaluating ```amp-access``` expressions.
  2. When evaluating ```<template>``` templates such as ```amp-mustache```.
  3. When providing additional variables to pingback and login URLs using `AUTHDATA(field)`.
@@ -321,6 +298,7 @@ If Authorization request fails, AMP Runtime will fallback to the "authorizationF
 Authorization request is automatically timed out and assumed to have failed after 3 seconds.
 
 AMP Runtime uses the following CSS classes during the authorization flow:
+
  1. `amp-access-loading` CSS class is set on the document root when the authorization flow starts and removed when it completes or fails.
  2. `amp-access-error` CSS class is set on the document root when the authorization flow fails.
 
@@ -328,11 +306,13 @@ In the *server* option, the call to Authorization endpoint is done by Google AMP
 
 ### Pingback Endpoint
 
-Pingback is configured via ```pingback``` property in the [AMP Access Configuration][8] section. It is a credentialed CORS endpoint. See [CORS Origin Security][9]” for how this request should be secured.
+Pingback is configured via ```pingback``` property in the [AMP Access Configuration][8] section. It is a credentialed CORS POST endpoint. See [CORS Origin Security][9]” for how this request should be secured.
 
 Pingback URL can take any parameters as defined in the [Access URL Variables][7] section. For instance, it could pass AMP Reader ID and document URL. The inclusion of the `READER_ID` is required.
 
 Pingback does not produce a response - any response is ignored by AMP runtime.
+
+Pingback endpoint is called when the reader has started viewing the document and after the Rser has successfully completed the Login Flow.
 
 The publisher may choose to use the pingback as:
 
@@ -387,6 +367,8 @@ RETURN_URL#success=true|false
 {% endhighlight %}
 Notice the use of a URL hash parameter “success”. The value is either “true” or “false” depending on whether the login succeeds or is abandoned. Ideally the Login Page, when possible, will send the signal in cases of both success or failure.
 
+If the `success=true` signal is returned, the AMP runtime will repeat calls to Authorization and Pingback endpoints to update the document's state and report the "view" with the new access profile.
+
 #### Login Link
 
 The Publisher may choose to place the Login Link anywhere in the content of the document.
@@ -420,6 +402,7 @@ Authorization and Pingback endpoints are CORS endpoints and they must implement 
 Metering is the system where the Reader is shown premium content for free for several document views in some period. Once some quota is reached, the Reader is shown the paywall kicks in and the Reader instead is shown partial content with upsell message and signup/login link. For instance, the metering can be defined as “Reader can read 10 articles per month for free”.
 
 AMP Access provides the following facilities for implementing metered access:
+
  1. READER_ID should be used to store metering information. Since the Publisher cannot rely on always being able to set cookies in a 3rd-party context, this data should be stored on the server-side.
  2. The “read count” can only be updated in the Pingback endpoint.
  3. Only unique documents can be counted against the quota. I.e. refreshing the same document ten times constitutes a single view. For this purpose Authorization and Pingback endpoints can inject `SOURCE_URL` or similar URL variables. See [Access URL Variables][7].
@@ -452,6 +435,7 @@ Both steps are covered by the AMP Access spec. The referrer can be injected into
 - Feb 11: Authorization request timeout in [Authorization Endpoint][4].
 - Feb 15: [Configuration][8] and [Authorization Endpoint][4] now allow "authorizationFallbackResponse" property that can be used when authorization fails.
 - Feb 19: Corrected samples to remove `{}` from URL var substitutions.
+- Mar 3: Resend pingback after login (v0.5).
 
 ## Appendix A: “amp-access” expression grammar
 
@@ -505,3 +489,27 @@ This section will cover a detailed explanation of the design underlying the amp-
 [11]: #amp-access-and-cookies
 [12]: #metering
 [13]: #first-click-free
+
+## Validation errors
+
+The following lists validation errors specific to the `amp-access` tag
+(see also `amp-access` in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
+
+<table>
+  <tr>
+    <th class="col-fourty"><strong>Validation Error</strong></th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="col-fourty"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#tag-required-by-another-tag-is-missing">The 'example1' tag is missing or incorrect, but required by 'example2'.</a></td>
+    <td>Error thrown when required <code>amp-access</code> extension <code>.js</code> script tag is missing or incorrect.</td>
+  </tr>
+  <tr>
+    <td class="col-fourty"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#mandatory-attribute-missing">The mandatory attribute 'example1' is missing in tag 'example2'.</a></td>
+    <td>Error thrown when the <code>amp-access</code> extension <code>.json</code> script is missing the mandatory attribute, <code>type</code>.</td>
+  </tr>
+  <tr>
+    <td class="col-fourty"><a href="https://www.ampproject.org/docs/reference/validation_errors.html#invalid-attribute-value">The attribute 'example1' in tag 'example2' is set to the invalid value 'example3'.</a></td>
+    <td>Error thrown when the attribute, <code>type</code>, is any value other than the required value: <code>application/json</code>. Error also thrown when the <code>src</code> attribute for the script tag is invalid. The value must be <code>"https://cdn.ampproject.org/v0/amp-access-0.1.js"</code>.</td>
+  </tr>
+</table>
