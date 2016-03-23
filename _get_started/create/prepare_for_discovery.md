@@ -6,7 +6,7 @@ order: 4
 
 In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, *how does it know there’s an AMP version of it*?
 
-## Linking pages with &lt;link>
+## Linking pages with `<link>`
 
 In order to solve this problem, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
 
