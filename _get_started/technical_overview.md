@@ -23,7 +23,7 @@ it can modify just about every aspect of the page,
 but it can also block DOM construction and delay page rendering
 (see also [Adding interactivity with JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)).
 To keep JavaScript from delaying page rendering,
-AMP allows only asynchronous JavaScript. 
+AMP allows only asynchronous JavaScript.
 
 AMP pages can’t include any author-written JavaScript.
 Instead of using JavaScript,
@@ -57,13 +57,13 @@ AMP supports extensions for things like
 [instagram embeds](/docs/reference/extended/amp-instagram.html),
 [tweets](/docs/reference/extended/amp-twitter.html), etc.
 While these require additional HTTP requests,
-those requests do not block page layout and rendering. 
+those requests do not block page layout and rendering.
 
 Any page that uses a custom script must tell the AMP system
 that it will eventually have a custom tag.
 For example, the [`amp-iframe`](/docs/reference/extended/amp-iframe.html)
 script tells the system that there will be an `amp-iframe` tag.
-AMP creates the iframe box before it even knows what it will include: 
+AMP creates the iframe box before it even knows what it will include:
 
 {% highlight html %}
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
@@ -73,16 +73,16 @@ AMP creates the iframe box before it even knows what it will include:
 
 Third-party JS likes to use synchronous JS loading.
 They also like to `document.write` more sync scripts.
-For example, if you have five ads, and each does three sync loads
-with a 1 second latency connection,
-you’re in 18 seconds of load time just for JS loading. 
+For example, if you have five ads on your page, and each of them cause three synchronous loads,
+each with a 1 second latency connection,
+you’re in 18 seconds of load time just for JS loading.
 
 AMP pages allow third-party JavaScript but only in sandboxed iframes.
-By banning them into iframes, they can’t block execution of the main page.
+By restricting them to iframes, they can’t block the execution of the main page.
 Even if they trigger multiple style re-calculations,
-their tiny iframes have very little DOM. 
+their tiny iframes have very little DOM.
 
-Style-recalculations and layouts are typical to DOM size,
+The time it takes to do style-recalculations and layouts are restricted by DOM size,
 so the iframe recalculations are very fast compared
 to a recalculating styles and layout for the page.
 
@@ -136,7 +136,7 @@ Learn more about
 ## Prioritize resource loading
 
 AMP controls all resource downloads: it prioritizes resource loading,
-loading only what’s needed, and prefetches lazy-loaded resources. 
+loading only what’s needed, and prefetches lazy-loaded resources.
 
 When AMP downloads resources, it optimizes downloads
 so that the currently most important resources are downloaded first.
@@ -164,7 +164,7 @@ and prerendering doesn’t render things that might be expensive in terms of CPU
 When AMP documents get prerendered for instant loading,
 only resources above the fold are actually downloaded.
 When AMP documents get prerendered for instant loading,
-resources that might use a lot of CPU (like third-party iframes) do not get downloaded. 
+resources that might use a lot of CPU (like third-party iframes) do not get downloaded.
 
 Learn more about
 [why AMP HTML doesn’t take full advantage of the preload scanner](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e).
