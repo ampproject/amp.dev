@@ -83,15 +83,17 @@ p {
  */
 h1,
 h2,
-h3 {
-  color: $color-lightblue;
+h3,
+h4,
+h5 {
+  color: $color-midblue;
   font-weight: 300;
+  margin-top: 1.1em;
+  margin-bottom: 0.5em;
 }
 
 h1 {
-  color: $color-midblue;
   font-size: 43px;
-  font-weight: 300;
 }
 
 
@@ -109,7 +111,7 @@ h3 {
  * Links
  */
 a {
-  color: #039BE5;
+  color: $color-link;
   text-decoration: none;
 
   &:hover {
