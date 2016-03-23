@@ -20,6 +20,10 @@ body {
   padding: 0;
 }
 
+body {
+  padding-top: 66px;
+}
+
 ul li,
 ol li {
   @include text-body();
@@ -164,18 +168,7 @@ td, th {
   text-align: left;
 }
 
-td.col-fourty {
-  width: 40%;
-}
-
-td.col-thirty {
-  width: 30%;
-}
-
 th {
   background: #eee;
 }
 
-th.col-twenty {
-  width: 20%;
-}
