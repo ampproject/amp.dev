@@ -18,7 +18,6 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 -->
 
 
@@ -69,7 +68,6 @@ When using non-responsive layout you will need to account for the extra space ad
 <!---
 `src` attribute hasn't been documented. Should it be?
 Also, can the tag include both data-shortcode and src or are they mutually exclusive?
-
 -->
 
 **data-shortcode**

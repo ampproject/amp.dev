@@ -18,7 +18,6 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 -->
 
 ### <a name="amp-social-share"></a> `amp-social-share`
@@ -41,7 +40,6 @@ When you want to configure the share content, you can specify ```data-<attribute
   data-attribution="AMPhtml">
 </amp-social-share>
 {% endhighlight %}
-
 *or*
 
 You can embed a ```script``` tag with JSON configuration.
@@ -64,7 +62,6 @@ Sometimes you want to provide your own style. In this instance, you can embed an
   <a id="customized-social-share" class="custom"><img src="http://example.com/image.jpg"/></a>
 </amp-social-share>
 {% endhighlight %}
-
 *or*
 
 You can include any additional document structure around the anchor, so long as you don't specify the ```href```.

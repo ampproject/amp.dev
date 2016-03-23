@@ -22,7 +22,6 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 -->
 
 <table>
@@ -123,7 +122,6 @@ All of the endpoints are configured in the AMP document as a JSON object in the 
 The following properties are defined in this configuration:
 
 |Property       | Values               | Description |
-
 --------------  | -------------------- | --------------------------------- |
 | authorization | &lt;URL&gt;          | The HTTPS URL for the Authorization endpoint. |
 | pingback      | &lt;URL&gt;          | The HTTPS URL for the Pingback endpoint. |
@@ -286,6 +284,7 @@ This RPC may be called in the prerendering phase and thus it should not be used 
 Another important consideration is that in some cases AMP runtime may need to call Authorization endpoint multiple times per document impression. This can happen when AMP Runtime believes that the access parameters for the Reader have changed significantly, e.g. after a successful Login Flow.
 
 The authorization response may be used by AMP Runtime and extensions for three different purposes:
+
  1. When evaluating ```amp-access``` expressions.
  2. When evaluating ```<template>``` templates such as ```amp-mustache```.
  3. When providing additional variables to pingback and login URLs using `AUTHDATA(field)`.
@@ -299,6 +298,7 @@ If Authorization request fails, AMP Runtime will fallback to the "authorizationF
 Authorization request is automatically timed out and assumed to have failed after 3 seconds.
 
 AMP Runtime uses the following CSS classes during the authorization flow:
+
  1. `amp-access-loading` CSS class is set on the document root when the authorization flow starts and removed when it completes or fails.
  2. `amp-access-error` CSS class is set on the document root when the authorization flow fails.
 
@@ -402,6 +402,7 @@ Authorization and Pingback endpoints are CORS endpoints and they must implement 
 Metering is the system where the Reader is shown premium content for free for several document views in some period. Once some quota is reached, the Reader is shown the paywall kicks in and the Reader instead is shown partial content with upsell message and signup/login link. For instance, the metering can be defined as “Reader can read 10 articles per month for free”.
 
 AMP Access provides the following facilities for implementing metered access:
+
  1. READER_ID should be used to store metering information. Since the Publisher cannot rely on always being able to set cookies in a 3rd-party context, this data should be stored on the server-side.
  2. The “read count” can only be updated in the Pingback endpoint.
  3. Only unique documents can be counted against the quota. I.e. refreshing the same document ten times constitutes a single view. For this purpose Authorization and Pingback endpoints can inject `SOURCE_URL` or similar URL variables. See [Access URL Variables][7].

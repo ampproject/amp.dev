@@ -18,7 +18,6 @@ distributed under the License is distributed on an "AS-IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 -->
 
 
@@ -62,6 +61,7 @@ element itself must be empty and have `layout=nodisplay` set.
 
 The `amp-image-lightbox` also can optionally display a caption for the image
 at the bottom of the viewport. The caption is discovered as following:
+
  1. The contents of the `<figcaption>` element when image is in the `figure` tag.
  2. The contents of the element whose ID is specified by the image's
   `aria-describedby` attribute.
