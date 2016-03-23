@@ -88,7 +88,7 @@ You can embed an `anchor` tag _without a_ ```href``` into the element to for the
 
 ### Types
 
-The builtin supported types are configured in [AMP Social Share Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/v.0/amp-amp-social-share-config.js). Below are the possible types and their configuration options:
+The builtin supported types are configured in [AMP Social Share Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/0.1/amp-social-share-config.js). Below are the possible types and their configuration options:
 
 - twitter
   - url `optional` (defaults: `rel=canonical` URL)
