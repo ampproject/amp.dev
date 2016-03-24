@@ -5,6 +5,13 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
 
+# Moving Folders
+
+plugins_dir:  _jekyll/plugins
+layouts_dir:  _jekyll/layouts
+includes_dir: _jekyll/includes
+data_dir:     _jekyll/data
+
 # Site settings
 title: AMP Project Documentation
 description: > # this means to ignore newlines until "baseurl:"
@@ -13,6 +20,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "/docs" # the subpath of your site, e.g. /blog
 url: "https://www.ampproject.org" # the base hostname & protocol for your site
 exclude: ["_scripts"]
+lang: en
 
 collections:
   get_started: 
@@ -33,3 +41,4 @@ markdown: kramdown
 
 sass:
   style: compressed
+  sass_dir: _jekyll/sass
