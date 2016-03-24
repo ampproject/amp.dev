@@ -24,7 +24,7 @@ Accelerated Mobile Pages are just like any other HTML page, but with a limited s
 
 In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has stated that it will provide a cache that can be used by anyone at no cost, and all AMPs will be cached by Google’s cache. Other companies may build their own cache as well.
 
-In summary, the goal is that that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development for publishers.
+In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development for publishers.
 
 ### Why does the Accelerated Mobile Pages Project take an open source approach?
 
