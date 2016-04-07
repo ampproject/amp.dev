@@ -1,11 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 792"
-     enable-background="new 0 0 612 792" xml:space="preserve">
-<path d="M280.7,461.6H173.8c-4.5,0-7.5-4.7-5.5-8.8L344.7,90.9c-12.9-1.6-26-2.5-39.4-2.5C137.9,88.5,0.2,225.2-1,392.6
-    c-1.1,146.7,101,269.8,238,301.1L280.7,461.6z"/>
-<path d="M378.5,97.2l-44.3,235.6h106.9c4.5,0,7.5,4.8,5.5,8.8l-174.5,358c11,1.2,22.1,1.8,33.4,1.8c169.3,0,306.5-137.2,306.5-306.5
-    C612,250.8,512.5,129.9,378.5,97.2"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logo-fill" sketch:type="MSArtboardGroup" transform="translate(-136.000000, -22.000000)" fill="#FFFFFF">
+            <g sketch:type="MSLayerGroup" transform="translate(136.000000, 22.000000)">
+                <g id="logo" sketch:type="MSShapeGroup">
+                    <path d="M26.5780447,1.1165907 L22.7212576,16.5617953 L26.3372455,16.5617953 C27.3724421,16.5617953 27.7295076,17.3569887 27.1307096,18.3289806 L14.2943524,39.1661403 C16.1035463,39.7060024 18.0176733,40 20.0003333,40 C31.0282966,40 40,31.0279414 40,19.9997667 C40,11.276106 34.3832187,3.84363464 26.5780447,1.1165907 Z M17.2787424,23.4382047 L13.6627545,23.4382047 C12.6275579,23.4382047 12.2704924,22.642878 12.8692904,21.6708861 L25.7056476,0.83399305 C23.8964537,0.294130882 21.9825934,0 20.0003333,0 C8.97197009,0 0,8.97205857 0,19.9998333 C0,28.7237606 5.61678128,36.1560987 13.4219553,38.8831426 L17.2787424,23.4382047 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>
