@@ -70,16 +70,17 @@ resources in AMP. It requires a `type` argument that select what ad network is d
 - [Dot and Media](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/dotandads.md)
 - [Doubleclick](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/google/doubleclick.md)
 - [Flite](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/flite.md)
+- [I-Mobile](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/imobile.md)
 - [Industrybrains](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/industrybrains.md)
+- [MediaImpact](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/mediaimpact.md)
 - [OpenX](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/openx.md)
 - [plista](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/plista.md)
-- [Smart AdServer](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/smartadserver.md)
-- [Yieldmo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yieldmo.md)
 - [Revcontent](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/revcontent.md)
+- [Smart AdServer](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/smartadserver.md)
 - [TripleLift](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/triplelift.md)
 - [Teads](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/teads.md)
-- [I-Mobile](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/imobile.md)
 - [Webediads](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/webediads.md)
+- [Yieldmo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yieldmo.md)
 
 ## Styling
 
