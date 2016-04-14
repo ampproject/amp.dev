@@ -1,5 +1,23 @@
 locales:
   en:
-    example: "example"
+    menu:
+      faq: "FAQ"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Docs"
+    collections:
+      get_started: "Get Started"
+      guides: "Guides"
+      reference: "Reference"
+      support: "Support"
   de:
-    example: "Beispiel"
+    menu:
+      faq: "FAQ"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Dokumentation"
+    collections:
+      get_started: "Hier starten"
+      guides: "Guides"
+      reference: "Referenz"
+      support: "Support"

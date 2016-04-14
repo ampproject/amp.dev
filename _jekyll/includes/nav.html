@@ -5,12 +5,12 @@
             {% if collection.docs.size > 0 %}
 
             <li>
-            <h2>{{ collection.title }}</h2>
+            <h2>{{ site.data.messages.locales[page.locale].collections[collection.label] }}</h2>
 
             <ul>
               {% assign sorted = collection.docs | sort: 'order' %}
               {% for post in sorted %}
-              {% unless post.relative_path contains 'index.md' %}
+              {% unless post.relative_path contains 'index.md' or post.locale != page.locale %}
 
                 {% capture slug    %}{{ post.url | split: "/"   | last }}{% endcapture %}
                 {% capture nested_path %}{{ post.url | remove: slug | remove: collection.label | remove: "//" }}{% endcapture %}
