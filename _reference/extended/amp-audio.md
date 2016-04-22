@@ -71,7 +71,7 @@ For example:
 
 The `autoplay` attribute allows the author to specify when - if ever - the animated image will autoplay.
 
-The presence of the attribute alone implies that the animated image will always autoplay. The author may specify values to limit when the animations will autoplay. Allowable values are `desktop`, `tablet`, or `mobile`, with multiple values separated by a space. The runtime makes a best-guess approximation to the device type to apply this value.
+The presence of the attribute alone implies that the audio will always autoplay. The author may specify values to limit when the audio will autoplay. Allowable values are `desktop`, `tablet`, or `mobile`, with multiple values separated by a space. The runtime makes a best-guess approximation to the device type to apply this value.
 
 **loop**
 
