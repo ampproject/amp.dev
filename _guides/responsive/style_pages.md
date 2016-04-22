@@ -1,137 +1,28 @@
 ---
 layout: page
-title: How to Style Your Pages
+title: Supported CSS
 order: 0
 ---
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets
-(with the exception of [custom fonts](#the-custom-fonts-exception))
-and inline style attributes aren’t allowed.
-Also, certain style properties related to animations have been disallowed
-due to performance implications,
-and the embedded style tag must be in the `<head>` of the page.
+(with the exception of [custom fonts](#the-custom-fonts-exception)).
+Also certain styles are disallowed due to performance implications;
+inline style attributes aren't allowed.
 
-These different kinds of limitations are there to improve the performance of your pages,
-but can be overwhelming at first.
-When in doubt,
-always test your styles using the [AMP validator](/docs/guides/validate.html).
+All styles must live in the head of the document
+(see [Add styles to a page](/docs/validate.html#add-styles-to-a-page)).
+But you can use CSS preprocessors and templating to build static pages
+to better manage your content.
 
-Even though inline stylesheets add bytes to every page,
-the saved round trip request to another external file would be even slower.
-Having your styles in the `<head>` of the page effectively means that
-all your CSS becomes critical CSS that is loaded before the rest of the page is loaded,
-so only include what you need.
-
-Read on to learn how to style your AMP pages:
-
-{% include toc.html %}
-
-Learn more about critical CSS in this article,
-[Understanding Critical CSS](http://www.smashingmagazine.com/2015/08/understanding-critical-css/).
-
-## Add styles to a page
-
-Add any styles to an AMP page using a single `<style amp-custom>` tag
-in the head of the document.
-For example:
-
-{% highlight html %}
-<!doctype html>
-<html ⚡>
-  <head>
-    <meta charset="utf-8">
-    <link rel="canonical" href="hello-world.html" >
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <style amp-custom>
-      /* any custom style goes here. */
-      body {
-        background-color: white;
-      }
-    </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-  </head>
-  <body>Hello World!</body>
-</html>
-{% endhighlight %}
-
-**Important Note:**
-Make sure there’s only one of these style tags on your page,
-as more than one isn’t allowed in AMP.
-
-## Style AMP components
-
+**Note:**
 AMP components come with default styles
 to make authoring responsive pages reasonably easy.
 These styles are defined in the
 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
-You can change the default styles with class or element selectors in
-`<style amp-custom>` using common CSS properties.
-For example:
 
-{% highlight html %}
-<!doctype html>
-<html ⚡>
-  <head>
-    <style amp-custom>
-      amp-img {
-        border: 5px solid black;
-      }
+{% include toc.html %}
 
-      amp-img.grey-placeholder {
-        background-color: grey;
-      }
-    </style>
-  </head>
-
-  <body>
-    <amp-img src="https://placekitten.com/g/200/300" width=200 height=300>
-    </amp-img>
-
-    <amp-img
-        class="grey-placeholder"
-        src="https://placekitten.com/g/500/300"
-        width=500
-        height=300>
-    </amp-img>
-  </body>
-</html>
-{% endhighlight %}
-
-AMP HTML components that are more complex and nested,
-such as [`amp-iframe`](/docs/reference/extended/amp-iframe.html),
-may define their own custom children that maybe styled separately,
-for example, iframe's `overflow` element.
-These custom children are typically defined either via special attribute names
-such as `placeholder` or `overflow` or AMP class names.
-For example:
-
-{% highlight html %}
-<!doctype html>
-<html ⚡>
-  <head>
-    <style amp-custom>
-      .my-frame > [overflow] {
-        background: green;
-        opacity: 50%;
-      }
-    </style>
-  </head>
-
-  <body>
-    <amp-iframe class="my-frame" width=300 height=300
-        layout="responsive"
-        sandbox="allow-scripts"
-        resizable
-        src="https://foo.com/iframe">
-      <div overflow>Read more!</div>
-    </amp-iframe>
-  </body>
-{% endhighlight %}
-
-Remember, inline `style` attributes are not allowed in AMP pages.
-
-## Use CSS preprocessors
+## Using CSS preprocessors
 
 The generated output of preprocessors works just as well in AMP as any other web page.
 For example, the [ampproject.org](https://www.ampproject.org/) site uses
@@ -229,7 +120,23 @@ The following styles aren’t allowed in AMP pages:
   </tbody>
 </table>
 
-### The custom fonts exception
+## White-listed transition and animation properties
+
+AMP only allows transitions and animations of properties
+that can be GPU accelerated in common browsers.
+The AMP project currently whitelists `opacity`, `transform`,
+and `-vendorPrefix-transform`.
+
+In the following examples, `<property>` needs to be in the whitelist:
+
+* `transition <property> (Also -vendorPrefix-transition)`
+* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
+
+The `overflow` property (and `overflow-y`, `overflow-x`)
+may not be styled as “auto” or “scroll”.
+No user-defined element in an AMP document may have a scrollbar.
+
+## The custom fonts exception
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 The 2 supported methods for referencing custom fonts are
@@ -252,33 +159,3 @@ Example link tag pointing to the whitelisted font provider, Google Fonts:
 Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face).
 Fonts included via `@font-face` must be fetched
 via the HTTP or HTTPS scheme.
-
-### White-listed transition and animation properties
-
-AMP only allows transitions and animations of properties
-that can be GPU accelerated in common browsers.
-The AMP project currently whitelists `opacity`, `transform`,
-and `-vendorPrefix-transform`.
-
-In the following examples, `<property>` needs to be in the whitelist:
-
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
-
-The `overflow` property (and `overflow-y`, `overflow-x`)
-may not be styled as “auto” or “scroll”.
-No user-defined element in an AMP document may have a scrollbar.
-
-## Validate your CSS
-
-Use the AMP validator to test that your CSS is valid.
-The validator confirms that your page’s CSS doesn’t exceed 50,000 bytes limit.
-It will also check for disallowed styles.
-
-Example error in console for page with CSS that exceeds the 50,000 bytes limit:
-
-<amp-img src="/docs/assets/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
-
-Learn more about how to [validate your AMP pages](/docs/guides/validate.html),
-including how to track down style errors and fix them.
-
