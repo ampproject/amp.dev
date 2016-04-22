@@ -1,0 +1,14 @@
+{
+  "name": "amp-ref-docs-importer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "import_reference_docs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "octonode": "^0.7.5"
+  }
+}

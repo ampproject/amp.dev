@@ -78,7 +78,7 @@ downloadPage("spec/amp-html-format.md", function(pageContent) {
 
 
 ghrepo.contents('builtins', "master", function(err, data) {
-	
+
 	if(err) {
 		throw err;
 	}
@@ -163,6 +163,11 @@ ghrepo.contents('extensions', "master", function(err, data) {
 				}
 			}
 
+			// if there's nothing in the folder for some reason, skip
+			if(!subComponent) {
+				return;
+			}
+
 			// download the page contents
 			downloadPage(subComponent.path, function(pageContent) {
 				// save it to the extended folder
@@ -180,6 +185,6 @@ ghrepo.contents('extensions', "master", function(err, data) {
 		});
 
 		index++;
-		
+
 	});
 });
