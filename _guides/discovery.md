@@ -79,7 +79,7 @@ Example:
 More examples can be found in [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
 
 Note: This Schema.org definition is a requirement to make your content eligible to appear in the demo of the [Google Search news carousel (try on mobile)](https://g.co/ampdemo).
-See also [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories).
+See also [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories), and the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/).
 
 ### Other metadata for even more platforms
 
