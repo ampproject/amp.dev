@@ -62,6 +62,14 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 	return content;
 }
 
+// create folders if they do not exist yet
+if(!fs.existsSync('../_reference')) {
+	fs.mkdirSync('../_reference');
+}
+
+if(!fs.existsSync('../_reference/extended')) {
+	fs.mkdirSync('../_reference/extended');
+}
 
 // Download the specification
 downloadPage("spec/amp-html-format.md", function(pageContent) {
@@ -76,7 +84,7 @@ downloadPage("spec/amp-html-format.md", function(pageContent) {
 	});
 }, 1);
 
-
+// Download built-in AMP component ref docs
 ghrepo.contents('builtins', "master", function(err, data) {
 
 	if(err) {
@@ -111,7 +119,7 @@ ghrepo.contents('builtins', "master", function(err, data) {
 	});
 });
 
-
+// download extension component ref docs
 ghrepo.contents('extensions', "master", function(err, data) {
 
 	if(err) {
