@@ -14,6 +14,8 @@ The AMP validator comes bundled with the AMP JS library, so it is available on e
   1. Add "`#development=1`" to the URL, for example, `http://localhost:8000/released.amp.html#development=1`.
   1. Open the [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) and check for validation errors.
 
+You may also want to confirm that your AMP document is [discoverable](/docs/guides/discovery.html) to third-party platforms.
+
 ## What happens if my page isn’t valid?
 
 <amp-img src="/docs/assets/validator_errors.png" width="1348" height="518" layout="responsive"></amp-img>
