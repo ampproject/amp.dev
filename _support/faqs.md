@@ -67,7 +67,7 @@ Though we cannot guarantee that all vendor technology will function perfectly in
 
 ### How will advertising work on Accelerated Mobile Pages?
 
-A goal of the Accelerated Mobile Pages Project is to ensure effective ad monetization on the mobile web while embracing a user-centric approach. With that context, the objective is to provide support for a comprehensive range of ad formats, ad networks and technologies in Accelerated Mobile Pages. As part of that, those involved with the project are also engaged in crafting Sustainable Ad Practices to insure that ads in AMP files are fast, safe, compelling and effective for users.
+A goal of the Accelerated Mobile Pages Project is to ensure effective ad monetization on the mobile web while embracing a user-centric approach. With that context, the objective is to provide support for a comprehensive range of ad formats, ad networks and technologies in Accelerated Mobile Pages. As part of that, those involved with the project are also engaged in crafting Sustainable Ad Practices to ensure that ads in AMP files are fast, safe, compelling and effective for users.
 
 ### Will publishers be able to sell their own ad inventory?
 
