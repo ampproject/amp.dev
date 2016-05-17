@@ -51,7 +51,7 @@ In short, not much. Since “AMP HTML” is built entirely out of existing web t
 
 ### How can a publisher get content into AMP HTML?
 
-Publishers and Content Management System (CMS) providers can develop an integration with their CMS to generate AMP content. We hope that all content management systems will add support for AMP HTML pages. For example, WordPress.com has announced that it will integrate the AMP framework. In addition to WordPress.com, we hope other commercial CMS providers will support the project in the weeks and months to come.
+Publishers and Content Management System (CMS) providers can develop an integration with their CMS to generate AMP content. Automattic has already publised a [Wordpress AMP plugin](https://wordpress.org/plugins/amp/) and we hope that all content management systems will add support for AMP HTML pages.
 
 ## Platform and Technology Company Involvement
 
