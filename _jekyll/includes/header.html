@@ -1,13 +1,17 @@
+    <amp-sidebar id='sidebar' side='right' layout='nodisplay'>
+      {% include nav.html %}
+    </amp-sidebar>
+
     <header class="fixed">
       <div class="wrap">
         <div class="container">
           <div class="clearfix">
           <div class="left-nav">
               <a href="https://ampproject.org" class="tab header-title">
-                Accelerated
+                <span>Accelerated
                 Mobile
                 Pages
-                Project
+                Project</span>
               </a>
             </div>
             <div class="right alt">
@@ -23,7 +27,7 @@
               <a class="tab desktop" href="/docs/get_started/about-amp.html">
                 {{ site.data.messages.locales[page.locale].menu.docs }}
               </a>
-              <a class="tab hamburger" id="menu-button" href="">&#x2261;</a>
+              <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'>&#x2261;</button>
             </div>
           </div>
         </div>

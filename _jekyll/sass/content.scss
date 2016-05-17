@@ -131,24 +131,15 @@ nav {
 }
 
 @include max-screen($mobile-breakpoint) {
-    nav {
-        -webkit-order: 1;
-        order: 1;
-        border-left: 2px solid #E6E6E6;
-        margin-left: 30px;
+    .container nav {
+        display: none;
+    }
+
+    amp-sidebar nav {
         margin-right: 0;
         border-right: none;
         margin-top: 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(243px, 0);
-        transition: all 0.25s ease;
-        will-change: transform;
-
-        &.menu-open {
-            transform: translate(0, 0);
-        }
-
+        padding-left: 36px;
     }
+
 }
