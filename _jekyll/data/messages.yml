@@ -21,3 +21,157 @@ locales:
       guides: "Guides"
       reference: "Referenz"
       support: "Support"
+  es-419:
+    menu:
+      faq: "Preguntas frecuentes"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Documentos"
+    collections:
+      get_started: "Primeros pasos"
+      guides: "Guías"
+      reference: "Referencia"
+      support: "Soporte"
+  fr:
+    menu:
+      faq: "FAQ"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Documentation"
+    collections:
+      get_started: "Premiers pas"
+      guides: "Guides"
+      reference: "Référence"
+      support: "Support"
+  id:
+    menu:
+      faq: "FAQ"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Dokumen"
+    collections:
+      get_started: "Mulai"
+      guides: "Panduan"
+      reference: "Referensi"
+      support: "Dukungan"
+  it:
+    menu:
+      faq: "Domande frequenti (FAQ)"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Documentazione"
+    collections:
+      get_started: "Come iniziare"
+      guides: "Guide"
+      reference: "Riferimenti"
+      support: "Supporto"
+  ja:
+    menu:
+      faq: "よくある質問"
+      blog: "ブログ"
+      github: "GitHub"
+      docs: "ドキュメント"
+    collections:
+      get_started: "使ってみる"
+      guides: "ガイド"
+      reference: "リファレンス"
+      support: "サポート"
+  ko:
+    menu:
+      faq: "FAQ"
+      blog: "블로그"
+      github: "GitHub"
+      docs: "문서"
+    collections:
+      get_started: "시작하기"
+      guides: "가이드"
+      reference: "참조"
+      support: "지원"
+  nl:
+    menu:
+      faq: "Veelgestelde vragen"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Documenten"
+    collections:
+      get_started: "Aan de slag"
+      guides: "Handleidingen"
+      reference: "Referentie"
+      support: "Ondersteuning"
+  pl:
+    menu:
+      faq: "Najczęstsze pytania"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Dokumentacja"
+    collections:
+      get_started: "Pierwsze kroki"
+      guides: "Przewodniki"
+      reference: "Skorowidz"
+      support: "Pomoc techniczna"
+  pt-br:
+    menu:
+      faq: "Perguntas frequentes"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Documentos"
+    collections:
+      get_started: "Primeiros passos"
+      guides: "Guias"
+      reference: "Referência"
+      support: "Suporte"
+  ru:
+    menu:
+      faq: "Вопросы и ответы"
+      blog: "Блог"
+      github: "GitHub"
+      docs: "Документация"
+    collections:
+      get_started: "Начало работы"
+      guides: "Руководства"
+      reference: "Дополнительные материалы"
+      support: "Поддержка"
+  th:
+    menu:
+      faq: "คำถามที่พบบ่อย"
+      blog: "บล็อก"
+      github: "GitHub"
+      docs: "เอกสาร"
+    collections:
+      get_started: "เริ่มต้นใช้งาน"
+      guides: "คำแนะนำ"
+      reference: "ข้อมูลอ้างอิง"
+      support: "การสนับสนุน"
+  en:
+    menu:
+      faq: "FAQ"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Docs"
+    collections:
+      get_started: "Get Started"
+      guides: "Guides"
+      reference: "Reference"
+      support: "Support"
+  tr:
+    menu:
+      faq: "SSS"
+      blog: "Blog"
+      github: "GitHub"
+      docs: "Dokümanlar"
+    collections:
+      get_started: "Başlarken"
+      guides: "Kılavuzlar"
+      reference: "Referans"
+      support: "Destek"
+  zh-cn:
+    menu:
+      faq: "常见问题解答"
+      blog: "博客"
+      github: "GitHub"
+      docs: "文档"
+    collections:
+      get_started: "入门指南"
+      guides: "指南"
+      reference: "参考"
+      support: "支持"
