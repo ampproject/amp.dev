@@ -1,4 +1,4 @@
-        {% strip %}
+        
         <nav>
           <ul>
             {% for collection in site.collections %}
@@ -27,6 +27,7 @@
                 {% if post.folder and page.relative_path contains post.folder %}
                   {% if post.numbered %}<ol>{% else %}<ul>{% endif %}
                   {% for nested_post in sorted %}
+                  {% unless nested_post.locale != page.locale %}
 
                     {% capture slug2 %}{{ nested_post.url | split: "/"   | last }}{% endcapture %}
                     {% capture nested_path2 %}{{ nested_post.url | remove: slug2 | remove: collection.label | remove: "/" }}{% endcapture %}
@@ -44,7 +45,8 @@
                     </li>
                     {% endif %}
                     {% endif %}
-
+                    
+                  {% endunless %}
                   {% endfor %}
                   {% if post.numbered %}</ol>{% else %}</ul>{% endif %}
                 {% endif %}
@@ -60,4 +62,4 @@
             {% endfor %}
           </ul>
         </nav>
-        {% endstrip %}
+        

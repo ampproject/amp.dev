@@ -13,7 +13,7 @@
     {% capture slug %}{{ post.url | split: "/"   | last }}{% endcapture %}
     {% capture nested_path %}{{ post.url | remove: slug | remove: collection.label | remove: "/" }}{% endcapture %}
 
-    {% if nested_path == page.folder %}
+    {% if nested_path == page.folder and post.locale == page.locale %}
     <li>
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </li>
