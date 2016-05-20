@@ -63,7 +63,7 @@ To learn more about not just the [optimizations](/docs/get_started/technical_ove
 
 ## Google AMP Cache
 
-The Google AMP Cache is a proxy-based content delivery network
+The [Google AMP Cache](https://developers.google.com/amp/cache/) is a proxy-based content delivery network
 for delivering all valid AMP documents.
 It fetches AMP HTML pages, caches them, and improves page performance automatically.
 When using the Google AMP Cache, the document, all JS files and all images load
