@@ -156,43 +156,55 @@ ghrepo.contents('extensions', "master", function(err, data) {
 	});
 
 	var index = 0;
-	components.forEach(function(component) {
+	var extensionsList = Object.create(null);
 
-		var order = index;
+  	var getExtensionsPromises = components.map(function(component) {
 
-		ghrepo.contents(component.path, "master", function(err, data) {
+	    	var getDocNamePromise = new Promise((resolve) => {
+	      		ghrepo.contents(component.path, "master", function(err, data) {
 
-			// fish out the markdown file from the folder
-			var subComponent;
-			for (var i = 0; i < data.length; i++) {
-				if(data[i].type === 'file' && data[i].name === component.name + '.md') {
-					subComponent = data[i];
-					break;
+				// fish out the markdown file from the folder
+				var breakFlag = false;
+				var isComponentAmpAd = (component.name === 'amp-ad');
+				for (var i = 0; i < data.length; i++) {
+			  		var isDataNameAmpEmbed = (data[i].name === 'amp-embed.md');
+			  		var isSameDataComponentName = (data[i].name === component.name + '.md');
+			  		var isTypeFile = (data[i].type === 'file');
+			  		var isSpecialCase = (isComponentAmpAd && isDataNameAmpEmbed);
+			  		if (isTypeFile && (isSameDataComponentName || isSpecialCase)){
+			    			extensionsList[data[i].name] = data[i].path;
+			    			breakFlag = true;
+			  		}
+			  		if (breakFlag && !isComponentAmpAd) {
+			    			break;
+			  		}
 				}
-			}
-
-			// if there's nothing in the folder for some reason, skip
-			if(!subComponent) {
-				return;
-			}
-
-			// download the page contents
-			downloadPage(subComponent.path, function(pageContent) {
-				// save it to the extended folder
-				savePage({
-					destination: '../_reference/extended/' + subComponent.name,
-					content: pageContent,
-					order: order,
-					title: subComponent.name.replace('.md', '')
-				}, function (err) {
-					if (err) throw err;
-					console.log('Successfully imported: ' + subComponent.name + ' (Extended)');
-				});
-			}, 1);
-
-		});
-
-		index++;
-
-	});
+				resolve();
+	      		});
+	    	});
+    		return getDocNamePromise;
+  	});
+  	Promise.all(getExtensionsPromises).then(() => {
+    		// sort extensionsList on their name alphabetically.
+    		extensionsName = Object.keys(extensionsList).sort();
+    		var index = 0;
+    		extensionsName.forEach(function(name) {
+      			var order = index;
+      			ghrepo.contents(extensionsList[name], "master", function(err, data) {
+				downloadPage(extensionsList[name], function(pageContent) {
+		    			// save it to the extended folder
+		    			savePage({
+		      				destination: '../_reference/extended/' + name,
+		      				content: pageContent,
+		      				order: order,
+		      				title: name.replace('.md', '')
+		    			}, function (err) {
+	      					if (err) throw err;
+	      					console.log('Successfully imported: ' + name + ' (Extended)');
+	   	 			});
+	  			}, 1);
+      			});
+      			index++;
+    		});
+  	});
 });
