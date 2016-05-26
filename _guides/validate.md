@@ -4,7 +4,7 @@ title: Validate AMP Pages
 order: 4
 ---
 
-The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be *validated*. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
+The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be *validated*. This way third parties can feel great about serving AMP pages to readers in increasingly interesting ways.
 
 ## How do I check if my page is valid AMP?
 
@@ -20,7 +20,7 @@ You may also want to confirm that your AMP document is [discoverable](/docs/guid
 
 <amp-img src="/docs/assets/validator_errors.png" width="1348" height="518" layout="responsive"></amp-img>
 
-The AMP validator isn’t just a convenience for you during development. It’s also used by platforms like Twitter or Google who integrate your AMP pages into their content and search results. More so, they usually don’t request the pages directly from your server but make use of the Google AMP Cache, a free service that caches your pages and makes them available across the world, so they load even faster.
+The AMP validator isn’t just a convenience for you during development. It’s also used by platforms who integrate your AMP pages into their content and search results. More so, they usually don’t request the pages directly from your server but make use of the Google AMP Cache, a free service that caches your pages and makes them available across the world, so they load even faster.
 
 If the AMP validation service detects that there’s something wrong with your page, it won’t get discovered and distributed by third party websites and won’t appear in the Google AMP Cache.  So not only would you lose the speed benefits of the cache, it’s likely that your page will not be seen in many places! That would be a shame, so let’s make sure it doesn’t happen.
 
