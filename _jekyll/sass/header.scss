@@ -89,7 +89,7 @@ header {
       @include justify-content(flex-start);
 
       flex: 1 1 auto;
-      padding: 0 0 5px 0;
+      padding: 0 0 0 0;
       text-align: left;
       width: auto;
     }
@@ -140,6 +140,7 @@ header {
         float: right;
         text-align: center;
         flex: 0;
+        flex-basis: 18%;
         padding: 0 0 10px;
         font-size: 12px;
         display: inline-block;
@@ -190,7 +191,7 @@ header {
     background: none;
     border: none;
     margin-top: 0;
-    padding-top: 0;
+    padding: 0;
     position: relative;
     top: 4px;
     display: none;
