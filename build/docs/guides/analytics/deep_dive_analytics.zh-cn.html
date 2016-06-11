@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>深入了解 AMP Analytics</title>
+    <link rel="canonical" href="https://www.ampproject.org/docs/guides/analytics/deep_dive_analytics.zh-cn.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta property="og:description" content="本指南将深入探讨amp-analytics 组件，将示例 amp-analytics 配置分解为以下关键构建基块：">
+    <meta name="description" content="本指南将深入探讨amp-analytics 组件，将示例 amp-analytics 配置分解为以下关键构建基块：">
+    <link rel="shortcut icon" href="/docs/assets/amp_favicon.png?v=2">
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <style amp-custom>
+    body,blockquote,pre,hr,dl,dd,ol,ul,figure{margin:0;padding:0}html,body{background-color:#fbfafb;font-family:Roboto,verdana,arial,sans-serif;margin:0;overflow-x:hidden;padding:0}body{padding-top:66px}ul li,ol li{color:#333;font-size:16px;font-weight:300;line-height:24px}p{color:#333;font-size:16px;font-weight:300;line-height:24px}.container{box-sizing:border-box;margin:0 auto;max-width:1000px;padding:0 20px}.container.md{max-width:800px}.wrap{background-color:#fff;margin:0 auto}.centered{text-align:center}@media only screen and (max-width: 870px){.centered{text-align:left}}.align-right{text-align:right}.clearfix:after{content:"";display:table;clear:both}.clearfix .left{float:left}.clearfix .right{float:right}.clearfix .fill{overflow:hidden;width:auto}h1,h2,h3,h4,h5{color:#147bc1;font-weight:300;margin-top:1.1em;margin-bottom:0.5em}h1{font-size:43px}h2{font-size:36px}h3{font-size:26px}a{color:#0360B5;text-decoration:none}a:hover{text-decoration:underline}a.button{padding:1em;display:block;background-color:#F5F5F5;text-align:center}blockquote{color:#797c82;border-left:4px solid #f5f5f5;padding-left:15px;font-size:18px;letter-spacing:-1px;font-style:italic}blockquote>:last-child{margin-bottom:0}code{font-size:15px;border:1px solid #f5f5f5;border-radius:3px}code{padding:1px 5px}table{border-collapse:collapse}td,th{border:1px solid #FFFFFF;background:#F7F7F7;padding:0.5rem;text-align:left}td.col-fourty{width:40%}td.col-thirty{width:30%}th{background:#eee}th.col-twenty{width:20%}header{-webkit-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;-moz-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;font-size:14px;font-weight:300;transform:translateZ(0);backface-visibility:hidden;background-color:#fff}header .container{padding:0}@media only screen and (max-width: 870px){header .container{padding:0 10px}}header.absolute,header.fixed{-moz-transform:translateY(0%);-o-transform:translateY(0%);-ms-transform:translateY(0%);-webkit-transform:translateY(0%);transform:translateY(0%);-moz-transition:all 0.25s ease;-o-transition:all 0.25s ease;-ms-transition:all 0.25s ease;-webkit-transition:all 0.25s ease;transition:all 0.25s ease;left:0;position:fixed;top:0;width:100%;z-index:1000}header.absolute{position:absolute}header.nav--pinned,header.nav--unpinned,header.nav--top{position:fixed}@media only screen and (max-width: 870px){header.nav--pinned,header.nav--unpinned,header.nav--top{position:relative}}header.nav--pinned,header.nav--unpinned{background:#147bc1}header.nav--top{background-color:transparent}header.hidden{display:block}@media only screen and (max-width: 870px){header.hidden{-moz-transform:translateY(-100%);-o-transform:translateY(-100%);-ms-transform:translateY(-100%);-webkit-transform:translateY(-100%);transform:translateY(-100%)}}header.menu-open{transform:translate(-243px, 0px)}@media only screen and (max-width: 870px){header .wrap{color:transparent}}header .content.mobile-show{padding:0 10px 5px}header .left-nav{-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;float:left;font-size:14px;letter-spacing:0.04em;margin-left:0}@media only screen and (max-width: 870px){header .left-nav{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;flex:1 1 auto;padding:0 0 5px 0;text-align:left;width:auto}}header .left-nav .header-title{background-image:url("/docs/assets/logo-blue.svg");background-position:center left;background-repeat:no-repeat;background-size:40px 40px;color:#147bc1;font-family:Roboto, verdana, arial, sans-serif;margin:10px 0;padding:15px 10px 15px 50px;text-transform:none;white-space:nowrap;width:auto}@media only screen and (max-width: 870px){header .left-nav .header-title{line-height:41px;margin:6px 0;padding:0 0 0 50px;width:auto}}@media only screen and (max-width: 870px){header .clearfix{display:flex;flex-wrap:wrap-reverse}}header .alt{padding:15px 0;text-align:right;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-pack:center;-moz-box-pack:center;box-pack:center;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center}header .alt.right{letter-spacing:0.04em;font-size:14px}@media only screen and (max-width: 870px){header .alt.right{float:right;text-align:center;flex:0;padding:0 0 10px;font-size:12px;display:inline-block}}header .tab{color:#147bc1;display:inline-block;padding:10px 15px;text-decoration:none;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab{margin-left:auto;padding:10px 12px}}header .tab.go-button{-webkit-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);-moz-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);background-color:#147bc1;border:0;border-radius:4px;color:#fff;font-family:Roboto, verdana, arial, sans-serif;font-size:14px;font-weight:500;padding:10px 20px;margin-left:10px;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab.go-button{margin-right:5px;margin-left:auto;padding:8px 10px}}header .tab.go-button:hover{text-decoration:none}header .tab.hamburger{font-size:50px;line-height:38px;background:none;border:none;margin-top:0;padding-top:0;position:relative;top:4px;display:none}@media only screen and (max-width: 870px){header .tab.desktop{display:none}header .tab.hamburger{display:inline-block}}@media only screen and (max-width: 320px){header .header-title span{display:none}header .header-title::after{content:"AMP"}}.main{display:-webkit-flex;display:flex;padding-top:40px;padding-bottom:30px}.main h1{margin-top:0}.main h1:before,.main h2:before,.main h3:before,.main h4:before,.main h5:before{display:block;content:" ";margin-top:-106px;height:106px;visibility:hidden}.main .content{flex-grow:1;-webkit-flex-grow:1;transition:all 0.25s ease;transform:translate(0, 0);will-change:transform;word-break:break-word;min-width:0}.main .content.menu-open{transform:translate(-243px, 0)}.main .content ul,.main .content ol{margin-left:40px}.main .content{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}.main amp-img,.main amp-youtube,.main amp-iframe{margin:1em 0}nav{border-right:2px solid #E6E6E6;padding:20px;margin-right:30px;margin-left:-20px;width:200px;flex-shrink:0;-webkit-flex-shrink:0;background:#F7F7F7;margin-top:-40px;margin-bottom:-30px}nav h2{font-size:20px;color:#111;margin-top:0;margin-bottom:10px}nav ul li,nav ol li{margin-bottom:10px;list-style:none}nav ul li ul,nav ul li ol,nav ol li ul,nav ol li ol{padding-left:0;margin-left:20px;margin-bottom:1.2em}nav ul li ul li,nav ul li ol li,nav ol li ul li,nav ol li ol li{margin-bottom:6px;font-size:14px;list-style:square;color:#CECECE}nav ul li ul li.current,nav ul li ol li.current,nav ol li ul li.current,nav ol li ol li.current{color:#222}nav ul li ul li span,nav ul li ol li span,nav ol li ul li span,nav ol li ol li span{font-weight:400;color:#222}nav ul li ul li ul,nav ul li ul li ol,nav ul li ol li ul,nav ul li ol li ol,nav ol li ul li ul,nav ol li ul li ol,nav ol li ol li ul,nav ol li ol li ol{margin-bottom:0;margin-left:0;padding-left:20px;border-top:1px solid #eee;padding-top:3px;padding-bottom:0px}nav ul li ul li ol li,nav ul li ol li ol li,nav ol li ul li ol li,nav ol li ol li ol li{list-style:decimal}@media only screen and (max-width: 870px){.container nav{display:none}amp-sidebar nav{margin-right:0;border-right:none;margin-top:0;padding-left:36px}}pre{overflow:auto;tab-size:2;word-break:normal;line-height:1.4;background:#F7F7F7}pre>code{white-space:pre;word-wrap:initial;display:block}pre>code td{border:0}.highlight .hll{background-color:#ffc}.highlight .c{color:#aaaaaa;font-style:italic}.highlight .err{color:#F00000}.highlight .k{color:#00a}.highlight .cm{color:#aaaaaa;font-style:italic}.highlight .cp{color:#4c8317}.highlight .c1{color:#aaaaaa;font-style:italic}.highlight .cs{color:#0000aa;font-style:italic}.highlight .gd{color:#a00}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#000080;font-weight:bold}.highlight .gi{color:#0a0}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc{color:#00a}.highlight .kd{color:#00a}.highlight .kn{color:#00a}.highlight .kp{color:#00a}.highlight .kr{color:#00a}.highlight .kt{color:#0aa}.highlight .m{color:#099}.highlight .s{color:#a50}.highlight .na{color:#1e90ff}.highlight .nb{color:#0aa}.highlight .nc{color:#00aa00;text-decoration:underline}.highlight .no{color:#a00}.highlight .nd{color:#888}.highlight .ni{color:#800000;font-weight:bold}.highlight .nf{color:#0a0}.highlight .nn{color:#00aaaa;text-decoration:underline}.highlight .nt{color:#1e90ff;font-weight:bold}.highlight .nv{color:#a00}.highlight .ow{color:#00a}.highlight .w{color:#bbb}.highlight .mf{color:#099}.highlight .mh{color:#099}.highlight .mi{color:#099}.highlight .mo{color:#099}.highlight .sb{color:#a50}.highlight .sc{color:#a50}.highlight .sd{color:#a50}.highlight .s2{color:#a50}.highlight .se{color:#a50}.highlight .sh{color:#a50}.highlight .si{color:#a50}.highlight .sx{color:#a50}.highlight .sr{color:#099}.highlight .s1{color:#a50}.highlight .ss{color:#00a}.highlight .bp{color:#0aa}.highlight .vc{color:#a00}.highlight .vg{color:#a00}.highlight .vi{color:#a00}.highlight .il{color:#099}.highlight .lineno{-webkit-user-select:none;-moz-user-select:none;-o-user-select:none}.lineno::-moz-selection{background-color:transparent}.lineno::selection{background-color:transparent}footer{padding:40px 0 60px 100px;background-color:#f5f5f5}footer p{margin:0}footer .footer-image{height:25px;width:25px;padding-left:25px;float:right}
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
+  </head>
+
+  <body>
+    <amp-analytics type="googleanalytics" id="analytics-ga">
+    <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-67833617-1"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
+    }
+    </script>
+    </amp-analytics>
+
+    <amp-sidebar id='sidebar' side='right' layout='nodisplay'>
+              
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>入门指南</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.zh-cn.html">什么是 AMP？</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.zh-cn.html">创建您的第一个 AMP 页面</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/technical_overview.zh-cn.html">AMP 如何提升性能</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>指南</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.zh-cn.html">配置 Analytics</a>
+                
+
+                
+                  <ul>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li>
+                      <a href="/docs/guides/analytics/analytics_basics.zh-cn.html">Analytics：基础知识</a>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="current">
+                      <span>深入了解 AMP Analytics</span>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li>
+                      <a href="/docs/guides/analytics/use_cases.zh-cn.html">用例</a>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  </ul>
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>参考</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>支持</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+    </amp-sidebar>
+
+    <header class="fixed">
+      <div class="wrap">
+        <div class="container">
+          <div class="clearfix">
+          <div class="left-nav">
+              <a href="https://ampproject.org" class="tab header-title">
+                <span>Accelerated
+                Mobile
+                Pages
+                Project</span>
+              </a>
+            </div>
+            <div class="right alt">
+              <a class="tab desktop" href="/docs/support/faqs.html">
+                常见问题解答
+              </a>
+              <a class="tab desktop" href="https://amphtml.wordpress.com">
+                博客
+              </a>
+              <a class="tab desktop" href="https://github.com/ampproject/amphtml">
+                GitHub
+              </a>
+              <a class="tab desktop" href="/docs/get_started/about-amp.html">
+                文档
+              </a>
+              <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'>&#x2261;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="wrap">
+      <div class="container main">
+        
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>入门指南</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.zh-cn.html">什么是 AMP？</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.zh-cn.html">创建您的第一个 AMP 页面</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/technical_overview.zh-cn.html">AMP 如何提升性能</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>指南</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.zh-cn.html">配置 Analytics</a>
+                
+
+                
+                  <ul>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li>
+                      <a href="/docs/guides/analytics/analytics_basics.zh-cn.html">Analytics：基础知识</a>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="current">
+                      <span>深入了解 AMP Analytics</span>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li>
+                      <a href="/docs/guides/analytics/use_cases.zh-cn.html">用例</a>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  </ul>
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>参考</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>支持</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+        <div class="content">
+          <!-- article -->
+          <article class="post">
+
+    <h1 class="post-title">深入了解 AMP Analytics</h1>
+
+	<div class="post-content">
+	    <p>本指南将深入探讨
+<a href="/docs/reference/extended/amp-analytics.html">amp-analytics 组件</a>，
+将示例 <code class="highlighter-rouge">amp-analytics</code> 配置分解为以下关键构建基块：</p>
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">在何处发送分析数据：类型属性</a></li>
+  <li><a href="#config-" id="markdown-toc-config-">加载远程配置：config 属性</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">请求、触发器和传输</a>    <ul>
+      <li><a href="#requests-" id="markdown-toc-requests-">发送什么数据：requests 属性</a>        <ul>
+          <li><a href="#url-url-" id="markdown-toc-url-url-">追加请求 URL：额外的 URL 参数</a></li>
+        </ul>
+      </li>
+      <li><a href="#triggers-" id="markdown-toc-triggers-">何时发送数据：triggers 属性</a></li>
+      <li><a href="#transport-" id="markdown-toc-transport-">如何发送数据：transport 属性</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-2" id="markdown-toc-section-2">变量替代顺序</a></li>
+</ul>
+
+<p>本指南的其余部分均使用此配置示例，
+此示例跟踪页面视图和用户的链接点击，
+并将分析数据发送到第三方提供程序
+<a href="https://developers.google.com/analytics/devguides/collection/amp-analytics/">Google Analytics</a>：</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;amp-analytics</span> <span class="na">type=</span><span class="s">"googleanalytics"</span> <span class="na">config=</span><span class="s">"https://example.com/analytics.account.config.json"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"application/json"</span><span class="nt">&gt;</span>
+<span class="p">{</span>
+  <span class="s2">"requests"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"pageview"</span><span class="err">:</span> <span class="s2">"https://example.com/analytics?url=${canonicalUrl}&amp;title=${title}&amp;acct=${account}"</span><span class="p">,</span>
+    <span class="s2">"event"</span><span class="err">:</span> <span class="s2">"https://example.com/analytics?eid=${eventId}&amp;elab=${eventLabel}&amp;acct=${account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"vars"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"account"</span><span class="err">:</span> <span class="s2">"ABC123"</span>
+  <span class="p">},</span>
+  <span class="s2">"extraUrlParams"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"cd1"</span><span class="err">:</span> <span class="s2">"AMP"</span>
+  <span class="p">},</span>
+  <span class="s2">"triggers"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"trackPageview"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"on"</span><span class="err">:</span> <span class="s2">"visible"</span><span class="p">,</span>
+      <span class="s2">"request"</span><span class="err">:</span> <span class="s2">"pageview"</span>
+    <span class="p">},</span>
+    <span class="s2">"trackAnchorClicks"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"on"</span><span class="err">:</span> <span class="s2">"click"</span><span class="p">,</span>
+      <span class="s2">"selector"</span><span class="err">:</span> <span class="s2">"a"</span><span class="p">,</span>
+      <span class="s2">"request"</span><span class="err">:</span> <span class="s2">"event"</span><span class="p">,</span>
+      <span class="s2">"vars"</span><span class="err">:</span> <span class="p">{</span>
+        <span class="s2">"eventId"</span><span class="err">:</span> <span class="s2">"42"</span><span class="p">,</span>
+        <span class="s2">"eventLabel"</span><span class="err">:</span> <span class="s2">"clicked on a link"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s1">'transport'</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s1">'beacon'</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s1">'xhrpost'</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s1">'image'</span><span class="err">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/amp-analytics&gt;</span></code></pre></figure>
+
+<p><strong>注：</strong> 上面的示例代码是为了帮助您学习，绝不是一个真实示例。如果您使用分析提供程序，上面的示例可能没有意义；提供程序配置会降低复杂性。有关示例配置，请查阅分析提供程序的文档。</p>
+
+<h2 id="section">在何处发送分析数据：类型属性</h2>
+
+<p>AMP 设计为可支持两种常见数据集合模式：</p>
+
+<ul>
+  <li>发布者拥有的端点针对内部分析系统的获取。</li>
+  <li>供应商拥有的端点针对与供应商解决方案
+（例如，<a href="https://helpx.adobe.com/marketing-cloud/analytics.html">Adobe Analytics</a>、<a href="http://support.chartbeat.com/docs/">Chartbeat</a>、<a href="https://developers.google.com/analytics/devguides/collection/amp-analytics/">Google Analytics</a>）的互操作性的获取。</li>
+</ul>
+
+<p>如需将分析数据发送到分析提供程序，
+请在 <code class="highlighter-rouge">amp-analytics</code> 标记中包括 <code class="highlighter-rouge">type</code> 属性，并将其值设置为相应的供应商（如
+<a href="/docs/reference/extended/amp-analytics.html">amp-analytics 规范</a>中所定义）。</p>
+
+<p>例如：<code class="highlighter-rouge">&lt;amp-analytics type="googleanalytics"&gt;</code> 将分析数据发送给
+第三方分析提供程序 Google Analytics。
+如需将数据发送到发布者拥有的端点，
+只需不包括 <code class="highlighter-rouge">type</code> 属性即可；
+系统会将分析数据发送到每个<a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">请求</a>对应的已定义端点。</p>
+
+<p>可以通过分析供应商配置快速开始使用 <code class="highlighter-rouge">amp-analytics</code>。</p>
+
+<p>您应查阅供应商的文档和
+帮助资源以获得进一步的指导。
+如前所述，已与 AMP 集成的供应商的列表以及指向其特定文档的链接可在
+<a href="/docs/reference/extended/amp-analytics.html">amp-analytics 规范</a>中找到。</p>
+
+<p>如果您是分析供应商，
+请详细了解<a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md">将自己的分析配置集成到 AMP HTML 中</a>。</p>
+
+<h2 id="config-">加载远程配置：config 属性</h2>
+
+<p>您不必在 APM 页面上完全包括
+<code class="highlighter-rouge">amp-analytics</code> 的所有配置。
+取而代之的是，您可以调用一个远程 URL
+来获取所有或部分配置。</p>
+
+<p>这样您就可以执行各种操作，例如根据特定请求修改配置。</p>
+
+<p>如果您是发布者，可以控制远程文件，
+则可执行任何必要的服务器处理
+来构建配置数据。</p>
+
+<p>加载远程配置的第一步是在 <code class="highlighter-rouge">amp-analytics</code> 标记中包括 config 属性：</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;amp-analytics</span> <span class="na">config=</span><span class="s">"https://example.com/analytics.account.config.json"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p>下一步是创建位于远程 URL 中的 JSON 内容。
+在这个简单的示例中，
+JSON 对象中包含的配置只是分析帐户的变量值。</p>
+
+<p><code class="highlighter-rouge">https://example.com/analytics.account.config.json</code> 中的示例内容：</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{
+  "vars": {
+    "account": "UA-XXXXX-Y"  // Replace with your property ID.
+  }
+}</code></pre></figure>
+
+<p>最后一步是确保已将远程文件中的内容拉取到 <code class="highlighter-rouge">amp-analytics</code> 配置中的适当位置。</p>
+
+<p>在此处的 <code class="highlighter-rouge">pageview</code> 和 <code class="highlighter-rouge">event</code> 请求中，<code class="highlighter-rouge">account</code> 变量值自动设置为远程 URL 中的帐户值 (<code class="highlighter-rouge">"account": "UA-XXXXX-Y"</code>)：</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">"requests": {
+  "pageview": "https://example.com/analytics?url=${canonicalUrl}<span class="err">&amp;</span>title=${title}<span class="err">&amp;</span>acct=${account}",
+  "event": "https://example.com/analytics?eid=${eventId}<span class="err">&amp;</span>elab=${eventLabel}<span class="err">&amp;</span>acct=${account}"
+}</code></pre></figure>
+
+<p><strong>重要说明：</strong> AMP 不会对多次使用同一变量进行验证。
+将按照变量替代优先顺序来填充值，远程 URL 中的值拥有最高优先顺序（请参阅<a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">变量替代顺序</a>）。</p>
+
+<h2 id="section-1">请求、触发器和传输</h2>
+
+<p><code class="highlighter-rouge">requests</code> 属性定义“发送什么数据”
+（例如，<code class="highlighter-rouge">pageviews</code>、<code class="highlighter-rouge">events</code>），
+以及在何处发送数据（用于传输数据的 URL）。</p>
+
+<p><code class="highlighter-rouge">triggers</code> 属性描述应在何时发送分析数据，
+例如，在用户查看页面时，在用户点击链接时。</p>
+
+<p><code class="highlighter-rouge">transport</code> 属性指定发送请求的方式，
+更具体地说，就是协议。</p>
+
+<p>请继续阅读以了解有关这些配置的详细信息。
+（您也可以在
+<a href="/docs/reference/extended/amp-analytics.html">amp-analytics 参考</a>中阅读有关这些配置的信息。）</p>
+
+<h3 id="requests-">发送什么数据：requests 属性</h3>
+
+<p><code class="highlighter-rouge">request-name</code> 在触发器配置中使用，用于指定应发送什么请求来响应特定事件。</p>
+
+<p><code class="highlighter-rouge">request-value</code> 是一个 <code class="highlighter-rouge">https</code> URL。
+这些值可能包括可引用其他请求或变量的占位符标记。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">"requests": {
+  "pageview": "https://example.com/analytics?url=${canonicalUrl}<span class="err">&amp;</span>title=${title}<span class="err">&amp;</span>acct=${account}",
+  "event": "https://example.com/analytics?eid=${eventId}<span class="err">&amp;</span>elab=${eventLabel}<span class="err">&amp;</span>acct=${account}"
+}</code></pre></figure>
+
+<p>某些分析提供程序（包括 Google Analytics）
+已经提供了配置，
+您可通过 <code class="highlighter-rouge">type</code> 属性来使用该配置。
+如果您要使用分析提供程序，
+则可能无需包括 <code class="highlighter-rouge">requests</code> 信息。
+请参阅供应商文档，了解是否需要配置 <code class="highlighter-rouge">requests</code> 以及如何配置。</p>
+
+<h4 id="url-url-">追加请求 URL：额外的 URL 参数</h4>
+
+<p><a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#extra-url-params">extraUrlParams</a>
+属性指定要通过常用“&amp;foo=baz”约定追加到请求 URL 查询字符串的附加参数。</p>
+
+<p><code class="highlighter-rouge">amp-analytics</code> 示例将附加参数  <code>cd1</code>
+添加到请求，并将参数值设置为“AMP”：</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  "extraUrlParams": {
+    "cd1": "AMP"
+  }</code></pre></figure>
+
+<h3 id="triggers-">何时发送数据：triggers 属性</h3>
+
+<p><code class="highlighter-rouge">triggers</code> 属性描述应在何时发送分析请求。
+它包含 trigger-name 和 trigger-configuration 的键值对。
+触发器名称可以是由
+字母数字字符 (a-zA-Z0-9) 组成的任何字符串。</p>
+
+<p>例如，
+以下 <code class="highlighter-rouge">amp-analytics</code> 元素配置为在第一次加载文档以及每次点击 <code class="highlighter-rouge">a</code> 标记时将请求发送到 <code class="highlighter-rouge">https://example.com/analytics</code>：</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">"triggers": {
+  "trackPageview": {
+    "on": "visible",
+    "request": "pageview"
+  },
+  "trackAnchorClicks": {
+    "on": "click",
+    "selector": "a",
+    "request": "event",
+    "vars": {
+      "eventId": "42",
+      "eventLabel": "clicked on a link"
+    }
+  }
+}</code></pre></figure>
+
+<p>AMP 支持以下触发器配置：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th data-th="Trigger Config" class="col-thirty">触发器配置</th>
+      <th data-th="Description">说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Trigger Config"><code>on</code>（必需）</td>
+      <td data-th="Description">要侦听的事件。有效值为 <code>click</code>、<code>scroll</code>、<code>timer</code> 和 <code>visible</code>。</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>request</code>（必需）</td>
+      <td data-th="Description">要发送的请求的名称（在 <a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">请求中指定</a>）。</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>vars</code></td>
+      <td data-th="Description">包含键值对的对象，用于重写顶级配置中定义的 <code>vars</code>，或用于指定对于此触发器唯一的 <code>vars</code>（另请参阅<a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">变量替代顺序</a>）。</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>selector</code>（当 <code>on</code> 设置为 <code>click</code> 时为必需）</td>
+      <td data-th="Description">CSS 选择器用于细化应跟踪哪些元素。使用值 <code>*</code> 来跟踪所有元素。此配置与 <code>click</code> 触发器结合使用。了解如何使用选择器来<a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">跟踪页面点击</a>和<a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">社交互动</a>。</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>scrollSpec</code>（当 <code>on</code> 设置为 <code>scroll</code> 时为必需）</td>
+      <td data-th="Description">控制在哪些条件下页面滚动时将触发 <code>scroll</code> 事件。此对象可包含 <code>verticalBoundaries</code> 和 <code>horizontalBoundaries</code>。至少需要其中一个属性才能触发 <code>scroll</code> 事件。两个属性的值都应该是数字数组，其中包含作为滚动事件生成依据的边界。请参阅这个有关<a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">跟踪滚动</a>的示例。</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>timerSpec</code>（当 <code>on</code> 设置为 <code>timer</code> 时为必需）</td>
+      <td data-th="Description">控制何时触发 <code>timer</code> 事件。定时器将立即触发，并在之后按指定的间隔触发。此配置与 <code>timer</code> 触发器结合使用。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>重要说明：</strong> 配置中优先级较低的触发器将被配置中优先级较高的同名触发器覆盖（请参阅<a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">变量替代顺序</a>）。</p>
+
+<h3 id="transport-">如何发送数据：transport 属性</h3>
+
+<p><code class="highlighter-rouge">transport</code> 属性指定发送请求的方式，
+默认情况下会启用以下三种方法：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th data-th="Transport Method" class="col-thirty">传输方法</th>
+      <th data-th="Description">说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Transport Method"><code>beacon</code></td>
+      <td data-th="Description">指明可使用 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a> 来传输请求。这将发送一个 <code>POST</code> 请求，其中包含凭据和空的正文。</td>
+    </tr>
+    <tr>
+      <td data-th="Transport Method"><code>xhrpost</code></td>
+      <td data-th="Description">指明可使用 <code>XMLHttpRequest</code> 来传输请求。这将发送一个 <code>POST</code> 请求，其中包含凭据和空的正文。</td>
+    </tr>
+    <tr>
+      <td data-th="Transport Method"><code>image</code></td>
+      <td data-th="Description">指明可通过生成 <code>Image</code> 标记来发送请求。这将发送 <code>GET</code> 请求。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>只会使用一种传输方法，并且该方法是已启用、获允许并且可用的最高优先级方法。</p>
+
+<p>优先级为 <code class="highlighter-rouge">beacon</code> &gt; <code class="highlighter-rouge">xhrpost</code> &gt; <code class="highlighter-rouge">image</code>。
+如果客户端的用户代理不支持某种方法，则使用已启用的下一最高优先级方法。</p>
+
+<p>只有在想要限制传输选项时才需要在配置中包括 <code class="highlighter-rouge">transport</code> 属性，否则您可能会停止请求。</p>
+
+<p>在下面的示例中，<code class="highlighter-rouge">beacon</code> 和 <code class="highlighter-rouge">xhrpost</code> 设置为 false，因此，即使这些方法的优先级高于 <code class="highlighter-rouge">image</code>，也不会使用它们。</p>
+
+<p>如果客户端的用户代理支持 <code class="highlighter-rouge">image</code> 方法，则会使用该方法；否则不会发送任何请求。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">'transport': {
+  'beacon': false,
+  'xhrpost': false,
+  'image': true
+}</code></pre></figure>
+
+<h2 id="section-2">变量替代顺序</h2>
+
+<p>AMP 按以下优先顺序使用值填充变量：</p>
+
+<ol>
+  <li>远程配置（通过 <code class="highlighter-rouge">config</code>）。</li>
+  <li>嵌套在 <code class="highlighter-rouge">triggers</code> 内的触发器内部的<code class="highlighter-rouge">vars</code>。</li>
+  <li>嵌套在 <code class="highlighter-rouge">amp-analytics</code> 内的顶级 <code class="highlighter-rouge">vars</code>。</li>
+  <li>平台提供的值。</li>
+</ol>
+
+<p>此示例中有一个远程配置，变量在顶级中、触发器中以及平台级别中定义：</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;amp-analytics</span> <span class="na">config=</span><span class="s">"http://example.com/config.json"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"application/json"</span><span class="nt">&gt;</span>
+<span class="p">{</span>
+  <span class="s2">"requests"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"pageview"</span><span class="err">:</span> <span class="s2">"https://example.com/analytics?url=${canonicalUrl}&amp;title=${title}&amp;acct=${account}&amp;clientId=${clientId(cid-scope)}"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"vars"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"account"</span><span class="err">:</span> <span class="s2">"ABC123"</span><span class="p">,</span>
+    <span class="s2">"title"</span><span class="err">:</span> <span class="s2">"Homepage"</span>
+  <span class="p">},</span>
+  <span class="s2">"triggers"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"some-event"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"on"</span><span class="err">:</span> <span class="s2">"visible"</span><span class="p">,</span>
+      <span class="s2">"request"</span><span class="err">:</span> <span class="s2">"pageview"</span><span class="p">,</span>
+      <span class="s2">"vars"</span><span class="err">:</span> <span class="p">{</span>
+        <span class="s2">"title"</span><span class="err">:</span> <span class="s2">"My homepage"</span><span class="p">,</span>
+        <span class="s2">"clientId"</span><span class="err">:</span> <span class="s2">"my user"</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/amp-analytics&gt;</span></code></pre></figure>
+
+<p>如果在多个位置定义了同一 <code class="highlighter-rouge">var</code>，则将根据变量优先顺序设置一次该变量的值。</p>
+
+<p>因此，如果远程配置将 <code class="highlighter-rouge">account</code> 定义为上面示例中的 UA-XXXXX-Y，则各个 var 的值将如下所示：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th data-th="var" class="col-thirty"><code>var</code></th>
+      <th data-th="Value">值</th>
+      <th data-th="Defined By" class="col-thirty">定义者</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="var"><code>canonicalUrl</code></td>
+      <td data-th="Value"><code>http://example.com/path/to/the/page</code></td>
+      <td data-th="Defined By">平台</td>
+    </tr>
+    <tr>
+      <td data-th="var"><code>title</code></td>
+      <td data-th="Value">My homepage</td>
+      <td data-th="Defined By">触发器</td>
+    </tr>
+    <tr>
+      <td data-th="var"><code>account</code></td>
+      <td data-th="Value"><code>UA-XXXXX-Y</code></td>
+      <td data-th="Defined By">远程配置</td>
+    </tr>
+    <tr>
+      <td data-th="var"><code>clientId</code></td>
+      <td data-th="Value">my user</td>
+      <td data-th="Defined By">触发器</td>
+    </tr>
+  </tbody>
+</table>
+
+	</div>
+
+</article>
+
+          <!-- /article -->
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+          </div>
+        </div>
+    </footer>
+  </body>
+</html>

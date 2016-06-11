@@ -1,0 +1,13 @@
+<div class="language desktop">
+    <ul>
+    <li class="current">
+        <a class="flag-{{ doc.locale }}"><span>{{ doc.locale.get_language_name() }}</span></a>
+    </li>
+    {% for locale in doc.locales if not locale == doc.locale  %}
+    <li>
+        {% set lurl = g.url(doc.pod_path, locale=locale).path %}
+        <a href="{{ lurl }}" class="flag-{{locale}}"><span>{{locale.get_language_name()}}</span></a>
+    </li>
+    {% endfor %}
+    </ul>
+</div>

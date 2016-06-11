@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>AMP 如何提升性能</title>
+    <link rel="canonical" href="https://www.ampproject.org/docs/get_started/technical_overview.zh-cn.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta property="og:description" content="下面汇总的优化措施是 AMP 页面可以瞬时快速加载的原因：">
+    <meta name="description" content="下面汇总的优化措施是 AMP 页面可以瞬时快速加载的原因：">
+    <link rel="shortcut icon" href="/docs/assets/amp_favicon.png?v=2">
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <style amp-custom>
+    body,blockquote,pre,hr,dl,dd,ol,ul,figure{margin:0;padding:0}html,body{background-color:#fbfafb;font-family:Roboto,verdana,arial,sans-serif;margin:0;overflow-x:hidden;padding:0}body{padding-top:66px}ul li,ol li{color:#333;font-size:16px;font-weight:300;line-height:24px}p{color:#333;font-size:16px;font-weight:300;line-height:24px}.container{box-sizing:border-box;margin:0 auto;max-width:1000px;padding:0 20px}.container.md{max-width:800px}.wrap{background-color:#fff;margin:0 auto}.centered{text-align:center}@media only screen and (max-width: 870px){.centered{text-align:left}}.align-right{text-align:right}.clearfix:after{content:"";display:table;clear:both}.clearfix .left{float:left}.clearfix .right{float:right}.clearfix .fill{overflow:hidden;width:auto}h1,h2,h3,h4,h5{color:#147bc1;font-weight:300;margin-top:1.1em;margin-bottom:0.5em}h1{font-size:43px}h2{font-size:36px}h3{font-size:26px}a{color:#0360B5;text-decoration:none}a:hover{text-decoration:underline}a.button{padding:1em;display:block;background-color:#F5F5F5;text-align:center}blockquote{color:#797c82;border-left:4px solid #f5f5f5;padding-left:15px;font-size:18px;letter-spacing:-1px;font-style:italic}blockquote>:last-child{margin-bottom:0}code{font-size:15px;border:1px solid #f5f5f5;border-radius:3px}code{padding:1px 5px}table{border-collapse:collapse}td,th{border:1px solid #FFFFFF;background:#F7F7F7;padding:0.5rem;text-align:left}td.col-fourty{width:40%}td.col-thirty{width:30%}th{background:#eee}th.col-twenty{width:20%}header{-webkit-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;-moz-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;font-size:14px;font-weight:300;transform:translateZ(0);backface-visibility:hidden;background-color:#fff}header .container{padding:0}@media only screen and (max-width: 870px){header .container{padding:0 10px}}header.absolute,header.fixed{-moz-transform:translateY(0%);-o-transform:translateY(0%);-ms-transform:translateY(0%);-webkit-transform:translateY(0%);transform:translateY(0%);-moz-transition:all 0.25s ease;-o-transition:all 0.25s ease;-ms-transition:all 0.25s ease;-webkit-transition:all 0.25s ease;transition:all 0.25s ease;left:0;position:fixed;top:0;width:100%;z-index:1000}header.absolute{position:absolute}header.nav--pinned,header.nav--unpinned,header.nav--top{position:fixed}@media only screen and (max-width: 870px){header.nav--pinned,header.nav--unpinned,header.nav--top{position:relative}}header.nav--pinned,header.nav--unpinned{background:#147bc1}header.nav--top{background-color:transparent}header.hidden{display:block}@media only screen and (max-width: 870px){header.hidden{-moz-transform:translateY(-100%);-o-transform:translateY(-100%);-ms-transform:translateY(-100%);-webkit-transform:translateY(-100%);transform:translateY(-100%)}}header.menu-open{transform:translate(-243px, 0px)}@media only screen and (max-width: 870px){header .wrap{color:transparent}}header .content.mobile-show{padding:0 10px 5px}header .left-nav{-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;float:left;font-size:14px;letter-spacing:0.04em;margin-left:0}@media only screen and (max-width: 870px){header .left-nav{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;flex:1 1 auto;padding:0 0 5px 0;text-align:left;width:auto}}header .left-nav .header-title{background-image:url("/docs/assets/logo-blue.svg");background-position:center left;background-repeat:no-repeat;background-size:40px 40px;color:#147bc1;font-family:Roboto, verdana, arial, sans-serif;margin:10px 0;padding:15px 10px 15px 50px;text-transform:none;white-space:nowrap;width:auto}@media only screen and (max-width: 870px){header .left-nav .header-title{line-height:41px;margin:6px 0;padding:0 0 0 50px;width:auto}}@media only screen and (max-width: 870px){header .clearfix{display:flex;flex-wrap:wrap-reverse}}header .alt{padding:15px 0;text-align:right;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-pack:center;-moz-box-pack:center;box-pack:center;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center}header .alt.right{letter-spacing:0.04em;font-size:14px}@media only screen and (max-width: 870px){header .alt.right{float:right;text-align:center;flex:0;padding:0 0 10px;font-size:12px;display:inline-block}}header .tab{color:#147bc1;display:inline-block;padding:10px 15px;text-decoration:none;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab{margin-left:auto;padding:10px 12px}}header .tab.go-button{-webkit-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);-moz-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);background-color:#147bc1;border:0;border-radius:4px;color:#fff;font-family:Roboto, verdana, arial, sans-serif;font-size:14px;font-weight:500;padding:10px 20px;margin-left:10px;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab.go-button{margin-right:5px;margin-left:auto;padding:8px 10px}}header .tab.go-button:hover{text-decoration:none}header .tab.hamburger{font-size:50px;line-height:38px;background:none;border:none;margin-top:0;padding-top:0;position:relative;top:4px;display:none}@media only screen and (max-width: 870px){header .tab.desktop{display:none}header .tab.hamburger{display:inline-block}}@media only screen and (max-width: 320px){header .header-title span{display:none}header .header-title::after{content:"AMP"}}.main{display:-webkit-flex;display:flex;padding-top:40px;padding-bottom:30px}.main h1{margin-top:0}.main h1:before,.main h2:before,.main h3:before,.main h4:before,.main h5:before{display:block;content:" ";margin-top:-106px;height:106px;visibility:hidden}.main .content{flex-grow:1;-webkit-flex-grow:1;transition:all 0.25s ease;transform:translate(0, 0);will-change:transform;word-break:break-word;min-width:0}.main .content.menu-open{transform:translate(-243px, 0)}.main .content ul,.main .content ol{margin-left:40px}.main .content{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}.main amp-img,.main amp-youtube,.main amp-iframe{margin:1em 0}nav{border-right:2px solid #E6E6E6;padding:20px;margin-right:30px;margin-left:-20px;width:200px;flex-shrink:0;-webkit-flex-shrink:0;background:#F7F7F7;margin-top:-40px;margin-bottom:-30px}nav h2{font-size:20px;color:#111;margin-top:0;margin-bottom:10px}nav ul li,nav ol li{margin-bottom:10px;list-style:none}nav ul li ul,nav ul li ol,nav ol li ul,nav ol li ol{padding-left:0;margin-left:20px;margin-bottom:1.2em}nav ul li ul li,nav ul li ol li,nav ol li ul li,nav ol li ol li{margin-bottom:6px;font-size:14px;list-style:square;color:#CECECE}nav ul li ul li.current,nav ul li ol li.current,nav ol li ul li.current,nav ol li ol li.current{color:#222}nav ul li ul li span,nav ul li ol li span,nav ol li ul li span,nav ol li ol li span{font-weight:400;color:#222}nav ul li ul li ul,nav ul li ul li ol,nav ul li ol li ul,nav ul li ol li ol,nav ol li ul li ul,nav ol li ul li ol,nav ol li ol li ul,nav ol li ol li ol{margin-bottom:0;margin-left:0;padding-left:20px;border-top:1px solid #eee;padding-top:3px;padding-bottom:0px}nav ul li ul li ol li,nav ul li ol li ol li,nav ol li ul li ol li,nav ol li ol li ol li{list-style:decimal}@media only screen and (max-width: 870px){.container nav{display:none}amp-sidebar nav{margin-right:0;border-right:none;margin-top:0;padding-left:36px}}pre{overflow:auto;tab-size:2;word-break:normal;line-height:1.4;background:#F7F7F7}pre>code{white-space:pre;word-wrap:initial;display:block}pre>code td{border:0}.highlight .hll{background-color:#ffc}.highlight .c{color:#aaaaaa;font-style:italic}.highlight .err{color:#F00000}.highlight .k{color:#00a}.highlight .cm{color:#aaaaaa;font-style:italic}.highlight .cp{color:#4c8317}.highlight .c1{color:#aaaaaa;font-style:italic}.highlight .cs{color:#0000aa;font-style:italic}.highlight .gd{color:#a00}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#000080;font-weight:bold}.highlight .gi{color:#0a0}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc{color:#00a}.highlight .kd{color:#00a}.highlight .kn{color:#00a}.highlight .kp{color:#00a}.highlight .kr{color:#00a}.highlight .kt{color:#0aa}.highlight .m{color:#099}.highlight .s{color:#a50}.highlight .na{color:#1e90ff}.highlight .nb{color:#0aa}.highlight .nc{color:#00aa00;text-decoration:underline}.highlight .no{color:#a00}.highlight .nd{color:#888}.highlight .ni{color:#800000;font-weight:bold}.highlight .nf{color:#0a0}.highlight .nn{color:#00aaaa;text-decoration:underline}.highlight .nt{color:#1e90ff;font-weight:bold}.highlight .nv{color:#a00}.highlight .ow{color:#00a}.highlight .w{color:#bbb}.highlight .mf{color:#099}.highlight .mh{color:#099}.highlight .mi{color:#099}.highlight .mo{color:#099}.highlight .sb{color:#a50}.highlight .sc{color:#a50}.highlight .sd{color:#a50}.highlight .s2{color:#a50}.highlight .se{color:#a50}.highlight .sh{color:#a50}.highlight .si{color:#a50}.highlight .sx{color:#a50}.highlight .sr{color:#099}.highlight .s1{color:#a50}.highlight .ss{color:#00a}.highlight .bp{color:#0aa}.highlight .vc{color:#a00}.highlight .vg{color:#a00}.highlight .vi{color:#a00}.highlight .il{color:#099}.highlight .lineno{-webkit-user-select:none;-moz-user-select:none;-o-user-select:none}.lineno::-moz-selection{background-color:transparent}.lineno::selection{background-color:transparent}footer{padding:40px 0 60px 100px;background-color:#f5f5f5}footer p{margin:0}footer .footer-image{height:25px;width:25px;padding-left:25px;float:right}
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
+  </head>
+
+  <body>
+    <amp-analytics type="googleanalytics" id="analytics-ga">
+    <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-67833617-1"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
+    }
+    </script>
+    </amp-analytics>
+
+    <amp-sidebar id='sidebar' side='right' layout='nodisplay'>
+              
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>入门指南</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.zh-cn.html">什么是 AMP？</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.zh-cn.html">创建您的第一个 AMP 页面</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li class="current">
+                  <span>AMP 如何提升性能</span>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>指南</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.zh-cn.html">配置 Analytics</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>参考</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>支持</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+    </amp-sidebar>
+
+    <header class="fixed">
+      <div class="wrap">
+        <div class="container">
+          <div class="clearfix">
+          <div class="left-nav">
+              <a href="https://ampproject.org" class="tab header-title">
+                <span>Accelerated
+                Mobile
+                Pages
+                Project</span>
+              </a>
+            </div>
+            <div class="right alt">
+              <a class="tab desktop" href="/docs/support/faqs.html">
+                常见问题解答
+              </a>
+              <a class="tab desktop" href="https://amphtml.wordpress.com">
+                博客
+              </a>
+              <a class="tab desktop" href="https://github.com/ampproject/amphtml">
+                GitHub
+              </a>
+              <a class="tab desktop" href="/docs/get_started/about-amp.html">
+                文档
+              </a>
+              <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'>&#x2261;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="wrap">
+      <div class="container main">
+        
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>入门指南</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.zh-cn.html">什么是 AMP？</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.zh-cn.html">创建您的第一个 AMP 页面</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li class="current">
+                  <span>AMP 如何提升性能</span>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>指南</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.zh-cn.html">配置 Analytics</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>参考</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>支持</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+        <div class="content">
+          <!-- article -->
+          <article class="post">
+
+    <h1 class="post-title">AMP 如何提升性能</h1>
+
+	<div class="post-content">
+	    <p>下面汇总的优化措施是 AMP 页面可以瞬时快速加载的原因：</p>
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">仅允许异步脚本</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">静态确定所有资源的大小</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">不让扩展机制阻碍渲染</a></li>
+  <li><a href="#javascript-" id="markdown-toc-javascript-">将所有第三方 JavaScript 保存在非关键路径下</a></li>
+  <li><a href="#css-" id="markdown-toc-css-">所有 CSS 都必须内嵌并具有大小限值</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">字体触发必须高效</a></li>
+  <li><a href="#section-4" id="markdown-toc-section-4">最大程度减少样式重新计算次数</a></li>
+  <li><a href="#gpu-" id="markdown-toc-gpu-">仅运行 GPU 加速动画</a></li>
+  <li><a href="#section-5" id="markdown-toc-section-5">设定资源加载的优先级</a></li>
+  <li><a href="#section-6" id="markdown-toc-section-6">瞬时加载页面</a></li>
+  <li><a href="#amp-" id="markdown-toc-amp-">帮助提高 AMP 速度</a></li>
+</ul>
+
+<p>AMP 工程主管 Malte Ubl 在下面的视频中提供了与本文章内容类似的介绍，如果您更倾向于收听音频而不是阅读文字，请观看此视频。</p>
+
+<amp-youtube data-videoid="hVRkG1CQScA" layout="responsive" width="480" height="270">
+</amp-youtube>
+
+<h2 id="section">仅允许异步脚本</h2>
+
+<p>JavaScript 功能强大，几乎可以修改页面的各个方面，不过，它也会阻碍 DOM 的构建，延缓页面渲染（另请参见<a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">使用 JavaScript 添加交互</a>）。</p>
+
+<p>为了避免 JavaScript 延缓页面渲染，AMP 仅允许异步 JavaScript。</p>
+
+<p>AMP 页面不能包含作者自己编写的任何 JavaScript。
+使用自定义 AMP 元素而不是 JavaScript 来处理互动页面功能。</p>
+
+<p>自定义 AMP 元素的内部可能会有 JavaScript，但是这些代码均经过精心设计，不会导致性能下降。</p>
+
+<p>虽然在 iframe 中允许第三方 JS，不过它不会阻碍渲染。</p>
+
+<p>例如，如果第三方 JS 使用<a href="http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/">严重影响性能的 <code class="highlighter-rouge">document.write</code> API</a>，它也不会阻碍主页面渲染。</p>
+
+<h2 id="section-1">静态确定所有资源的大小</h2>
+
+<p>图片、广告或 iframe 等外部资源必须在 HTML 中声明其大小，以便 AMP 可以在资源下载前确定每个元素的大小和位置。</p>
+
+<p>AMP 不必等待所有资源都下载完成就可以直接加载页面布局。</p>
+
+<p>AMP 将文档布局与资源布局脱钩。
+布局整个文档（<a href="#font-triggering-must-be-efficient">包括字体</a>）只需要一个 HTTP 请求。</p>
+
+<p>由于 AMP 经过优化，可以在浏览器中避免会消耗大量资源的样式重新计算和布局，因此资源加载时不会存在任何重新布局。</p>
+
+<h2 id="section-2">不让扩展机制阻碍渲染</h2>
+
+<p>AMP 不会让扩展机制阻碍页面渲染。
+AMP 支持<a href="/docs/reference/extended/amp-lightbox.html">灯箱</a>、<a href="/docs/reference/extended/amp-instagram.html">Instagram 嵌入代码</a>、<a href="/docs/reference/extended/amp-twitter.html">Twitter 消息</a>等对象的扩展。</p>
+
+<p>尽管这些对象需要额外的 HTTP 请求，
+但这些请求不会阻碍页面布局和渲染。</p>
+
+<p>使用自定义脚本的任何页面都必须告诉 AMP 系统其最终会有自定义标记。</p>
+
+<p>例如，<a href="/docs/reference/extended/amp-iframe.html"><code class="highlighter-rouge">amp-iframe</code></a> 脚本会告诉系统将有一个 <code class="highlighter-rouge">amp-iframe</code> 标记。</p>
+
+<p>AMP 甚至会在了解 iframe 框将要包含的内容前先行创建此框：</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">async</span> <span class="na">custom-element=</span><span class="s">"amp-iframe"</span> <span class="na">src=</span><span class="s">"https://cdn.ampproject.org/v0/amp-youtube-0.1.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<h2 id="javascript-">将所有第三方 JavaScript 保存在非关键路径下</h2>
+
+<p>第三方 JS 喜欢使用同步 JS 加载，
+也喜欢对更多同步脚本进行 <code class="highlighter-rouge">document.write</code> 操作。
+例如，如果您有五个广告，每个广告都在 1 秒的延时连接下进行三次同步加载，那么仅仅加载 JS 就需要 18 秒。</p>
+
+<p>AMP 页面允许第三方 JavaScript，不过仅限在沙盒环境下的 iframe 中。
+将这些 JS 限制在 iframe 中后，它们就不会阻碍主页面的执行。
+即使第三方 JS 触发了多次样式重新计算，
+它们微小的 iframe 也只有非常少的 DOM。</p>
+
+<p>样式重新计算和布局通常与 DOM 大小相关，因此，与页面的样式和布局重新计算相比，iframe 重新计算非常快。</p>
+
+<h2 id="css-">所有 CSS 都必须内嵌并具有大小限值</h2>
+
+<p>CSS 会阻碍所有渲染和页面加载，并且往往变得臃肿。
+在 AMP HTML 页面中，只允许内嵌样式。
+与大多数网页相比，这一限制可从关键渲染路径中移除 1 个或多个 HTTP 请求。</p>
+
+<p>另外，内嵌样式表最大为 50 KB。
+虽然此大小对非常复杂的页面来说已经足够大，页面作者仍需要践行良好的 CSS 风格。</p>
+
+<h2 id="section-3">字体触发必须高效</h2>
+
+<p>网络字体超大，因此<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization">网络字体优化</a>对性能至关重要。</p>
+
+<p>在一个具有少量同步脚本和外部样式表的典型页面上，浏览器会等待这些大字体都出现后才开始下载字体。</p>
+
+<p>而 AMP 系统在字体开始下载前不会发出 HTTP 请求。
+这是因为 AMP 中的所有 JS 都有异步属性，并且仅允许内嵌样式表；不存在会阻碍浏览器下载字体的 HTTP 请求。</p>
+
+<h2 id="section-4">最大程度减少样式重新计算次数</h2>
+
+<p>每次测量某些元素时，由于浏览器需要布局整个页面，系统都会触发会消耗大量资源的样式重新计算。</p>
+
+<p>在 AMP 页面中，所有 DOM 读取都发生在写入之前。
+这样可以确保每帧最多只有一次样式重新计算。</p>
+
+<p>详细了解样式和布局重新计算对<a href="https://developers.google.com/web/fundamentals/performance/rendering/">渲染性能</a>的影响。</p>
+
+<h2 id="gpu-">仅运行 GPU 加速动画</h2>
+
+<p>快速优化的唯一方式是在 GPU 上运行优化。
+GPU 了解图层，知道如何在这些图层上展示元素。GPU 可以移动、淡化图层，但无法更新页面布局。它将该任务交给浏览器执行，这并不是一种很好的做法。</p>
+
+<p>动画相关 CSS 的规则确保动画可以进行 GPU 加速。
+具体而言，AMP 仅允许在变形和不透明度上进行动画处理和变换，因此不需要页面布局。</p>
+
+<p>详细了解<a href="https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count">使用变形和不透明度进行动画变更</a>。</p>
+
+<h2 id="section-5">设定资源加载的优先级</h2>
+
+<p>AMP 可以控制所有资源下载：它会设定资源加载的优先级、仅加载需要的内容，以及预提取具有延迟加载特性的资源。</p>
+
+<p>下载资源时，AMP 会优化下载，以便优先下载当前最重要的资源。</p>
+
+<p>图片和广告仅在位于首屏、用户可能会查看或者快速滚动到它们时下载。</p>
+
+<p>AMP 还会预提取具有延迟加载特性的资源。
+资源加载尽可能晚，但预提取则尽可能早。
+这样一来，加载速度非常快，不过只有在资源实际向用户显示时才会使用 CPU。</p>
+
+<h2 id="section-6">瞬时加载页面</h2>
+
+<p>大量使用全新的 <a href="http://www.w3.org/TR/resource-hints/#dfn-preconnect">preconnect API</a>，从而确保 HTTP 请求的速度尽可能快。</p>
+
+<p>这样，在用户明确指明想要前往某个页面之前，该页面就可以渲染完成；在用户实际选择页面之前，页面就可能已经准备就绪，进而实现瞬时加载。</p>
+
+<p>所有网络内容都可以应用预渲染，但这一过程也需要使用一些带宽和 CPU。
+AMP 已经过优化，可以减少这两种因素的消耗。预渲染仅下载首屏资源，并且不会渲染可能要消耗大量 CPU 的资源。</p>
+
+<p>在 AMP 文档进行预渲染以实现瞬时加载时，实际上只会下载首屏资源。</p>
+
+<p>在 AMP 文档进行预渲染以实现瞬时加载时，不会下载可能要使用大量 CPU 的资源（例如第三方 iframe）。</p>
+
+<p>详细了解 <a href="https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e">AMP HTML 为什么无法充分利用预加载扫描器</a>。</p>
+
+<h2 id="amp-">帮助提高 AMP 速度</h2>
+<p>AMP 是一个开源项目。
+我们需要您的帮助来提高 AMP 速度。
+了解<a href="/docs/support/contribute.html">如何贡献</a>。</p>
+
+	</div>
+
+</article>
+
+          <!-- /article -->
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+          </div>
+        </div>
+    </footer>
+  </body>
+</html>

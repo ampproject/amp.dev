@@ -7,20 +7,26 @@ The official documentation for the AMP Project, including AMP JS,
 How to build the site
 ---------------------
 
-First, install Jekyll by running `gem install jekyll` in your shell, then:
+Install Grow and npm dependencies:
+
+```sh
+$ curl https://install.growsdk.org | bash
+$ npm install
+```
 
 ### Develop
 
 ```sh
-$ jekyll serve
+$ grow run
 ```
 
-You can now open http://127.0.0.1:4000/docs/ and continue working on the source files, then reload the page to see changes appear.
+You can now open http://localhost:8080/ and continue working on the source files, then reload the page to see changes appear.
 
 ### Deploy
 
 ```sh
-$ jekyll build
+$ grow build
+$ grow deploy
 ```
 
 This will generate a static, complete build of the site into the **_site* folder.
@@ -30,9 +36,7 @@ This will generate a static, complete build of the site into the **_site* folder
 Out of the box, the reference docs are not bundled with the rest of the documentation. To pull them in (automatically from the amphtml github repo), do the following:
 
 ```sh
-$ cd _scripts/
-$ npm install octonode
-$ ./import_reference_docs.js {{github client secret }}
+$ ./importref.js {{github client secret }}
 ```
 
 You'll need to register for a Github application [here](https://github.com/settings/applications/new) to get a client id and secret you can use for authentication. When you're done, open the file `import_reference_docs.js` and modify line 15 to point to your new client id, then pass in the client secret as argument, like shown above (we'll make this a little easier in the future).

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ⚡>
+{% include "/views/partials/head.html" %}
+<amp-analytics type="googleanalytics" id="analytics-ga">
+  <script type="application/json">
+  {
+    "vars": {
+      "account": "UA-67833617-1"
+    },
+    "triggers": {
+      "trackPageview": {
+        "on": "visible",
+        "request": "pageview"
+      }
+    }
+  }
+  </script>
+</amp-analytics>
+<body class="{{doc.class}}">
+
+{% set header_doc = g.doc('/content/includes/header.yaml', locale=doc.locale) %}
+
+<amp-sidebar id='sidebar' side='right' layout='nodisplay'>
+  <nav>
+
+    {% include "/views/partials/lang_switcher.html" %}
+
+    <ul>
+      <li>
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="{{ g.doc(header_doc.fields.faq.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.faq.get('copy'))}}</a></li>
+          <li><a href="{{ g.doc(header_doc.fields.who.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.who.get('copy'))}}</a></li>
+          <li><a href="{{header_doc.fields.blog.get('href')}}">{{_(header_doc.fields.blog.get('copy'))}}</a></li>
+          <li><a href="{{header_doc.fields.github.get('href')}}">{{_(header_doc.fields.github.get('copy'))}}</a></li>
+          <li><a href="{{ g.doc(header_doc.fields.roadmap.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.roadmap.get('copy'))}}</a></li>
+          <li><a href="{{ g.doc(header_doc.fields.docs.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.docs.get('copy'))}}</a></li>
+      </ul>
+      </li>
+    </ul>
+
+
+  </nav>
+
+  {% block nav %}
+  {% endblock %}
+</amp-sidebar>
+
+{% with header = header_doc %}
+  {% include "/views/partials/header.html" %}
+{% endwith %}
+
+<div class="wrap">
+  {% block main %}
+  <div class="content">
+
+    {{doc.html|render|safe}}
+
+    {% set footer_doc = g.doc('/content/includes/footer.yaml', locale=doc.locale) %}
+    {% with footer = footer_doc %}
+      {% include "/views/partials/footer.html" %}
+    {% endwith %}
+  </div>
+  {% endblock %}
+</div>
+</body>
+</html>

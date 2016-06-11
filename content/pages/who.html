@@ -1,0 +1,163 @@
+---
+$title: Who
+$path: /who/
+$hidden: true
+
+description: The Accelerated Mobile Pages (AMP) Project is an open source initiative that makes it easy for publishers to create mobile-friendly content once and have it load instantly everywhere. – Accelerated Mobile Pages Project
+
+class: who
+
+---
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
+
+  <div class="container">
+    <div class="row">
+      <h1>{{who.section_title}}</h1>
+    </div>
+    <div class="image-container">
+      <br/>
+
+      <h3>Europe</h3>
+      <br/>
+      <br/>
+      {% set europe_length = ((who.europe | length) / 5) | round(method='ceil') | int %}
+      {% for rows in who.europe|slice(europe_length) %}
+      <div class="row">
+        {% for partner in rows %}
+          <div class="col-xs-4 col-md-2">{{partner}}</div>
+        {% endfor %}
+      </div>
+      <br />
+      {% endfor %}
+      <br/>
+      <br/>
+
+      <h3>Asia</h3>
+      <br/>
+      <br/>
+      {% set asiaArray = ((who.asia | length) / 5) | round(method='ceil') | int %}
+      {% for rows in who.asia|slice(asiaArray) %}
+      <div class="row">
+        {% for partner in rows %}
+          <div class="col-xs-4 col-md-2">{{partner}}</div>
+        {% endfor %}
+      </div>
+      <br />
+      {% endfor %}
+      <br/>
+      <br/>
+
+      <h3>Latin America</h3>
+      <br/>
+      <br/>
+      {% set latin_america_length = ((who.latin_america | length) / 5) | round(method='ceil') | int %}
+      {% for rows in who.latin_america|slice(latin_america_length) %}
+      <div class="row">
+        {% for partner in rows %}
+          <div class="col-xs-4 col-md-2">{{partner}}</div>
+        {% endfor %}
+      </div>
+      <br />
+      {% endfor %}
+      <br/>
+      <br/>
+
+      <h3>North America</h3>
+      <br/>
+      <br/>
+      {% set north_america_length  = ((who.north_america | length) / 5) | round(method='ceil') | int %}
+      {% for rows in who.north_america|slice(north_america_length) %}
+      <div class="row">
+        {% for partner in rows %}
+          <div class="col-xs-4 col-md-2">{{partner}}</div>
+        {% endfor %}
+      </div>
+      <br />
+      {% endfor %}
+      <br/>
+      <br/>
+
+    <br/><br/>
+    <div class="row">
+      <h1>Technology Companies using AMP HTML</h1>
+    </div>
+    <div class="image-container">
+      <br/>
+      <h3>Ads</h3>
+      <br/>
+      <br/>
+      {% set ads_length = ((who.ads | length) / 5) | round(method='ceil') | int %}
+      {% for rows in who.ads|slice(ads_length) %}
+      <div class="row">
+        {% for partner in rows %}
+          <div class="col-xs-4 col-md-2">{{partner}}</div>
+        {% endfor %}
+      </div>
+      <br />
+      {% endfor %}
+      <br/>
+      <br/>
+
+      <h3>Analytics</h3>
+      <br/>
+      <br/>
+      {% set analytics_length = ((who.analytics | length) / 5) | round(method='ceil') | int %}
+      {% for rows in who.analytics|slice(analytics_length) %}
+      <div class="row">
+        {% for partner in rows %}
+          <div class="col-xs-4 col-md-2">{{partner}}</div>
+        {% endfor %}
+      </div>
+      <br />
+      {% endfor %}
+      <br/>
+      <br/>
+
+      <h3>Tech Platform</h3>
+      <br/>
+      <br/>
+      {% set tech_platform_length = ((who.tech_platform| length) / 5) | round(method='ceil') | int %}
+      {% for rows in who.tech_platform|slice(tech_platform_length) %}
+      <div class="row">
+        {% for partner in rows %}
+          <div class="col-xs-4 col-md-2">{{partner}}</div>
+        {% endfor %}
+      </div>
+      <br />
+      {% endfor %}
+      <br/>
+      <br/>
+
+      <h3>CMS</h3>
+      <br/>
+      <br/>
+      {% set cms_length = ((who.cms | length) / 5) | round(method='ceil') | int %}
+      {% for rows in who.cms|slice(cms_length) %}
+      <div class="row">
+        {% for partner in rows %}
+          <div class="col-xs-4 col-md-2">{{partner}}</div>
+        {% endfor %}
+      </div>
+      <br />
+      {% endfor %}
+      <br/>
+      <br/>
+
+      <h3>Video</h3>
+      <br/>
+      <br/>
+      {% set video_length = ((who.video | length) / 5) | round(method='ceil') | int %}
+      {% for rows in who.video|slice(video_length) %}
+      <div class="row">
+        {% for partner in rows %}
+          <div class="col-xs-4 col-md-2">{{partner}}</div>
+        {% endfor %}
+      </div>
+      <br />
+      {% endfor %}
+      <br/>
+      <br/>
+
+    </div>
+  </div>
+</div>

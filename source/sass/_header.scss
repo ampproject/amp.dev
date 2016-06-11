@@ -1,0 +1,198 @@
+header {
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 14px;
+  font-size: 14px;
+  font-weight: 300;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  background-color: $color-white;
+
+  .container {
+
+    @include min-screen($tablet-breakpoint) {
+      padding: 0;
+    }
+  }
+
+  &.absolute,
+  &.fixed {
+    transform: translateY(0%);
+    transition: all .4s ease;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  &.absolute {
+    position: absolute;
+  }
+
+  &.nav--pinned,
+  &.nav--unpinned,
+  &.nav--top {
+    position: fixed;
+
+    @include max-screen($mobile-breakpoint) {
+      position: relative;
+    }
+  }
+
+  &.nav--pinned,
+  &.nav--unpinned {
+    background: $color-midblue;
+  }
+
+  &.nav--top {
+    background-color: transparent;
+  }
+
+
+  &.hidden {
+    display: block;
+
+    // Auto-hide header on mobile only.
+    @include max-screen($mobile-breakpoint) {
+      transform: translateY(-100%);
+    }
+  }
+
+  &.menu-open {
+    transform: translate(-243px, 0px);
+  }
+
+  .wrap {
+    // background-color: white;
+
+    @include max-screen($mobile-breakpoint) {
+      color: transparent;
+    }
+  }
+
+  .content.mobile-show {
+    padding: 0 10px 5px;
+
+  }
+  .left-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    float: left;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    margin-left: 0;
+
+    @include max-screen($mobile-breakpoint) {
+      justify-content: flex-start;
+      flex: 1 1 auto;
+      padding: 0 0 5px 0;
+      text-align: left;
+      width: auto;
+    }
+
+    .header-title {
+      color: $color-midblue;
+      font-family: Roboto, verdana, arial, sans-serif;
+      padding: 15px 10px 15px 50px;
+      margin: 10px 0;
+      width: auto;
+      text-transform: none;
+      white-space: nowrap;
+
+      @include max-screen($mobile-breakpoint) {
+        width: auto;
+        padding: 0 0 0 50px;
+        line-height: 41px;
+        margin: 6px 0;
+      }
+
+      background-image: url('/static/img/logo-blue.svg');
+      background-repeat: no-repeat;
+      background-size: 40px 40px;
+      background-position: center left;
+    }
+
+  }
+
+  .clearfix {
+      @include max-screen($mobile-breakpoint) {
+        display: flex;
+        flex-wrap: wrap-reverse;
+      }
+  }
+
+  .alt {
+    padding: 15px 0;
+    text-align: right;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.right {
+      letter-spacing: 0.04em;
+      font-size: 14px;
+
+      @include max-screen($mobile-breakpoint) {
+        text-align: center;
+        flex: 0;
+        padding: 0 0 10px;
+        font-size: 12px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .tab {
+    color: $color-midblue;
+    display: inline-block;
+    padding: 10px 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include max-screen($mobile-breakpoint) {
+      margin-left: auto;
+      padding: 10px 12px;
+    }
+  }
+
+  .tab.hamburger {
+    font-size: 50px;
+    line-height: 60px;
+    background: none;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    display: none;
+  }
+
+  @include max-screen($mobile-breakpoint) {
+      .tab.desktop,
+      .desktop {
+        display: none;
+      }
+      .tab.hamburger {
+        display: inline-block;
+      }
+  }
+
+  @include max-screen($mobile-baby-breakpoint) {
+      .header-title span {
+        display: none;
+      }
+      .header-title::after {
+        content: "AMP";
+      }
+  }
+
+}
+
+amp-sidebar {
+  ul {
+    list-style-type: square;
+    padding-right: 1em;
+  }
+}

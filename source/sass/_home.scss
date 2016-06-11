@@ -1,0 +1,453 @@
+.home {
+
+  ul {
+    list-style-type: none;
+  }
+
+  h1 {
+    color: $color-midblue;
+    font-size: 36px;
+
+    @include max-screen($mobile-breakpoint) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    @include max-screen(350px) {
+      font-size: 24px;
+    }
+  }
+
+  h2 {
+    font-size: 43px;
+    margin-bottom: 20px;
+
+    @include max-screen($mobile-breakpoint) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+
+    @include max-screen($mobile-breakpoint) {
+      margin-bottom: inherit;
+    }
+  }
+
+  .hero {
+    background-color: $color-midblue;
+    min-height: 0;
+    padding-bottom: 20px;
+
+    @include max-screen($mobile-breakpoint) {
+      padding: 80px 0 70px 0;
+    }
+
+    @include min-screen($mobile-breakpoint) {
+      min-height: 420px;
+      padding-bottom: 4px;
+      padding-top: 94px;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    h1 {
+      color: $color-white;
+    }
+
+    .hero-phone {
+      position: absolute;
+      right: 0;
+      top: -11%;
+      width: 360px;
+
+      @include max-screen($tablet-breakpoint) {
+        right: 0;
+      }
+    }
+
+    .video-div {
+      position: absolute;
+      right: 21.7%;
+      top: 9.25%;
+
+    }
+
+    .intro {
+      color: $color-white;
+      font-size: 16px;
+      line-height: 24px;
+      max-width: 510px;
+      padding-bottom: 45px;
+
+      p {
+        margin-top: 0;
+      }
+
+      @include max-screen($mobile-breakpoint) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .blade {
+    margin-left: 0;
+    padding-left: 0;
+
+    h1 {
+      font-size: 30px;
+      font-weight: 200;
+    }
+
+    .about-amp {
+      font-size: 16px;
+      margin-top: 8px;
+      padding-bottom: 30px;
+    }
+
+    @include max-screen($mobile-breakpoint) {
+      padding-bottom: 60px;
+    }
+
+    &.first {
+      background-color: $color-midblue;
+      height: 460px;
+
+      .container {
+        display: flex;
+        position: relative;
+
+        > * {
+          flex-basis: 50%;
+
+          @include max-screen($mobile-breakpoint) {
+            flex-basis: 100%;
+          }
+        }
+      }
+
+      .mobile-hide amp-carousel {
+        position: absolute;
+        top: -20px;
+        left: 21px;
+
+        .amp-carousel-button {
+          display: none;
+        }
+      }
+
+      .carousel-wrapper {
+        position: relative;
+
+        @include max-screen($tablet-breakpoint) {
+          left: 10%;
+        }
+
+      }
+
+      .video-div {
+        position: absolute;
+        left: 21px;
+        top: -22px;
+        overflow: hidden;
+      }
+
+      .carousel-phone {
+        position: absolute;
+        top: -78px;
+      }
+
+      .carousel-image{
+        height: 480px;
+        opacity: 1;
+        position: absolute;
+        &.ng-hide-add {
+          animation: 1s hide;
+        }
+
+        &.ng-hide-remove {
+          animation: 1s show;
+        }
+      }
+
+      .carousel-text {
+        margin-top: 7em;
+        @include max-screen($mobile-breakpoint) {
+          margin-left: 0;
+          margin-top: 0;
+        }
+      }
+
+      .mobile-carousel {
+        height: 464px;
+        margin: 50px auto 0;
+        min-width: 250px;
+        overflow: hidden;
+        position: relative;
+        width: 69%;
+        text-align: center;
+
+        @media only screen and (min-device-width: $tablet-portrait-breakpoint) and (orientation: portrait){
+          width: 40%;
+        }
+
+        img {
+
+          opacity: 1;
+          position: absolute;
+
+          &.ng-hide-add {
+            animation: 1s hide;
+          }
+
+          &.ng-hide-remove {
+            animation: 1s show;
+          }
+        }
+      }
+
+      @include max-screen($mobile-breakpoint) {
+        height: auto;
+      }
+
+      h1, p {
+        color: white;
+      }
+
+    }
+
+    &.third {
+      .intro {
+        margin-top: 0;
+      }
+    }
+    &.fourth {
+      padding-top: 0;
+
+      .intro {
+        margin-top: 0;
+      }
+
+      .img-container {
+        position: relative;
+      }
+
+      .img-bw {
+        left: 0;
+        position: absolute;
+        right: 0;
+        -ms-transform: scale(0, 0); //IE doesn't support filter, so "hide" the b&w images
+
+        &:hover {
+          opacity: 0;
+        }
+        @include max-screen($tablet-breakpoint) {
+          display: none;
+        }
+      }
+      .img-color {
+        left: 0;
+        position: absolute;
+        right: 0;
+
+        @include max-screen($tablet-breakpoint) {
+          position: relative;
+        }
+      }
+    }
+
+    &.five {
+      background: $color-lightgrey;
+      padding-top: 60px;
+
+      h1 {
+        letter-spacing: 1px;
+        margin-bottom: 45px;
+      }
+
+      .quote-image {
+        width: 125px;
+      }
+
+      .quote-row {
+        margin-top: 2em;
+      }
+
+      .quote-copy {
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 0;
+        width: 95%;
+      }
+
+      .quote-source {
+        padding-bottom: 2em;
+        padding-right: 1em;
+      }
+    }
+    &.six {
+      background-color: $color-midblue;
+      color: $color-white;
+      padding-top: 0;
+      @include max-screen($tablet-breakpoint) {
+        padding-top: 50px;
+      }
+
+      h1 {
+        color: $color-white;
+        font-size: 42px;
+        line-height: 55px;
+        margin-bottom: .5em
+      }
+
+      .content {
+        margin: auto auto 3em;
+        width: 70%;
+
+        @include max-screen($mobile-breakpoint) {
+          width: 100%;
+        }
+        p {
+          color: $color-white;
+        }
+      }
+
+      .go-button {
+        float: none;
+
+        &:hover {
+          background-color: $color-lightblue;
+        }
+
+        @include max-screen($mobile-breakpoint) {
+          float: left;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+      }
+
+    }
+  }
+
+  .blade.get-started {
+    @include max-screen($tablet-breakpoint) {
+      .card-container {
+        text-align: center;
+      }
+    }
+  }
+
+  .description {
+    background-color: #f5f5f5;
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+
+}
+
+.section-computer {
+  padding: 0;
+
+  .computer-wrapper {
+    background-color: $color-midblue;
+    margin-bottom: 1em;
+
+    .computer-interface {
+      display: block;
+      margin: 0 auto;
+      max-width: 25%;
+      padding: 5em 0 2.5em;
+    }
+  }
+}
+
+.image-row {
+  padding: 2em 0;
+
+  @include max-screen($mobile-breakpoint) {
+    padding: 0;
+  }
+}
+
+.partner-image {
+  @include max-screen($mobile-breakpoint) {
+    padding: 1.5em;
+  }
+}
+
+.publisher-image {
+  margin-left: 4%;
+}
+
+amp-carousel,
+.video-div {
+  background-color: #fff;
+}
+
+section.hero {
+  background-color: $color-lightgrey;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('/static/img/background.jpg');
+  min-height: 550px;
+  padding: 65px 0 0;
+  position: relative;
+
+
+  .six.columns {
+    display: flex;
+    align-items: center;
+  }
+
+  @include max-screen($mobile-medium-breakpoint) {
+    background-image: url('/static/img/background-mobile.jpg');
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    min-height: 450px;
+    padding: 40px 0;
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color-black-95, .3);
+    background: -webkit-linear-gradient(left top, rgba($color-black-95, .8), rgba($color-black-95, .1));
+
+    @include max-screen($mobile-breakpoint) {
+      width: 100%;
+      background: rgba($color-black-95, .7);
+    }
+  }
+
+}
+
+.watch-video {
+  color: $color-white;
+  text-transform: uppercase;
+  font-weight: 100;
+  cursor: pointer;
+
+  padding: 5px 5px 5px 40px;
+
+  background-image: url('/static/img/video-play.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center left;
+}

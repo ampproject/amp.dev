@@ -1,6 +1,8 @@
-All image and audio files (including *.png, *.jpg, *.svg, *.mp3, *.wav 
-and *.ogg) are licensed under the CC-BY-NC license. All other files are 
-licensed under the Apache 2 license. 
+All image and audio files except in folders "source/img/partners", "source/img/publishers" and "source/img/quotes" (including *.png, *.jpg, *.svg, *.mp3, *.wav
+and *.ogg) are licensed under the CC-BY-NC license. Images in the excluded folders are not licensed.
+
+All other files are
+licensed under the Apache 2 license.
 
 =======================================================================
 
@@ -208,8 +210,8 @@ Apache License
    See the License for the specific language governing permissions and
    limitations under the License.
 
-All image and audio files (including *.png, *.jpg, *.svg, *.mp3, *.wav 
-and *.ogg) are licensed under the CC-BY-NC license. All other files are 
+All image and audio files (including *.png, *.jpg, *.svg, *.mp3, *.wav
+and *.ogg) are licensed under the CC-BY-NC license. All other files are
 licensed under the Apache 2 license.
 
 CC-BY-NC License
@@ -266,7 +268,7 @@ exhaustive, and do not form part of our licenses.
      such as asking that all changes be marked or described.
      Although not required by our licenses, you are encouraged to
      respect those requests where reasonable. More_considerations
-     for the public: 
+     for the public:
 	wiki.creativecommons.org/Considerations_for_licensees
 
 =======================================================================

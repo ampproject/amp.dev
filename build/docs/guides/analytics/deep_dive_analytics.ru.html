@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>Погружение в AMP Analytics</title>
+    <link rel="canonical" href="https://www.ampproject.org/docs/guides/analytics/deep_dive_analytics.ru.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta property="og:description" content="Это руководство подробно описывает использованиекомпонента amp-analytics,разбирая пример конфигурации amp-analytics на следующие основные блоки:">
+    <meta name="description" content="Это руководство подробно описывает использованиекомпонента amp-analytics,разбирая пример конфигурации amp-analytics на следующие основные блоки:">
+    <link rel="shortcut icon" href="/docs/assets/amp_favicon.png?v=2">
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <style amp-custom>
+    body,blockquote,pre,hr,dl,dd,ol,ul,figure{margin:0;padding:0}html,body{background-color:#fbfafb;font-family:Roboto,verdana,arial,sans-serif;margin:0;overflow-x:hidden;padding:0}body{padding-top:66px}ul li,ol li{color:#333;font-size:16px;font-weight:300;line-height:24px}p{color:#333;font-size:16px;font-weight:300;line-height:24px}.container{box-sizing:border-box;margin:0 auto;max-width:1000px;padding:0 20px}.container.md{max-width:800px}.wrap{background-color:#fff;margin:0 auto}.centered{text-align:center}@media only screen and (max-width: 870px){.centered{text-align:left}}.align-right{text-align:right}.clearfix:after{content:"";display:table;clear:both}.clearfix .left{float:left}.clearfix .right{float:right}.clearfix .fill{overflow:hidden;width:auto}h1,h2,h3,h4,h5{color:#147bc1;font-weight:300;margin-top:1.1em;margin-bottom:0.5em}h1{font-size:43px}h2{font-size:36px}h3{font-size:26px}a{color:#0360B5;text-decoration:none}a:hover{text-decoration:underline}a.button{padding:1em;display:block;background-color:#F5F5F5;text-align:center}blockquote{color:#797c82;border-left:4px solid #f5f5f5;padding-left:15px;font-size:18px;letter-spacing:-1px;font-style:italic}blockquote>:last-child{margin-bottom:0}code{font-size:15px;border:1px solid #f5f5f5;border-radius:3px}code{padding:1px 5px}table{border-collapse:collapse}td,th{border:1px solid #FFFFFF;background:#F7F7F7;padding:0.5rem;text-align:left}td.col-fourty{width:40%}td.col-thirty{width:30%}th{background:#eee}th.col-twenty{width:20%}header{-webkit-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;-moz-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;font-size:14px;font-weight:300;transform:translateZ(0);backface-visibility:hidden;background-color:#fff}header .container{padding:0}@media only screen and (max-width: 870px){header .container{padding:0 10px}}header.absolute,header.fixed{-moz-transform:translateY(0%);-o-transform:translateY(0%);-ms-transform:translateY(0%);-webkit-transform:translateY(0%);transform:translateY(0%);-moz-transition:all 0.25s ease;-o-transition:all 0.25s ease;-ms-transition:all 0.25s ease;-webkit-transition:all 0.25s ease;transition:all 0.25s ease;left:0;position:fixed;top:0;width:100%;z-index:1000}header.absolute{position:absolute}header.nav--pinned,header.nav--unpinned,header.nav--top{position:fixed}@media only screen and (max-width: 870px){header.nav--pinned,header.nav--unpinned,header.nav--top{position:relative}}header.nav--pinned,header.nav--unpinned{background:#147bc1}header.nav--top{background-color:transparent}header.hidden{display:block}@media only screen and (max-width: 870px){header.hidden{-moz-transform:translateY(-100%);-o-transform:translateY(-100%);-ms-transform:translateY(-100%);-webkit-transform:translateY(-100%);transform:translateY(-100%)}}header.menu-open{transform:translate(-243px, 0px)}@media only screen and (max-width: 870px){header .wrap{color:transparent}}header .content.mobile-show{padding:0 10px 5px}header .left-nav{-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;float:left;font-size:14px;letter-spacing:0.04em;margin-left:0}@media only screen and (max-width: 870px){header .left-nav{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;flex:1 1 auto;padding:0 0 5px 0;text-align:left;width:auto}}header .left-nav .header-title{background-image:url("/docs/assets/logo-blue.svg");background-position:center left;background-repeat:no-repeat;background-size:40px 40px;color:#147bc1;font-family:Roboto, verdana, arial, sans-serif;margin:10px 0;padding:15px 10px 15px 50px;text-transform:none;white-space:nowrap;width:auto}@media only screen and (max-width: 870px){header .left-nav .header-title{line-height:41px;margin:6px 0;padding:0 0 0 50px;width:auto}}@media only screen and (max-width: 870px){header .clearfix{display:flex;flex-wrap:wrap-reverse}}header .alt{padding:15px 0;text-align:right;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-pack:center;-moz-box-pack:center;box-pack:center;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center}header .alt.right{letter-spacing:0.04em;font-size:14px}@media only screen and (max-width: 870px){header .alt.right{float:right;text-align:center;flex:0;padding:0 0 10px;font-size:12px;display:inline-block}}header .tab{color:#147bc1;display:inline-block;padding:10px 15px;text-decoration:none;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab{margin-left:auto;padding:10px 12px}}header .tab.go-button{-webkit-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);-moz-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);background-color:#147bc1;border:0;border-radius:4px;color:#fff;font-family:Roboto, verdana, arial, sans-serif;font-size:14px;font-weight:500;padding:10px 20px;margin-left:10px;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab.go-button{margin-right:5px;margin-left:auto;padding:8px 10px}}header .tab.go-button:hover{text-decoration:none}header .tab.hamburger{font-size:50px;line-height:38px;background:none;border:none;margin-top:0;padding-top:0;position:relative;top:4px;display:none}@media only screen and (max-width: 870px){header .tab.desktop{display:none}header .tab.hamburger{display:inline-block}}@media only screen and (max-width: 320px){header .header-title span{display:none}header .header-title::after{content:"AMP"}}.main{display:-webkit-flex;display:flex;padding-top:40px;padding-bottom:30px}.main h1{margin-top:0}.main h1:before,.main h2:before,.main h3:before,.main h4:before,.main h5:before{display:block;content:" ";margin-top:-106px;height:106px;visibility:hidden}.main .content{flex-grow:1;-webkit-flex-grow:1;transition:all 0.25s ease;transform:translate(0, 0);will-change:transform;word-break:break-word;min-width:0}.main .content.menu-open{transform:translate(-243px, 0)}.main .content ul,.main .content ol{margin-left:40px}.main .content{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}.main amp-img,.main amp-youtube,.main amp-iframe{margin:1em 0}nav{border-right:2px solid #E6E6E6;padding:20px;margin-right:30px;margin-left:-20px;width:200px;flex-shrink:0;-webkit-flex-shrink:0;background:#F7F7F7;margin-top:-40px;margin-bottom:-30px}nav h2{font-size:20px;color:#111;margin-top:0;margin-bottom:10px}nav ul li,nav ol li{margin-bottom:10px;list-style:none}nav ul li ul,nav ul li ol,nav ol li ul,nav ol li ol{padding-left:0;margin-left:20px;margin-bottom:1.2em}nav ul li ul li,nav ul li ol li,nav ol li ul li,nav ol li ol li{margin-bottom:6px;font-size:14px;list-style:square;color:#CECECE}nav ul li ul li.current,nav ul li ol li.current,nav ol li ul li.current,nav ol li ol li.current{color:#222}nav ul li ul li span,nav ul li ol li span,nav ol li ul li span,nav ol li ol li span{font-weight:400;color:#222}nav ul li ul li ul,nav ul li ul li ol,nav ul li ol li ul,nav ul li ol li ol,nav ol li ul li ul,nav ol li ul li ol,nav ol li ol li ul,nav ol li ol li ol{margin-bottom:0;margin-left:0;padding-left:20px;border-top:1px solid #eee;padding-top:3px;padding-bottom:0px}nav ul li ul li ol li,nav ul li ol li ol li,nav ol li ul li ol li,nav ol li ol li ol li{list-style:decimal}@media only screen and (max-width: 870px){.container nav{display:none}amp-sidebar nav{margin-right:0;border-right:none;margin-top:0;padding-left:36px}}pre{overflow:auto;tab-size:2;word-break:normal;line-height:1.4;background:#F7F7F7}pre>code{white-space:pre;word-wrap:initial;display:block}pre>code td{border:0}.highlight .hll{background-color:#ffc}.highlight .c{color:#aaaaaa;font-style:italic}.highlight .err{color:#F00000}.highlight .k{color:#00a}.highlight .cm{color:#aaaaaa;font-style:italic}.highlight .cp{color:#4c8317}.highlight .c1{color:#aaaaaa;font-style:italic}.highlight .cs{color:#0000aa;font-style:italic}.highlight .gd{color:#a00}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#000080;font-weight:bold}.highlight .gi{color:#0a0}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc{color:#00a}.highlight .kd{color:#00a}.highlight .kn{color:#00a}.highlight .kp{color:#00a}.highlight .kr{color:#00a}.highlight .kt{color:#0aa}.highlight .m{color:#099}.highlight .s{color:#a50}.highlight .na{color:#1e90ff}.highlight .nb{color:#0aa}.highlight .nc{color:#00aa00;text-decoration:underline}.highlight .no{color:#a00}.highlight .nd{color:#888}.highlight .ni{color:#800000;font-weight:bold}.highlight .nf{color:#0a0}.highlight .nn{color:#00aaaa;text-decoration:underline}.highlight .nt{color:#1e90ff;font-weight:bold}.highlight .nv{color:#a00}.highlight .ow{color:#00a}.highlight .w{color:#bbb}.highlight .mf{color:#099}.highlight .mh{color:#099}.highlight .mi{color:#099}.highlight .mo{color:#099}.highlight .sb{color:#a50}.highlight .sc{color:#a50}.highlight .sd{color:#a50}.highlight .s2{color:#a50}.highlight .se{color:#a50}.highlight .sh{color:#a50}.highlight .si{color:#a50}.highlight .sx{color:#a50}.highlight .sr{color:#099}.highlight .s1{color:#a50}.highlight .ss{color:#00a}.highlight .bp{color:#0aa}.highlight .vc{color:#a00}.highlight .vg{color:#a00}.highlight .vi{color:#a00}.highlight .il{color:#099}.highlight .lineno{-webkit-user-select:none;-moz-user-select:none;-o-user-select:none}.lineno::-moz-selection{background-color:transparent}.lineno::selection{background-color:transparent}footer{padding:40px 0 60px 100px;background-color:#f5f5f5}footer p{margin:0}footer .footer-image{height:25px;width:25px;padding-left:25px;float:right}
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
+  </head>
+
+  <body>
+    <amp-analytics type="googleanalytics" id="analytics-ga">
+    <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-67833617-1"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
+    }
+    </script>
+    </amp-analytics>
+
+    <amp-sidebar id='sidebar' side='right' layout='nodisplay'>
+              
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>Начало работы</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.ru.html">Что такое AMP?</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.ru.html">Создание первой страницы AMP</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/technical_overview.ru.html">Как AMP ускоряет загрузку страниц</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Руководства</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.ru.html">Настройка Analytics</a>
+                
+
+                
+                  <ul>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li>
+                      <a href="/docs/guides/analytics/analytics_basics.ru.html">Analytics&#58; основы</a>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="current">
+                      <span>Погружение в AMP Analytics</span>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li>
+                      <a href="/docs/guides/analytics/use_cases.ru.html">Примеры использования</a>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  </ul>
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Дополнительные материалы</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Поддержка</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+    </amp-sidebar>
+
+    <header class="fixed">
+      <div class="wrap">
+        <div class="container">
+          <div class="clearfix">
+          <div class="left-nav">
+              <a href="https://ampproject.org" class="tab header-title">
+                <span>Accelerated
+                Mobile
+                Pages
+                Project</span>
+              </a>
+            </div>
+            <div class="right alt">
+              <a class="tab desktop" href="/docs/support/faqs.html">
+                Вопросы и ответы
+              </a>
+              <a class="tab desktop" href="https://amphtml.wordpress.com">
+                Блог
+              </a>
+              <a class="tab desktop" href="https://github.com/ampproject/amphtml">
+                GitHub
+              </a>
+              <a class="tab desktop" href="/docs/get_started/about-amp.html">
+                Документация
+              </a>
+              <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'>&#x2261;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="wrap">
+      <div class="container main">
+        
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>Начало работы</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.ru.html">Что такое AMP?</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.ru.html">Создание первой страницы AMP</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/technical_overview.ru.html">Как AMP ускоряет загрузку страниц</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Руководства</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.ru.html">Настройка Analytics</a>
+                
+
+                
+                  <ul>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li>
+                      <a href="/docs/guides/analytics/analytics_basics.ru.html">Analytics&#58; основы</a>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="current">
+                      <span>Погружение в AMP Analytics</span>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <li>
+                      <a href="/docs/guides/analytics/use_cases.ru.html">Примеры использования</a>
+                    </li>
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                    
+                    
+
+                    
+                    
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  </ul>
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Дополнительные материалы</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Поддержка</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+        <div class="content">
+          <!-- article -->
+          <article class="post">
+
+    <h1 class="post-title">Погружение в AMP Analytics</h1>
+
+	<div class="post-content">
+	    <p>Это руководство подробно описывает использование
+<a href="/docs/reference/extended/amp-analytics.html">компонента amp-analytics</a>,
+разбирая пример конфигурации <code class="highlighter-rouge">amp-analytics</code> на следующие основные блоки:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#type" id="markdown-toc-type">Куда отправлять аналитические данные: атрибут type</a></li>
+  <li><a href="#config" id="markdown-toc-config">Загрузка удаленной конфигурации: атрибут config</a></li>
+  <li><a href="#section" id="markdown-toc-section">Запросы, триггеры и транспорты</a>    <ul>
+      <li><a href="#requests" id="markdown-toc-requests">Какие данные должны быть отправлены: атрибут requests</a>        <ul>
+          <li><a href="#url------url" id="markdown-toc-url------url">Добавление URL-адреса в запрос: дополнительные параметры URL</a></li>
+        </ul>
+      </li>
+      <li><a href="#triggers" id="markdown-toc-triggers">Когда отправлять данные: атрибут triggers</a></li>
+      <li><a href="#transport" id="markdown-toc-transport">Способ отправки данных: атрибут transport</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-1" id="markdown-toc-section-1">Порядок подстановки переменных</a></li>
+</ul>
+
+<p>Далее в руководстве используется нижеприведенный пример конфигурации,
+который отслеживает просмотры страницы и переходы пользователя по ссылкам,
+а затем отправляет аналитические данные стороннему поставщику –
+<a href="https://developers.google.com/analytics/devguides/collection/amp-analytics/">Google Analytics</a>:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;amp-analytics</span> <span class="na">type=</span><span class="s">"googleanalytics"</span> <span class="na">config=</span><span class="s">"https://example.com/analytics.account.config.json"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"application/json"</span><span class="nt">&gt;</span>
+<span class="p">{</span>
+  <span class="s2">"requests"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"pageview"</span><span class="err">:</span> <span class="s2">"https://example.com/analytics?url=${canonicalUrl}&amp;title=${title}&amp;acct=${account}"</span><span class="p">,</span>
+    <span class="s2">"event"</span><span class="err">:</span> <span class="s2">"https://example.com/analytics?eid=${eventId}&amp;elab=${eventLabel}&amp;acct=${account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"vars"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"account"</span><span class="err">:</span> <span class="s2">"ABC123"</span>
+  <span class="p">},</span>
+  <span class="s2">"extraUrlParams"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"cd1"</span><span class="err">:</span> <span class="s2">"AMP"</span>
+  <span class="p">},</span>
+  <span class="s2">"triggers"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"trackPageview"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"on"</span><span class="err">:</span> <span class="s2">"visible"</span><span class="p">,</span>
+      <span class="s2">"request"</span><span class="err">:</span> <span class="s2">"pageview"</span>
+    <span class="p">},</span>
+    <span class="s2">"trackAnchorClicks"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"on"</span><span class="err">:</span> <span class="s2">"click"</span><span class="p">,</span>
+      <span class="s2">"selector"</span><span class="err">:</span> <span class="s2">"a"</span><span class="p">,</span>
+      <span class="s2">"request"</span><span class="err">:</span> <span class="s2">"event"</span><span class="p">,</span>
+      <span class="s2">"vars"</span><span class="err">:</span> <span class="p">{</span>
+        <span class="s2">"eventId"</span><span class="err">:</span> <span class="s2">"42"</span><span class="p">,</span>
+        <span class="s2">"eventLabel"</span><span class="err">:</span> <span class="s2">"clicked on a link"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s1">'transport'</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s1">'beacon'</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s1">'xhrpost'</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s1">'image'</span><span class="err">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/amp-analytics&gt;</span></code></pre></figure>
+
+<p><strong>Примечание.</strong> Вышеприведенный пример кода предназначен для учебных целей и не может использоваться в реальной ситуации. Если вы работаете с поставщиками аналитических услуг, то использование этого примера вряд ли имеет смысл, поскольку его сложные моменты устраняются применением конфигураций поставщика. Примеры конфигураций вы можете найти в документации вашего поставщика аналитических услуг.</p>
+
+<h2 id="type">Куда отправлять аналитические данные: атрибут type</h2>
+
+<p>AMP поддерживает два стандартных шаблона сбора данных:</p>
+
+<ul>
+  <li>Передача данных в конечный пункт издателя страницы для внутренних аналитических систем.</li>
+  <li>Передача данных в конечный пункт поставщика услуг для взаимодействия с его решением
+(например, <a href="https://helpx.adobe.com/marketing-cloud/analytics.html">Adobe Analytics</a>, <a href="http://support.chartbeat.com/docs/">Chartbeat</a>, <a href="https://developers.google.com/analytics/devguides/collection/amp-analytics/">Google Analytics</a>).</li>
+</ul>
+
+<p>Чтобы отправлять данные поставщику аналитических услуг,
+добавьте атрибут <code class="highlighter-rouge">type</code> в тег <code class="highlighter-rouge">amp-analytics</code> и установите для него значение
+соответствующего поставщика, как определено в
+<a href="/docs/reference/extended/amp-analytics.html">спецификации amp-analytics</a>.</p>
+
+<p>Например, тег <code class="highlighter-rouge">&lt;amp-analytics type="googleanalytics"&gt;</code> отправляет данные стороннему поставщику
+аналитических услуг, Google Analytics.
+Чтобы отправлять данные в конечный пункт издателя,
+достаточно просто не указывать атрибут <code class="highlighter-rouge">type</code>;
+аналитические данные будут отправляться в конечные пункты, определенные для каждого
+<a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">запроса</a>.</p>
+
+<p>Быстрым способом начала работы с
+<code class="highlighter-rouge">amp-analytics</code> является применение конфигураций поставщиков аналитических услуг.
+Для дальнейших указаний по их использованию следует обратиться к документации и справочным ресурсам вашего поставщика.</p>
+
+<p>Как упоминалось ранее,
+список поставщиков, уже интегрировавших свои решения с AMP, а также ссылки
+на их документацию можно найти в
+<a href="/docs/reference/extended/amp-analytics.html">спецификации amp-analytics</a>.</p>
+
+<p>Если вы являетесь поставщиком аналитических услуг,
+ознакомьтесь с возможностью <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md">интеграцией собственной конфигурации аналитики в AMP HTML</a>.</p>
+
+<h2 id="config">Загрузка удаленной конфигурации: атрибут config</h2>
+
+<p>Ваша страница AMP не обязательно должна содержать всю конфигурацию
+<code class="highlighter-rouge">amp-analytics</code>.
+Вместо этого вы можете полностью или частично загружать конфигурации с удаленного URL-адреса.</p>
+
+<p>Это позволяет вам выполнять такие действия как, например, изменение конфигурации
+для конкретных запросов.
+Если вы, как издатель, можете управлять удаленным файлом,
+то у вас есть возможность выполнять на сервере все действия, необходимые для создания конфигурационных данных.</p>
+
+<p>Первым шагом для загрузки удаленных конфигураций является
+добавление атрибута config в тег <code class="highlighter-rouge">amp-analytics</code>:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;amp-analytics</span> <span class="na">config=</span><span class="s">"https://example.com/analytics.account.config.json"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p>Следующим шагом является создание контента в формате JSON на удаленном URL-адресе.
+В этом простом примере
+конфигурация, которая содержится в объекте JSON, представляет собой лишь значение переменной для учетной записи аналитической системы.</p>
+
+<p>Пример содержимого в <code class="highlighter-rouge">https://example.com/analytics.account.config.json</code>:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{
+  "vars": {
+    "account": "UA-XXXXX-Y"  // Replace with your property ID.
+  }
+}</code></pre></figure>
+
+<p>Последним шагом является передача содержимого удаленного файла
+в соответствующее место конфигурации <code class="highlighter-rouge">amp-analytics</code>.
+В обоих запросах <code class="highlighter-rouge">pageview</code> и <code class="highlighter-rouge">event</code> для значения переменной
+<code class="highlighter-rouge">account</code> здесь автоматически устанавливается
+значение учетной записи в удаленном URL-адресе (<code class="highlighter-rouge">"account": "UA-XXXXX-Y"</code>):</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">"requests": {
+  "pageview": "https://example.com/analytics?url=${canonicalUrl}<span class="err">&amp;</span>title=${title}<span class="err">&amp;</span>acct=${account}",
+  "event": "https://example.com/analytics?eid=${eventId}<span class="err">&amp;</span>elab=${eventLabel}<span class="err">&amp;</span>acct=${account}"
+}</code></pre></figure>
+
+<p><strong>Внимание!</strong> AMP не проверяет многократное использование одной и той же переменной.
+Значения заполняются, следуя порядку приоритетности подстановки переменных,
+и максимальный приоритет имеют значения из удаленных URL-адресов
+(см. <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Порядок подстановки переменных</a>).</p>
+
+<h2 id="section">Запросы, триггеры и транспорты</h2>
+
+<p>Атрибут <code class="highlighter-rouge">requests</code> определяет данные, подлежащие отправке
+(например, <code class="highlighter-rouge">pageviews</code>, <code class="highlighter-rouge">events</code>),
+и место, куда они должны быть отправлены (URL-адреса для передачи данных).</p>
+
+<p>Атрибут <code class="highlighter-rouge">triggers</code> описывает момент отправки аналитических данных,
+например, при просмотре страницы пользователем или при его переходе по ссылке.</p>
+
+<p>Атрибут <code class="highlighter-rouge">transport</code> указывает, каким образом должен быть отправлен запрос,
+или точнее говоря, протокол передачи.</p>
+
+<p>Далее эти параметры конфигурации рассматриваются более подробно.
+(Вы можете также ознакомиться с ними в
+<a href="/docs/reference/extended/amp-analytics.html">справочной документации по amp-analytics</a>).</p>
+
+<h3 id="requests">Какие данные должны быть отправлены: атрибут requests</h3>
+
+<p>Для указания, какой запрос должен быть отправлен в ответ на конкретное событие, в конфигурации триггера используется параметр <code class="highlighter-rouge">request-name</code>.</p>
+
+<p>Параметр <code class="highlighter-rouge">request-value</code> представляет собой URL-адрес в формате <code class="highlighter-rouge">https</code>.
+Эти значения могут содержать теги,
+которые будут ссылаться на другие запросы или переменные.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">"requests": {
+  "pageview": "https://example.com/analytics?url=${canonicalUrl}<span class="err">&amp;</span>title=${title}<span class="err">&amp;</span>acct=${account}",
+  "event": "https://example.com/analytics?eid=${eventId}<span class="err">&amp;</span>elab=${eventLabel}<span class="err">&amp;</span>acct=${account}"
+}</code></pre></figure>
+
+<p>Некоторые поставщики аналитических услуг (включая Google Analytics)
+уже предоставляют конфигурации,
+которые можно использовать с помощью атрибута <code class="highlighter-rouge">type</code>.
+В случае использования поставщика аналитических услуг
+добавление информации атрибута <code class="highlighter-rouge">requests</code> может не понадобиться.
+Чтобы узнать, как настраивать атрибут
+<code class="highlighter-rouge">requests</code> и нужно ли это делать, обратитесь к документации поставщика услуг.</p>
+
+<h4 id="url------url">Добавление URL-адреса в запрос: дополнительные параметры URL</h4>
+
+<p>Атрибут <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#extra-url-params">extraUrlParams</a>
+указывает дополнительные параметры, которые должны быть добавлены к строке URL-адреса запроса с использованием обычного обозначения “&amp;foo=baz”.</p>
+
+<p>В примере <code class="highlighter-rouge">amp-analytics</code> в запрос добавляется дополнительный параметр <code>cd1</code>,
+для которого устанавливается значение “AMP”:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  "extraUrlParams": {
+    "cd1": "AMP"
+  }</code></pre></figure>
+
+<h3 id="triggers">Когда отправлять данные: атрибут triggers</h3>
+
+<p>Атрибут <code class="highlighter-rouge">triggers</code> описывает момент отправки аналитического запроса.
+Он содержит пару “ключ-значение”, которая состоит из имени триггера и его конфигурации.
+Имя триггера может быть представлено любой строкой, состоящей из буквенно-цифровых символов
+(a-zA-Z0-9).</p>
+
+<p>Например,
+следующий элемент <code class="highlighter-rouge">amp-analytics</code> настроен на отправку запроса в
+<code class="highlighter-rouge">https://example.com/analytics</code> при первой загрузке документа
+и при каждом нажатии тега <code class="highlighter-rouge">a</code>:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">"triggers": {
+  "trackPageview": {
+    "on": "visible",
+    "request": "pageview"
+  },
+  "trackAnchorClicks": {
+    "on": "click",
+    "selector": "a",
+    "request": "event",
+    "vars": {
+      "eventId": "42",
+      "eventLabel": "clicked on a link"
+    }
+  }
+}</code></pre></figure>
+
+<p>AMP поддерживает следующие конфигурации триггеров.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th data-th="Trigger Config" class="col-thirty">Конфигурация триггера</th>
+      <th data-th="Description">Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Trigger Config"><code>on</code> (обязательный параметр)</td>
+      <td data-th="Description">Отслеживаемое событие. Допустимые значения: <code>click</code>, <code>scroll</code>, <code>timer</code> и <code>visible</code>.</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>request</code> (обязательный параметр)</td>
+      <td data-th="Description">Имя отправляемого запроса (как указано в атрибуте <a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">requests</a>).</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>vars</code></td>
+      <td data-th="Description">Объект, содержащий пары "ключ-значение", которые используются для переопределения переменных <code>vars</code>, определенных в конфигурации верхнего уровня, или для указания уникальных переменных <code>vars</code> этого триггера (см. также <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Порядок подстановки переменных</a>).</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>selector</code> (требуется, если для <code>on</code> установлено значение <code>click</code>)</td>
+      <td data-th="Description">Селектор CSS, использующийся для уточнения отслеживаемых элементов. Для отслеживания всех элементов используйте значение <code>*</code>. Эта конфигурация используется совместно с триггером <code>click</code>. Узнайте, как использовать селектор для <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">отслеживания нажатий на странице</a> и <a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">взаимодействий в социальных сетях</a>.</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>scrollSpec</code> (требуется, если для <code>on</code> установлено значение <code>scroll</code>)</td>
+      <td data-th="Description">Управляет условиями возникновения события <code>scroll</code> при прокрутке страницы. Этот объект может содержать свойства <code>verticalBoundaries</code> и <code>horizontalBoundaries</code>. Для возникновения события <code>scroll</code> требуется как минимум одно из этих свойств. Значения обоих свойств должны быть представлены массивами чисел, отражающих границы, на которых генерируется событие прокрутки. См. пример <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">отслеживания прокрутки</a>.</td>
+    </tr>
+    <tr>
+      <td data-th="Trigger Config"><code>timerSpec</code> (требуется, если для <code>on</code> установлено значение <code>timer</code>)</td>
+      <td data-th="Description">Определяет момент возникновения события <code>timer</code>. Таймер сработает сразу после истечения указанного интервала времени. Эта конфигурация используется совместно с триггером <code>timer</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Внимание!</strong> Триггеры из конфигурации с низким приоритетом переопределяются
+одноименными триггерами из конфигурации с более высоким приоритетом
+(см. <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Порядок подстановки переменных</a>).</p>
+
+<h3 id="transport">Способ отправки данных: атрибут transport</h3>
+
+<p>Атрибут <code class="highlighter-rouge">transport</code> определяет способ отправки запроса.
+По умолчанию разрешены три следующих метода.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th data-th="Transport Method" class="col-thirty">Метод транспорта</th>
+      <th data-th="Description">Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Transport Method"><code>beacon</code></td>
+      <td data-th="Description">Указывает, что для передачи запроса может использоваться метод <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a>. Будет отправлен запрос <code>POST</code> с учетными данными и пустым телом запроса.</td>
+    </tr>
+    <tr>
+      <td data-th="Transport Method"><code>xhrpost</code></td>
+      <td data-th="Description">Указывает, что для передачи запроса может использоваться <code>XMLHttpRequest</code>. Будет отправлен запрос <code>POST</code> с учетными данными и пустым телом запроса.</td>
+    </tr>
+    <tr>
+      <td data-th="Transport Method"><code>image</code></td>
+      <td data-th="Description">Указывает, что запрос может быть передан путем генерации тега <code>Image</code>. Будет отправлен запрос <code>GET</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Для запроса должен использоваться только один метод,
+который включен, разрешен, доступен и имеет максимальный приоритет.</p>
+
+<p>Порядок предпочтения: <code class="highlighter-rouge">beacon</code> &gt; <code class="highlighter-rouge">xhrpost</code> &gt; <code class="highlighter-rouge">image</code>.
+Если метод не поддерживается пользовательским агентом клиента,
+используется следующий включенный метод в порядке предпочтения.</p>
+
+<p>Атрибут <code class="highlighter-rouge">transport</code> следует включать в конфигурацию только тогда, когда вы хотите
+ограничить варианты транспорта,
+в противном случае передача запросов может быть нарушена.</p>
+
+<p>В следующем примере для методов
+<code class="highlighter-rouge">beacon</code> и <code class="highlighter-rouge">xhrpost</code> установлено значение false,
+поэтому они не будут использоваться, хотя их приоритет выше, чем у <code class="highlighter-rouge">image</code>.
+Если пользовательский агент клиента поддерживает метод <code class="highlighter-rouge">image</code>,
+то он будет использоваться, в противном случае запросы не будут отправляться.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">'transport': {
+  'beacon': false,
+  'xhrpost': false,
+  'image': true
+}</code></pre></figure>
+
+<h2 id="section-1">Порядок подстановки переменных</h2>
+
+<p>AMP заполняет значения переменных в следующем порядке предпочтения.</p>
+
+<ol>
+  <li>Удаленные конфигурации (через <code class="highlighter-rouge">config</code>).</li>
+  <li>Значения <code class="highlighter-rouge">vars</code>, вставленные в триггер внутри атрибута <code class="highlighter-rouge">triggers</code>.</li>
+  <li>Значения <code class="highlighter-rouge">vars</code> на верхнем уровне, вставленные внутри тега <code class="highlighter-rouge">amp-analytics</code>.</li>
+  <li>Значения, предоставленные платформой.</li>
+</ol>
+
+<p>В этом примере имеется удаленная конфигурация,
+переменные, определенные на верхнем уровне, в триггерах и на уровне платформы:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;amp-analytics</span> <span class="na">config=</span><span class="s">"http://example.com/config.json"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"application/json"</span><span class="nt">&gt;</span>
+<span class="p">{</span>
+  <span class="s2">"requests"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"pageview"</span><span class="err">:</span> <span class="s2">"https://example.com/analytics?url=${canonicalUrl}&amp;title=${title}&amp;acct=${account}&amp;clientId=${clientId(cid-scope)}"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"vars"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"account"</span><span class="err">:</span> <span class="s2">"ABC123"</span><span class="p">,</span>
+    <span class="s2">"title"</span><span class="err">:</span> <span class="s2">"Homepage"</span>
+  <span class="p">},</span>
+  <span class="s2">"triggers"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"some-event"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"on"</span><span class="err">:</span> <span class="s2">"visible"</span><span class="p">,</span>
+      <span class="s2">"request"</span><span class="err">:</span> <span class="s2">"pageview"</span><span class="p">,</span>
+      <span class="s2">"vars"</span><span class="err">:</span> <span class="p">{</span>
+        <span class="s2">"title"</span><span class="err">:</span> <span class="s2">"My homepage"</span><span class="p">,</span>
+        <span class="s2">"clientId"</span><span class="err">:</span> <span class="s2">"my user"</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/amp-analytics&gt;</span></code></pre></figure>
+
+<p>Если одна и та же переменная <code class="highlighter-rouge">var</code> определена в нескольких местах,
+ее значение устанавливается один раз в порядке предпочтения.
+Таким образом, если в примере выше удаленная конфигурация определяет для <code class="highlighter-rouge">account</code> значение UA-XXXXX-Y,
+значения переменных будут выглядеть следующим образом:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th data-th="var" class="col-thirty"><code>var</code></th>
+      <th data-th="Value">Значение</th>
+      <th data-th="Defined By" class="col-thirty">Определяет</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="var"><code>canonicalUrl</code></td>
+      <td data-th="Value"><code>http://example.com/path/to/the/page</code></td>
+      <td data-th="Defined By">Платформа</td>
+    </tr>
+    <tr>
+      <td data-th="var"><code>title</code></td>
+      <td data-th="Value">My homepage</td>
+      <td data-th="Defined By">Триггер</td>
+    </tr>
+    <tr>
+      <td data-th="var"><code>account</code></td>
+      <td data-th="Value"><code>UA-XXXXX-Y</code></td>
+      <td data-th="Defined By">Удаленная конфигурация</td>
+    </tr>
+    <tr>
+      <td data-th="var"><code>clientId</code></td>
+      <td data-th="Value">my user</td>
+      <td data-th="Defined By">Триггер</td>
+    </tr>
+  </tbody>
+</table>
+
+	</div>
+
+</article>
+
+          <!-- /article -->
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+          </div>
+        </div>
+    </footer>
+  </body>
+</html>

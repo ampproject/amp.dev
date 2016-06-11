@@ -1,0 +1,49 @@
+{% macro render_nav_link(item) -%}
+  {% if item == doc %}
+  <span>{{ doc.title }}</span>
+  {% else %}
+  <a href="{% if item.goto %}{{ item.goto }}{% else %}{{ item.url.path }}{% endif %}">{{ item.title }}</a>
+  {% endif %}
+{%- endmacro %}
+
+{% macro render_children(item, docs) -%}
+  {% for doc in item.collection if doc.parent == item and item.locale == doc.locale %}
+    {% if loop.first %}{% if item.numbered %}<ol>{% else %}<ul>{% endif %}{% endif %}
+    <li>
+      {{ render_nav_link(doc) }}
+    </li>
+    {% if loop.last %}{% if item.numbered %}</ol>{% else %}</ul>{% endif %}{% endif %}
+  {% endfor  %}
+{%- endmacro %}
+
+<nav>
+
+  <ul>
+    {% for category, docs in g.categories('docs') %}
+    <li>
+      <h2>{{ category }}</h2>
+
+      <ul>
+      {% for item in docs if not (item.parent or item.locale != doc.locale) %}
+
+        {% if doc == item %}
+        <li class="current">
+          <span>{{ item.title }}</span>
+          {{ render_children(item, docs) }}
+        </li>
+        {% else %}
+        <li>
+          {{ render_nav_link(item) }}
+          {% if doc.parent and doc.parent == item %}
+          {{ render_children(item, docs) }}
+          {% endif %}
+        </li>
+        {% endif %}
+
+      {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
+
+</nav>

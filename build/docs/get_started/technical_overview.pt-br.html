@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>Como o AMP acelera o desempenho</title>
+    <link rel="canonical" href="https://www.ampproject.org/docs/get_started/technical_overview.pt-br.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta property="og:description" content="Combinadas, as otimizações a seguir são a razão das páginas AMP serem tão rápidas que parecem carregar instantaneamente:">
+    <meta name="description" content="Combinadas, as otimizações a seguir são a razão das páginas AMP serem tão rápidas que parecem carregar instantaneamente:">
+    <link rel="shortcut icon" href="/docs/assets/amp_favicon.png?v=2">
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <style amp-custom>
+    body,blockquote,pre,hr,dl,dd,ol,ul,figure{margin:0;padding:0}html,body{background-color:#fbfafb;font-family:Roboto,verdana,arial,sans-serif;margin:0;overflow-x:hidden;padding:0}body{padding-top:66px}ul li,ol li{color:#333;font-size:16px;font-weight:300;line-height:24px}p{color:#333;font-size:16px;font-weight:300;line-height:24px}.container{box-sizing:border-box;margin:0 auto;max-width:1000px;padding:0 20px}.container.md{max-width:800px}.wrap{background-color:#fff;margin:0 auto}.centered{text-align:center}@media only screen and (max-width: 870px){.centered{text-align:left}}.align-right{text-align:right}.clearfix:after{content:"";display:table;clear:both}.clearfix .left{float:left}.clearfix .right{float:right}.clearfix .fill{overflow:hidden;width:auto}h1,h2,h3,h4,h5{color:#147bc1;font-weight:300;margin-top:1.1em;margin-bottom:0.5em}h1{font-size:43px}h2{font-size:36px}h3{font-size:26px}a{color:#0360B5;text-decoration:none}a:hover{text-decoration:underline}a.button{padding:1em;display:block;background-color:#F5F5F5;text-align:center}blockquote{color:#797c82;border-left:4px solid #f5f5f5;padding-left:15px;font-size:18px;letter-spacing:-1px;font-style:italic}blockquote>:last-child{margin-bottom:0}code{font-size:15px;border:1px solid #f5f5f5;border-radius:3px}code{padding:1px 5px}table{border-collapse:collapse}td,th{border:1px solid #FFFFFF;background:#F7F7F7;padding:0.5rem;text-align:left}td.col-fourty{width:40%}td.col-thirty{width:30%}th{background:#eee}th.col-twenty{width:20%}header{-webkit-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;-moz-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;font-size:14px;font-weight:300;transform:translateZ(0);backface-visibility:hidden;background-color:#fff}header .container{padding:0}@media only screen and (max-width: 870px){header .container{padding:0 10px}}header.absolute,header.fixed{-moz-transform:translateY(0%);-o-transform:translateY(0%);-ms-transform:translateY(0%);-webkit-transform:translateY(0%);transform:translateY(0%);-moz-transition:all 0.25s ease;-o-transition:all 0.25s ease;-ms-transition:all 0.25s ease;-webkit-transition:all 0.25s ease;transition:all 0.25s ease;left:0;position:fixed;top:0;width:100%;z-index:1000}header.absolute{position:absolute}header.nav--pinned,header.nav--unpinned,header.nav--top{position:fixed}@media only screen and (max-width: 870px){header.nav--pinned,header.nav--unpinned,header.nav--top{position:relative}}header.nav--pinned,header.nav--unpinned{background:#147bc1}header.nav--top{background-color:transparent}header.hidden{display:block}@media only screen and (max-width: 870px){header.hidden{-moz-transform:translateY(-100%);-o-transform:translateY(-100%);-ms-transform:translateY(-100%);-webkit-transform:translateY(-100%);transform:translateY(-100%)}}header.menu-open{transform:translate(-243px, 0px)}@media only screen and (max-width: 870px){header .wrap{color:transparent}}header .content.mobile-show{padding:0 10px 5px}header .left-nav{-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;float:left;font-size:14px;letter-spacing:0.04em;margin-left:0}@media only screen and (max-width: 870px){header .left-nav{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;flex:1 1 auto;padding:0 0 5px 0;text-align:left;width:auto}}header .left-nav .header-title{background-image:url("/docs/assets/logo-blue.svg");background-position:center left;background-repeat:no-repeat;background-size:40px 40px;color:#147bc1;font-family:Roboto, verdana, arial, sans-serif;margin:10px 0;padding:15px 10px 15px 50px;text-transform:none;white-space:nowrap;width:auto}@media only screen and (max-width: 870px){header .left-nav .header-title{line-height:41px;margin:6px 0;padding:0 0 0 50px;width:auto}}@media only screen and (max-width: 870px){header .clearfix{display:flex;flex-wrap:wrap-reverse}}header .alt{padding:15px 0;text-align:right;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-pack:center;-moz-box-pack:center;box-pack:center;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center}header .alt.right{letter-spacing:0.04em;font-size:14px}@media only screen and (max-width: 870px){header .alt.right{float:right;text-align:center;flex:0;padding:0 0 10px;font-size:12px;display:inline-block}}header .tab{color:#147bc1;display:inline-block;padding:10px 15px;text-decoration:none;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab{margin-left:auto;padding:10px 12px}}header .tab.go-button{-webkit-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);-moz-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);background-color:#147bc1;border:0;border-radius:4px;color:#fff;font-family:Roboto, verdana, arial, sans-serif;font-size:14px;font-weight:500;padding:10px 20px;margin-left:10px;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab.go-button{margin-right:5px;margin-left:auto;padding:8px 10px}}header .tab.go-button:hover{text-decoration:none}header .tab.hamburger{font-size:50px;line-height:38px;background:none;border:none;margin-top:0;padding-top:0;position:relative;top:4px;display:none}@media only screen and (max-width: 870px){header .tab.desktop{display:none}header .tab.hamburger{display:inline-block}}@media only screen and (max-width: 320px){header .header-title span{display:none}header .header-title::after{content:"AMP"}}.main{display:-webkit-flex;display:flex;padding-top:40px;padding-bottom:30px}.main h1{margin-top:0}.main h1:before,.main h2:before,.main h3:before,.main h4:before,.main h5:before{display:block;content:" ";margin-top:-106px;height:106px;visibility:hidden}.main .content{flex-grow:1;-webkit-flex-grow:1;transition:all 0.25s ease;transform:translate(0, 0);will-change:transform;word-break:break-word;min-width:0}.main .content.menu-open{transform:translate(-243px, 0)}.main .content ul,.main .content ol{margin-left:40px}.main .content{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}.main amp-img,.main amp-youtube,.main amp-iframe{margin:1em 0}nav{border-right:2px solid #E6E6E6;padding:20px;margin-right:30px;margin-left:-20px;width:200px;flex-shrink:0;-webkit-flex-shrink:0;background:#F7F7F7;margin-top:-40px;margin-bottom:-30px}nav h2{font-size:20px;color:#111;margin-top:0;margin-bottom:10px}nav ul li,nav ol li{margin-bottom:10px;list-style:none}nav ul li ul,nav ul li ol,nav ol li ul,nav ol li ol{padding-left:0;margin-left:20px;margin-bottom:1.2em}nav ul li ul li,nav ul li ol li,nav ol li ul li,nav ol li ol li{margin-bottom:6px;font-size:14px;list-style:square;color:#CECECE}nav ul li ul li.current,nav ul li ol li.current,nav ol li ul li.current,nav ol li ol li.current{color:#222}nav ul li ul li span,nav ul li ol li span,nav ol li ul li span,nav ol li ol li span{font-weight:400;color:#222}nav ul li ul li ul,nav ul li ul li ol,nav ul li ol li ul,nav ul li ol li ol,nav ol li ul li ul,nav ol li ul li ol,nav ol li ol li ul,nav ol li ol li ol{margin-bottom:0;margin-left:0;padding-left:20px;border-top:1px solid #eee;padding-top:3px;padding-bottom:0px}nav ul li ul li ol li,nav ul li ol li ol li,nav ol li ul li ol li,nav ol li ol li ol li{list-style:decimal}@media only screen and (max-width: 870px){.container nav{display:none}amp-sidebar nav{margin-right:0;border-right:none;margin-top:0;padding-left:36px}}pre{overflow:auto;tab-size:2;word-break:normal;line-height:1.4;background:#F7F7F7}pre>code{white-space:pre;word-wrap:initial;display:block}pre>code td{border:0}.highlight .hll{background-color:#ffc}.highlight .c{color:#aaaaaa;font-style:italic}.highlight .err{color:#F00000}.highlight .k{color:#00a}.highlight .cm{color:#aaaaaa;font-style:italic}.highlight .cp{color:#4c8317}.highlight .c1{color:#aaaaaa;font-style:italic}.highlight .cs{color:#0000aa;font-style:italic}.highlight .gd{color:#a00}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#000080;font-weight:bold}.highlight .gi{color:#0a0}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc{color:#00a}.highlight .kd{color:#00a}.highlight .kn{color:#00a}.highlight .kp{color:#00a}.highlight .kr{color:#00a}.highlight .kt{color:#0aa}.highlight .m{color:#099}.highlight .s{color:#a50}.highlight .na{color:#1e90ff}.highlight .nb{color:#0aa}.highlight .nc{color:#00aa00;text-decoration:underline}.highlight .no{color:#a00}.highlight .nd{color:#888}.highlight .ni{color:#800000;font-weight:bold}.highlight .nf{color:#0a0}.highlight .nn{color:#00aaaa;text-decoration:underline}.highlight .nt{color:#1e90ff;font-weight:bold}.highlight .nv{color:#a00}.highlight .ow{color:#00a}.highlight .w{color:#bbb}.highlight .mf{color:#099}.highlight .mh{color:#099}.highlight .mi{color:#099}.highlight .mo{color:#099}.highlight .sb{color:#a50}.highlight .sc{color:#a50}.highlight .sd{color:#a50}.highlight .s2{color:#a50}.highlight .se{color:#a50}.highlight .sh{color:#a50}.highlight .si{color:#a50}.highlight .sx{color:#a50}.highlight .sr{color:#099}.highlight .s1{color:#a50}.highlight .ss{color:#00a}.highlight .bp{color:#0aa}.highlight .vc{color:#a00}.highlight .vg{color:#a00}.highlight .vi{color:#a00}.highlight .il{color:#099}.highlight .lineno{-webkit-user-select:none;-moz-user-select:none;-o-user-select:none}.lineno::-moz-selection{background-color:transparent}.lineno::selection{background-color:transparent}footer{padding:40px 0 60px 100px;background-color:#f5f5f5}footer p{margin:0}footer .footer-image{height:25px;width:25px;padding-left:25px;float:right}
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
+  </head>
+
+  <body>
+    <amp-analytics type="googleanalytics" id="analytics-ga">
+    <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-67833617-1"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
+    }
+    </script>
+    </amp-analytics>
+
+    <amp-sidebar id='sidebar' side='right' layout='nodisplay'>
+              
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>Primeiros passos</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.pt-br.html">O que é o AMP?</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.pt-br.html">Criar sua primeira página AMP</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li class="current">
+                  <span>Como o AMP acelera o desempenho</span>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Guias</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.pt-br.html">Configurar Analytics</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Referência</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Suporte</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+    </amp-sidebar>
+
+    <header class="fixed">
+      <div class="wrap">
+        <div class="container">
+          <div class="clearfix">
+          <div class="left-nav">
+              <a href="https://ampproject.org" class="tab header-title">
+                <span>Accelerated
+                Mobile
+                Pages
+                Project</span>
+              </a>
+            </div>
+            <div class="right alt">
+              <a class="tab desktop" href="/docs/support/faqs.html">
+                Perguntas frequentes
+              </a>
+              <a class="tab desktop" href="https://amphtml.wordpress.com">
+                Blog
+              </a>
+              <a class="tab desktop" href="https://github.com/ampproject/amphtml">
+                GitHub
+              </a>
+              <a class="tab desktop" href="/docs/get_started/about-amp.html">
+                Documentos
+              </a>
+              <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'>&#x2261;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="wrap">
+      <div class="container main">
+        
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>Primeiros passos</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.pt-br.html">O que é o AMP?</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.pt-br.html">Criar sua primeira página AMP</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li class="current">
+                  <span>Como o AMP acelera o desempenho</span>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Guias</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.pt-br.html">Configurar Analytics</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Referência</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Suporte</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+        <div class="content">
+          <!-- article -->
+          <article class="post">
+
+    <h1 class="post-title">Como o AMP acelera o desempenho</h1>
+
+	<div class="post-content">
+	    <p>Combinadas, as otimizações a seguir são a razão das páginas AMP serem tão rápidas que parecem carregar instantaneamente:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#permitir-apenas-scripts-assncronos" id="markdown-toc-permitir-apenas-scripts-assncronos">Permitir apenas scripts assíncronos</a></li>
+  <li><a href="#dimensionar-todos-os-recursos-estaticamente" id="markdown-toc-dimensionar-todos-os-recursos-estaticamente">Dimensionar todos os recursos estaticamente</a></li>
+  <li><a href="#no-permitir-que-mecanismos-de-extenses-bloqueiem-a-renderizao" id="markdown-toc-no-permitir-que-mecanismos-de-extenses-bloqueiem-a-renderizao">Não permitir que mecanismos de extensões bloqueiem a renderização</a></li>
+  <li><a href="#remover-qualquer-javascript-de-terceiros-do-caminho-essencial" id="markdown-toc-remover-qualquer-javascript-de-terceiros-do-caminho-essencial">Remover qualquer JavaScript de terceiros do caminho essencial</a></li>
+  <li><a href="#qualquer-css-deve-ser-inline-e-de-tamanho-limitado" id="markdown-toc-qualquer-css-deve-ser-inline-e-de-tamanho-limitado">Qualquer CSS deve ser inline e de tamanho limitado</a></li>
+  <li><a href="#o-acionamento-de-fontes-deve-ser-eficiente" id="markdown-toc-o-acionamento-de-fontes-deve-ser-eficiente">O acionamento de fontes deve ser eficiente</a></li>
+  <li><a href="#minimizar-os-reclculos-de-estilo" id="markdown-toc-minimizar-os-reclculos-de-estilo">Minimizar os recálculos de estilo</a></li>
+  <li><a href="#executar-apenas-animaes-aceleradas-por-gpu" id="markdown-toc-executar-apenas-animaes-aceleradas-por-gpu">Executar apenas animações aceleradas por GPU</a></li>
+  <li><a href="#priorizar-o-carregamento-de-recursos" id="markdown-toc-priorizar-o-carregamento-de-recursos">Priorizar o carregamento de recursos</a></li>
+  <li><a href="#carregar-pginas-em-um-instante" id="markdown-toc-carregar-pginas-em-um-instante">Carregar páginas em um instante</a></li>
+  <li><a href="#ajude-a-tornar-o-amp-mais-rpido" id="markdown-toc-ajude-a-tornar-o-amp-mais-rpido">Ajude a tornar o AMP mais rápido</a></li>
+</ul>
+
+<p>Se você prefere ouvir em vez de ler, este vídeo feito pelo engenheiro-chefe em AMP, Malte Ubl, passa uma visão geral semelhante aos próximos parágrafos.</p>
+
+<amp-youtube data-videoid="hVRkG1CQScA" layout="responsive" width="480" height="270">
+</amp-youtube>
+
+<h2 id="permitir-apenas-scripts-assncronos">Permitir apenas scripts assíncronos</h2>
+
+<p>O JavaScript é uma ferramenta eficaz,
+que pode modificar praticamente todos os aspectos da página,
+mas também pode bloquear uma construção em DOM e atrasar a renderização da página
+(veja também <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">Adicionar interatividade com o JavaScript</a>).
+Para evitar que o JavaScript atrase a renderização da página,
+o AMP permite apenas o JavaScript assíncrono.</p>
+
+<p>Páginas AMP não podem incluir JavaScript escrito pelo autor.
+Em vez de usar JavaScript,
+os recursos interativos da página são processados em elementos AMP personalizados.
+Os elementos AMP personalizados podem incluir JavaScript,
+mas são projetados cuidadosamente para garantir que não atrapalhem o desempenho.</p>
+
+<p>Embora JS de terceiros seja permitido nos iframes,
+ele não pode bloquear a renderização.
+Por exemplo, se o JS de terceiros usar a
+<a href="http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/">API <code class="highlighter-rouge">document.write</code> muito prejudicial para o desempenho</a>,
+ela não bloqueará a renderização da página principal.</p>
+
+<h2 id="dimensionar-todos-os-recursos-estaticamente">Dimensionar todos os recursos estaticamente</h2>
+
+<p>Recursos externos, como imagens, anúncios ou iframes, devem informar seu tamanho no HTML
+para que o AMP possa determinar o tamanho e a posição de cada elemento antes de que seja feito o download dos recursos.
+O AMP carrega o layout da página sem esperar que seja feito o download dos recursos.</p>
+
+<p>O AMP separa o layout do documento do layout do recurso.
+Apenas uma solicitação HTTP é necessária para se ter o layout do documento inteiro
+(<a href="#font-triggering-must-be-efficient">+fontes</a>).
+Como o AMP é otimizado para evitar recálculos de estilo e layouts pesados no navegador,
+o layout não será recriado quando os recursos forem carregados.</p>
+
+<h2 id="no-permitir-que-mecanismos-de-extenses-bloqueiem-a-renderizao">Não permitir que mecanismos de extensões bloqueiem a renderização</h2>
+
+<p>O AMP não permite que mecanismos de extensões bloqueiem a renderização da página.
+O AMP oferece suporte a extensões para itens como
+<a href="/docs/reference/extended/amp-lightbox.html">efeitos Lightbox</a>,
+<a href="/docs/reference/extended/amp-instagram.html">incorporações do Instagram</a>,
+<a href="/docs/reference/extended/amp-twitter.html">tweets</a> etc.
+Embora eles precisem de solicitações HTTP adicionais,
+essas solicitações não bloqueiam o layout e a renderização da página.</p>
+
+<p>Qualquer página que use um script personalizado deve informar ao sistema AMP
+que ela futuramente terá uma tag personalizada.
+Por exemplo, o script <a href="/docs/reference/extended/amp-iframe.html"><code class="highlighter-rouge">amp-iframe</code></a>
+informa ao sistema que haverá uma tag <code class="highlighter-rouge">amp-iframe</code>.
+O AMP cria a caixa de iframe antes mesmo de saber o que ela incluirá:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">async</span> <span class="na">custom-element=</span><span class="s">"amp-iframe"</span> <span class="na">src=</span><span class="s">"https://cdn.ampproject.org/v0/amp-youtube-0.1.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<h2 id="remover-qualquer-javascript-de-terceiros-do-caminho-essencial">Remover qualquer JavaScript de terceiros do caminho essencial</h2>
+
+<p>JS de terceiros costuma usar o carregamento síncrono de JS.
+Eles também gostam de <code class="highlighter-rouge">document.write</code> mais scripts síncronos.
+Por exemplo, se tiver cinco anúncios e cada um realizar três carregamentos de sincronização
+em uma conexão com 1 segundo de latência,
+você terá 18 segundos de carregamento apenas para carregar o JS.</p>
+
+<p>As páginas AMP permitem o uso de JavaScript de terceiros, mas apenas em iframes com sandbox.
+Ao serem restritos a iframes, eles não podem bloquear a execução da página principal.
+Mesmo que façam com que o estilo seja recalculado várias vezes,
+seus iframes pequenos contêm muito pouco DOM.</p>
+
+<p>Recálculos de estilos e layouts são típicos para o tamanho de DOM,
+então os recálculos de iframe são muito rápidos em comparação
+a um recálculo de estilos e layout para a página.</p>
+
+<h2 id="qualquer-css-deve-ser-inline-e-de-tamanho-limitado">Qualquer CSS deve ser inline e de tamanho limitado</h2>
+
+<p>O CSS bloqueia toda a renderização, bloqueia o carregamento da página e costuma ser excessivo.
+Nas páginas AMP HTML, apenas estilos inline são permitidos.
+Isso remove uma ou até mais solicitações HTTP do caminho essencial de renderização
+em comparação com a maioria das páginas da Web.</p>
+
+<p>Além disso, a folha de estilo inline deve ter um tamanho máximo de 50 kilobytes.
+Embora esse tamanho seja grande o suficiente para páginas muito sofisticadas,
+ele ainda exige que o autor da página otimize o CSS.</p>
+
+<h2 id="o-acionamento-de-fontes-deve-ser-eficiente">O acionamento de fontes deve ser eficiente</h2>
+
+<p>As fontes da Web são muito grandes, então uma
+<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization">otimização de fontes da Web</a>
+é essencial para o desempenho.
+Em uma página comum, com poucos scripts de sincronização e poucas folhas de estilo externas,
+o navegador fica esperando para começar a fazer o download dessas fontes enormes até que tudo isso aconteça.</p>
+
+<p>O sistema AMP declara zero solicitação HTTP até que comece o download das fontes.
+Isso só é possível porque todo JS em AMP tem o atributo de sincronização
+e apenas folhas de estilo inline são permitidas;
+nenhuma solicitação HTTP impede que o navegador faça o download das fontes.</p>
+
+<h2 id="minimizar-os-reclculos-de-estilo">Minimizar os recálculos de estilo</h2>
+
+<p>Cada vez que você mede algo, recálculos de estilo são acionados, o que é pesado,
+pois o navegador precisa refazer o layout da página inteira.
+Nas páginas AMP, todas as leituras de DOM são realizadas primeiro, antes de todas as gravações.
+Isso garante que ocorra, no máximo, um recálculo de estilos por frame.</p>
+
+<p>Saiba mais sobre o impacto dos recálculos de estilo e layout em
+<a href="https://developers.google.com/web/fundamentals/performance/rendering/">desempenho de renderização</a>.</p>
+
+<h2 id="executar-apenas-animaes-aceleradas-por-gpu">Executar apenas animações aceleradas por GPU</h2>
+
+<p>A única maneira de ter otimizações rápidas é executá-las na GPU.
+A GPU entende camadas, sabe como realizar atividades nessas camadas,
+pode movê-las, pode desvanecê-las, mas não pode atualizar o layout da página;
+ela passa essa tarefa para o navegador e isso não é bom.</p>
+
+<p>As regras para CSS relacionado a animações garantem que as animações possam ser aceleradas pela GPU.
+Especificamente, o AMP permite animação e transição apenas em transform e opacity
+para que o layout da página não seja necessário.
+Saiba mais sobre como
+<a href="https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count">usar transform e opacity em alterações de animação</a>.</p>
+
+<h2 id="priorizar-o-carregamento-de-recursos">Priorizar o carregamento de recursos</h2>
+
+<p>O AMP controla todos os downloads de recursos: ele prioriza o carregamento de recursos,
+carregando apenas o necessário, e realiza a pré-busca de recursos de carregamento lento.</p>
+
+<p>Quando o AMP baixa recursos, ele otimiza os downloads
+para que se faça primeiro o download dos recursos mais importantes no momento.
+Somente é feito o download de imagens e anúncios quando forem ser vistos pelo usuário,
+vistos acima da dobra ou se for provável que o usuário chegue a eles rapidamente.</p>
+
+<p>O AMP também realiza a pré-busca de recursos de carregamento lento.
+Os recursos são carregados o mais tarde possível, mas a pré-busca é feita assim que possível.
+Dessa forma, tudo é carregado muito rapidamente, mas a CPU só é usada
+quando os recursos são exibidos aos usuários.</p>
+
+<h2 id="carregar-pginas-em-um-instante">Carregar páginas em um instante</h2>
+
+<p>A nova <a href="http://www.w3.org/TR/resource-hints/#dfn-preconnect">preconnect API</a>
+é muito usada para garantir que as solicitações HTTP sejam tão rápidas quanto possível ao serem feitas.
+Assim,
+uma página pode ser renderizada antes de o usuário informar explicitamente que deseja navegar até ela;
+a página pode já estar disponível quando o usuário a selecionar,
+fazendo com que o carregamento seja instantâneo.</p>
+
+<p>Embora a pré-renderização possa ser aplicada a todo o conteúdo Web,
+ela também pode usar muita largura de banda e recursos de CPU. O AMP é otimizado para reduzir esses fatores. A pré-renderização somente faz o download dos recursos acima da dobra
+e não renderiza itens que possam ser pesados em termos de uso de CPU.</p>
+
+<p>Quando documentos AMP são pré-renderizados para carregamento instantâneo,
+somente é feito o download dos recursos acima da dobra.
+Quando documentos AMP são pré-renderizados para carregamento instantâneo,
+não é feito o download de recursos que podem usar muitos recursos de CPU (como iframes de terceiros).</p>
+
+<p>Saiba mais sobre
+<a href="https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e">por que o AMP HTML não aproveita ao máximo o scanner de pré-carregamento</a>.</p>
+
+<h2 id="ajude-a-tornar-o-amp-mais-rpido">Ajude a tornar o AMP mais rápido</h2>
+<p>AMP é um esforço de código aberto.
+Precisamos da sua ajuda para deixá-lo ainda mais rápido.
+Saiba <a href="/docs/support/contribute.html">como contribuir</a>.</p>
+
+	</div>
+
+</article>
+
+          <!-- /article -->
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+          </div>
+        </div>
+    </footer>
+  </body>
+</html>

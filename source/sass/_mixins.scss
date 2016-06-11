@@ -1,0 +1,23 @@
+@mixin text-body() {
+  color: $color-black-54;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+
+  @include max-screen($mobile-breakpoint) {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin desaturate($amt){
+  filter: grayscale($amt);
+}

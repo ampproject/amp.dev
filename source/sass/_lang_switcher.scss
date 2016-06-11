@@ -1,0 +1,88 @@
+div.language {
+
+    overflow: hidden;
+    position: relative;
+    height: 33px;
+    width: 132px;
+    box-shadow: 0px 1px 2px #b7b7b7;
+
+    &:hover {
+        overflow: visible;
+    }
+
+    ul {
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    li {
+        background-color: #f7f7f7;
+        padding: 4px 10px;
+        margin: 0;
+        border-bottom: 1px solid rgb(231, 235, 236);
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            background-color: #0379c4;
+            color: #fff;
+        }
+
+        &.current {
+
+        }
+
+        a {
+            display: block;
+            padding: 0;
+            padding-left: 26px;
+            background-repeat: no-repeat;
+            background-position: 0px 6px;
+            background-color: transparent;
+            color: inherit;
+
+            span {
+                padding: 0;
+                background-color: transparent;
+            }
+
+            @each $country in en, es, fr, id, it, ja, ko, nl, pl, pt_BR, ru, th, tr, zh_CN {
+            &.flag-#{$country} {
+                background-image: url('/static/img/flags/#{$country}.gif');
+            }
+            }
+
+        }
+    }
+}
+
+header div.language {
+    margin-left: 12px;
+}
+
+amp-sidebar div.language {
+   width: auto;
+   box-shadow: 0px 1px 2px #1185d0;
+   margin: -20px -20px 16px -16px;
+
+   &::before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #0379c4;
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        z-index: 1;
+   }
+
+   li {
+       background-color: #2fa8f7;
+       border-bottom: 1px solid #2894da;
+       padding-left: 16px;
+   }
+}

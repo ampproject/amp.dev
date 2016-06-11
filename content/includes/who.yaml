@@ -1,0 +1,275 @@
+
+section_title: "Publishers using AMP HTML"
+
+europe:
+  - 20 Minutes
+  - 20 Minutos
+  - ABC
+  - AS
+  - BBC
+  - Abendzeitung
+  - ANSA
+  - Bento
+  - Berliner Morgenpost
+  - BILD
+  - Blasting News
+  - Blogo.it
+  - CCM Benchmark
+  - Charente Libre.fr
+  - Condé Nast
+  - Corriere della Sera
+  - DailyMail.com / MailOnline
+  - Daily Star
+  - The Week
+  - El Confidencial
+  - El Español
+  - El Mundo
+  - El Mundo Deportivo
+  - EL PAÍS
+  - El Periódico
+  - El Economista
+  - Europa Press
+  - Evening Standard
+  - Expansión
+  - Daily Express
+  - Frankfurter Allgemeine Zeitung
+  - FOCUS Online
+  - France 24
+  - Francetvinfo
+  - Golem.de
+  - Gruner + Jahr
+  - Guardian News & Media
+  - HNA.de
+  - IBT UK
+  - Il Fatto Quotidiano
+  - IlSole24Ore
+  - IlSussidiario.net
+  - Ippen Digital Plattform
+  - kicker
+  - La République des Pyrénées
+  - La Stampa
+  - La Vanguardia
+  - Lagardère Active
+  - Le Parisien
+  - Les Echos
+  - L'Express
+  - Mail.Ru Group
+  - Marca
+  - Meduza
+  - merkur.de
+  - Metro UK
+  - Metronews
+  - The Next Web
+  - OK!
+  - Ouest France
+  - Promiflash
+  - Público
+  - Repubblica
+  - RP Online
+  - RT
+  - RTL
+  - Russmedia Digital
+  - Sorrisi e Canzoni
+  - SPIEGEL ONLINE
+  - Sport
+  - SPORT1
+  - Stuttgarter Nachrichten
+  - Stuttgarter Zeitung
+  - SudOuest.fr
+  - Süddeutsche Zeitung
+  - t-online.de
+  - tagesschau
+  - TF1
+  - The Financial Times
+  - The Independent
+  - Trinity Mirror
+  - tz.de
+  - Vocento
+  - Welt.de
+  - ZEIT ONLINE
+  - Вести.Ru
+  - Информационное агентство России ТАСС
+  - Лента.ру
+  - Московский Комсомолец
+  - Телекомпания НТВ
+
+asia:
+  - ABPLive
+  - Ameba.com
+  - Asahi Shimbun
+  - Bintang.com
+  - BLOGOS
+  - Bloter
+  - Bola.com
+  - Oneindia
+  - Business Standard
+  - CINEMATODAY
+  - Digital Chosun
+  - EconomicTimes
+  - Eiga.com
+  - FirstPost
+  - Hankyung.com
+  - IndianExpress
+  - Indiatoday.in
+  - JoongAng Ilbo
+  - KapanLagi Network
+  - KASKUS
+  - Kompas.com
+  - Liputan6.com
+  - Maekyung.com
+  - Mainichi Shimbun
+  - Mynavi News
+  - NDTV
+  - Newstapa
+  - Nikkan Sports
+  - Republika.co.id
+  - Response
+  - Sankei News
+  - SANSPO
+  - Slow News
+  - THE PAGE
+  - Tempo.co
+  - Economic Times
+  - Uzone.id
+  - Yonhap News
+  - Zakcak
+
+latin_america:
+  - Agência Brasil
+  - Basket4us.com
+  - Cybercook
+  - Diário 24 Horas
+  - EBC
+  - Economiahoy.mx
+  - El Universal
+  - Época
+  - ESPN Brasil
+  - Estadão
+  - Exame.com
+  - Excélsior
+  - Folha de S. Paulo
+  - Galileu
+  - Globo
+  - Grupo Expansión
+  - Grupo Imagen
+  - Grupo Medios
+  - Grupo RBS
+  - Jornal Extra
+  - M de Mulher
+  - MaisEquilibrio
+  - O Globo
+  - Portal Catraca Livre
+  - R7.com
+  - Radioagência Nacional
+  - Tecmundo
+  - Televisa
+  - Terra
+  - Terra México
+  - TV Azteca
+  - UOL
+  - Vanguardia
+  - Veja São Paulo
+  - Veja.com
+  - Vila Mulher
+
+north_america:
+  - 247Sports
+  - ABC News
+  - The Atlantic
+  - Business Insider
+  - Buzzfeed
+  - CBS News
+  - CNN
+  - Digital Trends
+  - E! News
+  - Entrepreneur
+  - Forbes
+  - Fusion
+  - Hearst
+  - Heavy
+  - The Huffington Post
+  - IBT Media
+  - The Inquisitr News
+  - Los Angeles Times
+  - MarketWatch
+  - Mic
+  - MSNBC
+  - New York Daily News
+  - The New York Post
+  - The New York Times
+  - POPSUGAR.
+  - SB Nation
+  - SheKnows.com
+  - theScore
+  - Thrillist
+  - Time Inc.
+  - Tribune Media
+  - USA Today
+  - The Verge
+  - Vox
+  - The Wall Street Journal
+  - Washington Post
+
+ads:
+  - A9
+  - Ad Reactor
+  - Ad tech
+  - ADFOX
+  - AdSense
+  - App Nexus
+  - Criteo
+  - Dot&Ads
+  - DoubleClick
+  - Improve Digital
+  - Kargo
+  - Krux
+  - Ligatus
+  - OAS
+  - OpenX
+  - Outbrain
+  - Plista
+  - Polar
+  - Pubmatic
+  - Revcontent
+  - Rubicon Project
+  - Sharethrough
+  - Smart AdServer
+  - Taboola
+  - Teads.tv
+  - Weborama
+  - YieldMo
+
+analytics:
+  - Adobe Analytics
+  - AT Internet
+  - Chartbeat
+  - comScore
+  - Google Analytics
+  - LiveInternet
+  - MOAT
+  - Parse.ly
+  - Quantcast
+  - SimpleReach
+  - TNS
+  - Webtrekk GmbH
+
+tech_platform:
+  - Google
+  - Hatena
+  - LinkedIn
+  - Medium
+  - Nuzzel
+  - Pinterest
+  - Twitter
+
+cms:
+  - Drupal
+  - Marfeel
+  - Wordpress
+
+video:
+  - Brightcove
+  - Dailymotion
+  - Vimeo
+  - Vine
+  - YouTube

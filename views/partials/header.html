@@ -1,0 +1,39 @@
+<header class="fixed">
+  <div class="wrap">
+    <div class="container">
+      <div class="clearfix">
+         <div class="left-nav">
+            <a href="{{g.doc('/content/pages/home.html', locale=doc.locale).url.path}}" class="tab header-title">
+              <span>Accelerated Mobile Pages Project</span>
+            </a>
+        </div>
+        <div class="right alt">
+
+          <a class="tab desktop" href="{{ g.doc(header.fields.faq.get('href'), locale=doc.locale).url.path }}">
+            {{_(header.fields.faq.get('copy'))}}
+          </a>
+          <a class="tab desktop" href="{{ g.doc(header.fields.who.get('href'), locale=doc.locale).url.path }}">
+            {{_(header.fields.who.get('copy'))}}
+          </a>
+          <a class="tab desktop" target="_blank" href="{{header.fields.blog.get('href')}}">
+            {{_(header.fields.blog.get('copy'))}}
+          </a>
+          <a class="tab desktop" target="_blank" href="{{header.fields.github.get('href')}}">
+            {{_(header.fields.github.get('copy'))}}
+          </a>
+          <a class="tab desktop" href="{{ g.doc(header.fields.roadmap.get('href'), locale=doc.locale).url.path }}">
+            {{_(header.fields.roadmap.get('copy'))}}
+          </a>
+          <a class="tab desktop" href="{{ g.doc(header.fields.docs.get('href'), locale=doc.locale).url.path }}">
+            {{_(header.fields.docs.get('copy'))}}
+          </a>
+
+          {% include "/views/partials/lang_switcher.html" %}
+
+          <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'>&#x2261;</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

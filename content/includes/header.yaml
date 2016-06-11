@@ -1,0 +1,27 @@
+faq:
+  href: /content/docs/faqs.md
+  copy@: FAQ
+
+who:
+  href: /content/pages/who.html
+  copy@: Who
+
+blog:
+  href: https://amphtml.wordpress.com/
+  copy@: Blog
+
+github:
+  href: https://github.com/ampproject/amphtml
+  copy@: GitHub
+
+roadmap:
+  href: /content/pages/roadmap.html
+  copy@: Roadmap
+
+docs:
+  href: /content/docs/about-amp.md
+  copy@: Docs
+
+
+contact:
+  copy@: CONTACT US

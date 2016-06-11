@@ -1,0 +1,120 @@
+year: "2016"
+quarter: Q2
+outlook:  Q3/Q4
+current: Mid-Q2 2016
+updated: May 31, 2016
+
+stages:
+    "6": Launched / Stable
+    "5": Code Complete / Experimental
+    "4": Pull Request (Changelist) Created
+    "3": Coding Started
+    "2": Intent to Implement (Feature Description) Posted
+    "1": In Planning and Design
+    "0": Not Started
+
+sections:
+
+    0_format:
+
+        title: Format
+        description: Enrich AMP's core, including its web components library, to grow support for content features
+
+        themes:
+        - Provide initial support for live-updating content within AMP pages
+        - Provide features that enable deeper user engagement like site navigation and sharing
+        - Make it easier to build well-styled AMP pages
+        - Provide initial support for data entry use cases (forms and searchboxes)
+        - Broaden support to include a variety of content formats, including news articles, recipes, local listings, product listings, and more
+        - Further alignment with Progressive Web Apps (PWAs)
+
+        quarter:
+            "1":
+            - Native app install button/banner
+            - “AMP bootstrap” default styling
+            - "**amp-carousel** improvements"
+            - "**amp-lightbox** improvements"
+            "4":
+            - "[Live blog support](https://github.com/ampproject/amphtml/issues/2762)"
+            - "[Form support](https://github.com/ampproject/amphtml/issues/3343)"
+            "6":
+            - "[Site navigation menu support [**amp-sidebar**]](/docs/reference/extended/amp-sidebar.html)"
+            - "[Share button bar [**amp-social-share**]](/docs/reference/extended/amp-social-share.html)"
+            - "[Cross-origin support for ServiceWorker installation [update to **amp-install-serviceworker**]](/docs/reference/extended/amp-install-serviceworker.html)"
+
+        forecast:
+        - Create a suite of effects that can be applied to AMP page content and structure
+        - Provide greater interactivity support by introducing a mechanism to bind element behavior to user actions
+        - More form support, including validation, conditional behaviors, and grouping
+        - Additional support for on-demand or just-in-time delivery of content to page
+        - Geo-variation support
+        - Offline support and improved intermittent connectivity handling
+        - Reference implementation using AMP within a Progressive Web App (PWA)
+
+    1_analytics:
+
+        title: Analytics
+        description: Enable analytics on AMP pages and provide interoperability with data analysis solutions
+
+        themes:
+        - Deepen support for basic analytics such as new event triggers, variables, and flexibility in constructing hit requests
+        - Provide support for element-level analytics
+        - Support basic A/B experience testing
+
+        quarter:
+            "0":
+            - Element-level data variable support in **amp-analytics**
+            - Expose batched interaction data (e.g. scroll events) to **amp-analytics**
+            "2":
+            - "[Share-tracking support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/3135)"
+            - "[A/B experience testing support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/1411)"
+            "4":
+            - "[Element-level visibility trigger support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/1297)"
+
+        forecast:
+        - Expansion of analytics capabilities for ecommerce use cases
+        - Expose events from video players to **amp-analytics**
+
+    2_ads:
+
+        title: Ads
+        description: Enable ads on AMP pages, provide interoperability with ad technology providers, and drive ad ecosystem innovation with the AMP format
+
+        themes:
+        - Enable new types of ad formats that can be used in AMP pages
+        - Enable AMP itself as an ad creative format
+        - Enable AMPs to act as landing pages for ads
+
+        quarter:
+
+            "1":
+            - Pre-roll video ads in **amp-video** using IMA
+            - Proof of concept implementation of ads with AMP-format landing pages
+            - Enhancements to AMP runtime to allow passing AMP signals to ad servers and ad exchanges
+            "3":
+            - "[Allow for serving ads that are in AMP format (A4A - AMP for Ads)](https://github.com/ampproject/amphtml/issues/3133)"
+            "4":
+            - "[Sticky ad format in **amp-ad**](https://github.com/ampproject/amphtml/issues/2472)"
+            - "[Flying carpet effect support, particularly as an ad format](https://github.com/ampproject/amphtml/issues/3126)"
+
+        forecast:
+        - Enable “AMP for Ads” creative demand across the buyer and publisher ecosystem
+        - Enable deeper integration of ads with AMP landing pages in the various buyside and sellside systems
+
+    3_access:
+
+        title: Access
+        description: Enable login-based access to AMP pages
+
+        themes:
+        - Continue to improve paywall and subscription support in AMP
+        - Make sign-in and payment for content a seamless and joyful experience in AMP
+
+        quarter:
+            "1":
+            - Runtime support for delegated sign-in (allow surface hosting AMP to sign-in user to publisher from using available identity information)
+            "5":
+            - "[**amp-access** server side support (beta)](https://github.com/ampproject/amphtml/issues/2968)"
+
+        forecast:
+        - Enable better mobile payments with AMP

@@ -1,0 +1,174 @@
+#: /content/includes/footer.yaml
+msgid "&copy 2015 Accelerated Mobile Pages Project"
+msgstr ""
+
+#: /content/pages/home.html
+msgid ""
+"AMP HTML embraces the open web, so you can be sure that your content appears "
+"correctly across all modern browsers and apps. Pages are published normally "
+"to your site, using standard tools, and are accelerated via caches created by"
+" Google and others."
+msgstr ""
+
+#: /content/pages/home.html
+msgid "An architectural framework built for speed"
+msgstr ""
+
+#: /content/includes/header.yaml
+msgid "Blog"
+msgstr ""
+
+#: /content/pages/home.html /content/includes/header.yaml
+msgid "CONTACT US"
+msgstr ""
+
+#: /content/includes/header.yaml
+msgid "Docs"
+msgstr ""
+
+#: /content/pages/home.html
+msgid ""
+"Dozens of publishers and technology companies have come together to create "
+"this open source initiative. However, we’re just getting started and would "
+"love for you to join us. We look forward to working with you to continue to "
+"make Accelerated Mobile Pages fast, flexible, and beautiful, and we encourage"
+" you to share your feedback with the team on GitHub."
+msgstr ""
+
+#: /content/includes/header.yaml
+msgid "FAQ"
+msgstr ""
+
+#: /content/pages/home.html
+msgid ""
+"For many, reading on the mobile web is a slow, clunky and frustrating "
+"experience - but it doesn’t have to be that way. The Accelerated Mobile Pages"
+" (AMP) Project is an open source initiative that embodies the vision that "
+"publishers can create mobile optimized content once and have it load "
+"instantly everywhere."
+msgstr ""
+
+#: /content/pages/home.html
+msgid "GET STARTED"
+msgstr ""
+
+#: /content/pages/home.html /content/includes/header.yaml
+msgid "Get Started"
+msgstr ""
+
+#: /content/pages/home.html
+msgid "Get Started with AMP HTML"
+msgstr ""
+
+#: /content/includes/header.yaml
+msgid "GitHub"
+msgstr ""
+
+#: /content/pages/home.html
+msgid ""
+"If you are new to AMP HTML, our technical introduction is a great place to "
+"get started and provides an overview of the project and how AMP HTML works."
+msgstr ""
+
+#: /content/pages/home.html
+msgid ""
+"If you'd like to dive deeper into AMP HTML, you can find all of the source "
+"code, code samples, and detailed documentation in our GitHub repository."
+msgstr ""
+
+#: /content/pages/home.html
+msgid "Instant. Everywhere."
+msgstr ""
+
+#: /content/pages/home.html
+msgid "Read the Introduction"
+msgstr ""
+
+#: /content/pages/home.html
+msgid ""
+"Ready to build an AMP file? This tutorial will teach you how to create a "
+"basic AMP HTML page, stage it, test it, and get it ready for publication."
+msgstr ""
+
+#: /content/includes/header.yaml
+msgid "Roadmap"
+msgstr ""
+
+#: /content/pages/home.html
+msgid "Seamless, simplified publishing"
+msgstr ""
+
+#: /content/pages/home.html
+msgid "TECHNICAL INTRODUCTION"
+msgstr ""
+
+#: /content/pages/home.html
+msgid "Technical Introduction"
+msgstr ""
+
+#: /content/pages/home.html
+msgid ""
+"The Accelerated Mobile Pages (AMP) Project is an open initiative that "
+"embodies the vision that publishers can create mobile optimized content once "
+"and have it load instantly everywhere."
+msgstr ""
+
+#: /content/pages/home.html
+msgid "Tutorial"
+msgstr ""
+
+#: /content/pages/home.html
+msgid "VIEW FAQ"
+msgstr ""
+
+#: /content/pages/home.html
+msgid "VISIT US ON GITHUB"
+msgstr ""
+
+#: /content/pages/home.html
+msgid "View Code"
+msgstr ""
+
+#: /content/includes/footer.yaml
+msgid "View FAQ"
+msgstr ""
+
+#: /content/pages/home.html
+msgid "Visit Github"
+msgstr ""
+
+#: /content/pages/home.html
+msgid "We're just getting started."
+msgstr ""
+
+#: /content/pages/home.html
+msgid "What contributors are saying"
+msgstr ""
+
+#: /content/includes/header.yaml
+msgid "Who"
+msgstr ""
+
+#: /content/pages/home.html
+msgid ""
+"With the recent shift to mobile, media consumption is changing. Users now "
+"consume content wherever they find it -- sometimes it’s directly from a "
+"publisher’s website, oftentimes it’s not. Given how frustrating the mobile "
+"web can be, many content distribution platforms are seeking alternatives. In "
+"many cases, these alternatives tend to be platform specific, placing a burden"
+" on the publishers to support this fragmentation of formats and closing off "
+"the ecosystem.<br/><br/> The Accelerated Mobile Pages (AMP) Project is an "
+"initiative to improve the mobile web and enhance the distribution ecosystem. "
+"If content is fast, flexible and beautiful, including compelling and "
+"effective ads, we can preserve the open web publishing model as well as the "
+"revenue streams so important to the sustainability of quality "
+"publishing.<br/><br/> AMP HTML is a new way to make web pages that are "
+"optimized to load instantly on users’ mobile devices. It is designed to "
+"support smart caching, predictable performance, and modern, beautiful mobile "
+"content. Since AMP HTML is built on existing web technologies, and not a "
+"template based system, publishers continue to host their own content, "
+"innovate on their user experiences, and flexibly integrate their advertising "
+"and business models -- all within a technical architecture optimized for "
+"speed and performance."
+msgstr ""
+

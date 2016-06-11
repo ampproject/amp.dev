@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>Как AMP ускоряет загрузку страниц</title>
+    <link rel="canonical" href="https://www.ampproject.org/docs/get_started/technical_overview.ru.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta property="og:description" content="Благодаря объединению следующих оптимизаций страницы AMP становятся настолько быстрыми, что их загрузка происходит почти мгновенно.">
+    <meta name="description" content="Благодаря объединению следующих оптимизаций страницы AMP становятся настолько быстрыми, что их загрузка происходит почти мгновенно.">
+    <link rel="shortcut icon" href="/docs/assets/amp_favicon.png?v=2">
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <style amp-custom>
+    body,blockquote,pre,hr,dl,dd,ol,ul,figure{margin:0;padding:0}html,body{background-color:#fbfafb;font-family:Roboto,verdana,arial,sans-serif;margin:0;overflow-x:hidden;padding:0}body{padding-top:66px}ul li,ol li{color:#333;font-size:16px;font-weight:300;line-height:24px}p{color:#333;font-size:16px;font-weight:300;line-height:24px}.container{box-sizing:border-box;margin:0 auto;max-width:1000px;padding:0 20px}.container.md{max-width:800px}.wrap{background-color:#fff;margin:0 auto}.centered{text-align:center}@media only screen and (max-width: 870px){.centered{text-align:left}}.align-right{text-align:right}.clearfix:after{content:"";display:table;clear:both}.clearfix .left{float:left}.clearfix .right{float:right}.clearfix .fill{overflow:hidden;width:auto}h1,h2,h3,h4,h5{color:#147bc1;font-weight:300;margin-top:1.1em;margin-bottom:0.5em}h1{font-size:43px}h2{font-size:36px}h3{font-size:26px}a{color:#0360B5;text-decoration:none}a:hover{text-decoration:underline}a.button{padding:1em;display:block;background-color:#F5F5F5;text-align:center}blockquote{color:#797c82;border-left:4px solid #f5f5f5;padding-left:15px;font-size:18px;letter-spacing:-1px;font-style:italic}blockquote>:last-child{margin-bottom:0}code{font-size:15px;border:1px solid #f5f5f5;border-radius:3px}code{padding:1px 5px}table{border-collapse:collapse}td,th{border:1px solid #FFFFFF;background:#F7F7F7;padding:0.5rem;text-align:left}td.col-fourty{width:40%}td.col-thirty{width:30%}th{background:#eee}th.col-twenty{width:20%}header{-webkit-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;-moz-box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;box-shadow:rgba(0,0,0,0.15) 1px 1px 14px;font-size:14px;font-weight:300;transform:translateZ(0);backface-visibility:hidden;background-color:#fff}header .container{padding:0}@media only screen and (max-width: 870px){header .container{padding:0 10px}}header.absolute,header.fixed{-moz-transform:translateY(0%);-o-transform:translateY(0%);-ms-transform:translateY(0%);-webkit-transform:translateY(0%);transform:translateY(0%);-moz-transition:all 0.25s ease;-o-transition:all 0.25s ease;-ms-transition:all 0.25s ease;-webkit-transition:all 0.25s ease;transition:all 0.25s ease;left:0;position:fixed;top:0;width:100%;z-index:1000}header.absolute{position:absolute}header.nav--pinned,header.nav--unpinned,header.nav--top{position:fixed}@media only screen and (max-width: 870px){header.nav--pinned,header.nav--unpinned,header.nav--top{position:relative}}header.nav--pinned,header.nav--unpinned{background:#147bc1}header.nav--top{background-color:transparent}header.hidden{display:block}@media only screen and (max-width: 870px){header.hidden{-moz-transform:translateY(-100%);-o-transform:translateY(-100%);-ms-transform:translateY(-100%);-webkit-transform:translateY(-100%);transform:translateY(-100%)}}header.menu-open{transform:translate(-243px, 0px)}@media only screen and (max-width: 870px){header .wrap{color:transparent}}header .content.mobile-show{padding:0 10px 5px}header .left-nav{-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;float:left;font-size:14px;letter-spacing:0.04em;margin-left:0}@media only screen and (max-width: 870px){header .left-nav{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;-webkit-justify-content:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;-o-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;flex:1 1 auto;padding:0 0 5px 0;text-align:left;width:auto}}header .left-nav .header-title{background-image:url("/docs/assets/logo-blue.svg");background-position:center left;background-repeat:no-repeat;background-size:40px 40px;color:#147bc1;font-family:Roboto, verdana, arial, sans-serif;margin:10px 0;padding:15px 10px 15px 50px;text-transform:none;white-space:nowrap;width:auto}@media only screen and (max-width: 870px){header .left-nav .header-title{line-height:41px;margin:6px 0;padding:0 0 0 50px;width:auto}}@media only screen and (max-width: 870px){header .clearfix{display:flex;flex-wrap:wrap-reverse}}header .alt{padding:15px 0;text-align:right;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-moz-box-align:center;box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-pack:center;-moz-box-pack:center;box-pack:center;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center}header .alt.right{letter-spacing:0.04em;font-size:14px}@media only screen and (max-width: 870px){header .alt.right{float:right;text-align:center;flex:0;padding:0 0 10px;font-size:12px;display:inline-block}}header .tab{color:#147bc1;display:inline-block;padding:10px 15px;text-decoration:none;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab{margin-left:auto;padding:10px 12px}}header .tab.go-button{-webkit-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);-moz-box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);box-shadow:-1px 6px 6px -3px rgba(0,0,0,0.22);background-color:#147bc1;border:0;border-radius:4px;color:#fff;font-family:Roboto, verdana, arial, sans-serif;font-size:14px;font-weight:500;padding:10px 20px;margin-left:10px;text-transform:uppercase}@media only screen and (max-width: 870px){header .tab.go-button{margin-right:5px;margin-left:auto;padding:8px 10px}}header .tab.go-button:hover{text-decoration:none}header .tab.hamburger{font-size:50px;line-height:38px;background:none;border:none;margin-top:0;padding-top:0;position:relative;top:4px;display:none}@media only screen and (max-width: 870px){header .tab.desktop{display:none}header .tab.hamburger{display:inline-block}}@media only screen and (max-width: 320px){header .header-title span{display:none}header .header-title::after{content:"AMP"}}.main{display:-webkit-flex;display:flex;padding-top:40px;padding-bottom:30px}.main h1{margin-top:0}.main h1:before,.main h2:before,.main h3:before,.main h4:before,.main h5:before{display:block;content:" ";margin-top:-106px;height:106px;visibility:hidden}.main .content{flex-grow:1;-webkit-flex-grow:1;transition:all 0.25s ease;transform:translate(0, 0);will-change:transform;word-break:break-word;min-width:0}.main .content.menu-open{transform:translate(-243px, 0)}.main .content ul,.main .content ol{margin-left:40px}.main .content{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}.main amp-img,.main amp-youtube,.main amp-iframe{margin:1em 0}nav{border-right:2px solid #E6E6E6;padding:20px;margin-right:30px;margin-left:-20px;width:200px;flex-shrink:0;-webkit-flex-shrink:0;background:#F7F7F7;margin-top:-40px;margin-bottom:-30px}nav h2{font-size:20px;color:#111;margin-top:0;margin-bottom:10px}nav ul li,nav ol li{margin-bottom:10px;list-style:none}nav ul li ul,nav ul li ol,nav ol li ul,nav ol li ol{padding-left:0;margin-left:20px;margin-bottom:1.2em}nav ul li ul li,nav ul li ol li,nav ol li ul li,nav ol li ol li{margin-bottom:6px;font-size:14px;list-style:square;color:#CECECE}nav ul li ul li.current,nav ul li ol li.current,nav ol li ul li.current,nav ol li ol li.current{color:#222}nav ul li ul li span,nav ul li ol li span,nav ol li ul li span,nav ol li ol li span{font-weight:400;color:#222}nav ul li ul li ul,nav ul li ul li ol,nav ul li ol li ul,nav ul li ol li ol,nav ol li ul li ul,nav ol li ul li ol,nav ol li ol li ul,nav ol li ol li ol{margin-bottom:0;margin-left:0;padding-left:20px;border-top:1px solid #eee;padding-top:3px;padding-bottom:0px}nav ul li ul li ol li,nav ul li ol li ol li,nav ol li ul li ol li,nav ol li ol li ol li{list-style:decimal}@media only screen and (max-width: 870px){.container nav{display:none}amp-sidebar nav{margin-right:0;border-right:none;margin-top:0;padding-left:36px}}pre{overflow:auto;tab-size:2;word-break:normal;line-height:1.4;background:#F7F7F7}pre>code{white-space:pre;word-wrap:initial;display:block}pre>code td{border:0}.highlight .hll{background-color:#ffc}.highlight .c{color:#aaaaaa;font-style:italic}.highlight .err{color:#F00000}.highlight .k{color:#00a}.highlight .cm{color:#aaaaaa;font-style:italic}.highlight .cp{color:#4c8317}.highlight .c1{color:#aaaaaa;font-style:italic}.highlight .cs{color:#0000aa;font-style:italic}.highlight .gd{color:#a00}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#000080;font-weight:bold}.highlight .gi{color:#0a0}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc{color:#00a}.highlight .kd{color:#00a}.highlight .kn{color:#00a}.highlight .kp{color:#00a}.highlight .kr{color:#00a}.highlight .kt{color:#0aa}.highlight .m{color:#099}.highlight .s{color:#a50}.highlight .na{color:#1e90ff}.highlight .nb{color:#0aa}.highlight .nc{color:#00aa00;text-decoration:underline}.highlight .no{color:#a00}.highlight .nd{color:#888}.highlight .ni{color:#800000;font-weight:bold}.highlight .nf{color:#0a0}.highlight .nn{color:#00aaaa;text-decoration:underline}.highlight .nt{color:#1e90ff;font-weight:bold}.highlight .nv{color:#a00}.highlight .ow{color:#00a}.highlight .w{color:#bbb}.highlight .mf{color:#099}.highlight .mh{color:#099}.highlight .mi{color:#099}.highlight .mo{color:#099}.highlight .sb{color:#a50}.highlight .sc{color:#a50}.highlight .sd{color:#a50}.highlight .s2{color:#a50}.highlight .se{color:#a50}.highlight .sh{color:#a50}.highlight .si{color:#a50}.highlight .sx{color:#a50}.highlight .sr{color:#099}.highlight .s1{color:#a50}.highlight .ss{color:#00a}.highlight .bp{color:#0aa}.highlight .vc{color:#a00}.highlight .vg{color:#a00}.highlight .vi{color:#a00}.highlight .il{color:#099}.highlight .lineno{-webkit-user-select:none;-moz-user-select:none;-o-user-select:none}.lineno::-moz-selection{background-color:transparent}.lineno::selection{background-color:transparent}footer{padding:40px 0 60px 100px;background-color:#f5f5f5}footer p{margin:0}footer .footer-image{height:25px;width:25px;padding-left:25px;float:right}
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
+  </head>
+
+  <body>
+    <amp-analytics type="googleanalytics" id="analytics-ga">
+    <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-67833617-1"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
+    }
+    </script>
+    </amp-analytics>
+
+    <amp-sidebar id='sidebar' side='right' layout='nodisplay'>
+              
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>Начало работы</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.ru.html">Что такое AMP?</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.ru.html">Создание первой страницы AMP</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li class="current">
+                  <span>Как AMP ускоряет загрузку страниц</span>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Руководства</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.ru.html">Настройка Analytics</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Дополнительные материалы</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Поддержка</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+    </amp-sidebar>
+
+    <header class="fixed">
+      <div class="wrap">
+        <div class="container">
+          <div class="clearfix">
+          <div class="left-nav">
+              <a href="https://ampproject.org" class="tab header-title">
+                <span>Accelerated
+                Mobile
+                Pages
+                Project</span>
+              </a>
+            </div>
+            <div class="right alt">
+              <a class="tab desktop" href="/docs/support/faqs.html">
+                Вопросы и ответы
+              </a>
+              <a class="tab desktop" href="https://amphtml.wordpress.com">
+                Блог
+              </a>
+              <a class="tab desktop" href="https://github.com/ampproject/amphtml">
+                GitHub
+              </a>
+              <a class="tab desktop" href="/docs/get_started/about-amp.html">
+                Документация
+              </a>
+              <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'>&#x2261;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="wrap">
+      <div class="container main">
+        
+        <nav>
+          <ul>
+            
+            
+
+            <li>
+            <h2>Начало работы</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/about-amp.ru.html">Что такое AMP?</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/get_started/create_page.ru.html">Создание первой страницы AMP</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li class="current">
+                  <span>Как AMP ускоряет загрузку страниц</span>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Руководства</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+                
+                
+
+                
+                
+                <li>
+                  <a href="/docs/guides/analytics_amp.ru.html">Настройка Analytics</a>
+                
+
+                
+
+                </li>
+                
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Дополнительные материалы</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+
+            <li>
+            <h2>Поддержка</h2>
+
+            <ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+        
+
+        <div class="content">
+          <!-- article -->
+          <article class="post">
+
+    <h1 class="post-title">Как AMP ускоряет загрузку страниц</h1>
+
+	<div class="post-content">
+	    <p>Благодаря объединению следующих оптимизаций страницы AMP становятся настолько быстрыми, что их загрузка происходит почти мгновенно.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">Использование только асинхронных скриптов</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">Статическое определение размеров всех ресурсов</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">Предотвращение блокировки визуализации механизмами расширений</a></li>
+  <li><a href="#javascript----" id="markdown-toc-javascript----">Устранение всех сторонних сценариев JavaScript из основного потока операций</a></li>
+  <li><a href="#css-------" id="markdown-toc-css-------">Все таблицы CSS должны быть встроенными и ограниченными по размеру</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">Переключение шрифта должно быть эффективным</a></li>
+  <li><a href="#section-4" id="markdown-toc-section-4">Сокращение пересчетов стилей</a></li>
+  <li><a href="#section-5" id="markdown-toc-section-5">Запуск анимации только с аппаратным ускорением</a></li>
+  <li><a href="#section-6" id="markdown-toc-section-6">Приоритетная загрузка ресурсов</a></li>
+  <li><a href="#section-7" id="markdown-toc-section-7">Мгновенная загрузка страниц</a></li>
+  <li><a href="#amp-" id="markdown-toc-amp-">Помогите сделать AMP быстрее</a></li>
+</ul>
+
+<p>Если вам больше нравится слушать, чем читать, в следующем видеоматериале ведущий разработчик AMP Малти Убл (Malte Ubl) представит обзор, аналогичный содержанию следующих параграфов.</p>
+
+<amp-youtube data-videoid="hVRkG1CQScA" layout="responsive" width="480" height="270">
+</amp-youtube>
+
+<h2 id="section">Использование только асинхронных скриптов</h2>
+
+<p>JavaScript – мощный инструмент,
+способный изменить практически любой аспект страницы,
+но он также может препятствовать построению модели DOM и задерживать визуализацию страницы
+(см. также документ <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">Оптимизация JavaScript для быстрой визуализации страницы</a>).
+Чтобы JavaScript не задерживал визуализацию страницы,
+AMP разрешает только асинхронное выполнение его сценариев.</p>
+
+<p>Страницы AMP не могут содержать какой-либо сценарий JavaScript, созданный их автором.
+Вместо применения JavaScript
+интерактивные возможности страницы обеспечиваются персонализированными элементами AMP.
+В этих персонализированных элементах AMP может использоваться JavaScript,
+однако в их тщательно продуманном дизайне были устранены факторы, способные снизить производительность.</p>
+
+<p>Хотя во встроенных фреймах разрешено использование сторонних сценариев JS,
+они не могут блокировать визуализацию.
+Например, если сторонний сценарий JS использует
+<a href="http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/">API с методом <code class="highlighter-rouge">document.write</code>, чрезвычайно снижающим общую производительность</a>,
+это не заблокирует визуализацию основной страницы.</p>
+
+<h2 id="section-1">Статическое определение размеров всех ресурсов</h2>
+
+<p>Размеры внешних ресурсов, таких как изображения, реклама или встроенные фреймы, должны быть установлены в HTML,
+поэтому AMP может определить размер и положение каждого элемента до загрузки ресурсов.
+AMP загружает макет страницы, не ожидая загрузки каких-либо ресурсов.</p>
+
+<p>AMP отделяет макет документа от макета ресурса.
+Для компоновки всего документа требуется лишь один запрос HTTP
+(<a href="#font-triggering-must-be-efficient">+шрифты</a>).
+Поскольку оптимизация AMP позволяет избежать пересчетов стиля и макетов в браузере,
+при загрузке ресурсов не возникает какой-либо перекомпоновки.</p>
+
+<h2 id="section-2">Предотвращение блокировки визуализации механизмами расширений</h2>
+
+<p>AMP не позволяет механизмам расширений блокировать визуализацию страницы.
+AMP поддерживает расширения для таких компонентов, как
+<a href="/docs/reference/extended/amp-lightbox.html">окна просмотра</a>,
+<a href="/docs/reference/extended/amp-instagram.html">вставки Instagram</a>,
+<a href="/docs/reference/extended/amp-twitter.html">сообщения Twitter</a> и др.
+Хотя эти расширения требуют дополнительных запросов HTTP,
+эти запросы не блокируют компоновку и визуализацию страницы.</p>
+
+<p>Любая страница, использующая персонализированный скрипт, должна сообщить системе AMP,
+что у нее впоследствии появится собственный тег.
+Например, скрипт <a href="/docs/reference/extended/amp-iframe.html"><code class="highlighter-rouge">amp-iframe</code></a>
+сообщает системе, что на странице появится тег <code class="highlighter-rouge">amp-iframe</code>.
+AMP создает область встроенного фрейма еще до того, как его содержимое станет известным:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">async</span> <span class="na">custom-element=</span><span class="s">"amp-iframe"</span> <span class="na">src=</span><span class="s">"https://cdn.ampproject.org/v0/amp-youtube-0.1.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<h2 id="javascript----">Устранение всех сторонних сценариев JavaScript из основного потока операций</h2>
+
+<p>Сторонние сценарии JS часто используют синхронную загрузку JS.
+В них также часто применяется метод <code class="highlighter-rouge">document.write</code> для загрузки других синхронных скриптов.
+Например, если у вас есть пять рекламных блоков, каждый из которых выполняет три синхронные загрузки
+с задержкой соединения на 1 секунду, то вы потеряете 18 секунд только на загрузку JS.</p>
+
+<p>Страницы AMP разрешают выполнение сторонних сценариев JavaScript, но только внутри изолированных встроенных фреймов.
+Ограничение выполнения этих сценариев встроенными фреймами не позволяет им блокировать обработку основной страницы.
+Даже когда они запускают многократные пересчеты стиля,
+их небольшие встроенные фреймы имеют очень малый размер модели DOM.</p>
+
+<p>Пересчеты стиля и макетов обычно зависят от размера модели DOM,
+поэтому пересчеты для встроенных фреймов
+выполняются гораздо быстрее аналогичных пересчетов для всей страницы.</p>
+
+<h2 id="css-------">Все таблицы CSS должны быть встроенными и ограниченными по размеру</h2>
+
+<p>Обработка таблицы CSS блокирует всю визуализацию, препятствует загрузке страницы, а ее размер имеет тенденцию к увеличению.
+В страницах AMP HTML разрешены только встроенные стили.
+Это позволяет устранить один запрос HTTP (а часто и больше) из основного потока операций визуализации
+в сравнении с большинством других веб-страниц.</p>
+
+<p>Кроме того, размер встроенной таблицы стилей не должен превышать 50 килобайт.
+Хотя этот размер достаточен для очень сложных страниц,
+он все же требует от автора страницы воздерживаться от засорения CSS.</p>
+
+<h2 id="section-3">Переключение шрифта должно быть эффективным</h2>
+
+<p>Размер веб-шрифтов обычно очень значителен, поэтому
+<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization">их оптимизация</a>
+имеет критическое значение для производительности.
+На обычной странице, которая содержит несколько синхронных скриптов и несколько внешних таблиц стилей,
+браузер подолгу ожидает их выполнения, прежде чем начать загрузку таких тяжеловесных шрифтов.</p>
+
+<p>Система AMP не выдает запросов HTTP до загрузки шрифтов.
+Это возможно лишь потому, в AMP все сценарии JS имеют атрибут async и разрешены только встроенные таблицы стилей.
+Никакие запросы HTTP не блокируют загрузку шрифтов в браузере.</p>
+
+<h2 id="section-4">Сокращение пересчетов стилей</h2>
+
+<p>Каждое уточнение какого-либо размера запускает пересчеты стилей, которые отнимают значительное время,
+поскольку браузер должен перекомпоновать всю страницу.
+В страницах AMP все операции чтения модели DOM выполняются до любых операций записи.
+Это гарантирует, что для каждого фрейма будет выполняться не более одного пересчета стилей.</p>
+
+<p>Ознакомьтесь с дополнительной информацией о влиянии пересчетов стилей и макетов на
+<a href="https://developers.google.com/web/fundamentals/performance/rendering/">скорость визуализации</a>.</p>
+
+<h2 id="section-5">Запуск анимации только с аппаратным ускорением</h2>
+
+<p>Единственным способом ускорения операций оптимизации является их запуск на графическом процессоре.
+Графический процессор имеет представление о слоях, умеет выполнять некоторые операции с этими слоями,
+может перемещать или затенять их, но он не сможет обновить макет страницы
+и передаст эту задачу браузеру, а это плохо.</p>
+
+<p>Правила для таблиц CSS, связанных с анимацией, гарантируют, что эта анимация будет выполняться с аппаратным ускорением.
+В частности, AMP разрешает выполнять анимацию и переходы только для свойств transform и opacity,
+поэтому перекомпоновка страницы не требуется.
+Ознакомьтесь с дополнительной информацией об
+<a href="https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count">использовании свойств transform и opacity для анимационных изменений</a>.</p>
+
+<h2 id="section-6">Приоритетная загрузка ресурсов</h2>
+
+<p>AMP управляет всеми загрузками ресурсов – определяет приоритетные загрузки,
+загружает только то, что действительно необходимо, и выполняет предварительное извлечение медленно загружаемых ресурсов.</p>
+
+<p>AMP оптимизирует загрузки ресурсов,
+загружая первыми те из них, которые наиболее важны на текущий момент.
+Изображения и рекламные блоки загружаются только тогда, когда пользователь может их увидеть в верхней части страницы
+или может быстро прокрутить к ним экран.</p>
+
+<p>AMP также выполняет предварительное извлечение медленно загружаемых ресурсов.
+Ресурсы загружаются как можно позже, но их предварительное извлечение выполняется при первой возможности.
+Такой способ позволяет значительно ускорить загрузку и использовать центральный процессор только тогда, когда
+ресурсы действительно показываются пользователям.</p>
+
+<h2 id="section-7">Мгновенная загрузка страниц</h2>
+
+<p>Чтобы обеспечить максимально быстрое выполнение запросов HTTP, часто используется новый <a href="http://www.w3.org/TR/resource-hints/#dfn-preconnect">API предварительного подключения</a>.</p>
+
+<p>С его помощью
+визуализация страницы может быть выполнена до того, как пользователь явно выразит свое желание перейти на нее.
+Страница может быть уже доступна в момент ее выбора пользователем,
+что создает впечатление мгновенной загрузки.</p>
+
+<p>Хотя предварительная визуализация может применяться к любому веб-контенту,
+она также может значительно повысить нагрузку на сеть и центральный процессор. Оптимизация AMP уменьшает влияние обоих этих факторов. При предварительной визуализации загружаются только те ресурсы, которые видны в верхней части страницы,
+и не отображаются компоненты, способные значительно нагрузить центральный процессор.</p>
+
+<p>Для документов AMP, выбранных для предварительной визуализации и мгновенной загрузки,
+фактически загружаются только те ресурсы, которые видны в верхней части страницы.
+Те ресурсы этих документов, которые способны значительно увеличить нагрузку на процессор (например, сторонние встроенные фреймы), не загружаются.</p>
+
+<p>Узнайте,
+<a href="https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e">почему AMP HTML не использует все преимущества сканера предварительной загрузки</a>.</p>
+
+<h2 id="amp-">Помогите сделать AMP быстрее</h2>
+<p>AMP является проектом с открытым исходным кодом.
+Нам нужна ваша помощь, чтобы сделать AMP еще быстрее.
+Узнайте, <a href="/docs/support/contribute.html">как вы можете помочь проекту</a>.</p>
+
+	</div>
+
+</article>
+
+          <!-- /article -->
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+          </div>
+        </div>
+    </footer>
+  </body>
+</html>
