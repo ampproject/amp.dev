@@ -1,6 +1,3 @@
-#flags:
-#  root_path: /about/
-
 localization:
   default_locale: en
   locales:
@@ -13,14 +10,13 @@ localization:
   - ko
   - nl
   - pl
-  - pt_br
+  - pt_BR
   - ru
   - th
   - tr
-  - zh_cn
-
+  - zh_CN
   aliases:
-      en_UK: en_GB
+    en_UK: en_GB
 
 static_dirs:
 - static_dir: /static/
@@ -34,8 +30,6 @@ static_dirs:
 
 preprocessors:
 - kind: gulp
-  build_task: "build"
-  run_task: ""
 
 deployments:
   google3:
@@ -43,7 +37,6 @@ deployments:
     out_dir: ./googledata/html/external_content/ampproject/org-www/
     keep_control_dir: no
     control_dir: ./googledata/services/g6/sites/search/amp/
-
   review:
     destination: webreview
     server: googwebreview.appspot.com
