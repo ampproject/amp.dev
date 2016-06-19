@@ -297,9 +297,9 @@ The following results in a DISALLOWED_PROPERTY_IN_ATTR_VALUE error:
 As another example,
 the following would result in an error:
 
-`<meta http-equiv=X-UA-Compatible" content="invalidfoo=edge">`
+`<meta http-equiv="X-UA-Compatible" content="invalidfoo=edge">`
 
-It should be: `<meta http-equiv=X-UA-Compatible" content="ie=edge">`.
+It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
 
 ### Invalid property value
 
@@ -331,9 +331,9 @@ The following results in a INVALID_PROPERTY_VALUE_IN_ATTR_VALUE error:
 As another example,
 the following would result in an error:
 
-`<meta http-equiv=X-UA-Compatible" content="ie=invalidfoo">`
+`<meta http-equiv="X-UA-Compatible" content="ie=invalidfoo">`
 
-It should be: `<meta http-equiv=X-UA-Compatible" content="ie=edge">`
+It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
 
 ### Missing URL
 
@@ -421,7 +421,7 @@ Currently, this error occurs if these mandatory properties are missing:
 
 They refer to expected tags:
 
-* `<meta http-equiv=X-UA-Compatible" content="ie=edge">`
+* `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
 * `<meta name=viewport content="width=device-width;minimum-scale=1">`
 
 ### Mutually exclusive attributes
