@@ -27,7 +27,7 @@ The **Google AMP Cache** can be used to serve cached AMP HTML pages.
 AMP HTML is basically HTML extended with custom AMP properties.
 The simplest AMP HTML file looks like this:
 
-[​sourcecode:html]
+[sourcecode:html]
 <!doctype html>
 <html ⚡>
  <head>
@@ -39,7 +39,7 @@ The simplest AMP HTML file looks like this:
  </head>
  <body>Hello World!</body>
 </html>
-[​/sourcecode]
+[/sourcecode]
 
 Though most tags in an AMP HTML page are regular HTML tags,
 some HTML tags are replaced with AMP-specific tags (see also

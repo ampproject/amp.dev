@@ -25,11 +25,6 @@ gulp.task('sass', function() {
     .pipe(livereload());
 });
 
-gulp.task('build_docs', function(done) {
-
-});
-
-
 gulp.task('watch', function() {
   livereload.listen();
   gulp.watch([Path.CSS_SOURCES], ['sass']);
@@ -37,4 +32,4 @@ gulp.task('watch', function() {
 
 
 gulp.task('build', ['sass']);
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass']);
