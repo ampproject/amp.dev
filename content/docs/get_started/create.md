@@ -2,9 +2,6 @@
 $title: Create Your First AMP Page
 $category: Get Started
 $order: 1
-$path: /docs/get_started/{base}.html
-$localization:
-  path: /{locale}/docs/get_started/{base}.html
 numbered: 1
 ---
 

@@ -52,7 +52,7 @@ msgstr ""
 msgid "GET STARTED"
 msgstr ""
 
-#: /content/pages/home.html /content/includes/header.yaml
+#: /content/pages/home.html
 msgid "Get Started"
 msgstr ""
 
@@ -78,6 +78,10 @@ msgstr ""
 
 #: /content/pages/home.html
 msgid "Instant. Everywhere."
+msgstr ""
+
+#: /views/base.html:30
+msgid "Menu"
 msgstr ""
 
 #: /content/pages/home.html

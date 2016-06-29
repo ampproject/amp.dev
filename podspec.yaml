@@ -28,8 +28,8 @@ static_dirs:
 - static_dir: /how-it-works/
   serve_at: /how-it-works/
 
-preprocessors:
-- kind: gulp
+#preprocessors:
+#- kind: gulp
 
 deployments:
   review:

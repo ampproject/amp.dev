@@ -3,9 +3,6 @@ $title: Create Your AMP HTML Page
 $category: Get Started
 $order: 0
 $parent: /content/docs/create_page.md
-$path: /docs/get_started/create/basic_markup.html
-$localization:
-  path: /{locale}/docs/get_started/create/basic_markup.html
 ---
 
 The following markup is a decent starting point or boilerplate.
