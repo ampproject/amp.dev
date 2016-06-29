@@ -19,12 +19,12 @@
 <nav>
 
   <ul>
-    {% for category, docs in g.categories('docs') %}
+    {% for category, docs in g.categories('docs', locale=doc.locale) %}
     <li>
       <h2>{{ category }}</h2>
 
       <ul>
-      {% for item in docs if not (item.parent or item.locale != doc.locale) %}
+      {% for item in docs if not (item.parent) %}
 
         {% if doc == item %}
         <li class="current">
