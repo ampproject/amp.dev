@@ -25,7 +25,7 @@ The purpose of this document is to help you better understand
 and fix any validation errors you encounter
 when you [validate your AMP pages](/docs/guides/validate.html).
 For a complete overview of the validation errors,
-see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
+see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 {% include toc.html %}
 
@@ -60,7 +60,7 @@ The following tags must be present in all AMP docs:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-These mandatory tags include a `mandatory: true` field in the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii">AMP validator spec</a>;
+These mandatory tags include a `mandatory: true` field in the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP validator spec</a>;
 they are also referenced in the [AMP specification](/docs/reference/spec.html).
 
 ### Tag required by another tag is missing
@@ -129,7 +129,7 @@ broadly defines the set of disallowed tags.
 </table>
 
 Mandatory attributes for AMP tags are defined within
-[AMP's validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
+[AMP's validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 Simply search for the tag,
 view the listed attributes,
 and check for `mandatory: true`.
@@ -184,7 +184,7 @@ to see if the attribute requires HTTPS.
 Attributes are whitelisted, so there is no definitive list of all disallowed attributes.
 To check the supported attributes for each specific tag,
 search for HTML tag, and then `attrs`
-in the [AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
+in the [AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 In addition to a whitelist of specific attributes for each tag,
 all AMP tags can use any of the attributes white-listed under `$GLOBAL_ATTRS`;
@@ -256,7 +256,7 @@ Specific CSS data has been blacklisted
 to validate essential CSS AMP rules.
 
 The following is the list of blacklisted CSS data
-(see also [`blacklisted_cdata_regex` in the AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)):
+(see also [`blacklisted_cdata_regex` in the AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("CSS -amp- class name prefix")
 * `"!important"`
@@ -548,7 +548,7 @@ which may not be nested under another <code>template</code> tag.
 </table>
 
 Mandatory descendants are defined in the
-[AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii)
+[AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)
 as `mandatory_ancestor`.
 
 The error occurs when the following tags
@@ -639,7 +639,7 @@ as default values are assumed.
 
 Each AMP tag has a ist of `supported_layouts`,
 as defined in the
-[AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
+[AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 The validator will throw errors for unsupported layouts,
 and it will check validation rules for the pre-defined layout.
 
@@ -733,7 +733,7 @@ making it easier to fix that rule.
 This error occurs when you don't specify a layout for the AMP tag,
 and the implied layout (based on width, height, and sizes) isn't supported.
 Check the `supported_layout` values for the tag
-in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
+in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
@@ -791,7 +791,7 @@ Disallowed attributes for layout types are described in the
 This error occurs when the specified layout
 for the tag isn't supported.
 Check the `supported_layout` values for the tag
-in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
+in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
@@ -995,4 +995,4 @@ It's only a warning; AMP documents with warnings continue to be valid.
 
 Identify deprecated attributes for each AMP tag
 by searching for `deprecation` in the
-[AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator.protoascii).
+[AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
