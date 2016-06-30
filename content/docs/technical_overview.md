@@ -68,7 +68,7 @@ For example, the [`amp-iframe`](/docs/reference/extended/amp-iframe.html)
 script tells the system that there will be an `amp-iframe` tag.
 AMP creates the iframe box before it even knows what it will include:
 
-[​sourcecode:html]
+[sourcecode:html]
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
