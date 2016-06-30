@@ -1,4 +1,4 @@
-        
+{% strip %}
         <nav>
           <ul>
             {% for collection in site.collections %}
@@ -32,9 +32,9 @@
                     {% capture slug2 %}{{ nested_post.url | split: "/"   | last }}{% endcapture %}
                     {% capture nested_path2 %}{{ nested_post.url | remove: slug2 | remove: collection.label | remove: "/" }}{% endcapture %}
 
-                    
+
                     {% if nested_path2 == post.folder %}
-                    
+
                     {% if page.url == nested_post.url %}
                     <li class="current">
                       <span>{{ nested_post.title }}</span>
@@ -45,7 +45,7 @@
                     </li>
                     {% endif %}
                     {% endif %}
-                    
+
                   {% endunless %}
                   {% endfor %}
                   {% if post.numbered %}</ol>{% else %}</ul>{% endif %}
@@ -62,4 +62,4 @@
             {% endfor %}
           </ul>
         </nav>
-        
+{% endstrip %}
