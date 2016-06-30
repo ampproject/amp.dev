@@ -10,6 +10,17 @@ locales:
       guides: "Guides"
       reference: "Reference"
       support: "Support"
+  ar:
+    menu:
+      faq: "الأسئلة الشائعة"
+      blog: "المدونة"
+      github: "GitHub"
+      docs: "المستندات"
+    collections:
+      get_started: "البدء"
+      guides: "الدلائل"
+      reference: "المراجع"
+      support: "الدعم"
   de:
     menu:
       faq: "FAQ"

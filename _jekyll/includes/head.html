@@ -17,7 +17,7 @@
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 
-    <style amp-custom>{% capture include_to_sassify %}{% include amp-custom.scss %}{% endcapture %}
+    <style amp-custom>{% if page.locale == "ar" %}{% capture include_to_sassify %}{% include amp-custom-rtl.scss %}{% endcapture %}{% else %}{% capture include_to_sassify %}{% include amp-custom.scss %}{% endcapture %}{% endif %}
     {{ include_to_sassify | scssify }}    </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
   </head>

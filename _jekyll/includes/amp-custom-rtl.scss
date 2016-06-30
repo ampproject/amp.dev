@@ -1,0 +1,58 @@
+$color-text: #333;
+$color-link: #0360B5;
+
+$color-blue: #4b91ef;
+$color-bg: #fff;
+$color-green: #0F9D58;
+$color-green-ripple: rgba(71, 149, 88, .25);
+
+$color-green-alt: #2c655a;
+$color-green-light: #9be34e;
+$color-cyan: #00bcd4;
+$color-cyan-ripple: rgba(80, 183, 206, .25);
+$color-grey: #ddd;
+
+$color-hover-bg: #F5F5F5;
+
+$color-lightgrey: #f5f5f5;
+$color-lightgrey-transparent: rgba(100, 0, 100, .025);
+$color-medgrey: #777;
+$color-black-95: #333;
+$color-black-87: #212121;
+$color-black-54: #757575;
+$color-darkgrey: #797c82;
+$color-teal: #03bcd4;
+$color-white: #fff;
+$color-lightblue: #3ab3eb;
+$color-verydarkblue: #1b1464;
+$color-brightblue: #29aae3;
+$color-midblue: #147bc1;
+
+$color-yellow: #f8c144;
+$color-orange: #f68c1e;
+$color-yellow-ripple: rgba(246, 191, 68, .25);
+
+$font-family: Roboto, verdana, arial, sans-serif;
+$font-size-xs: 14px;
+$line-height-xs: 22px;
+
+$margin: 20px;
+
+$container-size: 1000px;
+
+$mobile-breakpoint: 870px;
+$mobile-baby-breakpoint: 320px;
+$tablet-breakpoint: 1024px;
+$tablet-portrait-breakpoint: 768px;
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "mixins",
+        "responsive",
+        "base-rtl",
+        "header-rtl",
+        "content-rtl",
+        "syntax-highlighting",
+        "footer-rtl"
+;

@@ -1,0 +1,145 @@
+/**
+ * Page content
+ */
+.main {
+	display: -webkit-flex;
+	display: flex;
+	padding-top: 40px;
+	padding-bottom: 30px;
+
+	h1 {
+		margin-top: 0;
+	}
+
+    h1,h2,h3,h4,h5 {
+        &:before {
+            display: block;
+            content: " ";
+            margin-top: -106px;
+            height: 106px;
+            visibility: hidden;
+        }
+    }
+
+	.content {
+
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
+        transition: all 0.25s ease;
+        transform: translate(0, 0);
+        will-change: transform;
+        word-break: break-word;
+        min-width: 0;
+
+        &.menu-open {
+            transform: translate(-243px, 0);
+        }
+
+		ul, ol {
+			margin-right: 40px;
+		}
+	}
+
+    .content {
+
+      /* These are technically the same, but use both */
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+
+      -ms-word-break: break-all;
+      /* This is the dangerous one in WebKit, as it breaks things wherever */
+      word-break: break-all;
+      /* Instead use this non-standard one: */
+      word-break: break-word;
+
+      /* Adds a hyphen where the word breaks, if supported (No Blink) */
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+
+    }
+
+    amp-img,
+    amp-youtube,
+    amp-iframe {
+        margin: 1em 0;
+    }
+
+}
+
+nav {
+    border-left: 2px solid #E6E6E6;
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: -20px;
+    width: 200px;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    background: #F7F7F7;
+    margin-top: -40px;
+    margin-bottom: -30px;
+
+    h2 {
+        font-size: 20px;
+        color: #111;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    ul, ol {
+
+    	li {
+    		margin-bottom: 10px;
+    		list-style: none;
+
+    		ul, ol {
+    			padding-right: 0;
+    			margin-right: 20px;
+    			margin-bottom: 1.2em;
+    			li {
+    				margin-bottom: 6px;
+                    font-size: 14px;
+    				list-style: square;
+                    color: #CECECE;
+
+                    &.current {
+                        color: #222;
+                    }
+
+    				span {
+    					font-weight: 400;
+                        color: #222;
+    				}
+    				ul, ol {
+    					margin-bottom: 0;
+                        margin-right: 0;
+                        padding-right: 20px;
+                        border-top: 1px solid #eee;
+                        padding-top: 3px;
+                        padding-bottom: 0px;
+    				}
+                    ol li {
+                        list-style: decimal;
+                    }
+    			}
+    		}
+    	}
+
+    }
+
+}
+
+@include max-screen($mobile-breakpoint) {
+    .container nav {
+        display: none;
+    }
+
+    amp-sidebar nav {
+        margin-left: 0;
+        border-left: none;
+        margin-top: 0;
+        padding-right: 36px;
+    }
+
+}
