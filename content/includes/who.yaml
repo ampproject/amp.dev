@@ -137,6 +137,7 @@ asia:
 latin_america:
   - Agência Brasil
   - Basket4us.com
+  - Chowhound
   - Cybercook
   - Diário 24 Horas
   - EBC
@@ -264,6 +265,7 @@ tech_platform:
 
 cms:
   - Drupal
+  - Hatena
   - Marfeel
   - Wordpress
 
@@ -273,3 +275,4 @@ video:
   - Vimeo
   - Vine
   - YouTube
+
