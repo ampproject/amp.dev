@@ -1,0 +1,138 @@
+.home {
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .hero {
+    background-color: $color-grey-100;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/static/img/background.jpg');
+    position: relative;
+
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($color-black-95, .3);
+      background: -webkit-linear-gradient(left top, rgba($color-black-95, .8), rgba($color-black-95, .1));
+
+      @include max-screen($mobile-breakpoint) {
+        width: 100%;
+        background: rgba($color-black-95, .7);
+      }
+    }
+
+    @include max-screen($mobile-medium-breakpoint) {
+      background-image: url('/static/img/background-mobile.jpg');
+    }
+
+    @include min-screen($mobile-breakpoint) {
+      min-height: 420px;
+      padding-bottom: 4px;
+      padding-top: 134px;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    h1 {
+      color: $color-white;
+      font-weight: 100;
+
+      br {
+        display: none;
+
+        @include max-screen($mobile-breakpoint) {
+          display: block;
+        }
+      }
+    }
+
+    .hero-phone {
+      position: absolute;
+      right: 0;
+      top: -11%;
+      width: 360px;
+
+      @include max-screen($tablet-breakpoint) {
+        right: 0;
+      }
+    }
+
+    .video-div {
+      position: absolute;
+      right: 21.7%;
+      top: 9.25%;
+
+    }
+
+    .intro {
+      color: $color-white;
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 510px;
+      padding-bottom: 45px;
+
+      p {
+        margin-top: 0;
+      }
+
+      @include max-screen($mobile-breakpoint) {
+        margin-bottom: 15px;
+      }
+    }
+
+    .go-button {
+      margin-top: 40px;
+      font-weight: 500;
+    }
+  }
+
+}
+
+.section-computer {
+  padding: 0;
+
+  .computer-wrapper {
+    background-color: $color-midblue;
+    margin-bottom: 1em;
+
+    .computer-interface {
+      display: block;
+      margin: 0 auto;
+      max-width: 25%;
+      padding: 5em 0 2.5em;
+    }
+  }
+}
+
+.image-row {
+  padding: 2em 0;
+
+  @include max-screen($mobile-breakpoint) {
+    padding: 0;
+  }
+}
+
+.partner-image {
+  @include max-screen($mobile-breakpoint) {
+    padding: 1.5em;
+  }
+}
+
+.publisher-image {
+  margin-left: 4%;
+}
+
+.video-div {
+  background-color: #fff;
+}

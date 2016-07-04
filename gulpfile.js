@@ -9,7 +9,7 @@ var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 
 var Path = {
-  CSS_SOURCES: './source/sass/*.scss',
+  CSS_SOURCES: './source/sass/**/*.scss',
   CSS_OUT_DIR: './static/css/'
 };
 
@@ -19,7 +19,7 @@ gulp.task('sass', function() {
     .pipe(plumber())
     .pipe(sass({
         outputStyle: 'compressed'
-    }))
+    }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest(Path.CSS_OUT_DIR))
     .pipe(livereload());

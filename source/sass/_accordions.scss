@@ -1,0 +1,109 @@
+.accordion-slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+
+}
+
+.accordion {
+  width: 100%;
+  line-height: 1.5;
+  position: initial;
+
+  &__section {
+    padding: 0;
+    border-bottom: 1px solid $color-grey-200;
+
+  }
+
+  &__header {
+    background-color: transparent;
+    border: none;
+    padding: 14px 0;
+    transition: .15s;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: $color-grey-50;
+    }
+
+    &:active {
+      transition: 0.3s ease-out;
+      background-color: $color-grey-100;
+    }
+  }
+
+  &__title {
+    color: $color-midblue;
+    margin: 0;
+    position: relative;
+
+    // TODO the margin has been over-specified on the home.scss styles.
+    .home & {
+      margin-bottom: 0;
+      @include max-screen($mobile-breakpoint) {
+        font-size: 30px;
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 12px;
+      height: 12px;
+      background: transparent url(/static/img/cheveron-down.svg) no-repeat 50% 50%;
+
+      transition: 0.15s ease;
+      transform: rotateX(0deg);
+
+      .accordion__header:active & {
+        transition: 0.3s ease-out;
+        transform: rotateX(45deg);
+      }
+
+      [expanded] .accordion__header:active & {
+        transform: rotateX(235deg);
+      }
+
+    }
+
+    [expanded] &:after {
+      transform: rotateX(180deg);
+    }
+  }
+
+  &__content {
+    font-size: 16px;
+    color: $color-grey-700;
+    margin: 0 0 #{$margin * 2};
+  }
+
+  &__figure {
+    padding: #{$margin * 2} #{$margin * 2} 0;
+    margin: 0 0 $margin;
+    background-color: $color-grey-200;
+
+    amp-img {
+      max-width: 300px;
+      margin: auto;
+    }
+
+    @include max-screen($tablet-portrait-breakpoint) {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+  }
+
+  &__text {
+    margin-top: $margin;
+    max-width: 34em;
+  }
+
+}

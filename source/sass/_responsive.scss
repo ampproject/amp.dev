@@ -1,26 +1,65 @@
-@mixin max-screen($max-width) {
-  @media only screen and (max-width: $max-width) {
-    @content;
+
+
+.desktop-up,
+.desktop-only {
+  display: none;
+  visibility: hidden;
+  @include min-screen($mobile-breakpoint) {
+    display: block;
+    visibility: visible;
   }
 }
 
-@mixin min-screen($min-width) {
-  @media only screen and (min-width: $min-width + 1px) {
-    @content;
+.tablet-up {
+  display: none;
+  visibility: hidden;
+  @include min-screen($tablet-portrait-breakpoint) {
+    display: block;
+    visibility: visible;
   }
 }
 
-@mixin min-max-screen($min-width, $max-width) {
-  @media only screen and (min-width: $min-width + 1px) and (max-width: $max-width) {
-    @content;
+.tablet-down {
+  display: none;
+  visibility: hidden;
+  @include max-screen($tablet-portrait-breakpoint) {
+    display: block;
+    visibility: visible;
   }
 }
 
-@mixin retina-screen($density:2) {
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: $density),
-  only screen and (min-device-pixel-ratio: $density),
-  only screen and (min-resolution: 1dppx * $density) {
-    @content;
+.mobile-down,
+.mobile-only {
+  display: none;
+  visibility: hidden;
+  @include max-screen($mobile-breakpoint) {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.mobile-show {
+  @include max-screen($mobile-breakpoint) {
+    display: block;
+  }
+}
+
+.mobile-hide {
+  @include max-screen($mobile-breakpoint) {
+    display: none;
+  }
+}
+
+.tablet-show {
+
+  @include max-screen($tablet-breakpoint) {
+    display: block;
+  }
+}
+
+.tablet-hide {
+
+  @include max-screen($tablet-breakpoint) {
+    display: none;
   }
 }

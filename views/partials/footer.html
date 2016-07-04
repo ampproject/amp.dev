@@ -2,13 +2,15 @@
   <div class="container">
     <div class="row">
       <div class="twelve columns">
-        <a href="{{_(footer.fields.github.link)}}">
-          <amp-img layout=fixed
-              height=25
-              width=25
-              src="{{_(footer.fields.github.img)}}"
-              alt="" class="desaturate footer-image">
+        <a href="{{footer.fields.github.link}}" class="footer-link">
+          <amp-img class="footer-image"
+              layout=fixed
+              height=30
+              width=30
+              src="{{footer.fields.github.img}}"
+              alt="{{_(footer.fields.github.text)}}">
           </amp-img>
+          <span>{{_(footer.fields.github.text)}}</span>
         </a>
       </div>
 

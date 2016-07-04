@@ -1,5 +1,5 @@
-header {
-  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 14px;
+.header {
+  box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.15);
   font-size: 14px;
   font-weight: 300;
   transform: translateZ(0);
@@ -8,8 +8,9 @@ header {
 
   .container {
 
-    @include min-screen($tablet-breakpoint) {
-      padding: 0;
+    @include max-screen($mobile-breakpoint) {
+      // aligns the hamburger
+      padding-right: 18px;
     }
   }
 
@@ -73,110 +74,141 @@ header {
     padding: 0 10px 5px;
 
   }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+  }
   .left-nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 
-    float: left;
-    font-size: 14px;
+    font-size: 20px;
     letter-spacing: 0.04em;
     margin-left: 0;
+    font-weight: 300;
 
     @include max-screen($mobile-breakpoint) {
       justify-content: flex-start;
       flex: 1 1 auto;
-      padding: 0 0 5px 0;
       text-align: left;
       width: auto;
+      font-size: 15px;
     }
 
     .header-title {
       color: $color-midblue;
       font-family: Roboto, verdana, arial, sans-serif;
-      padding: 15px 10px 15px 50px;
-      margin: 10px 0;
+      padding: 10px 10px 10px 50px;
+      margin: 18px 0;
       width: auto;
       text-transform: none;
       white-space: nowrap;
-
-      @include max-screen($mobile-breakpoint) {
-        width: auto;
-        padding: 0 0 0 50px;
-        line-height: 41px;
-        margin: 6px 0;
-      }
 
       background-image: url('/static/img/logo-blue.svg');
       background-repeat: no-repeat;
       background-size: 40px 40px;
       background-position: center left;
+
+      @include max-screen($mobile-breakpoint) {
+        width: auto;
+        padding: 10px 0 10px 40px;
+        margin: 14px 0;
+        background-size: 30px 30px;
+      }
     }
 
   }
 
-  .clearfix {
-      @include max-screen($mobile-breakpoint) {
-        display: flex;
-        flex-wrap: wrap-reverse;
-      }
-  }
-
   .alt {
-    padding: 15px 0;
+    padding: 00;
     text-align: right;
 
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
 
     &.right {
       letter-spacing: 0.04em;
-      font-size: 14px;
-
-      @include max-screen($mobile-breakpoint) {
-        text-align: center;
-        flex: 0;
-        padding: 0 0 10px;
-        font-size: 12px;
-        display: inline-block;
-      }
+      font-size: 15px;
     }
   }
 
   .tab {
-    color: $color-midblue;
-    display: inline-block;
-    padding: 10px 12px;
+    color: $color-grey-800;
+    padding: 6px;
+    margin: 0 4px;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: 400;
+
+    transition: .1s ease color;
 
     @include max-screen($mobile-breakpoint) {
       margin-left: auto;
       padding: 10px 12px;
     }
+
+    &.desktop {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 3px;
+        background-color: $color-midblue;
+
+        transition: .1s ease opacity;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:hover,
+      &.is-active {
+        color: $color-midblue;
+
+        &:after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
   }
 
   .tab.hamburger {
-    font-size: 50px;
-    line-height: 60px;
     background: none;
     border: none;
-    margin-top: 0;
+    margin: 0;
     padding: 0;
-    position: relative;
-    top: 0;
     display: none;
+    pointer: cursor;
+    align-self: center;
   }
 
   @include max-screen($mobile-breakpoint) {
-      .tab.desktop,
-      .desktop {
-        display: none;
-      }
-      .tab.hamburger {
-        display: inline-block;
-      }
+    .tab.desktop,
+    .desktop {
+      display: none;
+    }
+    .tab.hamburger {
+      display: inline-block;
+
+
+      background-image: url("/static/img/hamburger.svg");
+      background-repeat: no-repeat;
+      background-size: 30px 24px;
+      background-position: center center;
+
+      width: 40px;
+      height: 40px;
+    }
   }
 
   @include max-screen($mobile-baby-breakpoint) {

@@ -2,13 +2,13 @@
 
   border-left: 3px solid $color;
 
-  &::after {
-    content: $number+'';
+  &:after {
+    content: $number + '';
     border: 3px solid $color;
   }
 
   li {
-    &::before {
+    &:before {
       background: $color;
     }
   }
@@ -16,24 +16,17 @@
 }
 
 
-body.roadmap {
+.roadmap {
 
-  ul, ol {
-    padding-left: 40px;
-  }
-
-  .stages li {
-    list-style-type: none;
-  }
-
-  h2 {
+  h1 {
     margin-bottom: 1em;
-    padding-left: 12px;
+    margin-top: 0;
     small {
       display: block;
       color: #949494;
-      font-size: 24px;
+      font-size: 14px;
       padding-top: 6px;
+      font-weight: 300;
     }
   }
 
@@ -70,8 +63,15 @@ body.roadmap {
     padding-left: 0;
   }
 
+  .content {
+    padding-top: 60px;
+    ul, ol {
+      padding-left: 40px;
+    }
+  }
+
   .about {
-      margin: 2em 12px;
+      margin: 2em 0;
       ul {
         margin: 0;
         list-style-type: square;
@@ -153,6 +153,7 @@ body.roadmap {
       padding-top: 28px;
       position: relative;
       flex: 1 1 100%;
+      list-style-type: none;
 
       &:last-child {
         padding-bottom: 1em;
@@ -210,19 +211,6 @@ body.roadmap {
     .stage-5 { @include roadmap-stage(#7CB342, 5); }
     .stage-6 { @include roadmap-stage(#689F38, 6); }
 
-    /*
-
-    How 'bout blue instead?
-
-    .stage-0 { @include roadmap-stage(#E3F2FD, 0); }
-    .stage-1 { @include roadmap-stage(#BBDEFB, 1); }
-    .stage-2 { @include roadmap-stage(#90CAF9, 2); }
-    .stage-3 { @include roadmap-stage(#64B5F6, 3); }
-    .stage-4 { @include roadmap-stage(#42A5F5, 4); }
-    .stage-5 { @include roadmap-stage(#2196F3, 5); }
-    .stage-6 { @include roadmap-stage(#1E88E5, 6); }
-    */
-
     ul {
       margin: 0;
       padding: 0;
@@ -234,13 +222,7 @@ body.roadmap {
 
   /* Them responsive awesomeness */
 
-  @include max-screen($tablet-breakpoint) {
-    .container {
-      padding: 0;
-    }
-  }
-
-  @include max-screen(500px) {
+  @include max-screen(640px) {
     .workstream-flex {
       flex-wrap: wrap;
     }

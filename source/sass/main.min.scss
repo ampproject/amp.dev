@@ -3,6 +3,7 @@
 @import '_responsive.scss';
 
 @import '_global.scss';
+@import '_sections.scss';
 @import '_header.scss';
 @import '_content.scss';
 @import '_nav.scss';
@@ -10,11 +11,15 @@
 @import '_lang_switcher.scss';
 @import '_syntax_highlighting.scss';
 
-@import '_contact.scss';
-@import '_home.scss';
-@import '_blog-section.scss';
-
-@import '_who.scss';
-@import '_roadmap.scss';
+@import '_blog.scss';
 @import '_cards.scss';
+@import '_boxes.scss';
+@import '_image-grid.scss';
+@import '_accordions.scss';
+@import '_lightbox.scss';
 @import '_footer.scss';
+
+@import 'pages/_contact.scss';
+@import 'pages/_home.scss';
+@import 'pages/_who.scss';
+@import 'pages/_roadmap.scss';

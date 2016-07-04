@@ -2,68 +2,57 @@
  * Page content
  */
 .main {
-	display: -webkit-flex;
 	display: flex;
-	padding-top: 40px;
-	padding-bottom: 30px;
+  align-items: stretch;
 
 	h1 {
 		margin-top: 0;
 	}
 
-    h1,h2,h3,h4,h5 {
-        &:before {
-            display: block;
-            content: " ";
-            margin-top: -106px;
-            height: 106px;
-            visibility: hidden;
-        }
-    }
-
 	.content {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    transition: all 0.25s ease;
+    transform: translate(0, 0);
+    will-change: transform;
+    word-break: break-word;
+    min-width: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
-        flex-grow: 1;
-        -webkit-flex-grow: 1;
-        transition: all 0.25s ease;
-        transform: translate(0, 0);
-        will-change: transform;
-        word-break: break-word;
-        min-width: 0;
-
-        &.menu-open {
-            transform: translate(-243px, 0);
-        }
+    &.menu-open {
+        transform: translate(-243px, 0);
+    }
 
 		ul, ol {
 			margin-left: 40px;
 		}
 	}
 
-    .content {
+  .content {
 
-      /* These are technically the same, but use both */
-      overflow-wrap: break-word;
-      word-wrap: break-word;
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 
-      -ms-word-break: break-all;
-      /* This is the dangerous one in WebKit, as it breaks things wherever */
-      word-break: break-all;
-      /* Instead use this non-standard one: */
-      word-break: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
 
-      /* Adds a hyphen where the word breaks, if supported (No Blink) */
-      -ms-hyphens: auto;
-      -moz-hyphens: auto;
-      -webkit-hyphens: auto;
-      hyphens: auto;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 
-    }
+  }
 
-    amp-img,
-    amp-youtube,
-    amp-iframe {
-        margin: 1em 0;
-    }
+  amp-img,
+  amp-youtube,
+  amp-iframe {
+      margin: 1em 0;
+  }
 
 }
