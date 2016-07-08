@@ -1,18 +1,27 @@
-AMP Project Documentation
+AMPProject.org
 =========================
 
-The official documentation for the AMP Project, including AMP JS,
-  AMP HTML and more.
+You're looking at source code of the official website of the AMP Project. Even
+if you don't plan on contributing, explore how we've built the site for a good
+example at how to build a canonical, responsive standalone AMP site.
 
 How to build the site
 ---------------------
 
-Install Grow and npm dependencies:
+Install [Grow](http://grow.io) and npm dependencies:
 
 ```sh
 $ curl https://install.growsdk.org | bash
 $ npm install
 ```
+
+Get a Github client id and secret:
+
+Out of the box, the reference docs are not bundled with the rest of the documentation. We'll fetch them via Github, and the only thing you have to do is the following:
+
+  1. Register for a Github application [here](https://github.com/settings/applications/new)
+  2. Find the client id and secret
+  3. In your shell, export the id as `AMP_DOC_ID` and the secret as `AMP_DOC_SECRET`
 
 ### Develop
 
@@ -31,18 +40,7 @@ $ grow build
 $ grow deploy
 ```
 
-This will generate a static, complete build of the site into the **_site* folder.
-
-### Import the reference docs
-
-Out of the box, the reference docs are not bundled with the rest of the documentation. To pull them in (automatically from the amphtml github repo), either call build above, or manually do the following:
-
-```sh
-$ cd scripts
-$ ./import_docs.js {{github client secret }}
-```
-
-You'll need to register for a Github application [here](https://github.com/settings/applications/new) to get a client id and secret you can use for authentication. When you're done, open the file `import_reference_docs.js` and modify line 15 to point to your new client id, then pass in the client secret as argument, like shown above (we'll make this a little easier in the future).
+This will generate a static, complete build of the site into the **build* folder.
 
 Support
 -------
@@ -55,6 +53,15 @@ submitting a pull request through GitHub.
 
 License
 -------
+
+All image and audio files except in folders "source/img/partners",
+"source/img/publishers" and "source/img/quotes" (including *.png, *.jpg, *.svg,
+*.mp3, *.wav and *.ogg) are licensed under the CC-BY-NC license. Images in the
+excluded folders are not licensed.
+
+All other files are licensed under the Apache 2 license.
+
+- - -
 
 Copyright 2015 Google, Inc.
 

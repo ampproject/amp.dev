@@ -2,16 +2,17 @@
 
 var github = require('octonode');
 var fs = require('fs');
-var secret = process.argv[2] || process.env.AMP_DOC_SECRET;
+var clientSecret = process.argv[2] || process.env.AMP_DOC_SECRET;
+var clientId = process.argv[3] || process.env.AMP_DOC_ID;
 
-if(!secret) {
-	console.error("This script requires a github app secret to run.");
+if(!clientSecret || !clientId) {
+	console.error("This script requires a github id and app secret to run. Export them in your shell as AMP_DOC_ID and AMP_DOC_SECRET.");
 	process.exit(1);
 }
 
 var client = github.client({
-  id: '96393b5b98b18d10aec2',
-  secret: secret
+  id: clientId,
+  secret: clientSecret
 });
 var ghrepo = client.repo('ampproject/amphtml');
 
