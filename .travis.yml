@@ -2,8 +2,9 @@ language: node_js
 node_js:
 - node
 cache: pip
+sudo: required
 install:
-- pip install grow
+- pip install grow --user $USER
 - npm install -g gulp
 - npm install
 script:
