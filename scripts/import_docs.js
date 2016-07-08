@@ -51,6 +51,11 @@ function savePage(config, callback) {
         extended += "\n  locales:";
     }
 
+	// special case for amp-mustache, needs to be escaped
+	if (/mustache/.test(config.title)) {
+		config.content = "{% raw %}" + config.content + "{% endraw %}";
+	}
+
 	var frontMatter = "---\n$title: " + config.title + "\n$order: " + (config.order || 0) + "\n$category: Reference" + extended + "\n---\n";
 	fs.writeFile(config.destination, frontMatter + config.content, callback);
 }

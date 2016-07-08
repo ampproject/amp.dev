@@ -8,7 +8,7 @@ $localization:
   path: /{locale}/docs/reference/extended/amp-mustache.html
   locales:
 ---
-
+{% raw %}
 <!---
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
@@ -92,3 +92,4 @@ impossible to specify `{{&var}}` expressions - they will always be escaped as `{
 ## Validation
 
 See [amp-mustache rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/0.1/validator-amp-mustache.protoascii) in the AMP validator specification.
+{% endraw %}
