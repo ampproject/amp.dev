@@ -1,10 +1,6 @@
 var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var del = require('del');
 var exec = require('child_process').exec;
 var gulp = require('gulp');
-var git = require('gulp-git');
-var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 

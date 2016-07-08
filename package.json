@@ -2,14 +2,13 @@
   "name": "Amp",
   "private": true,
   "devDependencies": {
-    "del": "^2.2.0",
+    "feedparser": "^1.1.4",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
-    "gulp-concat": "^2.5.2",
-    "gulp-git": "^1.6.0",
     "gulp-livereload": "^3.8.1",
-    "gulp-plumber": "^1.0.0",
     "gulp-sass": "^2.0.4",
-    "octonode": "^0.7.6"
+    "moment": "^2.14.1",
+    "octonode": "^0.7.6",
+    "request": "^2.72.0"
   }
 }
