@@ -6,3 +6,4 @@
 ^static/
 _reference/*
 node_modules
+build
