@@ -32,11 +32,6 @@ preprocessors:
 - kind: gulp
 
 deployments:
-  google3:
-    destination: local
-    out_dir: ./googledata/html/external_content/ampproject/org-www/
-    keep_control_dir: no
-    control_dir: ./googledata/services/g6/sites/search/amp/
   review:
     destination: webreview
     server: googwebreview.appspot.com

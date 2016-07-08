@@ -5,11 +5,12 @@ cache:
   pip: true
   directories:
   - node_modules # NPM packages
-  - $(npm config get prefix)/bin/grunt-cli
+  - $(npm config get prefix)/bin/gulp
+  - $(npm config get prefix)/bin/firebase
 install:
 - pip install grow --user $USER
-- npm list -g gulp --depth=0 || npm install -g gulp
-- npm list -g firebase-tools --depth=0 || npm install -g firebase-tools
+- npm install -g gulp
+- npm install -g firebase-tools
 - npm install
 script:
 - grow build
