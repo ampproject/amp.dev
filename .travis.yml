@@ -2,11 +2,12 @@ language: node_js
 node_js:
 - node
 cache:
-  pip: true
   directories:
   - node_modules # NPM packages
   - $(npm config get prefix)/bin/gulp
   - $(npm config get prefix)/bin/firebase
+  - $HOME/.cache/pip
+  - /home/travis/.local/bin
 install:
 - pip install grow --user $USER
 - npm install -g gulp
