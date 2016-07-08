@@ -2,9 +2,7 @@
 !_reference/validation_errors.md
 *.mo
 .DS_Store
-.jekyll-metadata
 .sass-cache
 ^static/
 _reference/*
-_site
 node_modules
