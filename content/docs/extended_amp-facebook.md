@@ -1,6 +1,6 @@
 ---
 $title: amp-facebook
-$order: 11
+$order: 13
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-facebook.html

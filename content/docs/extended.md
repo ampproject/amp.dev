@@ -28,6 +28,7 @@ Current list of extended components:
 | --------- | ----------- |
 | [`amp-access`](extended/amp-access.html) | Provides AMP paywall and subscription support.  |
 | [`amp-accordion`](extended/amp-accordion.html) | Provides a way for viewers to have a glance at the outline of the content and jump to a section of their choice at will. |
+| [`amp-ad`](extended/amp-ad.html) | Container to display an ad. |
 | [`amp-analytics`](extended/amp-analytics.html) | Captures analytics data from an AMP document. |
 | [`amp-anim`](extended/amp-anim.html) | Manages an animated image, typically a GIF. |
 | [`amp-audio`](extended/amp-audio.html) | Replaces the HTML5 `audio` tag. |
@@ -36,6 +37,7 @@ Current list of extended components:
 | [`amp-carousel`](extended/amp-carousel.html) | Displays multiple similar pieces of content along a horizontal axis. |
 | [`amp-dailymotion`](extended/amp-dailymotion.html) | Displays a [Dailymotion](https://www.dailymotion.com) video. |
 | [`amp-dynamic-css-classes`](extended/amp-dynamic-css-classes.html) | Adds several dynamic CSS class names onto the HTML element. |
+| [`amp-embed`](extended/amp-embed.html) | An alias to the `amp-ad` tag. |
 | [`amp-facebook`](extended/amp-facebook.html) | Displays a Facebook post or video. |
 | [`amp-fit-text`](extended/amp-fit-text.html) | Expands or shrinks font size to fit the content within the space given. |
 | [`amp-font`](extended/amp-font.html) | Triggers and monitors the loading of custom fonts. |
@@ -49,6 +51,7 @@ Current list of extended components:
 | [`amp-lightbox`](extended/amp-lightbox.html) | Allows for a “lightbox” or similar experience. |
 | [`amp-list`](extended/amp-list.html) | Dynamically downloads data and creates list items using a template. |
 | [`amp-mustache`](extended/amp-mustache.html) | Allows rendering of [`Mustache.js`](https://github.com/janl/mustache.js/) templates. |
+| [`amp-o2-player`](extended/amp-o2-player.html) | Displays a AOL O2Player. |
 | [`amp-pinterest`](extended/amp-pinterest.html) | Displays a Pinterest widget or Pin It button. |
 | [`amp-reach-player`](extended/amp-reach-player.html) | Displays a [Beachfront Reach](https://beachfrontreach.com/) video player. |
 | [`amp-sidebar`](extended/amp-sidebar.html) | Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. |

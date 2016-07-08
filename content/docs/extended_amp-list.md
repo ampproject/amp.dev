@@ -1,6 +1,6 @@
 ---
 $title: amp-list
-$order: 23
+$order: 25
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-list.html

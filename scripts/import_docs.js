@@ -85,7 +85,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 // Download the specification
 downloadPage("spec/amp-html-format.md", function(pageContent) {
 	savePage({
-		destination: './content/docs/spec.md',
+		destination: '../content/docs/spec.md',
 		content: pageContent,
 		title: "AMP HTML Specification",
 		order: 5
@@ -117,7 +117,7 @@ ghrepo.contents('builtins', "master", function(err, data) {
 
 		downloadPage(component.path, function(pageContent) {
 			savePage({
-				destination: './content/docs/' + component.name,
+				destination: '../content/docs/' + component.name,
 				content: pageContent,
 				title: component.name.replace('.md', '')
 			}, function (err) {
@@ -149,7 +149,7 @@ ghrepo.contents('extensions', "master", function(err, data) {
 	downloadPage(readme.path, function(pageContent) {
 		// save it
 		savePage({
-			destination: './content/docs/extended.md',
+			destination: '../content/docs/extended.md',
 			content: pageContent,
 			order: 4,
 			title: "Extended components",
@@ -190,7 +190,7 @@ ghrepo.contents('extensions', "master", function(err, data) {
 			downloadPage(subComponent.path, function(pageContent) {
 				// save it to the extended folder
 				savePage({
-					destination: './content/docs/extended_' + subComponent.name,
+					destination: '../content/docs/extended_' + subComponent.name,
 					content: pageContent,
                     order: order,
                     parent: '/content/docs/extended.md',

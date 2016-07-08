@@ -1,6 +1,6 @@
 ---
 $title: amp-access
-$order: 0
+$order: 1
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-access.html

@@ -1,6 +1,6 @@
 ---
 $title: amp-twitter
-$order: 34
+$order: 38
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-twitter.html

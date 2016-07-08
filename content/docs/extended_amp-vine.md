@@ -1,6 +1,6 @@
 ---
 $title: amp-vine
-$order: 37
+$order: 41
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-vine.html

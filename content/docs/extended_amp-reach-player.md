@@ -1,6 +1,6 @@
 ---
 $title: amp-reach-player
-$order: 27
+$order: 30
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-reach-player.html

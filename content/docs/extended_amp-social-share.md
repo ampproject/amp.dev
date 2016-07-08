@@ -1,6 +1,6 @@
 ---
 $title: amp-social-share
-$order: 30
+$order: 34
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-social-share.html
@@ -106,7 +106,9 @@ The element provides [some pre-configured providers](https://github.com/ampproje
     - url `optional` (defaults: `rel=canonical` URL)
     - text `optional` (defaults: Current page title)
 - facebook
-    - url `optional` (defaults: `rel=canonical` URL)
+    - href `optional` (defaults: `rel=canonical` URL)
+    - text `optional` (defaults: none)
+    - app_id `required` (defaults: none) Required by [Facebook share dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog).
 - pinterest
     - url `optional` (defaults: `rel=canonical` URL)
 - linkedin

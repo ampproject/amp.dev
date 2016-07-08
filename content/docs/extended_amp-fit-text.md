@@ -1,6 +1,6 @@
 ---
 $title: amp-fit-text
-$order: 12
+$order: 14
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-fit-text.html

@@ -1,6 +1,6 @@
 ---
 $title: amp-font
-$order: 13
+$order: 15
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-font.html

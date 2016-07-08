@@ -1,6 +1,6 @@
 ---
 $title: amp-mustache
-$order: 25
+$order: 27
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-mustache.html

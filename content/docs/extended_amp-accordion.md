@@ -1,6 +1,6 @@
 ---
 $title: amp-accordion
-$order: 1
+$order: 2
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-accordion.html

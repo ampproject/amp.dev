@@ -1,10 +1,11 @@
 ---
 $title: amp-ad
-$order: 0
+$order: 3
 $category: Reference
-$path: /docs/reference/amp-ad.html
+$parent: /content/docs/extended.md
+$path: /docs/reference/extended/amp-ad.html
 $localization:
-  path: /{locale}/docs/reference/amp-ad.html
+  path: /{locale}/docs/reference/extended/amp-ad.html
   locales:
 ---
 
@@ -81,52 +82,50 @@ resources in AMP. It requires a `type` argument that select what ad network is d
 
 ## Supported ad networks
 
-- [A9](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/a9.md)
-- [Adblade](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adblade.md)
-- [ADITION](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adition.md)
-- [Adform](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adform.md)
-- [Adman](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adman.md)
-- [AdReactor](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adreactor.md)
-- [AdSense](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/google/adsense.md)
-- [AdStir](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adstir.md)
-- [AdTech](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adtech.md)
-- [Ad Generation](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/adgeneration.md)
-- [Nativo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/nativo.md)
-- [Ad Up Technology](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/aduptech.md)
-- [AppNexus](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/appnexus.md)
-- [Chargeads](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/chargeads.md)
-- [Colombia](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/colombia.md)
-- [Criteo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/criteo.md)
-- [Dot and Media](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/dotandads.md)
-- [Doubleclick](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/google/doubleclick.md)
-- [E-Planning](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/eplanning.md)
-- [Flite](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/flite.md)
-- [GenieeSSP](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/genieessp.md)
-- [GMOSSP](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/gmossp.md)
-- [I-Mobile](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/imobile.md)
-- [Improve Digital](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/improvedigital.md)
-- [Industrybrains](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/industrybrains.md)
-- [Kargo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/kargo.md)
-- [MANTIS](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/mantis.md)
-- [MediaImpact](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/mediaimpact.md)
-- [Nend](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/nend.md)
-- [Open AdStream (OAS)](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/openadstream.md)
-- [MicroAd](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/microad.md)
-- [OpenX](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/openx.md)
-- [plista](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/plista.md)
-- [PubMatic](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/pubmatic.md)
-- [Revcontent](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/revcontent.md)
-- [Rubicon Project](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/rubicon.md)
-- [Sharethrough](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/sharethrough.md)
-- [Smart AdServer](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/smartadserver.md)
-- [Sortable](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/sortable.md)
-- [TripleLift](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/triplelift.md)
-- [Teads](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/teads.md)
-- [Webediads](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/webediads.md)
-- [Weborama](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/weborama.md)
-- [Yieldbot](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yieldbot.md)
-- [Yieldmo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yieldmo.md)
-- [YahooJP](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yahoojp.md)
+- [A9](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/a9.md)
+- [Adblade](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/adblade.md)
+- [ADITION](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/adition.md)
+- [Adform](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/adform.md)
+- [Adman](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/adman.md)
+- [AdReactor](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/adreactor.md)
+- [AdSense](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/google/adsense.md)
+- [AdStir](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/adstir.md)
+- [AdTech](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/adtech.md)
+- [Ad Generation](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/adgeneration.md)
+- [Ad Up Technology](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/aduptech.md)
+- [AppNexus](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/appnexus.md)
+- [Chargeads](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/chargeads.md)
+- [Colombia](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/colombia.md)
+- [Criteo](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/criteo.md)
+- [Dot and Media](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/dotandads.md)
+- [Doubleclick](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/google/doubleclick.md)
+- [E-Planning](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/eplanning.md)
+- [Flite](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/flite.md)
+- [GenieeSSP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/genieessp.md)
+- [GMOSSP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/gmossp.md)
+- [I-Mobile](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/imobile.md)
+- [Improve Digital](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/improvedigital.md)
+- [Industrybrains](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/industrybrains.md)
+- [MANTIS](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/mantis.md)
+- [MediaImpact](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/mediaimpact.md)
+- [Nend](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/nend.md)
+- [Open AdStream (OAS)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/openadstream.md)
+- [MicroAd](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/microad.md)
+- [OpenX](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/openx.md)
+- [plista](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/plista.md)
+- [PubMatic](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/pubmatic.md)
+- [Revcontent](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/revcontent.md)
+- [Rubicon Project](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/rubicon.md)
+- [Sharethrough](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/sharethrough.md)
+- [Smart AdServer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/smartadserver.md)
+- [Sortable](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/sortable.md)
+- [TripleLift](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/triplelift.md)
+- [Teads](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/teads.md)
+- [Webediads](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/webediads.md)
+- [Weborama](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/weborama.md)
+- [Yieldbot](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/yieldbot.md)
+- [Yieldmo](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/yieldmo.md)
+- [YahooJP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../ads/yahoojp.md)
 
 ## Styling
 
@@ -153,7 +152,7 @@ Optional attribute to pass configuration to the ad as an arbitrarily complex JSO
 
 ### data-consent-notification-id
 
-Optional attribute. If provided will require confirming the [amp-user-notification](https://github.com/ampproject/amphtml/blob/master/builtins/../extensions/amp-user-notification/amp-user-notification.md) with the given HTML-id until the "AMP client id" for the user (similar to a cookie) is passed to the ad. The means ad rendering is delayed until the user confirmed the notification.
+Optional attribute. If provided will require confirming the [amp-user-notification](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../extensions/amp-user-notification/amp-user-notification.md) with the given HTML-id until the "AMP client id" for the user (similar to a cookie) is passed to the ad. The means ad rendering is delayed until the user confirmed the notification.
 
 ### Experimental: data-loading-strategy
 
@@ -185,13 +184,13 @@ Optionally `amp-ad` supports a child element with the `placeholder` attribute. I
 
 AMP supports loading the bootstrap iframe that is used to load ads from a custom domain such as your own domain.
 
-To enable this, copy the file [remote.html](https://github.com/ampproject/amphtml/blob/master/builtins/../3p/remote.html) to your web server. Next up add the following meta tag to your AMP file(s):
+To enable this, copy the file [remote.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../3p/remote.html) to your web server. Next up add the following meta tag to your AMP file(s):
 
 [sourcecode:html]
 <meta name="amp-3p-iframe-src" content="https://assets.your-domain.com/path/to/remote.html">
 [/sourcecode]
 
-The `content` attribute of the meta tag is the absolute URL to your copy of the remote.html file on your web server. This URL must use a "https" schema. It is not allowed to reside on the same origin as your AMP files. E.g. if you host AMP files on "www.example.com", this URL must not be on "www.example.com" but e.g. "something-else.example.com" is OK. See the doc ["Iframe origin policy"](https://github.com/ampproject/amphtml/blob/master/builtins/../spec/amp-iframe-origin-policy.md) for further details on allowed origins for iframes.
+The `content` attribute of the meta tag is the absolute URL to your copy of the remote.html file on your web server. This URL must use a "https" schema. It is not allowed to reside on the same origin as your AMP files. E.g. if you host AMP files on "www.example.com", this URL must not be on "www.example.com" but e.g. "something-else.example.com" is OK. See the doc ["Iframe origin policy"](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../spec/amp-iframe-origin-policy.md) for further details on allowed origins for iframes.
 
 ### Security
 
@@ -210,7 +209,7 @@ Enforcing origins can be done with the 3rd argument to `draw3p` and must additio
 
 This is completely optional: It is sometimes desired to further process the incoming iframe configuration before drawing the ad using AMP's built-in system.
 
-This is supported by passing a callback to the `draw3p` function call in the [remote.html](https://github.com/ampproject/amphtml/blob/master/builtins/../3p/remote.html) file. The callback receives the incoming configuration as first argument and then receives another callback as second argument (Called `done` in the example below). This callback must be called with the updated config in order for ad rendering to proceed.
+This is supported by passing a callback to the `draw3p` function call in the [remote.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../3p/remote.html) file. The callback receives the incoming configuration as first argument and then receives another callback as second argument (Called `done` in the example below). This callback must be called with the updated config in order for ad rendering to proceed.
 
 Example:
 

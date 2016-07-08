@@ -1,6 +1,6 @@
 ---
 $title: amp-jwplayer
-$order: 20
+$order: 22
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-jwplayer.html

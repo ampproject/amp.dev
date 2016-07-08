@@ -1,6 +1,6 @@
 ---
 $title: amp-springboard-player
-$order: 32
+$order: 36
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-springboard-player.html

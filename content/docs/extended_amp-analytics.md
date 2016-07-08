@@ -1,6 +1,6 @@
 ---
 $title: amp-analytics
-$order: 3
+$order: 4
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-analytics.html
@@ -136,6 +136,12 @@ Type attribute value: `comscore`
 
 Adds support for comScore Unified Digital Measurement™ pageview analytics. Requires defining *var* `c2` with comScore-provided *c2 id*.
 
+### Cxense
+
+Type attribute value: `cxense`
+
+Adds support for Cxense Insight analytics. Requires defining *var* `siteId` with Cxense-provided *siteId*. More details can be found at [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+
 ### Google Analytics
 
 Type attribute value: `googleanalytics`
@@ -181,6 +187,12 @@ Type attribute value: `mediametrie`
 
 Adds support for Médiamétrie tracking pages. Requires defining *var* `serial`. Vars `level1` to `level4` are optional.
 
+### mParticle
+
+Type attribute value: `mparticle`
+
+Adds support for mParticle. More details for adding mParticle support can be found at [docs.mparticle.com](http://docs.mparticle.com/?javascript#amp).
+
 ### OEWA
 
 Type attribute value: `oewa`
@@ -220,6 +232,13 @@ Adds support for Piano.  Configuration details can be found at [vx.piano.io](htt
 Type attribute value: `quantcast`
 
 Adds support for Quantcast Measurement. More details for adding Quantcast Measurement can be found at [quantcast.com](https://www.quantcast.com/help/guides/)
+
+## Segment
+
+Type attribute value: `segment`
+
+Adds support for segment page views and events.
+To see the full list of fields that you can send, see [Segment Spec](https://segment.com/docs/spec/).
 
 ### SOASTA mPulse
 
@@ -334,13 +353,26 @@ The `triggers` attribute describes when an analytics request should be sent. It 
   - `timerSpec` (required when `on` is set to `timer`) This configuration is used on conjunction with the `timer` trigger. Please see below for details.
 
 #### Page visible trigger (`"on": "visible"`)
-Use this configuration to fire a request when the page becomes visible. No further configuration is required.
+Use this configuration to fire a request when the page becomes visible. The firing of this trigger can be configured using `visibilitySpec`. If multiple properties are specified, they must all be true in order for a request to fire. Configuration properties supported in `visibilitySpec` are:
+
+  - `selector` This property can be used to specify the element to which all the `visibilitySpec` conditions apply.
+  - `continuousTimeMin` and `continuousTimeMax` These properties indicate that a request should be fired when (any part of) an element has been within the viewport for a continuous amount of time that is between the minimum and maximum specified times. The times are expressed in milliseconds.
+  - `totalTimeMin` and `totalTimeMax` These properties indicate that a request should be fired when (any part of) an element has been within the viewport for a total amount of time that is between the minimum and maximum specified times. The times are expressed in milliseconds.
+  - `visiblePercentageMin` and `visiblePercentageMax` These properties indicate that a request should be fired when the proportion of an element that is visible within the viewport is between the minimum and maximum specified percentages. Percentage values between 0 and 100 are valid. Note that the lower bound (`visiblePercentageMin`) is inclusive while the upper bound (`visiblePercentageMax`) is not. When these properties are defined along with other timing related properties, only the time when these properties are met are counted.
+
+In addition to the conditions above, `visibilitySpec` also enables certain variables which are documented [here](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vars.md#visibility-variables).
 
 [sourcecode:javascript]
 "triggers": {
   "defaultPageview": {
     "on": "visible",
-    "request": "pageview"
+    "request": "pageview",
+    "visibilitySpec": {
+      "selector": "#anim-id",
+      "visiblePercentageMin": 20,
+      "totalTimeMin": 500,
+      "continuousTimeMin": 200
+    }
   }
 }
 [/sourcecode]
@@ -364,7 +396,7 @@ Use this configuration to fire a request when a specified element is clicked. Us
     [/sourcecode]
 
 #### Scroll trigger (`"on": "scroll"`)
-Use this configuration to fire a request under certain conditions when the page is scrolled. Use `scrollSpec` to control when this will fire:
+Use this configuration to fire a request under certain conditions when the page is scrolled. This trigger provides [special vars](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vars.md#interaction) that indicate the boundaries that triggered a request to be sent. Use `scrollSpec` to control when this will fire:
 
   - `scrollSpec` This object can contain `verticalBoundaries` and `horizontalBoundaries`. At least one of the two properties is required for a scroll event to fire. The values for both of the properties should be arrays of numbers containing the boundaries on which a scroll event is generated. For instance, in the following code snippet, the scroll event will be fired when page is scrolled vertically by 25%, 50% and 90%. Additionally, the event will also fire when the page is horizontally scrolled to 90% of scroll width. To keep the page performant, the scroll boundaries are rounded to the nearest multiple of `5`.
 

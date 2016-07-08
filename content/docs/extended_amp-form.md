@@ -1,6 +1,6 @@
 ---
 $title: amp-form
-$order: 14
+$order: 16
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-form.html

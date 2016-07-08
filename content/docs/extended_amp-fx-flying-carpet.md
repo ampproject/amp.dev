@@ -1,6 +1,6 @@
 ---
 $title: amp-fx-flying-carpet
-$order: 15
+$order: 17
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-fx-flying-carpet.html

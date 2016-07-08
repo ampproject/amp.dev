@@ -1,6 +1,6 @@
 ---
 $title: amp-brightcove
-$order: 7
+$order: 8
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-brightcove.html

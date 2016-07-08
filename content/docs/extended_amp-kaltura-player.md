@@ -1,6 +1,6 @@
 ---
 $title: amp-kaltura-player
-$order: 21
+$order: 23
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-kaltura-player.html

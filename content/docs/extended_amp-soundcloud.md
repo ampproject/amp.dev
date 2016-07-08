@@ -1,6 +1,6 @@
 ---
 $title: amp-soundcloud
-$order: 31
+$order: 35
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-soundcloud.html

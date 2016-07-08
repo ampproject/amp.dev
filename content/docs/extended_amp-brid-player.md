@@ -1,6 +1,6 @@
 ---
 $title: amp-brid-player
-$order: 6
+$order: 7
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-brid-player.html

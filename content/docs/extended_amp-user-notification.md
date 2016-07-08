@@ -1,6 +1,6 @@
 ---
 $title: amp-user-notification
-$order: 35
+$order: 39
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-user-notification.html

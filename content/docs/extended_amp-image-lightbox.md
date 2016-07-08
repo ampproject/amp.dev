@@ -1,6 +1,6 @@
 ---
 $title: amp-image-lightbox
-$order: 17
+$order: 19
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-image-lightbox.html

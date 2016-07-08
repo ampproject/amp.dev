@@ -1,6 +1,6 @@
 ---
 $title: amp-install-serviceworker
-$order: 19
+$order: 21
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-install-serviceworker.html

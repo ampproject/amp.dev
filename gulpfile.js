@@ -13,6 +13,23 @@ var Path = {
   CSS_OUT_DIR: './static/css/'
 };
 
+gulp.task('import-docs', function () {
+  return exec('cd ./scripts && ./import_docs.js', function (err, stdout, stderr) {
+    if (err instanceof Error) {
+      throw err;
+    }
+    console.log(stdout);
+  });
+});
+
+gulp.task('update-blog-links', function () {
+  return exec('cd ./scripts && ./update_blog_links.js', function (err, stdout, stderr) {
+    if (err instanceof Error) {
+      throw err;
+    }
+    console.log(stdout);
+  });
+});
 
 gulp.task('sass', function() {
   return gulp.src(Path.CSS_SOURCES)
@@ -31,5 +48,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('build', ['sass']);
+gulp.task('build', ['update-blog-links', 'import-docs', 'sass']);
 gulp.task('default', ['sass']);

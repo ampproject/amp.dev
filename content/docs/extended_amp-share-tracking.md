@@ -1,16 +1,16 @@
 ---
-$title: amp-slides
-$order: 33
+$title: amp-share-tracking
+$order: 31
 $category: Reference
 $parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-slides.html
+$path: /docs/reference/extended/amp-share-tracking.html
 $localization:
-  path: /{locale}/docs/reference/extended/amp-slides.html
+  path: /{locale}/docs/reference/extended/amp-share-tracking.html
   locales:
 ---
 
 <!---
-Copyright 2015 The AMP HTML Authors. All Rights Reserved.
+Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -26,6 +26,4 @@ limitations under the License.
 -->
 
 
-
-WARNING: amp-slides is no longer supported. Please see [`amp-carousel`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-slides/../amp-carousel/amp-carousel.md)
-with `type=slides` attributes instead.
+The [share tracking feature](https://github.com/ampproject/amphtml/issues/3135) is under development.

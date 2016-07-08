@@ -1,6 +1,6 @@
 ---
 $title: amp-dailymotion
-$order: 9
+$order: 10
 $category: Reference
 $parent: /content/docs/extended.md
 $path: /docs/reference/extended/amp-dailymotion.html
