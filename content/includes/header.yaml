@@ -18,6 +18,10 @@ roadmap:
   href: /content/pages/roadmap.html
   copy@: Roadmap
 
+metrics:
+  href: /content/pages/metrics.html
+  copy@: Metrics
+
 docs:
   href: /content/docs/about-amp.md
   copy@: Docs
