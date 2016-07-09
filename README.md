@@ -1,4 +1,4 @@
-AMPProject.org
+AMPProject.org [![Build Status](https://travis-ci.org/ampproject/docs.svg?branch=megamerge)](https://travis-ci.org/ampproject/docs)
 =========================
 
 You're looking at source code of the official website of the AMP Project. Even
