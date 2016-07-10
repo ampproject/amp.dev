@@ -1,11 +1,6 @@
 ---
 $title: Use Cases
 $order: 2
-$category: Guides
-$parent: /content/docs/analytics_amp.md
-$path: /docs/guides/analytics/use_cases.html
-$localization:
-  path: /{locale}/docs/guides/analytics/use_cases.html
 ---
 
 This guide provides a set of common use cases for tracking user engagement:

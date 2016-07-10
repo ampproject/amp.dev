@@ -1,8 +1,6 @@
 ---
 $title: Create Your AMP HTML Page
-$category: Get Started
 $order: 0
-$parent: /content/docs/create_page.md
 ---
 
 The following markup is a decent starting point or boilerplate.

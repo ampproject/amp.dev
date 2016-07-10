@@ -1,11 +1,6 @@
 ---
 $title: amp-embed
 $order: 0
-$category: Reference
-$path: /docs/reference/amp-embed.html
-$localization:
-  path: /{locale}/docs/reference/amp-embed.html
-  locales:
 ---
 
 <!---

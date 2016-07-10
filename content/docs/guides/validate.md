@@ -1,10 +1,6 @@
 ---
 $title: Validate AMP Pages
-$category: Guides
 $order: 4
-$path: /docs/guides/{base}.html
-$localization:
-  path: /{locale}/docs/guides/{base}.html
 ---
 
 The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be *validated*. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.

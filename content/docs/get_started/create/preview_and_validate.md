@@ -1,11 +1,6 @@
 ---
 $title: Preview and Validate
-$category: Get Started
 $order: 3
-$parent: /content/docs/create_page.md
-$path: /docs/get_started/create/preview_and_validate.html
-$localization:
-  path: /{locale}/docs/get_started/create/preview_and_validate.html
 ---
 
 Preview the AMP page just as you would preview any other static HTML site. There’s no build step or preprocessing required. Either:

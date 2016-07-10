@@ -1,11 +1,6 @@
 ---
 $title: "Analytics: the Basics"
 $order: 0
-$category: Guides
-$parent: /content/docs/analytics_amp.md
-$path: /docs/guides/analytics/analytics_basics.html
-$localization:
-  path: /{locale}/docs/guides/analytics/analytics_basics.html
 ---
 
 Start here to learn the basics about AMP analytics.

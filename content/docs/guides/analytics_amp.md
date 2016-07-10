@@ -1,10 +1,6 @@
 ---
 $title: Configure Analytics
-$category: Guides
 $order: 5
-$path: /docs/guides/{base}.html
-$localization:
-  path: /{locale}/docs/guides/{base}.html
 ---
 
 ## Decide before you start

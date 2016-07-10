@@ -1,11 +1,6 @@
 ---
 $title: Supported Layouts
-$category: Guides
 $order: 1
-$parent: /content/docs/responsive_amp.md
-$path: /docs/guides/responsive/control_layout.html
-$localization:
-  path: /{locale}/docs/guides/responsive/control_layout.html
 ---
 
 Make your elements responsive;

@@ -1,11 +1,6 @@
 ---
 $title: AMP HTML Specification
 $order: 5
-$category: Reference
-$path: /docs/reference/AMP HTML Specification.html
-$localization:
-  path: /{locale}/docs/reference/AMP HTML Specification.html
-  locales:
 ---
 
 <!---

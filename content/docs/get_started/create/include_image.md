@@ -1,11 +1,6 @@
 ---
 $title: Include an Image
-$category: Get Started
 $order: 1
-$parent: /content/docs/create_page.md
-$path: /docs/get_started/create/include_image.html
-$localization:
-  path: /{locale}/docs/get_started/create/include_image.html
 ---
 
 Most HTML tags can be used directly in AMP HTML, but certain tags, such as the `<img>` tag, are replaced with equivalent or slightly enhanced custom AMP HTML tags (and a few problematic tags are outright banned, see [HTML Tags in the specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).

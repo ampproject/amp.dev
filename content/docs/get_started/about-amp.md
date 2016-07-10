@@ -1,10 +1,6 @@
 ---
 $title: What Is AMP?
-$category: Get Started
 $order: 0
-$path: /docs/get_started/{base}.html
-$localization:
-  path: /{locale}/docs/get_started/{base}.html
 ---
 <amp-youtube
     data-videoid="lBTCB7yLs8Y"

@@ -1,3 +1,2 @@
-title: Support
-path: /docs/support/{base}.html
-view: /views/doc.html
+$path: /docs/support/{base}.html
+$view: /views/doc.html

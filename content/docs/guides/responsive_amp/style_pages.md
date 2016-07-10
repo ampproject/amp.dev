@@ -1,11 +1,6 @@
 ---
 $title: Supported CSS
-$category: Guides
 $order: 0
-$parent: /content/docs/responsive_amp.md
-$path: /docs/guides/responsive/style_pages.html
-$localization:
-  path: /{locale}/docs/guides/responsive/style_pages.html
 ---
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets

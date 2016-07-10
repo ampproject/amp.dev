@@ -1,10 +1,6 @@
 ---
 $title: Include Third-Party Content
-$category: Guides
 $order: 2
-$path: /docs/guides/{base}.html
-$localization:
-  path: /{locale}/docs/guides/{base}.html
 ---
 
 Learn how to include third-party components in your pages.

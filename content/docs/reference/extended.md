@@ -1,11 +1,6 @@
 ---
 $title: Extended components
 $order: 4
-$category: Reference
-$path: /docs/reference/Extended components.html
-$localization:
-  path: /{locale}/docs/reference/Extended components.html
-  locales:
 ---
 
 

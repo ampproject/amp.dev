@@ -1,50 +1,47 @@
-{% macro render_nav_link(item) -%}
-  {% if item == doc %}
-  <span>{{ doc.title }}</span>
+{% macro render_item(item) -%}
+  {% set sub_collection = g.collection(item.collection.pod_path + '/' + item.base) %}
+  {% set open = sub_collection.pod_path == doc.pod_path[:-3] or doc in sub_collection %}
+
+  {% if doc == item %}
+    <li class="current">
+      <span>{{_(item.title)}}</span>
   {% else %}
-  <a href="{% if item.goto %}{{ item.goto }}{% else %}{{ item.url.path }}{% endif %}">{{ item.title }}</a>
+    <li>
+      <a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a>
   {% endif %}
+
+  {% if open and sub_collection.exists %}
+    {{ render_children(item, sub_collection.docs()) }}
+  {% endif %}
+  </li>
+{% endmacro %}
+
+
+{% macro tag(item) -%}
+  {{"ol" if item.numbered else "ul"}}
 {%- endmacro %}
+
 
 {% macro render_children(item, docs) -%}
-  {% for doc in item.collection if doc.parent == item and item.locale == doc.locale %}
-    {% if loop.first %}{% if item.numbered %}<ol>{% else %}<ul>{% endif %}{% endif %}
-    <li>
-      {{ render_nav_link(doc) }}
-    </li>
-    {% if loop.last %}{% if item.numbered %}</ol>{% else %}</ul>{% endif %}{% endif %}
-  {% endfor  %}
+  <{{tag(item)}}>
+    {% for child in docs %}
+      {{render_item(child)}}
+    {% endfor %}
+  </{{tag(item)}}>
 {%- endmacro %}
 
-<nav>
 
-{#
-  {% macro nav(collection) %}
-    <ul>
-      <li>
-      {# TODO: Fix hack. #}
+<nav>
+  <ul>
+    {% for collection in g.collection('docs').collections() %}
+    <li>
       <h2>{{_(collection.title)}}</h2>
-        {% set sub_folder = g.collection(doc.pod_path.replace('.md', '')) %}
-        {% if sub_folder %}
-          {% for item in sub_folder %}
-            {{nav(item)}}
-          {% endfor %}
-        {% endif %}
       <ul>
-        {% for page in collection.list_docs(recursive=false) %}
-        <li><a href="{{page.url.path}}">{{_(page.title)}}</a></li>
+        {% for item in collection.docs(recursive=false) %}
+          {{render_item(item)}}
         {% endfor %}
       </ul>
-    </ul>
-  {% endmacro %}
-  #}
-
-  {% block main %}
-    {% for collection in g.collections('docs') %}
-      {% for sub in collection.collections() %}
-        {{nav(sub)}}
-      {% endfor %}
+    </li>
     {% endfor %}
-  {% endblock %}
-
+  </ul>
 </nav>

@@ -1,10 +1,6 @@
 ---
 $title: How to Contribute
-$category: Support
 $order: 3
-$path: /docs/support/{base}.html
-$localization:
-  path: /{locale}/docs/support/{base}.html
 ---
 
 ### AMP Issues

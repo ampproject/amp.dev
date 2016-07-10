@@ -1,10 +1,6 @@
 ---
 $title: Include Iframes and Media
-$category: Guides
 $order: 1
-$path: /docs/guides/{base}.html
-$localization:
-  path: /{locale}/docs/guides/{base}.html
 ---
 
 Learn how to display an iframe and include media content in your pages.

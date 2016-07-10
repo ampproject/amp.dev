@@ -1,13 +1,9 @@
 ---
 $title: FAQ
-$category: Support
 $order: 0
-$path: /docs/support/{base}.html
-$localization:
-  path: /{locale}/docs/support/{base}.html
 ---
 
-[​TOC]
+[TOC]
 
 ## Accelerated Mobile Pages Overview
 

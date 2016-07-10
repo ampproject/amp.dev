@@ -1,11 +1,6 @@
 ---
 $title: Modify Presentation and Layout
-$category: Get Started
 $order: 2
-$parent: /content/docs/create_page.md
-$path: /docs/get_started/create/presentation_layout.html
-$localization:
-  path: /{locale}/docs/get_started/create/presentation_layout.html
 ---
 
 ## Modify the presentation

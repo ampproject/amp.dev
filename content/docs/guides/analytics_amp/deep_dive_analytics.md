@@ -1,11 +1,6 @@
 ---
 $title: Deep Dive into AMP Analytics
 $order: 1
-$category: Guides
-$parent: /content/docs/analytics_amp.md
-$path: /docs/guides/analytics/deep_dive_analytics.html
-$localization:
-  path: /{locale}/docs/guides/analytics/deep_dive_analytics.html
 ---
 
 This guide dives deep into the

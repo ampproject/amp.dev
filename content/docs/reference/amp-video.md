@@ -1,11 +1,6 @@
 ---
 $title: amp-video
 $order: 0
-$category: Reference
-$path: /docs/reference/amp-video.html
-$localization:
-  path: /{locale}/docs/reference/amp-video.html
-  locales:
 ---
 
 <!---

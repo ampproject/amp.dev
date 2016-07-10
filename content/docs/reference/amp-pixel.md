@@ -1,11 +1,6 @@
 ---
 $title: amp-pixel
 $order: 0
-$category: Reference
-$path: /docs/reference/amp-pixel.html
-$localization:
-  path: /{locale}/docs/reference/amp-pixel.html
-  locales:
 ---
 
 <!---

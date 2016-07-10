@@ -1,10 +1,6 @@
 ---
 $title: How AMP Speeds Up Performance
-$category: Get Started
 $order: 2
-$path: /docs/get_started/{base}.html
-$localization:
-  path: /{locale}/docs/get_started/{base}.html
 ---
 
 The following optimizations combined are the reason AMP pages are so fast they appear to load instantly:

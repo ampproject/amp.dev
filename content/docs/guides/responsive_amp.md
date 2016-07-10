@@ -1,10 +1,6 @@
 ---
 $title: Create Responsive AMP Pages
 $order: 0
-$category: Guides
-$path: /docs/guides/{base}.html
-$localization:
-  path: /{locale}/docs/guides/{base}.html
 ---
 
 It is super easy to make responsive elements in AMP.
