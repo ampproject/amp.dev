@@ -22,14 +22,8 @@ localization:
     en_UK: en_GB
 
 static_dirs:
-- static_dir: /static/
+- static_dir: /source/
   serve_at: /static/
-- static_dir: /source/img/
-  serve_at: /static/img/
-- static_dir: /source/video/
-  serve_at: /static/video/
-- static_dir: /how-it-works/
-  serve_at: /how-it-works/
 
 preprocessors:
 - kind: gulp

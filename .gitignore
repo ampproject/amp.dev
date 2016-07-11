@@ -1,9 +1,11 @@
 *.mo
 .DS_Store
 .sass-cache
-^static/
 node_modules
+
 build
+source/css/*
+
 content/docs/reference/amp-*
 content/docs/reference/spec.md
 content/docs/reference/extended.md
