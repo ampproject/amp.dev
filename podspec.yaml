@@ -22,7 +22,7 @@ localization:
     en_UK: en_GB
 
 static_dirs:
-- static_dir: /source/
+- static_dir: /assets/
   serve_at: /static/
 
 preprocessors:

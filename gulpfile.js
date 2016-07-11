@@ -6,8 +6,8 @@ var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 
 var Path = {
-  CSS_SOURCES: './source/sass/*.scss',
-  CSS_OUT_DIR: './source/css/'
+  CSS_SOURCES: './assets/sass/*.scss',
+  CSS_OUT_DIR: './assets/css/'
 };
 
 gulp.task('import-docs', function () {

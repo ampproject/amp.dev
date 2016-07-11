@@ -4,7 +4,7 @@
 node_modules
 
 build
-source/css/*
+assets/css/*
 
 content/docs/reference/amp-*
 content/docs/reference/spec.md
