@@ -46,4 +46,4 @@ gulp.task('watch', function() {
 
 
 gulp.task('build', ['update-blog-links', 'import-docs', 'sass']);
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'watch']);
