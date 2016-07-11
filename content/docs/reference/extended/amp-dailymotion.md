@@ -1,6 +1,6 @@
 ---
 $title: amp-dailymotion
-$order: 10
+$order: 12
 ---
 
 <!---

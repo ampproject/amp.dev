@@ -1,4 +1,4 @@
-grow_version: ">=0.0.64"
+grow_version: ">=0.0.63"
 home: /content/pages/home.html
 
 localization:

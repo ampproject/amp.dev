@@ -1,6 +1,6 @@
 ---
 $title: amp-soundcloud
-$order: 36
+$order: 38
 ---
 
 <!---

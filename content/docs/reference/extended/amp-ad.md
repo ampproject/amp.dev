@@ -1,6 +1,6 @@
 ---
 $title: amp-ad
-$order: 3
+$order: 5
 ---
 
 

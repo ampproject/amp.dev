@@ -1,6 +1,6 @@
 ---
 $title: amp-dynamic-css-classes
-$order: 11
+$order: 13
 ---
 
 <!---

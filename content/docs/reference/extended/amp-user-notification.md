@@ -1,6 +1,6 @@
 ---
 $title: amp-user-notification
-$order: 40
+$order: 42
 ---
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.

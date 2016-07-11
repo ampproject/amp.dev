@@ -1,6 +1,6 @@
 ---
 $title: amp-list
-$order: 26
+$order: 28
 ---
 
 <!---

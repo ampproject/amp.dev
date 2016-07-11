@@ -1,6 +1,6 @@
 ---
 $title: amp-brid-player
-$order: 7
+$order: 9
 ---
 
 <!---

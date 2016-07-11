@@ -1,6 +1,6 @@
 ---
 $title: AMP HTML Specification
-$order: 5
+$order: 6
 ---
 
 <!---

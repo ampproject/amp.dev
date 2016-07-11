@@ -1,6 +1,6 @@
 ---
 $title: amp-font
-$order: 15
+$order: 17
 ---
 
 <!---

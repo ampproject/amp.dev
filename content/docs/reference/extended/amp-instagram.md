@@ -1,6 +1,6 @@
 ---
 $title: amp-instagram
-$order: 21
+$order: 23
 ---
 
 <!---

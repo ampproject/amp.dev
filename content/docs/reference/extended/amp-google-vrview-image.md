@@ -1,6 +1,6 @@
 ---
 $title: amp-google-vrview-image
-$order: 18
+$order: 20
 ---
 
 <!---

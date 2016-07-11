@@ -1,6 +1,6 @@
 ---
 $title: amp-live-list
-$order: 27
+$order: 29
 ---
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.

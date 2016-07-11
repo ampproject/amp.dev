@@ -1,10 +1,6 @@
 ---
 $title: Experimental Components
-$category: Reference
 $order: 5
-$path: /docs/reference/{base}.html
-$localization:
-  path: /{locale}/docs/reference/{base}.html
 ---
 
 [AMP experimental components](https://github.com/ampproject/amphtml/tree/master/tools/experiments)

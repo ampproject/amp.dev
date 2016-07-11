@@ -1,6 +1,6 @@
 ---
 $title: amp-fit-text
-$order: 14
+$order: 16
 ---
 
 <!---

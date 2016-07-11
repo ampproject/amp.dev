@@ -1,6 +1,6 @@
 ---
 $title: amp-mustache
-$order: 28
+$order: 30
 ---
 {% raw %}
 <!---

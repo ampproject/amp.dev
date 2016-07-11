@@ -119,6 +119,7 @@ resources in AMP. It requires a `type` argument that select what ad network is d
 - [Teads](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/teads.md)
 - [Webediads](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/webediads.md)
 - [Weborama](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/weborama.md)
+- [Widespace](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/widespace.md)
 - [Yieldbot](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yieldbot.md)
 - [Yieldmo](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yieldmo.md)
 - [YahooJP](https://github.com/ampproject/amphtml/blob/master/builtins/../ads/yahoojp.md)

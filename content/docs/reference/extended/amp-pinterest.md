@@ -1,6 +1,6 @@
 ---
 $title: amp-pinterest
-$order: 30
+$order: 32
 ---
 
 <!---

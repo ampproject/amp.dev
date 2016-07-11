@@ -1,6 +1,6 @@
 ---
 $title: amp-lightbox
-$order: 25
+$order: 27
 ---
 
 <!---

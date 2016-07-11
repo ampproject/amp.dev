@@ -1,6 +1,6 @@
 ---
 $title: amp-o2-player
-$order: 29
+$order: 31
 ---
 
 <!---

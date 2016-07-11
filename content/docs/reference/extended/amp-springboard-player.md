@@ -1,6 +1,6 @@
 ---
 $title: amp-springboard-player
-$order: 37
+$order: 39
 ---
 
 <!---

@@ -1,10 +1,6 @@
 ---
 $title: AMP Validation Errors
-$category: Reference
 $order: 7
-$path: /docs/reference/{base}.html
-$localization:
-  path: /{locale}/docs/reference/{base}.html
 ---
 
 Valid AMP documents must not inlude any validation errors.

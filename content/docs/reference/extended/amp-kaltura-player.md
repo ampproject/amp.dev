@@ -1,6 +1,6 @@
 ---
 $title: amp-kaltura-player
-$order: 24
+$order: 26
 ---
 
 <!---

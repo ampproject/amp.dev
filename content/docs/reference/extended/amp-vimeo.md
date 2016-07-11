@@ -1,6 +1,6 @@
 ---
 $title: amp-vimeo
-$order: 41
+$order: 43
 ---
 
 <!---

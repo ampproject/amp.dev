@@ -1,6 +1,6 @@
 ---
 $title: amp-audio
-$order: 6
+$order: 8
 ---
 
 <!---

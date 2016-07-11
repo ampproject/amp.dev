@@ -1,6 +1,6 @@
 ---
 $title: amp-fx-flying-carpet
-$order: 17
+$order: 19
 ---
 
 <!---

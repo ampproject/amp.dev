@@ -1,6 +1,6 @@
 ---
 $title: amp-carousel
-$order: 9
+$order: 11
 ---
 
 <!---

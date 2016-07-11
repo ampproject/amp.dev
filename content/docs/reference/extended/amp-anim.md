@@ -1,6 +1,6 @@
 ---
 $title: amp-anim
-$order: 5
+$order: 7
 ---
 
 <!---

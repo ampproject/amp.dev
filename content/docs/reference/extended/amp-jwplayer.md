@@ -1,6 +1,6 @@
 ---
 $title: amp-jwplayer
-$order: 23
+$order: 25
 ---
 
 <!---

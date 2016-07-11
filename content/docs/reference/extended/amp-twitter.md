@@ -1,6 +1,6 @@
 ---
 $title: amp-twitter
-$order: 39
+$order: 41
 ---
 
 <!---

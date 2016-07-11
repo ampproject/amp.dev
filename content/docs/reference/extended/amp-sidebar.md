@@ -1,6 +1,6 @@
 ---
 $title: amp-sidebar
-$order: 33
+$order: 35
 ---
 
 <!---

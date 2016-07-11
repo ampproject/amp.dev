@@ -1,6 +1,6 @@
 ---
 $title: amp-slides
-$order: 34
+$order: 36
 ---
 
 <!---

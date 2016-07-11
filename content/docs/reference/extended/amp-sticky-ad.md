@@ -1,6 +1,6 @@
 ---
 $title: amp-sticky-ad
-$order: 38
+$order: 40
 ---
 
 <!---

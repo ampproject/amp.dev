@@ -1,6 +1,6 @@
 ---
 $title: amp-analytics
-$order: 4
+$order: 6
 ---
 
 <!---

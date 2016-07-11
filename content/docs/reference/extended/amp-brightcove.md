@@ -1,6 +1,6 @@
 ---
 $title: amp-brightcove
-$order: 8
+$order: 10
 ---
 
 <!---

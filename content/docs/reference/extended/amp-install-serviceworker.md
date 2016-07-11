@@ -1,6 +1,6 @@
 ---
 $title: amp-install-serviceworker
-$order: 22
+$order: 24
 ---
 
 <!---

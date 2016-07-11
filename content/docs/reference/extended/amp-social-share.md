@@ -1,6 +1,6 @@
 ---
 $title: amp-social-share
-$order: 35
+$order: 37
 ---
 
 <!---
