@@ -1,12 +1,6 @@
 ---
 $title: amp-social-share
-$order: 34
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-social-share.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-social-share.html
-  locales:
+$order: 35
 ---
 
 <!---

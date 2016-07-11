@@ -1,12 +1,6 @@
 ---
 $title: amp-accordion
 $order: 2
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-accordion.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-accordion.html
-  locales:
 ---
 
 <!---

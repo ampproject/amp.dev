@@ -1,12 +1,6 @@
 ---
 $title: amp-form
 $order: 16
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-form.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-form.html
-  locales:
 ---
 
 <!---

@@ -1,12 +1,6 @@
 ---
 $title: amp-live-list
-$order: 26
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-live-list.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-live-list.html
-  locales:
+$order: 27
 ---
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.

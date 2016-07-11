@@ -1,12 +1,6 @@
 ---
 $title: amp-user-notification
-$order: 39
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-user-notification.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-user-notification.html
-  locales:
+$order: 40
 ---
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.

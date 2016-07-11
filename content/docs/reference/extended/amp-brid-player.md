@@ -1,12 +1,6 @@
 ---
 $title: amp-brid-player
 $order: 7
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-brid-player.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-brid-player.html
-  locales:
 ---
 
 <!---

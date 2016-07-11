@@ -1,12 +1,6 @@
 ---
 $title: amp-fx-flying-carpet
 $order: 17
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-fx-flying-carpet.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-fx-flying-carpet.html
-  locales:
 ---
 
 <!---

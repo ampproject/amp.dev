@@ -1,12 +1,6 @@
 ---
 $title: amp-iframe
-$order: 18
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-iframe.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-iframe.html
-  locales:
+$order: 19
 ---
 
 <!---

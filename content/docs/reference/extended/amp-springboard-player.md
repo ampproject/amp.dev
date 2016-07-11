@@ -1,12 +1,6 @@
 ---
 $title: amp-springboard-player
-$order: 36
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-springboard-player.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-springboard-player.html
-  locales:
+$order: 37
 ---
 
 <!---

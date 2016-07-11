@@ -1,12 +1,6 @@
 ---
 $title: amp-reach-player
-$order: 30
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-reach-player.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-reach-player.html
-  locales:
+$order: 31
 ---
 
 <!---

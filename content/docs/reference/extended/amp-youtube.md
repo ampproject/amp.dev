@@ -1,12 +1,6 @@
 ---
 $title: amp-youtube
-$order: 42
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-youtube.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-youtube.html
-  locales:
+$order: 43
 ---
 
 <!---

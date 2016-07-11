@@ -1,12 +1,6 @@
 ---
 $title: amp-jwplayer
-$order: 22
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-jwplayer.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-jwplayer.html
-  locales:
+$order: 23
 ---
 
 <!---

@@ -1,12 +1,6 @@
 ---
 $title: amp-twitter
-$order: 38
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-twitter.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-twitter.html
-  locales:
+$order: 39
 ---
 
 <!---

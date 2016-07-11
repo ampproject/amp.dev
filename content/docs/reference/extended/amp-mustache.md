@@ -1,12 +1,6 @@
 ---
 $title: amp-mustache
-$order: 27
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-mustache.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-mustache.html
-  locales:
+$order: 28
 ---
 {% raw %}
 <!---

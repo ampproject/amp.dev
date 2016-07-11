@@ -1,12 +1,6 @@
 ---
 $title: amp-sticky-ad
-$order: 37
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-sticky-ad.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-sticky-ad.html
-  locales:
+$order: 38
 ---
 
 <!---

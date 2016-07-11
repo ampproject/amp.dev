@@ -1,12 +1,6 @@
 ---
 $title: amp-carousel
 $order: 9
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-carousel.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-carousel.html
-  locales:
 ---
 
 <!---

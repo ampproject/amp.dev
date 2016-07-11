@@ -1,12 +1,6 @@
 ---
 $title: amp-audio
 $order: 6
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-audio.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-audio.html
-  locales:
 ---
 
 <!---

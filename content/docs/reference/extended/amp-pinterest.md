@@ -1,12 +1,6 @@
 ---
 $title: amp-pinterest
-$order: 29
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-pinterest.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-pinterest.html
-  locales:
+$order: 30
 ---
 
 <!---

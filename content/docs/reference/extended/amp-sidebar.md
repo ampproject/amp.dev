@@ -1,12 +1,6 @@
 ---
 $title: amp-sidebar
-$order: 32
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-sidebar.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-sidebar.html
-  locales:
+$order: 33
 ---
 
 <!---

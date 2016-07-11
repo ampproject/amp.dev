@@ -1,12 +1,6 @@
 ---
 $title: amp-list
-$order: 25
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-list.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-list.html
-  locales:
+$order: 26
 ---
 
 <!---

@@ -1,12 +1,6 @@
 ---
 $title: amp-kaltura-player
-$order: 23
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-kaltura-player.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-kaltura-player.html
-  locales:
+$order: 24
 ---
 
 <!---

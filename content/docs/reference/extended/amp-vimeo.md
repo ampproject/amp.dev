@@ -1,12 +1,6 @@
 ---
 $title: amp-vimeo
-$order: 40
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-vimeo.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-vimeo.html
-  locales:
+$order: 41
 ---
 
 <!---

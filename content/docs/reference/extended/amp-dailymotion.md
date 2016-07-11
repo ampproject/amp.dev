@@ -1,12 +1,6 @@
 ---
 $title: amp-dailymotion
 $order: 10
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-dailymotion.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-dailymotion.html
-  locales:
 ---
 
 <!---

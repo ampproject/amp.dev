@@ -1,12 +1,6 @@
 ---
 $title: amp-image-lightbox
-$order: 19
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-image-lightbox.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-image-lightbox.html
-  locales:
+$order: 20
 ---
 
 <!---

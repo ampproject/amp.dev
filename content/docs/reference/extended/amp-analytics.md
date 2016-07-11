@@ -1,12 +1,6 @@
 ---
 $title: amp-analytics
 $order: 4
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-analytics.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-analytics.html
-  locales:
 ---
 
 <!---

@@ -1,12 +1,6 @@
 ---
 $title: amp-brightcove
 $order: 8
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-brightcove.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-brightcove.html
-  locales:
 ---
 
 <!---

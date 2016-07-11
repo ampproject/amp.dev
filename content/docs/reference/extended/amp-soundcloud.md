@@ -1,12 +1,6 @@
 ---
 $title: amp-soundcloud
-$order: 35
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-soundcloud.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-soundcloud.html
-  locales:
+$order: 36
 ---
 
 <!---

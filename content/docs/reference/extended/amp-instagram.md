@@ -1,12 +1,6 @@
 ---
 $title: amp-instagram
-$order: 20
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-instagram.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-instagram.html
-  locales:
+$order: 21
 ---
 
 <!---

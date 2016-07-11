@@ -1,6 +1,6 @@
 ---
-$title: amp-slides
-$order: 34
+$title: amp-a4a
+$order: 0
 ---
 
 <!---
@@ -19,7 +19,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+### <a name="amp-a4a"></a> `amp-a4a`
 
-
-WARNING: amp-slides is no longer supported. Please see [`amp-carousel`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-slides/../amp-carousel/amp-carousel.md)
-with `type=slides` attributes instead.
+<table>
+  <tr>
+    <td width="40%"><strong>Description</strong></td>
+    <td>An AMP Ad tag which requests early by XHR and renders natively
+    within the page if a valid AMP Ad is returned.  Tag should not appear on the
+    page but rather ad networks specific extensions.  
+    See <a href="https://github.com/ampproject/amphtml/issues/3133">Intent to implement</a>.</td>
+  </tr>
+  <tr>
+    <td width="40%"><strong>Availability</strong></td>
+    <td>In Development</td>
+  </tr>
+  </tr>
+</table>

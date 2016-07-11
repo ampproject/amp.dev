@@ -1,12 +1,6 @@
 ---
 $title: amp-dynamic-css-classes
 $order: 11
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-dynamic-css-classes.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-dynamic-css-classes.html
-  locales:
 ---
 
 <!---

@@ -1,12 +1,6 @@
 ---
 $title: amp-vine
-$order: 41
-$category: Reference
-$parent: /content/docs/extended.md
-$path: /docs/reference/extended/amp-vine.html
-$localization:
-  path: /{locale}/docs/reference/extended/amp-vine.html
-  locales:
+$order: 42
 ---
 
 <!---
