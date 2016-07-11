@@ -1,9 +1,10 @@
-!_reference/experimental.md
-!_reference/validation_errors.md
 *.mo
 .DS_Store
 .sass-cache
 ^static/
-_reference/*
 node_modules
 build
+content/docs/reference/amp-*
+content/docs/reference/spec.md
+content/docs/reference/extended.md
+content/docs/reference/extended/*.md
