@@ -1,3 +1,6 @@
+grow_version: ">=0.0.64"
+home: /content/pages/home.html
+
 localization:
   default_locale: en
   locales:

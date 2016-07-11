@@ -1,0 +1,5 @@
+$title@: Get Started
+$view: /views/doc.html
+$path: /docs/get_started/{base}.html
+$localization:
+  path: /{locale}/docs/get_started/{base}.html

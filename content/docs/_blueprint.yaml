@@ -1,11 +1,5 @@
-path: /docs/{base}/
-localization:
+$title@: Docs
+$path: /docs/{base}/
+$view: /views/doc.html
+$localization:
   path: /{locale}/docs/{base}/
-view: /views/doc.html
-title: Docs
-
-categories:
-- Get Started
-- Guides
-- Reference
-- Support

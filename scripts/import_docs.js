@@ -35,28 +35,12 @@ function downloadPage(path, callback, headingToStrip) {
 
 function savePage(config, callback) {
 
-    var extended = '';
-    if (config.parent) {
-        extended += "\n$parent: " + config.parent;
-        extended += "\n$path: /docs/reference/extended/" + config.title + '.html';
-        extended += "\n$localization:";
-        extended += "\n  path: /{locale}/docs/reference/extended/" +
-            config.title + ".html";
-        extended += "\n  locales:";
-    } else {
-        extended += "\n$path: /docs/reference/" + config.title + '.html';
-        extended += "\n$localization:";
-        extended += "\n  path: /{locale}/docs/reference/" +
-            config.title + ".html";
-        extended += "\n  locales:";
-    }
-
 	// special case for amp-mustache, needs to be escaped
 	if (/mustache/.test(config.title)) {
 		config.content = "{% raw %}" + config.content + "{% endraw %}";
 	}
 
-	var frontMatter = "---\n$title: " + config.title + "\n$order: " + (config.order || 0) + "\n$category: Reference" + extended + "\n---\n";
+	var frontMatter = "---\n$title: " + config.title + "\n$order: " + (config.order || 0) + "\n---\n";
 	fs.writeFile(config.destination, frontMatter + config.content, callback);
 }
 
@@ -196,7 +180,7 @@ ghrepo.contents('extensions', "master", function(err, data) {
 			downloadPage(subComponent.path, function(pageContent) {
 				// save it to the extended folder
 				savePage({
-					destination: '../content/docs/extended_' + subComponent.name,
+					destination: '../content/docs/reference/extended/' + subComponent.name,
 					content: pageContent,
                     order: order,
                     parent: '/content/docs/extended.md',

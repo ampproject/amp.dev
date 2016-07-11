@@ -1,49 +1,47 @@
-{% macro render_nav_link(item) -%}
-  {% if item == doc %}
-  <span>{{ doc.title }}</span>
+{% macro render_item(item) -%}
+  {% set sub_collection = g.collection(item.collection.pod_path + '/' + item.base) %}
+  {% set open = sub_collection.pod_path == doc.pod_path[:-3] or doc in sub_collection %}
+
+  {% if doc == item %}
+    <li class="current">
+      <span>{{_(item.title)}}</span>
   {% else %}
-  <a href="{% if item.goto %}{{ item.goto }}{% else %}{{ item.url.path }}{% endif %}">{{ item.title }}</a>
+    <li>
+      <a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a>
   {% endif %}
+
+  {% if open and sub_collection.exists %}
+    {{ render_children(item, sub_collection.docs()) }}
+  {% endif %}
+  </li>
+{% endmacro %}
+
+
+{% macro tag(item) -%}
+  {{"ol" if item.numbered else "ul"}}
 {%- endmacro %}
+
 
 {% macro render_children(item, docs) -%}
-  {% for doc in item.collection if doc.parent == item and item.locale == doc.locale %}
-    {% if loop.first %}{% if item.numbered %}<ol>{% else %}<ul>{% endif %}{% endif %}
-    <li>
-      {{ render_nav_link(doc) }}
-    </li>
-    {% if loop.last %}{% if item.numbered %}</ol>{% else %}</ul>{% endif %}{% endif %}
-  {% endfor  %}
+  <{{tag(item)}}>
+    {% for child in docs %}
+      {{render_item(child)}}
+    {% endfor %}
+  </{{tag(item)}}>
 {%- endmacro %}
 
+
 <nav>
-
   <ul>
-    {% for category, docs in g.categories('docs') %}
+    {% for collection in g.collection('docs').collections() %}
     <li>
-      <h2>{{ category }}</h2>
-
+      <h2>{{_(collection.title)}}</h2>
       <ul>
-      {% for item in docs if not (item.parent or item.locale != doc.locale) %}
-
-        {% if doc == item %}
-        <li class="current">
-          <span>{{ item.title }}</span>
-          {{ render_children(item, docs) }}
-        </li>
-        {% else %}
-        <li>
-          {{ render_nav_link(item) }}
-          {% if doc.parent and doc.parent == item %}
-          {{ render_children(item, docs) }}
-          {% endif %}
-        </li>
-        {% endif %}
-
-      {% endfor %}
+        {% for item in collection.docs(recursive=false) %}
+          {{render_item(item)}}
+        {% endfor %}
       </ul>
     </li>
     {% endfor %}
   </ul>
-
 </nav>

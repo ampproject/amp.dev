@@ -1,5 +1,5 @@
 faq:
-  href: /content/docs/faqs.md
+  href: /content/docs/support/faqs.md
   copy@: FAQ
 
 who:
@@ -23,7 +23,7 @@ metrics:
   copy@: Metrics
 
 docs:
-  href: /content/docs/about-amp.md
+  href: /content/docs/get_started/about-amp.md
   copy@: Docs
 
 
