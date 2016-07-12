@@ -1,41 +1,12 @@
 ---
-$title: Include Iframes and Media
+$title: Include Media and Iframes
 $order: 1
 ---
 
-Learn how to display an iframe and include media content in your pages.
+Learn how to display include media content in your pages, and how to use iframes
+to display advanced content outside of AMP's limitations.
 
 [TOC]
-
-## Display an iframe
-
-Display an iframe in your page using the
-[`amp-iframe`](/docs/reference/extended/amp-iframe.html) element.
-
-`amp-iframe` requirements:
-
-* Must be at least 600px or 75% of the first viewport away from the top.
-* Can only request resources via HTTPS, and they must not be in the same origin as the container,
-unless they do not specify allow-same-origin.
-
-To include an `amp-iframe` in your page,
-first include the following script to the `<head>`, which loads the additional code for the extended component:
-
-[sourcecode:html]
-<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-[/sourcecode]
-
-An example `amp-iframe` from the
-[released.amp example](https://github.com/ampproject/amphtml/blob/master/examples/released.amp.html):
-
-[sourcecode:html]
-<amp-iframe width=300 height=300
-    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=Alameda,%20CA">
-</amp-iframe>
-[/sourcecode]
 
 ## Media
 
@@ -54,7 +25,7 @@ using the [`amp-img`](/docs/reference/amp-img.html) element.
 Responsive image example:
 
 [sourcecode:html]
-<amp-img src="responsive.jpg" width=527 height=193 layout="responsive" ></amp-img>
+<amp-img src="responsive.jpg" width=527 height=193 layout="responsive"></amp-img>
 [/sourcecode]
 
 Fixed-size image example:
@@ -159,4 +130,38 @@ if the browser doesn't support HTML5 audio, for example:
   <source type="audio/mpeg" src="foo.mp3">
   <source type="audio/ogg" src="foo.ogg">
 </amp-audio>
+[/sourcecode]
+
+## Iframes
+
+Display an iframe in your page using the
+[`amp-iframe`](/docs/reference/extended/amp-iframe.html) element.
+
+Iframes are especially useful in AMP to display content not supported in the
+main page context, such as content requiring user-authored JavaScript.
+
+`amp-iframe` requirements:
+
+* Must be at least 600px or 75% of the first viewport away from the top.
+* Can only request resources via HTTPS, and they must not be in the same origin
+  as the container, unless they do not specify allow-same-origin.
+
+To include an `amp-iframe` in your page,
+first include the following script to the `<head>`, which loads the additional
+code for the extended component:
+
+[sourcecode:html]
+<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+[/sourcecode]
+
+An example `amp-iframe` from the
+[released.amp example](https://github.com/ampproject/amphtml/blob/master/examples/released.amp.html):
+
+[sourcecode:html]
+<amp-iframe width=300 height=300
+    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+    layout="responsive"
+    frameborder="0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=Alameda,%20CA">
+</amp-iframe>
 [/sourcecode]
