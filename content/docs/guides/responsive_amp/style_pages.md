@@ -26,34 +26,42 @@ These styles are defined in the
 The generated output of preprocessors works just as well in AMP as any other web page.
 For example, the [ampproject.org](https://www.ampproject.org/) site uses
 [Sass](http://sass-lang.com/).
-(We use [Jekyll](https://jekyllrb.com/) to build the static AMP pages
+(We use [Grow](http://grow.io/) to build the static AMP pages
 that make up the [ampproject.org](https://www.ampproject.org/) site.)
 
 When using preprocessors,
 pay special attention to what you include; load only what your pages use.
 For example, the
-[head.html](https://github.com/ampproject/docs/blob/master/_includes/head.html)
-includes all required AMP mark-up and the CSS from the `*.scss` source files.
+[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
+includes all required AMP mark-up and the inlined CSS from the `*.scss` source files.
 It also includes the custom element script for
-[`amp-youtube`](/docs/reference/extended/amp-youtube.html),
+[`amp-youtube`](/docs/reference/extended/amp-youtube.html), among others,
 so that many pages across the site can include embedded youtube videos.
 
 [sourcecode:html] {% raw %}
 <head>
   <meta charset="utf-8">
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
 
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>Accelerated Mobile Pages Project</title>
+  <link rel="shortcut icon" href="/static/img/amp_favicon.png">
+  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
+  <style amp-custom>
+  {% include "/assets/css/main.min.css" %}
+  </style>
 
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
- <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-  <style amp-custom>{% capture include_to_sassify %}{% include amp-custom.scss %}{% endcapture %}
-    {{ include_to_sassify | scssify }}    </style>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 </head>
 {% endraw %} [/sourcecode]
 
