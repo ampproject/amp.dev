@@ -67,3 +67,12 @@
     }
 
 }
+
+.rtl .main {
+	.content {
+		ul, ol {
+			margin-left: 0;
+            margin-right: 40px;
+		}
+	}
+}

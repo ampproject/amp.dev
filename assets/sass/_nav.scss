@@ -66,6 +66,32 @@ nav {
 
 }
 
+.rtl nav {
+    border-right: 0;
+    border-left: 2px solid #E6E6E6;
+    margin-left: 30px;
+    margin-right: -20px;
+
+    ul, ol {
+    	li {
+    		ul, ol {
+    			padding-left: 0;
+                padding-right: 0;
+                margin-right: 20px;
+    			margin-left: 0;
+    			li {
+    				ul, ol {
+                        margin-left: 0;
+                        margin-right: 0;
+                        padding-right: 20px;
+                        padding-left: 0;
+    				}
+    			}
+    		}
+    	}
+    }
+}
+
 @include max-screen($mobile-breakpoint) {
     .container nav {
         display: none;
@@ -82,6 +108,11 @@ nav {
         padding-left: 36px;
     }
 
+    .rtl amp-sidebar nav {
+        padding-left: 0;
+        padding-right: 36px;
+    }
+
     amp-sidebar nav {
 
         ul {
@@ -93,6 +124,12 @@ nav {
             background: #1185d0;
             display: block;
             padding: 6px 12px;
+        }
+    }
+
+    .rtl amp-sidebar nav {
+        ul {
+            padding-left: 0;
         }
     }
 

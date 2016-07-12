@@ -75,16 +75,22 @@ a.button {
  * Blockquotes
  */
 blockquote {
-    color: $color-darkgrey;
-    border-left: 4px solid $color-lightgrey;
-    padding-left: 15px;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
+  color: $color-darkgrey;
+  border-left: 4px solid $color-lightgrey;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+  > :last-child {
+  	margin-bottom: 0;
+  }
+}
 
-    > :last-child {
-        margin-bottom: 0;
-    }
+.rtl blockquote {
+  border-left: 0;
+  border-right: 4px solid $color-lightgrey;
+  padding-left: 0;
+  padding-right: 15px;
 }
 
 /**
@@ -100,6 +106,10 @@ code {
     padding: 1px 5px;
 }
 
+.rtl code {
+	direction: ltr;
+}
+
 /**
  * Tables
  */
@@ -113,6 +123,11 @@ td, th {
   background: #F7F7F7;
   padding: 0.5rem;
   text-align: left;
+}
+
+.rtl td,
+.rtl th {
+  text-align: right;
 }
 
 td.col-fourty {
@@ -140,9 +155,6 @@ ol li {
   @include text-body();
 }
 
-
-
-
 p {
   @include text-body();
 
@@ -167,7 +179,9 @@ figure {
   -webkit-margin-end: 0;
 }
 
-
+.rtl figure {
+	direction: ltr;
+}
 
 .desktop-only {
   display: none;

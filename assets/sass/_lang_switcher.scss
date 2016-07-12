@@ -47,7 +47,7 @@ div.language {
                 background-color: transparent;
             }
 
-            @each $country in en, es, fr, id, it, ja, ko, nl, pl, pt_BR, ru, th, tr, zh_CN {
+            @each $country in en, es, fr, id, it, ja, ko, nl, pl, pt_BR, ru, th, tr, zh_CN, ar {
             &.flag-#{$country} {
                 background-image: url('/static/img/flags/#{$country}.gif');
             }
@@ -57,8 +57,23 @@ div.language {
     }
 }
 
+.rtl div.language {
+    li {
+        a {
+            padding-right: 26px;
+            padding-left: 0;
+            background-position: right 6px;
+        }
+    }
+}
+
 header div.language {
     margin-left: 12px;
+}
+
+.rtl header div.language {
+    margin-left: 0;
+    margin-right: 12px;
 }
 
 amp-sidebar div.language {
@@ -84,5 +99,19 @@ amp-sidebar div.language {
        background-color: #2fa8f7;
        border-bottom: 1px solid #2894da;
        padding-left: 16px;
+   }
+}
+
+.rtl amp-sidebar div.language {
+   margin: -20px -16px 16px -20px;
+
+   &::before {
+        left: 20px;
+        right: auto;
+   }
+
+   li {
+       padding-left: 0;
+       padding-right: 16px;
    }
 }

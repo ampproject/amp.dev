@@ -73,6 +73,7 @@ header {
     padding: 0 10px 5px;
 
   }
+
   .left-nav {
     display: flex;
     align-items: center;
@@ -190,9 +191,37 @@ header {
 
 }
 
+.rtl header {
+  .left-nav {
+    float: right;
+    .header-title {
+      padding: 15px 50px 15px 10px;
+
+      @include max-screen($mobile-breakpoint) {
+        width: auto;
+        padding: 0 50px 0 0;
+      }
+
+      background-position: center right;
+    }
+  }
+
+  .alt.right {
+    text-align: left;
+    float: left;
+  }
+}
+
 amp-sidebar {
   ul {
     list-style-type: square;
     padding-right: 1em;
+  }
+}
+
+.rtl amp-sidebar {
+  ul {
+    padding-right: 0;
+    padding-left: 1em;
   }
 }
