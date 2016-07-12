@@ -9,7 +9,7 @@ Also certain styles are disallowed due to performance implications;
 inline style attributes aren't allowed.
 
 All styles must live in the head of the document
-(see [Add styles to a page](/docs/validate.html#add-styles-to-a-page)).
+(see [Add styles to a page](/docs/guides/validate.html#add-styles-to-a-page)).
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
