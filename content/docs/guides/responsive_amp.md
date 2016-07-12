@@ -112,7 +112,7 @@ Set the layout to responsive.
 This sizes the element to the width of it's container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
-Learn more about [supported layouts in AMP](/docs/guides/responsive/control_layout).
+Learn more about [supported layouts in AMP](/docs/guides/responsive/control_layout.html).
 
 ## Validate your styles and layout
 
