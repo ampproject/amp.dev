@@ -1,2 +1,4 @@
-path: /docs/get_started/create/{base}.html
-view: /views/doc.html
+$path: /docs/get_started/create/{base}.html
+$view: /views/doc.html
+$localization:
+  path: /{locale}/docs/get_started/create/{base}.html
