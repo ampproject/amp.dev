@@ -4,13 +4,13 @@ outlook:  Q3/Q4
 current: End-Q2 2016
 updated: June 29, 2016
 stages:
-    6: Launched / Stable
-    5: Code Complete / Experimental
-    4: Pull Request (Changelist) Created
-    3: Coding Started
-    2: Intent to Implement (Feature Description) Posted
-    1: In Planning and Design
-    0: Not Started
+    "6": Launched / Stable
+    "5": Code Complete / Experimental
+    "4": Pull Request (Changelist) Created
+    "3": Coding Started
+    "2": Intent to Implement (Feature Description) Posted
+    "1": In Planning and Design
+    "0": Not Started
 sections:
     0_format:
         title: Format
@@ -23,16 +23,16 @@ sections:
         - Broaden support to include a variety of content formats, including news articles, recipes, local listings, product listings, and more
         - Further alignment with Progressive Web Apps (PWAs)
         quarter:
-            1:
+            "1":
             - “AMP bootstrap” default styling
             - "**amp-lightbox** improvements"
-            4:
+            "4":
             - "[Form support](https://github.com/ampproject/amphtml/issues/3343)"
             - "[Native app install button/banner](https://github.com/ampproject/amphtml/issues/800)"
             - "[**amp-carousel** improvements](https://github.com/ampproject/amphtml/issues/3465)"
-            5:
+            "5":
             - "[Live blog support](https://github.com/ampproject/amphtml/blob/master/extensions/amp-live-list/amp-live-list.md)"
-            6:
+            "6":
             - "[Site navigation menu support [**amp-sidebar**]](/docs/reference/extended/amp-sidebar.html)"
             - "[Share button bar [**amp-social-share**]](/docs/reference/extended/amp-social-share.html)"
             - "[Cross-origin support for ServiceWorker installation [update to **amp-install-serviceworker**]](/docs/reference/extended/amp-install-serviceworker.html)"
@@ -53,14 +53,14 @@ sections:
         - Provide support for element-level analytics
         - Support basic A/B experience testing
         quarter:
-            0:
+            "0":
             - Expose batched interaction data (e.g. scroll events) to **amp-analytics**
-            1:
+            "1":
             - Element-level data variable support in **amp-analytics**
-            4:
+            "4":
             - "[Share-tracking support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/3135)"
             - "[A/B experience testing support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/1411)"
-            6:
+            "6":
             - "[Element-level visibility trigger support in **amp-analytics**](https://www.ampproject.org/docs/reference/extended/amp-analytics.html#page-visible-trigger-on-visible)"
         forecast:
         - Expansion of analytics capabilities for ecommerce use cases
@@ -73,13 +73,13 @@ sections:
         - Enable AMP itself as an ad creative format
         - Enable AMPs to act as landing pages for ads
         quarter:
-            1:
+            "1":
             - Pre-roll video ads in **amp-video** using IMA
             - Proof of concept implementation of ads with AMP-format landing pages
             - Ability to indicate AMP vs non-AMP ad type preference to ad servers and ad exchanges
-            4:
+            "4":
             - "[Allow for serving ads that are in AMP format (A4A - AMP for Ads)](https://github.com/ampproject/amphtml/pull/3534)"
-            5:
+            "5":
             - "[Sticky ad format in **amp-ad**](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sticky-ad/amp-sticky-ad.md)"
             - "[Flying carpet effect support, particularly as an ad format](https://github.com/ampproject/amphtml/blob/master/extensions/amp-fx-flying-carpet/amp-fx-flying-carpet.md)"
         forecast:
@@ -92,9 +92,9 @@ sections:
         - Continue to improve paywall and subscription support in AMP
         - Make sign-in and payment for content a seamless and joyful experience in AMP
         quarter:
-            1:
+            "1":
             - Runtime support for delegated sign-in (allow surface hosting AMP to sign-in user to publisher from using available identity information)
-            5:
+            "5":
             - "[**amp-access** server side support (beta)](https://github.com/ampproject/amphtml/issues/2968)"
         forecast:
         - Enable better mobile payments with AMP

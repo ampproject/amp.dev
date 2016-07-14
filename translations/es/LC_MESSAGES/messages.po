@@ -16,9 +16,9 @@ msgstr ""
 
 #: /content/includes/header.yaml
 msgid "Blog"
-msgstr "BLOGGI"
+msgstr ""
 
-#: /content/pages/home.html /content/includes/header.yaml
+#: /content/includes/header.yaml /content/pages/home.html
 msgid "CONTACT US"
 msgstr ""
 
@@ -82,6 +82,10 @@ msgstr ""
 
 #: /views/base.html:30
 msgid "Menu"
+msgstr ""
+
+#: /content/includes/header.yaml
+msgid "Metrics"
 msgstr ""
 
 #: /content/pages/home.html
