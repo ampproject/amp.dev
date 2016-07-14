@@ -11,7 +11,7 @@
   {% endif %}
 
   {% if open and sub_collection.exists %}
-    {{ render_children(item, sub_collection.docs()) }}
+    {{ render_children(item, sub_collection.docs(locale=doc.locale)) }}
   {% endif %}
   </li>
 {% endmacro %}
@@ -37,7 +37,7 @@
     <li>
       <h2>{{_(collection.title)}}</h2>
       <ul>
-        {% for item in collection.docs(recursive=false) %}
+        {% for item in collection.docs(recursive=false, locale=doc.locale) %}
           {{render_item(item)}}
         {% endfor %}
       </ul>

@@ -1,4 +1,4 @@
-grow_version: ">=0.0.63"
+grow_version: ">=0.0.65"
 home: /content/pages/home.html
 
 localization:
@@ -27,6 +27,11 @@ static_dirs:
 
 preprocessors:
 - kind: gulp
+
+markdown:
+  extensions:
+  - kind: sourcecode
+    classes: true
 
 deployments:
   review:

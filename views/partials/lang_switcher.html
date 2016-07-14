@@ -5,8 +5,8 @@
     </li>
     {% for locale in doc.locales if not locale == doc.locale  %}
     <li>
-        {% set lurl = g.url(doc.pod_path, locale=locale).path %}
-        <a href="{{ lurl }}" class="flag-{{locale}}"><span>{{locale.get_language_name()}}</span></a>
+        {% set localized_doc = doc.localize(locale) %}
+        <a href="{{ localized_doc.url.path }}" class="flag-{{locale}}"><span>{{locale.get_language_name()}}</span></a>
     </li>
     {% endfor %}
     </ul>
