@@ -36,7 +36,7 @@ function downloadPage(path, callback, headingToStrip) {
 function savePage(config, callback) {
 
 	// special case for amp-mustache, needs to be escaped
-	if (/mustache/.test(config.title)) {
+	if (/mustache|access/.test(config.title)) {
 		config.content = "{% raw %}" + config.content + "{% endraw %}";
 	}
 
