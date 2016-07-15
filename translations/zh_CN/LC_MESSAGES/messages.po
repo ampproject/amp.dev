@@ -16,15 +16,15 @@ msgstr ""
 
 #: /content/includes/header.yaml
 msgid "Blog"
-msgstr ""
+msgstr "博客"
 
 #: /content/includes/header.yaml /content/pages/home.html
 msgid "CONTACT US"
 msgstr ""
 
-#: /content/includes/header.yaml
+#: /content/docs /content/includes/header.yaml
 msgid "Docs"
-msgstr ""
+msgstr "文档"
 
 #: /content/pages/home.html
 msgid ""
@@ -37,7 +37,7 @@ msgstr ""
 
 #: /content/includes/header.yaml
 msgid "FAQ"
-msgstr ""
+msgstr "常见问题解答"
 
 #: /content/pages/home.html
 msgid ""
@@ -50,11 +50,11 @@ msgstr ""
 
 #: /content/pages/home.html
 msgid "GET STARTED"
-msgstr ""
+msgstr "入门指南"
 
-#: /content/pages/home.html
+#: /content/pages/home.html /content/docs/get_started
 msgid "Get Started"
-msgstr ""
+msgstr "入门指南"
 
 #: /content/pages/home.html
 msgid "Get Started with AMP HTML"
@@ -63,6 +63,10 @@ msgstr ""
 #: /content/includes/header.yaml
 msgid "GitHub"
 msgstr ""
+
+#: /content/docs/guides
+msgid "Guides"
+msgstr "指南"
 
 #: /content/pages/home.html
 msgid ""
@@ -98,6 +102,10 @@ msgid ""
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
 msgstr ""
 
+#: /content/docs/reference
+msgid "Reference"
+msgstr "参考"
+
 #: /content/includes/header.yaml
 msgid "Roadmap"
 msgstr ""
@@ -105,6 +113,10 @@ msgstr ""
 #: /content/pages/home.html
 msgid "Seamless, simplified publishing"
 msgstr ""
+
+#: /content/docs/support
+msgid "Support"
+msgstr "支持"
 
 #: /content/pages/home.html
 msgid "TECHNICAL INTRODUCTION"

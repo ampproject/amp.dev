@@ -34,7 +34,6 @@
           <li><a href="{{header_doc.fields.blog.get('href')}}">{{_(header_doc.fields.blog.get('copy'))}}</a></li>
           <li><a href="{{header_doc.fields.github.get('href')}}">{{_(header_doc.fields.github.get('copy'))}}</a></li>
           <li><a href="{{ g.doc(header_doc.fields.roadmap.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.roadmap.get('copy'))}}</a></li>
-          <li><a href="{{ g.doc(header_doc.fields.metrics.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.metrics.get('copy'))}}</a></li>
           <li><a href="{{ g.doc(header_doc.fields.docs.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.docs.get('copy'))}}</a></li>
       </ul>
       </li>

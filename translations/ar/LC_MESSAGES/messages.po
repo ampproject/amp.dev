@@ -16,7 +16,7 @@ msgstr ""
 
 #: /content/includes/header.yaml
 msgid "Blog"
-msgstr ""
+msgstr "المدونة"
 
 #: /content/includes/header.yaml /content/pages/home.html
 msgid "CONTACT US"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: /content/docs /content/includes/header.yaml
 msgid "Docs"
-msgstr "Dokumen"
+msgstr "المستندات"
 
 #: /content/pages/home.html
 msgid ""
@@ -37,7 +37,7 @@ msgstr ""
 
 #: /content/includes/header.yaml
 msgid "FAQ"
-msgstr ""
+msgstr "الأسئلة الشائعة"
 
 #: /content/pages/home.html
 msgid ""
@@ -50,11 +50,11 @@ msgstr ""
 
 #: /content/pages/home.html
 msgid "GET STARTED"
-msgstr "Mulai"
+msgstr "البدء"
 
 #: /content/pages/home.html /content/docs/get_started
 msgid "Get Started"
-msgstr "Mulai"
+msgstr "البدء"
 
 #: /content/pages/home.html
 msgid "Get Started with AMP HTML"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: /content/docs/guides
 msgid "Guides"
-msgstr "Panduan"
+msgstr "الدلائل"
 
 #: /content/pages/home.html
 msgid ""
@@ -104,7 +104,7 @@ msgstr ""
 
 #: /content/docs/reference
 msgid "Reference"
-msgstr "Referensi"
+msgstr "المراجع"
 
 #: /content/includes/header.yaml
 msgid "Roadmap"
@@ -116,7 +116,7 @@ msgstr ""
 
 #: /content/docs/support
 msgid "Support"
-msgstr "Dukungan"
+msgstr "الدعم"
 
 #: /content/pages/home.html
 msgid "TECHNICAL INTRODUCTION"
@@ -139,7 +139,7 @@ msgstr ""
 
 #: /content/pages/home.html
 msgid "VIEW FAQ"
-msgstr ""
+msgstr "Preguntas frecuentes"
 
 #: /content/pages/home.html
 msgid "VISIT US ON GITHUB"
@@ -151,7 +151,7 @@ msgstr ""
 
 #: /content/includes/footer.yaml
 msgid "View FAQ"
-msgstr ""
+msgstr "Preguntas frecuentes"
 
 #: /content/pages/home.html
 msgid "Visit Github"

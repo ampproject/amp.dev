@@ -22,7 +22,7 @@ msgstr ""
 msgid "CONTACT US"
 msgstr ""
 
-#: /content/includes/header.yaml
+#: /content/docs /content/includes/header.yaml
 msgid "Docs"
 msgstr ""
 
@@ -50,11 +50,11 @@ msgstr ""
 
 #: /content/pages/home.html
 msgid "GET STARTED"
-msgstr ""
+msgstr "Premiers pas"
 
-#: /content/pages/home.html
+#: /content/pages/home.html /content/docs/get_started
 msgid "Get Started"
-msgstr ""
+msgstr "Premiers pas"
 
 #: /content/pages/home.html
 msgid "Get Started with AMP HTML"
@@ -62,6 +62,10 @@ msgstr ""
 
 #: /content/includes/header.yaml
 msgid "GitHub"
+msgstr ""
+
+#: /content/docs/guides
+msgid "Guides"
 msgstr ""
 
 #: /content/pages/home.html
@@ -98,12 +102,20 @@ msgid ""
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
 msgstr ""
 
+#: /content/docs/reference
+msgid "Reference"
+msgstr "Référence"
+
 #: /content/includes/header.yaml
 msgid "Roadmap"
 msgstr ""
 
 #: /content/pages/home.html
 msgid "Seamless, simplified publishing"
+msgstr ""
+
+#: /content/docs/support
+msgid "Support"
 msgstr ""
 
 #: /content/pages/home.html
