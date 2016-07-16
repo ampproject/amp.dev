@@ -1,8 +1,4 @@
 github:
   link: https://github.com/ampproject/amphtml
-  img: /static/img/github.png
-
-faq:
-  copy@: View FAQ
-
-fineprint@: "&copy 2015 Accelerated Mobile Pages Project"
+  img: /static/img/logo-blue.svg
+  text@: "Accelerated Mobile Pages Project"

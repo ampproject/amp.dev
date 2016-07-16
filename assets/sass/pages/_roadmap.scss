@@ -1,0 +1,246 @@
+@mixin roadmap-stage($color, $number) {
+
+  border-left: 3px solid $color;
+
+  &:after {
+    content: $number + '';
+    border: 3px solid $color;
+  }
+
+  li {
+    &:before {
+      background: $color;
+    }
+  }
+
+}
+
+
+.roadmap {
+
+  ul, ol {
+    padding-left: 40px;
+  }
+
+  .stages li {
+    list-style-type: none;
+  }
+
+  h2 {
+    margin-bottom: 1em;
+    padding-left: 12px;
+    small {
+      display: block;
+      color: #949494;
+      font-size: 24px;
+      padding-top: 6px;
+    }
+  }
+
+  h3 {
+    background: #2196F3;
+    padding: 0.5em 16px;
+    color: #fff;
+
+    small {
+      display: block;
+      font-size: 16px;
+      margin-top: 8px;
+      font-style: italic;
+      color: #BBDEFB;
+    }
+  }
+
+  h4 {
+    font-weight: normal;
+    font-size: 1.2em;
+    margin-top: 6px;
+    margin-bottom: 1em;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  section {
+    padding-left: 0;
+  }
+
+  .about {
+      margin: 2em 12px;
+      ul {
+        margin: 0;
+        list-style-type: square;
+      }
+      div {
+        margin-bottom: 1em;
+      }
+  }
+
+  .workstream {
+    margin-bottom: 1em;
+    background: #fff;
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
+  }
+
+  .workstream-flex {
+    display: flex;
+  }
+
+  .description {
+    flex: 1 1 50%;
+    padding: 1em;
+    padding-right: 2em;
+  }
+
+  .plan {
+    flex: 1 1 50%;
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    padding-bottom: 0;
+    border-left: 3px solid #E8E8E8;
+    h4 {
+      display: none;
+    }
+  }
+
+  .workstream-headings {
+    .description {
+      padding-bottom: 0;
+    }
+    .plan h4 {
+      display: block;
+    }
+    h4 {
+      margin-bottom: 0;
+    }
+  }
+
+  .themes,
+  .forecast {
+    ul {
+      list-style-type: square;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .forecast {
+    padding: 1em;
+    border-top: 3px solid #E8E8E8;
+  }
+
+  /* Stages magic deluxe flex win */
+
+  .stages {
+
+    margin: -4px 0 0 0;
+    margin-left: -19px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 1em;
+
+    > li {
+
+      padding-left: 12px;
+      padding-top: 28px;
+      position: relative;
+      flex: 1 1 100%;
+
+      &:last-child {
+        padding-bottom: 1em;
+      }
+
+      &::before {
+        content: attr(data-description);
+        position: absolute;
+        top: 3px;
+        left: 24px;
+        font-style: italic;
+        color: #777;
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        right: 0;
+        white-space: nowrap;
+      }
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: -16px;
+        background: #fff;
+        border-radius: 20px;
+        width: 24px;
+        height: 24px;
+        display: block;
+        text-align: center;
+        font-weight: 800;
+        line-height: 26px;
+      }
+
+      li {
+        position: relative;
+        &::before {
+          content: "";
+          width: 10px;
+          height: 4px;
+          display: block;
+          position: absolute;
+          border-radius: 10px;
+          top: 10px;
+          left: -27px;
+        }
+      }
+
+    }
+
+    .stage-0 { @include roadmap-stage(#DCEDC8, 0); }
+    .stage-1 { @include roadmap-stage(#C5E1A5, 1); }
+    .stage-2 { @include roadmap-stage(#AED581, 2); }
+    .stage-3 { @include roadmap-stage(#9CCC65, 3); }
+    .stage-4 { @include roadmap-stage(#8BC34A, 4); }
+    .stage-5 { @include roadmap-stage(#7CB342, 5); }
+    .stage-6 { @include roadmap-stage(#689F38, 6); }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      margin-left: 12px;
+      padding-top: 3px;
+    }
+
+  }
+
+  /* Them responsive awesomeness */
+
+  @include max-screen(640px) {
+    .workstream-flex {
+      flex-wrap: wrap;
+    }
+    .plan {
+      border-left: 0;
+    }
+    .stages {
+      margin-left: 24px;
+    }
+    .workstream-flex {
+      .plan h4 {
+        display: block;
+      }
+    }
+    .workstream-headings {
+      .plan {
+        display: none;
+      }
+    }
+  }
+
+}

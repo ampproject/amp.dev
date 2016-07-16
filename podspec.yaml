@@ -4,6 +4,7 @@ home: /content/pages/home.html
 localization:
   default_locale: en
   locales:
+  - ar
   - en
   - es
   - fr

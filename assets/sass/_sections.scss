@@ -1,0 +1,76 @@
+// TODO: all sections should have .blade classes allied to them.
+section {
+  padding: 100px 0 60px 0;
+
+  @include max-screen($mobile-breakpoint) {
+    padding: 50px 0 40px;
+  }
+}
+
+.blade {
+
+  h1 {
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  &--hero {
+    padding: 65px 0 20px;
+
+    .container {
+      position: relative;
+    }
+
+    .six.columns {
+      display: flex;
+      align-items: center;
+    }
+
+  }
+
+  &--get-started {
+    padding: 90px 0 120px;
+    background: $color-grey-100;
+
+    amp-carousel {
+      max-width: 100%;
+    }
+  }
+
+  &--contributors {
+    background: $color-grey-200;
+
+    amp-carousel.single {
+      max-width: 100%;
+
+      .box__content {
+        flex: none;
+      }
+    }
+  }
+
+  &--benefits {
+    padding: 0;
+    box-shadow: none;
+    background-color: $color-white;
+  }
+
+  &--blog {
+    background-color: $color-midblue;
+    padding: 70px 0;
+
+    @include max-screen($mobile-breakpoint) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    padding: 60px 0;
+    &--benefits {
+      padding: 0;
+    }
+  }
+
+}

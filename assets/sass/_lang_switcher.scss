@@ -42,6 +42,10 @@ div.language {
             background-color: transparent;
             color: inherit;
 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
             span {
                 padding: 0;
                 background-color: transparent;
@@ -69,6 +73,7 @@ div.language {
 
 header div.language {
     margin-left: 12px;
+    align-self: center;
 }
 
 .rtl header div.language {

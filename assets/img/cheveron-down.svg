@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>open</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="AMP---Mobile" transform="translate(-330.000000, -1227.000000)">
+            <g id="Benifits" transform="translate(0.000000, 470.000000)">
+                <g id="openness" transform="translate(0.000000, 728.000000)">
+                    <g id="open" transform="translate(336.000000, 33.000000) rotate(-180.000000) translate(-336.000000, -33.000000) translate(324.000000, 21.000000)">
+                        <polygon id="Shape" fill="#666666" points="12 8 6 14 7.4 15.4 12 10.8 16.6 15.4 18 14"></polygon>
+                        <rect id="bounds" x="-5.68434189e-14" y="-5.68434189e-14" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

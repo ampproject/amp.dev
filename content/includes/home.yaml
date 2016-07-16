@@ -1,0 +1,218 @@
+hero:
+  title@: Instant. <br> Everywhere.
+  content@: For many, reading on the mobile web is a slow, clunky and frustrating experience - but it doesn’t have to be that way. The Accelerated Mobile Pages (AMP) Project is an open source initiative that embodies the vision that publishers can create mobile optimized content once and have it load instantly everywhere.
+  cta@: GET STARTED
+  cta_url@: /docs/get_started/about-amp.html
+  content_mobile@: The Accelerated Mobile Pages (AMP) Project is an open initiative that embodies the vision that publishers can create mobile optimized content once and have it load instantly everywhere.
+  youtube_video_id: "WrpkFROqR0Q"
+
+get_started:
+  title@: Get Started with AMP HTML
+  cards:
+    - title@: Technical Introduction
+      content@: If you are new to AMP HTML, our technical introduction is a great place to get started and provides an overview of the project and how AMP HTML works.
+      img: /static/img/man.jpg
+      cta@: Learn More
+      href: /docs/get_started/about-amp.html
+
+    - title@: Tutorial
+      content@: Ready to build an AMP file? This tutorial will teach you how to create a basic AMP HTML page, stage it, test it, and get it ready for publication.
+      img: /static/img/amp.jpg
+      cta@: Get Started
+      href: /docs/get_started/create_page.html
+
+    - title@: View Code
+      content@: If you'd like to dive deeper into AMP HTML, you can find all of the source code, code samples, and detailed documentation in our GitHub repository.
+      img: /static/img/code.jpg
+      cta@: Visit Github
+      href: https://www.github.com/ampproject/amphtml
+
+# required ?
+contact_button:
+  cta@: CONTACT US
+
+benefits:
+  - title@: Speed
+    content@: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis.
+    img: /static/img/benefits/mobile-speed.png
+    img_mobile:
+      src: /static/img/benefits/mobile-speed.png
+
+  - title@: Openness
+    content@: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis.
+
+  - title@: Publisher Control
+    content@: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis.
+
+contributors:
+  title@: What contributors are saying
+  people:
+    - img: /static/img/quotes/guardian.jpg
+      quote: “This is a project of real ambition. It seeks simultaneously to create a great user experience, to give more autonomy to publishers to deliver that and to develop effective advertising for the mobile web. Achieving these in tandem will be vital to building a more sustainable ecosystem where great journalism can flourish. We are keen to see it succeed.”
+      name: Tony Danker
+      position: Chief Strategy Officer, Guardian News &amp; Media
+
+    - img: /static/img/quotes/google.jpg
+      quote: “Speed has always been a cornerstone of Google Search and we're thrilled to be working alongside others in the tech industry and publishers around the world to bring the Accelerated Mobile Pages Project to life. An open content ecosystem will give publishers maximum reach and allow users to get the best content no matter which app they are using. AMP HTML will make it all blazing fast, so we can't wait to use it!”
+      name: David Besbris
+      position: VP Engineering, Google Search
+
+    - img: /static/img/quotes/vox.jpg
+      quote: “At Vox Media, we want our users to have the best experience possible on whatever device or platform they choose, and we have always believed in benefiting and contributing to open web projects. We’re proud to partner with other media and technology companies to create a standardized approach to web publishing that allows our mobile users the most consistent, fast, accessible, and high-quality experience possible.”
+      name: Melissa Bell
+      position: VP, Growth and Analytics, Vox Media and co-founder of Vox.com
+
+    - img: /static/img/quotes/hearst.jpg
+      quote: “Speed is a key part of delivering great mobile experiences for Hearst’s premium content — this initiative is a way to improve the mobile experience for users while allowing publishers the flexibility to design the experience and the product in a way that supports its business requirements for data, analytics and monetization.”
+      name: Phil Wiser
+      position: CTO, Hearst
+
+    - img: /static/img/quotes/twitter.jpg
+      quote: “We are thrilled to be working alongside Google and other industry leaders to create a better mobile web experience inside of all apps, by partnering with publishers, we are helping them achieve their goals and tell stories with Tweets.”
+      name: Michael Ducker
+      position: Product Manager, Twitter
+
+    - img: /static/img/quotes/newyorktimes.jpeg
+      quote: “As third party mobile platforms become increasingly important, this initiative has the potential to reduce the effort required to distribute content to those platforms, deliver a better user experience and keep economic control in the hands of publishers.”
+      name: Kinsey Wilson
+      position: EVP, Product &amp; Technology, The New York Times
+
+    - img: /static/img/quotes/faz.jpg
+      quote: “On mobile devices, the display of news articles listed by Google shall improve significantly. That’s one of the first results of the Digital News Initiative instigated by Google and eight European publishing companies. We expect this project to considerably boost usage of our mobile pages. We will carefully watch how the initiative can contribute toward increasing advertising revenues. The key will be to improve the publishing business in the context of the digital world.”
+      name: Mathias Müller von Blumencron
+      position: Editor in Chief, FAZ.NET
+
+    - img: /static/img/quotes/chartbeat.jpg
+      quote: “The mobile open web experience is terrible and some have suggested it's too slow to compete. We can choose to see the mobile open web as a relic of its time and flee to the warm embrace of closed platforms and apps. Or we can say that the open web means something important to the world and if it’s broken it’s our job to fix it. I think we should fix it. That’s why Chartbeat is proud to be a part of the Accelerated Mobile Pages Project. It’s our attempt to fix the mobile experience, make it fast and beautiful, and ensure the future of an open web.”
+      name: Tony Haile
+      position: CEO, Chartbeat
+
+    - img: /static/img/quotes/lastampa.jpg
+      quote: “Once we used to talk about digital first, or mobile first. This was the past. Today legacy media need to bring their journalism outside their websites, on the platforms and on the devices where people are. La Stampa is almost 150 years old. We believe in quality and trust. Combining them with a great user experience will make our journalism thrive for the next 150 years. This is why we are part of the project.”
+      name: Mario Calabresi
+      position: Editor in Chief, La Stampa
+
+    - img: /static/img/quotes/folha.jpg
+      quote: “We welcome this project because it accelerates the consumption of mobile content and preserves the business model that finances quality journalism.”
+      name: Antonio Manuel Teixeira Mendes
+      position: Director-Superintendent, Folha de S.Paulo
+
+publishers:
+  title@: Publishers
+  logos:
+    - title@: abril
+      img: /static/img/publishers/abril.png
+
+    - title@: asahi
+      img: /static/img/publishers/asahi.png
+
+    - title@: atlantic_media
+      img: /static/img/publishers/atlantic_media.png
+
+    - title@: bbc_news
+      img: /static/img/publishers/bbc_news.png
+
+    - title@: buzzfeed
+      img: /static/img/publishers/buzzfeed.png
+
+    - title@: condenast
+      img: /static/img/publishers/condenast.png
+
+    - title@: daily_mail
+      img: /static/img/publishers/daily_mail.png
+
+    - title@: economist
+      img: /static/img/publishers/economist.png
+
+    - title@: editora_globo
+      img: /static/img/publishers/editora_globo.png
+
+    - title@: el_pais
+      img: /static/img/publishers/el_pais.png
+
+    - title@: fairfax_media
+      img: /static/img/publishers/fairfax_media.png
+
+    - title@: folha_de_s.paulo
+      img: /static/img/publishers/folha_de_s.paulo.png
+
+    - title@: franzfurter_allgemeine
+      img: /static/img/publishers/franzfurter_allgemeine.png
+
+    - title@: ft
+      img: /static/img/publishers/ft.png
+
+    - title@: gannett
+      img: /static/img/publishers/gannett.png
+
+    - title@: guardian
+      img: /static/img/publishers/guardian.png
+
+    - title@: hearst
+      img: /static/img/publishers/hearst.png
+
+    - title@: huffington_post
+      img: /static/img/publishers/huffington_post.png
+
+    - title@: la_stampa
+      img: /static/img/publishers/la_stampa.png
+
+    - title@: les_echos
+      img: /static/img/publishers/les_echos.png
+
+    - title@: mainichi
+      img: /static/img/publishers/mainichi.png
+
+    - title@: mashable
+      img: /static/img/publishers/mashable.png
+
+    - title@: mcclatchy
+      img: /static/img/publishers/mcclatchy.png
+
+    - title@: new_york_times
+      img: /static/img/publishers/new_york_times.png
+
+    - title@: newscorp_australia
+      img: /static/img/publishers/newscorp_australia.png
+
+    - title@: nine_msn
+      img: /static/img/publishers/nine_msn.png
+
+    - title@: nrc
+      img: /static/img/publishers/nrc.png
+
+    - title@: ny_daily_news
+      img: /static/img/publishers/ny_daily_news.png
+
+    - title@: nypost
+      img: /static/img/publishers/nypost.png
+
+    - title@: pearson
+      img: /static/img/publishers/pearson.png
+
+    - title@: sankei
+      img: /static/img/publishers/sankei.png
+
+    - title@: telegraph
+      img: /static/img/publishers/telegraph.png
+
+    - title@: time
+      img: /static/img/publishers/time.png
+
+    - title@: uol
+      img: /static/img/publishers/uol.png
+
+    - title@: us_news
+      img: /static/img/publishers/us_news.png
+
+    - title@: vox_media
+      img: /static/img/publishers/vox_media.png
+
+    - title@: wallstreetjournal
+      img: /static/img/publishers/wallstreetjournal.png
+
+    - title@: washington_post
+      img: /static/img/publishers/washington_post.png
+
+    - title@: zeit_online
+      img: /static/img/publishers/zeit_online.png

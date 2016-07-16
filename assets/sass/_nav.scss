@@ -1,69 +1,67 @@
+//
+// This SASS sheet is only for the docs page navigation
+//
 nav {
-    border-right: 2px solid #E6E6E6;
-    padding: 20px;
-    margin-right: 30px;
-    margin-left: -20px;
-    width: 200px;
-    flex-shrink: 0;
-    -webkit-flex-shrink: 0;
-    background: #0379c4;
+  border-right: 2px solid #E6E6E6;
+  padding: 20px;
+  margin-right: 30px;
+  margin-left: -20px;
+  width: 200px;
+  flex-shrink: 0;
+  background: #0379c4;
+  color: #fff;
+
+  h2 {
+    font-size: 20px;
     color: #fff;
-    margin-top: -40px;
-    margin-bottom: -30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
 
-    h2 {
-        font-size: 20px;
-        color: #fff;
-        margin-top: 0;
-        margin-bottom: 10px;
+  a {
+      color: #fff;
+  }
+
+  ul, ol {
+
+    li {
+      margin-bottom: 10px;
+      list-style: none;
+
+      ul, ol {
+        padding-left: 0;
+        margin-left: 20px;
+        margin-bottom: 1.2em;
+        li {
+          margin-bottom: 6px;
+          font-size: 14px;
+          list-style: square;
+          color: #fff;
+
+          &.current {
+            color: rgba(255,255,255,0.6);
+          }
+
+          span {
+            font-weight: 500;
+            color: rgba(255,255,255,0.6);;
+          }
+          ul, ol {
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-top: 5px;
+            padding-left: 20px;
+            border-top: 1px solid rgb(65, 143, 193);
+            padding-top: 3px;
+            padding-bottom: 0px;
+          }
+          ol li {
+            list-style: decimal;
+          }
+        }
+      }
     }
-
-    a {
-        color: #fff;
-    }
-
-    ul, ol {
-
-    	li {
-    		margin-bottom: 10px;
-    		list-style: none;
-
-    		ul, ol {
-    			padding-left: 0;
-    			margin-left: 20px;
-    			margin-bottom: 1.2em;
-    			li {
-    				margin-bottom: 6px;
-                    font-size: 14px;
-    				list-style: square;
-                    color: #fff;
-
-                    &.current {
-                        color: rgba(255,255,255,0.6);
-                    }
-
-    				span {
-    					font-weight: 500;
-                        color: rgba(255,255,255,0.6);;
-    				}
-    				ul, ol {
-    					margin-bottom: 0;
-                        margin-left: 0;
-                        margin-top: 5px;
-                        padding-left: 20px;
-                        border-top: 1px solid rgb(65, 143, 193);
-                        padding-top: 3px;
-                        padding-bottom: 0px;
-    				}
-                    ol li {
-                        list-style: decimal;
-                    }
-    			}
-    		}
-    	}
-
-    }
-
+  }
 }
 
 .rtl nav {
@@ -76,15 +74,15 @@ nav {
     	li {
     		ul, ol {
     			padding-left: 0;
-                padding-right: 0;
-                margin-right: 20px;
+          padding-right: 0;
+          margin-right: 20px;
     			margin-left: 0;
     			li {
     				ul, ol {
-                        margin-left: 0;
-                        margin-right: 0;
-                        padding-right: 20px;
-                        padding-left: 0;
+              margin-left: 0;
+              margin-right: 0;
+              padding-right: 20px;
+              padding-left: 0;
     				}
     			}
     		}
@@ -93,49 +91,62 @@ nav {
 }
 
 @include max-screen($mobile-breakpoint) {
-    .container nav {
-        display: none;
+  .container nav {
+    display: none;
+  }
+
+  amp-sidebar {
+    background: #0379c4;
+  }
+
+  amp-sidebar nav {
+    margin-right: 0;
+    border-right: none;
+    margin-top: 0;
+    padding-left: 36px;
+  }
+
+  amp-sidebar nav {
+    ul {
+      padding-right: 0;
     }
 
-    amp-sidebar {
-        background: #0379c4;
+    a, span {
+      color: #fff;
+      background: #1185d0;
+      display: block;
+      padding: 6px 12px;
     }
+  }
 
-    amp-sidebar nav {
-        margin-right: 0;
-        border-right: none;
-        margin-top: 0;
-        padding-left: 36px;
-    }
+  .rtl amp-sidebar nav {
+      padding-left: 0;
+      padding-right: 36px;
+  }
 
-    .rtl amp-sidebar nav {
-        padding-left: 0;
-        padding-right: 36px;
-    }
+  amp-sidebar nav {
 
-    amp-sidebar nav {
+      ul {
+          padding-right: 0;
+      }
 
-        ul {
-            padding-right: 0;
-        }
+      a, span {
+          color: #fff;
+          background: #1185d0;
+          display: block;
+          padding: 6px 12px;
+      }
+  }
 
-        a, span {
-            color: #fff;
-            background: #1185d0;
-            display: block;
-            padding: 6px 12px;
-        }
-    }
+  .rtl amp-sidebar nav {
+      ul {
+          padding-left: 0;
+      }
+  }
 
-    .rtl amp-sidebar nav {
-        ul {
-            padding-left: 0;
-        }
-    }
-
-    amp-sidebar nav + nav {
-        border-top: 1px solid rgba(255, 255, 255, 0.42);
-        margin-top: 25px;
-    }
+  amp-sidebar nav + nav {
+      border-top: 1px solid rgba(255, 255, 255, 0.42);
+      margin-top: 25px;
+  }
 
 }

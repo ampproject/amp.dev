@@ -1,14 +1,20 @@
 footer {
-  padding: 40px 0 60px 100px;
+  padding: 25px 0 25px 0;
+  background-color: $color-grey-100;
 
   p {
     margin: 0;
   }
 
   .footer-image {
-    height: 25px;
-    width: 25px;
-    margin-left: 25px;
-    float: right;
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+  }
+
+  .footer-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 }

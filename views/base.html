@@ -18,6 +18,10 @@
   </script>
 </amp-analytics>
 
+{% macro is_active_class(uri='') -%}
+  {% if uri in doc.url.path %}is-active{% endif %}
+{%- endmacro %}
+
 {% set header_doc = g.doc('/content/includes/header.yaml', locale=doc.locale) %}
 
 <amp-sidebar id='sidebar' side='right' layout='nodisplay'>
@@ -33,7 +37,9 @@
           <li><a href="{{ g.doc(header_doc.fields.who.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.who.get('copy'))}}</a></li>
           <li><a href="{{header_doc.fields.blog.get('href')}}">{{_(header_doc.fields.blog.get('copy'))}}</a></li>
           <li><a href="{{header_doc.fields.github.get('href')}}">{{_(header_doc.fields.github.get('copy'))}}</a></li>
+          {# Is this being removed?
           <li><a href="{{ g.doc(header_doc.fields.roadmap.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.roadmap.get('copy'))}}</a></li>
+          #}
           <li><a href="{{ g.doc(header_doc.fields.docs.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.docs.get('copy'))}}</a></li>
       </ul>
       </li>

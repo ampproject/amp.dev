@@ -5,9 +5,9 @@ class: roadmap
 {% set roadmap = g.doc('/content/includes/roadmap.yaml', locale=doc.locale) %}
 <div class="container">
 
-    <section>
+    <div>
 
-        <h2>Roadmap <small>{{  roadmap.current }}, updated {{  roadmap.updated }}</small></h2>
+        <h1>Roadmap <small>{{  roadmap.current }}, updated {{  roadmap.updated }}</small></h1>
 
         <div class="about">
 
@@ -71,7 +71,7 @@ class: roadmap
         </div>
 
         {% endfor %}
-    </section>
+    </div>
 
     <div class="about">
 

@@ -1,0 +1,25 @@
+.image-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  &__image {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    .image-grid--large & {
+      margin: 0 #{$margin / 2};
+      flex: 0 0 22%;
+      flex: 0 0 calc(25% - #{$margin});
+    }
+
+    .image-grid--small & {
+      margin: 0 #{$margin / 2};
+      flex: 0 0 30%;
+      flex: 0 0 calc(33% - #{$margin});
+    }
+
+  }
+}
