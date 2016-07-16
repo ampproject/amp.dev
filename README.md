@@ -33,11 +33,10 @@ $ grow run
 
 You can now open http://localhost:8080/ and continue working on the source files, then reload the page to see changes appear.
 
-### Deploy
+### Build
 
 ```sh
 $ grow build
-$ grow deploy
 ```
 
 This will generate a static, complete build of the site into the **build* folder.
