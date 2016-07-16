@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ⚡{% if doc.locale == "ar" %} dir="rtl" lang="ar"{% endif %}>
+<html ⚡{% if doc.locale.is_rtl %} dir="rtl" lang="ar"{% endif %}>
 {% include "/views/partials/head.html" %}
-<body class="{{doc.class}}{% if doc.locale == 'ar' %}rtl{% endif %}">
+<body class="{{doc.class}}{% if doc.locale.is_rtl %}rtl{% endif %}">
 <amp-analytics type="googleanalytics" id="analytics-ga">
   <script type="application/json">
   {
