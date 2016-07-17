@@ -1,6 +1,6 @@
 {% macro render_item(item) -%}
   {% set sub_collection = g.collection(item.collection.pod_path + '/' + item.base) %}
-  {% set open = sub_collection.pod_path == doc.pod_path[:-3] or doc in sub_collection %}
+  {% set open = sub_collection.pod_path in doc.pod_path[:-3] %}
 
   {% if doc == item %}
     <li class="current">
