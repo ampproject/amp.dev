@@ -212,15 +212,6 @@
     }
   }
 
-  @include max-screen($mobile-baby-breakpoint) {
-      .header-title span {
-        display: none;
-      }
-      .header-title::after {
-        content: "AMP";
-      }
-  }
-
 }
 
 .rtl header {
