@@ -31,20 +31,17 @@
 
     <ul>
       <li>
-        <h2>{{_("Menu")}}</h2>
         <ul>
-          <li><a href="{{ g.doc(header_doc.fields.faq.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.faq.get('copy'))}}</a></li>
-          <li><a href="{{ g.doc(header_doc.fields.who.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.who.get('copy'))}}</a></li>
+          <li class="{% if doc.url.path == '/' %}is-active{% endif %}"><a href="{{g.doc('/content/pages/home.html', locale=doc.locale).url.path}}">{{_('Home')}}</a></li>
+          <li class="{{is_active_class('/faqs')}}"><a href="{{ g.doc(header_doc.fields.faq.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.faq.get('copy'))}}</a></li>
+          <li class="{{is_active_class('/who')}}"><a href="{{ g.doc(header_doc.fields.who.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.who.get('copy'))}}</a></li>
           <li><a href="{{header_doc.fields.blog.get('href')}}">{{_(header_doc.fields.blog.get('copy'))}}</a></li>
           <li><a href="{{header_doc.fields.github.get('href')}}">{{_(header_doc.fields.github.get('copy'))}}</a></li>
-          {# Is this being removed?
-          <li><a href="{{ g.doc(header_doc.fields.roadmap.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.roadmap.get('copy'))}}</a></li>
-          #}
-          <li><a href="{{ g.doc(header_doc.fields.docs.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.docs.get('copy'))}}</a></li>
+          <li class="{{is_active_class('/roadmap')}}"><a href="{{ g.doc(header_doc.fields.roadmap.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.roadmap.get('copy'))}}</a></li>
+          <li class="{% if '/docs' in doc.url.path and not ('/faqs' in doc.url.path) %}is-active{% endif %}"><a href="{{ g.doc(header_doc.fields.docs.get('href'), locale=doc.locale).url.path }}">{{_(header_doc.fields.docs.get('copy'))}}</a></li>
       </ul>
       </li>
     </ul>
-
 
   </nav>
 

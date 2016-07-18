@@ -21,11 +21,9 @@
           <a class="tab desktop" target="_blank" href="{{header.fields.github.get('href')}}">
             {{_(header.fields.github.get('copy'))}}
           </a>
-
           <a class="tab desktop {{is_active_class('/roadmap')}}" href="{{ g.doc(header.fields.roadmap.get('href'), locale=doc.locale).url.path }}">
             {{_(header.fields.roadmap.get('copy'))}}
           </a>
-
           <a class="tab desktop" href="{{ g.doc(header.fields.docs.get('href'), locale=doc.locale).url.path }}">
             {{_(header.fields.docs.get('copy'))}}
           </a>

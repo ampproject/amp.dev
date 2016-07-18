@@ -1,122 +1,124 @@
 div.language {
 
-    overflow: hidden;
-    position: relative;
-    height: 33px;
-    width: 132px;
-    box-shadow: 0px 1px 2px #b7b7b7;
+  overflow: hidden;
+  position: relative;
+  height: 33px;
+  width: 132px;
+  box-shadow: 0px 1px 2px #b7b7b7;
+
+  &:hover {
+    overflow: visible;
+  }
+
+  ul {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  li {
+    background-color: #f7f7f7;
+    padding: 4px 10px;
+    margin: 0;
+    border-bottom: 1px solid rgb(231, 235, 236);
+    display: flex;
+    flex-direction: column;
 
     &:hover {
-        overflow: visible;
+      background-color: #0379c4;
+      color: #fff;
     }
 
-    ul {
-        position: absolute;
-        left: 0;
-        right: 0;
+    &.current {
+
     }
 
-    li {
-        background-color: #f7f7f7;
-        padding: 4px 10px;
-        margin: 0;
-        border-bottom: 1px solid rgb(231, 235, 236);
-        display: flex;
-        flex-direction: column;
+    a {
+      display: block;
+      padding: 0;
+      padding-left: 26px;
+      background-repeat: no-repeat;
+      background-position: 0px 6px;
+      background-color: transparent;
+      color: inherit;
 
-        &:hover {
-            background-color: #0379c4;
-            color: #fff;
-        }
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
-        &.current {
+      span {
+          padding: 0;
+          background-color: transparent;
+      }
 
-        }
+      @each $country in en, es, fr, id, it, ja, ko, nl, pl, pt_BR, ru, th, tr, zh_CN, ar {
+      &.flag-#{$country} {
+          background-image: url('/static/img/flags/#{$country}.gif');
+      }
+      }
 
-        a {
-            display: block;
-            padding: 0;
-            padding-left: 26px;
-            background-repeat: no-repeat;
-            background-position: 0px 6px;
-            background-color: transparent;
-            color: inherit;
-
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-
-            span {
-                padding: 0;
-                background-color: transparent;
-            }
-
-            @each $country in en, es, fr, id, it, ja, ko, nl, pl, pt_BR, ru, th, tr, zh_CN, ar {
-            &.flag-#{$country} {
-                background-image: url('/static/img/flags/#{$country}.gif');
-            }
-            }
-
-        }
     }
+  }
 }
 
 .rtl div.language {
-    li {
-        a {
-            padding-right: 26px;
-            padding-left: 0;
-            background-position: right 6px;
-        }
+  li {
+    a {
+      padding-right: 26px;
+      padding-left: 0;
+      background-position: right 6px;
     }
+  }
 }
 
 header div.language {
-    margin-left: 12px;
-    align-self: center;
+  margin-left: 12px;
+  align-self: center;
 }
 
 .rtl header div.language {
-    margin-left: 0;
-    margin-right: 12px;
+  margin-left: 0;
+  margin-right: 12px;
 }
 
 amp-sidebar div.language {
-   width: auto;
-   box-shadow: 0px 1px 2px #1185d0;
-   margin: -20px -20px 16px -16px;
+  width: auto;
+  box-shadow: 0px 1px 5px #0b5d92;
+  height: 45px;
+  margin-bottom: 12px;
 
-   &::before {
-        content: "";
-        display: block;
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid #0379c4;
-        position: absolute;
-        top: 12px;
-        right: 20px;
-        z-index: 1;
-   }
+  &::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #0379c4;
+    position: absolute;
+    top: 19px;
+    right: 20px;
+    z-index: 1;
+  }
 
-   li {
-       background-color: #2fa8f7;
-       border-bottom: 1px solid #2894da;
-       padding-left: 16px;
-   }
+  li {
+    background-color: #204b67;
+    border-bottom: 1px solid #1c6b9e;
+    padding-left: 16px;
+    padding-top: 11px;
+    padding-bottom: 6px;
+  }
 }
 
 .rtl amp-sidebar div.language {
-   margin: -20px -16px 16px -20px;
 
-   &::before {
-        left: 20px;
-        right: auto;
-   }
+  &::before {
+    left: 20px;
+    right: auto;
+  }
 
-   li {
-       padding-left: 0;
-       padding-right: 16px;
-   }
+  li {
+    padding-left: 0;
+    padding-right: 16px;
+  }
 }

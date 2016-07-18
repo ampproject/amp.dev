@@ -85,18 +85,18 @@ class: home
     </div>
 
     <amp-carousel class="tablet-down"
-      width="300"
-      height="500"
+      width="auto"
+      height="640"
       type="slides"
-      layout="fixed">
+      layout="fixed-height">
       {% for card in home.get_started.cards %}
       <div class="card">
         <div class="card__image">
           <amp-img
               noloading
-              height=190
-              width=297
-              layout=responsive
+              height="190"
+              width="297"
+              layout="responsive"
               src="{{card.img}}">
           </amp-img>
         </div>
