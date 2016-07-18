@@ -42,7 +42,7 @@ div.language {
     a {
       display: block;
       padding: 0;
-      padding-left: 26px;
+      padding-left: 24px;
       color: #424242;
 
       overflow: hidden;
@@ -82,18 +82,19 @@ header div.language {
 
 amp-sidebar div.language {
   width: auto;
-  box-shadow: 0px 1px 5px #0b5d92;
+  box-shadow: 0px 1px 5px #d0d0d0;
   height: 45px;
   margin-bottom: 12px;
+  background: #f9f9f9;
 
   &::before {
     content: "";
     display: block;
     width: 0;
     height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 12px solid #0379c4;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid #454545;
     position: absolute;
     top: 19px;
     right: 20px;
@@ -101,11 +102,28 @@ amp-sidebar div.language {
   }
 
   li {
-    background-color: #204b67;
-    border-bottom: 1px solid #1c6b9e;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
     padding-left: 16px;
     padding-top: 11px;
     padding-bottom: 6px;
+
+    &:hover {
+      span {
+        color: #fff;
+      }
+    }
+
+    &.current {
+      background: none;
+      span {
+        color: #424242;
+      }
+    }
+
+    a {
+      padding-left: 0;
+    }
   }
 }
 
