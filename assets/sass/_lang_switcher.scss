@@ -24,23 +24,26 @@ div.language {
     display: flex;
     flex-direction: column;
 
-    &:hover {
-      background-color: #0379c4;
-      color: #fff;
+    &.current {
+      background-image: url('/static/img/lang-icon.svg');
+      background-repeat: no-repeat;
+      background-position: 6px 6px;
+      background-size: 20px;
+      background-color: transparent;
     }
 
-    &.current {
-
+    &:hover {
+      background-color: #0379c4;
+      a {
+        color: #fff;
+      }
     }
 
     a {
       display: block;
       padding: 0;
       padding-left: 26px;
-      background-repeat: no-repeat;
-      background-position: 0px 6px;
-      background-color: transparent;
-      color: inherit;
+      color: #424242;
 
       overflow: hidden;
       text-overflow: ellipsis;
@@ -51,11 +54,7 @@ div.language {
           background-color: transparent;
       }
 
-      @each $country in en, es, fr, id, it, ja, ko, nl, pl, pt_BR, ru, th, tr, zh_CN, ar {
-      &.flag-#{$country} {
-          background-image: url('/static/img/flags/#{$country}.gif');
-      }
-      }
+
 
     }
   }
