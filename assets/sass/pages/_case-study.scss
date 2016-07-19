@@ -1,0 +1,57 @@
+body.case-study {
+
+    .half-half {
+        display: flex;
+
+        > * {
+            flex: 1 1 60%;
+        }
+
+        > *:first-child {
+            flex: 1 1 40%;
+        }
+    }
+
+    .results {
+
+        p {
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        strong {
+            display: block;
+            color: #4CAF50;
+        }
+
+        .button {
+            background: aliceblue;
+            margin: 2em 2em 0 0;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+    }
+
+    blockquote p {
+        font-size: 22px;
+        line-height: 35px;
+    }
+
+    @include max-screen($mobile-breakpoint) {
+        .half-half {
+            display: block;
+        }
+
+        .results {
+            .button {
+                margin-right: 0;
+            }
+        }
+    }
+
+}
+
+
+
+

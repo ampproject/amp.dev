@@ -12,6 +12,7 @@ class: home
 ---
 {% set home = g.doc('/content/includes/home.yaml', locale=doc.locale) %}
 {% set blog = g.doc('/content/includes/blog_feed.yaml', locale=doc.locale) %}
+{% set case_studies = g.doc('/content/includes/case-studies.yaml', locale=doc.locale) %}
 
 <section class="blade blade--hero hero">
   <div class="container">
@@ -222,6 +223,29 @@ class: home
       </div>
       {% endfor %}
     </amp-carousel>
+
+  </div>
+</section>
+
+<section class="blade blade--blog">
+
+  <div class="container">
+    <div>
+        <h1 class="blog__section-title">{{_(case_studies.section_title)}}</h1>
+    </div>
+
+    <div class="blog">
+      <div class="blog__tabs">
+        {% for article in case_studies.case_studies %}
+          {% if loop.index0 < 3 %}
+          <a class="blog__tab" href="{{article.href}}">
+            <h3 class="blog__title">{{article.title}}</h3>
+            <div class="blog__subtitle">{{article.date}}</div>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
 
   </div>
 </section>
