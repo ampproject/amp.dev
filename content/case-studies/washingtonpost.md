@@ -3,31 +3,15 @@ $title: AMP helps the Washington Post increase returning users from mobile searc
 class: case-study
 ---
 
-<div class="half-half">
-
-    <div>
-        <amp-img width="559" height="1000" layout="responsive" src="/static/img/case-studies/wapo_framed.gif"></amp-img>
-    </div>
-
+<div class="img-right">
     <div class="results">
-
-        <h2>Results</h2>
-
-        <p><span class="compare-yes"></span><strong>23%</strong> increase in mobile search users who
-        return within 7 days</p>
-
-        <p><span class="compare-yes"></span><strong>88%</strong> improvement in load time for AMP content
-        versus traditional mobile web</p>
-
-        <p><span class="compare-yes"></span><strong>1000+</strong> articles The Washington Post publishes
-        in AMP HTML daily</p>
-
-        <p><a class="button" href="/static/img/case-studies/wapo.pdf">
-        Download PDF Case study
-        </a></p>
-
+        <div>
+            <p><span class="compare-yes"></span><strong>23%</strong> increase in mobile search users who return within 7 days</p>
+            <p><span class="compare-yes"></span><strong>88%</strong> improvement in load time for AMP content versus traditional mobile web</p>
+            <p><span class="compare-yes"></span><strong>1000+</strong> articles The Washington Post publishes in AMP HTML daily</p>
+        </div>
     </div>
-
+    <amp-img width="559" height="1000" layout="responsive" src="/static/img/case-studies/wapo_framed.gif"></amp-img>
 </div>
 
 With nearly 55% of their traffic coming from mobile devices, The Washington
@@ -62,3 +46,5 @@ published in AMP, this number jumps to 63%.
 technologies. And since AMP is not a template based system, we were able
 to host our content, style it as we see fit, and easily integrate our existing
 advertising, analytics and other business tools,” Merrell said.
+
+<p><a class="button" href="/static/img/case-studies/wapo.pdf">Download PDF Case study</a></p>

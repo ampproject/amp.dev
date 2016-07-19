@@ -1,20 +1,39 @@
 body.case-study {
 
-    .half-half {
-        display: flex;
+    h1 {
+        margin-bottom: 1em;
+    }
 
-        > * {
-            flex: 1 1 60%;
-        }
+    .img-right {
+        display: inline-block;
+        width: 37%;
+        min-width: 250px;
+        float: right;
 
-        > *:first-child {
-            flex: 1 1 40%;
+        amp-img {
+            margin-top: 0;
         }
+    }
+
+    .button {
+        background: aliceblue;
+        margin: 2em 2em 0 0;
+        text-transform: uppercase;
+        font-weight: 400;
+        display: inline-block;
     }
 
     .results {
 
+        padding: 0 1em;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 1em;
+        margin: 0 2em;
+
         p {
+            &:first-child {
+                margin-top: 0;
+            }
             font-weight: 400;
             font-size: 18px;
         }
@@ -22,13 +41,6 @@ body.case-study {
         strong {
             display: block;
             color: #4CAF50;
-        }
-
-        .button {
-            background: aliceblue;
-            margin: 2em 2em 0 0;
-            text-transform: uppercase;
-            font-weight: 400;
         }
 
     }
@@ -39,14 +51,19 @@ body.case-study {
     }
 
     @include max-screen($mobile-breakpoint) {
-        .half-half {
-            display: block;
-        }
 
         .results {
             .button {
                 margin-right: 0;
             }
+        }
+    }
+
+    @include max-screen(600px) {
+        .img-right {
+            display: block;
+            float: none;
+            width: auto;
         }
     }
 
