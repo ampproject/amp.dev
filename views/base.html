@@ -24,7 +24,7 @@
 
 {% set header_doc = g.doc('/content/includes/header.yaml', locale=doc.locale) %}
 
-<amp-sidebar id='sidebar' side='right' layout='nodisplay'>
+<amp-sidebar id='sidebar' side='{% if doc.locale.is_rtl %}left{% else %}right{% endif %}' layout='nodisplay'>
   <nav>
 
     {% include "/views/partials/lang_switcher.html" %}
