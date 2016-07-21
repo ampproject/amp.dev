@@ -27,10 +27,6 @@ get_started:
       cta@: Visit Github
       href: https://www.github.com/ampproject/amphtml
 
-# required ?
-contact_button:
-  cta@: CONTACT US
-
 benefits:
   - title@: Speed
     content@: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis.

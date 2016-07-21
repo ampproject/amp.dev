@@ -56,11 +56,11 @@ Publishers and Content Management System (CMS) providers can develop an integrat
 
 ### How can a consumer platform get involved in Accelerated Mobile Pages?
 
-The project is open to all players, and existing members of the project are very enthusiastic to engage with consumer platforms on the initiative. Google will also open its cache for use for free by anyone, including to consumer platforms that would like to display AMP content in their environment. Please get in touch via the [contact form](/contact) and we will address your questions as quickly as we can. In the meantime, we suggest joining the conversation on GitHub!
+The project is open to all players, and existing members of the project are very enthusiastic to engage with consumer platforms on the initiative. Google will also open its cache for use for free by anyone, including to consumer platforms that would like to display AMP content in their environment. Please get in touch via [Github](https://github.com/ampproject/amphtml/issues/new) and we will address your questions as quickly as we can.
 
 ### How can an advertising or technology vendor get involved in Accelerated Mobile Pages?
 
-Though we cannot guarantee that all vendor technology will function perfectly inside AMP files, over time we expect to release new functionality in the specification that will make it easier for your technology to integrate with the format. Please get in touch via the [contact form](/contact/) and we will address your questions as quickly as we can.
+Though we cannot guarantee that all vendor technology will function perfectly inside AMP files, over time we expect to release new functionality in the specification that will make it easier for your technology to integrate with the format. Please get in touch via [Github](https://github.com/ampproject/amphtml/issues/new) and we will address your questions as quickly as we can.
 
 ## Publisher Monetization
 
@@ -86,4 +86,4 @@ Yes, an AMP file is the same as the rest of your site – this space is the publ
 
 ### How do I become a part of this project?
 
-We welcome interested individuals and companies who want to get involved to fill out the [contact form](/contact), so that we can add you to a distribution list and keep you posted on any new information.
+We welcome interested individuals and companies who want to get involved to fill out the [Github](https://github.com/ampproject/amphtml/issues/new), so that we can add you to a distribution list and keep you posted on any new information.
