@@ -1,13 +1,52 @@
 {
   "hosting": {
     "public": "build",
-    "headers": [ {
-      "source" : "**/*.@(jpg|jpeg|gif|png|svg|mp4)",
-      "headers" : [ {
-      "key" : "Cache-Control",
-      "value" : "max-age=86400"
-      } ]
-    } ]
+    "headers": [
+      {
+        "source" : "**/*.@(jpg|jpeg|gif|png|svg|mp4)",
+        "headers" : [ {
+        "key" : "Cache-Control",
+        "value" : "max-age=86400"
+        } ]
+      }
+    ],
+    "redirects": [
+      {
+        "source" : "/docs",
+        "destination" : "/docs/get_started/about-amp.html",
+        "type" : 301
+      },
+      {
+        "source" : "/docs/",
+        "destination" : "/docs/get_started/about-amp.html",
+        "type" : 301
+      },
+      {
+        "source" : "/docs/index.html",
+        "destination" : "/docs/get_started/about-amp.html",
+        "type" : 301
+      },
+      {
+        "source" : "/faq",
+        "destination" : "/docs/support/faqs.html",
+        "type" : 301
+      },
+      {
+        "source" : "/faq/",
+        "destination" : "/docs/support/faqs.html",
+        "type" : 301
+      },
+      {
+        "source" : "/faq/index.html",
+        "destination" : "/docs/support/faqs.html",
+        "type" : 301
+      },
+      {
+        "source" : "/docs/get_started/create_page.html",
+        "destination" : "/docs/get_started/create.html",
+        "type" : 301
+      }
+    ]
   },
   "ignore": [
     ".grow"
