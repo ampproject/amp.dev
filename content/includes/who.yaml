@@ -2,7 +2,7 @@
 page_title: "Participants"
 
 partners:
-  section_title@: "Publishers using AMP HTML"
+  section_title@: "Publishers using AMP"
   sections:
     - title@: Europe
       section_items:
@@ -110,7 +110,7 @@ partners:
         - Business Standard
         - CINEMATODAY
         - Digital Chosun
-        - EconomicTimes
+        - Economic Times
         - Eiga.com
         - FirstPost
         - Hankyung.com
@@ -134,7 +134,6 @@ partners:
         - Slow News
         - THE PAGE
         - Tempo.co
-        - Economic Times
         - Uzone.id
         - Yonhap News
         - Zakcak
@@ -219,7 +218,7 @@ partners:
         - Washington Post
 
 tech_companies:
-  section_title@: Technology Companies using AMP HTML
+  section_title@: Technology Companies using AMP
   sections:
     - title@: Ads
       section_items:
@@ -251,7 +250,7 @@ tech_companies:
         - Weborama
         - YieldMo
 
-    - title@: Analaytics
+    - title@: Analytics
       section_items:
         - Adobe Analytics
         - AT Internet
@@ -266,7 +265,7 @@ tech_companies:
         - TNS
         - Webtrekk GmbH
 
-    - title@: Tech Platform
+    - title@: Content Platforms
       section_items:
         - Google
         - Hatena

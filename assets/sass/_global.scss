@@ -40,6 +40,15 @@ h5 {
   font-weight: 300;
   margin-top: 1.1em;
   margin-bottom: 0.5em;
+
+  &:before {
+    display: block;
+    content: " ";
+    margin-top: -90px;
+    height: 90px;
+    visibility: hidden;
+  }
+
 }
 
 h1 {
@@ -66,10 +75,10 @@ h3 {
 a {
   color: $color-midblue;
   text-decoration: none;
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+a:link:hover {
+  text-decoration: underline;
 }
 
 a.button {

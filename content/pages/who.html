@@ -16,10 +16,10 @@ class: who
     </div>
 
     <div class="who__section">
-      <h2>{{who.partners.section_title}}</h2>
+      <h2 id="{{who.partners.section_title|slug}}">{{who.partners.section_title}}<a href="#{{who.partners.section_title|slug}}">#</a></h2>
       {% for section in who.partners.sections %}
       <div>
-        <h3>{{section.title}}</h3>
+        <h3 id="{{section.title|slug}}">{{section.title}}<a href="#{{section.title|slug}}">#</a></h3>
         <ol class="items">
           {% for item in section.section_items | sort %}
             <li class="item">{{item}}</li>
@@ -30,10 +30,10 @@ class: who
     </div>
 
     <div>
-      <h2>{{who.tech_companies.section_title}}</h2>
+      <h2 id="{{who.tech_companies.section_title|slug}}">{{who.tech_companies.section_title}}<a href="#{{who.tech_companies.section_title|slug}}">#</a></h2>
       {% for section in who.tech_companies.sections %}
       <div>
-        <h3>{{section.title}}</h3>
+        <h3 id="{{section.title|slug}}">{{section.title}}<a href="#{{section.title|slug}}">#</a></h3>
         <ol class="items">
           {% for item in section.section_items | sort %}
             <li class="item">{{item}}</li>
