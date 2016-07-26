@@ -45,7 +45,7 @@ make common patterns easy to implement in a performant way.
 
 For example, the [`amp-img`](/docs/reference/amp-img.html) tag
 provides full `srcset` support even in browsers that don’t support it yet.
-Learn how to [create your first AMP HTML page](/docs/get_started/create_page.html).
+Learn how to [create your first AMP HTML page](/docs/get_started/create.html).
 
 ## AMP JS
 
