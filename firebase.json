@@ -42,7 +42,7 @@
         "type" : 301
       },
       {
-        "source" : "/docs/get_started/create.html",
+        "source" : "/docs/get_started/create_page.html",
         "destination" : "/docs/get_started/create.html",
         "type" : 301
       },
