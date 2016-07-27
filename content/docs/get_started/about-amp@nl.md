@@ -44,7 +44,7 @@ hiermee kunnen algemene patronen eenvoudig en optimaal worden geïmplementeerd.
 
 De tag [`amp-img`](/docs/reference/amp-img.html) biedt bijvoorbeeld
 volledige `srcset`-ondersteuning, zelfs in browsers die dit nog niet ondersteunen.
-Meer informatie over [hoe u uw eerste AMP HTML-pagina maakt](/docs/get_started/create_page.html).
+Meer informatie over [hoe u uw eerste AMP HTML-pagina maakt](/docs/get_started/create.html).
 
 ## AMP JS
 

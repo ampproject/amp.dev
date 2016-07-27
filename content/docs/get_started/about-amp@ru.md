@@ -44,7 +44,7 @@ AMP HTML является базовой разметкой HTML, дополне
 
 Например, тег [`amp-img`](/docs/reference/amp-img.html)
 обеспечивает полную поддержку атрибута `srcset` даже в тех браузерах, которые пока его не поддерживают.
-Узнайте, как [создать свою первую страницу AMP HTML](/docs/get_started/create_page.html).
+Узнайте, как [создать свою первую страницу AMP HTML](/docs/get_started/create.html).
 
 ## AMP JS
 

@@ -44,7 +44,7 @@ AMP HTML ページ内のタグは、ほとんどが通常の HTML タグです�
 
 たとえば [`amp-img`](/docs/reference/amp-img.html) タグは、
 `srcset` をフルサポートしています。まだこの機能に対応していないブラウザでも問題ありません。
-[初めての AMP HTML ページを作成する](/docs/get_started/create_page.html)方法もご覧ください。
+[初めての AMP HTML ページを作成する](/docs/get_started/create.html)方法もご覧ください。
 
 ## AMP JS
 

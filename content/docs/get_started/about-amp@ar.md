@@ -44,7 +44,7 @@ AMP هي وسيلة لإنشاء صفحات ويب للمحتوى الثابت �
 
 على سبيل المثال، توفر العلامة [`amp-img`](/docs/reference/amp-img.html)
 الدعم الكامل لـ `srcset` حتى في المتصفحات التي لا تدعمها حتى الآن.
-تعرّف على كيفية [إنشاء صفحة <span dir="ltr" class="nowrap">AMP HTML</span> الأولى لك](/docs/get_started/create_page.html).
+تعرّف على كيفية [إنشاء صفحة <span dir="ltr" class="nowrap">AMP HTML</span> الأولى لك](/docs/get_started/create.html).
 
 ## <span dir="ltr" class="nowrap">AMP JS</span>
 

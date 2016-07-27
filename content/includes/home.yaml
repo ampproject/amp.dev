@@ -19,7 +19,7 @@ get_started:
       content@: Ready to build an AMP file? This tutorial will teach you how to create a basic AMP HTML page, stage it, test it, and get it ready for publication.
       img: /static/img/amp.jpg
       cta@: Get Started
-      href: /docs/get_started/create_page.html
+      href: /docs/get_started/create.html
 
     - title@: View Code
       content@: If you'd like to dive deeper into AMP HTML, you can find all of the source code, code samples, and detailed documentation in our GitHub repository.
