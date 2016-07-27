@@ -24,7 +24,7 @@ sections:
         - Further alignment with Progressive Web Apps (PWAs)
         quarter:
             "1":
-            - “AMP bootstrap” default styling
+            - "[Out-of-box templates and styling](https://github.com/ampproject/amphtml/issues/2851)"
             - "**amp-lightbox** improvements"
             "4":
             - "[Form support](https://github.com/ampproject/amphtml/issues/3343)"
