@@ -89,21 +89,21 @@ As a prerequisite, you may need to install [Node.js with it's package manager
 To install the [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator), type `npm install -g amphtml-validator`.
 
 Now let's validate a real AMP HTML page.
-```
+<pre>
 $ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
-```
+https://www.ampproject.org/: <font color="green">PASS</font>
+</pre>
 
 Unsurprisingly this page is valid AMP HTML. Let's try a page that is not valid:
 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). To run the `amphtml-validator` command, you can either provide the URL of the page or a local file name. Download and save [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) into a file, then run:
-```
+<pre>
 $ amphtml-validator several_errors.html
-several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
-several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:23:2 <font color="red">The attribute 'charset' may not appear in tag 'meta name= and content='.</font>
+several_errors.html:26:2 <font color="red">The tag 'script' is disallowed except in specific forms.</font>
+several_errors.html:32:2 <font color="red">The mandatory attribute 'height' is missing in tag 'amp-img'.</font> (see https://www.ampproject.org/docs/reference/amp-img.html)
+several_errors.html:34:2 <font color="red">The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'.</font> (see https://www.ampproject.org/docs/reference/amp-ad.html)
 ...
-```
+</pre>
 
 The format of the error messages consists of file name, line, column, and message,
 often followed by a link to the AMP HTML reference. Some editors, including Emacs
@@ -111,38 +111,38 @@ often followed by a link to the AMP HTML reference. Some editors, including Emac
 you jump to the errors in the original file.
 
 For a good starting point to make your own AMP page consider [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
-```
+<pre>
 $ amphtml-validator minimum_valid_amp.html
-minimum_valid_amp.html: PASS
-```
+minimum_valid_amp.html: <font color="green">PASS</font>
+</pre>
 
 The command line tool offers additional features including switching off
 the color, printing JSON output, or running a specific version of the
 validator Javascript (by default it runs the latest published script).
-```
+<pre>
 $ amphtml-validator --help
-
-  Usage: index [options] <fileOrUrlOrMinus...>
-
+&nbsp;
+  Usage: index [options] &lt;fileOrUrlOrMinus...>
+&nbsp;
   Validates the files or urls provided as arguments. If "-" is
   specified, reads from stdin instead.
-
+&nbsp;
   Options:
-
+&nbsp;
     -h, --help                  output usage information
     -V, --version               output the version number
-    --validator_js <fileOrUrl>  The Validator Javascript.
+    --validator_js &lt;fileOrUrl>  The Validator Javascript.
       Latest published version by default, or
       dist/validator_minified.js (built with build.py)
       for development.
-    --format <color|text|json>  How to format the output.
+    --format &lt;color|text|json>  How to format the output.
       "color" displays errors/warnings/success in
               red/orange/green.
       "text"  avoids color (e.g., useful in terminals not
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
-```
+</pre>
 
 ## What happens if my page isn’t valid?
 
