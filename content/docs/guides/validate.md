@@ -89,6 +89,7 @@ As a prerequisite, you may need to install [Node.js with it's package manager
 To install the [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator), type `npm install -g amphtml-validator`.
 
 Now let's validate a real AMP HTML page.
+
 ```
 $ amphtml-validator https://www.ampproject.org/
 https://www.ampproject.org/: PASS
@@ -96,6 +97,7 @@ https://www.ampproject.org/: PASS
 
 Unsurprisingly this page is valid AMP HTML. Let's try a page that is not valid:
 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). To run the `amphtml-validator` command, you can either provide the URL of the page or a local file name. Download and save [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) into a file, then run:
+
 ```
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
@@ -111,6 +113,7 @@ often followed by a link to the AMP HTML reference. Some editors, including Emac
 you jump to the errors in the original file.
 
 For a good starting point to make your own AMP page consider [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
+
 ```
 $ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
@@ -119,6 +122,7 @@ minimum_valid_amp.html: PASS
 The command line tool offers additional features including switching off
 the color, printing JSON output, or running a specific version of the
 validator Javascript (by default it runs the latest published script).
+
 ```
 $ amphtml-validator --help
 
