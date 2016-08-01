@@ -2,17 +2,17 @@
 page_title: "Participants"
 
 partners:
-  section_title@: "Publishers using AMP"
+  section_title@: "Websites using AMP"
   sections:
     - title@: Europe
       section_items:
         - 20 Minutes
         - 20 Minutos
         - ABC
-        - AS
-        - BBC
         - Abendzeitung
         - ANSA
+        - AS
+        - BBC
         - Bento
         - Berliner Morgenpost
         - BILD
@@ -22,24 +22,23 @@ partners:
         - Charente Libre.fr
         - Condé Nast
         - Corriere della Sera
-        - DailyMail.com / MailOnline
+        - Daily Express
         - Daily Star
-        - The Week
+        - DailyMail.com / MailOnline
         - El Confidencial
+        - El Economista
         - El Español
         - El Mundo
         - El Mundo Deportivo
         - EL PAÍS
         - El Periódico
-        - El Economista
         - Europa Press
         - Evening Standard
         - Expansión
-        - Daily Express
-        - Frankfurter Allgemeine Zeitung
         - FOCUS Online
         - France 24
         - Francetvinfo
+        - Frankfurter Allgemeine Zeitung
         - Golem.de
         - Gruner + Jahr
         - Guardian News & Media
@@ -50,20 +49,19 @@ partners:
         - IlSussidiario.net
         - Ippen Digital Plattform
         - kicker
+        - L'Express
         - La République des Pyrénées
         - La Stampa
         - La Vanguardia
         - Lagardère Active
         - Le Parisien
         - Les Echos
-        - L'Express
         - Mail.Ru Group
         - Marca
         - Meduza
         - merkur.de
         - Metro UK
         - Metronews
-        - The Next Web
         - OK!
         - Ouest France
         - Promiflash
@@ -79,13 +77,15 @@ partners:
         - SPORT1
         - Stuttgarter Nachrichten
         - Stuttgarter Zeitung
-        - SudOuest.fr
         - Süddeutsche Zeitung
+        - SudOuest.fr
         - t-online.de
         - tagesschau
         - TF1
         - The Financial Times
         - The Independent
+        - The Next Web
+        - The Week
         - Trinity Mirror
         - tz.de
         - Vocento
@@ -97,7 +97,7 @@ partners:
         - Московский Комсомолец
         - Телекомпания НТВ
 
-    - title@: Asia
+    - title@: APAC
       section_items:
         - ABPLive
         - Ameba.com
@@ -106,13 +106,13 @@ partners:
         - BLOGOS
         - Bloter
         - Bola.com
-        - Oneindia
         - Business Standard
         - CINEMATODAY
         - Digital Chosun
         - Economic Times
         - Eiga.com
         - FirstPost
+        - Flipkart
         - Hankyung.com
         - IndianExpress
         - Indiatoday.in
@@ -127,16 +127,20 @@ partners:
         - NDTV
         - Newstapa
         - Nikkan Sports
+        - Oneindia
+        - Rakuten
+        - Recruit
         - Republika.co.id
         - Response
         - Sankei News
         - SANSPO
         - Slow News
-        - THE PAGE
         - Tempo.co
+        - THE PAGE
         - Uzone.id
         - Yonhap News
         - Zakcak
+        - Zomato
 
     - title@: Latin America
       section_items:
@@ -162,6 +166,7 @@ partners:
         - Grupo RBS
         - Jornal Extra
         - M de Mulher
+        - Magazine Luiza
         - MaisEquilibrio
         - O Globo
         - Portal Catraca Livre
@@ -180,41 +185,50 @@ partners:
 
     - title@: North America
       section_items:
+        - 1-800-Flowers
         - 247Sports
         - ABC News
-        - The Atlantic
         - Business Insider
         - Buzzfeed
         - CBS News
         - CNN
         - Digital Trends
+        - Disney
         - E! News
+        - eBay
         - Entrepreneur
+        - Fandango
+        - Food Network
+        - Food.com
         - Forbes
         - Fusion
+        - Genius
         - Hearst
         - Heavy
-        - The Huffington Post
         - IBT Media
-        - The Inquisitr News
         - Los Angeles Times
         - MarketWatch
         - Mic
         - MSNBC
         - New York Daily News
-        - The New York Post
-        - The New York Times
+        - NFL
         - POPSUGAR.
         - SB Nation
         - SheKnows.com
+        - The Atlantic
+        - The Huffington Post
+        - The Inquisitr News
+        - The New York Post
+        - The New York Times
+        - The Verge
+        - The Wall Street Journal
         - theScore
         - Thrillist
         - Time Inc.
         - Tribune Media
+        - TripAdvisor
         - USA Today
-        - The Verge
         - Vox
-        - The Wall Street Journal
         - Washington Post
 
 tech_companies:
@@ -273,6 +287,7 @@ tech_companies:
         - Medium
         - Nuzzel
         - Pinterest
+        - Reddit
         - Twitter
 
     - title@: CMS
@@ -280,6 +295,7 @@ tech_companies:
         - Drupal
         - Hatena
         - Marfeel
+        - Squarespace
         - Wordpress
 
     - title@: Video
@@ -289,5 +305,3 @@ tech_companies:
         - Vimeo
         - Vine
         - YouTube
-
-

@@ -33,6 +33,15 @@
       color: #aaa;
       font-size: 16px;
       margin-left: 0.5em;
+      display: none;
+    }
+  }
+
+  h1:hover,
+  h2:hover,
+  h3:hover {
+    a {
+      display: inline;
     }
   }
 
