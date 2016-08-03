@@ -48,35 +48,42 @@ a browser extension. As you browse, it will automatically validate each AMP page
 visited and gives a visual indication of the validity of the page as a colored
 icon.
 
- * When there are errors within an AMP page the extension’s icon shows in a red
-color and displays the number of errors encountered, like this:
-
-<!-- TODO: The alignment of these images leaves much to be desired. Would be
-nice to put them on the same line as the bullet points, given how small they
-are, or centered if that's not feasible. With the pre-minified CSS though, it's
-hard for me to make these changes -->
-
-<amp-img src="/static/img/docs/validator_icon_invalid.png"
-         width="20" height="20" layout="fixed"
-         alt="Red AMP icon indicating invalid AMP document.">
-</amp-img>
- 
- * When there are no errors within an AMP page, the icon shows in a green color
-   and displays the number of warnings, if any exist:
-
-<amp-img src="/static/img/docs/validator_icon_valid.png"
-         width="20" height="20" layout="fixed"
-         alt="Green AMP icon indicating valid AMP document.">
-</amp-img>
-
- * When the page isn’t AMP but the page indicates that an AMP version is
-   available, the icon shows in a blue color with a link icon, and clicking on
-   the extension will redirect the browser to the AMP version.
-
-<amp-img src="/static/img/docs/validator_icon_link.png"
-         width="20" height="20" layout="fixed"
-         alt="Blue AMP icon indicating AMP HTML variant if clicked.">
-</amp-img>
+<table>
+  <tr>
+    <td>
+      <amp-img src="/static/img/docs/validator_icon_invalid.png"
+               width="20" height="20" layout="fixed"
+               alt="Red AMP icon indicating invalid AMP document.">
+      </amp-img>
+    </td>
+    <td>When there are errors within an AMP page the extension’s icon
+      shows in a red color and displays the number of errors encountered.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <amp-img src="/static/img/docs/validator_icon_valid.png"
+               width="20" height="20" layout="fixed"
+               alt="Green AMP icon indicating valid AMP document.">
+      </amp-img>
+    </td>
+    <td>When there are no errors within an AMP page, the icon shows in a
+      green color and displays the number of warnings, if any exist.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <amp-img src="/static/img/docs/validator_icon_link.png"
+               width="20" height="20" layout="fixed"
+               alt="Blue AMP icon indicating AMP HTML variant if clicked.">
+      </amp-img>
+    </td>
+    <td>When the page isn’t AMP but the page indicates that an AMP version is
+      available, the icon shows in a blue color with a link icon, and clicking on
+      the extension will redirect the browser to the AMP version.
+    </td>
+  </tr>
+</table>
 
 AMP Validator Extension for
 [Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) and [Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/).
