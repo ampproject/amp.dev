@@ -8,8 +8,10 @@
     "gulp-livereload": "^3.8.1",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.0.4",
+    "gulp-util": "^3.0.7",
     "moment": "^2.14.1",
     "octonode": "^0.7.6",
-    "request": "^2.72.0"
+    "request": "^2.72.0",
+    "sw-precache": "^4.0.0"
   }
 }

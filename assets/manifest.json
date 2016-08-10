@@ -1,0 +1,13 @@
+{
+  "name": "AMPProject.org",
+  "short_name": "AMP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#0379C4",
+  "description": "The official website and documentation for the Accelerated Mobile Pages project.",
+  "icons": [{
+    "src": "/static/img/logo-blue.svg",
+    "sizes": "any"
+  }]
+}
