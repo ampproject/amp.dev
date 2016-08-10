@@ -31,7 +31,7 @@
     "sizes": "192x192",
     "type": "image/png"
   }, {
-    "src": "/static/img/logo-blue.svg",
+    "src": "/static/img/icons/any.svg",
     "sizes": "any"
   }]
 }
