@@ -21,7 +21,7 @@ and activate the "AMP Dev Channel" experiment.
 
 For content served from [https://cdn.ampproject.org](https://cdn.ampproject.org),
 go to the [AMP experiments page](https://cdn.ampproject.org/experiments.html)
-and enable (or disable) any experimental component by toggling them on (or off).
+and enable (or disable) any experimental component by toggling them on (or off). Opting in will set a cookie on your browser that will enable the experiment on all AMP pages served through the Google AMP Cache.
 
 For content served from any other domain, experiments can be toggled in the devtools console when development mode is enabled using:
 
