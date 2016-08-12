@@ -86,8 +86,8 @@ using common CSS properties. For example:
     src="https://placekitten.com/g/500/300"
     srcset="/img/cat.jpg 640w,
            /img/kitten.jpg 320w"
-    width=500
-    height=300>
+    width="500"
+    height="300"
     layout="responsive"
   </amp-img>
 </body>
