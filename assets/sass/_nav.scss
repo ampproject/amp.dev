@@ -148,10 +148,16 @@ nav {
   }
 
   .rtl amp-sidebar nav {
-      padding-left: 0;
-      padding-right: 36px;
+      border-left: none;
+      margin: 0;
+      padding: 0;
       ul {
           padding-left: 0;
+          li {
+            ul {
+              margin-right: 0;
+            }
+          }
       }
   }
 
@@ -181,4 +187,8 @@ nav {
 
   }
 
+  .rtl amp-sidebar nav + nav {
+    padding-left: 0px;
+    padding-right: 12px;
+  }
 }
