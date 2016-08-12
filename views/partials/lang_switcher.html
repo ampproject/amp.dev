@@ -1,13 +1,17 @@
 <div class="language desktop">
-    <ul>
-    <li class="current">
+  <amp-accordion>
+    <section>
+      <h6 class="current">
         <a class="flag-{{ doc.locale }}"><span>{{ doc.locale.get_language_name() }}</span></a>
-    </li>
-    {% for locale in doc.locales if not locale == doc.locale  %}
-    <li>
-        {% set localized_doc = doc.localize(locale) %}
-        <a href="{{ localized_doc.url.path }}" class="flag-{{locale}}"><span>{{locale.get_language_name()}}</span></a>
-    </li>
-    {% endfor %}
-    </ul>
+      </h6>
+      <div class="others">
+        {% for locale in doc.locales if not locale == doc.locale  %}
+        <div>
+            {% set localized_doc = doc.localize(locale) %}
+            <a href="{{ localized_doc.url.path }}" class="flag-{{locale}}"><span>{{locale.get_language_name()}}</span></a>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </amp-accordion>
 </div>

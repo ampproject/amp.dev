@@ -201,7 +201,6 @@
     .tab.hamburger {
       display: inline-block;
 
-
       background-image: url("/static/img/hamburger.svg");
       background-repeat: no-repeat;
       background-size: 30px 24px;
@@ -231,6 +230,22 @@
   .alt.right {
     text-align: left;
   }
+}
+
+amp-sidebar .hamburger {
+  display: inline-block;
+  background-image: url("/static/img/hamburger.svg");
+  background-repeat: no-repeat;
+  background-size: 30px 24px;
+  background-position: center center;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border: none;
+  position: absolute;
+  top: 13px;
+  right: 18px;
+  z-index: 1;
 }
 
 amp-sidebar {
