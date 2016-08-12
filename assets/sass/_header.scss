@@ -220,7 +220,7 @@
 
       @include max-screen($mobile-breakpoint) {
         width: auto;
-        padding: 0 50px 0 0;
+        padding: 10px 40px 10px 0;
       }
 
       background-position: center right;
@@ -259,5 +259,10 @@ amp-sidebar {
   ul {
     padding-right: 0;
     padding-left: 1em;
+  }
+
+  .hamburger {
+    right: auto;
+    left: 18px;
   }
 }
