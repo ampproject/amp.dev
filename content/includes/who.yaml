@@ -232,6 +232,10 @@ partners:
         - USA Today
         - Vox
         - Washington Post
+        
+    - title@: MENA
+      section_items:
+        - Namshi
 
 tech_companies:
   section_title@: Technology Companies using AMP
