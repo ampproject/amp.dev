@@ -1,6 +1,6 @@
 ---
 $title: How to Contribute
-$order: 3
+$order: 1
 ---
 
 ### AMP Issues

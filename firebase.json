@@ -29,18 +29,28 @@
         "type": 301
       },
       {
+        "source": "/docs/support/contribute.html",
+        "destination": "/support/contribute.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/support/faqs.html",
+        "destination": "/support/faqs.html",
+        "type": 301
+      },
+      {
         "source": "/faq",
-        "destination": "/docs/support/faqs.html",
+        "destination": "/support/faqs.html",
         "type": 301
       },
       {
         "source": "/faq/",
-        "destination": "/docs/support/faqs.html",
+        "destination": "/support/faqs.html",
         "type": 301
       },
       {
         "source": "/faq/index.html",
-        "destination": "/docs/support/faqs.html",
+        "destination": "/support/faqs.html",
         "type": 301
       },
       {

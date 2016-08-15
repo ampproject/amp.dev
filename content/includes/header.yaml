@@ -1,4 +1,3 @@
-
 - href: /content/docs/get_started/about-amp.md
   copy@: Learn
   children:
@@ -10,14 +9,12 @@
       copy@: How AMP works
     - href: https://github.com/ampproject/amphtml/blob/master/DESIGN_PRINCIPLES.md
       copy@: Design Principles
-      external: true
     - href: /content/docs/get_started/about-amp.md
       copy@: "Supported browsers"
     - href: /content/docs/get_started/about-amp.md
       copy@: Case Studies
     - href: /content/pages/metrics.html
       copy@: Metrics
-
 - href: /content/docs/get_started/create.md
   copy@: Build
   children:
@@ -31,52 +28,36 @@
       copy@: "Reference"
     - href: https://ampbyexample.com/
       copy@: "Examples"
-      external: true
-
 - href: https://amphtml.wordpress.com/
   copy@: news
-  external: true
   children:
     - href: https://amphtml.wordpress.com/
       copy@: Blog
-      external: true
     - href: https://twitter.com/amphtml
       copy@: twitter
-      external: true
     - href: /content/pages/roadmap.html
       copy@: Roadmap
-
-- href: https://github.com/ampproject/amphtml
+- href: /content/support/contribute.html
   copy@: Contribute
-  external: true
   children:
     - href: https://github.com/ampproject/amphtml
       copy@: GitHub
-      external: true
-    - href: https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md
+    - href: /content/support/contribute.html
       copy@: How to contribute
-      external: true
     - href: https://github.com/ampproject/amphtml/issues/new
       copy@: File a bug
-      external: true
     - href: https://github.com/ampproject/amphtml/blob/master/GOVERNANCE.md
       copy@: Open Source Governance
-      external: true
-
-- href: /content/docs/support/faqs.md
+- href: /content/support/faqs.md
   copy@: Support
   children:
-    - href: /content/docs/support/faqs.md
+    - href: /content/support/faqs.md
       copy@: FAQ
     - href: https://stackoverflow.com/questions/tagged/amp-html
       copy@: Stack Overflow
-      external: true
     - href: "https://groups.google.com/forum/#!forum/amphtml-discuss"
       copy@: Mailing List
-      external: true
     - href: "https://docs.google.com/forms/d/1wAE8w3K5preZnBkRk-MD1QkX8FmlRDxd_vs4bFSeJlQ/viewform?fbzx=4406980310789882877"
       copy@: slack
-      external: true
     - href: https://github.com/ampproject/amphtml/issues/new
       copy@: File a bug
-      external: true

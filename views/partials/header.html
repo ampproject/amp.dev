@@ -12,13 +12,13 @@
           {% for entry in header.fields %}
           {% if entry.children %}
           <div class="tab">
-            <a href="{% if entry.external %}{{ entry.get('href') }}{% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">
+            <a href="{% if entry.href.startswith('http') %}{{ entry.get('href') }}{% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">
               {{_(entry.get('copy'))}}
             </a>
             <ul>
               {% for subEntry in entry.children %}
               <li>
-                <a href="{% if subEntry.external %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">
+                <a href="{% if subEntry.href.startswith('http') %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">
                   {{_(subEntry.get('copy'))}}
                 </a>
               </li>
