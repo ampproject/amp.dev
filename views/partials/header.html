@@ -9,24 +9,28 @@
         </div>
         <div class="right alt">
 
-          <a class="tab desktop {{is_active_class('/faqs')}}" href="{{ g.doc(header.fields.faq.get('href'), locale=doc.locale).url.path }}">
-            {{_(header.fields.faq.get('copy'))}}
+          {% for entry in header.fields %}
+          {% if entry.children %}
+          <div class="tab">
+            <a href="{% if entry.external %}{{ entry.get('href') }}{% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">
+              {{_(entry.get('copy'))}}
+            </a>
+            <ul>
+              {% for subEntry in entry.children %}
+              <li>
+                <a href="{% if subEntry.external %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">
+                  {{_(subEntry.get('copy'))}}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% else %}
+          <a class="tab desktop {{is_active_class('/who')}}" href="{% if entry.external %}entry.get('href'){% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">
+            {{_(entry.get('copy'))}}
           </a>
-          <a class="tab desktop {{is_active_class('/who')}}" href="{{ g.doc(header.fields.who.get('href'), locale=doc.locale).url.path }}">
-            {{_(header.fields.who.get('copy'))}}
-          </a>
-          <a class="tab desktop" target="_blank" href="{{header.fields.blog.get('href')}}">
-            {{_(header.fields.blog.get('copy'))}}
-          </a>
-          <a class="tab desktop" target="_blank" href="{{header.fields.github.get('href')}}">
-            {{_(header.fields.github.get('copy'))}}
-          </a>
-          <a class="tab desktop {{is_active_class('/roadmap')}}" href="{{ g.doc(header.fields.roadmap.get('href'), locale=doc.locale).url.path }}">
-            {{_(header.fields.roadmap.get('copy'))}}
-          </a>
-          <a class="tab desktop" href="{{ g.doc(header.fields.docs.get('href'), locale=doc.locale).url.path }}">
-            {{_(header.fields.docs.get('copy'))}}
-          </a>
+          {% endif %}
+          {% endfor %}
 
           {% include "/views/partials/lang_switcher.html" %}
 
