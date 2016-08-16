@@ -96,11 +96,6 @@
 
     transition: .1s ease color;
 
-    @include max-screen($mobile-breakpoint) {
-      margin-left: auto;
-      padding: 10px 12px;
-    }
-
     &:after {
       content: "";
       position: absolute;
@@ -113,16 +108,16 @@
 
       transition: .1s ease opacity;
       opacity: 0;
-      visibility: hidden;
     }
 
     &:hover,
-    &.is-active {
+    &.active {
       color: $color-midblue;
+    }
 
+    &.active {
       &:after {
         opacity: 1;
-        visibility: visible;
       }
     }
 
@@ -140,7 +135,7 @@
     width: 40px;
     height: 40px;
     display: none;
-    pointer: cursor;
+    cursor: pointer;
     align-self: center;
   }
 
@@ -166,10 +161,6 @@
       color: inherit;
       text-decoration: none;
 
-      &:hover {
-        color: #0379C4;
-      }
-
       &:after {
         display: inline-block;
         content: "";
@@ -194,6 +185,7 @@
       pointer-events: none;
       transform: translate(0, 30px);
       transition: 0.2s ease-out;
+      z-index: 1;
 
       background: #fff;
       box-shadow:
