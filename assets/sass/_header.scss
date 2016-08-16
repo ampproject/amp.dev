@@ -14,7 +14,6 @@
     }
   }
 
-  &.absolute,
   &.fixed {
     transform: translateY(0%);
     transition: all .4s ease;
@@ -23,56 +22,6 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-  }
-
-  &.absolute {
-    position: absolute;
-  }
-
-  &.nav--pinned,
-  &.nav--unpinned,
-  &.nav--top {
-    position: fixed;
-
-    @include max-screen($mobile-breakpoint) {
-      position: relative;
-    }
-  }
-
-  &.nav--pinned,
-  &.nav--unpinned {
-    background: $color-midblue;
-  }
-
-  &.nav--top {
-    background-color: transparent;
-  }
-
-
-  &.hidden {
-    display: block;
-
-    // Auto-hide header on mobile only.
-    @include max-screen($mobile-breakpoint) {
-      transform: translateY(-100%);
-    }
-  }
-
-  &.menu-open {
-    transform: translate(-243px, 0px);
-  }
-
-  .wrap {
-    // background-color: white;
-
-    @include max-screen($mobile-breakpoint) {
-      color: transparent;
-    }
-  }
-
-  .content.mobile-show {
-    padding: 0 10px 5px;
-
   }
 
   .nav-container {
@@ -137,6 +86,7 @@
   }
 
   .tab {
+    position: relative;
     color: $color-grey-800;
     padding: 6px;
     margin: 0 4px;
@@ -151,64 +101,56 @@
       padding: 10px 12px;
     }
 
-    &.desktop {
-      display: flex;
-      align-items: center;
-      position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 3px;
+      background-color: $color-midblue;
+
+      transition: .1s ease opacity;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover,
+    &.is-active {
+      color: $color-midblue;
 
       &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        height: 3px;
-        background-color: $color-midblue;
-
-        transition: .1s ease opacity;
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      &:hover,
-      &.is-active {
-        color: $color-midblue;
-
-        &:after {
-          opacity: 1;
-          visibility: visible;
-        }
+        opacity: 1;
+        visibility: visible;
       }
     }
+
   }
 
   .tab.hamburger {
-    background: none;
+    background-color: transparent;
+    background-image: url("/static/img/hamburger.svg");
+    background-repeat: no-repeat;
+    background-size: 30px 24px;
+    background-position: center center;
     border: none;
     margin: 0;
     padding: 0;
+    width: 40px;
+    height: 40px;
     display: none;
     pointer: cursor;
     align-self: center;
   }
 
   @include max-screen($mobile-breakpoint) {
-    .tab.desktop,
-    .desktop,
-    div.tab {
+    div.tab,
+    .desktop {
       display: none;
     }
     .tab.hamburger {
       display: inline-block;
-
-      background-image: url("/static/img/hamburger.svg");
-      background-repeat: no-repeat;
-      background-size: 30px 24px;
-      background-position: center center;
-
-      width: 40px;
-      height: 40px;
     }
   }
 
