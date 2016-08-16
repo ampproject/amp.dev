@@ -1,9 +1,9 @@
 AMPProject.org [![Build Status](https://travis-ci.org/ampproject/docs.svg?branch=megamerge)](https://travis-ci.org/ampproject/docs)
 =========================
 
-You're looking at source code of the official website of the AMP Project. Even
-if you don't plan on contributing, explore how we've built the site for a good
-example at how to build a canonical, responsive standalone AMP site.
+You're looking at the source code of the official website of the AMP Project. 
+Even if you don't plan on contributing, explore how we've built the site for 
+a good example of how to build a canonical, responsive standalone AMP site.
 
 How to build the site
 ---------------------
@@ -15,11 +15,11 @@ $ curl https://install.growsdk.org | bash
 $ npm install
 ```
 
-Get a Github client id and secret:
+Get a GitHub client id and secret:
 
-Out of the box, the reference docs are not bundled with the rest of the documentation. We'll fetch them via Github, and the only thing you have to do is the following:
+Out of the box, the reference docs are not bundled with the rest of the documentation. We'll fetch them via GitHub, and the only thing you have to do is the following:
 
-  1. Register for a Github application [here](https://github.com/settings/applications/new)
+  1. Register for a GitHub application [here](https://github.com/settings/applications/new)
   2. Find the client id and secret
   3. In your shell, export the id as `AMP_DOC_ID` and the secret as `AMP_DOC_SECRET`
 
