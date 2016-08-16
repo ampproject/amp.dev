@@ -2,6 +2,10 @@
 msgid "/docs/get_started/about-amp.html"
 msgstr ""
 
+#: /content/includes/who.yaml
+msgid "APAC"
+msgstr ""
+
 #: /content/includes/footer.yaml
 msgid "Accelerated Mobile Pages Project"
 msgstr ""
@@ -11,22 +15,26 @@ msgid "Ads"
 msgstr ""
 
 #: /content/includes/who.yaml
-msgid "Analaytics"
+msgid "Analytics"
 msgstr ""
 
-#: /content/includes/who.yaml
-msgid "Asia"
-msgstr ""
-
-#: /content/includes/header.yaml
-msgid "Blog"
+#: /content/includes/menu.yaml
+msgid "Build"
 msgstr ""
 
 #: /content/includes/who.yaml
 msgid "CMS"
 msgstr ""
 
-#: /content/docs /content/includes/header.yaml
+#: /content/includes/who.yaml
+msgid "Content Platforms"
+msgstr ""
+
+#: /content/contribute /content/includes/menu.yaml
+msgid "Contribute"
+msgstr ""
+
+#: /content/docs
 msgid "Docs"
 msgstr "Documentazione"
 
@@ -34,8 +42,8 @@ msgstr "Documentazione"
 msgid "Europe"
 msgstr ""
 
-#: /content/includes/header.yaml
-msgid "FAQ"
+#: /content/includes/menu.yaml
+msgid "Examples"
 msgstr ""
 
 #: /content/includes/home.yaml
@@ -51,7 +59,7 @@ msgstr ""
 msgid "GET STARTED"
 msgstr "Come iniziare"
 
-#: /content/includes/home.yaml /content/docs/get_started
+#: /content/includes/home.yaml
 msgid "Get Started"
 msgstr "Come iniziare"
 
@@ -59,15 +67,15 @@ msgstr "Come iniziare"
 msgid "Get Started with AMP HTML"
 msgstr ""
 
-#: /content/includes/header.yaml
-msgid "GitHub"
+#: /content/includes/menu.yaml
+msgid "Get started"
 msgstr ""
 
-#: /content/docs/guides
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
 msgstr "Guide"
 
-#: /views/base.html:35
+#: /views/base.html:38
 msgid "Home"
 msgstr ""
 
@@ -91,6 +99,10 @@ msgstr ""
 msgid "Latin America"
 msgstr ""
 
+#: /content/includes/menu.yaml /content/learn
+msgid "Learn"
+msgstr ""
+
 #: /content/includes/home.yaml
 msgid "Learn More"
 msgstr ""
@@ -102,8 +114,8 @@ msgid ""
 " exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
 msgstr ""
 
-#: /content/includes/header.yaml
-msgid "Metrics"
+#: /content/news
+msgid "News"
 msgstr ""
 
 #: /content/includes/who.yaml
@@ -122,42 +134,30 @@ msgstr ""
 msgid "Publishers"
 msgstr ""
 
-#: /content/includes/who.yaml
-msgid "Publishers using AMP HTML"
-msgstr ""
-
 #: /content/includes/home.yaml
 msgid ""
 "Ready to build an AMP file? This tutorial will teach you how to create a "
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
 msgstr ""
 
-#: /content/docs/reference
+#: /content/includes/menu.yaml /content/docs/reference
 msgid "Reference"
 msgstr "Riferimenti"
-
-#: /content/includes/header.yaml
-msgid "Roadmap"
-msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Speed"
 msgstr ""
 
-#: /content/docs/support
+#: /content/includes/menu.yaml /content/support
 msgid "Support"
 msgstr "Supporto"
-
-#: /content/includes/who.yaml
-msgid "Tech Platform"
-msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Technical Introduction"
 msgstr ""
 
 #: /content/includes/who.yaml
-msgid "Technology Companies using AMP HTML"
+msgid "Technology Companies using AMP"
 msgstr ""
 
 #: /content/includes/home.yaml
@@ -169,6 +169,10 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Tutorial"
+msgstr ""
+
+#: /content/includes/menu.yaml /content/docs/get_started
+msgid "Tutorials"
 msgstr ""
 
 #: /content/includes/who.yaml
@@ -183,12 +187,12 @@ msgstr ""
 msgid "Visit Github"
 msgstr ""
 
-#: /content/includes/home.yaml
-msgid "What contributors are saying"
+#: /content/includes/who.yaml
+msgid "Websites using AMP"
 msgstr ""
 
-#: /content/includes/header.yaml
-msgid "Who"
+#: /content/includes/home.yaml
+msgid "What contributors are saying"
 msgstr ""
 
 #: /content/includes/home.yaml
@@ -285,6 +289,10 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "new_york_times"
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "news"
 msgstr ""
 
 #: /content/includes/home.yaml

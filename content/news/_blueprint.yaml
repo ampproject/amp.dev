@@ -1,3 +1,5 @@
 $title@: News
 $path: /news/{base}/
 $view: /views/section_page.html
+$localization:
+  path: /{locale}/news/{base}/
