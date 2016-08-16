@@ -1,5 +1,5 @@
 ---
-$title: How AMP Speeds Up Performance
+$title: How AMP Works
 $order: 2
 ---
 

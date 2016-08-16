@@ -1,0 +1,64 @@
+menu:
+  - href: /content/learn/about-amp.md
+    copy@: Learn
+    children:
+      - href: /content/learn/about-amp.md
+        copy@: "What's AMP?"
+      - href: /content/learn/who.md
+        copy@: Who uses AMP?
+      - href: /content/learn/how-amp-works.md
+        copy@: How AMP works
+      - href: https://github.com/ampproject/amphtml/blob/master/DESIGN_PRINCIPLES.md
+        copy@: Design Principles
+      - href: /content/learn/about-amp.md
+        copy@: "Supported browsers"
+      - href: /content/learn/about-amp.md
+        copy@: Case Studies
+      - href: /content/learn/metrics.html
+        copy@: Metrics
+  - href: /content/docs/get_started/create.md
+    copy@: Build
+    children:
+      - href: /content/docs/get_started/create.md
+        copy@: "Get started"
+      - href: /content/docs/get_started/create.md
+        copy@: "Tutorials"
+      - href: /content/docs/guides/responsive_amp.md
+        copy@: "Guides"
+      - href: /content/docs/reference/amp-video.md
+        copy@: "Reference"
+      - href: https://ampbyexample.com/
+        copy@: "Examples"
+  - href: https://amphtml.wordpress.com/
+    copy@: news
+    children:
+      - href: https://amphtml.wordpress.com/
+        copy@: Blog
+      - href: https://twitter.com/amphtml
+        copy@: twitter
+      - href: /content/news/roadmap.html
+        copy@: Roadmap
+  - href: /content/contribute/contribute.md
+    copy@: Contribute
+    children:
+      - href: https://github.com/ampproject/amphtml
+        copy@: GitHub
+      - href: /content/contribute/contribute.md
+        copy@: How to contribute
+      - href: https://github.com/ampproject/amphtml/issues/new
+        copy@: File a bug
+      - href: https://github.com/ampproject/amphtml/blob/master/GOVERNANCE.md
+        copy@: Open Source Governance
+  - href: /content/support/faqs.md
+    copy@: Support
+    children:
+      - href: /content/support/faqs.md
+        copy@: FAQ
+      - href: https://stackoverflow.com/questions/tagged/amp-html
+        copy@: Stack Overflow
+      - href: "https://groups.google.com/forum/#!forum/amphtml-discuss"
+        copy@: Mailing List
+      - href: "https://docs.google.com/forms/d/1wAE8w3K5preZnBkRk-MD1QkX8FmlRDxd_vs4bFSeJlQ/viewform?fbzx=4406980310789882877"
+        copy@: slack
+      - href: https://github.com/ampproject/amphtml/issues/new
+        copy@: File a bug

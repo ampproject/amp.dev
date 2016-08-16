@@ -7,7 +7,7 @@
       <span>{{_(item.title)}}</span>
   {% else %}
     <li>
-      <a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a>
+      <a href="{{item.goto or item.url.path}}"{% if item.goto %} class="external"{% endif %}>{{_(item.title)}}</a>
   {% endif %}
 
   {% if open and sub_collection.exists %}
@@ -30,7 +30,19 @@
   </{{tag(item)}}>
 {%- endmacro %}
 
-<nav>
+<nav{% if flat %} class="flat"{% endif %}>
+{% if flat %}
+<ul>
+  <li>
+    <h2>{{_(doc.collection.title)}}</h2>
+    <ul>
+      {% for item in doc.collection.docs(recursive=false, locale=doc.locale) %}
+        {{render_item(item)}}
+      {% endfor %}
+    </ul>
+  </li>
+</ul>
+{% else %}
   <ul>
     {% for collection in g.collection('docs').collections() %}
     <li>
@@ -43,4 +55,5 @@
     </li>
     {% endfor %}
   </ul>
+{% endif  %}
 </nav>

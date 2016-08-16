@@ -14,43 +14,63 @@
     ],
     "redirects": [
       {
+        "source": "/who",
+        "destination": "/learn/who/",
+        "type": 301
+      },
+      {
+        "source": "/who/",
+        "destination": "/learn/who/",
+        "type": 301
+      },
+      {
+        "source": "/docs/get_started/technical_overview.html",
+        "destination": "/learn/how-amp-works/",
+        "type": 301
+      },
+      {
+        "source": "/docs/get_started/about-amp.html",
+        "destination": "/learn/about-amp/",
+        "type": 301
+      },
+      {
         "source": "/docs",
-        "destination": "/docs/get_started/about-amp.html",
+        "destination": "/learn/about-amp/",
         "type": 301
       },
       {
         "source": "/docs/",
-        "destination": "/docs/get_started/about-amp.html",
+        "destination": "/learn/about-amp/",
         "type": 301
       },
       {
         "source": "/docs/index.html",
-        "destination": "/docs/get_started/about-amp.html",
+        "destination": "/learn/about-amp/",
         "type": 301
       },
       {
         "source": "/docs/support/contribute.html",
-        "destination": "/support/contribute.html",
+        "destination": "/contribute/",
         "type": 301
       },
       {
         "source": "/docs/support/faqs.html",
-        "destination": "/support/faqs.html",
+        "destination": "/support/faqs/",
         "type": 301
       },
       {
         "source": "/faq",
-        "destination": "/support/faqs.html",
+        "destination": "/support/faqs/",
         "type": 301
       },
       {
         "source": "/faq/",
-        "destination": "/support/faqs.html",
+        "destination": "/support/faqs/",
         "type": 301
       },
       {
         "source": "/faq/index.html",
-        "destination": "/support/faqs.html",
+        "destination": "/support/faqs/",
         "type": 301
       },
       {

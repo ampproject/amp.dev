@@ -9,15 +9,15 @@
         </div>
         <div class="right alt">
 
-          {% for entry in header.fields %}
+          {% for entry in menu %}
           {% if entry.children %}
           <div class="tab">
-            <a href="{% if entry.href.startswith('http') %}{{ entry.get('href') }}{% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">
+            <a{% if entry.href.startswith('http') %} class="external"{% endif %} href="{% if entry.href.startswith('http') %}{{ entry.get('href') }}{% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">
               {{_(entry.get('copy'))}}
             </a>
             <ul>
               {% for subEntry in entry.children %}
-              <li>
+              <li{% if subEntry.href.startswith('http') %} class="external"{% endif %}>
                 <a href="{% if subEntry.href.startswith('http') %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">
                   {{_(subEntry.get('copy'))}}
                 </a>

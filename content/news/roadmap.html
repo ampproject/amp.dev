@@ -1,6 +1,11 @@
 ---
 $title: Roadmap
+$order: 3
 class: roadmap
+$path: /{base}/
+$view: /views/base.html
+$localization:
+  path: /{locale}/{base}/
 ---
 {% set roadmap = g.doc('/content/includes/roadmap.yaml', locale=doc.locale) %}
 <div class="container">

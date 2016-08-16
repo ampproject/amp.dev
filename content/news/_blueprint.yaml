@@ -1,0 +1,3 @@
+$title@: News
+$path: /news/{base}/
+$view: /views/section_page.html

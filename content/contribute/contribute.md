@@ -1,6 +1,9 @@
 ---
 $title: How to Contribute
 $order: 1
+$path: /contribute/
+$localization:
+  path: /{locale}/{base}/
 ---
 
 ### AMP Issues

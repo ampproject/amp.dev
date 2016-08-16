@@ -1,5 +1,3 @@
 $title@: Support
-$path: /support/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/support/{base}.html
+$path: /support/{base}/
+$view: /views/section_page.html

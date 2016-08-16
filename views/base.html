@@ -22,7 +22,7 @@
   {% if uri in doc.url.path %}is-active{% endif %}
 {%- endmacro %}
 
-{% set header_doc = g.doc('/content/includes/header.yaml', locale=doc.locale) %}
+{% set menu_doc = g.doc('/content/includes/menu.yaml', locale=doc.locale) %}
 
 <amp-sidebar id='sidebar' side='{% if doc.locale.is_rtl %}left{% else %}right{% endif %}' layout='nodisplay'>
 
@@ -46,7 +46,7 @@
   {% endblock %}
 </amp-sidebar>
 
-{% with header = header_doc %}
+{% with menu = menu_doc.fields.menu %}
   {% include "/views/partials/header.html" %}
 {% endwith %}
 

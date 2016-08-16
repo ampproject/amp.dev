@@ -192,3 +192,17 @@ nav {
     padding-right: 12px;
   }
 }
+
+nav a.external {
+  &::after {
+    display: inline-block;
+    content: '';
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    position: relative;
+    background-image: url(/static/img/ic_open_in_new_white.svg);
+    background-size: 100%;
+    top: 1px;
+  }
+}

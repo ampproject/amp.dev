@@ -195,7 +195,8 @@
 
   @include max-screen($mobile-breakpoint) {
     .tab.desktop,
-    .desktop {
+    .desktop,
+    div.tab {
       display: none;
     }
     .tab.hamburger {
@@ -210,11 +211,6 @@
       height: 40px;
     }
   }
-
-
-
-
-
 
   div.tab {
 
@@ -248,6 +244,7 @@
     > ul {
       list-style: none;
       position: absolute;
+      min-width: 132px;
       top: 54px;
       left: -8px;
       text-align: left;
@@ -272,6 +269,22 @@
           background: #f0f0f0;
         }
       }
+
+      li.external {
+        padding-right: 26px;
+        a {
+          background-size: 12px 12px;
+          background-repeat: no-repeat;
+          background-position: right 2px;
+          padding-right: 16px;
+        }
+        &:hover {
+          a {
+            background-image: url(/static/img/ic_open_in_new_black.svg);
+          }
+        }
+      }
+
     }
 
     &:hover {

@@ -1,0 +1,28 @@
+{% extends "/views/base.html" %}
+
+{% set navmarkup %}
+{% with flat = 1 %}
+{% include "/views/partials/nav.html" %}
+{% endwith %}
+{% endset %}
+
+{% block nav %}
+  {{ navmarkup|safe }}
+{% endblock %}
+
+{% block main %}
+  <div class="container main">
+    {{ navmarkup|safe }}
+    <div class="content">
+      <article class="post">
+
+        <h1 class="post-title">{{ doc.title }}</h1>
+
+        <div class="post-content">
+          {{doc.html|render|safe}}
+        </div>
+
+      </article>
+    </div>
+  </div>
+{% endblock %}

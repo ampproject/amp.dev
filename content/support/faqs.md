@@ -1,6 +1,8 @@
 ---
 $title: FAQ
 $order: 0
+$localization:
+  path: /{locale}/support/{base}/
 ---
 
 [TOC]
