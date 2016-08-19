@@ -190,6 +190,7 @@ partners:
         - ABC News
         - Business Insider
         - Buzzfeed
+        - CBS Local
         - CBS News
         - CNN
         - Digital Trends
@@ -232,6 +233,7 @@ partners:
         - USA Today
         - Vox
         - Washington Post
+        - ZDNet
 
 tech_companies:
   section_title@: Technology Companies using AMP
