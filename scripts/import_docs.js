@@ -58,6 +58,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 		}
 		return '[sourcecode' + (p3 ? ':' + p3 : '') + ']\n' + p4 + '[/sourcecode]\n';
 	});
+	content = content.replace(/\`[^`]*(\{\{[^`]*\}\})[^`]*\`/g, '{% raw %}`$1`{% endraw %}');
 
 
     // horizontal rules like --- will break front matter
