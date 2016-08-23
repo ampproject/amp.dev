@@ -34,12 +34,6 @@ function downloadPage(path, callback, headingToStrip) {
 }
 
 function savePage(config, callback) {
-
-	// special case for amp-mustache, needs to be escaped
-	if (/mustache|access/.test(config.title)) {
-		config.content = "{% raw %}" + config.content + "{% endraw %}";
-	}
-
 	var frontMatter = "---\n$title: " + config.title + "\n$order: " + (config.order || 0) + "\n---\n";
 	fs.writeFile(config.destination, frontMatter + config.content, callback);
 }
@@ -57,8 +51,14 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 	content = content.replace('<!---', '\n<!---');
 
 	// replace code
-	content = content.replace(/(\`\`\`)(([A-z\-]*)\n)(((?!\`\`\`)[\s\S])+)(\`\`\`\n)/gm, '[sourcecode:$3]\n$4[/sourcecode]\n');
-	content = content.replace(/\[sourcecode\:\]/g, '[sourcecode]');
+	content = content.replace(/(\`\`\`)(([A-z\-]*)\n)(((?!\`\`\`)[\s\S])+)(\`\`\`\n)/gm, function (match, p1, p2, p3, p4) {
+		// work around for mustache-style curly braces to not mess with Grow
+		if (p4.indexOf('{{') > -1) {
+			p4 = "{% raw %}" + p4 + '{% endraw %}';
+		}
+		return '[sourcecode' + (p3 ? ':' + p3 : '') + ']\n' + p4 + '[/sourcecode]\n';
+	});
+
 
     // horizontal rules like --- will break front matter
     content = content.replace(/\n---\n/gm, '\n- - -\n');
