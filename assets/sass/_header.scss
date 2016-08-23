@@ -152,7 +152,6 @@
   div.tab {
 
     position: relative;
-    z-index: 1;
 
     > a {
 
@@ -183,9 +182,10 @@
       text-align: left;
       opacity: 0;
       pointer-events: none;
-      transform: translate(0, 30px);
+      transform: translate(0, 10px);
       transition: 0.2s ease-out;
       z-index: 1;
+      will-change: transform;
 
       background: #fff;
       box-shadow:

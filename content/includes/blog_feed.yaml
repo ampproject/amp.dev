@@ -4,16 +4,16 @@ section_title: Latest blog posts
 blog:
 
   - article:
+    title: "Getting Started with AMP for E-commerce"
+    href: "https://amphtml.wordpress.com/2016/08/22/getting-started-with-amp-for-e-commerce/amp/"
+    date: "August 22, 2016"
+
+  - article:
+    title: "AMP Roadmap Update for Mid-Q3 2016"
+    href: "https://amphtml.wordpress.com/2016/08/16/amp-roadmap-update-for-mid-q3-2016/amp/"
+    date: "August 16, 2016"
+
+  - article:
     title: "Fast Ad Landing Pages with AMP"
     href: "https://amphtml.wordpress.com/2016/08/11/fast-ad-landing-pages-with-amp/amp/"
     date: "August 11, 2016"
-
-  - article:
-    title: "AMP your content – A Preview of AMP’ed results in Google Search"
-    href: "https://amphtml.wordpress.com/2016/08/02/amp-your-content-a-preview-of-amped-results-in-google-search/amp/"
-    date: "August 2, 2016"
-
-  - article:
-    title: "Live-updating AMPs"
-    href: "https://amphtml.wordpress.com/2016/07/26/live-updating-amps/amp/"
-    date: "July 26, 2016"
