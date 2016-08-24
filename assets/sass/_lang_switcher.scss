@@ -100,12 +100,13 @@ amp-sidebar .language {
   width: auto;
   box-shadow: none;
   height: 66px;
-  margin-bottom: 12px;
-  background: #f9f9f9;
+  margin-bottom: 0;
+  background: #2196F3;
 
   amp-accordion {
     width: auto;
     height: 66px;
+    z-index: 2;
   }
 
   /*
@@ -123,8 +124,8 @@ amp-sidebar .language {
 
   .current,
   .others div {
-    background: #f9f9f9;
-    border-bottom: 1px solid #eee;
+    background: #2196F3;
+    border-bottom: 1px solid #0976cc;
     padding-left: 16px;
     padding-top: 25px;
     padding-bottom: 6px;
@@ -134,12 +135,15 @@ amp-sidebar .language {
       background: none;
       border-bottom: 1px solid #eee;
       span {
-        color: #424242;
+        color: #fff;
       }
     }
 
     a {
       padding-left: 0;
+      span {
+        color: #fff;
+      }
     }
 
   }

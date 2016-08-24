@@ -251,38 +251,3 @@
     text-align: left;
   }
 }
-
-amp-sidebar .hamburger {
-  display: inline-block;
-  background-image: url("/static/img/hamburger.svg");
-  background-repeat: no-repeat;
-  background-size: 30px 24px;
-  background-position: center center;
-  background-color: transparent;
-  width: 40px;
-  height: 40px;
-  border: none;
-  position: absolute;
-  top: 13px;
-  right: 18px;
-  z-index: 1;
-}
-
-amp-sidebar {
-  ul {
-    list-style-type: square;
-    padding-right: 1em;
-  }
-}
-
-.rtl amp-sidebar {
-  ul {
-    padding-right: 0;
-    padding-left: 1em;
-  }
-
-  .hamburger {
-    right: auto;
-    left: 18px;
-  }
-}
