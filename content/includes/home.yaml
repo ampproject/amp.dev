@@ -92,6 +92,11 @@ contributors:
       quote: “We welcome this project because it accelerates the consumption of mobile content and preserves the business model that finances quality journalism.”
       name: Antonio Manuel Teixeira Mendes
       position: Director-Superintendent, Folha de S.Paulo
+      
+    - img: /static/img/quotes/ebay.jpg
+      quote: “The guiding principles of the AMP Project apply to the mobile web in general. So why restrict it to just publisher-based content?  Speed plays a critical role in eCommerce. Faster pages lead to delighted users, and higher conversion, so when the AMP Project was announced it resonated a lot with our own thinking and approach to smart open source projects.”
+      name: Mohan Patt
+      position: VP of Product, eBay Shopping Experience
 
 publishers:
   title@: Publishers
