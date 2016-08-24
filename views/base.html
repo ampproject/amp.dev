@@ -1,75 +1,45 @@
 <!DOCTYPE html>
 <html ⚡{% if doc.locale.is_rtl %} dir="rtl" lang="ar"{% endif %}>
 {% include "/views/partials/head.html" %}
+
+
 <body class="{{doc.class}}{% if doc.locale.is_rtl %} rtl{% endif %}">
-<amp-analytics type="googleanalytics" id="analytics-ga">
-  <script type="application/json">
-  {
-    "vars": {
-      "account": "UA-67833617-1"
-    },
-    "triggers": {
-      "trackPageview": {
-        "on": "visible",
-        "request": "pageview"
+
+  <amp-analytics type="googleanalytics" id="analytics-ga">
+    <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-67833617-1"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
       }
     }
-  }
-  </script>
-</amp-analytics>
-{% set menu_doc = g.doc('/content/includes/menu.yaml', locale=doc.locale) %}
-{% with menu = menu_doc.fields.menu %}
+    </script>
+  </amp-analytics>
 
-  <amp-sidebar id='sidebar' side='{% if doc.locale.is_rtl %}left{% else %}right{% endif %}' layout='nodisplay'>
+  {% set menu_doc = g.doc('/content/includes/menu.yaml', locale=doc.locale) %}
+  {% with menu = menu_doc.fields.menu %}
+    {% include "/views/partials/sidebar.html" %}
+    {% include "/views/partials/header.html" %}
+  {% endwith %}
 
-    <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'></button>
+  <div class="wrap">
+    {% block main %}
+    <div class="content">
 
-    <nav>
+      {{doc.html|render|safe}}
 
-      {% include "/views/partials/lang_switcher.html" %}
-
-      <amp-accordion>
-      {% for entry in menu %}
-        <section {% if doc.pod_path.split('/')[2] == entry.collection %}expanded class="active"{% endif %}>
-          <h2 class="heading">{{_(entry.get('copy'))}}</h2>
-          <ul>
-            {% if entry.children %}
-            <!-- TODO: Insert correct menu here -->
-            {% block nav %}
-            {% endblock %}
-            {% else %}
-            {% set menuCollection = g.collection(entry.collection) %}
-            {% for item in menuCollection.docs(recursive=false, locale=doc.locale) %}
-            <li{% if item.goto %} class="external"{% endif %}>
-              <a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a>
-            </li>
-            {% endfor %}
-            {% endif %}
-          </ul>
-        </section>
-      {% endfor %}
-      </amp-accordion>
-
-    </nav>
-
-
-  </amp-sidebar>
-
-  {% include "/views/partials/header.html" %}
-{% endwith %}
-
-<div class="wrap">
-  {% block main %}
-  <div class="content">
-
-    {{doc.html|render|safe}}
-
-    {% set footer_doc = g.doc('/content/includes/footer.yaml', locale=doc.locale) %}
-    {% with footer = footer_doc %}
-      {% include "/views/partials/footer.html" %}
-    {% endwith %}
+      {% set footer_doc = g.doc('/content/includes/footer.yaml', locale=doc.locale) %}
+      {% with footer = footer_doc %}
+        {% include "/views/partials/footer.html" %}
+      {% endwith %}
+    </div>
+    {% endblock %}
   </div>
-  {% endblock %}
-</div>
+
 </body>
 </html>

@@ -6,10 +6,8 @@
       </h6>
       <div class="others">
         {% for locale in doc.locales if not locale == doc.locale  %}
-        <div>
-            {% set localized_doc = doc.localize(locale) %}
-            <a href="{{ localized_doc.url.path }}" class="flag-{{locale}}"><span>{{locale.get_language_name()}}</span></a>
-        </div>
+        {% set localized_doc = doc.localize(locale) %}
+        <div><a href="{{ localized_doc.url.path }}" class="flag-{{locale}}"><span>{{locale.get_language_name()}}</span></a></div>
         {% endfor %}
       </div>
     </section>
