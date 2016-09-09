@@ -29,6 +29,11 @@
         "type": 301
       },
       {
+        "source": "/docs/reference/amp-ad.html",
+        "destination": "/docs/reference/extended/amp-ad.html",
+        "type": 301
+      },
+      {
         "source": "/faq",
         "destination": "/docs/support/faqs.html",
         "type": 301
