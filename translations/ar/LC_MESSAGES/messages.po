@@ -1,6 +1,6 @@
 #: /content/includes/home.yaml
 msgid "/docs/get_started/about-amp.html"
-msgstr ""
+msgstr "حول"
 
 #: /content/includes/footer.yaml
 msgid "Accelerated Mobile Pages Project"
@@ -8,7 +8,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Ads"
-msgstr ""
+msgstr "الإعلانات"
 
 #: /content/includes/who.yaml
 msgid "Analaytics"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Asia"
-msgstr ""
+msgstr "آسيا"
 
 #: /content/includes/header.yaml
 msgid "Blog"
@@ -32,14 +32,14 @@ msgstr "المستندات"
 
 #: /content/includes/who.yaml
 msgid "Europe"
-msgstr ""
+msgstr "أوروبا"
 
 #: /content/includes/header.yaml
 msgid "FAQ"
 msgstr "الأسئلة الشائعة"
 
 #: /content/includes/home.yaml
-msgid ""
+msgid "الصفحة الرئيسية"
 "For many, reading on the mobile web is a slow, clunky and frustrating "
 "experience - but it doesn’t have to be that way. The Accelerated Mobile Pages"
 " (AMP) Project is an open source initiative that embodies the vision that "
@@ -57,7 +57,7 @@ msgstr "البدء"
 
 #: /content/includes/home.yaml
 msgid "Get Started with AMP HTML"
-msgstr ""
+msgstr "إبدء مع أي أم بي"
 
 #: /content/includes/header.yaml
 msgid "GitHub"
@@ -69,7 +69,7 @@ msgstr "الدلائل"
 
 #: /views/base.html:35
 msgid "Home"
-msgstr ""
+msgstr "الصفحة الرئيسية"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -89,11 +89,11 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Latin America"
-msgstr ""
+msgstr "أمريكا اللاتينية"
 
 #: /content/includes/home.yaml
 msgid "Learn More"
-msgstr ""
+msgstr "تعلم المزيد"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -108,11 +108,11 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "North America"
-msgstr ""
+msgstr "أمريكا الشمالية"
 
 #: /content/includes/home.yaml
 msgid "Openness"
-msgstr ""
+msgstr "الإنفتاح"
 
 #: /content/includes/home.yaml
 msgid "Publisher Control"
@@ -138,11 +138,11 @@ msgstr "المراجع"
 
 #: /content/includes/header.yaml
 msgid "Roadmap"
-msgstr ""
+msgstr "خارطة الطريق"
 
 #: /content/includes/home.yaml
 msgid "Speed"
-msgstr ""
+msgstr "السرعة"
 
 #: /content/docs/support
 msgid "Support"
@@ -154,11 +154,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Technical Introduction"
-msgstr ""
+msgstr "تمهيد للتكنلوجيا"
 
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP HTML"
-msgstr ""
+msgstr "شركات التكنلوجيا اللاتي يسعملن أي أم بي"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -173,11 +173,11 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Video"
-msgstr ""
+msgstr "الفيديو"
 
 #: /content/includes/home.yaml
 msgid "View Code"
-msgstr ""
+msgstr "تصفح اصل البرنامج"
 
 #: /content/includes/home.yaml
 msgid "Visit Github"
@@ -205,11 +205,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "bbc_news"
-msgstr ""
+msgstr "ال بي بي سي"
 
 #: /content/includes/home.yaml
 msgid "buzzfeed"
-msgstr ""
+msgstr "باز فيد"
 
 #: /content/includes/home.yaml
 msgid "condenast"
@@ -217,7 +217,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "daily_mail"
-msgstr ""
+msgstr "البريد اليوميه"
 
 #: /content/includes/home.yaml
 msgid "economist"
@@ -277,7 +277,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "mashable"
-msgstr ""
+msgstr "ماشابل"
 
 #: /content/includes/home.yaml
 msgid "mcclatchy"
@@ -285,7 +285,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "new_york_times"
-msgstr ""
+msgstr "النيو يورك تايمز"
 
 #: /content/includes/home.yaml
 msgid "newscorp_australia"
@@ -305,11 +305,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "nypost"
-msgstr ""
+msgstr "النيو يورك بوست"
 
 #: /content/includes/home.yaml
 msgid "pearson"
-msgstr ""
+msgstr "بيرسون"
 
 #: /content/includes/home.yaml
 msgid "sankei"
@@ -317,11 +317,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "telegraph"
-msgstr ""
+msgstr "التليغراف"
 
 #: /content/includes/home.yaml
 msgid "time"
-msgstr ""
+msgstr "التايم"
 
 #: /content/includes/home.yaml
 msgid "uol"
@@ -341,7 +341,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "washington_post"
-msgstr ""
+msgstr "الواشينغتون بوست"
 
 #: /content/includes/home.yaml
 msgid "zeit_online"
