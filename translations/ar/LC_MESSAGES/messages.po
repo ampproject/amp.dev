@@ -4,7 +4,7 @@ msgstr "حول"
 
 #: /content/includes/footer.yaml
 msgid "Accelerated Mobile Pages Project"
-msgstr ""
+msgstr "مشروع الصفحات المسارعة على الأجهزة المحمولة"
 
 #: /content/includes/who.yaml
 msgid "Ads"
@@ -39,14 +39,18 @@ msgid "FAQ"
 msgstr "الأسئلة الشائعة"
 
 #: /content/includes/home.yaml
-msgid "الصفحة الرئيسية"
+msgid 
 "For many, reading on the mobile web is a slow, clunky and frustrating "
 "experience - but it doesn’t have to be that way. The Accelerated Mobile Pages"
 " (AMP) Project is an open source initiative that embodies the vision that "
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
-msgstr ""
-
+msgstr
+"بالرغم من إتصاف تجربة التصفح بإستعمال الأجهزة المحمولة بالبطء وبعثها للإزعاج"
+"يمكنها أن تكون أفضل. مشروع الصفحات المسارعة على الأجهزة المحمولة"
+"أي أم بي) هو مبادرة مشروع مفتوح المصدر لتحقيق وجهة نظر تنصّ على أن)"
+"بإمكان دور النشر أن تنتج صفحات محسّنة خصيصا للأجهزة المحمولة مرة واحدة"
+"لتمكين تحميلها بشكل فوري في كل مكان."
 #: /content/includes/home.yaml
 msgid "GET STARTED"
 msgstr "البدء"
@@ -57,7 +61,7 @@ msgstr "البدء"
 
 #: /content/includes/home.yaml
 msgid "Get Started with AMP HTML"
-msgstr "إبدء مع أي أم بي"
+msgstr " إبدء مع أي أم بي أتش تي أم أل"
 
 #: /content/includes/header.yaml
 msgid "GitHub"
@@ -120,11 +124,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Publishers"
-msgstr ""
+msgstr "دور النشر"
 
 #: /content/includes/who.yaml
 msgid "Publishers using AMP HTML"
-msgstr ""
+msgstr "دور النشر اللاتي يتسعملن أي أم بي"
 
 #: /content/includes/home.yaml
 msgid ""
