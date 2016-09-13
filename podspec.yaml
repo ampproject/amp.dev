@@ -25,6 +25,8 @@ localization:
 static_dirs:
 - static_dir: /assets/
   serve_at: /static/
+- static_dir: /pwa/
+  serve_at: /
 
 preprocessors:
 - kind: gulp

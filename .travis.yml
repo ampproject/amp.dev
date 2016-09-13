@@ -16,7 +16,6 @@ install:
 - npm install
 script:
 - grow build
-- gulp write-service-worker
 - firebase deploy --token "$FIREBASE_TOKEN"
 branches:
   only:
