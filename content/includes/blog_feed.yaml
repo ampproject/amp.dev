@@ -4,16 +4,16 @@ section_title: Latest blog posts
 blog:
 
   - article:
+    title: "New study: #SpeedMatters for mobile user engagement and revenue"
+    href: "https://amphtml.wordpress.com/2016/09/08/new-study-speedmatters-for-mobile-user-engagement-and-revenue/amp/"
+    date: "September 8, 2016"
+
+  - article:
+    title: "Live-updating AMPs — launched"
+    href: "https://amphtml.wordpress.com/2016/09/01/live-updating-amps-launched/amp/"
+    date: "September 2, 2016"
+
+  - article:
     title: "Optimize your AMP pages with amp-experiment"
     href: "https://amphtml.wordpress.com/2016/08/24/optimize-your-amp-pages-with-amp-experiment/amp/"
-    date: "August 24, 2016"
-
-  - article:
-    title: "Getting Started with AMP for E-commerce"
-    href: "https://amphtml.wordpress.com/2016/08/22/getting-started-with-amp-for-e-commerce/amp/"
-    date: "August 22, 2016"
-
-  - article:
-    title: "AMP Roadmap Update for Mid-Q3 2016"
-    href: "https://amphtml.wordpress.com/2016/08/16/amp-roadmap-update-for-mid-q3-2016/amp/"
-    date: "August 16, 2016"
+    date: "August 25, 2016"
