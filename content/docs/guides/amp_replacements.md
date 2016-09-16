@@ -22,6 +22,9 @@ using the [`amp-img`](/docs/reference/amp-img.html) element.
 * Must include an explicit width and height.
 * Recommended: include a placeholder in case the image resource fails to load.
 
+Layout behavior for images is determined by the `layout` attribute. For details
+on layouts, read the [AMP HTML Layout System](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+
 Responsive image example:
 
 [sourcecode:html]
