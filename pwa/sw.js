@@ -28,7 +28,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', () => {
   // immediately claim the currently connected clients
-  return self.clients.claim();
+  self.clients.claim();
 });
 
 function createCompleteResponse (data) {
@@ -52,7 +52,7 @@ function getTemplate(url) {
       .then(response => response.text())
       .then(textResponse => {
         templateCache[url] = textResponse;
-        return Promise.resolve(templateCache[url]);
+        return templateCache[url];
       });
 }
 
@@ -73,7 +73,7 @@ self.addEventListener('fetch', event => {
           let clonedNetworkResponse = networkResponse.clone();
 
           if (isDocument) {
-            // clone the response so we can get its text content
+            // get its text content
             clonedNetworkResponse.text().then(body => {
 
               // strip out the head, remove everything but the body
