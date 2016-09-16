@@ -23,7 +23,8 @@ using the [`amp-img`](/docs/reference/amp-img.html) element.
 * Recommended: include a placeholder in case the image resource fails to load.
 
 Layout behavior for images is determined by the `layout` attribute. For details
-on layouts, see [AMP HTML Layout System](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) and [Supported Layouts](https://www.ampproject.org/docs/guides/responsive/control_layout.html).
+on layouts, see [AMP HTML Layout System](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)
+and [Supported Layouts](https://www.ampproject.org/docs/guides/responsive/control_layout.html).
 
 Responsive image example:
 
