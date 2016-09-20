@@ -99,11 +99,10 @@
     }
 
     .header-title {
-      $padding: 30px;
+      $padding: 40px;
       color: $color-midblue;
       font-family: Roboto, verdana, arial, sans-serif;
-      padding: $padding $padding $padding 50px;
-      margin: 10px 0;
+      padding: $padding $padding $padding 60px;
       width: auto;
       text-transform: none;
       white-space: nowrap;
@@ -115,7 +114,7 @@
 
       @include max-screen($mobile-breakpoint) {
         width: auto;
-        margin: 10px 0;
+        margin: 0;
       }
     }
 
