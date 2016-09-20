@@ -99,24 +99,23 @@
     }
 
     .header-title {
+      $padding: 30px;
       color: $color-midblue;
       font-family: Roboto, verdana, arial, sans-serif;
-      padding: 10px 10px 10px 50px;
-      margin: 18px 0;
+      padding: $padding $padding $padding 50px;
+      margin: 10px 0;
       width: auto;
       text-transform: none;
       white-space: nowrap;
 
       background-image: url('/static/img/logo-blue.svg');
       background-repeat: no-repeat;
-      background-size: 40px 40px;
+      background-size: 100%;
       background-position: center left;
 
       @include max-screen($mobile-breakpoint) {
         width: auto;
-        padding: 10px 0 10px 40px;
-        margin: 14px 0;
-        background-size: 30px 30px;
+        margin: 10px 0;
       }
     }
 
