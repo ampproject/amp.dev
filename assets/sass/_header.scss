@@ -99,10 +99,9 @@
     }
 
     .header-title {
-      $padding: 30px;
       color: $color-midblue;
       font-family: Roboto, verdana, arial, sans-serif;
-      padding: $padding $padding $padding 50px;
+      padding: $header-padding $header-padding $header-padding ($header-padding + 20px);
       margin: 10px 0;
       width: auto;
       text-transform: none;
@@ -215,11 +214,10 @@
 .rtl header {
   .left-nav {
     .header-title {
-      padding: 10px 50px 10px 10px;
+      padding: $header-padding ($header-padding + 20px) $header-padding $header-padding;
 
       @include max-screen($mobile-breakpoint) {
         width: auto;
-        padding: 10px 40px 10px 0;
       }
 
       background-position: center right;
