@@ -70,7 +70,7 @@ using the [`amp-facebook`](/docs/reference/extended/amp-facebook.html) element.
 You must include the following script in the `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>"></script>
+<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
 Example - Embedding a post:
