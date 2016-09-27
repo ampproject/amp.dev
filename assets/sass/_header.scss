@@ -50,22 +50,20 @@
     .header-title {
       color: $color-midblue;
       font-family: Roboto, verdana, arial, sans-serif;
-      padding: 10px 10px 10px 50px;
-      margin: 18px 0;
+      padding: $header-padding $header-padding $header-padding ($header-padding + 20px);
+      margin: 0;
       width: auto;
       text-transform: none;
       white-space: nowrap;
 
       background-image: url('/static/img/logo-blue.svg');
       background-repeat: no-repeat;
-      background-size: 40px 40px;
+      background-size: 100%;
       background-position: center left;
 
       @include max-screen($mobile-breakpoint) {
         width: auto;
-        padding: 10px 0 10px 40px;
-        margin: 14px 0;
-        background-size: 30px 30px;
+        margin: 0;
       }
     }
 
@@ -236,11 +234,10 @@
 .rtl header {
   .left-nav {
     .header-title {
-      padding: 10px 50px 10px 10px;
+      padding: $header-padding ($header-padding + 20px) $header-padding $header-padding;
 
       @include max-screen($mobile-breakpoint) {
         width: auto;
-        padding: 10px 40px 10px 0;
       }
 
       background-position: center right;
