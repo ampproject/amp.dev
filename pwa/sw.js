@@ -2,7 +2,6 @@
 
 const cacheName = 'ampproject-doc-cache-v1';
 const templateURL = '/docs/blank/';
-const extraURL = '/stuff.html';
 var templateCache = {};
 
 self.addEventListener('install', event => {
@@ -15,7 +14,6 @@ self.addEventListener('install', event => {
       return cache.addAll([
         /* blank doc template */
         templateURL,
-        extraURL,
         /* important assets for offline support */
         '/static/img/hamburger_white.svg',
         '/static/img/logo-blue.svg',
@@ -34,10 +32,9 @@ self.addEventListener('activate', () => {
 function createCompleteResponse (data) {
   return Promise.all([
     getTemplate(templateURL),
-    getTemplate(extraURL),
     data.text()
   ]).then(html => {
-    return new Response(html[0] + html[1] + html[2] + '</html>', {
+    return new Response(html[0] + html[1] + '</html>', {
       headers: {
         'Content-Type': 'text/html'
       }
