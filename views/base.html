@@ -33,10 +33,7 @@
 
       {{doc.html|render|safe}}
 
-      {% set footer_doc = g.doc('/content/includes/footer.yaml', locale=doc.locale) %}
-      {% with footer = footer_doc %}
-        {% include "/views/partials/footer.html" %}
-      {% endwith %}
+      {% include "/views/partials/footer.html" %}
     </div>
     {% endblock %}
   </div>
