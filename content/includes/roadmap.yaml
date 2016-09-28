@@ -1,8 +1,8 @@
 year: 2016
 quarter: Q3
 outlook:  Q4/Q1
-current: Mid-Q3 2016
-updated: August 16, 2016
+current: End-Q3 2016
+updated: September 30, 2016
 stages:
     "6": Launched / Stable
     "5": Code Complete / Experimental
@@ -25,19 +25,20 @@ sections:
         quarter:
             "1":
             - "[Out-of-box templates and styling](https://github.com/ampproject/amphtml/issues/2851)"
-            - "[Support for immersive video viewing experiences](https://github.com/ampproject/amphtml/issues/4154)"
-            - "[**amp-lightbox** improvements](https://github.com/ampproject/amphtml/issues/4152)"
             - "[Interactive image gallery (large image + thumbnails)](https://github.com/ampproject/amphtml/issues/4500)"
+            - "Native app deep-link/install button"
             - Create a suite of effects, such as scroll-bound animations, that can be applied to AMP page content and structure
-            "3":
-            - Reference implementation using AMP within a Progressive Web App (PWA)
             "4":
-            - "[Form support](https://github.com/ampproject/amphtml/issues/3343)"
-            - "[Native app install button/banner](https://github.com/ampproject/amphtml/issues/800)"
+            - "[Native app install banner](https://github.com/ampproject/amphtml/issues/800)"
             - "[AMP-in-PWA support, including support for progressive enhancement of the AMP document by the Progressive Web App (PWA)](https://github.com/ampproject/amphtml/issues/3742)"
+            - "[**amp-lightbox** improvements](https://github.com/ampproject/amphtml/issues/4152)"
+            - "[Reference implementation using AMP within a Progressive Web App (PWA)](https://github.com/ampproject/amphtml/issues/3742)"
+            - "[Support for immersive video viewing experiences](https://github.com/ampproject/amphtml/issues/4154)"
             "5":
-            - "[Live blog support](https://github.com/ampproject/amphtml/blob/master/extensions/amp-live-list/amp-live-list.md)"
+            - "[Form support [**amp-form**]](https://github.com/ampproject/amphtml/blob/master/extensions/amp-form/amp-form.md)"
             - "[**amp-carousel** improvements](https://github.com/ampproject/amphtml/issues/3465)"
+            "6":
+            - "[Live blog support [**amp-live-list**]](https://www.ampproject.org/docs/reference/extended/amp-live-list.html)"
         forecast:
         - More form support, including validation, conditional behaviors, and grouping
         - Provide greater interactivity support by introducing a mechanism to bind element behavior to user actions
@@ -56,8 +57,8 @@ sections:
             - Expose events from video players to **amp-analytics**
             "4":
             - "[Share-tracking support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/3135)"
-            "5":
-            - "[A/B experience testing support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/1411)"
+            "6":
+            - "[A/B experience testing support in **amp-analytics** [**amp-experiment**]](https://www.ampproject.org/docs/reference/extended/amp-experiment.html)"
             - "[Element-level data variable support in **amp-analytics**](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute)"
             - "[“Hidden” event support in **amp-analytics**](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#hidden-trigger-on-hidden)"
         forecast:
@@ -73,20 +74,18 @@ sections:
         - Extend A4A usage beyond AMP pages
         - Enable AMPs to act as landing pages for ads
         quarter:
-            "1":
-            - "[Ability to indicate AMP vs non-AMP ad type preference to ad servers and ad exchanges](https://github.com/ampproject/amphtml/issues/3058)"
+            "2":
             - "[Support serving A4A creatives in non-AMP Pages](https://github.com/ampproject/amphtml/issues/3829)"
             - "[Improve AMP's ad loading experience](https://github.com/ampproject/amphtml/issues/3831)"
             - "[Show default fallback when no ad is available to serve](https://github.com/ampproject/amphtml/issues/3817)"
-            - "[Support multi-size ad requests](https://github.com/ampproject/amphtml/issues/3176)"
-            "4":
-            - "[Allow for serving ads that are in AMP format (A4A - AMP for Ads)](https://github.com/ampproject/amphtml/issues/3133)"
-            - "[Format specification and validation rules for A4A ad documents](https://github.com/ampproject/amphtml/issues/4264)"
             "5":
+            - "[Allow for serving ads that are in AMP format (A4A - AMP for Ads)](https://github.com/ampproject/amphtml/issues/3133)"
+            - "[Support multi-size ad requests](https://github.com/ampproject/amphtml/issues/3176)"
             - "[Flying carpet effect support, particularly as an ad format](https://github.com/ampproject/amphtml/blob/master/extensions/amp-fx-flying-carpet/amp-fx-flying-carpet.md)"
             "6":
             - "[Sticky ad format in **amp-ad** [**amp-sticky-ad**]](https://www.ampproject.org/docs/reference/extended/amp-sticky-ad.html)"
             - "[Proof of concept implementation of ads with AMP-format landing pages](https://github.com/ampproject/amphtml/pull/3711)"
+            - "[Format specification and validation rules for A4A ad documents](https://github.com/ampproject/amphtml/issues/4264)"
         forecast:
         - Enable A4A creative demand across the buyer and publisher ecosystem
         - Enable deeper integration of ads with AMP-format landing pages across buyside and sellside systems
@@ -97,7 +96,7 @@ sections:
         - Continue to improve paywall and subscription support in AMP
         - Make sign-in and payment for content a seamless and joyful experience in AMP
         quarter:
-            "3":
+            "4":
             - "[Support for delegated sign-in (allow surface hosting AMP to sign-in user to publisher by using available identity information)](https://github.com/ampproject/amphtml/issues/4227)"
             "5":
             - "[**amp-access** server side support (limited beta)](https://github.com/ampproject/amphtml/issues/2968)"
