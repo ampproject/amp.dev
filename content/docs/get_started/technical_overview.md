@@ -83,7 +83,7 @@ their tiny iframes have very little DOM.
 
 The time it takes to do style-recalculations and layouts are restricted by DOM size,
 so the iframe recalculations are very fast compared
-to a recalculating styles and layout for the page.
+to recalculating styles and layout for the page.
 
 ## All CSS must be inline and size-bound
 
