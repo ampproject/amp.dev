@@ -68,7 +68,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 	content = content.replace(/\[([^\]]+)\]\((?!http)([^\)]+)\)/g, '[$1](https://github.com/ampproject/amphtml/blob/master/' + relativePath + '/$2)');
 
 	// now substitute links going to extensions with relative urls to the downloaded ones
-	content = content.replace(/https\:\/\/github.com\/ampproject\/amphtml\/blob\/master\/extensions\/[^\/]+\/([^\.]+)\.md/g, "extended/$1.html");
+	content = content.replace(/https\:\/\/github.com\/ampproject\/amphtml\/blob\/master\/extensions\/[^\/]+\/([^\.]+)\.md/g, "components/$1.html");
 
 	return content;
 }
