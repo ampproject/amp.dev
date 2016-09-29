@@ -1,4 +1,4 @@
 $view: /views/doc.html
-$path: /docs/reference/extended/{base}.html
+$path: /docs/reference/components/{base}.html
 $localization:
-  path: /{locale}/docs/reference/extended/{base}.html
+  path: /{locale}/docs/reference/components/{base}.html
