@@ -26,18 +26,18 @@ sections:
             "1":
             - "[Out-of-box templates and styling](https://github.com/ampproject/amphtml/issues/2851)"
             - "[Interactive image gallery (large image + thumbnails)](https://github.com/ampproject/amphtml/issues/4500)"
-            - "Native app deep-link/install button"
+            - "[Native app deep-link/install button](https://github.com/ampproject/amphtml/issues/5284)"
             - Create a suite of effects, such as scroll-bound animations, that can be applied to AMP page content and structure
             "4":
-            - "[Native app install banner](https://github.com/ampproject/amphtml/issues/800)"
             - "[AMP-in-PWA support, including support for progressive enhancement of the AMP document by the Progressive Web App (PWA)](https://github.com/ampproject/amphtml/issues/3742)"
             - "[**amp-lightbox** improvements](https://github.com/ampproject/amphtml/issues/4152)"
             - "[Reference implementation using AMP within a Progressive Web App (PWA)](https://github.com/ampproject/amphtml/issues/3742)"
             - "[Support for immersive video viewing experiences](https://github.com/ampproject/amphtml/issues/4154)"
             "5":
+            - "[Native app install banner](https://github.com/ampproject/amphtml/issues/800)"
             - "[Form support [**amp-form**]](https://github.com/ampproject/amphtml/blob/master/extensions/amp-form/amp-form.md)"
-            - "[**amp-carousel** improvements](https://github.com/ampproject/amphtml/issues/3465)"
             "6":
+            - "[**amp-carousel** improvements](https://github.com/ampproject/amphtml/projects/4)"
             - "[Live blog support [**amp-live-list**]](https://www.ampproject.org/docs/reference/extended/amp-live-list.html)"
         forecast:
         - More form support, including validation, conditional behaviors, and grouping
@@ -80,7 +80,7 @@ sections:
             - "[Show default fallback when no ad is available to serve](https://github.com/ampproject/amphtml/issues/3817)"
             "5":
             - "[Allow for serving ads that are in AMP format (A4A - AMP for Ads)](https://github.com/ampproject/amphtml/issues/3133)"
-            - "[Support multi-size ad requests](https://github.com/ampproject/amphtml/issues/3176)"
+            - "[Support multi-size ad requests](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests)"
             - "[Flying carpet effect support, particularly as an ad format](https://github.com/ampproject/amphtml/blob/master/extensions/amp-fx-flying-carpet/amp-fx-flying-carpet.md)"
             "6":
             - "[Sticky ad format in **amp-ad** [**amp-sticky-ad**]](https://www.ampproject.org/docs/reference/extended/amp-sticky-ad.html)"
