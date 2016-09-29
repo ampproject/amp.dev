@@ -6,7 +6,6 @@ node_modules
 build
 assets/css/*
 
-content/docs/reference/amp-*
 content/docs/reference/spec.md
-content/docs/reference/extended.md
-content/docs/reference/extended/*.md
+content/docs/reference/components.md
+content/docs/reference/components/*.md

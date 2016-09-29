@@ -79,7 +79,7 @@ downloadPage("spec/amp-html-format.md", function(pageContent) {
 		destination: '../content/docs/reference/spec.md',
 		content: pageContent,
 		title: "AMP HTML Specification",
-		order: 6
+		order: 2
 	}, function (err) {
 		if (err) throw err;
 		console.log('Successfully imported: AMP Specification');
@@ -108,9 +108,9 @@ ghrepo.contents('builtins', "master", function(err, data) {
 
 		downloadPage(component.path, function(pageContent) {
 			savePage({
-				destination: '../content/docs/reference/' + component.name,
+				destination: '../content/docs/reference/components/' + component.name,
 				content: pageContent,
-				title: component.name.replace('.md', '')
+				title: component.name.replace('.md', '') + ' (Built-in)'
 			}, function (err) {
 				if (err) throw err;
 				console.log('Successfully imported: ' + component.name + ' (Built-in)');
@@ -140,11 +140,11 @@ ghrepo.contents('extensions', "master", function(err, data) {
 	downloadPage(readme.path, function(pageContent) {
 		// save it
 		savePage({
-			destination: '../content/docs/reference/extended.md',
+			destination: '../content/docs/reference/components.md',
 			content: pageContent,
-			order: 4,
-			title: "Extended components",
-			folder: 'extended'
+			order: 1,
+			title: "Components / Tags",
+			folder: 'components'
 		}, function (err) {
 			if (err) throw err;
 			console.log('Successfully imported: ' + readme.name + ' (Extended overview page)');
@@ -181,10 +181,10 @@ ghrepo.contents('extensions', "master", function(err, data) {
 			downloadPage(subComponent.path, function(pageContent) {
 				// save it to the extended folder
 				savePage({
-					destination: '../content/docs/reference/extended/' + subComponent.name,
+					destination: '../content/docs/reference/components/' + subComponent.name,
 					content: pageContent,
                     order: order,
-                    parent: '/content/docs/extended.md',
+                    parent: '/content/docs/components.md',
 					title: subComponent.name.replace('.md', '')
 				}, function (err) {
 					if (err) throw err;

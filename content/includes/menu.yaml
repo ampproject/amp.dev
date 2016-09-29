@@ -12,7 +12,7 @@ menu:
         copy@: "Tutorials"
       - href: /content/docs/guides/responsive_amp.md
         copy@: "Guides"
-      - href: /content/docs/reference/amp-video.md
+      - href: /content/docs/reference/components.md
         copy@: "Reference"
       - href: https://ampbyexample.com/
         copy@: "Examples"

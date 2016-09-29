@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "build",
+    "cleanUrls": true,
     "headers": [
       {
         "source": "**/*.@(jpg|jpeg|gif|png|svg|mp4)",
@@ -91,6 +92,41 @@
       {
         "source": "/contact/",
         "destination": "https://github.com/ampproject/amphtml/issues/new",
+        "type": 301
+      },
+      {
+        "source": "/contact/",
+        "destination": "https://github.com/ampproject/amphtml/issues/new",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/extended.html",
+        "destination": "/docs/reference/components.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-img.html",
+        "destination": "/docs/reference/components/amp-img.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-pixel.html",
+        "destination": "/docs/reference/components/amp-pixel.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-ad.html",
+        "destination": "/docs/reference/components/amp-ad.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-video.html",
+        "destination": "/docs/reference/components/amp-video.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/extended/:post*",
+        "destination": "/docs/reference/components/:post*",
         "type": 301
       }
     ],
