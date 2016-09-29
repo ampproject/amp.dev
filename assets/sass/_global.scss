@@ -110,24 +110,6 @@ blockquote {
 }
 
 /**
- * Code formatting
- */
-code {
-    font-size: 15px;
-    border: 1px solid $color-lightgrey;
-    border-radius: 3px;
-    color: $color-grey-800;
-}
-
-code {
-    padding: 1px 5px;
-}
-
-.rtl code {
-	direction: ltr;
-}
-
-/**
  * Tables
  */
 

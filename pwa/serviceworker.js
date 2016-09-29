@@ -43,6 +43,13 @@ function createCompleteResponse (data) {
 }
 
 function getTemplate(url) {
+
+  // every time a static template is requested, we want to update it
+  // in the background lazily for next time.
+  caches.open(cacheName).then(cache => {
+    cache.add(url);
+  });
+
   return templateCache[url] ?
     Promise.resolve(templateCache[url])
     : caches.match(url)
@@ -56,6 +63,12 @@ function getTemplate(url) {
 self.addEventListener('fetch', event => {
 
   var isDocument = /docs\/.+\.html$/.test(event.request.url);
+
+  // can't do anything if the request is a POST request (Google Analytics)
+  // AND PLEASE DON'T SERVICE WORK THE SERVICE WORKER
+  if (event.request.method === 'POST' || event.request.url.indexOf('serviceworker.js') > -1) {
+    return;
+  }
 
   event.respondWith(
     caches.open(cacheName).then(cache => {

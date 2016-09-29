@@ -1,12 +1,29 @@
 /**
+ * Code formatting
+ */
+code {
+    font-size: 13px;
+    border: 1px solid $color-lightgrey;
+    border-radius: 3px;
+    color: $color-grey-800;
+    padding: 2px 5px;
+    background: #F7F7F7;
+}
+
+.rtl code {
+	direction: ltr;
+}
+
+/**
  * Syntax highlighting styles
  */
 pre {
     overflow: auto;
     tab-size: 2;
     word-break: normal;
-    line-height: 1.4;
+    line-height: 1.6;
     background: #F7F7F7;
+    padding: 1em;
 
     > code {
       white-space: pre;
