@@ -54,6 +54,11 @@ Full list of supported values for the layout attribute are:
       <td data-th="Description" class="col-twenty">No</td>
       <td data-th="Behavior">Element lets its children define its size, much like a normal HTML <code>div</code>. The component is assumed to not have specific layout itself but only act as a container. Its children are rendered immediately.</td>
     </tr>
+    <tr>
+      <td data-th="Layout type" class="col-twenty"><code>flex-item</code></td>
+      <td data-th="Description" class="col-twenty">No</td>
+      <td data-th="Behavior">Element and other elements in its parent take the parent container's remaining space when the parent is a flexible container (i.e., <code>display:flex</code>). The element size is determined by the parent element and the number of other elements inside the parent according to the <code>display:flex</code> CSS layout.</td>
+    </tr>
   </tbody>
 </table>
 
