@@ -86,4 +86,4 @@ Yes, an AMP file is the same as the rest of your site – this space is the publ
 
 ### How do I become a part of this project?
 
-We welcome interested individuals and companies who want to get involved to fill out the [Github](https://github.com/ampproject/amphtml/issues/new), so that we can add you to a distribution list and keep you posted on any new information.
+We welcome interested individuals and companies who want to get involved to get in touch via [Github](https://github.com/ampproject/amphtml/issues/new), so that we can add you to a distribution list and keep you posted on any new information.
