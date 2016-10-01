@@ -8,7 +8,7 @@ In the spirit of perceived performance and progressive enhancement, it's best pr
 
 Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`<amp-iframe>`](/docs/reference/components/amp-iframe.html#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
 
-## Placeholders (<code>placeholder</code>)
+## Placeholders
 
 The element marked with the `placeholder` attribute acts
 as a placeholder for the parent AMP element.
@@ -30,7 +30,7 @@ Once ready, the AMP element typically hides its placeholder and shows the conten
 any HTML element can act as the placeholder.</span>
 </aside>
 
-## Fallbacks (<code>fallback</code>)
+## Fallbacks
 
 Use the `fallback` attribute to indicate the fallback behavior
 for any element the browser doesn’t support.
@@ -49,7 +49,7 @@ that the browser doesn’t support a particular feature:
 The `fallback` attribute can be set on any HTML element, not just AMP elements.
 If specified, the `fallback` element must be a direct child of the AMP element.
 
-## Hiding loading indicators (<code>noloading</code>)
+## Hiding loading indicators
 
 Many AMP elements are whitelisted to show a "loading indicator",
 which is a basic animation that shows that the element has not yet fully loaded.
