@@ -1,6 +1,8 @@
 ---
 $title: Apa yang dimaksud dengan AMP?
 ---
+[TOC]
+
 <amp-youtube
     data-videoid="lBTCB7yLs8Y"
     layout="responsive"
@@ -9,8 +11,6 @@ $title: Apa yang dimaksud dengan AMP?
 
 "AMP merupakan cara untuk membangun laman web untuk materi statis yang merender dengan cepat.
 Tindakan AMP terdiri dari tiga bagian berbeda:
-
-[TOC]
 
 **AMP HTML** adalah HTML dengan beberapa pembatasan untuk kinerja yang bisa diandalkan
 dan beberapa ekstensi untuk membangun materi kaya yang melampaui HTML dasar.

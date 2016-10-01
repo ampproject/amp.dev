@@ -1,6 +1,8 @@
 ---
 $title: AMP Nedir?
 ---
+[TOC]
+
 <amp-youtube
     data-videoid="lBTCB7yLs8Y"
     layout="responsive"
@@ -9,8 +11,6 @@ $title: AMP Nedir?
 
 AMP, hızlı sonuç veren statik içerik için web sayfalarını oluşturmanın bir yoludur.
 AMP eylem olarak üç farklı kısımdan oluşur:
-
-[TOC]
 
 **AMP HTML** güvenilir performans için bazı kısıtlamalar ve
 temel HTML›in ötesinde zengin içerikler oluşturmak için bazı uzantılar içeren bir HTML›dir.

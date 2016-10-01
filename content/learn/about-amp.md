@@ -2,6 +2,8 @@
 $title: What Is AMP?
 $order: 0
 ---
+[TOC]
+
 <amp-youtube
     data-videoid="lBTCB7yLs8Y"
     layout="responsive"
@@ -10,8 +12,6 @@ $order: 0
 
 AMP is a way to build web pages for static content that render fast.
 AMP in action consists of three different parts:
-
-[TOC]
 
 **AMP HTML** is HTML with some restrictions for reliable performance
 and some extensions for building rich content beyond basic HTML.

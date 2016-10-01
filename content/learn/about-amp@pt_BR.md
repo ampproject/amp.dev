@@ -1,6 +1,8 @@
 ---
 $title: O que é o AMP?
 ---
+[TOC]
+
 <amp-youtube
     data-videoid="lBTCB7yLs8Y"
     layout="responsive"
@@ -9,8 +11,6 @@ $title: O que é o AMP?
 
 O AMP é uma maneira de criar páginas da Web para conteúdo estático com renderização rápida.
 O AMP em ação consiste em três partes diferentes:
-
-[TOC]
 
 **AMP HTML** é o HTML com algumas restrições para um desempenho confiável
 e algumas extensões para a criar conteúdo avançado além do HTML básico.

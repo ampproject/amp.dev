@@ -1,5 +1,16 @@
 'use strict';
 
+/*
+ * Something is seriously broken. We've gotten multiple reports of SW failing,
+ * and during local development with no cache headers set, the Service Worker
+ * does not update itself. Disabling for the time being.
+ */
+
+self.addEventListener('install', () => {
+  self.skipWaiting();
+});
+
+/*
 const cacheName = 'ampproject-doc-cache-v1';
 const templateURL = '/docs/blank/';
 var templateCache = {};
@@ -12,9 +23,9 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(cacheName).then(cache => {
       return cache.addAll([
-        /* blank doc template */
+        // blank doc template
         templateURL,
-        /* important assets for offline support */
+        // important assets for offline support
         '/static/img/hamburger_white.svg',
         '/static/img/logo-blue.svg',
         '/static/img/hamburger.svg'
@@ -66,7 +77,7 @@ self.addEventListener('fetch', event => {
 
   // can't do anything if the request is a POST request (Google Analytics)
   // AND PLEASE DON'T SERVICE WORK THE SERVICE WORKER
-  if (event.request.method === 'POST' || event.request.url.indexOf('serviceworker.js') > -1) {
+  if (event.request.method === 'POST' || event.request.url.indexOf('serviceworker') > -1) {
     return;
   }
 
@@ -119,3 +130,5 @@ self.addEventListener('fetch', event => {
   );
 
 });
+
+*/

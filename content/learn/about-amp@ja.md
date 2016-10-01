@@ -1,6 +1,8 @@
 ---
 $title: AMP とは
 ---
+[TOC]
+
 <amp-youtube
     data-videoid="lBTCB7yLs8Y"
     layout="responsive"
@@ -9,8 +11,6 @@ $title: AMP とは
 
 AMP を使用してウェブページを作成すると、静的コンテンツを高速でレンダリングできます。
 以下は AMP を構成する 3 つの要素です。
-
-[TOC]
 
 **AMP HTML** は、パフォーマンスを保証するための制約が設けられた HTML で、
 通常の HTML より優れたリッチ コンテンツを作成できる拡張機能が備わっています。

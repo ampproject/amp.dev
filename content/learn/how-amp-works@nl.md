@@ -1,10 +1,9 @@
 ---
 $title: Hoe AMP de prestaties versnelt
 ---
+[TOC]
 
 Dankzij de combinatie van de volgende optimalisaties zijn AMP-pagina's zo snel dat het lijkt of ze direct worden geladen:
-
-[TOC]
 
 Liever luisteren dan lezen? Bekijk dan de volgende video van Malte Ubl, het hoofd van de technische afdeling van AMP, met daarin een vergelijkbaar overzicht als in de volgende paragrafen.
 

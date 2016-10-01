@@ -1,10 +1,9 @@
 ---
 $title: Cómo AMP acelera el rendimiento
 ---
+[TOC]
 
 La combinación de las siguientes optimizaciones hace que las páginas AMP se carguen de manera casi instantánea:
-
-[TOC]
 
 Si prefieres escuchar antes que leer, en el siguiente video realizado por Malte Ubl, responsable de ingeniería de AMP, se ofrece información general similar a la que encontrarás en los párrafos que aparecen a continuación.
 

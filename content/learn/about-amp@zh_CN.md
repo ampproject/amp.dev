@@ -1,6 +1,8 @@
 ---
 $title: 什么是 AMP？
 ---
+[TOC]
+
 <amp-youtube
     data-videoid="lBTCB7yLs8Y"
     layout="responsive"
@@ -9,8 +11,6 @@ $title: 什么是 AMP？
 
 通过 AMP 可以构建快速渲染的静态内容网页。
 AMP 实例由三个不同部分组成：
-
-[TOC]
 
 **AMP HTML** 是为确保可靠性能而具有某些限制的 HTML，
 它进行了一些扩展，可以构建超出基本 HTML 的丰富内容。

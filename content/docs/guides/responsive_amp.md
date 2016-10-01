@@ -1,12 +1,11 @@
 ---
-$title: Create Responsive AMP Pages
+$title: Styling & Layout
 $order: 0
 ---
-
-It is super easy to make responsive elements in AMP.
-Just put `layout=responsive` on them.
-
 [TOC]
+
+It is super easy to make elements responsive in AMP.
+Just put `layout="responsive"` on them.
 
 ## Create responsive images
 
@@ -35,27 +34,26 @@ which image asset to use based on varying screen sizes:
 This `amp-img` element automatically fits the width
 of its container element,
 and its height is automatically set to the aspect ratio
-determined by the given width and height:
+determined by the given width and height. Try it out by resizing this browser window:
 
-<amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
+<amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-See also [AMP by Example's amp-img](https://ampbyexample.com/components/amp-img/).
+<aside class="success">
+  <strong>Tip:</strong>
+  <span>See our side-by-side live demo of <code>amp-img</code> for a basic and advanced example: <a href="https://ampbyexample.com/components/amp-img/">Live Demo</a></span>
+</aside>
 
 ## Add styles to a page
 
-Add all styles inside the `<style amp-custom>` tag
-in the head of the document.
+Add all styles inside a `<style amp-custom>` tag in the head of the document.
 For example:
 
 [sourcecode:html]
 <!doctype html>
   <head>
-    <meta charset="utf-8">
-    <link rel="canonical" href="hello-world.html" >
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    ...
     <style amp-custom>
-      /* any custom style goes here. */
+      /* any custom styles go here. */
       body {
         background-color: white;
       }
@@ -67,13 +65,15 @@ For example:
         background-color: grey;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    ...
   </head>
 [/sourcecode]
 
-**Important:**
-Make sure there’s only one `<style amp-custom>` tag on your page,
-as more than one isn’t allowed in AMP.
+<aside class="caution">
+  <strong>Important:</strong>
+  <span>Make sure there’s only one <code>&lt;style amp-custom&gt;</code> tag on your page,
+as more than one isn’t allowed in AMP.</span>
+</aside>
 
 Define component styles with class or element selectors
 using common CSS properties. For example:
@@ -93,10 +93,13 @@ using common CSS properties. For example:
 </body>
 [/sourcecode]
 
-**Important:**
-Check that your styles are supported in AMP;
+<aside class="caution">
+  <strong>Important:</strong>
+  <span>Check that your styles are supported in AMP;
 some styles aren't for performance reasons
-(see also [Supported CSS](/docs/guides/responsive/style_pages.html)).
+(see also <a href="/docs/guides/responsive/style_pages.html">Supported CSS</a>).</span>
+</aside>
+
 
 ## Size and position elements
 
@@ -112,7 +115,10 @@ Set the layout to responsive.
 This sizes the element to the width of it's container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
-Learn more about [supported layouts in AMP](/docs/guides/responsive/control_layout.html).
+<aside class="success">
+  <strong>Tip:</strong>
+  <span>Learn more about <a href="/docs/guides/responsive/control_layout.html">supported layouts in AMP</a>.</span>
+</aside>
 
 ## Validate your styles and layout
 
@@ -128,5 +134,7 @@ Example error in console for page with CSS that exceeds the 50,000 bytes limit:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Learn more about how to [validate your AMP pages](/docs/guides/validate.html),
-including how to track down style errors and fix them.
+<aside class="success">
+  <strong>Tip:</strong>
+  <span>Learn more about how to <a href="/docs/guides/validate.html">validate and fix your AMP pages</a>.</span>
+</aside>

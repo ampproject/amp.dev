@@ -1,10 +1,9 @@
 ---
 $title: Zwiększanie wydajności przez AMP
 ---
+[TOC]
 
 Połączenie następujących optymalizacji sprawia, że strony AMP są tak szybkie i sprawiają wrażenie, że ładują się natychmiast:
-
-[TOC]
 
 Jeśli wolisz słuchać niż czytać, w następującym filmie szef zespołu AMP Malte Ubl przedstawia przeglądowe informacje podobne do zamieszczonych w kolejnych akapitach.
 

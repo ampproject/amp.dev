@@ -1,10 +1,9 @@
 ---
 $title: AMP Performansı Nasıl Arttırılır
 ---
+[TOC]
 
 AMP sayfalarının bu kadar hızlı olmasının ve anında yüklenmesinin nedeni aşağıdaki optimizasyonların bir araya gelmesidir.
-
-[TOC]
 
 Okumak yerine dinlemeyi tercih ediyorsanız, AMP baş mühendisi Malte Ubl tarafından hazırlanan aşağıdaki video aşağıdaki paragraflara benzer genel bir özet sunmaktadır.
 

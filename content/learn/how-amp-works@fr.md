@@ -1,10 +1,9 @@
 ---
 $title: Accélération de la performance avec AMP
 ---
+[TOC]
 
 La combinaison de toutes les optimisations suivantes est la raison pour laquelle les pages AMP sont tellement rapides qu'elles semblent se charger instantanément :
-
-[TOC]
 
 Si vous préférez l'écoute à la lecture, la vidéo suivante présentée par l'ingénieur AMP en chef, Malte Ubl, aborde les mêmes informations que les paragraphes suivants.
 

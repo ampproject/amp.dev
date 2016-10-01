@@ -35,7 +35,6 @@
     justify-content: flex-start;
 
     font-size: 20px;
-    letter-spacing: 0.04em;
     margin-left: 0;
     font-weight: 300;
 
@@ -49,7 +48,6 @@
 
     .header-title {
       color: $color-midblue;
-      font-family: Roboto, verdana, arial, sans-serif;
       padding: $header-padding $header-padding $header-padding ($header-padding + 20px);
       margin: 0;
       width: auto;
@@ -78,7 +76,6 @@
     justify-content: center;
 
     &.right {
-      letter-spacing: 0.04em;
       font-size: 15px;
     }
   }
@@ -166,7 +163,7 @@
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-top: 6px solid currentColor;
-        margin-left: 2px;
+        margin-left: 5px;
         padding-bottom: 2px;
       }
     }

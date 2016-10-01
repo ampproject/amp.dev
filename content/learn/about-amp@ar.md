@@ -1,6 +1,8 @@
 ---
 $title: ما المقصود بـ AMP؟
 ---
+[TOC]
+
 <amp-youtube
     data-videoid="lBTCB7yLs8Y"
     layout="responsive"
@@ -9,8 +11,6 @@ $title: ما المقصود بـ AMP؟
 
 AMP هي وسيلة لإنشاء صفحات ويب للمحتوى الثابت تتميز بسرعة العرض.
 تتألف AMP عند التطبيق من ثلاثة أجزاء مختلفة:
-
-[TOC]
 
 **<span dir="ltr" class="nowrap">AMP HTML</span>** هو HTML مع بعض القيود لإتاحة أداء موثوق به
 وبعض الإضافات لإنشاء محتوى منسّق خارج نطاق HTML الأساسي.

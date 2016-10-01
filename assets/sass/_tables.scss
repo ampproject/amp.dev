@@ -1,0 +1,43 @@
+/**
+ * Tables
+ */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #FFFFFF;
+  background: #F7F7F7;
+  padding: 0.5rem;
+  text-align: left;
+  @include text-body();
+  vertical-align: top;
+}
+
+.rtl td,
+.rtl th {
+  text-align: right;
+}
+
+th.col-fourty,
+td.col-fourty {
+  width: 40%;
+}
+
+th.col-thirty,
+td.col-thirty {
+  width: 30%;
+}
+
+th.col-twenty,
+td.col-twenty,
+ {
+  width: 20%
+}
+
+th {
+  background: $color-blue;
+  color: #fff;
+}

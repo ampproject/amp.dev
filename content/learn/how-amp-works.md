@@ -2,10 +2,9 @@
 $title: How AMP Works
 $order: 2
 ---
+[TOC]
 
 The following optimizations combined are the reason AMP pages are so fast they appear to load instantly:
-
-[TOC]
 
 If you'd rather listen than read, the following video by AMP engineering lead Malte Ubl gives a similar overview than the following paragraphs.
 

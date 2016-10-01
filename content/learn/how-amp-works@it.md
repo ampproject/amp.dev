@@ -1,10 +1,9 @@
 ---
 $title: Il metodo di AMP per ottimizzare le prestazioni
 ---
+[TOC]
 
 Grazie alla combinazione tra seguenti ottimizzazioni, le pagine AMP sono così veloci da sembrare di essere caricate in pochi istanti:
-
-[TOC]
 
 Se preferisci ascoltare anziché leggere, il seguente video realizzato da Malte Ubl, AMP engineering lead, offre una panoramica simile al contenuto delle seguenti sezioni.
 

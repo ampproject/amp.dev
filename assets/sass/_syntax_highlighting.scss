@@ -1,13 +1,29 @@
 /**
  * Code formatting
  */
+pre,
+code,
+kbd,
+samp,
+tt{
+  font-family: Courier New, Monaco, monospace;
+  font-size:1em;
+  background: #f2f9ff;
+  border: 1px solid #b2e7ff;
+  border-radius: 3px;
+}
+
 code {
     font-size: 13px;
-    border: 1px solid $color-lightgrey;
-    border-radius: 3px;
-    color: $color-grey-800;
     padding: 2px 5px;
-    background: #F7F7F7;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code {
+  font-size: inherit;
 }
 
 .rtl code {
@@ -21,8 +37,7 @@ pre {
     overflow: auto;
     tab-size: 2;
     word-break: normal;
-    line-height: 1.6;
-    background: #F7F7F7;
+    line-height: 1.4;
     padding: 1em;
 
     > code {

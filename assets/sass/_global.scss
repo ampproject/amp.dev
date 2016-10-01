@@ -28,6 +28,10 @@ img {
   max-width: 100%;
 }
 
+strong, b {
+  font-weight: 600;
+}
+
 /**
  * Headings
  */
@@ -110,42 +114,6 @@ blockquote {
 }
 
 /**
- * Tables
- */
-
-table {
-  border-collapse: collapse;
-}
-
-td, th {
-  border: 1px solid #FFFFFF;
-  background: #F7F7F7;
-  padding: 0.5rem;
-  text-align: left;
-}
-
-.rtl td,
-.rtl th {
-  text-align: right;
-}
-
-td.col-fourty {
-  width: 40%;
-}
-
-td.col-thirty {
-  width: 30%;
-}
-
-th {
-  background: #eee;
-}
-
-th.col-twenty {
-  width: 20%
-}
-
-/**
  * Lists
  */
 
@@ -158,7 +126,7 @@ p {
   @include text-body();
 
   a {
-    font-weight: 300;
+    font-weight: 400;
   }
 
   &.subtitle {
@@ -242,7 +210,6 @@ figure {
   display: none;
 }
 
-
 .go-button {
   display: inline-block;
   background-color: $color-midblue;
@@ -285,7 +252,6 @@ figure {
     }
   }
 }
-
 
 .desaturate {
 

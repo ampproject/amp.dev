@@ -1,6 +1,8 @@
 ---
 $title: AMP란?
 ---
+[TOC]
+
 <amp-youtube
     data-videoid="lBTCB7yLs8Y"
     layout="responsive"
@@ -9,8 +11,6 @@ $title: AMP란?
 
 AMP는 빠르게 렌더링되는 정적 콘텐츠용 웹페이지를 만드는 한 방법입니다.
 실제로 작동하는 AMP는 세 가지 다른 부분으로 구성됩니다:
-
-[TOC]
 
 **AMP HTML**은 안정적인 성능을 위한 제한이 있으며
 또한 기본 HTML을 넘어 리치 콘텐츠를 작성하기 위한 확장이 있는 HTML입니다.

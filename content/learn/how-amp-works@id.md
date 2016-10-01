@@ -1,10 +1,9 @@
 ---
 $title: Cara AMP Mempercepat Kinerja
 ---
+[TOC]
 
 Kombinasi semua pengoptimalan berikut adalah alasan mengapa halaman AMP sangat cepat sehingga tampak dimuat seketika:
-
-[TOC]
 
 Jika Anda lebih memilih mendengarkan dibanding membaca, video berikut yang disajikan oleh pimpinan teknisi AMP Malte Ubl akan memberikan ikhtisar yang mirip dengan teks yang ada di bawahnya.
 
