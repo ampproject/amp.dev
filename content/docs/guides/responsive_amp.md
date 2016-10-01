@@ -4,48 +4,24 @@ $order: 0
 ---
 [TOC]
 
-It is super easy to make elements responsive in AMP.
-Just put `layout="responsive"` on them.
+Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
+both cases, you'll use CSS.
 
-## Create responsive images
-
-All externally-loaded resources including images,
-must have a specified size and position
-so as the resources load, the page won't jump and reflow.
-
-Create responsive images
-by specifying the width and height,
-setting layout to responsive,
-and indicating with [`srcset`](/docs/guides/responsive/style_pages.html)
-which image asset to use based on varying screen sizes:
-
-[sourcecode:html]
-<amp-img
-    src="/img/narrow.jpg"
-    srcset="/img/wide.jpg 640w,
-           /img/narrow.jpg 320w"
-    width="1698"
-    height="2911"
-    layout="responsive"
-    alt="an image">
-</amp-img>
-[/sourcecode]
-
-This `amp-img` element automatically fits the width
-of its container element,
-and its height is automatically set to the aspect ratio
-determined by the given width and height. Try it out by resizing this browser window:
-
-<amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
+However, AMP limits some use of CSS for performance and usability reasons, while
+expanding responsive design capabilities with features like [placeholders & fallbacks](/docs/guides/responsive/placeholders.html),
+[advanced art direction via srcset](https://ampproject.local/docs/guides/responsive/art_direction.html) and the [layout attribute](https://ampproject.local/docs/guides/responsive/control_layout.html) for better control over how your elements display.
 
 <aside class="success">
   <strong>Tip:</strong>
-  <span>See our side-by-side live demo of <code>amp-img</code> for a basic and advanced example: <a href="https://ampbyexample.com/components/amp-img/">Live Demo</a></span>
+  <span>It is super easy to make elements responsive in AMP.
+Just put <code>layout="responsive"</code> on them.</span>
 </aside>
+
+
 
 ## Add styles to a page
 
-Add all styles inside a `<style amp-custom>` tag in the head of the document.
+Add all CSS inside a `<style amp-custom>` tag in the head of the document.
 For example:
 
 [sourcecode:html]
@@ -101,10 +77,7 @@ some styles aren't for performance reasons
 </aside>
 
 
-## Size and position elements
-
-AMP uncouples document layout from resource loading
-so that AMP can load the layout of the page without waiting for resource downloads.
+## Layout elements responsively
 
 Specify the size and position for all visible AMP elements
 by providing a `width` and `height` attribute.
@@ -116,8 +89,26 @@ This sizes the element to the width of it's container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
 <aside class="success">
-  <strong>Tip:</strong>
+  <strong>Read on:</strong>
   <span>Learn more about <a href="/docs/guides/responsive/control_layout.html">supported layouts in AMP</a>.</span>
+</aside>
+
+## Provide placeholders & fallbacks
+
+The built-in support for placeholders and fallbacks means your users never have to stare at a blank screen again.
+
+<aside class="success">
+  <strong>Read on:</strong>
+  <span>Learn more about <a href="/docs/guides/responsive/placeholders.html">Placeholders and fallbacks</a>.</span>
+</aside>
+
+## Art direct your images
+
+AMP supports both `srcset` and `sizes` attributes to give you fine grained control, of which images to load in which scenario.
+
+<aside class="success">
+  <strong>Read on:</strong>
+  <span>Learn more about <a href="/docs/guides/responsive/art_direction.html">art direction with srcset and sizes</a>.</span>
 </aside>
 
 ## Validate your styles and layout
@@ -135,6 +126,6 @@ Example error in console for page with CSS that exceeds the 50,000 bytes limit:
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
 <aside class="success">
-  <strong>Tip:</strong>
+  <strong>Read on:</strong>
   <span>Learn more about how to <a href="/docs/guides/validate.html">validate and fix your AMP pages</a>.</span>
 </aside>

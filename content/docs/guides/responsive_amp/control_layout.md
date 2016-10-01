@@ -4,9 +4,45 @@ $order: 1
 ---
 [TOC]
 
-## Supported values for  the `layout` attribute
+AMP supports both **media queries** &amp; **element queries**, plus comes with a powerful, built-in way to control the **layout** of individual elements. The `layout` attribute makes working with and creating fully responsive design much easier than if you'd use CSS alone.
 
-AMP comes with a powerful, built-in way to control the layout of individual elements. The `layout` attribute makes working with and creating fully responsive design much easier than if you'd use CSS alone.
+## Responsive images, made easy
+
+Create responsive images by specifying the `width` and `height`, setting layout to `responsive`,
+and indicating with [`srcset`](/docs/guides/responsive/art_direction.html)
+which image asset to use based on varying screen sizes:
+
+[sourcecode:html]
+<amp-img
+    src="/img/narrow.jpg"
+    srcset="/img/wide.jpg 640w,
+           /img/narrow.jpg 320w"
+    width="1698"
+    height="2911"
+    layout="responsive"
+    alt="an image">
+</amp-img>
+[/sourcecode]
+
+This `amp-img` element automatically fits the width
+of its container element,
+and its height is automatically set to the aspect ratio
+determined by the given width and height. Try it out by resizing this browser window:
+
+<amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
+
+<aside class="success">
+  <strong>Tip:</strong>
+  <span>See our side-by-side live demo of <code>amp-img</code> for a basic and advanced example: <a href="https://ampbyexample.com/components/amp-img/">Live Demo</a></span>
+</aside>
+
+## The layout attribute
+
+The `layout` attribute gives you easy, per-element control over how your element
+should render on screen. Many of these things are possible with pure CSS – but
+they're much harder, and require a myriad of hacks. Use the `layout` attribute instead.
+
+### Supported values for  the `layout` attribute
 
 The following values can be used in the `layout` attribute:
 
