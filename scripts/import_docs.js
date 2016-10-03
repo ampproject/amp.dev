@@ -127,30 +127,6 @@ ghrepo.contents('extensions', "master", function(err, data) {
 		throw err;
 	}
 
-	// grab README and stick in to extened.md
-	var readme;
-	for (var i = 0; i < data.length; i++) {
-		if(data[i].name === "README.md") {
-			readme = data[i];
-			break;
-		}
-	}
-
-	// download the page contents
-	downloadPage(readme.path, function(pageContent) {
-		// save it
-		savePage({
-			destination: '../content/docs/reference/components.md',
-			content: pageContent,
-			order: 1,
-			title: "Components / Tags",
-			folder: 'components'
-		}, function (err) {
-			if (err) throw err;
-			console.log('Successfully imported: ' + readme.name + ' (Extended overview page)');
-		});
-	}, 1);
-
 	// grab extended component sub pages
 	var components = data.filter(function(obj) {
 			return obj.type === 'dir';

@@ -7,5 +7,4 @@ build
 assets/css/*
 
 content/docs/reference/spec.md
-content/docs/reference/components.md
 content/docs/reference/components/*.md
