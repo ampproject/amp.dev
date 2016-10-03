@@ -1,12 +1,11 @@
 ---
 $title: Casos de uso
 ---
+[TOC]
 
 En esta guía se incluye un conjunto de casos de uso comunes para realizar un seguimiento de la captación de usuarios:
 
-[TOC]
-
-¿Quieres agregar un caso de uso? 
+¿Quieres agregar un caso de uso?
 [Cuéntanos](https://github.com/ampproject/docs/issues/new).
 
 También puedes aportar tus propios casos de uso;
@@ -14,7 +13,7 @@ consulta [Cómo contribuir](https://www.ampproject.org/docs/support/contribute.h
 
 ## Seguimiento de vistas de página
 
-Obtén información acerca de cómo realizar un seguimiento de las vistas de página usando `amp-pixel` y `amp-analytics`. 
+Obtén información acerca de cómo realizar un seguimiento de las vistas de página usando `amp-pixel` y `amp-analytics`.
 
 ### Con amp-pixel
 
@@ -54,7 +53,7 @@ Envía datos de vistas de página a una URL especificada usando
 ### Con amp-analytics (googleanalytics)
 
 Envía datos de vistas de página a Google Analytics
-(consulta también [Seguimiento de páginas en Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
+(consulta también [Seguimiento de páginas en Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -145,7 +144,7 @@ para enviar un evento `click` a Google Analytics cuando se hace clic en un eleme
 ## Seguimiento del desplazamiento
 
 Realiza un seguimiento del desplazamiento usando [amp-analytics](/docs/reference/extended/amp-analytics.html).
-En el ejemplo siguiente se usa el atributo `scrollspec` para enviar un evento `scroll` 
+En el ejemplo siguiente se usa el atributo `scrollspec` para enviar un evento `scroll`
 a la URL especificada cuando la página se desplaza verticalmente un 25, un 50 y un 90%.
 El evento también se activa cuando la página se desplaza horizontalmente
 hasta el 90% del ancho de `scroll`:

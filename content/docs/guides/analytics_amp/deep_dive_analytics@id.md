@@ -1,12 +1,11 @@
 ---
 $title: Mendalami AMP Analytics
 ---
+[TOC]
 
 Panduan ini mendalami
 [komponen amp-analytics](/docs/reference/extended/amp-analytics.html),
 menguraikan konfigurasi `amp-analytics` contoh ke dalam blok pembangun utama ini:
-
-[TOC]
 
 Bagian selanjutnya dari panduan ini memakai contoh konfigurasi ini,
 yang melacak tampilan halaman dan klik pengguna pada tautan
@@ -65,7 +64,7 @@ AMP didesain untuk mendukung dua pola umum pengumpulan data:
 Untuk mengirim data analisis ke penyedia analisis,
 sertakan atribut `type` dalam tag `amp-analytics` dan atur nilainya
 ke vendor yang sesuai, sebagaimana didefinisikan dalam
-[spesifikasi amp-analytics](/docs/reference/extended/amp-analytics.html).  
+[spesifikasi amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Misalnya: `<amp-analytics type="googleanalytics">` mengirim data analisis
 ke penyedia analisis pihak ketiga, Google Analytics,
@@ -81,7 +80,7 @@ sumber daya bantuan untuk panduan lebih lanjut.
 Sebagaimana yang dijelaskan sebelumnya,
 daftar vendor yang sudah terintegrasi dengan AMP, serta tautan
 ke dokumentasi spesifik bisa ditemukan dalam
-[spesifikasi amp-analytics](/docs/reference/extended/amp-analytics.html). 
+[spesifikasi amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Jika Anda adalah vendor analisis,
 ketahui selengkapnya tentang
@@ -99,7 +98,7 @@ berdasarkan permintaan spesifik
 Jika Anda sebagai penerbit memiliki kontrol atas file jarak jauh,
 Anda bisa melakukan pemrosesan sisi server yang diperlukan
 untuk membuat data konfigurasi.
- 
+
 Langkah pertama untuk memuat konfigurasi jarak jauh adalah
 menyertakan atribut config dalam tag `amp-analytics`:
 
@@ -136,7 +135,7 @@ ke nilai akun dalam URL jarak jauh (`"account": "UA-XXXXX-Y"`):
 
 **Penting:** AMP tidak memvalidasi terhadap lebih dari satu penggunaan dari variabel yang sama.
 Nilai-nilai diisikan mengikuti urutan prioritas penggantian variabel,
-dan nilai dalam URL jarak jauh berada di prioritas teratas dari urutan tersebut 
+dan nilai dalam URL jarak jauh berada di prioritas teratas dari urutan tersebut
 (lihat [Pengurutan penggantian variabel](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
 
 ## Permintaan, pemicu, & transport
@@ -146,10 +145,10 @@ Atribut `requests` mendefinisikan 'data apa yang dikirimkan'
 dan tempat data tersebut dikirimkan (URL yang digunakan untuk mentransmisikan data).
 
 Atribut `triggers` menjelaskan kapan data analisis harus dikirimkan,
-misalnya, ketika pengguna melihat halaman, ketika pengguna mengeklik tautan. 
+misalnya, ketika pengguna melihat halaman, ketika pengguna mengeklik tautan.
 
 Atribut `transport` menetapkan cara mengirim permintaan,
-atau secara lebih spesifik lagi, protokolnya. 
+atau secara lebih spesifik lagi, protokolnya.
 
 Teruskan membaca untuk mengetahui selengkapnya tentang konfigurasi ini.
 (Anda juga bisa membaca tentang konfigurasi ini dalam
@@ -197,7 +196,7 @@ ke permintaan dan mengatur nilai parameter ke "AMP":
 Atribut `triggers` menjelaskan kapan permintaan analisis harus dikirimkan.
 Atribut ini berisi pasangan nilai-kunci dari nama pemicu dan konfigurasi pemicu.
 Nama pemicu bisa berupa sembarang </string> yang terdiri
-karakter alfanumerik (a-zA-Z0-9). 
+karakter alfanumerik (a-zA-Z0-9).
 
 Misalnya,
 elemen `amp-analytics` berikut dikonfigurasi untuk mengirim permintaan ke
@@ -296,7 +295,7 @@ dan hanya yang memiliki prioritas lebih tinggi
 yang diaktifkan, diizinkan, dan tersedia.
 Prioritasnya adalah `beacon` > `xhrpost` > `image`.
 Jika agen-pengguna klien tidak mendukung sebuah metode,
-metode prioritas tertinggi berikutnya yang diaktifkan akan digunakan. 
+metode prioritas tertinggi berikutnya yang diaktifkan akan digunakan.
 
 Sertakan atribut `transport` dalam konfigurasi Anda
 hanya jika Anda ingin membatasi opsi transport,

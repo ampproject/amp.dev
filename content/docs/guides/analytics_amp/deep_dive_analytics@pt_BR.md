@@ -1,12 +1,11 @@
 ---
 $title: Informações detalhadas sobre o AMP Analytics
 ---
+[TOC]
 
 Este guia fornece informações detalhadas sobre o
 [componente amp-analytics](/docs/reference/extended/amp-analytics.html),
 dividindo uma configuração de exemplo do `amp-analytics` nestas três categorias básicas:
-
-[TOC]
 
 O restante deste guia usa esse exemplo de configuração,
 que rastreia as visualizações de páginas e os cliques de usuários em links
@@ -65,7 +64,7 @@ O AMP foi projetado para oferecer suporte a dois padrões comuns de coleta de da
 Para enviar dados de análise a um provedor de análises,
 inclua o atributo `type` na tag `amp-analytics` e defina seu valor
 para o fornecedor adequado, segundo definido na
-[especificação do amp-analytics](/docs/reference/extended/amp-analytics.html).  
+[especificação do amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Por exemplo: `<amp-analytics type="googleanalytics">` envia dados de análise
 ao provedor de análise de terceiros, Google Analytics.
@@ -81,7 +80,7 @@ do fornecedor para obter mais orientações.
 Como mencionado anteriormente,
 a lista de fornecedores que já foram integrados ao AMP, assim como os links
 para suas documentações específicas, pode ser encontrada na
-[especificação do amp-analytics](/docs/reference/extended/amp-analytics.html). 
+[especificação do amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Se você é um fornecedor de análises,
 saiba mais sobre
@@ -99,7 +98,7 @@ com base em uma solicitação específica.
 Se você, como editor, tem controle sobre o arquivo remoto,
 é possível realizar qualquer procedimento necessário no lado do servidor
 para construir os dados de configuração.
- 
+
 O primeiro passo para carregar configurações remotas é
 incluir o atributo config na tag `amp-analytics`:
 
@@ -136,7 +135,7 @@ para o valor de conta no URL remoto (`"account": "UA-XXXXX-Y"`):
 
 **Importante:** o AMP não realiza a validação em relação a diversos usos da mesma variável.
 Os valores são preenchidos seguindo uma ordem de preferência de substituição de variável
-e os valores nos URLs remotos estão no topo dessa ordem 
+e os valores nos URLs remotos estão no topo dessa ordem
 (consulte [Ordem de substituição de variáveis](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
 
 ## Solicitações, acionamento e transportes
@@ -146,10 +145,10 @@ O atributo `requests` define “quais dados são enviados”
 e para onde os dados são enviados (os URLs usados para transmitir dados).
 
 O atributo `triggers` descreve quando dados de análise devem ser enviados,
-por exemplo, quando um usuário visualiza uma página ou clica em um link. 
+por exemplo, quando um usuário visualiza uma página ou clica em um link.
 
 O atributo `transport` especifica como enviar a solicitação,
-mais especificamente, o protocolo. 
+mais especificamente, o protocolo.
 
 Continue lendo para saber mais sobre essas configurações.
 (Você também pode ler sobre essas configurações na
@@ -197,7 +196,7 @@ O exemplo `amp-analytics` adiciona um parâmetro adicional <code>cd1</code>
 O atributo `triggers` descreve quando uma solicitação de análise deve ser enviada.
 Ele contém um par de valores-chave de trigger-name e trigger-configuration.
 O nome do trigger pode ser qualquer string composta
-por caracteres alfanuméricos (a-zA-Z0-9). 
+por caracteres alfanuméricos (a-zA-Z0-9).
 
 Por exemplo,
 o seguinte elemento `amp-analytics` está configurado para enviar uma solicitação para
@@ -296,7 +295,7 @@ aquele com a precedência mais alta
 que esteja ativado, autorizado e disponível.
 A precedência é `beacon` > `xhrpost` > `image`.
 Se o user agent do cliente não oferecer suporte a um método,
-o próximo método de precedência mais alta ativado será usado. 
+o próximo método de precedência mais alta ativado será usado.
 
 Somente inclua o atributo `transport` em sua configuração
 se quiser limitar as opções de transporte,

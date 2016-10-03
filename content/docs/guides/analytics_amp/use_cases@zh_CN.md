@@ -1,12 +1,11 @@
 ---
 $title: 用例
 ---
+[TOC]
 
 本指南提供了一组用于跟踪用户互动的常见用例：
 
-[TOC]
-
-想要添加用例？ 
+想要添加用例？
 [请告诉我们。](https://github.com/ampproject/docs/issues/new)
 
 您也可以贡献自己的用例；请参阅[如何贡献](https://www.ampproject.org/docs/support/contribute.html)。
@@ -14,7 +13,7 @@ $title: 用例
 
 ## 跟踪页面视图
 
-了解如何使用 `amp-pixel` 和 `amp-analytics` 跟踪页面视图。 
+了解如何使用 `amp-pixel` 和 `amp-analytics` 跟踪页面视图。
 
 ### 使用 amp-pixel
 
@@ -54,7 +53,7 @@ $title: 用例
 ### 使用 amp-analytics - googleanalytics
 
 将页面视图数据发送到 Google Analytics
-（另请参阅 [Google Analytics 中的页面跟踪](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)）： 
+（另请参阅 [Google Analytics 中的页面跟踪](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)）：
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">

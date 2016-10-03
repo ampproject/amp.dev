@@ -1,12 +1,11 @@
 ---
 $title: Kullanım Durumları
 ---
+[TOC]
 
 Bu kılavuzda kullanıcı katılımını izlemek için bir dizi yaygın kullanım durumu verilmiştir:
 
-[TOC]
-
-Bir kullanım durumu eklemek istiyor musunuz? 
+Bir kullanım durumu eklemek istiyor musunuz?
 [Bize bildirin.](https://github.com/ampproject/docs/issues/new)
 
 Kendi kullanım durumlarınızla da katkı da bulunabilirsiniz;
@@ -14,7 +13,7 @@ bkz. [Katkı Sağlama](https://www.ampproject.org/docs/support/contribute.html).
 
 ## Sayfa görünümlerini izleme
 
-`amp-pixel` ve `amp-analytics` kullanarak sayfa görünümlerini nasıl izleyeceğinizi öğrenin. 
+`amp-pixel` ve `amp-analytics` kullanarak sayfa görünümlerini nasıl izleyeceğinizi öğrenin.
 
 ### Amp-piksel kullanma
 
@@ -53,8 +52,8 @@ bkz. [Katkı Sağlama](https://www.ampproject.org/docs/support/contribute.html).
 
 ### Amp-analitik kullanma - googleanalytics
 
-Sayfa görüntüleme verilerini Google Analytics›e gönderin 
-(ayrıca bkz. [Google Analytics›de sayfa izleme](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
+Sayfa görüntüleme verilerini Google Analytics›e gönderin
+(ayrıca bkz. [Google Analytics›de sayfa izleme](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -78,7 +77,7 @@ Sayfa görüntüleme verilerini Google Analytics›e gönderin
 
 
 [amp-analitik](/docs/reference/extended/amp-analytics.html) kullanarak,
-etkinlik verilerini 
+etkinlik verilerini
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/) ya da bir URL›ye göndererek sayfa tıklamalarını nasıl izleyeceğinizi öğrenin.
 
 ### Verileri belli bir URL›ye gönderme
@@ -178,7 +177,7 @@ kaydırıldığında da uyarı verir:
 
 
 [Amp-analitik](/docs/reference/extended/amp-analytics.html) kullanarak,
-etkinlik verilerini 
+etkinlik verilerini
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/) ya da bir URL›ye göndererek sosyal medya etkileşimlerini nasıl izleyeceğinizi öğrenin.
 
 ### Verileri belli bir URL›ye gönderme

@@ -2,10 +2,9 @@
 $title: Use Cases
 $order: 2
 ---
+[TOC]
 
 This guide provides a set of common use cases for tracking user engagement:
-
-[TOC]
 
 Want to add a use case?
 [Let us know.](https://github.com/ampproject/docs/issues/new)

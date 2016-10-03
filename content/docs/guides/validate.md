@@ -2,6 +2,7 @@
 $title: Validate AMP Pages
 $order: 4
 ---
+[TOC]
 
 The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be *validated*. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
 
@@ -97,7 +98,7 @@ To install the [AMP HTML validator command line tool](https://www.npmjs.com/pack
 
 Now let's validate a real AMP HTML page.
 
-[sourcecode:shell-session]
+[sourcecode:console]
 $ amphtml-validator https://www.ampproject.org/
 https://www.ampproject.org/: PASS
 [/sourcecode]
@@ -105,7 +106,7 @@ https://www.ampproject.org/: PASS
 Unsurprisingly this page is valid AMP HTML. Let's try a page that is not valid:
 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). To run the `amphtml-validator` command, you can either provide the URL of the page or a local file name. Download and save [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) into a file, then run:
 
-[sourcecode:shell-session]
+[sourcecode:console]
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
@@ -121,7 +122,7 @@ you jump to the errors in the original file.
 
 For a good starting point to make your own AMP page consider [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
 
-[sourcecode:shell-session]
+[sourcecode:console]
 $ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
 [/sourcecode]
@@ -130,7 +131,7 @@ The command line tool offers additional features including switching off
 the color, printing JSON output, or running a specific version of the
 validator Javascript (by default it runs the latest published script).
 
-[sourcecode:shell-session]
+[sourcecode:console]
 $ amphtml-validator --help
 
   Usage: index [options] <fileOrUrlOrMinus...>
@@ -165,7 +166,9 @@ If the AMP validation service detects that there’s something wrong with your p
 
 Most validation errors are easy to address and fix. Consider this HTML tag:
 
-`<img src="cat.png">`
+[sourcecode:html]
+<img src="cat.png">
+[/sourcecode]
 
 Which generates this AMP validation error, shown in these different tools:
 
@@ -201,7 +204,7 @@ Each tool gives several pieces of information:
   1. A link to a relevant document about the error. In this case the
      documentation for the `<amp-img>` tag. Not all errors generate
      documentation links.
-  
+
 Carefully re-reading the spec, we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
 
 To better understand the complete list of potential errors,

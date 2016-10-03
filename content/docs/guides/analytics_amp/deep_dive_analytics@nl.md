@@ -1,12 +1,11 @@
 ---
 $title: Uitgebreide informatie over AMP Analytics
 ---
+[TOC]
 
-In deze handleiding vindt u uitgebreide informatie over 
+In deze handleiding vindt u uitgebreide informatie over
 [het onderdeel amp-analytics](/docs/reference/extended/amp-analytics.html),
 aan de hand van een voorbeeld van een `amp-analytics`-configuratie met de volgende belangrijke bouwstenen:
-
-[TOC]
 
 In de rest van deze handleiding wordt dit configuratievoorbeeld,
 waarbij de paginaweergaven en het aantal klikken van gebruikers op links wordt bijgehouden,
@@ -64,8 +63,8 @@ Volgens het ontwerp kan AMP twee gangbare patronen in de gegevensverzameling ond
 
 Als u analysegegevens naar de analyseprovider verzendt,
 voegt u ook het kenmerk `type` in bij de tag `amp-analytics` en stelt u de waarde in
-op de juiste leveranciers, zoals wordt gedefinieerd in de 
-[amp-analytics-specificatie](/docs/reference/extended/amp-analytics.html).  
+op de juiste leveranciers, zoals wordt gedefinieerd in de
+[amp-analytics-specificatie](/docs/reference/extended/amp-analytics.html).
 
 Voorbeeld: `<amp-analytics type="googleanalytics">` stuurt analysegegevens
 naar de externe analyseprovider, Google Analytics.
@@ -81,9 +80,9 @@ hulpbronnen van uw leverancier voor meer hulp.
 Zoals eerder genoemd,
 kunt u de lijst met leveranciers die al over een AMP-integratie beschikken en de links
 naar hun specifieke documentatie vinden in de
-[amp-analytics-specificatie](/docs/reference/extended/amp-analytics.html). 
+[amp-analytics-specificatie](/docs/reference/extended/amp-analytics.html).
 
-Als u een analyseleverancier bent, kunt u 
+Als u een analyseleverancier bent, kunt u
 meer lezen over
 [integratie van uw eigen analyseconfiguratie in AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
 
@@ -99,7 +98,7 @@ op basis van een specifiek verzoek.
 Als u als uitgever controle over het externe bestand heeft,
 kunt u alle eventueel noodzakelijke verwerking op de server uitvoeren
 om de configuratiegegevens op te bouwen.
- 
+
 De eerste stap bij het laden van externe configuraties betreft
 het insluiten van het kenmerk config in de tag `amp-analytics`:
 
@@ -136,7 +135,7 @@ op de accountwaarde in de externe URL (`"account": "UA-XXXXX-Y"`):
 
 **Belangrijk:** AMP voert geen validatie uit indien dezelfde variabele meerdere keren wordt gebruikt.
 Waarden worden ingevuld naar aanleiding van een variabele voorkeursvolgorde
-en waarden in externe URL's staan boven aan die volgorde 
+en waarden in externe URL's staan boven aan die volgorde
 (zie [Variabele vervangingsvolgorde](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
 
 ## Verzoeken, triggers en transport
@@ -146,13 +145,13 @@ Het kenmerk `requests` definieert welke gegevens worden verzonden
 en naar welke locatie de gegevens worden verzonden (de URL's die zijn gebruikt om gegevens te verzenden).
 
 Het kenmerk `triggers` beschrijft wanneer analysegegevens moeten worden verzonden,
-bijvoorbeeld zodra een gebruiker een pagina bekijkt of op een link klikt. 
+bijvoorbeeld zodra een gebruiker een pagina bekijkt of op een link klikt.
 
 Met het kenmerk `transport` wordt aangegeven hoe een verzoek,
-of specifieker: het protocol moet worden verzonden. 
+of specifieker: het protocol moet worden verzonden.
 
 Lees verder voor meer informatie over deze configuraties.
-(U vindt meer informatie over deze configuraties in de 
+(U vindt meer informatie over deze configuraties in de
 [amp-analytics-referentie](/docs/reference/extended/amp-analytics.html).)
 
 ### Welke gegevens worden verzonden: het kenmerk requests
@@ -197,7 +196,7 @@ toe aan het verzoek en stelt de parameterwaarde in op 'AMP':
 Het kenmerk `triggers` beschrijft wanneer een analyseverzoek moet worden verzonden.
 Het bevat het sleutel-waardepaar trigger-name en trigger-configuration.
 De triggernaam kan elke willekeurige tekenreeks zijn bestaande
-uit alfanumerieke tekens (a-zA-Z0-9). 
+uit alfanumerieke tekens (a-zA-Z0-9).
 
 Het volgende
 `amp-analytics`-element is bijvoorbeeld geconfigureerd om een verzoek te sturen naar
@@ -296,7 +295,7 @@ Dit is de methode met de hoogste prioriteit
 die is ingeschakeld, is toegestaan en beschikbaar is.
 De prioriteit is `beacon` > `xhrpost` > `image`.
 Als de user-agent van de klant geen methode ondersteunt,
-wordt de ingeschakelde methode met de op één na hoogste voorkeur gebruikt. 
+wordt de ingeschakelde methode met de op één na hoogste voorkeur gebruikt.
 
 Voeg het kenmerk `transport` alleen toe aan uw configuratie
 als u het aantal transportopties wilt beperken.

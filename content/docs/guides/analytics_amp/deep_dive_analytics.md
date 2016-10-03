@@ -2,12 +2,11 @@
 $title: Deep Dive into AMP Analytics
 $order: 1
 ---
+[TOC]
 
 This guide dives deep into the
 [amp-analytics component](/docs/reference/extended/amp-analytics.html),
 breaking up a sample `amp-analytics` configuration into these key building blocks:
-
-[TOC]
 
 The remainder of this guide uses this configuration sample,
 which tracks the page views and user clicks on links

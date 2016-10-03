@@ -1,12 +1,11 @@
 ---
 $title: Cas d'utilisation
 ---
+[TOC]
 
 Ce guide propose des cas d'utilisation courants pour suivre l'engagement des utilisateurs :
 
-[TOC]
-
-Vous aimeriez ajouter un cas d'utilisation ? 
+Vous aimeriez ajouter un cas d'utilisation ?
 [Dites-le nous.](https://github.com/ampproject/docs/issues/new)
 
 Vous pouvez également partager vos propres cas d'utilisation ;
@@ -14,7 +13,7 @@ voir [Comment contribuer](https://www.ampproject.org/docs/support/contribute.htm
 
 ## Suivi des vues de page
 
-Découvrez comment suivre les vues de page avec `amp-pixel` et `amp-analytics`. 
+Découvrez comment suivre les vues de page avec `amp-pixel` et `amp-analytics`.
 
 ### Utilisation du composant amp-pixel
 
@@ -54,7 +53,7 @@ en utilisant [amp-analytics](/docs/reference/extended/amp-analytics.html) :
 ### Utilisation du composant amp-analytics (googleanalytics)
 
 Envoyez des données sur les vues de page à Google Analytics
-(voir également [Suivi des pages dans Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)) : 
+(voir également [Suivi des pages dans Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)) :
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -76,7 +75,7 @@ Envoyez des données sur les vues de page à Google Analytics
 
 ## Suivi des clics sur une page
 
-Découvrez comment suivre les clics sur une page à l'aide de 
+Découvrez comment suivre les clics sur une page à l'aide de
 [amp-analytics](/docs/reference/extended/amp-analytics.html)
 en envoyant les données d'événement à une URL spécifiée et à
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
@@ -176,7 +175,7 @@ horizontalement la page sur 90 % de sa largeur `scroll` :
 
 ## Suivi des interactions sociales
 
-Découvrez comment suivre les interactions sociales à l'aide de 
+Découvrez comment suivre les interactions sociales à l'aide de
 [amp-analytics](/docs/reference/extended/amp-analytics.html)
 en envoyant les données d'événement à une URL spécifiée et à
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).

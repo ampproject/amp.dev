@@ -1,12 +1,11 @@
 ---
 $title: نظرة عميقة على AMP Analytics
 ---
+[TOC]
 
 يقدم هذا الدليل رؤية متعمقة على
 [مكون <span dir="ltr" class="nowrap">amp-analytics</span>](/docs/reference/extended/amp-analytics.html)،
 حيث يقسّم نموذج تهيئة <span dir="ltr" class="nowrap">`amp-analytics`</span> إلى ثلاثة مكونات أساسية مهمة:
-
-[TOC]
 
 ويستخدم باقي هذا الدليل نموذج التهيئة هذا،
 الذي يتتبع مرات مشاهدة الصفحة ونقرات المستخدم على الروابط

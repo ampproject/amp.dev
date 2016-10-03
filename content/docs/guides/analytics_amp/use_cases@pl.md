@@ -1,12 +1,11 @@
 ---
 $title: Przykłady zastosowań
 ---
+[TOC]
 
 W tym przewodniku przedstawiono szereg typowych przykładów zastosowań do monitorowania czynności użytkowników:
 
-[TOC]
-
-Chcesz dodać przykład zastosowania? 
+Chcesz dodać przykład zastosowania?
 [Daj nam znać.](https://github.com/ampproject/docs/issues/new)
 
 Możesz także zgłosić własne przykłady zastosowań;
@@ -14,7 +13,7 @@ zobacz [Jak dodać własne materiały](https://www.ampproject.org/docs/support/c
 
 ## Monitorowanie wyświetleń stron
 
-Dowiedz się, jak monitorować wyświetlenia strony przy użyciu elementów `amp-pixel` i `amp-analytics`. 
+Dowiedz się, jak monitorować wyświetlenia strony przy użyciu elementów `amp-pixel` i `amp-analytics`.
 
 ### Używanie elementu amp-pixel
 
@@ -54,7 +53,7 @@ Wysyłanie danych żądania pageview na podany adres URL przy użyciu elementu
 ### Używanie elementu amp-analytics — googleanalytics
 
 Wysyłanie danych żądania pageview do usługi Google Analytics
-(zobacz też [Monitorowanie stron w Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
+(zobacz też [Monitorowanie stron w Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -78,7 +77,7 @@ Wysyłanie danych żądania pageview do usługi Google Analytics
 
 Dowiedz się, jak monitorować kliknięcia na stronie przy użyciu elementu
 [amp-analytics](/docs/reference/extended/amp-analytics.html)
-oraz wysyłać dane zdarzenia na podany adres URL i do 
+oraz wysyłać dane zdarzenia na podany adres URL i do
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Wysyłanie danych na podany adres URL

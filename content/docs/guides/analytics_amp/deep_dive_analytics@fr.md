@@ -1,12 +1,11 @@
 ---
 $title: AMP Analytics dans le détail
 ---
+[TOC]
 
 Ce guide propose une analyse détaillée du
 [composant amp-analytics](/docs/reference/extended/amp-analytics.html),
 en divisant un exemple de configuration de la balise `amp-analytics` en quatre catégories principales :
-
-[TOC]
 
 Le reste de ce guide utilise cet exemple de configuration
 qui effectue le suivi des vues de page et des clics des utilisateurs sur des liens,
@@ -65,7 +64,7 @@ AMP est conçu pour prendre en charge deux modèles courants de collecte des don
 Pour envoyer des données d'analyse à un fournisseur de solutions d'analyse,
 incluez l'attribut `type` dans la balise `amp-analytics`,
 et définissez sa valeur sur le fournisseur approprié, tel que défini dans la
-[spécification du composant amp-analytics](/docs/reference/extended/amp-analytics.html).  
+[spécification du composant amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Par exemple, `<amp-analytics type="googleanalytics">` envoie les données d'analyse
 au fournisseur de solutions d'analyse tiers Google Analytics.
@@ -81,7 +80,7 @@ les ressources d'aide de votre fournisseur.
 Comme nous l'avons déjà indiqué,
 la liste des fournisseurs qui proposent déjà une intégration AMP ainsi que des liens
 vers leurs ressources respectives sont disponibles dans la
-[spécification du composant amp-analytics](/docs/reference/extended/amp-analytics.html). 
+[spécification du composant amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Si vous êtes un fournisseur de solutions d'analyse,
 découvrez comment
@@ -99,7 +98,7 @@ en fonction d'une requête spécifique.
 Si, en tant qu'éditeur, vous avez le contrôle du fichier distant,
 vous pouvez effectuer tout traitement nécessaire côté serveur
 pour créer les données de configuration.
- 
+
 Pour charger les configurations distantes, la première étape consiste à
 inclure l'attribut config dans la balise `amp-analytics` :
 
@@ -146,10 +145,10 @@ L'attribut `requests` détermine quelles données sont envoyées
 et où ces données sont envoyées (les URL utilisées pour transmettre les données).
 
 L'attribut `triggers` indique à quel moment les données d'analyse doivent être envoyées,
-par exemple lorsqu'un utilisateur affiche une page ou clique sur un lien. 
+par exemple lorsqu'un utilisateur affiche une page ou clique sur un lien.
 
 L'attribut `transport` indique comment envoyer une requête,
-et plus spécifiquement le protocole. 
+et plus spécifiquement le protocole.
 
 Lisez la suite pour en savoir plus sur ces configurations.
 (Vous pourrez également en apprendre davantage sur ces configurations dans la
@@ -197,7 +196,7 @@ L'exemple `amp-analytics` ajoute un paramètre additionnel <code>cd1</code>
 L'attribut `triggers` indique le moment auquel une requête d'analyse doit être envoyée.
 Il contient une paire clé/valeur précisant le nom et la configuration du déclencheur.
 Le nom du déclencheur peut être n'importe quelle chaîne composée
-de caractères alphanumériques (a-zA-Z0-9). 
+de caractères alphanumériques (a-zA-Z0-9).
 
 Par exemple,
 le composant `amp-analytics` suivant est configuré pour envoyer une requête à
@@ -296,7 +295,7 @@ celui qui est activé, autorisé, disponible
 et dont la priorité est la plus haute.
 La priorité est `beacon` > `xhrpost` > `image`.
 Si l'user-agent du client ne prend pas en charge un mode,
-c'est le mode suivant dans l'ordre de priorité qui est utilisé. 
+c'est le mode suivant dans l'ordre de priorité qui est utilisé.
 
 N'incluez l'attribut `transport` dans votre configuration
 que si vous souhaitez limiter les options de transport.

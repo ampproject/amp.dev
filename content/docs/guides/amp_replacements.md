@@ -1,12 +1,11 @@
 ---
-$title: Include Media and Iframes
+$title: AMP Replacements for Media & Iframes
 $order: 1
 ---
+[TOC]
 
 Learn how to display include media content in your pages, and how to use iframes
 to display advanced content outside of AMP's limitations.
-
-[TOC]
 
 ## Media
 
@@ -29,19 +28,21 @@ and [Supported Layouts](https://www.ampproject.org/docs/guides/responsive/contro
 Responsive image example:
 
 [sourcecode:html]
-<amp-img src="responsive.jpg" width=527 height=193 layout="responsive"></amp-img>
+<amp-img src="responsive.jpg" width="527" height="193" layout="responsive">
+</amp-img>
 [/sourcecode]
 
 Fixed-size image example:
 
 [sourcecode:html]
-<amp-img id="img1" src="fixed.jpg" width=264 height=96></amp-img>
+<amp-img src="fixed.jpg" width="264" height="96"></amp-img>
 [/sourcecode]
 
 Hidden image example:
 
 [sourcecode:html]
-<amp-img id="img2" src="hidden.jpg" width=527 height=193 layout="nodisplay"></amp-img>
+<amp-img src="hidden.jpg" width="527" height="193" layout="nodisplay">
+</amp-img>
 [/sourcecode]
 
 The AMP HTML runtime can effectively manage image resources,
@@ -72,7 +73,8 @@ To include an `amp-anim` in your page,
 first include the following script to the `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+<script async custom-element="amp-anim"
+  src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
 [/sourcecode]
 
 The `amp-anim` component can also have an optional placeholder child
@@ -80,8 +82,8 @@ to display while the `src` file is loading.
 The placeholder is specified via the `placeholder` attribute:
 
 [sourcecode:html]
-<amp-anim width=400 height=300 src="my-gif.gif">
-  <amp-img placeholder width=400 height=300 src="my-gif-screencap.jpg">
+<amp-anim width="400" height="300" src="my-gif.gif">
+  <amp-img placeholder width="400" height="300" src="my-gif-screencap.jpg">
   </amp-img>
 </amp-anim>
 [/sourcecode]
@@ -99,8 +101,8 @@ Include a placeholder before the video starts, and a fallback,
 if the browser doesn't support HTML5 video, for example:
 
 [sourcecode:html]
-<amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
-    poster="myvideo-poster.jpg">
+<amp-video width="400" height="300" src="https://yourhost.com/videos/myvideo.mp4"
+  poster="myvideo-poster.jpg">
   <div fallback>
     <p>Your browser doesn’t support HTML5 video</p>
   </div>
@@ -115,7 +117,8 @@ using the [`amp-audio`](/docs/reference/extended/amp-audio) element.
 You must include the following script in the `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+<script async custom-element="amp-audio"
+  src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
 [/sourcecode]
 
 Only use this element for direct HTML5 audio file embeds.
@@ -127,7 +130,7 @@ Include a placeholder before the audio starts, and a fallback,
 if the browser doesn't support HTML5 audio, for example:
 
 [sourcecode:html]
-<amp-audio width=400 height=300 src="https://yourhost.com/audios/myaudio.mp3">
+<amp-audio width="400" height="300" src="https://yourhost.com/audios/myaudio.mp3">
   <div fallback>
     <p>Your browser doesn’t support HTML5 audio</p>
   </div>
@@ -155,7 +158,8 @@ first include the following script to the `<head>`, which loads the additional
 code for the extended component:
 
 [sourcecode:html]
-<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 [/sourcecode]
 
 An example `amp-iframe` from the

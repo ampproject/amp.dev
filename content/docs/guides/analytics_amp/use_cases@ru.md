@@ -1,12 +1,11 @@
 ---
 $title: Примеры использования
 ---
+[TOC]
 
 В этом руководстве представлен набор стандартных примеров отслеживания заинтересованности пользователей:
 
-[TOC]
-
-Хотите добавить пример использования? 
+Хотите добавить пример использования?
 [Сообщите нам.](https://github.com/ampproject/docs/issues/new)
 
 Вы также можете предложить свои примеры использования;
@@ -14,7 +13,7 @@ $title: Примеры использования
 
 ## Отслеживание просмотров страницы
 
-Узнайте, как отслеживать число просмотров страницы с помощью `amp-pixel` и `amp-analytics`. 
+Узнайте, как отслеживать число просмотров страницы с помощью `amp-pixel` и `amp-analytics`.
 
 ### Использование amp-pixel
 
@@ -54,7 +53,7 @@ $title: Примеры использования
 ### Использование amp-analytics совместно с googleanalytics
 
 Отправка данных pageview в Google Analytics
-(см. также [Отслеживание страницы в Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
+(см. также [Отслеживание страницы в Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">

@@ -7,6 +7,12 @@
       max-width: 30%;
     }
 
+    @include min-screen(1460) {
+      max-width: auto;
+      position: absolute;
+      right: -260px;
+      width: 220px;
+    }
 
     padding: 1em 1em;
     margin-left: 1em;

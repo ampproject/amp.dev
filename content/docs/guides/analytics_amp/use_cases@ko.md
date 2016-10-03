@@ -1,12 +1,11 @@
 ---
 $title: 사용 사례
 ---
+[TOC]
 
 이 가이드에서는 사용자 참여를 추적하기 위한 일반적인 사용 사례를 제공합니다.
 
-[TOC]
-
-사용 사례를 추가하겠습니까? 
+사용 사례를 추가하겠습니까?
 [저희에게 알려주세요.](https://github.com/ampproject/docs/issues/new)
 
 또한 자신만의 사용 사례를 기고할 수도 있습니다.
@@ -14,7 +13,7 @@ $title: 사용 사례
 
 ## 페이지 뷰 추적
 
-`amp-pixel` 및 `amp-analytics`를 사용하여 페이지 뷰를 추적하는 방법에 대해 알아보세요. 
+`amp-pixel` 및 `amp-analytics`를 사용하여 페이지 뷰를 추적하는 방법에 대해 알아보세요.
 
 ### amp-pixel 사용
 
@@ -54,7 +53,7 @@ $title: 사용 사례
 ### amp-analytics - googleanalytics 사용
 
 Google 애널리틱스에 페이지뷰 데이터 보내기:
-(참고 항목 [Google 애널리틱스에서 페이지 추적](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
+(참고 항목 [Google 애널리틱스에서 페이지 추적](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">

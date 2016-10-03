@@ -1,10 +1,9 @@
 ---
 $title: การนำไปใช้งาน
 ---
+[TOC]
 
 คู่มือนี้จะให้ข้อมูลเกี่ยวกับการนำไปใช้งานทั่วไปของการติดตามการมีส่วนร่วมของผู้ใช้
-
-[TOC]
 
 หากต้องการเพิ่มวิธีการนำไปใช้งาน
 [โปรดแจ้งให้เราทราบ](https://github.com/ampproject/docs/issues/new)
@@ -14,7 +13,7 @@ $title: การนำไปใช้งาน
 
 ## การติดตามการเข้าชมหน้าเว็บ
 
-เรียนรู้วิธีการติดตามการเข้าชมหน้าเว็บโดยใช้ `amp-pixel` และ `amp-analytics` 
+เรียนรู้วิธีการติดตามการเข้าชมหน้าเว็บโดยใช้ `amp-pixel` และ `amp-analytics`
 
 ### การใช้ amp-pixel
 
@@ -54,7 +53,7 @@ $title: การนำไปใช้งาน
 ### การใช้ amp-analytics - googleanalytics
 
 ส่งข้อมูลการเข้าชมหน้าเว็บไปยัง Google Analytics
-(ดูเพิ่มเติมเกี่ยวกับ[การติดตามหน้าเว็บใน Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)) 
+(ดูเพิ่มเติมเกี่ยวกับ[การติดตามหน้าเว็บใน Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking))
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">

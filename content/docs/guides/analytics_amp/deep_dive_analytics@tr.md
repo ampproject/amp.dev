@@ -1,12 +1,11 @@
 ---
 $title: AMP Analytics Derinlemesine Giriş
 ---
-
-Bu kılavuz 
-[amp-analitik bileşen](/docs/reference/extended/amp-analytics.html) içerisine derinlemesine girerek, bir örnek 
-`amp-analytics` yapılandırmasını temel yapıtaşlarına ayırır:
-
 [TOC]
+
+Bu kılavuz
+[amp-analitik bileşen](/docs/reference/extended/amp-analytics.html) içerisine derinlemesine girerek, bir örnek
+`amp-analytics` yapılandırmasını temel yapıtaşlarına ayırır:
 
 Kılavuzun kalan kısmında bu yapılandırma örneği kullanılarak,
 sayfa görünümeleri ve kullanıcının bağlantı tıklamaları izlenir
@@ -63,25 +62,25 @@ AMP, iki yaygın veri toplama şeklini destekleyecek şekilde tasarlanmıştır:
 (örneğin, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
 Analitik verileri bir analitik sağlayıcıya göndermek için,
-`amp-analytics` etiketine `type` özelliği ekleyin ve 
-[amp-analitik spesifikasyonu](/docs/reference/extended/amp-analytics.html) içerisinde belirlenen şekilde değerini 
-ilgili satıcıya ayarlayın.  
+`amp-analytics` etiketine `type` özelliği ekleyin ve
+[amp-analitik spesifikasyonu](/docs/reference/extended/amp-analytics.html) içerisinde belirlenen şekilde değerini
+ilgili satıcıya ayarlayın.
 
-Örneğin: `<amp-analytics type="googleanalytics">` analitik verileri 
+Örneğin: `<amp-analytics type="googleanalytics">` analitik verileri
 üçüncü şahıs analitik sağlayıcı, Google Analytics›e gönderir.
 Verileri yayıncıya ait bir son noktaya göndermek için,
 `type` özelliğini eklememeniz yeterlidir;
-analitik veriler her bir 
+analitik veriler her bir
 [istek](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)için tanımlanan son noktalara gönderilir.
 
-Analytics satıcı yapılandırmaları `amp-analytics`‹e başlamanın 
+Analytics satıcı yapılandırmaları `amp-analytics`‹e başlamanın
 hızlı bir yoludur.
-Ayrıntılı rehberlik için satıcı belgelerine ve 
+Ayrıntılı rehberlik için satıcı belgelerine ve
 yardım kaynaklarına danışmanız gerekir.
 Daha önce bahsedildiği gibi,
-halihazırda AMP ile entegre ettiğiniz satıcıların listesi, aynı zamanda 
-spesifik belgelerin bağlantıları 
-[amp-analitik spesifikasyonu](/docs/reference/extended/amp-analytics.html) içerisinde bulunabilir. 
+halihazırda AMP ile entegre ettiğiniz satıcıların listesi, aynı zamanda
+spesifik belgelerin bağlantıları
+[amp-analitik spesifikasyonu](/docs/reference/extended/amp-analytics.html) içerisinde bulunabilir.
 
 Bir analitik satıcıysanız,
 
@@ -99,7 +98,7 @@ yapılandırmayı değiştirme gibi işlemleri yapabilirsiniz.
 Yayıncı olarak, uzaktan dosya üzerinde kontrolünüz varsa,
 yapılandırma verilerini şekillendirmek için gerekli
 sunucu tarafı işlemlerinin tümünü gerçekleştirebilirsiniz.
- 
+
 Uzaktan yapılandırmaları yüklemenin ilk adımı
 `amp-analytics` etiketine yapılandırma özelliğinin eklenmesidir:
 
@@ -124,7 +123,7 @@ JSON nesnesi içerisinde yer alan yapılandırma, analitik hesabının yalnızca
 Son adım, uzaktan dosya içindekilerin
  `amp-analytics` yapılandırmasında uygun yerlere çekilmesidir.
 Buradaki hem `pageview` hem de `event` isteklerinde,
-`account` değişken değeri 
+`account` değişken değeri
 uzaktan URL (`"account": "UA-XXXXX-Y"`) içindeki hesap değerine otomatik olarak ayarlanır:
 
 [sourcecode:html]
@@ -136,7 +135,7 @@ uzaktan URL (`"account": "UA-XXXXX-Y"`) içindeki hesap değerine otomatik olara
 
 **Önemli:** AMP aynı değişkenin birden çok kullanımını doğrulamaz.
 Değerler, önceliğe göre değişken değiştirme sırasına göre çoğaltılır
-ve uzaktan URL›lerin içindeki değerler bu sıranın en üzerindedir 
+ve uzaktan URL›lerin içindeki değerler bu sıranın en üzerindedir
 (bkz. [Değişken değiştirme sıralaması](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
 
 ## İstek, tetikleme ve taşıma
@@ -146,21 +145,21 @@ ve uzaktan URL›lerin içindeki değerler bu sıranın en üzerindedir
 ve bu verilerin nereye gönderileceğini tanımlar (verileri aktarmak için kullanılan URL›ler).
 
 `triggers` özelliği analitik verilerinin ne zaman gönderileceğini;
-örneğin, kullanıcının bir sayfayı ne zaman görüntülediğini, bir bağlantıya ne zaman tıkladığını tanımlar. 
+örneğin, kullanıcının bir sayfayı ne zaman görüntülediğini, bir bağlantıya ne zaman tıkladığını tanımlar.
 
 `transport` özelliği bir isteğin,
-daha spesifik olarak protokolün nasıl gönderileceğini belirler. 
+daha spesifik olarak protokolün nasıl gönderileceğini belirler.
 
 Bu yapılandırmalar hakkında daha fazla bilgi için okumaya devam edin.
-(Bu yapılandırmalar hakkında bilgi için 
+(Bu yapılandırmalar hakkında bilgi için
 [amp-analitik referansı](/docs/reference/extended/amp-analytics.html) bölümünü de okuyabilirsiniz.)
 
 ### Hangi veriler gönderilir: istek özelliği
 
-`request-name` tetikleme yapılandırmasında 
+`request-name` tetikleme yapılandırmasında
 belli bir etkinliğe karşı hangi isteğin gönderileceğini belirlemek için kullanılır.
 `request-value` bir `https` URL›sidir.
-Bu değerler, 
+Bu değerler,
 diğer istek veya değişkenlere referans verebilen yer tutucu işaretlerini içerebilir.
 
 [sourcecode:html]
@@ -183,7 +182,7 @@ Bir analitik sağlayıcı kullanıyorsanız,
 [extraUrlParams](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#extra-url-params)
 özelliği normal "&foo=baz" kuralı aracılığıyla istek URL›sinin sorgu dizesine eklenecek ek parametreleri belirler.
 
-`amp-analytics` özelliği isteğe ek bir <code>cd1</code> parametresi 
+`amp-analytics` özelliği isteğe ek bir <code>cd1</code> parametresi
 ekler ve parametre değerini «AMP» olarak ayarlar:
 
 [sourcecode:html]
@@ -197,11 +196,11 @@ ekler ve parametre değerini «AMP» olarak ayarlar:
 `triggers` özelliği bir analitik isteğinin ne zaman gönderilmesi gerektiğini tanımlar.
 Tetikleme adı ve tetikleme yapılandırmasının bir anahtar değer çiftini içerir.
 Tetikleme adı alfanümerik karakterlerden (a-zA-Z0-9) oluşan
-herhangi bir dize olabilir. 
+herhangi bir dize olabilir.
 
 Örneğin,
-aşağıdaki `amp-analytics` ögesi 
-belge ilk yüklendiğinde 
+aşağıdaki `amp-analytics` ögesi
+belge ilk yüklendiğinde
 ve bir `a` etiketine her tıklandığında `https://example.com/analytics`‹e bir istek gönderilecek şekilde yapılandırılmıştır:
 
 [sourcecode:html]
@@ -296,9 +295,9 @@ bu da etkinleştirilen, izin verilen ve kullanılabilir
 en yüksek önceliğe sahip yöntemdir.
 Öncelik `beacon` > `xhrpost` > `image` şeklindedir.
 İstemci kullanıcı aracısı bir yöntemi desteklemiyorsa,
-etkinleştirilen en yüksek yöntem kullanılır. 
+etkinleştirilen en yüksek yöntem kullanılır.
 
-`transport` özelliğini yapılandırmanıza 
+`transport` özelliğini yapılandırmanıza
 yalnızca taşıma seçeneklerini sınırlamak istediğinizde ekleyin,
 aksi halde, istekleri durdurabilirsiniz.
 

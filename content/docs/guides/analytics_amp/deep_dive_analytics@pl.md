@@ -1,12 +1,11 @@
 ---
 $title: Więcej o analityce AMP
 ---
+[TOC]
 
 Ten przewodnik zawiera szczegółowe omówienie
 [komponentu amp-analytics](/docs/reference/extended/amp-analytics.html),
 dzieląc przykładową konfigurację z elementem `amp-analytics` na następujące kluczowe bloki:
-
-[TOC]
 
 Podstawą przewodnika jest przykładowa konfiguracja,
 która monitoruje wyświetlenia strony i kliknięcia linków przez użytkownika
@@ -65,7 +64,7 @@ AMP zaprojektowano do obsługi dwóch typowych wzorców gromadzenia danych:
 W celu wysłania danych analitycznych do dostawcy usług analitycznych
 dołącz atrybut `type` w znaczniku `amp-analytics` i ustaw jego wartość,
 aby odpowiadała konkretnemu dostawcy, zgodnie z definicją w
-[specyfikacji elementu amp-analytics](/docs/reference/extended/amp-analytics.html).  
+[specyfikacji elementu amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Na przykład element `<amp-analytics type="googleanalytics">` wysyła dane analityczne
 do niezależnego dostawcy usług analitycznych Google Analytics.
@@ -81,7 +80,7 @@ i zasobach pomocy.
 Jak wspomniano wcześniej,
 listę dostawców, którzy już zintegrowali swoje systemy z AMP, a także linki
 do ich dokumentacji, można znaleźć w
-[specyfikacji elementu amp-analytics](/docs/reference/extended/amp-analytics.html). 
+[specyfikacji elementu amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Dostawcy usług analitycznych mogą
 dowiedzieć się więcej o
@@ -99,7 +98,7 @@ w zależności od konkretnego żądania.
 Jeśli jesteś wydawcą i masz kontrolę nad plikiem zdalnym,
 możesz wykonać dowolne przetwarzanie po stronie serwera niezbędne
 do skonstruowania danych konfiguracji.
- 
+
 Pierwszy krok do załadowania zdalnych konfiguracji
 to dołączenie atrybutu config do znacznika `amp-analytics`:
 
@@ -136,7 +135,7 @@ wartość konta w zdalnym adresie URL (`"account": "UA-XXXXX-Y"`):
 
 **Ważne:** AMP nie sprawdza poprawności dla wielu wystąpień tej samej zmiennej.
 Wartości są zapełniane zgodnie z preferowaną kolejnością podstawiania zmiennych,
-a wartości w zdalnych adresach URL są na początku tej kolejności 
+a wartości w zdalnych adresach URL są na początku tej kolejności
 (zobacz [Kolejność podstawiania zmiennych](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
 
 ## Żądania, wyzwalacze i transporty
@@ -146,10 +145,10 @@ Atrybut `requests` definiuje wysyłane dane
 oraz miejsce docelowe dla wysyłanych danych (adresy URL używane do transmisji danych).
 
 Atrybut `triggers` określa moment wysłania danych analitycznych,
-na przykład kiedy użytkownik wyświetli stronę lub kiedy kliknie link. 
+na przykład kiedy użytkownik wyświetli stronę lub kiedy kliknie link.
 
 Atrybut `transport` określa sposób wysłania żądania,
-a dokładniej — protokół. 
+a dokładniej — protokół.
 
 Czytaj dalej, aby dowiedzieć się więcej o tych konfiguracjach.
 (O tych konfiguracjach możesz także przeczytać w części
@@ -197,7 +196,7 @@ w żądaniu i nadaje mu wartość „AMP”:
 Atrybut `triggers` określa moment, w którym ma zostać wysłane żądanie analityczne.
 Zawiera on parę klucz-wartość z nazwą wyzwalacza i konfiguracją wyzwalacza.
 Nazwa wyzwalacza może być dowolnym łańcuchem
-znaków alfanumerycznych (a-z A-Z 0-9). 
+znaków alfanumerycznych (a-z A-Z 0-9).
 
 Na przykład
 następujący element `amp-analytics` jest skonfigurowany do wysyłania żądania na adres
@@ -296,7 +295,7 @@ ta z najwyższym priorytetem
 , która jest włączona, dozwolona i dostępna.
 Priorytet jest następujący `beacon` > `xhrpost` > `image`.
 Jeśli agent użytkownika klienta nie obsługuje metody,
-używana jest następna włączona metoda o najwyższym priorytecie. 
+używana jest następna włączona metoda o najwyższym priorytecie.
 
 Atrybut `transport` należy dołączać do swojej konfiguracji
 tylko wtedy, gdy chce się ograniczyć opcje transportu,

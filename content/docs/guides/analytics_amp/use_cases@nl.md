@@ -1,12 +1,11 @@
 ---
 $title: Gebruiksvoorbeelden
 ---
+[TOC]
 
 In deze handleiding vindt u een reeks algemene gebruiksvoorbeelden voor het bijhouden van de betrokkenheid van gebruikers:
 
-[TOC]
-
-Wilt u een gebruiksvoorbeeld toevoegen? 
+Wilt u een gebruiksvoorbeeld toevoegen?
 [Laat het ons weten.](https://github.com/ampproject/docs/issues/new)
 
 U kunt ook uw eigen gebruiksvoorbeelden bijdragen.
@@ -14,11 +13,11 @@ Zie daarvoor het gedeelte [Een bijdrage leveren](https://www.ampproject.org/docs
 
 ## Paginaweergaven bijhouden
 
-Meer informatie over hoe u paginaweergaven kunt bijhouden met behulp van `amp-pixel` en `amp-analytics`. 
+Meer informatie over hoe u paginaweergaven kunt bijhouden met behulp van `amp-pixel` en `amp-analytics`.
 
 ### amp-pixel gebruiken
 
-Gegevens over paginaweergaven verzenden naar een specifieke URL met behulp van 
+Gegevens over paginaweergaven verzenden naar een specifieke URL met behulp van
 [amp-pixel](/docs/reference/amp-pixel.html):
 
 [sourcecode:html]
@@ -27,7 +26,7 @@ Gegevens over paginaweergaven verzenden naar een specifieke URL met behulp van
 
 ### amp-analytics gebruiken - geen leverancier
 
-Gegevens over paginaweergaven verzenden naar een specifieke URL met behulp van 
+Gegevens over paginaweergaven verzenden naar een specifieke URL met behulp van
 [amp-analytics](/docs/reference/extended/amp-analytics.html):
 
 [sourcecode:html]
@@ -54,7 +53,7 @@ Gegevens over paginaweergaven verzenden naar een specifieke URL met behulp van
 ### amp-analytics gebruiken - googleanalytics
 
 Gegevens over paginaweergaven verzenden naar Google Analytics
-(zie ook [Pagina's bijhouden in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
+(zie ook [Pagina's bijhouden in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -76,14 +75,14 @@ Gegevens over paginaweergaven verzenden naar Google Analytics
 
 ## Paginaklikken bijhouden
 
-Ontdek hoe u paginaklikken kunt bijhouden met behulp van 
-[amp-analytics](/docs/reference/extended/amp-analytics.html) en 
-gegevens over gebeurtenissen verzendt naar een specifieke URL en naar 
+Ontdek hoe u paginaklikken kunt bijhouden met behulp van
+[amp-analytics](/docs/reference/extended/amp-analytics.html) en
+gegevens over gebeurtenissen verzendt naar een specifieke URL en naar
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Gegevens verzenden naar een specifieke URL
 
-In het volgende voorbeeld wordt het kenmerk `selector` gebruikt om een `click`-gebeurtenis 
+In het volgende voorbeeld wordt het kenmerk `selector` gebruikt om een `click`-gebeurtenis
 te verzenden naar een specifieke URL wanneer een gebruiker op een link klikt(`<a href>`):
 
 [sourcecode:html]
@@ -145,7 +144,7 @@ gebruikt om een `click`-gebeurtenis te verzenden naar Google Analytics wanneer e
 ## Scrolbewegingen bijhouden
 
 Houd bij hoe mensen door pagina's scrollen met behulp van [amp-analytics](/docs/reference/extended/amp-analytics.html).
-In het volgende voorbeeld wordt het kenmerk `scrollspec` gebruikt om een `scroll`-gebeurtenis 
+In het volgende voorbeeld wordt het kenmerk `scrollspec` gebruikt om een `scroll`-gebeurtenis
 te verzenden naar de specifieke URL wanneer er verticaal met 25%, 50% en 90% wordt gescrold.
 De gebeurtenis wordt ook geactiveerd wanneer iemand horizontaal
 tot 90% van de `scroll`-breedte scrolt:
@@ -176,9 +175,9 @@ tot 90% van de `scroll`-breedte scrolt:
 
 ## Sociale interacties bijhouden
 
-Ontdek hoe u sociale interacties kunt bijhouden met behulp van 
-[amp-analytics](/docs/reference/extended/amp-analytics.html) en 
-gegevens over gebeurtenissen verzendt naar een specifieke URL en naar 
+Ontdek hoe u sociale interacties kunt bijhouden met behulp van
+[amp-analytics](/docs/reference/extended/amp-analytics.html) en
+gegevens over gebeurtenissen verzendt naar een specifieke URL en naar
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Gegevens verzenden naar een specifieke URL

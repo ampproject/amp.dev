@@ -2,10 +2,9 @@
 $title: Include Third-Party Content
 $order: 2
 ---
+[TOC]
 
 Learn how to include third-party components in your pages.
-
-[TOC]
 
 ## Embed a Tweet
 
@@ -16,7 +15,8 @@ To include a tweet in your page,
 first include the following script in the `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
 Currently tweets are automatically proportionally scaled
@@ -29,7 +29,7 @@ Example `amp-twitter` from the
 [twitter.amp example](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html):
 
 [sourcecode:html]
-<amp-twitter width=390 height=50
+<amp-twitter width="390" height="50"
     layout="responsive"
     data-tweetid="638793490521001985">
 </amp-twitter>
@@ -44,7 +44,8 @@ To include an Instagram,
 first include the following script in the `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+<script async custom-element="amp-instagram"
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
 Include the Instagram data-shortcode found in the Instagram photo URL.
@@ -70,13 +71,14 @@ using the [`amp-facebook`](/docs/reference/extended/amp-facebook.html) element.
 You must include the following script in the `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+<script async custom-element="amp-facebook"
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
 Example - Embedding a post:
 
 [sourcecode:html]
-<amp-facebook width=486 height=657
+<amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
@@ -85,22 +87,23 @@ Example - Embedding a post:
 Example - Embedding a video:
 
 [sourcecode:html]
-<amp-facebook width=552 height=574
+<amp-facebook width="552" height="574"
     layout="responsive"
     data-embed-as="video"
     data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
 </amp-facebook>
 [/sourcecode]
 
-## Include a youtube video
+## Include a YouTube video
 
-Include a youtube video in your page
+Include a YouTube video in your page
 using the [`amp-youtube`](/docs/reference/extended/amp-youtube.html) element.
 
 You must include the following script in the `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
 The Youtube `data-videoid` can be found in every Youtube video page URL.
@@ -133,7 +136,7 @@ The `type` identifies the ad network's template.
 Different ad types require different `data-*` attributes.
 
 [sourcecode:html]
-<amp-ad width=300 height=250
+<amp-ad width="300" height="250"
     type="example"
     data-aax_size="300x250"
     data-aax_pubname="test123"
@@ -146,7 +149,7 @@ include a `placeholder`
 to be shown if no ad is available:
 
 [sourcecode:html]
-<amp-ad width=300 height=250
+<amp-ad width="300" height="250"
     type="example"
     data-aax_size="300x250"
     data-aax_pubname="test123"
