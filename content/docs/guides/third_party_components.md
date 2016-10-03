@@ -1,6 +1,6 @@
 ---
 $title: Include Third-Party Content
-$order: 2
+$order: 3
 ---
 [TOC]
 

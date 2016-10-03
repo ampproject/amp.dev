@@ -1,6 +1,6 @@
 ---
 $title: Make Your Page Discoverable
-$order: 3
+$order: 4
 ---
 [TOC]
 
