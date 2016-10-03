@@ -119,8 +119,8 @@ if they support CSS-only integrations and serve over HTTPS.
 Currently, only these origins are whitelisted
 and allowed for font serving via link tags:
 
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
+* **https://fast.fonts.net**
+* **https://fonts.googleapis.com**
 
 Example link tag pointing to the whitelisted font provider, Google Fonts:
 
