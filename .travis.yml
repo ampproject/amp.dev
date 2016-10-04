@@ -17,7 +17,6 @@ install:
 script:
 - 'if [ "${TRAVIS_BRANCH}" = "production" ]; then firebase use production; fi'
 - 'if [ "${TRAVIS_BRANCH}" = "master" ]; then firebase use staging; fi'
-- gulp build
 - grow build
 after_success:
 - firebase deploy --token "$FIREBASE_TOKEN"
