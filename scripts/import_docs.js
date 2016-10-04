@@ -73,6 +73,19 @@ function convertMarkdown(content, relativePath, headingToStrip) {
 	return content;
 }
 
+// Download the Design principles
+downloadPage("DESIGN_PRINCIPLES.md", function(pageContent) {
+	savePage({
+		destination: '../content/learn/design-principles.md',
+		content: "[TOC]\n" + pageContent,
+		title: "Design Principles",
+		order: 3
+	}, function (err) {
+		if (err) throw err;
+		console.log('Successfully imported: Design Principles');
+	});
+}, 1);
+
 // Download the specification
 downloadPage("spec/amp-html-format.md", function(pageContent) {
 	savePage({
