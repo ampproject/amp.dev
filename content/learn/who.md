@@ -1,5 +1,5 @@
 ---
-$title: Who uses AMP?
+$title: Supported Platforms
 $order: 1
 class: who
 
@@ -7,21 +7,9 @@ description: The Accelerated Mobile Pages (AMP) Project is an open source initia
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
-
-<div class="who__section">
-  <h2 id="{{who.partners.section_title|slug}}">{{who.partners.section_title}}<a href="#{{who.partners.section_title|slug}}">#</a></h2>
-  {% for section in who.partners.sections %}
-  <h3 id="{{section.title|slug}}">{{section.title}}<a href="#{{section.title|slug}}">#</a></h3>
-  <ol class="items">
-    {% for item in section.section_items | sort %}
-      <li class="item">{{item}}</li>
-    {% endfor %}
-  </ol>
-  {% endfor %}
-</div>
+An ever-growing number of platforms and vendors support AMP, either by providing an AMP component, or by offering advanced integration with AMP pages within their platforms.
 
 <div>
-  <h2 id="{{who.tech_companies.section_title|slug}}">{{who.tech_companies.section_title}}<a href="#{{who.tech_companies.section_title|slug}}">#</a></h2>
   {% for section in who.tech_companies.sections %}
   <h3 id="{{section.title|slug}}">{{section.title}}<a href="#{{section.title|slug}}">#</a></h3>
   <ol class="items">
