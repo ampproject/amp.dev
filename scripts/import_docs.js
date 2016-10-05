@@ -86,6 +86,19 @@ downloadPage("DESIGN_PRINCIPLES.md", function(pageContent) {
 	});
 }, 1);
 
+// Download the Design principles
+downloadPage("GOVERNANCE.md", function(pageContent) {
+	savePage({
+		destination: '../content/contribute/governance.md',
+		content: "[TOC]\n" + pageContent,
+		title: "Open Source Governance",
+		order: 4
+	}, function (err) {
+		if (err) throw err;
+		console.log('Successfully imported: Governance');
+	});
+}, 1);
+
 // Download the specification
 downloadPage("spec/amp-html-format.md", function(pageContent) {
 	savePage({
