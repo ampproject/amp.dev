@@ -6,5 +6,6 @@ node_modules
 build
 assets/css/*
 
+content/learn/design-principles.md
 content/docs/reference/spec.md
 content/docs/reference/components/*.md
