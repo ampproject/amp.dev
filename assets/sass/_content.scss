@@ -20,8 +20,9 @@
     padding-top: 46px;
     padding-bottom: 60px;
 
-    &.menu-open {
-        transform: translate(-243px, 0);
+    h2 {
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 12px;
     }
 
 		ul, ol {

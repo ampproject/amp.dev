@@ -5,8 +5,6 @@ $path: /case-studies/
 class: case-studies
 ---
 
-Learn how publishers, platforms and vendors benefit from implementing AMP.
-
 <div class="card-container">
     {% for item in g.collection(doc.collection.pod_path + '/' + doc.base).docs(recursive=false, locale=doc.locale)|reverse %}
     {% if loop.index0 == 0 %}

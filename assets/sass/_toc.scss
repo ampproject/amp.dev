@@ -17,7 +17,8 @@
     padding: 1em 1em;
     margin-left: 1em;
     margin-bottom: 1em;
-    border-left: 4px solid $color-blue;
+    border-left: 4px solid $color-midblue;
+    background: #fff;
 
     &::before {
       content: "Contents";
