@@ -4,7 +4,9 @@ $title: Slate
 $date: October 7, 2016
 headline: Slate gets efficient with AMP
 class: case-study
-thumb: "case-studies/"
+thumb: "case-studies/slate_thumb.jpg"
+featured: "case-studies/slate_framed.png"
+description: "Slate.com, the current affairs magazine covering news, politics, technology, and culture, began publishing Accelerated Mobile Pages (AMP) at the beginning of this year. Slate consistently strives to create a great overall user experience and the decision to implement AMP was a straightforward one."
 results:
     - stat: 44%
       description: Increase in monthly unique visitors
@@ -15,7 +17,7 @@ results:
 ---
 
 <div class="img-right">
-    <amp-img width="559" height="1000" layout="responsive" src="/static/img/case-studies/slate_framed.png"></amp-img>
+    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/slate_framed.png"></amp-img>
 </div>
 
 Slate.com, the current affairs magazine covering news, politics, technology, and culture, began publishing Accelerated Mobile Pages (AMP) at the beginning of this year. Slate consistently strives to create a great overall user experience and the decision to implement AMP was a straightforward one.
@@ -29,7 +31,7 @@ Slate.com, the current affairs magazine covering news, politics, technology, and
 ## Results
 
 <div class="img-left">
-    <amp-img width="559" height="1000" layout="responsive" src="/static/img/case-studies/slate_framed2.png"></amp-img>
+    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/slate_framed2.png"></amp-img>
 </div>
 
 The Slate team has been impressed by traffic and engagement metrics on AMP pages since implementation. They have seen a 44% increase in monthly unique visitors from Google searches and a 73% increase in visits per monthly unique user.

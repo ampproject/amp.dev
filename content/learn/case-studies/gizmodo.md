@@ -2,9 +2,9 @@
 $order: 1
 $title: Gizmodo
 $date: October 7, 2016
-headline: Gizmodo sees 80% increase in visitors with AMP
+headline: Gizmodo sees 80%% increase in visitors with AMP
 class: case-study
-thumb: "case-studies/"
+thumb: "case-studies/gizmodo_thumb.jpg"
 results:
     - stat: 100k
       description: AMP page visits daily

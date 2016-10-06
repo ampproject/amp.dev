@@ -4,7 +4,7 @@ $title: Wired
 $date: October 7, 2016
 headline: Wired AMP’s its 20+ year archive to meet audiences online
 class: case-study
-thumb: "case-studies/"
+thumb: "case-studies/wired_thumb.jpg"
 results:
     - stat: 25%
       description: increase in CTR from search results
