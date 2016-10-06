@@ -1,6 +1,6 @@
 ---
 $title: How AMP Works
-$order: 3
+$order: 1
 ---
 [TOC]
 

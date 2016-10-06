@@ -1,16 +1,18 @@
 ---
-$title: AMP helps the Washington Post increase returning users from mobile search by 23%
+$order: 0
+$title: Washington Post
+$date: July 18, 2016
+headline: AMP helps the Washington Post increase returning users from mobile search by 23%%
 class: case-study
+thumb: "case-studies/wapo_thumb.png"
 ---
+<div class="results wordy">
+    <div><strong>23%</strong> increase in mobile search users who return within 7 days</div>
+    <div><strong>88%</strong> improvement in load time for AMP content versus traditional mobile web</div>
+    <div><strong>1000+</strong> articles The Washington Post publishes in AMP HTML daily</div>
+</div>
 
 <div class="img-right">
-    <div class="results">
-        <div>
-            <p><span class="compare-yes"></span><strong>23%</strong> increase in mobile search users who return within 7 days</p>
-            <p><span class="compare-yes"></span><strong>88%</strong> improvement in load time for AMP content versus traditional mobile web</p>
-            <p><span class="compare-yes"></span><strong>1000+</strong> articles The Washington Post publishes in AMP HTML daily</p>
-        </div>
-    </div>
     <amp-img width="559" height="1000" layout="responsive" src="/static/img/case-studies/wapo_framed.gif"></amp-img>
 </div>
 

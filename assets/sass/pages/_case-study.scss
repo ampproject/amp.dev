@@ -1,18 +1,39 @@
+body.case-studies {
+
+    .card {
+        flex: 0 0 calc(50% - 10px);
+    }
+
+    amp-img {
+        margin: 0;
+    }
+
+}
+
+
 body.case-study {
 
     h1 {
         margin-bottom: 1em;
     }
 
-    .img-right {
+    .img-right,
+    .img-left {
         display: inline-block;
         width: 37%;
         min-width: 250px;
-        float: right;
 
         amp-img {
             margin-top: 0;
         }
+    }
+
+    .img-right {
+        float: right;
+    }
+
+    .img-left {
+        float: left;
     }
 
     .button {
@@ -25,22 +46,36 @@ body.case-study {
 
     .results {
 
-        padding: 0 1em;
         border-bottom: 1px solid #f0f0f0;
         padding-bottom: 1em;
-        margin: 0 2em;
+        margin-bottom: 2em;
+        display: flex;
+        justify-content: space-around;
 
-        p {
-            &:first-child {
-                margin-top: 0;
+        &.wordy {
+            div {
+                padding: 14px 20px 0px 20px;
             }
+        }
+
+        div {
+            background: $color-midblue;
+            color: #fff;
+            border-radius: 160px;
+            width: 160px;
+            height: 160px;
+            text-align: center;
             font-weight: 400;
-            font-size: 18px;
+            font-size: 14px;
+            padding: 40px 27px 0px 27px;
+            box-sizing: border-box;
         }
 
         strong {
             display: block;
-            color: #4CAF50;
+            font-size: 2em;
+            font-weight: 400;
+            margin-bottom: 0.2em;
         }
 
     }
@@ -60,7 +95,8 @@ body.case-study {
     }
 
     @include max-screen(600px) {
-        .img-right {
+        .img-right,
+        .img-left {
             display: block;
             float: none;
             width: auto;

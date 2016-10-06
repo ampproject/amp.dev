@@ -1,6 +1,6 @@
 ---
 $title: Supported Platforms
-$order: 1
+$order: 4
 class: who
 
 description: The Accelerated Mobile Pages (AMP) Project is an open source initiative that makes it easy for publishers to create mobile-friendly content once and have it load instantly everywhere. – Accelerated Mobile Pages Project
