@@ -80,6 +80,23 @@ body.case-studies {
 
 }
 
+body.case-studies,
+body.case-study {
+    .logos {
+        display: flex;
+        align-items: center;
+        amp-img {
+            flex: 0 0 auto;
+        }
+        span {
+            font-size: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-weight: 500;
+            margin-top: -4px;
+        }
+    }
+}
 
 body.case-study {
 

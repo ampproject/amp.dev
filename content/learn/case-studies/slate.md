@@ -14,6 +14,11 @@ results:
       description: Increase in visits per monthly unique visitor
     - stat: ~$85k
       description: Saved in development resources/yr
+logo:
+  src: "case-studies/slate_logo.png"
+  width: 30
+  height: 30
+download: "case-studies/slate.pdf"
 ---
 
 <div class="img-right">
@@ -46,5 +51,3 @@ Looking to the future, Slate is excited to further monetize AMP content by exper
 like to offer the AMP experience through SlateCustom, the publisher’s in-house agency that creates branded content experiences. Schieffer said that “AMP feels like a natural extension of those multi-platform campaigns.” Overall, the team stands behind
 the decision to implement; “AMP felt and still feels to be in line with our goals as a brand: innovative, smart, and user-first,”
 said Schieffer.
-
-<p><a class="button" href="/static/img/case-studies/wapo.pdf">Download PDF Case study</a></p>

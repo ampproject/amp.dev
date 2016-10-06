@@ -5,6 +5,11 @@ $date: July 18, 2016
 headline: AMP helps the Washington Post increase returning users from mobile search by 23%%
 class: case-study
 thumb: "case-studies/wapo_thumb.png"
+logo:
+  src: "case-studies/wapo_logo.png"
+  width: 65
+  height: 10
+download: "case-studies/wapo.pdf"
 ---
 <div class="results wordy">
     <div><strong>23%</strong> increase in mobile search users who return within 7 days</div>
@@ -48,5 +53,3 @@ published in AMP, this number jumps to 63%.
 technologies. And since AMP is not a template based system, we were able
 to host our content, style it as we see fit, and easily integrate our existing
 advertising, analytics and other business tools,” Merrell said.
-
-<p><a class="button" href="/static/img/case-studies/wapo.pdf">Download PDF Case study</a></p>

@@ -1,11 +1,15 @@
 ---
-$order: 5
+$order: 6
 $title: Relay Media
 $date: October 7, 2016
 headline: Relay Media helps publishers get AMP’d
 class: case-study
 thumb: "case-studies/relay_media_thumb.jpg"
 featured: "case-studies/relay_media_framed.png"
+logo:
+  src: "case-studies/relay_media_logo.png"
+  width: 89
+  height: 10
 description: "Relay Media was founded in 2015 with the purpose of converting web content to Accelerated Mobile Pages (AMP) for publishers. The company has placed a big bet on AMP’s long-term importance to the online ecosystem, and is committed to strengthening the format’s foothold on the mobile web."
 results:
     - stat: 2.5M
@@ -16,6 +20,7 @@ results:
       description: Increase in session time (The Miami Herald)
     - stat: 90%
       description: new traffic on AMP (The Daily Dot)
+download: "case-studies/relay_media.pdf"
 ---
 
 <div class="img-right">
@@ -39,5 +44,3 @@ Many of Relay Media’s clients are seeing positive AMP results. The most profou
 Derrick Ho, Senior Mobile Manager for McClatchy, which owns the Miami Herald, reported that “mobile search users who read the Miami Herald starting with an AMP article spend 10% more time than those who land on regular mobile pages.” Arsenio Santos, Chief Product Officer at the Daily Dot, worked with Relay Media to create AMP pages for the news site covering internet culture and life on the web. Santos reported that 90% of visitors on their AMP pages are new readers. The team is satisfied with the results, “AMP provides users with a reliable, immediate browsing experience. We strongly recommend it,” said Santos.
 
 As more users shift to mobile, said Palser, “Publishers can and must differentiate themselves by delivering a fast, rewarding user experience which in turn provides a clean environment for advertisers.  Everything about AMP supports these principles; we think it’s a great place to start.”
-
-<p><a class="button" href="/static/img/case-studies/wapo.pdf">Download PDF Case study</a></p>

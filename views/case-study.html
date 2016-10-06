@@ -16,6 +16,14 @@
     <div class="content">
       <article class="post">
 
+        {% if doc.logo %}
+        <div class="logos">
+          <amp-img layout="flex-item" src="/static/img/logo-blue.svg" width="66" height="28"></amp-img>
+          <span>+</span>
+          <amp-img layout="flex-item" src="/static/img/{{doc.logo.src}}" width="{{doc.logo.width}}" height="{{doc.logo.height}}"></amp-img>
+        </div>
+        {% endif %}
+
         <h1 class="post-title">{{ doc.headline or doc.title }}</h1>
 
         <div class="post-content">
@@ -27,6 +35,10 @@
           </div>
           {% endif %}
           {{doc.html|render|safe}}
+
+          {% if doc.download %}
+          <p><a class="button" href="/static/img/{{doc.download}}">Download PDF Case study</a></p>
+          {% endif %}
         </div>
 
       </article>
