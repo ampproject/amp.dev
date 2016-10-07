@@ -10,8 +10,8 @@ results:
       description: increase in CTR from search results
     - stat: +63%
       description: in CTR on ads in AMP stories
-    - stat: 60%
-      description: of content AMP’ed (107K stories)
+    - stat: 100k
+      description: Stories AMP’ed from 20+ year archive
 logo:
   src: "case-studies/wired_logo.png"
   width: 63
