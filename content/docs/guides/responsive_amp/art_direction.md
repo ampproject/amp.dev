@@ -1,5 +1,5 @@
 ---
-$title: Art direction with srcset and sizes
+$title: Art direction with srcset, sizes & heights
 $order: 4
 ---
 [TOC]
@@ -68,3 +68,28 @@ layout defaults to <code>responsive</code>.</span>
 Learn more about how `sizes` and `srcset` attributes compare
 to media queries in this
 [Srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/) blog post.
+
+## heights
+
+All AMP custom elements that allow `responsive` layout, also support the `heights` attribute.
+The value of this attribute is a sizes expression based on media expressions
+as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img),
+but with two key differences:
+
+ 1. It applies to the height and not width of the element.
+ 2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percent
+ of the element's width.
+
+When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+
+An example:
+
+[sourcecode:html]
+<amp-img src="https://acme.org/image1.png"
+    width="320" height="256"
+    heights="(min-width:500px) 200px, 80%">
+</amp-img>
+[/sourcecode]
+
+In this example, the height of the element by default will be 80% of the width, but for the viewport
+wider than `500px` it will be capped at `200px`.
