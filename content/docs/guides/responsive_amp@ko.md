@@ -1,0 +1,136 @@
+---
+$title: 스타일링 & 레이아웃
+$order: 0
+---
+[TOC]
+
+AMP HTML 페이지 상 스타일링과 레이아웃은 일반 HTML 페이지와 매우 유사합니다. -
+양 쪽 케이스에서, CSS를 사용할 수 있습니다.
+
+그러나, AMP에서는 요소가 어떻게 표시될 지 더 잘 컨트롤 하기 위해
+[placeholders & fallbacks](/docs/guides/responsive/placeholders.html),
+[advanced art direction via srcset](https://ampproject.local/docs/guides/responsive/art_direction.html),
+[layout attribute](https://ampproject.local/docs/guides/responsive/control_layout.html)과 같은 기능과
+반응형 디자인 능력을 확장하며, 성능 및 사용성 이유로 인해 몇가지 CSS의 사용에 제한을 두었습니다.
+
+<aside class="success">
+  <strong>팁:</strong>
+  <span>
+    AMP에서 요소를 반응형으로 만드는 건 정말 쉽습니다.
+    단지 <code>layout="responsive"</code>라고 넣기만 하면 됩니다.
+  </span>
+</aside>
+
+
+
+## 페이지에 스타일 추가하기
+
+모든 CSS는 문서의 헤드 내부의 `<style amp-custom>` 태그 안에 넣습니다.
+예를 들면:
+
+[sourcecode:html]
+<!doctype html>
+  <head>
+    ...
+    <style amp-custom>
+      /* 커스텀 스타일은 모두 여기 넣습니다. */
+      body {
+        background-color: white;
+      }
+      amp-img {
+        border: 5px solid black;
+      }
+
+      amp-img.grey-placeholder {
+        background-color: grey;
+      }
+    </style>
+    ...
+  </head>
+[/sourcecode]
+
+<aside class="caution">
+  <strong>중요:</strong>
+  <span>
+    당신의 페이지에 <code>&lt;style amp-custom&gt;</code> 태그는 한개만 넣을 수 있습니다.
+    AMP에서 한개 이상은 허용하지 않습니다.
+  </span>
+</aside>
+
+일반적인 CSS 속성과 class 혹은 요소 셀렉터를 이용하여 컴포넌트 스타일을 정의합니다.
+예를 들어:
+
+[sourcecode:html]
+<body>
+  <p>Hello, Kitty.</p>
+  <amp-img
+    class="grey-placeholder"
+    src="https://placekitten.com/g/500/300"
+    srcset="/img/cat.jpg 640w,
+           /img/kitten.jpg 320w"
+    width="500"
+    height="300"
+    layout="responsive"
+  </amp-img>
+</body>
+[/sourcecode]
+
+<aside class="caution">
+  <strong>중요:</strong>
+  <span>
+    당신의 스타일이 AMP 내에서 허용하는 지 확인하길 바랍니다.
+    몇가지 스타일은 성능 이슈로 인해 허용하지 않습니다.
+    (<a href="/docs/guides/responsive/style_pages.html">Supported CSS</a>를 보시길 바랍니다).
+  </span>
+</aside>
+
+
+## 반응형 레이아웃 요소
+
+모든 보이는 AMP 요소에 `width`나 `height` 속성을 제공함으로써 위치와 크기를 정의할 수 있습니다.
+이 속성들은 컨테이너와 함께 늘어날 수 있는 요소의 종횡비를 의미합니다.
+
+레이아웃을 반응형으로 지정해야합니다.
+요소의 사이즈는 width와 height 속성으로 제공한 종횡비에 맞춰
+해당 컨테이너 요소의 width와 height에 맞추어 자동으로 리사이즈합니다.
+
+<aside class="success">
+  <strong>함께 읽기:</strong>
+  <span>Learn more about <a href="/docs/guides/responsive/control_layout.html">supported layouts in AMP</a>.</span>
+</aside>
+
+## 플레이스홀더와 폴백 제공하기
+플레이스홀더와 폴백의 기본 지원은 당신의 유저가 비어있는 스크린을 다시 응시할 필요가 없음을 의미합니다.
+
+<aside class="success">
+  <strong>함께 읽기:</strong>
+  <span>Learn more about <a href="/docs/guides/responsive/placeholders.html">Placeholders and fallbacks</a>.</span>
+</aside>
+
+## 아름답게 당신의 이미지를 직접적으로
+AMP는 시나리오에 맞춘 이미지의 로드 세부 제어를 위해 `srcset`과 `sizes` 속성을 제공합니다.
+
+<aside class="success">
+  <strong>함께 읽기:</strong>
+  <span>Learn more about <a href="/docs/guides/responsive/art_direction.html">art direction with srcset and sizes</a>.</span>
+</aside>
+
+## 스타일과 레이아웃 유효성 검사기
+
+AMP 유효성 검사기를 이용하여
+페이지의 CSS와 레이아웃 값을 테스트할 수 있습니다.
+
+유효성 검사기는 페이지의 CSS가 50,000 바이트 제한을 넘지 않았는 지,
+허용하지 않는 스타일을 사용하였는 지, 페이지의 레이아웃 지원을 보장하는 지,
+올바른 포맷인 지를 확인합니다.
+
+[Style and layout errors](/docs/reference/validation_errors.html#style-and-layout-errors)의 완전한 리스트를 확인할 수 있습니다.
+
+페이지 내 CSS가 50,000 바이트 제한을 넘은 경우의 콘솔 에러 예제입니다:
+
+<amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
+
+<aside class="success">
+  <strong>함께 읽기:</strong>
+  <span>Learn more about how to <a href="/docs/guides/validate.html">validate and fix your AMP pages</a>.</span>
+</aside>
