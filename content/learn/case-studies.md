@@ -37,7 +37,7 @@ class: case-studies
     {% else %}
     <div class="card">
         <div class="card__image">
-        <a href="{{item.url.path}}"><amp-img height="190" width="297" layout="responsive" src="/static/img/{{item.thumb}}"></a>
+        <a href="{{item.url.path}}"><amp-img height="614" width="1102" layout="responsive" src="/static/img/{{item.thumb}}"></a>
         </div>
         <div class="card__content">
         <a href="{{item.url.path}}"><h4 class="card__title">{{_(item.headline or item.title)}}</h4></a>
