@@ -3,21 +3,21 @@ $title: 스타일링 & 레이아웃
 $order: 0
 ---
 [TOC]
+AMP HTML 페이지에서 스타일링과 레이아웃은 일반 HTML 페이지와 매우 유사하며,
+양 쪽 케이스 모두에서 CSS를 사용할 수 있습니다.
 
-AMP HTML 페이지 상 스타일링과 레이아웃은 일반 HTML 페이지와 매우 유사합니다. -
-양 쪽 케이스에서, CSS를 사용할 수 있습니다.
-
-그러나, AMP에서는 요소가 어떻게 표시될 지 더 잘 컨트롤 하기 위해
-[placeholders & fallbacks](/docs/guides/responsive/placeholders.html),
-[advanced art direction via srcset](https://ampproject.local/docs/guides/responsive/art_direction.html),
-[layout attribute](https://ampproject.local/docs/guides/responsive/control_layout.html)과 같은 기능과
-반응형 디자인 능력을 확장하며, 성능 및 사용성 이유로 인해 몇가지 CSS의 사용에 제한을 두었습니다.
+그러나, AMP에서는 요소 표시를 더 잘 컨트롤 하기 위해서,
+[플레이스홀더 & 폴백](/docs/guides/responsive/placeholders.html),
+[srcset을 통한 고급 미적 이미지 처리](https://ampproject.local/docs/guides/responsive/art_direction.html),
+[레이아웃 속성](https://ampproject.local/docs/guides/responsive/control_layout.html) 같은 기능을 주고,
+반응형 디자인 능력을 확장하며,
+성능 및 사용성 이유로 인해 몇가지 CSS 사용에 제한을 두었습니다.
 
 <aside class="success">
   <strong>팁:</strong>
   <span>
     AMP에서 요소를 반응형으로 만드는 건 정말 쉽습니다.
-    단지 <code>layout="responsive"</code>라고 넣기만 하면 됩니다.
+    단지 <code>layout="responsive"</code>를 해당 요소에 추가하기만 하면 됩니다.
   </span>
 </aside>
 
@@ -53,7 +53,7 @@ AMP HTML 페이지 상 스타일링과 레이아웃은 일반 HTML 페이지와 
   <strong>중요:</strong>
   <span>
     당신의 페이지에 <code>&lt;style amp-custom&gt;</code> 태그는 한개만 넣을 수 있습니다.
-    AMP에서 한개 이상은 허용하지 않습니다.
+    AMP는 한개까지만 허용합니다.
   </span>
 </aside>
 
@@ -78,7 +78,7 @@ AMP HTML 페이지 상 스타일링과 레이아웃은 일반 HTML 페이지와 
 <aside class="caution">
   <strong>중요:</strong>
   <span>
-    당신의 스타일이 AMP 내에서 허용하는 지 확인하길 바랍니다.
+    스타일이 AMP 내에서 허용하는 지 확인하길 바랍니다.
     몇가지 스타일은 성능 이슈로 인해 허용하지 않습니다.
     (<a href="/docs/guides/responsive/style_pages.html">Supported CSS</a>를 보시길 바랍니다).
   </span>
@@ -100,14 +100,14 @@ AMP HTML 페이지 상 스타일링과 레이아웃은 일반 HTML 페이지와 
 </aside>
 
 ## 플레이스홀더와 폴백 제공하기
-플레이스홀더와 폴백의 기본 지원은 당신의 유저가 비어있는 스크린을 다시 응시할 필요가 없음을 의미합니다.
+플레이스홀더와 폴백의 기본 지원은 당신의 유저가 비어있는 스크린을 두번 다시 볼 필요가 없음을 의미합니다.
 
 <aside class="success">
   <strong>함께 읽기:</strong>
   <span>Learn more about <a href="/docs/guides/responsive/placeholders.html">Placeholders and fallbacks</a>.</span>
 </aside>
 
-## 아름답게 당신의 이미지를 직접적으로
+## 미적 이미지 처리
 AMP는 시나리오에 맞춘 이미지의 로드 세부 제어를 위해 `srcset`과 `sizes` 속성을 제공합니다.
 
 <aside class="success">
