@@ -1,46 +1,42 @@
 ---
-$title: Include Iframes
+$title: iframe 가져오기
 $order: 2
 ---
 [TOC]
 
-Learn how to display include media content in your pages, and how to use iframes
-to display advanced content outside of AMP's limitations.
+페이지 내에서 미디어 콘텐츠를 처리하는 방법과 AMP 지원 범주 외의 고급 콘텐츠를 표현하기 위한 iframe의 사용법을 배워봅시다.
 
 ## The basics
 
-Display an iframe in your page using the
-[`amp-iframe`](/docs/reference/components/amp-iframe.html) element.
+페이지에서 iframe을 보여줄 때 [`amp-iframe`](/docs/reference/components/amp-iframe.html)을 사용합니다.
 
-Iframes are especially useful in AMP to display content not supported in the
-main page context, such as content requiring user-authored JavaScript.
+iframe은 유저 작성한 자바스크립트가 필요한 콘텐츠 같이 AMP 메인 페이지 컨텍스트에서 지원하지 않는 디스플레이 콘텐츠에서 특히 유용합니다.
 
-`amp-iframe` requirements:
+`amp-iframe` 요구 사항:
 
-* Must be at least **600px** or **75%** of the first viewport away from the top.
-* Can only request resources via HTTPS, and they must not be in the same origin
-  as the container, unless they do not specify allow-same-origin.
+* 최초 뷰포트의 상단으로부터 최소한 **600px**이나 **75%** 이상 떨어져 있어야 합니다.
+* HTTPS 리소스를 불러오는 것만 가능하며, allow-same-origin으로 정의되지 않은 경우,
+컨테이너 origin이 같아서는 안됩니다.
 
 <aside class="note">
-  <strong>Tip:</strong>
-  <span>Learn more at the <a href="/docs/reference/components/amp-iframe.html">full specification for <code>amp-iframe</code></a>.</span>
+  <strong>팁:</strong>
+  <span>더 자세한 내용은 <a href="/docs/reference/components/amp-iframe.html">full specification for <code>amp-iframe</code></a>을 참고하세요.</span>
 </aside>
 
-## Include the script
+## script 가져오기
 
-To include an `amp-iframe` in your page,
-first include the following script to the `<head>`, which loads the additional
-code for the extended component:
+`amp-iframe`을 페이지에서 사용하려면,
+컴포넌트를 확장하기 위한 추가 코드를 로드하기 위해 `<head>`에 아래 스크립트를 먼저 추가해야합니다.
 
 [sourcecode:html]
 <script async custom-element="amp-iframe"
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 [/sourcecode]
 
-## Write the markup
+## 마크업 작성하기
 
-An example `amp-iframe` from the
-[released.amp example](https://github.com/ampproject/amphtml/blob/master/examples/released.amp.html):
+[released.amp example](https://github.com/ampproject/amphtml/blob/master/examples/released.amp.html)에서 가져온
+`amp-iframe` 예제입니다:
 
 [sourcecode:html]
 <amp-iframe width=300 height=300
@@ -51,10 +47,10 @@ An example `amp-iframe` from the
 </amp-iframe>
 [/sourcecode]
 
-## Examples
+## 예제
 
-More advanced examples can be found in our [advanced demo page](https://ampbyexample.com/components/amp-iframe/), which is embedded
-as `<amp-iframe>` below:
+더 자세한 예제는 [advanced demo page](https://ampbyexample.com/components/amp-iframe/)에서 찾아볼 수 있으며,
+아래와 같이 `<amp-iframe>`을 가져올 수 있습니다:
 
 <amp-iframe width=300 height=300
     sandbox="allow-scripts allow-same-origin"
