@@ -3,14 +3,6 @@ msgid "/docs/get_started/about-amp.html"
 msgstr ""
 
 #: /content/includes/who.yaml
-msgid "APAC"
-msgstr ""
-
-#: /content/includes/footer.yaml
-msgid "Accelerated Mobile Pages Project"
-msgstr ""
-
-#: /content/includes/who.yaml
 msgid "Ads"
 msgstr ""
 
@@ -37,10 +29,6 @@ msgstr ""
 #: /content/docs
 msgid "Docs"
 msgstr "เอกสาร"
-
-#: /content/includes/who.yaml
-msgid "Europe"
-msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Examples"
@@ -75,10 +63,6 @@ msgstr ""
 msgid "Guides"
 msgstr "คำแนะนำ"
 
-#: /views/base.html:38
-msgid "Home"
-msgstr ""
-
 #: /content/includes/home.yaml
 msgid ""
 "If you are new to AMP HTML, our technical introduction is a great place to "
@@ -93,10 +77,6 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Instant. <br> Everywhere."
-msgstr ""
-
-#: /content/includes/who.yaml
-msgid "Latin America"
 msgstr ""
 
 #: /content/includes/menu.yaml /content/learn
@@ -116,10 +96,6 @@ msgstr ""
 
 #: /content/news
 msgid "News"
-msgstr ""
-
-#: /content/includes/who.yaml
-msgid "North America"
 msgstr ""
 
 #: /content/includes/home.yaml
@@ -185,10 +161,6 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Visit Github"
-msgstr ""
-
-#: /content/includes/who.yaml
-msgid "Websites using AMP"
 msgstr ""
 
 #: /content/includes/home.yaml
