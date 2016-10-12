@@ -4,11 +4,11 @@ $order: 0
 ---
 [TOC]
 AMP HTML 페이지에서 스타일링과 레이아웃은 일반 HTML 페이지와 매우 유사하며,
-양 쪽 케이스 모두에서 CSS를 사용할 수 있습니다.
+마찬가지로 CSS 사용이 가능합니다.
 
 그러나, AMP에서는 요소 표시를 더 잘 컨트롤 하기 위해서,
 [플레이스홀더 & 폴백](/docs/guides/responsive/placeholders.html),
-[srcset을 통한 고급 미적 이미지 처리](https://ampproject.local/docs/guides/responsive/art_direction.html),
+[srcset을 통한 고품질의 미려한 이미지 처리](https://ampproject.local/docs/guides/responsive/art_direction.html),
 [레이아웃 속성](https://ampproject.local/docs/guides/responsive/control_layout.html) 같은 기능을 주고,
 반응형 디자인 능력을 확장하며,
 성능 및 사용성 이유로 인해 몇가지 CSS 사용에 제한을 두었습니다.

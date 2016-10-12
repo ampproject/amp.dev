@@ -23,8 +23,8 @@ AMP는 개별 요소의 **레이아웃** 을 제어하는 강력한 내장형 �
 </amp-img>
 [/sourcecode]
 
-이 `amp-img` 요소는 컨테이너 요소의 가로 사이즈에 자동으로 맞춰지며,
-높이는 width와 height로 정의한 해상도에 맞춰 자동으로 설정됩니다.
+이 `amp-img` 요소의 가로 너비는 해당 요소를 담고있는 요소(container element) 요소의
+가로 너비에 따라 자동으로 맞춰지며, 높이는 width와 height로 정의한 해상도에 맞춰 자동으로 설정됩니다.
 이 브라우저 창을 리사이징 해보길 바랍니다:
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
@@ -36,7 +36,7 @@ AMP는 개별 요소의 **레이아웃** 을 제어하는 강력한 내장형 �
 </aside>
 
 ## 레이아웃 속성
-`layout` 속성은 요소가 어떻게 스크린상에 렌더링 될 지 요소별로 컨트롤을 쉽게 해줍니다.
+`layout` 속성을 사용하면 각 요소의 화면 상 렌더링 방식을 쉽게 제어할 수 있습니다.
 대부분은 순수 CSS로도 가능하지만 훨씬 어렵고, 무수한 핵이 필요합니다.
 대신해서 `layout` 속성을 사용하길 권장합니다.
 
@@ -56,26 +56,26 @@ AMP는 개별 요소의 **레이아웃** 을 제어하는 강력한 내장형 �
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>nodisplay</code></td>
       <td data-th="Description" class="col-twenty">필수 아님</td>
-      <td data-th="Behavior">요소가 디스플레이되지 않습니다. 이 레이아웃은 모든 AMP 요소에 적용 가능합니다. 컴포넌트는 display 스타일이 none인 것 처럼 스크린 상에 공간을 가지지 않습니다. 유저 동작에 의해 요소가 보이게 할 수 있습니다. 예를 들면, <a href="/docs/reference/extended/amp-lightbox.html"><code>amp-lightbox</code></a> 같은 게 있습니다.</td>
+      <td data-th="Behavior">요소가 나타나지 않습니다. 이 레이아웃은 모든 AMP 요소에 적용 가능합니다. 컴포넌트는 display 스타일이 none인 것 처럼 스크린 상에 공간을 가지지 않습니다. 사용자 조작으로 요소가 보이게 할 수 있습니다. 예를 들면, <a href="/docs/reference/extended/amp-lightbox.html"><code>amp-lightbox</code></a> 같은 게 있습니다.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed</code></td>
       <td data-th="Description" class="col-twenty">필수</td>
-      <td data-th="Behavior">Element has a fixed width and height with no responsiveness supported. The only exceptions are <a href="/docs/reference/amp-pixel.html"><code>amp-pixel</code></a> and <a href="/docs/reference/extended/amp-audio.html"><code>amp-audio</code></a> elements.</td>
+      <td data-th="Behavior">반응형 지원 없이 요소의 너비와 높이를 고정합니다. <a href="/docs/reference/amp-pixel.html"><code>amp-pixel</code></a> 요소 및 <a href="/docs/reference/extended/amp-audio.html"><code>amp-audio</code></a> 요소는 예외입니다.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>responsive</code></td>
       <td data-th="Description" class="col-twenty">필수</td>
       <td data-th="Behavior">
-      해당 요소의 컨테이너 요소의 width를 기준으로 사이즈되며,
-      해당 요소의 height는 width와 height 속성에서 제공하는 해상도를 기준으로 자동으로 지정합니다.
+      해당 요소의 컨테이너 요소 너비를 기준으로 크기가 정해지며,
+      해당 요소의 높이는 width와 height 속성에서 제공하는 해상도를 기준으로 자동으로 지정합니다.
       이 레이아웃은 <a href="/docs/reference/amp-img.html"><code>amp-img</code></a>, <a href="/docs/reference/amp-video.html"><code>amp-video</code></a>를 포함한 대부분의 AMP 요소에서 잘 동작합니다.
       부모 요소에 의존하여 공백이 가능하며, <code>max-width</code> CSS를 이용하여 커스터마이징도 가능하다.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed-height</code></td>
-      <td data-th="Description" class="col-twenty">Height만</td>
-      <td data-th="Behavior">요소는 가능한 공간을 가지고 height를 변하지 않는 채로 가집니다. 이 레이아웃은 수평 위치 콘텐츠를 포함하는 <a href="/docs/reference/extended/amp-carousel.html"><code>amp-carousel</code></a> 같은 요소에서 잘 동작합니다. <code>width</code> 속성은 존재하지 않거나 <code>auto</code>와 같아야합니다.</td>
+      <td data-th="Description" class="col-twenty">Height만 필수</td>
+      <td data-th="Behavior">요소는 가용한 너비를 최대한 차지하지만 높이는 바뀌지 않습니다. 이 레이아웃은 수평 위치 콘텐츠를 포함하는 <a href="/docs/reference/extended/amp-carousel.html"><code>amp-carousel</code></a> 같은 요소에서 잘 동작합니다. <code>width</code> 속성은 존재하지 않거나 <code>auto</code>와 같아야합니다.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fill</code></td>
@@ -143,11 +143,11 @@ AMP는 적절한 값을 암시하거나 추측합니다:
 다른 웹사이트에서 하듯 [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)를 사용하여
 페이지 레이아웃이 어떻게 보여질 지와 어떻게 동작할 지 제어할 수 있습니다.
 브라우저 창의 사이즈나 방향이 바뀔 때,
-미디어쿼리는 재계산하고 새로운 결과에 따라 요소를 보이게 하거나 가립니다.
+미디어쿼리는 재계산 결과에 따라 요소를 보이게 하거나 가립니다.
 
 <aside class="success">
   <strong>팁:</strong>
-  <span>허용하는 미디어쿼리에서 레이아웃을 어떻게 컨트롤하는 지에 대한 더 자세한 정보는 <a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en">Use CSS media queries for responsiveness</a> 문서를 확인하길 바랍니다.
+  <span>허용하는 미디어쿼리에서 레이아웃을 어떻게 제어하는 지에 대한 더 자세한 정보는 <a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en">Use CSS media queries for responsiveness</a> 문서를 확인하길 바랍니다.
   </span>
 </aside>
 
@@ -169,7 +169,7 @@ AMP에서 사용할 수 있는 반응형 디자인의 확장 피쳐는 `media` �
 </amp-img>
 [/sourcecode]
 
-스크린 width에 의존하여, 하나 혹은 그 외의 것을 가져오고 렌더링합니다.
+스크린 너비에 의존하여, 하나 혹은 그 외의 것을 가져온 후 렌더링합니다.
 
 [sourcecode:html]
 <amp-img
