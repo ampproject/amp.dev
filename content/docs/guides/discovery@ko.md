@@ -1,46 +1,58 @@
 ---
-$title: Make Your Page Discoverable
+$title: 페이지를 더 발견할 수 있게 만들기
 $order: 4
 ---
 [TOC]
 
-In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, how does it know there’s an AMP version of it?
+뉴스 기사같은 몇가지 케이스에서, 같은 페이지가 AMP인 버전과 AMP가 아닌 버전을 원할 수 있습니다.
+고려하기: 만약 Google 검색이 AMP가 아닌 페이지를 찾았다면, AMP 버전 페이지를 어떻게 찾을 수 있을까요?
 
-### Linking pages with &lt;link&gt;
+### &lt;link&gt;를 이용한 연결
 
-In order to solve this problem, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
+이러한 문제를 해결하기 위해,
+`<head>` 요소 내 `<link>` 태그를 넣는 형태로
+AMP 페이지에 AMP가 아닌 페이지에 대한 정보를 추가하고,
+AMP가 아닌 페이지에 AMP 페이지에 대한 정보를 추가합니다.
 
-Add the following to the non-AMP page:
+AMP가 아닌 페이지에는 다음과 같이 추가합니다:
 
 [sourcecode:html]
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-And this to the AMP page:
+AMP 페이지에는 다음과 같이 추가합니다:
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
-### What if I only have one page?
+### 페이지가 하나인 경우에는 어떻게 해야하나요?
 
-If you only have one page, and that page is an AMP page, you must still add the canonical link to it, which will then simply point to itself:
+만약 AMP 페이지 하나만 가지고 있다면,
+단순히 자기 자신을 가리키는 canonical 링크를 추가해야합니다.
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-## Integrate with third-party platforms through additional metadata
+## 추가 메타데이터를 통한 서드 파티 플랫폼 통합
 
-Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are things like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
+종종 (AMP 페이지를 포함하거나 링크를 가져가는) 서드 파티 사이트에서 AMP 페이지라는 사실 외에 페이지에 대한 다른 정보를 알 필요가 있을 수 있습니다.
+플랫폼에서 물어볼만한 것들은 "뉴스 기사야?", "비디오야?", "스크린샷이나 간단한 소개 가지고있어?" 같은 류의 것들입니다.
 
-This isn’t just relevant for AMP pages but for all web pages. For some platforms, this metadata is additional, for others it is a requirement, meaning they **won’t show links to your content if you didn’t include the right metadata**. Make sure you include the right metadata for the platforms you want your content to appear on.
+이는 AMP 페이지뿐만 아니라 모든 웹 페이지와 관련되어있습니다.
+몇가지 플랫폼에서, 이런 메타데이터는 부가적이며, 다른 경우 필수이며,
+이 경우 **올바른 메타데이터를 포함하지 않으면 콘텐츠로의 링크를 보여주고 싶지 않다** 라는 의미를 가집니다.
+콘텐츠가 나타나게 하기 위해 플랫폼을 위한 올바른 메타데이터를 포함하기 바랍니다.
 
-### Use Schema.org for most search engines
 
-[Schema.org](http://schema.org/) offers open vocabularies to add meta data to all sorts of things. In the case of AMP, the properties that make sense in context include the specific type of content (i.e. ‘news article’), the headline, the published date and associated preview images.
+### 대부분의 검색엔진을 위한 Schema.org 사용
 
-Example:
+[Schema.org](http://schema.org/)는 여러 물건에 메타데이터를 추가할 수 있는 오픈 문법을 제안합니다.
+AMP같은 경우, 콘텐츠 타입 정의를 포함하는 콘텍스트의 이해를 위해 속성을 사용하며 (예를 들면, `news article`),
+헤드라인, 발행일 및 관련된 미리보기 이미지 등을 정의할 수 있습니다.
+
+예시:
 
 [sourcecode:html]
 <script type="application/ld+json">
@@ -76,11 +88,13 @@ Example:
 </script>
 [/sourcecode]
 
-More examples can be found in [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
+대체 HTML 속성 문법을 포함한 더 많은 예제는
+[ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)에서 찾을 수 있습니다.
 
-Note: This Schema.org definition is a requirement to make your content eligible to appear in the demo of the [Google Search news carousel (try on mobile)](https://g.co/ampdemo).
-See also [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories), and the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/).
+노트: 이 Schema.org 정의는 [Google Search news carousel (try on mobile)](https://g.co/ampdemo) 데모와 같이 콘텐츠를 나타내기 위한 필수 요건입니다.
+[Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories) 및 [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)을 살펴보길 바랍니다.
 
-### Other metadata for even more platforms
+### 더 많은 플랫폼을 위한 다른 메타데이터
 
-Head to the [Social Discovery guide at Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) to learn about all the other different ways of preparing your content for discovery and distribution.
+[Social Discovery guide at Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/)에서
+컨텐츠를 발견하고 배포하도록 준비하는 다른 방법을 모두 배울 수 있습니다.
