@@ -26,7 +26,7 @@ class: case-studies
           <amp-img layout="flex-item" src="/static/img/{{item.logo.src}}" width="{{item.logo.width}}" height="{{item.logo.height}}"></amp-img>
         </div>
         {% endif %}
-        <a href="{{item.url.path}}"><h4 class="card__title">{{_(item.headline or item.title)}}</h4></a>
+        <a href="{{item.url.path}}"><h4 class="card__title">{{item.headline or item.title}}</h4></a>
         <p>{{item.date}}</p>
         <p>{{item.description}}</p>
         <div class="card__action">
@@ -40,7 +40,7 @@ class: case-studies
         <a href="{{item.url.path}}"><amp-img height="614" width="1102" layout="responsive" src="/static/img/{{item.thumb}}"></a>
         </div>
         <div class="card__content">
-        <a href="{{item.url.path}}"><h4 class="card__title">{{_(item.headline or item.title)}}</h4></a>
+        <a href="{{item.url.path}}"><h4 class="card__title">{{item.headline or item.title}}</h4></a>
         <p>{{item.date}}</p>
         </div>
         <div class="card__action">

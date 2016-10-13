@@ -232,7 +232,7 @@ class: home
         {% for item in g.collection('learn/case-studies').docs(recursive=false, locale=doc.locale)|reverse %}
           {% if loop.index0 < 3 %}
           <a class="blog__tab" href="{{item.url.path}}">
-            <h3 class="blog__title">{{_(item.headline or item.title)}}</h3>
+            <h3 class="blog__title">{{item.headline or item.title}}</h3>
             <div class="blog__subtitle">{{item.date}}</div>
           </a>
           {% endif %}

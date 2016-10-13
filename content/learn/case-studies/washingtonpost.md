@@ -2,7 +2,7 @@
 $order: 0
 $title: Washington Post
 $date: July 18, 2016
-headline: AMP helps the Washington Post increase returning users from mobile search by 23%%
+headline: AMP helps the Washington Post increase returning users from mobile search by 23%
 class: case-study
 thumb: "case-studies/wapo_thumb.png"
 logo:
