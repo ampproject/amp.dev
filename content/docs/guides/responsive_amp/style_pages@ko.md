@@ -81,14 +81,14 @@ $order: 0
   </tbody>
 </table>
 
-## 한정된 스타일
+## 제한적으로 사용할 수 있는 스타일
 
 아래 스타일은 허용하지만, 지원값을 제한합니다:
 
 <table>
   <thead>
     <tr>
-      <th class="col-thirty" data-th="Banned style">한정된 스타일</th>
+      <th class="col-thirty" data-th="Banned style">제한적으로 사용할 수 있는 스타일</th>
       <th data-th="Description">설명</th>
     </tr>
   </thead>
@@ -174,5 +174,5 @@ AMP 페이지는 커스텀 폰트를 제외한 외부 스타일 시트는 포함
 {% endraw %}[/sourcecode]
 
 위 포맷의 AMP HTML이 어떻게 해석되는 지 보려면,
-[ampproject.org](https://www.ampproject.org/) 내의 아무 페이지 소스보기를 하면 됩니다.
+[ampproject.org](https://www.ampproject.org/) 내의 아무 페이지의 소스보기를 하면 됩니다.
 (크롬에서는, 오른쪽 클릭 후 `View Page Source`를 누르면 됩니다.)
