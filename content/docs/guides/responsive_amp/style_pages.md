@@ -111,26 +111,12 @@ they support:
 ## The custom fonts exception
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
-The 2 supported methods for referencing custom fonts are
-link tags pointing to white-listed font providers and `@font-face` inclusion.
 
-Font providers can only be whitelisted
-if they support CSS-only integrations and serve over HTTPS.
-Currently, only these origins are whitelisted
-and allowed for font serving via link tags:
+<aside class="success">
+  <strong>Read on:</strong>
+  <span>Learn more about <a href="/docs/guides/responsive/custom_fonts.html">custom fonts in AMP</a>.</span>
+</aside>
 
-* **https://fast.fonts.net**
-* **https://fonts.googleapis.com**
-
-Example link tag pointing to the whitelisted font provider, Google Fonts:
-
-[sourcecode:html]
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-[/sourcecode]
-
-Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face).
-Fonts included via `@font-face` must be fetched
-via the HTTP or HTTPS scheme.
 
 ## Using CSS preprocessors
 

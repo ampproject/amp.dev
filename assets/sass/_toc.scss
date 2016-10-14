@@ -44,7 +44,7 @@
   }
 
   /* special case where our anchor-link hack breaks */
-  .toc ~ h2::before {
+  .toc + h2::before {
     display: none;
   }
 

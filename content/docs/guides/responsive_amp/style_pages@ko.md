@@ -118,8 +118,10 @@ AMP 페이지는 커스텀 폰트를 제외한 외부 스타일 시트는 포함
 폰트 제공자는 CSS 전용 통합을 지원하고 HTTPS로 폰트를 전달하는 허용하는 것만 사용 가능합니다.
 현재는, 아래 origin을 허용되며, link 태그를 이용해 폰트를 제공할 수 있습니다:
 
-* **https://fast.fonts.net**
-* **https://fonts.googleapis.com**
+* Typography.com: **https://cloud.typography.com**
+* Fonts.com: **https://fast.fonts.net**
+* Google Fonts: **https://fonts.googleapis.com**
+* Font Awesome: **https://maxcdn.bootstrapcdn.com**
 
 허용하는 폰트 제공자를 가리키는 link 태그 예제입니다, Google Fonts:
 
