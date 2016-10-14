@@ -19,7 +19,7 @@ $order: 3
   src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
-현재 트윗은 자동으로 제공된 사이즈에 비례하여 크기가 조정되지만, 원하는 형태를 양보해야 할 수 있습니다.
+현재 트윗은 자동으로 제공된 사이즈에 비례하여 크기가 조정되지만, 원하는 크기에 미치지 않을 수도 있습니다.
 
 수동으로 width와 height를 제공하여 조정하거나,
 스크린 width에 기반한 해상도를 선택하는 media 속성을 사용할 수 있습니다.

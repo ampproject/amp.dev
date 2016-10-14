@@ -11,12 +11,10 @@ AMP와 비교했을 때 차이점과 어떻게 페이지에서 가져올 수 있
 ## 왜 `<img>`, `<video>`, `<audio>`가 아닌가요?
 
 AMP는 `<img>` 같은 미디어를 표현하는 기본 HTML을 지원하지 않습니다.
-아래와 같은 이유로 기본 HTML과 동일한 컴포넌트를 제공합니다:
+아래와 같은 이유로 기본 HTML과 동등한 컴포넌트를 제공합니다:
 
-* 결정적으로 [support first-viewport preloading](/learn/how-amp-works/#size-all-resources-statically)을 이유로,
-자원이 로딩되기 전에 페이지의 레이아웃을 이해해야할 필요가 있습니다.
-*  [lazy load and prioritize resources
-  effectively](/learn/how-amp-works/#prioritize-resource-loading) 네트워크 요청을 제어할 수 있어야 합니다.
+* [뷰포트의 사전 로딩]((/learn/how-amp-works/#size-all-resources-statically))을 지원하려면 자원을 불러오기 전의 페이지 레이아웃에 대한 이해가 필수적입니다.
+* [효과적으로 자원을 불러오는 과정의 우선순위를 정하거나 지연](/learn/how-amp-works/#prioritize-resource-loading)지연하기 위해 네트워크 요청을 제어할 필요가 있습니다.
 
 <aside class="caution">
   <strong>주의:</strong>
@@ -48,7 +46,7 @@ AMP는 표준 CSS/HTML에 비교했을 때 훨씬 쉽게 반응형 이미지를 
 
 <aside class="success">
   <strong>더 읽기:</strong>
-  <span>더 상세한 내용은 <a href="/docs/guides/responsive/control_layout.html">advanced layout techniques</a>를 참고하길 바랍니다.</span>
+  <span>더 상세한 내용은 <a href="/docs/guides/responsive/control_layout.html">레이아웃 & 미디어쿼리</a>를 참고하길 바랍니다.</span>
 </aside>
 
 ### 동작 및 플레이스홀더
@@ -58,7 +56,7 @@ AMP HTML 런타임은 뷰포트 위치, 시스템 리소스, 연결 대역폭, �
 
 <aside class="success">
   <strong>더 읽기:</strong>
-  <span>더 상세한 내용은 <a href="/docs/guides/responsive/placeholders.html">provide fallbacks and placeholders for images</a>를 참고하길 바랍니다.</span>
+  <span>더 상세한 내용은 <a href="/docs/guides/responsive/placeholders.html">이미지를 위한 플레이스홀더 & 폴백</a>을 참고하길 바랍니다.</span>
 </aside>
 
 ## 애니메이션되는 이미지

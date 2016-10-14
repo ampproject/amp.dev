@@ -10,7 +10,7 @@ $order: 2
 
 페이지에서 iframe을 보여줄 때 [`amp-iframe`](/docs/reference/components/amp-iframe.html)을 사용합니다.
 
-iframe은 유저 작성한 자바스크립트가 필요한 콘텐츠 같이 AMP 메인 페이지 컨텍스트에서 지원하지 않는 디스플레이 콘텐츠에서 특히 유용합니다.
+iframe은 사용자가 작성한 자바스크립트가 필요한 콘텐츠 같이  AMP 메인 페이지 컨텍스트에서 지원하지 않는 콘텐츠를 나타내는 데 특히 유용합니다.
 
 `amp-iframe` 요구 사항:
 

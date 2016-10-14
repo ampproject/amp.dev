@@ -29,7 +29,7 @@ AMP 페이지에는 다음과 같이 추가합니다:
 ### 페이지가 하나인 경우에는 어떻게 해야하나요?
 
 만약 AMP 페이지 하나만 가지고 있다면,
-단순히 자기 자신을 가리키는 canonical 링크를 추가해야합니다.
+단순히 자기 자신을 가리키는 `canonical` 링크를 추가해야합니다.
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
