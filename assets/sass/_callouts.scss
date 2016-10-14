@@ -1,0 +1,54 @@
+aside {
+
+    display: block;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 16px 0;
+    padding: 12px 24px 12px 60px;
+
+    &::before {
+        float: left;
+        font: normal normal normal 24px/1 'Material Icons';
+        font-feature-settings: 'liga';
+        word-wrap: normal;
+        white-space: nowrap;
+        margin-left: -36px;
+    }
+
+    &.note {
+        background: #e1f5fe;
+        color: #0288d1;
+        &::before {
+            color: #039be5;
+            content: 'star';
+        }
+    }
+
+    &.caution {
+        background: #fff3e0;
+        color: #dd2c00;
+        &::before {
+            color: #ff6e40;
+            content: 'error';
+        }
+    }
+
+    &.warning {
+        background: #fbe9e7;
+        color: #d50000;
+        &::before {
+            color: #ff1744;
+            content: 'warning';
+        }
+    }
+
+    &.success {
+        background: #e0f2f1;
+        color: #00897b;
+        &::before {
+            color: #00bfa5;
+            content: 'check_circle';
+        }
+    }
+
+}

@@ -10,6 +10,11 @@ footer {
     height: 30px;
     width: 30px;
     margin-right: 20px;
+
+    .rtl & {
+      margin-right: 0;
+      margin-left: 20px;
+    }
   }
 
   .footer-link {
@@ -18,5 +23,9 @@ footer {
     align-items: center;
 
     color: #0371b7;
+
+    span {
+      margin-left: 10px;
+    }
   }
 }

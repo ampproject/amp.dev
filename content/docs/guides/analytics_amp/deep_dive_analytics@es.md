@@ -1,12 +1,11 @@
 ---
 $title: Análisis profundo de AMP Analytics
 ---
+[TOC]
 
 En esta guía se analiza en detalle el
 [componente amp-analytics](/docs/reference/extended/amp-analytics.html)
 a través del desglose de una configuración de `amp-analytics` de ejemplo en los siguientes componentes fundamentales:
-
-[TOC]
 
 En el resto de la guía se usa esta configuración de ejemplo,
 con la cual se realiza un seguimiento de las vistas de página y los clics de los usuario en diferentes vínculos,
@@ -65,7 +64,7 @@ AMP está diseñado para admitir dos patrones comunes de recopilación de datos:
 Para enviar datos del análisis a un proveedor de herramientas de análisis,
 incluye el atributo `type` en la etiqueta `amp-analytics` y define su valor
 para el proveedor correspondiente, como se define en la
-[especificación de amp-analytics](/docs/reference/extended/amp-analytics.html).  
+[especificación de amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Por ejemplo: `<amp-analytics type="googleanalytics">` envía datos de análisis
 al proveedor de herramientas de análisis externo, Google Analytics.
@@ -81,7 +80,7 @@ de tu proveedor para obtener información adicional.
 Como se mencionó antes,
 puedes encontrar la lista de proveedores que ya realizaron la integración con AMP y también los vínculos
 a su documentación específica en la
-[especificación de amp-analytics](/docs/reference/extended/amp-analytics.html). 
+[especificación de amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Si eres proveedor de herramientas de análisis,
 puedes obtener más información acerca de la
@@ -99,7 +98,7 @@ en función de una solicitud específica.
 Si como editor tienes control sobre el archivo remoto,
 puedes realizar cualquier procesamiento en el servidor que sea necesario
 para estructurar los datos de configuración.
- 
+
 El primer paso para cargar una configuración remota es
 incluir el atributo config en la etiqueta `amp-analytics`:
 
@@ -136,7 +135,7 @@ en el valor de la cuenta de la URL remota (`"account": "UA-XXXXX-Y"`):
 
 **Importante:** AMP no valida usos múltiples de la misma variable.
 Los valores se completan siguiendo un orden de preferencia de sustitución de variables
-y los valores en las direcciones URL remotas son los primeros en ese orden 
+y los valores en las direcciones URL remotas son los primeros en ese orden
 (consulta [Orden de sustitución de variables](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
 
 ## Atributos requests, triggers y transport
@@ -146,10 +145,10 @@ El atributo `requests` define “los datos que se enviarán”
 y el destino del envío (las direcciones URL empleadas para transmitir datos).
 
 El atributo `triggers` describe el momento en que se deben enviar los datos del análisis;
-por ejemplo, cuando un usuario visualiza una página o cuando un usuario hace clic en un vínculo. 
+por ejemplo, cuando un usuario visualiza una página o cuando un usuario hace clic en un vínculo.
 
 El atributo `transport` especifica la manera de enviar una solicitud.
-Dicho de una manera más específica, el protocolo. 
+Dicho de una manera más específica, el protocolo.
 
 Continúa leyendo para obtener más información acerca de estas configuraciones.
 (También puedes hacerlo en la
@@ -197,7 +196,7 @@ a la solicitud y se establece el valor del parámetro en "AMP":
 El atributo `triggers` describe cuándo se debe enviar una solicitud de análisis.
 Contiene un par de valores claves: nombre y configuración del disparador.
 El nombre del disparador puede ser cualquier cadena compuesta
-por caracteres alfanuméricos (a-zA-Z0-9). 
+por caracteres alfanuméricos (a-zA-Z0-9).
 
 El siguiente
 elemento `amp-analytics`, por ejemplo, se configura para enviar una solicitud a
@@ -296,7 +295,7 @@ es el de mayor precedencia
 que esté habilitado, permitido y disponible.
 La precedencia es `beacon` > `xhrpost` > `image`.
 Si el agente de usuario del cliente no admite un método,
-se usa el método de mayor precedencia que sigue. 
+se usa el método de mayor precedencia que sigue.
 
 Incluye el atributo `transport` en tu configuración
 solo si deseas limitar las opciones de transporte;

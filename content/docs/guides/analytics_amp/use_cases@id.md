@@ -1,12 +1,11 @@
 ---
 $title: Kasus Penggunaan
 ---
+[TOC]
 
 Panduan ini memberikan satu set kasus penggunaan umum untuk melacak keterlibatan pengguna:
 
-[TOC]
-
-Ingin menambahkan kasus penggunaan? 
+Ingin menambahkan kasus penggunaan?
 [Beri tahu kami.](https://github.com/ampproject/docs/issues/new)
 
 Anda juga bisa berkontribusi pada kasus penggunaan Anda sendiri;
@@ -14,7 +13,7 @@ lihat [Cara Berkontribusi](https://www.ampproject.org/docs/support/contribute.ht
 
 ## Melacak tampilan halaman
 
-Ketahui cara melacak tampilan halaman menggunakan `amp-pixel` dan `amp-analytics`. 
+Ketahui cara melacak tampilan halaman menggunakan `amp-pixel` dan `amp-analytics`.
 
 ### Menggunakan amp-pixel
 
@@ -54,7 +53,7 @@ Mengirim data penayangan ke URL yang ditetapkan memakai
 ### Menggunakan amp-analytics - googleanalytics
 
 Mengirim data penayangan ke Google Analytics
-(lihat juga [Pelacakan halaman dalam Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
+(lihat juga [Pelacakan halaman dalam Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -178,7 +177,7 @@ ke 90% lebar `scroll`:
 
 Ketahui cara melacak interaksi sosial menggunakan
 [amp-analytics](/docs/reference/extended/amp-analytics.html),
-mengirim data kejadian ke URL yang ditetapkan, dan ke 
+mengirim data kejadian ke URL yang ditetapkan, dan ke
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Mengirim data ke URL yang ditetapkan

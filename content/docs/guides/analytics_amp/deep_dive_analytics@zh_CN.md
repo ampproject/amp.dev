@@ -1,12 +1,11 @@
 ---
 $title: 深入了解 AMP Analytics
 ---
+[TOC]
 
 本指南将深入探讨
 [amp-analytics 组件](/docs/reference/extended/amp-analytics.html)，
 将示例 `amp-analytics` 配置分解为以下关键构建基块：
-
-[TOC]
 
 本指南的其余部分均使用此配置示例，
 此示例跟踪页面视图和用户的链接点击，
@@ -65,7 +64,7 @@ AMP 设计为可支持两种常见数据集合模式：
 如需将分析数据发送到分析提供程序，
 请在 `amp-analytics` 标记中包括 `type` 属性，并将其值设置为相应的供应商（如
 [amp-analytics 规范](/docs/reference/extended/amp-analytics.html)中所定义）。
-  
+
 
 例如：`<amp-analytics type="googleanalytics">` 将分析数据发送给
 第三方分析提供程序 Google Analytics。
@@ -81,7 +80,7 @@ AMP 设计为可支持两种常见数据集合模式：
 如前所述，已与 AMP 集成的供应商的列表以及指向其特定文档的链接可在
 [amp-analytics 规范](/docs/reference/extended/amp-analytics.html)中找到。
 
- 
+
 
 如果您是分析供应商，
 请详细了解[将自己的分析配置集成到 AMP HTML 中](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)。
@@ -99,7 +98,7 @@ AMP 设计为可支持两种常见数据集合模式：
 如果您是发布者，可以控制远程文件，
 则可执行任何必要的服务器处理
 来构建配置数据。
- 
+
 加载远程配置的第一步是在 `amp-analytics` 标记中包括 config 属性：
 
 
@@ -146,10 +145,10 @@ JSON 对象中包含的配置只是分析帐户的变量值。
 以及在何处发送数据（用于传输数据的 URL）。
 
 `triggers` 属性描述应在何时发送分析数据，
-例如，在用户查看页面时，在用户点击链接时。 
+例如，在用户查看页面时，在用户点击链接时。
 
 `transport` 属性指定发送请求的方式，
-更具体地说，就是协议。 
+更具体地说，就是协议。
 
 请继续阅读以了解有关这些配置的详细信息。
 （您也可以在
@@ -197,7 +196,7 @@ JSON 对象中包含的配置只是分析帐户的变量值。
 `triggers` 属性描述应在何时发送分析请求。
 它包含 trigger-name 和 trigger-configuration 的键值对。
 触发器名称可以是由
-字母数字字符 (a-zA-Z0-9) 组成的任何字符串。 
+字母数字字符 (a-zA-Z0-9) 组成的任何字符串。
 
 例如，
 以下 `amp-analytics` 元素配置为在第一次加载文档以及每次点击 `a` 标记时将请求发送到 `https://example.com/analytics`：
@@ -296,7 +295,7 @@ AMP 支持以下触发器配置：
 
 优先级为 `beacon` > `xhrpost` > `image`。
 如果客户端的用户代理不支持某种方法，则使用已启用的下一最高优先级方法。
- 
+
 
 只有在想要限制传输选项时才需要在配置中包括 `transport` 属性，否则您可能会停止请求。
 

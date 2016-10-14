@@ -1,19 +1,50 @@
 ---
-$title: Supported Layouts
+$title: Layout & Media queries
 $order: 1
 ---
-
-Make your elements responsive;
-include `layout=responsive`.
-
 [TOC]
 
-## Supported values for layout attribute
+AMP supports both **media queries** &amp; **element queries**, plus comes with a powerful, built-in way to control the **layout** of individual elements. The `layout` attribute makes working with and creating fully responsive design much easier than if you'd use CSS alone.
 
-By default,
-use responsive layouts.
+## Responsive images, made easy
 
-Full list of supported values for the layout attribute are:
+Create responsive images by specifying the `width` and `height`, setting layout to `responsive`,
+and indicating with [`srcset`](/docs/guides/responsive/art_direction.html)
+which image asset to use based on varying screen sizes:
+
+[sourcecode:html]
+<amp-img
+    src="/img/narrow.jpg"
+    srcset="/img/wide.jpg 640w,
+           /img/narrow.jpg 320w"
+    width="1698"
+    height="2911"
+    layout="responsive"
+    alt="an image">
+</amp-img>
+[/sourcecode]
+
+This `amp-img` element automatically fits the width
+of its container element,
+and its height is automatically set to the aspect ratio
+determined by the given width and height. Try it out by resizing this browser window:
+
+<amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
+
+<aside class="success">
+  <strong>Tip:</strong>
+  <span>See our side-by-side live demo of <code>amp-img</code> for a basic and advanced example: <a href="https://ampbyexample.com/components/amp-img/">Live Demo</a></span>
+</aside>
+
+## The layout attribute
+
+The `layout` attribute gives you easy, per-element control over how your element
+should render on screen. Many of these things are possible with pure CSS – but
+they're much harder, and require a myriad of hacks. Use the `layout` attribute instead.
+
+### Supported values for  the `layout` attribute
+
+The following values can be used in the `layout` attribute:
 
 <table>
   <thead>
@@ -54,6 +85,11 @@ Full list of supported values for the layout attribute are:
       <td data-th="Description" class="col-twenty">No</td>
       <td data-th="Behavior">Element lets its children define its size, much like a normal HTML <code>div</code>. The component is assumed to not have specific layout itself but only act as a container. Its children are rendered immediately.</td>
     </tr>
+    <tr>
+      <td data-th="Layout type" class="col-twenty"><code>flex-item</code></td>
+      <td data-th="Description" class="col-twenty">No</td>
+      <td data-th="Behavior">Element and other elements in its parent take the parent container's remaining space when the parent is a flexible container (i.e., <code>display:flex</code>). The element size is determined by the parent element and the number of other elements inside the parent according to the <code>display:flex</code> CSS layout.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -65,16 +101,41 @@ the AMP runtime can default these values as the following:
 * [`amp-pixel`](/docs/reference/amp-pixel.html): Both width and height are defaulted to 0.
 * [`amp-audio`](/docs/reference/extended/amp-audio.html): The default width and height are inferred from browser.
 
-### What if the layout attribute isn’t defined?
+### What if the <code>layout</code> attribute isn’t specified?
 
-The layout behavior is determined as follows:
+If the <code>layout</code> attribute isn't specified, AMP tries to infer or guess
+the appropriate value:
 
-* If `height` is present and `width` is absent or equals to `auto`, `fixed-height` layout is assumed.
-* If `width` or `height` attributes are present along with the `sizes` attribute, `responsive` layout is assumed.
-* If `width` or `height` attributes are present, `fixed` layout is assumed.
-* If `width` and `height` are not present, `container` layout is assumed.
+<table>
+  <thead>
+    <tr>
+      <th data-th="Rule">Rule</th>
+      <th data-th="Inferred layout" class="col-thirty">Inferred layout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Rule"><code>height</code> is present and <code>width</code> is absent or equals to <code>auto</code></td>
+      <td data-th="Inferred layout"><code>fixed-height</code></td>
+    </tr>
+    <tr>
+      <td data-th="Rule"><code>width</code> or <code>height</code> attributes are present along with the <code>sizes</code> attribute</td>
+      <td data-th="Inferred layout"><code>responsive</code></td>
+    </tr>
+    <tr>
+      <td data-th="Rule"><code>width</code> or <code>height</code> attributes are present</td>
+      <td data-th="Inferred layout"><code>fixed</code></td>
+    </tr>
+    <tr>
+      <td data-th="Rule"><code>width</code> and <code>height</code> are not present</td>
+      <td data-th="Inferred layout"><code>container</code></td>
+    </tr>
+  </tbody>
+</table>
 
-## Using @media and media
+## Using media queries
+
+### CSS media queries
 
 Use [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)
 to control how the page layout looks and behaves, as you would do on any other website.
@@ -82,8 +143,13 @@ When the browser window changes size or orientation,
 the media queries are re-evaluated and elements are hidden and shown
 based on the new results.
 
-Learn more about controlling layout by applying media queries in
-[Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
+<aside class="success">
+  <strong>Tip:</strong>
+  <span>Learn more about controlling layout by applying media queries in
+<a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en">Use CSS media queries for responsiveness</a>.</span>
+</aside>
+
+### Element media queries
 
 One extra feature for responsive design available in AMP is the `media` attribute.
 This attribute can be used on every AMP element;
@@ -98,7 +164,7 @@ For example, here we have 2 images with mutually exclusive media queries.
     src="wide.jpg"
     width=466
     height=355
-    layout="responsive" >
+    layout="responsive">
 </amp-img>
 [/sourcecode]
 
@@ -110,109 +176,6 @@ Depending on the screen width, one or the other will be fetched and rendered.
     src="narrow.jpg"
     width=527
     height=193
-    layout="responsive" >
+    layout="responsive">
 </amp-img>
 [/sourcecode]
-
-## Using srcset and sizes
-
-Use the `srcset` attribute to control an element’s assets
-based on varying media expressions.
-In particular, use it for all [`amp-img`](/docs/reference/amp-img.html) tags
-to specify which image assets to use based on varying screen sizes.
-
-In this simple example,
-`srcset` specifies which image to use based on the screen width.
-The `w` descriptor tells the browser the width
-of each image in the list:
-
-[sourcecode:html]
-<amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w >
-</amp-img>
-[/sourcecode]
-
-**Note:** AMP supports the `w` descriptor across all browsers.
-
-Learn more about creating responsive images using `srcset`
-in [Using Responsive Images (Now)](http://alistapart.com/article/using-responsive-images-now).
-
-You can also use the `sizes` attribute along with `srcset`.
-The `sizes` attribute describes how to calculate the element size
-based on any media expression.
-Based on the element’s calculated size,
-the user agent selects the most relative source supplied by the `srcset` attribute.
-
-Consider the following example:
-
-[sourcecode:html]
-<amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w
-    sizes="(min-width: 650px) 50vw, 100vw" >
-</amp-img>
-[/sourcecode]
-
-The `sizes` attribute defines the element’s width to be 50% the size of the viewport
-when the viewport is 650px or more.
-For example, if the viewport is 800px,
-the element’s width is set to 400px.
-The browser then selects the `srcset` resource relative to 400px,
-assuming the device pixel ratio is 1,
-which in this instance is `narrow.jpg` (320px).
-
-**Important:** When sizes attribute is specified along with width and height,
-layout defaults to `responsive`.
-
-Learn more about how `sizes` and `srcset` attributes compare
-to media queries in this
-[Srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/) blog post.
-
-## Include placeholders and fallbacks
-
-### placeholder
-
-The element marked with the `placeholder` attribute acts
-as a placeholder for the parent AMP element.
-If specified, a `placeholder` element must be a direct child of the AMP element.
-
-[sourcecode:html]
-<amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
-    <amp-img placeholder src="preview.png" layout="fill"></amp-img>
-</amp-anim>
-[/sourcecode]
-
-By default, the placeholder is immediately shown for the AMP element,
-even if the AMP element's resources have not been downloaded or initialized.
-Once ready, the AMP element typically hides its placeholder and shows the content.
-
-**Note:** The placeholder doesn’t have to be an AMP element;
-any HTML element can act as the placeholder.
-
-### fallback
-
-Use the `fallback` attribute to indicate the fallback behavior
-for any element the browser doesn’t support.
-For example, use the `fallback` attribute to communicate to the user
-that the browser doesn’t support a particular feature:
-
-[sourcecode:html]
-<amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
-    poster="myvideo-poster.jpg" >
-  <div fallback>
-        <p>Your browser doesn’t support HTML5 video.</p>
-  </div>
-</amp-video>
-[/sourcecode]
-
-The `fallback` attribute can be set on any HTML element, not just AMP elements.
-If specified, the `fallback` element must be a direct child of the AMP element.
-
-### noloading
-
-Many AMP elements are whitelisted to show a "loading indicator",
-which is a basic animation that shows that the element has not yet fully loaded.
-Elements can opt out of this behavior by adding the `noloading` attribute.

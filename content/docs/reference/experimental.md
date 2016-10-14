@@ -1,5 +1,5 @@
 ---
-$title: Experimental Components
+$title: Experimental features
 $order: 5
 ---
 

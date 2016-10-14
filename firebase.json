@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "build",
+    "cleanUrls": true,
     "headers": [
       {
         "source": "**/*.@(jpg|jpeg|gif|png|svg|mp4)",
@@ -14,33 +15,68 @@
     ],
     "redirects": [
       {
+        "source": "/who",
+        "destination": "/learn/who/",
+        "type": 301
+      },
+      {
+        "source": "/who/",
+        "destination": "/learn/who/",
+        "type": 301
+      },
+      {
+        "source": "/docs/get_started/technical_overview.html",
+        "destination": "/learn/how-amp-works/",
+        "type": 301
+      },
+      {
+        "source": "/docs/get_started/about-amp.html",
+        "destination": "/learn/about-amp/",
+        "type": 301
+      },
+      {
         "source": "/docs",
-        "destination": "/docs/get_started/about-amp.html",
+        "destination": "/learn/about-amp/",
         "type": 301
       },
       {
         "source": "/docs/",
-        "destination": "/docs/get_started/about-amp.html",
+        "destination": "/learn/about-amp/",
         "type": 301
       },
       {
         "source": "/docs/index.html",
-        "destination": "/docs/get_started/about-amp.html",
+        "destination": "/learn/about-amp/",
+        "type": 301
+      },
+      {
+        "source": "/docs/support/contribute.html",
+        "destination": "/contribute/",
+        "type": 301
+      },
+      {
+        "source": "/docs/support/faqs.html",
+        "destination": "/support/faqs/",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-ad.html",
+        "destination": "/docs/reference/extended/amp-ad.html",
         "type": 301
       },
       {
         "source": "/faq",
-        "destination": "/docs/support/faqs.html",
+        "destination": "/support/faqs/",
         "type": 301
       },
       {
         "source": "/faq/",
-        "destination": "/docs/support/faqs.html",
+        "destination": "/support/faqs/",
         "type": 301
       },
       {
         "source": "/faq/index.html",
-        "destination": "/docs/support/faqs.html",
+        "destination": "/support/faqs/",
         "type": 301
       },
       {
@@ -56,6 +92,41 @@
       {
         "source": "/contact/",
         "destination": "https://github.com/ampproject/amphtml/issues/new",
+        "type": 301
+      },
+      {
+        "source": "/contact/",
+        "destination": "https://github.com/ampproject/amphtml/issues/new",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/extended.html",
+        "destination": "/docs/reference/components.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-img.html",
+        "destination": "/docs/reference/components/amp-img.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-pixel.html",
+        "destination": "/docs/reference/components/amp-pixel.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-ad.html",
+        "destination": "/docs/reference/components/amp-ad.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-video.html",
+        "destination": "/docs/reference/components/amp-video.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/extended/:post*",
+        "destination": "/docs/reference/components/:post*",
         "type": 301
       }
     ],

@@ -10,6 +10,9 @@
 @import '_grid.scss';
 @import '_lang_switcher.scss';
 @import '_syntax_highlighting.scss';
+@import '_tables.scss';
+@import '_callouts.scss';
+@import '_toc.scss';
 
 @import '_blog.scss';
 @import '_cards.scss';
@@ -17,6 +20,7 @@
 @import '_image-grid.scss';
 @import '_accordions.scss';
 @import '_lightbox.scss';
+@import '_sidebar.scss';
 @import '_footer.scss';
 
 @import 'pages/_home.scss';

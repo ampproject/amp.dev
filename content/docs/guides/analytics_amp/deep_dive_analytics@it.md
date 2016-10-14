@@ -1,12 +1,11 @@
 ---
 $title: Immersione nel mondo di AMP Analytics
 ---
+[TOC]
 
 Questa guida si addentra nella sfera del
 [componente amp-analytics](/docs/reference/extended/amp-analytics.html),
 scomponendo una configurazione campione di `amp-analytics` in questi blocchi predefiniti:
-
-[TOC]
 
 Il resto di questa guida usa il campione di configurazione,
 che consente di monitorare le visualizzazioni di pagina e i clic dell’utente sui link
@@ -65,7 +64,7 @@ AMP è progettato per supportare due modelli diffusi di raccolta dati:
 Per inviare i dati dell’analisi a un fornitore di strumenti di analisi,
 includi l’attributo `type` nel tag `amp-analytics` e imposta il suo valore
 per il fornitore pertinente, come definito nella
-[specifica amp-analytics](/docs/reference/extended/amp-analytics.html).  
+[specifica amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Ad esempio: `<amp-analytics type="googleanalytics">` invia i dati di analisi
 al fornitore di strumenti di analisi di terze parti, Google Analytics.
@@ -81,7 +80,7 @@ e le risorse di riferimento rese disponibili dal fornitore.
 Come precedentemente indicato,
 l’elenco di fornitori che hanno già incluso l’integrazione con AMP, nonché i link
 alla rispettiva documentazione specifica sono reperibili nella
-[specifica amp-analytics](/docs/reference/extended/amp-analytics.html). 
+[specifica amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Se sei un fornitore di strumenti di analisi,
 ottieni ulteriori informazioni sull’
@@ -99,7 +98,7 @@ della configurazione in base a una richiesta specifica.
 Se in quanto editore hai il controllo sul file remoto,
 puoi eseguire qualsiasi operazione di elaborazione necessaria sul lato server
 per costruire i dati di configurazione.
- 
+
 Il primo passo per caricare le configurazioni remote
 è quello di includere l’attributo config nel tag `amp-analytics`:
 
@@ -146,10 +145,10 @@ L’attributo `requests` definisce ‘quali dati vengono inviati’
 e dove vengono inviati (gli URL utilizzati per trasmettere i dati).
 
 L’attributo `triggers` indica quando devono essere inviati i dati di analisi,
-ad esempio, quando un utente visualizza una pagina o quando un utente fa clic su un link. 
+ad esempio, quando un utente visualizza una pagina o quando un utente fa clic su un link.
 
 L’attributo `transport` specifica come inviare una richiesta,
-più in particolare, il protocollo. 
+più in particolare, il protocollo.
 
 Più avanti puoi ottenere ulteriori informazioni su queste configurazioni
 (puoi anche approfondire queste configurazioni nel
@@ -197,7 +196,7 @@ alla richiesta e imposta il valore del parametro su "AMP":
 L’attributo `triggers` descrive quando deve essere inviata una richiesta di analisi.
 Contiene una coppia chiave-valore di nome-trigger e configurazione-trigger.
 Il nome trigger può essere qualsiasi stringa costituita da
-caratteri alfanumerici (a-zA-Z0-9). 
+caratteri alfanumerici (a-zA-Z0-9).
 
 Ad esempio,
 il seguente elemento `amp-analytics` è configurato per inviare una richiesta a
@@ -296,7 +295,7 @@ ed è quello abilitato, consentito e disponibile
 con la precedenza più alta.
 La precedenza è `beacon` > `xhrpost` > `image`.
 Se l’agente utente del client non supporta un metodo,
-viene utilizzato il metodo successivo abilitato con la precedenza più alta. 
+viene utilizzato il metodo successivo abilitato con la precedenza più alta.
 
 Include l’attributo `transport` nella configurazione
 solo se si desidera limitare le opzioni di trasferimento,

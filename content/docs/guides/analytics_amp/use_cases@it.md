@@ -1,12 +1,11 @@
 ---
 $title: Casistica
 ---
+[TOC]
 
 Questa guida offre una serie di tipologie di utilizzo comuni per seguire l’evoluzione del coinvolgimento degli utenti:
 
-[TOC]
-
-Vuoi aggiungere una tipologia di utilizzo? 
+Vuoi aggiungere una tipologia di utilizzo?
 [Comunicacelo.](https://github.com/ampproject/docs/issues/new)
 
 Puoi anche contribuire condividendo la tua casistica personale,
@@ -14,7 +13,7 @@ scopri [Come dare il tuo contributo](https://www.ampproject.org/docs/support/con
 
 ## Come monitorare le visualizzazioni di pagina
 
-Scopri come monitorare le visualizzazioni di pagina tramite `amp-pixel` e `amp-analytics`. 
+Scopri come monitorare le visualizzazioni di pagina tramite `amp-pixel` e `amp-analytics`.
 
 ### Uso di amp-pixel
 
@@ -54,7 +53,7 @@ Invia i dati sulla visualizzazione di pagina a un URL specifico utilizzando
 ### Uso di amp-analytics - googleanalytics
 
 Invia i dati sulla visualizzazione di pagina a Google Analytics
-(vedi anche [Monitoraggio delle pagine in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
+(vedi anche [Monitoraggio delle pagine in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -178,7 +177,7 @@ per il 90% della larghezza di `scroll`:
 
 Scopri come monitorare le interazioni con i social network utilizzando
 [amp-analytics](/docs/reference/extended/amp-analytics.html),
-inviando dati eventi a un URL specifico e a 
+inviando dati eventi a un URL specifico e a
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Invio di dati a un URL specifico

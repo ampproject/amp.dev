@@ -1,17 +1,50 @@
 {% extends "/views/base.html" %}
 
+{% set navmarkup %}
+{% with flat=1,usedDoc=g.doc('/content/learn/case-studies.md') %}
+{% include "/views/partials/nav.html" %}
+{% endwith %}
+{% endset %}
+
+{% block nav %}
+  {{ navmarkup|safe }}
+{% endblock %}
+
 {% block main %}
   <div class="container main">
+    {{ navmarkup|safe }}
     <div class="content">
       <article class="post">
 
-        <h1 class="post-title">{{ doc.title }}</h1>
+        {% if doc.logo %}
+        <div class="logos">
+          <amp-img layout="flex-item" src="/static/img/logo-blue.svg" width="66" height="28"></amp-img>
+          <span>+</span>
+          <amp-img layout="flex-item" src="/static/img/{{doc.logo.src}}" width="{{doc.logo.width}}" height="{{doc.logo.height}}"></amp-img>
+        </div>
+        {% endif %}
+
+        <h1 class="post-title">{{ doc.headline or doc.title }}</h1>
 
         <div class="post-content">
+          {% if doc.results %}
+          <div class="results">
+          {% for result in doc.results %}
+              <div><strong>{{result.stat}}</strong>{{result.description}}</div>
+          {% endfor %}
+          </div>
+          {% endif %}
           {{doc.html|render|safe}}
+
+          {% if doc.download %}
+          <p><a class="button" href="/static/img/{{doc.download}}">Download PDF Case study</a></p>
+          {% endif %}
         </div>
 
       </article>
     </div>
   </div>
+
+  {% include "/views/partials/footer.html" %}
+
 {% endblock %}

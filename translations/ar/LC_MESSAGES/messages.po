@@ -11,22 +11,31 @@ msgid "Ads"
 msgstr "الإعلانات"
 
 #: /content/includes/who.yaml
-msgid "Analaytics"
+msgid "Analytics"
 msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Asia"
 msgstr "آسيا"
 
-#: /content/includes/header.yaml
-msgid "Blog"
-msgstr "المدونة"
+#: /content/includes/menu.yaml
+msgid "Build"
+msgstr ""
+
 
 #: /content/includes/who.yaml
 msgid "CMS"
 msgstr ""
 
-#: /content/docs /content/includes/header.yaml
+#: /content/includes/who.yaml
+msgid "Content Platforms"
+msgstr ""
+
+#: /content/contribute /content/includes/menu.yaml
+msgid "Contribute"
+msgstr ""
+
+#: /content/docs
 msgid "Docs"
 msgstr "المستندات"
 
@@ -34,9 +43,9 @@ msgstr "المستندات"
 msgid "Europe"
 msgstr "أوروبا"
 
-#: /content/includes/header.yaml
-msgid "FAQ"
-msgstr "الأسئلة الشائعة"
+#: /content/includes/menu.yaml
+msgid "Examples"
+msgstr ""
 
 #: /content/includes/home.yaml
 msgid 
@@ -51,11 +60,12 @@ msgstr
 "أي أم بي) هو مبادرة مشروع مفتوح المصدر لتحقيق وجهة نظر تنصّ على أن)"
 "بإمكان دور النشر أن تنتج صفحات محسّنة خصيصا للأجهزة المحمولة مرة واحدة"
 "لتمكين تحميلها بشكل فوري في كل مكان."
+
 #: /content/includes/home.yaml
 msgid "GET STARTED"
 msgstr "البدء"
 
-#: /content/includes/home.yaml /content/docs/get_started
+#: /content/includes/home.yaml
 msgid "Get Started"
 msgstr "البدء"
 
@@ -63,17 +73,19 @@ msgstr "البدء"
 msgid "Get Started with AMP HTML"
 msgstr " إبدء مع أي أم بي أتش تي أم أل"
 
-#: /content/includes/header.yaml
-msgid "GitHub"
+#: /content/includes/menu.yaml
+msgid "Get started"
 msgstr ""
 
-#: /content/docs/guides
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
 msgstr "الدلائل"
+
 
 #: /views/base.html:35
 msgid "Home"
 msgstr "الصفحة الرئيسية"
+
 
 #: /content/includes/home.yaml
 msgid ""
@@ -95,6 +107,10 @@ msgstr ""
 msgid "Latin America"
 msgstr "أمريكا اللاتينية"
 
+#: /content/includes/menu.yaml /content/learn
+msgid "Learn"
+msgstr ""
+
 #: /content/includes/home.yaml
 msgid "Learn More"
 msgstr "تعلم المزيد"
@@ -113,6 +129,10 @@ msgstr ""
 #: /content/includes/who.yaml
 msgid "North America"
 msgstr "أمريكا الشمالية"
+
+#: /content/news
+msgid "News"
+msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Openness"
@@ -136,7 +156,7 @@ msgid ""
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
 msgstr ""
 
-#: /content/docs/reference
+#: /content/includes/menu.yaml /content/docs/reference
 msgid "Reference"
 msgstr "المراجع"
 
@@ -148,13 +168,9 @@ msgstr "خارطة الطريق"
 msgid "Speed"
 msgstr "السرعة"
 
-#: /content/docs/support
+#: /content/includes/menu.yaml /content/support
 msgid "Support"
 msgstr "الدعم"
-
-#: /content/includes/who.yaml
-msgid "Tech Platform"
-msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Technical Introduction"
@@ -163,6 +179,7 @@ msgstr "تمهيد للتكنلوجيا"
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP HTML"
 msgstr "شركات التكنلوجيا اللاتي يسعملن أي أم بي"
+
 
 #: /content/includes/home.yaml
 msgid ""
@@ -173,6 +190,10 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Tutorial"
+msgstr ""
+
+#: /content/includes/menu.yaml /content/docs/get_started
+msgid "Tutorials"
 msgstr ""
 
 #: /content/includes/who.yaml
@@ -189,10 +210,6 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "What contributors are saying"
-msgstr ""
-
-#: /content/includes/header.yaml
-msgid "Who"
 msgstr ""
 
 #: /content/includes/home.yaml
@@ -290,6 +307,10 @@ msgstr ""
 #: /content/includes/home.yaml
 msgid "new_york_times"
 msgstr "النيو يورك تايمز"
+
+#: /content/includes/menu.yaml
+msgid "news"
+msgstr ""
 
 #: /content/includes/home.yaml
 msgid "newscorp_australia"

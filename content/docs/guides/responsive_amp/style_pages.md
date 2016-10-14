@@ -2,6 +2,8 @@
 $title: Supported CSS
 $order: 0
 ---
+[TOC]
+
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets
 (with the exception of [custom fonts](#the-custom-fonts-exception)).
@@ -13,61 +15,12 @@ All styles must live in the head of the document
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
-**Note:**
-AMP components come with default styles
+<aside class="note">
+  <strong>Note:</strong>
+  <span>AMP components come with default styles
 to make authoring responsive pages reasonably easy.
-These styles are defined in the
-[`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
-
-[TOC]
-
-## Using CSS preprocessors
-
-The generated output of preprocessors works just as well in AMP as any other web page.
-For example, the [ampproject.org](https://www.ampproject.org/) site uses
-[Sass](http://sass-lang.com/).
-(We use [Grow](http://grow.io/) to build the static AMP pages
-that make up the [ampproject.org](https://www.ampproject.org/) site.)
-
-When using preprocessors,
-pay special attention to what you include; load only what your pages use.
-For example, the
-[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-includes all required AMP mark-up and the inlined CSS from the `*.scss` source files.
-It also includes the custom element script for
-[`amp-youtube`](/docs/reference/extended/amp-youtube.html), among others,
-so that many pages across the site can include embedded youtube videos.
-
-[sourcecode:html] {% raw %}
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-
-  <title>Accelerated Mobile Pages Project</title>
-  <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
-  <style amp-custom>
-  {% include "/assets/css/main.min.css" %}
-  </style>
-
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-</head>
-{% endraw %} [/sourcecode]
-
-To see how the above translates into formatted AMP HTML,
-view the source for any page in [ampproject.org](https://www.ampproject.org/).
-(In Chrome, right-click and `View Page Source`.)
+These styles are defined in the <a href="https://github.com/ampproject/amphtml/blob/master/css/amp.css"><code>amp.css</code></a>.</span>
+</aside>
 
 ## Disallowed styles
 
@@ -76,7 +29,7 @@ The following styles aren’t allowed in AMP pages:
 <table>
   <thead>
     <tr>
-      <th data-th="Banned style">Banned style</th>
+      <th class="col-thirty" data-th="Banned style">Banned style</th>
       <th data-th="Description">Description</th>
     </tr>
   </thead>
@@ -87,7 +40,7 @@ The following styles aren’t allowed in AMP pages:
       	within a <code>&lt;style amp-custom&gt;</code> tag.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code>!</code>important qualifier </td>
+      <td data-th="Banned style"><code>!important</code> qualifier </td>
       <td data-th="Description">Usage is not allowed.
       This is a necessary requirement to enable AMP to enforce its element sizing rules.</td>
     </tr>
@@ -127,21 +80,33 @@ The following styles aren’t allowed in AMP pages:
   </tbody>
 </table>
 
-## White-listed transition and animation properties
+## Restricted styles
 
-AMP only allows transitions and animations of properties
-that can be GPU accelerated in common browsers.
-The AMP project currently whitelists `opacity`, `transform`,
-and `-vendorPrefix-transform`.
+The following styles are allowed, but are restricted in terms of which values
+they support:
 
-In the following examples, `<property>` needs to be in the whitelist:
-
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
-
-The `overflow` property (and `overflow-y`, `overflow-x`)
-may not be styled as “auto” or “scroll”.
-No user-defined element in an AMP document may have a scrollbar.
+<table>
+  <thead>
+    <tr>
+      <th class="col-thirty" data-th="Banned style">Restricted style</th>
+      <th data-th="Description">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Restricted style"><code>transition</code> property</td>
+      <td data-th="Description">Only GPU-accelerated properties (currently <code>opacity</code>, <code>transform</code> and <code>-vendorPrefix-transform</code>).</td>
+    </tr>
+    <tr>
+      <td data-th="Restricted style"><code>@keyframes {...}</code></td>
+      <td data-th="Description">Only GPU-accelerated properties (currently <code>opacity</code>, <code>transform</code> and <code>-vendorPrefix-transform</code>).</td>
+    </tr>
+    <tr>
+      <td data-th="Restricted style"><code>overflow (-x, -y)</code></td>
+      <td data-th="Description">May not be styled as <code>auto</code> or <code>scroll</code>. No user-defined element in an AMP document may have a scrollbar.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## The custom fonts exception
 
@@ -154,8 +119,8 @@ if they support CSS-only integrations and serve over HTTPS.
 Currently, only these origins are whitelisted
 and allowed for font serving via link tags:
 
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
+* **https://fast.fonts.net**
+* **https://fonts.googleapis.com**
 
 Example link tag pointing to the whitelisted font provider, Google Fonts:
 
@@ -166,3 +131,51 @@ Example link tag pointing to the whitelisted font provider, Google Fonts:
 Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face).
 Fonts included via `@font-face` must be fetched
 via the HTTP or HTTPS scheme.
+
+## Using CSS preprocessors
+
+The generated output of preprocessors works just as well in AMP as any other web page.
+For example, the [ampproject.org](https://www.ampproject.org/) site uses
+[Sass](http://sass-lang.com/).
+(We use [Grow](http://grow.io/) to build the static AMP pages
+that make up the [ampproject.org](https://www.ampproject.org/) site.)
+
+When using preprocessors,
+pay special attention to what you include; load only what your pages use.
+For example, the
+[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
+includes all required AMP mark-up and the inlined CSS from the `*.scss` source files.
+It also includes the custom element script for
+[`amp-youtube`](/docs/reference/extended/amp-youtube.html), among others,
+so that many pages across the site can include embedded youtube videos.
+
+[sourcecode:html]{% raw %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+
+  <title>Accelerated Mobile Pages Project</title>
+  <link rel="shortcut icon" href="/static/img/amp_favicon.png">
+  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
+  <style amp-custom>
+  {% include "/assets/css/main.min.css" %}
+  </style>
+
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+</head>
+{% endraw %}[/sourcecode]
+
+To see how the above translates into formatted AMP HTML,
+view the source for any page in [ampproject.org](https://www.ampproject.org/).
+(In Chrome, right-click and `View Page Source`.)

@@ -14,7 +14,6 @@
     }
   }
 
-  &.absolute,
   &.fixed {
     transform: translateY(0%);
     transition: all .4s ease;
@@ -23,56 +22,6 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-  }
-
-  &.absolute {
-    position: absolute;
-  }
-
-  &.nav--pinned,
-  &.nav--unpinned,
-  &.nav--top {
-    position: fixed;
-
-    @include max-screen($mobile-breakpoint) {
-      position: relative;
-    }
-  }
-
-  &.nav--pinned,
-  &.nav--unpinned {
-    background: $color-midblue;
-  }
-
-  &.nav--top {
-    background-color: transparent;
-  }
-
-
-  &.hidden {
-    display: block;
-
-    // Auto-hide header on mobile only.
-    @include max-screen($mobile-breakpoint) {
-      transform: translateY(-100%);
-    }
-  }
-
-  &.menu-open {
-    transform: translate(-243px, 0px);
-  }
-
-  .wrap {
-    // background-color: white;
-
-    @include max-screen($mobile-breakpoint) {
-      color: transparent;
-    }
-  }
-
-  .content.mobile-show {
-    padding: 0 10px 5px;
-
   }
 
   .nav-container {
@@ -86,7 +35,6 @@
     justify-content: flex-start;
 
     font-size: 20px;
-    letter-spacing: 0.04em;
     margin-left: 0;
     font-weight: 300;
 
@@ -100,23 +48,20 @@
 
     .header-title {
       color: $color-midblue;
-      font-family: Roboto, verdana, arial, sans-serif;
-      padding: 10px 10px 10px 50px;
-      margin: 18px 0;
+      padding: $header-padding $header-padding $header-padding ($header-padding + 20px);
+      margin: 0;
       width: auto;
       text-transform: none;
       white-space: nowrap;
 
       background-image: url('/static/img/logo-blue.svg');
       background-repeat: no-repeat;
-      background-size: 40px 40px;
+      background-size: 100%;
       background-position: center left;
 
       @include max-screen($mobile-breakpoint) {
         width: auto;
-        padding: 10px 0 10px 40px;
-        margin: 14px 0;
-        background-size: 30px 30px;
+        margin: 0;
       }
     }
 
@@ -131,12 +76,12 @@
     justify-content: center;
 
     &.right {
-      letter-spacing: 0.04em;
       font-size: 15px;
     }
   }
 
   .tab {
+    position: relative;
     color: $color-grey-800;
     padding: 6px;
     margin: 0 4px;
@@ -146,69 +91,139 @@
 
     transition: .1s ease color;
 
-    @include max-screen($mobile-breakpoint) {
-      margin-left: auto;
-      padding: 10px 12px;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 3px;
+      background-color: $color-midblue;
+
+      transition: .1s ease opacity;
+      opacity: 0;
     }
 
-    &.desktop {
-      display: flex;
-      align-items: center;
-      position: relative;
+    &:hover,
+    &.active {
+      color: $color-midblue;
+    }
 
+    &.active {
       &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        height: 3px;
-        background-color: $color-midblue;
-
-        transition: .1s ease opacity;
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      &:hover,
-      &.is-active {
-        color: $color-midblue;
-
-        &:after {
-          opacity: 1;
-          visibility: visible;
-        }
+        opacity: 1;
       }
     }
+
   }
 
   .tab.hamburger {
-    background: none;
+    background-color: transparent;
+    background-image: url("/static/img/hamburger.svg");
+    background-repeat: no-repeat;
+    background-size: 30px 24px;
+    background-position: center center;
     border: none;
     margin: 0;
     padding: 0;
+    width: 40px;
+    height: 40px;
     display: none;
-    pointer: cursor;
+    cursor: pointer;
     align-self: center;
   }
 
   @include max-screen($mobile-breakpoint) {
-    .tab.desktop,
+    div.tab,
     .desktop {
       display: none;
     }
     .tab.hamburger {
       display: inline-block;
-
-      background-image: url("/static/img/hamburger.svg");
-      background-repeat: no-repeat;
-      background-size: 30px 24px;
-      background-position: center center;
-
-      width: 40px;
-      height: 40px;
     }
+  }
+
+  div.tab {
+
+    position: relative;
+
+    > a {
+
+      position: relative;
+      top: 25px;
+      color: inherit;
+      text-decoration: none;
+
+      &:after {
+        display: inline-block;
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid currentColor;
+        margin-left: 5px;
+        padding-bottom: 2px;
+      }
+    }
+
+    > ul {
+      list-style: none;
+      position: absolute;
+      min-width: 136px;
+      top: 54px;
+      left: -8px;
+      text-align: left;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(0, 10px);
+      transition: 0.2s ease-out;
+      z-index: 1;
+      will-change: transform;
+
+      background: #fff;
+      box-shadow:
+          0 2px 2px 0 rgba(0, 0, 0, 0.14),
+          0 1px 5px 0 rgba(0, 0, 0, 0.12),
+          0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+      li {
+        padding: 6px 14px;
+        box-sizing: border-box;
+        font-weight: 400;
+        font-size: inherit;
+
+        &:hover {
+          background: #f0f0f0;
+        }
+      }
+
+      li.external {
+        padding-right: 26px;
+        a {
+          background-size: 12px 12px;
+          background-repeat: no-repeat;
+          background-position: right 2px;
+          padding-right: 16px;
+        }
+        &:hover {
+          a {
+            background-image: url(/static/img/ic_open_in_new_black.svg);
+          }
+        }
+      }
+
+    }
+
+    &:hover {
+      > ul {
+        opacity: 1;
+        pointer-events: all;
+        transform: translate(0, 0);
+      }
+    }
+
   }
 
 }
@@ -216,11 +231,10 @@
 .rtl header {
   .left-nav {
     .header-title {
-      padding: 10px 50px 10px 10px;
+      padding: $header-padding ($header-padding + 20px) $header-padding $header-padding;
 
       @include max-screen($mobile-breakpoint) {
         width: auto;
-        padding: 10px 40px 10px 0;
       }
 
       background-position: center right;
@@ -229,40 +243,5 @@
 
   .alt.right {
     text-align: left;
-  }
-}
-
-amp-sidebar .hamburger {
-  display: inline-block;
-  background-image: url("/static/img/hamburger.svg");
-  background-repeat: no-repeat;
-  background-size: 30px 24px;
-  background-position: center center;
-  background-color: transparent;
-  width: 40px;
-  height: 40px;
-  border: none;
-  position: absolute;
-  top: 13px;
-  right: 18px;
-  z-index: 1;
-}
-
-amp-sidebar {
-  ul {
-    list-style-type: square;
-    padding-right: 1em;
-  }
-}
-
-.rtl amp-sidebar {
-  ul {
-    padding-right: 0;
-    padding-left: 1em;
-  }
-
-  .hamburger {
-    right: auto;
-    left: 18px;
   }
 }

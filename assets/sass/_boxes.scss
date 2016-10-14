@@ -14,6 +14,10 @@
   flex: 0 0 48%;
   flex: 0 0 calc(50% - #{$margin / 2});
 
+  @include max-screen($tablet-portrait-breakpoint) {
+    flex-basis: 100%;
+  }
+
   &__inner {
     padding: 50px;
     display: flex;

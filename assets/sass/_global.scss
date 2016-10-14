@@ -28,6 +28,10 @@ img {
   max-width: 100%;
 }
 
+strong, b {
+  font-weight: 600;
+}
+
 /**
  * Headings
  */
@@ -110,60 +114,6 @@ blockquote {
 }
 
 /**
- * Code formatting
- */
-code {
-    font-size: 15px;
-    border: 1px solid $color-lightgrey;
-    border-radius: 3px;
-    color: $color-grey-800;
-}
-
-code {
-    padding: 1px 5px;
-}
-
-.rtl code {
-	direction: ltr;
-}
-
-/**
- * Tables
- */
-
-table {
-  border-collapse: collapse;
-}
-
-td, th {
-  border: 1px solid #FFFFFF;
-  background: #F7F7F7;
-  padding: 0.5rem;
-  text-align: left;
-}
-
-.rtl td,
-.rtl th {
-  text-align: right;
-}
-
-td.col-fourty {
-  width: 40%;
-}
-
-td.col-thirty {
-  width: 30%;
-}
-
-th {
-  background: #eee;
-}
-
-th.col-twenty {
-  width: 20%
-}
-
-/**
  * Lists
  */
 
@@ -176,7 +126,7 @@ p {
   @include text-body();
 
   a {
-    font-weight: 300;
+    font-weight: 400;
   }
 
   &.subtitle {
@@ -260,7 +210,6 @@ figure {
   display: none;
 }
 
-
 .go-button {
   display: inline-block;
   background-color: $color-midblue;
@@ -303,7 +252,6 @@ figure {
     }
   }
 }
-
 
 .desaturate {
 
@@ -369,4 +317,29 @@ amp-lightbox {
 
 .center-content {
   text-align: center;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }

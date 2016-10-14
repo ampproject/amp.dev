@@ -1,12 +1,11 @@
 ---
 $title: Casos de uso
 ---
+[TOC]
 
 Este guia oferece um conjunto de casos de uso comuns para rastrear o envolvimento do usuário:
 
-[TOC]
-
-Deseja adicionar um caso de uso? 
+Deseja adicionar um caso de uso?
 [Entre em contato.](https://github.com/ampproject/docs/issues/new)
 
 Você também pode colaborar com seus próprios casos;
@@ -14,7 +13,7 @@ consulte [Como colaborar](https://www.ampproject.org/docs/support/contribute.htm
 
 ## Rastrear visualizações de páginas
 
-Saiba como rastrear visualizações de páginas usando `amp-pixel` e `amp-analytics`. 
+Saiba como rastrear visualizações de páginas usando `amp-pixel` e `amp-analytics`.
 
 ### Usando amp-pixel
 
@@ -54,7 +53,7 @@ Envie dados de page view a um URL específico usando
 ### Usando amp-analytics - googleanalytics
 
 Envie dados de page view ao Google Analytics
-(veja também [Rastreamento de páginas no Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)): 
+(veja também [Rastreamento de páginas no Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">

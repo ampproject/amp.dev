@@ -1,0 +1,27 @@
+menu:
+  - href: /content/learn/about-amp.md
+    copy@: Learn
+    collection: learn
+  - href: /content/docs/get_started/create.md
+    copy@: Build
+    collection: docs
+    children:
+      - href: /content/docs/get_started/create.md
+        copy@: "Get started"
+      - href: /content/docs/get_started/create.md
+        copy@: "Tutorials"
+      - href: /content/docs/guides/responsive_amp.md
+        copy@: "Guides"
+      - href: /content/docs/reference/components.md
+        copy@: "Reference"
+      - href: https://ampbyexample.com/
+        copy@: "Examples"
+  - href: https://amphtml.wordpress.com/
+    copy@: news
+    collection: news
+  - href: /content/contribute/contribute.md
+    copy@: Contribute
+    collection: contribute
+  - href: /content/support/faqs.md
+    copy@: Support
+    collection: support

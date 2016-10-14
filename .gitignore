@@ -6,7 +6,7 @@ node_modules
 build
 assets/css/*
 
-content/docs/reference/amp-*
+content/contribute/governance.md
+content/learn/design-principles.md
 content/docs/reference/spec.md
-content/docs/reference/extended.md
-content/docs/reference/extended/*.md
+content/docs/reference/components/*.md

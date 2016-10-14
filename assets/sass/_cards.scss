@@ -17,6 +17,10 @@
   flex-direction: column;
   flex: 0 0 31%; // IE10: calc not allowed in flex
   flex: 0 0 calc(33% - 10px);
+
+  @include max-screen($tablet-portrait-breakpoint) {
+    flex-basis: 100%;
+  }
 }
 
 .card__title {

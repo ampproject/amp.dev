@@ -1,12 +1,11 @@
 ---
 $title: ユースケース
 ---
+[TOC]
 
 このガイドでは、ユーザー エンゲージメントをトラッキングするための一般的なユースケースをいくつか紹介します。
 
-[TOC]
-
-ユースケースの追加要求は 
+ユースケースの追加要求は
 [こちらからお願いします](https://github.com/ampproject/docs/issues/new)。
 
 自身のユースケースを公開することもできます。詳細は、[AMP プロジェクトに貢献する方法](https://www.ampproject.org/docs/support/contribute.html)をご覧ください。
@@ -14,7 +13,7 @@ $title: ユースケース
 
 ## ページビューをトラッキングする
 
-`amp-pixel` と `amp-analytics` を使ってページビューをトラッキングする方法を説明します。 
+`amp-pixel` と `amp-analytics` を使ってページビューをトラッキングする方法を説明します。
 
 ### amp-pixel を使う
 
@@ -54,7 +53,7 @@ $title: ユースケース
 ### amp-analytics を使う（googleanalytics）
 
 以下の例は、Google アナリティクスにページビュー データを送信しています
-（[Google アナリティクスでページトラッキングをする](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)もご確認ください）。 
+（[Google アナリティクスでページトラッキングをする](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)もご確認ください）。
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">

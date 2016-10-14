@@ -1,0 +1,51 @@
+.main .content {
+
+  .toc {
+
+    @include min-screen($tablet-breakpoint) {
+      float: right;
+      max-width: 30%;
+    }
+
+    @include min-screen(1460) {
+      max-width: auto;
+      position: absolute;
+      right: -260px;
+      width: 220px;
+    }
+
+    padding: 1em 1em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    border-left: 4px solid $color-midblue;
+    background: #fff;
+
+    &::before {
+      content: "Contents";
+    }
+
+    ul,
+    ol {
+      margin-left: 20px;
+      list-style: none;
+
+      li {
+        font-size: 13px;
+        line-height: 16px;
+        margin-top: 8px;
+      }
+    }
+
+    > ul,
+    > ol {
+      margin-left: 0;
+    }
+
+  }
+
+  /* special case where our anchor-link hack breaks */
+  .toc ~ h2::before {
+    display: none;
+  }
+
+}

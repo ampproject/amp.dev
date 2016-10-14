@@ -100,12 +100,13 @@ amp-sidebar .language {
   width: auto;
   box-shadow: none;
   height: 66px;
-  margin-bottom: 12px;
-  background: #f9f9f9;
+  margin-bottom: 0;
+  background: #2196F3;
 
   amp-accordion {
     width: auto;
     height: 66px;
+    z-index: 2;
   }
 
   /*
@@ -123,23 +124,46 @@ amp-sidebar .language {
 
   .current,
   .others div {
-    background: #f9f9f9;
-    border-bottom: 1px solid #eee;
+    background: #2196F3;
+    border-bottom: 1px solid #0976cc;
     padding-left: 16px;
-    padding-top: 25px;
+    padding-top: 23px;
     padding-bottom: 6px;
     height: 66px;
+
+    &:hover {
+      background-image: none;
+    }
 
     &.current {
       background: none;
       border-bottom: 1px solid #eee;
+      padding-right: 58px;
+
+        a::after {
+          content: "▾";
+          display: inline-block;
+          position: relative;
+          color: #fff;
+          top: -5px;
+          left: 5px;
+        }
+
       span {
-        color: #424242;
+        color: #fff;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 104px;
+        display: inline-block;
       }
     }
 
     a {
       padding-left: 0;
+      span {
+        color: #fff;
+      }
     }
 
   }

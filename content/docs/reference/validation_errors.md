@@ -443,10 +443,8 @@ They refer to expected tags:
 This error occurs when a tag has both of the mutually exclusive attributes.
 For example, only one is allowed for the following tags:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` or `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` or `src`
 * [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` or `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` or `data-videoid`
+* [amp-jwplayer](/docs/reference/extended/amp-jwplayer.html): `data-media-id` or `data-playlist-id`
 
 ### Missing mandatory attribute from list
 

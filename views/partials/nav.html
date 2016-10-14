@@ -1,27 +1,23 @@
+{% set usedDoc = usedDoc or doc %}
+
 {% macro render_item(item) -%}
   {% set sub_collection = g.collection(item.collection.pod_path + '/' + item.base) %}
-  {% set open = sub_collection.pod_path in doc.pod_path[:-3] %}
-
+  {% set open = sub_collection.pod_path in usedDoc.pod_path[:-3] %}
   {% if doc == item %}
-    <li class="current">
-      <span>{{_(item.title)}}</span>
+<li class="current">
+          <span>{{_(item.title)}}</span>
   {% else %}
-    <li>
-      <a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a>
+<li>
+          <a href="{{item.goto or item.url.path}}"{% if item.goto %} class="external"{% endif %}>{{_(item.title)}}</a>
   {% endif %}
-
   {% if open and sub_collection.exists %}
-    {{ render_children(item, sub_collection.docs(locale=doc.locale)) }}
+        {{ render_children(item, sub_collection.docs(locale=usedDoc.locale)) }}
   {% endif %}
-  </li>
+        </li>
 {% endmacro %}
-
-
 {% macro tag(item) -%}
   {{"ol" if item.numbered else "ul"}}
 {%- endmacro %}
-
-
 {% macro render_children(item, docs) -%}
   <{{tag(item)}}>
     {% for child in docs %}
@@ -29,18 +25,30 @@
     {% endfor %}
   </{{tag(item)}}>
 {%- endmacro %}
-
-<nav>
+<nav{% if flat %} class="flat"{% endif %}>
+{% if flat %}
+<ul>
+  <li>
+    <h2>{{_(usedDoc.collection.title)}}</h2>
+    <ul>
+    {% for item in usedDoc.collection.docs(recursive=false, locale=usedDoc.locale) %}
+{{render_item(item)}}
+    {% endfor %}
+    </ul>
+  </li>
+</ul>
+{% else %}
   <ul>
     {% for collection in g.collection('docs').collections() %}
     <li>
       <h2>{{_(collection.title)}}</h2>
       <ul>
-        {% for item in collection.docs(recursive=false, locale=doc.locale) %}
-          {{render_item(item)}}
-        {% endfor %}
+      {% for item in collection.docs(recursive=false, locale=doc.locale) %}
+        {{render_item(item)}}
+      {% endfor %}
       </ul>
     </li>
     {% endfor %}
   </ul>
+{% endif  %}
 </nav>

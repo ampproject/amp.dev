@@ -1,4 +1,4 @@
-grow_version: ">=0.0.65"
+grow_version: ">=0.0.66"
 home: /content/pages/home.html
 
 localization:
@@ -25,6 +25,8 @@ localization:
 static_dirs:
 - static_dir: /assets/
   serve_at: /static/
+- static_dir: /pwa/
+  serve_at: /
 
 preprocessors:
 - kind: gulp

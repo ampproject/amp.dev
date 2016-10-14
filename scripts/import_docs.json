@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Design Principles",
+        "order": 3,
+        "from": "DESIGN_PRINCIPLES.md",
+        "to": "learn/design-principles.md",
+        "toc": true
+    },
+    {
+        "title": "Open Source Governance",
+        "order": 4,
+        "from": "GOVERNANCE.md",
+        "to": "contribute/governance.md"
+    },
+    {
+        "title": "AMP HTML Specification",
+        "order": 2,
+        "from": "spec/amp-html-format.md",
+        "to": "docs/reference/spec.md"
+    }
+]

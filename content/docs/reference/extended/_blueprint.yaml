@@ -1,4 +1,0 @@
-$view: /views/doc.html
-$path: /docs/reference/extended/{base}.html
-$localization:
-  path: /{locale}/docs/reference/extended/{base}.html
