@@ -101,11 +101,6 @@ $order: 0
       <td data-th="Restricted style"><code>@keyframes {...}</code></td>
       <td data-th="Description">GPU 가속 속성에서만 허용합니다 (현재는 <code>opacity</code>, <code>transform</code>, <code>-vendorPrefix-transform</code>).</td>
     </tr>
-    <tr>
-      <td data-th="Restricted style"><code>overflow (-x, -y)</code></td>
-      <td data-th="Description"><code>auto</code>나 <code>scroll</code>은 적용되지 않을 수 있습니다.
-      AMP 문서 내 사용자 정의 요소는 스크롤바가 없을 수도 있습니다.</td>
-    </tr>
   </tbody>
 </table>
 
