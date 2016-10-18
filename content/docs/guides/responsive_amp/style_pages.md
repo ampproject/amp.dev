@@ -101,10 +101,6 @@ they support:
       <td data-th="Restricted style"><code>@keyframes {...}</code></td>
       <td data-th="Description">Only GPU-accelerated properties (currently <code>opacity</code>, <code>transform</code> and <code>-vendorPrefix-transform</code>).</td>
     </tr>
-    <tr>
-      <td data-th="Restricted style"><code>overflow (-x, -y)</code></td>
-      <td data-th="Description">May not be styled as <code>auto</code> or <code>scroll</code>. No user-defined element in an AMP document may have a scrollbar.</td>
-    </tr>
   </tbody>
 </table>
 
