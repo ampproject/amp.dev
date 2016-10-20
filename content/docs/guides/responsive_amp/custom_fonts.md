@@ -43,10 +43,9 @@ within your AMP stylesheet:
 </style>
 [/sourcecode]
 
-<aside class="note">
-  <strong>Note:</strong>
-  <span>Fonts included via <code>@font-face</code> must be fetched
-via the HTTP or HTTPS scheme.</span>
-</aside>
+{% call callout('Note', type='note') %}
+Fonts included via `@font-face` must be fetched
+via the HTTP or HTTPS scheme.
+{% endcall %}
 
 

@@ -19,10 +19,9 @@ We provide equivalent components for the following reasons:
 * We need to control network requests to [lazy load and prioritize resources
 effectively](/learn/how-amp-works/#prioritize-resource-loading)
 
-<aside class="caution">
-  <strong>Caution:</strong>
-  <span>While they're not supported, they <i>will</i> render, but AMP won't <a href="/docs/guides/validate.html">validate your pages</a> and you won't get all the benefits AMP provides.</span>
-</aside>
+{% call callout('Caution', type='caution') %}
+While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/guides/validate.html) and you won't get all the benefits AMP provides.
+{% endcall %}
 
 ## Images
 
@@ -46,10 +45,9 @@ images. In its most basic form, all you have to do is to add `layout="responsive
 </amp-img>
 [/sourcecode]
 
-<aside class="success">
-  <strong>Read on:</strong>
-  <span>Learn more about <a href="/docs/guides/responsive/control_layout.html">advanced layout techniques</a>.</span>
-</aside>
+{% call callout('Read on', type='success') %}
+Learn more about [advanced layout techniques](/docs/guides/responsive/control_layout.html).
+{% endcall %}
 
 ### Behavior and placeholders
 
@@ -57,10 +55,9 @@ The AMP HTML runtime can effectively manage image resources,
 choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
-<aside class="success">
-  <strong>Read on:</strong>
-  <span>Learn how to <a href="/docs/guides/responsive/placeholders.html">provide fallbacks and placeholders for images</a>.</span>
-</aside>
+{% call callout('Read on', type='success') %}
+Learn how to [provide fallbacks and placeholders for images](/docs/guides/responsive/placeholders.html).
+{% endcall %}
 
 ## Animated images
 
@@ -74,11 +71,10 @@ and provides additional functionality to manage loading and playing of animated 
 </amp-anim>
 [/sourcecode]
 
-<aside class="note">
-  <strong>Note:</strong>
-  <span>Include <code>&lt;script async custom-element="amp-anim"
-  src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"&gt;&lt;/script&gt;</code> in the head of your page to use this component.</span>
-</aside>
+{% call callout('Note', type='note') %}
+Include `<script async custom-element="amp-anim"
+  src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` in the head of your page to use this component.
+{% endcall %}
 
 ## Video
 
@@ -124,8 +120,7 @@ if the browser doesn't support HTML5 audio, for example:
 </amp-audio>
 [/sourcecode]
 
-<aside class="note">
-  <strong>Note:</strong>
-  <span>Include <code>&lt;script async custom-element="amp-anim"
-  src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"&gt;&lt;/script&gt;</code> in the head of your page to use this component.</span>
-</aside>
+{% call callout('Note', type='note') %}
+Include `<script async custom-element="amp-audio"
+  src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` in the head of your page to use this component.
+{% endcall %}

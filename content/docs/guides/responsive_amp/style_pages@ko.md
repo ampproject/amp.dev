@@ -13,13 +13,10 @@ $order: 0
 ([Add styles to a page](/docs/guides/validate.html#add-styles-to-a-page)를 참고).
 하지만 CSS 전처리기를 사용할 수 있으며 더 나은 콘텐츠 관리를 위해 정적 페이지를 빌드하는 템플릿을 사용할 수 있습니다.
 
-<aside class="note">
-  <strong>노트:</strong>
-  <span>
+{% call callout('노트', type='note') %}
     AMP 컴포넌트는 반응형 페이지를 꽤 쉽게 작성하기 위한 기본 스타일을 가지고 있습니다.
-    스타일은 <a href="https://github.com/ampproject/amphtml/blob/master/css/amp.css"><code>amp.css</code></a>에 정의되어 있습니다.
-  </span>
-</aside>
+    스타일은 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css)에 정의되어 있습니다.
+{% endcall %}
 
 ## 허용하지 않는 스타일
 
