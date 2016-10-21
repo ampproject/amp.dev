@@ -59,7 +59,7 @@ using common CSS properties. For example:
            /img/kitten.jpg 320w"
     width="500"
     height="300"
-    layout="responsive"
+    layout="responsive">
   </amp-img>
 </body>
 [/sourcecode]
