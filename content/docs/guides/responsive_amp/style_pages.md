@@ -15,12 +15,11 @@ All styles must live in the head of the document
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
-<aside class="note">
-  <strong>Note:</strong>
-  <span>AMP components come with default styles
+{% call callout('Note', type='note') %}
+AMP components come with default styles
 to make authoring responsive pages reasonably easy.
-These styles are defined in the <a href="https://github.com/ampproject/amphtml/blob/master/css/amp.css"><code>amp.css</code></a>.</span>
-</aside>
+These styles are defined in the [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+{% endcall %}
 
 ## Disallowed styles
 
@@ -101,36 +100,16 @@ they support:
       <td data-th="Restricted style"><code>@keyframes {...}</code></td>
       <td data-th="Description">Only GPU-accelerated properties (currently <code>opacity</code>, <code>transform</code> and <code>-vendorPrefix-transform</code>).</td>
     </tr>
-    <tr>
-      <td data-th="Restricted style"><code>overflow (-x, -y)</code></td>
-      <td data-th="Description">May not be styled as <code>auto</code> or <code>scroll</code>. No user-defined element in an AMP document may have a scrollbar.</td>
-    </tr>
   </tbody>
 </table>
 
 ## The custom fonts exception
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
-The 2 supported methods for referencing custom fonts are
-link tags pointing to white-listed font providers and `@font-face` inclusion.
 
-Font providers can only be whitelisted
-if they support CSS-only integrations and serve over HTTPS.
-Currently, only these origins are whitelisted
-and allowed for font serving via link tags:
-
-* **https://fast.fonts.net**
-* **https://fonts.googleapis.com**
-
-Example link tag pointing to the whitelisted font provider, Google Fonts:
-
-[sourcecode:html]
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-[/sourcecode]
-
-Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face).
-Fonts included via `@font-face` must be fetched
-via the HTTP or HTTPS scheme.
+{% call callout('Read on', type='success') %}
+Learn more about [custom fonts in AMP](/docs/guides/responsive/custom_fonts.html).
+{% endcall %}
 
 ## Using CSS preprocessors
 

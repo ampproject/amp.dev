@@ -13,13 +13,10 @@ $order: 0
 ([Add styles to a page](/docs/guides/validate.html#add-styles-to-a-page)를 참고).
 하지만 CSS 전처리기를 사용할 수 있으며 더 나은 콘텐츠 관리를 위해 정적 페이지를 빌드하는 템플릿을 사용할 수 있습니다.
 
-<aside class="note">
-  <strong>노트:</strong>
-  <span>
+{% call callout('노트', type='note') %}
     AMP 컴포넌트는 반응형 페이지를 꽤 쉽게 작성하기 위한 기본 스타일을 가지고 있습니다.
-    스타일은 <a href="https://github.com/ampproject/amphtml/blob/master/css/amp.css"><code>amp.css</code></a>에 정의되어 있습니다.
-  </span>
-</aside>
+    스타일은 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css)에 정의되어 있습니다.
+{% endcall %}
 
 ## 허용하지 않는 스타일
 
@@ -101,11 +98,6 @@ $order: 0
       <td data-th="Restricted style"><code>@keyframes {...}</code></td>
       <td data-th="Description">GPU 가속 속성에서만 허용합니다 (현재는 <code>opacity</code>, <code>transform</code>, <code>-vendorPrefix-transform</code>).</td>
     </tr>
-    <tr>
-      <td data-th="Restricted style"><code>overflow (-x, -y)</code></td>
-      <td data-th="Description"><code>auto</code>나 <code>scroll</code>은 적용되지 않을 수 있습니다.
-      AMP 문서 내 사용자 정의 요소는 스크롤바가 없을 수도 있습니다.</td>
-    </tr>
   </tbody>
 </table>
 
@@ -118,8 +110,10 @@ AMP 페이지는 커스텀 폰트를 제외한 외부 스타일 시트는 포함
 폰트 제공자는 CSS 전용 통합을 지원하고 HTTPS로 폰트를 전달하는 허용하는 것만 사용 가능합니다.
 현재는, 아래 origin을 허용되며, link 태그를 이용해 폰트를 제공할 수 있습니다:
 
-* **https://fast.fonts.net**
-* **https://fonts.googleapis.com**
+* Typography.com: **https://cloud.typography.com**
+* Fonts.com: **https://fast.fonts.net**
+* Google Fonts: **https://fonts.googleapis.com**
+* Font Awesome: **https://maxcdn.bootstrapcdn.com**
 
 허용하는 폰트 제공자를 가리키는 link 태그 예제입니다, Google Fonts:
 

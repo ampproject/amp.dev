@@ -31,10 +31,9 @@ determined by the given width and height. Try it out by resizing this browser wi
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-<aside class="success">
-  <strong>Tip:</strong>
-  <span>See our side-by-side live demo of <code>amp-img</code> for a basic and advanced example: <a href="https://ampbyexample.com/components/amp-img/">Live Demo</a></span>
-</aside>
+{% call callout('Tip', type='success') %}
+See our side-by-side live demo of `amp-img` for a basic and advanced example: [Live Demo](https://ampbyexample.com/components/amp-img/)
+{% endcall %}
 
 ## The layout attribute
 
@@ -143,11 +142,9 @@ When the browser window changes size or orientation,
 the media queries are re-evaluated and elements are hidden and shown
 based on the new results.
 
-<aside class="success">
-  <strong>Tip:</strong>
-  <span>Learn more about controlling layout by applying media queries in
-<a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en">Use CSS media queries for responsiveness</a>.</span>
-</aside>
+{% call callout('Tip', type='success') %}
+Learn more about controlling layout by applying media queries in [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
+{% endcall %}
 
 ### Element media queries
 

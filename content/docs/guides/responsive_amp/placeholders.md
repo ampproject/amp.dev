@@ -24,11 +24,10 @@ By default, the placeholder is immediately shown for the AMP element,
 even if the AMP element's resources have not been downloaded or initialized.
 Once ready, the AMP element typically hides its placeholder and shows the content.
 
-<aside class="note">
-  <strong>Note:</strong>
-  <span>The placeholder doesn’t have to be an AMP element;
-any HTML element can act as the placeholder.</span>
-</aside>
+{% call callout('Note', type='note') %}
+The placeholder doesn’t have to be an AMP element;
+any HTML element can act as the placeholder.
+{% endcall %}
 
 ## Fallbacks
 

@@ -21,10 +21,9 @@ main page context, such as content requiring user-authored JavaScript.
 * Can only request resources via HTTPS, and they must not be in the same origin
   as the container, unless they do not specify allow-same-origin.
 
-<aside class="note">
-  <strong>Tip:</strong>
-  <span>Learn more at the <a href="/docs/reference/components/amp-iframe.html">full specification for <code>amp-iframe</code></a>.</span>
-</aside>
+{% call callout('Tip', type='note') %}
+Learn more at the [full specification for <code>amp-iframe</code>](/docs/reference/components/amp-iframe.html).
+{% endcall %}
 
 ## Include the script
 
@@ -60,5 +59,5 @@ as `<amp-iframe>` below:
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
     frameborder="0"
-    src="https://ampbyexample.com/components/amp-iframe/">
+    src="https://ampbyexample.com/components/amp-iframe/embed">
 </amp-iframe>

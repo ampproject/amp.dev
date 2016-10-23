@@ -26,10 +26,9 @@ $order: 3
 플레이스홀더는 AMP 요소를 위해 즉시 나타납니다.
 AMP 요소가 준비되면, 플레이스홀더를 가리고 컨텐츠를 나타냅니다.
 
-<aside class="note">
-  <strong>노트:</strong>
-  <span>플레이스홀더는 AMP 요소가 아닙니다; 어떤 HTML요소던 플레이스홀더로 사용할 수 있습니다.</span>
-</aside>
+{% call callout('노트', type='note') %}
+플레이스홀더는 AMP 요소가 아닙니다; 어떤 HTML요소던 플레이스홀더로 사용할 수 있습니다.
+{% endcall %}
 
 ## 폴백
 

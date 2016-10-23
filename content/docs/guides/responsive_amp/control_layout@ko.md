@@ -30,11 +30,9 @@ AMP는 개별 요소의 **레이아웃** 을 제어하는 강력한 내장형 �
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-<aside class="success">
-  <strong>팁:</strong>
-  <span><code>amp-img</code> 요소의 기초부터 고급 예제는 <a href="https://ampbyexample.com/components/amp-img/">Live Demo</a>에서 확인 가능합니다.
-  </span>
-</aside>
+{% call callout('팁', type='success') %}
+`amp-img` 요소의 기초부터 고급 예제는 [Live Demo](https://ampbyexample.com/components/amp-img/)에서 확인 가능합니다.
+{% endcall %}
 
 ## 레이아웃 속성
 `layout` 속성을 사용하면 각 요소의 화면 상 렌더링 방식을 쉽게 제어할 수 있습니다.
@@ -146,11 +144,9 @@ AMP는 적절한 값을 암시하거나 추측합니다:
 브라우저 창의 사이즈나 방향이 바뀔 때,
 미디어쿼리는 재계산 결과에 따라 요소를 보이게 하거나 가립니다.
 
-<aside class="success">
-  <strong>팁:</strong>
-  <span>허용하는 미디어쿼리에서 레이아웃을 어떻게 제어하는 지에 대한 더 자세한 정보는 <a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en">Use CSS media queries for responsiveness</a> 문서를 확인하길 바랍니다.
-  </span>
-</aside>
+{% call callout('팁', type='success') %}
+허용하는 미디어쿼리에서 레이아웃을 어떻게 제어하는 지에 대한 더 자세한 정보는 [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en) 문서를 확인하길 바랍니다.
+{% endcall %}
 
 ### 요소 미디어쿼리
 
