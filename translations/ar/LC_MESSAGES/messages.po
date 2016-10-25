@@ -48,7 +48,7 @@ msgid "Examples"
 msgstr ""
 
 #: /content/includes/home.yaml
-msgid 
+msgid
 "For many, reading on the mobile web is a slow, clunky and frustrating "
 "experience - but it doesn’t have to be that way. The Accelerated Mobile Pages"
 " (AMP) Project is an open source initiative that embodies the vision that "
@@ -148,7 +148,7 @@ msgstr "دور النشر"
 
 #: /content/includes/who.yaml
 msgid "Publishers using AMP HTML"
-msgstr "دور النشر اللاتي يتسعملن أي أم بي"
+msgstr "دور النشر اللاتي يستعملن أي أم بي"
 
 #: /content/includes/home.yaml
 msgid ""
