@@ -178,7 +178,7 @@ msgstr "تمهيد للتكنلوجيا"
 
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP HTML"
-msgstr "شركات التكنلوجيا اللاتي يسعملن أي أم بي"
+msgstr "شركات التكنلوجيا اللاتي يستعملن أي أم بي"
 
 
 #: /content/includes/home.yaml
