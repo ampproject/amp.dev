@@ -39,7 +39,7 @@ Relay Media was founded in 2015 with the purpose of converting web content to Ac
     <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/relay_media_framed2.png"></amp-img>
 </div>
 
-Many of Relay Media’s clients are seeing positive AMP results. The most profound benefit for clients in converting to AMP is the increase in page load time. Relay Media’s AMP articles load in under 700 milliseconds, compared to 8-12 seconds or more for their standard mobile counterparts.
+Many of Relay Media’s clients are seeing positive AMP results. The most profound benefit for clients in converting to AMP is the decrease in page load time. Relay Media’s AMP articles load in under 700 milliseconds, compared to 8-12 seconds or more for their standard mobile counterparts.
 
 Derrick Ho, Senior Mobile Manager for McClatchy, which owns the Miami Herald, reported that “mobile search users who read the Miami Herald starting with an AMP article spend 10% more time than those who land on regular mobile pages.” Arsenio Santos, Chief Product Officer at the Daily Dot, worked with Relay Media to create AMP pages for the news site covering internet culture and life on the web. Santos reported that 90% of visitors on their AMP pages are new readers. The team is satisfied with the results, “AMP provides users with a reliable, immediate browsing experience. We strongly recommend it,” said Santos.
 
