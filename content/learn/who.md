@@ -14,7 +14,7 @@ An ever-growing number of platforms and vendors support AMP, either by providing
   <h3 id="{{section.title|slug}}">{{section.title}}<a href="#{{section.title|slug}}">#</a></h3>
   <ol class="items">
     {% for item in section.section_items | sort %}
-      <li class="item.title">
+      <li class="item">
       {% if item.link %}
         <a href="{{item.link}}">{{item.title}}</a>
       {% else %}
