@@ -1,4 +1,4 @@
-$title@: Guides
+$title@: Documentation
 $path: /docs/guides/{base}.html
 $view: /views/doc.html
 $localization:
