@@ -1,6 +1,8 @@
 ---
 $title: Include Iframes
 $order: 2
+components:
+  - iframe
 ---
 [TOC]
 

@@ -78,15 +78,15 @@ function addCMS() {
     - title@: CMS
       section_items:
         - title: Drupal
-          link:
+          link: https://www.drupal.org/project/amp
         - title: Hatena
-          link:
+          link: http://help.hatenablog.com/entry/amp
         - title: Marfeel
-          link:
+          link: https://atenea.marfeel.com/atn/product/marfeel-press/360-platform/google-amp/marfeel-s-accelerated-mobile-pages-google-amp-solution
         - title: Squarespace
-          link:
+          link: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
         - title: WordPress
-          link:`;
+          link: https://wordpress.org/plugins/amp/`;
 }
 
 function addVideo() {
