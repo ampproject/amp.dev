@@ -1,16 +1,21 @@
+// Components table
+.post-content {
+  td:first-child a:hover {
+    text-decoration: none;
+  }
 
-// Components tables
-.has-components-table {
   @include max-screen($mobile-medium-breakpoint) {
     th:first-child {
       font-size: 0;
       text-indent: -1000px;
     }
-
-    th:first-child,
-    td:first-child {
-      padding-left: 0;
-      padding-right: 0;
+    
+    th,
+    td {
+      &:first-child {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
 
     td {
@@ -23,6 +28,10 @@
           left: 8px;
           z-index: 1;
           position: absolute;
+
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
     }
