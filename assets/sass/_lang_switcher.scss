@@ -2,13 +2,13 @@ div.language {
 
   position: relative;
   height: 33px;
-  width: 132px;
+  width: 126px;
   box-shadow: 0px 1px 2px #b7b7b7;
   user-select: none;
 
   amp-accordion {
     height: 33px;
-    width: 132px;
+    width: 126px;
   }
 
   section {
@@ -16,9 +16,17 @@ div.language {
   }
 
   .current {
-    background-image: url('/static/img/lang-icon.svg');
     font-size: 1em;
     font-weight: normal;
+    &::before {
+      @include masked-sprite(lang-icon);
+      background-color: #333;
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 4px;
+      top: 4px;
+    }
   }
 
   .current,
@@ -39,7 +47,11 @@ div.language {
     &:hover {
       background-color: #0379c4;
       border-bottom: 1px solid #0379c4;
-      background-image: url('/static/img/lang-icon-inverted.svg');
+
+      &::before {
+        @include masked-sprite(lang-icon);
+        background-color: #fff;
+      }
 
       a {
         color: #fff;
@@ -131,12 +143,12 @@ amp-sidebar .language {
     padding-bottom: 6px;
     height: 66px;
 
-    &:hover {
-      background-image: none;
-    }
-
     &.current {
-      background: none;
+
+      &::before {
+        display: none;
+      }
+
       border-bottom: 1px solid #eee;
       padding-right: 58px;
 

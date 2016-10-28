@@ -4,6 +4,7 @@ var plumber = require('gulp-plumber');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
+var svgSprite = require('gulp-svg-sprite');
 
 var Path = {
   CSS_SOURCES: './assets/sass/**/*.scss',
@@ -18,6 +19,25 @@ gulp.task('import-docs', function (cb) {
     //console.log(stdout);
     cb();
   });
+});
+
+gulp.task('optimize-images', function (cb) {
+  return gulp.src('./assets/img/symbols/*.svg')
+    .pipe(svgSprite({
+      mode: {
+        css: {
+          sprite: "../sprite.svg",
+          bust: false,
+          render: {
+            scss: {
+              template: "./assets/img/symbols/template.scss",
+              dest: "../../sass/_sprite_generated.scss"
+            }
+          }
+        }
+      }
+    }))
+    .pipe(gulp.dest('./assets/img/'));
 });
 
 gulp.task('update-blog-links', function (cb) {
