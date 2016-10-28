@@ -1,0 +1,30 @@
+
+// Components tables
+.has-components-table {
+  @include max-screen($mobile-medium-breakpoint) {
+    th:first-child {
+      font-size: 0;
+      text-indent: -1000px;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    td {
+      padding-top: 40px;
+      position: relative;
+
+      &:first-child {
+        a {
+          top: 5px;
+          left: 8px;
+          z-index: 1;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
