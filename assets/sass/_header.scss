@@ -120,7 +120,7 @@
 
   .tab.hamburger {
     background-color: transparent;
-    background-image: url("/static/img/hamburger.svg");
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -6 24 24"><path fill="#4A4A4A" d="M0 12h18v-2H0v2M0 7h18V5H0v2M0 0v2h18V0H0"/></svg>');
     background-repeat: no-repeat;
     background-size: 30px 24px;
     background-position: center center;

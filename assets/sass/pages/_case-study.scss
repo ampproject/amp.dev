@@ -86,15 +86,15 @@ body.case-study {
         display: flex;
         align-items: center;
 
-        amp-img {
-            flex: 0 0 auto;
-        }
         span {
             font-size: 20px;
             margin-left: 10px;
             margin-right: 10px;
             font-weight: 500;
             margin-top: -4px;
+        }
+        amp-img {
+            flex: 0 0 auto;
         }
     }
 }

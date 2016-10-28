@@ -21,6 +21,7 @@ class: case-studies
         <div class="card__content">
         {% if item.logo %}
         <div class="logos">
+          <div class="logo"></div>
           <amp-img layout="flex-item" src="/static/img/logo-blue.svg" width="66" height="28"></amp-img>
           <span>+</span>
           <amp-img layout="flex-item" src="/static/img/{{item.logo.src}}" width="{{item.logo.width}}" height="{{item.logo.height}}"></amp-img>
