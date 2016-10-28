@@ -1,6 +1,8 @@
 ---
 $title: What Is AMP?
 $order: 0
+components:
+  - youtube
 ---
 [TOC]
 
