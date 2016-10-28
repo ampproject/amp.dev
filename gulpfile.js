@@ -77,5 +77,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('build', ['update-blog-links', 'import-docs', 'update-platforms-page', 'sass']);
+gulp.task('build', ['update-blog-links', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass']);
 gulp.task('default', ['update-platforms-page', 'sass', 'watch']);
