@@ -1,4 +1,9 @@
-// Components table
+/**
+ * Post content
+ */
+
+/* Components table */
+
 .post-content {
   td:first-child a:hover {
     text-decoration: none;
@@ -9,7 +14,7 @@
       font-size: 0;
       text-indent: -1000px;
     }
-    
+
     th,
     td {
       &:first-child {
