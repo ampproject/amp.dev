@@ -1,18 +1,27 @@
 #: /content/includes/home.yaml
 msgid "/docs/get_started/about-amp.html"
-msgstr ""
+msgstr "حول"
+
+#: /content/includes/footer.yaml
+msgid "Accelerated Mobile Pages Project"
+msgstr "مشروع الصفحات المسارعة على الأجهزة المحمولة"
 
 #: /content/includes/who.yaml
 msgid "Ads"
-msgstr ""
+msgstr "الإعلانات"
 
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr ""
 
+#: /content/includes/who.yaml
+msgid "Asia"
+msgstr "آسيا"
+
 #: /content/includes/menu.yaml
 msgid "Build"
 msgstr ""
+
 
 #: /content/includes/who.yaml
 msgid "CMS"
@@ -30,18 +39,27 @@ msgstr ""
 msgid "Docs"
 msgstr "المستندات"
 
+#: /content/includes/who.yaml
+msgid "Europe"
+msgstr "أوروبا"
+
 #: /content/includes/menu.yaml
 msgid "Examples"
 msgstr ""
 
 #: /content/includes/home.yaml
-msgid ""
+msgid
 "For many, reading on the mobile web is a slow, clunky and frustrating "
 "experience - but it doesn’t have to be that way. The Accelerated Mobile Pages"
 " (AMP) Project is an open source initiative that embodies the vision that "
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
-msgstr ""
+msgstr
+"بالرغم من إتصاف تجربة التصفح بإستعمال الأجهزة المحمولة بالبطء وبعثها للإزعاج"
+"يمكنها أن تكون أفضل. مشروع الصفحات المسارعة على الأجهزة المحمولة"
+"أي أم بي) هو مبادرة مشروع مفتوح المصدر لتحقيق وجهة نظر تنصّ على أن)"
+"بإمكان دور النشر أن تنتج صفحات محسّنة خصيصا للأجهزة المحمولة مرة واحدة"
+"لتمكين تحميلها بشكل فوري في كل مكان."
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
@@ -53,7 +71,7 @@ msgstr "البدء"
 
 #: /content/includes/home.yaml
 msgid "Get Started with AMP HTML"
-msgstr ""
+msgstr " إبدء مع أي أم بي أتش تي أم أل"
 
 #: /content/includes/menu.yaml
 msgid "Get started"
@@ -62,6 +80,12 @@ msgstr ""
 #: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
 msgstr "الدلائل"
+
+
+#: /views/base.html:35
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
 
 #: /content/includes/home.yaml
 msgid ""
@@ -79,13 +103,17 @@ msgstr ""
 msgid "Instant. <br> Everywhere."
 msgstr ""
 
+#: /content/includes/who.yaml
+msgid "Latin America"
+msgstr "أمريكا اللاتينية"
+
 #: /content/includes/menu.yaml /content/learn
 msgid "Learn"
 msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Learn More"
-msgstr ""
+msgstr "تعلم المزيد"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -94,13 +122,21 @@ msgid ""
 " exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
 msgstr ""
 
+#: /content/includes/header.yaml
+msgid "Metrics"
+msgstr ""
+
+#: /content/includes/who.yaml
+msgid "North America"
+msgstr "أمريكا الشمالية"
+
 #: /content/news
 msgid "News"
 msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Openness"
-msgstr ""
+msgstr "الإنفتاح"
 
 #: /content/includes/home.yaml
 msgid "Publisher Control"
@@ -108,7 +144,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Publishers"
-msgstr ""
+msgstr "دور النشر"
+
+#: /content/includes/who.yaml
+msgid "Publishers using AMP HTML"
+msgstr "دور النشر اللاتي يستعملن أي أم بي"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -120,9 +160,13 @@ msgstr ""
 msgid "Reference"
 msgstr "المراجع"
 
+#: /content/includes/header.yaml
+msgid "Roadmap"
+msgstr "خارطة الطريق"
+
 #: /content/includes/home.yaml
 msgid "Speed"
-msgstr ""
+msgstr "السرعة"
 
 #: /content/includes/menu.yaml /content/support
 msgid "Support"
@@ -130,11 +174,12 @@ msgstr "الدعم"
 
 #: /content/includes/home.yaml
 msgid "Technical Introduction"
-msgstr ""
+msgstr "تمهيد للتكنلوجيا"
 
 #: /content/includes/who.yaml
-msgid "Technology Companies using AMP"
-msgstr ""
+msgid "Technology Companies using AMP HTML"
+msgstr "شركات التكنلوجيا اللاتي يستعملن أي أم بي"
+
 
 #: /content/includes/home.yaml
 msgid ""
@@ -153,11 +198,11 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Video"
-msgstr ""
+msgstr "الفيديو"
 
 #: /content/includes/home.yaml
 msgid "View Code"
-msgstr ""
+msgstr "تصفح اصل البرنامج"
 
 #: /content/includes/home.yaml
 msgid "Visit Github"
@@ -181,11 +226,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "bbc_news"
-msgstr ""
+msgstr "ال بي بي سي"
 
 #: /content/includes/home.yaml
 msgid "buzzfeed"
-msgstr ""
+msgstr "باز فيد"
 
 #: /content/includes/home.yaml
 msgid "condenast"
@@ -193,7 +238,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "daily_mail"
-msgstr ""
+msgstr "البريد اليوميه"
 
 #: /content/includes/home.yaml
 msgid "economist"
@@ -253,7 +298,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "mashable"
-msgstr ""
+msgstr "ماشابل"
 
 #: /content/includes/home.yaml
 msgid "mcclatchy"
@@ -261,7 +306,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "new_york_times"
-msgstr ""
+msgstr "النيو يورك تايمز"
 
 #: /content/includes/menu.yaml
 msgid "news"
@@ -285,11 +330,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "nypost"
-msgstr ""
+msgstr "النيو يورك بوست"
 
 #: /content/includes/home.yaml
 msgid "pearson"
-msgstr ""
+msgstr "بيرسون"
 
 #: /content/includes/home.yaml
 msgid "sankei"
@@ -297,11 +342,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "telegraph"
-msgstr ""
+msgstr "التليغراف"
 
 #: /content/includes/home.yaml
 msgid "time"
-msgstr ""
+msgstr "التايم"
 
 #: /content/includes/home.yaml
 msgid "uol"
@@ -321,7 +366,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "washington_post"
-msgstr ""
+msgstr "الواشينغتون بوست"
 
 #: /content/includes/home.yaml
 msgid "zeit_online"

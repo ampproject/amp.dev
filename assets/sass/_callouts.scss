@@ -8,8 +8,6 @@ aside {
 
     &::before {
         float: left;
-        font: normal normal normal 24px/1 'Material Icons';
-        font-feature-settings: 'liga';
         word-wrap: normal;
         white-space: nowrap;
         margin-left: -36px;
@@ -19,8 +17,9 @@ aside {
         background: #e1f5fe;
         color: #0288d1;
         &::before {
-            color: #039be5;
-            content: 'star';
+            @include masked-sprite(star);
+            background-color: #039be5;
+            content: '';
         }
     }
 
@@ -28,8 +27,9 @@ aside {
         background: #fff3e0;
         color: #dd2c00;
         &::before {
-            color: #ff6e40;
-            content: 'error';
+            @include masked-sprite(error);
+            background-color: #ff6e40;
+            content: '';
         }
     }
 
@@ -37,8 +37,10 @@ aside {
         background: #fbe9e7;
         color: #d50000;
         &::before {
-            color: #ff1744;
-            content: 'warning';
+            @include masked-sprite(warning);
+            background-color: #ff1744;
+            content: '';
+
         }
     }
 
@@ -46,8 +48,9 @@ aside {
         background: #e0f2f1;
         color: #00897b;
         &::before {
-            color: #00bfa5;
-            content: 'check_circle';
+            @include masked-sprite(check_circle);
+            background-color: #00bfa5;
+            content: '';
         }
     }
 
