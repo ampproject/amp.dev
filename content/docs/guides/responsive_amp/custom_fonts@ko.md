@@ -4,7 +4,7 @@ $order: 5
 ---
 [TOC]
 
-AMP 페이지는 커스텀 폰트를 제외한 외부 스타일 시트를 포함할 수 없습니다.
+AMP 페이지는 커스텀 폰트 외에는 외부 스타일 시트를 사용할 수 없습니다.
 커스텀 폰트를 페이지에 포함하기 위한 방법이 두가지 있습니다:
 
 1. `<link>` 태그를 통해서 (허용하는 폰트 제공자만 사용 가능)
@@ -12,13 +12,13 @@ AMP 페이지는 커스텀 폰트를 제외한 외부 스타일 시트를 포함
 
 ### 1. `<link>` 사용하기
 
-(보통 페이지의 head에서) `<link>` 태그를 사용할 수 있습니다.
+(일반적으로는 페이지의 head에서) `<link>` 태그를 사용할 수 있습니다.
 
 [sourcecode:html]
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
-아래 origin들은 link 태그를 통한 폰트 제공을 허용하는 폰트 제공자입니다.
+아래 origin들은 link 태그를 통한 폰트 제공이 허용된 폰트 제공자입니다.
 
 * Typography.com: **https://cloud.typography.com**
 * Fonts.com: **https://fast.fonts.net**
