@@ -102,27 +102,11 @@ $order: 0
 </table>
 
 ## 커스텀 폰트 예외
+AMP 페이지는 커스텀 폰트를 제외한 외부 스타일 시트를 포함할 수 없습니다.
 
-AMP 페이지는 커스텀 폰트를 제외한 외부 스타일 시트는 포함하지 못합니다.
-커스텀 폰트를 참조하기 위한 두가지 지원 방법은,
-허용하는 폰트 제공자를 가리키는 link 태그 사용 혹은 `@font-face`를 포함하는 것입니다.
-
-폰트 제공자는 CSS 전용 통합을 지원하고 HTTPS로 폰트를 전달하는 허용하는 것만 사용 가능합니다.
-현재는, 아래 origin을 허용되며, link 태그를 이용해 폰트를 제공할 수 있습니다:
-
-* Typography.com: **https://cloud.typography.com**
-* Fonts.com: **https://fast.fonts.net**
-* Google Fonts: **https://fonts.googleapis.com**
-* Font Awesome: **https://maxcdn.bootstrapcdn.com**
-
-허용하는 폰트 제공자를 가리키는 link 태그 예제입니다, Google Fonts:
-
-[sourcecode:html]
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-[/sourcecode]
-
-대신하여, [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)를 사용할 수 있습니다.
-폰트들은 `@font-face`를 이용해 포함되며 반드시 HTTP나 HTTPS 스킴으로 가져와야 합니다.
+{% call callout('Read on', type='success') %}
+[AMP 내 커스텀폰트](/ko/docs/guides/responsive/custom_fonts.html)에서 더 자세한 내용을 확인할 수 있습니다.
+{% endcall %}
 
 ## CSS 전처리기 사용
 
