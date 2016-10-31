@@ -1,5 +1,5 @@
-#: /content/includes/home.yaml
-msgid "/docs/get_started/about-amp.html"
+#: /content/includes/menu.yaml
+msgid "About"
 msgstr ""
 
 #: /content/includes/who.yaml
@@ -10,8 +10,8 @@ msgstr ""
 msgid "Analytics"
 msgstr ""
 
-#: /content/includes/menu.yaml
-msgid "Build"
+#: /content/includes/who.yaml
+msgid "Audio/Video"
 msgstr ""
 
 #: /content/includes/who.yaml
@@ -26,8 +26,12 @@ msgstr ""
 msgid "Contribute"
 msgstr ""
 
-#: /content/docs
+#: /content/docs /content/includes/menu.yaml
 msgid "Docs"
+msgstr ""
+
+#: /content/includes/menu.yaml /content/docs/guides
+msgid "Documentation"
 msgstr ""
 
 #: /content/includes/menu.yaml
@@ -48,19 +52,11 @@ msgid "GET STARTED"
 msgstr "Premiers pas"
 
 #: /content/includes/home.yaml
-msgid "Get Started"
-msgstr "Premiers pas"
-
-#: /content/includes/home.yaml
 msgid "Get Started with AMP HTML"
 msgstr ""
 
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/includes/home.yaml
 msgid "Get started"
-msgstr ""
-
-#: /content/includes/menu.yaml /content/docs/guides
-msgid "Guides"
 msgstr ""
 
 #: /content/includes/home.yaml
@@ -79,7 +75,7 @@ msgstr ""
 msgid "Instant. <br> Everywhere."
 msgstr ""
 
-#: /content/includes/menu.yaml /content/learn
+#: /content/learn
 msgid "Learn"
 msgstr ""
 
@@ -151,10 +147,6 @@ msgstr ""
 msgid "Tutorials"
 msgstr ""
 
-#: /content/includes/who.yaml
-msgid "Video"
-msgstr ""
-
 #: /content/includes/home.yaml
 msgid "View Code"
 msgstr ""
@@ -167,163 +159,7 @@ msgstr ""
 msgid "What contributors are saying"
 msgstr ""
 
-#: /content/includes/home.yaml
-msgid "abril"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "asahi"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "atlantic_media"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "bbc_news"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "buzzfeed"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "condenast"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "daily_mail"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "economist"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "editora_globo"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "el_pais"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "fairfax_media"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "folha_de_s.paulo"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "franzfurter_allgemeine"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "ft"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "gannett"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "guardian"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "hearst"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "huffington_post"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "la_stampa"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "les_echos"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "mainichi"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "mashable"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "mcclatchy"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "new_york_times"
-msgstr ""
-
 #: /content/includes/menu.yaml
 msgid "news"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "newscorp_australia"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "nine_msn"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "nrc"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "ny_daily_news"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "nypost"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "pearson"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "sankei"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "telegraph"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "time"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "uol"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "us_news"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "vox_media"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "wallstreetjournal"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "washington_post"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "zeit_online"
 msgstr ""
 

@@ -2,7 +2,7 @@ hero:
   title@: Instant. <br> Everywhere.
   content@: For many, reading on the mobile web is a slow, clunky and frustrating experience - but it doesn’t have to be that way. The Accelerated Mobile Pages (AMP) Project is an open source initiative that embodies the vision that publishers can create mobile optimized content once and have it load instantly everywhere.
   cta@: GET STARTED
-  cta_url@: /docs/get_started/about-amp.html
+  cta_url: /docs/get_started/about-amp.html
   content_mobile@: The Accelerated Mobile Pages (AMP) Project is an open initiative that embodies the vision that publishers can create mobile optimized content once and have it load instantly everywhere.
   youtube_video_id: "WrpkFROqR0Q"
 
@@ -18,7 +18,7 @@ get_started:
     - title@: Tutorial
       content@: Ready to build an AMP file? This tutorial will teach you how to create a basic AMP HTML page, stage it, test it, and get it ready for publication.
       img: /static/img/amp.jpg
-      cta@: Get Started
+      cta@: Get started
       href: /docs/get_started/create.html
 
     - title@: View Code
@@ -92,7 +92,7 @@ contributors:
       quote: “We welcome this project because it accelerates the consumption of mobile content and preserves the business model that finances quality journalism.”
       name: Antonio Manuel Teixeira Mendes
       position: Director-Superintendent, Folha de S.Paulo
-      
+
     - img: /static/img/quotes/ebay.jpg
       quote: “The guiding principles of the AMP Project apply to the mobile web in general. So why restrict it to just publisher-based content?  Speed plays a critical role in eCommerce. Faster pages lead to delighted users, and higher conversion, so when the AMP Project was announced it resonated a lot with our own thinking and approach to smart open source projects.”
       name: Mohan Patt
@@ -101,119 +101,119 @@ contributors:
 publishers:
   title@: Publishers
   logos:
-    - title@: abril
+    - title: abril
       img: /static/img/publishers/abril.png
 
-    - title@: asahi
+    - title: asahi
       img: /static/img/publishers/asahi.png
 
-    - title@: atlantic_media
+    - title: atlantic_media
       img: /static/img/publishers/atlantic_media.png
 
-    - title@: bbc_news
+    - title: bbc_news
       img: /static/img/publishers/bbc_news.png
 
-    - title@: buzzfeed
+    - title: buzzfeed
       img: /static/img/publishers/buzzfeed.png
 
-    - title@: condenast
+    - title: condenast
       img: /static/img/publishers/condenast.png
 
-    - title@: daily_mail
+    - title: daily_mail
       img: /static/img/publishers/daily_mail.png
 
-    - title@: economist
+    - title: economist
       img: /static/img/publishers/economist.png
 
-    - title@: editora_globo
+    - title: editora_globo
       img: /static/img/publishers/editora_globo.png
 
-    - title@: el_pais
+    - title: el_pais
       img: /static/img/publishers/el_pais.png
 
-    - title@: fairfax_media
+    - title: fairfax_media
       img: /static/img/publishers/fairfax_media.png
 
-    - title@: folha_de_s.paulo
+    - title: folha_de_s.paulo
       img: /static/img/publishers/folha_de_s.paulo.png
 
-    - title@: franzfurter_allgemeine
+    - title: franzfurter_allgemeine
       img: /static/img/publishers/franzfurter_allgemeine.png
 
-    - title@: ft
+    - title: ft
       img: /static/img/publishers/ft.png
 
-    - title@: gannett
+    - title: gannett
       img: /static/img/publishers/gannett.png
 
-    - title@: guardian
+    - title: guardian
       img: /static/img/publishers/guardian.png
 
-    - title@: hearst
+    - title: hearst
       img: /static/img/publishers/hearst.png
 
-    - title@: huffington_post
+    - title: huffington_post
       img: /static/img/publishers/huffington_post.png
 
-    - title@: la_stampa
+    - title: la_stampa
       img: /static/img/publishers/la_stampa.png
 
-    - title@: les_echos
+    - title: les_echos
       img: /static/img/publishers/les_echos.png
 
-    - title@: mainichi
+    - title: mainichi
       img: /static/img/publishers/mainichi.png
 
-    - title@: mashable
+    - title: mashable
       img: /static/img/publishers/mashable.png
 
-    - title@: mcclatchy
+    - title: mcclatchy
       img: /static/img/publishers/mcclatchy.png
 
-    - title@: new_york_times
+    - title: new_york_times
       img: /static/img/publishers/new_york_times.png
 
-    - title@: newscorp_australia
+    - title: newscorp_australia
       img: /static/img/publishers/newscorp_australia.png
 
-    - title@: nine_msn
+    - title: nine_msn
       img: /static/img/publishers/nine_msn.png
 
-    - title@: nrc
+    - title: nrc
       img: /static/img/publishers/nrc.png
 
-    - title@: ny_daily_news
+    - title: ny_daily_news
       img: /static/img/publishers/ny_daily_news.png
 
-    - title@: nypost
+    - title: nypost
       img: /static/img/publishers/nypost.png
 
-    - title@: pearson
+    - title: pearson
       img: /static/img/publishers/pearson.png
 
-    - title@: sankei
+    - title: sankei
       img: /static/img/publishers/sankei.png
 
-    - title@: telegraph
+    - title: telegraph
       img: /static/img/publishers/telegraph.png
 
-    - title@: time
+    - title: time
       img: /static/img/publishers/time.png
 
-    - title@: uol
+    - title: uol
       img: /static/img/publishers/uol.png
 
-    - title@: us_news
+    - title: us_news
       img: /static/img/publishers/us_news.png
 
-    - title@: vox_media
+    - title: vox_media
       img: /static/img/publishers/vox_media.png
 
-    - title@: wallstreetjournal
+    - title: wallstreetjournal
       img: /static/img/publishers/wallstreetjournal.png
 
-    - title@: washington_post
+    - title: washington_post
       img: /static/img/publishers/washington_post.png
 
-    - title@: zeit_online
+    - title: zeit_online
       img: /static/img/publishers/zeit_online.png
