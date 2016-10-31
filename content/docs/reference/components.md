@@ -49,8 +49,6 @@ Here are the components grouped by category:
 | [`amp-vine`](components/amp-vine.html) | Displays a [Vine](https://vine.co/) simple embed. |
 | [`amp-youtube`](components/amp-youtube.html) | Displays a [YouTube](https://www.youtube.com/) video. |
 
-
-
 ### Dynamic Content & Personalization
 
 | Component | Description |

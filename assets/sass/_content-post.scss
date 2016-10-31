@@ -1,0 +1,44 @@
+/**
+ * Post content
+ */
+
+/* Components table */
+
+.post-content {
+  td:first-child a:hover {
+    text-decoration: none;
+  }
+
+  @include max-screen($mobile-medium-breakpoint) {
+    th:first-child {
+      font-size: 0;
+      text-indent: -1000px;
+    }
+
+    th,
+    td {
+      &:first-child {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    td {
+      padding-top: 40px;
+      position: relative;
+
+      &:first-child {
+        a {
+          top: 5px;
+          left: 8px;
+          z-index: 1;
+          position: absolute;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
