@@ -72,7 +72,7 @@ Niezależne skrypty JS lubią korzystać z synchronicznego ładowania JS.
 Lubią one także korzystać z funkcji `document.write` w celu tworzenia dodatkowych skryptów synchronicznych.
 Jeśli na stronie jest na przykład pięć reklam i każda z nich wykonuje trzy synchroniczne operacje wczytywania
 z czasem oczekiwania łącza wynoszącym 1 sekundę,
-czas ładowania samych tylko skryptów JS wynosi 18 sekund.
+czas ładowania samych tylko skryptów JS wynosi 15 sekund.
 
 Strony AMP umożliwiają korzystanie z niezależnych skryptów JavaScript, ale tylko w izolowanych ramkach iframe.
 Wyrzucenie tych skryptów do ramek iframe pozwala wyeliminować blokowanie wykonywania strony głównej.

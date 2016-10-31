@@ -72,7 +72,7 @@ En el contenido JS de terceros generalmente se aplica carga de JS sincrónica y
 también se implementa `document.write` en más scripts de sincronización.
 Por ejemplo, si tienes cinco anuncios y cada uno de ellos tiene tres cargas sincrónicas
 con una conexión de latencia de 1 segundo,
-tendrás 18 segundos de carga solo para el contenido JS.
+tendrás 15 segundos de carga solo para el contenido JS.
 
 Las páginas AMP permiten JavaScript de terceros, pero solo en iframes de espacio aislado.
 Si se restringen a los iframes, no pueden bloquear la ejecución de la página principal.

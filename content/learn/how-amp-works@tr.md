@@ -72,7 +72,7 @@ AMP, daha ne içereceğini bilmeden bilgi iletim birimi kutucuğunu oluşturur:
 Bunlar aynı zamanda daha senkronize komut dosyaları `document.write` yazmaktan hoşlanır.
 Örneğin, beş reklamınız varsa ve her biri
 1 saniye gecikme bağlantısıyla üç senkronize yükleme yapıyorsa,
-yalnızca JS yüklemesi için 18 saniye yükleme süresindesiniz.
+yalnızca JS yüklemesi için 15 saniye yükleme süresindesiniz.
 
 AMP sayfaları üçüncü şahıs JavaScript›e yalnızca korumalı alana alınmış bilgi iletim birimlerinde izin verir.
 Bilgi iletim birimlerini yasaklayarak, ana sayfanın uygulanmasını engelleyemezler.
