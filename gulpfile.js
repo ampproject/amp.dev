@@ -4,55 +4,60 @@ var plumber = require('gulp-plumber');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
-var swPrecache = require('sw-precache');
-var gutil = require('gulp-util');
+var svgSprite = require('gulp-svg-sprite');
 
 var Path = {
   CSS_SOURCES: './assets/sass/**/*.scss',
   CSS_OUT_DIR: './assets/css/'
 };
 
-gulp.task('import-docs', function () {
-  return exec('cd ./scripts && ./import_docs.js', function (err, stdout, stderr) {
+gulp.task('import-docs', function (cb) {
+  exec('cd ./scripts && ./import_docs.js', function (err, stdout, stderr) {
     if (err instanceof Error) {
-      throw err;
+      cb(err);
     }
-    console.log(stdout);
+    //console.log(stdout);
+    cb();
   });
 });
 
-gulp.task('update-blog-links', function () {
-  return exec('cd ./scripts && ./update_blog_links.js', function (err, stdout, stderr) {
+gulp.task('optimize-images', function (cb) {
+  return gulp.src('./assets/img/symbols/*.svg')
+    .pipe(svgSprite({
+      mode: {
+        css: {
+          sprite: "../sprite.svg",
+          bust: false,
+          render: {
+            scss: {
+              template: "./assets/img/symbols/template.scss",
+              dest: "../../sass/_sprite_generated.scss"
+            }
+          }
+        }
+      }
+    }))
+    .pipe(gulp.dest('./assets/img/'));
+});
+
+gulp.task('update-blog-links', function (cb) {
+  exec('cd ./scripts && ./update_blog_links.js', function (err, stdout, stderr) {
     if (err instanceof Error) {
-      throw err;
+      cb(err);
     }
-    console.log(stdout);
+    //console.log(stdout);
+    cb();
   });
 });
 
-gulp.task('write-service-worker', function (callback) {
-
-  swPrecache.write('build/service-worker.js', {
-    staticFileGlobs: [
-      'build/**/*.{png,jpg,gif,svg,json}',
-      'build/*.html',
-      'build/docs/**/*.html',
-      'build/who/*.html',
-      'build/roadmap/*.html',
-      'build/metrics/*.html',
-      'build/how-it-works/*.html',
-      'build/case-studies/*.html'
-    ],
-    runtimeCaching: [{
-      urlPattern: /^https:\/\/cdn\.ampproject\.org/,
-      handler: 'fastest'
-    }],
-    stripPrefixMulti: {
-      'build/': ''
-    },
-    logger: gutil.log
-  }, callback);
-
+gulp.task('update-platforms-page', ['import-docs'], function (cb) {
+  return exec('cd ./scripts && ./update_platforms_page.js', function (err, stdout, stderr) {
+    if (err instanceof Error) {
+      cb(err);
+    }
+    //console.log(stdout);
+    cb();
+  });
 });
 
 gulp.task('sass', function() {
@@ -72,5 +77,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('build', ['update-blog-links', 'import-docs', 'sass']);
-gulp.task('default', ['sass', 'watch']);
+gulp.task('build', ['update-blog-links', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass']);
+gulp.task('default', ['update-platforms-page', 'sass', 'watch']);

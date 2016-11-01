@@ -1,6 +1,8 @@
 ---
 $title: How AMP Works
 $order: 1
+components:
+  - youtube
 ---
 [TOC]
 
