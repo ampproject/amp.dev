@@ -8,7 +8,7 @@ Las AMP son páginas web; el diseño de estas y de sus elementos se realiza a tr
 
 [sourcecode:html]
 <style amp-custom>
-  /* any custom style goes here */
+  /* Cualquier estilo personalizado va aquí */
   body {
     background-color: white;
   }
@@ -19,11 +19,11 @@ Las AMP son páginas web; el diseño de estas y de sus elementos se realiza a tr
 </style>
 [/sourcecode]
 
-Las páginas AMP pueden tener una sola hoja de estilo integrada y hay ciertos selectores que no puedes usar. [Aprende todo acerca del estilo](/docs/guides/responsive/style_pages.html).
+Las páginas AMP pueden tener solo una hoja de estilo integrada y hay ciertos selectores que no puedes usar. [Aprende todo acerca del estilo](/docs/guides/responsive/style_pages.html).
 
 ## Controla el diseño
 
-AMP sigue reglas más estrictas al distribuir elementos en la página. En una página HTML normal, CSS se usa casi exclusivamente para distribuir elementos. Sin embargo, por motivos de rendimiento, AMP requiere que todos los elementos tengan un tamaño explícito configurado desde el principio.
+AMP sigue reglas estrictas al distribuir elementos en la página. En una página HTML normal, CSS se usa casi exclusivamente para distribuir elementos. Sin embargo, por motivos de rendimiento, AMP requiere que todos los elementos tengan un tamaño explícito configurado desde el principio.
 
 Aprende todo acerca de cómo AMP representa y diseña una página y cómo puedes modificar el diseño en [Cómo controlar el diseño](/docs/guides/responsive/control_layout.html).
 
