@@ -45,5 +45,5 @@ Kluczowe punkty danych, które trzeba wziąć pod uwagę:
 * Zamierzasz monitorować tylko wyświetlenia stron, czy wzorce czynności użytkowników
 (patrz także opis znaczników [amp-pixel lub amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
 * Jakie zamierzasz przechwytywać rodzaje danych o użytkownikach, treściach,
-o urządzeniu lub przeglądarce (patrz także [Podstawianie zmiennych](/docs/guides/analytics/analytics_basics.html#variable-substition))?
+o urządzeniu lub przeglądarce (patrz także [Podstawianie zmiennych](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * Jak zamierzasz identyfikować swoich użytkowników (patrz także [Identyfikacja użytkownika](/docs/guides/analytics/analytics_basics.html#user-identification))?

@@ -44,6 +44,6 @@ AMP Analytics 经过专门设计，测量一次便可报告给多方。
 
 * 您是仅跟踪页面视图，还是跟踪其他用户互动模式（另请参阅 [amp-pixel 或 amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics)）？
 
-* 您将捕获哪些类型的用户相关数据，内容、设备还是浏览器（另请参阅[变量替代项](/docs/guides/analytics/analytics_basics.html#variable-substition)）？
+* 您将捕获哪些类型的用户相关数据，内容、设备还是浏览器（另请参阅[变量替代项](/docs/guides/analytics/analytics_basics.html#variable-substitution)）？
 
 * 您将如何识别用户（另请参阅[用户识别](/docs/guides/analytics/analytics_basics.html#user-identification)）？

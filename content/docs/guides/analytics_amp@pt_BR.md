@@ -45,5 +45,5 @@ Os principais pontos a serem considerados:
 * Você pretende rastrear somente as visualizações de páginas ou outros padrões de envolvimento do usuário
 (consulte também [amp-pixel ou amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
 * Que tipos de dados você pretende capturar sobre seus usuários, seu conteúdo,
-o dispositivo ou navegador (consulte também [Substituição de variáveis](/docs/guides/analytics/analytics_basics.html#variable-substition))?
+o dispositivo ou navegador (consulte também [Substituição de variáveis](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * Como você pretende identificar seus usuários (consulte também [Identificação de usuários](/docs/guides/analytics/analytics_basics.html#user-identification))?
