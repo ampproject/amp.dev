@@ -16,4 +16,4 @@ Depois, certifique-se de que sua página AMP** seja realmente válida para AMP**
 
 [Saiba mais sobre validação](/docs/guides/validate.html) e o que fazer quando ocorrerem erros.
 
-<a class="go-button button" href="/pt_BR/docs/get_started/create/prepare_for_discovery.html">Continuar para a etapa 5</a>
+<a class="go-button button" href="/pt_br/docs/get_started/create/prepare_for_discovery.html">Continuar para a etapa 5</a>
