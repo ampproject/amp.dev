@@ -72,7 +72,7 @@ Al codice JavaScript di terzi piace usare il caricamento JS sincrono.
 Ama anche usare `document.write` per creare più script sincroni.
 Ad esempio, se hai cinque annunci e ognuno di essi esegue tre caricamenti sincroni
 con una latenza di connessione di 1 secondo,
-ti ritrovi con 18 secondi di tempo di caricamento solo per il caricamento JS.
+ti ritrovi con 15 secondi di tempo di caricamento solo per il caricamento JS.
 
 Le pagine AMP consentono codice JavaScript di terzi ma solo in iframe in modalità sandbox.
 Circoscrivendo questo codice agli iframe gli viene impedito di bloccare l’esecuzione della pagina principale.
