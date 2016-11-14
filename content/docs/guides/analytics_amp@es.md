@@ -45,5 +45,5 @@ Puntos de datos claves que debes considerar:
 * ¿Realizarás un seguimiento solo de las vistas de la página o de otros patrones de captación de usuarios?
 (Consulta también la sección [¿amp-pixel o amp-analytics?](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics)).
 * ¿Qué tipos de datos puedes capturar acerca de tus usuarios, tu contenido,
-el dispositivo o el navegador (consulta también la sección sobre [sustitución de variables](/docs/guides/analytics/analytics_basics.html#variable-substition))?
+el dispositivo o el navegador (consulta también la sección sobre [sustitución de variables](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * ¿Cómo identificarás a tus usuarios (consulta también [Identificación de usuarios](/docs/guides/analytics/analytics_basics.html#user-identification))?

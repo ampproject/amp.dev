@@ -45,5 +45,5 @@ Fattori importanti relativi ai dati da prendere in considerazione:
 * Eseguirai solamente il monitoraggio delle visualizzazioni di pagina o anche di altri modelli di coinvolgimento dell’utente
 (vedi anche [amp-pixel o amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
 * Quali tipi di dati acquisirai relativamente ai tuoi utenti, ai tuoi contenuti,
-a dispositivi o browser (vedi anche [Sostituzione delle variabili](/docs/guides/analytics/analytics_basics.html#variable-substition))?
+a dispositivi o browser (vedi anche [Sostituzione delle variabili](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * Come identificherai i tuoi utenti (vedi anche [Identificazione dell’utente](/docs/guides/analytics/analytics_basics.html#user-identification))?
