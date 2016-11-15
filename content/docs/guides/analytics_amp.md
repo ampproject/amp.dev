@@ -46,5 +46,5 @@ Key data points to consider:
 * Will you track only page views, or additional user engagement patterns
 (see also [amp-pixel or amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
 * What kinds of data will you capture about your users, your content,
-the device or brower (see also [Variable substition](/docs/guides/analytics/analytics_basics.html#variable-substition))?
+the device or browser (see also [Variable substitution](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * How will you identify your users (see also [User identification](/docs/guides/analytics/analytics_basics.html#user-identification))?

@@ -45,5 +45,5 @@ Dikkate alınması gereken ana veri noktaları:
 * Yalnızca sayfa görünümlerini mi, yoksa ek kullanıcı katılım desenlerini mi izleyeceksiniz
 (ayrıca bkz. [amp-piksel ya da amp-analitik](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
 * Kullanıcılarınız, içeriğiniz,
-cihazınız veya tarayıcınız hakkında ne tür veriler toplayacaksınız (ayrıca bkz. [Değişken değiştirme](/docs/guides/analytics/analytics_basics.html#variable-substition))?
+cihazınız veya tarayıcınız hakkında ne tür veriler toplayacaksınız (ayrıca bkz. [Değişken değiştirme](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * Kullanıcılarınızı nasıl tanımlayacaksınız (ayrıca bkz. [Kullanıcı tanımlama](/docs/guides/analytics/analytics_basics.html#user-identification))?

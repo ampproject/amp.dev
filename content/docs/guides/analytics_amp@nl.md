@@ -45,5 +45,5 @@ Belangrijke punten om te overwegen:
 * Wilt u alleen paginaweergaven bijhouden of ook extra patronen in het betrokkenheid van gebruikers
 (zie ook [amp-pixel of amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
 * Wat voor soort gegevens wilt u vastleggen over uw gebruikers, uw content,
-het apparaat of de browser (zie ook [Vervanging van variabelen](/docs/guides/analytics/analytics_basics.html#variable-substition))?
+het apparaat of de browser (zie ook [Vervanging van variabelen](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * Hoe gaat u gebruikers identificeren (zie ook [Gebruikersidentificatie](/docs/guides/analytics/analytics_basics.html#user-identification))?

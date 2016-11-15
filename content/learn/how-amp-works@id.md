@@ -72,7 +72,7 @@ JS pihak ketiga cenderung menggunakan pemuatan JS sinkron.
 Skrip ini juga cenderung menerapkan `document.write` pada skrip sinkronisasi lainnya.
 Misalnya, jika Anda memiliki lima iklan dan setiap iklan ini melakukan tiga pemuatan sinkronisasi
 dengan koneksi latensi 1 detik,
-Anda membutuhkan waktu pemuatan 18 detik hanya untuk memuat JS.
+Anda membutuhkan waktu pemuatan 15 detik hanya untuk memuat JS.
 
 Halaman AMP memperbolehkan JavaScript pihak ketiga tetapi hanya dalam iframe yang di-sandbox.
 Dengan mencegahnya masuk ke dalam iframe, JavaScript pihak ketiga tidak bisa memblokir eksekusi halaman utama.

@@ -72,7 +72,7 @@ Le script JS tiers aime utiliser le chargement JS synchrone.
 Il aime également appliquer `document.write` à d'autres scripts synchrones.
 Par exemple, si vous avez cinq publicités, chacune exécutant
 trois chargements synchrones avec une connexion
-d'une latence d'une seconde, le chargement JS prend à lui seul 18 secondes.
+d'une latence d'une seconde, le chargement JS prend à lui seul 15 secondes.
 
 Les pages AMP autorisent le JavaScript tiers, mais seulement dans des iframes placés en sandbox.
 Limité aux iframes, ces scripts ne peuvent pas bloquer l'exécution de la page principale.

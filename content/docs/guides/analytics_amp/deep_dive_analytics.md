@@ -135,7 +135,7 @@ to the account value in the remote URL (`"account": "UA-XXXXX-Y"`):
 [/sourcecode]
 
 **Important:** AMP doesn’t validate against multiple uses of the same variable.
-Values get populated following a variable substition order of preference,
+Values get populated following a variable substitution order of preference,
 and values in remote URLs are top of that order
 (see [Variable substitution ordering](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
 

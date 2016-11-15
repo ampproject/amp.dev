@@ -45,5 +45,5 @@ $title: Настройка Analytics
 * Будете ли вы отслеживать только просмотры страниц или учитывать также дополнительные модели заинтересованности пользователей
 (см. также [amp-pixel или amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
 * Какого рода данные вы собираетесь отслеживать о своих пользователях, своем контенте, устройстве или браузере
-(см. также [Подстановка переменных](/docs/guides/analytics/analytics_basics.html#variable-substition))?
+(см. также [Подстановка переменных](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * Как вы будете идентифицировать своих пользователей (см. также [Идентификация пользователей](/docs/guides/analytics/analytics_basics.html#user-identification))?

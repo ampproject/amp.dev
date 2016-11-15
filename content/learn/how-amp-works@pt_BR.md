@@ -72,7 +72,7 @@ JS de terceiros costuma usar o carregamento síncrono de JS.
 Eles também gostam de `document.write` mais scripts síncronos.
 Por exemplo, se tiver cinco anúncios e cada um realizar três carregamentos de sincronização
 em uma conexão com 1 segundo de latência,
-você terá 18 segundos de carregamento apenas para carregar o JS.
+você terá 15 segundos de carregamento apenas para carregar o JS.
 
 As páginas AMP permitem o uso de JavaScript de terceiros, mas apenas em iframes com sandbox.
 Ao serem restritos a iframes, eles não podem bloquear a execução da página principal.
