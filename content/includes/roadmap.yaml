@@ -1,6 +1,6 @@
 year: 2016
 quarter: Q4
-outlook:  Q4/Q1
+outlook:  Q1/Q2
 current: Mid-Q4 2016
 updated: November 15, 2016
 stages:
@@ -26,7 +26,7 @@ sections:
             - "[Native app deep-link/install button](https://github.com/ampproject/amphtml/issues/5284)"
             "3":
             - "[Out-of-box templates and styling](https://github.com/ampproject/amphtml/issues/2851)"
-            - "[Provide greater interactivity support by introducing a mechanism to bind element behavior to user actions](https://github.com/ampproject/amphtml/issues/5059)"
+            - "[Provide greater interactivity support by introducing a mechanism to bind element behavior to user actions](https://github.com/ampproject/amphtml/issues/6199)"
             "4":
             - "[**amp-lightbox** improvements](https://github.com/ampproject/amphtml/issues/4152)"
             - "[Support for immersive video viewing experiences](https://github.com/ampproject/amphtml/issues/4154)"
@@ -55,7 +55,7 @@ sections:
             "4":
             - "[**amp-analytics** support for **amp-form**](https://github.com/ampproject/amphtml/pull/5868)"
             - "[Share-tracking support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/3135)"
-            "5":
+            "6":
             - "[**amp-analytics** support for **amp-carousel**](https://github.com/ampproject/amphtml/issues/4292)"
         forecast:
         - Expose batched interaction data (e.g. scroll events) to **amp-analytics**
