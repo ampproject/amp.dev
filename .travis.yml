@@ -10,7 +10,7 @@ cache:
 #  - $HOME/.cache/pip
 #  - /home/travis/.local/bin
 before_install: 
-- pip install --upgrade pip --user
+- pip install --upgrade pip --user $USER
 install:
 - pip --version
 - pip install grow --user $USER
