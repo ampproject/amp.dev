@@ -3,7 +3,7 @@ node_js:
 - node
 #cache:
 #  directories:
-#  - node_modules # NPM packages
+  - node_modules # NPM packages
 #  - $(npm config get prefix)/bin/gulp
 #  - $(npm config get prefix)/bin/firebase
 #  - /home/travis/.nvm/versions/node/v7.0.0/lib/node_modules
@@ -11,7 +11,7 @@ node_js:
 #  - /home/travis/.local/bin
 install:
 - pip install grow --user
-#- npm install -g gulp
+- npm install -g gulp
 #- npm install -g firebase-tools
 #- npm install
 script:
