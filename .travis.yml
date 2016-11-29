@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - node
-cache: pip
+#cache: pip
   #directories:
   #- node_modules
   #- $(npm config get prefix)/bin/gulp
