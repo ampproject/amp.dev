@@ -10,7 +10,7 @@ cache:
   - $HOME/.cache/pip
   - /home/travis/.local/bin
 install:
-- pip install --upgrade pip --user $USER
+- pip install --upgrade pip --user
 - pip --version
 - pip install grow --user $USER
 - npm install -g gulp
