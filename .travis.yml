@@ -3,7 +3,7 @@ node_js:
 - node
 cache:
   directories:
-  - node_modules # NPM packages
+  - node_modules
   - $(npm config get prefix)/bin/gulp
   - $(npm config get prefix)/bin/firebase
   - /home/travis/.nvm/versions/node/v7.0.0/lib/node_modules
@@ -16,8 +16,8 @@ install:
 - npm install -g firebase-tools
 - npm install
 script:
-- 'if [ "${TRAVIS_BRANCH}" = "production" ]; then firebase use production; fi'
-- 'if [ "${TRAVIS_BRANCH}" = "master" ]; then firebase use staging; fi'
+- if [ "${TRAVIS_BRANCH}" = "production" ]; then firebase use production; fi
+- if [ "${TRAVIS_BRANCH}" = "master" ]; then firebase use staging; fi
 - grow build
 after_success:
 - firebase deploy --token "$FIREBASE_TOKEN"
@@ -26,5 +26,5 @@ branches:
   - production
   - master
 env:
-  global:
-    secure: RRx3CaLmCC0rA+MOYXTI3HTAMc2TI9AQcodUfZhr+vNEL8d0q09EZkYU/TjkRx9VQ1paOT1AmxNQJtHhysIS7B/pSAZoNG9bPC5UXmiZHVLbRB4qPmMMte9zdfKanGY3/g3zt2qOTUVVL4ymDy5xK2uYZ/KgkrDx1gGH3mSoTO6gK79I4nisJYDcRfzI/UUvrNkdjlFYrFnZbnMdnqZSryuv7CrdZWpYtLDryzJ+bcgq6Vr2liiKwmVb+/tff3EblAzBcWMAM4I0MzRaM+Mahw0EEENc24brtVoQTbvSdXXJ9CEIfWjykSyZh0WrZkx3tKY95GDr9PCHEkyI5d2kUGYDbRjjrEuBEdPTcjx6zZ2vXUlVPeDxNwLO1WZwVy0Om1dg/jwPjVDtsubjBaC+4XezJCywaZruGD6Q0iStemMVapN19SbGJzo9uYG8EvVB4OFlmY2l/fOadTIC9YHpYJREhGc2DBW9jHfTK1dgyW1JpnFgieEOSw24gsvbxSSV5db7tJU36Pt1Kkcu3IZnYyHlBUmYKZ24cizh6azfkHRaLvSvdJuvx0euuoz/WOJ77toUD6wPc0/OtrKnkCfQowtciMdnKNhuu4JpegdZ9gQqpV2gQ0XpPgxc4afKCd0L5QiUNFCu1J+fQ0obclqWZpC0VzHdDpNMckv4I7XqnhI=
+  matrix:
+    secure: M6jGkkI+8W8KVZ8BYstXDErZt0CKbEc/WByeSiDilAxyumsjnIxyYpnSFnYN5viZZk8Fng4CjO6kcCdvzN5+C7k3py+UrE2rOjOq22I89kIyfKG7GlflE9JEqms5zBQFmc6nnQx9Xk2DxsHHAA1quWyqFq1dtNwHNSvIK1Bt3TvnzDr8k360qSzzPshcuVa82msjoNujQHaMIz9mOaqAnkHCZVekeEvXYUg5eqVNwbTeRXutZib5TWjncTpjsZIuLY7iEJxlsQXZ+eNcz1WqE10s3H21AOM/r7KJ299Tl/x7XUu1/+MqcTKei07p6XKPg/2OgUaXTE3YVReq6ILoS1NXrna/dKZa5Sp9XdJ6HqXPjoGlB4O0bb3eai0U6a4hPZ69L1s2zoaqFMd7DxSVqpn8leOGTtrl1S2jK7Ad9saO3SQ+7j/Mzte151GUDUK3OKqQsP/XlkdF/AQUMJBhlzgAgf/sh8wDJGy5mYRWVSGjtLU99z+i+sUfV73SrEiFj4FgcboLF2wT3MG0ZO14efzKGhha316jHGjmYvgJoe/us0TPBESav4EYedg5RGw9xIh4OZ91urAbK65VYwAt3fci7etPPAfXanpUmn+nlcutXYZmahZgD9BHX06Kume+WTzBY0gVsVbZOHlXqqzJ9ZNP2x1C4TVx5gQ9F6fQtsE=
