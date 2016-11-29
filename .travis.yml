@@ -6,9 +6,9 @@ cache:
   - node_modules
   - $(npm config get prefix)/bin/gulp
   - $(npm config get prefix)/bin/firebase
-  - /home/travis/.nvm/versions/node/v7.0.0/lib/node_modules
+  #- /home/travis/.nvm/versions/node/v7.0.0/lib/node_modules
   - $HOME/.cache/pip
-  - /home/travis/.local/bin
+  #- /home/travis/.local/bin
 install:
 - pip install --upgrade pip --user
 - pip --version
