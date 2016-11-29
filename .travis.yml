@@ -9,9 +9,10 @@ cache: pip
   #- /home/travis/.nvm/versions/node/v7.0.0/lib/node_modules
   #- $HOME/.cache/pip
   #- /home/travis/.local/bin
+before_install:
+  pip install --upgrade pip==9.0.1
 install:
 - pip --version
-- pip install --upgrade pip --user
 - pip install grow --user $USER
 - npm install -g gulp
 - npm install -g firebase-tools
