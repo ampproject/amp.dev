@@ -10,7 +10,7 @@ cache:
   - $HOME/.cache/pip
   - /home/travis/.local/bin
 install:
-- pip install grow --user
+- pip install grow --user $USER
 - npm install -g gulp
 - npm install -g firebase-tools
 - npm install
