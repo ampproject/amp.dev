@@ -10,16 +10,12 @@ cache:
   - $HOME/.cache/pip
   - /home/travis/.local/bin
 install:
-- pip install grow==0.0.66 --user $USER
+- pip install grow --user
 - npm install -g gulp
 - npm install -g firebase-tools
 - npm install
 script:
 - grow build
-branches:
-  only:
-  - production
-  - master
 env:
   matrix:
   - secure: M6jGkkI+8W8KVZ8BYstXDErZt0CKbEc/WByeSiDilAxyumsjnIxyYpnSFnYN5viZZk8Fng4CjO6kcCdvzN5+C7k3py+UrE2rOjOq22I89kIyfKG7GlflE9JEqms5zBQFmc6nnQx9Xk2DxsHHAA1quWyqFq1dtNwHNSvIK1Bt3TvnzDr8k360qSzzPshcuVa82msjoNujQHaMIz9mOaqAnkHCZVekeEvXYUg5eqVNwbTeRXutZib5TWjncTpjsZIuLY7iEJxlsQXZ+eNcz1WqE10s3H21AOM/r7KJ299Tl/x7XUu1/+MqcTKei07p6XKPg/2OgUaXTE3YVReq6ILoS1NXrna/dKZa5Sp9XdJ6HqXPjoGlB4O0bb3eai0U6a4hPZ69L1s2zoaqFMd7DxSVqpn8leOGTtrl1S2jK7Ad9saO3SQ+7j/Mzte151GUDUK3OKqQsP/XlkdF/AQUMJBhlzgAgf/sh8wDJGy5mYRWVSGjtLU99z+i+sUfV73SrEiFj4FgcboLF2wT3MG0ZO14efzKGhha316jHGjmYvgJoe/us0TPBESav4EYedg5RGw9xIh4OZ91urAbK65VYwAt3fci7etPPAfXanpUmn+nlcutXYZmahZgD9BHX06Kume+WTzBY0gVsVbZOHlXqqzJ9ZNP2x1C4TVx5gQ9F6fQtsE=
