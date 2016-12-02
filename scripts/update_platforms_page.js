@@ -56,21 +56,23 @@ function addContentPlatforms() {
     - title@: Content Platforms
       section_items:
         - title: Google
-          link:
+          link: https://google.com
         - title: Hatena
-          link:
+          link: https://www.hatena.com/
         - title: LinkedIn
-          link:
+          link: https://www.linkedin.com/
         - title: Medium
-          link:
+          link: https://medium.com/
         - title: Nuzzel
-          link:
+          link: http://nuzzel.com/
         - title: Pinterest
-          link:
+          link: https://pinterest.com/
         - title: Reddit
-          link:
+          link: https://www.reddit.com/
         - title: Twitter
-          link:`;
+          link: https://twitter.com/
+        - title: Ghost
+          link: https://ghost.org`;
 }
 
 function addCMS() {
