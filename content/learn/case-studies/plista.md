@@ -1,5 +1,5 @@
 ---
-$order: 5
+$order: 4
 $title: plista
 $date: October 7, 2016
 headline: plista grows publisher revenue & user engagement with AMP

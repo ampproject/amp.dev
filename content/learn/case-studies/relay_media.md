@@ -1,5 +1,5 @@
 ---
-$order: 6
+$order: 5
 $title: Relay Media
 $date: October 7, 2016
 headline: Relay Media helps publishers get AMP’d
