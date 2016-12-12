@@ -1,13 +1,4 @@
-$color-blue: #4b91ef;
-$color-green: #0F9D58;
-$color-green-ripple: rgba(71, 149, 88, .25);
-
-$color-green-alt: #2c655a;
-$color-green-light: #9be34e;
-$color-cyan: #00bcd4;
-$color-cyan-ripple: rgba(80, 183, 206, .25);
-$color-grey: #dddddd;
-
+// old colors - clean up later
 $color-grey-50: #fafafa;
 $color-grey-100: #f5f5f5;
 $color-grey-200: #e9e9e9;
@@ -15,36 +6,31 @@ $color-grey-500: #9E9E9E;
 $color-grey-600: #757575;
 $color-grey-700: #616161;
 $color-grey-800: #424242;
-
-$color-lightgrey-transparent: rgba(100, 0, 100, .025);
 $color-darkgrey: #797c82;
-$color-teal: #03bcd4;
-$color-white: #fff;
-$color-lightblue: #3ab3eb;
-$color-verydarkblue: #1b1464;
-$color-brightblue: #29aae3;
 $color-midblue: #0379C4;
-
-$color-yellow: #f8c144;
 $color-orange: #f68c1e;
-$color-yellow-ripple: rgba(246, 191, 68, .25);
-
-$color-hover-bg: $color-grey-100;
-$color-bg: $color-white;
-
-// TODO: remove these ?
-$color-medgrey: #777777;
 $color-black-95: #333333;
-$color-black-87: #212121;
-
 // TODO: Legacy, remove these vars
 $color-lightgrey: $color-grey-100;
-$color-text: $color-black-95;
-$color-link: #0360B5;
 
-$font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+// new colors
+$color-ampblue: #1c79c0;
+$color-brightblue: #0389ff;
+$color-lightblue: #0dd3ff;
+$color-white: #fff;
+$color-black: #000;
+
+// gradients
+$gradient-angle: 36deg;
+$gradient-dark: linear-gradient(to right, $color-ampblue, $color-brightblue, $color-lightblue);
+$gradient-med: linear-gradient(to right, $color-brightblue, $color-lightblue);
+$gradient-light: linear-gradient(to right, $color-lightblue, $color-lightblue, $color-white);
+$gradient-anglebold: linear-gradient($gradient-angle, $color-lightblue, $color-brightblue, $color-ampblue);
+// $gradient-anglelight: linear-gradient($gradient-angle, $color-ampblue, $color-brightblue, $color-lightblue);
+
+//$font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+$font-family: 'Roboto', sans-serif;
 $font-size-xs: 14px;
-$line-height-xs: 22px;
 
 $margin: 20px;
 
@@ -55,8 +41,5 @@ $mobile-medium-breakpoint: 460px;
 $mobile-baby-breakpoint: 320px;
 $tablet-breakpoint: 1024px;
 $tablet-portrait-breakpoint: 768px;
-
-$transition-snap: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-$transition-snap-short: all 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 
 $header-padding: 40px;

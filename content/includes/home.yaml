@@ -1,10 +1,9 @@
 hero:
-  title@: Instant. <br> Everywhere.
-  content@: For many, reading on the mobile web is a slow, clunky and frustrating experience - but it doesn’t have to be that way. The Accelerated Mobile Pages (AMP) Project is an open source initiative that embodies the vision that publishers can create mobile optimized content once and have it load instantly everywhere.
-  cta@: GET STARTED
+  title@: Mobile web, faster.
+  content@: The open-source AMP Project helps you create mobile optimized content that loads in an instant.
+  cta@: Learn about AMP
   cta_url: /docs/get_started/about-amp.html
-  content_mobile@: The Accelerated Mobile Pages (AMP) Project is an open initiative that embodies the vision that publishers can create mobile optimized content once and have it load instantly everywhere.
-  youtube_video_id: "WrpkFROqR0Q"
+  secondary_cta@: Start Building
 
 get_started:
   title@: Get Started with AMP HTML

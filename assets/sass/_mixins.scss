@@ -1,12 +1,22 @@
 @mixin text-body() {
-  color: $color-grey-800;
-  font-size: 16px;
+  color: $color-black;
+  font-size: 20px;
   font-weight: 300;
-  line-height: 24px;
+  line-height: 28px;
 
   @include max-screen($mobile-breakpoint) {
     font-size: 16px;
-    line-height: 28px;
+    line-height: 26px;
+  }
+
+  &.small {
+    color: $color-black-95;
+    font-size: 16px;
+    line-height: 26px;
+
+    @include max-screen($mobile-breakpoint) {
+      font-size: 14px;
+    }
   }
 }
 
