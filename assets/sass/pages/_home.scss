@@ -1,10 +1,4 @@
 .home {
-
-  h1 {
-    font-size: 36px;
-    margin-bottom: 40px;
-  }
-
   .hero {
     position: relative;
 
@@ -19,58 +13,30 @@
     }
 
     h1 {
-      color: $color-black;
-      font-weight: 100;
+      // br {
+      //   display: none;
 
-      br {
-        display: none;
-
-        @include max-screen($mobile-breakpoint) {
-          display: block;
-        }
-      }
-    }
-
-    .hero-phone {
-      position: absolute;
-      right: 0;
-      top: -11%;
-      width: 360px;
-
-      @include max-screen($tablet-breakpoint) {
-        right: 0;
-      }
-    }
-
-    .video-div {
-      position: absolute;
-      right: 21.7%;
-      top: 9.25%;
-
+      //   @include max-screen($mobile-breakpoint) {
+      //     display: block;
+      //   }
+      // }
     }
 
     .intro {
-      color: $color-white;
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 510px;
-      padding-bottom: 45px;
-
-      p {
-        margin-top: 0;
-      }
+      color: $color-black;
+      margin-top: 0;
+      padding-bottom: 30px;
+      max-width: 500px;
 
       @include max-screen($mobile-breakpoint) {
         margin-bottom: 15px;
       }
     }
 
-    .go-button {
-      margin-top: 40px;
-      font-weight: 500;
+    .cta_connector {
+      margin: 0 20px;
     }
   }
-
 }
 
 .section-computer {
@@ -163,7 +129,6 @@ amp-lightbox {
   }
 }
 
-// TODO: all sections should have .blade classes allied to them.
 section {
   padding: 100px 0 60px 0;
 
@@ -172,69 +137,63 @@ section {
   }
 }
 
-.blade {
+// .blade {
+//   &--hero {
+//     padding: 65px 0 20px;
 
-  h1 {
-    font-size: 30px;
-    font-weight: 300;
-  }
+//     .container {
+//       position: relative;
+//     }
 
-  &--hero {
-    padding: 65px 0 20px;
+//     .six.columns {
+//       display: flex;
+//       align-items: center;
+//     }
 
-    .container {
-      position: relative;
-    }
+//   }
 
-    .six.columns {
-      display: flex;
-      align-items: center;
-    }
+//   &--get-started {
+//     padding: 90px 0 120px;
+//     background: $color-grey-100;
 
-  }
+//     amp-carousel {
+//       max-width: 100%;
+//     }
+//   }
 
-  &--get-started {
-    padding: 90px 0 120px;
-    background: $color-grey-100;
+//   &--contributors {
+//     background: $color-grey-200;
 
-    amp-carousel {
-      max-width: 100%;
-    }
-  }
+//     amp-carousel.single {
+//       max-width: 100%;
+//     }
+//   }
 
-  &--contributors {
-    background: $color-grey-200;
+//   &--benefits {
+//     padding: 0;
+//     box-shadow: none;
+//     background-color: $color-white;
+//   }
 
-    amp-carousel.single {
-      max-width: 100%;
-    }
-  }
+//   &--blog {
+//     background-color: $color-midblue;
+//     padding: 70px 0;
 
-  &--benefits {
-    padding: 0;
-    box-shadow: none;
-    background-color: $color-white;
-  }
+//     @include max-screen($mobile-breakpoint) {
+//       padding-top: 40px;
+//       padding-bottom: 40px;
+//     }
 
-  &--blog {
-    background-color: $color-midblue;
-    padding: 70px 0;
+//   }
 
-    @include max-screen($mobile-breakpoint) {
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
+//   @include max-screen($mobile-breakpoint) {
+//     padding: 60px 0;
+//     &--benefits {
+//       padding: 0;
+//     }
+//   }
 
-  }
-
-  @include max-screen($mobile-breakpoint) {
-    padding: 60px 0;
-    &--benefits {
-      padding: 0;
-    }
-  }
-
-}
+// }
 
 // Image Grid
 .image-grid {

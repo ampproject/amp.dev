@@ -4,6 +4,7 @@ hero:
   cta@: Learn about AMP
   cta_url: /docs/get_started/about-amp.html
   secondary_cta@: Start Building
+  secondary_cta_url: /docs/get_started/about-amp.html
 
 get_started:
   title@: Get Started with AMP HTML

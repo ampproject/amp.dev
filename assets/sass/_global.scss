@@ -10,7 +10,7 @@ dl, dd, ol, ul, figure {
 html,
 body {
   // -webkit-font-smoothing: antialiased;
-  font-family: $font-family;
+  @include text-body();
   margin: 0;
   overflow-x: hidden;
   padding: 0;
@@ -42,8 +42,7 @@ h4,
 h5 {
   color: $color-black;
   font-weight: 300;
-  margin-top: 1.1em;
-  margin-bottom: 0.5em;
+  margin: 0.25em 0;
 
   // &:before {
   //   display: block;
@@ -65,10 +64,10 @@ h1 {
     line-height: 44px;
   }
 
-  .home &,
-  .who & {
-    margin-top: 0;
-  }
+  // .home &,
+  // .who & {
+  //   margin-top: 0;
+  // }
 }
 
 
@@ -95,18 +94,40 @@ h3 {
  * Links
  */
 a {
-  color: $color-midblue;
+  color: $color-brightblue;
+  font-size: 14px;
+  position: relative;
+  text-transform: uppercase;
   text-decoration: none;
+
+  &.underlined {
+    &::before {
+      background: $gradient-med;
+      bottom: -5px;
+      content: '';
+      left: 0;
+      height: 2px;
+      position: absolute;
+      right: 0;
+    }
+  }
 }
 
-a:hover {
-  text-decoration: underline;
-}
+.button {
+  background: $color-brightblue;
+  color: $color-white;
+  padding: 20px;
+  position: relative;
 
-a.button {
-  padding: 1em;
-  display: block;
-  text-align: center;
+  &::before {
+    background: $gradient-med;
+    bottom: -2px;
+    content: '';
+    left: 0;
+    height: 2px;
+    position: absolute;
+    right: 0;
+  }
 }
 
 /**
@@ -172,7 +193,7 @@ figure {
   box-sizing: border-box;
   margin: 0 auto;
   max-width: $container-size;
-  padding: 0 $margin;
+  padding: 0 $grid-margin;
 
   &.md {
     max-width: 800px;

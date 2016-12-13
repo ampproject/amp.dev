@@ -9,7 +9,6 @@ $color-grey-800: #424242;
 $color-darkgrey: #797c82;
 $color-midblue: #0379C4;
 $color-orange: #f68c1e;
-$color-black-95: #333333;
 // TODO: Legacy, remove these vars
 $color-lightgrey: $color-grey-100;
 
@@ -19,10 +18,13 @@ $color-brightblue: #0389ff;
 $color-lightblue: #0dd3ff;
 $color-white: #fff;
 $color-black: #000;
+$color-black-95: #333333;
+$color-grey-md: #959595;
+$color-grey-lt: #ededed;
 
 // gradients
 $gradient-angle: 36deg;
-$gradient-dark: linear-gradient(to right, $color-ampblue, $color-brightblue, $color-lightblue);
+$gradient-bold: linear-gradient(to right, $color-ampblue, $color-brightblue, $color-lightblue);
 $gradient-med: linear-gradient(to right, $color-brightblue, $color-lightblue);
 $gradient-light: linear-gradient(to right, $color-lightblue, $color-lightblue, $color-white);
 $gradient-anglebold: linear-gradient($gradient-angle, $color-lightblue, $color-brightblue, $color-ampblue);
@@ -34,7 +36,10 @@ $font-size-xs: 14px;
 
 $margin: 20px;
 
-$container-size: 1000px;
+$container-size: 1440px;
+$container-size-mobile: 320px;
+$grid-margin: 22px;
+$grid-gutters: 20px;
 
 $mobile-breakpoint: 956px;
 $mobile-medium-breakpoint: 460px;

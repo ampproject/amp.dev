@@ -17,277 +17,28 @@ components:
 {% set blog = g.doc('/content/includes/blog_feed.yaml', locale=doc.locale) %}
 {% set case_studies = g.doc('/content/includes/case-studies.yaml', locale=doc.locale) %}
 
-<section class="blade blade--hero hero">
+<section class="hero">
   <div class="container">
     <div class="row">
       <div class="six columns offset-by-six">
         <div class="intro-container">
           <h1>{{_(home.hero.title)}}</h1>
-          <p class="intro desktop-only">{{_(home.hero.content)}}</p>
+          <p class="intro">{{_(home.hero.content)}}</p>
+          <a class="button" href="{{home.hero.cta_url}}">{{_(home.hero.cta)}}</a> <span class="cta_connector light">{{_('or')}}</span> <a class="underlined" href="{{home.hero.secondary_cta_url}}">{{_(home.hero.secondary_cta)}}</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="blade blade--get-started">
-  <div class="container">
+<section class="latest">
 
-    <div>
-      <h1>{{_(home.get_started.title)}}</h1>
-    </div>
-
-    <div class="tablet-up">
-      <div class="card-container">
-        {% for card in home.get_started.cards %}
-        <div class="card">
-          <div class="card__image">
-            <amp-img
-                noloading
-                height=190
-                width=297
-                layout=responsive
-                src="{{card.img}}">
-            </amp-img>
-          </div>
-          <div class="card__content">
-            <h4 class="card__title">{{_(card.title)}}</h4>
-            <p>{{_(card.content)}}</p>
-          </div>
-          <div class="card__action">
-            <a href="{{card.href}}">{{_(card.cta)}}</a>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-
-    <amp-carousel class="tablet-down"
-      width="auto"
-      height="640"
-      type="slides"
-      layout="fixed-height">
-      {% for card in home.get_started.cards %}
-      <div class="card">
-        <div class="card__image">
-          <amp-img
-              noloading
-              height="190"
-              width="297"
-              layout="responsive"
-              src="{{card.img}}">
-          </amp-img>
-        </div>
-        <div class="card__content">
-          <h4 class="card__title">{{_(card.title)}}</h4>
-          <p>{{_(card.content)}}</p>
-        </div>
-        <div class="card__action">
-          <a href="{{card.href}}">{{_(card.cta)}}</a>
-        </div>
-      </div>
-      {% endfor %}
-    </amp-carousel>
-
-  </div>
 </section>
 
-<section class="blade blade--blog">
+<section class="benefits"></section>
 
-  <div class="container">
-    <div>
-        <h1 class="blog__section-title">{{blog.section_title}}</h1>
-    </div>
+<section class="experience"></section>
 
-    <div class="blog">
-      <div class="blog__tabs">
-        {% for article in blog.blog %}
-          {% if loop.index0 < 3 %}
-          <a class="blog__tab" href="{{article.href}}" target="_blank">
-            <h3 class="blog__title">{{article.title}}</h3>
-            <div class="blog__subtitle">{{article.date}}</div>
-          </a>
-          {% endif %}
-        {% endfor %}
-      </div>
+<section class="success-stories"></section>
 
-      <a class="blog__viewmore" href="https://amphtml.wordpress.com/" target="_blank">View More</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="blade blade--contributors">
-  <div class="container">
-
-    <div>
-      <h1>{{_(home.contributors.title)}}</h1>
-    </div>
-
-    <amp-carousel class="desktop-up"
-      height="500"
-      layout="flex-item"
-      type="slides">
-
-      <div class="boxes">
-      {% for person in home.contributors.people %}
-        <div class="box">
-
-          <div class="box__inner">
-
-            <div class="box__content">
-              {{_(person.quote)}}
-            </div>
-
-            <div class="box__footer">
-              <div class="box__image">
-                <amp-img src="{{person.img}}"
-                    width="90"
-                    height="90"
-                    noloading
-                    alt="{{person.name}}">
-                </amp-img>
-              </div>
-              <div class="box__credit">
-                <h5 class="box__title">{{person.name}}</h5>
-                <div class="box__subtitle">{{_(person.position)}}</div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-        {% if not loop.last and loop.index is divisibleby 2 %}
-      </div>
-      <div class="boxes">
-        {% endif %}
-      {% endfor %}
-      </div>
-
-    </amp-carousel>
-
-    <amp-carousel class="single mobile-down"
-      height="550"
-      type="slides"
-      layout="flex-item">
-      {% for person in home.contributors.people %}
-      <div class="box">
-
-        <div class="box__inner">
-
-          <div class="box__content">
-            {{_(person.quote)}}
-          </div>
-
-          <div class="box__footer">
-            <div class="box__image">
-              <amp-img src="{{person.img}}"
-                  width="90"
-                  height="90"
-                  noloading
-                  alt="{{person.name}}">
-              </amp-img>
-            </div>
-            <div class="box__credit">
-              <h5 class="box__title">{{person.name}}</h5>
-              <div class="box__subtitle">{{_(person.position)}}</div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-      {% endfor %}
-    </amp-carousel>
-
-  </div>
-</section>
-
-<section class="blade blade--blog">
-
-  <div class="container">
-    <div>
-        <h1 class="blog__section-title">{{_(case_studies.section_title)}}</h1>
-    </div>
-
-    <div class="blog">
-      <div class="blog__tabs">
-        {% for item in g.collection('learn/case-studies').docs(recursive=false, locale=doc.locale)|reverse %}
-          {% if loop.index0 < 3 %}
-          <a class="blog__tab" href="{{item.url.path}}">
-            <h3 class="blog__title">{{item.headline or item.title}}</h3>
-            <div class="blog__subtitle">{{item.date}}</div>
-          </a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="blade blade--publishers">
-
-  <div class="container">
-    <div>
-      <h1>{{_(home.publishers.title)}}</h1>
-    </div>
-
-    <amp-carousel class="tablet-up"
-      height="300"
-      type="slides"
-      layout="fixed-height">
-
-      <div class="image-grid image-grid--large">
-      {% for publisher in home.publishers.logos %}
-        <div class="image-grid__image">
-
-          <amp-img src="{{publisher.img}}"
-              width="100"
-              height="100"
-              noloading
-              alt="{{_(publisher.title)}}">
-          </amp-img>
-
-        </div>
-
-        {% if not loop.last and loop.index is divisibleby 12 %}
-      </div>
-      <div class="image-grid image-grid--large">
-        {% endif %}
-
-      {% endfor %}
-      </div>
-
-    </amp-carousel>
-
-    <amp-carousel class="tablet-down"
-      height="240"
-      type="slides"
-      layout="fixed-height">
-
-      <div class="image-grid image-grid--small">
-      {% for publisher in home.publishers.logos %}
-        <div class="image-grid__image">
-
-          <amp-img src="{{publisher.img}}"
-              width="80"
-              height="80"
-              noloading
-              alt="{{_(publisher.title)}}">
-          </amp-img>
-
-        </div>
-
-        {% if not loop.last and loop.index is divisibleby 9 %}
-      </div>
-      <div class="image-grid image-grid--small">
-        {% endif %}
-
-      {% endfor %}
-      </div>
-
-    </amp-carousel>
-
-  </div>
-</section>
+<section class="create"></section>
