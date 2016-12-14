@@ -19,6 +19,26 @@ components:
 
 <section class="hero">
   <div class="container">
+    <div class="hero-image">
+      <div class="lines">
+        <amp-img
+            noloading
+            height=596
+            width=700
+            layout=responsive
+            src="{{home.hero.lines_img}}">
+        </amp-img>
+      </div>
+      <div class="phone">
+        <amp-img
+            noloading
+            height=989
+            width=684
+            layout=responsive
+            src="{{home.hero.phone_img}}">
+        </amp-img>
+      </div>
+    </div>
     <div class="row">
       <div class="six columns offset-by-six">
         <div class="intro-container">
@@ -30,9 +50,9 @@ components:
     </div>
     <div class="row">
       <div class="latest seven columns offset-by-five">
-        <div class="latest-label">{{_(home.hero.carousel_title)}}</div>
+        <h3 class="latest-label">{{_(home.hero.carousel_title)}}</h3>
 
-        <amp-carousel class="latest-carousel"
+        <amp-carousel class="latest-carousel desktop-up"
           height="250"
           layout="flex-item"
           type="slides">
@@ -64,7 +84,28 @@ components:
   </div>
 </section>
 
-<section class="benefits"></section>
+<section class="benefits">
+  <h1>{{_(home.benefits.title)}}</h1>
+    <div class="benefits-row">
+      {% for card in home.benefits.cards %}
+        <div class="benefit">
+          <div class="benefit-image">
+            <amp-img
+                noloading
+                height={{card.img_height}}
+                width={{card.img_width}}
+                layout=responsive
+                src="{{card.img}}">
+            </amp-img>
+          </div>
+          <div class="benefit-content">
+            <h3 class="title">{{_(card.title)}}</h3>
+            <div class="desc">{{_(card.content)}}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+</section>
 
 <section class="experience"></section>
 

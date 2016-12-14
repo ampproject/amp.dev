@@ -5,8 +5,8 @@ hero:
   cta_url: /docs/get_started/about-amp.html
   secondary_cta@: Start Building
   secondary_cta_url: /docs/get_started/about-amp.html
-  img: /static/img/benefits/mobile-speed.png
-  img_mobile: /static/img/benefits/mobile-speed.png
+  phone_img: /static/img/home/phone_hero.png
+  lines_img: /static/img/home/lines_hero.png
   carousel_title@: The Latest
 
 benefits:
@@ -14,17 +14,21 @@ benefits:
   cards:
     - title@: Speed
       content@: AMP pages are cached on Google’s servers and the pages are optimized, so they load quickly.
-      img: /static/img/man.jpg
+      img: /static/img/home/icon2.png
+      img_width: 263
+      img_height: 243
 
     - title@: Distribution
       content@: AMP pages are made of  custom built components to create a light-weight experience.
-      img: /static/img/amp.jpg
+      img: /static/img/home/icon1.png
+      img_width: 223
+      img_height: 259
 
 experience:
   title@: The AMP experience
   content@: AMP provides publishers a flexible framework to create a more consistent, speedy, accessible and engaging experience for their users.
-  img: /static/img/benefits/mobile-speed.png
-  img_mobile: /static/img/benefits/mobile-speed.png
+  img: /static/img/home/benefits/mobile-speed.png
+  img_mobile: /static/img/home/benefits/mobile-speed.png
   cta@: Learn more
   cta_url: /docs/get_started/about-amp.html
 
@@ -32,31 +36,31 @@ success_stories:
   title@: Many sites are seeing success with AMP
   cards:
     - quote@: “10X faster than standard mobile web articles.”
-      img: /static/img/publishers/abril.png
+      img: /static/img/home/publishers/abril.png
 
     - quote@: “20% more articles read on average per CTR.”
-      img: /static/img/publishers/abril.png
+      img: /static/img/home/publishers/abril.png
 
     - quote@: “We saw a 70% increase in CTR"
-      img: /static/img/publishers/abril.png
+      img: /static/img/home/publishers/abril.png
 
     - quote@: “10X faster than standard mobile web articles.”
-      img: /static/img/publishers/abril.png
+      img: /static/img/home/publishers/abril.png
 
     - quote@: “20% more articles read on average per CTR.”
-      img: /static/img/publishers/abril.png
+      img: /static/img/home/publishers/abril.png
 
     - quote@: “We saw a 70% increase in CTR"
-      img: /static/img/publishers/abril.png
+      img: /static/img/home/publishers/abril.png
 
     - quote@: “10X faster than standard mobile web articles.”
-      img: /static/img/publishers/abril.png
+      img: /static/img/home/publishers/abril.png
 
     - quote@: “20% more articles read on average per CTR.”
-      img: /static/img/publishers/abril.png
+      img: /static/img/home/publishers/abril.png
 
     - quote@: “We saw a 70% increase in CTR"
-      img: /static/img/publishers/abril.png
+      img: /static/img/home/publishers/abril.png
 
 create:
   title@: Create your first AMP page now
