@@ -4,6 +4,7 @@
   font-size: 20px;
   font-weight: 300;
   line-height: 28px;
+  text-transform: none;
 
   @include max-screen($mobile-breakpoint) {
     font-size: 16px;

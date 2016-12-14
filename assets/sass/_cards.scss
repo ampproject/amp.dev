@@ -1,62 +1,92 @@
 .card-container {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  padding: 20px 0;
 }
 
 .card {
-  overflow: hidden;
-  background: #fff;
-  border-radius: 2px;
-  box-shadow:
-      0 2px 2px 0 rgba(0, 0, 0, 0.14),
-      0 1px 5px 0 rgba(0, 0, 0, 0.12),
-      0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
+  @include text-body();
+  background: $color-white;
+  box-shadow: 0px 9px 19px -2px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  display: inline-block;
   flex: 0 0 31%; // IE10: calc not allowed in flex
-  flex: 0 0 calc(33% - 10px);
+  flex: 0 0 calc(33% - 20px);
+  height: 90%;
+  margin: 10px 5px;
+  padding: 10px;
+  position: relative;
+
+  &::before {
+    background: $gradient-bold;
+    content: '';
+    left: 0;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    top: -2px;
+  }
 
   @include max-screen($tablet-portrait-breakpoint) {
     flex-basis: 100%;
   }
 }
 
-.card__title {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.4;
-  margin-top: 0;
-  margin-bottom: 16px;
-  color: $color-grey-800;
+.card-inner {
+  display: inline-flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
 
-.card__content {
-  padding: 20px;
-  font-weight: 300;
-  border-radius: 0 0 2px 2px;
-  text-align: left;
-
-  flex: 1 0 auto;
-}
-
-.card p {
-  margin: 0;
-  color: $color-grey-700
-}
-
-.card__action {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+.card-type {
+  color: $color-ampblue;
   text-transform: uppercase;
   font-size: 14px;
-
-  a {
-    padding: 20px;
-    display: block;
-  }
+  line-height: 20.65px;
+  letter-spacing: 0.56px;
+  margin-bottom: 15px;
 }
 
-.card__image {
-  position: relative;
+.card-date {
+  margin-top: 10px;
 }
+
+// .card__title {
+//   font-size: 20px;
+//   font-weight: 300;
+//   line-height: 1.4;
+//   margin-top: 0;
+//   margin-bottom: 16px;
+//   color: $color-grey-800;
+// }
+
+// .card__content {
+//   padding: 20px;
+//   font-weight: 300;
+//   border-radius: 0 0 2px 2px;
+//   text-align: left;
+
+//   flex: 1 0 auto;
+// }
+
+// .card p {
+//   margin: 0;
+//   color: $color-grey-700
+// }
+
+// .card__action {
+//   border-top: 1px solid rgba(0, 0, 0, 0.2);
+//   text-transform: uppercase;
+//   font-size: 14px;
+
+//   a {
+//     padding: 20px;
+//     display: block;
+//   }
+// }
+
+// .card__image {
+//   position: relative;
+// }

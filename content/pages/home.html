@@ -28,11 +28,40 @@ components:
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="latest seven columns offset-by-five">
+        <div class="latest-label">{{_(home.hero.carousel_title)}}</div>
+
+        <amp-carousel class="latest-carousel"
+          height="250"
+          layout="flex-item"
+          type="slides">
+
+          <div class="card-container">
+          {% for article in blog.blog %}
+            <a href="{{article.href}}" class="card">
+              <div class="card-inner">
+                <div class="card-type news">
+                  {{_('News')}}
+                </div>
+                <div class="card-content small">
+                  {{_(article.title)}}
+                </div>
+                <div class="card-date light">
+                  {{_(article.date)}}
+                </div>
+              </div>
+            </a>
+            {% if not loop.last and loop.index is divisibleby 3 %}
+          </div>
+          <div class="card-container">
+            {% endif %}
+          {% endfor %}
+          </div>
+        </amp-carousel>
+      </div>
+    </div>
   </div>
-</section>
-
-<section class="latest">
-
 </section>
 
 <section class="benefits"></section>

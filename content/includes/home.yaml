@@ -7,9 +7,7 @@ hero:
   secondary_cta_url: /docs/get_started/about-amp.html
   img: /static/img/benefits/mobile-speed.png
   img_mobile: /static/img/benefits/mobile-speed.png
-
-latest:
-  title@: The Latest
+  carousel_title@: The Latest
 
 benefits:
   title@: What AMP provides for publishers

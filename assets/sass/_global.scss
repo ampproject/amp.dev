@@ -11,6 +11,7 @@ html,
 body {
   // -webkit-font-smoothing: antialiased;
   @include text-body();
+  box-sizing: border-box;
   margin: 0;
   overflow-x: hidden;
   padding: 0;
