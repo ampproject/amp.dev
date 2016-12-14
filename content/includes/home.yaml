@@ -27,8 +27,9 @@ benefits:
 experience:
   title@: The AMP experience
   content@: AMP provides publishers a flexible framework to create a more consistent, speedy, accessible and engaging experience for their users.
-  img: /static/img/home/benefits/mobile-speed.png
-  img_mobile: /static/img/home/benefits/mobile-speed.png
+  bg_img: /static/img/home/bg_experience.png
+  phone_img: /static/img/home/phone_experience.png
+  lines_img: /static/img/home/lines_experience.png
   cta@: Learn more
   cta_url: /docs/get_started/about-amp.html
 

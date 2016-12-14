@@ -107,7 +107,43 @@ components:
     </div>
 </section>
 
-<section class="experience"></section>
+<section class="experience">
+  <div class="experience-content">
+    <h1>{{_(home.experience.title)}}</h1>
+    <p>{{_(home.experience.content)}}</p>
+    <a href="{{home.experience.cta_url}}" class="underlined">{{_(home.experience.cta)}}</a>
+  </div>
+
+  <div class="experience-image">
+    <div class="bg">
+      <amp-img
+          noloading
+          height=2095
+          width=1424
+          layout=responsive
+          src="{{home.experience.bg_img}}">
+      </amp-img>
+    </div>
+    <div class="lines">
+      <amp-img
+          noloading
+          height=1907
+          width=1563
+          layout=responsive
+          src="{{home.experience.lines_img}}">
+      </amp-img>
+    </div>
+    <div class="phone">
+      <amp-img
+          noloading
+          height=2367
+          width=1657
+          layout=responsive
+          src="{{home.experience.phone_img}}">
+      </amp-img>
+    </div>
+  </div>
+</section>
 
 <section class="success-stories"></section>
 
