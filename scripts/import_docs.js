@@ -27,7 +27,7 @@ function downloadPage(filePath, callback, headingToStrip) {
       throw err;
     }
 
-    if (!data.content.length) {
+    if (data && data.content !== undefined && !data.content.length) {
       console.log("Skipping " + filePath + ", file is empty..");
       return;
     }
