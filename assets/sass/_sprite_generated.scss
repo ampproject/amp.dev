@@ -1,10 +1,12 @@
 $icons: (
-    sprite: (width: 84px, height: 78px, svgPath: '/static/img/sprite.svg'),
-    check_circle: (width: 24px, height: 24px, backgroundX: 0px, backgroundY: -30px),
-    error: (width: 24px, height: 24px, backgroundX: -24px, backgroundY: -30px),
-    lang-icon: (width: 24px, height: 24px, backgroundX: -60px, backgroundY: 0px),
+    sprite: (width: 84px, height: 79px, svgPath: '/static/img/sprite.svg'),
+    check_circle: (width: 24px, height: 24px, backgroundX: -24.03px, backgroundY: -30px),
+    error: (width: 24px, height: 24px, backgroundX: -60px, backgroundY: 0px),
+    lang-icon: (width: 24px, height: 24px, backgroundX: -60px, backgroundY: -24px),
     logo-blue-standalone: (width: 30px, height: 30px, backgroundX: 0px, backgroundY: 0px),
-    star: (width: 24px, height: 24px, backgroundX: -60px, backgroundY: -24px),
+    star: (width: 24px, height: 24px, backgroundX: 0px, backgroundY: -54.03px),
+    twitter: (width: 22.93px, height: 19.66px, backgroundX: -48px, backgroundY: -54.03px),
     video-play: (width: 30px, height: 30px, backgroundX: -30px, backgroundY: 0px),
-    warning: (width: 24px, height: 24px, backgroundX: 0px, backgroundY: -54px),
+    warning: (width: 24px, height: 24px, backgroundX: -24px, backgroundY: -54.03px),
+    wordpress: (width: 24.03px, height: 24.03px, backgroundX: 0px, backgroundY: -30px),
 );
