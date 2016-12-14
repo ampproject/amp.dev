@@ -155,6 +155,36 @@
     }
   }
 
+  .success-stories {
+    h1 {
+      margin: 0 auto;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .card-inner {
+      width: 100%;
+    }
+
+    .card-content {
+      flex: 1 1 auto;
+      position: relative;
+
+      h2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+      }
+    }
+
+    .card-icon {
+      height: 75px;
+      margin: 0 auto;
+      width: 75px;
+    }
+  }
+
   section {
     padding: 100px 0 60px 0;
 

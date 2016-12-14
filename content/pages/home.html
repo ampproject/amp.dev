@@ -145,6 +145,42 @@ components:
   </div>
 </section>
 
-<section class="success-stories"></section>
+<section class="success-stories">
+  <h1>{{_(home.success_stories.title)}}</h1>
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <amp-carousel class="success-carousel desktop-up"
+          height="400"
+          layout="flex-item"
+          type="slides">
+
+          <div class="card-container">
+          {% for card in home.success_stories.cards %}
+            <div class="card centered">
+              <div class="card-inner">
+                <div class="card-content">
+                  <h2>{{_(card.quote)}}</h2>
+                </div>
+                <amp-img class="card-icon"
+                    noloading
+                    height=500
+                    width=500
+                    layout=responsive
+                    src="{{card.img}}">
+                </amp-img>
+              </div>
+            </div>
+            {% if not loop.last and loop.index is divisibleby 3 %}
+          </div>
+          <div class="card-container">
+            {% endif %}
+          {% endfor %}
+          </div>
+        </amp-carousel>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="create"></section>

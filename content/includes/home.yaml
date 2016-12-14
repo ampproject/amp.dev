@@ -36,32 +36,32 @@ experience:
 success_stories:
   title@: Many sites are seeing success with AMP
   cards:
-    - quote@: “10X faster than standard mobile web articles.”
-      img: /static/img/home/publishers/abril.png
+    - quote@: “test quote”
+      img: /static/img/publishers/abril.png
 
-    - quote@: “20% more articles read on average per CTR.”
-      img: /static/img/home/publishers/abril.png
+    - quote@: “test quote”
+      img: /static/img/publishers/abril.png
 
-    - quote@: “We saw a 70% increase in CTR"
-      img: /static/img/home/publishers/abril.png
+    - quote@: “test quote”
+      img: /static/img/publishers/abril.png
 
-    - quote@: “10X faster than standard mobile web articles.”
-      img: /static/img/home/publishers/abril.png
+    - quote@: “test quote”
+      img: /static/img/publishers/abril.png
 
-    - quote@: “20% more articles read on average per CTR.”
-      img: /static/img/home/publishers/abril.png
+    - quote@: “test quote”
+      img: /static/img/publishers/abril.png
 
-    - quote@: “We saw a 70% increase in CTR"
-      img: /static/img/home/publishers/abril.png
+    - quote@: “test quote”
+      img: /static/img/publishers/abril.png
 
-    - quote@: “10X faster than standard mobile web articles.”
-      img: /static/img/home/publishers/abril.png
+    - quote@: “test quote”
+      img: /static/img/publishers/abril.png
 
-    - quote@: “20% more articles read on average per CTR.”
-      img: /static/img/home/publishers/abril.png
+    - quote@: “test quote”
+      img: /static/img/publishers/abril.png
 
-    - quote@: “We saw a 70% increase in CTR"
-      img: /static/img/home/publishers/abril.png
+    - quote@: “test quote”
+      img: /static/img/publishers/abril.png
 
 create:
   title@: Create your first AMP page now

@@ -31,6 +31,11 @@
   @include max-screen($tablet-portrait-breakpoint) {
     flex-basis: 100%;
   }
+
+  &.centered {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .card-inner {
