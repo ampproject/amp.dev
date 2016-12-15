@@ -1,6 +1,8 @@
 amp-carousel {
-  padding-left: 30px;
-  padding-right: 30px;
+  .card-container {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
 }
 
 .amp-carousel-button {
@@ -25,5 +27,11 @@ amp-carousel {
 }
 
 .amp-carousel-button-prev {
-  transform: translateY(-50%) rotateY(180deg) translateY(-10px);
+  left: 0;
+  transform: translateY(-50%) translateY(-10px) rotateY(180deg);
+}
+
+.amp-carousel-button-next {
+  right: 0;
+  transform: translateY(-50%) translateY(-10px);
 }
