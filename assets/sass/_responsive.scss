@@ -28,8 +28,7 @@
   }
 }
 
-.mobile-down,
-.mobile-only {
+.mobile-down {
   display: none;
   visibility: hidden;
   @include max-screen($mobile-breakpoint) {

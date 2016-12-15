@@ -10,20 +10,6 @@
       position: relative;
       display: flex;
       justify-content: space-between;
-
-      @include max-screen($tablet-breakpoint) {
-        flex-direction: column;
-      }
-    }
-
-    .intro-container {
-      @include max-screen($tablet-breakpoint) {
-        text-align: center;
-
-        .button {
-          margin-bottom: 20px;
-        }
-      }
     }
 
     .intro {
@@ -31,18 +17,10 @@
       margin: 0;
       padding-bottom: 30px;
       max-width: 500px;
-
-      @include max-screen($tablet-breakpoint) {
-        margin: 0 auto;
-      }
     }
 
     .cta_connector {
       margin: 0 20px;
-
-      @include max-screen($tablet-breakpoint) {
-        margin: 0 5px 0 0;
-      }
     }
   }
 
@@ -55,14 +33,6 @@
     @include max-screen($container-size) {
       max-width: 500px;
       top: 40px;
-    }
-
-    @include max-screen($tablet-breakpoint) {
-      margin: 60px auto;
-      max-width: 500px;
-      order: 2;
-      transform: none;
-      width: 100%;
     }
 
     .lines, .phone {
@@ -85,10 +55,6 @@
 
   .hero-content {
     flex: 10 1 auto;
-
-    @include max-screen($tablet-breakpoint) {
-      order: 1;
-    }
   }
 
   .latest {
@@ -128,33 +94,21 @@
       margin: 0 auto;
       max-width: 450px;
       text-align: center;
-
-      @include max-screen($mobile-breakpoint) {
-        max-width: 200px;
-      }
     }
 
     .benefits-row {
       display: flex;
       justify-content: center;
       margin-top: 130px;
-
-      @include max-screen($mobile-breakpoint) {
-        flex-direction: column;
-        margin-top: 30px;
-      }
     }
 
     .benefit {
       margin: 0 50px;
+      min-width: 0;
+      white-space: nowrap;
 
       &:nth-child(2) .benefit-image {
         width: 125px;
-      }
-
-      @include max-screen($mobile-breakpoint) {
-        margin: 20px auto;
-        text-align: center;
       }
     }
 
@@ -164,8 +118,9 @@
       top: -50px;
       width: 150px;
 
-      @include max-screen($mobile-breakpoint) {
-        top: 0;
+      @include max-screen($mobile-medium-breakpoint) {
+        display: block;
+        margin: 20px auto;
       }
     }
 
@@ -174,6 +129,10 @@
       position: relative;
       vertical-align: top;
       width: 300px;
+
+      .desc {
+        white-space: normal;
+      }
     }
   }
 
@@ -185,11 +144,6 @@
     margin-top: -150px;
     max-width: 100%;
 
-    @include max-screen($mobile-breakpoint) {
-      flex-direction: column;
-      margin-top: 0;
-    }
-
     .experience-content {
       margin-right: 100px;
       max-width: 450px;
@@ -199,10 +153,6 @@
       min-width: 0;
       position: relative;
 
-      @include max-screen($mobile-breakpoint) {
-        max-width: 100%;
-      }
-
       .bg, .lines, .phone {
         max-width: 100%;
         z-index: -1;
@@ -210,7 +160,7 @@
 
       .bg {
         position: relative;
-        transform: translateY(-20%);
+        transform: translateY(-9%);
         width: 712px;
       }
 
@@ -235,10 +185,6 @@
     padding-bottom: 0;
     position: relative;
     z-index: 1;
-
-    @include max-screen($mobile-breakpoint) {
-      margin-bottom: 0;
-    }
 
     h1 {
       margin: 0 auto;
@@ -300,9 +246,97 @@
 
   section {
     padding: 100px 0 60px 0;
+  }
 
-    @include max-screen($mobile-breakpoint) {
+
+  @include max-screen($tablet-breakpoint) {
+    .hero {
+      .container {
+        flex-direction: column;
+      }
+
+      .intro-container {
+        text-align: center;
+
+        .button {
+          margin-bottom: 20px;
+        }
+      }
+
+      .intro {
+        margin: 0 auto;
+      }
+
+      .cta_connector {
+        margin: 0 5px 0 0;
+      }
+
+      .card {
+        flex-basis: 100%;
+      }
+    }
+
+    .hero-image {
+      margin: 60px auto;
+      max-width: 500px;
+      order: 2;
+      transform: none;
+      width: 100%;
+    }
+
+    .hero-content {
+      order: 1;
+    }
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    .benefits {
+      h1 {
+        max-width: 200px;
+      }
+
+      .benefits-row {
+        flex-direction: column;
+        margin-top: 30px;
+      }
+
+      .benefit {
+        margin: 20px auto;
+        text-align: center;
+        white-space: normal;
+      }
+
+      .benefit-image {
+        top: 0;
+      }
+    }
+
+    .experience {
+      flex-direction: column;
+      margin-top: 0;
+
+      .bg {
+        transform: translateY(-20%);
+      }
+    }
+
+    .experience-image {
+      margin: -100px 0 0 auto;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .success-stories {
+      margin-bottom: 0;
+
+      .card {
+        flex-basis: 100%;
+      }
+    }
+
+    section {
       padding: 50px 0 40px;
     }
   }
 }
+

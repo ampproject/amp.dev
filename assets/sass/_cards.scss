@@ -3,10 +3,6 @@
   display: flex;
   justify-content: space-between;
   padding: 20px 5px;
-
-  @include max-screen($mobile-breakpoint) {
-
-  }
 }
 
 .card {
@@ -30,10 +26,6 @@
     position: absolute;
     right: 0;
     top: -2px;
-  }
-
-  @include max-screen($tablet-breakpoint) {
-    flex-basis: 100%;
   }
 
   &.centered {
