@@ -162,6 +162,8 @@
   .success-stories {
     margin-bottom: -80px;
     padding-bottom: 0;
+    position: relative;
+    z-index: 1;
 
     h1 {
       margin: 0 auto;
@@ -197,7 +199,6 @@
     padding: 130px 0 100px 0;
     position: relative;
     text-align: center;
-    z-index: -1;
 
     .create-lines {
       height: 378px;
