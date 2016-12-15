@@ -6,21 +6,18 @@
   .hero {
     position: relative;
 
-    @include min-screen($mobile-breakpoint) {
-    }
-
     .container {
       position: relative;
       display: flex;
       justify-content: space-between;
 
-      @include max-screen($mobile-breakpoint) {
+      @include max-screen($tablet-breakpoint) {
         flex-direction: column;
       }
     }
 
     .intro-container {
-      @include max-screen($mobile-breakpoint) {
+      @include max-screen($tablet-breakpoint) {
         text-align: center;
 
         .button {
@@ -35,15 +32,15 @@
       padding-bottom: 30px;
       max-width: 500px;
 
-      @include max-screen($mobile-breakpoint) {
-        // margin-bottom: 15px;
+      @include max-screen($tablet-breakpoint) {
+        margin: 0 auto;
       }
     }
 
     .cta_connector {
       margin: 0 20px;
 
-      @include max-screen($mobile-breakpoint) {
+      @include max-screen($tablet-breakpoint) {
         margin: 0 5px 0 0;
       }
     }
@@ -55,10 +52,17 @@
     position: relative;
     transform: translateY(-14%);
 
-    @include max-screen($mobile-breakpoint) {
-      margin-top: 60px;
+    @include max-screen($container-size) {
+      max-width: 500px;
+      top: 40px;
+    }
+
+    @include max-screen($tablet-breakpoint) {
+      margin: 60px auto;
+      max-width: 500px;
       order: 2;
       transform: none;
+      width: 100%;
     }
 
     .lines, .phone {
@@ -82,7 +86,7 @@
   .hero-content {
     flex: 10 1 auto;
 
-    @include max-screen($mobile-breakpoint) {
+    @include max-screen($tablet-breakpoint) {
       order: 1;
     }
   }
@@ -92,6 +96,11 @@
     margin-top: 120px;
     position: relative;
     width: 120%;
+
+    @include min-max-screen($container-size - 200, $container-size) {
+      left: 0;
+      width: 100%;
+    }
   }
 
   .latest-mobile {

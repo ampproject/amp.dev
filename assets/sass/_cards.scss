@@ -32,7 +32,7 @@
     top: -2px;
   }
 
-  @include max-screen($tablet-portrait-breakpoint) {
+  @include max-screen($tablet-breakpoint) {
     flex-basis: 100%;
   }
 

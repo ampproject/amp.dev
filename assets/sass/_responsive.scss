@@ -13,7 +13,7 @@
 .tablet-up {
   display: none;
   visibility: hidden;
-  @include min-screen($tablet-portrait-breakpoint) {
+  @include min-screen($tablet-breakpoint) {
     display: block;
     visibility: visible;
   }
@@ -22,7 +22,7 @@
 .tablet-down {
   display: none;
   visibility: hidden;
-  @include max-screen($tablet-portrait-breakpoint) {
+  @include max-screen($tablet-breakpoint) {
     display: block;
     visibility: visible;
   }
