@@ -116,8 +116,9 @@ a {
 
 .button {
   background: $color-brightblue;
+  display: inline-block;
   color: $color-white;
-  padding: 20px;
+  padding: 15px 20px;
   position: relative;
 
   &::before {
@@ -128,6 +129,11 @@ a {
     height: 2px;
     position: absolute;
     right: 0;
+  }
+
+  &.light {
+    background: $color-white;
+    color: $color-ampblue;
   }
 }
 

@@ -67,3 +67,4 @@ create:
   title@: Create your first AMP page now
   cta@: Start building now
   cta_url: /docs/get_started/about-amp.html
+  lines_img: /static/img/home/lines_bottom.png

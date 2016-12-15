@@ -1,6 +1,10 @@
 footer {
   background-color: $color-white;
-  padding: 25px 0;
+  padding: 30px 0;
+
+  a {
+    line-height: 0;
+  }
 
   .footer-image {
     margin: 0 10px;

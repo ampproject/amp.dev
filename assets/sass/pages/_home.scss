@@ -1,4 +1,8 @@
 .home {
+  .content {
+    overflow: hidden;
+  }
+
   .hero {
     position: relative;
 
@@ -24,12 +28,12 @@
 
     .intro {
       color: $color-black;
-      margin-top: 0;
+      margin: 0;
       padding-bottom: 30px;
       max-width: 500px;
 
       @include max-screen($mobile-breakpoint) {
-        margin-bottom: 15px;
+        // margin-bottom: 15px;
       }
     }
 
@@ -156,6 +160,9 @@
   }
 
   .success-stories {
+    margin-bottom: -80px;
+    padding-bottom: 0;
+
     h1 {
       margin: 0 auto;
       max-width: 700px;
@@ -182,6 +189,36 @@
       height: 75px;
       margin: 0 auto;
       width: 75px;
+    }
+  }
+
+  .create {
+    background: $gradient-anglebold;
+    padding: 130px 0 100px 0;
+    position: relative;
+    text-align: center;
+    z-index: -1;
+
+    .create-lines {
+      height: 378px;
+      position: absolute;
+      width: 360px;
+
+      &.left {
+        bottom: -30%;
+        left: -10%;
+      }
+
+      &.right {
+        right: -5%;
+        top: -30%;
+      }
+    }
+
+    h1 {
+      color: $color-white;
+      margin: 0 auto 50px;
+      max-width: 450px;
     }
   }
 
