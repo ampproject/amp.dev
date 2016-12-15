@@ -72,7 +72,7 @@ Voor JavaScript van derden wordt vaak gebruikgemaakt van synchroon laden.
 Ook `document.write` ze meer synchronisatiescripts.
 Als u bijvoorbeeld vijf advertenties heeft en elke advertentie drie keer gesynchroniseerd wordt geladen
  met een verbinding met een vertraging van 1 seconde,
-is er al sprake van een laadtijd van 18 seconden, en dan heeft u alleen nog maar JavaScript geladen.
+is er al sprake van een laadtijd van 15 seconden, en dan heeft u alleen nog maar JavaScript geladen.
 
 AMP-pagina's kunnen over JavaScript van derden beschikken, maar alleen in lege iframes.
 Door JavaScript van derden uitsluitend in iframes te gebruiken, kan dit de uitvoering van de hoofdpagina niet blokkeren.

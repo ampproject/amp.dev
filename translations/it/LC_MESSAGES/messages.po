@@ -30,7 +30,7 @@ msgstr ""
 msgid "Docs"
 msgstr "Documentazione"
 
-#: /content/includes/menu.yaml /content/docs/guides
+#: /content/docs/guides
 msgid "Documentation"
 msgstr ""
 
@@ -57,6 +57,10 @@ msgstr ""
 
 #: /content/includes/menu.yaml /content/includes/home.yaml
 msgid "Get started"
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "Guides"
 msgstr ""
 
 #: /content/includes/home.yaml

@@ -75,7 +75,7 @@ Third-party JS likes to use synchronous JS loading.
 They also like to `document.write` more sync scripts.
 For example, if you have five ads on your page, and each of them cause three synchronous loads,
 each with a 1 second latency connection,
-you’re in 18 seconds of load time just for JS loading.
+you’re in 15 seconds of load time just for JS loading.
 
 AMP pages allow third-party JavaScript but only in sandboxed iframes.
 By restricting them to iframes, they can’t block the execution of the main page.

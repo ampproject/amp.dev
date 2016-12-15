@@ -59,4 +59,4 @@ AMP HTML 文档必须：
 
 好消息！这就是创建第一个 AMP 页面所需的全部内容，当然在正文中还有很多工作要做。在下一部分中，我们将介绍如何添加像图像、自定义 AMP 元素这样的基本内容，如何设置页面样式，以及如何实现响应式布局。
 
-<a class="go-button button" href="/zh_CN/docs/get_started/create/include_image.html">继续执行步骤 2</a>
+<a class="go-button button" href="/zh_cn/docs/get_started/create/include_image.html">继续执行步骤 2</a>

@@ -45,5 +45,5 @@ AMP Analytics는 한 번의 측정으로 여러 곳에 보고하도록 특별히
 * 페이지 뷰만 추적하겠습니까 아니면 추가적인 사용자 참여
 패턴도 추적하겠습니까(참고 항목 [amp-pixel 또는 amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
 * 사용자, 콘텐츠 기기 또는 브라우저에 관한 어떤 데이터를 캡처하겠습니까
-(참고 항목 [변수 대체](/docs/guides/analytics/analytics_basics.html#variable-substition))?
+(참고 항목 [변수 대체](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * 어떻게 사용자를 식별하겠습니까(참고 항목 [사용자 식별](/docs/guides/analytics/analytics_basics.html#user-identification))?

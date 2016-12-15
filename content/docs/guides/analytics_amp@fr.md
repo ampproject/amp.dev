@@ -45,5 +45,5 @@ Points clés à prendre en compte concernant les données :
 * Allez-vous suivre uniquement les vues de page ou d'autres tendances sur l'engagement des utilisateurs
 (voir également [amp-pixel ou amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics)) ?
 * Quels types de données allez-vous capturer sur vos utilisateurs, votre contenu,
-le périphérique ou le navigateur (voir également [Substitution de variables](/docs/guides/analytics/analytics_basics.html#variable-substition)) ?
+le périphérique ou le navigateur (voir également [Substitution de variables](/docs/guides/analytics/analytics_basics.html#variable-substitution)) ?
 * Comment allez-vous identifier vos utilisateurs (voir également [Identification des utilisateurs](/docs/guides/analytics/analytics_basics.html#user-identification)) ?

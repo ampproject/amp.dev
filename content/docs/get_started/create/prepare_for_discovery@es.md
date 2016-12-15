@@ -11,13 +11,13 @@ Para resolver este problema, agregamos información sobre la página AMP a la p�
 Agrega lo siguiente a la página no AMP:
 
 [sourcecode:html]
-<link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
+<link rel="amphtml" href="https://www.ejemplo.com/url/al/documento/amp.html">
 [/sourcecode]
 
 Y esto a la página AMP
 
 [sourcecode:html]
-<link rel="canonical" href="https://www.example.com/url/to/full/document.html">
+<link rel="canonical" href="https://www.ejemplo.com/url/al/documento/completo.html">
 [/sourcecode]
 
 ## ¿Qué sucede si tengo una sola página?
@@ -25,7 +25,7 @@ Y esto a la página AMP
 Si solo tienes una página y es AMP, debes agregarle el vínculo canónico. Este luego simplemente apuntará a sí mismo.
 
 [sourcecode:html]
-<link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
+<link rel="canonical" href="https://www.ejemplo.com/url/al/documento/amp.html">
 [/sourcecode]
 
 <a class="go-button button" href="/es/docs/get_started/create/publish.html">Continuar con el paso 6</a>

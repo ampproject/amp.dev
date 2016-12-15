@@ -95,6 +95,12 @@ div.language {
       background-position: right 6px;
     }
   }
+  .current {
+    &::before {
+      left: auto;
+      right: 4px;
+    }
+  }
 }
 
 header .language {

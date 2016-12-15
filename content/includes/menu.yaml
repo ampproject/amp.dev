@@ -11,7 +11,7 @@ menu:
       - href: /content/docs/get_started/create.md
         copy@: "Tutorials"
       - href: /content/docs/guides/responsive_amp.md
-        copy@: "Documentation"
+        copy@: "Guides"
       - href: /content/docs/reference/components.md
         copy@: "Reference"
       - href: https://ampbyexample.com/

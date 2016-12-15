@@ -27,6 +27,12 @@ function downloadPage(filePath, callback, headingToStrip) {
       throw err;
     }
 
+    if (data && data.content !== undefined && !data.content.length) {
+      console.log("Skipping " + filePath + ", file is empty..");
+      return;
+    }
+
+
     var encodedContent = new Buffer(data.content || data, 'base64')
     var decodedContent = encodedContent.toString();
 

@@ -2,6 +2,7 @@
   "projects": {
     "default": "ampproject-b5f4c",
     "staging": "ampproject-staging",
-    "production": "ampproject-b5f4c"
+    "production": "ampproject-b5f4c",
+    "custom": "ampproject-custom"
   }
 }

@@ -16,4 +16,4 @@ $title: 预览和验证
 
 [详细了解验证](/docs/guides/validate.html)，以及在出现错误时要执行的操作。
 
-<a class="go-button button" href="/zh_CN/docs/get_started/create/prepare_for_discovery.html">继续执行步骤 5</a>
+<a class="go-button button" href="/zh_cn/docs/get_started/create/prepare_for_discovery.html">继续执行步骤 5</a>
