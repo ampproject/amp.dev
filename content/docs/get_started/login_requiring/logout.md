@@ -3,20 +3,20 @@ $title: Logout
 $order: 2
 ---
 
-Similar to the login button, how the presence of the logout button is conditional, depending on the state of the `amp-access` component:
+Similar to the login button, the presence of the logout button is conditionally dependent on the state of the `amp-access` component:
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-The URL to be used once you click on the logout is specified in the amp-access JSON configuration, as part of the login object:
+When you click the Logout button, you are directed to the URL that you specified in the `amp-access` JSON configuration, as part of the login object:
 
 [sourcecode:json]
 {
 "login": {
-          "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-          "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-        }
+  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+  }
 }
 [/sourcecode]
 
