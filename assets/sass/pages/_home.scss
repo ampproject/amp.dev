@@ -7,23 +7,26 @@
     position: relative;
 
     @include min-screen($mobile-breakpoint) {
-      min-height: 420px;
-      padding-bottom: 4px;
-      padding-top: 134px;
     }
 
     .container {
       position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      @include max-screen($mobile-breakpoint) {
+        flex-direction: column;
+      }
     }
 
-    h1 {
-      // br {
-      //   display: none;
+    .intro-container {
+      @include max-screen($mobile-breakpoint) {
+        text-align: center;
 
-      //   @include max-screen($mobile-breakpoint) {
-      //     display: block;
-      //   }
-      // }
+        .button {
+          margin-bottom: 20px;
+        }
+      }
     }
 
     .intro {
@@ -39,34 +42,66 @@
 
     .cta_connector {
       margin: 0 20px;
+
+      @include max-screen($mobile-breakpoint) {
+        margin: 0 5px 0 0;
+      }
     }
   }
 
   .hero-image {
-    position: absolute;
-    top: -80px;
+    flex: 1 1 auto;
+    min-width: 0;
+    position: relative;
+    transform: translateY(-14%);
+
+    @include max-screen($mobile-breakpoint) {
+      margin-top: 60px;
+      order: 2;
+      transform: none;
+    }
 
     .lines, .phone {
-      position: absolute;
+      max-width: 100%;
       z-index: -1;
     }
 
     .lines {
-      height: 596px;
+      position: relative;
       width: 700px;
     }
 
     .phone {
-      height: 989px;
+      position: absolute;
       left: -50px;
       top: -30px;
       width: 684px;
     }
   }
 
+  .hero-content {
+    flex: 10 1 auto;
+
+    @include max-screen($mobile-breakpoint) {
+      order: 1;
+    }
+  }
+
   .latest {
+    left: -20%;
     margin-top: 120px;
     position: relative;
+    width: 120%;
+  }
+
+  .latest-mobile {
+    margin-top: 120px;
+
+    .latest-label {
+      text-align: center;
+      transform: none;
+      position: static;
+    }
   }
 
   .latest-label {
@@ -84,12 +119,21 @@
       margin: 0 auto;
       max-width: 450px;
       text-align: center;
+
+      @include max-screen($mobile-breakpoint) {
+        max-width: 200px;
+      }
     }
 
     .benefits-row {
       display: flex;
       justify-content: center;
       margin-top: 130px;
+
+      @include max-screen($mobile-breakpoint) {
+        flex-direction: column;
+        margin-top: 30px;
+      }
     }
 
     .benefit {
@@ -98,6 +142,11 @@
       &:nth-child(2) .benefit-image {
         width: 125px;
       }
+
+      @include max-screen($mobile-breakpoint) {
+        margin: 20px auto;
+        text-align: center;
+      }
     }
 
     .benefit-image {
@@ -105,6 +154,10 @@
       position: relative;
       top: -50px;
       width: 150px;
+
+      @include max-screen($mobile-breakpoint) {
+        top: 0;
+      }
     }
 
     .benefit-content {
@@ -123,6 +176,11 @@
     margin-top: -150px;
     max-width: 100%;
 
+    @include max-screen($mobile-breakpoint) {
+      flex-direction: column;
+      margin-top: 0;
+    }
+
     .experience-content {
       margin-right: 100px;
       max-width: 450px;
@@ -132,6 +190,10 @@
       min-width: 0;
       position: relative;
 
+      @include max-screen($mobile-breakpoint) {
+        max-width: 100%;
+      }
+
       .bg, .lines, .phone {
         max-width: 100%;
         z-index: -1;
@@ -139,7 +201,7 @@
 
       .bg {
         position: relative;
-        transform: translateY(-9%);
+        transform: translateY(-20%);
         width: 712px;
       }
 
@@ -164,6 +226,10 @@
     padding-bottom: 0;
     position: relative;
     z-index: 1;
+
+    @include max-screen($mobile-breakpoint) {
+      margin-bottom: 0;
+    }
 
     h1 {
       margin: 0 auto;

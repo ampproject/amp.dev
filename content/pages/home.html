@@ -38,18 +38,40 @@ components:
             src="{{home.hero.phone_img}}">
         </amp-img>
       </div>
-    </div>
-    <div class="row">
-      <div class="six columns offset-by-six">
-        <div class="intro-container">
-          <h1>{{_(home.hero.title)}}</h1>
-          <p class="intro">{{_(home.hero.content)}}</p>
-          <a class="button" href="{{home.hero.cta_url}}">{{_(home.hero.cta)}}</a> <span class="cta_connector light">{{_('or')}}</span> <a class="underlined" href="{{home.hero.secondary_cta_url}}">{{_(home.hero.secondary_cta)}}</a>
-        </div>
+      <div class="latest-mobile mobile-down">
+        <h2 class="latest-label">{{_(home.hero.carousel_title)}}</h2>
+        <amp-carousel class="latest-carousel"
+          height="250"
+          layout="flex-item"
+          type="slides">
+
+          {% for article in blog.blog %}
+          <div class="card-container">
+            <a href="{{article.href}}" class="card">
+              <div class="card-inner">
+                <div class="card-type news">
+                  {{_('News')}}
+                </div>
+                <div class="card-content small">
+                  {{_(article.title)}}
+                </div>
+                <div class="card-date light">
+                  {{_(article.date)}}
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </amp-carousel>
       </div>
     </div>
-    <div class="row">
-      <div class="latest seven columns offset-by-five">
+    <div class="hero-content">
+      <div class="intro-container">
+        <h1>{{_(home.hero.title)}}</h1>
+        <p class="intro">{{_(home.hero.content)}}</p>
+        <a class="button" href="{{home.hero.cta_url}}">{{_(home.hero.cta)}}</a><br class="mobile-down"><span class="cta_connector light">{{_('or')}}</span> <a class="underlined" href="{{home.hero.secondary_cta_url}}">{{_(home.hero.secondary_cta)}}</a>
+      </div>
+      <div class="latest mobile-up">
         <h3 class="latest-label">{{_(home.hero.carousel_title)}}</h3>
 
         <amp-carousel class="latest-carousel desktop-up"
@@ -178,20 +200,45 @@ components:
           {% endfor %}
           </div>
         </amp-carousel>
+
+        <amp-carousel class="success-carousel mobile-down"
+          height="400"
+          layout="flex-item"
+          type="slides">
+
+          {% for card in home.success_stories.cards %}
+          <div class="card-container">
+            <div class="card centered">
+              <div class="card-inner">
+                <div class="card-content">
+                  <h2>{{_(card.quote)}}</h2>
+                </div>
+                <amp-img class="card-icon"
+                    noloading
+                    height=500
+                    width=500
+                    layout=responsive
+                    src="{{card.img}}">
+                </amp-img>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </amp-carousel>
       </div>
     </div>
   </div>
 </section>
 
 <section class="create">
-  <amp-img class="create-lines left"
+  <amp-img class="create-lines left desktop-up"
       noloading
       height=755
       width=719
       layout=responsive
       src="{{home.create.lines_img}}">
   </amp-img>
-  <amp-img class="create-lines right"
+  <amp-img class="create-lines right desktop-up"
       noloading
       height=755
       width=719

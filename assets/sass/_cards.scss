@@ -3,6 +3,10 @@
   display: flex;
   justify-content: space-between;
   padding: 20px 5px;
+
+  @include max-screen($mobile-breakpoint) {
+
+  }
 }
 
 .card {

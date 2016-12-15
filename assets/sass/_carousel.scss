@@ -2,12 +2,21 @@ amp-carousel {
   .card-container {
     padding-left: 35px;
     padding-right: 35px;
+
+    @include max-screen($mobile-breakpoint) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
 .amp-carousel-button {
   background: transparent;
   cursor: pointer;
+
+  @include max-screen($mobile-breakpoint) {
+    display: none;
+  }
 
   &:before, &:after {
     background: $color-bluegrey;
