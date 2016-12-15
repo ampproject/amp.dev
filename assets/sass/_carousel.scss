@@ -1,0 +1,29 @@
+amp-carousel {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.amp-carousel-button {
+  background: transparent;
+  cursor: pointer;
+
+  &:before, &:after {
+    background: $color-bluegrey;
+    content: '';
+    display: block;
+    height: 2px;
+    width: 20px;
+  }
+
+  &:before {
+    transform: translate(10px, 10px) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(10px, 22px) rotate(-45deg);
+  }
+}
+
+.amp-carousel-button-prev {
+  transform: translateY(-50%) rotateY(180deg) translateY(-10px);
+}
