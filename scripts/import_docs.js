@@ -69,7 +69,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
   // for comments to be parsed correctly as HTML, we need an extra line break
   content = content.replace('<!---', '\n<!---');
 
-  // replace code
+  // replace code blocks
   content = content.replace(/(\`\`\`)(([A-z\-]*)\n)(((?!\`\`\`)[\s\S])+)(\`\`\`\n)/gm, function (match, p1, p2, p3, p4) {
     // work around for mustache-style curly braces to not mess with Grow
     if (p4.indexOf('{{') > -1) {
@@ -77,7 +77,9 @@ function convertMarkdown(content, relativePath, headingToStrip) {
     }
     return '[sourcecode' + (p3 ? ':' + p3 : '') + ']\n' + p4 + '[/sourcecode]\n';
   });
-  content = content.replace(/\`[^`]*(\{\{[^`]*\}\})[^`]*\`/g, '{% raw %}`$1`{% endraw %}');
+
+  // replace mustache-style code elements
+  content = content.replace(/\`[^\s`]*(\{\{[^`]*\}\})[^`]*\`/g, '{% raw %}`$1`{% endraw %}');
 
   // horizontal rules like --- will break front matter
   content = content.replace(/\n---\n/gm, '\n- - -\n');
