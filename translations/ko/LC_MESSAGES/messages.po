@@ -1,6 +1,6 @@
 #: /content/includes/menu.yaml
 msgid "About"
-msgstr "AMP"
+msgstr "AMP에 대하여"
 
 #: /content/includes/who.yaml
 msgid "Ads"
@@ -46,9 +46,8 @@ msgid ""
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
 msgstr ""
-"많은 경우, 모바일 웹을 읽는 건 느리고 꽤 나쁜 경험을 제공합니다. 하지만 그럴 필요는 없습니다."
-"Accelerated Mobile Pages (AMP) 프로젝트는 퍼블리셔가 모바일에 최적화된 콘텐츠를 한 번 생성하고,"
-"어디에서나 즉시 읽어들일 수 있게 하는 비전을 구체화하는 오픈 소스를 제안합니다."
+"많은 경우, 모바일 상에서의 읽기는 느리고, 거추장스러우며 좋지 못한 경험을 선사합니다. - 그렇지만 반드시 그래야 하는 것은 아닙니다."
+"Accelerated Mobile Pages (AMP) 프로젝트는 퍼블리셔가 모바일에 최적화된 콘텐츠를 한 번 생성하면 어디에서나 즉시 읽어들일 수 있게 하는 생각을 구체화한 오픈 소스입니다."
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
@@ -71,8 +70,8 @@ msgid ""
 "If you are new to AMP HTML, our technical introduction is a great place to "
 "get started and provides an overview of the project and how AMP HTML works."
 msgstr ""
-"AMP HTML을 처음 사용하는 경우, 기술 소개는 AMP HTML을 시작하기에 가장 적절하며"
-"프로젝트의 개요와 AMP HTML이 어떻게 동작하는 지에 대한 정보를 제공합니다."
+"AMP HTML이 처음이라면, 우리의 기술 소개는 프로젝트에 대한 개요와 AMP HTML의 동작 원리에 대해 알아보기에 좋은 시작점입니다."
+"기술 소개에서는 프로젝트의 개요와 AMP HTML이 어떻게 동작하는 지에 대한 정보를 제공합니다."
 
 #: /content/includes/home.yaml
 msgid ""
@@ -150,8 +149,7 @@ msgid ""
 "embodies the vision that publishers can create mobile optimized content once "
 "and have it load instantly everywhere."
 msgstr ""
-"Accelerated Mobile Pages (AMP) 프로젝트는 퍼블리셔가 모바일에 최적화된 콘텐츠를 한 번 생성하고,"
-"어디에서나 즉시 읽어들일 수 있게 하는 비전을 구체화하는 오픈 소스를 제안합니다."
+"Accelerated Mobile Pages (AMP) 프로젝트는 퍼블리셔가 모바일에 최적화된 콘텐츠를 한 번 생성하면 어디에서나 즉시 읽어들일 수 있게 하는 생각을 구체화한 오픈 소스입니다."
 
 #: /content/includes/home.yaml
 msgid "Tutorial"
@@ -171,7 +169,7 @@ msgstr "Github 방문"
 
 #: /content/includes/home.yaml
 msgid "What contributors are saying"
-msgstr "컨트리뷰터의 한마디"
+msgstr "컨트리뷰터의 말"
 
 #: /content/includes/menu.yaml
 msgid "news"
