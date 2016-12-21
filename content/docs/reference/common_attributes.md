@@ -33,13 +33,15 @@ For more information, see [Placeholders & fallbacks](https://www.ampproject.org/
 
 ## heights
 
-All AMP elements that support the `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions, similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) but with two key differences:
+All AMP elements that support the `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions, similar to the [sizes attribute on `img` tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) but with two key differences:
 
 
  1. The value applies to the height, not the width of the element.
  2. Percent values are allowed. A percent value indicates the percent of the element's width. For example, a value of `80%` indicates that the height of the element will be 80% of the element's width.
 
+{% call callout('Note', type='note') %}
 When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+{% endcall %}
 
 Example: 
 
@@ -88,7 +90,7 @@ Example:
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-For more information, see [Layout & Media queries](https://www.ampproject.org/docs/guides/responsive/control_layout).
+For more information, see [Layout & Media queries](https://www.ampproject.org/docs/guides/responsive/control_layout#element-media-queries).
 
 ## noloading
 
@@ -148,7 +150,7 @@ For more information, see [Placeholders & fallbacks](https://www.ampproject.org/
 
 ## sizes
 
-All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of the `sizes` attribute is a sizes expression as described in [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images.
+All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of the `sizes` attribute is a sizes expression as described in the [sizes attribute on `img` tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images.
 
 Example:
 
