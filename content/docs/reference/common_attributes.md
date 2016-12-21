@@ -6,7 +6,6 @@ $order: 3
 AMP provides a set of common attributes that are extended to many AMP components (and HTML elements).  This document describes each of the following attributes:
 
 * [fallback](#fallback)
-* [height](#height)
 * [heights](#heights)
 * [layout](#layout)
 * [media](#media)
@@ -14,11 +13,11 @@ AMP provides a set of common attributes that are extended to many AMP components
 * [on](#on)
 * [placeholder](#placeholder)
 * [sizes](#sizes)
-* [width](#width)
+* [width and height](#width-and-height)
 
 ## fallback
 
-The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the fallback is up to the element's implementation.
+A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element or that loading the underlying resource failed. The `fallback` attribute can be placed on any HTML element that is a direct child of an AMP element that supports fallbacks. The exact behavior with respect to the fallback is up to the element's implementation but typically the fallback element would be shown in place of the regular element.
 
 Often used with: images, animations, audio, and videos
 
@@ -31,22 +30,6 @@ Example:
 [/sourcecode]
 
 For more information, see [Placeholders & fallbacks](https://www.ampproject.org/docs/guides/responsive/placeholders).
-
-## height
-
-This attribute specifies the height of the element, in pixels. For some [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute), AMP components must have a `height` attribute that contains an integer pixel value.
-
-Example:
-
-[sourcecode:html]
-<amp-anim width="245"
-    height="300"
-    src="/img/cat.gif"
-    alt="cat animation">
-</amp-anim>
-[/sourcecode]
-
-For more information, see [Layout & Media queries](https://www.ampproject.org/docs/guides/responsive/control_layout) and the [Layout Spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 ## heights
 
@@ -109,7 +92,7 @@ For more information, see [Layout & Media queries](https://www.ampproject.org/do
 
 ## noloading
 
-The `noloading` attribute indicates whether the "loading indicator" should be turned **off** for this element. Many AMP elements are white-listed to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. 
+The `noloading` attribute indicates whether the "loading indicator" should be turned **off** for this element. Many AMP elements show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. 
 
 Often used with: images, animations, videos, and ads
 
@@ -149,9 +132,7 @@ For more information, see  [Actions and Events in AMP](https://github.com/amppro
 
 ## placeholder
 
-The `placeholder` attribute can be set on any HTML element, not just AMP elements. The placeholder attribute indicates that the element marked with this attribute acts as a placeholder for the parent AMP element. If specified, a placeholder element must be a direct child of the AMP element.
-
-By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content. The exact behavior with respect to the placeholder is up to the element's implementation.
+The `placeholder` attribute indicates that the element marked with this attribute acts as a placeholder for the parent AMP element. The attribute can be placed on any HTML element that is a direct child of an AMP element that supports placeholders. By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content. The exact behavior with respect to the placeholder is up to the element's implementation.
 
 Often used with: images, animations, videos, and ads
 
@@ -181,9 +162,9 @@ Example:
 
 For more information, see [Art direction with srcset, sizes & heights](https://www.ampproject.org/docs/guides/responsive/art_direction).
 
-## width
+## width and height
 
-This attribute specifies the width of the element, in pixels. For some [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute), AMP components must have a `width` attribute that contains an integer pixel value.
+For some [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute), AMP components must have a `width` and `height` attribute that contains an integer pixel value.
 
 Example:
 
