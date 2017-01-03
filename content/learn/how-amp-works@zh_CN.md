@@ -15,7 +15,7 @@ AMP 工程主管 Malte Ubl 在下面的视频中提供了与本文章内容类�
 
 ## 仅允许异步脚本
 
-JavaScript 功能强大，几乎可以修改页面的各个方面，不过，它也会阻碍 DOM 的构建，延缓页面渲染（另请参见[使用 JavaScript 添加交互](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)）。
+JavaScript 功能强大，几乎可以修改页面的各个方面，不过，它也会阻塞 DOM 的构建，延缓页面渲染（另请参见[使用 JavaScript 添加交互](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)）。
 
 
 
@@ -28,9 +28,9 @@ AMP 页面不能包含作者自己编写的任何 JavaScript。
 自定义 AMP 元素的内部可能会有 JavaScript，但是这些代码均经过精心设计，不会导致性能下降。
 
 
-虽然在 iframe 中允许第三方 JS，不过它不会阻碍渲染。
+虽然在 iframe 中允许第三方 JS，不过它不会阻塞渲染。
 
-例如，如果第三方 JS 使用[严重影响性能的 `document.write` API](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/)，它也不会阻碍主页面渲染。
+例如，如果第三方 JS 使用[严重影响性能的 `document.write` API](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/)，它也不会阻塞主页面渲染。
 
 
 
@@ -46,15 +46,15 @@ AMP 将文档布局与资源布局脱钩。
 由于 AMP 经过优化，可以在浏览器中避免会消耗大量资源的样式重新计算和布局，因此资源加载时不会存在任何重新布局。
 
 
-## 不让扩展机制阻碍渲染
+## 不让扩展机制阻塞渲染
 
-AMP 不会让扩展机制阻碍页面渲染。
+AMP 不会让扩展机制阻塞页面渲染。
 AMP 支持[灯箱](/docs/reference/extended/amp-lightbox.html)、[Instagram 嵌入代码](/docs/reference/extended/amp-instagram.html)、[Twitter 消息](/docs/reference/extended/amp-twitter.html)等对象的扩展。
 
 
 
 尽管这些对象需要额外的 HTTP 请求，
-但这些请求不会阻碍页面布局和渲染。
+但这些请求不会阻塞页面布局和渲染。
 
 使用自定义脚本的任何页面都必须告诉 AMP 系统其最终会有自定义标记。
 
@@ -103,7 +103,7 @@ CSS 会阻碍所有渲染和页面加载，并且往往变得臃肿。
 
 
 而 AMP 系统在字体开始下载前不会发出 HTTP 请求。
-这是因为 AMP 中的所有 JS 都有异步属性，并且仅允许内嵌样式表；不存在会阻碍浏览器下载字体的 HTTP 请求。
+这是因为 AMP 中的所有 JS 都有异步属性，并且仅允许内嵌样式表；不存在会阻塞浏览器下载字体的 HTTP 请求。
 
 
 
