@@ -329,6 +329,10 @@
     .success-stories {
       margin-bottom: 0;
 
+      h1 {
+        max-width: 300px;
+      }
+
       .card {
         flex-basis: 100%;
       }
