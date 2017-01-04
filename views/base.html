@@ -28,7 +28,7 @@
 
   {% macro callout(title, type='note') -%}
   <aside class="{{ type }}">
-    <strong>{{ title }}:</strong>
+    <strong>{{ title }} — </strong>
     <span>{{ caller() }}</span>
   </aside>
   {%- endmacro %}

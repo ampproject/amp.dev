@@ -2,7 +2,6 @@
 $title: Styling & Layout
 $order: 0
 ---
-[TOC]
 
 Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
 both cases, you'll use CSS.
@@ -81,7 +80,7 @@ Set the layout to responsive.
 This sizes the element to the width of it's container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
-{% call callout('Read on', type='success') %}
+{% call callout('Read on', type='read') %}
 Learn more about [supported layouts in AMP](/docs/guides/responsive/control_layout.html)
 {% endcall %}
 
@@ -89,7 +88,7 @@ Learn more about [supported layouts in AMP](/docs/guides/responsive/control_layo
 
 The built-in support for placeholders and fallbacks means your users never have to stare at a blank screen again.
 
-{% call callout('Read on', type='success') %}
+{% call callout('Read on', type='read') %}
 Learn more about [Placeholders and fallbacks](/docs/guides/responsive/placeholders.html)
 {% endcall %}
 
@@ -97,7 +96,7 @@ Learn more about [Placeholders and fallbacks](/docs/guides/responsive/placeholde
 
 AMP supports both `srcset` and `sizes` attributes to give you fine grained control, of which images to load in which scenario.
 
-{% call callout('Read on', type='success') %}
+{% call callout('Read on', type='read') %}
 Learn more about [art direction with srcset and sizes](/docs/guides/responsive/art_direction.html)
 {% endcall %}
 
@@ -115,6 +114,6 @@ Example error in console for page with CSS that exceeds the 50,000 bytes limit:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-{% call callout('Read on', type='success') %}
+{% call callout('Read on', type='read') %}
 Learn more about how to [validate and fix your AMP pages](/docs/guides/validate.html)
 {% endcall %}

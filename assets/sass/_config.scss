@@ -16,6 +16,7 @@ $color-lightgrey: $color-grey-100;
 $color-ampblue: #1c79c0;
 $color-brightblue: #0389ff;
 $color-lightblue: #0dd3ff;
+$color-lightestblue: rgba(13, 210, 250, .1);
 $color-white: #fff;
 $color-black: #000;
 $color-black-95: #333333;
@@ -33,6 +34,7 @@ $gradient-anglebold: linear-gradient($gradient-angle, $color-lightblue, $color-b
 
 //$font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 $font-family: 'Roboto', sans-serif;
+$font-family-mono: 'Roboto Mono', Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-size-xs: 14px;
 
 $margin: 20px;

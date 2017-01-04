@@ -6,12 +6,12 @@ code,
 kbd,
 samp,
 tt{
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-  font-size: 0.9em;
-  background: #f2f9ff;
-  border: 1px solid #b2e7ff;
+  font-family: $font-family-mono;
+  font-size: 14px;
+  background: $color-white;
+  border: 1px solid $color-lightblue;
   border-radius: 3px;
-  color: #222;
+  color: $color-ampblue;
 }
 
 code {

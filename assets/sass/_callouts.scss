@@ -1,57 +1,61 @@
 aside {
+  background: $color-lightestblue;
+  display: block;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 16px -15px;
+  padding: 24px 24px 24px 80px;
+  position: relative;
 
-    display: block;
-    font-size: 14px;
-    line-height: 24px;
-    margin: 16px 0;
-    padding: 12px 24px 12px 60px;
+  strong {
+    color: $color-ampblue;
+    text-transform: uppercase;
+  }
 
+  &::before {
+    float: left;
+    word-wrap: normal;
+    white-space: nowrap;
+    margin-left: -36px;
+
+    content: '';
+    height: 70px;
+    left: 44px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
+  }
+
+  &.note {
     &::before {
-        float: left;
-        word-wrap: normal;
-        white-space: nowrap;
-        margin-left: -36px;
+      background: url(/static/img/docs/icon_note.svg) center/cover no-repeat;
     }
+  }
 
-    &.note {
-        background: #e1f5fe;
-        color: #0288d1;
-        &::before {
-            @include masked-sprite(star);
-            background-color: #039be5;
-            content: '';
-        }
+  &.caution {
+    &::before {
+      background: url(/static/img/docs/icon_important.svg) center/cover no-repeat;
     }
+  }
 
-    &.caution {
-        background: #fff3e0;
-        color: #dd2c00;
-        &::before {
-            @include masked-sprite(error);
-            background-color: #ff6e40;
-            content: '';
-        }
+  &.warning {
+    &::before {
+      background: url(/static/img/docs/icon_important.svg) center/cover no-repeat;
+
     }
+  }
 
-    &.warning {
-        background: #fbe9e7;
-        color: #d50000;
-        &::before {
-            @include masked-sprite(warning);
-            background-color: #ff1744;
-            content: '';
-
-        }
+  &.success {
+    &::before {
+      background: url(/static/img/docs/icon_tip.svg) center/cover no-repeat;
+      top: 45%;
     }
+  }
 
-    &.success {
-        background: #e0f2f1;
-        color: #00897b;
-        &::before {
-            @include masked-sprite(check_circle);
-            background-color: #00bfa5;
-            content: '';
-        }
+  &.read {
+    &::before {
+      background: url(/static/img/docs/icon_read.svg) center/cover no-repeat;
     }
-
+  }
 }

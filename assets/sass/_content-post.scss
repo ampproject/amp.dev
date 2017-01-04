@@ -4,7 +4,24 @@
 
 /* Components table */
 
+.post-title {
+  color: $color-ampblue;
+  margin: 0 100px;
+  padding: 0 15px;
+}
+
 .post-content {
+  margin: 0 100px;
+  padding: 0 15px;
+
+  a {
+    @extend .underlined;
+  }
+
+  p {
+    @extend .small;
+  }
+
   td:first-child a:hover {
     text-decoration: none;
   }
