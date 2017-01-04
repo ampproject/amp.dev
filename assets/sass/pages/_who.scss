@@ -1,58 +1,16 @@
 .who {
-
   .content {
-    padding-top: 60px;
-  }
-
-  h1 {
-    margin-bottom: #{$margin * 4};
-
-    @include max-screen($mobile-breakpoint) {
-      margin-bottom: #{$margin * 2};
+    ol,
+    ul {
+      margin-left: 0;
     }
   }
 
-  h2 {
-    // font-size: 36px;
-    margin-bottom: #{$margin * 2};
-
-    @include max-screen($mobile-breakpoint) {
-      margin-bottom: #{$margin * 2};
-    }
-  }
-
-  h3 {
-    // font-size: 26px;
-    margin-bottom: #{$margin};
-  }
-
-  h1,
-  h2,
-  h3 {
-    a {
-      color: #aaa;
-      font-size: 16px;
-      margin-left: 0.5em;
-      display: none;
-    }
-  }
-
-  h1:hover,
-  h2:hover,
-  h3:hover {
-    a {
-      display: inline;
-    }
-  }
-
-  .items {
-    padding: 0;
-    list-style: none;
-    margin-bottom: #{$margin * 4};
-
+  .item-container {
     column-count: 4;
-    column-gap: 20px;
-    -webkit-column-break-inside:avoid;
+    column-gap: $grid-gutters;
+    list-style: none;
+    padding: 0 50px;
 
     @include max-screen($tablet-portrait-breakpoint) {
       column-count: 3;
@@ -67,17 +25,13 @@
     }
 
     .item {
-      padding: 6px 0;
-      -webkit-column-break-inside:avoid;
-         -moz-column-break-inside:avoid;
-           -o-column-break-inside:avoid;
-          -ms-column-break-inside:avoid;
-              column-break-inside:avoid;
+      font-size: 16px;
+      padding: 5px 0;
+
+      a {
+        font-size: 16px;
+        text-transform: none;
+      }
     }
   }
-
-  &__section {
-    margin-bottom: $margin;
-  }
-
 }
