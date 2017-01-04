@@ -38,6 +38,14 @@
   }
 }
 
+@mixin no-break() {
+  hyphens: manual;
+  overflow-wrap: normal;
+  white-space: nowrap;
+  word-break: normal;
+  word-wrap: normal;
+}
+
 @mixin desaturate($amt){
   filter: grayscale($amt);
 }

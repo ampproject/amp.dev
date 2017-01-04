@@ -6,6 +6,7 @@ code,
 kbd,
 samp,
 tt{
+  @include no-break();
   font-family: $font-family-mono;
   font-size: 14px;
   background: $color-white;

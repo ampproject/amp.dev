@@ -16,6 +16,7 @@
 
   a {
     @extend .underlined;
+    text-transform: none;
   }
 
   p {

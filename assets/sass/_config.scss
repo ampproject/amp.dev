@@ -15,7 +15,9 @@ $color-lightgrey: $color-grey-100;
 // new colors
 $color-ampblue: #1c79c0;
 $color-brightblue: #0389ff;
+$color-brightbluefaded: rgba(3, 137, 255, .05);
 $color-lightblue: #0dd3ff;
+$color-lightbluefaded: rgba(13, 211, 255, .05);
 $color-lightestblue: rgba(13, 210, 250, .1);
 $color-white: #fff;
 $color-black: #000;
@@ -28,6 +30,7 @@ $color-bluegrey: #acbac1;
 $gradient-angle: 36deg;
 $gradient-bold: linear-gradient(to right, $color-ampblue, $color-brightblue, $color-lightblue);
 $gradient-med: linear-gradient(to right, $color-brightblue, $color-lightblue);
+$gradient-med-faded: linear-gradient(to right, $color-brightbluefaded, $color-lightbluefaded);
 $gradient-light: linear-gradient(to right, $color-lightblue, $color-lightblue, $color-white);
 $gradient-anglebold: linear-gradient($gradient-angle, $color-lightblue, $color-brightblue, $color-ampblue);
 // $gradient-anglelight: linear-gradient($gradient-angle, $color-ampblue, $color-brightblue, $color-lightblue);

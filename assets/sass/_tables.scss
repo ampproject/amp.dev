@@ -8,12 +8,18 @@ table {
 }
 
 td, th {
-  border: 1px solid #FFFFFF;
-  background: #F7F7F7;
-  padding: 0.5rem;
-  text-align: left;
   @include text-body();
+  @extend .small;
+  // border: 1px solid $color-ampblue;
+  // border-image: $gradient-bold;
+  // border-image-slice: 1;
+  padding: 20px 30px;
+  text-align: left;
   vertical-align: top;
+}
+
+tr:nth-child(even) {
+  background: $color-lightestblue;
 }
 
 .rtl td,
@@ -37,8 +43,13 @@ td.col-twenty,
   width: 20%
 }
 
+td:first-child {
+  border-right: 2px solid $color-ampblue;
+}
+
 th {
-  background: $color-midblue;
-  color: #fff;
-  font-weight: 400;
+  @include text-label();
+  background: $color-white;
+  border-bottom: 2px solid $color-ampblue;
+  color: $color-ampblue;
 }

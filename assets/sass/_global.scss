@@ -102,11 +102,7 @@ a {
   text-decoration: none;
 
   &.underlined {
-    hyphens: manual;
-    overflow-wrap: normal;
-    white-space: nowrap;
-    word-break: normal;
-    word-wrap: normal;
+    @include no-break();
 
     &::before {
       background: $gradient-med;
