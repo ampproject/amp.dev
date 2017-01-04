@@ -1,109 +1,82 @@
-.accordion-slider {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
+amp-accordion {
+  section {
+    border-bottom: 2px solid $color-grey-lt;
+    padding: 20px 0;
 
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+
+  &.nested {
+    > section::before {
+      background: linear-gradient(transparent, $color-white);
+      content: '';
+      display: block;
+      height: 200px;
+      opacity: 1;
+      position: absolute;
+      top: -200px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    > section[expanded]::before {
+      content: none;
+    }
+
+    .accordion-header {
+      padding: 20px;
+      text-align: center;
+    }
+
+    section[expanded] .open {
+      display: none;
+    }
+
+    section:not([expanded]) .close {
+      display: none;
+    }
+  }
 }
 
-.accordion {
-  width: 100%;
-  line-height: 1.5;
-  position: initial;
+.accordion-header {
+  background-color: transparent;
+  border: 0;
+  padding: 0 25px;
 
-  &__section {
-    padding: 0;
-    border-bottom: 1px solid $color-grey-200;
-
-  }
-
-  &__header {
-    background-color: transparent;
-    border: none;
-    padding: 14px 0;
-    transition: .15s;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-      background-color: $color-grey-50;
-    }
-
-    &:active {
-      transition: 0.3s ease-out;
-      background-color: $color-grey-100;
-    }
-  }
-
-  &__title {
-    color: $color-midblue;
+  h3 {
+    display: inline-block;
     margin: 0;
-    position: relative;
+  }
+}
 
-    // TODO the margin has been over-specified on the home.scss styles.
-    .home & {
-      margin-bottom: 0;
-      @include max-screen($mobile-breakpoint) {
-        font-size: 30px;
-      }
-    }
+.accordion-toggle {
+  display: inline-block;
+  height: 10px;
+  margin-right: 30px;
+  position: relative;
+  width: 8px;
 
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      width: 12px;
-      height: 12px;
-      background: transparent url(/static/img/cheveron-down.svg) no-repeat 50% 50%;
-
-      transition: 0.15s ease;
-      transform: rotateX(0deg);
-
-      .accordion__header:active & {
-        transition: 0.3s ease-out;
-        transform: rotateX(45deg);
-      }
-
-      [expanded] .accordion__header:active & {
-        transform: rotateX(235deg);
-      }
-
-    }
-
-    [expanded] &:after {
-      transform: rotateX(180deg);
-    }
+  &::before,
+  &::after {
+    background: $gradient-med;
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 100%;
   }
 
-  &__content {
-    font-size: 16px;
-    color: $color-grey-700;
-    margin: 0 0 #{$margin * 2};
+  &::after {
+    transform: rotate(90deg);
   }
 
-  &__figure {
-    padding: #{$margin * 2} #{$margin * 2} 0;
-    margin: 0 0 $margin;
-    background-color: $color-grey-200;
-
-    amp-img {
-      max-width: 300px;
-      margin: auto;
-    }
-
-    @include max-screen($tablet-portrait-breakpoint) {
-      padding-left: 20%;
-      padding-right: 20%;
-    }
+  section[expanded] &::after {
+    content: none;
   }
+}
 
-  &__text {
-    margin-top: $margin;
-    max-width: 34em;
-  }
-
+.accordion-content {
+  margin-top: 30px;
 }
