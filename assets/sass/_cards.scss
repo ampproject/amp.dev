@@ -3,6 +3,12 @@
   display: flex;
   justify-content: space-between;
   padding: 20px 5px;
+
+  &.logos {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
+  }
 }
 
 .card {
@@ -31,6 +37,14 @@
   &.centered {
     align-items: center;
     text-align: center;
+  }
+
+  &.logo {
+    margin: 10px;
+
+    &::before {
+      content: none;
+    }
   }
 }
 
