@@ -23,10 +23,18 @@
 
   &.light, .light {
     color: $color-grey-md;
-    font-size: 14px;
-    line-height: 32px;
-    letter-spacing: 0.56px;
-    text-transform: uppercase;
+    @include text-label();
+    margin-bottom: 15px;
+  }
+}
+
+@mixin text-label(){
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.56px;
+  @include max-screen($mobile-breakpoint) {
+    font-size: 12px;
   }
 }
 

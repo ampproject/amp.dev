@@ -43,10 +43,7 @@
 
 .card-type {
   color: $color-ampblue;
-  text-transform: uppercase;
-  font-size: 14px;
-  line-height: 20.65px;
-  letter-spacing: 0.56px;
+  @include text-label();
   margin-bottom: 15px;
 }
 
