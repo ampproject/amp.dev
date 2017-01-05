@@ -73,15 +73,28 @@ h1 {
 
 
 h2 {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 100;
 
   @include max-screen($mobile-breakpoint) {
     font-size: 26px;
+    line-height: 40px;
+    font-weight: 300;
   }
 }
 
 h3 {
+  font-size: 30px;
+  line-height: 40px;
+
+  @include max-screen($mobile-breakpoint) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+h4 {
   font-size: 24px;
   line-height: 32px;
 
