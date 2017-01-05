@@ -9,33 +9,55 @@ amp-accordion {
   }
 
   &.nested {
-    > section::before {
-      background: linear-gradient(transparent, $color-white);
-      content: '';
-      display: block;
-      height: 200px;
-      opacity: 1;
-      position: absolute;
-      top: -200px;
-      width: 100%;
-      z-index: 1;
+    > section {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+
+      &::before {
+        background: linear-gradient(transparent, $color-white);
+        content: '';
+        display: block;
+        height: 200px;
+        opacity: 1;
+        position: absolute;
+        top: -200px;
+        width: 100%;
+        z-index: 1;
+      }
+
+      &[expanded] {
+        &::before {
+          content: none;
+        }
+
+        .accordion-header {
+          order: 2;
+        }
+
+        .open {
+          display: none;
+        }
+      }
+
+      &:not([expanded]) .close {
+        display: none;
+      }
     }
 
-    > section[expanded]::before {
-      content: none;
+    .accordion-content,
+    .accordion-header {
+      flex: 0 0 100%;
+    }
+
+    .accordion-content {
+      margin: 0;
     }
 
     .accordion-header {
-      padding: 20px;
+      order: 1;
+      padding: 30px;
       text-align: center;
-    }
-
-    section[expanded] .open {
-      display: none;
-    }
-
-    section:not([expanded]) .close {
-      display: none;
     }
   }
 }
