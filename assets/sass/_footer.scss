@@ -25,3 +25,53 @@ footer {
     justify-content: center;
   }
 }
+
+.footer-cta {
+  background: $gradient-bold;
+  padding: 20px 30px;
+  position: relative;
+
+  .cta-line {
+    position: absolute;
+
+    &.left {
+      height: 140px;
+      left: -30px;
+      top: -50px;
+      width: 186px;
+    }
+
+    &.right {
+      bottom: -30px;
+      height: 107.5px;
+      right: -50px;
+      width: 175px;
+    }
+  }
+
+  .inner {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 80%;
+
+    h1, a {
+      color: $color-white;
+      display: inline-block;
+    }
+
+    a {
+      position: absolute;
+      right: 0;
+      text-align: right;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::after {
+        @include sprite(arrow);
+        content: '';
+        margin-left: 10px;
+      }
+    }
+  }
+}
