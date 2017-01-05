@@ -1,0 +1,42 @@
+hero:
+  sub_title@: Follow AMP
+  title@: The Latest News
+  content@: The open-source AMP Project helps you create mobile optimized content that loads in an instant.
+  hero_img: /static/img/latest/latest_hero.png
+  lines_back_img: /static/img/latest/line_hero_back.svg
+  lines_front_img: /static/img/latest/line_hero_front.svg
+
+feed:
+  title@: What's hot?
+  posts:
+    - type: Roadmap
+      title: Teads brings AMP’d mobile video inventory to premium publishers
+      excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
+      href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+      date: December 2, 2016
+
+    - type: Event
+      title: Teads brings AMP’d mobile video inventory to premium publishers
+      excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
+      href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+      date: October 25, 2016
+      location: San Francisco
+      participant: Developers
+
+    - type: Blog
+      title: Teads brings AMP’d mobile video inventory to premium publishers
+      excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
+      href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+      date: October 1, 2016
+
+twitter:
+  title@: Follow us on Twitter
+  icon_img: /static/img/home/phone_hero.png
+  account_id: '@AMPhtml'
+  account_href: https://twitter.com/amphtml
+  tweets:
+    - id: 585110598171631616
+    - id: 585110598171631616
+    - id: 585110598171631616
+    - id: 638793490521001985
+    - id: 585110598171631616

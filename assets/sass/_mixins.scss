@@ -21,6 +21,12 @@
     }
   }
 
+  &.smaller, .smaller {
+    color: $color-black-95;
+    font-size: 14px;
+    line-height: 26px;
+  }
+
   &.light, .light {
     color: $color-grey-md;
     @include text-label();

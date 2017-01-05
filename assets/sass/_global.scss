@@ -109,10 +109,9 @@ h4 {
  */
 a {
   color: $color-ampblue;
-  font-size: 14px;
   position: relative;
-  text-transform: uppercase;
   text-decoration: none;
+  @include text-label();
 
   &.underlined {
     @include no-break();

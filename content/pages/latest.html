@@ -1,0 +1,88 @@
+---
+$title: The Latest News
+$path: /{base}/
+
+$localization:
+  path: /{locale}/{base}/
+
+class: latest
+components:
+  - twitter
+---
+{% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
+
+<section class="hero">
+  <div class="img-wrap">
+    <div class="lines lines-back">
+      <amp-img
+          noloading
+          height=571
+          width=571
+          layout=responsive
+          src="{{latest.hero.lines_back_img}}">
+      </amp-img>
+    </div>
+    <div class="hero-image-background">
+      <amp-img
+          noloading
+          height=941
+          width=2401
+          layout=responsive
+          src="{{latest.hero.hero_img}}">
+      </amp-img>
+    </div>
+    <div class="lines lines-front">
+      <amp-img
+          noloading
+          height=571
+          width=571
+          layout=responsive
+          src="{{latest.hero.lines_front_img}}">
+      </amp-img>
+    </div>
+    <div class="text">
+      <div class="label">{{_(latest.hero.sub_title)}}</div>
+      <h1 class="title">{{_(latest.hero.title)}}</h1>
+    </div> 
+  </div>
+</section>
+
+<div class="feeds">
+  <section class="posts">
+    <h2 class="posts-label">{{_(latest.feed.title)}}</h2>
+    {% for post in latest.feed.posts %}
+      <div class="post-item">
+        <div class="post-meta">
+          <a class="type">{{_(post.type)}}</a>
+          <span class="time">{{_(post.date)}}</span>
+        </div>
+        <a href="{{post.href}}" class="post-title">
+          <h4>
+            {{_(post.title)}}
+          </h4>
+        </a>
+        <p class="post-excerpt small">
+          {{_(post.excerpt)}}
+        </p>
+        {% if post.type|lower == "event" %}
+          <div class="event-meta">
+            <span class="location smaller">{{_(post.location)}}</span>
+            <span class="participant smaller">{{_(post.participant)}}</span>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="twitter">
+    <h4 class="twitter-label">{{_(latest.twitter.title)}}</h4>
+    {% for tweet in latest.twitter.tweets %}
+      <amp-twitter width="390"
+          height="330"
+          layout="responsive"
+          data-tweetid={{_(tweet.id)}}
+          data-cards="hidden">
+      </amp-twitter>
+    {% endfor %}
+  </section>
+</div>
