@@ -2,7 +2,7 @@ year: 2016
 quarter: Q4
 outlook:  Q1/Q2
 current: End-Q4 2016
-updated: December 29, 2016
+updated: January 5, 2016
 stages:
     "6": Launched / Stable
     "5": Code Complete / Experimental
@@ -72,7 +72,7 @@ sections:
         - Extend A4A usage beyond AMP pages
         - Enable AMPs to act as landing pages for ads
         quarter:
-            "2":
+            "3":
             - "[Improve AMP's ad loading experience](https://github.com/ampproject/amphtml/issues/5918)"
             - "[Show default fallback when no ad is available to serve](https://github.com/ampproject/amphtml/issues/3817)"
             - "[Support serving A4A creatives in non-AMP Pages](https://github.com/ampproject/amphtml/issues/3829)"
@@ -81,7 +81,7 @@ sections:
             "6":
             - "[Support multi-size ad requests](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests)"
             - "[Flying carpet effect support, particularly as an ad format](https://github.com/ampproject/amphtml/blob/master/extensions/amp-fx-flying-carpet/amp-fx-flying-carpet.md)"
-            - "[Improvements to AMP sticky ad [amp-sticky-ad]](https://github.com/ampproject/amphtml/issues/5432)"
+            - "[Improvements to AMP sticky ad](https://github.com/ampproject/amphtml/issues/5432)"
         forecast:
         - Enable A4A creative demand across the buyer and publisher ecosystem
         - Enable deeper integration of ads with AMP-format landing pages across buyside and sellside systems
