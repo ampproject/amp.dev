@@ -63,7 +63,6 @@ footer {
     a {
       position: absolute;
       right: 0;
-      text-align: right;
       top: 50%;
       transform: translateY(-50%);
 
@@ -71,6 +70,29 @@ footer {
         @include sprite(arrow);
         content: '';
         margin-left: 10px;
+      }
+    }
+  }
+}
+
+@include max-screen($mobile-breakpoint) {
+  .footer-cta {
+    .cta-line.right {
+      bottom: 10px;
+      right: -100px;
+    }
+
+    .inner {
+      text-align: center;
+      width: 100%;
+
+      h1, a {
+        display: block;
+      }
+
+      a {
+        margin-top: 20px;
+        position: static;
       }
     }
   }
