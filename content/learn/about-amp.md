@@ -1,6 +1,7 @@
 ---
 $title: What Is AMP?
 $order: 0
+$hidden: true
 components:
   - youtube
 ---

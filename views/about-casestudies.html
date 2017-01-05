@@ -1,0 +1,24 @@
+{% extends "/views/base.html" %}
+
+{% block main %}
+  <div class="container main">
+    {{ navmarkup|safe }}
+    <div class="content">
+      <article class="post">
+
+        <h1 class="post-title">{{ doc.title }}</h1>
+
+        <div class="post-content">
+          {{doc.html|render|safe}}
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+  {% with cta = doc.cta %}
+    {% include "/views/partials/footer-cta.html" %}
+  {% endwith %}
+  {% include "/views/partials/footer.html" %}
+
+{% endblock %}

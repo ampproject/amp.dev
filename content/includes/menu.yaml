@@ -1,6 +1,6 @@
 menu:
-  - href: /content/learn/about-amp.md
-    copy@: About
+  - href: /content/learn/overview.html
+    copy@: What is AMP?
     collection: learn
   - href: /content/docs/get_started/create.md
     copy@: Docs
