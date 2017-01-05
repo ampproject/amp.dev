@@ -43,4 +43,31 @@
       }
     }
   }
+
+  .browser-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px auto 30px auto;
+    padding: 0 20px;
+    text-align: center;
+
+    .browser {
+      flex: 0 1 75px;
+      margin: 10px;
+    }
+
+    .browser-title {
+      @include text-label();
+      color: $color-grey-md;
+    }
+  }
+
+  hr {
+    border: 0;
+    border-bottom: 1px solid $color-grey-lt;
+    border-top: 1px solid $color-grey-lt;
+    height: 0;
+    margin: 80px auto;
+  }
+
 }

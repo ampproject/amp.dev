@@ -143,6 +143,21 @@ function addVideo() {
           link:`;
 }
 
+function addBrowsers() {
+  newYaml += `
+browsers:
+  - title: Chrome
+    img: /static/img/platforms/chrome.png
+  - title: Firefox
+    img: /static/img/platforms/firefox.png
+  - title: Safari
+    img: /static/img/platforms/safari.png
+  - title: Edge
+    img: /static/img/platforms/edge.png
+  - title: Opera
+    img: /static/img/platforms/opera.png`;
+}
+
 // Put them into the right location in the YAML
 newYaml = `page_title: "Participants"
 
@@ -155,6 +170,7 @@ addAnalytics();
 addContentPlatforms();
 addCMS();
 addVideo();
+addBrowsers();
 
 // Save back to disk
 fs.writeFileSync('../content/includes/who.yaml', newYaml);
