@@ -19,9 +19,9 @@ An ever-growing number of platforms and vendors support AMP, either by providing
       </div>
       <div class="accordion-content">
       {% if section.section_images %}
-        <div class="card-container logos">
+        <div class="card-container">
         {% for item in section.section_images %}
-          <a href="{{item.link}}" class="card logo">
+          <a href="{{item.link}}" class="card">
             <amp-img width="600"
                 height="310"
                 layout="responsive"
