@@ -18,16 +18,15 @@ An ever-growing number of platforms and vendors support AMP, either by providing
         <h3>{{section.title}}</h3>
       </div>
       <div class="accordion-content">
+      {% if section.section_images %}
         <div class="card-container logos">
-        {% for item in section.section_items | sort %}
-          {% if item.image %}
+        {% for item in section.section_images %}
           <a href="{{item.link}}" class="card logo">
-            <amp-img src="{{item.image}}"
-                width="1000"
-                height="358"
-                layout="responsive"></amp-img>
+            <amp-img width="600"
+                height="310"
+                layout="responsive"
+                src="{{item.img}}"></amp-img>
           </a>
-          {% endif %}
         {% endfor %}
         </div>
         <amp-accordion class="nested">
@@ -36,10 +35,10 @@ An ever-growing number of platforms and vendors support AMP, either by providing
               <a class="open underlined">View All ({{section.section_items|length}})</a>
               <a class="close underlined">Close X</a>
             </div>
-            <section>
+            <section class="accordion-content">
+      {% endif %}
               <ol class="item-container">
               {% for item in section.section_items | sort %}
-                {% if item.image is not defined %}
                 <li class="item">
                   {% if item.link %}
                     <a href="{{item.link}}">{{item.title}}</a>
@@ -47,12 +46,13 @@ An ever-growing number of platforms and vendors support AMP, either by providing
                     {{item.title}}
                   {% endif %}
                 </li>
-                {% endif %}
               {% endfor %}
               </ol>
+      {% if section.section_images is defined %}
             </section>
           </section>
         </amp-accordion>
+      {% endif %}
       </div>
     </section>
   {% endfor %}

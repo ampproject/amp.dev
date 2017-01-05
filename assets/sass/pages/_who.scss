@@ -1,5 +1,9 @@
 .who {
   .content {
+    amp-img {
+      margin: 0;
+    }
+
     ol,
     ul {
       margin-left: 0;
@@ -27,6 +31,11 @@
     .item {
       font-size: 16px;
       padding: 5px 0;
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+      -o-column-break-inside: avoid;
+      -ms-column-break-inside: avoid;
+      column-break-inside: avoid;
 
       a {
         font-size: 16px;
