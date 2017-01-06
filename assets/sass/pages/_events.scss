@@ -1,0 +1,119 @@
+.latest-events {
+  .hero {
+    padding: 75px 0;
+    text-align: center;
+
+    amp-img {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    i-amp-sizer {
+      width: 91px;
+    }
+  }
+
+  .upcoming,
+  .past {
+    margin-bottom: 60px;
+
+    .label {
+      @include text-label();
+      border-bottom: solid 2px $color-grey-lt;
+      color: $color-ampblue;
+      padding-bottom: 25px;
+    }
+
+    .event {
+      border-bottom: solid 1px $color-grey-lt;
+      padding: 30px 0 40px 0;
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+
+      .event-meta {
+
+        .smaller {
+          color: $color-grey-md;
+          display: inline-block;
+          margin-right: 10px;
+
+          amp-img {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+          }
+
+          i-amp-sizer {
+            width: 15px;
+          }
+        }
+      }
+    }
+
+    .no-upcoming {
+      background: $gradient-med-faded;
+      margin: 40px 0 80px 0;
+      padding: 40px 65px 60px 65px;
+
+      @include max-screen($tablet-portrait-breakpoint) {
+        padding: 20px 25px 35px 25px;
+      }
+
+      amp-img {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      i-amp-sizer {
+        width: 31px;
+      }
+
+      .empty-label {
+        color: $color-ampblue;
+        display: inline-block;
+        margin-left: .6em;
+      }
+
+      .empty-text a {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 26px;
+        padding-bottom: 1px;
+        text-transform: none;
+
+        @include max-screen($mobile-breakpoint) {
+          font-size: 14px;
+        }
+
+        &::after {
+          background: $gradient-bold;
+          bottom: -1px;
+          content: '';
+          height: 1px;
+          left: 0;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+
+    .add-calendar,
+    .more-past {
+      display: inline-block;
+      margin-top: 20px;
+      padding-bottom: 8px;
+
+      &::after {
+        background: $gradient-bold;
+        bottom: -1px;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}
