@@ -60,55 +60,9 @@ components:
     <section class="posts">
       <h2 class="posts-label">{{_(latest.feed.title)}}</h2>
       {% for post in latest.feed.posts %}
-        <div class="post-item">
-          <div class="post-meta">
-            <a class="type">{{post.type}}</a>
-            {% if post.type|lower != "event" %}
-              <span class="time">{{post.date}}</span>
-            {% endif %}
-          </div>
-          <a href="{{post.href}}" class="post-title">
-            <h4>{{post.title}}</h4>
-          </a>
-          <p class="post-excerpt small">
-            {{post.excerpt}}
-          </p>
-          {% if post.type|lower == "event" %}
-            <div class="event-meta">
-              <span class="event-time smaller">
-                <amp-img
-                    noloading
-                    height=15
-                    width=15
-                    layout=responsive
-                    src="{{latest.feed.icon_calendar}}">
-                </amp-img>
-                {{post.event_time}}
-              </span>
-              <span class="location smaller">
-                <amp-img
-                    noloading
-                    height=15
-                    width=15
-                    layout=responsive
-                    src="{{latest.feed.icon_location}}">
-                </amp-img>
-                {{post.location}}
-              </span>
-              <span class="participant smaller">
-                <amp-img
-                    noloading
-                    height=15
-                    width=15
-                    layout=responsive
-                    src="{{latest.feed.icon_audience}}">
-                </amp-img>
-                {{post.participant}}
-              </span>
-            </div>
-            <a class="add-calendar">{{_(latest.feed.add_to_calendar)}}</a>
-          {% endif %}
-        </div>
+        {% with past = false, meta = true %}
+          {% include "/views/partials/post-item.html" %}
+        {% endwith %}
       {% endfor %}
       <a class="feed-cta">{{_(latest.feed.more_posts)}}</a>
     </section>
@@ -121,7 +75,6 @@ components:
               noloading
               height=35
               width=45
-              layout=responsive
               src="{{latest.twitter.icon_twitter}}">
           </amp-img>
         </div>
@@ -139,7 +92,6 @@ components:
                       noloading
                       height=10
                       width=16
-                      layout=responsive
                       src="{{latest.twitter.icon_retweet}}">
                   </amp-img>
                   by 
@@ -171,7 +123,6 @@ components:
                         noloading
                         height=10
                         width=16
-                        layout=responsive
                         src="{{latest.twitter.icon_retweet}}">
                     </amp-img>
                     by 

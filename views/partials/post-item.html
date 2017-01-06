@@ -1,0 +1,56 @@
+{% set past = past %}
+{% set isEvent = (post.type|lower == "event") %}
+{% set meta = meta %}
+
+{% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
+
+<div class="post-item">
+  {% if meta %}
+    <div class="post-meta">
+      <a class="type">{{post.type}}</a>
+      {% if not isEvent %}
+        <span class="time">{{post.date}}</span>
+      {% endif %}
+    </div>
+  {% endif %}
+  <a href="{{post.href}}" class="post-title">
+    <h4>{{post.title}}</h4>
+  </a>
+  {% if not isEvent or not past %}
+    <p class="post-excerpt small">{{post.excerpt}}</p>
+  {% endif %}
+  {% if isEvent %}
+    <div class="event-meta">
+      <span class="event-time smaller">
+        <amp-img
+            noloading
+            height=15
+            width=15
+            src="{{latest.feed.icon_calendar}}">
+        </amp-img>
+        {{post.event_time}}
+      </span>
+      <span class="location smaller">
+        <amp-img
+            noloading
+            height=15
+            width=15
+            src="{{latest.feed.icon_location}}">
+        </amp-img>
+        {{post.location}}
+      </span>
+      <span class="participant smaller">
+        <amp-img
+            noloading
+            height=15
+            width=15
+            src="{{latest.feed.icon_audience}}">
+        </amp-img>
+        {{post.participant}}
+      </span>
+    </div>
+  {% endif %}
+  {% if isEvent and not past %}
+    <a class="add-calendar">{{_(latest.feed.add_to_calendar)}}</a>
+  {% endif %}
+</div>

@@ -24,12 +24,18 @@
       padding-bottom: 25px;
     }
 
-    .event {
+    .post-item {
       border-bottom: solid 1px $color-grey-lt;
       padding: 30px 0 40px 0;
 
       &:last-of-type {
         border-bottom: 0;
+      }
+
+      .post-title {
+        h4:hover {
+          color: $color-ampblue;
+        }
       }
 
       .event-meta {

@@ -14,7 +14,6 @@ class: latest-events
         noloading
         height=164
         width=182
-        layout=responsive
         src="{{events.hero.hero_icon}}">
     </amp-img>
     <h1 class="title">{{_(events.hero.title)}}</h1>
@@ -22,44 +21,10 @@ class: latest-events
   <section class="upcoming">
     <div class="label">{{_(events.upcoming.label)}}</div>
     {% if events.upcoming_events is sequence %}
-      {% for event in events.upcoming_events %}
-        <div class="event">
-          <h4 class="event-title">{{event.title}}</h4>
-          <p class="event-excerpt small">{{event.excerpt}}</p>
-          <div class="event-meta">
-            <span class="event-time smaller">
-              <amp-img
-                  noloading
-                  height=15
-                  width=15
-                  layout=responsive
-                  src="{{events.icons.calendar}}">
-              </amp-img>
-              {{event.event_time}}
-            </span>
-            <span class="location smaller">
-              <amp-img
-                  noloading
-                  height=15
-                  width=15
-                  layout=responsive
-                  src="{{events.icons.location}}">
-              </amp-img>
-              {{event.location}}
-            </span>
-            <span class="participant smaller">
-              <amp-img
-                  noloading
-                  height=15
-                  width=15
-                  layout=responsive
-                  src="{{events.icons.audience}}">
-              </amp-img>
-              {{event.participant}}
-            </span>
-          </div>
-          <a class="add-calendar">{{_(events.upcoming.add_to_calendar)}}</a>
-        </div>
+      {% for post in events.upcoming_events %}
+        {% with past = false, meta = false %}
+          {% include "/views/partials/post-item.html" %}
+        {% endwith %}
       {% endfor %}
     {% else %}
       <div class="no-upcoming">
@@ -67,7 +32,6 @@ class: latest-events
             noloading
             height=62
             width=62
-            layout=responsive
             src="{{events.upcoming.empty_icon}}">
         </amp-img>
         <h4 class="empty-label">{{_(events.upcoming.empty_title)}}</h4>
@@ -77,42 +41,12 @@ class: latest-events
   </section>
   <section class="past">
     <div class="label">{{_(events.past.label)}}</div>
-    {% for event in events.past_events %}
-      <div class="event">
-        <h4 class="event-title">{{event.title}}</h4>
-        <div class="event-meta">
-          <span class="event-time smaller">
-            <amp-img
-                noloading
-                height=15
-                width=15
-                layout=responsive
-                src="{{events.icons.calendar}}">
-            </amp-img>
-            {{event.event_time}}
-          </span>
-          <span class="location smaller">
-            <amp-img
-                noloading
-                height=15
-                width=15
-                layout=responsive
-                src="{{events.icons.location}}">
-            </amp-img>
-            {{event.location}}
-          </span>
-          <span class="participant smaller">
-            <amp-img
-                noloading
-                height=15
-                width=15
-                layout=responsive
-                src="{{events.icons.audience}}">
-            </amp-img>
-            {{event.participant}}
-          </span>
-        </div>
-      </div>
+    {% for post in events.past_events %}
+      {% if loop.index <= 3 %}
+        {% with past = true, meta = false %}
+          {% include "/views/partials/post-item.html" %}
+        {% endwith %}
+      {% endif %}
     {% endfor %}
     <a class="more-past">{{_(events.past.cta)}}</a>
   </section>
