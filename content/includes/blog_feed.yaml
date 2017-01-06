@@ -4,6 +4,11 @@ section_title: Latest blog posts
 blog:
 
   - article:
+    title: "AMP Roadmap Update for End-Q4 2016"
+    href: "https://amphtml.wordpress.com/2017/01/06/amp-roadmap-update-for-end-q4-2016/amp/"
+    date: "January 5, 2017"
+
+  - article:
     title: "AMP Cache Updates"
     href: "https://amphtml.wordpress.com/2016/12/05/amp-cache-updates/amp/"
     date: "December 5, 2016"
@@ -12,8 +17,3 @@ blog:
     title: "Teads brings AMP’d mobile video inventory to premium publishers"
     href: "https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/"
     date: "December 2, 2016"
-
-  - article:
-    title: "AMP Roadmap Update for Mid-Q4 2016"
-    href: "https://amphtml.wordpress.com/2016/11/23/amp-roadmap-update-for-mid-q4-2016/amp/"
-    date: "November 23, 2016"

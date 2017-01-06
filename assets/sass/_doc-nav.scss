@@ -40,6 +40,7 @@
   .section-name {
     background: none;
     border: none;
+    position: relative;
 
     &:hover {
       background: $gradient-med-faded;
@@ -49,7 +50,6 @@
   section.top-level {
     & > .section-name {
       padding: 20px;
-      position: relative;
 
       &::before {
         background: $gradient-bold;
@@ -62,16 +62,47 @@
       }
     }
 
-    &::after {
+    &.expandable {
 
+      & > .section-name::after {
+        @include sprite(carat);
+        content: '';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &[expanded] > .section-name::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
     }
   }
 
   section.sub-level {
     & > .section-name {
       @extend .small;
-
       padding: 10px 20px 10px 40px;
+    }
+
+    &.expandable {
+      .section-name::after {
+        color: $color-grey-ltmd;
+        content: '+';
+        font-size: 20px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &[expanded] > .section-name {
+        color: $color-ampblue;
+
+        &::after {
+          content: '–';
+        }
+      }
     }
 
     ul {
@@ -100,12 +131,26 @@
       flex: 1 1 auto;
       justify-content: center;
       padding: 15px 20px;
+      position: relative;
+
+      &::after {
+        content: '';
+        height: 20px;
+        position: absolute;
+        width: 20px;
+      }
     }
 
     .previous {
       background: $gradient-anglemed;
       color: white;
       text-align: right;
+
+      &::after {
+        background: url(/static/img/arrow.svg) center/cover no-repeat;
+        left: 20px;
+        transform: rotate(180deg);
+      }
     }
 
     .subtitle {
@@ -117,6 +162,11 @@
     .next {
       border-bottom: 3px solid $color-grey-lt;
       border-top: 3px solid $color-grey-lt;
+
+      &::after {
+        background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
+        right: 20px;
+      }
     }
   }
 }

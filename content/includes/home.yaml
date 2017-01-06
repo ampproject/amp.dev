@@ -2,9 +2,9 @@ hero:
   title@: Mobile web, faster.
   content@: The open-source AMP Project helps you create mobile optimized content that loads in an instant.
   cta@: Learn about AMP
-  cta_url: /docs/get_started/about-amp.html
+  cta_url: /content/learn/about-amp.md
   secondary_cta@: Start Building
-  secondary_cta_url: /docs/get_started/about-amp.html
+  secondary_cta_url: /content/learn/about-amp.md
   phone_img: /static/img/home/phone_hero.png
   lines_img: /static/img/home/lines_hero.png
   carousel_title@: The Latest
@@ -31,7 +31,7 @@ experience:
   phone_img: /static/img/home/phone_experience.png
   lines_img: /static/img/home/lines_experience.png
   cta@: Learn more
-  cta_url: /docs/get_started/about-amp.html
+  cta_url: /content/learn/about-amp.md
 
 success_stories:
   title@: Many sites are seeing success with AMP
@@ -66,5 +66,5 @@ success_stories:
 create:
   title@: Create your first AMP page now
   cta@: Start building now
-  cta_url: /docs/get_started/about-amp.html
+  cta_url: /content/learn/about-amp.md
   lines_img: /static/img/home/lines_bottom.png

@@ -69,7 +69,7 @@ components:
       <div class="intro-container">
         <h1>{{_(home.hero.title)}}</h1>
         <p class="intro">{{_(home.hero.content)}}</p>
-        <a class="button" href="{{home.hero.cta_url}}">{{_(home.hero.cta)}}</a><br class="tablet-down"><span class="cta_connector light">{{_('or')}}</span> <a class="underlined" href="{{home.hero.secondary_cta_url}}">{{_(home.hero.secondary_cta)}}</a>
+        <a class="button" href="{{g.doc(home.hero.cta_url).url.path}}">{{_(home.hero.cta)}}</a><br class="tablet-down"><span class="cta_connector light">{{_('or')}}</span> <a class="underlined" href="{{g.doc(home.hero.secondary_cta_url).url.path}}">{{_(home.hero.secondary_cta)}}</a>
       </div>
       <div class="latest tablet-up">
         <h3 class="latest-label">{{_(home.hero.carousel_title)}}</h3>
@@ -133,7 +133,7 @@ components:
   <div class="experience-content">
     <h1>{{_(home.experience.title)}}</h1>
     <p>{{_(home.experience.content)}}</p>
-    <a href="{{home.experience.cta_url}}" class="underlined">{{_(home.experience.cta)}}</a>
+    <a href="{{g.doc(home.experience.cta_url).url.path}}" class="underlined">{{_(home.experience.cta)}}</a>
   </div>
 
   <div class="experience-image">
@@ -246,5 +246,5 @@ components:
       src="{{home.create.lines_img}}">
   </amp-img>
   <h1>{{_(home.create.title)}}</h1>
-  <a href="{{home.create.cta_url}}" class="button light">{{_(home.create.cta)}}</a>
+  <a href="{{g.doc(home.create.cta_url).url.path}}" class="button light">{{_(home.create.cta)}}</a>
 </section>

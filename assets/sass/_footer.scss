@@ -67,9 +67,12 @@ footer {
       transform: translateY(-50%);
 
       &::after {
-        @include sprite(arrow);
+        background: url(/static/img/arrow.svg) center/cover no-repeat;
         content: '';
+        display: inline-block;
+        height: 12px;
         margin-left: 10px;
+        width: 12px;
       }
     }
   }
