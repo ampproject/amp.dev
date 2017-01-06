@@ -7,82 +7,187 @@ $localization:
 
 class: latest
 components:
-  - twitter
+  - carousel
 ---
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
+<div class="container">
+  <section class="hero">
+    <div class="img-wrap">
+      <div class="lines lines-back">
+        <amp-img
+            noloading
+            height=571
+            width=571
+            layout=responsive
+            src="{{latest.hero.lines_back_img}}">
+        </amp-img>
+      </div>
+      <div class="hero-image-background">
+        <amp-img
+            noloading
+            height=941
+            width=2401
+            layout=responsive
+            src="{{latest.hero.hero_img}}">
+        </amp-img>
+      </div>
+      <div class="lines lines-front">
+        <amp-img
+            noloading
+            height=571
+            width=571
+            layout=responsive
+            src="{{latest.hero.lines_front_img}}">
+        </amp-img>
+      </div>
+      <div class="text">
+        <div class="label">{{_(latest.hero.sub_title)}}</div>
+        <h1 class="title">{{_(latest.hero.title)}}</h1>
+      </div> 
+    </div>
+  </section>
 
-<section class="hero">
-  <div class="img-wrap">
-    <div class="lines lines-back">
-      <amp-img
-          noloading
-          height=571
-          width=571
-          layout=responsive
-          src="{{latest.hero.lines_back_img}}">
-      </amp-img>
-    </div>
-    <div class="hero-image-background">
-      <amp-img
-          noloading
-          height=941
-          width=2401
-          layout=responsive
-          src="{{latest.hero.hero_img}}">
-      </amp-img>
-    </div>
-    <div class="lines lines-front">
-      <amp-img
-          noloading
-          height=571
-          width=571
-          layout=responsive
-          src="{{latest.hero.lines_front_img}}">
-      </amp-img>
-    </div>
+  <div class="feeds">
     <div class="text">
       <div class="label">{{_(latest.hero.sub_title)}}</div>
       <h1 class="title">{{_(latest.hero.title)}}</h1>
+      <ul class="categories">
+        <li><a href="">{{_(latest.feed.category_event)}}</a></li>
+        <li><a href="">{{_(latest.feed.category_roadmap)}}</a></li>
+        <li><a href="">{{_(latest.feed.category_blog)}}</a></li>
+      </ul>
     </div> 
-  </div>
-</section>
-
-<div class="feeds">
-  <section class="posts">
-    <h2 class="posts-label">{{_(latest.feed.title)}}</h2>
-    {% for post in latest.feed.posts %}
-      <div class="post-item">
-        <div class="post-meta">
-          <a class="type">{{_(post.type)}}</a>
-          <span class="time">{{_(post.date)}}</span>
-        </div>
-        <a href="{{post.href}}" class="post-title">
-          <h4>
-            {{_(post.title)}}
-          </h4>
-        </a>
-        <p class="post-excerpt small">
-          {{_(post.excerpt)}}
-        </p>
-        {% if post.type|lower == "event" %}
-          <div class="event-meta">
-            <span class="location smaller">{{_(post.location)}}</span>
-            <span class="participant smaller">{{_(post.participant)}}</span>
+    <section class="posts">
+      <h2 class="posts-label">{{_(latest.feed.title)}}</h2>
+      {% for post in latest.feed.posts %}
+        <div class="post-item">
+          <div class="post-meta">
+            <a class="type">{{post.type}}</a>
+            {% if post.type|lower != "event" %}
+              <span class="time">{{post.date}}</span>
+            {% endif %}
           </div>
-        {% endif %}
-      </div>
-    {% endfor %}
-  </section>
+          <a href="{{post.href}}" class="post-title">
+            <h4>
+              {{post.title}}
+            </h4>
+          </a>
+          <p class="post-excerpt small">
+            {{post.excerpt}}
+          </p>
+          {% if post.type|lower == "event" %}
+            <div class="event-meta">
+              <span class="event-time smaller">
+                <amp-img
+                    noloading
+                    height=15
+                    width=15
+                    layout=responsive
+                    src="{{latest.feed.icon_calendar}}">
+                </amp-img>
+                {{post.event_time}}
+              </span>
+              <span class="location smaller">
+                <amp-img
+                    noloading
+                    height=15
+                    width=15
+                    layout=responsive
+                    src="{{latest.feed.icon_location}}">
+                </amp-img>
+                {{post.location}}
+              </span>
+              <span class="participant smaller">
+                <amp-img
+                    noloading
+                    height=15
+                    width=15
+                    layout=responsive
+                    src="{{latest.feed.icon_audience}}">
+                </amp-img>
+                {{post.participant}}
+              </span>
+            </div>
+            <a class="add-calendar">{{_(latest.feed.add_to_calendar)}}</a>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <a class="feed-cta">{{_(latest.feed.more_posts)}}</a>
+    </section>
 
-  <section class="twitter">
-    <h4 class="twitter-label">{{_(latest.twitter.title)}}</h4>
-    {% for tweet in latest.twitter.tweets %}
-      <amp-twitter width="390"
-          height="330"
-          layout="responsive"
-          data-tweetid={{_(tweet.id)}}
-          data-cards="hidden">
-      </amp-twitter>
-    {% endfor %}
-  </section>
+    <section class="twitter">
+      <h4 class="twitter-label">{{_(latest.twitter.title)}}</h4>
+      <div class="twitter-account">
+        <div class="twitter-icon">
+          <amp-img
+              noloading
+              height=35
+              width=45
+              layout=responsive
+              src="{{latest.twitter.icon_twitter}}">
+          </amp-img>
+        </div>
+        <a class="main-account" href={{latest.twitter.account_href}}>@{{latest.twitter.account_id}}</a>
+      </div>
+      <div class="desktop-feed">
+        {% for tweet in latest.twitter.tweets %}
+          <div class="tweet">
+            <div class="tweet-meta">
+              <span class="origin-name">{{tweet.origin_name}}</span>
+              <a class="origin-id" href="{{tweet.origin_href}}">@{{tweet.origin_id}}</a>
+              {% if tweet.retweet_id %}
+                <span class="retweet">
+                  <amp-img
+                      noloading
+                      height=10
+                      width=16
+                      layout=responsive
+                      src="{{latest.twitter.icon_retweet}}">
+                  </amp-img>
+                  by 
+                  <a class="retweet-id" href="{{tweet.retweet_href}}">@{{tweet.retweet_id}}</a>
+                </span>
+              {% endif %}
+            </div>
+            <p class="tweet-content">{{tweet.text|safe}}</p>
+            <div class="tweet-date">{{tweet.date}}</div>
+          </div>
+        {% endfor %}
+        <a class="feed-cta" href="{{latest.twitter.follow_href}}" target="_blank">{{_(latest.twitter.follow_cta)}}</a>
+      </div>
+      <div class="mobile-feed">
+        <amp-carousel class="latest-carousel"
+          height="350"
+          layout="flex-item"
+          type="slides">
+
+          {% for tweet in latest.twitter.tweets %}
+          <div class="card-container">
+            <div class="tweet card">
+              <div class="tweet-meta">
+                <span class="origin-name">{{tweet.origin_name}}</span>
+                <a class="origin-id" href="{{tweet.origin_href}}">@{{tweet.origin_id}}</a>
+                {% if tweet.retweet_id %}
+                  <span class="retweet">
+                    <amp-img
+                        noloading
+                        height=10
+                        width=16
+                        layout=responsive
+                        src="{{latest.twitter.icon_retweet}}">
+                    </amp-img>
+                    by 
+                    <a class="retweet-id" href="{{tweet.retweet_href}}">@{{tweet.retweet_id}}</a>
+                  </span>
+                {% endif %}
+              </div>
+              <p class="tweet-content">{{tweet.text|safe}}</p>
+              <div class="tweet-date">{{tweet.date}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </amp-carousel>
+      </div>
+    </section>
+  </div>
 </div>

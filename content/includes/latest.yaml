@@ -8,6 +8,14 @@ hero:
 
 feed:
   title@: What's hot?
+  icon_audience: /static/img/latest/icon_audience.png
+  icon_calendar: /static/img/latest/icon_calendar.png
+  icon_location: /static/img/latest/icon_location.png
+  category_event@: Event
+  category_roadmap@: Roadmap
+  category_blog@: Blog
+  more_posts@: See More
+  add_to_calendar@: Add to Calendar
   posts:
     - type: Roadmap
       title: Teads brings AMP’d mobile video inventory to premium publishers
@@ -20,6 +28,7 @@ feed:
       excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
       href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
       date: October 25, 2016
+      event_time: Jun.4 at 8:00PM
       location: San Francisco
       participant: Developers
 
@@ -31,12 +40,37 @@ feed:
 
 twitter:
   title@: Follow us on Twitter
-  icon_img: /static/img/home/phone_hero.png
-  account_id: '@AMPhtml'
+  icon_twitter: /static/img/latest/icon_twitter.svg
+  icon_retweet: /static/img/latest/icon_retweet.png
+  account_id: AMPhtml
   account_href: https://twitter.com/amphtml
+  follow_cta@: Follow AMP
+  follow_href: https://twitter.com/intent/follow?screen_name=AMPhtml
   tweets:
-    - id: 585110598171631616
-    - id: 585110598171631616
-    - id: 585110598171631616
-    - id: 638793490521001985
-    - id: 585110598171631616
+    - origin_name: AMP Project
+      origin_id: AMPhtml
+      origin_href: https://twitter.com/amphtml
+      date: October 1, 2016
+      text: With <a href="/hashtag/AMP?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMP</b></a>, <a href="/CNBC" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="20402945"><s>@</s><b>CNBC</b></a> has seen a 22% increase in mobile search users returning to <a href="https://t.co/WR2SgrufxQ" rel="nofollow noopener" dir="ltr" data-expanded-url="http://CNBC.com" class="twitter-timeline-link" target="_blank" title="http://CNBC.com"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">CNBC.com</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span></span></a> within 7 days. <a href="https://t.co/8S5LJGqqJG" rel="nofollow noopener" dir="ltr" data-expanded-url="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study" class="twitter-timeline-link" target="_blank" title="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">product.cnbc.com/post/153572079</span><span class="invisible">278/cnbc-amp-case-study</span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span>…</span></a>
+    - origin_name: AMP Project
+      origin_id: AMPhtml
+      origin_href: https://twitter.com/amphtml
+      date: October 1, 2016
+      text: With <a href="/hashtag/AMP?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMP</b></a>, <a href="/CNBC" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="20402945"><s>@</s><b>CNBC</b></a> has seen a 22% increase in mobile search users returning to <a href="https://t.co/WR2SgrufxQ" rel="nofollow noopener" dir="ltr" data-expanded-url="http://CNBC.com" class="twitter-timeline-link" target="_blank" title="http://CNBC.com"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">CNBC.com</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span></span></a> within 7 days. <a href="https://t.co/8S5LJGqqJG" rel="nofollow noopener" dir="ltr" data-expanded-url="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study" class="twitter-timeline-link" target="_blank" title="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">product.cnbc.com/post/153572079</span><span class="invisible">278/cnbc-amp-case-study</span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span>…</span></a>
+    - origin_name: Malte Ubl
+      origin_id: cramforce
+      origin_href: https://twitter.com/cramforce
+      retweet_id: AMPhtml
+      retweet_href: https://twitter.com/amphtml
+      date: October 1, 2016
+      text: With <a href="/hashtag/AMP?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMP</b></a>, <a href="/CNBC" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="20402945"><s>@</s><b>CNBC</b></a> has seen a 22% increase in mobile search users returning to <a href="https://t.co/WR2SgrufxQ" rel="nofollow noopener" dir="ltr" data-expanded-url="http://CNBC.com" class="twitter-timeline-link" target="_blank" title="http://CNBC.com"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">CNBC.com</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span></span></a> within 7 days. <a href="https://t.co/8S5LJGqqJG" rel="nofollow noopener" dir="ltr" data-expanded-url="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study" class="twitter-timeline-link" target="_blank" title="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">product.cnbc.com/post/153572079</span><span class="invisible">278/cnbc-amp-case-study</span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span>…</span></a>
+    - origin_name: AMP Project
+      origin_id: AMPhtml
+      origin_href: https://twitter.com/amphtml
+      date: October 1, 2016
+      text: With <a href="/hashtag/AMP?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMP</b></a>, <a href="/CNBC" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="20402945"><s>@</s><b>CNBC</b></a> has seen a 22% increase in mobile search users returning to <a href="https://t.co/WR2SgrufxQ" rel="nofollow noopener" dir="ltr" data-expanded-url="http://CNBC.com" class="twitter-timeline-link" target="_blank" title="http://CNBC.com"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">CNBC.com</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span></span></a> within 7 days. <a href="https://t.co/8S5LJGqqJG" rel="nofollow noopener" dir="ltr" data-expanded-url="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study" class="twitter-timeline-link" target="_blank" title="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">product.cnbc.com/post/153572079</span><span class="invisible">278/cnbc-amp-case-study</span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span>…</span></a>
+    - origin_name: AMP Project
+      origin_id: AMPhtml
+      origin_href: https://twitter.com/amphtml
+      date: October 1, 2016
+      text: With <a href="/hashtag/AMP?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMP</b></a>, <a href="/CNBC" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="20402945"><s>@</s><b>CNBC</b></a> has seen a 22% increase in mobile search users returning to <a href="https://t.co/WR2SgrufxQ" rel="nofollow noopener" dir="ltr" data-expanded-url="http://CNBC.com" class="twitter-timeline-link" target="_blank" title="http://CNBC.com"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">CNBC.com</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span></span></a> within 7 days. <a href="https://t.co/8S5LJGqqJG" rel="nofollow noopener" dir="ltr" data-expanded-url="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study" class="twitter-timeline-link" target="_blank" title="http://product.cnbc.com/post/153572079278/cnbc-amp-case-study"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">product.cnbc.com/post/153572079</span><span class="invisible">278/cnbc-amp-case-study</span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span>…</span></a>

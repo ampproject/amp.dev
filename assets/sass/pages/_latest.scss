@@ -1,35 +1,41 @@
 .latest {
+  .container {
+    padding: 0;
+  }
+
   .content {
     overflow: hidden;
   }
 
   .hero {
-    position: relative;
     padding: 110px 8.55% 0 8.55%;
+    position: relative;
 
     .img-wrap {
       position: relative;
 
       .lines {
-        position: absolute;
-        width: 22.91%;
         left: 0;
+        position: absolute;
         top: 0;
         transform: translate(-14.54%, -18.18%);
+        width: 22.91%;
       }
     }
 
     .text {
-      position: absolute;
       left: 0;
+      padding: 80px 11.35%;
+      position: absolute;
       right: 0;
       top: 0;
-      padding: 80px 11.35%;
+
       .label {
         color: $color-ampblue;
         @include text-label();
         margin-bottom: 15px;
       }
+
       .title {
         max-width: 300px;
       }
@@ -37,78 +43,406 @@
   }
 
   .feeds {
-    position: relative;
-    top: -160px;
-    margin: 0 auto;
-    width: 63.88%;
-    background: white;
-    padding: 80px 4.86%;
-
+    background: $color-white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 auto;
+    padding: 80px 4.86%;
+    position: relative;
+    top: -160px;
+    width: 63.88%;
 
-    .posts-label {
-      position: relative;
-      margin-bottom: 100px;
-      &::after {
-        background: $gradient-bold;
-        bottom: -35px;
-        content: '';
-        left: 0;
-        height: 2px;
-        position: absolute;
-        width: 47px;
-      }
+    .text {
+      display: none;
     }
 
     .posts {
       width: 48.9%;
 
+      .posts-label {
+        margin-bottom: 64px;
+        position: relative;
+
+        &::after {
+          background: $gradient-bold;
+          bottom: -35px;
+          content: '';
+          height: 2px;
+          left: 0;
+          position: absolute;
+          width: 47px;
+        }
+      }
+
+      .post-item {
+        border-bottom: solid 1px $color-grey-lt;
+        padding: 36px 0;
+
+        &:last-of-type {
+          border-bottom: 0;
+          margin-bottom: 30px;
+        }
+      }
+
       .post-meta {
         @include text-label();
+
         .time {
           color: $color-grey-md;
+
           &::before {
             content: '|';
-            margin-left: 0.8em;
+            margin-left: .8em;
             margin-right: 1.1em;
           }
         }
       }
 
       .post-title {
-        h4:hover {
-          color: $color-ampblue;
+        h4 {
+          margin: 10px 0;
+
+          &:hover {
+            color: $color-ampblue;
+          }
         }
       }
 
+      .post-excerpt {
+        margin: 0;
+      }
+
       .event-meta {
+        margin: 6px 0 8px 0;
+
         .smaller {
           color: $color-grey-md;
+          display: inline-block;
+          margin-right: 10px;
+
+          amp-img {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+          }
+
+          i-amp-sizer {
+            width: 15px;
+          }
+        }
+      }
+
+      .add-calendar {
+        position: relative;
+        padding: 3px 0;
+
+        &::after {
+          background: $gradient-bold;
+          content: '';
+          height: 1px;
+          left: 0;
+          position: absolute;
+          right: 0;
+          bottom: -1px;
         }
       }
     }
 
     .twitter {
-      width: 36.41%
+      width: 36.41%;
+      padding-top: .7em;
+
+      .twitter-icon {
+        display: inline-block;
+        position: relative;
+
+        amp-img {
+          left: -25px;
+          position: absolute;
+          top: -22px;
+        }
+
+        i-amp-sizer {
+          width: 45px;
+        }
+      }
+
+      .main-account {
+        display: inline-block;
+        margin-bottom: 36px;
+        position: relative;
+        text-transform: none;
+      }
+
+      .mobile-feed {
+        display: none;
+      }
+
+      .tweet {
+        border-bottom: solid 1px $color-grey-lt;
+        padding: 36px 0;
+
+        .tweet-meta {
+          @include text-label();
+          color: $color-grey-md;
+
+          .origin-name, .origin-id {
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 7px;
+          }
+
+          a, .retweet {
+            text-transform: none;
+          }
+
+          .retweet {
+            display: inline-block;
+            margin-bottom: 7px;
+
+            amp-img {
+              display: inline-block;
+              margin-right: 5px;
+            }
+
+            i-amp-sizer {
+              width: 16px;
+            }
+          }
+
+        }
+
+        .tweet-content {
+          margin-top: 13px;
+
+          a {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 28px;
+            text-transform: none;
+
+            s {
+              text-decoration: none;
+            }
+
+            b {
+              font-weight: 300;
+            }
+
+            .invisible {
+              font-size: 0;
+              line-height: 0;
+            }
+
+            @include max-screen($mobile-breakpoint) {
+              font-size: 16px;
+              line-height: 26px;
+            }
+          }
+        }
+
+        .tweet-date {
+          @include text-label();
+          color: $color-grey-md;
+        }
+
+        &:last-of-type {
+          border-bottom: 0;
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    .feed-cta {
+      position: relative;
+      padding: 8px 0;
+
+      &::after {
+        background: $gradient-bold;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        bottom: -1px;
+      }
     }
 
     &::before {
       background: $gradient-bold;
       content: '';
-      left: 0;
       height: 3px;
+      left: 0;
       position: absolute;
       right: 0;
       top: -3px;
     }
   }
 
-  @include max-screen($tablet-breakpoint) {
+  @include max-screen($tablet-breakpoint + 320px) {
+    .hero {
+      padding: 90px 2.55% 0 2.55%;
+
+      .img-wrap {
+        .lines {
+          transform: translate(-14.54%, -18.18%);
+          width: 22.91%;
+        }
+      }
+
+      .text {
+        padding: 80px 5.35%;
+      }
+    }
+
+    .feeds {
+      padding: 60px 4.86%;
+      top: -80px;
+      width: 75.88%;
+    }
   }
 
   @include max-screen($mobile-breakpoint) {
+    .hero {
+      padding: 0;
+
+      .img-wrap {
+        .lines {
+          display: none;
+        }
+      }
+
+      .text {
+        display: none;
+      }
+    }
+
+    .feeds {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      padding: 40px 0;
+      top: -30px;
+      width: 85%;
+
+      .text {
+        display: block;
+        width: 82.36%;
+
+        .label {
+          color: $color-ampblue;
+          @include text-label();
+          margin-bottom: 15px;
+        }
+
+        .categories {
+          position: relative;
+          list-style: none;
+          margin: 23px 0 38px;
+
+          li {
+            margin-bottom: 8px;
+            margin-left: 20px;
+            a {
+              color: $color-black;
+              font-size: 20px;
+              font-weight: 300;
+              line-height: 28px;
+              text-transform: none;
+
+              @include max-screen($mobile-breakpoint) {
+                font-size: 16px;
+                line-height: 26px;
+              }
+            }
+          }
+
+          &::after {
+            background: $color-brightblue;
+            bottom: 6px;
+            content: '';
+            left: -1px;
+            position: absolute;
+            top: 6px;
+            width: 1px;
+          }
+        }
+      }
+
+      .posts {
+        width: 82.36%;
+        .posts-label {
+          margin-bottom: 25px;
+
+          &::after {
+            bottom: -25px;
+          }
+        }
+
+        .post-item {
+          padding: 24px 0;
+
+          &:last-of-type {
+            margin-bottom: 20px;
+          }
+        }
+
+        .feed-cta {
+          display: inline-block;
+          margin-bottom: 36px;
+        }
+      }
+
+      .twitter {
+        width: 82.36%;
+        .twitter-account,
+        .twitter-label {
+          text-align: center;
+          margin-bottom: 10px;
+        }
+
+        .main-account {
+          margin-bottom: 20px;
+        }
+
+        .tweet {
+          padding: 26px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          flex-basis: 100%;
+          max-width: 100%;
+          overflow: hidden;
+          margin: 0;
+        }
+
+        .desktop-feed {
+          display: none;
+        }
+
+        .mobile-feed {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include max-screen($mobile-medium-breakpoint) {
+    .feeds {
+      .posts {
+        width: 100%;
+      }
+
+      .twitter {
+        width: 100%;
+        .mobile-feed {
+          width: 116%;
+          position: relative;
+          left: -8%
+        }
+      }
+    }
   }
 }
 
