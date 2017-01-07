@@ -9,7 +9,7 @@
     }
 
     i-amp-sizer {
-      width: 91px;
+      width: 115px;
     }
   }
 
@@ -33,6 +33,9 @@
       }
 
       .post-title {
+        font-weight: 300;
+        text-transform: none;
+
         h4:hover {
           color: $color-ampblue;
         }

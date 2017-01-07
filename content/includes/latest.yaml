@@ -28,7 +28,8 @@ feed:
       excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
       href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
       date: October 25, 2016
-      event_time: Jun.4 at 8:00PM
+      event_time: 20160604T050000Z/20160604T060000Z
+      event_time_text: Jun.4 at 8:00PM
       location: San Francisco
       participant: Developers
 

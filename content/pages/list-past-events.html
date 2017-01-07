@@ -1,0 +1,22 @@
+---
+$title: The Latest News
+$path: /latest/events/past-events
+
+$localization:
+  path: /{locale}/latest/events/past-events
+
+class: list list-past-events
+---
+{% set lists = g.doc('/content/includes/lists.yaml', locale=doc.locale) %}
+{% set events = g.doc('/content/includes/events.yaml', locale=doc.locale) %}
+
+<div class="container md">
+  <h1 class="title">{{_(lists.past_events.title)}}</h1>
+  <section class="post-list">
+    {% for post in events.past_events %}
+      {% with past = true, meta = false %}
+        {% include "/views/partials/post-item.html" %}
+      {% endwith %}
+    {% endfor %}
+  </section>
+</div>

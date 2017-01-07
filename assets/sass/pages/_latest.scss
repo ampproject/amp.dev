@@ -100,6 +100,9 @@
       }
 
       .post-title {
+        font-weight: 300;
+        text-transform: none;
+
         h4 {
           margin: 10px 0;
 
@@ -329,6 +332,7 @@
       .text {
         display: block;
         width: 82.36%;
+        margin-bottom: 30px;
 
         .label {
           color: $color-ampblue;
@@ -336,38 +340,38 @@
           margin-bottom: 15px;
         }
 
-        .categories {
-          position: relative;
-          list-style: none;
-          margin: 23px 0 38px;
+        // .categories {
+        //   position: relative;
+        //   list-style: none;
+        //   margin: 23px 0 38px;
 
-          li {
-            margin-bottom: 8px;
-            margin-left: 20px;
-            a {
-              color: $color-black;
-              font-size: 20px;
-              font-weight: 300;
-              line-height: 28px;
-              text-transform: none;
+        //   li {
+        //     margin-bottom: 8px;
+        //     margin-left: 20px;
+        //     a {
+        //       color: $color-black;
+        //       font-size: 20px;
+        //       font-weight: 300;
+        //       line-height: 28px;
+        //       text-transform: none;
 
-              @include max-screen($mobile-breakpoint) {
-                font-size: 16px;
-                line-height: 26px;
-              }
-            }
-          }
+        //       @include max-screen($mobile-breakpoint) {
+        //         font-size: 16px;
+        //         line-height: 26px;
+        //       }
+        //     }
+        //   }
 
-          &::after {
-            background: $color-brightblue;
-            bottom: 6px;
-            content: '';
-            left: -1px;
-            position: absolute;
-            top: 6px;
-            width: 1px;
-          }
-        }
+        //   &::after {
+        //     background: $color-brightblue;
+        //     bottom: 6px;
+        //     content: '';
+        //     left: -1px;
+        //     position: absolute;
+        //     top: 6px;
+        //     width: 1px;
+        //   }
+        // }
       }
 
       .posts {

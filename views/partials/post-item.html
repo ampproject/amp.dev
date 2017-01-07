@@ -1,23 +1,20 @@
-{% set past = past %}
 {% set isEvent = (post.type|lower == "event") %}
-{% set meta = meta %}
-
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
 
 <div class="post-item">
   {% if meta %}
     <div class="post-meta">
-      <a class="type">{{post.type}}</a>
+      <a class="type" href="{{g.doc('/content/pages/list-' ~ post.type|lower ~ 's.html').url.path}}">{{post.type}}</a>
       {% if not isEvent %}
         <span class="time">{{post.date}}</span>
       {% endif %}
     </div>
   {% endif %}
   <a href="{{post.href}}" class="post-title">
-    <h4>{{post.title}}</h4>
+    <h4>{{post.title|truncate(80, False)}}</h4>
   </a>
   {% if not isEvent or not past %}
-    <p class="post-excerpt small">{{post.excerpt}}</p>
+    <p class="post-excerpt small">{{post.excerpt|truncate(170, False)}}</p>
   {% endif %}
   {% if isEvent %}
     <div class="event-meta">
@@ -28,7 +25,7 @@
             width=15
             src="{{latest.feed.icon_calendar}}">
         </amp-img>
-        {{post.event_time}}
+        {{post.event_time_text}}
       </span>
       <span class="location smaller">
         <amp-img
@@ -51,6 +48,6 @@
     </div>
   {% endif %}
   {% if isEvent and not past %}
-    <a class="add-calendar">{{_(latest.feed.add_to_calendar)}}</a>
+    <a class="add-calendar" href="https://www.google.com/calendar/render?action=TEMPLATE&text={{post.title}}&dates={{post.event_time}}&details={{post.href}}&location={{post.location}}&sf=true&output=xml">{{_(latest.feed.add_to_calendar)}}</a>
   {% endif %}
 </div>

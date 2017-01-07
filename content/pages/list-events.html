@@ -1,9 +1,9 @@
 ---
 $title: The Latest News
-$path: /latest/{base}/
+$path: /latest/events/
 
 $localization:
-  path: /{locale}/latest/{base}/
+  path: /{locale}/latest/events/
 
 class: latest-events
 ---
@@ -13,7 +13,7 @@ class: latest-events
     <amp-img
         noloading
         height=164
-        width=182
+        width=233
         src="{{events.hero.hero_icon}}">
     </amp-img>
     <h1 class="title">{{_(events.hero.title)}}</h1>
@@ -48,6 +48,6 @@ class: latest-events
         {% endwith %}
       {% endif %}
     {% endfor %}
-    <a class="more-past">{{_(events.past.cta)}}</a>
+    <a class="more-past" href="{{g.doc('/content/pages/list-past-events.html').url.path}}">{{_(events.past.cta)}}</a>
   </section>
 </div>
