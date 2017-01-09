@@ -1,0 +1,15 @@
+{% for section in doc.faq %}
+  <h2 id="{{section.section_title|slug}}">{{section.section_title}}</h2>
+  <amp-accordion>
+    {% for question in section.questions %}
+    <section>
+      <div class="accordion-header">
+        <h4 class="accordion-title">{{question.title}}</h4>
+      </div>
+      <div class="accordion-content">
+        {{question.answer|markdown|safe}}
+      </div>
+    </section>
+    {% endfor %}
+  </amp-accordion>
+{% endfor %}
