@@ -2,77 +2,20 @@ amp-accordion {
   section {
     border-bottom: 2px solid $color-grey-lt;
     padding: 20px 0;
-
-    &:last-of-type {
-      border-bottom: 0;
-    }
-  }
-
-  &.nested {
-    > section {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0;
-
-      &::before {
-        background: linear-gradient(transparent, $color-white);
-        content: '';
-        display: block;
-        height: 200px;
-        opacity: 1;
-        position: absolute;
-        top: -200px;
-        width: 100%;
-        z-index: 1;
-      }
-
-      &[expanded] {
-        &::before {
-          content: none;
-        }
-
-        .accordion-header {
-          order: 2;
-        }
-
-        .open {
-          display: none;
-        }
-      }
-
-      &:not([expanded]) .close {
-        display: none;
-      }
-    }
-
-    .accordion-content,
-    .accordion-header {
-      flex: 0 0 100%;
-    }
-
-    .accordion-content {
-      margin: 0;
-    }
-
-    .accordion-header {
-      order: 1;
-      padding: 30px 0;
-      text-align: center;
-    }
   }
 
   @include max-screen($mobile-medium-breakpoint) {
     section {
-      padding: 15px 0;
       border-bottom: 1px solid $color-grey-lt;
+      padding: 15px 0;
     }
 
     .accordion-header {
       padding: 0;
     }
 
-    .accordion-toggle {
-      margin-right: 15px;
+    .accordion-content {
+      margin-left: 40px;
     }
   }
 }
@@ -81,28 +24,23 @@ amp-accordion {
   background-color: transparent;
   border: 0;
   padding: 0 25px;
-
-  h3 {
-    display: inline-block;
-    margin: 0;
-  }
 }
 
-.accordion-toggle {
-  display: inline-block;
-  height: 10px;
-  margin-right: 30px;
+.accordion-title {
+  margin: 0;
+  padding-left: 40px;
   position: relative;
-  width: 8px;
 
   &::before,
   &::after {
     background: $gradient-med;
     content: '';
-    display: block;
+    display: inline-block;
     height: 2px;
+    left: 0;
     position: absolute;
-    width: 100%;
+    top: 50%;
+    width: 8px;
   }
 
   &::after {
@@ -115,5 +53,13 @@ amp-accordion {
 }
 
 .accordion-content {
-  margin-top: 30px;
+  margin: 20px 0 0 65px;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 2px;
+  }
 }

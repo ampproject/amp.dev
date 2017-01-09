@@ -10,19 +10,9 @@
     }
   }
 
-  .card-container {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    overflow: hidden;
-    padding: 0;
-  }
-
-  .card {
-    margin: 10px;
-    padding: 0;
-
-    &::before {
-      content: none;
+  amp-accordion {
+    section:last-child {
+      border-bottom: 0;
     }
   }
 
@@ -30,7 +20,6 @@
     column-count: 4;
     column-gap: $grid-gutters;
     list-style: none;
-    padding: 0 50px;
 
     .item {
       font-size: 16px;
@@ -81,14 +70,6 @@
   }
 
   @include max-screen($mobile-medium-breakpoint) {
-    .card-container {
-      max-height: 600px;
-    }
-
-    .card {
-      flex: 1 1 100%;
-    }
-
     .item-container {
       column-count: 2;
 
@@ -109,12 +90,6 @@
 
     hr {
       margin: 30px auto;
-    }
-  }
-
-  @include max-screen($mobile-baby-breakpoint) {
-    .card-container {
-      max-height: 300px;
     }
   }
 }

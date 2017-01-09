@@ -1,6 +1,12 @@
 ---
 $title: AMP Overview
 $order: 0
+class: faqs
+
+cta:
+  title@: Next FAQ
+  link_text@: Platform and Technology Company Involvement
+  link_url: platform-involvement.html
 
 faq:
   - section_title: Category One

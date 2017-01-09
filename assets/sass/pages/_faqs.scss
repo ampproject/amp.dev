@@ -1,0 +1,38 @@
+.faqs {
+
+  // sticking this here til i figure out which pages need this
+  .container {
+    max-width: 968px;
+  }
+
+  .main .content {
+    h2 {
+      margin: 0;
+      padding: 25px 0;
+    }
+  }
+
+  .section-label {
+    color: $color-ampblue;
+    @include text-label();
+  }
+
+  amp-accordion {
+    margin-bottom: 100px;
+  }
+
+  .post-title {
+    text-align: center;
+  }
+
+  .post-content {
+    a {
+      @extend .underlined;
+      text-transform: none;
+    }
+
+    p {
+      @extend .small;
+    }
+  }
+}

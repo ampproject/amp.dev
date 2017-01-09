@@ -4,6 +4,12 @@ $order: 3
 class: who
 
 description: The Accelerated Mobile Pages (AMP) Project is an open source initiative that makes it easy for publishers to create mobile-friendly content once and have it load instantly everywhere. – Accelerated Mobile Pages Project
+
+cta:
+  title@: Next FAQ
+  link_text@: AMP Overview
+  link_url: overview.html
+
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 An ever-growing number of platforms and vendors support AMP, either by providing an AMP component, or by offering advanced integration with AMP pages within their platforms.
@@ -13,8 +19,7 @@ An ever-growing number of platforms and vendors support AMP, either by providing
   {% for section in who.tech_companies.sections %}
     <section {% if loop.index == 1 %}expanded{% endif %}>
       <div id="{{section.title|slug}}" class="accordion-header">
-        <span class="accordion-toggle"></span>
-        <h3>{{section.title}}</h3>
+        <h3 class="accordion-title">{{section.title}}</h3>
       </div>
       <div class="accordion-content">
         <ol class="item-container">

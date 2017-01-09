@@ -1,6 +1,12 @@
 ---
 $title: Publisher Monetization
 $order: 2
+class: faqs
+
+cta:
+  title@: Next FAQ
+  link_text@: Supported Platforms and Browsers
+  link_url: supported-platforms.html
 
 faq:
   - section_title: Category One

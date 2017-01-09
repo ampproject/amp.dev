@@ -1,5 +1,5 @@
 {% for section in doc.faq %}
-  <h2 id="{{section.section_title|slug}}">{{section.section_title}}</h2>
+  <h2 id="{{section.section_title|slug}}" class="section-label">{{section.section_title}}</h2>
   <amp-accordion>
     {% for question in section.questions %}
     <section>

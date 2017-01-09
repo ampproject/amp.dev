@@ -1,6 +1,12 @@
 ---
 $title: Platform and Technology Company Involvement
 $order: 1
+class: faqs
+
+cta:
+  title@: Next FAQ
+  link_text@: Publisher Monetization
+  link_url: publisher-monetization.html
 
 faq:
   - section_title: Category One

@@ -1,14 +1,16 @@
 {% extends "/views/base.html" %}
 
-{% set navmarkup %}
-{% with flat = 1 %}
-{% include "/views/partials/nav.html" %}
-{% endwith %}
-{% endset %}
+{# TODO(lily): add breadcrumb nav partial here
+  {% set navmarkup %}
+  {% with flat = 1 %}
+  {% include "/views/partials/nav.html" %}
+  {% endwith %}
+  {% endset %}
 
-{% block nav %}
-  {{ navmarkup|safe }}
-{% endblock %}
+  {% block nav %}
+    {{ navmarkup|safe }}
+  {% endblock %}
+#}
 
 {% block main %}
   <div class="container main">
@@ -25,6 +27,12 @@
       </article>
     </div>
   </div>
+
+  {% if doc.cta %}
+    {% with cta = doc.cta %}
+      {% include "/views/partials/footer-cta.html" %}
+    {% endwith %}
+  {% endif %}
 
   {% include "/views/partials/footer.html" %}
 
