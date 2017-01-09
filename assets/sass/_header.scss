@@ -80,6 +80,13 @@
     }
   }
 
+  .tabs {
+    align-items: stretch;
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+  }
+
   .tab {
     position: relative;
     color: $color-grey-800;
@@ -149,23 +156,10 @@
     position: relative;
 
     > a {
-
       position: relative;
-      top: 25px;
+      top: 19px;
       color: inherit;
       text-decoration: none;
-
-      &:after {
-        display: inline-block;
-        content: "";
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 6px solid currentColor;
-        margin-left: 5px;
-        padding-bottom: 2px;
-      }
     }
 
     > ul {

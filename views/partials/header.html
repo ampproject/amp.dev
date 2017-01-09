@@ -1,32 +1,34 @@
 <header class="header fixed">
   <div class="container">
     <div class="nav-container">
-      <div class="left-nav">
+      <div class="left-nav alt">
         <a href="{{g.doc('/content/pages/home.html', locale=doc.locale).url.path}}" class="tab header-title"><span></span></a>
+
+        <div class="tabs">
+          {% for entry in menu %}
+          <div class="tab{% if doc.pod_path.split('/')[2] == entry.collection %} active{% endif %}">
+            <a{% if entry.href.startswith('http') %} class="external"{% endif %} href="{% if entry.href.startswith('http') %}{{ entry.get('href') }}{% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(entry.get('copy'))}}</a>
+            <ul>
+              {% if entry.children %}
+              {% for subEntry in entry.children %}
+              <li{% if subEntry.href.startswith('http') %} class="external"{% endif %}>
+                <a href="{% if subEntry.href.startswith('http') %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(subEntry.get('copy'))}}</a>
+              </li>
+              {% endfor %}
+              {% else %}
+              {% set menuCollection = g.collection(entry.collection) %}
+              {% for item in menuCollection.docs(recursive=false, locale=doc.locale) %}
+              <li{% if item.goto %} class="external"{% endif %}>
+                <a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a>
+              </li>
+              {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
       </div>
       <div class="right alt">
-        {% for entry in menu %}
-        <div class="tab{% if doc.pod_path.split('/')[2] == entry.collection %} active{% endif %}">
-          <a{% if entry.href.startswith('http') %} class="external"{% endif %} href="{% if entry.href.startswith('http') %}{{ entry.get('href') }}{% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(entry.get('copy'))}}</a>
-          <ul>
-            {% if entry.children %}
-            {% for subEntry in entry.children %}
-            <li{% if subEntry.href.startswith('http') %} class="external"{% endif %}>
-              <a href="{% if subEntry.href.startswith('http') %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(subEntry.get('copy'))}}</a>
-            </li>
-            {% endfor %}
-            {% else %}
-            {% set menuCollection = g.collection(entry.collection) %}
-            {% for item in menuCollection.docs(recursive=false, locale=doc.locale) %}
-            <li{% if item.goto %} class="external"{% endif %}>
-              <a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a>
-            </li>
-            {% endfor %}
-            {% endif %}
-          </ul>
-        </div>
-        {% endfor %}
-
         {% include "/views/partials/lang_switcher.html" %}
 
         <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'></button>
