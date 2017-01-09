@@ -25,21 +25,6 @@ function addAds() {
 
   newYaml += vendorNames.join('\n        - ');
 
-  newYaml += `
-      section_images:
-        - img: /static/img/platforms/plista.png
-          link: https://github.com/ampproject/amphtml/blob/master/ads/plista.md
-        - img: /static/img/platforms/yahoo.png
-          link: https://github.com/ampproject/amphtml/blob/master/ads/yahoo.md
-        - img: /static/img/platforms/inmobi.png
-          link: https://github.com/ampproject/amphtml/blob/master/ads/inmobi.md
-        - img: /static/img/platforms/kargo.png
-          link: https://github.com/ampproject/amphtml/blob/master/ads/kargo.md
-        - img: /static/img/platforms/mediavine.png
-          link: https://github.com/ampproject/amphtml/blob/master/ads/mediavine.md
-        - img: /static/img/platforms/criteo.png
-          link: https://github.com/ampproject/amphtml/blob/master/ads/criteo.md`;
-
 }
 
 function addAnalytics() {
@@ -87,12 +72,7 @@ function addContentPlatforms() {
         - title: Twitter
           link: https://twitter.com/
         - title: Ghost
-          link: https://ghost.org
-      section_images:
-        - img: /static/img/platforms/google.png
-          link: https://google.com
-        - img: /static/img/platforms/google.png
-          link: https://google.com`;
+          link: https://ghost.org`;
 }
 
 function addCMS() {
