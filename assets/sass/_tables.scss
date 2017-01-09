@@ -47,9 +47,19 @@ td:first-child {
   border-right: 2px solid $color-ampblue;
 }
 
-th {
+html, body th {
   @include text-label();
   background: $color-white;
   border-bottom: 2px solid $color-ampblue;
   color: $color-ampblue;
+}
+
+@include max-screen($mobile-breakpoint) {
+  td, th {
+    padding: 5px;
+  }
+
+  th:first-child {
+    border-right: 2px solid $color-ampblue;
+  }
 }

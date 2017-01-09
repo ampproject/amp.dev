@@ -6,7 +6,6 @@ code,
 kbd,
 samp,
 tt{
-  @include no-break();
   font-family: $font-family-mono;
   font-size: 14px;
   background: $color-white;
@@ -67,6 +66,12 @@ pre {
       border: 0;
     }
 
+  }
+}
+
+@include max-screen($mobile-breakpoint) {
+  .code pre {
+    margin: 0 -25px;
   }
 }
 

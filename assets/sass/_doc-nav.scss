@@ -171,4 +171,30 @@
       }
     }
   }
+
+  @include max-screen($mobile-breakpoint) {
+    border: none;
+    border-bottom: 3px solid $color-grey-lt;
+    margin: 0 -25px;
+
+    .current-sections {
+      padding: 15px 20px;
+    }
+
+    section.top-level {
+      & > .section-name {
+        padding: 5px 15px;
+      }
+    }
+
+    section.sub-level {
+      & > .section-name {
+        padding: 0px 15px;
+      }
+    }
+
+    .navigation {
+      display: none;
+    }
+  }
 }
