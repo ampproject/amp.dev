@@ -10,6 +10,7 @@ components:
   - carousel
 ---
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
+{% set tweets = g.doc('/content/includes/tweets.yaml', locale=doc.locale) %}
 <div class="container">
   <section class="hero">
     <div class="img-wrap">
@@ -81,7 +82,7 @@ components:
         <a class="main-account" href={{latest.twitter.account_href}}>@{{latest.twitter.account_id}}</a>
       </div>
       <div class="desktop-feed">
-        {% for tweet in latest.twitter.tweets %}
+        {% for tweet in tweets.tweets %}
           <div class="tweet">
             <div class="tweet-meta">
               <span class="origin-name">{{tweet.origin_name}}</span>
@@ -111,7 +112,7 @@ components:
           layout="flex-item"
           type="slides">
 
-          {% for tweet in latest.twitter.tweets %}
+          {% for tweet in tweets.tweets %}
           <div class="card-container">
             <div class="tweet card">
               <div class="tweet-meta">

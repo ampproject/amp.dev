@@ -1,4 +1,5 @@
 {% set isEvent = (post.type|lower == "event") %}
+{% set isBlog = (post.type|lower == "blog") %}
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
 
 <div class="post-item">
@@ -10,7 +11,11 @@
       {% endif %}
     </div>
   {% endif %}
-  <a href="{{post.href}}" class="post-title">
+  {% if isBlog %}
+    <a href="{{g.doc('/content/latest/blog/' ~ post.id ~ '.md').url.path}}" class="post-title">
+  {% else %}
+    <a href="{{post.href}}" class="post-title">
+  {% endif %}
     <h4>{{post.title|truncate(80, False)}}</h4>
   </a>
   {% if not isEvent or not past %}

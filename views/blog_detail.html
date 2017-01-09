@@ -1,0 +1,25 @@
+{% extends "/views/base.html" %}
+
+{% block main %}
+  <div class="container main">
+
+    <div class="content">
+      <article class="post">
+        <div class="post-meta">
+          <span class="post-type">{{ doc.type }}</span>
+          <span class="post-date">{{ doc.date }}</span>
+        </div>
+
+        <h1 class="post-title">{{ doc.title }}</h1>
+
+        <div class="post-content">
+          {{doc.html|render|safe}}
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+{% include "/views/partials/footer.html" %}
+
+{% endblock %}
