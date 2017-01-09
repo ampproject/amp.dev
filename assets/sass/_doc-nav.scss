@@ -126,6 +126,7 @@
     width: 100%;
 
     .previous, .next {
+      @include text-body();
       display: flex;
       flex-direction: column;
       flex: 1 1 auto;
@@ -153,19 +154,20 @@
       }
     }
 
-    .subtitle {
-      color: $color-ampblue;
-      font-size: 12px;
-      margin: 0;
-    }
-
     .next {
       border-bottom: 3px solid $color-grey-lt;
       border-top: 3px solid $color-grey-lt;
+      color: $color-black-95;
 
       &::after {
         background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
         right: 20px;
+      }
+
+      .subtitle {
+        color: $color-ampblue;
+        font-size: 12px;
+        margin: 0;
       }
     }
   }
