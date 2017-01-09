@@ -1,0 +1,5 @@
+$title@: Developer Support
+$path: /support/developer/{base}.html
+$view: /views/section_page.html
+$localization:
+  path: /{locale}/support/developer/{base}.html

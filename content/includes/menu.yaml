@@ -22,6 +22,6 @@ menu:
   - href: https://amphtml.wordpress.com/
     copy@: news
     collection: news
-  - href: /content/support/faqs.md
+  - href: /content/support/support.md
     copy@: Support
     collection: support

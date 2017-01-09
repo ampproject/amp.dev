@@ -1,0 +1,5 @@
+$title@: Vendor Support
+$path: /support/vendor/{base}.html
+$view: /views/section_page.html
+$localization:
+  path: /{locale}/support/vendor/{base}.html
