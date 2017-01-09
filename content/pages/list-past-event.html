@@ -1,17 +1,17 @@
 ---
-$title: The Latest News
-$path: /latest/events/past-events
+$title: Past Events
+$path: /latest/event/past-event
 
 $localization:
-  path: /{locale}/latest/events/past-events
+  path: /{locale}/latest/event/past-event
 
-class: list list-past-events
+class: list list-past-event
 ---
 {% set lists = g.doc('/content/includes/lists.yaml', locale=doc.locale) %}
 {% set events = g.doc('/content/includes/events.yaml', locale=doc.locale) %}
 
 <div class="container md">
-  <h1 class="title">{{_(lists.past_events.title)}}</h1>
+  <h1 class="title">{{_(lists.past_event.title)}}</h1>
   <section class="post-list">
     {% for post in events.past_events %}
       {% with past = true, meta = false %}

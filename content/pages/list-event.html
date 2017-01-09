@@ -1,9 +1,9 @@
 ---
-$title: The Latest News
-$path: /latest/events/
+$title: The Latest Events
+$path: /latest/event/
 
 $localization:
-  path: /{locale}/latest/events/
+  path: /{locale}/latest/event/
 
 class: latest-events
 ---
@@ -48,6 +48,6 @@ class: latest-events
         {% endwith %}
       {% endif %}
     {% endfor %}
-    <a class="more-past" href="{{g.doc('/content/pages/list-past-events.html').url.path}}">{{_(events.past.cta)}}</a>
+    <a class="more-past" href="{{g.doc('/content/pages/list-past-event.html').url.path}}">{{_(events.past.cta)}}</a>
   </section>
 </div>
