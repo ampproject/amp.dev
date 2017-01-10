@@ -1,4 +1,5 @@
 ---
+class: post-blog post-detail
 type: Blog
 $title: 'Title of Blog Post 2'
 id: title-of-blog-post-2
