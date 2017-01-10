@@ -125,6 +125,16 @@ a {
       position: absolute;
       right: 0;
     }
+
+    &.cta {
+      overflow: hidden;
+
+      &:hover {
+        &::before {
+          animation: 0.5s 1 cta-line;
+        }
+      }
+    }
   }
 }
 

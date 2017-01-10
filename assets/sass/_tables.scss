@@ -47,11 +47,13 @@ td:first-child {
   border-right: 2px solid $color-ampblue;
 }
 
-html, body th {
-  @include text-label();
-  background: $color-white;
-  border-bottom: 2px solid $color-ampblue;
-  color: $color-ampblue;
+html, body {
+  th {
+    @include text-label();
+    background: $color-white;
+    border-bottom: 2px solid $color-ampblue;
+    color: $color-ampblue;
+  }
 }
 
 @include max-screen($mobile-breakpoint) {
