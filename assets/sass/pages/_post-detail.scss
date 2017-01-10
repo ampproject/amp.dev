@@ -40,19 +40,41 @@ body.post-detail {
     .post-meta {
       text-align: center;
 
-      a,
-      span {
+      .post-type,
+      .post-date {
+        display: inline-block;
         @include text-label();
+      }
+
+      .post-type {
+        color: $color-ampblue;
       }
 
       .post-date {
         color: $color-grey-md;
+
+        &::before {
+          color: $color-ampblue;
+          content: '|';
+          margin: 0 1.15em 0 .8em;
+        }
       }
     }
 
     .post-title {
       margin: 25px 0 65px 0;
       text-align: center;
+    }
+
+    @include max-screen($mobile-breakpoint) {
+      .post-sheet {
+        padding: 40px 6% 40px 6%;
+      }
+
+      .post-meta,
+      .post-title {
+        text-align: left;
+      }
     }
 
     .author-meta {
@@ -129,6 +151,23 @@ body.post-detail {
 
       amp-img {
         margin: 50px auto;
+      }
+    }
+  }
+
+  &:not(.roadmap) {
+    ul, ol {
+      padding-left: .7em;
+
+      li {
+        list-style-type: none;
+        position: relative;
+        &::before {
+          content: '\2022 ';
+          color: $color-ampblue;
+          position: absolute;
+          left: -.8em;
+        }
       }
     }
   }

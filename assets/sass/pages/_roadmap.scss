@@ -1,10 +1,11 @@
 @mixin roadmap-stage($color, $number) {
 
-  border-left: 3px solid $color;
+  border-left: 1px solid $color;
 
   &:after {
+    border: 1px solid $color;
+    color: $color;
     content: $number + '';
-    border: 3px solid $color;
   }
 
   li {
@@ -17,53 +18,94 @@
 
 .roadmap .content {
 
-  ul, ol {
-    padding-left: 40px;
+  .about,
+  .description,
+  .forecast {
+    ul, ol {
+      padding-left: .7em;
+
+      li {
+        list-style-type: none;
+        position: relative;
+        &::before {
+          content: '\2022 ';
+          color: $color-ampblue;
+          position: absolute;
+          left: -.8em;
+        }
+      }
+    }
+  }
+
+  .description,
+  .forecast {
+    ul, ol {
+      padding-left: 1.4em;
+    }
   }
 
   .stages li {
     list-style-type: none;
   }
 
-  h1 {
-    margin-bottom: 1em;
-    padding-left: 12px;
-    small {
-      display: block;
-      color: #949494;
-      font-size: 24px;
-      padding-top: 6px;
-    }
-  }
-
-  h3 {
-    background: #2196F3;
-    padding: 0.5em 16px;
-    color: #fff;
+  .workstream-title {
+    background: $gradient-bold;
+    padding: 1em 16px;
     margin-bottom: 0;
+    text-align: center;
 
-    small {
-      display: block;
-      font-size: 16px;
-      margin-top: 8px;
-      font-style: italic;
-      color: #BBDEFB;
+    h4,
+    p {
+      color: $color-white;
+      margin: 0 0 5px 0;
     }
   }
 
-  h4 {
-    font-weight: normal;
-    font-size: 1.2em;
-    margin-top: 6px;
-    margin-bottom: 1em;
+  .post-content {
+    .forecast,
+    .description,
+    .plan {
+      h4 {
+        color: $color-ampblue;
+        padding-left: 1em;
+        @include text-label();
+      }
+
+      p,
+      li,
+      a {
+        font-size: 14px;
+      }
+
+      li p {
+        margin-top: 10px;
+      }
+    }
+
+    .forecast,
+    .description {
+      h4 {
+        padding-left: 1.9em;
+      }
+    }
+  }
+
+  .workstream-headings,
+  .forecast h4 {
+    position: relative;
+    &::after {
+      background: $gradient-bold;
+      bottom: -1px;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
   }
 
   strong {
     font-weight: 500;
-  }
-
-  p {
-    margin: 0;
   }
 
   section {
@@ -71,20 +113,23 @@
   }
 
   .about {
-      margin: 2em 12px;
-      ul {
-        margin: 0;
-        list-style-type: square;
-      }
-      div {
-        margin-bottom: 1em;
-      }
+    margin: 2em 0;
+    ul {
+      margin: 0;
+      list-style-type: square;
+    }
+    div {
+      margin-bottom: 1em;
+    }
   }
 
   .workstream {
     margin-bottom: 1em;
     background: #fff;
     box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
+    width: 112%;
+    position: relative;
+    left: -6%;
   }
 
   .workstream-flex {
@@ -92,33 +137,37 @@
   }
 
   .description {
-    flex: 1 1 50%;
+    flex: 1 1 45%;
     padding: 1em;
     padding-right: 2em;
   }
 
+  .workstream-flex:not(.workstream-headings) .description {
+    border-right: 1px solid $color-lightblue;
+  }
+
   .plan {
-    flex: 1 1 50%;
-    min-width: 300px;
+    flex: 1 1 55%;
+    // min-width: 300px;
     display: flex;
     flex-wrap: wrap;
     padding: 1em;
     padding-bottom: 0;
-    border-left: 3px solid #E8E8E8;
+
     h4 {
       display: none;
     }
   }
 
   .workstream-headings {
+    margin: 0 20px;
+    padding: 15px 0;
     .description {
       padding-bottom: 0;
+      padding-left: 0;
     }
     .plan h4 {
       display: block;
-    }
-    h4 {
-      margin-bottom: 0;
     }
   }
 
@@ -133,7 +182,15 @@
 
   .forecast {
     padding: 1em;
-    border-top: 3px solid #E8E8E8;
+
+    h4 {
+      padding-bottom: 17px;
+    }
+
+    ul {
+      padding-top: 10px;
+      padding-bottom: 30px;
+    }
   }
 
   /* Stages magic deluxe flex win */
@@ -141,16 +198,13 @@
   .stages {
 
     margin: -4px 0 0 0;
-    margin-left: -19px;
-    padding: 0;
+    margin-left: -21px;
+    padding: 30px 1em 0 0;
     display: flex;
     flex-wrap: wrap;
-    padding-right: 1em;
 
     > li {
-
-      padding-left: 12px;
-      padding-top: 28px;
+      padding: 25px 0 30px 12px;
       position: relative;
       flex: 1 1 100%;
 
@@ -161,10 +215,9 @@
       &::before {
         content: attr(data-description);
         position: absolute;
-        top: 3px;
+        top: -1px;
         left: 24px;
-        font-style: italic;
-        color: #777;
+        color: $color-black;
         font-size: 12px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -175,40 +228,39 @@
       &::after {
         position: absolute;
         top: 0;
-        left: -16px;
+        left: -14px;
         background: #fff;
         border-radius: 20px;
         width: 24px;
         height: 24px;
         display: block;
         text-align: center;
-        font-weight: 800;
-        line-height: 26px;
+        line-height: 24px;
       }
 
       li {
         position: relative;
         &::before {
           content: "";
-          width: 10px;
-          height: 4px;
+          width: 8px;
+          height: 1px;
           display: block;
           position: absolute;
-          border-radius: 10px;
-          top: 10px;
-          left: -27px;
+          // border-radius: 10px;
+          top: 12px;
+          left: -24px;
         }
       }
 
     }
 
-    .stage-0 { @include roadmap-stage(#DCEDC8, 0); }
-    .stage-1 { @include roadmap-stage(#C5E1A5, 1); }
-    .stage-2 { @include roadmap-stage(#AED581, 2); }
-    .stage-3 { @include roadmap-stage(#9CCC65, 3); }
-    .stage-4 { @include roadmap-stage(#8BC34A, 4); }
-    .stage-5 { @include roadmap-stage(#7CB342, 5); }
-    .stage-6 { @include roadmap-stage(#689F38, 6); }
+    .stage-0 { @include roadmap-stage($color-lightblue, 0); }
+    .stage-1 { @include roadmap-stage(#10c4f5, 1); }
+    .stage-2 { @include roadmap-stage(#12b5ea, 2); }
+    .stage-3 { @include roadmap-stage(#15a6e0, 3); }
+    .stage-4 { @include roadmap-stage(#1797d5, 4); }
+    .stage-5 { @include roadmap-stage(#1a88cB, 5); }
+    .stage-6 { @include roadmap-stage($color-ampblue, 6); }
 
     ul {
       margin: 0;
@@ -221,26 +273,51 @@
 
   /* Them responsive awesomeness */
 
-  @include max-screen(640px) {
+  @include max-screen($mobile-breakpoint) {
+    .post-content.post-sheet {
+      padding-top: 5px;
+    }
+
     .workstream-flex {
       flex-wrap: wrap;
-    }
-    .plan {
-      border-left: 0;
     }
     .stages {
       margin-left: 24px;
     }
+
+    .post-content .description h4 {
+      padding-left: 1.4em;
+    }
+
     .workstream-flex {
-      .plan h4 {
-        display: block;
+      .plan {
+        padding: 20px;
+        h4 {
+          display: block;
+          width: 100%;
+          padding: 0 0 15px 1.4em;
+          position: relative;
+          &::after {
+            background: $gradient-bold;
+            bottom: -1px;
+            content: '';
+            height: 1px;
+            left: 0;
+            position: absolute;
+            right: 0;
+          }
+        }
       }
     }
+
+    .workstream-flex:not(.workstream-headings) .description {
+      border-right: 0;
+    }
+
     .workstream-headings {
       .plan {
         display: none;
       }
     }
   }
-
 }
