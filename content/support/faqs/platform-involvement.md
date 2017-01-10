@@ -1,6 +1,7 @@
 ---
 $title: Platform and Technology Company Involvement
 $order: 1
+$parent: /content/support/faqs.md
 class: faqs
 
 cta:

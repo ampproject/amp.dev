@@ -4,7 +4,7 @@ $order: 0
 $hidden: true
 $path: /support/
 $localization:
-  path: /{locale}/support/{base}/
+  path: /{locale}/support/
 ---
 
 support page that will have cards to:

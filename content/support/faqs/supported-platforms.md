@@ -1,6 +1,7 @@
 ---
 $title: Supported Platforms
 $order: 3
+$parent: /content/support/faqs.md
 class: who
 
 description: The Accelerated Mobile Pages (AMP) Project is an open source initiative that makes it easy for publishers to create mobile-friendly content once and have it load instantly everywhere. – Accelerated Mobile Pages Project
@@ -19,7 +20,7 @@ An ever-growing number of platforms and vendors support AMP, either by providing
   {% for section in who.tech_companies.sections %}
     <section {% if loop.index == 1 %}expanded{% endif %}>
       <div id="{{section.title|slug}}" class="accordion-header">
-        <h3 class="accordion-title">{{section.title}}</h3>
+        <h4 class="accordion-title">{{section.title}}</h4>
       </div>
       <div class="accordion-content">
         <ol class="item-container">

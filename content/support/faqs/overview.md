@@ -1,6 +1,7 @@
 ---
 $title: AMP Overview
 $order: 0
+$parent: /content/support/faqs.md
 class: faqs
 
 cta:

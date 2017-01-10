@@ -1,0 +1,17 @@
+{% set usedDoc = usedDoc or doc %}
+{% set parentDoc = usedDoc.parent %}
+{% set grandparentDoc = parentDoc.parent %}
+
+<nav class="breadcrumb">
+  <ul>
+  {% if grandparentDoc %}
+    <li><a href="{{g.url(grandparentDoc.pod_path, locale=usedDoc.locale).path}}">{{_(grandparentDoc.title)}}</a></li>
+  {% endif %}
+
+  {% if parentDoc %}
+    <li><a href="{{g.url(parentDoc.pod_path, locale=usedDoc.locale).path}}">{{_(parentDoc.title)}}</a></li>
+  {% endif %}
+
+    <li><a href="{{g.url(usedDoc.pod_path, locale=usedDoc.locale).path}}">{{_(usedDoc.title)}}</a></li>
+  </ul>
+</nav>

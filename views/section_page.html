@@ -1,16 +1,12 @@
 {% extends "/views/base.html" %}
 
-{# TODO(lily): add breadcrumb nav partial here
-  {% set navmarkup %}
-  {% with flat = 1 %}
-  {% include "/views/partials/nav.html" %}
-  {% endwith %}
-  {% endset %}
+{% set navmarkup %}
+{% include "/views/partials/breadcrumb-nav.html" %}
+{% endset %}
 
-  {% block nav %}
-    {{ navmarkup|safe }}
-  {% endblock %}
-#}
+{% block nav %}
+  {{ navmarkup|safe }}
+{% endblock %}
 
 {% block main %}
   <div class="container main">

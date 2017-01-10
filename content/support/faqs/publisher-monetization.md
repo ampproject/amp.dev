@@ -1,6 +1,7 @@
 ---
 $title: Publisher Monetization
 $order: 2
+$parent: /content/support/faqs.md
 class: faqs
 
 cta:

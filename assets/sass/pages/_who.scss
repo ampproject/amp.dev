@@ -1,5 +1,8 @@
 .who {
   .content {
+    margin: 0 auto;
+    max-width: 968px;
+
     amp-img {
       margin: 0;
     }
@@ -7,6 +10,16 @@
     ol,
     ul {
       margin-left: 0;
+    }
+  }
+
+  .post-content {
+    a {
+      font-weight: 300;
+    }
+
+    p {
+      @extend .small;
     }
   }
 
