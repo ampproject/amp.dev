@@ -1,7 +1,6 @@
 ---
 $title : "Getting Started"
 $order : 0
-$parent: /content/docs/guides/ads_on_amp
 ---
 
 ## Three Easy Steps to Serving Ads on Your AMP Page

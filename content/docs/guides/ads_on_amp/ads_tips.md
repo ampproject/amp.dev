@@ -1,7 +1,6 @@
 ---
 $title : Tips for Ads on AMP Pages
 $order : 1
-$parent: /content/docs/guides/ads_on_amp
 ---
 [TOC]
 
