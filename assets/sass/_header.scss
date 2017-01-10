@@ -1,5 +1,5 @@
 .header {
-  box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: $header-shadow;
   font-size: 14px;
   font-weight: 300;
   transform: translateZ(0);
@@ -69,7 +69,7 @@
 
   .alt {
     padding: 00;
-    text-align: right;
+    // text-align: right;
 
     display: flex;
     align-items: stretch;
@@ -89,7 +89,7 @@
 
   .tab {
     position: relative;
-    color: $color-grey-800;
+    color: $color-black-95;
     padding: 6px;
     margin: 0 4px;
     text-decoration: none;
@@ -106,7 +106,7 @@
       right: 0;
       margin: auto;
       height: 3px;
-      background-color: $color-midblue;
+      background: $gradient-bold;
 
       transition: .1s ease opacity;
       opacity: 0;
@@ -114,7 +114,7 @@
 
     &:hover,
     &.active {
-      color: $color-midblue;
+      color: $color-ampblue;
     }
 
     &.active {
@@ -152,8 +152,20 @@
   }
 
   div.tab {
-
+    padding: 6px 20px;
     position: relative;
+
+    &::before {
+      box-shadow: $header-shadow;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -10px;
+      right: -10px;
+      top: 20px;
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+    }
 
     > a {
       position: relative;
@@ -162,25 +174,26 @@
       text-decoration: none;
     }
 
-    > ul {
-      list-style: none;
+    .list-container {
       position: absolute;
-      min-width: 136px;
-      top: 54px;
-      left: -8px;
-      text-align: left;
-      opacity: 0;
+      top: 100%;
+      left: -60px;
+      padding: 0 50px 50px;
       pointer-events: none;
-      transform: translate(0, 10px);
+      opacity: 0;
+      overflow: hidden;
       transition: 0.2s ease-out;
       z-index: 1;
-      will-change: transform;
+    }
+
+    .list-container > ul {
+      list-style: none;
+      position: relative;
+      min-width: 200px;
+      text-align: left;
 
       background: #fff;
-      box-shadow:
-          0 2px 2px 0 rgba(0, 0, 0, 0.14),
-          0 1px 5px 0 rgba(0, 0, 0, 0.12),
-          0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      box-shadow: $header-shadow;
 
       li {
         padding: 6px 14px;
@@ -211,10 +224,13 @@
     }
 
     &:hover {
-      > ul {
+      &::before {
+        opacity: 1;
+      }
+
+      .list-container {
         opacity: 1;
         pointer-events: all;
-        transform: translate(0, 0);
       }
     }
 

@@ -2,68 +2,93 @@ div.language {
 
   position: relative;
   height: 33px;
-  width: 126px;
-  box-shadow: 0px 1px 2px #b7b7b7;
+  // width: 126px;
+  // box-shadow: 0px 1px 2px #b7b7b7;
   user-select: none;
+  left: 100px;
 
   amp-accordion {
-    height: 33px;
-    width: 126px;
+    // height: 33px;
+    // width: 126px;
   }
 
   section {
+    background: $color-white;
+    border: 0;
+    // box-sizing: border-box;
     padding: 0;
+
+    &[expanded] {
+      .current, .others-inner {
+        box-shadow: $header-shadow;
+      }
+
+      .current {
+        left: 60px;
+      }
+    }
   }
 
   .current {
     font-size: 1em;
     font-weight: normal;
-    &::before {
-      @include masked-sprite(lang-icon);
-      background-color: #333;
+    margin-right: 100px;
+    text-align: right;
+    width: 140px;
+
+    a {
+      display: inline-block;
+    }
+
+    &::after {
+      @include masked-sprite(carat);
       content: '';
       display: inline-block;
-      position: absolute;
-      left: 4px;
-      top: 4px;
+      transform: rotate(180deg) scale(0.75);
+      position: relative;
+      top: -4px;
     }
   }
 
-  .current,
-  .others div {
+  .others {
+    padding: 0 50px 50px;
+  }
 
-    background-color: #f7f7f7;
-    background-repeat: no-repeat;
-    background-position: 6px 6px;
-    background-size: 20px;
-
-    padding: 8px 10px;
+  .others-inner {
+    background: $color-white;
+    left: -50px;
     margin: 0;
+    position: relative;
+  }
+
+  .current,
+  .others-inner div {
+
+    background-color: transparent;
+    padding: 10px 10px 8px;
     border: 0;
-    border-bottom: 1px solid rgb(231, 235, 236);
     box-sizing: border-box;
-    height: 33px;
+    height: auto;
 
     &:hover {
-      background-color: #0379c4;
-      border-bottom: 1px solid #0379c4;
+      // background-color: $color-grey-100;
+      // border-bottom: 1px solid #0379c4;
 
       &::before {
-        @include masked-sprite(lang-icon);
-        background-color: #fff;
+        // @include masked-sprite(lang-icon);
+        // background-color: #fff;
       }
 
       a {
-        color: #fff;
+        // color: #fff;
         text-decoration: none;
       }
     }
 
     a {
-      display: block;
+      display: inline-block;
       padding: 0;
-      padding-left: 24px;
-      color: #424242;
+      color: $color-black-95;
 
       overflow: hidden;
       text-overflow: ellipsis;
@@ -78,17 +103,27 @@ div.language {
 
   }
 
-  .others {
-    box-shadow: 0px 1px 2px #b7b7b7;
+  .others-inner {
+    // box-shadow: 0px 1px 2px #b7b7b7;
+
+    div {
+      width: 200px;
+
+      a {
+        text-transform: capitalize;
+        margin: 0 10px;
+      }
+
+      &:hover {
+        background-color: $color-grey-100;
+      }
+    }
   }
-
-
-
 }
 
 .rtl .language {
   .current,
-  .others div {
+  .others-inner div {
     a {
       padding-right: 26px;
       padding-left: 0;
@@ -113,90 +148,90 @@ header .language {
   margin-right: 12px;
 }
 
-amp-sidebar .language {
+// amp-sidebar .language {
 
-  width: auto;
-  box-shadow: none;
-  height: 66px;
-  margin-bottom: 0;
-  background: #2196F3;
+//   width: auto;
+//   box-shadow: none;
+//   height: 66px;
+//   margin-bottom: 0;
+//   background: #2196F3;
 
-  amp-accordion {
-    width: auto;
-    height: 66px;
-    z-index: 2;
-  }
+//   amp-accordion {
+//     width: auto;
+//     height: 66px;
+//     z-index: 2;
+//   }
 
-  /*
-  .current a span::after {
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 11px solid #454545;
-    z-index: 1;
-  }
-  */
+//   /*
+//   .current a span::after {
+//     content: "";
+//     display: inline-block;
+//     width: 0;
+//     height: 0;
+//     border-left: 8px solid transparent;
+//     border-right: 8px solid transparent;
+//     border-top: 11px solid #454545;
+//     z-index: 1;
+//   }
+//   */
 
-  .current,
-  .others div {
-    background: #2196F3;
-    border-bottom: 1px solid #0976cc;
-    padding-left: 16px;
-    padding-top: 23px;
-    padding-bottom: 6px;
-    height: 66px;
+//   .current,
+//   .others div {
+//     background: #2196F3;
+//     border-bottom: 1px solid #0976cc;
+//     padding-left: 16px;
+//     padding-top: 23px;
+//     padding-bottom: 6px;
+//     height: 66px;
 
-    &.current {
+//     &.current {
 
-      &::before {
-        display: none;
-      }
+//       &::before {
+//         display: none;
+//       }
 
-      border-bottom: 1px solid #eee;
-      padding-right: 58px;
+//       border-bottom: 1px solid #eee;
+//       padding-right: 58px;
 
-        a::after {
-          content: "▾";
-          display: inline-block;
-          position: relative;
-          color: #fff;
-          top: -5px;
-          left: 5px;
-        }
+//         a::after {
+//           content: "▾";
+//           display: inline-block;
+//           position: relative;
+//           color: #fff;
+//           top: -5px;
+//           left: 5px;
+//         }
 
-      span {
-        color: #fff;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        max-width: 104px;
-        display: inline-block;
-      }
-    }
+//       span {
+//         color: #fff;
+//         text-overflow: ellipsis;
+//         white-space: nowrap;
+//         overflow: hidden;
+//         max-width: 104px;
+//         display: inline-block;
+//       }
+//     }
 
-    a {
-      padding-left: 0;
-      span {
-        color: #fff;
-      }
-    }
+//     a {
+//       padding-left: 0;
+//       span {
+//         color: #fff;
+//       }
+//     }
 
-  }
-}
+//   }
+// }
 
-.rtl amp-sidebar .language {
+// .rtl amp-sidebar .language {
 
-  &::before {
-    left: 20px;
-    right: auto;
-  }
+//   &::before {
+//     left: 20px;
+//     right: auto;
+//   }
 
-  .current,
-  .others div {
-    padding-left: 0;
-    padding-right: 16px;
-  }
-}
+//   .current,
+//   .others div {
+//     padding-left: 0;
+//     padding-right: 16px;
+//   }
+// }
