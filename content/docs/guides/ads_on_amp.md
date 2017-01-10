@@ -1,5 +1,5 @@
 ---
-$title: Ads on AMP
+$title: Serving Ads on AMP
 $order: 8
 ---
 <div class="toc">
@@ -10,7 +10,7 @@ $order: 8
   </ul>
 </div>
 
-AMP pages are just web pages, except consistently faster. Many of the best practices in this guide are consistent across non-AMP pages.
+AMP pages are just web pages with some extra features (and a few limitations), making them consistently faster and more user-friendly. Many of the best practices in this guide are consistent across non-AMP pages.
 
 For optimal results, approach ads on AMP pages in the same manner as ads on non-AMP pages.
 

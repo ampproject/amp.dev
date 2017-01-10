@@ -1,7 +1,8 @@
 ---
-$title: Tips to Improve Engagement with AMP
+$title: Improve User Engagement
 $order: 9
 ---
+Here are some quick tips to improve user engagement with AMP.
 
 ### Help readers identify you with consistent branding and rich content across AMP and non-AMP pages
 
