@@ -102,8 +102,8 @@
       content: "";
       position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
+      left: 20px;
+      right: 20px;
       margin: auto;
       height: 3px;
       background: $gradient-bold;
@@ -121,8 +121,13 @@
       &:after {
         opacity: 1;
       }
-    }
 
+      &:hover {
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
   }
 
   .tab.hamburger {
@@ -196,13 +201,22 @@
       box-shadow: $header-shadow;
 
       li {
-        padding: 6px 14px;
+        padding: 15px 20px;
         box-sizing: border-box;
         font-weight: 400;
         font-size: inherit;
 
         &:hover {
           background: #f0f0f0;
+        }
+
+        a {
+          @include text-body();
+          @extend .small;
+        }
+
+        &:last-child {
+          padding-bottom: 30px;
         }
       }
 

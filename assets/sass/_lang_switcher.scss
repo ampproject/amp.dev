@@ -25,6 +25,10 @@ div.language {
 
       .current {
         left: 60px;
+
+        &::after {
+          transform: scale(0.75);
+        }
       }
     }
   }
@@ -65,7 +69,7 @@ div.language {
   .others-inner div {
 
     background-color: transparent;
-    padding: 10px 10px 8px;
+    padding: 10px 15px 8px;
     border: 0;
     box-sizing: border-box;
     height: auto;
