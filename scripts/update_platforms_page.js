@@ -19,7 +19,7 @@ function addAds() {
   });
 
   newYaml += `
-    - title@: Ads
+    - title@: Ads Components
       section_items:
         - `;
 
@@ -43,7 +43,7 @@ function addAnalytics() {
   });
 
   newYaml += `
-    - title@: Analytics
+    - title@: Analytics Components
       section_items:
         - `;
 
@@ -53,7 +53,8 @@ function addAnalytics() {
 
 function addContentPlatforms() {
   newYaml += `
-    - title@: Content Platforms
+    - title@: Distribution Platforms
+      description: These platforms distribute AMP pages on their surfaces.
       section_items:
         - title: Google
           link: https://google.com
@@ -77,7 +78,8 @@ function addContentPlatforms() {
 
 function addCMS() {
   newYaml += `
-    - title@: CMS
+    - title@: CMS Providers
+      description: These providers can create AMP pages with supported plug-ins or functionality
       section_items:
         - title: Drupal
           link: https://www.drupal.org/project/amp
@@ -93,7 +95,7 @@ function addCMS() {
 
 function addVideo() {
   newYaml += `
-    - title@: Audio/Video
+    - title@: Audio/Video Components
       section_items:
         - title: AOL O2
           link:
@@ -145,10 +147,10 @@ tech_companies:
   section_title@: Technology Companies using AMP
   sections:`;
 
-addAds();
-addAnalytics();
 addContentPlatforms();
 addCMS();
+addAds();
+addAnalytics();
 addVideo();
 addBrowsers();
 
