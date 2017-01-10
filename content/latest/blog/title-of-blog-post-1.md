@@ -1,13 +1,13 @@
 ---
-$type: Blog
+type: Blog
 $title: 'Title of Blog Post 1'
-$id: title-of-blog-post-1
-$author: 'Author 1'
-$role: 'Project Manager'
-$origin: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-$excerpt: 'Today we are announcing a change to the domain scheme of the Google AMP Cache. Beginning soon, the Google AMP Cache will serve each site from its own subdomain of https://cdn.ampproject.org. This change will allow content served from the Google AMP Cache to be protected by the fundamental security model of the web: the HTML5 origin.'
-$avatar: https://secure.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=24&d=identicon&r=g
-$date_data: 2016-12-02T15:15:28+00:00
+id: title-of-blog-post-1
+author: 'Author 1'
+role: 'Project Manager'
+origin: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+excerpt: 'Today we are announcing a change to the domain scheme of the Google AMP Cache. Beginning soon, the Google AMP Cache will serve each site from its own subdomain of https://cdn.ampproject.org. This change will allow content served from the Google AMP Cache to be protected by the fundamental security model of the web: the HTML5 origin.'
+avatar: https://secure.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?d=identicon&r=g
+date_data: 2016-12-02T15:15:28+00:00
 $date: December 2, 2016
 ---
 

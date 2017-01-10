@@ -12,8 +12,22 @@
 
         <h1 class="post-title">{{ doc.title }}</h1>
 
-        <div class="post-content">
-          {{doc.html|render|safe}}
+        <div class="post-sheet">
+          <div class="author-meta">
+            <div class="author-avatar">
+              <amp-img
+                  noloading
+                  height=24
+                  width=24
+                  src="{{doc.avatar}}">
+              </amp-img>
+            </div>
+            By <span class="author-name">{{ doc.author }}</span>
+            <div class="author-role">{{ doc.role }}</div>
+          </div>
+          <div class="post-content">
+            {{doc.html|render|safe}}
+          </div>
         </div>
 
       </article>
