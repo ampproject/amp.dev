@@ -1,207 +1,135 @@
-body.case-studies {
+body.post-detail {
+  .post-detail-block {
+    overflow: hidden;
+    padding: 100px 0;
+    position: relative;
 
-    .card {
-        flex: 0 0 calc(50% - 10px);
-        overflow: visible;
-
-        @include max-screen($mobile-medium-breakpoint) {
-            flex: 0 0 calc(100%);
-        }
-
-        &.wide {
-            flex: 0 0 100%;
-
-            flex-direction: row-reverse;
-            @include max-screen($mobile-medium-breakpoint) {
-                flex-direction: column;
-            }
-
-            @include max-screen($mobile-breakpoint) {
-                flex: 0 0 calc(100% + 40px);
-                margin-left: -20px;
-                border-radius: 0;
-            }
-
-            .card__image {
-
-                flex: 0 0 50%;
-                @include max-screen($mobile-medium-breakpoint) {
-                    flex: 1 1 auto;
-                }
-
-                background-color: #e8e8e8;
-                @include max-screen($mobile-breakpoint) {
-                    background-color: #00548a;
-                }
-
-                a {
-                    display: block;
-                }
-            }
-
-            .card__title {
-                font-size: 32px;
-            }
-
-            .card__content {
-                flex: 0 1 auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding-right: 40px;
-
-                @include max-screen($mobile-breakpoint) {
-                    background: $color-midblue;
-                    h4, p, a {
-                        color: #fff;
-                    }
-                }
-
-                .card__action a {
-                    padding-left: 0;
-                }
-
-                p:first-of-type {
-                    margin-top: 0;
-                    margin-bottom: 1em;
-                }
-
-                p:last-of-type {
-                    margin-top: 0;
-                    margin-bottom: 1em;
-                }
-            }
-        }
+    &::before,
+    &::after {
+      background: $gradient-med-faded;
+      content: '';
+      display: block;
+      height: 1400px;
+      left: 0;
+      position: absolute;
+      width: 100%;
     }
 
-    amp-img {
+    &::before {
+      top: 0;
+      transform: skewY(36deg);
+      transform-origin: top right;
+    }
+
+    &::after {
+      bottom: 0;
+      transform: skewY(-36deg);
+      transform-origin: bottom right;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .post-sheet {
+      background: $color-white;
+      padding: 40px 11.9% 100px 11.9%;
+    }
+
+    .post-meta {
+      text-align: center;
+
+      a,
+      span {
+        @include text-label();
+      }
+
+      .post-date {
+        color: $color-grey-md;
+      }
+    }
+
+    .post-title {
+      margin: 25px 0 65px 0;
+      text-align: center;
+    }
+
+    .author-meta {
+      text-align: center;
+      margin-bottom: 45px;
+
+      amp-img {
         margin: 0;
+        border-radius: 50%;
+        margin-bottom: 12px;
+      }
+
+      .author-name {
+        color: $color-ampblue;
+      }
+
+      .author-role {
+        @include text-label();
+        color: $color-grey-ltmd;
+        margin-top: 8px;
+      }
     }
 
-}
+    .post-content {
+      p,
+      a,
+      li {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0;
+        font-weight: 300;
+        text-transform: none;
 
-body.case-studies,
-body.case-study {
-    .logos {
-        display: flex;
-        align-items: center;
-
-        span {
-            font-size: 20px;
-            margin-left: 10px;
-            margin-right: 10px;
-            font-weight: 500;
-            margin-top: -4px;
+        @include max-screen($mobile-breakpoint) {
+          font-size: 14px;
         }
-        amp-img {
-            flex: 0 0 auto;
-        }
-    }
-}
+      }
 
-body.case-studies .logos {
-    @include max-screen($mobile-breakpoint) {
-        display: none;
-    }
-}
-
-
-body.case-study {
-
-    h1 {
-        margin-bottom: 1em;
-    }
-
-    .img-right,
-    .img-left {
-        display: inline-block;
-        width: 37%;
-        min-width: 250px;
-
-        amp-img {
-            margin-top: 0;
-        }
-    }
-
-    .img-right {
-        float: right;
-    }
-
-    .img-left {
-        float: left;
-    }
-
-    .button {
-        background: aliceblue;
-        margin: 2em 2em 0 0;
-        text-transform: uppercase;
+      strong {
         font-weight: 400;
-        display: inline-block;
-    }
+      }
 
-    .results {
+      code {
+        color: $color-black;
+      }
 
-        border-bottom: 1px solid #f0f0f0;
-        padding-bottom: 1em;
-        margin-bottom: 2em;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+      code,
+      code a {
+        border: 0;
+        font-size: 11px;
+        font-weight: 400;
+        text-transform: none;
+        padding: 0;
 
-        &.wordy {
-            div {
-                padding: 14px 20px 0px 20px;
-            }
+        @include max-screen($mobile-breakpoint) {
+          font-size: 11px;
         }
+      }
 
-        div {
-            background: $color-midblue;
-            color: #fff;
-            border-radius: 160px;
-            width: 160px;
-            height: 160px;
-            text-align: center;
-            font-weight: 400;
-            font-size: 14px;
-            padding: 40px 27px 0px 27px;
-            box-sizing: border-box;
-            margin-bottom: 15px;
+      p {
+        em,
+        em a {
+          font-size: 20px;
+          font-style: normal;
+          line-height: 28px;
+          letter-spacing: 0;
+
+          @include max-screen($mobile-breakpoint) {
+            font-size: 16px;
+            line-height: 26px;
+          }
         }
+      }
 
-        strong {
-            display: block;
-            font-size: 2em;
-            font-weight: 400;
-            margin-bottom: 0.2em;
-        }
-
+      amp-img {
+        margin: 50px auto;
+      }
     }
-
-    blockquote p {
-        font-size: 22px;
-        line-height: 35px;
-    }
-
-    @include max-screen($mobile-breakpoint) {
-
-        .results {
-            .button {
-                margin-right: 0;
-            }
-        }
-    }
-
-    @include max-screen(600px) {
-        .img-right,
-        .img-left {
-            display: block;
-            float: none;
-            width: auto;
-        }
-    }
-
+  }
 }
-
-
-
-

@@ -1,39 +1,39 @@
 {% extends "/views/base.html" %}
 
 {% block main %}
-  <div class="container main post-detail">
+  <div class="post-detail-block">
+    <div class="container mdlg">
+      <div class="content">
+        <article class="post">
+          <div class="post-meta">
+            <a class="post-type" href="{{g.doc('/content/pages/list-' ~ doc.type|lower ~ '.html').url.path}}">{{ doc.type }}</a>
+            <span class="post-date">{{ doc.date }}</span>
+          </div>
 
-    <div class="content">
-      <article class="post">
-        <div class="post-meta">
-          <span class="post-type">{{ doc.type }}</span>
-          <span class="post-date">{{ doc.date }}</span>
-        </div>
+          <h1 class="post-title">{{ doc.title }}</h1>
 
-        <h1 class="post-title">{{ doc.title }}</h1>
-
-        <div class="post-sheet">
-          <div class="author-meta">
-            <div class="author-avatar">
-              <amp-img
-                  noloading
-                  height=24
-                  width=24
-                  src="{{doc.avatar}}">
-              </amp-img>
+          <div class="post-sheet">
+            <div class="author-meta small">
+              <div class="author-avatar">
+                <amp-img
+                    noloading
+                    height=50
+                    width=50
+                    src="{{doc.avatar}}">
+                </amp-img>
+              </div>
+              By <span class="author-name">{{ doc.author }}</span>
+              <div class="author-role">{{ doc.role }}</div>
             </div>
-            By <span class="author-name">{{ doc.author }}</span>
-            <div class="author-role">{{ doc.role }}</div>
+            <div class="post-content">
+              {{doc.html|render|safe}}
+            </div>
           </div>
-          <div class="post-content">
-            {{doc.html|render|safe}}
-          </div>
-        </div>
 
-      </article>
+        </article>
+      </div>
     </div>
   </div>
-
 {% include "/views/partials/footer.html" %}
 
 {% endblock %}
