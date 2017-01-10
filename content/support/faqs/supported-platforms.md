@@ -15,7 +15,7 @@ cta:
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 A growing number of platforms, vendors, and partners support the AMP Project by providing custom components or offering integration with AMP pages within their platforms.
 
-<div class="list-container">
+<div class="who-container">
   <amp-accordion>
   {% for section in who.tech_companies.sections %}
     <section {% if loop.index == 1 %}expanded{% endif %}>

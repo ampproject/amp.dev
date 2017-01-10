@@ -3,32 +3,16 @@ amp-accordion {
     border-bottom: 2px solid $color-grey-lt;
     padding: 20px 0;
   }
-
-  @include max-screen($mobile-medium-breakpoint) {
-    section {
-      border-bottom: 1px solid $color-grey-lt;
-      padding: 15px 0;
-    }
-
-    .accordion-header {
-      padding: 0;
-    }
-
-    .accordion-content {
-      margin-left: 40px;
-    }
-  }
 }
 
 .accordion-header {
   background-color: transparent;
   border: 0;
-  padding: 0 25px;
+  padding: 0 25px 0 65px;
 }
 
 .accordion-title {
   margin: 0;
-  padding-left: 40px;
   position: relative;
 
   &::before,
@@ -37,7 +21,7 @@ amp-accordion {
     content: '';
     display: inline-block;
     height: 2px;
-    left: 0;
+    left: -40px;
     position: absolute;
     top: 50%;
     width: 8px;
@@ -61,5 +45,27 @@ amp-accordion {
 
   p:last-child {
     margin-bottom: 2px;
+  }
+}
+
+@include max-screen($mobile-medium-breakpoint) {
+  amp-accordion {
+    section {
+      border-bottom: 1px solid $color-grey-lt;
+      padding: 15px 0;
+    }
+  }
+
+  .accordion-header {
+    padding: 0 0 0 30px;
+  }
+
+  .accordion-title::before,
+  .accordion-title::after {
+    left: -30px;
+  }
+
+  .accordion-content {
+    margin-left: 30px;
   }
 }

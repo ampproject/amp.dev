@@ -1,9 +1,10 @@
 nav {
-  margin-top: 10px;
+  margin-top: 15px;
   position: absolute;
   z-index: 1;
 
   ul {
+    line-height: 12px;
     list-style: none;
   }
 
@@ -12,11 +13,13 @@ nav {
     color: $color-grey-md;
     font-size: 12px;
     font-weight: 300;
+    letter-spacing: 0;
+    line-height: 12px;
     text-transform: none;
   }
 
   li {
-    display: inline-block;
+    display: inline;
 
     &::after {
       content: '\00bb';
@@ -33,5 +36,16 @@ nav {
   li::after {
     margin-left: 0;
     margin-right: 5px;
+  }
+}
+
+@include max-screen($mobile-breakpoint) {
+  nav {
+    margin-top: 30px;
+
+    li,
+    a {
+      font-size: 10px;
+    }
   }
 }

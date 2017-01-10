@@ -1,0 +1,27 @@
+// styles for support and other pages - move later
+
+.post-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.post-content {
+  a {
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: none;
+  }
+
+  p,
+  li {
+    @extend .small;
+  }
+}
+
+@include max-screen($mobile-breakpoint) {
+  .post-content {
+    a {
+      font-size: 14px;
+    }
+  }
+}

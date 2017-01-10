@@ -1,13 +1,7 @@
 .faqs {
-
-  // sticking this here til i figure out which pages need this
   .content {
-    margin: 0 auto;
-    max-width: 968px;
-  }
-
-  .main .content {
     h2 {
+      border-bottom: 2px solid $color-grey-lt;
       margin: 0;
       padding: 25px 0;
     }
@@ -21,19 +15,19 @@
   amp-accordion {
     margin-bottom: 100px;
   }
+}
 
-  .post-title {
-    text-align: center;
-  }
-
-  .post-content {
-    a {
-      @extend .underlined;
-      text-transform: none;
+@include max-screen($mobile-medium-breakpoint) {
+  .faqs {
+    .content {
+      h2 {
+        border-bottom-width: 1px;
+        padding: 15px 0;
+      }
     }
 
-    p {
-      @extend .small;
+    amp-accordion {
+      margin-bottom: 50px;
     }
   }
 }

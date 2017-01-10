@@ -1,25 +1,12 @@
 .who {
   .content {
-    margin: 0 auto;
-    max-width: 968px;
-
-    amp-img {
-      margin: 0;
-    }
-
     ol,
     ul {
       margin-left: 0;
     }
-  }
 
-  .post-content {
-    a {
-      font-weight: 300;
-    }
-
-    p {
-      @extend .small;
+    h1 {
+      text-align: center;
     }
   }
 
@@ -29,24 +16,22 @@
     }
   }
 
+  .who-container {
+    margin-top: 50px;
+  }
+
   .item-container {
     column-count: 4;
     column-gap: $grid-gutters;
     list-style: none;
 
     .item {
-      font-size: 16px;
       padding: 5px 0;
       -webkit-column-break-inside: avoid;
       -moz-column-break-inside: avoid;
       -o-column-break-inside: avoid;
       -ms-column-break-inside: avoid;
       column-break-inside: avoid;
-
-      a {
-        font-size: 16px;
-        text-transform: none;
-      }
     }
   }
 
@@ -75,20 +60,24 @@
     height: 0;
     margin: 80px auto;
   }
+}
 
-  @include max-screen($tablet-portrait-breakpoint) {
+@include max-screen($tablet-portrait-breakpoint) {
+  .who {
     .item-container {
       column-count: 3;
     }
   }
+}
 
-  @include max-screen($mobile-medium-breakpoint) {
+@include max-screen($mobile-medium-breakpoint) {
+  .who {
+    .who-container {
+      margin-top: 20px;
+    }
+
     .item-container {
       column-count: 2;
-
-      .item {
-        text-align: center;
-      }
     }
 
     .browser-container {
