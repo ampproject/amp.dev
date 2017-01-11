@@ -145,6 +145,11 @@ a {
   padding: 15px 20px;
   position: relative;
 
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
   &::before {
     background: $gradient-med;
     bottom: -2px;
@@ -153,6 +158,25 @@ a {
     height: 2px;
     position: absolute;
     right: 0;
+  }
+
+  &::after {
+    background: $gradient-anglemed;
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
   }
 
   &.light {
