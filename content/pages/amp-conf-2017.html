@@ -1,0 +1,150 @@
+---
+$title: AMP Conf 2017
+noglobalnote: 1
+class: amp-conf
+
+components:
+  - iframe
+stylesheet: pages/amp-conf.css
+---
+
+{% set conf = g.doc('/content/includes/amp-conf-2017.yaml', locale=doc.locale) %}
+
+<section class="teaser">
+
+    <h2>
+        AMP Conf
+    </h2>
+    <p>
+        <span><strong>March 7/8</strong> in NYC.</span>
+        <span><strong>14</strong> Talks.</span>
+        <span><strong>5</strong> Panels.</span>
+        <span>Live-streamed.</span>
+    </p>
+
+</section>
+
+<section class="description">
+
+    <p>
+        <span>Connect with the AMP developers and ecosystem and learn how to create beautiful, interactive, responsive and successful AMP pages. Join us live or in person for chock-full two days of content.</span>
+        <a href="{{conf.registration_link}}" class="reserve-button">Reserve your spot</a>
+    </p>
+
+    <ul>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#workshops">Workshops</a></li>
+        <li><a href="#location">Location</a></li>
+    </ul>
+
+</section>
+
+<section class="schedule">
+
+    <div class="wrapper">
+        <h3 id="schedule">Schedule</h3>
+
+        {% macro render_session(item) -%}
+        <time>{{ item.time }}</time>
+        {{ item.title }}
+        {%- endmacro %}
+
+        <div class="days">
+            <div class="day">
+                <h4>Day 1</h4>
+                <ul class="schedule">
+                    {% for item in conf.agenda.day_1 %}
+                    <li>
+                        {% if item.children %}
+                            <ul data-theme="{{item.title}}">
+                                {% for subitem in item.children %}
+                                <li>
+                                    {{ render_session(subitem) }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% else  %}
+                            {{ render_session(item) }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="day">
+                <h4>Day 2</h4>
+                <ul class="schedule">
+                    {% for item in conf.agenda.day_2 %}
+                    <li>
+                        {% if item.children %}
+                            <ul data-theme="{{item.title}}">
+                                {% for subitem in item.children %}
+                                <li>
+                                    {{ render_session(subitem) }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% else  %}
+                            {{ render_session(item) }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+        <p>A more detailed agenda is coming soon.</p>
+    </div>
+
+</section>
+
+<section class="speakers">
+
+    <div class="wrapper">
+        <h3 id="speakers">Speakers</h3>
+        <p>Speaker bios are coming soon.</p>
+    </div>
+
+</section>
+
+<section class="workshops">
+
+    <div class="wrapper">
+        <h3 id="workshops">Workshops</h3>
+        <p>We'll offer various hands-on workshops as a parallel track on day 2. Stay tuned for more information.</p>
+    </div>
+
+</section>
+
+<section class="location">
+    <div class="wrapper">
+        <amp-iframe width=300 height=300
+            sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+            layout="responsive"
+            frameborder="0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.0600022262697!2d-74.0108920361199!3d40.72357632397405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259f48e2e992f%3A0x7b5d67ea6c58814c!2sTribeca+360%C2%B0!5e0!3m2!1sen!2sus!4v1484082758953">
+            <p placeholder>Loading..</p>
+        </amp-iframe>
+        <div>
+            <h3 id="location">Location</h3>
+            <p>Tribeca 360 (<a href="http://threesixtynyc.com/">Website</a>, <a href="https://goo.gl/maps/gmo8t5yxDot">Google Maps</a>).</p>
+            <h3>Address</h3>
+            <p>
+                <span>10 Desbrosses St</span>
+                <span>New York, NY 10013</span>
+            </p>
+            <h3>Live Stream</h3>
+            <p>Coming soon!</p>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <ul>
+        <li><a href="/amp-conf-coc">Code of Conduct</a></li>
+        <li><a href="mailto:amp-conf@ampproject.org">Contact</a></li>
+    </ul>
+</section>
+
+
