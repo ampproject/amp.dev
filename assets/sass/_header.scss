@@ -251,8 +251,10 @@
   }
 
   .searchbar {
-    line-height: 80px;
-    margin-right: -100px;
+    position: absolute;
+    top: 23px;
+    right: 200px;
+    z-index: 2;
   }
 }
 
