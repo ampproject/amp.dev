@@ -1,11 +1,40 @@
 body.about-who {
   .hero {
+    position: relative;
+    padding: 225px 8.95% 80px 8.95%;
+
+    .hero-images {
+      position: absolute;
+      right: -22px;
+      top: -20px;
+
+      .triangle {
+        display: none;
+      }
+
+      .lines,
+      .phones {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1000px;
+      }
+    }
+
+    .title {
+      position: relative;
+      width: 450px;
+      margin-bottom: 100px;
+    }
+
     .example-users {
+      align-items: center;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       flex-wrap: wrap;
-      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      width: 68.1%;
 
       .example-user-logo {
         flex: 0 0 18%;
@@ -15,6 +44,7 @@ body.about-who {
 
   .user-categories {
     flex-wrap: wrap;
+    padding: 0 8.95% 75px 8.95%;
 
     .card {
       padding: 45px 10px 35px 10px;
