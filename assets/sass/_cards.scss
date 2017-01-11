@@ -17,6 +17,7 @@
   margin: 10px 5px;
   padding: 10px;
   position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
 
   &::before {
     background: $gradient-bold;
@@ -31,6 +32,11 @@
   &.centered {
     align-items: center;
     text-align: center;
+  }
+
+  &:hover {
+    box-shadow: 0px 3px 50px 0 rgba(0, 0, 0, 0.075);
+    transform: translateY(-5px);
   }
 }
 
