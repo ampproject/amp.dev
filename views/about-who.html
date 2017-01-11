@@ -1,19 +1,61 @@
 {% extends "/views/base.html" %}
 
 {% block main %}
-  <div class="container main">
+  <div class="container">
     {{ navmarkup|safe }}
-    <div class="content">
-      <article class="post">
-
-        <h1 class="post-title">{{ doc.title }}</h1>
-
-        <div class="post-content">
-          {{doc.html|render|safe}}
+    <section class="hero">
+      <div class="hero-images">
+        <amp-img class="triangle"
+            noloading
+            width=1424
+            height=1095
+            layout=responsive
+            src="/static/img/about/who-use-amp/{{doc.hero.triangle_img}}">
+        </amp-img>
+        <amp-img class="lines"
+            noloading
+            width=2001
+            height=1681
+            layout=responsive
+            src="/static/img/about/who-use-amp/{{doc.hero.line_img}}">
+        </amp-img>
+        <amp-img class="phones"
+            noloading
+            width=2001
+            height=1681
+            layout=responsive
+            src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
+        </amp-img>
+      </div>
+      <h1 class="title">{{_(doc.hero.title)}}</h1>
+      <div class="example-users">
+        {% for user in doc.hero.users %}
+          <div class="example-user-logo">
+            <amp-img
+                noloading
+                width={{user.logo_width}}
+                height={{user.logo_height}}
+                layout=responsive
+                src="/static/img/about/who-use-amp/{{user.logo}}">
+            </amp-img>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+    <section class="user-categories card-container">
+      {% for card in doc.cards %}
+        <div class="card">
+          <amp-img
+              noloading
+              height=90
+              layout=fixed-height
+              src="/static/img/about/who-use-amp/{{card.icon}}">
+          </amp-img>
+          <h4 class="user-name">{{card.name}}</h4>
+          <a class="underlined cta user-link" href="{{card.link}}">{{_(card.cta)}}</a>
         </div>
-
-      </article>
-    </div>
+      {% endfor %}
+    </section>
   </div>
 
   {% with cta = doc.cta %}

@@ -1,0 +1,43 @@
+body.about-who {
+  .hero {
+    .example-users {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .example-user-logo {
+        flex: 0 0 18%;
+      }
+    }
+  }
+
+  .user-categories {
+    flex-wrap: wrap;
+
+    .card {
+      padding: 45px 10px 35px 10px;
+      text-align: center;
+
+      &:hover {
+        .user-link {
+          opacity: 1;
+        }
+      }
+    }
+
+    .user-link {
+      opacity: 0;
+      transition: opacity .2s;
+    }
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    .user-categories {
+      .user-link {
+        opacity: 1;
+      }
+    }
+  }
+}

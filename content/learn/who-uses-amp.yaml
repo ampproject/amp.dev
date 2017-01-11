@@ -1,0 +1,67 @@
+$title: Who uses AMP?
+$order: 1
+class: about-who
+$view: /views/about-who.html
+
+hero:
+  title@: Join the 700,000 domains publishing AMP pages
+  hero_img: hero_phones.png
+  line_img: hero_lines.png
+  triangle_img: hero_triangle.png
+
+  users:
+    - name: The Washington Post
+      logo: user_logo_1.png
+      logo_width: 413
+      logo_height: 81
+
+    - name: Slate
+      logo: user_logo_2.png
+      logo_width: 257
+      logo_height: 81
+
+    - name: Rakuten
+      logo: user_logo_3.png
+      logo_width: 267
+      logo_height: 81
+
+    - name: Relay Media
+      logo: user_logo_4.png
+      logo_width: 271
+      logo_height: 81
+
+cards:
+  - name@: Publishers
+    cta@: Learn More
+    link: #
+    icon: card_publishers.svg
+
+  - name@: e-Commerce
+    cta@: Learn More
+    link: #
+    icon: card_ecommerce.svg
+
+  - name@: SMB
+    cta@: Learn More
+    link: #
+    icon: card_smb.svg
+
+  - name@: Advertisers
+    cta@: Learn More
+    link: #
+    icon: card_advertisers.svg
+
+  - name@: Designers
+    cta@: Learn More
+    link: #
+    icon: card_designers.svg
+
+  - name@: Developers
+    cta@: Learn More
+    link: #
+    icon: card_developers.svg
+
+cta:
+  title@: Success stories
+  link_text@: Read Case Studies
+  link_url: #
