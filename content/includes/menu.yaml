@@ -1,19 +1,28 @@
 menu:
   - href: /content/learn/overview.html
     copy@: What is AMP?
-    collection: learn
+    children:
+      - href: /content/learn/overview.html
+        copy@: "Overview"
+      - href: /content/learn/who-uses-amp.yaml
+        copy@: "Who Uses AMP?"
+      - href: /content/learn/case-studies-new.html
+        copy@: "Case Studies"
+        collection: learn/case-studies
   - href: /content/docs/get_started/create.md
     copy@: Build
     collection: docs
     children:
       - href: /content/docs/get_started/create.md
-        copy@: "Get started"
+        copy@: "Getting started"
       - href: /content/docs/get_started/create.md
         copy@: "Tutorials"
       - href: /content/docs/guides/responsive_amp.md
         copy@: "Guides"
+        collection: docs/guides
       - href: /content/docs/reference/components.md
         copy@: "Reference"
+        collection: docs/reference
       - href: https://ampbyexample.com/
         copy@: "Examples"
       - href: /content/contribute/contribute.md

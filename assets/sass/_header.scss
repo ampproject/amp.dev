@@ -183,7 +183,7 @@
       position: absolute;
       top: 100%;
       left: -60px;
-      padding: 0 50px 50px;
+      padding: 0 200px 500px 50px;
       pointer-events: none;
       opacity: 0;
       overflow: hidden;
@@ -201,13 +201,19 @@
       box-shadow: $header-shadow;
 
       li {
-        padding: 15px 20px;
+        padding: 7.5px 20px;
         box-sizing: border-box;
         font-weight: 400;
         font-size: inherit;
+        position: relative;
 
         &:hover {
           background: #f0f0f0;
+
+          .sublist {
+            opacity: 1;
+            pointer-events: all;
+          }
         }
 
         a {
@@ -215,8 +221,12 @@
           @extend .small;
         }
 
+        &:first-child {
+          padding-top: 15px;
+        }
+
         &:last-child {
-          padding-bottom: 30px;
+          padding-bottom: 20px;
         }
       }
 
@@ -231,6 +241,26 @@
         &:hover {
           a {
             background-image: url(/static/img/ic_open_in_new_black.svg);
+          }
+        }
+      }
+
+      .sublist {
+        background: $color-lightgrey;
+        list-style-type: none;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateX(100%);
+        transition: opacity 0.3s;
+
+        li {
+          padding: 7.5px 15px;
+
+          a {
+            font-size: 14px;
           }
         }
       }
