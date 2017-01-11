@@ -3,7 +3,7 @@ menu:
     copy@: What is AMP?
     collection: learn
   - href: /content/docs/get_started/create.md
-    copy@: Docs
+    copy@: Build
     collection: docs
     children:
       - href: /content/docs/get_started/create.md
@@ -16,12 +16,20 @@ menu:
         copy@: "Reference"
       - href: https://ampbyexample.com/
         copy@: "Examples"
-  - href: /content/contribute/contribute.md
-    copy@: Contribute
-    collection: contribute
-  - href: https://amphtml.wordpress.com/
-    copy@: news
+      - href: /content/contribute/contribute.md
+        copy@: "Contribute"
+  - href: /content/pages/latest.html
+    copy@: The Latest
     collection: news
+    children:
+      - href: /content/pages/latest.html
+        copy@: "What's Hot"
+      - href: /content/pages/list-blog.html
+        copy@: "News"
+      - href: /content/pages/list-event.html
+        copy@: "Events"
+      - href: /content/news/roadmap.html
+        copy@: "Roadmap"
   - href: /content/support/support.md
     copy@: Support
     collection: support

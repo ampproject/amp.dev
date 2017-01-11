@@ -6,6 +6,4 @@ $localization:
   path: /{locale}/support/{base}/
 ---
 
-platform page that will have cards to:
-
-{% include "/views/partials/sub_nav.html" %}
+- links to resources for distribution platforms
