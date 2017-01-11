@@ -51,7 +51,7 @@ faq:
     - title: How can a publisher get content into AMP HTML?
       answer: |
         Publishers and Content Management System (CMS) providers can develop an integration with their CMS to generate AMP content. Automattic has already published a [WordPress AMP plugin](https://wordpress.org/plugins/amp/) and we hope that all content management systems will add support for AMP HTML pages.
+
 ---
-Markdown stuff here should go before the FAQ questions/accordions
 
 {% include "views/partials/faq-accordion.html" %}

@@ -31,6 +31,5 @@ faq:
       answer: |
         We welcome interested individuals and companies who want to get involved to get in touch via [Github](https://github.com/ampproject/amphtml/issues/new), so that we can add you to a distribution list and keep you posted on any new information.
 ---
-Markdown stuff here should go before the FAQ questions/accordions
 
 {% include "views/partials/faq-accordion.html" %}

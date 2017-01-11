@@ -1,3 +1,11 @@
+<div class="toc">
+  <ul>
+  {% for section in doc.faq %}
+    <li><a href="#{{section.section_title|slug}}">{{section.section_title}}</a></li>
+  {% endfor %}
+  </ul>
+</div>
+
 {% for section in doc.faq %}
   <h2 id="{{section.section_title|slug}}" class="section-label">{{section.section_title}}</h2>
   <amp-accordion>
