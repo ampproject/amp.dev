@@ -5,6 +5,7 @@ localization:
   default_locale: en
   locales:
   - ar
+  - de
   - en
   - es
   - fr
