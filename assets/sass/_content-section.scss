@@ -19,6 +19,10 @@
 }
 
 @include max-screen($mobile-breakpoint) {
+  .post-title {
+    text-align: left;
+  }
+
   .post-content {
     a {
       font-size: 14px;

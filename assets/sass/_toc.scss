@@ -41,17 +41,17 @@
       }
     }
   }
+}
 
-  // for jumplink target x-offset
-  // will fail if target has: bg color,
-  // repeating bg img, padding- or border-top
-  :target::before {
-    content: '';
-    display: block;
-    height: 110px;
-    margin-top: -110px;
-    visibility: hidden;
-  }
+// for jumplink target x-offset
+// will fail if target has: bg color,
+// repeating bg img, padding- or border-top
+:target::before {
+  content: '';
+  display: block;
+  height: 110px;
+  margin-top: -110px;
+  visibility: hidden;
 }
 
 @include max-screen($mobile-breakpoint) {

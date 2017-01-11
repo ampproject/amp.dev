@@ -1,5 +1,13 @@
 .faqs {
   .content {
+    max-width: 968px;
+    padding-top: 110px;
+
+    ol,
+    ul {
+      margin-left: 0;
+    }
+
     h2 {
       border-bottom: 2px solid $color-grey-lt;
       margin: 25px 0 0 0;

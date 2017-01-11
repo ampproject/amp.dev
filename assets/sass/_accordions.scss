@@ -1,14 +1,18 @@
 amp-accordion {
   section {
     border-bottom: 2px solid $color-grey-lt;
-    padding: 20px 0;
   }
+}
+
+.accordion-header,
+.accordion-content {
+  margin: 20px 0;
+  padding: 0 25px 0 65px;
 }
 
 .accordion-header {
   background-color: transparent;
   border: 0;
-  padding: 0 25px 0 65px;
 }
 
 .accordion-title {
@@ -37,8 +41,6 @@ amp-accordion {
 }
 
 .accordion-content {
-  margin: 20px 0 0 65px;
-
   p:first-child {
     margin-top: 0;
   }
@@ -52,20 +54,17 @@ amp-accordion {
   amp-accordion {
     section {
       border-bottom: 1px solid $color-grey-lt;
-      padding: 15px 0;
     }
   }
 
-  .accordion-header {
+  .accordion-header,
+  .accordion-content {
+    margin: 15px 0;
     padding: 0 0 0 30px;
   }
 
   .accordion-title::before,
   .accordion-title::after {
     left: -30px;
-  }
-
-  .accordion-content {
-    margin-left: 30px;
   }
 }

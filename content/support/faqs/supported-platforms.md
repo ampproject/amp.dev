@@ -12,14 +12,24 @@ cta:
   link_url: overview.html
 
 ---
+<div class="toc">
+  <ul>
+    <li><a href="#distribution-platforms">Distribution Platforms</a></li>
+    <li><a href="#cms-providers">CMS Providers</a></li>
+    <li><a href="#ads-components">Ads Components</a></li>
+    <li><a href="#analytics-components">Analytics Components</a></li>
+    <li><a href="#audio-video-components">Audio/Video Components</a></li>
+  </ul>
+</div>
+
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 A growing number of platforms, vendors, and partners support the AMP Project by providing custom components or offering integration with AMP pages within their platforms.
 
 <div class="who-container">
   <amp-accordion>
   {% for section in who.tech_companies.sections %}
-    <section {% if loop.index == 1 %}expanded{% endif %}>
-      <div id="{{section.title|slug}}" class="accordion-header">
+    <section id="{{section.title|slug}}" {% if loop.index == 1 %}expanded{% endif %}>
+      <div class="accordion-header">
         <h4 class="accordion-title">{{section.title}}</h4>
         {% if section.description %}<p>{{section.description}}</p>{% endif %}
       </div>
