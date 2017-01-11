@@ -1,0 +1,72 @@
+registration_link: https://events.withgoogle.com/amp-conf-2017/registrations/new
+agenda:
+  day_1:
+    - title: Registration and Breakfast
+      time: "0730"
+    - title: Morning Keynote
+      time: "0900"
+    - title: AMP in Production
+      children:
+        - title: Session 1
+          time: "0930"
+        - title: Session 2
+          time: "1000"
+        - title: Coffee Break
+          time: "1030"
+        - title: Session 3
+          time: "1100"
+        - title: Session 4
+          time: "1130"
+        - title: Panel
+          time: "1200"
+    - title: Lunch
+      time: "1300"
+    - title: Beautiful, Interactive Content
+      children:
+        - title: Session 5
+          time: "1400"
+        - title: Session 6
+          time: "1430"
+        - title: Session 7
+          time: "1500"
+        - title: Coffee Break
+          time: "1530"
+        - title: Session 8
+          time: "1600"
+    - title: Evening Keynote
+      time: "1630"
+    - title: Q&A Panel
+      time: "1700"
+  day_2:
+    - title: Breakfast
+      time: "0730"
+    - title: TBD
+      time: "0900"
+    - title: Delivery and Distribution
+      children:
+        - title: Session 9
+          time: "0930"
+        - title: Session 10
+          time: "1000"
+        - title: Coffee Break
+          time: "1030"
+        - title: Session 11
+          time: "1100"
+        - title: Panel
+          time: "1130"
+    - title: Lunch
+      time: "1230"
+    - title: AMP Behind the scenes
+      children:
+        - title: Session 12
+          time: "1330"
+        - title: Session 13
+          time: "1400"
+        - title: Session 14
+          time: "1430"
+        - title: Coffee Break
+          time: "1500"
+        - title: Panel
+          time: "1530"
+    - title: Breakout Sessions
+      time: "1630"

@@ -1,0 +1,234 @@
+.amp-conf {
+
+    a.reserve-button {
+        display: inline-block;
+        background: #8BC34A;
+        border-radius: 2px;
+        padding: 0.5em 1em;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 400;
+        vertical-align: middle;
+        margin-top: 20px;
+        margin-left: 24px;
+        &:hover {
+            text-decoration: none;
+            background: #689F38;
+        }
+    }
+
+    section {
+        padding: 0;
+
+        .wrapper {
+            margin: 0 auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        h2 {
+            font-size: 4em;
+            margin-bottom: 0em;
+        }
+
+        &.teaser {
+            text-align: center;
+
+            p {
+
+                padding-bottom: 2em;
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &.description {
+          background: #0379C4;
+          margin-top: 40px;
+          position: relative;
+
+          p {
+            background: #fff;
+            padding: 1em;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 800px;
+            border-top: 5px solid #0379C4;
+            position: relative;
+            top: -40px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.31);
+            text-align: center;
+
+            span {
+                display: block;
+                text-align: left;
+            }
+          }
+
+          ul {
+              text-align: center;
+              padding-bottom: 2em;
+              li {
+                background: #005992;
+                padding: 6px 12px;
+                padding-left: 20px;
+                border-radius: 2px;
+                display: inline-block;
+                margin: 0;
+                margin-left: -6px;
+                position: relative;
+                overflow: hidden;
+                &::after {
+                    display: block;
+                    content: "";
+                    width: 4px;
+                    position: absolute;
+                    top: -4px;
+                    bottom: -4px;
+                    left: 4px;
+                    background: #fff;
+                    transform: rotate(10deg);
+                    z-index: 1;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+
+              }
+              a {
+                  color: #fff;
+              }
+          }
+        }
+
+        &.schedule {
+            padding: 2em 0;
+        }
+
+        &.speakers {
+            padding: 2em 0;
+            background: #f5f5f5;
+            padding-bottom: 4em;
+        }
+
+        &.workshops {
+            padding: 2em 0;
+            padding-bottom: 4em;
+        }
+
+        &.location {
+            padding: 2em 0;
+            background: #0379C4;
+
+            .wrapper {
+                display: flex;
+                amp-iframe {
+                    width: 40%;
+                }
+                div {
+                    padding-left: 2em;
+                }
+            }
+
+            h3 {
+                color: #fff;
+                margin-top: 0;
+            }
+
+            p {
+                color: #fff;
+            }
+
+            a {
+                color: #fff;
+                text-decoration: underline;
+            }
+
+            span {
+                display: block;
+            }
+
+        }
+
+        &.footer {
+            ul {
+                text-align: center;
+                li {
+                    display: inline-block;
+                    padding: 1em;
+                }
+            }
+        }
+
+    }
+
+    .code-of-conduct {
+        padding-bottom: 2em;
+        background: #fff;
+        margin: 3%;
+        ul,ol {
+            margin-left: 2em;
+        }
+    }
+
+    .days {
+        display: flex;
+        margin: 0 -20px;
+    }
+
+    .day {
+        width: 50%;
+        margin: 0 20px;
+
+        h4 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+    }
+
+    ul.schedule {
+        list-style: none;
+        margin-left: -5px;
+
+        li {
+            padding: 5px;
+        }
+
+        ul {
+            margin-left: -5px;
+            border: 1px solid #0379C4;
+            list-style: none;
+            position: relative;
+            padding-top: 37px;
+            padding-bottom: 5px;
+
+            &::before {
+                content: attr(data-theme);
+                background: #0379C4;
+                color: #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                padding: 5px;
+                font-style: italic;
+                font-size: 0.9em;
+                padding-left: 8px;
+            }
+        }
+
+        time {
+            background: #eee;
+            padding: 5px;
+            width: 33px;
+            display: inline-block;
+        }
+
+    }
+
+}

@@ -16,23 +16,20 @@
   <link rel="apple-touch-icon" sizes="167x167" href="/static/img/icons/167.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/img/icons/180.png">
 
+  <style amp-custom>
 {% if doc.view == '/views/doc.html' %}
-  <style amp-custom>
   {% include "/assets/css/docs.min.css" %}
-  </style>
 {% elif doc.view == '/views/section_page.html' %}
-  <style amp-custom>
   {% include "/assets/css/section.min.css" %}
-  </style>
 {% elif doc.view == '/views/case-study.html' %}
-  <style amp-custom>
   {% include "/assets/css/case-study.min.css" %}
-  </style>
 {% else %}
-  <style amp-custom>
   {% include "/assets/css/main.min.css" %}
-  </style>
 {% endif %}
+{% if doc.stylesheet %}
+  {% include "/assets/css/" ~ doc.stylesheet %}
+{% endif %}
+  </style>
 
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
