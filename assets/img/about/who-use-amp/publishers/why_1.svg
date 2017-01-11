@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="112.52" height="144.48" viewBox="0 0 112.52 144.48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-7444.08" y1="362.93" x2="-7379.38" y2="362.93" gradientTransform="translate(7316.44 -1609.43) rotate(-10.05)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0386ff"/>
+      <stop offset="0.5" stop-color="#0dd4ff"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="25.24" y1="81.19" x2="81.14" y2="25.29" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c79c4"/>
+      <stop offset="0.51" stop-color="#0389ff"/>
+      <stop offset="1" stop-color="#0dd4ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="-3.45" y1="139.32" x2="68.18" y2="67.68" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-4" x1="24.72" y1="112.2" x2="43.02" y2="93.9" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-5" x1="14.95" y1="117.98" x2="28.55" y2="104.38" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-6" x1="37.63" y1="102.55" x2="51.95" y2="88.22" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-7" x1="-7.43" y1="74.16" x2="49.82" y2="16.91" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-8" x1="7.61" y1="44.43" x2="31.38" y2="20.66" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-9" x1="5.58" y1="51.65" x2="12.97" y2="44.26" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-10" x1="5.58" y1="56.53" x2="12.97" y2="49.14" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-11" x1="19.58" y1="52.24" x2="37.75" y2="34.07" xlink:href="#linear-gradient-2"/>
+  </defs>
+  <title>Asset 18</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Art">
+      <g>
+        <line x1="110.89" y1="26.26" x2="52.89" y2="57.46" style="fill: none;stroke-miterlimit: 10;stroke-width: 6.87714956521852px;opacity: 0.8;stroke: url(#linear-gradient)"/>
+        <polygon points="73.89 65.52 32.49 88.44 32.49 40.96 73.89 18.04 73.89 65.52" style="fill-opacity: 0.8;stroke: #fff;stroke-miterlimit: 10;fill: url(#linear-gradient-2)"/>
+        <line x1="53.55" y1="29.66" x2="53.55" y2="76.15" style="fill: none;stroke: #fff;stroke-miterlimit: 10"/>
+        <line x1="53.55" y1="50" x2="73.89" y2="39.35" style="fill: none;stroke: #fff;stroke-miterlimit: 10"/>
+        <polygon points="62.52 110.84 2.21 143.64 2.21 96.16 62.52 63.36 62.52 110.84" style="fill: #fff;fill-opacity: 0.7000000000000001;stroke-miterlimit: 10;stroke: url(#linear-gradient-3)"/>
+        <g>
+          <line x1="36.78" y1="88.03" x2="30.96" y2="118.06" style="fill: none;stroke-miterlimit: 10;stroke-width: 0.968464218002552px;stroke: url(#linear-gradient-4)"/>
+          <polyline points="24.18 100.14 13.53 115.15 26.12 115.64" style="fill: none;stroke-miterlimit: 10;stroke: url(#linear-gradient-5)"/>
+          <polyline points="41.62 90.45 53.24 90.94 41.62 106.44" style="fill: none;stroke-miterlimit: 10;stroke: url(#linear-gradient-6)"/>
+        </g>
+        <g>
+          <polygon points="41.89 57.82 0.5 80.73 0.5 33.25 41.89 10.33 41.89 57.82" style="fill: #fff;fill-opacity: 0.7000000000000001;stroke-miterlimit: 10;stroke: url(#linear-gradient-7)"/>
+          <line x1="4.65" y1="40.76" x2="34.34" y2="24.32" style="fill: #fff;fill-opacity: 0.7000000000000001;stroke-linecap: round;stroke-miterlimit: 10;stroke: url(#linear-gradient-8)"/>
+          <line x1="5.01" y1="50.38" x2="13.53" y2="45.53" style="fill: #fff;fill-opacity: 0.7000000000000001;stroke-linecap: round;stroke-miterlimit: 10;stroke: url(#linear-gradient-9)"/>
+          <line x1="5.01" y1="55.25" x2="13.53" y2="50.41" style="fill: #fff;fill-opacity: 0.7000000000000001;stroke-linecap: round;stroke-miterlimit: 10;stroke: url(#linear-gradient-10)"/>
+        </g>
+        <g>
+          <circle cx="50.17" cy="21.49" r="1.15" style="fill: #0dd4ff;opacity: 0.7000000000000001"/>
+          <circle cx="55.15" cy="11.15" r="1.15" style="fill: #0dd4ff;opacity: 0.7000000000000001"/>
+          <circle cx="60.49" cy="15.67" r="1.15" style="fill: #0dd4ff;opacity: 0.7000000000000001"/>
+          <circle cx="64" cy="9.82" r="1.15" style="fill: #0dd4ff;opacity: 0.7000000000000001"/>
+          <circle cx="63.49" cy="1.15" r="1.15" style="fill: #0dd4ff;opacity: 0.7000000000000001"/>
+        </g>
+        <polygon points="35.17 47.82 22.17 54.82 22.17 38.49 35.17 31.49 35.17 47.82" style="fill-opacity: 0.8;fill: url(#linear-gradient-11)"/>
+      </g>
+    </g>
+  </g>
+</svg>

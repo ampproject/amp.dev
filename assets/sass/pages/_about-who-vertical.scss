@@ -1,0 +1,137 @@
+body.about-who-vertical {
+  .about-who-block {
+    position: relative;
+    overflow: hidden;
+    &::after {
+      background: $gradient-med-faded;
+      content: '';
+      display: block;
+      height: 900px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      bottom: 0px;
+      transform: skewY(-36deg);
+      transform-origin: bottom right;
+    }
+  }
+
+  .hero {
+    position: relative;
+    padding: 100px 15.4% 200px 15.4%;
+
+    .hero-images {
+      position: absolute;
+      left: 1440px;
+      top: -20px;
+
+      .triangle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 630px;
+      }
+
+      .phones {
+        position: absolute;
+        right: -100px;
+        top: 150px;
+        width: 700px;
+      }
+    }
+
+    .title {
+      position: relative;
+      max-width: 650px;
+      margin-bottom: 50px;
+    }
+
+    .paragraph {
+      max-width: 600px;
+      margin-bottom: 70px;
+    }
+
+    .icon {
+      width: 53px;
+    }
+
+    .example-users {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+      width: 62%;
+      min-width: 651px;
+
+      .example-user-logo {
+        flex: 0 0 18%;
+      }
+    }
+  }
+
+  .why-use {
+    padding: 0 15.4% 165px 15.4%;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .reasons {
+      display: flex;
+      justify-content: space-between;
+
+      .reason {
+        flex: 0 0 25%; // IE10: calc not allowed in flex
+        flex: 0 0 calc(33% - 70px);
+
+        h4 {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  .case-study {
+    padding: 0 15.4% 115px 15.4%;
+
+    h3 {
+      text-align: center;
+    }
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    .hero {
+      padding: 68px 0 40px 0;
+
+      .example-users {
+        display: none;
+      }
+
+      .hero-images {
+        position: absolute;
+        left: unset;
+        right: -50px;
+        top: 270px;
+
+        .triangle {
+          right: 0;
+          top: 0;
+          width: 300px;
+        }
+
+        .phones {
+          position: absolute;
+          right: 0;
+          top: 50px;
+          width: 500px;
+        }
+      }
+    }
+  }
+
+  @include max-screen($mobile-medium-breakpoint) {
+  }
+}

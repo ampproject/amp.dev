@@ -70,6 +70,7 @@ body.about-who {
 
   @include max-screen($mobile-breakpoint) {
     .about-who-block {
+      position: relative;
       &::before {
         background: $gradient-med-faded;
         content: '';

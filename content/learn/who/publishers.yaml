@@ -1,0 +1,56 @@
+$title: AMP for publishers
+class: about-who-vertical
+$order: 1
+
+hero:
+  title@: Speed and distribution means stronger engagement
+  paragraph@: Because AMP pages load faster than typical pages, users can engage with your content faster than ever before. In fact, many publishers see increased engagement and retention metrics with AMP pages both in time on page and return visits. Additionally, because multiple platforms link to AMP pages, publishing once in the AMP format allows your content to be distributed across a broad network of providers. Join the hundreds of thousands of publishers that are distributing their speedy content with AMP. 
+  hero_img: publishers/hero_publishers.png
+  triangle_img: hero_triangle.png
+  hero_icon: publishers/hero_icon.svg
+  hero_icon_width: 104
+  hero_icon_height: 123
+
+  users:
+    - name: The Washington Post
+      logo: publishers/user_logo_1.png
+      logo_width: 413
+      logo_height: 81
+
+    - name: Slate
+      logo: publishers/user_logo_2.png
+      logo_width: 257
+      logo_height: 81
+
+    - name: Rakuten
+      logo: publishers/user_logo_3.png
+      logo_width: 267
+      logo_height: 81
+
+    - name: Relay Media
+      logo: publishers/user_logo_4.png
+      logo_width: 271
+      logo_height: 81
+
+why:
+  title@: The key benefits of using AMP for publishers
+  reasons:
+    - title@: Greater engagement and retention
+      paragraph@: Many publishers have seen increased time on page, as well as return visits. Users know that when they see AMP, their reading experience will be seamless.
+      icon: publishers/why_1.svg
+
+    - title@: Distribution across a growing number of platforms
+      paragraph@: Leading content discovery platforms like Twitter, LinkedIn, Google, Pinterest and Bing link to AMP pages. By publishing pages in the AMP format, all of these surfaces now have access to your content.
+      icon: publishers/why_2.svg
+
+    - title@: Powerful monetization capabilities
+      paragraph@: With hundreds of ad tech vendors supporting the AMP project, greater engagement can mean greater revenue. Many publishers have seen monetization growth with AMP.
+      icon: publishers/why_3.svg
+
+case:
+  title@: Publisher success stories
+
+cta:
+  title@: Get Started Building
+  link_text@: Publishers tutorials
+  link_url: #
