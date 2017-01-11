@@ -1,3 +1,7 @@
+@import '../_config.scss';
+@import '../_mixins.scss';
+@import '../_responsive.scss';
+
 .amp-conf {
 
     a.reserve-button {
@@ -127,11 +131,18 @@
 
             .wrapper {
                 display: flex;
+                flex-wrap: wrap;
                 amp-iframe {
-                    width: 40%;
+                    flex: 1 0 40%;
+                    min-width: 100px;
                 }
                 div {
-                    padding-left: 2em;
+                    margin-left: 2em;
+                    flex-grow: 1;
+                    @include max-screen(590px) {
+                        margin-left: 0;
+                        margin-top: 1em;
+                    }
                 }
             }
 
@@ -178,12 +189,15 @@
 
     .days {
         display: flex;
+        flex-wrap: wrap;
         margin: 0 -20px;
     }
 
     .day {
-        width: 50%;
-        margin: 0 20px;
+        flex: 1 0 50%;
+        padding: 0 20px;
+        box-sizing: border-box;
+        min-width: 300px;
 
         h4 {
             border-bottom: 1px solid #eee;
