@@ -316,48 +316,48 @@ figure {
   display: none;
 }
 
-.go-button {
-  display: inline-block;
-  background-color: $color-midblue;
-  padding: 0.8em 1em;
-  border: 0;
-  border-radius: 4px;
-  color: $color-white;
-  font-family: Roboto, verdana, arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
+// .go-button {
+//   display: inline-block;
+//   background-color: $color-midblue;
+//   padding: 0.8em 1em;
+//   border: 0;
+//   border-radius: 4px;
+//   color: $color-white;
+//   font-family: Roboto, verdana, arial, sans-serif;
+//   font-size: 14px;
+//   font-weight: 400;
+//   text-align: center;
+//   text-transform: uppercase;
 
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-              0 1px 5px 0 rgba(0, 0, 0, 0.12),
-              0 3px 1px -2px rgba(0, 0, 0, 0.2);
+//   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+//               0 1px 5px 0 rgba(0, 0, 0, 0.12),
+//               0 3px 1px -2px rgba(0, 0, 0, 0.2);
 
-  transition:
-    box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+//   transition:
+//     box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+//     background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover,
-  &:focus {
-    background-color: darken($color-midblue, 2%);
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-                0 1px 10px 0 rgba(0, 0, 0, 0.12),
-                0 2px 4px -1px rgba(0, 0, 0, 0.4);
-  }
+//   &:hover,
+//   &:focus {
+//     background-color: darken($color-midblue, 2%);
+//     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+//                 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+//                 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+//   }
 
-  &:hover {
-    text-decoration: none;
-  }
+//   &:hover {
+//     text-decoration: none;
+//   }
 
-  &--alt {
-    background-color: $color-white;
-    color: $color-midblue;
-    &:hover,
-    &:focus {
-      background-color: $color-grey-50;
-    }
-  }
-}
+//   &--alt {
+//     background-color: $color-white;
+//     color: $color-midblue;
+//     &:hover,
+//     &:focus {
+//       background-color: $color-grey-50;
+//     }
+//   }
+// }
 
 .desaturate {
 
