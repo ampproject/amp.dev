@@ -1,4 +1,5 @@
 $title@: Tutorials
+index: 0
 $view: /views/doc.html
 $path: /docs/get_started/{base}.html
 $localization:

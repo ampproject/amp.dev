@@ -1,4 +1,5 @@
 $title@: Guides
+index: 1
 $path: /docs/guides/{base}.html
 $view: /views/doc.html
 $localization:
