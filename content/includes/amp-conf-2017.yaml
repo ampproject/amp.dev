@@ -17,13 +17,15 @@ agenda:
           time: "1100"
         - title: Session 4
           time: "1130"
-        - title: Panel
+        - title: Session 5
           time: "1200"
     - title: Lunch
-      time: "1300"
+      time: "1230"
     - title: Beautiful, Interactive Content
       children:
-        - title: Session 5
+        - title: "Web Advocate Panel"
+          time: "1330"
+        - title: Web Advocate Panel (contd)
           time: "1400"
         - title: Session 6
           time: "1430"
@@ -37,6 +39,8 @@ agenda:
       time: "1630"
     - title: Q&A Panel
       time: "1700"
+    - title: Q&A Panel (contd)
+      time: "1730"
   day_2:
     - title: Breakfast
       time: "0730"
@@ -52,8 +56,10 @@ agenda:
           time: "1030"
         - title: Session 11
           time: "1100"
-        - title: Panel
+        - title: Platforms Panel
           time: "1130"
+        - title: Platforms Panel (contd)
+          time: "1200"
     - title: Lunch
       time: "1230"
     - title: AMP Behind the scenes
@@ -62,11 +68,11 @@ agenda:
           time: "1330"
         - title: Session 13
           time: "1400"
-        - title: Session 14
-          time: "1430"
         - title: Coffee Break
+          time: "1430"
+        - title: Session 14
           time: "1500"
-        - title: Panel
-          time: "1530"
     - title: Breakout Sessions
-      time: "1630"
+      time: "1530"
+    - title: Breakout Sessions (contd)
+      time: "1600"
