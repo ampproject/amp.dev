@@ -1,14 +1,14 @@
 {% extends "/views/base.html" %}
 
 {% block main %}
-  <div class="container">
+  <div class="container about-who-block">
     {{ navmarkup|safe }}
     <section class="hero">
       <div class="hero-images">
         <amp-img class="triangle"
             noloading
             width=1424
-            height=1095
+            height=2095
             layout=responsive
             src="/static/img/about/who-use-amp/{{doc.hero.triangle_img}}">
         </amp-img>
@@ -41,10 +41,19 @@
           </div>
         {% endfor %}
       </div>
+      <div class="toc">
+        <ul>
+          {% for card in doc.cards %}
+            <li>
+              <a href="#{{card.name|slug}}">{{card.name}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </section>
     <section class="user-categories card-container">
       {% for card in doc.cards %}
-        <div class="card">
+        <div class="card" id="{{card.name|slug}}">
           <amp-img
               noloading
               height=90
