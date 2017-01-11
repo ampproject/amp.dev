@@ -2,8 +2,8 @@
   .content {
     h2 {
       border-bottom: 2px solid $color-grey-lt;
-      margin: 0;
-      padding: 25px 0;
+      margin: 25px 0 0 0;
+      padding: 0 0 25px 0;
     }
   }
 
@@ -22,7 +22,8 @@
     .content {
       h2 {
         border-bottom-width: 1px;
-        padding: 15px 0;
+        margin-top: 15px;
+        padding-bottom: 15px;
       }
     }
 
