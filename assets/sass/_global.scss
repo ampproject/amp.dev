@@ -182,6 +182,14 @@ a {
   &.light {
     background: $color-white;
     color: $color-ampblue;
+
+    &::after {
+      background: linear-gradient($gradient-angle, #5ADAFD, #51B9FD);
+    }
+
+    &:hover {
+      color: $color-white;
+    }
   }
 }
 

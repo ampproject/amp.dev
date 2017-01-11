@@ -35,6 +35,7 @@ $gradient-med-faded: linear-gradient(to right, $color-brightbluefaded, $color-li
 $gradient-light: linear-gradient(to right, $color-lightblue, $color-lightblue, $color-white);
 $gradient-anglebold: linear-gradient($gradient-angle, $color-lightblue, $color-brightblue, $color-ampblue);
 $gradient-anglemed: linear-gradient($gradient-angle, $color-lightblue, $color-brightblue);
+$gradient-anglelight: linear-gradient($gradient-angle, $color-lightblue 40%, $color-brightblue);
 // $gradient-anglelight: linear-gradient($gradient-angle, $color-ampblue, $color-brightblue, $color-lightblue);
 
 $header-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
