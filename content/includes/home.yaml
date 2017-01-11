@@ -1,6 +1,6 @@
 hero:
-  title@: Mobile web, faster.
-  content@: The open-source AMP Project helps you create mobile optimized content that loads in an instant.
+  title@: Instant, Everywhere.
+  content@: The Accelerated Mobile Pages (AMP) Project is an open source initiative to make the web better for all. AMP pages are optimized for speed, distributing content instantly, everywhere.
   cta@: Learn about AMP
   cta_url: /content/learn/about-amp.md
   secondary_cta@: Start Building
@@ -10,23 +10,23 @@ hero:
   carousel_title@: The Latest
 
 benefits:
-  title@: What AMP provides for publishers
+  title@: What AMP Provides
   cards:
     - title@: Speed
-      content@: AMP pages are cached on Google’s servers and the pages are optimized, so they load quickly.
+      content@: AMP pages are consistently fast and responsive. When served from the Google AMP Cache, AMP pages load in less than 1 second on average.
       img: /static/img/home/icon2.png
       img_width: 263
       img_height: 243
 
     - title@: Distribution
-      content@: AMP pages are made of  custom built components to create a light-weight experience.
+      content@: Publishing once in the AMP format pushes your content across the growing number of platforms which link to AMP pages.
       img: /static/img/home/icon1.png
       img_width: 223
       img_height: 259
 
 experience:
-  title@: The AMP experience
-  content@: AMP provides publishers a flexible framework to create a more consistent, speedy, accessible and engaging experience for their users.
+  title@: Seamless User Experience
+  content@: For many, reading on the mobile web is a slow, clunky and frustrating experience. The AMP format however ensures pages load near instantaneously, giving users an engaging and content-rich experience. No more unexpected page jumps, or waiting for a page to load.
   bg_img: /static/img/home/bg_experience.png
   phone_img: /static/img/home/phone_experience.png
   lines_img: /static/img/home/lines_experience.png
@@ -34,7 +34,7 @@ experience:
   cta_url: /content/learn/about-amp.md
 
 success_stories:
-  title@: Many sites are seeing success with AMP
+  title@: Many partners are seeing success with AMP pages.
   cards:
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
@@ -64,7 +64,7 @@ success_stories:
       img: /static/img/publishers/abril.png
 
 create:
-  title@: Create your first AMP page now
-  cta@: Start building now
+  title@: Create your first AMP page in minutes
+  cta@: Start Building
   cta_url: /content/learn/about-amp.md
   lines_img: /static/img/home/lines_bottom.png
