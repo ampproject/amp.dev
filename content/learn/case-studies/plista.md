@@ -2,6 +2,7 @@
 $order: 4
 $title: plista
 $date: October 7, 2016
+$category: Advertisers
 headline: plista grows publisher revenue & user engagement with AMP
 class: case-study
 thumb: "case-studies/plista_thumb.jpg"
@@ -14,8 +15,8 @@ results:
       description: AVG growth in CTRs
 logo:
   src: "case-studies/plista_logo.png"
-  width: 56
-  height: 20
+  width: 90
+  height: 32
 download: "case-studies/plista.pdf"
 ---
 

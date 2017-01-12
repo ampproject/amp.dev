@@ -1,7 +1,6 @@
 ---
 $title: Case Studies
 $order: 5
-$path: /case-studies/
 class: case-studies
 $hidden: true
 ---

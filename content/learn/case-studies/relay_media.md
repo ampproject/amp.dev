@@ -2,14 +2,15 @@
 $order: 5
 $title: Relay Media
 $date: October 7, 2016
+$category: Publishers
 headline: Relay Media helps publishers get AMP’d
 class: case-study
 thumb: "case-studies/relay_media_thumb.jpg"
 featured: "case-studies/relay_media_framed.png"
 logo:
   src: "case-studies/relay_media_logo.png"
-  width: 89
-  height: 10
+  width: 133
+  height: 15
 description: "Relay Media was founded in 2015 with the purpose of converting web content to Accelerated Mobile Pages (AMP) for publishers. The company has placed a big bet on AMP’s long-term importance to the online ecosystem, and is committed to strengthening the format’s foothold on the mobile web."
 results:
     - stat: 2.5M

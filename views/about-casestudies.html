@@ -1,12 +1,21 @@
 {% extends "/views/base.html" %}
 
+{% set navmarkup %}
+{% include "/views/partials/breadcrumb-nav.html" %}
+{% endset %}
+
+{% block nav %}
+  {{ navmarkup|safe }}
+{% endblock %}
+
 {% block main %}
   <div class="container main">
     {{ navmarkup|safe }}
     <div class="content">
       <article class="post">
 
-        <h1 class="post-title">{{ doc.title }}</h1>
+        <span class="post-tag">{{ doc.title }}</span>
+        <h1 class="post-title">{{ doc.titles('page') or doc.title }}</h1>
 
         <div class="post-content">
           {{doc.html|render|safe}}

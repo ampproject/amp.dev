@@ -2,6 +2,7 @@
 $order: 3
 $title: Slate
 $date: October 7, 2016
+$category: Publishers
 headline: Slate gets efficient with AMP
 class: case-study
 thumb: "case-studies/slate_thumb.jpg"
@@ -16,8 +17,8 @@ results:
       description: Saved in development resources/yr
 logo:
   src: "case-studies/slate_logo.png"
-  width: 30
-  height: 30
+  width: 50
+  height: 50
 download: "case-studies/slate.pdf"
 ---
 

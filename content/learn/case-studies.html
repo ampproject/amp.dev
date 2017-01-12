@@ -1,0 +1,54 @@
+---
+$title: Case Studies
+$titles:
+  page: Success stories of the domains publishing AMP pages
+$order: 2
+$path: /case-studies/
+$parent: /content/learn/overview.html
+class: case-studies
+$view: /views/about-casestudies.html
+
+cta:
+  title@: Create your first AMP page
+  link_text@: Start building now
+  link_url: #
+---
+
+<div class="toc">
+  <ul>
+    <li><a href="">All</a></li>
+    <li><a href="">Publishers</a></li>
+    <li><a href="">e-commerce</a></li>
+    <li><a href="">SMB</a></li>
+    <li><a href="">Advertisers</a></li>
+    <li><a href="">Designers</a></li>
+    <li><a href="">Developers</a></li>
+  </ul>
+</div>
+
+<div class="card-container">
+  {% for item in g.collection(doc.collection.pod_path + '/' + doc.base).docs(recursive=false, locale=doc.locale)|reverse %}
+  <a class="card" href="{{item.url.path}}">
+    <div class="card-inner">
+      <div class="card-meta">
+        <span class="card-type">{{item.category}}</span>
+        <span class="card-date light">{{item.date}}</span>
+      </div>
+      <div class="card-logo">
+        <amp-img alt="{{item.title}}"
+          height="{{item.logo.height}}"
+          layout="fixed"
+          noloading
+          src="/static/img/{{item.logo.src}}"
+          width="{{item.logo.width}}"></amp-img>
+      </div>
+      <div class="card-title">
+        <h4>{{item.headline or item.title}}</h4>
+      </div>
+      <div class="card-link">
+        <p>Read the Case Study</p>
+      </div>
+    </div>
+  </a>
+{% endfor %}
+</div>

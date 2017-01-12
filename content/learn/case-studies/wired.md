@@ -2,6 +2,7 @@
 $order: 2
 $title: Wired
 $date: October 7, 2016
+$category: Publishers
 headline: Wired AMP’s its 20+ year archive to meet audiences online
 class: case-study
 thumb: "case-studies/wired_thumb.jpg"
@@ -14,8 +15,8 @@ results:
       description: Stories AMP’ed from 20+ year archive
 logo:
   src: "case-studies/wired_logo.png"
-  width: 63
-  height: 30
+  width: 100
+  height: 48
 download: "case-studies/wired.pdf"
 ---
 

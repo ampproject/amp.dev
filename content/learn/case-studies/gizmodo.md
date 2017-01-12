@@ -2,6 +2,7 @@
 $order: 1
 $title: Gizmodo
 $date: October 7, 2016
+$category: Publishers
 headline: AMP makes Gizmodo 3x faster on mobile
 class: case-study
 thumb: "case-studies/gizmodo_thumb.jpg"
@@ -14,8 +15,8 @@ results:
       description: Increase in impressions
 logo:
   src: "case-studies/gizmodo_logo.png"
-  width: 64
-  height: 40
+  width: 128
+  height: 80
 download: "case-studies/gizmodo.pdf"
 ---
 

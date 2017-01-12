@@ -2,7 +2,8 @@
 $order: 6
 $title: Teads
 $date: Dec 2, 2016
-headline: Teads brings AMP'd mobile video inventory to nearly 100 publishers 
+$category: Advertisers
+headline: Teads brings AMP'd mobile video inventory to nearly 100 publishers
 class: case-study
 thumb: "case-studies/teads_thumb.jpg"
 featured: "case-studies/teads_media_framed.png"
@@ -17,7 +18,7 @@ logo:
   src: "case-studies/teads_logo2.png"
   width: 64
   height: 40
-download: "case-studies/teads.pdf" 
+download: "case-studies/teads.pdf"
 ---
 
 Historically, demand for digital video has [far outstripped](https://www.emarketer.com/Article/Mobile-Video-Advertisers-Demand-More-Inventory/1013575) online publishers’ limited supply of premium in-stream video inventory. So in 2011, French startup Teads designed [a new type of video](http://teads.tv/inread-outstream#livedemo) ad that appears natively inside editorial articles, without requiring existing video content.
