@@ -6,14 +6,19 @@ body.about-who-vertical {
       background: $gradient-med-faded;
       content: '';
       display: block;
-      height: 900px;
+      height: 2000px;
       left: 0;
       position: absolute;
       width: 100%;
-      bottom: 0px;
+      bottom: -2200px;
       transform: skewY(-36deg);
-      transform-origin: bottom right;
+      transform-origin: top left;
     }
+  }
+
+  .container.lg {
+    position: relative;
+    z-index: 1;
   }
 
   .hero {
@@ -27,7 +32,7 @@ body.about-who-vertical {
 
       .triangle {
         position: absolute;
-        right: 0;
+        right: calc((1440px - 100vw)/2);
         top: 0;
         width: 630px;
       }
@@ -38,6 +43,10 @@ body.about-who-vertical {
         top: 150px;
         width: 700px;
       }
+    }
+
+    .label {
+      @include text-label();
     }
 
     .title {
@@ -79,18 +88,21 @@ body.about-who-vertical {
       margin-bottom: 45px;
     }
 
-    .reasons {
+    .reasons.desktop {
       display: flex;
       justify-content: space-between;
 
       .reason {
-        flex: 0 0 25%; // IE10: calc not allowed in flex
-        flex: 0 0 calc(33% - 70px);
+        flex: 0 0 27%;
 
         h4 {
           padding-right: 10px;
         }
       }
+    }
+
+    .reasons.mobile {
+      display: none;
     }
   }
 
@@ -103,35 +115,106 @@ body.about-who-vertical {
   }
 
   @include max-screen($mobile-breakpoint) {
+    .about-who-block {
+      &::before {
+        background: $gradient-anglebold;
+        content: '';
+        display: block;
+        height: 600px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        transform: skewY(-36deg);
+        transform-origin: top left;
+      }
+    }
+
     .hero {
       padding: 68px 0 40px 0;
 
       .example-users {
+      }
+
+      .icon {
         display: none;
+      }
+
+      .label {
+        color: $color-white;
+      }
+
+      .title {
+        color: $color-white;
+        width: 65%;
+        margin-bottom: 35px;
+      }
+
+      .paragraph {
+        position: relative;
+        padding: 28px 22px 25px 22px;
+        background: $color-white;
+        box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.075);
+        max-width: 400px;
+        margin-bottom: 40px;
       }
 
       .hero-images {
         position: absolute;
         left: unset;
         right: -50px;
-        top: 270px;
+        top: 20px;
 
         .triangle {
-          right: 0;
-          top: 0;
-          width: 300px;
+          display: none;
         }
 
         .phones {
           position: absolute;
-          right: 0;
-          top: 50px;
-          width: 500px;
+          right: -130px;
+          top: 0;
+          width: 100vw;
+          max-width: 450px;
         }
       }
     }
-  }
 
-  @include max-screen($mobile-medium-breakpoint) {
+    .why-use {
+      padding: 20px 0 40px 0;
+      h3 {
+        margin-bottom: 15px;
+      }
+      .reasons.mobile {
+        display: block;
+        width: 106%;
+        position: relative;
+        left: -3%;
+        .card-container {
+          padding: 0;
+          justify-content: center;
+        }
+        .reason {
+          padding: 20px;
+          flex: 0 0 94%;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h4 {
+            padding-right: 10px;
+            
+          }
+          p {
+            display: inline-block;
+            max-width: 400px;
+            text-align: left;
+          }
+        }
+      }
+
+      .reasons.desktop {
+        display: none;
+      }
+    }
   }
 }

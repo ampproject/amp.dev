@@ -1,7 +1,7 @@
 {% extends "/views/base.html" %}
 
 {% block main %}
-  <div class="container about-who-block">
+  <div class="container lg about-who-block">
     {{ navmarkup|safe }}
     <section class="hero">
       <div class="hero-images">
@@ -61,7 +61,7 @@
               src="/static/img/about/who-use-amp/{{card.icon}}">
           </amp-img>
           <h4 class="user-name">{{card.name}}</h4>
-          <a class="underlined cta user-link" href="{{card.link}}">{{_(card.cta)}}</a>
+          <a class="underlined cta user-link" href="{{g.doc('/content/learn/who/' ~ card.name|slug ~ '.yaml').url.path}}">{{_(card.cta)}}</a>
         </div>
       {% endfor %}
     </section>
