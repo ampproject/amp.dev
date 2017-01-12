@@ -76,4 +76,9 @@
       font-size: 16px;
     }
   }
+
+  :target::before {
+    height: 70px;
+    margin-top: -70px;
+  }
 }

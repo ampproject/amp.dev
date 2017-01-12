@@ -28,6 +28,8 @@
 @include max-screen($mobile-medium-breakpoint) {
   .faqs {
     .content {
+      padding-top: 70px;
+
       h2 {
         border-bottom-width: 1px;
         margin-top: 15px;

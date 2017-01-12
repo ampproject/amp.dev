@@ -41,8 +41,6 @@ nav {
 
 @include max-screen($mobile-breakpoint) {
   nav {
-    margin-top: 30px;
-
     li,
     a {
       font-size: 10px;

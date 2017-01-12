@@ -109,6 +109,10 @@
 
 @include max-screen($mobile-breakpoint) {
   .case-studies {
+    .content {
+      padding-top: 70px;
+    }
+
     .post-title,
     .post-tag {
       text-align: left;

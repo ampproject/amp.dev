@@ -80,6 +80,8 @@
 @include max-screen($mobile-breakpoint) {
   .who {
     .content {
+      padding-top: 70px;
+
       h1 {
         text-align: left;
       }
