@@ -73,7 +73,7 @@
 
     display: flex;
     align-items: stretch;
-    justify-content: center;
+    justify-content: flex-start;
 
     &.right {
       font-size: 15px;
@@ -84,7 +84,7 @@
     align-items: stretch;
     display: flex;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 50px;
   }
 
   .tab {
@@ -283,8 +283,12 @@
   .searchbar {
     position: absolute;
     top: 23px;
-    right: 200px;
+    right: 175px;
     z-index: 2;
+
+    @include max-screen(1030px) {
+      display: none;
+    }
   }
 }
 
