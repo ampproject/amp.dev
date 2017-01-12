@@ -46,6 +46,14 @@
   .card-container {
     flex-wrap: wrap;
     padding-top: 0;
+
+    &::after {
+      content: '';
+      flex: 0 0 31%; // IE10: calc not allowed in flex
+      flex: 0 0 calc(33% - 20px);
+      margin: 10px 5px;
+      visibility: hidden;
+    }
   }
 
   .card {
@@ -127,6 +135,7 @@
     }
 
     .card {
+      flex: 0 0 48%; // IE10: calc not allowed in flex
       flex: 0 0 calc(50% - 20px);
       padding: 30px;
     }
@@ -144,7 +153,12 @@
 @include max-screen($mobile-medium-breakpoint) {
   .case-studies {
     .card {
-      flex: 0 0 calc(100% - 10px);
+      flex: 0 0 100%;
+      margin: 10px 0;
+    }
+
+    .card-container::after {
+      margin: 0;
     }
   }
 }
