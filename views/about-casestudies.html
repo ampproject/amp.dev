@@ -13,14 +13,53 @@
     {{ navmarkup|safe }}
     <div class="content">
       <article class="post">
-
-        <span class="post-tag">{{ doc.title }}</span>
+        <span class="post-tag">Case Studies</span>
         <h1 class="post-title">{{ doc.titles('page') or doc.title }}</h1>
-
         <div class="post-content">
-          {{doc.html|render|safe}}
-        </div>
+          <div class="toc">
+            <ul>
+              <li>
+                <a href="{{g.url('/content/learn/case-studies.html', locale=doc.locale).path}}"{% if doc.title == 'Case Studies' %} class="active"{% endif %}>All</a>
+              </li>
+              {% for item in g.collection('/content/learn/case-studies/category').docs(recursive=false, locale=doc.locale) %}
+              <li>
+                <a href="{{item.url.path}}"{% if item.title == doc.title %} class="active"{% endif %}>{{item.title}}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
 
+          {{doc.html|render|safe}}
+
+          <div class="card-container">
+          {% for item in g.collection('/content/learn/case-studies').docs(recursive=false, locale=doc.locale)|reverse %}
+            {% if doc.title == 'Case Studies' or doc.title == item.category %}
+              <a class="card" href="{{item.url.path}}">
+                <div class="card-inner">
+                  <div class="card-meta">
+                    <span class="card-type">{{item.category}}</span>
+                    <span class="card-date light">{{item.date}}</span>
+                  </div>
+                  <div class="card-logo">
+                    <amp-img alt="{{item.title}}"
+                      height="{{item.logo.height}}"
+                      layout="fixed"
+                      noloading
+                      src="/static/img/{{item.logo.src}}"
+                      width="{{item.logo.width}}"></amp-img>
+                  </div>
+                  <div class="card-title">
+                    <h4>{{item.headline or item.title}}</h4>
+                  </div>
+                  <div class="card-link">
+                    <p>Read the Case Study</p>
+                  </div>
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
       </article>
     </div>
   </div>
