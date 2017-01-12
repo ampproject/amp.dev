@@ -5,13 +5,13 @@
 <nav class="breadcrumb">
   <ul>
   {% if grandparentDoc %}
-    <li><a href="{{g.url(grandparentDoc.pod_path, locale=usedDoc.locale).path}}">{{_(grandparentDoc.title)}}</a></li>
+    <li><a href="{{g.url(grandparentDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(grandparentDoc.titles('breadcrumb')) or _(grandparentDoc.title) }}</a></li>
   {% endif %}
 
   {% if parentDoc %}
-    <li><a href="{{g.url(parentDoc.pod_path, locale=usedDoc.locale).path}}">{{_(parentDoc.title)}}</a></li>
+    <li><a href="{{g.url(parentDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(parentDoc.titles('breadcrumb')) or _(parentDoc.title) }}</a></li>
   {% endif %}
 
-    <li><a href="{{g.url(usedDoc.pod_path, locale=usedDoc.locale).path}}">{{_(usedDoc.title)}}</a></li>
+    <li><a href="{{g.url(usedDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(doc.titles('breadcrumb')) or _(usedDoc.title) }}</a></li>
   </ul>
 </nav>
