@@ -6,14 +6,6 @@
   backface-visibility: hidden;
   background-color: $color-white;
 
-  .container {
-
-    @include max-screen($mobile-breakpoint) {
-      // aligns the hamburger
-      padding-right: 18px;
-    }
-  }
-
   &.fixed {
     transform: translateY(0%);
     transition: all .4s ease;
@@ -38,14 +30,6 @@
     margin-left: 0;
     font-weight: 300;
 
-    @include max-screen($mobile-breakpoint) {
-      justify-content: flex-start;
-      flex: 1 1 auto;
-      text-align: left;
-      width: auto;
-      font-size: 15px;
-    }
-
     .header-title {
       color: $color-midblue;
       padding: $header-padding $header-padding $header-padding ($header-padding + 20px);
@@ -58,11 +42,6 @@
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center left;
-
-      @include max-screen($mobile-breakpoint) {
-        width: auto;
-        margin: 0;
-      }
     }
 
   }
@@ -144,16 +123,6 @@
     display: none;
     cursor: pointer;
     align-self: center;
-  }
-
-  @include max-screen($mobile-breakpoint) {
-    div.tab,
-    .desktop {
-      display: none;
-    }
-    .tab.hamburger {
-      display: inline-block;
-    }
   }
 
   div.tab {
@@ -288,6 +257,36 @@
 
     @include max-screen(1030px) {
       display: none;
+    }
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    .container {
+      // aligns the hamburger
+      padding-right: 18px;
+    }
+
+    .left-nav {
+      justify-content: flex-start;
+      flex: 1 1 auto;
+      text-align: left;
+      width: auto;
+      font-size: 15px;
+
+      .header-title {
+        margin: 0;
+        padding: $header-mobile-padding $header-mobile-padding $header-mobile-padding ($header-mobile-padding + 20px);
+        width: auto;
+      }
+    }
+
+    div.tab,
+    .desktop {
+      display: none;
+    }
+
+    .tab.hamburger {
+      display: inline-block;
     }
   }
 }
