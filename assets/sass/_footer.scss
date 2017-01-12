@@ -30,7 +30,6 @@ footer {
   background: $gradient-bold;
   padding: 20px 30px;
   position: relative;
-  overflow: hidden;
 
   .cta-line {
     position: absolute;
@@ -81,6 +80,8 @@ footer {
 
 @include max-screen($mobile-breakpoint) {
   .footer-cta {
+    overflow: hidden;
+
     .cta-line.right {
       bottom: 10px;
       right: -100px;
