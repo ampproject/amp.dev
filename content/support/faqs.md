@@ -6,6 +6,10 @@ $localization:
   path: /{locale}/support/{base}/
 ---
 
-faqs page that will have cards to:
-
-{% include "/views/partials/sub_nav.html" %}
+<div class="card-container grid">
+  {% for item in g.collection(doc.collection.pod_path + '/' + doc.base).docs(recursive=false, locale=doc.locale) %}
+    {% with doc = item %}
+      {% include "/views/partials/grid-card.html" %}
+    {% endwith %}
+  {% endfor %}
+</div>

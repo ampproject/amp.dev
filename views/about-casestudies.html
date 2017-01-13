@@ -31,11 +31,11 @@
 
           {{doc.html|render|safe}}
 
-          <div class="card-container case">
+          <div class="card-container grid case">
           {% for item in g.collection('/content/learn/case-studies').docs(recursive=false, locale=doc.locale)|reverse %}
             {% if doc.title == 'Case Studies' or doc.title == item.category %}
-              {% with doc = item %}
-                {% include "/views/partials/case-study-card.html" %}
+              {% with doc = item, isCase = true %}
+                {% include "/views/partials/grid-card.html" %}
               {% endwith %}
             {% endif %}
           {% endfor %}

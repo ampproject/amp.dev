@@ -55,14 +55,14 @@
         {% if doc.prev() %}
         <div class="post-footer">
           <h2>Previous Posts</h2>
-          <div class="card-container case">
-            {% with doc = doc.prev() %}
-              {% include "/views/partials/case-study-card.html" %}
+          <div class="card-container grid case">
+            {% with doc = doc.prev(), isCase = true %}
+              {% include "/views/partials/grid-card.html" %}
             {% endwith %}
 
             {% if doc.prev().prev() %}
-              {% with doc = doc.prev().prev() %}
-                {% include "/views/partials/case-study-card.html" %}
+              {% with doc = doc.prev().prev(), isCase = true %}
+                {% include "/views/partials/grid-card.html" %}
               {% endwith %}
             {% endif %}
           </div>

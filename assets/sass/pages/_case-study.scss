@@ -45,78 +45,6 @@
   }
 }
 
-// case studies cards
-.card-container.case {
-  flex-wrap: wrap;
-  padding-top: 0;
-
-  &::after {
-    content: '';
-    flex: 0 0 31%; // IE10: calc not allowed in flex
-    flex: 0 0 calc(33% - 20px);
-    margin: 10px 5px;
-    visibility: hidden;
-  }
-
-  .card {
-    display: flex;
-    height: auto;
-    padding: 50px;
-
-    &:hover {
-      .card-link p::before {
-        animation: .5s 1 cta-line;
-      }
-    }
-  }
-
-  .card-inner {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-  }
-
-  .card-meta {
-    span + span {
-      &::before {
-        content: ' | ';
-        display: inline;
-        margin: 0 12px;
-      }
-    }
-  }
-
-  .card-logo {
-    align-items: center;
-    display: flex;
-    height: 40px;
-    margin: 20px 0;
-  }
-
-  .card-title {
-    display: block;
-    flex: 1 0 auto;
-
-    h4 {
-      margin: 0;
-    }
-  }
-
-  .card-link {
-    margin-top: 70px;
-
-    p {
-      @extend a.underlined;
-      color: $color-ampblue;
-      display: inline;
-      margin: 0;
-      padding: 0;
-      position: relative;
-      @include text-label();
-    }
-  }
-}
-
 // individual case study pages
 body.case-study {
   .content {
@@ -294,22 +222,6 @@ body.case-study {
     }
   }
 
-  .card-container.case {
-    .card {
-      flex: 0 0 48%; // IE10: calc not allowed in flex
-      flex: 0 0 calc(50% - 20px);
-      padding: 30px;
-    }
-
-    .card-logo {
-      height: 30px;
-    }
-
-    .card-link {
-      margin-top: 30px;
-    }
-  }
-
   body.case-study {
     .post-logo {
       margin-left: 0;
@@ -366,17 +278,6 @@ body.case-study {
 }
 
 @include max-screen($mobile-medium-breakpoint) {
-  .card-container.case {
-    .card {
-      flex: 0 0 100%;
-      margin: 10px 0;
-    }
-
-    &::after {
-      margin: 0;
-    }
-  }
-
   body.case-study {
     .post-logo {
       max-width: 150px;
