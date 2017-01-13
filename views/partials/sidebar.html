@@ -1,5 +1,5 @@
 <amp-sidebar id='sidebar' side='{% if doc.locale.is_rtl %}left{% else %}right{% endif %}' layout='nodisplay'>
-  <form class="menu-layer-1">
+  <form class="menu-layer-1" action="/" target="_top">
     <button type="reset" class="close-button" id="menu-button" on='tap:sidebar.toggle'></button>
     <div class="menu-layer-1-items">
     {% for entry in menu %}
@@ -51,8 +51,7 @@
         <a class="menu-item item-layer-1{% if entry.href.startswith('http') %} external{% endif %}" href="{% if entry.href.startswith('http') %}{{ entry.get('href') }}{% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(entry.get('copy'))}}</a>
       {% endif %}
     {% endfor %}
-
-    {% include "/views/partials/lang_switcher.html" %}
     </div>
+    {% include "/views/partials/lang_switcher.html" %}
   </form>
 </amp-sidebar>
