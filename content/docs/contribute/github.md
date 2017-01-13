@@ -1,5 +1,5 @@
 ---
 $title: GitHub
-$order: 1
+$order: 3
 goto: https://github.com/ampproject/amphtml
 ---

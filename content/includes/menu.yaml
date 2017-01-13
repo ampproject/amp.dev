@@ -12,13 +12,13 @@ menu:
   - href: /content/docs/get_started/create.md
     copy@: Build
     collection: docs
-    children:
+    children: #update these links to index pages
       - href: /content/docs/get_started/create.md
         copy@: "Getting started"
       - href: /content/docs/get_started/create.md
         copy@: "Tutorials"
         collection: docs/get_started
-      - href: /content/docs/guides/responsive_amp.md
+      - href: /content/docs/guides/author_develop/responsive_amp.md
         copy@: "Guides"
         collection: docs/guides
       - href: /content/docs/reference/components.md

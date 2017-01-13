@@ -1,6 +1,6 @@
 ---
 $title: How to Contribute
-$order: 1
+$order: 0
 $path: /contribute/
 $localization:
   path: /{locale}/{base}/

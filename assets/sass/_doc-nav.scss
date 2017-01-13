@@ -54,6 +54,10 @@
       background: $gradient-med-faded;
     }
 
+    &.current {
+      background: $gradient-med-faded;
+    }
+
     a {
       @include text-body();
       @extend .small;

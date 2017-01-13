@@ -1,6 +1,6 @@
 ---
 $title: Validate AMP Pages
-$order: 5
+$order: 0
 ---
 [TOC]
 

@@ -1,6 +1,6 @@
 ---
 $title: Configure Analytics
-$order: 6
+$order: 0
 ---
 
 ## Decide before you start

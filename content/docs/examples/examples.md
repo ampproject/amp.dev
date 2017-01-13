@@ -1,5 +1,5 @@
 ---
 $title: Examples
-$order: 1
+$order: 0
 goto: https://ampbyexample.com/
 ---

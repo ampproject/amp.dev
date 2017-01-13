@@ -6,6 +6,9 @@
 {% elif usedDoc.collection.parent.parent.build_root %}
   {% set secondaryCollection = usedDoc.collection.parent %}
   {% set navCollection = usedDoc.collection %}
+{% elif usedDoc.collection.parent.parent.parent.build_root %}
+  {% set secondaryCollection = usedDoc.collection.parent.parent %}
+  {% set navCollection = usedDoc.collection.parent %}
 {% endif %}
 
 {% macro render_item(item, class) -%}
