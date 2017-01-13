@@ -1,24 +1,35 @@
 <amp-sidebar id='sidebar' side='{% if doc.locale.is_rtl %}left{% else %}right{% endif %}' layout='nodisplay'>
-  <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'></button>
-  <nav>
-    {% include "/views/partials/lang_switcher.html" %}
-    <amp-accordion>
-    {% for entry in menu %}
-      <section {% if doc.pod_path.split('/')[2] == entry.collection %}expanded class="active"{% endif %}>
-        <h2 class="heading">{{_(entry.get('copy'))}}</h2>
-        <ul>
-        {% if entry.children %}
-          <!-- TODO: Insert correct menu here -->
-        {% include "/views/partials/nav.html" %}
-        {% else %}
-        {% set menuCollection = g.collection(entry.collection) %}
-        {% for item in menuCollection.docs(recursive=false, locale=doc.locale) %}
-          <li{% if item.goto %} class="external"{% endif %}><a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a></li>
-        {% endfor %}
-        {% endif %}
-        </ul>
-      </section>
-    {% endfor %}
-    </amp-accordion>
-  </nav>
+  <form class="menu-layer-1">
+    <button type="reset" class="close-button" id="menu-button" on='tap:sidebar.toggle'></button>
+    <label class="menu-item item-layer-1"><input type="checkbox">
+      This is the first menu item >
+      <div class="submenu menu-layer-2">
+        <div class="return-button"></div>
+        <label class="menu-item item-layer-2"><input type="checkbox"> This is the first menu item >
+          <div class="submenu menu-layer-3">
+            <div class="return-button"></div>
+            <a class="menu-item item-layer-3" href="google.com" target="_blank">link</a>
+          </div>
+        </label>
+        <a class="menu-item item-layer-2" href="google.com" target="_blank">link</a>
+      </div>
+    </label>
+    
+    <label class="menu-item item-layer-1"><input type="checkbox">
+      This is the second menu item >
+      <div class="submenu menu-layer-2">
+        <div class="return-button"></div>
+        <label class="menu-item item-layer-2"><input type="checkbox"> This is the first menu item >
+          <div class="submenu menu-layer-3">
+            <div class="return-button"></div>
+            <a class="menu-item item-layer-3" href="google.com" target="_blank">link</a>
+          </div>
+        </label>
+        <a class="menu-item item-layer-2" href="google.com" target="_blank">link</a>
+      </div>
+    </label>
+    <a class="menu-item item-layer-1" href="google.com" target="_blank">This is the third menu item ></a>
+  </form>
+
+  {% include "/views/partials/lang_switcher.html" %}
 </amp-sidebar>
