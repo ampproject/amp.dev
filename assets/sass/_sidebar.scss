@@ -71,17 +71,36 @@ amp-sidebar {
 
   .menu-layer-1 {
     position: relative;
-    padding-top: 60px;
+    height: 100%;
   }
 
-  .menu-layer-2,
-  .menu-layer-3 {
-    padding-top: 85px;
-
-    .close-button {
-      top: -85px;
-    }
+  .menu-layer-1-items,
+  .menu-layer-2-items,
+  .menu-layer-3-items {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
   }
+
+  .menu-layer-1-items {
+    top: 60px;
+  }
+
+  .menu-layer-2-items,
+  .menu-layer-3-items {
+    top: 85px;
+  }
+
+  // .menu-layer-2,
+  // .menu-layer-3 {
+  //   padding-top: 85px;
+
+  //   .close-button {
+  //     top: -85px;
+  //   }
+  // }
 
   .has-sub-level {
     &::after {
@@ -100,10 +119,10 @@ amp-sidebar {
   }
 
   .close-button {
-    position: relative;
+    position: absolute;
     float: right;
     right: 13px;
-    top: -60px;
+    top: 0;
     width: 68px;
     height: 58px;
 
