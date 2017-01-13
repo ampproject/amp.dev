@@ -2,7 +2,6 @@
 $title : Tips for Ads on AMP Pages
 $order : 1
 ---
-[TOC]
 
 ### Placement & Controls: <br /> Optimize your ad placements
 
