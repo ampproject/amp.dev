@@ -1,0 +1,22 @@
+<a class="card" href="{{doc.url.path}}">
+  <div class="card-inner">
+    <div class="card-meta">
+      <span class="card-type">{{doc.category}}</span>
+      <span class="card-date light">{{doc.date}}</span>
+    </div>
+    <div class="card-logo">
+      <amp-img alt="{{doc.title}}"
+        height="{{doc.logo.height}}"
+        layout="fixed"
+        noloading
+        src="/static/img/{{doc.logo.src}}"
+        width="{{doc.logo.width}}"></amp-img>
+    </div>
+    <div class="card-title">
+      <h4>{{doc.headline or doc.title}}</h4>
+    </div>
+    <div class="card-link">
+      <p>Read the Case Study</p>
+    </div>
+  </div>
+</a>

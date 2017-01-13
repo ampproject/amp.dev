@@ -1,9 +1,7 @@
 {% extends "/views/base.html" %}
 
 {% set navmarkup %}
-{% with flat=1,usedDoc=g.doc('/content/learn/case-studies.md') %}
-{% include "/views/partials/nav.html" %}
-{% endwith %}
+{% include "/views/partials/breadcrumb-nav.html" %}
 {% endset %}
 
 {% block nav %}
@@ -11,37 +9,66 @@
 {% endblock %}
 
 {% block main %}
-  <div class="container main">
-    {{ navmarkup|safe }}
-    <div class="content">
-      <article class="post">
+  <div class="post-detail-block">
+    <div class="container main">
+      {{ navmarkup|safe }}
+      <div class="content">
+        <article class="post">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="post-date">{{doc.date}}</span>
+            </div>
+            {% if doc.logo %}
+              <amp-img layout="responsive"
+                  src="/static/img/{{doc.logo.src}}"
+                  width="{{doc.logo.width}}"
+                  height="{{doc.logo.height}}"
+                  class="post-logo"></amp-img>
+            {% endif %}
+            <h1 class="post-title">{{ doc.headline or doc.title }}</h1>
+          </div>
 
-        {% if doc.logo %}
-        <div class="logos">
-          <amp-img layout="flex-item" src="/static/img/logo-blue.svg" width="66" height="28"></amp-img>
-          <span>+</span>
-          <amp-img layout="flex-item" src="/static/img/{{doc.logo.src}}" width="{{doc.logo.width}}" height="{{doc.logo.height}}"></amp-img>
-        </div>
-        {% endif %}
-
-        <h1 class="post-title">{{ doc.headline or doc.title }}</h1>
-
-        <div class="post-content">
           {% if doc.results %}
-          <div class="results">
-          {% for result in doc.results %}
-              <div><strong>{{result.stat}}</strong>{{result.description}}</div>
-          {% endfor %}
+          <div class="post-results">
+            {% for result in doc.results %}
+            <div class="result">
+              <p class="result-stat">{{result.stat}}</p>
+              <p class="result-description">{{result.description}}</p>
+            </div>
+            {% endfor %}
           </div>
           {% endif %}
-          {{doc.html|render|safe}}
 
-          {% if doc.download %}
-          <p><a class="button" href="/static/img/{{doc.download}}">Download PDF Case study</a></p>
-          {% endif %}
+          <div class="post-sheet">
+            <div class="post-content">
+              {{doc.html|render|safe}}
+
+              {% if doc.download %}
+              <div class="post-download">
+                <a class="underlined cta" href="/static/img/{{doc.download}}">Download PDF Case study</a>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+
+        {% if doc.prev() %}
+        <div class="post-footer">
+          <h2>Previous Posts</h2>
+          <div class="card-container case">
+            {% with doc = doc.prev() %}
+              {% include "/views/partials/case-study-card.html" %}
+            {% endwith %}
+
+            {% if doc.prev().prev() %}
+              {% with doc = doc.prev().prev() %}
+                {% include "/views/partials/case-study-card.html" %}
+              {% endwith %}
+            {% endif %}
+          </div>
         </div>
-
-      </article>
+        {% endif %}
+      </div>
     </div>
   </div>
 

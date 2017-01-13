@@ -3,8 +3,10 @@ $order: 3
 $title: Slate
 $date: October 7, 2016
 $category: Publishers
+$parent: /content/learn/case-studies.html
+class: case-study post-detail
+
 headline: Slate gets efficient with AMP
-class: case-study
 thumb: "case-studies/slate_thumb.jpg"
 featured: "case-studies/slate_framed.png"
 description: "Slate.com, the current affairs magazine covering news, politics, technology, and culture, began publishing Accelerated Mobile Pages (AMP) at the beginning of this year. Slate consistently strives to create a great overall user experience and the decision to implement AMP was a straightforward one."
@@ -28,13 +30,13 @@ download: "case-studies/slate.pdf"
 
 Slate.com, the current affairs magazine covering news, politics, technology, and culture, began publishing Accelerated Mobile Pages (AMP) at the beginning of this year. Slate consistently strives to create a great overall user experience and the decision to implement AMP was a straightforward one.
 
-## Solution
+#### Solution
 
 > “We saw AMP as a way to improve how mobile users experience Slate”
 
 “We saw AMP as a way to improve how mobile users experience Slate, since the initial implementations by other publishers showed how fast the experience actually was. It was also encouraging that Google was collaborating with multiple publishers to build AMP -- that signaled an investment by the publishing community to ensure the success of the format,” said Chris Schieffer, Senior Product Manager at Slate.com. The online magazine created AMP pages for 60% of its content and is ramping up to 100% later this month.
 
-## Results
+#### Results
 
 <div class="img-left">
     <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/slate_framed2.png"></amp-img>

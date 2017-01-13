@@ -31,31 +31,12 @@
 
           {{doc.html|render|safe}}
 
-          <div class="card-container">
+          <div class="card-container case">
           {% for item in g.collection('/content/learn/case-studies').docs(recursive=false, locale=doc.locale)|reverse %}
             {% if doc.title == 'Case Studies' or doc.title == item.category %}
-              <a class="card" href="{{item.url.path}}">
-                <div class="card-inner">
-                  <div class="card-meta">
-                    <span class="card-type">{{item.category}}</span>
-                    <span class="card-date light">{{item.date}}</span>
-                  </div>
-                  <div class="card-logo">
-                    <amp-img alt="{{item.title}}"
-                      height="{{item.logo.height}}"
-                      layout="fixed"
-                      noloading
-                      src="/static/img/{{item.logo.src}}"
-                      width="{{item.logo.width}}"></amp-img>
-                  </div>
-                  <div class="card-title">
-                    <h4>{{item.headline or item.title}}</h4>
-                  </div>
-                  <div class="card-link">
-                    <p>Read the Case Study</p>
-                  </div>
-                </div>
-              </a>
+              {% with doc = item %}
+                {% include "/views/partials/case-study-card.html" %}
+              {% endwith %}
             {% endif %}
           {% endfor %}
           </div>

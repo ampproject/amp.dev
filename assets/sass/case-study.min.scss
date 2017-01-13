@@ -1,6 +1,7 @@
 @import '_config.scss';
 @import '_mixins.scss';
 @import '_responsive.scss';
+@import '_animations.scss';
 
 @import '_sprite.scss';
 
@@ -23,3 +24,4 @@
 @import '_footer.scss';
 
 @import 'pages/case-study.scss';
+@import 'pages/_post-detail.scss';
