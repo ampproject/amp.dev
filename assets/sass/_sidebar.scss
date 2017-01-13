@@ -32,7 +32,7 @@ amp-sidebar {
   }
 
   .item-layer-1 {
-    padding: 30px 25px;
+    padding: 30px 35px 30px 25px;
     font-size: 35px;
     font-weight: 100;
     line-height: 44px;
@@ -40,7 +40,7 @@ amp-sidebar {
 
   .item-layer-2,
   .item-layer-3 {
-    padding: 15px 25px;
+    padding: 15px 35px 15px 25px;
     font-size: 18px;
     font-weight: 300;
     line-height: 26px;
@@ -75,23 +75,67 @@ amp-sidebar {
   .menu-layer-2,
   .menu-layer-3 {
     padding-top: 85px;
+
+    .close-button {
+      top: -85px;
+    }
   }
 
-  .return-button,
+  .has-sub-level {
+    &::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      right: 35px;
+      top: calc(50% - 6px);
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="5.8" height="10.53" viewBox="0 0 5.8 10.53"><defs><symbol id="a" data-name="New Symbol" viewBox="0 0 5.8 10.53"><path fill="none" stroke="#1c79c4" stroke-miterlimit="10" stroke-width=".75" d="M.27 10.27l5-5.1-5-4.9"/></symbol></defs><use width="5.8" height="10.53" xlink:href="#a" data-name="Layer 2"/></svg>');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      background-color: transparent;
+    }
+  }
+
   .close-button {
     position: relative;
     float: right;
-    right: 26px;
-    top: -42px;
-    width: 18px;
-    height: 18px;
-    background: $color-ampblue;
+    right: 13px;
+    top: -60px;
+    width: 68px;
+    height: 58px;
+
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15.71" height="15.71" viewBox="0 0 15.71 15.71"><defs><symbol id="a" data-name="New Symbol 1" viewBox="0 0 15.71 15.71"><path fill="none" stroke="#ccc" stroke-miterlimit="10" d="M15.35.35l-15 15M.43.43l14.85 14.85"/></symbol></defs><use width="15.71" height="15.71" xlink:href="#a" data-name="Layer 2"/></svg>');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+    background-color: transparent;
+    border: 0;
   }
 
   .return-button {
-    top: -57px;
-  }
-  .close-button {
-    top: -42px;
+    color: $color-grey-ltmd;
+    position: absolute;
+    left: 25px;
+    top: 22px;
+    @include text-label();
+    font-weight: 300;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: 1px;
+      width: 7px;
+      height: 11px;
+      margin-right: 5px;
+
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6.05" height="10.71" viewBox="0 0 6.05 10.71"><path fill="none" stroke="#ccc" stroke-miterlimit="10" d="M5.7.35L.71 5.44l4.99 4.91" data-name="Layer 1"/></svg>');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      background-color: transparent;
+      border: 0;
+    }
   }
 }
