@@ -45,3 +45,12 @@ menu:
   - href: /content/support/support.md
     copy@: Support
     collection: support
+    children:
+      - href: /content/support/faqs.md
+        copy@: "FAQs"
+        collection: support/faqs
+      - href: /content/support/platform.md
+        copy@: "Platform Support"
+      - href: /content/support/developer.md
+        copy@: "Developer Support"
+        collection: support/developer
