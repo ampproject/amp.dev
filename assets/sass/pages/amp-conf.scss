@@ -1,6 +1,5 @@
 @import '../_config.scss';
 @import '../_mixins.scss';
-@import '../_responsive.scss';
 
 .amp-conf {
 
@@ -246,8 +245,8 @@
         time {
             background: #eee;
             padding: 5px;
-            width: 33px;
             display: inline-block;
+            font-family: monospace;
         }
 
     }

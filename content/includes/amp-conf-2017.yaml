@@ -2,7 +2,7 @@ registration_link: https://events.withgoogle.com/amp-conf-2017/registrations/new
 agenda:
   day_1:
     - title: Registration and Breakfast
-      time: "0730"
+      time: "0800"
     - title: Morning Keynote
       time: "0900"
     - title: AMP in Production
@@ -43,7 +43,7 @@ agenda:
       time: "1730"
   day_2:
     - title: Breakfast
-      time: "0730"
+      time: "0800"
     - title: TBD
       time: "0900"
     - title: Delivery and Distribution
