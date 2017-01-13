@@ -11,9 +11,9 @@
   <amp-accordion>
     {% for question in section.questions %}
     <section>
-      <div class="accordion-header">
+      <header class="accordion-header">
         <h4 class="accordion-title">{{question.title}}</h4>
-      </div>
+      </header>
       <div class="accordion-content">
         {{question.answer|markdown|safe}}
       </div>

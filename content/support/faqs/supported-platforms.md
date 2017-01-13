@@ -29,10 +29,10 @@ A growing number of platforms, vendors, and partners support the AMP Project by 
   <amp-accordion>
   {% for section in who.tech_companies.sections %}
     <section id="{{section.title|slug}}" {% if loop.index == 1 %}expanded{% endif %}>
-      <div class="accordion-header">
+      <header class="accordion-header">
         <h4 class="accordion-title">{{section.title}}</h4>
         {% if section.description %}<p>{{section.description}}</p>{% endif %}
-      </div>
+      </header>
       <div class="accordion-content">
         <ol class="item-container">
         {% for item in section.section_items | sort %}
