@@ -17,16 +17,19 @@ menu:
         copy@: "Getting started"
       - href: /content/docs/get_started/create.md
         copy@: "Tutorials"
+        collection: docs/get_started
       - href: /content/docs/guides/responsive_amp.md
         copy@: "Guides"
         collection: docs/guides
       - href: /content/docs/reference/components.md
         copy@: "Reference"
         collection: docs/reference
-      - href: https://ampbyexample.com/
+      - href: /content/docs/examples/examples.md
         copy@: "Examples"
+        collection: docs/examples
       - href: /content/contribute/contribute.md
         copy@: "Contribute"
+        collection: contribute
   - href: /content/pages/latest.html
     copy@: The Latest
     collection: news

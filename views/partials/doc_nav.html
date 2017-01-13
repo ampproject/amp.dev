@@ -1,15 +1,19 @@
 {% set usedDoc = usedDoc or doc %}
 
-{% macro render_item(item) -%}
+{% if usedDoc.collection.parent.build_root %}
+  {% set shallow = true %}
+  {% set navCollection = usedDoc.collection %}
+{% else %}
+  {% set navCollection = usedDoc.parent.collection %}
+{% endif %}
+
+{% macro render_item(item, class) -%}
   {% set sub_collection = g.collection(item.collection.pod_path + '/' + item.base) %}
   {% set open = sub_collection.pod_path in usedDoc.pod_path[:-3] %}
-  {% if doc == item %}
-<li class="current">
-          <span>{{_(item.title)}}</span>
-  {% else %}
-<li>
-          <a href="{{item.goto or item.url.path}}"{% if item.goto %} class="external"{% endif %}>{{_(item.title)}}</a>
-  {% endif %}
+  <li class="{{class}} {% if sub_collection.exists %}expandable{% endif %}">
+    <h5 class="{% if doc == item %}current{% endif %} section-name">
+      <a href="{{item.goto or item.url.path}}"{% if item.goto %} class="external"{% endif %}>{{_(item.title)}}</a>
+    </h5>
   {% if open and sub_collection.exists %}
         {{ render_children(item, sub_collection.docs(locale=usedDoc.locale)) }}
   {% endif %}
@@ -19,30 +23,54 @@
 {% macro tag(item) -%}
   {{"ol" if item.numbered else "ul"}}
 {%- endmacro %}
+
 {% macro render_children(item, docs) -%}
   <{{tag(item)}}>
     {% for child in docs %}
-      {{render_item(child)}}
+      {{render_item(child, "sub-level")}}
     {% endfor %}
   </{{tag(item)}}>
 {%- endmacro %}
 
-
 <nav class="doc-sidebar">
   <div class="current-header">
     <div class="breadcrumbs">
-      <div class="breadcrumb light">Build</div>
-      <div class="breadcrumb light">Guides</div>
+      <div class="breadcrumb light">
+        {% if shallow %}
+          {{_(usedDoc.collection.parent.title)}}
+        {% else %}
+          {{_(usedDoc.collection.parent.parent.title)}}
+        {% endif %}
+      </div>
+      <div class="breadcrumb light">
+        {% if shallow %}
+          {{_(usedDoc.collection.title)}}
+        {% else %}
+          {{_(usedDoc.collection.parent.title)}}
+        {% endif %}
+      </div>
     </div>
-    <h1 class="title">Author/Develop</h1>
+    <h1 class="title">
+        {{_(usedDoc.collection.title)}}
+    </h1>
   </div>
 
   <div class="current-sections">
-    <amp-accordion>
-      <section class="top-level expandable">
+    <ul>
+      <li>
+        <ul>
+        {% for item in navCollection.docs(recursive=false, locale=doc.locale) %}
+          {{render_item(item, "top-level")}}
+        {% endfor %}
+        </ul>
+      </li>
+    </ul>
+
+    <ul style="margin-top:100px;">
+      <li class="top-level expandable">
         <h5 class="section-name">Styling & Layout</h5>
-        <amp-accordion class="section-content">
-          <section class="sub-level expandable">
+        <ul class="section-content">
+          <li class="sub-level expandable">
             <h5 class="section-name">Supported CSS</h5>
             <ul>
               <li>Disallowed styles</li>
@@ -50,38 +78,31 @@
               <li>The custom fonts exception</li>
               <li>Using CSS preprocessors</li>
             </ul>
-          </section>
-          <section class="sub-level">
+          </li>
+          <li class="sub-level">
             <h5 class="section-name">Layout & Media Queries</h5>
-            <div></div>
-          </section>
-          <section class="sub-level">
+          </li>
+          <li class="sub-level">
             <h5 class="section-name">Placeholders & Fallbacks</h5>
-            <div></div>
-          </section>
-          <section class="sub-level">
+          </li>
+          <li class="sub-level">
             <h5 class="section-name">Art direction with srcset, sizes & heights</h5>
-            <div></div>
-          </section>
-          <section class="sub-level">
+          </li>
+          <li class="sub-level">
             <h5 class="section-name">Custom Fonts</h5>
-            <div></div>
-          </section>
-        </amp-accordion>
-      </section>
-      <section class="top-level">
+          </li>
+        </ul>
+      </li>
+      <li class="top-level">
         <h5 class="section-name">Include Media & Iframes</h5>
-        <div></div>
-      </section>
-      <section class="top-level">
+      </li>
+      <li class="top-level">
         <h5 class="section-name">Include Third-Party Content</h5>
-        <div></div>
-      </section>
-      <section class="top-level">
+      </li>
+      <li class="top-level">
         <h5 class="section-name">Ads on your AMP pages</h5>
-        <div></div>
-      </section>
-    </amp-accordion>
+      </li>
+    </ul>
   </div>
 
   <div class="navigation">
