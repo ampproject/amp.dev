@@ -10,7 +10,7 @@
         "title": "Open Source Governance",
         "order": 4,
         "from": "GOVERNANCE.md",
-        "to": "contribute/governance.md"
+        "to": "docs/contribute/governance.md"
     },
     {
         "title": "AMP HTML Specification",

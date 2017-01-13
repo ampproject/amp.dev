@@ -27,9 +27,9 @@ menu:
       - href: /content/docs/examples/examples.md
         copy@: "Examples"
         collection: docs/examples
-      - href: /content/contribute/contribute.md
+      - href: /content/docs/contribute/contribute.md
         copy@: "Contribute"
-        collection: contribute
+        collection: docs/contribute
   - href: /content/pages/latest.html
     copy@: The Latest
     collection: news

@@ -1,10 +1,11 @@
 {% set usedDoc = usedDoc or doc %}
 
 {% if usedDoc.collection.parent.build_root %}
-  {% set shallow = true %}
+  {% set secondaryCollection = usedDoc.collection %}
   {% set navCollection = usedDoc.collection %}
-{% else %}
-  {% set navCollection = usedDoc.parent.collection %}
+{% elif usedDoc.collection.parent.parent.build_root %}
+  {% set secondaryCollection = usedDoc.collection.parent %}
+  {% set navCollection = usedDoc.collection %}
 {% endif %}
 
 {% macro render_item(item, class) -%}
@@ -36,22 +37,14 @@
   <div class="current-header">
     <div class="breadcrumbs">
       <div class="breadcrumb light">
-        {% if shallow %}
-          {{_(usedDoc.collection.parent.title)}}
-        {% else %}
-          {{_(usedDoc.collection.parent.parent.title)}}
-        {% endif %}
+        {{_(g.collection('docs').title)}}
       </div>
       <div class="breadcrumb light">
-        {% if shallow %}
-          {{_(usedDoc.collection.title)}}
-        {% else %}
-          {{_(usedDoc.collection.parent.title)}}
-        {% endif %}
+        {{_(secondaryCollection.title)}}
       </div>
     </div>
     <h1 class="title">
-        {{_(usedDoc.collection.title)}}
+        {{_(navCollection.title)}}
     </h1>
   </div>
 
@@ -66,7 +59,7 @@
       </li>
     </ul>
 
-    <ul style="margin-top:100px;">
+<!--     <ul style="margin-top:100px;">
       <li class="top-level expandable">
         <h5 class="section-name">Styling & Layout</h5>
         <ul class="section-content">
@@ -103,7 +96,7 @@
         <h5 class="section-name">Ads on your AMP pages</h5>
       </li>
     </ul>
-  </div>
+ -->  </div>
 
   <div class="navigation">
     <a href="#" class="previous">

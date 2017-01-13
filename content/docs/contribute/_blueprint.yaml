@@ -1,0 +1,5 @@
+$title@: Contribute
+$path: /docs/contribute/{base}/
+$view: /views/doc.html
+$localization:
+  path: /{locale}/docs/contribute/{base}/

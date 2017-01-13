@@ -86,7 +86,7 @@
         transform: translateY(-50%);
       }
 
-      &[expanded] > .section-name::after {
+      .section-name.current::after {
         transform: translateY(-50%) rotate(180deg);
       }
     }
@@ -109,7 +109,7 @@
         transform: translateY(-50%);
       }
 
-      &[expanded] > .section-name {
+      .section-name.current {
         color: $color-ampblue;
 
         &::after {
