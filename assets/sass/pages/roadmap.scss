@@ -1,3 +1,6 @@
+@import '../_config.scss';
+@import '../_mixins.scss';
+
 @mixin roadmap-stage($color, $number) {
 
   border-left: 3px solid $color;
