@@ -1,0 +1,92 @@
+@mixin line-animation(
+    $start-time,
+    $grow-time,
+    $hold-time,
+    $erase-time,
+    $total-time,
+    $color,
+    $length,
+    $name
+  ) {
+
+  @keyframes line-#{$name}-after {
+    0% {
+      transform: scaleX(0);
+    }
+
+    #{$start-time / $total-time * 100%} {
+      transform: scaleX(0);
+    }
+
+    #{($start-time + $grow-time) / $total-time * 100%} {
+      transform: scaleX(1);
+    }
+
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes line-#{$name}-div {
+    0% {
+      width: $length;
+    }
+
+    #{($start-time + $grow-time + $hold-time) / $total-time * 100%} {
+      width: $length;
+    }
+
+    #{($start-time + $grow-time + $hold-time + $erase-time) / $total-time * 100%} {
+      width: 0;
+    }
+
+    100% {
+      width: 0;
+    }
+  }
+
+  .line-#{$name} {
+    animation: $total-time infinite line-#{$name}-div;
+    width: $length;
+
+    &::before {
+      animation: $total-time infinite line-#{$name}-after;
+      background: $color;
+      width: $length;
+    }
+  }
+}
+
+.animated-lines {
+  position: relative;
+  height: 600px;
+  width: 800px;
+
+  .line {
+    position: relative;
+    overflow: hidden;
+    transform-origin: left;
+
+    &::before {
+      transform-origin: right;
+      display: block;
+      content: '';
+      height: 9px;
+    }
+  }
+
+  .rotated {
+    transform-origin: left;
+    transform: rotate(144deg);
+  }
+
+  @include line-animation(.2s, .5s, .5s, .3s, 4s, linear-gradient(to right, $color-ampblue, $color-brightblue, $color-lightblue), 1000px, name1)
+}
+
+#line-1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+}

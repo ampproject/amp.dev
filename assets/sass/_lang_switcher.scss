@@ -153,6 +153,62 @@ header .language {
   margin-right: 12px;
 }
 
+amp-sidebar {
+  div.language {
+    bottom: 15px;
+    left: 10px;
+    position: absolute;
+    top: unset;
+
+    section {
+      background: none;
+    }
+
+    .current {
+      margin-right: 0;
+      width: 140px;
+      text-align: left;
+      a {
+        color: $color-ampblue;
+      }
+      &::after {
+        background-color: $color-ampblue;
+      }
+    }
+
+    section[expanded] {
+      .current {
+        left: 0;
+      }
+    }
+
+    .others {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0;
+      transform: translateY(calc(-100% - 50px));
+
+      .others-inner {
+        width: 240px;
+        left: 0;
+        &::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        div {
+          width: 120px;
+          float: left;
+          a span {
+            color: $color-ampblue;
+          }
+        }
+      }
+    }
+  }
+}
+
 // amp-sidebar .language {
 
 //   width: auto;
