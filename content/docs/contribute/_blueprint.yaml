@@ -3,3 +3,13 @@ $path: /docs/contribute/{base}/
 $view: /views/doc.html
 $localization:
   path: /{locale}/docs/contribute/{base}/
+
+navigation:
+  prev:
+    section: true
+    title@: Examples
+    href: /content/docs/examples/examples.md
+  next:
+    section: true
+    title@: Guides
+    href: /content/docs/guides/author_develop/responsive_amp.md

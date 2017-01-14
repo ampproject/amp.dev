@@ -1,0 +1,15 @@
+$title@: Examples
+$path: /docs/examples/{base}/
+$view: /views/doc.html
+$localization:
+  path: /{locale}/docs/examples/{base}/
+
+navigation:
+  prev:
+    section: true
+    title@: Reference
+    href: /content/docs/reference/components.md
+  next:
+    section: true
+    title@: Contribute
+    href: /content/docs/contribute/contribute.md

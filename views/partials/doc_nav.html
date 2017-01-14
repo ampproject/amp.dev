@@ -102,15 +102,16 @@
  -->  </div>
 
   <div class="navigation">
-    <a href="#" class="previous">
+    <a href="{{g.doc(navCollection.navigation.prev.href).url.path}}" class="previous {% if navCollection.navigation.prev.section %} section {% endif %}">
       <div class="navigation-label">
-        <div class="title">Tutorials</div>
+        <div class="subtitle light">{{_(navCollection.navigation.prev.subtitle)}}</div>
+        <div class="title">{{_(navCollection.navigation.prev.title)}}</div>
       </div>
     </a>
-    <a href="#" class="next">
+    <a href="{{g.doc(navCollection.navigation.next.href).url.path}}" class="next {% if navCollection.navigation.next.section %} section {% endif %}">
       <div class="navigation-label">
-        <div class="subtitle light">Next Guide</div>
-        <div class="title">Debug</div>
+        <div class="subtitle light">{{_(navCollection.navigation.next.subtitle)}}</div>
+        <div class="title">{{_(navCollection.navigation.next.title)}}</div>
       </div>
     </a>
   </div>

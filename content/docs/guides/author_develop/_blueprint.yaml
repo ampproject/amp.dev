@@ -3,3 +3,13 @@ $path: /docs/guides/author-develop/{base}.html
 $localization:
   path: /{locale}/docs/guides/author-develop/{base}.html
 $view: /views/doc.html
+
+navigation:
+  prev:
+    title@: Tutorials
+    href: /content/docs/get_started/create.md
+    section: true
+  next:
+    subtitle@: Next Guide
+    title@: Debug
+    href: /content/docs/guides/debug/validate.md

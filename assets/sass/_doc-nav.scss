@@ -144,12 +144,18 @@
 
     .previous, .next {
       @include text-body();
+      background: white;
+      border-bottom: 3px solid $color-grey-lt;
+      border-top: 3px solid $color-grey-lt;
+      color: $color-black-95;
       display: flex;
       flex-direction: column;
       flex: 1 1 auto;
       justify-content: center;
+      min-height: 50px;
       padding: 15px 20px;
       position: relative;
+      width: 0;
 
       &::after {
         content: '';
@@ -157,34 +163,42 @@
         position: absolute;
         width: 20px;
       }
+
+      .subtitle {
+        color: $color-ampblue;
+        font-size: 12px;
+        margin: 0;
+      }
+
+      &.section {
+        background: $gradient-anglemed;
+        border: 0;
+        color: white;
+
+        &::after {
+          background: url(/static/img/arrow.svg) center/cover no-repeat;
+        }
+      }
     }
 
     .previous {
-      background: $gradient-anglemed;
-      color: white;
+      border-right: 3px solid $color-grey-lt;
       text-align: right;
+      padding-left: 50px;
 
       &::after {
-        background: url(/static/img/arrow.svg) center/cover no-repeat;
+        background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
         left: 20px;
         transform: rotate(180deg);
       }
     }
 
     .next {
-      border-bottom: 3px solid $color-grey-lt;
-      border-top: 3px solid $color-grey-lt;
-      color: $color-black-95;
+      padding-right: 50px;
 
       &::after {
         background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
         right: 20px;
-      }
-
-      .subtitle {
-        color: $color-ampblue;
-        font-size: 12px;
-        margin: 0;
       }
     }
   }
