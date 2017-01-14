@@ -3,3 +3,13 @@ $view: /views/doc.html
 $path: /docs/get_started/{base}.html
 $localization:
   path: /{locale}/docs/get_started/{base}.html
+
+navigation:
+  prev:
+    section: true
+    title@: Contribute
+    href: /content/docs/contribute/contribute.md
+  next:
+    section: true
+    title@: Guides
+    href: /content/docs/guides/author_develop/responsive_amp.md

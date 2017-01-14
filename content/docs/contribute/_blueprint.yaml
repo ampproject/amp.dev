@@ -11,5 +11,5 @@ navigation:
     href: /content/docs/examples/examples.md
   next:
     section: true
-    title@: Guides
-    href: /content/docs/guides/author_develop/responsive_amp.md
+    title@: Tutorials
+    href: /content/docs/get_started/create.md
