@@ -9,22 +9,22 @@ menu:
       - href: /content/learn/case-studies.html
         copy@: "Case Studies"
         collection: learn/case-studies
-  - href: /content/docs/get_started/create.md
+  - href: /content/docs/build.md
     copy@: Build
     collection: docs
     children: #update these links to index pages
       - href: /content/docs/get_started/create.md
         copy@: "Getting started"
-      - href: /content/docs/get_started/create.md
+      - href: /content/docs/tutorials.md
         copy@: "Tutorials"
         collection: docs/get_started
-      - href: /content/docs/guides/author_develop/responsive_amp.md
+      - href: /content/docs/guides.md
         copy@: "Guides"
         collection: docs/guides
-      - href: /content/docs/reference/components.md
+      - href: /content/docs/reference.md
         copy@: "Reference"
         collection: docs/reference
-      - href: /content/docs/examples/examples.md
+      - href: /content/docs/examples.md
         copy@: "Examples"
         collection: docs/examples
       - href: /content/docs/contribute/contribute.md
