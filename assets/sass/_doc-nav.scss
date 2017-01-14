@@ -3,6 +3,7 @@
   border-right: 3px solid $color-grey-lt;
   margin-left: -25px;
   min-width: 400px;
+  width: 400px;
   position: relative;
   z-index: 1;
 
@@ -140,7 +141,12 @@
   .navigation {
     display: flex;
     margin: 150px 0 0;
-    width: 100%;
+    width: 400px;
+
+    position: fixed;
+    border-right: 3px solid $color-grey-lt;
+    bottom: 0;
+    left: 0;
 
     .previous, .next {
       @include text-body();
@@ -228,4 +234,9 @@
       display: none;
     }
   }
+}
+
+.doc-footer {
+  border-left: 3px solid $color-grey-lt;
+  margin-left: 400px;
 }
