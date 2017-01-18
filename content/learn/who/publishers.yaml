@@ -52,6 +52,9 @@ why:
 
 case:
   title@: Publisher success stories
+  cases:
+    - filename: relay_media.md
+    - filename: slate.md
 
 cta:
   title@: Get Started Building

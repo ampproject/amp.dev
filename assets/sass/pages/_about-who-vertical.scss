@@ -112,6 +112,14 @@ body.about-who-vertical {
     h3 {
       text-align: center;
     }
+
+    .desktop .card {
+      flex: 0 0 calc(50% - 20px);
+    }
+
+    amp-carousel {
+      display: none;
+    }
   }
 
   @include max-screen($mobile-breakpoint) {
@@ -214,6 +222,32 @@ body.about-who-vertical {
 
       .reasons.desktop {
         display: none;
+      }
+    }
+
+    .case-study {
+      padding: 0 0 50px 0;
+    }
+  }
+
+  @include max-screen($tablet-portrait-breakpoint) {
+    .case-study {
+      .desktop {
+        display: none;
+      }
+
+      amp-carousel {
+        display: block;
+        width: 106%;
+        position: relative;
+        left: -3%;
+        .card-container {
+          padding: 0;
+          justify-content: center;
+        }
+        .card {
+          flex: 0 0 94%;
+        }
       }
     }
   }
