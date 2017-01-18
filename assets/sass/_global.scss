@@ -258,18 +258,21 @@ figure {
   max-width: $container-size;
   padding: 0 $grid-margin;
 
-  &.md {
+  &.sm {
     max-width: 800px;
   }
 
-  &.mdlg {
-    max-width: 920px;
+  &.md {
+    max-width: 925px;
   }
 
   &.lg {
-    max-width: 1440px;
+    max-width: 1200px;
   }
 
+  &.xl {
+    max-width: 1440px;
+  }
 }
 
 

@@ -11,9 +11,9 @@ class: list
 {% set lists = g.doc('/content/includes/lists.yaml', locale=doc.locale) %}
 {% set roadmaps = g.doc('/content/includes/list-roadmap.yaml', locale=doc.locale) %}
 
-<div class="container">
 {% include "/views/partials/breadcrumb-nav.html" %}
-  <div class="content sm">
+<div class="container sm">
+  <div class="content">
     <h1 class="title">{{_(lists.roadmap.title)}}</h1>
     <section class="post-list">
       {% for post in roadmaps.roadmaps %}

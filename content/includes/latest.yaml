@@ -11,7 +11,7 @@ feed:
   icon_audience: /static/img/latest/icon_audience.png
   icon_calendar: /static/img/latest/icon_calendar.png
   icon_location: /static/img/latest/icon_location.png
-  category_event@: Event
+  category_event@: Events
   category_roadmap@: Roadmap
   category_blog@: Blog
   more_posts@: See More

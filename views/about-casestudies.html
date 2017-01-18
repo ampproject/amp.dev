@@ -5,9 +5,9 @@
 {% endset %}
 
 {% block main %}
-  <div class="container">
-    {{ navmarkup|safe }}
-    <div class="content lg">
+  {{ navmarkup|safe }}
+  <div class="container lg">
+    <div class="content">
       <article class="post">
         <span class="post-tag">Case Studies</span>
         <h1 class="post-title">{{ doc.titles('page') or doc.title }}</h1>

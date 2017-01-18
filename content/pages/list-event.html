@@ -10,9 +10,9 @@ class: latest-events
 ---
 {% set events = g.doc('/content/includes/events.yaml', locale=doc.locale) %}
 
-<div class="container">
 {% include "/views/partials/breadcrumb-nav.html" %}
-  <div class="content sm">
+<div class="container sm">
+  <div class="content">
     <section class="hero">
       <amp-img
           noloading

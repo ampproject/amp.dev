@@ -13,9 +13,10 @@ components:
 ---
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
 {% set tweets = g.doc('/content/includes/tweets.yaml', locale=doc.locale) %}
-<div class="container">
+
 {% include "/views/partials/breadcrumb-nav.html" %}
-  <div class="content xlg">
+<div class="container lg">
+  <div class="content">
     <section class="hero">
       <div class="img-wrap">
         <div class="lines lines-back">
@@ -56,11 +57,11 @@ components:
       <div class="text">
         <div class="label">{{_(latest.hero.sub_title)}}</div>
         <h1 class="title">{{_(latest.hero.title)}}</h1>
-  <!--       <ul class="categories">
-          <li><a href="">{{_(latest.feed.category_event)}}</a></li>
-          <li><a href="">{{_(latest.feed.category_roadmap)}}</a></li>
-          <li><a href="">{{_(latest.feed.category_blog)}}</a></li>
-        </ul> -->
+        <ul class="inline-toc">
+          <li><a href="{{g.url('/content/pages/list-event.html', locale=doc.locale).path}}">{{_(latest.feed.category_event)}}</a></li>
+          <li><a href="{{g.url('/content/pages/list-roadmap.html', locale=doc.locale).path}}">{{_(latest.feed.category_roadmap)}}</a></li>
+          <li><a href="{{g.url('/content/pages/list-blog.html', locale=doc.locale).path}}">{{_(latest.feed.category_blog)}}</a></li>
+        </ul>
       </div>
       <section class="posts">
         <h2 class="posts-label">{{_(latest.feed.title)}}</h2>

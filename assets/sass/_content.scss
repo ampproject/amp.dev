@@ -1,6 +1,11 @@
 // page content
 
 .container {
+
+  h1.post-title {
+    margin-top: 0;
+  }
+
   .content {
     margin: 0 auto;
     min-width: 0;
@@ -18,22 +23,6 @@
 
     /* Adds a hyphen where the word breaks, if supported (No Blink) */
     hyphens: auto;
-
-    &.sm {
-      max-width: 800px;
-    }
-
-    &.md {
-      max-width: 925px;
-    }
-
-    &.lg {
-      max-width: 1200px;
-    }
-
-    &.xlg {
-      max-width: 1440px;
-    }
   }
 }
 

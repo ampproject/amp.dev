@@ -2,7 +2,7 @@
 $title: Roadmap
 $order: 3
 class: roadmap post-detail
-$parent: /content/pages/latest.html
+$parent: /content/pages/list-roadmap.html
 $path: /{base}/
 $view: /views/base.html
 $localization:
@@ -10,9 +10,9 @@ $localization:
 ---
 {% set roadmap = g.doc('/content/includes/roadmap.yaml', locale=doc.locale) %}
 <div class="post-detail-block">
-  <div class="container">
   {% include "/views/partials/breadcrumb-nav.html" %}
-    <div class="content md">
+  <div class="container md">
+    <div class="content">
       <div class="post-meta">
         <p class="post-type">Roadmap</p>
         <span class="post-date">{{ roadmap.updated }}</span>
