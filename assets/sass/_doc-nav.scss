@@ -21,12 +21,12 @@
 
       &::after {
         content: '»';
-        margin-left: 5px;
+        margin: 0 3px;
       }
+    }
 
-      &:last-child::after {
-        display: none;
-      }
+    a:last-child .breadcrumb::after {
+      display: none;
     }
   }
 

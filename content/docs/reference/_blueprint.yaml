@@ -3,6 +3,7 @@ $path: /docs/reference/{base}.html
 $view: /views/doc.html
 $localization:
   path: /{locale}/docs/reference/{base}.html
+index_path: /content/docs/reference.md
 
 navigation:
   prev:

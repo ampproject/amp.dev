@@ -3,6 +3,7 @@ $view: /views/doc.html
 $path: /docs/get_started/{base}.html
 $localization:
   path: /{locale}/docs/get_started/{base}.html
+index_path: /content/docs/getting-started.md
 
 navigation:
   prev:
