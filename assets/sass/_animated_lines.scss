@@ -1,3 +1,6 @@
+$big-loop-time: 5.17s;
+$small-loop-time: 1s;
+
 @mixin line-animation(
     $grow-time,
     $hold-time,
@@ -8,7 +11,7 @@
     $name
   ) {
 
-  @keyframes line-#{$name}-after {
+  @keyframes l-#{$name}-b {
     0% {
       transform: scaleX(0);
     }
@@ -22,7 +25,7 @@
     }
   }
 
-  @keyframes line-#{$name}-div {
+  @keyframes l-#{$name} {
     0% {
       width: $length;
     }
@@ -41,11 +44,11 @@
   }
 
   .line-#{$name} {
-    animation: $total-time infinite line-#{$name}-div ease-in;
+    animation-name: l-#{$name};
     width: $length;
 
     &::before {
-      animation: $total-time infinite line-#{$name}-after ease-in;
+      animation-name: l-#{$name}-b;
       background: $color;
       width: $length;
     }
@@ -64,73 +67,121 @@
   }
 }
 
-.animated-lines {
+.animated-lines-big {
   position: relative;
   height: 500px;
   width: 1000px;
-  transform: rotate(90deg) scale(0.8);
+  transform: rotate(144deg) scale(.8);
   transform-origin: 250px 250px;
 
-  .line {
-    position: relative;
-    overflow: hidden;
-    transform-origin: left;
-
-    &::before {
-      transform-origin: right;
-      display: block;
-      content: '';
-      height: 9px;
-    }
+  .line,
+  .line::before {
+    animation-duration: $big-loop-time;
   }
 
-  @include line-animation(1s, 0s, 1s, 5.17s,
-      linear-gradient(to left, $color-white, $color-brightblue, $color-lightblue),
-      510px, a);
-
-  @include line-animation(.06s, 0s, .17s, 5.17s,
-      linear-gradient(to left, $color-brightblue, $color-ampblue),
-      90px, b);
-
-  @include line-animation(.17s, 0s, 1.08s, 5.17s,
-      linear-gradient(to left, $color-white, $color-brightblue, $color-lightblue),
-      450px, c);
-
-  @include line-animation(.09s, 0s, .16s, 5.17s,
-      $gradient-light, 120px, d);
-
-  @include line-animation(.08s, 0.11s, .19s, 5.17s,
-      $gradient-light, 300px, e);
-
-  @include line-animation(.07s, 1.05s, .2s, 5.17s,
-      linear-gradient(to left, $color-white, $color-brightblue, $color-lightblue),
-      250px, f);
-
-  @include line-animation(.07s, 0s, .19s, 5.17s,
-      $color-lightblue, 80px, g);
+  amp-img {
+    position: relative;
+    left: -21px;
+    top: 18px;
+  }
 }
+
+.animated-lines-small {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  transform: rotate(144deg) scale(.8);
+  transform-origin: 250px 250px;
+
+  .line,
+  .line::before {
+    animation-duration: $small-loop-time;
+  }
+}
+
+.line {
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.9, .01, .82, .5);
+  position: relative;
+  overflow: hidden;
+  transform-origin: left;
+
+  &::before {
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.89, .01, .15, 1);
+    transform-origin: right;
+    display: block;
+    content: '';
+    height: 9px;
+  }
+}
+
+@include line-animation(.7s, 0s, 1s, $big-loop-time,
+    linear-gradient(to left, $color-white, $color-brightblue, $color-lightblue),
+    510px, a);
+
+@include line-animation(.17s, 0s, .17s, $big-loop-time,
+    linear-gradient(to left, $color-brightblue, $color-ampblue),
+    120px, b);
+
+@include line-animation(.65s, 0s, 1.08s, $big-loop-time,
+    linear-gradient(to left, $color-white, $color-brightblue, $color-lightblue),
+    450px, c);
+
+@include line-animation(.22s, 0s, .26s, $big-loop-time,
+    $gradient-light, 120px, d);
+
+@include line-animation(.16s, 0.11s, .22s, $big-loop-time,
+    $gradient-light, 300px, e);
+
+@include line-animation(.1s, 1.05s, .2s, $big-loop-time,
+    linear-gradient(to left, $color-white, $color-brightblue, $color-lightblue),
+    250px, f);
+
+@include line-animation(.19s, 0s, .23s, $big-loop-time,
+    $color-lightblue, 80px, g);
+
+@include line-animation(.6s, 0s, .11s, $small-loop-time,
+    linear-gradient(to left, $color-white, $color-brightblue, $color-lightblue),
+    60px, h);
+
+@include line-animation(.6s, 0s, .15s, $small-loop-time,
+    $color-ampblue, 180px, i);
+
+@include line-animation(.17s, 0s, .17s, $small-loop-time,
+    linear-gradient(to left, $color-brightblue, $color-ampblue),
+    120px, j);
 
 .line-pos {
   position: absolute;
-  width: 1px;
-  height: 1px;
 }
 
-@include line-pos-delay(47, 12, -1050);
-@include line-pos-delay(198, 583, -5100);
-@include line-pos-delay(71, 96, -5090);
-@include line-pos-delay(98, 453, -4150);
-@include line-pos-delay(35, 0, -4120);
-@include line-pos-delay(56, 231, -4050);
-@include line-pos-delay(0, 225, -3160);
-@include line-pos-delay(279, 244, -3150);
-@include line-pos-delay(96, 451, -3120);
-@include line-pos-delay(146, 541, -3090);
-@include line-pos-delay(59, 234, -2150);
-@include line-pos-delay(102, 397, -2120);
-@include line-pos-delay(301, 326, -2100);
-@include line-pos-delay(150, 445, -1940);
-@include line-pos-delay(353, 738, -1130);
-@include line-pos-delay(277, 632, -1110);
-@include line-pos-delay(47, 12, -1010);
-@include line-pos-delay(73, 458, -950);
+@include line-pos-delay(306, 75, -1050);
+@include line-pos-delay(155, 101, -5100);
+@include line-pos-delay(282, 62, -5090);
+@include line-pos-delay(255, 559, -4150);
+@include line-pos-delay(318, 0, -4120);
+@include line-pos-delay(297, 268, -4050);
+@include line-pos-delay(353, 107, -3160);
+@include line-pos-delay(74, 0, -3150);
+@include line-pos-delay(257, 312, -3120);
+@include line-pos-delay(207, 435, -3090);
+@include line-pos-delay(294, 244, -2150);
+@include line-pos-delay(251, 401, -2120);
+@include line-pos-delay(52, 69, -2100);
+@include line-pos-delay(203, 164, -1940);
+@include line-pos-delay(0, 184, -1130);
+@include line-pos-delay(76, 553, -1110);
+@include line-pos-delay(306, 75, -1010);
+@include line-pos-delay(280, 322, -950);
+
+@include line-pos-delay(54, 106, 0);
+@include line-pos-delay(0, 20, 20);
+@include line-pos-delay(20, 0, 60);
+@include line-pos-delay(40, 46, 190);
+
+@include line-pos-delay(57, 32, 0);
+@include line-pos-delay(38, 0, 10);
+@include line-pos-delay(0, 38, 70);
+@include line-pos-delay(17, 98, 110);
+@include line-pos-delay(57, 151, 130);
