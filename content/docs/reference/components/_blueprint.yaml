@@ -3,3 +3,13 @@ $path: /docs/reference/components/{base}.html
 $localization:
   path: /{locale}/docs/reference/components/{base}.html
 $title@: AMP components
+
+navigation:
+  prev:
+    section: true
+    title@: Guides
+    href: /content/docs/guides/author_develop/responsive_amp.md
+  next:
+    subtitle@: Next Reference
+    title@: AMP HTML Specification
+    href: /content/docs/reference/spec.md

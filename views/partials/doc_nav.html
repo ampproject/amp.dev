@@ -101,8 +101,8 @@
     </ul>
  -->  </div>
 
-  {% if navCollection.navigation %}
   <div class="navigation">
+  {% if navCollection.navigation %}
     <a href="{{g.doc(navCollection.navigation.prev.href).url.path}}" class="previous {% if navCollection.navigation.prev.section %} section {% endif %}">
       <div class="navigation-label">
         <div class="subtitle light">{{_(navCollection.navigation.prev.subtitle)}}</div>
@@ -116,5 +116,7 @@
       </div>
     </a>
   </div>
-</nav>
+{% else %}
+  {{ navCollection.title }}
 {% endif %}
+</nav>
