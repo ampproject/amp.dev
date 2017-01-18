@@ -213,9 +213,24 @@
     border: none;
     border-bottom: 3px solid $color-grey-lt;
     margin: 0 -25px;
+    width: 100%;
+
+    .current-header {
+      background: white;
+      padding: 20px 30px;
+
+      .breadcrumb {
+        color: $color-grey-md;
+      }
+
+      h1 {
+        color: $color-black-95;
+        margin-bottom: 0;
+      }
+    }
 
     .current-sections {
-      padding: 15px 20px;
+      padding: 5px 20px 30px;
     }
 
     li.top-level {

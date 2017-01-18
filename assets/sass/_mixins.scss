@@ -54,6 +54,14 @@
   word-wrap: normal;
 }
 
+@mixin break() {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
 @mixin desaturate($amt) {
   filter: grayscale($amt);
 }

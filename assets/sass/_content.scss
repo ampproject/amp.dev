@@ -16,10 +16,10 @@
     min-width: 0;
     padding-bottom: 60px;
     padding-top: 70px;
-    transform: translate(0, 0);
+    // transform: translate(0, 0);
     transition: all .25s ease;
     word-break: break-word;
-    will-change: transform;
+    // will-change: transform;
 
     /* These are technically the same, but use both */
     overflow-wrap: break-word;
@@ -59,6 +59,7 @@
     flex-direction: column;
 
     .content {
+      max-width: 100%;
       padding-top: 70px;
     }
   }
