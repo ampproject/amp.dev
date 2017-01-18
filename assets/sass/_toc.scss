@@ -1,3 +1,30 @@
+.toc,
+.inline-toc {
+  ul,
+  ol {
+    list-style: none;
+    margin: 0 auto;
+  }
+
+  a {
+    position: relative;
+    text-transform: none;
+
+    &:hover,
+    &.active {
+      &::before {
+        background: $gradient-med;
+        bottom: -5px;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}
+
 .toc {
   @extend .desktop-up;
 
@@ -20,17 +47,12 @@
 
   ul,
   ol {
-    list-style: none;
-    margin: 0 auto;
-    // text-align: center;
-
     .main .content & {
       margin-left: 0;
     }
   }
 
   li {
-    // display: inline-block;
     margin: 15px 0;
 
     ul {
@@ -50,8 +72,6 @@
     @include break();
     color: $color-black-95;
     display: block;
-    position: relative;
-    text-transform: none;
 
     &:before {
       display: none;
@@ -60,16 +80,34 @@
     &:hover,
     &.active {
       color: $color-ampblue;
+    }
+  }
+}
 
-      &::before {
-        background: $gradient-med;
-        bottom: -5px;
-        content: '';
-        height: 1px;
-        left: 0;
-        position: absolute;
-        right: 0;
-      }
+.inline-toc {
+  margin: 50px 0;
+
+  ul,
+  ol {
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 25px;
+  }
+
+  a {
+    color: $color-grey-md;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 28px;
+    position: relative;
+    text-transform: none;
+
+    &:hover,
+    &.active {
+      color: $color-black-95;
     }
   }
 }
@@ -86,7 +124,8 @@
 }
 
 @include max-screen($mobile-breakpoint) {
-  .toc {
+  .toc,
+  .inline-toc {
     margin: 25px 0;
 
     ul,
@@ -97,15 +136,20 @@
 
     li {
       display: block;
-      // line-height: 16px;
       margin: 15px 20px;
       width: 100%;
     }
+  }
+
+  .inline-toc {
+    li {
+      line-height: 16px;
+    }
 
     a {
-      // color: $color-black-95;
-      // font-size: 16px;
-      // line-height: 26px;
+      color: $color-black-95;
+      font-size: 16px;
+      line-height: 26px;
     }
   }
 

@@ -1,35 +1,38 @@
 .bg-triangle-primary,
 .bg-triangle-secondary {
-  .wrap .container.main {
+  .wrap {
     overflow: hidden;
     position: relative;
 
     &::before {
       content: '';
       display: block;
-      height: 1200px;
+      height: 1400px;
       left: 0;
       position: absolute;
       top: 0;
       transform: skewY(36deg);
       transform-origin: top right;
       width: 100%;
+      z-index: -1;
     }
   }
 }
 
 .bg-triangle-primary {
-  .post-title {
+  .post-title,
+  nav.breadcrumb li,
+  nav.breadcrumb a {
     color: $color-white;
   }
 
-  .wrap .container.main::before {
+  .wrap::before {
     background: $gradient-med;
   }
 }
 
 .bg-triangle-secondary {
-  .wrap .container.main::before {
+  .wrap::before {
     background: $gradient-med-faded;
   }
 }

@@ -42,7 +42,7 @@ body.about-who {
       }
     }
 
-    .toc {
+    .inline-toc {
       display: none;
     }
   }
@@ -88,7 +88,7 @@ body.about-who {
     .hero {
       padding: 68px 0 40px 0;
 
-      .toc {
+      .inline-toc {
         display: block;
         margin-top: 250px;
       }
@@ -136,7 +136,7 @@ body.about-who {
 
   @include max-screen($tablet-portrait-breakpoint - 200px) {
     .hero {
-      .toc {
+      .inline-toc {
         margin-top: 450px;
       }
     }

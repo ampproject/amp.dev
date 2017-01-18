@@ -1,5 +1,32 @@
 // page content
 
+.container {
+
+  h1.post-title {
+    margin-top: 0;
+  }
+
+  .content {
+    margin: 0 auto;
+    min-width: 0;
+    padding: 100px 0;
+    transition: all .25s ease;
+    width: 100%;
+    word-break: break-word;
+
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    hyphens: auto;
+  }
+}
+
+// docs
 .main {
   align-items: stretch;
   display: flex;
@@ -11,47 +38,13 @@
   .content {
     flex-grow: 1;
     -webkit-flex-grow: 1;
-    margin: 0 auto;
     max-width: 2000px;
-    min-width: 0;
     padding-bottom: 60px;
     padding-top: 70px;
-    // transform: translate(0, 0);
-    transition: all .25s ease;
-    word-break: break-word;
-    // will-change: transform;
-
-    /* These are technically the same, but use both */
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-
-    /* Instead use this non-standard one: */
-    word-break: break-word;
-
-    /* Adds a hyphen where the word breaks, if supported (No Blink) */
-    hyphens: auto;
 
     ul,
     ol {
       margin-left: 40px;
-    }
-
-    &.lg,
-    &.md {
-      width: 100%;
-
-      ol,
-      ul {
-        margin-left: 0;
-      }
-    }
-
-    &.lg {
-      max-width: 1200px;
-    }
-
-    &.md {
-      max-width: 925px;
     }
   }
 
@@ -73,23 +66,14 @@
 }
 
 @include max-screen($mobile-breakpoint) {
-  .main {
-    flex-direction: column;
-
+  .container {
     .content {
       max-width: 100%;
-      padding-top: 70px;
+      padding: 70px 0;
     }
   }
-}
 
-@include min-screen($mobile-breakpoint) {
   .main {
-    .content {
-      &.md,
-      &.sm {
-        padding-top: 100px;
-      }
-    }
+    flex-direction: column;
   }
 }

@@ -4,14 +4,10 @@
 {% include "/views/partials/breadcrumb-nav.html" %}
 {% endset %}
 
-{% block nav %}
-  {{ navmarkup|safe }}
-{% endblock %}
-
 {% block main %}
-  <div class="container main">
-    {{ navmarkup|safe }}
-    <div class="content md">
+  {{ navmarkup|safe }}
+  <div class="container md">
+    <div class="content">
       <article class="post">
         <h1 class="post-title">{{ doc.title }}</h1>
         <div class="post-content">

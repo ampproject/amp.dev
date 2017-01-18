@@ -1,9 +1,13 @@
 {% extends "/views/base.html" %}
 
+{% set navmarkup %}
+{% include "/views/partials/breadcrumb-nav.html" %}
+{% endset %}
+
 {% block main %}
   <div class="about-who-block">
-    <div class="container lg">
-      {{ navmarkup|safe }}
+    {{ navmarkup|safe }}
+    <div class="container xl">
       <section class="hero">
         <amp-img class="icon"
             noloading

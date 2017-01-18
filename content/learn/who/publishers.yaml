@@ -1,13 +1,14 @@
 $title: AMP for publishers
 class: about-who-vertical
 $order: 1
+$parent: /content/learn/who-uses-amp.yaml
 
 components:
   - carousel
 
 hero:
   title@: Speed and distribution means stronger engagement
-  paragraph@: Because AMP pages load faster than typical pages, users can engage with your content faster than ever before. In fact, many publishers see increased engagement and retention metrics with AMP pages both in time on page and return visits. Additionally, because multiple platforms link to AMP pages, publishing once in the AMP format allows your content to be distributed across a broad network of providers. Join the hundreds of thousands of publishers that are distributing their speedy content with AMP. 
+  paragraph@: Because AMP pages load faster than typical pages, users can engage with your content faster than ever before. In fact, many publishers see increased engagement and retention metrics with AMP pages both in time on page and return visits. Additionally, because multiple platforms link to AMP pages, publishing once in the AMP format allows your content to be distributed across a broad network of providers. Join the hundreds of thousands of publishers that are distributing their speedy content with AMP.
   hero_img: publishers/hero_publishers.png
   triangle_img: hero_triangle.png
   hero_icon: publishers/hero_icon.svg

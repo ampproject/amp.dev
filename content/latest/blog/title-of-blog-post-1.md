@@ -10,6 +10,7 @@ excerpt: 'Today we are announcing a change to the domain scheme of the Google AM
 avatar: https://secure.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?d=identicon&r=g
 date_data: 2016-12-02T15:15:28+00:00
 $date: December 2, 2016
+$parent: /content/pages/list-blog.html
 ---
 
 <div class="amp-wp-article-content">
