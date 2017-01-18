@@ -1,35 +1,7 @@
-.toc,
-.inline-toc {
-  ul,
-  ol {
-    list-style: none;
-    margin: 0 auto;
-  }
-
-  a {
-    position: relative;
-    text-transform: none;
-
-    &:hover,
-    &.active {
-      &::before {
-        background: $gradient-med;
-        bottom: -5px;
-        content: '';
-        height: 1px;
-        left: 0;
-        position: absolute;
-        right: 0;
-      }
-    }
-  }
-}
-
 .toc {
   @extend .desktop-up;
-
-  background: white;
-  box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.075);
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .075);
+  background: $color-white;
   box-sizing: border-box;
   position: fixed;
   right: 0;
@@ -47,6 +19,9 @@
 
   ul,
   ol {
+    list-style: none;
+    margin: 0 auto;
+
     .main .content & {
       margin-left: 0;
     }
@@ -72,60 +47,32 @@
     @include break();
     color: $color-black-95;
     display: block;
+    position: relative;
+    text-transform: none;
 
-    &:before {
+    &::before {
       display: none;
     }
 
     &:hover,
     &.active {
       color: $color-ampblue;
+
+      &::before {
+        background: $gradient-med;
+        bottom: -5px;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 0;
+      }
     }
   }
-}
-
-.inline-toc {
-  margin: 50px 0;
-
-  ul,
-  ol {
-    text-align: center;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 25px;
-  }
-
-  a {
-    color: $color-grey-md;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 28px;
-    position: relative;
-    text-transform: none;
-
-    &:hover,
-    &.active {
-      color: $color-black-95;
-    }
-  }
-}
-
-// for jumplink target x-offset
-// will fail if target has: bg color,
-// repeating bg img, padding- or border-top
-:target::before {
-  content: '';
-  display: block;
-  height: 110px;
-  margin-top: -110px;
-  visibility: hidden;
 }
 
 @include max-screen($mobile-breakpoint) {
-  .toc,
-  .inline-toc {
+  .toc {
     margin: 25px 0;
 
     ul,
@@ -139,22 +86,5 @@
       margin: 15px 20px;
       width: 100%;
     }
-  }
-
-  .inline-toc {
-    li {
-      line-height: 16px;
-    }
-
-    a {
-      color: $color-black-95;
-      font-size: 16px;
-      line-height: 26px;
-    }
-  }
-
-  :target::before {
-    height: 70px;
-    margin-top: -70px;
   }
 }
