@@ -39,5 +39,24 @@
         }
       }
     }
+
+    .post-excerpt {
+      margin-top: 12px;
+    }
+
+    .post-meta {
+      @include text-label();
+      margin-bottom: 12px;
+
+      .time {
+        color: $color-grey-md;
+
+        &::before {
+          content: '|';
+          margin-left: .8em;
+          margin-right: 1.1em;
+        }
+      }
+    }
   }
 }

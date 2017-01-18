@@ -32,6 +32,23 @@
 
         </article>
       </div>
+
+      {% if doc.prev() %}
+        <div class="post-footer list">
+          <h2>Previous Posts</h2>
+          <div class="card-container grid case">
+            {% with post = doc.prev(), past = false, meta = true %}
+              {% include "/views/partials/post-item.html" %}
+            {% endwith %}
+
+            {% if doc.prev().prev() %}
+              {% with post = doc.prev().prev(), past = false, meta = true %}
+              {% include "/views/partials/post-item.html" %}
+            {% endwith %}
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
     </div>
   </div>
 {% include "/views/partials/footer.html" %}
