@@ -70,7 +70,7 @@ components:
             {% include "/views/partials/post-item.html" %}
           {% endwith %}
         {% endfor %}
-        <a class="feed-cta">{{_(latest.feed.more_posts)}}</a>
+        <a class="feed-cta underlined cta">{{_(latest.feed.more_posts)}}</a>
       </section>
 
       <section class="twitter">
@@ -109,7 +109,7 @@ components:
               <div class="tweet-date">{{tweet.date}}</div>
             </div>
           {% endfor %}
-          <a class="feed-cta" href="{{latest.twitter.follow_href}}" target="_blank">{{_(latest.twitter.follow_cta)}}</a>
+          <a class="feed-cta underlined cta" href="{{latest.twitter.follow_href}}" target="_blank">{{_(latest.twitter.follow_cta)}}</a>
         </div>
         <div class="mobile-feed">
           <amp-carousel class="latest-carousel"
