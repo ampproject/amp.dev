@@ -1,6 +1,7 @@
 footer {
   background-color: $color-white;
   padding: 30px 0;
+  position: relative;
 
   a {
     line-height: 0;
@@ -30,6 +31,7 @@ footer {
   background: $gradient-bold;
   padding: 20px 30px;
   position: relative;
+  z-index: 1;
 
   .cta-line {
     position: absolute;

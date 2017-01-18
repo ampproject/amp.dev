@@ -1,7 +1,6 @@
 .toc {
-  @extend .desktop-up;
-  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .075);
   background: $color-white;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .075);
   box-sizing: border-box;
   position: fixed;
   right: 0;
@@ -67,24 +66,22 @@
         position: absolute;
         right: 0;
       }
+
+      code {
+        background: transparent;
+        color: $color-ampblue;
+      }
+    }
+
+    code {
+      border: 0;
+      padding: 0;
     }
   }
 }
 
-@include max-screen($mobile-breakpoint) {
+@include max-screen($tablet-breakpoint) {
   .toc {
-    margin: 25px 0;
-
-    ul,
-    ol {
-      border-left: 1px solid $color-brightblue;
-      text-align: left;
-    }
-
-    li {
-      display: block;
-      margin: 15px 20px;
-      width: 100%;
-    }
+    display: none;
   }
 }

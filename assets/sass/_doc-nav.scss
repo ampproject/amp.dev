@@ -2,8 +2,8 @@
   border-left: 3px solid $color-grey-lt;
   border-right: 3px solid $color-grey-lt;
   margin-left: -25px;
-  min-width: 400px;
-  width: 400px;
+  min-width: 350px;
+  width: 350px;
   position: relative;
   z-index: 1;
 
@@ -141,7 +141,7 @@
   .navigation {
     display: flex;
     margin: 150px 0 0;
-    width: 400px;
+    width: 350px;
 
     position: fixed;
     border-right: 3px solid $color-grey-lt;
@@ -253,5 +253,5 @@
 
 .doc-footer {
   border-left: 3px solid $color-grey-lt;
-  margin-left: 400px;
+  margin-left: 350px;
 }
