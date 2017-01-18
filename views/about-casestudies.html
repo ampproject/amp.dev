@@ -16,7 +16,7 @@
         <span class="post-tag">Case Studies</span>
         <h1 class="post-title">{{ doc.titles('page') or doc.title }}</h1>
         <div class="post-content">
-          <div class="toc">
+          <div class="inline-toc">
             <ul>
               <li>
                 <a href="{{g.url('/content/learn/case-studies.html', locale=doc.locale).path}}"{% if doc.title == 'Case Studies' %} class="active"{% endif %}>All</a>
