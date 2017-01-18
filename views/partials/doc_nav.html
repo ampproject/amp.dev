@@ -1,12 +1,12 @@
 {% set usedDoc = usedDoc or doc %}
 
-{% if usedDoc.collection.parent.build_root %}
+{% if usedDoc.collection and usedDoc.collection.parent.build_root %}
   {% set secondaryCollection = usedDoc.collection %}
   {% set navCollection = usedDoc.collection %}
-{% elif usedDoc.collection.parent.parent.build_root %}
+{% elif usedDoc.collection.parent and usedDoc.collection.parent.parent.build_root %}
   {% set secondaryCollection = usedDoc.collection.parent %}
   {% set navCollection = usedDoc.collection %}
-{% elif usedDoc.collection.parent.parent.parent.build_root %}
+{% elif usedDoc.collection.parent.parent and usedDoc.collection.parent.parent.parent.build_root %}
   {% set secondaryCollection = usedDoc.collection.parent.parent %}
   {% set navCollection = usedDoc.collection.parent %}
 {% endif %}
@@ -37,86 +37,48 @@
 {%- endmacro %}
 
 <nav class="doc-sidebar">
-  <div class="current-header">
-    <div class="breadcrumbs">
-      <div class="breadcrumb light">
-        {{_(g.collection('docs').title)}}
+  {% if secondaryCollection and navCollection %}
+    <div class="current-header">
+      <div class="breadcrumbs">
+        <div class="breadcrumb light">
+          {{_(g.collection('docs').title)}}
+        </div>
+        <div class="breadcrumb light">
+          {{_(secondaryCollection.title)}}
+        </div>
       </div>
-      <div class="breadcrumb light">
-        {{_(secondaryCollection.title)}}
-      </div>
+      <h1 class="title">
+          {{_(navCollection.title)}}
+      </h1>
     </div>
-    <h1 class="title">
-        {{_(navCollection.title)}}
-    </h1>
-  </div>
 
-  <div class="current-sections">
-    <ul>
-      <li>
-        <ul>
-        {% for item in navCollection.docs(recursive=false, locale=doc.locale) %}
-          {{render_item(item, "top-level")}}
-        {% endfor %}
-        </ul>
-      </li>
-    </ul>
+    <div class="current-sections">
+      <ul>
+        <li>
+          <ul>
+          {% for item in navCollection.docs(recursive=false, locale=doc.locale) %}
+            {{render_item(item, "top-level")}}
+          {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-<!--     <ul style="margin-top:100px;">
-      <li class="top-level expandable">
-        <h5 class="section-name">Styling & Layout</h5>
-        <ul class="section-content">
-          <li class="sub-level expandable">
-            <h5 class="section-name">Supported CSS</h5>
-            <ul>
-              <li>Disallowed styles</li>
-              <li>Restricted styles</li>
-              <li>The custom fonts exception</li>
-              <li>Using CSS preprocessors</li>
-            </ul>
-          </li>
-          <li class="sub-level">
-            <h5 class="section-name">Layout & Media Queries</h5>
-          </li>
-          <li class="sub-level">
-            <h5 class="section-name">Placeholders & Fallbacks</h5>
-          </li>
-          <li class="sub-level">
-            <h5 class="section-name">Art direction with srcset, sizes & heights</h5>
-          </li>
-          <li class="sub-level">
-            <h5 class="section-name">Custom Fonts</h5>
-          </li>
-        </ul>
-      </li>
-      <li class="top-level">
-        <h5 class="section-name">Include Media & Iframes</h5>
-      </li>
-      <li class="top-level">
-        <h5 class="section-name">Include Third-Party Content</h5>
-      </li>
-      <li class="top-level">
-        <h5 class="section-name">Ads on your AMP pages</h5>
-      </li>
-    </ul>
- -->  </div>
-
-  <div class="navigation">
-  {% if navCollection.navigation %}
-    <a href="{{g.doc(navCollection.navigation.prev.href).url.path}}" class="previous {% if navCollection.navigation.prev.section %} section {% endif %}">
-      <div class="navigation-label">
-        <div class="subtitle light">{{_(navCollection.navigation.prev.subtitle)}}</div>
-        <div class="title">{{_(navCollection.navigation.prev.title)}}</div>
-      </div>
-    </a>
-    <a href="{{g.doc(navCollection.navigation.next.href).url.path}}" class="next {% if navCollection.navigation.next.section %} section {% endif %}">
-      <div class="navigation-label">
-        <div class="subtitle light">{{_(navCollection.navigation.next.subtitle)}}</div>
-        <div class="title">{{_(navCollection.navigation.next.title)}}</div>
-      </div>
-    </a>
-  </div>
-{% else %}
-  {{ navCollection.title }}
+    <div class="navigation">
+    {% if navCollection.navigation %}
+      <a href="{{g.doc(navCollection.navigation.prev.href).url.path}}" class="previous {% if navCollection.navigation.prev.section %} section {% endif %}">
+        <div class="navigation-label">
+          <div class="subtitle light">{{_(navCollection.navigation.prev.subtitle)}}</div>
+          <div class="title">{{_(navCollection.navigation.prev.title)}}</div>
+        </div>
+      </a>
+      <a href="{{g.doc(navCollection.navigation.next.href).url.path}}" class="next {% if navCollection.navigation.next.section %} section {% endif %}">
+        <div class="navigation-label">
+          <div class="subtitle light">{{_(navCollection.navigation.next.subtitle)}}</div>
+          <div class="title">{{_(navCollection.navigation.next.title)}}</div>
+        </div>
+      </a>
+    </div>
+  {% endif %}
 {% endif %}
 </nav>
