@@ -72,6 +72,7 @@
   .card {
     display: flex;
     height: auto;
+    min-height: 400px;
     padding: 0;
 
     &:hover {
@@ -85,6 +86,7 @@
     display: flex;
     height: auto;
     padding: 15%;
+    width: 100%;
   }
 
   .card-title {

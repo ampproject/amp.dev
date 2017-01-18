@@ -5,5 +5,3 @@ $parent: /content/support/support.md
 $localization:
   path: /{locale}/support/{base}/
 ---
-
-- links to resources for distribution platforms

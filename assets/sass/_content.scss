@@ -35,6 +35,24 @@
     ol {
       margin-left: 40px;
     }
+
+    &.lg,
+    &.md {
+      width: 100%;
+
+      ol,
+      ul {
+        margin-left: 0;
+      }
+    }
+
+    &.lg {
+      max-width: 1200px;
+    }
+
+    &.md {
+      max-width: 925px;
+    }
   }
 
   amp-img,
@@ -61,6 +79,17 @@
     .content {
       max-width: 100%;
       padding-top: 70px;
+    }
+  }
+}
+
+@include min-screen($mobile-breakpoint) {
+  .main {
+    .content {
+      &.md,
+      &.sm {
+        padding-top: 100px;
+      }
     }
   }
 }

@@ -1,0 +1,35 @@
+.bg-triangle-primary,
+.bg-triangle-secondary {
+  .wrap .container.main {
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 1200px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: skewY(36deg);
+      transform-origin: top right;
+      width: 100%;
+    }
+  }
+}
+
+.bg-triangle-primary {
+  .post-title {
+    color: $color-white;
+  }
+
+  .wrap .container.main::before {
+    background: $gradient-med;
+  }
+}
+
+.bg-triangle-secondary {
+  .wrap .container.main::before {
+    background: $gradient-med-faded;
+  }
+}

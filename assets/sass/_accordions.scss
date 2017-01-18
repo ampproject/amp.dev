@@ -50,7 +50,7 @@ amp-accordion {
   }
 }
 
-@include max-screen($mobile-medium-breakpoint) {
+@include max-screen($mobile-breakpoint) {
   amp-accordion {
     section {
       border-bottom: 1px solid $color-grey-lt;

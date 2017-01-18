@@ -19,5 +19,3 @@ faq:
       answer: |
         Please review the [contributing guidelines](https://github.com/ampproject/amphtml/tree/master/3p#ads) and get in touch via [Github](https://github.com/ampproject/amphtml/issues/new).
 ---
-
-{% include "views/partials/faq-accordion.html" %}

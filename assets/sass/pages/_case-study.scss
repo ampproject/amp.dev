@@ -1,26 +1,8 @@
 // case-studies landing page
 .case-studies {
   .wrap .container.main::before {
-    background: $gradient-med-faded;
-    content: '';
-    display: block;
-    height: 1400px;
-    left: 0;
-    position: absolute;
-    top: 0;
     transform: skewY(-36deg);
     transform-origin: top left;
-    width: 100%;
-  }
-
-  .content {
-    max-width: 1200px;
-    padding-top: 110px;
-
-    ul,
-    ol {
-      margin-left: 0;
-    }
   }
 
   .post-title,
@@ -47,11 +29,6 @@
 
 // individual case study pages
 body.case-study {
-  .content {
-    max-width: 920px;
-    padding-top: 100px;
-  }
-
   .post-header,
   .post-footer {
     margin: 0 auto;
@@ -204,10 +181,6 @@ body.case-study {
 
 @include max-screen($mobile-breakpoint) {
   .case-studies {
-    .content {
-      padding-top: 70px;
-    }
-
     .post-title,
     .post-tag {
       text-align: left;

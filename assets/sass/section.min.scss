@@ -10,15 +10,15 @@
 @import '_content.scss';
 @import '_content-section.scss';
 @import '_nav.scss';
-@import '_grid.scss';
+// @import '_grid.scss';
 @import '_lang_switcher.scss';
 @import '_syntax_highlighting.scss';
-@import '_tables.scss';
+// @import '_tables.scss';
 @import '_callouts.scss';
 @import '_toc.scss';
 
 @import '_cards.scss';
-@import '_boxes.scss';
+// @import '_boxes.scss';
 @import '_accordions.scss';
 @import '_lightbox.scss';
 @import '_search.scss';
@@ -26,6 +26,6 @@
 @import '_footer.scss';
 
 // TODO: Make it so I can remove this here..
-@import 'pages/_case-study.scss';
 @import 'pages/_who.scss';
 @import 'pages/_faqs.scss';
+@import '_bg-triangle.scss';

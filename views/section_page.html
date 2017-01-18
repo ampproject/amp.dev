@@ -11,15 +11,15 @@
 {% block main %}
   <div class="container main">
     {{ navmarkup|safe }}
-    <div class="content">
+    <div class="content md">
       <article class="post">
-
         <h1 class="post-title">{{ doc.title }}</h1>
-
         <div class="post-content">
           {{doc.html|render|safe}}
+          {% if doc.faq %}
+            {% include "views/partials/faq-accordion.html" %}
+          {% endif %}
         </div>
-
       </article>
     </div>
   </div>

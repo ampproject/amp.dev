@@ -2,7 +2,7 @@
 $title: Advertisers
 $order: 4
 $parent: /content/learn/case-studies.html
-class: case-studies
+class: case-studies bg-triangle-secondary
 
 cta:
   title@: Create your first AMP page

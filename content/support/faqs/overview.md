@@ -54,4 +54,3 @@ faq:
 
 ---
 
-{% include "views/partials/faq-accordion.html" %}
