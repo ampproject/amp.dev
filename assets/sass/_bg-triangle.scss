@@ -1,6 +1,6 @@
 .bg-triangle-primary,
 .bg-triangle-secondary {
-  .wrap .container.main {
+  .wrap > .container {
     overflow: hidden;
     position: relative;
 
@@ -14,22 +14,25 @@
       transform: skewY(36deg);
       transform-origin: top right;
       width: 100%;
+      z-index: -1;
     }
   }
 }
 
 .bg-triangle-primary {
-  .post-title {
+  .post-title,
+  nav.breadcrumb li,
+  nav.breadcrumb a {
     color: $color-white;
   }
 
-  .wrap .container.main::before {
+  .wrap > .container::before {
     background: $gradient-med;
   }
 }
 
 .bg-triangle-secondary {
-  .wrap .container.main::before {
+  .wrap > .container::before {
     background: $gradient-med-faded;
   }
 }

@@ -1,6 +1,7 @@
 ---
-$title: The Latest Events
+$title: Events
 $path: /latest/event/
+$parent: /content/pages/latest.html
 
 $localization:
   path: /{locale}/latest/event/
@@ -8,46 +9,50 @@ $localization:
 class: latest-events
 ---
 {% set events = g.doc('/content/includes/events.yaml', locale=doc.locale) %}
-<div class="container md">
-  <section class="hero">
-    <amp-img
-        noloading
-        height=164
-        width=233
-        src="{{events.hero.hero_icon}}">
-    </amp-img>
-    <h1 class="title">{{_(events.hero.title)}}</h1>
-  </section>
-  <section class="upcoming">
-    <div class="label">{{_(events.upcoming.label)}}</div>
-    {% if events.upcoming_events is sequence %}
-      {% for post in events.upcoming_events %}
-        {% with past = false, meta = false %}
-          {% include "/views/partials/post-item.html" %}
-        {% endwith %}
-      {% endfor %}
-    {% else %}
-      <div class="no-upcoming">
-        <amp-img
-            noloading
-            height=62
-            width=62
-            src="{{events.upcoming.empty_icon}}">
-        </amp-img>
-        <h4 class="empty-label">{{_(events.upcoming.empty_title)}}</h4>
-        <p class="empty-text small">{{_(events.upcoming.empty_text)|safe}}</p>
-      </div>
-    {% endif %}
-  </section>
-  <section class="past">
-    <div class="label">{{_(events.past.label)}}</div>
-    {% for post in events.past_events %}
-      {% if loop.index <= 3 %}
-        {% with past = true, meta = false %}
-          {% include "/views/partials/post-item.html" %}
-        {% endwith %}
+
+<div class="container">
+{% include "/views/partials/breadcrumb-nav.html" %}
+  <div class="content sm">
+    <section class="hero">
+      <amp-img
+          noloading
+          height=164
+          width=233
+          src="{{events.hero.hero_icon}}">
+      </amp-img>
+      <h1 class="title">{{_(events.hero.title)}}</h1>
+    </section>
+    <section class="upcoming">
+      <div class="label">{{_(events.upcoming.label)}}</div>
+      {% if events.upcoming_events is sequence %}
+        {% for post in events.upcoming_events %}
+          {% with past = false, meta = false %}
+            {% include "/views/partials/post-item.html" %}
+          {% endwith %}
+        {% endfor %}
+      {% else %}
+        <div class="no-upcoming">
+          <amp-img
+              noloading
+              height=62
+              width=62
+              src="{{events.upcoming.empty_icon}}">
+          </amp-img>
+          <h4 class="empty-label">{{_(events.upcoming.empty_title)}}</h4>
+          <p class="empty-text small underlined">{{_(events.upcoming.empty_text)|safe}}</p>
+        </div>
       {% endif %}
-    {% endfor %}
-    <a class="more-past" href="{{g.doc('/content/pages/list-past-event.html').url.path}}">{{_(events.past.cta)}}</a>
-  </section>
+    </section>
+    <section class="past">
+      <div class="label">{{_(events.past.label)}}</div>
+      {% for post in events.past_events %}
+        {% if loop.index <= 3 %}
+          {% with past = true, meta = false %}
+            {% include "/views/partials/post-item.html" %}
+          {% endwith %}
+        {% endif %}
+      {% endfor %}
+      <a class="underlined" href="{{g.doc('/content/pages/list-past-event.html').url.path}}">{{_(events.past.cta)}}</a>
+    </section>
+  </div>
 </div>

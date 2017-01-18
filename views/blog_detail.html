@@ -2,8 +2,9 @@
 
 {% block main %}
   <div class="post-detail-block">
-    <div class="container mdlg">
-      <div class="content">
+    <div class="container">
+    {% include "/views/partials/breadcrumb-nav.html" %}
+      <div class="content md">
         <article class="post">
           <div class="post-meta">
             <a class="post-type" href="{{g.doc('/content/pages/list-' ~ doc.type|lower ~ '.html').url.path}}">{{ doc.type }}</a>

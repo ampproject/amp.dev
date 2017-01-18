@@ -1,14 +1,14 @@
 .latest {
-  .container {
-    padding: 0;
-  }
+  // .container {
+  //   padding: 0;
+  // }
 
   .content {
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   .hero {
-    padding: 110px 8.55% 0 8.55%;
+    padding: 0 8.55%;
     position: relative;
 
     .img-wrap {
@@ -285,7 +285,7 @@
 
   @include max-screen($tablet-breakpoint + 320px) {
     .hero {
-      padding: 90px 2.55% 0 2.55%;
+      padding: 0 2.55%;
 
       .img-wrap {
         .lines {
@@ -307,6 +307,10 @@
   }
 
   @include max-screen($mobile-breakpoint) {
+    .container, .content {
+      padding: 0;
+    }
+
     .hero {
       padding: 0;
 

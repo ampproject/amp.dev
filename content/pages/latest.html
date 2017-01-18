@@ -1,5 +1,7 @@
 ---
 $title: The Latest News
+$titles:
+  breadcrumb: The Latest
 $path: /{base}/
 
 $localization:
@@ -11,110 +13,81 @@ components:
 ---
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
 {% set tweets = g.doc('/content/includes/tweets.yaml', locale=doc.locale) %}
-<div class="container lg">
-  <section class="hero">
-    <div class="img-wrap">
-      <div class="lines lines-back">
-        <amp-img
-            noloading
-            height=571
-            width=571
-            layout=responsive
-            src="{{latest.hero.lines_back_img}}">
-        </amp-img>
+<div class="container">
+{% include "/views/partials/breadcrumb-nav.html" %}
+  <div class="content xlg">
+    <section class="hero">
+      <div class="img-wrap">
+        <div class="lines lines-back">
+          <amp-img
+              noloading
+              height=571
+              width=571
+              layout=responsive
+              src="{{latest.hero.lines_back_img}}">
+          </amp-img>
+        </div>
+        <div class="hero-image-background">
+          <amp-img
+              noloading
+              height=941
+              width=2401
+              layout=responsive
+              src="{{latest.hero.hero_img}}">
+          </amp-img>
+        </div>
+        <div class="lines lines-front">
+          <amp-img
+              noloading
+              height=571
+              width=571
+              layout=responsive
+              src="{{latest.hero.lines_front_img}}">
+          </amp-img>
+        </div>
+        <div class="text">
+          <div class="label">{{_(latest.hero.sub_title)}}</div>
+          <h1 class="title">{{_(latest.hero.title)}}</h1>
+        </div>
       </div>
-      <div class="hero-image-background">
-        <amp-img
-            noloading
-            height=941
-            width=2401
-            layout=responsive
-            src="{{latest.hero.hero_img}}">
-        </amp-img>
-      </div>
-      <div class="lines lines-front">
-        <amp-img
-            noloading
-            height=571
-            width=571
-            layout=responsive
-            src="{{latest.hero.lines_front_img}}">
-        </amp-img>
-      </div>
+    </section>
+
+    <div class="feeds">
       <div class="text">
         <div class="label">{{_(latest.hero.sub_title)}}</div>
         <h1 class="title">{{_(latest.hero.title)}}</h1>
-      </div> 
-    </div>
-  </section>
-
-  <div class="feeds">
-    <div class="text">
-      <div class="label">{{_(latest.hero.sub_title)}}</div>
-      <h1 class="title">{{_(latest.hero.title)}}</h1>
-<!--       <ul class="categories">
-        <li><a href="">{{_(latest.feed.category_event)}}</a></li>
-        <li><a href="">{{_(latest.feed.category_roadmap)}}</a></li>
-        <li><a href="">{{_(latest.feed.category_blog)}}</a></li>
-      </ul> -->
-    </div> 
-    <section class="posts">
-      <h2 class="posts-label">{{_(latest.feed.title)}}</h2>
-      {% for post in latest.feed.posts %}
-        {% with past = false, meta = true %}
-          {% include "/views/partials/post-item.html" %}
-        {% endwith %}
-      {% endfor %}
-      <a class="feed-cta">{{_(latest.feed.more_posts)}}</a>
-    </section>
-
-    <section class="twitter">
-      <h4 class="twitter-label">{{_(latest.twitter.title)}}</h4>
-      <div class="twitter-account">
-        <div class="twitter-icon">
-          <amp-img
-              noloading
-              height=35
-              width=45
-              src="{{latest.twitter.icon_twitter}}">
-          </amp-img>
-        </div>
-        <a class="main-account" href={{latest.twitter.account_href}}>@{{latest.twitter.account_id}}</a>
+  <!--       <ul class="categories">
+          <li><a href="">{{_(latest.feed.category_event)}}</a></li>
+          <li><a href="">{{_(latest.feed.category_roadmap)}}</a></li>
+          <li><a href="">{{_(latest.feed.category_blog)}}</a></li>
+        </ul> -->
       </div>
-      <div class="desktop-feed">
-        {% for tweet in tweets.tweets %}
-          <div class="tweet">
-            <div class="tweet-meta">
-              <span class="origin-name">{{tweet.origin_name}}</span>
-              <a class="origin-id" href="{{tweet.origin_href}}">@{{tweet.origin_id}}</a>
-              {% if tweet.retweet_id %}
-                <span class="retweet">
-                  <amp-img
-                      noloading
-                      height=10
-                      width=16
-                      src="{{latest.twitter.icon_retweet}}">
-                  </amp-img>
-                  by 
-                  <a class="retweet-id" href="{{tweet.retweet_href}}">@{{tweet.retweet_id}}</a>
-                </span>
-              {% endif %}
-            </div>
-            <p class="tweet-content">{{tweet.text|safe}}</p>
-            <div class="tweet-date">{{tweet.date}}</div>
-          </div>
+      <section class="posts">
+        <h2 class="posts-label">{{_(latest.feed.title)}}</h2>
+        {% for post in latest.feed.posts %}
+          {% with past = false, meta = true %}
+            {% include "/views/partials/post-item.html" %}
+          {% endwith %}
         {% endfor %}
-        <a class="feed-cta" href="{{latest.twitter.follow_href}}" target="_blank">{{_(latest.twitter.follow_cta)}}</a>
-      </div>
-      <div class="mobile-feed">
-        <amp-carousel class="latest-carousel"
-          height="350"
-          layout="flex-item"
-          type="slides">
+        <a class="feed-cta">{{_(latest.feed.more_posts)}}</a>
+      </section>
 
+      <section class="twitter">
+        <h4 class="twitter-label">{{_(latest.twitter.title)}}</h4>
+        <div class="twitter-account">
+          <div class="twitter-icon">
+            <amp-img
+                noloading
+                height=35
+                width=45
+                src="{{latest.twitter.icon_twitter}}">
+            </amp-img>
+          </div>
+          <a class="main-account" href={{latest.twitter.account_href}}>@{{latest.twitter.account_id}}</a>
+        </div>
+        <div class="desktop-feed">
           {% for tweet in tweets.tweets %}
-          <div class="card-container">
-            <div class="tweet card">
+            <div class="tweet">
               <div class="tweet-meta">
                 <span class="origin-name">{{tweet.origin_name}}</span>
                 <a class="origin-id" href="{{tweet.origin_href}}">@{{tweet.origin_id}}</a>
@@ -126,7 +99,7 @@ components:
                         width=16
                         src="{{latest.twitter.icon_retweet}}">
                     </amp-img>
-                    by 
+                    by
                     <a class="retweet-id" href="{{tweet.retweet_href}}">@{{tweet.retweet_id}}</a>
                   </span>
                 {% endif %}
@@ -134,10 +107,42 @@ components:
               <p class="tweet-content">{{tweet.text|safe}}</p>
               <div class="tweet-date">{{tweet.date}}</div>
             </div>
-          </div>
           {% endfor %}
-        </amp-carousel>
-      </div>
-    </section>
+          <a class="feed-cta" href="{{latest.twitter.follow_href}}" target="_blank">{{_(latest.twitter.follow_cta)}}</a>
+        </div>
+        <div class="mobile-feed">
+          <amp-carousel class="latest-carousel"
+            height="350"
+            layout="flex-item"
+            type="slides">
+
+            {% for tweet in tweets.tweets %}
+            <div class="card-container">
+              <div class="tweet card">
+                <div class="tweet-meta">
+                  <span class="origin-name">{{tweet.origin_name}}</span>
+                  <a class="origin-id" href="{{tweet.origin_href}}">@{{tweet.origin_id}}</a>
+                  {% if tweet.retweet_id %}
+                    <span class="retweet">
+                      <amp-img
+                          noloading
+                          height=10
+                          width=16
+                          src="{{latest.twitter.icon_retweet}}">
+                      </amp-img>
+                      by
+                      <a class="retweet-id" href="{{tweet.retweet_href}}">@{{tweet.retweet_id}}</a>
+                    </span>
+                  {% endif %}
+                </div>
+                <p class="tweet-content">{{tweet.text|safe}}</p>
+                <div class="tweet-date">{{tweet.date}}</div>
+              </div>
+            </div>
+            {% endfor %}
+          </amp-carousel>
+        </div>
+      </section>
+    </div>
   </div>
 </div>

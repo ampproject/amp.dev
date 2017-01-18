@@ -4,13 +4,9 @@
 {% include "/views/partials/breadcrumb-nav.html" %}
 {% endset %}
 
-{% block nav %}
-  {{ navmarkup|safe }}
-{% endblock %}
-
 {% block main %}
   <div class="post-detail-block">
-    <div class="container main">
+    <div class="container">
       {{ navmarkup|safe }}
       <div class="content md">
         <article class="post">

@@ -1,6 +1,6 @@
 // case-studies landing page
 .case-studies {
-  .wrap .container.main::before {
+  .wrap .container::before {
     transform: skewY(-36deg);
     transform-origin: top left;
   }

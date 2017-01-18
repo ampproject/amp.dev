@@ -1,22 +1,26 @@
 ---
 $title: Past Events
 $path: /latest/event/past-event
+$parent: /content/pages/list-event.html
 
 $localization:
   path: /{locale}/latest/event/past-event
 
-class: list list-past-event
+class: list
 ---
 {% set lists = g.doc('/content/includes/lists.yaml', locale=doc.locale) %}
 {% set events = g.doc('/content/includes/events.yaml', locale=doc.locale) %}
 
-<div class="container md">
-  <h1 class="title">{{_(lists.past_event.title)}}</h1>
-  <section class="post-list">
-    {% for post in events.past_events %}
-      {% with past = true, meta = false %}
-        {% include "/views/partials/post-item.html" %}
-      {% endwith %}
-    {% endfor %}
-  </section>
+<div class="container">
+{% include "/views/partials/breadcrumb-nav.html" %}
+  <div class="content sm">
+    <h1 class="title">{{_(lists.past_event.title)}}</h1>
+    <section class="post-list">
+      {% for post in events.past_events %}
+        {% with past = true, meta = false %}
+          {% include "/views/partials/post-item.html" %}
+        {% endwith %}
+      {% endfor %}
+    </section>
+  </div>
 </div>

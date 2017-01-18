@@ -53,6 +53,6 @@
     </div>
   {% endif %}
   {% if isEvent and not past %}
-    <a class="add-calendar" target="_blank" href="https://www.google.com/calendar/render?action=TEMPLATE&text={{post.title}}&dates={{post.event_time}}&details={{post.href}}&location={{post.location}}&sf=true&output=xml">{{_(latest.feed.add_to_calendar)}}</a>
+    <a class="underlined" target="_blank" href="https://www.google.com/calendar/render?action=TEMPLATE&text={{post.title}}&dates={{post.event_time}}&details={{post.href}}&location={{post.location}}&sf=true&output=xml">{{_(latest.feed.add_to_calendar)}}</a>
   {% endif %}
 </div>
