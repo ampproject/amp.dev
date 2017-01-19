@@ -144,10 +144,3 @@ amp-sidebar {
     }
   }
 }
-
-@include min-screen($mobile-breakpoint + 1) {
-  amp-sidebar.i-amphtml-element,
-  .-amp-sidebar-mask {
-    display: none;
-  }
-}
