@@ -1,8 +1,7 @@
 ---
 $title: Events
 $path: /latest/event/
-$parent: /content/pages/latest.html
-$view: /views/list_page.html
+$parent: /content/latest/latest.html
 
 $localization:
   path: /{locale}/latest/event/
@@ -50,5 +49,5 @@ class: latest-events
       {% endwith %}
     {% endif %}
   {% endfor %}
-  <a class="underlined cta" href="{{g.doc('/content/pages/list-past-event.html').url.path}}">{{_(events.past.cta)}}</a>
+  <a class="underlined cta" href="{{g.doc('/content/latest/list-past-event.html').url.path}}">{{_(events.past.cta)}}</a>
 </section>

@@ -1,6 +1,7 @@
 menu:
   - href: /content/learn/overview.html
     copy@: What is AMP?
+    collection: learn
     children:
       - href: /content/learn/overview.html
         copy@: "Overview"
@@ -12,7 +13,7 @@ menu:
   - href: /content/docs/build.md
     copy@: Build
     collection: docs
-    children: #update these links to index pages
+    children:
       - href: /content/docs/get_started/create.md
         copy@: "Getting started"
       - href: /content/docs/tutorials.md
@@ -30,17 +31,17 @@ menu:
       - href: /content/docs/contribute/contribute.md
         copy@: "Contribute"
         collection: docs/contribute
-  - href: /content/pages/latest.html
+  - href: /content/latest/latest.html
     copy@: The Latest
-    collection: news
+    collection: latest
     children:
-      - href: /content/pages/latest.html
+      - href: /content/latest/latest.html
         copy@: "What's Hot"
-      - href: /content/pages/list-blog.html
+      - href: /content/latest/list-blog.html
         copy@: "News"
-      - href: /content/pages/list-event.html
+      - href: /content/latest/list-event.html
         copy@: "Events"
-      - href: /content/news/roadmap.html
+      - href: /content/latest/roadmap.html
         copy@: "Roadmap"
   - href: /content/support/support.md
     copy@: Support

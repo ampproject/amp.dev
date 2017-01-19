@@ -5,7 +5,7 @@
 <div class="post-item">
   {% if meta %}
     <div class="post-meta">
-      <a class="type" href="{{g.doc('/content/pages/list-' ~ post.type|lower ~ '.html').url.path}}">{{post.type}}</a>
+      <a class="type" href="{{g.doc('/content/latest/list-' ~ post.type|lower ~ '.html').url.path}}">{{post.type}}</a>
       {% if not isEvent %}
         <span class="time">{{post.date}}</span>
       {% endif %}

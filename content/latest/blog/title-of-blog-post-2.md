@@ -10,6 +10,7 @@ excerpt: 'Today we are announcing a change to the domain scheme of the Google AM
 avatar: https://secure.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?d=identicon&r=g
 date_data: 2016-11-02T15:15:28+00:00
 $date: November 2, 2016
+$parent: /content/latest/list-blog.html
 ---
 
 <div class="amp-wp-article-content">
@@ -27,7 +28,7 @@ $date: November 2, 2016
 &lt;script type=”application/json”&gt;
 &nbsp; &nbsp; {
 &nbsp; &nbsp; &nbsp; recommendedLinksExperiment: {
-&nbsp; &nbsp; &nbsp; &nbsp; sticky: true, 
+&nbsp; &nbsp; &nbsp; &nbsp; sticky: true,
 &nbsp; &nbsp; &nbsp; &nbsp; variants: {
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; shorterList: 25.0,
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; longerList: 25.0,
