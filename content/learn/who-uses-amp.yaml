@@ -34,32 +34,26 @@ hero:
 cards:
   - name@: Publishers
     cta@: Learn More
-    link: #
     icon: card_publishers.svg
 
   - name@: e-Commerce
     cta@: Learn More
-    link: #
     icon: card_ecommerce.svg
 
   - name@: SMB
     cta@: Learn More
-    link: #
     icon: card_smb.svg
 
   - name@: Advertisers
     cta@: Learn More
-    link: #
     icon: card_advertisers.svg
 
   - name@: Designers
     cta@: Learn More
-    link: #
     icon: card_designers.svg
 
   - name@: Developers
     cta@: Learn More
-    link: #
     icon: card_developers.svg
 
 cta:

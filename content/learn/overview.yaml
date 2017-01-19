@@ -1,0 +1,87 @@
+$title: Overview
+$titles:
+  breadcrumb: What is AMP
+$order: 0
+class: about-overview
+$view: /views/about-overview.html
+
+hero:
+  title@: AMP provides a great user experience across many platforms
+  triangle_img: hero_triangle.svg
+  line_img: hero_line.svg
+  cards:
+    - title@: Near instantaneous loading
+      content@: The AMP format ensures that content loads quickly, prioritizing what’s likely to be seen by the user first.
+      link_text@: Learn More
+      link_href: #
+      icon: card_1.svg
+
+    - title@: Smooth scrolling and engagement
+      content@: By reducing and prioritizing a page’s scripts and calls, AMP pages won’t jump around while a user is viewing them, even when still loading.
+      link_text@: Learn More
+      link_href: #
+      icon: card_2.svg
+
+    - title@: Design and content flexibility
+      content@: Because an AMP page is just an HTML page, websites have complete control over an AMP page’s design, making their visual brand easily identifiable to users.
+      link_text@: Learn More
+      link_href: #
+      icon: card_3.svg
+
+how:
+  title@: How does AMP Work?
+  subtitle@: 'AMP is a way to build web pages for static content that render fast. AMP in action consists of three different parts:'
+  phone_img: phone.png
+  line_img: how_line.svg
+  points:
+    - title@: AMP HTML
+      content@: AMP HTML is basically HTML extended with custom AMP properties.
+    - title@: AMP JS
+      content@: The AMP JS library implements all of AMP's best performance practices, manages resource loading and gives you the custom tags mentioned above, all to ensure a fast rendering of your page.
+    - title@: AMP Cache
+      content@: The AMP Cache fetches AMP HTML pages, caches them, and improves page performance automatically. It also validates pages to ensure only proper AMP pages are displayed.
+
+who:
+  title@: Who is involved with AMP?
+  subtitle@: Hundreds of engaged contributors have made improvements to the project on Github. Leading analytics vendors, ad tech providers, and CMS systems support the AMP format
+  image: who.png
+  cta@: AMP on Github
+  cta_link: #
+
+systems:
+  title@: Leading analytics wendors, ad tech providers, and CMS systems support the AMP format
+  cta@: See all supported systems
+  cta_link: #
+  icons:
+    - icon: system_1.png
+      width: 332
+      height: 119
+    - icon: system_1.png
+      width: 332
+      height: 119
+    - icon: system_1.png
+      width: 332
+      height: 119
+    - icon: system_1.png
+      width: 332
+      height: 119
+    - icon: system_1.png
+      width: 332
+      height: 119
+    - icon: system_1.png
+      width: 332
+      height: 119
+    - icon: system_1.png
+      width: 332
+      height: 119
+    - icon: system_1.png
+      width: 332
+      height: 119
+    - icon: system_1.png
+      width: 332
+      height: 119
+
+cta:
+  title@: See what AMP can do for you
+  link_text@: Learn who uses AMP
+  link_url: #

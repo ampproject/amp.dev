@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="358.8" height="311.8" viewBox="0 0 358.8 311.8">
+  <defs>
+    <linearGradient id="linear-gradient" x1="4933.93" y1="1460.74" x2="5218.85" y2="1460.74" gradientTransform="matrix(0.99, 0.16, -0.16, 0.99, -4574.75, -2136.09)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.5" stop-color="#0dd6ff"/>
+      <stop offset="1" stop-color="#0dd6ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-12418.03" y1="18980.94" x2="-12133.11" y2="18980.94" gradientTransform="matrix(-0.99, -0.16, 0.16, -0.99, -14990.83, 17025.83)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c79c3"/>
+      <stop offset="0.5" stop-color="#0388ff"/>
+      <stop offset="1" stop-color="#0dd6ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="11530.54" y1="2689.7" x2="11745.15" y2="2689.7" gradientTransform="translate(-11442.98 -2494.39)" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>Asset 2</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g id="Layer_2-2" data-name="Layer 2">
+        <g id="Layer_1-2-2" data-name="Layer 1-2">
+          <g id="Layer_2-2-2" data-name="Layer 2-2">
+            <g id="Art">
+              <g>
+                <line x1="356.16" y1="3.65" x2="36.72" y2="234.18" style="fill: none;stroke-miterlimit: 10;stroke-width: 9px;stroke: url(#linear-gradient)"/>
+                <line x1="2.63" y1="308.15" x2="322.08" y2="77.61" style="fill: none;stroke-miterlimit: 10;stroke-width: 9px;stroke: url(#linear-gradient-2)"/>
+                <line x1="305.73" y1="119.8" x2="96.76" y2="270.83" style="fill: none;stroke-miterlimit: 10;stroke-width: 9px;stroke: url(#linear-gradient-3)"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
