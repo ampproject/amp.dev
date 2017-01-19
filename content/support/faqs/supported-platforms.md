@@ -1,10 +1,10 @@
 ---
-$title: Supported Platforms, Vendors and Partners
+$title@: Supported Platforms, Vendors and Partners
 $order: 3
 $parent: /content/support/faqs.md
 class: who
 
-description: The Accelerated Mobile Pages (AMP) Project is an open source initiative that makes it easy for publishers to create mobile-friendly content once and have it load instantly everywhere. – Accelerated Mobile Pages Project
+description@: The Accelerated Mobile Pages (AMP) Project is an open source initiative that makes it easy for publishers to create mobile-friendly content once and have it load instantly everywhere. – Accelerated Mobile Pages Project
 
 cta:
   title@: Next FAQ
@@ -12,17 +12,16 @@ cta:
   link_url: overview.html
 
 ---
-<div class="toc">
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
+
+<div class="inline-toc">
   <ul>
-    <li><a href="#distribution-platforms">Distribution Platforms</a></li>
-    <li><a href="#cms-providers">CMS Providers</a></li>
-    <li><a href="#ads-components">Ads Components</a></li>
-    <li><a href="#analytics-components">Analytics Components</a></li>
-    <li><a href="#audio-video-components">Audio/Video Components</a></li>
+    {% for section in who.tech_companies.sections %}
+      <li><a href="#{{section.title|slug}}">{{_(section.title)}}</a></li>
+    {% endfor %}
   </ul>
 </div>
 
-{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 A growing number of platforms, vendors, and partners support the AMP Project by providing custom components or offering integration with AMP pages within their platforms.
 
 <div class="who-container">
@@ -30,8 +29,8 @@ A growing number of platforms, vendors, and partners support the AMP Project by 
   {% for section in who.tech_companies.sections %}
     <section id="{{section.title|slug}}" {% if loop.index == 1 %}expanded{% endif %}>
       <header class="accordion-header">
-        <h4 class="accordion-title">{{section.title}}</h4>
-        {% if section.description %}<p>{{section.description}}</p>{% endif %}
+        <h4 class="accordion-title">{{_(section.title)}}</h4>
+        {% if section.description %}<p>{{_(section.description)}}</p>{% endif %}
       </header>
       <div class="accordion-content">
         <ol class="item-container">

@@ -1,5 +1,5 @@
 ---
-$title: Vendor Support
+$title@: Vendor Support
 $hidden: true
 $order: 3
 $parent: /content/support/support.md

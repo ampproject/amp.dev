@@ -9,17 +9,17 @@
   <div class="container lg">
     <div class="content">
       <article class="post">
-        <span class="post-tag">Case Studies</span>
-        <h1 class="post-title">{{ doc.titles('page') or doc.title }}</h1>
+        <span class="post-tag">{{_('Case Studies')}}</span>
+        <h1 class="post-title">{{ _(doc.titles('page')) or _(doc.title) }}</h1>
         <div class="post-content">
           <div class="inline-toc">
             <ul>
               <li>
-                <a href="{{g.url('/content/learn/case-studies.html', locale=doc.locale).path}}"{% if doc.title == 'Case Studies' %} class="active"{% endif %}>All</a>
+                <a href="{{g.url('/content/learn/case-studies.html', locale=doc.locale).path}}"{% if doc.base == 'case-studies' %} class="active"{% endif %}>All</a>
               </li>
               {% for item in g.collection('/content/learn/case-studies/category').docs(recursive=false, locale=doc.locale) %}
               <li>
-                <a href="{{item.url.path}}"{% if item.title == doc.title %} class="active"{% endif %}>{{item.title}}</a>
+                <a href="{{item.url.path}}"{% if item.title|slug == doc.base %} class="active"{% endif %}>{{_(item.title)}}</a>
               </li>
               {% endfor %}
             </ul>
@@ -29,7 +29,7 @@
 
           <div class="card-container grid case">
           {% for item in g.collection('/content/learn/case-studies').docs(recursive=false, locale=doc.locale)|reverse %}
-            {% if doc.title == 'Case Studies' or doc.title == item.category %}
+            {% if doc.base == 'case-studies' or doc.base == item.category|slug %}
               {% with doc = item, isCase = true %}
                 {% include "/views/partials/grid-card.html" %}
               {% endwith %}

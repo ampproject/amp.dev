@@ -1,5 +1,5 @@
 ---
-$title: Tutorials
+$title@: Tutorials
 $order: 1
 $parent: /content/docs/build.md
 $view: /views/grid_page.html

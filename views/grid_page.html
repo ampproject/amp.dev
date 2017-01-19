@@ -9,7 +9,7 @@
   <div class="container lg">
     <div class="content">
       <article class="post">
-        <h1 class="post-title">{{ doc.title }}</h1>
+        <h1 class="post-title">{{_(doc.title)}}</h1>
         <div class="post-content">
           {{doc.html|render|safe}}
 

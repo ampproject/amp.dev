@@ -1,6 +1,6 @@
-$title: Overview
+$title@: Overview
 $titles:
-  breadcrumb: What is AMP
+  breadcrumb@: What is AMP
 $order: 0
 class: about-overview
 $view: /views/about-overview.html

@@ -1,5 +1,5 @@
 ---
-$title: Support
+$title@: Support
 $order: 0
 $hidden: true
 $path: /support/

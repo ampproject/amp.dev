@@ -1,5 +1,5 @@
 ---
-$title: Developer Support
+$title@: Developer Support
 $order: 2
 $parent: /content/support/support.md
 $localization:
