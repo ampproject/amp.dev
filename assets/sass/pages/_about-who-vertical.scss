@@ -1,4 +1,5 @@
 body.about-who-vertical {
+
   .about-who-block {
     position: relative;
     overflow: hidden;
@@ -123,6 +124,11 @@ body.about-who-vertical {
   }
 
   @include max-screen($mobile-breakpoint) {
+    nav.breadcrumb li,
+    nav.breadcrumb a {
+      color: $color-white;
+    }
+
     .about-who-block {
       &::before {
         background: $gradient-anglebold;

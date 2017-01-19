@@ -23,28 +23,66 @@
       text-align: center;
     }
 
-    .card-container {
-      margin-top: 60px;
-      flex-wrap: nowrap;
-
-      .card {
-        flex: 0 0 calc(33% - 10px);
-      }
-
+    .features {
       h3 {
         margin-top: 25px;
       }
 
       .card-content {
         position: relative;
-        padding: 50px 14%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
       }
+    }
+  }
 
-      .card-link {
-        margin-top: 30px;
+  .features-desktop {
+    margin-top: 60px;
+    flex-wrap: nowrap;
+
+    .card {
+      flex: 0 0 calc(33% - 10px);
+    }
+
+    .card-content {
+      padding: 50px 14%;
+      justify-content: space-between;
+    }
+
+    .card-link {
+      margin-top: 30px;
+    }
+  }
+
+  .features-mobile {
+    margin-top: 20px;
+    display: none;
+
+    .card {
+      flex: 0 0 100%;
+    }
+
+    .card-content {
+      padding: 25px 20px;
+      height: 407px;
+      justify-content: space-around;
+    }
+
+    .card-link {
+      margin-top: 10px;
+    }
+
+    .text-label {
+      position: relative;
+      display: inline-block;
+      &::before {
+        background: $gradient-med;
+        bottom: -5px;
+        content: '';
+        left: 0;
+        height: 2px;
+        position: absolute;
+        right: 0;
       }
     }
   }
@@ -61,6 +99,12 @@
       amp-img {
         position: absolute;
         width: 100%;
+      }
+
+      .triangle {
+        display: none;
+        left: 0;
+        top: -170px;
       }
 
       .lines {
@@ -150,6 +194,150 @@
 
     .card {
       &::before {
+        display: none;
+      }
+    }
+
+    .mobile {
+      display: none;
+      .card {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon {
+        max-width: 400px;
+        flex: 0 0 100%;
+      }
+    }
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    .hero {
+      padding: 70px 0 0 0;
+
+      .lines {
+        right: -80px;
+        top: 200px;
+      }
+
+      .triangle {
+        display: none;
+      }
+    }
+
+    .features-desktop {
+      display: none;
+    }
+
+    .features-mobile {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .how-amp-work {
+      padding: 220px 0 0 0;
+      .images {
+        width: 600px;
+        left: unset;
+        right: -165px;
+        top: -115px;
+
+        .triangle {
+          display: block;
+        }
+
+        .phone {
+          width: 500px;
+          top: 100px;
+          left: 20px;
+        }
+      }
+    }
+
+    .whos-involved {
+      padding: 80px 0 0 0;
+
+      .involved-image {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 500px;
+        right: 0;
+      }
+
+      h2,
+      .involved-text,
+      .systems-title,
+      .github-link,
+      .all-systems-link {
+        width: 100%;
+        text-align: center;
+      }
+
+      .systems {
+        text-align: left;
+      }
+
+      .all-systems-link {
+        margin-bottom: 100px;
+      }
+
+      .systems-title {
+        margin-top: 130px;
+      }
+    }
+  }
+
+  @include max-screen($tablet-portrait-breakpoint) {
+    .how-amp-work {
+      padding-top: 480px;
+      .text {
+        width: 100%;
+
+        h2,
+        & > p {
+          width: 100%;
+        }
+      }
+    }
+
+    .how-amp-points {
+      padding: 10px 0;
+
+      .point {
+        padding: 5px 0 20px 0;
+        display: block;
+      }
+
+      .text-label {
+        margin-bottom: 0;
+        display: block;
+        width: 100%;
+      }
+
+      .small {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .whos-involved {
+      h2,
+      .involved-text,
+      .systems-title {
+        text-align: left;
+      }
+
+      .mobile {
+        display: block;
+      }
+
+      .desktop {
         display: none;
       }
     }

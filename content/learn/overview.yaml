@@ -5,6 +5,9 @@ $order: 0
 class: about-overview
 $view: /views/about-overview.html
 
+components:
+  - carousel
+
 hero:
   title@: AMP provides a great user experience across many platforms
   triangle_img: hero_triangle.svg
