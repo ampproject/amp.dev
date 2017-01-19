@@ -9,7 +9,7 @@
 @import '_header.scss';
 @import '_content.scss';
 @import '_nav.scss';
-@import '_grid.scss';
+// @import '_grid.scss';
 @import '_lang_switcher.scss';
 @import '_syntax_highlighting.scss';
 @import '_tables.scss';
@@ -20,7 +20,6 @@
 
 @import '_carousel.scss';
 @import '_cards.scss';
-@import '_boxes.scss';
 @import '_accordions.scss';
 @import '_lightbox.scss';
 @import '_search.scss';
@@ -28,15 +27,6 @@
 @import '_footer.scss';
 
 @import 'pages/_home.scss';
-@import 'pages/_latest.scss';
-@import 'pages/_list.scss';
-@import 'pages/_events.scss';
-@import 'pages/_roadmap.scss';
 @import 'pages/_about-overview.scss';
 @import 'pages/_about-who.scss';
 @import 'pages/_about-who-vertical.scss';
-@import 'pages/_case-study.scss';
-@import 'pages/_post-detail.scss';
-
-// wip: cleaning up css
-@import '_post-item.scss';

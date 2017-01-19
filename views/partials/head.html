@@ -30,6 +30,14 @@
   <style amp-custom>
   {% include "/assets/css/case-study.min.css" %}
   </style>
+{% elif doc.view == '/views/list_page.html' or doc.url.path == '/latest/' %}
+  <style amp-custom>
+  {% include "/assets/css/list.min.css" %}
+  </style>
+{% elif doc.view == '/views/blog_detail.html' or doc.url.path == '/roadmap/' %}
+  <style amp-custom>
+  {% include "/assets/css/blog.min.css" %}
+  </style>
 {% else %}
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}

@@ -1,36 +1,34 @@
 {% extends "/views/base.html" %}
 
 {% block main %}
-  <div class="post-detail-block">
-  {% include "/views/partials/breadcrumb-nav.html" %}
-    <div class="container md">
-      <div class="content">
-        <article class="post">
-          <div class="post-meta">
-            <a class="post-type" href="{{g.doc('/content/pages/list-' ~ doc.type|lower ~ '.html').url.path}}">{{ doc.type }}</a>
-            <span class="post-date">{{ doc.date }}</span>
-          </div>
+{% include "/views/partials/breadcrumb-nav.html" %}
+  <div class="container md">
+    <div class="content">
+      <article class="post">
+        <div class="post-meta">
+          <a class="post-type" href="{{g.doc('/content/pages/list-' ~ doc.type|lower ~ '.html').url.path}}">{{ doc.type }}</a>
+          <span class="post-date">{{ doc.date }}</span>
+        </div>
 
-          <h1 class="post-title">{{ doc.title }}</h1>
+        <h1 class="post-title">{{ doc.title }}</h1>
 
-          <div class="post-sheet">
-            <div class="author-meta small">
-              <div class="author-avatar">
-                <amp-img
-                    noloading
-                    height=50
-                    width=50
-                    src="{{doc.avatar}}">
-                </amp-img>
-              </div>
-              By <span class="author-name">{{ doc.author }}</span>
-              <div class="author-role">{{ doc.role }}</div>
+        <div class="post-sheet">
+          <div class="author-meta small">
+            <div class="author-avatar">
+              <amp-img
+                  noloading
+                  height=50
+                  width=50
+                  src="{{doc.avatar}}">
+              </amp-img>
             </div>
-            <div class="post-content">
-              {{doc.html|render|safe}}
-            </div>
+            By <span class="author-name">{{ doc.author }}</span>
+            <div class="author-role">{{ doc.role }}</div>
           </div>
-
+          <div class="post-content">
+            {{doc.html|render|safe}}
+          </div>
+        </div>
         </article>
       </div>
 

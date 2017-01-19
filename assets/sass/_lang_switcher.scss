@@ -1,26 +1,17 @@
 div.language {
-
-  position: relative;
   height: 33px;
-  // width: 126px;
-  // box-shadow: 0px 1px 2px #b7b7b7;
-  user-select: none;
   left: 100px;
+  position: relative;
   top: -4px;
-
-  amp-accordion {
-    // height: 33px;
-    // width: 126px;
-  }
+  user-select: none;
 
   section {
-    background: $color-white;
     border: 0;
-    // box-sizing: border-box;
     padding: 0;
 
     &[expanded] {
-      .current, .others-inner {
+      .current,
+      .others-inner {
         box-shadow: $header-shadow;
       }
 
@@ -28,7 +19,7 @@ div.language {
         left: 60px;
 
         &::after {
-          transform: scale(0.75);
+          transform: scale(.75);
         }
       }
     }
@@ -36,22 +27,17 @@ div.language {
 
   .current {
     font-size: 1em;
-    font-weight: normal;
     margin-right: 100px;
     text-align: right;
     width: 140px;
-
-    a {
-      display: inline-block;
-    }
 
     &::after {
       @include masked-sprite(carat);
       content: '';
       display: inline-block;
-      transform: rotate(180deg) scale(0.75);
       position: relative;
       top: -4px;
+      transform: rotate(180deg) scale(.75);
     }
   }
 
@@ -64,64 +50,42 @@ div.language {
     left: -50px;
     margin: 0;
     position: relative;
-  }
-
-  .current,
-  .others-inner div {
-
-    background-color: transparent;
-    padding: 10px 15px 8px;
-    border: 0;
-    box-sizing: border-box;
-    height: auto;
-
-    &:hover {
-      // background-color: $color-grey-100;
-      // border-bottom: 1px solid #0379c4;
-
-      &::before {
-        // @include masked-sprite(lang-icon);
-        // background-color: #fff;
-      }
-
-      a {
-        // color: #fff;
-        text-decoration: none;
-      }
-    }
-
-    a {
-      display: inline-block;
-      padding: 0;
-      color: $color-black-95;
-
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      span {
-          padding: 0;
-          background-color: transparent;
-      }
-
-    }
-
-  }
-
-  .others-inner {
-    // box-shadow: 0px 1px 2px #b7b7b7;
 
     div {
       width: 200px;
 
       a {
-        text-transform: capitalize;
         margin: 0 10px;
+        text-transform: capitalize;
       }
 
       &:hover {
-        background-color: $color-grey-100;
+        background-color: $color-lightgrey;
       }
+    }
+  }
+
+  .current,
+  .others-inner div {
+    background-color: transparent;
+    border: 0;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px 15px 8px;
+
+    &:hover {
+      a {
+        text-decoration: none;
+      }
+    }
+
+    a {
+      color: $color-black-95;
+      display: inline-block;
+      overflow: hidden;
+      padding: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }
@@ -130,11 +94,12 @@ div.language {
   .current,
   .others-inner div {
     a {
-      padding-right: 26px;
-      padding-left: 0;
       background-position: right 6px;
+      padding-left: 0;
+      padding-right: 26px;
     }
   }
+
   .current {
     &::before {
       left: auto;
@@ -144,8 +109,8 @@ div.language {
 }
 
 header .language {
-  margin-left: 12px;
   align-self: center;
+  margin-left: 12px;
 }
 
 .rtl header .language {
@@ -160,139 +125,45 @@ amp-sidebar {
     position: absolute;
     top: unset;
 
-    section {
-      background: none;
-    }
-
-    .current {
-      margin-right: 0;
-      width: 140px;
-      text-align: left;
-      a {
-        color: $color-ampblue;
-      }
-      &::after {
-        background-color: $color-ampblue;
-      }
-    }
-
     section[expanded] {
       .current {
         left: 0;
       }
     }
 
+    .current a,
+    .others-inner div a {
+      color: $color-ampblue;
+    }
+
+    .current {
+      margin-right: 0;
+      text-align: left;
+
+      &::after {
+        background-color: $color-ampblue;
+      }
+    }
+
     .others {
-      position: absolute;
-      left: 0;
-      top: 0;
       padding: 0;
       transform: translateY(calc(-100% - 50px));
 
       .others-inner {
-        width: 240px;
         left: 0;
+        width: 240px;
+
         &::after {
-          content: "";
-          display: table;
           clear: both;
+          content: '';
+          display: table;
         }
+
         div {
-          width: 120px;
           float: left;
-          a span {
-            color: $color-ampblue;
-          }
+          width: 120px;
         }
       }
     }
   }
 }
-
-// amp-sidebar .language {
-
-//   width: auto;
-//   box-shadow: none;
-//   height: 66px;
-//   margin-bottom: 0;
-//   background: #2196F3;
-
-//   amp-accordion {
-//     width: auto;
-//     height: 66px;
-//     z-index: 2;
-//   }
-
-//   /*
-//   .current a span::after {
-//     content: "";
-//     display: inline-block;
-//     width: 0;
-//     height: 0;
-//     border-left: 8px solid transparent;
-//     border-right: 8px solid transparent;
-//     border-top: 11px solid #454545;
-//     z-index: 1;
-//   }
-//   */
-
-//   .current,
-//   .others div {
-//     background: #2196F3;
-//     border-bottom: 1px solid #0976cc;
-//     padding-left: 16px;
-//     padding-top: 23px;
-//     padding-bottom: 6px;
-//     height: 66px;
-
-//     &.current {
-
-//       &::before {
-//         display: none;
-//       }
-
-//       border-bottom: 1px solid #eee;
-//       padding-right: 58px;
-
-//         a::after {
-//           content: "▾";
-//           display: inline-block;
-//           position: relative;
-//           color: #fff;
-//           top: -5px;
-//           left: 5px;
-//         }
-
-//       span {
-//         color: #fff;
-//         text-overflow: ellipsis;
-//         white-space: nowrap;
-//         overflow: hidden;
-//         max-width: 104px;
-//         display: inline-block;
-//       }
-//     }
-
-//     a {
-//       padding-left: 0;
-//       span {
-//         color: #fff;
-//       }
-//     }
-
-//   }
-// }
-
-// .rtl amp-sidebar .language {
-
-//   &::before {
-//     left: 20px;
-//     right: auto;
-//   }
-
-//   .current,
-//   .others div {
-//     padding-left: 0;
-//     padding-right: 16px;
-//   }
-// }

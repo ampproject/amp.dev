@@ -9,7 +9,6 @@ dl, dd, ol, ul, figure {
 
 html,
 body {
-  // -webkit-font-smoothing: antialiased;
   @include text-body();
   box-sizing: border-box;
   margin: 0;
@@ -29,10 +28,6 @@ img {
   max-width: 100%;
 }
 
-// strong, b {
-//   font-weight: 600;
-// }
-
 /**
  * Headings
  */
@@ -44,15 +39,6 @@ h5 {
   color: $color-black;
   font-weight: 300;
   margin: 0.25em 0;
-
-  // &:before {
-  //   display: block;
-  //   content: " ";
-  //   margin-top: -90px;
-  //   height: 90px;
-  //   visibility: hidden;
-  // }
-
 }
 
 h1,
@@ -65,13 +51,7 @@ h2.h1 {
     font-size: 35px;
     line-height: 44px;
   }
-
-  // .home &,
-  // .who & {
-  //   margin-top: 0;
-  // }
 }
-
 
 h2 {
   font-size: 40px;

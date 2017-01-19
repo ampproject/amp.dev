@@ -1,15 +1,6 @@
 // old colors - clean up later
-$color-grey-50: #fafafa;
-$color-grey-100: #f9f9f9;
-$color-grey-200: #e9e9e9;
-$color-grey-500: #9E9E9E;
-$color-grey-600: #757575;
-$color-grey-700: #616161;
-$color-grey-800: #424242;
 $color-darkgrey: #797c82;
-$color-midblue: #0379C4;
-$color-orange: #f68c1e;
-// TODO: Legacy, remove these vars
+$color-midblue: #0379c4;
 
 // new colors
 $color-ampblue: #1c79c0;
@@ -20,12 +11,12 @@ $color-lightbluefaded: rgba(13, 211, 255, .05);
 $color-lightestblue: rgba(13, 210, 250, .1);
 $color-white: #fff;
 $color-black: #000;
-$color-black-95: #333333;
+$color-black-95: #333;
 $color-grey-md: #959595;
 $color-grey-ltmd: #b3b3b3;
 $color-grey-lt: #ededed;
 $color-bluegrey: #acbac1;
-$color-lightgrey: $color-grey-100;
+$color-lightgrey: #f9f9f9;
 
 // gradients
 $gradient-angle: 36deg;

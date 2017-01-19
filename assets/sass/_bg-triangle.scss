@@ -1,38 +1,47 @@
 .bg-triangle-primary,
-.bg-triangle-secondary {
+.bg-triangle-secondary,
+.bg-triangle-bottom {
   .wrap {
     overflow: hidden;
     position: relative;
 
-    &::before {
-      content: '';
+    &::before,
+    &::after {
+      background: $gradient-med-faded;
       display: block;
       height: 1400px;
       left: 0;
       position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &::before {
+      content: '';
       top: 0;
       transform: skewY(36deg);
       transform-origin: top right;
-      width: 100%;
-      z-index: -1;
     }
   }
 }
 
 .bg-triangle-primary {
+  .wrap::before {
+    background: $gradient-med;
+  }
+
   .post-title,
   nav.breadcrumb li,
   nav.breadcrumb a {
     color: $color-white;
   }
-
-  .wrap::before {
-    background: $gradient-med;
-  }
 }
 
-.bg-triangle-secondary {
-  .wrap::before {
-    background: $gradient-med-faded;
+.bg-triangle-bottom {
+  .wrap::after {
+    bottom: 0;
+    content: '';
+    transform: skewY(-36deg);
+    transform-origin: bottom right;
   }
 }

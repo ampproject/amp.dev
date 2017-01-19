@@ -28,7 +28,7 @@
 }
 
 // individual case study pages
-body.case-study {
+.case-study {
   .post-header,
   .post-footer {
     margin: 0 auto;
@@ -117,62 +117,49 @@ body.case-study {
   }
 
   // overriding _post-detail.scss styles
-  &.post-detail .post-detail-block {
-    padding: 0;
+  .wrap::before {
+    content: none;
+  }
 
-    &::before,
-    .post-meta .post-date::before {
-      content: none;
+  .post-sheet {
+    margin: -60px auto 0 auto;
+    padding-top: 100px;
+  }
+
+  .post-video {
+    margin: 40px 0;
+  }
+
+  .post-content {
+    amp-img {
+      margin: 0;
     }
 
-    .post-sheet {
-      margin: -60px auto 0 auto;
-      padding-top: 100px;
+    a {
+      &.cta {
+        font-weight: 400;
+        letter-spacing: .56px;
+        text-transform: uppercase;
+      }
     }
 
-    .post-video {
-      margin: 40px 0;
+    h4:not(:first-child) {
+      margin-top: 2em;
     }
 
-    .post-content {
-      amp-img {
-        margin: 0;
-      }
+    blockquote {
+      border: 0;
+      font-size: 16px;
+      font-style: normal;
+      margin: 2.5em 0;
+      padding-left: 2.5em;
 
-      a {
-        color: $color-brightblue;
+      p {
+        color: $color-ampblue;
 
-        &.cta {
-          color: $color-ampblue;
-          font-weight: 400;
-          letter-spacing: .56px;
-          text-transform: uppercase;
-        }
-      }
-
-      h4:not(:first-child) {
-        margin-top: 2em;
-      }
-
-      h4 > a {
-        font-size: inherit;
-        line-height: inherit;
-      }
-
-      blockquote {
-        border: 0;
-        font-size: 16px;
-        font-style: normal;
-        margin: 2.5em 0;
-        padding-left: 2.5em;
-
-        p {
-          color: $color-ampblue;
-
-          & + p:last-child {
-            color: $color-grey-md;
-            font-size: 14px;
-          }
+        + p:last-child {
+          color: $color-grey-md;
+          font-size: 14px;
         }
       }
     }
@@ -195,7 +182,7 @@ body.case-study {
     }
   }
 
-  body.case-study {
+  .case-study {
     .post-logo {
       margin-left: 0;
     }
@@ -231,19 +218,17 @@ body.case-study {
       margin-left: 0;
     }
 
-    &.post-detail .post-detail-block {
-      .post-sheet {
-        margin-top: 0;
-        padding-top: 40px;
-      }
+    .post-sheet {
+      margin-top: 0;
+      padding-top: 40px;
+    }
 
-      .post-content {
-        blockquote {
-          font-size: 14px;
+    .post-content {
+      blockquote {
+        font-size: 14px;
 
-          p + p:last-child {
-            font-size: 12px;
-          }
+        p + p:last-child {
+          font-size: 12px;
         }
       }
     }
@@ -251,7 +236,7 @@ body.case-study {
 }
 
 @include max-screen($mobile-medium-breakpoint) {
-  body.case-study {
+  .case-study {
     .post-logo {
       max-width: 150px;
     }
@@ -273,16 +258,14 @@ body.case-study {
       margin-top: 30px;
     }
 
-    &.post-detail .post-detail-block {
-      .post-sheet {
-        margin-top: 0;
-      }
+    .post-sheet {
+      margin-top: 0;
+    }
 
-      .post-content {
-        blockquote {
-          margin: 1.5em 0;
-          padding-left: 1.5em;
-        }
+    .post-content {
+      blockquote {
+        margin: 1.5em 0;
+        padding-left: 1.5em;
       }
     }
 

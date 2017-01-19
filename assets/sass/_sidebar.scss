@@ -51,17 +51,7 @@ amp-sidebar {
     padding: 15px 35px 15px 25px;
   }
 
-  .menu-layer-2 {
-    z-index: 2;
-  }
-
-  .menu-layer-3 {
-    z-index: 3;
-  }
-
-  .menu-layer-1,
-  .menu-layer-2,
-  .menu-layer-3 {
+  .menu-layer {
     &::after {
       background: $color-ampblue;
       bottom: 0;
@@ -71,59 +61,61 @@ amp-sidebar {
       top: 0;
       width: 13px;
     }
-  }
 
-  .menu-layer-1 {
-    height: 100%;
-    position: relative;
-  }
+    .items {
+      left: 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      position: absolute;
+      right: 0;
+    }
 
-  .menu-layer-1-items,
-  .menu-layer-2-items,
-  .menu-layer-3-items {
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    position: absolute;
-    right: 0;
-  }
+    &.primary {
+      height: 100%;
+      position: relative;
 
-  .menu-layer-1-items {
-    bottom: 80px;
-    top: 60px;
-  }
+      .items {
+        bottom: 80px;
+        top: 60px;
+      }
+    }
 
-  .menu-layer-2-items,
-  .menu-layer-3-items {
-    bottom: 0;
-    top: 85px;
+    &.secondary {
+      z-index: 2;
+    }
+
+    &.tertiary {
+      z-index: 3;
+    }
+
+    &.secondary,
+    &.tertiary {
+      .items {
+        bottom: 0;
+        top: 85px;
+      }
+    }
   }
 
   .has-sub-level {
     &::after {
-      mask-image: url(/static/img/sprite.svg);
-      mask-size: 84px 55px;
-      mask-position: -60px -43.66px;
       background-color: $color-ampblue;
-      transform: rotate(90deg) scale(0.75);
-
       content: '';
       height: 12px;
       position: absolute;
       right: 35px;
       top: calc(50% - 6px);
+      transform: rotate(90deg) scale(.75);
       width: 16px;
+      mask-image: url('/static/img/sprite.svg');
+      mask-position: -60px -43.66px;
+      mask-size: 84px 55px;
     }
   }
 
   .close-button {
-    background-color: transparent;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15.71" height="15.71" viewBox="0 0 15.71 15.71"><defs><symbol id="a" data-name="New Symbol 1" viewBox="0 0 15.71 15.71"><path fill="none" stroke="#ccc" stroke-miterlimit="10" d="M15.35.35l-15 15M.43.43l14.85 14.85"/></symbol></defs><use width="15.71" height="15.71" xlink:href="#a" data-name="Layer 2"/></svg>');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 18px 18px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15.71" height="15.71" viewBox="0 0 15.71 15.71"><defs><symbol id="a" data-name="New Symbol 1" viewBox="0 0 15.71 15.71"><path fill="none" stroke="#ccc" stroke-miterlimit="10" d="M15.35.35l-15 15M.43.43l14.85 14.85"/></symbol></defs><use width="15.71" height="15.71" xlink:href="#a" data-name="Layer 2"/></svg>') no-repeat center / 18px transparent;
     border: 0;
-
     height: 58px;
     position: absolute;
     right: 13px;
@@ -140,13 +132,8 @@ amp-sidebar {
     @include text-label();
 
     &::before {
-      background-color: transparent;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6.05" height="10.71" viewBox="0 0 6.05 10.71"><path fill="none" stroke="#ccc" stroke-miterlimit="10" d="M5.7.35L.71 5.44l4.99 4.91" data-name="Layer 1"/></svg>');
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6.05" height="10.71" viewBox="0 0 6.05 10.71"><path fill="none" stroke="#ccc" stroke-miterlimit="10" d="M5.7.35L.71 5.44l4.99 4.91" data-name="Layer 1"/></svg>') no-repeat center / contain transparent;
       border: 0;
-
       content: '';
       display: inline-block;
       height: 11px;

@@ -1,58 +1,61 @@
 .header {
+  backface-visibility: hidden;
+  background-color: $color-white;
   box-shadow: $header-shadow;
   font-size: 14px;
   font-weight: 300;
   transform: translateZ(0);
-  backface-visibility: hidden;
-  background-color: $color-white;
 
   &.fixed {
-    transform: translateY(0%);
-    transition: all .4s ease;
     left: 0;
     position: fixed;
     top: 0;
+    transform: translateY(0%);
+    transition: all .4s ease;
     width: 100%;
     z-index: 1000;
   }
 
-  .nav-container {
+  .nav-container,
+  .left-nav,
+  .alt,
+  .tabs {
     display: flex;
+  }
+
+  .nav-container {
     justify-content: space-between;
   }
 
-  .left-nav {
-    display: flex;
-    align-items: center;
+  .left-nav,
+  .alt {
     justify-content: flex-start;
+  }
 
+  .left-nav {
+    align-items: center;
     font-size: 20px;
-    margin-left: 0;
     font-weight: 300;
+    margin-left: 0;
 
     .header-title {
+      background: url('/static/img/logo-blue.svg') no-repeat center left / 100%;
       color: $color-midblue;
-      padding: $header-padding $header-padding $header-padding ($header-padding + 20px);
       margin: 0;
-      width: auto;
+      padding: $header-padding $header-padding $header-padding ($header-padding + 20px);
       text-transform: none;
       white-space: nowrap;
-
-      background-image: url('/static/img/logo-blue.svg');
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: center left;
+      width: auto;
     }
+  }
 
+  .alt,
+  .tabs {
+    align-items: stretch;
   }
 
   .alt {
-    padding: 00;
-    // text-align: right;
-
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
+    padding: 0;
 
     &.right {
       font-size: 15px;
@@ -60,35 +63,29 @@
   }
 
   .tabs {
-    align-items: stretch;
-    display: flex;
     justify-content: center;
     margin-left: 50px;
   }
 
   .tab {
-    position: relative;
     color: $color-black-95;
-    padding: 6px;
-    margin: 0 4px;
-    text-decoration: none;
-    text-transform: uppercase;
     font-weight: 400;
-
+    margin: 0 4px;
+    padding: 6px;
+    position: relative;
     transition: .1s ease color;
 
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 20px;
-      right: 20px;
-      margin: auto;
-      height: 3px;
+    &::after {
       background: $gradient-bold;
-
-      transition: .1s ease opacity;
+      bottom: 0;
+      content: '';
+      height: 3px;
+      left: 20px;
+      margin: auto;
       opacity: 0;
+      position: absolute;
+      right: 20px;
+      transition: .1s ease opacity;
     }
 
     &:hover,
@@ -97,93 +94,81 @@
     }
 
     &.active {
-      &:after {
+      &::after {
         opacity: 1;
       }
 
       &:hover {
-        &:after {
+        &::after {
           opacity: 0;
         }
       }
     }
-  }
 
-  .tab.hamburger {
-    background-color: transparent;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -6 24 24"><path fill="#4A4A4A" d="M0 12h18v-2H0v2M0 7h18V5H0v2M0 0v2h18V0H0"/></svg>');
-    background-repeat: no-repeat;
-    background-size: 30px 24px;
-    background-position: center center;
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    display: none;
-    cursor: pointer;
-    align-self: center;
+    &.hamburger {
+      align-self: center;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -6 24 24"><path fill="#4A4A4A" d="M0 12h18v-2H0v2M0 7h18V5H0v2M0 0v2h18V0H0"/></svg>') no-repeat center / 30px 24px transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      width: 40px;
+    }
   }
 
   div.tab {
     padding: 6px 20px;
-    position: relative;
 
     &::before {
+      bottom: 0;
       box-shadow: $header-shadow;
       content: '';
-      position: absolute;
-      bottom: 0;
       left: -10px;
+      opacity: 0;
+      position: absolute;
       right: -10px;
       top: 20px;
-      opacity: 0;
-      transition: opacity 0.2s ease-out;
+      transition: opacity .2s ease-out;
     }
 
     > a {
+      color: inherit;
       position: relative;
       top: 19px;
-      color: inherit;
-      text-decoration: none;
+    }
+
+    .list-container > ul,
+    .sublist {
+      list-style: none;
+    }
+
+    .list-container,
+    .sublist {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
     }
 
     .list-container {
-      position: absolute;
-      top: 100%;
       left: -60px;
-      padding: 0 200px 500px 50px;
-      pointer-events: none;
-      opacity: 0;
-      overflow: hidden;
-      transition: 0.2s ease-out;
+      padding-left: 50px;
+      top: 100%;
+      transition: .2s ease-out;
       z-index: 1;
     }
 
     .list-container > ul {
-      list-style: none;
-      position: relative;
-      min-width: 200px;
-      text-align: left;
-
-      background: #fff;
+      background: $color-white;
       box-shadow: $header-shadow;
+      min-width: 200px;
+      position: relative;
 
       li {
-        padding: 7.5px 20px;
         box-sizing: border-box;
-        font-weight: 400;
-        font-size: inherit;
+        padding: 7.5px 20px;
         position: relative;
-
-        &:hover {
-          background: #f0f0f0;
-
-          .sublist {
-            opacity: 1;
-            pointer-events: all;
-          }
-        }
 
         a {
           @include text-body();
@@ -197,33 +182,38 @@
         &:last-child {
           padding-bottom: 20px;
         }
-      }
 
-      li.external {
-        padding-right: 26px;
-        a {
-          background-size: 12px 12px;
-          background-repeat: no-repeat;
-          background-position: right 2px;
-          padding-right: 16px;
-        }
         &:hover {
+          background: #f0f0f0;
+
+          .sublist {
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
+
+        &.external {
+          padding-right: 26px;
+
           a {
-            background-image: url(/static/img/ic_open_in_new_black.svg);
+            background: no-repeat right 2px / 12px;
+            padding-right: 16px;
+          }
+
+          &:hover {
+            a {
+              background-image: url('/static/img/ic_open_in_new_black.svg');
+            }
           }
         }
       }
 
       .sublist {
         background: $color-lightgrey;
-        list-style-type: none;
-        opacity: 0;
-        pointer-events: none;
-        position: absolute;
         right: 0;
         top: 0;
         transform: translateX(100%);
-        transition: opacity 0.3s;
+        transition: opacity .3s;
 
         li {
           padding: 7.5px 15px;
@@ -233,7 +223,6 @@
           }
         }
       }
-
     }
 
     &:hover {
@@ -246,13 +235,12 @@
         pointer-events: all;
       }
     }
-
   }
 
   .searchbar {
     position: absolute;
-    top: 23px;
     right: 175px;
+    top: 23px;
     z-index: 2;
 
     @include max-screen(1030px) {
@@ -267,11 +255,8 @@
     }
 
     .left-nav {
-      justify-content: flex-start;
       flex: 1 1 auto;
-      text-align: left;
       width: auto;
-      font-size: 15px;
 
       .header-title {
         margin: 0;
@@ -294,13 +279,12 @@
 .rtl header {
   .left-nav {
     .header-title {
+      background-position: center right;
       padding: $header-padding ($header-padding + 20px) $header-padding $header-padding;
 
       @include max-screen($mobile-breakpoint) {
         width: auto;
       }
-
-      background-position: center right;
     }
   }
 

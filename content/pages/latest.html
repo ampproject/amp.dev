@@ -88,8 +88,8 @@ components:
         </div>
         <div class="desktop-feed">
           {% for tweet in tweets.tweets %}
-            <div class="tweet">
-              <div class="tweet-meta">
+            <div class="post-item tweet">
+              <div class="post-meta">
                 <span class="origin-name">{{tweet.origin_name}}</span>
                 <a class="origin-id" href="{{tweet.origin_href}}">@{{tweet.origin_id}}</a>
                 {% if tweet.retweet_id %}
@@ -105,8 +105,8 @@ components:
                   </span>
                 {% endif %}
               </div>
-              <p class="tweet-content">{{tweet.text|safe}}</p>
-              <div class="tweet-date">{{tweet.date}}</div>
+              <p class="post-excerpt">{{tweet.text|safe}}</p>
+              <div class="post-meta time">{{tweet.date}}</div>
             </div>
           {% endfor %}
           <a class="feed-cta underlined cta" href="{{latest.twitter.follow_href}}" target="_blank">{{_(latest.twitter.follow_cta)}}</a>
@@ -119,8 +119,8 @@ components:
 
             {% for tweet in tweets.tweets %}
             <div class="card-container">
-              <div class="tweet card">
-                <div class="tweet-meta">
+              <div class="post-item tweet card">
+                <div class="post-meta">
                   <span class="origin-name">{{tweet.origin_name}}</span>
                   <a class="origin-id" href="{{tweet.origin_href}}">@{{tweet.origin_id}}</a>
                   {% if tweet.retweet_id %}
@@ -136,8 +136,8 @@ components:
                     </span>
                   {% endif %}
                 </div>
-                <p class="tweet-content">{{tweet.text|safe}}</p>
-                <div class="tweet-date">{{tweet.date}}</div>
+                <p class="post-excerpt">{{tweet.text|safe}}</p>
+                <div class="post-meta time">{{tweet.date}}</div>
               </div>
             </div>
             {% endfor %}
