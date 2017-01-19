@@ -6,6 +6,9 @@ $category: Advertisers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
+components:
+  - social-share
+
 headline: Teads brings AMP'd mobile video inventory to nearly 100 publishers
 thumb: "case-studies/teads_thumb.jpg"
 featured: "case-studies/teads_media_framed.png"

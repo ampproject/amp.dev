@@ -11,6 +11,9 @@ avatar: https://secure.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?d=id
 date_data: 2016-11-02T15:15:28+00:00
 $date: November 2, 2016
 $parent: /content/latest/list-blog.html
+
+components:
+  - social-share
 ---
 
 <div class="amp-wp-article-content">

@@ -6,6 +6,9 @@ $category: Publishers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
+components:
+  - social-share
+
 headline: Relay Media helps publishers get AMP’d
 thumb: "case-studies/relay_media_thumb.jpg"
 featured: "case-studies/relay_media_framed.png"

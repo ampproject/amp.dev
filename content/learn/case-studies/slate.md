@@ -6,6 +6,9 @@ $category: Publishers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
+components:
+  - social-share
+
 headline: Slate gets efficient with AMP
 thumb: "case-studies/slate_thumb.jpg"
 featured: "case-studies/slate_framed.png"

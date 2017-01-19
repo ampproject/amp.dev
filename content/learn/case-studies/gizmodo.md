@@ -6,6 +6,9 @@ $category: Publishers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
+components:
+  - social-share
+
 headline: AMP makes Gizmodo 3x faster on mobile
 thumb: "case-studies/gizmodo_thumb.jpg"
 results:

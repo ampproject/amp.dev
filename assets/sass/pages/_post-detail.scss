@@ -2,6 +2,7 @@
   @extend .bg-triangle-bottom;
 
   .post-sheet {
+    position: relative;
     background: $color-white;
     padding: 40px 11.9% 100px 11.9%;
   }
@@ -114,6 +115,11 @@
         }
       }
     }
+  }
+
+  .share-module {
+    right: -115px;
+    top: 27px;
   }
 
   .post-footer {

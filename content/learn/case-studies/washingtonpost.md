@@ -6,6 +6,9 @@ $category: Publishers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
+components:
+  - social-share
+
 headline: AMP helps the Washington Post increase returning users from mobile search by 23%
 thumb: "case-studies/wapo_thumb.png"
 results:

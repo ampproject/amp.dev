@@ -36,6 +36,7 @@
           {% endif %}
 
           <div class="post-sheet">
+            {% include "/views/partials/share.html" %}
             <div class="post-content">
               {{doc.html|render|safe}}
 

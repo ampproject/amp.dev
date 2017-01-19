@@ -6,6 +6,9 @@ $category: Advertisers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
+components:
+  - social-share
+
 headline: plista grows publisher revenue & user engagement with AMP
 thumb: "case-studies/plista_thumb.jpg"
 featured:

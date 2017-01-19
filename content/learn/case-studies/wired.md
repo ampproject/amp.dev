@@ -6,6 +6,9 @@ $category: Publishers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
+components:
+  - social-share
+
 headline: Wired AMP’s its 20+ year archive to meet audiences online
 thumb: "case-studies/wired_thumb.jpg"
 results:
