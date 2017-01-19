@@ -7,5 +7,5 @@ $order: 7
 AMP 페이지를 발행할 때, [amp-access](https://www.ampproject.org/docs/reference/components/amp-access)를 사용하여 권한 flow를 기반으로 해서 페이지의 섹션을 가릴 수 있습니다.
 
 {% call callout('Read on', type='success') %}
-Follow the tutorial on how to [implement a login flow with AMP](/docs/get_started/login_requiring.html)
+[AMP에서 로그인 flow 구현하기](/ko/docs/get_started/login_requiring.html)에서 튜토리얼을 볼 수 있습니다.
 {% endcall %}

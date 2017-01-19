@@ -25,7 +25,7 @@ $order : 0
 
 지원하는 ad 네트워크 목록은 [여기](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks) 있습니다.
 
-### 3. Specify your ad unit’s height and width:
+### 3. ad 유닛에 width와 height를 정의하세요:
 
 [sourcecode:html]
 <amp-ad width="300"

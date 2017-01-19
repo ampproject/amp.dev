@@ -1,5 +1,5 @@
 ---
-$title: Serving Ads on AMP
+$title: AMP에서 광고 제공하기
 $order: 8
 ---
 <div class="toc">
