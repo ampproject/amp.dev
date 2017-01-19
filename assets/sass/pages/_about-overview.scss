@@ -35,16 +35,16 @@
         margin-top: 25px;
       }
 
-      .card-content{
+      .card-content {
         position: relative;
         padding: 50px 14%;
-        height: 465px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
       .card-link {
-        position: absolute;
-        left: 14%;
-        bottom: 50px;
+        margin-top: 30px;
       }
     }
   }

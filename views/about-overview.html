@@ -27,14 +27,16 @@
         {% for card in doc.hero.cards %}
           <a class="card" href="{{card.link_href}}">
             <div class="card-content">
-              <amp-img
-                  noloading
-                  height=120
-                  layout=fixed-height
-                  src="/static/img/about/overview/{{card.icon}}">
-              </amp-img>
-              <h3>{{_(card.title)}}</h3>
-              <p class="small">{{_(card.content)}}</p>
+              <div>
+                <amp-img
+                    noloading
+                    height=120
+                    layout=fixed-height
+                    src="/static/img/about/overview/{{card.icon}}">
+                </amp-img>
+                <h3>{{_(card.title)}}</h3>
+                <p class="small">{{_(card.content)}}</p>
+              </div>
               <div class="card-link"><p>{{_(card.link_text)}}</p></div>
             </div>
           </a>
