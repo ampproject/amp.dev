@@ -1,0 +1,166 @@
+.about-overview {
+  .hero {
+    position: relative;
+    padding: 130px 8% 0 8%;
+    .triangle {
+      position: absolute;
+      right: calc((1440px - 100vw)/2 - 22px);
+      top: 100px;
+      width: 75.6%;
+    }
+
+    .lines {
+      position: absolute;
+      width: 250px;
+      right: 4%;
+      top: 260px;
+    }
+
+    h1 {
+      position: relative;
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .card-container {
+      margin-top: 60px;
+      flex-wrap: nowrap;
+
+      .card {
+        flex: 0 0 calc(33% - 10px);
+      }
+
+      h3 {
+        margin-top: 25px;
+      }
+
+      .card-content{
+        position: relative;
+        padding: 50px 14%;
+        height: 465px;
+      }
+
+      .card-link {
+        position: absolute;
+        left: 14%;
+        bottom: 50px;
+      }
+    }
+  }
+
+  .how-amp-work {
+    position: relative;
+    padding: 100px 13.3% 140px 13.3%;
+    .images {
+      position: absolute;
+      width: 700px;
+      left: 700px;
+      top: 0;
+
+      amp-img {
+        position: absolute;
+        width: 100%;
+      }
+
+      .lines {
+        left: 0;
+        top: 0;
+      }
+
+      .phone {
+        left: -70px;
+        top: 90px;
+      }
+    }
+
+    .text {
+      width: 510px;
+
+      h2 {
+        width: 300px;
+      }
+
+      & > p {
+        width: 80%;
+      }
+    }
+  }
+
+  .how-amp-points {
+    padding: 20px 0;
+
+    .point {
+      padding: 10px 0 25px 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      border-bottom: solid 2px $color-lightgrey;
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+    }
+
+    .text-label {
+      margin-top: 21px;
+      display: inline-block;
+      width: 120px;
+      color: $color-ampblue;
+    }
+
+    .small {
+      display: inline-block;
+      width: 370px;
+    }
+  }
+
+  .whos-involved {
+    position: relative;
+    padding: 40px 13.3% 140px 13.3%;
+    .involved-image {
+      position: absolute;
+      width: 40.9%;
+      right: 10%;
+      top: 0;
+      margin-bottom: 3px;
+    }
+
+    h2 {
+      width: 350px;
+    }
+
+    .systems {
+      text-align: center;
+    }
+
+    .involved-text {
+      width: 330px;
+    }
+
+    .systems-title {
+      width: 600px;
+      margin: 230px auto 30px auto;
+    }
+
+    .card-container {
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .card {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  @include max-screen(1440px) {
+    .hero {
+      .triangle {
+        right: -22px;
+      }
+    }
+  }
+}
+

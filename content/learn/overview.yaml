@@ -43,7 +43,7 @@ how:
 
 who:
   title@: Who is involved with AMP?
-  subtitle@: Hundreds of engaged contributors have made improvements to the project on Github. Leading analytics vendors, ad tech providers, and CMS systems support the AMP format
+  subtitle@: Hundreds of engaged contributors have made improvements to the project on Github.
   image: who.png
   cta@: AMP on Github
   cta_link: #

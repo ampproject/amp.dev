@@ -23,54 +23,60 @@
           src="/static/img/about/overview/{{doc.hero.line_img}}">
       </amp-img>
       <h1>{{_(doc.hero.title)}}</h1>
-      <div class="card-container">
+      <div class="card-container grid">
         {% for card in doc.hero.cards %}
-          <div class="card"">
-            <amp-img
-                noloading
-                height=90
-                layout=fixed-height
-                src="/static/img/about/overview/{{card.icon}}">
-            </amp-img>
-            <h3>{{_(card.title)}}</h3>
-            <p class="small">{{_(card.content)}}</p>
-            <a class="underlined cta" href="{{card.link_href}}">{{_(card.link_text)}}</a>
-          </div>
+          <a class="card" href="{{card.link_href}}">
+            <div class="card-content">
+              <amp-img
+                  noloading
+                  height=120
+                  layout=fixed-height
+                  src="/static/img/about/overview/{{card.icon}}">
+              </amp-img>
+              <h3>{{_(card.title)}}</h3>
+              <p class="small">{{_(card.content)}}</p>
+              <div class="card-link"><p>{{_(card.link_text)}}</p></div>
+            </div>
+          </a>
         {% endfor %}
       </div>
     </section>
 
     <section class="how-amp-work">
-      <amp-img class="lines"
-          noloading
-          height=692
-          width=663
-          layout=responsive
-          src="/static/img/about/overview/{{doc.how.line_img}}">
-      </amp-img>
-      <amp-img class="phone"
-          noloading
-          height=1148
-          width=1112
-          layout=responsive
-          src="/static/img/about/overview/{{doc.how.phone_img}}">
-      </amp-img>
-      <h2 class="h1">{{_(doc.how.title)}}</h2>
-      <p>{{_(doc.how.subtitle)}}</p>
-      <div class="how-amp-points">
-        <div class="point">
-          {% for point in doc.how.points %}
-          <p class="label">{{_(point.title)}}</p>
-          <p class="small">{{_(point.content)}}</p>
-          {% endfor %}
+      <div class="images">
+        <amp-img class="lines"
+            noloading
+            height=692
+            width=663
+            layout=responsive
+            src="/static/img/about/overview/{{doc.how.line_img}}">
+        </amp-img>
+        <amp-img class="phone"
+            noloading
+            height=1148
+            width=1112
+            layout=responsive
+            src="/static/img/about/overview/{{doc.how.phone_img}}">
+        </amp-img>
+      </div>
+      <div class="text">
+        <h2 class="h1">{{_(doc.how.title)}}</h2>
+        <p>{{_(doc.how.subtitle)}}</p>
+        <div class="how-amp-points">
+        {% for point in doc.how.points %}
+          <div class="point">
+            <p class="text-label">{{_(point.title)}}</p>
+            <p class="small">{{_(point.content)}}</p>
+          </div>
+        {% endfor %}
         </div>
       </div>
     </section>
 
     <section class="whos-involved">
       <h2 class="h1">{{_(doc.who.title)}}</h2>
-      <p>{{_(doc.who.subtitle)}}</p>
-      <amp-img
+      <p class="involved-text">{{_(doc.who.subtitle)}}</p>
+      <amp-img class="involved-image"
           noloading
           height=883
           width=1109
@@ -78,23 +84,24 @@
           src="/static/img/about/overview/{{doc.who.image}}">
       </amp-img>
       <a class="underlined cta" href="{{doc.who.cta_link}}">{{_(doc.who.cta)}}</a>
-      <p class="systems-title">{{_(doc.systems.title)}}</p>
-      <div class="icon-container">
-      {% for icon in doc.systems.icons %}
-        <div class="icon">
-          <amp-img
-              noloading
-              width={{icon.width}}
-              height={{icon.height}}
-              layout=responsive
-              src="/static/img/about/overview/{{icon.icon}}">
-          </amp-img>
+      <div class="systems">
+        <p class="systems-title">{{_(doc.systems.title)}}</p>
+        <div class="card-container">
+        {% for icon in doc.systems.icons %}
+          <div class="card">
+            <amp-img
+                noloading
+                width={{icon.width}}
+                height={{icon.height}}
+                layout=responsive
+                src="/static/img/about/overview/{{icon.icon}}">
+            </amp-img>
+          </div>
+        {% endfor %}
         </div>
-      {% endfor %}
+        <a class="underlined cta" href="{{doc.systems.cta_link}}">{{_(doc.systems.cta)}}</a>
       </div>
-      <a class="underlined cta" href="{{doc.systems.cta_link}}">{{_(doc.systems.cta)}}</a>
     </section>
-    
   </div>
 
   {% with cta = doc.cta %}

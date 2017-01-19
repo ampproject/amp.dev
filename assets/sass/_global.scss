@@ -276,6 +276,9 @@ figure {
   }
 }
 
+.text-label {
+  @include text-label();
+}
 
 .wrap {
   margin: 0 auto;
