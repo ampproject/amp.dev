@@ -11,7 +11,7 @@
   width: 200px;
 
   &::before {
-    @include text-label();
+    @extend %text-label;
     color: $color-ampblue;
     content: 'Contents';
   }
@@ -43,7 +43,7 @@
   }
 
   a {
-    @include break();
+    @extend %break;
     color: $color-black-95;
     display: block;
     position: relative;

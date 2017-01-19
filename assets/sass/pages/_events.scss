@@ -14,7 +14,7 @@
   }
 
   .label {
-    @include text-label();
+    @extend %text-label;
     border-bottom: solid 2px $color-grey-lt;
     color: $color-ampblue;
     padding-bottom: 25px;

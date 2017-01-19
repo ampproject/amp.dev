@@ -60,8 +60,8 @@
     }
 
     a {
-      @include text-body();
-      @extend .small;
+      @extend %text-base;
+      @extend %text-small;
     }
   }
 
@@ -149,7 +149,8 @@
     left: 0;
 
     .previous, .next {
-      @include text-body();
+      @extend %text-base;
+      @extend %text-body;
       background: white;
       border-bottom: 3px solid $color-grey-lt;
       border-top: 3px solid $color-grey-lt;

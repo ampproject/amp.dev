@@ -1,7 +1,5 @@
-/**
- * Reset some basic elements
- */
-body, blockquote, pre, hr,
+// Reset some basic elements
+html, body, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
     margin: 0;
     padding: 0;
@@ -9,15 +7,17 @@ dl, dd, ol, ul, figure {
 
 html,
 body {
-  @include text-body();
   box-sizing: border-box;
-  margin: 0;
   overflow-x: hidden;
-  padding: 0;
 }
 
 body {
+  @extend %text-base;
+  @extend %text-body;
+  color: $color-black;
+  font-family: $font-family;
   padding-top: 80px;
+
   @include max-screen($mobile-breakpoint) {
     padding-top: 66px;
   }
@@ -28,9 +28,7 @@ img {
   max-width: 100%;
 }
 
-/**
- * Headings
- */
+// Headings
 h1,
 h2,
 h3,
@@ -85,17 +83,15 @@ h4 {
   }
 }
 
-/**
- * Links
- */
+// Links
 a {
+  @extend %text-label;
   color: $color-ampblue;
   position: relative;
   text-decoration: none;
-  @include text-label();
 
   &.underlined {
-    @include no-break();
+    @extend %no-break;
 
     &::before {
       background: $gradient-med;
@@ -117,6 +113,18 @@ a {
       }
     }
   }
+}
+
+.small {
+  @extend %text-small;
+}
+
+.smaller {
+  @extend %text-smaller;
+}
+
+.light {
+  @extend %text-light;
 }
 
 .button {
@@ -174,9 +182,7 @@ a {
   }
 }
 
-/**
- * Blockquotes
- */
+// Blockquotes
 blockquote {
   color: $color-darkgrey;
   border-left: 4px solid $color-lightgrey;
@@ -196,27 +202,7 @@ blockquote {
   padding-right: 15px;
 }
 
-/**
- * Lists
- */
-
-ul li,
-ol li {
-  @include text-body();
-}
-
 p {
-  @include text-body();
-
-  a {
-    font-weight: 400;
-  }
-
-  &.subtitle {
-    font-size: 28px;
-    line-height: 37px;
-  }
-
   &:last-child {
     margin-bottom: 0;
   }
@@ -257,35 +243,11 @@ figure {
 }
 
 .text-label {
-  @include text-label();
+  @extend %text-label;
 }
 
 .wrap {
   margin: 0 auto;
-}
-
-.centered {
-  text-align: center;
-
-  @include max-screen($mobile-breakpoint) {
-    text-align: left;
-  }
-}
-
-.align-right {
-  text-align: right;
-}
-
-.hidden {
-  display: none;
-}
-
-.center-content {
-  text-align: center;
-}
-
-.code {
-  position: relative;
 }
 
 // for jumplink target x-offset

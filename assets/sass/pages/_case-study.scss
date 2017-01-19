@@ -11,7 +11,7 @@
   }
 
   .post-tag {
-    @include text-label();
+    @extend %text-label;
     color: $color-ampblue;
     display: block;
     padding-bottom: 25px;
@@ -81,7 +81,7 @@
   }
 
   .result-description {
-    @include text-label();
+    @extend %text-label;
     color: $color-ampblue;
     font-weight: 300;
     line-height: 24px;

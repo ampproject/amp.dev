@@ -46,7 +46,7 @@ body.about-who-vertical {
     }
 
     .label {
-      @include text-label();
+      @extend %text-label;
     }
 
     .title {
@@ -210,7 +210,7 @@ body.about-who-vertical {
           justify-content: center;
           h4 {
             padding-right: 10px;
-            
+
           }
           p {
             display: inline-block;

@@ -43,7 +43,7 @@
     }
 
     .browser-title {
-      @include text-label();
+      @extend %text-label;
       color: $color-grey-md;
     }
   }

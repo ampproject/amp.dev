@@ -6,8 +6,8 @@
   }
 
   .section-label {
+    @extend %text-label;
     color: $color-ampblue;
-    @include text-label();
   }
 
   amp-accordion {

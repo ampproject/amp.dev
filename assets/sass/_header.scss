@@ -171,8 +171,8 @@
         position: relative;
 
         a {
-          @include text-body();
-          @extend .small;
+          @extend %text-base;
+          @extend %text-small;
         }
 
         &:first-child {

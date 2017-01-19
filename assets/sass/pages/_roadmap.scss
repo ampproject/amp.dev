@@ -66,9 +66,9 @@
     .description,
     .plan {
       h4 {
+        @extend %text-label;
         color: $color-ampblue;
         padding-left: 1em;
-        @include text-label();
       }
 
       p,

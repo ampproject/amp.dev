@@ -119,7 +119,7 @@
 
     .label,
     .post-meta {
-      @include text-label();
+      @extend %text-label;
     }
 
     .label {

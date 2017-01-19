@@ -1,18 +1,9 @@
-/**
- * Tables
- */
-
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
 td, th {
-  @include text-body();
-  @extend .small;
-  // border: 1px solid $color-ampblue;
-  // border-image: $gradient-bold;
-  // border-image-slice: 1;
   padding: 20px 30px;
   text-align: left;
   vertical-align: top;
@@ -49,7 +40,7 @@ td:first-child {
 
 html, body {
   th {
-    @include text-label();
+    @extend %text-label;
     background: $color-white;
     border-bottom: 2px solid $color-ampblue;
     color: $color-ampblue;

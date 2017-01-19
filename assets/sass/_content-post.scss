@@ -9,6 +9,7 @@
 }
 
 .post-content {
+  @extend %text-small;
   margin: 0 250px 0 75px;
   padding: 0 15px;
 
@@ -21,10 +22,6 @@
     &:before {
       display: none;
     }
-  }
-
-  p {
-    @extend .small;
   }
 
   td:first-child a:hover {

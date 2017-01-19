@@ -11,8 +11,8 @@
 
     .post-type,
     .post-date {
+      @extend %text-label;
       display: inline-block;
-      @include text-label();
     }
 
     .post-type {
@@ -48,7 +48,7 @@
     }
 
     .author-role {
-      @include text-label();
+      @extend %text-label;
       color: $color-grey-ltmd;
       margin-top: 8px;
     }
@@ -57,17 +57,13 @@
   .post-content {
     p,
     li {
-      @extend p.small;
+      @extend %text-small;
       letter-spacing: 0;
     }
 
     a {
+      @extend %link-inherit;
       color: $color-ampblue;
-      font-size: inherit;
-      font-weight: 300;
-      letter-spacing: inherit;
-      line-height: inherit;
-      text-transform: none;
     }
 
     strong {
@@ -89,9 +85,8 @@
     p {
       em,
       em a {
-        font-size: 20px;
+        @extend %text-body;
         font-style: normal;
-        line-height: 28px;
       }
     }
 
@@ -150,14 +145,6 @@
       code,
       code a {
         font-size: 11px;
-      }
-
-      p {
-        em,
-        em a {
-          font-size: 16px;
-          line-height: 26px;
-        }
       }
     }
   }

@@ -6,7 +6,8 @@
 }
 
 .card {
-  @include text-body();
+  @extend %text-base;
+  @extend %text-body;
   background: $color-white;
   box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.075);
   box-sizing: border-box;
@@ -48,9 +49,14 @@
 }
 
 .card-type {
+  @extend %text-label;
   color: $color-ampblue;
-  @include text-label();
   margin-bottom: 15px;
+}
+
+.card-content {
+  font-weight: 300;
+  text-transform: none;
 }
 
 .card-date {
@@ -92,12 +98,13 @@
   .card-title {
     display: block;
     flex: 1 0 auto;
+    hyphens: none;
     margin-bottom: 6em;
   }
 
   .card-link p {
     @extend a.underlined;
-    @include text-label();
+    @extend %text-label;
     color: $color-ampblue;
     display: inline;
     margin: 0;
