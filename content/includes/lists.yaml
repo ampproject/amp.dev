@@ -1,8 +1,10 @@
 past_event:
-  title: Past Events
+  title@: Past Events
 
 blog:
-  title: AMP Blog
+  title@: AMP Blog
 
 roadmap:
-  title: AMP Roadmap
+  title@: AMP Roadmap
+
+share@: Share

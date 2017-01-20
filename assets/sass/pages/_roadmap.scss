@@ -274,6 +274,12 @@
   /* Them responsive awesomeness */
 
   @include max-screen($mobile-breakpoint) {
+    .share-module {
+      .text-label {
+        display: none;
+      } 
+    }
+
     .post-content.post-sheet {
       padding-top: 5px;
     }

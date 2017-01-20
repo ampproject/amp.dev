@@ -139,7 +139,7 @@
 
   @include max-screen($mobile-breakpoint) {
     .post-sheet {
-      padding: 40px 6%;
+      padding: 50px 6% 40px 6%;
     }
 
     .post-meta,
@@ -152,6 +152,13 @@
       code a {
         font-size: 11px;
       }
+    }
+  }
+
+  @include max-screen(1121px) {
+    .share-module {
+      right: -35px;
+      top: -32px;
     }
   }
 }

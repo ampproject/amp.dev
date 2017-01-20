@@ -1,20 +1,29 @@
 .share-module {
   border-bottom: 0;
   position: absolute;
+  z-index: 1;
 
   section,
   header {
     border: 0;
   }
 
+  p.text-label {
+    color: $color-ampblue;
+    text-align: center;
+    position: relative;
+    top: $share-button-size;
+  }
+
   .control header {
     width: $share-button-size + 22px;
-    height: $share-button-size + 22px;
+    height: $share-button-size + 50px;
     background-color: transparent;
     padding-right: 0;
     position: relative;
     left: -10px;
     top: -10px;
+    transition: height .5s;
   }
 
   .toggle-buttons {
@@ -40,6 +49,7 @@
 
   .button-open {
     background: url(/static/img/symbols/share.svg) center/38% no-repeat;
+    transition: opacity .25s;
   }
 
   .button-close {
@@ -74,12 +84,16 @@
   }
 
   .control[expanded] {
+    header {
+      height: $share-button-size + 22px;
+    }
+
     .button-close {
       display: block;
     }
 
     .button-open {
-      display: none;
+      opacity: 0;
     }
 
     & + section amp-social-share {
@@ -95,6 +109,12 @@
       &:nth-child(4) {
         transform: translateY($share-button-size-full);
       }
+    }
+  }
+
+  @include max-screen(1121px) {
+    p.text-label {
+      top: $share-button-size - 5px;
     }
   }
 }

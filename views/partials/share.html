@@ -1,8 +1,9 @@
+{% set lists = g.doc('/content/includes/lists.yaml', locale=doc.locale) %}
 <amp-accordion class="share-module">
   <section class="control">
     <header>
       <div class="toggle-buttons">
-        <div class="button-open"></div>
+        <div class="button-open"><p class="text-label">{{_(lists.share)}}</p></div>
         <div class="button-close"></div>
       </div>
     </header>
