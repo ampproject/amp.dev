@@ -17,10 +17,6 @@
     top: -10px;
   }
 
-  .button-close {
-    display: none;
-  }
-
   .toggle-buttons {
     position: absolute;
     width: $share-button-size + 2px;
@@ -47,6 +43,7 @@
   }
 
   .button-close {
+    display: none;
     background: url(/static/img/symbols/share-close.svg) center/38% no-repeat;
   }
 
