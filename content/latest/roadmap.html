@@ -6,6 +6,9 @@ $path: /{base}/
 $view: /views/base.html
 $localization:
   path: /{locale}/{base}/
+
+components:
+  - social-share
 ---
 {% set roadmap = g.doc('/content/includes/roadmap.yaml', locale=doc.locale) %}
 {% include "/views/partials/breadcrumb-nav.html" %}
@@ -19,6 +22,7 @@ $localization:
     <h1 class="post-title">{{ roadmap.current }}</h1>
 
     <div class="post-sheet post-content">
+      {% include "/views/partials/share.html" %}
       <div class="about">
         <p><em>This page presents a quarterly overview of the planned features and enhancements to AMP. Projects are organized according to core focus areas.</em></p>
         <br>
