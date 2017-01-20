@@ -30,7 +30,24 @@
     background: $color-ampblue;
     z-index: 1;
     border-radius: 50%;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .25);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
+  }
+
+  .button-open,
+  .button-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $share-button-size + 2px;
+    height: $share-button-size + 2px;
+  }
+
+  .button-open {
+    background: url(/static/img/symbols/share.svg) center/38% no-repeat;
+  }
+
+  .button-close {
+    background: url(/static/img/symbols/share-close.svg) center/38% no-repeat;
   }
 
   .share-buttons {
@@ -45,7 +62,7 @@
       height: $share-button-size;
       top: 0;
       left: 0;
-      transition: transform 300ms;
+      transition: transform .25s ease-in-out;
       border-radius: 50%;
       background-size: 70%;
     }
@@ -68,7 +85,7 @@
       display: none;
     }
 
-    & + section .share-buttons amp-social-share {
+    & + section amp-social-share {
       &:nth-child(1) {
         transform: translateY($share-button-size-full * 4);
       }

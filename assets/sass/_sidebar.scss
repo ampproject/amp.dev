@@ -107,14 +107,14 @@ amp-sidebar {
       top: calc(50% - 6px);
       transform: rotate(90deg) scale(.75);
       width: 16px;
-      mask-image: url('/static/img/sprite.svg');
+      mask-image: url(/static/img/sprite.svg);
       mask-position: -60px -43.66px;
       mask-size: 84px 55px;
     }
   }
 
   .close-button {
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15.71" height="15.71" viewBox="0 0 15.71 15.71"><defs><symbol id="a" data-name="New Symbol 1" viewBox="0 0 15.71 15.71"><path fill="none" stroke="#ccc" stroke-miterlimit="10" d="M15.35.35l-15 15M.43.43l14.85 14.85"/></symbol></defs><use width="15.71" height="15.71" xlink:href="#a" data-name="Layer 2"/></svg>') no-repeat center / 18px transparent;
+    background: url(/static/img/symbols/close.svg) no-repeat center / 18px transparent;
     border: 0;
     height: 58px;
     position: absolute;
@@ -132,7 +132,7 @@ amp-sidebar {
     top: 22px;
 
     &::before {
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6.05" height="10.71" viewBox="0 0 6.05 10.71"><path fill="none" stroke="#ccc" stroke-miterlimit="10" d="M5.7.35L.71 5.44l4.99 4.91" data-name="Layer 1"/></svg>') no-repeat center / contain transparent;
+      background: url(/static/img/symbols/return.svg) no-repeat center / contain transparent;
       border: 0;
       content: '';
       display: inline-block;
