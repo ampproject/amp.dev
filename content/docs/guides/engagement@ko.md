@@ -1,5 +1,5 @@
 --
-$title: 사용자 참여 향상
+$title: 사용자 참여 향상하기
 $order: 9
 ---
 다음은 AMP로 사용자의 참여를 향상시키는 몇가지 빠른 팁입니다.
@@ -16,9 +16,9 @@ $order: 9
 
 - AMP 페이지에서 **인터렉티브한 경험을 제공하십시오.** 이미지 캐러셀을 만드는 [`amp-carousel`](https://www.ampproject.org/docs/reference/components/amp-carousel) 및 AMP가 기본으로 제공하지 않는 인터렉티브 요소를 통합할 수 있는 [`amp-iframe`](https://www.ampproject.org/docs/reference/components/amp-iframe)같은 게 있습니다.
 
-- **맞춤형 사용자 행동을 만드십시오.** 로그인 버튼을 제공하고, 콘텐츠가 유료 결제 뒤에 살아있다면, [`amp-access`](https://www.ampproject.org/docs/reference/components/amp-access)를 사용하여 규칙과 제안을 구현하십시오. 
+- **맞춤형 사용자 여정을 만드십시오.** 로그인 버튼을 제공하고 유료 결제 기반의 콘텐츠라면 [`amp-access`](https://www.ampproject.org/docs/reference/components/amp-access)를 사용하여 규칙과 제안을 구현하십시오. 
 
-- 관련되었거나 제안하는 아티클 및 사이트의  다른 관련 섹션들을 연결하여 **행동을 연장하십시오.**
+- **지속되는 사용자 여정으로 확장하십시오.** 관련되거나 추천할만한 글들과 사이트 내의 다른 적절한 섹션들로 링크하세요.
 
 - [`amp-list`](https://www.ampproject.org/docs/reference/components/amp-list)를 이용해 권고를 포함한 **콘텐츠를 개인화 하십시오.**
 
@@ -35,10 +35,10 @@ $order: 9
 
 - 독자를 위해 AMP가 아닌 프로그레시브 웹 앱 (PWA) 사이트로 **빠르게 전환**하십시오.[`amp-install-serviceworker`](https://www.ampproject.org/docs/reference/components/amp-install-serviceworker)를 사용해 캐시를 채웁니다.
 
-### 오픈 소스 AMP 프로젝트에 참여하여 개발의 형태를 도우십시오. 
+### AMP의 발전을 도우려면 AMP 오픈소스 프로젝트에 참여하세요.
 
 - [ampproject.org/roadmap](https://www.ampproject.org/roadmap)에서 업데이트 및 기능에 대한 **AMP 로드맵을 살펴보세요.**
 
 - **참여하세요.** 소스 코드에 기여하거나, 버그를 신고하거나, [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)에 피드백을 주세요. [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)에서 AMP에 대한 의견을 공유해주세요.
 
-- [AMP by Example](https://ampbyexample.com/)에서 AMP 컴포넌트를 어떻게 사용하는 지 **익히십시오.**
+- [예제로 보는 AMP](https://ampbyexample.com/)에서 AMP 컴포넌트를 어떻게 사용하는 지 **익히십시오.**

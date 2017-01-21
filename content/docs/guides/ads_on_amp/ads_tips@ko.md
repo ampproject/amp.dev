@@ -26,7 +26,7 @@ $order : 1
 -  [지원되는 플레이어](https://github.com/ampproject/amphtml/blob/master/extensions/README.md#audiovideo)나 [`amp-iframe`](https://ampbyexample.com/components/amp-iframe/)를 통해 **비디오 콘텐츠에 광고를 게재하면** 모든 타입의 콘텐츠에서 수익을 얻을 수 있습니다.
 - **네이티브 광고를 구현하여** 여러 크기의 요청을 사용해 디스플레이 광고와 경쟁하고, 프리미엄 사용자 경험을 제공하여 수요 압력을 추가하십시오.
 
-### 혁신: <br /> 가장 흥미로운 광고 제품을 제공하십시오
+### 혁신: <br /> 가장 매력적인 광고 제품을 제공하십시오
 
 - **보조 AMP 페이지에 광고를 구현하여** 점진적으로 수익을 창출하십시오:
     - [Ads in your AMP Image Carousel](https://github.com/jasti/amp-ads-testing/blob/master/dfp-amp-testing/amp_tests/amp-carousel-demo.html)
