@@ -9,4 +9,4 @@ $order: 3
 
 - [amp-access](https://www.ampproject.org/docs/reference/components/amp-access)
 - [amp-form](https://www.ampproject.org/docs/reference/components/amp-form)
-- ["Comment Section" Example](https://ampbyexample.com/samples_templates/comment_section/)
+- ["댓글 영역" 예제](https://ampbyexample.com/samples_templates/comment_section/)

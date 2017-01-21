@@ -7,14 +7,14 @@ $order: 3
 LiveBlogPosting 마크업을 이용한 `amp-live-list` 컴포넌트를 통해 AMP로 라이브 블로그를 구현할 수 있습니다.
 스타팅 포인트로 할만한 샘플 구현을 보고싶다면, [ampbyexample.com](https://www.ampbyexample.com)의[live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/)를 살펴보길 바랍니다. 
 
-이 튜토리얼에서는 `amp-live-list` 컴포넌트의 간단히 톺아보고 페이지네이션 및 딥 링크같은 몇가지 구현 디테일사항에 초점을 둡니다. 예제로 사용하는 라이브 블로그 샘플에서 전부 사용합니다.
+이 튜토리얼은 `amp-live-list` 컴포넌트에 대한 간략한 개요와 라이브 블로그 샘플을 예제로 페이지네이션이나 딥링크와 같은 몇가지 상세한 구현 사항들을 살펴보는데 중점을 둡니다.
 
-## Amp-live-list 톺아보기 
+## Amp-live-list 개요
 
 `amp-live-list` 컴포넌트는 정기적으로 호스트 문서를 폴링하여 업데이트 된 콘텐츠를 확인하고 사용 가능한 새 아이템이 있다면 유저의 브라우저를 업데이트합니다.
 즉, 새 블로그 포스트를 추가할 때마다, CMS에서 본문 및 메타데이터 섹션을 업데이트하여 호스트 문서를 업데이트해야합니다.
 
-다음은 초기 블로그의 모습입니다:
+다음은 기본적인 블로그의 모습입니다:
 
 [sourcecode:html]
 <amp-live-list id="my-live-list" data-poll-interval="15000" data-max-items-per-page="5">
@@ -23,7 +23,7 @@ LiveBlogPosting 마크업을 이용한 `amp-live-list` 컴포넌트를 통해 AM
 </amp-live-list>
 [/sourcecode]
 
-`data-poll-interval` 속성으로 폴링 발생 빈도를 정할 수 있습니다; 만약 호스트 문서가 업데이트되면 다음 시간 간격 후에 사용자가 업데이트된 걸 사용할 수 있어야합니다.
+`data-poll-interval` 속성으로 폴링 발생 빈도를 정할 수 있습니다; 만약 호스트 문서가 업데이트되면 다음 시간 인터벌 후에 사용자가 업데이트된 걸 사용할 수 있어야합니다.
 호스트 문서에 새 아이템이 추가될 때마다, `<button update on="tap:my-live-list.update">` 요소가 버튼으로 보이고, 버튼을 클릭하면 최신 포스트를 보여주는 트리거가 페이지에 걸립니다.
 
 라이브 블로그가 페이지를 너무 길게 만든다면, `data-max-items-per-page` 속성으로 라이브 블로그 페이지에 얼마나 많은 아이템을 가져올 지 정할 수 있습니다.
@@ -32,15 +32,14 @@ LiveBlogPosting 마크업을 이용한 `amp-live-list` 컴포넌트를 통해 AM
 
 `amp-live-list`는 포스트가 `<div items></div>` 태그의 자식이어야합니다. 각 게시물을 아이템으로 참조하면, 각 아이템에 유니크한 `id`와 `data-sort-time`을 가지고 있어야합니다.
 
-## 라이브 블로그 구현 디테일
+## 라이브 블로그의 세부 구현
 
 이제 `amp-live-list` 컴포넌트에 익숙해졌으니, 더 복잡한 라이브 블로그를 구현하는 방법을 알아봅시다. 여기서는 페이지네이션을 어떻게 구현할 지, 딥링크가 어떻게 동작하는 지 배울 수 있습니다.
 
 ## 페이지네이션
 
 긴 블로그에서 성능을 향상시키기 위해 페이지에 표시할 블로그 아이템의 수를 제한하고 페이지네이션을 사용할 수 있습니다.
-페이지네이션을 구현하려면, `<div pagination></div>` 요소를 `amp-live-list` 컴포넌트에 넣고, 페이지네이션을 위해 필요한 아무 마크업이나 넣으면 됩니다.
-(페이지 넘버나, 이전 or 다음 페이지로 가는 링크같은 것들)
+페이지네이션을 구현하려면, `<div pagination></div>` 요소를 `amp-live-list` 컴포넌트에 넣고, 페이지네이션을 위해 필요한 아무 마크업이나 넣으면 됩니다. (페이지 넘버나, 이전 or 다음 페이지로 가는 링크같은 것들)
 
 페이지네이션을 사용할 때, 위에서 본 간단한 코드를 사용해보겠습니다:
 
@@ -66,7 +65,7 @@ LiveBlogPosting 마크업을 이용한 `amp-live-list` 컴포넌트를 통해 AM
 <amp-img src="/static/img/liveblog-pagination.jpg" alt="Live blog pagination" height="526" width="300"></amp-img>
 
 블로그 포스트의 사이즈가 `data-max-items-per-page`로 정의한 최대 갯수를 넘은 경우.
-오랜 블로그 아이템은 2번째 페이지 같은 "Next" 페이지에서 보여집니다.
+더 오래된 블로그 아이템은 2번째 페이지 같은 "Next" 페이지에서 보여집니다.
 `amp-live-list`는 주기적으로 서버를 폴링하여 아이템에 변경이 있는 지 확인하므로, 사용자가 첫번째 페이지에 있지 않다면 서버를 폴링할 필요가 없습니다.
 
 폴링 메커니즘을 방지하기 위해 호스트 페이지에 disabled 속성을 추가할 수 있습니다.

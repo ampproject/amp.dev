@@ -16,7 +16,7 @@ $order: 0
 </span>
 [/sourcecode]
 
-`amp-access` 관련 속성의 동작은 `amp-access`를 위한 페이지 전체 구성에 따라 다릅니다. 이 케이스는 다음과 같습니다:
+`amp-access` 관련 속성의 동작은 `amp-access`를 위한 페이지 전체 구성에 따라 다릅니다. 이 경우 다음과 같습니다:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -35,7 +35,7 @@ $order: 0
 </script>
 [/sourcecode]
 
-권한 엔드포인트는 AMPByExample의 일부에 배치됩니다. 이 엔드포인트를 제공하는 건 페이지 발행자의 책임입니다.
+인증 엔드포인트는 AMPByExample의 일부에 배치됩니다. 이 엔드포인트를 제공하는 건 페이지 발행자의 책임입니다.
 이 예제에서는 간단히 설명하기 위해 요청을 받으면 서버가 `ABE_LOGGED_IN`이라는 쿠키를 읽는 간단한 로직을 구현했습니다.
 만약 쿠키가 없다면, `loggedIn = false`가 포함된 JSON 결과값을 반환할겁니다.
 결과적으로 사용자가 처음 페이지에 방문했을 때, 이 요청은 `loggedIn = false`를 반환할 거고 로그인 버튼이 보일겁니다.

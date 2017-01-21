@@ -1,5 +1,5 @@
 ---
-$title: 댓글 달기
+$title: 댓글 추가
 $order: 1
 ---
 
@@ -39,7 +39,7 @@ JSON 응답 예제입니다:
 </div>
 [/sourcecode]
 
-이 예제에서는 댓글 값이 비어있는 지 확인합니다. 값이 비어있으면 다음 코드가 실행되도록 하는 오류를 반환합니다.
+이 예제에서는 댓글 값이 비어있는지 확인합니다. 값이 비어있으면 다음 코드가 실행되도록 하는 오류를 반환합니다.
 
 [sourcecode:html]
 <div submit-error>
@@ -49,7 +49,7 @@ JSON 응답 예제입니다:
 </div>
 [/sourcecode]
 
-추가로, 댓글을 제출하기 전에 댓글 텍스트가 있는 지 확인하기 위해 `required` 속성을 추가합니다.
+추가로, 댓글을 제출하기 전에 댓글 텍스트가 있는지 확인하기 위해 `required` 속성을 추가합니다.
 
 <amp-img src="/static/img/enforce-comment.png" alt="Enforce comment" height="325" width="300"></amp-img>
 

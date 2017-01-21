@@ -3,7 +3,7 @@ $title: 로그아웃
 $order: 2
 ---
 
-로그인 버튼과 마찬가지로 로그아운 버튼의 존재 여부는 `amp-access` 컴포넌트의 상태에 따라 다릅니다.
+로그인 버튼과 마찬가지로 로그아웃 버튼의 존재 여부는 `amp-access` 컴포넌트의 상태에 따라 다릅니다.
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
@@ -20,7 +20,7 @@ $order: 2
 }
 [/sourcecode]
 
-로그인과 마찬가지로 AMPByExample 서버가 로그아웃 요청을 받으면 자동으로 AMP 라이브러리에서 추가한 return URL 쿼리 파라미터를 사용하여 리디렉션하고 `#success = true`를 추가합니다
-이 때, 이제 처음 페이지로 돌아왔습니다. 이 시점에서 로그인 페이지(`ABE_LOGGED_IN`)에 대해 이전에 생성 된 AMPByExample 쿠키가 지워집니다.
+로그인과 마찬가지로 AMPByExample 서버가 로그아웃 요청을 받으면 자동으로 AMP 라이브러리에서 추가한 반환 URL 쿼리 파라미터를 사용하여 리디렉션하고 `#success = true`를 추가합니다
+이 시점에 여러분은 처음 페이지로 돌아왔으며, 동일 시점에서 로그인 페이지(`ABE_LOGGED_IN`)에 대해 이전에 생성 된 AMPByExample 쿠키가 지워집니다.
 
 <a class="go-button button" href="/ko/docs/get_started/login_requiring/summary.html">4단계로 계속</a>
