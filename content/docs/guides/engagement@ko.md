@@ -1,4 +1,4 @@
---
+---
 $title: 사용자 참여 향상하기
 $order: 9
 ---
@@ -16,7 +16,7 @@ $order: 9
 
 - AMP 페이지에서 **인터렉티브한 경험을 제공하십시오.** 이미지 캐러셀을 만드는 [`amp-carousel`](https://www.ampproject.org/docs/reference/components/amp-carousel) 및 AMP가 기본으로 제공하지 않는 인터렉티브 요소를 통합할 수 있는 [`amp-iframe`](https://www.ampproject.org/docs/reference/components/amp-iframe)같은 게 있습니다.
 
-- **맞춤형 사용자 여정을 만드십시오.** 로그인 버튼을 제공하고 유료 결제 기반의 콘텐츠라면 [`amp-access`](https://www.ampproject.org/docs/reference/components/amp-access)를 사용하여 규칙과 제안을 구현하십시오. 
+- **맞춤형 사용자 여정을 만드십시오.** 로그인 버튼을 제공하고 유료 결제 기반의 콘텐츠라면 [`amp-access`](https://www.ampproject.org/docs/reference/components/amp-access)를 사용하여 규칙과 제안을 구현하십시오.
 
 - **지속되는 사용자 여정으로 확장하십시오.** 관련되거나 추천할만한 글들과 사이트 내의 다른 적절한 섹션들로 링크하세요.
 
