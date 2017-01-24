@@ -6,7 +6,7 @@ Live blogs are web pages that are updated frequently throughout an on-going even
 
 A live blog can be implemented in AMP via the `amp-live-list` component using the LiveBlogPosting markup. To see a sample implementation that you can use as a starting point, visit the [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/) at [ampbyexample.com](https://www.ampbyexample.com).
 
-This tutorial offers a short overview of the amp-live-list component and focuses on some implementation details like pagination and deep linking, all using the live blog sample as an example.
+This tutorial offers a short overview of the `amp-live-list` component and focuses on some implementation details like pagination and deep linking, all using the live blog sample as an example.
 
 ## Amp-live-list overview
 
@@ -44,12 +44,12 @@ When using pagination, the simple code we used earlier becomes:
   <button update on="tap:my-live-list.update">You have updates!</button>
   <div items></div>
   <div pagination>
-  	<nav>
-          <ul>
-            <li>1</li>
-      <li>Next</li>
-          </ul>
-        </nav>
+    <nav>
+      <ul>
+        <li>1</li>
+        <li>Next</li>
+      </ul>
+     </nav>
    </div>
 </amp-live-list>
 [/sourcecode]
