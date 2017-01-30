@@ -14,7 +14,7 @@ AMP는 `<img>` 같은 미디어를 표현하는 기본 HTML을 지원하지 않�
 아래와 같은 이유로 기본 HTML과 동등한 컴포넌트를 제공합니다:
 
 * [뷰포트의 사전 로딩]((/learn/how-amp-works/#size-all-resources-statically))을 지원하려면 자원을 불러오기 전의 페이지 레이아웃에 대한 이해가 필수적입니다.
-* [효과적으로 자원을 불러오는 과정의 우선순위를 정하거나 지연](/learn/how-amp-works/#prioritize-resource-loading)지연하기 위해 네트워크 요청을 제어할 필요가 있습니다.
+* [효과적으로 자원을 불러오는 과정의 우선순위를 정하거나 지연](/learn/how-amp-works/#prioritize-resource-loading)하기 위해 네트워크 요청을 제어할 필요가 있습니다.
 
 <aside class="caution">
   <strong>주의:</strong>
