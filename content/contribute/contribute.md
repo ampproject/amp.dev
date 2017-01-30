@@ -25,13 +25,13 @@ To get started with contributing code to the AMP Project read through [the CONTR
 
 When you're ready to work on some code, [the DEVELOPING file](https://github.com/ampproject/amphtml/blob/master/DEVELOPING.md) has documentation of how to get the code and start developing.
 
-If you want to help out but aren't sure where to get started, we have a list of [starter bugs](https://github.com/ampproject/amphtml/blob/master/DEVELOPING.md#starter-issues) that you can use to learn more about the AMP Project code and make an immediate impact.
+If you want to help out but aren't sure where to get started, we have a list of [starter issues](https://github.com/ampproject/amphtml/blob/master/DEVELOPING.md#starter-issues) that you can use to learn more about the AMP Project code and make an immediate impact.
 
 #### Helping with documentation
 
 Documentation is important for the entire AMP community, and we would appreciate your help in making our documentation better!  We've got all sorts of documentation--examples for users of AMP, docs to help AMP Project contributors, etc.
 
-[ampproject.org](https://ampproject.org) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make the page you are reading better!)
+[ampproject.org](https://ampproject.org) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make [the page you are reading](https://github.com/ampproject/docs/blob/master/content/contribute/contribute.md) better!)
 
 [ampbyexample.com](https://ampbyexample.com) provides examples of how to use AMP.  You can improve it at the [amp-by-example GitHub project](https://github.com/ampproject/amp-by-example/).
 
