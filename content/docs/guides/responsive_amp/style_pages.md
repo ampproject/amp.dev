@@ -137,9 +137,9 @@ so that many pages across the site can include embedded youtube videos.
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
 
   <title>Accelerated Mobile Pages Project</title>
-  <link rel="shortcut icon" href="/static/img/amp_favicon.png">
+  <link rel="icon" href="/static/img/amp_favicon.png">
   <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
   </style>
