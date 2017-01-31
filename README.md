@@ -8,6 +8,8 @@ a good example of how to build a canonical, responsive standalone AMP site.
 How to build the site
 ---------------------
 
+### Install
+
 Install [Grow](http://grow.io) and npm dependencies:
 
 ```sh
@@ -15,13 +17,32 @@ $ curl https://install.growsdk.org | bash
 $ npm install
 ```
 
-Get a GitHub client id and secret:
+### Get a GitHub token or app id/secret
 
-Out of the box, the reference docs are not bundled with the rest of the documentation. We'll fetch them via GitHub, and the only thing you have to do is the following:
+The docs in the reference section of the AMP Project site are not part of this repository; instead they are read from the [amphtml GitHub repository](https://github.com/ampproject/amphtml) "source of truth."  When building the site these docs are fetched via GitHub.
 
-  1. Register for a GitHub application [here](https://github.com/settings/applications/new)
-  2. Find the client id and secret
-  3. In your shell, export the id as `AMP_DOC_ID` and the secret as `AMP_DOC_SECRET`
+Due to GitHub quotas this fetching will quickly fail unless additional information is provided in the request.  This can be either a personal access token or an application id/secret.
+
+#### Personal access token
+
+  1. Request a GitHub [personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/).  Since the docs are fetched from a public repository you only need to select the "public_repo" scope when creating the token.  (It's a good practice to limit the token to the scope you need.)
+  2. In your shell export the generated personal access token as `AMP_DOC_TOKEN`
+
+#### Application client id and secret
+
+If you prefer not to use a personal access token, you can also create a GitHub application and use its id and secret.
+
+  1. Register for a [GitHub application](https://github.com/settings/applications/new)
+  2. In your shell export the application client id as `AMP_DOC_ID` and the client secret as `AMP_DOC_SECRET`
+
+### Build
+
+```sh
+$ grow build
+```
+
+This will generate a static, complete build of the site into the **build* folder.
+
 
 ### Develop
 
@@ -32,14 +53,6 @@ $ grow run
 ```
 
 You can now open http://localhost:8080/ and continue working on the source files, then reload the page to see changes appear.
-
-### Build
-
-```sh
-$ grow build
-```
-
-This will generate a static, complete build of the site into the **build* folder.
 
 Support
 -------
