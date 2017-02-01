@@ -41,6 +41,7 @@ speakers:
   rannazhou:
     name: Ranna Zhou
     company: Google
+    bio: Ranna Zhou is a product manager on Search working to bring information context and summarization of news to users. She studied computer science at MIT and exercises her degree coding for non-profits.
     pic: /static/img/amp-conf/speakers/ranna.jpg
   yaminigupta:
     name: Yamini Gupta & Vamsee Jasti
@@ -51,6 +52,10 @@ speakers:
     name: Dane Knecht
     company: Cloudflare
     pic: /static/img/amp-conf/speakers/dane.jpg
+  sammeder:
+    name: Sam Meder
+    company: Pinterest
+    pic: /static/img/amp-conf/speakers/sam.jpg
 agenda:
   day_1:
     - title: Registration and Breakfast
@@ -63,6 +68,7 @@ agenda:
     - title: TBA
       time: "0930"
       type: session
+      speaker: sammeder
     - title: TBA
       time: "1000"
       type: session
