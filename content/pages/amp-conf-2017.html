@@ -46,50 +46,47 @@ stylesheet: pages/amp-conf.css
     <div class="wrapper">
         <h3 id="schedule">Schedule</h3>
 
-        <p>All talks and sessions are designed to help you create amazing, successful AMP content (and to help others do the same!), and while some are given by the AMP team, over 50% of the talks are given by partners in the AMP ecosystem. We'll follow up with a more detailed schedule by late January.</p>
+        <p>All talks and sessions are designed to help you create amazing, successful AMP content (and to help others do the same!), and over 50% of are given by partners in the AMP ecosystem. <strong>The second batch of talks is going to be announced on February 7th</strong>.</p>
 
         {% macro render_session(item) -%}
+        {% if conf.speakers[item.speaker] %}
+        <span class="image">{% if conf.speakers[item.speaker].pic %}<amp-img src="{{ conf.speakers[item.speaker].pic }}" width="100" height="100"></amp-img>{% endif %}</span>
+        {% endif %}
         <time>{{ item.time }}</time>
-        {{ item.title }}
+        <div>
+            <h5 class="{{ item.type }}">{{ item.title }}</h5>
+            {% if conf.speakers[item.speaker] %}
+            <small>{{ conf.speakers[item.speaker].name }}, {{ conf.speakers[item.speaker].company }}</small>
+            {% endif %}
+            {% if item.description %}
+            <p>{{ item.description }}</p>
+            {% endif %}
+        </div>
         {%- endmacro %}
 
+        <div class="tabs">
+
+        </div>
+
         <div class="days">
+
             <div class="day">
-                <h4>Day 1</h4>
+                <h4>March 7th</h4>
                 <ul class="schedule">
                     {% for item in conf.agenda.day_1 %}
-                    <li>
-                        {% if item.children %}
-                            <ul data-theme="{{item.title}}">
-                                {% for subitem in item.children %}
-                                <li>
-                                    {{ render_session(subitem) }}
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        {% else  %}
-                            {{ render_session(item) }}
-                        {% endif %}
+                    <li class="{{ item.type }}">
+                        {{ render_session(item) }}
                     </li>
                     {% endfor %}
                 </ul>
             </div>
+
             <div class="day">
-                <h4>Day 2</h4>
+                <h4>March 8th</h4>
                 <ul class="schedule">
                     {% for item in conf.agenda.day_2 %}
-                    <li>
-                        {% if item.children %}
-                            <ul data-theme="{{item.title}}">
-                                {% for subitem in item.children %}
-                                <li>
-                                    {{ render_session(subitem) }}
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        {% else  %}
-                            {{ render_session(item) }}
-                        {% endif %}
+                    <li class="{{ item.type }}">
+                        {{ render_session(item) }}
                     </li>
                     {% endfor %}
                 </ul>
