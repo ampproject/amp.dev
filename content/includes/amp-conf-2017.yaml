@@ -1,78 +1,165 @@
 registration_link: https://events.withgoogle.com/amp-conf-2017/registrations/new
+speakers:
+  davidbesbris:
+    name: David Besbris
+    company: Google
+    pic: /static/img/amp-conf/speakers/bez.jpg
+  nataliabaltazar:
+    name: Natalia Baltazar
+    company: The Guardian
+    pic: /static/img/amp-conf/speakers/natalia.jpg
+  lewei:
+    name: Le Wei
+    company: UpperQuad
+    twitter: lewei
+  willchou:
+    name: William Chou
+    company: Google
+    pic: /static/img/amp-conf/speakers/will.jpg
+    bio: William Chou is a Software Engineer who's working on new dynamic content in AMP. William worked in the games industry prior to joining Google.
+  malteandrudy:
+    name: Malte Ubl & Rudy Galfi
+    company: Google
+    pic: /static/img/amp-conf/speakers/malteandrudy.jpg
+  alexrussell:
+    name: Alex Russell
+    company: Google
+    pic: /static/img/amp-conf/speakers/alex.jpg
+    bio: Alex Russell is a Software Engineer on the Chrome team at Google where he designs new features for the web platform and leads Chrome's Standards work. He's a member of TC39, the committee standardizing ECMAScript/JavaScript, and is an elected member of the W3C’s Technical Architecture Group where he works with a group of like-minded reformers to improve the state of layering and API design for the web. Progressive Web Apps are his jam.
+  johnpettitt:
+    name: John Pettitt
+    company: Relay Media
+    pic: /static/img/amp-conf/speakers/john.jpg
+    bio: "John is co-founder/CTO of Relay Media, a company dedicated to AMP.  Relay provides automated AMP conversion services for many TV and Newspaper sites. John was VP of engineering for BitTorrent, and co-founder/CTO of Beyond.com and CyberSource. John’s photojournalism has appeared in Wired, Vanity Fair, NY Times, Washington Post, on CNN, and on CBS news.  He's had an Internet email address since 1983."
+    twitter: jpp123
+  chenshay:
+    name: Chen Shay
+    company: Google
+    pic: /static/img/amp-conf/speakers/chen.jpg
+  rannazhou:
+    name: Ranna Zhou
+    company: Google
+    pic: /static/img/amp-conf/speakers/ranna.jpg
+  yaminigupta:
+    name: Yamini Gupta & Vamsee Jasti
+    company: Google
+    pic: /static/img/amp-conf/speakers/yamini.jpg
+    bio: As Head of Publisher Marketing at Google, Yamini leads marketing programs aimed at helping publishers thrive and create sustainable businesses with advertising. In this role, Yamini drives industry education and product marketing for DoubleClick's mobile, video and programmatic solutions as well as the open source Accelerated Mobile Pages (AMP) project. Yamini has more than 10 years of experience in marketing and advertising and started her career marketing consumer goods at DDB in India. She holds a Bachelor's degree in English Literature from Bombay University, and an MBA from Columbia University in New York.
 agenda:
   day_1:
     - title: Registration and Breakfast
       time: "0800"
     - title: Morning Keynote
       time: "0900"
-    - title: AMP in Production
-      children:
-        - title: Session 1
-          time: "0930"
-        - title: Session 2
-          time: "1000"
-        - title: Coffee Break
-          time: "1030"
-        - title: Session 3
-          time: "1100"
-        - title: Session 4
-          time: "1130"
-        - title: Session 5
-          time: "1200"
+      type: keynote
+      speaker: davidbesbris
+      description: See the VP of Search and AMP open the AMP Conf with a look at the past, present and future of AMP.
+    - title: TBA
+      time: "0930"
+      type: session
+    - title: TBA
+      time: "1000"
+      type: session
+    - title: Coffee Break
+      time: "1030"
+    - title: AMP in the Wild
+      time: "1100"
+      type: session
+      speaker: nataliabaltazar
+      description: Learn how the Guardian turned the limitations of AMP into an opportunity to rethink their article pages, header and navigation and therefore improved their overall user journey.
+    - title: TBA
+      time: "1130"
+      type: session
+      speaker: TBA
+      company: TBA
+    - title: TBA
+      time: "1200"
+      type: session
+      speaker: TBA
+      company: TBA
     - title: Lunch
       time: "1230"
-    - title: Beautiful, Interactive Content
-      children:
-        - title: "Web Advocate Panel"
-          time: "1330"
-        - title: Web Advocate Panel (contd)
-          time: "1400"
-        - title: Session 6
-          time: "1430"
-        - title: Session 7
-          time: "1500"
-        - title: Coffee Break
-          time: "1530"
-        - title: Session 8
-          time: "1600"
-    - title: Evening Keynote
+    - title: "AMP & the web platform"
+      time: "1330"
+      type: panel
+      speakers:
+        - jeremykeith
+        - nicolesullivan
+        - sarahsaltrickmeyer
+      description: It's hard to argue that AMP improves page speed and usability, but does it actually help the web platform at large? And if it doesn't, how can we fix it? We invited a bunch of advocates for the open web to talk candidly.
+    - title: TBA
+      time: "1430"
+      type: session
+      speaker: Madison Miner
+      company: WompMobile
+    - title: Turing complete...AMP Pages?!
+      time: "1500"
+      type: session
+      speaker: willchou
+      description: The AMP team has been amazed at the creativity web developers are showing to create interactivity without JS, but we're finally making it a little easier out of the box. Learn how amp-bind, amp-selector, amp-fresh and other exciting new components enable true interactivity.
+    - title: "Beautiful, Canonical, and Responsive AMP Pages"
+      time: "1530"
+      type: session
+      description: Le is the lead developer for the upcoming relaunch of the AMP Project website, and will share lots of lessons learned when building canonical, responsive AMP. She'll also highlight some upcoming AMP features that make it even easier to build attractive AMP Pages.
+      speaker: lewei
+    - title: Coffee Break
+      time: "1600"
+    - title: What's next in AMP
       time: "1630"
-    - title: Q&A Panel
+      type: keynote
+      speaker: malteandrudy
+      company: Google
+      description: What does the future for AMP look like? Malte Ubl, engineering lead of AMP, and Rudy Galfi, PM on the AMP team, are here to tell you all about it.
+    - title: Q&A with Google Search and AMP Leadership
       time: "1700"
-    - title: Q&A Panel (contd)
-      time: "1730"
+      type: panel
+      description: It's time to ask the AMP and Google Search leadership all the questions. All keynote speakers as well as a few additional guests from Search will try hard to answer every question you throw at them.
+      speakers:
+        - davidbesbris
+        - malteubl
+        - rudygalfi
+        - richardgingras
+        - rannazhou
+        - ardanarac
+        - angelayeung
   day_2:
     - title: Breakfast
       time: "0800"
-    - title: TBD
+    - title: TBA
       time: "0900"
-    - title: Delivery and Distribution
-      children:
-        - title: Session 9
-          time: "0930"
-        - title: Session 10
-          time: "1000"
-        - title: Coffee Break
-          time: "1030"
-        - title: Session 11
-          time: "1100"
-        - title: Platforms Panel
-          time: "1130"
-        - title: Platforms Panel (contd)
-          time: "1200"
+    - title: Progressive Web AMPs
+      time: "0930"
+      speaker: alexrussell
+      description: AMP gets content in front of users fast – PWAs enable rich experiences and engagement. Learn how to combine the two to get the best of both worlds by the Chrome engineer who coined the term "Progressive Web App".
+    - title: TBA
+      time: "1000"
+    - title: Coffee Break
+      time: "1030"
+    - title: "AMP Conversion: The Good, The Bad and The Ugly"
+      time: "1100"
+      speaker: johnpettitt
+      description: Relay Media is converting millions of AMP pages every day, and conversion brings many challenges different than building from scratch. Learn how to compress CSS efficiently, replace functionality smartly and much more.
+    - title: "Consuming AMP: The platform panel"
+      time: "1130"
+      type: panel
+      description: Meet the platforms that embed and distribute AMP pages, and learn about their unique challenges, future ideas and more. Featuring an all-star lineup that includes Bing, Cloudflare, Google and more to be announced.
     - title: Lunch
       time: "1230"
-    - title: AMP Behind the scenes
-      children:
-        - title: Session 12
-          time: "1330"
-        - title: Session 13
-          time: "1400"
-        - title: Coffee Break
-          time: "1430"
-        - title: Session 14
-          time: "1500"
+    - title: Building a new AMP component
+      time: "1330"
+      speaker: chenshay
+      description: So what happens if you discover that an AMP component for your use case doesn't exist? Contributing a new component is actually much easier than many expect, and Chen will walk you through it.
+    - title: Building the perfect AMP Viewer
+      time: "1400"
+      speaker: rannazhou
+      description: Ranna will talk about how Google Search uses AMP to create experiences like the Top Stories carousel, and how the AMP Viewer works, from top to bottom. It's rare to get a chance to look behind the scenes of Google Search – you don't want to miss this one.
+    - title: "Better advertising on a faster web: AMP for Ads"
+      time: "1430"
+      speaker: yaminigupta
+      description: So, AMP made content faster on the mobile web. But what about ads? Slow, spammy and disruptive ad experiences have eroded the value of content by annoying users even as advertising continues to be at the cornerstone of every publisher's business model. AMP's mission is to build a better, faster mobile web --- and that includes ads. Join us in this session to hear more about AMP for Ads (A4A), a new initiative from the AMP Project that's fundamentally changing the way ads are built and delivered on the web.
+    - title: Coffee Break
+      time: "1500"
     - title: Breakout Sessions
       time: "1530"
-    - title: Breakout Sessions (contd)
-      time: "1600"
+      type: panel
+      description: "To wrap up the conference, it's time to reverse who's listening and speaking: We want to hear directly from you in small brainstorming sessions with the AMP team. We'll send you a list of breakout sessions shortly."
