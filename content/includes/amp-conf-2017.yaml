@@ -12,6 +12,7 @@ speakers:
     name: Le Wei
     company: UpperQuad
     twitter: lewei
+    pic: /static/img/amp-conf/speakers/le.jpg
   willchou:
     name: William Chou
     company: Google
@@ -36,6 +37,7 @@ speakers:
     name: Chen Shay
     company: Google
     pic: /static/img/amp-conf/speakers/chen.jpg
+    bio: Chen is a Software Engineer on the AMP Team @ Google. Prior to AMP, Chen worked on Google Saves and most recently, Health Search. Chen launched Health Cards in developing countries, and Google Answers to Health questions. Chen is a Silicon Valley native. She holds a bachelor's degree in Computer Science from UC Santa Barbara and a Master's degree in Computer Science from Ben Gurion University in Israel.
   rannazhou:
     name: Ranna Zhou
     company: Google
@@ -45,6 +47,10 @@ speakers:
     company: Google
     pic: /static/img/amp-conf/speakers/yamini.jpg
     bio: As Head of Publisher Marketing at Google, Yamini leads marketing programs aimed at helping publishers thrive and create sustainable businesses with advertising. In this role, Yamini drives industry education and product marketing for DoubleClick's mobile, video and programmatic solutions as well as the open source Accelerated Mobile Pages (AMP) project. Yamini has more than 10 years of experience in marketing and advertising and started her career marketing consumer goods at DDB in India. She holds a Bachelor's degree in English Literature from Bombay University, and an MBA from Columbia University in New York.
+  daneknecht:
+    name: Dane Knecht
+    company: Cloudflare
+    pic: /static/img/amp-conf/speakers/dane.jpg
 agenda:
   day_1:
     - title: Registration and Breakfast
@@ -125,14 +131,14 @@ agenda:
   day_2:
     - title: Breakfast
       time: "0800"
-    - title: TBA
-      time: "0900"
     - title: Progressive Web AMPs
       time: "0930"
       speaker: alexrussell
       description: AMP gets content in front of users fast – PWAs enable rich experiences and engagement. Learn how to combine the two to get the best of both worlds by the Chrome engineer who coined the term "Progressive Web App".
-    - title: TBA
+    - title: How Cloudflare is accelerating AMP
       time: "1000"
+      speaker: daneknecht
+      description: Cloudflare has just announced Accelerated Mobile Links, but they're not stopping there! Learn about the entire ecosystem of AMP-powered solutions Cloudflare is building.
     - title: Coffee Break
       time: "1030"
     - title: "AMP Conversion: The Good, The Bad and The Ugly"
