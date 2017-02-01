@@ -307,4 +307,19 @@
 
     }
 
+    @include max-screen(500px) {
+        ul.schedule {
+            margin-left: 0;
+            li span.image {
+                display: none;
+            }
+            li.session,
+            li.keynote {
+                time::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
 }
