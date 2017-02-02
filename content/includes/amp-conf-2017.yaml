@@ -8,6 +8,7 @@ speakers:
     name: Natalia Baltazar
     company: The Guardian
     pic: /static/img/amp-conf/speakers/natalia.jpg
+    bio: Natalia Baltazar is a full stack software engineer at the Guardian. She works mainly on the theguardian.com, coding in Javascript and Scala. At the Guardian she is the lead developer creating Google AMP versions of article pages and helping spearhead diversity initiatives. Outside of work she organises one-day workshops teaching Node.js with nodegirls.io, is an organiser for Ladies of Code, and volunteers as a mentor for a variety of free coding meetups. In her spare time she focuses on learning new programming languages, furniture refurbishment, and fashion design.
   lewei:
     name: Le Wei
     company: UpperQuad
