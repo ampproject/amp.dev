@@ -11,17 +11,26 @@
       {% else %}
         <a class="type" href="{{g.doc('/content/latest/roadmap.html').url.path}}">{{post.type}}</a>
       {% endif %}
-      {% if not isEvent %}
+      {% if isBlog %}
         <span class="time text-label">{{post.date}}</span>
+      {% endif %}
+      {% if isRoadmap %}
+        <span class="time text-label">{{post.updated}}</span>
       {% endif %}
     </div>
   {% endif %}
   {% if isBlog %}
     <a href="{{g.doc('/content/latest/blog/' ~ post.id ~ '.md').url.path}}" class="post-title">
-  {% else %}
+  {% endif %}
+  {% if isEvent %}
     <a href="{{post.href}}" class="post-title">
   {% endif %}
+  {% if isRoadmap %}
+    <a href="{{g.doc('/content/latest/roadmap.html').url.path}}" class="post-title">
+    <h4>{{post.current}}</h4>
+  {% else %}
     <h4>{{post.title|truncate(80, False)}}</h4>
+  {% endif %}
   </a>
   {% if not isEvent or not past %}
     <p class="post-excerpt small">{{post.excerpt|safe|truncate(170, False)}}</p>

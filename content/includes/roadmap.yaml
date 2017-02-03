@@ -1,8 +1,10 @@
+type: Roadmap
 year: 2016
 quarter: Q4
 outlook:  Q1/Q2
 current: Mid-Q4 2016
 updated: November 22, 2016
+excerpt: Excerpt of the roadmap here.
 stages:
     "6": Launched / Stable
     "5": Code Complete / Experimental

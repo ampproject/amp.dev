@@ -13,6 +13,9 @@ components:
   - carousel
 ---
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
+{% set blog_list = g.doc('/content/includes/list-blog.yaml', locale=doc.locale) %}
+{% set roadmap = g.doc('/content/includes/roadmap.yaml', locale=doc.locale) %}
+{% set events_list = g.doc('/content/includes/events.yaml', locale=doc.locale) %}
 {% set tweets = g.doc('/content/includes/tweets.yaml', locale=doc.locale) %}
 
 {% include "/views/partials/breadcrumb-nav.html" %}
@@ -60,16 +63,28 @@ components:
         <h1 class="title">{{_(latest.hero.title)}}</h1>
         <!-- <ul class="inline-toc">
           <li><a href="{{g.url('/content/pages/list-event.html', locale=doc.locale).path}}">{{_(latest.feed.category_event)}}</a></li>
-          <li><a href="{{g.url('/content/pages/list-roadmap.html', locale=doc.locale).path}}">{{_(latest.feed.category_roadmap)}}</a></li>
+          <li><a href="{{g.url('/content/pages/roadmap.html', locale=doc.locale).path}}">{{_(latest.feed.category_roadmap)}}</a></li>
           <li><a href="{{g.url('/content/pages/list-blog.html', locale=doc.locale).path}}">{{_(latest.feed.category_blog)}}</a></li>
         </ul> -->
       </div>
       <section class="posts">
         <h2 class="posts-label">{{_(latest.feed.title)}}</h2>
-        {% for post in latest.feed.posts %}
-          {% with past = false, meta = true %}
-            {% include "/views/partials/post-item.html" %}
-          {% endwith %}
+        {% for post in events_list.upcoming_events %}
+          {% if loop.index <= 2 %}
+            {% with past = false, meta = true %}
+              {% include "/views/partials/post-item.html" %}
+            {% endwith %}
+          {% endif %}
+        {% endfor %}
+        {% with post = roadmap, past = false, meta = true %}
+          {% include "/views/partials/post-item.html" %}
+        {% endwith %}
+        {% for post in blog_list.blogs %}
+          {% if loop.index <= 3 %}
+            {% with past = false, meta = true %}
+              {% include "/views/partials/post-item.html" %}
+            {% endwith %}
+          {% endif %}
         {% endfor %}
         <a class="feed-cta underlined cta">{{_(latest.feed.more_posts)}}</a>
       </section>

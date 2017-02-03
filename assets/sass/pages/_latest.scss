@@ -92,7 +92,7 @@
           width: 16px;
         }
 
-        .post-excerpt {
+        .tweet-text {
           margin: 20px 0;
 
           a {
@@ -112,7 +112,16 @@
           .invisible {
             font-size: 0;
             line-height: 0;
+            display: inline-block;
+            width: 0;
           }
+
+          .tco-ellipsis + .invisible {
+            width: 4px;
+          }
+        }
+        .Emoji {
+          max-width: 18px;
         }
       }
     }
