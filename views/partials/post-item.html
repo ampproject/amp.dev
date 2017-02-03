@@ -19,7 +19,7 @@
     <h4>{{post.title|truncate(80, False)}}</h4>
   </a>
   {% if not isEvent or not past %}
-    <p class="post-excerpt small">{{post.excerpt|truncate(170, False)}}</p>
+    <p class="post-excerpt small">{{post.excerpt|safe|truncate(170, False)}}</p>
   {% endif %}
   {% if isEvent %}
     <div class="event-meta">

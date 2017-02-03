@@ -1,22 +1,56 @@
 blogs:
-  - type: Blog
-    title: 'Title of Blog Post 1'
-    id: title-of-blog-post-1
-    author: 'Author 1'
-    role: 'Project Manager'
-    origin: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: 'Today we are announcing a change to the domain scheme of the Google AMP Cache. Beginning soon, the Google AMP Cache will serve each site from its own subdomain of https://cdn.ampproject.org. This change will allow content served from the Google AMP Cache to be protected by the fundamental security model of the web: the HTML5 origin.'
-    avatar: https://secure.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?d=identicon&r=g
-    date_data: 2016-12-02T15:15:28+00:00
-    date: December 2, 2016
 
   - type: Blog
-    title: 'Title of Blog Post 2'
-    id: title-of-blog-post-2
-    author: 'Author 1'
-    role: 'Project Manager'
-    origin: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: 'Today we are announcing a change to the domain scheme of the Google AMP Cache. Beginning soon, the Google AMP Cache will serve each site from its own subdomain of https://cdn.ampproject.org. This change will allow content served from the Google AMP Cache to be protected by the fundamental security model of the web: the HTML5 origin.'
-    avatar: https://secure.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?d=identicon&r=g
-    date_data: 2016-11-02T15:15:28+00:00
-    date: November 2, 2016
+    title: "New default placeholders for ads in AMP"
+    id: new-default-placeholders-for-ads-in-amp
+    author: Vamsee Jasti
+    role:  Product Manager, AMP Project
+    origin: "https://amphtml.wordpress.com/2017/02/02/new-default-placeholders-for-ads-in-amp/amp/"
+    excerpt: "We want to share a somewhat small but visually impactful feature that we are planning to launch on AMP. Content loads incredibly fast on AMP pages, but traditional ads often load relatively slowly. This leaves blank areas on publisher pages, which is a poor reading experience for the user as it can feel like the [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-02T13:14:47-08:00
+    date: "February 2, 2017"
+
+  - type: Blog
+    title: "Ads on the web will get better with AMP. Here’s how."
+    id: ads-on-the-web-will-get-better-with-amp-heres-how
+    author: Richard Gingras
+    role:  VP &#8211; News, Google
+    origin: "https://amphtml.wordpress.com/2017/01/30/ads-on-the-web-will-get-better-with-amp-heres-how/amp/"
+    excerpt: "There are a lot of bad ads on the web today &#8212; ads that are slow, janky and don’t necessarily deliver great user experiences when they include annoying pop-ups or cause content to reflow on your screen. The net result: users install ad blockers, making it difficult for publishers to fund the content they’re creating, [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-01-30T11:44:52-08:00
+    date: "January 30, 2017"
+
+  - type: Blog
+    title: "Speeding up news apps with AMP"
+    id: speeding-up-news-apps-with-amp
+    author: Mario Lorenzen
+    role:  Portal Manager, mh:n digital
+    origin: "https://amphtml.wordpress.com/2017/01/25/speeding-up-news-apps-with-amp/amp/"
+    excerpt: "Shz.de is one of the top news publishers in Schleswig-Holstein, Germany’s most northern state. Each month around 1.5 million unique users access our content to stay up to date on local news. In 2011 we saw an increasing number of our readers viewing content on their mobile phones, so we produced a mobile app, which [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-01-25T12:58:19-08:00
+    date: "January 25, 2017"
+
+  - type: Blog
+    title: "Amp up for AMP Conf 2017"
+    id: amp-up-for-amp-conf-2017
+    author: Paul Bakaus
+    role:  AMP Developer Advocate, Google
+    origin: "https://amphtml.wordpress.com/2017/01/23/amp-up-for-amp-conf-2017/amp/"
+    excerpt: "I can’t believe it’s already been over a year since we started our quest for faster, friendlier web pages. Now that we’re out of the honeymoon phase, the AMP team is taking a hard look at where we are today, what’s to come, and the direction of the AMP ecosystem. It’s easy to blaze ahead [&#8230;]"
+    avatar: https://www.gravatar.com/avatar/9a2d68554d8d1655a3fb3e2a50aee909
+    datedata: 2017-01-23T15:07:07-08:00
+    date: "January 23, 2017"
+
+  - type: Blog
+    title: "Why AMP Caches exist"
+    id: why-amp-caches-exist
+    author: Paul Bakaus
+    role:  AMP Developer Advocate, Google
+    origin: "https://amphtml.wordpress.com/2017/01/13/why-amp-caches-exist/amp/"
+    excerpt: "The following was posted on Medium by Paul Bakaus, AMP Developer Advocate, Google. Caches are a fundamental piece of the Accelerated Mobile Pages (AMP) Project, yet one of the most misunderstood components. Every day, developers ask us why they can’t just get their AMP pages onto some AMP surfaces (e.g. Google) without linking through the [&#8230;]"
+    avatar: https://www.gravatar.com/avatar/9a2d68554d8d1655a3fb3e2a50aee909
+    datedata: 2017-01-13T12:19:43-08:00
+    date: "January 13, 2017"

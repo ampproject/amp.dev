@@ -4,16 +4,16 @@ section_title: Latest blog posts
 blog:
 
   - article:
-    title: "Why AMP Caches exist"
-    href: "https://amphtml.wordpress.com/2017/01/13/why-amp-caches-exist/amp/"
-    date: "January 13, 2017"
+    title: "New default placeholders for ads in AMP"
+    href: "https://amphtml.wordpress.com/2017/02/02/new-default-placeholders-for-ads-in-amp/amp/"
+    date: "February 2, 2017"
 
   - article:
-    title: "Introducing Accelerated Mobile Links: Making the Mobile Web App-Quick"
-    href: "https://amphtml.wordpress.com/2017/01/12/introducing-accelerated-mobile-links-making-the-mobile-web-app-quick/amp/"
-    date: "January 12, 2017"
+    title: "Ads on the web will get better with AMP. Here’s how."
+    href: "https://amphtml.wordpress.com/2017/01/30/ads-on-the-web-will-get-better-with-amp-heres-how/amp/"
+    date: "January 30, 2017"
 
   - article:
-    title: "Google AMP Cache, AMP Lite, and the need for speed"
-    href: "https://amphtml.wordpress.com/2017/01/11/google-amp-cache-amp-lite-and-the-need-for-speed/amp/"
-    date: "January 11, 2017"
+    title: "Speeding up news apps with AMP"
+    href: "https://amphtml.wordpress.com/2017/01/25/speeding-up-news-apps-with-amp/amp/"
+    date: "January 25, 2017"
