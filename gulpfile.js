@@ -50,6 +50,16 @@ gulp.task('update-blog-links', function (cb) {
   });
 });
 
+gulp.task('update-tweets', function (cb) {
+  exec('cd ./scripts && ./update_tweets.js', function (err, stdout, stderr) {
+    if (err instanceof Error) {
+      cb(err);
+    }
+    //console.log(stdout);
+    cb();
+  });
+});
+
 gulp.task('update-platforms-page', ['import-docs'], function (cb) {
   return exec('cd ./scripts && ./update_platforms_page.js', function (err, stdout, stderr) {
     if (err instanceof Error) {
@@ -77,5 +87,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('build', ['update-blog-links', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass']);
+gulp.task('build', ['update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass']);
 gulp.task('default', ['update-platforms-page', 'sass', 'watch']);

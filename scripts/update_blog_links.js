@@ -113,8 +113,8 @@ feedparser.on('readable', function () {
     date: "${ moment(item.date).format("MMMM D, YYYY") }"
 `;
 
-    // write into its own individual file
-    writeBlogPage(item, id, author, role, description, avatar);
+      // write into its own individual file
+      writeBlogPage(item, id, author, role, description, avatar);
 
     }
 
