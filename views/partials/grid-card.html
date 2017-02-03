@@ -4,7 +4,7 @@
   <div class="card-inner">
     {% if isCase %}
     <div class="card-meta">
-      <span class="card-type">{{_(doc.category)}}</span>
+      <span class="card-type text-label">{{_(doc.category)}}</span>
       <span class="card-date light">{{doc.date}}</span>
     </div>
     <div class="card-logo">
@@ -24,7 +24,7 @@
     </div>
 
     <div class="card-link">
-      <p> {% if isCase %} {{_('Read the Case Study')}}
+      <p class="text-label"> {% if isCase %} {{_('Read the Case Study')}}
           {% else %} {{_('Learn More')}} {% endif %} </p>
     </div>
   </div>
