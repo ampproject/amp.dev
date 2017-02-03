@@ -57,6 +57,11 @@ speakers:
     name: Sam Meder
     company: Pinterest
     pic: /static/img/amp-conf/speakers/sam.jpg
+  beckcronindixon:
+    name: Beck Cronin-Dixon
+    company: Eventbrite
+    pic: /static/img/amp-conf/speakers/beck.jpg
+    bio: Beck Cronin-Dixon is an SEO Engineer and lead developer for AMP at Eventbrite. As a Nashville Software School alumni she is passionate about encouraging aspiring coders into engineering careers. Her SEO mantra is ‘search engine optimization and user experience should always go hand in hand’. She is a world traveler who has lived on 4 different continents.
 agenda:
   day_1:
     - title: Registration and Breakfast
@@ -80,16 +85,14 @@ agenda:
       type: session
       speaker: nataliabaltazar
       description: Learn how the Guardian turned the limitations of AMP into an opportunity to rethink their article pages, header and navigation and therefore improved their overall user journey.
-    - title: TBA
+    - title: "Leveraging AMP for e-commerce: Eventbrite’s journey to optimized mobile pages"
       time: "1130"
       type: session
-      speaker: TBA
-      company: TBA
+      speaker: beckcronindixon
+      description: Eventbrite has seen many wins since launching its event listings pages as AMP. But this journey had its share of technical and design challenges. This discussion will focus on some of those hurdles including accommodating user-generated content, issues specific to ecommerce and ticketing, and structuring HTML and CSS for maintainability. We will detail how Eventbrite  overcame these obstacles without sacrificing user experience or brand alignment.
     - title: TBA
       time: "1200"
       type: session
-      speaker: TBA
-      company: TBA
     - title: Lunch
       time: "1230"
     - title: "AMP & the web platform"
