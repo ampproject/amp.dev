@@ -1,13 +1,18 @@
 {% set isEvent = (post.type|lower == "event") %}
 {% set isBlog = (post.type|lower == "blog") %}
+{% set isRoadmap = (post.type|lower == "roadmap") %}
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
 
 <div class="post-item">
   {% if meta %}
     <div class="post-meta">
-      <a class="type" href="{{g.doc('/content/latest/list-' ~ post.type|lower ~ '.html').url.path}}">{{post.type}}</a>
+      {% if not isRoadmap %}
+        <a class="type" href="{{g.doc('/content/latest/list-' ~ post.type|lower ~ '.html').url.path}}">{{post.type}}</a>
+      {% else %}
+        <a class="type" href="{{g.doc('/content/latest/roadmap.html').url.path}}">{{post.type}}</a>
+      {% endif %}
       {% if not isEvent %}
-        <span class="time">{{post.date}}</span>
+        <span class="time text-label">{{post.date}}</span>
       {% endif %}
     </div>
   {% endif %}
