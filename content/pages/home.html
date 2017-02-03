@@ -14,7 +14,7 @@ components:
   - youtube
 ---
 {% set home = g.doc('/content/includes/home.yaml', locale=doc.locale) %}
-{% set blog = g.doc('/content/includes/blog_feed.yaml', locale=doc.locale) %}
+{% set blog = g.doc('/content/includes/list-blog.yaml', locale=doc.locale) %}
 {% set case_studies = g.doc('/content/includes/case-studies.yaml', locale=doc.locale) %}
 
 <section class="hero">
@@ -45,22 +45,24 @@ components:
           layout="flex-item"
           type="slides">
 
-          {% for article in blog.blog %}
-          <div class="card-container">
-            <a href="{{article.href}}" class="card">
-              <div class="card-inner">
-                <div class="card-type text-label news">
-                  {{_('News')}}
+          {% for article in blog.blogs %}
+            {% if loop.index <= 3 %}
+            <div class="card-container">
+              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md').url.path}}" class="card">
+                <div class="card-inner">
+                  <div class="card-type text-label news">
+                    {{_('News')}}
+                  </div>
+                  <div class="card-content small">
+                    {{article.title}}
+                  </div>
+                  <div class="card-date light">
+                    {{article.date}}
+                  </div>
                 </div>
-                <div class="card-content small">
-                  {{_(article.title)}}
-                </div>
-                <div class="card-date light">
-                  {{_(article.date)}}
-                </div>
-              </div>
-            </a>
-          </div>
+              </a>
+            </div>
+            {% endfor %}
           {% endfor %}
         </amp-carousel>
       </div>
@@ -85,23 +87,21 @@ components:
           type="slides">
 
           <div class="card-container">
-          {% for article in blog.blog %}
-            <a href="{{article.href}}" class="card">
-              <div class="card-inner">
-                <div class="card-type text-label news">
-                  {{_('News')}}
+          {% for article in blog.blogs %}
+            {% if loop.index <= 3 %}
+              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md').url.path}}" class="card">
+                <div class="card-inner">
+                  <div class="card-type text-label news">
+                    {{_('News')}}
+                  </div>
+                  <div class="card-content small">
+                    {{article.title}}
+                  </div>
+                  <div class="card-date light">
+                    {{article.date}}
+                  </div>
                 </div>
-                <div class="card-content small">
-                  {{_(article.title)}}
-                </div>
-                <div class="card-date light">
-                  {{_(article.date)}}
-                </div>
-              </div>
-            </a>
-            {% if not loop.last and loop.index is divisibleby 3 %}
-          </div>
-          <div class="card-container">
+              </a>
             {% endif %}
           {% endfor %}
           </div>
