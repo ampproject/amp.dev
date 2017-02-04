@@ -67,15 +67,15 @@ stylesheet: pages/amp-conf.css
             <div>
                 <h5 class="{{ item.type }}">{{ item.title }}</h5>
                 {% if conf.speakers[item.speaker] %}
-                <small>{{ conf.speakers[item.speaker].name }}, {{ conf.speakers[item.speaker].company }}</small>
+                <small><a href="#{{ item.speaker }}">{{ conf.speakers[item.speaker].name }}, {{ conf.speakers[item.speaker].company }}</a></small>
                 {% endif %}
                 {% if item.speakers %}
                     {% if conf.speakers[item.moderator] %}
-                        <small>{{ conf.speakers[item.moderator].name }}, {{ conf.speakers[item.moderator].company }} (Moderator)</small>
+                        <small><a href="#{{ item.moderator }}">{{ conf.speakers[item.moderator].name }}, {{ conf.speakers[item.moderator].company }} (Moderator)</a></small>
                     {% endif %}
                     {% for speaker in item.speakers %}
                         {% if conf.speakers[speaker] %}
-                        <small>{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</small>
+                        <small><a href="#{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</a></small>
                         {% endif %}
                     {% endfor %}
                 {% endif %}
@@ -129,7 +129,7 @@ stylesheet: pages/amp-conf.css
             <li>
                 <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="400" height="400" layout="responsive"></amp-img>{% endif %}</span>
                 <div>
-                    <h4 id="speaker">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</h4>
+                    <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</h4>
                     <p>{{ conf.speakers[speaker].bio }}</p>
                 </div>
             </li>
