@@ -38,9 +38,9 @@ footer {
 
     &.left {
       height: 140px;
-      left: -30px;
+      left: 0;
       top: -50px;
-      width: 186px;
+      width: 156px;
     }
 
     &.right {
@@ -48,6 +48,14 @@ footer {
       height: 107.5px;
       right: -50px;
       width: 175px;
+    }
+
+    &.right-half {
+      bottom: 0;
+      height: 77.5px;
+      right: -50px;
+      width: 175px;
+      overflow: hidden;
     }
   }
 
@@ -57,7 +65,7 @@ footer {
     max-width: 1200px;
     width: 80%;
 
-    h1, a {
+    h2, a {
       color: $color-white;
       display: inline-block;
     }
@@ -84,9 +92,11 @@ footer {
   .footer-cta {
     overflow: hidden;
 
-    .cta-line.right {
+    .cta-line.right,
+    .cta-line.right-half {
       bottom: 10px;
       right: -100px;
+      height: 107.5px;
     }
 
     .inner {

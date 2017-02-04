@@ -5,6 +5,7 @@
   }
 
   .hero {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .15);
     .lines,
     .text {
       left: 0;
@@ -229,7 +230,7 @@
     }
 
     .feeds .text,
-    .twitter .mobile-feed {
+    .feeds .twitter .mobile-feed {
       display: block;
     }
 
