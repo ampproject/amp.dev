@@ -1,4 +1,28 @@
 .about-overview {
+
+  .wrap {
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      background: $gradient-med-faded;
+      content: '';
+      display: block;
+      height: 2000px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      transform: skewY(36deg);
+      transform-origin: top left;
+    }
+  }
+
+  .about-overview-block {
+    position: relative;
+    z-index: 1;
+  }
+
   .hero {
     position: relative;
     padding: 130px 8% 0 8%;
