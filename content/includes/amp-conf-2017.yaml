@@ -19,10 +19,6 @@ speakers:
     company: Google
     pic: /static/img/amp-conf/speakers/will.jpg
     bio: William Chou is a Software Engineer who's working on new dynamic content in AMP. William worked in the games industry prior to joining Google.
-  malteandrudy:
-    name: Malte Ubl & Rudy Galfi
-    company: Google
-    pic: /static/img/amp-conf/speakers/malteandrudy.jpg
   alexrussell:
     name: Alex Russell
     company: Google
@@ -45,10 +41,15 @@ speakers:
     bio: Ranna Zhou is a product manager on Search working to bring information context and summarization of news to users. She studied computer science at MIT and exercises her degree coding for non-profits.
     pic: /static/img/amp-conf/speakers/ranna.jpg
   yaminigupta:
-    name: Yamini Gupta & Vamsee Jasti
+    name: Yamini Gupta
     company: Google
     pic: /static/img/amp-conf/speakers/yamini.jpg
     bio: As Head of Publisher Marketing at Google, Yamini leads marketing programs aimed at helping publishers thrive and create sustainable businesses with advertising. In this role, Yamini drives industry education and product marketing for DoubleClick's mobile, video and programmatic solutions as well as the open source Accelerated Mobile Pages (AMP) project. Yamini has more than 10 years of experience in marketing and advertising and started her career marketing consumer goods at DDB in India. She holds a Bachelor's degree in English Literature from Bombay University, and an MBA from Columbia University in New York.
+  vamseejasti:
+    name: Vamsee Jasti
+    company: Google
+    pic: /static/img/amp-conf/speakers/vamsee.jpg
+    bio: Vamsee Jasti is the product manager for advertising in AMP. His mission is to keep the web open and free by helping publishers make money without comprising on user experience. The other way he helps publishers is by clicking on every ad he sees on the web.
   daneknecht:
     name: Dane Knecht
     company: Cloudflare
@@ -57,11 +58,49 @@ speakers:
     name: Sam Meder
     company: Pinterest
     pic: /static/img/amp-conf/speakers/sam.jpg
+    bio: Sam Meder is a engineer at Pinterest where he is responsible for performance across all platforms. Prior to Pinterest he's been a technical leader and manager at a variety of startups.
+  vadimantonov:
+    name: Vadim Antonov
+    company: Pinterest
+    pic:
+    bio: Vadim Antonov is a Tech Lead for the User Acquisition team at Pinterest. Previously, he worked on search at Bing & Yandex, including work on crawling, index quality, query rewriting and ranking.
   beckcronindixon:
     name: Beck Cronin-Dixon
     company: Eventbrite
     pic: /static/img/amp-conf/speakers/beck.jpg
     bio: Beck Cronin-Dixon is an SEO Engineer and lead developer for AMP at Eventbrite. As a Nashville Software School alumni she is passionate about encouraging aspiring coders into engineering careers. Her SEO mantra is ‘search engine optimization and user experience should always go hand in hand’. She is a world traveler who has lived on 4 different continents.
+  sarahsaltrickmeyer:
+    name: Sarah Saltrick Meyer
+    company: Buzzfeed
+    pic: /static/img/amp-conf/speakers/sarah.jpg
+  nicolesullivan:
+    name: Nicole Sullivan
+    company: npm
+  jeremykeith:
+    name: Jeremy Keith
+    company: Clearleft
+    pic: /static/img/amp-conf/speakers/jeremy.jpg
+    bio: Jeremy Keith is an Irish web developer living in Brighton, England where he co-founded the splendid design agency Clearleft. He wrote the books DOM Scripting, Bulletproof Ajax, HTML5 For Web Designers, and most recently Resilient Web Design. He also organised events like dConstruct, Responsive Day Out, and the world's first Science Hack Day. Jeremy spends most of his time goofing off on the internet, documenting his time-wasting on adactio.com, where he has been writing for over fifteen years.
+  ginatrapani:
+    name: Gina Trapani
+    company: Postlight
+    pic: /static/img/amp-conf/speakers/gina.jpg
+    bio: Gina Trapani is a writer, podcaster, and Director of Engineering at Postlight, a digital product studio in New York City. Gina helped create Postlight Labs' Mercury AMP Converter, a tool that transforms web pages into AMP with one line of code. Once upon a time, she founded Lifehacker.
+  paulbakaus:
+    name: Paul Bakaus
+    company: Google
+    pic: /static/img/amp-conf/speakers/paul.jpg
+    bio: Paul Bakaus is a Developer Advocate at Google, heading up outreach for AMP. He assists developers, designers, and filmmakers to create better, faster, more immersive and more convincing digital experiences.
+  malteubl:
+    name: Malte Ubl
+    company: Google
+    pic: /static/img/amp-conf/speakers/malte.jpg
+    bio: Malte Ubl is the tech lead of the AMP Project. He previously spent 5 years at Google making JavaScript based apps go fast and in his free time, he is one of the co-organizers of JSConf EU.
+  rudygalfi:
+    name: Rudy Galfi
+    company: Google
+    pic: /static/img/amp-conf/speakers/rudy.jpg
+    bio: Rudy Galfi is the product management lead for the AMP Project since August 2015. He previously spent four years at Google building personalized content recommendation experiences for various Google products and was product manager for Google News. Prior to Google, Rudy was a software engineer at Microsoft.
 agenda:
   day_1:
     - title: Registration and Breakfast
@@ -70,11 +109,14 @@ agenda:
       time: "0900"
       type: keynote
       speaker: davidbesbris
-      description: We'll open the AMP Conf with a look at the past year, present and future of AMP.
-    - title: TBA
+      description: Davis Besbris, AMP Project lead, will open the AMP Conf with a look at the past year, present and future of AMP.
+    - title: 1B+ Pages AMPed
       time: "0930"
       type: session
-      speaker: sammeder
+      speakers:
+        - sammeder
+        - vadimantonov
+      description: Pinterest has more than a billion pages that are accessible to unauthenticated users and discoverable via Google search. In this talk we will walk through what it took to convert these to AMP and where we are planning to go next.
     - title: TBA
       time: "1000"
       type: session
@@ -98,10 +140,12 @@ agenda:
     - title: "AMP & the web platform"
       time: "1330"
       type: panel
+      moderator: paulbakaus
       speakers:
         - jeremykeith
         - nicolesullivan
         - sarahsaltrickmeyer
+        - ginatrapani
       description: It's hard to argue that AMP improves page speed and usability, but does it actually help the web platform at large? And if it doesn't, how can we fix it? We invited a bunch of advocates for the open web to talk candidly.
     - title: TBA
       time: "1430"
@@ -123,7 +167,9 @@ agenda:
     - title: What's next in AMP
       time: "1630"
       type: keynote
-      speaker: malteandrudy
+      speakers:
+        - malteubl
+        - rudygalfi
       company: Google
       description: What does the future for AMP look like? Malte Ubl, engineering lead of AMP, and Rudy Galfi, PM on the AMP team, are here to tell you all about it.
     - title: Q&A with Google Search and AMP Leadership
@@ -143,16 +189,19 @@ agenda:
       time: "0800"
     - title: Progressive Web AMPs
       time: "0930"
+      type: session
       speaker: alexrussell
       description: AMP gets content in front of users fast – PWAs enable rich experiences and engagement. Learn how to combine the two to get the best of both worlds by the Chrome engineer who coined the term "Progressive Web App".
     - title: How Cloudflare is accelerating AMP
       time: "1000"
+      type: session
       speaker: daneknecht
       description: Cloudflare has just announced Accelerated Mobile Links, but they're not stopping there! Learn about the entire ecosystem of AMP-powered solutions Cloudflare is building.
     - title: Coffee Break
       time: "1030"
     - title: "AMP Conversion: The Good, The Bad and The Ugly"
       time: "1100"
+      type: session
       speaker: johnpettitt
       description: Relay Media is converting millions of AMP pages every day, and conversion brings many challenges different than building from scratch. Learn how to compress CSS efficiently, replace functionality smartly and much more.
     - title: "Consuming AMP: The platform panel"
@@ -163,15 +212,20 @@ agenda:
       time: "1230"
     - title: Building a new AMP component
       time: "1330"
+      type: session
       speaker: chenshay
       description: So what happens if you discover that an AMP component for your use case doesn't exist? Contributing a new component is actually much easier than many expect, and Chen will walk you through it.
     - title: Building the perfect AMP Viewer
       time: "1400"
+      type: session
       speaker: rannazhou
       description: Ranna will talk about how Google Search uses AMP to create experiences like the Top Stories carousel, and how the AMP Viewer works, from top to bottom. It's rare to get a chance to look behind the scenes of Google Search – you don't want to miss this one.
     - title: "Better advertising on a faster web: AMP for Ads"
       time: "1430"
-      speaker: yaminigupta
+      type: session
+      speakers:
+        - yaminigupta
+        - vamseejasti
       description: So, AMP made content faster on the mobile web. But what about ads? Slow, spammy and disruptive ad experiences have eroded the value of content by annoying users even as advertising continues to be at the cornerstone of every publisher's business model. AMP's mission is to build a better, faster mobile web --- and that includes ads. Join us in this session to hear more about AMP for Ads (A4A), a new initiative from the AMP Project that's fundamentally changing the way ads are built and delivered on the web.
     - title: Coffee Break
       time: "1500"

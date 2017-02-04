@@ -214,6 +214,7 @@
 
         li {
             padding: 5px;
+            padding-bottom: 10px;
             display: flex;
             align-items: flex-start;
             position: relative;
@@ -225,7 +226,7 @@
                 width: 1px;
                 background: #bbb;
                 bottom: 0px;
-                top: 30px;
+                top: 35px;
                 left: 23px;
             }
 
@@ -243,6 +244,19 @@
                 top: -30px;
                 left: -115px;
                 background: #eee;
+            }
+
+            span.image.multiple {
+                width: 60px;
+                height: 60px;
+                &:nth-child(even) {
+                    left: -75px;
+                }
+
+                &:nth-child(2) { top: 10px; }
+                &:nth-child(3) { top: 50px; }
+                &:nth-child(4) { top: 90px; }
+                &:nth-child(5) { top: 130px; }
             }
 
             h5 {
@@ -267,6 +281,7 @@
 
             p {
                 font-size: 13px;
+                line-height: 1.6em;
             }
 
         }
@@ -303,6 +318,7 @@
 
         small {
             display: block;
+            line-height: 1.6em;
         }
 
     }
@@ -319,6 +335,49 @@
                     display: none;
                 }
             }
+        }
+    }
+
+    ul.speakers {
+        list-style: none;
+
+        li {
+            display: flex;
+            min-height: 100px;
+            margin-bottom: 40px;
+
+            &:nth-child(odd) {
+                flex-direction: row-reverse;
+                .image {
+                    margin-right: 0;
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        h4 {
+            &::before {
+                display: none;
+            }
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.6em;
+        }
+
+        .image {
+            border-radius: 25vw;
+            overflow: hidden;
+            display: inline-block;
+            height: 25vw;
+            width: 25vw;
+            max-width: 250px;
+            max-height: 250px;
+            background: #fff;
+            flex-shrink: 0;
+            margin-right: 20px;
+            position: relative;
         }
     }
 
