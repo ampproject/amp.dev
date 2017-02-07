@@ -125,7 +125,8 @@ stylesheet: pages/amp-conf.css
         <h3 id="speakers">Speakers</h3>
 
         <ul class="speakers">
-            {% for speaker in conf.speakers if conf.speakers[speaker].bio %}
+            {% set sortedSpeakers = conf.speakers|sort %}
+            {% for speaker in sortedSpeakers if conf.speakers[speaker].bio %}
             <li>
                 <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="400" height="400" layout="responsive"></amp-img>{% endif %}</span>
                 <div>

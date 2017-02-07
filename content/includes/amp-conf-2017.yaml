@@ -4,6 +4,7 @@ speakers:
     name: David Besbris
     company: Google
     pic: /static/img/amp-conf/speakers/bez.jpg
+    bio: Bez joined Google in 2008 and leads the Google News, Google Play Newsstand, AMP and Google Search fresh content teams. Before that he's led several other products, including Google+, Google Photos, Gmail and Google Calendar.
   nataliabaltazar:
     name: Natalia Baltazar
     company: The Guardian
@@ -73,6 +74,7 @@ speakers:
     name: Sarah Saltrick Meyer
     company: Buzzfeed
     pic: /static/img/amp-conf/speakers/sarah.jpg
+    bio: Sarah Saltrick Meyer is a native New Yorker, employed as software engineer at BuzzFeed. She likes good websites and the opera. After a career in front-end engineering at all sorts of startups in the New York-Boston corridor, she now builds a modern web experience for BuzzFeed's millions of readers.
   nicolesullivan:
     name: Nicole Sullivan
     company: npm
@@ -101,6 +103,14 @@ speakers:
     company: Google
     pic: /static/img/amp-conf/speakers/rudy.jpg
     bio: Rudy Galfi is the product management lead for the AMP Project since August 2015. He previously spent four years at Google building personalized content recommendation experiences for various Google products and was product manager for Google News. Prior to Google, Rudy was a software engineer at Microsoft.
+  senthilpadmanabhan:
+    name: Senthil Padmanabhan
+    company: eBay
+    pic: /static/img/amp-conf/speakers/senthil.jpg
+    bio: Senthil Padmanabhan is a Principal Engineer & Web Platform Lead at eBay, building the multiscreen shopping experience. He is specialized in web technologies such as JavaScript, HTML, CSS, along with web performance & optimization.
+  ardanarac:
+    name: Ardan Arac
+    company: Google
 agenda:
   day_1:
     - title: Registration and Breakfast
@@ -117,9 +127,11 @@ agenda:
         - sammeder
         - vadimantonov
       description: Pinterest has more than a billion pages that are accessible to unauthenticated users and discoverable via Google search. In this talk we will walk through what it took to convert these to AMP and where we are planning to go next.
-    - title: TBA
+    - title: Adding AMP to an e-commerce Workflow
       time: "1000"
       type: session
+      speaker: senthilpadmanabhan
+      description: eBay is one of the first eCommerce players to launch AMP in production. In this talk we will discuss on how to add AMP to an existing workflow and develop in parallel. We will dive into why we chose AMP, lessons learned, things that are critical for eCommerce and the challenges faced. We will also share some metrics along the way.
     - title: Coffee Break
       time: "1030"
     - title: AMP in the Wild
@@ -183,11 +195,15 @@ agenda:
         - richardgingras
         - rannazhou
         - ardanarac
-        - angelayeung
   day_2:
     - title: Breakfast
       time: "0800"
-    - title: Progressive Web AMPs
+    - title: "AMP on Google Search: Building the perfect AMP Viewer"
+      time: "0900"
+      type: session
+      speaker: rannazhou
+      description: Ranna will talk about how Google Search uses AMP to create experiences like the Top Stories carousel, and how the AMP Viewer works, from top to bottom. It's rare to get a chance to look behind the scenes of Google Search – you don't want to miss this one.
+    - title: "Progressive Web AMPs: From AMP to PWA"
       time: "0930"
       type: session
       speaker: alexrussell
@@ -210,23 +226,21 @@ agenda:
       description: Meet the platforms that embed and distribute AMP pages, and learn about their unique challenges, future ideas and more. Featuring an all-star lineup that includes Bing, Cloudflare, Google and more to be announced.
     - title: Lunch
       time: "1230"
-    - title: Building a new AMP component
-      time: "1330"
-      type: session
-      speaker: chenshay
-      description: So what happens if you discover that an AMP component for your use case doesn't exist? Contributing a new component is actually much easier than many expect, and Chen will walk you through it.
-    - title: Building the perfect AMP Viewer
-      time: "1400"
-      type: session
-      speaker: rannazhou
-      description: Ranna will talk about how Google Search uses AMP to create experiences like the Top Stories carousel, and how the AMP Viewer works, from top to bottom. It's rare to get a chance to look behind the scenes of Google Search – you don't want to miss this one.
     - title: "Better advertising on a faster web: AMP for Ads"
-      time: "1430"
+      time: "1330"
       type: session
       speakers:
         - yaminigupta
         - vamseejasti
       description: So, AMP made content faster on the mobile web. But what about ads? Slow, spammy and disruptive ad experiences have eroded the value of content by annoying users even as advertising continues to be at the cornerstone of every publisher's business model. AMP's mission is to build a better, faster mobile web --- and that includes ads. Join us in this session to hear more about AMP for Ads (A4A), a new initiative from the AMP Project that's fundamentally changing the way ads are built and delivered on the web.
+    - title: TBA
+      time: "1400"
+      type: session
+    - title: Building a new AMP component
+      time: "1430"
+      type: session
+      speaker: chenshay
+      description: So what happens if you discover that an AMP component for your use case doesn't exist? Contributing a new component is actually much easier than many expect, and Chen will walk you through it.
     - title: Coffee Break
       time: "1500"
     - title: Breakout Sessions
