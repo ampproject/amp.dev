@@ -111,6 +111,20 @@ speakers:
   ardanarac:
     name: Ardan Arac
     company: Google
+  ericlindley:
+    name: Eric Lindley
+    company: Google
+  richardgingras:
+    name: Richard Gingras
+    company: Google
+    pic: /static/img/amp-conf/speakers/richard.jpg
+    bio: Richard Gingras is Vice President of News at Google. In that role he guides Google’s strategies relating to the media ecosystem and oversees many of Google’s news and media related products. Richard was a key instigator of the AMP project and was previously co-founder of the Trust Project, a global effort within the journalism community to insure that high quality journalism is recognized for the credibility it deserves.
+  sebastianbenz:
+    name: Sebastian Benz
+    company: Google
+  madisonminer:
+    name: Madison Miner
+    company: WompMobile
 agenda:
   day_1:
     - title: Registration and Breakfast
@@ -159,11 +173,13 @@ agenda:
         - sarahsaltrickmeyer
         - ginatrapani
       description: It's hard to argue that AMP improves page speed and usability, but does it actually help the web platform at large? And if it doesn't, how can we fix it? We invited a bunch of advocates for the open web to talk candidly.
-    - title: TBA
+    - title: I can't believe it's AMP!
       time: "1430"
       type: session
-      speaker: Madison Miner
-      company: WompMobile
+      description: Watch Madison, CEO of WompMobile, come up with clever CSS and AMP component production hacks to support all sorts of use-cases, and then marvel at how Sebastian, creator of AMPByExample.com turns a myriad of these and more tricks to create fascinating applications of AMP.
+      speakers:
+        - madisonminer
+        - sebastianbenz
     - title: Turing complete...AMP Pages?!
       time: "1500"
       type: session
@@ -173,7 +189,9 @@ agenda:
       time: "1530"
       type: session
       description: Le is the lead developer for the upcoming relaunch of the AMP Project website, and will share lots of lessons learned when building canonical, responsive AMP. She'll also highlight some upcoming AMP features that make it even easier to build attractive AMP Pages.
-      speaker: lewei
+      speakers:
+        - lewei
+        - ericlindley
     - title: Coffee Break
       time: "1600"
     - title: What's next in AMP
