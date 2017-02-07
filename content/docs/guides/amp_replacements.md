@@ -35,6 +35,16 @@ using the [`amp-img`](/docs/reference/components/amp-img.html) element, like so:
 In this most basic example, the image will display with the specified fixed
 height and width. At minimum, an explicit width and height needs to be set.
 
+As `<amp-img>` relies on JavaScript, if the user chooses to disable scripts, images won't display.  In this case, you should provide a fallback to the image using `<img>` and `<noscript>`, like so:
+
+[sourcecode:html]
+<amp-img src="fixed.jpg" width="264" height="96">
+  <noscript>
+    <img src="fixed.jpg" width="264" height="96" />
+  </noscript>
+</amp-img>
+[/sourcecode]
+
 ### Advanced layouts
 
 AMP makes it much easier than with standard CSS/HTML to create fully responsive
