@@ -125,6 +125,8 @@ speakers:
   madisonminer:
     name: Madison Miner
     company: WompMobile
+    pic: /static/img/amp-conf/speakers/madison.jpg
+    bio: Madison Miner is co-founder of WompMobile, a mobile optimization company that converts complex, e-commerce websites into AMP pages, bringing to life faster, more compelling digital experiences. Madison, a software engineer, is relentless about finding creative ways to create rich functionality, while keeping mobile architecture lean and performant. In his spare time, Madison can be found peddling his bike, meandering through Washington state.
 agenda:
   day_1:
     - title: Registration and Breakfast
@@ -172,7 +174,7 @@ agenda:
         - nicolesullivan
         - sarahsaltrickmeyer
         - ginatrapani
-      description: It's hard to argue that AMP improves page speed and usability, but does it actually help the web platform at large? And if it doesn't, how can we fix it? We invited a bunch of advocates for the open web to talk candidly.
+      description: It's hard to argue that AMP improves page speed and usability, but does it actually help the web platform at large or is it just a stop-gap measure? And if it doesn't, how can we fix it? We invited a bunch of advocates for the open web to talk candidly and take a hard look together of where the web is heading, and how we can ensure a healthy open-web for the next generations.
     - title: I can't believe it's AMP!
       time: "1430"
       type: session
@@ -205,7 +207,7 @@ agenda:
     - title: Q&A with Google Search and AMP Leadership
       time: "1700"
       type: panel
-      description: It's time to ask the AMP and Google Search leadership all the questions. All keynote speakers as well as a few additional guests from Search will try hard to answer every question you throw at them.
+      description: It's time to ask the AMP and Google Search leadership all the questions. All keynote speakers as well as a few additional guests from Google Search & News will try their very best to answer every question you throw at them.
       speakers:
         - davidbesbris
         - malteubl
