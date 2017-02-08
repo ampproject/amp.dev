@@ -16,7 +16,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "CMS"
-msgstr ""
+msgstr "CMS"
 
 #: /content/includes/who.yaml
 msgid "Content Platforms"
@@ -159,7 +159,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Tutorial"
-msgstr ""
+msgstr "Tutorial"
 
 #: /content/includes/menu.yaml /content/docs/get_started
 msgid "Tutorials"
