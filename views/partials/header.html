@@ -12,7 +12,7 @@
               <ul>
                 {% if entry.children %}
                 {% for subEntry in entry.children %}
-                <li{% if subEntry.href.startswith('http') %} class="external"{% endif %}>
+                <li{% if subEntry.href.startswith('http') %} class="external"{% endif %} {% if subEntry.collection %} class="has-sublist" {% endif %}>
                   <a href="{% if subEntry.href.startswith('http') %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(subEntry.get('copy'))}}</a>
                   {% if subEntry.collection %}
                     <ul class="sublist">

@@ -9,42 +9,42 @@ tweets:
     text: >
       <p class="TweetTextSize TweetTextSize--26px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">The first-ever AMP Conf is in NYC, March 7/8 <img class="Emoji Emoji--forText" src="https://abs.twimg.com/emoji/v2/72x72/26a1.png" draggable="false" alt="⚡" title="High voltage sign" aria-label="Emoji: High voltage sign"> Join us in person or on livestream to learn about the future of AMP. <a href="https://t.co/LbJxgLabVn" rel="nofollow noopener" dir="ltr" data-expanded-url="https://www.ampproject.org/amp-conf-2017" class="twitter-timeline-link" target="_blank" title="https://www.ampproject.org/amp-conf-2017"><span class="tco-ellipsis"></span><span class="invisible">https://www.</span><span class="js-display-url">ampproject.org/amp-conf-2017</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible"> </span></span></a></p>
 
-  - origin_name: AMP Project
-    origin_id: AMPhtml
-    origin_href: https://twitter.com/AMPhtml
-    tweet_id: 827264169732775936
-    date_data: 2017-02-02T13:15:22-08:00
-    date: February 2, 2017
-    text: >
-      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Check out AMP's new default ad placeholder feature improve loading UX:<a href="https://t.co/T6xIwI3eru" rel="nofollow noopener" dir="ltr" data-expanded-url="https://amphtml.wordpress.com/2017/02/02/new-default-placeholders-for-ads-in-amp/" class="twitter-timeline-link u-hidden" target="_blank" title="https://amphtml.wordpress.com/2017/02/02/new-default-placeholders-for-ads-in-amp/"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">amphtml.wordpress.com/2017/02/02/new</span><span class="invisible">-default-placeholders-for-ads-in-amp/</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
-
-  - origin_name: Chris Coyier
-    origin_id: chriscoyier
-    origin_href: https://twitter.com/chriscoyier
+  - origin_name: Jon Kuperman
+    origin_id: jkup
+    origin_href: https://twitter.com/jkup
     retweet_id: AMPhtml
     retweet_href: https://twitter.com/amphtml
-    tweet_id: 826439604148588544
-    date_data: 2017-01-31T06:38:50-08:00
-    date: January 31, 2017
+    tweet_id: 828698070208507904
+    date_data: 2017-02-06T12:13:11-08:00
+    date: February 6, 2017
     text: >
-      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Whatever you think about <a href="https://twitter.com/AMPhtml" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="3450662892"><s>@</s><b>AMPhtml</b></a>, I think you'll enjoy the discussion we had on <a href="https://twitter.com/ShopTalkShow" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="457747138"><s>@</s><b>ShopTalkShow</b></a><a href="https://t.co/3q2SyKQrWH" rel="nofollow noopener" dir="ltr" data-expanded-url="http://shoptalkshow.com/episodes/248-amp/" class="twitter-timeline-link u-hidden" target="_blank" title="http://shoptalkshow.com/episodes/248-amp/"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">shoptalkshow.com/episodes/248-a</span><span class="invisible">mp/</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
+      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">So awesome to see Google's willingness to listen to community feedback and make quick changes! <img class="Emoji Emoji--forText" src="https://abs.twimg.com/emoji/v2/72x72/1f4af.png" draggable="false" alt="💯" title="Hundred points symbol" aria-label="Emoji: Hundred points symbol"><a href="https://t.co/9iHMt6ycKv" rel="nofollow noopener" dir="ltr" data-expanded-url="https://developers.googleblog.com/2017/02/whats-in-amp-url.html" class="twitter-timeline-link u-hidden" target="_blank" title="https://developers.googleblog.com/2017/02/whats-in-amp-url.html"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">developers.googleblog.com/2017/02/whats-</span><span class="invisible">in-amp-url.html</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
 
   - origin_name: AMP Project
     origin_id: AMPhtml
     origin_href: https://twitter.com/AMPhtml
-    tweet_id: 826813923944968194
-    date_data: 2017-02-01T07:26:15-08:00
-    date: February 1, 2017
+    tweet_id: 828722016765112321
+    date_data: 2017-02-06T13:48:20-08:00
+    date: February 6, 2017
     text: >
-      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Check out the newly added sessions at AMP Conf &amp; be sure to RSVP if you want to join us in-person on March 7/8. <a href="https://t.co/RHn64HCAW1" rel="nofollow noopener" dir="ltr" data-expanded-url="http://ampproject.org/amp-conf-2017#schedule" class="twitter-timeline-link" target="_blank" title="http://ampproject.org/amp-conf-2017#schedule"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">ampproject.org/amp-conf-2017#</span><span class="invisible">schedule</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
+      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Open source hugs to <a href="https://twitter.com/hoodiehq" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="617917415"><s>@</s><b>hoodiehq</b></a>  and especially <a href="https://twitter.com/gr2m" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="11754732"><s>@</s><b>gr2m</b></a> for helping us with improving our open source inclusiveness &amp; contributor onboarding <img class="Emoji Emoji--forText" src="https://abs.twimg.com/emoji/v2/72x72/2764.png" draggable="false" alt="❤️" title="Heavy red heart" aria-label="Emoji: Heavy red heart"></p>
+
+  - origin_name: AMP Project
+    origin_id: AMPhtml
+    origin_href: https://twitter.com/AMPhtml
+    tweet_id: 828692837499801601
+    date_data: 2017-02-06T11:52:23-08:00
+    date: February 6, 2017
+    text: >
+      <p class="TweetTextSize TweetTextSize--26px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Google search now lets you click-through to an AMP page's canonical URL. Learn more about how URLs work with AMP:<a href="https://t.co/LZwxOCgkr0" rel="nofollow noopener" dir="ltr" data-expanded-url="https://amphtml.wordpress.com/2017/02/06/whats-in-an-amp-url/amp/" class="twitter-timeline-link u-hidden" target="_blank" title="https://amphtml.wordpress.com/2017/02/06/whats-in-an-amp-url/amp/"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">amphtml.wordpress.com/2017/02/06/wha</span><span class="invisible">ts-in-an-amp-url/amp/</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
 
   - origin_name: Malte Ubl
     origin_id: cramforce
     origin_href: https://twitter.com/cramforce
     retweet_id: AMPhtml
     retweet_href: https://twitter.com/amphtml
-    tweet_id: 826459604330520576
-    date_data: 2017-01-31T07:58:19-08:00
-    date: January 31, 2017
+    tweet_id: 828679833848684544
+    date_data: 2017-02-06T11:00:43-08:00
+    date: February 6, 2017
     text: >
-      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Yesterday <a href="https://twitter.com/richardgingras" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="9944032"><s>@</s><b>richardgingras</b></a> introduced AMP Ads at IAB ALM<a href="https://t.co/B3OtygewH0" rel="nofollow noopener" dir="ltr" data-expanded-url="https://amphtml.wordpress.com/2017/01/30/ads-on-the-web-will-get-better-with-amp-heres-how/amp/" class="twitter-timeline-link" target="_blank" title="https://amphtml.wordpress.com/2017/01/30/ads-on-the-web-will-get-better-with-amp-heres-how/amp/"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">amphtml.wordpress.com/2017/01/30/ads</span><span class="invisible">-on-the-web-will-get-better-with-amp-heres-how/amp/</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a>My piece explaining the background<a href="https://t.co/xOBxNyR5PA" rel="nofollow noopener" dir="ltr" data-expanded-url="https://medium.com/@cramforce/but-what-about-the-ads-bfe5025b6606" class="twitter-timeline-link u-hidden" target="_blank" title="https://medium.com/@cramforce/but-what-about-the-ads-bfe5025b6606"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">medium.com/@cramforce/but</span><span class="invisible">-what-about-the-ads-bfe5025b6606</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
+      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Step 1 of this is rolling out today. Consistent link to canonical in AMP docs linked from Google Search. Details: <a href="https://t.co/VqOVyJnFDT" rel="nofollow noopener" dir="ltr" data-expanded-url="https://developers.googleblog.com/2017/02/whats-in-amp-url.html" class="twitter-timeline-link" target="_blank" title="https://developers.googleblog.com/2017/02/whats-in-amp-url.html"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">developers.googleblog.com/2017/02/whats-</span><span class="invisible">in-amp-url.html</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a><a href="https://t.co/OTCVzty7Jp" class="twitter-timeline-link u-hidden" data-pre-embedded="true" dir="ltr">pic.twitter.com/OTCVzty7Jp</a></p>

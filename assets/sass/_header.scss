@@ -156,7 +156,7 @@
       padding-left: 50px;
       top: 100%;
       transition: .2s ease-out;
-      z-index: 1;
+      z-index: -1;
     }
 
     .list-container > ul {
@@ -169,6 +169,20 @@
         box-sizing: border-box;
         padding: 7.5px 20px;
         position: relative;
+
+        &.has-sublist {
+          &::after {
+            @include sprite(caret-right);
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 18px;
+          }
+
+          &:first-child::after {
+            top: 25px;
+          }
+        }
 
         a {
           @extend %text-base;

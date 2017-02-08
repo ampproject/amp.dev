@@ -4,6 +4,11 @@ section_title: Latest blog posts
 blog:
 
   - article:
+    title: "What’s in an AMP URL?"
+    href: "https://amphtml.wordpress.com/2017/02/06/whats-in-an-amp-url/amp/"
+    date: "February 6, 2017"
+
+  - article:
     title: "New default placeholders for ads in AMP"
     href: "https://amphtml.wordpress.com/2017/02/02/new-default-placeholders-for-ads-in-amp/amp/"
     date: "February 2, 2017"
@@ -12,8 +17,3 @@ blog:
     title: "Ads on the web will get better with AMP. Here’s how."
     href: "https://amphtml.wordpress.com/2017/01/30/ads-on-the-web-will-get-better-with-amp-heres-how/amp/"
     date: "January 30, 2017"
-
-  - article:
-    title: "Speeding up news apps with AMP"
-    href: "https://amphtml.wordpress.com/2017/01/25/speeding-up-news-apps-with-amp/amp/"
-    date: "January 25, 2017"
