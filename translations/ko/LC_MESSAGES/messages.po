@@ -8,7 +8,7 @@ msgstr "광고"
 
 #: /content/includes/who.yaml
 msgid "Analytics"
-msgstr ""
+msgstr "애널리틱스"
 
 #: /content/includes/who.yaml
 msgid "Audio/Video"
@@ -16,7 +16,7 @@ msgstr "오디오/비디오"
 
 #: /content/includes/who.yaml
 msgid "CMS"
-msgstr ""
+msgstr "CMS"
 
 #: /content/includes/who.yaml
 msgid "Content Platforms"
@@ -105,7 +105,7 @@ msgstr "뉴스"
 
 #: /content/includes/home.yaml
 msgid "Openness"
-msgstr ""
+msgstr "개방성"
 
 #: /content/includes/home.yaml
 msgid "Publisher Control"
