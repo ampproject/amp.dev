@@ -79,6 +79,8 @@ function addCMS() {
   newYaml += `
     - title@: CMS
       section_items:
+        - title: Canvas
+          link: https://www.roya.com/blog/roya-announces-addition-of-amp-to-canvas-cms-amp.html
         - title: Drupal
           link: https://www.drupal.org/project/amp
         - title: Hatena
