@@ -95,16 +95,21 @@ a {
 
     &::before {
       background: $gradient-med;
-      bottom: -5px;
+      bottom: -3px;
       content: '';
       left: 0;
-      height: 2px;
+      height: 1px;
       position: absolute;
       right: 0;
     }
 
     &.cta {
       overflow: hidden;
+
+      &::before {
+        bottom: -5px;
+        height: 2px;
+      }
 
       &:hover {
         &::before {
