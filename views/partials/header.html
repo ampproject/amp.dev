@@ -13,7 +13,7 @@
                 {% if entry.children %}
                 {% for subEntry in entry.children %}
                 <li{% if subEntry.href.startswith('http') %} class="external"{% endif %} {% if subEntry.collection %} class="has-sublist" {% endif %}>
-                  <a href="{% if subEntry.href.startswith('http') %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(subEntry.get('copy'))}}</a>
+                  <a href="{% if subEntry.href.startswith('http') %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}" {% if subEntry.href.startswith('http') %} target="_blank" {% endif %}>{{_(subEntry.get('copy'))}}</a>
                   {% if subEntry.collection %}
                     <ul class="sublist">
                       {% set menuCollection = g.collection(subEntry.collection) %}
@@ -22,7 +22,7 @@
                         {% if item.goto_internal %}
                           <a href="{{g.doc(item.goto_internal).url.path}}">{{_(item.title)}}</a>
                         {% else %}
-                          <a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a>
+                          <a href="{{item.goto or item.url.path}}" {% if item.goto %} target="_blank" {% endif %}>{{_(item.title)}}</a>
                         {% endif %}
                       </li>
                       {% endfor %}
