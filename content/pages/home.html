@@ -184,7 +184,7 @@ components:
 
           <div class="card-container">
           {% for card in home.success_stories.cards %}
-            <div class="card centered">
+            <a class="card centered" href="{{g.doc(card.url).url.path}}">
               <div class="card-inner">
                 <div class="card-content">
                   <h2>{{_(card.quote)}}</h2>
@@ -197,7 +197,7 @@ components:
                     src="{{card.img}}">
                 </amp-img>
               </div>
-            </div>
+            </a>
             {% if not loop.last and loop.index is divisibleby 3 %}
           </div>
           <div class="card-container">

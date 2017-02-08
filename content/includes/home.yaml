@@ -38,30 +38,31 @@ success_stories:
   cards:
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
-
+      url@: /content/learn/case-studies/gizmodo.md
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
-
+      url@: /content/learn/case-studies/gizmodo.md
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
-
+      url@: /content/learn/case-studies/gizmodo.md
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
-
+      url@: /content/learn/case-studies/gizmodo.md
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
-
+      url@: /content/learn/case-studies/gizmodo.md
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
-
+      url@: /content/learn/case-studies/gizmodo.md
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
-
+      url@: /content/learn/case-studies/gizmodo.md
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
-
+      url@: /content/learn/case-studies/gizmodo.md
     - quote@: “test quote”
       img: /static/img/publishers/abril.png
+      url@: /content/learn/case-studies/gizmodo.md
 
 create:
   title@: Create your first AMP page in minutes
