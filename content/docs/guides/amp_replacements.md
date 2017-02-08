@@ -35,6 +35,8 @@ using the [`amp-img`](/docs/reference/components/amp-img.html) element, like so:
 In this most basic example, the image will display with the specified fixed
 height and width. At minimum, an explicit width and height needs to be set.
 
+#### Displaying images when JavaScript is disabled
+
 As `<amp-img>` relies on JavaScript, if the user chooses to disable scripts, images won't display.  In this case, you should provide a fallback to the image using `<img>` and `<noscript>`, like so:
 
 [sourcecode:html]
