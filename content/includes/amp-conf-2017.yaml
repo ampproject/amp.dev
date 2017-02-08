@@ -111,9 +111,12 @@ speakers:
   ardanarac:
     name: Ardan Arac
     company: Google
+    pic: /static/img/amp-conf/speakers/ardan.jpg
+    bio: Ardan leads fresh content products in Google search. She has been a product manager at Google since 2006. She studied electrical engineering previously.
   ericlindley:
     name: Eric Lindley
     company: Google
+    pic: /static/img/amp-conf/speakers/eric.jpg
   richardgingras:
     name: Richard Gingras
     company: Google
