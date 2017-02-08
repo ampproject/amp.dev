@@ -257,6 +257,10 @@
     top: 23px;
     z-index: 2;
 
+    input {
+      outline: 0;
+    }
+
     @include max-screen(1030px) {
       display: none;
     }
