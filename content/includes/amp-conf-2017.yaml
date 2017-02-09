@@ -139,10 +139,31 @@ speakers:
     company: Etsy
     pic: /static/img/amp-conf/speakers/mike.jpg
     bio: Mike Adler is a Staff Software Engineer at Etsy where he focuses on performance matters. Mike likes to build custom monitoring tools to answer tough questions about performance. He hasn't had a personal web site since 1997.
+  alighassemi:
+    name: Ali Ghassemi
+    company: Google
+    pic: /static/img/amp-conf/speakers/ali.jpg
+  sriramkrishnan:
+    name: Sriram Krishnan
+    company: Google
+    pic: /static/img/amp-conf/speakers/sriram.jpg
+  marikokosaka:
+    name: Mariko Kosaka
+    company: Scripto
+    pic: /static/img/amp-conf/speakers/mariko.jpg
+  marcelodebarros:
+    name: Marcelo De Barros
+    company: Microsoft
+  zackhendlin:
+    name: Zack Hendlin
+    company: LinkedIn
+
 agenda:
   day_1:
     - title: Registration and Breakfast
       time: "0800"
+    - title: Opening notes
+      time: "0850"
     - title: Morning Keynote
       time: "0900"
       type: keynote
@@ -175,8 +196,9 @@ agenda:
     - title: TBA
       time: "1200"
       type: session
-    - title: Lunch
+    - title: Lunch (with the AMP team!)
       time: "1230"
+      description: The AMP team needs sustenance as well, and what better time to grab them to offer feedback and discuss the roadmap. We'll have dedicated tables with project members who want to hear from you.
     - title: "AMP & the web platform"
       time: "1330"
       type: panel
@@ -228,6 +250,8 @@ agenda:
         - richardgingras
         - rannazhou
         - ardanarac
+    - title: Party!
+      time: "1800"
   day_2:
     - title: Breakfast
       time: "0800"
@@ -256,9 +280,14 @@ agenda:
     - title: "Consuming AMP: The platform panel"
       time: "1130"
       type: panel
-      description: Meet the platforms that embed and distribute AMP pages, and learn about their unique challenges, future ideas and more. Featuring an all-star lineup that includes Bing, Cloudflare, Google and more to be announced.
-    - title: Lunch
+      moderator: paulbakaus
+      speakers:
+       - marcelodebarros
+       - zackhendlin
+      description: Meet the platforms that embed and distribute AMP pages, and learn about their unique challenges, future ideas and more. Featuring an all-star lineup that includes Bing, LinkedIn, Google and more to be announced.
+    - title: Lunch (with the AMP team!)
       time: "1230"
+      description: The AMP team needs sustenance as well, and what better time to grab them to offer feedback and discuss the roadmap. We'll have dedicated tables with project members who want to hear from you.
     - title: "Better advertising on a faster web: AMP for Ads"
       time: "1330"
       type: session
@@ -266,17 +295,33 @@ agenda:
         - yaminigupta
         - vamseejasti
       description: So, AMP made content faster on the mobile web. But what about ads? Slow, spammy and disruptive ad experiences have eroded the value of content by annoying users even as advertising continues to be at the cornerstone of every publisher's business model. AMP's mission is to build a better, faster mobile web --- and that includes ads. Join us in this session to hear more about AMP for Ads (A4A), a new initiative from the AMP Project that's fundamentally changing the way ads are built and delivered on the web.
-    - title: TBA
-      time: "1400"
-      type: session
     - title: Building a new AMP component
-      time: "1430"
+      time: "1400"
       type: session
       speaker: chenshay
       description: So what happens if you discover that an AMP component for your use case doesn't exist? Contributing a new component is actually much easier than many expect, and Chen will walk you through it.
-    - title: Coffee Break
-      time: "1500"
-    - title: Breakout Sessions
-      time: "1530"
-      type: panel
-      description: "To wrap up the conference, it's time to reverse who's listening and speaking: We want to hear directly from you in small brainstorming sessions with the AMP team. We'll send you a list of breakout sessions shortly."
+    - title: Workshops
+      time: "1430"
+      type: workshop
+      description: "To wrap up the conference, it's time to get our hands dirty. Bring your laptop and curiosity and participate in one of the three workshops offered by the AMP team:"
+      speakers:
+        - sebastianbenz
+        - alighassemi
+        - sriramkrishnan
+        - yaminigupta
+        - vamseejasti
+      workshops:
+        - title: "Monetize, analyze and distribute: Successful AMP pages"
+          speakers:
+            - vamseejasti
+            - yaminigupta
+        - title: "Beautiful, interactive, canonical: Pick three"
+          speakers:
+            - sebastianbenz
+            - alighassemi
+            - sriramkrishnan
+        - title: "Progressive Web AMPs: From AMP to PWA"
+          speakers:
+            - albertomedina
+    - title: Wrap-up
+      time: "1630"
