@@ -4,11 +4,11 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Ads"
-msgstr ""
+msgstr "Reklamlar"
 
 #: /content/includes/who.yaml
 msgid "Analytics"
-msgstr ""
+msgstr "Analizler"
 
 #: /content/includes/who.yaml
 msgid "Audio/Video"
@@ -16,11 +16,11 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "CMS"
-msgstr ""
+msgstr "CMS"
 
 #: /content/includes/who.yaml
 msgid "Content Platforms"
-msgstr ""
+msgstr "İçerik Platformları"
 
 #: /content/contribute /content/includes/menu.yaml
 msgid "Contribute"
@@ -29,10 +29,6 @@ msgstr ""
 #: /content/docs /content/includes/menu.yaml
 msgid "Docs"
 msgstr "Dokümanlar"
-
-#: /content/docs/guides
-msgid "Documentation"
-msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Examples"
@@ -46,38 +42,48 @@ msgid ""
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
 msgstr ""
+"Birçok kişi için mobil cihazdan web'de bir şeyler okumak yavaş, zahmetli ve "
+"sinir bozucu bir deneyimdir, ancak böyle olması gerekmez. Accelerated Mobile "
+"Pages (AMP) Projesi, yayıncıların mobil cihazlar için optimize edilmiş içerik"
+" oluşturabilmeleri ve her yerde anında yüklenmesini sağlamaları vizyonuna "
+"sahip bir açık kaynak girişimidir."
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
-msgstr "Başlarken"
+msgstr "BAŞLARKEN"
 
 #: /content/includes/home.yaml
 msgid "Get Started with AMP HTML"
-msgstr ""
+msgstr "AMP HTML Kullanmaya Başlama"
 
 #: /content/includes/menu.yaml /content/includes/home.yaml
 msgid "Get started"
-msgstr ""
+msgstr "Başlarken"
 
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
-msgstr ""
+msgstr "Rehberler"
 
 #: /content/includes/home.yaml
 msgid ""
 "If you are new to AMP HTML, our technical introduction is a great place to "
 "get started and provides an overview of the project and how AMP HTML works."
 msgstr ""
+"AMP HTML kullanımında yeniyseniz başlamanız için en iyi yer, teknik konulara "
+"giriş bölümüdür. Bu bölümde, AMP projesiyle ve AMP HTML'nin işleyişiyle "
+"ilgili genel bakış sunulmaktadır."
 
 #: /content/includes/home.yaml
 msgid ""
 "If you'd like to dive deeper into AMP HTML, you can find all of the source "
 "code, code samples, and detailed documentation in our GitHub repository."
 msgstr ""
+"AMP HTML konusunda daha derine inmek isterseniz tüm kaynak kodları, kod "
+"örneklerini ve ayrıntılı dokümanları GitHub havuzumuzda bulabilirsiniz."
 
 #: /content/includes/home.yaml
 msgid "Instant. <br> Everywhere."
-msgstr ""
+msgstr "Anında. <br> Her yerde."
 
 #: /content/learn
 msgid "Learn"
@@ -85,7 +91,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Learn More"
-msgstr ""
+msgstr "Daha Fazla Bilgi Edinin"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -100,21 +106,24 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Openness"
-msgstr ""
+msgstr "Açık olmak"
 
 #: /content/includes/home.yaml
 msgid "Publisher Control"
-msgstr ""
+msgstr "Yayıncı Kontrolü"
 
 #: /content/includes/home.yaml
 msgid "Publishers"
-msgstr ""
+msgstr "Yayıncılar"
 
 #: /content/includes/home.yaml
 msgid ""
 "Ready to build an AMP file? This tutorial will teach you how to create a "
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
 msgstr ""
+"AMP dosyası oluşturmaya hazır mısınız? Bu eğitici, size temel bir AMP HTML "
+"sayfasını nasıl oluşturacağınızı, kademelendireceğinizi, test edeceğinizi ve "
+"yayın için hazır hale getireceğinizi öğretecek."
 
 #: /content/includes/menu.yaml /content/docs/reference
 msgid "Reference"
@@ -122,7 +131,7 @@ msgstr "Referans"
 
 #: /content/includes/home.yaml
 msgid "Speed"
-msgstr ""
+msgstr "Hız"
 
 #: /content/includes/menu.yaml /content/support
 msgid "Support"
@@ -130,11 +139,11 @@ msgstr "Destek"
 
 #: /content/includes/home.yaml
 msgid "Technical Introduction"
-msgstr ""
+msgstr "Teknik Konulara Giriş"
 
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
-msgstr ""
+msgstr "AMP'yi Kullanan Teknoloji Şirketleri"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -142,10 +151,13 @@ msgid ""
 "embodies the vision that publishers can create mobile optimized content once "
 "and have it load instantly everywhere."
 msgstr ""
+"Accelerated Mobile Pages (AMP) Projesi, yayıncıların mobil cihazlar için "
+"optimize edilmiş içeriği oluşturabilmeleri ve her yerde anında yüklenmesini "
+"sağlamaları vizyonuna sahip bir açık girişimdir."
 
 #: /content/includes/home.yaml
 msgid "Tutorial"
-msgstr ""
+msgstr "Eğitici"
 
 #: /content/includes/menu.yaml /content/docs/get_started
 msgid "Tutorials"
@@ -153,15 +165,15 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "View Code"
-msgstr ""
+msgstr "Kodu Görüntüle"
 
 #: /content/includes/home.yaml
 msgid "Visit Github"
-msgstr ""
+msgstr "Github'ı Ziyaret Et"
 
 #: /content/includes/home.yaml
 msgid "What contributors are saying"
-msgstr ""
+msgstr "Katkıda bulunanlar neler söylüyor?"
 
 #: /content/includes/menu.yaml
 msgid "news"
