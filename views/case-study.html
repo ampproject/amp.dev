@@ -25,7 +25,7 @@
           </div>
 
           {% if doc.results %}
-          <div class="post-results">
+          <div class="post-results {% if doc.results|length > 3%} post-results--small {% endif %}">
             {% for result in doc.results %}
             <div class="result">
               <p class="result-stat">{{result.stat}}</p>

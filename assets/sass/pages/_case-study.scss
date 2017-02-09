@@ -81,6 +81,10 @@
     word-wrap: normal;
   }
 
+  .post-results--small .result-stat {
+    font-size: 90px;
+  }
+
   .result-description {
     @extend %text-label;
     color: $color-ampblue;
@@ -227,7 +231,7 @@
     .share-module {
       .text-label {
         display: none;
-      } 
+      }
     }
 
     .post-content {
