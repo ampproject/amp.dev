@@ -18,6 +18,11 @@ amp-accordion {
 .accordion-title {
   margin: 0;
   position: relative;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $color-ampblue;
+  }
 
   &::before,
   &::after {
