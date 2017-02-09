@@ -5,7 +5,6 @@
     "feedparser": "*",
     "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-livereload": "*",
     "gulp-plumber": "*",
     "gulp-sass": "*",
     "gulp-svg-sprite": "^1.3.6",

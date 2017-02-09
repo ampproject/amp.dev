@@ -4,11 +4,11 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Ads"
-msgstr ""
+msgstr "Iklan"
 
 #: /content/includes/who.yaml
 msgid "Analytics"
-msgstr ""
+msgstr "Analisis"
 
 #: /content/includes/who.yaml
 msgid "Audio/Video"
@@ -16,11 +16,11 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "CMS"
-msgstr ""
+msgstr "CMS"
 
 #: /content/includes/who.yaml
 msgid "Content Platforms"
-msgstr ""
+msgstr "Platform Konten"
 
 #: /content/contribute /content/includes/menu.yaml
 msgid "Contribute"
@@ -29,10 +29,6 @@ msgstr ""
 #: /content/docs /content/includes/menu.yaml
 msgid "Docs"
 msgstr "Dokumen"
-
-#: /content/docs/guides
-msgid "Documentation"
-msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Examples"
@@ -46,38 +42,49 @@ msgid ""
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
 msgstr ""
+"Bagi banyak orang, membaca web seluler merupakan pengalaman yang lambat, "
+"canggung, dan menjengkelkan - tetapi seharusnya tidak seperti itu. Proyek "
+"Accelerated Mobile Pages (AMP) adalah inisiatif sumber terbuka yang "
+"mewujudkan visi bahwa penerbit dapat membuat konten yang dioptimalkan untuk "
+"seluler dan dapat dimuat dengan cepat di mana saja."
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
-msgstr "Mulai"
+msgstr "MEMULAI"
 
 #: /content/includes/home.yaml
 msgid "Get Started with AMP HTML"
-msgstr ""
+msgstr "Memulai HTML AMP"
 
 #: /content/includes/menu.yaml /content/includes/home.yaml
 msgid "Get started"
-msgstr ""
+msgstr "Memulai"
 
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
-msgstr ""
+msgstr "Panduan"
 
 #: /content/includes/home.yaml
 msgid ""
 "If you are new to AMP HTML, our technical introduction is a great place to "
 "get started and provides an overview of the project and how AMP HTML works."
 msgstr ""
+"Jika Anda baru mengenal HTML AMP, pendahuluan teknis kami adalah tempat yang "
+"tepat untuk memulainya. Pendahuluan teknis tersebut memberikan ringkasan "
+"mengenai proyek dan cara kerja HTML AMP."
 
 #: /content/includes/home.yaml
 msgid ""
 "If you'd like to dive deeper into AMP HTML, you can find all of the source "
 "code, code samples, and detailed documentation in our GitHub repository."
 msgstr ""
+"Jika ingin mengetahui lebih dalam tentang HTML AMP, Anda dapat menemukan "
+"semua kode sumber, contoh kode, serta dokumentasi mendetail di penyimpanan "
+"GitHub kami."
 
 #: /content/includes/home.yaml
 msgid "Instant. <br> Everywhere."
-msgstr ""
+msgstr "Instan. <br> Di mana saja."
 
 #: /content/learn
 msgid "Learn"
@@ -85,7 +92,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Learn More"
-msgstr ""
+msgstr "Pelajari Lebih Lanjut"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -100,21 +107,23 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Openness"
-msgstr ""
+msgstr "Keterbukaan"
 
 #: /content/includes/home.yaml
 msgid "Publisher Control"
-msgstr ""
+msgstr "Kontrol Penerbit"
 
 #: /content/includes/home.yaml
 msgid "Publishers"
-msgstr ""
+msgstr "Penerbit"
 
 #: /content/includes/home.yaml
 msgid ""
 "Ready to build an AMP file? This tutorial will teach you how to create a "
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
 msgstr ""
+"Siap membuat file AMP? Tutorial ini akan mengajari Anda cara membuat laman "
+"HTML AMP dasar, menyusun, menguji, dan menyiapkannya untuk dipublikasikan."
 
 #: /content/includes/menu.yaml /content/docs/reference
 msgid "Reference"
@@ -122,7 +131,7 @@ msgstr "Referensi"
 
 #: /content/includes/home.yaml
 msgid "Speed"
-msgstr ""
+msgstr "Kecepatan"
 
 #: /content/includes/menu.yaml /content/support
 msgid "Support"
@@ -130,11 +139,11 @@ msgstr "Dukungan"
 
 #: /content/includes/home.yaml
 msgid "Technical Introduction"
-msgstr ""
+msgstr "Pendahuluan Teknis"
 
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
-msgstr ""
+msgstr "Perusahaan Teknologi yang menggunakan AMP"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -142,10 +151,13 @@ msgid ""
 "embodies the vision that publishers can create mobile optimized content once "
 "and have it load instantly everywhere."
 msgstr ""
+"Proyek Accelerated Mobile Pages (AMP) adalah inisiatif terbuka yang "
+"mewujudkan visi bahwa penerbit dapat membuat konten yang dioptimalkan untuk "
+"seluler dan dapat dimuat dengan cepat di mana saja."
 
 #: /content/includes/home.yaml
 msgid "Tutorial"
-msgstr ""
+msgstr "Tutorial"
 
 #: /content/includes/menu.yaml /content/docs/get_started
 msgid "Tutorials"
@@ -153,15 +165,15 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "View Code"
-msgstr ""
+msgstr "Lihat Kode"
 
 #: /content/includes/home.yaml
 msgid "Visit Github"
-msgstr ""
+msgstr "Kunjungi Github"
 
 #: /content/includes/home.yaml
 msgid "What contributors are saying"
-msgstr ""
+msgstr "Perkataan kontributor"
 
 #: /content/includes/menu.yaml
 msgid "news"
