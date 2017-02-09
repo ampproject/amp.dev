@@ -57,7 +57,7 @@
     </section>
     <section class="user-categories card-container">
       {% for card in doc.cards %}
-        <div class="card" id="{{card.name|slug}}">
+        <a class="card" id="{{card.name|slug}}" href="{{g.doc('/content/learn/who/' ~ card.name|slug ~ '.yaml').url.path}}">
           <amp-img
               noloading
               height=90
@@ -65,8 +65,8 @@
               src="/static/img/about/who-use-amp/{{card.icon}}">
           </amp-img>
           <h4 class="user-name">{{card.name}}</h4>
-          <a class="underlined cta user-link" href="{{g.doc('/content/learn/who/' ~ card.name|slug ~ '.yaml').url.path}}">{{_(card.cta)}}</a>
-        </div>
+          <div class="underlined cta user-link">{{_(card.cta)}}</div>
+        </a>
       {% endfor %}
     </section>
   </div>
