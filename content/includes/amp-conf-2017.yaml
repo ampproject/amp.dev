@@ -78,6 +78,8 @@ speakers:
   nicolesullivan:
     name: Nicole Sullivan
     company: npm
+    pic: /static/img/amp-conf/speakers/nicole.jpg
+    bio: Nicole is an Engineering Director at Salesforce and the creator of Object Oriented CSS, Dr Frankenstyle, CSSLint, and CSSConf. Follow her on [Twitter](https://twitter.com/stubbornella), read her [blog](http://www.stubbornella.org/content/).
   jeremykeith:
     name: Jeremy Keith
     company: Clearleft
@@ -125,6 +127,8 @@ speakers:
   sebastianbenz:
     name: Sebastian Benz
     company: Google
+    pic: /static/img/amp-conf/speakers/sebastian.jpg
+    bio: Sebastian Benz is a Developer Advocate at Google. He created ampbyexample.com and helps partners be more successful on the web and on Android. Sebastian has a PhD in Computer Science from TU Muenchen.
   madisonminer:
     name: Madison Miner
     company: WompMobile

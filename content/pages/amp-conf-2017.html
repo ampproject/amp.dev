@@ -131,7 +131,7 @@ stylesheet: pages/amp-conf.css
                 <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="400" height="400" layout="responsive"></amp-img>{% endif %}</span>
                 <div>
                     <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</h4>
-                    <p>{{ conf.speakers[speaker].bio }}</p>
+                    <p>{{ conf.speakers[speaker].bio|markdown|safe }}</p>
                 </div>
             </li>
             {% endfor %}
