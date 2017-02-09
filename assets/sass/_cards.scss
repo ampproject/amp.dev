@@ -62,6 +62,11 @@
   margin-top: 10px;
 }
 
+.card-section-heading {
+  font-size: 30px;
+  margin: 50px 10px 0;
+}
+
 // for grids in support, build, guides, etc pages
 .card-container.grid {
   flex-wrap: wrap;
@@ -99,6 +104,10 @@
     flex: 1 0 auto;
     hyphens: none;
     margin-bottom: 6em;
+
+    h2 {
+      font-size: 36px;
+    }
   }
 
   .card-link p {

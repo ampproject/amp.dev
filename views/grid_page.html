@@ -21,13 +21,29 @@
             {% set collection = (doc.collection.pod_path + '/' + doc.base) %}
           {% endif %}
 
-          <div class="card-container grid">
-            {% for item in g.collection(collection).docs(recursive=false, locale=doc.locale) %}
-              {% with doc = item %}
-                {% include "/views/partials/grid-card.html" %}
-              {% endwith %}
+          {% if doc.sections %}
+            {% for section in doc.sections %}
+              <h2 class="card-section-heading">{{_(section.title)}}</h2>
+              <div class="card-container grid">
+                {% set sectionIndex = loop.index0 %}
+                {% for item in g.collection(collection).docs(recursive=false, locale=doc.locale) %}
+                  {% if item.group == sectionIndex %}
+                    {% with doc = item %}
+                      {% include "/views/partials/grid-card.html" %}
+                    {% endwith %}
+                  {% endif %}
+                {% endfor %}
+              </div>
             {% endfor %}
-          </div>
+          {% else %}
+            <div class="card-container grid">
+              {% for item in g.collection(collection).docs(recursive=false, locale=doc.locale) %}
+                {% with doc = item %}
+                  {% include "/views/partials/grid-card.html" %}
+                {% endwith %}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
       </article>
     </div>
