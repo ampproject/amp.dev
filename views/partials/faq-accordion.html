@@ -1,15 +1,5 @@
-<div class="inline-toc">
-  <ul>
-  {% for section in doc.faq %}
-    <li><a href="#{{section.section_title|slug}}">{{_(section.section_title)}}</a></li>
-  {% endfor %}
-  </ul>
-</div>
-
-{% for section in doc.faq %}
-  <h2 id="{{section.section_title|slug}}" class="section-label">{{_(section.section_title)}}</h2>
-  <amp-accordion>
-    {% for question in section.questions %}
+<amp-accordion>
+  {% for question in doc.faq %}
     <section>
       <header class="accordion-header">
         <h4 class="accordion-title">{{_(question.title)}}</h4>
@@ -18,6 +8,5 @@
         {{_(question.answer)|markdown|safe}}
       </div>
     </section>
-    {% endfor %}
-  </amp-accordion>
-{% endfor %}
+  {% endfor %}
+</amp-accordion>
