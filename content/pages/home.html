@@ -41,7 +41,7 @@ components:
       <div class="latest-mobile tablet-down">
         <h2 class="latest-label">{{_(home.hero.carousel_title)}}</h2>
         <amp-carousel class="latest-carousel"
-          height="250"
+          height="200"
           layout="flex-item"
           type="slides">
 
@@ -79,16 +79,15 @@ components:
         <a class="underlined cta" href="{{g.doc(home.hero.secondary_cta_url).url.path}}">{{_(home.hero.secondary_cta)}}</a>
       </div>
       <div class="latest tablet-up">
-        <h3 class="latest-label">{{_(home.hero.carousel_title)}}</h3>
+        <h3 class="latest-label light">{{_(home.hero.carousel_title)}}</h3>
 
         <amp-carousel class="latest-carousel tablet-up"
-          height="300"
+          height="275"
           layout="flex-item"
           type="slides">
 
           <div class="card-container">
           {% for article in blog.blogs %}
-            {% if loop.index <= 3 %}
               <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md').url.path}}" class="card">
                 <div class="card-inner">
                   <div class="card-type text-label news">
@@ -102,6 +101,9 @@ components:
                   </div>
                 </div>
               </a>
+            {% if loop.index % 3 == 0 %}
+            </div>
+            <div class="card-container">
             {% endif %}
           {% endfor %}
           </div>

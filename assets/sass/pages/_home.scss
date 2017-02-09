@@ -65,6 +65,15 @@
     position: relative;
     width: 120%;
 
+    .card {
+      padding: 20px;
+    }
+
+    .card-content {
+      max-height: 100%;
+      overflow: hidden;
+    }
+
     @include min-max-screen($container-size - 200, $container-size) {
       left: 0;
       width: 100%;
@@ -75,6 +84,7 @@
     margin-top: 120px;
 
     .latest-label {
+      margin: 0;
       text-align: center;
       transform: none;
       position: static;
@@ -82,16 +92,10 @@
   }
 
   .latest-label {
-    left: -130px;
-    letter-spacing: -0.6px;
-    position: absolute;
-    transform-origin: 100% 50%;
-    transform: rotate(-90deg);
-    top: 10px;
+    margin: 0 0 -15px 40px;
   }
 
   .benefits {
-
     h1 {
       margin: 0 auto;
       max-width: 450px;
