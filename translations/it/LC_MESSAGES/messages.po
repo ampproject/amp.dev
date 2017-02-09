@@ -30,10 +30,6 @@ msgstr ""
 msgid "Docs"
 msgstr "Documentazione"
 
-#: /content/docs/guides
-msgid "Documentation"
-msgstr ""
-
 #: /content/includes/menu.yaml
 msgid "Examples"
 msgstr ""
@@ -45,7 +41,13 @@ msgid ""
 " (AMP) Project is an open source initiative that embodies the vision that "
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
-msgstr "Per molte persone leggere sul Web mobile è un'esperienza lenta, scomoda e frustrante, ma non è così che dovrebbe essere. Il progetto Accelerated Mobile Pages (AMP) è un'iniziativa open source che rappresenta la vision incentrata sull'idea che i publisher debbano poter creare in un unico flusso di lavoro contenuti ottimizzati per i dispositivi mobili in grado di caricarsi istantaneamente su ogni tipo di dispositivo."
+msgstr ""
+"Per molte persone leggere sul Web mobile è un'esperienza lenta, scomoda e "
+"frustrante, ma non è così che dovrebbe essere. Il progetto Accelerated Mobile"
+" Pages (AMP) è un'iniziativa open source che rappresenta la vision incentrata"
+" sull'idea che i publisher debbano poter creare in un unico flusso di lavoro "
+"contenuti ottimizzati per i dispositivi mobili in grado di caricarsi "
+"istantaneamente su ogni tipo di dispositivo."
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
@@ -59,7 +61,7 @@ msgstr "Inizia a utilizzare il formato HTML AMP"
 msgid "Get started"
 msgstr "Come iniziare"
 
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
 msgstr "Guide"
 
@@ -67,13 +69,19 @@ msgstr "Guide"
 msgid ""
 "If you are new to AMP HTML, our technical introduction is a great place to "
 "get started and provides an overview of the project and how AMP HTML works."
-msgstr "Se non hai mai utilizzato il formato HTML AMP, la nostra documentazione tecnica, che offre una panoramica del progetto e del funzionamento del formato HTML AMP, è il punto perfetto per iniziare."
+msgstr ""
+"Se non hai mai utilizzato il formato HTML AMP, la nostra documentazione "
+"tecnica, che offre una panoramica del progetto e del funzionamento del "
+"formato HTML AMP, è il punto perfetto per iniziare."
 
 #: /content/includes/home.yaml
 msgid ""
 "If you'd like to dive deeper into AMP HTML, you can find all of the source "
 "code, code samples, and detailed documentation in our GitHub repository."
-msgstr "Se desideri conoscere il formato HTML AMP in modo più approfondito, nel repository di GitHub puoi trovare tutte le informazioni sul codice sorgente, codici di esempio e la documentazione dettagliata."
+msgstr ""
+"Se desideri conoscere il formato HTML AMP in modo più approfondito, nel "
+"repository di GitHub puoi trovare tutte le informazioni sul codice sorgente, "
+"codici di esempio e la documentazione dettagliata."
 
 #: /content/includes/home.yaml
 msgid "Instant. <br> Everywhere."
@@ -114,7 +122,9 @@ msgstr "Publisher"
 msgid ""
 "Ready to build an AMP file? This tutorial will teach you how to create a "
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
-msgstr "Pronto a realizzare un file AMP? Questo tutorial mostra come creare un pagina HTML AMP di base, organizzarla, testarla e prepararla per la pubblicazione."
+msgstr ""
+"Pronto a realizzare un file AMP? Questo tutorial mostra come creare un pagina"
+" HTML AMP di base, organizzarla, testarla e prepararla per la pubblicazione."
 
 #: /content/includes/menu.yaml /content/docs/reference
 msgid "Reference"
@@ -141,7 +151,11 @@ msgid ""
 "The Accelerated Mobile Pages (AMP) Project is an open initiative that "
 "embodies the vision that publishers can create mobile optimized content once "
 "and have it load instantly everywhere."
-msgstr "Il progetto Accelerated Mobile Pages (AMP) è un'iniziativa open source che rappresenta la vision incentrata sull'idea che i publisher debbano poter creare in un unico flusso di lavoro contenuti ottimizzati per i dispositivi mobili in grado di caricarsi istantaneamente su ogni tipo di dispositivo."
+msgstr ""
+"Il progetto Accelerated Mobile Pages (AMP) è un'iniziativa open source che "
+"rappresenta la vision incentrata sull'idea che i publisher debbano poter "
+"creare in un unico flusso di lavoro contenuti ottimizzati per i dispositivi "
+"mobili in grado di caricarsi istantaneamente su ogni tipo di dispositivo."
 
 #: /content/includes/home.yaml
 msgid "Tutorial"

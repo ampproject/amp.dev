@@ -30,10 +30,6 @@ msgstr ""
 msgid "Docs"
 msgstr "เอกสาร"
 
-#: /content/docs/guides
-msgid "Documentation"
-msgstr ""
-
 #: /content/includes/menu.yaml
 msgid "Examples"
 msgstr ""
@@ -45,7 +41,11 @@ msgid ""
 " (AMP) Project is an open source initiative that embodies the vision that "
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
-msgstr "สำหรับหลายๆ คน การอ่านข้อมูลในเว็บบนอุปกรณ์เคลื่อนที่นั้นทำได้ช้า ยุ่งยาก และน่าหงุดหงิด แต่ประสบการณ์เหล่านี้ดีขึ้นได้ โครงการ Accelerated Mobile Pages (AMP) คือการริเริ่มแบบโอเพนซอร์สด้วยวิสัยทัศน์ที่ต้องการให้ผู้เผยแพร่เนื้อหาสามารถสร้างเนื้อหาที่เหมาะกับอุปกรณ์เคลื่อนที่เพียงครั้งเดียวแล้วโหลดได้ทันทีทุกที่ทุกเวลา"
+msgstr ""
+"สำหรับหลายๆ คน การอ่านข้อมูลในเว็บบนอุปกรณ์เคลื่อนที่นั้นทำได้ช้า ยุ่งยาก "
+"และน่าหงุดหงิด แต่ประสบการณ์เหล่านี้ดีขึ้นได้ โครงการ Accelerated Mobile "
+"Pages (AMP) "
+"คือการริเริ่มแบบโอเพนซอร์สด้วยวิสัยทัศน์ที่ต้องการให้ผู้เผยแพร่เนื้อหาสามารถสร้างเนื้อหาที่เหมาะกับอุปกรณ์เคลื่อนที่เพียงครั้งเดียวแล้วโหลดได้ทันทีทุกที่ทุกเวลา"
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
@@ -59,7 +59,7 @@ msgstr "เริ่มต้นใช้งาน AMP HTML"
 msgid "Get started"
 msgstr "เริ่มต้นใช้งาน"
 
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
 msgstr "คำแนะนำ"
 
@@ -67,13 +67,17 @@ msgstr "คำแนะนำ"
 msgid ""
 "If you are new to AMP HTML, our technical introduction is a great place to "
 "get started and provides an overview of the project and how AMP HTML works."
-msgstr "หากคุณเพิ่งเคยใช้ AMP HTML ขอแนะนำให้เริ่มจากบทนำทางเทคนิคของเรา เพื่อดูภาพรวมของโครงการและวิธีการทำงานของ AMP HTML"
+msgstr ""
+"หากคุณเพิ่งเคยใช้ AMP HTML ขอแนะนำให้เริ่มจากบทนำทางเทคนิคของเรา "
+"เพื่อดูภาพรวมของโครงการและวิธีการทำงานของ AMP HTML"
 
 #: /content/includes/home.yaml
 msgid ""
 "If you'd like to dive deeper into AMP HTML, you can find all of the source "
 "code, code samples, and detailed documentation in our GitHub repository."
-msgstr "หากต้องการเจาะลึกเกี่ยวกับ AMP HTML ลงไปอีก คุณสามารถดูซอร์สโค้ด ตัวอย่างโค้ด และเอกสารประกอบโดยละเอียดได้ในที่เก็บ GitHub ของเรา"
+msgstr ""
+"หากต้องการเจาะลึกเกี่ยวกับ AMP HTML ลงไปอีก คุณสามารถดูซอร์สโค้ด ตัวอย่างโค้ด"
+" และเอกสารประกอบโดยละเอียดได้ในที่เก็บ GitHub ของเรา"
 
 #: /content/includes/home.yaml
 msgid "Instant. <br> Everywhere."
@@ -114,7 +118,9 @@ msgstr "ผู้เผยแพร่"
 msgid ""
 "Ready to build an AMP file? This tutorial will teach you how to create a "
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
-msgstr "หากคุณพร้อมสร้างไฟล์ AMP แล้ว บทแนะนำนี้จะสอนวิธีสร้างหน้า AMP HTML พื้นฐาน, วิธีจัดวาง วิธีทดสอบ และวิธีเตรียมพร้อมสำหรับการเผยแพร่"
+msgstr ""
+"หากคุณพร้อมสร้างไฟล์ AMP แล้ว บทแนะนำนี้จะสอนวิธีสร้างหน้า AMP HTML พื้นฐาน, "
+"วิธีจัดวาง วิธีทดสอบ และวิธีเตรียมพร้อมสำหรับการเผยแพร่"
 
 #: /content/includes/menu.yaml /content/docs/reference
 msgid "Reference"
@@ -141,7 +147,9 @@ msgid ""
 "The Accelerated Mobile Pages (AMP) Project is an open initiative that "
 "embodies the vision that publishers can create mobile optimized content once "
 "and have it load instantly everywhere."
-msgstr "โครงการ Accelerated Mobile Pages (AMP) คือการริเริ่มแบบโอเพนซอร์สด้วยวิสัยทัศน์ที่ต้องการให้ผู้เผยแพร่เนื้อหาสามารถสร้างเนื้อหาที่เหมาะกับอุปกรณ์เคลื่อนที่เพียงครั้งเดียวแล้วโหลดได้ทันทีทุกที่ทุกเวลา"
+msgstr ""
+"โครงการ Accelerated Mobile Pages (AMP) "
+"คือการริเริ่มแบบโอเพนซอร์สด้วยวิสัยทัศน์ที่ต้องการให้ผู้เผยแพร่เนื้อหาสามารถสร้างเนื้อหาที่เหมาะกับอุปกรณ์เคลื่อนที่เพียงครั้งเดียวแล้วโหลดได้ทันทีทุกที่ทุกเวลา"
 
 #: /content/includes/home.yaml
 msgid "Tutorial"

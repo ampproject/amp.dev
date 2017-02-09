@@ -30,10 +30,6 @@ msgstr ""
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: /content/docs/guides
-msgid "Documentation"
-msgstr "ドキュメント"
-
 #: /content/includes/menu.yaml
 msgid "Examples"
 msgstr ""
@@ -45,7 +41,10 @@ msgid ""
 " (AMP) Project is an open source initiative that embodies the vision that "
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
-msgstr "モバイル端末からウェブにアクセスして何かを読んだり調べたりするとき、読み込みの遅さや表示のぎこちなさに不満を感じている方は多いのではないでしょうか。そんな状況を打破しようと、業界を挙げた構想が動き出しています。それが Accelerated Mobile Pages（AMP）、サイト運営者がいったんモバイル コンテンツを最適化すれば、ユーザーがどこにいても瞬時に読み込めるようにすることを目指すオープンソース プロジェクトです。"
+msgstr ""
+"モバイル端末からウェブにアクセスして何かを読んだり調べたりするとき、読み込みの遅さや表示のぎこちなさに不満を感じている方は多いのではないでしょうか。そんな状況を打破しようと、業界を挙げた構想が動き出しています。それが"
+" Accelerated Mobile Pages（AMP）、サイト運営者がいったんモバイル "
+"コンテンツを最適化すれば、ユーザーがどこにいても瞬時に読み込めるようにすることを目指すオープンソース プロジェクトです。"
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
@@ -59,7 +58,7 @@ msgstr "AMP HTML スタートガイド"
 msgid "Get started"
 msgstr "はじめに"
 
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
 msgstr ""
 
@@ -73,7 +72,9 @@ msgstr "初めて AMP HTML を利用する場合は、まず技術紹介のペ�
 msgid ""
 "If you'd like to dive deeper into AMP HTML, you can find all of the source "
 "code, code samples, and detailed documentation in our GitHub repository."
-msgstr "AMP HTML についてさらに詳しく知りたい場合は、GitHub レポジトリにアクセスしてください。ソースコードやコードサンプル、詳細なドキュメントをご用意しています。"
+msgstr ""
+"AMP HTML についてさらに詳しく知りたい場合は、GitHub "
+"レポジトリにアクセスしてください。ソースコードやコードサンプル、詳細なドキュメントをご用意しています。"
 
 #: /content/includes/home.yaml
 msgid "Instant. <br> Everywhere."
@@ -141,7 +142,9 @@ msgid ""
 "The Accelerated Mobile Pages (AMP) Project is an open initiative that "
 "embodies the vision that publishers can create mobile optimized content once "
 "and have it load instantly everywhere."
-msgstr "Accelerated Mobile Pages（AMP）は、サイト運営者がいったんモバイル コンテンツを最適化すれば、ユーザーがどこにいても瞬時に読み込めるようにすることを目指すオープンソース プロジェクトです。"
+msgstr ""
+"Accelerated Mobile Pages（AMP）は、サイト運営者がいったんモバイル "
+"コンテンツを最適化すれば、ユーザーがどこにいても瞬時に読み込めるようにすることを目指すオープンソース プロジェクトです。"
 
 #: /content/includes/home.yaml
 msgid "Tutorial"
