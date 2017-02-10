@@ -15,6 +15,7 @@ speakers:
     company: UpperQuad
     twitter: lewei
     pic: /static/img/amp-conf/speakers/le.jpg
+    bio: Le is a Senior Developer at Upperquad, a design studio in San Francisco, where she works on a variety of projects for clients such as Google, Github, and Facebook. Most recently she has been working with the AMP team on a redesign of ampproject.org. Prior to UQ, Le was a software engineer at Google.
   willchou:
     name: William Chou
     company: Google
