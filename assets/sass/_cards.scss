@@ -129,6 +129,7 @@
     position: relative;
 
     &::before {
+      bottom: -5px;
       height: 2px;
     }
   }
