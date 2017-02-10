@@ -4,6 +4,7 @@ $color-midblue: #0379c4;
 
 // new colors
 $color-ampblue: #1c79c0;
+$color-buildblue: #1573ca;
 $color-brightblue: #0389ff;
 $color-brightbluefaded: rgba(3, 137, 255, .05);
 $color-lightblue: #0dd3ff;
@@ -26,6 +27,7 @@ $gradient-med-faded: linear-gradient(to right, $color-brightbluefaded, $color-li
 $gradient-light: linear-gradient(to right, $color-lightblue, $color-lightblue, $color-white);
 $gradient-anglebold: linear-gradient($gradient-angle, $color-lightblue, $color-brightblue, $color-ampblue);
 $gradient-anglemed: linear-gradient($gradient-angle, $color-lightblue, $color-brightblue);
+$gradient-anglebuild: linear-gradient($gradient-angle, $color-buildblue, $color-brightblue);
 $gradient-anglelight: linear-gradient($gradient-angle, $color-lightblue 40%, $color-brightblue);
 // $gradient-anglelight: linear-gradient($gradient-angle, $color-ampblue, $color-brightblue, $color-lightblue);
 

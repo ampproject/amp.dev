@@ -9,12 +9,13 @@ tt{
   font-family: $font-family-mono;
   font-size: 14px;
   background: $color-white;
-  border: 1px solid $color-lightblue;
+  border: 1px solid #c2f3fd;
   border-radius: 3px;
-  color: $color-ampblue;
+  color: #1867a3;
 }
 
 code {
+  background: #e9fbff;
   font-size: 13px;
   padding: 2px 5px;
 }
