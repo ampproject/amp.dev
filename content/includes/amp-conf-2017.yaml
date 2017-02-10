@@ -157,6 +157,9 @@ speakers:
   zackhendlin:
     name: Zack Hendlin
     company: LinkedIn
+  honeymittal:
+    name: Honey Mittal
+    company: Wego
 
 agenda:
   day_1:
@@ -176,26 +179,29 @@ agenda:
         - sammeder
         - vadimantonov
       description: Pinterest has more than a billion pages that are accessible to unauthenticated users and discoverable via Google search. In this talk we will walk through what it took to convert these to AMP and where we are planning to go next.
-    - title: Adding AMP to an e-commerce Workflow
-      time: "1000"
-      type: session
-      speaker: senthilpadmanabhan
-      description: eBay is one of the first eCommerce players to launch AMP in production. In this talk we will discuss on how to add AMP to an existing workflow and develop in parallel. We will dive into why we chose AMP, lessons learned, things that are critical for eCommerce and the challenges faced. We will also share some metrics along the way.
-    - title: Coffee Break
-      time: "1030"
     - title: AMP in the Wild
-      time: "1100"
+      time: "1000"
       type: session
       speaker: nataliabaltazar
       description: Learn how the Guardian turned the limitations of AMP into an opportunity to rethink their article pages, header and navigation and therefore improved their overall user journey.
-    - title: "Leveraging AMP for e-commerce: Eventbrite’s journey to optimized mobile pages"
+    - title: Coffee Break
+      time: "1030"
+    - title: Adding AMP to an e-commerce Workflow
+      time: "1100"
+      type: session
+      speaker: senthilpadmanabhan
+      description: eBay is one of the first eCommerce players to launch AMP in production. In this talk we will discuss on how to add AMP to an existing workflow and develop in parallel. We will dive into why we chose AMP, lessons learned, things that are critical for eCommerce and the challenges faced. We will also share some metrics along the way.
+    - title: "Beautiful, Canonical, and Responsive AMP Pages"
       time: "1130"
       type: session
-      speaker: beckcronindixon
-      description: Eventbrite has seen many wins since launching its event listings pages as AMP. But this journey had its share of technical and design challenges. This discussion will focus on some of those hurdles including accommodating user-generated content, issues specific to ecommerce and ticketing, and structuring HTML and CSS for maintainability. We will detail how Eventbrite  overcame these obstacles without sacrificing user experience or brand alignment.
+      description: Le is the lead developer for the upcoming relaunch of the AMP Project website, and will share lots of lessons learned when building canonical, responsive AMP. She'll also highlight some upcoming AMP features that make it even easier to build attractive AMP Pages.
+      speakers:
+        - lewei
+        - ericlindley
     - title: TBA
       time: "1200"
       type: session
+      speaker: honeymittal
     - title: Lunch (with the AMP team!)
       time: "1230"
       description: The AMP team needs sustenance as well, and what better time to grab them to offer feedback and discuss the roadmap. We'll have dedicated tables with project members who want to hear from you.
@@ -217,18 +223,16 @@ agenda:
       speakers:
         - madisonminer
         - sebastianbenz
-    - title: Turing complete...AMP Pages?!
+    - title: "Leveraging AMP for e-commerce: Eventbrite’s journey to optimized mobile pages"
       time: "1500"
+      type: session
+      speaker: beckcronindixon
+      description: Eventbrite has seen many wins since launching its event listings pages as AMP. But this journey had its share of technical and design challenges. This discussion will focus on some of those hurdles including accommodating user-generated content, issues specific to ecommerce and ticketing, and structuring HTML and CSS for maintainability. We will detail how Eventbrite  overcame these obstacles without sacrificing user experience or brand alignment.
+    - title: Turing complete...AMP Pages?!
+      time: "1530"
       type: session
       speaker: willchou
       description: The AMP team has been amazed at the creativity web developers are showing to create interactivity without JS, but we're finally making it a little easier out of the box. Learn how amp-bind, amp-selector, amp-fresh and other exciting new components enable true interactivity.
-    - title: "Beautiful, Canonical, and Responsive AMP Pages"
-      time: "1530"
-      type: session
-      description: Le is the lead developer for the upcoming relaunch of the AMP Project website, and will share lots of lessons learned when building canonical, responsive AMP. She'll also highlight some upcoming AMP features that make it even easier to build attractive AMP Pages.
-      speakers:
-        - lewei
-        - ericlindley
     - title: Coffee Break
       time: "1600"
     - title: What's next in AMP
