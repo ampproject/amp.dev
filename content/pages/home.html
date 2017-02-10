@@ -46,7 +46,7 @@ components:
           type="slides">
 
           {% for article in blog.blogs %}
-            {% if loop.index <= 3 %}
+            {% if loop.index <= 6 %}
             <div class="card-container">
               <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md').url.path}}" class="card">
                 <div class="card-inner">
@@ -101,7 +101,14 @@ components:
                   </div>
                 </div>
               </a>
-            {% if loop.index % 3 == 0 %}
+
+              {% if loop.index == loop|length and loop.index % 3 != 0 %}
+                {% for number in range(0, 3 - loop.index % 3) %}
+                  <div class="card card--spacer"></div>
+                {% endfor %}
+              {% endif %}
+
+            {% if loop.index % 3 == 0 and loop.index != loop|length %}
             </div>
             <div class="card-container">
             {% endif %}

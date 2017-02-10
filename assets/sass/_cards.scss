@@ -39,6 +39,16 @@
     box-shadow: 0px 3px 50px 0 rgba(0, 0, 0, 0.075);
     transform: translateY(-5px);
   }
+
+  &--spacer {
+    box-shadow: none;
+    height: 0;
+    padding: 0;
+
+    &::before {
+      display: none;
+    }
+  }
 }
 
 .card-inner {
