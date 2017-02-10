@@ -102,13 +102,13 @@ components:
                 </div>
               </a>
 
-              {% if loop.index == loop|length and loop.index % 3 != 0 %}
+              {% if loop.last and loop.index is not divisibleby 3 %}
                 {% for number in range(0, 3 - loop.index % 3) %}
                   <div class="card card--spacer"></div>
                 {% endfor %}
               {% endif %}
 
-            {% if loop.index % 3 == 0 and loop.index != loop|length %}
+            {% if not loop.last and loop.index is divisibleby 3 %}
             </div>
             <div class="card-container">
             {% endif %}
@@ -207,6 +207,13 @@ components:
                 </amp-img>
               </div>
             </a>
+
+            {% if loop.last and loop.index is not divisibleby 3 %}
+              {% for number in range(0, 3 - loop.index % 3) %}
+                <div class="card card--spacer"></div>
+              {% endfor %}
+            {% endif %}
+
             {% if not loop.last and loop.index is divisibleby 3 %}
           </div>
           <div class="card-container">

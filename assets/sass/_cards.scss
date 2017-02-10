@@ -127,6 +127,10 @@
     margin: 0;
     padding: 0;
     position: relative;
+
+    &::before {
+      height: 2px;
+    }
   }
 }
 
