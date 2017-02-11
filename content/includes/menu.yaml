@@ -11,7 +11,7 @@ menu:
         copy@: "Case Studies"
         collection: learn/case-studies
   - href: /content/docs/build.md
-    copy@: Build
+    copy@: Docs
     collection: docs
     children:
       - href: /content/docs/get_started/create.md

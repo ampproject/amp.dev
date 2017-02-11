@@ -246,4 +246,8 @@
 .doc-footer {
   border-left: 3px solid $color-grey-lt;
   margin-left: 350px;
+
+  .cta-line.left {
+    display: none;
+  }
 }
