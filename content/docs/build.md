@@ -1,5 +1,5 @@
 ---
-$title@: Build
+$title@: Docs
 $order: 0
 $hidden: true
 $path: /docs/

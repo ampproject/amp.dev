@@ -1,4 +1,4 @@
-$title@: Build
+$title@: Docs
 $path: /docs/{base}/
 $view: /views/doc.html
 $localization:
