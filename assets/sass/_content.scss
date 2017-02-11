@@ -27,13 +27,14 @@
   display: flex;
 
   h1 {
+    font-size: 40px;
     margin-top: 0;
   }
 
   .content {
     flex-grow: 1;
     -webkit-flex-grow: 1;
-    max-width: 2000px;
+    max-width: 1000px;
     padding-bottom: 60px;
     padding-top: 70px;
 

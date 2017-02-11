@@ -39,18 +39,6 @@
 <nav class="doc-sidebar">
   {% if secondaryCollection and navCollection %}
     <div class="current-header">
-      <div class="breadcrumbs">
-        <a href="{{g.doc(g.collection('docs').index_path).url.path}}">
-          <div class="breadcrumb light">
-            {{_(g.collection('docs').title)}}
-          </div>
-        </a>
-        <a href="{{g.doc(secondaryCollection.index_path).url.path}}">
-          <div class="breadcrumb light">
-            {{_(secondaryCollection.title)}}
-          </div>
-        </a>
-      </div>
       <h1 class="title">
           {{_(navCollection.title)}}
       </h1>

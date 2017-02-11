@@ -12,21 +12,12 @@
     padding: 35px 30px 20px;
     margin: 0 -3px;
 
-    h1, .breadcrumb {
+    h1 {
       color: $color-white;
     }
 
-    .breadcrumb {
-      display: inline-block;
-
-      &::after {
-        content: '»';
-        margin: 0 3px;
-      }
-    }
-
-    a:last-child .breadcrumb::after {
-      display: none;
+    h1 {
+      font-size: 40px;
     }
   }
 

@@ -16,13 +16,13 @@ menu:
     children:
       - href: /content/docs/get_started/create.md
         copy@: "Getting started"
-      - href: /content/docs/tutorials.md
+      - href: /content/docs/get_started/create.md
         copy@: "Tutorials"
         collection: docs/get_started
-      - href: /content/docs/guides.md
+      - href: /content/docs/guides/author_develop/responsive_amp.md
         copy@: "Guides"
         collection: docs/guides
-      - href: /content/docs/reference.md
+      - href: /content/docs/reference/components.md
         copy@: "Reference"
         collection: docs/reference
       - href: /content/docs/examples.md
