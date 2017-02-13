@@ -46,13 +46,14 @@
       background: #f4fcfe;
     }
 
-    &.current {
-      background: #f4fcfe;
+    &.open a {
+      color: $color-ampblue;
     }
 
     a {
       @extend %text-base;
       @extend %text-small;
+      font-size: 22px;
     }
   }
 
@@ -92,6 +93,16 @@
     & > .section-name {
       @extend .small;
       padding: 10px 20px 10px 20px;
+
+      a {
+        color: black;
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      &.current a {
+        color: $color-ampblue;
+      }
     }
 
     &.expandable {
@@ -106,8 +117,6 @@
       }
 
       .section-name.current {
-        color: $color-ampblue;
-
         &::after {
           content: '–';
         }
@@ -116,19 +125,26 @@
 
     li {
       color: $color-grey-md;
-      padding-left: 60px;
+      padding-left: 30px;
 
-      .section-name::after {
-        display: none;
+      .section-name {
+        &::after {
+          display: none;
+        }
+
+        a {
+          font-size: 16px;
+        }
+
+        &.open a {
+          color: $color-ampblue;
+        }
       }
 
       &:hover {
-        background: $gradient-med-faded;
+        background: #f4fcfe;
       }
 
-      a {
-        font-size: 14px;
-      }
     }
   }
 
