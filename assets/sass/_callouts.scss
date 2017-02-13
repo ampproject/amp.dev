@@ -1,14 +1,14 @@
 aside {
-  background: $color-lightestblue;
+  background: #f3fdff;
   display: block;
   font-size: 14px;
   line-height: 24px;
-  margin: 16px -15px;
+  margin: 16px 0;
   padding: 24px 24px 24px 80px;
   position: relative;
 
   strong {
-    color: $color-ampblue;
+    color: $color-brightblue;
     text-transform: uppercase;
   }
 
@@ -34,12 +34,25 @@ aside {
   }
 
   &.caution {
+    background: #fff6f6;
+
+    strong {
+      color: #ff5252;
+    }
+
     &::before {
       background: url(/static/img/docs/icon_important.svg) center/cover no-repeat;
     }
+
   }
 
   &.warning {
+    background: #fff6f6;
+
+    strong {
+      color: #ff5252;
+    }
+
     &::before {
       background: url(/static/img/docs/icon_important.svg) center/cover no-repeat;
 
@@ -47,6 +60,12 @@ aside {
   }
 
   &.success {
+    background-color: #f2fff8;
+
+    strong {
+      color: #00e676;
+    }
+
     &::before {
       background: url(/static/img/docs/icon_tip.svg) center/cover no-repeat;
       top: 45%;
@@ -54,6 +73,12 @@ aside {
   }
 
   &.read {
+    background-color: #fffcef;
+
+    strong {
+      color: #edc10a;
+    }
+
     &::before {
       background: url(/static/img/docs/icon_read.svg) center/cover no-repeat;
     }
