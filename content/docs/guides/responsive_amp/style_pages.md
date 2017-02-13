@@ -11,7 +11,7 @@ Also certain styles are disallowed due to performance implications;
 inline style attributes aren't allowed.
 
 All styles must live in the head of the document
-(see [Add styles to a page](/docs/guides/validate.html#add-styles-to-a-page)).
+(see [Add styles to a page](/docs/guides/responsive_amp.html#add-styles-to-a-page)).
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
@@ -137,9 +137,9 @@ so that many pages across the site can include embedded youtube videos.
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
 
   <title>Accelerated Mobile Pages Project</title>
-  <link rel="shortcut icon" href="/static/img/amp_favicon.png">
+  <link rel="icon" href="/static/img/amp_favicon.png">
   <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
   </style>

@@ -154,6 +154,7 @@
       top: 25px;
       color: inherit;
       text-decoration: none;
+      vertical-align: top;
 
       &:after {
         display: inline-block;
@@ -243,5 +244,27 @@
 
   .alt.right {
     text-align: left;
+  }
+}
+
+.global-note {
+  text-align: center;
+  padding: 1em;
+  background-color: #E91E63;
+  color: #fff;
+  font-style: italic;
+  z-index: 1;
+  position: relative;
+  /* border-bottom: 5px solid #006fb5;
+  padding: 2em;
+  background-color: #0379c4; */
+
+  a {
+    background: #fff;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 2px;
+    font-style: normal;
+    margin-left: 6px;
   }
 }

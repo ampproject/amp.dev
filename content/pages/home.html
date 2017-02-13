@@ -26,13 +26,14 @@ components:
           <p class="intro desktop-only">{{_(home.hero.content)}}</p>
           <p class="intro mobile-only">{{_(home.hero.content_mobile)}}</p>
 
-          <a on="tap:my-lightbox" class="watch-video" role="button">VIEW VIDEO</a>
+          <a id="hero-lightbox-button" on="tap:my-lightbox" class="watch-video" role="button">VIEW VIDEO</a>
 
           <amp-lightbox id="my-lightbox" class="lightbox" layout="nodisplay" on="tap:my-lightbox.close" role="button" tabindex="1">
 
             <div class="lightbox__container">
 
               <amp-youtube
+                id="hero-video"
                 data-videoid="{{home.hero.youtube_video_id}}"
                 layout="responsive"
                 width="480" height="270">
@@ -82,7 +83,7 @@ components:
       </div>
     </div>
 
-    <amp-carousel class="tablet-down"
+    <amp-carousel id="get-started-carousel" class="tablet-down"
       width="auto"
       height="640"
       type="slides"
@@ -253,7 +254,7 @@ components:
       <h1>{{_(home.publishers.title)}}</h1>
     </div>
 
-    <amp-carousel class="tablet-up"
+    <amp-carousel id="pubs-carousel-tablet-up" class="tablet-up"
       height="300"
       type="slides"
       layout="fixed-height">
@@ -281,7 +282,7 @@ components:
 
     </amp-carousel>
 
-    <amp-carousel class="tablet-down"
+    <amp-carousel id="pubs-carousel-tablet-down" class="tablet-down"
       height="240"
       type="slides"
       layout="fixed-height">
@@ -311,3 +312,216 @@ components:
 
   </div>
 </section>
+
+<amp-analytics type="googleanalytics" id="analytics-ga">
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-67833617-1"
+      },
+      "triggers": {
+        "heroLightboxButtonClick": {
+          "on": "click",
+          "selector": "#hero-lightbox-button",
+          "request": "event",
+          "vars": {
+            "eventCategory": "click",
+            "eventAction": "hero-lightbox-button click"
+          }
+        },
+        "heroVideoVisible": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-video"
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "hero-video visible",
+            "eventLabel": "none",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselVisible1": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "visiblePercentageMin": 20
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "get-started-carousel visible",
+            "eventLabel": "visiblePercentageMin: 20",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselVisible2": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "visiblePercentageMin": 50
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "get-started-carousel visible",
+            "eventLabel": "visiblePercentageMin: 50",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselVisible3": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "totalTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "get-started-carousel visible",
+            "eventLabel": "totalTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselVisible4": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "get-started-carousel visible",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselVisible5": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "get-started-carousel visible",
+            "eventLabel": "totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselVisible6": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "get-started-carousel visible",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselHidden1": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel"
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "get-started-carousel hidden",
+            "eventLabel": "none",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselHidden2": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "totalVisibleTime": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "get-started-carousel hidden",
+            "eventLabel": "totalVisibleTime: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselHidden3": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "get-started-carousel hidden",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselHidden4": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "totalVisibleTime": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "get-started-carousel hidden",
+            "eventLabel": "totalVisibleTime: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "getStartedCarouselHidden5": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#get-started-carousel",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "get-started-carousel hidden",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "pubsCarouselTabletUpVisible": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#pubs-carousel-tablet-up"
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "pubs-carousel visible",
+            "eventLabel": "none",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "pubsCarouselTabletDownVisible": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#pubs-carousel-tablet-down"
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "pubs-carousel visible",
+            "eventLabel": "none",
+            "eventValue": "${totalVisibleTime}"
+          }
+        }
+      }
+    }
+  </script>
+</amp-analytics>

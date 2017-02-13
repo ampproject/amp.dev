@@ -1,4 +1,5 @@
 $title@: Reference
+index: 2
 $path: /docs/reference/{base}.html
 $view: /views/doc.html
 $localization:

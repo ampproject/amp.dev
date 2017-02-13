@@ -5,18 +5,22 @@ const fs = require('fs');
 const path = require('path');
 var clientSecret = process.argv[2] || process.env.AMP_DOC_SECRET;
 var clientId = process.argv[3] || process.env.AMP_DOC_ID;
+var clientToken = process.env.AMP_DOC_TOKEN;
 var localPath = process.env.AMP_DOC_LOCAL_PATH;
 var importData = require('./import_docs.json');
 
-if(!clientSecret || !clientId) {
-  console.error("This script requires a github id and app secret to run. Export them in your shell as AMP_DOC_ID and AMP_DOC_SECRET.");
+if(!(clientToken || (clientSecret && clientId))) {
+  console.error("This script reads the reference docs from GitHub which requires providing either a GitHub personal access token (AMP_DOC_TOKEN) or GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET).  See README.md for more information.");
   process.exit(1);
 }
 
-var client = github.client({
-  id: clientId,
-  secret: clientSecret
-});
+var client = github.client(
+    clientToken ||
+	{
+	  id: clientId,
+	  secret: clientSecret
+	});
+
 var ghrepo = client.repo('ampproject/amphtml');
 
 function downloadPage(filePath, callback, headingToStrip) {
@@ -26,6 +30,12 @@ function downloadPage(filePath, callback, headingToStrip) {
     if (err) {
       throw err;
     }
+
+    if (data && data.content !== undefined && !data.content.length) {
+      console.log("Skipping " + filePath + ", file is empty..");
+      return;
+    }
+
 
     var encodedContent = new Buffer(data.content || data, 'base64')
     var decodedContent = encodedContent.toString();
@@ -63,7 +73,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
   // for comments to be parsed correctly as HTML, we need an extra line break
   content = content.replace('<!---', '\n<!---');
 
-  // replace code
+  // replace code blocks
   content = content.replace(/(\`\`\`)(([A-z\-]*)\n)(((?!\`\`\`)[\s\S])+)(\`\`\`\n)/gm, function (match, p1, p2, p3, p4) {
     // work around for mustache-style curly braces to not mess with Grow
     if (p4.indexOf('{{') > -1) {
@@ -71,7 +81,9 @@ function convertMarkdown(content, relativePath, headingToStrip) {
     }
     return '[sourcecode' + (p3 ? ':' + p3 : '') + ']\n' + p4 + '[/sourcecode]\n';
   });
-  content = content.replace(/\`[^`]*(\{\{[^`]*\}\})[^`]*\`/g, '{% raw %}`$1`{% endraw %}');
+
+  // replace mustache-style code elements
+  content = content.replace(/\`[^\s`]*(\{\{[^`]*\}\})[^`]*\`/g, '{% raw %}`$1`{% endraw %}');
 
   // horizontal rules like --- will break front matter
   content = content.replace(/\n---\n/gm, '\n- - -\n');
