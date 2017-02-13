@@ -83,7 +83,8 @@
         transform: translateY(-50%);
       }
 
-      .section-name.current::after {
+      .section-name.current::after,
+      .section-name.open::after {
         transform: translateY(-50%) rotate(180deg);
       }
     }
@@ -116,7 +117,8 @@
         transform: translateY(-50%);
       }
 
-      .section-name.current {
+      .section-name.current,
+      .section-name.open {
         &::after {
           content: '–';
         }

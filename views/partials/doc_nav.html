@@ -16,7 +16,7 @@
   {% set open = sub_collection.pod_path in usedDoc.pod_path[:-3] %}
   <li class="{{class}} {% if sub_collection.exists %}expandable{% endif %}">
     <h5 class="{% if doc == item %}current{% endif %} section-name {% if open %}open{% endif %} section-name">
-      <a href="{{item.goto or item.url.path}}"{% if item.goto %} class="external"{% endif %}>{{_(item.title)}}</a>
+      <a href="{% if item.goto_internal %} {{g.doc(item.goto_internal).url.path}} {% else %} {{item.goto or item.url.path}} {% endif %}"{% if item.goto %} class="external"{% endif %}>{{_(item.title)}}</a>
     </h5>
   {% if open and sub_collection.exists %}
         {{ render_children(item, sub_collection.docs(locale=usedDoc.locale)) }}
