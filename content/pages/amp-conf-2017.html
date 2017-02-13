@@ -28,7 +28,7 @@ stylesheet: pages/amp-conf.css
 
     <p>
         <span>Connect with the AMP developers and ecosystem and learn how to create beautiful, interactive, responsive and successful AMP pages. Join us if you're a web developer or designer interested in AMP, either in the livestream or in person for chock-full two days of content.</span>
-        <a href="{{conf.registration_link}}" class="reserve-button">Reserve your spot</a>
+        <a href="{{conf.registration_link}}" class="reserve-button">Join the waitlist</a>
     </p>
 
     <ul>
@@ -46,7 +46,7 @@ stylesheet: pages/amp-conf.css
     <div class="wrapper">
         <h3 id="schedule">Schedule</h3>
 
-        <p>All talks and sessions are designed to help you create amazing, successful AMP content (and to help others do the same!), and over 50% of are given by partners in the AMP ecosystem. <strong>The second batch of talks is going to be announced on February 7th</strong>.</p>
+        <p>All talks and sessions are designed to help you create amazing, successful AMP content (and to help others do the same!), and over 50% of are given by partners in the AMP ecosystem.</p>
 
         {% macro render_session(item) -%}
 
@@ -55,9 +55,6 @@ stylesheet: pages/amp-conf.css
             {% endif %}
 
             {% if item.speakers %}
-                {% if conf.speakers[item.moderator] %}
-                    <span class="image multiple">{% if conf.speakers[item.moderator].pic %}<amp-img src="{{ conf.speakers[item.moderator].pic }}" width="60" height="60"></amp-img>{% endif %}</span>
-                {% endif %}
                 {% for speaker in item.speakers if conf.speakers[speaker]  %}
                 <span class="image multiple">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="60" height="60"></amp-img>{% endif %}</span>
                 {% endfor %}
@@ -81,6 +78,15 @@ stylesheet: pages/amp-conf.css
                 {% endif %}
                 {% if item.description %}
                 <p>{{ item.description }}</p>
+                {% endif %}
+                {% if item.workshops %}
+                    <ul class="workshops">
+                    {% for workshop in item.workshops %}
+                        <li>
+                            <h6>{{ workshop.title }}</h6>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
             </div>
 
@@ -131,7 +137,7 @@ stylesheet: pages/amp-conf.css
                 <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="400" height="400" layout="responsive"></amp-img>{% endif %}</span>
                 <div>
                     <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</h4>
-                    <p>{{ conf.speakers[speaker].bio }}</p>
+                    <p>{{ conf.speakers[speaker].bio|markdown|safe }}</p>
                 </div>
             </li>
             {% endfor %}
@@ -145,7 +151,17 @@ stylesheet: pages/amp-conf.css
 
     <div class="wrapper">
         <h3 id="workshops">Workshops</h3>
-        <p>We'll offer various hands-on workshops as a parallel track on day 2. Stay tuned for more information.</p>
+        <p>Join us on Day 2 for a 2-hour long workshop with members of the AMP team. Bring your own laptop, watch a quick presentation, then walk through the codelab together with the help of on-site mentors that unblock you.</p>
+
+        {% for item in conf.agenda.day_2 if item.workshops %}
+            <ul class="workshops">
+            {% for workshop in item.workshops %}
+                <li>
+                    <h6>{{ workshop.title }}</h6>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
     </div>
 
 </section>

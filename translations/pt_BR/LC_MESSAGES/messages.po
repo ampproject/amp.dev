@@ -30,10 +30,6 @@ msgstr ""
 msgid "Docs"
 msgstr "Documentos"
 
-#: /content/docs/guides
-msgid "Documentation"
-msgstr ""
-
 #: /content/includes/menu.yaml
 msgid "Examples"
 msgstr ""
@@ -45,7 +41,13 @@ msgid ""
 " (AMP) Project is an open source initiative that embodies the vision that "
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
-msgstr "Para muitas pessoas, a leitura na Web para dispositivos móveis é uma experiência lenta, incômoda e frustrante: mas ela não precisa ser assim. O projeto das Accelerated Mobile Pages (AMP) é uma iniciativa de código aberto que incorpora a visão de que editores podem criar conteúdos otimizados para dispositivos móveis uma vez só e fazer com que eles sejam carregados instantaneamente em qualquer lugar."
+msgstr ""
+"Para muitas pessoas, a leitura na Web para dispositivos móveis é uma "
+"experiência lenta, incômoda e frustrante: mas ela não precisa ser assim. O "
+"projeto das Accelerated Mobile Pages (AMP) é uma iniciativa de código aberto "
+"que incorpora a visão de que editores podem criar conteúdos otimizados para "
+"dispositivos móveis uma vez só e fazer com que eles sejam carregados "
+"instantaneamente em qualquer lugar."
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
@@ -59,7 +61,7 @@ msgstr "Primeiros passos com HTML das AMP"
 msgid "Get started"
 msgstr "Primeiros passos"
 
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
 msgstr "Guias"
 
@@ -67,13 +69,19 @@ msgstr "Guias"
 msgid ""
 "If you are new to AMP HTML, our technical introduction is a great place to "
 "get started and provides an overview of the project and how AMP HTML works."
-msgstr "Se você for novato em HTML das AMP, nossa introdução técnica ajuda a dar os primeiros passos. Além de fornecer uma visão geral do projeto, ela explica como o HTML das AMP funciona."
+msgstr ""
+"Se você for novato em HTML das AMP, nossa introdução técnica ajuda a dar os "
+"primeiros passos. Além de fornecer uma visão geral do projeto, ela explica "
+"como o HTML das AMP funciona."
 
 #: /content/includes/home.yaml
 msgid ""
 "If you'd like to dive deeper into AMP HTML, you can find all of the source "
 "code, code samples, and detailed documentation in our GitHub repository."
-msgstr "Se quiser aprofundar seus conhecimentos sobre o HTML das AMP, você pode encontrar todo o código-fonte, exemplos de código e a documentação detalhada em nosso repositório do GitHub."
+msgstr ""
+"Se quiser aprofundar seus conhecimentos sobre o HTML das AMP, você pode "
+"encontrar todo o código-fonte, exemplos de código e a documentação detalhada "
+"em nosso repositório do GitHub."
 
 #: /content/includes/home.yaml
 msgid "Instant. <br> Everywhere."
@@ -114,7 +122,10 @@ msgstr "Editores"
 msgid ""
 "Ready to build an AMP file? This tutorial will teach you how to create a "
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
-msgstr "Pronto para criar um arquivo das AMP? Este tutorial ajudará você a criar, preparar, testar e deixar uma página HTML das AMP básica pronta para publicação."
+msgstr ""
+"Pronto para criar um arquivo das AMP? Este tutorial ajudará você a criar, "
+"preparar, testar e deixar uma página HTML das AMP básica pronta para "
+"publicação."
 
 #: /content/includes/menu.yaml /content/docs/reference
 msgid "Reference"
@@ -141,7 +152,11 @@ msgid ""
 "The Accelerated Mobile Pages (AMP) Project is an open initiative that "
 "embodies the vision that publishers can create mobile optimized content once "
 "and have it load instantly everywhere."
-msgstr "O projeto das Accelerated Mobile Pages (AMP) é uma iniciativa de código aberto que incorpora a visão de que editores podem criar conteúdos otimizados para dispositivos móveis uma vez só e fazer com que eles sejam carregados instantaneamente em qualquer lugar."
+msgstr ""
+"O projeto das Accelerated Mobile Pages (AMP) é uma iniciativa de código "
+"aberto que incorpora a visão de que editores podem criar conteúdos otimizados"
+" para dispositivos móveis uma vez só e fazer com que eles sejam carregados "
+"instantaneamente em qualquer lugar."
 
 #: /content/includes/home.yaml
 msgid "Tutorial"

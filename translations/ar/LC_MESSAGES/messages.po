@@ -30,10 +30,6 @@ msgstr ""
 msgid "Docs"
 msgstr "المستندات"
 
-#: /content/docs/guides
-msgid "Documentation"
-msgstr "المستندات"
-
 #: /content/includes/menu.yaml
 msgid "Examples"
 msgstr ""
@@ -45,7 +41,11 @@ msgid ""
 " (AMP) Project is an open source initiative that embodies the vision that "
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
-msgstr "يرى الكثيرون أن القراءة على ويب الجوال تجربة بطيئة وشاقة وتصيب بالإحباط - لكنها لا يفترض أن تكون هكذا. إن مشروع Accelerated Mobile Pages (AMP) عبارة عن مبادرة مفتوحة تجسد رؤية تفيد أنه بإمكان الناشرين إنشاء محتوى مُحسّن للجوال لمرة واحدة وتحميله على الفور وفي كل مكان."
+msgstr ""
+"يرى الكثيرون أن القراءة على ويب الجوال تجربة بطيئة وشاقة وتصيب بالإحباط - "
+"لكنها لا يفترض أن تكون هكذا. إن مشروع Accelerated Mobile Pages (AMP) عبارة عن"
+" مبادرة مفتوحة تجسد رؤية تفيد أنه بإمكان الناشرين إنشاء محتوى مُحسّن للجوال "
+"لمرة واحدة وتحميله على الفور وفي كل مكان."
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
@@ -59,7 +59,7 @@ msgstr " إبدء مع أي أم بي أتش تي أم أل"
 msgid "Get started"
 msgstr "البدء"
 
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
 msgstr "الأدلة"
 
@@ -67,13 +67,17 @@ msgstr "الأدلة"
 msgid ""
 "If you are new to AMP HTML, our technical introduction is a great place to "
 "get started and provides an overview of the project and how AMP HTML works."
-msgstr "إذا كنت جديدًا في التعامل مع AMP HTML، فإن المقدمة الفنية تمثل نقطة بداية رائعة حيث إنها تقدم لمحة عامة عن المشروع وآلية عمل AMP HTML."
+msgstr ""
+"إذا كنت جديدًا في التعامل مع AMP HTML، فإن المقدمة الفنية تمثل نقطة بداية "
+"رائعة حيث إنها تقدم لمحة عامة عن المشروع وآلية عمل AMP HTML."
 
 #: /content/includes/home.yaml
 msgid ""
 "If you'd like to dive deeper into AMP HTML, you can find all of the source "
 "code, code samples, and detailed documentation in our GitHub repository."
-msgstr "إذا كنت ترغب في التعمق في AMP HTML، يمكنك العثور على كل من شفرة المصدر، ونماذج للشفرات، ومستندات مفصلة في مستودع GitHub."
+msgstr ""
+"إذا كنت ترغب في التعمق في AMP HTML، يمكنك العثور على كل من شفرة المصدر، "
+"ونماذج للشفرات، ومستندات مفصلة في مستودع GitHub."
 
 #: /content/includes/home.yaml
 msgid "Instant. <br> Everywhere."
@@ -92,7 +96,10 @@ msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure "
 "ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde"
 " exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
-msgstr "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure "
+"ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde"
+" exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
 
 #: /content/news
 msgid "News"
@@ -114,7 +121,9 @@ msgstr "دور النشر"
 msgid ""
 "Ready to build an AMP file? This tutorial will teach you how to create a "
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
-msgstr "هل أنت مستعد لإنشاء ملف AMP؟ سيعلمك هذا البرنامج التعليمي كيفية إنشاء صفحة HTML AMP أساسية، وتنظيمها واختبارها وتجهيزها للنشر."
+msgstr ""
+"هل أنت مستعد لإنشاء ملف AMP؟ سيعلمك هذا البرنامج التعليمي كيفية إنشاء صفحة "
+"HTML AMP أساسية، وتنظيمها واختبارها وتجهيزها للنشر."
 
 #: /content/includes/menu.yaml /content/docs/reference
 msgid "Reference"
@@ -141,7 +150,10 @@ msgid ""
 "The Accelerated Mobile Pages (AMP) Project is an open initiative that "
 "embodies the vision that publishers can create mobile optimized content once "
 "and have it load instantly everywhere."
-msgstr "مشروع Accelerated Mobile Pages (AMP) عبارة عن مبادرة مفتوحة تجسد رؤية تفيد أنه بإمكان الناشرين إنشاء محتوى مُحسّن للجوال لمرة واحدة وتحميله على الفور وفي كل مكان."
+msgstr ""
+"مشروع Accelerated Mobile Pages (AMP) عبارة عن مبادرة مفتوحة تجسد رؤية تفيد "
+"أنه بإمكان الناشرين إنشاء محتوى مُحسّن للجوال لمرة واحدة وتحميله على الفور "
+"وفي كل مكان."
 
 #: /content/includes/home.yaml
 msgid "Tutorial"
