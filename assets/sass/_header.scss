@@ -162,12 +162,12 @@
     .list-container > ul {
       background: $color-white;
       box-shadow: $header-shadow;
-      min-width: 200px;
+      min-width: 250px;
       position: relative;
 
       li {
         box-sizing: border-box;
-        padding: 7.5px 20px;
+        padding: 7.5px 30px;
         position: relative;
 
         &.has-sublist {
@@ -178,10 +178,6 @@
             right: 20px;
             top: 18px;
           }
-
-          &:first-child::after {
-            top: 25px;
-          }
         }
 
         a {
@@ -189,16 +185,8 @@
           @extend %text-small;
         }
 
-        &:first-child {
-          padding-top: 15px;
-        }
-
-        &:last-child {
-          padding-bottom: 20px;
-        }
-
         &:hover {
-          background: #f0f0f0;
+          background: #f8f8f8;
 
           .sublist {
             opacity: 1;
@@ -223,14 +211,18 @@
       }
 
       .sublist {
-        background: $color-lightgrey;
+        background: #f8f8f8;
         right: 0;
         top: 0;
         transform: translateX(100%);
         transition: opacity .3s;
 
         li {
-          padding: 10px 15px;
+          padding: 15px 35px;
+
+          &:hover {
+            background: white;
+          }
 
           a {
             display: block;

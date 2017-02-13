@@ -31,7 +31,7 @@ $gradient-anglebuild: linear-gradient($gradient-angle, $color-buildblue, $color-
 $gradient-anglelight: linear-gradient($gradient-angle, $color-lightblue 40%, $color-brightblue);
 // $gradient-anglelight: linear-gradient($gradient-angle, $color-ampblue, $color-brightblue, $color-lightblue);
 
-$header-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
+$header-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.10);
 
 //$font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 $font-family: 'Roboto', sans-serif;
