@@ -3,13 +3,3 @@ $path: /docs/guides/debug/{base}.html
 $localization:
   path: /{locale}/docs/guides/debug/{base}.html
 $view: /views/doc.html
-
-navigation:
-  prev:
-    subtitle@: Previous Guide
-    title@: Author / Develop
-    href: /content/docs/guides/author_develop/responsive_amp.md
-  next:
-    subtitle@: Next Guide
-    title@: Deploy
-    href: /content/docs/guides/deploy/analytics_amp.md

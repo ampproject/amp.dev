@@ -3,13 +3,3 @@ $path: /docs/guides/embed/{base}.html
 $localization:
   path: /{locale}/docs/guides/embed/{base}.html
 $view: /views/doc.html
-
-navigation:
-  prev:
-    subtitle@: Previous Guide
-    title@: Deploy
-    href: /content/docs/guides/deploy/analytics_amp.md
-  next:
-    section: true
-    title@: Reference
-    href: /content/docs/reference/components.md

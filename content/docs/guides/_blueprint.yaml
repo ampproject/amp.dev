@@ -4,3 +4,13 @@ $view: /views/doc.html
 $localization:
   path: /{locale}/docs/guides/{base}.html
 index_path: /content/docs/guides.md
+
+navigation:
+  prev:
+    section: true
+    title@: Tutorials
+    href: /content/docs/get_started/create.md
+  next:
+    section: true
+    title@: Reference
+    href: /content/docs/reference/components.md

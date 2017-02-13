@@ -37,10 +37,10 @@
 {%- endmacro %}
 
 <nav class="doc-sidebar">
-  {% if secondaryCollection and navCollection %}
+  {% if secondaryCollection %}
     <div class="current-header">
       <h1 class="title">
-          {{_(navCollection.title)}}
+          {{_(secondaryCollection.title)}}
       </h1>
     </div>
 
@@ -48,7 +48,7 @@
       <ul>
         <li>
           <ul>
-          {% for item in navCollection.docs(recursive=false, locale=doc.locale) %}
+          {% for item in secondaryCollection.docs(recursive=false, locale=doc.locale) %}
             {{render_item(item, "top-level")}}
           {% endfor %}
           </ul>
@@ -57,17 +57,17 @@
     </div>
 
     <div class="navigation">
-    {% if navCollection.navigation %}
-      <a href="{{g.doc(navCollection.navigation.prev.href).url.path}}" class="previous {% if navCollection.navigation.prev.section %} section {% endif %}">
+    {% if secondaryCollection.navigation %}
+      <a href="{{g.doc(secondaryCollection.navigation.prev.href).url.path}}" class="previous {% if secondaryCollection.navigation.prev.section %} section {% endif %}">
         <div class="navigation-label">
-          <div class="subtitle light">{{_(navCollection.navigation.prev.subtitle)}}</div>
-          <div class="title">{{_(navCollection.navigation.prev.title)}}</div>
+          <div class="subtitle light">{{_(secondaryCollection.navigation.prev.subtitle)}}</div>
+          <div class="title">{{_(secondaryCollection.navigation.prev.title)}}</div>
         </div>
       </a>
-      <a href="{{g.doc(navCollection.navigation.next.href).url.path}}" class="next {% if navCollection.navigation.next.section %} section {% endif %}">
+      <a href="{{g.doc(secondaryCollection.navigation.next.href).url.path}}" class="next {% if secondaryCollection.navigation.next.section %} section {% endif %}">
         <div class="navigation-label">
-          <div class="subtitle light">{{_(navCollection.navigation.next.subtitle)}}</div>
-          <div class="title">{{_(navCollection.navigation.next.title)}}</div>
+          <div class="subtitle light">{{_(secondaryCollection.navigation.next.subtitle)}}</div>
+          <div class="title">{{_(secondaryCollection.navigation.next.title)}}</div>
         </div>
       </a>
     </div>

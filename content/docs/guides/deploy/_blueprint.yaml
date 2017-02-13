@@ -3,13 +3,3 @@ $path: /docs/guides/deploy/{base}.html
 $localization:
   path: /{locale}/docs/guides/deploy/{base}.html
 $view: /views/doc.html
-
-navigation:
-  prev:
-    subtitle@: Previous Guide
-    title@: Debug
-    href: /content/docs/guides/debug/validate.md
-  next:
-    subtitle@: Next Guide
-    title@: Embed
-    href: /content/docs/guides/embed/login-paywalls.md
