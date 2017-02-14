@@ -120,6 +120,7 @@ speakers:
     name: Eric Lindley
     company: Google
     pic: /static/img/amp-conf/speakers/eric.jpg
+    bio: Eric Lindley is a product manager on the AMP Project, focused on format support. Previously at Google he worked on the initial launch of the standalone Google Photos app.
   richardgingras:
     name: Richard Gingras
     company: Google
@@ -161,6 +162,8 @@ speakers:
   honeymittal:
     name: Honey Mittal
     company: Wego
+    pic: /static/img/amp-conf/speakers/honey.jpg
+    bio: Honey is Senior Vice President - Product at Wego.com, a search-driven online travel marketplace operating across the Middle East & Asia-Pacific and backed by top-tier investors. He has been working with 'everything mobile' for the last 8 years. The last 3 of them have been at Wego, building Wego's top-ranked mobile apps and more recently with revamping Wego's web products. Having recently launched Wego's new mobile web experience (PWA and AMP Pages), Wego's product & engineering team hopes to share their experience with the community and also learn from others at the AMP Summit!
 
 agenda:
   day_1:
@@ -199,10 +202,11 @@ agenda:
       speakers:
         - lewei
         - ericlindley
-    - title: TBA
+    - title: "Mobile web on flaky networks: When they go slow, Wego fast!"
       time: "1200"
       type: session
       speaker: honeymittal
+      description: Delivering an app-like experience to mobile web users on flaky networks has always been a challenge for developers building for both the developed and emerging markets. Until now, that is! Thanks to AMP and PWA, Wego.com has been able to flip their mobile web experience upside down. Come learn about how Wego.com combined the power of both AMP and PWA to create a great end to end mobile web experience with faster acquisition and higher engagement.
     - title: Lunch (with the AMP team!)
       time: "1230"
       description: The AMP team needs sustenance as well, and what better time to grab them to offer feedback and discuss the roadmap. We'll have dedicated tables with project members who want to hear from you.
