@@ -83,7 +83,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
   });
 
   // replace mustache-style code elements
-  content = content.replace(/\`[^\s`]*(\{\{[^`]*\}\})[^`]*\`/g, '{% raw %}`$1`{% endraw %}');
+  content = content.replace(/\`[^\s{`]*(\{\{[^`]*\}\})[^`]*\`/g, '{% raw %}`$1`{% endraw %}');
 
   // horizontal rules like --- will break front matter
   content = content.replace(/\n---\n/gm, '\n- - -\n');
