@@ -1,10 +1,10 @@
 menu:
   - href: /content/learn/overview.html
-    copy@: What is AMP?
+    copy@: About
     collection: learn
     children:
       - href: /content/learn/overview.html
-        copy@: "Overview"
+        copy@: "What is AMP?"
       - href: /content/learn/who-uses-amp.yaml
         copy@: "Who Uses AMP?"
       - href: /content/learn/case-studies.html
@@ -50,8 +50,6 @@ menu:
       - href: /content/support/faqs.md
         copy@: "FAQs"
         collection: support/faqs
-      - href: /content/support/platform.md
-        copy@: "Platform Support"
       - href: /content/support/developer.md
         copy@: "Developer Support"
         collection: support/developer
