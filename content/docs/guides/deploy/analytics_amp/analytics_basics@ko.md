@@ -1,5 +1,6 @@
 ---
 $title: Analytics&#58; 기본사항
+toc: true
 ---
 
 AMP Analytics에 대한 기본사항을 배우려면 여기에서 시작하세요.
@@ -91,7 +92,7 @@ AMP 문서의 `<head>`에 포함시켜야 합니다(참고 항목
 다음 예시는 [`amp-pixel` 예시](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration)와 유사합니다.
 페이지가 표시될 때마다
 트리거 이벤트가 실행되고,
-무작위 ID와 함께 페이지뷰 데이터를 정의된 URL로 보냅니다. 
+무작위 ID와 함께 페이지뷰 데이터를 정의된 URL로 보냅니다.
 
 [sourcecode:html]
 <amp-analytics>
@@ -174,7 +175,7 @@ AMP 런타임이 구문 분석할 수 있는 변수만 포함될 수 있습니�
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>

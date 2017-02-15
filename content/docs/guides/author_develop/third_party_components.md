@@ -1,8 +1,10 @@
 ---
 $title: Include Third-Party Content
 $order: 3
+toc: true
 ---
 [TOC]
+
 
 Learn how to include third-party components in your pages.
 

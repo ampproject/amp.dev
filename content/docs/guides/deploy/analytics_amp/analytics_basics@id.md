@@ -1,5 +1,6 @@
 ---
 $title: Analytics&#58; Dasar-Dasarnya
+toc: true
 ---
 
 Mulailah di sini untuk mempelajari dasar-dasar analisis AMP.
@@ -18,7 +19,7 @@ Jika Anda mencari perilaku seperti
 komponen `amp-pixel` menyediakan pelacakan tampilan halaman dasar;
 data tampilan halaman dikirim ke URL yang didefinisikan.
 Sebagian integrasi dengan vendor bisa memanggil komponen ini,
-yang mana dalam hal ini integrasi akan menetapkan titik akhir URL yang tepat. 
+yang mana dalam hal ini integrasi akan menetapkan titik akhir URL yang tepat.
 
 Untuk sebagian besar solusi analisis, gunakan `amp-analytics`.
 Pelacakan tampilan halaman juga bekerja dalam `amp-analytics`.
@@ -32,7 +33,7 @@ entah pengguna itu terlibat dengan media sosial atau tidak, dan lainnya
 Sebagai bagian dari pengintegrasian dengan platform,
 penyedia telah menawarkan konfigurasi `amp-analytics` yang telah didefinisikan sebelumnya
 sehingga mudah menangkap data dan mendorongnya ke alat pelacakan mereka.
-Mengakses dokumentasi vendor akses dari 
+Mengakses dokumentasi vendor akses dari
 [spesifikasi amp-analytics](/docs/reference/extended/amp-analytics.html).
 
 Anda sama-sama bisa menggunakan `amp-pixel` maupun `amp-analytics` di halaman Anda.
@@ -68,7 +69,7 @@ Ketahui selengkapnya tentang
 
 Komponen [amp-pixel](/docs/reference/amp-pixel.html)
  adalah komponen bawaan,
-jadi Anda tidak memerlukan deklarasi penyertaan seperti yang biasa dilakukan 
+jadi Anda tidak memerlukan deklarasi penyertaan seperti yang biasa dilakukan
 untuk perluasan komponen AMP, termasuk `amp-analytics`.
 Namun Anda harus menempatkan tag `amp-pixel` sedekat mungkin
 dengan awal `<body>`.
@@ -91,7 +92,7 @@ dalam `<head>` dari dokumen AMP (lihat juga
 Contoh berikut serupa dengan [contoh `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
 Setiap kali sebuah halaman terlihat,
 kejadian pemicu terjadi, dan
-mengirim data penayangan ke URL yang didefinisikan bersama dengan sebuah ID acak: 
+mengirim data penayangan ke URL yang didefinisikan bersama dengan sebuah ID acak:
 
 [sourcecode:html]
 <amp-analytics>
@@ -174,7 +175,7 @@ di dalam konfigurasi `amp-analytics`:
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>
@@ -222,7 +223,7 @@ yang harus dicari dan digunakan.
 Dalam hal ini,
 argumen `cid-scope-cookie-fallback-name` dari variabel `clientId`
 ditafsirkan sebagai nama cookie.
-Pemformatan bisa tampak baik sebagai 
+Pemformatan bisa tampak baik sebagai
 `CLIENT_ID(cid-scope-cookie-fallback-name)` maupun
 `${clientId(cid-scope-cookie-fallback-name)}`.
 

@@ -1,5 +1,6 @@
 ---
 $title: Analytics：基础知识
+toc: true
 ---
 
 从这里开始了解 AMP Analytics 的相关基础知识。
@@ -91,7 +92,7 @@ AMP 提供了两个组件，可满足您的分析和测量需求：
 以下示例类似于 [`amp-pixel` 示例](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration)。
 页面每次可见时，系统均将触发触发器事件，并将页面视图数据与一个随机 ID 一起发送到定义的 URL：
 
- 
+
 
 [sourcecode:html]
 <amp-analytics>
@@ -174,7 +175,7 @@ AMP 提供了两个组件，可满足您的分析和测量需求：
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>

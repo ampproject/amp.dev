@@ -1,7 +1,9 @@
 ---
 $title: AMP アナリティクスについて深く学ぶ
+toc: true
 ---
 [TOC]
+
 
 このガイドでは
 [amp-analytics コンポーネント](/docs/reference/extended/amp-analytics.html)について詳しく学ぶため、

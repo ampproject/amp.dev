@@ -1,5 +1,6 @@
 ---
 $title: Analytics &#58; les bases
+toc: true
 ---
 
 Commencez ici pour tout savoir sur les bases des analyses AMP.
@@ -18,7 +19,7 @@ Si vous recherchez des comportements comme un simple
 le composant `amp-pixel` fournit un suivi de base des vues de page ;
 les données sur les vues de page sont envoyées à une URL donnée.
 Certaines intégrations avec un fournisseur peuvent appeler ce composant,
-auquel cas elles indiqueront le point d'extrémité exact de l'URL. 
+auquel cas elles indiqueront le point d'extrémité exact de l'URL.
 
 Pour la plupart des solutions d'analyse, utilisez `amp-analytics`.
 Le suivi des vues de page fonctionne également avec `amp-analytics`.
@@ -63,7 +64,7 @@ Dans cet exemple,
 les données sur les vues de page sont envoyées à l'URL définie, accompagnées d'un numéro aléatoire.
 La variable `RANDOM` est l'une des nombreuses
 [variables de substitution de la plateforme AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
-En savoir plus sur la 
+En savoir plus sur la
 [substitution des variables](/docs/guides/analytics/analytics_basics.html#variable-substitution).
 
 Le composant [amp-pixel](/docs/reference/amp-pixel.html)
@@ -91,7 +92,7 @@ après la balise `<head>` du document AMP (voir également
 L'exemple suivant est similaire à l'[exemple `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
 À chaque fois qu'une page est visible,
 l'événement est déclenché et
-envoie les données sur les vues de page à une URL définie, accompagnées d'un identifiant aléatoire : 
+envoie les données sur les vues de page à une URL définie, accompagnées d'un identifiant aléatoire :
 
 [sourcecode:html]
 <amp-analytics>
@@ -174,7 +175,7 @@ dans la configuration de la balise `amp-analytics` :
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>
@@ -239,5 +240,5 @@ il génère une valeur commençant par `amp-`,
 suivi d'une chaîne aléatoire encodée base64.
 
 Pour en savoir plus sur la substitution d'ID client,
-notamment comment ajouter un ID facultatif de notification de l'utilisateur, voir 
+notamment comment ajouter un ID facultatif de notification de l'utilisateur, voir
 [Variables prises en charge dans les analyses AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).

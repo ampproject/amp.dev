@@ -1,7 +1,9 @@
 ---
 $title: ข้อมูลเชิงลึกเกี่ยวกับ AMP Analytics
+toc: true
 ---
 [TOC]
+
 
 คู่มือนี้จะให้ข้อมูลเชิงลึกเกี่ยวกับ[คอมโพเนนต์ amp-analytics](/docs/reference/extended/amp-analytics.html)
 พร้อมยกตัวอย่างการกำหนดค่า `amp-analytics` สำหรับการใช้งานต่างๆ ดังต่อไปนี้

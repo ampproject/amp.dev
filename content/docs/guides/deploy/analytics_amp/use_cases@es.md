@@ -1,7 +1,9 @@
 ---
 $title: Casos de uso
+toc: true
 ---
 [TOC]
+
 
 En esta guía se incluye un conjunto de casos de uso comunes para realizar un seguimiento de la captación de usuarios:
 

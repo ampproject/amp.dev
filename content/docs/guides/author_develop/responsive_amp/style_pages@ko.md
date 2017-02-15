@@ -1,8 +1,10 @@
 ---
 $title: 지원하는 CSS
 $order: 0
+toc: true
 ---
 [TOC]
+
 
 모든 웹페이지처럼, AMP 페이지도 CSS를 사용할 수 있지만,
 [커스텀 폰트](#the-custom-fonts-exception)를 제외한 외부 스타일시트를 불러올 수는 없습니다.

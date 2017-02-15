@@ -1,5 +1,6 @@
 ---
 $title: Analytics&#58; Temel Bilgiler
+toc: true
 ---
 
 AMP analitik hakkında temel bilgileri öğrenmek için buraya tıklayın.
@@ -18,11 +19,11 @@ Her iki seçenek de tanımlı bir son noktaya analitik verileri gönderir.
 `amp-pixel` bileşeni temel sayfa görünümü izlemesi sağlar;
 sayfa görünümü verileri tanımlı bir URL›ye gönderilir.
 Satıcıyla bazı entegrasyonlar bu bileşeni çağırabilir,
-bu durumda URL son noktası tam olarak belirlenir. 
+bu durumda URL son noktası tam olarak belirlenir.
 
 En fazla analitik çözüm için, `amp-analytics` kullanın.
 `amp-analytics`‹de sayfa görünümü izleme de çalışır.
-Ancak, 
+Ancak,
 bağlantılara ve düğmelere tıklama dahil, kullanıcı katılımını herhangi bir sayfa içeriği türüyle izleyebilirsiniz.
 Ayrıca, kullanıcının sayfayı ne kadar kaydırdığını,
 sosyal medyayla etkileşim kurup kurmadığını ve daha birçok özelliği ölçebilirsiniz
@@ -30,7 +31,7 @@ sosyal medyayla etkileşim kurup kurmadığını ve daha birçok özelliği öl�
 [AMP Analytics Derinlemesine Giriş](/docs/guides/analytics/deep_dive_analytics.html)).
 
 AMP platformu entegrasyonunun bir parçası olarak,
-sağlayıcılar 
+sağlayıcılar
 verilerin toplanmasını ve izleme araçlarına gönderilmesini kolaylaştırmak amacıyla ön tanımlı `amp-analytics` yapılandırmaları sunmuştur.
 
 [Amp-analitik spesifikasyonu](/docs/reference/extended/amp-analytics.html) bölümünden satıcı belgelerine erişebilirsiniz.
@@ -46,7 +47,7 @@ diğer bir deyişle, ekstra etiketlere ihtiyacınız yoksa kullanmayın.
 
 ## Basit bir analitik yapılandırması oluşturun
 
-Basit bir 
+Basit bir
 [amp-piksel](/docs/reference/amp-pixel.html) ve
 [amp-analitik](/docs/reference/extended/amp-analytics.html) yapılandırmasının nasıl oluşturulacağını öğrenin.
 
@@ -61,16 +62,16 @@ AMP sayfanızın gövdesine aşağıdakine benzer bir şey ekleyin:
 
 Bu örnekte,
 sayfa görünümü verileri rastgele bir sayıyla birlikte tanımlanan URL›ye gönderilir.
-`RANDOM` değişkeni, 
+`RANDOM` değişkeni,
 [AMP platformundaki değiştirme değişkenlerinden](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) bir tanesidir.
 
 [Değişken değiştirme](/docs/guides/analytics/analytics_basics.html#variable-substitution) hakkında buradan daha fazla bilgi edinebilirsiniz.
 
 [Amp-piksel](/docs/reference/amp-pixel.html)
 bileşeni yerleşiktir,
-böylece 
+böylece
 `amp-analytics` de dahil AMP›nin uzantılı bileşenlerinde olduğu gibi bir ekleme bildirimi gerekli değildir.
-`amp-pixel` etiketini 
+`amp-pixel` etiketini
 `<body>` başına mümkün olduğunca yakın yerleştirmeniz gerekmektedir.
 İzleme pikseli yalnızca etiket kendini görüntülediğinde uyarı verecektir.
 `amp-pixel` sayfanın altına doğru yerleştirildiyse,
@@ -78,10 +79,10 @@ uyarı vermeyebilir.
 
 ### Basit amp-analitik yapılandırması
 
-Basit bir 
+Basit bir
 [amp-analytics](/docs/reference/extended/amp-analytics.html) yapılandırması oluşturmak için,
-ilk önce bu `custom-element` bildirimini 
-`<head>` AMP belgesine eklemeniz gerekir (ayrıca bkz. 
+ilk önce bu `custom-element` bildirimini
+`<head>` AMP belgesine eklemeniz gerekir (ayrıca bkz.
 [Bileşen ekleme bildirimi](/docs/reference/extended.html#component-inclusion-declaration)):
 
 [sourcecode:html]
@@ -89,9 +90,9 @@ ilk önce bu `custom-element` bildirimini
 [/sourcecode]
 
 Aşağıdaki örnek [`amp-pixel` örneği](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration) ile benzerdir.
-Bir sayfa her görünür olduğunda, 
+Bir sayfa her görünür olduğunda,
 tetikleme etkinliği uyarı verir ve
-sayfa görüntüleme verilerini rastgele bir ID ile birlikte tanımlı URL›ye gönderir: 
+sayfa görüntüleme verilerini rastgele bir ID ile birlikte tanımlı URL›ye gönderir:
 
 [sourcecode:html]
 <amp-analytics>
@@ -121,13 +122,13 @@ Tetikleme sayfa görüntüleme isteği uyarısının ne zaman çıkacağını be
 
 ## Değişken değiştirme
 
-Hem [amp-piksel](/docs/reference/amp-pixel.html) hem de 
+Hem [amp-piksel](/docs/reference/amp-pixel.html) hem de
 [amp-analitik](/docs/reference/extended/amp-analytics.html) bileşenleri
 standart URL değişken değiştirmelerin tamamına izin verir (bkz.
 [AMP HTML Değişken Değiştirme](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
 Aşağıdaki örnekte,
-sayfa görünümü isteği 
-mevcut AMP belgelerinin standart URL›si, başlığı ve bir 
+sayfa görünümü isteği
+mevcut AMP belgelerinin standart URL›si, başlığı ve bir
 [istemci kimliği](/docs/guides/analytics/analytics_basics.html#user-identification) ile birlikte URL›ye gönderilir:
 
 [sourcecode:html]
@@ -135,25 +136,25 @@ mevcut AMP belgelerinin standart URL›si, başlığı ve bir
 [/sourcecode]
 
 Basitliği nedeniyle,
- `amp-pixel` etiketi yalnızca platform tarafından tanımlanan 
+ `amp-pixel` etiketi yalnızca platform tarafından tanımlanan
 veya AMP çalışma zamanının AMP sayfasından ayrıştırabileceği değişkenleri içerebilir.
 Yukarıdaki örnekte,
-platform hem 
+platform hem
 `canonicalURL` hem de `clientId(site-user-id)` için değerler üretir.
 `amp-analytics` etiketi `amp-pixel` ile aynı değerleri,
 aynı zamanda etiket yapılandırması içerisinde özel olarak tanımlanan değişkenleri içerebilir.
 
 `${varName}` formatını bir sayfa
  ya da platform tanımlı değişken için bir istek dizesi içinde kullanın.
-`amp-analytics` etiketi, şablonu 
+`amp-analytics` etiketi, şablonu
 analitik isteğinin oluşturulduğu zamandaki gerçek değeri ile değiştirecektir (ayrıca bkz.
 [Amp-analitik içinde desteklenen değişkenler](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)).
 
 Aşağıdaki `amp-analytics` örneğinde,
-sayfa görünümü isteği, `amp-analytics` yapılandırması içerisinde 
-bir kısmı platformdan 
-bir kısmı da tanımlanan satır içinden gelen değişken değiştirmelerden çıkartılan 
-ek verilerle birlikte 
+sayfa görünümü isteği, `amp-analytics` yapılandırması içerisinde
+bir kısmı platformdan
+bir kısmı da tanımlanan satır içinden gelen değişken değiştirmelerden çıkartılan
+ek verilerle birlikte
 URL›ye gönderilir:
 
 [sourcecode:html]
@@ -174,14 +175,14 @@ URL›ye gönderilir:
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
 Yukarıdaki örnekte,
-değişkenler `account` ve`title` 
+değişkenler `account` ve`title`
 `amp-analytics` yapılandırmasında tanımlanmıştır.
 `canonicalUrl` ve `clientId` değişkenleri yapılandırmada tanımlı değildir,
 bu nedenle değerleri platform tarafından değiştirilir.
@@ -196,34 +197,34 @@ ve AMP çalışma zamanı öncelik sırasına bu değerleri ayrıştıracaktır
 Web siteleri tarayıcıda bir kullanıcıya özgü bilgileri saklamak için çerezler kullanır.
 Çerezler kullanıcının bir internet sitesini daha önce ziyaret edip etmediğini belirlemek için kullanılabilir.
 AMP›de,
-sayfalar bir yayıncının web sitesinden ya da bir önbellekten 
+sayfalar bir yayıncının web sitesinden ya da bir önbellekten
 (Google AMP Cache gibi) sağlanabilir.
 Yayıncının web sitesi ile önbelleğin farklı etki alanlarına sahip olması olasıdır.
 Güvenlik nedenleriyle,
-tarayıcılar bir başka etki alanının çerezlerine erişimi kısıtlayabilir (ve genellikle de kısıtlarlar) 
+tarayıcılar bir başka etki alanının çerezlerine erişimi kısıtlayabilir (ve genellikle de kısıtlarlar)
 (ayrıca bkz.
 [Kaynaklar arasında kullanıcıları izleme](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/cross-origin-tracking.md)).
 
 Varsayılan olarak,
 AMP sayfaya bir yayıncının orjininal web sitesinden mi yoksa bir önbellekten mi erişildiğine göre istemci kimliğinin sağlanmasını yönetecektir.
 AMP tarafından oluşturulan istemci kimliğinde bir `"amp-"` değeri ile
-rastgele bir `base64` şifreli dize vardır ve 
+rastgele bir `base64` şifreli dize vardır ve
 kullanıcı tekrar ziyaret ettiğinde aynı kalır.
 
 AMP tüm durumlarda istemci kimliğinin okunmasını ve yazılmasını yönetir.
-Bu özellikle, bir sayfa 
+Bu özellikle, bir sayfa
 önbellekle sağlandığında geçerlidir, aksi halde yayıncının orijinal sitesinin görüntüleme bağlamının
  dışında gösterilir.
 Bu durumda, yayıncının internet sitesinin çerezlerine erişilemez.
 
 AMP sayfası bir yayıncı internet sitesinden sağlandığında,
-AMP›nin kullandığı istemci kimlik çerçevesinin 
+AMP›nin kullandığı istemci kimlik çerçevesinin
 bir son çare çerezi arayıp kullanması istenebilir.
 Bu durumda,
-`clientId` değişkeninin`cid-scope-cookie-fallback-name` bağımsız değişkeni 
+`clientId` değişkeninin`cid-scope-cookie-fallback-name` bağımsız değişkeni
 bir çerez adı olarak yorumlanabilir.
-Format 
-`CLIENT_ID(cid-scope-cookie-fallback-name)` ya da 
+Format
+`CLIENT_ID(cid-scope-cookie-fallback-name)` ya da
 `${clientId(cid-scope-cookie-fallback-name)}` olarak görünebilir.
 
 Örneğin;
@@ -239,5 +240,5 @@ bu durumda AMP bir `amp-` formu değeri ile ardından
 rastgele bir base64 şifreli dize oluşturacaktır.
 
 İsteğe bağlı bir kullanıcı bildirim kimliğinin nasıl ekleneceği dahil,
-istemci kimliği değişikliği hakkında daha fazla bilgi için, 
+istemci kimliği değişikliği hakkında daha fazla bilgi için,
 bkz. [AMP analitikte desteklenen değişkenler](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).

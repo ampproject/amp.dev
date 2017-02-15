@@ -1,8 +1,10 @@
 ---
 $title: Placeholders & fallbacks
 $order: 3
+toc: true
 ---
 [TOC]
+
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 

@@ -12,7 +12,7 @@
   <div class="container main">
     {{ navmarkup|safe }}
     <div class="content">
-      <article class="post">
+      <article class="post{% if doc.toc %} has-toc{% endif %}">
 
         <h1 class="post-title">{{ doc.title }}</h1>
 

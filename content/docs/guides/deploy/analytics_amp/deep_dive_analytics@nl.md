@@ -1,7 +1,9 @@
 ---
 $title: Uitgebreide informatie over AMP Analytics
+toc: true
 ---
 [TOC]
+
 
 In deze handleiding vindt u uitgebreide informatie over
 [het onderdeel amp-analytics](/docs/reference/extended/amp-analytics.html),

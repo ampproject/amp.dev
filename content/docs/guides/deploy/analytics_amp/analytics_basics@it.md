@@ -1,5 +1,6 @@
 ---
 $title: Analytics&#58; i concetti di base
+toc: true
 ---
 
 Inizia da qui per approfondire i concetti di base dell’analisi AMP.
@@ -18,7 +19,7 @@ Se sei alla ricerca di un comportamento simile a quello di un semplice
 il componente `amp-pixel` offre il monitoraggio della visualizzazione di pagina di base
 e l’invio dei dati sulle visualizzazioni a un URL specifico.
 Alcune integrazioni con i fornitori possono richiedere questo componente,
-in tal caso viene specificato l’esatto endpoint dell’URL. 
+in tal caso viene specificato l’esatto endpoint dell’URL.
 
 Per la maggior parte delle soluzioni di analisi puoi usare `amp-analytics`.
 Il monitoraggio della visualizzazione di pagina funziona anche in `amp-analytics`.
@@ -91,7 +92,7 @@ nell’`<head>` del documento AMP (vedi anche
 Il seguente esempio è simile all’[esempio `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
 Ogni volta che una pagina è visibile,
 l’evento di attivazione si attiva e
-invia i dati sulla visualizzazione di pagina a un URL specifico unitamente a un ID casuale: 
+invia i dati sulla visualizzazione di pagina a un URL specifico unitamente a un ID casuale:
 
 [sourcecode:html]
 <amp-analytics>
@@ -127,7 +128,7 @@ consentono tutte le sostituzioni di variabili URL standard (vedi
 [Sostituzioni di variabili HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
 Nel seguente esempio,
 la richiesta di visualizzazione di pagina viene inviata all’URL,
-unitamente all’attuale URL canonico del documento AMP, al relativo titolo e a un 
+unitamente all’attuale URL canonico del documento AMP, al relativo titolo e a un
 [ID client](/docs/guides/analytics/analytics_basics.html#user-identification):
 
 [sourcecode:html]
@@ -174,7 +175,7 @@ nell’ambito della configurazione `amp-analytics`:
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>
@@ -239,5 +240,5 @@ AMP genera quindi un valore del modulo `amp-` seguito
 da una stringa codificata base64 casuale.
 
 Per ulteriori informazioni sulla sostituzione dell’ID client,
-compreso il metodo per aggiungere un ID di notifica utente opzionale, vai alla sezione 
+compreso il metodo per aggiungere un ID di notifica utente opzionale, vai alla sezione
 [Variabili supportate in AMP Analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).

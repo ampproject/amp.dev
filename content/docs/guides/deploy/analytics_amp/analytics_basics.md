@@ -1,6 +1,7 @@
 ---
 $title: "Analytics: the Basics"
 $order: 0
+toc: true
 ---
 
 Start here to learn the basics about AMP analytics.

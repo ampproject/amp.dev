@@ -1,7 +1,9 @@
 ---
 $title: Погружение в AMP Analytics
+toc: true
 ---
 [TOC]
+
 
 Это руководство подробно описывает использование
 [компонента amp-analytics](/docs/reference/extended/amp-analytics.html),

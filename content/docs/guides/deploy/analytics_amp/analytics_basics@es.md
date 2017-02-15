@@ -1,5 +1,6 @@
 ---
 $title: Analytics&#58; aspectos básicos
+toc: true
 ---
 
 Comienza aquí para informarte acerca de los aspectos básicos del análisis de AMP.
@@ -18,7 +19,7 @@ Si buscas un comportamiento, como un simple
 el componente `amp-pixel` proporciona seguimiento básico de las vistas de la página y
 los datos de vista de la página se envían a una dirección URL definida.
 Algunas integraciones con un proveedor pueden llamar a este componente,
-en cuyo caso especificarán el terminal de URL exacto. 
+en cuyo caso especificarán el terminal de URL exacto.
 
 Para la mayoría de las soluciones de análisis, usa `amp-analytics`.
 El seguimiento de vistas de páginas también funciona en `amp-analytics`.
@@ -91,7 +92,7 @@ en el `<head>` del documento de AMP (consulta también la sección de
 El siguiente ejemplo es similar al [ejemplo de `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
 Cada vez que una página es visible,
 el evento desencadenante se activa y
-envía los datos de vista de página a una dirección URL definida junto con un Id. aleatorio: 
+envía los datos de vista de página a una dirección URL definida junto con un Id. aleatorio:
 
 [sourcecode:html]
 <amp-analytics>
@@ -174,7 +175,7 @@ dentro de la configuración de `amp-analytics`:
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>
@@ -220,7 +221,7 @@ Cuando se accede a una página AMP desde el sitio de un editor,
 es posible notificar al framework del Id. de cliente que usa AMP sobre una cookie de reserva
 que se puede buscar y usar.
 En este caso,
-el argumento `cid-scope-cookie-fallback-name` de la variable `clientId` 
+el argumento `cid-scope-cookie-fallback-name` de la variable `clientId`
 se interpreta como un nombre de cookie.
 El formato puede ser de
 `CLIENT_ID(cid-scope-cookie-fallback-name)` o

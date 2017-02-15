@@ -1,5 +1,6 @@
 ---
 $title: Analytics&#58; de basis
+toc: true
 ---
 
 Start hier voor meer basisinformatie over AMP Analytics.
@@ -18,7 +19,7 @@ Als u bepaald gedrag zoekt zoals een eenvoudige
 biedt het component `amp-pixel` basisacties voor het bijhouden van paginaweergaven.
 Gegevens over paginaweergaven worden naar een opgegeven URL gestuurd.
 Sommige integraties met leveranciers vragen mogelijk om dit component.
-In dit geval geven ze het exacte URL-eindpunt op. 
+In dit geval geven ze het exacte URL-eindpunt op.
 
 Voor de meeste analyseoplossingen gebruikt u `amp-analytics`.
 Het bijhouden van paginaweergaven werkt ook in `amp-analytics`.
@@ -91,7 +92,7 @@ in de `<head>` van het AMP-document (zie ook
 Het volgende voorbeeld is vergelijkbaar met het [`amp-pixel`-voorbeeld](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
 Telkens wanneer een pagina zichtbaar is,
 wordt de triggergebeurtenis geactiveerd en
-worden de gegevens over de paginaweergaven naar een opgegeven URL verzonden, inclusief een willekeurige ID: 
+worden de gegevens over de paginaweergaven naar een opgegeven URL verzonden, inclusief een willekeurige ID:
 
 [sourcecode:html]
 <amp-analytics>
@@ -174,7 +175,7 @@ binnen de `amp-analytics`-configuratie:
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>

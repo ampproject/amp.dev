@@ -1,7 +1,9 @@
 ---
 $title: Casos de uso
+toc: true
 ---
 [TOC]
+
 
 Este guia oferece um conjunto de casos de uso comuns para rastrear o envolvimento do usuário:
 

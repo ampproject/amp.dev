@@ -1,5 +1,6 @@
 ---
 $title: アナリティクス&#58; 基本
+toc: true
 ---
 
 このページで AMP アナリティクスの基本を学びましょう。
@@ -91,7 +92,7 @@ AMP ドキュメントの `<head>` 内に入れます
 以下の例は [`amp-pixel` の例](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration)と似ています。
 ページが表示されるたびに
 イベントが発生して、
-ページビュー データがランダム ID と一緒に指定の URL に送信されます。 
+ページビュー データがランダム ID と一緒に指定の URL に送信されます。
 
 [sourcecode:html]
 <amp-analytics>
@@ -174,7 +175,7 @@ AMP ドキュメントの `<head>` 内に入れます
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>

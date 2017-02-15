@@ -1,8 +1,10 @@
 ---
 $title: Supported CSS
 $order: 0
+toc: true
 ---
 [TOC]
+
 
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets

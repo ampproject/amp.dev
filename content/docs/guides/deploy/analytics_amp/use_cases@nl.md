@@ -1,7 +1,9 @@
 ---
 $title: Gebruiksvoorbeelden
+toc: true
 ---
 [TOC]
+
 
 In deze handleiding vindt u een reeks algemene gebruiksvoorbeelden voor het bijhouden van de betrokkenheid van gebruikers:
 

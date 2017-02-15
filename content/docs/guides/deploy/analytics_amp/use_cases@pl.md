@@ -1,7 +1,9 @@
 ---
 $title: Przykłady zastosowań
+toc: true
 ---
 [TOC]
+
 
 W tym przewodniku przedstawiono szereg typowych przykładów zastosowań do monitorowania czynności użytkowników:
 

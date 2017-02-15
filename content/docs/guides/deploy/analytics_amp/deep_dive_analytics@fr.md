@@ -1,7 +1,9 @@
 ---
 $title: AMP Analytics dans le détail
+toc: true
 ---
 [TOC]
+
 
 Ce guide propose une analyse détaillée du
 [composant amp-analytics](/docs/reference/extended/amp-analytics.html),

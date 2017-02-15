@@ -1,7 +1,9 @@
 ---
 $title: Mendalami AMP Analytics
+toc: true
 ---
 [TOC]
+
 
 Panduan ini mendalami
 [komponen amp-analytics](/docs/reference/extended/amp-analytics.html),

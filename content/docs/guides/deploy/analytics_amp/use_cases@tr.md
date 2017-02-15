@@ -1,7 +1,9 @@
 ---
 $title: Kullanım Durumları
+toc: true
 ---
 [TOC]
+
 
 Bu kılavuzda kullanıcı katılımını izlemek için bir dizi yaygın kullanım durumu verilmiştir:
 

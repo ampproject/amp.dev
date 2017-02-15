@@ -1,8 +1,10 @@
 ---
 $title: Custom fonts
 $order: 5
+toc: true
 ---
 [TOC]
+
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 You can embed custom fonts into your page in two ways:

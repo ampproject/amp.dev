@@ -1,8 +1,10 @@
 ---
 $title: Deep Dive into AMP Analytics
 $order: 1
+toc: true
 ---
 [TOC]
+
 
 This guide dives deep into the
 [amp-analytics component](/docs/reference/extended/amp-analytics.html),

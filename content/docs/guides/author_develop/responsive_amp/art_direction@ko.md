@@ -1,8 +1,10 @@
 ---
 $title: srcset, sizes & heights를 이용한 미적 이미지 처리
 $order: 4
+toc: true
 ---
 [TOC]
+
 
 ## srcset
 

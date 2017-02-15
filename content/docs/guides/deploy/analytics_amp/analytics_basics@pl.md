@@ -1,5 +1,6 @@
 ---
 $title: Analityka&#58; podstawy
+toc: true
 ---
 
 Zacznij tutaj, aby poznać podstawy analityki AMP.
@@ -18,7 +19,7 @@ Jeśli oczekujesz zachowania takiego jak w przypadku prostego
  komponent `amp-pixel` umożliwia podstawowe monitorowanie wyświetleń strony;
 dane o wyświetleniach strony są wysyłane na zdefiniowany adres URL.
 W niektórych integracjach z dostawcą ten komponent może być wywoływany,
-wówczas zostaje określony dokładny punkt końcowy adresu URL. 
+wówczas zostaje określony dokładny punkt końcowy adresu URL.
 
 Na potrzeby większości rozwiązań analitycznych należy używać elementu `amp-analytics`.
 Także w komponencie `amp-analytics` działa monitorowanie wyświetleń stron.
@@ -91,7 +92,7 @@ w sekcji `<head>` dokumentu AMP (zobacz też
 Poniższy przykład jest podobny do [przykładu z elementem `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
 Podczas każdego wyświetlenia strony
 uruchamiane jest zdarzenie wyzwalacza, które
-wysyła dane o wyświetleniu strony na zdefiniowany adres URL wraz z losowym identyfikatorem: 
+wysyła dane o wyświetleniu strony na zdefiniowany adres URL wraz z losowym identyfikatorem:
 
 [sourcecode:html]
 <amp-analytics>
@@ -174,7 +175,7 @@ w konfiguracji elementu`amp-analytics`:
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>

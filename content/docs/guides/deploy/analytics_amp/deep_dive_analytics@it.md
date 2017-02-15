@@ -1,7 +1,9 @@
 ---
 $title: Immersione nel mondo di AMP Analytics
+toc: true
 ---
 [TOC]
+
 
 Questa guida si addentra nella sfera del
 [componente amp-analytics](/docs/reference/extended/amp-analytics.html),

@@ -3,8 +3,10 @@ $title: Include Iframes
 $order: 2
 components:
   - iframe
+toc: true
 ---
 [TOC]
+
 
 Learn how to display include media content in your pages, and how to use iframes
 to display advanced content outside of AMP's limitations.

@@ -1,5 +1,6 @@
 ---
 $title: Analytics&#58; conceitos básicos
+toc: true
 ---
 
 Comece aqui a aprender os conceitos básicos sobre o AMP Analytics.
@@ -18,7 +19,7 @@ Se você estiver buscando comportamentos como um simples
 o componente `amp-pixel` proporciona um rastreamento de visualização de páginas básico;
 os dados de visualização de página são enviados para um URL definido.
 Algumas integrações com fornecedor podem necessitar esse componente,
-em cujo caso eles especificarão o terminal exato do URL. 
+em cujo caso eles especificarão o terminal exato do URL.
 
 Para a maioria das soluções de análise, utilize `amp-analytics`.
 O rastreamento de visualizações de páginas também funciona em `amp-analytics`.
@@ -91,7 +92,7 @@ no `<head>` do documento AMP (consulte também
 O seguinte exemplo é semelhante ao [exemplo do `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
 Todas as vezes que uma página está visível,
 o evento é acionado e
-envia os dados de page view para um URL definido, juntamente com uma ID aleatória: 
+envia os dados de page view para um URL definido, juntamente com uma ID aleatória:
 
 [sourcecode:html]
 <amp-analytics>
@@ -174,7 +175,7 @@ dentro da configuração de `amp-analytics`:
         "title": "My homepage",
       }
     }
-  }  
+  }
 }
 </script>
 </amp-analytics>

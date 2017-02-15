@@ -10,7 +10,7 @@
 
 .post-content {
   @extend %text-small;
-  margin: 0 250px 0 75px;
+  margin: 0 75px;
   padding: 0 15px;
 
   a {
@@ -44,6 +44,13 @@
         }
       }
     }
+  }
+}
+
+.post.has-toc {
+  .post-title,
+  .post-content {
+    margin: 0 250px 0 75px;
   }
 }
 
