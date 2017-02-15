@@ -25,8 +25,8 @@ logo:
 download: "case-studies/gizmodo.pdf"
 ---
 
-<div class="img-right">
-    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/gizmodo_framed.png"></amp-img>
+<div class="img-right gizmodo">
+    <amp-img width="1439" height="1876" layout="responsive" src="/static/img/case-studies/gizmodo_phone1.png"></amp-img>
 </div>
 
 User experience has always been a major focus at Gizmodo, the popular design, technology, and science fiction blog. With over half of traffic coming to their mobile website, keeping the site clear and fast is key to keeping readers on mobile devices engaged with their content.
@@ -47,8 +47,8 @@ Gizmodo implemented AMP in May of 2016 and is now publishing AMP pages for 100% 
 
 #### Results
 
-<div class="img-left">
-    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/gizmodo_framed2.png"></amp-img>
+<div class="img-left gizmodo">
+    <amp-img width="1200" height="1423" layout="responsive" src="/static/img/case-studies/gizmodo_phone2.png"></amp-img>
 </div>
 
 As of September Gizmodo has published over 24,000 AMP pages and is receiving 100k visits to those pages daily. AMP has been highly successful in making Gizmodo’s mobile pages fast  -- page load time for AMP is 3x faster than the regular mobile site. AMP has even helped Gizmodo attract new readers. Over 80% of Gizmodo’s traffic from AMP pages is new traffic, compared to under 50% of all mobile sessions. Gizmodo has also seen a 50% increase in impressions per pageview on AMP.

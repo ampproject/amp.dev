@@ -25,8 +25,8 @@ logo:
 download: "case-studies/wapo.pdf"
 ---
 
-<div class="img-right">
-    <amp-img width="559" height="1000" layout="responsive" src="/static/img/case-studies/wapo_framed.gif"></amp-img>
+<div class="img-right wapo">
+    <amp-img width="881" height="1318" layout="responsive" src="/static/img/case-studies/washingtonpost_phone.png"></amp-img>
 </div>
 
 With nearly 55% of their traffic coming from mobile devices, The Washington

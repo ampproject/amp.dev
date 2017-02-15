@@ -27,8 +27,8 @@ download: "case-studies/wired.pdf"
 
 #### Challenge
 
-<div class="img-right">
-    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/wired_framed.png"></amp-img>
+<div class="img-right wired">
+    <amp-img width="1318" height="1888" layout="responsive" src="/static/img/case-studies/wired_phone1.png"></amp-img>
 </div>
 
 Wired’s philosophy is to meet audiences wherever they are online. The San Francisco-based print and online publisher reports on technology and its impact on politics, culture, and the economy. The publisher saw AMP as an opportunity to speed up the mobile experience as well as to be eligible for the AMP-powered Google Search Top Stories carousel. Samuel Baldwin, Product Manager for Wired.com, said “Site performance is a company-wide KPI, and we see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
@@ -43,8 +43,8 @@ After a deep dive of analysis of results in July, Wired found AMP to have a posi
 
 #### Conclusion
 
-<div class="img-left">
-    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/wired_framed2.png"></amp-img>
+<div class="img-left wired">
+    <amp-img width="1742" height="1622" layout="responsive" src="/static/img/case-studies/wired_phone2.png"></amp-img>
 </div>
 
 > “We’re excited to try more AMP features and see the format supported on a variety of new platforms.”
