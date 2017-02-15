@@ -1,7 +1,7 @@
 body.about-who {
   .hero {
     position: relative;
-    padding: 225px 8.95% 80px 8.95%;
+    padding: 225px 8.95% 130px 8.95%;
 
     .hero-images {
       position: absolute;
@@ -25,21 +25,6 @@ body.about-who {
       position: relative;
       max-width: 450px;
       margin-bottom: 100px;
-    }
-
-    .example-users {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      position: relative;
-      width: 68.1%;
-      min-width: 651px;
-
-      .example-user-logo {
-        flex: 0 0 18%;
-      }
     }
 
     .inline-toc {
@@ -93,10 +78,6 @@ body.about-who {
       .inline-toc {
         display: block;
         margin-top: 250px;
-      }
-
-      .example-users {
-        display: none;
       }
 
       .hero-images {

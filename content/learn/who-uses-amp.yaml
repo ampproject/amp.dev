@@ -10,27 +10,6 @@ hero:
   line_img: hero_lines.png
   triangle_img: hero_triangle.png
 
-  users:
-    - name: The Washington Post
-      logo: user_logo_1.png
-      logo_width: 413
-      logo_height: 81
-
-    - name: Slate
-      logo: user_logo_2.png
-      logo_width: 257
-      logo_height: 81
-
-    - name: Rakuten
-      logo: user_logo_3.png
-      logo_width: 267
-      logo_height: 81
-
-    - name: Relay Media
-      logo: user_logo_4.png
-      logo_width: 271
-      logo_height: 81
-
 cards:
   - name@: Publishers
     cta@: Learn More

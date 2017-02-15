@@ -32,19 +32,6 @@
         </amp-img>
       </div>
       <h1 class="title">{{_(doc.hero.title)}}</h1>
-      <div class="example-users">
-        {% for user in doc.hero.users %}
-          <div class="example-user-logo">
-            <amp-img
-                noloading
-                width={{user.logo_width}}
-                height={{user.logo_height}}
-                layout=responsive
-                src="/static/img/about/who-use-amp/{{user.logo}}">
-            </amp-img>
-          </div>
-        {% endfor %}
-      </div>
       <div class="inline-toc">
         <ul>
           {% for card in doc.cards %}
