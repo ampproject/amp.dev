@@ -69,8 +69,12 @@
       padding: 20px;
     }
 
+    .card-type {
+      margin-bottom: 5px;
+    }
+
     .card-content {
-      max-height: 100%;
+      max-height: 48px;
       overflow: hidden;
     }
 

@@ -9,28 +9,26 @@ tt{
   font-family: $font-family-mono;
   font-size: 14px;
   background: $color-white;
-  border: 1px solid #c2f3fd;
+  border: 1px solid #e7f2f9;
   border-radius: 3px;
-  color: #1867a3;
+  color: $color-black-95;
 }
 
 code {
-  background: #e9fbff;
+  background: #f6fcfd;
   font-size: 13px;
   padding: 2px 5px;
 }
 
 a {
   code {
-    color: #035386;
+    @extend a.underlined;
+    color: $color-black-95;
     white-space: nowrap;
-    border-bottom-width: 2px;
-    border-color: $color-brightblue;
   }
 
   &:hover code {
-    color: $color-white;
-    background-color: $color-brightblue;
+    color: #1c79be;
   }
 }
 
@@ -54,8 +52,8 @@ h5 {
  * Syntax highlighting styles
  */
 pre {
-  background: #e9fbff;
-  border-color: #c2f3fd;
+  background: #f6fcfd;
+  border-color: #e7f2f9;
   overflow: auto;
   tab-size: 2;
   word-break: normal;
