@@ -88,6 +88,17 @@
         transform: translateY(-50%) rotate(180deg);
       }
     }
+
+    a.external {
+      background: no-repeat right 3px / 20px;
+      display: inline-block;
+      padding-right: 16px;
+      width: 95%;
+
+      &:hover {
+        background-image: url('/static/img/ic_open_in_new_black.svg');
+      }
+    }
   }
 
   li.sub-level {

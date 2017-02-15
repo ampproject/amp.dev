@@ -10,13 +10,13 @@ menu:
       - href: /content/learn/case-studies.html
         copy@: "Case Studies"
         collection: learn/case-studies
-  - href: /content/docs/build.md
+  - href: /content/docs/get_started/general/create.md
     copy@: Docs
     collection: docs
     children:
-      - href: /content/docs/get_started/create.md
+      - href: /content/docs/get_started/general/create.md
         copy@: "Getting started"
-      - href: /content/docs/get_started/create.md
+      - href: /content/docs/get_started/general/create.md
         copy@: "Tutorials"
         collection: docs/get_started
       - href: /content/docs/guides/author_develop/responsive_amp.md
@@ -25,9 +25,8 @@ menu:
       - href: /content/docs/reference/components.md
         copy@: "Reference"
         collection: docs/reference
-      - href: /content/docs/examples.md
+      - href: https://ampbyexample.com/
         copy@: "Examples"
-        collection: docs/examples
       - href: /content/docs/contribute/contribute.md
         copy@: "Contribute"
         collection: docs/contribute

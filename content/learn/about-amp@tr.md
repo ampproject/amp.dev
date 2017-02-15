@@ -44,7 +44,7 @@ yaygın desenlerin başarılı bir şekilde uygulanmasını kolaylaştırmışt�
 
 Örneğin, [`amp-img`](/docs/reference/amp-img.html) etiketi
 bu özelliği henüz desteklemeyen tarayıcılarda bile tam `srcset` desteği sağlamaktadır.
-[İlk AMP HTML sayfanızı nasıl oluşturacağınızı] öğrenin(/docs/get_started/create.html).
+[İlk AMP HTML sayfanızı nasıl oluşturacağınızı] öğrenin(/docs/get_started/general/create.html).
 
 ## AMP JS
 

@@ -1,5 +1,5 @@
 ---
 $title: Codelabs
-$order: 1
+$order: 2
 goto: http://www.google.com
 ---

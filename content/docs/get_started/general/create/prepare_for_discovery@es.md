@@ -1,0 +1,31 @@
+---
+$title: Prepara tu página para la detección y la distribución
+---
+
+En algunos casos, podrías tener una versión AMP y una versión no AMP de la misma página; por ejemplo, un artículo informativo. Considera lo siguiente: Si la Búsqueda de Google encuentra la versión no AMP de esa página, *¿cómo sabe que existe una versión AMP?*
+
+## Vinculación de páginas con&lt;link>
+
+Para resolver este problema, agregamos información sobre la página AMP a la página no AMP y viceversa en forma de etiquetas `<link>` en el `<head>`.
+
+Agrega lo siguiente a la página no AMP:
+
+[sourcecode:html]
+<link rel="amphtml" href="https://www.ejemplo.com/url/al/documento/amp.html">
+[/sourcecode]
+
+Y esto a la página AMP
+
+[sourcecode:html]
+<link rel="canonical" href="https://www.ejemplo.com/url/al/documento/completo.html">
+[/sourcecode]
+
+## ¿Qué sucede si tengo una sola página?
+
+Si solo tienes una página y es AMP, debes agregarle el vínculo canónico. Este luego simplemente apuntará a sí mismo.
+
+[sourcecode:html]
+<link rel="canonical" href="https://www.ejemplo.com/url/al/documento/amp.html">
+[/sourcecode]
+
+<a class="go-button button" href="/es/docs/get_started/general/create/publish.html">Continuar con el paso 6</a>

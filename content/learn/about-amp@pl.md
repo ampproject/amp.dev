@@ -44,7 +44,7 @@ ułatwiają efektywną implementację typowych wzorców.
 
 Na przykład znacznik [`amp-img`](/docs/reference/amp-img.html)
 udostępnia pełną obsługę atrybutu `srcset` także w przeglądarkach, które go jeszcze nie obsługują.
-Dowiedz się, jak [utworzyć swoją pierwszą stronę AMP HTML](/docs/get_started/create.html).
+Dowiedz się, jak [utworzyć swoją pierwszą stronę AMP HTML](/docs/get_started/general/create.html).
 
 ## AMP JS
 

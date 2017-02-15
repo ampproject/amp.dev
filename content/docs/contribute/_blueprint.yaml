@@ -8,9 +8,9 @@ index_path: /content/docs/contribute.md
 navigation:
   prev:
     section: true
-    title@: Examples
-    href: /content/docs/examples/examples.md
+    title@: Reference
+    href: /content/docs/reference/components.md
   next:
     section: true
     title@: Tutorials
-    href: /content/docs/get_started/create.md
+    href: /content/docs/get_started/general/create.md

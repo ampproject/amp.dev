@@ -44,7 +44,7 @@ permettent d'implémenter facilement et efficacement des modèles communs.
 
 Par exemple, la balise [`amp-img`](/docs/reference/amp-img.html)
 offre une entière prise en charge de `srcset` même dans les navigateurs qui ne sont pas encore compatibles.
-Découvrez comment [créer votre première page AMP HTML](/docs/get_started/create.html).
+Découvrez comment [créer votre première page AMP HTML](/docs/get_started/general/create.html).
 
 ## AMP JS
 

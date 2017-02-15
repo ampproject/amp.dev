@@ -44,7 +44,7 @@ AMP HTML 本质上是使用自定义 AMP 属性扩展的 HTML。
 
 例如，[`amp-img`](/docs/reference/amp-img.html) 标记可提供完整的 `srcset` 支持，即使在尚不支持该标记的浏览器中也是如此。
 
-了解如何[创建您的第一个 AMP HTML 页面](/docs/get_started/create.html)。
+了解如何[创建您的第一个 AMP HTML 页面](/docs/get_started/general/create.html)。
 
 ## AMP JS
 

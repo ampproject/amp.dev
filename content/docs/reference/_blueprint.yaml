@@ -12,5 +12,5 @@ navigation:
     href: /content/docs/guides/author_develop/responsive_amp.md
   next:
     section: true
-    title@: Examples
-    href: /content/docs/examples/examples.md
+    title@: Contribute
+    href: /content/docs/contribute/contribute.md

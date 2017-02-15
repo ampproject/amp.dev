@@ -44,7 +44,7 @@ membuat pola-pola umum menjadi mudah diimplementasikan berdasarkan kinerja.
 
 Misalnya, tag [`amp-img`](/docs/reference/amp-img.html)
 menyediakan dukungan `srcset` lengkap meski dalam browser yang belum mendukungnya.
-Pelajari cara [membuat halaman AMP HTML pertama Anda](/docs/get_started/create.html).
+Pelajari cara [membuat halaman AMP HTML pertama Anda](/docs/get_started/general/create.html).
 
 ## AMP JS
 

@@ -9,7 +9,7 @@ navigation:
   prev:
     section: true
     title@: Tutorials
-    href: /content/docs/get_started/create.md
+    href: /content/docs/get_started/general/create.md
   next:
     section: true
     title@: Reference

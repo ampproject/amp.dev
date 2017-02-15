@@ -199,7 +199,9 @@
 
           a {
             background: no-repeat right 3px / 12px;
+            display: inline-block;
             padding-right: 16px;
+            width: 95%;
           }
 
           &:hover {

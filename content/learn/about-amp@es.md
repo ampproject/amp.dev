@@ -44,7 +44,7 @@ crean patrones comunes que pueden implementarse con buen rendimiento en forma se
 
 Por ejemplo, la etiqueta [`amp-img`](/docs/reference/amp-img.html)
 proporciona soporte completo de `srcset`, incluso en navegadores que todavía no lo admiten.
-Obtén más información acerca de cómo [crear tu primera página AMP HTML](/docs/get_started/create.html).
+Obtén más información acerca de cómo [crear tu primera página AMP HTML](/docs/get_started/general/create.html).
 
 ## AMP JS
 
