@@ -5,7 +5,7 @@
 {% endset %}
 
 {% block main %}
-  <div class="about-who-block">
+  <div class="about-who-block {{doc.vertical_class}}">
     {{ navmarkup|safe }}
     <div class="container xl">
       <section class="hero">
@@ -26,8 +26,8 @@
           </amp-img>
           <amp-img class="phones"
               noloading
-              width=1321
-              height=1891
+              width={{doc.hero.hero_img_width}}
+              height={{doc.hero.hero_img_height}}
               layout=responsive
               src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
           </amp-img>
@@ -37,7 +37,7 @@
         <p class="small paragraph">{{_(doc.hero.paragraph)}}</p>
         <div class="example-users">
           {% for user in doc.hero.users %}
-            <div class="example-user-logo">
+            <div class="example-user-logo{% if user.class %} {{user.class}}{% endif %}">
               <amp-img
                   noloading
                   width={{user.logo_width}}

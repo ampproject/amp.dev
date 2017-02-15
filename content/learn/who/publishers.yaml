@@ -6,25 +6,31 @@ $parent: /content/learn/who-uses-amp.yaml
 components:
   - carousel
 
+vertical_class: publishers
+
 hero:
-  title@: Speed and distribution means stronger engagement
-  paragraph@: Because AMP pages load faster than typical pages, users can engage with your content faster than ever before. In fact, many publishers see increased engagement and retention metrics with AMP pages both in time on page and return visits. Additionally, because multiple platforms link to AMP pages, publishing once in the AMP format allows your content to be distributed across a broad network of providers. Join the hundreds of thousands of publishers that are distributing their speedy content with AMP.
-  hero_img: publishers/hero_publishers.png
+  title@: Improve user engagement with fast, compelling experiences.
+  paragraph@: Web page speed improves the user experience and <a href="https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/">core business metrics</a>. AMP pages load near instantly enabling you to offer a consistently fast experience across all devices and platforms that link to AMP Pages including Google, Bing, LinkedIn and more. These performance gains often translate in improvements in the numbers that matter, such as time spent on page, return visits and CTRs.
+  hero_img: publishers/publisher_phone_cnn.png
+  hero_img_width: 1079
+  hero_img_height: 1316
   triangle_img: hero_triangle.png
-  hero_icon: publishers/hero_icon.svg
-  hero_icon_width: 104
-  hero_icon_height: 123
+  hero_icon: publishers/publisher_icon_intro.svg
+  hero_icon_width: 76
+  hero_icon_height: 60
 
   users:
-    - name: The Washington Post
-      logo: publishers/user_logo_1.png
-      logo_width: 413
-      logo_height: 81
+    - name: The New York Times
+      logo: publishers/nyt_logo.svg
+      logo_width: 306
+      logo_height: 40
+      class: nyt
 
-    - name: Slate
-      logo: publishers/user_logo_2.png
-      logo_width: 257
-      logo_height: 81
+    - name: Globo
+      logo: publishers/globo_logo.svg
+      logo_width: 57
+      logo_height: 33
+      class: globo
 
     - name: Rakuten
       logo: publishers/user_logo_3.png
@@ -37,27 +43,27 @@ hero:
       logo_height: 81
 
 why:
-  title@: The key benefits of using AMP for publishers
+  title@: How AMP can help publishers
   reasons:
-    - title@: Greater engagement and retention
-      paragraph@: Many publishers have seen increased time on page, as well as return visits. Users know that when they see AMP, their reading experience will be seamless.
-      icon: publishers/why_1.svg
+    - title@: Enable compelling, consistently fast experiences
+      paragraph@: AMP speeds up content, keeping users engaged irrespective of where they start their journey -- on the publisher’s own website or from platforms that link to AMP pages like Twitter, Google and Pinterest. With faster and more secure ads, AMP ads deliver great advertising experiences too, ensuring every interaction with a publisher’s brand is a compelling one.
+      icon: publishers/publisher_icon_fast.svg
 
-    - title@: Distribution across a growing number of platforms
-      paragraph@: Leading content discovery platforms like Twitter, LinkedIn, Google, Pinterest and Bing link to AMP pages. By publishing pages in the AMP format, all of these surfaces now have access to your content.
-      icon: publishers/why_2.svg
+    - title@: Strengthen your business while maintaining control
+      paragraph@: Publishers implementing AMP can decide how to present their content, what business model to use, what technology vendors to use, while maintaining and often improving key performance indicators, such as time spent on page, return visits, viewability, CTRs and more.
+      icon: publishers/publisher_icon_simple.svg
 
-    - title@: Powerful monetization capabilities
-      paragraph@: With hundreds of ad tech vendors supporting the AMP project, greater engagement can mean greater revenue. Many publishers have seen monetization growth with AMP.
-      icon: publishers/why_3.svg
+    - title@: Reduce complexity in your operations.
+      paragraph@: Building AMP pages is simple and straightforward. You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress and Drupal. Your teams do not need any special skills nor worry about optimizing your code for each distribution platform as the AMP format is fully portable and AMP pages are consistently fast no matter how a user gets to them.  Similarly, AMP ads may be built once and run across all pages, including non-AMP pages.
+      icon: publishers/publisher_icon_business.svg
 
 case:
-  title@: Publisher success stories
+  title@: See how other publishers have found success with AMP
   cases:
-    - filename: relay_media.md
-    - filename: slate.md
+    - filename: washingtonpost.md
+    - filename: wired.md
 
 cta:
   title@: Get Started Building
-  link_text@: Publishers tutorials
-  link_url: #
+  link_text@: Tutorials
+  link_url: /docs/get_started/general/create.html

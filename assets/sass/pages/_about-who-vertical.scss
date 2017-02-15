@@ -3,6 +3,7 @@ body.about-who-vertical {
   .about-who-block {
     position: relative;
     overflow: hidden;
+
     &::after {
       background: $gradient-med-faded;
       content: '';
@@ -24,7 +25,7 @@ body.about-who-vertical {
 
   .hero {
     position: relative;
-    padding: 100px 15.4% 200px 15.4%;
+    padding: 100px 5% 200px 5%;
 
     .hero-images {
       position: absolute;
@@ -40,9 +41,9 @@ body.about-who-vertical {
 
       .phones {
         position: absolute;
-        right: -100px;
-        top: 150px;
-        width: 700px;
+        right: -150px;
+        top: 70px;
+        width: 670px;
       }
     }
 
@@ -52,17 +53,23 @@ body.about-who-vertical {
 
     .title {
       position: relative;
-      max-width: 650px;
+      max-width: 700px;
       margin-bottom: 50px;
     }
 
     .paragraph {
       max-width: 600px;
       margin-bottom: 70px;
+
+      a {
+        font-size: 16px;
+        font-weight: 300;
+        text-transform: none;
+      }
     }
 
     .icon {
-      width: 53px;
+      width: 76px;
     }
 
     .example-users {
@@ -77,12 +84,20 @@ body.about-who-vertical {
 
       .example-user-logo {
         flex: 0 0 18%;
+
+        &.nyt {
+          flex: 0 0 26%;
+        }
+
+        &.globo {
+          flex: 0 0 10%;
+        }
       }
     }
   }
 
   .why-use {
-    padding: 0 15.4% 165px 15.4%;
+    padding: 0 5% 165px 5%;
 
     h3 {
       text-align: center;
@@ -95,6 +110,12 @@ body.about-who-vertical {
 
       .reason {
         flex: 0 0 27%;
+        text-align: center;
+
+        amp-img {
+          margin: 20px 0 40px;
+          max-height: 100px;
+        }
 
         h4 {
           padding-right: 10px;
@@ -253,5 +274,8 @@ body.about-who-vertical {
         }
       }
     }
+  }
+
+  .about-who-block.publishers {
   }
 }
