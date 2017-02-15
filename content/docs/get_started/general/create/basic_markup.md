@@ -61,4 +61,4 @@ To learn more about all the meta-data you’ll need in various other places, i.e
 
 Good news! That’s all we need to create our first AMP page, but of course, there’s not a lot going on in the body yet. In the next section, we’ll cover how to add basics like images, custom AMP elements, how to style your page and work out a responsive layout.
 
-<a class="go-button button" href="/docs/get_started/general/create/include_image.html"><span>Continue to Step 2</span></a>
+<a class="go-button button" href="/docs/get_started/general/create/include_image.html">Continue to Step 2</a>

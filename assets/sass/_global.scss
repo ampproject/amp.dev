@@ -133,11 +133,12 @@ a {
 }
 
 .button {
-  background: $color-brightblue;
+  background-color: $color-brightblue;
   display: inline-block;
   color: $color-white;
   padding: 15px 20px;
   position: relative;
+  transition: background-color 0.3s;
 
   span {
     position: relative;
@@ -157,9 +158,7 @@ a {
   &::after {
     background: $gradient-anglemed;
     content: '';
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
@@ -168,9 +167,7 @@ a {
   }
 
   &:hover {
-    &::after {
-      opacity: 1;
-    }
+    background-color: transparent;
   }
 
   &.light {
@@ -179,10 +176,17 @@ a {
 
     &::after {
       background: linear-gradient($gradient-angle, #5ADAFD, #51B9FD);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 0;
     }
 
     &:hover {
       color: $color-white;
+
+      &::after {
+        opacity: 1;
+      }
     }
   }
 }
