@@ -15,10 +15,6 @@ cards:
     cta@: Learn More
     icon: card_publishers.svg
 
-  - name@: e-Commerce
-    cta@: Learn More
-    icon: card_ecommerce.svg
-
   - name@: SMB
     cta@: Learn More
     icon: card_smb.svg
@@ -26,10 +22,6 @@ cards:
   - name@: Advertisers
     cta@: Learn More
     icon: card_advertisers.svg
-
-  - name@: Designers
-    cta@: Learn More
-    icon: card_designers.svg
 
   - name@: Developers
     cta@: Learn More
