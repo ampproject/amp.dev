@@ -2,7 +2,7 @@ hero:
   sub_title@: Follow AMP
   title@: The Latest News
   content@: The open-source AMP Project helps you create mobile optimized content that loads in an instant.
-  hero_img: /static/img/latest/latest_hero.png
+  hero_img: /static/img/latest/latest_hero.jpg
   lines_back_img: /static/img/latest/line_hero_back.svg
   lines_front_img: /static/img/latest/line_hero_front.svg
 
