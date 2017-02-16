@@ -1,8 +1,8 @@
-year: 2016
-quarter: Q4
-outlook:  Q1/Q2
-current: End-Q4 2016
-updated: January 5, 2016
+year: 2017
+quarter: Q1
+outlook: Q2
+current: Mid-Q1 2017
+updated: February 17, 2017
 stages:
     "6": Launched / Stable
     "5": Code Complete / Experimental
@@ -22,24 +22,24 @@ sections:
         - Further alignment with Progressive Web Apps (PWAs)
         - Support for more engaging video experiences
         quarter:
+            "0":
+            - "[Autocomplete for form input](https://github.com/ampproject/amphtml/issues/3403)"
+            - "[“Smart” buttons](https://github.com/ampproject/amphtml/issues/3459)"
             "1":
-            - "[Native app deep-link/install button](https://github.com/ampproject/amphtml/issues/5284)"
+            - "[Tabbed selection interface](https://github.com/ampproject/amphtml/issues/7512)"
             - "[Create a suite of effects, such as scroll-bound animations, that can be applied to AMP page content and structure](https://github.com/ampproject/amphtml/issues/5483)"
-            "3":
-            - "[Out-of-the-box templates and styling](https://github.com/ampproject/amphtml/issues/2851)"
-            - "[Interactive image gallery (large image + thumbnails)](https://github.com/ampproject/amphtml/issues/4500)"
+            - "[Support for parallax scrolling](https://github.com/ampproject/amphtml/issues/1443)"
+            - "[Batch fetching and caching of dynamic data](https://github.com/ampproject/amphtml/issues/7463)"
+            - "[“Hero” mode for video players](https://github.com/ampproject/amphtml/issues/7510)"
             "4":
-            - "[Provide greater interactivity support by introducing a mechanism to bind element behavior to user actions](https://github.com/ampproject/amphtml/issues/6199)"
             - "[**amp-lightbox** improvements](https://github.com/ampproject/amphtml/issues/4152)"
-            - "Reference implementation using AMP within a Progressive Web App (PWA) - Angular, Ember.js, Polymer"
+            - "[AMP Start out-of-the-box templates and styling](https://github.com/ampproject/amphtml/issues/2851)"
             "5":
-            - "[Support for enhanced form inputs (images, etc) [amp-selector]](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/amp-selector.md)"
+            - "[Provide greater interactivity support by introducing a mechanism to bind element behavior to user actions](https://www.ampproject.org/docs/reference/components/amp-bind)"
             "6":
-            - "[Form support [**amp-form**]](https://github.com/ampproject/amphtml/blob/master/extensions/amp-form/amp-form.md)"
-            - "[AMP-in-PWA support, including support for progressive enhancement of the AMP document by the Progressive Web App (PWA)](https://github.com/ampproject/amphtml/issues/3742)"
-            - "[Reference implementation using AMP within a Progressive Web App (PWA)](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)"
-            - "[Native app install banner](https://github.com/ampproject/amphtml/blob/master/extensions/amp-app-banner/amp-app-banner.md)"
-            - "Muted autoplay support for [**amp-video**](https://www.ampproject.org/docs/reference/components/amp-video#attributes) and [**amp-youtube**](https://www.ampproject.org/docs/reference/components/amp-youtube#attributes)"
+            - "[Native app install banner[**amp-app-banner**](https://www.ampproject.org/docs/reference/components/amp-app-banner)"
+            - "[Interactive image gallery (large image + thumbnails)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/amp-carousel.md#advancing-amp-carouseltypeslides-to-a-specific-slide)"
+            - "[Support for enhanced form inputs (images, etc) [**amp-selector**]](https://www.ampproject.org/pl/docs/reference/components/amp-selector)"
         forecast:
         - Geo-variation support
         - Offline support and improved intermittent connectivity handling
@@ -57,9 +57,10 @@ sections:
             "4":
             - "[Share-tracking support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/3135)"
             - "[Filter support for variables in amp-analytics](https://github.com/ampproject/amphtml/issues/2198)"
-            "6":
-            - "[**amp-analytics** support for **amp-carousel**](https://github.com/ampproject/amphtml/issues/4292)"
-            - "[**amp-analytics** support for **amp-form**](https://github.com/ampproject/amphtml/pull/5868)"
+            "5":
+            - "[Outgoing link URL replacements, including Client ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#overview)"
+            - "[Form URL replacements, including Client ID](https://www.ampproject.org/docs/reference/components/amp-form#variable-substitutions)"
+            - "[Visibility v2 using Intersection Observer](https://github.com/ampproject/amphtml/issues/5697)"
         forecast:
         - Expose batched interaction data (e.g. scroll events) to **amp-analytics**
         - Offline support (i.e. enable queuing until back online)
@@ -70,18 +71,17 @@ sections:
         - Improve the overall ad loading and user experience on AMP
         - Enable and grow A4A creative format demand  across publishers and advertisers
         - Extend A4A usage beyond AMP pages
-        - Enable AMPs to act as landing pages for ads
+        - Enhance AMP-format landing pages for the ads use case
         quarter:
-            "3":
-            - "[Improve AMP's ad loading experience](https://github.com/ampproject/amphtml/issues/5918)"
-            - "[Show default fallback when no ad is available to serve](https://github.com/ampproject/amphtml/issues/3817)"
+            "1":
+            - "[Optimize rendering of 3P ads in AMP](https://github.com/ampproject/amphtml/issues/7500)"
+            "4":
             - "[Support serving A4A creatives in non-AMP Pages](https://github.com/ampproject/amphtml/issues/3829)"
             "5":
             - "[Allow for serving ads that are in AMP format (A4A - AMP for Ads)](https://github.com/ampproject/amphtml/issues/3133)"
             "6":
-            - "[Support multi-size ad requests](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests)"
-            - "[Flying carpet effect support, particularly as an ad format](https://github.com/ampproject/amphtml/blob/master/extensions/amp-fx-flying-carpet/amp-fx-flying-carpet.md)"
-            - "[Improvements to AMP sticky ad](https://github.com/ampproject/amphtml/issues/5432)"
+            - "[Improvement to ad loading experience](https://github.com/ampproject/amphtml/issues/5918)"
+            - "[Show default fallback when no ad is available to serve](https://github.com/ampproject/amphtml/issues/3817)"
         forecast:
         - Enable A4A creative demand across the buyer and publisher ecosystem
         - Enable deeper integration of ads with AMP-format landing pages across buyside and sellside systems
@@ -94,7 +94,5 @@ sections:
         quarter:
             "4":
             - "[Support for delegated sign-in (allow surface hosting AMP to sign-in user to publisher by using available identity information)](https://github.com/ampproject/amphtml/issues/4227)"
-            "6":
-            - "[**amp-access** server side support (limited beta)](https://github.com/ampproject/amphtml/issues/2968)"
         forecast:
         - Enable better mobile payments with AMP
