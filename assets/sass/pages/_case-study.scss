@@ -158,6 +158,12 @@
       transform: scale(1.4);
       transform-origin: left center;
     }
+
+    &.relay amp-img {
+      top: 40px;
+      transform: scale(1.2);
+      transform-origin: left center;
+    }
   }
 
   .img-left {
@@ -182,6 +188,13 @@
     &.slate amp-img {
       top: 20px;
       transform: scale(1.4);
+      transform-origin: right center;
+    }
+
+    &.relay amp-img {
+      right: 10px;
+      top: 60px;
+      transform: scale(1.2);
       transform-origin: right center;
     }
   }

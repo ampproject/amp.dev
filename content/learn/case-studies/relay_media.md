@@ -11,7 +11,7 @@ components:
 
 headline: Relay Media helps publishers get AMP’d
 thumb: "case-studies/relay_media_thumb.jpg"
-featured: "case-studies/relay_media_framed.png"
+featured: "case-studies/relaymedia_phone1.png"
 logo:
   src: "case-studies/relay_media_logo.png"
   width: 133
@@ -29,8 +29,8 @@ results:
 download: "case-studies/relay_media.pdf"
 ---
 
-<div class="img-right">
-    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/relay_media_framed.png"></amp-img>
+<div class="img-right relay">
+    <amp-img width="989" height="1416" layout="responsive" src="/static/img/case-studies/relaymedia_phone1.png"></amp-img>
 </div>
 
 Relay Media was founded in 2015 with the purpose of converting web content to Accelerated Mobile Pages (AMP) for publishers. The company has placed a big bet on AMP’s long-term importance to the online ecosystem, and is committed to strengthening the format’s foothold on the mobile web. “Today’s lumbering and overloaded mobile web pages are the legacy of a volume-based advertising marketplace that’s being replaced by one tuned to viewability and engagement” said Barb Palser, Chief Product Officer at Relay Media.
@@ -41,8 +41,8 @@ Relay Media was founded in 2015 with the purpose of converting web content to Ac
 
 #### Results
 
-<div class="img-left">
-    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/relay_media_framed2.png"></amp-img>
+<div class="img-left relay">
+    <amp-img width="1200" height="1423" layout="responsive" src="/static/img/case-studies/relaymedia_phone2.png"></amp-img>
 </div>
 
 Many of Relay Media’s clients are seeing positive AMP results. The most profound benefit for clients in converting to AMP is the decrease in page load time. Relay Media’s AMP articles load in under 700 milliseconds, compared to 8-12 seconds or more for their standard mobile counterparts.
