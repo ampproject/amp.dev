@@ -86,7 +86,7 @@ components:
             {% endwith %}
           {% endif %}
         {% endfor %}
-        <a class="feed-cta underlined cta">{{_(latest.feed.more_posts)}}</a>
+        <a href="{{g.doc(latest.feed.more_posts_href).url.path}}" class="feed-cta underlined cta">{{_(latest.feed.more_posts)}}</a>
       </section>
 
       <section class="twitter">
