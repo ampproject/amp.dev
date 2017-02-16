@@ -58,6 +58,32 @@
     padding: 75px 75px 135px 75px;
   }
 
+  .share-module {
+    .share-buttons {
+      top: -291px;
+
+      amp-social-share {
+        bottom: 0;
+        top: auto;
+      }
+    }
+
+    .control[expanded] + section amp-social-share {
+      &:nth-child(1) {
+        transform: translateY(-$share-button-size-full * 4);
+      }
+      &:nth-child(2) {
+        transform: translateY(-$share-button-size-full * 3);
+      }
+      &:nth-child(3) {
+        transform: translateY(-$share-button-size-full * 2);
+      }
+      &:nth-child(4) {
+        transform: translateY(-$share-button-size-full);
+      }
+    }
+  }
+
   .result {
     flex: 1 1 0;
     margin: 20px;
