@@ -5,27 +5,32 @@ $view: /views/about-who.html
 $parent: /content/learn/overview.yaml
 
 hero:
-  title@: Join the 700,000 domains publishing AMP pages
-  hero_img: hero_phones.png
-  line_img: hero_lines.png
+  title@: Who Uses AMP
+  subtitle@: Join an ecosystem of  850,000 domains, leading platforms, and 100+ technology providers using  AMP.
+  hero_img: who_phones_hero.png
+  line_img: who_lines1.svg
   triangle_img: hero_triangle.png
 
 cards:
   - name@: Publishers
     cta@: Learn More
-    icon: card_publishers.svg
+    icon: who_icon_publishers.svg
 
-  - name@: SMB
+  # - name@: SMB
+  #   cta@: Learn More
+  #   icon: card_smb.svg
+
+  - name@: Ad Tech Platforms
     cta@: Learn More
-    icon: card_smb.svg
+    icon: who_icon_adtech.svg
 
   - name@: Advertisers
     cta@: Learn More
-    icon: card_advertisers.svg
+    icon: who_icon_advertisers.svg
 
-  - name@: Developers
-    cta@: Learn More
-    icon: card_developers.svg
+  # - name@: Developers
+  #   cta@: Learn More
+  #   icon: card_developers.svg
 
 cta:
   title@: Success stories

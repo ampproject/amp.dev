@@ -7,40 +7,32 @@
 {% block main %}
   {{ navmarkup|safe }}
   <div class="container xl about-who-block">
+    <div class="hero-images">
+      <amp-img class="triangle"
+          noloading
+          width=1424
+          height=2095
+          layout=responsive
+          src="/static/img/about/who-use-amp/{{doc.hero.triangle_img}}">
+      </amp-img>
+      <amp-img class="lines"
+          noloading
+          width=579
+          height=481
+          layout=responsive
+          src="/static/img/about/who-use-amp/{{doc.hero.line_img}}">
+      </amp-img>
+      <amp-img class="phones"
+          noloading
+          width=3104
+          height=1926
+          layout=responsive
+          src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
+      </amp-img>
+    </div>
     <section class="hero">
-      <div class="hero-images">
-        <amp-img class="triangle"
-            noloading
-            width=1424
-            height=2095
-            layout=responsive
-            src="/static/img/about/who-use-amp/{{doc.hero.triangle_img}}">
-        </amp-img>
-        <amp-img class="lines"
-            noloading
-            width=2001
-            height=1681
-            layout=responsive
-            src="/static/img/about/who-use-amp/{{doc.hero.line_img}}">
-        </amp-img>
-        <amp-img class="phones"
-            noloading
-            width=2001
-            height=1681
-            layout=responsive
-            src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
-        </amp-img>
-      </div>
       <h1 class="title">{{_(doc.hero.title)}}</h1>
-      <div class="inline-toc">
-        <ul>
-          {% for card in doc.cards %}
-            <li>
-              <a href="#{{card.name|slug}}">{{card.name}}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+      <p class="subtitle">{{_(doc.hero.subtitle)}}</p>
     </section>
     <section class="user-categories card-container">
       {% for card in doc.cards %}

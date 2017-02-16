@@ -1,34 +1,49 @@
 body.about-who {
+  .hero-images {
+    position: absolute;
+    right: 0;
+    top: -20px;
+
+    .lines,
+    .phones,
+    .triangle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .lines {
+      height: 582px;
+      right: 120px;
+      top: 150px;
+      width: 700px;
+    }
+
+    .phones {
+      height: 931px;
+      right: -500px;
+      width: 1500px;
+    }
+
+    .triangle {
+      height: 650px;
+      width: 442px;
+    }
+  }
+
+
   .hero {
     position: relative;
-    padding: 225px 8.95% 130px 8.95%;
-
-    .hero-images {
-      position: absolute;
-      left: 1440px;
-      top: -20px;
-
-      .triangle {
-        display: none;
-      }
-
-      .lines,
-      .phones {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 1000px;
-      }
-    }
+    padding: 225px 8.95% 300px 8.95%;
 
     .title {
       position: relative;
       max-width: 450px;
-      margin-bottom: 100px;
+      margin-bottom: 0;
     }
 
-    .inline-toc {
-      display: none;
+    .subtitle {
+      max-width: 350px;
     }
   }
 
@@ -72,35 +87,16 @@ body.about-who {
       }
     }
 
+    .hero-images {
+      display: none;
+    }
+
     .hero {
       padding: 68px 0 40px 0;
 
       .inline-toc {
         display: block;
         margin-top: 250px;
-      }
-
-      .hero-images {
-        position: absolute;
-        left: unset;
-        right: -50px;
-        top: 270px;
-
-        .triangle {
-          display: block;
-          position: absolute;
-          right: 0;
-          top: 0;
-          width: 300px;
-        }
-
-        .lines,
-        .phones {
-          position: absolute;
-          right: 0;
-          top: 50px;
-          width: 500px;
-        }
       }
     }
 
