@@ -52,10 +52,11 @@ speakers:
     company: Google
     pic: /static/img/amp-conf/speakers/vamsee.jpg
     bio: Vamsee Jasti is the product manager for advertising in AMP. His mission is to keep the web open and free by helping publishers make money without comprising on user experience. The other way he helps publishers is by clicking on every ad he sees on the web.
-  daneknecht:
-    name: Dane Knecht
+  matthewprince:
+    name: Matthew Prince
     company: Cloudflare
-    pic: /static/img/amp-conf/speakers/dane.jpg
+    pic: /static/img/amp-conf/speakers/matthew.jpg
+    bio: Matthew Prince is co-founder and CEO of CloudFlare. CloudFlare’s mission is to help build a better Internet. Before CloudFlare, he co-founded Unspam Technologies, an anti-spam startup where he continues to serve as Chairman. Since then, Matthew has been an adjunct professor of law at the John Marshall Law School and co-creator of Project Honey Pot, the largest open source community tracking online fraud and abuse. He is a World Economic Forum Technology Pioneer, winner of the 2011 Tech Fellow Award, and serves on the Board of Advisors for the Center for Information Technology and Privacy Law. Matthew holds an MBA from Harvard Business School where he was a George F. Baker Scholar and awarded the Dubliner Prize for Entrepreneurship. He is a member of the Illinois Bar, and earned his J.D. from the University of Chicago and B.A. from Trinity College.
   sammeder:
     name: Sam Meder
     company: Pinterest
@@ -277,7 +278,7 @@ agenda:
     - title: How Cloudflare is accelerating AMP
       time: "1000"
       type: session
-      speaker: daneknecht
+      speaker: matthewprince
       description: Cloudflare has just announced Accelerated Mobile Links, but they're not stopping there! Learn about the entire ecosystem of AMP-powered solutions Cloudflare is building.
     - title: Coffee Break
       time: "1030"
