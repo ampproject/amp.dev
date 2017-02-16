@@ -46,14 +46,16 @@
       background: #f4fcfe;
     }
 
-    &.open a {
-      color: $color-ampblue;
-    }
-
     a {
       @extend %text-base;
       @extend %text-small;
       font-size: 22px;
+    }
+  }
+
+  li.expandable {
+    & > .section-name.open > a {
+      color: $color-ampblue;
     }
   }
 
@@ -147,10 +149,6 @@
 
         a {
           font-size: 16px;
-        }
-
-        &.open a {
-          color: $color-ampblue;
         }
       }
 
