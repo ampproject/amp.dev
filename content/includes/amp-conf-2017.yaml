@@ -168,7 +168,7 @@ speakers:
 
 agenda:
   day_1:
-    - title: Registration and Breakfast
+    - title: Registration
       time: "0800"
     - title: Opening notes
       time: "0850"
@@ -263,7 +263,7 @@ agenda:
     - title: Party!
       time: "1800"
   day_2:
-    - title: Breakfast
+    - title: Registration
       time: "0800"
     - title: "AMP on Google Search: Building the perfect AMP Viewer"
       time: "0900"
