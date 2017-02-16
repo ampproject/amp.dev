@@ -16,6 +16,11 @@ body.about-who-vertical {
       transform: skewY(-36deg);
       transform-origin: top left;
     }
+
+    a {
+      font-size: 16px;
+      text-transform: none;
+    }
   }
 
   .container.xl {
@@ -60,11 +65,6 @@ body.about-who-vertical {
     .paragraph {
       max-width: 600px;
       margin-bottom: 70px;
-
-      a {
-        font-size: 16px;
-        text-transform: none;
-      }
     }
 
     .icon {
@@ -90,6 +90,25 @@ body.about-who-vertical {
 
         &.globo {
           flex: 0 0 10%;
+        }
+
+        &.sharethrough {
+          flex: 0 0 28%;
+          position: relative;
+          top: -14px;
+        }
+
+        &.triplelift {
+          flex: 0 0 16%;
+        }
+
+        &.teads {
+          flex: 0 0 10%;
+        }
+
+        &.indexexchange {
+          position: relative;
+          top: -8px;
         }
       }
     }
@@ -275,6 +294,19 @@ body.about-who-vertical {
     }
   }
 
-  .about-who-block.publishers {
+  .about-who-block.adtech {
+    .hero {
+      text-align: center;
+
+      amp-img, .title, .paragraph, .example-users {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+      }
+
+      .paragraph {
+        max-width: 700px;
+      }
+    }
   }
 }
