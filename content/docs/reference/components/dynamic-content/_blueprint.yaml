@@ -1,5 +1,5 @@
 $view: /views/doc.html
-$path: /docs/reference/components/{base}.html
+$path: /docs/reference/components/dynamic/{base}.html
 $localization:
-  path: /{locale}/docs/reference/components/{base}.html
+  path: /{locale}/docs/reference/components/dynamic/{base}.html
 $title@: Dynamic Content - AMP components
