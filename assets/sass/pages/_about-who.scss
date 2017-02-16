@@ -36,6 +36,17 @@ body.about-who {
     position: relative;
     padding: 225px 8.95% 300px 8.95%;
 
+    .triangle {
+      height: 650px;
+      width: 442px;
+    }
+  }
+
+
+  .hero {
+    position: relative;
+    padding: 225px 8.95% 300px 8.95%;
+
     .title {
       position: relative;
       max-width: 450px;
@@ -54,6 +65,10 @@ body.about-who {
     .card {
       padding: 45px 10px 35px 10px;
       text-align: center;
+
+      amp-img {
+        margin-bottom: 20px;
+      }
 
       &:hover {
         .user-link {
