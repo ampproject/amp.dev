@@ -37,7 +37,7 @@ sections:
             "5":
             - "[Provide greater interactivity support by introducing a mechanism to bind element behavior to user actions](https://www.ampproject.org/docs/reference/components/amp-bind)"
             "6":
-            - "[Native app install banner[**amp-app-banner**]](https://www.ampproject.org/docs/reference/components/amp-app-banner)"
+            - "[Native app install banner [**amp-app-banner**]](https://www.ampproject.org/docs/reference/components/amp-app-banner)"
             - "[Interactive image gallery (large image + thumbnails)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/amp-carousel.md#advancing-amp-carouseltypeslides-to-a-specific-slide)"
             - "[Support for enhanced form inputs (images, etc) [**amp-selector**]](https://www.ampproject.org/pl/docs/reference/components/amp-selector)"
         forecast:
@@ -54,7 +54,7 @@ sections:
             "1":
             - Expansion of **amp-analytics** capabilities for e-commerce use cases
             - Expose events from video players to **amp-analytics**
-            4":
+            "4":
             - "[Share-tracking support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/3135)"
             - "[Filter support for variables in amp-analytics](https://github.com/ampproject/amphtml/issues/2198)"
             "5":
