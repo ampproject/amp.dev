@@ -172,7 +172,7 @@ agenda:
       time: "0800"
     - title: Opening notes
       time: "0850"
-    - title: Morning Keynote
+    - title: Day One Keynote
       time: "0900"
       type: keynote
       speaker: davidbesbris
@@ -265,21 +265,21 @@ agenda:
   day_2:
     - title: Registration
       time: "0800"
+    - title: "Day Two Keynote: How Cloudflare is accelerating AMP"
+      time: "9000"
+      type: keynote
+      speaker: matthewprince
+      description: Matthew Prince, co-founder and CEO of Cloudflare, opens the second day with his keynote, bringing an exciting outlook on how they're expanding the AMP ecosystem with new Cloudflare-powered solutions.
     - title: "AMP on Google Search: Building the perfect AMP Viewer"
-      time: "0900"
+      time: "0930"
       type: session
       speaker: rannazhou
       description: Ranna will talk about how Google Search uses AMP to create experiences like the Top Stories carousel, and how the AMP Viewer works, from top to bottom. It's rare to get a chance to look behind the scenes of Google Search – you don't want to miss this one.
     - title: "Progressive Web AMPs: From AMP to PWA"
-      time: "0930"
+      time: "1000"
       type: session
       speaker: alexrussell
       description: AMP gets content in front of users fast – PWAs enable rich experiences and engagement. Learn how to combine the two to get the best of both worlds by the Chrome engineer who coined the term "Progressive Web App".
-    - title: How Cloudflare is accelerating AMP
-      time: "1000"
-      type: session
-      speaker: matthewprince
-      description: Cloudflare has just announced Accelerated Mobile Links, but they're not stopping there! Learn about the entire ecosystem of AMP-powered solutions Cloudflare is building.
     - title: Coffee Break
       time: "1030"
     - title: "AMP Conversion: The Good, The Bad and The Ugly"
