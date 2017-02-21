@@ -138,18 +138,18 @@
 
     &.wapo amp-img {
       top: 50px;
-      transform: scale(1.2);
+      transform: scale(1.1);
       transform-origin: left center;
     }
 
     &.gizmodo amp-img {
-      top: 100px;
-      transform: scale(1.5);
+      top: 70px;
+      transform: scale(1.3);
       transform-origin: left center;
     }
 
     &.wired amp-img {
-      transform: scale(1.3);
+      transform: scale(1.1);
       transform-origin: left top;
     }
 
@@ -161,7 +161,7 @@
 
     &.relay amp-img {
       top: 40px;
-      transform: scale(1.2);
+      transform: scale(1.1);
       transform-origin: left center;
     }
   }
@@ -171,18 +171,26 @@
     margin-left: -30%;
     margin-right: 25px;
 
-    &.gizmodo amp-img {
-      right: 30px;
-      top: 70px;
-      transform: scale(1.2);
-      transform-origin: right center;
+    &.gizmodo {
+      margin-bottom: 80px;
+
+      amp-img {
+        right: 30px;
+        top: 110px;
+        transform: scale(1.4);
+        transform-origin: right center;
+      }
     }
 
-    &.wired amp-img {
-      left: 110px;
-      top: 10px;
-      transform: scale(1.6);
-      transform-origin: right center;
+    &.wired {
+      margin-bottom: 120px;
+
+      amp-img {
+        left: 160px;
+        top: 90px;
+        transform: scale(2.3);
+        transform-origin: right center;
+      }
     }
 
     &.slate amp-img {
@@ -191,11 +199,15 @@
       transform-origin: right center;
     }
 
-    &.relay amp-img {
-      right: 10px;
-      top: 60px;
-      transform: scale(1.2);
-      transform-origin: right center;
+    &.relay {
+      margin-bottom: 50px;
+
+      amp-img {
+        right: 10px;
+        top: 100px;
+        transform: scale(1.4);
+        transform-origin: right center;
+      }
     }
   }
 
