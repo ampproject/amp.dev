@@ -78,7 +78,7 @@ These attributes imply the aspect ratio of the element,
 which can then scale with the container.
 
 Set the layout to responsive.
-This sizes the element to the width of it's container element
+This sizes the element to the width of its container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
 {% call callout('Read on', type='success') %}
