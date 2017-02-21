@@ -1,5 +1,6 @@
 ---
 $title: Accélération de la performance avec AMP
+toc: true
 ---
 [TOC]
 

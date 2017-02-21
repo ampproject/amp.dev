@@ -1,5 +1,6 @@
 ---
 $title: AMP Performansı Nasıl Arttırılır
+toc: true
 ---
 [TOC]
 

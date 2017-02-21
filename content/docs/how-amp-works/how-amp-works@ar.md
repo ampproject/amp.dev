@@ -1,5 +1,6 @@
 ---
 $title: طريقة تسريع AMP للأداء
+toc: true
 ---
 [TOC]
 

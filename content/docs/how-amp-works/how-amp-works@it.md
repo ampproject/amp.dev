@@ -1,5 +1,6 @@
 ---
 $title: Il metodo di AMP per ottimizzare le prestazioni
+toc: true
 ---
 [TOC]
 

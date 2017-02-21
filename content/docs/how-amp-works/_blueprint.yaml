@@ -1,0 +1,16 @@
+$title@: How AMP Works
+$path: /docs/how-amp-works/{base}.html
+$view: /views/doc.html
+$localization:
+  path: /{locale}/docs/how-amp-works/{base}.html
+index_path: /content/docs/how-amp-works/how-amp-works.md
+
+navigation:
+  prev:
+    section: true
+    title@: Contribute
+    href: /content/docs/contribute/contribute.md
+  next:
+    section: true
+    title@: Guides
+    href: /content/docs/guides/author_develop/responsive_amp.md

@@ -4,6 +4,7 @@ $order: 1
 $hidden: true
 components:
   - youtube
+toc: true
 ---
 [TOC]
 

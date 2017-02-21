@@ -1,5 +1,6 @@
 ---
 $title: Zwiększanie wydajności przez AMP
+toc: true
 ---
 [TOC]
 

@@ -15,6 +15,8 @@ menu:
     copy@: Docs
     collection: docs
     children:
+      - href: /content/docs/how-amp-works/how-amp-works.md
+        copy@: "How AMP Works"
       - href: /content/docs/get_started/general/create.md
         copy@: "Getting started"
       - href: /content/docs/get_started/general/create.md
