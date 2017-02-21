@@ -264,7 +264,10 @@
   @include max-screen($mobile-breakpoint) {
     border: none;
     border-bottom: 3px solid $color-grey-lt;
-    margin: 0 -25px;
+    display: block;
+    margin: 0 -22px;
+    padding: 0 22px;
+    position: static;
     width: 100%;
 
     .current-header {
@@ -282,6 +285,7 @@
     }
 
     .current-sections {
+      height: auto;
       padding: 5px 20px 30px;
     }
 
@@ -309,5 +313,10 @@
 
   .cta-line.left {
     display: none;
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    border: 0;
+    margin-left: 0;
   }
 }
