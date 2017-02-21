@@ -6,7 +6,7 @@ upcoming:
   label@: Upcoming Events
   empty_icon: /static/img/latest/events/event_empty.svg
   empty_title@: Stay Tuned!
-  empty_text@: There are no upcomming events at this time. We host events throughout the year including our annual AMP Conference. Follow us on <a href="" target="_blank">Facebook</a> or <a href="https://twitter.com/amphtml" target="_blank">Twitter</a> for the latest news and event listings. 
+  empty_text@: There are no upcomming events at this time. We host events throughout the year including our annual AMP Conference. Follow us on <a href="" target="_blank">Facebook</a> or <a href="https://twitter.com/amphtml" target="_blank">Twitter</a> for the latest news and event listings.
 
 past:
   label@: Past Events
@@ -14,76 +14,94 @@ past:
 
 upcoming_events:
   - type: Event
-    title: Teads brings AMP’d mobile video inventory to premium publishers Teads brings AMP’d mobile video inventory to premium publishers Teads brings AMP’d mobile video inventory to premium publishers
-    href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across. We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across. We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across.
-    date: October 25, 2016
-    event_time: 20160604T050000Z/20160604T060000Z
-    event_time_text: Jun.4 at 8:00PM
+    title: Mobile + Web Devcon
+    href: https://followup.cc/l/10384552/061a51652dd99cea3c8b861d6f50c6c0/http%3A%2F%2Fmobilewebdevconference.com%2F
+    excerpt: "AMP + Progressive Web Apps: Start fast, stay engaged - Chen Shay"
+    date: March 3, 2017
+    event_time: 20170303/20170304
+    event_time_text: Mar. 3
     location: San Francisco
     participant: Developers
   - type: Event
-    title: Teads brings AMP’d mobile video inventory to premium publishers
-    href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
-    date: October 25, 2016
-    event_time: 20160604T050000Z/20160604T060000Z
-    event_time_text: Jun.4 at 8:00PM
-    location: San Francisco
+    title: Online Marketing Rockstars
+    href: https://followup.cc/l/10384552/228814a55de50a6100b8c2c174df9eb6/http%3A%2F%2Fwww.onlinemarketingrockstars.de%2Ffestival%2Fen%2Fconference%2F
+    excerpt: A Faster Mobile Web - Malte Ubl
+    date: March 2, 2017
+    event_time: 20170302/20170304
+    event_time_text: Mar. 2 to Mar. 3
+    location: Hamburg
+    participant: Developers
+  - type: Event
+    title: AMP Conf
+    href: https://www.ampproject.org/amp-conf-2017
+    excerpt: 14 Talks. 5 Panels. Live-streamed.
+    date: March 7, 2017
+    event_time: 20170307/20170309
+    event_time_text: Mar. 7 to Mar. 8
+    location: New York City
+    participant: Developers
+  - type: Event
+    title: Mobile Innovation Summit
+    href: https://followup.cc/l/10384552/38e93950f02bcb8a3fcea3829d5e4ab6/https%3A%2F%2Ftheinnovationenterprise.com%2Fsummits%2Fmobile-innovation-summit-new-york-2017
+    excerpt: "The Accelerated Mobile Pages (AMP) Project: What lies ahead? - Adam Greenberg"
+    date: March 21, 2017
+    event_time: 20170321/20170323
+    event_time_text: Mar. 21 to Mar. 22
+    location: New York City
     participant: Developers
 
-past_events:
-  - type: Event
-    title: Teads1 brings AMP’d mobile video inventory to premium publishers
-    href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
-    date: October 25, 2016
-    event_time: 20160604T050000Z/20160604T060000Z
-    event_time_text: Jun.4 at 8:00PM
-    location: San Francisco
-    participant: Developers
-  - type: Event
-    title: Teads2 brings AMP’d mobile video inventory to premium publishers
-    href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
-    date: October 25, 2016
-    event_time: 20160604T050000Z/20160604T060000Z
-    event_time_text: Jun.4 at 8:00PM
-    location: San Francisco
-    participant: Developers
-  - type: Event
-    title: Teads3 brings AMP’d mobile video inventory to premium publishers
-    href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
-    date: October 25, 2016
-    event_time: 20160604T050000Z/20160604T060000Z
-    event_time_text: Jun.4 at 8:00PM
-    location: San Francisco
-    participant: Developers
-  - type: Event
-    title: Teads4 brings AMP’d mobile video inventory to premium publishers
-    href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
-    date: October 25, 2016
-    event_time: 20160604T050000Z/20160604T060000Z
-    event_time_text: Jun.4 at 8:00PM
-    location: San Francisco
-    participant: Developers
-  - type: Event
-    title: Teads5 brings AMP’d mobile video inventory to premium publishers
-    href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
-    date: October 25, 2016
-    event_time: 20160604T050000Z/20160604T060000Z
-    event_time_text: Jun.4 at 8:00PM
-    location: San Francisco
-    participant: Developers
-  - type: Event
-    title: Teads6 brings AMP’d mobile video inventory to premium publishers
-    href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
-    excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
-    date: October 25, 2016
-    event_time: 20160604T050000Z/20160604T060000Z
-    event_time_text: Jun.4 at 8:00PM
-    location: San Francisco
-    participant: Developers
+# past_events:
+#   - type: Event
+#     title: Teads1 brings AMP’d mobile video inventory to premium publishers
+#     href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+#     excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
+#     date: October 25, 2016
+#     event_time: 20160604T050000Z/20160604T060000Z
+#     event_time_text: Jun.4 at 8:00PM
+#     location: San Francisco
+#     participant: Developers
+#   - type: Event
+#     title: Teads2 brings AMP’d mobile video inventory to premium publishers
+#     href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+#     excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
+#     date: October 25, 2016
+#     event_time: 20160604T050000Z/20160604T060000Z
+#     event_time_text: Jun.4 at 8:00PM
+#     location: San Francisco
+#     participant: Developers
+#   - type: Event
+#     title: Teads3 brings AMP’d mobile video inventory to premium publishers
+#     href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+#     excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
+#     date: October 25, 2016
+#     event_time: 20160604T050000Z/20160604T060000Z
+#     event_time_text: Jun.4 at 8:00PM
+#     location: San Francisco
+#     participant: Developers
+#   - type: Event
+#     title: Teads4 brings AMP’d mobile video inventory to premium publishers
+#     href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+#     excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
+#     date: October 25, 2016
+#     event_time: 20160604T050000Z/20160604T060000Z
+#     event_time_text: Jun.4 at 8:00PM
+#     location: San Francisco
+#     participant: Developers
+#   - type: Event
+#     title: Teads5 brings AMP’d mobile video inventory to premium publishers
+#     href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+#     excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
+#     date: October 25, 2016
+#     event_time: 20160604T050000Z/20160604T060000Z
+#     event_time_text: Jun.4 at 8:00PM
+#     location: San Francisco
+#     participant: Developers
+#   - type: Event
+#     title: Teads6 brings AMP’d mobile video inventory to premium publishers
+#     href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
+#     excerpt: We’ve just published updates to the AMP Roadmap. You can find it on the AMP Project website, and read a summary across...
+#     date: October 25, 2016
+#     event_time: 20160604T050000Z/20160604T060000Z
+#     event_time_text: Jun.4 at 8:00PM
+#     location: San Francisco
+#     participant: Developers

@@ -40,14 +40,17 @@ class: latest-events
     </div>
   {% endif %}
 </section>
-<section class="past">
-  <div class="label">{{_(events.past.label)}}</div>
-  {% for post in events.past_events %}
-    {% if loop.index <= 3 %}
-      {% with past = true, meta = false %}
-        {% include "/views/partials/post-item.html" %}
-      {% endwith %}
-    {% endif %}
-  {% endfor %}
-  <a class="underlined cta" href="{{g.doc('/content/latest/list-past-event.html').url.path}}">{{_(events.past.cta)}}</a>
-</section>
+
+{% if events.past_events %}
+  <section class="past">
+    <div class="label">{{_(events.past.label)}}</div>
+    {% for post in events.past_events %}
+      {% if loop.index <= 3 %}
+        {% with past = true, meta = false %}
+          {% include "/views/partials/post-item.html" %}
+        {% endwith %}
+      {% endif %}
+    {% endfor %}
+    <a class="underlined cta" href="{{g.doc('/content/latest/list-past-event.html').url.path}}">{{_(events.past.cta)}}</a>
+  </section>
+{% endif %}
