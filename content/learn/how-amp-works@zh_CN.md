@@ -1,6 +1,5 @@
 ---
 $title: AMP 如何提升性能
-toc: true
 ---
 [TOC]
 

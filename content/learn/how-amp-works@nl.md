@@ -1,6 +1,5 @@
 ---
 $title: Hoe AMP de prestaties versnelt
-toc: true
 ---
 [TOC]
 

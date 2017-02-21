@@ -1,6 +1,5 @@
 ---
 $title: Como o AMP acelera o desempenho
-toc: true
 ---
 [TOC]
 

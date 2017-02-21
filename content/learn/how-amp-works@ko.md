@@ -1,6 +1,5 @@
 ---
 $title: AMP가 성능을 향상시키는 방식
-toc: true
 ---
 [TOC]
 

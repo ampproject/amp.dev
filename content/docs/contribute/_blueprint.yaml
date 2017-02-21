@@ -12,5 +12,5 @@ navigation:
     href: /content/docs/reference/components.md
   next:
     section: true
-    title@: How AMP Works
-    href: /content/docs/how-amp-works/how-amp-works.md
+    title@: Tutorials
+    href: /content/docs/get_started/general/create.md

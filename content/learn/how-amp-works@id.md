@@ -1,6 +1,5 @@
 ---
 $title: Cara AMP Mempercepat Kinerja
-toc: true
 ---
 [TOC]
 
