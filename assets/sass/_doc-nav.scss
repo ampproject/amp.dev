@@ -1,10 +1,13 @@
 .doc-sidebar {
   border-left: 3px solid $color-grey-lt;
   border-right: 3px solid $color-grey-lt;
-  margin-left: -25px;
-  min-width: 350px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  position: fixed;
+  top: 80px;
   width: 350px;
-  position: relative;
   z-index: 1;
 
   .current-header {
@@ -22,6 +25,9 @@
   }
 
   .current-sections {
+    flex: 1 1 auto;
+    height: 0;
+    overflow: auto;
     padding: 30px;
   }
 
@@ -161,14 +167,9 @@
 
   .navigation {
     background: white;
-    display: flex;
-    margin: 150px 0 0;
-    width: 350px;
-
-    position: fixed;
     border-right: 3px solid $color-grey-lt;
-    bottom: 0;
-    left: 0;
+    display: flex;
+    width: 350px;
 
     .previous, .next {
       @extend %text-base;
@@ -196,7 +197,7 @@
         right: 0;
         top: 0;
         transition: opacity 0.3s;
-        z-index: -1;
+        z-index: 0;
       }
 
       &::after {
@@ -205,6 +206,10 @@
         position: absolute;
         transition: transform 0.3s;
         width: 20px;
+      }
+
+      .navigation-label {
+        z-index: 2;
       }
 
       .subtitle {
@@ -300,7 +305,7 @@
 
 .doc-footer {
   border-left: 3px solid $color-grey-lt;
-  margin-left: 350px;
+  margin-left: 353px;
 
   .cta-line.left {
     display: none;
