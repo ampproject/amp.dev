@@ -1,4 +1,4 @@
-$title: AMP for publishers
+$title: AMP for Publishers
 class: about-who-vertical
 $order: 0
 $parent: /content/learn/who-uses-amp.yaml
@@ -12,6 +12,8 @@ hero:
   hero_img_width: 1079
   hero_img_height: 1316
   triangle_img: hero_triangle.png
+  triangle_img_width: 1424
+  triangle_img_height: 2095
   hero_icon: publishers/publisher_icon_intro.svg
   hero_icon_width: 76
   hero_icon_height: 60

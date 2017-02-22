@@ -19,17 +19,10 @@
         <div class="hero-images">
           <amp-img class="triangle"
               noloading
-              width=1424
-              height=2095
+              width={{doc.hero.triangle_img_width}}
+              height={{doc.hero.triangle_img_height}}
               layout=responsive
               src="/static/img/about/who-use-amp/{{doc.hero.triangle_img}}">
-          </amp-img>
-          <amp-img class="phones"
-              noloading
-              width={{doc.hero.hero_img_width}}
-              height={{doc.hero.hero_img_height}}
-              layout=responsive
-              src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
           </amp-img>
           <amp-img class="lines"
               noloading
@@ -37,6 +30,13 @@
               height={{doc.hero.lines_img_height}}
               layout=responsive
               src="/static/img/about/who-use-amp/{{doc.hero.lines_img}}">
+          </amp-img>
+          <amp-img class="phones"
+              noloading
+              width={{doc.hero.hero_img_width}}
+              height={{doc.hero.hero_img_height}}
+              layout=responsive
+              src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
           </amp-img>
         </div>
         <p class="label">{{doc.title}}</p>

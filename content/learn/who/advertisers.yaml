@@ -14,7 +14,9 @@ hero:
   hero_img: advertisers/advertiser_phone_wired.png
   hero_img_width: 1742
   hero_img_height: 1622
-  triangle_img: advertisers_bg.png
+  triangle_img: advertisers/advertisers_bg.svg
+  triangle_img_width: 622.5
+  triangle_img_height: 973
   lines_img: advertisers/advertisers_lines.svg
   lines_img_width: 640
   lines_img_height: 619

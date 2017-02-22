@@ -178,6 +178,86 @@ body.about-who-vertical {
     }
   }
 
+  .about-who-block.adtech {
+    &::before {
+      display: block;
+    }
+
+    .hero {
+      text-align: center;
+
+      .hero-images {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+
+        .lines {
+          bottom: 10%;
+          height: 260px;
+          left: -9%;
+          position: absolute;
+          width: 410px;
+        }
+      }
+
+      amp-img, .title, .paragraph, .example-users {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+      }
+
+      .paragraph {
+        max-width: 700px;
+      }
+    }
+
+    .case-study {
+      position: relative;
+
+      .lines {
+        height: 260px;
+        position: absolute;
+        right: -17%;
+        top: -35%;
+        width: 410px;
+      }
+    }
+  }
+
+  .about-who-block.advertisers {
+    .hero {
+      padding-left: 60%;
+      width: 35%
+    }
+
+    .hero-images {
+      left: auto;
+      top: 30px;
+      bottom: 0;
+      right: 1440px;
+      z-index: -1;
+
+      .triangle {
+        left: calc((1440px - 100vw)/2);
+      }
+
+      .phones {
+        left: -200px;
+        top: -80px;
+        width: 1100px;
+      }
+
+      .lines {
+        height: 619px;
+        left: 200px;
+        position: absolute;
+        top: 50px;
+        width: 640px;
+      }
+    }
+  }
+
   @include max-screen($mobile-breakpoint) {
     nav.breadcrumb li,
     nav.breadcrumb a {
@@ -292,6 +372,13 @@ body.about-who-vertical {
     .case-study {
       padding: 0 0 50px 0;
     }
+
+    .about-who-block.advertisers {
+      .hero {
+        padding-left: 0;
+        width: auto;
+      }
+    }
   }
 
   @include max-screen($tablet-portrait-breakpoint) {
@@ -331,51 +418,11 @@ body.about-who-vertical {
         display: none;
       }
     }
-  }
 
-  .about-who-block.adtech {
-    &::before {
-      display: block;
-    }
-
-    .hero {
-      text-align: center;
-
-      .hero-images {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-
-        .lines {
-          bottom: 10%;
-          height: 260px;
-          left: -9%;
-          position: absolute;
-          width: 410px;
-        }
-      }
-
-      amp-img, .title, .paragraph, .example-users {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 800px;
-      }
-
-      .paragraph {
-        max-width: 700px;
-      }
-    }
-
-    .case-study {
-      position: relative;
-
-      .lines {
-        height: 260px;
-        position: absolute;
-        right: -17%;
-        top: -35%;
-        width: 410px;
+    .about-who-block.advertisers {
+      .hero {
+        padding-left: 0;
+        width: auto;
       }
     }
   }
