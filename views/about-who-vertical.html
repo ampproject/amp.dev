@@ -31,6 +31,13 @@
               layout=responsive
               src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
           </amp-img>
+          <amp-img class="lines"
+              noloading
+              width={{doc.hero.lines_img_width}}
+              height={{doc.hero.lines_img_height}}
+              layout=responsive
+              src="/static/img/about/who-use-amp/{{doc.hero.lines_img}}">
+          </amp-img>
         </div>
         <p class="label">{{doc.title}}</p>
         <h1 class="title">{{_(doc.hero.title)}}</h1>
@@ -109,6 +116,16 @@
           </div>
         {% endfor %}
         </amp-carousel>
+
+        {% if doc.case.lines_img %}
+          <amp-img class="lines"
+              noloading
+              width={{doc.case.lines_img_width}}
+              height={{doc.case.lines_img_height}}
+              layout=responsive
+              src="/static/img/about/who-use-amp/{{doc.case.lines_img}}">
+          </amp-img>
+        {% endif %}
       </section>
       {% endif %}
     </div>

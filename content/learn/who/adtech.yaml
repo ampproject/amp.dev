@@ -11,6 +11,9 @@ hero:
   hero_icon: adtech/adtech_icon_intro.svg
   hero_icon_width: 76
   hero_icon_height: 60
+  lines_img: adtech/lines.svg
+  lines_img_width: 410
+  lines_img_height: 260
 
   users:
     - name: Sharethrough
@@ -57,6 +60,9 @@ case:
   cases:
     - filename: teads.md
     - filename: plista.md
+  lines_img: adtech/lines.svg
+  lines_img_width: 410
+  lines_img_height: 260
 
 cta:
   title@: Get Started Building

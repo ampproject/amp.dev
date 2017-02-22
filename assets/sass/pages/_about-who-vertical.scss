@@ -4,17 +4,25 @@ body.about-who-vertical {
     position: relative;
     overflow: hidden;
 
-    &::after {
+    &::before, &::after {
       background: $gradient-med-faded;
       content: '';
-      display: block;
+      display: none;
       height: 2000px;
       left: 0;
       position: absolute;
       width: 100%;
-      bottom: -2200px;
       transform: skewY(-36deg);
       transform-origin: top left;
+    }
+
+    &::before {
+      top: -1600px;
+    }
+
+    &::after {
+      bottom: -2200px;
+      display: block;
     }
 
     a {
@@ -317,11 +325,36 @@ body.about-who-vertical {
     .hero .hero-images .phones {
       right: -250px;
     }
+
+    .about-who-block.adtech {
+      .lines {
+        display: none;
+      }
+    }
   }
 
   .about-who-block.adtech {
+    &::before {
+      display: block;
+    }
+
     .hero {
       text-align: center;
+
+      .hero-images {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+
+        .lines {
+          bottom: 10%;
+          height: 260px;
+          left: -9%;
+          position: absolute;
+          width: 410px;
+        }
+      }
 
       amp-img, .title, .paragraph, .example-users {
         margin-left: auto;
@@ -331,6 +364,18 @@ body.about-who-vertical {
 
       .paragraph {
         max-width: 700px;
+      }
+    }
+
+    .case-study {
+      position: relative;
+
+      .lines {
+        height: 260px;
+        position: absolute;
+        right: -17%;
+        top: -35%;
+        width: 410px;
       }
     }
   }
