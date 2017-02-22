@@ -29,15 +29,17 @@ hero:
       logo_height: 33
       class: globo
 
-    - name: Rakuten
-      logo: publishers/user_logo_3.png
-      logo_width: 267
-      logo_height: 81
+    - name: Washington Post
+      logo: publishers/wapo_logo.png
+      logo_width: 1280
+      logo_height: 197
+      class: wapo
 
-    - name: Relay Media
-      logo: publishers/user_logo_4.png
-      logo_width: 271
-      logo_height: 81
+    - name: Wired
+      logo: publishers/wired_logo.png
+      logo_width: 1298
+      logo_height: 263
+      class: wired
 
 why:
   title@: How AMP can help publishers

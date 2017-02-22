@@ -19,7 +19,7 @@ body {
   padding-top: 80px;
 
   @include max-screen($mobile-breakpoint) {
-    padding-top: 66px;
+    padding-top: 60px;
   }
 }
 

@@ -92,6 +92,14 @@ body.about-who-vertical {
           flex: 0 0 10%;
         }
 
+        &.wapo {
+          flex: 0 0 22%;
+        }
+
+        &.wired {
+          flex: 0 0 14%;
+        }
+
         &.sharethrough {
           flex: 0 0 28%;
           position: relative;
@@ -231,18 +239,22 @@ body.about-who-vertical {
 
     .why-use {
       padding: 20px 0 40px 0;
+
       h3 {
         margin-bottom: 15px;
       }
+
       .reasons.mobile {
         display: block;
         width: 106%;
         position: relative;
         left: -3%;
+
         .card-container {
           padding: 0;
           justify-content: center;
         }
+
         .reason {
           padding: 20px;
           flex: 0 0 94%;
@@ -250,10 +262,12 @@ body.about-who-vertical {
           display: flex;
           flex-direction: column;
           justify-content: center;
+
           h4 {
             padding-right: 10px;
 
           }
+
           p {
             display: inline-block;
             max-width: 400px;
@@ -283,14 +297,25 @@ body.about-who-vertical {
         width: 106%;
         position: relative;
         left: -3%;
+
         .card-container {
           padding: 0;
           justify-content: center;
         }
+
         .card {
           flex: 0 0 94%;
         }
       }
+    }
+
+    .example-users {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero .hero-images .phones {
+      right: -250px;
     }
   }
 
