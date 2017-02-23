@@ -57,6 +57,10 @@ speakers:
     company: Cloudflare
     pic: /static/img/amp-conf/speakers/matthew.jpg
     bio: Matthew Prince is co-founder and CEO of CloudFlare. CloudFlare’s mission is to help build a better Internet. Before CloudFlare, he co-founded Unspam Technologies, an anti-spam startup where he continues to serve as Chairman. Since then, Matthew has been an adjunct professor of law at the John Marshall Law School and co-creator of Project Honey Pot, the largest open source community tracking online fraud and abuse. He is a World Economic Forum Technology Pioneer, winner of the 2011 Tech Fellow Award, and serves on the Board of Advisors for the Center for Information Technology and Privacy Law. Matthew holds an MBA from Harvard Business School where he was a George F. Baker Scholar and awarded the Dubliner Prize for Entrepreneurship. He is a member of the Illinois Bar, and earned his J.D. from the University of Chicago and B.A. from Trinity College.
+  daneknecht:
+    name: Dane Knecht
+    company: Cloudflare
+    pic: /static/img/amp-conf/speakers/dane.jpg
   sammeder:
     name: Sam Meder
     company: Pinterest
@@ -65,7 +69,7 @@ speakers:
   vadimantonov:
     name: Vadim Antonov
     company: Pinterest
-    pic:
+    pic: /static/img/amp-conf/speakers/vadim.jpg
     bio: Vadim Antonov is a Tech Lead for the User Acquisition team at Pinterest. Previously, he worked on search at Bing & Yandex, including work on crawling, index quality, query rewriting and ranking.
   beckcronindixon:
     name: Beck Cronin-Dixon
@@ -294,6 +298,7 @@ agenda:
       speakers:
        - marcelodebarros
        - zackhendlin
+       - daneknecht
       description: Meet the platforms that embed and distribute AMP pages, and learn about their unique challenges, future ideas and more. Featuring an all-star lineup that includes Bing, LinkedIn, Google and more to be announced.
     - title: Lunch (with the AMP team!)
       time: "1230"
@@ -321,10 +326,9 @@ agenda:
         - yaminigupta
         - vamseejasti
       workshops:
-        - title: "Monetize, analyze and distribute: Successful AMP pages"
+        - title: "Build and contribute your first AMP Component"
           speakers:
-            - vamseejasti
-            - yaminigupta
+            - chenshay
         - title: "Beautiful, interactive, canonical: Pick three"
           speakers:
             - sebastianbenz
