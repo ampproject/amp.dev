@@ -32,8 +32,8 @@ components:
       <div class="phone">
         <amp-img
             noloading
-            height=989
-            width=684
+            height=1423
+            width=1200
             layout=responsive
             src="{{home.hero.phone_img}}">
         </amp-img>
@@ -147,7 +147,6 @@ components:
   <div class="experience-content">
     <h1>{{_(home.experience.title)}}</h1>
     <p>{{_(home.experience.content)}}</p>
-    <a href="{{g.doc(home.experience.cta_url).url.path}}" class="underlined cta">{{_(home.experience.cta)}}</a>
   </div>
 
   <div class="experience-image">
@@ -163,8 +162,8 @@ components:
     <div class="lines">
       <amp-img
           noloading
-          height=1907
-          width=1563
+          height=956
+          width=781
           layout=responsive
           src="{{home.experience.lines_img}}">
       </amp-img>
@@ -172,8 +171,8 @@ components:
     <div class="phone">
       <amp-img
           noloading
-          height=1279
-          width=890
+          height=1316
+          width=1079
           layout=responsive
           src="{{home.experience.phone_img}}">
       </amp-img>
@@ -193,15 +192,15 @@ components:
 
           <div class="card-container">
           {% for card in home.success_stories.cards %}
-            <a class="card centered" href="{{g.doc(card.url).url.path}}">
+            <a class="card centered {{card.class}}" href="{{g.doc(card.url).url.path}}">
               <div class="card-inner">
                 <div class="card-content">
-                  <h2>{{_(card.quote)}}</h2>
+                  <p>{{_(card.quote)}}</p>
                 </div>
                 <amp-img class="card-icon"
                     noloading
-                    height=500
-                    width=500
+                    height="{{card.img_height}}"
+                    width="{{card.img_width}}"
                     layout=responsive
                     src="{{card.img}}">
                 </amp-img>
@@ -254,15 +253,15 @@ components:
 <section class="create">
   <amp-img class="create-lines left desktop-up"
       noloading
-      height=755
-      width=719
+      height=377
+      width=360
       layout=responsive
       src="{{home.create.lines_img}}">
   </amp-img>
   <amp-img class="create-lines right desktop-up"
       noloading
-      height=755
-      width=719
+      height=377
+      width=360
       layout=responsive
       src="{{home.create.lines_img}}">
   </amp-img>

@@ -16,6 +16,7 @@
 
     .intro {
       color: $color-black;
+      font-size: 16px;
       margin: 0;
       padding-bottom: 30px;
       max-width: 500px;
@@ -44,13 +45,15 @@
 
     .lines {
       position: relative;
+      top: 50px;
       width: 700px;
     }
 
     .phone {
       position: absolute;
-      left: -50px;
-      top: -30px;
+      left: -225px;
+      top: 70px;
+      transform: scale(1.2);
       width: 700px;
     }
   }
@@ -109,24 +112,25 @@
     .benefits-row {
       display: flex;
       justify-content: center;
-      margin-top: 130px;
+      margin-top: 80px;
     }
 
     .benefit {
-      margin: 0 50px;
+      margin: 0 80px;
       min-width: 0;
       white-space: nowrap;
 
       &:nth-child(2) .benefit-image {
-        width: 125px;
+        width: 80px;
       }
     }
 
     .benefit-image {
       display: inline-block;
+      margin-right: 15px;
       position: relative;
-      top: -50px;
-      width: 150px;
+      top: 0;
+      width: 65px;
 
       @include max-screen($mobile-medium-breakpoint) {
         display: block;
@@ -138,10 +142,11 @@
       display: inline-block;
       position: relative;
       vertical-align: top;
+      white-space: normal;
       width: 300px;
 
       .desc {
-        white-space: normal;
+        font-size: 16px;
       }
     }
   }
@@ -184,7 +189,8 @@
       .phone {
         left: 30%;
         position: absolute;
-        top: 15%;
+        top: 24%;
+        transform: scale(1.1);
         width: 610px;
       }
     }
@@ -204,6 +210,18 @@
 
     .card {
       display: block;
+
+      &.wapo .card-icon {
+        width: 220px;
+      }
+
+      &.wired .card-icon {
+        width: 150px;
+      }
+
+      &.teads .card-icon {
+        width: 100px;
+      }
     }
 
     .card-inner {
@@ -212,20 +230,20 @@
 
     .card-content {
       flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
       position: relative;
 
-      h2 {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
+      p {
+        color: $color-black-95;
+        font-size: 18px;
       }
     }
 
     .card-icon {
-      height: 75px;
-      margin: 0 auto;
-      width: 75px;
+      margin: 0 auto 30px;
     }
   }
 
@@ -254,7 +272,7 @@
     h1 {
       color: $color-white;
       margin: 0 auto 50px;
-      max-width: 500px;
+      max-width: 550px;
     }
   }
 

@@ -1,65 +1,60 @@
 hero:
-  title@: Instant, Everywhere.
-  content@: The Accelerated Mobile Pages (AMP) Project is an open source initiative to make the web better for all. AMP pages are optimized for speed, distributing content instantly, everywhere.
+  title@: Building the future web, together.
+  content@: The AMP Project is an open-source initiative aiming to make the web better for all. The project enables the creation of websites and ads that are consistently fast, beautiful and high-performing across devices and distribution platforms.
   cta@: Learn about AMP
-  cta_url: /content/learn/about-amp.md
+  cta_url: /content/learn/overview.yaml
   secondary_cta@: Start Building
-  secondary_cta_url: /content/learn/about-amp.md
-  phone_img: /static/img/home/phone_hero.png
-  lines_img: /static/img/home/lines_hero.png
+  secondary_cta_url: /content/docs/get_started/general/create.md
+  phone_img: /static/img/home/home_hero_phone.png
+  lines_img: /static/img/home/lines1.svg
   carousel_title@: The Latest
 
 benefits:
   title@: What AMP Provides
   cards:
-    - title@: Speed
-      content@: AMP pages are consistently fast and responsive. When served from the Google AMP Cache, AMP pages load in less than 1 second on average.
-      img: /static/img/home/icon2.png
-      img_width: 263
-      img_height: 243
+    - title@: Higher Performance and Engagement
+      content@: Web pages and ads published in the AMP open-source format load near instantly, giving users a smooth, more engaging experience on mobile and desktop.
+      img: /static/img/home/home_icon_performance.svg
+      img_width: 56
+      img_height: 103
 
-    - title@: Distribution
-      content@: Publishing once in the AMP format pushes your content across the growing number of platforms which link to AMP pages.
-      img: /static/img/home/icon1.png
-      img_width: 223
-      img_height: 259
+    - title@: Flexibility and Results
+      content@: Publishers and advertisers can decide how to present their content and what technology vendors to use, all while maintaining and improving key performance indicators.
+      img: /static/img/home/home_icon_flexibility.svg
+      img_width: 77
+      img_height: 92
 
 experience:
-  title@: Seamless User Experience
-  content@: For many, reading on the mobile web is a slow, clunky and frustrating experience. The AMP format however ensures pages load near instantaneously, giving users an engaging and content-rich experience. No more unexpected page jumps, or waiting for a page to load.
+  title@: A collaborative effort
+  content@: AMP is built thanks to a deep collaboration with thousands of developers, publishers and websites, distribution platforms and tech companies. More than 1.5B AMP pages have been published to date and 100+ leading analytics, ad tech and CMS providers support the AMP format.
   bg_img: /static/img/home/bg_experience.png
-  phone_img: /static/img/home/phone_experience.png
-  lines_img: /static/img/home/lines_experience.png
-  cta@: Learn more
-  cta_url: /content/learn/about-amp.md
+  phone_img: /static/img/home/home_phone_ebay.png
+  lines_img: /static/img/home/lines2.svg
 
 success_stories:
-  title@: Many partners are seeing success with AMP pages.
+  title@: A path to success
   cards:
-    - quote@: “test quote”
-      img: /static/img/publishers/abril.png
-      url@: /content/learn/case-studies/gizmodo.md
-    - quote@: “test quote”
-      img: /static/img/publishers/abril.png
-      url@: /content/learn/case-studies/gizmodo.md
-    - quote@: “test quote”
-      img: /static/img/publishers/abril.png
-      url@: /content/learn/case-studies/gizmodo.md
-    - quote@: “test quote”
-      img: /static/img/publishers/abril.png
-      url@: /content/learn/case-studies/gizmodo.md
-    - quote@: “test quote”
-      img: /static/img/publishers/abril.png
-      url@: /content/learn/case-studies/gizmodo.md
-    - quote@: “test quote”
-      img: /static/img/publishers/abril.png
-      url@: /content/learn/case-studies/gizmodo.md
-    - quote@: “test quote”
-      img: /static/img/publishers/abril.png
-      url@: /content/learn/case-studies/gizmodo.md
+    - quote@: “If our site takes a long time to load, it doesn’t matter how great our journalism is, some people will leave the page before they see what’s there.”
+      img: /static/img/home/wapo_logo.png
+      img_height: 197
+      img_width: 1280
+      url@: /content/learn/case-studies/wapo.md
+      class: wapo
+    - quote@: “We see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
+      img_height: 263
+      img_width: 1298
+      img: /static/img/home/wired_logo.png
+      url@: /content/learn/case-studies/wired.md
+      class: wired
+    - quote@: “Across Teads’ publisher portfolio, video ads perform significantly better on AMP pages than on the traditional mobile web.”
+      img_height: 28
+      img_width: 75
+      img: /static/img/home/teads_logo.svg
+      url@: /content/learn/case-studies/teads.md
+      class: teads
 
 create:
-  title@: Create your first AMP page in minutes
+  title@: Learn how to build AMP pages and AMP Ads
   cta@: Start Building
-  cta_url: /content/learn/about-amp.md
-  lines_img: /static/img/home/lines_bottom.png
+  cta_url: /content/docs/get_started/general/create.md
+  lines_img: /static/img/home/lines3.svg
