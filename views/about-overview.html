@@ -8,67 +8,6 @@
   {{ navmarkup|safe }}
   <div class="container xl about-overview-block">
     <section class="hero">
-      <amp-img class="triangle"
-          noloading
-          height=1575
-          width=1076
-          layout=responsive
-          src="/static/img/about/overview/{{doc.hero.triangle_img}}">
-      </amp-img>
-      <amp-img class="lines"
-          noloading
-          height=312
-          width=359
-          layout=responsive
-          src="/static/img/about/overview/{{doc.hero.line_img}}">
-      </amp-img>
-      <h1>{{_(doc.hero.title)}}</h1>
-      <div class="card-container grid features features-desktop">
-        {% for card in doc.hero.cards %}
-          <a class="card" href="{{card.link_href}}">
-            <div class="card-content">
-              <div>
-                <amp-img
-                    noloading
-                    height=120
-                    layout=fixed-height
-                    src="/static/img/about/overview/{{card.icon}}">
-                </amp-img>
-                <h3>{{_(card.title)}}</h3>
-                <p class="small">{{_(card.content)}}</p>
-              </div>
-              <div class="card-link"><p class="text-label">{{_(card.link_text)}}</p></div>
-            </div>
-          </a>
-        {% endfor %}
-      </div>
-      <div class="features features-mobile">
-        <amp-carousel class="latest-carousel"
-            height="570"
-            layout="fixed-height"
-            type="slides">
-        {% for card in doc.hero.cards %}
-          <div class="card-container">
-            <a class="card" href="{{card.link_href}}">
-              <div class="card-content">
-                <amp-img
-                    noloading
-                    height=120
-                    layout=fixed-height
-                    src="/static/img/about/overview/{{card.icon}}">
-                </amp-img>
-                <h3>{{_(card.title)}}</h3>
-                <p class="small">{{_(card.content)}}</p>
-                <div class="card-link"><p class="text-label">{{_(card.link_text)}}</p></div>
-              </div>
-            </a>
-          </div>
-        {% endfor %}
-        </amp-carousel>
-      </div>
-    </section>
-
-    <section class="how-amp-work">
       <div class="images">
         <amp-img class="triangle"
             noloading
@@ -82,80 +21,27 @@
             height=692
             width=663
             layout=responsive
-            src="/static/img/about/overview/{{doc.how.line_img}}">
+            src="/static/img/about/overview/{{doc.hero.line_img}}">
         </amp-img>
         <amp-img class="phone"
             noloading
             height=1148
             width=1112
             layout=responsive
-            src="/static/img/about/overview/{{doc.how.phone_img}}">
+            src="/static/img/about/overview/{{doc.hero.phone_img}}">
         </amp-img>
       </div>
       <div class="text">
-        <h2 class="h1">{{_(doc.how.title)}}</h2>
-        <p>{{_(doc.how.subtitle)}}</p>
-        <div class="how-amp-points">
-        {% for point in doc.how.points %}
-          <div class="point">
-            <p class="text-label">{{_(point.title)}}</p>
-            <p class="small">{{_(point.content)}}</p>
-          </div>
-        {% endfor %}
-        </div>
+        <h1>{{_(doc.hero.title)}}</h1>
       </div>
     </section>
 
-    <section class="whos-involved">
-      <h2 class="h1">{{_(doc.who.title)}}</h2>
-      <p class="involved-text">{{_(doc.who.subtitle)}}</p>
-      <amp-img class="involved-image"
-          noloading
-          height=883
-          width=1109
-          layout=responsive
-          src="/static/img/about/overview/{{doc.who.image}}">
-      </amp-img>
-      <div class="github-link"><a class="underlined cta" target="_blank" href="{{doc.who.cta_link}}">{{_(doc.who.cta)}}</a></div>
-      <div class="systems">
-        <p class="systems-title">{{_(doc.systems.title)}}</p>
-        <div class="card-container desktop">
-        {% for icon in doc.systems.icons %}
-          <div class="card">
-            <amp-img
-                noloading
-                width={{icon.width}}
-                height={{icon.height}}
-                layout=responsive
-                src="/static/img/about/overview/{{icon.icon}}">
-            </amp-img>
-          </div>
-        {% endfor %}
-        </div>
-        <div class="mobile">
-          <amp-carousel class="latest-carousel"
-              height="270"
-              layout="fixed-height"
-              type="slides">
-          {% for icon in doc.systems.icons %}
-            <div class="card-container">
-              <div class="card">
-                <div class="icon">
-                  <amp-img
-                      noloading
-                      width={{icon.width}}
-                      height={{icon.height}}
-                      layout=responsive
-                      src="/static/img/about/overview/{{icon.icon}}">
-                  </amp-img>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-          </amp-carousel>
-        </div>
-        <div class="all-systems-link"><a class="underlined cta" href="{{doc.systems.cta_link}}">{{_(doc.systems.cta)}}</a></div>
-      </div>
+    <section class="core">
+      {% for component in doc.core.components %}
+        <h3>{{_(component.title)}}</h3>
+        <div class="subtitle">{{_(component.subtitle)|markdown|safe}}</div>
+        <div class="description">{{_(component.description)|markdown|safe}}</div>
+      {% endfor %}
     </section>
   </div>
 
