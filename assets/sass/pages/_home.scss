@@ -51,7 +51,7 @@
 
     .phone {
       position: absolute;
-      left: -225px;
+      left: -30%;
       top: 70px;
       transform: scale(1.2);
       width: 700px;
@@ -309,7 +309,7 @@
     }
 
     .hero-image {
-      margin: 60px auto;
+      margin: 0 auto;
       max-width: 500px;
       order: 2;
       transform: none;
@@ -367,6 +367,13 @@
 
       .card {
         flex-basis: 100%;
+      }
+
+      .card-content {
+        h2 {
+          font-size: 20px;
+          line-height: 1.5;
+        }
       }
     }
 

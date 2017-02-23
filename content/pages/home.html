@@ -228,15 +228,15 @@ components:
 
           {% for card in home.success_stories.cards %}
           <div class="card-container">
-            <div class="card centered">
+            <div class="card centered {{card.class}}">
               <div class="card-inner">
                 <div class="card-content">
                   <h2>{{_(card.quote)}}</h2>
                 </div>
                 <amp-img class="card-icon"
                     noloading
-                    height=500
-                    width=500
+                    height="{{card.img_height}}"
+                    width="{{card.img_width}}"
                     layout=responsive
                     src="{{card.img}}">
                 </amp-img>
