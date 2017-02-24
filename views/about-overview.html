@@ -6,6 +6,7 @@
 
 {% block main %}
   {{ navmarkup|safe }}
+
   <div class="container xl about-overview-block">
     <section class="hero">
       <div class="images">
@@ -33,16 +34,44 @@
       </div>
       <div class="text">
         <h1>{{_(doc.hero.title)}}</h1>
+        <a class="button button--arrow" href="{{doc.hero.cta_url}}">
+          {{_(doc.hero.cta)}}
+        </a>
+
       </div>
     </section>
 
     <section class="core">
-      {% for component in doc.core.components %}
-        <h3>{{_(component.title)}}</h3>
-        <div class="subtitle">{{_(component.subtitle)|markdown|safe}}</div>
-        <div class="description">{{_(component.description)|markdown|safe}}</div>
-      {% endfor %}
+      <amp-accordion>
+        {% for component in doc.core.components %}
+          <section>
+            <header>
+              <h3>{{_(component.title)}}</h3>
+              <div class="subtitle">{{_(component.subtitle)|markdown|safe}}</div>
+            </header>
+
+            <div class="content">
+              <div class="description">{{_(component.description)|markdown|safe}}</div>
+              {% if component.example %}
+                {% set example = g.doc(component.example, locale=doc.locale) %}
+                {{example.html|safe}}
+              {% endif %}
+              {% if component.description2 %}
+                <div class="description">{{_(component.description2)|markdown|safe}}</div>
+              {% endif %}
+            </div>
+          </section>
+        {% endfor %}
+      </amp-accordion>
     </section>
+  </div>
+
+  <div class="video" id="video">
+    <amp-youtube
+        data-videoid="{{doc.video}}"
+        layout="responsive"
+        width="480" height="270">
+    </amp-youtube>
   </div>
 
   {% with cta = doc.cta %}
