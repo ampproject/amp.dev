@@ -10,8 +10,9 @@ components:
 
 hero:
   title@: AMP provides a great user experience across many platforms
-  triangle_img: hero_triangle.svg
-  line_img: hero_line.svg
+  triangle_img: herobg.svg
+  line1_img: herolines1.svg
+  line2_img: herolines2.svg
   phone_img: what_phone.png
   cta@: Play Video
   cta_url: '#video'
@@ -30,7 +31,7 @@ some HTML tags are replaced with AMP-specific tags (see also
 These custom elements, called AMP HTML components,
 make common patterns easy to implement in a performant way.
 
-For example, the [`amp-img`](/docs/reference/amp-img.html) tag
+<p>For example, the [`amp-img`](/docs/reference/amp-img.html) tag
 provides full `srcset` support even in browsers that don’t support it yet.
 Learn how to [create your first AMP HTML page](/docs/get_started/general/create.html).'
     - title@: AMP JS
@@ -40,11 +41,11 @@ all of [AMP's best performance practices](/docs/get_started/technical_overview.h
 manages resource loading and gives you the custom tags mentioned above,
 all to ensure a fast rendering of your page.
 
-Among the biggest optimizations is the fact that it makes everything that comes from external resources asynchronous, so nothing in the page can block anything from rendering.
+<p>Among the biggest optimizations is the fact that it makes everything that comes from external resources asynchronous, so nothing in the page can block anything from rendering.
 
-Other performance techniques include the sandboxing of all iframes, the pre-calculation of the layout of every element on page before resources are loaded and the disabling of slow CSS selectors.
+<p>Other performance techniques include the sandboxing of all iframes, the pre-calculation of the layout of every element on page before resources are loaded and the disabling of slow CSS selectors.
 
-To learn more about not just the [optimizations](/docs/get_started/technical_overview.html) but the limitations, [read the AMP HTML specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)."
+<p>To learn more about not just the [optimizations](/docs/get_started/technical_overview.html) but the limitations, [read the AMP HTML specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)."
     - title@: AMP Cache
       subtitle@: 'The **Google AMP Cache** can be used to serve cached AMP HTML pages.'
       description@: "The [Google AMP Cache](https://developers.google.com/amp/cache/) is a proxy-based content delivery network
@@ -54,20 +55,23 @@ When using the Google AMP Cache, the document, all JS files and all images load
 from the same origin that is using
 [HTTP 2.0](https://http2.github.io/) for maximum efficiency.
 
-The cache also comes with a built-in
+<p>The cache also comes with a built-in
 [validation system](https://github.com/ampproject/amphtml/tree/master/validator)
 which confirms that the page is guaranteed to work,
 and that it doesn't depend on external resources.
 The validation system runs a series of assertions
 confirming the page’s markup meets the AMP HTML specification.
 
-Another version of the validator comes bundled with every AMP page. This version can log validation errors directly to the browser’s console when the page is rendered,
+<p>Another version of the validator comes bundled with every AMP page. This version can log validation errors directly to the browser’s console when the page is rendered,
 allowing you to see how complex changes in your code
 might impact performance and user experience.
 
-Learn more about [testing your AMP HTML pages](/docs/guides/validate.html)."
+<p>Learn more about [testing your AMP HTML pages](/docs/guides/validate.html)."
 
-video: lBTCB7yLs8Y
+video:
+  id: lBTCB7yLs8Y
+  line1_img: lines3.svg
+  line2_img: line4.svg
 
 cta:
   title@: See what AMP can do for you

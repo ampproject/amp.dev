@@ -168,6 +168,10 @@ a {
 
   &:hover {
     background-color: transparent;
+
+    .arrow {
+      transform: translateX(3px);
+    }
   }
 
   &.light {
@@ -188,6 +192,17 @@ a {
         opacity: 1;
       }
     }
+  }
+
+  .arrow {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid white;
+    display: inline-block;
+    height: 0;
+    margin-left: 8px;
+    transition: transform 0.3s;
+    width: 0;
   }
 }
 

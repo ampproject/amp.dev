@@ -5,16 +5,13 @@
     position: relative;
 
     &::after {
-      background: $gradient-med;
+      background: url(/static/img/about/overview/bg2.svg) bottom left/contain no-repeat;
+      bottom: 0;
       content: '';
-      display: block;
-      height: 2000px;
+      height: 68vw;
       left: 0;
       position: absolute;
-      width: 100%;
-      bottom: 0;
-      transform: skewY(36deg);
-      transform-origin: top left;
+      width: 90vw;
       z-index: -1;
     }
   }
@@ -25,6 +22,7 @@
   }
 
   .hero {
+    margin: 100px 0 300px;
     position: relative;
     padding: 100px 13.3% 140px 13.3%;
 
@@ -40,20 +38,27 @@
       }
 
       .triangle {
-        display: none;
-        left: 0;
-        top: -170px;
+        right: calc((1440px - 100vw)/2);
+        top: -250px;
       }
 
-      .lines {
+      .line1 {
         left: 0;
-        top: 0;
+        top: -10px;
+        width: 583px;
+      }
+
+      .line2 {
+        left: 75%;
+        top: -50px;
+        width: 359px;
       }
 
       .phone {
-        left: -70px;
-        top: 90px;
-        width: 110%;
+        left: -30px;
+        top: 0px;
+        transform: rotate(25deg) scale(1.4);
+        width: 90%;
       }
     }
 
@@ -61,7 +66,8 @@
       width: 510px;
 
       h1 {
-        width: 300px;
+        margin-bottom: 50px;
+        width: 500px;
       }
     }
   }
@@ -87,6 +93,94 @@
           left: 20px;
         }
       }
+    }
+  }
+
+  .core {
+    h2 {
+      margin: 0 auto;
+      max-width: 550px;
+      text-align: center;
+    }
+
+    amp-accordion {
+      border-top: 2px solid #eaeaea;
+      margin: 50px auto;
+      max-width: 800px;
+
+      section {
+        border-bottom: 2px solid #eaeaea;
+        padding: 20px 0 30px;
+
+        &[expanded] {
+          h4::after {
+            opacity: 0;
+          }
+        }
+      }
+
+      header, .core-content {
+        padding: 0 40px;
+      }
+
+      header {
+        background: none;
+        border: 0;
+
+        h4 {
+          color: $color-ampblue;
+          position: relative;
+
+          &::before, &::after {
+            background: $gradient-bold;
+            content: '';
+            left: -30px;
+            height: 2px;
+            position: absolute;
+            top: 15px;
+            width: 10px;
+          }
+
+          &::after {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .core-content {
+        p {
+          margin: 30px 0;
+        }
+
+        .code {
+          margin: 0 -30px;
+        }
+
+        a {
+          font-size: 20px;
+          text-transform: none;
+        }
+      }
+    }
+  }
+
+  .video {
+    margin: 200px auto;
+    position: relative;
+    width: 50%;
+
+    .line1 {
+      position: absolute;
+      left: -32%;
+      top: 9%;
+      width: 563px;
+    }
+
+    .line2 {
+      bottom: -10%;
+      position: absolute;
+      right: -10%;
+      width: 254px;
     }
   }
 
