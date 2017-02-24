@@ -1,6 +1,6 @@
 $title@: Design Principles
 $order: 1
-class: design-principles
+class: design-principles bg-triangle-primary
 $view: /views/design-principles.html
 $parent: /content/learn/overview.yaml
 

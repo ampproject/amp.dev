@@ -166,8 +166,9 @@
 
   .video {
     margin: 200px auto;
+    max-width: 800px;
+    padding: 0 30px;
     position: relative;
-    width: 50%;
 
     .line1 {
       position: absolute;

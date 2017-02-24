@@ -1,26 +1,10 @@
 .design-principles {
-  nav.breadcrumb {
-    li::after, a {
-      color: white;
-    }
-  }
 
   .wrap {
-    overflow: hidden;
-    position: relative;
-
-    &::before, &::after {
+    &::after {
       content: '';
       position: absolute;
       z-index: -1;
-    }
-
-    &::before {
-      background: url(/static/img/about/design-principles/bg1.svg) top right/contain no-repeat;
-      height: 94.3vw;
-      right: 0;
-      top: 0;
-      width: 100vw;
     }
 
     &::after {
@@ -113,11 +97,6 @@
   }
 
   @include max-screen($tablet-portrait-breakpoint) {
-    .wrap::before {
-      height: 188.6vw;
-      width: 200vw;
-    }
-
     .wrap::after {
       height: 270vw;
       width: 150vw;

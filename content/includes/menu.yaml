@@ -5,6 +5,8 @@ menu:
     children:
       - href: /content/learn/overview.html
         copy@: "What is AMP?"
+      - href: /content/learn/about-how.yaml
+        copy@: "How AMP Works"
       - href: /content/learn/amp-design-principles.yaml
         copy@: "Design Principles"
       - href: /content/learn/who-uses-amp.yaml

@@ -1,0 +1,52 @@
+{% extends "/views/base.html" %}
+
+{% set navmarkup %}
+{% include "/views/partials/breadcrumb-nav.html" %}
+{% endset %}
+
+{% block main %}
+  {{ navmarkup|safe }}
+
+  <div class="container xl about-overview-block">
+    <section class="hero">
+      <div class="text">
+        <h1>{{_(doc.hero.title)}}</h1>
+        <p>{{_(doc.hero.subtitle)}}</p>
+      </div>
+    </section>
+
+  <div class="video">
+    <amp-youtube
+        data-videoid="{{doc.video}}"
+        layout="responsive"
+        width="480" height="270">
+    </amp-youtube>
+  </div>
+
+
+    <section class="points">
+        {% for point in doc.points %}
+          <div class="point" {% if point.id %}id="{{point.id}}"{% endif %}>
+            <div class="point-text">
+              <h4>{{_(point.title)}}</h4>
+              <div class="description">
+                {{_(point.description)|markdown|safe}}
+              </div>
+            </div>
+            {% if point.example %}
+              <div class="point-example">
+                {% set example = g.doc(point.example, locale=doc.locale) %}
+                {{example.html|safe}}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+    </section>
+  </div>
+
+  {% with cta = doc.cta %}
+    {% include "/views/partials/footer-cta.html" %}
+  {% endwith %}
+  {% include "/views/partials/footer.html" %}
+
+{% endblock %}

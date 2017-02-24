@@ -1,0 +1,89 @@
+.about-how {
+  .hero {
+    margin: 100px auto;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .video {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 30px;
+    position: relative;
+    z-index: 1;
+
+    amp-youtube {
+      box-shadow: 0px 3px 50px 0 rgba(0, 0, 0, 0.075);
+    }
+  }
+
+  .points {
+    background: white;
+    margin: -350px 0 200px;
+    max-width: 1200px;
+    padding: 450px 100px 100px 100px;
+    position: relative;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      background: url(/static/img/about/how-amp-works/line_behind.svg) center/contain no-repeat;
+      height: 167px;
+      right: -60px;
+      top: -110px;
+      width: 166px;
+    }
+
+    &::after {
+      background: url(/static/img/about/how-amp-works/lines_front.svg) center/contain no-repeat;
+      height: 167px;
+      right: -80px;
+      top: -60px;
+      width: 186px;
+      z-index: 1;
+    }
+  }
+
+  .point {
+    border-bottom: 3px solid #e5f7ff;
+    padding: 30px;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .point-text {
+    align-items: flex-start;
+    display: flex;
+
+    h4, .description {
+      margin: 0 20px;
+      width: 0;
+    }
+
+    h4 {
+      flex: 1 1 auto;
+    }
+
+    .description {
+      flex: 2 1 auto;
+
+      a {
+        font-size: 20px;
+        text-transform: none;
+      }
+
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .point-example {
+    margin: 40px 20px 20px;
+  }
+}
