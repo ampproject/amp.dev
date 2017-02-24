@@ -5,7 +5,7 @@
     position: relative;
 
     &::after {
-      background: $gradient-med-faded;
+      background: $gradient-med;
       content: '';
       display: block;
       height: 2000px;
@@ -15,6 +15,7 @@
       bottom: 0;
       transform: skewY(36deg);
       transform-origin: top left;
+      z-index: -1;
     }
   }
 
@@ -24,94 +25,6 @@
   }
 
   .hero {
-    position: relative;
-    padding: 130px 8% 0 8%;
-    .triangle {
-      position: absolute;
-      right: calc((1440px - 100vw)/2 - 22px);
-      top: 100px;
-      width: 75.6%;
-    }
-
-    .lines {
-      position: absolute;
-      width: 380px;
-      right: 0;
-      top: 186px;
-    }
-
-    h1 {
-      position: relative;
-      max-width: 750px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .features {
-      h3 {
-        margin-top: 25px;
-      }
-
-      .card-content {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
-
-  .features-desktop {
-    margin-top: 60px;
-    flex-wrap: nowrap;
-
-    .card {
-      flex: 0 0 calc(33% - 10px);
-    }
-
-    .card-content {
-      padding: 50px 14%;
-      justify-content: space-between;
-    }
-
-    .card-link {
-      margin-top: 30px;
-    }
-  }
-
-  .features-mobile {
-    margin-top: 20px;
-    display: none;
-
-    .card {
-      flex: 0 0 100%;
-    }
-
-    .card-content {
-      padding: 25px 20px;
-      height: 407px;
-      justify-content: space-around;
-    }
-
-    .card-link {
-      margin-top: 10px;
-    }
-
-    .text-label {
-      position: relative;
-      display: inline-block;
-      &::before {
-        background: $gradient-med;
-        bottom: -5px;
-        content: '';
-        left: 0;
-        height: 2px;
-        position: absolute;
-        right: 0;
-      }
-    }
-  }
-
-  .how-amp-work {
     position: relative;
     padding: 100px 13.3% 140px 13.3%;
 
@@ -147,125 +60,17 @@
     .text {
       width: 510px;
 
-      h2 {
+      h1 {
         width: 300px;
       }
-
-      & > p {
-        width: 80%;
-      }
     }
   }
 
-  .how-amp-points {
-    padding: 20px 0;
-
-    .point {
-      padding: 10px 0 25px 0;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      border-bottom: solid 2px $color-lightgrey;
-
-      &:last-of-type {
-        border-bottom: 0;
-      }
-    }
-
-    .text-label {
-      margin-top: 21px;
-      display: inline-block;
-      width: 120px;
-      color: $color-ampblue;
-    }
-
-    .small {
-      display: inline-block;
-      width: 370px;
-    }
-  }
-
-  .whos-involved {
-    position: relative;
-    padding: 40px 13.3% 140px 13.3%;
-    .involved-image {
-      position: absolute;
-      width: 40.9%;
-      right: 10%;
-      top: 0;
-      margin-bottom: 3px;
-    }
-
-    h2 {
-      width: 350px;
-    }
-
-    .systems {
-      text-align: center;
-    }
-
-    .involved-text {
-      width: 330px;
-    }
-
-    .systems-title {
-      width: 600px;
-      margin: 230px auto 30px auto;
-    }
-
-    .card-container {
-      flex-wrap: wrap;
-      margin-bottom: 50px;
-    }
-
-    .card {
-      &::before {
-        display: none;
-      }
-    }
-
-    .mobile {
-      display: none;
-      .card {
-        flex: 0 0 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .icon {
-        max-width: 400px;
-        flex: 0 0 100%;
-      }
-    }
-  }
 
   @include max-screen($mobile-breakpoint) {
     .hero {
-      padding: 70px 0 0 0;
-
-      .lines {
-        right: -80px;
-        top: 200px;
-      }
-
-      .triangle {
-        display: none;
-      }
-    }
-
-    .features-desktop {
-      display: none;
-    }
-
-    .features-mobile {
-      display: block;
-      position: relative;
-      z-index: 1;
-    }
-
-    .how-amp-work {
       padding: 220px 0 0 0;
+
       .images {
         width: 600px;
         left: unset;
@@ -283,43 +88,10 @@
         }
       }
     }
-
-    .whos-involved {
-      padding: 80px 0 0 0;
-
-      .involved-image {
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-        max-width: 500px;
-        right: 0;
-      }
-
-      h2,
-      .involved-text,
-      .systems-title,
-      .github-link,
-      .all-systems-link {
-        width: 100%;
-        text-align: center;
-      }
-
-      .systems {
-        text-align: left;
-      }
-
-      .all-systems-link {
-        margin-bottom: 100px;
-      }
-
-      .systems-title {
-        margin-top: 130px;
-      }
-    }
   }
 
   @include max-screen($tablet-portrait-breakpoint) {
-    .how-amp-work {
+    .hero {
       padding-top: 480px;
       .text {
         width: 100%;
@@ -328,43 +100,6 @@
         & > p {
           width: 100%;
         }
-      }
-    }
-
-    .how-amp-points {
-      padding: 10px 0;
-
-      .point {
-        padding: 5px 0 20px 0;
-        display: block;
-      }
-
-      .text-label {
-        margin-bottom: 0;
-        display: block;
-        width: 100%;
-      }
-
-      .small {
-        margin-top: 10px;
-        display: block;
-        width: 100%;
-      }
-    }
-
-    .whos-involved {
-      h2,
-      .involved-text,
-      .systems-title {
-        text-align: left;
-      }
-
-      .mobile {
-        display: block;
-      }
-
-      .desktop {
-        display: none;
       }
     }
   }
