@@ -79,6 +79,8 @@ function addCMS() {
   newYaml += `
     - title@: CMS
       section_items:
+        - title: Canvas
+          link: https://www.roya.com/blog/roya-announces-addition-of-amp-to-canvas-cms-amp.html
         - title: Drupal
           link: https://www.drupal.org/project/amp
         - title: Hatena
@@ -96,31 +98,31 @@ function addVideo() {
     - title@: Audio/Video
       section_items:
         - title: AOL O2
-          link:
+          link: http://on.aol.com/
         - title: Beachfront Reach
-          link:
+          link: http://beachfrontreach.com/
         - title: Brid.tv
-          link:
+          link: https://www.brid.tv/
         - title: Brightcove
-          link:
+          link: https://www.brightcove.com/
         - title: Dailymotion
-          link:
+          link: http://www.dailymotion.com/
         - title: Gfycat
-          link:
+          link: https://gfycat.com/
         - title: JW Player
-          link:
+          link: https://www.jwplayer.com/
         - title: Kaltura
-          link:
+          link: https://corp.kaltura.com/
         - title: Soundcloud
-          link:
+          link: https://soundcloud.com/
         - title: Springboard
-          link:
+          link: http://springboardplatform.com/
         - title: Vimeo
-          link:
+          link: https://vimeo.com/
         - title: Vine
-          link:
+          link: https://vine.co/
         - title: YouTube
-          link:`;
+          link: https://www.youtube.com/ `;
 }
 
 // Put them into the right location in the YAML

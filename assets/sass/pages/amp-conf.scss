@@ -5,7 +5,7 @@
 
     a.reserve-button {
         display: inline-block;
-        background: #8BC34A;
+        background: #FFAB00;
         border-radius: 2px;
         padding: 0.5em 1em;
         color: #fff;
@@ -16,7 +16,7 @@
         margin-left: 24px;
         &:hover {
             text-decoration: none;
-            background: #689F38;
+            background: #E69A00;
         }
     }
 
@@ -194,14 +194,11 @@
     }
 
     .days {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -20px;
+
     }
 
     .day {
-        flex: 1 0 50%;
-        padding: 0 20px;
+
         box-sizing: border-box;
         min-width: 300px;
 
@@ -213,42 +210,201 @@
 
     ul.schedule {
         list-style: none;
-        margin-left: -5px;
+        margin-left: 114px;
 
-        li {
+        > li {
             padding: 5px;
-        }
-
-        ul {
-            margin-left: -5px;
-            border: 1px solid #0379C4;
-            list-style: none;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
             position: relative;
-            padding-top: 37px;
-            padding-bottom: 5px;
 
-            &::before {
-                content: attr(data-theme);
-                background: #0379C4;
-                color: #fff;
+            &::after {
+                content: "";
+                display: block;
                 position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                padding: 5px;
-                font-style: italic;
-                font-size: 0.9em;
-                padding-left: 8px;
+                width: 1px;
+                background: #bbb;
+                bottom: 0px;
+                top: 35px;
+                left: 23px;
             }
+
+            div {
+                padding-left: 23px;
+            }
+
+            span.image {
+                display: block;
+                border-radius: 50px;
+                overflow: hidden;
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                top: -30px;
+                left: -115px;
+                background: #eee;
+            }
+
+            span.image.multiple {
+                width: 60px;
+                height: 60px;
+                &:nth-child(even) {
+                    left: -75px;
+                }
+
+                &:nth-child(2) { top: 10px; }
+                &:nth-child(3) { top: 50px; }
+                &:nth-child(4) { top: 90px; }
+                &:nth-child(5) { top: 130px; }
+                &:nth-child(6) { top: 170px; }
+            }
+
+            h5 {
+                font-size: 1em;
+                margin: 0;
+                color: inherit;
+                &::before {
+                    display: none;
+                }
+                &.session {
+                    font-weight: 500;
+                }
+                &.keynote {
+                    font-weight: 500;
+                    color: #0379C4;
+                }
+                &.panel,
+                &.workshop {
+                    font-weight: 500;
+                    color: #FF9800;
+                }
+            }
+
+            p {
+                font-size: 13px;
+                line-height: 1.6em;
+            }
+
         }
 
         time {
-            background: #eee;
-            padding: 5px;
+            position: relative;
             display: inline-block;
             font-family: monospace;
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 12px;
+                height: 1px;
+                background: #bbb;
+                right: -17px;
+                top: 50%;
+            }
         }
 
+        > li.session,
+        > li.keynote {
+            time::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 12px;
+                height: 1px;
+                background: #bbb;
+                left: -17px;
+                top: 50%;
+            }
+        }
+
+        small {
+            display: block;
+            line-height: 1.6em;
+        }
+
+    }
+
+    ul.workshops {
+        list-style: none;
+        display: flex;
+
+        li {
+            flex: 1 1 33%;
+            border-right: 1px solid #ddd;
+            &:nth-child(odd) {
+                background: #f5f5f5;
+            }
+
+            &:last-child {
+                border-right: 0;
+            }
+
+            h6 {
+                font-weight: normal;
+                margin: 0;
+                padding: 1em;
+            }
+        }
+    }
+
+    @include max-screen(500px) {
+        ul.schedule {
+            margin-left: 0;
+            > li span.image {
+                display: none;
+            }
+            > li.session,
+            > li.keynote {
+                time::after {
+                    display: none;
+                }
+            }
+        }
+        ul.workshops {
+            display: block;
+        }
+    }
+
+    ul.speakers {
+        list-style: none;
+
+        li {
+            display: flex;
+            min-height: 100px;
+            margin-bottom: 40px;
+
+            &:nth-child(odd) {
+                flex-direction: row-reverse;
+                .image {
+                    margin-right: 0;
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        h4 {
+
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.6em;
+        }
+
+        .image {
+            border-radius: 25vw;
+            overflow: hidden;
+            display: inline-block;
+            height: 25vw;
+            width: 25vw;
+            max-width: 250px;
+            max-height: 250px;
+            background: #fff;
+            flex-shrink: 0;
+            margin-right: 20px;
+            position: relative;
+        }
     }
 
 }

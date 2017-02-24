@@ -13,6 +13,7 @@ Some elements will even reward you for doing it by relaxing restrictions – for
 The element marked with the `placeholder` attribute acts
 as a placeholder for the parent AMP element.
 If specified, a `placeholder` element must be a direct child of the AMP element.
+An element marked as a `placeholder` will always `fill` the parent AMP element.
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width=466 height=355 layout="responsive">

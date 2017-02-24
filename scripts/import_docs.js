@@ -5,18 +5,22 @@ const fs = require('fs');
 const path = require('path');
 var clientSecret = process.argv[2] || process.env.AMP_DOC_SECRET;
 var clientId = process.argv[3] || process.env.AMP_DOC_ID;
+var clientToken = process.env.AMP_DOC_TOKEN;
 var localPath = process.env.AMP_DOC_LOCAL_PATH;
 var importData = require('./import_docs.json');
 
-if(!clientSecret || !clientId) {
-  console.error("This script requires a github id and app secret to run. Export them in your shell as AMP_DOC_ID and AMP_DOC_SECRET.");
+if(!(clientToken || (clientSecret && clientId))) {
+  console.error("This script reads the reference docs from GitHub which requires providing either a GitHub personal access token (AMP_DOC_TOKEN) or GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET).  See README.md for more information.");
   process.exit(1);
 }
 
-var client = github.client({
-  id: clientId,
-  secret: clientSecret
-});
+var client = github.client(
+    clientToken ||
+	{
+	  id: clientId,
+	  secret: clientSecret
+	});
+
 var ghrepo = client.repo('ampproject/amphtml');
 
 function downloadPage(filePath, callback, headingToStrip) {
@@ -79,7 +83,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
   });
 
   // replace mustache-style code elements
-  content = content.replace(/\`[^\s`]*(\{\{[^`]*\}\})[^`]*\`/g, '{% raw %}`$1`{% endraw %}');
+  content = content.replace(/\`[^\s{`]*(\{\{[^`]*\}\})[^`]*\`/g, '{% raw %}`$1`{% endraw %}');
 
   // horizontal rules like --- will break front matter
   content = content.replace(/\n---\n/gm, '\n- - -\n');

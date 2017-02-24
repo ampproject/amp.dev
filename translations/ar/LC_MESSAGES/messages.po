@@ -8,7 +8,7 @@ msgstr "الإعلانات"
 
 #: /content/includes/who.yaml
 msgid "Analytics"
-msgstr ""
+msgstr "التحليلات"
 
 #: /content/includes/who.yaml
 msgid "Audio/Video"
@@ -16,11 +16,11 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "CMS"
-msgstr ""
+msgstr "نظام إدارة المحتوى"
 
 #: /content/includes/who.yaml
 msgid "Content Platforms"
-msgstr ""
+msgstr "الأنظمة الأساسية للمحتوى"
 
 #: /content/contribute /content/includes/menu.yaml
 msgid "Contribute"
@@ -29,10 +29,6 @@ msgstr ""
 #: /content/docs /content/includes/menu.yaml
 msgid "Docs"
 msgstr "المستندات"
-
-#: /content/docs/guides
-msgid "Documentation"
-msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Examples"
@@ -46,11 +42,10 @@ msgid ""
 "publishers can create mobile optimized content once and have it load "
 "instantly everywhere."
 msgstr ""
-"بالرغم من إتصاف تجربة التصفح بإستعمال الأجهزة المحمولة بالبطء وبعثها "
-"للإزعاجيمكنها أن تكون أفضل. مشروع الصفحات المسارعة على الأجهزة المحمولةأي أم "
-"بي) هو مبادرة مشروع مفتوح المصدر لتحقيق وجهة نظر تنصّ على أن)بإمكان دور النشر"
-" أن تنتج صفحات محسّنة خصيصا للأجهزة المحمولة مرة واحدةلتمكين تحميلها بشكل "
-"فوري في كل مكان."
+"يرى الكثيرون أن القراءة على ويب الجوال تجربة بطيئة وشاقة وتصيب بالإحباط - "
+"لكنها لا يفترض أن تكون هكذا. إن مشروع Accelerated Mobile Pages (AMP) عبارة عن"
+" مبادرة مفتوحة تجسد رؤية تفيد أنه بإمكان الناشرين إنشاء محتوى مُحسّن للجوال "
+"لمرة واحدة وتحميله على الفور وفي كل مكان."
 
 #: /content/includes/home.yaml
 msgid "GET STARTED"
@@ -62,27 +57,31 @@ msgstr " إبدء مع أي أم بي أتش تي أم أل"
 
 #: /content/includes/menu.yaml /content/includes/home.yaml
 msgid "Get started"
-msgstr ""
+msgstr "البدء"
 
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/docs/guides
 msgid "Guides"
-msgstr ""
+msgstr "الأدلة"
 
 #: /content/includes/home.yaml
 msgid ""
 "If you are new to AMP HTML, our technical introduction is a great place to "
 "get started and provides an overview of the project and how AMP HTML works."
 msgstr ""
+"إذا كنت جديدًا في التعامل مع AMP HTML، فإن المقدمة الفنية تمثل نقطة بداية "
+"رائعة حيث إنها تقدم لمحة عامة عن المشروع وآلية عمل AMP HTML."
 
 #: /content/includes/home.yaml
 msgid ""
 "If you'd like to dive deeper into AMP HTML, you can find all of the source "
 "code, code samples, and detailed documentation in our GitHub repository."
 msgstr ""
+"إذا كنت ترغب في التعمق في AMP HTML، يمكنك العثور على كل من شفرة المصدر، "
+"ونماذج للشفرات، ومستندات مفصلة في مستودع GitHub."
 
 #: /content/includes/home.yaml
 msgid "Instant. <br> Everywhere."
-msgstr ""
+msgstr "على الفور <BR> وفي كل مكان"
 
 #: /content/learn
 msgid "Learn"
@@ -98,6 +97,9 @@ msgid ""
 "ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde"
 " exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
 msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure "
+"ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde"
+" exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
 
 #: /content/news
 msgid "News"
@@ -109,7 +111,7 @@ msgstr "الإنفتاح"
 
 #: /content/includes/home.yaml
 msgid "Publisher Control"
-msgstr ""
+msgstr "تحكم الناشر"
 
 #: /content/includes/home.yaml
 msgid "Publishers"
@@ -120,6 +122,8 @@ msgid ""
 "Ready to build an AMP file? This tutorial will teach you how to create a "
 "basic AMP HTML page, stage it, test it, and get it ready for publication."
 msgstr ""
+"هل أنت مستعد لإنشاء ملف AMP؟ سيعلمك هذا البرنامج التعليمي كيفية إنشاء صفحة "
+"HTML AMP أساسية، وتنظيمها واختبارها وتجهيزها للنشر."
 
 #: /content/includes/menu.yaml /content/docs/reference
 msgid "Reference"
@@ -139,7 +143,7 @@ msgstr "تمهيد للتكنلوجيا"
 
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
-msgstr ""
+msgstr "شركات التكنولوجيا التي تستخدم AMP"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -147,10 +151,13 @@ msgid ""
 "embodies the vision that publishers can create mobile optimized content once "
 "and have it load instantly everywhere."
 msgstr ""
+"مشروع Accelerated Mobile Pages (AMP) عبارة عن مبادرة مفتوحة تجسد رؤية تفيد "
+"أنه بإمكان الناشرين إنشاء محتوى مُحسّن للجوال لمرة واحدة وتحميله على الفور "
+"وفي كل مكان."
 
 #: /content/includes/home.yaml
 msgid "Tutorial"
-msgstr ""
+msgstr "البرنامج التعليمي"
 
 #: /content/includes/menu.yaml /content/docs/get_started
 msgid "Tutorials"
@@ -162,11 +169,11 @@ msgstr "تصفح اصل البرنامج"
 
 #: /content/includes/home.yaml
 msgid "Visit Github"
-msgstr ""
+msgstr "الانتقال إلى Github"
 
 #: /content/includes/home.yaml
 msgid "What contributors are saying"
-msgstr ""
+msgstr "ماذا يقول المساهمون"
 
 #: /content/includes/menu.yaml
 msgid "news"

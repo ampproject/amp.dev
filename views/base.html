@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ⚡{% if doc.locale.is_rtl %} dir="rtl" lang="ar"{% endif %}>
+<html ⚡ {% if doc.locale.is_rtl %} dir="rtl" lang="ar"{% else %}lang="{{doc.locale}}"{% endif %}>
 {% include "/views/partials/head.html" %}
 
 <body class="{{doc.class}}{% if doc.locale.is_rtl %} rtl{% endif %}">
