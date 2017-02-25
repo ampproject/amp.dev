@@ -30,20 +30,21 @@
     }
 
     &::before {
-      background: url(/static/img/about/how-amp-works/line_behind.svg) center/contain no-repeat;
-      height: 167px;
+      background: url(/static/img/latest/line_hero_back.svg) center/contain no-repeat;
+      height: 285px;
       right: -60px;
       top: -110px;
-      width: 166px;
+      width: 285px;
+      z-index: 1;
     }
 
     &::after {
-      background: url(/static/img/about/how-amp-works/lines_front.svg) center/contain no-repeat;
-      height: 167px;
+      background: url(/static/img/latest/line_hero_front.svg) center/contain no-repeat;
+      height: 285px;
       right: -80px;
       top: -60px;
-      width: 186px;
-      z-index: 1;
+      width: 285px;
+      z-index: -1;
     }
   }
 
