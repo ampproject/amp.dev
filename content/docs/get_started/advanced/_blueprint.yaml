@@ -1,5 +1,0 @@
-$title@: General Tutorials
-$path: /docs/get_started/advanced/{base}.html
-$localization:
-  path: /{locale}/docs/get_started/advanced/{base}.html
-$view: /views/doc.html
