@@ -2,7 +2,7 @@ body.about-who {
   .hero-images {
     position: absolute;
     right: 0;
-    top: -20px;
+    top: 180px;
 
     .lines,
     .phones,
@@ -85,6 +85,21 @@ body.about-who {
     }
   }
 
+  @include min-max-screen($mobile-breakpoint, 1300px) {
+    .hero {
+      padding: 70px 0 900px;
+      text-align: center;
+
+      .title, .subtitle {
+        margin: 10px auto;
+      }
+    }
+
+    .hero-images {
+      top: 480px;
+    }
+  }
+
   @include max-screen($mobile-breakpoint) {
     .about-who-block {
       position: relative;
@@ -107,7 +122,7 @@ body.about-who {
     }
 
     .hero {
-      padding: 68px 0 40px 0;
+      padding: 100px 0 40px 0;
 
       .inline-toc {
         display: block;
