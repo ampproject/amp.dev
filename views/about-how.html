@@ -29,7 +29,7 @@
           <div class="point" {% if point.id %}id="{{point.id}}"{% endif %}>
             <div class="point-text">
               <h4>{{_(point.title)}}</h4>
-              <div class="description">
+              <div class="description small">
                 {{_(point.description)|markdown|safe}}
               </div>
             </div>
