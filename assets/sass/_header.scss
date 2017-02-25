@@ -16,6 +16,53 @@
     z-index: 1000;
   }
 
+  .promo {
+    align-items: center;
+    background: $gradient-anglebold;
+    display: flex;
+    font-weight: 300;
+    height: 80px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+
+    .description, .link {
+      color: white;
+      display: inline-block;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .description {
+      font-size: 20px;
+    }
+
+    .link {
+      font-weight: 400;
+      margin-left: 20px;
+      text-transform: uppercase;
+      vertical-align: center;
+
+      &::after {
+        background: url(/static/img/arrow.svg) center/cover no-repeat;
+        content: '';
+        display: inline-block;
+        height: 10px;
+        margin-left: 10px;
+        width: 10px;
+      }
+    }
+  }
+
+  .promo-line {
+    left: 50px;
+    top: -50px;
+    position: absolute;
+    width: 150px;
+  }
+
   .nav-container,
   .left-nav,
   .alt,
@@ -25,6 +72,7 @@
 
   .nav-container {
     justify-content: space-between;
+    position: relative;
   }
 
   .left-nav,
@@ -267,6 +315,12 @@
     .container {
       // aligns the hamburger
       padding-right: 18px;
+    }
+
+    .promo {
+      .description, .link {
+        font-size: 16px;
+      }
     }
 
     .left-nav {
