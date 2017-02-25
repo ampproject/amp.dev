@@ -4,7 +4,6 @@
   }
 
   .hero {
-    padding-top: 70px;
     position: relative;
     margin: 0 auto;
     max-width: 1440px;
@@ -89,7 +88,7 @@
   }
 
   .latest-mobile {
-    margin-top: 120px;
+    margin-top: 140px;
 
     .latest-label {
       margin: 0;
@@ -132,11 +131,6 @@
       position: relative;
       top: 0;
       width: 65px;
-
-      @include max-screen($mobile-medium-breakpoint) {
-        display: block;
-        margin: 20px auto;
-      }
     }
 
     .benefit-content {
@@ -320,9 +314,18 @@
     .hero-content {
       order: 1;
     }
+
+    .benefits .benefit-image {
+      display: block;
+      margin: 20px auto;
+    }
   }
 
   @include max-screen($mobile-breakpoint) {
+    .hero {
+      padding-top: 100px;
+    }
+
     .benefits {
       h1 {
         max-width: 200px;
@@ -354,7 +357,7 @@
     }
 
     .experience-image {
-      margin: -100px 0 0 auto;
+      margin: -50px 0 0 auto;
       max-width: 600px;
       width: 100%;
     }
