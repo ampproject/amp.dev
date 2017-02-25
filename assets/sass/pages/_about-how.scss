@@ -86,4 +86,37 @@
   .point-example {
     margin: 40px 20px 20px;
   }
+
+  @include max-screen($tablet-portrait-breakpoint) {
+    .hero {
+      margin-bottom: 30px;
+    }
+
+    .points {
+      margin-top: 30px;
+      padding: 80px 20px 30px;
+    }
+
+    .point {
+      padding: 30px 0;
+
+      .point-text {
+        display: block;
+      }
+
+      h4, .description {
+        width: auto;
+      }
+
+      h4 {
+        margin-bottom: 30px;
+      }
+
+      .description {
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }
