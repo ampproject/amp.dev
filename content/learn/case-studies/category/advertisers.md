@@ -2,7 +2,7 @@
 $title@: Advertisers
 $titles:
   page@: Success stories of the domains publishing AMP pages
-$order: 4
+$order: 2
 $parent: /content/learn/case-studies.html
 class: case-studies bg-triangle-secondary
 
