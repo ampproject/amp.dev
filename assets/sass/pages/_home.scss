@@ -4,6 +4,7 @@
   }
 
   .hero {
+    padding-top: 70px;
     position: relative;
     margin: 0 auto;
     max-width: 1440px;
@@ -53,7 +54,7 @@
       position: absolute;
       left: -30%;
       top: 70px;
-      transform: scale(1.2);
+      transform: scale(1.1);
       width: 700px;
     }
   }
@@ -64,7 +65,7 @@
 
   .latest {
     left: -20%;
-    margin-top: 120px;
+    margin-top: 80px;
     position: relative;
     width: 120%;
 
@@ -156,7 +157,7 @@
     display: flex;
     justify-content: flex-end;
     margin-left: $margin;
-    margin-top: -150px;
+    margin-top: -250px;
     max-width: 100%;
 
     .experience-content {
@@ -198,7 +199,7 @@
 
   .success-stories {
     margin-bottom: -80px;
-    padding-bottom: 0;
+    padding: 0;
     position: relative;
     z-index: 1;
 
