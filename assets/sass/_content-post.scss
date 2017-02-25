@@ -47,10 +47,12 @@
   }
 }
 
-.post.has-toc {
-  .post-title,
-  .post-content {
-    margin: 0 250px 0 75px;
+@include min-screen($tablet-breakpoint) {
+  .post.has-toc {
+    .post-title,
+    .post-content {
+      margin: 0 250px 0 75px;
+    }
   }
 }
 
