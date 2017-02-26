@@ -202,10 +202,10 @@
 
     .list-container {
       left: -60px;
-      padding-left: 50px;
+      overflow: hidden;
+      padding: 0 500px 500px 50px;
       top: 100%;
       transition: .2s ease-out;
-      z-index: -1;
     }
 
     .list-container > ul {
