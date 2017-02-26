@@ -11,37 +11,45 @@
       <section class="hero">
         <amp-img class="icon"
             noloading
-            width={{doc.hero.hero_icon_width}}
-            height={{doc.hero.hero_icon_height}}
+            width="{{doc.hero.hero_icon_width}}"
+            height="{{doc.hero.hero_icon_height}}"
             layout=responsive
             src="/static/img/about/who-use-amp/{{doc.hero.hero_icon}}">
         </amp-img>
         <div class="hero-images desktop-only">
+          {% if doc.hero.triangle_img %}
           <amp-img class="triangle"
               noloading
-              width={{doc.hero.triangle_img_width}}
-              height={{doc.hero.triangle_img_height}}
+              width="{{doc.hero.triangle_img_width}}"
+              height="{{doc.hero.triangle_img_height}}"
               layout=responsive
               src="/static/img/about/who-use-amp/{{doc.hero.triangle_img}}">
           </amp-img>
+          {% endif %}
+          {% if doc.hero.lines_img %}
           <amp-img class="lines"
               noloading
-              width={{doc.hero.lines_img_width}}
-              height={{doc.hero.lines_img_height}}
+              width="{{doc.hero.lines_img_width}}"
+              height="{{doc.hero.lines_img_height}}"
               layout=responsive
               src="/static/img/about/who-use-amp/{{doc.hero.lines_img}}">
           </amp-img>
+          {% endif %}
+          {% if doc.hero.hero_img %}
           <amp-img class="phones"
               noloading
-              width={{doc.hero.hero_img_width}}
-              height={{doc.hero.hero_img_height}}
+              width="{{doc.hero.hero_img_width}}"
+              height="{{doc.hero.hero_img_height}}"
               layout=responsive
               src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
           </amp-img>
+          {% endif %}
         </div>
         <p class="label">{{doc.title}}</p>
-        <h1 class="title">{{_(doc.hero.title)}}</h1>
-        <p class="small paragraph">{{_(doc.hero.paragraph)}}</p>
+        <div class="tablet-wrapper">
+          <h1 class="title">{{_(doc.hero.title)}}</h1>
+          <p class="small paragraph">{{_(doc.hero.paragraph)}}</p>
+        </div>
         <div class="example-users">
           {% for user in doc.hero.users %}
             <div class="example-user-logo{% if user.class %} {{user.class}}{% endif %}">
@@ -71,6 +79,36 @@
               <p class="small">{{_(reason.paragraph)}}</p>
             </div>
           {% endfor %}
+        </div>
+        <div class="reasons tablet">
+          <amp-carousel class="latest-carousel"
+            height="430"
+            layout="fixed-height"
+            type="slides">
+          <div class="card-container">
+          {% for reason in doc.why.reasons %}
+              <div class="reason card">
+                <amp-img
+                    noloading
+                    height=140
+                    layout=fixed-height
+                    src="/static/img/about/who-use-amp/{{reason.icon}}">
+                </amp-img>
+                <h4>{{_(reason.title)}}</h4>
+                <div><p class="small">{{_(reason.paragraph)}}</p></div>
+              </div>
+              {% if loop.last and loop.index is not divisibleby 2 %}
+                {% for number in range(0, 2 - loop.index % 2) %}
+                  <div class="card card--spacer"></div>
+                {% endfor %}
+              {% endif %}
+              {% if not loop.last and loop.index is divisibleby 2 %}
+              </div>
+              <div class="card-container">
+              {% endif %}
+          {% endfor %}
+          </div>
+          </amp-carousel>
         </div>
         <div class="reasons mobile">
           <amp-carousel class="latest-carousel"

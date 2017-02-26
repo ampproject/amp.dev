@@ -157,7 +157,8 @@ body.about-who-vertical {
       }
     }
 
-    .reasons.mobile {
+    .reasons.mobile,
+    .reasons.tablet {
       display: none;
     }
   }
@@ -264,7 +265,58 @@ body.about-who-vertical {
     }
   }
 
-  @include max-screen($mobile-breakpoint) {
+  @include min-max-screen($tablet-portrait-breakpoint, $tablet-breakpoint) {
+    .tablet-wrapper {
+      position: relative;
+      padding: 28px 22px 25px 22px;
+      background: $color-white;
+      box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.075);
+      margin-bottom: 40px;
+    }
+
+    .why-use {
+      .reasons.tablet {
+        display: block;
+        width: 106%;
+        position: relative;
+        left: -3%;
+
+        .card-container {
+          padding: 0;
+          justify-content: center;
+        }
+
+        .card--spacer {
+          flex: 0 0 46%;
+        }
+
+        .reason {
+          padding: 20px;
+          flex: 0 0 46%;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          h4 {
+            padding-right: 10px;
+          }
+
+          p {
+            display: inline-block;
+            max-width: 400px;
+            text-align: left;
+          }
+        }
+      }
+
+      .reasons.desktop {
+        display: none;
+      }
+    }
+  }
+
+  @include max-screen($tablet-breakpoint) {
     nav.breadcrumb li,
     nav.breadcrumb a {
       color: $color-white;
@@ -287,6 +339,13 @@ body.about-who-vertical {
 
     .hero {
       padding: 68px 0 40px 0;
+      text-align: center;
+
+      .title, .paragraph, .example-users {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+      }
 
       .icon {
         display: none;
@@ -296,9 +355,38 @@ body.about-who-vertical {
         color: $color-white;
       }
 
+      .hero-images {
+        display: none;
+      }
+    }
+
+    .case-study {
+      padding: 0 5% 50px 5%;
+
+      .card-container {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+      }
+
+      .lines {
+        z-index: -1;
+      }
+    }
+
+    .about-who-block.advertisers {
+      .hero {
+        padding-left: 0;
+        width: auto;
+      }
+    }
+  }
+
+  @include max-screen($tablet-portrait-breakpoint) {
+    .hero {
       .title {
         color: $color-white;
-        width: 65%;
+        width: 80%;
         margin-bottom: 35px;
       }
 
@@ -310,34 +398,31 @@ body.about-who-vertical {
         max-width: 400px;
         margin-bottom: 40px;
       }
+    }
 
-      .hero-images {
-        position: absolute;
-        left: unset;
-        right: -50px;
-        top: 20px;
+    .case-study {
+      .desktop {
+        display: none;
+      }
 
-        .triangle {
-          display: none;
+      amp-carousel {
+        display: block;
+        width: 106%;
+        position: relative;
+        left: -3%;
+
+        .card-container {
+          padding: 0;
+          justify-content: center;
         }
 
-        .phones {
-          position: absolute;
-          right: -130px;
-          top: 0;
-          width: 100vw;
-          max-width: 450px;
+        .card {
+          flex: 0 0 94%;
         }
       }
     }
 
     .why-use {
-      padding: 20px 0 40px 0;
-
-      h3 {
-        margin-bottom: 15px;
-      }
-
       .reasons.mobile {
         display: block;
         width: 106%;
@@ -359,7 +444,6 @@ body.about-who-vertical {
 
           h4 {
             padding-right: 10px;
-
           }
 
           p {
@@ -372,41 +456,6 @@ body.about-who-vertical {
 
       .reasons.desktop {
         display: none;
-      }
-    }
-
-    .case-study {
-      padding: 0 0 50px 0;
-    }
-
-    .about-who-block.advertisers {
-      .hero {
-        padding-left: 0;
-        width: auto;
-      }
-    }
-  }
-
-  @include max-screen($tablet-portrait-breakpoint) {
-    .case-study {
-      .desktop {
-        display: none;
-      }
-
-      amp-carousel {
-        display: block;
-        width: 106%;
-        position: relative;
-        left: -3%;
-
-        .card-container {
-          padding: 0;
-          justify-content: center;
-        }
-
-        .card {
-          flex: 0 0 94%;
-        }
       }
     }
 
@@ -458,23 +507,6 @@ body.about-who-vertical {
         &.indexexchange {
           flex: 0 0 41%;
         }
-      }
-    }
-
-    .hero .hero-images .phones {
-      right: -250px;
-    }
-
-    .about-who-block.adtech {
-      .lines {
-        display: none;
-      }
-    }
-
-    .about-who-block.advertisers {
-      .hero {
-        padding-left: 0;
-        width: auto;
       }
     }
   }
