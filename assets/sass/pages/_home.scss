@@ -29,9 +29,11 @@
 
   .hero-image {
     flex: 1 1 auto;
+    left: -100px;
     min-width: 0;
     position: relative;
     transform: translateY(-14%);
+    z-index: -1;
 
     @include max-screen($container-size) {
       max-width: 700px;
@@ -44,9 +46,16 @@
     }
 
     .lines {
+      height: 600px;
       position: relative;
       top: 50px;
       width: 700px;
+
+      .animated-lines-big {
+        position: absolute;
+        left: 25%;
+        top: -100px;
+      }
     }
 
     .phone {
@@ -324,6 +333,25 @@
   @include max-screen($mobile-breakpoint) {
     .hero {
       padding-top: 100px;
+    }
+
+    .hero-image {
+      left: 0;
+
+      .lines {
+        height: 350px;
+
+        .animated-lines-big {
+            left: 0;
+            top: -140px;
+            transform: rotate(144deg) scale(0.5);
+        }
+      }
+
+      .phone {
+        left: -100px;
+        max-width: 380px;
+      }
     }
 
     .benefits {
