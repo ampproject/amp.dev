@@ -39,9 +39,13 @@ Slate.com, the current affairs magazine covering news, politics, technology, and
 
 “We saw AMP as a way to improve how mobile users experience Slate, since the initial implementations by other publishers showed how fast the experience actually was. It was also encouraging that Google was collaborating with multiple publishers to build AMP -- that signaled an investment by the publishing community to ensure the success of the format,” said Chris Schieffer, Senior Product Manager at Slate.com. The online magazine created AMP pages for 60% of its content and is ramping up to 100% later this month.
 
+<div class="img-right slate img-mobile">
+    <amp-img width="1079" height="1407" layout="responsive" src="/static/img/case-studies/slate_phone2.png"></amp-img>
+</div>
+
 #### Results
 
-<div class="img-right slate">
+<div class="img-right slate img-desktop">
     <amp-img width="1079" height="1407" layout="responsive" src="/static/img/case-studies/slate_phone2.png"></amp-img>
 </div>
 

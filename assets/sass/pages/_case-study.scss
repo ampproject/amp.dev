@@ -85,7 +85,7 @@
   }
 
   .result {
-    flex: 1 1 0;
+    flex: 1 1 auto;
     margin: 20px;
   }
 
@@ -186,7 +186,7 @@
       margin-bottom: 120px;
 
       amp-img {
-        left: 160px;
+        left: 40%;
         top: 90px;
         transform: scale(2.3);
         transform-origin: right center;
@@ -209,6 +209,10 @@
         transform-origin: right center;
       }
     }
+  }
+
+  .img-mobile {
+    display: none;
   }
 
   .card {
@@ -380,6 +384,67 @@
       float: none;
       margin: 0;
       width: auto;
+    }
+
+    .img-right {
+      &.wapo amp-img {
+        left: 10%;
+        top: 50px;
+      }
+
+      &.gizmodo amp-img {
+        left: 20%;
+        top: 50px;
+      }
+
+      &.wired amp-img {
+        left: 13%;
+        top: 20px;
+      }
+
+      &.slate amp-img {
+        left: 10%;
+        top: 70px;
+      }
+
+      &.relay amp-img {
+        left: 13%;
+      }
+    }
+
+    .img-left {
+      &.gizmodo {
+        amp-img {
+          right: 20%;
+        }
+      }
+
+      &.wired {
+        margin-bottom: 180px;
+
+        amp-img {
+          left: 30%;
+        }
+      }
+
+      &.slate amp-img {
+        right: 20%;
+        top: 50px;
+      }
+
+      &.relay {
+        amp-img {
+          right: 20%;
+        }
+      }
+    }
+
+    .img-desktop {
+      display: none;
+    }
+
+    .img-mobile {
+      display: block;
     }
   }
 }

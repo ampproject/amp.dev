@@ -41,9 +41,13 @@ The team at Wired.com took a measured approach to rolling out AMP. They began by
 
 After a deep dive of analysis of results in July, Wired found AMP to have a positive impact on key metrics. Average click through rates from search results improved by 25%. Click through rates on ads in AMP stories increased by 63%.
 
+<div class="img-left wired img-mobile">
+    <amp-img width="1742" height="1622" layout="responsive" src="/static/img/case-studies/wired_phone2.png"></amp-img>
+</div>
+
 #### Conclusion
 
-<div class="img-left wired">
+<div class="img-left wired img-desktop">
     <amp-img width="1742" height="1622" layout="responsive" src="/static/img/case-studies/wired_phone2.png"></amp-img>
 </div>
 

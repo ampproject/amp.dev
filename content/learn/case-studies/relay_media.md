@@ -39,9 +39,13 @@ Relay Media was founded in 2015 with the purpose of converting web content to Ac
 
 “We’re championing AMP because it’s aligned with consumer and market forces pushing the digital content economy toward performance, measurability and quality user experience. The company has converted content for a number of companies including The Miami Herald, The Daily Dot, and Hearst Television. Relay Media acknowledges that implementing basic AMP HTML is fairly easy, but they strive to do more than that. “AMP needs to be more than fast; it needs to advance a publisher’s digital strategy.  It needs to drive engagement and business value by supporting a publisher’s range of content formats, embeds, style and branding elements, navigation, analytics, ads, paywall services and other revenue products,” said Palser. AMP already enables this functionality, and Relay Media helps publishers take full advantage of the format. The company has generated more than 2.5 million AMP pages for publishers in the last 30 days.
 
+<div class="img-left relay img-mobile">
+    <amp-img width="1200" height="1423" layout="responsive" src="/static/img/case-studies/relaymedia_phone2.png"></amp-img>
+</div>
+
 #### Results
 
-<div class="img-left relay">
+<div class="img-left relay img-desktop">
     <amp-img width="1200" height="1423" layout="responsive" src="/static/img/case-studies/relaymedia_phone2.png"></amp-img>
 </div>
 

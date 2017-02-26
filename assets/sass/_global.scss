@@ -19,7 +19,7 @@ body {
   padding-top: $header-height;
 
   @include max-screen($mobile-breakpoint) {
-    padding-top: 60px;
+    padding-top: 140px;
   }
 }
 

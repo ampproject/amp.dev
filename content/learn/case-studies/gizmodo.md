@@ -45,9 +45,14 @@ Gizmodo implemented AMP in May of 2016 and is now publishing AMP pages for 100% 
 >
 > Ali Philippides, product lead for the implmentation of AMP
 
+
+<div class="img-left gizmodo img-mobile">
+    <amp-img width="1200" height="1423" layout="responsive" src="/static/img/case-studies/gizmodo_phone2.png"></amp-img>
+</div>
+
 #### Results
 
-<div class="img-left gizmodo">
+<div class="img-left gizmodo img-desktop">
     <amp-img width="1200" height="1423" layout="responsive" src="/static/img/case-studies/gizmodo_phone2.png"></amp-img>
 </div>
 
