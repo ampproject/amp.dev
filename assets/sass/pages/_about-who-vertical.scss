@@ -410,9 +410,55 @@ body.about-who-vertical {
       }
     }
 
-    .example-users {
-      left: 50%;
-      transform: translateX(-50%);
+    .hero .example-users {
+      justify-content: space-around;
+      left: 3%;
+      min-width: 0;
+      position: relative;
+      width: 90%;
+
+      .example-user-logo {
+        margin: 10px 0;
+
+        &.nyt {
+          flex: 0 0 52%;
+          left: -3%;
+          position: relative;
+        }
+
+        &.globo {
+          flex: 0 0 20%;
+        }
+
+        &.wapo {
+          flex: 0 0 44%;
+        }
+
+        &.wired {
+          flex: 0 0 28%;
+          position: relative;
+          left: 3%;
+        }
+
+        &.sharethrough {
+          flex: 0 0 56%;
+          left: -10%;
+        }
+
+        &.triplelift {
+          flex: 0 0 30%;
+          left: -10%;
+          position: relative;
+        }
+
+        &.teads {
+          flex: 0 0 20%;
+        }
+
+        &.indexexchange {
+          flex: 0 0 41%;
+        }
+      }
     }
 
     .hero .hero-images .phones {
