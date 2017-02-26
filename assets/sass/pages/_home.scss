@@ -42,7 +42,6 @@
 
     .lines, .phone {
       max-width: 100%;
-      z-index: -1;
     }
 
     .lines {
@@ -64,6 +63,7 @@
       top: 70px;
       transform: scale(1.1);
       width: 700px;
+      z-index: 1;
     }
   }
 
@@ -336,7 +336,8 @@
     }
 
     .hero-image {
-      left: 0;
+      left: auto;
+      z-index: 0;
 
       .lines {
         height: 350px;
