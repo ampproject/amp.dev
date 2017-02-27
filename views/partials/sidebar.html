@@ -26,7 +26,7 @@
                   </div>
                 </label>
               {% else %}
-                <a class="menu-item item-layer-2{% if subEntry.href.startswith('http') %} external{% endif %}" href="{% if subEntry.href.startswith('http') %}{{ subEntry.get('href') }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(subEntry.get('copy'))}}</a>
+                <a class="menu-item item-layer-2{% if subEntry.href.startswith('http') %} external{% endif %}" href="{% if subEntry.href.startswith('http') %}{{ subEntry.get('href') }}{% elif subEntry.static %}{{ g.static(subEntry.get('href') ).url.path }}{% else %}{{ g.doc(subEntry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(subEntry.get('copy'))}}</a>
               {% endif %}
             {% endfor %}
             </div>

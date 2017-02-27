@@ -57,3 +57,6 @@ menu:
       - href: /content/support/developer.md
         copy@: "Developer Support"
         collection: support/developer
+      - href: /assets/img/brand-guidelines.pdf
+        static: true
+        copy@: "Brand Guidelines"

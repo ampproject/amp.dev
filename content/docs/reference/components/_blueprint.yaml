@@ -5,17 +5,23 @@ $localization:
 $title@: AMP components
 
 custom_children:
-  - href: /content/docs/reference/components/ads-analytics.md
+  - title@: Ads & Analytics
+    href: /content/docs/reference/components/ads-analytics/amp-pixel.md
     collection: /content/docs/reference/components/ads-analytics
-  - href: /content/docs/reference/components/dynamic-content.md
+  - title@: Dynamic Content
+    href: /content/docs/reference/components/dynamic-content/amp-access-laterpay.md
     collection: /content/docs/reference/components/dynamic-content
-  - href: /content/docs/reference/components/layout.md
+  - title@: Layout
+    href: /content/docs/reference/components/layout/amp-accordion.md
     collection: /content/docs/reference/components/layout
-  - href: /content/docs/reference/components/media.md
+  - title@: Media
+    href: /content/docs/reference/components/media/amp-img.md
     collection: /content/docs/reference/components/media
-  - href: /content/docs/reference/components/presentation.md
+  - title@: Presentation
+    href: /content/docs/reference/components/presentation/amp-animation.md
     collection: /content/docs/reference/components/presentation
-  - href: /content/docs/reference/components/social.md
+  - title@: Social
+    href: /content/docs/reference/components/social/amp-facebook.md
     collection: /content/docs/reference/components/social
 
 navigation:
