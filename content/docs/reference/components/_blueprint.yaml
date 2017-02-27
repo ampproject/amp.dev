@@ -4,6 +4,20 @@ $localization:
   path: /{locale}/docs/reference/components/{base}.html
 $title@: AMP components
 
+custom_children:
+  - href: /content/docs/reference/components/ads-analytics.md
+    collection: /content/docs/reference/components/ads-analytics
+  - href: /content/docs/reference/components/dynamic-content.md
+    collection: /content/docs/reference/components/dynamic-content
+  - href: /content/docs/reference/components/layout.md
+    collection: /content/docs/reference/components/layout
+  - href: /content/docs/reference/components/media.md
+    collection: /content/docs/reference/components/media
+  - href: /content/docs/reference/components/presentation.md
+    collection: /content/docs/reference/components/presentation
+  - href: /content/docs/reference/components/social.md
+    collection: /content/docs/reference/components/social
+
 navigation:
   prev:
     section: true
