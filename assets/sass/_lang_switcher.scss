@@ -5,6 +5,10 @@ div.language {
   top: -4px;
   user-select: none;
 
+  amp-accordion {
+    margin: 0;
+  }
+
   section {
     border: 0;
     padding: 0;
@@ -42,14 +46,13 @@ div.language {
   }
 
   .others {
-    padding: 0 50px 50px;
+    padding: 0 50px 50px 50px;
+    left: -50px;
   }
 
   .others-inner {
     background: $color-white;
-    left: -50px;
     margin: 0;
-    position: relative;
 
     div {
       width: 200px;
@@ -146,11 +149,11 @@ amp-sidebar {
     }
 
     .others {
+      left: 0;
       padding: 0;
       transform: translateY(calc(-100% - 50px));
 
       .others-inner {
-        left: 0;
         width: 240px;
 
         &::after {
