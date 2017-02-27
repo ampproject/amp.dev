@@ -21,7 +21,7 @@
     background: $gradient-anglebold;
     display: flex;
     font-weight: 300;
-    height: 80px;
+    height: 60px;
     justify-content: center;
     overflow: hidden;
     padding: 0 20px;
@@ -31,7 +31,6 @@
 
     .description, .link {
       color: white;
-      display: inline-block;
       line-height: 1.5;
       position: relative;
     }
@@ -41,6 +40,7 @@
     }
 
     .link {
+      display: inline-block;
       font-weight: 400;
       margin-left: 20px;
       text-transform: uppercase;
@@ -312,6 +312,12 @@
     }
   }
 
+  @include min-screen($mobile-breakpoint + 1) {
+    .description.desktop-up {
+      display: inline-block;
+    }
+  }
+
   @include max-screen($mobile-breakpoint) {
     .container {
       // aligns the hamburger
@@ -321,6 +327,10 @@
     .promo {
       .description, .link {
         font-size: 16px;
+      }
+
+      .description.mobile-down {
+        display: inline-block;
       }
     }
 
@@ -343,9 +353,7 @@
     .tab.hamburger {
       display: inline-block;
     }
-  }
 
-  @include max-screen($mobile-breakpoint) {
     .promo {
       .description, .link {
         font-size: 14px;
