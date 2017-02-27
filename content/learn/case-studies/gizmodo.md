@@ -20,8 +20,8 @@ results:
       description: Increase in impressions
 logo:
   src: "case-studies/gizmodo_logo.png"
-  width: 128
-  height: 80
+  width: 711
+  height: 105
 download: "case-studies/gizmodo.pdf"
 ---
 

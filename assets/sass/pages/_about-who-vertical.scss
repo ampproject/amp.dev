@@ -374,6 +374,14 @@ body.about-who-vertical {
       }
     }
 
+    .reason {
+      amp-img {
+        height: 100px;
+        margin: 10px 0;
+        min-height: 100px;
+      }
+    }
+
     .about-who-block.advertisers {
       .hero {
         padding-left: 0;
@@ -507,6 +515,15 @@ body.about-who-vertical {
         &.indexexchange {
           flex: 0 0 41%;
         }
+      }
+    }
+  }
+
+  @include max-screen($mobile-medium-breakpoint) {
+    .reason {
+      amp-img {
+        margin: 10px 0;
+        min-height: 50px;
       }
     }
   }

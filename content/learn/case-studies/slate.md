@@ -22,8 +22,8 @@ results:
       description: Saved in development resources/yr
 logo:
   src: "case-studies/slate_logo.png"
-  width: 50
-  height: 50
+  width: 200
+  height: 84
 download: "case-studies/slate.pdf"
 ---
 
