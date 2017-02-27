@@ -33,10 +33,15 @@ download: "case-studies/teads.pdf"
 > ERIC SHIH, global senior vice president of business development
 
 
+<div class="img-right teads img-mobile">
+    <amp-img width="840" height="1400" layout="responsive" src="/static/img/case-studies/teads_phone.png"></amp-img>
+</div>
+
+
 #### Achieving a better user experience, together
 
-<div class="img-right">
-    <amp-img width="840" height="1400" layout="responsive" src="/static/img/case-studies/teads_media_framed.png"></amp-img>
+<div class="img-right teads img-desktop">
+    <amp-img width="840" height="1400" layout="responsive" src="/static/img/case-studies/teads_phone.png"></amp-img>
 </div>
 
 Four years later, as a global company reaching 1.2 billion unique users across hundreds of leading websites, Teads signed on as one of the first advertising partners to join the AMP Project when it launched as an open source initiative to build a better, faster mobile web for everybody.

@@ -164,6 +164,10 @@
       transform: scale(1.1);
       transform-origin: left center;
     }
+
+    &.teads {
+      margin-bottom: -70px;
+    }
   }
 
   .img-left {
@@ -409,6 +413,10 @@
 
       &.relay amp-img {
         left: 13%;
+      }
+
+      &.teads amp-img {
+        left: 17%;
       }
     }
 

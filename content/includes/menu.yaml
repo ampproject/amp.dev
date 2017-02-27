@@ -40,7 +40,7 @@ menu:
     collection: latest
     children:
       - href: /content/latest/latest.html
-        copy@: "What's Hot"
+        copy@: "What's New"
       - href: /content/latest/list-blog.html
         copy@: "News"
       - href: /content/latest/list-event.html
