@@ -59,7 +59,7 @@
     }
   }
 
-  li.expandable {
+  li {
     & > .section-name.open > a {
       color: $color-ampblue;
     }
