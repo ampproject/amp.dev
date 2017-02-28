@@ -43,11 +43,13 @@ amp-carousel {
   }
 
   .amp-carousel-button-prev {
-    left: 5px;
+    left: -2px;
+    transform: translateY(-50%) translateY(-10px) rotateY(180deg) scale(0.7);
   }
 
   .amp-carousel-button-next {
     right: -5px;
+    transform: translateY(-50%) translateY(-10px) scale(0.7);
   }
 }
 

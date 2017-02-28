@@ -81,6 +81,9 @@
     }
 
     &.expandable {
+      .section-name {
+        padding-right: 30px;
+      }
 
       & > .section-name::after {
         @include sprite(carat);
@@ -116,7 +119,9 @@
 
       a {
         color: black;
+        display: inline-block;
         font-size: 16px;
+        line-height: 1.3;
       }
 
       &.current a {
@@ -300,7 +305,7 @@
 
     li.sub-level {
       & > .section-name {
-        padding: 2.5px 15px;
+        padding: 5px 15px;
       }
     }
 
