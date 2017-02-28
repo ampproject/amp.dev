@@ -13,7 +13,8 @@
   box-sizing: border-box;
   display: inline-block;
   flex: 0 0 31%; // IE10: calc not allowed in flex
-  flex: 0 0 calc(33% - 20px);
+  flex: 0 0 calc(33% - 30px);
+  flex-basis: calc(33% - 30px);
   height: 90%;
   margin: 10px 5px;
   padding: 10px;
@@ -173,7 +174,7 @@
     .card {
       flex: 0 0 48%; // IE10: calc not allowed in flex;
       flex: 0 0 calc(50% - 30px);
-      flex-basis: calc(33% - 30px); // IE 11
+      flex-basis: calc(50% - 30px); // IE 11
     }
 
     .card-inner {
