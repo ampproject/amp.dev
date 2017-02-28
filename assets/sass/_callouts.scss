@@ -12,6 +12,10 @@ aside {
     text-transform: uppercase;
   }
 
+  code {
+    font-size: 13px;
+  }
+
   &::before {
     float: left;
     word-wrap: normal;
