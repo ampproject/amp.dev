@@ -80,6 +80,13 @@ pre {
   code {
     font-size: 13px;
   }
+
+  table {
+    a code {
+      line-height: 2;
+      white-space: normal;
+    }
+  }
 }
 
 .highlight {

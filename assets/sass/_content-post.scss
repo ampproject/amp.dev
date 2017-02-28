@@ -26,25 +26,6 @@
   td:first-child a:hover {
     text-decoration: none;
   }
-
-  @include max-screen($mobile-medium-breakpoint) {
-    td {
-      position: relative;
-
-      &:first-child {
-        a {
-          left: 8px;
-          position: absolute;
-          top: 5px;
-          z-index: 1;
-
-          &:hover {
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
 }
 
 @include min-screen($tablet-breakpoint) {

@@ -177,6 +177,10 @@
       margin-bottom: 2em;
     }
   }
+
+  .card-section-heading {
+    margin: 50px 0 0;
+  }
 }
 
 @include max-screen($mobile-medium-breakpoint) {

@@ -137,6 +137,10 @@
     }
   }
 
+  &.post-blog img {
+    height: auto;
+  }
+
   @include max-screen($mobile-breakpoint) {
     .post-sheet {
       padding: 50px 6% 40px 6%;
