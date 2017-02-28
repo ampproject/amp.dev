@@ -127,7 +127,7 @@ amp-sidebar {
     bottom: 15px;
     left: 10px;
     position: absolute;
-    top: unset;
+    top: auto;
 
     section[expanded] {
       .current {
