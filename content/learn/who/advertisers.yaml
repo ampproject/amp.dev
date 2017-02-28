@@ -38,7 +38,14 @@ why:
       paragraph@: Building the right ad, landing page or web content takes time. With AMP Ads, your ads can serve on both AMP and non-AMP pages, meaning you can build your AMP Ads once and deliver a memorable brand experience everywhere. Similarly, AMP pages can be built once and distributed across a wide variety of distribution platforms simultaneously.
       icon: advertisers/advertisers_icon_ROI.svg
 
-cta:
+large_cta:
   title@: Get started with AMP
-  link_text@: Tutorials
-  link_url: /docs/get_started/general/create.html
+  subtitle@: Learn more about AMP Ads and building AMP pages for your campaigns and website.
+  cta@: Learn More
+  cta_url: /content/learn/who/amp-ads.yaml
+  lines_left: /static/img/about/who-use-amp/amp-ads/lines_bottom2.svg
+  lines_left_width: 325
+  lines_left_height: 303
+  lines_right: /static/img/about/who-use-amp/amp-ads/lines_bottom1.svg
+  lines_right_width: 325
+  lines_right_height: 237

@@ -17,5 +17,5 @@
   {% if large_cta.subtitle %}
     <p>{{_(large_cta.subtitle)}}</p>
   {% endif %}
-  <a href="large_cta.cta_url" class="button light"><span>{{_(large_cta.cta)}}</span></a>
+  <a href="{% if large_cta.cta_url.startswith('http') %}{{ large_cta.cta_url }}{% else %}{{ g.doc(large_cta.cta_url, locale=doc.locale).url.path }}{% endif %}" class="button light"><span>{{_(large_cta.cta)}}</span></a>
 </section>

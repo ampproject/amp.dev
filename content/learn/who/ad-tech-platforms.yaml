@@ -50,7 +50,7 @@ why:
       icon: adtech/adtech_icon_reach.svg
 
     - title@: Maximize your revenue
-      paragraph@: Speeding up ads is the fastest way to boost performance. <a href="https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md">AMP Ads</a> load as fast as content, so they are more viewable and more likely to be engaged with. Triplelift saw a 10&#37;+ increase in viewability and engagement with AMP ads. Join the <a href="https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md">AMP Ads Initiative</a> to improve performance and grow your revenue.
+      paragraph@: Speeding up ads is the fastest way to boost performance. <a href="https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md">AMP Ads</a> load as fast as content, so they are more viewable and more likely to be engaged with. Triplelift saw a 10&#37;+ increase in viewability and engagement with AMP ads. Join the <a href="/learn/who-uses-amp/amp-ads/">AMP Ads Initiative</a> to improve performance and grow your revenue.
       icon: adtech/adtech_icon_revenue.svg
 
     - title@: Build for a sustainable future
