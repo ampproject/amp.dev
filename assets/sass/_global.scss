@@ -118,6 +118,10 @@ a {
       }
     }
   }
+
+  @include max-screen($mobile-breakpoint) {
+    font-size: 14px;
+  }
 }
 
 .small {

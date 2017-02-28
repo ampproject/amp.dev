@@ -217,6 +217,10 @@
         }
       }
     }
+
+    .core amp-accordion .core-content a {
+      font-size: 16px;
+    }
   }
 
   @include max-screen($tablet-portrait-breakpoint) {

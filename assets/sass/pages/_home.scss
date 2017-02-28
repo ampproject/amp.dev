@@ -313,6 +313,7 @@
     }
 
     .hero-image {
+      left: auto;
       margin: 0 auto;
       max-width: 500px;
       order: 2;
@@ -336,11 +337,12 @@
     }
 
     .hero-image {
-      left: auto;
       z-index: 0;
 
       .lines {
+        left: 50%;
         height: 350px;
+        transform: translateX(-50%);
 
         .animated-lines-big {
             left: 0;
@@ -350,8 +352,9 @@
       }
 
       .phone {
-        left: -100px;
+        left: 20%;
         max-width: 380px;
+        transform: translateX(-50%);
       }
     }
 

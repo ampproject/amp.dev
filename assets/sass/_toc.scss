@@ -84,7 +84,7 @@
   }
 }
 
-@include max-screen($tablet-breakpoint) {
+@include max-screen($toc-breakpoint) {
   .toc {
     display: none;
   }

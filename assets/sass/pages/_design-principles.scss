@@ -96,7 +96,7 @@
     }
   }
 
-  @include max-screen($tablet-portrait-breakpoint) {
+  @include max-screen($tablet-breakpoint) {
     .wrap::after {
       height: 270vw;
       width: 150vw;

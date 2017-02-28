@@ -88,6 +88,12 @@ footer {
   }
 }
 
+@include max-screen(1000px) {
+  .footer-cta .inner {
+    width: 90%;
+  }
+}
+
 @include max-screen($mobile-breakpoint) {
   .footer-cta {
     overflow: hidden;

@@ -83,6 +83,12 @@
     margin: 40px 20px 20px;
   }
 
+  @include max-screen($tablet-breakpoint) {
+    .points {
+      padding: 450px 30px 100px;
+    }
+  }
+
   @include max-screen($tablet-portrait-breakpoint) {
     .wrap {
       &::after {
