@@ -42,6 +42,12 @@ amp-carousel {
     padding-right: 20px;
   }
 
+  .amp-carousel-button {
+    &::before, &::after {
+      opacity: 0.6;
+    }
+  }
+
   .amp-carousel-button-prev {
     left: -2px;
     transform: translateY(-50%) translateY(-10px) rotateY(180deg) scale(0.7);

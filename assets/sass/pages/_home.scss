@@ -78,6 +78,7 @@
     width: 120%;
 
     .card {
+      flex-basis: calc(33% - 20px);
       padding: 20px;
     }
 
