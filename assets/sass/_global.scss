@@ -239,6 +239,10 @@ figure {
   -webkit-margin-end: 0;
 }
 
+amp-youtube, amp-vimeo {
+  box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
 .rtl figure {
   direction: ltr;
 }
