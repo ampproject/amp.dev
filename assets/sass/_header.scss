@@ -206,6 +206,7 @@
       padding: 0 300px 300px 50px;
       top: 100%;
       transition: .2s ease-out;
+      z-index: -1;
     }
 
     .list-container > ul {
@@ -293,6 +294,7 @@
       .list-container {
         opacity: 1;
         pointer-events: all;
+        z-index: 0;
       }
     }
   }
