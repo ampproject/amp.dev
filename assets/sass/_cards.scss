@@ -48,6 +48,10 @@
     &::before {
       display: none;
     }
+
+    &:hover {
+      box-shadow: none;
+    }
   }
 }
 
