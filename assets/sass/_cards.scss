@@ -60,6 +60,7 @@
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+  width: 100%;
 }
 
 .card-type {
@@ -88,7 +89,8 @@
   &::after {
     content: '';
     flex: 0 0 31%; //IE 10: calc not allowed in flex
-    flex: 0 0 calc(33% - 20px);
+    flex: 0 0 calc(33% - 30px);
+    flex-basis: calc(33% - 30px); // IE 11
     margin: 10px 5px;
     visibility: hidden;
   }
@@ -170,7 +172,8 @@
   .card-container.case {
     .card {
       flex: 0 0 48%; // IE10: calc not allowed in flex;
-      flex: 0 0 calc(50% - 20px);
+      flex: 0 0 calc(50% - 30px);
+      flex-basis: calc(33% - 30px); // IE 11
     }
 
     .card-inner {

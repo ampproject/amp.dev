@@ -173,6 +173,7 @@ body.about-who-vertical {
 
     .desktop .card {
       flex: 0 0 calc(50% - 20px);
+      flex-basis: calc(50% - 20px);
     }
 
     amp-carousel {

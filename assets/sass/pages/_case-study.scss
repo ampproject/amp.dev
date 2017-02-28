@@ -227,6 +227,7 @@
 
   .card {
     flex: 0 0 calc(50% - 20px);
+    flex-basis: calc(50% - 20px);
   }
 
   // overriding _post-detail.scss styles
