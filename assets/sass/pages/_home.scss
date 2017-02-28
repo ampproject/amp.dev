@@ -251,33 +251,8 @@
     }
   }
 
-  .create {
-    background: $gradient-anglebold;
+  .large-cta {
     padding: 130px 0 100px 0;
-    position: relative;
-    text-align: center;
-
-    .create-lines {
-      height: 378px;
-      position: absolute;
-      width: 360px;
-
-      &.left {
-        bottom: -30%;
-        left: -10%;
-      }
-
-      &.right {
-        right: -5%;
-        top: -30%;
-      }
-    }
-
-    h1 {
-      color: $color-white;
-      margin: 0 auto 50px;
-      max-width: 550px;
-    }
   }
 
   section {

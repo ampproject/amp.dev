@@ -251,21 +251,6 @@ components:
   </div>
 </section>
 
-<section class="create">
-  <amp-img class="create-lines left desktop-up"
-      noloading
-      height=377
-      width=360
-      layout=responsive
-      src="{{home.create.lines_img}}">
-  </amp-img>
-  <amp-img class="create-lines right desktop-up"
-      noloading
-      height=377
-      width=360
-      layout=responsive
-      src="{{home.create.lines_img}}">
-  </amp-img>
-  <h1>{{_(home.create.title)}}</h1>
-  <a href="{{g.doc(home.create.cta_url).url.path}}" class="button light"><span>{{_(home.create.cta)}}</span></a>
-</section>
+{% with large_cta = home.large_cta %}
+  {% include "/views/partials/large-cta.html" %}
+{% endwith %}

@@ -177,29 +177,13 @@
           {% endif %}
         </section>
       {% endif %}
-
-      {% if doc.large_cta %}
-        <section class="large-cta">
-          <amp-img class="large-cta-lines left desktop-up"
-              noloading
-              height={{doc.large_cta.lines_left_height}}
-              width={{doc.large_cta.lines_left_width}}
-              layout=fixed
-              src="/static/img/about/who-use-amp/{{doc.large_cta.lines_left}}">
-          </amp-img>
-          <amp-img class="large-cta-lines right desktop-up"
-              noloading
-              height={{doc.large_cta.lines_right_height}}
-              width={{doc.large_cta.lines_right_width}}
-              layout=fixed
-              src="/static/img/about/who-use-amp/{{doc.large_cta.lines_right}}">
-          </amp-img>
-          <h1>{{_(doc.large_cta.title)}}</h1>
-          <p>{{_(doc.large_cta.subtitle)}}</p>
-          <a href="doc.large_cta.cta_url" class="button light"><span>{{_(doc.large_cta.cta)}}</span></a>
-        </section>
-      {% endif %}
     </div>
+
+    {% if doc.large_cta %}
+      {% with large_cta = doc.large_cta %}
+        {% include "/views/partials/large-cta.html" %}
+      {% endwith %}
+    {% endif %}
   </div>
   {% if doc.cta %}
     {% with cta = doc.cta %}

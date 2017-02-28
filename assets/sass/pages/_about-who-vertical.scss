@@ -204,30 +204,9 @@ body.about-who-vertical {
   }
 
   .large-cta {
-    background: $gradient-anglebold;
-    margin: 0 -22px;
-    padding: 130px 0 100px 0;
-    position: relative;
-    text-align: center;
-
-    .large-cta-lines {
-      position: absolute;
-
-      &.left {
-        bottom: -30%;
-        left: -10%;
-      }
-
-      &.right {
-        right: -5%;
-        top: -30%;
-      }
-    }
-
-    h1 {
-      color: $color-white;
-      margin: 0 auto 50px;
-      max-width: 550px;
+    .button {
+      font-size: 14px;
+      text-transform: uppercase;
     }
   }
 

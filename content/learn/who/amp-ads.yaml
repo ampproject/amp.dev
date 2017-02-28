@@ -68,9 +68,9 @@ large_cta:
   subtitle@: Whether you’re an advertiser, ad tech platform, or publisher, fix the state of advertising by joining the AMP Ads Initiative today.
   cta@: Join Now
   cta_url: #
-  lines_left: amp-ads/lines_bottom2.svg
+  lines_left: /static/img/about/who-use-amp/amp-ads/lines_bottom2.svg
   lines_left_width: 325
   lines_left_height: 303
-  lines_right: amp-ads/lines_bottom1.svg
+  lines_right: /static/img/about/who-use-amp/amp-ads/lines_bottom1.svg
   lines_right_width: 325
   lines_right_height: 237
