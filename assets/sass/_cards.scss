@@ -113,7 +113,7 @@
     display: block;
     flex: 1 0 auto;
     hyphens: none;
-    margin-bottom: 6em;
+    margin-bottom: 1em;
 
     h2 {
       font-size: 36px;
@@ -156,9 +156,9 @@
     margin: 1em 0;
   }
 
-  .card-title {
-    margin-bottom: 3em;
-  }
+  // .card-title {
+  //   margin-bottom: 1em;
+  // }
 }
 
 @include max-screen($mobile-breakpoint) {
