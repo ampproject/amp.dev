@@ -218,9 +218,11 @@
   }
 
   @include max-screen($mobile-breakpoint) {
-    .container,
-    .content {
-      padding: 0;
+    .wrap {
+      .container,
+      .content {
+        padding: 0;
+      }
     }
 
     .hero .img-wrap .lines,
