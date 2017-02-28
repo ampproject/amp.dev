@@ -233,6 +233,10 @@ body.about-who-vertical {
   }
 
   .about-who-block.advertisers {
+    &::after {
+      display: none;
+    }
+
     .hero {
       padding-left: 60%;
       width: 35%
@@ -250,16 +254,16 @@ body.about-who-vertical {
       }
 
       .phones {
-        left: -200px;
-        top: -80px;
+        left: -230px;
+        top: -130px;
         width: 1100px;
       }
 
       .lines {
         height: 619px;
-        left: 200px;
+        left: 170px;
         position: absolute;
-        top: 50px;
+        top: 20px;
         width: 640px;
       }
     }
