@@ -99,7 +99,7 @@ amp-sidebar {
 
   .has-sub-level {
     &::after {
-      background-color: $color-ampblue;
+      @include sprite(carat)
       content: '';
       height: 12px;
       position: absolute;
@@ -107,9 +107,6 @@ amp-sidebar {
       top: calc(50% - 6px);
       transform: rotate(90deg) scale(.75);
       width: 16px;
-      mask-image: url(/static/img/sprite.svg);
-      mask-position: -60px -43.66px;
-      mask-size: 84px 55px;
     }
   }
 

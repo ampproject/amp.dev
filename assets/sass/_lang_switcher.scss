@@ -36,12 +36,12 @@ div.language {
     width: 140px;
 
     &::after {
-      @include masked-sprite(carat);
+      @include sprite(carat-down);
       content: '';
       display: inline-block;
       position: relative;
       top: -4px;
-      transform: rotate(180deg) scale(.75);
+      transform: scale(.75);
     }
   }
 
@@ -144,16 +144,20 @@ amp-sidebar {
       text-align: left;
 
       &::after {
-        background-color: $color-ampblue;
+        @include sprite(carat);
+        top: -5px;
+        transform: rotate(180deg) scale(.75);
       }
     }
 
     .others {
+      box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
       left: 0;
       padding: 0;
       transform: translateY(calc(-100% - 50px));
 
       .others-inner {
+        box-shadow: none;
         width: 240px;
 
         &::after {

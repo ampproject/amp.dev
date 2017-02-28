@@ -205,7 +205,9 @@
         content: '';
         height: 20px;
         position: absolute;
+        top: 50%;
         transition: transform 0.3s;
+        transform: translateY(-50%);
         width: 20px;
       }
 
@@ -240,11 +242,11 @@
       &::after {
         background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
         left: 30px;
-        transform: rotate(180deg);
+        transform: translateY(-50%) rotate(180deg);
       }
 
       &:hover::after {
-        transform: translateX(-15px) rotate(180deg);
+        transform: translate(-15px, -50%) rotate(180deg);
       }
     }
 
@@ -257,7 +259,7 @@
       }
 
       &:hover::after {
-        transform: translateX(15px);
+        transform: translate(15px, -50%);
       }
     }
   }
