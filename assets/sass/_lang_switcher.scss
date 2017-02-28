@@ -155,6 +155,7 @@ amp-sidebar {
       box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
       left: 0;
       padding: 0;
+      transform: translateY(-117%);
       transform: translateY(calc(-100% - 50px));
 
       .others-inner {
