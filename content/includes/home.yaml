@@ -137,6 +137,9 @@ publishers:
     - title: folha_de_s.paulo
       img: /static/img/publishers/folha_de_s.paulo.png
 
+    - title: foxsports_australia
+      img: /static/img/publishers/foxsports_australia.png
+
     - title: franzfurter_allgemeine
       img: /static/img/publishers/franzfurter_allgemeine.png
 
