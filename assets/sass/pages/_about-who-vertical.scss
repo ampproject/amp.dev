@@ -91,6 +91,7 @@ body.about-who-vertical {
 
       .example-user-logo {
         flex: 0 0 18%;
+        position: relative;
 
         &.nyt {
           flex: 0 0 26%;
@@ -110,7 +111,6 @@ body.about-who-vertical {
 
         &.sharethrough {
           flex: 0 0 28%;
-          position: relative;
           top: -14px;
         }
 
@@ -123,7 +123,19 @@ body.about-who-vertical {
         }
 
         &.indexexchange {
-          position: relative;
+          top: -8px;
+        }
+
+        &.google {
+          flex: 0 0 15%;
+        }
+
+        &.doubleclick {
+          flex: 0 0 18%;
+        }
+
+        &.cloudflare {
+          flex: 0 0 25%;
           top: -8px;
         }
       }
@@ -163,6 +175,16 @@ body.about-who-vertical {
     }
   }
 
+  .points {
+    padding-top: 0;
+
+    h3 {
+      margin: 0 auto 50px;
+      max-width: 700px;
+      text-align: center;
+    }
+  }
+
   .case-study {
     padding: 0 15.4% 115px 15.4%;
 
@@ -181,7 +203,35 @@ body.about-who-vertical {
     }
   }
 
-  .about-who-block.adtech {
+  .large-cta {
+    background: $gradient-anglebold;
+    margin: 0 -22px;
+    padding: 130px 0 100px 0;
+    position: relative;
+    text-align: center;
+
+    .large-cta-lines {
+      position: absolute;
+
+      &.left {
+        bottom: -30%;
+        left: -10%;
+      }
+
+      &.right {
+        right: -5%;
+        top: -30%;
+      }
+    }
+
+    h1 {
+      color: $color-white;
+      margin: 0 auto 50px;
+      max-width: 550px;
+    }
+  }
+
+  .about-who-block.centered {
     &::before {
       display: block;
     }
@@ -224,6 +274,19 @@ body.about-who-vertical {
         right: -17%;
         top: -35%;
         width: 410px;
+      }
+    }
+  }
+
+  .about-who-block.amp-ads {
+    .hero {
+      .title {
+        max-width: 500px;
+      }
+
+      .hero-images .lines {
+        bottom: 30%;
+        z-index: -1;
       }
     }
   }
@@ -416,6 +479,14 @@ body.about-who-vertical {
       }
     }
 
+    .points {
+      margin-bottom: 50px;
+
+      h3 {
+        margin-bottom: 20px;
+      }
+    }
+
     .why-use, .case-study {
       padding: 0 0 50px 0;
     }
@@ -491,7 +562,6 @@ body.about-who-vertical {
         &.nyt {
           flex: 0 0 52%;
           left: -3%;
-          position: relative;
         }
 
         &.globo {
@@ -504,7 +574,6 @@ body.about-who-vertical {
 
         &.wired {
           flex: 0 0 28%;
-          position: relative;
           left: 3%;
         }
 
@@ -516,7 +585,6 @@ body.about-who-vertical {
         &.triplelift {
           flex: 0 0 30%;
           left: -10%;
-          position: relative;
         }
 
         &.teads {
@@ -526,10 +594,23 @@ body.about-who-vertical {
         &.indexexchange {
           flex: 0 0 41%;
         }
+
+        &.google {
+          flex: 0 0 35%;
+        }
+
+        &.doubleclick {
+          flex: 0 0 35%;
+          left: -10%;
+        }
+
+        &.cloudflare {
+          flex: 0 0 40%;
+        }
       }
     }
 
-    .about-who-block.adtech {
+    .about-who-block.centered {
       .hero .example-users {
         left: 3%;
       }

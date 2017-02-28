@@ -5,7 +5,7 @@ $parent: /content/learn/who-uses-amp.yaml
 components:
   - carousel
 
-vertical_class: adtech
+vertical_class: adtech centered
 
 hero:
   title@: A faster way to grow your business

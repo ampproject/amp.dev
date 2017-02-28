@@ -15,33 +15,18 @@
       </div>
     </section>
 
-  <div class="video">
-    <amp-youtube
-        data-videoid="{{doc.video}}"
-        layout="responsive"
-        width="480" height="270">
-    </amp-youtube>
-  </div>
+    <div class="video">
+      <amp-youtube
+          data-videoid="{{doc.video}}"
+          layout="responsive"
+          width="480" height="270">
+      </amp-youtube>
+    </div>
 
 
-    <section class="points">
-        {% for point in doc.points %}
-          <div class="point" {% if point.id %}id="{{point.id}}"{% endif %}>
-            <div class="point-text">
-              <h4>{{_(point.title)}}</h4>
-              <div class="description small">
-                {{_(point.description)|markdown|safe}}
-              </div>
-            </div>
-            {% if point.example %}
-              <div class="point-example">
-                {% set example = g.doc(point.example, locale=doc.locale) %}
-                {{example.html|safe}}
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
-    </section>
+    {% with points = doc.points %}
+      {% include "/views/partials/points.html" %}
+    {% endwith %}
   </div>
 
   {% with cta = doc.cta %}

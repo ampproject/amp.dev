@@ -9,13 +9,15 @@
     {{ navmarkup|safe }}
     <div class="container xl">
       <section class="hero">
-        <amp-img class="icon"
-            noloading
-            width="{{doc.hero.hero_icon_width}}"
-            height="{{doc.hero.hero_icon_height}}"
-            layout=responsive
-            src="/static/img/about/who-use-amp/{{doc.hero.hero_icon}}">
-        </amp-img>
+          {% if doc.hero.hero_icon %}
+            <amp-img class="icon"
+                noloading
+                width="{{doc.hero.hero_icon_width}}"
+                height="{{doc.hero.hero_icon_height}}"
+                layout=responsive
+                src="/static/img/about/who-use-amp/{{doc.hero.hero_icon}}">
+            </amp-img>
+          {% endif %}
         <div class="hero-images desktop-only">
           {% if doc.hero.triangle_img %}
           <amp-img class="triangle"
@@ -135,45 +137,75 @@
         </div>
       </section>
 
+      {% if doc.points %}
+        {% with points = doc.points %}
+          {% include "/views/partials/points.html" %}
+        {% endwith %}
+      {% endif %}
+
       {% if doc.case %}
-      <section class="case-study">
-        <h3>{{_(doc.case.title)}}</h3>
-        <div class="card-container grid case desktop">
+        <section class="case-study">
+          <h3>{{_(doc.case.title)}}</h3>
+          <div class="card-container grid case desktop">
+            {% for case in doc.case.cases %}
+              {% with doc = g.doc('/content/learn/case-studies/' ~ case.filename), isCase = true %}
+                {% include "/views/partials/grid-card.html" %}
+              {% endwith %}
+            {% endfor %}
+          </div>
+          <amp-carousel
+              height="430"
+              layout="fixed-height"
+              type="slides">
           {% for case in doc.case.cases %}
+            <div class="card-container grid case">
             {% with doc = g.doc('/content/learn/case-studies/' ~ case.filename), isCase = true %}
               {% include "/views/partials/grid-card.html" %}
             {% endwith %}
+            </div>
           {% endfor %}
-        </div>
-        <amp-carousel
-            height="430"
-            layout="fixed-height"
-            type="slides">
-        {% for case in doc.case.cases %}
-          <div class="card-container grid case">
-          {% with doc = g.doc('/content/learn/case-studies/' ~ case.filename), isCase = true %}
-            {% include "/views/partials/grid-card.html" %}
-          {% endwith %}
-          </div>
-        {% endfor %}
-        </amp-carousel>
+          </amp-carousel>
 
-        {% if doc.case.lines_img %}
-          <amp-img class="lines"
+          {% if doc.case.lines_img %}
+            <amp-img class="lines"
+                noloading
+                width={{doc.case.lines_img_width}}
+                height={{doc.case.lines_img_height}}
+                layout=responsive
+                src="/static/img/about/who-use-amp/{{doc.case.lines_img}}">
+            </amp-img>
+          {% endif %}
+        </section>
+      {% endif %}
+
+      {% if doc.large_cta %}
+        <section class="large-cta">
+          <amp-img class="large-cta-lines left desktop-up"
               noloading
-              width={{doc.case.lines_img_width}}
-              height={{doc.case.lines_img_height}}
-              layout=responsive
-              src="/static/img/about/who-use-amp/{{doc.case.lines_img}}">
+              height={{doc.large_cta.lines_left_height}}
+              width={{doc.large_cta.lines_left_width}}
+              layout=fixed
+              src="/static/img/about/who-use-amp/{{doc.large_cta.lines_left}}">
           </amp-img>
-        {% endif %}
-      </section>
+          <amp-img class="large-cta-lines right desktop-up"
+              noloading
+              height={{doc.large_cta.lines_right_height}}
+              width={{doc.large_cta.lines_right_width}}
+              layout=fixed
+              src="/static/img/about/who-use-amp/{{doc.large_cta.lines_right}}">
+          </amp-img>
+          <h1>{{_(doc.large_cta.title)}}</h1>
+          <p>{{_(doc.large_cta.subtitle)}}</p>
+          <a href="doc.large_cta.cta_url" class="button light"><span>{{_(doc.large_cta.cta)}}</span></a>
+        </section>
       {% endif %}
     </div>
   </div>
+  {% if doc.cta %}
     {% with cta = doc.cta %}
       {% include "/views/partials/footer-cta.html" %}
     {% endwith %}
-    {% include "/views/partials/footer.html" %}
+  {% endif %}
+  {% include "/views/partials/footer.html" %}
 
 {% endblock %}

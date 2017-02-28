@@ -16,9 +16,7 @@
   .points {
     background: white;
     margin: -350px 0 200px;
-    max-width: 1200px;
-    padding: 450px 100px 100px 100px;
-    position: relative;
+    padding-top: 450px;
 
     &::before, &::after {
       content: '';
@@ -44,51 +42,6 @@
     }
   }
 
-  .point {
-    border-bottom: 3px solid #e5f7ff;
-    padding: 30px;
-
-    &:last-child {
-      border-bottom: 0;
-    }
-  }
-
-  .point-text {
-    align-items: flex-start;
-    display: flex;
-
-    h4, .description {
-      margin: 0 20px;
-      width: 0;
-    }
-
-    h4 {
-      flex: 1 1 auto;
-    }
-
-    .description {
-      flex: 2 1 auto;
-
-      a {
-        text-transform: none;
-      }
-
-      p {
-        margin-top: 0;
-      }
-    }
-  }
-
-  .point-example {
-    margin: 40px 20px 20px;
-  }
-
-  @include max-screen($tablet-breakpoint) {
-    .points {
-      padding: 450px 30px 100px;
-    }
-  }
-
   @include max-screen($tablet-portrait-breakpoint) {
     .wrap {
       &::after {
@@ -107,26 +60,10 @@
     .points {
       background: none;
       margin: 30px 0;
-      padding: 0;
+      padding-top: 0;
 
       &::before, &::after {
         display: none;
-      }
-    }
-
-    .point {
-      padding: 30px 0;
-
-      .point-text {
-        display: block;
-      }
-
-      h4, .description {
-        width: auto;
-      }
-
-      h4 {
-        margin-bottom: 30px;
       }
     }
   }
