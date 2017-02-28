@@ -36,7 +36,7 @@
     </section>
     <section class="user-categories card-container">
       {% for card in doc.cards %}
-        <a class="card" id="{{card.name|slug}}" href="{{g.doc('/content/learn/who/' ~ card.name|slug ~ '.yaml').url.path}}">
+        <a class="card" id="{{card.name|slug}}" href="{{g.doc('/content/learn/who/' ~ card.name|slug ~ '.yaml', locale=doc.locale).url.path}}">
           <amp-img
               noloading
               height=150

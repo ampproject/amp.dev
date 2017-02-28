@@ -1,11 +1,11 @@
-$title: Who uses AMP?
+$title: Who is AMP for?
 $order: 1
 class: about-who
 $view: /views/about-who.html
 $parent: /content/learn/overview.yaml
 
 hero:
-  title@: Who Uses AMP
+  title@: Who is AMP for?
   subtitle@: Join an ecosystem of  850,000 domains, leading platforms, and 100+ technology providers using  AMP.
   hero_img: who_phones_hero.png
   line_img: who_lines1.svg

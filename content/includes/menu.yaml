@@ -10,7 +10,7 @@ menu:
       - href: /content/learn/amp-design-principles.yaml
         copy@: "Design Principles"
       - href: /content/learn/who-uses-amp.yaml
-        copy@: "Who Uses AMP?"
+        copy@: "Who is AMP for?"
         collection: learn/who
       - href: /content/learn/case-studies.html
         copy@: "Case Studies"
