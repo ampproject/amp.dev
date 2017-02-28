@@ -4,7 +4,7 @@ $title: Slate
 $date: October 7, 2016
 $category: Publishers
 $parent: /content/learn/case-studies.html
-class: case-study post-detail
+class: case-study post-detail case-study--slate
 
 components:
   - social-share
@@ -22,8 +22,8 @@ results:
       description: Saved in development resources/yr
 logo:
   src: "case-studies/slate_logo.png"
-  width: 200
-  height: 84
+  width: 80
+  height: 34
 download: "case-studies/slate.pdf"
 ---
 

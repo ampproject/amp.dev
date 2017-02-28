@@ -360,13 +360,11 @@ body.about-who-vertical {
       }
     }
 
-    .why-use {
-      padding: 0 5% 50px 5%;
+    .why-use, .case-study {
+      padding: 0 0 50px 0;
     }
 
     .case-study {
-      padding: 0 5% 50px 5%;
-
       .card-container {
         padding-left: 0;
         padding-right: 0;
@@ -412,6 +410,10 @@ body.about-who-vertical {
       }
     }
 
+    .why-use, .case-study {
+      padding: 0 0 50px 0;
+    }
+
     .case-study {
       .desktop {
         display: none;
@@ -424,7 +426,7 @@ body.about-who-vertical {
         left: -3%;
 
         .card-container {
-          padding: 0;
+          padding: 0 35px;
           justify-content: center;
         }
 
@@ -442,7 +444,7 @@ body.about-who-vertical {
         left: -3%;
 
         .card-container {
-          padding: 0;
+          padding: 0 35px;
           justify-content: center;
         }
 
@@ -526,6 +528,7 @@ body.about-who-vertical {
   @include max-screen($mobile-medium-breakpoint) {
     .reason {
       amp-img {
+        height: 50px;
         margin: 10px 0;
         min-height: 50px;
       }

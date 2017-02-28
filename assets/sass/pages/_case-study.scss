@@ -49,6 +49,12 @@
     width: 200px;
   }
 
+  &--slate {
+    .post-logo {
+      width: 150px;
+    }
+  }
+
   .post-results {
     background: $gradient-med-faded;
     display: flex;
@@ -358,6 +364,12 @@
   .case-study {
     .post-logo {
       max-width: 150px;
+    }
+
+    &--slate {
+      .post-logo {
+        max-width: 100px;
+      }
     }
 
     .post-results {
