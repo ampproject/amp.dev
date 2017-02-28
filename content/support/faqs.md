@@ -38,7 +38,16 @@ The companies involved in the project want to make the mobile web work better fo
 The project is open to all players in the ecosystem - publishers, consumer platforms, and creators. To get an idea who some of the companies and sites are who use AMP, head to the [Who page](/who).
 
 ### What are the consequences of using Accelerated Mobile Pages?
+
 By using the AMP format, content producers are making the content in AMP files available to be crawled, indexed & displayed (subject to the robots exclusion protocol) and cached by third parties.
+
+### As a publisher, what responsibilities do I have when using Accelerated Mobile Pages?
+
+If a publisher collects data from users who view its AMP pages, such data collection is governed by the publisher’s privacy policy.  It is the publisher’s responsibility to disclose its privacy policy, ideally by including a link to it within each of the publisher’s AMP pages.
+
+Furthermore, the laws in many jurisdictions, such as in the European Union, require a publisher to give visitors information about cookies and other forms of local storage used on the publisher’s web pages (including AMP pages). In many cases, these laws also require that the publisher obtain consent.  It is the publisher’s responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component [amp-user-notification](https://www.ampproject.org/docs/reference/components/amp-user-notification) provides a way to display a dismissable notification to the user.
+
+If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP publisher and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP publisher is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.
 
 ### What type of content works best using Accelerated Mobile Pages?
 
@@ -46,7 +55,7 @@ The goal is for all published content, from news stories to videos and from blog
 
 ### As a publisher, does making my content work for Accelerated Mobile Pages entail more work?
 
-In short, not much. Since “AMP HTML” is built entirely out of existing web technologies, the development process mirrors the one publishers are already using today. Publishers can familiarize themselves with the AMP HTML specification on GitHub. For those used to the current process, we don’t expect a significant learning curve.
+In short, not much. Since “AMP HTML” is built entirely out of existing web technologies, the development process mirrors the one publishers are already using today. Publishers can familiarize themselves with the [AMP HTML specification](https://www.ampproject.org/docs/reference/spec) on GitHub. For those used to the current process, we don’t expect a significant learning curve.
 
 ### How can a publisher get content into AMP HTML?
 
@@ -56,17 +65,17 @@ Publishers and Content Management System (CMS) providers can develop an integrat
 
 ### How can a consumer platform get involved in Accelerated Mobile Pages?
 
-The project is open to everyone, and existing members of the project are very enthusiastic to engage with consumer platforms on the initiative. Google has opened its cache for use for free by anyone, including to consumer platforms that would like to display AMP content in their environment. Please get in touch via [Github](https://github.com/ampproject/amphtml/issues/new) and we will address your questions as quickly as we can.
+The project is open to everyone, and existing members of the project are very enthusiastic to engage with consumer platforms on the initiative. Google has opened its cache for use for free by anyone, including to consumer platforms that would like to display AMP content in their environment. Please get in touch via [GitHub](https://github.com/ampproject/amphtml/issues/new) and we will address your questions as quickly as we can.
 
 ### How can an advertising or technology vendor get involved in Accelerated Mobile Pages?
 
-Please review the [contributing guidelines](https://github.com/ampproject/amphtml/tree/master/3p#ads) and get in touch via [Github](https://github.com/ampproject/amphtml/issues/new).
+Please review the [contributing guidelines](https://github.com/ampproject/amphtml/tree/master/3p#ads) and get in touch via [GitHub](https://github.com/ampproject/amphtml/issues/new).
 
 ## Publisher Monetization
 
 ### How does advertising work on Accelerated Mobile Pages?
 
-A goal of the Accelerated Mobile Pages Project is to ensure effective ad monetization on the mobile web while embracing a user-centric approach. With that context, the objective is to provide support for a comprehensive range of ad formats, ad networks and technologies in Accelerated Mobile Pages. As part of that, those involved with the project are also engaged in crafting Sustainable Ad Practices to ensure that ads in AMP files are fast, safe, compelling and effective for users.
+A goal of the Accelerated Mobile Pages Project is to ensure effective ad monetization on the mobile web while embracing a user-centric approach. There is currently support for a comprehensive range of ad formats, ad networks and technologies in Accelerated Mobile Pages. As part of that, those involved with the project are also engaged in crafting Sustainable Ad Practices to ensure that ads in AMP files are fast, safe, compelling and effective for users.
 
 ### Are publishers able to sell their own ad inventory?
 
@@ -78,12 +87,12 @@ It is a core objective of the Accelerated Mobile Pages project to support subscr
 
 ### How are analytics being handled in this AMP format?
 
-Ensuring publishers are able to get robust analytics insight is a core design goal for the project. While the analytics support in the demo release is very limited, the spec is expected to have support for collection of analytics information, and integrating with 3rd party systems without compromising the AMP file speed or size. Several analytics providers are [participating](https://www.ampproject.org/who/#analytics) in the project.
+Ensuring publishers are able to get robust analytics insight is a core design goal for the project. AMP currently supports the collection of analytics information using features like amp-analytics, which can integrate with 3rd party systems without compromising the AMP file speed or size. Several analytics providers are [participating](https://www.ampproject.org/who/#analytics) in the project.
 
 ### Do publishers receive credit for the traffic from a measurement perspective?
 
-Yes, an AMP file is the same as the rest of your site – this space is the publisher’s canvas.
+Yes.
 
 ### How do I become a part of this project?
 
-We welcome interested individuals and companies who want to get involved to get in touch via [Github](https://github.com/ampproject/amphtml/issues/new), so that we can add you to a distribution list and keep you posted on any new information.
+We welcome interested individuals and companies who want to get involved to get in touch via [GitHub](https://github.com/ampproject/amphtml/issues/new), so that we can add you to a distribution list and keep you posted on any new information.
