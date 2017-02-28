@@ -109,7 +109,7 @@
   .card-inner {
     display: flex;
     height: auto;
-    padding: 15%;
+    padding: 50px;
     width: 100%;
   }
 
@@ -142,7 +142,7 @@
 // for case studies
 .card-container.case {
   .card-inner {
-    padding: 13%;
+    padding: 50px;
   }
 
   .card-date {
@@ -174,7 +174,7 @@
     }
 
     .card-inner {
-      padding: 10%;
+      // padding: 10%;
     }
 
     .card-title {
@@ -187,7 +187,7 @@
   }
 }
 
-@include max-screen($mobile-medium-breakpoint) {
+@include max-screen($tablet-portrait-breakpoint) {
   .card-container.grid,
   .card-container.case {
     .card {
