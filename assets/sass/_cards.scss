@@ -89,6 +89,7 @@
 
   &::after {
     content: '';
+    display: block;
     flex: 0 0 31%; //IE 10: calc not allowed in flex
     flex: 0 0 calc(33% - 30px);
     flex-basis: calc(33% - 30px); // IE 11
