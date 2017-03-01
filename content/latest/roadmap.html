@@ -70,7 +70,7 @@ components:
             </div>
           </div>
           <div class="forecast">
-            <h4>{{ roadmap.outlook }} Outlook</h4>
+            <h4>{{ roadmap.outlook or "" }} Outlook</h4>
             <ul>
               {% for forecast in section.forecast %}
                 <li>{{ forecast|markdown|safe }}</li>
