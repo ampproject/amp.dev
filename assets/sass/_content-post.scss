@@ -35,6 +35,15 @@
       margin: 0 250px 0 75px;
     }
   }
+
+  .rtl {
+    .post.has-toc {
+      .post-title,
+      .post-content {
+        margin: 0 75px 0 250px;
+      }
+    }
+  }
 }
 
 @include min-screen($toc-breakpoint) {
@@ -42,6 +51,15 @@
     .post-title,
     .post-content {
       margin: 0 190px 0 15px;
+    }
+  }
+
+  .rtl {
+    .post.has-toc {
+      .post-title,
+      .post-content {
+        margin: 0 15px 0 190px;
+      }
     }
   }
 }

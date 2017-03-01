@@ -38,6 +38,13 @@ td:first-child {
   border-right: 2px solid $color-ampblue;
 }
 
+.rtl {
+  td:first-child {
+    border-left: 2px solid $color-ampblue;
+    border-right: 0;
+  }
+}
+
 html, body {
   th {
     @extend %text-label;

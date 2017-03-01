@@ -84,6 +84,11 @@
   }
 }
 
+.rtl .toc {
+  left: 0;
+  right: auto;
+}
+
 @include max-screen($toc-breakpoint) {
   .toc {
     display: none;

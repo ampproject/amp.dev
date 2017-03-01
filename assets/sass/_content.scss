@@ -80,12 +80,14 @@
 }
 
 .rtl .main {
+  margin: 0 350px 0 auto;
+
   .content {
-    ul,
-    ol {
-      margin-left: 0;
-      margin-right: 40px;
-    }
+    // ul,
+    // ol {
+    //   margin-left: 0;
+    //   margin-right: 40px;
+    // }
   }
 }
 

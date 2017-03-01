@@ -88,3 +88,13 @@ aside {
     }
   }
 }
+
+.rtl aside {
+  padding: 24px 80px 24px 24px;
+
+  &::before {
+    left: auto;
+    margin: 0 -36px 0 0;
+    right: 44px;
+  }
+}
