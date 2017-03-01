@@ -1,6 +1,12 @@
-@mixin roadmap-stage($color, $number) {
+@mixin roadmap-stage($color, $number, $rtl) {
 
-  border-left: 1px solid $color;
+  @if $rtl {
+    border-left: 0;
+    border-right: 1px solid $color;
+  } @else {
+    border-left: 1p x solid $color;
+    border-right: 0;
+  }
 
   &:after {
     border: 1px solid $color;
@@ -258,13 +264,13 @@
 
     }
 
-    .stage-0 { @include roadmap-stage($color-lightblue, 0); }
-    .stage-1 { @include roadmap-stage(#10c4f5, 1); }
-    .stage-2 { @include roadmap-stage(#12b5ea, 2); }
-    .stage-3 { @include roadmap-stage(#15a6e0, 3); }
-    .stage-4 { @include roadmap-stage(#1797d5, 4); }
-    .stage-5 { @include roadmap-stage(#1a88cB, 5); }
-    .stage-6 { @include roadmap-stage($color-ampblue, 6); }
+    .stage-0 { @include roadmap-stage($color-lightblue, 0, false); }
+    .stage-1 { @include roadmap-stage(#10c4f5, 1, false); }
+    .stage-2 { @include roadmap-stage(#12b5ea, 2, false); }
+    .stage-3 { @include roadmap-stage(#15a6e0, 3, false); }
+    .stage-4 { @include roadmap-stage(#1797d5, 4, false); }
+    .stage-5 { @include roadmap-stage(#1a88cB, 5, false); }
+    .stage-6 { @include roadmap-stage($color-ampblue, 6, false); }
 
     ul {
       margin: 0;
@@ -274,10 +280,92 @@
     }
 
   }
+}
 
-  /* Them responsive awesomeness */
+.roadmap.rtl .content {
+  .post-content {
+    .forecast, .description {
+      h4 {
+        padding-left: 0;
+        padding-right: 1.9em;
+      }
+    }
 
-  @include max-screen($mobile-breakpoint) {
+    .plan {
+      h4 {
+        padding-left: 0;
+        padding-right: 1em;
+      }
+    }
+  }
+
+  .workstream {
+    left: auto;
+    right: -6%;
+  }
+
+  .workstream-flex:not(.workstream-headings) .description {
+    border-left: 1px solid $color-lightblue;
+    border-right: 0;
+  }
+
+  .description {
+    padding-left: 2em;
+    padding-right: 1em;
+  }
+
+  .about, .description, .forecast {
+    ul, ol {
+      padding: 0 .7em 0 0;
+
+      li::before {
+        left: auto;
+        right: -.8em;
+      }
+    }
+  }
+
+  .stages {
+    margin: -4px -21px 0 0;
+    padding: 30px 0 0 1em;
+
+    ul {
+      margin: 0 12px 0 0;
+    }
+
+    & > li{
+      padding: 25px 12px 30px 0;
+
+      &::after {
+        left: auto;
+        right: -14px;
+      }
+
+      &::before {
+        left: 0;
+        right: 24px;
+      }
+
+      li::before {
+        left: auto;
+        right: -24px;
+      }
+    }
+
+    .stage-0 { @include roadmap-stage($color-lightblue, 0, true); }
+    .stage-1 { @include roadmap-stage(#10c4f5, 1, true); }
+    .stage-2 { @include roadmap-stage(#12b5ea, 2, true); }
+    .stage-3 { @include roadmap-stage(#15a6e0, 3, true); }
+    .stage-4 { @include roadmap-stage(#1797d5, 4, true); }
+    .stage-5 { @include roadmap-stage(#1a88cB, 5, true); }
+    .stage-6 { @include roadmap-stage($color-ampblue, 6, true); }
+  }
+}
+
+/* Them responsive awesomeness */
+
+@include max-screen($mobile-breakpoint) {
+  .roadmap .content {
     .share-module {
       .text-label {
         display: none;
@@ -291,6 +379,7 @@
     .workstream-flex {
       flex-wrap: wrap;
     }
+
     .stages {
       margin-left: 24px;
     }
@@ -328,6 +417,24 @@
       .plan {
         display: none;
       }
+    }
+  }
+
+  .roadmap.rtl .content {
+    .stages {
+      margin-right: 24px;
+    }
+
+    .post-content .description h4 {
+      padding-right: 1.4em;
+    }
+
+    .workstream-flex .plan h4 {
+      padding: 0 1.4em 15px 0;
+    }
+
+    .workstream-flex:not(.workstream-headings) .description {
+      border-left: 0;
     }
   }
 }

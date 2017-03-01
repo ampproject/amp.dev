@@ -205,6 +205,13 @@
     }
   }
 
+  &.rtl {
+    .feeds .posts .posts-label::after {
+      left: auto;
+      right: 0;
+    }
+  }
+
   @include max-screen($tablet-breakpoint + 320px) {
     .hero {
       .text {
