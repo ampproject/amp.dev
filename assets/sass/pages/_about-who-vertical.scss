@@ -227,7 +227,7 @@ body.about-who-vertical {
         .lines {
           bottom: 10%;
           height: 260px;
-          left: -9%;
+          left: -15%;
           position: absolute;
           width: 410px;
         }
@@ -615,6 +615,7 @@ body.about-who-vertical {
     .about-who-block.centered {
       .hero .example-users {
         left: 3%;
+        max-width: 450px;
       }
     }
 
