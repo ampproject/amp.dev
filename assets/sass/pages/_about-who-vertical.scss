@@ -212,7 +212,7 @@ body.about-who-vertical {
 
   .about-who-block.centered {
     &::before {
-      display: block;
+      top: -50px;
     }
 
     .hero {
