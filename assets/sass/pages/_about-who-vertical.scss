@@ -315,6 +315,12 @@ body.about-who-vertical {
     }
   }
 
+  &.rtl {
+    .about-who-block.publishers .hero {
+      padding: 100px 45% 200px 5%;
+    }
+  }
+
   @include min-max-screen($tablet-portrait-breakpoint, $tablet-breakpoint) {
     .tablet-wrapper {
       position: relative;
@@ -363,6 +369,13 @@ body.about-who-vertical {
 
       .reasons.desktop {
         display: none;
+      }
+    }
+
+    &.rtl {
+      .why-use .reasons.tablet {
+        left: auto;
+        right: -3%;
       }
     }
   }
@@ -439,6 +452,12 @@ body.about-who-vertical {
       .hero {
         padding-left: 0;
         width: auto;
+      }
+    }
+
+    &.rtl {
+      .about-who-block.publishers .hero {
+        padding-right: 5%;
       }
     }
   }
@@ -596,6 +615,14 @@ body.about-who-vertical {
     .about-who-block.centered {
       .hero .example-users {
         left: 3%;
+      }
+    }
+
+    &.rtl {
+      .why-use .reasons.mobile,
+      .case-study amp-carousel {
+        left: auto;
+        right: -3%;
       }
     }
   }

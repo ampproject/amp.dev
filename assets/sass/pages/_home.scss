@@ -260,6 +260,33 @@
     padding: 100px 0 60px 0;
   }
 
+  &.rtl {
+    .hero {
+      .hero-image {
+        left: auto;
+        right: -40px;
+      }
+
+      br.tablet-down {
+        display: block;
+        visibility: visible;
+      }
+    }
+
+    .latest {
+      left: auto;
+      right: -20%;
+    }
+
+    .experience-image {
+      order: 0;
+    }
+
+    .experience-content {
+      order: 1;
+    }
+  }
+
 
   @include max-screen($tablet-breakpoint) {
     .hero {
@@ -389,9 +416,18 @@
       }
     }
 
-    section {
+    .wrap section {
       padding: 50px 0 40px;
+    }
+
+    &.rtl {
+      .experience-image {
+        order: 1;
+      }
+
+      .experience-content {
+        order: 0;
+      }
     }
   }
 }
-
