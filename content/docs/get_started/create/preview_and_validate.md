@@ -17,4 +17,4 @@ Next, make sure that your AMP page **is actually valid AMP**, or it won’t get 
 
 [Learn more about validation](/docs/guides/validate.html), and what to do when you get errors.
 
-<a class="go-button button" href="/docs/get_started/general/create/prepare_for_discovery.html">Continue to Step 5</a>
+<a class="go-button button" href="/docs/get_started/create/prepare_for_discovery.html">Continue to Step 5</a>

@@ -6,4 +6,4 @@ Non sai bene come iniziare? Con questo tutorial scoprirai come creare una pagina
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/it/docs/get_started/general/create/basic_markup.html">Vai al Passaggio 1</a>
+<a class="button go-button" href="/it/docs/get_started/create/basic_markup.html">Vai al Passaggio 1</a>

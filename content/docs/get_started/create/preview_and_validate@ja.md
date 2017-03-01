@@ -16,4 +16,4 @@ AMP ページのプレビュー方法は静的な HTML サイトと同じです�
 
 [検証の詳細](/docs/guides/validate.html)とエラーの対処法についてもご確認ください。
 
-<a class="go-button button" href="/ja/docs/get_started/general/create/prepare_for_discovery.html">ステップ 5 に進む</a>
+<a class="go-button button" href="/ja/docs/get_started/create/prepare_for_discovery.html">ステップ 5 に進む</a>

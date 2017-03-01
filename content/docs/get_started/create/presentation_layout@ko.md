@@ -27,4 +27,4 @@ AMP는 요소의 레이아웃을 페이지에 배치할 때 더 엄격한 규칙
 
 AMP가 페이지를 렌더링하고 배치하는 방법과 레이아웃을 수정하는 방법은 [레이아웃 제어 방법](/docs/guides/responsive/control_layout.html)에서 자세히 알아보세요.
 
-<a class="go-button button" href="/ko/docs/get_started/general/create/preview_and_validate.html">4단계로 계속</a>
+<a class="go-button button" href="/ko/docs/get_started/create/preview_and_validate.html">4단계로 계속</a>

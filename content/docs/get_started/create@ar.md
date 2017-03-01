@@ -6,4 +6,4 @@ $title: إنشاء صفحتك الأولى في AMP
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/ar/docs/get_started/general/create/basic_markup.html">المتابعة إلى الخطوة 1</a>
+<a class="button go-button" href="/ar/docs/get_started/create/basic_markup.html">المتابعة إلى الخطوة 1</a>

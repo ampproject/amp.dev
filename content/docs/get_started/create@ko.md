@@ -6,4 +6,4 @@ $title: 첫 번째 AMP 페이지 만들기
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/ko/docs/get_started/general/create/basic_markup.html">1단계로 계속</a>
+<a class="button go-button" href="/ko/docs/get_started/create/basic_markup.html">1단계로 계속</a>

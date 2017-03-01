@@ -27,4 +27,4 @@ AMP sigue reglas estrictas al distribuir elementos en la página. En una página
 
 Aprende todo acerca de cómo AMP representa y diseña una página y cómo puedes modificar el diseño en [Cómo controlar el diseño](/docs/guides/responsive/control_layout.html).
 
-<a class="go-button button" href="/es/docs/get_started/general/create/preview_and_validate.html">Continuar con el paso 4</a>
+<a class="go-button button" href="/es/docs/get_started/create/preview_and_validate.html">Continuar con el paso 4</a>

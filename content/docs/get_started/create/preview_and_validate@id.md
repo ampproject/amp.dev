@@ -16,4 +16,4 @@ Berikutnya, pastikan bahwa halaman AMP Anda **benar-benar merupakan halaman AMP 
 
 [Ketahui selengkapnya mengenai validasi](/docs/guides/validate.html), dan tindakan yang harus Anda lakukan jika menjumpai kesalahan.
 
-<a class="go-button button" href="/id/docs/get_started/general/create/prepare_for_discovery.html">Lanjutkan ke Langkah 5</a>
+<a class="go-button button" href="/id/docs/get_started/create/prepare_for_discovery.html">Lanjutkan ke Langkah 5</a>

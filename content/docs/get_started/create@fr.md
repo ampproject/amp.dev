@@ -6,4 +6,4 @@ Vous ne savez pas par où commencer ? Dans ce didacticiel, vous allez découvrir
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/fr/docs/get_started/general/create/basic_markup.html">Continuer à l'Étape 1</a>
+<a class="button go-button" href="/fr/docs/get_started/create/basic_markup.html">Continuer à l'Étape 1</a>

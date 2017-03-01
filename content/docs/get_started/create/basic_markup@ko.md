@@ -59,4 +59,4 @@ AMP HTML 문서는:
 
 희소식입니다! 이것만 있으면 우리는 첫 번째 AMP 페이지를 만들 수 있습니다. 물론 본문은 아직 갈 길이 멉니다. 다음 섹션에서는 이미지, 사용자 지정 AMP 요소와 같은 기본사항을 추가하는 방법과 페이지에 스타일을 지정하고 반응형 레이아웃을 만드는 방법에 대해 설명합니다.
 
-<a class="go-button button" href="/ko/docs/get_started/general/create/include_image.html">2단계로 계속</a>
+<a class="go-button button" href="/ko/docs/get_started/create/include_image.html">2단계로 계속</a>

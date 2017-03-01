@@ -12,4 +12,4 @@ $title: تضمين صورة
 
 للتعرّف على أسباب إقدامنا على استبدال العلامات، مثل استبدال `<img>` بـ `<amp-img>`، وكم عدد المتاح منها، يُرجى الانتقال إلى [تضمين إطارات Iframe والوسائط](/docs/guides/amp_replacements.html).
 
-<a class="go-button button" href="/ar/docs/get_started/general/create/presentation_layout.html">3</a>
+<a class="go-button button" href="/ar/docs/get_started/create/presentation_layout.html">3</a>
