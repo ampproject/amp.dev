@@ -1,5 +1,5 @@
-$path: /docs/get_started/advanced/login_requiring/{base}.html
+$path: /docs/get_started/login_requiring/{base}.html
 $view: /views/doc.html
 $localization:
-  path: /{locale}/docs/get_started/advanced/login_requiring/{base}.html
+  path: /{locale}/docs/get_started/login_requiring/{base}.html
 $title@: Create a login-requiring AMP page
