@@ -1,6 +1,7 @@
 ---
 $title: Serving Ads on AMP
 $order: 8
+toc: true
 ---
 <div class="toc">
 {% include "/views/partials/sub_nav.html" %}
