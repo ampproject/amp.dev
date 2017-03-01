@@ -1,6 +1,50 @@
 blogs:
 
   - type: Blog
+    title: "New Industry Benchmarks for Mobile Page Speed"
+    id: new-industry-benchmarks-for-mobile-page-speed
+    author: amphtml
+    role: 
+    origin: "https://amphtml.wordpress.com/2017/02/28/new-industry-benchmarks-for-mobile-page-speed/amp/"
+    excerpt: "The following is an excerpt from a Think with Google article by Daniel An, Global Product Lead, Mobile, Google. The average time it takes to fully load a mobile landing page is 22 seconds, according to a new analysis. Yet 53% of mobile site visitors leave a page that takes longer than three seconds to load. That&#8217;s [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-28T13:56:02-08:00
+    date: "February 28, 2017"
+
+  - type: Blog
+    title: "Grow Your Business with Ads on AMP"
+    id: grow-your-business-with-ads-on-amp
+    author: Vamsee Jasti
+    role:  Product Manager, AMP Project
+    origin: "https://amphtml.wordpress.com/2017/02/27/grow-your-business-with-ads-on-amp/amp/"
+    excerpt: "We understand that every business is different, but one thing common to them all in today’s mobile driven world is the need to ensure a fast user experience across all screens. That is why we believe the growing AMP ecosystem is so important. It brings together a diverse community of publishers, advertisers, and technology platforms [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-27T11:18:47-08:00
+    date: "February 27, 2017"
+
+  - type: Blog
+    title: "AMP Roadmap Update for Mid-Q1 2017"
+    id: amp-roadmap-update-for-mid-q1-2017
+    author: Eric Lindley
+    role:  Product Manager, AMP Project
+    origin: "https://amphtml.wordpress.com/2017/02/18/amp-roadmap-update-for-mid-q1-2017/amp/"
+    excerpt: "We’ve updated the AMP Roadmap with the details on progress during the first quarter of 2017, and you can read below for some of the highlights. Format Interactivity is a major focus for us this quarter as we  build out the AMP format’s capabilities. amp-bind is a binding protocol that introduces lower-level methods for building [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-17T16:09:17-08:00
+    date: "February 17, 2017"
+
+  - type: Blog
+    title: "Better galleries and forms in AMP"
+    id: 1056
+    author: Eric Lindley
+    role:  Product Manager
+    origin: "https://amphtml.wordpress.com/2017/02/15/1056/amp/"
+    excerpt: "We just released a couple of small tweaks in the AMP library that can make a big difference in building a better user experience. First, a new JavaScript method (goToSlide) supports advancing &#60;amp-carousel&#62; to a particular slide on user tap/click. This enables significant UX enhancements to image galleries. Second, we’ve made it easier to integrate [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-15T10:29:48-08:00
+    date: "February 15, 2017"
+
+  - type: Blog
     title: "What’s in an AMP URL?"
     id: whats-in-an-amp-url
     author: amphtml
@@ -10,47 +54,3 @@ blogs:
     avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
     datedata: 2017-02-06T11:12:42-08:00
     date: "February 6, 2017"
-
-  - type: Blog
-    title: "New default placeholders for ads in AMP"
-    id: new-default-placeholders-for-ads-in-amp
-    author: Vamsee Jasti
-    role:  Product Manager, AMP Project
-    origin: "https://amphtml.wordpress.com/2017/02/02/new-default-placeholders-for-ads-in-amp/amp/"
-    excerpt: "We want to share a somewhat small but visually impactful feature that we are planning to launch on AMP. Content loads incredibly fast on AMP pages, but traditional ads often load relatively slowly. This leaves blank areas on publisher pages, which is a poor reading experience for the user as it can feel like the [&#8230;]"
-    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-    datedata: 2017-02-02T13:14:47-08:00
-    date: "February 2, 2017"
-
-  - type: Blog
-    title: "Ads on the web will get better with AMP. Here’s how."
-    id: ads-on-the-web-will-get-better-with-amp-heres-how
-    author: Richard Gingras
-    role:  VP &#8211; News, Google
-    origin: "https://amphtml.wordpress.com/2017/01/30/ads-on-the-web-will-get-better-with-amp-heres-how/amp/"
-    excerpt: "There are a lot of bad ads on the web today &#8212; ads that are slow, janky and don’t necessarily deliver great user experiences when they include annoying pop-ups or cause content to reflow on your screen. The net result: users install ad blockers, making it difficult for publishers to fund the content they’re creating, [&#8230;]"
-    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-    datedata: 2017-01-30T11:44:52-08:00
-    date: "January 30, 2017"
-
-  - type: Blog
-    title: "Speeding up news apps with AMP"
-    id: speeding-up-news-apps-with-amp
-    author: Mario Lorenzen
-    role:  Portal Manager, mh:n digital
-    origin: "https://amphtml.wordpress.com/2017/01/25/speeding-up-news-apps-with-amp/amp/"
-    excerpt: "Shz.de is one of the top news publishers in Schleswig-Holstein, Germany’s most northern state. Each month around 1.5 million unique users access our content to stay up to date on local news. In 2011 we saw an increasing number of our readers viewing content on their mobile phones, so we produced a mobile app, which [&#8230;]"
-    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-    datedata: 2017-01-25T12:58:19-08:00
-    date: "January 25, 2017"
-
-  - type: Blog
-    title: "Amp up for AMP Conf 2017"
-    id: amp-up-for-amp-conf-2017
-    author: Paul Bakaus
-    role:  AMP Developer Advocate, Google
-    origin: "https://amphtml.wordpress.com/2017/01/23/amp-up-for-amp-conf-2017/amp/"
-    excerpt: "I can’t believe it’s already been over a year since we started our quest for faster, friendlier web pages. Now that we’re out of the honeymoon phase, the AMP team is taking a hard look at where we are today, what’s to come, and the direction of the AMP ecosystem. It’s easy to blaze ahead [&#8230;]"
-    avatar: https://www.gravatar.com/avatar/9a2d68554d8d1655a3fb3e2a50aee909
-    datedata: 2017-01-23T15:07:07-08:00
-    date: "January 23, 2017"
