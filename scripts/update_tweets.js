@@ -49,12 +49,16 @@ feedparser.on('readable', function () {
     retweet_href: https://twitter.com/amphtml`;
     }
 
+    var description = item.description
+      .replace(/\<img class=\"Emoji[^\>]+alt=\"([^\"]+)\"[^\>]+\>/g, "$1")
+      .replace(/\n/g, '');
+
     body += `
     tweet_id: ${ tweetId }
     date_data: ${ moment(item.date).format() }
     date: ${ moment(item.date).format("MMMM D, YYYY") }
     text: >
-      ${ item.description.replace(/\n/g, '') }
+      ${ description }
 `;
     }
 
