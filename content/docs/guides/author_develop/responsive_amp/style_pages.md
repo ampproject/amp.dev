@@ -5,7 +5,6 @@ toc: true
 ---
 [TOC]
 
-
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets
 (with the exception of [custom fonts](#the-custom-fonts-exception)).
@@ -13,7 +12,7 @@ Also certain styles are disallowed due to performance implications;
 inline style attributes aren't allowed.
 
 All styles must live in the head of the document
-(see [Add styles to a page](/docs/guides/validate.html#add-styles-to-a-page)).
+(see [Add styles to a page](/docs/guides/responsive_amp.html#add-styles-to-a-page)).
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
@@ -38,7 +37,7 @@ The following styles aren’t allowed in AMP pages:
     <tr>
       <td data-th="Banned style">Inline style attributes</td>
       <td data-th="Description">All styles must be defined in the <code>&lt;head&gt;</code> of the page,
-      	within a <code>&lt;style amp-custom&gt;</code> tag.</td>
+        within a <code>&lt;style amp-custom&gt;</code> tag.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>!important</code> qualifier </td>
@@ -139,9 +138,9 @@ so that many pages across the site can include embedded youtube videos.
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
 
   <title>Accelerated Mobile Pages Project</title>
-  <link rel="shortcut icon" href="/static/img/amp_favicon.png">
+  <link rel="icon" href="/static/img/amp_favicon.png">
   <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
   </style>

@@ -1,7 +1,9 @@
 ---
 $title: Styling & Layout
 $order: 0
+toc: true
 ---
+[TOC]
 
 Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
 both cases, you'll use CSS.
