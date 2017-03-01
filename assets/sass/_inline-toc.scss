@@ -37,14 +37,17 @@
       }
     }
   }
+}
 
-  @include max-screen($mobile-breakpoint) {
+@include max-screen($mobile-breakpoint) {
+  .inline-toc {
     margin: 25px 0;
 
     ul,
     ol {
       border-left: 1px solid $color-brightblue;
       text-align: left;
+      text-align: start;
     }
 
     li {
@@ -58,6 +61,13 @@
       color: $color-black-95;
       font-size: 16px;
       line-height: 26px;
+    }
+  }
+
+  .rtl .inline-toc {
+    ul, ol {
+      border-left: 0;
+      border-right: 1px solid $color-brightblue;
     }
   }
 }

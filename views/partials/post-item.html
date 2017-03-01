@@ -7,9 +7,9 @@
   {% if meta %}
     <div class="post-meta">
       {% if not isRoadmap %}
-        <a class="type" href="{{g.doc('/content/latest/list-' ~ post.type|lower ~ '.html').url.path}}">{{post.type}}</a>
+        <a class="type" href="{{g.doc('/content/latest/list-' ~ post.type|lower ~ '.html', locale=doc.locale).url.path}}">{{post.type}}</a>
       {% else %}
-        <a class="type" href="{{g.doc('/content/latest/roadmap.html').url.path}}">{{post.type}}</a>
+        <a class="type" href="{{g.doc('/content/latest/roadmap.html', locale=doc.locale).url.path}}">{{post.type}}</a>
       {% endif %}
       {% if isBlog %}
         <span class="time text-label">{{post.date}}</span>
@@ -20,13 +20,13 @@
     </div>
   {% endif %}
   {% if isBlog %}
-    <a href="{{g.doc('/content/latest/blog/' ~ post.id ~ '.md').url.path}}" class="post-title">
+    <a href="{{g.doc('/content/latest/blog/' ~ post.id ~ '.md', locale=doc.locale).url.path}}" class="post-title">
   {% endif %}
   {% if isEvent %}
     <a href="{{post.href}}" class="post-title">
   {% endif %}
   {% if isRoadmap %}
-    <a href="{{g.doc('/content/latest/roadmap.html').url.path}}" class="post-title">
+    <a href="{{g.doc('/content/latest/roadmap.html', locale=doc.locale).url.path}}" class="post-title">
     <h4>{{post.current}}</h4>
   {% else %}
     <h4>{{post.title|truncate(80, False)}}</h4>

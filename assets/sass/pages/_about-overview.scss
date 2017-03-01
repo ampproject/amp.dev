@@ -1,5 +1,4 @@
 .about-overview {
-
   .wrap {
     overflow: hidden;
     position: relative;
@@ -24,7 +23,7 @@
   .hero {
     margin: 100px 0 300px;
     position: relative;
-    padding: 100px 13.3% 140px 13.3%;
+    padding: 100px 5% 140px 5%;
 
     .images {
       position: absolute;
@@ -281,3 +280,27 @@
   }
 }
 
+.rtl.about-overview {
+  .hero {
+    .images {
+      right: 700px;
+      left: auto;
+
+      .triangle {
+        left: calc((1440px - 100vw)/2);
+        right: auto;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    .hero .images {
+      right: auto;
+
+      .triangle {
+        left: 0;
+      }
+    }
+  }
+}

@@ -210,6 +210,19 @@ a {
   }
 }
 
+.rtl .button {
+  .arrow {
+    margin: 0 8px 0 0;
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    .arrow {
+      transform: rotate(180deg) translateX(3px);
+    }
+  }
+}
+
 // Blockquotes
 blockquote {
   color: $color-darkgrey;

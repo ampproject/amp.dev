@@ -88,6 +88,18 @@ footer {
   }
 }
 
+.rtl .footer-cta {
+  .inner a {
+    left: 0;
+    right: auto;
+
+    &::after {
+      margin: 0 10px 0 0;
+      transform: rotate(180deg);
+    }
+  }
+}
+
 @include max-screen(1000px) {
   .footer-cta .inner {
     width: 90%;

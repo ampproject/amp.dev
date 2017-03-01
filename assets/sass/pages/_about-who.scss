@@ -85,8 +85,14 @@ body.about-who {
     }
   }
 
-  @include min-max-screen($mobile-breakpoint, 1300px) {
+  &.rtl {
     .hero {
+      padding: 225px 65% 300px 0%;
+    }
+  }
+
+  @include min-max-screen($mobile-breakpoint, 1300px) {
+    &.rtl .hero, .hero {
       padding: 70px 0 900px;
       text-align: center;
 
@@ -121,7 +127,7 @@ body.about-who {
       display: none;
     }
 
-    .hero {
+    &.rtl .hero, .hero {
       padding: 100px 0 40px 0;
 
       .inline-toc {

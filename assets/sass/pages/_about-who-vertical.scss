@@ -295,10 +295,12 @@ body.about-who-vertical {
 
       .triangle {
         left: calc((1440px - 100vw)/2);
+        right: auto;
       }
 
       .phones {
         left: -230px;
+        right: auto;
         top: -130px;
         width: 1100px;
       }
@@ -354,6 +356,7 @@ body.about-who-vertical {
             display: inline-block;
             max-width: 400px;
             text-align: left;
+            text-align: start;
           }
         }
       }
@@ -520,6 +523,7 @@ body.about-who-vertical {
             display: inline-block;
             max-width: 400px;
             text-align: left;
+            text-align: start;
           }
         }
       }

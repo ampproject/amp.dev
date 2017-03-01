@@ -285,6 +285,7 @@
     .post-title,
     .post-tag {
       text-align: left;
+      text-align: start;
     }
 
     .post-tag {
@@ -298,7 +299,7 @@
 
   .case-study {
     .post-logo {
-      margin-left: 0;
+      margin: 0;
     }
 
     .post-results {

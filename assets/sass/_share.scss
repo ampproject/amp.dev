@@ -118,3 +118,10 @@
     }
   }
 }
+
+.rtl .share-module {
+  .control header {
+    left: auto;
+    right: -10px;
+  }
+}

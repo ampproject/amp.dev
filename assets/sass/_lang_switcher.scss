@@ -1,4 +1,4 @@
-div.language {
+.language {
   height: 33px;
   left: 100px;
   position: relative;
@@ -95,19 +95,28 @@ div.language {
 }
 
 .rtl .language {
+  left: auto;
+  right: 100px;
+
+  .current {
+    margin: 0 0 0 100px;
+    right: -60px;
+  }
+
+  .others {
+    left: auto;
+    right: -50px;
+  }
+
+  section[expanded] .current {
+    left: auto;
+    right: 0;
+  }
+
   .current,
   .others-inner div {
     a {
       background-position: right 6px;
-      padding-left: 0;
-      padding-right: 26px;
-    }
-  }
-
-  .current {
-    &::before {
-      left: auto;
-      right: 4px;
     }
   }
 }
@@ -117,13 +126,8 @@ header .language {
   margin-left: 12px;
 }
 
-.rtl header .language {
-  margin-left: 0;
-  margin-right: 12px;
-}
-
 amp-sidebar {
-  div.language {
+  .language {
     bottom: 15px;
     left: 10px;
     position: absolute;
@@ -174,5 +178,11 @@ amp-sidebar {
         }
       }
     }
+  }
+}
+
+.rtl amp-sidebar .language {
+  section[expanded] .current {
+    right: -50px;
   }
 }

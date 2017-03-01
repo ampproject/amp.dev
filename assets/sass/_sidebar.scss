@@ -1,6 +1,5 @@
 amp-sidebar {
   background: $color-white;
-  // max-width: 100vw;
   width: 100vw;
 
   .submenu {
@@ -139,5 +138,26 @@ amp-sidebar {
       top: 1px;
       width: 7px;
     }
+  }
+}
+
+.rtl amp-sidebar {
+  .item-layer-1 {
+    padding: 30px 35px;
+  }
+
+  .has-sub-level::after {
+    left: 35px;
+    right: auto;
+    transform: rotate(-90deg) scale(.75);
+  }
+
+  .return-button::before {
+    margin: 0 5px;
+    transform: rotate(180deg);
+  }
+
+  .submenu {
+    transform: translateX(-100%);
   }
 }
