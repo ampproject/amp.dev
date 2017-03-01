@@ -30,13 +30,17 @@
   <style amp-custom>
   {% include "/assets/css/case-study.min.css" %}
   </style>
-{% elif doc.view == '/views/list_page.html' or doc.url.path == '/latest/' %}
+{% elif doc.view == '/views/list_page.html' or doc.url.path.endswith('/latest/') %}
   <style amp-custom>
   {% include "/assets/css/list.min.css" %}
   </style>
-{% elif doc.view == '/views/blog_detail.html' or doc.url.path == '/roadmap/' %}
+{% elif doc.view == '/views/blog_detail.html' or doc.url.path.endswith('/roadmap/') %}
   <style amp-custom>
   {% include "/assets/css/blog.min.css" %}
+  </style>
+{% elif doc.pod_path == '/content/pages/home.html' %}
+  <style amp-custom>
+  {% include "/assets/css/home.min.css" %}
   </style>
 {% else %}
   <style amp-custom>
