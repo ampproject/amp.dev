@@ -6,7 +6,7 @@
     <div class="content">
       <article class="post">
         <div class="post-meta">
-          <a class="post-type" href="{{g.doc('/content/latest/list-' ~ doc.type|lower ~ '.html').url.path}}">{{ doc.type }}</a>
+          <a class="post-type" href="{{g.doc('/content/latest/list-' ~ doc.type|lower ~ '.html', locale=doc.locale).url.path}}">{{ doc.type }}</a>
           <span class="post-date">{{ doc.date }}</span>
         </div>
 

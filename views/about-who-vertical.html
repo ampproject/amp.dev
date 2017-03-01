@@ -148,7 +148,8 @@
           <h3>{{_(doc.case.title)}}</h3>
           <div class="card-container grid case desktop">
             {% for case in doc.case.cases %}
-              {% with doc = g.doc('/content/learn/case-studies/' ~ case.filename), isCase = true %}
+              {% set locale = doc.locale %}
+              {% with doc = g.doc('/content/learn/case-studies/' ~ case.filename, locale=doc.locale), isCase = true %}
                 {% include "/views/partials/grid-card.html" %}
               {% endwith %}
             {% endfor %}
@@ -159,7 +160,7 @@
               type="slides">
           {% for case in doc.case.cases %}
             <div class="card-container grid case">
-            {% with doc = g.doc('/content/learn/case-studies/' ~ case.filename), isCase = true %}
+            {% with doc = g.doc('/content/learn/case-studies/' ~ case.filename, locale=doc.locale), isCase = true %}
               {% include "/views/partials/grid-card.html" %}
             {% endwith %}
             </div>

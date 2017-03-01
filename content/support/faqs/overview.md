@@ -7,7 +7,7 @@ class: faqs
 cta:
   title@: Next FAQ
   link_text@: Platform and Technology Company Involvement
-  link_url: platform-involvement.html
+  link_url: /content/support/faqs/platform-involvement.md
 
 faq:
   - title@: What is the Accelerated Mobile Pages project?

@@ -1,10 +1,10 @@
 .faqs {
-  amp-accordion {
+  .wrap amp-accordion {
     margin: 100px 0;
   }
 
   @include max-screen($mobile-breakpoint) {
-    amp-accordion {
+    .wrap amp-accordion {
       margin: 50px 0;
     }
   }

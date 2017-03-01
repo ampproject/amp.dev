@@ -25,6 +25,6 @@
 
   <div class="inner">
     <h2>{{_(cta.title)}}</h2>
-    <a href="{{cta.link_url}}">{{_(cta.link_text)}}</a>
+    <a href="{% if cta.link_url.startswith('http') %}{{ cta.link_url }}{% else %}{{ g.doc(cta.link_url, locale=doc.locale).url.path }}{% endif %}">{{_(cta.link_text)}}</a>
   </div>
 </div>

@@ -7,7 +7,7 @@ class: faqs
 cta:
   title@: Next FAQ
   link_text@: Supported Platforms and Browsers
-  link_url: supported-platforms.html
+  link_url: /content/support/faqs/supported-platforms.md
 
 faq:
   - title@: How does advertising work on Accelerated Mobile Pages?

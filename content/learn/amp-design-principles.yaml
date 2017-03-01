@@ -34,4 +34,4 @@ AMP should be fast in today's browsers. When certain optimizations aren't possib
 cta:
   title@: Get started building
   link_text@: Tutorials
-  link_url: /docs/get_started/general/create.html
+  link_url: /content/docs/get_started/general/create.md

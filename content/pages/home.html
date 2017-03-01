@@ -49,7 +49,7 @@ components:
           {% for article in blog.blogs %}
             {% if loop.index <= 6 %}
             <div class="card-container">
-              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md').url.path}}" class="card">
+              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
                 <div class="card-inner">
                   <div class="card-type text-label news">
                     {{_('News')}}
@@ -72,12 +72,12 @@ components:
       <div class="intro-container">
         <h1>{{_(home.hero.title)}}</h1>
         <p class="intro">{{_(home.hero.content)}}</p>
-        <a class="button" href="{{g.doc(home.hero.cta_url).url.path}}">
+        <a class="button" href="{{g.doc(home.hero.cta_url, locale=doc.locale).url.path}}">
           {{_(home.hero.cta)}}
         </a>
         <br class="tablet-down">
         <span class="cta_connector light">{{_('or')}}</span>
-        <a class="underlined cta" href="{{g.doc(home.hero.secondary_cta_url).url.path}}">{{_(home.hero.secondary_cta)}}</a>
+        <a class="underlined cta" href="{{g.doc(home.hero.secondary_cta_url, locale=doc.locale).url.path}}">{{_(home.hero.secondary_cta)}}</a>
       </div>
       <div class="latest tablet-up">
         <h3 class="latest-label light">{{_(home.hero.carousel_title)}}</h3>
@@ -89,7 +89,7 @@ components:
 
           <div class="card-container">
           {% for article in blog.blogs %}
-              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md').url.path}}" class="card">
+              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
                 <div class="card-inner">
                   <div class="card-type text-label news">
                     {{_('News')}}
@@ -193,7 +193,7 @@ components:
 
           <div class="card-container">
           {% for card in home.success_stories.cards %}
-            <a class="card centered {{card.class}}" href="{{g.doc(card.url).url.path}}">
+            <a class="card centered {{card.class}}" href="{{g.doc(card.url, locale=doc.locale).url.path}}">
               <div class="card-inner">
                 <div class="card-content">
                   <p>{{_(card.quote)}}</p>

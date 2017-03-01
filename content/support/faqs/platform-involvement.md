@@ -7,7 +7,7 @@ class: faqs
 cta:
   title@: Next FAQ
   link_text@: Publisher Monetization
-  link_url: publisher-monetization.html
+  link_url: /content/support/faqs/publisher-monetization.md
 
 faq:
   - title@: How can a consumer platform get involved in Accelerated Mobile Pages?
