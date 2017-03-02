@@ -205,17 +205,33 @@
     }
 
     .list-container {
-      left: -60px;
-      overflow: hidden;
-      padding: 0 300px 300px 50px;
+      left: -10px;
       top: 100%;
       transition: .2s ease-out;
       z-index: -1;
     }
 
+    .list-shadow {
+      bottom: -50px;
+      left: -50px;
+      overflow: hidden;
+      position: absolute;
+      right: -50px;
+      top: 0;
+
+      &::before {
+        bottom: 50px;
+        box-shadow: $header-shadow;
+        content: '';
+        left: 50px;
+        position: absolute;
+        right: 50px;
+        top: 0;
+      }
+    }
+
     .list-container > ul {
       background: $color-white;
-      box-shadow: $header-shadow;
       min-width: 250px;
       position: relative;
 

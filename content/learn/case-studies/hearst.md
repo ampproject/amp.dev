@@ -3,8 +3,9 @@ $order: 7
 $title: Hearst
 $date: January 24, 2017
 $category: Publishers
+class: case-study post-detail
+
 headline: Hearst integrates key partner and product solutions on AMP
-class: case-study
 thumb: "case-studies/hearst_thumb.jpg"
 featured: "case-studies/hearst_framed.png"
 results:

@@ -11,6 +11,7 @@
           <div class="tab{% if doc.pod_path.split('/')[2] == entry.collection %} active{% endif %}">
             <a{% if entry.href.startswith('http') %} class="external"{% endif %} href="{% if entry.href.startswith('http') %}{{ entry.get('href') }}{% else %}{{ g.doc(entry.get('href'), locale=doc.locale).url.path }}{% endif %}">{{_(entry.get('copy'))}}</a>
             <div class="list-container">
+              <div class="list-shadow"></div>
               <ul>
                 {% if entry.children %}
                 {% for subEntry in entry.children %}
