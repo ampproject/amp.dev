@@ -11,4 +11,4 @@ content/includes/who.yaml
 content/docs/contribute/governance.md
 content/learn/design-principles.md
 content/docs/reference/spec.md
-content/docs/reference/components/*.md
+content/docs/reference/components/**/*.md
