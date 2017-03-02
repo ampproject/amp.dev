@@ -8,6 +8,7 @@ class: case-study post-detail
 
 components:
   - social-share
+  - vimeo
 
 headline: Teads brings AMP'd mobile video inventory to nearly 100 publishers
 thumb: "case-studies/teads_thumb.jpg"

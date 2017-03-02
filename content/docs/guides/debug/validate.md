@@ -93,7 +93,7 @@ AMP Validator Extension for
 
 ### Command Line Tool
 
-As a prerequisite, you may need to install [Node.js with it's package manager
+As a prerequisite, you may need to install [Node.js with its package manager
 'npm' on your system](https://docs.npmjs.com/getting-started/installing-node).
 
 To install the [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator), type `npm install -g amphtml-validator`.

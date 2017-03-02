@@ -8,4 +8,4 @@ Not sure how to get started? In this tutorial, you’ll learn how to create a ba
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/docs/get_started/general/create/basic_markup.html">Continue to Step 1</a>
+<a class="button go-button" href="/docs/get_started/create/basic_markup.html">Continue to Step 1</a>

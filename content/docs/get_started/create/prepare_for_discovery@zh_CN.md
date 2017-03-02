@@ -28,4 +28,4 @@ $title: 准备页面以供发现和分发
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/zh_cn/docs/get_started/general/create/publish.html">继续执行步骤 6</a>
+<a class="go-button button" href="/zh_cn/docs/get_started/create/publish.html">继续执行步骤 6</a>

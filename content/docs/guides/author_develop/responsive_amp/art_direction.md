@@ -5,7 +5,6 @@ toc: true
 ---
 [TOC]
 
-
 ## srcset
 
 Use the `srcset` attribute to control an element’s assets
@@ -20,7 +19,7 @@ of each image in the list:
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
+    src="wide.jpg" width="640" height="480"
     srcset="wide.jpg 640w,
            narrow.jpg 320w">
 </amp-img>
@@ -45,7 +44,7 @@ Consider the following example:
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
+    src="wide.jpg" width="640" height="480"
     srcset="wide.jpg 640w,
            narrow.jpg 320w"
     sizes="(min-width: 650px) 50vw, 100vw">

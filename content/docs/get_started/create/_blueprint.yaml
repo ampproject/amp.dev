@@ -1,7 +1,7 @@
-$path: /docs/get_started/general/create/{base}.html
+$path: /docs/get_started/create/{base}.html
 $view: /views/doc.html
 $localization:
-  path: /{locale}/docs/get_started/general/create/{base}.html
+  path: /{locale}/docs/get_started/create/{base}.html
 $title@: Create Your First AMP Page
 
 navigation:
@@ -12,4 +12,4 @@ navigation:
   next:
     subtitle@: Next Tutorial
     title@: Logins with AMP
-    href: /content/docs/get_started/advanced/login_requiring.md
+    href: /content/docs/get_started/login_requiring.md

@@ -204,7 +204,7 @@ The publisher's website and the cache are likely to have different domains.
 For security reasons,
 browsers can (and often will) limit access to another domain’s cookies
 (see also
-[Tracking users across origins](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/cross-origin-tracking.md)).
+[Tracking users across origins](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
 
 By default,
 AMP will manage the provision of a client ID whether the page is accessed from the publisher's original website or through a cache.

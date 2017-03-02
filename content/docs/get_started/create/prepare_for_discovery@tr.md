@@ -28,4 +28,4 @@ Sadece tek bir sayfanız var ve bu sayfa bir AMP sayfasıysa, yine de standart b
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/tr/docs/get_started/general/create/publish.html">Adım 6 ile devam edin</a>
+<a class="go-button button" href="/tr/docs/get_started/create/publish.html">Adım 6 ile devam edin</a>

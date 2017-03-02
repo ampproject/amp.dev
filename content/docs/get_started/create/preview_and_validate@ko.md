@@ -16,4 +16,4 @@ $title: 미리보기 및 유효성 검사
 
 [유효성 검사에 대해 알아보고](/docs/guides/validate.html), 오류가 발생할 경우 수행할 작업에 대해 알아보세요.
 
-<a class="go-button button" href="/ko/docs/get_started/general/create/prepare_for_discovery.html">5단계로 계속</a>
+<a class="go-button button" href="/ko/docs/get_started/create/prepare_for_discovery.html">5단계로 계속</a>

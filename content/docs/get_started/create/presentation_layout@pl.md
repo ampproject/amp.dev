@@ -27,4 +27,4 @@ W kwestii rozmieszczania elementów na stronie w AMP obowiązują bardziej rygor
 
 Wszystkie informacje na temat sposobu renderowania stron AMP i układów strony oraz możliwości modyfikacji układu można znaleźć w części [Jak sterować układem](/docs/guides/responsive/control_layout.html).
 
-<a class="go-button button" href="/pl/docs/get_started/general/create/preview_and_validate.html">Przejdź do kroku 4</a>
+<a class="go-button button" href="/pl/docs/get_started/create/preview_and_validate.html">Przejdź do kroku 4</a>

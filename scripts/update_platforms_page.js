@@ -19,7 +19,7 @@ function addAds() {
   });
 
   newYaml += `
-    - title@: Ads Components
+    - title@: Ads
       section_items:
         - `;
 
@@ -43,7 +43,7 @@ function addAnalytics() {
   });
 
   newYaml += `
-    - title@: Analytics Components
+    - title@: Analytics
       section_items:
         - `;
 
@@ -53,8 +53,7 @@ function addAnalytics() {
 
 function addContentPlatforms() {
   newYaml += `
-    - title@: Distribution Platforms
-      description: These platforms distribute AMP pages on their surfaces.
+    - title@: Content Platforms
       section_items:
         - title: Google
           link: https://google.com
@@ -78,9 +77,10 @@ function addContentPlatforms() {
 
 function addCMS() {
   newYaml += `
-    - title@: CMS Providers
-      description: These providers can create AMP pages with supported plug-ins or functionality
+    - title@: CMS
       section_items:
+        - title: Canvas
+          link: https://www.roya.com/blog/roya-announces-addition-of-amp-to-canvas-cms-amp.html
         - title: Drupal
           link: https://www.drupal.org/project/amp
         - title: Hatena
@@ -95,49 +95,34 @@ function addCMS() {
 
 function addVideo() {
   newYaml += `
-    - title@: Audio/Video Components
+    - title@: Audio/Video
       section_items:
         - title: AOL O2
-          link:
+          link: http://on.aol.com/
         - title: Beachfront Reach
-          link:
+          link: http://beachfrontreach.com/
         - title: Brid.tv
-          link:
+          link: https://www.brid.tv/
         - title: Brightcove
-          link:
+          link: https://www.brightcove.com/
         - title: Dailymotion
-          link:
+          link: http://www.dailymotion.com/
         - title: Gfycat
-          link:
+          link: https://gfycat.com/
         - title: JW Player
-          link:
+          link: https://www.jwplayer.com/
         - title: Kaltura
-          link:
+          link: https://corp.kaltura.com/
         - title: Soundcloud
-          link:
+          link: https://soundcloud.com/
         - title: Springboard
-          link:
+          link: http://springboardplatform.com/
         - title: Vimeo
-          link:
+          link: https://vimeo.com/
         - title: Vine
-          link:
+          link: https://vine.co/
         - title: YouTube
-          link:`;
-}
-
-function addBrowsers() {
-  newYaml += `
-browsers:
-  - title: Chrome
-    img: /static/img/platforms/chrome.png
-  - title: Firefox
-    img: /static/img/platforms/firefox.png
-  - title: Safari
-    img: /static/img/platforms/safari.png
-  - title: Edge
-    img: /static/img/platforms/edge.png
-  - title: Opera
-    img: /static/img/platforms/opera.png`;
+          link: https://www.youtube.com/ `;
 }
 
 // Put them into the right location in the YAML
@@ -147,12 +132,11 @@ tech_companies:
   section_title@: Technology Companies using AMP
   sections:`;
 
-addContentPlatforms();
-addCMS();
 addAds();
 addAnalytics();
+addContentPlatforms();
+addCMS();
 addVideo();
-addBrowsers();
 
 // Save back to disk
 fs.writeFileSync('../content/includes/who.yaml', newYaml);

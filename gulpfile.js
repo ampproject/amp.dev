@@ -3,7 +3,6 @@ var exec = require('child_process').exec;
 var plumber = require('gulp-plumber');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var livereload = require('gulp-livereload');
 var svgSprite = require('gulp-svg-sprite');
 
 var Path = {
@@ -77,12 +76,10 @@ gulp.task('sass', function() {
         outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(gulp.dest(Path.CSS_OUT_DIR))
-    .pipe(livereload());
+    .pipe(gulp.dest(Path.CSS_OUT_DIR));
 });
 
 gulp.task('watch', function() {
-  livereload.listen();
   gulp.watch([Path.CSS_SOURCES], ['sass']);
 });
 

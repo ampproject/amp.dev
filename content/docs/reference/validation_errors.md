@@ -83,12 +83,12 @@ they are also referenced in the [AMP specification](/docs/reference/spec.html).
 
 The validator throws the `TAG_REQUIRED_BY_MISSING` error
 when it finds an extended component in the AMP document,
-but doesn't find it's equivalent `<script>`.
+but doesn't find its equivalent `<script>`.
 
 [Extended components](/docs/reference/extended.html)
 must be explicitedly included in the AMP document as custom elements.
 To fix these errors, navigate to the extended component's reference page,
-copy it's required script, and paste it into the AMP document `<head>`.
+copy its required script, and paste it into the AMP document `<head>`.
 
 ### Disallowed tag
 
@@ -575,7 +575,7 @@ are missing their `mandatory_ancestor` (tag, ancestor):
 </table>
 
 The error occurs when one of the following tags is found in the AMP document,
-and isn't properly nested in it's mandatory parent:
+and isn't properly nested in its mandatory parent:
 
 * `img` isn't within `noscript` parent.
 * `video` isn't within `noscript` parent.

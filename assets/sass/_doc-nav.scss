@@ -409,5 +409,10 @@
     margin: 0 353px 0 0;
     border-left: 0;
     border-right: 3px solid $color-grey-lt;
+
+    @include max-screen($mobile-breakpoint) {
+      border: 0;
+      margin-right: 0;
+    }
   }
 }

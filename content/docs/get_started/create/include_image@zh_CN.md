@@ -12,4 +12,4 @@ $title: 包括图像
 
 如需了解我们为何要将诸如 `<img>` 等标记替换为 `<amp-img>` 以及有多少标记可用，请查看[包括 Iframe 和媒体](/docs/guides/amp_replacements.html)。
 
-<a class="go-button button" href="/zh_cn/docs/get_started/general/create/presentation_layout.html">继续执行步骤 3</a>
+<a class="go-button button" href="/zh_cn/docs/get_started/create/presentation_layout.html">继续执行步骤 3</a>

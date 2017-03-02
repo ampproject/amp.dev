@@ -12,4 +12,4 @@ $title: イメージを含める
 
 `<img>` タグの代わりに `<amp-img>` タグを使っている理由や、使用できるタグの種類については、[iframe とメディアを含める](/docs/guides/amp_replacements.html)をご覧ください。
 
-<a class="go-button button" href="/ja/docs/get_started/general/create/presentation_layout.html">ステップ 3 に進む</a>
+<a class="go-button button" href="/ja/docs/get_started/create/presentation_layout.html">ステップ 3 に進む</a>

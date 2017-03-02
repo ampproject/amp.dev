@@ -27,4 +27,4 @@ $title: Изменение представления и макета
 
 Дополнительная информация о том, как разметка AMP выполняет визуализацию и компоновку страницы, а также о способах изменения макета содержится в разделе [Управление макетом](/docs/guides/responsive/control_layout.html).
 
-<a class="go-button button" href="/ru/docs/get_started/general/create/preview_and_validate.html">Перейти к шагу 4</a>
+<a class="go-button button" href="/ru/docs/get_started/create/preview_and_validate.html">Перейти к шагу 4</a>

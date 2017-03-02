@@ -1,7 +1,9 @@
 ---
 $title: Styling & Layout
 $order: 0
+toc: true
 ---
+[TOC]
 
 Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
 both cases, you'll use CSS.
@@ -77,7 +79,7 @@ These attributes imply the aspect ratio of the element,
 which can then scale with the container.
 
 Set the layout to responsive.
-This sizes the element to the width of it's container element
+This sizes the element to the width of its container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
 {% call callout('Read on', type='read') %}
