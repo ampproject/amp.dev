@@ -35,12 +35,12 @@
         "type": 301
       },
       {
-        "source": "/docs",
-        "destination": "/learn/overview/",
+        "source": "/docs/guides/responsive_amp?(.html)",
+        "destination": "/docs/guides/author-develop/responsive_amp",
         "type": 301
       },
       {
-        "source": "/docs/",
+        "source": "/docs",
         "destination": "/learn/overview/",
         "type": 301
       },

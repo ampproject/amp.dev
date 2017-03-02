@@ -67,7 +67,7 @@ large_cta:
   title@: Join the AMP Ads initiative
   subtitle@: Whether you’re an advertiser, ad tech platform, or publisher, fix the state of advertising by joining the AMP Ads Initiative today.
   cta@: Join Now
-  cta_url: http://www.google.com
+  cta_url: https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md
   lines_left: /static/img/about/who-use-amp/amp-ads/lines_bottom2.svg
   lines_left_width: 325
   lines_left_height: 303
