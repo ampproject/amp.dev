@@ -43,6 +43,10 @@ div.language {
     border-bottom: 1px solid rgb(231, 235, 236);
     box-sizing: border-box;
     height: 33px;
+    
+    body.rtl & {
+      background-position: calc(100% - 6px) 6px;
+    }
 
     &:hover {
       background-color: #0379c4;
