@@ -1,5 +1,6 @@
 ---
 $title: Responsive AMP-Seiten erstellen
+toc: true
 ---
 
 In AMP können Sie ganz leicht responsive Elemente erstellen, indem Sie einfach `layout=responsive` in sie einfügen.
