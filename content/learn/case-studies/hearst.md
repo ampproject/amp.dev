@@ -2,6 +2,7 @@
 $order: 7
 $title: Hearst
 $date: January 24, 2017
+$category: Publishers
 headline: Hearst integrates key partner and product solutions on AMP
 class: case-study
 thumb: "case-studies/hearst_thumb.jpg"
