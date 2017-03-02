@@ -40,6 +40,81 @@
         "type": 301
       },
       {
+        "source": "/docs/guides/responsive_amp/style_pages?(.html)",
+        "destination": "/docs/guides/author-develop/responsive_amp/style_pages.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/responsive_amp/control_layout?(.html)",
+        "destination": "/docs/guides/author-develop/responsive_amp/control_layout.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/responsive_amp/placeholders?(.html)",
+        "destination": "/docs/guides/author-develop/responsive_amp/placeholders.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/responsive_amp/art_direction?(.html)",
+        "destination": "/docs/guides/author-develop/responsive_amp/art_direction.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/responsive_amp/custom_fonts?(.html)",
+        "destination": "/docs/guides/author-develop/responsive_amp/custom_fonts.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/amp_replacements?(.html)",
+        "destination": "/docs/guides/author-develop/amp_replacements.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/iframes?(.html)",
+        "destination": "/docs/guides/author-develop/iframes.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/third_party_components?(.html)",
+        "destination": "/docs/guides/author-develop/third_party_components.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/ads_on_amp?(.html)",
+        "destination": "/docs/guides/author-develop/ads_on_amp.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/ads_on_amp/ads_getting_started?(.html)",
+        "destination": "/docs/guides/author-develop/ads_on_amp/ads_getting_started.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/ads_on_amp/ads_tips?(.html)",
+        "destination": "/docs/guides/author-develop/ads_on_amp/ads_tips.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/validate?(.html)",
+        "destination": "/docs/guides/debug/validate.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/analytics_amp?(.html)",
+        "destination": "/docs/guides/deploy/analytics_amp.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/discovery?(.html)",
+        "destination": "/docs/guides/deploy/discovery.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/engagement?(.html)",
+        "destination": "/docs/guides/deploy/engagement.html",
+        "type": 301
+      },
+      {
         "source": "/docs",
         "destination": "/learn/overview/",
         "type": 301
