@@ -2,7 +2,7 @@
     {
         "title": "Design Principles",
         "order": 3,
-        "from": "DESIGN_PRINCIPLES.md",
+        "from": "contributing/DESIGN_PRINCIPLES.md",
         "to": "learn/design-principles.md",
         "toc": true
     },
