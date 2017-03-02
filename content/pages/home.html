@@ -20,21 +20,17 @@ components:
     <div class="hero-image">
       <div class="lines">
         {% include "/views/partials/lines.html" %}
-<!--         <amp-img
-            noloading
-            height=596
-            width=700
-            layout=responsive
-            src="{{home.hero.lines_img}}">
-        </amp-img>
- -->      </div>
+      </div>
       <div class="phone">
         <amp-img
             noloading
             height=1423
             width=1200
             layout=responsive
-            src="{{home.hero.phone_img}}">
+            srcset="{{home.hero.phone_img_base + '.png 1200w'}},
+                    {{home.hero.phone_img_base + '@1_5x.png 800w'}},
+                    {{home.hero.phone_img_base + '@1x.png 600w'}}"
+            src="{{home.hero.phone_img_base + '.png'}}">
         </amp-img>
       </div>
       <div class="latest-mobile tablet-down">
@@ -173,7 +169,10 @@ components:
           height=1316
           width=1079
           layout=responsive
-          src="{{home.experience.phone_img}}">
+          srcset="{{home.experience.phone_img_base + '.png 1079w'}},
+                  {{home.experience.phone_img_base + '@1_5x.png 719w'}},
+                  {{home.experience.phone_img_base + '@1x.png 540w'}}"
+          src="{{home.experience.phone_img_base + '.png'}}">
       </amp-img>
     </div>
   </div>
