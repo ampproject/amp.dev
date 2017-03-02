@@ -1,3 +1,21 @@
+
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-03-02 11:48-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ar\n"
+"Language-Team: ar <LL@li.org>\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && "
+"n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
 #: /content/learn/overview.yaml
 msgid "**AMP HTML** is HTML with some restrictions for reliable performance"
 msgstr ""
@@ -220,7 +238,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Analytics"
-msgstr ""
+msgstr "التحليلات"
 
 #: /content/support/faqs/publisher-monetization.md
 msgid "Are publishers able to sell their own ad inventory?"
@@ -297,7 +315,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "CMS"
-msgstr ""
+msgstr "نظام إدارة المحتوى"
 
 #: /content/learn/about-how.yaml
 msgid ""
@@ -321,7 +339,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Content Platforms"
-msgstr ""
+msgstr "الأنظمة الأساسية للمحتوى"
 
 #: /content/docs/contribute.md /content/includes/menu.yaml /content/docs/contribute
 #: /content/docs/get_started /content/docs/reference
@@ -502,9 +520,34 @@ msgstr ""
 msgid "Font triggering must be efficient"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid ""
+"For many, reading on the mobile web is a slow, clunky and frustrating "
+"experience - but it doesn’t have to be that way. The Accelerated Mobile Pages"
+" (AMP) Project is an open source initiative that embodies the vision that "
+"publishers can create mobile optimized content once and have it load "
+"instantly everywhere."
+msgstr ""
+"يرى الكثيرون أن القراءة على ويب الجوال تجربة بطيئة وشاقة وتصيب بالإحباط - "
+"لكنها لا يفترض أن تكون هكذا. إن مشروع Accelerated Mobile Pages (AMP) عبارة عن"
+" مبادرة مفتوحة تجسد رؤية تفيد أنه بإمكان الناشرين إنشاء محتوى مُحسّن للجوال "
+"لمرة واحدة وتحميله على الفور وفي كل مكان."
+
+#: /content/includes/home.yaml
+msgid "GET STARTED"
+msgstr "البدء"
+
 #: /content/learn/who/publishers.yaml /content/learn/who/ad-tech-platforms.yaml
 msgid "Get Started Building"
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid "Get Started with AMP HTML"
+msgstr " إبدء مع أي أم بي أتش تي أم أل"
+
+#: /content/includes/menu.yaml /content/includes/home.yaml
+msgid "Get started"
+msgstr "البدء"
 
 #: /content/learn/amp-design-principles.yaml
 msgid "Get started building"
@@ -529,7 +572,7 @@ msgstr ""
 #: /content/docs/guides.md /content/includes/menu.yaml /content/docs/get_started
 #: /content/docs/guides /content/docs/reference /content/docs/reference/components
 msgid "Guides"
-msgstr ""
+msgstr "الأدلة"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -593,6 +636,22 @@ msgstr ""
 msgid "If it’s not instant, it’s not fast enough."
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid ""
+"If you are new to AMP HTML, our technical introduction is a great place to "
+"get started and provides an overview of the project and how AMP HTML works."
+msgstr ""
+"إذا كنت جديدًا في التعامل مع AMP HTML، فإن المقدمة الفنية تمثل نقطة بداية "
+"رائعة حيث إنها تقدم لمحة عامة عن المشروع وآلية عمل AMP HTML."
+
+#: /content/includes/home.yaml
+msgid ""
+"If you'd like to dive deeper into AMP HTML, you can find all of the source "
+"code, code samples, and detailed documentation in our GitHub repository."
+msgstr ""
+"إذا كنت ترغب في التعمق في AMP HTML، يمكنك العثور على كل من شفرة المصدر، "
+"ونماذج للشفرات، ومستندات مفصلة في مستودع GitHub."
+
 #: /content/learn/who/publishers.yaml
 msgid "Improve user engagement with fast, compelling experiences."
 msgstr ""
@@ -609,6 +668,10 @@ msgstr ""
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Increase your reach"
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid "Instant. <br> Everywhere."
+msgstr "على الفور <BR> وفي كل مكان"
 
 #: /content/support/faqs/publisher-monetization.md
 msgid ""
@@ -706,6 +769,16 @@ msgstr ""
 msgid "Logins with AMP"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure "
+"ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde"
+" exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure "
+"ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde"
+" exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
+
 #: /content/learn/who/advertisers.yaml
 msgid "Maximize ROI everywhere"
 msgstr ""
@@ -765,6 +838,10 @@ msgstr ""
 msgid "Only run GPU-accelerated animations"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Openness"
+msgstr "الإنفتاح"
+
 #: /content/learn/overview.yaml
 msgid "Overview"
 msgstr ""
@@ -814,6 +891,10 @@ msgstr ""
 msgid "Prioritize resource loading"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Publisher Control"
+msgstr "تحكم الناشر"
+
 #: /content/support/faqs/platform-involvement.md
 #: /content/support/faqs/publisher-monetization.md
 msgid "Publisher Monetization"
@@ -855,6 +936,14 @@ msgstr ""
 #: /views/partials/grid-card.html:27
 msgid "Read the Case Study"
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid ""
+"Ready to build an AMP file? This tutorial will teach you how to create a "
+"basic AMP HTML page, stage it, test it, and get it ready for publication."
+msgstr ""
+"هل أنت مستعد لإنشاء ملف AMP؟ سيعلمك هذا البرنامج التعليمي كيفية إنشاء صفحة "
+"HTML AMP أساسية، وتنظيمها واختبارها وتجهيزها للنشر."
 
 #: /content/learn/who/publishers.yaml
 msgid "Reduce complexity in your operations."
@@ -931,6 +1020,10 @@ msgid ""
 "being widely used and deployed."
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Speed"
+msgstr "السرعة"
+
 #: /content/learn/who/amp-ads.yaml
 msgid "Speed is the fastest way to drive performance"
 msgstr ""
@@ -1006,9 +1099,13 @@ msgstr ""
 msgid "Supported Platforms, Vendors and Partners"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Technical Introduction"
+msgstr "تمهيد للتكنلوجيا"
+
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
-msgstr ""
+msgstr "شركات التكنولوجيا التي تستخدم AMP"
 
 #: /content/learn/overview.yaml
 msgid "The **AMP JS** library ensures the fast rendering of AMP HTML pages."
@@ -1033,6 +1130,16 @@ msgid ""
 "consistently fast, beautiful and high-performing across devices and "
 "distribution platforms."
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid ""
+"The Accelerated Mobile Pages (AMP) Project is an open initiative that "
+"embodies the vision that publishers can create mobile optimized content once "
+"and have it load instantly everywhere."
+msgstr ""
+"مشروع Accelerated Mobile Pages (AMP) عبارة عن مبادرة مفتوحة تجسد رؤية تفيد "
+"أنه بإمكان الناشرين إنشاء محتوى مُحسّن للجوال لمرة واحدة وتحميله على الفور "
+"وفي كل مكان."
 
 #: /content/support/faqs/supported-platforms.md
 msgid ""
@@ -1257,6 +1364,10 @@ msgid ""
 "to [create your first AMP HTML page](/docs/get_started/general/create.html)."
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Tutorial"
+msgstr "البرنامج التعليمي"
+
 #: /content/docs/tutorials.md /content/includes/menu.yaml
 #: /content/learn/amp-design-principles.yaml /content/docs/contribute
 #: /content/docs/get_started /content/docs/guides
@@ -1279,6 +1390,14 @@ msgstr ""
 #: /content/support/vendor.md /content/support/vendor
 msgid "Vendor Support"
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid "View Code"
+msgstr "تصفح اصل البرنامج"
+
+#: /content/includes/home.yaml
+msgid "Visit Github"
+msgstr "الانتقال إلى Github"
 
 #: /content/includes/doc.yaml
 msgid "Visit our FAQ"
@@ -1361,6 +1480,10 @@ msgstr ""
 msgid "What are the consequences of using Accelerated Mobile Pages?"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "What contributors are saying"
+msgstr "ماذا يقول المساهمون"
+
 #: /content/learn/overview.yaml
 msgid "What is AMP"
 msgstr ""
@@ -1428,6 +1551,10 @@ msgstr ""
 msgid ""
 "Yes, as with their existing websites, publishers control their ad inventory "
 "and how they sell it.\n"
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "news"
 msgstr ""
 
 #: /content/pages/home.html:64

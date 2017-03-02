@@ -1,3 +1,21 @@
+
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-03-02 11:48-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
 #: /content/learn/overview.yaml
 msgid "**AMP HTML** is HTML with some restrictions for reliable performance"
 msgstr ""
@@ -187,7 +205,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Ads"
-msgstr ""
+msgstr "Рекламные сервисы"
 
 #: /content/docs/reference/components
 msgid "Ads & Analytics"
@@ -220,7 +238,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Analytics"
-msgstr ""
+msgstr "Средства аналитики"
 
 #: /content/support/faqs/publisher-monetization.md
 msgid "Are publishers able to sell their own ad inventory?"
@@ -297,7 +315,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "CMS"
-msgstr ""
+msgstr "Системы управления контентом"
 
 #: /content/learn/about-how.yaml
 msgid ""
@@ -321,7 +339,7 @@ msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Content Platforms"
-msgstr ""
+msgstr "Платформы для контента"
 
 #: /content/docs/contribute.md /content/includes/menu.yaml /content/docs/contribute
 #: /content/docs/get_started /content/docs/reference
@@ -375,7 +393,7 @@ msgstr ""
 
 #: /content/docs /content/docs/build.md /content/includes/menu.yaml
 msgid "Docs"
-msgstr "Документация"
+msgstr "Справка"
 
 #: /content/includes/events.yaml
 msgid "Don't miss AMP Events"
@@ -502,9 +520,34 @@ msgstr ""
 msgid "Font triggering must be efficient"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid ""
+"For many, reading on the mobile web is a slow, clunky and frustrating "
+"experience - but it doesn’t have to be that way. The Accelerated Mobile Pages"
+" (AMP) Project is an open source initiative that embodies the vision that "
+"publishers can create mobile optimized content once and have it load "
+"instantly everywhere."
+msgstr ""
+"Многим пользователям мобильный Интернет кажется медленным, но так быть не "
+"должно. Ускоренные мобильные страницы (AMP) – это технология с открытым "
+"исходным кодом, которая поможет издателям оптимизировать контент для "
+"мобильных устройств и обеспечить его быструю загрузку в любой ситуации."
+
+#: /content/includes/home.yaml
+msgid "GET STARTED"
+msgstr "НАЧАТЬ"
+
 #: /content/learn/who/publishers.yaml /content/learn/who/ad-tech-platforms.yaml
 msgid "Get Started Building"
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid "Get Started with AMP HTML"
+msgstr "Начало работы с технологией AMP – HTML"
+
+#: /content/includes/menu.yaml /content/includes/home.yaml
+msgid "Get started"
+msgstr "Начало работы"
 
 #: /content/learn/amp-design-principles.yaml
 msgid "Get started building"
@@ -529,7 +572,7 @@ msgstr ""
 #: /content/docs/guides.md /content/includes/menu.yaml /content/docs/get_started
 #: /content/docs/guides /content/docs/reference /content/docs/reference/components
 msgid "Guides"
-msgstr ""
+msgstr "Руководства"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -593,6 +636,22 @@ msgstr ""
 msgid "If it’s not instant, it’s not fast enough."
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid ""
+"If you are new to AMP HTML, our technical introduction is a great place to "
+"get started and provides an overview of the project and how AMP HTML works."
+msgstr ""
+"Если вы не знакомы с HTML-кодом AMP и основами этой технологии, изучите "
+"базовое техническое руководство."
+
+#: /content/includes/home.yaml
+msgid ""
+"If you'd like to dive deeper into AMP HTML, you can find all of the source "
+"code, code samples, and detailed documentation in our GitHub repository."
+msgstr ""
+"Веб-мастера, которые хотят детально изучить HTML-реализацию AMP, могут найти "
+"все исходные коды, примеры и документацию в нашем хранилище на GitHub."
+
 #: /content/learn/who/publishers.yaml
 msgid "Improve user engagement with fast, compelling experiences."
 msgstr ""
@@ -609,6 +668,10 @@ msgstr ""
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Increase your reach"
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid "Instant. <br> Everywhere."
+msgstr "Быстрая загрузка на любых устройствах"
 
 #: /content/support/faqs/publisher-monetization.md
 msgid ""
@@ -674,7 +737,7 @@ msgstr ""
 #: /content/learn/who-uses-amp.yaml /content/learn/who/advertisers.yaml
 #: /views/partials/grid-card.html:28 /views/partials/promo_banner.html:17
 msgid "Learn More"
-msgstr ""
+msgstr "Подробнее..."
 
 #: /content/includes/home.yaml
 msgid "Learn about AMP"
@@ -704,6 +767,13 @@ msgstr ""
 
 #: /content/docs/get_started/create
 msgid "Logins with AMP"
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure "
+"ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde"
+" exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
 msgstr ""
 
 #: /content/learn/who/advertisers.yaml
@@ -765,6 +835,10 @@ msgstr ""
 msgid "Only run GPU-accelerated animations"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Openness"
+msgstr "Открытость"
+
 #: /content/learn/overview.yaml
 msgid "Overview"
 msgstr ""
@@ -814,6 +888,10 @@ msgstr ""
 msgid "Prioritize resource loading"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Publisher Control"
+msgstr "Для издателей"
+
 #: /content/support/faqs/platform-involvement.md
 #: /content/support/faqs/publisher-monetization.md
 msgid "Publisher Monetization"
@@ -822,7 +900,7 @@ msgstr ""
 #: /content/learn/who-uses-amp.yaml
 #: /content/learn/case-studies/category/publishers.md
 msgid "Publishers"
-msgstr ""
+msgstr "Издатели"
 
 #: /content/support/faqs/overview.md
 msgid ""
@@ -855,6 +933,14 @@ msgstr ""
 #: /views/partials/grid-card.html:27
 msgid "Read the Case Study"
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid ""
+"Ready to build an AMP file? This tutorial will teach you how to create a "
+"basic AMP HTML page, stage it, test it, and get it ready for publication."
+msgstr ""
+"Готовы внедрить AMP на своем сайте? Из этого урока вы узнаете, как создать "
+"простую HTML-страницу AMP, проверить ее и подготовить к публикации."
 
 #: /content/learn/who/publishers.yaml
 msgid "Reduce complexity in your operations."
@@ -931,6 +1017,10 @@ msgid ""
 "being widely used and deployed."
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Speed"
+msgstr "Скорость"
+
 #: /content/learn/who/amp-ads.yaml
 msgid "Speed is the fastest way to drive performance"
 msgstr ""
@@ -1006,9 +1096,13 @@ msgstr ""
 msgid "Supported Platforms, Vendors and Partners"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Technical Introduction"
+msgstr "Базовое техническое руководство"
+
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
-msgstr ""
+msgstr "Компании, использующие AMP"
 
 #: /content/learn/overview.yaml
 msgid "The **AMP JS** library ensures the fast rendering of AMP HTML pages."
@@ -1033,6 +1127,16 @@ msgid ""
 "consistently fast, beautiful and high-performing across devices and "
 "distribution platforms."
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid ""
+"The Accelerated Mobile Pages (AMP) Project is an open initiative that "
+"embodies the vision that publishers can create mobile optimized content once "
+"and have it load instantly everywhere."
+msgstr ""
+"Ускоренные мобильные страницы (AMP) – это технология с открытым исходным "
+"кодом, которая поможет издателям оптимизировать контент для мобильных "
+"устройств и обеспечить его быструю загрузку в любой ситуации."
 
 #: /content/support/faqs/supported-platforms.md
 msgid ""
@@ -1257,6 +1361,10 @@ msgid ""
 "to [create your first AMP HTML page](/docs/get_started/general/create.html)."
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "Tutorial"
+msgstr "Руководство"
+
 #: /content/docs/tutorials.md /content/includes/menu.yaml
 #: /content/learn/amp-design-principles.yaml /content/docs/contribute
 #: /content/docs/get_started /content/docs/guides
@@ -1279,6 +1387,14 @@ msgstr ""
 #: /content/support/vendor.md /content/support/vendor
 msgid "Vendor Support"
 msgstr ""
+
+#: /content/includes/home.yaml
+msgid "View Code"
+msgstr "Просмотр кода"
+
+#: /content/includes/home.yaml
+msgid "Visit Github"
+msgstr "GitHub"
 
 #: /content/includes/doc.yaml
 msgid "Visit our FAQ"
@@ -1361,6 +1477,10 @@ msgstr ""
 msgid "What are the consequences of using Accelerated Mobile Pages?"
 msgstr ""
 
+#: /content/includes/home.yaml
+msgid "What contributors are saying"
+msgstr "Мнения участников проекта"
+
 #: /content/learn/overview.yaml
 msgid "What is AMP"
 msgstr ""
@@ -1428,6 +1548,10 @@ msgstr ""
 msgid ""
 "Yes, as with their existing websites, publishers control their ad inventory "
 "and how they sell it.\n"
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "news"
 msgstr ""
 
 #: /content/pages/home.html:64
