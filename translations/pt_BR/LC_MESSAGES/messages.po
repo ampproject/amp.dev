@@ -1,169 +1,1454 @@
+#: /content/learn/overview.yaml
+msgid "**AMP HTML** is HTML with some restrictions for reliable performance"
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid "/content/learn/case-studies/teads.md"
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid "/content/learn/case-studies/wapo.md"
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid "/content/learn/case-studies/wired.md"
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid "A collaborative effort"
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid "A faster way to grow your business"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid ""
+"A goal of the Accelerated Mobile Pages Project is to ensure effective ad "
+"monetization on the mobile web while embracing a user-centric approach. With "
+"that context, the objective is to provide support for a comprehensive range "
+"of ad formats, ad networks and technologies in Accelerated Mobile Pages. As "
+"part of that, those involved with the project are also engaged in crafting "
+"Sustainable Ad Practices to ensure that ads in AMP files are fast, safe, "
+"compelling and effective for users.\n"
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid ""
+"A growing number of publishers and advertisers are adopting AMP to deliver "
+"faster and more engaging content to their users. As your clients embrace the "
+"speed of AMP and more users consume content on AMP pages, ensure your "
+"business is positioned for the future. Integrate your technology with AMP "
+"today."
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid "A path to success"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMP Ads are a creative format built using HTML and CSS, not a new technology."
+" As a result, you can use your existing development resources to create and "
+"serve ads that are faster, lighter, and more effective."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMP Ads can serve on both AMP and non-AMP pages so you can build your AMP Ad "
+"once and deliver a memorable brand experience everywhere."
+msgstr ""
+
+#: /content/includes/lists.yaml
+msgid "AMP Blog"
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid "AMP Cache"
+msgstr ""
+
+#: /content/support/vendor/amp-certification.md
+msgid "AMP Certification"
+msgstr ""
+
+#: /views/partials/promo_banner.html:15
+msgid "AMP Conf. March 7/8."
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid "AMP HTML"
+msgstr ""
+
+#: /content/docs/reference/components
+msgid "AMP HTML Specification"
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid ""
+"AMP HTML is basically HTML extended with custom AMP properties. The simplest "
+"AMP HTML file looks like this:"
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid "AMP JS"
+msgstr ""
+
+#: /content/support/faqs/overview.md /content/support/faqs/supported-platforms.md
+msgid "AMP Overview"
+msgstr ""
+
+#: /content/includes/lists.yaml
+msgid "AMP Roadmap"
+msgstr ""
+
+#: /content/docs/reference/components
+msgid "AMP components"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"AMP controls all resource downloads: it prioritizes resource loading, loading"
+" only what’s needed, and prefetches lazy-loaded resources.\n"
+"When AMP downloads resources, it optimizes downloads so that the currently "
+"most important resources are downloaded first. Images and ads are only "
+"downloaded if they are likely to be seen by the user, above the fold, or if "
+"the user is likely to quickly scroll to them.\n"
+"AMP also prefetches lazy-loaded resources. Resources are loaded as late as "
+"possible, but prefetched as early as possible. That way things load very fast"
+" but CPU is only used when resources are actually shown to users."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"AMP doesn’t let extension mechanisms block page rendering. AMP supports "
+"extensions for things like [lightboxes](/docs/reference/extended/amp-"
+"lightbox.html), [instagram embeds](/docs/reference/extended/amp-"
+"instagram.html), [tweets](/docs/reference/extended/amp-twitter.html), etc. "
+"While these require additional HTTP requests, those requests do not block "
+"page layout and rendering.\n"
+"Any page that uses a custom script must tell the AMP system that it will "
+"eventually have a custom tag. For example, the [`amp-"
+"iframe`](/docs/reference/extended/amp-iframe.html) script tells the system "
+"that there will be an `amp-iframe` tag. AMP creates the iframe box before it "
+"even knows what it will include:"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"AMP is an open-source effort. We need your help to make AMP even faster. "
+"Learn [how to contribute](/docs/support/contribute.html)."
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid ""
+"AMP is built thanks to a deep collaboration with thousands of developers, "
+"publishers and websites, distribution platforms and tech companies. More than"
+" 1.5B AMP pages have been published to date and 100+ leading analytics, ad "
+"tech and CMS providers support the AMP format."
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid "AMP pages are built with 3 core components."
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid ""
+"AMP pages typically load in under one second. That means when your target "
+"audience lands on an AMP page, they get what they’re looking for in the "
+"moment they’re looking for it. The net result -- they’re more likely to be "
+"engaged with and receptive to your brand’s messages, and more likely to take "
+"the actions you’re guiding them towards like completing a purchase."
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid "AMP provides a great user experience across many platforms"
+msgstr ""
+
+#: /content/learn/who/publishers.yaml
+msgid ""
+"AMP speeds up content, keeping users engaged irrespective of where they start"
+" their journey -- on the publisher’s own website or from platforms that link "
+"to AMP pages like Twitter, Google and Pinterest. With faster and more secure "
+"ads, AMP ads deliver great advertising experiences too, ensuring every "
+"interaction with a publisher’s brand is a compelling one."
+msgstr ""
+
 #: /content/includes/menu.yaml
 msgid "About"
+msgstr ""
+
+#: /content/learn/who-uses-amp.yaml
+msgid "Ad Tech Platforms"
+msgstr ""
+
+#: /content/includes/latest.yaml
+msgid "Add to Calendar"
 msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Ads"
 msgstr ""
 
+#: /content/docs/reference/components
+msgid "Ads & Analytics"
+msgstr ""
+
+#: /content/docs/reference/components/ads-analytics
+msgid "Ads & Analytics - AMP components"
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid "Adtech success stories"
+msgstr ""
+
+#: /content/learn/who-uses-amp.yaml
+#: /content/learn/case-studies/category/advertisers.md
+msgid "Advertisers"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "All CSS must be inline and size-bound"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Allow only asynchronous scripts"
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid "Amplify your impact"
+msgstr ""
+
 #: /content/includes/who.yaml
 msgid "Analytics"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid "Are publishers able to sell their own ad inventory?"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid ""
+"As a publisher, does making my content work for Accelerated Mobile Pages "
+"entail more work?"
 msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Audio/Video"
 msgstr ""
 
+#: /content/docs/guides/author_develop
+msgid "Author / Develop"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Better advertising on a faster web."
+msgstr ""
+
+#: /content/includes/latest.yaml /content/latest/blog
+msgid "Blog"
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid "Boost your campaign performance with AMP Ads"
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "Brand Guidelines"
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid "Build for a sustainable future"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Build once, serve everywhere."
+msgstr ""
+
+#: /content/learn/who/publishers.yaml
+msgid ""
+"Building AMP pages is simple and straightforward. You can often convert your "
+"entire archive in days especially if you use a popular CMS such as Wordpress "
+"and Drupal. Your teams do not need any special skills nor worry about "
+"optimizing your code for each distribution platform as the AMP format is "
+"fully portable and AMP pages are consistently fast no matter how a user gets "
+"to them.  Similarly, AMP ads may be built once and run across all pages, "
+"including non-AMP pages."
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid "Building the future web, together."
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid ""
+"Building the right ad, landing page or web content takes time. With AMP Ads, "
+"your ads can serve on both AMP and non-AMP pages, meaning you can build your "
+"AMP Ads once and deliver a memorable brand experience everywhere. Similarly, "
+"AMP pages can be built once and distributed across a wide variety of "
+"distribution platforms simultaneously."
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid ""
+"By using the AMP format, content producers are making the content in AMP "
+"files available to be crawled, indexed & displayed (subject to the robots "
+"exclusion protocol) and cached by third parties.\n"
+msgstr ""
+
 #: /content/includes/who.yaml
 msgid "CMS"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"CSS blocks all rendering, it blocks page load, and it tends to get bloated. "
+"In AMP HTML pages, only inline styles are allowed. This removes 1 or often "
+"more HTTP requests from the critical rendering path compared to most web "
+"pages.\n"
+"Also, the inline style sheet has a maximum size of 50 kilobytes. While this "
+"size is big enough for very sophisticated pages, it still requires the page "
+"author to practice good CSS hygiene."
+msgstr ""
+
+#: /content/includes/menu.yaml /content/learn/case-studies.html
+#: /content/learn/case-studies/category /views/about-casestudies.html:12
+msgid "Case Studies"
+msgstr ""
+
+#: /content/support/developer.md
+msgid "Community Resources"
 msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Content Platforms"
 msgstr ""
 
-#: /content/contribute /content/includes/menu.yaml
+#: /content/docs/contribute.md /content/includes/menu.yaml /content/docs/contribute
+#: /content/docs/get_started /content/docs/reference
+#: /content/docs/get_started/create
 msgid "Contribute"
 msgstr ""
 
-#: /content/docs /content/includes/menu.yaml
+#: /content/learn/who/advertisers.yaml
+msgid ""
+"Conversions fall by 12&#37; for every extra second a webpage takes to load.If"
+" you want people to engage with your brand and improve the performance of "
+"your campaigns, you have to speed things up. AMP offers a way for you to give"
+" users a faster experience everywhere -- on ads, landing pages or your entire"
+" website."
+msgstr ""
+
+#: /content/docs/get_started/create
+msgid "Create Your First AMP Page"
+msgstr ""
+
+#: /content/docs/get_started/login_requiring
+msgid "Create a login-requiring AMP page"
+msgstr ""
+
+#: /content/learn/case-studies.html
+#: /content/learn/case-studies/category/publishers.md
+#: /content/learn/case-studies/category/advertisers.md
+msgid "Create your first AMP page"
+msgstr ""
+
+#: /content/docs/guides/debug
+msgid "Debug"
+msgstr ""
+
+#: /content/docs/guides/deploy
+msgid "Deploy"
+msgstr ""
+
+#: /content/includes/menu.yaml /content/learn/amp-design-principles.yaml
+msgid "Design Principles"
+msgstr ""
+
+#: /content/includes/menu.yaml /content/support/developer.md
+#: /content/support/developer
+msgid "Developer Support"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid "Do publishers receive credit for the traffic from a measurement perspective?"
+msgstr ""
+
+#: /content/docs /content/docs/build.md /content/includes/menu.yaml
 msgid "Docs"
 msgstr "Documentos"
 
-#: /content/docs/guides
-msgid "Documentation"
+#: /content/includes/events.yaml
+msgid "Don't miss AMP Events"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid "Don’t break the web."
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid "Don’t design for a hypothetical faster future browser."
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid ""
+"Don’t introduce components or features to AMP that can’t reliably run at "
+"60fps or hinder the instant load experience on today’s most common mobile "
+"devices."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Don’t let extension mechanisms block rendering"
+msgstr ""
+
+#: /views/case-study.html:45
+msgid "Download PDF Case study"
+msgstr ""
+
+#: /content/docs/reference/components
+msgid "Dynamic Content"
+msgstr ""
+
+#: /content/docs/reference/components/dynamic-content
+msgid "Dynamic Content - AMP components"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid ""
+"E.g. don’t integrate things on the client side, just because that is easier, "
+"when the user experience would be better with a server side integration."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"Each time you measure something, it triggers style recalculations which are "
+"expensive because the browser has to layout the entire page. In AMP pages, "
+"all DOM reads happen first before all the writes. This ensures there’s the "
+"max of one recalc of styles per frame.\n"
+"Learn more about impact of style and layout recalculations on [rendering "
+"performance](https://developers.google.com/web/fundamentals/performance/rendering/)."
+msgstr ""
+
+#: /content/docs/guides/embed
+msgid "Embed"
+msgstr ""
+
+#: /content/learn/who/publishers.yaml
+msgid "Enable compelling, consistently fast experiences"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid ""
+"Ensure that if AMP has outages or problems it doesn’t hurt the rest of the "
+"web. That means if the Google AMP Cache, the URL API or the library fails it "
+"should be possible for websites and consumption apps to gracefully degrade. "
+"If something works with an AMP cache it should also work without a cache."
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid ""
+"Ensuring publishers are able to get robust analytics insight is a core design"
+" goal for the project. While the analytics support in the demo release is "
+"very limited, the spec is expected to have support for collection of "
+"analytics information, and integrating with 3rd party systems without "
+"compromising the AMP file speed or size. Several analytics providers are "
+"[participating](https://www.ampproject.org/who/#analytics) in the project.\n"
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid ""
+"Even the most memorable creative won’t serve it’s purpose if the ad is slow "
+"and disruptive for a user. AMP Ads are a new way of building ads, making them"
+" as fast as AMP pages to ensure your ads do what they’re meant to do and "
+"deliver the value you’re looking for."
+msgstr ""
+
+#: /content/includes/menu.yaml /content/includes/latest.yaml
+msgid "Events"
 msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Examples"
 msgstr ""
 
-#: /content/includes/home.yaml
+#: /content/learn/about-how.yaml
 msgid ""
-"For many, reading on the mobile web is a slow, clunky and frustrating "
-"experience - but it doesn’t have to be that way. The Accelerated Mobile Pages"
-" (AMP) Project is an open source initiative that embodies the vision that "
-"publishers can create mobile optimized content once and have it load "
-"instantly everywhere."
+"External resources such as images, ads or iframes must state their size in "
+"the HTML so that AMP can determine each element’s size and position before "
+"resources are downloaded. AMP loads the layout of the page without waiting "
+"for any resources to download.\n"
+"<p>AMP uncouples document layout from resource layout. Only one HTTP request "
+"is needed to layout the entire doc ([+fonts](#font-triggering-must-be-"
+"efficient)). Since AMP is optimized to avoid expensive style recalculations "
+"and layouts in the browser, there won’t be any re-layout when resources load."
+msgstr ""
+
+#: /content/includes/menu.yaml /content/support/faqs.md /content/support/faqs
+msgid "FAQs"
 msgstr ""
 
 #: /content/includes/home.yaml
-msgid "GET STARTED"
-msgstr "Primeiros passos"
-
-#: /content/includes/home.yaml
-msgid "Get Started with AMP HTML"
+msgid "Flexibility and Results"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/includes/home.yaml
-msgid "Get started"
+#: /content/includes/latest.yaml
+msgid "Follow AMP"
+msgstr ""
+
+#: /content/includes/latest.yaml
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Font triggering must be efficient"
+msgstr ""
+
+#: /content/learn/who/publishers.yaml /content/learn/who/ad-tech-platforms.yaml
+msgid "Get Started Building"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid "Get started building"
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid "Get started with AMP"
+msgstr ""
+
+#: /content/docs/getting-started.md
+msgid "Getting Started"
 msgstr ""
 
 #: /content/includes/menu.yaml
+msgid "Getting started"
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid "Grow engagement and increase conversions with faster experiences"
+msgstr ""
+
+#: /content/docs/guides.md /content/includes/menu.yaml /content/docs/get_started
+#: /content/docs/guides /content/docs/reference /content/docs/reference/components
 msgid "Guides"
 msgstr ""
 
-#: /content/includes/home.yaml
+#: /content/learn/who/amp-ads.yaml
 msgid ""
-"If you are new to AMP HTML, our technical introduction is a great place to "
-"get started and provides an overview of the project and how AMP HTML works."
+"Heavy and unpredictable ad experiences slow down the page, cost users money, "
+"and negatively impact perception of both the advertiser and the publisher. "
+"AMP Ads are 3x lighter than traditional ads and eliminate the spread of "
+"malware, helping to ensure a positive brand experience."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Help make AMP faster"
 msgstr ""
 
 #: /content/includes/home.yaml
-msgid ""
-"If you'd like to dive deeper into AMP HTML, you can find all of the source "
-"code, code samples, and detailed documentation in our GitHub repository."
+msgid "Higher Performance and Engagement"
 msgstr ""
 
-#: /content/includes/home.yaml
-msgid "Instant. <br> Everywhere."
+#: /content/includes/menu.yaml /content/learn/about-how.yaml
+msgid "How AMP Works"
+msgstr ""
+
+#: /content/learn/who/publishers.yaml
+msgid "How AMP can help publishers"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid "How are analytics being handled in this AMP format?"
+msgstr ""
+
+#: /content/support/faqs/platform-involvement.md
+msgid "How can a consumer platform get involved in Accelerated Mobile Pages?"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid "How can a publisher get content into AMP HTML?"
+msgstr ""
+
+#: /content/support/faqs/platform-involvement.md
+msgid ""
+"How can an advertising or technology vendor get involved in Accelerated "
+"Mobile Pages?"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid "How do Accelerated Mobile Pages work?"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid "How do I become a part of this project?"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid "How do subscriptions and paywalls work with Accelerated Mobile Pages?"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid "How does advertising work on Accelerated Mobile Pages?"
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid "If it’s not instant, it’s not fast enough."
+msgstr ""
+
+#: /content/learn/who/publishers.yaml
+msgid "Improve user engagement with fast, compelling experiences."
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid ""
+"In short, not much. Since “AMP HTML” is built entirely out of existing web "
+"technologies, the development process mirrors the one publishers are already "
+"using today. Publishers can familiarize themselves with the AMP HTML "
+"specification on GitHub. For those used to the current process, we don’t "
+"expect a significant learning curve.\n"
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid "Increase your reach"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid ""
+"It is a core objective of the Accelerated Mobile Pages project to support "
+"subscriptions and paywalls. AMP currently supports a flexible access "
+"framework where publishers can control the document viewing experience for "
+"subscribers, metered users and anonymous users.\n"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"JavaScript is powerful, it can modify just about every aspect of the page, "
+"but it can also block DOM construction and delay page rendering (see also "
+"[Adding interactivity with "
+"JavaScript](https://developers.google.com/web/fundamentals/performance"
+"/critical-rendering-path/adding-interactivity-with-javascript)). To keep "
+"JavaScript from delaying page rendering, AMP allows only asynchronous "
+"JavaScript.\n"
+"<p>AMP pages can’t include any author-written JavaScript. Instead of using "
+"JavaScript, interactive page features are handled in custom AMP elements. The"
+" custom AMP elements may have JavaScript under the hood, but they’re "
+"carefully designed to make sure they don’t cause performance degradation.\n"
+"<p>While third-party JS is allowed in iframes, it cannot block rendering. For"
+" example, if third-party JS uses the [super-bad-for-performance "
+"`document.write` API](http://www.stevesouders.com/blog/2012/04/10/dont-"
+"docwrite-scripts/), it does not block rendering the main page."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Join Now"
+msgstr ""
+
+#: /content/learn/who-uses-amp.yaml
+msgid ""
+"Join an ecosystem of  850,000 domains, leading platforms, and 100+ technology"
+" providers using  AMP."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Join the AMP Ads initiative"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Keep all third-party JavaScript out of the critical path"
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid "Keep your audience engaged with AMP pages"
+msgstr ""
+
+#: /content/docs/reference/components
+msgid "Layout"
+msgstr ""
+
+#: /content/docs/reference/components/layout
+msgid "Layout - AMP components"
 msgstr ""
 
 #: /content/learn
 msgid "Learn"
 msgstr ""
 
-#: /content/includes/home.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who/advertisers.yaml
+#: /views/partials/grid-card.html:28 /views/partials/promo_banner.html:17
 msgid "Learn More"
 msgstr ""
 
 #: /content/includes/home.yaml
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus iure "
-"ipsum reprehenderit eius veniam veritatis laborum laudantium impedit id, unde"
-" exercitationem tempora, sed ducimus amet placeat sint doloremque. Debitis."
+msgid "Learn about AMP"
 msgstr ""
 
-#: /content/news
+#: /content/includes/home.yaml
+msgid "Learn how to build AMP pages and AMP Ads"
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid ""
+"Learn more about AMP Ads and building AMP pages for your campaigns and "
+"website."
+msgstr ""
+
+#: /content/learn/overview.yaml /content/learn/about-how.yaml
+msgid "Learn who uses AMP"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Lighter and more secure ads improve brand perception"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Load pages in an instant"
+msgstr ""
+
+#: /content/docs/get_started/create
+msgid "Logins with AMP"
+msgstr ""
+
+#: /content/learn/who/advertisers.yaml
+msgid "Maximize ROI everywhere"
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid "Maximize your revenue"
+msgstr ""
+
+#: /content/docs/reference/components
+msgid "Media"
+msgstr ""
+
+#: /content/docs/reference/components/media
+msgid "Media - AMP components"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Minimize style recalculations"
+msgstr ""
+
+#: /content/includes/events.yaml
+msgid "More Past Events"
+msgstr ""
+
+#: /content/includes/doc.yaml
+msgid "Need Dev Support?"
+msgstr ""
+
+#: /content/includes/menu.yaml /content/pages/home.html:40
+#: /content/pages/home.html:80
 msgid "News"
 msgstr ""
 
-#: /content/includes/home.yaml
-msgid "Openness"
+#: /content/support/faqs/overview.md /content/support/faqs/platform-involvement.md
+#: /content/support/faqs/publisher-monetization.md
+#: /content/support/faqs/supported-platforms.md
+msgid "Next FAQ"
 msgstr ""
 
-#: /content/includes/home.yaml
-msgid "Publisher Control"
+#: /content/docs/reference/components
+msgid "Next Reference"
 msgstr ""
 
-#: /content/includes/home.yaml
+#: /content/docs/get_started/create
+msgid "Next Tutorial"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid "No whitelists."
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid "Only do things if they can be made fast."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Only run GPU-accelerated animations"
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid "Overview"
+msgstr ""
+
+#: /content/includes/lists.yaml /content/includes/events.yaml
+msgid "Past Events"
+msgstr ""
+
+#: /content/support/platform.md
+msgid "Platform Support"
+msgstr ""
+
+#: /content/support/faqs/overview.md /content/support/faqs/platform-involvement.md
+msgid "Platform and Technology Company Involvement"
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid "Play Video"
+msgstr ""
+
+#: /content/support/faqs/platform-involvement.md
+msgid ""
+"Please review the [contributing "
+"guidelines](https://github.com/ampproject/amphtml/tree/master/3p#ads) and get"
+" in touch via [Github](https://github.com/ampproject/amphtml/issues/new).\n"
+msgstr ""
+
+#: /content/docs/reference/components
+msgid "Presentation"
+msgstr ""
+
+#: /content/docs/reference/components/presentation
+msgid "Presentation - AMP components"
+msgstr ""
+
+#: /views/case-study.html:54
+msgid "Previous Posts"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid ""
+"Prioritise things that improve the user experience – but compromise when "
+"needed."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Prioritize resource loading"
+msgstr ""
+
+#: /content/support/faqs/platform-involvement.md
+#: /content/support/faqs/publisher-monetization.md
+msgid "Publisher Monetization"
+msgstr ""
+
+#: /content/learn/who-uses-amp.yaml
+#: /content/learn/case-studies/category/publishers.md
 msgid "Publishers"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid ""
+"Publishers and Content Management System (CMS) providers can develop an "
+"integration with their CMS to generate AMP content. Automattic has already "
+"published a [WordPress AMP plugin](https://wordpress.org/plugins/amp/) and we"
+" hope that all content management systems will add support for AMP HTML "
+"pages.\n"
 msgstr ""
 
 #: /content/includes/home.yaml
 msgid ""
-"Ready to build an AMP file? This tutorial will teach you how to create a "
-"basic AMP HTML page, stage it, test it, and get it ready for publication."
+"Publishers and advertisers can decide how to present their content and what "
+"technology vendors to use, all while maintaining and improving key "
+"performance indicators."
 msgstr ""
 
-#: /content/includes/menu.yaml /content/docs/reference
+#: /content/learn/who/publishers.yaml
+msgid ""
+"Publishers implementing AMP can decide how to present their content, what "
+"business model to use, what technology vendors to use, while maintaining and "
+"often improving key performance indicators, such as time spent on page, "
+"return visits, viewability, CTRs and more."
+msgstr ""
+
+#: /content/learn/who-uses-amp.yaml
+msgid "Read case studies"
+msgstr ""
+
+#: /views/partials/grid-card.html:27
+msgid "Read the Case Study"
+msgstr ""
+
+#: /content/learn/who/publishers.yaml
+msgid "Reduce complexity in your operations."
+msgstr ""
+
+#: /content/docs/reference.md /content/includes/menu.yaml /content/docs/contribute
+#: /content/docs/guides /content/docs/reference
 msgid "Reference"
 msgstr "Referência"
 
-#: /content/includes/home.yaml
-msgid "Speed"
+#: /content/includes/menu.yaml /content/includes/latest.yaml
+msgid "Roadmap"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/support
+#: /views/partials/promo_banner.html:12
+msgid ""
+"Save the date: Tune in live on March 7/8 or join us in person in NYC for our "
+"first-ever AMP Conf."
+msgstr ""
+
+#: /content/includes/latest.yaml
+msgid "See More"
+msgstr ""
+
+#: /content/latest/list-blog.html:12
+msgid "See all posts"
+msgstr ""
+
+#: /content/learn/who/publishers.yaml
+msgid "See how other publishers have found success with AMP"
+msgstr ""
+
+#: /content/learn/overview.yaml /content/learn/about-how.yaml
+msgid "See what AMP can do for you"
+msgstr ""
+
+#: /content/support/developer.md
+msgid "Send Feedback"
+msgstr ""
+
+#: /content/includes/lists.yaml
+msgid "Share"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Simple to build, easy to scale. Reduce complexity with AMP Ads."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid "Size all resources statically"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Smart and coordinated ads boost campaign ROI"
+msgstr ""
+
+#: /content/docs/reference/components
+msgid "Social"
+msgstr ""
+
+#: /content/docs/reference/components/social
+msgid "Social - AMP components"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid "Solve problems on the right layer."
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid ""
+"Some things can be made fast and are still a terrible user experience. AMPs "
+"should deliver a fantastic user experience and speed is just one part of "
+"that. Only compromise when lack of support for something would stop AMP from "
+"being widely used and deployed."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Speed is the fastest way to drive performance"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid ""
+"Speed matters and instant is the ideal. Research has shown higher bounce "
+"rates associated with slower-loading web pages. Using the AMP format will "
+"make it far more compelling for people to consume and engage with more "
+"content. But this isn’t just about speed and performance. We also want to "
+"promote enhanced distribution so that publishers can take advantage of the "
+"open web’s potential for their content to appear everywhere quickly -- across"
+" platforms and apps -- which can lead to more revenue via ads and "
+"subscriptions.\n"
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid ""
+"Speeding up ads is the fastest way to boost performance. <a "
+"href=\"https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs"
+"/a4a-readme.md\">AMP Ads</a> load as fast as content, so they are more "
+"viewable and more likely to be engaged with. Triplelift saw a 10&#37;+ "
+"increase in viewability and engagement with AMP ads. Join the <a "
+"href=\"/learn/who-uses-amp/amp-ads/\">AMP Ads Initiative</a> to improve "
+"performance and grow your revenue."
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid "Start Building"
+msgstr ""
+
+#: /content/learn/case-studies.html
+#: /content/learn/case-studies/category/publishers.md
+#: /content/learn/case-studies/category/advertisers.md
+msgid "Start building now"
+msgstr ""
+
+#: /content/includes/events.yaml
+msgid "Stay Tuned!"
+msgstr ""
+
+#: /content/learn/who/publishers.yaml
+msgid "Strengthen your business while maintaining control"
+msgstr ""
+
+#: /content/docs/guides/author_develop/responsive_amp
+msgid "Styling & Layout"
+msgstr ""
+
+#: /content/learn/who-uses-amp.yaml
+msgid "Success stories"
+msgstr ""
+
+#: /content/learn/case-studies.html
+#: /content/learn/case-studies/category/publishers.md
+#: /content/learn/case-studies/category/advertisers.md
+msgid "Success stories of the domains publishing AMP pages"
+msgstr ""
+
+#: /content/includes/menu.yaml /content/support /content/support/support.md
 msgid "Support"
 msgstr "Suporte"
 
-#: /content/includes/home.yaml
-msgid "Technical Introduction"
+#: /content/support/developer/mailing-list.md
+msgid "Support Forum"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid "Supported Platforms and Browsers"
+msgstr ""
+
+#: /content/support/faqs/supported-platforms.md
+msgid "Supported Platforms, Vendors and Partners"
 msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
 msgstr ""
 
+#: /content/learn/overview.yaml
+msgid "The **AMP JS** library ensures the fast rendering of AMP HTML pages."
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid "The **Google AMP Cache** can be used to serve cached AMP HTML pages."
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid ""
+"The AMP Project is an open source initiative to protect the future of the web"
+" helping everyone deliver a better, faster user experience. Build a "
+"sustainable future for your business on an open, faster web by joining the "
+"AMP Project."
+msgstr ""
+
 #: /content/includes/home.yaml
 msgid ""
-"The Accelerated Mobile Pages (AMP) Project is an open initiative that "
-"embodies the vision that publishers can create mobile optimized content once "
-"and have it load instantly everywhere."
+"The AMP Project is an open-source initiative aiming to make the web better "
+"for all. The project enables the creation of websites and ads that are "
+"consistently fast, beautiful and high-performing across devices and "
+"distribution platforms."
 msgstr ""
 
-#: /content/includes/home.yaml
-msgid "Tutorial"
+#: /content/support/faqs/supported-platforms.md
+msgid ""
+"The Accelerated Mobile Pages (AMP) Project is an open source initiative that "
+"makes it easy for publishers to create mobile-friendly content once and have "
+"it load instantly everywhere. – Accelerated Mobile Pages Project"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/docs/get_started
+#: /content/support/faqs/overview.md
+msgid ""
+"The Accelerated Mobile Pages (“AMP”) Project is an open source initiative "
+"that came out of discussions between publishers and technology companies "
+"about the need to improve the entire mobile content ecosystem for everyone --"
+" publishers, consumer platforms, creators, and users.\n"
+"\n"
+"Today, the expectation is that content should load super fast and be easy to "
+"explore. The reality is that content can take several seconds to load, or, "
+"because the user abandons the slow page, never fully loads at all. "
+"Accelerated Mobile Pages are web pages designed to load near instantaneously "
+"-- they are a step towards a better mobile web for all.\n"
+msgstr ""
+
+#: /content/includes/menu.yaml /content/includes/home.yaml /content/latest
+#: /content/latest/latest.html
+msgid "The Latest"
+msgstr ""
+
+#: /content/includes/latest.yaml /content/latest/latest.html
+msgid "The Latest News"
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid ""
+"The [AMP JS library](https://github.com/ampproject/amphtml/tree/master/src) "
+"implements all of [AMP's best performance "
+"practices](/docs/get_started/technical_overview.html), manages resource "
+"loading and gives you the custom tags mentioned above, all to ensure a fast "
+"rendering of your page.\n"
+"<p>Among the biggest optimizations is the fact that it makes everything that "
+"comes from external resources asynchronous, so nothing in the page can block "
+"anything from rendering.\n"
+"<p>Other performance techniques include the sandboxing of all iframes, the "
+"pre-calculation of the layout of every element on page before resources are "
+"loaded and the disabling of slow CSS selectors.\n"
+"<p>To learn more about not just the "
+"[optimizations](/docs/get_started/technical_overview.html) but the "
+"limitations, [read the AMP HTML "
+"specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-"
+"html-format.md)."
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid ""
+"The [Google AMP Cache](https://developers.google.com/amp/cache/) is a proxy-"
+"based content delivery network for delivering all valid AMP documents. It "
+"fetches AMP HTML pages, caches them, and improves page performance "
+"automatically. When using the Google AMP Cache, the document, all JS files "
+"and all images load from the same origin that is using [HTTP "
+"2.0](https://http2.github.io/) for maximum efficiency.\n"
+"<p>The cache also comes with a built-in [validation "
+"system](https://github.com/ampproject/amphtml/tree/master/validator) which "
+"confirms that the page is guaranteed to work, and that it doesn't depend on "
+"external resources. The validation system runs a series of assertions "
+"confirming the page’s markup meets the AMP HTML specification.\n"
+"<p>Another version of the validator comes bundled with every AMP page. This "
+"version can log validation errors directly to the browser’s console when the "
+"page is rendered, allowing you to see how complex changes in your code might "
+"impact performance and user experience.\n"
+"<p>Learn more about [testing your AMP HTML pages](/docs/guides/validate.html)."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"The average mobile page makes 107 uncoordinated ad server requests. Redundant"
+" data requests slow down the page and prevent your ad from loading. AMP Ads "
+"leverage smart components like amp-analytics to reuse code and eliminate "
+"unnecessary data requests. As a result, AMP Ads access more data while "
+"loading faster. And when ads load faster, they’re more likely to exceed "
+"advertiser campaign goals and publisher revenue expectations."
+msgstr ""
+
+#: /content/learn/who/ad-tech-platforms.yaml
+msgid ""
+"The average mobile site takes 19 seconds to load over a 3G connection. "
+"Coupled with the fact that conversions fall by 12&#37; for every additional "
+"second a webpage takes to load, you can safely assume two things: speed "
+"equals performance, and most advertiser campaigns have room to improve. "
+"That’s where you come in. As an SSP, DSP, analytics provider, or anything in "
+"between, embracing speed means improving campaign performance, delivering "
+"quality user experiences, and establishing yourself as the adtech platform "
+"for the fast web. Join the hundreds of technology platforms currently "
+"supporting the open source AMP ecosystem."
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid ""
+"The companies involved in the project want to make the mobile web work better"
+" for all -- not just for one platform, one set of technologies, or one set of"
+" publishers. Making the project open source enables people to share and "
+"contribute their ideas and code for making the mobile web fast. We are just "
+"at the beginning of that journey and we look forward to other publishers and "
+"technology companies joining along the way.\n"
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"The following optimizations combined are the reason AMP pages are so fast "
+"they appear to load instantly:<p>If you'd rather listen than read, the "
+"following video by AMP engineering lead Malte Ubl gives a similar overview "
+"than the following paragraphs."
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid ""
+"The goal is for all published content, from news stories to videos and from "
+"blogs to photographs and GIFs, to work using Accelerated Mobile Pages.\n"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"The median load time for an AMP page is less than one second but the average "
+"ad still takes 5 seconds to load over 3G connections – that’s 4 seconds too "
+"late. When ads are faster, they’re more viewable, more effective, and more "
+"likely to perform well. Boost performance by speeding up ads with AMP Ads."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"The new [preconnect API](http://www.w3.org/TR/resource-hints/#dfn-preconnect)"
+" is used heavily to ensure HTTP requests are as fast as possible when they "
+"are made. With this, a page can be rendered before the user explicitly states"
+" they’d like to navigate to it; the page might already be available by the "
+"time the user actually selects it, leading to instant loading.\n"
+"While prerendering can be applied to all web content, it can also use up a "
+"lot of bandwidth and CPU. AMP is optimized to reduce both of these factors. "
+"Prerendering only downloads resources above the fold and prerendering doesn’t"
+" render things that might be expensive in terms of CPU.\n"
+"When AMP documents get prerendered for instant loading, only resources above "
+"the fold are actually downloaded. When AMP documents get prerendered for "
+"instant loading, resources that might use a lot of CPU (like third-party "
+"iframes) do not get downloaded.\n"
+"Learn more about [why AMP HTML doesn’t take full advantage of the preload "
+"scanner](https://medium.com/@cramforce/why-amp-html-does-not-take-full-"
+"advantage-of-the-preload-scanner-7e7f788aa94e)."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"The only way to have fast optimizations is to run them on the GPU. GPU knows "
+"about layers, it knows how to perform some things on these layers, it can "
+"move them, it can fade them, but it can’t update the page layout; it will "
+"hand that task over to the browser, and that’s not good.\n"
+"The rules for animation-related CSS ensure that animations can be GPU-"
+"accelerated. Specifically, AMP only allows animating and transitioning on "
+"transform and opacity so that page layout isn’t required. Learn more about "
+"[using transform and opacity for animation "
+"changes](https://developers.google.com/web/fundamentals/performance/rendering"
+"/stick-to-compositor-only-properties-and-manage-layer-count)."
+msgstr ""
+
+#: /content/includes/latest.yaml
+msgid ""
+"The open-source AMP Project helps you create mobile optimized content that "
+"loads in an instant."
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid ""
+"The project is open to all players in the ecosystem - publishers, consumer "
+"platforms, and creators. To get an idea who some of the companies and sites "
+"are who use AMP, head to the [Who page](/who).\n"
+msgstr ""
+
+#: /content/support/faqs/platform-involvement.md
+msgid ""
+"The project is open to everyone, and existing members of the project are very"
+" enthusiastic to engage with consumer platforms on the initiative. Google has"
+" opened its cache for use for free by anyone, including to consumer platforms"
+" that would like to display AMP content in their environment. Please get in "
+"touch via [Github](https://github.com/ampproject/amphtml/issues/new) and we "
+"will address your questions as quickly as we can.\n"
+msgstr ""
+
+#: /content/includes/events.yaml
+msgid ""
+"There are no upcomming events at this time. We host events throughout the "
+"year including our annual AMP Conference. Follow us on <a href=\"\" "
+"target=\"_blank\">Facebook</a> or <a href=\"https://twitter.com/amphtml\" "
+"target=\"_blank\">Twitter</a> for the latest news and event listings."
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid ""
+"These design principles are meant to guide the ongoing design and development"
+" of AMP. They should help us make internally consistent decisions."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"Third-party JS likes to use synchronous JS loading. They also like to "
+"`document.write` more sync scripts. For example, if you have five ads on your"
+" page, and each of them cause three synchronous loads, each with a 1 second "
+"latency connection, you’re in 15 seconds of load time just for JS loading.\n"
+"<p>AMP pages allow third-party JavaScript but only in sandboxed iframes. By "
+"restricting them to iframes, they can’t block the execution of the main page."
+" Even if they trigger multiple style re-calculations, their tiny iframes have"
+" very little DOM.\n"
+"<p>The time it takes to do style-recalculations and layouts are restricted by"
+" DOM size, so the iframe recalculations are very fast compared to "
+"recalculating styles and layout for the page."
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid ""
+"Though most tags in an AMP HTML page are regular HTML tags, some HTML tags "
+"are replaced with AMP-specific tags (see also [HTML Tags in the AMP "
+"spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-"
+"format.md)). These custom elements, called AMP HTML components, make common "
+"patterns easy to implement in a performant way.\n"
+"<p>For example, the [`amp-img`](/docs/reference/amp-img.html) tag provides "
+"full `srcset` support even in browsers that don’t support it yet. Learn how "
+"to [create your first AMP HTML page](/docs/get_started/general/create.html)."
+msgstr ""
+
+#: /content/docs/tutorials.md /content/includes/menu.yaml
+#: /content/learn/amp-design-principles.yaml /content/docs/contribute
+#: /content/docs/get_started /content/docs/guides
+#: /content/learn/who/publishers.yaml /content/learn/who/ad-tech-platforms.yaml
 msgid "Tutorials"
 msgstr ""
 
-#: /content/includes/home.yaml
-msgid "View Code"
+#: /content/includes/events.yaml
+msgid "Upcoming Events"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Use your existing resources"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid "User Experience > Developer Experience > Ease of Implementation."
+msgstr ""
+
+#: /content/support/vendor.md /content/support/vendor
+msgid "Vendor Support"
+msgstr ""
+
+#: /content/includes/doc.yaml
+msgid "Visit our FAQ"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"We can’t fix the web if we don’t fix ads. Today’s ads fail to meet "
+"advertisers’ goals because they are slow, unpredictable and disruptive. The "
+"open-source AMP Ads Initiative aims to make advertising on the web better "
+"with faster, lighter and more secure ad experiences, starting with ads and "
+"extending beyond the click to the pages users land on."
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid ""
+"We welcome interested individuals and companies who want to get involved to "
+"get in touch via [Github](https://github.com/ampproject/amphtml/issues/new), "
+"so that we can add you to a distribution list and keep you posted on any new "
+"information.\n"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid ""
+"We won’t give any special treatment to specific sites, domains or origins "
+"except where needed for security or performance reasons."
+msgstr ""
+
+#: /content/learn/about-how.yaml
+msgid ""
+"Web fonts are super large, so [web font "
+"optimization](https://developers.google.com/web/fundamentals/performance"
+"/optimizing-content-efficiency/webfont-optimization) is crucial to "
+"performance. On a typical page that has a few sync scripts and a few external"
+" style sheets, the browser waits and waits to start downloading these huge "
+"fonts until all this happens.\n"
+"The AMP system declares zero HTTP requests until fonts start downloading. "
+"This is only possible because all JS in AMP has the async attribute and only "
+"inline style sheets are allowed; there’s no HTTP requests blocking the "
+"browser from downloading fonts."
+msgstr ""
+
+#: /content/learn/who/publishers.yaml
+msgid ""
+"Web page speed improves the user experience and <a "
+"href=\"https://www.doubleclickbygoogle.com/articles/mobile-speed-"
+"matters/\">core business metrics</a>. AMP pages load near instantly enabling "
+"you to offer a consistently fast experience across all devices and platforms "
+"that link to AMP Pages including Google, Bing, LinkedIn and more. These "
+"performance gains often translate in improvements in the numbers that matter,"
+" such as time spent on page, return visits and CTRs."
 msgstr ""
 
 #: /content/includes/home.yaml
-msgid "Visit Github"
+msgid ""
+"Web pages and ads published in the AMP open-source format load near "
+"instantly, giving users a smooth, more engaging experience on mobile and "
+"desktop."
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid ""
+"We’ve chosen to build AMP as a library in the spirit of the [extensible web "
+"manifesto](https://github.com/extensibleweb/manifesto/blob/master/README.md) "
+"to be able to fix the web of today, not the web of tomorrow.\n"
+"AMP should be fast in today's browsers. When certain optimizations aren't "
+"possible with today's platform, AMP developers should participate in "
+"standards development to get these added to the web platform."
 msgstr ""
 
 #: /content/includes/home.yaml
-msgid "What contributors are saying"
+msgid "What AMP Provides"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid "What are the benefits of Accelerated Mobile Pages?"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid "What are the consequences of using Accelerated Mobile Pages?"
+msgstr ""
+
+#: /content/learn/overview.yaml
+msgid "What is AMP"
 msgstr ""
 
 #: /content/includes/menu.yaml
-msgid "news"
+msgid "What is AMP?"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid "What is the Accelerated Mobile Pages project?"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid "What type of content works best using Accelerated Mobile Pages?"
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "What's New"
+msgstr ""
+
+#: /content/includes/latest.yaml
+msgid "What's hot?"
+msgstr ""
+
+#: /content/learn/amp-design-principles.yaml
+msgid ""
+"When in doubt, do what’s best for the end user experience, even if it means "
+"that it’s harder for the page creator to build or for the library developer "
+"to implement."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"Whether you’re an advertiser, ad tech platform, or publisher, fix the state "
+"of advertising by joining the AMP Ads Initiative today."
+msgstr ""
+
+#: /content/learn/who
+msgid "Who Uses AMP"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid "Who can use Accelerated Mobile Pages?"
+msgstr ""
+
+#: /content/includes/menu.yaml /content/learn/who-uses-amp.yaml
+msgid "Who is AMP for?"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Why AMP Ads"
+msgstr ""
+
+#: /content/support/faqs/overview.md
+msgid "Why does the Accelerated Mobile Pages Project take an open source approach?"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid ""
+"Yes, an AMP file is the same as the rest of your site – this space is the "
+"publisher’s canvas.\n"
+msgstr ""
+
+#: /content/support/faqs/publisher-monetization.md
+msgid ""
+"Yes, as with their existing websites, publishers control their ad inventory "
+"and how they sell it.\n"
+msgstr ""
+
+#: /content/pages/home.html:64
+msgid "or"
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid ""
+"“Across Teads’ publisher portfolio, video ads perform significantly better on"
+" AMP pages than on the traditional mobile web.”"
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid ""
+"“If our site takes a long time to load, it doesn’t matter how great our "
+"journalism is, some people will leave the page before they see what’s there.”"
+msgstr ""
+
+#: /content/includes/home.yaml
+msgid ""
+"“We see our work on AMP as furthering the business need of providing a fast, "
+"clean user experience to our audience.”"
 msgstr ""
 
