@@ -36,6 +36,16 @@ amp-carousel {
   transform: translateY(-50%) translateY(-10px);
 }
 
+.rtl {
+  .amp-carousel-button-prev {
+    left: 10px;
+  }
+
+  .amp-carousel-button-next {
+    right: 10px;
+  }
+}
+
 @include max-screen($mobile-breakpoint) {
   amp-carousel {
     .amp-carousel-button {
