@@ -56,7 +56,7 @@ When using pagination, the simple code we used earlier becomes:
 
 It’s your responsibility to populate the navigation items correctly by updating the hosted page. For example, in the [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/) we render the page via a server-side template and we use a query parameter to specify what the first blog item of the page should be. We limit the size of the page to 5 items, so if the server has generated more than 5 items, when a user lands on the main page it should show the Next element in the navigation area.
 
-<amp-img src="/static/img/liveblog-pagination.jpg" alt="Live blog pagination" height="526" width="300"></amp-img>
+<amp-img src="/static/img/liveblog-pagination.png" alt="Live blog pagination" height="526" width="300"></amp-img>
 
 After the size of blog posts has exceeded the maximum number of items specified by `data-max-items-per-page`, the older blog items are displayed in the “Next” pages, for example on page 2. Given that the `amp-live-list` polls the server at intervals to see if there is any change in the items, there's no need to poll the server if the user isn't on the first page.
 
