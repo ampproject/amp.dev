@@ -31,22 +31,42 @@
       },
       {
         "source": "/docs/get_started/about-amp.html",
-        "destination": "/learn/about-amp/",
+        "destination": "/learn/overview/",
         "type": 301
       },
       {
         "source": "/docs",
-        "destination": "/learn/about-amp/",
+        "destination": "/learn/overview/",
         "type": 301
       },
       {
         "source": "/docs/",
-        "destination": "/learn/about-amp/",
+        "destination": "/learn/overview/",
         "type": 301
       },
       {
         "source": "/docs/index.html",
-        "destination": "/learn/about-amp/",
+        "destination": "/learn/overview/",
+        "type": 301
+      },
+      {
+        "source": "/learn/about-amp/",
+        "destination": "/learn/overview/",
+        "type": 301
+      },
+      {
+        "source": "/learn/how-amp-works/",
+        "destination": "/learn/about-how/",
+        "type": 301
+      },
+      {
+        "source": "/learn/design-principles/",
+        "destination": "/learn/amp-design-principles/",
+        "type": 301
+      },
+      {
+        "source": "/learn/@(browsers|who)/",
+        "destination": "/support/faqs/supported-platforms.html",
         "type": 301
       },
       {
