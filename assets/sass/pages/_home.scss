@@ -277,6 +277,14 @@
       right: -20%;
     }
 
+    .latest-label {
+      margin: 0 40px -15px 0;
+    }
+
+    .benefits .benefit-image {
+      margin: 0 0 0 15px;
+    }
+
     .experience {
       justify-content: flex-start;
     }
@@ -430,6 +438,10 @@
 
       .experience-content {
         order: 0;
+      }
+
+      .benefits .benefit-image {
+        margin: 20px auto;
       }
     }
   }
