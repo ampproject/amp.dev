@@ -25,6 +25,15 @@ footer {
     flex-direction: row;
     justify-content: center;
   }
+
+  .footer-privacy {
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 300;
+    left: 20px;
+    position: absolute;
+    text-transform: none;
+  }
 }
 
 .footer-cta {
