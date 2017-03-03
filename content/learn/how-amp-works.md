@@ -1,6 +1,7 @@
 ---
 $title: How AMP Works
 $order: 1
+$hidden: true
 components:
   - youtube
 ---

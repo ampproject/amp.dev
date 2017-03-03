@@ -1,202 +1,184 @@
-div.language {
-
-  position: relative;
+.language {
   height: 33px;
-  width: 126px;
-  box-shadow: 0px 1px 2px #b7b7b7;
+  left: 100px;
+  position: relative;
+  top: -4px;
   user-select: none;
 
-  amp-accordion {
-    height: 33px;
-    width: 126px;
-  }
-
   section {
+    border: 0;
     padding: 0;
+
+    &[expanded] {
+      .current,
+      .others-inner {
+        box-shadow: $header-shadow;
+      }
+
+      .current {
+        left: 60px;
+
+        &::after {
+          transform: scale(.75);
+        }
+      }
+    }
   }
 
   .current {
     font-size: 1em;
-    font-weight: normal;
-    &::before {
-      @include masked-sprite(lang-icon);
-      background-color: #333;
+    margin-right: 100px;
+    text-align: right;
+    width: 140px;
+
+    &::after {
+      @include sprite(carat-down);
       content: '';
       display: inline-block;
-      position: absolute;
-      left: 4px;
-      top: 4px;
+      position: relative;
+      top: -4px;
+      transform: scale(.75);
+    }
+  }
+
+  .others {
+    padding: 0 50px 50px 50px;
+    left: -50px;
+    top: -1px;
+  }
+
+  .others-inner {
+    background: $color-white;
+    margin: 0;
+
+    div {
+      width: 200px;
+
+      a {
+        margin: 0 10px;
+        text-transform: capitalize;
+      }
+
+      &:hover {
+        background-color: $color-lightgrey;
+      }
     }
   }
 
   .current,
-  .others div {
-
-    background-color: #f7f7f7;
-    background-repeat: no-repeat;
-    background-position: 6px 6px;
-    background-size: 20px;
-
-    padding: 8px 10px;
-    margin: 0;
+  .others-inner div {
+    background-color: transparent;
     border: 0;
-    border-bottom: 1px solid rgb(231, 235, 236);
     box-sizing: border-box;
-    height: 33px;
+    height: auto;
+    padding: 10px 15px 8px;
 
     &:hover {
-      background-color: #0379c4;
-      border-bottom: 1px solid #0379c4;
-
-      &::before {
-        @include masked-sprite(lang-icon);
-        background-color: #fff;
-      }
-
       a {
-        color: #fff;
         text-decoration: none;
       }
     }
 
     a {
-      display: block;
-      padding: 0;
-      padding-left: 24px;
-      color: #424242;
-
+      color: $color-black-95;
+      display: inline-block;
       overflow: hidden;
+      padding: 0;
       text-overflow: ellipsis;
       white-space: nowrap;
-
-      span {
-          padding: 0;
-          background-color: transparent;
-      }
-
     }
-
   }
-
-  .others {
-    box-shadow: 0px 1px 2px #b7b7b7;
-  }
-
-
-
 }
 
 .rtl .language {
-  .current,
-  .others div {
-    a {
-      padding-right: 26px;
-      padding-left: 0;
-      background-position: right 6px;
-    }
-  }
+  left: auto;
+  right: 100px;
+
   .current {
-    &::before {
-      left: auto;
-      right: 4px;
+    margin: 0 0 0 100px;
+    right: -60px;
+  }
+
+  .others {
+    left: auto;
+    right: -50px;
+  }
+
+  section[expanded] .current {
+    left: auto;
+    right: 0;
+  }
+
+  .current,
+  .others-inner div {
+    a {
+      background-position: right 6px;
     }
   }
 }
 
 header .language {
-  margin-left: 12px;
   align-self: center;
+  margin-left: 12px;
 }
 
-.rtl header .language {
-  margin-left: 0;
-  margin-right: 12px;
-}
+amp-sidebar {
+  .language {
+    bottom: 15px;
+    left: 10px;
+    position: absolute;
+    top: auto;
 
-amp-sidebar .language {
-
-  width: auto;
-  box-shadow: none;
-  height: 66px;
-  margin-bottom: 0;
-  background: #2196F3;
-
-  amp-accordion {
-    width: auto;
-    height: 66px;
-    z-index: 2;
-  }
-
-  /*
-  .current a span::after {
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 11px solid #454545;
-    z-index: 1;
-  }
-  */
-
-  .current,
-  .others div {
-    background: #2196F3;
-    border-bottom: 1px solid #0976cc;
-    padding-left: 16px;
-    padding-top: 23px;
-    padding-bottom: 6px;
-    height: 66px;
-
-    &.current {
-
-      &::before {
-        display: none;
+    section[expanded] {
+      .current {
+        left: 0;
       }
+    }
 
-      border-bottom: 1px solid #eee;
-      padding-right: 58px;
+    .current a,
+    .others-inner div a {
+      color: $color-ampblue;
+    }
 
-        a::after {
-          content: "▾";
-          display: inline-block;
-          position: relative;
-          color: #fff;
-          top: -5px;
-          left: 5px;
+    .current {
+      margin-right: 0;
+      text-align: left;
+
+      &::after {
+        @include sprite(carat);
+        top: -5px;
+        transform: rotate(180deg) scale(.75);
+      }
+    }
+
+    .others {
+      box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
+      left: 0;
+      padding: 0;
+      transform: translateY(-117%);
+      transform: translateY(calc(-100% - 50px));
+
+      .others-inner {
+        box-shadow: none;
+        width: 240px;
+
+        &::after {
+          clear: both;
+          content: '';
+          display: table;
         }
 
-      span {
-        color: #fff;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        max-width: 104px;
-        display: inline-block;
+        div {
+          float: left;
+          width: 120px;
+        }
       }
     }
-
-    a {
-      padding-left: 0;
-      span {
-        color: #fff;
-      }
-    }
-
   }
 }
 
 .rtl amp-sidebar .language {
-
-  &::before {
-    left: 20px;
-    right: auto;
-  }
-
-  .current,
-  .others div {
-    padding-left: 0;
-    padding-right: 16px;
+  section[expanded] .current {
+    right: -50px;
   }
 }

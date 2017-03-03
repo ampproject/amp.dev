@@ -1,27 +1,62 @@
 menu:
-  - href: /content/learn/about-amp.md
+  - href: /content/learn/overview.html
     copy@: About
     collection: learn
-  - href: /content/docs/get_started/create.md
+    children:
+      - href: /content/learn/overview.html
+        copy@: "What is AMP?"
+      - href: /content/learn/about-how.yaml
+        copy@: "How AMP Works"
+      - href: /content/learn/amp-design-principles.yaml
+        copy@: "Design Principles"
+      - href: /content/learn/who-uses-amp.yaml
+        copy@: "Who is AMP for?"
+        collection: learn/who
+      - href: /content/learn/case-studies.html
+        copy@: "Case Studies"
+        collection: learn/case-studies
+  - href: /content/docs/get_started/general/create.md
     copy@: Docs
     collection: docs
     children:
-      - href: /content/docs/get_started/create.md
-        copy@: "Get started"
-      - href: /content/docs/get_started/create.md
+      - href: /content/docs/get_started/general/create.md
+        copy@: "Getting started"
+      - href: /content/docs/get_started/general/create.md
         copy@: "Tutorials"
-      - href: /content/docs/guides/responsive_amp.md
+        collection: docs/get_started
+      - href: /content/docs/guides/author_develop/responsive_amp.md
         copy@: "Guides"
+        collection: docs/guides
       - href: /content/docs/reference/components.md
         copy@: "Reference"
+        collection: docs/reference
       - href: https://ampbyexample.com/
         copy@: "Examples"
-  - href: /content/contribute/contribute.md
-    copy@: Contribute
-    collection: contribute
-  - href: https://amphtml.wordpress.com/
-    copy@: news
-    collection: news
-  - href: /content/support/faqs.md
+      - href: /content/docs/contribute/contribute.md
+        copy@: "Contribute"
+        collection: docs/contribute
+  - href: /content/latest/latest.html
+    copy@: The Latest
+    collection: latest
+    children:
+      - href: /content/latest/latest.html
+        copy@: "What's New"
+      - href: /content/latest/list-blog.html
+        copy@: "News"
+      - href: /content/latest/list-event.html
+        copy@: "Events"
+      - href: /content/latest/roadmap.html
+        copy@: "Roadmap"
+  - href: /content/support/support.md
     copy@: Support
     collection: support
+    children:
+      - href: /content/support/faqs.md
+        copy@: "FAQs"
+        collection: support/faqs
+      - href: /content/support/developer.md
+        copy@: "Developer Support"
+        collection: support/developer
+      - href: /assets/img/brand-guidelines.pdf
+        static: true
+        copy@: "Brand Guidelines"

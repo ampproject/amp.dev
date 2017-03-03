@@ -6,30 +6,29 @@ code,
 kbd,
 samp,
 tt{
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-  font-size: 0.9em;
-  background: #f2f9ff;
-  border: 1px solid #b2e7ff;
+  font-family: $font-family-mono;
+  font-size: 14px;
+  background: $color-white;
+  border: 1px solid #e7f2f9;
   border-radius: 3px;
-  color: #222;
+  color: $color-black-95;
 }
 
 code {
-  font-size: 13px;
+  background: #f6fcfd;
+  font-size: 15px;
   padding: 2px 5px;
 }
 
 a {
   code {
-    color: #035386;
+    @extend a.underlined;
+    color: $color-black-95;
     white-space: nowrap;
-    border-bottom-width: 2px;
-    border-color: $color-brightblue;
   }
 
   &:hover code {
-    color: $color-white;
-    background-color: $color-brightblue;
+    color: #1c79be;
   }
 }
 
@@ -39,6 +38,8 @@ h3,
 h4,
 h5 {
   code {
+    background: none;
+    border: 0;
     font-size: 0.9em;
   }
 }
@@ -51,6 +52,8 @@ h5 {
  * Syntax highlighting styles
  */
 pre {
+  background: #f6fcfd;
+  border-color: #e7f2f9;
   overflow: auto;
   tab-size: 2;
   word-break: normal;
@@ -69,9 +72,27 @@ pre {
   }
 }
 
+@include max-screen($mobile-breakpoint) {
+  .code pre {
+    margin: 0 -25px;
+  }
+
+  code {
+    font-size: 13px;
+  }
+
+  table {
+    a code {
+      line-height: 2;
+      white-space: normal;
+    }
+  }
+}
+
 .highlight {
   .hll { background-color: #ffffcc }
   .c { color: #0099FF; font-style: italic } /* Comment */
+  .err { color: #AA0000; background-color: #FFAAAA } /* Error */
   .k { color: #006699; font-weight: bold } /* Keyword */
   .o { color: #555555 } /* Operator */
   .cm { color: #0099FF; font-style: italic } /* Comment.Multiline */
@@ -96,7 +117,7 @@ pre {
   .kt { color: #007788; font-weight: bold } /* Keyword.Type */
   .m { color: #FF6600 } /* Literal.Number */
   .s { color: #CC3300 } /* Literal.String */
-  .na { color: #026abd } /* Name.Attribute */
+  .na { color: #1867a3 } /* Name.Attribute */
   .nb { color: #336666 } /* Name.Builtin */
   .nc { color: #00AA88; font-weight: bold } /* Name.Class */
   .no { color: #336600 } /* Name.Constant */
@@ -106,7 +127,7 @@ pre {
   .nf { color: #CC00FF } /* Name.Function */
   .nl { color: #9999FF } /* Name.Label */
   .nn { color: #00CCFF; font-weight: bold } /* Name.Namespace */
-  .nt { color: #026abd; font-weight: bold } /* Name.Tag */
+  .nt { color: #1867a3; font-weight: bold } /* Name.Tag */
   .nv { color: #003333 } /* Name.Variable */
   .ow { color: #000000; font-weight: bold } /* Operator.Word */
   .w { color: #bbbbbb } /* Text.Whitespace */

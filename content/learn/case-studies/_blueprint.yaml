@@ -2,4 +2,4 @@ $path: /case-studies/{base}/
 $view: /views/case-study.html
 $localization:
   path: /{locale}/case-studies/{base}/
-
+stylesheet: pages/case-study.css

@@ -21,32 +21,51 @@
   <link rel="apple-touch-icon" sizes="167x167" href="/static/img/icons/167.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/img/icons/180.png">
 
-  <style amp-custom>
-{% if doc.view == '/views/doc.html' %}
-  {% include "/assets/css/docs.min.css" %}
-{% elif doc.view == '/views/section_page.html' %}
-  {% include "/assets/css/section.min.css" %}
-{% elif doc.view == '/views/case-study.html' %}
-  {% include "/assets/css/case-study.min.css" %}
-{% else %}
-  {% include "/assets/css/main.min.css" %}
-{% endif %}
-{% if doc.stylesheet %}
-  {% include "/assets/css/" ~ doc.stylesheet %}
-{% endif %}
-  </style>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
 
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
   {% if doc.components %}
     {% for component in doc.components %}
     <script async custom-element="amp-{{component}}" src="https://cdn.ampproject.org/v0/amp-{{component}}-0.1.js"></script>
     {% endfor %}
   {% endif %}
+
+  <style amp-custom>
+    {% if doc.view == '/views/doc.html' %}
+      {% include "/assets/css/docs.min.css" %}
+    {% elif doc.view == '/views/section_page.html' or doc.view == '/views/grid_page.html' %}
+      {% include "/assets/css/section.min.css" %}
+    {% elif doc.view == '/views/case-study.html' or doc.view == '/views/about-casestudies.html' %}
+      {% include "/assets/css/case-study.min.css" %}
+    {% elif doc.view == '/views/list_page.html' or doc.url.path.endswith('/latest/') %}
+      {% include "/assets/css/list.min.css" %}
+    {% elif doc.view == '/views/blog_detail.html' or doc.url.path.endswith('/roadmap/') %}
+      {% include "/assets/css/blog.min.css" %}
+    {% elif doc.pod_path == '/content/pages/home.html' %}
+      {% include "/assets/css/home.min.css" %}
+    {% elif doc.view == '/views/about-overview.html' %}
+      {% include "/assets/css/about-overview.min.css" %}
+    {% elif doc.view == '/views/about-how.html' %}
+      {% include "/assets/css/about-how.min.css" %}
+    {% elif doc.view == '/views/about-who.html' %}
+      {% include "/assets/css/about-who.min.css" %}
+    {% elif doc.view == '/views/about-who-vertical.html' %}
+      {% include "/assets/css/about-who-vertical.min.css" %}
+    {% elif doc.view == '/views/design-principles.html' %}
+      {% include "/assets/css/design-principles.min.css" %}
+    {% else %}
+      {% include "/assets/css/main.min.css" %}
+    {% endif %}
+    {% if doc.stylesheet %}
+      {% include "/assets/css/" ~ doc.stylesheet %}
+    {% endif %}
+  </style>
 
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 

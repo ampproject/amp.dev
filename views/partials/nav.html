@@ -39,7 +39,7 @@
 </ul>
 {% else %}
   <ul>
-    {% for collection in g.collection('docs').collections()|sort(attribute='index') %}
+    {% for collection in g.collection('docs').collections() %}
     <li>
       <h2>{{_(collection.title)}}</h2>
       <ul>

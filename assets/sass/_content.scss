@@ -1,36 +1,13 @@
-/**
- * Page content
- */
-.main {
-	display: flex;
-  align-items: stretch;
+// page content
 
-	h1 {
-		margin-top: 0;
-	}
-
-	.content {
-    flex-grow: 1;
-    -webkit-flex-grow: 1;
-    transition: all 0.25s ease;
-    transform: translate(0, 0);
-    will-change: transform;
-    word-break: break-word;
-    min-width: 0;
-    padding-top: 46px;
-    padding-bottom: 60px;
-
-    h2 {
-      border-bottom: 2px solid #f0f0f0;
-      padding-bottom: 12px;
-    }
-
-		ul, ol {
-			margin-left: 40px;
-		}
-	}
-
+.container {
   .content {
+    margin: 0 auto;
+    min-width: 0;
+    padding: 100px 0;
+    transition: all .25s ease;
+    width: 100%;
+    word-break: break-word;
 
     /* These are technically the same, but use both */
     overflow-wrap: break-word;
@@ -40,23 +17,114 @@
     word-break: break-word;
 
     /* Adds a hyphen where the word breaks, if supported (No Blink) */
-    hyphens: auto;
+    // hyphens: auto;
+  }
+}
 
+// docs
+.main {
+  align-items: stretch;
+  display: flex;
+  margin-left: 350px;
+  min-height: 100vh;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 100;
+    line-height: 50px;
+    margin-top: 0;
+  }
+
+  h2 {
+    border-top: 3px solid $color-grey-lt;
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 30px;
+  }
+
+  a {
+    font-size: 16px;
+  }
+
+  aside {
+    a {
+      font-size: 14px;
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    max-width: 1000px;
+    padding-bottom: 60px;
+    padding-top: 70px;
+
+    ul,
+    ol {
+      margin-left: 40px;
+    }
   }
 
   amp-img,
   amp-youtube,
   amp-iframe {
-      margin: 1em 0;
+    margin: 1em 0;
   }
-
 }
 
 .rtl .main {
-	.content {
-		ul, ol {
-			margin-left: 0;
-            margin-right: 40px;
-		}
-	}
+  margin: 0 350px 0 auto;
+
+  .content {
+    // ul,
+    // ol {
+    //   margin-left: 0;
+    //   margin-right: 40px;
+    // }
+  }
+}
+
+@include max-screen($mobile-breakpoint) {
+  .container {
+    .content {
+      max-width: 100%;
+      padding: 70px 0;
+    }
+  }
+
+  .main {
+    flex-direction: column;
+    margin-left: 0;
+
+    h1 {
+      font-size: 26px;
+      line-height: 40px;
+      font-weight: 300;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    a {
+      font-size: 14px;
+    }
+  }
+
+  .rtl .main {
+    margin-right: 0;
+  }
 }

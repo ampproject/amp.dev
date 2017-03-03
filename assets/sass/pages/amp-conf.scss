@@ -35,6 +35,7 @@
         }
 
         &.teaser {
+            margin-top: 80px;
             text-align: center;
 
             p {
@@ -166,6 +167,17 @@
         }
 
         &.faq {
+            font-size: 16px;
+            font-weight: normal;
+
+            h3 {
+              color: #0379C4;
+              font-size: 26px;
+              font-weight: 300;
+              margin-top: 1.1em;
+              margin-bottom: 0.5em;
+            }
+
             dd {
                 margin-bottom: 1em;
                 font-weight: 300;

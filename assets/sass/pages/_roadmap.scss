@@ -1,0 +1,440 @@
+@mixin roadmap-stage($color, $number, $rtl) {
+
+  @if $rtl {
+    border-left: 0;
+    border-right: 1px solid $color;
+  } @else {
+    border-left: 1p x solid $color;
+    border-right: 0;
+  }
+
+  &:after {
+    border: 1px solid $color;
+    color: $color;
+    content: $number + '';
+  }
+
+  li {
+    &:before {
+      background: $color;
+    }
+  }
+
+}
+
+.roadmap .content {
+
+  .about,
+  .description,
+  .forecast {
+    ul, ol {
+      padding-left: .7em;
+
+      li {
+        list-style-type: none;
+        position: relative;
+        &::before {
+          content: '\2022 ';
+          color: $color-ampblue;
+          position: absolute;
+          left: -.8em;
+        }
+      }
+    }
+  }
+
+  .description,
+  .forecast {
+    ul, ol {
+      padding-left: 1.4em;
+    }
+  }
+
+  .stages li {
+    list-style-type: none;
+  }
+
+  .workstream-title {
+    background: $gradient-bold;
+    padding: 1em 16px;
+    margin-bottom: 0;
+    text-align: center;
+
+    h4,
+    p {
+      color: $color-white;
+      margin: 0 0 5px 0;
+    }
+  }
+
+  .post-content {
+    .forecast,
+    .description,
+    .plan {
+      h4 {
+        @extend %text-label;
+        color: $color-ampblue;
+        padding-left: 1em;
+      }
+
+      p,
+      li,
+      a {
+        font-size: 14px;
+      }
+
+      li p {
+        margin-top: 10px;
+      }
+    }
+
+    .forecast,
+    .description {
+      h4 {
+        padding-left: 1.9em;
+      }
+    }
+  }
+
+  .workstream-headings,
+  .forecast h4 {
+    position: relative;
+    &::after {
+      background: $gradient-bold;
+      bottom: -1px;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  strong {
+    font-weight: 400;
+  }
+
+  section {
+    padding-left: 0;
+  }
+
+  .about {
+    margin: 2em 0;
+    ul {
+      margin: 0;
+      list-style-type: square;
+    }
+    div {
+      margin-bottom: 1em;
+    }
+  }
+
+  .workstream {
+    margin-bottom: 1em;
+    background: #fff;
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
+    width: 112%;
+    position: relative;
+    left: -6%;
+
+    ul {
+      width: 100%;
+    }
+  }
+
+  .workstream-flex {
+    display: flex;
+  }
+
+  .description {
+    flex: 1 1 45%;
+    padding: 1em;
+    padding-right: 2em;
+  }
+
+  .workstream-flex:not(.workstream-headings) .description {
+    border-right: 1px solid $color-lightblue;
+  }
+
+  .plan {
+    flex: 1 1 55%;
+    // min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    padding-bottom: 0;
+
+    h4 {
+      display: none;
+    }
+  }
+
+  .workstream-headings {
+    margin: 0 20px;
+    padding: 15px 0;
+    .description {
+      padding-bottom: 0;
+      padding-left: 0;
+    }
+    .plan h4 {
+      display: block;
+    }
+  }
+
+  .themes,
+  .forecast {
+    ul {
+      list-style-type: square;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .forecast {
+    padding: 1em;
+
+    h4 {
+      padding-bottom: 17px;
+    }
+
+    ul {
+      padding-top: 10px;
+      padding-bottom: 30px;
+    }
+  }
+
+  /* Stages magic deluxe flex win */
+
+  .stages {
+
+    margin: -4px 0 0 0;
+    margin-left: -21px;
+    padding: 30px 1em 0 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      padding: 25px 0 30px 12px;
+      position: relative;
+      flex: 1 1 100%;
+
+      &:last-child {
+        padding-bottom: 1em;
+      }
+
+      &::before {
+        content: attr(data-description);
+        position: absolute;
+        top: -1px;
+        left: 24px;
+        color: $color-black;
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        right: 0;
+        white-space: nowrap;
+      }
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: -14px;
+        background: #fff;
+        border-radius: 20px;
+        width: 24px;
+        height: 24px;
+        display: block;
+        text-align: center;
+        line-height: 24px;
+      }
+
+      li {
+        position: relative;
+        &::before {
+          content: "";
+          width: 8px;
+          height: 1px;
+          display: block;
+          position: absolute;
+          // border-radius: 10px;
+          top: 12px;
+          left: -24px;
+        }
+      }
+
+    }
+
+    .stage-0 { @include roadmap-stage($color-lightblue, 0, false); }
+    .stage-1 { @include roadmap-stage(#10c4f5, 1, false); }
+    .stage-2 { @include roadmap-stage(#12b5ea, 2, false); }
+    .stage-3 { @include roadmap-stage(#15a6e0, 3, false); }
+    .stage-4 { @include roadmap-stage(#1797d5, 4, false); }
+    .stage-5 { @include roadmap-stage(#1a88cB, 5, false); }
+    .stage-6 { @include roadmap-stage($color-ampblue, 6, false); }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      margin-left: 12px;
+      padding-top: 3px;
+    }
+
+  }
+}
+
+.roadmap.rtl .content {
+  .post-content {
+    .forecast, .description {
+      h4 {
+        padding-left: 0;
+        padding-right: 1.9em;
+      }
+    }
+
+    .plan {
+      h4 {
+        padding-left: 0;
+        padding-right: 1em;
+      }
+    }
+  }
+
+  .workstream {
+    left: auto;
+    right: -6%;
+  }
+
+  .workstream-flex:not(.workstream-headings) .description {
+    border-left: 1px solid $color-lightblue;
+    border-right: 0;
+  }
+
+  .description {
+    padding-left: 2em;
+    padding-right: 1em;
+  }
+
+  .about, .description, .forecast {
+    ul, ol {
+      padding: 0 .7em 0 0;
+
+      li::before {
+        left: auto;
+        right: -.8em;
+      }
+    }
+  }
+
+  .stages {
+    margin: -4px -21px 0 0;
+    padding: 30px 0 0 1em;
+
+    ul {
+      margin: 0 12px 0 0;
+    }
+
+    & > li{
+      padding: 25px 12px 30px 0;
+
+      &::after {
+        left: auto;
+        right: -14px;
+      }
+
+      &::before {
+        left: 0;
+        right: 24px;
+      }
+
+      li::before {
+        left: auto;
+        right: -24px;
+      }
+    }
+
+    .stage-0 { @include roadmap-stage($color-lightblue, 0, true); }
+    .stage-1 { @include roadmap-stage(#10c4f5, 1, true); }
+    .stage-2 { @include roadmap-stage(#12b5ea, 2, true); }
+    .stage-3 { @include roadmap-stage(#15a6e0, 3, true); }
+    .stage-4 { @include roadmap-stage(#1797d5, 4, true); }
+    .stage-5 { @include roadmap-stage(#1a88cB, 5, true); }
+    .stage-6 { @include roadmap-stage($color-ampblue, 6, true); }
+  }
+}
+
+/* Them responsive awesomeness */
+
+@include max-screen($mobile-breakpoint) {
+  .roadmap .content {
+    .share-module {
+      .text-label {
+        display: none;
+      }
+    }
+
+    .post-content.post-sheet {
+      padding-top: 5px;
+    }
+
+    .workstream-flex {
+      flex-wrap: wrap;
+    }
+
+    .stages {
+      margin-left: 24px;
+    }
+
+    .post-content .description h4 {
+      padding-left: 1.4em;
+    }
+
+    .workstream-flex {
+      .plan {
+        padding: 20px;
+        h4 {
+          display: block;
+          width: 100%;
+          padding: 0 0 15px 1.4em;
+          position: relative;
+          &::after {
+            background: $gradient-bold;
+            bottom: -1px;
+            content: '';
+            height: 1px;
+            left: 0;
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .workstream-flex:not(.workstream-headings) .description {
+      border-right: 0;
+    }
+
+    .workstream-headings {
+      .plan {
+        display: none;
+      }
+    }
+  }
+
+  .roadmap.rtl .content {
+    .stages {
+      margin-right: 24px;
+    }
+
+    .post-content .description h4 {
+      padding-right: 1.4em;
+    }
+
+    .workstream-flex .plan h4 {
+      padding: 0 1.4em 15px 0;
+    }
+
+    .workstream-flex:not(.workstream-headings) .description {
+      border-left: 0;
+    }
+  }
+}

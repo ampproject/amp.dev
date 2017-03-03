@@ -1,6 +1,7 @@
 ---
 $title: AMP Validation Errors
 $order: 7
+toc: true
 ---
 
 <!---

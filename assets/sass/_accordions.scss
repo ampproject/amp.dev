@@ -1,109 +1,75 @@
-.accordion-slider {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-
+amp-accordion {
+  section {
+    border-bottom: 2px solid $color-grey-lt;
+  }
 }
 
-.accordion {
-  width: 100%;
-  line-height: 1.5;
-  position: initial;
+.accordion-header,
+.accordion-content {
+  margin: 20px 0;
+  padding: 0 25px 0 65px;
+}
 
-  &__section {
-    padding: 0;
-    border-bottom: 1px solid $color-grey-200;
+.accordion-header {
+  background-color: transparent;
+  border: 0;
+}
 
+.accordion-title {
+  margin: 0;
+  position: relative;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $color-ampblue;
   }
 
-  &__header {
-    background-color: transparent;
-    border: none;
-    padding: 14px 0;
-    transition: .15s;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-      background-color: $color-grey-50;
-    }
-
-    &:active {
-      transition: 0.3s ease-out;
-      background-color: $color-grey-100;
-    }
+  &::before,
+  &::after {
+    background: $gradient-med;
+    content: '';
+    display: inline-block;
+    height: 2px;
+    left: -40px;
+    position: absolute;
+    top: 50%;
+    width: 8px;
   }
 
-  &__title {
-    color: $color-midblue;
-    margin: 0;
-    position: relative;
+  &::after {
+    transform: rotate(90deg);
+  }
 
-    // TODO the margin has been over-specified on the home.scss styles.
-    .home & {
-      margin-bottom: 0;
-      @include max-screen($mobile-breakpoint) {
-        font-size: 30px;
-      }
-    }
+  section[expanded] &::after {
+    content: none;
+  }
+}
 
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      width: 12px;
-      height: 12px;
-      background: transparent url(/static/img/cheveron-down.svg) no-repeat 50% 50%;
+.accordion-content {
+  p:first-child {
+    margin-top: 0;
+  }
 
-      transition: 0.15s ease;
-      transform: rotateX(0deg);
+  p:last-child {
+    margin-bottom: 2px;
+  }
+}
 
-      .accordion__header:active & {
-        transition: 0.3s ease-out;
-        transform: rotateX(45deg);
-      }
-
-      [expanded] .accordion__header:active & {
-        transform: rotateX(235deg);
-      }
-
-    }
-
-    [expanded] &:after {
-      transform: rotateX(180deg);
+@include max-screen($mobile-breakpoint) {
+  amp-accordion {
+    section {
+      border-bottom: 1px solid $color-grey-lt;
     }
   }
 
-  &__content {
-    font-size: 16px;
-    color: $color-grey-700;
-    margin: 0 0 #{$margin * 2};
+  .accordion-header,
+  .accordion-content {
+    margin: 15px 0;
+    padding: 0 0 0 30px;
   }
 
-  &__figure {
-    padding: #{$margin * 2} #{$margin * 2} 0;
-    margin: 0 0 $margin;
-    background-color: $color-grey-200;
-
-    amp-img {
-      max-width: 300px;
-      margin: auto;
-    }
-
-    @include max-screen($tablet-portrait-breakpoint) {
-      padding-left: 20%;
-      padding-right: 20%;
-    }
+  .accordion-title::before,
+  .accordion-title::after {
+    left: -30px;
   }
-
-  &__text {
-    margin-top: $margin;
-    max-width: 34em;
-  }
-
 }

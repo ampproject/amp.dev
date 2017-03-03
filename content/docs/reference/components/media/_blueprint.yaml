@@ -1,0 +1,5 @@
+$view: /views/doc.html
+$path: /docs/reference/components/media/{base}.html
+$localization:
+  path: /{locale}/docs/reference/components/media/{base}.html
+$title@: Media - AMP components

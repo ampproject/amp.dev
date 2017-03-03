@@ -1,0 +1,170 @@
+.post-detail {
+  @extend .bg-triangle-bottom;
+
+  .post-sheet {
+    position: relative;
+    background: $color-white;
+    padding: 40px 11.9% 100px 11.9%;
+  }
+
+  .post-meta {
+    text-align: center;
+
+    .post-type,
+    .post-date {
+      @extend %text-label;
+      display: inline-block;
+    }
+
+    .post-type {
+      color: $color-ampblue;
+
+      &::after {
+        content: '|';
+        margin: 0 .8em 0 1.15em;
+      }
+    }
+
+    .post-date {
+      color: $color-grey-md;
+    }
+  }
+
+  .post-title {
+    margin: 25px 0 65px 0;
+    text-align: center;
+  }
+
+  .author-meta {
+    margin-bottom: 45px;
+    text-align: center;
+
+    amp-img {
+      border-radius: 50%;
+      margin: 0 0 12px 0;
+    }
+
+    .author-name {
+      color: $color-ampblue;
+    }
+
+    .author-role {
+      @extend %text-label;
+      color: $color-grey-ltmd;
+      margin-top: 8px;
+    }
+  }
+
+  .post-content {
+    p,
+    li {
+      @extend %text-small;
+      letter-spacing: 0;
+    }
+
+    a {
+      @extend %link-inherit;
+      color: $color-ampblue;
+    }
+
+    strong {
+      font-weight: 400;
+    }
+
+    // code {
+    //   color: $color-black;
+    // }
+
+    code,
+    code a {
+      // border: 0;
+      font-size: 11px;
+      // font-weight: 400;
+      // padding: 0;
+    }
+
+    p {
+      em,
+      em a {
+        @extend %text-body;
+        font-style: normal;
+      }
+    }
+
+    amp-img {
+      margin: 50px auto;
+    }
+  }
+
+  &:not(.roadmap) {
+    .post-content {
+      ul,
+      ol {
+        padding-left: .7em;
+      }
+
+      li {
+        list-style: none;
+        position: relative;
+
+        &::before {
+          color: $color-ampblue;
+          content: '\2022 ';
+          left: -.8em;
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  .share-module {
+    right: -115px;
+    top: 27px;
+  }
+
+  .post-footer {
+    padding: 0 11.9%;
+    position: relative;
+    z-index: 1;
+
+    h2 {
+      text-align: center;
+    }
+
+    a.post-title,
+    .post-meta {
+      text-align: left;
+      text-align: start;
+    }
+  }
+
+  &.post-blog img {
+    height: auto;
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    .post-sheet {
+      padding: 50px 6% 40px 6%;
+    }
+
+    .post-meta,
+    .post-title {
+      text-align: left;
+      text-align: start;
+    }
+
+    .post-content {
+      code,
+      code a {
+        font-size: 11px;
+      }
+    }
+  }
+
+  @include max-screen(1121px) {
+    .share-module {
+      right: -35px;
+      top: -32px;
+    }
+  }
+}

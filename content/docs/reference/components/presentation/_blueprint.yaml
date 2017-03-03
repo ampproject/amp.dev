@@ -1,0 +1,5 @@
+$view: /views/doc.html
+$path: /docs/reference/components/presentation/{base}.html
+$localization:
+  path: /{locale}/docs/reference/components/presentation/{base}.html
+$title@: Presentation - AMP components

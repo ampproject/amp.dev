@@ -8,7 +8,7 @@ build
 assets/css/*
 
 content/includes/who.yaml
-content/contribute/governance.md
+content/docs/contribute/governance.md
 content/learn/design-principles.md
 content/docs/reference/spec.md
-content/docs/reference/components/*.md
+content/docs/reference/components/**/*.md

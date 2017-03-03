@@ -1,6 +1,16 @@
 $title@: Reference
-index: 2
 $path: /docs/reference/{base}.html
 $view: /views/doc.html
 $localization:
   path: /{locale}/docs/reference/{base}.html
+index_path: /content/docs/reference.md
+
+navigation:
+  prev:
+    section: true
+    title@: Guides
+    href: /content/docs/guides/author_develop/responsive_amp.md
+  next:
+    section: true
+    title@: Contribute
+    href: /content/docs/contribute/contribute.md

@@ -2,3 +2,34 @@ $view: /views/doc.html
 $path: /docs/reference/components/{base}.html
 $localization:
   path: /{locale}/docs/reference/components/{base}.html
+$title@: AMP components
+
+custom_children:
+  - title@: Ads & Analytics
+    href: /content/docs/reference/components/ads-analytics/amp-pixel.md
+    collection: /content/docs/reference/components/ads-analytics
+  - title@: Dynamic Content
+    href: /content/docs/reference/components/dynamic-content/amp-access-laterpay.md
+    collection: /content/docs/reference/components/dynamic-content
+  - title@: Layout
+    href: /content/docs/reference/components/layout/amp-accordion.md
+    collection: /content/docs/reference/components/layout
+  - title@: Media
+    href: /content/docs/reference/components/media/amp-img.md
+    collection: /content/docs/reference/components/media
+  - title@: Presentation
+    href: /content/docs/reference/components/presentation/amp-animation.md
+    collection: /content/docs/reference/components/presentation
+  - title@: Social
+    href: /content/docs/reference/components/social/amp-facebook.md
+    collection: /content/docs/reference/components/social
+
+navigation:
+  prev:
+    section: true
+    title@: Guides
+    href: /content/docs/guides/author_develop/responsive_amp.md
+  next:
+    subtitle@: Next Reference
+    title@: AMP HTML Specification
+    href: /content/docs/reference/spec.md

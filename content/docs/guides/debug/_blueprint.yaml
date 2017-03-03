@@ -1,0 +1,5 @@
+$title@: Debug
+$path: /docs/guides/debug/{base}.html
+$localization:
+  path: /{locale}/docs/guides/debug/{base}.html
+$view: /views/doc.html

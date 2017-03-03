@@ -8,6 +8,7 @@ var clientId = process.argv[3] || process.env.AMP_DOC_ID;
 var clientToken = process.env.AMP_DOC_TOKEN;
 var localPath = process.env.AMP_DOC_LOCAL_PATH;
 var importData = require('./import_docs.json');
+var subfolderLookupTable = require('./component_categories.json');
 
 if(!(clientToken || (clientSecret && clientId))) {
   console.error("This script reads the reference docs from GitHub which requires providing either a GitHub personal access token (AMP_DOC_TOKEN) or GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET).  See README.md for more information.");
@@ -132,9 +133,16 @@ ghrepo.contents('builtins', 'master', function(err, data) {
 
     index++;
 
+    // if we don't know how to categorize this one, warn and skip
+    var subfolder = subfolderLookupTable[component.name.replace(/\.md$/, '')];
+    if (!subfolder) {
+      console.warn("Warning: Don\t know how to categorize " + component.name + ', skipping..');
+      return;
+    }
+
     downloadPage(component.path, function(pageContent) {
       savePage({
-        destination: '../content/docs/reference/components/' + component.name,
+        destination: '../content/docs/reference/components/' + subfolder + '/' + component.name,
         content: pageContent,
         title: component.name.replace('.md', '') + ' (Built-in)'
       }, function (err) {
@@ -179,11 +187,18 @@ ghrepo.contents('extensions', "master", function(err, data) {
         return;
       }
 
+      // if we don't know how to categorize this one, warn and skip
+      var subfolder = subfolderLookupTable[subComponent.name.replace(/\.md$/, '')];
+      if (!subfolder) {
+        console.warn("Warning: Don\'t know how to categorize " + subComponent.name + ', skipping..');
+        return;
+      }
+
       // download the page contents
       downloadPage(subComponent.path, function(pageContent) {
         // save it to the extended folder
         savePage({
-          destination: '../content/docs/reference/components/' + subComponent.name,
+          destination: '../content/docs/reference/components/' + subfolder + '/' + subComponent.name,
           content: pageContent,
           order: order,
           parent: '/content/docs/components.md',

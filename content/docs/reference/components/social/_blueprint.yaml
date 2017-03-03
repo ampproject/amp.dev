@@ -1,0 +1,5 @@
+$view: /views/doc.html
+$path: /docs/reference/components/social/{base}.html
+$localization:
+  path: /{locale}/docs/reference/components/social/{base}.html
+$title@: Social - AMP components

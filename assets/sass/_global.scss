@@ -1,7 +1,5 @@
-/**
- * Reset some basic elements
- */
-body, blockquote, pre, hr,
+// Reset some basic elements
+html, body, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
     margin: 0;
     padding: 0;
@@ -9,17 +7,19 @@ dl, dd, ol, ul, figure {
 
 html,
 body {
-  // -webkit-font-smoothing: antialiased;
-  font-family: $font-family;
-  margin: 0;
+  box-sizing: border-box;
   overflow-x: hidden;
-  padding: 0;
 }
 
 body {
-  padding-top: 80px;
+  @extend %text-base;
+  @extend %text-body;
+  color: $color-black;
+  font-family: $font-family;
+  padding-top: $header-height;
+
   @include max-screen($mobile-breakpoint) {
-    padding-top: 66px;
+    padding-top: 120px;
   }
 }
 
@@ -28,72 +28,202 @@ img {
   max-width: 100%;
 }
 
-strong, b {
-  font-weight: 600;
-}
-
-/**
- * Headings
- */
+// Headings
 h1,
 h2,
 h3,
 h4,
 h5 {
-  color: $color-midblue;
+  color: $color-black;
   font-weight: 300;
-  margin-top: 1.1em;
-  margin-bottom: 0.5em;
-
-  &:before {
-    display: block;
-    content: " ";
-    margin-top: -90px;
-    height: 90px;
-    visibility: hidden;
-  }
-
+  margin: 0.25em 0;
 }
 
-h1 {
-  font-size: 43px;
+h1,
+h2.h1 {
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 65px;
 
-  .home &,
-  .who & {
-    margin-top: 0;
+  @include max-screen($mobile-breakpoint) {
+    font-size: 35px;
+    line-height: 44px;
   }
 }
-
 
 h2 {
-  font-size: 36px;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 100;
+
+  @include max-screen($mobile-breakpoint) {
+    font-size: 26px;
+    line-height: 40px;
+    font-weight: 300;
+  }
 }
 
 h3 {
-  font-size: 26px;
+  font-size: 30px;
+  line-height: 40px;
+
+  @include max-screen($mobile-breakpoint) {
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
 
-/**
- * Links
- */
+h4 {
+  font-size: 24px;
+  line-height: 32px;
+
+  @include max-screen($mobile-breakpoint) {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+// Links
 a {
-  color: $color-midblue;
+  @extend %text-label;
+  color: $color-ampblue;
+  position: relative;
   text-decoration: none;
+
+  &.underlined {
+    @extend %no-break;
+
+    &::before {
+      background: $gradient-med;
+      bottom: -3px;
+      content: '';
+      left: 0;
+      height: 1px;
+      position: absolute;
+      right: 0;
+    }
+
+    &.cta {
+      overflow: hidden;
+
+      &::before {
+        bottom: -5px;
+        height: 2px;
+      }
+
+      &:hover {
+        &::before {
+          animation: 0.5s 1 cta-line;
+        }
+      }
+    }
+  }
+
+  @include max-screen($mobile-breakpoint) {
+    font-size: 14px;
+  }
 }
 
-a:hover {
-  text-decoration: underline;
+.small {
+  @extend %text-small;
 }
 
-a.button {
-  padding: 1em;
-  display: block;
-  text-align: center;
+.smaller {
+  @extend %text-smaller;
 }
 
-/**
- * Blockquotes
- */
+.light {
+  @extend %text-light;
+}
+
+.button {
+  background-color: $color-brightblue;
+  display: inline-block;
+  color: $color-white;
+  padding: 15px 20px;
+  position: relative;
+  transition: background-color 0.3s;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    background: $gradient-med;
+    bottom: -2px;
+    content: '';
+    left: 0;
+    height: 2px;
+    position: absolute;
+    right: 0;
+  }
+
+  &::after {
+    background: $gradient-anglemed;
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:hover {
+    background-color: transparent;
+
+    .arrow {
+      transform: translateX(3px);
+    }
+  }
+
+  &.light {
+    background: $color-white;
+    color: $color-ampblue;
+
+    &::after {
+      background: linear-gradient($gradient-angle, #5ADAFD, #51B9FD);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 0;
+    }
+
+    &:hover {
+      color: $color-white;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .arrow {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid white;
+    display: inline-block;
+    height: 0;
+    margin-left: 8px;
+    transition: transform 0.3s;
+    width: 0;
+  }
+}
+
+.rtl .button {
+  .arrow {
+    margin: 0 8px 0 0;
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    .arrow {
+      transform: rotate(180deg) translateX(3px);
+    }
+  }
+}
+
+// Blockquotes
 blockquote {
   color: $color-darkgrey;
   border-left: 4px solid $color-lightgrey;
@@ -113,27 +243,7 @@ blockquote {
   padding-right: 15px;
 }
 
-/**
- * Lists
- */
-
-ul li,
-ol li {
-  @include text-body();
-}
-
 p {
-  @include text-body();
-
-  a {
-    font-weight: 400;
-  }
-
-  &.subtitle {
-    font-size: 28px;
-    line-height: 37px;
-  }
-
   &:last-child {
     margin-bottom: 0;
   }
@@ -146,131 +256,57 @@ figure {
   -webkit-margin-end: 0;
 }
 
+amp-youtube, amp-vimeo {
+  box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
 .rtl figure {
-	direction: ltr;
+  direction: ltr;
 }
 
 .container {
   box-sizing: border-box;
   margin: 0 auto;
   max-width: $container-size;
-  padding: 0 $margin;
+  padding: 0 $grid-margin;
 
-  &.md {
+  &.sm {
     max-width: 800px;
   }
 
+  &.md {
+    max-width: 925px;
+  }
+
+  &.lg {
+    max-width: 1200px;
+  }
+
+  &.xl {
+    max-width: 1440px;
+  }
 }
 
+.text-label {
+  @extend %text-label;
+}
 
 .wrap {
   margin: 0 auto;
-
-  .who & {
-    // margin-top: 60px;
-  }
 }
 
-.centered {
-  text-align: center;
+// for jumplink target x-offset
+// will fail if target has: bg color,
+// repeating bg img, padding- or border-top
+:target::before {
+  content: '';
+  display: block;
+  height: 110px;
+  margin-top: -110px;
+  visibility: hidden;
 
   @include max-screen($mobile-breakpoint) {
-    text-align: left;
+    height: 70px;
+    margin-top: -70px;
   }
-}
-
-.align-right {
-  text-align: right;
-}
-
-@include max-screen($mobile-breakpoint) {
-  .margin-bottom-mobile:last-child,
-  .margin-bottom-mobile {
-    margin-bottom: 40px;
-  }
-}
-
-.margin-bottom-sm:last-child,
-.margin-bottom-sm {
-  margin-bottom: 40px;
-}
-
-.margin-bottom:last-child,
-.margin-bottom {
-  margin-bottom: 60px;
-
-  &.desktop {
-    @include max-screen($mobile-breakpoint) {
-      margin-bottom: inherit;
-    }
-  }
-}
-
-.hidden {
-  display: none;
-}
-
-.go-button {
-  display: inline-block;
-  background-color: $color-midblue;
-  padding: 0.8em 1em;
-  border: 0;
-  border-radius: 4px;
-  color: $color-white;
-  font-family: Roboto, verdana, arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
-
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-              0 1px 5px 0 rgba(0, 0, 0, 0.12),
-              0 3px 1px -2px rgba(0, 0, 0, 0.2);
-
-  transition:
-    box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover,
-  &:focus {
-    background-color: darken($color-midblue, 2%);
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-                0 1px 10px 0 rgba(0, 0, 0, 0.12),
-                0 2px 4px -1px rgba(0, 0, 0, 0.4);
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  &--alt {
-    background-color: $color-white;
-    color: $color-midblue;
-    &:hover,
-    &:focus {
-      background-color: $color-grey-50;
-    }
-  }
-}
-
-.desaturate {
-
-  @include min-screen($tablet-breakpoint) {
-    @include desaturate(100%);
-    opacity: .7;
-    transition: all .4s ease-out;
-    &:hover {
-      @include desaturate(0%);
-      opacity: 1;
-    }
-  }
-
-}
-
-.center-content {
-  text-align: center;
-}
-
-.code {
-  position: relative;
 }

@@ -1,7 +1,7 @@
 {% extends "/views/base.html" %}
 
 {% set navmarkup %}
-{% include "/views/partials/nav.html" %}
+{% include "/views/partials/doc_nav.html" %}
 {% endset %}
 
 {% block nav %}
@@ -12,7 +12,7 @@
   <div class="container main">
     {{ navmarkup|safe }}
     <div class="content">
-      <article class="post">
+      <article class="post{% if doc.toc %} has-toc{% endif %}">
 
         <h1 class="post-title">{{ doc.title }}</h1>
 
@@ -24,6 +24,11 @@
     </div>
   </div>
 
-{% include "/views/partials/footer.html" %}
-
+  <div class="doc-footer">
+    {% set doc_data = g.doc('/content/includes/doc.yaml', locale=doc.locale) %}
+    {% with cta = doc_data.cta %}
+      {% include "/views/partials/footer-cta.html" %}
+    {% endwith %}
+    {% include "/views/partials/footer.html" %}
+  </div>
 {% endblock %}

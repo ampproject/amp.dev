@@ -1,0 +1,16 @@
+$title@: Contribute
+$path: /docs/contribute/{base}/
+$view: /views/doc.html
+$localization:
+  path: /{locale}/docs/contribute/{base}/
+index_path: /content/docs/contribute.md
+
+navigation:
+  prev:
+    section: true
+    title@: Reference
+    href: /content/docs/reference/components.md
+  next:
+    section: true
+    title@: Tutorials
+    href: /content/docs/get_started/general/create.md

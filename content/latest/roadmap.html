@@ -1,0 +1,95 @@
+---
+$title: Roadmap
+class: roadmap post-detail
+$parent: /content/latest/latest.html
+$path: /{base}/
+$view: /views/base.html
+$localization:
+  path: /{locale}/{base}/
+
+components:
+  - social-share
+---
+{% set roadmap = g.doc('/content/includes/roadmap.yaml', locale=doc.locale) %}
+{% include "/views/partials/breadcrumb-nav.html" %}
+<div class="container md">
+  <div class="content">
+    <div class="post-meta">
+      <p class="post-type">Roadmap</p>
+      <span class="post-date">{{ roadmap.updated }}</span>
+    </div>
+
+    <h1 class="post-title">{{ roadmap.current }}</h1>
+
+    <div class="post-sheet post-content">
+      {% include "/views/partials/share.html" %}
+      <div class="about">
+        <p><em>This page presents a quarterly overview of the planned features and enhancements to AMP. Projects are organized according to core focus areas.</em></p>
+        <br>
+        <div><p><strong>This page will be updated twice per quarter:</strong></p>
+          <ul>
+            <li>The <i>mid-quarter update</i> will provide the first listing of the current quarter’s new priorities and present status of projects. In addition, a forecast of priorities for the following two quarters will be provided.</li>
+            <li>The <i>end-of-quarter update</i> will present the status of the just-ended quarter’s priorities and projects, as well as any updates to the two-quarter outlook. A detailed project listing for the quarter just being entered will be presented at the next mid-quarter update.</li>
+          </ul>
+        </div>
+      </div>
+      {% for sectionId, section in roadmap.sections|dictsort %}
+        <div class="workstream">
+          <div class="workstream-title"><h4>{{ section.title }}</h4><p class="small">{{ section.description }}</p></div>
+          <div class="workstream-flex workstream-headings">
+            <div class="description">
+              <h4>{{ roadmap.quarter }} Themes</h4>
+            </div>
+            <div class="plan">
+              <h4>{{ roadmap.quarter }} Status</h4>
+            </div>
+          </div>
+          <div class="workstream-flex">
+            <div class="description">
+              <div class="themes">
+                <ul>
+                  {% for theme in section.themes %}
+                    <li>{{ theme|markdown|safe }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <div class="plan">
+              <h4>{{ roadmap.quarter }} Status</h4>
+              <ul class="stages">
+                {% for key, value in section.quarter|dictsort %}
+                  <li class="stage-{{ key }}" data-description="Stage {{ key }}: {{ roadmap.stages[key] }}">
+                    <ul>
+                      {% for item in value %}
+                        <li>{{ item|markdown|safe }}</li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="forecast">
+            <h4>{{ roadmap.outlook or "" }} Outlook</h4>
+            <ul>
+              {% for forecast in section.forecast %}
+                <li>{{ forecast|markdown|safe }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+
+      <div class="about">
+        <div><p><strong>Stay informed:</strong></p>
+          <ul>
+            <li>Track regular releases of the AMP Project at our <a href="https://github.com/ampproject/amphtml/releases">releases</a> page on GitHub.</li>
+            <li>For news, check out our blog <a href="https://amphtml.wordpress.com">https://amphtml.wordpress.com</a> or Twitter <a href="https://twitter.com/amphtml">@amphtml</a>.</li>
+            <li>To subscribe to announcements, please join <a href="https://groups.google.com/forum/#!forum/amphtml-announce">amphtml-announce@googlegroups.com</a>.</li>
+            <li>To discuss AMP, including this roadmap, please join or contact <a href="https://groups.google.com/forum/#!forum/amphtml-discuss">amphtml-discuss@googlegroups.com</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

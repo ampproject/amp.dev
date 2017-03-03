@@ -1,0 +1,5 @@
+$title@: FAQs
+$path: /support/faqs/{base}.html
+$view: /views/section_page.html
+$localization:
+  path: /{locale}/support/faqs/{base}.html

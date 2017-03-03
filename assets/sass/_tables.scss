@@ -1,19 +1,16 @@
-/**
- * Tables
- */
-
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
 td, th {
-  border: 1px solid #FFFFFF;
-  background: #F7F7F7;
-  padding: 0.5rem;
+  padding: 20px 30px;
   text-align: left;
-  @include text-body();
   vertical-align: top;
+}
+
+tr:nth-child(even) {
+  background: #eff9fc;
 }
 
 .rtl td,
@@ -37,8 +34,32 @@ td.col-twenty,
   width: 20%
 }
 
-th {
-  background: $color-midblue;
-  color: #fff;
-  font-weight: 400;
+td:first-child {
+  border-right: 2px solid $color-ampblue;
+}
+
+.rtl {
+  td:first-child {
+    border-left: 2px solid $color-ampblue;
+    border-right: 0;
+  }
+}
+
+html, body {
+  th {
+    @extend %text-label;
+    background: $color-white;
+    border-bottom: 2px solid $color-ampblue;
+    color: $color-ampblue;
+  }
+}
+
+@include max-screen($mobile-breakpoint) {
+  td, th {
+    padding: 5px;
+  }
+
+  th:first-child {
+    border-right: 2px solid $color-ampblue;
+  }
 }

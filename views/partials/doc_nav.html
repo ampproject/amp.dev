@@ -1,0 +1,107 @@
+{% set usedDoc = usedDoc or doc %}
+
+{% if usedDoc.collection and usedDoc.collection.parent.build_root %}
+  {% set secondaryCollection = usedDoc.collection %}
+  {% set navCollection = usedDoc.collection %}
+{% elif usedDoc.collection.parent and usedDoc.collection.parent.parent.build_root %}
+  {% set secondaryCollection = usedDoc.collection.parent %}
+  {% set navCollection = usedDoc.collection %}
+{% elif usedDoc.collection.parent.parent and usedDoc.collection.parent.parent.parent.build_root %}
+  {% set secondaryCollection = usedDoc.collection.parent.parent %}
+  {% set navCollection = usedDoc.collection.parent %}
+{% endif %}
+
+{% macro render_item(item, class) -%}
+  {% set sub_collection = g.collection(item.collection.pod_path + '/' + item.base) %}
+  {% set custom_children = item.collection.custom_children %}
+  {% set open = sub_collection.pod_path in usedDoc.pod_path[:-3] %}
+  <li class="{{class}} {% if sub_collection.exists %}expandable{% endif %}">
+    <h5 class="{% if doc == item %}current{% endif %} section-name {% if open %}open{% endif %} section-name">
+      <a href="{% if item.goto_internal %} {{g.doc(item.goto_internal, locale=usedDoc.locale).url.path}} {% else %} {{item.goto or item.url.path}} {% endif %}"{% if item.goto %} class="external"{% endif %}>{{_(item.title)}}</a>
+    </h5>
+    {% if open and sub_collection.exists%}
+      {% if sub_collection.custom_children %}
+        {{ render_custom_children(item, sub_collection.custom_children) }}
+      {% else %}
+        {{ render_children(item, sub_collection.docs(locale=usedDoc.locale)) }}
+      {% endif %}
+    {% endif %}
+  </li>
+{% endmacro %}
+
+{% macro render_item_custom(item_custom, class) -%}
+  {% set item = g.doc(item_custom.href) %}
+  {% set sub_collection = g.collection(item_custom.collection) %}
+  {% set open = sub_collection.pod_path in usedDoc.pod_path[:-3] %}
+  <li class="{{class}} {% if sub_collection.exists %}expandable{% endif %}">
+    <h5 class="{% if doc == item %}current{% endif %} section-name {% if open %}open{% endif %} section-name">
+      <a href="{% if item.goto_internal %} {{g.doc(item.goto_internal, locale=usedDoc.locale).url.path}} {% else %} {{item.goto or item.url.path}} {% endif %}"{% if item.goto %} class="external"{% endif %}>{{_(item_custom.title)}}</a>
+    </h5>
+    {% if open and sub_collection.exists %}
+      {% if sub_collection.custom_children %}
+        {{ render_custom_children(item, sub_collection.custom_children) }}
+      {% else %}
+        {{ render_children(item, sub_collection.docs(locale=usedDoc.locale)) }}
+      {% endif %}
+    {% endif %}
+  </li>
+{% endmacro %}
+
+{% macro tag(item) -%}
+  {{"ol" if item.numbered else "ul"}}
+{%- endmacro %}
+
+{% macro render_children(item, docs) -%}
+  <{{tag(item)}}>
+    {% for child in docs %}
+      {{render_item(child, "sub-level")}}
+    {% endfor %}
+  </{{tag(item)}}>
+{%- endmacro %}
+
+{% macro render_custom_children(item, custom_children) -%}
+  <{{tag(item)}}>
+    {% for child in custom_children %}
+      {{render_item_custom(child, "sub-level")}}
+    {% endfor %}
+  </{{tag(item)}}>
+{%- endmacro %}
+
+<nav class="doc-sidebar">
+  {% if secondaryCollection %}
+    <div class="current-header">
+      <h1 class="title">
+          {{_(secondaryCollection.title)}}
+      </h1>
+    </div>
+
+    <div class="current-sections">
+      <ul>
+        <li>
+          <ul>
+          {% for item in secondaryCollection.docs(recursive=false, locale=doc.locale) %}
+            {{render_item(item, "top-level")}}
+          {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navigation">
+    {% if secondaryCollection.navigation %}
+      <a href="{{g.doc(secondaryCollection.navigation.prev.href, locale=doc.locale).url.path}}" class="previous {% if secondaryCollection.navigation.prev.section %} section {% endif %}">
+        <div class="navigation-label">
+          <div class="subtitle light">{{_(secondaryCollection.navigation.prev.subtitle)}}</div>
+          <div class="title">{{_(secondaryCollection.navigation.prev.title)}}</div>
+        </div>
+      </a>
+      <a href="{{g.doc(secondaryCollection.navigation.next.href, locale=doc.locale).url.path}}" class="next {% if secondaryCollection.navigation.next.section %} section {% endif %}">
+        <div class="navigation-label">
+          <div class="subtitle light">{{_(secondaryCollection.navigation.next.subtitle)}}</div>
+          <div class="title">{{_(secondaryCollection.navigation.next.title)}}</div>
+        </div>
+      </a>
+    </div>
+  {% endif %}
+{% endif %}
+</nav>

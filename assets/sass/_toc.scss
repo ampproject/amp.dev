@@ -1,84 +1,96 @@
-.main .content {
+.toc {
+  background: $color-white;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .075);
+  box-sizing: border-box;
+  position: fixed;
+  right: 0;
+  top: $header-height;
+  bottom: 0;
+  padding: 50px 20px;
+  overflow: auto;
+  width: 200px;
 
-  .toc {
+  &::before {
+    @extend %text-label;
+    color: $color-ampblue;
+    content: 'Contents';
+  }
 
-    @include min-screen($tablet-breakpoint) {
-      float: right;
-      max-width: 30%;
-    }
+  ul,
+  ol {
+    list-style: none;
+    margin: 0 auto;
 
-    @include min-screen(1460) {
-      max-width: auto;
-      position: absolute;
-      right: -260px;
-      width: 220px;
-    }
-
-    padding: 1em 1em;
-    margin-left: 1em;
-    margin-bottom: 1em;
-    border-left: 4px solid $color-midblue;
-    background: #fff;
-
-    &::before {
-      content: "Contents";
-    }
-
-    ul,
-    ol {
-      margin-left: 20px;
-      list-style: none;
-
-      li {
-        font-size: 13px;
-        line-height: 16px;
-        margin-top: 8px;
-      }
-    }
-
-    > ul,
-    > ol {
+    .main .content & {
       margin-left: 0;
     }
-
   }
 
-  /* special case where our anchor-link hack breaks */
-  .toc + h2::before {
-    display: none;
-  }
+  li {
+    margin: 15px 0;
 
-}
+    ul {
+      margin-left: 10px;
 
-body.rtl {
-  .main .content {
-    .toc {
-
-      @include min-screen($tablet-breakpoint) {
-        float: left;
+      .main .content & {
+        margin-left: 10px;
       }
 
-      @include min-screen(1460) {
-        left: -260px;
-        right: auto;
-      }
-
-      margin-left: auto;
-      margin-right: 1em;
-      border-left: auto;
-      border-right: 4px solid $color-midblue;
-
-      ul,
-      ol {
-        margin-left: auto;
-        margin-right: 20px;
-      }
-
-      > ul,
-      > ol {
-        margin-left: auto;
-        margin-right: 0;
+      a {
+        color: $color-grey-md;
       }
     }
+  }
+
+  a {
+    @extend %break;
+    color: $color-black-95;
+    display: block;
+    position: relative;
+    text-transform: none;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover,
+    &.active {
+      color: $color-ampblue;
+
+      &::before {
+        background: $gradient-med;
+        bottom: -5px;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 0;
+      }
+
+      code {
+        background: transparent;
+        color: $color-ampblue;
+      }
+    }
+
+    code {
+      border: 0;
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.rtl .toc {
+  left: 0;
+  right: auto;
+}
+
+@include max-screen($toc-breakpoint) {
+  .toc {
+    display: none;
   }
 }

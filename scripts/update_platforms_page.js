@@ -7,7 +7,7 @@ var newYaml;
 function addAds() {
 
   // Read in amp-ad file, and the ad vendors
-  var ampAd = fs.readFileSync('../content/docs/reference/components/amp-ad.md', { encoding: 'utf8' });
+  var ampAd = fs.readFileSync('../content/docs/reference/components/ads-analytics/amp-ad.md', { encoding: 'utf8' });
   var supportPortion = (ampAd.split('## Supported ad networks')[1]).split('##')[0].trim();
   var vendorNames = supportPortion.split('\n');
 
@@ -30,7 +30,7 @@ function addAds() {
 function addAnalytics() {
 
   // Read in amp-ad file, and the ad vendors
-  var ampAnalytics = fs.readFileSync('../content/docs/reference/components/amp-analytics.md', { encoding: 'utf8' });
+  var ampAnalytics = fs.readFileSync('../content/docs/reference/components/ads-analytics/amp-analytics.md', { encoding: 'utf8' });
   var supportPortion = (ampAnalytics.split('## Analytics vendors')[1]).split('\n## ')[0];
   var individualVendors = supportPortion.split('\n###');
   individualVendors.shift();

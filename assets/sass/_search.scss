@@ -1,0 +1,35 @@
+.searchbar {
+  position: absolute;
+  right: 175px;
+  top: 23px;
+  z-index: 2;
+
+  @include max-screen(1030px) {
+    display: none;
+  }
+
+  input {
+    @extend %text-base;
+    @extend %text-small;
+    border: 0;
+    border-bottom: 1px solid #4d4d4d;
+    font-family: $font-family;
+    outline: 0;
+    vertical-align: bottom;
+  }
+
+  button {
+    @include sprite(search);
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+    vertical-align: middle;
+  }
+}
+
+.rtl .searchbar {
+  left: 230px;
+  right: auto;
+}

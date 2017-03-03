@@ -1,0 +1,20 @@
+// styles for support and other pages - move later
+
+.post-title {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.post-content {
+  @extend %text-small;
+
+  a {
+    @extend %link-inherit;
+  }
+}
+
+@include max-screen($mobile-breakpoint) {
+  .post-title {
+    text-align: left;
+  }
+}

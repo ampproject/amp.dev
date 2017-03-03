@@ -1,30 +1,30 @@
 {% extends "/views/base.html" %}
 
 {% set navmarkup %}
-{% with flat = 1 %}
-{% include "/views/partials/nav.html" %}
-{% endwith %}
+{% include "/views/partials/breadcrumb-nav.html" %}
 {% endset %}
 
-{% block nav %}
-  {{ navmarkup|safe }}
-{% endblock %}
-
 {% block main %}
-  <div class="container main">
-    {{ navmarkup|safe }}
+  {{ navmarkup|safe }}
+  <div class="container md">
     <div class="content">
       <article class="post">
-
-        <h1 class="post-title">{{ doc.title }}</h1>
-
+        <h1 class="post-title">{{_(doc.title)}}</h1>
         <div class="post-content">
           {{doc.html|render|safe}}
+          {% if doc.faq %}
+            {% include "views/partials/faq-accordion.html" %}
+          {% endif %}
         </div>
-
       </article>
     </div>
   </div>
+
+  {% if doc.cta %}
+    {% with cta = doc.cta %}
+      {% include "/views/partials/footer-cta.html" %}
+    {% endwith %}
+  {% endif %}
 
   {% include "/views/partials/footer.html" %}
 

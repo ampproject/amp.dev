@@ -1,0 +1,5 @@
+$title@: Embed
+$path: /docs/guides/embed/{base}.html
+$localization:
+  path: /{locale}/docs/guides/embed/{base}.html
+$view: /views/doc.html

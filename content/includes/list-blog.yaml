@@ -1,0 +1,56 @@
+blogs:
+
+  - type: Blog
+    title: "New Industry Benchmarks for Mobile Page Speed"
+    id: new-industry-benchmarks-for-mobile-page-speed
+    author: amphtml
+    role: 
+    origin: "https://amphtml.wordpress.com/2017/02/28/new-industry-benchmarks-for-mobile-page-speed/amp/"
+    excerpt: "The following is an excerpt from a Think with Google article by Daniel An, Global Product Lead, Mobile, Google. The average time it takes to fully load a mobile landing page is 22 seconds, according to a new analysis. Yet 53% of mobile site visitors leave a page that takes longer than three seconds to load. That&#8217;s [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-28T13:56:02-08:00
+    date: "February 28, 2017"
+
+  - type: Blog
+    title: "Grow Your Business with Ads on AMP"
+    id: grow-your-business-with-ads-on-amp
+    author: Vamsee Jasti
+    role:  Product Manager, AMP Project
+    origin: "https://amphtml.wordpress.com/2017/02/27/grow-your-business-with-ads-on-amp/amp/"
+    excerpt: "We understand that every business is different, but one thing common to them all in today’s mobile driven world is the need to ensure a fast user experience across all screens. That is why we believe the growing AMP ecosystem is so important. It brings together a diverse community of publishers, advertisers, and technology platforms [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-27T11:18:47-08:00
+    date: "February 27, 2017"
+
+  - type: Blog
+    title: "AMP Roadmap Update for Mid-Q1 2017"
+    id: amp-roadmap-update-for-mid-q1-2017
+    author: Eric Lindley
+    role:  Product Manager, AMP Project
+    origin: "https://amphtml.wordpress.com/2017/02/18/amp-roadmap-update-for-mid-q1-2017/amp/"
+    excerpt: "We’ve updated the AMP Roadmap with the details on progress during the first quarter of 2017, and you can read below for some of the highlights. Format Interactivity is a major focus for us this quarter as we  build out the AMP format’s capabilities. amp-bind is a binding protocol that introduces lower-level methods for building [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-17T16:09:17-08:00
+    date: "February 17, 2017"
+
+  - type: Blog
+    title: "Better galleries and forms in AMP"
+    id: 1056
+    author: Eric Lindley
+    role:  Product Manager
+    origin: "https://amphtml.wordpress.com/2017/02/15/1056/amp/"
+    excerpt: "We just released a couple of small tweaks in the AMP library that can make a big difference in building a better user experience. First, a new JavaScript method (goToSlide) supports advancing &#60;amp-carousel&#62; to a particular slide on user tap/click. This enables significant UX enhancements to image galleries. Second, we’ve made it easier to integrate [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-15T10:29:48-08:00
+    date: "February 15, 2017"
+
+  - type: Blog
+    title: "What’s in an AMP URL?"
+    id: whats-in-an-amp-url
+    author: amphtml
+    role: 
+    origin: "https://amphtml.wordpress.com/2017/02/06/whats-in-an-amp-url/amp/"
+    excerpt: "The following was posted on the Google Developers Blog by Alex Fischer, Software Engineer, Google Search. TL;DR: Today, we’re adding a feature to the AMP integration in Google Search that allows users to access, copy, and share the canonical URL of an AMP document. But before diving deeper into the news, let’s take a step [&#8230;]"
+    avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+    datedata: 2017-02-06T11:12:42-08:00
+    date: "February 6, 2017"

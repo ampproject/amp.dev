@@ -1,44 +1,79 @@
-/**
- * Post content
- */
+// post content for docs
 
-/* Components table */
+// Components table
+
+.post-title {
+  color: $color-ampblue;
+  margin: 0 75px;
+  padding: 0 15px;
+}
 
 .post-content {
+  @extend %text-small;
+  margin: 0 75px;
+  padding: 0 15px;
+
+  a {
+    text-transform: none;
+  }
+
+  .button {
+    &:before {
+      display: none;
+    }
+  }
+
   td:first-child a:hover {
     text-decoration: none;
   }
+}
 
-  @include max-screen($mobile-medium-breakpoint) {
-    th:first-child {
-      font-size: 0;
-      text-indent: -1000px;
+@include min-screen($toc-breakpoint) {
+  .post.has-toc {
+    .post-title,
+    .post-content {
+      margin: 0 250px 0 75px;
     }
+  }
 
-    th,
-    td {
-      &:first-child {
-        padding-left: 0;
-        padding-right: 0;
+  .rtl {
+    .post.has-toc {
+      .post-title,
+      .post-content {
+        margin: 0 75px 0 250px;
       }
     }
+  }
+}
 
-    td {
-      padding-top: 40px;
-      position: relative;
+@include min-screen($toc-breakpoint) {
+  .post.has-toc {
+    .post-title,
+    .post-content {
+      margin: 0 190px 0 15px;
+    }
+  }
 
-      &:first-child {
-        a {
-          top: 5px;
-          left: 8px;
-          z-index: 1;
-          position: absolute;
-
-          &:hover {
-            text-decoration: none;
-          }
-        }
+  .rtl {
+    .post.has-toc {
+      .post-title,
+      .post-content {
+        margin: 0 15px 0 190px;
       }
     }
+  }
+}
+
+@include max-screen($tablet-breakpoint) {
+  .post-title,
+  .post-content {
+    margin: 0 15px;
+  }
+}
+
+@include max-screen($mobile-breakpoint) {
+  .post-title,
+  .post-content {
+    margin: 0;
   }
 }
