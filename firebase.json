@@ -110,11 +110,6 @@
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-img?(.html)",
-        "destination": "/docs/reference/components/ads/amp-img.html",
-        "type": 301
-      },
-      {
         "source": "/docs/reference/components/amp-ad?(.html)",
         "destination": "/docs/reference/components/ads/amp-ad.html",
         "type": 301
