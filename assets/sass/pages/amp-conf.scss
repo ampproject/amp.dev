@@ -48,7 +48,7 @@
         }
 
         &.description {
-          background: #0379C4;
+          background: $gradient-anglebold;
           margin-top: 40px;
           position: relative;
 
@@ -127,7 +127,7 @@
 
         &.location {
             padding: 2em 0;
-            background: #0379C4;
+            background: $gradient-anglebold;
 
             .wrapper {
                 display: flex;
