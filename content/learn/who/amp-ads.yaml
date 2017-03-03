@@ -47,8 +47,8 @@ why:
       paragraph@: The median load time for an AMP page is less than one second but the average ad still takes 5 seconds to load over 3G connections – that’s 4 seconds too late. When ads are faster, they’re more viewable, more effective, and more likely to perform well. Boost performance by speeding up ads with AMP Ads.
       icon: amp-ads/speed_icon.svg
 
-    - title@: Lighter and more secure ads improve brand perception
-      paragraph@: Heavy and unpredictable ad experiences slow down the page, cost users money, and negatively impact perception of both the advertiser and the publisher. AMP Ads are 3x lighter than traditional ads and eliminate the spread of malware, helping to ensure a positive brand experience.
+    - title@: Lighter ads improve brand perception
+      paragraph@: Heavy and unpredictable ad experiences slow down the page, cost users money, and negatively impact perception of both the advertiser and the publisher. AMP Ads are 3x lighter than traditional ads, helping to ensure a positive brand experience.
       icon: amp-ads/ads_icon.svg
 
     - title@: Smart and coordinated ads boost campaign ROI
