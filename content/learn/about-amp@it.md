@@ -44,7 +44,7 @@ facilitano l’implementazione di modelli comuni in modo efficiente.
 
 Ad esempio, il tag [`amp-img`](/docs/reference/amp-img.html)
 offre il supporto `srcset` completo anche nei browser che ancora non lo supportano.
-Scopri come [creare la tua prima pagina HTML AMP](/docs/get_started/general/create.html).
+Scopri come [creare la tua prima pagina HTML AMP](/docs/get_started/create.html).
 
 ## AMP JS
 

@@ -44,7 +44,7 @@ AMP HTML 구성 요소라고 불리는 이러한 사용자 지정 요소는
 
 예를 들어, [`amp-img`](/docs/reference/amp-img.html) 태그는
 아직 지원되지 않는 브라우저에서도 `srcset` 지원을 완벽하게 제공합니다.
-[첫 번째 AMP HTML 페이지 만들기](/docs/get_started/general/create.html) 방법에 대해 알아보세요.
+[첫 번째 AMP HTML 페이지 만들기](/docs/get_started/create.html) 방법에 대해 알아보세요.
 
 ## AMP JS
 
