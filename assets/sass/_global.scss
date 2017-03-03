@@ -16,11 +16,6 @@ body {
   @extend %text-body;
   color: $color-black;
   font-family: $font-family;
-  padding-top: $header-height;
-
-  @include max-screen($mobile-breakpoint) {
-    padding-top: 120px;
-  }
 }
 
 img {

@@ -57,6 +57,25 @@
     }
   }
 
+  .promo-live {
+    height: auto;
+    display: block;
+    padding: 40px 20px;
+
+    .description {
+      margin-bottom: 1em;
+    }
+
+    amp-youtube {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .link {
+      margin-top: 1em;
+    }
+  }
+
   .promo-line {
     left: 50px;
     top: -50px;
