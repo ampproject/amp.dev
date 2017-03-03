@@ -14,7 +14,6 @@ components:
 ---
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
 {% set blog_list = g.doc('/content/includes/list-blog.yaml', locale=doc.locale) %}
-{% set roadmap = g.doc('/content/includes/roadmap.yaml', locale=doc.locale) %}
 {% set events_list = g.doc('/content/includes/events.yaml', locale=doc.locale) %}
 {% set tweets = g.doc('/content/includes/tweets.yaml', locale=doc.locale) %}
 
@@ -76,9 +75,6 @@ components:
             {% endwith %}
           {% endif %}
         {% endfor %}
-        {% with post = roadmap, past = false, meta = true %}
-          {% include "/views/partials/post-item.html" %}
-        {% endwith %}
         {% for post in blog_list.blogs %}
           {% if loop.index <= 3 %}
             {% with past = false, meta = true %}
