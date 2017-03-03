@@ -77,18 +77,3 @@ cta:
   title@: See what AMP can do for you
   link_text@: Learn who uses AMP
   link_url: /content/learn/case-studies.html
-
-# core:
-#   title@: AMP pages are built with 3 core components.
-#   components:
-#     - title@: AMP HTML
-#       subtitle@: |
-#       description@: |
-#       example: /content/includes/html-example.md
-#       description2@: |
-#     - title@: AMP JS
-#       subtitle@: |
-#       description@: |
-#     - title@: AMP Cache
-#       subtitle@: |
-#       description@: |
