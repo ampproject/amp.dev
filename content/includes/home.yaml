@@ -37,7 +37,7 @@ success_stories:
       img: /static/img/home/wapo_logo.png
       img_height: 197
       img_width: 1280
-      url@: /content/learn/case-studies/wapo.md
+      url@: /content/learn/case-studies/washingtonpost.md
       class: wapo
     - quote@: “We see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
       img_height: 263
