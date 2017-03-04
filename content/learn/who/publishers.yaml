@@ -10,7 +10,7 @@ vertical_class: publishers
 hero:
   title@: Improve user engagement with fast, compelling experiences.
   paragraph@: Web page speed improves the user experience and <a href="https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/">core business metrics</a>. AMP pages load near instantly enabling you to offer a consistently fast experience across all devices and platforms that link to AMP Pages including Google, Bing, LinkedIn and more. These performance gains often translate in improvements in the numbers that matter, such as time spent on page, return visits and CTRs.
-  hero_img: publishers/publisher_phone_cnn.png
+  hero_img_base: /static/img/about/who-use-amp/publishers/publisher_phone_cnn
   hero_img_width: 1079
   hero_img_height: 1316
   triangle_img: hero_triangle.png

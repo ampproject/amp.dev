@@ -36,7 +36,10 @@
             height=1568
             width=1844
             layout=responsive
-            src="/static/img/about/overview/{{doc.hero.phone_img}}">
+            srcset="{{doc.hero.phone_img_base + '.png 1844w'}},
+                    {{doc.hero.phone_img_base + '@1_5x.png 1217w'}},
+                    {{doc.hero.phone_img_base + '@1x.png 922w'}}"
+            src="{{doc.hero.phone_img_base + '.png'}}">
         </amp-img>
       </div>
       <div class="text">

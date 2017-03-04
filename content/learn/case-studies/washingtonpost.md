@@ -26,7 +26,12 @@ download: "case-studies/wapo.pdf"
 ---
 
 <div class="img-right wapo">
-    <amp-img width="881" height="1318" layout="responsive" src="/static/img/case-studies/washingtonpost_phone.png"></amp-img>
+  <amp-img width="881" height="1318" layout="responsive"
+      srcset="/static/img/case-studies/washingtonpost_phone.png 881w,
+              /static/img/case-studies/washingtonpost_phone@1_5x.png 581w,
+              /static/img/case-studies/washingtonpost_phone@1x.png 441w"
+      src="/static/img/case-studies/washingtonpost_phone.png">
+  </amp-img>
 </div>
 
 With nearly 55% of their traffic coming from mobile devices, The Washington

@@ -7,7 +7,7 @@ $parent: /content/learn/overview.yaml
 hero:
   title@: Who is AMP for?
   subtitle@: Join an ecosystem of  850,000 domains, leading platforms, and 100+ technology providers using  AMP.
-  hero_img: who_phones_hero.png
+  hero_img_base: /static/img/about/who-use-amp/who_phones_hero
   line_img: who_lines1.svg
   triangle_img: hero_triangle.png
 

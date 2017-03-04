@@ -28,7 +28,12 @@ download: "case-studies/wired.pdf"
 #### Challenge
 
 <div class="img-right wired">
-    <amp-img width="1318" height="1888" layout="responsive" src="/static/img/case-studies/wired_phone1.png"></amp-img>
+  <amp-img width="1318" height="1888" layout="responsive"
+      srcset="/static/img/case-studies/wired_phone1.png 1318w,
+              /static/img/case-studies/wired_phone1@1_5x.png 870w,
+              /static/img/case-studies/wired_phone1@1x.png 659w"
+      src="/static/img/case-studies/wired_phone1.png">
+  </amp-img>
 </div>
 
 Wired’s philosophy is to meet audiences wherever they are online. The San Francisco-based print and online publisher reports on technology and its impact on politics, culture, and the economy. The publisher saw AMP as an opportunity to speed up the mobile experience as well as to be eligible for the AMP-powered Google Search Top Stories carousel. Samuel Baldwin, Product Manager for Wired.com, said “Site performance is a company-wide KPI, and we see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
@@ -42,13 +47,23 @@ The team at Wired.com took a measured approach to rolling out AMP. They began by
 After a deep dive of analysis of results in July, Wired found AMP to have a positive impact on key metrics. Average click through rates from search results improved by 25%. Click through rates on ads in AMP stories increased by 63%.
 
 <div class="img-left wired img-mobile">
-    <amp-img width="1742" height="1622" layout="responsive" src="/static/img/case-studies/wired_phone2.png"></amp-img>
+  <amp-img width="1742" height="1622" layout="responsive"
+      srcset="/static/img/case-studies/wired_phone2.png 1742w,
+              /static/img/case-studies/wired_phone2@1_5x.png 1150w,
+              /static/img/case-studies/wired_phone2@1x.png 871w"
+      src="/static/img/case-studies/wired_phone2.png">
+  </amp-img>
 </div>
 
 #### Conclusion
 
 <div class="img-left wired img-desktop">
-    <amp-img width="1742" height="1622" layout="responsive" src="/static/img/case-studies/wired_phone2.png"></amp-img>
+  <amp-img width="1742" height="1622" layout="responsive"
+      srcset="/static/img/case-studies/wired_phone2.png 1742w,
+              /static/img/case-studies/wired_phone2@1_5x.png 1150w,
+              /static/img/case-studies/wired_phone2@1x.png 871w"
+      src="/static/img/case-studies/wired_phone2.png">
+  </amp-img>
 </div>
 
 > “We’re excited to try more AMP features and see the format supported on a variety of new platforms.”
