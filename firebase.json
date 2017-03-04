@@ -11,6 +11,15 @@
             "value": "max-age=604800"
           }
         ]
+      },
+      {
+        "source": "service-worker.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
       }
     ],
     "redirects": [

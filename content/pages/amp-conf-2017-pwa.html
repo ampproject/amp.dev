@@ -1,0 +1,281 @@
+---
+$title: AMP Conf 2017
+noglobalnote: 1
+noheader: 1
+class: amp-conf amp-conf-pwa
+
+components:
+  - iframe
+stylesheet: pages/amp-conf.css
+---
+
+{% set conf = g.doc('/content/includes/amp-conf-2017.yaml', locale=doc.locale) %}
+
+<section class="description amp-conf-section">
+
+    <ul>
+        <li data-page="livestream" tabindex="0" class="active"><a>Live</a></li>
+        <li data-page="schedule" tabindex="0"><a>Schedule</a></li>
+        <li data-page="speakers" tabindex="0"><a>Speakers</a></li>
+        <li data-page="location" tabindex="0"><a>📍</a></li>
+        <li data-page="faq" tabindex="0"><a>?</a></li>
+    </ul>
+
+</section>
+
+<section class="livestream amp-conf-section amp-conf-page active">
+    <div class="wrapper">
+        <h3 id="schedule">Currently happening</h3>
+
+        <amp-youtube
+            data-videoid="mGENRKrdoGY"
+            layout="responsive"
+            width="480" height="270"></amp-youtube>
+    </div>
+</div>
+
+<section class="schedule amp-conf-section amp-conf-page">
+
+    <div class="wrapper">
+        <h3 id="schedule"><span>Schedule</span> <span class="schedule-tabs"><a href="#" class="active">Day 1</a><a href="#">Day 2</a></span></h3>
+
+        {% macro render_session(item) -%}
+
+            {% if conf.speakers[item.speaker] %}
+            <span class="image">{% if conf.speakers[item.speaker].pic %}<amp-img src="{{ conf.speakers[item.speaker].pic }}" width="100" height="100"></amp-img>{% endif %}</span>
+            {% endif %}
+
+            {% if item.speakers %}
+                {% for speaker in item.speakers if conf.speakers[speaker]  %}
+                <span class="image multiple">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="60" height="60"></amp-img>{% endif %}</span>
+                {% endfor %}
+            {% endif %}
+
+            <time data-duration="{{ item.duration }}">{{ item.time }}</time>
+            <div>
+                <h5 class="{{ item.type }}">{{ item.title }}</h5>
+                {% if conf.speakers[item.speaker] %}
+                <small><a href="#{{ item.speaker }}">{{ conf.speakers[item.speaker].name }}, {{ conf.speakers[item.speaker].company }}</a></small>
+                {% endif %}
+                {% if item.speakers %}
+                    {% if conf.speakers[item.moderator] %}
+                        <small><a href="#{{ item.moderator }}">{{ conf.speakers[item.moderator].name }}, {{ conf.speakers[item.moderator].company }} (Moderator)</a></small>
+                    {% endif %}
+                    {% for speaker in item.speakers %}
+                        {% if conf.speakers[speaker] %}
+                        <small><a href="#{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</a></small>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if item.description %}
+                <p>{{ item.description }}</p>
+                {% endif %}
+                {% if item.workshops %}
+                    <ul class="workshops">
+                    {% for workshop in item.workshops %}
+                        <li>
+                            <h6>{{ workshop.title }}</h6>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+        {%- endmacro %}
+
+        <div class="days">
+
+            <div class="day day-1 active">
+                <ul class="schedule">
+                    {% for item in conf.agenda.day_1 %}
+                    <li class="{{ item.type }}">
+                        {{ render_session(item) }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="day day-2">
+                <ul class="schedule">
+                    {% for item in conf.agenda.day_2 %}
+                    <li class="{{ item.type }}">
+                        {{ render_session(item) }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="speakers amp-conf-section amp-conf-page">
+
+    <div class="wrapper">
+        <h3 id="speakers">Speakers</h3>
+
+        <ul class="speakers">
+            {% set sortedSpeakers = conf.speakers|sort %}
+            {% for speaker in sortedSpeakers if conf.speakers[speaker].bio %}
+            <li>
+                <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<img src="{{ conf.speakers[speaker].pic }}" width="400" height="400"></amp-img>{% endif %}</span>
+                <div>
+                    <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</h4>
+                    <p>{{ conf.speakers[speaker].bio|truncate(50)|safe }} <a href="#" class="more">more</a></p>
+                    <p class="full-description">{{ conf.speakers[speaker].bio|safe }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+</section>
+
+<section class="location amp-conf-section amp-conf-page">
+    <div class="wrapper">
+
+        <h3 id="location">Location</h3>
+
+        <amp-iframe width=300 height=300
+            sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+            layout="responsive"
+            frameborder="0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.0600022262697!2d-74.0108920361199!3d40.72357632397405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259f48e2e992f%3A0x7b5d67ea6c58814c!2sTribeca+360%C2%B0!5e0!3m2!1sen!2sus!4v1484082758953">
+            <p placeholder>Loading..</p>
+        </amp-iframe>
+        <div>
+
+            <p>Tribeca 360 (<a href="http://threesixtynyc.com/">Website</a>, <a href="https://goo.gl/maps/gmo8t5yxDot">Google Maps</a>).</p>
+            <h4>Address</h4>
+            <p>
+                <span>10 Desbrosses St</span>
+                <span>New York, NY 10013</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="faq amp-conf-section amp-conf-page">
+    <div class="wrapper">
+        <h3 id="faq">Frequently Asked Questions</h3>
+        <dl>
+
+        <dt>Does it cost anything?</dt>
+        <dd>No - tickets are free of charge.</dd>
+
+        <dt>Do I have to register for the live-stream?</dt>
+        <dd>No! The registration is only for on-site attendees that physically attend the conference. Come back here to this site on March 7th for a link and embed of the live-stream.</dd>
+
+        <dt>Who is the event for?</dt>
+        <dd>Web developers and designers who have used AMP and want to create even better AMP experiences, who haven't used AMP and are curious or want to contribute to AMP to make it better for everyone, and the web at large.</dd>
+
+        <dt>Does reserving a spot mean I am signed up?</dt>
+        <dd>Not yet. While your chances of getting a seat are pretty good, we will confirm attendees on a case-by-case basis to ensure we attract the right audience. Note that your seat is not confirmed until you receive a confirmation code.</dd>
+
+        <dt>When will I hear back if I have a spot?</dt>
+        <dd>We'll try to confirm you within less than a week!</dd>
+
+        <dt>What determines if I have a spot?</dt>
+        <dd>The AMP Conf is a mainly developer and designer focussed event (read: the people actually creating AMP experiences). If you're non-technical, you may still apply but you'll have a slimmer chance of getting through (and you'll enjoy the conf less!).</dd>
+
+        <dt>When will the schedule be announced?</dt>
+        <dd>We'll announce a detailed schedule before end of January.</dd>
+        </dl>
+
+        <ul>
+            <li><a href="/amp-conf-2017/code-of-conduct">Code of Conduct</a></li>
+            <li><a href="/amp-conf-2017/accessibility">Accessibility</a></li>
+            <li><a href="mailto:amp-conf-2017@google.com">Contact</a></li>
+        </ul>
+    </div>
+</section>
+
+<script>
+    (function() {
+
+        // main paging functionality
+        var activeTab = document.querySelector('.description li:first-child');
+
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.amp-conf-page');
+            for (var index = 0; index < pages.length; index++) {
+                var element = pages[index];
+                element.style.zIndex = element.className.indexOf(pageId) > -1 ? '1' : '0';
+            }
+        }
+
+        var menuItems = document.querySelectorAll('.description li');
+        for (var index = 0; index < menuItems.length; index++) {
+            var element = menuItems[index];
+
+            element.addEventListener('click', function() {
+                showPage(this.dataset.page);
+
+                activeTab.classList.remove('active');
+                this.classList.add('active');
+                activeTab = this;
+
+                location.hash = '#' + this.dataset.page;
+                return false;
+            }, false);
+
+            if(location.hash === '#' + element.dataset.page) {
+                showPage(element.dataset.page);
+                activeTab.classList.remove('active');
+                element.classList.add('active');
+                activeTab = element;
+            }
+        }
+
+        // more links to expand speaker descriptions
+        var moreLinks = document.querySelectorAll('ul.speakers a.more');
+        for (var index = 0; index < moreLinks.length; index++) {
+            var element = moreLinks[index];
+            element.addEventListener('click', function(e) {
+                this.parentNode.innerHTML = this.parentNode.nextElementSibling.innerHTML;
+                e.preventDefault();
+            }, false);
+        }
+
+        // schedule tabs
+        var scheduleTabs = document.querySelectorAll('span.schedule-tabs a');
+        var day1 = document.querySelector('.day-1');
+        var day2 = document.querySelector('.day-2');
+        for (var index = 0; index < scheduleTabs.length; index++) {
+            var element = scheduleTabs[index];
+            element.addEventListener('click', function(e) {
+
+                this.classList.add('active');
+
+                if(this.parentNode.children[0] === this) { // Day 1
+                    this.parentNode.children[1].classList.remove('active');
+                    day1.classList.add('active');
+                    day2.classList.remove('active');
+                } else { // Day 2
+                    this.parentNode.children[0].classList.remove('active');
+                    day2.classList.add('active');
+                    day1.classList.remove('active');
+                }
+                e.preventDefault();
+            }, false);
+        }
+
+        // Set current live-streaming agenda item to active
+        var day1talks = day1.querySelectorAll('li time');
+        for (var index = 0; index < day1talks.length; index++) {
+            var element = day1talks[index];
+            var hour = element.innerHTML.substr(0,2);
+            var minute = element.innerHTML.substr(2);
+            var duration = parseInt(element.dataset.duration);
+
+            var startTime = new Date('2017-03-07T' + hour + ':' + minute + ':00');
+            startTime.setTime( startTime.getTime() + 5*60*60*1000 ); // shifts it to NYC time
+            var endTime = new Date();
+            endTime.setTime(startTime.getTime() + duration*60*1000);
+            console.log(startTime, endTime);
+        }
+
+    })();
+</script>

@@ -420,3 +420,207 @@
     }
 
 }
+
+.amp-conf-pwa {
+
+    footer {
+        display: none;
+    }
+
+    .amp-conf-section {
+        background: #f5f5f5;
+    }
+
+    section.amp-conf-section {
+
+        &.description {
+            margin-top: 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+
+            ul {
+                padding-bottom: 1em;
+                padding-top: 1em;
+                display: flex;
+
+                li {
+                    flex-grow: 1;
+                    cursor: pointer;
+                    position: relative;
+                    outline: 0;
+                    &:hover, &.active {
+                        &::before {
+                            content: '';
+                            display: block;
+                            border-bottom: 4px solid #fff;
+                            position: absolute;
+                            top: 0;
+                            left: 10px;
+                            right: 4px;
+                        }
+                    }
+                    &:first-child {
+                        padding-left: 10px;
+                        &:hover, &.active {
+                            &::before {
+                                left: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.schedule {
+            h3 {
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+
+                span.schedule-tabs {
+                    a {
+                        background: #1b272f;
+                        padding: 6px 10px;
+
+                        &:first-child {
+                            padding-right: 5px;
+                            border-top-left-radius: 4px;
+                            border-bottom-left-radius: 4px;
+                        }
+                        &:last-child {
+                            padding-left: 5px;
+                            border-top-right-radius: 4px;
+                            border-bottom-right-radius: 4px;
+                        }
+                        &.active, &:hover {
+                            color: #fff;
+                            background: #059aff;
+                        }
+                    }
+                }
+            }
+
+            .day {
+                display: none;
+                &.active {
+                    display: block;
+                }
+            }
+
+            ul.schedule {
+                li {
+                    &.active {
+                        background: $gradient-anglebold;
+                        color: #fff;
+                        border-radius: 4px;
+                        padding-bottom: 36px;
+
+                        h5, a {
+                            color: #fff;
+                        }
+
+                        &:before {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            content: '🔴 Now live streaming';
+                            background: $gradient-anglebold;
+                            padding: 2px 6px;
+                            font-size: 14px;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &.faq {
+            h3 {
+                font-size: 20px;
+            }
+            dl, ul {
+                padding: 20px;
+                list-style: none;
+            }
+        }
+
+        &.location {
+            .wrapper {
+                display: block;
+                div {
+                    padding: 0 20px;
+                }
+            }
+        }
+
+        &.speakers {
+            ul {
+
+                li {
+                    padding: 20px;
+                    margin-bottom: 0;
+                    a {
+                        font-size: inherit;
+                        text-transform: none;
+                    }
+
+                    .full-description {
+                        display: none;
+                    }
+                }
+
+                li:nth-child(odd) {
+                    background: #fff;
+                }
+            }
+            img {
+                height: auto;
+            }
+        }
+
+        &.amp-conf-page {
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 70px;
+            z-index: 0;
+            overflow: scroll;
+            overflow-scrolling: touch;
+
+            &.active {
+                z-index: 1;
+            }
+
+            .wrapper {
+                width: auto;
+                padding-top: 52px;
+            }
+
+            .days {
+                padding: 20px;
+            }
+
+            h3:first-of-type {
+                background: #233440;
+                margin: 0;
+                color: #fff;
+                padding: 0.6em 1em;
+                z-index: 2;
+                font-size: 20px;
+                line-height: 28px;
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+}

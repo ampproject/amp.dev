@@ -174,15 +174,19 @@ agenda:
   day_1:
     - title: Registration
       time: "0800"
+      duration: 50
     - title: Opening notes
       time: "0850"
+      duration: 10
     - title: Day One Keynote
       time: "0900"
+      duration: 30
       type: keynote
       speaker: davidbesbris
       description: David Besbris, AMP Project lead, will open the AMP Conf with a look at the past year, present and future of AMP.
     - title: 1B+ Pages AMPed
       time: "0930"
+      duration: 30
       type: session
       speakers:
         - sammeder
@@ -190,18 +194,22 @@ agenda:
       description: Pinterest has more than a billion pages that are accessible to unauthenticated users and discoverable via Google search. In this talk we will walk through what it took to convert these to AMP and where we are planning to go next.
     - title: AMP in the Wild
       time: "1000"
+      duration: 30
       type: session
       speaker: nataliabaltazar
       description: Learn how the Guardian turned the limitations of AMP into an opportunity to rethink their article pages, header and navigation and therefore improved their overall user journey.
     - title: Coffee Break
       time: "1030"
+      duration: 30
     - title: Adding AMP to an e-commerce Workflow
       time: "1100"
+      duration: 30
       type: session
       speaker: senthilpadmanabhan
       description: eBay is one of the first eCommerce players to launch AMP in production. In this talk we will discuss on how to add AMP to an existing workflow and develop in parallel. We will dive into why we chose AMP, lessons learned, things that are critical for eCommerce and the challenges faced. We will also share some metrics along the way.
     - title: "Beautiful, Canonical, and Responsive AMP Pages"
       time: "1130"
+      duration: 30
       type: session
       description: Le is the lead developer for the upcoming relaunch of the AMP Project website, and will share lots of lessons learned when building canonical, responsive AMP. She'll also highlight some upcoming AMP features that make it even easier to build attractive AMP Pages.
       speakers:
@@ -209,14 +217,17 @@ agenda:
         - ericlindley
     - title: "Mobile web on flaky networks: When they go slow, Wego fast!"
       time: "1200"
+      duration: 30
       type: session
       speaker: honeymittal
       description: Delivering an app-like experience to mobile web users on flaky networks has always been a challenge for developers building for both the developed and emerging markets. Until now, that is! Thanks to AMP and PWA, Wego.com has been able to flip their mobile web experience upside down. Come learn about how Wego.com combined the power of both AMP and PWA to create a great end to end mobile web experience with faster acquisition and higher engagement.
     - title: Lunch (with the AMP team!)
       time: "1230"
+      duration: 60
       description: The AMP team needs sustenance as well, and what better time to grab them to offer feedback and discuss the roadmap. We'll have dedicated tables with project members who want to hear from you.
     - title: "AMP & the web platform"
       time: "1330"
+      duration: 60
       type: panel
       moderator: paulbakaus
       speakers:
@@ -228,6 +239,7 @@ agenda:
       description: It's hard to argue that AMP improves page speed and usability, but does it actually help the web platform at large or is it just a stop-gap measure? And if it doesn't, how can we fix it? We invited a bunch of advocates for the open web to talk candidly and take a hard look together of where the web is heading, and how we can ensure a healthy open-web for the next generations.
     - title: I can't believe it's AMP!
       time: "1430"
+      duration: 30
       type: session
       description: Watch Madison, CEO of WompMobile, come up with clever CSS and AMP component production hacks to support all sorts of use-cases, and then marvel at how Sebastian, creator of AMPByExample.com turns a myriad of these and more tricks to create fascinating applications of AMP.
       speakers:
@@ -235,18 +247,22 @@ agenda:
         - sebastianbenz
     - title: "Leveraging AMP for e-commerce: Eventbrite’s journey to optimized mobile pages"
       time: "1500"
+      duration: 30
       type: session
       speaker: beckcronindixon
       description: Eventbrite has seen many wins since launching its event listings pages as AMP. But this journey had its share of technical and design challenges. This discussion will focus on some of those hurdles including accommodating user-generated content, issues specific to ecommerce and ticketing, and structuring HTML and CSS for maintainability. We will detail how Eventbrite  overcame these obstacles without sacrificing user experience or brand alignment.
     - title: Turing complete...AMP Pages?!
       time: "1530"
+      duration: 30
       type: session
       speaker: willchou
       description: The AMP team has been amazed at the creativity web developers are showing to create interactivity without JS, but we're finally making it a little easier out of the box. Learn how amp-bind, amp-selector, amp-fresh and other exciting new components enable true interactivity.
     - title: Coffee Break
       time: "1600"
+      duration: 30
     - title: What's next in AMP
       time: "1630"
+      duration: 30
       type: keynote
       speakers:
         - malteubl
@@ -255,6 +271,7 @@ agenda:
       description: What does the future for AMP look like? Malte Ubl, engineering lead of AMP, and Rudy Galfi, PM on the AMP team, are here to tell you all about it.
     - title: Q&A with Google Search and AMP Leadership
       time: "1700"
+      duration: 60
       type: panel
       description: It's time to ask the AMP and Google Search leadership all the questions. All keynote speakers as well as a few additional guests from Google Search & News will try their very best to answer every question you throw at them.
       speakers:
@@ -269,30 +286,37 @@ agenda:
   day_2:
     - title: Registration
       time: "0800"
+      duration: 60
     - title: "Day Two Keynote: How Cloudflare is accelerating AMP"
-      time: "9000"
+      time: "0900"
+      duration: 30
       type: keynote
       speaker: matthewprince
       description: Matthew Prince, co-founder and CEO of Cloudflare, opens the second day with his keynote, bringing an exciting outlook on how they're expanding the AMP ecosystem with new Cloudflare-powered solutions.
     - title: "AMP on Google Search: Building the perfect AMP Viewer"
       time: "0930"
+      duration: 30
       type: session
       speaker: rannazhou
       description: Ranna will talk about how Google Search uses AMP to create experiences like the Top Stories carousel, and how the AMP Viewer works, from top to bottom. It's rare to get a chance to look behind the scenes of Google Search – you don't want to miss this one.
     - title: "Progressive Web AMPs: From AMP to PWA"
       time: "1000"
+      duration: 30
       type: session
       speaker: alexrussell
       description: AMP gets content in front of users fast – PWAs enable rich experiences and engagement. Learn how to combine the two to get the best of both worlds by the Chrome engineer who coined the term "Progressive Web App".
     - title: Coffee Break
       time: "1030"
+      duration: 30
     - title: "AMP Conversion: The Good, The Bad and The Ugly"
       time: "1100"
+      duration: 30
       type: session
       speaker: johnpettitt
       description: Relay Media is converting millions of AMP pages every day, and conversion brings many challenges different than building from scratch. Learn how to compress CSS efficiently, replace functionality smartly and much more.
     - title: "Consuming AMP: The platform panel"
       time: "1130"
+      duration: 60
       type: panel
       moderator: paulbakaus
       speakers:
@@ -302,9 +326,11 @@ agenda:
       description: Meet the platforms that embed and distribute AMP pages, and learn about their unique challenges, future ideas and more. Featuring an all-star lineup that includes Bing, LinkedIn, Google and more to be announced.
     - title: Lunch (with the AMP team!)
       time: "1230"
+      duration: 60
       description: The AMP team needs sustenance as well, and what better time to grab them to offer feedback and discuss the roadmap. We'll have dedicated tables with project members who want to hear from you.
     - title: "Better advertising on a faster web: AMP for Ads"
       time: "1330"
+      duration: 30
       type: session
       speakers:
         - yaminigupta
@@ -312,11 +338,13 @@ agenda:
       description: So, AMP made content faster on the mobile web. But what about ads? Slow, spammy and disruptive ad experiences have eroded the value of content by annoying users even as advertising continues to be at the cornerstone of every publisher's business model. AMP's mission is to build a better, faster mobile web --- and that includes ads. Join us in this session to hear more about AMP for Ads (A4A), a new initiative from the AMP Project that's fundamentally changing the way ads are built and delivered on the web.
     - title: Building a new AMP component
       time: "1400"
+      duration: 30
       type: session
       speaker: chenshay
       description: So what happens if you discover that an AMP component for your use case doesn't exist? Contributing a new component is actually much easier than many expect, and Chen will walk you through it.
     - title: Workshops
       time: "1430"
+      duration: 120
       type: workshop
       description: "To wrap up the conference, it's time to get our hands dirty. Bring your laptop and curiosity and participate in one of the three workshops offered by the AMP team:"
       speakers:
@@ -339,3 +367,4 @@ agenda:
             - albertomedina
     - title: Wrap-up
       time: "1630"
+      duration: 10

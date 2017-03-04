@@ -1,13 +1,31 @@
 'use strict';
 
-/*
- * Something is seriously broken. We've gotten multiple reports of SW failing,
- * and during local development with no cache headers set, the Service Worker
- * does not update itself. Disabling for the time being.
- */
+// global stuff we can cache away and lazily revalidate
+importScripts('/sw-toolbox.js');
+toolbox.router.get(/^https:\/\/fonts.googleapis.com\//, toolbox.fastest);
+toolbox.router.get(/^https:\/\/cdn.ampproject.org\//, toolbox.fastest);
+toolbox.router.get(/static\/img\//, toolbox.fastest);
 
+// don't wait for the other Service Worker to terminate
 self.addEventListener('install', () => {
   self.skipWaiting();
+});
+
+// immediately claim the currently connected clients
+self.addEventListener('activate', () => {
+  self.clients.claim();
+});
+
+
+self.addEventListener('fetch', event => {
+
+  if (event.request.url.indexOf('/amp-conf-2017') != -1) {
+    // Override response with the conf shell
+    if (event.request.mode === 'navigate') {
+      event.respondWith(fetch('/amp-conf-2017-pwa'));
+    }
+  }
+
 });
 
 /*
@@ -35,10 +53,7 @@ self.addEventListener('install', event => {
 
 });
 
-self.addEventListener('activate', () => {
-  // immediately claim the currently connected clients
-  self.clients.claim();
-});
+
 
 function createCompleteResponse (data) {
   return Promise.all([

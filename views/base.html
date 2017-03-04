@@ -20,11 +20,13 @@
     </script>
   </amp-analytics>
 
-  {% set menu_doc = g.doc('/content/includes/menu.yaml', locale=doc.locale) %}
-  {% with menu = menu_doc.fields.menu %}
-    {% include "/views/partials/sidebar.html" %}
-    {% include "/views/partials/header.html" %}
-  {% endwith %}
+  {% if not doc.noheader %}
+    {% set menu_doc = g.doc('/content/includes/menu.yaml', locale=doc.locale) %}
+    {% with menu = menu_doc.fields.menu %}
+      {% include "/views/partials/sidebar.html" %}
+      {% include "/views/partials/header.html" %}
+    {% endwith %}
+  {% endif %}
 
   {% macro callout(title, type='note') -%}
   <aside class="{{ type }}">
