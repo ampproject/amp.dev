@@ -47,7 +47,8 @@ self.addEventListener('activate', () => {
 
 self.addEventListener('fetch', event => {
 
-  if (event.request.url.indexOf('/amp-conf-2017') != -1) {
+  if (/\/amp\-conf\-2017\/?$/.test(event.request.url)) {
+    console.log(event.request.url);
     // Override response with the conf shell
     if (event.request.mode === 'navigate') {
       event.respondWith(cacheFirst('/amp-conf-2017-pwa'));
