@@ -8,7 +8,7 @@ role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2017/02/18/amp-roadmap-update-for-mid-q1-2017/amp/"
 excerpt: "We’ve updated the AMP Roadmap with the details on progress during the first quarter of 2017, and you can read below for some of the highlights. Format Interactivity is a major focus for us this quarter as we  build out the AMP format’s capabilities. amp-bind is a binding protocol that introduces lower-level methods for building [&#8230;]"
 avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-date_data: 2017-02-17T16:09:17-08:00
+date_data: 2017-02-17T19:09:17-05:00
 $date: February 17, 2017
 $parent: /content/latest/list-blog.html
 

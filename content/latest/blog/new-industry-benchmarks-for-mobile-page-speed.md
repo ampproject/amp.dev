@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2017/02/28/new-industry-benchmarks-for-mobile-page-speed/amp/"
 excerpt: "The following is an excerpt from a Think with Google article by Daniel An, Global Product Lead, Mobile, Google. The average time it takes to fully load a mobile landing page is 22 seconds, according to a new analysis. Yet 53% of mobile site visitors leave a page that takes longer than three seconds to load. That&#8217;s [&#8230;]"
 avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-date_data: 2017-02-28T13:56:02-08:00
+date_data: 2017-02-28T16:56:02-05:00
 $date: February 28, 2017
 $parent: /content/latest/list-blog.html
 

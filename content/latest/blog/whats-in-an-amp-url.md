@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2017/02/06/whats-in-an-amp-url/amp/"
 excerpt: "The following was posted on the Google Developers Blog by Alex Fischer, Software Engineer, Google Search. TL;DR: Today, we’re adding a feature to the AMP integration in Google Search that allows users to access, copy, and share the canonical URL of an AMP document. But before diving deeper into the news, let’s take a step [&#8230;]"
 avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-date_data: 2017-02-06T11:12:42-08:00
+date_data: 2017-02-06T14:12:42-05:00
 $date: February 6, 2017
 $parent: /content/latest/list-blog.html
 

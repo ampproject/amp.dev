@@ -8,7 +8,7 @@ role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2017/02/27/grow-your-business-with-ads-on-amp/amp/"
 excerpt: "We understand that every business is different, but one thing common to them all in today’s mobile driven world is the need to ensure a fast user experience across all screens. That is why we believe the growing AMP ecosystem is so important. It brings together a diverse community of publishers, advertisers, and technology platforms [&#8230;]"
 avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-date_data: 2017-02-27T11:18:47-08:00
+date_data: 2017-02-27T14:18:47-05:00
 $date: February 27, 2017
 $parent: /content/latest/list-blog.html
 
