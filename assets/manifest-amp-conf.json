@@ -1,0 +1,37 @@
+{
+  "name": "AMP Conf",
+  "short_name": "AMP Conf",
+  "start_url": "/amp-conf-2017/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#0379C4",
+  "description": "Everything you need to know about AMP Conf, in one Progressive Web App.",
+  "icons": [{
+    "src": "/static/img/icons/48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "/static/img/icons/72.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "/static/img/icons/96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "/static/img/icons/144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "/static/img/icons/168.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": "/static/img/icons/192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "/static/img/icons/any.svg",
+    "sizes": "any"
+  }]
+}
