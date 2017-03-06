@@ -13,7 +13,7 @@ hero:
   triangle_img: herobg.svg
   line1_img: herolines1.svg
   line2_img: herolines2.svg
-  phone_img: what_phone.png
+  phone_img_base: /static/img/about/overview/what_phone
   cta@: Play Video
   cta_url: '#video'
 
