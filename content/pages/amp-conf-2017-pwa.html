@@ -1,4 +1,5 @@
 ---
+$view: /views/blank.html
 $title: AMP Conf 2017
 noglobalnote: 1
 manifest: manifest-amp-conf.json
@@ -9,6 +10,30 @@ components:
   - iframe
 stylesheet: pages/amp-conf.css
 ---
+
+<!DOCTYPE html>
+<html ⚡ {% if doc.locale.is_rtl %} dir="rtl" lang="ar"{% else %}lang="{{doc.locale}}"{% endif %}>
+{% include "/views/partials/head.html" %}
+
+<body class="{{doc.class}}{% if doc.locale.is_rtl %} rtl{% endif %}">
+
+<amp-analytics type="googleanalytics" id="analytics-ga">
+<script type="application/json">
+{
+    "vars": {
+    "account": "UA-67833617-1"
+    },
+    "triggers": {
+    "trackPageview": {
+        "on": "visible",
+        "request": "pageview"
+    }
+    }
+}
+</script>
+</amp-analytics>
+
+
 
 {% set conf = g.doc('/content/includes/amp-conf-2017.yaml', locale=doc.locale) %}
 
@@ -47,7 +72,7 @@ stylesheet: pages/amp-conf.css
 
         </div>
     </div>
-</div>
+</section>
 
 <section class="schedule amp-conf-section amp-conf-page">
 
@@ -228,7 +253,6 @@ stylesheet: pages/amp-conf.css
         var activeTab = document.querySelector('.description li:first-child');
 
         function showPage(pageId) {
-            console.log(pageId);
             var pages = document.querySelectorAll('.amp-conf-page');
             for (var index = 0; index < pages.length; index++) {
                 var element = pages[index];
@@ -482,3 +506,6 @@ stylesheet: pages/amp-conf.css
     });
 
 </script>
+
+</body>
+</html>
