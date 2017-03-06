@@ -19,13 +19,14 @@
   }
 
   button {
-    @include sprite(search);
-    background-color: transparent;
+    background: url(/static/img/symbols/search.svg) center/cover no-repeat;
     border: 0;
     cursor: pointer;
+    height: 24.2px;
     position: relative;
     top: 3px;
     vertical-align: middle;
+    width: 24.6px;
   }
 }
 

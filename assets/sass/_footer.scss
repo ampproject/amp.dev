@@ -38,6 +38,7 @@ footer {
 
 .footer-cta {
   background: $gradient-bold;
+  display: block;
   padding: 20px 30px;
   position: relative;
   z-index: 1;
@@ -74,12 +75,17 @@ footer {
     max-width: 1200px;
     width: 80%;
 
-    h2, a {
+    h2 {
+      text-transform: none;
+    }
+
+    h2, .link-text {
       color: $color-white;
       display: inline-block;
     }
 
-    a {
+    .link-text {
+      color: white;
       position: absolute;
       right: 0;
       top: 50%;
@@ -98,7 +104,7 @@ footer {
 }
 
 .rtl .footer-cta {
-  .inner a {
+  .inner .link-text {
     left: 0;
     right: auto;
 
@@ -130,11 +136,11 @@ footer {
       text-align: center;
       width: 100%;
 
-      h1, a {
+      h1, .link-text {
         display: block;
       }
 
-      a {
+      .link-text {
         margin-top: 20px;
         position: static;
       }
