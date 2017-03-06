@@ -92,6 +92,19 @@ stylesheet: pages/amp-conf.css
                         </li>
                     {% endfor %}
                     </ul>
+                {% else %}
+                    {% if item.type == "session" or item.type == "keynote" or item.type == "panel" %}
+                    <div class="rating-container">
+                        Rate:
+                        <fieldset class="rating">
+                            <input type="radio" id="star5-{{ item.title|slug }}" name="rating-{{ item.title|slug }}" value="5" /><label class = "full" for="star5-{{ item.title|slug }}" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star4-{{ item.title|slug }}" name="rating-{{ item.title|slug }}" value="4" /><label class = "full" for="star4-{{ item.title|slug }}" title="Pretty good - 4 stars"></label>
+                            <input type="radio" id="star3-{{ item.title|slug }}" name="rating-{{ item.title|slug }}" value="3" /><label class = "full" for="star3-{{ item.title|slug }}" title="Meh - 3 stars"></label>
+                            <input type="radio" id="star2-{{ item.title|slug }}" name="rating-{{ item.title|slug }}" value="2" /><label class = "full" for="star2-{{ item.title|slug }}" title="Kinda bad - 2 stars"></label>
+                            <input type="radio" id="star1-{{ item.title|slug }}" name="rating-{{ item.title|slug }}" value="1" /><label class = "full" for="star1-{{ item.title|slug }}" title="Sucks big time - 1 star"></label>
+                        </fieldset>
+                    </div>
+                    {% endif %}
                 {% endif %}
             </div>
 
@@ -386,4 +399,81 @@ stylesheet: pages/amp-conf.css
 
 
     })();
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-database.js"></script>
+
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBJSaIXFs7ep7Hcw-YeGoKfbMzoOVKuIgE",
+        authDomain: "ampproject-b5f4c.firebaseapp.com",
+        databaseURL: "https://ampproject-b5f4c.firebaseio.com",
+        storageBucket: "ampproject-b5f4c.appspot.com",
+        messagingSenderId: "93225420144"
+    };
+
+    firebase.initializeApp(config);
+
+    // Get a reference to the database service
+    var database = firebase.database();
+
+    // Hook up ratings
+    function generateUUID () { // Public Domain/MIT
+        var d = new Date().getTime();
+        if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+            d += performance.now(); //use high-precision timer if available
+        }
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = (d + Math.random() * 16) % 16 | 0;
+            d = Math.floor(d / 16);
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+    }
+
+    var serializeRatings = function() {
+
+        var ratings = {};
+        var checkedRadios = document.querySelectorAll('fieldset.rating input[type=radio]:checked');
+        for (var index = 0; index < checkedRadios.length; index++) {
+            var checked = checkedRadios[index];
+            ratings[checked.getAttribute('name').substr(7)] = checked.value;
+        }
+
+        // store ratings in localStorage
+        localStorage.ampConfRatings = JSON.stringify(ratings);
+
+        // store ratings in Firebase
+        database.ref('ratings/' + localStorage.ampConfUUID).set(ratings);
+
+    };
+
+    var restoreRatings = function() {
+
+        // generate unique id for this user if not set yet
+        if(!localStorage.ampConfUUID) {
+            localStorage.ampConfUUID = generateUUID();
+        }
+
+        var ratings = localStorage.ampConfRatings;
+        if(!ratings) {
+            return;
+        }
+
+        ratings = JSON.parse(ratings);
+        for(var sessionSlug in ratings) {
+            document.getElementById('star' + ratings[sessionSlug] + '-' + sessionSlug).checked = true;
+        }
+
+    };
+
+    restoreRatings();
+
+    document.addEventListener('click', (event) => {
+        if(event.target.nodeName === "INPUT" && event.target.getAttribute('type') === "radio") {
+            serializeRatings();
+        }
+    });
+
 </script>
