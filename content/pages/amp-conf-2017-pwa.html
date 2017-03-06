@@ -25,12 +25,26 @@ stylesheet: pages/amp-conf.css
 
 <section class="livestream amp-conf-section amp-conf-page active">
     <div class="wrapper">
-        <h3 id="schedule">Currently happening</h3>
+        <h3 id="schedule">Currently live</h3>
 
         <amp-youtube
-            data-videoid="mGENRKrdoGY"
+            data-videoid="ZTGxX0V-pt0"
             layout="responsive"
             width="480" height="270"></amp-youtube>
+
+        <div class="session">
+
+            <div class="currently">On right now (<span id="livestream-now-minutes" class="minutes">10</span> minutes remaining):</div>
+
+            <h5 id="livestream-now-title">Title</h5>
+            <small id="livestream-now-speaker"><a href="#">Speaker Name, Company</a></small>
+
+            <div class="nextup">Upcoming:</div>
+
+            <h5 id="livestream-next-title" class="next">Title</h5>
+            <small id="livestream-next-speaker" class="next"><a href="#">Speaker Name, Company</a></small>
+
+        </div>
     </div>
 </div>
 
@@ -55,15 +69,15 @@ stylesheet: pages/amp-conf.css
             <div>
                 <h5 class="{{ item.type }}">{{ item.title }}</h5>
                 {% if conf.speakers[item.speaker] %}
-                <small><a href="#{{ item.speaker }}">{{ conf.speakers[item.speaker].name }}, {{ conf.speakers[item.speaker].company }}</a></small>
+                <small><a class="speaker-link" href="#{{ item.speaker }}">{{ conf.speakers[item.speaker].name }}, {{ conf.speakers[item.speaker].company }}</a></small>
                 {% endif %}
                 {% if item.speakers %}
                     {% if conf.speakers[item.moderator] %}
-                        <small><a href="#{{ item.moderator }}">{{ conf.speakers[item.moderator].name }}, {{ conf.speakers[item.moderator].company }} (Moderator)</a></small>
+                        <small><a class="speaker-link" href="#{{ item.moderator }}">{{ conf.speakers[item.moderator].name }}, {{ conf.speakers[item.moderator].company }} (Moderator)</a></small>
                     {% endif %}
                     {% for speaker in item.speakers %}
                         {% if conf.speakers[speaker] %}
-                        <small><a href="#{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</a></small>
+                        <small><a class="speaker-link" href="#{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</a></small>
                         {% endif %}
                     {% endfor %}
                 {% endif %}
@@ -118,7 +132,7 @@ stylesheet: pages/amp-conf.css
         <ul class="speakers">
             {% set sortedSpeakers = conf.speakers|sort %}
             {% for speaker in sortedSpeakers if conf.speakers[speaker].bio %}
-            <li>
+            <li id="speaker-{{ speaker }}">
                 <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<img src="{{ conf.speakers[speaker].pic }}" width="400" height="400"></amp-img>{% endif %}</span>
                 <div>
                     <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</h4>
@@ -263,19 +277,113 @@ stylesheet: pages/amp-conf.css
         }
 
         // Set current live-streaming agenda item to active
-        var day1talks = day1.querySelectorAll('li time');
-        for (var index = 0; index < day1talks.length; index++) {
-            var element = day1talks[index];
+        var maybeMarkTalkAsLive = function(element, dayIndex, nextElement) {
             var hour = element.innerHTML.substr(0,2);
             var minute = element.innerHTML.substr(2);
             var duration = parseInt(element.dataset.duration);
 
-            var startTime = new Date('2017-03-07T' + hour + ':' + minute + ':00');
+            var startTime = new Date('2017-03-0' + (7 + dayIndex) + 'T' + hour + ':' + minute + ':00');
             startTime.setTime( startTime.getTime() + 5*60*60*1000 ); // shifts it to NYC time
             var endTime = new Date();
             endTime.setTime(startTime.getTime() + duration*60*1000);
-            console.log(startTime, endTime);
+            var nowTime = new Date();
+            //var nowTime = new Date('2017-03-07T15:00:00'); // Test time
+
+            if(nowTime.getTime() >= startTime.getTime() && nowTime.getTime() < endTime.getTime()) {
+
+                // Make sure we switch to the right day tab
+                scheduleTabs[dayIndex].click();
+
+                // it's happening now! Mark it as active
+                element.parentNode.classList.add('active');
+
+                let blark = element.parentNode.offsetTop - (window.innerHeight / 2) + (element.parentNode.offsetHeight / 2);
+                setTimeout(() => {
+                    document.querySelector('section.schedule').scrollTop = blark;
+                }, 0); // WHYYYYYYYY
+
+                // Copy over to live tab
+                var minutesNow = document.getElementById('livestream-now-minutes');
+                var titleNow = document.getElementById('livestream-now-title');
+                var speakerNow = document.getElementById('livestream-now-speaker');
+                titleNow.innerHTML = element.parentNode.getElementsByTagName('h5')[0].innerHTML;
+                speakerNow.innerHTML = element.parentNode.getElementsByTagName('small')[0] ? element.parentNode.getElementsByTagName('small')[0].innerHTML : '';
+                minutesNow.innerHTML = ((endTime.getTime() - nowTime.getTime()) / (1000 * 60));
+
+                if(nextElement) {
+                    var titleNext = document.getElementById('livestream-next-title');
+                    var speakerNext = document.getElementById('livestream-next-speaker');
+                    titleNext.innerHTML = nextElement.parentNode.getElementsByTagName('h5')[0].innerHTML;
+                    speakerNext.innerHTML = nextElement.parentNode.getElementsByTagName('small')[0] ? nextElement.parentNode.getElementsByTagName('small')[0].innerHTML : '';
+                }
+
+                // If there's a previous current one, clear it..
+                if(currentLive) {
+                    currentLive.classList.remove('active');
+                }
+
+                currentLive = element.parentNode;
+
+            }
+        };
+
+        var currentLive = null;
+        var trackLiveStatus = function() {
+
+            var foundLive = false;
+
+            var day1talks = day1.querySelectorAll('li time');
+            for (var index = 0; index < day1talks.length; index++) {
+                var element = day1talks[index];
+                if(maybeMarkTalkAsLive(element, 0, day1talks[index+1])) {
+                    foundLive = true;
+                };
+            }
+
+            var day2talks = day2.querySelectorAll('li time');
+            for (var index = 0; index < day2talks.length; index++) {
+                var element = day2talks[index];
+                if(maybeMarkTalkAsLive(element, 1, day2talks[index+1])) {
+                    foundLive = true;
+                };
+            }
+
+            if(!foundLive) {
+                // If there's a previous current one, clear it..
+                if(currentLive) {
+                    currentLive.classList.remove('active');
+                }
+                var minutesNow = document.getElementById('livestream-now-minutes');
+                var titleNow = document.getElementById('livestream-now-title');
+                var speakerNow = document.getElementById('livestream-now-speaker');
+                var titleNext = document.getElementById('livestream-next-title');
+                var speakerNext = document.getElementById('livestream-next-speaker');
+                minutesNow.innerHTML = 0;
+                titleNow.innerHTML = 'Nothing';
+                speakerNow.innerHTML = '';
+                titleNext.innerHTML = '';
+                speakerNext.innerHTML = '';
+            }
+
         }
+
+        trackLiveStatus();
+        setInterval(trackLiveStatus, 60 * 1000);
+
+        // speaker link click functionality
+        document.body.addEventListener('click', event => {
+            if(event.target && event.target.nodeName === "A" && event.target.className === "speaker-link") {
+                console.log(event.target);
+                event.preventDefault();
+                document.querySelector('li[data-page=speakers]').click();
+                var speaker = document.getElementById('speaker-' + event.target.getAttribute('href').substr(1));
+                var speakerSection = document.querySelector('section.speakers');
+
+                speakerSection.scrollTop = speaker.offsetTop - (window.innerHeight / 2) + (speaker.offsetHeight / 2);
+
+            }
+        }, false);
+
 
     })();
 </script>

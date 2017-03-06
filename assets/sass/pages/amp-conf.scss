@@ -474,6 +474,32 @@
             }
         }
 
+        &.livestream {
+            .session {
+                padding: 20px;
+                .currently, .nextup {
+                    font-style: italic;
+                    border-bottom: 1px solid #0b86ee;
+                    display: block;
+                    margin-bottom: 1em;
+                }
+
+                .nextup {
+                    margin-top: 1em;
+                    opacity: 0.5;
+                }
+
+                .next {
+                    opacity: 0.5;
+                }
+
+                h5 {
+                    font-size: 1em;
+                    font-weight: 500;
+                }
+            }
+        }
+
         &.schedule {
             h3 {
                 display: flex;

@@ -283,6 +283,7 @@ agenda:
         - ardanarac
     - title: Party!
       time: "1800"
+      duration: 120
   day_2:
     - title: Registration
       time: "0800"
