@@ -5,6 +5,8 @@
   font-size: 14px;
   font-weight: 300;
   transform: translateZ(0);
+  z-index: 1000;
+  position: relative;
 
   &.fixed {
     left: 0;
