@@ -26,23 +26,10 @@
   td:first-child a:hover {
     text-decoration: none;
   }
-}
 
-@include min-screen($toc-breakpoint) {
-  .post.has-toc {
-    .post-title,
-    .post-content {
-      margin: 0 250px 0 75px;
-    }
-  }
-
-  .rtl {
-    .post.has-toc {
-      .post-title,
-      .post-content {
-        margin: 0 75px 0 250px;
-      }
-    }
+  th.col-twenty,
+  td.col-twenty {
+    min-width: 90px;
   }
 }
 
@@ -59,6 +46,24 @@
       .post-title,
       .post-content {
         margin: 0 15px 0 190px;
+      }
+    }
+  }
+}
+
+@include max-screen($toc-breakpoint) {
+  .post.has-toc {
+    .post-title,
+    .post-content {
+      margin: 0;
+    }
+  }
+
+  .rtl {
+    .post.has-toc {
+      .post-title,
+      .post-content {
+        margin: 0;
       }
     }
   }
