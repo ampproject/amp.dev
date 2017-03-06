@@ -656,7 +656,7 @@
             bottom: 70px;
             z-index: 0;
             overflow: scroll;
-            overflow-scrolling: touch;
+            -webkit-overflow-scrolling: touch;
 
             &.active {
                 z-index: 1;

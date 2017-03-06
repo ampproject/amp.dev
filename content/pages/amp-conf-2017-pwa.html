@@ -221,12 +221,14 @@ stylesheet: pages/amp-conf.css
 </section>
 
 <script>
+
     (function() {
 
         // main paging functionality
         var activeTab = document.querySelector('.description li:first-child');
 
         function showPage(pageId) {
+            console.log(pageId);
             var pages = document.querySelectorAll('.amp-conf-page');
             for (var index = 0; index < pages.length; index++) {
                 var element = pages[index];
@@ -238,7 +240,9 @@ stylesheet: pages/amp-conf.css
         for (var index = 0; index < menuItems.length; index++) {
             var element = menuItems[index];
 
-            element.addEventListener('click', function() {
+            // Safari has an obscure block that requires double clicks on these elements..
+            element.addEventListener(navigator.userAgent.indexOf('iPhone') > -1? 'touchend' : 'click', function() {
+
                 showPage(this.dataset.page);
 
                 activeTab.classList.remove('active');
