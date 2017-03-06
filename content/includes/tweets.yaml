@@ -12,6 +12,24 @@ tweets:
   - origin_name: AMP Project
     origin_id: AMPhtml
     origin_href: https://twitter.com/AMPhtml
+    tweet_id: 838796317413498882
+    date_data: 2017-03-06T12:00:00-05:00
+    date: March 6, 2017
+    text: >
+      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0"><a href="https://twitter.com/hashtag/AMPConf?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMPConf</b></a> starts tomorrow at 9am ET!Join us on the live stream: <a href="https://t.co/JPOg3NaqqH" rel="nofollow noopener" dir="ltr" data-expanded-url="https://goo.gl/Ik7lCN" class="twitter-timeline-link" target="_blank" title="https://goo.gl/Ik7lCN"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">goo.gl/Ik7lCN</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible"> </span></span></a></p>
+
+  - origin_name: AMP Project
+    origin_id: AMPhtml
+    origin_href: https://twitter.com/AMPhtml
+    tweet_id: 838780233457217537
+    date_data: 2017-03-06T10:56:06-05:00
+    date: March 6, 2017
+    text: >
+      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">We’re so excited!</p>
+
+  - origin_name: AMP Project
+    origin_id: AMPhtml
+    origin_href: https://twitter.com/AMPhtml
     tweet_id: 837754455483420675
     date_data: 2017-03-03T15:00:01-05:00
     date: March 3, 2017
@@ -26,23 +44,3 @@ tweets:
     date: March 1, 2017
     text: >
       <p class="TweetTextSize TweetTextSize--26px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">The <a href="https://twitter.com/hashtag/AMPConf?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMPConf</b></a> is right around the corner. Join us on our livestream at 9am on March 7-8 on this page: <a href="https://t.co/JPOg3NaqqH" rel="nofollow noopener" dir="ltr" data-expanded-url="https://goo.gl/Ik7lCN" class="twitter-timeline-link" target="_blank" title="https://goo.gl/Ik7lCN"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">goo.gl/Ik7lCN</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible"> </span></span></a></p>
-
-  - origin_name: Malte Ubl
-    origin_id: cramforce
-    origin_href: https://twitter.com/cramforce
-    retweet_id: AMPhtml
-    retweet_href: https://twitter.com/amphtml
-    tweet_id: 836751856768430080
-    date_data: 2017-02-28T20:36:03-05:00
-    date: February 28, 2017
-    text: >
-      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">The level of contributions to the <a href="https://twitter.com/AMPhtml" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="3450662892"><s>@</s><b>AMPhtml</b></a> open source project is just mind blowing. Thank y’all. RIP my inbox.<a href="https://t.co/e3CTsLbjDV" class="twitter-timeline-link u-hidden" data-pre-embedded="true" dir="ltr">pic.twitter.com/e3CTsLbjDV</a></p>
-
-  - origin_name: AMP Project
-    origin_id: AMPhtml
-    origin_href: https://twitter.com/AMPhtml
-    tweet_id: 836699227665403904
-    date_data: 2017-02-28T17:06:55-05:00
-    date: February 28, 2017
-    text: >
-      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Page load time matters. Check out the latest research on how faster pages are more engaging:<a href="https://t.co/RTqG3UK5Zj" rel="nofollow noopener" dir="ltr" data-expanded-url="https://amphtml.wordpress.com/2017/02/28/new-industry-benchmarks-for-mobile-page-speed/amp/" class="twitter-timeline-link u-hidden" target="_blank" title="https://amphtml.wordpress.com/2017/02/28/new-industry-benchmarks-for-mobile-page-speed/amp/"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">amphtml.wordpress.com/2017/02/28/new</span><span class="invisible">-industry-benchmarks-for-mobile-page-speed/amp/</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
