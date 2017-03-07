@@ -1,6 +1,6 @@
 #: /content/learn/overview.yaml
 msgid "**AMP HTML** is HTML with some restrictions for reliable performance"
-msgstr ""
+msgstr "**AMP HTML**은 안정적인 성능을 위한 몇가지 제한이 있는 HTML입니다"
 
 #: /content/includes/home.yaml
 msgid "/content/learn/case-studies/teads.md"
@@ -16,11 +16,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "A collaborative effort"
-msgstr ""
+msgstr "공동의 노력"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "A faster way to grow your business"
-msgstr ""
+msgstr "비즈니스를 빠르게 성장시킬 수 있는 방법"
 
 #: /content/support/faqs/publisher-monetization.md
 msgid ""
@@ -32,6 +32,11 @@ msgid ""
 "Sustainable Ad Practices to ensure that ads in AMP files are fast, safe, "
 "compelling and effective for users.\n"
 msgstr ""
+"Accelerated Mobile Pages 프로젝트의 목표는 사용자 중심 접근 방식을 채택하면서 모바일 웹에서"
+"효과적인 광고 수익을 보장하는 것입니다. 이러한 맥락에서 Accelerated Mobile Pages의"
+"광범위한 광고 포맷, 광고 네트워크 및 기술에 대한 지원을 제공하는 게 목표입니다."
+"이 프로젝트의 일환으로, AMP 파일 내 광고가 빠르고 안전하며 사용자에게 효과적이도록 지속 가능한"
+"광고 관행을 만들고 있습니다"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -41,10 +46,14 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
+"점점 더 많은 수의 게시자와 광고주가 AMP를 채택하여 더 빠르고 매력적인 콘텐츠를 사용자에게 제공합니다"
+"고객이 AMP의 속도를 수용하고 더 많은 사용자가 AMP 페이지에서 콘텐츠를 소비하게 하여, 비즈니스가"
+"미래를 향하게 하십시오. 오늘날의 기술을 AMP에 통합하세요"
+
 
 #: /content/includes/home.yaml
 msgid "A path to success"
-msgstr ""
+msgstr "성공으로 가는 길"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -52,16 +61,20 @@ msgid ""
 " As a result, you can use your existing development resources to create and "
 "serve ads that are faster, lighter, and more effective."
 msgstr ""
+"AMP 광고는 새로운 기술이 아닌 HTML과 CSS로 구성한 창조적 포맷입니다."
+"따라서, 더 빠르고 가볍고 효율적인 광고를 제공하고 만드는데 현재 지닌 개발 리소스를 사용할 수 있습니다"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMP Ads can serve on both AMP and non-AMP pages so you can build your AMP Ad "
 "once and deliver a memorable brand experience everywhere."
 msgstr ""
+"AMP 광고는 AMP 및 AMP가 아닌 페이지 양쪽에서 제공가능하여, AMP 광고를 한번만 만들고"
+"어디에든 인상적인 브랜드 경험을 전달할 수 있습니다"
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
-msgstr ""
+msgstr "AMP 블로그"
 
 #: /content/learn/overview.yaml
 msgid "AMP Cache"
@@ -69,11 +82,11 @@ msgstr ""
 
 #: /content/support/vendor/amp-certification.md
 msgid "AMP Certification"
-msgstr ""
+msgstr "AMP 인증"
 
 #: /views/partials/promo_banner.html:15
 msgid "AMP Conf. March 7/8."
-msgstr ""
+msgstr "AMP Conf. 3월 7/8"
 
 #: /content/learn/overview.yaml
 msgid "AMP HTML"
@@ -81,13 +94,15 @@ msgstr ""
 
 #: /content/docs/reference/components
 msgid "AMP HTML Specification"
-msgstr ""
+msgstr "AMP HTML 스펙"
 
 #: /content/learn/overview.yaml
 msgid ""
 "AMP HTML is basically HTML extended with custom AMP properties. The simplest "
 "AMP HTML file looks like this:"
 msgstr ""
+"AMP HTML은 기본적으로 커스텀 AMP 속성을 가진 확장 HTML입니다."
+"가장 간단한 AMP HTML 파일은 아래와 같습니다"
 
 #: /content/learn/overview.yaml
 msgid "AMP JS"
@@ -95,15 +110,15 @@ msgstr ""
 
 #: /content/support/faqs/overview.md /content/support/faqs/supported-platforms.md
 msgid "AMP Overview"
-msgstr ""
+msgstr "AMP 살펴보기"
 
 #: /content/includes/lists.yaml
 msgid "AMP Roadmap"
-msgstr ""
+msgstr "AMP 로드맵"
 
 #: /content/docs/reference/components
 msgid "AMP components"
-msgstr ""
+msgstr "AMP 컴포넌트"
 
 #: /content/learn/about-how.yaml
 msgid ""
@@ -117,6 +132,12 @@ msgid ""
 "possible, but prefetched as early as possible. That way things load very fast"
 " but CPU is only used when resources are actually shown to users."
 msgstr ""
+"AMP는 모든 리소스 다운로드를 제어하고, 리소스 로드의 우선순위를 지정하며,"
+"필요한 리소스만 로드하고, 늦게 로드되는 리소스를 프리패치합니다.\n"
+"AMP는 리소스를 다운로드할 때 이 다운로드를 최적화하므로, 현재 가장 중요한 리소스가 먼저 다운로드됩니다."
+"이미지와 광고는 사용자가 볼 가능성이 있거나 사용자가 빠르게 스크롤할 가능성이 있는 경우에만 다운로드됩니다.\n"
+"AMP는 또한 늦게 로드되는 리소스를 프리패치합니다. 리소스는 최대한 늦게 로드되지만 최대한 일찍 프리패치됩니다."
+"이런 식으로 로드는 매우 빨리 이루어지지만, 실제로 리소스가 사용자에게 표시될 때만 CPU가 사용됩니다."
 
 #: /content/learn/about-how.yaml
 msgid ""
@@ -132,12 +153,24 @@ msgid ""
 "that there will be an `amp-iframe` tag. AMP creates the iframe box before it "
 "even knows what it will include:"
 msgstr ""
+"AMP는 [라이트박스](/docs/reference/extended/amp-lightbox.html),"
+"[인스타그램 삽입](/docs/reference/extended/amp-instagram.html),"
+"[트윗](/docs/reference/extended/amp-twitter.html) 등에 대해 확장을 지원합니다."
+"이들은 추가적인 HTTP 요청을 필요로 하지만, 이들 요청은 페이지 레이아웃과 렌더링을 차단하지 않습니다.\n"
+"사용자 지정 스크립트를 사용하는 모든 페이지는 이 페이지에"
+"사용자 지정 태그가 포함될 것임을 AMP 시스템에게 알려야 합니다."
+"예를 들어, [`amp-iframe`](/docs/reference/extended/amp-iframe.html)"
+"스크립트는 `amp-iframe` 태그가 있을 것임을 시스템에게 알립니다."
+"AMP는 안에 무엇이 포함될지 알기도 전에 iframe 박스를 만듭니다.""
 
 #: /content/learn/about-how.yaml
 msgid ""
 "AMP is an open-source effort. We need your help to make AMP even faster. "
 "Learn [how to contribute](/docs/support/contribute.html)."
 msgstr ""
+"AMP는 오픈 소스 작업입니다. 여러분이 도움을 주시면 AMP가 한층 더 빨라집니다."
+"[기고 방법](/docs/support/contribute.html)에 대해 알아보세요."
+
 
 #: /content/includes/home.yaml
 msgid ""
@@ -146,10 +179,14 @@ msgid ""
 " 1.5B AMP pages have been published to date and 100+ leading analytics, ad "
 "tech and CMS providers support the AMP format."
 msgstr ""
+"AMP는 수천명의 개발자, 게시자 및 웹사이트, 유통 플랫폼 및 기술 업체와의 긴밀한 협력 덕에"
+"만들어졌습니다. 현재까지 1.5B 이상의 AMP 페이지가 게시되었으며 100개 이상의 주요 분석, 광고 기술"
+"및 CMS 제공 업체가 AMP 포맷을 지원합니다"
+
 
 #: /content/learn/overview.yaml
 msgid "AMP pages are built with 3 core components."
-msgstr ""
+msgstr "AMP 페이지는 3개의 핵심 컴포넌트로 구성합니다"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -159,10 +196,13 @@ msgid ""
 "engaged with and receptive to your brand’s messages, and more likely to take "
 "the actions you’re guiding them towards like completing a purchase."
 msgstr ""
+"AMP 페이지는 일반적으로 1초 이내에 로딩됩니다. 즉 타겟 고객이 AMP 페이지에 도달했을 때"
+"원하는 순간에 원하는 정보를 얻게됩니다. 이 결과, 브랜드 메시지에 적극적으로 참여하고,"
+"구매를 완료하는 등 원하는 행동을 이끌어낼 수 있습니다"
 
 #: /content/learn/overview.yaml
 msgid "AMP provides a great user experience across many platforms"
-msgstr ""
+msgstr "AMP는 다양한 플랫폼에서 멋진 사용자 경험을 제공합니다"
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -172,6 +212,10 @@ msgid ""
 "ads, AMP ads deliver great advertising experiences too, ensuring every "
 "interaction with a publisher’s brand is a compelling one."
 msgstr ""
+"AMP는 게시자의 웹 사이트 또는 Twitter, Google, Pinterest 같은 AMP 페이지로 연결되는"
+"플랫폼에서 사용자가 여정을 시작하는 위치와 상관 없이 콘텐츠 속도를 높입니다."
+"보다 빠르고 안전한 광고를 통해 AMP 광고는 훌륭한 광고 경험을 제공하여 게시자의 브랜드와의"
+"모든 상호작용을 보장할 수 있습니다"
 
 #: /content/includes/menu.yaml
 msgid "About"
@@ -179,11 +223,11 @@ msgstr "AMP에 대하여"
 
 #: /content/learn/who-uses-amp.yaml
 msgid "Ad Tech Platforms"
-msgstr ""
+msgstr "광고 기술 플랫폼"
 
 #: /content/includes/latest.yaml
 msgid "Add to Calendar"
-msgstr ""
+msgstr "캘린더에 추가하기"
 
 #: /content/includes/who.yaml
 msgid "Ads"
@@ -191,32 +235,32 @@ msgstr "광고"
 
 #: /content/docs/reference/components
 msgid "Ads & Analytics"
-msgstr ""
+msgstr "광고 & 애널리틱스"
 
 #: /content/docs/reference/components/ads-analytics
 msgid "Ads & Analytics - AMP components"
-msgstr ""
+msgstr "광고 & 애널리틱스 - AMP 컴포넌트"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Adtech success stories"
-msgstr ""
+msgstr "광고기술 성공 사례"
 
 #: /content/learn/who-uses-amp.yaml
 #: /content/learn/case-studies/category/advertisers.md
 msgid "Advertisers"
-msgstr ""
+msgstr "광고게시자"
 
 #: /content/learn/about-how.yaml
 msgid "All CSS must be inline and size-bound"
-msgstr ""
+msgstr "모든 CSS는 인라인이어야 하며 크기가 한정되어야 합니다."
 
 #: /content/learn/about-how.yaml
 msgid "Allow only asynchronous scripts"
-msgstr ""
+msgstr "비동기 스크립트만 허용"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Amplify your impact"
-msgstr ""
+msgstr "효과를 증폭시키세요"
 
 #: /content/includes/who.yaml
 msgid "Analytics"
@@ -224,13 +268,13 @@ msgstr "애널리틱스"
 
 #: /content/support/faqs/publisher-monetization.md
 msgid "Are publishers able to sell their own ad inventory?"
-msgstr ""
+msgstr "게시자가 자신의 광고 인벤토리를 판매할 수 있습니까?"
 
 #: /content/support/faqs/overview.md
 msgid ""
 "As a publisher, does making my content work for Accelerated Mobile Pages "
 "entail more work?"
-msgstr ""
+msgstr "게시자로써, Accelerated Mobile Pages를 위한 콘텐츠 작업이 더 많은 작업을 필요로합니까?"
 
 #: /content/includes/who.yaml
 msgid "Audio/Video"
@@ -238,31 +282,31 @@ msgstr "오디오/비디오"
 
 #: /content/docs/guides/author_develop
 msgid "Author / Develop"
-msgstr ""
+msgstr "작성자 / 개발"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Better advertising on a faster web."
-msgstr ""
+msgstr "빠른 웹상의 더 나은 광고"
 
 #: /content/includes/latest.yaml /content/latest/blog
 msgid "Blog"
-msgstr ""
+msgstr "블로그"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Boost your campaign performance with AMP Ads"
-msgstr ""
+msgstr "AMP 광고로 캠페인 효과 높이기"
 
 #: /content/includes/menu.yaml
 msgid "Brand Guidelines"
-msgstr ""
+msgstr "브랜드 가이드라인"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Build for a sustainable future"
-msgstr ""
+msgstr "지속 가능한 미래를 위한 빌드"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Build once, serve everywhere."
-msgstr ""
+msgstr "한번의 빌드, 모든곳에서 제공"
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -274,10 +318,15 @@ msgid ""
 "to them.  Similarly, AMP ads may be built once and run across all pages, "
 "including non-AMP pages."
 msgstr ""
+"AMP 페이지를 작성하는 건 간단하고 직관적입니다. 특히 Wordpress 및 Drupal 같이 널리 사용하는"
+"CMS를 사용하는 경우 전체 아카이브를 일단위로 변활할 수 있습니다."
+"AMP 포맷에 완전히 이식 가능하고 AMP 페이지가 사용자에 상관없이 일관되게 빠르기 때문에"
+"특별한 기술을 필요로 하지 않으며 각 배포 플랫폼에 맞게 코드를 최적화하지 않아도 됩니다."
+"마찬가지로 AMP 광고는 한번 작성하여 AMP가 아닌 페이지를 포함한 모든 페이지에서 실행가능합니다"
 
 #: /content/includes/home.yaml
 msgid "Building the future web, together."
-msgstr ""
+msgid "함께, 미래의 웹을 만듭니다."
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -287,6 +336,10 @@ msgid ""
 "AMP pages can be built once and distributed across a wide variety of "
 "distribution platforms simultaneously."
 msgstr ""
+"적절한 광고, 랜딩페이지나 웹 콘텐츠를 만드는 데는 시간이 필요합니다."
+"AMP 광고를 사용하면 광고가 AMP 및 AMP가 아닌 페이지 모두에서 제공할 수 있습니다."
+"즉 AMP 광고를 한번 구축하고 어디에서나 인상적인 브랜드 경험을 전달할 수 있습니다."
+"마찬가지로, AMP 페이지는 한 번 제작하여 다양한 플랫폼에서 동시에 배포할 수 있습니다"
 
 #: /content/support/faqs/overview.md
 msgid ""
@@ -294,6 +347,9 @@ msgid ""
 "files available to be crawled, indexed & displayed (subject to the robots "
 "exclusion protocol) and cached by third parties.\n"
 msgstr ""
+"콘텐츠 제작자는 AMP 포맷을 사용하여 AMP 파일의 콘텐츠를 크롤링, 색인 생성 및 표시"
+"(로봇 제외 프로토콜에 적용받음)하고 제3자가 캐싱할 수 있게합니다.\n"
+
 
 #: /content/includes/who.yaml
 msgid "CMS"
@@ -309,15 +365,22 @@ msgid ""
 "size is big enough for very sophisticated pages, it still requires the page "
 "author to practice good CSS hygiene."
 msgstr ""
+"CSS는 모든 렌더링을 차단하고, 페이지 로드를 차단하며, 팽창되는 경향이 있습니다."
+"AMP HTML 페이지에서는 인라인 스타일만 허용됩니다."
+"이 경우, 대부분의 웹페이지와 비교하여 1개 또는 대개"
+"그 이상의 HTTP 요청을 주요 렌더링 경로에서 제거합니다.\n"
+"또한 인라인 스타일 시트는 최대 크기가 50KB입니다."
+"이 크기는 매우 정교한 페이지에도 충분한 크기이지만,"
+"CSS를 양호한 상태로 유지하려면 페이지 작성자가 필요합니다."
 
 #: /content/includes/menu.yaml /content/learn/case-studies.html
 #: /content/learn/case-studies/category /views/about-casestudies.html:12
 msgid "Case Studies"
-msgstr ""
+msgstr "케이스 스터디"
 
 #: /content/support/developer.md
 msgid "Community Resources"
-msgstr ""
+msgstr "커뮤니티 리소스"
 
 #: /content/includes/who.yaml
 msgid "Content Platforms"
@@ -488,7 +551,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Flexibility and Results"
-msgstr ""
+msgstr "유연성과 결과"
 
 #: /content/includes/latest.yaml
 msgid "Follow AMP"
@@ -545,7 +608,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Higher Performance and Engagement"
-msgstr ""
+msgstr "높은 성능과 참여"
 
 #: /content/includes/menu.yaml /content/learn/about-how.yaml
 msgid "How AMP Works"
@@ -678,11 +741,11 @@ msgstr "더 알아보기"
 
 #: /content/includes/home.yaml
 msgid "Learn about AMP"
-msgstr ""
+msgstr "AMP에 대해 알아보기"
 
 #: /content/includes/home.yaml
 msgid "Learn how to build AMP pages and AMP Ads"
-msgstr ""
+msgstr "AMP 페이지와 AMP 광고 만드는 법"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -839,6 +902,9 @@ msgid ""
 "technology vendors to use, all while maintaining and improving key "
 "performance indicators."
 msgstr ""
+"게시자와 광고주는 핵심 성과 지표를 유지 관리 및 개선하면서"
+"콘텐츠를 표시하는 방법과 사용할 기술 공급자를 결정할 수 있습니다."
+
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -960,7 +1026,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Start Building"
-msgstr ""
+msgstr "개발 시작하기"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/publishers.md
@@ -1028,11 +1094,13 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid ""
-"The AMP Project is an open-source initiative aiming to make the web better "
-"for all. The project enables the creation of websites and ads that are "
-"consistently fast, beautiful and high-performing across devices and "
-"distribution platforms."
+"AMP 프로젝트는 모든 사람들이 웹을 더 잘 이용할 수 있도록 하는 오픈소스 프로젝트입니다. "
+"이 프로젝트를 통해 디바이스 및 배포 플랫폼 전반에 걸쳐 지속적으로 빠르고 아름다우며"
+"우수한 웹 사이트 및 광고를 만들 수 있습니다"
 msgstr ""
+"AMP 프로젝트는 모든 사람들이 웹을 더 잘 이용할 수 있도록 하는 오픈소스 프로젝트입니다. "
+"이 프로젝트를 통해 디바이스 및 배포 플랫폼 전반에 걸쳐 지속적으로 빠르고 아름다우며"
+"우수한 웹 사이트 및 광고를 만들 수 있습니다"
 
 #: /content/support/faqs/supported-platforms.md
 msgid ""
@@ -1338,6 +1406,9 @@ msgid ""
 "instantly, giving users a smooth, more engaging experience on mobile and "
 "desktop."
 msgstr ""
+"AMP 오픈 소스 형식으로 게시된 웹 페이지 및 광고는 사용자가 모바일 및 데스크톱에서"
+"원활하고 매력적인 경험을 할 수 있도록 즉시 로드합니다"
+
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -1351,7 +1422,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "What AMP Provides"
-msgstr ""
+msgstr "AMP가 제공하는 것"
 
 #: /content/support/faqs/overview.md
 msgid "What are the benefits of Accelerated Mobile Pages?"
@@ -1439,16 +1510,21 @@ msgid ""
 "“Across Teads’ publisher portfolio, video ads perform significantly better on"
 " AMP pages than on the traditional mobile web.”"
 msgstr ""
+"“Teads’ 게시자 포트폴리오에서, 동영상 광고는 AMP 페이지에서 기본 모바일 웹보다 훨씬 뛰어납니다”"
+
 
 #: /content/includes/home.yaml
 msgid ""
 "“If our site takes a long time to load, it doesn’t matter how great our "
 "journalism is, some people will leave the page before they see what’s there.”"
 msgstr ""
+"“우리 사이트에 로드하는 데 시간이 오래 걸리는 경우, 저널리즘이 얼마나 큰 지 중요하지 않습니다.
+일부 사람들은 내용을 보기 전에 페이지를 떠납니다.”"
 
 #: /content/includes/home.yaml
 msgid ""
 "“We see our work on AMP as furthering the business need of providing a fast, "
 "clean user experience to our audience.”"
 msgstr ""
-
+"“AMP에 대한 우리의 작업이 우리의 청중에게 빠르고 깨끗한 사용자 경험을 제공해야한다는
+비즈니스 필요성을 증대시키는 것으로 나타났습니다.”"
