@@ -329,10 +329,11 @@ stylesheet: pages/amp-conf.css
             var endTime = new Date();
             endTime.setTime(startTime.getTime() + duration*60*1000);
             var nowTime = new Date();
+            nowTime.setTime( nowTime.getTime() + 5*60*60*1000 ); // shifts it to NYC time
             //var nowTime = new Date('2017-03-07T15:00:00'); // Test time
 
-            if(nowTime.getTime() >= startTime.getTime() && nowTime.getTime() < endTime.getTime()) {
-
+            if(nowTime  >= startTime  && nowTime < endTime) {
+ 
                 // Make sure we switch to the right day tab
                 scheduleTabs[dayIndex].click();
 
@@ -350,7 +351,7 @@ stylesheet: pages/amp-conf.css
                 var speakerNow = document.getElementById('livestream-now-speaker');
                 titleNow.innerHTML = element.parentNode.getElementsByTagName('h5')[0].innerHTML;
                 speakerNow.innerHTML = element.parentNode.getElementsByTagName('small')[0] ? element.parentNode.getElementsByTagName('small')[0].innerHTML : '';
-                minutesNow.innerHTML = ((endTime.getTime() - nowTime.getTime()) / (1000 * 60));
+                minutesNow.innerHTML = parseInt(((endTime.getTime() - nowTime.getTime()) / (1000 * 60)));
 
                 if(nextElement) {
                     var titleNext = document.getElementById('livestream-next-title');
@@ -365,7 +366,7 @@ stylesheet: pages/amp-conf.css
                 }
 
                 currentLive = element.parentNode;
-
+              return true;
             }
         };
 
