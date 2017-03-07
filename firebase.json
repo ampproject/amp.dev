@@ -132,6 +132,11 @@
         "type": 301
       },
       {
+        "source": "/docs/guides/login-paywalls",
+        "destination": "/docs/get_started/login_requiring",
+        "type": 301
+      },
+      {
         "source": "/docs/reference/components/amp-pixel?(.html)",
         "destination": "/docs/reference/components/ads/amp-pixel.html",
         "type": 301
