@@ -23,8 +23,8 @@ results:
 
 logo:
   src: "case-studies/terra_logo.png"
-  width: 150
-  height: 68
+  width: 128
+  height: 95
 download: "case-studies/terra.pdf"
 
 ---
