@@ -3,6 +3,7 @@ $order: 7
 $title: Hearst
 $date: January 24, 2017
 $category: Publishers
+$parent: /content/learn/case-studies.html
 class: case-study post-detail
 
 components:

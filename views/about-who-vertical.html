@@ -37,13 +37,16 @@
               src="/static/img/about/who-use-amp/{{doc.hero.lines_img}}">
           </amp-img>
           {% endif %}
-          {% if doc.hero.hero_img %}
+          {% if doc.hero.hero_img_base %}
           <amp-img class="phones"
               noloading
               width="{{doc.hero.hero_img_width}}"
               height="{{doc.hero.hero_img_height}}"
               layout=responsive
-              src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
+                srcset="{{doc.hero.hero_img_base + '.png ' ~ doc.hero.hero_img_width ~ 'w'}},
+                        {{doc.hero.hero_img_base + '@1_5x.png ' ~ (doc.hero.hero_img_width * 0.66) ~ 'w'}},
+                        {{doc.hero.hero_img_base + '@1x.png ' ~ (doc.hero.hero_img_width * 0.5) ~ 'w'}}"
+                src="{{doc.hero.hero_img_base + '.png'}}">
           </amp-img>
           {% endif %}
         </div>

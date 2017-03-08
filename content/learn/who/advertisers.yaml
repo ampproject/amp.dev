@@ -13,7 +13,7 @@ hero:
   hero_icon: advertisers/advertisers_icon_intro.svg
   hero_icon_width: 64
   hero_icon_height: 58
-  hero_img: advertisers/advertiser_phone_wired.png
+  hero_img_base: /static/img/about/who-use-amp/advertisers/advertiser_phone_wired
   hero_img_width: 1742
   hero_img_height: 1622
   triangle_img: advertisers/advertisers_bg.svg

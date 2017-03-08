@@ -11,6 +11,33 @@
             "value": "max-age=604800"
           }
         ]
+      },
+      {
+        "source": "service-worker.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "/amp-conf-2017/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "/amp-conf-2017-pwa/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
       }
     ],
     "redirects": [
@@ -102,6 +129,11 @@
       {
         "source": "/docs/guides/engagement?(.html)",
         "destination": "/docs/guides/deploy/engagement.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/login-paywalls",
+        "destination": "/docs/get_started/login_requiring",
         "type": 301
       },
       {

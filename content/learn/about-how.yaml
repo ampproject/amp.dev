@@ -16,7 +16,7 @@ video: hVRkG1CQScA
 
 points:
   pointlist:
-    - title@: Allow only asynchronous scripts
+    - title@: Execute all AMP JavaScript asynchronously
       description@: |
         JavaScript is powerful,
         it can modify just about every aspect of the page,

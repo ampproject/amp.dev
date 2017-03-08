@@ -120,6 +120,16 @@
 header .language {
   align-self: center;
   margin-left: 12px;
+
+  @media only screen and (max-height: 775px) {
+    .others-inner div {
+      padding: 7px 15px;
+
+      a {
+        display: block;
+      }
+    }
+  }
 }
 
 amp-sidebar {

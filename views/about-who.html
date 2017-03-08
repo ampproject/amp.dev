@@ -27,7 +27,10 @@
           width=3104
           height=1926
           layout=responsive
-          src="/static/img/about/who-use-amp/{{doc.hero.hero_img}}">
+            srcset="{{doc.hero.hero_img_base + '.png 3104w'}},
+                    {{doc.hero.hero_img_base + '@1_5x.png 2049w'}},
+                    {{doc.hero.hero_img_base + '@1x.png 1552w'}}"
+            src="{{doc.hero.hero_img_base + '.png'}}">
       </amp-img>
     </div>
     <section class="hero">
