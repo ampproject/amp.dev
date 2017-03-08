@@ -12,6 +12,15 @@ tweets:
   - origin_name: AMP Project
     origin_id: AMPhtml
     origin_href: https://twitter.com/AMPhtml
+    tweet_id: 839098305539936258
+    date_data: 2017-03-07T08:00:00-05:00
+    date: March 7, 2017
+    text: >
+      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">We are 1 hour away from the <a href="https://twitter.com/hashtag/AMPConf?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMPConf</b></a> Keynote! Join us at our Live Stream here: <a href="https://t.co/4VBTxHTGMH" rel="nofollow noopener" dir="ltr" data-expanded-url="https://goo.gl/UrD84g" class="twitter-timeline-link" target="_blank" title="https://goo.gl/UrD84g"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">goo.gl/UrD84g</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible"> </span></span></a></p>
+
+  - origin_name: AMP Project
+    origin_id: AMPhtml
+    origin_href: https://twitter.com/AMPhtml
     tweet_id: 838888899434983426
     date_data: 2017-03-06T18:07:54-05:00
     date: March 6, 2017
@@ -35,12 +44,3 @@ tweets:
     date: March 6, 2017
     text: >
       <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">We’re so excited!</p>
-
-  - origin_name: AMP Project
-    origin_id: AMPhtml
-    origin_href: https://twitter.com/AMPhtml
-    tweet_id: 837754455483420675
-    date_data: 2017-03-03T15:00:01-05:00
-    date: March 3, 2017
-    text: >
-      <p class="TweetTextSize TweetTextSize--16px js-tweet-text tweet-text" lang="en" data-aria-label-part="0">We hope you are as excited about the talks at <a href="https://twitter.com/hashtag/AMPConf?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMPConf</b></a> as we are! Full lineup can be found here:<a href="https://t.co/JPOg3NaqqH" rel="nofollow noopener" dir="ltr" data-expanded-url="https://goo.gl/Ik7lCN" class="twitter-timeline-link" target="_blank" title="https://goo.gl/Ik7lCN"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">goo.gl/Ik7lCN</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible"> </span></span></a><a href="https://t.co/ryUGjCwcb9" class="twitter-timeline-link u-hidden" data-pre-embedded="true" dir="ltr">pic.twitter.com/ryUGjCwcb9</a></p>
