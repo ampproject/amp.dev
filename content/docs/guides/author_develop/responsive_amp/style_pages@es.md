@@ -3,7 +3,7 @@ $title: CSS compatibles
 ---
 
 Igual que en todas las páginas web, se aplica estilo a las páginas de AMP con CSS, pero no se puede hacer referencia a hojas de estilo externas
-(con la excepción de las [fuentes personalizadas](#the-custom-fonts-exception)).
+(con la excepción de las [fuentes personalizadas](#la-excepcion-de-las-fuentes-personalizadas)).
 También hay ciertos estilos que no están permitidos por cuestiones de rendimiento;
 los atributos de estilo insertados no están permitidos.
 
