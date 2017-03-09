@@ -1,4 +1,4 @@
-$title: Who is AMP for?
+$title@: Who is AMP for?
 $order: 1
 class: about-who
 $view: /views/about-who.html
