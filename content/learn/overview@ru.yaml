@@ -1,15 +1,15 @@
 core:
-  title@: AMP pages are built with 3 core components.
+  title: AMP pages are built with 3 core components.
   components:
-    - title@: AMP HTML
-      subtitle@: |
+    - title: AMP HTML
+      subtitle: |
         **AMP HTML** представляет собой разметку HTML с некоторыми ограничениями для повышения надежности работы
         и некоторыми расширениями для создания содержимого, выходящего за пределы базовой разметки HTML.
-      description@: |
+      description: |
         AMP HTML является базовой разметкой HTML, дополненной персонализированными свойствами AMP.
         Простейший файл AMP HTML может выглядеть следующим образом:
       example: /content/includes/html-example.md
-      description2@: |
+      description2: |
         Хотя большинство тегов в странице AMP HTML являются обычными тегами HTML,
         некоторые теги HTML заменяются тегами AMP (см. также
         [Теги HTML в спецификации AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
@@ -18,10 +18,10 @@ core:
         <p>Например, тег [`amp-img`](/docs/reference/amp-img.html)
         обеспечивает полную поддержку атрибута `srcset` даже в тех браузерах, которые пока его не поддерживают.
         Узнайте, как [создать свою первую страницу AMP HTML](/docs/get_started/create.html).
-    - title@: AMP JS
-      subtitle@: |
+    - title: AMP JS
+      subtitle: |
         Библиотека **AMP JS** обеспечивает быструю визуализацию страниц AMP HTML.
-      description@: |
+      description: |
         [Библиотека AMP JS](https://github.com/ampproject/amphtml/tree/master/src) реализует
         все [практические методы эффективного применения AMP](/docs/get_started/technical_overview.html),
         управляет загрузкой ресурсов и предоставляет упомянутые выше персонализированные теги
@@ -29,10 +29,10 @@ core:
         <p>Одной из наиболее значительных оптимизаций является асинхронная обработка данных из внешних источников, поэтому никакие элементы страницы не могут блокировать ее визуализацию.
         <p>Другие способы повышения производительности включают в себя изолирование всех встроенных фреймов, предварительный расчет макета каждого элемента страницы перед загрузкой ресурсов и отключение медленных селекторов CSS.
         <p>Чтобы получить дополнительную информацию не только по [методам оптимизации](/docs/get_started/technical_overview.html), но и об имеющихся ограничениях, [ознакомьтесь со спецификацией AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
-    - title@: AMP Cache
-      subtitle@: |
+    - title: AMP Cache
+      subtitle: |
         Дополнительный кеш **Google AMP Cache** используется для предоставления страниц AMP HTML.
-      description@: |
+      description: |
         Кеш Google AMP Cache представляет собой сеть на основе прокси-серверов
         для предоставления всех допустимых документов AMP.
         Этот кеш получает страницы AMP HTML, кеширует их и автоматически повышает скорость их отображения.
