@@ -23,5 +23,5 @@ En el caso de contenido publicado desde cualquier otro dominio, los experimentos
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-Los archivos de AMP que incluyan funciones experimentales no superarán la [validación de AMP](/docs/guides/validate.html).
+Los archivos de AMP que incluyan funciones experimentales no superarán la [validación de AMP](/es/docs/guides/debug/validate.html).
 Quita estos componentes experimentales de los documentos de AMP listos para la producción.
