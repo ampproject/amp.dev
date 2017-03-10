@@ -89,7 +89,7 @@ usando propiedades comunes de CSS. Por ejemplo:
 **Importante:**
 Comprueba que los estilos estén admitidos en AMP, ya que
 algunos estilos no lo están por cuestiones de rendimiento
-(consulta también [CSS compatibles](/es/docs/guides/responsive/style_pages.html)).
+(consulta también [CSS compatibles](/es/docs/guides/author-develop/responsive/style_pages.html)).
 
 ## Elementos de tamaño y posición
 
@@ -104,7 +104,7 @@ Establece el diseño como adaptable.
 Esto ajusta el tamaño del elemento a la anchura del elemento contenedor
 y cambia la altura automáticamente a la relación de aspecto determinada por los atributos de anchura y altura.
 
-Obtén más información acerca de [los diseños compatibles con AMP](/es/docs/guides/responsive/control_layout.html).
+Obtén más información acerca de [los diseños compatibles con AMP](/es/docs/guides/author-develop/responsive/control_layout.html).
 
 ## Valida tus estilos y diseños
 
@@ -113,11 +113,11 @@ los valores de diseño y CCS de tu página.
 
 El validador confirma que el CSS de la página no exceda el límite de 50.000 bytes,
 comprueba que no haya estilos no permitidos y garantiza que el diseño de la página sea compatible y el formato sea correcto.
-Consulta también esta lista completa de [errores de estilo y diseño](/es/docs/reference/validation_errors.html#style-and-layout-errors).
+Consulta también esta lista completa de [errores de estilo y diseño](/es/docs/reference/validation_errors#errores-de-estilo-y-de-diseno).
 
 Ejemplo de error en la consola de una página con CSS que excede el límite de 50.000 bytes:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Obtén más información acerca de cómo [validar las páginas de AMP](/es/docs/guides/validate.html),
+Obtén más información acerca de cómo [validar las páginas de AMP](/es/docs/guides/debug/validate.html),
 incluida la forma de localizar los errores de estilo y solucionarlos.
