@@ -1,12 +1,12 @@
-$title: AMP는 누구를 위해 있나?
+$title: AMP는 어떤 이들을 위해 존재할까요?
 $order: 1
 class: about-who
 $view: /views/about-who.html
 $parent: /content/learn/overview.yaml
 
 hero:
-  title@: AMP는 누구를 위해 있나?
-  subtitle@: AMP를 사용하여 850,000개 도메인, 주요 플랫폼 및 100개 이상의 기술 제공 업체로 구성된 에코시스템에 참여하세요.
+  title@: AMP는 어떤 이들을 위해 존재할까요?
+  subtitle@: AMP를 사용하여 850,000개 도메인, 주요 플랫폼 및 100개 이상의 기술 제공 업체로 구성된 생태계에 참여하세요.
   hero_img_base: /static/img/about/who-use-amp/who_phones_hero
   line_img: who_lines1.svg
   triangle_img: hero_triangle.png
@@ -34,5 +34,5 @@ cards:
 
 cta:
   title@: 성공 사례
-  link_text@: 케이스 스터디 읽기
+  link_text@: 사례 보기
   link_url: /content/learn/case-studies.html
