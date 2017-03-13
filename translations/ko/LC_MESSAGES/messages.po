@@ -327,7 +327,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Building the future web, together."
-msgid "함께 앞으로의 웹을 만들어 나갑니다.ㅎ"
+msgstr "함께 앞으로의 웹을 만들어 나갑니다.ㅎ"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
