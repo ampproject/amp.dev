@@ -22,7 +22,7 @@
                       {% for item in menuCollection.docs(recursive=false, locale=doc.locale) %}
                       <li{% if item.goto %} class="external"{% endif %}>
                         {% if item.goto_internal %}
-                          <a href="{{g.doc(item.goto_internal).url.path}}">{{_(item.title)}}</a>
+                          <a href="{{g.doc(item.goto_internal, locale=doc.locale).url.path}}">{{_(item.title)}}</a>
                         {% else %}
                           <a href="{{item.goto or item.url.path}}" {% if item.goto %} target="_blank" {% endif %}>{{_(item.title)}}</a>
                         {% endif %}
@@ -36,7 +36,7 @@
                 {% set menuCollection = g.collection(entry.collection) %}
                 {% for item in menuCollection.docs(recursive=false, locale=doc.locale) %}
                   {% if item.goto_internal %}
-                    <a href="{{g.doc(item.goto_internal).url.path}}">{{_(item.title)}}</a>
+                    <a href="{{g.doc(item.goto_internal, locale=doc.locale).url.path}}">{{_(item.title)}}</a>
                   {% else %}
                     <a href="{{item.goto or item.url.path}}">{{_(item.title)}}</a>
                   {% endif %}
