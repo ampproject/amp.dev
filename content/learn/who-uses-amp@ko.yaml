@@ -1,4 +1,4 @@
-$title: AMP는 어떤 이들을 위해 존재할까요?
+$title@: AMP는 어떤 이들을 위해 존재할까요?
 $order: 1
 class: about-who
 $view: /views/about-who.html
@@ -12,7 +12,7 @@ hero:
   triangle_img: hero_triangle.png
 
 cards:
-  - name@: 게시자
+  - name@: Publishers
     cta@: Learn More
     icon: who_icon_publishers.svg
 
@@ -20,11 +20,11 @@ cards:
   #   cta@: Learn More
   #   icon: card_smb.svg
 
-  - name@: 광고 기술 플랫폼
+  - name@: Ad Tech Platforms
     cta@: Learn More
     icon: who_icon_adtech.svg
 
-  - name@: 광고게시자
+  - name@: Advertisers
     cta@: Learn More
     icon: who_icon_advertisers.svg
 
@@ -33,6 +33,6 @@ cards:
   #   icon: card_developers.svg
 
 cta:
-  title@: 성공 사례
-  link_text@: 사례 보기
+  title@: Success stories
+  link_text@: Read case studies
   link_url: /content/learn/case-studies.html
