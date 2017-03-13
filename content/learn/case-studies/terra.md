@@ -49,7 +49,7 @@ Working with the Terra Brazil team, Souza and his colleagues began creating the 
     <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/terra_framed2.png"></amp-img>
 </div>
 
-The initial results on Terra.com.br, which supports their Brazilian market, are impressive. AMP pages load 2X times faster than non-AMP mobile pages. As a result, users are spending 2x more time on AMP pages than non-AMP mobile pages. Recently, Terra began building advertising solutions into its AMP pages, which drove an increase in clicks and clickthrough rates. The first two months of results speak for themselves:
+The initial results on Terra.com.br, which supports their Brazilian market, are impressive. AMP pages load 2x faster than non-AMP mobile pages. As a result, users are spending 2x more time on AMP pages than non-AMP mobile pages. Recently, Terra began building advertising solutions into its AMP pages, which drove an increase in clicks and clickthrough rates. The first two months of results speak for themselves:
 
 - 3,175% increase in total clicks on AMP pages
 - 33% increase in clickthrough rate on AMP pages
