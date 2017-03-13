@@ -33,6 +33,6 @@ cards:
   #   icon: card_developers.svg
 
 cta:
-  title@: Success stories
-  link_text@: Read case studies
+  title@: 성공 사례
+  link_text@: 사례 보기
   link_url: /content/learn/case-studies.html
