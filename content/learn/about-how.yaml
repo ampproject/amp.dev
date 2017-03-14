@@ -9,15 +9,15 @@ components:
   - youtube
 
 hero:
-  title@: How AMP Works
-  subtitle@: "The following optimizations combined are the reason AMP pages are so fast they appear to load instantly:<p>If you'd rather listen than read, the following video by AMP engineering lead Malte Ubl gives a similar overview than the following paragraphs."
+  title: How AMP Works
+  subtitle: "The following optimizations combined are the reason AMP pages are so fast they appear to load instantly:<p>If you'd rather listen than read, the following video by AMP engineering lead Malte Ubl gives a similar overview than the following paragraphs."
 
 video: hVRkG1CQScA
 
 points:
   pointlist:
-    - title@: Execute all AMP JavaScript asynchronously
-      description@: |
+    - title: Execute all AMP JavaScript asynchronously
+      description: |
         JavaScript is powerful,
         it can modify just about every aspect of the page,
         but it can also block DOM construction and delay page rendering
@@ -34,8 +34,8 @@ points:
         For example, if third-party JS uses the
         [super-bad-for-performance `document.write` API](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/),
         it does not block rendering the main page.
-    - title@: Size all resources statically
-      description@: |
+    - title: Size all resources statically
+      description: |
         External resources such as images, ads or iframes must state their size in the HTML
         so that AMP can determine each element’s size and position before resources are downloaded.
         AMP loads the layout of the page without waiting for any resources to download.
@@ -44,8 +44,8 @@ points:
         ([+fonts](#font-triggering-must-be-efficient)).
         Since AMP is optimized to avoid expensive style recalculations and layouts in the browser,
         there won’t be any re-layout when resources load.
-    - title@: Don’t let extension mechanisms block rendering
-      description@: |
+    - title: Don’t let extension mechanisms block rendering
+      description: |
         AMP doesn’t let extension mechanisms block page rendering.
         AMP supports extensions for things like
         [lightboxes](/docs/reference/extended/amp-lightbox.html),
@@ -59,8 +59,8 @@ points:
         script tells the system that there will be an `amp-iframe` tag.
         AMP creates the iframe box before it even knows what it will include:
       example: /content/includes/amp-iframe.md
-    - title@: Keep all third-party JavaScript out of the critical path
-      description@: |
+    - title: Keep all third-party JavaScript out of the critical path
+      description: |
         Third-party JS likes to use synchronous JS loading.
         They also like to `document.write` more sync scripts.
         For example, if you have five ads on your page, and each of them cause three synchronous loads,
@@ -73,8 +73,8 @@ points:
         <p>The time it takes to do style-recalculations and layouts are restricted by DOM size,
         so the iframe recalculations are very fast compared
         to recalculating styles and layout for the page.
-    - title@: All CSS must be inline and size-bound
-      description@: |
+    - title: All CSS must be inline and size-bound
+      description: |
         CSS blocks all rendering, it blocks page load, and it tends to get bloated.
         In AMP HTML pages, only inline styles are allowed.
         This removes 1 or often more HTTP requests from the critical rendering path
@@ -82,9 +82,9 @@ points:
         <p>Also, the inline style sheet has a maximum size of 50 kilobytes.
         While this size is big enough for very sophisticated pages,
         it still requires the page author to practice good CSS hygiene.
-    - title@: Font triggering must be efficient
+    - title: Font triggering must be efficient
       id: font-triggering-must-be-efficient
-      description@: |
+      description: |
         Web fonts are super large, so
         [web font optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)
         is crucial to performance.
@@ -94,16 +94,16 @@ points:
         This is only possible because all JS in AMP has the async attribute
         and only inline style sheets are allowed;
         there’s no HTTP requests blocking the browser from downloading fonts.
-    - title@: Minimize style recalculations
-      description@: |
+    - title: Minimize style recalculations
+      description: |
         Each time you measure something, it triggers style recalculations which are expensive
         because the browser has to layout the entire page.
         In AMP pages, all DOM reads happen first before all the writes.
         This ensures there’s the max of one recalc of styles per frame.
         <p>Learn more about impact of style and layout recalculations on
         [rendering performance](https://developers.google.com/web/fundamentals/performance/rendering/).
-    - title@: Only run GPU-accelerated animations
-      description@: |
+    - title: Only run GPU-accelerated animations
+      description: |
         The only way to have fast optimizations is to run them on the GPU.
         GPU knows about layers, it knows how to perform some things on these layers,
         it can move them, it can fade them, but it can’t update the page layout;
@@ -113,8 +113,8 @@ points:
         so that page layout isn’t required.
         Learn more about
         [using transform and opacity for animation changes](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count).
-    - title@: Prioritize resource loading
-      description@: |
+    - title: Prioritize resource loading
+      description: |
         AMP controls all resource downloads: it prioritizes resource loading,
         loading only what’s needed, and prefetches lazy-loaded resources.
         <p>When AMP downloads resources, it optimizes downloads
@@ -125,8 +125,8 @@ points:
         Resources are loaded as late as possible, but prefetched as early as possible.
         That way things load very fast but CPU is only used
         when resources are actually shown to users.
-    - title@: Load pages in an instant
-      description@: |
+    - title: Load pages in an instant
+      description: |
         The new [preconnect API](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
         is used heavily to ensure HTTP requests are as fast as possible when they are made.
         With this,
@@ -142,8 +142,8 @@ points:
         resources that might use a lot of CPU (like third-party iframes) do not get downloaded.
         <p>Learn more about
         [why AMP HTML doesn’t take full advantage of the preload scanner](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e).
-    - title@: Help make AMP faster
-      description@: |
+    - title: Help make AMP faster
+      description: |
         AMP is an open-source effort.
         We need your help to make AMP even faster.
         Learn [how to contribute](/docs/support/contribute.html).

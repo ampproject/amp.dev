@@ -1,13 +1,13 @@
 hero:
-  title@: Accélération de la performance avec AMP
-  subtitle@: |
+  title: Accélération de la performance avec AMP
+  subtitle: |
     La combinaison de toutes les optimisations suivantes est la raison pour laquelle les pages AMP sont tellement rapides qu'elles semblent se charger instantanément :
     <p>Si vous préférez l'écoute à la lecture, la vidéo suivante présentée par l'ingénieur AMP en chef, Malte Ubl, aborde les mêmes informations que les paragraphes suivants.
 
 points:
   pointlist:
-    - title@: Autoriser uniquement les scripts asynchrones
-      description@: |
+    - title: Autoriser uniquement les scripts asynchrones
+      description: |
         JavaScript est puissant.
         Il peut modifier pratiquement tous les aspects de la page,
         mais aussi bloquer la construction DOM et retarder le rendu de la page
@@ -24,8 +24,8 @@ points:
         Par exemple, si un script JS tiers utilise l'
         [API `document.write` à fort impact négatif sur la performance](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/),
         il ne bloque pas le rendu de la page principale.
-    - title@: Dimensionner toutes les ressources de manière statique
-      description@: |
+    - title: Dimensionner toutes les ressources de manière statique
+      description: |
         Les ressources externes, comme les images, les publicités ou les iframes, doivent déclarer leur taille dans le code HTML
         pour permettre à AMP de déterminer la taille et la position de chaque élément avant leur téléchargement.
         AMP charge la disposition de la page sans attendre le téléchargement des ressources.
@@ -34,8 +34,8 @@ points:
         ([+ les polices](#font-triggering-must-be-efficient)).
         Dans la mesure où AMP est optimisé pour éviter les coûteux recalculs de style et dispositions dans le navigateur,
         aucune re-disposition n'est nécessaire lors du chargement des ressources.
-    - title@: Empêcher les mécanismes d'extension de bloquer le rendu
-      description@: |
+    - title: Empêcher les mécanismes d'extension de bloquer le rendu
+      description: |
         AMP empêche les mécanismes d'extension de bloquer le rendu des pages.
         AMP prend en charge les extensions d'objets tels que les
         [mosaïques](/docs/reference/extended/amp-lightbox.html), les
@@ -49,8 +49,8 @@ points:
         indique au système qu'il y aura une balise `amp-iframe`.
         AMP crée le cadre iframe avant même de savoir ce qu'il contiendra :
       example: /content/includes/amp-iframe.md
-    - title@: Écarter le JavaScript tiers du processus principal
-      description@: |
+    - title: Écarter le JavaScript tiers du processus principal
+      description: |
         Le script JS tiers aime utiliser le chargement JS synchrone.
         Il aime également appliquer `document.write` à d'autres scripts synchrones.
         Par exemple, si vous avez cinq publicités, chacune exécutant
@@ -63,8 +63,8 @@ points:
         <p>Les recalculs de style et les dispositions dépendent de la taille du DOM ;
         aussi, les recalculs d'iframe sont très rapides
         comparés aux recalculs de styles et à la disposition de la page.
-    - title@: Tout le style CSS doit être en ligne et limité en taille
-      description@: |
+    - title: Tout le style CSS doit être en ligne et limité en taille
+      description: |
         Le CSS bloque tout le rendu. Il bloque le chargement des pages et a tendance à « gonfler ».
         Dans les pages AMP HTML, seuls les styles en ligne sont autorisés.
         Une ou souvent plusieurs requêtes HTTP sont ainsi supprimées du processus de rendu principal,
@@ -72,9 +72,9 @@ points:
         <p>De plus, la taille des feuilles de style en ligne est limitée à 50 Ko maximum.
         Même si cette taille est suffisante pour les pages très complexes,
         le créateur de la page doit malgré tout appliquer un style CSS propre.
-    - title@: Le déclenchement de police doit être efficace
+    - title: Le déclenchement de police doit être efficace
       id: font-triggering-must-be-efficient
-      description@: |
+      description: |
         Les polices Web étant très volumineuses,
         l'[optimisation des polices Web](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)
         est essentielle pour la performance.
@@ -84,16 +84,16 @@ points:
         En effet, tous les scripts JS dans AMP contiennent l'attribut « asynch »
         et seules les feuilles de style en ligne sont autorisées.
         Aucune requête HTTP n'empêche donc le navigateur de télécharger les polices.
-    - title@: Réduire au minimum les recalculs de style
-      description@: |
+    - title: Réduire au minimum les recalculs de style
+      description: |
         Dès lors que vous effectuez des mesures, de coûteux recalculs de style sont exécutés
         car le navigateur doit définir la disposition de la page entière.
         Dans les pages AMP, toutes les lectures DOM se produisent avant toutes les écritures.
         Ainsi, un seul recalcul de style maximum est effectué par cadre.
         <p>Pour en savoir plus sur l'impact des recalculs de style et de disposition, voir
         [performances de rendu](https://developers.google.com/web/fundamentals/performance/rendering/).
-    - title@: Exécuter uniquement les animations accélérées par GPU
-      description@: |
+    - title: Exécuter uniquement les animations accélérées par GPU
+      description: |
         La seule façon d'obtenir des optimisations rapides, c'est de les exécuter sur le GPU.
         Le GPU connaît les couches, il sait comment exécuter certaines choses sur ces couches,
         il peut les déplacer, il peut les diminuer, mais il ne peut pas actualiser
@@ -103,8 +103,8 @@ points:
          ; aucune disposition de la page n'est ainsi requise.
         En savoir plus sur
         l'[utilisation des propriétés transform et opacity pour les changements sur les animations](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count).
-    - title@: Hiérarchiser le chargement des ressources
-      description@: |
+    - title: Hiérarchiser le chargement des ressources
+      description: |
         AMP contrôle tous les téléchargements de ressources : il hiérarchise
         le chargement, ne chargeant que ce qui est nécessaire, et pré-extrait les ressources les plus lentes à charger.
         <p>Lorsqu'AMP télécharge des ressources, il optimise ces téléchargements
@@ -115,8 +115,8 @@ points:
         Les ressources sont chargées le plus tard possible, mais pré-extraites le plus tôt possible.
         De cette façon, le chargement est très rapide ; le processeur
         n'est utilisé que lorsque les ressources sont effectivement affichées aux utilisateurs.
-    - title@: Charger les pages instantanément
-      description@: |
+    - title: Charger les pages instantanément
+      description: |
         La nouvelle [API de pré-connexion](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
         est largement utilisée pour garantir des requêtes HTTP aussi rapides que possible dès leur lancement.
         Ainsi,
@@ -132,8 +132,8 @@ points:
         les ressources susceptibles d'utiliser une grande quantité de ressources du processeur (telles que les iframes tiers) ne sont pas téléchargées.
         <p>En savoir plus sur
         les [raisons pour lesquelles AMP HTML n'exploite pas pleinement le scanner de pré-chargement](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e).
-    - title@: Contribuer à l'accélération d'AMP
-      description@: |
+    - title: Contribuer à l'accélération d'AMP
+      description: |
         AMP est une initiative open-source.
         Nous avons besoin de votre aide pour rendre AMP encore plus rapide.
         Découvrez [comment contribuer](/docs/support/contribute.html).

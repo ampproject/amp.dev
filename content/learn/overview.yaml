@@ -18,16 +18,16 @@ hero:
   cta_url: '#video'
 
 core:
-  title@: AMP pages are built with 3 core components.
+  title: AMP pages are built with 3 core components.
   components:
-    - title@: AMP HTML
-      subtitle@: |
+    - title: AMP HTML
+      subtitle: |
         **AMP HTML** is HTML with some restrictions for reliable performance
       description@: |
         AMP HTML is basically HTML extended with custom AMP properties.
         The simplest AMP HTML file looks like this:
       example: /content/includes/html-example.md
-      description2@: |
+      description2: |
         Though most tags in an AMP HTML page are regular HTML tags,
         some HTML tags are replaced with AMP-specific tags (see also
         [HTML Tags in the AMP spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
@@ -36,10 +36,10 @@ core:
         <p>For example, the [`amp-img`](/docs/reference/amp-img.html) tag
         provides full `srcset` support even in browsers that don’t support it yet.
         Learn how to [create your first AMP HTML page](/docs/get_started/create.html).
-    - title@: AMP JS
-      subtitle@: |
+    - title: AMP JS
+      subtitle: |
           The **AMP JS** library ensures the fast rendering of AMP HTML pages.
-      description@: |
+      description: |
         The [AMP JS library](https://github.com/ampproject/amphtml/tree/master/src) implements
         all of [AMP's best performance practices](/docs/get_started/technical_overview.html),
         manages resource loading and gives you the custom tags mentioned above,
@@ -47,10 +47,10 @@ core:
         <p>Among the biggest optimizations is the fact that it makes everything that comes from external resources asynchronous, so nothing in the page can block anything from rendering.
         <p>Other performance techniques include the sandboxing of all iframes, the pre-calculation of the layout of every element on page before resources are loaded and the disabling of slow CSS selectors.
         <p>To learn more about not just the [optimizations](/docs/get_started/technical_overview.html) but the limitations, [read the AMP HTML specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
-    - title@: AMP Cache
-      subtitle@: |
+    - title: AMP Cache
+      subtitle: |
           The **Google AMP Cache** can be used to serve cached AMP HTML pages.
-      description@: |
+      description: |
           The [Google AMP Cache](https://developers.google.com/amp/cache/) is a proxy-based content delivery network
           for delivering all valid AMP documents.
           It fetches AMP HTML pages, caches them, and improves page performance automatically.

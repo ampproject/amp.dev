@@ -1,15 +1,15 @@
 core:
-  title@: AMP pages are built with 3 core components.
+  title: AMP pages are built with 3 core components.
   components:
-    - title@: AMP HTML
-      subtitle@: |
+    - title: AMP HTML
+      subtitle: |
         **AMP HTML** to kod HTML z pewnymi ograniczeniami zapewniającymi niezawodne działanie
         oraz pewnymi rozszerzeniami, które umożliwiają tworzenie zaawansowanych treści wykraczających poza podstawowy kod HTML.
-      description@: |
+      description: |
         AMP HTML to w zasadzie HTML rozszerzony o niestandardowe właściwości AMP.
         Najprostszy plik AMP HTML wygląda następująco:
       example: /content/includes/html-example.md
-      description2@: |
+      description2: |
         Chociaż większość znaczników na stronie AMP HTML to zwykłe tagi HTML,
         niektóre tagi HTML zostały zastąpione przez tagi właściwe dla AMP (zobacz też
         [HTML Tags in the AMP spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md) — Tagi HTML w specyfikacji AMP).
@@ -18,10 +18,10 @@ core:
         <p>Na przykład znacznik [`amp-img`](/docs/reference/amp-img.html)
         udostępnia pełną obsługę atrybutu `srcset` także w przeglądarkach, które go jeszcze nie obsługują.
         Dowiedz się, jak [utworzyć swoją pierwszą stronę AMP HTML](/docs/get_started/create.html).
-    - title@: AMP JS
-      subtitle@: |
+    - title: AMP JS
+      subtitle: |
         Biblioteka **AMP JS** zapewnia szybkie renderowanie stron AMP HTML.
-      description@: |
+      description: |
         [Biblioteka AMP JS](https://github.com/ampproject/amphtml/tree/master/src) implementuje
         wszystkie [najlepsze praktyki dotyczące wydajności AMP](/docs/get_started/technical_overview.html),
         zarządza ładowaniem zasobów oraz udostępnia niestandardowe znaczniki wspomniane powyżej,
@@ -29,10 +29,10 @@ core:
         <p>Do najistotniejszych optymalizacji należy to, że wszystkie dane pochodzące z zasobów zewnętrznych są przetwarzane asynchronicznie, dzięki czemu żaden element strony nie może blokować renderowania.
         <p>Inne techniki zwiększające wydajność obejmują piaskownice dla wszystkich ramek iframe, wstępne obliczanie układu każdego elementu na stronie przed załadowaniem zasobów i wyłączanie powolnych selektorów CSS.
         <p>Aby dowiedzieć się więcej nie tylko o [optymalizacjach](/docs/get_started/technical_overview.html), ale także o ograniczeniach, [przeczytaj specyfikację AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
-    - title@: AMP Cache
-      subtitle@: |
+    - title: AMP Cache
+      subtitle: |
         Strony AMP HTML są opcjonalnie dostarczane z **pamięci podręcznej Google AMP Cache**.
-      description@: |
+      description: |
         Pamięć podręczna Google AMP Cache to oparta na serwerach proxy sieć dystrybucji treści,
         która może dostarczać wszystkie prawidłowe dokumenty AMP.
         Pobiera ona strony AMP HTML, buforuje je i automatycznie poprawia wydajność tych stron.
