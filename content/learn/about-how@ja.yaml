@@ -1,13 +1,13 @@
 hero:
-  title@: AMP がパフォーマンスを改善する仕組み
-  subtitle@: |
+  title: AMP がパフォーマンスを改善する仕組み
+  subtitle: |
     AMP ページは以下の最適化処理の組み合わせによって高速化されており、一瞬で読み込まれているように見えます。
     <p>説明を読むより聞く方が好きな方は、以下の動画をご覧ください。この動画では AMP エンジニアリング リーダーの Malte Ubl が、以下の記載内容と同様の概要説明をしています。
 
 points:
   pointlist:
-    - title@: 非同期スクリプトのみ使用を許可する
-      description@: |
+    - title: 非同期スクリプトのみ使用を許可する
+      description: |
         JavaScript は
         ページ上のほぼすべての要素を変更できる強力な言語ですが、
         DOM の構築をブロックして、ページのレンダリングを遅らせてしまうことがあります
@@ -24,8 +24,8 @@ points:
         たとえば、サードパーティの JS が
         [パフォーマンスにかなりの悪影響を及ぼす `document.write` API](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/) を使っていても、
         メインページのレンダリングをブロックすることはありません。
-    - title@: すべてのリソースサイズを静的に決定する
-      description@: |
+    - title: すべてのリソースサイズを静的に決定する
+      description: |
         イメージや広告、iframe などの外部リソースのサイズは HTML で規定する必要があります。
         そうすることで、AMP はリソースがダウンロードされる前に、各要素のサイズとレイアウトを決定できます。
         また、AMP はリソースのダウンロードを待たずに、ページのレイアウトを読み込みます。
@@ -33,8 +33,8 @@ points:
         たった 1 回の HTTP リクエストで、すべてのドキュメント
         （[とフォント](#font-triggering-must-be-efficient)）を配置できます。
         AMP はリソースを多く消費するスタイルの再計算やブラウザでのレイアウトをしないよう最適化されているため、リソース読み込み後に再配置をすることは一切ありません。
-    - title@: 拡張機能によるレンダリング ブロックを回避する
-      description@: |
+    - title: 拡張機能によるレンダリング ブロックを回避する
+      description: |
         AMP では、拡張機能がページ レンダリングをブロックしないようにしています。
         AMP は拡張機能にも対応しています。
         [ライトボックス](/docs/reference/extended/amp-lightbox.html)、
@@ -48,8 +48,8 @@ points:
         `amp-iframe` タグが含まれることをシステムに通知します。
         AMP は中身がわからない状態で、先に iframe ボックスを作成します。
       example: /content/includes/amp-iframe.md
-    - title@: サードパーティの JavaScript をすべてクリティカル パス から外す
-      description@: |
+    - title: サードパーティの JavaScript をすべてクリティカル パス から外す
+      description: |
         サードパーティの JS は同期的に JS を読み込んで、
         同期型のスクリプトを `document.write` する傾向があります。
         たとえば 5 つの広告があって、それぞれ同期読み込みを 3 回ずつ行い、
@@ -60,29 +60,29 @@ points:
         仮に複数のスタイルを再計算する必要が出てきても、
         iframe は非常に小さいので含まれる DOM もごくわずかで済みます。
         <p>スタイルの再計算やレイアウトに要する時間は DOM サイズに依存します。よってページのスタイルやレイアウトを再計算することに比べれば、iframe の再計算は非常に短時間で終わります。
-    - title@: CSS はすべてインライン スタイルにしてサイズを固定する
-      description@: |
+    - title: CSS はすべてインライン スタイルにしてサイズを固定する
+      description: |
         CSS はページの読み込みや、あらゆるレンダリング処理をブロックし、肥大化する傾向があります。
         そのため、AMP HTML ページはインライン スタイルで記述する必要があります。
         これにより、一般的なウェブページに比べると 1 つ、たいていの場合は複数の HTTP リクエストがクリティカル レンダリング パスから削除できます。
         <p>また、インライン スタイルシートの最大サイズは 50 キロバイトです。
         これだけあれば非常に凝ったページでも十分ですが、ページを制作する際は常にきれいな CSS を書くよう努めてください。
-    - title@: フォントのトリガーを効率化する
+    - title: フォントのトリガーを効率化する
       id: font-triggering-must-be-efficient
-      description@: |
+      description: |
         ウェブフォントは非常にサイズが大きいので、 [ウェブフォントの最適化](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)はパフォーマンスに大きな影響を与えます。
         <p>同期スクリプトと外部スタイルシートがそれぞれ数個ある典型的なページの場合、それらがすべて処理されるまで、ブラウザは非常に重たいフォントのダウンロードを開始できません。
         <p>AMP システムではフォントのダウンロードが始まるまで HTTP リクエストを行わないと宣言しています。
         それを実現できているのは、AMP の JS にはすべて非同期属性があり、インライン スタイルシートの使用のみ許可しているからです。その結果、ブラウザのフォント ダウンロードをブロックするような HTTP リクエストは発生しません。
-    - title@: できるだけスタイルを再計算しない
-      description@: |
+    - title: できるだけスタイルを再計算しない
+      description: |
         何かを計測すれば、必ずスタイルは再計算されます。するとブラウザはページ全体をレイアウトしなければならないので、多くのリソースが消費されます。
         <p>AMP ページでは、描画処理を始める前に DOM をすべて読み込みます。
         これにより、1 フレームあたりのスタイル再計算は最大でも 1 回になります。
         <p>スタイルとレイアウトを再計算する際の影響については、
         [レンダリング パフォーマンス](https://developers.google.com/web/fundamentals/performance/rendering/)をご覧ください。
-    - title@: GPU アクセラレーションが有効なアニメーションのみ実行する
-      description@: |
+    - title: GPU アクセラレーションが有効なアニメーションのみ実行する
+      description: |
         手早く最適化する唯一の方法は、GPU 上で実行することです。
         GPU はレイヤーやレイヤー上での実行方法を把握しているので、
         レイヤーを移動したり、非表示にしたりできます。ただしページ レイアウトの更新はできません。
@@ -92,8 +92,8 @@ points:
         ページレイアウトは必要ありません。
         詳細については、
         [transform と opacity を使用してアニメーションを変更する](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)をご覧ください。
-    - title@: リソースの読み込みに優先順位をつける
-      description@: |
+    - title: リソースの読み込みに優先順位をつける
+      description: |
         AMP はあらゆるリソースのダウンロードを制御し、読み込むリソースの優先順位付けを行っています。
         具体的には、必要なものだけを読み込み、遅延読み込みされるリソースはプリフェッチします。
         <p>AMP はリソースのダウンロード時に、
@@ -104,8 +104,8 @@ points:
         リソースの読み込みはできるだけ後回しにしつつ、できるだけ早くプリフェッチを行うようにしています。
         そうすることで読み込み時間が大幅に短縮され、
         実際にリソースがユーザーに表示されるときだけ CPU が使用されます。
-    - title@: ページを瞬時に読み込む
-      description@: |
+    - title: ページを瞬時に読み込む
+      description: |
         AMP では、新しい [preconnect API](http://www.w3.org/TR/resource-hints/#dfn-preconnect) を大いに活用して
         HTTP リクエストを最大限に高速化しています。
         その結果、
@@ -121,8 +121,8 @@ points:
         CPU をたくさん使う可能性があるリソース（サードパーティの iframe など）はダウンロードされません。
         <p>詳細については、
         [AMP HTML がプリロード スキャナーをフル活用しない理由](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e)をご覧ください。
-    - title@: AMP の高速化に貢献する
-      description@: |
+    - title: AMP の高速化に貢献する
+      description: |
         AMP はオープンソースのプロジェクトです。
         AMP をさらに高速にするため、皆さまのご協力をお願い致します。
         詳細は、[AMP プロジェクトに貢献する方法](/docs/support/contribute.html)をご覧ください。
