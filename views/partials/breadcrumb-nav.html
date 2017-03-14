@@ -1,17 +1,22 @@
-{% set usedDoc = usedDoc or doc %}
-{% set parentDoc = usedDoc.parent %}
-{% set grandparentDoc = parentDoc.parent %}
-
+{% set currentDoc = g.doc(doc.pod_path) %}
+{% set listItems %}
+<li>{{currentDoc.titles('breadcrumb')}}</li>
+{% endset %}
+{% set currentDoc = g.doc(currentDoc.pod_path).parent %}
+{% if not currentDoc == None %}
+  {% for _ in range(10) %}
+    {% set nextListItem %}
+    <li><a href="{{currentDoc.url.path}}">{{currentDoc.titles('breadcrumb')}}</a></li>
+    {% endset %}
+    {% set listItems %}
+    {{nextListItem|safe + listItems|safe}}
+    {% endset %}
+    {% set currentDoc = g.doc(currentDoc.pod_path).parent %}
+    {% if currentDoc == None %}{% break %}{% endif %}
+  {% endfor %}
+{% endif %}
 <nav class="breadcrumb">
   <ul>
-  {% if grandparentDoc %}
-    <li><a href="{{g.url(grandparentDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(grandparentDoc.titles('breadcrumb')) or _(grandparentDoc.title) }}</a></li>
-  {% endif %}
-
-  {% if parentDoc %}
-    <li><a href="{{g.url(parentDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(parentDoc.titles('breadcrumb')) or _(parentDoc.title) }}</a></li>
-  {% endif %}
-
-    <li><a href="{{g.url(usedDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(doc.titles('breadcrumb')) or _(usedDoc.title) }}</a></li>
+  {{listItems|safe}}
   </ul>
 </nav>
