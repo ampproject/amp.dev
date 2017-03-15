@@ -8,7 +8,7 @@ La combinaison de toutes les optimisations suivantes est la raison pour laquelle
 Si vous préférez l'écoute à la lecture, la vidéo suivante présentée par l'ingénieur AMP en chef, Malte Ubl, aborde les mêmes informations que les paragraphes suivants.
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>

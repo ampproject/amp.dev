@@ -8,7 +8,7 @@ Połączenie następujących optymalizacji sprawia, że strony AMP są tak szybk
 Jeśli wolisz słuchać niż czytać, w następującym filmie szef zespołu AMP Malte Ubl przedstawia przeglądowe informacje podobne do zamieszczonych w kolejnych akapitach.
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>

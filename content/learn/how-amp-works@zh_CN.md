@@ -8,7 +8,7 @@ $title: AMP 如何提升性能
 AMP 工程主管 Malte Ubl 在下面的视频中提供了与本文章内容类似的介绍，如果您更倾向于收听音频而不是阅读文字，请观看此视频。
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>

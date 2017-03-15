@@ -8,7 +8,7 @@ AMP sayfalarının bu kadar hızlı olmasının ve anında yüklenmesinin nedeni
 Okumak yerine dinlemeyi tercih ediyorsanız, AMP baş mühendisi Malte Ubl tarafından hazırlanan aşağıdaki video aşağıdaki paragraflara benzer genel bir özet sunmaktadır.
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>

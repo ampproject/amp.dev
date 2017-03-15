@@ -9,10 +9,10 @@ components:
 
 The following optimizations combined are the reason AMP pages are so fast they appear to load instantly:
 
-If you'd rather listen than read, the following video by AMP engineering lead Malte Ubl gives a similar overview than the following paragraphs.
+If you'd rather listen than read, watch the video version of this page:
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>

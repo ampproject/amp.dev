@@ -8,7 +8,7 @@ La combinación de las siguientes optimizaciones hace que las páginas AMP se ca
 Si prefieres escuchar antes que leer, en el siguiente video realizado por Malte Ubl, responsable de ingeniería de AMP, se ofrece información general similar a la que encontrarás en los párrafos que aparecen a continuación.
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>
