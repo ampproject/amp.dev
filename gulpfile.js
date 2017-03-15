@@ -1,11 +1,13 @@
-var autoprefixer = require('gulp-autoprefixer');
-var exec = require('child_process').exec;
-var plumber = require('gulp-plumber');
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var svgSprite = require('gulp-svg-sprite');
+const autoprefixer = require('gulp-autoprefixer');
+const exec = require('child_process').exec;
+const plumber = require('gulp-plumber');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const svgSprite = require('gulp-svg-sprite');
+const swBuild = require('sw-build');
+const fs = require('fs');
 
-var Path = {
+const Path = {
   CSS_SOURCES: './assets/sass/**/*.scss',
   CSS_OUT_DIR: './assets/css/'
 };
@@ -15,7 +17,6 @@ gulp.task('import-docs', function (cb) {
     if (err instanceof Error) {
       cb(err);
     }
-    //console.log(stdout);
     cb();
   });
 });
@@ -44,7 +45,6 @@ gulp.task('update-blog-links', function (cb) {
     if (err instanceof Error) {
       cb(err);
     }
-    //console.log(stdout);
     cb();
   });
 });
@@ -54,7 +54,6 @@ gulp.task('update-tweets', function (cb) {
     if (err instanceof Error) {
       cb(err);
     }
-    //console.log(stdout);
     cb();
   });
 });
@@ -64,16 +63,37 @@ gulp.task('update-platforms-page', ['import-docs'], function (cb) {
     if (err instanceof Error) {
       cb(err);
     }
-    //console.log(stdout);
     cb();
   });
+});
+
+gulp.task('generate-asset-manifest', function (cb) {
+  var entries = swBuild.getFileManifestEntries({
+    rootDirectory: './assets',
+    globPatterns: [
+      'assets\/img\/*.{svg,png,jpg}',
+      'assets\/img\/nav/*.{svg,png,jpg}',
+      'assets\/img\/footer/*.{svg,png,jpg}'
+    ]
+  });
+
+  // Add "static" to the path
+  entries.forEach(entry => {
+    entry.url = '/static' + entry.url;
+  });
+
+  fs.writeFile('./pwa/service-worker-manifest.js', 'self.__asset_manifest = ' + JSON.stringify(entries), (err) => {
+    if (err) throw err;
+    cb();
+  });
+
 });
 
 gulp.task('sass', function() {
   return gulp.src(Path.CSS_SOURCES)
     .pipe(plumber())
     .pipe(sass({
-        outputStyle: 'compressed'
+      outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest(Path.CSS_OUT_DIR));
