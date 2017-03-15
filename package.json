@@ -11,5 +11,9 @@
     "moment": "*",
     "octonode": "*",
     "request": "*"
+  },
+  "devDependencies": {
+    "sw-build": "0.0.17",
+    "sw-lib": "0.0.17"
   }
 }
