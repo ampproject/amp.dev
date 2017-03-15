@@ -1,14 +1,14 @@
 ---
-$title@: 지원하는 플랫폼, 벤더 및 파트너
+$title: 지원하는 플랫폼, 벤더 및 파트너
 $order: 3
 $parent: /content/support/faqs.md
 class: who
 
-description@: AMP (Accelerated Mobile Pages) 프로젝트는 게시자가 모바일 친화적인 콘텐츠를 한 번만 만들고 즉시로딩할 수있는 오픈 소스 이니셔티브입니다. – Accelerated Mobile Pages Project
+description: AMP (Accelerated Mobile Pages) 프로젝트는 게시자가 모바일 친화적인 콘텐츠를 한 번만 만들고 즉시로딩할 수있는 오픈 소스 이니셔티브입니다. – Accelerated Mobile Pages Project
 
 cta:
-  title@: 다음 FAQ
-  link_text@: AMP 살펴보기
+  title: 다음 FAQ
+  link_text: AMP 살펴보기
   link_url: /content/support/faqs/overview.md
 
 ---
