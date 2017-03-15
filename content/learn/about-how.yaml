@@ -10,9 +10,9 @@ components:
 
 hero:
   title: How AMP Works
-  subtitle: "The following optimizations combined are the reason AMP pages are so fast they appear to load instantly:<p>If you'd rather listen than read, the following video by AMP engineering lead Malte Ubl gives a similar overview than the following paragraphs."
+  subtitle: "The following optimizations combined are the reason AMP pages are so fast they appear to load instantly:<p>If you'd rather listen than read, watch the explainer video:"
 
-video: hVRkG1CQScA
+video: 9Cfxm7cikMY
 
 points:
   pointlist:

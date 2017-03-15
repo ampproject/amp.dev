@@ -8,7 +8,7 @@ AMP ページは以下の最適化処理の組み合わせによって高速化�
 説明を読むより聞く方が好きな方は、以下の動画をご覧ください。この動画では AMP エンジニアリング リーダーの Malte Ubl が、以下の記載内容と同様の概要説明をしています。
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>

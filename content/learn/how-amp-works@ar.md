@@ -8,7 +8,7 @@ $title: طريقة تسريع AMP للأداء
 إذا كنت ممن يفضلون الاستماع على القراءة، فإن الفيديو التالي من تقديم <span dir="ltr" class="nowrap">Malte Ubl</span>، رئيس فريق هندسة AMP، يمنحك نظرة عامة مماثلة للفقرات التالية.
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>

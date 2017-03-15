@@ -8,7 +8,7 @@ AMP 페이지가 빠르고 즉시 로드되는 이유는 다음과 같은 최적
 읽는 것보다 듣는 것을 선호하는 경우, AMP 엔지니어링 책임자인 Malte Ubl의 다음 동영상을 통해 다음 단락과 유사한 내용을 청취할 수 있습니다.
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>

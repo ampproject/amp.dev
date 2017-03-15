@@ -8,7 +8,7 @@ Kombinasi semua pengoptimalan berikut adalah alasan mengapa halaman AMP sangat c
 Jika Anda lebih memilih mendengarkan dibanding membaca, video berikut yang disajikan oleh pimpinan teknisi AMP Malte Ubl akan memberikan ikhtisar yang mirip dengan teks yang ada di bawahnya.
 
 <amp-youtube
-    data-videoid="hVRkG1CQScA"
+    data-videoid="9Cfxm7cikMY"
     layout="responsive"
     width="480" height="270">
 </amp-youtube>
