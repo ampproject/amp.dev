@@ -49,22 +49,6 @@ The following styles aren’t allowed in AMP pages:
       <td data-th="Description">Disallowed with the exception of <a href="#the-custom-fonts-exception">custom fonts</a>.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code>*</code> (universal selector)</td>
-      <td data-th="Description">Negative performance implications and could be used
-      to circumvent other selector restrictions.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style"><code>:not()</code></td>
-      <td data-th="Description">Could be used to simulate the universal selector.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style">Pseudo-selectors, pseudo-classes, and pseudo-elements</td>
-      <td data-th="Description">Pseudo-selectors, pseudo-classes and pseudo-elements are only allowed
-      in selectors that contain tag names and those tag names must not start with <code>amp-</code>.
-      Example OK: <code>a:hover, div:last-of-type</code>
-      Example not OK: <code>amp-img:hover, amp-img:last-of-type</code></td>
-    </tr>
-    <tr>
       <td data-th="Banned style"><code>-amp-</code> class and <code>i-amp-</code> tag names</td>
       <td data-th="Description">Class names, in author stylesheets, may not start with the string <code>-amp-</code>. These are reserved for internal use by the AMP runtime. It follows, that the user's stylesheet may not reference CSS selectors for <code>-amp-</code> classes and <code>i-amp</code> tags.</td>
     </tr>
