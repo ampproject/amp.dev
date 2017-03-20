@@ -26,8 +26,8 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
-"점점 더 많은 수의 게시자와 광고주가 AMP를 채택하여 더 빠르고 매력적인 콘텐츠를 사용자에게 제공합니다고객이 AMP의 속도를 수용하고 더"
-" 많은 사용자가 AMP 페이지에서 콘텐츠를 소비하게 하여, 비즈니스가미래를 향하게 하십시오. 지금 여러분의 기술을 AMP와 통합하세요."
+"점점 더 많은 수의 게시자와 광고주가 AMP를 채택하여 더 빠르고 매력적인 콘텐츠를 사용자에게 제공합니다. 고객이 AMP의 속도를 수용하고 더"
+"많은 사용자가 AMP 페이지에서 콘텐츠를 소비하게 하여, 비즈니스가 미래를 향하게 하십시오. 지금 여러분의 기술을 AMP와 통합하세요."
 
 #: /content/includes/home.yaml
 msgid "A path to success"
@@ -43,7 +43,7 @@ msgid ""
 " As a result, you can use your existing development resources to create and "
 "serve ads that are faster, lighter, and more effective."
 msgstr ""
-"AMP 광고는 새로운 기술이 아닌 HTML과 CSS로 구성한 크리에이티브 포맷입니다.따라서, 더 빠르고 가볍고 효율적인 광고를 제공하고 "
+"AMP 광고는 새로운 기술이 아닌 HTML과 CSS로 구성한 크리에이티브 포맷입니다. 따라서, 더 빠르고 가볍고 효율적인 광고를 제공하고 "
 "만드는데 현재 지닌 개발 리소스를 사용할 수 있습니다"
 
 #: /content/learn/who/amp-ads.yaml
@@ -75,6 +75,8 @@ msgid ""
 "AMP HTML is basically HTML extended with custom AMP properties.\n"
 "The simplest AMP HTML file looks like this:\n"
 msgstr ""
+"기본적으로 AMP HTML은 사용자 지정 AMP 속성으로 확장되는 HTML입니다.\n"
+"가장 간단한 AMP HTML 파일은 다음과 같습니다.\n"
 
 #: /content/support/faqs/supported-platforms.md
 msgid "AMP Overview"
@@ -90,15 +92,15 @@ msgstr "AMP 컴포넌트"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "AMP for Ad Tech Platforms"
-msgstr ""
+msgstr "광고 기술 플랫폼을 위한 AMP"
 
 #: /content/learn/who/advertisers.yaml
 msgid "AMP for Advertisers"
-msgstr ""
+msgstr "광고게시자를 위한 AMP"
 
 #: /content/learn/who/publishers.yaml
 msgid "AMP for Publishers"
-msgstr ""
+msgstr "퍼블리셔를 위한 AMP"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -107,7 +109,7 @@ msgid ""
 " 1.5B AMP pages have been published to date and 100+ leading analytics, ad "
 "tech and CMS providers support the AMP format."
 msgstr ""
-"AMP는 수천명의 개발자, 게시자 및 웹사이트, 유통 플랫폼 및 기술 업체와의 긴밀한 협력 덕에만들어졌습니다. 현재까지 15억 이상의 "
+"AMP는 수천명의 개발자, 게시자 및 웹사이트, 유통 플랫폼 및 기술 업체와의 긴밀한 협력 덕에 만들어졌습니다. 현재까지 15억 이상의 "
 "AMP 페이지가 게시되었으며 100개 이상의 주요 분석, 광고 기술및 CMS 제공 업체가 AMP 포맷을 지원합니다"
 
 #: /content/learn/who/advertisers.yaml
@@ -118,7 +120,7 @@ msgid ""
 "engaged with and receptive to your brand’s messages, and more likely to take "
 "the actions you’re guiding them towards like completing a purchase."
 msgstr ""
-"AMP 페이지는 일반적으로 1초 이내에 로딩됩니다. 즉 타겟 고객이 AMP 페이지에 도달했을 때원하는 순간에 원하는 정보를 얻게됩니다. 이"
+"AMP 페이지는 일반적으로 1초 이내에 로딩됩니다. 즉 타겟 고객이 AMP 페이지에 도달했을 때 원하는 순간에 원하는 정보를 얻게됩니다. 이"
 " 결과, 브랜드 메시지에 적극적으로 참여하고,구매를 완료하는 등 원하는 행동을 이끌어낼 수 있습니다"
 
 #: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
@@ -223,9 +225,9 @@ msgid ""
 "to them.  Similarly, AMP ads may be built once and run across all pages, "
 "including non-AMP pages."
 msgstr ""
-"AMP 페이지를 작성하는 건 간단하고 직관적입니다. 특히 Wordpress 및 Drupal 같이 널리 사용하는CMS를 사용하는 경우 전체 "
-"기록들을 며칠 안에 변환할 수 있습니다.AMP 포맷에 완전히 이식 가능하고 AMP 페이지가 사용자에 상관없이 일관되게 빠르기 때문에특별한 "
-"기술을 필요로 하지 않으며 각 배포 플랫폼에 맞게 코드를 최적화하지 않아도 됩니다.마찬가지로 AMP 광고는 한번 작성하여 AMP가 아닌 "
+"AMP 페이지를 작성하는 건 간단하고 직관적입니다. 특히 Wordpress 및 Drupal 같이 널리 사용하는 CMS를 사용하는 경우 전체"
+"기록들을 며칠 안에 변환할 수 있습니다. AMP 포맷에 완전히 이식 가능하고 AMP 페이지가 사용자에 상관없이 일관되게 빠르기 때문에 특별한"
+"기술을 필요로 하지 않으며 각 배포 플랫폼에 맞게 코드를 최적화하지 않아도 됩니다. 마찬가지로 AMP 광고는 한번 작성하여 AMP가 아닌"
 "페이지를 포함한 모든 페이지에서 실행가능합니다"
 
 #: /content/includes/home.yaml
@@ -240,8 +242,8 @@ msgid ""
 "AMP pages can be built once and distributed across a wide variety of "
 "distribution platforms simultaneously."
 msgstr ""
-"적절한 광고, 랜딩페이지나 웹 콘텐츠를 만드는 데는 시간이 필요합니다.AMP 광고를 사용하면 광고가 AMP 및 AMP가 아닌 페이지 "
-"모두에서 제공할 수 있습니다.즉 AMP 광고를 한번 구축하고 어디에서나 인상적인 브랜드 경험을 전달할 수 있습니다.마찬가지로 AMP "
+"적절한 광고, 랜딩페이지나 웹 콘텐츠를 만드는 데는 시간이 필요합니다. AMP 광고를 사용하면 광고가 AMP 및 AMP가 아닌 페이지 "
+"모두에서 제공할 수 있습니다. 즉 AMP 광고를 한번 구축하고 어디에서나 인상적인 브랜드 경험을 전달할 수 있습니다. 마찬가지로 AMP "
 "페이지는 한번의 구축으로 동시에 다양한 플랫폼으로 배포할 수 있습니다"
 
 #: /content/learn/case-studies.html /content/includes/menu.yaml
@@ -270,35 +272,35 @@ msgstr ""
 
 #: /content/docs/get_started/create
 msgid "Create Your First AMP Page"
-msgstr ""
+msgstr "첫번째 AMP 페이지 만들기"
 
 #: /content/docs/get_started/login_requiring
 msgid "Create a login-requiring AMP page"
-msgstr ""
+msgstr "로그인이 필요한 AMP 페이지 만들기"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/publishers.md
 #: /content/learn/case-studies/category/advertisers.md
 msgid "Create your first AMP page"
-msgstr ""
+msgstr "첫번째 AMP 페이지 만들기"
 
 #: /content/docs/guides/debug.md /content/docs/guides/debug
 msgid "Debug"
-msgstr ""
+msgstr "디버그"
 
 #: /content/docs/guides/deploy.md /content/docs/guides/deploy
 msgid "Deploy"
-msgstr ""
+msgstr "배포"
 
 #: /content/learn/amp-design-principles@ko.yaml
 #: /content/learn/amp-design-principles.yaml /content/includes/menu.yaml
 msgid "Design Principles"
-msgstr ""
+msgstr "설계 원칙"
 
 #: /content/includes/menu.yaml /content/support/developer.md
 #: /content/support/developer
 msgid "Developer Support"
-msgstr ""
+msgstr "개발자 지원"
 
 #: /content/docs /content/docs/build.md /content/includes/menu.yaml
 msgid "Docs"
@@ -306,7 +308,7 @@ msgstr "문서"
 
 #: /content/includes/events.yaml
 msgid "Don't miss AMP Events"
-msgstr ""
+msgstr "AMP 이벤트를 놓치지 마세요"
 
 #: /content/learn/amp-design-principles.yaml
 msgid "Don’t break the web."
@@ -325,15 +327,15 @@ msgstr ""
 
 #: /views/case-study.html:45
 msgid "Download PDF Case study"
-msgstr ""
+msgstr "사례 연구 PDF 다운로드"
 
 #: /content/docs/reference/components
 msgid "Dynamic Content"
-msgstr ""
+msgstr "동적 콘텐츠"
 
 #: /content/docs/reference/components/dynamic-content
 msgid "Dynamic Content - AMP components"
-msgstr ""
+msgstr "동적 콘텐츠 - AMP 컴포넌트"
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -368,7 +370,7 @@ msgstr ""
 #: /content/latest/list-event.html /content/includes/latest.yaml
 #: /content/includes/menu.yaml
 msgid "Events"
-msgstr ""
+msgstr "이벤트"
 
 #: /content/includes/menu.yaml
 msgid "Examples"
@@ -380,7 +382,7 @@ msgstr ""
 
 #: /content/docs/contribute/file-a-bug.md
 msgid "File a bug"
-msgstr ""
+msgstr "버그 제보"
 
 #: /content/includes/home.yaml
 msgid "Flexibility and Results"
@@ -388,31 +390,31 @@ msgstr "유연성과 결과"
 
 #: /content/includes/latest.yaml
 msgid "Follow AMP"
-msgstr ""
+msgstr "AMP 팔로우"
 
 #: /content/includes/latest.yaml
 msgid "Follow us on Twitter"
-msgstr ""
+msgstr "트위터에서 팔로우하기"
 
 #: /content/learn/who/publishers.yaml /content/learn/who/ad-tech-platforms.yaml
 msgid "Get Started Building"
-msgstr ""
+msgstr "빌딩 시작하기"
 
 #: /content/learn/amp-design-principles.yaml
 msgid "Get started building"
-msgstr ""
+msgstr "빌딩 시작하기"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
-msgstr ""
+msgstr "AMP로 시작하기"
 
 #: /content/docs/getting-started.md
 msgid "Getting Started"
-msgstr ""
+msgstr "시작하기"
 
 #: /content/includes/menu.yaml
 msgid "Getting started"
-msgstr ""
+msgstr "시작하기"
 
 #: /content/docs/contribute/github.md
 msgid "GitHub"
@@ -455,7 +457,7 @@ msgstr "더 빠른 성능과 인게이지먼트"
 #: /content/learn/about-how@pl.yaml /content/learn/about-how@tr.yaml
 #: /content/includes/menu.yaml
 msgid "How AMP Works"
-msgstr ""
+msgstr "AMP는 어떻게 동작하는가"
 
 #: /content/learn/who/publishers.yaml
 msgid "How AMP can help publishers"
@@ -493,11 +495,11 @@ msgstr ""
 
 #: /content/docs/reference/components
 msgid "Layout"
-msgstr ""
+msgstr "레이아웃"
 
 #: /content/docs/reference/components/layout
 msgid "Layout - AMP components"
-msgstr ""
+msgstr "레이아웃 - AMP 컴포넌트"
 
 #: /content/learn
 msgid "Learn"
@@ -547,7 +549,7 @@ msgstr ""
 
 #: /content/docs/get_started/create
 msgid "Logins with AMP"
-msgstr ""
+msgstr "AMP로 로그인하기"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Maximize ROI everywhere"
@@ -559,19 +561,19 @@ msgstr ""
 
 #: /content/docs/reference/components
 msgid "Media"
-msgstr ""
+msgstr "미디어"
 
 #: /content/docs/reference/components/media
 msgid "Media - AMP components"
-msgstr ""
+msgstr "미디어 - AMP 컴포넌트"
 
 #: /content/includes/events.yaml
 msgid "More Past Events"
-msgstr ""
+msgstr "이전 이벤트 더보기"
 
 #: /content/includes/doc.yaml
 msgid "Need Dev Support?"
-msgstr ""
+msgstr "기술 지원이 필요합니까?"
 
 #: /content/pages/home.html:36 /content/pages/home.html:76
 #: /content/includes/menu.yaml
@@ -580,15 +582,15 @@ msgstr "뉴스"
 
 #: /content/support/faqs/supported-platforms.md
 msgid "Next FAQ"
-msgstr ""
+msgstr "다음 FAQ"
 
 #: /content/docs/reference/components
 msgid "Next Reference"
-msgstr ""
+msgstr "다음 레퍼런스"
 
 #: /content/docs/get_started/create
 msgid "Next Tutorial"
-msgstr ""
+msgstr "다음 튜토리얼"
 
 #: /content/learn/amp-design-principles.yaml
 msgid "No whitelists."
@@ -612,11 +614,11 @@ msgstr ""
 #: /content/latest/list-past-event.html /content/includes/lists.yaml
 #: /content/includes/events.yaml
 msgid "Past Events"
-msgstr ""
+msgstr "이전 이벤트"
 
 #: /content/support/platform.md
 msgid "Platform Support"
-msgstr ""
+msgstr "지원 플랫폼"
 
 #: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
 #: /content/learn/overview@ko.yaml /content/learn/overview@it.yaml
@@ -627,19 +629,19 @@ msgstr ""
 #: /content/learn/overview@tr.yaml /content/learn/overview@ru.yaml
 #: /content/learn/overview@es.yaml
 msgid "Play Video"
-msgstr ""
+msgstr "비디오 재생"
 
 #: /content/docs/reference/components
 msgid "Presentation"
-msgstr ""
+msgstr "프리젠테이션"
 
 #: /content/docs/reference/components/presentation
 msgid "Presentation - AMP components"
-msgstr ""
+msgstr "프리젠테이션 - AMP 컴포넌트"
 
 #: /views/case-study.html:54
 msgid "Previous Posts"
-msgstr ""
+msgstr "이전 게시글"
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -649,7 +651,7 @@ msgstr ""
 
 #: /views/partials/footer.html:5
 msgid "Privacy"
-msgstr ""
+msgstr "개인정보"
 
 #: /content/learn/who-uses-amp@ko.yaml /content/learn/who-uses-amp.yaml
 #: /content/learn/case-studies/category/publishers.md
@@ -661,7 +663,7 @@ msgid ""
 "Publishers and advertisers can decide how to present their content and what "
 "technology vendors to use, all while maintaining and improving key "
 "performance indicators."
-msgstr "게시자와 광고주는 핵심 성과 지표를 유지 관리 및 개선하면서콘텐츠를 표시하는 방법과 사용할 기술 공급자를 결정할 수 있습니다."
+msgstr "게시자와 광고주는 핵심 성과 지표를 유지 관리 및 개선하면서 콘텐츠를 표시하는 방법과 사용할 기술 공급자를 결정할 수 있습니다."
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -673,11 +675,11 @@ msgstr ""
 
 #: /content/learn/who-uses-amp.yaml
 msgid "Read case studies"
-msgstr ""
+msgstr "사례 연구 읽기"
 
 #: /views/partials/grid-card.html:27
 msgid "Read the Case Study"
-msgstr ""
+msgstr "사례 연구 읽기"
 
 #: /content/learn/who/publishers.yaml
 msgid "Reduce complexity in your operations."
@@ -690,15 +692,15 @@ msgstr "참조"
 
 #: /content/support/developer/documentation-bug.md
 msgid "Report a documentation bug on GitHub"
-msgstr ""
+msgstr "GitHub에서 문서 버그 제보"
 
 #: /content/support/developer/platform-bug.md
 msgid "Report a platform bug on GitHub"
-msgstr ""
+msgstr "GitHub에서 플랫폼 버그 제보"
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
 msgid "Roadmap"
-msgstr ""
+msgstr "로드맵"
 
 #: /views/partials/promo_banner.html:12
 msgid ""
@@ -708,11 +710,11 @@ msgstr ""
 
 #: /content/includes/latest.yaml
 msgid "See More"
-msgstr ""
+msgstr "더보기"
 
 #: /content/latest/list-blog.html:12
 msgid "See all posts"
-msgstr ""
+msgstr "모든 게시글 보기"
 
 #: /content/learn/who/publishers.yaml
 msgid "See how other publishers have found success with AMP"
@@ -738,11 +740,11 @@ msgstr ""
 
 #: /content/support/developer.md
 msgid "Send Feedback"
-msgstr ""
+msgstr "피드백 전송"
 
 #: /content/includes/lists.yaml
 msgid "Share"
-msgstr ""
+msgstr "공유"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Simple to build, easy to scale. Reduce complexity with AMP Ads."
@@ -750,7 +752,7 @@ msgstr ""
 
 #: /content/support/developer/slack.md
 msgid "Slack Channel"
-msgstr ""
+msgstr "Slack 채널"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Smart and coordinated ads boost campaign ROI"
@@ -758,11 +760,11 @@ msgstr ""
 
 #: /content/docs/reference/components
 msgid "Social"
-msgstr ""
+msgstr "소셜"
 
 #: /content/docs/reference/components/social
 msgid "Social - AMP components"
-msgstr ""
+msgstr "소셜 - AMP 컴포넌트"
 
 #: /content/learn/amp-design-principles.yaml
 msgid "Solve problems on the right layer."
@@ -793,7 +795,7 @@ msgstr ""
 
 #: /content/support/developer/stack-overflow.md
 msgid "Stack Overflow Community"
-msgstr ""
+msgstr "Stack Overflow 커뮤니티"
 
 #: /content/includes/home.yaml
 msgid "Start Building"
@@ -815,11 +817,11 @@ msgstr ""
 
 #: /content/docs/guides/author_develop/responsive_amp
 msgid "Styling & Layout"
-msgstr ""
+msgstr "스타일링 & 레이아웃"
 
 #: /content/learn/who-uses-amp.yaml
 msgid "Success stories"
-msgstr ""
+msgstr "성공 사례"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/publishers.md
@@ -855,7 +857,7 @@ msgid ""
 "distribution platforms."
 msgstr ""
 "AMP 프로젝트는 모든 사람들이 웹을 더 잘 이용할 수 있도록 하는 오픈소스 프로젝트입니다. 이 프로젝트를 통해 디바이스 및 배포 플랫폼 "
-"전반에 걸쳐 일관되게 빠르고 아름다우며우수한 웹 사이트 및 광고를 만들 수 있습니다"
+"전반에 걸쳐 일관되게 빠르고 아름답고 우수한 웹 사이트 및 광고를 만들 수 있습니다"
 
 #: /content/support/faqs/supported-platforms.md
 msgid ""
@@ -867,11 +869,11 @@ msgstr ""
 #: /content/latest /content/latest/latest.html /content/includes/home.yaml
 #: /content/includes/menu.yaml
 msgid "The Latest"
-msgstr ""
+msgstr "최신 정보"
 
 #: /content/latest/latest.html /content/includes/latest.yaml
 msgid "The Latest News"
-msgstr ""
+msgstr "최신 뉴스"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -934,7 +936,7 @@ msgstr "튜토리얼"
 
 #: /content/includes/events.yaml
 msgid "Upcoming Events"
-msgstr ""
+msgstr "다가오는 이벤트"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Use your existing resources"
@@ -1008,15 +1010,15 @@ msgstr "AMP가 제공하는 것"
 #: /content/learn/overview@tr.yaml /content/learn/overview@ru.yaml
 #: /content/learn/overview@es.yaml
 msgid "What is AMP"
-msgstr "AMP とは"
+msgstr "AMP란"
 
 #: /content/includes/menu.yaml
 msgid "What is AMP?"
-msgstr "AMP とは"
+msgstr "AMP란?"
 
 #: /content/includes/menu.yaml
 msgid "What's New"
-msgstr ""
+msgstr "새로 추가된 것"
 
 #: /content/includes/latest.yaml
 msgid "What's hot?"
@@ -1041,7 +1043,7 @@ msgstr ""
 
 #: /content/learn/who-uses-amp.yaml /content/includes/menu.yaml
 msgid "Who is AMP for?"
-msgstr ""
+msgstr "AMP는 어떤 이들을 위해 존재할까요?"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Why AMP Ads"
