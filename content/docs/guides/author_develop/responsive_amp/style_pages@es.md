@@ -8,7 +8,7 @@ También hay ciertos estilos que no están permitidos por cuestiones de rendimie
 los atributos de estilo insertados no están permitidos.
 
 Todos los estilos deben encontrarse en el encabezado del documento
-(consulta [Añadir estilos a una página](/docs/guides/validate.html#add-styles-to-a-page)).
+(consulta [Añadir estilos a una página](/es/docs/guides/author-develop/responsive_amp#anadir-estilos-a-una-pagina)).
 Pero se pueden utilizar preprocesadores de CSS y plantillas para crear páginas estáticas
 y así administrar mejor el contenido.
 
@@ -90,7 +90,7 @@ Los siguientes estilos no están permitidos en las páginas de AMP:
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
-      <td data-th="Description">No está permitido, con la excepción de las <a href="#the-custom-fonts-exception">fuentes personalizadas.</td>
+      <td data-th="Description">No está permitido, con la excepción de las <a href="#la-excepcion-de-las-fuentes-personalizadas">fuentes personalizadas</a>.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code> (selector universal)</td>
