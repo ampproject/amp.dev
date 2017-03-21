@@ -26,14 +26,19 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
+"Un creciente número de publicistas y anunciantes están adoptando AMP para entregar "
+"contenido rápido y atractivo a sus usuarios. Como sus clientes desean adaptar la "
+"velocidad del AMP y más usuarios consumen contenido por las páginas AMP, asegúrese "
+"de que su negocio está posicionado para el futuro. Comienza a integrar tu tecnología "
+"con AMP hoy. "
 
 #: /content/includes/home.yaml
 msgid "A path to success"
-msgstr ""
+msgstr "Un camino al éxito"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "AMP Ads"
-msgstr ""
+msgstr "Anuncios AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -41,34 +46,41 @@ msgid ""
 " As a result, you can use your existing development resources to create and "
 "serve ads that are faster, lighter, and more effective."
 msgstr ""
+"Los anuncios AMP son creados en formato creativo usando HTML con CSS, no una nueva tecnología. "
+"Como resultado, tú puedes usar tus recursos y desarrollos existentes para crear y "
+"ofrecer anuncios que carguen rápido, liviano y más eficientemente."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMP Ads can serve on both AMP and non-AMP pages so you can build your AMP Ad "
 "once and deliver a memorable brand experience everywhere."
 msgstr ""
+"Los anuncios AMP pueden ofrecer ambas páginas, AMP o bien no AMP, así que puedes crear tus anuncios AMP "
+"una vez y entregar una experiencia de marca memoriable a todas partes. "
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
-msgstr ""
+msgstr "Blog de AMP"
 
 #: /content/support/vendor/amp-certification.md
 msgid "AMP Certification"
-msgstr ""
+msgstr "Certificación AMP"
 
 #: /views/partials/promo_banner.html:15
 msgid "AMP Conf. March 7/8."
-msgstr ""
+msgstr "AMP Conf. Marzo 7/8."
 
 #: /content/docs/reference/components
 msgid "AMP HTML Specification"
-msgstr ""
+msgstr "Especificación AMP HTML"
 
 #: /content/learn/overview.yaml
 msgid ""
 "AMP HTML is basically HTML extended with custom AMP properties.\n"
 "The simplest AMP HTML file looks like this:\n"
 msgstr ""
+"AMP HTML is basically HTML extended with custom AMP properties.\n"
+"The simplest AMP HTML file looks like this:\n"
 
 #: /content/support/faqs/supported-platforms.md
 msgid "AMP Overview"
