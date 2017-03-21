@@ -15,7 +15,7 @@ menu:
       - href: /content/learn/case-studies.html
         copy@: "Case Studies"
         collection: learn/case-studies
-  - href: /content/docs/get_started/general/create.md
+  - href: /content/docs/build.md
     copy@: Docs
     collection: docs
     children:
