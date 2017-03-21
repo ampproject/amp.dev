@@ -447,16 +447,6 @@
         "type": 301
       },
       {
-        "source": "/docs",
-        "destination": "/learn/overview/",
-        "type": 301
-      },
-      {
-        "source": "/docs/index.html",
-        "destination": "/learn/overview/",
-        "type": 301
-      },
-      {
         "source": "/learn/about-amp/",
         "destination": "/learn/overview/",
         "type": 301
