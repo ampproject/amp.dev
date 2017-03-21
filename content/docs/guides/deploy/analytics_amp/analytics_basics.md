@@ -35,7 +35,7 @@ As part of integrating with the AMP platform,
 providers have offered pre-defined `amp-analytics` configurations
 so that it's easy to capture data and push to their tracking tools.
 Access vendor documentation from the
-[amp-analytics specification](/docs/reference/extended/amp-analytics.html).
+[Analytics Vendors](/docs/guides/analytics/analytics-vendors.html) list.
 
 You can use both `amp-pixel` and `amp-analytics` in your pages:
 `amp-pixel` for simple page view tracking,

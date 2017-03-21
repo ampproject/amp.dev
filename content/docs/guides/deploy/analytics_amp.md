@@ -23,11 +23,8 @@ and social engagement data to another URL.
 
 AMP analytics is specifically designed to measure once and report to many.
 If you are already working with one or more analytics vendors,
-check the
-[amp-analytics specification](/docs/reference/extended/amp-analytics.html)
-to see if they’ve integrated their solution with AMP.
-If they have, simply link to their docs from the specification
-and start following the instructions.
+check the list of [Analytics Vendors](/docs/guides/analytics/analytics-vendors.html) to see if they’ve integrated their solution with AMP.
+If they have, review their configuration details and follow the instructions.
 
 If the analytics vendor hasn’t integrated with AMP,
 reach out to the vendor to ask for their support.

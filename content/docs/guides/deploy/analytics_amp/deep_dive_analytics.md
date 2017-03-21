@@ -67,7 +67,7 @@ AMP is designed to support two common patterns of data collection:
 To send analytics data to an analytics provider,
 include the `type` attribute in the `amp-analytics` tag and set its value
 to the appropriate vendor, as defind in the
-[amp-analytics specification](/docs/reference/extended/amp-analytics.html).
+[Analytics Vendors](/docs/guides/analytics/analytics-vendors.html) list.
 
 For example: `<amp-analytics type="googleanalytics">` sends analytics data
 to the third-party analytics provider, Google Analytics.
@@ -83,7 +83,7 @@ help resources for further guidance.
 As previously mentioned,
 the list of vendors who’ve already integrated with AMP, as well as links
 to their specific documentation can be found in the
-[amp-analytics specification](/docs/reference/extended/amp-analytics.html).
+[Analytics Vendors](/docs/guides/analytics/analytics-vendors.html) list.
 
 If you’re an analytics vendor,
 learn more about
