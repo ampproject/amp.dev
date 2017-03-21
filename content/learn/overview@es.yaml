@@ -1,5 +1,5 @@
 core:
-  title: AMP pages are built with 3 core components.
+  title: Las páginas AMP están construidas con 3 componentes.
   components:
     - title: AMP HTML
       subtitle: |
@@ -17,18 +17,18 @@ core:
         crean patrones comunes que pueden implementarse con buen rendimiento en forma sencilla.
         <p>Por ejemplo, la etiqueta [`amp-img`](/docs/reference/amp-img.html)
         proporciona soporte completo de `srcset`, incluso en navegadores que todavía no lo admiten.
-        Obtén más información acerca de cómo [crear tu primera página AMP HTML](/docs/get_started/create.html).
+        Obtén más información acerca de cómo [crear tu primera página AMP HTML](/es/docs/get_started/create).
     - title: AMP JS
       subtitle: |
         La biblioteca **AMP JS** garantiza la representación rápida de páginas AMP HTML.
       description: |
         La [biblioteca AMP JS](https://github.com/ampproject/amphtml/tree/master/src) implementa
-        todas las [prácticas recomendadas de rendimiento de AMP](/docs/get_started/technical_overview.html),
+        todas las [prácticas recomendadas de rendimiento de AMP](/es/learn/about-how/),
         administra la carga de recursos y te proporciona las etiquetas personalizadas que se mencionan arriba para
         garantizar la representación rápida de tu página.
         <p>Una de las optimizaciones más importantes es que transforma en asincrónico todo lo que proviene de recursos externos, de modo que ningún elemento de la página pueda bloquear la representación.
         <p>Entre otras técnicas de rendimiento se incluyen la disposición de todos los iframes en espacios seguros, el cálculo previo del diseño de cada elemento de la página antes de que se carguen los recursos y la desactivación de selectores de CSS lentos.
-        <p>Para obtener más información acerca de las [optimizaciones](/docs/get_started/technical_overview.html) y las limitaciones, [lee la especificación de AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
+        <p>Para obtener más información acerca de las [optimizaciones](/es/learn/about-how/) y las limitaciones, [lee la especificación de AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
     - title: AMP Cache
       subtitle: |
         El **Google AMP Cache** (opcional) proporciona las páginas AMP HTML.
@@ -48,4 +48,4 @@ core:
         <p>Cada página AMP viene con otra versión del validador integrada. Esta versión puede registrar errores de validación directamente en la consola del navegador cuando se representa la página,
         lo que te permite ver cómo los cambios complejos en tu código
         podrían afectar el rendimiento y la experiencia del usuario.
-        <p>Obtén más información acerca de [cómo probar tus páginas AMP HTML](/docs/guides/validate.html).
+        <p>Obtén más información acerca de [cómo probar tus páginas AMP HTML](/es/docs/guides/debug/validate).
