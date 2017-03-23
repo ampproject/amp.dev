@@ -26,7 +26,7 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
-"Un creciente número de publicistas y anunciantes están adoptando AMP para entregar "
+"Un creciente número de editores y anunciantes están adoptando AMP para entregar "
 "contenido rápido y atractivo a sus usuarios. Como sus clientes desean adaptar la "
 "velocidad del AMP y más usuarios consumen contenido por las páginas AMP, asegúrese "
 "de que su negocio está posicionado para el futuro. Comienza a integrar tu tecnología "
@@ -100,7 +100,7 @@ msgstr "AMP para Plataformas Tecnológicas de Anuncios"
 
 #: /content/learn/who/advertisers.yaml
 msgid "AMP for Advertisers"
-msgstr "AMP para Publicistas"
+msgstr "AMP para Editores"
 
 #: /content/learn/who/publishers.yaml
 msgid "AMP for Publishers"
@@ -178,7 +178,7 @@ msgstr "Adtech success stories"
 #: /content/learn/who-uses-amp@ko.yaml /content/learn/who-uses-amp.yaml
 #: /content/learn/case-studies/category/advertisers.md
 msgid "Advertisers"
-msgstr "Publicistas"
+msgstr "Editores"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Amplify your impact"
@@ -485,7 +485,7 @@ msgstr "Cómo funciona AMP"
 
 #: /content/learn/who/publishers.yaml
 msgid "How AMP can help publishers"
-msgstr "Cómo AMP puede ayudar a publicistas"
+msgstr "Cómo AMP puede ayudar a editores"
 
 #: /content/learn/who/advertisers.yaml
 msgid "If it’s not instant, it’s not fast enough."
