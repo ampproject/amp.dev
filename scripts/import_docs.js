@@ -62,7 +62,8 @@ function savePage(config, callback) {
   var frontMatter = `---
 $title: ${config.title}
 $order: ${config.order || 0}
-${optionalTOC}---`;
+${optionalTOC}---
+`;
   fs.writeFile(config.destination, frontMatter + config.content, callback);
 }
 
