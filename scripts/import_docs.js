@@ -58,7 +58,11 @@ function downloadPage(filePath, callback, headingToStrip) {
 }
 
 function savePage(config, callback) {
-  var frontMatter = "---\n$title: " + config.title + "\n$order: " + (config.order || 0) + "\n---\n";
+  var optionalTOC = config.content.indexOf('[TOC]') > -1 ? 'toc: true\n' : '';
+  var frontMatter = `---
+$title: ${config.title}
+$order: ${config.order || 0}
+${optionalTOC}---`;
   fs.writeFile(config.destination, frontMatter + config.content, callback);
 }
 
