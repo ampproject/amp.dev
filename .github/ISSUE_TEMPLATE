@@ -1,0 +1,25 @@
+Use the following template to report documentation issues for the www.ampproject.org site.  
+
+**Note**: For issues or questions about AMP (e.g., how it works, bugs with syntax, etc.) please do the following:
+
+- Ask general questions about AMP over on stackoverflow under the AMP HTML tag: http://stackoverflow.com/questions/tagged/amp-html
+- Ask/post questions/problems related to Google Search in Google's AMP forum: https://goo.gl/utQ1KZ
+- [File bugs in AMP](https://github.com/ampproject/amphtml/issues/new)
+
+## Description of the issue:
+
+Please provide:
+
+- Page link: <insert the URL link to the ampproject.org page(s) that you found the issue on>
+- Description of the documentation issue:
+
+## How do we reproduce the issue?
+
+Please provide the steps to reproduce the issue:
+
+1. Step 1 to reproduce
+2. Step 2 to reproduce
+3. …
+
+What browser are you using?
+What O/S are you using?
