@@ -32,7 +32,7 @@ download: "case-studies/NoBroker.pdf"
     <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/nobroker-frame1.png"></amp-img>
 </div>
 
-An online-only operation, Bangalore-based NoBroker connects flat owners and tenants directly via the web by eliminating the broker/agent from the transaction. Despite tremendous growth, NoBroker’s leadership team was grappling with unreliable cellular networks and an increasingly mobile audience. “We were seeing more than 50% of site traffic coming from mobile phones,” explains Akhil Gupta, one of NoBroker’s founders. “But because of flaky Indian cellular service—often switching between 2G and 4G—our pages were taking 12 - 15 seconds to load on slower networks. The challenge was clear: We needed our pages to load faster, even if the network was shoddy.”
+An online-only operation, Bangalore-based NoBroker connects flat owners and tenants directly by eliminating the broker/agent from the transaction. Despite tremendous growth, NoBroker’s leadership team was grappling with unreliable cellular networks and an increasingly mobile audience. “We were seeing more than 50% of site traffic coming from mobile phones,” explains Akhil Gupta, one of NoBroker’s founders. “But because of flaky Indian cellular service—often switching between 2G and 4G—our pages were taking 12 - 15 seconds to load on slower networks. The challenge was clear: We needed our pages to load faster, even if the network was shoddy.”
 
 ## Solution
 
