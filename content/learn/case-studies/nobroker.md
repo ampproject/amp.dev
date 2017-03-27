@@ -1,3 +1,4 @@
+---
 $order: 11
 $title: NoBroker
 $date: March 27, 2017
@@ -23,12 +24,12 @@ logo:
   src: "case-studies/nobroker_logo.png"
   width: 200
   height: 59
-download: "case-studies/nobroker.pdf"
+download: "case-studies/NoBroker.pdf"
 
 ---
 
 <div class="img-left">
-    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/nobroker_framed1.png"></amp-img>
+    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/nobroker-frame1.png"></amp-img>
 </div>
 
 An online-only operation, Bangalore-based NoBroker connects flat owners and tenants directly via the web by eliminating the broker/agent from the transaction. Despite tremendous growth, NoBroker’s leadership team was grappling with unreliable cellular networks and an increasingly mobile audience. “We were seeing more than 50% of site traffic coming from mobile phones,” explains Akhil Gupta, one of NoBroker’s founders. “But because of flaky Indian cellular service—often switching between 2G and 4G—our pages were taking 12 - 15 seconds to load on slower networks. The challenge was clear: We needed our pages to load faster, even if the network was shoddy.”
@@ -42,7 +43,7 @@ Gupta applied what he learned about AMP, but with a twist. NoBroker needed to dr
 ## Results
 
 <div class="img-right">
-    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/nobroker_framed2.png"></amp-img>
+    <amp-img width="800" height="1371" layout="responsive" src="/static/img/case-studies/nobroker_frame2.png"></amp-img>
 </div>
 
 NoBroker implemented their AMP framework in less than three weeks with just two engineers. “After our AMP pages went live,” Gupta says, “we saw an 18% decrease in bounce rate, 10% more page views, a 25% increase in registrations, and most importantly, a 77% increase in the number of connections between renters and tenants.” 
