@@ -33,6 +33,13 @@
   </aside>
   {%- endmacro %}
 
+  {% macro image(src, width, height, type='responsive', alt='', caption='', align='', margin='') -%}
+  <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+    <amp-img src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="responsive" alt="{{ alt }}"></amp-img>
+    {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+  </figure>
+  {%- endmacro %}
+
   <div class="wrap">
     {% block main %}
     <div class="content">

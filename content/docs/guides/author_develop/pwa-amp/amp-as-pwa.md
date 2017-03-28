@@ -6,12 +6,14 @@ toc: true
 
 [TOC]
 
-Many websites won’t ever need things beyond the boundaries of AMP. [AMPbyExample](http://ampbyexample.com/), for instance, is both an AMP and a progressive web app:
+{{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample triggering the "Add to Home Screen" prompt.') }}
 
-* It has a manifest, prompting the “Add to Homescreen” banner.
-* It has a service worker and, therefore, allows offline access, among other things.
+Many websites won’t ever need things beyond the boundaries of AMP. [AMPbyExample](http://ampbyexample.com/), for instance, is both an AMP and a Progressive Web App:
 
-When a user visits AMPbyExample from a AMP-supporting platform and then clicks continues the onward journey onto the same site, they navigate away from the AMP Cache to the origin. The website still uses the AMP library, of course, but because it now lives on the origin, it can use a service worker, can prompt to install and so on.
+1. It has a [Web App Manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), prompting the “Add to Homescreen” banner.
+1. It has a [Service Worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and, therefore, allows offline access, among other things.
+
+When a user visits [AMPbyExample](http://ampbyexample.com/) from a AMP-supporting platform and then clicks continues the onward journey onto the same site, they navigate away from the AMP Cache to the origin. The website still uses the AMP library, of course, but because it now lives on the origin, it can use a service worker, can prompt to install and so on.
 
 {% call callout('Remember', type='caution') %}
 The Service Worker won't be able to interact with the AMP-cached version of your page. Use it for onward journeys to your origin.

@@ -77,6 +77,45 @@
   amp-iframe {
     margin: 1em 0;
   }
+
+  .alignment-wrapper {
+
+    margin-bottom: 1em;
+
+    &.left {
+      float: left;
+      margin-right: 1em;
+      @include max-screen($mobile-breakpoint) {
+        float: none;
+        margin-right: 0;
+      }
+    }
+    &.right {
+      float: right;
+      margin-left: 1em;
+      @include max-screen($mobile-breakpoint) {
+        float: none;
+        margin-left: 0;
+      }
+    }
+    &.half { width: 50%; @include max-screen($mobile-breakpoint) { width: auto; }  }
+    &.third { width: 33%; @include max-screen($mobile-breakpoint) { width: auto; } }
+    &.margin-none { margin: 0; }
+
+    amp-img {
+      margin: 0;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      color: #666;
+      margin-top: 1em;
+      padding: 1em 0;
+      border-top: 2px solid #f0f0f0;
+      text-align: center;
+    }
+  }
+
 }
 
 .rtl .main {

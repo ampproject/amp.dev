@@ -5,13 +5,13 @@ toc: true
 ---
 [TOC]
 
-Contrary to popular belief, Progressive Web Apps and AMP Pages are not mutually exclusive. In fact, in many cases, they compliment each other in one way or another.
+Contrary to popular belief, Progressive Web Apps and AMP Pages are not mutually exclusive. In fact, in many cases, they compliment each other in one way or another. Learn how to:
 
-## What's in a Progressive Web App?
+1. [Enable PWA features](/docs/guides/pwa-amp/amp-as-pwa) for your AMP pages
+1. Create a [compelling, super-fast user journey](/docs/guides/pwa-amp/amp-to-pwa) from AMP to PWA
+1. [Simplify your PWA](/docs/guides/pwa-amp/amp-in-pwa) by using the power of AMP
 
-The term **Progressive Web App** describes a new generation of web apps that are reliable, fast and engaging: At its core is the Web App Manifest for installability, and a technology called Service Worker, a client-side proxy that sits between the browser and your site's server, allowing you to build features such as offline functionality and app shell caching for faster subsequent loads.
-
-{% call callout('Read on', type='read') %}
+{% call callout('Progressive Web App?', type='note') %}
 Learn more about [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) at Web Fundamentals.
 {% endcall %}
 
