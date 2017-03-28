@@ -12,7 +12,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "A collaborative effort"
-msgstr ""
+msgstr "Un esfuerzo de colaboración"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "A faster way to grow your business"
@@ -111,6 +111,11 @@ msgid ""
 " 1.5B AMP pages have been published to date and 100+ leading analytics, ad "
 "tech and CMS providers support the AMP format."
 msgstr ""
+"AMP se construye gracias a una profunda colaboración con miles de desarrolladores, "
+"editores, sitios web, plataformas de distribución y empresas de tecnología. Más de "
+"1.5B de páginas AMP se han publicado hasta la fecha y más de 100 empresas líderes "
+"en análisis, ad tech y proveedores de CMS apoyan el formato AMP."
+
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -223,7 +228,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Building the future web, together."
-msgstr "Armando el futuro de la web, juntos."
+msgstr "Juntos, Armando el futuro de la web."
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -434,7 +439,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Higher Performance and Engagement"
-msgstr "Alta Performance y Compromiso"
+msgstr "Alto Rendimiento y Compromiso"
 
 #: /content/learn/about-how@pt_BR.yaml /content/learn/about-how@th.yaml
 #: /content/learn/about-how@fr.yaml /content/learn/about-how@ar.yaml
@@ -652,6 +657,9 @@ msgid ""
 "technology vendors to use, all while maintaining and improving key "
 "performance indicators."
 msgstr ""
+"Los editores y anunciantes pueden decidir cómo presentar su contenido y que "
+"proveedores de tecnología utilizar, a la vez que mantienen y mejoran los "
+"indicadores clave de rendimiento"
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -844,6 +852,9 @@ msgid ""
 "consistently fast, beautiful and high-performing across devices and "
 "distribution platforms."
 msgstr ""
+"El proyecto AMP es una iniciativa de código abierto que busca mejorar la web para todos. "
+"El proyecto permite la creación de sitios web y anuncios consistentemente rápidos, "
+"bellos y de alto rendimiento en dispositivos y plataformas de distribución."
 
 #: /content/support/faqs/supported-platforms.md
 msgid ""
@@ -974,6 +985,9 @@ msgid ""
 "instantly, giving users a smooth, more engaging experience on mobile and "
 "desktop."
 msgstr ""
+"Las páginas web y los anuncios publicados en el formato de código abierto AMP "
+"cargan inmediatamente, ofreciendo a los usuarios una experiencia fluida y "
+"atractiva en móvil y escritorio."
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
