@@ -205,11 +205,11 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Brand Guidelines"
-msgstr ""
+msgstr "Normas de Marca"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Build for a sustainable future"
-msgstr ""
+msgstr "Construir para un futuro sostenible"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Build once, serve everywhere."
@@ -228,7 +228,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Building the future web, together."
-msgstr "Juntos, Armando el futuro de la web."
+msgstr "Armando el futuro de la web, juntos."
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -309,7 +309,7 @@ msgstr "No rompas la web"
 
 #: /content/learn/amp-design-principles.yaml
 msgid "Don’t design for a hypothetical faster future browser."
-msgstr ""
+msgstr "No diseñar para un futuro navegador hipotético más rápido"
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
