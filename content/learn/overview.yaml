@@ -23,7 +23,7 @@ core:
     - title: AMP HTML
       subtitle: |
         **AMP HTML** is HTML with some restrictions for reliable performance
-      description@: |
+      description: |
         AMP HTML is basically HTML extended with custom AMP properties.
         The simplest AMP HTML file looks like this:
       example: /content/includes/html-example.md
