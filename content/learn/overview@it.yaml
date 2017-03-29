@@ -5,7 +5,7 @@ core:
       subtitle: |
         **HTML AMP** è il formato HTML con alcuni limiti per garantire l’affidabilità delle performance
         e determinate estensioni per creare contenuto con formattazione più ricca rispetto all’HTML di base.
-      description@: |
+      description: |
         HTML AMP è essenzialmente l’HTML esteso con proprietà AMP personalizzate.
         La forma più semplice di file AMP HTML si presenta così:
       example: /content/includes/html-example.md

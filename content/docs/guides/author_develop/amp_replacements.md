@@ -11,7 +11,7 @@ Like on a normal HTML page, AMP allows you to embed **images**, **video** and **
 content. Learn what's different about the AMP equivalents and learn how to
 include them in your pages.
 
-## Why not `<img>`, `<video>` and `<audio`?
+## Why not `<img>`, `<video>` and `<audio>`?
 
 AMP doesn't support the default HTML counterparts to displaying media, like `<img>`.
 We provide equivalent components for the following reasons:

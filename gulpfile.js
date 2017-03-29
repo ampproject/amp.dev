@@ -114,5 +114,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('build', ['update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass']);
-gulp.task('default', ['update-platforms-page', 'sass', 'watch']);
+gulp.task('build', [ 'update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass', 'generate-asset-manifest' ]);
+gulp.task('default', [ 'update-platforms-page', 'sass', 'generate-asset-manifest', 'watch' ]);

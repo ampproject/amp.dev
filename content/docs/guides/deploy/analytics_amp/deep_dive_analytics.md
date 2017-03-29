@@ -54,7 +54,8 @@ and sends the analytics data to the third-party provider,
 </amp-analytics>
 [/sourcecode]
 
-**Note:** The above example code is to help you learn, but it's by no means a realistic sample. If you are working with analytics providers, it's likely that the above sample won't make sense; provider configurations remove complexity. Consult your analytics provider's documentation for sample configurations.
+{% call callout('Note', type='note') %}
+The above example code is to help you learn, but it's by no means a realistic sample. If you are working with analytics providers, it's likely that the above sample won't make sense; provider configurations remove complexity. Consult your [analytics provider's documentation](/docs/guides/analytics/analytics-vendors.html) for sample configurations.{% endcall %}
 
 ## Where to send analytics data: type attribute
 
@@ -136,10 +137,13 @@ to the account value in the remote URL (`"account": "UA-XXXXX-Y"`):
 }
 [/sourcecode]
 
-**Important:** AMP doesn’t validate against multiple uses of the same variable.
+
+{% call callout('Important', type='caution') %}
+AMP doesn’t validate against multiple uses of the same variable.
 Values get populated following a variable substitution order of preference,
-and values in remote URLs are top of that order
-(see [Variable substitution ordering](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+and values in remote URLs are top of that order (see [Variable substitution ordering](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+{% endcall %}
+
 
 ## Requests, triggers & transports
 
@@ -261,9 +265,9 @@ AMP supports the following trigger configurations:
   </tbody>
 </table>
 
-**Important:** Triggers from a configuration with lower precedence are overridden
-by triggers with the same names from a configuration with higher precedence
-(see [Variable substitution ordering](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+{% call callout('Important', type='caution') %}
+Triggers from a configuration with lower precedence are overridden by triggers with the same names from a configuration with higher precedence (see [Variable substitution ordering](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+{% endcall %}
 
 ### How data gets sent: transport attribute
 
