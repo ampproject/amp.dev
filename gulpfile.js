@@ -82,10 +82,20 @@ gulp.task('generate-asset-manifest', function (cb) {
     entry.url = '/static' + entry.url;
   });
 
-  fs.writeFile('./pwa/service-worker-manifest.js', 'self.__asset_manifest = ' + JSON.stringify(entries), (err) => {
+  fs.readFile('./pwa/service-worker.js', 'utf8', (err, data) => {
     if (err) throw err;
-    cb();
+
+    // Inline precache manifest directly into the Service Worker
+    data = data.replace(/\/\* START_PRECACHE_MANIFEST \*\/.*\/\* END_PRECACHE_MANIFEST \*\//, JSON.stringify(entries));
+
+    fs.writeFile('./pwa/service-worker.js', data, (err) => {
+      if (err) throw err;
+      cb();
+    });
+
   });
+
+
 
 });
 
@@ -104,5 +114,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('build', ['update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass']);
-gulp.task('default', ['update-platforms-page', 'sass', 'watch']);
+gulp.task('build', [ 'update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass', 'generate-asset-manifest' ]);
+gulp.task('default', [ 'update-platforms-page', 'sass', 'generate-asset-manifest', 'watch' ]);
