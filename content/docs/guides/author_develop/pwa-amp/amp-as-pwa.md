@@ -1,5 +1,5 @@
 ---
-$title: Enable PWA features for your AMP pages
+$title: Enable Progressive Web App features for your AMP pages
 $order: 0
 toc: true
 ---
@@ -21,7 +21,9 @@ The Service Worker won't be able to interact with the AMP-cached version of your
 
 ## Add a Web App Manifest
 
-Adding a [Web App Manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/) to your AMP pages ensures that users can install your site to their devices' homescreen. There's nothing special about Web App manifests in AMP. Create the manifest:
+Adding a [Web App Manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/) to your AMP pages ensures that users can install your site to their devices' homescreen. There's nothing special about Web App manifests in AMP.
+
+First, create the manifest:
 
 [sourcecode:json]
 {
@@ -66,7 +68,7 @@ A Service Worker is a client-side proxy that sits between your page and your ser
 If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 {% endcall %}
 
-As Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the `<amp-install-serviceworker>` component to achieve the same, like so:
+As Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`<amp-install-serviceworker>`](/docs/reference/components/dynamic/amp-install-serviceworker) component to achieve the same, like so:
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -79,7 +81,7 @@ If the user navigates to your AMP pages on your origin (as opposed to the first 
 
 ## Extend your AMP Pages via Service Worker
 
-You can use the above technique to enable offline access to your AMP website, as well as extend your pages as soon as they’re served from the origin. That's because you can modify the response via the Service Worker’s `fetch` event, and return as a response whatever you want:
+You can use the above technique to enable offline access to your AMP website, as well as extend your pages **as soon as they’re served from the origin**. That's because you can modify the response via the Service Worker’s `fetch` event, and return as a response whatever you want:
 
 [sourcecode:js]
 self.addEventListener('fetch', function(event) {
