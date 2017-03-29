@@ -9,12 +9,14 @@ tt{
   font-family: $font-family-mono;
   font-size: 14px;
   color: $color-black-95;
-  border-bottom: 3px solid #1475ce;
+  background: #f5f5f5;
+  box-shadow: inset 0px 1px 4px #d6d6d6;
+  border-radius: 2px;
 }
 
 code {
-  font-size: 15px;
   padding: 2px 5px;
+  margin: 0 2px;
 }
 
 a {
@@ -54,9 +56,6 @@ pre {
   word-break: normal;
   line-height: 1.4;
   padding: 1em;
-  border-radius: 0;
-  border: 0;
-  border-left: 3px solid #1475ce;
 
   > code {
     white-space: pre;
