@@ -27,9 +27,12 @@ Page view tracking works in `amp-analytics` too.
 But you can also track user engagement with any type of page content,
 including clicks on links and buttons.
 And you can measure how far on the page the user scrolled,
-whether or not the user engaged with social media, and more
-(see
-[Deep Dive into AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html)).
+whether or not the user engaged with social media, and more.
+
+{% call callout('Learn more', type='read') %}
+See [Deep Dive into AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html).
+{% endcall %}
+
 
 As part of integrating with the AMP platform,
 providers have offered pre-defined `amp-analytics` configurations
@@ -188,10 +191,10 @@ in the `amp-analytics` configuration.
 The `canonicalUrl` and `clientId` variables aren't defined in the configuration,
 so their values get substituted by the platform.
 
-**Important:** Variable substitution is flexible;
-you can have the same variables defined in different locations,
-and the AMP runtime will parse the values in this order of precedence
-(see [Variable substitution ordering](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+{% call callout('Important', type='caution') %}
+Variable substitution is flexible; you can have the same variables defined in different locations, and the AMP runtime will parse the values in this order of precedence (see [Variable substitution ordering](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+{% endcall %}
+
 
 ## User identification
 
@@ -243,3 +246,7 @@ by a random base64 encoded string.
 Learn more about client ID substitution,
 including how to add an optional user notification ID, in
 [Variables supported in AMP analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+
+{% call callout('Learn more', type='read') %}
+Continue to learn about analytics with [Deep Dive into AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html) and [Use Cases](/docs/guides/analytics/use_cases.html).
+{% endcall %}

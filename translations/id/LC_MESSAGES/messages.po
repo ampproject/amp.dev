@@ -64,12 +64,6 @@ msgstr ""
 msgid "AMP HTML Specification"
 msgstr ""
 
-#: /content/learn/overview.yaml
-msgid ""
-"AMP HTML is basically HTML extended with custom AMP properties.\n"
-"The simplest AMP HTML file looks like this:\n"
-msgstr ""
-
 #: /content/support/faqs/supported-platforms.md
 msgid "AMP Overview"
 msgstr ""
@@ -131,14 +125,6 @@ msgid ""
 "interaction with a publisher’s brand is a compelling one."
 msgstr ""
 
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "AMP는 어떤 이들을 위해 존재할까요?"
-msgstr ""
-
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "AMP를 사용하여 850,000개 도메인, 주요 플랫폼 및 100개 이상의 기술 제공 업체로 구성된 생태계에 참여하세요."
-msgstr ""
-
 #: /content/includes/menu.yaml
 msgid "About"
 msgstr ""
@@ -149,6 +135,10 @@ msgstr ""
 
 #: /content/includes/latest.yaml
 msgid "Add to Calendar"
+msgstr ""
+
+#: /content/includes/who.yaml
+msgid "Ads"
 msgstr ""
 
 #: /content/docs/reference/components
@@ -170,6 +160,14 @@ msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Amplify your impact"
+msgstr ""
+
+#: /content/includes/who.yaml
+msgid "Analytics"
+msgstr ""
+
+#: /content/includes/who.yaml
+msgid "Audio/Video"
 msgstr ""
 
 #: /content/docs/guides/author_develop.md /content/docs/guides/author_develop
@@ -224,6 +222,10 @@ msgid ""
 "distribution platforms simultaneously."
 msgstr ""
 
+#: /content/includes/who.yaml
+msgid "CMS"
+msgstr ""
+
 #: /content/learn/case-studies.html /content/includes/menu.yaml
 #: /content/learn/case-studies/category /views/about-casestudies.html:12
 msgid "Case Studies"
@@ -231,6 +233,10 @@ msgstr ""
 
 #: /content/support/developer.md
 msgid "Community Resources"
+msgstr ""
+
+#: /content/includes/who.yaml
+msgid "Content Platforms"
 msgstr ""
 
 #: /content/docs/contribute.md /content/includes/menu.yaml /content/docs/reference
@@ -254,6 +260,16 @@ msgstr ""
 
 #: /content/docs/get_started/login_requiring
 msgid "Create a login-requiring AMP page"
+msgstr ""
+
+#: /content/docs/build.md
+msgid ""
+"Create beautiful AMP pages with pre-styled page templates and components from"
+" AMP Start."
+msgstr ""
+
+#: /content/docs/build.md
+msgid "Create your First AMP"
 msgstr ""
 
 #: /content/learn/case-studies.html
@@ -350,7 +366,7 @@ msgstr ""
 msgid "Events"
 msgstr ""
 
-#: /content/includes/menu.yaml
+#: /content/docs/build.md /content/includes/menu.yaml
 msgid "Examples"
 msgstr ""
 
@@ -372,6 +388,10 @@ msgstr ""
 
 #: /content/includes/latest.yaml
 msgid "Follow us on Twitter"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "Get Started"
 msgstr ""
 
 #: /content/learn/who/publishers.yaml /content/learn/who/ad-tech-platforms.yaml
@@ -402,17 +422,11 @@ msgstr ""
 msgid "Grow engagement and increase conversions with faster experiences"
 msgstr ""
 
-#: /content/docs/guides.md /content/includes/menu.yaml /content/docs/guides
-#: /content/docs/reference /content/docs/get_started
+#: /content/docs/build.md /content/docs/guides.md /content/includes/menu.yaml
+#: /content/docs/guides /content/docs/reference /content/docs/get_started
 #: /content/docs/reference/components
 msgid "Guides"
 msgstr "Panduan"
-
-#: /content/learn/overview@it.yaml
-msgid ""
-"HTML AMP è essenzialmente l’HTML esteso con proprietà AMP personalizzate.\n"
-"La forma più semplice di file AMP HTML si presenta così:\n"
-msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -493,8 +507,16 @@ msgstr "Pelajari Lebih Lanjut"
 msgid "Learn about AMP"
 msgstr ""
 
+#: /content/docs/build.md
+msgid "Learn about each AMP component, including syntax and examples."
+msgstr ""
+
 #: /content/includes/home.yaml
 msgid "Learn how to build AMP pages and AMP Ads"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "Learn how to create your first AMP page with this short beginner tutorial."
 msgstr ""
 
 #: /content/learn/who/advertisers.yaml
@@ -553,7 +575,7 @@ msgstr ""
 msgid "Need Dev Support?"
 msgstr ""
 
-#: /content/pages/home.html:36 /content/pages/home.html:76
+#: /content/pages/home.html:37 /content/pages/home.html:77
 #: /content/includes/menu.yaml
 msgid "News"
 msgstr ""
@@ -663,8 +685,8 @@ msgstr ""
 msgid "Reduce complexity in your operations."
 msgstr ""
 
-#: /content/docs/reference.md /content/includes/menu.yaml /content/docs/guides
-#: /content/docs/reference /content/docs/contribute
+#: /content/docs/build.md /content/docs/reference.md /content/includes/menu.yaml
+#: /content/docs/guides /content/docs/reference /content/docs/contribute
 msgid "Reference"
 msgstr "Referensi"
 
@@ -815,8 +837,17 @@ msgstr "Dukungan"
 msgid "Support Forum"
 msgstr ""
 
+#: /content/support/faqs/supported-platforms@ko.md
 #: /content/support/faqs/supported-platforms.md
 msgid "Supported Platforms, Vendors and Partners"
+msgstr ""
+
+#: /content/includes/who.yaml
+msgid "Technology Companies using AMP"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "Templates"
 msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
@@ -835,6 +866,7 @@ msgid ""
 "distribution platforms."
 msgstr ""
 
+#: /content/support/faqs/supported-platforms@ko.md
 #: /content/support/faqs/supported-platforms.md
 msgid ""
 "The Accelerated Mobile Pages (AMP) Project is an open source initiative that "
@@ -903,10 +935,14 @@ msgid ""
 " of AMP. They should help us make internally consistent decisions."
 msgstr ""
 
-#: /content/docs/tutorials.md /content/learn/amp-design-principles.yaml
-#: /content/includes/menu.yaml /content/docs/guides /content/docs/contribute
-#: /content/docs/get_started /content/learn/who/publishers.yaml
-#: /content/learn/who/ad-tech-platforms.yaml
+#: /content/docs/build.md
+msgid "Try out the hands-on examples on AMP by Example."
+msgstr ""
+
+#: /content/docs/build.md /content/docs/tutorials.md
+#: /content/learn/amp-design-principles.yaml /content/includes/menu.yaml
+#: /content/docs/guides /content/docs/contribute /content/docs/get_started
+#: /content/learn/who/publishers.yaml /content/learn/who/ad-tech-platforms.yaml
 msgid "Tutorials"
 msgstr ""
 
@@ -926,8 +962,36 @@ msgstr ""
 msgid "Vendor Support"
 msgstr ""
 
+#: /content/docs/build.md
+msgid "View AMP Components"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "View Guides"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "View Tutorials"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "View examples"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "View our in-depth guides for how to develop, debug, and deploy in AMP."
+msgstr ""
+
+#: /content/docs/build.md
+msgid "View templates"
+msgstr ""
+
 #: /content/includes/doc.yaml
 msgid "Visit our FAQ"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "Walk through how to use AMP features with our tutorials."
 msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
@@ -1017,7 +1081,8 @@ msgstr ""
 msgid "Who Uses AMP"
 msgstr ""
 
-#: /content/learn/who-uses-amp.yaml /content/includes/menu.yaml
+#: /content/learn/who-uses-amp@ko.yaml /content/learn/who-uses-amp.yaml
+#: /content/includes/menu.yaml
 msgid "Who is AMP for?"
 msgstr ""
 
@@ -1025,8 +1090,28 @@ msgstr ""
 msgid "Why AMP Ads"
 msgstr ""
 
-#: /content/pages/home.html:60
+#: /content/docs/build.md
+msgid "get_started/create.html"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "guides/author-develop/responsive_amp.html"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "https://ampbyexample.com/"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "https://ampstart.com/"
+msgstr ""
+
+#: /content/pages/home.html:61
 msgid "or"
+msgstr ""
+
+#: /content/docs/build.md
+msgid "reference/components.html"
 msgstr ""
 
 #: /content/includes/home.yaml
@@ -1045,13 +1130,5 @@ msgstr ""
 msgid ""
 "“We see our work on AMP as furthering the business need of providing a fast, "
 "clean user experience to our audience.”"
-msgstr ""
-
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "사례 보기"
-msgstr ""
-
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "성공 사례"
 msgstr ""
 

@@ -8,11 +8,8 @@ toc: true
 
 This guide provides a set of common use cases for tracking user engagement:
 
-Want to add a use case?
-[Let us know.](https://github.com/ampproject/docs/issues/new)
-
-You can also contribute your own use cases;
-see [How to Contribute](https://www.ampproject.org/docs/support/contribute.html).
+{% call callout('Note', type='note') %} Want to add a use case?
+[Let us know.](https://github.com/ampproject/docs/issues/new) Or you can also contribute your own use cases, see [How to Contribute](https://www.ampproject.org/docs/support/contribute.html).{% endcall %}
 
 ## Tracking page views
 
