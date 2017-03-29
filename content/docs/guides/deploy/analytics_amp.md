@@ -45,3 +45,8 @@ Key data points to consider:
 * What kinds of data will you capture about your users, your content,
 the device or browser (see also [Variable substitution](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
 * How will you identify your users (see also [User identification](/docs/guides/analytics/analytics_basics.html#user-identification))?
+
+
+{% call callout('Learn more', type='read') %}
+Continue to learn about analytics with [Analytics: the Basics](/docs/guides/analytics/analytics_basics.html).
+{% endcall %}
