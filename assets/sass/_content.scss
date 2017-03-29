@@ -97,8 +97,8 @@
         margin-left: 0;
       }
     }
-    &.half { width: 50%; @include max-screen($mobile-breakpoint) { width: auto; }  }
-    &.third { width: 33%; @include max-screen($mobile-breakpoint) { width: auto; } }
+    &.half { width: calc(50% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; }  }
+    &.third { width: calc(33% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
     &.margin-none { margin: 0; }
 
     amp-img {

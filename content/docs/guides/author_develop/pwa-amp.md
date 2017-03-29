@@ -2,8 +2,12 @@
 $title: Connect AMP & PWA
 $order: 9
 toc: true
+components:
+    - youtube
 ---
 [TOC]
+
+{{ youtube('M_ZCgbEGyHY', 480, 270, caption='If you prefer listening, this talk from CDS 2017 gives you a similar overview.') }}
 
 Contrary to popular belief, Progressive Web Apps and AMP Pages are not mutually exclusive. In fact, in many cases, they compliment each other in one way or another. Learn how to:
 

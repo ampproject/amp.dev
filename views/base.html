@@ -33,9 +33,20 @@
   </aside>
   {%- endmacro %}
 
-  {% macro image(src, width, height, type='responsive', alt='', caption='', align='', margin='') -%}
+  {% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='') -%}
   <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
-    <amp-img src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="responsive" alt="{{ alt }}"></amp-img>
+    <amp-img src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"></amp-img>
+    {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+  </figure>
+  {%- endmacro %}
+
+  {% macro youtube(id, width, height, layout='responsive', alt='', caption='', align='', margin='') -%}
+  <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+    <amp-youtube
+      data-videoid="M_ZCgbEGyHY"
+      layout="{{ layout }}"
+      width="{{ width }}" height="{{ height }}" alt="{{ alt }}">
+    </amp-youtube>
     {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
   </figure>
   {%- endmacro %}
