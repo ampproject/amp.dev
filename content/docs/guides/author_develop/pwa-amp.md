@@ -1,5 +1,5 @@
 ---
-$title: Connect AMP & PWA
+$title: Combine with Progressive Web Apps
 $order: 9
 toc: true
 components:
