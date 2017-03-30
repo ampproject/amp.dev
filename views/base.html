@@ -40,12 +40,12 @@
   </figure>
   {%- endmacro %}
 
-  {% macro youtube(id, width, height, layout='responsive', alt='', caption='', align='', margin='') -%}
+  {% macro youtube(id, width, height, layout='responsive', caption='', align='', margin='') -%}
   <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
     <amp-youtube
       data-videoid="M_ZCgbEGyHY"
       layout="{{ layout }}"
-      width="{{ width }}" height="{{ height }}" alt="{{ alt }}">
+      width="{{ width }}" height="{{ height }}">
     </amp-youtube>
     {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
   </figure>
