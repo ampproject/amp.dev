@@ -1,5 +1,5 @@
 ---
-$title: Combine with Progressive Web Apps
+$title: Combine AMP with Progressive Web Apps
 $order: 9
 toc: true
 components:
@@ -7,7 +7,7 @@ components:
 ---
 [TOC]
 
-{{ youtube('M_ZCgbEGyHY', 480, 270, caption='If you prefer listening, this talk from CDS 2017 gives you a similar overview.') }}
+{{ youtube('M_ZCgbEGyHY', 480, 270, caption='If you prefer listening, this talk from CDS 2016 gives you a similar overview.') }}
 
 Contrary to popular belief, Progressive Web Apps and AMP Pages are not mutually exclusive. In fact, in many cases, they compliment each other in one way or another. Learn how to:
 
@@ -31,7 +31,7 @@ Learn how to [enable PWA features](/docs/guides/pwa-amp/amp-as-pwa) for your AMP
 
 AMP's unique selling point is the **almost-instant delivery**, a characteristic that makes AMP pre-destined for the first hop into your site. *Progressive web apps* enable much **more interactivity and engagement-enabling features**, but their first load is hindered by the fact that the site's Service Worker, and therefore its assets and app shell, are only accelerating delivery on subsequent loads.
 
-A good strategy is to make the entry point into your site AMP, then warm up the PWA behind the scenes and switch to it for the onward journey.
+A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to it for the onward journey.
 
 {% call callout('Read on', type='read') %}
 Learn how to [connect AMP to a PWA](/docs/guides/pwa-amp/amp-to-pwa) through `amp-install-serviceworker`.
@@ -39,9 +39,9 @@ Learn how to [connect AMP to a PWA](/docs/guides/pwa-amp/amp-to-pwa) through `am
 
 ## AMP as data source for your PWA
 
-One of the core features of AMP Pages is that they're easy and safe to embed, which is why an ever growing number of platforms is happy to distribute and serve them.
+One of the core features of AMP Pages is that they're easy and safe to embed, which is why an ever-growing number of platforms are happy to distribute and serve them.
 
-If you're building a Progressive Web App, you can benefit from the same and dramatically reduce your backend and client complexity by **re-using your AMP Pages as data-source for your PWA**.
+If you're building a Progressive Web App, you can receive the same benefits and dramatically reduce your backend and client complexity by **re-using your AMP Pages as data-source for your PWA**.
 
 {% call callout('Read on', type='read') %}
 Learn how to [consume AMP pages within a PWA](/docs/guides/pwa-amp/amp-in-pwa).

@@ -62,13 +62,22 @@ Learn more about the [Web App Manifest at WebFundamentals](https://developers.go
 
 ## Install a Service Worker to enable offline access
 
-A Service Worker is a client-side proxy that sits between your page and your server, and can be used to build fantastic offline experiences, fast-loading app shell scenarios and the sending of push notifications.
+A Service Worker is a client-side proxy that sits between your page and your server, and can be used to build fantastic offline experiences, fast-loading app shell scenarios, and send push notifications.
 
 {% call callout('Note', type='note') %}
 If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 {% endcall %}
 
-As Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`<amp-install-serviceworker>`](/docs/reference/components/dynamic/amp-install-serviceworker) component to achieve the same, like so:
+Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`<amp-install-serviceworker>`](/docs/reference/components/dynamic/amp-install-serviceworker) component to achieve the same.
+
+For that, first include the `<amp-install-serviceworker>` component via its script in the `<head>` of your page:
+
+[sourcecode:html]
+<script async custom-element="amp-install-serviceworker"
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+[/sourcecode]
+
+Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -81,7 +90,7 @@ If the user navigates to your AMP pages on your origin (as opposed to the first 
 
 ## Extend your AMP Pages via Service Worker
 
-You can use the above technique to enable offline access to your AMP website, as well as extend your pages **as soon as they’re served from the origin**. That's because you can modify the response via the Service Worker’s `fetch` event, and return as a response whatever you want:
+You can use the above technique to enable offline access to your AMP website, as well as extend your pages **as soon as they’re served from the origin**. That's because you can modify the response via the Service Worker’s `fetch` event, and return any response you want:
 
 [sourcecode:js]
 self.addEventListener('fetch', function(event) {
