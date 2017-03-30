@@ -22,7 +22,7 @@ sections:
         - Support for more engaging video experiences
         quarter:
             "0":
-            - "[Autocomplete for form input](https://github.com/ampproject/amphtml/issues/3403)"
+            - "[Autocomplete for form input](https://github.com/ampproject/amphtml/issues/6625)"
             "2":
             - "[“Hero” mode for video players](https://github.com/ampproject/amphtml/issues/7510)"
             - "[“Smart” button sample using amp-bind](https://github.com/ampproject/amp-by-example/issues/575)"
@@ -31,15 +31,15 @@ sections:
             "4":
             - "[**amp-lightbox** improvements](https://github.com/ampproject/amphtml/issues/4152)"
             - "[Tabbed selection interface](https://github.com/ampproject/amphtml/issues/7512)"
-            - "[Support for parallax scrolling](https://github.com/ampproject/amphtml/issues/1443)"
+            - "[Support for parallax scrolling](https://github.com/ampproject/amphtml/pull/7794)"
             "5":
             - "[Provide greater interactivity support by introducing a mechanism to bind element behavior to user actions](https://www.ampproject.org/docs/reference/components/amp-bind)"
             - "[Batch fetching and caching of dynamic data](https://github.com/ampproject/amphtml/issues/7463)"
             "6":
-            - "[AMP Start out-of-the-box templates and styling](https://github.com/ampproject/amphtml/issues/2851)"
+            - "[AMP Start out-of-the-box templates and styling](https://ampstart.com)"
             - "[Support for Payment Request API (Android)](https://github.com/ampproject/amphtml/issues/7623)"
             - "[Interactive image gallery (large image + thumbnails)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/amp-carousel.md#advancing-amp-carouseltypeslides-to-a-specific-slide)"
-            - "[Support for enhanced form inputs (images, etc) [**amp-selector**]](https://www.ampproject.org/pl/docs/reference/components/amp-selector)"
+            - "[Support for enhanced form inputs (images, etc) [**amp-selector**]](https://www.ampproject.org/docs/reference/components/dynamic/amp-selector)"
         forecast:
         - Enhanced payment support
         - Simple configuration and theming in AMP Start
