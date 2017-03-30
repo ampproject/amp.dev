@@ -884,7 +884,7 @@ msgstr "Compañías Tecnológicas usando AMP"
 
 #: /content/docs/build.md
 msgid "Templates"
-msgstr "Diseños"
+msgstr "Plantillas"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
