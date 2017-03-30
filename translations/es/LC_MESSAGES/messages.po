@@ -503,7 +503,7 @@ msgid ""
 "Join an ecosystem of  850,000 domains, leading platforms, and 100+ technology"
 " providers using AMP."
 msgstr ""
-"Uneta al ecosistema de 850 mil dominios, plataformas líderes y más de "
+"Únete al ecosistema de 850 mil dominios, plataformas líderes y más de "
 "100 proveedores tecnológicos usando AMP."
 
 #: /content/learn/who/amp-ads.yaml
