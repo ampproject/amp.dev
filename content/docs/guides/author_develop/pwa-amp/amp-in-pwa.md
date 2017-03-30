@@ -24,6 +24,31 @@ Include Shadow AMP in the head of your page, like so:
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
 [/sourcecode]
 
+### How do you know when Shadow AMP is ready to use?
+
+We recommend you load the Shadow AMP library with the `async` attribute in place. That means, however, that you need to use a certain approach to understand when the library is fully loaded and ready to be used.
+
+The right signal to observe is the availability of the global `AMP` variable, and Shadow AMP uses a “[asynchronous function loading approach](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)” to help with that. Consider this code:
+
+[sourcecode:javascript]
+(window.AMP = window.AMP || []).push(function(AMP) {
+  // AMP is now available.
+});
+[/sourcecode]
+
+This code will work, and the callback will indeed fire when AMP is available, but why?
+
+This code translates to:
+
+  1. “if window.AMP doesn't exist, create an empty array to take its position”
+  1. "then push a callback function into the array that should be executed when AMP is ready"
+
+It works because the Shadow AMP library, upon actual load, will realize there's already an array of callbacks under `window.AMP`, then process the entire queue. If you later execute the same function again, it will still work, as Shadow AMP replaces `window.AMP` with itself and a custom `push` method that simply fires the callback right away.
+
+{% call callout('Tip', type='success') %}
+To make the above code sample practical, we recommend to wrap it into a Promise, then always use said Promise before working with the AMP API. Look at our [React demo code](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) for an example.
+{% endcall %}
+
 ## Handle navigation in your Progressive Web App
 
 You’ll still need to implement this step manually. After all, it's up to you how you present links to content in your navigation concept. A number of lists? A bunch of cards?

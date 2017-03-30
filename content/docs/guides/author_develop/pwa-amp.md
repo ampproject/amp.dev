@@ -9,7 +9,7 @@ components:
 
 {{ youtube('M_ZCgbEGyHY', 480, 270, caption='If you prefer listening, this talk from CDS 2016 gives you a similar overview.') }}
 
-Contrary to popular belief, Progressive Web Apps and AMP Pages are not mutually exclusive. In fact, in many cases, they compliment each other in one way or another. Learn how to:
+Contrary to what you might think, Progressive Web Apps and AMP Pages are not mutually exclusive. In fact, in many cases, they compliment each other in one way or another. Learn how to:
 
 1. [Enable PWA features](/docs/guides/pwa-amp/amp-as-pwa) for your AMP pages
 1. Create a [compelling, super-fast user journey](/docs/guides/pwa-amp/amp-to-pwa) from AMP to PWA
