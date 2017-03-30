@@ -24,7 +24,7 @@ Include Shadow AMP in the head of your page, like so:
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
 [/sourcecode]
 
-### How do you know when Shadow AMP is ready to use?
+### How do you know when the Shadow AMP API is ready to use?
 
 We recommend you load the Shadow AMP library with the `async` attribute in place. That means, however, that you need to use a certain approach to understand when the library is fully loaded and ready to be used.
 
@@ -36,7 +36,7 @@ The right signal to observe is the availability of the global `AMP` variable, an
 });
 [/sourcecode]
 
-This code will work, and the callback will indeed fire when AMP is available, but why?
+This code will work, and the any number of callbacks added this way will indeed fire when AMP is available, but why?
 
 This code translates to:
 
@@ -55,7 +55,7 @@ You’ll still need to implement this step manually. After all, it's up to you h
 
 In a common scenario, you’d fetch some JSON that returns ordered URLs with some metadata. In the end, you should end up with a function callback that fires when the user clicks on one of the links, and said callback should include the URL of the requested AMP page. If you have that, you’re all set for the final step.
 
-## Use the Shadow API to render a page inline
+## Use the Shadow AMP API to render a page inline
 
 Finally, when you want to display content after a user action, it's time to fetch the relevant AMP document and let Shadow AMP take over. First, implement a function to fetch the page, similar to this one:
 
