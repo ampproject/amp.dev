@@ -14,6 +14,6 @@ Berikutnya, pastikan bahwa halaman AMP Anda **benar-benar merupakan halaman AMP 
   1. Tambahkan "`#development=1`" ke URL, misalnya, `http://localhost:8000/released.amp.html#development=1`.
   1. Buka [konsol Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) dan periksa kesalahan validasi.
 
-[Ketahui selengkapnya mengenai validasi](/docs/guides/validate.html), dan tindakan yang harus Anda lakukan jika menjumpai kesalahan.
+[Ketahui selengkapnya mengenai validasi](/id/docs/guides/debug/validate.html), dan tindakan yang harus Anda lakukan jika menjumpai kesalahan.
 
 <a class="go-button button" href="/id/docs/get_started/create/prepare_for_discovery.html">Lanjutkan ke Langkah 5</a>

@@ -13,7 +13,7 @@ faq:
       L'acceptation des abonnements et des paywalls constitue un objectif clé du projet Accelerated Mobile Pages. Les pages AMP offrent un accès flexible aux éditeurs qui leur permet de contrôler la façon dont les documents s'affichent pour les abonnés, les utilisateurs contrôlés et les utilisateurs anonymes.
   - title: Comment les statistiques sont-elles traitées au format AMP ?
     answer: |
-      Offrir aux éditeurs des analyses et des statistiques précises est un autre objectif clé du projet. Bien que le traitement des statistiques dans la version de démonstration soit limité, il est prévu que la version finale permette la collecte d'informations statistiques et s'intègre avec des systèmes tiers sans compromettre la vitesse ni la taille des fichiers AMP. Plusieurs fournisseurs de statistiques [participent](https://www.ampproject.org/who/#analytics) au projet.
+      Offrir aux éditeurs des analyses et des statistiques précises est un autre objectif clé du projet. Bien que le traitement des statistiques dans la version de démonstration soit limité, il est prévu que la version finale permette la collecte d'informations statistiques et s'intègre avec des systèmes tiers sans compromettre la vitesse ni la taille des fichiers AMP. Plusieurs fournisseurs de statistiques [participent](/fr/support/faqs/supported-platforms.html#analytics) au projet.
   - title: Du point de vue des mesures, les éditeurs reçoivent-ils du crédit pour le trafic ?
     answer: |
       Oui, un fichier AMP est identique au reste de votre site. Cet espace constitue la toile de l'éditeur.

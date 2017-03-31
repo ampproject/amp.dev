@@ -32,7 +32,7 @@ faq:
       The companies involved in the project want to make the mobile web work better for all -- not just for one platform, one set of technologies, or one set of publishers. Making the project open source enables people to share and contribute their ideas and code for making the mobile web fast. We are just at the beginning of that journey and we look forward to other publishers and technology companies joining along the way.
   - title: Who can use Accelerated Mobile Pages?
     answer: |
-      The project is open to all players in the ecosystem - publishers, consumer platforms, and creators. To get an idea who some of the companies and sites are who use AMP, head to the [Who page](/who).
+      The project is open to all players in the ecosystem - publishers, consumer platforms, and creators. To get an idea who some of the companies and sites are who use AMP, head to the [Who page](/support/faqs/supported-platforms.html).
   - title: What are the consequences of using Accelerated Mobile Pages?
     answer: |
       By using the AMP format, content producers are making the content in AMP files available to be crawled, indexed & displayed (subject to the robots exclusion protocol) and cached by third parties.
@@ -40,7 +40,7 @@ faq:
     answer: |
       If a publisher collects data from users who view its AMP pages, such data collection is governed by the publisher’s privacy policy.  It is the publisher’s responsibility to disclose its privacy policy, ideally by including a link to it within each of the publisher’s AMP pages.
 
-      Furthermore, the laws in many jurisdictions, such as in the European Union, require a publisher to give visitors information about cookies and other forms of local storage used on the publisher’s web pages (including AMP pages). In many cases, these laws also require that the publisher obtain consent.  It is the publisher’s responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component [amp-user-notification](https://www.ampproject.org/docs/reference/components/amp-user-notification) provides a way to display a dismissable notification to the user.
+      Furthermore, the laws in many jurisdictions, such as in the European Union, require a publisher to give visitors information about cookies and other forms of local storage used on the publisher’s web pages (including AMP pages). In many cases, these laws also require that the publisher obtain consent.  It is the publisher’s responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component [amp-user-notification](/docs/reference/components/dynamic/amp-user-notification.html) provides a way to display a dismissable notification to the user.
 
       If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP publisher and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP publisher is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.
   - title: What type of content works best using Accelerated Mobile Pages?
@@ -48,7 +48,7 @@ faq:
       The goal is for all published content, from news stories to videos and from blogs to photographs and GIFs, to work using Accelerated Mobile Pages.
   - title: As a publisher, does making my content work for Accelerated Mobile Pages entail more work?
     answer: |
-      In short, not much. Since “AMP HTML” is built entirely out of existing web technologies, the development process mirrors the one publishers are already using today. Publishers can familiarize themselves with the [AMP HTML specification](https://www.ampproject.org/docs/reference/spec) on GitHub. For those used to the current process, we don’t expect a significant learning curve.
+      In short, not much. Since “AMP HTML” is built entirely out of existing web technologies, the development process mirrors the one publishers are already using today. Publishers can familiarize themselves with the [AMP HTML specification](/docs/reference/spec.html) on GitHub. For those used to the current process, we don’t expect a significant learning curve.
   - title: How can a publisher get content into AMP HTML?
     answer: |
       Publishers and Content Management System (CMS) providers can develop an integration with their CMS to generate AMP content. Automattic has already published a [WordPress AMP plugin](https://wordpress.org/plugins/amp/) and we hope that all content management systems will add support for AMP HTML pages.

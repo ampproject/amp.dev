@@ -7,6 +7,7 @@ hero:
 points:
   pointlist:
     - title: Se permiten únicamente scripts asíncronos
+      id: execute-js-asynchronously
       description: |
         JavaScript es poderoso:
         puede modificar casi todos los aspectos de la página,
@@ -25,6 +26,7 @@ points:
         [API `document.write`, totalmente contraproducente para el rendimiento](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/),
         no se bloqueará la representación de la página principal.
     - title: Se ordenan estáticamente los recursos
+      id: size-all-resources-statically
       description: |
         Los recursos externos, como las imágenes, los anuncios o los iframes, deben establecer su tamaño en HTML
         para que las páginas AMP puedan determinar el tamaño y la posición de cada elemento antes de que se descarguen los recursos.
@@ -35,6 +37,7 @@ points:
         Dado que las páginas AMP están optimizadas para evitar recálculos de estilo y diseños pesados en el navegador,
         no se llevará a cabo ninguna instancia de rediseño cuando se carguen los recursos.
     - title: No se permite que los mecanismos de extensión bloqueen la representación
+      id: dont-block-rendering
       description: |
         El sistema AMP no permite que los mecanismos de extensión bloqueen la representación de páginas.
         Admite extensiones para recursos como
@@ -50,6 +53,7 @@ points:
         Las páginas AMP crean el cuadro de iframe antes de determinar lo que incluirá:
       example: /content/includes/amp-iframe.md
     - title: Se mantiene el contenido JavaScript de terceros lejos de la ruta de acceso crítica
+      id: third-party-js-non-critical
       description: |
         En el contenido JS de terceros generalmente se aplica carga de JS sincrónica y
         también se implementa `document.write` en más scripts de sincronización.
@@ -64,6 +68,7 @@ points:
         Por lo tanto, los recálculos de iframe son muy rápidos en comparación
         con el recálculo de estilos y el diseño para la página.
     - title: Los elementos de CSS deben estar alineados y su tamaño debe estar limitado
+      id: css-must-be-inline
       description: |
         Los elementos de CSS bloquean toda representación y la carga de páginas, y su tamaño tiende a aumentar.
         En páginas HTML de AMP, solo se permiten los estilos en línea.
@@ -85,6 +90,7 @@ points:
         y porque solo se permiten hojas de estilo en línea;
         no hay solicitudes HTTP que impidan que el navegador descargue las fuentes.
     - title: Se minimizan los recálculos de estilo
+      id: minimize-style-recalculations
       description: |
         Siempre que se mide algo se activan recálculos de estilo que resultan pesados,
         ya que el navegador debe diseñar la página completa.
@@ -93,6 +99,7 @@ points:
         <p>Puedes obtener más información sobre el impacto de los recálculos de estilo y diseño en
         [Rendimiento de la representación](https://developers.google.com/web/fundamentals/performance/rendering/).
     - title: Solo se ejecutan animaciones con aceleración por GPU
+      id: only-run-gpu-accelerated-animations
       description: |
         La única forma de lograr optimizaciones rápidas es ejecutarlas en la GPU.
         La GPU reconoce capas, identifica los procedimientos para llevar a cabo tareas en estos diseños
@@ -104,6 +111,7 @@ points:
         Obtén más información sobre el
         [Uso de los cambios en las propiedades transform y opacity para las animaciones](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count).
     - title: Se prioriza la carga de recursos
+      id: prioritize-resource-loading
       description: |
         El sistema de AMP controla todas las descargas de recursos. Prioriza la carga de recursos,
         ya que carga solo lo que es necesario y realiza capturas previas de recursos de carga diferida.
@@ -116,6 +124,7 @@ points:
         De esa manera, los objetos se cargan muy rápido, pero el CPU solo se usa
         cuando se muestran los recursos ante el usuario.
     - title: Las páginas se cargan al instante
+      id: load-pages-in-an-instant
       description: |
         La nueva [API de preconexión](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
         se usa mucho para garantizar que las solicitudes HTTP sean lo más rápidas posible cuando se crean.
@@ -133,6 +142,7 @@ points:
         <p>Obtén más información sobre la
         [razón por la cual AMP HTML no aprovecha en su totalidad el escáner de precarga](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e).
     - title: Se agiliza el sistema de AMP
+      id: help-make-amp-faster
       description: |
         El sistema de AMP es de código abierto.
         Necesitamos tu ayuda para que sea aún más rápido.

@@ -14,6 +14,6 @@ Następnie upewnij się, że dana strona AMP **jest rzeczywiście prawidłowym k
   1. Dodaj parametr „`#development=1`” do adresu URL, na przykład `http://localhost:8000/released.amp.html#development=1`.
   1. Otwórz [konsolę DevTools w przeglądarce Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) i sprawdź, czy wystąpiły błędy sprawdzania poprawności.
 
-[Dowiedz się o sprawdzaniu poprawności](/docs/guides/validate.html) i o tym, co robić, gdy wystąpią błędy.
+[Dowiedz się o sprawdzaniu poprawności](/pl/docs/guides/debug/validate.html) i o tym, co robić, gdy wystąpią błędy.
 
 <a class="go-button button" href="/pl/docs/get_started/create/prepare_for_discovery.html">Przejdź do kroku 5</a>

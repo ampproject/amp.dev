@@ -15,6 +15,6 @@ Als Nächstes müssen Sie sich vergewissern, dass **Ihre AMP-Seite gültig ist**
   1. Öffnen Sie die [Chrome DevTools-Konsole](https://developers.google.com/web/tools/chrome-devtools/debug/console/) und prüfen Sie, ob Validierungsfehler vorliegen.
 </ol>
 
-[Lesen Sie hier mehr über die Validierung](/docs/guides/validate.html) und was Sie bei Fehlern tun können.
+[Lesen Sie hier mehr über die Validierung](/de/docs/guides/debug/validate.html) und was Sie bei Fehlern tun können.
 
 <a class="go-button button" href="/de/docs/get_started/create/prepare_for_discovery.html">Weiter mit Schritt 5</a>

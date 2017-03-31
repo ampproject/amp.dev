@@ -7,6 +7,7 @@ hero:
 points:
   pointlist:
     - title: Yalnızca eşzamansız komut dosyalarına izin verir
+      id: execute-js-asynchronously
       description: |
         JavaScript güçlüdür,
         sayfanın tüm özelliklerini değiştirebilir,
@@ -25,6 +26,7 @@ points:
         [çok kötü performanslı`document.write` API](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/) kullanıyorsa,
         ana sayfa işlemeyi engellemez.
     - title: Tüm kaynakları statik olarak boyutlandırın
+      id: size-all-resources-statically
       description: |
         Görüntü, reklam veya bilgi iletim birimleri gibi harici kaynakların HTML›de boyutları belirtilmelidir
         bu sayede kaynaklar indirilmeden önce AMP her ögenin boyutunu ve pozisyonunu belirleyebilir.
@@ -35,21 +37,23 @@ points:
         AMP, tarayıcıdaki pahalı yeniden biçim hesaplamaları ve düzenlerden kaçınmak amacıyla optimize edildiği için,
         kaynaklar yüklendiğinde yeniden düzenleme olmayacaktır.
     - title: Uzantı mekanizmalarının işlemeyi engellemesine izin vermeyin
+      id: dont-block-rendering
       description: |
         AMP, uzantı mekanizmalarının işlemeyi engellemesine izin vermez
         AMP,
-        [ışık kutuları](/docs/reference/extended/amp-lightbox.html),
-        [instagram yerleştirmeleri](/docs/reference/extended/amp-instagram.html),
-        [tweet›ler](/docs/reference/extended/amp-twitter.html), vb. şeylerin uzantılarını destekler.
+        [ışık kutuları](/tr/docs/reference/components/layout/amp-lightbox.html),
+        [instagram yerleştirmeleri](/tr/docs/reference/components/social/amp-instagram.html),
+        [tweet›ler](/tr/docs/reference/components/social/amp-twitter.html), vb. şeylerin uzantılarını destekler.
         Bunlar ek HTTP istekleri gerektirdiği için,
         bu istekler sayfa düzenini ve işlemeyi engellemez.
         <p>Özel bir komut dosyası kullanan tüm sayfalar AMP sistemine
         zamanla özel bir etiketi olacağını belirtmelidir.
-        Örneğin, [`amp-iframe`](/docs/reference/extended/amp-iframe.html)
+        Örneğin, [`amp-iframe`](/tr/docs/reference/components/layout/amp-iframe.html)
         komut dosyası sisteme bir `amp-iframe` etiketi olacağını belirtir.
         AMP, daha ne içereceğini bilmeden bilgi iletim birimi kutucuğunu oluşturur:
       example: /content/includes/amp-iframe.md
     - title: Tüm üçüncü şahıs JavaScript›i kritik yolun dışında tutun
+      id: third-party-js-non-critical
       description: |
         Üçüncü şahıs JS eşzamanlı JS yüklemesi kullanmaktan hoşlanır.
         Bunlar aynı zamanda daha senkronize komut dosyaları `document.write` yazmaktan hoşlanır.
@@ -64,6 +68,7 @@ points:
         bu nedenle bilgi iletim birimlerinin yeniden hesaplaması
         sayfanın yeniden hesaplama biçimleri ve düzenine kıyasla çok hızlıdır.
     - title: Tüm CSS satır içi ve boyut kısıtlamalı olmalıdır
+      id: css-must-be-inline
       description: |
         CSS işlemenin tamamını engeller, sayfa yüklemesini engeller ve şişme eğilimi gösterir.
         AMP HTML sayfalarında, yalnızca satır içi biçimlere izin verilir.
@@ -85,6 +90,7 @@ points:
         ve yalnızca satır içi biçim sayfalarına izin verildiği için mümkündür;
         tarayıcının yazı tipi indirmesini engelleyen bir HTTP isteği bulunmaz.
     - title: Biçim yeniden hesaplamalarını en aza indirin
+      id: minimize-style-recalculations
       description: |
         Her ölçüm yaptığınızda, biçim yeniden hesaplamaları tetiklenir, bu da tarayıcının sayfanın
         tamamını düzenlemesi gerektiği için pahalı bir işlemdir.
@@ -92,6 +98,7 @@ points:
         Bu çerçeve başına maks. bir biçim yeniden hesaplama olmasını sağlamaktadır.
         <p>[İşleme performansı](https://developers.google.com/web/fundamentals/performance/rendering/) bölümünde biçim ve düzen yeniden hesaplamalarının etkisi hakkında daha fazla öğrenin.
     - title: Yalnızca GPU ile hızlandırılmış animasyonları çalıştırın
+      id: only-run-gpu-accelerated-animations
       description: |
         Hızlı optimizasyon sağlamanın tek yolu GPU üzerinde çalıştırmaktır.
         GPU, katmanları ve bu katmanlar üzerinde nasıl bir şeyler gerçekleştirileceğini bilir,
@@ -102,6 +109,7 @@ points:
         ile canlandırma ve geçişe izin verir.
         <p>[Canlandırma değişiklikleri için dönüşüm ve opaklık kullanımı](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count) hakkında daha fazlasını öğrenin.
     - title: Kaynak yüklemeyi önceliklendirin
+      id: prioritize-resource-loading
       description: |
         AMP tüm kaynak indirmeleri kontrol eder: kaynak yüklemeyi önceliklendirir,
         yalnızca gerekli olanları yükler ve tembel yüklü kaynakları ön belleğe alır.
@@ -114,6 +122,7 @@ points:
         Bu şekilde, hızlı yükleme gerçekleştirilir ancak CPU yalnızca
         kaynaklar gerçekten kullanıcılara gösterildiğinde kullanılır.
     - title: Sayfaları anında yükleme
+      id: load-pages-in-an-instant
       description: |
         Yeni [preconnect API](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
         HTTP isteklerinin oluşturulurken mümkün olduğunca hızlı olmasını sağlamak için yoğun olarak kullanılır.
@@ -130,7 +139,8 @@ points:
         çok fazla CPU kullanma ihtimali olan kaynaklar (üçüncü şahıs bilgi iletim birimleri gibi) indirilmez.
         <p>[AMP HTML›nin ön yükleme tarayıcısından neden faydalanmadığı](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e) hakkında daha fazla öğrenin.
     - title: AMP›yi hızlandırmamıza yardım edin
+      id: help-make-amp-faster
       description: |
         AMP açık kaynaklı bir çalışmadır.
         AMP›yi daha da hızlı hale getirmek için sizin yardımınıza ihtiyacımız var.
-        [Nasıl katkı sağlayacağınızı](/docs/support/contribute.html) öğrenin.
+        [Nasıl katkı sağlayacağınızı](/tr/contribute/) öğrenin.

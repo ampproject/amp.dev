@@ -14,6 +14,6 @@ Depois, certifique-se de que sua página AMP** seja realmente válida para AMP**
   1. Adicione "`#development=1`“ ao URL, por exemplo,`http://localhost:8000/released.amp.html#development=1`.
   1. Abra o [console Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) e verifique se há erros de validação.
 
-[Saiba mais sobre validação](/docs/guides/validate.html) e o que fazer quando ocorrerem erros.
+[Saiba mais sobre validação](/pt_br/docs/guides/debug/validate.html) e o que fazer quando ocorrerem erros.
 
 <a class="go-button button" href="/pt_br/docs/get_started/create/prepare_for_discovery.html">Continuar para a etapa 5</a>

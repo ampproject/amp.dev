@@ -14,6 +14,6 @@ $title: 预览和验证
   1. 向 URL 中添加“`#development=1`”，例如，`http://localhost:8000/released.amp.html#development=1`。
   1. 打开 [Chrome DevTools 控制台](https://developers.google.com/web/tools/chrome-devtools/debug/console/)，并检查是否有验证错误。
 
-[详细了解验证](/docs/guides/validate.html)，以及在出现错误时要执行的操作。
+[详细了解验证](/zh_cn/docs/guides/debug/validate.html)，以及在出现错误时要执行的操作。
 
 <a class="go-button button" href="/zh_cn/docs/get_started/create/prepare_for_discovery.html">继续执行步骤 5</a>

@@ -19,12 +19,12 @@ AMP adalah laman web, setiap penerapan gaya pada halaman dan elemen-elemennya di
 </style>
 [/sourcecode]
 
-Setiap halaman AMP hanya bisa memiliki satu sylesheet yang disematkan, dan ada pemilih tertentu yang tidak bisa Anda gunakan. [Ketahui semua tentang penggayaan](/docs/guides/responsive/style_pages.html).
+Setiap halaman AMP hanya bisa memiliki satu sylesheet yang disematkan, dan ada pemilih tertentu yang tidak bisa Anda gunakan. [Ketahui semua tentang penggayaan](/id/docs/guides/author-develop/responsive/style_pages.html).
 
 ## Mengontrol layout
 
 AMP mengikuti aturan yang lebih ketat saat melayout elemen pada halaman. Pada halaman HTML biasa, Anda hampir pasti menggunakan CSS secara eksklusif untuk melayout elemen. Namun karena alasan kinerja, AMP mewajibkan semua elemen untuk memiliki set ukuran eksplisit dari get-go.
 
-Ketahui tentang cara AMP merender dan melayout halaman dan cara Anda bisa memodifikasi layout dalam [Cara Mengontrol Layout](/docs/guides/responsive/control_layout.html).
+Ketahui tentang cara AMP merender dan melayout halaman dan cara Anda bisa memodifikasi layout dalam [Cara Mengontrol Layout](/id/docs/guides/author-develop/responsive/control_layout.html).
 
 <a class="go-button button" href="/id/docs/get_started/create/preview_and_validate.html">Lanjutkan ke Langkah 4</a>

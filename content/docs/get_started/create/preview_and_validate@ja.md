@@ -14,6 +14,6 @@ AMP ページのプレビュー方法は静的な HTML サイトと同じです�
   1. URL に「`#development=1`」を追加して、`http://localhost:8000/released.amp.html#development=1` のようにする。
   1. [Chrome DevTools のコンソール](https://developers.google.com/web/tools/chrome-devtools/debug/console/)を開いて、検証エラーを確認する。
 
-[検証の詳細](/docs/guides/validate.html)とエラーの対処法についてもご確認ください。
+[検証の詳細](/ja/docs/guides/debug/validate.html)とエラーの対処法についてもご確認ください。
 
 <a class="go-button button" href="/ja/docs/get_started/create/prepare_for_discovery.html">ステップ 5 に進む</a>

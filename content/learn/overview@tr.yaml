@@ -15,20 +15,20 @@ core:
         [AMP spesifikasyonundaki HTML Etiketleri](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         AMP HTML bileşenleri olarak adlandırılan bu özel ögeler,
         yaygın desenlerin başarılı bir şekilde uygulanmasını kolaylaştırmıştır.
-        <p>Örneğin, [`amp-img`](/docs/reference/amp-img.html) etiketi
+        <p>Örneğin, [`amp-img`](/tr/docs/reference/components/media/amp-img.html) etiketi
         bu özelliği henüz desteklemeyen tarayıcılarda bile tam `srcset` desteği sağlamaktadır.
-        [İlk AMP HTML sayfanızı nasıl oluşturacağınızı] öğrenin(/docs/get_started/create.html).
+        [İlk AMP HTML sayfanızı nasıl oluşturacağınızı] öğrenin(/tr/docs/get_started/create.html).
     - title: AMP JS
       subtitle: |
         **AMP JS** kitaplığı AMP HTML sayfalarının hızlı sonuç vermesini sağlar.
       description: |
         [AMP JS kitaplığı], sayfanızın hızlı işlenmesi için, (https://github.com/ampproject/amphtml/tree/master/src)
-        tüm [AMP›nin en iyi performans uygulamalarını](/docs/get_started/technical_overview.html) uygular,
+        tüm [AMP›nin en iyi performans uygulamalarını](/tr/learn/about-how/) uygular,
         kaynak yüklemeyi yönetir ve yukarıda bahsi geçen özel etiketleri sunar
         .
         <p>En büyük optimizasyonlardan bir tanesi, harici kaynaklardan gelen her şeyi eşzamansız hale getirmesidir, bu sayede sayfadaki hiçbir şeyin işlenmesi engelenemez.
         <p>Diğer performans teknikleri içerisinde tüm bilgi iletim birimlerinin korumalı alana alınması, kaynaklar yüklenmeden önce sayfadaki her öge düzeninin önceden hesaplanması ve yavaş CCS selektörlerinin devre dışı bırakılması yer almaktadır.
-        <p>[Optimizasyonların] yanı sıra (/docs/get_started/technical_overview.html) kısıtlamalar hakkında da ayrıntılı bilgi için, [AMP HTML spesifikasyonunu okuyun](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
+        <p>[Optimizasyonların] yanı sıra (/tr/learn/about-how/) kısıtlamalar hakkında da ayrıntılı bilgi için, [AMP HTML spesifikasyonunu okuyun](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
     - title: AMP Cache
       subtitle: |
         **Google AMP Cache** (isteğe bağlı) AMP HTML sayfalarını getirir.
@@ -48,4 +48,4 @@ core:
         <p>Bir diğer onaylayıcı sürümü her AMP sayfasıyla paket halinde gelir. Bu sürüm, sayfa işlendiğinde validasyon hatalarını doğrudan tarayıcı konsoluna kaydeder,
         bu sayede kodunuzdaki karmaşık değişikliklerin
         performansı ve kullanıcı deneyimini nasıl etkilediğini görmenizi sağlar.
-        <p>[AMP HTML sayfalarınızı test etme](/docs/guides/validate.html) ile ilgili daha fazla öğrenin.
+        <p>[AMP HTML sayfalarınızı test etme](/tr/docs/guides/debug/validate.html) ile ilgili daha fazla öğrenin.

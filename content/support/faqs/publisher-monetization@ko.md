@@ -27,7 +27,7 @@ faq:
     answer: |
       퍼블리셔가 강력한 분석 인사이트를 얻을 수 있는 지 확인하는 게 프로젝트의 핵심 설계 목표입니다.
       AMP는 현재 AMP 파일 속도 또는 크기를 손상시키지 않으면서 제3자 시스템과 통합할 수 있는 amp-analytics같은 기능을 사용한 분석 정보 수집을 지원합니다.
-      여러 분석도구 제공자가 이 프로젝트에 [참여](https://www.ampproject.org/who/#analytics)하고 있습니다.
+      여러 분석도구 제공자가 이 프로젝트에 [참여](/ko/support/faqs/supported-platforms.html#analytics)하고 있습니다.
   - title: 퍼블리셔가 측정 관점에서 트래픽에 대한 보상을 받습니까?
     answer: |
       예, AMP 파일은 나머지 사이트와 동일합니다. 이 공간은 게시자의 캔버스입니다.

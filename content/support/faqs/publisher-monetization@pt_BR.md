@@ -13,7 +13,7 @@ faq:
       Oferecer suporte a assinaturas e paywalls é um dos objetivos básicos do projeto das Accelerated Mobile Pages. Atualmente, as AMP são compatíveis com uma estrutura de acesso flexível, na qual os editores podem controlar a experiência de visualização de documentos para assinantes, usuários monitorados e usuários anônimos.
   - title: Como as análises estão sendo tratadas no formato AMP?
     answer: |
-      Garantir que os editores possam ter insights a partir de análises confiáveis é um objetivo de desenvolvimento fundamental para o projeto. Embora o suporte para análises seja muito limitado na versão demonstrativa, as especificações deverão ter suporte para a coleta de informações de análise, além da integração com sistemas de terceiros sem comprometer a velocidade ou o tamanho do arquivo das AMP. Vários provedores de análise estão [participando](https://www.ampproject.org/who/#analytics) do projeto.
+      Garantir que os editores possam ter insights a partir de análises confiáveis é um objetivo de desenvolvimento fundamental para o projeto. Embora o suporte para análises seja muito limitado na versão demonstrativa, as especificações deverão ter suporte para a coleta de informações de análise, além da integração com sistemas de terceiros sem comprometer a velocidade ou o tamanho do arquivo das AMP. Vários provedores de análise estão [participando](/pt_br/support/faqs/supported-platforms.html#analytics) do projeto.
   - title: Os editores recebem crédito pelo tráfego a partir de uma perspectiva de medição?
     answer: |
       Sim. Um arquivo das AMP é o mesmo que o resto do site, este espaço é a tela do editor.

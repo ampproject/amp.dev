@@ -15,19 +15,19 @@ AMP와 비교했을 때 차이점과 어떻게 페이지에서 가져올 수 있
 AMP는 `<img>` 같은 미디어를 표현하는 기본 HTML을 지원하지 않습니다.
 아래와 같은 이유로 기본 HTML과 동등한 컴포넌트를 제공합니다:
 
-* [뷰포트의 사전 로딩]((/learn/how-amp-works/#size-all-resources-statically))을 지원하려면 자원을 불러오기 전의 페이지 레이아웃에 대한 이해가 필수적입니다.
-* [효과적으로 자원을 불러오는 과정의 우선순위를 정하거나 지연](/learn/how-amp-works/#prioritize-resource-loading)하기 위해 네트워크 요청을 제어할 필요가 있습니다.
+* [뷰포트의 사전 로딩](/ko/learn/about-how/#size-all-resources-statically)을 지원하려면 자원을 불러오기 전의 페이지 레이아웃에 대한 이해가 필수적입니다.
+* [효과적으로 자원을 불러오는 과정의 우선순위를 정하거나 지연](/ko/learn/about-how/#prioritize-resource-loading)하기 위해 네트워크 요청을 제어할 필요가 있습니다.
 
 <aside class="caution">
   <strong>주의:</strong>
   <span>위에서 말한 것들을 지원하지는 않지만, 그것들은 렌더링 <i>될 것이며</i>,
-  AMP는 <a href="/docs/guides/validate.html">페이지 검증</a>을 하지 않으며,
+  AMP는 <a href="/ko/docs/guides/debug/validate.html">페이지 검증</a>을 하지 않으며,
   AMP에서 제공하는 모든 혜택을 얻지 못할 것입니다.</span>
 </aside>
 
 ## 이미지
 
-페이지에 이미지를 가져올 때는 [`amp-img`](/docs/reference/components/amp-img.html) 요소를 사용합니다:
+페이지에 이미지를 가져올 때는 [`amp-img`](/ko/docs/reference/components/media/amp-img.html) 요소를 사용합니다:
 
 [sourcecode:html]
 <amp-img src="fixed.jpg" width="264" height="96"></amp-img>
@@ -48,7 +48,7 @@ AMP는 표준 CSS/HTML에 비교했을 때 훨씬 쉽게 반응형 이미지를 
 
 <aside class="success">
   <strong>더 읽기:</strong>
-  <span>더 상세한 내용은 <a href="/docs/guides/responsive/control_layout.html">레이아웃 & 미디어쿼리</a>를 참고하길 바랍니다.</span>
+  <span>더 상세한 내용은 <a href="/ko/docs/guides/author-develop/responsive/control_layout.html">레이아웃 & 미디어쿼리</a>를 참고하길 바랍니다.</span>
 </aside>
 
 ### 동작 및 플레이스홀더
@@ -58,12 +58,12 @@ AMP HTML 런타임은 뷰포트 위치, 시스템 리소스, 연결 대역폭, �
 
 <aside class="success">
   <strong>더 읽기:</strong>
-  <span>더 상세한 내용은 <a href="/docs/guides/responsive/placeholders.html">이미지를 위한 플레이스홀더 & 폴백</a>을 참고하길 바랍니다.</span>
+  <span>더 상세한 내용은 <a href="/ko/docs/guides/author-develop/responsive/placeholders.html">이미지를 위한 플레이스홀더 & 폴백</a>을 참고하길 바랍니다.</span>
 </aside>
 
 ## 애니메이션되는 이미지
 
-[`amp-anim`](/docs/reference/extended/amp-anim.html) 요소는 `amp-img` 요소와 매우 유사하며,
+[`amp-anim`](/ko/docs/reference/components/media/amp-anim.html) 요소는 `amp-img` 요소와 매우 유사하며,
 GIF 같이 애니메이션되는 이미지의 재생 및 로딩을 제어하는 기능을 추가로 제공합니다.
 
 [sourcecode:html]
@@ -81,7 +81,7 @@ GIF 같이 애니메이션되는 이미지의 재생 및 로딩을 제어하는 
 
 ## 비디오
 
-페이지에 비디오를 가져올 때는 [`amp-video`](/docs/reference/amp-video.html) 요소를 사용합니다.
+페이지에 비디오를 가져올 때는 [`amp-video`](/ko/docs/reference/components/media/amp-video.html) 요소를 사용합니다.
 
 이 요소는 직접적으로 HTML5 비디오 파일을 가져올 때만 사용해야 합니다.
 요소는 `src` 속성에 정의된 비디오 리소스를 AMP에서 정의한 시간에 lazy 로딩합니다.
@@ -101,7 +101,7 @@ GIF 같이 애니메이션되는 이미지의 재생 및 로딩을 제어하는 
 ## Audio
 
 페이지에 오디오 리소스를 가져올 때는
-[`amp-audio`](/docs/reference/extended/amp-audio) 요소를 사용합니다.
+[`amp-audio`](/ko/docs/reference/components/media/amp-audio.html) 요소를 사용합니다.
 
 이 요소는 직접적으로 HTML5 오디오 파일을 가져올 때만 사용해야 합니다.
 AMP 페이지에서 가져오는 모든 다른 외부 리소스처럼,

@@ -15,20 +15,20 @@ core:
         [แท็ก HTML ในแบบ AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md))
         อิลิเมนต์แบบกำหนดเองเหล่านี้จะเรียกว่าคอมโพเนนต์ AMP HTML
         ที่ช่วยให้สามารถนำรูปแบบทั่วไปไปใช้งานได้อย่างมีประสิทธิภาพ
-        <p>เช่น แท็ก [`amp-img`](/docs/reference/amp-img.html)
+        <p>เช่น แท็ก [`amp-img`](/th/docs/reference/components/media/amp-img.html)
         จะสนับสนุน `srcset` ได้อย่างสมบูรณ์แม้ในเบราว์เซอร์ที่ยังไม่มีการสนับสนุนดังกล่าว
-        ดูวิธีการ[สร้าง AMP HTML หน้าแรกของคุณ](/docs/get_started/create.html)
+        ดูวิธีการ[สร้าง AMP HTML หน้าแรกของคุณ](/th/docs/get_started/create.html)
     - title: AMP JS
       subtitle: |
         ไลบรารี **AMP JS** จะช่วยทำให้แสดงหน้า AMP HTML ได้อย่างรวดเร็ว
       description: |
-        [ไลบรารี AMP JS](https://github.com/ampproject/amphtml/tree/master/src) จะใช้[แนวปฏิบัติเพื่อประสิทธิภาพที่ดีที่สุดของ AMP](/docs/get_started/technical_overview.html)
+        [ไลบรารี AMP JS](https://github.com/ampproject/amphtml/tree/master/src) จะใช้[แนวปฏิบัติเพื่อประสิทธิภาพที่ดีที่สุดของ AMP](/th/learn/about-how/)
         ทั้งหมด
         จัดการการโหลดทรัพยากร และใช้แท็กแบบกำหนดเองตามที่กล่าวไว้ข้างต้น
         เพื่อให้สามารถแสดงหน้าเว็บของคุณได้อย่างรวดเร็ว
         <p>โดยการเพิ่มประสิทธิภาพที่สำคัญที่สุดก็คือ การทำงานนี้จะทำให้การเรียกใช้ทรัพยากรภายนอกไม่เกิดขึ้นพร้อมกัน จึงไม่มีองค์ประกอบใดในหน้าเว็บที่จะบล็อกการแสดงผล
         <p>เทคนิคที่ช่วยเพิ่มประสิทธิภาพอื่นๆ ได้แก่ การกรอง iframe ทั้งหมด การคำนวณเค้าโครงของแต่ละอิลิเมนต์บนหน้าเว็บล่วงหน้าก่อนที่จะมีการโหลดทรัพยากร และการปิดใช้งาน CSS Selector ที่ทำงานช้า
-        <p>หากต้องการเรียนรู้เพิ่มเติมไม่เพียงแค่[การเพิ่มประสิทธิภาพ](/docs/get_started/technical_overview.html) แต่รวมถึงข้อจำกัดต่างๆ [อ่านข้อกำหนดเกี่ยวกับ AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)
+        <p>หากต้องการเรียนรู้เพิ่มเติมไม่เพียงแค่[การเพิ่มประสิทธิภาพ](/th/learn/about-how/) แต่รวมถึงข้อจำกัดต่างๆ [อ่านข้อกำหนดเกี่ยวกับ AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)
     - title: AMP Cache
       subtitle: |
         **Google AMP Cache** (ตัวเลือก) จะใช้ในการแสดงหน้า AMP HTML
@@ -45,4 +45,4 @@ core:
         มาร์กอัปของหน้าเว็บเป็นไปตามข้อกำหนดของ AMP HTML
         <p>เครื่องมือตรวจสอบอีกเวอร์ชันหนึ่งจะมาพร้อมกับหน้า AMP ทุกหน้า โดยเวอร์ชันนี้สามารถบันทึกข้อผิดพลาดจากการตรวจสอบไปยังคอนโซลของเบราว์เซอร์โดยตรงเมื่อมีการแสดงหน้าเว็บ
         ช่วยให้คุณทราบว่าการเปลี่ยนโค้ดที่ซับซ้อนอาจส่งผลกระทบต่อประสิทธิภาพและประสบการณ์ของผู้ใช้อย่างไรบ้าง
-        <p>เรียนรู้เพิ่มเติมเกี่ยวกับ[การทดสอบหน้า AMP HTML](/docs/guides/validate.html)
+        <p>เรียนรู้เพิ่มเติมเกี่ยวกับ[การทดสอบหน้า AMP HTML](/th/docs/guides/debug/validate.html)

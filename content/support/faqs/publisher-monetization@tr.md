@@ -13,7 +13,7 @@ faq:
       Abonelikleri ve ödeme duvarlarını desteklemek, Accelerated Mobile Pages projesinin temel hedeflerinden biridir. AMP şu anda yayıncıların aboneler, ölçülen kullanıcılar ve anonim kullanıcılar için doküman görüntüleme deneyimini kontrol edebildikleri esnek bir erişim çerçevesini desteklemektedir.
   - title: Analizler bu AMP biçiminde nasıl işlenir?
     answer: |
-      Yayıncıların sağlam analizler alabilmelerini sağlamak projenin temel tasarım hedeflerinden biridir. Tanıtım sürümündeki analiz desteği çok sınırlı olmakla birlikte, spesifikasyonun analiz bilgilerinin toplanması için destek sağlaması ve AMP dosya hızı veya boyutundan ödün vermeden 3. taraf sistemleriyle entegre olması beklenmektedir. Projeye çeşitli analiz sağlayıcıları [katılmaktadır](https://www.ampproject.org/who/#analytics).
+      Yayıncıların sağlam analizler alabilmelerini sağlamak projenin temel tasarım hedeflerinden biridir. Tanıtım sürümündeki analiz desteği çok sınırlı olmakla birlikte, spesifikasyonun analiz bilgilerinin toplanması için destek sağlaması ve AMP dosya hızı veya boyutundan ödün vermeden 3. taraf sistemleriyle entegre olması beklenmektedir. Projeye çeşitli analiz sağlayıcıları [katılmaktadır](/tr/support/faqs/supported-platforms.html#analytics).
   - title: Yayıncılar, bir ölçüm perspektifine göre trafik için kredi alıyorlar mı?
     answer: |
       Evet, AMP dosyası sitenizin geri kalanıyla aynıdır; bu alan, yayıncının tuvalidir.

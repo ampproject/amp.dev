@@ -7,6 +7,7 @@ hero:
 points:
   pointlist:
     - title: Consentire solo gli script asincroni
+      id: execute-js-asynchronously
       description: |
         JavaScript è potente,
         può modificare praticamente qualsiasi aspetto della pagina,
@@ -25,6 +26,7 @@ points:
         [API `document.write` pessima amica delle prestazioni](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/),
         non blocca il rendering della pagina principale.
     - title: Definire le dimensioni di tutte le risorse in modo statico
+      id: size-all-resources-statically
       description: |
         Le risorse esterne come le immagini, gli annunci o iframe devono dichiarare le proprie dimensioni nell’HTML
         affinché AMP possa determinare le dimensioni e la posizione di ciascun elemento prima che le risorse vengano scaricate.
@@ -35,21 +37,23 @@ points:
         Dal momento che AMP è ottimizzato per evitare dispendiosi ricalcoli di stile e layout nel browser,
         non è necessario rielaborare i layout al caricamento delle risorse.
     - title: Non consentire ai meccanismi delle estensioni di bloccare il rendering
+      id: dont-block-rendering
       description: |
         AMP non consente ai meccanismi delle estensioni di bloccare il rendering della pagina.
         AMP supporta le estensioni per componenti come
-        [lightbox](/docs/reference/extended/amp-lightbox.html),
-        [incorporamenti instagram](/docs/reference/extended/amp-instagram.html),
-        [tweet](/docs/reference/extended/amp-twitter.html) e così via.
+        [lightbox](/it/docs/reference/components/layout/amp-lightbox.html),
+        [incorporamenti instagram](/it/docs/reference/components/social/amp-instagram.html),
+        [tweet](/it/docs/reference/components/social/amp-twitter.html) e così via.
         Benché questi avanzino ulteriori richieste HTTP,
         tali richieste non bloccano il layout e il rendering della pagina.
         <p>Tutte le pagine che utilizzano uno script personalizzato devono indicare al sistema AMP
         che prima o poi avrà un tag personalizzato.
-        Ad esempio, lo script [`amp-iframe`](/docs/reference/extended/amp-iframe.html)
+        Ad esempio, lo script [`amp-iframe`](/it/docs/reference/components/layout/amp-iframe.html)
         indica al sistema che ci sarà un tag `amp-iframe`.
         AMP crea la casella dell’iframe prima ancora di sapere cosa conterrà:
       example: /content/includes/amp-iframe.md
     - title: Tenere lontano dalla fase critica qualsiasi codice JavaScript di terzi
+      id: third-party-js-non-critical
       description: |
         Al codice JavaScript di terzi piace usare il caricamento JS sincrono.
         Ama anche usare `document.write` per creare più script sincroni.
@@ -64,6 +68,7 @@ points:
         pertanto i ricalcoli degli iframe sono molto veloci rispetto
         alle operazioni di ricalcolo degli stili e dei layout per la pagina.
     - title: Tutto il codice CSS deve essere in linea e di dimensioni limitate
+      id: css-must-be-inline
       description: |
         Il codice CSS blocca tutto il rendering, interrompe il caricamento delle pagine e tende a gonfiarsi.
         Nelle pagine HTML AMP sono consentiti solo gli stili incorporati.
@@ -85,6 +90,7 @@ points:
         e perché sono consentiti solo i fogli di stile incorporati,
         non ci sono richieste HTTP che impediscono al browser di scaricare i font.
     - title: Ridurre al minimo i ricalcoli di stile
+      id: minimize-style-recalculations
       description: |
         Ogni volta che misuri qualcosa si attivano dispendiosi ricalcoli di stile
         in quanto il browser deve elaborare il layout dell’intera pagina.
@@ -93,6 +99,7 @@ points:
         <p>Per ulteriori informazioni sull’impatto dei ricalcoli di stile e layout consulta la sezione sulle
         [performance del rendering](https://developers.google.com/web/fundamentals/performance/rendering/).
     - title: Eseguire solamente animazioni con accelerazione GPU
+      id: only-run-gpu-accelerated-animations
       description: |
         L’unico modo per avere ottimizzazioni veloci è quello di eseguirle sulla GPU.
         La GPU è cosciente dei livelli, sa come eseguire alcune operazioni su questi livelli,
@@ -104,6 +111,7 @@ points:
         Consulta ulteriori informazioni sull’
         [utilizzo delle variazioni di trasformazione e opacità per le animazioni](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count).
     - title: Dare priorità al caricamento delle risorse
+      id: prioritize-resource-loading
       description: |
         AMP controlla tutti i download delle risorse: assegna la priorità al caricamento delle risorse,
         caricando solo ciò che è necessario, ed esegue la prelettura delle risorse di tipo lazy-load.
@@ -116,6 +124,7 @@ points:
         In tal modo i componenti vengono caricati molto rapidamente ma la CPU viene utilizzata unicamente
         quando le risorse vengono effettivamente mostrate agli utenti.
     - title: Caricare le pagine in un attimo
+      id: load-pages-in-an-instant
       description: |
         La nuova [API preconnect](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
         viene utilizzata intensamente per garantire che le richieste HTTP vengano completate il più rapidamente possibile.
@@ -133,7 +142,8 @@ points:
         <p>Scopri
         [perché HTML AMP non sfrutta appieno la funzione di scansione di precaricamento](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e).
     - title: Aiutare a rendere AMP ancora più veloce
+      id: help-make-amp-faster
       description: |
         AMP è una specifica open source.
         Ci serve il tuo aiuto per rendere AMP ancora più veloce.
-        Scopri [come dare il tuo contributo](/docs/support/contribute.html).
+        Scopri [come dare il tuo contributo](/it/contribute/).
