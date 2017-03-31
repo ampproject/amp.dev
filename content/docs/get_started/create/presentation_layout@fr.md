@@ -19,12 +19,12 @@ Les pages AMP sont des pages Web ; toute application de style sur la page et su
 </style>
 [/sourcecode]
 
-Chaque page AMP peut intégrer une seule feuille de style uniquement et l'utilisation de certains sélecteurs n'est pas autorisée. [Tout savoir sur les styles](/docs/guides/responsive/style_pages.html).
+Chaque page AMP peut intégrer une seule feuille de style uniquement et l'utilisation de certains sélecteurs n'est pas autorisée. [Tout savoir sur les styles](/fr/docs/guides/author-develop/responsive/style_pages.html).
 
 ## Contrôler la disposition
 
 AMP applique des règles strictes en matière de disposition des éléments sur la page. Sur une page HTML standard, vous utilisez presque exclusivement le style CSS pour disposer les éléments. Mais pour des performances optimales, AMP nécessite de définir dès le départ une taille explicite pour tous les éléments.
 
-Découvrez le rendu et la présentation d'une page AMP et comment vous pouvez modifier la disposition dans [Comment contrôler la disposition](/docs/guides/responsive/control_layout.html).
+Découvrez le rendu et la présentation d'une page AMP et comment vous pouvez modifier la disposition dans [Comment contrôler la disposition](/fr/docs/guides/author-develop/responsive/control_layout.html).
 
 <a class="go-button button" href="/fr/docs/get_started/create/preview_and_validate.html">Continuer à l'Étape 4</a>

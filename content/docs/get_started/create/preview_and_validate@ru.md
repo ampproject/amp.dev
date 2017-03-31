@@ -14,6 +14,6 @@ $title: Предварительный просмотр и проверка
   1. Добавьте к адресу URL "`#development=1`", например, `http://localhost:8000/released.amp.html#development=1`.
   1. Откройте [консоль Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) и проверьте наличие ошибок.
 
-[Ознакомьтесь с дополнительной информацией о проверке](/docs/guides/validate.html) и способах устранения ошибок.
+[Ознакомьтесь с дополнительной информацией о проверке](/ru/docs/guides/debug/validate.html) и способах устранения ошибок.
 
 <a class="go-button button" href="/ru/docs/get_started/create/prepare_for_discovery.html">Перейти к шагу 5</a>

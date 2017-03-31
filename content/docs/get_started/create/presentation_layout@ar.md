@@ -19,12 +19,12 @@ $title: تعديل المظهر والتنسيق
 </style>
 [/sourcecode]
 
-يمكن لكل صفحة AMP أن تحتوي فقط على ورقة أنماط واحدة مضمّنة، وهناك محدّدات معينة ليس مسموح لك باستخدامها. [تعرّف على كل المعلومات بخصوص التحكم في الأنماط](/docs/guides/responsive/style_pages.html).
+يمكن لكل صفحة AMP أن تحتوي فقط على ورقة أنماط واحدة مضمّنة، وهناك محدّدات معينة ليس مسموح لك باستخدامها. [تعرّف على كل المعلومات بخصوص التحكم في الأنماط](/ar/docs/guides/author-develop/responsive/style_pages.html).
 
 ## التحكم في التنسيق
 
 تتبع AMP قواعد أكثر صرامة عند تنسيق العناصر في الصفحة. في صفحة HTML عادية، أنت تقريبًا تستخدم CSS حصريًا لتنسيق العناصر. لكن لأسباب تتعلق بالأداء، يتطلب AMP أن تتميز كل العناصر بحجم واضح محدّد منذ البداية.
 
-تعرّف على كيفية عرض AMP للصفحة وتنسيقها وكيف يمكنك تعديل التنسيق في [كيفية التحكم في التنسيق](/docs/guides/responsive/control_layout.html).
+تعرّف على كيفية عرض AMP للصفحة وتنسيقها وكيف يمكنك تعديل التنسيق في [كيفية التحكم في التنسيق](/ar/docs/guides/author-develop/responsive/control_layout.html).
 
-<a class="button go-button" href="/docs/get_started/create/preview_and_validate.html">المتابعة إلى الخطوة 4</a>
+<a class="button go-button" href="/ar/docs/get_started/create/preview_and_validate.html">المتابعة إلى الخطوة 4</a>

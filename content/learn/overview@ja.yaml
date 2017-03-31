@@ -15,20 +15,20 @@ core:
         （[APM 仕様書の HTML タグ](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)の説明もご覧ください）。
         これらのカスタム要素は AMP HTML コンポーネントと呼ばれ、
         このコンポーネントを使うと高パフォーマンスな共通のパターンを簡単に実装できます。
-        <p>たとえば [`amp-img`](/docs/reference/amp-img.html) タグは、
+        <p>たとえば [`amp-img`](/ja/docs/reference/components/media/amp-img.html) タグは、
         `srcset` をフルサポートしています。まだこの機能に対応していないブラウザでも問題ありません。
-        [初めての AMP HTML ページを作成する](/docs/get_started/create.html)方法もご覧ください。
+        [初めての AMP HTML ページを作成する](/ja/docs/get_started/create.html)方法もご覧ください。
     - title: AMP JS
       subtitle: |
         そして AMP HTML ページのレンダリングを高速化するのが、**AMP JS** ライブラリです。
       description: |
         [AMP JS ライブラリ](https://github.com/ampproject/amphtml/tree/master/src)では、
-        [AMP のパフォーマンス最適化処理](/docs/get_started/technical_overview.html)がすべて実装されています。
+        [AMP のパフォーマンス最適化処理](/ja/learn/about-how/)がすべて実装されています。
         さらにリソースの読み込み処理を制御し、上記のカスタムタグを提供することで
         ページのレンダリングを確実に高速化します。
         <p>最も重要な最適化処理の 1 つが、外部リソースからの読み込みを完全に非同期にすることです。これによりページ内の要素がレンダリング処理をブロックすることはなくなります。
         <p>その他のパフォーマンス改善技術として、すべての iframe をサンドボックス化する、リソースを読み込む前にページ内のすべての要素のレイアウトを事前計算する、低速の CSS セレクターを無効するなどの方法が導入されています。
-        <p>[最適化](/docs/get_started/technical_overview.html)に加えて、制限について詳しく知りたい方は [AMP HTML の仕様書をご覧ください](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)。
+        <p>[最適化](/ja/learn/about-how/)に加えて、制限について詳しく知りたい方は [AMP HTML の仕様書をご覧ください](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)。
     - title: AMP Cache
       subtitle: |
         **Google AMP Cache** は（必要に応じて）AMP HTML ページを配信します。
@@ -39,4 +39,4 @@ core:
         <p>キャッシュに付随するビルトインの [検証システム](https://github.com/ampproject/amphtml/tree/master/validator)は、該当ページが機能すること、そして外部リソースに依存しないことを保証します。
         <p>この検証システムは一連のアサーションを実行し、ページのマークアップが AMP HTML の仕様に準拠しているかを確認します。
         <p>もう 1 つの検証ツールは、すべての AMP ページにバンドルされているものです。このツールでは、ページのレンダリング時に検証エラーが直接ブラウザのコンソールに出力されます。そのため、複雑なコード変更がパフォーマンスやユーザー エクスペリエンスにどのような影響を及ぼすかを確認できます。
-        <p>詳細は、[AMP HTML ページをテストする](/docs/guides/validate.html)をご覧ください。
+        <p>詳細は、[AMP HTML ページをテストする](/ja/docs/guides/debug/validate.html)をご覧ください。

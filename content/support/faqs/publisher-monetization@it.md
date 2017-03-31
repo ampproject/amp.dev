@@ -13,7 +13,7 @@ faq:
       Un obiettivo essenziale del progetto Accelerated Mobile Pages è supportare abbonamenti e paywall. Il progetto AMP supporta attualmente un framework di accesso flessibile in cui i publisher possono gestire l'esperienza di visualizzazione dei documenti per abbonati, utenti a consumo e utenti anonimi.
   - title: Come vengono gestiti i dati analitici in questo formato AMP?
     answer: |
-      Garantire ai publisher di poter ricevere informazioni analitiche affidabili è un obiettivo fondamentale del progetto. Anche se il supporto dei dati analitici nella versione demo è molto limitato, è previsto che la specifica supporti la raccolta di informazioni analitiche e si integri con i sistemi di terze parti senza compromettere la velocità o le dimensioni dei file AMP. Al progetto [partecipano](https://www.ampproject.org/who/#analytics) diversi fornitori di dati analitici.
+      Garantire ai publisher di poter ricevere informazioni analitiche affidabili è un obiettivo fondamentale del progetto. Anche se il supporto dei dati analitici nella versione demo è molto limitato, è previsto che la specifica supporti la raccolta di informazioni analitiche e si integri con i sistemi di terze parti senza compromettere la velocità o le dimensioni dei file AMP. Al progetto [partecipano](/it/support/faqs/supported-platforms.html#analytics) diversi fornitori di dati analitici.
   - title: I publisher ricevono credito per il traffico che viene misurato?
     answer: |
       Sì, un file AMP è come il resto del sito (la "tela" del publisher).

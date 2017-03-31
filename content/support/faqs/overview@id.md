@@ -29,7 +29,7 @@ faq:
       Perusahaan yang terlibat dalam proyek ingin membuat web seluler bekerja lebih baik untuk semua -- tidak hanya pada satu platform, satu perusahaan teknologi, atau sekumpulan penerbit. Membuat proyek sumber terbuka memungkinkan orang-orang untuk berkontribusi dan berbagi ide-ide dan kode mereka untuk mempercepat web seluler. Kami masih berada di awal perjalanan ini dan berharap perusahaan teknologi dan penerbit lainnya bergabung bersama kami.
   - title: Siapa yang dapat menggunakan Accelerated Mobile Pages?
     answer: |
-      Proyek ini terbuka untuk semua pemeran dalam ekosistem - penerbit, pelanggan platform, dan pembuat. Untuk mengetahui perusahaan dan situs apa saja yang menggunakan AMP, kunjungi [laman Siapa](/who).
+      Proyek ini terbuka untuk semua pemeran dalam ekosistem - penerbit, pelanggan platform, dan pembuat. Untuk mengetahui perusahaan dan situs apa saja yang menggunakan AMP, kunjungi [laman Siapa](/id/support/faqs/supported-platforms.html).
   - title: Apa konsekuensi penggunaan Accelerated Mobile Pages?
     answer: |
       Dengan menggunakan format AMP, pembuat konten membuat konten dalam file AMP yang dapat dirayapi, diindeks &amp; ditampilkan (tunduk pada protokol pengecualian robot), dan disimpan dalam cache oleh pihak ketiga.

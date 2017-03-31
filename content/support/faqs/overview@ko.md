@@ -44,7 +44,7 @@ faq:
   - title: AMP는 누가 사용할 수 있습니까?
     answer: |
       이 프로젝트는 퍼블리셔, 소비자 플랫폼 및 제작자 같은 생태계의 모든 플레이어에게 오픈되어있습니다.
-      AMP를 사용하는 일부 회사 및 사이트가 누구인지 확인하려면 [Who page](/who)로 이동하십시오.
+      AMP를 사용하는 일부 회사 및 사이트가 누구인지 확인하려면 [Who page](/ko/support/faqs/supported-platforms.html)로 이동하십시오.
   - title: AMP를 사용할 때의 결과는 무엇입니까?
     answer: |
       콘텐츠 제작자는 AMP 포맷을 사용하여 AMP 파일의 콘텐츠를 인덱싱 및 표시(로봇 제외 프로토콜의 적용을 받음)하고 제 3자가 캐싱할 수 있게 합니다.
@@ -55,7 +55,7 @@ faq:
 
       또한 유럽 연합 (European Union)과 같은 많은 국가의 법률에 따르면 게시자는 게시자의 웹 페이지(AMP 페이지 포함)에서 사용되는 쿠키 및 기타 형태의 로컬 스토리지에 대한 정보를 방문자에게 제공해야합니다. 대부분의 경우 이 법률에 따라 퍼블리셔는 동의를 받아야합니다. 쿠키 사용에 따라 적합한 통지 유형을 결정하는 것은 게시자의 책임입니다.
       쿠키 공지 생성을위한 추가 정보 및 도구는 www.cookiechoices.org에서 찾을 수 있습니다.
-      AMP 컴포넌트 [amp-user-notification](https://www.ampproject.org/docs/reference/components/amp-user-notification)은 사용자에게 해제 가능한 알림을 표시하는 방법을 제공합니다.
+      AMP 컴포넌트 [amp-user-notification](/ko/docs/reference/components/dynamic/amp-user-notification.html)은 사용자에게 해제 가능한 알림을 표시하는 방법을 제공합니다.
 
       AMP 페이지에 Google 검색의 Google AMP 뷰어같이 타사 플랫폼의 뷰어에 표시되는 경우, AMP 퍼블리셔와 타사 플랫폼이 각각 사용자에 대한 데이터를 수집할 수 있는 하이브리드 환경일 수 있습니다. 이 경우, 각각의 데이터 수집은 각각의 개인정보 보호정책에 따라 관리됩니다. (즉, 하이브리드 뷰어 환경에서 AMP 퍼블리셔가 수집 한 데이터는 개인정보 취급방침의 적용을 받으며 제3자 플랫폼에서 수집 한 데이터는 플랫폼의 개인정보 보호정책을 따릅니다). 개인정보 보호정책을 공개하고 쿠키사용과 관련된 유럽법률을 포함한 관련 데이터 규정을 준수하는 건 각각의 책임입니다.
   - title: AMP를 가장 사용하기 좋은 콘텐츠는 어떤 것입니까?
@@ -64,7 +64,7 @@ faq:
   - title: 퍼블리셔로써, AMP에서 콘텐츠 작업을하는 데 더 많은 작업이 필요합니까?
     answer: |
       간단히 말해, 그렇게까진 아닙니다. “AMP HTML”은 완전히 기존 웹 기술로 만들어졌기 때문에, 개발 프로세스는 퍼블리셔가 이미 사용하고 있는 기술을 반영합니다.
-      퍼블리셔는 GitHub의 [AMP HTML specification](https://www.ampproject.org/docs/reference/spec)을 숙지할 수 있습니다.
+      퍼블리셔는 GitHub의 [AMP HTML specification](/ko/docs/reference/spec.html)을 숙지할 수 있습니다.
       현재 프로세스에 익숙한 사용자에게는, 상당한 러닝 커브가 필요하지 않습니다.
   - title: 퍼블리셔가 어떻게 AMP HTML 내 콘텐츠를 가져옵니까?
     answer: |

@@ -29,7 +29,7 @@ faq:
       Firmy biorące udział w projekcie chcą, by internet działał lepiej dla wszystkich – nie tylko w przypadku jednej platformy, jednego zestawu technologii czy określonej grupy wydawców. Wykorzystanie oprogramowania typu open source umożliwia ludziom dzielenie się pomysłami i kodami, które usprawniają działanie internetu. Nasza podróż dopiero się rozpoczęła – teraz czekamy na przyłączenie się innych wydawców i firm technologicznych.
   - title: Komu przyda się standard Accelerated Mobile Pages?
     answer: |
-      Projekt jest otwarty dla wszystkich – dla wydawców, platform konsumenckich i twórców treści. Aby się zorientować, które firmy i witryny korzystają ze standardu AMP, [przejdź tutaj](/who).
+      Projekt jest otwarty dla wszystkich – dla wydawców, platform konsumenckich i twórców treści. Aby się zorientować, które firmy i witryny korzystają ze standardu AMP, [przejdź tutaj](/pl/support/faqs/supported-platforms.html).
   - title: Jakie są konsekwencje związane z wykorzystaniem standardu Accelerated Mobile Pages?
     answer: |
       Wykorzystując format AMP, producenci tworzą pliki, które można indeksować i wyświetlać (zgodnie z protokołami wyłączenia w plikach robots.txt) i których treść mogą przechowywać inne firmy.

@@ -13,7 +13,7 @@ faq:
       Obsługa subskrypcji i treści płatnych to główny cel projektu Accelerated Mobile Pages. Technologia AMP obecnie obsługuje elastyczną strukturę, za pomocą której wydawcy mogą kontrolować sposób wyświetlania dokumentów przez subskrybentów, użytkowników zarejestrowanych oraz użytkowników anonimowych.
   - title: Jak wygląda analityka w przypadku formatu AMP?
     answer: |
-      Podstawowym celem projektowym całego przedsięwzięcia jest zapewnienie wydawcom szczegółowych analiz statystycznych. Choć wersja demonstracyjna obsługuje funkcje analityczne w bardzo ograniczony sposób, oczekujemy, że docelowo technologia będzie dostarczać znacznie więcej danych analitycznych. Możliwa również będzie integracja z systemami innych firm bez strat szybkości lub rozmiaru plików AMP. W projekcie [uczestniczy](https://www.ampproject.org/who/#analytics) kilku dostawców rozwiązań analitycznych.
+      Podstawowym celem projektowym całego przedsięwzięcia jest zapewnienie wydawcom szczegółowych analiz statystycznych. Choć wersja demonstracyjna obsługuje funkcje analityczne w bardzo ograniczony sposób, oczekujemy, że docelowo technologia będzie dostarczać znacznie więcej danych analitycznych. Możliwa również będzie integracja z systemami innych firm bez strat szybkości lub rozmiaru plików AMP. W projekcie [uczestniczy](/pl/support/faqs/supported-platforms.html#analytics) kilku dostawców rozwiązań analitycznych.
   - title: Czy wydawcy mogą być pewni, że narzędzia analityczne zarejestrują cały ruch internetowy?
     answer: |
       Tak, plik AMP jest taki sam, jak reszta witryny – ta przestrzeń należy do wydawcy.

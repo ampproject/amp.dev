@@ -14,6 +14,6 @@ $title: ดูตัวอย่างและตรวจสอบ
   1. เพิ่ม "`#development=1`" ลงใน URL เช่น `http://localhost:8000/released.amp.html#development=1`
   1. เปิด[คอนโซลของ Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) แล้วตรวจสอบข้อผิดพลาด
 
-[เรียนรู้เพิ่มเติมเกี่ยวกับการตรวจสอบ](/docs/guides/validate.html) และสิ่งที่ควรทำเมื่อพบข้อผิดพลาด
+[เรียนรู้เพิ่มเติมเกี่ยวกับการตรวจสอบ](/th/docs/guides/debug/validate.html) และสิ่งที่ควรทำเมื่อพบข้อผิดพลาด
 
 <a class="go-button button" href="/th/docs/get_started/create/prepare_for_discovery.html">ไปยังขั้นตอนที่ 5</a>

@@ -17,18 +17,18 @@ AMP doesn't support the default HTML counterparts to displaying media, like `<im
 We provide equivalent components for the following reasons:
 
 * We need to understand layout of the page before assets load, crucial
-  to [support first-viewport preloading](/learn/how-amp-works/#size-all-resources-statically)
+  to [support first-viewport preloading](/learn/about-how/#size-all-resources-statically)
 * We need to control network requests to [lazy load and prioritize resources
-effectively](/learn/how-amp-works/#prioritize-resource-loading)
+effectively](/learn/about-how/#prioritize-resource-loading)
 
 {% call callout('Caution', type='caution') %}
-While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/guides/validate.html) and you won't get all the benefits AMP provides.
+While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/guides/debug/validate.html) and you won't get all the benefits AMP provides.
 {% endcall %}
 
 ## Images
 
 Include an image in your page
-using the [`amp-img`](/docs/reference/components/amp-img.html) element, like so:
+using the [`amp-img`](/docs/reference/components/media/amp-img.html) element, like so:
 
 [sourcecode:html]
 <amp-img src="fixed.jpg" width="264" height="96"></amp-img>
@@ -60,7 +60,7 @@ images. In its most basic form, all you have to do is to add `layout="responsive
 [/sourcecode]
 
 {% call callout('Read on', type='success') %}
-Learn more about [advanced layout techniques](/docs/guides/responsive/control_layout.html).
+Learn more about [advanced layout techniques](/docs/guides/author-develop/responsive/control_layout.html).
 {% endcall %}
 
 ### Behavior and placeholders
@@ -70,12 +70,12 @@ choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
 {% call callout('Read on', type='success') %}
-Learn how to [provide fallbacks and placeholders for images](/docs/guides/responsive/placeholders.html).
+Learn how to [provide fallbacks and placeholders for images](/docs/guides/author-develop/responsive/placeholders.html).
 {% endcall %}
 
 ## Animated images
 
-The [`amp-anim`](/docs/reference/extended/amp-anim.html) element is very similar to the `amp-img` element,
+The [`amp-anim`](/docs/reference/components/media/amp-anim.html) element is very similar to the `amp-img` element,
 and provides additional functionality to manage loading and playing of animated images such as GIFs.
 
 [sourcecode:html]
@@ -93,7 +93,7 @@ Include `<script async custom-element="amp-anim"
 ## Video
 
 Include a video in your page
-using the [`amp-video`](/docs/reference/amp-video.html) element.
+using the [`amp-video`](/docs/reference/components/media/amp-video.html) element.
 
 Only use this element for direct HTML5 video file embeds.
 The element loads the video resource specified by the `src` attribute lazily,
@@ -114,7 +114,7 @@ if the browser doesn't support HTML5 video, for example:
 ## Audio
 
 Include an audio resource in your page,
-using the [`amp-audio`](/docs/reference/extended/amp-audio) element.
+using the [`amp-audio`](/docs/reference/components/media/amp-audio.html) element.
 
 Only use this element for direct HTML5 audio file embeds.
 Like all embedded external resources in an AMP page,

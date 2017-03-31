@@ -13,7 +13,7 @@ faq:
       Mendukung langganan dan paywall adalah tujuan inti dari proyek Accelerated Mobile Pages. Saat ini AMP mendukung framework dengan akses fleksibel yang membuat penerbit dapat mengontrol pengalaman tampilan dokumen pelanggan, pengguna yang diukur, dan pengguna anonim.
   - title: Bagaimana penanganan analisis di format AMP ini?
     answer: |
-      Tujuan desain inti proyek ini adalah untuk memastikan penerbit dapat memperoleh wawasan analisis yang kuat. Sementara dukungan analisis di rilis demo sangat terbatas, spek diharapkan memiliki dukungan untuk koleksi informasi analisis, dan berintegrasi dengan sistem pihak ke-3 tanpa mengorbankan kecepatan atau ukuran file AMP. Beberapa penyedia analisis [berpartisipasi](https://www.ampproject.org/who/#analytics) dalam proyek ini.
+      Tujuan desain inti proyek ini adalah untuk memastikan penerbit dapat memperoleh wawasan analisis yang kuat. Sementara dukungan analisis di rilis demo sangat terbatas, spek diharapkan memiliki dukungan untuk koleksi informasi analisis, dan berintegrasi dengan sistem pihak ke-3 tanpa mengorbankan kecepatan atau ukuran file AMP. Beberapa penyedia analisis [berpartisipasi](/id/support/faqs/supported-platforms.html#analytics) dalam proyek ini.
   - title: Apakah penerbit menerima kredit untuk lalu lintas dari perspektif pengukuran?
     answer: |
       Ya, file AMP sama dengan situs Anda lainnya – ruang ini adalah kanvas penerbit.

@@ -19,12 +19,12 @@ AMP는 웹페이지이며, 페이지와 그 요소의 스타일링은 공통 CSS
 </style>
 [/sourcecode]
 
-모든 AMP 페이지에는 하나의 스타일시트만 삽입될 수 있으며, 특정 선택기는 사용이 허용되지 않습니다. [스타일링에 대해 자세히 알아보세요](/docs/guides/responsive/style_pages.html).
+모든 AMP 페이지에는 하나의 스타일시트만 삽입될 수 있으며, 특정 선택기는 사용이 허용되지 않습니다. [스타일링에 대해 자세히 알아보세요](/ko/docs/guides/author-develop/responsive/style_pages.html).
 
 ## 레이아웃 제어
 
 AMP는 요소의 레이아웃을 페이지에 배치할 때 더 엄격한 규칙을 따릅니다. 일반 HTML 페이지에서는 거의 대부분 CSS를 사용하여 요소의 레이아웃을 배치합니다. 그러나 성능상의 이유로, AMP에서는 처음부터 모든 요소의 크기를 명시적으로 설정해야 합니다.
 
-AMP가 페이지를 렌더링하고 배치하는 방법과 레이아웃을 수정하는 방법은 [레이아웃 제어 방법](/docs/guides/responsive/control_layout.html)에서 자세히 알아보세요.
+AMP가 페이지를 렌더링하고 배치하는 방법과 레이아웃을 수정하는 방법은 [레이아웃 제어 방법](/ko/docs/guides/author-develop/responsive/control_layout.html))에서 자세히 알아보세요.
 
 <a class="go-button button" href="/ko/docs/get_started/create/preview_and_validate.html">4단계로 계속</a>

@@ -21,7 +21,7 @@ faq:
       It is a core objective of the Accelerated Mobile Pages project to support subscriptions and paywalls. AMP currently supports a flexible access framework where publishers can control the document viewing experience for subscribers, metered users and anonymous users.
   - title: How are analytics being handled in this AMP format?
     answer: |
-      Ensuring publishers are able to get robust analytics insight is a core design goal for the project. AMP currently supports the collection of analytics information using features like amp-analytics, which can integrate with 3rd party systems without compromising the AMP file speed or size. Several analytics providers are [participating](https://www.ampproject.org/who/#analytics) in the project.
+      Ensuring publishers are able to get robust analytics insight is a core design goal for the project. AMP currently supports the collection of analytics information using features like amp-analytics, which can integrate with 3rd party systems without compromising the AMP file speed or size. Several analytics providers are [participating](/support/faqs/supported-platforms.html#analytics) in the project.
   - title: Do publishers receive credit for the traffic from a measurement perspective?
     answer: |
       Yes, an AMP file is the same as the rest of your site – this space is the publisher’s canvas.

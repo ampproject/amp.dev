@@ -15,20 +15,20 @@ core:
         [HTML Tags in the AMP spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md) — Tagi HTML w specyfikacji AMP).
         Te niestandardowe elementy, nazywane komponentami AMP HTML,
         ułatwiają efektywną implementację typowych wzorców.
-        <p>Na przykład znacznik [`amp-img`](/docs/reference/amp-img.html)
+        <p>Na przykład znacznik [`amp-img`](/pl/docs/reference/components/media/amp-img.html)
         udostępnia pełną obsługę atrybutu `srcset` także w przeglądarkach, które go jeszcze nie obsługują.
-        Dowiedz się, jak [utworzyć swoją pierwszą stronę AMP HTML](/docs/get_started/create.html).
+        Dowiedz się, jak [utworzyć swoją pierwszą stronę AMP HTML](/pl/docs/get_started/create.html).
     - title: AMP JS
       subtitle: |
         Biblioteka **AMP JS** zapewnia szybkie renderowanie stron AMP HTML.
       description: |
         [Biblioteka AMP JS](https://github.com/ampproject/amphtml/tree/master/src) implementuje
-        wszystkie [najlepsze praktyki dotyczące wydajności AMP](/docs/get_started/technical_overview.html),
+        wszystkie [najlepsze praktyki dotyczące wydajności AMP](/pl/learn/about-how),
         zarządza ładowaniem zasobów oraz udostępnia niestandardowe znaczniki wspomniane powyżej,
         aby zapewnić jak najszybsze renderowanie strony.
         <p>Do najistotniejszych optymalizacji należy to, że wszystkie dane pochodzące z zasobów zewnętrznych są przetwarzane asynchronicznie, dzięki czemu żaden element strony nie może blokować renderowania.
         <p>Inne techniki zwiększające wydajność obejmują piaskownice dla wszystkich ramek iframe, wstępne obliczanie układu każdego elementu na stronie przed załadowaniem zasobów i wyłączanie powolnych selektorów CSS.
-        <p>Aby dowiedzieć się więcej nie tylko o [optymalizacjach](/docs/get_started/technical_overview.html), ale także o ograniczeniach, [przeczytaj specyfikację AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
+        <p>Aby dowiedzieć się więcej nie tylko o [optymalizacjach](/pl/learn/about-how), ale także o ograniczeniach, [przeczytaj specyfikację AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
     - title: AMP Cache
       subtitle: |
         Strony AMP HTML są opcjonalnie dostarczane z **pamięci podręcznej Google AMP Cache**.
@@ -48,4 +48,4 @@ core:
         <p>Inna wersja modułu sprawdzania poprawności jest dostarczana w pakiecie z każdą stroną AMP. Ta wersja może rejestrować błędy sprawdzania poprawności bezpośrednio w konsoli przeglądarki podczas renderowanie strony,
         co pozwala zobaczyć, w jaki sposób złożone zmiany w kodzie
         negatywnie odbijają się na wydajności i wrażeniach użytkowników.
-        <p>Dowiedz się więcej o [testowaniu swoich stron AMP HTML](/docs/guides/validate.html).
+        <p>Dowiedz się więcej o [testowaniu swoich stron AMP HTML](/pl/docs/guides/debug/validate.html).

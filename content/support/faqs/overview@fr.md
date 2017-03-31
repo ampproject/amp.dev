@@ -29,7 +29,7 @@ faq:
     Les entreprises impliquées dans le projet veulent améliorer universellement le fonctionnement du Web pour mobile, et pas uniquement pour une plate-forme, un ensemble de technologies ou un groupe d'éditeurs spécifiques. En choisissant une approche Open Source, les gens peuvent partager leurs idées et leur code afin de rendre le Web pour mobile plus rapide. Nous ne sommes qu'au début de cette aventure, et nous nous réjouissons de la contribution future d'autres éditeurs et entreprises technologiques.
 - title: Qui peut utiliser les pages Accelerated Mobile Pages ?
   answer: |
-    Le projet est ouvert à tous les acteurs de l'écosystème : éditeurs, plates-formes pour les consommateurs et créateurs. Pour connaître certains des sites et des entreprises qui utilisent les pages AMP, consultez la page [Qui](/who).
+    Le projet est ouvert à tous les acteurs de l'écosystème : éditeurs, plates-formes pour les consommateurs et créateurs. Pour connaître certains des sites et des entreprises qui utilisent les pages AMP, consultez la page [Qui](/fr/support/faqs/supported-platforms.html).
 - title: Quelles sont les conséquences de l'utilisation de pages Accelerated Mobile Pages ?
   answer: |
     En utilisant le format AMP, les créateurs permettent l'exploration, l'indexation et l'affichage (soumis au protocole d'exclusion des robots) du contenu des fichiers AMP, ainsi que sa mise en cache par des tiers.

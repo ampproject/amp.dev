@@ -14,6 +14,6 @@ $title: المعاينة والتحقق
   1. أضف "<span dir="ltr" class="nowrap">`#development=1`</span>" إلى عنوان URL، على سبيل المثال، <span dir="ltr" class="nowrap">`http://localhost:8000/released.amp.html#development=1`</span>.
   1. افتح [وحدة تحكم <span dir="ltr" class="nowrap">Chrome DevTools</span>](https://developers.google.com/web/tools/chrome-devtools/debug/console/) وابحث عن أخطاء التحقق.
 
-[تعرّف على المزيد بشأن التحقق](/docs/guides/validate.html)، وما يتعين فعله عند مصادفة أخطاء.
+[تعرّف على المزيد بشأن التحقق](/ar/docs/guides/debug/validate.html)، وما يتعين فعله عند مصادفة أخطاء.
 
-<a class="go-button button" href="/docs/get_started/create/prepare_for_discovery.html">المتابعة إلى الخطوة 5</a>
+<a class="go-button button" href="/ar/docs/get_started/create/prepare_for_discovery.html">المتابعة إلى الخطوة 5</a>

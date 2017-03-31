@@ -15,20 +15,20 @@ core:
         [Tag HTML nella specifica AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         Questi elementi personalizzati, denominati componenti HTML AMP,
         facilitano l’implementazione di modelli comuni in modo efficiente.
-        <p>Ad esempio, il tag [`amp-img`](/docs/reference/amp-img.html)
+        <p>Ad esempio, il tag [`amp-img`](/it/docs/reference/components/media/amp-img.html)
         offre il supporto `srcset` completo anche nei browser che ancora non lo supportano.
-        Scopri come [creare la tua prima pagina HTML AMP](/docs/get_started/create.html).
+        Scopri come [creare la tua prima pagina HTML AMP](/it/docs/get_started/create.html).
     - title: AMP JS
       subtitle: |
         La libreria **AMP JS** assicura il rendering veloce delle pagine HTML AMP.
       description: |
         La [libreria AMP JS](https://github.com/ampproject/amphtml/tree/master/src) implementa
-        tutte le [best practice relative alle prestazioni di AMP](/docs/get_started/technical_overview.html),
+        tutte le [best practice relative alle prestazioni di AMP](/it/learn/about-how/),
         gestisce il caricamento delle risorse e offre i tag personalizzati indicati sopra,
         il tutto per garantire il rendering veloce della pagina.
         <p>Tra le principali ottimizzazioni ricordiamo il fatto che rende asincrono tutto ciò che proviene da risorse esterne, pertanto nella pagina non vi sono elementi che ne possano bloccare il rendering.
         <p>Altre tecniche di ottimizzazione prestazionale comprendono l’uso della modalità sandbox di tutti gli iframe, il precalcolo del layout di ogni elemento nella pagina prima del caricamento delle risorse e la disabilitazione dei selettori CSS lenti.
-        <p>Per ulteriori informazioni non solo sulle [ottimizzazioni](/docs/get_started/technical_overview.html) ma anche sui limiti imposti, [leggi la specifica HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
+        <p>Per ulteriori informazioni non solo sulle [ottimizzazioni](/it/learn/about-how/) ma anche sui limiti imposti, [leggi la specifica HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
     - title: AMP Cache
       subtitle: |
         La **Google AMP Cache** (facoltativa) distribuisce le pagine HTML AMP.
@@ -48,4 +48,4 @@ core:
         <p>Un’altra versione dello strumento di convalida viene fornita in dotazione con ogni pagina AMP. Questa versione è in grado di registrare gli errori di convalida direttamente nella console del browser quando viene eseguito il rendering della pagina,
         per consentire di vedere in che modo eventuali modifiche complesse del codice
         possono ripercuotersi sulle prestazioni e sull’esperienza utente.
-        <p>Per ulteriori informazioni consulta la sezione sul [testing delle pagine HTML AMP](/docs/guides/validate.html).
+        <p>Per ulteriori informazioni consulta la sezione sul [testing delle pagine HTML AMP](/it/docs/guides/debug/validate.html).

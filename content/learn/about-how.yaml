@@ -17,6 +17,7 @@ video: 9Cfxm7cikMY
 points:
   pointlist:
     - title: Execute all AMP JavaScript asynchronously
+      id: execute-js-asynchronously
       description: |
         JavaScript is powerful,
         it can modify just about every aspect of the page,
@@ -35,6 +36,7 @@ points:
         [super-bad-for-performance `document.write` API](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/),
         it does not block rendering the main page.
     - title: Size all resources statically
+      id: size-all-resources-statically
       description: |
         External resources such as images, ads or iframes must state their size in the HTML
         so that AMP can determine each element’s size and position before resources are downloaded.
@@ -45,6 +47,7 @@ points:
         Since AMP is optimized to avoid expensive style recalculations and layouts in the browser,
         there won’t be any re-layout when resources load.
     - title: Don’t let extension mechanisms block rendering
+      id: dont-block-rendering
       description: |
         AMP doesn’t let extension mechanisms block page rendering.
         AMP supports extensions for things like
@@ -60,6 +63,7 @@ points:
         AMP creates the iframe box before it even knows what it will include:
       example: /content/includes/amp-iframe.md
     - title: Keep all third-party JavaScript out of the critical path
+      id: third-party-js-non-critical
       description: |
         Third-party JS likes to use synchronous JS loading.
         They also like to `document.write` more sync scripts.
@@ -74,6 +78,7 @@ points:
         so the iframe recalculations are very fast compared
         to recalculating styles and layout for the page.
     - title: All CSS must be inline and size-bound
+      id: css-must-be-inline
       description: |
         CSS blocks all rendering, it blocks page load, and it tends to get bloated.
         In AMP HTML pages, only inline styles are allowed.
@@ -95,6 +100,7 @@ points:
         and only inline style sheets are allowed;
         there’s no HTTP requests blocking the browser from downloading fonts.
     - title: Minimize style recalculations
+      id: minimize-style-recalculations
       description: |
         Each time you measure something, it triggers style recalculations which are expensive
         because the browser has to layout the entire page.
@@ -103,6 +109,7 @@ points:
         <p>Learn more about impact of style and layout recalculations on
         [rendering performance](https://developers.google.com/web/fundamentals/performance/rendering/).
     - title: Only run GPU-accelerated animations
+      id: only-run-gpu-accelerated-animations
       description: |
         The only way to have fast optimizations is to run them on the GPU.
         GPU knows about layers, it knows how to perform some things on these layers,
@@ -114,6 +121,7 @@ points:
         Learn more about
         [using transform and opacity for animation changes](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count).
     - title: Prioritize resource loading
+      id: prioritize-resource-loading
       description: |
         AMP controls all resource downloads: it prioritizes resource loading,
         loading only what’s needed, and prefetches lazy-loaded resources.
@@ -126,6 +134,7 @@ points:
         That way things load very fast but CPU is only used
         when resources are actually shown to users.
     - title: Load pages in an instant
+      id: load-pages-in-an-instant
       description: |
         The new [preconnect API](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
         is used heavily to ensure HTTP requests are as fast as possible when they are made.
@@ -143,6 +152,7 @@ points:
         <p>Learn more about
         [why AMP HTML doesn’t take full advantage of the preload scanner](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e).
     - title: Help make AMP faster
+      id: help-make-amp-faster
       description: |
         AMP is an open-source effort.
         We need your help to make AMP even faster.

@@ -14,18 +14,18 @@ core:
         <p>[AMP 规范中的 HTML 标记](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)）。
         利用这些自定义元素（称为 AMP HTML 组件）
         可以轻松高效地实现常见的模式。
-        <p>例如，[`amp-img`](/docs/reference/amp-img.html) 标记可提供完整的 `srcset` 支持，即使在尚不支持该标记的浏览器中也是如此。
-        <p>了解如何[创建您的第一个 AMP HTML 页面](/docs/get_started/create.html)。
+        <p>例如，[`amp-img`](/zh_cn/docs/reference/components/media/amp-img.html) 标记可提供完整的 `srcset` 支持，即使在尚不支持该标记的浏览器中也是如此。
+        <p>了解如何[创建您的第一个 AMP HTML 页面](/zh_cn/docs/get_started/create.html)。
     - title: AMP JS
       subtitle: |
         **AMP JS** 库可确保快速渲染 AMP HTML 页面。
       description: |
-        [AMP JS 库](https://github.com/ampproject/amphtml/tree/master/src)可实现所有 [AMP 的最佳性能做法](/docs/get_started/technical_overview.html)，
+        [AMP JS 库](https://github.com/ampproject/amphtml/tree/master/src)可实现所有 [AMP 的最佳性能做法](/zh_cn/learn/about-how/)，
         <p>管理资源加载，并为您提供上面提到的自定义标记，
         所有这些都是为了确保快速渲染您的页面。
         <p>重大优化之一就是使来自外部资源的所有内容保持异步，让页面中的任何内容都能毫无阻碍地渲染。
         <p>其他性能技术还包括：将所有 iframe 沙盒化、加载资源之前对页面上每个元素的布局进行预先计算，以及禁用性能缓慢的 CSS 选择器。
-        <p>如需详细了解[优化](/docs/get_started/technical_overview.html)和相关限制，[请阅读 AMP HTML 规范](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
+        <p>如需详细了解[优化](/zh_cn/learn/about-how/)和相关限制，[请阅读 AMP HTML 规范](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
     - title: AMP Cache
       subtitle: |
         **Google AMP Cache**（可选）提供 AMP HTML 页面。
@@ -37,4 +37,4 @@ core:
         <p>此外，Google AMP Cache 还带有内置[验证系统](https://github.com/ampproject/amphtml/tree/master/validator)，可确认页面能够正常工作，并且不依赖于外部资源。
         <p>此验证系统运行一系列断言，确认页面的标记符合 AMP HTML 规范。
         <p>另一个版本的验证器与各个 AMP 页面捆绑提供。此版本可在页面渲染时将验证错误直接记录到浏览器的控制台中，让您可以看到代码中的复杂变化可能会对性能和用户体验产生怎样的影响。
-        <p>详细了解[测试 AMP HTML 页面](/docs/guides/validate.html)。
+        <p>详细了解[测试 AMP HTML 页面](/zh_cn/docs/guides/debug/validate.html)。

@@ -7,6 +7,7 @@ hero:
 points:
   pointlist:
     - title: Hanya memperbolehkan skrip asinkron
+      id: execute-js-asynchronously
       description: |
         JavaScript sangat hebat,
         karena mampu memodifikasi hampir semua aspek halaman,
@@ -25,6 +26,7 @@ points:
         [API `document.write` yang buruk untuk kinerja](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/),
         JS ini tidak memblokir perenderan halaman utama.
     - title: Menyatakan ukuran semua sumber daya secara statis
+      id: size-all-resources-statically
       description: |
         Sumber daya eksternal seperti gambar, iklan, atau iframe harus dinyatakan ukurannya di HTML
         sehingga AMP bisa menentukan ukuran dan posisi setiap elemen sebelum sumber daya diunduh.
@@ -35,21 +37,23 @@ points:
         Karena AMP dioptimalkan untuk menghindari rekalkulasi gaya dan layout yang bebannya besar di browser,
         tidak akan ada layout ulang saat sumber daya dimuat.
     - title: Tidak memperbolehkan mekanisme ekstensi memblokir perenderan
+      id: dont-block-rendering
       description: |
         AMP tidak memperbolehkan mekanisme ekstensi memblokir perenderan halaman.
         AMP mendukung ekstensi untuk elemen-elemen seperti
-        [lightbox](/docs/reference/extended/amp-lightbox.html),
-        [sematan instagram](/docs/reference/extended/amp-instagram.html),
-        [tweet](/docs/reference/extended/amp-twitter.html), dsb.
+        [lightbox](/id/docs/reference/components/layout/amp-lightbox.html),
+        [sematan instagram](/id/docs/reference/components/social/amp-instagram.html),
+        [tweet](/id/docs/reference/components/social/amp-twitter.html), dsb.
         Meskipun elemen ini memerlukan permintaan HTTP tambahan,
         permintaan tersebut tidak memblokir layout dan perenderan halaman.
         <p>Halaman apa pun yang menggunakan skrip khusus harus memberi tahu sistem AMP
         bahwa nantinya akan memiliki tag khusus.
-        Misalnya, skrip [`amp-iframe`](/docs/reference/extended/amp-iframe.html)
+        Misalnya, skrip [`amp-iframe`](/id/docs/reference/components/layout/amp-iframe.html)
         memberi tahu sistem bahwa akan ada tag `amp-iframe`.
         AMP membuat kotak iframe sebelum mengetahui apa yang akan disertakan:
       example: /content/includes/amp-iframe.md
     - title: Mempertahankan semua JavaScript pihak ketiga di luar jalur penting
+      id: third-party-js-non-critical
       description: |
         JS pihak ketiga cenderung menggunakan pemuatan JS sinkron.
         Skrip ini juga cenderung menerapkan `document.write` pada skrip sinkronisasi lainnya.
@@ -64,6 +68,7 @@ points:
         sehingga rekalkulasi iframe sangat cepat dibandingkan dengan
         rekalkulasi gaya dan layout untuk halaman.
     - title: Semua CSS harus sebaris dan dibatasi ukurannya
+      id: css-must-be-inline
       description: |
         CSS memblokir semua perenderan, memblokir pemuatan halaman, dan cenderung besar ukurannya.
         Di halaman AMP HTML, hanya gaya sebaris yang diperbolehkan.
@@ -85,6 +90,7 @@ points:
         dan hanya style sheet sebaris yang diperbolehkan;
         tidak ada permintaan HTTP yang memblokir browser mengunduh font.
     - title: Meminimalkan rekalkulasi gaya
+      id: minimize-style-recalculations
       description: |
         Setiap kali Anda mengukur sesuatu, tindakan ini memicu rekalkulasi gaya yang bebannya berat
         karena browser harus melayout keseluruhan halaman.
@@ -93,6 +99,7 @@ points:
         <p>Ketahui selengkapnya tentang dampak gaya dan rekalkulasi layout terhadap
         [kinerja perenderan](https://developers.google.com/web/fundamentals/performance/rendering/).
     - title: Hanya menjalankan animasi yang diakselerasi GPU
+      id: only-run-gpu-accelerated-animations
       description: |
         Satu-satunya cara untuk mendapatkan pengoptimalan maksimal adalah dengan menjalankan animasi di GPU.
         GPU memahami layer serta cara menjalankan beberapa hal di layer ini,
@@ -104,6 +111,7 @@ points:
         Ketahui selengkapnya tentang
         [menggunakan transform dan opacity untuk perubahan animasi](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
     - title: Memprioritaskan pemuatan sumber daya
+      id: prioritize-resource-loading
       description: |
         AMP mengontrol semua unduhan sumber daya: dengan memprioritaskan pemuatan sumber daya,
         memuat hanya apa yang diperlukan, dan mengambil di awal sumber daya yang lambat dimuat.
@@ -116,6 +124,7 @@ points:
         Dengan demikian, semuanya dimuat sangat cepat tetapi CPU hanya dipakai
         saat sumber daya benar-benar diperlihatkan ke pengguna.
     - title: Memuat halaman seketika
+      id: load-pages-in-an-instant
       description: |
         [API preconnect](http://www.w3.org/TR/resource-hints/#dfn-preconnect) yang baru
         sangat sering dipakai untuk memastikan permintaan HTTP secepat mungkin saat dibuat.
@@ -133,7 +142,8 @@ points:
         <p>Ketahui selengkapnya tentang
         [mengapa AMP HTML tidak penuh memanfaatkan pemindai pramuat](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e)
     - title: Bantu mempercepat AMP
+      id: help-make-amp-faster
       description: |
         AMP adalah upaya sumber terbuka.
         Kami membutuhkan bantuan Anda untuk semakin mempercepat AMP.
-        Pelajari [cara berkontribusi](/docs/support/contribute.html).
+        Pelajari [cara berkontribusi](/id/contribute/).

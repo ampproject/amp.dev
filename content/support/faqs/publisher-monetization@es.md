@@ -13,7 +13,7 @@ faq:
       Un objetivo clave del proyecto Accelerated Mobile Pages es la compatibilidad con las suscripciones y los muros de pago. Actualmente, AMP admite un marco de acceso flexible en el que los editores pueden controlar la experiencia de visualización de documentos por parte de los suscriptores, los usuarios registrados y los usuarios anónimos.
   - title: ¿Cómo se gestionan los análisis en el formato AMP?
     answer: |
-      Un objetivo de diseño fundamental del proyecto es garantizar que los editores puedan obtener datos de análisis útiles. Aunque la compatibilidad con análisis en la versión de demostración es muy limitada, esperamos que la especificación sea compatible con diferente información de análisis y que se integre con sistemas de terceros sin comprometer la velocidad ni el tamaño del archivo de AMP. Hay varios proveedores de análisis que ya [participan](https://www.ampproject.org/who/#analytics) en el proyecto.
+      Un objetivo de diseño fundamental del proyecto es garantizar que los editores puedan obtener datos de análisis útiles. Aunque la compatibilidad con análisis en la versión de demostración es muy limitada, esperamos que la especificación sea compatible con diferente información de análisis y que se integre con sistemas de terceros sin comprometer la velocidad ni el tamaño del archivo de AMP. Hay varios proveedores de análisis que ya [participan](/es/support/faqs/supported-platforms.html#analytics) en el proyecto.
   - title: ¿Los editores reciben crédito por el tráfico desde el punto de vista de la medición?
     answer: |
       Sí. Los archivos de AMP son iguales que los del resto de tu sitio web; este espacio es el lienzo del editor.

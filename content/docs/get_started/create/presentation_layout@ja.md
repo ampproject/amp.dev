@@ -19,12 +19,12 @@ AMP はウェブページなので、ページやその中に含まれる要素�
 </style>
 [/sourcecode]
 
-各 AMP ページで使える埋め込みスタイルシートは 1 つだけで、使用できないセレクターもいくつかあります。[スタイリングの詳細については、こちらをご確認ください](/docs/guides/responsive/style_pages.html)。
+各 AMP ページで使える埋め込みスタイルシートは 1 つだけで、使用できないセレクターもいくつかあります。[スタイリングの詳細については、こちらをご確認ください](/ja/docs/guides/author-develop/responsive/style_pages.html)。
 
 ## レイアウトを制御する
 
 AMP は厳密な規則に従って、ページ上に要素を配置します。通常の HTML ページは CSS を使って要素を配置することがほとんどですが、AMP ではパフォーマンスを上げるために、すべての要素のサイズを最初から明示的に設定する必要があります。
 
-AMP ページのレンダリングやレイアウトの方法、レイアウトの変更方法については[レイアウトの制御方法](/docs/guides/responsive/control_layout.html)をご覧ください。
+AMP ページのレンダリングやレイアウトの方法、レイアウトの変更方法については[レイアウトの制御方法](/ja/docs/guides/author-develop/responsive/control_layout.html)をご覧ください。
 
 <a class="go-button button" href="/ja/docs/get_started/create/preview_and_validate.html">ステップ 4 に進む</a>

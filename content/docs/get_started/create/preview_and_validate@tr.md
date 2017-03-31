@@ -14,6 +14,6 @@ Ardından, AMP sayfanızın **gerçekten geçerli bir AMP olduğundan** ya da Go
   1. URL›ye "`#development=1`" ekleyin; örneğin, `http://localhost:8000/released.amp.html#development=1`.
   1. [Chrome DevTools konsolu](https://developers.google.com/web/tools/chrome-devtools/debug/console/) açın ve doğrulama hataları olup olmadığına göz atın.
 
-[Doğrulama hakkında daha fazla bilgi](/docs/guides/validate.html) ve hata aldığınızda ne yapacağınızı öğrenin.
+[Doğrulama hakkında daha fazla bilgi](/tr/docs/guides/debug/validate.html) ve hata aldığınızda ne yapacağınızı öğrenin.
 
 <a class="go-button button" href="/tr/docs/get_started/create/prepare_for_discovery.html">Adım 5 ile devam edin</a>

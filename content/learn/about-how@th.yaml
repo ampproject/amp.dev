@@ -7,6 +7,7 @@ hero:
 points:
   pointlist:
     - title: อนุญาตเฉพาะสคริปต์แบบอะซิงโครนัส
+      id: execute-js-asynchronously
       description: |
         JavaScript เป็นการทำงานที่มีประสิทธิภาพสูง
         โดยสามารถปรับเปลี่ยนหน้าเว็บในทุกๆ ด้าน
@@ -24,6 +25,7 @@ points:
         [super-bad-for-performance `document.write` API](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/)
         การใช้งานดังกล่าวจะต้องไม่บล็อกการแสดงหน้าหลัก
     - title: กำหนดขนาดทรัพยากรทั้งหมดแบบคงที่
+      id: size-all-resources-statically
       description: |
         ทรัพยากรภายนอก เช่น รูปภาพ โฆษณา หรือ iframe ต้องกำหนดขนาดไว้ใน HTML
         เพื่อให้ AMP สามารถพิจารณาขนาดและตำแหน่งของแต่ละอิลิเมนต์ก่อนที่จะดาวน์โหลดทรัพยากร
@@ -34,20 +36,22 @@ points:
         เนื่องจาก AMP เพิ่มประสิทธิภาพโดยหลีกเลี่ยงการคำนวณรูปแบบและเค้าโครงในเบราว์เซอร์ใหม่
         จึงไม่จำเป็นต้องมีการเปลี่ยนเค้าโครงเมื่อโหลดทรัพยากร
     - title: ป้องกันไม่ให้กลไกส่วนขยายบล็อกการแสดงผล
+      id: dont-block-rendering
       description: |
         AMP จะป้องกันไม่ให้กลไกส่วนขยายบล็อกการแสดงผล
         AMP สนับสนุนส่วนขยายต่างๆ เช่น
-        [lightboxes](/docs/reference/extended/amp-lightbox.html),
-        [instagram embeds](/docs/reference/extended/amp-instagram.html),
-        [tweets](/docs/reference/extended/amp-twitter.html) ฯลฯ
+        [lightboxes](/th/docs/reference/components/layout/amp-lightbox.html),
+        [instagram embeds](/th/docs/reference/components/social/amp-instagram.html),
+        [tweets](/th/docs/reference/components/social/amp-twitter.html) ฯลฯ
         แม้ว่าส่วนขยายเหล่านี้จะต้องมีคำขอ HTTP เพิ่มเติม
         คำขอเหล่านั้นไม่ได้บล็อกเค้าโครงหน้าเว็บและการแสดงผล
         <p>หน้าเว็บใดที่ใช้สคริปต์แบบกำหนดเองจะต้องแจ้งให้ระบบ AMP ทราบว่าจะต้องมีแท็กแบบกำหนดเอง
-        <p>ตัวอย่างเช่น สคริปต์ [`amp-iframe`](/docs/reference/extended/amp-iframe.html)
+        <p>ตัวอย่างเช่น สคริปต์ [`amp-iframe`](/th/docs/reference/components/layout/amp-iframe.html)
         จะบอกให้ระบบทราบว่าจะมีแท็ก `amp-iframe`
         AMP จะสร้างกรอบ iframe ก่อนที่จะทราบว่ามีอะไรอยู่ภายใน
       example: /content/includes/amp-iframe.md
     - title: เอา JavaScript ของบุคคลที่สามทั้งหมดออกจากพาธที่สำคัญ
+      id: third-party-js-non-critical
       description: |
         JS ของบุคคลที่สามมักใช้การโหลด JS แบบซิงโครนัส
         นอกจากนี้ยังมีการใช้ `document.write` สำหรับการซิงค์ข้อมูลด้วย
@@ -61,6 +65,7 @@ points:
         <p>การคำนวณรูปแบบและเค้าโครงใหม่จะขึ้นอยู่กับขนาด DOM
         ดังนั้น การคำนวณใหม่ของ iframe จะมีการทำงานที่รวดเร็วมากเมื่อเทียบกับการคำนวณรูปแบบและเค้าโครงของหน้าเว็บใหม่
     - title: CSS ทั้งหมดจะต้องแสดงแบบอินไลน์และในขนาดที่กำหนดไว้
+      id: css-must-be-inline
       description: |
         CSS จะบล็อกการแสดงผลทั้งหมด รวมทั้งบล็อกการโหลดหน้าเว็บ และอาจมีการขยายการทำงานได้อย่างไม่สิ้นสุด
         ในหน้า AMP HTML จะสามารถแสดงได้เฉพาะในรูปแบบอินไลน์
@@ -79,6 +84,7 @@ points:
         และอนุญาตเฉพาะสไตล์ชีทแบบอินไลน์เท่านั้น
         จึงไม่มีคำขอ HTTP ที่จะบล็อกเบราว์เซอร์ไม่ให้ดาวน์โหลดแบบอักษรได้
     - title: ลดการคำนวณรูปแบบใหม่
+      id: minimize-style-recalculations
       description: |
         ระบบจะเริ่มการคำนวณรูปแบบใหม่ทุกครั้งที่คุณตรวจสอบบางสิ่ง ซึ่งทำให้สิ้นเปลืองทรัพยากรอย่างมาก
         เนื่องจากเบราว์เซอร์จะต้องวางเค้าโครงทั้งหน้า
@@ -86,6 +92,7 @@ points:
         เพื่อให้แน่ใจว่าจะมีการคำนวณรูปแบบใหม่สำหรับแต่ละเฟรมไม่เกินหนึ่งครั้ง
         <p>เรียนรู้เพิ่มเติมเกี่ยวกับผลกระทบของการคำนวณรูปแบบและเค้าโครงใหม่ได้ใน[ประสิทธิภาพในการแสดงผล](https://developers.google.com/web/fundamentals/performance/rendering/)
     - title: เรียกใช้เฉพาะภาพเคลื่อนไหวที่รองรับการเร่งการแสดงผลกราฟิก
+      id: only-run-gpu-accelerated-animations
       description: |
         วิธีการเดียวที่จะช่วยให้สามารถแสดงผลได้อย่างรวดเร็วคือการเรียกใช้บน GPU
         ซึ่ง GPU จะรู้จักเลเยอร์ต่างๆ รวมทั้งวิธีดำเนินการบนเลเยอร์เหล่านี้
@@ -96,6 +103,7 @@ points:
         ซึ่งไม่จำเป็นต้องใช้เค้าโครงหน้า
         เรียนรู้เพิ่มเติมเกี่ยวกับ[การใช้การเปลี่ยนรูปร่างและความโปร่งใสสำหรับการเปลี่ยนภาพเคลื่อนไหว](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
     - title: จัดลำดับการโหลดทรัพยากร
+      id: prioritize-resource-loading
       description: |
         AMP จะควบคุมการดาวน์โหลดทรัพยากรทั้งหมด จัดลำดับการโหลด
         โหลดเฉพาะสิ่งที่จำเป็น และดึงทรัพยากรมาเท่าที่จำเป็นก่อน
@@ -107,6 +115,7 @@ points:
         การโหลดทรัพยากรจะเริ่มช้าที่สุดเท่าที่จะทำได้ แต่จะพยายามดึงทรัพยากรเท่าที่จำเป็นมาให้เร็วที่สุด
         วิธีการดังกล่าวจะช่วยให้สามารถโหลดได้อย่างรวดเร็ว โดยมีการใช้ CPU เฉพาะเมื่อจำเป็นต้องทำให้ทรัพยากรเหล่านั้นปรากฏต่อสายตาของผู้ใช้
     - title: โหลดหน้าเว็บได้ในทันที
+      id: load-pages-in-an-instant
       description: |
         [API ที่เชื่อมต่อล่วงหน้า](http://www.w3.org/TR/resource-hints/#dfn-preconnect)ใหม่จะถูกนำมาใช้อย่างมากเพื่อให้แน่ใจว่าจะสามารถส่งคำขอ
         HTTP ได้อย่างรวดเร็วเมื่อต้องการ
@@ -122,7 +131,8 @@ points:
         จะไม่มีการดาวน์โหลดทรัพยากรที่อาจใช้ CPU มาก (เช่น iframe ของบุคคลที่สาม)
         <p>เรียนรู้เพิ่มเติมเกี่ยวกับ[เหตุใด AMP HTML จึงไม่ใช้ประโยชน์เต็มที่จากการสแกนเพื่อโหลดข้อมูลล่วงหน้า](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e)
     - title: ช่วยให้ AMP ทำงานได้รวดเร็วขึ้น
+      id: help-make-amp-faster
       description: |
         AMP คือการทำงานร่วมกันในรูปแบบโอเพ่นซอร์ส
         เราต้องการความช่วยเหลือจากคุณเพื่อทำให้ AMP ทำงานได้เร็วยิ่งขึ้น
-        เรียนรู้เกี่ยวกับ[วิธีการมีส่วนร่วม](/docs/support/contribute.html)
+        เรียนรู้เกี่ยวกับ[วิธีการมีส่วนร่วม](/th/contribute/)

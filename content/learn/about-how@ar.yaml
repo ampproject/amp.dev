@@ -7,6 +7,7 @@ hero:
 points:
   pointlist:
     - title: السماح بالنصوص البرمجية غير المتزامنة فقط
+      id: execute-js-asynchronously
       description: |
         تتميز جافا سكريبت بأنها ذات إمكانات فائقة،
         فهي قادرة على تعديل كل سمة من سمات الصفحة تقريبًا،
@@ -25,6 +26,7 @@ points:
         [واجهة برمجة تطبيقات <span dir="ltr" class="nowrap">`document.write`</span> ذات التأثير السيء للغاية على الأداء](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/)،
         فهي لا تعيق عرض الصفحة الرئيسية.
     - title: تحديد حجم كل الموارد بشكل ثابت
+      id: size-all-resources-statically
       description: |
         يجب أن تذكر الموارد الخارجية، مثل الصور، أو الإعلانات، أو إطارات iframe حجمها في HTML
         لكي تتمكن AMP من تحديد حجم كل عنصر وموضعه قبل تنزيل الموارد.
@@ -35,21 +37,23 @@ points:
         ونظرًا لأن AMP محسّنة لتجنب عمليات إعادة حساب النمط والتنسيقات كثيفة الاستهلاك في المتصفح،
         لن تكون هناك أي إعادة للتنسيق عند تحميل الموارد.
     - title: عدم السماح لآليات الإضافة بإعاقة العرض
+      id: dont-block-rendering
       description: |
         لا تسمح AMP لآليات الإضافة بإعاقة عرض الصفحة.
         تدعم AMP الإضافات لأشياء، مثل
-        [العروض المبسطة](/docs/reference/extended/amp-lightbox.html)،
-        [وتضمينات instagram](/docs/reference/extended/amp-instagram.html)،
-        و[التغريدات](/docs/reference/extended/amp-twitter.html)، وغير ذلك.
+        [العروض المبسطة](/ar/docs/reference/components/layout/amp-lightbox.html)،
+        [وتضمينات instagram](/ar/docs/reference/components/social/amp-instagram.html)،
+        و[التغريدات](/ar/docs/reference/components/social/amp-twitter.html)، وغير ذلك.
         وفي حين تستلزم هذه الأشياء طلبات HTTP إضافية،
         لا تعيق هذه الطلبات تنسيق الصفحة وعرضها.
         <p>يجب أن تخبر أي صفحة تستخدم نصًا برمجيًا مخصصًا نظامَ AMP
         أنها سوف ستتضمن في النهاية علامة مخصصة.
-        على سبيل المثال، يخبر النص البرمجي [<span dir="ltr" class="nowrap">`amp-iframe`</span>](/docs/reference/extended/amp-iframe.html)
+        على سبيل المثال، يخبر النص البرمجي [<span dir="ltr" class="nowrap">`amp-iframe`</span>](/ar/docs/reference/components/layout/amp-iframe.html)
         النظام بأنه ستكون هناك علامة <span dir="ltr" class="nowrap">`amp-iframe`</span>.
         تنشئ AMP مربع iframe قبل أن تعرف حتى ما الذي سيتضمنه:
       example: /content/includes/amp-iframe.md
     - title: إبقاء كل جافا سكريبت التابعة لجهة خارجية بعيدًا عن المسار الحرج
+      id: third-party-js-non-critical
       description: |
         تستحسن JS التابعة لجهات خارجية استخدام تحميل JS المتزامن.
         كذلك تستحسن استخدام <span dir="ltr" class="nowrap">`document.write`</span> مع النصوص البرمجية الأكثر تزامنًا.
@@ -64,6 +68,7 @@ points:
         ولذلك تكون عمليات إعادة حساب إطار iframe سريعة للغاية مقارنةً
         بإعادة حساب الأنماط والتنسيق للصفحة.
     - title: يجب أن تكون كل CSS مضمّنة ومقيدة بالحجم المحدد
+      id: css-must-be-inline
       description: |
         تعيق CSS كل عرض، فهي تعيق تحميل الصفحة، وتميل إلى أن تكون ذات حجم كبير.
         في صفحات <span dir="ltr" class="nowrap">AMP HTML</span>، غير مسموح سوى بالأنماط المضمّنة.
@@ -85,6 +90,7 @@ points:
         وغير مسموح إلا بورقات الأنماط المضمّنة؛
         فلا توجد طلبات HTTP تحول دون تنزيل المتصفح للخطوط.
     - title: تقليل عمليات حساب الأنماط لأدنى حد
+      id: minimize-style-recalculations
       description: |
         كلما تقيس شيئًا ما، فإنه يشغّل عمليات حساب الأنماط كثيفة الاستهلاك
         لأن المتصفح يجب أن ينسّق الصفحة كاملةً.
@@ -93,6 +99,7 @@ points:
         <p>تعرّف على المزيد بشأن تأثير عمليات إعادة حساب الأنماط والتنسيقات على
         [أداء العرض](https://developers.google.com/web/fundamentals/performance/rendering/).
     - title: الاقتصار على تشغيل العناصر المتحركة المسرّعة بواسطة وحدة معالجة رسومات
+      id: only-run-gpu-accelerated-animations
       description: |
         الطريقة الوحيدة للحصول على تحسينات سريعة هي تشغيلها في وحدة معالجة رسومات.
         تكون وحدة معالجة الرسومات على معرفة بالطبقات، كما تعرف كيفية تنفيذ بعض الأشياء على هذه الطبقات،
@@ -104,6 +111,7 @@ points:
         تعرّف على المزيد بشأن
         [استخدام التحويل ودرجة التعتيم لتغييرات العناصر المتحركة](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count).
     - title: وضع تحميل الموارد كأولوية
+      id: prioritize-resource-loading
       description: |
         تتحكم AMP في كل تنزيلات الموارد: فهي تضع تحميل الموارد كأولوية،
         وبذلك لا يتم تحميل سوى الضروري فقط، وتجلب الموارد بطيئة التحميل مسبقًا.
@@ -116,6 +124,7 @@ points:
         بهذه الطريقة يتم تحميل العناصر سريعًا للغاية لكن وحدة المعالجة المركزية (CPU) لا يتم استخدامها إلا
         عندما تكون الموارد ظاهرة بالفعل للمستخدمين.
     - title: تحميل الصفحات على الفور
+      id: load-pages-in-an-instant
       description: |
         يتم استخدام [واجهة برمجة التطبيقات (API) ما قبل الاتصال](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
         بكثافة كبيرة لضمان أكبر سرعة ممكنة لطلبات HTTP عند تقديمها.
@@ -133,7 +142,8 @@ points:
         <p>تعرّف على المزيد بشأن
         [أسباب عدم استفادة <span dir="ltr" class="nowrap">AMP HTML</span> استفادة كاملة من فاحص التحميل المسبق](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e).
     - title: ساعد في إضفاء سرعة أكبر على AMP
+      id: help-make-amp-faster
       description: |
         تمثل AMP جهدًا مفتوح المصدر.
         نحتاج إلى مساعدتك في إضفاء المزيد من السرعة على AMP.
-        تعرّف على [كيفية المساهمة](/docs/support/contribute.html).
+        تعرّف على [كيفية المساهمة](/ar/contribute/).
