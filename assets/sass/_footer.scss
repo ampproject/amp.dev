@@ -17,6 +17,10 @@ footer {
     &.wordpress {
       @include sprite(wordpress);
     }
+
+    &.youtube {
+      @include sprite(youtube);
+    }
   }
 
   .footer-icons {
