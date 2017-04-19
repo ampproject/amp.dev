@@ -240,6 +240,10 @@
       position: static;
   }
 
+  .post-content li {
+    display: flex;
+  }
+
   .post-sheet {
     margin: 0 auto;
     padding-top: 100px;

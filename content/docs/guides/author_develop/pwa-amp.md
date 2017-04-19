@@ -9,7 +9,7 @@ components:
 
 {{ youtube('M_ZCgbEGyHY', 480, 270, caption='If you prefer listening, this talk from CDS 2016 gives you a similar overview.') }}
 
-Contrary to what you might think, Progressive Web Apps and AMP Pages are not mutually exclusive. In fact, in many cases, they compliment each other in one way or another. Learn how to:
+Progressive Web Apps and AMP pages work great together. In fact, in many cases, they compliment each other in one way or another. Learn how to:
 
 1. [Enable PWA features](/docs/guides/pwa-amp/amp-as-pwa) for your AMP pages
 1. Create a [compelling, super-fast user journey](/docs/guides/pwa-amp/amp-to-pwa) from AMP to PWA
@@ -29,7 +29,7 @@ Learn how to [enable PWA features](/docs/guides/pwa-amp/amp-as-pwa) for your AMP
 
 ## AMP as entry point into your PWA
 
-AMP's unique selling point is the **almost-instant delivery**, a characteristic that makes AMP pre-destined for the first hop into your site. *Progressive web apps* enable much **more interactivity and engagement-enabling features**, but their first load is hindered by the fact that the site's Service Worker, and therefore its assets and app shell, are only accelerating delivery on subsequent loads.
+AMP's unique selling point is the **almost-instant delivery**, a characteristic that makes AMP the perfect fit for the first user interaction with your site. *Progressive web apps* enable much **more interactivity and engagement-enabling features**, but their first load is hindered by the fact that the site's Service Worker, and therefore its assets and app shell, are only accelerating delivery on subsequent loads.
 
 A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to it for the onward journey.
 
