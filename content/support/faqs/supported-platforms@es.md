@@ -1,14 +1,14 @@
 ---
-$title@: Supported Platforms, Vendors and Partners
+$title: Plataformas, proveedores y socios
 $order: 3
 $parent: /content/support/faqs.md
 class: who
 
-description@: The Accelerated Mobile Pages (AMP) Project is an open source initiative that makes it easy for publishers to create mobile-friendly content once and have it load instantly everywhere. – Accelerated Mobile Pages Project
+description: El proyecto Accelerated Mobile Pages (AMP) es una iniciativa de código abierto que facilita a los editores crear contenido para móviles una vez y que se cargue instantáneamente en todas partes. – Accelerated Mobile Pages Project
 
 cta:
-  title@: Próximo FAQ
-  link_text@: AMP Overview
+  title: Próximo FAQ
+  link_text: AMP Overview
   link_url: /content/support/faqs/overview.md
 
 ---
