@@ -11,7 +11,7 @@ toc: true
 
 所有外部加载的资源（包括图片）都必须具有指定的尺寸和位置，以确保网页在资源加载期间不会跳动和重排。
 
-要制作自适应图片，请指定宽度和高度，设置自适应布局，然后使用 [`srcset`](/docs/guides/responsive/style_pages.html) 指明对于不同的屏幕尺寸所用的图片资源：
+要制作自适应图片，请指定宽度和高度，设置自适应布局，然后使用 [`srcset`](/zh_cn/docs/guides/author-develop/responsive/style_pages.html) 指明对于不同的屏幕尺寸所用的图片资源：
 
 [sourcecode:html]
 <amp-img
@@ -78,7 +78,7 @@ toc: true
 </body>
 [/sourcecode]
 
-**重要提示**：检查 AMP 是否支持您的样式；出于性能方面的考虑，AMP 不支持某些样式（另请参阅[支持的 CSS](/docs/guides/responsive/style_pages.html)）。
+**重要提示**：检查 AMP 是否支持您的样式；出于性能方面的考虑，AMP 不支持某些样式（另请参阅[支持的 CSS](/zh_cn/docs/guides/author-develop/responsive/style_pages.html)）。
 
 ## 尺寸和位置元素
 
@@ -88,16 +88,16 @@ AMP 将文档布局从资源加载中分离开来，这样 AMP 就能够加载�
 
 将布局设置为自适应。这样一来，元素的宽度将根据其容器元素的宽度来设定，高度则根据由宽度和高度属性确定的宽高比自动重新调整。
 
-详细了解 [AMP 中支持的布局](/docs/guides/responsive/control_layout.html)。
+详细了解 [AMP 中支持的布局](/zh_cn/docs/guides/author-develop/responsive/control_layout.html)。
 
 ## 验证样式和布局
 
 使用 AMP 验证工具测试您网页的 CSS 和布局值。
 
-验证工具将确认您网页的 CSS 是否超过 50000 字节的限制，检查是否使用了禁止的样式，并检查网页是否采用了受支持的布局，格式是否正确无误。另请参阅完整的[样式和布局错误](/docs/reference/validation_errors.html#style-and-layout-errors)列表。
+验证工具将确认您网页的 CSS 是否超过 50000 字节的限制，检查是否使用了禁止的样式，并检查网页是否采用了受支持的布局，格式是否正确无误。另请参阅完整的[样式和布局错误](/zh_cn/docs/reference/validation_errors.html#样式和布局错误)列表。
 
 下方是控制台中的一个错误示例，网页的 CSS 超出 50000 字节的限制：
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-详细了解如何[验证 AMP 网页](/docs/guides/validate.html)，包括如何找出样式错误并进行修复。
+详细了解如何[验证 AMP 网页](/zh_cn/docs/guides/debug/validate.html)，包括如何找出样式错误并进行修复。

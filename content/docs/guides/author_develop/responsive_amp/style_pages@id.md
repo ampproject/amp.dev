@@ -4,12 +4,12 @@ $title: CSS yang Didukung
 
 Seperti halnya semua laman web, laman AMP ditata dengan CSS,
 tetapi Anda tidak dapat mereferensikan stylesheet eksternal
-(dengan pengecualian [font khusus](#the-custom-fonts-exception)).
+(dengan pengecualian [font khusus](#pengecualian-font-khusus)).
 Gaya tertentu juga tidak diperbolehkan karena implikasi performa;
 atribut gaya sebaris tidak diperbolehkan.
 
 Semua gaya harus berada di bagian head dokumen
-(lihat [Menambahkan gaya ke laman](/docs/guides/validate.html#add-styles-to-a-page)).
+(lihat [Menambahkan gaya ke laman](/id/docs/guides/debug/validate.html)).
 Tetapi Anda dapat menggunakan prapemrosesan CSS dan pemberian template untuk membuat laman statis
 guna mengelola konten dengan lebih baik.
 
@@ -93,7 +93,7 @@ Gaya berikut tidak diizinkan di laman AMP:
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
-      <td data-th="Description">Dilarang dengan pengecualian [font khusus](#the-custom-fonts-exception).</td>
+      <td data-th="Description">Dilarang dengan pengecualian <a href="#pengecualian-font-khusus">font khusus</a>.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code> (pemilih universal)</td>

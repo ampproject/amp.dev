@@ -43,7 +43,7 @@ $title: تهيئة Analytics
 نقاط مهمة بخصوص البيانات يجب وضعها في الحسبان:
 
 * هل ستتبّع فقط مشاهدات الصفحة، أم أنماط تفاعل المستخدم الإضافية
-(انظر أيضًا [<span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))؟
+(انظر أيضًا [<span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/guides/analytics/analytics_basics.html#هل-تستخدم-amp-pixel-أو-amp-analytics؟))؟
 * ما أنواع البيانات التي ستقوم بجمعها بشأن مستخدميك، أو محتواك،
-أو الجهاز، أو المتصفح (انظر أيضًا [استبدال المتغير](/docs/guides/analytics/analytics_basics.html#variable-substitution))؟
-* كيف ستتعرّف على هوية مستخدميك (انظر أيضًا [هوية المستخدم](/docs/guides/analytics/analytics_basics.html#user-identification))؟
+أو الجهاز، أو المتصفح (انظر أيضًا [استبدال المتغير](/ar/docs/guides/analytics/analytics_basics.html#استبدال-المتغير))؟
+* كيف ستتعرّف على هوية مستخدميك (انظر أيضًا [هوية المستخدم](/ar/docs/guides/analytics/analytics_basics.html#هوية-المستخدم))؟

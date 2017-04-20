@@ -11,7 +11,7 @@ AMP'de duyarlı öğeleri son derece kolay bir şekilde oluşturabilirsiniz. Bun
 
 Resimler de dahil olmak üzere harici olarak yüklenen tüm kaynakların belirli bir boyutunun ve konumunun olması gerekir. Böylece, kaynaklar yüklendikçe sayfa atlamaz ve yeniden düzenlenmez.
 
-Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzeni duyarlı olarak ayarlayın ve [`srcset`](/docs/guides/responsive/style_pages.html) ile değişen ekran boyutlarına göre kullanılacak resim öğesini belirtin:
+Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzeni duyarlı olarak ayarlayın ve [`srcset`](/tr/docs/guides/author-develop/responsive/style_pages.html) ile değişen ekran boyutlarına göre kullanılacak resim öğesini belirtin:
 
 [sourcecode:html]
 <amp-img
@@ -79,7 +79,7 @@ Ortak CSS özelliklerini kullanarak sınıf veya öğe seçicilerle bileşen sti
 </body>
 [/sourcecode]
 
-**Önemli:** Stillerinizin AMP'de desteklendiğinden emin olun. Bazı stiller performans nedeniyle desteklenmemektedir (ayrıca bkz. [Desteklenen CSS](/docs/guides/responsive/style_pages.html)).
+**Önemli:** Stillerinizin AMP'de desteklendiğinden emin olun. Bazı stiller performans nedeniyle desteklenmemektedir (ayrıca bkz. [Desteklenen CSS](/tr/docs/guides/author-develop/responsive/style_pages.html)).
 
 ## Boyut ve konum öğeleri
 
@@ -91,17 +91,17 @@ Bu öznitelikler, öğenin en boy oranına işaret eder ve daha sonra, kapsayıc
 Düzeni duyarlı değerine ayarlayın.
 Bu seçim, öğenin boyutunu kapsayıcı öğesinin genişliğine ayarlar ve yüksekliğini, otomatik olarak genişlik ve yükseklik öznitelikleri tarafından belirtilen en boy oranına göre yeniden boyutlandırır.
 
-[AMP'de desteklenen düzenler](/docs/guides/responsive/control_layout.html) hakkında daha fazla bilgi edinin.
+[AMP'de desteklenen düzenler](/tr/docs/guides/author-develop/responsive/control_layout.html) hakkında daha fazla bilgi edinin.
 
 ## Stillerinizi ve düzeninizi doğrulama
 
 Sayfanızın CSS ve düzen değerlerini test etmek için AMP doğrulayıcıyı kullanın.
 
 Doğrulayıcı, sayfanızın CSS'sinin 50.000 bayt sınırını aşmadığını doğrular, izin verilmeyen stilleri kontrol eder ve sayfa düzeninin desteklenip doğru bir şekilde biçimlendirildiğinden emin olur.
-Ayrıca buradaki [Stil ve düzen hatalarının](/docs/reference/validation_errors.html#style-and-layout-errors) tam listesine de bakabilirsiniz.
+Ayrıca buradaki [Stil ve düzen hatalarının](/tr/docs/reference/validation_errors.html#stil-ve-düzen-hataları) tam listesine de bakabilirsiniz.
 
 50.000 bayt sınırını aşan CSS'ye sahip sayfa için konsolda gösterilen hata örneği:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız](/docs/guides/validate.html) konusunda daha fazla bilgi edinin.
+Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız](/tr/docs/guides/debug/validate.html) konusunda daha fazla bilgi edinin.

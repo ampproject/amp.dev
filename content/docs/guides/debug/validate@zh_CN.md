@@ -8,7 +8,7 @@ AMP 的强大之处在于它不仅能加快您的网页加载速度，还以能�
 
 您可以通过多种方法来验证 AMP 文档。这些验证方法产生的结果完全相同，因此不妨使用最适合您的开发模式的方法。
 
-除了 AMP 有效性之外，您可能还需要确认 AMP 文档能否被第三方平台[发现](/docs/guides/discovery.html)。
+除了 AMP 有效性之外，您可能还需要确认 AMP 文档能否被第三方平台[发现](/zh_cn/docs/guides/deploy/discovery.html)。
 
 ### 浏览器 Developer Console。
 
@@ -156,4 +156,4 @@ AMP 验证工具不仅能在开发过程中为您提供帮助，还可供将您�
 
 再次仔细阅读规范之后，我们意识到在本该使用 `<amp-img>` 标记的位置使用了 `<img>` 标记。
 
-为了更好地理解可能出现的错误的完整列表，请参阅 [AMP 验证错误指南](https://www.ampproject.org/docs/reference/validation_errors.html)。如果在认真评估之后仍有疑问，请[提出问题](http://stackoverflow.com/questions/tagged/amp-html)，我们将尽力提供帮助。
+为了更好地理解可能出现的错误的完整列表，请参阅 [AMP 验证错误指南](/zh_cn/docs/reference/validation_errors.html)。如果在认真评估之后仍有疑问，请[提出问题](http://stackoverflow.com/questions/tagged/amp-html)，我们将尽力提供帮助。

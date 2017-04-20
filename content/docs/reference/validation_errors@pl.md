@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 Poprawne dokumenty AMP nie mogą zawierać żadnych błędów weryfikacji.
-Ten artykuł pomoże Ci lepiej zrozumieć błędy weryfikacji i skuteczniej usuwać problemy, które możesz napotkać podczas [weryfikacji stron AMP](/docs/guides/validate.html).
+Ten artykuł pomoże Ci lepiej zrozumieć błędy weryfikacji i skuteczniej usuwać problemy, które możesz napotkać podczas [weryfikacji stron AMP](/pl/docs/guides/debug/validate.html).
 Pełny przegląd błędów weryfikacji zawiera [specyfikacja narzędzia do weryfikacji stron AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -573,7 +573,7 @@ Znana jest pełna lista unikalnych tagów:
 
 ## Błędy stylu i układu
 
-Zanim przejdziemy do omawiania błędów stylu i układu, warto wyjaśnić działanie [stylu](/docs/guides/responsive/style_pages.html) i [układu](/docs/guides/responsive/control_layout.html) na stronach AMP. Strony AMP są stronami HTML, dlatego ich styl jest bardzo podobny do stylu każdej strony HTML.
+Zanim przejdziemy do omawiania błędów stylu i układu, warto wyjaśnić działanie [stylu](/pl/docs/guides/author-develop/responsive/style_pages.html) i [układu](/pl/docs/guides/author-develop/responsive/control_layout.html) na stronach AMP. Strony AMP są stronami HTML, dlatego ich styl jest bardzo podobny do stylu każdej strony HTML.
 Istnieją jednak pewne ograniczenia, które mają zagwarantować szybkie wczytywanie się stron, a narzędzie do weryfikacji stron AMP wymusza stosowanie tych ograniczeń.
 
 Na stronach AMP układ podlega ściślejszej kontroli.
@@ -666,7 +666,7 @@ Ten błąd występuje wówczas, gdy nie określisz układu dla tagu AMP, a domn
 Sprawdź wartości atrybutu `supported_layout` dla tagu w [specyfikacji narzędzia do weryfikacji stron AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Atrybut `layout` określa faktyczne działanie układu.
-Więcej informacji na temat działania układu zawiera artykuł pt. [Kontrolowanie układu](/docs/guides/responsive/control_layout.html) oraz [specyfikacja systemowa układu AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Więcej informacji na temat działania układu zawiera artykuł pt. [Kontrolowanie układu](/pl/docs/guides/author-develop/responsive/control_layout.html) oraz [specyfikacja systemowa układu AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 **Uwaga:** jeśli nie określisz układu i nie uwzględnisz wartości atrybutu `width` i `height`, układ przyjmie domyślną wartość CONTAINER. Narzędzie do weryfikacji wygeneruje błąd, ponieważ wartość CONTAINER nie jest obsługiwana przez żaden tag AMP.
 Aby usunąć błąd, określ układ inny niż CONTAINER lub dodaj wartość `width` i/lub `height`.
@@ -712,7 +712,7 @@ Ten błąd występuje wówczas, gdy określony układ dla tagu nie jest obsługi
 Sprawdź wartości atrybutu `supported_layout` dla tagu w [specyfikacji narzędzia do weryfikacji stron AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Atrybut `layout` określa faktyczne działanie układu.
-Więcej informacji na temat działania układu zawiera artykuł [Kontrolowanie układu](/docs/guides/responsive/control_layout.html) oraz [specyfikacja systemowa układu AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Więcej informacji na temat działania układu zawiera artykuł [Kontrolowanie układu](/pl/docs/guides/author-develop/responsive/control_layout.html) oraz [specyfikacja systemowa układu AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 ### Atrybut niedozwolony przez określony układ
 
@@ -752,7 +752,7 @@ Niedozwolone atrybuty typów układów są opisane w [specyfikacji systemowej u
 </table>
 
 Ten błąd występuje wówczas, gdy wartość atrybutu jest nieprawidłowa dla określonego układu.
-Aby lepiej zrozumieć, co generuje ten błąd, dowiedz się więcej na temat [różnych schematów działania układów](/docs/guides/responsive/control_layout.html#size-and-position-elements).
+Aby lepiej zrozumieć, co generuje ten błąd, dowiedz się więcej na temat [różnych schematów działania układów](/pl/docs/guides/author-develop/responsive/control_layout.html).
 
 Załóżmy, że układ ma być typu `fixed-height`, a parametry `height` i `width` mają określone wartości liczbowe.
 Układ typu `fixed-height` przyjmuje wartość `height`.
@@ -787,7 +787,7 @@ Niespójne jednostki szerokości i wysokości w tagu „amp-img” – szerokoś
 
 Strony AMP nie mogą zawierać składni określającej szablony, chyba że taka składnia jest umieszczona w tagu AMP, który z definicji ma zawierać szablony, na przykład [amp-mustache](/docs/reference/extended/amp-mustache.html).
 
-Pliki źródłowe mogą zawierać szablony pod warunkiem, że dane wyjściowe wygenerowane z tych plików nie będą zawierać szablonów (zobacz też [Korzystanie z narzędzi do wstępnej obróbki kodu CSS](/docs/guides/responsive/style_pages.html#use-css-preprocessors)).
+Pliki źródłowe mogą zawierać szablony pod warunkiem, że dane wyjściowe wygenerowane z tych plików nie będą zawierać szablonów (zobacz też [Korzystanie z narzędzi do wstępnej obróbki kodu CSS](/pl/docs/guides/author-develop/responsive/style_pages.html)).
 
 ### Atrybut zawiera składnię szablonu
 

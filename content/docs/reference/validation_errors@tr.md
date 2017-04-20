@@ -3,7 +3,7 @@ $title: AMP Doğrulama Hataları
 ---
 
 Geçerli AMP dokümanları hiçbir doğrulama hatası içermemelidir.
-Bu dokümanın amacı, [AMP sayfalarınızı doğrularken](/docs/guides/validate.html) karşılaştığınız doğrulama hatalarını daha iyi anlamanıza ve düzeltmenize yardımcı olmaktır.
+Bu dokümanın amacı, [AMP sayfalarınızı doğrularken](/tr/docs/guides/debug/validate.html) karşılaştığınız doğrulama hatalarını daha iyi anlamanıza ve düzeltmenize yardımcı olmaktır.
 Doğrulama hatalarıyla ilgili eksiksiz bir genel bakış için [AMP doğrulayıcı spesifikasyonuna](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
 
 [TOC]
@@ -556,7 +556,7 @@ Benzersiz etiketlerin tam listesi bilinmektedir:
 
 ## Stil ve düzen hataları
 
-Stil ve düzen hatalarına ayrıntılı bir şekilde girmeden önce, [stil](/docs/guides/responsive/style_pages.html) ve [düzenin](/docs/guides/responsive/control_layout.html) AMP'de nasıl çalıştığının anlaşılması iyi olur. AMP sayfaları birer HTML sayfası olduğundan stil, herhangi bir HTML sayfasıyla büyük ölçüde aynıdır.
+Stil ve düzen hatalarına ayrıntılı bir şekilde girmeden önce, [stil](/tr/docs/guides/author-develop/responsive/style_pages.html) ve [düzenin](/tr/docs/guides/author-develop/responsive/control_layout.html) AMP'de nasıl çalıştığının anlaşılması iyi olur. AMP sayfaları birer HTML sayfası olduğundan stil, herhangi bir HTML sayfasıyla büyük ölçüde aynıdır.
 Ancak, sayfaların hızlı yüklenmesini sağlayan bazı kısıtlamalar söz konusudur ve AMP doğrulayıcı, bu kısıtlamaları uygular.
 
 Düzen, AMP sayfalarında daha fazla denetlenir.
@@ -649,7 +649,7 @@ Bu hata, AMP etiketi için bir düzen belirtmediğinizde ve işaret edilen düze
 [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
 
 Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
-Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?](/docs/guides/responsive/control_layout.html) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) bakın.
+Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?]/tr/docs/guides/author-develop/responsive/control_layout.html) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) bakın.
 
 **Not:** Düzeni belirtmezseniz ve `width` ile `height` değerlerini dahil etmezseniz düzen, varsayılan olarak CONTAINER değerine ayarlanır. CONTAINER hiçbir AMP etiketinde desteklenmediğinden doğrulayıcı bir hata bildirir.
 CONTAINER dışında bir düzen belirtir veya bir `width` ve/veya `height` değeri bildirirseniz hata kaybolur.
@@ -695,7 +695,7 @@ Bu hata, etiket için belirtilen düzen desteklenmediğinde ortaya çıkar.
 [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
 
 Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
-Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?](/docs/guides/responsive/control_layout.html) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) bakın.
+Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?](/tr/docs/guides/author-develop/responsive/control_layout.html) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) bakın.
 
 ### Belirtilen düzen, özniteliğe izin vermiyor
 
@@ -735,7 +735,7 @@ Düzen türleri için izin verilmeyen öznitelikler [AMP HTML düzeni sistem spe
 </table>
 
 Bu hata, öznitelik değeri belirtilen düzen için geçersiz olduğunda ortaya çıkar.
-Bu hatayı neyin tetiklediğini anlamak için [düzenlerin farklı davranışları](/docs/guides/responsive/control_layout.html#size-and-position-elements) hakkında bilgi sahibi olmanız gerekir.
+Bu hatayı neyin tetiklediğini anlamak için [düzenlerin farklı davranışları](/tr/docs/guides/author-develop/responsive/control_layout.html) hakkında bilgi sahibi olmanız gerekir.
 
 Örneğin, düzeni `fixed-height` olacak şekilde ayarladığınızı ve hem `height` hem de `width` için sayısal değerler eklediğinizi düşünelim.
 `fixed-height` düzeni, bir `height` değeri alır.
@@ -770,7 +770,7 @@ Aynı birimlerde ifade edilmediklerinde bu hata tetiklenir.
 
 AMP sayfaları şablon oluşturma sözdizimini içeremez. Bunun için, sözdiziminin [amp-mustache](/docs/reference/extended/amp-mustache.html) gibi özellikle şablonları içermek üzere tasarlanmış bir AMP etiketi içinde olması gerekir.
 
-Şablonları kaynak dosyalarınıza dahil etmeniz bir sıkıntı oluşturmaz, ancak sorun olmaması için bu dosyaların oluşturulan çıktısının şablonları içermemesi gerekir ([CSS ön işlemcilerini kullanma](/docs/guides/responsive/style_pages.html#use-css-preprocessors) konusuna da bakın).
+Şablonları kaynak dosyalarınıza dahil etmeniz bir sıkıntı oluşturmaz, ancak sorun olmaması için bu dosyaların oluşturulan çıktısının şablonları içermemesi gerekir ([CSS ön işlemcilerini kullanma](/tr/docs/guides/author-develop/responsive/style_pages.html) konusuna da bakın).
 
 ### Öznitelik, şablon sözdizimi içeriyor
 

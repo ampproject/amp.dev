@@ -3,9 +3,9 @@ $title: 支持的 CSS
 ---
 
 
-与所有网页一样，AMP 网页使用 CSS 设置样式，但是您不能引用外部样式表（[自定义字体](#the-custom-fonts-exception)除外）。另外，出于性能方面的考虑，不得使用某些样式，也不得使用内嵌样式属性。
+与所有网页一样，AMP 网页使用 CSS 设置样式，但是您不能引用外部样式表（[自定义字体](#自定义字体例外情况)除外）。另外，出于性能方面的考虑，不得使用某些样式，也不得使用内嵌样式属性。
 
-所有样式都必须位于文档的标头中（请参阅[向网页添加样式](/docs/guides/validate.html#add-styles-to-a-page)一文）。不过，您可以使用 CSS 预处理器和模板构建静态网页，从而更好地管理内容。
+所有样式都必须位于文档的标头中（请参阅[向网页添加样式](/zh_cn/docs/guides/debug/validate.html)一文）。不过，您可以使用 CSS 预处理器和模板构建静态网页，从而更好地管理内容。
 
 **注意**：AMP 组件随附默认样式，使您能够以相当轻松的方式制作自适应网页。此类样式在 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) 中定义。
 
@@ -68,7 +68,7 @@ AMP 网页禁止使用以下样式：
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
-      <td data-th="Description">禁止使用，但<a href="#the-custom-fonts-exception">自定义字体</a>除外。</td>
+      <td data-th="Description">禁止使用，但<a href="#自定义字体例外情况">自定义字体</a>除外。</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code>（通用选择器）</td>

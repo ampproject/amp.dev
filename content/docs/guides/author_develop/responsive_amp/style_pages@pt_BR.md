@@ -4,12 +4,12 @@ $title: CSS compatível
 
 Como todas as páginas da Web, as páginas AMP são estilizadas com CSS,
 mas não é possível fazer referência a folhas de estilo externas
-(com exceção de [fontes personalizadas](#the-custom-fonts-exception)).
+(com exceção de [fontes personalizadas](#a-exceção-das-fontes-personalizadas)).
 Além disso, certos estilos não são permitidos devido a implicações de desempenho.
 Os atributos de estilo in-line não são permitidos.
 
 Todos os estilos devem estar no cabeçalho do documento
-(leia [Adicionar estilos a uma página](/docs/guides/validate.html#add-styles-to-a-page)).
+(leia [Adicionar estilos a uma página](/pt_br/docs/guides/debug/validate.html).
 Contudo, você pode usar pré-processadores e modelos CSS para criar páginas estáticas
 e gerenciar melhor seu conteúdo.
 
@@ -91,7 +91,7 @@ Os seguintes estilos não são permitidos em páginas AMP:
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
-      <td data-th="Description">Não permitido, com exceção de <a href="#the-custom-fonts-exception">fontes personalizadas</a>.</td>
+      <td data-th="Description">Não permitido, com exceção de <a href="#a-exceção-das-fontes-personalizadas">fontes personalizadas</a>.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code> (seletor universal)</td>

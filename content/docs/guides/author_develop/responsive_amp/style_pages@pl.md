@@ -4,12 +4,12 @@ $title: Obsługa CSS
 
 Tak jak wszystkie strony internetowe, strony AMP korzystają ze stylów CSS,
 jednak nie obsługują arkuszy zewnętrznych
-(z wyjątkiem [czcionek niestandardowych](#the-custom-fonts-exception)).
+(z wyjątkiem [czcionek niestandardowych](#wyjątek-–-niestandardowe-czcionki)).
 Niedozwolone są również określone style z powodu ograniczeń wydajnościowych;
 wbudowywanie atrybutów stylów w tekst nie jest dozwolone.
 
 Wszystkie style muszą być zawarte w nagłówku dokumentu
-(przeczytaj artykuł [Dodawanie stylów do strony](/docs/guides/validate.html#add-styles-to-a-page)).
+(przeczytaj artykuł [Dodawanie stylów do strony](/pl/docs/guides/debug/validate.html)).
 Jednak by lepiej zarządzać treścią, do tworzenia stron statycznych możesz używać szablonów oraz preprocesorów CSS.
 
 **Uwaga:**
@@ -86,7 +86,7 @@ Poniższe style nie są dozwolone na stronach AMP:
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
-      <td data-th="Description">Zabroniony z wyjątkiem [czcionek niestandardowych](#the-custom-fonts-exception).</td>
+      <td data-th="Description">Zabroniony z wyjątkiem <a href="#wyjątek-–-niestandardowe-czcionki">czcionek niestandardowych</a>.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code> (selektor uniwersalny)</td>

@@ -7,12 +7,12 @@ toc: true
 
 
 모든 웹페이지처럼, AMP 페이지도 CSS를 사용할 수 있지만,
-[커스텀 폰트](#the-custom-fonts-exception)를 제외한 외부 스타일시트를 불러올 수는 없습니다.
+[커스텀 폰트](#커스텀-폰트-예외)를 제외한 외부 스타일시트를 불러올 수는 없습니다.
 또한 몇가지 스타일은 성능에 영향을 줘서 허용하지 않습니다.
 인라인 스타일 속성도 허용하지 않습니다.
 
 모든 스타일은 문서의 head 내에 존재해야 합니다
-([Add styles to a page](/docs/guides/validate.html#add-styles-to-a-page)를 참고).
+([Add styles to a page](/ko/docs/guides/debug/validate.html)를 참고).
 하지만 CSS 전처리기를 사용할 수 있으며 더 나은 콘텐츠 관리를 위해 정적 페이지를 빌드하는 템플릿을 사용할 수 있습니다.
 
 {% call callout('노트', type='note') %}
@@ -44,7 +44,7 @@ toc: true
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
-      <td data-th="Description"><a href="#the-custom-fonts-exception">커스텀 폰트</a>를 제외하고는 모두 허용하지 않습니다.</td>
+      <td data-th="Description"><a href="#커스텀-폰트-예외">커스텀 폰트</a>를 제외하고는 모두 허용하지 않습니다.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>* </code> (전역 셀렉터)</td>
@@ -107,7 +107,7 @@ toc: true
 AMP 페이지는 커스텀 폰트를 제외한 외부 스타일 시트를 포함할 수 없습니다.
 
 {% call callout('Read on', type='success') %}
-[AMP 내 커스텀폰트](/ko/docs/guides/responsive/custom_fonts.html)에서 더 자세한 내용을 확인할 수 있습니다.
+[AMP 내 커스텀폰트](/ko/docs/guides/author-develop/responsive/custom_fonts.html)에서 더 자세한 내용을 확인할 수 있습니다.
 {% endcall %}
 
 ## CSS 전처리기 사용

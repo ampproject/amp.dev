@@ -8,7 +8,7 @@ $order: 9
 
 - **AMP 페이지에 브랜드를 반영하십시오.** AMP가 아닌 페이지와 동일한 헤더 및 디자인 스킴(즉, 컬러, 간격, 폰트 스타일)을 사용하여 페이지를 인식시키고 AMP 페이지를 타당하게 보여줍니다.
 
-- 페이지가 바뀔 때 **가장 매력적인 콘텐츠를 제공하십시오** 이미지, embed, 구조화된 데이터, 덧글 및 소셜미디어 같은 주요 페이지 요소를 포함합니다. [써드 파티 콘텐츠 가져오기](https://www.ampproject.org/ko/docs/guides/third_party_components)에서 더 많은 내용을 볼 수 있습니다.
+- 페이지가 바뀔 때 **가장 매력적인 콘텐츠를 제공하십시오** 이미지, embed, 구조화된 데이터, 덧글 및 소셜미디어 같은 주요 페이지 요소를 포함합니다. [써드 파티 콘텐츠 가져오기](https://www.ampproject.org/ko/docs/guides/author-develop/third_party_components)에서 더 많은 내용을 볼 수 있습니다.
 
 - **AMP 페이지를 최신상태로 유지하십시오.** [`amp-live-list`](https://www.ampproject.org/docs/reference/components/amp-live-list)로 라이브 블로그를 동적으로 업데이트할 수 있습니다.
 

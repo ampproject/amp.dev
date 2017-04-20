@@ -9,7 +9,7 @@ Das Besondere an AMP ist nicht einfach, dass es Ihre Seiten schnell macht, sonde
 
 Es gibt verschiedene Möglichkeiten zur Überprüfung eines AMP-Dokuments. Sie alle führen zum selben Ergebnis. Wählen Sie also einfach jene, die am besten zu Ihrem Entwicklungsstil passt.
 
-Neben der AMP-Gültigkeit ist es für Sie vielleicht auch sinnvoll zu prüfen, ob Ihr AMP-Dokument auf Drittanbieterplattformen [auffindbar](/docs/guides/discovery.html) ist.
+Neben der AMP-Gültigkeit ist es für Sie vielleicht auch sinnvoll zu prüfen, ob Ihr AMP-Dokument auf Drittanbieterplattformen [auffindbar](/de/docs/guides/deploy/discovery.html) ist.
 
 ### Entwicklerkonsole des Browsers
 
@@ -161,5 +161,5 @@ Jedes dieser Tools stellt diverse Informationen bereit:
 
 Beim genauen Nachlesen der Spezifikation erkennen wir, dass wir versehentlich ein `<img>`-Tag statt eines `<amp-img>`-Tags verwendet haben.
 
-Ausführliche Informationen zur vollständigen Liste potenzieller Fehler finden Sie im [Leitfaden zu AMP-Validierungsfehlern](https://www.ampproject.org/docs/reference/validation_errors.html).
+Ausführliche Informationen zur vollständigen Liste potenzieller Fehler finden Sie im [Leitfaden zu AMP-Validierungsfehlern](/de/docs/reference/validation_errors.html).
 Wenn Sie aber auch trotz sorgfältiger Untersuchung des Problems nicht weiterkommen, [fragen Sie uns](http://stackoverflow.com/questions/tagged/amp-html). Wir sind Ihnen gern behilflich.

@@ -1,5 +1,5 @@
 ---
-$title: Analytics&#58; الأساسيات
+$title: "Analytics: الأساسيات"
 toc: true
 ---
 
@@ -28,7 +28,7 @@ toc: true
 ويمكنك قياس لأي مدى قام المستخدم بالتمرير عبر الصفحة،
 وما إذا كان المستخدم متفاعلاً مع الشبكات الاجتماعية أم لا، والمزيد
 (انظر
-[نظرة عميقة على AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html)).
+[نظرة عميقة على AMP Analytics](/ar/docs/guides/analytics/deep_dive_analytics.html)).
 
 كجزء من الدمج مع النظام الأساسي لـ AMP،
 قدم المزودون تهيئات <span dir="ltr" class="nowrap">`amp-analytics`</span> مسبقة التحديد
@@ -65,7 +65,7 @@ toc: true
 المتغير `RANDOM` هو واحد من كثير من
 [متغيرات الاستبدال في النظام الأساسي لـ AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 تعرّف على المزيد بشأن
-[استبدال المتغير](/docs/guides/analytics/analytics_basics.html#variable-substitution) هنا.
+[استبدال المتغير](/ar/docs/guides/analytics/analytics_basics#استبدال-المتغير) هنا.
 
 يتسم المكون [<span dir="ltr" class="nowrap">amp-pixel</span>](/docs/reference/amp-pixel.html)
 بأنه مدمج،
@@ -89,7 +89,7 @@ toc: true
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-النموذج التالي مشابه [للنموذج <span dir="ltr" class="nowrap">`amp-pixel`</span>](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
+النموذج التالي مشابه [للنموذج <span dir="ltr" class="nowrap">`amp-pixel`</span>](/ar/docs/guides/analytics/analytics_basics.html#تهيئة-amp-pixel-بسيطة).
 كلما تكون صفحة ما مرئية،
 يتم تنشيط حدث المشغل ويتم إرسال
 بيانات مشاهدة الصفحة إلى عنوان URL محدد مع رقم تعريف عشوائي:
@@ -118,7 +118,7 @@ toc: true
 (على النحو المحدد عبر استخدام الكلمة الرئيسية للمشغل `visible`)،
 يتم تشغيل حدث ويتم إرسال الطلب `pageview`.
 تحدد السمة triggers متى يتم تنشيط طلب مشاهدة الصفحة.
-تعرّف على المزيد بشأن السمتين [requests وtriggers](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports).
+تعرّف على المزيد بشأن السمتين [requests وtriggers](/ar/docs/guides/analytics/deep_dive_analytics.html#السمات-requests-وtriggers-وtransports).
 
 ## استبدال المتغير
 
@@ -129,7 +129,7 @@ toc: true
 في النموذج التالي،
 يتم إرسال طلب مشاهدة الصفحة إلى عنوان URL،
 مع عنوان URL المتعارف عليه لمستند AMP الحالي، وعنوانه، فضلاً عن
-[رقم تعريف العميل](/docs/guides/analytics/analytics_basics.html#user-identification):
+[رقم تعريف العميل](/ar/docs/guides/analytics/analytics_basics.html#هوية-المستخدم):
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -190,7 +190,7 @@ toc: true
 **مهم:** يتسم استبدال المتغيرات بالمرونة؛
 فمن المكن تحديد المتغيرات نفسها في مواقع مختلفة،
 وسوف يحلل وقت تشغيل AMP القيم بهذا الترتيب المستند إلى الأسبقية
-(انظر [ترتيب استبدال المتغير](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(انظر [ترتيب استبدال المتغير](/ar/docs/guides/analytics/deep_dive_analytics.html#ترتيب-استبدال-المتغير)).
 
 ## هوية المستخدم
 

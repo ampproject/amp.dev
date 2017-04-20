@@ -1,5 +1,5 @@
 ---
-$title: Analytics&#58; 기본사항
+$title: "Analytics: 기본사항"
 toc: true
 ---
 
@@ -28,7 +28,7 @@ URL로 보내집니다.
 또한 사용자가 소셜 미디어 등에 참여했는지 여부에 상관없이
 이 사용자가 페이지에서 얼마나 많이 스크롤했는지
 측정할 수 있습니다(
-[AMP Analytics에 대한 상세 정보](/docs/guides/analytics/deep_dive_analytics.html) 참조).
+[AMP Analytics에 대한 상세 정보](/ko/docs/guides/analytics/deep_dive_analytics.html) 참조).
 
 AMP 플랫폼과의 통합의 일환으로,
 제공자가 사전 정의된 `amp-analytics` 구성을 제공해왔기 때문에,
@@ -65,7 +65,7 @@ AMP 플랫폼과의 통합의 일환으로,
 `RANDOM` 변수는
 [AMP 플랫폼의 대체 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)의 여러 변수 중 하나입니다.
 여기서
-[변수 대체](/docs/guides/analytics/analytics_basics.html#variable-substitution)에 대해 자세히 알아보세요.
+[변수 대체](/ko/docs/guides/analytics/analytics_basics.html#변수-대체)에 대해 자세히 알아보세요.
 
 [amp-pixel](/docs/reference/amp-pixel.html)
 구성 요소는 내장형이므로,
@@ -89,7 +89,7 @@ AMP 문서의 `<head>`에 포함시켜야 합니다(참고 항목
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-다음 예시는 [`amp-pixel` 예시](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration)와 유사합니다.
+다음 예시는 [`amp-pixel` 예시](/ko/docs/guides/analytics/analytics_basics.html#단순-amp-pixel-구성)와 유사합니다.
 페이지가 표시될 때마다
 트리거 이벤트가 실행되고,
 무작위 ID와 함께 페이지뷰 데이터를 정의된 URL로 보냅니다.
@@ -118,7 +118,7 @@ AMP 문서의 `<head>`에 포함시켜야 합니다(참고 항목
  사용하여 지정된 대로) 페이지가 표시되면,
 이벤트가 트리거되고 `pageview` 요청이 보내집니다.
 트리거 특성은 페이지뷰 요청이 실행되는 시간을 결정합니다.
-[요청 및 트리거](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports)에 대해 자세히 알아보세요.
+[요청 및 트리거](/ko/docs/guides/analytics/deep_dive_analytics.html#requests,-triggers-및-transport)에 대해 자세히 알아보세요.
 
 ## 변수 대체
 
@@ -129,7 +129,7 @@ AMP 문서의 `<head>`에 포함시켜야 합니다(참고 항목
 다음 예시에서는 페이지 뷰 요청이
  URL로 보내지며,
 현재 AMP 문서의 정식 URL, 제목 및
-[클라이언트 ID](/docs/guides/analytics/analytics_basics.html#user-identification)도 함께 보내집니다.
+[클라이언트 ID](/ko/docs/guides/analytics/analytics_basics.html#사용자-식별)도 함께 보내집니다.
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -190,7 +190,7 @@ AMP 런타임이 구문 분석할 수 있는 변수만 포함될 수 있습니�
 **중요:** 변수 대체는 유연합니다.
 동일 변수를 다른 위치에 정의할 수 있으며,
 AMP 런타임은 이 우선순위 순서대로 값을
-구문 분석합니다([변수 대체 순서](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering) 참조).
+구문 분석합니다([변수 대체 순서](/ko/docs/guides/analytics/deep_dive_analytics.html#변수-대체-순서) 참조).
 
 ## 사용자 식별
 

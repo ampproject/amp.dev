@@ -3,10 +3,10 @@ $title: Unterstützte CSS-Stile
 ---
 [TOC]
 
-Wie bei allen Webseiten werden auch bei AMP-Seiten CSS-Stile verwendet, aber abgesehen von [benutzerdefinierten Schriftarten](#the-custom-fonts-exception) können Sie nicht auf externe Stylesheets verweisen.
+Wie bei allen Webseiten werden auch bei AMP-Seiten CSS-Stile verwendet, aber abgesehen von [benutzerdefinierten Schriftarten](#die-ausnahme:-benutzerdefinierte-schriftarten) können Sie nicht auf externe Stylesheets verweisen.
 Außerdem sind bestimmte Stile wegen der Auswirkungen auf die Leistung unzulässig und auch Inline-Stilattribute sind nicht erlaubt.
 
-Alle Stile müssen im head-Abschnitt des Dokuments angegeben werden (siehe [Seite mit Stilen versehen](/docs/guides/validate.html#add-styles-to-a-page)).
+Alle Stile müssen im head-Abschnitt des Dokuments angegeben werden (siehe [Seite mit Stilen versehen](/de/docs/guides/debug/validate.html)).
 Sie können allerdings CSS-Präprozessoren und Vorlagen verwenden, um statische Seiten für die bessere Verwaltung Ihrer Inhalte zu erstellen.
 
 {% call callout('Note', type='note') %}
@@ -77,7 +77,7 @@ Die folgenden Stile sind auf AMP-Seiten nicht erlaubt:
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel="stylesheet"&gt;</code></td>
-      <td data-th="Description">Unzulässig mit Ausnahme [benutzerdefinierter Schriftarten](#the-custom-fonts-exception)</td>
+      <td data-th="Description">Unzulässig mit Ausnahme <a href="#die-ausnahme:-benutzerdefinierte-schriftarten">benutzerdefinierter Schriftarten</a></td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code> (Universalselektor)</td>

@@ -73,7 +73,7 @@ ke penyedia analisis pihak ketiga, Google Analytics,
 Untuk mengirim data ke endpoint yang dimiliki penerbit,
 cukup jangan sertakan atribut `type`;
 data analisis dikirim ke endpoint yang didefinisikan untuk masing-masing
-[permintaan](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[permintaan](/id/docs/guides/analytics/deep_dive_analytics.html#data-apa-yang-dikirimkan:-meminta-atribut).
 
 Konfigurasi vendor Analytics merupakan cara cepat
 untuk memulai `amp-analytics`.
@@ -138,7 +138,7 @@ ke nilai akun dalam URL jarak jauh (`"account": "UA-XXXXX-Y"`):
 **Penting:** AMP tidak memvalidasi terhadap lebih dari satu penggunaan dari variabel yang sama.
 Nilai-nilai diisikan mengikuti urutan prioritas penggantian variabel,
 dan nilai dalam URL jarak jauh berada di prioritas teratas dari urutan tersebut
-(lihat [Pengurutan penggantian variabel](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(lihat [Pengurutan penggantian variabel](/id/docs/guides/analytics/deep_dive_analytics.html#pengurutan-penggantian-variabel)).
 
 ## Permintaan, pemicu, & transport
 
@@ -239,19 +239,19 @@ AMP mendukung konfigurasi pemicu berikut:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (diperlukan)</td>
-      <td data-th="Description">Nama permintaan untuk dikirim (seperti yang ditetapkan dalam <a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">permintaan</a>).</td>
+      <td data-th="Description">Nama permintaan untuk dikirim (seperti yang ditetapkan dalam <a href="/id/docs/guides/analytics/deep_dive_analytics.html#data-apa-yang-dikirimkan:-meminta-atribut">permintaan</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Objek yang berisi pasangan nilai-kunci yang digunakan untuk mengganti <code>vars</code> didefinisikan dalam config di tingkat teratas, atau untuk menetapkan <code>vars</code> sebagai unik bagi pemicu ini (lihat juga <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Pengurutan penggantian variabel</a>).</td>
+      <td data-th="Description">Objek yang berisi pasangan nilai-kunci yang digunakan untuk mengganti <code>vars</code> didefinisikan dalam config di tingkat teratas, atau untuk menetapkan <code>vars</code> sebagai unik bagi pemicu ini (lihat juga <a href="/id/docs/guides/analytics/deep_dive_analytics.html#pengurutan-penggantian-variabel">Pengurutan penggantian variabel</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (diperlukan ketika <code>on</code> diatur ke <code>click</code>)</td>
-      <td data-th="Description">Pemilih CSS digunakan untuk menyaring elemen yang harus dilacak. Gunakan nilai <code>*</code> untuk melacak semua elemen. Konfigurasi ini digunakan bersama pemicu <code>click</code>. Ketahui cara menggunakan pemilih untuk <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">melacak klik halaman</a> dan <a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">interaksi sosial</a>.</td>
+      <td data-th="Description">Pemilih CSS digunakan untuk menyaring elemen yang harus dilacak. Gunakan nilai <code>*</code> untuk melacak semua elemen. Konfigurasi ini digunakan bersama pemicu <code>click</code>. Ketahui cara menggunakan pemilih untuk <a href="/id/docs/guides/analytics/use_cases.html#melacak-klik-halaman">melacak klik halaman</a> dan <a href="/id/docs/guides/analytics/use_cases.html#melacak-interaksi-sosial">interaksi sosial</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (diperlukan ketika <code>on</code> diatur ke <code>scroll</code>)</td>
-      <td data-th="Description">Mengontrol berdasarkan kondisi ketika halaman digulirkan kejadian <code>scroll</code> akan dipicu. Objek ini bisa berisi <code>verticalBoundaries</code> dan <code>horizontalBoundaries</code>. Sekurangnya satu dari dua properti diperlukan agar kejadian <code>scroll</code> dipicu. Nilai-nilai untuk kedua properti tersebut harus larik angkat yang berisi batasan sebuah kejadian gulir akan dihasilkan. Lihat contoh ini dalam <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">melacak pengguliran</a>.</td>
+      <td data-th="Description">Mengontrol berdasarkan kondisi ketika halaman digulirkan kejadian <code>scroll</code> akan dipicu. Objek ini bisa berisi <code>verticalBoundaries</code> dan <code>horizontalBoundaries</code>. Sekurangnya satu dari dua properti diperlukan agar kejadian <code>scroll</code> dipicu. Nilai-nilai untuk kedua properti tersebut harus larik angkat yang berisi batasan sebuah kejadian gulir akan dihasilkan. Lihat contoh ini dalam <a href="/id/docs/guides/analytics/use_cases.html#melacak-pengguliran">melacak pengguliran</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (diperlukan ketika <code>on</code> diatur ke <code>timer</code>)</td>
@@ -262,7 +262,7 @@ AMP mendukung konfigurasi pemicu berikut:
 
 **Penting:** Pemicu dari konfigurasi yang berprioritas lebih rendah dikesampingkan
 oleh pemicu dengan nama yang sama dari konfigurasi dengan prioritas lebih tinggi
-(lihat [Pengurutan penggantian variabel](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(lihat [Pengurutan penggantian variabel](/id/docs/guides/analytics/deep_dive_analytics.html#pengurutan-penggantian-variabel)).
 
 ### Bagaimana data dikirimkan: atribut transport
 

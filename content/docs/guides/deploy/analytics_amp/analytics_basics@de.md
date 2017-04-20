@@ -16,7 +16,7 @@ Wenn Sie ein Verhalten wie das eines einfachen [Tracking-Pixels](https://en.wiki
 Für die meisten Analyselösungen empfiehlt sich die Verwendung von `amp-analytics`.
 Das Seitenaufruf-Tracking funktioniert auch in `amp-analytics`.
 Sie können aber auch die Nutzerinteraktionen mit jeder anderen Art von Seiteninhalt erfassen, unter anderem mit Klicks auf Links und Schaltflächen.
-Außerdem können Sie z. B. messen, wie weit der Nutzer auf der Seite gescrollt und ob er mit sozialen Medien interagiert hat (siehe [Eingehende Betrachtung der AMP-Analyse](/docs/guides/analytics/deep_dive_analytics.html)).
+Außerdem können Sie z. B. messen, wie weit der Nutzer auf der Seite gescrollt und ob er mit sozialen Medien interagiert hat (siehe [Eingehende Betrachtung der AMP-Analyse](/de/docs/guides/analytics/deep_dive_analytics.html)).
 
 Im Rahmen der Integration in die AMP-Plattform bieten Anbieter vordefinierte `amp-analytics`-Konfigurationen an, mit denen Daten leicht erfasst und an ihre Tracking-Tools übertragen werden können.
 Sie finden die Anbieterdokumentation in der [amp-analytics-Spezifikation](/docs/reference/extended/amp-analytics.html).
@@ -40,7 +40,7 @@ Wenn Sie eine einfache `amp-pixel`-Konfiguration erstellen möchten, fügen Sie 
 
 In diesem Beispiel werden die Seitenaufrufdaten zusammen mit einer Zufallszahl an die festgelegte URL gesendet.
 Die `RANDOM`-Variable ist eine von vielen [Substitutionsvariablen in der AMP-Plattform](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
-[Weitere Informationen zur Variablensubstitution](/docs/guides/analytics/analytics_basics.html#variable-substitution)
+[Weitere Informationen zur Variablensubstitution](/de/docs/guides/analytics/analytics_basics#variablensubstitution)
 
 Die [amp-pixel-Komponente](/docs/reference/amp-pixel.html) ist bereits enthalten. Daher benötigen Sie keine Einschlussdeklaration wie bei den erweiterten AMP-Komponenten wie z. B. `amp-analytics`.
 Sie sollten das `amp-pixel`-Tag aber möglichst nahe am Anfang des `amp-pizel`-Abschnitts platzieren.
@@ -55,7 +55,7 @@ Zum Erstellen einer einfachen [amp-analytics-Konfiguration](/docs/reference/exte
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-Das folgende Beispiel ähnelt dem [`amp-pixel`-Beispiel](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration)</a>.
+Das folgende Beispiel ähnelt dem [`amp-pixel`-Beispiel](/de/docs/guides/analytics/analytics_basics.html#einfache-amp-pixel-konfiguration)</a>.
 Immer wenn eine Seite sichtbar ist, kommt es zu einem Triggerereignis und die Seitenaufrufdaten werden zusammen mit einer zufälligen ID an eine festgelegte URL gesendet:
 
 [sourcecode:html]
@@ -80,12 +80,12 @@ Im obigen Beispiel wurde eine Anforderung namens "pageview" als https://foo.com/
 
 Wenn die Seite sichtbar wird, wie es das Trigger-Keyword `visible` angibt, wird ein Ereignis ausgelöst und die `pageview`-Anforderung wird gesendet.
 Das triggers-Attribut bestimmt, wann die pageview-Anforderung ausgelöst wird.
-[Weitere Informationen zu Anforderungen und Triggern](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports)
+[Weitere Informationen zu Anforderungen und Triggern](/de/docs/guides/analytics/deep_dive_analytics.html#anforderungen,-trigger-und-transporte)
 
 ## Variablensubstitution
 
 Sowohl die [amp-pixel](/docs/reference/amp-pixel.html)- als auch die [amp-analytics-Komponente](/docs/reference/extended/amp-analytics.html) ermöglicht alle standardmäßigen URL-Variablensubstitutionen (siehe [AMP-HTML-Variablensubstitutionen](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
-Im folgenden Beispiel wird die Seitenaufrufanforderung zusammen mit der kanonischen URL und dem Titel des aktuellen AMP-Dokuments und einer [Client-ID](/docs/guides/analytics/analytics_basics.html#user-identification) an die URL gesendet:
+Im folgenden Beispiel wird die Seitenaufrufanforderung zusammen mit der kanonischen URL und dem Titel des aktuellen AMP-Dokuments und einer [Client-ID](/de/docs/guides/analytics/analytics_basics.html#nutzeridentifikation) an die URL gesendet:
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&amp;title=${title}&amp;clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -127,7 +127,7 @@ Im folgenden `amp-analytics`-Beispiel wird die Seitenaufrufanforderung mit zusä
 Im obigen Beispiel werden die Variablen `account` und `title` in der `amp-analytics`-Konfiguration definiert.
 Die Variablen `canonicalUrl` und `clientId` sind in der Konfiguration nicht definiert. Ihre Werte werden von der Plattform festgelegt.
 
-**Wichtig:** Variablensubstitution ist flexibel. Dieselben Variablen können an verschiedenen Stellen definiert werden und die AMP-Laufzeit parst die Werte in der entsprechenden Reihenfolge (siehe [Reihenfolge der Variablensubstitution](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+**Wichtig:** Variablensubstitution ist flexibel. Dieselben Variablen können an verschiedenen Stellen definiert werden und die AMP-Laufzeit parst die Werte in der entsprechenden Reihenfolge (siehe [Reihenfolge der Variablensubstitution](/de/docs/guides/analytics/deep_dive_analytics.html#reihenfolge-der-variablensubstitution)).
 
 ## Nutzeridentifikation
 

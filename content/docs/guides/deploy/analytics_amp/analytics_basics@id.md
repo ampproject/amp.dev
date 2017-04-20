@@ -1,5 +1,5 @@
 ---
-$title: Analytics&#58; Dasar-Dasarnya
+$title: "Analytics: Dasar-Dasarnya"
 toc: true
 ---
 
@@ -28,7 +28,7 @@ termasuk klik pada tautan dan tombol.
 Dan Anda bisa mengukur sejauh mana pada halaman pengguna telah menggulir,
 entah pengguna itu terlibat dengan media sosial atau tidak, dan lainnya
 (lihat
-[Mendalami AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html)).
+[Mendalami AMP Analytics](/id/docs/guides/analytics/deep_dive_analytics.html)).
 
 Sebagai bagian dari pengintegrasian dengan platform,
 penyedia telah menawarkan konfigurasi `amp-analytics` yang telah didefinisikan sebelumnya
@@ -65,7 +65,7 @@ data tampilan halaman dikirim ke URL yang didefinisikan, bersama angka acak.
 Variabel `RANDOM` merupakan satu dari banyak
 [variabel penggantian dalam platform AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 Ketahui selengkapnya tentang
-[Penggantian variabel](/docs/guides/analytics/analytics_basics.html#variable-substitution) di sini.
+[Penggantian variabel](/id/docs/guides/analytics/analytics_basics.html#penggantian-variabel) di sini.
 
 Komponen [amp-pixel](/docs/reference/amp-pixel.html)
  adalah komponen bawaan,
@@ -89,7 +89,7 @@ dalam `<head>` dari dokumen AMP (lihat juga
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-Contoh berikut serupa dengan [contoh `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
+Contoh berikut serupa dengan [contoh `amp-pixel`](/id/docs/guides/analytics/analytics_basics.html#konfigurasi-amp-pixel-sederhana).
 Setiap kali sebuah halaman terlihat,
 kejadian pemicu terjadi, dan
 mengirim data penayangan ke URL yang didefinisikan bersama dengan sebuah ID acak:
@@ -118,7 +118,7 @@ Ketika halaman menjadi terlihat
 (sebagaimana yang ditetapkan oleh penggunaan kata kunci pemicu `visible`),
 sebuah kejadian terpicu dan permintaan `pageview` dikirim.
 Atribut pemicu menentukan kapan permintaan penayangan dipicu.
-Ketahui selengkapnya tentang [permintaan dan pemicu](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports).
+Ketahui selengkapnya tentang [permintaan dan pemicu](/id/docs/guides/analytics/deep_dive_analytics.html#permintaan,-pemicu,-&-transport).
 
 ## Penggantian variabel
 
@@ -129,7 +129,7 @@ memungkinkan semua penggantian variabel URL standar (lihat
 Dalam contoh berikut,
 permintaan tampilan halaman dikirim ke URL,
 bersama dengan URL kanonis dokumen AMP saat ini, judulnya, dan
-[ID klien](/docs/guides/analytics/analytics_basics.html#user-identification):
+[ID klien](/docs/guides/analytics/analytics_basics.html#identifikasi-pengguna):
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -190,7 +190,7 @@ sehingga nilai-nilainya diganti oleh platform.
 **Penting:** Penggantian variabel fleksibel;
 variabel yang sama bisa Anda definisikan di lokasi berbeda,
  dan waktu proses AMP akan mem-parse nilai-nilai dalam urutan prioritas ini
- (lihat [Pengurutan penggantian variabel] (/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+ (lihat [Pengurutan penggantian variabel] (/id/docs/guides/analytics/deep_dive_analytics.html#pengurutan-penggantian-variabel)).
 
 ## Identifikasi pengguna
 

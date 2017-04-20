@@ -1,5 +1,5 @@
 ---
-$title: Analytics&#58; основы
+$title: "Analytics: основы"
 toc: true
 ---
 
@@ -28,7 +28,7 @@ AMP предоставляет два компонента для удовлет
 Вы можете узнать, насколько далеко пользователь выполнил прокрутку страницы,
 связан ли он с социальными сетями и многое другое
 (см.
-[Погружение в AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html)).
+[Погружение в AMP Analytics](/ru/docs/guides/analytics/deep_dive_analytics.html)).
 
 В процессе интеграции платформы AMP
 поставщики предлагают предварительно заданные конфигурации `amp-analytics`,
@@ -65,7 +65,7 @@ AMP предоставляет два компонента для удовлет
 Переменная `RANDOM` является одной из многих
 [подстановочных переменных в платформе AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 Вы можете ознакомиться с дополнительной информацией о
-[подстановке переменных](/docs/guides/analytics/analytics_basics.html#variable-substitution).
+[подстановке переменных](/ru/docs/guides/analytics/analytics_basics.html#подстановка-переменной).
 
 Компонент [amp-pixel](/docs/reference/amp-pixel.html)
 является встроенным,
@@ -89,7 +89,7 @@ AMP предоставляет два компонента для удовлет
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-Следующий пример похож на [пример с `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
+Следующий пример похож на [пример с `amp-pixel`](/ru/docs/guides/analytics/analytics_basics.html#простая-конфигурация-amp-pixel).
 При каждом просмотре страницы
 возникает событие триггера и
 данные запроса pageview отправляются на определенный URL-адрес вместе со случайным значением идентификатора:
@@ -118,7 +118,7 @@ AMP предоставляет два компонента для удовлет
 (что указывается использованием в триггере ключевого слова `visible`),
 возникает событие и отправляется запрос `pageview`.
 Атрибут триггера определяет условие отправки запроса pageview.
-Ознакомьтесь с дополнительной информацией о [запросах и триггерах](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports).
+Ознакомьтесь с дополнительной информацией о [запросах и триггерах](/ru/docs/guides/analytics/deep_dive_analytics.html#запросы,-триггеры-и-транспорты).
 
 ## Подстановка переменной
 
@@ -129,7 +129,7 @@ AMP предоставляет два компонента для удовлет
 В следующем примере
 запрос просмотра страницы отправляется на URL-адрес
 вместе с каноническим URL-адресом текущего документа AMP, его названием и
-[идентификатором клиента](/docs/guides/analytics/analytics_basics.html#user-identification):
+[идентификатором клиента](/ru/docs/guides/analytics/analytics_basics.html#идентификация-пользователей):
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -190,7 +190,7 @@ AMP предоставляет два компонента для удовлет
 **Внимание!** Механизм подстановки переменной весьма гибок.
 Вы можете иметь одни и те же переменные, определенные в разных местах,
 а AMP выполнит синтаксический анализ этих значений по их приоритетности
-(см. [Порядок подстановки переменных](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(см. [Порядок подстановки переменных](/ru/docs/guides/analytics/deep_dive_analytics.html#порядок-подстановки-переменных)).
 
 ## Идентификация пользователей
 

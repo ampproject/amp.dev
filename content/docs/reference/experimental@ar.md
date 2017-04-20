@@ -29,5 +29,5 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 أي ملف من ملفات AMP يتضمن ميزات تجريبية سيخفق في إجراء
-[التحقق من صحة صفحات AMP](/ar/docs/guides/validate.html).
+[التحقق من صحة صفحات AMP](/ar/docs/guides/debug/validate.html).
 أزل هذه المكوّنات التجريبية بالنسبة إلى مستندات AMP الجاهزة للإنتاج.

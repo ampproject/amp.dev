@@ -72,7 +72,7 @@ AMP 设计为可支持两种常见数据集合模式：
 第三方分析提供程序 Google Analytics。
 如需将数据发送到发布者拥有的端点，
 只需不包括 `type` 属性即可；
-系统会将分析数据发送到每个[请求](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)对应的已定义端点。
+系统会将分析数据发送到每个[请求](/zh_cn/docs/guides/analytics/deep_dive_analytics.html#发送什么数据：requests-属性)对应的已定义端点。
 
 
 可以通过分析供应商配置快速开始使用 `amp-analytics`。
@@ -136,7 +136,7 @@ JSON 对象中包含的配置只是分析帐户的变量值。
 [/sourcecode]
 
 **重要说明：** AMP 不会对多次使用同一变量进行验证。
-将按照变量替代优先顺序来填充值，远程 URL 中的值拥有最高优先顺序（请参阅[变量替代顺序](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+将按照变量替代优先顺序来填充值，远程 URL 中的值拥有最高优先顺序（请参阅[变量替代顺序](/zh_cn/docs/guides/analytics/deep_dive_analytics.html#变量替代顺序)）。
 
 
 
@@ -239,19 +239,19 @@ AMP 支持以下触发器配置：
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code>（必需）</td>
-      <td data-th="Description">要发送的请求的名称（在 <a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">请求中指定</a>）。</td>
+      <td data-th="Description">要发送的请求的名称（在 <a href="/zh_cn/docs/guides/analytics/deep_dive_analytics.html#发送什么数据：requests-属性">请求中指定</a>）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">包含键值对的对象，用于重写顶级配置中定义的 <code>vars</code>，或用于指定对于此触发器唯一的 <code>vars</code>（另请参阅<a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">变量替代顺序</a>）。</td>
+      <td data-th="Description">包含键值对的对象，用于重写顶级配置中定义的 <code>vars</code>，或用于指定对于此触发器唯一的 <code>vars</code>（另请参阅<a href="/zh_cn/docs/guides/analytics/deep_dive_analytics.html#变量替代顺序">变量替代顺序</a>）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code>（当 <code>on</code> 设置为 <code>click</code> 时为必需）</td>
-      <td data-th="Description">CSS 选择器用于细化应跟踪哪些元素。使用值 <code>*</code> 来跟踪所有元素。此配置与 <code>click</code> 触发器结合使用。了解如何使用选择器来<a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">跟踪页面点击</a>和<a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">社交互动</a>。</td>
+      <td data-th="Description">CSS 选择器用于细化应跟踪哪些元素。使用值 <code>*</code> 来跟踪所有元素。此配置与 <code>click</code> 触发器结合使用。了解如何使用选择器来<a href="/zh_cn/docs/guides/analytics/use_cases.html#跟踪页面点击s">跟踪页面点击</a>和<a href="/zh_cn/docs/guides/analytics/use_cases.html#跟踪社交互动">社交互动</a>。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code>（当 <code>on</code> 设置为 <code>scroll</code> 时为必需）</td>
-      <td data-th="Description">控制在哪些条件下页面滚动时将触发 <code>scroll</code> 事件。此对象可包含 <code>verticalBoundaries</code> 和 <code>horizontalBoundaries</code>。至少需要其中一个属性才能触发 <code>scroll</code> 事件。两个属性的值都应该是数字数组，其中包含作为滚动事件生成依据的边界。请参阅这个有关<a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">跟踪滚动</a>的示例。</td>
+      <td data-th="Description">控制在哪些条件下页面滚动时将触发 <code>scroll</code> 事件。此对象可包含 <code>verticalBoundaries</code> 和 <code>horizontalBoundaries</code>。至少需要其中一个属性才能触发 <code>scroll</code> 事件。两个属性的值都应该是数字数组，其中包含作为滚动事件生成依据的边界。请参阅这个有关<a href="/zh_cn/docs/guides/analytics/use_cases.html#跟踪滚动">跟踪滚动</a>的示例。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code>（当 <code>on</code> 设置为 <code>timer</code> 时为必需）</td>
@@ -260,7 +260,7 @@ AMP 支持以下触发器配置：
   </tbody>
 </table>
 
-**重要说明：** 配置中优先级较低的触发器将被配置中优先级较高的同名触发器覆盖（请参阅[变量替代顺序](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+**重要说明：** 配置中优先级较低的触发器将被配置中优先级较高的同名触发器覆盖（请参阅[变量替代顺序](/zh_cn/docs/guides/analytics/deep_dive_analytics.html#变量替代顺序)）。
 
 
 

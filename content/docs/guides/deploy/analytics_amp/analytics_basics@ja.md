@@ -1,5 +1,5 @@
 ---
-$title: アナリティクス&#58; 基本
+$title: "アナリティクス: 基本"
 toc: true
 ---
 
@@ -25,7 +25,7 @@ AMP にはアナリティクスや計測に役立つ 2 つのコンポーネン�
 ページビュー トラッキングも `amp-analytics` で動作します。
 リンクやボタンのクリックなど、あらゆるページコンテンツに対するユーザー エンゲージメントもトラッキングできます。
 
-ユーザーがページをどのくらいスクロールしたか、ソーシャル メディアを使用しているかなどもわかります。詳細については [AMP アナリティクスについて深く学ぶ](/docs/guides/analytics/deep_dive_analytics.html)をご覧ください。
+ユーザーがページをどのくらいスクロールしたか、ソーシャル メディアを使用しているかなどもわかります。詳細については [AMP アナリティクスについて深く学ぶ](/ja/docs/guides/analytics/deep_dive_analytics.html)をご覧ください。
 
 
 
@@ -64,7 +64,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 `RANDOM` 変数は、数ある
 [AMP プラットフォームの置換変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)のうちの 1 つです。
-[変数置換](/docs/guides/analytics/analytics_basics.html#variable-substitution)の詳細は、こちらをご覧ください。
+[変数置換](/ja/docs/guides/analytics/analytics_basics.html#変数置換)の詳細は、こちらをご覧ください。
 
 
 [amp-pixel](/docs/reference/amp-pixel.html) はビルトインのコンポーネントなので、`amp-analytics` のような AMP 拡張コンポーネントと違って、宣言を追加する必要はありません。
@@ -89,7 +89,7 @@ AMP ドキュメントの `<head>` 内に入れます
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-以下の例は [`amp-pixel` の例](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration)と似ています。
+以下の例は [`amp-pixel` の例](/ja/docs/guides/analytics/analytics_basics.html#シンプルな-amp-pixel-設定)と似ています。
 ページが表示されるたびに
 イベントが発生して、
 ページビュー データがランダム ID と一緒に指定の URL に送信されます。
@@ -118,7 +118,7 @@ AMP ドキュメントの `<head>` 内に入れます
 
 
 ページビュー リクエストが送信されるタイミングは、トリガー属性で定義します。
-詳細については[リクエストとトリガー](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports)をご覧ください。
+詳細については[リクエストとトリガー](/ja/docs/guides/analytics/deep_dive_analytics.html#送信データの内容:-requests-属性)をご覧ください。
 
 ## 変数置換
 
@@ -129,7 +129,7 @@ AMP ドキュメントの `<head>` 内に入れます
 次の例では、
 ページビュー リクエストを
 現在の AMP ドキュメントの正規化した URL とそのタイトル、
-[クライアント ID](/docs/guides/analytics/analytics_basics.html#user-identification) と一緒に URL に送信します。
+[クライアント ID](/ja/docs/guides/analytics/analytics_basics.html#ユーザー認証) と一緒に URL に送信します。
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -188,7 +188,7 @@ AMP ドキュメントの `<head>` 内に入れます
 
 
 **重要:** 変数置換は柔軟性が高いため、
-同じ変数を別の場所で使用でき、AMP ランタイムは先行順に値を解析します（[変数置換の順序](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご覧ください）。
+同じ変数を別の場所で使用でき、AMP ランタイムは先行順に値を解析します（[変数置換の順序](/ja/docs/guides/analytics/deep_dive_analytics.html#変数置換の順序)をご覧ください）。
 
 
 

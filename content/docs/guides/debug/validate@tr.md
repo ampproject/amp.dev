@@ -8,7 +8,7 @@ AMP'nin temel gücü sadece sayfalarınızı hızlandırması değil, aynı zama
 
 Bir AMP dokümanını doğrulamanın çeşitli yolları vardır. Bu yolların tümü tam olarak aynı sonucu verir. Bu yüzden, geliştirme stiliniz için en uygun yolu kullanın.
 
-AMP'nin geçerliliğine ek olarak, AMP dokümanınızın üçüncü taraf platformları için [bulunabilirliğini](/docs/guides/discovery.html) de onaylamak isteyebilirsiniz.
+AMP'nin geçerliliğine ek olarak, AMP dokümanınızın üçüncü taraf platformları için [bulunabilirliğini](/tr/docs/guides/deploy/discovery.html) de onaylamak isteyebilirsiniz.
 
 ### Tarayıcı Developer Console.
 
@@ -158,5 +158,5 @@ Her araç çeşitli bilgiler sağlar:
 
 Bu spesifikasyonu dikkatlice yeniden okuduğumuzda, `<amp-img>` etiketi kullanmamız gerekirken bir `<img>` etiketi kullandığımızı fark ederiz.
 
-Potansiyel hataların tam listesini daha iyi anlamak için [AMP Doğrulama Hataları kılavuzuna](https://www.ampproject.org/docs/reference/validation_errors.html) bakın.
+Potansiyel hataların tam listesini daha iyi anlamak için [AMP Doğrulama Hataları kılavuzuna](/tr/docs/reference/validation_errors.html) bakın.
 Dikkatli bir değerlendirmeden sonra ilerleme kaydedemezseniz [bir soru sorun](http://stackoverflow.com/questions/tagged/amp-html), size yardımcı olmaya çalışalım.
