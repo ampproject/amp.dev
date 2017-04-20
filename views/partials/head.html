@@ -4,7 +4,7 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
    <meta property="og:image" content="https://www.ampproject.org/static/img/logo-og-image.jpg">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  {% if doc.description %}<meta name="description" content="{{doc.description}} – AMP">{% endif %}
   <meta name="amp-experiments-opt-in" content="">
 
   <title>{% if doc.title %}{{doc.title}} – {% endif %}AMP</title>
