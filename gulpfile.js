@@ -68,34 +68,34 @@ gulp.task('update-platforms-page', ['import-docs'], function (cb) {
 });
 
 gulp.task('generate-asset-manifest', function (cb) {
-  var entries = swBuild.getFileManifestEntries({
+  swBuild.getFileManifestEntries({
     rootDirectory: './assets',
-    globPatterns: [
-      'assets\/img\/*.{svg,png,jpg}',
-      'assets\/img\/nav/*.{svg,png,jpg}',
-      'assets\/img\/footer/*.{svg,png,jpg}'
+    staticFileGlobs: [
+      'img/*.{svg,png,jpg}',
+      'img/nav/*.{svg,png,jpg}',
+      'img/footer/*.{svg,png,jpg}'
     ]
-  });
+  }).then(entries => {
 
-  // Add "static" to the path
-  entries.forEach(entry => {
-    entry.url = '/static' + entry.url;
-  });
-
-  fs.readFile('./pwa/service-worker.js', 'utf8', (err, data) => {
-    if (err) throw err;
-
-    // Inline precache manifest directly into the Service Worker
-    data = data.replace(/\/\* START_PRECACHE_MANIFEST \*\/.*\/\* END_PRECACHE_MANIFEST \*\//, JSON.stringify(entries));
-
-    fs.writeFile('./pwa/service-worker.js', data, (err) => {
+    // Add "static" to the path
+    entries.forEach(entry => {
+      entry.url = '/static' + entry.url;
+    });
+    console.log(entries);
+    fs.readFile('./pwa/service-worker.js', 'utf8', (err, data) => {
       if (err) throw err;
-      cb();
+
+      // Inline precache manifest directly into the Service Worker
+      data = data.replace(/\/\* START_PRECACHE_MANIFEST \*\/.*\/\* END_PRECACHE_MANIFEST \*\//, "/* START_PRECACHE_MANIFEST */" + JSON.stringify(entries) + "/* END_PRECACHE_MANIFEST */");
+
+      fs.writeFile('./pwa/service-worker.js', data, (err) => {
+        if (err) throw err;
+        cb();
+      });
+
     });
 
   });
-
-
 
 });
 
@@ -111,6 +111,11 @@ gulp.task('sass', function() {
 
 gulp.task('watch', function() {
   gulp.watch([Path.CSS_SOURCES], ['sass']);
+  gulp.watch([
+    './assets\/img\/*.{svg,png,jpg}',
+    './assets\/img\/nav/*.{svg,png,jpg}',
+    './assets\/img\/footer/*.{svg,png,jpg}'
+  ], ['generate-asset-manifest']);
 });
 
 
