@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 Gültige AMP-Dokumente dürfen keine Validierungsfehler enthalten.
-Ziel dieses Dokuments ist es, Ihnen ein besseres Verständnis für Validierungsfehler zu vermitteln, die beim [Validieren von AMP-Seiten](/docs/guides/validate.html) auftreten können, und zu erläutern, wie diese behoben werden.
+Ziel dieses Dokuments ist es, Ihnen ein besseres Verständnis für Validierungsfehler zu vermitteln, die beim [Validieren von AMP-Seiten](/de/docs/guides/debug/validate.html) auftreten können, und zu erläutern, wie diese behoben werden.
 Eine komplette Übersicht aller Validierungsfehler finden Sie in der [Spezifikation des AMP-Validierungstools](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -573,7 +573,7 @@ Vollständige Liste der eindeutigen Tags:
 
 ## Stil- und Layoutfehler
 
-Bevor wir uns mit Stil- und Layoutfehlern befassen, sollten Sie wissen, wie [Stile](/docs/guides/responsive/style_pages.html) und [Layout](/docs/guides/responsive/control_layout.html ) in AMP funktionieren. Da es sich bei AMP-Seiten um HTML-Seiten handelt, sind die Stile praktisch dieselben wie bei anderen HTML-Seiten.
+Bevor wir uns mit Stil- und Layoutfehlern befassen, sollten Sie wissen, wie [Stile](/de/docs/guides/author-develop/responsive/style_pages.html) und [Layout](/de/docs/guides/author-develop/responsive/control_layout.html ) in AMP funktionieren. Da es sich bei AMP-Seiten um HTML-Seiten handelt, sind die Stile praktisch dieselben wie bei anderen HTML-Seiten.
 Allerdings gibt es einige Einschränkungen, die sicher stellen sollen, dass Seiten schnell laden. Das AMP-Validierungstool setzt diese Einschränkungen durch.
 
 Für das Layout von AMP-Seiten gibt es feste Regeln.
@@ -666,7 +666,7 @@ Dieser Fehler tritt auf, wenn Sie kein Layout für das AMP-Tag angeben und das i
 Überprüfen Sie die `supported_layout`-Werte für das Tag in der [Spezifikation des AMP-Validierungstools](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Das tatsächliche Layoutverhalten richtet sich nach dem Attribut `layout`.
-Weitere Informationen zur Funktionsweise von Layouts finden Sie [im Artikel zu den unterstützten Layouts](/docs/guides/responsive/control_layout.html ) und in der [Spezifikation des AMP-HTML-Layoutsystems](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Weitere Informationen zur Funktionsweise von Layouts finden Sie [im Artikel zu den unterstützten Layouts](/de/docs/guides/author-develop/responsive/control_layout.html) und in der [Spezifikation des AMP-HTML-Layoutsystems](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 **Hinweis:** Wenn Sie kein Layout und keine Werte für `width` und `height` festlegen, wird standardmäßig CONTAINER als Layout verwendet. Das Validierungstool gibt in diesem Fall einen Fehler zurück, da CONTAINER nicht in AMP-Tags zulässig ist.
 Geben Sie ein anderes Layout als CONTAINER an oder fügen Sie einen Wert für `width` und/oder `height` hinzu, um den Fehler zu beheben.
@@ -712,7 +712,7 @@ Dieser Fehler tritt auf, wenn das Layout, das für das Tag festgelegt wurde, nic
 Überprüfen Sie die `supported_layout`-Werte für das Tag in der [Spezifikation des AMP-Validierungstools](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Das tatsächliche Layoutverhalten richtet sich nach dem Attribut `layout`.
-Weitere Informationen zur Funktionsweise von Layouts finden Sie [im Artikel zu den unterstützten Layouts](/docs/guides/responsive/control_layout.html ) und in der [Spezifikation des AMP-HTML-Layoutsystems](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Weitere Informationen zur Funktionsweise von Layouts finden Sie [im Artikel zu den unterstützten Layouts](/de/docs/guides/author-develop/responsive/control_layout.html) und in der [Spezifikation des AMP-HTML-Layoutsystems](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 ### Attribute nicht für festgelegtes Layout zulässig
 
@@ -752,7 +752,7 @@ Die unzulässigen Attribute für Layouttypen werden in der [Spezifikation des AM
 </table>
 
 Dieser Fehler tritt auf, wenn der Attributwert nicht für das festgelegte Layout gültig ist.
-Um zu verstehen, wodurch dieser Fehler ausgelöst wird, müssen Sie sich mit dem [unterschiedlichen Verhalten von Layouts](/docs/guides/responsive/control_layout.html#size-and-position-elements) vertraut machen.
+Um zu verstehen, wodurch dieser Fehler ausgelöst wird, müssen Sie sich mit dem [unterschiedlichen Verhalten von Layouts](/de/docs/guides/author-develop/responsive/control_layout.html) vertraut machen.
 
 Angenommen, Sie legen `fixed-height` für das Layout fest und geben numerische Werte für `height` und `width` an.
 Für das Layout `fixed-height` wird ein `height`-Wert übernommen.
@@ -787,7 +787,7 @@ Beispielsweise wird für `<amp-img src="" layout="responsive" width="42px" heigh
 
 AMP-Seiten dürfen Vorlagensyntax nur in AMP-Tags enthalten, die spezifisch für Vorlagen ausgelegt sind, etwa [amp-mustache](/docs/reference/extended/amp-mustache.html).
 
-Sie können Vorlagen in Ihre Quelldateien einfügen, solange die generierte Ausgabe keine Vorlagen mehr enthält. Weitere Informationen finden Sie unter [CSS-Präprozessoren verwenden](/docs/guides/responsive/style_pages.html#use-css-preprocessors).
+Sie können Vorlagen in Ihre Quelldateien einfügen, solange die generierte Ausgabe keine Vorlagen mehr enthält. Weitere Informationen finden Sie unter [CSS-Präprozessoren verwenden](/de/docs/guides/author-develop/responsive/style_pages.html).
 
 ### Attribut enthält Vorlagensyntax
 

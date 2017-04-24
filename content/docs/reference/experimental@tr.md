@@ -23,5 +23,5 @@ Geliştirme modu etkin durumdayken diğer alanlardan sunulan içerik için deney
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-Deneysel özellik içeren AMP dosyalarının [AMP doğrulaması](/docs/guides/validate.html) başarısız olur.
+Deneysel özellik içeren AMP dosyalarının [AMP doğrulaması](/tr/docs/guides/debug/validate.html) başarısız olur.
 Üretim sürümü hazır AMP dokümanları için bu deneysel bileşenleri kaldırın.

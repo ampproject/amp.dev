@@ -1,5 +1,5 @@
 ---
-$title: Analytics&#58; aspectos básicos
+$title: "Analytics: aspectos básicos"
 toc: true
 ---
 
@@ -28,7 +28,7 @@ incluidos los clics en vínculos y botones.
 A su vez, puedes obtener una medición del punto hasta el cual el usuario navegó en la página y
 si usó o no redes sociales, entre otras alternativas
 (consulta
-[Análisis profundo de AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html)).
+[Análisis profundo de AMP Analytics](/es/docs/guides/analytics/deep_dive_analytics.html)).
 
 Como parte de la integración con la plataforma de AMP,
 los proveedores han ofrecido configuraciones de `amp-analytics` predefinidas
@@ -65,7 +65,7 @@ los datos de las vistas de página se envían a la dirección URL definida junto
 La variable `RANDOM` es una de muchas
 [variables de sustitución en la plataforma AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 Obtén más información sobre la
-[Sustitución de variables](/docs/guides/analytics/analytics_basics.html#variable-substitution) aquí.
+[Sustitución de variables](/es/docs/guides/analytics/analytics_basics.html#sustitución-de-variables) aquí.
 
 El componente [amp-pixel](/docs/reference/amp-pixel.html)
 está integrado,
@@ -89,7 +89,7 @@ en el `<head>` del documento de AMP (consulta también la sección de
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-El siguiente ejemplo es similar al [ejemplo de `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
+El siguiente ejemplo es similar al [ejemplo de `amp-pixel`](/es/docs/guides/analytics/analytics_basics.html#configuración-simple-de-amp-pixel).
 Cada vez que una página es visible,
 el evento desencadenante se activa y
 envía los datos de vista de página a una dirección URL definida junto con un Id. aleatorio:
@@ -118,7 +118,7 @@ Cuando la página es visible
 (según se especifique con la palabra clave de activación `visible`),
 se activa un evento y se envía la solicitud de `pageview`.
 El atributo triggers determina cuándo se debe activar la solicitud de vistas de página.
-Obtén más información acerca de los atributos [requests y triggers](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports).
+Obtén más información acerca de los atributos [requests y triggers](/es/docs/guides/analytics/deep_dive_analytics.html#atributos-requests,-triggers-y-transport).
 
 ## Sustitución de variables
 
@@ -129,7 +129,7 @@ permiten todas las sustituciones de variables de URL estándares (consulta
 En el ejemplo siguiente,
 se envía la solicitud de vistas de página a la URL
 junto con la URL canónica del documento de AMP actual, su título y un
-[Id. de cliente](/docs/guides/analytics/analytics_basics.html#user-identification):
+[Id. de cliente](/es/docs/guides/analytics/analytics_basics.html#identificación-de-usuarios):
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -190,7 +190,7 @@ por lo cual la plataforma reemplaza sus valores.
 **Importante:** La sustitución de variables es flexible.
 Puedes definir las mismas variables en diferentes ubicaciones,
 y el tiempo de ejecución de AMP analizará los valores en ese orden de precedencia
-(consulta [Orden de sustitución de variables](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(consulta [Orden de sustitución de variables](/es/docs/guides/analytics/deep_dive_analytics.html#orden-de-sustitución-de-variables)).
 
 ## Identificación de usuarios
 

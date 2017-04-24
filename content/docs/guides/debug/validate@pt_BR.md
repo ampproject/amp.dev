@@ -10,7 +10,7 @@ Existem diversas formas para validar um documento AMP. Todas elas terão
 o mesmo resultado, então use a que mais se adaptar ao seu
 estilo de desenvolvimento.
 
-Além da validade da AMP, você também pode querer confirmar se seu documento AMP [pode ser detectado](/docs/guides/discovery.html) por plataformas de terceiros.
+Além da validade da AMP, você também pode querer confirmar se seu documento AMP [pode ser detectado](/pt_br/docs/guides/deploy/discovery.html) por plataformas de terceiros.
 
 ### Console do navegador para desenvolvedores
 
@@ -183,5 +183,5 @@ Cada ferramenta fornece várias informações:
 Em uma releitura cuidadosa das especificações, percebemos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag `<amp-img>`.
 
 Para entender melhor a lista completa de possíveis erros,
-consulte o [guia de erros de validação de AMP](https://www.ampproject.org/docs/reference/validation_errors.html).
+consulte o [guia de erros de validação de AMP](/pt_br/docs/reference/validation_errors.html).
 Se a solução não aparecer mesmo após uma avaliação cuidadosa, [faça uma pergunta](http://stackoverflow.com/questions/tagged/amp-html), e nós tentaremos ajudar.

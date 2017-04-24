@@ -17,7 +17,7 @@ para que a página não "pule" nem passe por refluxo.
 Crie imagens responsivas
 especificando a largura e altura,
 ajustando o layout para o modo responsivo
-e indicando com [`srcset`](/docs/guides/responsive/style_pages.html)
+e indicando com [`srcset`](/pt_br/docs/guides/author-develop/responsive/style_pages.html)
 qual recurso de imagem será usado conforme diferentes tamanhos de tela:
 
 [sourcecode:html]
@@ -96,7 +96,7 @@ usando as propriedades comuns de CSS. Por exemplo:
 **Importante:**
 Verifique se seus estilos são compatíveis com AMP.
 Alguns estilos não têm suporte por conta do desempenho deles
-(veja também [CSS com suporte](/docs/guides/responsive/style_pages.html)).
+(veja também [CSS com suporte](/pt_br/docs/guides/author-develop/responsive/style_pages.html)).
 
 ## Elementos de tamanho e posição
 
@@ -111,7 +111,7 @@ o que pode ser dimensionado de acordo com o contêiner.
 Defina o layout como responsivo.
 Isso redimensiona o elemento de acordo com a largura do seu elemento contêiner e redimensiona a sua altura automaticamente de acordo com a proporção determinada pelos atributos de largura e altura.
 
-Saiba mais sobre [layouts compatíveis com AMP](/docs/guides/responsive/control_layout.html).
+Saiba mais sobre [layouts compatíveis com AMP](/pt_br/docs/guides/author-develop/responsive/control_layout.html).
 
 ## Validar seus estilos e layout
 
@@ -120,11 +120,11 @@ os valores de CSS e layout da sua página.
 
 O validador confere se a CSS da sua página não ultrapassa o limite de 50.000 bytes,
 verifica a existência de estilos não permitidos e garante que o layout da página seja compatível e esteja formatado corretamente.
-Veja também esta lista completa de [erros de estilo e layout](/docs/reference/validation_errors.html#style-and-layout-errors).
+Veja também esta lista completa de [erros de estilo e layout](/pt_br/docs/reference/validation_errors.html#erros-de-estilo-e-layout).
 
 Exemplo de erro no console em uma página com CSS que ultrapassa o limite de 50.000 bytes:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Saiba mais sobre como [validar suas páginas AMP](/docs/guides/validate.html),
+Saiba mais sobre como [validar suas páginas AMP](/pt_br/docs/guides/debug/validate.html),
 incluindo como rastrear e corrigir erros de estilo.

@@ -18,7 +18,7 @@ AMP 문서를 검증하기 위한 여러 방법이 있습니다.
 이 방법들은 같은 결과를 도출하기 때문에, 개발 스타일에 가장 맞는 걸로 선택하면 됩니다.
 
 AMP 검증과 더불어,
-서드 파티 플랫폼에서 AMP 페이지를 [발견 가능한 지](/ko/docs/guides/discovery.html) 확인할 수 있습니다.
+서드 파티 플랫폼에서 AMP 페이지를 [발견 가능한 지](/ko/docs/guides/deploy/discovery.html) 확인할 수 있습니다.
 
 ### 브라우저 개발자 콘솔
 
@@ -206,7 +206,7 @@ Google AMP 캐시는 페이지를 전 세계에서 접속 가능하게 하는 �
 `<img>` 태그를 사용하고 있음을 깨달을 상황입니다.
 
 잠재적 에러의 전체 목록의 이해를 위해서
-[AMP Validation Errors guide](https://www.ampproject.org/docs/reference/validation_errors.html)를 읽어보시길 바랍니다.
+[AMP Validation Errors guide](/ko/docs/reference/validation_errors.html)를 읽어보시길 바랍니다.
 
 만약 꼼꼼한 검토 후에도 여전히 해결이 되지 않았다면,
 [문제에 대해 질문](http://stackoverflow.com/questions/tagged/amp-html)하면 우리가 도와주겠습니다.

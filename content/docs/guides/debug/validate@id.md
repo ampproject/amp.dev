@@ -10,7 +10,7 @@ Ada beberapa cara untuk memvalidasi dokumen AMP. Semuanya akan
 memberikan hasil yang sama persis, jadi gunakan cara mana saja yang paling sesuai dengan gaya
 pengembangan Anda.
 
-Selain untuk memvalidasi AMP, Anda mungkin juga ingin mengonfirmasi bahwa dokumen AMP [dapat ditemukan](/docs/guides/discovery.html) oleh platform pihak ketiga.
+Selain untuk memvalidasi AMP, Anda mungkin juga ingin mengonfirmasi bahwa dokumen AMP [dapat ditemukan](/id/docs/guides/deploy/discovery.html) oleh platform pihak ketiga.
 
 ### Developer Console Browser.
 
@@ -183,7 +183,7 @@ Setiap alat memberikan beberapa informasi:
 Berhati-hatilah saat membaca ulang spek, kami menyadari bahwa kami menggunakan tag `<img>`, yang seharusnya menggunakan tag `<amp-img>`.
 
 Untuk memahami daftar lengkap potensi masalah dengan lebih baik,
-lihat [panduan Kesalahan Validasi AMP](https://www.ampproject.org/docs/reference/validation_errors.html).
+lihat [panduan Kesalahan Validasi AMP](/id/docs/reference/validation_errors.html).
 Jika masih mengalami masalah setelah mengevaluasi secara hati-hati, <a href="http://stackoverflow.com/questions/tagged/amp-html">ajukan
 pertanyaan</a> dan kami akan mencoba
 membantu.

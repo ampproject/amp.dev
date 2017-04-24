@@ -1,5 +1,5 @@
 ---
-$title: Analytics：基础知识
+$title: "Analytics：基础知识"
 toc: true
 ---
 
@@ -25,7 +25,7 @@ AMP 提供了两个组件，可满足您的分析和测量需求：
 页面视图跟踪功能在 `amp-analytics` 中也有效。
 但您也可以使用任何类型的页面内容（包括链接点击和按钮点击）来跟踪用户互动。
 
-并且，您可以测量用户在页面上滚动了多长距离、用户是否与社交媒体互动等信息（请参阅[深入了解 AMP Analytics](/docs/guides/analytics/deep_dive_analytics.html)）。
+并且，您可以测量用户在页面上滚动了多长距离、用户是否与社交媒体互动等信息（请参阅[深入了解 AMP Analytics](/zh_cn/docs/guides/analytics/deep_dive_analytics.html)）。
 
 
 
@@ -64,7 +64,7 @@ AMP 提供了两个组件，可满足您的分析和测量需求：
 
 `RANDOM` 变量是
 [AMP 平台的诸多替代变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)中的其中一个。
-在此处详细了解[变量替代](/docs/guides/analytics/analytics_basics.html#variable-substitution)。
+在此处详细了解[变量替代](/zh_cn/docs/guides/analytics/analytics_basics.html#变量替代)。
 
 
 [amp-pixel](/docs/reference/amp-pixel.html) 组件是内置组件，因此您无需像为 AMP 扩展组件（包括 `amp-analytics`）指明包含声明一样来指明包含声明。
@@ -89,7 +89,7 @@ AMP 提供了两个组件，可满足您的分析和测量需求：
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-以下示例类似于 [`amp-pixel` 示例](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration)。
+以下示例类似于 [`amp-pixel` 示例](/zh_cn/docs/guides/analytics/analytics_basics.html#简单的-amp-pixel-配置)。
 页面每次可见时，系统均将触发触发器事件，并将页面视图数据与一个随机 ID 一起发送到定义的 URL：
 
 
@@ -118,7 +118,7 @@ AMP 提供了两个组件，可满足您的分析和测量需求：
 
 
 触发器属性确定 pageview 请求何时触发。
-详细了解[请求和触发器](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports)。
+详细了解[请求和触发器](/zh_cn/docs/guides/analytics/deep_dive_analytics.html#发送什么数据：requests-属性)。
 
 ## 变量替代
 
@@ -126,7 +126,7 @@ AMP 提供了两个组件，可满足您的分析和测量需求：
 [amp-analytics](/docs/reference/extended/amp-analytics.html) 组件都允许所有标准 URL 变量替代（请参阅
 
 [AMP HTML 变量替代](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)）。
-在下面的示例中，页面视图请求将随当前 AMP 文档的规范 URL、其标题以及[客户端 ID](/docs/guides/analytics/analytics_basics.html#user-identification) 一起发送到 URL：
+在下面的示例中，页面视图请求将随当前 AMP 文档的规范 URL、其标题以及[客户端 ID](/zh_cn/docs/guides/analytics/analytics_basics.html#用户识别) 一起发送到 URL：
 
 
 
@@ -188,7 +188,7 @@ AMP 提供了两个组件，可满足您的分析和测量需求：
 
 
 **重要说明：** 变量替代非常灵活；
-您可以在不同位置定义相同的变量，并且 AMP 运行时将按此优先顺序分析值（请参阅[变量替代顺序](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+您可以在不同位置定义相同的变量，并且 AMP 运行时将按此优先顺序分析值（请参阅[变量替代顺序](/zh_cn/docs/guides/analytics/deep_dive_analytics.html#变量替代顺序)）。
 
 
 

@@ -43,7 +43,7 @@ Você deve identificar esses dados antes de fazer a configuração.
 Os principais pontos a serem considerados:
 
 * Você pretende rastrear somente as visualizações de páginas ou outros padrões de envolvimento do usuário
-(consulte também [amp-pixel ou amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
+(consulte também [amp-pixel ou amp-analytics](/pt_br/docs/guides/analytics/analytics_basics.html#usar-amp-pixel-ou-amp-analytics?))?
 * Que tipos de dados você pretende capturar sobre seus usuários, seu conteúdo,
-o dispositivo ou navegador (consulte também [Substituição de variáveis](/docs/guides/analytics/analytics_basics.html#variable-substitution))?
-* Como você pretende identificar seus usuários (consulte também [Identificação de usuários](/docs/guides/analytics/analytics_basics.html#user-identification))?
+o dispositivo ou navegador (consulte também [Substituição de variáveis](/pt_br/docs/guides/analytics/analytics_basics.html#substituição-de-variáveis))?
+* Como você pretende identificar seus usuários (consulte também [Identificação de usuários](/pt_br/docs/guides/analytics/analytics_basics.html#identificação-do-usuário))?

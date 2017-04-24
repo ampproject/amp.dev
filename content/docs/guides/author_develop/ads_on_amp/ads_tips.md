@@ -23,7 +23,7 @@ $order : 1
 - **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
 - **Optimize for viewability** by setting the parameter:<br /> 
 <em>data-loading-strategy = prefer-viewability-over-views</em>
-- **Place ads in your video content** via [supported players](https://github.com/ampproject/amphtml/blob/master/extensions/README.md#audiovideo) or [`amp-iframe`](https://ampbyexample.com/components/amp-iframe/) to enable revenue on all types of content.
+- **Place ads in your video content** via [supported players](https://www.ampproject.org/docs/reference/components#media) or [`amp-iframe`](https://ampbyexample.com/components/amp-iframe/) to enable revenue on all types of content.
 - **Implement native ads** to compete with display ads using multi-sized ad requests, adding demand pressure while providing your readers with a premium user experience.
 
 ### Innovation: <br /> Offer the most engaging ad products

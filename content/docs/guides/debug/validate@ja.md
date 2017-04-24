@@ -8,7 +8,7 @@ AMP の主な長所は、単にページの読み込み時間を短縮するだ�
 
 AMP ドキュメントを検証するにはいくつかの方法があります。どの方法でも結果は同じになるため、自分の開発スタイルに最適なものを使用してください。
 
-AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能](/docs/guides/discovery.html)かどうかも確認できます。
+AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能](/ja/docs/guides/deploy/discovery.html)かどうかも確認できます。
 
 ### ブラウザの Developer Console
 
@@ -156,4 +156,4 @@ AMP 検証サービスでページに問題があることが検出されると�
 
 仕様をよく確認したところ、`<amp-img>` タグを使用すべきところで `<img>` タグを使用していることがわかりました。
 
-可能性のあるエラーの詳細なリストを確認するには、[AMP 検証エラーガイド](https://www.ampproject.org/docs/reference/validation_errors.html)をご覧ください。慎重に評価しても引き続きエラーが発生する場合は、[質問を投稿](http://stackoverflow.com/questions/tagged/amp-html)してください。サポートいたします。
+可能性のあるエラーの詳細なリストを確認するには、[AMP 検証エラーガイド](/ja/docs/reference/validation_errors.html)をご覧ください。慎重に評価しても引き続きエラーが発生する場合は、[質問を投稿](http://stackoverflow.com/questions/tagged/amp-html)してください。サポートいたします。

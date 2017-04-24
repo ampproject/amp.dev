@@ -59,7 +59,7 @@ AMP wurde entwickelt, zwei gebräuchliche Muster der Datenerfassung zu unterstü
 Wenn Sie Analysedaten an einen Analyseanbieter senden möchten, schließen Sie das `type`-Attribut in das `amp-analytics`-Tag ein und legen Sie als Wert den gewünschten Anbieter fest, wie in der [amp-analytics-Spezifikation](/docs/reference/extended/amp-analytics.html) beschrieben.
 
 Mit `<amp-analytics type="googleanalytics">` werden beispielsweise Analysedaten an den Analysedrittanbieter Google Analytics gesendet.
-Wenn Sie Daten an einen Publisher-Endpunkt senden möchten, schließen Sie einfach nicht das `type`-Attribut ein. Die Analysedaten werden dann an die für die jeweilige [Anforderung](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute) festgelegten Endpunkte gesendet.
+Wenn Sie Daten an einen Publisher-Endpunkt senden möchten, schließen Sie einfach nicht das `type`-Attribut ein. Die Analysedaten werden dann an die für die jeweilige [Anforderung](/de/docs/guides/analytics/deep_dive_analytics.html#art-der-gesendeten-daten:-requests-attribut) festgelegten Endpunkte gesendet.
 
 Konfigurationen von Analyseanbietern ermöglichen einen schnellen Einstieg in die Verwendung von `amp-analytics`.
 Weitere Informationen finden Sie in der Dokumentation und den Hilferessourcen Ihres Anbieters.
@@ -103,7 +103,7 @@ Sowohl in der `pageview`- als auch in der `event`-Anforderung wird hier der `acc
 [/sourcecode]
 
 **Wichtig:** AMP prüft nicht, ob dieselbe Variable mehrfach verwendet wird.
-Werte werden in einer bestimmten Reihenfolge der Variablensubstitution festgelegt und Werte in Remote-URLs stehen am Anfang dieser Reihenfolge (siehe [Reihenfolge der Variablensubstitution](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+Werte werden in einer bestimmten Reihenfolge der Variablensubstitution festgelegt und Werte in Remote-URLs stehen am Anfang dieser Reihenfolge (siehe [Reihenfolge der Variablensubstitution](/de/docs/guides/analytics/deep_dive_analytics.html#reihenfolge-der-variablensubstitution)).
 
 ## Anforderungen, Trigger und Transporte
 
@@ -186,19 +186,19 @@ AMP unterstützt die folgenden Triggerkonfigurationen:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (erforderlich)</td>
-      <td data-th="Description">Name der zu sendenden Anforderung, wie unter [Anforderungen](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute) angegeben</td>
+      <td data-th="Description">Name der zu sendenden Anforderung, wie unter [Anforderungen](/de/docs/guides/analytics/deep_dive_analytics.html#art-der-gesendeten-daten:-requests-attribut) angegeben</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Ein Objekt, das Schlüssel/Wert-Paare enthält, mit denen in der Konfiguration oberster Ebene festgelegte <code>vars</code>-Variablen überschrieben oder spezifische <code>vars</code>-Variablen für diesen Trigger angegeben werden (siehe auch [Reihenfolge der Variablensubstitution](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering))</td>
+      <td data-th="Description">Ein Objekt, das Schlüssel/Wert-Paare enthält, mit denen in der Konfiguration oberster Ebene festgelegte <code>vars</code>-Variablen überschrieben oder spezifische <code>vars</code>-Variablen für diesen Trigger angegeben werden (siehe auch [Reihenfolge der Variablensubstitution](/de/docs/guides/analytics/deep_dive_analytics.html#reihenfolge-der-variablensubstitution))</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (erforderlich, wenn <coe>on</code> auf <code>click</code> gesetzt ist)</td>
-      <td data-th="Description">Ein CSS-Selektor dient zur genaueren Angabe der zu erfassenden Elemente. Bei Verwendung von <code>*</code> werden alle Elemente erfasst. Diese Konfiguration wird in Verbindung mit dem <code>click</code>-Trigger eingesetzt. [Informationen zur Verwendung des Selektors zum Erfassen von Seitenklicks](/docs/guides/analytics/use_cases.html#tracking-page-clicks) und von [Interaktionen über soziale Netzwerke](/docs/guides/analytics/use_cases.html#tracking-social-interactions)</td>
+      <td data-th="Description">Ein CSS-Selektor dient zur genaueren Angabe der zu erfassenden Elemente. Bei Verwendung von <code>*</code> werden alle Elemente erfasst. Diese Konfiguration wird in Verbindung mit dem <code>click</code>-Trigger eingesetzt. [Informationen zur Verwendung des Selektors zum Erfassen von Seitenklicks](/de/docs/guides/analytics/use_cases.html#seitenklicks-erfassen) und von [Interaktionen über soziale Netzwerke](/de/docs/guides/analytics/use_cases.html#interaktionen-über-soziale-netzwerke-erfassen)</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (erforderlich, wenn <code>on</code> auf <code>scroll</code> gesetzt ist)</td>
-      <td data-th="Description">Hiermit wird festgelegt, unter welchen Bedingungen beim Scrollen auf der Seite das <code>scroll</code>-Ereignis ausgelöst wird. Dieses Objekt kann <code>verticalBoundaries</code> und <code>horizontalBoundaries</code> enthalten. Für das Auslösen eines <code>scroll</code>-Ereignisses ist mindestens eine der zwei Eigenschaften erforderlich. Bei den Werten für beide Eigenschaften sollte es sich um Arrays von Zahlen handeln, die die Grenzen angeben, bei denen ein scroll-Ereignis generiert wird. [Beispiel zum Erfassen des Scrollens](/docs/guides/analytics/use_cases.html#tracking-scrolling)</td>
+      <td data-th="Description">Hiermit wird festgelegt, unter welchen Bedingungen beim Scrollen auf der Seite das <code>scroll</code>-Ereignis ausgelöst wird. Dieses Objekt kann <code>verticalBoundaries</code> und <code>horizontalBoundaries</code> enthalten. Für das Auslösen eines <code>scroll</code>-Ereignisses ist mindestens eine der zwei Eigenschaften erforderlich. Bei den Werten für beide Eigenschaften sollte es sich um Arrays von Zahlen handeln, die die Grenzen angeben, bei denen ein scroll-Ereignis generiert wird. [Beispiel zum Erfassen des Scrollens](/de/docs/guides/analytics/use_cases.html#scrollen-erfassen)</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (erforderlich, wenn <code>on</code> auf <code>timer</code> gesetzt ist)</td>
@@ -207,7 +207,7 @@ AMP unterstützt die folgenden Triggerkonfigurationen:
   </tbody>
 </table>
 
-**Wichtig:** Trigger aus einer Konfiguration mit einer niedrigeren Priorität werden von gleichnamigen Triggern aus einer Konfiguration höherer Priorität überschrieben (siehe [Reihenfolge der Variablensubstitution](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+**Wichtig:** Trigger aus einer Konfiguration mit einer niedrigeren Priorität werden von gleichnamigen Triggern aus einer Konfiguration höherer Priorität überschrieben (siehe [Reihenfolge der Variablensubstitution](/de/docs/guides/analytics/deep_dive_analytics.html#reihenfolge-der-variablensubstitution)).
 
 ### Methode für das Senden von Daten: transport-Attribut
 

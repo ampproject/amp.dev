@@ -73,7 +73,7 @@ al fornitore di strumenti di analisi di terze parti, Google Analytics.
 Per inviare i dati a un endpoint di proprietà di un publisher
 è sufficiente non includere l’attributo `type`,
 i dati di analisi vengono quindi inviati agli endpoint definiti per ciascuna
-[richiesta](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[richiesta](/it/docs/guides/analytics/deep_dive_analytics.html#quali-dati-vengono-inviati:-attributo-requests).
 
 Le configurazioni del fornitore di strumenti di analisi costituiscono un sistema rapido
 per iniziare a lavorare con `amp-analytics`.
@@ -138,7 +138,7 @@ sul valore dell’account nell’URL remoto (`"account": "UA-XXXXX-Y"`):
 **Importante.** AMP non consente la convalida rispetto a più usi della stessa variabile.
 I valori vengono inseriti seguendo un ordine di preferenza di sostituzione delle variabili
 e i valori negli URL remoti sono all’inizio di tale ordine
-(vedi [Ordinamento della sostituzione delle variabili](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(vedi [Ordinamento della sostituzione delle variabili](/it/docs/guides/analytics/deep_dive_analytics.html#ordinamento-della-sostituzione-delle-variabili)).
 
 ## Richieste, attivazioni e trasferimenti
 
@@ -239,19 +239,19 @@ AMP supporta le seguenti configurazioni di attivazione:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obbligatorio)</td>
-      <td data-th="Description">Nome della richiesta da inviare (come specificato nelle <a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">richieste</a>).</td>
+      <td data-th="Description">Nome della richiesta da inviare (come specificato nelle <a href="/it/docs/guides/analytics/deep_dive_analytics.html#quali-dati-vengono-inviati:-attributo-requests">richieste</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Un oggetto contenente le coppie chiave-valore usate per eseguire l’override delle <code>vars</code> definite nella configurazione di primo livello o per specificare <code>vars</code> univoche a questo trigger (vedi anche <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Ordinamento della sostituzione delle variabili</a>).</td>
+      <td data-th="Description">Un oggetto contenente le coppie chiave-valore usate per eseguire l’override delle <code>vars</code> definite nella configurazione di primo livello o per specificare <code>vars</code> univoche a questo trigger (vedi anche <a href="/it/docs/guides/analytics/deep_dive_analytics.html#ordinamento-della-sostituzione-delle-variabili">Ordinamento della sostituzione delle variabili</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obbligatorio quando <code>on</code> è impostato su <code>click</code>)</td>
-      <td data-th="Description">Un selettore CSS utilizzato per definire meglio quali elementi devono essere monitorati. Usa il valore <code>*</code> per monitorare tutti gli elementi. Questa configurazione viene utilizzata insieme al trigger <code>click</code>. Scopri come usare il selettore per <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">monitorare i clic di pagina</a> e per le <a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">interazioni sui social</a>.</td>
+      <td data-th="Description">Un selettore CSS utilizzato per definire meglio quali elementi devono essere monitorati. Usa il valore <code>*</code> per monitorare tutti gli elementi. Questa configurazione viene utilizzata insieme al trigger <code>click</code>. Scopri come usare il selettore per <a href="/it/docs/guides/analytics/use_cases.html#come-monitorare-i-clic-sulla-pagina">monitorare i clic di pagina</a> e per le <a href="/it/docs/guides/analytics/use_cases.html#come-monitorare-le-interazioni-con-i-social-network">interazioni sui social</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (obbligatorio quando <code>on</code> è impostato su <code>scroll</code>)</td>
-      <td data-th="Description">Controlla in base a quali condizioni viene attivato l’evento <code>scroll</code> quando l’utente scorre la pagina. Questo oggetto può contenere <code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Per l’attivazione di un evento <code>scroll</code> è necessaria almeno una delle due proprietà. I valori per entrambe le proprietà devono essere serie di numeri contenenti i limiti entro i quali viene generato un evento di scorrimento. Vedi questo esempio sul <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">monitoraggio dello scorrimento</a>.</td>
+      <td data-th="Description">Controlla in base a quali condizioni viene attivato l’evento <code>scroll</code> quando l’utente scorre la pagina. Questo oggetto può contenere <code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Per l’attivazione di un evento <code>scroll</code> è necessaria almeno una delle due proprietà. I valori per entrambe le proprietà devono essere serie di numeri contenenti i limiti entro i quali viene generato un evento di scorrimento. Vedi questo esempio sul <a href="/it/docs/guides/analytics/use_cases.html#come-monitorare-lo-scorrimento-delle-pagine">monitoraggio dello scorrimento</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (obbligatorio quando <code>on</code> è impostato su <code>timer</code>)</td>
@@ -262,7 +262,7 @@ AMP supporta le seguenti configurazioni di attivazione:
 
 **Importante:** i trigger di una configurazione con precedenza più bassa vengono ignorati
 dai trigger con lo stesso nome di una configurazione con una precedenza più alta
-(vedi [Ordinamento della sostituzione delle variabili](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(vedi [Ordinamento della sostituzione delle variabili](/it/docs/guides/analytics/deep_dive_analytics.html#ordinamento-della-sostituzione-delle-variabili)).
 
 ### Come vengono inviati i dati: attributo transport
 

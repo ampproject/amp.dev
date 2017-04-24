@@ -73,7 +73,7 @@ ilgili satıcıya ayarlayın.
 Verileri yayıncıya ait bir son noktaya göndermek için,
 `type` özelliğini eklememeniz yeterlidir;
 analitik veriler her bir
-[istek](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)için tanımlanan son noktalara gönderilir.
+[istek](/tr/docs/guides/analytics/deep_dive_analytics.html#hangi-veriler-gönderilir:-istek-özelliği)için tanımlanan son noktalara gönderilir.
 
 Analytics satıcı yapılandırmaları `amp-analytics`‹e başlamanın
 hızlı bir yoludur.
@@ -138,7 +138,7 @@ uzaktan URL (`"account": "UA-XXXXX-Y"`) içindeki hesap değerine otomatik olara
 **Önemli:** AMP aynı değişkenin birden çok kullanımını doğrulamaz.
 Değerler, önceliğe göre değişken değiştirme sırasına göre çoğaltılır
 ve uzaktan URL›lerin içindeki değerler bu sıranın en üzerindedir
-(bkz. [Değişken değiştirme sıralaması](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(bkz. [Değişken değiştirme sıralaması](/tr/docs/guides/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması)).
 
 ## İstek, tetikleme ve taşıma
 
@@ -239,19 +239,19 @@ AMP aşağıdaki tetikleme yapılandırmalarını destekler:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (gerekli)</td>
-      <td data-th="Description">Gönderilecek isteğin adı (<a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">isteklerinde belirtilen şekilde</a>).</td>
+      <td data-th="Description">Gönderilecek isteğin adı (<a href="/tr/docs/guides/analytics/deep_dive_analytics.html#hangi-veriler-gönderilir:-istek-özelliği">isteklerinde belirtilen şekilde</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Değişken değiştirme sıralaması</a>).</td>
+      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="/tr/docs/guides/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması">Değişken değiştirme sıralaması</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (<code>on</code>, <code>click</code> olarak ayarlandığında gereklidir)</td>
-      <td data-th="Description">Hangi ögelerin seçilmesi gerektiğini işlemek için kullanılan bir CSS selektörü. Tüm ögeleri izlemek için <code>*</code> değerini kullanın. Bu yapılandırma <code>click</code> tetikleme ile birlikte kullanılır. Selektörü kullanarak <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">sayfa tıklamalarını </a> ve<a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions"> sosyal medya etkileşimlerini nasıl izleyeceğinizi öğrenin</a>.</td>
+      <td data-th="Description">Hangi ögelerin seçilmesi gerektiğini işlemek için kullanılan bir CSS selektörü. Tüm ögeleri izlemek için <code>*</code> değerini kullanın. Bu yapılandırma <code>click</code> tetikleme ile birlikte kullanılır. Selektörü kullanarak <a href="/tr/docs/guides/analytics/use_cases.html#sayfa-tıklamalarını-izleme">sayfa tıklamalarını </a> ve<a href="/tr/docs/guides/analytics/use_cases.html#sosyal-medya-etkileşimlerini-izleme"> sosyal medya etkileşimlerini nasıl izleyeceğinizi öğrenin</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (<code>on</code>, <code>scroll</code> olarak ayarlandığında gereklidir)</td>
-      <td data-th="Description">Hangi koşullar altında sayfa kaydırıldığında <code>scroll</code> etkinliğinin uyarı verdiğini kontrol eder. Bu nesne <code>verticalBoundaries</code> ve<code>horizontalBoundaries</code> içerebilir. Bir <code>scroll</code> etkinliğinin uyarı vermesi için iki özellikten en az biri gereklidir. Her iki özelliğin değerleri bir kaydırma etkinliğinin oluşturulduğu sınırları içeren sayılar dizini olmalıdır. <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">kaydırma izleme</a> ile ilgili örneğe bakın.</td>
+      <td data-th="Description">Hangi koşullar altında sayfa kaydırıldığında <code>scroll</code> etkinliğinin uyarı verdiğini kontrol eder. Bu nesne <code>verticalBoundaries</code> ve<code>horizontalBoundaries</code> içerebilir. Bir <code>scroll</code> etkinliğinin uyarı vermesi için iki özellikten en az biri gereklidir. Her iki özelliğin değerleri bir kaydırma etkinliğinin oluşturulduğu sınırları içeren sayılar dizini olmalıdır. <a href="/tr/docs/guides/analytics/use_cases.html#kaydırmayı-izleme">kaydırma izleme</a> ile ilgili örneğe bakın.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (<code>on</code>, <code>timer</code> olarak ayarlandığında gereklidir)</td>
@@ -262,7 +262,7 @@ AMP aşağıdaki tetikleme yapılandırmalarını destekler:
 
 **Önemli:** Düşük öncelikli bir yapılandırmadaki tetiklemeler,
 yüksek öncelikli yapılandırmadaki aynı adlı tetiklemelerle geçersiz kılınır
-(bkz. [Değişken değiştirme sıralaması](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(bkz. [Değişken değiştirme sıralaması](/tr/docs/guides/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması)).
 
 ### Verileri gönderme: aktarma özelliği
 

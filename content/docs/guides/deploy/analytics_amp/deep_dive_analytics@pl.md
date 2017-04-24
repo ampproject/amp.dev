@@ -73,7 +73,7 @@ do niezależnego dostawcy usług analitycznych Google Analytics.
 Aby wysłać dane do punktu końcowego należącego do wydawcy,
 wystarczy po prostu nie dołączać atrybutu `type`;
 dane analityczne będą wysyłane do punktów końcowych zdefiniowanych dla każdego
-[żądania](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[żądania](/pl/docs/guides/analytics/deep_dive_analytics.html#dane-do-wysłania:-atrybut-requests).
 
 Konfiguracje dostawców usług analitycznych stanowią szybką metodę
 rozpoczęcia korzystania z elementu `amp-analytics`.
@@ -138,7 +138,7 @@ wartość konta w zdalnym adresie URL (`"account": "UA-XXXXX-Y"`):
 **Ważne:** AMP nie sprawdza poprawności dla wielu wystąpień tej samej zmiennej.
 Wartości są zapełniane zgodnie z preferowaną kolejnością podstawiania zmiennych,
 a wartości w zdalnych adresach URL są na początku tej kolejności
-(zobacz [Kolejność podstawiania zmiennych](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(zobacz [Kolejność podstawiania zmiennych](/pl/docs/guides/analytics/deep_dive_analytics.html#kolejność-podstawiania-zmiennych)).
 
 ## Żądania, wyzwalacze i transporty
 
@@ -239,19 +239,19 @@ AMP obsługuje następujące konfiguracje wyzwalacza:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (wymagane)</td>
-      <td data-th="Description">Nazwa żądania do wysłania (określona atrybutem <a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">requests</a>).</td>
+      <td data-th="Description">Nazwa żądania do wysłania (określona atrybutem <a href="/pl/docs/guides/analytics/deep_dive_analytics.html#dane-do-wysłania:-atrybut-requests">requests</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Obiekt zawierający pary klucz-wartość używany do zastąpienia deklaracji <code>vars</code> w konfiguracji najwyższego poziomu lub do określenia deklaracji <code>vars</code> właściwej tylko dla tego wyzwalacza (zobacz też <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Kolejność podstawiania zmiennych</a>).</td>
+      <td data-th="Description">Obiekt zawierający pary klucz-wartość używany do zastąpienia deklaracji <code>vars</code> w konfiguracji najwyższego poziomu lub do określenia deklaracji <code>vars</code> właściwej tylko dla tego wyzwalacza (zobacz też <a href="/pl/docs/guides/analytics/deep_dive_analytics.html#kolejność-podstawiania-zmiennych">Kolejność podstawiania zmiennych</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (wymagane, gdy parametr <code>on</code> ma wartość <code>click</code>)</td>
-      <td data-th="Description">Selektor CSS używany do precyzowania elementów, które mają być monitorowane. Użyj wartości <code>*</code>, aby monitorować wszystkie elementy. Ta konfiguracja jest używana w połączeniu z wyzwalaczem <code>click</code>. Dowiedz się, jak używać selektora do <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">monitorowania kliknięć na stronie</a> oraz <a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">interakcji społecznościowych</a>.</td>
+      <td data-th="Description">Selektor CSS używany do precyzowania elementów, które mają być monitorowane. Użyj wartości <code>*</code>, aby monitorować wszystkie elementy. Ta konfiguracja jest używana w połączeniu z wyzwalaczem <code>click</code>. Dowiedz się, jak używać selektora do <a href="/pl/docs/guides/analytics/use_cases.html#monitorowanie-kliknięć-na-stronie">monitorowania kliknięć na stronie</a> oraz <a href="/pl/docs/guides/analytics/use_cases.html#monitorowanie-interakcji-społecznościowych">interakcji społecznościowych</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (wymagane, gdy parametr <code>on</code> ma wartość <code>scroll</code>)</td>
-      <td data-th="Description">Steruje okolicznościami wyzwolenia zdarzenia <code>scroll</code> podczas przewijania strony. Ten obiekt może zawierać właściwości <code>verticalBoundaries</code> i <code>horizontalBoundaries</code>. Co najmniej jedna z nich jest wymagana do wyzwolenia zdarzenia <code>scroll</code>. Wartości obydwu właściwości powinny być tablicami liczb zawierającymi granice, po przekroczeniu których generowane jest zdarzenie przewijania. Zobacz przykład dotyczący <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">monitorowania przewijania</a>.</td>
+      <td data-th="Description">Steruje okolicznościami wyzwolenia zdarzenia <code>scroll</code> podczas przewijania strony. Ten obiekt może zawierać właściwości <code>verticalBoundaries</code> i <code>horizontalBoundaries</code>. Co najmniej jedna z nich jest wymagana do wyzwolenia zdarzenia <code>scroll</code>. Wartości obydwu właściwości powinny być tablicami liczb zawierającymi granice, po przekroczeniu których generowane jest zdarzenie przewijania. Zobacz przykład dotyczący <a href="/pl/docs/guides/analytics/use_cases.html#monitorowanie-przewijania">monitorowania przewijania</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (wymagane, gdy parametr <code>on</code> ma wartość <code>timer</code>)</td>
@@ -262,7 +262,7 @@ AMP obsługuje następujące konfiguracje wyzwalacza:
 
 **Ważne:** Wyzwalacze z konfiguracji o niższym priorytecie są przesłaniane
 przez wyzwalacze o tych samych nazwach z konfiguracji o wyższym priorytecie
-(zobacz [Kolejność podstawiania zmiennych](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(zobacz [Kolejność podstawiania zmiennych](/pl/docs/guides/analytics/deep_dive_analytics.html#kolejność-podstawiania-zmiennych)).
 
 ### Sposób wysyłania danych: atrybut transport
 

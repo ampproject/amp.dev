@@ -17,7 +17,7 @@ sehingga ketika sumber daya dimuat, laman tidak akan melompat dan dan mengalir b
 Buat gambar responsif
 dengan menentukan lebar dan tinggi,
 menyetel tata letak menjadi responsif,
-dan mengindikasikan dengan [`srcset`](/docs/guides/responsive/style_pages.html)
+dan mengindikasikan dengan [`srcset`](/id/docs/guides/author-develop/responsive/style_pages.html)
 aset gambar yang akan digunakan berdasarkan ukuran layar yang bervariasi:
 
 [sourcecode:html]
@@ -96,7 +96,7 @@ menggunakan properti CSS umum. Misalnya:
 **Penting:**
 Periksa bahwa gaya yang ditambahkan didukung di AMP;
 beberapa gaya tidak untuk alasan performa
-(lihat juga [CSS yang Didukung](/docs/guides/responsive/style_pages.html)).
+(lihat juga [CSS yang Didukung](/id/docs/guides/author-develop/responsive/style_pages.html)).
 
 ## Ukuran dan posisi elemen
 
@@ -112,7 +112,7 @@ Setel tata letak menjadi responsif.
 Tindakan ini menetapkan ukuran elemen ke lebar elemen penampungnya
 dan otomatis mengubah ukuran tingginya ke rasio aspek yang diberikan oleh atribut lebar dan tinggi.
 
-Pelajari lebih lanjut tentang [tata letak yang didukung di AMP](/docs/guides/responsive/control_layout.html).
+Pelajari lebih lanjut tentang [tata letak yang didukung di AMP](/id/docs/guides/author-develop/responsive/control_layout.html).
 
 ## Memvalidasi gaya dan tata letak
 
@@ -121,11 +121,11 @@ nilai CSS dan tata letak laman.
 
 Validator mengonfirmasi bahwa CSS laman tidak melebihi batas 50.000 byte,
 memeriksa gaya yang tidak diizinkan, serta memastikan bahwa tata letak didukung dan diformat dengan benar.
-Lihat juga daftar lengkap [Kesalahan gaya dan tata letak](/docs/reference/validation_errors.html#style-and-layout-errors).
+Lihat juga daftar lengkap [Kesalahan gaya dan tata letak](/id/docs/reference/validation_errors.html#kesalahan-gaya-dan-tata-letak).
 
 Contoh kesalahan di konsol untuk laman dengan CSS yang melebihi batas 50.000 byte:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Pelajari lebih lanjut tentang cara [memvalidasi laman AMP](/docs/guides/validate.html),
+Pelajari lebih lanjut tentang cara [memvalidasi laman AMP](/id/docs/guides/debug/validate.html),
 termasuk cara melacak dan memperbaiki kesalahan gaya.

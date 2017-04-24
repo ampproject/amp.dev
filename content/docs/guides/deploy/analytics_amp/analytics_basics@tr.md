@@ -1,5 +1,5 @@
 ---
-$title: Analytics&#58; Temel Bilgiler
+$title: "Analytics: Temel Bilgiler"
 toc: true
 ---
 
@@ -28,7 +28,7 @@ bağlantılara ve düğmelere tıklama dahil, kullanıcı katılımını herhang
 Ayrıca, kullanıcının sayfayı ne kadar kaydırdığını,
 sosyal medyayla etkileşim kurup kurmadığını ve daha birçok özelliği ölçebilirsiniz
 (bkz.
-[AMP Analytics Derinlemesine Giriş](/docs/guides/analytics/deep_dive_analytics.html)).
+[AMP Analytics Derinlemesine Giriş](/tr/docs/guides/analytics/deep_dive_analytics.html)).
 
 AMP platformu entegrasyonunun bir parçası olarak,
 sağlayıcılar
@@ -65,7 +65,7 @@ sayfa görünümü verileri rastgele bir sayıyla birlikte tanımlanan URL›ye 
 `RANDOM` değişkeni,
 [AMP platformundaki değiştirme değişkenlerinden](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) bir tanesidir.
 
-[Değişken değiştirme](/docs/guides/analytics/analytics_basics.html#variable-substitution) hakkında buradan daha fazla bilgi edinebilirsiniz.
+[Değişken değiştirme](/tr/docs/guides/analytics/analytics_basics.html#değişken-değiştirme) hakkında buradan daha fazla bilgi edinebilirsiniz.
 
 [Amp-piksel](/docs/reference/amp-pixel.html)
 bileşeni yerleşiktir,
@@ -89,7 +89,7 @@ ilk önce bu `custom-element` bildirimini
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-Aşağıdaki örnek [`amp-pixel` örneği](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration) ile benzerdir.
+Aşağıdaki örnek [`amp-pixel` örneği](/tr/docs/guides/analytics/analytics_basics.html#basit-bir-amp-piksel-yapılandırması) ile benzerdir.
 Bir sayfa her görünür olduğunda,
 tetikleme etkinliği uyarı verir ve
 sayfa görüntüleme verilerini rastgele bir ID ile birlikte tanımlı URL›ye gönderir:
@@ -118,7 +118,7 @@ Sayfa görünür olduğunda
 (`visible` tetikleme anahtar kelimesinin kullanımıyla belirtildiği gibi),
 bir etkinlik tetiklenir ve `pageview` isteği gönderilir.
 Tetikleme sayfa görüntüleme isteği uyarısının ne zaman çıkacağını belirler.
-[İstekler ve tetikleme](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports) hakkında daha fazla öğrenin.
+[İstekler ve tetikleme](/tr/docs/guides/analytics/deep_dive_analytics.html#istek,-tetikleme-ve-taşıma) hakkında daha fazla öğrenin.
 
 ## Değişken değiştirme
 
@@ -129,7 +129,7 @@ standart URL değişken değiştirmelerin tamamına izin verir (bkz.
 Aşağıdaki örnekte,
 sayfa görünümü isteği
 mevcut AMP belgelerinin standart URL›si, başlığı ve bir
-[istemci kimliği](/docs/guides/analytics/analytics_basics.html#user-identification) ile birlikte URL›ye gönderilir:
+[istemci kimliği](/tr/docs/guides/analytics/analytics_basics.html#kullanıcı-tanımlama) ile birlikte URL›ye gönderilir:
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -190,7 +190,7 @@ bu nedenle değerleri platform tarafından değiştirilir.
 **Önemli:** Değişken değiştirme esnekliğe sahiptir;
 aynı değişken farklı lokasyonlarda tanımlanmış olabilir
 ve AMP çalışma zamanı öncelik sırasına bu değerleri ayrıştıracaktır
-(bkz. [Değişken değiştirme sıralaması](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(bkz. [Değişken değiştirme sıralaması](/tr/docs/guides/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması)).
 
 ## Kullanıcı tanımlama
 

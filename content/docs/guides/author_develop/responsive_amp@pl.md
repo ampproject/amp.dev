@@ -12,7 +12,7 @@ Wystarczy dodać do nich parametr `layout=responsive`.
 
 Wszystkie źródła wczytywane spoza strony, w tym obrazy, muszą mieć określony rozmiar i pozycję, by podczas ładowania się nie skakały po ekranie i nie zmieniały swojego układu.
 
-Tworzenie obrazów elastycznych odbywa się poprzez określenie ich szerokości i wysokości, włączenie układu elastycznego oraz wskazanie za pomocą parametru [`srcset`](/docs/guides/responsive/style_pages.html), który plik obrazu będzie używany, zależnie od rozmiaru ekranu:
+Tworzenie obrazów elastycznych odbywa się poprzez określenie ich szerokości i wysokości, włączenie układu elastycznego oraz wskazanie za pomocą parametru [`srcset`](/pl/docs/guides/author-develop/responsive/style_pages.html), który plik obrazu będzie używany, zależnie od rozmiaru ekranu:
 
 [sourcecode:html]
 <amp-img
@@ -92,7 +92,7 @@ korzystając z typowych właściwości CSS. Na przykład:
 **Ważne:**
 sprawdź, czy standard AMP obsługuje style, których chcesz użyć.
 Niektóre style nie są dozwolone ze względu na ich wydajność
-(sprawdź również [obsługiwane elementy CSS](/docs/guides/responsive/style_pages.html)).
+(sprawdź również [obsługiwane elementy CSS](/pl/docs/guides/author-develop/responsive/style_pages.html)).
 
 ## Dobierz rozmiar i pozycje elementów
 
@@ -108,7 +108,7 @@ Ustaw układ elastyczny.
 Dzięki temu rozmiar elementu jest dopasowywany do szerokości kontenera,
 a jego wysokość jest automatycznie dopasowywana do współczynnika proporcji określonego za pomocą atrybutów szerokości i wysokości.
 
-Dowiedz się więcej na temat [układów obsługiwanych przez AMP](/docs/guides/responsive/control_layout.html).
+Dowiedz się więcej na temat [układów obsługiwanych przez AMP](/pl/docs/guides/author-develop/responsive/control_layout.html).
 
 ## Zweryfikuj style i układ
 
@@ -120,11 +120,11 @@ przekracza limitu 50 000 bajtów,
 sprawdzi, czy strona nie zawiera niedozwolonych stylów,
 oraz dopilnuje, by układ strony był poprawnie obsługiwany
 i formatowany.
-Sprawdź listę [błędów stylów i układów](/docs/reference/validation_errors.html#style-and-layout-errors).
+Sprawdź listę [błędów stylów i układów](/pl/docs/reference/validation_errors.html#błędy-stylu-i-układu).
 
 Przykładowy błąd w konsoli dla strony z kodem CSS przekraczającym 50 000 bajtów:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Dowiedz się więcej o [weryfikacji stron AMP](/docs/guides/validate.html),
+Dowiedz się więcej o [weryfikacji stron AMP](/pl/docs/guides/debug/validate.html),
 w tym o sposobie wyszukiwania i naprawy błędów stylów.

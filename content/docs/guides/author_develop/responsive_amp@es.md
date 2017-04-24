@@ -14,7 +14,7 @@ Todos los recursos cargados externamente, incluidas las imágenes,
 deben tener un tamaño y una posición específicos
 para que cuando los recursos carguen la página, esta no salte y reinicie el flujo.
 
-Para crear imágenes adaptables, especifica la anchura y la altura, establece el diseño como adaptable e indica, mediante <a href="/es/docs/guides/responsive/style_pages.html">`srcset`</a>, cuál es el elemento de imagen que se debe utilizar en función de los diferentes tamaños de pantalla:
+Para crear imágenes adaptables, especifica la anchura y la altura, establece el diseño como adaptable e indica, mediante <a href="/es/docs/guides/author-develop/responsive/style_pages.html">`srcset`</a>, cuál es el elemento de imagen que se debe utilizar en función de los diferentes tamaños de pantalla:
 
 [sourcecode:html]
 <amp-img

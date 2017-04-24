@@ -73,7 +73,7 @@ al proveedor de herramientas de análisis externo, Google Analytics.
 Para enviar datos a un terminal del editor,
 simplemente no incluyas el atributo `type`;
 los datos del análisis se envían a los terminales definidos para cada
-[solicitud](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[solicitud](/es/docs/guides/analytics/deep_dive_analytics.html#qué-datos-se-envían:-atributo-requests).
 
 Las configuraciones del proveedor de herramientas de análisis permiten dar rápidamente
 los primeros pasos con `amp-analytics`.
@@ -138,7 +138,7 @@ en el valor de la cuenta de la URL remota (`"account": "UA-XXXXX-Y"`):
 **Importante:** AMP no valida usos múltiples de la misma variable.
 Los valores se completan siguiendo un orden de preferencia de sustitución de variables
 y los valores en las direcciones URL remotas son los primeros en ese orden
-(consulta [Orden de sustitución de variables](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(consulta [Orden de sustitución de variables](/es/docs/guides/analytics/deep_dive_analytics.html#orden-de-sustitución-de-variables)).
 
 ## Atributos requests, triggers y transport
 
@@ -239,19 +239,19 @@ AMP admite las siguientes configuraciones de disparadores:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obligatorio)</td>
-      <td data-th="Description">Nombre de la solicitud que se enviará (según se especifica en las solicitudes<a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute"></a>).</td>
+      <td data-th="Description">Nombre de la solicitud que se enviará (según se especifica en las solicitudes<a href="/es/docs/guides/analytics/deep_dive_analytics.html#qué-datos-se-envían:-atributo-requests"></a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Objeto que contiene pares de valores claves usados para sobrescribir <code>vars</code> definidos en la configuración de nivel superior o para especificar<code>vars</code> exclusivos de este disparador (consulta también<a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Orden de sustitución de variables</a>).</td>
+      <td data-th="Description">Objeto que contiene pares de valores claves usados para sobrescribir <code>vars</code> definidos en la configuración de nivel superior o para especificar<code>vars</code> exclusivos de este disparador (consulta también<a href="/es/docs/guides/analytics/deep_dive_analytics.html#orden-de-sustitución-de-variables">Orden de sustitución de variables</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obligatorio cuando <code>on</code> se fija en <code>click</code>)</td>
-      <td data-th="Description">Selector de CSS usado para definir con precisión los elementos que deben someterse a seguimiento. Usa el valor <code>*</code> para realizar un seguimiento de todos los elementos. Esta configuración se usa junto con el disparador <code>click</code>. Obtén información acerca de cómo usar el selector para <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">realizar un seguimiento de los clics de páginas</a> y las <a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">interacciones sociales</a>.</td>
+      <td data-th="Description">Selector de CSS usado para definir con precisión los elementos que deben someterse a seguimiento. Usa el valor <code>*</code> para realizar un seguimiento de todos los elementos. Esta configuración se usa junto con el disparador <code>click</code>. Obtén información acerca de cómo usar el selector para <a href="/es/docs/guides/analytics/use_cases.html#seguimiento-de-clics-en-páginas">realizar un seguimiento de los clics de páginas</a> y las <a href="/es/docs/guides/analytics/use_cases.html#seguimiento-de-interacciones-sociales">interacciones sociales</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (obligatorio cuando <code>on</code> se fija en <code>scroll</code>)</td>
-      <td data-th="Description">Controla las condiciones bajo las cuales se activa el evento <code>scroll</code> cuando se desplaza la página. Este objeto puede contener <code>verticalBoundaries</code> y <code>horizontalBoundaries</code>. Al menos una de las dos propiedades es obligatoria para que se active un evento <code>scroll</code>. Los valores para ambas propiedades deben ser arreglos de números que contengan los límites conforme a los cuales se genera un evento de desplazamiento. Consulta este ejemplo en <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">Seguimiento del desplazamiento</a>.</td>
+      <td data-th="Description">Controla las condiciones bajo las cuales se activa el evento <code>scroll</code> cuando se desplaza la página. Este objeto puede contener <code>verticalBoundaries</code> y <code>horizontalBoundaries</code>. Al menos una de las dos propiedades es obligatoria para que se active un evento <code>scroll</code>. Los valores para ambas propiedades deben ser arreglos de números que contengan los límites conforme a los cuales se genera un evento de desplazamiento. Consulta este ejemplo en <a href="/es/docs/guides/analytics/use_cases.html#seguimiento-del-desplazamiento">Seguimiento del desplazamiento</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (obligatorio cuando <code>on</code> se fija en <code>timer</code>)</td>
@@ -262,7 +262,7 @@ AMP admite las siguientes configuraciones de disparadores:
 
 **Importante:** Los disparadores de una configuración con menor precedencia se sobrescriben
 con disparadores que tienen los mismos nombres de una configuración con mayor precedencia
-(consulta [Orden de sustitución de variables](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(consulta [Orden de sustitución de variables](/es/docs/guides/analytics/deep_dive_analytics.html#orden-de-sustitución-de-variables)).
 
 ### Cómo se envían los datos: atributo transport
 

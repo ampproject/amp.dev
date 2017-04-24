@@ -73,7 +73,7 @@ au fournisseur de solutions d'analyse tiers Google Analytics.
 Pour envoyer les données à un point d'extrémité appartenant à l'éditeur,
 il vous suffit de ne pas inclure l'attribut `type` ;
 les données d'analyse sont envoyées aux points d'extrémité définis pour chaque
-[requête](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[requête](/fr/docs/guides/analytics/deep_dive_analytics.html#quelles-données-sont-envoyées-:-l'attribut-requests).
 
 Les configurations des fournisseurs de solutions d'analyse constituent
 un bon point de départ pour commencer avec le composant `amp-analytics`.
@@ -138,7 +138,7 @@ définie sur la valeur du compte indiqué dans l'URL distante (`"account": "UA-X
 **Important :** AMP ne valide pas les usages multiples d'une même variable.
 Les valeurs sont renseignées en fonction d'un ordre de préférence de substitution des variables,
 et les valeurs indiquées dans les URL distantes sont en première position
-(voir [Ordonnancement de la substitution des variables](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(voir [Ordonnancement de la substitution des variables](/fr/docs/guides/analytics/deep_dive_analytics.html#ordonnancement-de-la-substitution-des-variables)).
 
 ## Les attributs requests, triggers et transport
 
@@ -239,19 +239,19 @@ AMP prend en charge les configurations suivantes pour le déclencheur :
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obligatoire)</td>
-      <td data-th="Description">Nom de la requête à envoyer (tel que spécifié dans les requêtes <a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute"></a>).</td>
+      <td data-th="Description">Nom de la requête à envoyer (tel que spécifié dans les requêtes <a href="/fr/docs/guides/analytics/deep_dive_analytics.html#quelles-données-sont-envoyées-:-l'attribut-requests"></a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Objet contenant des paires clé/valeur utilisé pour remplacer la valeur <code>vars</code> dans la configuration de premier niveau ou pour spécifier une valeur <code>vars</code> unique à ce déclencheur (voir également <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Ordonnancement de la substitution des variables</a>).</td>
+      <td data-th="Description">Objet contenant des paires clé/valeur utilisé pour remplacer la valeur <code>vars</code> dans la configuration de premier niveau ou pour spécifier une valeur <code>vars</code> unique à ce déclencheur (voir également <a href="/fr/docs/guides/analytics/deep_dive_analytics.html#ordonnancement-de-la-substitution-des-variables">Ordonnancement de la substitution des variables</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obligatoire lorsque <code>on</code> est défini sur <code>click</code>)</td>
-      <td data-th="Description">Sélecteur CSS utilisé pour définir plus précisément les éléments à suivre. Utilisez la valeur <code>*</code> pour suivre tous les éléments. Cette configuration est utilisée conjointement avec le déclencheur <code>click</code>. Découvrez comment utiliser le sélecteur pour <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">suivre les clics sur une page</a> et les <a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">interactions sociales</a>.</td>
+      <td data-th="Description">Sélecteur CSS utilisé pour définir plus précisément les éléments à suivre. Utilisez la valeur <code>*</code> pour suivre tous les éléments. Cette configuration est utilisée conjointement avec le déclencheur <code>click</code>. Découvrez comment utiliser le sélecteur pour <a href="/fr/docs/guides/analytics/use_cases.html#suivi-des-clics-sur-une-page">suivre les clics sur une page</a> et les <a href="/fr/docs/guides/analytics/use_cases.html#suivi-des-interactions-sociales">interactions sociales</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (obligatoire lorsque <code>on</code> est défini sur <code>scroll</code>)</td>
-      <td data-th="Description">Définit les conditions en fonction desquelles l'événement <code>scroll</code> est déclenché lorsque l'on fait défiler la page. Cet objet peut contenir les propriétés <code>verticalBoundaries</code> et <code>horizontalBoundaries</code>. Au moins l'une des deux propriétés est obligatoire pour qu'un événement <code>scroll</code> soit déclenché. Les valeurs de chacune des propriétés doivent être des ensembles de nombres contenant les limites pour lesquelles un événement scroll est généré. Voir cet exemple sur le <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">suivi du défilement</a>.</td>
+      <td data-th="Description">Définit les conditions en fonction desquelles l'événement <code>scroll</code> est déclenché lorsque l'on fait défiler la page. Cet objet peut contenir les propriétés <code>verticalBoundaries</code> et <code>horizontalBoundaries</code>. Au moins l'une des deux propriétés est obligatoire pour qu'un événement <code>scroll</code> soit déclenché. Les valeurs de chacune des propriétés doivent être des ensembles de nombres contenant les limites pour lesquelles un événement scroll est généré. Voir cet exemple sur le <a href="/fr/docs/guides/analytics/use_cases.html#suivi-du-défilement">suivi du défilement</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (obligatoire lorsque <code>on</code> est défini sur <code>timer</code>)</td>
@@ -262,7 +262,7 @@ AMP prend en charge les configurations suivantes pour le déclencheur :
 
 **Important :** Les déclencheurs d'une configuration dont la priorité est inférieure sont annulés
 par les déclencheurs du même nom dont la priorité est supérieure
-(voir [Ordonnancement de la substitution des variables](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(voir [Ordonnancement de la substitution des variables](/fr/docs/guides/analytics/deep_dive_analytics.html#ordonnancement-de-la-substitution-des-variables)).
 
 ### Comment les données sont envoyées : l'attribut transport
 

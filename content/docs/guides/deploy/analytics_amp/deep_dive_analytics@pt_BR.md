@@ -73,7 +73,7 @@ ao provedor de análise de terceiros, Google Analytics.
 Para enviar dados para um endpoint de propriedade do editor,
 basta não incluir o atributo `type`;
 os dados de análise são enviados para endpoints definidos para cada
-[solicitação](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[solicitação](/pt_br/docs/guides/analytics/deep_dive_analytics.html#quais-dados-são-enviados:-atributo-requests).
 
 As configurações de fornecedores de análises são uma forma rápida
 de dar os primeiros passos com o `amp-analytics`.
@@ -138,7 +138,7 @@ para o valor de conta no URL remoto (`"account": "UA-XXXXX-Y"`):
 **Importante:** o AMP não realiza a validação em relação a diversos usos da mesma variável.
 Os valores são preenchidos seguindo uma ordem de preferência de substituição de variável
 e os valores nos URLs remotos estão no topo dessa ordem
-(consulte [Ordem de substituição de variáveis](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(consulte [Ordem de substituição de variáveis](/pt_br/docs/guides/analytics/deep_dive_analytics.html#ordem-de-substituição-de-variáveis)).
 
 ## Solicitações, acionamento e transportes
 
@@ -239,19 +239,19 @@ O AMP oferece suporte às seguintes configurações de acionamento:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obrigatório)</td>
-      <td data-th="Description">Nome da solicitação a enviar (segundo especificado nas <a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">solicitações</a>).</td>
+      <td data-th="Description">Nome da solicitação a enviar (segundo especificado nas <a href="/pt_br/docs/guides/analytics/deep_dive_analytics.html#quais-dados-são-enviados:-atributo-requests">solicitações</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Um objeto que contém pares de valor-chave usados para modificar<code>vars</code> definidas na configuração de nível superior ou para especificar <code>vars</code> exclusivas para esse acionamento (consulte também <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">Ordem da substituição de variáveis</a>).</td>
+      <td data-th="Description">Um objeto que contém pares de valor-chave usados para modificar<code>vars</code> definidas na configuração de nível superior ou para especificar <code>vars</code> exclusivas para esse acionamento (consulte também <a href="/pt_br/docs/guides/analytics/deep_dive_analytics.html#ordem-de-substituição-de-variáveis">Ordem da substituição de variáveis</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obrigatório quando <code>on</code> for definido como <code>click</code>)</td>
-      <td data-th="Description">Um seletor CSS usado para refinar quais elementos devem ser rastreados. Use o valor <code>*</code> para rastrear todos os elementos. Essa configuração é usada em conjunto com o acionamento <code>click</code>. Saiba como usar o seletor para <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">rastrear cliques de página</a> e <a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">interações sociais</a>.</td>
+      <td data-th="Description">Um seletor CSS usado para refinar quais elementos devem ser rastreados. Use o valor <code>*</code> para rastrear todos os elementos. Essa configuração é usada em conjunto com o acionamento <code>click</code>. Saiba como usar o seletor para <a href="/pt_br/docs/guides/analytics/use_cases.html#rastrear-cliques-de-páginas">rastrear cliques de página</a> e <a href="/pt_br/docs/guides/analytics/use_cases.html#rastrear-interações-sociais">interações sociais</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (obrigatório quando <code>on</code> for definido como <code>scroll</code>)</td>
-      <td data-th="Description">Controla sob que condições o evento <code>scroll</code> é acionado quando a página é rolada. Esse objeto pode conter<code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Pelo menos uma das duas propriedades é obrigatória para que um evento <code>scroll</code> seja acionado. Os valores para ambas as propriedades devem ser matrizes de números que contenham os limites nos quais um evento de rolagem é gerado. Consulte exemplos em <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">rastrear rolagem</a>.</td>
+      <td data-th="Description">Controla sob que condições o evento <code>scroll</code> é acionado quando a página é rolada. Esse objeto pode conter<code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Pelo menos uma das duas propriedades é obrigatória para que um evento <code>scroll</code> seja acionado. Os valores para ambas as propriedades devem ser matrizes de números que contenham os limites nos quais um evento de rolagem é gerado. Consulte exemplos em <a href="/pt_br/docs/guides/analytics/use_cases.html#rastrear-rolagem">rastrear rolagem</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (obrigatório quando <code>on</code> for definido como <code>timer</code>)</td>
@@ -262,7 +262,7 @@ O AMP oferece suporte às seguintes configurações de acionamento:
 
 **Importante:** acionamentos de uma configuração com menor precedência são sobrepostos
 por acionamentos com os mesmos nomes de uma configuração com maior precedência.
-(consulte [Ordem de substituição de variáveis](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(consulte [Ordem de substituição de variáveis](/pt_br/docs/guides/analytics/deep_dive_analytics.html#ordem-de-substituição-de-variáveis)).
 
 ### Como os dados são enviados: atributo transport
 
