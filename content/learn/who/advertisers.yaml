@@ -9,7 +9,7 @@ vertical_class: advertisers
 
 hero:
   title@: If it’s not instant, it’s not fast enough.
-  paragraph@: "Conversions fall by 12&#37; for every extra second a webpage takes to load.If you want people to engage with your brand and improve the performance of your campaigns, you have to speed things up. AMP offers a way for you to give users a faster experience everywhere -- on ads, landing pages or your entire website."
+  paragraph@: "Conversions fall by 12&#37; for every extra second a webpage takes to load. If you want people to engage with your brand and improve the performance of your campaigns, you have to speed things up. AMP offers a way for you to give users a faster experience everywhere -- on ads, landing pages or your entire website."
   hero_icon: advertisers/advertisers_icon_intro.svg
   hero_icon_width: 64
   hero_icon_height: 58
