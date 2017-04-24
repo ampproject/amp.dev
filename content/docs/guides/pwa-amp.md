@@ -1,6 +1,7 @@
 ---
 $title: Combine AMP with Progressive Web Apps
 $order: 9
+$category: Develop
 toc: true
 components:
     - youtube

@@ -1,6 +1,8 @@
 ---
 $title: Configure Analytics
 $order: 0
+$category: Deploy
+
 ---
 
 ## Decide before you start

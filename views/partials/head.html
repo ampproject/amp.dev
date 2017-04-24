@@ -38,6 +38,8 @@
       {% include "/assets/css/docs.min.css" %}
     {% elif doc.view == '/views/section_page.html' or doc.view == '/views/grid_page.html' %}
       {% include "/assets/css/section.min.css" %}
+    {% elif doc.view == '/views/doc_grid.html' %}
+      {% include "/assets/css/section_docs.min.css" %}
     {% elif doc.view == '/views/case-study.html' or doc.view == '/views/about-casestudies.html' %}
       {% include "/assets/css/case-study.min.css" %}
     {% elif doc.view == '/views/list_page.html' or doc.url.path.endswith('/latest/') %}
