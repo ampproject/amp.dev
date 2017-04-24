@@ -87,7 +87,7 @@ Now that we have our ready-to-use `Document` object, it's time to let AMP take o
 
 [sourcecode:javascript]
 // This can be any DOM element
-var container = document.getElementById('#container');
+var container = document.getElementById('container');
 
 // The AMP page you want to display
 var url = "https://my-domain/amp/an-article.html";
