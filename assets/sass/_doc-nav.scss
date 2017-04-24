@@ -5,7 +5,12 @@
   left: 0;
   position: fixed;
   top: $header-height;
-  width: 350px;
+
+  /* banded, elastic width */
+  min-width: 300px;
+  max-width: 400px;
+  width: 20vw;
+
   z-index: 1;
   background: rgba(255,255,255,0.7);
 
@@ -30,7 +35,8 @@
 
     > ul {
       border-right: 3px solid $color-grey-lt;
-      margin: 20px 0;
+      padding: 20px 0;
+      min-height: calc(100vh - 213px);
     }
 
     h5 {
@@ -189,104 +195,6 @@
     }
   }
 
-  .navigation {
-    background: white;
-    border-right: 3px solid $color-grey-lt;
-    display: flex;
-    width: 350px;
-
-    .previous, .next {
-      @extend %text-base;
-      @extend %text-body;
-      border-bottom: 3px solid $color-grey-lt;
-      border-top: 3px solid $color-grey-lt;
-      color: $color-black-95;
-      display: flex;
-      flex-direction: column;
-      flex: 1 1 auto;
-      justify-content: center;
-      min-height: 50px;
-      padding: 15px 20px;
-      position: relative;
-      transition: color 0.3s;
-      width: 0;
-
-      &:before {
-        background: $gradient-anglebuild;
-        bottom: 0;
-        content: '';
-        left: 0;
-        opacity: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transition: opacity 0.3s;
-        z-index: 0;
-      }
-
-      &::after {
-        content: '';
-        height: 20px;
-        position: absolute;
-        top: 50%;
-        transition: transform 0.3s;
-        transform: translateY(-50%);
-        width: 20px;
-      }
-
-      .navigation-label {
-        z-index: 2;
-      }
-
-      .subtitle {
-        color: $color-ampblue;
-        font-size: 12px;
-        margin: 0;
-      }
-
-      &:hover {
-        color: white;
-
-        &:before {
-          opacity: 1;
-        }
-
-        &::after {
-          background: url(/static/img/arrow.svg) center/cover no-repeat;
-        }
-      }
-    }
-
-    .previous {
-      border-right: 3px solid $color-grey-lt;
-      text-align: right;
-      padding-left: 50px;
-
-      &::after {
-        background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
-        left: 30px;
-        transform: translateY(-50%) rotate(180deg);
-      }
-
-      &:hover::after {
-        transform: translate(-15px, -50%) rotate(180deg);
-      }
-    }
-
-    .next {
-      padding-right: 50px;
-
-      &::after {
-        background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
-        right: 30px;
-      }
-
-      &:hover::after {
-        transform: translate(15px, -50%);
-      }
-    }
-  }
-
   @include max-screen($mobile-breakpoint) {
     border: none;
     border-bottom: 3px solid $color-grey-lt;
@@ -295,6 +203,10 @@
     padding: 0 22px;
     position: static;
     width: 100%;
+
+    /* banded, elastic width removed */
+    min-width: auto;
+    max-width: auto;
 
     .current-header {
       background: white;
@@ -313,6 +225,11 @@
     .current-sections {
       height: auto;
       padding: 5px 20px 30px;
+
+      > ul {
+        min-height: auto;
+        border-right: 0;
+      }
 
       h5 {
         padding-left: 15px;
