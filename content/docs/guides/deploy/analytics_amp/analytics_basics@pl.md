@@ -1,5 +1,5 @@
 ---
-$title: Analityka&#58; podstawy
+$title: "Analityka: podstawy"
 toc: true
 ---
 
@@ -28,7 +28,7 @@ w tym kliknięcia linków i przycisków.
 Można również zmierzyć, jak daleko użytkownik przewinął stronę,
 czy użytkownik korzystał z mediów społecznościowych i nie tylko
 (zobacz
-[Więcej o analityce AMP](/docs/guides/analytics/deep_dive_analytics.html)).
+[Więcej o analityce AMP](/pl/docs/guides/analytics/deep_dive_analytics.html)).
 
 W ramach integracji z platformą AMP
 dostawcy oferują wstępnie zdefiniowane konfiguracje `amp-analytics`,
@@ -65,7 +65,7 @@ dane o wyświetleniu strony są przesyłane na zdefiniowany adres URL wraz z los
 Zmienna `RANDOM` to jedna z wielu
 [zmiennych podstawiania na platformie AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 Więcej informacji o podstawianiu zmiennych można znaleźć
-[tutaj](/docs/guides/analytics/analytics_basics.html#variable-substitution).
+[tutaj](/pl/docs/guides/analytics/analytics_basics.html#podstawianie-zmiennych).
 
 Komponent [amp-pixel](/docs/reference/amp-pixel.html)
 jest wbudowany,
@@ -89,7 +89,7 @@ w sekcji `<head>` dokumentu AMP (zobacz też
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 [/sourcecode]
 
-Poniższy przykład jest podobny do [przykładu z elementem `amp-pixel`](/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration).
+Poniższy przykład jest podobny do [przykładu z elementem `amp-pixel`](/pl/docs/guides/analytics/analytics_basics.html#prosta-konfiguracja-z-elementem-amp-pixel).
 Podczas każdego wyświetlenia strony
 uruchamiane jest zdarzenie wyzwalacza, które
 wysyła dane o wyświetleniu strony na zdefiniowany adres URL wraz z losowym identyfikatorem:
@@ -118,7 +118,7 @@ Kiedy strona stanie się widoczna
 (zgodnie z użytym słowem kluczowym wyzwalacza `visible`),
 zdarzenie zostanie wyzwolone i żądanie `pageview` zostanie wysłane.
 Atrybut triggers określa moment wyzwolenia żądania pageview.
-Dowiedz się więcej o [żądaniach i wyzwalaczach](/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports).
+Dowiedz się więcej o [żądaniach i wyzwalaczach](/pl/docs/guides/analytics/deep_dive_analytics.html#żądania,-wyzwalacze-i-transporty).
 
 ## Podstawianie zmiennych
 
@@ -129,7 +129,7 @@ zezwalają na wszystkie standardowe podstawienia zmiennych URL (zobacz
 W poniższym przykładzie
 żądanie pageview jest wysyłane na adres URL
 wraz z bieżącym kanonicznym adresem URL dokumentu AMP, jego tytułem i
-[identyfikatorem klienta](/docs/guides/analytics/analytics_basics.html#user-identification):
+[identyfikatorem klienta](/pl/docs/guides/analytics/analytics_basics.html#identyfikacja-użytkowników):
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -190,7 +190,7 @@ więc ich wartości są podstawiane przez platformę.
 **Ważne:** Podstawianie zmiennych jest elastyczne;
 te same zmienne mogą być zdefiniowane w różnych miejscach,
 a środowisko wykonawcze AMP zanalizuje wartości w tej kolejności pierwszeństwa
-(zobacz [Kolejność podstawiania zmiennych](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(zobacz [Kolejność podstawiania zmiennych](/pl/docs/guides/analytics/deep_dive_analytics.html#kolejność-podstawiania-zmiennych)).
 
 ## Identyfikacja użytkowników
 

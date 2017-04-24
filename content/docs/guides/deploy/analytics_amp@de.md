@@ -1,4 +1,4 @@
----
+  ---
 $title: Analyse konfigurieren
 ---
 
@@ -28,7 +28,7 @@ Auch dies müssen Sie entscheiden, um die entsprechenden Konfigurationen vornehm
 
 Beachten Sie die folgenden wichtigen Punkte:
 
-* Möchten Sie nur Seitenaufrufe oder auch zusätzliche Nutzerinteraktionsmuster erfassen (siehe auch [amp-pixel oder amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
-* Welche Arten von Daten zu Ihren Nutzern, Ihren Inhalten, zum Gerät oder zum Browser möchten Sie erfassen (siehe auch [Variablensubstitution](/docs/guides/analytics/analytics_basics.html#variable-substition))?
-* Wie werden Sie Ihre Nutzer identifizieren (siehe auch [Nutzeridentifikation](/docs/guides/analytics/analytics_basics.html#user-identification))?
+* Möchten Sie nur Seitenaufrufe oder auch zusätzliche Nutzerinteraktionsmuster erfassen (siehe auch [amp-pixel oder amp-analytics](/de/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
+* Welche Arten von Daten zu Ihren Nutzern, Ihren Inhalten, zum Gerät oder zum Browser möchten Sie erfassen (siehe auch [Variablensubstitution](/de/docs/guides/analytics/analytics_basics.html#variablensubstitution))?
+* Wie werden Sie Ihre Nutzer identifizieren (siehe auch [Nutzeridentifikation](/de/docs/guides/analytics/analytics_basics.html#nutzeridentifikation))?
 

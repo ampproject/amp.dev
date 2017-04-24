@@ -20,7 +20,7 @@ limitations under the License.
 
 
 有効な AMP ドキュメントを作成するには、検証エラーが 1 つもない状態にする必要があります。
-このドキュメントの目的は、[AMP ページを検証](/docs/guides/validate.html)するときに見つかった検証エラーを正しく理解して修正できるようにすることです。
+このドキュメントの目的は、[AMP ページを検証](/ja/docs/guides/debug/validate.html)するときに見つかった検証エラーを正しく理解して修正できるようにすることです。
 検証エラーの概要については、[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
 
 [TOC]
@@ -569,7 +569,7 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 
 ## スタイルとレイアウトのエラー
 
-スタイルとレイアウトのエラーの説明に移る前に、AMP での[スタイル](/docs/guides/responsive/style_pages.html)と[レイアウト](/docs/guides/responsive/control_layout.html)の仕組みを理解しておくことをおすすめします。
+スタイルとレイアウトのエラーの説明に移る前に、AMP での[スタイル](/ja/docs/guides/author-develop/responsive/style_pages.html)と[レイアウト](/ja/docs/guides/author-develop/responsive/control_layout.html)の仕組みを理解しておくことをおすすめします。
 AMP ページは HTML ページであるため、スタイルも HTML ページと非常によく似ています。
 ただし、ページの読み込みを高速化するためのいくつかの制限があり、AMP 検証ツールではそれらの制限が守られているかどうかをチェックします。
 
@@ -662,7 +662,7 @@ AMP で使用できるアットルールはごくわずかです（[AMP 仕様](
 [AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)でタグの `supported_layout` の値を確認してください。
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
-レイアウトが機能する仕組みについては、[レイアウトを設定する方法](/docs/guides/responsive/control_layout.html)についての説明や [AMP HTML レイアウト システムの仕様](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)のページをご覧ください。
+レイアウトが機能する仕組みについては、[レイアウトを設定する方法](/ja/docs/guides/author-develop/responsive/control_layout.html)についての説明や [AMP HTML レイアウト システムの仕様](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)のページをご覧ください。
 
 **注:** レイアウトを指定せず、`width` 値と `height` 値も指定しない場合、レイアウトはデフォルト値の CONTAINER に設定されます。
 AMP タグで CONTAINER がサポートされていないと、検証ツールはエラーを返します。
@@ -709,7 +709,7 @@ AMP タグで CONTAINER がサポートされていないと、検証ツール�
 [AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)でタグの `supported_layout` の値を確認してください。
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
-レイアウトが機能する仕組みについては、[レイアウトを設定する方法](/docs/guides/responsive/control_layout.html)についての説明や [AMP HTML レイアウト システムの仕様](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)のページをご覧ください。
+レイアウトが機能する仕組みについては、[レイアウトを設定する方法](/ja/docs/guides/author-develop/responsive/control_layout.html)についての説明や [AMP HTML レイアウト システムの仕様](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)のページをご覧ください。
 
 ### 指定されたレイアウトで属性が許可されていない
 
@@ -749,7 +749,7 @@ AMP タグで CONTAINER がサポートされていないと、検証ツール�
 </table>
 
 このエラーは、指定されたレイアウトの属性値が無効である場合に発生します。
-このエラーの原因を把握するには、[各レイアウトの動作](/docs/guides/responsive/control_layout.html#size-and-position-elements)をよく理解する必要があります。
+このエラーの原因を把握するには、[各レイアウトの動作](/ja/docs/guides/author-develop/responsive/control_layout.html)をよく理解する必要があります。
 
 たとえば、レイアウトを `fixed-height` に設定し、`height` と `width` の両方に数値を指定したとします。
 `fixed-height` レイアウトで必要なのは `height` の値であり、`width` 属性については、何も指定しないか、または `auto` に設定する必要があります。
@@ -782,7 +782,7 @@ AMP タグで CONTAINER がサポートされていないと、検証ツール�
 
 AMP ページにテンプレートの構文を含めることはできません。ただし、テンプレートを含めるために特別に設計された AMP タグ（たとえば [amp-mustache](/docs/reference/extended/amp-mustache.html)）内にあるテンプレートの構文は例外です。
 
-ソースファイルから生成された出力にテンプレートが含まれなければ、ソースファイルにテンプレートを追加してもかまいません（[CSS プリプロセッサの使用](/docs/guides/responsive/style_pages.html#use-css-preprocessors)についての説明もご覧ください）。
+ソースファイルから生成された出力にテンプレートが含まれなければ、ソースファイルにテンプレートを追加してもかまいません（[CSS プリプロセッサの使用](/ja/docs/guides/author-develop/responsive/style_pages.html)についての説明もご覧ください）。
 
 ### テンプレートの構文が属性に含まれている
 

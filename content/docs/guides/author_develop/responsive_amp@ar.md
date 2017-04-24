@@ -17,7 +17,7 @@ toc: true
 يمكنك إنشاء صور تفاعلية
 عن طريق تحديد العرض والارتفاع،
 وتعيين التنسيق ليكون تفاعليًا،
-واستخدام [`srcset`](/ar/docs/guides/responsive/style_pages.html) لتوضيح
+واستخدام [`srcset`](/ar/docs/guides/author-develop/responsive/style_pages.html) لتوضيح
 مادة عرض الصور المُراد استخدامها بناءً على أحجام الشاشة المتنوعة:
 
 [sourcecode:html]
@@ -96,7 +96,7 @@ toc: true
 **مهم:**
 تحقق من توافق أنماطك في AMP؛
 فبعض الأنماط غير متوافقة لأسباب تتعلق بالأداء
-(راجع أيضًا [CSS المتوافقة](/ar/docs/guides/responsive/style_pages.html)).
+(راجع أيضًا [CSS المتوافقة](/ar/docs/guides/author-develop/responsive/style_pages.html)).
 
 ## عناصر الحجم والموضع
 
@@ -112,7 +112,7 @@ toc: true
 ويؤدي هذا إلى تغيير حجم العنصر ليلائم عرض عنصر الحاوية الخاص به
 كما يغيّر حجم ارتفاعه تلقائيًا ليلائم نسبة العرض إلى الارتفاع المحددة من خلال سمتي العرض والارتفاع.
 
-تعرّف على المزيد حول [التنسيقات المتوافقة في AMP](/ar/docs/guides/responsive/control_layout.html).
+تعرّف على المزيد حول [التنسيقات المتوافقة في AMP](/ar/docs/guides/author-develop/responsive/control_layout.html).
 
 ## التحقق من صحة الأنماط والتنسيق
 
@@ -122,11 +122,11 @@ toc: true
 تعمل أداة التحقق من الصحة على التأكد من عدم تجاوز لغة CSS للصفحة حد 50000 بايت،
 وتتحقق من الأنماط الغير مسموح بها، كما تتأكد من توافق
 تنسيق الصفحة وصحته.
-راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات](/docs/reference/validation_errors.html#style-and-layout-errors).
+راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات](/ar/docs/reference/validation_errors.html#أخطاء-الأنماط-والتنسيقات).
 
 نموذج لخطأ في وحدة التحكم لصفحة بها لغة CSS تتجاوز حد 50000 بايت:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-تعرّف على المزيد من المعلومات حول كيفية [التحقق من صحة صفحات AMP](/ar/docs/guides/validate.html)،
+تعرّف على المزيد من المعلومات حول كيفية [التحقق من صحة صفحات AMP](/ar/docs/guides/debug/validate.html)،
 بما في ذلك كيفية تتبع أخطاء الأنماط وإصلاحها.

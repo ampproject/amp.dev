@@ -43,7 +43,7 @@ $title: กำหนดค่า Analytics
 ประเด็นสำคัญที่ต้องพิจารณา
 
 * คุณจะติดตามเฉพาะการเข้าชมหน้าเว็บเพียงอย่างเดียวหรือการมีส่วนร่วมของผู้ใช้ในรูปแบบอื่นๆ เพิ่มเติม
-(ดูเพิ่มเติมเกี่ยวกับ [amp-pixel หรือ amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))
+(ดูเพิ่มเติมเกี่ยวกับ [amp-pixel หรือ amp-analytics](/th/docs/guides/analytics/analytics_basics.html#ควรใช้-amp-pixel-หรือ-amp-analytics))
 * ข้อมูลประเภทใดที่คุณจะรวบรวมเกี่ยวกับผู้ใช้ของคุณ เนื้อหาของคุณ
-อุปกรณ์หรือเบราว์เซอร์ (ดูเพิ่มเติมเกี่ยวกับ[การแทนค่าตัวแปร](/docs/guides/analytics/analytics_basics.html#variable-substitution))
-* คุณจะระบุผู้ใช้ของคุณอย่างไร (ดูเพิ่มเติมเกี่ยวกับ[การระบุผู้ใช้](/docs/guides/analytics/analytics_basics.html#user-identification))
+อุปกรณ์หรือเบราว์เซอร์ (ดูเพิ่มเติมเกี่ยวกับ[การแทนค่าตัวแปร](/th/docs/guides/analytics/analytics_basics.html#การแทนค่าตัวแปร))
+* คุณจะระบุผู้ใช้ของคุณอย่างไร (ดูเพิ่มเติมเกี่ยวกับ[การระบุผู้ใช้](/th/docs/guides/analytics/analytics_basics.html#การระบุผู้ใช้))

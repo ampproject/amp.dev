@@ -73,7 +73,7 @@ toc: true
 لإرسال البيانات إلى نقطة نهائية مملوكة لناشر،
 ببساطة لا تضمّن السمة `type`.
 سيتم إرسال بيانات التحليلات إلى النقاط النهائية المحددة لكل
-[طلب](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[طلب](/ar/docs/guides/analytics/deep_dive_analytics.html#ماهية-البيانات-التي-يتم-إرسالها:-السمة-requests).
 
 تهيئات مورّد Analytics هي وسيلة سريعة
 لبدء العمل باستخدام <span dir="ltr" class="nowrap">`amp-analytics`</span>.
@@ -138,7 +138,7 @@ toc: true
 **مهم:** لا يتم التحقق من AMP مقابل الاستخدامات العديدة للمتغير نفسه.
 يتم ملء القيم عبر اتباع ترتيب استبدال متغير حسب التفضيل،
 وتكون القيم في عناوين URL البعيدة في قمة ذلك الترتيب
-(انظر [ترتيب استبدال المتغير](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(انظر [ترتيب استبدال المتغير](/ar/docs/guides/analytics/deep_dive_analytics.html#ترتيب-استبدال-المتغير)).
 
 ## السمات Requests وtriggers وtransports
 
@@ -239,19 +239,19 @@ toc: true
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (مطلوب)</td>
-      <td data-th="Description">اسم الطلب الذي سيتم إرساله (على النحو المحدد في <a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">الطلبات</a>).</td>
+      <td data-th="Description">اسم الطلب الذي سيتم إرساله (على النحو المحدد في <a href="/ar/docs/guides/analytics/deep_dive_analytics.html#ماهية-البيانات-التي-يتم-إرسالها:-السمة-requests">الطلبات</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">كائن يحتوي على أزواج قيمة مفتاح للاستخدام في تجاوز <code>vars</code> المحدد في تهيئة المستوى الأعلى، أو لتحديد <code>vars</code> فريد لهذا المشغل (انظر أيضًا <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">ترتيب استبدال المتغير</a>).</td>
+      <td data-th="Description">كائن يحتوي على أزواج قيمة مفتاح للاستخدام في تجاوز <code>vars</code> المحدد في تهيئة المستوى الأعلى، أو لتحديد <code>vars</code> فريد لهذا المشغل (انظر أيضًا <a href="/ar/docs/guides/analytics/deep_dive_analytics.html#ترتيب-استبدال-المتغير">ترتيب استبدال المتغير</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (مطلوب عند تعيين <code>on</code> على <code>click</code>)</td>
-      <td data-th="Description">محدّد CSS الذي يُستخدم لتحسين العناصر التي ينبغي تتبعها. استخدم القيمة <code>*</code> لتتبع كل العناصر. يتم استخدام هذه التهيئة بالتزامن مع المشغل <code>click</code>. تعرّف على كيفية استخدام المحدّد <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">لتتبع النقرات على الصفحة</a> وكذلك <a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">التفاعلات الاجتماعية</a>.</td>
+      <td data-th="Description">محدّد CSS الذي يُستخدم لتحسين العناصر التي ينبغي تتبعها. استخدم القيمة <code>*</code> لتتبع كل العناصر. يتم استخدام هذه التهيئة بالتزامن مع المشغل <code>click</code>. تعرّف على كيفية استخدام المحدّد <a href="/ar/docs/guides/analytics/use_cases.html#تتبع-النقرات-على-الصفحة">لتتبع النقرات على الصفحة</a> وكذلك <a href="/ar/docs/guides/analytics/use_cases.html#تتبع-التفاعلات-الاجتماعية">التفاعلات الاجتماعية</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (مطلوب عند تعيين <code>on</code> على <code>scroll</code>)</td>
-      <td data-th="Description">عناصر التحكم التي يتم تنشيط الحدث <code>scroll</code> بموجب شروطها عند التمرير عبر الصفحة. يمكن أن يحتوي هذا الكائن على <code>verticalBoundaries</code> و<code>horizontalBoundaries</code>. واحدة من الخصيصتين على الأقل مطلوبة لتنشيط حدث <code>scroll</code>. يجب أن تكون قيم كلّ من الخصيصتين صفائف من الأرقام التي تحتوي على حدود يتم إنشاء حدث تمرير فيها. انظر هذا النموذج في <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">تتبع التمرير</a>.</td>
+      <td data-th="Description">عناصر التحكم التي يتم تنشيط الحدث <code>scroll</code> بموجب شروطها عند التمرير عبر الصفحة. يمكن أن يحتوي هذا الكائن على <code>verticalBoundaries</code> و<code>horizontalBoundaries</code>. واحدة من الخصيصتين على الأقل مطلوبة لتنشيط حدث <code>scroll</code>. يجب أن تكون قيم كلّ من الخصيصتين صفائف من الأرقام التي تحتوي على حدود يتم إنشاء حدث تمرير فيها. انظر هذا النموذج في <a href="/ar/docs/guides/analytics/use_cases.html#تتبع-التمرير">تتبع التمرير</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (مطلوب عند تعيين <code>on</code> على <code>timer</code>)</td>
@@ -262,7 +262,7 @@ toc: true
 
 **مهم:** يتم تجاوز المشغلات المأخوذة من تهيئة ذات أسبقية أقل
 عبر المشغلات التي تحمل الأسماء نفسها والمأخوذة من تهيئة ذات أسبقية أعلى
-(انظر [ترتيب استبدال المتغير](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+(انظر [ترتيب استبدال المتغير](/ar/docs/guides/analytics/deep_dive_analytics.html#ترتيب-استبدال-المتغير)).
 
 ### كيفية إرسال البيانات: السمة transport
 

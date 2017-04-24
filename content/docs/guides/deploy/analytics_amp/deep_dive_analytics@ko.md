@@ -73,7 +73,7 @@ AMP는 두 가지 공통된 패턴의 데이터 수집을 지원하도록 설계
 게시자가 소유한 엔드포인트로 데이터를 보내려면,
 `type` 특성을 포함시키지 않으면 됩니다.
 각
-[요청](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)에 대해 정의된 엔드포인트로 분석 데이터가 보내집니다.
+[요청](/ko/docs/guides/analytics/deep_dive_analytics.html#보낼-데이터:-requests-특성)에 대해 정의된 엔드포인트로 분석 데이터가 보내집니다.
 
 분석 공급업체 구성은 `amp-analytics`로 시작하기 위한
 빠른 방법입니다.
@@ -138,7 +138,7 @@ JSON 객체에 포함된 구성은 분석 계정을 위한 단순한 변수 값�
 **중요:** AMP는 동일 변수가 여러 번 사용되는 것을 검사하지 않습니다.
 변수 대체
 우선순위에 따라 값이 채워지며, 원격 URL의
-값은 이 순서에서 맨 위입니다([변수 대체 순서](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering) 참조).
+값은 이 순서에서 맨 위입니다([변수 대체 순서](/ko/docs/guides/analytics/deep_dive_analytics.html#변수-대체-순서) 참조).
 
 ## requests, triggers 및 transport
 
@@ -239,19 +239,19 @@ AMP는 다음과 같은 트리거 구성을 지원합니다.
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (필수)</td>
-      <td data-th="Description">보낼 요청의 이름(<a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">요청에 지정</a>).</td>
+      <td data-th="Description">보낼 요청의 이름(<a href="/ko/docs/guides/analytics/deep_dive_analytics.html#보낼-데이터:-requests-특성">요청에 지정</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">최상위 config에 정의된 <code>vars</code>를 재정의하는 데 사용하거나 또는 이 트리거에 고유한 <code>vars</code>를 지정하는 데 사용할 키-값 쌍이 포함된 객체(참고 항목 <a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">변수 대체 순서</a>).</td>
+      <td data-th="Description">최상위 config에 정의된 <code>vars</code>를 재정의하는 데 사용하거나 또는 이 트리거에 고유한 <code>vars</code>를 지정하는 데 사용할 키-값 쌍이 포함된 객체(참고 항목 <a href="/ko/docs/guides/analytics/deep_dive_analytics.html#변수-대체-순서">변수 대체 순서</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (<code>on</code>이 <code>click</code>으로 설정된 경우 필요)</td>
-      <td data-th="Description">추적할 요소를 세분화하는 데 사용되는 CSS 선택기. 값 <code>*</code>를 사용하여 모든 요소를 추적합니다. 이 구성은 <code>click</code> 트리거와 함께 사용됩니다. 선택기를 사용하여 <a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">페이지 클릭</a> 및 <a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">소셜 상호작용</a>을 추적하는 방법에 대해 알아보세요.</td>
+      <td data-th="Description">추적할 요소를 세분화하는 데 사용되는 CSS 선택기. 값 <code>*</code>를 사용하여 모든 요소를 추적합니다. 이 구성은 <code>click</code> 트리거와 함께 사용됩니다. 선택기를 사용하여 <a href="/ko/docs/guides/analytics/use_cases.html#페이지-클릭-추적">페이지 클릭</a> 및 <a href="/ko/docs/guides/analytics/use_cases.html#소셜-상호작용-추적">소셜 상호작용</a>을 추적하는 방법에 대해 알아보세요.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (<code>on</code>이 <code>scroll</code>로 설정된 경우 필요)</td>
-      <td data-th="Description">페이지가 스크롤될 때 <code>scroll</code> 이벤트가 발생하는 조건을 제어합니다. 이 객체에는 <code>verticalBoundaries</code> 및 <code>horizontalBoundaries</code>가 포함될 수 있습니다. <code>scroll</code> 이벤트가 발생하기 위해서는 최소한 두 속성 중 하나가 필요합니다. 두 속성의 값들은 스크롤 이벤트가 생성되는 경계를 포함하는 숫자 배열이어야 합니다. <a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">스크롤 추적</a>에서 이 예시를 참조하세요.</td>
+      <td data-th="Description">페이지가 스크롤될 때 <code>scroll</code> 이벤트가 발생하는 조건을 제어합니다. 이 객체에는 <code>verticalBoundaries</code> 및 <code>horizontalBoundaries</code>가 포함될 수 있습니다. <code>scroll</code> 이벤트가 발생하기 위해서는 최소한 두 속성 중 하나가 필요합니다. 두 속성의 값들은 스크롤 이벤트가 생성되는 경계를 포함하는 숫자 배열이어야 합니다. <a href="/ko/docs/guides/analytics/use_cases.html#소셜-상호작용-추적">스크롤 추적</a>에서 이 예시를 참조하세요.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (<code>on</code>이 <code>timer</code>로 설정된 경우 필요)</td>
@@ -262,7 +262,7 @@ AMP는 다음과 같은 트리거 구성을 지원합니다.
 
 **중요:** 순위가 더 낮은 구성의 트리거는 순위가 더 높은
 구성의 동일 이름을 가진 트리거에 의해 재정의됩니다
-([변수 대체 순서](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering) 참조).
+([변수 대체 순서](/ko/docs/guides/analytics/deep_dive_analytics.html#변수-대체-순서) 참조).
 
 ### 데이터 보내는 방식: transport 특성
 

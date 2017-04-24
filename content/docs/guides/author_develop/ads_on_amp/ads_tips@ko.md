@@ -23,7 +23,7 @@ $order : 1
 - 로드 시 콘텐츠 리플로우를 발생하는 다른 광고 포맷이나 **삽입 광고를 피하십시오.**
 - 매개변수를 설정하여 **조회가능성을 최적화합니다** :<br /> 
 <em>data-loading-strategy = prefer-viewability-over-views</em>
--  [지원되는 플레이어](https://github.com/ampproject/amphtml/blob/master/extensions/README.md#audiovideo)나 [`amp-iframe`](https://ampbyexample.com/components/amp-iframe/)를 통해 **비디오 콘텐츠에 광고를 게재하면** 모든 타입의 콘텐츠에서 수익을 얻을 수 있습니다.
+-  [지원되는 플레이어](https://www.ampproject.org/docs/reference/components#media)나 [`amp-iframe`](https://ampbyexample.com/components/amp-iframe/)를 통해 **비디오 콘텐츠에 광고를 게재하면** 모든 타입의 콘텐츠에서 수익을 얻을 수 있습니다.
 - **네이티브 광고를 구현하여** 여러 크기의 요청을 사용해 디스플레이 광고와 경쟁하고, 프리미엄 사용자 경험을 제공하여 수요 압력을 추가하십시오.
 
 ### 혁신: <br /> 가장 매력적인 광고 제품을 제공하십시오

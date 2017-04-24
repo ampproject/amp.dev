@@ -10,7 +10,7 @@ Hay varias formas disponibles para validar un documento de AMP. Todas ellas
 producen el mismo resultado, por lo que se puede utilizar la que más se ajuste
 a tu estilo de desarrollo.
 
-Además de la validación de AMP, también es posible que desees confirmar que tu documento de AMP es [visible](/docs/guides/discovery.html) para las plataformas de terceros.
+Además de la validación de AMP, también es posible que desees confirmar que tu documento de AMP es [visible](/es/docs/guides/deploy/discovery.html) para las plataformas de terceros.
 
 ### Developer Console para el navegador
 
@@ -84,14 +84,14 @@ Para instalar la [herramienta de línea de comandos de validación de AMP HTML](
 
 A continuación, vamos a validar una página AMP HTML real.
 
-<div><pre><code>
+[sourcecode:console]
 $ amphtml-validator https://www.ampproject.org/
 https://www.ampproject.org/: PASS
 [/sourcecode]
 
 Como era de esperar, esta página AMP HTML es válida. Vamos a intentarlo con una página que no lo sea: [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). Para ejecutar el comando `amphtml-validator`, puedes proporcionar la dirección URL de la página o el nombre de un archivo local. Descarga y guarda [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) en un archivo y, a continuación, ejecútalo:
 
-<div><pre><code>
+[sourcecode:console]
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
@@ -105,14 +105,14 @@ a menudo seguidos por un enlace a la referencia AMP HTML. Algunos editores, incl
 
 Plantéate utilizar [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html) como punto de partida para crear tu propia página de AMP:
 
-<div><pre><code>
+[sourcecode:console]
 $ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
 [/sourcecode]
 
 La herramienta de línea de comandos ofrece funciones adicionales que incluyen la desconexión de la impresión en color, la salida de impresión JSON o la ejecución de una versión específica del validador de JavaScript (de forma predeterminada se ejecuta la última secuencia de comandos publicada).
 
-<div><pre><code>
+[sourcecode:console]
 $ amphtml-validator --help
 
   Usage: index [options] <fileOrUrlOrMinus...>
@@ -176,5 +176,5 @@ Cada herramienta ofrece varios fragmentos de información:
 Al leer la especificación atentamente, nos damos cuenta de que estamos utilizando una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
 
 Para entender mejor la lista completa de los posibles errores,
-consulta la [Guía de errores de validación de AMP](https://www.ampproject.org/docs/reference/validation_errors.html).
+consulta la [Guía de errores de validación de AMP](/es/docs/reference/validation_errors.html).
 Si sigues sin encontrar la solución después de evaluar los errores atentamente, [pregúntanos](http://stackoverflow.com/questions/tagged/amp-html) e intentaremos ayudarte.

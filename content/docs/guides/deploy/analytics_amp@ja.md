@@ -42,8 +42,8 @@ AMP アナリティクスは 1 回の計測で、複数の URL に結果を送�
 
 主要データについて、以下の内容を検討しましょう。
 
-* ページビューのみトラックするか、その他のユーザー エンゲージメント パターンもトラックするか（[amp-pixel か amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics) についてもご覧ください）。
+* ページビューのみトラックするか、その他のユーザー エンゲージメント パターンもトラックするか（[amp-pixel か amp-analytics](/ja/docs/guides/analytics/analytics_basics.html#amp-pixel-または-amp-analytics-を使う) についてもご覧ください）。
 
-* ユーザー、コンテンツ、端末やブラウザについて、何のデータを収集するか（[変数置換](/docs/guides/analytics/analytics_basics.html#variable-substitution)についてもご覧ください）。
+* ユーザー、コンテンツ、端末やブラウザについて、何のデータを収集するか（[変数置換](/ja/docs/guides/analytics/analytics_basics.html#変数置換)についてもご覧ください）。
 
-* ユーザの特定方法はどうするか（[ユーザーの識別](/docs/guides/analytics/analytics_basics.html#user-identification)についてもご覧ください）。
+* ユーザの特定方法はどうするか（[ユーザーの識別](/ja/docs/guides/analytics/analytics_basics.html#ユーザー認証)についてもご覧ください）。

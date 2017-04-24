@@ -2,10 +2,10 @@
 $title: Stili CSS supportati
 ---
 
-Come per tutte le pagine web, per le pagine AMP vengono utilizzati gli stili CSS, ma non puoi fare riferimento a fogli di stile esterni (ad eccezione dei [tipi di carattere personalizzati](#the-custom-fonts-exception)).
+Come per tutte le pagine web, per le pagine AMP vengono utilizzati gli stili CSS, ma non puoi fare riferimento a fogli di stile esterni (ad eccezione dei [tipi di carattere personalizzati](#l'eccezione-dei-tipi-di-carattere-personalizzati)).
 Inoltre, alcuni stili non sono consentiti a causa delle implicazioni legate al rendimento; gli attributi di stili in linea non sono consentiti.
 
-Tutti gli stili devono essere inseriti nella sezione head del documento (leggi la sezione [Aggiungere stili a una pagina](/docs/guides/validate.html#add-styles-to-a-page)).
+Tutti gli stili devono essere inseriti nella sezione head del documento (leggi la sezione [Aggiungere stili a una pagina](/it/docs/guides/debug/validate.html)).
 Puoi però utilizzare i preprocessori e i modelli CSS per creare pagine statiche e poter così gestire meglio i tuoi contenuti.
 
 **Nota.** Nei componenti AMP ci sono stili predefiniti integrati che facilitano la creazione di pagine reattive.
@@ -75,7 +75,7 @@ Gli stili che seguono non sono consentiti nelle pagine AMP:
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel="stylesheet"&gt;</code></td>
-      <td data-th="Description">Non consentito, se non per i <a href="#the-custom-fonts-exception">tipi di carattere personalizzati</a>.</td>
+      <td data-th="Description">Non consentito, se non per i <a href="#l'eccezione-dei-tipi-di-carattere-personalizzati">tipi di carattere personalizzati</a>.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code> (selettore universale)</td>

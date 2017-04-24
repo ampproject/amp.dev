@@ -11,7 +11,7 @@ AMP でレスポンシブな要素を作成するのはとても簡単です。�
 
 外部から読み込まれるすべてのリソース（画像など）には、リソースが読み込まれるときにページでジャンプやリフローが起きないように、リソースのサイズと位置を指定しておく必要があります。
 
-レスポンシブな画像を作成するには、幅と高さを指定し、レイアウトを「responsive」に設定します。また、[`srcset`](/docs/guides/responsive/style_pages.html) を使って、さまざまなスクリーン サイズに基づいて使用される画像アセットを指定します。
+レスポンシブな画像を作成するには、幅と高さを指定し、レイアウトを「responsive」に設定します。また、[`srcset`](/ja/docs/guides/author-develop/responsive/style_pages.html) を使って、さまざまなスクリーン サイズに基づいて使用される画像アセットを指定します。
 
 [sourcecode:html]
 <amp-img
@@ -78,7 +78,7 @@ AMP でレスポンシブな要素を作成するのはとても簡単です。�
 </body>
 [/sourcecode]
 
-**重要:** スタイルが AMP でサポートされていることを確認してください。パフォーマンス上の理由からサポートされていないスタイルもあります（[サポートされる CSS](/docs/guides/responsive/style_pages.html) もご覧ください）。
+**重要:** スタイルが AMP でサポートされていることを確認してください。パフォーマンス上の理由からサポートされていないスタイルもあります（[サポートされる CSS](/ja/docs/guides/author-develop/responsive/style_pages.html) もご覧ください）。
 
 ## サイズと位置の要素
 
@@ -88,16 +88,16 @@ AMP でレスポンシブな要素を作成するのはとても簡単です。�
 
 レイアウトを「responsive」に設定します。これにより、要素のサイズはコンテナ要素の幅に適合され、要素の高さは、幅と高さの属性によって決まるアスペクト比に自動的に調整されます。
 
-詳しくは、[AMP でサポートされるレイアウト](/docs/guides/responsive/control_layout.html)をご覧ください。
+詳しくは、[AMP でサポートされるレイアウト](/ja/docs/guides/author-develop/responsive/control_layout.html)をご覧ください。
 
 ## スタイルとレイアウトを検証する
 
 AMP 検証ツールを使用して、ページの CSS とレイアウトの値をテストします。
 
-検証ツールでは、ページの CSS が 50,000 バイトの制限を超えていないことを確認し、許可されていないスタイルがないかチェックし、さらに、ページのレイアウトがサポートされており、形式が正しいかどうか確認します。[スタイルエラーとレイアウト エラー](/docs/reference/validation_errors.html#style-and-layout-errors)の詳細なリストもご覧ください。
+検証ツールでは、ページの CSS が 50,000 バイトの制限を超えていないことを確認し、許可されていないスタイルがないかチェックし、さらに、ページのレイアウトがサポートされており、形式が正しいかどうか確認します。[スタイルエラーとレイアウト エラー](/ja/docs/reference/validation_errors.html#スタイルとレイアウトのエラー)の詳細なリストもご覧ください。
 
 50,000 バイトの制限を超える CSS のページでは、コンソールに次のようなエラーが表示されます。
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-詳しくは、[AMP ページの検証方法についての記事](/docs/guides/validate.html)（スタイルエラーを特定して修正する方法など）をご覧ください。
+詳しくは、[AMP ページの検証方法についての記事](/ja/docs/guides/debug/validate.html)（スタイルエラーを特定して修正する方法など）をご覧ください。

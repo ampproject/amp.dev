@@ -10,9 +10,9 @@ AMP HTML 페이지에서 스타일링과 레이아웃은 일반 HTML 페이지�
 마찬가지로 CSS 사용이 가능합니다.
 
 그러나, AMP에서는 요소 표시를 더 잘 컨트롤 하기 위해서,
-[플레이스홀더 & 폴백](/docs/guides/responsive/placeholders.html),
-[srcset을 통한 고품질의 미려한 이미지 처리](/docs/guides/responsive/art_direction.html),
-[레이아웃 속성](/docs/guides/responsive/control_layout.html) 같은 기능을 주고,
+[플레이스홀더 & 폴백](/ko/docs/guides/author-develop/responsive/placeholders.html),
+[srcset을 통한 고품질의 미려한 이미지 처리](/ko/docs/guides/author-develop/responsive/art_direction.html),
+[레이아웃 속성](/ko/docs/guides/author-develop/responsive/control_layout.html) 같은 기능을 주고,
 반응형 디자인 능력을 확장하며,
 성능 및 사용성 이유로 인해 몇가지 CSS 사용에 제한을 두었습니다.
 
@@ -73,7 +73,7 @@ AMP에서 요소를 반응형으로 만드는 건 정말 쉽습니다.
 {% call callout('중요', type='caution') %}
 스타일이 AMP 내에서 허용하는 지 확인하길 바랍니다.
 몇가지 스타일은 성능 이슈로 인해 허용하지 않습니다.
-([Supported CSS](/docs/guides/responsive/style_pages.html)를 보시길 바랍니다).
+([Supported CSS](/ko/docs/guides/author-develop/responsive/style_pages.html)를 보시길 바랍니다).
 {% endcall %}
 
 ## 반응형 레이아웃 요소
@@ -86,21 +86,21 @@ AMP에서 요소를 반응형으로 만드는 건 정말 쉽습니다.
 해당 컨테이너 요소의 width와 height에 맞추어 자동으로 리사이즈합니다.
 
 {% call callout('함께 읽기', type='success') %}
-Learn more about [supported layouts in AMP](/docs/guides/responsive/control_layout.html).
+Learn more about [supported layouts in AMP](/ko/docs/guides/author-develop/responsive/control_layout.html).
 {% endcall %}
 
 ## 플레이스홀더와 폴백 제공하기
 플레이스홀더와 폴백의 기본 지원은 당신의 유저가 비어있는 스크린을 두번 다시 볼 필요가 없음을 의미합니다.
 
 {% call callout('함께 읽기', type='success') %}
-Learn more about [placeholders and fallbacks](/docs/guides/responsive/placeholders.html).
+Learn more about [placeholders and fallbacks](/ko/docs/guides/author-develop/responsive/placeholders.html).
 {% endcall %}
 
 ## 미적 이미지 처리
 AMP는 시나리오에 맞춘 이미지의 로드 세부 제어를 위해 `srcset`과 `sizes` 속성을 제공합니다.
 
 {% call callout('함께 읽기', type='success') %}
-Learn more about [art direction with srcset and sizes](/docs/guides/responsive/art_direction.html).
+Learn more about [art direction with srcset and sizes](/ko/docs/guides/author-develop/responsive/art_direction.html).
 {% endcall %}
 
 ## 스타일과 레이아웃 유효성 검사기
@@ -112,12 +112,12 @@ AMP 유효성 검사기를 이용하여
 허용하지 않는 스타일을 사용하였는 지, 페이지의 레이아웃 지원을 보장하는 지,
 올바른 포맷인 지를 확인합니다.
 
-[Style and layout errors](/docs/reference/validation_errors.html#style-and-layout-errors)의 완전한 리스트를 확인할 수 있습니다.
+[Style and layout errors](/ko/docs/reference/validation_errors.html#style-and-layout-errors)의 완전한 리스트를 확인할 수 있습니다.
 
 페이지 내 CSS가 50,000 바이트 제한을 넘은 경우의 콘솔 에러 예제입니다:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
 {% call callout('함께 읽기', type='success') %}
-Learn more about how to [validate and fix your AMP pages](/docs/guides/validate.html).
+Learn more about how to [validate and fix your AMP pages](/ko/docs/guides/debug/validate.html).
 {% endcall %}

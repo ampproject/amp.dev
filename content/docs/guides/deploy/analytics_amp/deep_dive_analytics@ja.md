@@ -73,7 +73,7 @@ AMP でサポートしている一般的なデータ収集方法は、以下の 
 サイトオーナーが所有するエンドポイントにデータを送信する場合は、
 `type` 属性を含めないようにするだけです。
 そうすると、アナリティクス データは
-[リクエスト](/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)ごとに指定のエンドポイントに送信されます。
+[リクエスト](/ja/docs/guides/analytics/deep_dive_analytics.html#送信データの内容:-requests-属性)ごとに指定のエンドポイントに送信されます。
 
 アナリティクス ベンダーの設定を行うと、
 簡単に `amp-analytics` を使い始めることができます。
@@ -138,7 +138,7 @@ JSON オブジェクトに含まれる設定は、アナリティクス アカ�
 **重要:** AMP では同じ変数の重複使用については検証しません。
 値は以下の変数置換の優先順位に従って追加されます。
 その中で最も優先度が高いのがリモート URL 内の値です
-（[変数置換の順序](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご覧ください）。
+（[変数置換の順序](/ja/docs/guides/analytics/deep_dive_analytics.html#変数置換の順序)をご覧ください）。
 
 ## リクエスト、トリガー、転送
 
@@ -239,19 +239,19 @@ AMP では以下のトリガー設定をサポートしています。
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code>（必須）</td>
-      <td data-th="Description">（<a href="/docs/guides/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">リクエスト</a>の指定どおりに）送信するリクエスト名です。</td>
+      <td data-th="Description">（<a href="/ja/docs/guides/analytics/deep_dive_analytics.html#送信データの内容:-requests-属性">リクエスト</a>の指定どおりに）送信するリクエスト名です。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">最上位の設定で定義された <code>vars</code> をオーバーライドしたり、このトリガー固有の <code>vars</code> を指定したりするためのキー値ペアを含むオブジェクトです（<a href="/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering">変数置換の順序</a>についてもご覧ください）。</td>
+      <td data-th="Description">最上位の設定で定義された <code>vars</code> をオーバーライドしたり、このトリガー固有の <code>vars</code> を指定したりするためのキー値ペアを含むオブジェクトです（<a href="/ja/docs/guides/analytics/deep_dive_analytics.html#変数置換の順序">変数置換の順序</a>についてもご覧ください）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code>（<code>on</code> が <code>click</code> に設定されているときは必須）</td>
-      <td data-th="Description">トラッキングする要素を絞り込む CSS セレクターです。すべての要素をトラッキングするには <code>*</code> という値を使います。この設定は <code>click</code> トリガーとあわせて使用します。<a href="/docs/guides/analytics/use_cases.html#tracking-page-clicks">ページクリック</a>と<a href="/docs/guides/analytics/use_cases.html#tracking-social-interactions">ソーシャル インタラクション</a>をトラッキングするためのセレクターの使用方法について、ご確認ください。</td>
+      <td data-th="Description">トラッキングする要素を絞り込む CSS セレクターです。すべての要素をトラッキングするには <code>*</code> という値を使います。この設定は <code>click</code> トリガーとあわせて使用します。<a href="/ja/docs/guides/analytics/use_cases.html#ページクリックをトラッキングする">ページクリック</a>と<a href="/ja/docs/guides/analytics/use_cases.html#ソーシャル-インタラクションをトラッキングする">ソーシャル インタラクション</a>をトラッキングするためのセレクターの使用方法について、ご確認ください。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code>（<code>on</code> が <code>scroll</code> に設定されているときは必須）</td>
-      <td data-th="Description">どのような状況でページがスクロールされた場合に <code>scroll</code> イベントを発生させるかを制御します。このオブジェクトには <code>verticalBoundaries</code> と <code>horizontalBoundaries</code> が含まれます。<code>scroll</code> イベントを発生させるには、この 2 つの属性のうち少なくとも 1 つが必要です。属性の値はどちらも、スクロール イベントが発生する境界値を含む数値の配列にする必要があります。<a href="/docs/guides/analytics/use_cases.html#tracking-scrolling">スクロールをトラッキングする</a>の例をご覧ください。</td>
+      <td data-th="Description">どのような状況でページがスクロールされた場合に <code>scroll</code> イベントを発生させるかを制御します。このオブジェクトには <code>verticalBoundaries</code> と <code>horizontalBoundaries</code> が含まれます。<code>scroll</code> イベントを発生させるには、この 2 つの属性のうち少なくとも 1 つが必要です。属性の値はどちらも、スクロール イベントが発生する境界値を含む数値の配列にする必要があります。<a href="/ja/docs/guides/analytics/use_cases.html#スクロールをトラッキングする">スクロールをトラッキングする</a>の例をご覧ください。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code>（<code>on</code> が <code>timer</code> に設定されているときは必須）</td>
@@ -262,7 +262,7 @@ AMP では以下のトリガー設定をサポートしています。
 
 **重要:** 同じ名称のトリガーがある場合、
 優先度の低い設定トリガーは優先度の高い設定トリガーに上書きされます
-（[変数置換の順序](/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご覧ください）。
+（[変数置換の順序](/ja/docs/guides/analytics/deep_dive_analytics.html#変数置換の順序)をご覧ください）。
 
 ### データの送信方法: transport 属性
 

@@ -3,7 +3,7 @@ $title: AMP 验证错误
 ---
 
 
-有效的 AMP 文档不得存在任何验证错误。本文档旨在协助您更好地了解并更正在[验证 AMP 网页](/docs/guides/validate.html)时遇到的各种验证错误。有关验证错误的完整概览，请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
+有效的 AMP 文档不得存在任何验证错误。本文档旨在协助您更好地了解并更正在[验证 AMP 网页](/zh_cn/docs/guides/debug/validate.html)时遇到的各种验证错误。有关验证错误的完整概览，请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
 
 [TOC]
 
@@ -540,7 +540,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，目前同时通过�
 
 ## 样式和布局错误
 
-在深入了解样式和布局错误之前，有必要先了解一下 AMP 中[样式](/docs/guides/responsive/style_pages.html)和[布局](/docs/guides/responsive/control_layout.html)的运作方式。由于 AMP 网页是 HTML 网页，因此样式与任何 HTML 网页都非常相似。不过，有些限制有助于确保网页能够快速加载，而 AMP 验证工具强制实施这些限制。
+在深入了解样式和布局错误之前，有必要先了解一下 AMP 中[样式](/zh_cn/docs/guides/author-develop/responsive/style_pages.html)和[布局](/zh_cn/docs/guides/author-develop/responsive/control_layout.html)的运作方式。由于 AMP 网页是 HTML 网页，因此样式与任何 HTML 网页都非常相似。不过，有些限制有助于确保网页能够快速加载，而 AMP 验证工具强制实施这些限制。
 
 在 AMP 网页中，布局受到的控制更多一些。网页中显示的所有标记都需要预定义高度和宽度，以大幅减少呈现和滚动过程中的卡顿现象。这并不意味着您必须手动添加这些属性。对于特定的布局类型，由于假设采用默认值，因此 AMP 验证工具不会显示错误。
 
@@ -622,7 +622,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，目前同时通过�
 
 如果您没有为 AMP 标记指定布局，并且隐式布局（基于宽度、高度和尺寸）不受支持，就会显示此错误。请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)，查看相应标记的 `supported_layout` 值。
 
-实际布局行为由 `layout` 属性决定。如需详细了解布局的运作方式，请参阅[如何控制布局](/docs/guides/responsive/control_layout.html)以及 [AMP HTML 布局系统规范](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)。
+实际布局行为由 `layout` 属性决定。如需详细了解布局的运作方式，请参阅[如何控制布局](/zh_cn/docs/guides/author-develop/responsive/control_layout.html)以及 [AMP HTML 布局系统规范](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)。
 
 **注意**：如果您没有指定布局，并且没有添加 `width` 和 `height` 值，则布局会默认采用 CONTAINER。由于所有 AMP 标记都不支持 CONTAINER，因此验证工具会显示错误。请指定除 CONTAINER 以外的布局，或添加 `width` 和/或 `height` 值，然后相应错误就会消失。
 
@@ -664,7 +664,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，目前同时通过�
 
 为标记指定的布局不受支持时，就会显示此错误。请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)，查看相应标记的 `supported_layout` 值。
 
-实际布局行为由 `layout` 属性决定。如需详细了解布局的运作方式，请参阅[如何控制布局](/docs/guides/responsive/control_layout.html)以及 [AMP HTML 布局系统规范](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)。
+实际布局行为由 `layout` 属性决定。如需详细了解布局的运作方式，请参阅[如何控制布局](/zh_cn/docs/guides/author-develop/responsive/control_layout.html)以及 [AMP HTML 布局系统规范](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)。
 
 ### 指定的布局不能使用的属性
 
@@ -702,7 +702,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，目前同时通过�
   </tr>
 </table>
 
-当指定布局的属性值无效时，就会显示此错误。要了解触发此错误的原因，您需要熟悉[不同的布局行为](/docs/guides/responsive/control_layout.html#size-and-position-elements)。
+当指定布局的属性值无效时，就会显示此错误。要了解触发此错误的原因，您需要熟悉[不同的布局行为](/zh_cn/docs/guides/author-develop/responsive/control_layout.html)。
 
 假设您将布局设为 `fixed-height`，并同时为 `height` 和 `width` 添加了数字值。`fixed-height` 布局使用 `height` 值。`width` 属性要么不存在，要么必须设为 `auto`。验证工具会显示 ATTR_VALUE_REQUIRED_BY_LAYOUT。
 
@@ -733,7 +733,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，目前同时通过�
 
 AMP 网页不能包含模板语法，除非该语法位于专为包含模板而设计的 AMP 标记中，例如 [amp-mustache](/docs/reference/extended/amp-mustache.html)。
 
-您的源文件中可以包含模板，但前提是此类文件生成的输出内容中不包含模板（另请参阅[使用 CSS 预处理器](/docs/guides/responsive/style_pages.html#use-css-preprocessors)）。
+您的源文件中可以包含模板，但前提是此类文件生成的输出内容中不包含模板（另请参阅[使用 CSS 预处理器](/zh_cn/docs/guides/author-develop/responsive/style_pages.html)）。
 
 ### 属性包含模板语法
 

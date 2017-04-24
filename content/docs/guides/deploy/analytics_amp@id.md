@@ -43,7 +43,7 @@ Anda harus mengidentifikasi data ini sebelum Anda bisa mengonfigurasikannya.
 Butir-butir data utama yang harus dipertimbangkan:
 
 * Akankah Anda hanya melacak tampilan halaman saja, atau pola keterlibatan pengguna tambahan
-(lihat juga [amp-pixel atau amp-analytics](/docs/guides/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics))?
+(lihat juga [amp-pixel atau amp-analytics](/id/docs/guides/analytics/analytics_basics.html#menggunakan-amp-pixel-atau-amp-analytics?))?
 * Jenis data apakah yang akan Anda tangkap dari pengguna, materi, 
-perangkat atau browser (lihat juga [Penggantian variabel](/docs/guides/analytics/analytics_basics.html#variable-substitution)?
-* Bagaimana Anda akan mengidentifikasi pengguna Anda (lihat juga [Identifikasi pengguna](/docs/guides/analytics/analytics_basics.html#user-identification))?
+perangkat atau browser (lihat juga [Penggantian variabel](/id/docs/guides/analytics/analytics_basics.html#penggantian-variabel)?
+* Bagaimana Anda akan mengidentifikasi pengguna Anda (lihat juga [Identifikasi pengguna](/id/docs/guides/analytics/analytics_basics.html#identifikasi-pengguna))?

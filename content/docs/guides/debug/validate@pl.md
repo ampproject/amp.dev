@@ -8,7 +8,7 @@ Główną zaletą AMP nie jest to, że dzięki niemu strony działają szybciej,
 
 Dokument AMP można sprawdzić na kilka sposobów. Każdy z nich da ten sam efekt, możesz więc korzystać z tego, który najbardziej Ci odpowiada.
 
-Poza przeprowadzeniem weryfikacji AMP warto też upewnić się, czy Twój dokument AMP jest [wykrywalny](/docs/guides/discovery.html) na platformach zewnętrznych.
+Poza przeprowadzeniem weryfikacji AMP warto też upewnić się, czy Twój dokument AMP jest [wykrywalny](/pl/docs/guides/deploy/discovery.html) na platformach zewnętrznych.
 
 ### Developer Console w przeglądarce
 
@@ -161,5 +161,5 @@ Każde z tych narzędzi podaje kilka informacji:
 
 Czytając uważnie specyfikację, zauważamy, że w kodzie znajduje się tag `<img>` zamiast tagu `<amp-img>`.
 
-Aby poznać pełną listę potencjalnych błędów, zapoznaj się z [przewodnikiem po błędach weryfikacji AMP](https://www.ampproject.org/docs/reference/validation_errors.html).
+Aby poznać pełną listę potencjalnych błędów, zapoznaj się z [przewodnikiem po błędach weryfikacji AMP](/pl/docs/reference/validation_errors.html).
 Jeśli po dokładnym sprawdzeniu, wciąż masz problem, [zadaj pytanie](http://stackoverflow.com/questions/tagged/amp-html) – postaramy się pomóc.

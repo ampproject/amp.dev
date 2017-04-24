@@ -23,5 +23,5 @@ Pour le contenu diffusé depuis d'autres domaines, il est possible d'activer les
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-Tout fichier AMP comprenant des fonctionnalités expérimentales échouera à la [validation AMP](/docs/guides/validate.html).
+Tout fichier AMP comprenant des fonctionnalités expérimentales échouera à la [validation AMP](/fr/docs/guides/debug/validate.html).
 Supprimez ces composants expérimentaux pour les documents AMP prêts pour la production.

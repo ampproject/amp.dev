@@ -12,7 +12,7 @@ AMP는 개별 요소의 **레이아웃** 을 제어하는 강력한 내장형 �
 ## 쉽게 만드는 반응형 이미지
 
 `width`와 `height`를 정의하여 반응형 이미지를 생성하고, `responsive`로 레이아웃을 설정하며,
-다양한 스크린 사이즈에서 어떤 이미지를 사용할 지 [`srcset`](/docs/guides/responsive/art_direction.html)으로 감지합니다:
+다양한 스크린 사이즈에서 어떤 이미지를 사용할 지 [`srcset`](/ko/docs/guides/author-develop/responsive/art_direction.html)으로 감지합니다:
 
 [sourcecode:html]
 <amp-img
