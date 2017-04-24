@@ -6,11 +6,27 @@ const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
 const swBuild = require('sw-build');
 const fs = require('fs');
+const path = require('path');
+const abe = require('amp-by-example');
+
+const config = {
+  src: path.join(__dirname, 'examples/src'), // root folder containing the examples
+  destRoot: path.join(__dirname, 'build'), // target dir for generated embeds
+  destDir: '/examples', // optional sub dir
+  host: 'https://ampproject-b5f4c.firebaseapp.com' // from where the embeds are going to be served
+}
 
 const Path = {
   CSS_SOURCES: './assets/sass/**/*.scss',
   CSS_OUT_DIR: './assets/css/'
 };
+
+// build examples used as sample embeds in docs
+gulp.task('build-examples', function() {
+  abe.generatePreview(config);
+  gulp.src('./examples/src/images/*')
+      .pipe(gulp.dest('build/examples/images/'));
+});
 
 gulp.task('import-docs', function (cb) {
   exec('cd ./scripts && ./import_docs.js', function (err, stdout, stderr) {
@@ -81,7 +97,7 @@ gulp.task('generate-asset-manifest', function (cb) {
     entries.forEach(entry => {
       entry.url = '/static' + entry.url;
     });
-
+    console.log(entries);
     fs.readFile('./pwa/service-worker.js', 'utf8', (err, data) => {
       if (err) throw err;
 
@@ -119,5 +135,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('build', [ 'update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass', 'generate-asset-manifest' ]);
+gulp.task('build', [ 'update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass', 'build-examples', 'generate-asset-manifest' ]);
 gulp.task('default', [ 'update-platforms-page', 'sass', 'generate-asset-manifest', 'watch' ]);
