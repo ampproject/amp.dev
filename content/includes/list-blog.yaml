@@ -1,37 +1,16 @@
 blogs:
 
 - type: Video
-  title: "Why AMP Caches Exist"
-  id: watch?v=n8n7fj60ld
-  author: The AMP Channel
-  role: 
-  origin: "https://www.youtube.com/watch?v=n8n7fj60lds"
-  excerpt: ""
-  avatar:
-  datedata: 2017-04-24T14:22:53-07:00
-  date: "April 24, 2017"
-
-- type: Video
   title: "5 Misconceptions About AMP Debunked!"
-  id: watch?v=q-JO22O1DQ
+  id: q-JO22O1DQ0
   author: The AMP Channel
   role: 
   origin: "https://www.youtube.com/watch?v=q-JO22O1DQ0"
-  excerpt: ""
+  excerpt: "There's lots of talk about AMP, but not all of it is based on reality or data. Let's talk about 5 of the top misconceptions in some greater detail. Any questions about AMP you'd like to have answered in a future video? Tell us in the comments below."
+  thumbnail: "https://i2.ytimg.com/vi/q-JO22O1DQ0/hqdefault.jpg"
   avatar:
-  datedata: 2017-04-24T11:01:11-07:00
-  date: "April 24, 2017"
-
-- type: Video
-  title: "7 Ways AMP Makes Your Pages Fast"
-  id: watch?v=9Cfxm7cikM
-  author: The AMP Channel
-  role: 
-  origin: "https://www.youtube.com/watch?v=9Cfxm7cikMY"
-  excerpt: ""
-  avatar:
-  datedata: 2017-04-24T01:42:23-07:00
-  date: "April 24, 2017"
+  datedata: 2017-04-20T14:00:15-07:00
+  date: "April 20, 2017"
 
 - type: Blog
   title: "What’s new in AMP by Example"
@@ -44,17 +23,6 @@ blogs:
   datedata: 2017-04-20T13:00:53-07:00
   date: "April 20, 2017"
 
-- type: Video
-  title: "\"But I already have a fast site!\" or: For That Instant Feel"
-  id: watch?v=jpyHTTtddU
-  author: The AMP Channel
-  role: 
-  origin: "https://www.youtube.com/watch?v=jpyHTTtddUo"
-  excerpt: ""
-  avatar:
-  datedata: 2017-04-20T11:52:59-07:00
-  date: "April 20, 2017"
-
 - type: Blog
   title: "Test amp-bind on your site with an origin trial"
   id: test-amp-bind-on-your-site-with-an-origin-trial
@@ -65,3 +33,39 @@ blogs:
   avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
   datedata: 2017-04-19T13:38:34-07:00
   date: "April 19, 2017"
+
+- type: Video
+  title: "Why AMP Caches Exist"
+  id: n8n7fj60lds
+  author: The AMP Channel
+  role: 
+  origin: "https://www.youtube.com/watch?v=n8n7fj60lds"
+  excerpt: "So what's the deal with AMP Caches? They are the part of AMP 
+that is most controversial, yet most misunderstood. Learn why they're 
+necessary today."
+  thumbnail: "https://i3.ytimg.com/vi/n8n7fj60lds/hqdefault.jpg"
+  avatar:
+  datedata: 2017-04-06T14:00:01-07:00
+  date: "April 6, 2017"
+
+- type: Blog
+  title: "From AMP to Progressive Web App"
+  id: from-amp-to-progressive-web-app
+  author: Paul Bakaus
+  role:  Developer Advocate, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/04/06/from-amp-to-progressive-web-app/amp/"
+  excerpt: "If you’ve invested in AMP and are also getting ready to upgrade your mobile website to a next-generation Progressive Web App, I have good news for you: AMP and Progressive Web Apps can be combined and used together to create a fantastic user journey. And we have a new set of docs on AMPproject.org to help [&#8230;]"
+  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+  datedata: 2017-04-06T13:06:14-07:00
+  date: "April 6, 2017"
+
+- type: Blog
+  title: "AMP Conf 2017 Recap (and videos!)"
+  id: amp-conf-2017-recap-and-videos
+  author: Paul Bakaus
+  role:  Developer Advocate, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/04/05/amp-conf-2017-recap-and-videos/amp/"
+  excerpt: "Last month we held our first AMP Conf, and it was a blast. Over 300 of you showed up in-person, and thousands tuned into the live stream. Over two days, 19 talks, panels and workshops – with over half from outside the AMP team – covered topics including building interactive AMP pages and using AMP [&#8230;]"
+  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+  datedata: 2017-04-05T09:35:57-07:00
+  date: "April 5, 2017"

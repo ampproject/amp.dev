@@ -32,6 +32,8 @@ menu:
         collection: docs/reference
       - href: https://ampbyexample.com/
         copy@: "Examples"
+      - href: https://youtube.com/TheAMPProject
+        copy@: "Videos"
       - href: /content/docs/contribute/contribute.md
         copy@: "Contribute"
         collection: docs/contribute

@@ -47,7 +47,7 @@ components:
               <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
                 <div class="card-inner">
                   <div class="card-type text-label news">
-                    {{_('News')}}
+                    {% if article.type == "Video" %}{{_('New Video')}}{% else %}{{_('News')}}{% endif %}
                   </div>
                   <div class="card-content small">
                     {{article.title}}
@@ -87,7 +87,7 @@ components:
               <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
                 <div class="card-inner">
                   <div class="card-type text-label news">
-                    {{_('News')}}
+                    {% if article.type == "Video" %}{{_('New Video')}}{% else %}{{_('News')}}{% endif %}
                   </div>
                   <div class="card-content small">
                     {{article.title}}
