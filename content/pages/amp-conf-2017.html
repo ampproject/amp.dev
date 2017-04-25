@@ -6,6 +6,10 @@ class: amp-conf
 components:
   - iframe
 stylesheet: pages/amp-conf.css
+
+$localization:
+    locales:
+    - en
 ---
 
 {% set conf = g.doc('/content/includes/amp-conf-2017.yaml', locale=doc.locale) %}
@@ -28,7 +32,6 @@ stylesheet: pages/amp-conf.css
 
     <p>
         <span>Connect with the AMP developers and ecosystem and learn how to create beautiful, interactive, responsive and successful AMP pages. Join us if you're a web developer or designer interested in AMP, either in the livestream or in person for chock-full two days of content.</span>
-        <a href="{{conf.registration_link}}" class="reserve-button">Join the waitlist</a>
     </p>
 
     <ul>

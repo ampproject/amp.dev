@@ -1,6 +1,7 @@
 ---
-$title: Styling & Layout
+$title: Style & Layout
 $order: 0
+$category: Develop
 toc: true
 ---
 [TOC]

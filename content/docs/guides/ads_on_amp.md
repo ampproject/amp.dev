@@ -1,6 +1,8 @@
 ---
 $title: Serving Ads on AMP
 $order: 8
+$category: Develop
+
 toc: true
 ---
 <div class="toc">
