@@ -293,6 +293,7 @@ amp-youtube, amp-vimeo {
 
 .wrap {
   margin: 0 auto;
+  overflow: hidden; /* fixes a strange iOS overflow panning bug.. */
 }
 
 // for jumplink target x-offset
