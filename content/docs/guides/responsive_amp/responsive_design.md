@@ -1,7 +1,6 @@
 ---
-$title: Responsive Design Made Easy With AMP
-$order: 0
-$category: Develop
+$title: Create Responsive AMP Pages 
+$order: 6
 toc: true
 components:
   - iframe
