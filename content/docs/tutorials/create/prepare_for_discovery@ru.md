@@ -28,4 +28,4 @@ $title: Подготовка страницы к обнаружению и ра�
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/ru/docs/get_started/create/publish.html">Перейти к шагу 6</a>
+<a class="go-button button" href="/ru/docs/tutorials/create/publish.html">Перейти к шагу 6</a>

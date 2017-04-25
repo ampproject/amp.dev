@@ -28,4 +28,4 @@ Jeśli jest tylko jedna wersja strony i jest to wersja AMP, nadal konieczne jest
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/pl/docs/get_started/create/publish.html">Przejdź do kroku 6</a>
+<a class="go-button button" href="/pl/docs/tutorials/create/publish.html">Przejdź do kroku 6</a>

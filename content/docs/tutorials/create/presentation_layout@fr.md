@@ -27,4 +27,4 @@ AMP applique des règles strictes en matière de disposition des éléments sur 
 
 Découvrez le rendu et la présentation d'une page AMP et comment vous pouvez modifier la disposition dans [Comment contrôler la disposition](/fr/docs/guides/author-develop/responsive/control_layout.html).
 
-<a class="go-button button" href="/fr/docs/get_started/create/preview_and_validate.html">Continuer à l'Étape 4</a>
+<a class="go-button button" href="/fr/docs/tutorials/create/preview_and_validate.html">Continuer à l'Étape 4</a>

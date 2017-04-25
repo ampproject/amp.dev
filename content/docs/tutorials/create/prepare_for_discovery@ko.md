@@ -28,4 +28,4 @@ $title: 검색 및 배포를 위해 페이지 준비
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/ko/docs/get_started/create/publish.html">6단계로 계속</a>
+<a class="go-button button" href="/ko/docs/tutorials/create/publish.html">6단계로 계속</a>

@@ -27,4 +27,4 @@ AMP segue regole più severe per il layout degli elementi nella pagina. In una n
 
 Scopri in che modo viene eseguito il rendering e il layout di una pagina in AMP e come fare per modificare il layout nella sezione [Come controllare il layout](/it/docs/guides/author-develop/responsive/control_layout.html).
 
-<a class="go-button button" href="/it/docs/get_started/create/preview_and_validate.html">Vai al Passaggio 4</a>
+<a class="go-button button" href="/it/docs/tutorials/create/preview_and_validate.html">Vai al Passaggio 4</a>

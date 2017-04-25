@@ -17,7 +17,7 @@ core:
         효율적인 방식으로 일반 패턴을 쉽게 구현하도록 해줍니다.
         <p>예를 들어, [`amp-img`](/ko/docs/reference/components/media/amp-img.html) 태그는
         아직 지원되지 않는 브라우저에서도 `srcset` 지원을 완벽하게 제공합니다.
-        [첫 번째 AMP HTML 페이지 만들기](/ko/docs/get_started/create.html) 방법에 대해 알아보세요.
+        [첫 번째 AMP HTML 페이지 만들기](/ko/docs/tutorials/create.html) 방법에 대해 알아보세요.
     - title: AMP JS
       subtitle: |
         **AMP JS** 라이브러리는 AMP HTML 페이지의 빠른 렌더링을 보장합니다.

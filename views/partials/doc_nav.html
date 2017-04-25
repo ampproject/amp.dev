@@ -54,7 +54,7 @@
 
   {% if item.categories %}
     {% for category in item.categories %}
-      <h5>{{category}}</h5>
+      <h5>{{_(category)}}</h5>
       <{{tag(item)}}>
         {% for child in docs if child.category == category %}
           {{render_item(child, "sub-level")}}

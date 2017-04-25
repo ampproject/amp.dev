@@ -12,4 +12,4 @@ $title: Вставка изображения
 
 Чтобы узнать о причинах замены тегов `<img>` на `<amp-img>`, а также о других доступных возможностях, ознакомьтесь с разделом [Вставка встроенных фреймов и мультимедийного содержимого](/ru/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/ru/docs/get_started/create/presentation_layout.html">Перейти к шагу 3</a>
+<a class="go-button button" href="/ru/docs/tutorials/create/presentation_layout.html">Перейти к шагу 3</a>

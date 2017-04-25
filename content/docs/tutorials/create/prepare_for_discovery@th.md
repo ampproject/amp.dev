@@ -28,4 +28,4 @@ $title: เตรียมหน้าเว็บของคุณให้ผ
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/th/docs/get_started/create/publish.html">ไปยังขั้นตอนที่ 6</a>
+<a class="go-button button" href="/th/docs/tutorials/create/publish.html">ไปยังขั้นตอนที่ 6</a>
