@@ -6,23 +6,22 @@ const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
 const swBuild = require('sw-build');
 const fs = require('fs');
-const path = require('path');
-const abe = require('amp-by-example');
-
-const config = {
-  src: path.join(__dirname, 'examples/src'), // root folder containing the examples
-  destRoot: path.join(__dirname, 'build'), // target dir for generated embeds
-  destDir: '/examples', // optional sub dir
-  host: 'https://ampproject-b5f4c.firebaseapp.com' // from where the embeds are going to be served
-}
 
 const Path = {
   CSS_SOURCES: './assets/sass/**/*.scss',
   CSS_OUT_DIR: './assets/css/'
 };
 
-// build examples used as sample embeds in docs
+// build example snippets that are used as sample embeds in docs
 gulp.task('build-examples', function() {
+  const expath = require('path');
+  const abe = require('amp-by-example');
+  const config = {
+      src: expath.join(__dirname, 'examples/src'), // root folder w examples
+      destRoot: expath.join(__dirname, 'build'), // target dir for generated embeds
+      destDir: '/examples', // optional sub dir
+      host: 'https://ampproject-b5f4c.firebaseapp.com' // where embeds are to be served
+}
   abe.generatePreview(config);
   gulp.src('./examples/src/images/*')
       .pipe(gulp.dest('build/examples/images/'));
