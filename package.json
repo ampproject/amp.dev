@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "sw-build": "*",
-    "sw-lib": "*"
+    "sw-lib": "*",
+    "amp-by-example": "*"
   }
 }
