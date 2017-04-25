@@ -1,14 +1,14 @@
 [
     {
         "title": "Design Principles",
-        "order": 3,
+        "order": 4,
         "from": "contributing/DESIGN_PRINCIPLES.md",
         "to": "learn/design-principles.md",
         "toc": true
     },
     {
         "title": "Open Source Governance",
-        "order": 4,
+        "order": 5,
         "from": "GOVERNANCE.md",
         "to": "docs/contribute/governance.md"
     },
@@ -17,5 +17,11 @@
         "order": 2,
         "from": "spec/amp-html-format.md",
         "to": "docs/reference/spec.md"
+    },
+    {
+        "title": "AMP Boilerplate Code",
+        "order": 3,
+        "from": "spec/amp-boilerplate.md",
+        "to": "docs/reference/spec/amp-boilerplate.md"
     }
 ]

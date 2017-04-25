@@ -87,7 +87,7 @@ function convertMarkdown(content, relativePath, headingToStrip) {
     if (p4.indexOf('{{') > -1) {
       p4 = "{% raw %}" + p4 + '{% endraw %}';
     }
-    return '[sourcecode' + (p3 ? ':' + p3 : '') + ']\n' + p4 + '[/sourcecode]\n';
+    return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
   });
 
   // replace mustache-style code elements
