@@ -14,43 +14,43 @@ past:
 
 upcoming_events:
   - type: Event
-    title: Mobile + Web Devcon
-    href: https://followup.cc/l/10384552/061a51652dd99cea3c8b861d6f50c6c0/http%3A%2F%2Fmobilewebdevconference.com%2F
-    excerpt: "AMP + Progressive Web Apps: Start fast, stay engaged - Chen Shay"
-    date: March 3, 2017
-    event_time: 20170303/20170304
-    event_time_text: Mar. 3
-    location: San Francisco
+    title: Google I/O
+    href: https://events.google.com/io/
+    excerpt: "Watch the 4 AMP talks in the live-stream and meet many members of the AMP team in person at Google I/O."
+    date: May 17, 2017
+    event_time: 20170517/20170519
+    event_time_text: May 17 to May 19
+    location: Mountain View, CA
     participant: Developers
   - type: Event
-    title: Online Marketing Rockstars
-    href: https://followup.cc/l/10384552/228814a55de50a6100b8c2c174df9eb6/http%3A%2F%2Fwww.onlinemarketingrockstars.de%2Ffestival%2Fen%2Fconference%2F
-    excerpt: A Faster Mobile Web - Malte Ubl
-    date: March 2, 2017
-    event_time: 20170302/20170304
-    event_time_text: Mar. 2 to Mar. 3
-    location: Hamburg
-    participant: Developers
-  - type: Event
-    title: AMP Conf
-    href: https://www.ampproject.org/amp-conf-2017
-    excerpt: 14 Talks. 5 Panels. Live-streamed.
-    date: March 7, 2017
-    event_time: 20170307/20170309
-    event_time_text: Mar. 7 to Mar. 8
-    location: New York City
-    participant: Developers
-  - type: Event
-    title: Mobile Innovation Summit
-    href: https://followup.cc/l/10384552/38e93950f02bcb8a3fcea3829d5e4ab6/https%3A%2F%2Ftheinnovationenterprise.com%2Fsummits%2Fmobile-innovation-summit-new-york-2017
-    excerpt: "The Accelerated Mobile Pages (AMP) Project: What lies ahead? - Adam Greenberg"
-    date: March 21, 2017
-    event_time: 20170321/20170323
-    event_time_text: Mar. 21 to Mar. 22
-    location: New York City
+    title: AMP Meetup at ZalandoTech
+    href: https://www.meetup.com/Zalando-Tech-Events-Berlin/events/239183474/
+    excerpt: "Listen to talks of Malte Ubl about 'Beautiful, interactive AMP pages' and Paul Bakaus about 'Progressive Web AMPs'."
+    date: May 3, 2017
+    event_time: 201705203/20170504
+    event_time_text: May 5th
+    location: Berlin, Germany
     participant: Developers
 
 # past_events:
+#  - type: Event
+#    title: Mobile + Web Devcon
+#    href: https://followup.cc/l/10384552/061a51652dd99cea3c8b861d6f50c6c0/http%3A%2F%2Fmobilewebdevconference.com%2F
+#    excerpt: "AMP + Progressive Web Apps: Start fast, stay engaged - Chen Shay"
+#    date: March 3, 2017
+#    event_time: 20170303/20170304
+#    event_time_text: Mar. 3
+#    location: San Francisco
+#    participant: Developers
+#  - type: Event
+#    title: Online Marketing Rockstars
+#    href: https://followup.cc/l/10384552/228814a55de50a6100b8c2c174df9eb6/http%3A%2F%2Fwww.onlinemarketingrockstars.de%2Ffestival%2Fen%2Fconference%2F
+#    excerpt: A Faster Mobile Web - Malte Ubl
+#    date: March 2, 2017
+#    event_time: 20170302/20170304
+#    event_time_text: Mar. 2 to Mar. 3
+#    location: Hamburg
+#    participant: Developers
 #   - type: Event
 #     title: Teads1 brings AMP’d mobile video inventory to premium publishers
 #     href: https://amphtml.wordpress.com/2016/12/02/teads-brings-ampd-mobile-video-inventory-to-premium-publishers/amp/
