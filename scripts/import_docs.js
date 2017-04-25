@@ -42,10 +42,12 @@ function downloadPage(filePath, callback, headingToStrip) {
     var decodedContent = encodedContent.toString();
 
     // we need to concert some of the markdown from Github flavor to Jekyll flavor
-    var relativePath = filePath.substr(0, filePath.lastIndexOf("/"))
+    var relativePath = filePath.substr(0, filePath.lastIndexOf("/"));
+    var title = decodedContent.match(/^#{1}\s.+\<\/a\>\s(.+)/m);
+    title = title ? title[1].replace(/\`/g, '') : null;
     decodedContent = convertMarkdown(decodedContent, relativePath, headingToStrip);
 
-    callback(decodedContent);
+    callback(decodedContent, title);
 
   };
 
@@ -60,7 +62,7 @@ function downloadPage(filePath, callback, headingToStrip) {
 function savePage(config, callback) {
   var optionalTOC = config.content.indexOf('[TOC]') > -1 ? 'toc: true\n' : '';
   var frontMatter = `---
-$title: ${config.title}
+$title: "${config.title}"
 $order: ${config.order || 0}
 ${optionalTOC}---
 `;
@@ -200,14 +202,15 @@ ghrepo.contents('extensions', "master", function(err, data) {
       }
 
       // download the page contents
-      downloadPage(subComponent.path, function(pageContent) {
+      downloadPage(subComponent.path, function(pageContent, title) {
         // save it to the extended folder
+
         savePage({
           destination: '../content/docs/reference/components/' + subfolder + '/' + subComponent.name,
           content: pageContent,
           order: order,
           parent: '/content/docs/components.md',
-          title: subComponent.name.replace('.md', '')
+          title: title || subComponent.name.replace('.md', '')
         }, function (err) {
           if (err) throw err;
           console.log('Successfully imported: ' + subComponent.name + ' (Extended)');
