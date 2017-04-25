@@ -1,6 +1,7 @@
 ---
 $title: Include Third-Party Content
 $order: 3
+$category: Develop
 toc: true
 ---
 [TOC]

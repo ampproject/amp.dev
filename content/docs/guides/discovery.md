@@ -1,6 +1,8 @@
 ---
 $title: Make Your Page Discoverable
 $order: 1
+$category: Deploy
+
 toc: true
 ---
 [TOC]

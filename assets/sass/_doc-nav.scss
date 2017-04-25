@@ -1,19 +1,22 @@
 .doc-sidebar {
-  border-left: 3px solid $color-grey-lt;
-  border-right: 3px solid $color-grey-lt;
   bottom: 0;
   display: flex;
   flex-direction: column;
   left: 0;
   position: fixed;
   top: $header-height;
-  width: 350px;
+
+  /* banded, elastic width */
+  min-width: 300px;
+  max-width: 400px;
+  width: 20vw;
+
   z-index: 1;
+  background: rgba(255,255,255,0.7);
 
   .current-header {
     background: $gradient-anglebuild;
-    padding: 35px 30px 20px;
-    margin: 0 -3px;
+    padding: 28px 30px 5px;
 
     h1 {
       color: $color-white;
@@ -28,7 +31,25 @@
     flex: 1 1 auto;
     height: 0;
     overflow: auto;
-    padding: 30px;
+    padding-left: 10px;
+
+    > ul {
+      border-right: 3px solid $color-grey-lt;
+      padding: 20px 0;
+      min-height: calc(100vh - 213px);
+    }
+
+    h5 {
+      padding-left: 20px;
+      color: #3085c5;
+      margin: 0;
+      margin-top: 10px;
+      font-size: 16px;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
   }
 
   ul, ol, li {
@@ -46,38 +67,46 @@
     background: none;
     border: none;
     margin: 0;
+    margin-right: 10px;
     position: relative;
+    display: block;
+
+    @extend %text-base;
+    @extend %text-small;
+    font-size: 20px;
 
     &:hover {
       background: #f4fcfe;
     }
 
-    a {
-      @extend %text-base;
-      @extend %text-small;
-      font-size: 20px;
-    }
   }
 
   li {
-    & > .section-name.open > a {
-      color: $color-ampblue;
-    }
-  }
 
-  li.top-level {
-    & > .section-name {
-      padding: 20px;
+    a {
+      padding: 15px 0;
+    }
+
+    .open {
+      color: $color-ampblue;
 
       &::before {
         background: $gradient-bold;
         bottom: 0;
         content: '';
-        left: 0;
+        right: -13px;
         position: absolute;
         top: 0;
-        width: 2px;
+        width: 3px;
       }
+    }
+
+  }
+
+  li.top-level {
+
+    > a {
+      padding-left: 20px;
     }
 
     &.expandable {
@@ -115,16 +144,13 @@
   li.sub-level {
     & > .section-name {
       @extend .small;
-      padding: 5px 20px 5px 20px;
+      padding: 6px 20px 6px 20px;
 
-      a {
-        color: black;
-        display: inline-block;
-        font-size: 16px;
-        line-height: 1.3;
-      }
+      color: black;
+      font-size: 16px;
+      line-height: 1.5;
 
-      &.current a {
+      &.current {
         color: $color-ampblue;
       }
     }
@@ -157,115 +183,15 @@
           display: none;
         }
 
-        a {
-          display: inline-block;
-          font-size: 14px;
-          line-height: 1.5;
-        }
+        font-size: 14px;
+        line-height: 1.5;
+
       }
 
       &:hover {
         background: #f4fcfe;
       }
 
-    }
-  }
-
-  .navigation {
-    background: white;
-    border-right: 3px solid $color-grey-lt;
-    display: flex;
-    width: 350px;
-
-    .previous, .next {
-      @extend %text-base;
-      @extend %text-body;
-      border-bottom: 3px solid $color-grey-lt;
-      border-top: 3px solid $color-grey-lt;
-      color: $color-black-95;
-      display: flex;
-      flex-direction: column;
-      flex: 1 1 auto;
-      justify-content: center;
-      min-height: 50px;
-      padding: 15px 20px;
-      position: relative;
-      transition: color 0.3s;
-      width: 0;
-
-      &:before {
-        background: $gradient-anglebuild;
-        bottom: 0;
-        content: '';
-        left: 0;
-        opacity: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transition: opacity 0.3s;
-        z-index: 0;
-      }
-
-      &::after {
-        content: '';
-        height: 20px;
-        position: absolute;
-        top: 50%;
-        transition: transform 0.3s;
-        transform: translateY(-50%);
-        width: 20px;
-      }
-
-      .navigation-label {
-        z-index: 2;
-      }
-
-      .subtitle {
-        color: $color-ampblue;
-        font-size: 12px;
-        margin: 0;
-      }
-
-      &:hover {
-        color: white;
-
-        &:before {
-          opacity: 1;
-        }
-
-        &::after {
-          background: url(/static/img/arrow.svg) center/cover no-repeat;
-        }
-      }
-    }
-
-    .previous {
-      border-right: 3px solid $color-grey-lt;
-      text-align: right;
-      padding-left: 50px;
-
-      &::after {
-        background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
-        left: 30px;
-        transform: translateY(-50%) rotate(180deg);
-      }
-
-      &:hover::after {
-        transform: translate(-15px, -50%) rotate(180deg);
-      }
-    }
-
-    .next {
-      padding-right: 50px;
-
-      &::after {
-        background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
-        right: 30px;
-      }
-
-      &:hover::after {
-        transform: translate(15px, -50%);
-      }
     }
   }
 
@@ -277,6 +203,10 @@
     padding: 0 22px;
     position: static;
     width: 100%;
+
+    /* banded, elastic width removed */
+    min-width: auto;
+    max-width: auto;
 
     .current-header {
       background: white;
@@ -295,6 +225,15 @@
     .current-sections {
       height: auto;
       padding: 5px 20px 30px;
+
+      > ul {
+        min-height: auto;
+        border-right: 0;
+      }
+
+      h5 {
+        padding-left: 15px;
+      }
     }
 
     li.top-level {
