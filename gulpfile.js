@@ -12,6 +12,21 @@ const Path = {
   CSS_OUT_DIR: './assets/css/'
 };
 
+// build example snippets that are used as sample embeds in docs
+gulp.task('build-examples', function() {
+  const expath = require('path');
+  const abe = require('amp-by-example');
+  const config = {
+      src: expath.join(__dirname, 'examples/src'), // root folder w examples
+      destRoot: expath.join(__dirname, 'build'), // target dir for generated embeds
+      destDir: '/examples', // optional sub dir
+      host: 'https://ampproject-b5f4c.firebaseapp.com' // where embeds are to be served
+}
+  abe.generatePreview(config);
+  gulp.src('./examples/src/images/*')
+      .pipe(gulp.dest('build/examples/images/'));
+});
+
 gulp.task('import-docs', function (cb) {
   exec('cd ./scripts && ./import_docs.js', function (err, stdout, stderr) {
     if (err instanceof Error) {
@@ -119,5 +134,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('build', [ 'update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass', 'generate-asset-manifest' ]);
+gulp.task('build', [ 'update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass', 'build-examples', 'generate-asset-manifest' ]);
 gulp.task('default', [ 'update-platforms-page', 'sass', 'generate-asset-manifest', 'watch' ]);
