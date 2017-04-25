@@ -41,14 +41,14 @@ points:
       description: |
         AMP는 확장 메커니즘이 페이지 렌더링을 차단하지 않도록 합니다.
         AMP는
-        [라이트박스](/ko/docs/reference/components/layout/amp-lightbox.html),
-        [인스타그램 삽입](/ko/docs/reference/components/social/amp-instagram.html),
-        [트윗](/ko/docs/reference/components/social/amp-twitter.html) 등에 대해 확장을 지원합니다.
+        [라이트박스](/ko/docs/reference/components/amp-lightbox.html),
+        [인스타그램 삽입](/ko/docs/reference/components/amp-instagram.html),
+        [트윗](/ko/docs/reference/components/amp-twitter.html) 등에 대해 확장을 지원합니다.
         이들은 추가적인 HTTP 요청을 필요로 하지만, 이들 요청은
         페이지 레이아웃과 렌더링을 차단하지 않습니다.
         <p>사용자 지정 스크립트를 사용하는 모든 페이지는 이 페이지에
         사용자 지정 태그가 포함될 것임을 AMP 시스템에게 알려야 합니다.
-        예를 들어, [`amp-iframe`](/ko/docs/reference/components/layout/amp-iframe.html)
+        예를 들어, [`amp-iframe`](/ko/docs/reference/components/amp-iframe.html)
         스크립트는 `amp-iframe` 태그가 있을 것임을 시스템에게 알립니다.
         AMP는 안에 무엇이 포함될지 알기도 전에 iframe 박스를 만듭니다.
       example: /content/includes/amp-iframe.md

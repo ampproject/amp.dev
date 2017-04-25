@@ -15,7 +15,7 @@ core:
         [Tags HTML na especificação do AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         Esses elementos personalizados, chamados de componentes AMP HTML,
         facilitam a implementação de padrões comuns, resultando em um bom desempenho.
-        <p>Por exemplo, a tag [`amp-img`](/pt_br/docs/reference/components/media/amp-img.html)
+        <p>Por exemplo, a tag [`amp-img`](/pt_br/docs/reference/components/amp-img)
         proporciona suporte total a `srcset` mesmo em navegadores que ainda não são compatíveis com esse recurso.
         Saiba como [criar sua primeira página em AMP HTML](/pt_br/docs/get_started/create.html).
     - title: AMP JS

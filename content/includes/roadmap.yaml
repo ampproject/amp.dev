@@ -39,7 +39,7 @@ sections:
             - "[AMP Start out-of-the-box templates and styling](https://ampstart.com)"
             - "[Support for Payment Request API (Android)](https://github.com/ampproject/amphtml/issues/7623)"
             - "[Interactive image gallery (large image + thumbnails)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/amp-carousel.md#advancing-amp-carouseltypeslides-to-a-specific-slide)"
-            - "[Support for enhanced form inputs (images, etc) [**amp-selector**]](https://www.ampproject.org/docs/reference/components/dynamic/amp-selector)"
+            - "[Support for enhanced form inputs (images, etc) [**amp-selector**]](https://www.ampproject.org/docs/reference/components/amp-selector)"
         forecast:
         - Enhanced payment support
         - Simple configuration and theming in AMP Start
@@ -87,7 +87,7 @@ sections:
             "6":
             - "[Improvement to ad loading experience](https://github.com/ampproject/amphtml/issues/5918)"
             - "[Show default fallback when no ad is available to serve](https://github.com/ampproject/amphtml/issues/3817)"
-            - "[Dynamic call tracking support [**amp-call-tracking**]](https://www.ampproject.org/docs/reference/components/ads/amp-call-tracking)"
+            - "[Dynamic call tracking support [**amp-call-tracking**]](https://www.ampproject.org/docs/reference/components/amp-call-tracking)"
             - "[Giving preference to collapsing an ad slot even with configured placeholders](https://github.com/ampproject/amphtml/issues/7395)"
             - "Sticky ad behavior improvements: [collapse unfilled slots](https://github.com/ampproject/amphtml/issues/6184)"
         forecast:

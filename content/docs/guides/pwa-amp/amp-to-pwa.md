@@ -8,7 +8,7 @@ toc: true
 A good strategy is to make the **entry point into your site an AMP page**, then **warm up the PWA behind the scenes** and switch to it for the onward journey:
 
 * All content “leaf” pages (those that have specific content, not overview pages) are published as AMPs for that nearly instant loading experience.
-* These AMPs use AMP’s special element [`<amp-install-serviceworker>`](/docs/reference/components/dynamic/amp-install-serviceworker) to warm up a cache and the PWA shell while the user is enjoying your content.
+* These AMPs use AMP’s special element [`<amp-install-serviceworker>`](/docs/reference/components/amp-install-serviceworker) to warm up a cache and the PWA shell while the user is enjoying your content.
 * When the user clicks another link on your website (for example, the call to action at the bottom for a more app-like experience), the service worker intercepts the request, takes over the page and loads the PWA shell instead.
 
 Read on to learn why, and how to use this development pattern.
@@ -34,7 +34,7 @@ AMP has the ability to install the Service Worker of your Progressive Web App fr
 If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899).
 {% endcall %}
 
-First, install the service worker on all of your AMP Pages using [`<amp-install-serviceworker>`](/docs/reference/components/dynamic/amp-install-serviceworker), by first including the component via its script in the `<head>` of your page:
+First, install the service worker on all of your AMP Pages using [`<amp-install-serviceworker>`](/docs/reference/components/amp-install-serviceworker), by first including the component via its script in the `<head>` of your page:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -104,7 +104,7 @@ self.addEventListener('fetch', event => {
 
 What’s especially interesting about this technique is that you are now using progressive enhancement to go from AMP to PWA. However, this also means that, as is, browsers that don’t yet support service workers will jump from AMP to AMP and will never actually navigate to the PWA.
 
-AMP solves this with something called [shell URL rewriting](/docs/reference/components/amp-install-serviceworker#shell-url-rewrite). By adding a fallback URL pattern to the [`<amp-install-serviceworker>`](/docs/reference/components/dynamic/amp-install-serviceworker) tag, you are instructing AMP to rewrite all matching links on a given page to go to another legacy shell URL instead, if no service worker support has been detected:
+AMP solves this with something called [shell URL rewriting](/docs/reference/components/amp-install-serviceworker#shell-url-rewrite). By adding a fallback URL pattern to the [`<amp-install-serviceworker>`](/docs/reference/components/amp-install-serviceworker) tag, you are instructing AMP to rewrite all matching links on a given page to go to another legacy shell URL instead, if no service worker support has been detected:
 
 [sourcecode:html]
 <amp-install-serviceworker

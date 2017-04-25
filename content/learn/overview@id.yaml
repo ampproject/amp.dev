@@ -15,7 +15,7 @@ core:
         [Tag HTML dalam spesifikasi AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         Elemen khusus ini disebut sebagai komponen AMP HTML,
         membuat pola-pola umum menjadi mudah diimplementasikan berdasarkan kinerja.
-        <p>Misalnya, tag [`amp-img`](/id/docs/reference/components/media/amp-img.html)
+        <p>Misalnya, tag [`amp-img`](/id/docs/reference/components/amp-img)
         menyediakan dukungan `srcset` lengkap meski dalam browser yang belum mendukungnya.
         Pelajari cara [membuat halaman AMP HTML pertama Anda](/id/docs/get_started/create.html).
     - title: AMP JS

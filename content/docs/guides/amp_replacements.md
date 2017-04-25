@@ -29,7 +29,7 @@ While they're not supported, they *will* render, but AMP won't [validate your pa
 ## Images
 
 Include an image in your page
-using the [`amp-img`](/docs/reference/components/media/amp-img.html) element, like so:
+using the [`amp-img`](/docs/reference/components/amp-img.html) element, like so:
 
 [sourcecode:html]
 <amp-img src="fixed.jpg" width="264" height="96"></amp-img>
@@ -76,7 +76,7 @@ Learn how to [provide fallbacks and placeholders for images](/docs/guides/author
 
 ## Animated images
 
-The [`amp-anim`](/docs/reference/components/media/amp-anim.html) element is very similar to the `amp-img` element,
+The [`amp-anim`](/docs/reference/components/amp-anim.html) element is very similar to the `amp-img` element,
 and provides additional functionality to manage loading and playing of animated images such as GIFs.
 
 [sourcecode:html]
@@ -94,7 +94,7 @@ Include `<script async custom-element="amp-anim"
 ## Video
 
 Include a video in your page
-using the [`amp-video`](/docs/reference/components/media/amp-video.html) element.
+using the [`amp-video`](/docs/reference/components/amp-video.html) element.
 
 Only use this element for direct HTML5 video file embeds.
 The element loads the video resource specified by the `src` attribute lazily,
@@ -115,7 +115,7 @@ if the browser doesn't support HTML5 video, for example:
 ## Audio
 
 Include an audio resource in your page,
-using the [`amp-audio`](/docs/reference/components/media/amp-audio.html) element.
+using the [`amp-audio`](/docs/reference/components/amp-audio.html) element.
 
 Only use this element for direct HTML5 audio file embeds.
 Like all embedded external resources in an AMP page,

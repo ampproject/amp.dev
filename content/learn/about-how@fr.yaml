@@ -41,14 +41,14 @@ points:
       description: |
         AMP empêche les mécanismes d'extension de bloquer le rendu des pages.
         AMP prend en charge les extensions d'objets tels que les
-        [mosaïques](/fr/docs/reference/components/layout/amp-lightbox.html), les
-        [intégrations Instagram](/fr/docs/reference/components/social/amp-instagram.html), les
-        [tweets](/fr/docs/reference/components/social/amp-twitter.html), etc.
+        [mosaïques](/fr/docs/reference/components/amp-lightbox.html), les
+        [intégrations Instagram](/fr/docs/reference/components/amp-instagram.html), les
+        [tweets](/fr/docs/reference/components/amp-twitter.html), etc.
         Même si ces extensions exigent des requêtes HTTP supplémentaires,
         ces dernières ne bloquent ni la mise en page ni le rendu des pages.
         <p>Toute page qui utilise un script personnalisé doit indiquer au système AMP
         qu'elle contiendra ultérieurement une balise personnalisée.
-        Par exemple, le script [`amp-iframe`](/fr/docs/reference/components/layout/amp-iframe.html)
+        Par exemple, le script [`amp-iframe`](/fr/docs/reference/components/amp-iframe.html)
         indique au système qu'il y aura une balise `amp-iframe`.
         AMP crée le cadre iframe avant même de savoir ce qu'il contiendra :
       example: /content/includes/amp-iframe.md

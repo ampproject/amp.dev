@@ -40,13 +40,13 @@ points:
       description: |
         AMP จะป้องกันไม่ให้กลไกส่วนขยายบล็อกการแสดงผล
         AMP สนับสนุนส่วนขยายต่างๆ เช่น
-        [lightboxes](/th/docs/reference/components/layout/amp-lightbox.html),
-        [instagram embeds](/th/docs/reference/components/social/amp-instagram.html),
-        [tweets](/th/docs/reference/components/social/amp-twitter.html) ฯลฯ
+        [lightboxes](/th/docs/reference/components/amp-lightbox.html),
+        [instagram embeds](/th/docs/reference/components/amp-instagram.html),
+        [tweets](/th/docs/reference/components/amp-twitter.html) ฯลฯ
         แม้ว่าส่วนขยายเหล่านี้จะต้องมีคำขอ HTTP เพิ่มเติม
         คำขอเหล่านั้นไม่ได้บล็อกเค้าโครงหน้าเว็บและการแสดงผล
         <p>หน้าเว็บใดที่ใช้สคริปต์แบบกำหนดเองจะต้องแจ้งให้ระบบ AMP ทราบว่าจะต้องมีแท็กแบบกำหนดเอง
-        <p>ตัวอย่างเช่น สคริปต์ [`amp-iframe`](/th/docs/reference/components/layout/amp-iframe.html)
+        <p>ตัวอย่างเช่น สคริปต์ [`amp-iframe`](/th/docs/reference/components/amp-iframe.html)
         จะบอกให้ระบบทราบว่าจะมีแท็ก `amp-iframe`
         AMP จะสร้างกรอบ iframe ก่อนที่จะทราบว่ามีอะไรอยู่ภายใน
       example: /content/includes/amp-iframe.md

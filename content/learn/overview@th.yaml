@@ -15,7 +15,7 @@ core:
         [แท็ก HTML ในแบบ AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md))
         อิลิเมนต์แบบกำหนดเองเหล่านี้จะเรียกว่าคอมโพเนนต์ AMP HTML
         ที่ช่วยให้สามารถนำรูปแบบทั่วไปไปใช้งานได้อย่างมีประสิทธิภาพ
-        <p>เช่น แท็ก [`amp-img`](/th/docs/reference/components/media/amp-img.html)
+        <p>เช่น แท็ก [`amp-img`](/th/docs/reference/components/amp-img)
         จะสนับสนุน `srcset` ได้อย่างสมบูรณ์แม้ในเบราว์เซอร์ที่ยังไม่มีการสนับสนุนดังกล่าว
         ดูวิธีการ[สร้าง AMP HTML หน้าแรกของคุณ](/th/docs/get_started/create.html)
     - title: AMP JS

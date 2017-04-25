@@ -15,7 +15,7 @@ core:
         [Теги HTML в спецификации AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         С помощью этих персонализированных элементов, которые называются компонентами AMP HTML,
         можно легко создать стандартные шаблоны для реализации эффективного способа представления страниц.
-        <p>Например, тег [`amp-img`](/ru/docs/reference/components/media/amp-img.html)
+        <p>Например, тег [`amp-img`](/ru/docs/reference/components/amp-img)
         обеспечивает полную поддержку атрибута `srcset` даже в тех браузерах, которые пока его не поддерживают.
         Узнайте, как [создать свою первую страницу AMP HTML](/ru/docs/get_started/create.html).
     - title: AMP JS
