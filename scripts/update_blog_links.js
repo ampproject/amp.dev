@@ -183,14 +183,20 @@ videoparser.on('readable', function () {
 
     // write into the body for the blog listing page
 
-    var description = '';
-    var id = item.link.substr(0, item.link.length - 1).split('/').pop();
+
+    var id = item['yt:videoid']['#'];
 
     var author = item.author;
     var role = '';
+    var thumbnail = item['media:group']['media:thumbnail']['@'].url;
+    var description = item['media:group']['media:description']['#']
+      .replace(/\"/g, "\\\"")
+      .replace("Watch all Amplify episodes: https://goo.gl/B9CCl4", "")
+      .replace("Subscribe to the The AMP Project YouTube channel for updates on new episodes of Amplify: https://goo.gl/g2Y8h7", "")
+      .trim();
 
     blogEntries.push({
-      date: item.date,
+      date: item.pubdate,
       content: `
 - type: Video
   title: "${ item.title.replace(/\"/g, "\\\"") }"
@@ -199,9 +205,10 @@ videoparser.on('readable', function () {
   role: ${ role }
   origin: "${ item.link }"
   excerpt: "${ description }"
+  thumbnail: "${ thumbnail }"
   avatar:
-  datedata: ${ moment(item.date).format() }
-  date: "${ moment(item.date).format("MMMM D, YYYY") }"
+  datedata: ${ moment(item.pubdate).format() }
+  date: "${ moment(item.pubdate).format("MMMM D, YYYY") }"
 `
     });
 
