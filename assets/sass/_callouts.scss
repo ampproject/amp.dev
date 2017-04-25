@@ -32,6 +32,16 @@ aside {
     width: 70px;
   }
 
+  &.none {
+    background: #fafafa;
+    padding: 24px 24px 24px 24px;
+
+    strong {
+      color: #333;
+      text-transform: none;
+    }
+  }
+
   &.note {
     &::before {
       background: url(/static/img/docs/icon_note.svg) center/cover no-repeat;
