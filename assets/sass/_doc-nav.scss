@@ -206,11 +206,11 @@
 
     /* banded, elastic width removed */
     min-width: auto;
-    max-width: auto;
+    max-width: none;
 
     .current-header {
       background: white;
-      padding: 20px 30px;
+      padding: 0px 30px;
 
       .breadcrumb {
         color: $color-grey-md;

@@ -9,6 +9,9 @@
   padding: 50px 20px;
   overflow: auto;
   width: 200px;
+  width: 16vw;
+  min-width: 180px;
+  max-width: 250px;
 
   &::before {
     @extend %text-label;
@@ -37,7 +40,7 @@
       }
 
       a {
-        color: $color-grey-md;
+        font-size: 0.9em;
       }
     }
   }
@@ -48,6 +51,8 @@
     display: block;
     position: relative;
     text-transform: none;
+    font-weight: 300;
+    line-height: 1.5;
 
     &::before {
       display: none;
@@ -90,6 +95,16 @@
 }
 
 @include max-screen($toc-breakpoint) {
+  .toc {
+    position: static;
+    width: auto;
+    max-width: none;
+    padding: 12px 20px;
+    margin: 30px 0;
+  }
+}
+
+@include max-screen($mobile-breakpoint) {
   .toc {
     display: none;
   }
