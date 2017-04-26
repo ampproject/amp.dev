@@ -41,14 +41,14 @@ points:
       description: |
         AMP, uzantı mekanizmalarının işlemeyi engellemesine izin vermez
         AMP,
-        [ışık kutuları](/tr/docs/reference/components/layout/amp-lightbox.html),
-        [instagram yerleştirmeleri](/tr/docs/reference/components/social/amp-instagram.html),
-        [tweet›ler](/tr/docs/reference/components/social/amp-twitter.html), vb. şeylerin uzantılarını destekler.
+        [ışık kutuları](/tr/docs/reference/components/amp-lightbox.html),
+        [instagram yerleştirmeleri](/tr/docs/reference/components/amp-instagram.html),
+        [tweet›ler](/tr/docs/reference/components/amp-twitter.html), vb. şeylerin uzantılarını destekler.
         Bunlar ek HTTP istekleri gerektirdiği için,
         bu istekler sayfa düzenini ve işlemeyi engellemez.
         <p>Özel bir komut dosyası kullanan tüm sayfalar AMP sistemine
         zamanla özel bir etiketi olacağını belirtmelidir.
-        Örneğin, [`amp-iframe`](/tr/docs/reference/components/layout/amp-iframe.html)
+        Örneğin, [`amp-iframe`](/tr/docs/reference/components/amp-iframe.html)
         komut dosyası sisteme bir `amp-iframe` etiketi olacağını belirtir.
         AMP, daha ne içereceğini bilmeden bilgi iletim birimi kutucuğunu oluşturur:
       example: /content/includes/amp-iframe.md

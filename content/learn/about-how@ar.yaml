@@ -41,14 +41,14 @@ points:
       description: |
         لا تسمح AMP لآليات الإضافة بإعاقة عرض الصفحة.
         تدعم AMP الإضافات لأشياء، مثل
-        [العروض المبسطة](/ar/docs/reference/components/layout/amp-lightbox.html)،
-        [وتضمينات instagram](/ar/docs/reference/components/social/amp-instagram.html)،
-        و[التغريدات](/ar/docs/reference/components/social/amp-twitter.html)، وغير ذلك.
+        [العروض المبسطة](/ar/docs/reference/components/amp-lightbox.html)،
+        [وتضمينات instagram](/ar/docs/reference/components/amp-instagram.html)،
+        و[التغريدات](/ar/docs/reference/components/amp-twitter.html)، وغير ذلك.
         وفي حين تستلزم هذه الأشياء طلبات HTTP إضافية،
         لا تعيق هذه الطلبات تنسيق الصفحة وعرضها.
         <p>يجب أن تخبر أي صفحة تستخدم نصًا برمجيًا مخصصًا نظامَ AMP
         أنها سوف ستتضمن في النهاية علامة مخصصة.
-        على سبيل المثال، يخبر النص البرمجي [<span dir="ltr" class="nowrap">`amp-iframe`</span>](/ar/docs/reference/components/layout/amp-iframe.html)
+        على سبيل المثال، يخبر النص البرمجي [<span dir="ltr" class="nowrap">`amp-iframe`</span>](/ar/docs/reference/components/amp-iframe.html)
         النظام بأنه ستكون هناك علامة <span dir="ltr" class="nowrap">`amp-iframe`</span>.
         تنشئ AMP مربع iframe قبل أن تعرف حتى ما الذي سيتضمنه:
       example: /content/includes/amp-iframe.md

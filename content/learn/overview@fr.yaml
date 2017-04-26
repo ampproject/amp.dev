@@ -15,7 +15,7 @@ core:
         [Balises HTML dans la spécification AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         Ces éléments personnalisés, appelés composants AMP HTML,
         permettent d'implémenter facilement et efficacement des modèles communs.
-        <p>Par exemple, la balise [`amp-img`](/fr/docs/reference/components/media/amp-img.html)
+        <p>Par exemple, la balise [`amp-img`](/fr/docs/reference/components/amp-img)
         offre une entière prise en charge de `srcset` même dans les navigateurs qui ne sont pas encore compatibles.
         Découvrez comment [créer votre première page AMP HTML](/fr/docs/tutorials/create.html).
     - title: AMP JS

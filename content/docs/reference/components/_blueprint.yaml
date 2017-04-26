@@ -23,13 +23,3 @@ custom_children:
   - title@: Social
     href: /content/docs/reference/components/social/amp-facebook.md
     collection: /content/docs/reference/components/social
-
-navigation:
-  prev:
-    section: true
-    title@: Guides
-    href: /content/docs/guides/author_develop/responsive_amp.md
-  next:
-    subtitle@: Next Reference
-    title@: AMP HTML Specification
-    href: /content/docs/reference/spec.md

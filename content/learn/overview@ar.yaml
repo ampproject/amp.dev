@@ -15,7 +15,7 @@ core:
         [علامات HTML في مواصفات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         هذه العناصر المخصصة، التي يُطلق عليها اسم مكونات <span dir="ltr" class="nowrap">AMP HTML</span>،
         تسهّل تنفيذ الأنماط الشائعة بطريقة فائقة الأداء.
-        <p>على سبيل المثال، توفر العلامة [`amp-img`](/ar/docs/reference/components/media/amp-img.html)
+        <p>على سبيل المثال، توفر العلامة [`amp-img`](/ar/docs/reference/components/amp-img.html)
         الدعم الكامل لـ `srcset` حتى في المتصفحات التي لا تدعمها حتى الآن.
         تعرّف على كيفية [إنشاء صفحة <span dir="ltr" class="nowrap">AMP HTML</span> الأولى لك](/ar/docs/tutorials/create.html).
     - title: AMP JS

@@ -41,14 +41,14 @@ points:
       description: |
         AMP tidak memperbolehkan mekanisme ekstensi memblokir perenderan halaman.
         AMP mendukung ekstensi untuk elemen-elemen seperti
-        [lightbox](/id/docs/reference/components/layout/amp-lightbox.html),
-        [sematan instagram](/id/docs/reference/components/social/amp-instagram.html),
-        [tweet](/id/docs/reference/components/social/amp-twitter.html), dsb.
+        [lightbox](/id/docs/reference/components/amp-lightbox.html),
+        [sematan instagram](/id/docs/reference/components/amp-instagram.html),
+        [tweet](/id/docs/reference/components/amp-twitter.html), dsb.
         Meskipun elemen ini memerlukan permintaan HTTP tambahan,
         permintaan tersebut tidak memblokir layout dan perenderan halaman.
         <p>Halaman apa pun yang menggunakan skrip khusus harus memberi tahu sistem AMP
         bahwa nantinya akan memiliki tag khusus.
-        Misalnya, skrip [`amp-iframe`](/id/docs/reference/components/layout/amp-iframe.html)
+        Misalnya, skrip [`amp-iframe`](/id/docs/reference/components/amp-iframe.html)
         memberi tahu sistem bahwa akan ada tag `amp-iframe`.
         AMP membuat kotak iframe sebelum mengetahui apa yang akan disertakan:
       example: /content/includes/amp-iframe.md

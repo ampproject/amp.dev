@@ -5,7 +5,7 @@ toc: true
 ---
 [TOC]
 
-This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`](/docs/reference/components/ads/amp-analytics.html) component.
+This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`](/docs/reference/components/amp-analytics.html) component.
 
 By specifying the name of an analytics vendor with the `type` attribute you can quickly configure `amp-analytics` to use the respective product. Additional configuration (such as your user id) may still be necessary.
 
@@ -21,10 +21,10 @@ Here's a snippet that specifies the `type` for an analytics provider named `XYZ`
 
 
 {% call callout('Read on', type='read') %}
-Learn more about tracking analytics with [`amp-analytics`](/docs/reference/components/ads/amp-analytics.html).
+Learn more about tracking analytics with [`amp-analytics`](/docs/reference/components/amp-analytics.html).
 {% endcall %}
 
-## Vendors 
+## Vendors
 
 ### Acquia Lift
 

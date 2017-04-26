@@ -15,7 +15,7 @@ core:
         [HTML Tags in the AMP spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md) — Tagi HTML w specyfikacji AMP).
         Te niestandardowe elementy, nazywane komponentami AMP HTML,
         ułatwiają efektywną implementację typowych wzorców.
-        <p>Na przykład znacznik [`amp-img`](/pl/docs/reference/components/media/amp-img.html)
+        <p>Na przykład znacznik [`amp-img`](/pl/docs/reference/components/amp-img.html)
         udostępnia pełną obsługę atrybutu `srcset` także w przeglądarkach, które go jeszcze nie obsługują.
         Dowiedz się, jak [utworzyć swoją pierwszą stronę AMP HTML](/pl/docs/tutorials/create.html).
     - title: AMP JS

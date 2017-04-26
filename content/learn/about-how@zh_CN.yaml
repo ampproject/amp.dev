@@ -28,11 +28,11 @@ points:
       id: dont-block-rendering
       description: |
         AMP 不会让扩展机制阻塞页面渲染。
-        AMP 支持[灯箱](/zh_cn/docs/reference/components/layout/amp-lightbox.html)、[Instagram 嵌入代码](/zh_cn/docs/reference/components/social/amp-instagram.html)、[Twitter 消息](/zh_cn/docs/reference/components/social/amp-twitter.html)等对象的扩展。
+        AMP 支持[灯箱](/zh_cn/docs/reference/components/amp-lightbox.html)、[Instagram 嵌入代码](/zh_cn/docs/reference/components/amp-instagram.html)、[Twitter 消息](/zh_cn/docs/reference/components/amp-twitter.html)等对象的扩展。
         <p>尽管这些对象需要额外的 HTTP 请求，
         但这些请求不会阻塞页面布局和渲染。
         <p>使用自定义脚本的任何页面都必须告诉 AMP 系统其最终会有自定义标记。
-        <p>例如，[`amp-iframe`](/zh_cn/docs/reference/components/layout/amp-iframe.html) 脚本会告诉系统将有一个 `amp-iframe` 标记。
+        <p>例如，[`amp-iframe`](/zh_cn/docs/reference/components/amp-iframe.html) 脚本会告诉系统将有一个 `amp-iframe` 标记。
         <p>AMP 甚至会在了解 iframe 框将要包含的内容前先行创建此框：
       example: /content/includes/amp-iframe.md
     - title: 将所有第三方 JavaScript 保存在非关键路径下
