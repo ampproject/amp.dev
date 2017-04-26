@@ -14,7 +14,7 @@ expanding responsive design capabilities with features like [placeholders & fall
 [advanced art direction via srcset](/docs/guides/responsive/art_direction.html) and the [layout attribute](/docs/guides/responsive/control_layout.html) for better control over how your elements display.
 
 {% call callout('Tip', type='success') %}
-It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them.
+It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](/docs/guides/responsive/responsive_design).
 {% endcall %}
 
 ## Add styles to a page
