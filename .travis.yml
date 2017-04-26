@@ -14,6 +14,7 @@ install:
 - npm install -g gulp
 - npm install -g firebase-tools
 - npm install
+- npm update
 script:
 - 'if [ "${TRAVIS_BRANCH}" = "production" ]; then firebase use production; fi'
 - 'if [ "${TRAVIS_BRANCH}" = "master" ]; then firebase use staging; fi'
