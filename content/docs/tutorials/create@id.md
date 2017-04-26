@@ -6,4 +6,4 @@ Tidak tahu cara memulainya? Dalam tutorial ini, Anda akan mempelajari cara membu
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/id/docs/get_started/create/basic_markup.html">Lanjutkan ke Langkah 1</a>
+<a class="button go-button" href="/id/docs/tutorials/create/basic_markup.html">Lanjutkan ke Langkah 1</a>

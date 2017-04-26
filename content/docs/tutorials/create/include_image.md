@@ -13,4 +13,4 @@ To demonstrate what additional markup could look like, here’s the code require
 
 To learn why we’re replacing tags like `<img>` with `<amp-img>`, and how many are available, head to [Include Iframes and Media](/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/docs/get_started/create/presentation_layout.html">Continue to Step 3</a>
+<a class="go-button button" href="/docs/tutorials/create/presentation_layout.html">Continue to Step 3</a>

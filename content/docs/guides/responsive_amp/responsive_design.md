@@ -1,6 +1,6 @@
 ---
-$title: Create Responsive AMP Pages 
-$order: 6
+$title: Create Responsive AMP Pages
+$order: 5
 toc: true
 components:
   - iframe
@@ -9,9 +9,9 @@ components:
 
 ## Introduction
 
-Responsive web design is about building fluid web pages that respond to your user's needs—pages that fit their device's screen size and orientation.  You can achieve this easily in AMP.  AMP supports all screen and device categories and provides built-in responsive components. 
+Responsive web design is about building fluid web pages that respond to your user's needs—pages that fit their device's screen size and orientation.  You can achieve this easily in AMP.  AMP supports all screen and device categories and provides built-in responsive components.
 
-In this guide, we'll show you how you can easily implement these responsive fundamentals in AMP: 
+In this guide, we'll show you how you can easily implement these responsive fundamentals in AMP:
 
 - [Controlling the viewport](#controlling-the-viewport)
 - [Creating a responsive layout](#creating-a-responsive-layout)
@@ -19,9 +19,9 @@ In this guide, we'll show you how you can easily implement these responsive fund
 
 ## Controlling the viewport
 
-To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.  
+To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.
 
-But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup](https://www.ampproject.org/docs/reference/spec#required-markup) for AMP pages, you need to specify the following viewport: 
+But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup](https://www.ampproject.org/docs/reference/spec#required-markup) for AMP pages, you need to specify the following viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -31,11 +31,11 @@ These are the typical viewport settings that you'd use for a responsive site. Al
 
 ## Creating a responsive layout
 
-In responsive design, you can use CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) queries to tailor the styling of your web page for various screen dimensions without having to alter the content of the page.  In AMP, you can continue to use those same CSS `@media` queries. Additionally, for finer control over an AMP element, you can specify the `media` attribute on the element. This is particularly useful when you need to either show or hide an element based on a media query. See the [Changing the art direction of an image](#changing-the-art-direction-of-an-image) section for an example that uses the `media` attribute. 
+In responsive design, you can use CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) queries to tailor the styling of your web page for various screen dimensions without having to alter the content of the page.  In AMP, you can continue to use those same CSS `@media` queries. Additionally, for finer control over an AMP element, you can specify the `media` attribute on the element. This is particularly useful when you need to either show or hide an element based on a media query. See the [Changing the art direction of an image](#changing-the-art-direction-of-an-image) section for an example that uses the `media` attribute.
 
-Making each element resize to fit a screen can be tricky<sup><a href="#fn1" id="ref1">*</a></sup>.  However, in AMP, you can easily make an element responsive by just specifying the `"layout=responsive"` attribute along with the element's `width` and `height` attributes. When you apply the `responsive` layout to an element, that element will automatically resize to the width of its container element, and the height will change based on the aspect ratio specified by the element's `width` and `height`. Almost all AMP elements support a `responsive` layout; refer to the element's reference documentation to see which layouts are supported.  
+Making each element resize to fit a screen can be tricky<sup><a href="#fn1" id="ref1">*</a></sup>.  However, in AMP, you can easily make an element responsive by just specifying the `"layout=responsive"` attribute along with the element's `width` and `height` attributes. When you apply the `responsive` layout to an element, that element will automatically resize to the width of its container element, and the height will change based on the aspect ratio specified by the element's `width` and `height`. Almost all AMP elements support a `responsive` layout; refer to the element's reference documentation to see which layouts are supported.
 
-Even though you can easily make elements responsive with `"layout=responsive"`, you still must consider how your elements appear on all screen sizes--including desktop and tablet. A common mistake is to allow an image to take the full width of the screen, which stretches the image beyond its intended size, causing a poor experience for widescreen users.  By default, elements with `layout=responsive` will take the full width of the element's container, which is often unrestricted in width (ie., width=100%).  You can improve how images appear by simply restricting the width of the image's container. For example, by setting a "max-width" rule on the "body" or "main", you can restrict all images to a specific max width. 
+Even though you can easily make elements responsive with `"layout=responsive"`, you still must consider how your elements appear on all screen sizes--including desktop and tablet. A common mistake is to allow an image to take the full width of the screen, which stretches the image beyond its intended size, causing a poor experience for widescreen users.  By default, elements with `layout=responsive` will take the full width of the element's container, which is often unrestricted in width (ie., width=100%).  You can improve how images appear by simply restricting the width of the image's container. For example, by setting a "max-width" rule on the "body" or "main", you can restrict all images to a specific max width.
 
 ##### Example: Restricting width of responsive images
 
@@ -53,11 +53,11 @@ To learn more about the different layouts in AMP, see the [Layout & Media querie
 
 ## Scaling media for the page
 
-Probably the most challenging aspect of responsive design is displaying media correctly on the page so that it responds to the screen's characteristics.  In this section, we'll look at how you can embed responsive videos and images on AMP pages. 
+Probably the most challenging aspect of responsive design is displaying media correctly on the page so that it responds to the screen's characteristics.  In this section, we'll look at how you can embed responsive videos and images on AMP pages.
 
 ### Embedding videos
 
-When you include a video in your web page, you want to ensure that the user can see the contents of the video and the video's controls (i.e., no overflowing).  Typically, you'll achieve this with a combination of CSS media queries, a container, and other CSS.  In AMP, you just need to add the video element to your page, and specify `layout=responsive` on the element—no extra CSS. 
+When you include a video in your web page, you want to ensure that the user can see the contents of the video and the video's controls (i.e., no overflowing).  Typically, you'll achieve this with a combination of CSS media queries, a container, and other CSS.  In AMP, you just need to add the video element to your page, and specify `layout=responsive` on the element—no extra CSS.
 
 ##### Example: Embedding a YouTube video
 
@@ -95,7 +95,7 @@ In the following example we have several image files that are of the same aspect
 <div>
 <amp-iframe height=326 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.resolution.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
-For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px  (412 * .75 * 2.6), which happens to be `apple-800.jpg`.   
+For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px  (412 * .75 * 2.6), which happens to be `apple-800.jpg`.
 
 {% call callout('Read on', type='read') %}
 To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](https://www.ampproject.org/docs/guides/responsive/art_direction) guide.
@@ -127,11 +127,11 @@ To learn more about art direction in AMP, see the [Art direction with srcset, si
 
 Delivering fast loading pages requires optimized images--in size, quality, and format.  Always reduce file sizes to the lowest acceptable quality level.  There are various tools that you can use to "crunch" images (e.g., [ImageAlph](http://pngmini.com/lossypng.html) or [TinyPNG](https://tinypng.com/)).  In terms of image formats,  some image formats provide better compression abilities that others (e.g., WebP and JPEG XR vs JPEG).  You'll want to provide the most optimized image for your user, as well as ensuring the image is supported by the user's browser (i.e., [not all browsers support all image formats](https://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support)).
 
-In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.  
+In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.
 
 {% call callout('Read on', type='read') %}
 To learn more about fallbacks, see the [Placeholders & Fallbacks](https://www.ampproject.org/docs/guides/author-develop/responsive/placeholders) guide.
-{% endcall %} 
+{% endcall %}
 
 ##### Example: Serve different image formats
 
@@ -144,7 +144,7 @@ As a nice bonus, some caches, like the Google AMP Cache, automatically compress 
 
 {% call callout('Read on', type='read') %}
 To learn more about the image optimizations that the Google AMP Cache applies, see the ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html) blog post.
-{% endcall %} 
+{% endcall %}
 
 ## Examples to inspire you
 

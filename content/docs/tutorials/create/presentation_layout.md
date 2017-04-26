@@ -28,4 +28,4 @@ AMP follows stricter rules when laying out elements on the page. On a normal HTM
 
 Learn all about how AMP renders and layouts a page and how you can modify the layout in [How to Control Layout](/docs/guides/author-develop/responsive/control_layout.html).
 
-<a class="button go-button" href="/docs/get_started/create/preview_and_validate.html">Continue to Step 4</a>
+<a class="button go-button" href="/docs/tutorials/create/preview_and_validate.html">Continue to Step 4</a>

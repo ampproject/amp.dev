@@ -59,4 +59,4 @@ Para obtener más información acerca de todos los metadatos que necesitarás en
 
 ¡Buenas noticias! Eso es todo lo que necesitamos para crear nuestra primera página AMP, aunque por supuesto aún no hay demasiadas noticias respecto del `<body>`. En la próxima sección, veremos la manera de agregar componentes básicos, como imágenes, elementos de AMP personalizados, de dar estilo a tu página y de definir un diseño responsivo.
 
-<a class="go-button button" href="/es/docs/get_started/create/include_image.html">Continuar con el paso 2</a>
+<a class="go-button button" href="/es/docs/tutorials/create/include_image.html">Continuar con el paso 2</a>

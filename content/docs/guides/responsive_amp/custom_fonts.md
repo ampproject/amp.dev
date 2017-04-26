@@ -1,6 +1,6 @@
 ---
-$title: Custom fonts
-$order: 5
+$title: Add custom fonts
+$order: 6
 toc: true
 ---
 [TOC]

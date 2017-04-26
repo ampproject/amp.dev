@@ -73,4 +73,4 @@ As a quick recap:
 A more detailed explanation about this flow can also be found in the [amp-access documentation](https://www.ampproject.org/docs/reference/components/amp-access#login-flow).
 {% endcall %}
 
-<a class="go-button button" href="/docs/get_started/login_requiring/add_comment.html">Continue to Step 2</a>
+<a class="go-button button" href="/docs/tutorials/login_requiring/add_comment.html">Continue to Step 2</a>

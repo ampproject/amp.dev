@@ -16,4 +16,4 @@ Successivamente assicurati che la pagina AMP **sia effettivamente valida**, in c
 
 [Consulta ulteriori informazioni sulla convalida](/it/docs/guides/debug/validate.html) e scopri cosa fare se vengono rilevati errori.
 
-<a class="go-button button" href="/it/docs/get_started/create/prepare_for_discovery.html">Vai al Passaggio 5</a>
+<a class="go-button button" href="/it/docs/tutorials/create/prepare_for_discovery.html">Vai al Passaggio 5</a>

@@ -6,6 +6,7 @@
     "amp-pixel": "ads-analytics",
     "amp-auto-ads": "ads-analytics",
     "amp-sticky-ad": "ads-analytics",
+    "amp-share-tracking": "ads-analytics",
 
     "amp-access-laterpay": "dynamic-content",
     "amp-access": "dynamic-content",
@@ -18,6 +19,7 @@
     "amp-mustache": "dynamic-content",
     "amp-selector": "dynamic-content",
     "amp-user-notification": "dynamic-content",
+    "amp-sortable-table": "dynamic-content",
 
     "amp-accordion": "layout",
     "amp-app-banner": "layout",

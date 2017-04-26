@@ -12,7 +12,7 @@ core:
         Die meisten Tags einer AMP-HTML-Seite sind normale HTML-Tags, einige werden aber durch AMP-spezifische Tags ersetzt. Mehr über HTML-Tags [erfahren Sie auch in der AMP-Spezifikation](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
         Diese AMP-spezifischen und benutzerdefinierten Elemente, AMP-HTML-Komponenten genannt, ermöglichen eine einfache und effiziente Implementierung von gängigen Mustern.
         <p>Das Tag [`amp-img`](/de/docs/reference/components/amp-img.html) beispielsweise bietet selbst in Browsern, die dies noch nicht unterstützen, vollständigen `srcset`-Support.
-        [Lesen Sie hier, wie Sie eine AMP-Seite erstellen.](/de/docs/get_started/create.html)
+        [Lesen Sie hier, wie Sie eine AMP-Seite erstellen.](/de/docs/tutorials/create.html)
     - title: AMP JS
       subtitle: |
         Die **AMP-JS-Bibliothek** sorgt dafür, dass AMP-HTML-Seiten schnell aufgebaut werden.

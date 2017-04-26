@@ -12,4 +12,4 @@ Untuk mendemonstrasikan seperti apa tampilan markup tambahan ini, berikut kode y
 
 Untuk mengetahui alasan kami mengganti tag seperti `<img>` dengan `<amp-img>`, dan jumlah ketersediaannya, kunjungi [Menyertakan Iframe dan Media](/id/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/id/docs/get_started/create/presentation_layout.html">Lanjutkan ke Langkah 3</a>
+<a class="go-button button" href="/id/docs/tutorials/create/presentation_layout.html">Lanjutkan ke Langkah 3</a>

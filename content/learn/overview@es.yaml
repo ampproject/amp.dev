@@ -17,7 +17,7 @@ core:
         crean patrones comunes que pueden implementarse con buen rendimiento en forma sencilla.
         <p>Por ejemplo, la etiqueta [`amp-img`](/es/docs/reference/components/amp-img)
         proporciona soporte completo de `srcset`, incluso en navegadores que todavía no lo admiten.
-        Obtén más información acerca de cómo [crear tu primera página AMP HTML](/es/docs/get_started/create).
+        Obtén más información acerca de cómo [crear tu primera página AMP HTML](/es/docs/tutorials/create).
     - title: AMP JS
       subtitle: |
         La biblioteca **AMP JS** garantiza la representación rápida de páginas AMP HTML.

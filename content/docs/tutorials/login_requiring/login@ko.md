@@ -40,7 +40,7 @@ $order: 0
 만약 쿠키가 없다면, `loggedIn = false`가 포함된 JSON 결과값을 반환할겁니다.
 결과적으로 사용자가 처음 페이지에 방문했을 때, 이 요청은 `loggedIn = false`를 반환할 거고 로그인 버튼이 보일겁니다.
 
-버튼의 HTML 코드를 다시 살펴보면, `on="tap:amp-access.login-sign-in"`를 사용하여, 사용자가 버튼을 클릭하면 위 JSON에 지정한 URL을 사용해야한다고 정의합니다. 
+버튼의 HTML 코드를 다시 살펴보면, `on="tap:amp-access.login-sign-in"`를 사용하여, 사용자가 버튼을 클릭하면 위 JSON에 지정한 URL을 사용해야한다고 정의합니다.
 
 [sourcecode:json]
 {
@@ -71,12 +71,12 @@ AMPByExample 서버가 로그인 페이지에서 POST 요청을 받고 로그인
 
 요약하자면 다음과 같습니다:
 
-- AMP 런타임은 로그인 JSON 객체 내에 지정된 로그인 요청에 return 파라미터를 자동으로 추가합니다 
-- AMP 런타임은 로그인 페이지를 닫고 return URL 매개 변수로 지정된 페이지로 리디렉션합니다 
+- AMP 런타임은 로그인 JSON 객체 내에 지정된 로그인 요청에 return 파라미터를 자동으로 추가합니다
+- AMP 런타임은 로그인 페이지를 닫고 return URL 매개 변수로 지정된 페이지로 리디렉션합니다
 - 사용자가 로그인 버튼을 클릭하면 서버가 응답을 조정해야합니다.
 
 {% call callout('Tip', type='success') %}
 이 flow에 대한 더 상세한 설명은 [amp-access documentation](https://www.ampproject.org/docs/reference/components/amp-access#login-flow)에서 볼 수 있습니다.
 {% endcall %}
 
-<a class="go-button button" href="/ko/docs/get_started/login_requiring/add_comment.html">2단계로 계속</a>
+<a class="go-button button" href="/ko/docs/tutorials/login_requiring/add_comment.html">2단계로 계속</a>

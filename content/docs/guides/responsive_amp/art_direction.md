@@ -1,5 +1,5 @@
 ---
-$title: Art direction with srcset, sizes & heights
+$title: Responsive images with srcset, sizes & heights
 $order: 4
 toc: true
 ---

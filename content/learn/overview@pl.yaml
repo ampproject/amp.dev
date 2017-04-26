@@ -17,7 +17,7 @@ core:
         ułatwiają efektywną implementację typowych wzorców.
         <p>Na przykład znacznik [`amp-img`](/pl/docs/reference/components/amp-img.html)
         udostępnia pełną obsługę atrybutu `srcset` także w przeglądarkach, które go jeszcze nie obsługują.
-        Dowiedz się, jak [utworzyć swoją pierwszą stronę AMP HTML](/pl/docs/get_started/create.html).
+        Dowiedz się, jak [utworzyć swoją pierwszą stronę AMP HTML](/pl/docs/tutorials/create.html).
     - title: AMP JS
       subtitle: |
         Biblioteka **AMP JS** zapewnia szybkie renderowanie stron AMP HTML.

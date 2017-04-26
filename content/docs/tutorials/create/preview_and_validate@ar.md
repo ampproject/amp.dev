@@ -16,4 +16,4 @@ $title: المعاينة والتحقق
 
 [تعرّف على المزيد بشأن التحقق](/ar/docs/guides/debug/validate.html)، وما يتعين فعله عند مصادفة أخطاء.
 
-<a class="go-button button" href="/ar/docs/get_started/create/prepare_for_discovery.html">المتابعة إلى الخطوة 5</a>
+<a class="go-button button" href="/ar/docs/tutorials/create/prepare_for_discovery.html">المتابعة إلى الخطوة 5</a>

@@ -61,4 +61,4 @@ JSON 응답 예제입니다:
 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
 
-<a class="go-button button" href="/ko/docs/get_started/login_requiring/logout.html">3단계로 계속</a>
+<a class="go-button button" href="/ko/docs/tutorials/login_requiring/logout.html">3단계로 계속</a>

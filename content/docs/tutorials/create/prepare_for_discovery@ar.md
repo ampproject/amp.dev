@@ -28,4 +28,4 @@ $title: تحضير صفحتك للاكتشاف والتوزيع
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/ar/docs/get_started/create/publish.html">المتابعة إلى الخطوة 6</a>
+<a class="go-button button" href="/ar/docs/tutorials/create/publish.html">المتابعة إلى الخطوة 6</a>

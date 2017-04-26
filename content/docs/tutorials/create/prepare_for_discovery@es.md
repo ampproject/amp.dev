@@ -28,4 +28,4 @@ Si solo tienes una página y es AMP, debes agregarle el vínculo canónico. Este
 <link rel="canonical" href="https://www.ejemplo.com/url/al/documento/amp.html">
 [/sourcecode]
 
-<a class="go-button button" href="/es/docs/get_started/create/publish.html">Continuar con el paso 6</a>
+<a class="go-button button" href="/es/docs/tutorials/create/publish.html">Continuar con el paso 6</a>

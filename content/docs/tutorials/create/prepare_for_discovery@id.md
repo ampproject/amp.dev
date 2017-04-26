@@ -28,4 +28,4 @@ Jika Anda hanya menautkan satu halaman, dan halaman itu adalah halaman AMP, Anda
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/id/docs/get_started/create/publish.html">Lanjutkan ke Langkah 6</a>
+<a class="go-button button" href="/id/docs/tutorials/create/publish.html">Lanjutkan ke Langkah 6</a>
