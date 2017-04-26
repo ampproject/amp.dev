@@ -59,4 +59,4 @@ $title: إنشاء صفحة AMP HTML
 
 أخبار سارّة! هذا كل ما نحتاجه لإنشاء صفحتنا الأولى في AMP، لكن ليس هناك الكثير مما يجري، بطبيعة الحال، في النص الأساسي حتى اللحظة. في القسم التالي، سوف نتناول كيفية إضافة أساسيات، مثل الصور وعناصر AMP المخصصة، وكيفية إضفاء نمط على صفحتك، وتطوير تنسيق سريع الاستجابة.
 
-<a class="go-button button" href="/ar/docs/get_started/create/include_image.html">المتابعة إلى الخطوة 2</a>
+<a class="go-button button" href="/ar/docs/tutorials/create/include_image.html">المتابعة إلى الخطوة 2</a>

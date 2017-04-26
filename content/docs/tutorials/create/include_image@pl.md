@@ -12,4 +12,4 @@ Przedstawiony poniżej kod wymagany do umieszczenia obrazu na stronie demonstruj
 
 Uzasadnienie zamiany znaczników w rodzaju `<img>` na `<amp-img>` oraz informacje o liczbie dostępnych znaczników znajdziesz w części [Dołączanie ramek iframe i multimediów](/pl/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/pl/docs/get_started/create/presentation_layout.html">Przejdź do kroku 3</a>
+<a class="go-button button" href="/pl/docs/tutorials/create/presentation_layout.html">Przejdź do kroku 3</a>

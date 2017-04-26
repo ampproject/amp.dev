@@ -12,4 +12,4 @@ Ek işaretlerin nasıl görüneceğini örneklendirmek için, sayfaya bir görü
 
 `<img>` gibi etiketleri `<amp-img>` ile neden değiştirdiğimizi ve kaç tane mevcut olduğunu öğrenmek için, [Bilgi İletim Birimleri ve Medya Ekle](/tr/docs/guides/author-develop/amp_replacements.html) bölümüne gidin.
 
-<a class="go-button button" href="/tr/docs/get_started/create/presentation_layout.html">Adım 3 ile devam edin</a>
+<a class="go-button button" href="/tr/docs/tutorials/create/presentation_layout.html">Adım 3 ile devam edin</a>

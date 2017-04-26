@@ -29,4 +29,4 @@ If you only have one page, and that page is an AMP page, you must still add the 
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/docs/get_started/create/publish.html">Continue to Step 6</a>
+<a class="go-button button" href="/docs/tutorials/create/publish.html">Continue to Step 6</a>

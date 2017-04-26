@@ -59,4 +59,4 @@ Twitter など、他のさまざまな環境で必要になる全メタデータ
 
 ここまでで、初めて AMP ページを作成する上で必要な作業をすべて説明しましたが、まだボディ部はほとんど手をつけていません。次のセクションでは、イメージなどの基本要素の追加方法、カスタム AMP 要素、ページをスタイリングしてレスポンシブなレイアウトを作成する方法をご紹介します。
 
-<a class="go-button button" href="/ja/docs/get_started/create/include_image.html">ステップ 2 に進む</a>
+<a class="go-button button" href="/ja/docs/tutorials/create/include_image.html">ステップ 2 に進む</a>

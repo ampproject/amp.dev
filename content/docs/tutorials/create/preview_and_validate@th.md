@@ -16,4 +16,4 @@ $title: ดูตัวอย่างและตรวจสอบ
 
 [เรียนรู้เพิ่มเติมเกี่ยวกับการตรวจสอบ](/th/docs/guides/debug/validate.html) และสิ่งที่ควรทำเมื่อพบข้อผิดพลาด
 
-<a class="go-button button" href="/th/docs/get_started/create/prepare_for_discovery.html">ไปยังขั้นตอนที่ 5</a>
+<a class="go-button button" href="/th/docs/tutorials/create/prepare_for_discovery.html">ไปยังขั้นตอนที่ 5</a>

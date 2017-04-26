@@ -17,7 +17,7 @@ core:
         permettent d'implémenter facilement et efficacement des modèles communs.
         <p>Par exemple, la balise [`amp-img`](/fr/docs/reference/components/media/amp-img.html)
         offre une entière prise en charge de `srcset` même dans les navigateurs qui ne sont pas encore compatibles.
-        Découvrez comment [créer votre première page AMP HTML](/fr/docs/get_started/create.html).
+        Découvrez comment [créer votre première page AMP HTML](/fr/docs/tutorials/create.html).
     - title: AMP JS
       subtitle: |
         La bibliothèque **AMP JS** garantit un rendu rapide des pages AMP HTML.

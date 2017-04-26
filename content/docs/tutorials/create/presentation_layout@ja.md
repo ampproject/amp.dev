@@ -27,4 +27,4 @@ AMP は厳密な規則に従って、ページ上に要素を配置します。�
 
 AMP ページのレンダリングやレイアウトの方法、レイアウトの変更方法については[レイアウトの制御方法](/ja/docs/guides/author-develop/responsive/control_layout.html)をご覧ください。
 
-<a class="go-button button" href="/ja/docs/get_started/create/preview_and_validate.html">ステップ 4 に進む</a>
+<a class="go-button button" href="/ja/docs/tutorials/create/preview_and_validate.html">ステップ 4 に進む</a>

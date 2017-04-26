@@ -1,7 +1,7 @@
 ---
 $title: Create Your AMP HTML Page
 $order: 0
-$parent: /content/docs/get_started/create.md
+$parent: /content/docs/tutorials/create.md
 ---
 
 The following markup is a decent starting point or boilerplate.
@@ -61,4 +61,4 @@ To learn more about all the meta-data you’ll need in various other places, i.e
 
 Good news! That’s all we need to create our first AMP page, but of course, there’s not a lot going on in the body yet. In the next section, we’ll cover how to add basics like images, custom AMP elements, how to style your page and work out a responsive layout.
 
-<a class="go-button button" href="/docs/get_started/create/include_image.html">Continue to Step 2</a>
+<a class="go-button button" href="/docs/tutorials/create/include_image.html">Continue to Step 2</a>

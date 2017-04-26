@@ -12,4 +12,4 @@ $title: 이미지 포함
 
 `<img>`와 같은 태그를 `<amp-img>`로 대체하는 이유와 얼마나 많은 태그를 사용할 수 있는지에 대해 알아보려면, [Iframe 및 미디어 포함](/ko/docs/guides/author-develop/amp_replacements.html)으로 이동하세요.
 
-<a class="go-button button" href="/ko/docs/get_started/create/presentation_layout.html">3단계로 계속</a>
+<a class="go-button button" href="/ko/docs/tutorials/create/presentation_layout.html">3단계로 계속</a>

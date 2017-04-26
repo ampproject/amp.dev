@@ -206,11 +206,11 @@
 
     /* banded, elastic width removed */
     min-width: auto;
-    max-width: auto;
+    max-width: none;
 
     .current-header {
       background: white;
-      padding: 20px 30px;
+      padding: 0px 30px;
 
       .breadcrumb {
         color: $color-grey-md;
@@ -248,15 +248,26 @@
       }
     }
 
-    .navigation {
-      display: none;
-    }
   }
 }
 
 .doc-footer {
-  border-left: 3px solid $color-grey-lt;
-  margin-left: 353px;
+
+  display: flex;
+  .left {
+    /* banded, elastic width */
+    min-width: 300px;
+    max-width: 400px;
+    width: 20vw;
+
+    @include max-screen($mobile-breakpoint) {
+      display: none;
+    }
+  }
+
+  .right {
+    flex: 1 0 auto;
+  }
 
   .cta-line.left {
     display: none;
@@ -304,48 +315,9 @@
         padding: 5px 20px 5px 30px;
     }
 
-    .navigation {
-      border-left: 3px solid $color-grey-lt;
-      border-right: 0;
-
-      .next {
-        padding: 15px 20px 15px 50px;
-
-        &::after {
-          left: 30px;
-          right: auto;
-          transform: translateY(-50%) rotate(180deg);
-        }
-
-        &:hover::after {
-          transform: translate(-15px, -50%) rotate(180deg);
-        }
-      }
-
-      .previous {
-        border-left: 3px solid $color-grey-lt;
-        border-right: 0;
-        padding: 15px 50px 15px 20px;
-
-        .navigation-label {
-          padding-right: 10px;
-        }
-
-        &::after {
-          left: auto;
-          right: 30px;
-          transform: translateY(-50%);
-        }
-
-        &:hover::after {
-          transform: translate(15px, -50%);
-        }
-      }
-    }
   }
 
   .doc-footer {
-    margin: 0 353px 0 0;
     border-left: 0;
     border-right: 3px solid $color-grey-lt;
 

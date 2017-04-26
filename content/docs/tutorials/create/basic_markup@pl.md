@@ -59,4 +59,4 @@ Aby dowiedzieć się więcej o wszystkich metadanych potrzebnych w różnych inn
 
 Dobra wiadomość! To wszystko, co potrzebne do utworzenia pierwszej strony AMP, przy czym oczywiście niewiele dzieje się na razie w sekcji body. W następnej części zostanie opisane dodawanie podstawowych elementów, takich jak obrazy, dodawanie niestandardowych elementów AMP, nadawanie stronie stylu i opracowanie przyjaznego w obsłudze układu.
 
-<a class="go-button button" href="/pl/docs/get_started/create/include_image.html">Przejdź do kroku 2</a>
+<a class="go-button button" href="/pl/docs/tutorials/create/include_image.html">Przejdź do kroku 2</a>

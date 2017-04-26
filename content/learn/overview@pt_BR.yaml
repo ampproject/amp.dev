@@ -17,7 +17,7 @@ core:
         facilitam a implementação de padrões comuns, resultando em um bom desempenho.
         <p>Por exemplo, a tag [`amp-img`](/pt_br/docs/reference/components/media/amp-img.html)
         proporciona suporte total a `srcset` mesmo em navegadores que ainda não são compatíveis com esse recurso.
-        Saiba como [criar sua primeira página em AMP HTML](/pt_br/docs/get_started/create.html).
+        Saiba como [criar sua primeira página em AMP HTML](/pt_br/docs/tutorials/create.html).
     - title: AMP JS
       subtitle: |
         A biblioteca de **AMP JS** assegura a renderização rápida de páginas em AMP HTML.

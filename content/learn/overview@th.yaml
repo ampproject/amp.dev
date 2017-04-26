@@ -17,7 +17,7 @@ core:
         ที่ช่วยให้สามารถนำรูปแบบทั่วไปไปใช้งานได้อย่างมีประสิทธิภาพ
         <p>เช่น แท็ก [`amp-img`](/th/docs/reference/components/media/amp-img.html)
         จะสนับสนุน `srcset` ได้อย่างสมบูรณ์แม้ในเบราว์เซอร์ที่ยังไม่มีการสนับสนุนดังกล่าว
-        ดูวิธีการ[สร้าง AMP HTML หน้าแรกของคุณ](/th/docs/get_started/create.html)
+        ดูวิธีการ[สร้าง AMP HTML หน้าแรกของคุณ](/th/docs/tutorials/create.html)
     - title: AMP JS
       subtitle: |
         ไลบรารี **AMP JS** จะช่วยทำให้แสดงหน้า AMP HTML ได้อย่างรวดเร็ว

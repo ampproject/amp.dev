@@ -28,4 +28,4 @@ Se la tua pagina è in un solo formato e stai usando una pagina AMP, devi comunq
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/it/docs/get_started/create/publish.html">Vai al Passaggio 6</a>
+<a class="go-button button" href="/it/docs/tutorials/create/publish.html">Vai al Passaggio 6</a>

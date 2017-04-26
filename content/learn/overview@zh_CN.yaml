@@ -15,7 +15,7 @@ core:
         利用这些自定义元素（称为 AMP HTML 组件）
         可以轻松高效地实现常见的模式。
         <p>例如，[`amp-img`](/zh_cn/docs/reference/components/media/amp-img.html) 标记可提供完整的 `srcset` 支持，即使在尚不支持该标记的浏览器中也是如此。
-        <p>了解如何[创建您的第一个 AMP HTML 页面](/zh_cn/docs/get_started/create.html)。
+        <p>了解如何[创建您的第一个 AMP HTML 页面](/zh_cn/docs/tutorials/create.html)。
     - title: AMP JS
       subtitle: |
         **AMP JS** 库可确保快速渲染 AMP HTML 页面。
