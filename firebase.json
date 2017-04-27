@@ -109,6 +109,26 @@
         "type": 301
       },
       {
+        "source": "/docs/guides/author-develop/pwa-amp?(.html)",
+        "destination": "/docs/guides/pwa-amp.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/author-develop/pwa-amp/amp-as-pwa?(.html)",
+        "destination": "/docs/guides/pwa-amp/amp-as-pwa.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/author-develop/pwa-amp/amp-to-pwa?(.html)",
+        "destination": "/docs/guides/pwa-amp/amp-to-pwa.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/author-develop/pwa-amp/amp-in-pwa?(.html)",
+        "destination": "/docs/guides/pwa-amp/amp-in-pwa.html",
+        "type": 301
+      },
+      {
         "source": "/docs/guides/debug/validate?(.html)",
         "destination": "/docs/guides/validate.html",
         "type": 301

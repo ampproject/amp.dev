@@ -44,7 +44,7 @@ components:
           {% for article in blog.blogs %}
             {% if loop.index <= 6 %}
             <div class="card-container">
-              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
+              <a href="{% if article.type == 'Video' %}{{ article.origin }}{% else %}{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}{% endif %}" class="card">
                 <div class="card-inner">
                   <div class="card-type text-label news">
                     {% if article.type == "Video" %}{{_('New Video')}}{% else %}{{_('News')}}{% endif %}
@@ -84,7 +84,7 @@ components:
 
           <div class="card-container">
           {% for article in blog.blogs %}
-              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
+              <a href="{% if article.type == 'Video' %}{{ article.origin }}{% else %}{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}{% endif %}" class="card">
                 <div class="card-inner">
                   <div class="card-type text-label news">
                     {% if article.type == "Video" %}{{_('New Video')}}{% else %}{{_('News')}}{% endif %}
