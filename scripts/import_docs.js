@@ -59,14 +59,38 @@ function downloadPage(filePath, callback, headingToStrip) {
 
 }
 
+function getDependencies(content) {
+
+  var dependencies = content
+    // remove all sourcecode blocks to not match false positives
+    .replace(/\[sourcecode:?[^\]]*\](((?!\[\/sourcecode\])[\s\S])+)\[\/sourcecode\]/gm, '\n')
+    // remove inline code
+    .replace(/`[^`]+`/g, '')
+    // find all used amp tags in the page
+    .match(/<amp-([^>\s]+)[^>]*>/g);
+
+  if (dependencies) {
+    return dependencies.map(item => item.match(/<amp-([^>\s]+)[^>]*>/)[1]);
+  }
+
+  return null;
+
+}
+
 function savePage(config, callback) {
+
   var optionalTOC = config.content.indexOf('[TOC]') > -1 ? 'toc: true\n' : '';
+  var optionalDependencies = getDependencies(config.content);
+  optionalDependencies = optionalDependencies ? '\ncomponents:\n' + '  - ' + optionalDependencies.join('\n  - ') + '\n' : '';
+
   var frontMatter = `---
 $title: "${config.title}"
 $order: ${config.order || 0}
-${optionalTOC}---
+${optionalTOC}${optionalDependencies}---
 `;
+
   fs.writeFile(config.destination, frontMatter + config.content, callback);
+
 }
 
 function convertMarkdown(content, relativePath, headingToStrip) {
