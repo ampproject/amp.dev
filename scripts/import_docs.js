@@ -61,9 +61,6 @@ function downloadPage(filePath, callback, headingToStrip) {
 
 function getDependencies(content) {
 
-
-  content += '<amp-iframe></amp-iframe> <amp-img></amp-img> <amp-iframe blark></amp-iframe>';
-
   var dependencies = content
     // remove all sourcecode blocks to not match false positives
     .replace(/\[sourcecode:?[^\]]*\](((?!\[\/sourcecode\])[\s\S])+)\[\/sourcecode\]/gm, '\n')
