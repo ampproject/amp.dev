@@ -17,11 +17,11 @@ style the most.
 
 In addition to AMP validity, you may also want to confirm that your AMP document is [discoverable](/docs/guides/discovery.html) to third-party platforms.
 
-### Browser Developer Console.
+### Browser Developer Console
 
 The AMP Validator comes bundled with the AMP JS library, so it is available on every AMP page out of the box. To validate:
 
-  1. Open your AMP page in your browser
+  1. Open your AMP page in your browser.
   1. Append "`#development=1`" to the URL, for example, `http://localhost:8000/released.amp.html#development=1`.
   1. Open the [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) and check for validation errors.
 
@@ -92,14 +92,69 @@ icon.
 AMP Validator Extension for
 [Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) and [Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/).
 
+### NPM Packages for CI
+
+As part of your build and test pipelines, you can integrate AMP validation through the AMP Validator NPM packages: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) or [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (a gulp plugin).  For example, you can use the AMP Validator NPM package for integration tests or in a schedule task to verify production AMP pages.
+
+
+##### Example: Validating an AMP HTML file 
+
+In this example, we validate an AMP HTML file by using the [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) NPM package.  The validation status is piped out to the console.
+
+```javascript
+'use strict';
+var amphtmlValidator = require('amphtml-validator');
+var fs = require('fs');
+
+amphtmlValidator.getInstance().then(function (validator) {
+  var input = fs.readFileSync('index.html', 'utf8');
+  var result = validator.validateString(input);
+  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  for (var ii = 0; ii < result.errors.length; ii++) {
+    var error = result.errors[ii];
+    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    if (error.specUrl !== null) {
+      msg += ' (see ' + error.specUrl + ')';
+    }
+    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+  }
+});
+```
+
+#####Example: Using a gulp task to validate AMP HTML
+
+In this example, we have a gulp task that validates all AMP HTML files.  If there's an AMP validation error, the task exits with an error code (1).
+
+```javascript
+const gulp = require('gulp');
+const gulpAmpValidator = require('gulp-amphtml-validator');
+
+const paths = {
+  src: 'src/*.html'
+};
+
+gulp.task('amphtml:validate', () => {
+  return gulp.src(paths.src)
+    .pipe(gulpAmpValidator.validate())
+    .pipe(gulpAmpValidator.format())
+    .pipe(gulpAmpValidator.failAfterError());
+});
+
+gulp.task('default', ['amphtml:validate'], function () {
+});
+```
+
 ### Command Line Tool
 
-As a prerequisite, you may need to install [Node.js with its package manager
-'npm' on your system](https://docs.npmjs.com/getting-started/installing-node).
+You can validate AMP HTML files by using the [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator).
 
-To install the [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator), type `npm install -g amphtml-validator`.
+Getting Started:
 
-Now let's validate a real AMP HTML page.
+1.  Make sure you have [Node.js with its package manager
+'npm'](https://docs.npmjs.com/getting-started/installing-node) on your system.
+2.  Install the  [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator) by running the following command: `npm install -g amphtml-validator`.
+
+Now let's validate a real AMP HTML page:
 
 [sourcecode:console]
 $ amphtml-validator https://www.ampproject.org/
@@ -208,7 +263,7 @@ Each tool gives several pieces of information:
      documentation for the `<amp-img>` tag. Not all errors generate
      documentation links.
 
-Carefully re-reading the spec, we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
+Carefully re-reading the [spec](/docs/reference/spec.html), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
 
 To better understand the complete list of potential errors,
 see the [AMP Validation Errors guide](https://www.ampproject.org/docs/reference/validation_errors.html).
