@@ -27,19 +27,19 @@ $small-loop-time: 5s;
 
   @keyframes l-#{$name} {
     0% {
-      width: $length;
+      transform: scale3d(1,1,1);
     }
 
     #{($grow-time + $hold-time) / $total-time * 100%} {
-      width: $length;
+      transform: scale3d(1,1,1);
     }
 
     #{($grow-time + $hold-time + $erase-time) / $total-time * 100%} {
-      width: 0;
+      transform: scale3d(0,1,1);
     }
 
     100% {
-      width: 0;
+      transform: scale3d(0,1,1);
     }
   }
 
@@ -73,6 +73,7 @@ $small-loop-time: 5s;
   width: 1000px;
   transform: rotate(144deg) scale(.8);
   transform-origin: 250px 250px;
+  contain: strict;
 
   .line,
   .line::before {
