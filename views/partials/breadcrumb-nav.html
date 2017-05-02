@@ -1,22 +1,26 @@
-{% set currentDoc = g.doc(doc.pod_path) %}
-{% set listItems %}
+{% set currentDocs = [] %}
+{% do currentDocs.append(g.doc(doc.pod_path)) %}
+{% set listItems = [] %}
+{% set currentDoc = currentDocs|last %}
+{% set firstListItem %}
 <li>{{currentDoc.titles('breadcrumb')}}</li>
 {% endset %}
-{% set currentDoc = g.doc(currentDoc.pod_path).parent %}
-{% if not currentDoc == None %}
+{% if listItems.append(firstListItem) %}{% endif %}
+{% if currentDocs.append(g.doc(currentDoc.pod_path).parent) %}{% endif %}
+{% if not currentDocs|last == None %}
   {% for _ in range(10) %}
-    {% set nextListItem %}
-    <li><a href="{{currentDoc.url.path}}">{{currentDoc.titles('breadcrumb')}}</a></li>
-    {% endset %}
-    {% set listItems %}
-    {{nextListItem|safe + listItems|safe}}
-    {% endset %}
-    {% set currentDoc = g.doc(currentDoc.pod_path).parent %}
-    {% if currentDoc == None %}{% break %}{% endif %}
+    {% set currentDoc = currentDocs|last %}
+{% set nextListItem %}
+<li><a href="{{currentDoc.url.path}}">{{currentDoc.titles('breadcrumb')}}</a></li>
+{% endset %}
+    {% if listItems.append(nextListItem|safe) %}{% endif %}
+    {% set currentDoc = currentDocs|last %}
+    {% if currentDocs.append(g.doc(currentDoc.pod_path).parent) %}{% endif %}
+    {% if currentDocs|last == None %}{% break %}{% endif %}
   {% endfor %}
 {% endif %}
 <nav class="breadcrumb">
   <ul>
-  {{listItems|safe}}
+    {{listItems|reverse|join('    ')|safe}}
   </ul>
 </nav>
