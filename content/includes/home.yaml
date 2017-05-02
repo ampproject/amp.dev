@@ -37,19 +37,19 @@ success_stories:
       img: /static/img/home/wapo_logo.png
       img_height: 197
       img_width: 1280
-      url@: /content/learn/case-studies/washingtonpost.md
+      url: /content/learn/case-studies/washingtonpost.md
       class: wapo
     - quote@: “AMP was the perfect addition to our business, giving us a new level of impact for our e-commerce clients.”
       img_height: 135
       img_width: 902
       img: /static/img/case-studies/wompmobile_logo.png
-      url@: /content/learn/case-studies/wompmobile.md
+      url: /content/learn/case-studies/wompmobile.md
       class: wired
     - quote@: “Across Teads’ publisher portfolio, video ads perform significantly better on AMP pages than on the traditional mobile web.”
       img_height: 28
       img_width: 75
       img: /static/img/home/teads_logo.svg
-      url@: /content/learn/case-studies/teads.md
+      url: /content/learn/case-studies/teads.md
       class: teads
 
 large_cta:
