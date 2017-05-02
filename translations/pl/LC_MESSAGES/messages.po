@@ -1,16 +1,4 @@
 #: /content/includes/home.yaml
-msgid "/content/learn/case-studies/teads.md"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "/content/learn/case-studies/washingtonpost.md"
-msgstr ""
-
-#: /content/includes/home.yaml
-msgid "/content/learn/case-studies/wompmobile.md"
-msgstr ""
-
-#: /content/includes/home.yaml
 msgid "A collaborative effort"
 msgstr ""
 
@@ -60,11 +48,13 @@ msgstr ""
 msgid "AMP Conf. March 7/8."
 msgstr ""
 
-#: /content/docs/reference/components
+#: /content/docs/reference/spec/_blueprint.yaml
 msgid "AMP HTML Specification"
 msgstr ""
 
 #: /content/support/faqs/supported-platforms.md
+#: /content/support/faqs/supported-platforms@es.md
+#: /content/support/faqs/supported-platforms@ko.md
 msgid "AMP Overview"
 msgstr ""
 
@@ -72,7 +62,7 @@ msgstr ""
 msgid "AMP Roadmap"
 msgstr ""
 
-#: /content/docs/reference/components
+#: /content/docs/reference/components/_blueprint.yaml
 msgid "AMP components"
 msgstr ""
 
@@ -105,14 +95,14 @@ msgid ""
 "the actions you’re guiding them towards like completing a purchase."
 msgstr ""
 
-#: /content/learn/overview@zh_CN.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview.yaml
+#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
+#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
+#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
+#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
+#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
+#: /content/learn/overview@zh_CN.yaml
 msgid "AMP provides a great user experience across many platforms"
 msgstr ""
 
@@ -129,7 +119,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: /content/learn/who-uses-amp@ko.yaml /content/learn/who-uses-amp.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 msgid "Ad Tech Platforms"
 msgstr ""
 
@@ -141,11 +131,11 @@ msgstr ""
 msgid "Ads"
 msgstr ""
 
-#: /content/docs/reference/components
+#: /content/docs/reference/components/_blueprint.yaml
 msgid "Ads & Analytics"
 msgstr ""
 
-#: /content/docs/reference/components/ads-analytics
+#: /content/docs/reference/components/ads-analytics/_blueprint.yaml
 msgid "Ads & Analytics - AMP components"
 msgstr ""
 
@@ -153,8 +143,8 @@ msgstr ""
 msgid "Adtech success stories"
 msgstr ""
 
-#: /content/learn/who-uses-amp@ko.yaml /content/learn/who-uses-amp.yaml
 #: /content/learn/case-studies/category/advertisers.md
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 msgid "Advertisers"
 msgstr ""
 
@@ -174,7 +164,7 @@ msgstr ""
 msgid "Better advertising on a faster web."
 msgstr ""
 
-#: /content/includes/latest.yaml /content/latest/blog
+#: /content/includes/latest.yaml /content/latest/blog/_blueprint.yaml
 msgid "Blog"
 msgstr ""
 
@@ -223,7 +213,8 @@ msgid "CMS"
 msgstr ""
 
 #: /content/includes/menu.yaml /content/learn/case-studies.html
-#: /content/learn/case-studies/category /views/about-casestudies.html:12
+#: /content/learn/case-studies/category/_blueprint.yaml
+#: /views/about-casestudies.html:12
 msgid "Case Studies"
 msgstr ""
 
@@ -235,8 +226,8 @@ msgstr ""
 msgid "Content Platforms"
 msgstr ""
 
-#: /content/docs/contribute.md /content/includes/menu.yaml /content/docs/contribute
-#: /content/docs/reference
+#: /content/docs/contribute.md /content/docs/contribute/_blueprint.yaml
+#: /content/docs/reference/_blueprint.yaml /content/includes/menu.yaml
 msgid "Contribute"
 msgstr ""
 
@@ -249,11 +240,11 @@ msgid ""
 " website."
 msgstr ""
 
-#: /content/docs/tutorials/create
+#: /content/docs/tutorials/create/_blueprint.yaml
 msgid "Create Your First AMP Page"
 msgstr ""
 
-#: /content/docs/tutorials/login_requiring
+#: /content/docs/tutorials/login_requiring/_blueprint.yaml
 msgid "Create a login-requiring AMP page"
 msgstr ""
 
@@ -268,22 +259,23 @@ msgid "Create your First AMP"
 msgstr ""
 
 #: /content/learn/case-studies.html
-#: /content/learn/case-studies/category/publishers.md
 #: /content/learn/case-studies/category/advertisers.md
+#: /content/learn/case-studies/category/e-commerce.md
+#: /content/learn/case-studies/category/publishers.md
 msgid "Create your first AMP page"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/learn/amp-design-principles@ko.yaml
-#: /content/learn/amp-design-principles.yaml
+#: /content/includes/menu.yaml /content/learn/amp-design-principles.yaml
+#: /content/learn/amp-design-principles@ko.yaml
 msgid "Design Principles"
 msgstr ""
 
 #: /content/includes/menu.yaml /content/support/developer.md
-#: /content/support/developer
+#: /content/support/developer/_blueprint.yaml
 msgid "Developer Support"
 msgstr ""
 
-#: /content/docs /content/docs/build.md /content/includes/menu.yaml
+#: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
 msgid "Docs"
 msgstr "Dokumenty"
 
@@ -310,11 +302,11 @@ msgstr ""
 msgid "Download PDF Case study"
 msgstr ""
 
-#: /content/docs/reference/components
+#: /content/docs/reference/components/_blueprint.yaml
 msgid "Dynamic Content"
 msgstr ""
 
-#: /content/docs/reference/components/dynamic-content
+#: /content/docs/reference/components/dynamic-content/_blueprint.yaml
 msgid "Dynamic Content - AMP components"
 msgstr ""
 
@@ -344,7 +336,7 @@ msgid ""
 "deliver the value you’re looking for."
 msgstr ""
 
-#: /content/includes/menu.yaml /content/includes/latest.yaml
+#: /content/includes/latest.yaml /content/includes/menu.yaml
 #: /content/latest/list-event.html
 msgid "Events"
 msgstr ""
@@ -353,7 +345,8 @@ msgstr ""
 msgid "Examples"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/support/faqs.md /content/support/faqs
+#: /content/includes/menu.yaml /content/support/faqs.md
+#: /content/support/faqs/_blueprint.yaml
 msgid "FAQs"
 msgstr ""
 
@@ -377,11 +370,16 @@ msgstr ""
 msgid "Get Started"
 msgstr ""
 
-#: /content/learn/who/publishers.yaml /content/learn/who/ad-tech-platforms.yaml
+#: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/publishers.yaml
 msgid "Get Started Building"
 msgstr ""
 
+#: /content/includes/doc.yaml
+msgid "Get in touch"
+msgstr ""
+
 #: /content/learn/amp-design-principles.yaml
+#: /content/learn/amp-design-principles@ko.yaml
 msgid "Get started building"
 msgstr ""
 
@@ -405,8 +403,9 @@ msgstr ""
 msgid "Grow engagement and increase conversions with faster experiences"
 msgstr ""
 
-#: /content/docs/build.md /content/docs/guides.md /content/includes/menu.yaml
-#: /content/docs/guides /content/docs/reference /content/docs/reference/components
+#: /content/docs/build.md /content/docs/guides.md
+#: /content/docs/guides/_blueprint.yaml /content/docs/reference/_blueprint.yaml
+#: /content/includes/menu.yaml
 msgid "Guides"
 msgstr "Przewodniki"
 
@@ -422,14 +421,14 @@ msgstr ""
 msgid "Higher Performance and Engagement"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/learn/about-how@zh_CN.yaml
-#: /content/learn/about-how@tr.yaml /content/learn/about-how@th.yaml
-#: /content/learn/about-how@ru.yaml /content/learn/about-how@pt_BR.yaml
-#: /content/learn/about-how@pl.yaml /content/learn/about-how@ko.yaml
-#: /content/learn/about-how@ja.yaml /content/learn/about-how@it.yaml
-#: /content/learn/about-how@id.yaml /content/learn/about-how@fr.yaml
-#: /content/learn/about-how@es.yaml /content/learn/about-how@ar.yaml
-#: /content/learn/about-how.yaml
+#: /content/includes/menu.yaml /content/learn/about-how.yaml
+#: /content/learn/about-how@ar.yaml /content/learn/about-how@es.yaml
+#: /content/learn/about-how@fr.yaml /content/learn/about-how@id.yaml
+#: /content/learn/about-how@it.yaml /content/learn/about-how@ja.yaml
+#: /content/learn/about-how@ko.yaml /content/learn/about-how@pl.yaml
+#: /content/learn/about-how@pt_BR.yaml /content/learn/about-how@ru.yaml
+#: /content/learn/about-how@th.yaml /content/learn/about-how@tr.yaml
+#: /content/learn/about-how@zh_CN.yaml
 msgid "How AMP Works"
 msgstr ""
 
@@ -453,7 +452,7 @@ msgstr ""
 msgid "Join Now"
 msgstr ""
 
-#: /content/learn/who-uses-amp.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 msgid ""
 "Join an ecosystem of  850,000 domains, leading platforms, and 100+ technology"
 " providers using  AMP."
@@ -467,19 +466,19 @@ msgstr ""
 msgid "Keep your audience engaged with AMP pages"
 msgstr ""
 
-#: /content/docs/reference/components
+#: /content/docs/reference/components/_blueprint.yaml
 msgid "Layout"
 msgstr ""
 
-#: /content/docs/reference/components/layout
+#: /content/docs/reference/components/layout/_blueprint.yaml
 msgid "Layout - AMP components"
 msgstr ""
 
-#: /content/learn
+#: /content/learn/_blueprint.yaml
 msgid "Learn"
 msgstr ""
 
-#: /content/learn/who-uses-amp@ko.yaml /content/learn/who-uses-amp.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 #: /content/learn/who/advertisers.yaml /views/partials/grid-card.html:28
 #: /views/partials/promo_banner.html:17
 msgid "Learn More"
@@ -507,21 +506,21 @@ msgid ""
 "website."
 msgstr ""
 
-#: /content/learn/overview@zh_CN.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview.yaml /content/learn/about-how@zh_CN.yaml
-#: /content/learn/about-how@tr.yaml /content/learn/about-how@th.yaml
-#: /content/learn/about-how@ru.yaml /content/learn/about-how@pt_BR.yaml
-#: /content/learn/about-how@pl.yaml /content/learn/about-how@ko.yaml
-#: /content/learn/about-how@ja.yaml /content/learn/about-how@it.yaml
-#: /content/learn/about-how@id.yaml /content/learn/about-how@fr.yaml
-#: /content/learn/about-how@es.yaml /content/learn/about-how@ar.yaml
-#: /content/learn/about-how.yaml
+#: /content/learn/about-how.yaml /content/learn/about-how@ar.yaml
+#: /content/learn/about-how@es.yaml /content/learn/about-how@fr.yaml
+#: /content/learn/about-how@id.yaml /content/learn/about-how@it.yaml
+#: /content/learn/about-how@ja.yaml /content/learn/about-how@ko.yaml
+#: /content/learn/about-how@pl.yaml /content/learn/about-how@pt_BR.yaml
+#: /content/learn/about-how@ru.yaml /content/learn/about-how@th.yaml
+#: /content/learn/about-how@tr.yaml /content/learn/about-how@zh_CN.yaml
+#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
+#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
+#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
+#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
+#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
+#: /content/learn/overview@zh_CN.yaml
 msgid "Learn who uses AMP"
 msgstr ""
 
@@ -537,11 +536,11 @@ msgstr ""
 msgid "Maximize your revenue"
 msgstr ""
 
-#: /content/docs/reference/components
+#: /content/docs/reference/components/_blueprint.yaml
 msgid "Media"
 msgstr ""
 
-#: /content/docs/reference/components/media
+#: /content/docs/reference/components/media/_blueprint.yaml
 msgid "Media - AMP components"
 msgstr ""
 
@@ -550,7 +549,7 @@ msgid "More Past Events"
 msgstr ""
 
 #: /content/includes/doc.yaml
-msgid "Need Dev Support?"
+msgid "Need more help?"
 msgstr ""
 
 #: /content/pages/home.html:37 /content/pages/home.html:77
@@ -563,11 +562,9 @@ msgid "News"
 msgstr ""
 
 #: /content/support/faqs/supported-platforms.md
+#: /content/support/faqs/supported-platforms@es.md
+#: /content/support/faqs/supported-platforms@ko.md
 msgid "Next FAQ"
-msgstr ""
-
-#: /content/docs/reference/components
-msgid "Next Reference"
 msgstr ""
 
 #: /content/learn/amp-design-principles.yaml
@@ -578,18 +575,18 @@ msgstr ""
 msgid "Only do things if they can be made fast."
 msgstr ""
 
-#: /content/learn/overview@zh_CN.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview.yaml
+#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
+#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
+#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
+#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
+#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
+#: /content/learn/overview@zh_CN.yaml
 msgid "Overview"
 msgstr ""
 
-#: /content/includes/lists.yaml /content/includes/events.yaml
+#: /content/includes/events.yaml /content/includes/lists.yaml
 #: /content/latest/list-past-event.html
 msgid "Past Events"
 msgstr ""
@@ -598,22 +595,22 @@ msgstr ""
 msgid "Platform Support"
 msgstr ""
 
-#: /content/learn/overview@zh_CN.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview.yaml
+#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
+#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
+#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
+#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
+#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
+#: /content/learn/overview@zh_CN.yaml
 msgid "Play Video"
 msgstr ""
 
-#: /content/docs/reference/components
+#: /content/docs/reference/components/_blueprint.yaml
 msgid "Presentation"
 msgstr ""
 
-#: /content/docs/reference/components/presentation
+#: /content/docs/reference/components/presentation/_blueprint.yaml
 msgid "Presentation - AMP components"
 msgstr ""
 
@@ -631,8 +628,8 @@ msgstr ""
 msgid "Privacy"
 msgstr ""
 
-#: /content/learn/who-uses-amp@ko.yaml /content/learn/who-uses-amp.yaml
 #: /content/learn/case-studies/category/publishers.md
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 msgid "Publishers"
 msgstr "Wydawcy"
 
@@ -651,7 +648,7 @@ msgid ""
 "return visits, viewability, CTRs and more."
 msgstr ""
 
-#: /content/learn/who-uses-amp.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 msgid "Read case studies"
 msgstr ""
 
@@ -663,8 +660,8 @@ msgstr ""
 msgid "Reduce complexity in your operations."
 msgstr ""
 
-#: /content/docs/build.md /content/docs/reference.md /content/includes/menu.yaml
-#: /content/docs/reference
+#: /content/docs/build.md /content/docs/reference.md
+#: /content/docs/reference/_blueprint.yaml /content/includes/menu.yaml
 msgid "Reference"
 msgstr "Źródła wiedzy"
 
@@ -676,7 +673,7 @@ msgstr ""
 msgid "Report a platform bug on GitHub"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/includes/latest.yaml
+#: /content/includes/latest.yaml /content/includes/menu.yaml
 msgid "Roadmap"
 msgstr ""
 
@@ -698,21 +695,21 @@ msgstr ""
 msgid "See how other publishers have found success with AMP"
 msgstr ""
 
-#: /content/learn/overview@zh_CN.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview.yaml /content/learn/about-how@zh_CN.yaml
-#: /content/learn/about-how@tr.yaml /content/learn/about-how@th.yaml
-#: /content/learn/about-how@ru.yaml /content/learn/about-how@pt_BR.yaml
-#: /content/learn/about-how@pl.yaml /content/learn/about-how@ko.yaml
-#: /content/learn/about-how@ja.yaml /content/learn/about-how@it.yaml
-#: /content/learn/about-how@id.yaml /content/learn/about-how@fr.yaml
-#: /content/learn/about-how@es.yaml /content/learn/about-how@ar.yaml
-#: /content/learn/about-how.yaml
+#: /content/learn/about-how.yaml /content/learn/about-how@ar.yaml
+#: /content/learn/about-how@es.yaml /content/learn/about-how@fr.yaml
+#: /content/learn/about-how@id.yaml /content/learn/about-how@it.yaml
+#: /content/learn/about-how@ja.yaml /content/learn/about-how@ko.yaml
+#: /content/learn/about-how@pl.yaml /content/learn/about-how@pt_BR.yaml
+#: /content/learn/about-how@ru.yaml /content/learn/about-how@th.yaml
+#: /content/learn/about-how@tr.yaml /content/learn/about-how@zh_CN.yaml
+#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
+#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
+#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
+#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
+#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
+#: /content/learn/overview@zh_CN.yaml
 msgid "See what AMP can do for you"
 msgstr ""
 
@@ -736,11 +733,11 @@ msgstr ""
 msgid "Smart and coordinated ads boost campaign ROI"
 msgstr ""
 
-#: /content/docs/reference/components
+#: /content/docs/reference/components/_blueprint.yaml
 msgid "Social"
 msgstr ""
 
-#: /content/docs/reference/components/social
+#: /content/docs/reference/components/social/_blueprint.yaml
 msgid "Social - AMP components"
 msgstr ""
 
@@ -780,8 +777,9 @@ msgid "Start Building"
 msgstr ""
 
 #: /content/learn/case-studies.html
-#: /content/learn/case-studies/category/publishers.md
 #: /content/learn/case-studies/category/advertisers.md
+#: /content/learn/case-studies/category/e-commerce.md
+#: /content/learn/case-studies/category/publishers.md
 msgid "Start building now"
 msgstr ""
 
@@ -793,21 +791,23 @@ msgstr ""
 msgid "Strengthen your business while maintaining control"
 msgstr ""
 
-#: /content/docs/guides/responsive_amp
+#: /content/docs/guides/responsive_amp/_blueprint.yaml
 msgid "Style & Layout"
 msgstr ""
 
-#: /content/learn/who-uses-amp.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 msgid "Success stories"
 msgstr ""
 
 #: /content/learn/case-studies.html
-#: /content/learn/case-studies/category/publishers.md
 #: /content/learn/case-studies/category/advertisers.md
+#: /content/learn/case-studies/category/e-commerce.md
+#: /content/learn/case-studies/category/publishers.md
 msgid "Success stories of the domains publishing AMP pages"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/support /content/support/support.md
+#: /content/includes/menu.yaml /content/support/_blueprint.yaml
+#: /content/support/support.md
 msgid "Support"
 msgstr "Pomoc"
 
@@ -815,9 +815,9 @@ msgstr "Pomoc"
 msgid "Support Forum"
 msgstr ""
 
-#: /content/support/faqs/supported-platforms@ko.md
-#: /content/support/faqs/supported-platforms@es.md
 #: /content/support/faqs/supported-platforms.md
+#: /content/support/faqs/supported-platforms@es.md
+#: /content/support/faqs/supported-platforms@ko.md
 msgid "Supported Platforms, Vendors and Partners"
 msgstr ""
 
@@ -845,17 +845,17 @@ msgid ""
 "distribution platforms."
 msgstr ""
 
-#: /content/support/faqs/supported-platforms@ko.md
-#: /content/support/faqs/supported-platforms@es.md
 #: /content/support/faqs/supported-platforms.md
+#: /content/support/faqs/supported-platforms@es.md
+#: /content/support/faqs/supported-platforms@ko.md
 msgid ""
 "The Accelerated Mobile Pages (AMP) Project is an open source initiative that "
 "makes it easy for publishers to create mobile-friendly content once and have "
 "it load instantly everywhere. – Accelerated Mobile Pages Project"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/includes/home.yaml /content/latest
-#: /content/latest/latest.html
+#: /content/includes/home.yaml /content/includes/menu.yaml
+#: /content/latest/_blueprint.yaml /content/latest/latest.html
 msgid "The Latest"
 msgstr ""
 
@@ -908,8 +908,8 @@ msgid ""
 "target=\"_blank\">Twitter</a> for the latest news and event listings."
 msgstr ""
 
-#: /content/learn/amp-design-principles@ko.yaml
 #: /content/learn/amp-design-principles.yaml
+#: /content/learn/amp-design-principles@ko.yaml
 msgid ""
 "These design principles are meant to guide the ongoing design and development"
 " of AMP. They should help us make internally consistent decisions."
@@ -919,9 +919,11 @@ msgstr ""
 msgid "Try out the hands-on examples on AMP by Example."
 msgstr ""
 
-#: /content/docs/build.md /content/docs/tutorials.md /content/includes/menu.yaml
-#: /content/learn/amp-design-principles.yaml /content/docs/tutorials
-#: /content/learn/who/publishers.yaml /content/learn/who/ad-tech-platforms.yaml
+#: /content/docs/build.md /content/docs/tutorials.md
+#: /content/docs/tutorials/_blueprint.yaml /content/includes/menu.yaml
+#: /content/learn/amp-design-principles.yaml
+#: /content/learn/amp-design-principles@ko.yaml
+#: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/publishers.yaml
 msgid "Tutorials"
 msgstr ""
 
@@ -937,7 +939,7 @@ msgstr ""
 msgid "User Experience > Developer Experience > Ease of Implementation."
 msgstr ""
 
-#: /content/support/vendor.md /content/support/vendor
+#: /content/support/vendor.md /content/support/vendor/_blueprint.yaml
 msgid "Vendor Support"
 msgstr ""
 
@@ -967,10 +969,6 @@ msgstr ""
 
 #: /content/docs/build.md
 msgid "View templates"
-msgstr ""
-
-#: /content/includes/doc.yaml
-msgid "Visit our FAQ"
 msgstr ""
 
 #: /content/docs/build.md
@@ -1024,14 +1022,14 @@ msgstr ""
 msgid "What AMP Provides"
 msgstr ""
 
-#: /content/learn/overview@zh_CN.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview.yaml
+#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
+#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
+#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
+#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
+#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
+#: /content/learn/overview@zh_CN.yaml
 msgid "What is AMP"
 msgstr "Co to jest AMP"
 
@@ -1060,12 +1058,12 @@ msgid ""
 "of advertising by joining the AMP Ads Initiative today."
 msgstr ""
 
-#: /content/learn/who
+#: /content/learn/who/_blueprint.yaml
 msgid "Who Uses AMP"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/learn/who-uses-amp@ko.yaml
-#: /content/learn/who-uses-amp.yaml
+#: /content/includes/menu.yaml /content/learn/who-uses-amp.yaml
+#: /content/learn/who-uses-amp@ko.yaml
 msgid "Who is AMP for?"
 msgstr ""
 
@@ -1073,28 +1071,12 @@ msgstr ""
 msgid "Why AMP Ads"
 msgstr ""
 
-#: /content/docs/build.md
-msgid "guides/responsive_amp.html"
-msgstr ""
-
-#: /content/docs/build.md
-msgid "https://ampbyexample.com/"
-msgstr ""
-
-#: /content/docs/build.md
-msgid "https://ampstart.com/"
+#: /content/learn/case-studies/category/e-commerce.md
+msgid "e-commerce"
 msgstr ""
 
 #: /content/pages/home.html:61
 msgid "or"
-msgstr ""
-
-#: /content/docs/build.md
-msgid "reference/components.html"
-msgstr ""
-
-#: /content/docs/build.md
-msgid "tutorials/create.html"
 msgstr ""
 
 #: /content/includes/home.yaml
