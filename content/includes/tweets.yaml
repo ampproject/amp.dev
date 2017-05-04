@@ -3,6 +3,24 @@ tweets:
   - origin_name: AMP Project
     origin_id: AMPhtml
     origin_href: https://twitter.com/AMPhtml
+    tweet_id: 857661369688010752
+    date_data: 2017-04-27T11:22:59-07:00
+    date: April 27, 2017
+    text: >
+      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="4">Update: The issue has been confirmed and a fix is being rolled out. You should see things returning to normal.<a href="https://t.co/JiGYqvl1ed" rel="nofollow noopener" dir="ltr" data-expanded-url="https://twitter.com/AMPhtml/status/857654558994059264" class="twitter-timeline-link u-hidden" target="_blank" title="https://twitter.com/AMPhtml/status/857654558994059264"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">twitter.com/AMPhtml/status</span><span class="invisible">/857654558994059264</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
+
+  - origin_name: AMP Project
+    origin_id: AMPhtml
+    origin_href: https://twitter.com/AMPhtml
+    tweet_id: 857654558994059264
+    date_data: 2017-04-27T10:55:55-07:00
+    date: April 27, 2017
+    text: >
+      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="4">For those with analytics issues: We forwarded all reports to the Google Search and Analytics teams, who are working on it. Will update soon.<a href="https://t.co/0hL2URoXu0" rel="nofollow noopener" dir="ltr" data-expanded-url="https://twitter.com/fighto/status/857597845255409664" class="twitter-timeline-link u-hidden" target="_blank" title="https://twitter.com/fighto/status/857597845255409664"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">twitter.com/fighto/status/</span><span class="invisible">857597845255409664</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
+
+  - origin_name: AMP Project
+    origin_id: AMPhtml
+    origin_href: https://twitter.com/AMPhtml
     tweet_id: 855178606556856320
     date_data: 2017-04-20T14:57:22-07:00
     date: April 20, 2017
@@ -26,23 +44,3 @@ tweets:
     date: April 18, 2017
     text: >
       <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Speaking of <a href="https://twitter.com/jsconfeu" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="64462097"><s>@</s><b>jsconfeu</b></a>. We’re looking forward to our very own <a href="https://twitter.com/chenshayt" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="3106029908"><s>@</s><b>chenshayt</b></a> dive deep into how AMP works!<a href="https://t.co/T7P7reZOcP" rel="nofollow noopener" dir="ltr" data-expanded-url="http://2017.jsconf.eu/speakers/chen-shay-you-dont-need-amp-for-that.html" class="twitter-timeline-link u-hidden" target="_blank" title="http://2017.jsconf.eu/speakers/chen-shay-you-dont-need-amp-for-that.html"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">2017.jsconf.eu/speakers/chen-</span><span class="invisible">shay-you-dont-need-amp-for-that.html</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
-
-  - origin_name: AMP Project
-    origin_id: AMPhtml
-    origin_href: https://twitter.com/AMPhtml
-    tweet_id: 854354168730968064
-    date_data: 2017-04-18T08:21:21-07:00
-    date: April 18, 2017
-    text: >
-      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">We’re in Berlin in May sponsoring <a href="https://twitter.com/jsconfeu" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="64462097"><s>@</s><b>jsconfeu</b></a>! Join us for a dedicated AMP meetup with <a href="https://twitter.com/pbakaus" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="12999402"><s>@</s><b>pbakaus</b></a> &amp; <a href="https://twitter.com/cramforce" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="15534471"><s>@</s><b>cramforce</b></a> on May 3!<a href="https://t.co/6VDhQgu3mR" rel="nofollow noopener" dir="ltr" data-expanded-url="https://www.meetup.com/Zalando-Tech-Events-Berlin/events/239183474/" class="twitter-timeline-link u-hidden" target="_blank" title="https://www.meetup.com/Zalando-Tech-Events-Berlin/events/239183474/"><span class="tco-ellipsis"></span><span class="invisible">https://www.</span><span class="js-display-url">meetup.com/Zalando-Tech-E</span><span class="invisible">vents-Berlin/events/239183474/</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
-
-  - origin_name: Senthil
-    origin_id: senthil_hi
-    origin_href: https://twitter.com/senthil_hi
-    retweet_id: AMPhtml
-    retweet_href: https://twitter.com/amphtml
-    tweet_id: 854114747314077697
-    date_data: 2017-04-17T16:29:59-07:00
-    date: April 17, 2017
-    text: >
-      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">We are hosting an AMP meetup at eBay “Dive into AMP through the ecommerce lens” <a href="https://t.co/J9B8IUBTt5" rel="nofollow noopener" dir="ltr" data-expanded-url="https://www.meetup.com/eBay-Cloud-Meetup/events/237941744/" class="twitter-timeline-link" target="_blank" title="https://www.meetup.com/eBay-Cloud-Meetup/events/237941744/"><span class="tco-ellipsis"></span><span class="invisible">https://www.</span><span class="js-display-url">meetup.com/eBay-Cloud-Mee</span><span class="invisible">tup/events/237941744/</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a> Cc <a href="https://twitter.com/cramforce" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="15534471"><s>@</s><b>cramforce</b></a> <a href="https://twitter.com/AMPhtml" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="3450662892"><s>@</s><b>AMPhtml</b></a> <a href="https://twitter.com/rudygalfi" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="29601222"><s>@</s><b>rudygalfi</b></a></p>
