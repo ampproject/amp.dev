@@ -120,7 +120,9 @@ gulp.task('sass', function() {
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({
+      browsers: ['> 10%']
+    }))
     .pipe(gulp.dest(Path.CSS_OUT_DIR));
 });
 
