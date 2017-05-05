@@ -200,14 +200,80 @@ body.amp-ads {
   }
 
   section.difference {
+    max-width: 80vw;
+    margin: 0 auto 200px;
     h3 {
       text-align: center;
+      margin: 0 auto 190px;
       max-width: 500px;
-      margin: 0 auto 200px;
       i {
         color: #07a4fb;
       }
-    }    
+    }
+
+    .video-container {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+
+      .logo {
+        position: absolute;
+        transform: translateX(-50%);
+        font-size: 1.0em;
+        color: #aaa;
+        font-weight: 500;
+        top: -145px;
+        &.one {
+          left: 19%;
+        }
+        &.two {
+          left: 80%;
+        }
+      }
+      .phone-overlay {
+        position: absolute;
+        width: 860px;
+        &.one {
+          top: -188px;
+          left: -180px;
+        }
+        &.two {
+          top: -188px;
+          left: 370px;
+        }
+      }
+      .lines {
+        position: absolute;
+        top: 280px;
+        left: -250px;
+        width: 400px;
+        height: 400px;
+      }
+    }
+    @media(max-width: 1127px) {
+      .video-container {
+        .phone-overlay {
+          width: 77vw;
+          &.one { 
+            top: -16.8vw;
+            left: -16vw;
+          }
+          &.two { 
+            top: -16.8vw;
+            left: 32.5vw;
+          }
+        }
+        .lines {
+          top: 30vw;
+          left: -27vw;
+          width: 40vw;
+          height: 40vw;
+        }
+        .logo {
+          top: -15vw;
+        }
+      }
+    }
   }
 
   section.who-for {
@@ -419,6 +485,14 @@ body.amp-ads {
       }
     }
 
+    section.difference {
+      margin: 0 auto 150px;
+      .logo.two {
+        font-size: 14px;
+        white-space: nowrap;
+      }
+    }
+
     section.large-cta {
       padding: 50px 0;
       h1 {
@@ -436,8 +510,14 @@ body.amp-ads {
     section.hero {
       .hero-images-tablet {
         height: 150vw;
-        .lines {
-        
+      }
+    }
+    section.difference {
+      h3 { margin: 0 auto 120px; }
+      .video-container {
+        .logo {
+          transform: translateX(-50%) scale(0.8);
+          top: -16vw;
         }
       }
     }
