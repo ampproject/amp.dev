@@ -399,7 +399,7 @@
   </section>
 
   <section class="latest">
-    {% set blog = g.doc('/content/includes/list-blog.yaml', locale=doc.locale) %}
+    {% set blog = g.doc('/content/includes/list-blog-ads.yaml', locale=doc.locale) %}
     <h3 class="latest-label">{{_(doc.latest.carousel_title)}}</h3>
     <amp-carousel class="latest-carousel tablet-up"
       height="255"
@@ -443,7 +443,7 @@
       {% for article in blog.blogs %}
         {% if loop.index <= 6 %}
         <div class="card-container">
-          <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
+          <a href="{{g.doc('/content/latest/blog-ads/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
             <div class="card-inner">
               <div class="card-type text-label news">
                 {{_('News')}}
