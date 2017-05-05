@@ -36,29 +36,3 @@
     visibility: visible;
   }
 }
-
-.mobile-show {
-  @include max-screen($mobile-breakpoint) {
-    display: block;
-  }
-}
-
-.mobile-hide {
-  @include max-screen($mobile-breakpoint) {
-    display: none;
-  }
-}
-
-.tablet-show {
-
-  @include max-screen($tablet-breakpoint) {
-    display: block;
-  }
-}
-
-.tablet-hide {
-
-  @include max-screen($tablet-breakpoint) {
-    display: none;
-  }
-}
