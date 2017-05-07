@@ -325,15 +325,25 @@ body.amp-ads {
       &.lines-2 { top: 692px; left: calc(50% - 320px); }
       &.lines-3 { top: 390px; left: calc(50% + 330px); }
     }
+    .logo {
+      color: #3C78B8;
+      font-size: 0.85em;
+      font-weight: 500;
+      text-align: center;
+    }
     .logo.ads {
       position: absolute; top: 478px; left: calc(50% - 290px);
-      filter: drop-shadow( 1px 1px 0 #00ABD1);
+      text-shadow: 1px 1px 0 #00ABD1;
+      color: white;
+      width: 109px;
     }
     .logo.page {
       position: absolute; top: 190px; left: calc(50% - 20px);
+      width: 120px;
     }
     .logo.landing-page {
       position: absolute; top: 286px; left: calc(50% + 219px);
+      width: 176px;
     }
     .phones {
       transform: translateX(-50%);
