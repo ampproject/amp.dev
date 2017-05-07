@@ -68,6 +68,29 @@ body.amp-ads {
         max-width: 1000px;
       }
     }
+    @media(max-width: 1200px) {
+      .hero-images {
+        .triangle {
+          right: 114px;
+        }
+        .lines {
+          right: 180px;
+        }
+        .phones {
+          right: 15vw;
+        }
+      }
+    }
+    @media(max-width: 1050px) {
+      .hero-images {
+        .lines {
+          right: 32vw;
+        }
+        .phones {
+          right: 25vw;
+        }
+      }
+    }
 
     .title {
       position: relative;
