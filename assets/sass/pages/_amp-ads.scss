@@ -370,6 +370,10 @@ body.amp-ads {
       width: 100%;
       max-width: 1080px;
       margin: 0 auto 100px;
+      .card-content {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
     .latest-carousel.mobile-down {
       margin: 0 auto 60px;
