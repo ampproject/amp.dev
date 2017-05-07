@@ -110,12 +110,12 @@
       <h3>{{_(doc.why.title)}}</h3>
       <div class="reasons desktop">
         {% for reason in doc.why.reasons %}
-          <div class="reason">
+          <div class="reason {{reason.icon}}">
             <amp-img
                 noloading
                 height=140
                 layout=fixed-height
-                src="/static/img/about/who-use-amp/{{reason.icon}}">
+                src="/static/img/about/who-use-amp/amp-ads/{{reason.icon}}.svg">
             </amp-img>
             <h4>{{_(reason.title)}}</h4>
             <p class="small">{{_(reason.paragraph)}}</p>
@@ -129,13 +129,13 @@
           type="slides">
         <div class="card-container">
         {% for reason in doc.why.reasons %}
-            <div class="reason card">
+            <div class="reason card {{reason.icon}}">
               <amp-img
                   noloading
                   height=150
                   width=150
                   layout=responsive
-                  src="/static/img/about/who-use-amp/{{reason.icon}}">
+                  src="/static/img/about/who-use-amp/amp-ads/{{reason.icon}}.svg">
               </amp-img>
               <h4>{{_(reason.title)}}</h4>
               <div><p class="small">{{_(reason.paragraph)}}</p></div>
@@ -160,13 +160,13 @@
           type="slides">
         {% for reason in doc.why.reasons %}
           <div class="card-container">
-            <div class="reason card">
+            <div class="reason card {{reason.icon}}">
               <amp-img
                   noloading
                   height=150
                   width=150
                   layout=responsive
-                  src="/static/img/about/who-use-amp/{{reason.icon}}">
+                  src="/static/img/about/who-use-amp/amp-ads/{{reason.icon}}.svg">
               </amp-img>
               <h4>{{_(reason.title)}}</h4>
               <div><p class="small">{{_(reason.paragraph)}}</p></div>

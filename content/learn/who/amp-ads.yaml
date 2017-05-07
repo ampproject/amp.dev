@@ -37,15 +37,15 @@ why:
   reasons:
     - title@: Faster ads drive better&nbsp;performance
       paragraph@: AMP Ads are 6x faster than regular ads on AMP pages, making them more viewable, more effective, and more likely to perform&nbsp;well.
-      icon: amp-ads/speed_icon.svg
+      icon: speed_icon
 
     - title@: Lighter ads lead to better ad&nbsp;experiences
       paragraph@: Heavy and unpredictable ad experiences slow down the page, cost users money, and can hurt your brand. AMP Ads are 3x lighter and the AMP framework guarantees that these ads only behave as intended so users always have a positive experience with your&nbsp;brand.
-      icon: amp-ads/lighter_ads.svg
+      icon: lighter_ads
 
     - title@: Safer ads build trust in your&nbsp;brands
       paragraph@: AMP ads need to be validated before they're served, eliminating the risk of malware and building trust in the brands users are engaging&nbsp;with.
-      icon: amp-ads/safer_ads.svg
+      icon: safer_ads
 
 experience:
   title@: The end-to-end AMP experience

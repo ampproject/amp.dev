@@ -12,7 +12,7 @@ body.amp-ads {
 
   section.hero {
     position: relative;
-    padding: 160px 10% 200px 8%;
+    padding: 145px 10% 200px 8%;
 
     .hero-images {
       position: absolute;
@@ -29,9 +29,9 @@ body.amp-ads {
       .phones {
         position: absolute;
         right: -10px;
-        top: -80px;
-        width: 1001px;
-        height: 984px;
+        top: -110px;
+        width: 900px;
+        height: 885px;
       }
     }
 
@@ -189,6 +189,20 @@ body.amp-ads {
 
         h4 {
           padding-right: 10px;
+        }
+      }
+    }
+
+    .reasons {
+      .reason.lighter_ads {
+        amp-img {
+          max-width: 100px;
+        }
+      }
+
+      .reason.safer_ads {
+        amp-img {
+          max-width: 80px;
         }
       }
     }
