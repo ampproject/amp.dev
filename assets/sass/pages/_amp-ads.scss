@@ -241,7 +241,7 @@ body.amp-ads {
     margin: 0 auto 200px;
     h3 {
       text-align: center;
-      margin: 0 auto 190px;
+      margin: 0 auto 170px;
       max-width: 500px;
       i {
         color: #07a4fb;
@@ -250,7 +250,7 @@ body.amp-ads {
 
     .video-container {
       position: relative;
-      max-width: 900px;
+      max-width: 650px;
       margin: auto;
 
       .logo {
@@ -259,7 +259,7 @@ body.amp-ads {
         font-size: 1.0em;
         color: #aaa;
         font-weight: 500;
-        top: -145px;
+        top: -120px;
         &.one {
           left: 19%;
         }
@@ -269,14 +269,14 @@ body.amp-ads {
       }
       .phone-overlay {
         position: absolute;
-        width: 860px;
+        width: 626px;
         &.one {
-          top: -188px;
-          left: -180px;
+          top: -137px;
+          left: -131px;
         }
         &.two {
-          top: -188px;
-          left: 370px;
+          top: -137px;
+          left: 264px;
         }
       }
       .lines {
@@ -287,7 +287,7 @@ body.amp-ads {
         height: 400px;
       }
     }
-    @media(max-width: 1127px) {
+    @media(max-width: 806px) {
       .video-container {
         .phone-overlay {
           width: 77vw;
