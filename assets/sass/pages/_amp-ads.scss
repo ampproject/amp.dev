@@ -314,7 +314,6 @@ body.amp-ads {
     .logo.ads {
       position: absolute; top: 478px; left: calc(50% - 290px);
       filter: drop-shadow( 1px 1px 0 #00ABD1);
-      overflow: visible !important;
     }
     .logo.page {
       position: absolute; top: 190px; left: calc(50% - 20px);
@@ -470,17 +469,17 @@ body.amp-ads {
         flex: inherit;
         width: 50%;
 
-        .i-amphtml-element {
+        .img {
           width: 90px;
           margin: 0 auto 45px;
         }
         &.doubleclick {
           flex: inherit;
-          .i-amphtml-element { width: 123px; }
+          .img { width: 123px; }
         }
         &.cloudflare {
           flex: inherit;
-          .i-amphtml-element { width: 135px; }
+          .img { width: 135px; }
         }
       }
     }

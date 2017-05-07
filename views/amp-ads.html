@@ -263,6 +263,7 @@
         <amp-video
           class="video"
           src="/static/video/amp_ad_video.mp4"
+          poster="/static/video/amp_ad_video_poster.png"
           layout="responsive"
           width="1050" height="732" autoplay loop >
             <div fallback>
@@ -386,6 +387,7 @@
             width={{user.logo_width}}
             height={{user.logo_height}}
             layout=responsive
+            class="img"
             src="/static/img/about/who-use-amp/{{user.logo}}">
         </amp-img>
       </div>
@@ -437,7 +439,7 @@
     </amp-carousel>
     <amp-carousel class="latest-carousel mobile-down"
       height="200"
-      layout="fixed"
+      layout="fixed-height"
       type="carousel">
 
       {% for article in blog.blogs %}
@@ -468,5 +470,7 @@
       {% include "/views/partials/large-cta.html" %}
     {% endwith %}
   {% endif %}
+
+  {% include "/views/partials/footer.html" %}
 
 {% endblock %}
