@@ -87,7 +87,7 @@ $small-loop-time: 5s;
   }
 }
 
-.animated-lines-small {
+/*.animated-lines-small {
   position: relative;
   height: 500px;
   width: 500px;
@@ -98,7 +98,7 @@ $small-loop-time: 5s;
   .line::before {
     animation-duration: $small-loop-time;
   }
-}
+}*/
 
 .line {
   animation-iteration-count: infinite;
