@@ -39,7 +39,7 @@ Todos los documentos de AMP deben contener las siguientes etiquetas:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](/docs/reference/spec.html).
+Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](/es/docs/reference/spec.html).
 
 ### Falta una etiqueta requerida por otra etiqueta
 
@@ -60,7 +60,7 @@ Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especifi
 
 El validador emite el error `TAG_REQUIRED_BY_MISSING` cuando encuentra un componente ampliado en el documento de AMP, pero no encuentra su `<script>` equivalente.
 
-Los [componentes ampliados](/docs/reference/extended.html) se deben incluir explícitamente en el documento de AMP como elementos personalizados.
+Los [componentes ampliados](/es/docs/reference/extended.html) se deben incluir explícitamente en el documento de AMP como elementos personalizados.
 Para corregir estos errores, ve a la página de referencia del componente ampliado, copia su secuencia de comandos requerida y pégala en el documento `<head>` de AMP.
 
 ### Etiqueta no permitida
@@ -80,7 +80,7 @@ Para corregir estos errores, ve a la página de referencia del componente amplia
   </tr>
 </table>
 
-Las etiquetas se incluyen en una lista blanca, por lo que no hay ninguna lista que incluya todas las etiquetas no permitidas. Sin embargo, en la [especificación de AMP](/docs/reference/spec.html) se define en términos generales el conjunto de etiquetas no permitidas.
+Las etiquetas se incluyen en una lista blanca, por lo que no hay ninguna lista que incluya todas las etiquetas no permitidas. Sin embargo, en la [especificación de AMP](/es/docs/reference/spec.html) se define en términos generales el conjunto de etiquetas no permitidas.
 
 ### Falta un atributo obligatorio
 
@@ -389,10 +389,10 @@ Hacen referencia a etiquetas previstas:
 Este error se produce cuando una etiqueta contiene dos atributos que se excluyen mutuamente.
 Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
+* [amp-twitter](/es/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
+* [amp-instagram](/es/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
+* [amp-iframe](/es/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
+* [amp-youtube](/es/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
 
 ### Falta un atributo obligatorio en la lista
 
@@ -414,10 +414,10 @@ Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 Este error se produce cuando a una etiqueta le falta un atributo requerido de varias opciones.
 Por ejemplo, las siguientes etiquetas requieren uno de los dos atributos posibles:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
+* [amp-twitter](/es/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
+* [amp-instagram](/es/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
+* [amp-iframe](/es/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
+* [amp-youtube](/es/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
 
 ### Etiqueta principal incorrecta
 
@@ -624,7 +624,7 @@ Si no estás seguro de lo que está provocando el error, intenta ejecutar el CSS
 </table>
 
 Este error se refiere a las reglas de CSS que contienen @, para las que AMP solo permite una serie de reglas
-(consulta también la [especificación de AMP](/docs/reference/spec.html)).
+(consulta también la [especificación de AMP](/es/docs/reference/spec.html)).
 Por ejemplo, la regla `@import` no está permitida.
 En el error de validación se indica cuál es concretamente la regla no válida para que puedas corregirla más fácilmente.
 
@@ -768,7 +768,7 @@ Por ejemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` 
 
 ## Errores en las plantillas
 
-Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [amp-mustache](/docs/reference/extended/amp-mustache.html).
+Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [amp-mustache](/es/docs/reference/extended/amp-mustache.html).
 
 Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS](/es/docs/guides/author-develop/responsive/style_pages.html)).
 
