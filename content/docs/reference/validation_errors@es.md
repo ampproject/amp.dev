@@ -389,10 +389,10 @@ Hacen referencia a etiquetas previstas:
 Este error se produce cuando una etiqueta contiene dos atributos que se excluyen mutuamente.
 Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 
-* [amp-twitter](/es/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/es/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/es/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/es/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
+* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
+* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
+* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
+* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
 
 ### Falta un atributo obligatorio en la lista
 
@@ -414,10 +414,10 @@ Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 Este error se produce cuando a una etiqueta le falta un atributo requerido de varias opciones.
 Por ejemplo, las siguientes etiquetas requieren uno de los dos atributos posibles:
 
-* [amp-twitter](/es/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/es/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/es/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/es/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
+* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
+* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
+* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
+* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
 
 ### Etiqueta principal incorrecta
 
@@ -556,7 +556,7 @@ La lista completa de etiquetas únicas es la siguiente:
 
 ## Errores de estilo y de diseño
 
-Antes de entrar en los errores de [estilo](/es/docs/guides/author-develop/responsive/style_pages.html) y de [diseño](/es/docs/guides/author-develop/responsive/control_layout.html), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
+Antes de entrar en los errores de [estilo](/es/docs/guides/responsive/style_pages) y de [diseño](/es/docs/guides/responsive/control_layout), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
 Sin embargo, para garantizar que las páginas se carguen rápidamente, presentan algunas restricciones que el validador de AMP se encarga de hacer cumplir.
 
 El diseño está más controlado en las páginas de AMP.
@@ -649,7 +649,7 @@ Este error se produce cuando no se especifica ningún diseño para la etiqueta d
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/author-develop/responsive/control_layout.html) y la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 **Nota:** Si no se especifica el diseño y no se incluyen los valores de `width` y `height`, el valor predeterminado del diseño es CONTAINER. El validador devuelve un error porque ninguna de las etiquetas de AMP admite CONTAINER.
 Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añade un valor `width` y/o `height`.
@@ -695,7 +695,7 @@ Este error se produce cuando no se admite el diseño especificado para la etique
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/author-develop/responsive/control_layout.html) y la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 ### Atributo no permitido por el diseño especificado
 
@@ -735,7 +735,7 @@ Los atributos no permitidos por los tipos de diseño se describen en la [especif
 </table>
 
 Este error se produce cuando el valor del atributo no es válido para el diseño especificado.
-Para entender lo que desencadena este error, es necesario familiarizarse con los [diferentes comportamientos de los diseños](/es/docs/guides/author-develop/responsive/control_layout.html).
+Para entender lo que desencadena este error, es necesario familiarizarse con los [diferentes comportamientos de los diseños](/es/docs/guides/responsive/control_layout).
 
 Imaginemos que se establece que el diseño sea `fixed-height` y se incluyen valores numéricos para `height` y para `width`.
 El diseño `fixed-height` adquiere un valor `height`.
