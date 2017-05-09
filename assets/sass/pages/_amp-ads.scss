@@ -355,9 +355,7 @@ body.amp-ads {
       text-align: center;
     }
     .logo.ads {
-      position: absolute; top: 478px; left: calc(50% - 290px);
-      text-shadow: 1px 1px 0 #00ABD1;
-      color: white;
+      position: absolute; top: 286px; left: calc(50% - 325px);
       width: 109px;
     }
     .logo.page {
@@ -370,7 +368,12 @@ body.amp-ads {
     }
     .phones {
       transform: translateX(-50%);
+      width: 989px;
+      height: 867px;
       left: 50%;
+      top: 186px;
+      position: relative;
+      margin-bottom: 186px;
     }
   }
 
