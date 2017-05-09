@@ -393,6 +393,10 @@ body.amp-ads {
       width: 100%;
       max-width: 1080px;
       margin: 0 auto 100px;
+      .card {
+        flex: 0 0 calc(33% - 10px);
+        padding: 15px 30px 10px;
+      }
       .card-content {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -405,7 +409,10 @@ body.amp-ads {
         height: 0.1px;
       }
       .card-container {
-        // padding: 15px 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 2px;
+        padding-right: 2px;
         &:first-child {
           margin-left: 10vw;
         }
