@@ -30,7 +30,7 @@ what:
   paragraph@: AMP Ads are a new, better way of building, delivering and measuring ads that  are faster, lighter and more secure. AMP Ads are ads built using AMP-HTML and use many of the smart components that make AMP pages fast (like amp-analytics). These ads are only delivered after being validated, ensuring that they’re free of malware. Most of all, these ads can be delivered anywhere on the web, not just on AMP pages.
   testimonial:
     quote@: AMP Ads represent an opportunity to fix key issues with ad experiences on the web.
-    byline@: KAVATA MBONDO
+    byline@: Kavata Mbondo
     role@: Vice President of Digital Revenue Strategy and Operations, Time Inc.
 
 why:
@@ -53,7 +53,7 @@ experience:
 
 experiencequote:
     quote@: They load way faster. Users pick up on every small delay, and when the ads load fast, this has a very positive impact on their perception and advertiser performance.
-    byline@: SHAUN ZACHARIA
+    byline@: Shaun Zacharia
     role@: President &amp; Co-Founder, Triplelift
 
 difference:
@@ -74,9 +74,9 @@ who:
       icon: amp-ads/3_outlined.svg
 
 whoquote:
-    quote@: They load way faster. Users pick up on every small delay, and when the ads load fast, this has a very positive impact on their perception and advertiser performance.
-    byline@: SHAUN ZACHARIA
-    role@: President &amp; Co-Founder, Triplelift
+    quote@: All ad content delivered by Firebolt for AMP for Ads is cryptographically signed to ensure that it meets the required format and security standards. Signed ads reduce the risk of malware and increase confidence in ads for consumers.
+    byline@: Dane Knecht
+    role@: Head of Product Strategy, Cloudflare
 
 points:
   title@: Simple to build, easy to scale.
