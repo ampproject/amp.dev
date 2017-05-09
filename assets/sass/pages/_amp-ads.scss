@@ -254,8 +254,9 @@ body.amp-ads {
       .logo {
         position: absolute;
         transform: translateX(-50%);
-        font-size: 1.0em;
+        font-size: 0.86em;
         color: #aaa;
+        text-transform: uppercase;
         font-weight: 500;
         top: -120px;
         &.one {
