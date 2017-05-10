@@ -1,15 +1,5 @@
 body.amp-ads {
 
-  //  override site nav logo
-  .header {
-    .left-nav {
-      .header-title {
-        background: url('/static/img/about/who-use-amp/amp-ads/logo-ads-blue.svg') no-repeat center left / 100%;
-        width: 38px; // difference in width between the logo assets
-      }
-    }
-  }
-
   section.hero {
     position: relative;
     padding: 145px 10% 200px 8%;
