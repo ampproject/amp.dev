@@ -19,7 +19,7 @@
 
     <div class="card-title">
       {% if isCase %}<h4>{% else %}<h2>{% endif %}
-        {{doc.headline or doc.title}}
+        {{doc.headline or _(doc.title)}}
       {% if isCase %}</h4>{% else %}</h2>{% endif %}
     </div>
 
