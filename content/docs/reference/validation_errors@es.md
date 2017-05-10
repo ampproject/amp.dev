@@ -60,7 +60,7 @@ Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especifi
 
 El validador emite el error `TAG_REQUIRED_BY_MISSING` cuando encuentra un componente ampliado en el documento de AMP, pero no encuentra su `<script>` equivalente.
 
-Los [componentes ampliados](/es/docs/reference/extended.html) se deben incluir explícitamente en el documento de AMP como elementos personalizados.
+Los [componentes ampliados](/es/docs/reference/components.html) se deben incluir explícitamente en el documento de AMP como elementos personalizados.
 Para corregir estos errores, ve a la página de referencia del componente ampliado, copia su secuencia de comandos requerida y pégala en el documento `<head>` de AMP.
 
 ### Etiqueta no permitida
@@ -695,7 +695,7 @@ Este error se produce cuando no se admite el diseño especificado para la etique
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 ### Atributo no permitido por el diseño especificado
 
@@ -768,7 +768,7 @@ Por ejemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` 
 
 ## Errores en las plantillas
 
-Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [amp-mustache](/es/docs/reference/extended/amp-mustache.html).
+Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [amp-mustache](/es/docs/reference/components/amp-mustache.html).
 
 Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS](/es/docs/guides/author-develop/responsive/style_pages.html)).
 
