@@ -13,9 +13,9 @@ vertical_class: amp-ads centered
 hero:
   title@: Better ads on a faster web.
   paragraph@: We can’t make the web better if we don’t fix ads. Today’s ads fail to meet their goals because they are slow, unpredictable and disruptive. The open-source AMP Ads Initiative aims to make advertising on the web better with faster, lighter, and safer ad experiences, starting with ads and extending to landing&nbsp;pages.
-  hero_img_base: /static/img/about/who-use-amp/amp-ads/hero_phone_FPO
-  hero_img_width: 2003
-  hero_img_height: 1968
+  hero_img_base: /static/img/about/who-use-amp/amp-ads/ad_hero
+  hero_img_width: 1710
+  hero_img_height: 1839
   triangle_img: amp-ads/hero_shape.svg
   triangle_img_width: 1536
   triangle_img_height: 2153

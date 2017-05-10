@@ -28,10 +28,10 @@ body.amp-ads {
 
       .phones {
         position: absolute;
-        right: -10px;
-        top: -110px;
-        width: 900px;
-        height: 885px;
+        right: 16px;
+        top: -30px;
+        width: 743px;
+        height: 800px;
       }
     }
 
@@ -62,13 +62,13 @@ body.amp-ads {
 
       .phones {
         position: absolute;
-        left: 50%;
+        left: 56%;
         transform: translateX(-57%);
-        width: 180vw;
+        width: 150vw;
         max-width: 1000px;
       }
     }
-    @media(max-width: 1200px) {
+    @media(max-width: 1230px) {
       .hero-images {
         .triangle {
           right: 114px;
@@ -81,7 +81,7 @@ body.amp-ads {
         }
       }
     }
-    @media(max-width: 1050px) {
+    @media(max-width: 1090px) {
       .hero-images {
         .lines {
           right: 32vw;
