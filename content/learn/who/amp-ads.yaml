@@ -136,3 +136,9 @@ users:
     logo_width: 400
     logo_height: 105
     class: adobe
+
+  - name: Moat
+    logo: amp-ads/moat_logo.png
+    logo_width: 400
+    logo_height: 101
+    class: moat

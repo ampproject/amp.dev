@@ -453,7 +453,6 @@ body.amp-ads {
     justify-content: space-between;
     position: relative;
     width: 80%;
-    min-width: 1180px;
     margin: 0 auto 130px;
 
     .user-logo {
@@ -528,6 +527,7 @@ body.amp-ads {
     section.users {
       min-width: 300px;
       margin: 0 auto 45px;
+      justify-content: center;
 
       .user-logo {
         flex: inherit;
