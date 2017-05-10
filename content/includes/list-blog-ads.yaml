@@ -1,0 +1,67 @@
+blogs:
+
+- type: Blog
+  title: "What’s new in AMP by Example"
+  id: ads-whats-new-in-amp-by-example
+  author: Sebastian Benz
+  role:  Developer Advocate, Google.
+  origin: "https://amphtml.wordpress.com/2017/04/20/whats-new-in-amp-by-example/amp/"
+  excerpt: "The following was posted on Medium by Sebastian Benz, Developer Advocate, Google. A lot has happened since I last wrote about AMP by Example. This post gives you a quick overview about new samples and what’s new on the site itself. A new Design We completely re-designed www.ampbyexample.com using the brand-new AMPStart template and component library. The [&#8230;]"
+  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+  datedata: 2017-04-20T16:00:53-04:00
+  date: "April 20, 2017"
+
+- type: Blog
+  title: "AMP Roadmap update to close out Q1"
+  id: ads-amp-roadmap-update-to-close-out-q1
+  author: Rudy Galfi
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/03/31/amp-roadmap-update-to-close-out-q1/amp/"
+  excerpt: "We’ve updated the AMP Roadmap to reflect some of the progress made in the first quarter of 2017. You can read more about some of the highlights below. Format We continue to place a big focus on making the AMP format conducive to more interactive and engaging user experiences. We’ve made amp-bind, a flexible event [&#8230;]"
+  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+  datedata: 2017-03-31T17:55:48-04:00
+  date: "March 31, 2017"
+
+- type: Blog
+  title: "AMP grows its footprint"
+  id: ads-amp-grows-its-footprint
+  author: David Besbris
+  role:  VP Google Search, AMP Project Lead at Google
+  origin: "https://amphtml.wordpress.com/2017/03/07/amp-grows-its-footprint/amp/"
+  excerpt: "The AMP family is set to grow its international footprint with news today that the biggest search engines in Asia Pacific will start to distribute AMP pages to a new audience of more than 1 billion people.   Baidu and Sogou, which account for around 90% of the search market in China, made the announcement [&#8230;]"
+  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+  datedata: 2017-03-07T09:35:28-05:00
+  date: "March 7, 2017"
+
+- type: Blog
+  title: "New Industry Benchmarks for Mobile Page Speed"
+  id: ads-new-industry-benchmarks-for-mobile-page-speed
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2017/02/28/new-industry-benchmarks-for-mobile-page-speed/amp/"
+  excerpt: "The following is an excerpt from a Think with Google article by Daniel An, Global Product Lead, Mobile, Google. The average time it takes to fully load a mobile landing page is 22 seconds, according to a new analysis. Yet 53% of mobile site visitors leave a page that takes longer than three seconds to load. That&#8217;s [&#8230;]"
+  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+  datedata: 2017-02-28T16:56:02-05:00
+  date: "February 28, 2017"
+
+- type: Blog
+  title: "Grow Your Business with Ads on AMP"
+  id: ads-grow-your-business-with-ads-on-amp
+  author: Vamsee Jasti
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/02/27/grow-your-business-with-ads-on-amp/amp/"
+  excerpt: "We understand that every business is different, but one thing common to them all in today’s mobile driven world is the need to ensure a fast user experience across all screens. That is why we believe the growing AMP ecosystem is so important. It brings together a diverse community of publishers, advertisers, and technology platforms [&#8230;]"
+  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+  datedata: 2017-02-27T14:18:47-05:00
+  date: "February 27, 2017"
+
+- type: Blog
+  title: "AMP Roadmap Update for Mid-Q1 2017"
+  id: ads-amp-roadmap-update-for-mid-q1-2017
+  author: Eric Lindley
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/02/18/amp-roadmap-update-for-mid-q1-2017/amp/"
+  excerpt: "We’ve updated the AMP Roadmap with the details on progress during the first quarter of 2017, and you can read below for some of the highlights. Format Interactivity is a major focus for us this quarter as we  build out the AMP format’s capabilities. amp-bind is a binding protocol that introduces lower-level methods for building [&#8230;]"
+  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+  datedata: 2017-02-17T19:09:17-05:00
+  date: "February 17, 2017"
