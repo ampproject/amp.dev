@@ -1,0 +1,112 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <link rel="canonical" href="ampform.html" />
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+    body {
+      font-family: sans-serif;
+    }
+    form.amp-form-submit-success [submit-success],
+    form.amp-form-submit-error [submit-error]{
+      margin-top: 16px;
+    }
+    form.amp-form-submit-success [submit-success] {
+      color: green;
+    }
+    form.amp-form-submit-error [submit-error] {
+      color: red;
+    }
+    input {
+      padding: .6em;
+      margin:  .2em;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-shadow: inset 0 1px 3px #ddd;
+    }
+    label {
+      margin-right: .5em;
+    }
+    span[visible-when-invalid] {
+      padding-left: .3em;
+      color: #666;
+      vertical-align: middle;
+      font-size: .875em;
+    }
+  </style>
+</head>
+<body>
+<!-- basic -->
+<div>
+  <form method="post" action-xhr="https://example.com/subscribe" target="_top">
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text" name="name" required>
+      </label><br>
+      <label>
+        <span>Email:</span>
+        <input type="email" name="email" required>
+      </label><br>
+      <input type="submit" value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+</div>
+<!-- customval -->
+<div>
+  <form method="post"
+        action-xhr="https://example.com/subscribe"
+        custom-validation-reporting="show-all-on-submit"
+        target="_blank">
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text" name="name" id="name5" required pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing" validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch" validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label><br>
+      <label>
+        <span>Email:</span>
+        <input type="email" name="email" id="email5" required>
+        <span visible-when-invalid="valueMissing" validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch" validation-for="email5"></span>
+      </label><br>
+      <input type="submit" value="Subscribe">
+    </fieldset>
+  </form>
+</div>
+<!-- inputevent -->
+<div>
+  <form id="myform"
+        method="post"
+        action-xhr="https://example.com/myform"
+        target="_blank">
+    <fieldset>
+      <label>
+        <input name="answer1" value="Value 1" type="radio" on="change:myform.submit">Value 1
+      </label>
+      <label>
+        <input name="answer1" value="Value 2" type="radio" on="change:myform.submit">Value 2
+      </label>
+    </fieldset>
+  </form>
+</div>
+</body>
+</html>
