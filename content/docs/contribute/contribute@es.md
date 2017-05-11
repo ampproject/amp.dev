@@ -14,4 +14,4 @@ Si detectas errores o incoherencias en este sitio web, abre una incidencia en el
 
 ¿Quieres corregir errores o a hacer que las páginas AMP sean aún más rápidas? Estaremos encantados de que nos ayudes.
 
-Consulta [el archivo sobre contribuciones](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) para obtener información sobre cómo contribuir al proyecto AMP y el [archivo sobre desarrollo](https://github.com/ampproject/amphtml/blob/master/DEVELOPING.md) para obtener documentación sobre el funcionamiento interno de la biblioteca de AMP y [consejos sobre cómo empezar](https://github.com/ampproject/amphtml/blob/master/DEVELOPING.md#starter-issues).
+Consulta [el archivo sobre contribuciones](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) para obtener información sobre cómo contribuir al proyecto AMP y el [archivo sobre desarrollo](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md) para obtener documentación sobre el funcionamiento interno de la biblioteca de AMP y [consejos sobre cómo empezar](https://github.com/ampproject/amphtml/blob/master/contributing/getting-started-e2e.md).

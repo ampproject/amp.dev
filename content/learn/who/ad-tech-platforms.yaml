@@ -1,4 +1,4 @@
-$title: AMP for Ad Tech Platforms
+$title@: AMP for Ad Tech Platforms
 class: about-who-vertical
 $order: 1
 $parent: /content/learn/who-uses-amp.yaml
@@ -69,4 +69,4 @@ case:
 cta:
   title@: Get Started Building
   link_text@: Tutorials
-  link_url: /content/docs/get_started/create.md
+  link_url: /content/docs/tutorials/create.md

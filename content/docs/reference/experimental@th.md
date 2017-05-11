@@ -29,5 +29,5 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 ไฟล์ AMP ที่มีคุณลักษณะทดสอบจะไม่ผ่าน
-[การตรวจสอบความถูกต้อง AMP](/docs/guides/validate.html)
+[การตรวจสอบความถูกต้อง AMP](/th/docs/guides/debug/validate.html)
 ให้นำองค์ประกอบทดสอบเหล่านี้ออกสำหรับเอกสาร AMP ที่พร้อมนำไปใช้งานจริง

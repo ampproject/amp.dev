@@ -23,4 +23,4 @@ $title: 实验性组件
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-包含实验性功能的所有 AMP 文件均无法成功通过 [AMP 验证](/docs/guides/validate.html)。对于可直接在生产环境中使用的 AMP 文档，请移除此类实验性组件。
+包含实验性功能的所有 AMP 文件均无法成功通过 [AMP 验证](/zh_cn/docs/guides/debug/validate.html)。对于可直接在生产环境中使用的 AMP 文档，请移除此类实验性组件。

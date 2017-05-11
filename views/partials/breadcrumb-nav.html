@@ -1,17 +1,26 @@
-{% set usedDoc = usedDoc or doc %}
-{% set parentDoc = usedDoc.parent %}
-{% set grandparentDoc = parentDoc.parent %}
-
+{% set currentDocs = [] %}
+{% do currentDocs.append(g.doc(doc.pod_path)) %}
+{% set listItems = [] %}
+{% set currentDoc = currentDocs|last %}
+{% set firstListItem %}
+<li>{{currentDoc.titles('breadcrumb')}}</li>
+{% endset %}
+{% if listItems.append(firstListItem) %}{% endif %}
+{% if currentDocs.append(g.doc(currentDoc.pod_path).parent) %}{% endif %}
+{% if not currentDocs|last == None %}
+  {% for _ in range(10) %}
+    {% set currentDoc = currentDocs|last %}
+{% set nextListItem %}
+<li><a href="{{currentDoc.url.path}}">{{currentDoc.titles('breadcrumb')}}</a></li>
+{% endset %}
+    {% if listItems.append(nextListItem|safe) %}{% endif %}
+    {% set currentDoc = currentDocs|last %}
+    {% if currentDocs.append(g.doc(currentDoc.pod_path).parent) %}{% endif %}
+    {% if currentDocs|last == None %}{% break %}{% endif %}
+  {% endfor %}
+{% endif %}
 <nav class="breadcrumb">
   <ul>
-  {% if grandparentDoc %}
-    <li><a href="{{g.url(grandparentDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(grandparentDoc.titles('breadcrumb')) or _(grandparentDoc.title) }}</a></li>
-  {% endif %}
-
-  {% if parentDoc %}
-    <li><a href="{{g.url(parentDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(parentDoc.titles('breadcrumb')) or _(parentDoc.title) }}</a></li>
-  {% endif %}
-
-    <li><a href="{{g.url(usedDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(doc.titles('breadcrumb')) or _(usedDoc.title) }}</a></li>
+    {{listItems|reverse|join('    ')|safe}}
   </ul>
 </nav>

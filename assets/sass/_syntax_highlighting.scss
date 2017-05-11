@@ -8,16 +8,15 @@ samp,
 tt{
   font-family: $font-family-mono;
   font-size: 14px;
-  background: $color-white;
-  border: 1px solid #e7f2f9;
-  border-radius: 3px;
   color: $color-black-95;
+  background: #f5f5f5;
+  box-shadow: inset 0px 1px 4px #d6d6d6;
+  border-radius: 2px;
 }
 
 code {
-  background: #f6fcfd;
-  font-size: 15px;
   padding: 2px 5px;
+  margin: 0 2px;
 }
 
 a {
@@ -52,13 +51,12 @@ h5 {
  * Syntax highlighting styles
  */
 pre {
-  background: #f6fcfd;
-  border-color: #e7f2f9;
   overflow: auto;
   tab-size: 2;
   word-break: normal;
   line-height: 1.4;
   padding: 1em;
+  direction: ltr;
 
   > code {
     white-space: pre;
@@ -92,7 +90,6 @@ pre {
 .highlight {
   .hll { background-color: #ffffcc }
   .c { color: #0099FF; font-style: italic } /* Comment */
-  .err { color: #AA0000; background-color: #FFAAAA } /* Error */
   .k { color: #006699; font-weight: bold } /* Keyword */
   .o { color: #555555 } /* Operator */
   .cm { color: #0099FF; font-style: italic } /* Comment.Multiline */

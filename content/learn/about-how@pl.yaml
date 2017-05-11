@@ -1,13 +1,14 @@
 hero:
-  title@: Zwiększanie wydajności przez AMP
-  subtitle@: |
+  title: Zwiększanie wydajności przez AMP
+  subtitle: |
     Połączenie następujących optymalizacji sprawia, że strony AMP są tak szybkie i sprawiają wrażenie, że ładują się natychmiast:
     <p>Jeśli wolisz słuchać niż czytać, w następującym filmie szef zespołu AMP Malte Ubl przedstawia przeglądowe informacje podobne do zamieszczonych w kolejnych akapitach.
 
 points:
   pointlist:
-    - title@: Zezwalaj tylko na skrypty asynchroniczne
-      description@: |
+    - title: Zezwalaj tylko na skrypty asynchroniczne
+      id: execute-js-asynchronously
+      description: |
         Język JavaScript ma potężne możliwości,
         może zmodyfikować niemal każdy aspekt strony,
         ale może także zablokować konstrukcję modelu DOM i opóźnić renderowanie stron
@@ -24,8 +25,9 @@ points:
         Jeśli na przykład niezależny skrypt JS używa
         [fatalnej dla wydajności funkcji API `document.write`](http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/),
         nie blokuje ona renderowania strony głównej.
-    - title@: Statycznie nadaj rozmiary wszystkim zasobom
-      description@: |
+    - title: Statycznie nadaj rozmiary wszystkim zasobom
+      id: size-all-resources-statically
+      description: |
         Zasoby zewnętrzne, takie jak obrazy, reklamy lub ramki iframe muszą informować o swoim rozmiarze w HTML,
         dzięki czemu AMP może określić rozmiar i pozycję każdego elementu przed pobraniem zasobów.
         AMP ładuje układ strony bez oczekiwania na pobranie jakichkolwiek zasobów.
@@ -34,23 +36,25 @@ points:
         ([i czcionek](#font-triggering-must-be-efficient)).
         Ponieważ AMP zoptymalizowano w celu uniknięcia kosztownego przeliczania stylów i układów w przeglądarce,
         po załadowaniu zasobu nie ma żadnego ponownego rozmieszczania.
-    - title@: Nie pozwól, aby mechanizmy rozszerzeń blokowały renderowanie
-      description@: |
+    - title: Nie pozwól, aby mechanizmy rozszerzeń blokowały renderowanie
+      id: dont-block-rendering
+      description: |
         AMP nie pozwala, aby mechanizmy rozszerzeń blokowały renderowanie stron.
         AMP obsługuje rozszerzenia dla takich obiektów jak
-        [ramki lightbox](/docs/reference/extended/amp-lightbox.html),
-        [umieszczone elementy z Instagrama](/docs/reference/extended/amp-instagram.html),
-        [tweety](/docs/reference/extended/amp-twitter.html) itp.
+        [ramki lightbox](/pl/docs/reference/components/amp-lightbox.html),
+        [umieszczone elementy z Instagrama](/pl/docs/reference/components/amp-instagram.html),
+        [tweety](/pl/docs/reference/components/amp-twitter.html) itp.
         Chociaż wymagają one dodatkowych żądań HTTP,
         te żądania nie blokują układu strony ani renderowania.
         <p>Każda strona korzystająca z niestandardowego skryptu musi poinformować system AMP,
         że może ona mieć niestandardowy znacznik.
-        Na przykład skrypt [`amp-iframe`](/docs/reference/extended/amp-iframe.html)
+        Na przykład skrypt [`amp-iframe`](/pl/docs/reference/components/amp-iframe.html)
         informuje system, że w dokumencie wystąpi znacznik `amp-iframe`.
         AMP tworzy ramkę iframe zanim otrzyma informacje, co się w niej znajdzie:
       example: /content/includes/amp-iframe.md
-    - title@: Usuń wszystkie niezależne skrypty JavaScript ze ścieżki krytycznej
-      description@: |
+    - title: Usuń wszystkie niezależne skrypty JavaScript ze ścieżki krytycznej
+      id: third-party-js-non-critical
+      description: |
         Niezależne skrypty JS lubią korzystać z synchronicznego ładowania JS.
         Lubią one także korzystać z funkcji `document.write` w celu tworzenia dodatkowych skryptów synchronicznych.
         Jeśli na stronie jest na przykład pięć reklam i każda z nich wykonuje trzy synchroniczne operacje wczytywania
@@ -63,8 +67,9 @@ points:
         <p>Przeliczenia stylów i układów odpowiadają rozmiarowi modelu DOM,
         dlatego przeliczenia ramek iframe są bardzo szybkie w porównaniu
         z przeliczaniem stylów i układów na stronie.
-    - title@: Cały CSS musi być wstawiany i powiązany z rozmiarem
-      description@: |
+    - title: Cały CSS musi być wstawiany i powiązany z rozmiarem
+      id: css-must-be-inline
+      description: |
         CSS blokuje cały rendering, blokuje ładowanie strony i ma tendencję do rozrastania się.
         Na stronach AMP HTML dozwolone są tylko style wstawiane.
         Pozwala to usnąć jedno, a często wiele żądań HTTP z krytycznej ścieżki renderowania
@@ -72,9 +77,9 @@ points:
         <p>Ponadto wstawiany arkusz stylów ma rozmiar maksymalny 50 kilobajtów.
         Chociaż taki rozmiar pozwala na tworzenie bardzo wyrafinowanych stron,
         wymaga on również od autora zachowania zasad „higieny CSS”.
-    - title@: Wyzwalanie czcionek musi być efektywne
+    - title: Wyzwalanie czcionek musi być efektywne
       id: font-triggering-must-be-efficient
-      description@: |
+      description: |
         Czcionki internetowe są bardzo duże, dlatego
         [optymalizacja czcionek internetowych](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)
         ma kluczowe znaczenie dla wydajności.
@@ -84,16 +89,18 @@ points:
         Jest to możliwe tylko dlatego, że cały kod JS w AMP ma atrybut async
         i dozwolone są tylko style wstawiane;
         nie ma żądań HTTP blokujących pobieranie czcionek przez przeglądarkę.
-    - title@: Minimalizuj przeliczanie stylów
-      description@: |
+    - title: Minimalizuj przeliczanie stylów
+      id: minimize-style-recalculations
+      description: |
         Podczas każdego pomiaru wyzwalane jest przeliczanie stylów, które jest kosztowne,
         ponieważ przeglądarka musi rozmieścić całą stronę.
         Na stronach AMP wszystkie odczyty DOM wydarzają się przed wszystkimi zapisami.
         Dzięki temu na każdą ramkę przypada maksymalnie jedno przeliczenie stylów.
         <p>Dowiedz się więcej o wpływie przeliczeń stylów i układów na
         [wydajność renderowania](https://developers.google.com/web/fundamentals/performance/rendering/).
-    - title@: Uruchamiaj tylko animacje z akceleracją sprzętową GPU
-      description@: |
+    - title: Uruchamiaj tylko animacje z akceleracją sprzętową GPU
+      id: only-run-gpu-accelerated-animations
+      description: |
         Jedyną metodą przyspieszenia animacji jest uruchamianie ich na procesorze graficznym (GPU).
         Procesor GPU ma informacje o warstwach, obsługuje wykonywanie operacji na tych warstwach,
         może je przenosić, może je wygaszać, ale nie może zaktualizować układu strony;
@@ -103,8 +110,9 @@ points:
         , dzięki czemu ponowne rozmieszczenie strony nie jest wymagane.
         Dowiedz się więcej o
         [używaniu transformacji i przezroczystości dla zmian animacji](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count).
-    - title@: Ustal priorytety ładowania zasobów
-      description@: |
+    - title: Ustal priorytety ładowania zasobów
+      id: prioritize-resource-loading
+      description: |
         AMP steruje pobieraniem wszystkich zasobów i ustala priorytety ładowania zasobów,
         ładując tylko to, co potrzebne i pobierając z wyprzedzeniem zasoby ładowane z opóźnieniem.
         <p>Kiedy AMP pobiera zasoby, optymalizuje operacje pobierania
@@ -115,8 +123,9 @@ points:
         Zasoby są ładowane tak późno, jak to możliwe, ale pobierane z wyprzedzeniem tak wcześnie, jak to możliwe.
         Dzięki temu strony ładują się bardzo szybko, ale procesor jest używany tylko wtedy,
         gdy zasoby są rzeczywiście wyświetlane dla użytkowników.
-    - title@: Ładuj strony w mgnieniu oka
-      description@: |
+    - title: Ładuj strony w mgnieniu oka
+      id: load-pages-in-an-instant
+      description: |
         Nowa [funkcja API preconnect](http://www.w3.org/TR/resource-hints/#dfn-preconnect)
         jest intensywnie używana w celu zapewnienia maksymalnej możliwej szybkości żądań HTTP w momencie ich wysyłania.
         Dzięki temu
@@ -132,8 +141,9 @@ points:
         nie są pobierane zasoby, które mogłyby znacząco obciążyć procesor (jak np. ramki iframe niezależnych dostawców).
         <p>Dowiedz się więcej,
         [dlaczego AMP HTML nie wykorzystuje w pełni skanera wczytywania z wyprzedzeniem](https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e).
-    - title@: Pomóż przyspieszyć AMP
-      description@: |
+    - title: Pomóż przyspieszyć AMP
+      id: help-make-amp-faster
+      description: |
         AMP to projekt Open Source.
         Potrzebujemy Twojej pomocy, aby jeszcze bardziej przyspieszyć AMP.
-        Dowiedz się, [jak dodać własne materiały](/docs/support/contribute.html).
+        Dowiedz się, [jak dodać własne materiały](/pl/contribute/).

@@ -33,6 +33,42 @@
   </aside>
   {%- endmacro %}
 
+  {% macro callout2(title, type='none') -%}
+  <aside class="{{ type }}">
+    <strong>{{ title }}</strong>
+    <span>{{ caller() }}</span>
+  </aside>
+  {%- endmacro %}
+
+  {% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='') -%}
+  <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+    <amp-img src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"></amp-img>
+    {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+  </figure>
+  {%- endmacro %}
+
+  {% macro youtube(id, width, height, layout='responsive', caption='', align='', margin='') -%}
+  <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+    <amp-youtube
+      data-videoid="M_ZCgbEGyHY"
+      layout="{{ layout }}"
+      width="{{ width }}" height="{{ height }}">
+    </amp-youtube>
+    {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+  </figure>
+  {%- endmacro %}
+
+  {% macro video(src, width, height, layout='responsive', caption='', align='', margin='', autoplay='', loop='', controls='true') -%}
+  <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+    <amp-video
+      src="{{ src }}"
+      layout="{{ layout }}"
+      width="{{ width }}" height="{{ height }}" {% if autoplay %}autoplay{% endif %} {% if loop %}loop{% endif %} {% if controls %}controls{% endif %}>
+    </amp-youtube>
+    {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+  </figure>
+  {%- endmacro %}
+
   <div class="wrap">
     {% block main %}
     <div class="content">

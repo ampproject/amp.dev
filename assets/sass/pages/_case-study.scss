@@ -61,7 +61,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 -120px;
-    padding: 75px 75px 135px 75px;
+    padding: 75px;
   }
 
   .share-module {
@@ -235,8 +235,17 @@
     content: none;
   }
 
+  &.post-detail .post-content li::before {
+      margin-right: 20px;
+      position: static;
+  }
+
+  .post-content li {
+    display: flex;
+  }
+
   .post-sheet {
-    margin: -60px auto 0 auto;
+    margin: 0 auto;
     padding-top: 100px;
   }
 

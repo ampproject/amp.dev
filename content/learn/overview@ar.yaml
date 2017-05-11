@@ -1,38 +1,38 @@
 core:
-  title@: AMP pages are built with 3 core components.
+  title: AMP pages are built with 3 core components.
   components:
-    - title@: AMP HTML
-      subtitle@: |
+    - title: AMP HTML
+      subtitle: |
         **<span dir="ltr" class="nowrap">AMP HTML</span>** هو HTML مع بعض القيود لإتاحة أداء موثوق به
         وبعض الإضافات لإنشاء محتوى منسّق خارج نطاق HTML الأساسي.
-      description@: |
+      description: |
         <span dir="ltr" class="nowrap">AMP HTML</span> هو HTML الأساسي مع توسيعه بخصائص AMP المخصصة.
         يشبه أبسط ملف <span dir="ltr" class="nowrap">AMP HTML</span> هذا:
       example: /content/includes/html-example.md
-      description2@: |
+      description2: |
         بالرغم من أن غالبية العلامات في صفحة <span dir="ltr" class="nowrap">AMP HTML</span> تمثل علامات HTML العادية،
         لكنّ بعض علامات HTML يتم استبدالها بعلامات مخصصة لـ AMP (انظر أيضًا
         [علامات HTML في مواصفات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         هذه العناصر المخصصة، التي يُطلق عليها اسم مكونات <span dir="ltr" class="nowrap">AMP HTML</span>،
         تسهّل تنفيذ الأنماط الشائعة بطريقة فائقة الأداء.
-        <p>على سبيل المثال، توفر العلامة [`amp-img`](/docs/reference/amp-img.html)
+        <p>على سبيل المثال، توفر العلامة [`amp-img`](/ar/docs/reference/components/amp-img.html)
         الدعم الكامل لـ `srcset` حتى في المتصفحات التي لا تدعمها حتى الآن.
-        تعرّف على كيفية [إنشاء صفحة <span dir="ltr" class="nowrap">AMP HTML</span> الأولى لك](/docs/get_started/create.html).
-    - title@: AMP JS
-      subtitle@: |
+        تعرّف على كيفية [إنشاء صفحة <span dir="ltr" class="nowrap">AMP HTML</span> الأولى لك](/ar/docs/tutorials/create.html).
+    - title: AMP JS
+      subtitle: |
         تضمن مكتبة **<span dir="ltr" class="nowrap">AMP JS</span>** العرض السريع لصفحات <span dir="ltr" class="nowrap">AMP HTML</span>.
-      description@: |
+      description: |
         تنفّذ [مكتبة <span dir="ltr" class="nowrap">AMP JS</span>](https://github.com/ampproject/amphtml/tree/master/src)
-        [أفضل ممارسات الأداء لـ AMP](/docs/get_started/technical_overview.html) جميعها،
+        [أفضل ممارسات الأداء لـ AMP](/ar/learn/about-how/) جميعها،
         وتدير تحميل الموارد، وتمنحك العلامات المخصصة المذكورة أعلاه،
         وهذا كله بغرض ضمان العرض السريع لصفحتك.
         <p>ومن بين أكبر التحسينات أنها تجعل كلّ ما يكون مصدره الموارد الخارجية غير متزامن؛ وبذلك لا يعيق أيُّ مكون في الصفحة عرض أيٍ من عناصرها.
         <p>كذلك، فمن بين تقنيات الأداء الأخرى توفير وضع الحماية لإطارات iframe كلها، والحساب المسبق لتنسيق كل عنصر في الصفحة قبل تحميل الموارد، وتعطيل محدّدات CSS البطيئة.
-        <p>للتعرّف على المزيد بشأن [التحسينات](/docs/get_started/technical_overview.html) والقيود كذلك، [اقرأ مواصفات <span dir="ltr" class="nowrap">AMP HTML</span>](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
-    - title@: AMP Cache
-      subtitle@: |
+        <p>للتعرّف على المزيد بشأن [التحسينات](/ar/learn/about-how/) والقيود كذلك، [اقرأ مواصفات <span dir="ltr" class="nowrap">AMP HTML</span>](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
+    - title: AMP Cache
+      subtitle: |
         تعرض **<span dir="ltr" class="nowrap">Google AMP Cache</span>** (اختياريًا) صفحات <span dir="ltr" class="nowrap">AMP HTML</span>.
-      description@: |
+      description: |
         <span dir="ltr" class="nowrap">Google AMP Cache</span> هي شبكة عرض محتوى تستند إلى الخادم الوكيل
         لعرض كل مستندات AMP الصالحة.
         فهي تجلب صفحات <span dir="ltr" class="nowrap">AMP HTML</span> وتخزّنها في ذاكرة التخزين المؤقت، وتحسّن أداء الصفحة تلقائيًا.
@@ -48,4 +48,4 @@ core:
         <p>وهناك إصدار آخر من أداة التحقق من الصحة يأتي مرفقًا بكل صفحة AMP. هذا الإصدار يمكنه تسجيل أخطاء التحقق من الصحة مباشرةً في وحدة التحكم بالمتصفح عند عرض الصفحة،
         مما يتيح لك مشاهدة كيف قد تؤثر التغييرات المعقّدة في الشفرة
         على الأداء وانطباع المستخدم.
-        <p>تعرّف على المزيد بشأن [اختبار صفحات <span dir="ltr" class="nowrap">AMP HTML</span>](/docs/guides/validate.html).
+        <p>تعرّف على المزيد بشأن [اختبار صفحات <span dir="ltr" class="nowrap">AMP HTML</span>](/ar/docs/guides/debug/validate.html).

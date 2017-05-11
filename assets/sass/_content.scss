@@ -25,8 +25,8 @@
 .main {
   align-items: stretch;
   display: flex;
-  margin-left: 350px;
-  min-height: 100vh;
+  margin-left: 300px;
+  min-height: calc(100vh - 274px);
 
   h1 {
     font-size: 40px;
@@ -36,11 +36,9 @@
   }
 
   h2 {
-    border-top: 3px solid $color-grey-lt;
     font-size: 30px;
     line-height: 40px;
     margin-top: 30px;
-    padding-top: 20px;
   }
 
   h3 {
@@ -48,6 +46,19 @@
     line-height: 32px;
     margin-top: 30px;
   }
+
+  h4 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 30px;
+  }
+
+  h5 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 30px;
+  }
+
 
   a {
     font-size: 16px;
@@ -77,6 +88,45 @@
   amp-iframe {
     margin: 1em 0;
   }
+
+  .alignment-wrapper {
+
+    margin-bottom: 1em;
+
+    &.left {
+      float: left;
+      margin-right: 1em;
+      @include max-screen($mobile-breakpoint) {
+        float: none;
+        margin-right: 0;
+      }
+    }
+    &.right {
+      float: right;
+      margin-left: 1em;
+      @include max-screen($mobile-breakpoint) {
+        float: none;
+        margin-left: 0;
+      }
+    }
+    &.half { width: calc(50% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; }  }
+    &.third { width: calc(33% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
+    &.margin-none { margin: 0; }
+
+    amp-img {
+      margin: 0;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      color: #666;
+      margin-top: 1em;
+      padding: 1em 0;
+      border-top: 2px solid #f0f0f0;
+      text-align: center;
+    }
+  }
+
 }
 
 .rtl .main {

@@ -6,6 +6,7 @@ aside {
   margin: 16px 0;
   padding: 24px 24px 24px 80px;
   position: relative;
+  clear: both;
 
   strong {
     color: $color-brightblue;
@@ -29,6 +30,16 @@ aside {
     top: 50%;
     transform: translateY(-50%);
     width: 70px;
+  }
+
+  &.none {
+    background: #fafafa;
+    padding: 24px 24px 24px 24px;
+
+    strong {
+      color: #333;
+      text-transform: none;
+    }
   }
 
   &.note {

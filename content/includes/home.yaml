@@ -4,7 +4,7 @@ hero:
   cta@: Learn about AMP
   cta_url: /content/learn/overview.yaml
   secondary_cta@: Start Building
-  secondary_cta_url: /content/docs/get_started/general/create.md
+  secondary_cta_url: /content/docs/tutorials/general/create.md
   phone_img_base: /static/img/home/home_hero_phone
   carousel_title@: The Latest
 
@@ -37,25 +37,25 @@ success_stories:
       img: /static/img/home/wapo_logo.png
       img_height: 197
       img_width: 1280
-      url@: /content/learn/case-studies/washingtonpost.md
+      url: /content/learn/case-studies/washingtonpost.md
       class: wapo
-    - quote@: “We see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
-      img_height: 263
-      img_width: 1298
-      img: /static/img/home/wired_logo.png
-      url@: /content/learn/case-studies/wired.md
+    - quote@: “AMP was the perfect addition to our business, giving us a new level of impact for our e-commerce clients.”
+      img_height: 135
+      img_width: 902
+      img: /static/img/case-studies/wompmobile_logo.png
+      url: /content/learn/case-studies/wompmobile.md
       class: wired
     - quote@: “Across Teads’ publisher portfolio, video ads perform significantly better on AMP pages than on the traditional mobile web.”
       img_height: 28
       img_width: 75
       img: /static/img/home/teads_logo.svg
-      url@: /content/learn/case-studies/teads.md
+      url: /content/learn/case-studies/teads.md
       class: teads
 
 large_cta:
   title@: Learn how to build AMP pages and AMP Ads
   cta@: Start Building
-  cta_url: /content/docs/get_started/general/create.md
+  cta_url: /content/docs/tutorials/general/create.md
   lines_left: /static/img/home/lines3.svg
   lines_left_width: 360
   lines_left_height: 377

@@ -1,38 +1,38 @@
 core:
-  title@: AMP pages are built with 3 core components.
+  title: AMP pages are built with 3 core components.
   components:
-    - title@: AMP HTML
-      subtitle@: |
+    - title: AMP HTML
+      subtitle: |
         **AMP HTML** est du HTML comportant certaines restrictions pour assurer des performances fiable,
         ainsi que certaines extensions permettant de créer du contenu enrichi plus élaboré qu'avec le HTML de base.
-      description@: |
+      description: |
         Pour faire simple, AMP HTML est du HTML étendu à l'aide de propriétés AMP personnalisées.
         Le fichier AMP HTML le plus simple ressemble à ce qui suit :
       example: /content/includes/html-example.md
-      description2@: |
+      description2: |
         Même si la plupart des balises sur une page AMP HTML sont des balises HTML standard,
         certaines sont remplacées par des balises AMP spécifiques (voir également
         [Balises HTML dans la spécification AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         Ces éléments personnalisés, appelés composants AMP HTML,
         permettent d'implémenter facilement et efficacement des modèles communs.
-        <p>Par exemple, la balise [`amp-img`](/docs/reference/amp-img.html)
+        <p>Par exemple, la balise [`amp-img`](/fr/docs/reference/components/amp-img)
         offre une entière prise en charge de `srcset` même dans les navigateurs qui ne sont pas encore compatibles.
-        Découvrez comment [créer votre première page AMP HTML](/docs/get_started/create.html).
-    - title@: AMP JS
-      subtitle@: |
+        Découvrez comment [créer votre première page AMP HTML](/fr/docs/tutorials/create.html).
+    - title: AMP JS
+      subtitle: |
         La bibliothèque **AMP JS** garantit un rendu rapide des pages AMP HTML.
-      description@: |
+      description: |
         La [bibliothèque AMP JS](https://github.com/ampproject/amphtml/tree/master/src) implémente
-        toutes les [meilleures pratiques d'AMP en termes d'efficacité](/docs/get_started/technical_overview.html),
+        toutes les [meilleures pratiques d'AMP en termes d'efficacité](/fr/learn/about-how/),
         gère le chargement des ressources et contient les balises personnalisées mentionnées ci-dessus,
         et ce, pour un rendu rapide de la page.
         <p>L'une des plus grandes optimisations est la désynchronisation de tout ce qui provient de ressources externes, de sorte que rien sur la page ne peut bloquer le rendu des différents éléments.
         <p>D'autres techniques permettent de gagner en performance : le système de « sandbox » pour tous les iframes, la prédéfinition de la disposition de chaque élément sur la page avant le chargement des ressources et la désactivation des sélecteurs CSS lents.
-        <p>Pour en savoir plus sur les [optimisations](/docs/get_started/technical_overview.html) et les limitations, [lire la spécification AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
-    - title@: AMP Cache
-      subtitle@: |
+        <p>Pour en savoir plus sur les [optimisations](/fr/learn/about-how/) et les limitations, [lire la spécification AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
+    - title: AMP Cache
+      subtitle: |
         Le cache **Google AMP Cache** (en option) fournit les pages AMP HTML.
-      description@: |
+      description: |
         Google AMP Cache est un réseau de distribution de contenus basé sur proxy
         qui fournit tous les documents AMP valides.
         Il extrait les pages AMP HTML, les stocke en mémoire cache et améliore automatiquement la performance des pages.
@@ -48,4 +48,4 @@ core:
         <p>Une autre version du système de validation est intégrée à chaque page AMP. Cette version peut consigner les erreurs de validation directement dans la console du navigateur lors du rendu de la page
         pour vous permettre de connaître l'impact des changements de code
         complexes sur la performance et l'expérience utilisateur.
-        <p>En savoir plus sur le [test des pages AMP HTML](/docs/guides/validate.html).
+        <p>En savoir plus sur le [test des pages AMP HTML](/fr/docs/guides/debug/validate.html).

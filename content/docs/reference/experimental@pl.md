@@ -29,5 +29,5 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 Żaden plik AMP zawierający funkcje eksperymentalne nie przejdzie
-[weryfikacji stron AMP](/docs/guides/validate.html).
+[weryfikacji stron AMP](/pl/docs/guides/debug/validate.html).
 W przypadku dokumentów gotowych do wdrożenia komponenty eksperymentalne należy usunąć.

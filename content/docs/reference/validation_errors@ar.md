@@ -21,7 +21,7 @@ limitations under the License.
 يجب ألا تتضمن مستندات AMP الصالحة أي أخطاء تتعلق بالتحقق من الصحة.
 والغرض من هذا المستند هو مساعدتك في فهم أفضل
 لأي أخطاء تتعلق بالتحقق من الصحة قد تصادفها عند
-[التحقق من صحة صفحات AMP](/ar/docs/guides/validate.html) وإصلاح هذه الأخطاء.
+[التحقق من صحة صفحات AMP](/ar/docs/guides/debug/validate.html) وإصلاح هذه الأخطاء.
 للحصول على نظرة عامة حول أخطاء التحقق من الصحة،
 راجع [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -616,8 +616,8 @@ limitations under the License.
 
 قبل مراجعة أخطاء الأنماط والتنسيقات،
 يجدر بنا التعرف على كيفية عمل
-[الأنماط](/ar/docs/guides/responsive/style_pages.html) و
-[التنسيقات](/ar/docs/guides/responsive/control_layout.html) في AMP.
+[الأنماط](/ar/docs/guides/author-develop/responsive/style_pages.html) و
+[التنسيقات](/ar/docs/guides/author-develop/responsive/control_layout.html) في AMP.
 ونظرًا لأن صفحات AMP هي صفحات HTML، فإن الأنماط تشبه كثيرًا أي صفحات HTML.
 ولكن هناك بعض القيود لضمان سرعة تحميل الصفحات،
 وتعمل أداة التحقق من صحة صفحات AMP على تفعيل هذه القيود.
@@ -730,7 +730,7 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق](/ar/docs/guides/responsive/control_layout.html) و
+راجع [كيفية التحكم في التنسيق](/ar/docs/guides/author-develop/responsive/control_layout.html) و
 [مواصفات نظام تنسيق AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 **ملاحظة:** إذا لم تحدد التنسيق،
@@ -788,7 +788,7 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق](/ar/docs/guides/responsive/control_layout.html) و
+راجع [كيفية التحكم في التنسيق](/ar/docs/guides/author-develop/responsive/control_layout.html) و
 [مواصفات نظام تنسيق AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
 
 ### السمة غير مسموح بها من تنسيق محدد
@@ -834,7 +834,7 @@ limitations under the License.
 يحدث هذا الخطأ عندما تكون قيمة السمة غير صالحة للتنسيق المحدد.
 لاستيعاب سبب ظهور هذا الخطأ،
 ينبغي التعرّف على
-[السلوكيات المختلفة للتنسيقات](/ar/docs/guides/responsive/control_layout.html#size-and-position-elements).
+[السلوكيات المختلفة للتنسيقات]/ar/docs/guides/author-develop/responsive/control_layout.html).
 
 لنفرض أنك عيّنت التنسيق ليكون `fixed-height` و
 وضمّنت القيم الرقمية لكل من `height` و`width`.
@@ -878,7 +878,7 @@ limitations under the License.
 يمكن تضمين النماذج في ملفات المصدر،
 طالما أن الناتج الناشئ عن هذه الملفات لا يحتوي على النماذج
 (راجع أيضًا
-[استخدام معالجات CSS التمهيدية](/ar/docs/guides/responsive/style_pages.html#use-css-preprocessors)).
+[استخدام معالجات CSS التمهيدية](/ar/docs/guides/author-develop/responsive/style_pages.html)).
 
 ### تحتوي السمة على بنية نموذج
 
