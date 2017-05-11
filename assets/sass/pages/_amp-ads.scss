@@ -389,17 +389,28 @@ body.amp-ads {
     }
 
     .logo.ads {
-      position: absolute; top: 286px; left: calc(50% - 325px);
+      color: white;
+      position: absolute;
+      top: 448px;
+      left: calc(50% - 305px);
       width: 109px;
+
+      @media (min-width: 1700px) {
+        color: #3C78B8;
+      }
     }
 
     .logo.page {
-      position: absolute; top: 190px; left: calc(50% - 20px);
+      position: absolute;
+      top: 190px;
+      left: calc(50% - 20px);
       width: 120px;
     }
 
     .logo.landing-page {
-      position: absolute; top: 286px; left: calc(50% + 219px);
+      position: absolute;
+      top: 286px;
+      left: calc(50% + 219px);
       width: 176px;
     }
 
