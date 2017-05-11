@@ -55,7 +55,7 @@ AMP HTML documents MUST:
 
 In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but is a requirement to get your content distributed in certain places, for instance in the [Google Search news carousel demo (try on your phone)](https://g.co/ampdemo).
 
-To learn more about all the meta-data you’ll need in various other places, i.e. Twitter, [explore our samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). To learn specifically about AMP in Google Search, see [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories).
+To learn more about all the meta-data you’ll need in various other places, e.g. Twitter, [explore our samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). To learn specifically about AMP in Google Search, see [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories).
 
 <hr>
 
