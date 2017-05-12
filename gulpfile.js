@@ -64,15 +64,6 @@ gulp.task('update-blog-links', function (cb) {
   });
 });
 
-gulp.task('update-blog-ads-links', function (cb) {
-  exec('cd ./scripts && ./update_blog_ads_links.js', function (err, stdout, stderr) {
-    if (err instanceof Error) {
-      cb(err);
-    }
-    cb();
-  });
-});
-
 gulp.task('update-tweets', function (cb) {
   exec('cd ./scripts && ./update_tweets.js', function (err, stdout, stderr) {
     if (err instanceof Error) {
@@ -143,5 +134,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('build', [ 'update-blog-links', 'update-blog-ads-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass', 'build-examples', 'generate-asset-manifest' ]);
+gulp.task('build', [ 'update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass', 'build-examples', 'generate-asset-manifest' ]);
 gulp.task('default', [ 'update-platforms-page', 'sass', 'generate-asset-manifest', 'watch' ]);
