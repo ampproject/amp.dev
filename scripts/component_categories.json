@@ -61,12 +61,12 @@
 
     "amp-facebook": "social",
     "amp-facebook-comments": "social",
+    "amp-facebook-like": "social",
     "amp-gfycat": "social",
     "amp-instagram": "social",
     "amp-pinterest": "social",
     "amp-reddit": "social",
     "amp-social-share": "social",
     "amp-twitter": "social",
-    "amp-vine": "social",
-    "amp-share-tracking": "social"
+    "amp-vine": "social"
 }
