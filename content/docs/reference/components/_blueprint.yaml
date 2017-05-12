@@ -21,5 +21,5 @@ custom_children:
     href: /content/docs/reference/components/presentation/amp-animation.md
     collection: /content/docs/reference/components/presentation
   - title@: Social
-    href: /content/docs/reference/components/social/amp-facebook.md
+    href: /content/docs/reference/components/social/amp-facebook-comments.md
     collection: /content/docs/reference/components/social
