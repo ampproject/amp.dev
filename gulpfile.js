@@ -4,7 +4,7 @@ const plumber = require('gulp-plumber');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
-const swBuild = require('sw-build');
+const swBuild = require('workbox-build');
 const fs = require('fs');
 
 const Path = {
@@ -84,7 +84,7 @@ gulp.task('update-platforms-page', ['import-docs'], function (cb) {
 
 gulp.task('generate-asset-manifest', function (cb) {
   swBuild.getFileManifestEntries({
-    rootDirectory: './assets',
+    globDirectory: './assets',
     staticFileGlobs: [
       'img/*.{svg,png,jpg}',
       'img/nav/*.{svg,png,jpg}',
