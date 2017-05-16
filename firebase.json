@@ -42,6 +42,11 @@
     ],
     "redirects": [
       {
+        "source": "/ads",
+        "destination": "/learn/who-uses-amp/amp-ads/",
+        "type": 301
+      },
+      {
         "source": "/who",
         "destination": "/learn/who/",
         "type": 301

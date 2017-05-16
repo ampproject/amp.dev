@@ -13,8 +13,8 @@
     "request": "*"
   },
   "devDependencies": {
-    "sw-build": "*",
-    "sw-lib": "*",
+    "workbox-build": "*",
+    "workbox-sw": "*",
     "amp-by-example": "*"
   }
 }
