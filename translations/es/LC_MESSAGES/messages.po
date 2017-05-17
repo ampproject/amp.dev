@@ -404,7 +404,7 @@ msgstr "Empezar armando"
 
 #: /content/includes/doc.yaml
 msgid "Get in touch"
-msgstr ""
+msgstr "Ponerse en contacto"
 
 #: /content/learn/amp-design-principles.yaml
 #: /content/learn/amp-design-principles@ko.yaml
@@ -584,7 +584,7 @@ msgstr "Más Eventos Pasados"
 
 #: /content/includes/doc.yaml
 msgid "Need more help?"
-msgstr ""
+msgstr "¿Necesitas más ayuda?"
 
 #: /content/pages/home.html:37 /content/pages/home.html:77
 msgid "New Video"
