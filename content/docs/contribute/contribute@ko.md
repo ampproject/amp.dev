@@ -6,7 +6,7 @@ $localization:
   path: /{locale}/{base}/
 ---
 
-AMP Project는 당신이 AMP와 관련된 서비스의 제공자거나 콘텐츠 작성자, 개발자던 상관없이 커뮤니티의 모든 멤버의 도움 없이는 불가능합니다. 당신이 기여할 수 있는 방법은 다양합니다.
+AMP Project는 여러분이 AMP와 관련된 서비스의 제공자거나 콘텐츠 작성자, 개발자던 상관없이 커뮤니티의 모든 멤버의 도움 없이는 불가능합니다. 여러분이 기여할 수 있는 방법은 다양합니다.
 
 ### AMP의 이슈를 제보합니다.
 만약 피드백이나 AMP에 관한 기술적 이슈를 경험하였다면, 그걸 [이슈 트래커](https://github.com/ampproject/amphtml/issues)에서 찾아보시길 바랍니다.
@@ -17,7 +17,7 @@ AMP Project는 당신이 AMP와 관련된 서비스의 제공자거나 콘텐츠
 
 AMP 프로젝트는 기술적 기여를 강하게 장려합니다.
 
-우리는 오픈 소스 커뮤니티에 당신이 지속적으로 기여하기를 바라지만,
+우리는 오픈 소스 커뮤니티에 여러분이 지속적으로 기여하기를 바라지만,
 특히 관심을 가지고있는 이슈에 대한 일회성 기여도 환영합니다.
 
 #### 코드를 도와주세요
@@ -29,7 +29,7 @@ AMP 프로젝트는 기술적 기여를 강하게 장려합니다.
 우리는 AMP 유저를 위한 예제, AMP 프로젝트 컨트리뷰터를 돕는 문서 등 모든 종류의 문서를 갖고 있습니다.
 
 [ampproject.org](https://ampproject.org)은 대부분의 사람들이 AMP에 익숙해지는 곳입니다.
-[ampproject 문서 GitHub 프로젝트](https://github.com/ampproject/docs)에서 문서에 기여할 수 있습니다. (심지어 [당신이 지금 읽고있는 페이지](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md)를 더 좋게 할 수도 있습니다)
+[ampproject 문서 GitHub 프로젝트](https://github.com/ampproject/docs)에서 문서에 기여할 수 있습니다. (심지어 [여러분이 지금 읽고있는 페이지](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md)를 더 좋게 할 수도 있습니다)
 
 [ampbyexample.com](https://ampbyexample.com)은 어떻게 AMP를 사용하는 지 예제를 제공합니다.
 [amp-by-example GitHub 프로젝트](https://github.com/ampproject/amp-by-example/)에서 개선할 수 있습니다.
