@@ -128,7 +128,7 @@ users:
   - name: Celtra
     logo: amp-ads/celtra-logo.png
     logo_width: 400
-    logo_height: 175
+    logo_height: 220
     class: celtra
 
   - name: Adobe
