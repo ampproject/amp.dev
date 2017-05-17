@@ -1,37 +1,26 @@
-{#
- # Breadcrumb Nav
- #}
-{% set current_docs = [] %}
-{% do current_docs.append(g.doc(doc.pod_path)) %}
-{% set markup_payloads = [] %}
-{#
- ## Current page
- #}
-{% set current_doc = current_docs|last %}
-{% set markup_payload -%}
-  <li>{{g.doc(current_doc.pod_path, locale=doc.locale).titles('breadcrumb')}}</li>
-{%- endset %}
-{% do markup_payloads.append(markup_payload|safe) %}
-{#
- ## Ancestors
- #}
-{% do current_docs.append(g.doc(current_doc.pod_path).parent) %}
-{% if not current_docs|last == None %}
-  {% for _ in range(10) %} {# Capped at 10 levels #}
-    {% set current_doc = current_docs|last %}
-    {% set markup_payload -%}
-      <li><a href="{{g.doc(current_doc.pod_path, locale=doc.locale).url.path}}">{{g.doc(current_doc.pod_path, locale=doc.locale).titles('breadcrumb')}}</a></li>
-    {%- endset %}
-    {% do markup_payloads.append(markup_payload|safe) %}
-    {% do current_docs.append(g.doc(current_doc.pod_path).parent) %}
-    {% if current_docs|last == None %}{% break %}{% endif %}
+{% set currentDocs = [] %}
+{% do currentDocs.append(g.doc(doc.pod_path)) %}
+{% set listItems = [] %}
+{% set currentDoc = currentDocs|last %}
+{% set firstListItem %}
+<li>{{currentDoc.titles('breadcrumb')}}</li>
+{% endset %}
+{% if listItems.append(firstListItem) %}{% endif %}
+{% if currentDocs.append(g.doc(currentDoc.pod_path).parent) %}{% endif %}
+{% if not currentDocs|last == None %}
+  {% for _ in range(10) %}
+    {% set currentDoc = currentDocs|last %}
+{% set nextListItem %}
+<li><a href="{{currentDoc.url.path}}">{{currentDoc.titles('breadcrumb')}}</a></li>
+{% endset %}
+    {% if listItems.append(nextListItem|safe) %}{% endif %}
+    {% set currentDoc = currentDocs|last %}
+    {% if currentDocs.append(g.doc(currentDoc.pod_path).parent) %}{% endif %}
+    {% if currentDocs|last == None %}{% break %}{% endif %}
   {% endfor %}
 {% endif %}
-{#
- ## Cash out
- #}
 <nav class="breadcrumb">
   <ul>
-    {{markup_payloads|reverse|join('\n    ')|safe}}
+    {{listItems|reverse|join('    ')|safe}}
   </ul>
 </nav>
