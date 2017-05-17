@@ -1,5 +1,6 @@
 {% set isEvent = (post.type|lower == "event") %}
 {% set isBlog = (post.type|lower == "blog") %}
+{% set isVideo = (post.type|lower == "video") %}
 {% set isRoadmap = (post.type|lower == "roadmap") %}
 {% set latest = g.doc('/content/includes/latest.yaml', locale=doc.locale) %}
 
@@ -7,7 +8,11 @@
   {% if meta %}
     <div class="post-meta">
       {% if not isRoadmap %}
+        {% if isVideo %}
+        <a class="type" href="https://youtube.com/TheAMPProject">{{post.type}}</a>
+        {% else %}
         <a class="type" href="{{g.doc('/content/latest/list-' ~ post.type|lower ~ '.html', locale=doc.locale).url.path}}">{{post.type}}</a>
+        {% endif %}
       {% else %}
         <a class="type" href="{{g.doc('/content/latest/roadmap.html', locale=doc.locale).url.path}}">{{post.type}}</a>
       {% endif %}
@@ -21,9 +26,10 @@
   {% endif %}
   {% if isBlog %}
     <a href="{{g.doc('/content/latest/blog/' ~ post.id ~ '.md', locale=doc.locale).url.path}}" class="post-title">
-  {% endif %}
-  {% if isEvent %}
+  {% elif isEvent %}
     <a href="{{post.href}}" class="post-title">
+  {% elif isVideo %}
+    <a href="{{post.origin}}" class="post-title">
   {% endif %}
   {% if isRoadmap %}
     <a href="{{g.doc('/content/latest/roadmap.html', locale=doc.locale).url.path}}" class="post-title">
@@ -32,8 +38,12 @@
     <h4>{{post.title|truncate(80, False)}}</h4>
   {% endif %}
   </a>
-  {% if not isEvent or not past %}
-    <p class="post-excerpt small">{{post.excerpt|safe|truncate(170, False)}}</p>
+  {% if isVideo %}
+    <amp-youtube data-videoid="{{ post.id }}" layout="responsive" width="480" height="270"></amp-youtube>
+  {% else %}
+    {% if not isEvent or not past %}
+      <p class="post-excerpt small">{{post.excerpt|safe|truncate(170, False)}}</p>
+    {% endif %}
   {% endif %}
   {% if isEvent %}
     <div class="event-meta">

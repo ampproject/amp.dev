@@ -1,17 +1,37 @@
-{% set usedDoc = usedDoc or doc %}
-{% set parentDoc = usedDoc.parent %}
-{% set grandparentDoc = parentDoc.parent %}
-
+{#
+ # Breadcrumb Nav
+ #}
+{% set current_docs = [] %}
+{% do current_docs.append(g.doc(doc.pod_path)) %}
+{% set markup_payloads = [] %}
+{#
+ ## Current page
+ #}
+{% set current_doc = current_docs|last %}
+{% set markup_payload -%}
+  <li>{{g.doc(current_doc.pod_path, locale=doc.locale).titles('breadcrumb')}}</li>
+{%- endset %}
+{% do markup_payloads.append(markup_payload|safe) %}
+{#
+ ## Ancestors
+ #}
+{% do current_docs.append(g.doc(current_doc.pod_path).parent) %}
+{% if not current_docs|last == None %}
+  {% for _ in range(10) %} {# Capped at 10 levels #}
+    {% set current_doc = current_docs|last %}
+    {% set markup_payload -%}
+      <li><a href="{{g.doc(current_doc.pod_path, locale=doc.locale).url.path}}">{{g.doc(current_doc.pod_path, locale=doc.locale).titles('breadcrumb')}}</a></li>
+    {%- endset %}
+    {% do markup_payloads.append(markup_payload|safe) %}
+    {% do current_docs.append(g.doc(current_doc.pod_path).parent) %}
+    {% if current_docs|last == None %}{% break %}{% endif %}
+  {% endfor %}
+{% endif %}
+{#
+ ## Cash out
+ #}
 <nav class="breadcrumb">
   <ul>
-  {% if grandparentDoc %}
-    <li><a href="{{g.url(grandparentDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(grandparentDoc.titles('breadcrumb')) or _(grandparentDoc.title) }}</a></li>
-  {% endif %}
-
-  {% if parentDoc %}
-    <li><a href="{{g.url(parentDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(parentDoc.titles('breadcrumb')) or _(parentDoc.title) }}</a></li>
-  {% endif %}
-
-    <li><a href="{{g.url(usedDoc.pod_path, locale=usedDoc.locale).path}}">{{ _(doc.titles('breadcrumb')) or _(usedDoc.title) }}</a></li>
+    {{markup_payloads|reverse|join('\n    ')|safe}}
   </ul>
 </nav>

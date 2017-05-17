@@ -30,7 +30,7 @@ function addAds() {
 function addAnalytics() {
 
   // Read in amp-ad file, and the ad vendors
-  var ampAnalytics = fs.readFileSync('../content/docs/guides/deploy/analytics_amp/analytics-vendors.md', { encoding: 'utf8' });
+  var ampAnalytics = fs.readFileSync('../content/docs/guides/analytics_amp/analytics-vendors.md', { encoding: 'utf8' });
   var supportPortion = (ampAnalytics.split('## Vendors')[1]).split('\n## ')[0];
   var individualVendors = supportPortion.split('\n###');
   individualVendors.shift();
@@ -83,6 +83,8 @@ function addCMS() {
           link: https://www.roya.com/blog/roya-announces-addition-of-amp-to-canvas-cms-amp.html
         - title: Drupal
           link: https://www.drupal.org/project/amp
+        - title: Fastcommerce
+          link: https://www.fastcommerce.com.br/accelerated-mobile-pages-amp
         - title: Hatena
           link: http://help.hatenablog.com/entry/amp
         - title: Marfeel

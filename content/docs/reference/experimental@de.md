@@ -23,5 +23,5 @@ Für Inhalte aus anderen Domains können die Tests in der DevTools-Konsole wie f
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-Bei AMP-Dateien mit Testfunktionen [schlägt die AMP-Validierung fehl](/docs/guides/validate.html).
+Bei AMP-Dateien mit Testfunktionen [schlägt die AMP-Validierung fehl](/de/docs/guides/debug/validate.html).
 Bei produktionsbereiten AMP-Dokumenten müssen die Testkomponenten entfernt werden.

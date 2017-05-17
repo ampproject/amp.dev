@@ -41,14 +41,14 @@ points:
       description: |
         AMP non consente ai meccanismi delle estensioni di bloccare il rendering della pagina.
         AMP supporta le estensioni per componenti come
-        [lightbox](/it/docs/reference/components/layout/amp-lightbox.html),
-        [incorporamenti instagram](/it/docs/reference/components/social/amp-instagram.html),
-        [tweet](/it/docs/reference/components/social/amp-twitter.html) e così via.
+        [lightbox](/it/docs/reference/components/amp-lightbox.html),
+        [incorporamenti instagram](/it/docs/reference/components/amp-instagram.html),
+        [tweet](/it/docs/reference/components/amp-twitter.html) e così via.
         Benché questi avanzino ulteriori richieste HTTP,
         tali richieste non bloccano il layout e il rendering della pagina.
         <p>Tutte le pagine che utilizzano uno script personalizzato devono indicare al sistema AMP
         che prima o poi avrà un tag personalizzato.
-        Ad esempio, lo script [`amp-iframe`](/it/docs/reference/components/layout/amp-iframe.html)
+        Ad esempio, lo script [`amp-iframe`](/it/docs/reference/components/amp-iframe.html)
         indica al sistema che ci sarà un tag `amp-iframe`.
         AMP crea la casella dell’iframe prima ancora di sapere cosa conterrà:
       example: /content/includes/amp-iframe.md

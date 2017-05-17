@@ -3,6 +3,7 @@ $order: 1
 class: about-who
 $view: /views/about-who.html
 $parent: /content/learn/overview.yaml
+$path: /learn/who-uses-amp/
 
 hero:
   title@: Who is AMP for?

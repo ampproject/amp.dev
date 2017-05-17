@@ -40,14 +40,14 @@ points:
       description: |
         AMP では、拡張機能がページ レンダリングをブロックしないようにしています。
         AMP は拡張機能にも対応しています。
-        [ライトボックス](/ja/docs/reference/components/layout/amp-lightbox.html)、
-        [Instagram の埋め込み](/ja/docs/reference/components/social/amp-instagram.html)、
-        [ツイート](/ja/docs/reference/components/social/amp-twitter.html)などがその例です。
+        [ライトボックス](/ja/docs/reference/components/amp-lightbox.html)、
+        [Instagram の埋め込み](/ja/docs/reference/components/amp-instagram.html)、
+        [ツイート](/ja/docs/reference/components/amp-twitter.html)などがその例です。
         これらの機能は追加の HTTP リクエストを必要としますが、
         リクエストによってページのレイアウトやレンダリングがブロックされることはありません。
         <p>カスタム スクリプトを使用しているページは、
         最終的にカスタムタグが含まれることを AMP システムに通知する必要があります。
-        たとえば、[`amp-iframe`](/ja/docs/reference/components/layout/amp-iframe.html) スクリプトは
+        たとえば、[`amp-iframe`](/ja/docs/reference/components/amp-iframe.html) スクリプトは
         `amp-iframe` タグが含まれることをシステムに通知します。
         AMP は中身がわからない状態で、先に iframe ボックスを作成します。
       example: /content/includes/amp-iframe.md

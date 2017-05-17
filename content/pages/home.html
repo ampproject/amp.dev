@@ -44,10 +44,10 @@ components:
           {% for article in blog.blogs %}
             {% if loop.index <= 6 %}
             <div class="card-container">
-              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
+              <a href="{% if article.type == 'Video' %}{{ article.origin }}{% else %}{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}{% endif %}" class="card">
                 <div class="card-inner">
                   <div class="card-type text-label news">
-                    {{_('News')}}
+                    {% if article.type == "Video" %}{{_('New Video')}}{% else %}{{_('News')}}{% endif %}
                   </div>
                   <div class="card-content small">
                     {{article.title}}
@@ -84,10 +84,10 @@ components:
 
           <div class="card-container">
           {% for article in blog.blogs %}
-              <a href="{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}" class="card">
+              <a href="{% if article.type == 'Video' %}{{ article.origin }}{% else %}{{g.doc('/content/latest/blog/' ~ article.id ~ '.md', locale=doc.locale).url.path}}{% endif %}" class="card">
                 <div class="card-inner">
                   <div class="card-type text-label news">
-                    {{_('News')}}
+                    {% if article.type == "Video" %}{{_('New Video')}}{% else %}{{_('News')}}{% endif %}
                   </div>
                   <div class="card-content small">
                     {{article.title}}
@@ -368,7 +368,7 @@ components:
           "vars": {
             "eventCategory": "hidden",
             "eventAction": "hero-image hidden",
-            "eventLabel": "none",
+            "eventLabel": "totalTimeMin: 0",
             "eventValue": "${totalVisibleTime}"
           }
         },
@@ -377,12 +377,12 @@ components:
           "request": "event",
           "visibilitySpec": {
             "selector": "#hero-image",
-            "totalVisibleTime": 2000
+            "totalTimeMin": 2000
           },
           "vars": {
             "eventCategory": "hidden",
             "eventAction": "hero-image hidden",
-            "eventLabel": "totalVisibleTime: 2000",
+            "eventLabel": "totalTimeMin: 2000",
             "eventValue": "${totalVisibleTime}"
           }
         },
@@ -405,12 +405,12 @@ components:
           "request": "event",
           "visibilitySpec": {
             "selector": "#hero-image",
-            "totalVisibleTime": 5000
+            "totalTimeMin": 5000
           },
           "vars": {
             "eventCategory": "hidden",
             "eventAction": "hero-image hidden",
-            "eventLabel": "totalVisibleTime: 5000",
+            "eventLabel": "totalTimeMin: 5000",
             "eventValue": "${totalVisibleTime}"
           }
         },
@@ -424,6 +424,75 @@ components:
           "vars": {
             "eventCategory": "hidden",
             "eventAction": "hero-image hidden",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3Hidden1": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image"
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3",
+            "eventLabel": "totalTimeMin: 0",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3Hidden2": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "totalTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3",
+            "eventLabel": "totalTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3Hidden3": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3Hidden4": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3",
+            "eventLabel": "totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3Hidden5": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3",
             "eventLabel": "continuousTimeMin: 5000",
             "eventValue": "${totalVisibleTime}"
           }
@@ -534,7 +603,7 @@ components:
           "vars": {
             "eventCategory": "hidden",
             "eventAction": "experience-image hidden",
-            "eventLabel": "none",
+            "eventLabel": "totalTimeMin: 0",
             "eventValue": "${totalVisibleTime}"
           }
         },
@@ -543,12 +612,12 @@ components:
           "request": "event",
           "visibilitySpec": {
             "selector": "#experience-image",
-            "totalVisibleTime": 2000
+            "totalTimeMin": 2000
           },
           "vars": {
             "eventCategory": "hidden",
             "eventAction": "experience-image hidden",
-            "eventLabel": "totalVisibleTime: 2000",
+            "eventLabel": "totalTimeMin: 2000",
             "eventValue": "${totalVisibleTime}"
           }
         },
@@ -571,12 +640,12 @@ components:
           "request": "event",
           "visibilitySpec": {
             "selector": "#experience-image",
-            "totalVisibleTime": 5000
+            "totalTimeMin": 5000
           },
           "vars": {
             "eventCategory": "hidden",
             "eventAction": "experience-image hidden",
-            "eventLabel": "totalVisibleTime: 5000",
+            "eventLabel": "totalTimeMin: 5000",
             "eventValue": "${totalVisibleTime}"
           }
         },
@@ -590,6 +659,545 @@ components:
           "vars": {
             "eventCategory": "hidden",
             "eventAction": "experience-image hidden",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3Hidden1": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image"
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3",
+            "eventLabel": "totalTimeMin: 0",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3Hidden2": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "totalTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3",
+            "eventLabel": "totalTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3Hidden3": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3Hidden4": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3",
+            "eventLabel": "totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3Hidden5": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageVisibleCopy0": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image"
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "hero-image visible copy",
+            "eventLabel": "visiblePercentageMin: 0",
+            "eventValue": "0"
+          }
+        },
+        "heroImageVisibleCopy1": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "visiblePercentageMin": 20
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "hero-image visible copy",
+            "eventLabel": "visiblePercentageMin: 20",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageVisibleCopy2": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "visiblePercentageMin": 50
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "hero-image visible copy",
+            "eventLabel": "visiblePercentageMin: 50",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageVisibleCopy3": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "totalTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "hero-image visible copy",
+            "eventLabel": "totalTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageVisibleCopy4": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "hero-image visible copy",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageVisibleCopy5": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "hero-image visible copy",
+            "eventLabel": "totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageVisibleCopy6": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "hero-image visible copy",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageHiddenCopy1": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image"
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden copy",
+            "eventLabel": "totalTimeMin: 0",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageHiddenCopy2": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "totalTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden copy",
+            "eventLabel": "totalTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageHiddenCopy3": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden copy",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageHiddenCopy4": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden copy",
+            "eventLabel": "totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageHiddenCopy5": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden copy",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3HiddenCopy1": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image"
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3 copy",
+            "eventLabel": "totalTimeMin: 0",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3HiddenCopy2": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "totalTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3 copy",
+            "eventLabel": "totalTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3HiddenCopy3": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3 copy",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3HiddenCopy4": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3 copy",
+            "eventLabel": "totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageV3HiddenCopy5": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden V3 copy",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageVisibleCopy0": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image"
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "experience-image visible copy",
+            "eventLabel": "visiblePercentageMin: 0",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageVisibleCopy1": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "visiblePercentageMin": 20
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "experience-image visible copy",
+            "eventLabel": "visiblePercentageMin: 20",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageVisibleCopy2": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "visiblePercentageMin": 50
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "experience-image visible copy",
+            "eventLabel": "visiblePercentageMin: 50",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageVisibleCopy3": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "totalTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "experience-image visible copy",
+            "eventLabel": "totalTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageVisibleCopy4": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "experience-image visible copy",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageVisibleCopy5": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "experience-image visible copy",
+            "eventLabel": "totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageVisibleCopy6": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "experience-image visible copy",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageHiddenCopy1": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image"
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden copy",
+            "eventLabel": "totalTimeMin: 0",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageHiddenCopy2": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "totalTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden copy",
+            "eventLabel": "totalTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageHiddenCopy3": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden copy",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageHiddenCopy4": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden copy",
+            "eventLabel": "totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageHiddenCopy5": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden copy",
+            "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3HiddenCopy1": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image"
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3 copy",
+            "eventLabel": "totalTimeMin: 0",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3HiddenCopy2": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "totalTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3 copy",
+            "eventLabel": "totalTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3HiddenCopy3": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 2000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3 copy",
+            "eventLabel": "continuousTimeMin: 2000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3HiddenCopy4": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3 copy",
+            "eventLabel": "totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageV3HiddenCopy5": {
+          "on": "hidden-v3",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden V3 copy",
             "eventLabel": "continuousTimeMin: 5000",
             "eventValue": "${totalVisibleTime}"
           }

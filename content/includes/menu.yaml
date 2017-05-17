@@ -19,12 +19,12 @@ menu:
     copy@: Docs
     collection: docs
     children:
-      - href: /content/docs/get_started/general/create.md
+      - href: /content/docs/tutorials/create.md
         copy@: "Getting started"
-      - href: /content/docs/get_started/general/create.md
+      - href: /content/docs/tutorials/create.md
         copy@: "Tutorials"
-        collection: docs/get_started
-      - href: /content/docs/guides/author_develop/responsive_amp.md
+        collection: docs/tutorials
+      - href: /content/docs/guides/responsive_amp.md
         copy@: "Guides"
         collection: docs/guides
       - href: /content/docs/reference/components.md
@@ -32,6 +32,8 @@ menu:
         collection: docs/reference
       - href: https://ampbyexample.com/
         copy@: "Examples"
+      - href: https://youtube.com/TheAMPProject
+        copy@: "Videos"
       - href: /content/docs/contribute/contribute.md
         copy@: "Contribute"
         collection: docs/contribute

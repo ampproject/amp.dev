@@ -7,13 +7,14 @@
     "gulp-autoprefixer": "*",
     "gulp-plumber": "*",
     "gulp-sass": "*",
-    "gulp-svg-sprite": "^1.3.6",
+    "gulp-svg-sprite": "*",
     "moment": "*",
     "octonode": "*",
     "request": "*"
   },
   "devDependencies": {
-    "sw-build": "0.0.17",
-    "sw-lib": "0.0.17"
+    "workbox-build": "*",
+    "workbox-sw": "*",
+    "amp-by-example": "*"
   }
 }

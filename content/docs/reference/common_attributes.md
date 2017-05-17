@@ -43,7 +43,7 @@ All AMP elements that support the `responsive` layout, also support the `heights
 When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
 {% endcall %}
 
-Example: 
+Example:
 
 [sourcecode:html]
 <amp-img src="amp.png"
@@ -58,7 +58,7 @@ For more information, see [Art direction with srcset, sizes & heights](https://w
 
 AMP provides a set of [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the supported layout values for the element (see the element's documentation for what values are supported).
 
-Example: 
+Example:
 
 [sourcecode:html]
 <amp-img src="/img/amp.jpg"
@@ -94,11 +94,11 @@ For more information, see [Layout & Media queries](https://www.ampproject.org/do
 
 ## noloading
 
-The `noloading` attribute indicates whether the "loading indicator" should be turned **off** for this element. Many AMP elements show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. 
+The `noloading` attribute indicates whether the "loading indicator" should be turned **off** for this element. Many AMP elements show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded.
 
 Often used with: images, animations, videos, and ads
 
-Example: 
+Example:
 
 [sourcecode:html]
 <amp-img src="card.jpg"

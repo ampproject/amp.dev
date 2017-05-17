@@ -69,4 +69,4 @@ case:
 cta:
   title@: Get Started Building
   link_text@: Tutorials
-  link_url: /content/docs/get_started/create.md
+  link_url: /content/docs/tutorials/create.md

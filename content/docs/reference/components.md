@@ -21,9 +21,9 @@ Here are the components grouped by category:
 
 | Component | Description |
 | --------- | ----------- |
-| [`amp-access-laterpay`](components/amp-access-laterpay.html) | Allows publishers to easily integrate with the [LaterPay](https://www.laterpay.net/) micropayments platform.
 | [`amp-ad`](components/amp-ad.html) | A container to display an ad. |
 | [`amp-analytics`](components/amp-analytics.html) | Captures analytics data from an AMP document. |
+| [`amp-auto-ads`](components/amp-auto-ads.html) | Dynamically injects ads into an AMP page by using a remotely-served configuration file. |
 | [`amp-call-tracking`](components/amp-call-tracking.html) |  Dynamically replaces a phone number in a hyperlink to enable call tracking. |
 | [`amp-experiment`](components/amp-experiment.html) | Can be used to conduct user experience experiments on an AMP document. |
 | [`amp-pixel`](components/amp-pixel.html) | A tracking pixel to count page views. |
@@ -33,9 +33,11 @@ Here are the components grouped by category:
 
 | Component | Description |
 | --------- | ----------- |
+| [`amp-access-laterpay`](components/amp-access-laterpay.html) | Allows publishers to easily integrate with the [LaterPay](https://www.laterpay.net/) micropayments platform.
 | [`amp-access`](components/amp-access.html) | Provides an AMP paywall and subscription support.  |
 | [`amp-bind`](components/amp-bind.html) | Allows elements to mutate in response to user actions or data changes via data binding and simple JS-like expressions. |
 | [`amp-form`](components/amp-form.html) | Provides form support. |
+| [`amp-gist`](components/amp-gist.html) | Displays a [GitHub Gist](https://gist.github.com/). |
 | [`amp-install-serviceworker`](components/amp-install-serviceworker.html) | Installs a ServiceWorker. |
 | [`amp-list`](components/amp-list.html) | Dynamically downloads data and creates list items using a template. |
 | [`amp-live-list`](components/amp-live-list.html) | Provides a way to display and update content live. |
@@ -51,6 +53,7 @@ Here are the components grouped by category:
 | [`amp-app-banner`](components/amp-app-banner.html) | A wrapper and minimal UI for a cross-platform, fixed-position banner showing a call-to-action to install an app. |
 | [`amp-carousel`](components/amp-carousel.html) | Displays multiple similar pieces of content along a horizontal axis. |
 | [`amp-fx-flying-carpet`](components/amp-fx-flying-carpet.html) | Wraps its children in a unique full-screen scrolling container allowing you to display a full-screen ad without taking up the entire viewport. |
+| [`amp-fx-parallax`](components/amp-fx-parallax.html) |  An attribute that enables a 3D-perspective effect on an element. |
 | [`amp-iframe`](components/amp-iframe.html) | Displays an iframe. |
 | [`amp-lightbox`](components/amp-lightbox.html) | Allows for a “lightbox” or similar experience. |
 | [`amp-sidebar`](components/amp-sidebar.html) | Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. |
@@ -73,6 +76,7 @@ Here are the components grouped by category:
 | [`amp-izlesene`](components/amp-izlesene.html)  | Displays an [Izlesene](https://www.izlesene.com/) video. |
 | [`amp-jwplayer`](components/amp-jwplayer.html) | Displays a cloud-hosted [JW Player](https://www.jwplayer.com/). |
 | [`amp-kaltura-player`](components/amp-kaltura-player.html) | Displays the Kaltura Player as used in [Kaltura's Video Platform](https://corp.kaltura.com/). |
+| [`amp-nexxtv-player`](components/amp-nexxtv-player.html) | Displays a media stream from the nexxOMNIA platform. |
 | [`amp-o2-player`](components/amp-o2-player.html) | Displays an [AOL O2Player](http://on.aol.com/). |
 | [`amp-ooyala-player`](components/amp-ooyala-player.html) |  Displays an [Ooyala](https://www.ooyala.com/) video. |
 | [`amp-playbuzz`](components/amp-playbuzz.html) |  Displays any [Playbuzz](http://www.playbuzz.com/) content (e.g., list, poll, etc.). |
@@ -98,6 +102,8 @@ Here are the components grouped by category:
 
 | Component | Description |
 | --------- | ----------- |
+| [`amp-facebook-comments`](components/amp-facebook-comments.html) | Embeds the Facebook comments plugin. |
+| [`amp-facebook-like`](components/amp-facebook-like.html) | Embeds the Facebook like button plugin. |
 | [`amp-facebook`](components/amp-facebook.html) | Displays a Facebook post or video. |
 | [`amp-gfycat`](components/amp-gfycat.html) | Displays a [Gfycat](https://gfycat.com) video GIF. |
 | [`amp-instagram`](components/amp-instagram.html) | Displays an Instagram embed. |

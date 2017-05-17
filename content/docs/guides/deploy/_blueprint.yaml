@@ -1,5 +1,0 @@
-$title@: Deploy
-$path: /docs/guides/deploy/{base}.html
-$localization:
-  path: /{locale}/docs/guides/deploy/{base}.html
-$view: /views/doc.html

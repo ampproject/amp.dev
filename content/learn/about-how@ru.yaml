@@ -41,14 +41,14 @@ points:
       description: |
         AMP не позволяет механизмам расширений блокировать визуализацию страницы.
         AMP поддерживает расширения для таких компонентов, как
-        [окна просмотра](/ru/docs/reference/components/layout/amp-lightbox.html),
-        [вставки Instagram](/ru/docs/reference/components/social/amp-instagram.html),
-        [сообщения Twitter](/ru/docs/reference/components/social/amp-twitter.html) и др.
+        [окна просмотра](/ru/docs/reference/components/amp-lightbox.html),
+        [вставки Instagram](/ru/docs/reference/components/amp-instagram.html),
+        [сообщения Twitter](/ru/docs/reference/components/amp-twitter.html) и др.
         Хотя эти расширения требуют дополнительных запросов HTTP,
         эти запросы не блокируют компоновку и визуализацию страницы.
         <p>Любая страница, использующая персонализированный скрипт, должна сообщить системе AMP,
         что у нее впоследствии появится собственный тег.
-        Например, скрипт [`amp-iframe`](/ru/docs/reference/components/layout/amp-iframe.html)
+        Например, скрипт [`amp-iframe`](/ru/docs/reference/components/amp-iframe.html)
         сообщает системе, что на странице появится тег `amp-iframe`.
         AMP создает область встроенного фрейма еще до того, как его содержимое станет известным:
       example: /content/includes/amp-iframe.md

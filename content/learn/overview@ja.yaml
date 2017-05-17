@@ -15,9 +15,9 @@ core:
         （[APM 仕様書の HTML タグ](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)の説明もご覧ください）。
         これらのカスタム要素は AMP HTML コンポーネントと呼ばれ、
         このコンポーネントを使うと高パフォーマンスな共通のパターンを簡単に実装できます。
-        <p>たとえば [`amp-img`](/ja/docs/reference/components/media/amp-img.html) タグは、
+        <p>たとえば [`amp-img`](/ja/docs/reference/components/amp-img) タグは、
         `srcset` をフルサポートしています。まだこの機能に対応していないブラウザでも問題ありません。
-        [初めての AMP HTML ページを作成する](/ja/docs/get_started/create.html)方法もご覧ください。
+        [初めての AMP HTML ページを作成する](/ja/docs/tutorials/create.html)方法もご覧ください。
     - title: AMP JS
       subtitle: |
         そして AMP HTML ページのレンダリングを高速化するのが、**AMP JS** ライブラリです。

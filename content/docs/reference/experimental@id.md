@@ -29,5 +29,5 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 File AMP yang menyertakan fitur eksperimental akan gagal saat
-[validasi AMP](/docs/guides/validate.html).
+[validasi AMP](/id/docs/guides/debug/validate.html).
 Hapus komponen eksperimental ini dari dokumen AMP yang siap produksi.

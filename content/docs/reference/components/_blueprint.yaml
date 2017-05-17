@@ -21,15 +21,5 @@ custom_children:
     href: /content/docs/reference/components/presentation/amp-animation.md
     collection: /content/docs/reference/components/presentation
   - title@: Social
-    href: /content/docs/reference/components/social/amp-facebook.md
+    href: /content/docs/reference/components/social/amp-facebook-comments.md
     collection: /content/docs/reference/components/social
-
-navigation:
-  prev:
-    section: true
-    title@: Guides
-    href: /content/docs/guides/author_develop/responsive_amp.md
-  next:
-    subtitle@: Next Reference
-    title@: AMP HTML Specification
-    href: /content/docs/reference/spec.md

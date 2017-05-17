@@ -42,18 +42,19 @@
     ],
     "redirects": [
       {
+        "source": "/ads",
+        "destination": "/learn/who-uses-amp/amp-ads/",
+        "type": 301
+      },
+      {
         "source": "/who",
         "destination": "/learn/who/",
         "type": 301
       },
-      {
-        "source": "/who/",
-        "destination": "/learn/who/",
-        "type": 301
-      },
+
       {
         "source": "/docs/get_started/technical_overview.html",
-        "destination": "/learn/how-amp-works/",
+        "destination": "/learn/about-how/",
         "type": 301
       },
       {
@@ -61,386 +62,410 @@
         "destination": "/learn/overview/",
         "type": 301
       },
+
       {
-        "source": "/docs/guides/responsive_amp?(.html)",
-        "destination": "/docs/guides/author-develop/responsive_amp",
+        "source": "/docs/guides/author-develop/responsive_amp?(.html)",
+        "destination": "/docs/guides/responsive_amp",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/style_pages?(.html)",
-        "destination": "/docs/guides/author-develop/responsive/style_pages.html",
+        "source": "/docs/guides/author-develop/responsive/style_pages?(.html)",
+        "destination": "/docs/guides/responsive/style_pages.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/control_layout?(.html)",
-        "destination": "/docs/guides/author-develop/responsive/control_layout.html",
+        "source": "/docs/guides/author-develop/responsive/control_layout?(.html)",
+        "destination": "/docs/guides/responsive/control_layout.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/placeholders?(.html)",
-        "destination": "/docs/guides/author-develop/responsive/placeholders.html",
+        "source": "/docs/guides/author-develop/responsive/placeholders?(.html)",
+        "destination": "/docs/guides/responsive/placeholders.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/art_direction?(.html)",
-        "destination": "/docs/guides/author-develop/responsive/art_direction.html",
+        "source": "/docs/guides/author-develop/responsive/art_direction?(.html)",
+        "destination": "/docs/guides/responsive/art_direction.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/custom_fonts?(.html)",
-        "destination": "/docs/guides/author-develop/responsive/custom_fonts.html",
+        "source": "/docs/guides/author-develop/responsive/custom_fonts?(.html)",
+        "destination": "/docs/guides/responsive/custom_fonts.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/amp_replacements?(.html)",
-        "destination": "/docs/guides/author-develop/amp_replacements.html",
+        "source": "/docs/guides/author-develop/amp_replacements?(.html)",
+        "destination": "/docs/guides/amp_replacements.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/iframes?(.html)",
-        "destination": "/docs/guides/author-develop/iframes.html",
+        "source": "/docs/guides/author-develop/iframes?(.html)",
+        "destination": "/docs/guides/iframes.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/third_party_components?(.html)",
-        "destination": "/docs/guides/author-develop/third_party_components.html",
+        "source": "/docs/guides/author-develop/third_party_components?(.html)",
+        "destination": "/docs/guides/third_party_components.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/ads_on_amp?(.html)",
-        "destination": "/docs/guides/author-develop/ads_on_amp.html",
+        "source": "/docs/guides/author-develop/ads_on_amp?(.html)",
+        "destination": "/docs/guides/ads_on_amp.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/validate?(.html)",
-        "destination": "/docs/guides/debug/validate.html",
+        "source": "/docs/guides/author-develop/pwa-amp?(.html)",
+        "destination": "/docs/guides/pwa-amp.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/analytics_amp?(.html)",
-        "destination": "/docs/guides/deploy/analytics_amp.html",
+        "source": "/docs/guides/author-develop/pwa-amp/amp-as-pwa?(.html)",
+        "destination": "/docs/guides/pwa-amp/amp-as-pwa.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/discovery?(.html)",
-        "destination": "/docs/guides/deploy/discovery.html",
+        "source": "/docs/guides/author-develop/pwa-amp/amp-to-pwa?(.html)",
+        "destination": "/docs/guides/pwa-amp/amp-to-pwa.html",
         "type": 301
       },
       {
-        "source": "/docs/guides/engagement?(.html)",
-        "destination": "/docs/guides/deploy/engagement.html",
+        "source": "/docs/guides/author-develop/pwa-amp/amp-in-pwa?(.html)",
+        "destination": "/docs/guides/pwa-amp/amp-in-pwa.html",
         "type": 301
       },
+      {
+        "source": "/docs/guides/debug/validate?(.html)",
+        "destination": "/docs/guides/validate.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/deploy/analytics_amp?(.html)",
+        "destination": "/docs/guides/analytics_amp.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/deploy/discovery?(.html)",
+        "destination": "/docs/guides/discovery.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/deploy/engagement?(.html)",
+        "destination": "/docs/guides/engagement.html",
+        "type": 301
+      },
+
       {
         "source": "/docs/guides/login-paywalls",
-        "destination": "/docs/get_started/login_requiring",
+        "destination": "/docs/tutorials/login_requiring",
+        "type": 301
+      },
+
+      {
+        "source": "/docs/reference/components/ads/amp-pixel?(.html)",
+        "destination": "/docs/reference/components/amp-pixel.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-pixel?(.html)",
-        "destination": "/docs/reference/components/ads/amp-pixel.html",
+        "source": "/docs/reference/components/ads/amp-ad?(.html)",
+        "destination": "/docs/reference/components/amp-ad.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-ad?(.html)",
-        "destination": "/docs/reference/components/ads/amp-ad.html",
+        "source": "/docs/reference/components/ads/amp-analytics?(.html)",
+        "destination": "/docs/reference/components/amp-analytics.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-analytics?(.html)",
-        "destination": "/docs/reference/components/ads/amp-analytics.html",
+        "source": "/docs/reference/components/ads/amp-auto-ads?(.html)",
+        "destination": "/docs/reference/components/amp-auto-ads.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-auto-ads?(.html)",
-        "destination": "/docs/reference/components/ads/amp-auto-ads.html",
+        "source": "/docs/reference/components/ads/amp-call-tracking?(.html)",
+        "destination": "/docs/reference/components/amp-call-tracking.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-call-tracking?(.html)",
-        "destination": "/docs/reference/components/ads/amp-call-tracking.html",
+        "source": "/docs/reference/components/ads/amp-experiment?(.html)",
+        "destination": "/docs/reference/components/amp-experiment.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-experiment?(.html)",
-        "destination": "/docs/reference/components/ads/amp-experiment.html",
+        "source": "/docs/reference/components/ads/amp-sticky-ad?(.html)",
+        "destination": "/docs/reference/components/amp-sticky-ad.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-sticky-ad?(.html)",
-        "destination": "/docs/reference/components/ads/amp-sticky-ad.html",
+        "source": "/docs/reference/components/dynamic/amp-access-laterpay?(.html)",
+        "destination": "/docs/reference/components/amp-access-laterpay.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-access-laterpay?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-access-laterpay.html",
+        "source": "/docs/reference/components/dynamic/amp-access?(.html)",
+        "destination": "/docs/reference/components/amp-access.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-access?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-access.html",
+        "source": "/docs/reference/components/dynamic/amp-bind?(.html)",
+        "destination": "/docs/reference/components/amp-bind.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-bind?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-bind.html",
+        "source": "/docs/reference/components/dynamic/amp-form?(.html)",
+        "destination": "/docs/reference/components/amp-form.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-form?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-form.html",
+        "source": "/docs/reference/components/dynamic/amp-install-serviceworker?(.html)",
+        "destination": "/docs/reference/components/amp-install-serviceworker.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-install-serviceworker?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-install-serviceworker.html",
+        "source": "/docs/reference/components/dynamic/amp-list?(.html)",
+        "destination": "/docs/reference/components/amp-list.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-list?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-list.html",
+        "source": "/docs/reference/components/dynamic/amp-live-list?(.html)",
+        "destination": "/docs/reference/components/amp-live-list.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-live-list?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-live-list.html",
+        "source": "/docs/reference/components/dynamic/amp-mustache?(.html)",
+        "destination": "/docs/reference/components/amp-mustache.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-mustache?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-mustache.html",
+        "source": "/docs/reference/components/dynamic/amp-selector?(.html)",
+        "destination": "/docs/reference/components/amp-selector.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-selector?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-selector.html",
+        "source": "/docs/reference/components/dynamic/amp-user-notification?(.html)",
+        "destination": "/docs/reference/components/amp-user-notification.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-user-notification?(.html)",
-        "destination": "/docs/reference/components/dynamic/amp-user-notification.html",
+        "source": "/docs/reference/components/layout/amp-accordion?(.html)",
+        "destination": "/docs/reference/components/amp-accordion.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-accordion?(.html)",
-        "destination": "/docs/reference/components/layout/amp-accordion.html",
+        "source": "/docs/reference/components/layout/amp-app-banner?(.html)",
+        "destination": "/docs/reference/components/amp-app-banner.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-app-banner?(.html)",
-        "destination": "/docs/reference/components/layout/amp-app-banner.html",
+        "source": "/docs/reference/components/layout/amp-carousel?(.html)",
+        "destination": "/docs/reference/components/amp-carousel.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-carousel?(.html)",
-        "destination": "/docs/reference/components/layout/amp-carousel.html",
+        "source": "/docs/reference/components/layout/amp-fx-flying-carpet?(.html)",
+        "destination": "/docs/reference/components/amp-fx-flying-carpet.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-fx-flying-carpet?(.html)",
-        "destination": "/docs/reference/components/layout/amp-fx-flying-carpet.html",
+        "source": "/docs/reference/components/layout/amp-fx-parallax?(.html)",
+        "destination": "/docs/reference/components/amp-fx-parallax.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-fx-parallax?(.html)",
-        "destination": "/docs/reference/components/layout/amp-fx-parallax.html",
+        "source": "/docs/reference/components/layout/amp-iframe?(.html)",
+        "destination": "/docs/reference/components/amp-iframe.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-iframe?(.html)",
-        "destination": "/docs/reference/components/layout/amp-iframe.html",
+        "source": "/docs/reference/components/layout/amp-lightbox?(.html)",
+        "destination": "/docs/reference/components/amp-lightbox.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-lightbox?(.html)",
-        "destination": "/docs/reference/components/layout/amp-lightbox.html",
+        "source": "/docs/reference/components/layout/amp-sidebar?(.html)",
+        "destination": "/docs/reference/components/amp-sidebar.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-sidebar?(.html)",
-        "destination": "/docs/reference/components/layout/amp-sidebar.html",
+        "source": "/docs/reference/components/media/amp-img?(.html)",
+        "destination": "/docs/reference/components/amp-img.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-img?(.html)",
-        "destination": "/docs/reference/components/media/amp-img.html",
+        "source": "/docs/reference/components/media/amp-anim?(.html)",
+        "destination": "/docs/reference/components/amp-anim.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-anim?(.html)",
-        "destination": "/docs/reference/components/media/amp-anim.html",
+        "source": "/docs/reference/components/media/amp-apester-media?(.html)",
+        "destination": "/docs/reference/components/amp-apester-media.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-apester-media?(.html)",
-        "destination": "/docs/reference/components/media/amp-apester-media.html",
+        "source": "/docs/reference/components/media/amp-audio?(.html)",
+        "destination": "/docs/reference/components/amp-audio.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-audio?(.html)",
-        "destination": "/docs/reference/components/media/amp-audio.html",
+        "source": "/docs/reference/components/media/amp-brid-player?(.html)",
+        "destination": "/docs/reference/components/amp-brid-player.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-brid-player?(.html)",
-        "destination": "/docs/reference/components/media/amp-brid-player.html",
+        "source": "/docs/reference/components/media/amp-brightcove?(.html)",
+        "destination": "/docs/reference/components/amp-brightcove.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-brightcove?(.html)",
-        "destination": "/docs/reference/components/media/amp-brightcove.html",
+        "source": "/docs/reference/components/media/amp-dailymotion?(.html)",
+        "destination": "/docs/reference/components/amp-dailymotion.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-dailymotion?(.html)",
-        "destination": "/docs/reference/components/media/amp-dailymotion.html",
+        "source": "/docs/reference/components/media/amp-google-vrview-image?(.html)",
+        "destination": "/docs/reference/components/amp-google-vrview-image.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-google-vrview-image?(.html)",
-        "destination": "/docs/reference/components/media/amp-google-vrview-image.html",
+        "source": "/docs/reference/components/media/amp-hulu?(.html)",
+        "destination": "/docs/reference/components/amp-hulu.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-hulu?(.html)",
-        "destination": "/docs/reference/components/media/amp-hulu.html",
+        "source": "/docs/reference/components/media/amp-image-lightbox?(.html)",
+        "destination": "/docs/reference/components/amp-image-lightbox.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-image-lightbox?(.html)",
-        "destination": "/docs/reference/components/media/amp-image-lightbox.html",
+        "source": "/docs/reference/components/media/amp-izlesene?(.html)",
+        "destination": "/docs/reference/components/amp-izlesene.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-izlesene?(.html)",
-        "destination": "/docs/reference/components/media/amp-izlesene.html",
+        "source": "/docs/reference/components/media/amp-jwplayer?(.html)",
+        "destination": "/docs/reference/components/amp-jwplayer.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-jwplayer?(.html)",
-        "destination": "/docs/reference/components/media/amp-jwplayer.html",
+        "source": "/docs/reference/components/media/amp-kaltura-player?(.html)",
+        "destination": "/docs/reference/components/amp-kaltura-player.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-kaltura-player?(.html)",
-        "destination": "/docs/reference/components/media/amp-kaltura-player.html",
+        "source": "/docs/reference/components/media/amp-o2-player?(.html)",
+        "destination": "/docs/reference/components/amp-o2-player.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-o2-player?(.html)",
-        "destination": "/docs/reference/components/media/amp-o2-player.html",
+        "source": "/docs/reference/components/media/amp-ooyala-player?(.html)",
+        "destination": "/docs/reference/components/amp-ooyala-player.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-ooyala-player?(.html)",
-        "destination": "/docs/reference/components/media/amp-ooyala-player.html",
+        "source": "/docs/reference/components/media/amp-playbuzz?(.html)",
+        "destination": "/docs/reference/components/amp-playbuzz.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-playbuzz?(.html)",
-        "destination": "/docs/reference/components/media/amp-playbuzz.html",
+        "source": "/docs/reference/components/media/amp-reach-player?(.html)",
+        "destination": "/docs/reference/components/amp-reach-player.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-reach-player?(.html)",
-        "destination": "/docs/reference/components/media/amp-reach-player.html",
+        "source": "/docs/reference/components/media/amp-soundcloud?(.html)",
+        "destination": "/docs/reference/components/amp-soundcloud.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-soundcloud?(.html)",
-        "destination": "/docs/reference/components/media/amp-soundcloud.html",
+        "source": "/docs/reference/components/media/amp-springboard-player?(.html)",
+        "destination": "/docs/reference/components/amp-springboard-player.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-springboard-player?(.html)",
-        "destination": "/docs/reference/components/media/amp-springboard-player.html",
+        "source": "/docs/reference/components/media/amp-video?(.html)",
+        "destination": "/docs/reference/components/amp-video.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-video?(.html)",
-        "destination": "/docs/reference/components/media/amp-video.html",
+        "source": "/docs/reference/components/media/amp-vimeo?(.html)",
+        "destination": "/docs/reference/components/amp-vimeo.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-vimeo?(.html)",
-        "destination": "/docs/reference/components/media/amp-vimeo.html",
+        "source": "/docs/reference/components/media/amp-youtube?(.html)",
+        "destination": "/docs/reference/components/amp-youtube.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-youtube?(.html)",
-        "destination": "/docs/reference/components/media/amp-youtube.html",
+        "source": "/docs/reference/components/presentation/amp-animation?(.html)",
+        "destination": "/docs/reference/components/amp-animation.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-animation?(.html)",
-        "destination": "/docs/reference/components/presentation/amp-animation.html",
+        "source": "/docs/reference/components/presentation/amp-dynamic-css-classes?(.html)",
+        "destination": "/docs/reference/components/amp-dynamic-css-classes.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-dynamic-css-classes?(.html)",
-        "destination": "/docs/reference/components/presentation/amp-dynamic-css-classes.html",
+        "source": "/docs/reference/components/presentation/amp-fit-text?(.html)",
+        "destination": "/docs/reference/components/amp-fit-text.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-fit-text?(.html)",
-        "destination": "/docs/reference/components/presentation/amp-fit-text.html",
+        "source": "/docs/reference/components/presentation/amp-font?(.html)",
+        "destination": "/docs/reference/components/amp-font.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-font?(.html)",
-        "destination": "/docs/reference/components/presentation/amp-font.html",
+        "source": "/docs/reference/components/presentation/amp-viz-vega?(.html)",
+        "destination": "/docs/reference/components/amp-viz-vega.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-viz-vega?(.html)",
-        "destination": "/docs/reference/components/presentation/amp-viz-vega.html",
+        "source": "/docs/reference/components/social/amp-facebook?(.html)",
+        "destination": "/docs/reference/components/amp-facebook.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-facebook?(.html)",
-        "destination": "/docs/reference/components/social/amp-facebook.html",
+        "source": "/docs/reference/components/social/amp-gfycat?(.html)",
+        "destination": "/docs/reference/components/amp-gfycat.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-gfycat?(.html)",
-        "destination": "/docs/reference/components/social/amp-gfycat.html",
+        "source": "/docs/reference/components/social/amp-instagram?(.html)",
+        "destination": "/docs/reference/components/amp-instagram.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-instagram?(.html)",
-        "destination": "/docs/reference/components/social/amp-instagram.html",
+        "source": "/docs/reference/components/social/amp-pinterest?(.html)",
+        "destination": "/docs/reference/components/amp-pinterest.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-pinterest?(.html)",
-        "destination": "/docs/reference/components/social/amp-pinterest.html",
+        "source": "/docs/reference/components/social/amp-reddit?(.html)",
+        "destination": "/docs/reference/components/amp-reddit.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-reddit?(.html)",
-        "destination": "/docs/reference/components/social/amp-reddit.html",
+        "source": "/docs/reference/components/social/amp-share-tracking?(.html)",
+        "destination": "/docs/reference/components/amp-share-tracking.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-share-tracking?(.html)",
-        "destination": "/docs/reference/components/social/amp-share-tracking.html",
+        "source": "/docs/reference/components/social/amp-social-share?(.html)",
+        "destination": "/docs/reference/components/amp-social-share.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-social-share?(.html)",
-        "destination": "/docs/reference/components/social/amp-social-share.html",
+        "source": "/docs/reference/components/social/amp-twitter?(.html)",
+        "destination": "/docs/reference/components/amp-twitter.html",
         "type": 301
       },
       {
-        "source": "/docs/reference/components/amp-twitter?(.html)",
-        "destination": "/docs/reference/components/social/amp-twitter.html",
+        "source": "/docs/reference/components/social/amp-vine?(.html)",
+        "destination": "/docs/reference/components/amp-vine.html",
         "type": 301
       },
-      {
-        "source": "/docs/reference/components/amp-vine?(.html)",
-        "destination": "/docs/reference/components/social/amp-vine.html",
-        "type": 301
-      },
+
       {
         "source": "/contribute/governance/",
         "destination": "/docs/contribute/governance/",
@@ -496,11 +521,78 @@
         "destination": "/support/faqs/",
         "type": 301
       },
+
       {
         "source": "/docs/get_started/create_page.html",
-        "destination": "/docs/get_started/create.html",
+        "destination": "/docs/tutorials/create.html",
         "type": 301
       },
+      {
+        "source": "docs/get_started/create?(.html)",
+        "destination": "/docs/tutorials/create.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/create/basic_markup?(.html)",
+        "destination": "/docs/tutorials/create/basic_markup.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/create/include_image?(.html)",
+        "destination": "/docs/tutorials/create/include_image.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/create/presentation_layout?(.html)",
+        "destination": "/docs/tutorials/create/presentation_layout.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/create/preview_and_validate?(.html)",
+        "destination": "/docs/tutorials/create/preview_and_validate.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/create/prepare_for_discovery?(.html)",
+        "destination": "/docs/tutorials/create/prepare_for_discovery.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/create/publish?(.html)",
+        "destination": "/docs/tutorials/create/publish.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/login_requiring?(.html)",
+        "destination": "/docs/tutorials/login_requiring.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/login_requiring/login?(.html)",
+        "destination": "/docs/tutorials/login_requiring/login.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/login_requiring/add_comment?(.html)",
+        "destination": "/docs/tutorials/login_requiring/add_comment.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/login_requiring/logout?(.html)",
+        "destination": "/docs/tutorials/login_requiring/logout.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/login_requiring/summary?(.html)",
+        "destination": "/docs/tutorials/login_requiring/summary.html",
+        "type": 301
+      },
+      {
+        "source": "docs/get_started/live_blog?(.html)",
+        "destination": "/docs/tutorials/live_blog.html",
+        "type": 301
+      },
+
       {
         "source": "/contact",
         "destination": "https://github.com/ampproject/amphtml/issues/new",

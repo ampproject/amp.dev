@@ -4,10 +4,10 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
    <meta property="og:image" content="https://www.ampproject.org/static/img/logo-og-image.jpg">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="amp-experiments-opt-in" content="visibility-v2,visibility-v3">
+  {% if doc.description %}<meta name="description" content="{{doc.description}} – AMP">{% endif %}
+  <meta name="amp-experiments-opt-in" content="">
 
-  <title>{% if doc.title %}{{doc.title}} – {% endif %}Accelerated Mobile Pages Project</title>
+  <title>{% if doc.title %}{{doc.title}} – {% endif %}AMP</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png?v=3">
   <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
 
@@ -38,6 +38,8 @@
       {% include "/assets/css/docs.min.css" %}
     {% elif doc.view == '/views/section_page.html' or doc.view == '/views/grid_page.html' %}
       {% include "/assets/css/section.min.css" %}
+    {% elif doc.view == '/views/doc_grid.html' %}
+      {% include "/assets/css/section_docs.min.css" %}
     {% elif doc.view == '/views/case-study.html' or doc.view == '/views/about-casestudies.html' %}
       {% include "/assets/css/case-study.min.css" %}
     {% elif doc.view == '/views/list_page.html' or doc.url.path.endswith('/latest/') %}
@@ -54,6 +56,8 @@
       {% include "/assets/css/about-who.min.css" %}
     {% elif doc.view == '/views/about-who-vertical.html' %}
       {% include "/assets/css/about-who-vertical.min.css" %}
+    {% elif doc.view == '/views/amp-ads.html' %}
+      {% include "/assets/css/amp-ads.min.css" %}
     {% elif doc.view == '/views/design-principles.html' %}
       {% include "/assets/css/design-principles.min.css" %}
     {% else %}

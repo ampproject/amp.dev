@@ -41,14 +41,14 @@ points:
       description: |
         AMP nie pozwala, aby mechanizmy rozszerzeń blokowały renderowanie stron.
         AMP obsługuje rozszerzenia dla takich obiektów jak
-        [ramki lightbox](/pl/docs/reference/components/layout/amp-lightbox.html),
-        [umieszczone elementy z Instagrama](/pl/docs/reference/components/social/amp-instagram.html),
-        [tweety](/pl/docs/reference/components/social/amp-twitter.html) itp.
+        [ramki lightbox](/pl/docs/reference/components/amp-lightbox.html),
+        [umieszczone elementy z Instagrama](/pl/docs/reference/components/amp-instagram.html),
+        [tweety](/pl/docs/reference/components/amp-twitter.html) itp.
         Chociaż wymagają one dodatkowych żądań HTTP,
         te żądania nie blokują układu strony ani renderowania.
         <p>Każda strona korzystająca z niestandardowego skryptu musi poinformować system AMP,
         że może ona mieć niestandardowy znacznik.
-        Na przykład skrypt [`amp-iframe`](/pl/docs/reference/components/layout/amp-iframe.html)
+        Na przykład skrypt [`amp-iframe`](/pl/docs/reference/components/amp-iframe.html)
         informuje system, że w dokumencie wystąpi znacznik `amp-iframe`.
         AMP tworzy ramkę iframe zanim otrzyma informacje, co się w niej znajdzie:
       example: /content/includes/amp-iframe.md
