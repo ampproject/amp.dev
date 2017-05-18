@@ -20,4 +20,10 @@ faq:
   - title: ¿Cómo puedo participar en este proyecto?
     answer: |
       Nos gusta que las personas y las empresas interesadas quieran participar en este proyecto. Para ello, les pedimos que rellenen el formulario de [GitHub](https://github.com/ampproject/amphtml/issues/new) para que podamos añadirlas a una lista de distribución y mantenerlas informadas de todas las novedades.
+
+cta:
+  title: Próximo FAQ
+  link_text: Plataformas, proveedores y socios
+  link_url: /content/support/faqs/supported-platforms.md
+
 ---

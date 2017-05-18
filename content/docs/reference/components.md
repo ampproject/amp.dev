@@ -102,8 +102,9 @@ Here are the components grouped by category:
 
 | Component | Description |
 | --------- | ----------- |
-| [`amp-facebook`](components/amp-facebook.html) | Displays a Facebook post or video. |
 | [`amp-facebook-comments`](components/amp-facebook-comments.html) | Embeds the Facebook comments plugin. |
+| [`amp-facebook-like`](components/amp-facebook-like.html) | Embeds the Facebook like button plugin. |
+| [`amp-facebook`](components/amp-facebook.html) | Displays a Facebook post or video. |
 | [`amp-gfycat`](components/amp-gfycat.html) | Displays a [Gfycat](https://gfycat.com) video GIF. |
 | [`amp-instagram`](components/amp-instagram.html) | Displays an Instagram embed. |
 | [`amp-pinterest`](components/amp-pinterest.html) | Displays a Pinterest widget or Pin It button. |

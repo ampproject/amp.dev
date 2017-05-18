@@ -43,9 +43,9 @@ large_cta:
   subtitle@: Learn more about AMP Ads and building AMP pages for your campaigns and website.
   cta@: Learn More
   cta_url: /content/learn/who/amp-ads.yaml
-  lines_left: /static/img/about/who-use-amp/amp-ads/lines_bottom2.svg
+  lines_left: /static/img/about/who-use-amp/amp-ads/lines_5.svg
   lines_left_width: 325
   lines_left_height: 303
-  lines_right: /static/img/about/who-use-amp/amp-ads/lines_bottom1.svg
+  lines_right: /static/img/about/who-use-amp/amp-ads/lines_6.svg
   lines_right_width: 325
   lines_right_height: 237
