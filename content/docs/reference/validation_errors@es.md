@@ -3,7 +3,7 @@ $title: Errores de validación de AMP
 ---
 
 Los documentos de AMP no pueden tener errores de validación.
-La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP](/es/docs/guides/debug/validate.html).
+La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP](/es/docs/guides/validate.html).
 Para obtener una visión general completa de los errores de validación, consulta la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
