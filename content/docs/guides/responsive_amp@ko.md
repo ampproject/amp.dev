@@ -1,5 +1,5 @@
 ---
-$title: 스타일링 & 레이아웃
+$title: 스타일 및 레이아웃 적용
 $order: 0
 toc: true
 ---
