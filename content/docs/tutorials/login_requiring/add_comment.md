@@ -31,8 +31,8 @@ The form component will simply display those values inside the page using the [a
     <div class="comment-user">
       <amp-img width="44" class="user-avatar" height="44" alt="user" src="{{UserImg}}"></amp-img>
       <div class="card comment">
-        <p><span class="user">{{User}}</span> <span class="date">{{Datetime}}</span></p>
-        <p>{{Text}}</p>
+        <p><span class="user">{% raw %}{{User}}{% endraw %}</span><span class="date">{% raw %}{{Datetime}}{% endraw %}</span></p>
+        <p>{% raw %}{{Text}}{% endraw %}</p>
       </div>
     </div>
   </template>
