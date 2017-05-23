@@ -37,10 +37,10 @@ The CNBC team took a multi-phased rollout approach to deploying AMP across text 
  
 The team was able to quickly ramp up the project since the AMP format leverages many existing web standards, allowing CNBC to implement their standard analytics tools to measure usage. The phased rollout also afforded them the opportunity to optimize their AMP code markup with the help of the AMP validation tools. 
  
-Within a few months of the initial launch, AMP traffic crossed into the double digits as a percentage of mobile web traffic, which meant it was time to monetize and re-circulate this new traffic stream. CNBC followed up the MVP release by implementing ads via the standardized < amp-ad > tag. They were also able to work with a third party vendor to rapidly deploy lightweight, AMP-specific code for internal content re-circulation for users.
+Within a few months of the initial launch, AMP traffic crossed into the double digits as a percentage of mobile web traffic, which meant it was time to monetize and re-circulate this new traffic stream. CNBC followed up the MVP release by implementing ads via the standardized `<amp-ad>` tag. They were also able to work with a third party vendor to rapidly deploy lightweight, AMP-specific code for internal content re-circulation for users.
 <br>
 <div class="img-left">
-    <amp-img width="337" height="658" layout="responsive" src="/static/img/case-studies/cnbc2.png"></amp-img>
+    <amp-img width="271" height="529" layout="responsive" src="/static/img/case-studies/cnbc2.png"></amp-img>
 </div>
 
 ## Results
