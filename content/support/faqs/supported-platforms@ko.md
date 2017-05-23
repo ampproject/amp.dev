@@ -25,7 +25,7 @@ cta:
 AMP 프로젝트를 지원하는 플랫폼, 공급 업체 및 파트너가 증가함에 따라 사용자 정의 컴포넌트를 제공하거나 플랫폼 내의 AMP 페이지와의 통합을 제공합니다.
 
 <div class="who-container">
-  <amp-accordion>
+  <amp-accordion disable-session-states>
   {% for section in who.tech_companies.sections %}
     <section id="{{section.title|slug}}" {% if loop.index == 1 %}expanded{% endif %}>
       <header class="accordion-header">

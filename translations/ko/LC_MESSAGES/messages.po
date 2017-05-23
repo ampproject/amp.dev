@@ -23,7 +23,7 @@ msgstr "성공으로 가는 길"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "AMP Ads"
-msgstr ""
+msgstr "AMP 광고"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -142,7 +142,7 @@ msgstr "캘린더에 추가하기"
 
 #: /content/includes/who.yaml
 msgid "Ads"
-msgstr ""
+msgstr "광고"
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Ads & Analytics"
@@ -167,11 +167,11 @@ msgstr "효과를 증폭시키세요"
 
 #: /content/includes/who.yaml
 msgid "Analytics"
-msgstr ""
+msgstr "애널리틱스"
 
 #: /content/includes/who.yaml
 msgid "Audio/Video"
-msgstr ""
+msgstr "오디오/비디오"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Better advertising on a faster web."
@@ -276,7 +276,7 @@ msgstr ""
 
 #: /content/docs/build.md
 msgid "Create your First AMP"
-msgstr ""
+msgstr "첫 번째 AMP 만들기"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
@@ -390,7 +390,7 @@ msgstr "트위터에서 팔로우하기"
 
 #: /content/docs/build.md
 msgid "Get Started"
-msgstr ""
+msgstr "시작하기"
 
 #: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/publishers.yaml
 msgid "Get Started Building"
@@ -576,7 +576,7 @@ msgstr ""
 
 #: /content/pages/home.html:37 /content/pages/home.html:77
 msgid "New Video"
-msgstr ""
+msgstr "새 비디오"
 
 #: /content/includes/menu.yaml /content/pages/home.html:37
 #: /content/pages/home.html:77
@@ -983,23 +983,23 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Videos"
-msgstr ""
+msgstr "비디오"
 
 #: /content/docs/build.md
 msgid "View AMP Components"
-msgstr ""
+msgstr "AMP 컴포넌트 보기"
 
 #: /content/docs/build.md
 msgid "View Guides"
-msgstr ""
+msgstr "가이드 보기"
 
 #: /content/docs/build.md
 msgid "View Tutorials"
-msgstr ""
+msgstr "튜토리얼 보기"
 
 #: /content/docs/build.md
 msgid "View examples"
-msgstr ""
+msgstr "예제 보기"
 
 #: /content/docs/build.md
 msgid "View our in-depth guides for how to develop, debug, and deploy in AMP."
