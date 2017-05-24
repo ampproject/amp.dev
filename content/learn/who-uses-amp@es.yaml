@@ -1,0 +1,39 @@
+$title@: ¿Para quién es AMP?
+$order: 1
+class: about-who
+$view: /views/about-who.html
+$parent: /content/learn/overview.yaml
+$path: /learn/who-uses-amp/
+
+hero:
+  title@: ¿Para quién es AMP?
+  subtitle@: Únete a un ecosistema de 850.000 dominios, plataformas líderes y más de 100 proveedores de tecnología que utilizan AMP.
+  hero_img_base: /static/img/about/who-use-amp/who_phones_hero
+  line_img: who_lines1.svg
+  triangle_img: hero_triangle.png
+
+cards:
+  - name@: Editores
+    cta@: Aprender Más
+    icon: who_icon_publishers.svg
+
+  # - name@: SMB
+  #   cta@: Learn More
+  #   icon: card_smb.svg
+
+  - name@: Plataformas Tecnológicas de Anuncios
+    cta@: Aprender Más
+    icon: who_icon_adtech.svg
+
+  - name@: Editores
+    cta@: Aprender Más
+    icon: who_icon_advertisers.svg
+
+  # - name@: Developers
+  #   cta@: Learn More
+  #   icon: card_developers.svg
+
+cta:
+  title@: Historias de Éxito
+  link_text@: Leer casos de estudio
+  link_url: /content/learn/case-studies.html
