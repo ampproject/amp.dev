@@ -33,7 +33,7 @@ download: "case-studies/wego.pdf"
     <amp-img width="400" height="716" layout="responsive" src="/static/img/case-studies/wego_frame1.png"></amp-img>
 </div>
 
-Wego.com is the largest travel marketplace in the Middle East and Asia Pacific, with headquarters in Dubai and Singapore as well as regional offices in Bangalore and Jakarta. Wego makes it easy for people to compare travel costs in an instant from hundreds of global and local partners, including airlines, hotels, travel agents, hotels, and travel suppliers. 
+Wego.com is the largest travel marketplace in the Middle East and Asia Pacific, with headquarters in Dubai and Singapore as well as regional offices in Bangalore and Jakarta. Wego makes it easy for people to compare travel costs in an instant from hundreds of global and local partners, including airlines, hotels, travel agents, and travel suppliers. 
 
 
 Wego’s travel app tops popularity ratings. However, the mobile web remains a critical channel. “The mobile web has wide reach, especially in our core markets where it’s common to have slow, unstable networks and low phone storage space of 512MBs or less,” notes Honey Mittal, Senior Vice President of Product at Wego. “In these markets, travel planning is not a daily necessity for most, which often results in people removing less frequently used apps to make space for photos and videos.”
