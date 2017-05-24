@@ -38,7 +38,7 @@ An online-only operation, Bangalore-based NoBroker connects flat owners and tena
 
 In looking for ways to overcome NoBroker’s page-speed challenge, Gupta learned about AMP while browsing Google for news. “Once I learned more, I knew it was something NoBroker needed to have,” he says.
 
-Gupta applied what he learned about AMP, but with a twist. NoBroker needed to drive“connections” between renters and flat owners to drive more revenue. Their model converts to a paid subscription after nine connections. On average, it takes about 10 - 15 connections before a renter signs a lease. So the key for NoBroker was making renters aware of attractive properties. Unlike publishers, who apply AMP to static editorial content, NoBroker needed to dynamically update their AMP pages with available properties, while removing rented properties all in real time. To do this, NoBroker used the amp-live-list component to fetch new content and modify the last cached version of the page. 
+Gupta applied what he learned about AMP, but with a twist. NoBroker needed to drive “connections” between renters and flat owners to drive more revenue. Their model converts to a paid subscription after nine connections. On average, it takes about 10 - 15 connections before a renter signs a lease. So the key for NoBroker was making renters aware of attractive properties. Unlike publishers, who apply AMP to static editorial content, NoBroker needed to dynamically update their AMP pages with available properties, while removing rented properties all in real time. To do this, NoBroker used the amp-live-list component to fetch new content and modify the last cached version of the page. 
 
 ## Results
 
