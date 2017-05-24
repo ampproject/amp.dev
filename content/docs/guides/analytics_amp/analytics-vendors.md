@@ -52,6 +52,12 @@ Type attribute value: `atinternet`
 
 Adds support for AT Internet. More details for adding AT Internet support can be found at [developers.atinternet-solutions.com](http://developers.atinternet-solutions.com/javascript-en/advanced-features-javascript-en/accelerated-mobile-pages-amp-javascript-en/).
 
+### Baidu Analytics
+
+Type attribute value: `baiduanalytics`
+
+Adds support for Baidu Analytics. More details for adding Baidu Analytics support can be found at [tongji.baidu.com/](http://tongji.baidu.com/web/help/article?id=268&type=0).
+
 ### Burt
 
 Type attribute value: `burt`
