@@ -25,7 +25,7 @@ cta:
 A growing number of platforms, vendors, and partners support the AMP Project by providing custom components or offering integration with AMP pages within their platforms.
 
 <div class="who-container">
-  <amp-accordion>
+  <amp-accordion disable-session-states>
   {% for section in who.tech_companies.sections %}
     <section id="{{section.title|slug}}" {% if loop.index == 1 %}expanded{% endif %}>
       <header class="accordion-header">

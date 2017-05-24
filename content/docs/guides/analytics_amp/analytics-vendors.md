@@ -169,6 +169,12 @@ Type attribute value: `mparticle`
 
 Adds support for mParticle. More details for adding mParticle support can be found at [docs.mparticle.com](http://docs.mparticle.com/?javascript#amp).
 
+### Nielsen
+
+Type attribute value: `nielsen`
+
+Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section.
+
 ### OEWA
 
 Type attribute value: `oewa`

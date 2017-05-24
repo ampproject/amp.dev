@@ -10,7 +10,7 @@ Hay varias formas disponibles para validar un documento de AMP. Todas ellas
 producen el mismo resultado, por lo que se puede utilizar la que más se ajuste
 a tu estilo de desarrollo.
 
-Además de la validación de AMP, también es posible que desees confirmar que tu documento de AMP es [visible](/es/docs/guides/deploy/discovery.html) para las plataformas de terceros.
+Además de la validación de AMP, también es posible que desees confirmar que tu documento de AMP es [visible](/es/docs/guides/discovery.html) para las plataformas de terceros.
 
 ### Developer Console para el navegador
 
@@ -75,14 +75,69 @@ una extensión del navegador. Durante la navegación, se validarán automáticam
 Extensión del validador de AMP para
 [Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) y [Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/).
 
+### Paquetes de NPM para CI
+
+Como parte de la construcción y pruebas de pipelines, puede integrar la validación de AMP a través de los paquetes NPM de Validación de AMP: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) o [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (un plugin gulp).  Por ejemplo, puede utilizar el paquete AMP Validator NPM para pruebas de integración o en una tarea de programación para verificar las páginas de AMP de producción.
+
+
+##### Ejemplo: Validando un archivo AMP HTML 
+
+En este ejemplo, validaremos un archivo AMP HTML usando el [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) NPM package.  El estado de validación se transmite a la consola.
+
+```javascript
+'use strict';
+var amphtmlValidator = require('amphtml-validator');
+var fs = require('fs');
+
+amphtmlValidator.getInstance().then(function (validator) {
+  var input = fs.readFileSync('index.html', 'utf8');
+  var result = validator.validateString(input);
+  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  for (var ii = 0; ii < result.errors.length; ii++) {
+    var error = result.errors[ii];
+    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    if (error.specUrl !== null) {
+      msg += ' (see ' + error.specUrl + ')';
+    }
+    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+  }
+});
+```
+
+##### Ejemplo: Usando un gulp task para validar AMP HTML
+
+En este ejemplo, tenemos una tarea gulp que valida todos los archivos HTML de AMP. Si hay un error de validación de AMP, la tarea sale con un código de error (1).
+
+```javascript
+const gulp = require('gulp');
+const gulpAmpValidator = require('gulp-amphtml-validator');
+
+const paths = {
+  src: 'src/*.html'
+};
+
+gulp.task('amphtml:validate', () => {
+  return gulp.src(paths.src)
+    .pipe(gulpAmpValidator.validate())
+    .pipe(gulpAmpValidator.format())
+    .pipe(gulpAmpValidator.failAfterError());
+});
+
+gulp.task('default', ['amphtml:validate'], function () {
+});
+```
+
 ### Herramienta de línea de comandos
 
-Como requisito previo, es posible que tengas que instalar <a href="https://docs.npmjs.com/getting-started/installing-node">Node.js con el administrador de paquetes
-`npm` correspondiente en el sistema</a>.
+Puede validar archivos HTML de AMP utilizando [AMP HTML validator con la linea de comandos](https://www.npmjs.com/package/amphtml-validator).
 
-Para instalar la [herramienta de línea de comandos de validación de AMP HTML](https://www.npmjs.com/package/amphtml-validator), introduce `npm install -g amphtml-validator`.
+Empezando:
 
-A continuación, vamos a validar una página AMP HTML real.
+1.  Asegúrese de tener [Node.js con su gestor de paquetes 
+'npm'](https://docs.npmjs.com/getting-started/installing-node) en tu sistema.
+2.  Instale el  [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator) ejecutando la siguiente linea de comandos: `npm install -g amphtml-validator`.
+
+Ahora vamos a validar una página AMP HTML real:
 
 [sourcecode:console]
 $ amphtml-validator https://www.ampproject.org/
