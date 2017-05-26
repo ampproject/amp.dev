@@ -167,7 +167,7 @@ Adds support for mParticle. More details for adding mParticle support can be fou
 
 Type attribute value: `nielsen`
 
-Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. More information can be found at [nielsen.com](http://www.nielsen.com).
+Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/wiki/DCR_Static_-_Google_AMP).
 
 ### OEWA
 
