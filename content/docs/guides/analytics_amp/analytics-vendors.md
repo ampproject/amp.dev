@@ -70,12 +70,6 @@ Type attribute value: `chartbeat`
 
 Adds support for Chartbeat. More details for adding Chartbeat support can be found at [support.chartbeat.com](http://support.chartbeat.com/docs/integrations.html#amp).
 
-### ColAnalytics
-
-Type attribute value: `colanalytics`
-
-Adds support for ColAnalytics. Additionally, you must specify a value for `id`.
-
 ### Clicky Web Analytics
 
 Type attribute value: `clicky`
@@ -173,7 +167,7 @@ Adds support for mParticle. More details for adding mParticle support can be fou
 
 Type attribute value: `nielsen`
 
-Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section.
+Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. More information can be found at [nielsen.com](http://www.nielsen.com).
 
 ### OEWA
 
