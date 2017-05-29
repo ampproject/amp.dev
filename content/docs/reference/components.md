@@ -63,6 +63,7 @@ Here are the components grouped by category:
 
 | Component | Description |
 | --------- | ----------- |
+| [`amp-3q-player`](components/amp-3q-player.html) | Embeds videos from [3Q SDN.](https://www.3qsdn.com) |
 | [`amp-anim`](components/amp-anim.html) | Manages an animated image, typically a GIF. |
 | [`amp-apester-media`](components/amp-apester-media.html) | Displays an [Apester](https://apester.com/) smart unit. |
 | [`amp-audio`](components/amp-audio.html) | Replaces the HTML5 `audio` tag. |
