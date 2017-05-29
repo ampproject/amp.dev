@@ -29,6 +29,7 @@
     "amp-lightbox": "layout",
     "amp-sidebar": "layout",
 
+    "amp-3q-player": "media",
     "amp-anim": "media",
     "amp-apester-media": "media",
     "amp-audio": "media",
