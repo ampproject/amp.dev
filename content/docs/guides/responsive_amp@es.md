@@ -40,7 +40,7 @@ Por ejemplo:
   </head>
 [/sourcecode]
 
-{% call callout('Important', type='caution') %}
+{% call callout('Importante', type='caution') %}
 Asegúrate de que solo hay una etiqueta `<style amp-custom>` en la página,
 ya que en AMP solo se admite la presencia de una.
 {% endcall %}
@@ -63,7 +63,7 @@ usando propiedades comunes de CSS. Por ejemplo:
 </body>
 [/sourcecode]
 
-{% call callout('Important', type='caution') %}
+{% call callout('Importante', type='caution') %}
 Comprueba que los estilos estén admitidos en AMP, ya que
 algunos estilos no lo están por cuestiones de rendimiento
 (consulta también [CSS compatibles](/es/docs/guides/responsive/style_pages.html)).
@@ -80,7 +80,7 @@ Configure el diseño como adaptable (responsive).
 Esto ajusta el tamaño del elemento a la anchura del elemento contenedor
 y cambia la altura automáticamente a la relación de aspecto determinada por los atributos de anchura y altura.
 
-{% call callout('Read on', type='read') %}
+{% call callout('Leer más', type='read') %}
 Aprende más acerca de [los diseños compatibles con AMP](/es/docs/guides/responsive/control_layout.html)
 {% endcall %}
 
@@ -89,7 +89,7 @@ Aprende más acerca de [los diseños compatibles con AMP](/es/docs/guides/respon
 
 El soporte incorporado para placeholders y fallbacks significará que los usuarios nunca tendrán que mirar una pantalla en blanco de nuevo.
 
-{% call callout('Read on', type='read') %}
+{% call callout('Leer más', type='read') %}
 Aprende más sobre [Placeholders y fallbacks](/es/docs/guides/responsive/placeholders.html)
 {% endcall %}
 
@@ -98,7 +98,7 @@ Aprende más sobre [Placeholders y fallbacks](/es/docs/guides/responsive/placeho
 
 AMP admite los atributos `srcset` y `sizes` para darle un control fino sobre cuáles imágenes se cargarán en qué escenario.
 
-{% call callout('Read on', type='read') %}
+{% call callout('Leer más', type='read') %}
 Aprende más sobre [dirección con srcset y tamaños](/es/docs/guides/responsive/art_direction.html)
 {% endcall %}
 
@@ -115,6 +115,6 @@ Ejemplo de error en la consola de una página con CSS que excede el límite de 5
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-{% call callout('Read on', type='read') %}
+{% call callout('Leer más', type='read') %}
 Aprende más sobre cómo [validar las páginas de AMP](/es/docs/guides/validate.html).
 {% endcall %}
