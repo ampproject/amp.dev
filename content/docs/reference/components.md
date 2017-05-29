@@ -95,6 +95,7 @@ Here are the components grouped by category:
 | [`amp-dynamic-css-classes`](components/amp-dynamic-css-classes.html) | Adds several dynamic CSS class names onto the HTML element. |
 | [`amp-fit-text`](components/amp-fit-text.html) | Expands or shrinks font size to fit the content within the space given. |
 | [`amp-font`](components/amp-font.html) | Triggers and monitors the loading of custom fonts. |
+| [`amp-timeago`](components/amp-timeago.html) | Provides fuzzy timestamps by formatting dates as "*** time ago" (for example, 3 hours ago). |
 | [`amp-viz-vega`](components/amp-viz-vega.html) | Displays visualizations created by using [Vega](https://vega.github.io/vega/) visualization grammar.|
 
 

@@ -57,6 +57,7 @@
     "amp-dynamic-css-classes": "presentation",
     "amp-fit-text": "presentation",
     "amp-font": "presentation",
+    "amp-timeago": "presentation",
     "amp-viz-vega": "presentation",
 
     "amp-facebook": "social",
