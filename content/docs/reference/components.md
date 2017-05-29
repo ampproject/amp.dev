@@ -72,6 +72,7 @@ Here are the components grouped by category:
 | [`amp-dailymotion`](components/amp-dailymotion.html) | Displays a [Dailymotion](https://www.dailymotion.com) video. |
 | [`amp-google-vrview-image`](components/amp-google-vrview-image) | Displays a VR image. |
 | [`amp-hulu`](components/amp-hulu.html) | Displays a simple embedded [Hulu](http://www.hulu.com/) video. |
+| [`amp-ima-video`](components/amp-ima-video.html) | Embeds a video player for instream video ads that are integrated with the [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/). |
 | [`amp-image-lightbox`](components/amp-image-lightbox.html) | Allows for an “image lightbox” or similar experience. |
 | [`amp-img`](components/amp-img.html)  | Replaces the HTML5 `img` tag. |
 | [`amp-izlesene`](components/amp-izlesene.html)  | Displays an [Izlesene](https://www.izlesene.com/) video. |
