@@ -1,5 +1,5 @@
 ---
-$title: Crear páginas de AMP adaptables
+$title: Estilo y Layout
 $order: 0
 $category: Develop
 toc: true
