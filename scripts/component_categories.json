@@ -29,6 +29,7 @@
     "amp-lightbox": "layout",
     "amp-sidebar": "layout",
 
+    "amp-3q-player": "media",
     "amp-anim": "media",
     "amp-apester-media": "media",
     "amp-audio": "media",
@@ -37,6 +38,7 @@
     "amp-dailymotion": "media",
     "amp-google-vrview-image": "media",
     "amp-hulu": "media",
+    "amp-ima-video": "media",
     "amp-image-lightbox": "media",
     "amp-img": "media",
     "amp-izlesene": "media",
@@ -57,6 +59,7 @@
     "amp-dynamic-css-classes": "presentation",
     "amp-fit-text": "presentation",
     "amp-font": "presentation",
+    "amp-timeago": "presentation",
     "amp-viz-vega": "presentation",
 
     "amp-facebook": "social",

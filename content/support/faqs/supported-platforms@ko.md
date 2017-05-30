@@ -34,7 +34,7 @@ AMP 프로젝트를 지원하는 플랫폼, 공급 업체 및 파트너가 증�
       </header>
       <div class="accordion-content">
         <ol class="item-container">
-        {% for item in section.section_items | sort %}
+        {% for item in section.section_items %}
           <li class="item">
             {% if item.link %}
               <a href="{{item.link}}">{{item.title}}</a>
