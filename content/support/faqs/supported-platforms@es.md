@@ -34,7 +34,7 @@ Un número creciente de plataformas, proveedores y socios soportan el proyecto A
       </header>
       <div class="accordion-content">
         <ol class="item-container">
-        {% for item in section.section_items | sort %}
+        {% for item in section.section_items %}
           <li class="item">
             {% if item.link %}
               <a href="{{item.link}}">{{item.title}}</a>
