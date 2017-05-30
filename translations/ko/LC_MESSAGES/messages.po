@@ -858,6 +858,10 @@ msgstr ""
 msgid "Templates"
 msgstr ""
 
+#: /content/support/faqs/supported-browsers.md
+msgid "Supported Browsers"
+msgstr "지원하는 브라우저"
+
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
 "The AMP Project is an open source initiative to protect the future of the web"
