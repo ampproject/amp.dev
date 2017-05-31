@@ -84,7 +84,7 @@ msgstr "AMP para Plataformas Tecnológicas de Anuncios"
 
 #: /content/learn/who/advertisers.yaml
 msgid "AMP for Advertisers"
-msgstr "AMP para Editores"
+msgstr "AMP para Anunciantes"
 
 #: /content/learn/who/publishers.yaml
 msgid "AMP for Publishers"
@@ -169,7 +169,7 @@ msgstr "Historias de éxito de Adtech"
 #: /content/learn/case-studies/category/advertisers.md
 #: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 msgid "Advertisers"
-msgstr "Editores"
+msgstr "Anunciantes"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Amplify your impact"
@@ -867,6 +867,10 @@ msgstr "Compañías Tecnológicas usando AMP"
 #: /content/docs/build.md
 msgid "Templates"
 msgstr "Plantillas"
+
+#: /content/support/faqs/supported-browsers.md
+msgid "Supported Browsers"
+msgstr "Navegadores Soportados"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""

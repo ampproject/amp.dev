@@ -1,10 +1,11 @@
 ---
 $title: Prepara tu página para la detección y la distribución
+$order: 4
 ---
 
-En algunos casos, podrías tener una versión AMP y una versión no AMP de la misma página; por ejemplo, un artículo informativo. Considera lo siguiente: si la Búsqueda de Google encuentra la versión no AMP de esa página, *¿cómo sabe que existe una versión AMP?*
+En algunos casos, podrías tener una versión AMP y una versión no AMP de la misma página; por ejemplo, un artículo informativo. Considera lo siguiente: si la búsqueda de Google encuentra la versión no AMP de esa página, *¿cómo sabe que existe una versión AMP?*
 
-## Vinculación de páginas con &lt;link>
+## Vinculación de páginas con `<link>`
 
 Para resolver este problema, agregamos información sobre la página AMP a la página no AMP y viceversa en forma de etiquetas `<link>` en el `<head>`.
 

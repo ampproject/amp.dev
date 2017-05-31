@@ -52,6 +52,12 @@ Type attribute value: `atinternet`
 
 Adds support for AT Internet. More details for adding AT Internet support can be found at [developers.atinternet-solutions.com](http://developers.atinternet-solutions.com/javascript-en/advanced-features-javascript-en/accelerated-mobile-pages-amp-javascript-en/).
 
+### Baidu Analytics
+
+Type attribute value: `baiduanalytics`
+
+Adds support for Baidu Analytics. More details for adding Baidu Analytics support can be found at [tongji.baidu.com/](http://tongji.baidu.com/web/help/article?id=268&type=0).
+
 ### Burt
 
 Type attribute value: `burt`
@@ -63,12 +69,6 @@ Adds support for Burt. Additionally, the `trackingKey` variable must be specifie
 Type attribute value: `chartbeat`
 
 Adds support for Chartbeat. More details for adding Chartbeat support can be found at [support.chartbeat.com](http://support.chartbeat.com/docs/integrations.html#amp).
-
-### ColAnalytics
-
-Type attribute value: `colanalytics`
-
-Adds support for ColAnalytics. Additionally, you must specify a value for `id`.
 
 ### Clicky Web Analytics
 
@@ -162,6 +162,12 @@ Adds support for Médiamétrie tracking pages. Requires defining *var* `serial`.
 Type attribute value: `mparticle`
 
 Adds support for mParticle. More details for adding mParticle support can be found at [docs.mparticle.com](http://docs.mparticle.com/?javascript#amp).
+
+### Nielsen
+
+Type attribute value: `nielsen`
+
+Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/wiki/DCR_Static_-_Google_AMP).
 
 ### OEWA
 

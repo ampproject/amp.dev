@@ -63,6 +63,7 @@ Here are the components grouped by category:
 
 | Component | Description |
 | --------- | ----------- |
+| [`amp-3q-player`](components/amp-3q-player.html) | Embeds videos from [3Q SDN.](https://www.3qsdn.com) |
 | [`amp-anim`](components/amp-anim.html) | Manages an animated image, typically a GIF. |
 | [`amp-apester-media`](components/amp-apester-media.html) | Displays an [Apester](https://apester.com/) smart unit. |
 | [`amp-audio`](components/amp-audio.html) | Replaces the HTML5 `audio` tag. |
@@ -71,6 +72,7 @@ Here are the components grouped by category:
 | [`amp-dailymotion`](components/amp-dailymotion.html) | Displays a [Dailymotion](https://www.dailymotion.com) video. |
 | [`amp-google-vrview-image`](components/amp-google-vrview-image) | Displays a VR image. |
 | [`amp-hulu`](components/amp-hulu.html) | Displays a simple embedded [Hulu](http://www.hulu.com/) video. |
+| [`amp-ima-video`](components/amp-ima-video.html) | Embeds a video player for instream video ads that are integrated with the [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/). |
 | [`amp-image-lightbox`](components/amp-image-lightbox.html) | Allows for an “image lightbox” or similar experience. |
 | [`amp-img`](components/amp-img.html)  | Replaces the HTML5 `img` tag. |
 | [`amp-izlesene`](components/amp-izlesene.html)  | Displays an [Izlesene](https://www.izlesene.com/) video. |
@@ -95,6 +97,7 @@ Here are the components grouped by category:
 | [`amp-dynamic-css-classes`](components/amp-dynamic-css-classes.html) | Adds several dynamic CSS class names onto the HTML element. |
 | [`amp-fit-text`](components/amp-fit-text.html) | Expands or shrinks font size to fit the content within the space given. |
 | [`amp-font`](components/amp-font.html) | Triggers and monitors the loading of custom fonts. |
+| [`amp-timeago`](components/amp-timeago.html) | Provides fuzzy timestamps by formatting dates as "*** time ago" (for example, 3 hours ago). |
 | [`amp-viz-vega`](components/amp-viz-vega.html) | Displays visualizations created by using [Vega](https://vega.github.io/vega/) visualization grammar.|
 
 

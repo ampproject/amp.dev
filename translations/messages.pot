@@ -854,6 +854,11 @@ msgid ""
 "it load instantly everywhere. – Accelerated Mobile Pages Project"
 msgstr ""
 
+#: /content/support/faqs/supported-browsers.md
+msgid "Supported Browsers"
+msgstr ""
+
+
 #: /content/includes/home.yaml /content/includes/menu.yaml
 #: /content/latest/_blueprint.yaml /content/latest/latest.html
 msgid "The Latest"
