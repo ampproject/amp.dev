@@ -22,8 +22,7 @@ soportado en el contexto de la página principal, como el contenido que requiere
 Requerimientos del elemento `amp-iframe`:
 
 * Debe ser al menos de **600px** o **75%** de la primera ventana de visualización lejos de la parte superior.
-* Solo puede solicitar recursos a través de HTTPS, y no deben estar en el mismo origen
-  que el contenedor, a menos que no especifique allow-same-origin.
+* Solo puede solicitar recursos a través de HTTPS, y no deben estar en el mismo origen que el contenedor, a menos que no especifique allow-same-origin.
 
 {% call callout('Tip', type='note') %}
 Aprende más sobre [lista de especificación para <code>amp-iframe</code>](/es/docs/reference/components/amp-iframe.html).
