@@ -125,3 +125,8 @@ You can see the "AMP in PWA" pattern in action in the [React sample](https://git
 * Grab the source code here: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
 * Use the React component standalone via npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
 * See it in action here: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (best on your phone or mobile emulation)
+
+You can also see a sample of PWA and AMP using Polymer framework. It uses [amp-viewer](amp-viewer) to embed AMP pages.
+
+* Grab the code here: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
+* See it in action here: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
