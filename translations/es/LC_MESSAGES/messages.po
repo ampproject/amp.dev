@@ -868,6 +868,10 @@ msgstr "Compañías Tecnológicas usando AMP"
 msgid "Templates"
 msgstr "Plantillas"
 
+#: /content/support/faqs/supported-browsers.md
+msgid "Supported Browsers"
+msgstr "Navegadores Soportados"
+
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
 "The AMP Project is an open source initiative to protect the future of the web"
