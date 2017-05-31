@@ -23,5 +23,12 @@
         "order": 3,
         "from": "spec/amp-boilerplate.md",
         "to": "docs/reference/spec/amp-boilerplate.md"
+    },
+    {
+        "title": "CORS in AMP",
+        "order": 10,
+        "from": "spec/amp-cors-requests.md",
+        "to": "docs/guides/amp-cors-requests.md",
+        "category": "Deploy"
     }
 ]
