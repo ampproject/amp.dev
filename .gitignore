@@ -13,4 +13,4 @@ content/learn/design-principles.md
 content/docs/reference/spec.md
 content/docs/reference/spec/*.md
 content/docs/reference/components/**/*.md
-content/docs/guides/amp-core-requests.md
+content/docs/guides/amp-cors-requests.md
