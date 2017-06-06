@@ -32,8 +32,6 @@ Type attribute value: `acquialift`
 
 Adds support for Acquia Lift. The `decisionApiUrl`, `accountId` and `siteId` must be specified. More information about Acquia Lift can be found at [https://docs.acquia.com/lift](https://docs.acquia.com/lift).
 
-
-
 ### Adobe Analytics
 
 Type attribute value: `adobeanalytics`
@@ -167,7 +165,7 @@ Adds support for mParticle. More details for adding mParticle support can be fou
 
 Type attribute value: `nielsen`
 
-Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/wiki/DCR_Static_-_Google_AMP).
+Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API).
 
 ### OEWA
 
