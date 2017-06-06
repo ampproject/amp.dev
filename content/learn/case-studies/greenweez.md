@@ -22,7 +22,7 @@ logo:
   src: "case-studies/greenweez_logo.png"
   width: 130
   height: 45
-download: "case-studies/Greenweez.pdf"
+download: "case-studies/greenweez.pdf"
 
 ---
 
