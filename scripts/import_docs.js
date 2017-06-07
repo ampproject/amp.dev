@@ -67,10 +67,11 @@ function getDependencies(content) {
     // remove inline code
     .replace(/`[^`]+`/g, '')
     // find all used amp tags in the page
-    .match(/<amp-([^>\s]+)[^>]*>/g);
+    .match(/<amp-((?!img[\/\s>])[^>\s]+)[^>]*>/g);
 
+  console.log("Dependencies: " + dependencies);
   if (dependencies) {
-    return Array.from(new Set(dependencies.map(item => item.match(/<amp-([^>\s]+)[^>]*>/)[1])));
+    return Array.from(new Set(dependencies.map(item => item.match(/<amp-((?!img[\/\s>])[^>\s]+)[^>]*>/)[1])));
   }
 
   return null;
@@ -80,12 +81,13 @@ function getDependencies(content) {
 function savePage(config, callback) {
 
   var optionalTOC = config.content.indexOf('[TOC]') > -1 ? 'toc: true\n' : '';
+  var optionalCategory = (config.category ? "\n$category: " +  config.category : '');
   var optionalDependencies = getDependencies(config.content);
   optionalDependencies = optionalDependencies ? '\ncomponents:\n' + '  - ' + optionalDependencies.join('\n  - ') + '\n' : '';
 
   var frontMatter = `---
 $title: "${config.title}"
-$order: ${config.order || 0}
+$order: ${config.order || 0}${optionalCategory}
 ${optionalTOC}${optionalDependencies}---
 `;
 
@@ -139,7 +141,8 @@ importData.forEach((item) => {
       destination: '../content/' + item.to,
       content: (item.toc ? '[TOC]\n' : '') + pageContent,
       title: item.title,
-      order: item.order
+      order: item.order,
+      category: (item.category ? item.category : '')
     }, function (err) {
       if (err) throw err;
       console.log('Successfully imported: ' + item.title);

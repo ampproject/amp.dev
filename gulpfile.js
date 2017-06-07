@@ -32,6 +32,7 @@ gulp.task('import-docs', function (cb) {
     if (err instanceof Error) {
       cb(err);
     }
+    //console.log(stdout);
     cb();
   });
 });
