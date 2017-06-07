@@ -14,15 +14,19 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
-"Un numero sempre crescente di editori e inserzionisti stanno adottando AMP per fornire "
-"contenuti più rapidi e più coinvolgenti ai propri utenti. Poichè i tuoi clienti abbracciano la "
-"velocità di AMP e più utenti consumano contenuti nelle pagine AMP, assicurati che "
-"il tuo business sia posizionato per il futuro. Integra la tua tecnologia con AMP "
-"oggi."
+"Un numero sempre crescente di editori e inserzionisti stanno adottando AMP "
+"per fornire contenuti più rapidi e più coinvolgenti ai propri utenti. Poichè "
+"i tuoi clienti abbracciano la velocità di AMP e più utenti consumano "
+"contenuti nelle pagine AMP, assicurati che il tuo business sia posizionato "
+"per il futuro. Integra la tua tecnologia con AMP oggi."
 
 #: /content/includes/home.yaml
 msgid "A path to success"
 msgstr "Un percorso verso il successo"
+
+#: /views/amp-ads.html:249
+msgid "AMP Ad"
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "AMP Ads"
@@ -30,21 +34,45 @@ msgstr "AMP Ads"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
+"AMP Ads are 6x faster than regular ads on AMP pages, making them more "
+"viewable, more effective and more likely to perform&nbsp;well."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
 "AMP Ads are a creative format built using HTML and CSS, not a new technology."
 " As a result, you can use your existing development resources to create and "
-"serve ads that are faster, lighter, and more effective."
+"serve ads that are faster, lighter and more effective. Creative developer "
+"tools like Google Web Designer will soon support AMP ads as well."
 msgstr ""
-"Gli annunci AMP sono un formato creativo costruito utilizzando HTML e CSS, non una nuova tecnologia."
-" Di conseguenza, è possibile utilizzare le risorse di sviluppo esistenti per creare e "
-"offrire annunci più veloci, più leggeri e più efficaci."
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMP Ads are a new, better way of building, delivering and measuring ads that"
+"  are faster, lighter and more secure. AMP Ads are ads built using AMP-HTML "
+"and use many of the smart components that make AMP pages fast (like amp-"
+"analytics). These ads are only delivered after being validated, ensuring that"
+" they’re free of malware. Most of all, these ads can be delivered anywhere on"
+" the web, not just on AMP pages."
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMP Ads can serve on both AMP and non-AMP pages so you can build your AMP Ad "
-"once and deliver a memorable brand experience everywhere."
+"once and deliver a fast, memorable brand experience everywhere."
 msgstr ""
-"Gli annunci AMP possono essere pubblicati su pagine AMP e non-AMP, in modo che tu possa creare il tuo annuncio AMP "
-"e offrire un'esperienza di marca memorabile ovunque."
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMP Ads need to be validated before they’re served, eliminating the risk of "
+"malware and building trust in the brands users are engaging&nbsp;with."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMP Ads represent an opportunity to fix key issues with ad experiences on the"
+" web."
+msgstr ""
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
@@ -62,11 +90,22 @@ msgstr "Conf. AMP 7/8 Marzo"
 msgid "AMP HTML Specification"
 msgstr "Specifiche HTML AMP"
 
+#: /views/amp-ads.html:252
+msgid "AMP Landing Page"
+msgstr ""
+
+#: /content/support/faqs/supported-browsers.md
+#: /content/support/faqs/supported-browsers@es.md
+#: /content/support/faqs/supported-browsers@ko.md
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
 #: /content/support/faqs/supported-platforms@ko.md
 msgid "AMP Overview"
 msgstr "Panoramica AMP"
+
+#: /views/amp-ads.html:255
+msgid "AMP Page"
+msgstr ""
 
 #: /content/includes/lists.yaml
 msgid "AMP Roadmap"
@@ -95,10 +134,10 @@ msgid ""
 " 1.5B AMP pages have been published to date and 100+ leading analytics, ad "
 "tech and CMS providers support the AMP format."
 msgstr ""
-"AMP è costruito grazie ad una profonda collaborazione con migliaia di sviluppatori, "
-"editori e siti web, piattaforme di distribuzione e aziende tecnologiche. Più di"
-" 1.5B pagine AMP sono state pubblicate fino ad oggi e 100+ leader analytics, tech "
-"e fornitori CMS supportano il formato AMP."
+"AMP è costruito grazie ad una profonda collaborazione con migliaia di "
+"sviluppatori, editori e siti web, piattaforme di distribuzione e aziende "
+"tecnologiche. Più di 1.5B pagine AMP sono state pubblicate fino ad oggi e "
+"100+ leader analytics, tech e fornitori CMS supportano il formato AMP."
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -108,11 +147,12 @@ msgid ""
 "engaged with and receptive to your brand’s messages, and more likely to take "
 "the actions you’re guiding them towards like completing a purchase."
 msgstr ""
-"Le pagine AMP in genere vengono caricate in meno di un secondo. Ciò significa che "
-"quando il tuo target di destinazione carica una pagina AMP, ottengono quello che cercano "
-"nel momento in cui lo cercano. Il risultato netto - è più probabile che "
-"siano impegnati e ricettivi ai messaggi del tuo marchio, e più probabilità di "
-"intraprendere le azioni che li guidi verso come completare un acquisto."
+"Le pagine AMP in genere vengono caricate in meno di un secondo. Ciò significa"
+" che quando il tuo target di destinazione carica una pagina AMP, ottengono "
+"quello che cercano nel momento in cui lo cercano. Il risultato netto - è più "
+"probabile che siano impegnati e ricettivi ai messaggi del tuo marchio, e più "
+"probabilità di intraprendere le azioni che li guidi verso come completare un "
+"acquisto."
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
 #: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
@@ -133,17 +173,19 @@ msgid ""
 "ads, AMP ads deliver great advertising experiences too, ensuring every "
 "interaction with a publisher’s brand is a compelling one."
 msgstr ""
-"AMP accelera i contenuti, mantenendo gli utenti impegnati a prescindere da dove iniziano"
-" il loro viaggio - sul sito web dell'editore o dalle piattaforme che collegano alle "
-"pagine AMP come Twitter, Google e Pinterest. Con annunci più veloci e più sicuri, "
-"gli annunci AMP offrono anche grandi esperienze pubblicitarie, garantendo che ogni "
-"interazione con un brand di un publisher è una cosa convincente."
+"AMP accelera i contenuti, mantenendo gli utenti impegnati a prescindere da "
+"dove iniziano il loro viaggio - sul sito web dell'editore o dalle piattaforme"
+" che collegano alle pagine AMP come Twitter, Google e Pinterest. Con annunci "
+"più veloci e più sicuri, gli annunci AMP offrono anche grandi esperienze "
+"pubblicitarie, garantendo che ogni interazione con un brand di un publisher è"
+" una cosa convincente."
 
 #: /content/includes/menu.yaml
 msgid "About"
 msgstr "Informazioni"
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
+#: /content/learn/who-uses-amp@ko.yaml
 msgid "Ad Tech Platforms"
 msgstr "Piattaforme di pubblicità"
 
@@ -168,9 +210,22 @@ msgid "Adtech success stories"
 msgstr "Storie di successo di Adtech"
 
 #: /content/learn/case-studies/category/advertisers.md
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
+#: /content/learn/who-uses-amp@ko.yaml
 msgid "Advertisers"
 msgstr "Inserzionisti"
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Advertisers:<br>Drive campaign ROI"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"All ad content delivered by Firebolt for AMP for Ads is cryptographically "
+"signed to ensure that it meets the required format and security standards. "
+"Signed ads reduce the risk of malware and increase confidence in ads for "
+"consumers."
+msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Amplify your impact"
@@ -185,12 +240,22 @@ msgid "Audio/Video"
 msgstr "Audio/Video"
 
 #: /content/learn/who/amp-ads.yaml
-msgid "Better advertising on a faster web."
-msgstr "Pubblicità migliore su un web più veloce."
+msgid "Better ads on a faster web."
+msgstr ""
 
-#: /content/includes/latest.yaml /content/latest/blog/_blueprint.yaml
+#: /content/includes/latest.yaml /content/latest/blog-ads/_blueprint.yaml
+#: /content/latest/blog/_blueprint.yaml
 msgid "Blog"
 msgstr "Blog"
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"Boost campaign performance and drive engagement with ads that are 6x faster "
+"and 3x lighter. Build your creatives with <a "
+"href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
+"a4a-format.md'>AMP HTML</a> or work with a technology provider that already "
+"supports AMP Ads."
+msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Boost your campaign performance with AMP Ads"
@@ -218,13 +283,14 @@ msgid ""
 "to them.  Similarly, AMP ads may be built once and run across all pages, "
 "including non-AMP pages."
 msgstr ""
-"La creazione di pagine AMP è chiara e semplice. Puoi spesso convertire il tuo "
-"intero archivio in giorni in particolare se si utilizza un CMS popolare come Wordpress "
-"e Drupal. Il tuo team non necessita di competenze particolari, né di preoccupazioni "
-"riguardo l'ottimizzazione del codice per ogni piattaforma di distribuzione poichè il formato AMP è "
-"completamente portatile e le pagine AMP sono costantemente veloci, non importa come un utente "
-"ci arriva. Allo stesso modo, gli annunci AMP possono essere costruiti una volta e eseguiti su tutte le pagine, "
-"incluse le pagine non AMP."
+"La creazione di pagine AMP è chiara e semplice. Puoi spesso convertire il tuo"
+" intero archivio in giorni in particolare se si utilizza un CMS popolare come"
+" Wordpress e Drupal. Il tuo team non necessita di competenze particolari, né "
+"di preoccupazioni riguardo l'ottimizzazione del codice per ogni piattaforma "
+"di distribuzione poichè il formato AMP è completamente portatile e le pagine "
+"AMP sono costantemente veloci, non importa come un utente ci arriva. Allo "
+"stesso modo, gli annunci AMP possono essere costruiti una volta e eseguiti su"
+" tutte le pagine, incluse le pagine non AMP."
 
 #: /content/includes/home.yaml
 msgid "Building the future web, together."
@@ -238,11 +304,13 @@ msgid ""
 "AMP pages can be built once and distributed across a wide variety of "
 "distribution platforms simultaneously."
 msgstr ""
-"Costruire l'annuncio giusto, la pagina di destinazione o il contenuto web richiede tempo. Con gli annunci AMP, "
-"i tuoi annunci possono essere pubblicati su entrambe le pagine AMP e non AMP, il che significa che puoi "
-"generare una volta i tuoi annunci AMP e consegnare un'esperienza di marca memorabile ovunque. Allo stesso modo, "
-"le pagine AMP possono essere costruite una volta e distribuite contemporaneamente su un'ampia varietà di "
-"piattaforme di distribuzione."
+"Costruire l'annuncio giusto, la pagina di destinazione o il contenuto web "
+"richiede tempo. Con gli annunci AMP, i tuoi annunci possono essere pubblicati"
+" su entrambe le pagine AMP e non AMP, il che significa che puoi generare una "
+"volta i tuoi annunci AMP e consegnare un'esperienza di marca memorabile "
+"ovunque. Allo stesso modo, le pagine AMP possono essere costruite una volta e"
+" distribuite contemporaneamente su un'ampia varietà di piattaforme di "
+"distribuzione."
 
 #: /content/includes/who.yaml
 msgid "CMS"
@@ -250,7 +318,7 @@ msgstr "CMS"
 
 #: /content/includes/menu.yaml /content/learn/case-studies.html
 #: /content/learn/case-studies/category/_blueprint.yaml
-#: /views/about-casestudies.html:12
+#: /content/learn/case-studies@es.html /views/about-casestudies.html:12
 msgid "Case Studies"
 msgstr "Caso di studio"
 
@@ -275,11 +343,11 @@ msgid ""
 " users a faster experience everywhere -- on ads, landing pages or your entire"
 " website."
 msgstr ""
-"Le conversioni diminuiscono del 12&#37; per ogni secondo che una pagina web richiede per caricare. "
-"Se vuoi che la gente si impegni con il tuo brand e migliorare le prestazioni delle "
-"tue campagne, devi accelerare le cose. AMP offre un modo per offrire agli utenti "
-"un'esperienza più veloce ovunque - su annunci, pagine di destinazione o il tuo "
-"sito web completo."
+"Le conversioni diminuiscono del 12&#37; per ogni secondo che una pagina web "
+"richiede per caricare. Se vuoi che la gente si impegni con il tuo brand e "
+"migliorare le prestazioni delle tue campagne, devi accelerare le cose. AMP "
+"offre un modo per offrire agli utenti un'esperienza più veloce ovunque - su "
+"annunci, pagine di destinazione o il tuo sito web completo."
 
 #: /content/docs/tutorials/create/_blueprint.yaml
 msgid "Create Your First AMP Page"
@@ -294,8 +362,8 @@ msgid ""
 "Create beautiful AMP pages with pre-styled page templates and components from"
 " AMP Start."
 msgstr ""
-"Crea bellissime pagine AMP con pagine di template e componenti pre-designati"
-" da AMP Start."
+"Crea bellissime pagine AMP con pagine di template e componenti pre-designati "
+"da AMP Start."
 
 #: /content/docs/build.md
 msgid "Create your First AMP"
@@ -305,10 +373,28 @@ msgstr "Crea il tuo primo AMP"
 #: /content/learn/case-studies/category/advertisers.md
 #: /content/learn/case-studies/category/e-commerce.md
 #: /content/learn/case-studies/category/publishers.md
+#: /content/learn/case-studies@es.html
 msgid "Create your first AMP page"
 msgstr "Crea la tua prima pagina AMP"
 
+#: /content/learn/who/amp-ads.yaml
+msgid "Dane Knecht"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"Deliver a fast and compelling ad experience that users appreciate and "
+"advertisers value. Ad servers and technology platforms like DoubleClick and "
+"Triplelift already allow you to traffic AMP Ads. Reach out to your account "
+"manager to get started."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Deliver better, faster experiences at every touch point."
+msgstr ""
+
 #: /content/includes/menu.yaml /content/learn/amp-design-principles.yaml
+#: /content/learn/amp-design-principles@es.yaml
 #: /content/learn/amp-design-principles@ko.yaml
 msgid "Design Principles"
 msgstr "Principi di progettazione"
@@ -361,8 +447,8 @@ msgid ""
 "E.g. don’t integrate things on the client side, just because that is easier, "
 "when the user experience would be better with a server side integration."
 msgstr ""
-"Per esempio: Non integrare le cose sul lato client, solo perché è più facile, "
-"quando l'esperienza utente sarebbe migliore con un'integrazione lato server."
+"Per esempio: Non integrare le cose sul lato client, solo perché è più facile,"
+" quando l'esperienza utente sarebbe migliore con un'integrazione lato server."
 
 #: /content/learn/who/publishers.yaml
 msgid "Enable compelling, consistently fast experiences"
@@ -375,22 +461,19 @@ msgid ""
 "should be possible for websites and consumption apps to gracefully degrade. "
 "If something works with an AMP cache it should also work without a cache."
 msgstr ""
-"Assicurarsi che se AMP abbia interruzioni o problemi non faccia male al resto del"
-"web. Ciò significa che se la cache di Google AMP, l'URL API o la libreria non riescono, "
-"dovrebbe essere possibile che i siti web e le applicazioni di consumo abbassino grazia. "
-"Se qualcosa funziona con una cache AMP, dovrebbe funzionare anche senza una cache."
+"Assicurarsi che se AMP abbia interruzioni o problemi non faccia male al resto"
+" delweb. Ciò significa che se la cache di Google AMP, l'URL API o la libreria"
+" non riescono, dovrebbe essere possibile che i siti web e le applicazioni di "
+"consumo abbassino grazia. Se qualcosa funziona con una cache AMP, dovrebbe "
+"funzionare anche senza una cache."
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
-"Even the most memorable creative won’t serve it’s purpose if the ad is slow "
+"Even the most memorable creative won’t serve its purpose if the ad is slow "
 "and disruptive for a user. AMP Ads are a new way of building ads, making them"
 " as fast as AMP pages to ensure your ads do what they’re meant to do and "
 "deliver the value you’re looking for."
 msgstr ""
-"Anche la creatività più memorabile non serve allo scopo se l'annuncio è lento "
-"e disturbato per un utente. Gli annunci AMP sono un nuovo modo per creare annunci, "
-"rendendoli veloci come le pagine AMP per garantire che i tuoi annunci facciano quello "
-"che intendono fare e fornire il valore che stai cercando."
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
 #: /content/latest/list-event.html
@@ -405,6 +488,10 @@ msgstr "Esempi"
 #: /content/support/faqs/_blueprint.yaml
 msgid "FAQs"
 msgstr "FAQ"
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Faster ads drive better&nbsp;performance"
+msgstr ""
 
 #: /content/docs/contribute/file-a-bug.md
 msgid "File a bug"
@@ -435,6 +522,7 @@ msgid "Get in touch"
 msgstr "Entra in contatto"
 
 #: /content/learn/amp-design-principles.yaml
+#: /content/learn/amp-design-principles@es.yaml
 #: /content/learn/amp-design-principles@ko.yaml
 msgid "Get started building"
 msgstr "Inizia a costruire"
@@ -466,16 +554,16 @@ msgid "Guides"
 msgstr "Guide"
 
 #: /content/learn/who/amp-ads.yaml
+msgid "Head of Product Strategy, Cloudflare"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
 msgid ""
 "Heavy and unpredictable ad experiences slow down the page, cost users money, "
-"and negatively impact perception of both the advertiser and the publisher. "
-"AMP Ads are 3x lighter than traditional ads, helping to ensure a positive "
-"brand experience."
+"and can hurt your brand. AMP Ads are 3x lighter and the AMP framework "
+"guarantees that these ads only behave as intended so users always have a "
+"positive experience with your&nbsp;brand."
 msgstr ""
-"Le esperienze di pubblicità pesanti e imprevedibili rallentano la pagina, denaro "
-"dei consumatori di costi e influenzano negativamente la percezione sia dell'inserzionista "
-"che dell'editore. Gli annunci AMP sono x3 più leggeri rispetto agli annunci tradizionali, "
-"contribuendo a garantire un'esperienza di marca positiva."
 
 #: /content/includes/home.yaml
 msgid "Higher Performance and Engagement"
@@ -509,20 +597,27 @@ msgid "Increase your reach"
 msgstr "Aumenta la tua portata"
 
 #: /content/learn/who/amp-ads.yaml
-msgid "Join Now"
-msgstr "Iscriviti adesso"
+msgid "Join Today"
+msgstr ""
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"Join a growing ecosystem of publishers, advertisers and technology platforms "
+"serving faster, lighter and more effective ads."
+msgstr ""
+
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
+#: /content/learn/who-uses-amp@ko.yaml
 msgid ""
 "Join an ecosystem of  850,000 domains, leading platforms, and 100+ technology"
 " providers using  AMP."
 msgstr ""
-"Unisciti ad un ecosistema di 850.000 domini, piattaforme leader e 100+ fornitori di "
-"tecnologie che utilizzano AMP."
+"Unisciti ad un ecosistema di 850.000 domini, piattaforme leader e 100+ "
+"fornitori di tecnologie che utilizzano AMP."
 
 #: /content/learn/who/amp-ads.yaml
-msgid "Join the AMP Ads initiative"
-msgstr "Iscriviti all'iniziativa AMP Ads"
+msgid "Kavata Mbondo"
+msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Keep your audience engaged with AMP pages"
@@ -552,7 +647,9 @@ msgstr "Ulteriori informazioni su AMP"
 
 #: /content/docs/build.md
 msgid "Learn about each AMP component, including syntax and examples."
-msgstr "Ulteriori informazioni su ciascun componente AMP, inclusa la sintassi e gli esempi."
+msgstr ""
+"Ulteriori informazioni su ciascun componente AMP, inclusa la sintassi e gli "
+"esempi."
 
 #: /content/includes/home.yaml
 msgid "Learn how to build AMP pages and AMP Ads"
@@ -560,15 +657,17 @@ msgstr "Scopri come creare pagine AMP e annunci AMP"
 
 #: /content/docs/build.md
 msgid "Learn how to create your first AMP page with this short beginner tutorial."
-msgstr "Scopri come creare la tua prima pagina AMP con questo breve tutorial per principianti."
+msgstr ""
+"Scopri come creare la tua prima pagina AMP con questo breve tutorial per "
+"principianti."
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
 "Learn more about AMP Ads and building AMP pages for your campaigns and "
 "website."
 msgstr ""
-"Ulteriori informazioni sugli annunci AMP e sulla creazione di pagine AMP per le tue campagne e "
-"siti web."
+"Ulteriori informazioni sugli annunci AMP e sulla creazione di pagine AMP per "
+"le tue campagne e siti web."
 
 #: /content/learn/about-how.yaml /content/learn/about-how@ar.yaml
 #: /content/learn/about-how@es.yaml /content/learn/about-how@fr.yaml
@@ -589,8 +688,8 @@ msgid "Learn who uses AMP"
 msgstr "Scopri chi usa AMP"
 
 #: /content/learn/who/amp-ads.yaml
-msgid "Lighter ads improve brand perception"
-msgstr "Gli annunci più chiari migliorano la percezione del marchio"
+msgid "Lighter ads lead to better ad&nbsp;experiences"
+msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Maximize ROI everywhere"
@@ -599,6 +698,14 @@ msgstr "Massimizza il ROI ovunque"
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Maximize your revenue"
 msgstr "Massimizza le tue entrate"
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"Maximize your revenue and build for the future by offering your customers a "
+"fast, light and secure ad experience. <a "
+"href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
+"a4a-format.md'>Join</a> the open source AMP Ads Initiative today."
+msgstr ""
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Media"
@@ -621,10 +728,13 @@ msgid "New Video"
 msgstr "Nuovo Video"
 
 #: /content/includes/menu.yaml /content/pages/home.html:37
-#: /content/pages/home.html:77
+#: /content/pages/home.html:77 /views/amp-ads.html:409 /views/amp-ads.html:444
 msgid "News"
 msgstr "News"
 
+#: /content/support/faqs/supported-browsers.md
+#: /content/support/faqs/supported-browsers@es.md
+#: /content/support/faqs/supported-browsers@ko.md
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
 #: /content/support/faqs/supported-platforms@ko.md
@@ -678,6 +788,10 @@ msgstr "Presentazione"
 msgid "Presentation - AMP components"
 msgstr "Presentazione - Componenti AMP"
 
+#: /content/learn/who/amp-ads.yaml
+msgid "President &amp; Co-Founder, Triplelift"
+msgstr ""
+
 #: /views/case-study.html:54
 msgid "Previous Posts"
 msgstr "Messaggi precedenti"
@@ -695,7 +809,8 @@ msgid "Privacy"
 msgstr "Privacy"
 
 #: /content/learn/case-studies/category/publishers.md
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
+#: /content/learn/who-uses-amp@ko.yaml
 msgid "Publishers"
 msgstr "Editori"
 
@@ -705,9 +820,9 @@ msgid ""
 "technology vendors to use, all while maintaining and improving key "
 "performance indicators."
 msgstr ""
-"Gli editori e gli inserzionisti possono decidere come presentare il loro contenuto "
-"e quali fornitori di tecnologia utilizzare, pur mantenendo e migliorando i principali "
-"indicatori di prestazione."
+"Gli editori e gli inserzionisti possono decidere come presentare il loro "
+"contenuto e quali fornitori di tecnologia utilizzare, pur mantenendo e "
+"migliorando i principali indicatori di prestazione."
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -716,12 +831,18 @@ msgid ""
 "often improving key performance indicators, such as time spent on page, "
 "return visits, viewability, CTRs and more."
 msgstr ""
-"Gli editori che implementano AMP possono decidere come presentare il loro contenuto, "
-"quale modello di business da utilizzare, quali fornitori di tecnologia utilizzare, "
-"mantenendo e spesso migliorando i principali indicatori di prestazione, come tempo "
-"speso per pagina, visite di ritorno, visibilità, CTR e altro ancora."
+"Gli editori che implementano AMP possono decidere come presentare il loro "
+"contenuto, quale modello di business da utilizzare, quali fornitori di "
+"tecnologia utilizzare, mantenendo e spesso migliorando i principali "
+"indicatori di prestazione, come tempo speso per pagina, visite di ritorno, "
+"visibilità, CTR e altro ancora."
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
+#: /content/learn/who/amp-ads.yaml
+msgid "Publishers:<br>Keep audiences engaged"
+msgstr ""
+
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
+#: /content/learn/who-uses-amp@ko.yaml
 msgid "Read case studies"
 msgstr "Leggi i casi di studio"
 
@@ -738,6 +859,10 @@ msgstr "Riduci la complessità delle tue operazioni."
 msgid "Reference"
 msgstr "Riferimenti"
 
+#: /views/amp-ads.html:226
+msgid "Regular Ad"
+msgstr ""
+
 #: /content/support/developer/documentation-bug.md
 msgid "Report a documentation bug on GitHub"
 msgstr "Segnala un bug di documentazione su GitHub"
@@ -750,13 +875,17 @@ msgstr "Segnala un bug della piattaforma su GitHub"
 msgid "Roadmap"
 msgstr "Roadmap"
 
+#: /content/learn/who/amp-ads.yaml
+msgid "Safer ads build trust in your&nbsp;brands"
+msgstr ""
+
 #: /views/partials/promo_banner.html:12
 msgid ""
 "Save the date: Tune in live on March 7/8 or join us in person in NYC for our "
 "first-ever AMP Conf."
 msgstr ""
-"Salva la data: sintonizzati live il 7/8 Marzo o unisciti personalmente a NYC per "
-"la nostra prima AMP Conf."
+"Salva la data: sintonizzati live il 7/8 Marzo o unisciti personalmente a NYC "
+"per la nostra prima AMP Conf."
 
 #: /content/includes/latest.yaml
 msgid "See More"
@@ -797,16 +926,16 @@ msgid "Share"
 msgstr "Condividi"
 
 #: /content/learn/who/amp-ads.yaml
-msgid "Simple to build, easy to scale. Reduce complexity with AMP Ads."
-msgstr "Semplice da costruire, facile da scalare. Riduci la complessità con gli annunci AMP."
+msgid "Shaun Zacharia"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Simple to build, easy to scale."
+msgstr ""
 
 #: /content/support/developer/slack.md
 msgid "Slack Channel"
 msgstr "Slack Channel"
-
-#: /content/learn/who/amp-ads.yaml
-msgid "Smart and coordinated ads boost campaign ROI"
-msgstr "Gli annunci intelligenti e coordinati aumentano il ROI della campagna"
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Social"
@@ -827,14 +956,11 @@ msgid ""
 "that. Only compromise when lack of support for something would stop AMP from "
 "being widely used and deployed."
 msgstr ""
-"Alcune cose possono essere fatte veloci e sono ancora un'esperienza utente terribile. "
-"Le AMP dovrebbero fornire una fantastica esperienza utente e la velocità è solo una parte "
-"di questo. Soltanto compromettere quando la mancanza di sostegno per qualcosa smetterebbe "
-"di essere ampiamente utilizzati e schierati da AMP."
-
-#: /content/learn/who/amp-ads.yaml
-msgid "Speed is the fastest way to drive performance"
-msgstr "La velocità è il modo più veloce per guidare le prestazioni"
+"Alcune cose possono essere fatte veloci e sono ancora un'esperienza utente "
+"terribile. Le AMP dovrebbero fornire una fantastica esperienza utente e la "
+"velocità è solo una parte di questo. Soltanto compromettere quando la "
+"mancanza di sostegno per qualcosa smetterebbe di essere ampiamente utilizzati"
+" e schierati da AMP."
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -846,13 +972,15 @@ msgid ""
 "href=\"/learn/who-uses-amp/amp-ads/\">AMP Ads Initiative</a> to improve "
 "performance and grow your revenue."
 msgstr ""
-"Accelerare gli annunci è il modo più veloce per aumentare le prestazioni. Gli <a "
+"Accelerare gli annunci è il modo più veloce per aumentare le prestazioni. Gli"
+" <a "
 "href=\"https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs"
-"/a4a-readme.md\">annunci APM</a> vengono caricati velocemente come i contenuti, "
-"in modo da essere più visibili e più probabilità di essere impegnati. Triplelift ha "
-"visto un aumento del 10&#37;+ della visibilità e dell'impegno con gli annunci AMP. "
-"Unisciti all'<a href=\"/learn/who-uses-amp/amp-ads/\">iniziativa AMP Ads</a> per "
-"migliorare le prestazioni e aumentare le entrate."
+"/a4a-readme.md\">annunci APM</a> vengono caricati velocemente come i "
+"contenuti, in modo da essere più visibili e più probabilità di essere "
+"impegnati. Triplelift ha visto un aumento del 10&#37;+ della visibilità e "
+"dell'impegno con gli annunci AMP. Unisciti all'<a href=\"/learn/who-uses-amp"
+"/amp-ads/\">iniziativa AMP Ads</a> per migliorare le prestazioni e aumentare "
+"le entrate."
 
 #: /content/support/developer/stack-overflow.md
 msgid "Stack Overflow Community"
@@ -866,6 +994,7 @@ msgstr "Inizia a Costruire"
 #: /content/learn/case-studies/category/advertisers.md
 #: /content/learn/case-studies/category/e-commerce.md
 #: /content/learn/case-studies/category/publishers.md
+#: /content/learn/case-studies@es.html
 msgid "Start building now"
 msgstr "Inizia a costruire ora"
 
@@ -881,7 +1010,8 @@ msgstr "Rafforzare la tua attività mantenendo il controllo"
 msgid "Style & Layout"
 msgstr "Stile & Layout"
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
+#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
+#: /content/learn/who-uses-amp@ko.yaml
 msgid "Success stories"
 msgstr "Storie di successo"
 
@@ -889,6 +1019,7 @@ msgstr "Storie di successo"
 #: /content/learn/case-studies/category/advertisers.md
 #: /content/learn/case-studies/category/e-commerce.md
 #: /content/learn/case-studies/category/publishers.md
+#: /content/learn/case-studies@es.html
 msgid "Success stories of the domains publishing AMP pages"
 msgstr "Storie di successo dei domini che pubblicano pagine AMP"
 
@@ -901,6 +1032,12 @@ msgstr "Assistenza"
 msgid "Support Forum"
 msgstr "Forum di assistenza"
 
+#: /content/support/faqs/supported-browsers.md
+#: /content/support/faqs/supported-browsers@es.md
+#: /content/support/faqs/supported-browsers@ko.md
+msgid "Supported Browsers"
+msgstr ""
+
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
 #: /content/support/faqs/supported-platforms@ko.md
@@ -910,6 +1047,10 @@ msgstr "Piattaforme supportate, fornitori e partner"
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
 msgstr "Aziende di tecnologia che utilizzano AMP"
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Technology Platforms:<br>Boost your business"
+msgstr ""
 
 #: /content/docs/build.md
 msgid "Templates"
@@ -922,10 +1063,10 @@ msgid ""
 "sustainable future for your business on an open, faster web by joining the "
 "AMP Project."
 msgstr ""
-"Il progetto AMP è un'iniziativa open source per proteggere il futuro del web, "
-"aiutando tutti a fornire un'esperienza utente migliore e più rapida. Crea un "
-"futuro sostenibile per la tua attività in un web aperto e veloce entrando nel "
-"progetto AMP."
+"Il progetto AMP è un'iniziativa open source per proteggere il futuro del web,"
+" aiutando tutti a fornire un'esperienza utente migliore e più rapida. Crea un"
+" futuro sostenibile per la tua attività in un web aperto e veloce entrando "
+"nel progetto AMP."
 
 #: /content/includes/home.yaml
 msgid ""
@@ -934,9 +1075,9 @@ msgid ""
 "consistently fast, beautiful and high-performing across devices and "
 "distribution platforms."
 msgstr ""
-"Il progetto AMP è un'iniziativa open source che mira a rendere il web migliore "
-"per tutti. Il progetto consente la creazione di siti web e annunci che sono "
-"costantemente veloci, belli e performanti su dispositivi e "
+"Il progetto AMP è un'iniziativa open source che mira a rendere il web "
+"migliore per tutti. Il progetto consente la creazione di siti web e annunci "
+"che sono costantemente veloci, belli e performanti su dispositivi e "
 "piattaforme di distribuzione."
 
 #: /content/support/faqs/supported-platforms.md
@@ -948,33 +1089,19 @@ msgid ""
 "it load instantly everywhere. – Accelerated Mobile Pages Project"
 msgstr ""
 "Il progetto Accelerated Mobile Pages (AMP) è un'iniziativa open source che "
-"rende facile per i publisher creare contenuti compatibili con i dispositivi mobili "
-"e caricarli istantaneamente ovunque. - Accelerated Mobile Pages Project"
+"rende facile per i publisher creare contenuti compatibili con i dispositivi "
+"mobili e caricarli istantaneamente ovunque. - Accelerated Mobile Pages "
+"Project"
 
 #: /content/includes/home.yaml /content/includes/menu.yaml
 #: /content/latest/_blueprint.yaml /content/latest/latest.html
+#: /content/learn/who/amp-ads.yaml
 msgid "The Latest"
 msgstr "Notizie"
 
 #: /content/includes/latest.yaml /content/latest/latest.html
 msgid "The Latest News"
 msgstr "Le ultime notizie"
-
-#: /content/learn/who/amp-ads.yaml
-msgid ""
-"The average mobile page makes 107 uncoordinated ad server requests. Redundant"
-" data requests slow down the page and prevent your ad from loading. AMP Ads "
-"leverage smart components like amp-analytics to reuse code and eliminate "
-"unnecessary data requests. As a result, AMP Ads access more data while "
-"loading faster. And when ads load faster, they’re more likely to exceed "
-"advertiser campaign goals and publisher revenue expectations."
-msgstr ""
-"La pagina mobile media effettua 107 richieste non coordinate al server di annunci. Le richieste "
-"di dati ridondanti rallentano la pagina e impediscono il caricamento dell'annuncio. Gli annunci AMP "
-"sfruttano componenti intelligenti come l'analisi di amp-analytics per riutilizzare il codice e eliminare "
-"le richieste di dati inutili. Di conseguenza, gli annunci AMP hanno accesso a più dati durante il caricamento "
-"più veloce. E quando gli annunci vengono caricati più velocemente, è più probabile che superino gli obiettivi "
-"della campagna pubblicitaria e le aspettative di reddito degli editori."
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -990,34 +1117,22 @@ msgid ""
 msgstr ""
 "Il sito mobile medio richiede 19 secondi per caricare su una connessione 3G. "
 "Accoppiato con il fatto che le conversioni diminuiscono del 12&#37; per ogni "
-"secondo addizionale che una pagina web richiede per caricare, puoi assumere in "
-"sicurezza due cose: la velocità corrisponde alle prestazioni e la maggior parte "
-"delle campagne pubblicitarie ha spazio per migliorare. Questo è dove entri. "
-"Come SSP, DSP, provider di analisi o qualsiasi cosa tra di voi, la velocità che "
-"ti abbraccia significa migliorare le prestazioni della campagna, fornendo esperienze "
-"di qualità e creando te stesso come piattaforma adtech per il web veloce. Unisciti "
-"alle centinaia di piattaforme tecnologiche attualmente supportate dall'ecosistema AMP open source."
-
-#: /content/learn/who/amp-ads.yaml
-msgid ""
-"The median load time for an AMP page is less than one second but the average "
-"ad still takes 5 seconds to load over 3G connections – that’s 4 seconds too "
-"late. When ads are faster, they’re more viewable, more effective, and more "
-"likely to perform well. Boost performance by speeding up ads with AMP Ads."
-msgstr ""
-"Il tempo di caricamento medio per una pagina AMP è inferiore a un secondo, ma "
-"l'annuncio medio richiede ancora 5 secondi per caricare su connessioni 3G, cioè "
-"4 secondi troppo tardi. Quando gli annunci sono più veloci, sono più visibili, più "
-"efficaci e hanno maggiori probabilità di eseguire bene. Potenziare le prestazioni "
-"accelerando gli annunci con gli annunci AMP."
+"secondo addizionale che una pagina web richiede per caricare, puoi assumere "
+"in sicurezza due cose: la velocità corrisponde alle prestazioni e la maggior "
+"parte delle campagne pubblicitarie ha spazio per migliorare. Questo è dove "
+"entri. Come SSP, DSP, provider di analisi o qualsiasi cosa tra di voi, la "
+"velocità che ti abbraccia significa migliorare le prestazioni della campagna,"
+" fornendo esperienze di qualità e creando te stesso come piattaforma adtech "
+"per il web veloce. Unisciti alle centinaia di piattaforme tecnologiche "
+"attualmente supportate dall'ecosistema AMP open source."
 
 #: /content/includes/latest.yaml
 msgid ""
 "The open-source AMP Project helps you create mobile optimized content that "
 "loads in an instant."
 msgstr ""
-"Il progetto AMP open-source ti aiuta a creare contenuti ottimizzati per cellulari "
-"che vengono caricati in un istante."
+"Il progetto AMP open-source ti aiuta a creare contenuti ottimizzati per "
+"cellulari che vengono caricati in un istante."
 
 #: /content/includes/events.yaml
 msgid ""
@@ -1029,16 +1144,26 @@ msgstr ""
 "Non ci sono eventi in questo momento. Noi teniamo eventi durante tutto "
 "l'anno, inclusa la nostra conferenza annuale AMP. Seguici su <a href=\"\" "
 "target=\"_blank\">Facebook</a> o <a href=\"https://twitter.com/amphtml\" "
-"target=\"_blank\">Twitter</a> per le ultime notizie e gli elenchi degli eventi."
+"target=\"_blank\">Twitter</a> per le ultime notizie e gli elenchi degli "
+"eventi."
 
 #: /content/learn/amp-design-principles.yaml
+#: /content/learn/amp-design-principles@es.yaml
 #: /content/learn/amp-design-principles@ko.yaml
 msgid ""
 "These design principles are meant to guide the ongoing design and development"
 " of AMP. They should help us make internally consistent decisions."
 msgstr ""
-"Questi principi di progettazione sono destinati a guidare la progettazione e lo "
-"sviluppo di AMP in corso e dovrebbero aiutarci a prendere decisioni interne coerenti".
+"Questi principi di progettazione sono destinati a guidare la progettazione e "
+"lo sviluppo di AMP in corso e dovrebbero aiutarci a prendere decisioni "
+"interne coerenti\""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"They load way faster. Users pick up on every small delay, and when the ads "
+"load fast, this has a very positive impact on their perception and advertiser"
+" performance."
+msgstr ""
 
 #: /content/docs/build.md
 msgid "Try out the hands-on examples on AMP by Example."
@@ -1047,6 +1172,7 @@ msgstr "Prova gli esempi pratici su AMP per esempio."
 #: /content/docs/build.md /content/docs/tutorials.md
 #: /content/docs/tutorials/_blueprint.yaml /content/includes/menu.yaml
 #: /content/learn/amp-design-principles.yaml
+#: /content/learn/amp-design-principles@es.yaml
 #: /content/learn/amp-design-principles@ko.yaml
 #: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/publishers.yaml
 msgid "Tutorials"
@@ -1062,11 +1188,17 @@ msgstr "Utilizza le tue risorse esistenti"
 
 #: /content/learn/amp-design-principles.yaml
 msgid "User Experience > Developer Experience > Ease of Implementation."
-msgstr "Esperienza utente > Esperienza dello sviluppatore > Facilità di implementazione."
+msgstr ""
+"Esperienza utente > Esperienza dello sviluppatore > Facilità di "
+"implementazione."
 
 #: /content/support/vendor.md /content/support/vendor/_blueprint.yaml
 msgid "Vendor Support"
 msgstr "Supporto Fornitore"
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Vice President of Digital Revenue Strategy and Operations, Time Inc."
+msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Videos"
@@ -1090,7 +1222,9 @@ msgstr "Visualizza esempi"
 
 #: /content/docs/build.md
 msgid "View our in-depth guides for how to develop, debug, and deploy in AMP."
-msgstr "Guarda le nostre guide approfondite su come sviluppare, debug e distribuire in AMP."
+msgstr ""
+"Guarda le nostre guide approfondite su come sviluppare, debug e distribuire "
+"in AMP."
 
 #: /content/docs/build.md
 msgid "View templates"
@@ -1102,17 +1236,12 @@ msgstr "Cammina attraverso come utilizzare le funzionalità AMP con i nostri tut
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
-"We can’t fix the web if we don’t fix ads. Today’s ads fail to meet "
-"advertisers’ goals because they are slow, unpredictable and disruptive. The "
-"open-source AMP Ads Initiative aims to make advertising on the web better "
-"with faster, lighter and more secure ad experiences, starting with ads and "
-"extending beyond the click to the pages users land on."
+"We can’t make the web better if we don’t fix ads. Today’s ads fail to meet "
+"their goals because they are slow, unpredictable and disruptive. The open-"
+"source AMP Ads Initiative aims to make advertising on the web better with "
+"faster, lighter, and safer ad experiences, starting with ads and extending to"
+" landing&nbsp;pages."
 msgstr ""
-"Non possiamo riparare il web se non risolviamo gli annunci. Gli annunci di oggi "
-"non riescono a soddisfare gli obiettivi degli inserzionisti perché sono lenti, "
-"imprevedibili e distruttivi. L'iniziativa di annunci AMP open-source mira a rendere "
-"meglio pubblicità sul web con esperienze di annunci più veloci, più leggeri e più sicure, "
-"a partire dagli annunci e che si estendono al di là del click per accedere alle pagine degli utenti."
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -1134,11 +1263,12 @@ msgid ""
 msgstr ""
 "La velocità della pagina web migliora l'esperienza utente e <a "
 "href=\"https://www.doubleclickbygoogle.com/articles/mobile-speed-"
-"matters/\">le metriche di base del business</a>. Le pagine AMP caricano immediatamente, "
-"consentendo di offrire un'esperienza costante e veloce in tutti i dispositivi e piattaforme "
-"che si collegano alle pagine AMP, tra cui Google, Bing, Linkedin e altro ancora. Questi "
-"guadagni di prestazione spesso si traducono in miglioramenti nei numeri che contano, come "
-"il tempo speso per pagina, le visite di ritorno ei CTRs."
+"matters/\">le metriche di base del business</a>. Le pagine AMP caricano "
+"immediatamente, consentendo di offrire un'esperienza costante e veloce in "
+"tutti i dispositivi e piattaforme che si collegano alle pagine AMP, tra cui "
+"Google, Bing, Linkedin e altro ancora. Questi guadagni di prestazione spesso "
+"si traducono in miglioramenti nei numeri che contano, come il tempo speso per"
+" pagina, le visite di ritorno ei CTRs."
 
 #: /content/includes/home.yaml
 msgid ""
@@ -1146,9 +1276,9 @@ msgid ""
 "instantly, giving users a smooth, more engaging experience on mobile and "
 "desktop."
 msgstr ""
-"Le pagine web e gli annunci pubblicati nel formato AMP open-source si caricano "
-"immediatamente, dando agli utenti un'esperienza più agevole e più coinvolgente "
-"su cellulari e su desktop."
+"Le pagine web e gli annunci pubblicati nel formato AMP open-source si "
+"caricano immediatamente, dando agli utenti un'esperienza più agevole e più "
+"coinvolgente su cellulari e su desktop."
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -1159,16 +1289,22 @@ msgid ""
 "possible with today's platform, AMP developers should participate in "
 "standards development to get these added to the web platform."
 msgstr ""
-"Abbiamo scelto di creare AMP come una biblioteca nello spirito del [manifesto web "
-"estensibile] (https://github.com/extensibleweb/manifesto/blob/master/README.md) "
-"per poter risolvere il web di oggi, mon il web di domani.\n"
-"AMP dovrebbe essere veloce nei browser di oggi. Quando alcune ottimizzazioni non sono "
-"possibili con la piattaforma di oggi, gli sviluppatori AMP dovrebbero partecipare allo "
-"sviluppo di standard per ottenere questi aggiunti alla piattaforma web."
+"Abbiamo scelto di creare AMP come una biblioteca nello spirito del [manifesto"
+" web estensibile] "
+"(https://github.com/extensibleweb/manifesto/blob/master/README.md) per poter "
+"risolvere il web di oggi, mon il web di domani.\n"
+"AMP dovrebbe essere veloce nei browser di oggi. Quando alcune ottimizzazioni "
+"non sono possibili con la piattaforma di oggi, gli sviluppatori AMP "
+"dovrebbero partecipare allo sviluppo di standard per ottenere questi aggiunti"
+" alla piattaforma web."
 
 #: /content/includes/home.yaml
 msgid "What AMP Provides"
 msgstr "Cosa Fornisce AMP"
+
+#: /content/learn/who/amp-ads.yaml
+msgid "What are AMP Ads?"
+msgstr ""
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
 #: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
@@ -1193,6 +1329,10 @@ msgstr "Cosa c'è di nuovo"
 msgid "What's hot?"
 msgstr "Cosa c'è di rilevante?"
 
+#: /content/learn/who/amp-ads.yaml
+msgid "What's the difference between an AMP Ad and a regular ad? <i>Seconds</i>."
+msgstr ""
+
 #: /content/learn/amp-design-principles.yaml
 msgid ""
 "When in doubt, do what’s best for the end user experience, even if it means "
@@ -1205,24 +1345,30 @@ msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
-"Whether you’re an advertiser, ad tech platform, or publisher, fix the state "
-"of advertising by joining the AMP Ads Initiative today."
+"Whether you’re an advertiser, ad tech platform or publisher, deliver better "
+"ads by joining the AMP Ads Initiative today."
 msgstr ""
-"Sia che tu sia un'inserzionista, una piattaforma tecnologica o un publisher, "
-"corregga lo stato della pubblicità accedendo all'iniziativa AMP Ads oggi".
 
 #: /content/learn/who/_blueprint.yaml
 msgid "Who Uses AMP"
 msgstr "Chi usa AMP"
 
+#: /content/learn/who/amp-ads.yaml
+msgid "Who are AMP Ads for?"
+msgstr ""
+
 #: /content/includes/menu.yaml /content/learn/who-uses-amp.yaml
-#: /content/learn/who-uses-amp@ko.yaml
+#: /content/learn/who-uses-amp@es.yaml /content/learn/who-uses-amp@ko.yaml
 msgid "Who is AMP for?"
 msgstr "Chi è AMP?"
 
 #: /content/learn/who/amp-ads.yaml
-msgid "Why AMP Ads"
-msgstr "Perché gli annunci AMP"
+msgid "Why AMP Ads?"
+msgstr ""
+
+#: /views/amp-ads.html:195
+msgid "Your browser doesn’t support HTML5 video"
+msgstr ""
 
 #: /content/learn/case-studies/category/e-commerce.md
 msgid "e-commerce"
@@ -1237,21 +1383,24 @@ msgid ""
 "“AMP was the perfect addition to our business, giving us a new level of "
 "impact for our e-commerce clients.”"
 msgstr ""
-"“AMP è stata l'aggiunta perfetta alla nostra attività, dandoci un nuovo livello di "
-"impatto per i nostri clienti di e-commerce.”"
+"“AMP è stata l'aggiunta perfetta alla nostra attività, dandoci un nuovo "
+"livello di impatto per i nostri clienti di e-commerce.”"
 
 #: /content/includes/home.yaml
 msgid ""
 "“Across Teads’ publisher portfolio, video ads perform significantly better on"
 " AMP pages than on the traditional mobile web.”"
 msgstr ""
-"“Attraverso il portafoglio di publisher di Teads, gli annunci video si esibiscono"
-" in modo significativo sulle pagine AMP rispetto al tradizionale web mobile.”"
+"“Attraverso il portafoglio di publisher di Teads, gli annunci video si "
+"esibiscono in modo significativo sulle pagine AMP rispetto al tradizionale "
+"web mobile.”"
 
 #: /content/includes/home.yaml
 msgid ""
 "“If our site takes a long time to load, it doesn’t matter how great our "
 "journalism is, some people will leave the page before they see what’s there.”"
 msgstr ""
-"“Se il nostro sito richiede molto tempo per caricare, non importa quanto sia grande il nostro  "
-"giornalismo, alcune persone lasceranno la pagina prima di vedere cosa c'è.”"
+"“Se il nostro sito richiede molto tempo per caricare, non importa quanto sia "
+"grande il nostro  giornalismo, alcune persone lasceranno la pagina prima di "
+"vedere cosa c'è.”"
+
