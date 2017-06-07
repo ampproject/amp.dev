@@ -8,7 +8,7 @@ components:
 ---
 [TOC]
 
-{{ youtube('M_ZCgbEGyHY', 480, 270, caption='If you prefer listening, this talk from CDS 2016 gives you a similar overview.') }}
+{{ youtube('Yllbfu3JE2Y', 480, 270, caption='Watch the intro to combining AMP and PWA.') }}
 
 Progressive Web Apps and AMP pages work great together. In fact, in many cases, they compliment each other in one way or another. Learn how to:
 
