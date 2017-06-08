@@ -90,7 +90,9 @@ avatar: ${ item.avatar }
 date_data: ${ moment(item.date).format() }
 $date: ${ moment(item.date).format("MMMM D, YYYY") }
 $parent: ${parent}
-
+$path: /latest/blog/{base}/
+$localization:
+  path: /{locale}/latest/blog/{base}/
 components:
   - social-share
 ---
@@ -215,6 +217,7 @@ const fetchLatestAdsContent = fetchFeedAsync({
   // write the posts into their own files
   for (var post of posts) {
     writeBlogPage(post, '../content/latest/blog-ads/', '/content/latest-ads/list-blog-ads.html');
+    writeBlogPage(post, '../content/latest/blog-ads/', '/content/latest/list-blog.html');
   }
 
   // combine posts  and save into list-blog-ads.yml
