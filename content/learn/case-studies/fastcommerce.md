@@ -20,8 +20,8 @@ results:
 
 logo:
   src: "case-studies/fastcommerce_logo.png"
-  width: 850
-  height: 210
+  width: 170
+  height: 42
 download: "case-studies/fastcommerce.pdf"
 
 ---
