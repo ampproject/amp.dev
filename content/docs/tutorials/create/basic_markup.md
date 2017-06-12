@@ -51,11 +51,11 @@ AMP HTML documents MUST:
   - Contain the following in their `<head>` tag:
     `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 
-## Optional meta-data
+## Optional metadata
 
-In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but is a requirement to get your content distributed in certain places, for instance in the [Google Search news carousel demo (try on your phone)](https://g.co/ampdemo).
+In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but it is a requirement to get your content distributed in certain places, for instance in the [Google Search news carousel demo (try on your phone)](https://g.co/ampdemo).
 
-To learn more about all the meta-data you’ll need in various other places, e.g. Twitter, [explore our samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). To learn specifically about AMP in Google Search, see [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories).
+To learn more about all the metadata you’ll need in various other places (e.g., Twitter), [explore our metadata samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). To learn specifically about AMP in Google Search, see [AMP for Google Search](https://developers.google.com/amp/docs).
 
 <hr>
 
