@@ -9,7 +9,7 @@ class: case-study post-detail
 components:
   - social-share
 
-headline: Fastcommerce drives conversions for e-commerce clients by building AMP-first
+headline: Fastcommerce drives conversions for clients by building AMP-first
 results:
     - stat: 2M
       description: million AMP pages published
