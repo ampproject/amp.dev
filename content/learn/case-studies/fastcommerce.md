@@ -22,7 +22,7 @@ logo:
   src: "case-studies/fastcommerce_logo.png"
   width: 170
   height: 42
-download: "case-studies/fastcommerce.pdf"
+download: "case-studies/Fastcommerce.pdf"
 
 ---
 
