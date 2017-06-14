@@ -2,8 +2,9 @@
 $title: Include Images & Video
 $order: 1
 $category: Develop
-
 toc: true
+components:
+  - iframe
 ---
 
 [TOC]
@@ -12,7 +13,7 @@ Like on a normal HTML page, AMP allows you to embed **images**, **video** and **
 content. Learn what's different about the AMP equivalents and learn how to
 include them in your pages.
 
-## Why not `<img>`, `<video>` and `<audio>`?
+## Why not &lt;img>, &lt;video> and &lt;audio>?
 
 AMP doesn't support the default HTML counterparts to displaying media, like `<img>`.
 We provide equivalent components for the following reasons:
@@ -23,7 +24,7 @@ We provide equivalent components for the following reasons:
 effectively](/learn/about-how/#prioritize-resource-loading)
 
 {% call callout('Caution', type='caution') %}
-While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/guides/debug/validate.html) and you won't get all the benefits AMP provides.
+While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/guides/validate.html) and you won't get all the benefits AMP provides.
 {% endcall %}
 
 ## Images
@@ -31,9 +32,17 @@ While they're not supported, they *will* render, but AMP won't [validate your pa
 Include an image in your page
 using the [`amp-img`](/docs/reference/components/amp-img.html) element, like so:
 
-[sourcecode:html]
-<amp-img src="fixed.jpg" width="264" height="96"></amp-img>
-[/sourcecode]
+<!--embedded example - fixed size image -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 In this most basic example, the image will display with the specified fixed
 height and width. At minimum, an explicit width and height needs to be set.
@@ -42,26 +51,37 @@ height and width. At minimum, an explicit width and height needs to be set.
 
 As `<amp-img>` relies on JavaScript, if the user chooses to disable scripts, images won't display.  In this case, you should provide a fallback to the image using `<img>` and `<noscript>`, like so:
 
-[sourcecode:html]
-<amp-img src="fixed.jpg" width="264" height="96">
-  <noscript>
-    <img src="fixed.jpg" width="264" height="96" />
-  </noscript>
-</amp-img>
-[/sourcecode]
+<!--embedded example - img with noscript -->
+<div>
+<amp-iframe height="215"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ### Advanced layouts
 
 AMP makes it much easier than with standard CSS/HTML to create fully responsive
 images. In its most basic form, all you have to do is to add `layout="responsive"`:
 
-[sourcecode:html]
-<amp-img src="responsive.jpg" width="527" height="193" layout="responsive">
-</amp-img>
-[/sourcecode]
+<!--embedded example - basic responsive image -->
+<div>
+<amp-iframe height="193"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('Read on', type='success') %}
-Learn more about [advanced layout techniques](/docs/guides/author-develop/responsive/control_layout.html).
+Learn more about [advanced layout techniques](/docs/guides/responsive/control_layout.html).
 {% endcall %}
 
 ### Behavior and placeholders
@@ -71,7 +91,7 @@ choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
 {% call callout('Read on', type='success') %}
-Learn how to [provide fallbacks and placeholders for images](/docs/guides/author-develop/responsive/placeholders.html).
+Learn how to [provide fallbacks and placeholders for images](/docs/guides/responsive/placeholders.html).
 {% endcall %}
 
 ## Animated images
@@ -79,12 +99,17 @@ Learn how to [provide fallbacks and placeholders for images](/docs/guides/author
 The [`amp-anim`](/docs/reference/components/amp-anim.html) element is very similar to the `amp-img` element,
 and provides additional functionality to manage loading and playing of animated images such as GIFs.
 
-[sourcecode:html]
-<amp-anim width="400" height="300" src="my-gif.gif">
-  <amp-img placeholder width="400" height="300" src="my-gif-screencap.jpg">
-  </amp-img>
-</amp-anim>
-[/sourcecode]
+<!--embedded amp-anim basic example -->
+<div>
+<amp-iframe height="253"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('Note', type='note') %}
 Include `<script async custom-element="amp-anim"
@@ -103,14 +128,17 @@ at a time determined by AMP.
 Include a placeholder before the video starts, and a fallback,
 if the browser doesn't support HTML5 video, for example:
 
-[sourcecode:html]
-<amp-video width="400" height="300" src="https://yourhost.com/videos/myvideo.mp4"
-  poster="myvideo-poster.jpg">
-  <div fallback>
-    <p>Your browser doesn’t support HTML5 video</p>
-  </div>
-</amp-video>
-[/sourcecode]
+<!--embedded video example  -->
+<div>
+<amp-iframe height="234"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## Audio
 
@@ -125,15 +153,17 @@ at a time determined by AMP.
 Include a placeholder before the audio starts, and a fallback,
 if the browser doesn't support HTML5 audio, for example:
 
-[sourcecode:html]
-<amp-audio width="400" height="300" src="https://yourhost.com/audios/myaudio.mp3">
-  <div fallback>
-    <p>Your browser doesn’t support HTML5 audio</p>
-  </div>
-  <source type="audio/mpeg" src="foo.mp3">
-  <source type="audio/ogg" src="foo.ogg">
-</amp-audio>
-[/sourcecode]
+<!--embedded audio example  -->
+<div>
+<amp-iframe height="314"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('Note', type='note') %}
 Include `<script async custom-element="amp-audio"
