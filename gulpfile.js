@@ -27,6 +27,8 @@ gulp.task('build-examples', function() {
       .pipe(gulp.dest('build/examples/images/'));
   gulp.src('./examples/src/videos/*')
       .pipe(gulp.dest('build/examples/videos/'));
+    gulp.src('./examples/src/audio/*')
+      .pipe(gulp.dest('build/examples/audio/'));
 });
 
 gulp.task('import-docs', function (cb) {
