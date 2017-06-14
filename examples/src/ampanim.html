@@ -11,7 +11,14 @@
 <body>
   <!-- basic -->
   <amp-anim width="400" height="300" src="images/wavepool.gif">
-    <amp-img placeholder width="400" height="300" src="wavepool.png">
+    <amp-img placeholder width="400" height="300" src="images/wavepool.png" >
+    </amp-img>
+  </amp-anim>
+  <!-- responsive -->
+  <amp-anim src="images/wavepool.gif"
+      layout="responsive"
+      width="400" height="300">
+      <amp-img placeholder src="images/wavepool.png" layout="fill">
     </amp-img>
   </amp-anim>
 </body>
