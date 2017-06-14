@@ -9,7 +9,7 @@ Pelajari cara menyertakan komponen pihak ketiga di laman.
 ## Menyematkan Tweet
 
 Sematkan Tweet Twitter di laman
-menggunakan elemen [`amp-twitter`](/docs/reference/extended/amp-twitter.html).
+menggunakan elemen [`amp-twitter`](/docs/reference/components/amp-twitter.html).
 
 Untuk menyertakan tweet di laman,
 sertakan dahulu skrip berikut di `<head>`:
@@ -24,15 +24,17 @@ namun tindakan ini dapat menghasilkan tampilan yang kurang ideal.
 Sesuaikan lebar dan tinggi yang diberikan secara manual atau gunakan atribut media
 untuk memilih rasio aspek berdasarkan lebar layar.
 
-Misalnya `amp-twitter` dari
-[contoh twitter.amp](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html):
-
-[sourcecode:html]
-<amp-twitter width="390" height="50"
-    layout="responsive"
-    data-tweetid="638793490521001985">
-</amp-twitter>
-[/sourcecode]
+<!-- embedded twitter example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## Menyematkan Instagram
 
@@ -52,19 +54,22 @@ Misalnya, pada `https://instagram.com/p/fBwFP`,
 Instagram juga menggunakan rasio aspek tetap untuk tata letak responsif,
 sehingga nilai lebar dan tinggi harus universal
 
-[sourcecode:html]
-<amp-instagram
-    data-shortcode="fBwFP"
-    width="320"
-    height="392"
-    layout="responsive">
-</amp-instagram>
-[/sourcecode]
+<!-- embedded Instagram example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## Menampilkan pos atau video Facebook
 
 Tampilkan pos atau video Facebook di laman
-menggunakan elemen [`amp-facebook`](/docs/reference/extended/amp-facebook.html).
+menggunakan elemen [`amp-facebook`](/docs/reference/components/amp-facebook.html).
 
 Anda harus menyertakan skrip berikut di `<head>`:
 
@@ -72,29 +77,43 @@ Anda harus menyertakan skrip berikut di `<head>`:
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
-Contoh - Menyematkan pos:
+##### Contoh: Menyematkan pos
 
-[sourcecode:html]
+Sumber: 
+```html
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
-[/sourcecode]
+```
+Pratinjau: 
+<amp-facebook width="486" height="657"
+    layout="responsive"
+    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+</amp-facebook>
 
-Contoh - Menyematkan video:
+##### Contoh: Menyematkan video
 
-[sourcecode:html]
-<amp-facebook width="552" height="574"
+Sumber: 
+```html
+<amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
-    data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
-[/sourcecode]
+```
+Pratinjau: 
+<amp-facebook width="476" height="316"
+    layout="responsive"
+    data-embed-as="video"
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+</amp-facebook>
+
 
 ## Menyertakan video youtube
 
 Sertakan video youtube di laman
-menggunakan elemen [`amp-youtube`](/docs/reference/extended/amp-youtube.html).
+menggunakan elemen [`amp-youtube`](/docs/reference/components/amp-youtube.html).
 
 Anda harus menyertakan skrip berikut di `<head>`:
 
@@ -103,23 +122,27 @@ Anda harus menyertakan skrip berikut di `<head>`:
 [/sourcecode]
 
 `data-videoid` Youtube dapat ditemukan di setiap URL laman video Youtube.
-Misalnya, pada https://www.youtube.com/watch?v=Z1q71gFeRqM,
-Z1q71gFeRqM adalah ID videonya.
+Misalnya, pada `https://www.youtube.com/watch?v=Z1q71gFeRqM`,
+`Z1q71gFeRqM` adalah ID videonya.
 
 Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk video dengan rasio aspek 16:9:
 
-[sourcecode:html]
-<amp-youtube
-    data-videoid="mGENRKrdoGY"
-    layout="responsive"
-    width="480" height="270">
-</amp-youtube>
-[/sourcecode]
+<!-- embedded youtube example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## Menampilkan iklan
 
 Tampilkan iklan di laman
-menggunakan elemen [`amp-ad`](/docs/reference/amp-ad.html).
+menggunakan elemen [`amp-ad`](/docs/reference/components/amp-ad.html).
 Hanya iklan yang ditayangkan melalui HTTPS yang didukung.
 
 Tidak ada JavaScript yang disediakan jaringan iklan yang diizinkan untuk berjalan di dalam dokumen AMP.
@@ -131,27 +154,32 @@ Anda harus menentukan lebar, tinggi, dan jenis jaringan iklan.
 `type` mengidentifikasi template jaringan iklan.
 Jenis iklan yang berbeda membutuhkan atribut `data-*` yang berbeda.
 
-[sourcecode:html]
-<amp-ad width="300" height="250"
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="212"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 Jika didukung oleh jaringan iklan,
 sertakan `placeholder`
 untuk ditampilkan jika tidak ada iklan yang tersedia:
 
-[sourcecode:html]
-<amp-ad width="300" height="250"
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-  <div placeholder>Have a great day!</div>
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="232"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
-AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](/docs/reference/amp-ad.html#supported-ad-networks).
+AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](/docs/reference/components/amp-ad.html#supported-ad-networks).

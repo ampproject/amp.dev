@@ -8,7 +8,7 @@ Sayfalarınıza üçüncü taraf bileşenlerini nasıl ekleyeceğinizi öğrenin
 
 ## Tweet Yerleştirme
 
-[`amp-twitter`](/docs/reference/extended/amp-twitter.html) öğesini kullanarak bir Twitter Tweet'ini sayfanıza yerleştirebilirsiniz.
+[`amp-twitter`](/docs/reference/components/amp-twitter.html) öğesini kullanarak bir Twitter Tweet'ini sayfanıza yerleştirebilirsiniz.
 
 Sayfanıza tweet eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
@@ -19,18 +19,22 @@ Sayfanıza tweet eklemek için öncelikle aşağıdaki komut dosyasını `<head>
 Şu anda tweet'ler, sağlanan boyuta sığmaları için otomatik olarak belirli bir oranda ölçeklenmektedir, ancak bu ideal bir görünüm sağlamayabilir.
 Sağlanan genişliği ve yüksekliği manuel olarak değiştirebilir veya en boy oranını, ekran genişliğine göre seçmek için medya özniteliğini kullanabilirsiniz.
 
-[twitter.amp örneğindeki](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html) `amp-twitter` örneği:
+<!-- embedded twitter example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
-[sourcecode:html]
-<amp-twitter width=390 height=50
-    layout="responsive"
-    data-tweetid="638793490521001985">
-</amp-twitter>
-[/sourcecode]
 
 ## Instagram Fotoğrafı Yerleştirme
 
-[`amp-instagram`](/docs/reference/extended/amp-instagram.html) öğesini kullanarak bir Instagram fotoğrafını sayfanıza yerleştirebilirsiniz.
+[`amp-instagram`](/docs/reference/components/amp-instagram.html) öğesini kullanarak bir Instagram fotoğrafını sayfanıza yerleştirebilirsiniz.
 
 Bir Instagram fotoğrafını sayfanıza eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
@@ -41,18 +45,22 @@ Bir Instagram fotoğrafını sayfanıza eklemek için öncelikle aşağıdaki ko
 Instagram fotoğrafı URL'sinde bulunan Instagram kısa veri kodunu ekleyin. Örneğin, `https://instagram.com/p/fBwFP` URL'sindeki `fBwFP`, veri kısa kodudur.
 Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. Bu yüzden, genişlik ve yükseklik değeri evrensel olmalıdır
 
-[sourcecode:html]
-<amp-instagram
-    data-shortcode="fBwFP"
-    width="320"
-    height="392"
-    layout="responsive">
-</amp-instagram>
-[/sourcecode]
+<!-- embedded Instagram example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
+
 
 ## Facebook yayını veya videosu gösterme
 
-[`amp-facebook`](/docs/reference/extended/amp-facebook.html) öğesini kullanarak bir Facebook yayınını veya videosunu sayfanızda gösterebilirsiniz.
+[`amp-facebook`](/docs/reference/components/amp-facebook.html) öğesini kullanarak bir Facebook yayınını veya videosunu sayfanızda gösterebilirsiniz.
 
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
@@ -60,28 +68,41 @@ Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
-Örnek - Yayın yerleştirme:
+##### Örnek - Yayın yerleştirme
 
-[sourcecode:html]
-<amp-facebook width=486 height=657
+Source: 
+```html
+<amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
-[/sourcecode]
+```
+Preview: 
+<amp-facebook width="486" height="657"
+    layout="responsive"
+    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+</amp-facebook>
 
-Örnek - Video yerleştirme:
+##### Örnek - Video yerleştirme
 
-[sourcecode:html]
-<amp-facebook width=552 height=574
+Source: 
+```html
+<amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
-    data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
-[/sourcecode]
+```
+Preview: 
+<amp-facebook width="476" height="316"
+    layout="responsive"
+    data-embed-as="video"
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+</amp-facebook>
 
 ## YouTube videosu ekleme
 
-[`amp-youtube`](/docs/reference/extended/amp-youtube.html) öğesini kullanarak bir YouTube videosunu sayfanıza ekleyebilirsiniz.
+[`amp-youtube`](/docs/reference/components/amp-youtube.html) öğesini kullanarak bir YouTube videosunu sayfanıza ekleyebilirsiniz.
 
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
@@ -93,17 +114,21 @@ Youtube `data-videoid` kodunu her YouTube video sayfası URL'sinde bulabilirsini
 
 16:9 en boy oranlı videolar için doğru düzenleri sağlamak üzere `layout="responsive"` kodunu kullanın:
 
-[sourcecode:html]
-<amp-youtube
-    data-videoid="mGENRKrdoGY"
-    layout="responsive"
-    width="480" height="270">
-</amp-youtube>
-[/sourcecode]
+<!-- embedded youtube example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## Reklam gösterme
 
-[`amp-ad`](/docs/reference/amp-ad.html) öğesini kullanarak sayfanızda bir reklam gösterin.
+[`amp-ad`](/docs/reference/components/amp-ad.html) öğesini kullanarak sayfanızda bir reklam gösterin.
 Yalnızca HTTPS aracılığıyla sunulan reklamlar desteklenir.
 
 Reklam ağları tarafından sağlanan JavaScript'in AMP dokümanı içinde çalıştırılmasına izin verilmez.
@@ -113,25 +138,30 @@ Reklam genişliği ve yüksekliği ile reklam ağı türünü belirtmeniz gereki
 `type`, reklam ağının şablonunu tanımlar.
 Farklı reklam türleri, farklı `data-*` öznitelikleri gerektirir.
 
-[sourcecode:html]
-<amp-ad width=300 height=250
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="212"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 Reklam ağı tarafından destekleniyorsa, kullanılabilir reklam olmadığında gösterilmesi için bir `placeholder` ekleyin:
 
-[sourcecode:html]
-<amp-ad width=300 height=250
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-  <div placeholder>Have a great day!</div>
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="232"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
-AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa](/docs/reference/amp-ad.html#supported-ad-networks) bakın.
+AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa](/docs/reference/components/amp-ad.html#supported-ad-networks) bakın.
