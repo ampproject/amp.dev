@@ -8,7 +8,7 @@ $title: Как добавлять сторонний контент
 
 ## Как добавлять твиты
 
-При публикации твитов на своих страницах используйте элемент [`amp-twitter`](/docs/reference/extended/amp-twitter.html).
+При публикации твитов на своих страницах используйте элемент [`amp-twitter`](/docs/reference/components/amp-twitter.html).
 
 Для этого разместите между тегами `<head>` следующий скрипт:
 
@@ -19,18 +19,21 @@ $title: Как добавлять сторонний контент
 В результате пропорции твита будут изменены автоматически в соответствии с заданными вами размерами, однако его внешний вид может быть неоптимальным.
 В этом случае вручную укажите более подходящие значения ширины и высоты твита или используйте атрибут media, чтобы соотношение сторон менялось в зависимости от ширины экрана.
 
-Пример использования элемента `amp-twitter` в коде [twitter.amp](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html):
-
-[sourcecode:html]
-<amp-twitter width=390 height=50
-    layout="responsive"
-    data-tweetid="638793490521001985">
-</amp-twitter>
-[/sourcecode]
+<!-- embedded twitter example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## Как добавлять изображения из Instagram
 
-При публикации изображений из Instagram на своих страницах используйте элемент [`amp-instagram`](/docs/reference/extended/amp-instagram.html).
+При публикации изображений из Instagram на своих страницах используйте элемент [`amp-instagram`](/docs/reference/components/amp-instagram.html).
 
 Для этого разместите между тегами `<head>` следующий скрипт:
 
@@ -41,18 +44,21 @@ $title: Как добавлять сторонний контент
 Затем вставьте код data-shortcode из URL изображения. Например, в URL `https://instagram.com/p/fBwFP` он выглядит так: `fBwFP`.
 В адаптивных макетах Instagram используется фиксированное соотношение сторон, поэтому значения ширины и высоты должны быть соответствующими:
 
-[sourcecode:html]
-<amp-instagram
-    data-shortcode="fBwFP"
-    width="320"
-    height="392"
-    layout="responsive">
-</amp-instagram>
-[/sourcecode]
+<!-- embedded Instagram example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## Как добавлять записи или видео Facebook
 
-При публикации записей или видео Facebook на своих страницах используйте элемент [`amp-facebook`](/docs/reference/extended/amp-facebook.html).
+При публикации записей или видео Facebook на своих страницах используйте элемент [`amp-facebook`](/docs/reference/components/amp-facebook.html).
 
 Для этого разместите между тегами `<head>` следующий скрипт:
 
@@ -60,28 +66,41 @@ $title: Как добавлять сторонний контент
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
-Пример кода для добавления записи Facebook:
+##### Пример кода для добавления записи Facebook
 
-[sourcecode:html]
-<amp-facebook width=486 height=657
+Source: 
+```html
+<amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
-[/sourcecode]
+```
+Preview: 
+<amp-facebook width="486" height="657"
+    layout="responsive"
+    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+</amp-facebook>
 
-Пример кода для добавления видео Facebook:
+##### Пример кода для добавления видео Facebook
 
-[sourcecode:html]
-<amp-facebook width=552 height=574
+Source: 
+```html
+<amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
-    data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
-[/sourcecode]
+```
+Preview: 
+<amp-facebook width="476" height="316"
+    layout="responsive"
+    data-embed-as="video"
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+</amp-facebook>
 
 ## Как добавлять видео YouTube
 
-При публикации видео YouTube на своих страницах используйте элемент [`amp-youtube`](/docs/reference/extended/amp-youtube.html).
+При публикации видео YouTube на своих страницах используйте элемент [`amp-youtube`](/docs/reference/components/amp-youtube.html).
 
 Для этого разместите между тегами `<head>` следующий скрипт:
 
@@ -89,21 +108,25 @@ $title: Как добавлять сторонний контент
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
-Идентификатор `data-videoid` содержится в URL каждого видео YouTube. Например, в URL https://www.youtube.com/watch?v=Z1q71gFeRqM он выглядит так: Z1q71gFeRqM.
+Идентификатор `data-videoid` содержится в URL каждого видео YouTube. Например, в URL `https://www.youtube.com/watch?v=Z1q71gFeRqM` он выглядит так: `Z1q71gFeRqM`.
 
 Добавьте элемент `layout="responsive"`, чтобы макеты для видео с соотношением сторон 16:9 создавались корректно:
 
-[sourcecode:html]
-<amp-youtube
-    data-videoid="mGENRKrdoGY"
-    layout="responsive"
-    width="480" height="270">
-</amp-youtube>
-[/sourcecode]
+<!-- embedded youtube example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## Как добавлять объявления
 
-При публикации объявлений на своих страницах используйте элемент [`amp-ad`](/docs/reference/amp-ad.html).
+При публикации объявлений на своих страницах используйте элемент [`amp-ad`](/docs/reference/components/amp-ad.html).
 Помните о том, что поддерживаются только объявления, использующие протокол HTTPS.
 
 Код JavScript, предоставляемый рекламными сетями, запрещено обрабатывать непосредственно в документах AMP,
@@ -113,25 +136,30 @@ $title: Как добавлять сторонний контент
 а также тип рекламной сети с помощью атрибута `type`, который определяет ее шаблон.
 У разных типов объявлений должны быть различные атрибуты `data-*`.
 
-[sourcecode:html]
-<amp-ad width=300 height=250
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="212"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 Если показ объявлений выполнить нельзя, но рекламная сеть поддерживает атрибут `placeholder`, вставьте его, чтобы проверить код:
 
-[sourcecode:html]
-<amp-ad width=300 height=250
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-  <div placeholder>Have a great day!</div>
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="232"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
-Технология AMP поддерживает множество рекламных сетей. Ознакомьтесь с их [полным списком](/docs/reference/amp-ad.html#supported-ad-networks).
+Технология AMP поддерживает множество рекламных сетей. Ознакомьтесь с их [полным списком](/docs/reference/components/amp-ad.html#supported-ad-networks).
