@@ -9,7 +9,7 @@ toc: true
 
 Utilice el atributo `srcset` para controlar los elementos
 basado en expresiones de medios variables
-En particular, utilícelo para todas las etiquetas [`amp-img`](/es/docs/reference/amp-img.html) 
+En particular, utilícelo para todas las etiquetas [`amp-img`](/es/docs/reference/components/amp-img.html) 
 para especificar cuál imagen se usará basedo en la variedad de tamaños de pantalla.
 
 En este ejemplo simple, 
@@ -17,13 +17,17 @@ En este ejemplo simple,
 El descriptor `w` le dice al navegador el ancho 
 de cada imagen en la lista:
 
-[sourcecode:html]
-<amp-img
-    src="wide.jpg" width="640" height="480"
-    srcset="wide.jpg 640w,
-           narrow.jpg 320w">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using srcset -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('Nota', type='note') %}
 AMP soporta srcset con el descriptor `w` en todos los navegadores web.
@@ -42,14 +46,17 @@ el agente de usuario selecciona la fuente más relativa suministrada por el atri
 
 Considere el siguiente ejemplo:
 
-[sourcecode:html]
-<amp-img
-    src="wide.jpg" width="640" height="480"
-    srcset="wide.jpg 640w,
-           narrow.jpg 320w"
-    sizes="(min-width: 650px) 50vw, 100vw">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using sizes -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 El atributo `sizes` define el ancho del elemento como 50% del tamaño de la ventana gráfica
 cuando la ventana es de 650px o más.
@@ -83,12 +90,17 @@ Cuando el atributo `heights` es especificado junto con `width` y `height`, el `l
 
 Un ejemplo:
 
-[sourcecode:html]
-<amp-img src="https://acme.org/image1.png"
-    width="320" height="256"
-    heights="(min-width:500px) 200px, 80%">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using heights -->
+<div>
+<amp-iframe height="193"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 En este ejemplo, la altura del elemento por defecto será del 80% del ancho, pero para la ventana de visualización
 más ancha que `500px` estará limitada a `200px`.
