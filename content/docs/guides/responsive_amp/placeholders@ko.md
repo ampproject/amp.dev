@@ -18,11 +18,17 @@ toc: true
 특정 요소에 `placeholder` 속성을 정의하면 부모 AMP 요소의 플레이스홀더로 동작합니다.
 만약 정의한다면, `placeholder` 요소는 AMP 요소의 직계 자식 요소여야 합니다.
 
-[sourcecode:html]
-<amp-anim src="animated.gif" width=466 height=355 layout="responsive">
-    <amp-img placeholder src="preview.png" layout="fill"></amp-img>
-</amp-anim>
-[/sourcecode]
+<!--embedded amp-anim responsive example -->
+<div>
+<amp-iframe height="253"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 기본적으로, AMP 요소의 리소스가 다운로드되거나 초기화되지 않았더라도,
 플레이스홀더는 AMP 요소를 위해 즉시 나타납니다.
@@ -38,14 +44,17 @@ AMP 요소가 준비되면, 플레이스홀더를 가리고 컨텐츠를 나타�
 예를 들어, `fallback` 속성을 사용하면 특정 특성을 지원하지 않는 브라우저를 사용하는 유저에게 적절한 대체 정보를 제공할 수 있습니다.
 
 
-[sourcecode:html]
-<amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
-    poster="myvideo-poster.jpg">
-  <div fallback>
-    <p>브라우저에서 HTML5를 지원하지 않습니다.</p>
-  </div>
-</amp-video>
-[/sourcecode]
+<!--embedded video example  -->
+<div>
+<amp-iframe height="234"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 AMP 요소가 아닌 일반 HTML 요소에 `fallback` 속성을 정의할 수 있습니다.
 만약 정의한다면, `fallback` 요소는 AMP 요소의 직계 자식 요소여야 합니다.
