@@ -7,7 +7,7 @@ In some cases, you might want to have both a non-AMP and an AMP version of the s
 
 ## Linking pages with `<link>`
 
-In order to establish that a non-AMP page and an AMP page should be treated as being "paired" together, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
+To establish that a non-AMP page and an AMP page should be treated as being "paired" together, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
 
 Add the following to the non-AMP page:
 
@@ -15,7 +15,7 @@ Add the following to the non-AMP page:
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-And this to the AMP page
+And this to the AMP page:
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
@@ -28,5 +28,9 @@ If you only have one page, and that page is an AMP page, you must still add the 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
+
+{% call callout('Read on', type='read') %}
+Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
+{% endcall %}
 
 <a class="go-button button" href="/docs/tutorials/create/publish.html">Continue to Step 6</a>
