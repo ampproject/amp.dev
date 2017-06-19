@@ -130,7 +130,6 @@ AMP 페이지는 커스텀 폰트를 제외한 외부 스타일 시트를 포함
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
 
