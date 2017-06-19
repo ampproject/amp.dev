@@ -14,22 +14,27 @@ hero:
 
 cards:
   - name: Publishers
+    filename: publishers
     cta: Learn More
     icon: who_icon_publishers.svg
 
   # - name: SMB
+  #   filename: smb
   #   cta: Learn More
   #   icon: card_smb.svg
 
   - name: Ad Tech Platforms
+    filename: ad-tech-platforms
     cta: Learn More
     icon: who_icon_adtech.svg
 
   - name: Advertisers
+    filename: advertisers
     cta: Learn More
     icon: who_icon_advertisers.svg
 
   # - name: Developers
+  #   filename: developers
   #   cta: Learn More
   #   icon: card_developers.svg
 
