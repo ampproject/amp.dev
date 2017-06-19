@@ -13,23 +13,28 @@ hero:
   triangle_img: hero_triangle.png
 
 cards:
-  - name: Publishers
+  - name: Editores
+    filename: publishers
     cta: Aprender Más
     icon: who_icon_publishers.svg
 
   # - name: SMB
+  #   filename: smb
   #   cta: Learn More
   #   icon: card_smb.svg
 
-  - name: Ad Tech Platforms
+  - name: Plataformas Tecnológicas de Anuncios
+    filename: ad-tech-platforms
     cta: Aprender Más
     icon: who_icon_adtech.svg
 
-  - name: Advertisers
+  - name: Anunciantes
+    filename: advertisers
     cta: Aprender Más
     icon: who_icon_advertisers.svg
 
   # - name: Developers
+  #   filename: developers
   #   cta: Learn More
   #   icon: card_developers.svg
 

@@ -12,23 +12,28 @@ hero:
   triangle_img: hero_triangle.png
 
 cards:
-  - name: Publishers
+  - name: 게시자
+    filename: publishers
     cta: 더 알아보기
     icon: who_icon_publishers.svg
 
   # - name: SMB
+  #   filename: smb
   #   cta: Learn More
   #   icon: card_smb.svg
 
-  - name: Ad Tech Platforms
+  - name: 광고 기술 플랫폼
+    filename: ad-tech-platforms
     cta: 더 알아보기
     icon: who_icon_adtech.svg
 
-  - name: Advertisers
+  - name: 광고게시자
+    filename: advertisers
     cta: 더 알아보기
     icon: who_icon_advertisers.svg
 
   # - name: Developers
+  #   filename: developers
   #   cta: Learn More
   #   icon: card_developers.svg
 
