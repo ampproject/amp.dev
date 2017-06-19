@@ -9,7 +9,7 @@ $title: รวมเนื้อหาของบุคคลที่สาม
 ## ฝังทวีต
 
 ฝังทวีตของ Twitter ในหน้าเว็บ
-โดยใช้องค์ประกอบ [`amp-twitter`](/docs/reference/extended/amp-twitter.html)
+โดยใช้องค์ประกอบ [`amp-twitter`](/docs/reference/components/amp-twitter.html)
 
 หากต้องการรวมทวีตไว้ในหน้าเว็บ
 ก่อนอื่น ให้ใส่สคริปต์ต่อไปนี้ใน `<head>`
@@ -24,20 +24,22 @@ $title: รวมเนื้อหาของบุคคลที่สาม
 โปรดปรับเปลี่ยนความกว้างและความสูงที่ระบุไว้ด้วยตัวเองหรือใช้แอตทริบิวต์สื่อ
 เพื่อเลือกอัตราส่วนตามความกว้างของหน้าจอ
 
-ตัวอย่าง `amp-twitter` จาก
-[ตัวอย่าง twitter.amp](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html)
-
-[sourcecode:html]
-<amp-twitter width=390 height=50
-    layout="responsive"
-    data-tweetid="638793490521001985">
-</amp-twitter>
-[/sourcecode]
+<!-- embedded twitter example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## ฝัง Instagram
 
 ฝัง Instagram ในหน้าเว็บ
-โดยใช้องค์ประกอบ [`amp-instagram`](/docs/reference/extended/amp-instagram.html)
+โดยใช้องค์ประกอบ [`amp-instagram`](/docs/reference/components/amp-instagram.html)
 
 หากต้องการรวม Instagram ไว้ด้วย
 ก่อนอื่น ให้ใส่สคริปต์ต่อไปนี้ใน `<head>`
@@ -52,19 +54,22 @@ $title: รวมเนื้อหาของบุคคลที่สาม
 นอกจากนี้ Instagram จะใช้อัตราส่วนคงที่สำหรับเค้าโครงแบบตอบสนองตามอุปกรณ์
 ดังนั้น ค่าของความกว้างและความสูงควรจะใช้ได้ในทุกที่
 
-[sourcecode:html]
-<amp-instagram
-    data-shortcode="fBwFP"
-    width="320"
-    height="392"
-    layout="responsive">
-</amp-instagram>
-[/sourcecode]
+<!-- embedded Instagram example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## แสดงโพสต์หรือวิดีโอ Facebook
 
 แสดงโพสต์หรือวิดีโอ Facebook ในหน้าเว็บ
-โดยใช้องค์ประกอบ [`amp-facebook`](/docs/reference/extended/amp-facebook.html)
+โดยใช้องค์ประกอบ [`amp-facebook`](/docs/reference/components/amp-facebook.html)
 
 คุณต้องใส่สคริปต์ต่อไปนี้ใน `<head>`
 
@@ -72,29 +77,42 @@ $title: รวมเนื้อหาของบุคคลที่สาม
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
-ตัวอย่าง - การฝังโพสต์
+##### ตัวอย่าง - การฝังโพสต์
 
-[sourcecode:html]
-<amp-facebook width=486 height=657
+Source: 
+```html
+<amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
-[/sourcecode]
+```
+Preview: 
+<amp-facebook width="486" height="657"
+    layout="responsive"
+    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+</amp-facebook>
 
-ตัวอย่าง - การฝังวิดีโอ
+##### ตัวอย่าง - การฝังวิดีโอ
 
-[sourcecode:html]
-<amp-facebook width=552 height=574
+Source: 
+```html
+<amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
-    data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
-[/sourcecode]
+```
+Preview: 
+<amp-facebook width="476" height="316"
+    layout="responsive"
+    data-embed-as="video"
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+</amp-facebook>
 
 ## รวมวิดีโอ YouTube
 
 รวมวิดีโอ YouTube ในหน้าเว็บ
-โดยใช้องค์ประกอบ [`amp-youtube`](/docs/reference/extended/amp-youtube.html)
+โดยใช้องค์ประกอบ [`amp-youtube`](/docs/reference/components/amp-youtube.html)
 
 คุณต้องใส่สคริปต์ต่อไปนี้ใน `<head>`
 
@@ -108,18 +126,22 @@ Z1q71gFeRqM เป็นรหัสวิดีโอ
 
 ใช้ `layout="responsive"` เพื่อแสดงเค้าโครงที่ถูกต้องสำหรับวิดีโออัตราส่วน 16:9 ดังนี้
 
-[sourcecode:html]
-<amp-youtube
-    data-videoid="mGENRKrdoGY"
-    layout="responsive"
-    width="480" height="270">
-</amp-youtube>
-[/sourcecode]
+<!-- embedded youtube example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## แสดงโฆษณา
 
 แสดงโฆษณาในหน้าเว็บ
-โดยใช้องค์ประกอบ [`amp-ad`](/docs/reference/amp-ad.html)
+โดยใช้องค์ประกอบ [`amp-ad`](/docs/reference/components/amp-ad.html)
 ระบบรองรับเฉพาะโฆษณาที่แสดงผ่าน HTTPS เท่านั้น
 
 ไม่อนุญาตให้ JavaScript ที่เครือข่ายโฆษณาจัดหาให้ทำงานภายในเอกสาร AMP
@@ -131,27 +153,32 @@ Z1q71gFeRqM เป็นรหัสวิดีโอ
 `type` จะระบุเทมเพลตของเครือข่ายโฆษณา
 ประเภทโฆษณาที่ต่างกันต้องใช้แอตทริบิวต์ `data-*` ต่างกัน
 
-[sourcecode:html]
-<amp-ad width=300 height=250
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="212"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 หากเครือข่ายโฆษณารองรับ
 ให้รวม `placeholder`
 เพื่อแสดงถ้าไม่มีโฆษณาให้ใช้งาน
 
-[sourcecode:html]
-<amp-ad width=300 height=250
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-  <div placeholder>Have a great day!</div>
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="232"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
-AMP รองรับเครือข่ายโฆษณาหลากหลายประเภท ดู[ข้อมูลอ้างอิงสำหรับรายการทั้งหมด](/docs/reference/amp-ad.html#supported-ad-networks)
+AMP รองรับเครือข่ายโฆษณาหลากหลายประเภท ดู[ข้อมูลอ้างอิงสำหรับรายการทั้งหมด](/docs/reference/components/amp-ad.html#supported-ad-networks)

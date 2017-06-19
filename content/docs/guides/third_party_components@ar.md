@@ -9,7 +9,7 @@ $title: تضمين المحتوى من جهات خارجية
 ## تضمين تغريدة
 
 يمكنك تضمين إحدى تغريدات Twitter في صفحتك
-باستخدام العنصر [`amp-twitter`](/docs/reference/extended/amp-twitter.html).
+باستخدام العنصر [`amp-twitter`](/docs/reference/components/amp-twitter.html).
 
 لتضمين تغريدة في صفحتك،
 عليك أولاً بتضمين النص البرمجي التالي في `<head>`:
@@ -24,20 +24,22 @@ $title: تضمين المحتوى من جهات خارجية
 يمكنك تعديل العرض والارتفاع المقدمين يدويًا أو استخدام سمة الوسائط
 لتحديد نسبة العرض إلى الارتفاع بناءً على عرض الشاشة.
 
-مثال لـ `amp-twitter` من
-[مثال twitter.amp](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html):
-
-[sourcecode:html]
-<amp-twitter width="390" height="50"
-    layout="responsive"
-    data-tweetid="638793490521001985">
-</amp-twitter>
-[/sourcecode]
+<!-- embedded twitter example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## تضمين Instagram
 
 يمكنك تضمين Instagram في صفحتك
-باستخدام العنصر <a href="/docs/reference/extended/amp-instagram.html">`amp-instagram`</a>.
+باستخدام العنصر <a href="/docs/reference/components/amp-instagram.html">`amp-instagram`</a>.
 
 لتضمين Instagram،
 عليك أولاً بتضمين النص البرمجي التالي في `<head>`:
@@ -52,19 +54,22 @@ $title: تضمين المحتوى من جهات خارجية
 كما يستخدم Instagram أيضًا نسبة ثابتة للعرض إلى الارتفاع للتنسيقات سريعة الاستجابة،
 وهكذا يجب أن تكون قيمة العرض والارتفاع عامة.
 
-[sourcecode:html]
-<amp-instagram
-    data-shortcode="fBwFP"
-    width="320"
-    height="392"
-    layout="responsive">
-</amp-instagram>
-[/sourcecode]
+<!-- embedded Instagram example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## عرض مشاركة أو فيديو Facebook
 
 يمكنك عرض مشاركة أو فيديو Facebook في صفحتك
-باستخدام العنصر [`amp-facebook`](/docs/reference/extended/amp-facebook.html).
+باستخدام العنصر [`amp-facebook`](/docs/reference/components/amp-facebook.html).
 
 يجب تضمين النص البرمجي التالي في `<head>`:
 
@@ -72,29 +77,42 @@ $title: تضمين المحتوى من جهات خارجية
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
-مثال - تضمين مشاركة:
+##### مثال - تضمين مشاركة
 
-[sourcecode:html]
-<amp-facebook width=486 height=657
+مصدر الرمز:
+```html
+<amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
-[/sourcecode]
+```
+معاينة:
+<amp-facebook width="486" height="657"
+    layout="responsive"
+    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+</amp-facebook>
 
-مثال - تضمين فيديو:
+##### مثال - تضمين فيديو
 
-[sourcecode:html]
-<amp-facebook width=552 height=574
+مصدر الرمز:
+```html
+<amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
-    data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
-[/sourcecode]
+```
+معاينة:
+<amp-facebook width="476" height="316"
+    layout="responsive"
+    data-embed-as="video"
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+</amp-facebook>
 
 ## تضمين فيديو youtube
 
 يمكنك تضمين فيديو youtube في صفحتك
-باستخدام العنصر <a href="/docs/reference/extended/amp-youtube.html">`amp-youtube`</a>.
+باستخدام العنصر <a href="/docs/reference/components/amp-youtube.html">`amp-youtube`</a>.
 
 يجب تضمين النص البرمجي التالي في `<head>`:
 
@@ -103,23 +121,27 @@ $title: تضمين المحتوى من جهات خارجية
 [/sourcecode]
 
 يمكن العثور على مُعرّف `data-videoid` لموقع Youtube في كل عنوان URL لصفحة فيديو على Youtube.
-فمثلاً، في https://www.youtube.com/watch?v=Z1q71gFeRqM،
-يكون Z1q71gFeRqM هو معرّف الفيديو.
+فمثلاً، في `https://www.youtube.com/watch?v=Z1q71gFeRqM`،
+يكون `Z1q71gFeRqM` هو معرّف الفيديو.
 
 استخدم `layout="responsive"` لعرض التنسيقات الصحيحة لمقاطع الفيديو بنسبة عرض إلى ارتفاع تبلغ 16:9:
 
-[sourcecode:html]
-<amp-youtube
-    data-videoid="mGENRKrdoGY"
-    layout="responsive"
-    width="480" height="270">
-</amp-youtube>
-[/sourcecode]
+<!-- embedded youtube example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## عرض أحد الإعلانات
 
 يمكنك عرض إعلان في صفحتك
-باستخدام العنصر <a href="/docs/reference/amp-ad.html">`amp-ad`</a>.
+باستخدام العنصر <a href="/docs/reference/components/amp-ad.html">`amp-ad`</a>.
 والإعلانات المعروضة من خلال HTTPS هي وحدها المعتمدة.
 
 غير مسموح بتشغيل جافا سكريبت مقدمة من شبكة إعلانية داخل مستند AMP.
@@ -131,27 +153,32 @@ $title: تضمين المحتوى من جهات خارجية
 ويُحدد `type` نموذج الشبكة الإعلانية.
 وتتطلب أنواع الإعلانات المختلفة سمات `data-*` مختلفة.
 
-[sourcecode:html]
-<amp-ad width="300" height="250"
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="212"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 إذا كان ذلك متاحًا من الشبكة،
 يمكنك تضمين `placeholder`
 لعرضه إذا لم يكن الإعلان متاحًا:
 
-[sourcecode:html]
-<amp-ad width="300" height="250"
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-  <div placeholder>Have a great day!</div>
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="232"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
-يتوافق AMP مع مجموعة كبيرة من الشبكات الإعلانية. راجع [إشارة إلى قائمة كاملة](/docs/reference/amp-ad.html#supported-ad-networks).
+يتوافق AMP مع مجموعة كبيرة من الشبكات الإعلانية. راجع [إشارة إلى قائمة كاملة](/docs/reference/components/amp-ad.html#supported-ad-networks).

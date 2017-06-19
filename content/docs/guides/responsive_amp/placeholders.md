@@ -2,6 +2,8 @@
 $title: Placeholders & fallbacks
 $order: 3
 toc: true
+components:
+  - iframe
 ---
 [TOC]
 
@@ -17,11 +19,17 @@ as a placeholder for the parent AMP element.
 If specified, a `placeholder` element must be a direct child of the AMP element.
 An element marked as a `placeholder` will always `fill` the parent AMP element.
 
-[sourcecode:html]
-<amp-anim src="animated.gif" width=466 height=355 layout="responsive">
-    <amp-img placeholder src="preview.png" layout="fill"></amp-img>
-</amp-anim>
-[/sourcecode]
+<!--embedded amp-anim responsive example -->
+<div>
+<amp-iframe height="253"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 By default, the placeholder is immediately shown for the AMP element,
 even if the AMP element's resources have not been downloaded or initialized.
@@ -39,14 +47,17 @@ for any element the browser doesn’t support.
 For example, use the `fallback` attribute to communicate to the user
 that the browser doesn’t support a particular feature:
 
-[sourcecode:html]
-<amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
-    poster="myvideo-poster.jpg">
-  <div fallback>
-    <p>Your browser doesn’t support HTML5 video.</p>
-  </div>
-</amp-video>
-[/sourcecode]
+<!--embedded video example  -->
+<div>
+<amp-iframe height="234"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 The `fallback` attribute can be set on any HTML element, not just AMP elements.
 If specified, the `fallback` element must be a direct child of the AMP element.

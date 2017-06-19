@@ -8,7 +8,7 @@ $title: 包含第三方内容
 
 ## 嵌入 Twitter 微博
 
-您可以使用 [`amp-twitter`](/docs/reference/extended/amp-twitter.html) 元素在您的网页中嵌入 Twitter 微博。
+您可以使用 [`amp-twitter`](/docs/reference/components/amp-twitter.html) 元素在您的网页中嵌入 Twitter 微博。
 
 要在网页中包含 Twitter 微博，请先在 `<head>` 中添加以下脚本：
 
@@ -18,18 +18,21 @@ $title: 包含第三方内容
 
 目前，Twitter 微博可自动按比例调整以适应指定尺寸，不过外观的效果可能不太理想。您可以手动调整指定的宽度和高度，也可以使用媒体属性以根据屏幕宽度选择宽高比。
 
-来自 [twitter.amp 示例](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html)的示例 `amp-twitter`：
-
-[sourcecode:html]
-<amp-twitter width=390 height=50
-    layout="responsive"
-    data-tweetid="638793490521001985">
-</amp-twitter>
-[/sourcecode]
+<!-- embedded twitter example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## 嵌入 Instagram
 
-您可以使用 [`amp-instagram`](/docs/reference/extended/amp-instagram.html) 元素在您的网页中嵌入 Instagram。
+您可以使用 [`amp-instagram`](/docs/reference/components/amp-instagram.html) 元素在您的网页中嵌入 Instagram。
 
 要包含 Instagram，请先在 `<head>` 中添加以下脚本：
 
@@ -39,18 +42,21 @@ $title: 包含第三方内容
 
 包含 Instagram 照片网址中的 Instagram data-shortcode。例如，在 `https://instagram.com/p/fBwFP` 中，`fBwFP` 是 data-shortcode。此外，Instagram 使用固定宽高比来创建自适应布局，因此宽度和高度值应该是通用的
 
-[sourcecode:html]
-<amp-instagram
-    data-shortcode="fBwFP"
-    width="320"
-    height="392"
-    layout="responsive">
-</amp-instagram>
-[/sourcecode]
+<!-- embedded Instagram example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## 显示 Facebook 帖子或视频
 
-您可以使用 [`amp-facebook`](/docs/reference/extended/amp-facebook.html) 元素在您的网页中显示 Facebook 帖子或视频。
+您可以使用 [`amp-facebook`](/docs/reference/components/amp-facebook.html) 元素在您的网页中显示 Facebook 帖子或视频。
 
 您必须在 `<head>` 中添加以下脚本：
 
@@ -58,28 +64,41 @@ $title: 包含第三方内容
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
-示例 - 嵌入帖子：
+##### 示例 - 嵌入帖子
 
-[sourcecode:html]
-<amp-facebook width=486 height=657
+Source: 
+```html
+<amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
-[/sourcecode]
+```
+Preview: 
+<amp-facebook width="486" height="657"
+    layout="responsive"
+    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+</amp-facebook>
 
-示例 - 嵌入视频：
+##### 示例 - 嵌入视频
 
-[sourcecode:html]
-<amp-facebook width=552 height=574
+Source: 
+```html
+<amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
-    data-href="https://www.facebook.com/zuck/videos/10102509264909801/">
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
-[/sourcecode]
+```
+Preview: 
+<amp-facebook width="476" height="316"
+    layout="responsive"
+    data-embed-as="video"
+    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+</amp-facebook>
 
 ## 包含 YouTube 视频
 
-您可以使用 [`amp-youtube`](/docs/reference/extended/amp-youtube.html) 元素在您的网页中添加 YouTube 视频。
+您可以使用 [`amp-youtube`](/docs/reference/components/amp-youtube.html) 元素在您的网页中添加 YouTube 视频。
 
 您必须在 `<head>` 中添加以下脚本：
 
@@ -91,41 +110,50 @@ $title: 包含第三方内容
 
 使用 `layout="responsive"`，使宽高比为 16:9 的视频呈现正确的布局：
 
-[sourcecode:html]
-<amp-youtube
-    data-videoid="mGENRKrdoGY"
-    layout="responsive"
-    width="480" height="270">
-</amp-youtube>
-[/sourcecode]
+<!-- embedded youtube example -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## 显示广告
 
-您可以使用 [`amp-ad`](/docs/reference/amp-ad.html) 元素在您的网页中显示广告。仅支持通过 HTTPS 投放的广告。
+您可以使用 [`amp-ad`](/docs/reference/components/amp-ad.html) 元素在您的网页中显示广告。仅支持通过 HTTPS 投放的广告。
 
 AMP 文档中不得运行任何广告网络提供的 JavaScript。AMP 运行时会加载来自其他来源的 iframe（通过 iframe 沙盒），并在该 iframe 沙盒内执行广告网络的 JS。
 
 您必须指定广告的宽度和高度以及广告网络类型。`type` 会标识广告网络的模板。不同的广告类型要求不同的 `data-*` 属性。
 
-[sourcecode:html]
-<amp-ad width=300 height=250
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="212"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 如果受到广告网络的支持，请添加 `placeholder`，以便在没有广告可用时显示。
 
-[sourcecode:html]
-<amp-ad width=300 height=250
-    type="example"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-  <div placeholder>Have a great day!</div>
-</amp-ad>
-[/sourcecode]
+<!-- embedded ad example -->
+<div>
+<amp-iframe height="232"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
-AMP 支持众多广告网络。请参阅[完整列表参考](/docs/reference/amp-ad.html#supported-ad-networks)。
+AMP 支持众多广告网络。请参阅[完整列表参考](/docs/reference/components/amp-ad.html#supported-ad-networks)。

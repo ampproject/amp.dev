@@ -11,6 +11,8 @@ To demonstrate what additional markup could look like, here’s the code require
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
+{% call callout('Read on', type='read') %}
 To learn why we’re replacing tags like `<img>` with `<amp-img>`, and how many are available, visit [Include Images & Video](/docs/guides/amp_replacements.html).
+{% endcall %}
 
 <a class="go-button button" href="/docs/tutorials/create/presentation_layout.html">Continue to Step 3</a>

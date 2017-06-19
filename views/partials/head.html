@@ -3,9 +3,41 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-   <meta property="og:image" content="https://www.ampproject.org/static/img/logo-og-image.jpg">
+  <meta property="og:image" content="https://www.ampproject.org/static/img/logo-og-image.jpg">
   {% if doc.description %}<meta name="description" content="{{doc.description}} – AMP">{% endif %}
   <meta name="amp-experiments-opt-in" content="">
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Webpage",
+    "url": "https://www.ampproject.org{{doc.url.path}}",
+    "name": "AMP Project",
+    {% if doc.title %}    "headline":"{{_(doc.title)}}",
+    {% endif %}
+    {% if doc.description %}    "description":"{{doc.description}}",
+    {% endif %}
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.ampproject.org{{doc.url.path}}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AMP Project",
+      "logo": {
+          "url": "https://www.ampproject.org/assets/img/logo-blue.svg",
+          "width": 175,
+          "height": 60,
+          "@type": "ImageObject"
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.ampproject.org/static/img/logo-og-image.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
 
   <title>{% if doc.title %}{{_(doc.title)}} – {% endif %}AMP</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png?v=3">

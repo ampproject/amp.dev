@@ -10,19 +10,23 @@ toc: true
 
 여러 미디어 표현식을 기준으로 요소 자원을 제어하기 위해 `srcset` 속성을 사용할 수 있습니다.
 특히, 여러 스크린 사이즈별 이미지 자원을 정의하기 위해,
-모든 [`amp-img`](/docs/reference/amp-img.html) 태그에서 사용합니다.
+모든 [`amp-img`](/docs/reference/components/amp-img.html) 태그에서 사용합니다.
 
 아래의 간단한 예제에서,
 `srcset`은 화면 너비(screen width)를 기준으로 image를 정의합니다.
 `w` 설명자는 브라우저에서 리스트 내 각 이미지의 width를 말해줍니다.
 
-[sourcecode:html]
-<amp-img
-    src="wide.jpg"
-    srcset="wide.jpg 640w,
-           narrow.jpg 320w">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using srcset -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('노트', type='note') %}
 AMP는 `w` 설명자가 있는 srcset을 모든 브라우저에서 지원합니다.
@@ -39,14 +43,17 @@ AMP는 `w` 설명자가 있는 srcset을 모든 브라우저에서 지원합니�
 
 아래 예제를 참고하길 바랍니다:
 
-[sourcecode:html]
-<amp-img
-    src="wide.jpg"
-    srcset="wide.jpg 640w,
-           narrow.jpg 320w"
-    sizes="(min-width: 650px) 50vw, 100vw">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using sizes -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 `sizes` 속성은 뷰포트가 650px 이상인 경우,
 요소의 너비를 viewport 사이즈의 50%로 정의합니다.
@@ -76,12 +83,17 @@ sizes 속성이 width와 height와 함께 정의된 경우, 기본 layout은 `re
 
 예:
 
-[sourcecode:html]
-<amp-img src="https://acme.org/image1.png"
-    width="320" height="256"
-    heights="(min-width:500px) 200px, 80%">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using heights -->
+<div>
+<amp-iframe height="193"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 이 예제에서 요소의 height는 width의 80%로 정의되어있지만,
 viewport가 `500px`보다보다 큰 경우 `200px`이 됩니다.

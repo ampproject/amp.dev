@@ -34,6 +34,10 @@ If you only have one page, and that page is an AMP page, you must still add the 
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
+{% call callout('Read on', type='read') %}
+Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
+{% endcall %}
+
 ## Integrate with third-party platforms through additional metadata
 
 Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are things like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
@@ -80,10 +84,13 @@ Example:
 </script>
 [/sourcecode]
 
-More examples can be found in [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
+More examples can be found in the [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
 
-Note: This Schema.org definition is a requirement to make your content eligible to appear in the demo of the [Google Search news carousel (try on mobile)](https://g.co/ampdemo).
-See also [Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories), and the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/).
+{% call callout('Read on', type='read') %} Visit these resources for more information on structured data:
+
+* Learn how to [Structure your content to appear in Google Search rich results](https://developers.google.com/search/docs/guides/mark-up-content) (e.g., top stories carousel, recipe cards, etc.).
+* Test your structured data with the [Google Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/).
+{% endcall %}
 
 ### Other metadata for even more platforms
 
