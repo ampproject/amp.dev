@@ -163,11 +163,6 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "Ad Tech Platforms"
-msgstr ""
-
 #: /content/includes/latest.yaml
 msgid "Add to Calendar"
 msgstr ""
@@ -189,8 +184,6 @@ msgid "Adtech success stories"
 msgstr ""
 
 #: /content/learn/case-studies/category/advertisers.md
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
 msgid "Advertisers"
 msgstr ""
 
@@ -553,13 +546,6 @@ msgid ""
 "serving faster, lighter and more effective ads."
 msgstr ""
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
-msgid ""
-"Join an ecosystem of  850,000 domains, leading platforms, and 100+ technology"
-" providers using  AMP."
-msgstr ""
-
 #: /content/learn/who/amp-ads.yaml
 msgid "Kavata Mbondo"
 msgstr ""
@@ -580,7 +566,6 @@ msgstr ""
 msgid "Learn"
 msgstr ""
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 #: /content/learn/who/advertisers.yaml /views/partials/grid-card.html:28
 #: /views/partials/promo_banner.html:17
 msgid "Learn More"
@@ -746,8 +731,6 @@ msgid "Privacy"
 msgstr ""
 
 #: /content/learn/case-studies/category/publishers.md
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
 msgid "Publishers"
 msgstr "Penerbit"
 
@@ -768,11 +751,6 @@ msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Publishers:<br>Keep audiences engaged"
-msgstr ""
-
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "Read case studies"
 msgstr ""
 
 #: /views/partials/grid-card.html:27
@@ -921,11 +899,6 @@ msgstr ""
 
 #: /content/docs/guides/responsive_amp/_blueprint.yaml
 msgid "Style & Layout"
-msgstr ""
-
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "Success stories"
 msgstr ""
 
 #: /content/learn/case-studies.html
@@ -1210,8 +1183,7 @@ msgstr ""
 msgid "Who are AMP Ads for?"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/learn/who-uses-amp.yaml
-#: /content/learn/who-uses-amp@es.yaml /content/learn/who-uses-amp@ko.yaml
+#: /content/includes/menu.yaml
 msgid "Who is AMP for?"
 msgstr ""
 

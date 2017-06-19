@@ -184,11 +184,6 @@ msgstr ""
 msgid "About"
 msgstr "Informazioni"
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "Ad Tech Platforms"
-msgstr "Piattaforme di pubblicità"
-
 #: /content/includes/latest.yaml
 msgid "Add to Calendar"
 msgstr "Aggiungi al calendario"
@@ -210,8 +205,6 @@ msgid "Adtech success stories"
 msgstr "Storie di successo di Adtech"
 
 #: /content/learn/case-studies/category/advertisers.md
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
 msgid "Advertisers"
 msgstr "Inserzionisti"
 
@@ -606,15 +599,6 @@ msgid ""
 "serving faster, lighter and more effective ads."
 msgstr ""
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
-msgid ""
-"Join an ecosystem of  850,000 domains, leading platforms, and 100+ technology"
-" providers using  AMP."
-msgstr ""
-"Unisciti ad un ecosistema di 850.000 domini, piattaforme leader e 100+ "
-"fornitori di tecnologie che utilizzano AMP."
-
 #: /content/learn/who/amp-ads.yaml
 msgid "Kavata Mbondo"
 msgstr ""
@@ -635,7 +619,6 @@ msgstr "Layout - Componenti AMP"
 msgid "Learn"
 msgstr "Impara"
 
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@ko.yaml
 #: /content/learn/who/advertisers.yaml /views/partials/grid-card.html:28
 #: /views/partials/promo_banner.html:17
 msgid "Learn More"
@@ -809,8 +792,6 @@ msgid "Privacy"
 msgstr "Privacy"
 
 #: /content/learn/case-studies/category/publishers.md
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
 msgid "Publishers"
 msgstr "Editori"
 
@@ -840,11 +821,6 @@ msgstr ""
 #: /content/learn/who/amp-ads.yaml
 msgid "Publishers:<br>Keep audiences engaged"
 msgstr ""
-
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "Read case studies"
-msgstr "Leggi i casi di studio"
 
 #: /views/partials/grid-card.html:27
 msgid "Read the Case Study"
@@ -1009,11 +985,6 @@ msgstr "Rafforzare la tua attività mantenendo il controllo"
 #: /content/docs/guides/responsive_amp/_blueprint.yaml
 msgid "Style & Layout"
 msgstr "Stile & Layout"
-
-#: /content/learn/who-uses-amp.yaml /content/learn/who-uses-amp@es.yaml
-#: /content/learn/who-uses-amp@ko.yaml
-msgid "Success stories"
-msgstr "Storie di successo"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
@@ -1357,8 +1328,7 @@ msgstr "Chi usa AMP"
 msgid "Who are AMP Ads for?"
 msgstr ""
 
-#: /content/includes/menu.yaml /content/learn/who-uses-amp.yaml
-#: /content/learn/who-uses-amp@es.yaml /content/learn/who-uses-amp@ko.yaml
+#: /content/includes/menu.yaml
 msgid "Who is AMP for?"
 msgstr "Chi è AMP?"
 

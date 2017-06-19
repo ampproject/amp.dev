@@ -12,24 +12,24 @@ hero:
   triangle_img: hero_triangle.png
 
 cards:
-  - name@: Publishers
-    cta@: Learn More
+  - name: Publishers
+    cta: 더 알아보기
     icon: who_icon_publishers.svg
 
-  # - name@: SMB
-  #   cta@: Learn More
+  # - name: SMB
+  #   cta: Learn More
   #   icon: card_smb.svg
 
-  - name@: Ad Tech Platforms
-    cta@: Learn More
+  - name: Ad Tech Platforms
+    cta: 더 알아보기
     icon: who_icon_adtech.svg
 
-  - name@: Advertisers
-    cta@: Learn More
+  - name: Advertisers
+    cta: 더 알아보기
     icon: who_icon_advertisers.svg
 
-  # - name@: Developers
-  #   cta@: Learn More
+  # - name: Developers
+  #   cta: Learn More
   #   icon: card_developers.svg
 
 cta:
