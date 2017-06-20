@@ -57,7 +57,7 @@ Los atributos de datos adicionales le indican a la red de anuncios que extraiga 
 AMP admite un atributo de marcador de posición opcional. Dependiendo de la red de anuncios, puede elegir mostrar un marcador de posición hasta que el anuncio esté disponible para su visualización. Esto provee una mejor experiencia del usuario previniendo que se muestre un espacio en blanco.
 
 {% call callout('Nota', type='note') %}
-[Aprende más sobre el placeholder](/es/docs/guides/responsive/placeholders#placeholders).
+[Aprende más sobre el `placeholder`](/es/docs/guides/responsive/placeholders#placeholders).
 {% endcall %}
 
 ### 5. [OPCIONAL] Especificar un atributo `fallback`:
@@ -74,7 +74,7 @@ AMP admite un atributo de marcador de posición opcional. Dependiendo de la red 
 AMP admite un atributo opcional de fallback. Dependiendo de la red de anuncios, puede elegir mostrar este elemento alternativo si no hay ningún anuncio disponible para publicar.
 
 {% call callout('Nota', type='note') %}
-[Aprende más sobre el fallback](/es/docs/guides/responsive/placeholders#fallbacks).
+[Aprende más sobre el `fallback`](/es/docs/guides/responsive/placeholders#fallbacks).
 {% endcall %}
 
 ### 6. ¡Felicitaciones! ¡Estás publicando anuncios en tu página AMP!
