@@ -9,7 +9,12 @@ This document lists analytics vendors that have built-in configurations for use 
 
 By specifying the name of an analytics vendor with the `type` attribute you can quickly configure `amp-analytics` to use the respective product. Additional configuration (such as your user id) may still be necessary.
 
-Please consult the documentation from your vendor, which may be linked in the sections below. You can also look at the [vendors.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) file for further information on each vendor's configuration.
+Please consult the documentation from your vendor, which may be linked in the sections below.
+
+{% call callout('Tip', type='success') %}
+If you're comfortable digging through code, you can explore the raw configurations in the [vendors.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) file.
+{% endcall %}
+
 
 **Example:**
 
@@ -18,7 +23,6 @@ Here's a snippet that specifies the `type` for an analytics provider named `XYZ`
 ```html
 <amp-analytics type="XYZ"> ... </amp-analytics>
 ```
-
 
 {% call callout('Read on', type='read') %}
 Learn more about tracking analytics with [`amp-analytics`](/docs/reference/components/amp-analytics.html).
