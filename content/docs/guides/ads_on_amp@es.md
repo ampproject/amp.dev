@@ -17,4 +17,4 @@ Las páginas de AMP son sólo páginas web con algunas características adiciona
 
 Para obtener resultados óptimos, enfoque los anuncios en páginas de AMP de la misma manera que los anuncios en páginas que no son de AMP.
 
-<a class="button go-button" href="/es/docs/guides/ads/ads_getting_started">¡Empecemos!</a>
+<a class="button go-button" href="/es/docs/guides/ads/ads_getting_started.html">¡Empecemos!</a>
