@@ -54,7 +54,7 @@ menu:
     collection: support
     children:
       - href: /content/support/faqs.md
-        copy@: "FAQs"
+        copy@: "FAQ"
         collection: support/faqs
       - href: /content/support/developer.md
         copy@: "Developer Support"
