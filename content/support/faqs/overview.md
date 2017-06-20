@@ -52,6 +52,9 @@ faq:
   - title: How can a publisher get content into AMP HTML?
     answer: |
       Publishers and Content Management System (CMS) providers can develop an integration with their CMS to generate AMP content. Automattic has already published a [WordPress AMP plugin](https://wordpress.org/plugins/amp/) and we hope that all content management systems will add support for AMP HTML pages.
+  - title: Is AMP only for mobile?  
+    answer: |
+      AMP was designed with responsiveness in mind, to work across *all* screen sizes.  However, some features for third-party platforms (e.g., Google's Top Stories carousel) may only be designed for the mobile experience.  Check with the third-party platform for how they use AMP.  For more information about mobile and desktop AMP pages, see Paul Bakaus' blog post on [About that ‘mobile’ in Accelerated Mobile Pages](https://paulbakaus.com/2016/07/01/about-that-mobile-in-accelerated-mobile-pages/).
 
 ---
 
