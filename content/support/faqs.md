@@ -1,5 +1,5 @@
 ---
-$title@: FAQs
+$title@: FAQ
 $order: 0
 $parent: /content/support/support.md
 $localization:
