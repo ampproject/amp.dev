@@ -24,10 +24,8 @@ Aquí hay un fragmento que especifica el tipo (`type`) de un proveedor de analyt
 ```
 
 {% call callout('Read on', type='read') %}
-Learn more about tracking analytics with [`amp-analytics`](/docs/reference/components/amp-analytics.html).
-{% endcall %}
-
 Aprende más acerca del seguimiento de analytics con [`amp-analytics`](/es/docs/reference/components/amp-analytics.html).
+{% endcall %}
 
 ## Proveedores
 
