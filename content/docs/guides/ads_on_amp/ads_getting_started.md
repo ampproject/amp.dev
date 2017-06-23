@@ -54,7 +54,11 @@ The additional data attributes are telling the ad network to pull the right size
   </amp-ad>
 [/sourcecode]
 
-AMP supports an optional placeholder attribute. Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space from showing:
+AMP supports an optional placeholder attribute. Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space.
+
+{% call callout('Note', type='note') %}
+[Learn more about `placeholder`](/docs/guides/responsive/placeholders#placeholders).
+{% endcall %}
 
 ### 5. [OPTIONAL] Specify a fallback attribute:
 
@@ -68,5 +72,9 @@ AMP supports an optional placeholder attribute. Depending on the ad network, you
 [/sourcecode]
 
 AMP supports an optional fallback attribute. Depending on the ad network, you can choose to show this fallback element if no ad is available to serve.
+
+{% call callout('Note', type='note') %}
+[Learn more about `fallback`](/docs/guides/responsive/placeholders#fallbacks).
+{% endcall %}
 
 ### 6. Congratulations! You are now serving ads on your AMP page!
