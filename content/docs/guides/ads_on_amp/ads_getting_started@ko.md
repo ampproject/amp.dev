@@ -57,6 +57,10 @@ ad 유닛에 width와 height를 정의하여, AMP 페이지 내 ad 사이즈를 
 AMP는 선택적인 placeholder 속성을 지원합니다. 
 Ad 네트워크에 의해 광고를 볼 수 있는 상태가 될 때까지 대체화면을 보여줄 수 있습니다. 이렇게 하면 빈 공간이 보이지 않게 하여 더 나은 사용자 경험을 제공합니다.
 
+{% call callout('Note', type='note') %}
+[Learn more about `placeholder`](/docs/guides/responsive/placeholders#placeholders).
+{% endcall %}
+
 ### 5. [옵션] fallback 속성 정의:
 
 [sourcecode:html]
@@ -70,5 +74,9 @@ Ad 네트워크에 의해 광고를 볼 수 있는 상태가 될 때까지 대�
 
 AMP는 선택적인 fallback 속성을 지원합니다.
 Ad 네트워크에 의해 광고를 받아올 수 없을 때 보여줄 fallback 요소를 고를 수 있습니다.
+
+{% call callout('Note', type='note') %}
+[Learn more about `fallback`](/docs/guides/responsive/placeholders#fallbacks).
+{% endcall %}
 
 ### 6. 축하합니다! 이제 AMP 페이지에 광고를 제공할 수 있습니다.
