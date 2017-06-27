@@ -1,5 +1,7 @@
 ---
 $title: Crea tu página AMP HTML
+$order: 0
+$parent: /content/docs/tutorials/create.md
 ---
 
 El siguiente marcado es un punto de partida o código estándar aceptable.
@@ -39,24 +41,30 @@ El contenido del cuerpo, hasta ahora, es bastante sencillo. Sin embargo, hay muc
 
 Los documentos AMP HTML DEBEN:
 
-  - Comenzar con el tipo de documento `<!doctype html>`.
-  - Contener la etiqueta `<html ⚡>` en el nivel superior (también se acepta `<html amp>`).
-  - Contener las etiquetas `<head>` y `<body>` (opcionales en HTML).
-  - Contener la etiqueta `<meta charset="utf-8">` como el primer hijo de su etiqueta `<head>`.
-  - Contener la etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` como el segundo hijo de su etiqueta `<head>` (esto incluye y carga la biblioteca AMP JS).
-  - Contener una etiqueta `<link rel="canonical" href="$SOME_URL" />` en la etiqueta `<head>` orientada a la versión de HTML común del documento de AMP HTML o a sí misma si no existiera dicha versión de HTML.
-  - Contener una etiqueta `<meta name="viewport" content="width=device-width,minimum-scale=1">` en la etiqueta `<head>`. También se recomienda incluir initial-scale=1.
-  - Contener lo siguiente en su etiqueta `<head>`:
-    `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+| Regla      | Descripción |
+| --------- | ----------- |
+| Comenzar con el tipo de documento `<!doctype html>`. | Estándar para HTML. |
+| Contener la etiqueta `<html ⚡>` en el nivel superior <br>(también se acepta `<html amp>`). | Identifica la página como contenido AMP. |
+| Contener las etiquetas `<head>` y `<body>`. | Opcional en HTML pero requerido en AMP.
+| Contener la etiqueta `<meta charset="utf-8">` como el primer hijo de su etiqueta `<head>`. | Identifica la codificación de la página. | 
+| Contener la etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` como el segundo hijo de su etiqueta `<head>`. | Incluye y carga la librería AMP JS. |
+| Contener una etiqueta `<link rel="canonical" href="$SOME_URL" />` en la etiqueta `<head>`. | Apunta a la versión regular en HTML de la página AMP, o bien apunta a sí mmisma si dicha versión no existe. Aprende más en [Hacer que tu página sea visible](/es/docs/guides/discovery.html).
+| Contener una etiqueta `<meta name="viewport" content="width=device-width,minimum-scale=1">` en la etiqueta `<head>`. También se recomienda incluir `initial-scale=1`. | Especifica un `viewport` responsivo. Aprende más en [Crear páginas AMP responsivas](/es/docs/guides/responsive/responsive_design.html). |
+| Contener el [código AMP boilerplate](/docs/reference/spec/amp-boilerplate.html) en la etiqueta `<head>`.  | CSS para ocultar inicialmente el contenido hasta que se carga AMP JS. |
+
 
 ## Meta datos opcionales
 
-Además de los requisitos básicos, en nuestro ejemplo también se incluye una definición Schema.org en el `<head>`, que no es un requisito estricto para AMP, pero es un requisito para poder distribuir tu contenido en determinados sitios. Por ejemplo, en la [demostración del carrusel de novedades sobre Búsqueda de Google (pruébalo en tu teléfono)](https://g.co/ampdemo).
+Además de los requisitos básicos, en nuestro ejemplo también se incluye una definición Schema.org en el `<head>`, que no es un requisito estricto para AMP, pero es un requisito para poder distribuir tu contenido en determinados sitios. Por ejemplo, en el carrusel de historias principales de Google Search.
 
-Para obtener más información acerca de todos los metadatos que necesitarás en muchos otros entornos (por ejemplo, Twitter), [explora nuestros ejemplos](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). Para obtener información específica sobre AMP en la Búsqueda de Google, consulta [Historias principales con AMP](https://developers.google.com/structured-data/carousels/top-stories).
+{% call callout('Leer más', type='read') %} Visita estos recursos para aprender más:
+
+* Aprende a preparar tus páginas AMP para el buscador de Google en [Getting Started with AMP on Google Search](https://developers.google.com/amp/docs).
+* Aprende más sobre todos las etiquetas de metadata que puedes usar en otros sitios, por ejemplo en Twitter en [Ejemplos de Metadata](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples).
+{% endcall %}
 
 <hr>
 
-¡Buenas noticias! Eso es todo lo que necesitamos para crear nuestra primera página AMP, aunque por supuesto aún no hay demasiadas noticias respecto del `<body>`. En la próxima sección, veremos la manera de agregar componentes básicos, como imágenes, elementos de AMP personalizados, de dar estilo a tu página y de definir un diseño responsivo.
+¡Buenas noticias! Eso es todo lo que necesitamos para crear nuestra primera página AMP, aunque por supuesto falta especificar el `<body>`. En la próxima sección, veremos la manera de agregar componentes básicos, como imágenes, elementos de AMP personalizados, dar estilo a tu página y definir un diseño responsivo.
 
 <a class="go-button button" href="/es/docs/tutorials/create/include_image.html">Continuar con el paso 2</a>
