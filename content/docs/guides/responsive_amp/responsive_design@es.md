@@ -32,7 +32,7 @@ Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](ht
 
 ## Creando el layout responsivo
 
-En el diseño responsivo, puede utilizar CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) para adaptar el estilo de su página web para la variedad de la pantalla dimensiones sin tener que alterar el contenido de la página. En AMP, puede seguir utilizando las mismas consultas CSS `@media`. Además, para un control más preciso sobre un elemento AMP, se puede especificar el atributo `media` en el elemento. Esto es particularmente útil cuando se necesita para mostrar u ocultar un elemento en base a una consulta de medios. Ver la sección [Cambiando la dirección de arte de una imagen](#cambiando-la-dirección-de-arte-de-una-imagen) para un ejemplo que utiliza el atributo `media`.
+En el diseño responsivo, puede utilizar CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) para adaptar el estilo de su página web para la variedad de la pantalla dimensiones sin tener que alterar el contenido de la página. En AMP, puede seguir utilizando las mismas consultas CSS `@media`. Además, para un control más preciso sobre un elemento AMP, se puede especificar el atributo `media` en el elemento. Esto es particularmente útil cuando se necesita para mostrar u ocultar un elemento en base a una consulta de medios. Ver la sección [Cambiando la dirección de arte de una imagen](#cambiando-la-direccion-artistica-de-una-imagen) para un ejemplo que utiliza el atributo `media`.
 
 Haciendo que cada elemento de cambio de tamaño para adaptarse a una pantalla puede ser complicado <sup><a href="#fn1" id="ref1">*</a></sup>. Sin embargo, en AMP, usted puede hacer fácilmente un elemento responsivo con sólo especificar el atributo `"layout=responsive"` junto a los atributos `width` y `height`. Cuando se aplica el layout `responsive` a un elemento, ese elemento cambiará de tamaño automáticamente a la anchura de su elemento contenedor, y la altura cambiará en función de la relación de aspecto especificada por `width` y `height` característica del elemento. Casi todos los elementos de AMP apoyan un layout `responsive`; consulte la documentación de referencia del elemento para ver qué diseños son compatibles.
 
@@ -40,9 +40,20 @@ A pesar de que usted puede hacer fácilmente elementos responsivos con `"layout=
 
 ##### Ejemplo: Restringiendo el ancho de imagenes responsivas
 
-En el siguiente ejemplo, tenemos una imagen de flores (640 x 427 px) que queremos mostrar en todos los tamaños de pantalla, así que especificamos el `width` y `height`, y configuramos el layout a `responsive`.  Sin embargo, no queremos que la pantalla se vaya más allá de su tamaño, así que configuramos un ancho máximo con `max-width` de 700 px (a través de la clase CSS `resp-img`, ver ejemplo del código html en la [línea 10](https://github.com/ampproject/docs/blob/master/examples/src/responsive.html#L10)).
+En el siguiente ejemplo, tenemos una imagen de flores (640 x 427 px) que queremos mostrar en todos los tamaños de pantalla, así que especificamos el `width` y `height`, y configuramos el layout a `responsive`.
 
 <div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
+
+Sin embargo, si no queremos que la imagen se vaya más allá de su tamaño, configuramos un ancho máximo con `max-width` de 700 px a través de una personalización de CSS en el `head`, así:
+
+```html
+<style amp-custom>
+.resp-img {
+    max-width: 700px;
+  }
+</style>
+```
+
 
 {% call callout('Leer más', type='read') %}
 Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios](https://www.ampproject.org/es/docs/guides/responsive/control_layout#el-atributo-layout).
@@ -74,40 +85,40 @@ Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más de
 
 Las imágenes forman una gran parte de una página web (aproximadamente el 65% de los bytes de la página). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP](https://www.ampproject.org/docs/guides/amp_replacements)). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
 
-- [Sirve imágenes nítidas para obtener la resolución correcta](#serving-crisp-images-for-the-right-resolution)
-- [Cambiando la dirección de arte de una imagen](#cambiando-la-dirección-de-arte-de-una-imagen)
+- [Sirve imágenes nítidas para obtener la resolución correcta](#mostrando-imagenes-nitidas-para-la-resolucion-correcta)
+- [Cambiando la dirección de arte de una imagen](#cambiando-la-direccion-artistica-de-una-imagen)
 - [Proporcionar formatos de imagen optimizados](#providing-optimized-images)
 
 #### Mostrando imágenes nítidas para la resolución correcta
 
-For high-resolution screens (e.g., Retina display), you should provide images that look crisp and sharp; however, you don't want to use that same image on low-res devices because that'll cause unnecessary extra load time.  In non-AMP and AMP pages,  you can serve the correct image for the screen's pixel density by using `srcset` with the width descriptor ( `w` ).
+Para pantallas de alta resolución (por ejemplo, pantalla Retina), debe proporcionar imágenes que parezcan claras y nítidas; sin embargo, no desea utilizar esa misma imagen en dispositivos de baja resolución porque esto causará un tiempo de carga extra innecesario. En páginas no AMP y AMP, puede servir la imagen correcta para la densidad de píxeles de la pantalla utilizando `srcset` con el descriptor de anchura (`w`).
 
-{% call callout('Note', type='note') %}
-The DPR (`x`) based srcset selector also works; however, for more flexibility, we recommend using the `w` selector. Previously (in the old srcset proposal), the `w` descriptor described the viewport width, but now it describes the width of the image source file, which allows the user agent to calculate the effective pixel density of each image and choose the appropriate image to render.
+{% call callout('Nota', type='note') %}
+El selector `srcset` basado en DPR (`x`) también funciona; sin embargo, para mayor flexibilidad, recomendamos utilizar el selector `w`. Anteriormente (en la antigua propuesta srcset), el descriptor `w` describía el ancho del viewport, pero ahora describe el ancho del archivo fuente de la imagen, lo que permite al agente del usuario calcular la densidad de píxeles efectiva de cada imagen y elegir la imagen apropiada para renderizarla.
 {% endcall %}
 
-##### Example: Displaying a crisp image that fits the screen
+##### Ejemplo: Mostrando una imagen nítida que encaje en la pantalla
 
-In the following example we have several image files that are of the same aspect ratio but of different resolutions.  By supplying various image resolutions, the browser can choose the image that best suits the device's resolution.  Additionally, we've specified the size to render the image at :
+En el siguiente ejemplo tenemos varias imágenes que tienen el mismo radio de aspecto pero son de diferentes resoluciones. Al ofrecer varias resoluciones, el navegador podrá elegir la imagen más apropiada dependiendo de la resolución del dispositivo en la que se muestre dicha imagen. Adicionalmente, nosotros especificaremos el tamaño para renderizar la imagen en:
 
-- For a viewport width up to 400 px, render the image at 100% of the viewport width.
-- For a viewport width up to 900 px, render the image at 75% of the viewport width.
-- For everything above 900 px, render the image at 600 px wide.
+- Un viewport de ancho hasta 400 px, renderizar la imagen al 100% del ancho del viewport.
+- Un viewport de ancho hasta 900 px, renderizar la imagen al 75% del ancho del viewport.
+- Para cualquier tamaño por debajo de 900 px, renderizar la imagen a 600 px de ancho.
 
 <div>
 <amp-iframe height=326 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.resolution.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
-For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px  (412 * .75 * 2.6), which happens to be `apple-800.jpg`.
+Por ejemplo, digamos que tenemos un dispositivo que tiene un ancho de ventana de 412 px y un DPR de 2.6. Basándose en el código anterior, la imagen debe mostrarse al 75% del ancho de la ventana de visualización, por lo que el navegador elige una imagen cercana a 803 px (412 * .75 * 2.6), que pasa a ser `apple-800.jpg`.
 
 {% call callout('Leer más', type='read') %}
-To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](https://www.ampproject.org/docs/guides/responsive/art_direction) guide.
+Para aprender más sobre el `srcset` y `sizes` en AMP, see the [Imágenes adaptativas con srcset, sizes & heights](https://www.ampproject.org/es/docs/guides/responsive/art_direction) guide.
 {% endcall %}
 
-#### Cambiando la dirección de arte de una imagen
+#### Cambiando la dirección artística de una imagen
 
-Art direction refers to adapting an image's visual characteristics for certain breakpoints.  For example, instead of just scaling an image as the screen narrows, you might want to serve a cropped version of the image that narrows the focus of the image or you might want to serve completely different images at the different breakpoints.  In HTML, you can accomplish this by using the `picture` element.  In AMP, art direction can be achieved by using the `media` attribute.
+La dirección artística se refiere a la adaptación de las características visuales de una imagen para determinados puntos de interrupción. Por ejemplo, en lugar de simplemente escalar una imagen a medida que se reduce la pantalla, es posible que desee publicar una versión recortada de la imagen que restringe el enfoque de la imagen o puede que desee publicar imágenes completamente diferentes en los diferentes puntos de interrupción. En HTML, puede lograr esto usando el elemento `picture`. En AMP, la dirección artística se puede lograr utilizando el atributo `media`.
 
-##### Example: Different sized images for different breakpoints
+##### Ejemplo: Diferentes tamaños de imagenes para diferentes puntos de interrupción
 
 In the following example, we have 3 different cropped images of a cat that we want to display at different breakpoints. So, if the viewport width is:
 
