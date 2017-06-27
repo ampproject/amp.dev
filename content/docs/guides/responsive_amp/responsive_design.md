@@ -39,7 +39,7 @@ Even though you can easily make elements responsive with `"layout=responsive"`, 
 
 ##### Example: Restricting width of responsive images
 
-In the following example, we have a flowers image (640 x 427 px) that we want to display on all screen sizes, so we specified the `width` and `height`, and set the layout to `responsive`.  However, we want the image to not stretch beyond its intended size, so we set the `max-width` on the container to 700 px.
+In the following example, we have a flowers image (640 x 427 px) that we want to display on all screen sizes, so we specified the `width` and `height`, and set the layout to `responsive`.  However, we want the image to not stretch beyond its intended size, so we set the `max-width` on the container to 700 px (via CSS in the "resp-img" class).
 
 <div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
