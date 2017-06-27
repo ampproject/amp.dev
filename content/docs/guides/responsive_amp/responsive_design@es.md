@@ -40,7 +40,7 @@ A pesar de que usted puede hacer fácilmente elementos responsivos con `"layout=
 
 ##### Ejemplo: Restringiendo el ancho de imagenes responsivas
 
-En el siguiente ejemplo, tenemos una imagen de flores (640 x 427 px) que queremos mostrar en todos los tamaños de pantalla, así que especificamos el `width` y `height`, y configuramos el layout a `responsive`.  Sin embargo, no queremos que la pantalla se vaya más allá de su tamaño, así que configuramos un ancho máximo con `max-width` de 700 px (a través de la clase CSS `resp-img`).
+En el siguiente ejemplo, tenemos una imagen de flores (640 x 427 px) que queremos mostrar en todos los tamaños de pantalla, así que especificamos el `width` y `height`, y configuramos el layout a `responsive`.  Sin embargo, no queremos que la pantalla se vaya más allá de su tamaño, así que configuramos un ancho máximo con `max-width` de 700 px (a través de la clase CSS `resp-img`, ver ejemplo del código html en la [línea 10](https://github.com/ampproject/docs/blob/master/examples/src/responsive.html#L10)).
 
 <div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
