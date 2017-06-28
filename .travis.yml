@@ -20,7 +20,7 @@ script:
 - 'if [ "${TRAVIS_BRANCH}" = "master" ]; then firebase use staging; fi'
 - grow build
 after_success:
-- firebase deploy --token "$FIREBASE_TOKEN"
+- firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
 branches:
   only:
   - production
