@@ -14,3 +14,4 @@ content/docs/reference/spec.md
 content/docs/reference/spec/*.md
 content/docs/reference/components/**/*.md
 content/docs/guides/amp-cors-requests.md
+content/docs/guides/amp-cache-debugging.md
