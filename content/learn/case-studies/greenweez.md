@@ -2,7 +2,7 @@
 $order: 16
 $title: Greenweez
 $date: June 6, 2017
-$category: Advertisers
+$category: e-commerce
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
