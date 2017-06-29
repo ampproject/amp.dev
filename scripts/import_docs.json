@@ -25,6 +25,13 @@
         "to": "docs/reference/spec/amp-boilerplate.md"
     },
     {
+        "title": "Debug AMP Cache issues",
+        "order": 1,
+        "from": "spec/amp-cache-debugging.md",
+        "to": "docs/guides/amp-cache-debugging.md",
+        "category": "Debug"
+    },
+    {
         "title": "CORS in AMP",
         "order": 10,
         "from": "spec/amp-cors-requests.md",
