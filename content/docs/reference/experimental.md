@@ -18,7 +18,7 @@ The AMP Dev Channel release **may be less stable** and it may contain features n
 Opting into Dev Channel is great to:
 
 - test and play with new features not yet available to all users.
-- use in Q&A to ensure that your site is compatible with the next version of AMP.
+- use in quality assurance (QA) to ensure that your site is compatible with the next version of AMP.
 
 If you find an issue that appears to only occur in the Dev Channel version of AMP, [file an issue](https://github.com/ampproject/amphtml/issues/new) with a description of the problem. Always include a URL to a page that reproduces the issue.
 
