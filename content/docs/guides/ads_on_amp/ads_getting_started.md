@@ -40,7 +40,7 @@ By adding the `amp-ads` component, you've added the ads framework to your AMP pa
 By defining your ad unit's height and weight, you've specified the ad size on your AMP page.
 
 {% call callout('Note', type='note') %}
-The additional data attributes are telling the ad network to pull the right size and pub from their servers. Each ad network has different attributes to send. [Learn more](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks).
+The additional data attributes are telling the ad network to pull the right size and publisher from their servers. Each ad network has different attributes to send. [Learn more](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks).
 {% endcall %}
 
 ### 4. [OPTIONAL] Specify a placeholder:
