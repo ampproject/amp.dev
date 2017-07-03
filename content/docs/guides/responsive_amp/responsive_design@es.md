@@ -15,7 +15,7 @@ En esta guía, le mostraremos cómo puede implementar fácilmente estos fundamen
 
 - [Controlando el viewport](#controlando-el-viewport)
 - [Creando el layout responsivo](#creando-el-layout-responsivo)
-- [Medios de escala](#medios-de-escala-para-la-pagina)
+- [Medios de escala](#medios-de-escala-para-la-página)
 
 ## Controlando el viewport
 
@@ -32,7 +32,7 @@ Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](ht
 
 ## Creando el layout responsivo
 
-En el diseño responsivo, puede utilizar CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) para adaptar el estilo de su página web para la variedad de la pantalla dimensiones sin tener que alterar el contenido de la página. En AMP, puede seguir utilizando las mismas consultas CSS `@media`. Además, para un control más preciso sobre un elemento AMP, se puede especificar el atributo `media` en el elemento. Esto es particularmente útil cuando se necesita para mostrar u ocultar un elemento en base a una consulta de medios. Ver la sección [Cambiando la dirección de arte de una imagen](#cambiando-la-direccion-artistica-de-una-imagen) para un ejemplo que utiliza el atributo `media`.
+En el diseño responsivo, puede utilizar CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) para adaptar el estilo de su página web para la variedad de la pantalla dimensiones sin tener que alterar el contenido de la página. En AMP, puede seguir utilizando las mismas consultas CSS `@media`. Además, para un control más preciso sobre un elemento AMP, se puede especificar el atributo `media` en el elemento. Esto es particularmente útil cuando se necesita para mostrar u ocultar un elemento en base a una consulta de medios. Ver la sección [Cambiando la dirección de arte de una imagen](#cambiando-la-dirección-artística-de-una-imagen) para un ejemplo que utiliza el atributo `media`.
 
 Haciendo que cada elemento de cambio de tamaño para adaptarse a una pantalla puede ser complicado <sup><a href="#fn1" id="ref1">*</a></sup>. Sin embargo, en AMP, usted puede hacer fácilmente un elemento responsivo con sólo especificar el atributo `"layout=responsive"` junto a los atributos `width` y `height`. Cuando se aplica el layout `responsive` a un elemento, ese elemento cambiará de tamaño automáticamente a la anchura de su elemento contenedor, y la altura cambiará en función de la relación de aspecto especificada por `width` y `height` característica del elemento. Casi todos los elementos de AMP apoyan un layout `responsive`; consulte la documentación de referencia del elemento para ver qué diseños son compatibles.
 
@@ -83,11 +83,11 @@ Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más de
 
 ### Mostrando imágenes responsivas
 
-Las imágenes forman una gran parte de una página web (aproximadamente el 65% de los bytes de la página). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP](https://www.ampproject.org/docs/guides/amp_replacements)). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
+Las imágenes forman una gran parte de una página web (aproximadamente el [65% de los bytes de la página](http://httparchive.org/interesting.php#bytesperpage)). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP](https://www.ampproject.org/docs/guides/amp_replacements)). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
 
-- [Sirve imágenes nítidas para obtener la resolución correcta](#mostrando-imagenes-nitidas-para-la-resolucion-correcta)
-- [Cambiando la dirección de arte de una imagen](#cambiando-la-direccion-artistica-de-una-imagen)
-- [Proporcionar formatos de imagen optimizados](#providing-optimized-images)
+- [Sirve imágenes nítidas para obtener la resolución correcta](#mostrando-imágenes-nítidas-para-la-resolución-correcta)
+- [Cambiando la dirección de arte de una imagen](#cambiando-la-dirección-artística-de-una-imagen)
+- [Proporcionar formatos de imagen optimizados](#proporcionar-imágenes-optimizadas)
 
 #### Mostrando imágenes nítidas para la resolución correcta
 
