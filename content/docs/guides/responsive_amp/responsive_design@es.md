@@ -120,43 +120,43 @@ La dirección artística se refiere a la adaptación de las características vis
 
 ##### Ejemplo: Diferentes tamaños de imagenes para diferentes puntos de interrupción
 
-In the following example, we have 3 different cropped images of a cat that we want to display at different breakpoints. So, if the viewport width is:
+En el ejemplo siguiente, tenemos 3 imágenes recortadas diferentes de un gato que queremos mostrar en diferentes puntos de interrupción. Por lo tanto, si el ancho de la ventana de visualización es:
 
-- 670 px or greater, display `cat-large.jpg` (650 x 340 px)
-- 470 - 669 px,  display `cat-medium.jpg`  (450 x 340 px)
-- 469 px or less, display `cat-small.jpg` (226 x 340 px)
+- 670 px o mayor, muestra cat-large.jpg (650 x 340 px)
+- 470 - 669 px, muestra cat-medium.jpg (450 x 340 px)
+- 469 px o menos, muestra cat-small.jpg (226 x 340 px)
 
-{% call callout('Note', type='note') %}
-As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](/docs/guides/author-develop/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
+{% call callout('Nota', type='note') %}
+Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no sesgamos), no especificamos un valor de diseño, que por defecto se establecerá en `layout=fixed` porque establecemos el `width` y el `height`. Para obtener más información, consulte ["¿Qué ocurre si width y height no están definidos?"](/es/docs/guides/responsive/control_layout.html#¿qué-ocurre-si-width-y-height-no-están-definidos?).
 {% endcall %}
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
 {% call callout('Leer más', type='read') %}
-To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights](https://www.ampproject.org/docs/guides/responsive/art_direction) guide.
+Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights](https://www.ampproject.org/es/docs/guides/responsive/art_direction).
 {% endcall %}
 
-#### Providing optimized images
+#### Proporcionar imágenes optimizadas
 
-Delivering fast loading pages requires optimized images--in size, quality, and format.  Always reduce file sizes to the lowest acceptable quality level.  There are various tools that you can use to "crunch" images (e.g., [ImageAlph](http://pngmini.com/lossypng.html) or [TinyPNG](https://tinypng.com/)).  In terms of image formats,  some image formats provide better compression abilities that others (e.g., WebP and JPEG XR vs JPEG).  You'll want to provide the most optimized image for your user, as well as ensuring the image is supported by the user's browser (i.e., [not all browsers support all image formats](https://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support)).
+La entrega de páginas de carga rápida requiere imágenes optimizadas: en tamaño, calidad y formato. Siempre reduzca el tamaño de archivo al nivel de calidad aceptable más bajo. Hay varias herramientas que puede utilizar para "crunch" imágenes (por ejemplo, [ImageAlph](http://pngmini.com/lossypng.html) o [TinyPNG](https://tinypng.com/)). En términos de formatos de imagen, algunos formatos de imagen proporcionan mejores capacidades de compresión que otros (por ejemplo, WebP y JPEG XR vs JPEG). Deberá proporcionar la imagen más optimizada para su usuario, así como garantizar que la imagen sea compatible con el navegador del usuario (es decir, [no todos los navegadores admiten todos los formatos de imagen](https://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support)).
 
-In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.
+En HTML, puede servir diferentes formatos de imagen utilizando la etiqueta `picture`. En AMP, aunque la etiqueta `picture` no es compatible, puede servir a diferentes imágenes mediante el atributo de `fallback`.
 
 {% call callout('Leer más', type='read') %}
-To learn more about fallbacks, see the [Placeholders & Fallbacks](https://www.ampproject.org/docs/guides/author-develop/responsive/placeholders) guide.
+Para aprender más acerca de los fallbacks, lee la guía [Placeholders & Fallbacks](https://www.ampproject.org/es/docs/guides/responsive/placeholders).
 {% endcall %}
 
-##### Example: Serve different image formats
+##### Ejemplo: Sirva diferentes formatos de imagen
 
-In the following example, if the browser supports WebP, serve mountains.webp, otherwise serve mountains.jpg.
+En el ejemplo siguiente, si el navegador admite WebP, sirva mountains.webp, de lo contrario sirva mountains.jpg.
 
 <div>
 <amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
-As a nice bonus, some caches, like the Google AMP Cache, automatically compress and convert images to WebP and the right resolutions if you don't. However, not all platforms use caches, so you should still optimize images manually on your end.
+Como un buen bono, algunas cachés, como el caché de Google AMP, comprimen y convierten automáticamente imágenes a WebP y las resoluciones correctas si no lo hacen. Sin embargo, no todas las plataformas utilizan cachés, por lo que todavía debe optimizar imágenes manualmente.
 
 {% call callout('Leer más', type='read') %}
-To learn more about the image optimizations that the Google AMP Cache applies, see the ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html) blog post.
+Para aprender más acerca de las optimizaciones que aplica el Cache de Google AMP sobre imágenes, lee el siguiente post en inglés: ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html).
 {% endcall %}
 
 ## Ejemplos para inspirar
