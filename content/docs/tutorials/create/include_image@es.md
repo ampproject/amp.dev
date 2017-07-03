@@ -10,6 +10,6 @@ Para demostrar el aspecto que tendría el marcado adicional, a continuación te 
 <amp-img src="bienvenido.jpg" alt="Bienvenido" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Para saber por qué reemplazamos etiquetas como `<img>` por `<amp-img>` y cuántas hay disponibles, consulta [Incluir Iframes y medios](/es/docs/guides/author-develop/amp_replacements.html).
+Para saber por qué reemplazamos etiquetas como `<img>` por `<amp-img>` y cuántas hay disponibles, consulta [Incluir Iframes y medios](/es/docs/guides/amp_replacements.html).
 
 <a class="go-button button" href="/es/docs/tutorials/create/presentation_layout.html">Continuar con el paso 3</a>
