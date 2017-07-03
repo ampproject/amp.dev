@@ -26,7 +26,7 @@ msgstr "Un camino al éxito"
 
 #: /views/amp-ads.html:249
 msgid "AMP Ad"
-msgstr ""
+msgstr "Anuncio AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "AMP Ads"
@@ -73,6 +73,8 @@ msgid ""
 "AMP Ads represent an opportunity to fix key issues with ad experiences on the"
 " web."
 msgstr ""
+"Anuncios AMP representan una oportunidad para arreglar problemas clave con"
+" experiencias de anuncios en la web."
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
@@ -92,7 +94,7 @@ msgstr "Especificación AMP HTML"
 
 #: /views/amp-ads.html:252
 msgid "AMP Landing Page"
-msgstr ""
+msgstr "Página de Aterrizage AMP"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
@@ -105,7 +107,7 @@ msgstr ""
 
 #: /views/amp-ads.html:255
 msgid "AMP Page"
-msgstr ""
+msgstr "Página AMP"
 
 #: /content/includes/lists.yaml
 msgid "AMP Roadmap"
@@ -229,7 +231,7 @@ msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Better ads on a faster web."
-msgstr ""
+msgstr "Mejores anuncios en la web más rápida"
 
 #: /content/includes/latest.yaml /content/latest/blog-ads/_blueprint.yaml
 #: /content/latest/blog/_blueprint.yaml
@@ -452,7 +454,7 @@ msgstr "Preguntas Frecuentes"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Faster ads drive better&nbsp;performance"
-msgstr ""
+msgstr "Los anuncios más rápidos mejoran el rendimiento"
 
 #: /content/docs/contribute/file-a-bug.md
 msgid "File a bug"
@@ -518,7 +520,7 @@ msgstr "Guías"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Head of Product Strategy, Cloudflare"
-msgstr ""
+msgstr "Jefe de estrategia de producto, Cloudflare"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -561,7 +563,7 @@ msgstr "Aumenta tu alcance"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Join Today"
-msgstr ""
+msgstr "Unete hoy"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -640,7 +642,7 @@ msgstr "Aprende quién usa AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Lighter ads lead to better ad&nbsp;experiences"
-msgstr ""
+msgstr "Los anuncios más livianos conducen a mejores experiencias publicitarias"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Maximize ROI everywhere"
@@ -798,7 +800,7 @@ msgstr "Referencia"
 
 #: /views/amp-ads.html:226
 msgid "Regular Ad"
-msgstr ""
+msgstr "Anuncio Regular"
 
 #: /content/support/developer/documentation-bug.md
 msgid "Report a documentation bug on GitHub"
@@ -814,7 +816,7 @@ msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Safer ads build trust in your&nbsp;brands"
-msgstr ""
+msgstr "Anuncios más seguros generan confianza en sus marcas"
 
 #: /views/partials/promo_banner.html:12
 msgid ""
@@ -866,7 +868,7 @@ msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Simple to build, easy to scale."
-msgstr ""
+msgstr "Fácil de construir, fácil de escalar."
 
 #: /content/support/developer/slack.md
 msgid "Slack Channel"
@@ -1118,7 +1120,7 @@ msgstr ""
 
 #: /content/docs/build.md
 msgid "View templates"
-msgstr "Ver diseños"
+msgstr "Ver planitllas"
 
 #: /content/docs/build.md
 msgid "Walk through how to use AMP features with our tutorials."
@@ -1176,7 +1178,7 @@ msgstr "Lo que provee AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "What are AMP Ads?"
-msgstr ""
+msgstr "¿Qué son los anuncios AMP?"
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
 #: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
@@ -1203,7 +1205,7 @@ msgstr "¿Qué es lo último?"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "What's the difference between an AMP Ad and a regular ad? <i>Seconds</i>."
-msgstr ""
+msgstr "¿Cuál es la diferencia entre un anuncio AMP y un anuncio regular? <i>Segundos</i>."
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -1224,7 +1226,7 @@ msgstr "Quién usa AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Who are AMP Ads for?"
-msgstr ""
+msgstr "¿Para quiénes son los anuncios de AMP?"
 
 #: /content/includes/menu.yaml
 msgid "Who is AMP for?"
@@ -1232,11 +1234,11 @@ msgstr "¿Para quién es AMP?"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Why AMP Ads?"
-msgstr ""
+msgstr "¿Por qué anuncios AMP?"
 
 #: /views/amp-ads.html:195
 msgid "Your browser doesn’t support HTML5 video"
-msgstr ""
+msgstr "Tu navegador no soporta videos HTML5"
 
 #: /content/learn/case-studies/category/e-commerce.md
 msgid "e-commerce"
