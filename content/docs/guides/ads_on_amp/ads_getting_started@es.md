@@ -40,7 +40,7 @@ Al agregar el componente `amp-ads`, ha agregado el framework de anuncios a su p�
 Al definir el `height` y `weight` de su anuncio, usted especifica el tamaño del anuncio en su página AMP.
 
 {% call callout('Nota', type='note') %}
-Los atributos de datos adicionales le indican a la red de anuncios que extraiga el tamaño u pub correcto de sus servidores. Cada red de anuncios tiene diferentes atributos para enviar. [Aprende más](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks).
+Los atributos de datos adicionales le indican a la red de anuncios que extraiga el tamaño correcto y el editor de sus servidores. Cada red de anuncios tiene diferentes atributos para enviar. [Aprende más](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks).
 {% endcall %}
 
 ### 4. [OPCIONAL] Especificar un `placeholder`:
