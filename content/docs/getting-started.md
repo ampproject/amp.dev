@@ -1,16 +1,17 @@
 ---
 $title@: Getting Started
 $order: 0
+toc: true
 ---
-
 [TOC]
 
-This guide is a quick start to get you up and running with AMP. 
+This is a quick start guide to get you up and running with AMP.
+
+For more detailed instructions, visit the [Create your first AMP page](/docs/tutorials/create.html) tutorial.
 
 ### Step 1: Get the AMP HTML template
 
 This is the basic HTML you need for an AMP page:
-
 
 ```html
 <!doctype html>
@@ -28,6 +29,7 @@ This is the basic HTML you need for an AMP page:
   </body>
 </html>
 ```
+
 {% call callout('Read on', type='read') %}
 Learn more about the [required markup](/docs/reference/spec.html#required-markup) for AMP pages.
 {% endcall %}
@@ -54,6 +56,7 @@ Or a YouTube video:
     layout="responsive"
     width="480" height="270"></amp-youtube>
 ```
+
 And much more. See the list of [available components in AMP](/docs/reference/components.html).
 
 ### Step 3: Style your elements
@@ -70,6 +73,7 @@ To style elements on your AMP page, add CSS to an inline stylesheet named `<styl
   }
 </style>
 ```
+
 {% call callout('Read on', type='read') %}
 Learn more about the [supported CSS](/docs/guides/responsive/style_pages.html) for AMP pages.
 {% endcall %}
@@ -82,7 +86,7 @@ For other validation tools that you can use, see [Validate AMP pages](/docs/guid
 
 ### Next Steps
 
-For a more detailed learning experience, visit the [Create your first AMP page](/docs/tutorials/create.html) tutorial.
+To dive further into the basics of an AMP page, visit the [Create your first AMP page](/docs/tutorials/create.html) tutorial.
 
 Here are other resources to help your experience:
 
