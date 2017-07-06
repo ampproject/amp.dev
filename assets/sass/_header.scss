@@ -287,6 +287,8 @@
         top: 0;
         transform: translateX(100%);
         transition: opacity .3s;
+        max-height: calc(100vh - 295px);
+        overflow-y: auto;
 
         li {
           &:hover {
