@@ -161,7 +161,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "About"
-msgstr "AMP とは"
+msgstr "AMP について"
 
 #: /content/includes/latest.yaml
 msgid "Add to Calendar"
@@ -654,7 +654,7 @@ msgstr ""
 #: /content/includes/menu.yaml /content/pages/home.html:37
 #: /content/pages/home.html:77 /views/amp-ads.html:409 /views/amp-ads.html:444
 msgid "News"
-msgstr "ブログ"
+msgstr "ニュース"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
