@@ -83,7 +83,7 @@ msgstr ""
 
 #: /content/docs/reference/spec/_blueprint.yaml
 msgid "AMP HTML Specification"
-msgstr ""
+msgstr "AMP HTML仕様"
 
 #: /views/amp-ads.html:252
 msgid "AMP Landing Page"
@@ -112,15 +112,15 @@ msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "AMP for Ad Tech Platforms"
-msgstr ""
+msgstr "広告プラットフォーム向けのAMP"
 
 #: /content/learn/who/advertisers.yaml
 msgid "AMP for Advertisers"
-msgstr ""
+msgstr "広告主向けのAMP"
 
 #: /content/learn/who/publishers.yaml
 msgid "AMP for Publishers"
-msgstr ""
+msgstr "サイト運営者向けのAMP"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -161,7 +161,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "About"
-msgstr ""
+msgstr "AMP について"
 
 #: /content/includes/latest.yaml
 msgid "Add to Calendar"
@@ -235,7 +235,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Brand Guidelines"
-msgstr ""
+msgstr "ブランドガイドライン"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Build for a sustainable future"
@@ -277,7 +277,7 @@ msgstr ""
 #: /content/learn/case-studies/category/_blueprint.yaml
 #: /content/learn/case-studies@es.html /views/about-casestudies.html:12
 msgid "Case Studies"
-msgstr ""
+msgstr "ケーススタディ"
 
 #: /content/support/developer.md
 msgid "Community Resources"
@@ -290,7 +290,7 @@ msgstr ""
 #: /content/docs/contribute.md /content/docs/contribute/_blueprint.yaml
 #: /content/docs/reference/_blueprint.yaml /content/includes/menu.yaml
 msgid "Contribute"
-msgstr ""
+msgstr "コントリビュート"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -307,7 +307,7 @@ msgstr ""
 
 #: /content/docs/tutorials/login_requiring/_blueprint.yaml
 msgid "Create a login-requiring AMP page"
-msgstr ""
+msgstr "ログインが必要な AMP ページを作成する"
 
 #: /content/docs/build.md
 msgid ""
@@ -347,12 +347,12 @@ msgstr ""
 #: /content/learn/amp-design-principles@es.yaml
 #: /content/learn/amp-design-principles@ko.yaml
 msgid "Design Principles"
-msgstr ""
+msgstr "デザイン原則"
 
 #: /content/includes/menu.yaml /content/support/developer.md
 #: /content/support/developer/_blueprint.yaml
 msgid "Developer Support"
-msgstr ""
+msgstr "開発者サポート"
 
 #: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
 msgid "Docs"
@@ -418,11 +418,11 @@ msgstr ""
 #: /content/includes/latest.yaml /content/includes/menu.yaml
 #: /content/latest/list-event.html
 msgid "Events"
-msgstr ""
+msgstr "イベント"
 
 #: /content/docs/build.md /content/includes/menu.yaml
 msgid "Examples"
-msgstr ""
+msgstr "実例"
 
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
@@ -435,7 +435,7 @@ msgstr ""
 
 #: /content/docs/contribute/file-a-bug.md
 msgid "File a bug"
-msgstr ""
+msgstr "バグ報告"
 
 #: /content/includes/home.yaml
 msgid "Flexibility and Results"
@@ -477,7 +477,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Getting started"
-msgstr ""
+msgstr "入門"
 
 #: /content/docs/contribute/github.md
 msgid "GitHub"
@@ -491,7 +491,7 @@ msgstr ""
 #: /content/docs/guides/_blueprint.yaml /content/docs/reference/_blueprint.yaml
 #: /content/includes/menu.yaml
 msgid "Guides"
-msgstr ""
+msgstr "ガイド"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Head of Product Strategy, Cloudflare"
@@ -518,7 +518,7 @@ msgstr ""
 #: /content/learn/about-how@th.yaml /content/learn/about-how@tr.yaml
 #: /content/learn/about-how@zh_CN.yaml
 msgid "How AMP Works"
-msgstr ""
+msgstr "AMP の仕組み"
 
 #: /content/learn/who/publishers.yaml
 msgid "How AMP can help publishers"
@@ -654,7 +654,7 @@ msgstr ""
 #: /content/includes/menu.yaml /content/pages/home.html:37
 #: /content/pages/home.html:77 /views/amp-ads.html:409 /views/amp-ads.html:444
 msgid "News"
-msgstr ""
+msgstr "ニュース"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
@@ -772,15 +772,15 @@ msgstr ""
 
 #: /content/support/developer/documentation-bug.md
 msgid "Report a documentation bug on GitHub"
-msgstr ""
+msgstr "ドキュメントのバグ報告"
 
 #: /content/support/developer/platform-bug.md
 msgid "Report a platform bug on GitHub"
-msgstr ""
+msgstr "プラットフォームのバグ報告"
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
 msgid "Roadmap"
-msgstr ""
+msgstr "ロードマップ"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Safer ads build trust in your&nbsp;brands"
@@ -840,7 +840,7 @@ msgstr ""
 
 #: /content/support/developer/slack.md
 msgid "Slack Channel"
-msgstr ""
+msgstr "Slackチャンネル"
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Social"
@@ -875,7 +875,7 @@ msgstr ""
 
 #: /content/support/developer/stack-overflow.md
 msgid "Stack Overflow Community"
-msgstr ""
+msgstr "Stack Overflowコミュニティ"
 
 #: /content/includes/home.yaml
 msgid "Start Building"
@@ -916,13 +916,13 @@ msgstr "サポート"
 
 #: /content/support/developer/mailing-list.md
 msgid "Support Forum"
-msgstr ""
+msgstr "サポートフォーラム"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
 #: /content/support/faqs/supported-browsers@ko.md
 msgid "Supported Browsers"
-msgstr ""
+msgstr "サポートブラウザ"
 
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
@@ -971,11 +971,11 @@ msgstr ""
 #: /content/latest/_blueprint.yaml /content/latest/latest.html
 #: /content/learn/who/amp-ads.yaml
 msgid "The Latest"
-msgstr ""
+msgstr "最新情報"
 
 #: /content/includes/latest.yaml /content/latest/latest.html
 msgid "The Latest News"
-msgstr ""
+msgstr "最新ニュース"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -1030,7 +1030,7 @@ msgstr ""
 #: /content/learn/amp-design-principles@ko.yaml
 #: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/publishers.yaml
 msgid "Tutorials"
-msgstr ""
+msgstr "チュートリアル"
 
 #: /content/includes/events.yaml
 msgid "Upcoming Events"
@@ -1054,7 +1054,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Videos"
-msgstr ""
+msgstr "動画"
 
 #: /content/docs/build.md
 msgid "View AMP Components"
@@ -1152,7 +1152,7 @@ msgstr "AMP とは"
 
 #: /content/includes/menu.yaml
 msgid "What's New"
-msgstr ""
+msgstr "最新ニュース"
 
 #: /content/includes/latest.yaml
 msgid "What's hot?"
@@ -1185,7 +1185,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Who is AMP for?"
-msgstr ""
+msgstr "AMP は誰が使いますか？"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Why AMP Ads?"
