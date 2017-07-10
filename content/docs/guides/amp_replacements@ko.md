@@ -1,153 +1,124 @@
 ---
-$title: 이미지 및 비디오 가져오기
+
+$title: 이미지 및 동영상 삽입
 $order: 1
+$category: 개발
+
 toc: true
-components:
-  - iframe
 ---
 
 [TOC]
 
-일반 HTML 페이지처럼, AMP에서도 **images**, **video**, **audio** 를 가져올 수 있습니다.
-AMP와 비교했을 때 차이점과 어떻게 페이지에서 가져올 수 있는 지 살펴봅시다.
+ 일반적인 HTML 페이지와 마찬가지로, AMP 에도 **이미지**, **동영상**, "**오디오** 콘텐츠를 삽입할 수 있습니다." 
 
-## 왜 &lt;img>, &lt;video>, &lt;audio>가 아닌가요?
+##  왜 `<img>`, `<video>`, `<audio>` 를 사용할 수 없나요?
 
-AMP는 `<img>` 같은 미디어를 표현하는 기본 HTML을 지원하지 않습니다.
-아래와 같은 이유로 기본 HTML과 동등한 컴포넌트를 제공합니다:
+ AMP 는 `<img>` 와 같이 미디어를 표시하는 기본 HTML 요소를 지원하지 않습니다. 대신 이러한 요소에 해당하는 구성요소를 제공하는데, 그 이유는 다음과 같습니다.
 
-* [뷰포트의 사전 로딩](/ko/learn/about-how/#size-all-resources-statically)을 지원하려면 자원을 불러오기 전의 페이지 레이아웃에 대한 이해가 필수적입니다.
-* [효과적으로 자원을 불러오는 과정의 우선순위를 정하거나 지연](/ko/learn/about-how/#prioritize-resource-loading)하기 위해 네트워크 요청을 제어할 필요가 있습니다.
+*  애셋이 로드되기 전에 페이지의 레이아웃을 파악해야 하며, 이는 [첫 표시 영역을 미리 로드하는 데 필수적입니다.](/learn/about-how/#size-all-resources-statically)
+*  네트워크의 레이지 로드 요청을 제어하고 [리소스의 우선순위를 효과적으로 지정해야 합니다.](/learn/about-how/#prioritize-resource-loading)
 
-<aside class="caution">
-  <strong>주의:</strong>
-  <span>위에서 말한 것들을 지원하지는 않지만, 그것들은 렌더링 <i>될 것이며</i>,
-  AMP는 <a href="/ko/docs/guides/validate.html">페이지 검증</a>을 하지 않으며,
-  AMP에서 제공하는 모든 혜택을 얻지 못할 것입니다.</span>
-</aside>
+{% call callout('주의', type='caution') %}
+ 지원되지 않는 &lt;img&gt;, &lt;video&gt;, &lt;audio&gt; 도 렌더링이 됩니다. 하지만 AMP 에서 [페이지를 확인하지](/ko/docs/guides/debug/validate.html) 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다. {% endcall %}
 
 ## 이미지
 
-페이지에 이미지를 가져올 때는 [`amp-img`](/ko/docs/reference/components/amp-img.html) 요소를 사용합니다:
+ 다음과 같이 [`amp-img`](/ko/docs/reference/components/amp-img.html) 요소를 사용하여 페이지에 이미지를 삽입합니다.
 
-<!--embedded example - fixed size image -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[sourcecode:html]
+<amp-img src="fixed.jpg" width="264" height="96"></amp-img>
+[/sourcecode]
 
-위 예제에서, 이미지는 정의된 고정 height와 width에 맞추어 표현될 것입니다.
-최소한, 명시적인 width와 height는 설정해야합니다.
+이는 가장 기본적인 예로, 이미지는 지정된 높이와 너비로 고정되어 표시됩니다. 최소한 너비와 높이가 명시적으로 설정되어 있어야 합니다.
+
+#### 자바스크립트가 사용 중지되었을 때 이미지 표시
+
+ As `<amp-img>`  는 자바스크립트를 사용하므로, 사용자가 스크립트를 사용 중지한 경우 이미지가 표시되지 않습니다. 이 경우, 다음과 같이 `<img>`, `<noscript>` 를 사용하여 이미지 대신 표시할 내용을 지정해야 합니다.
+
+[sourcecode:html]
+<amp-img src="fixed.jpg" width="264" height="96">
+<noscript>
+<img src="fixed.jpg" width="264" height="96" />
+</noscript>
+</amp-img>
+[/sourcecode]
 
 ### 고급 레이아웃
 
-AMP는 표준 CSS/HTML에 비교했을 때 훨씬 쉽게 반응형 이미지를 만듭니다.
-기본 형태에서, `layout="responsive"`를 추가하기만 하면 됩니다:
+ AMP 에서는 표준 CSS/HTML 에서보다 훨씬 쉽게 완전 반응형 이미지를 생성할 수 있습니다. 아래는 가장 기본적인 형식으로, `layout="responsive"` 를 추가하기만 하면 됩니다.
 
-<!--embedded example - basic responsive image -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[sourcecode:html]
+<amp-img src="responsive.jpg" width="527" height="193" layout="responsive">
+</amp-img>
+[/sourcecode]
 
-<aside class="success">
-  <strong>더 읽기:</strong>
-  <span>더 상세한 내용은 <a href="/ko/docs/guides/responsive/control_layout.html">레이아웃 & 미디어쿼리</a>를 참고하길 바랍니다.</span>
-</aside>
+{% call callout('읽어보기', type='success') %}
+ Learn more about [고급 레이아웃 기술](/ko/docs/guides/author-develop/responsive/control_layout.html)
+에 관해 자세히 알아보세요.{% endcall %}
 
-### 동작 및 플레이스홀더
+### 동작 및 자리표시자
 
-AMP HTML 런타임은 뷰포트 위치, 시스템 리소스, 연결 대역폭, 그 외의 요인을 바탕으로
-리소스 로딩 우선순위나 지연을 선택하여 이미지 리소스를 관리할 수 있습니다.
+AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시 영역 위치, 시스템 리소스, 연결 대역폭 등과 같은 요인을 바탕으로 리소스 로드를 지연시킬지 우선할지 선택할 수 있습니다.
 
-<aside class="success">
-  <strong>더 읽기:</strong>
-  <span>더 상세한 내용은 <a href="/ko/docs/guides/responsive/placeholders.html">이미지를 위한 플레이스홀더 & 폴백</a>을 참고하길 바랍니다.</span>
-</aside>
+{% call callout('읽어보기', type='success') %}
+[이미지의 대체 내용 및 자리표시자를 제공](/ko/docs/guides/author-develop/responsive/placeholders.html)
+하는 방법에 관해 자세히 알아보세요. {% endcall %}
 
-## 애니메이션되는 이미지
+## 애니메이션 이미지
 
-[`amp-anim`](/ko/docs/reference/components/amp-anim.html) 요소는 `amp-img` 요소와 매우 유사하며,
-GIF 같이 애니메이션되는 이미지의 재생 및 로딩을 제어하는 기능을 추가로 제공합니다.
+ The [`amp-anim`](/ko/docs/reference/components/amp-anim.html) 요소는 `amp-img` 요소와 아주 유사하며, GIF 와 같은 애니메이션 이미지의 로드 및 재생을 관리하는 추가 기능을 제공합니다.
 
-<!--embedded amp-anim basic example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[sourcecode:html]
+<amp-anim width="400" height="300" src="my-gif.gif">
+<amp-img placeholder width="400" height="300" src="my-gif-screencap.jpg">
+</amp-img>
+</amp-anim>
+[/sourcecode]
 
-<aside class="note">
-  <strong>노트:</strong>
-  <span>이 컴포넌트를 사용할 때 페이지의 헤드에 <code>&lt;script async custom-element="amp-anim"
-  src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"&gt;&lt;/script&gt;</code>를 추가해야합니다.</span>
-</aside>
+{% call callout('참고', type='note') %}
+ 이 구성요소를 사용하려면` <script async custom-element="amp-anim"
+src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` 
+ 를 페이지 헤드에 삽입하세요. {% endcall %}
 
-## 비디오
+## 동영상
 
-페이지에 비디오를 가져올 때는 [`amp-video`](/ko/docs/reference/components/amp-video.html) 요소를 사용합니다.
+ 페이지에 동영상을 삽입하려면 [`amp-video`](/ko/docs/reference/components/amp-video.html) 요소를 사용합니다.
 
-이 요소는 직접적으로 HTML5 비디오 파일을 가져올 때만 사용해야 합니다.
-요소는 `src` 속성에 정의된 비디오 리소스를 AMP에서 정의한 시간에 lazy 로딩합니다.
+ 직접 HTML5 동영상 파일 삽입에만 이 요소를 사용하세요. 이 요소는 `src` 속성으로 지정한 비디오 리소스를 AMP 가 결정한 시간에 레이지 로드합니다.
 
-비디오가 시작하기 전에 보여줄 플레이스홀더를 포함할 수 있으며,
-브라우저에서 HTML5 비디오를 지원하지 않는 경우 등을 대비한 폴백을 제공할 수 있습니다:
+동영상이 시작하기 전에 자리표시자를 삽입하고, 브라우저에서 HTML5 동영상을 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[sourcecode:html]
+<amp-video width="400" height="300" src="https://yourhost.com/videos/myvideo.mp4"
+poster="myvideo-poster.jpg">
 
-## Audio
+<div fallback>
+    <p>사용 중인 브라우저에서 HTML5 동영상을 지원하지 않습니다.</p>
+  </div>
+</amp-video>
+[/sourcecode]
 
-페이지에 오디오 리소스를 가져올 때는
-[`amp-audio`](/ko/docs/reference/components/amp-audio.html) 요소를 사용합니다.
+## 오디오
 
-이 요소는 직접적으로 HTML5 오디오 파일을 가져올 때만 사용해야 합니다.
-AMP 페이지에서 가져오는 모든 다른 외부 리소스처럼,
-요소는 `src` 속성에 정의된 오디오 리소스를 AMP에서 정의한 시간에 lazy 로딩합니다.
+ 페이지에 오디오 리소스를 삽입하려면 [`amp-audio`](/ko/docs/reference/components/amp-audio.html) 요소를 사용합니다.
 
-오디오가 시작하기 전에 보여줄 플레이스홀더를 포함할 수 있으며,
-브라우저에서 HTML5 오디오를 지원하지 않는 경우 등을 대비한 폴백을 제공할 수 있습니다:
+ 직접 HTML5 오디오 파일 삽입에만 이 요소를 사용하세요. AMP 페이지에 삽입되는 모든 외부 리소스와 같이, 이 요소는 `src` 속성으로 지정한 오디오 리소스를 AMP가 결정한 시간에 레이지 로드합니다.
 
-<!--embedded audio example  -->
-<div>
-<amp-iframe height="314"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+오디오가 시작하기 전에 자리표시자를 삽입하고, 브라우저에서 HTML5 오디오를 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
-<aside class="note">
-  <strong>노트:</strong>
-  <span>이 컴포넌트를 사용할 때 페이지의 헤드에 <code>&lt;script async custom-element="amp-anim"
-  src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"&gt;&lt;/script&gt;</code>를 추가해야합니다.</span>
-</aside>
+[sourcecode:html]
+<amp-audio width="400" height="300" src="https://yourhost.com/audios/myaudio.mp3">
+
+<div fallback>
+    <p>사용 중인 브라우저에서 HTML5 오디오를 지원하지 않습니다.</p>
+  </div>
+  <source type="audio/mpeg" src="foo.mp3">
+  <source type="audio/ogg" src="foo.ogg">
+</amp-audio>
+[/sourcecode]
+
+{% call callout('참고', type='note') %}
+ 이 구성요소를 사용하려면 `<script async custom-element="amp-audio"
+src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` 
+를 페이지 헤드에 삽입하세요. {% endcall %}
+
