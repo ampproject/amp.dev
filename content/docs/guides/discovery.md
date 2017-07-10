@@ -8,22 +8,39 @@ toc: true
 [TOC]
 
 
-In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, how does it know there’s an AMP version of it?
+In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. 
+Consider this: If Google Search finds the non-AMP version of that page, how does it know there’s an AMP version of it?
 
 ### Linking pages with &lt;link&gt;
 
 In order to solve this problem, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
 
-Add the following to the non-AMP page:
+The HTML pages of our website that have an "AMP version" should have a `<link>` tag in the code with an **amphtml** attribute that tells Google where the AMP version is.
+
+Let's see an example for non-AMP page (regular HTML version):
 
 [sourcecode:html]
-<link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
+/* source code for https://www.example.com/url/to/full/document.html non-amp page */
+<!doctype html>
+<html lang="en">
+  <head>
+    ...
+    <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
+    ...
+  </head>
 [/sourcecode]
 
-And this to the AMP page:
+And this example is for the AMP page:
 
 [sourcecode:html]
-<link rel="canonical" href="https://www.example.com/url/to/full/document.html">
+/* source code for https://www.example.com/url/to/amp/document.html amp page */
+<!doctype html>
+<html amp lang="en">
+  <head>
+    ...
+    <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
+    ...
+  </head>
 [/sourcecode]
 
 ### What if I only have one page?
@@ -31,7 +48,14 @@ And this to the AMP page:
 If you only have one page, and that page is an AMP page, you must still add the canonical link to it, which will then simply point to itself:
 
 [sourcecode:html]
-<link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
+/* source code for https://www.example.com/url/to/amp/document.html amp page */
+<!doctype html>
+<html amp lang="en">
+  <head>
+    ...
+    <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
+    ...
+  </head>
 [/sourcecode]
 
 {% call callout('Read on', type='read') %}
@@ -51,6 +75,10 @@ This isn’t just relevant for AMP pages but for all web pages. For some platfor
 Example:
 
 [sourcecode:html]
+<!doctype html>
+<html amp lang="en">
+  <head>
+    ...
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -82,6 +110,8 @@ Example:
     }
   }
 </script>
+    ...
+  </head>
 [/sourcecode]
 
 More examples can be found in the [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
