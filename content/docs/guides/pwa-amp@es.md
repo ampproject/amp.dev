@@ -8,7 +8,7 @@ components:
 ---
 [TOC]
 
-{{ youtube('Yllbfu3JE2Y', 480, 270, caption='Watch the intro to combining AMP and PWA.') }}
+{{ youtube('Yllbfu3JE2Y', 480, 270, caption='Mira la introducción a combinar AMP y PWA.') }}
 
 Las Aplicaciones Web Progresivas, en inglés PWA (o Progressive Web Apps) y las páginas AMP trabajan muy bien juntas. De hecho, en muchos casos, se complentan entre ellas de una forma u otra. Aprenda cómo:
 
