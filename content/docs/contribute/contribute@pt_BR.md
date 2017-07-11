@@ -1,9 +1,5 @@
 ---
 $title: Como contribuir
-$order: 0
-$path: /contribute/
-$localization:
-    path: /{locale}/{base}/
 ---
 
 O Projeto AMP não seria possível sem a ajuda de todos os membros da nosssa comunidade, sejam eles desenvolvedores, criadores de conteúdo ou fornecedores de serviços relevantes. Há muitas maneiras de contribuir.
