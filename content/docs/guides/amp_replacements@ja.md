@@ -13,11 +13,11 @@ toc: true
 
 AMP は、メディアの表示に使用されるデフォルトの HTML タグ（`<img>`など）には対応していません。次の理由で、同等のコンポーネントが用意されています。
 
-*  アセットの読み込み前にページのレイアウトを把握しなければならない（[最初のビューポートのプリロードに対応](/learn/about-how/#size-all-resources-statically) するために不可欠）
-*  ネットワーク リクエストを管理して、[リソースの遅延読み込みと優先順位付けを効果的に行えるように](/learn/about-how/#prioritize-resource-loading) しなければならない
+*  アセットの読み込み前にページのレイアウトを把握しなければならない（[最初のビューポートのプリロードに対応](/ja/learn/about-how/#size-all-resources-statically) するために不可欠）
+*  ネットワーク リクエストを管理して、[リソースの遅延読み込みと優先順位付けを効果的に行えるように](/ja/learn/about-how/#prioritize-resource-loading) しなければならない
 
 {% call callout('注', type='caution') %}
-こうしたタグの使用は、非対応ですが、*will* 表示には有効です。ただし、AMP で [ページの検証](/docs/guides/debug/validate.html) が行われないので、AMP のメリットをすべて利用することはできなくなります。
+こうしたタグの使用は、非対応ですが、*will* 表示には有効です。ただし、AMP で [ページの検証](/ja/docs/guides/debug/validate.html) が行われないので、AMP のメリットをすべて利用することはできなくなります。
 {% endcall %}
 
 ## 画像
@@ -96,7 +96,7 @@ The [amp-anim](/ja/docs/reference/components/amp-anim.html) 要素は`amp-img` �
 
 ## 音声
 
-音声のリソースをページに追加するには [amp-audio](/docs/reference/components/amp-audio.html) 要素を使用します。
+音声のリソースをページに追加するには [amp-audio](/ja/docs/reference/components/amp-audio.html) 要素を使用します。
 
 この要素は、HTML5 の音声ファイルを直接埋め込む場合にのみ使用します。AMP ページに埋め込まれるすべての外部リソースと同様に、この要素により、`src` 属性で指定された音声のリソースが、AMP で決められたタイミングで、遅れて読み込まれます。
 
