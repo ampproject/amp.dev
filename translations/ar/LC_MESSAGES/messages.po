@@ -1,10 +1,10 @@
 #: /content/includes/home.yaml
 msgid "A collaborative effort"
-msgstr ""
+msgstr "مبادر توافقيّة"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "A faster way to grow your business"
-msgstr ""
+msgstr "طريقة أسرع لتنمية مشروعك"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -14,24 +14,29 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
+"عدد متزايد من الناشرين والمستشهرين يعتمدون AMP لتحرير محتوى أسرع و أفضل ونشره لمستخدميهم."
+"ما إن يتبنى حرفاؤك سرعة AMP ويبدأ المستخدون استهلاك محتوى أكثر حتى تتأكد أن شركتك على"
+"درب المستقبل. ابدأ دمج تكنولوجيتك مع AMP اليوم."
 
 #: /content/includes/home.yaml
 msgid "A path to success"
-msgstr ""
+msgstr "طريق النجاح"
 
 #: /views/amp-ads.html:249
 msgid "AMP Ad"
-msgstr ""
+msgstr "اعلان AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "AMP Ads"
-msgstr ""
+msgstr "اعلانات AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMP Ads are 6x faster than regular ads on AMP pages, making them more "
 "viewable, more effective and more likely to perform&nbsp;well."
 msgstr ""
+"اعلانات AMP أسرع بـ6 مرّات من الإعلانات العادية على صفحات AMP, مما يجعلها"
+" مرئية أكثر، فعّالة أكثر وأكثر احتمالا لأن تكون ذات أداء جيد."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -40,6 +45,10 @@ msgid ""
 "serve ads that are faster, lighter and more effective. Creative developer "
 "tools like Google Web Designer will soon support AMP ads as well."
 msgstr ""
+"اعلانات AMP هي تصميم جديد مبني على تكنولوجيا الـ HTML والـ CSS وليست تكنولوجيا"
+" جديدة. هذا يعني أنه يمكنك استعمال موارد التطوير الموجودة عندك لانشاء و نشر"
+" اعلانات اسرع, أخف و اكثر فاعلية. أدوات التطوير الجديدة مثل Google Web Designer "
+" ستدعم AMP عن قريب."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
