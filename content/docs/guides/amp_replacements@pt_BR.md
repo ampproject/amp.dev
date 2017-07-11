@@ -16,16 +16,16 @@ include them in your pages.
 
  As AMP não são compatíveis com os correspondentes padrão em HTML para exibir mídia, como `<img>`. Fornecemos componentes equivalentes pelos seguintes motivos:
 
-*  Precisamos entender o layout da página antes de carregar os recursos, algo crucial para [oferecer suporte ao pré-carregamento da janela de visualização primária.](/learn/about-how/#size-all-resources-statically)
-*  Precisamos controlar as solicitações de rede para [carregamento lento e priorizar os recursos de maneira efetiva.](/learn/about-how/#prioritize-resource-loading)
+*  Precisamos entender o layout da página antes de carregar os recursos, algo crucial para [oferecer suporte ao pré-carregamento da janela de visualização primária.](/pt_br/learn/about-how/#size-all-resources-statically)
+*  Precisamos controlar as solicitações de rede para [carregamento lento e priorizar os recursos de maneira efetiva.](/pt_br/learn/about-how/#prioritize-resource-loading)
 
 {% call callout('Cuidado', type='caution') %}
- Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas](/docs/guides/debug/validate.html) 
+ Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas](/pt_br/docs/guides/debug/validate.html) 
 e não será possível aproveitar todos os benefícios que as AMP oferecem. {% endcall %}
 
 ## Imagens
 
- Inclua uma imagem na página usando o elemento [`amp-img`](/docs/reference/components/amp-img.html) como em:
+ Inclua uma imagem na página usando o elemento [`amp-img`](/pt_br/docs/reference/components/amp-img.html) como em:
 
 [sourcecode:html]
 <amp-img src="fixed.jpg" width="264" height="96"></amp-img>
@@ -55,7 +55,7 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
 [/sourcecode]
 
 {% call callout('Leia mais', type='success') %}
- Saiba mais sobre [técnicas de layout avançadas](/docs/guides/author-develop/responsive/control_layout.html)
+ Saiba mais sobre [técnicas de layout avançadas](/pt_br/docs/guides/author-develop/responsive/control_layout.html)
 . {% endcall %}
 
 ### Comportamento e marcadores de posição
@@ -63,12 +63,12 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
 O tempo de execução das AMP em HTML pode gerenciar recursos de imagens de maneira eficiente, escolhendo atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na conexão de largura de banda ou em outros fatores.
 
 {% call callout('Leia mais', type='success') %}
- Saiba como [fornecer fallbacks e marcadores de posição para imagens](/docs/guides/author-develop/responsive/placeholders.html)
+ Saiba como [fornecer fallbacks e marcadores de posição para imagens](/pt_br/docs/guides/author-develop/responsive/placeholders.html)
 . {% endcall %}
 
 ## Imagens animadas
 
- O elemento [`amp-anim`](/docs/reference/components/amp-anim.html) é muito similar ao elemento `amp-img` e fornece funcionalidades adicionais para gerenciar o carregamento e a reprodução de imagens animadas, como GIFs.
+ O elemento [`amp-anim`](/pt_br/docs/reference/components/amp-anim.html) é muito similar ao elemento `amp-img` e fornece funcionalidades adicionais para gerenciar o carregamento e a reprodução de imagens animadas, como GIFs.
 
 [sourcecode:html]
 <amp-anim width="400" height="300" src="my-gif.gif">
@@ -84,7 +84,7 @@ no topo da página. {% endcall %}
 
 ## Vídeo
 
- Inclua um vídeo na página usando o elemento [`amp-video`](/docs/reference/components/amp-video.html).
+ Inclua um vídeo na página usando o elemento [`amp-video`](/pt_br/docs/reference/components/amp-video.html).
 
  Somente use esse elemento para incorporar diretamente arquivos de vídeo HTML5. O elemento carrega o recurso de vídeo especificado pelo atributo `src` com lazy loading, em um momento determinado pelas AMP.
 
@@ -102,7 +102,7 @@ poster="myvideo-poster.jpg">
 
 ## Áudio
 
- Inclua um recurso de áudio na página usando o elemento [`amp-audio`](/docs/reference/components/amp-audio.html).
+ Inclua um recurso de áudio na página usando o elemento [`amp-audio`](/pt_br/docs/reference/components/amp-audio.html).
 
  Use esse elemento somente para incorporar diretamente arquivos de áudio HTML5. Como todos os recursos externos incorporados em AMP, o elemento carrega o recurso de áudio especificado pelo atributo `src` com lazy loading, em um momento determinado pelas AMP.
 
