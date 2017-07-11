@@ -1,8 +1,7 @@
 ---
-
 $title: 在 AMP 上投放广告
 $order: 8
-$category: 开发
+$category: Develop
 
 toc: true
 ---
