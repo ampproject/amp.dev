@@ -1,8 +1,7 @@
 ---
-
 $title: 이미지 및 동영상 삽입
 $order: 1
-$category: 개발
+$category: Develop
 
 toc: true
 ---
