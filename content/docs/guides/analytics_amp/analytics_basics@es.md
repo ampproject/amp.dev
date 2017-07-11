@@ -12,7 +12,7 @@ Con este artículo conocerás los aspectos básicos de Analytics en las páginas
 
 AMP ofrece dos componentes distintos para poder realizar los análisis y mediciones que necesites: [amp-pixel](/es/docs/reference/amp-pixel.html) y [amp-analytics](/es/docs/reference/extended/amp-analytics.html). Ambas opciones envían análisis a un punto determinado.
 
-Si lo que buscas es un comportamiento como el de un [píxel de seguimiento sencillo](https://en.wikipedia.org/wiki/Web_beacon#Implementation) , opta por el componente `amp-pixel`, que te permite obtener datos básicos del seguimiento de páginas vistas. Además, estos datos se envían a la URL que se defina. Puede que este componente sea necesario en algunas integraciones con un proveedor. En este caso, determinarán el punto de acceso a la URL.
+Si lo que buscas es un comportamiento como el de un [píxel de seguimiento sencillo](https://en.wikipedia.org/wiki/Web_beacon#Implementation), opta por el componente `amp-pixel`, que te permite obtener datos básicos del seguimiento de páginas vistas. Además, estos datos se envían a la URL que se defina. Puede que este componente sea necesario en algunas integraciones con un proveedor. En este caso, determinarán el punto de acceso a la URL.
 
 En la mayor parte de las soluciones de análisis se debe utilizar `amp-analytics`. El seguimiento de páginas vistas también funciona con `amp-analytics`. También puedes hacer el seguimiento de la interacción de los usuarios con cualquier tipo de contenido de la página, incluidos los clics en los enlaces y en los botones. Además, permite medir hasta qué punto de la página llegó el usuario o saber si el usuario utilizó los medios sociales, entre otros datos.
 
@@ -20,7 +20,7 @@ En la mayor parte de las soluciones de análisis se debe utilizar `amp-analytics
 Consulta el artículo [Información detallada de AMP Analytics](/es/docs/guides/analytics/deep_dive_analytics.html)
 .{% endcall %}
 
-Como parte de la integración en la plataforma AMP, los proveedores han ofrecido configuraciones de `amp-analytics` predefinidas, con lo que es más fácil captar datos y enviarlos a las herramientas de seguimiento. Se puede acceder a la documentación del proveedor desde la lista [de proveedores de Analytics](/es/docs/guides/analytics/analytics-vendors.html) .
+Como parte de la integración en la plataforma AMP, los proveedores han ofrecido configuraciones de `amp-analytics` predefinidas, con lo que es más fácil captar datos y enviarlos a las herramientas de seguimiento. Se puede acceder a la documentación del proveedor desde la lista [de proveedores de Analytics](/es/docs/guides/analytics/analytics-vendors.html).
 
 En lo que respecta a tus páginas, puedes utilizar tanto `amp-pixel` como `amp-analytics` en ellas: `amp-pixel` para realizar un seguimiento sencillo de páginas vistas y `amp-analytics` para todo lo demás. También puedes añadir varias veces la misma etiqueta. Si estás trabajando con varios proveedores de Analytics, necesitarás una etiqueta por cada solución. Ten en cuenta que los usuarios prefieren páginas AMP más sencillas, así que no utilices etiquetas adicionales si no son necesarias.
 
@@ -40,7 +40,7 @@ Para crear una configuración de `amp-pixel` sencilla, inserta en tu página AMP
 
 En este ejemplo, los datos sobre páginas vistas se envían a la URL definida junto con un número aleatorio. La variable `RANDOM` es una de las muchas [variables de sustitución de la plataforma AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Obtén más información acerca de [la sustitución de variables](/es/docs/guides/analytics/analytics_basics.html#variable-substitution) en este artículo.
 
-El componente [amp-pixel](/es/docs/reference/amp-pixel.html)  está integrado, de modo que no necesitas ninguna declaración de inclusión como sucedería si fuera un componente ampliado de AMP, como `amp-analytics`. No obstante, debes colocar la etiqueta `amp-pixel` lo más cerca posible del inicio de tu etiqueta `<body>`. El píxel de seguimiento solo se activará cuando se visualice la etiqueta. Si `amp-pixel` se coloca cerca del final de la página, no se activará.
+El componente [amp-pixel](/es/docs/reference/amp-pixel.html) está integrado, de modo que no necesitas ninguna declaración de inclusión como sucedería si fuera un componente ampliado de AMP, como `amp-analytics`. No obstante, debes colocar la etiqueta `amp-pixel` lo más cerca posible del inicio de tu etiqueta `<body>`. El píxel de seguimiento solo se activará cuando se visualice la etiqueta. Si `amp-pixel` se coloca cerca del final de la página, no se activará.
 
 ### Configuración de amp-analytics sencilla
 
@@ -75,7 +75,7 @@ El siguiente ejemplo es parecido al [ejemplo de `amp-pixel`](/es/docs/guides/ana
 </amp-analytics>
 [/sourcecode]
 
-En el ejemplo anterior hemos definido una solicitud denominada "pageview" para que fuerahttps://foo.com/pixel?RANDOM.  Como hemos explicado anteriormente, RANDOM se sustituye por un número aleatorio, de modo que la solicitud al final tendrá un aspecto similar a este:https://foo.com/pixel?0.23479283687235653498734.
+En el ejemplo anterior hemos definido una solicitud denominada "pageview" para que fuerahttps://foo.com/pixel?RANDOM.  Como hemos explicado anteriormente, RANDOM se sustituye por un número aleatorio, de modo que la solicitud al final tendrá un aspecto similar a este https://foo.com/pixel?0.23479283687235653498734.
 
 Al visualizarse la página (según lo especificado por el uso de la palabra clave de activación `visible`), se activa un evento y se envía la solicitud de `pageview` mencionada. El atributo triggers determina el momento en el que se activa la solicitud de página vista. Obtén más información sobre las [solicitudes y los activadores](/es/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports).
 
