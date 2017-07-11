@@ -6,7 +6,7 @@ El proyecto AMP no sería posible sin la ayuda de todos los miembros de la comun
 
 ### Informar de problemas con AMP
 
- Si quieres enviar algún comentario o te has encontrado con problemas técnicos con AMP, infórmanos de ello a través del [sistema de seguimiento de problemas](https://github.com/ampproject/amphtml/issues) . En el caso de que te hayas encontrado algún problema en [ampproject.org](https://ampproject.org) , utiliza el [sistema de seguimiento de problemas con documentos](https://github.com/ampproject/docs/issues) .
+ Si quieres enviar algún comentario o te has encontrado con problemas técnicos con AMP, infórmanos de ello a través del [sistema de seguimiento de problemas](https://github.com/ampproject/amphtml/issues) . En el caso de que te hayas encontrado algún problema en [ampproject.org](https://ampproject.org), utiliza el [sistema de seguimiento de problemas con documentos](https://github.com/ampproject/docs/issues) .
 
 ### Contribuciones técnicas a AMP
 
