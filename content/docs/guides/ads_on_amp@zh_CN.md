@@ -17,5 +17,5 @@ AMP 网页只是具备某些额外功能（和一些限制）的网页，这些�
 
 为了获得最佳效果，请按照在非 AMP 网页上投放广告的相同方式在 AMP 网页上投放广告。
 
-<a class="button go-button" href="/zh_cn//docs/guides/ads/ads_getting_started.html">让我们开始吧！</a>
+<a class="button go-button" href="/zh_cn/docs/guides/ads/ads_getting_started.html">让我们开始吧！</a>
 
