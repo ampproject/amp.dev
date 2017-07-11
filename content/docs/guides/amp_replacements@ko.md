@@ -34,22 +34,33 @@ toc: true
 
  As `<amp-img>`  는 자바스크립트를 사용하므로, 사용자가 스크립트를 사용 중지한 경우 이미지가 표시되지 않습니다. 이 경우, 다음과 같이 `<img>`, `<noscript>` 를 사용하여 이미지 대신 표시할 내용을 지정해야 합니다.
 
-[sourcecode:html]
-<amp-img src="fixed.jpg" width="264" height="96">
-<noscript>
-<img src="fixed.jpg" width="264" height="96" />
-</noscript>
-</amp-img>
-[/sourcecode]
+<!--embedded example - fixed size image -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ### 고급 레이아웃
 
  AMP 에서는 표준 CSS/HTML 에서보다 훨씬 쉽게 완전 반응형 이미지를 생성할 수 있습니다. 아래는 가장 기본적인 형식으로, `layout="responsive"` 를 추가하기만 하면 됩니다.
 
-[sourcecode:html]
-<amp-img src="responsive.jpg" width="527" height="193" layout="responsive">
-</amp-img>
-[/sourcecode]
+<!--embedded example - basic responsive image -->
+<div>
+<amp-iframe height="193"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('읽어보기', type='success') %}
  Learn more about [고급 레이아웃 기술](/ko/docs/guides/author-develop/responsive/control_layout.html)
@@ -67,12 +78,17 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
  The [`amp-anim`](/ko/docs/reference/components/amp-anim.html) 요소는 `amp-img` 요소와 아주 유사하며, GIF 와 같은 애니메이션 이미지의 로드 및 재생을 관리하는 추가 기능을 제공합니다.
 
-[sourcecode:html]
-<amp-anim width="400" height="300" src="my-gif.gif">
-<amp-img placeholder width="400" height="300" src="my-gif-screencap.jpg">
-</amp-img>
-</amp-anim>
-[/sourcecode]
+<!--embedded amp-anim basic example -->
+<div>
+<amp-iframe height="253"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('참고', type='note') %}
  이 구성요소를 사용하려면` <script async custom-element="amp-anim"
@@ -87,15 +103,17 @@ src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>`
 
 동영상이 시작하기 전에 자리표시자를 삽입하고, 브라우저에서 HTML5 동영상을 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
-[sourcecode:html]
-<amp-video width="400" height="300" src="https://yourhost.com/videos/myvideo.mp4"
-poster="myvideo-poster.jpg">
-
-<div fallback>
-    <p>사용 중인 브라우저에서 HTML5 동영상을 지원하지 않습니다.</p>
-  </div>
-</amp-video>
-[/sourcecode]
+<!--embedded video example  -->
+<div>
+<amp-iframe height="234"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## 오디오
 
@@ -105,16 +123,17 @@ poster="myvideo-poster.jpg">
 
 오디오가 시작하기 전에 자리표시자를 삽입하고, 브라우저에서 HTML5 오디오를 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
-[sourcecode:html]
-<amp-audio width="400" height="300" src="https://yourhost.com/audios/myaudio.mp3">
-
-<div fallback>
-    <p>사용 중인 브라우저에서 HTML5 오디오를 지원하지 않습니다.</p>
-  </div>
-  <source type="audio/mpeg" src="foo.mp3">
-  <source type="audio/ogg" src="foo.ogg">
-</amp-audio>
-[/sourcecode]
+<!--embedded audio example  -->
+<div>
+<amp-iframe height="314"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('참고', type='note') %}
  이 구성요소를 사용하려면 `<script async custom-element="amp-audio"
