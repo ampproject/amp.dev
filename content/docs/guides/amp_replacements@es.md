@@ -6,7 +6,7 @@ toc: true
 ---
 [TOC]
 
- Al igual que las páginas HTML normales, las páginas AMP te permiten insertar **imágenes** ,**vídeos**  y **audios**
+ Al igual que las páginas HTML normales, las páginas AMP te permiten insertar **imágenes** ,**videos**  y **audios**
 Contenido. Descubre cómo incluir las versiones AMP equivalentes en tus páginas y qué diferencias existen entre ellas.
 
 ##  ¿Por qué no puedo utilizar `<img>` , `<video>` y `<audio>`?
@@ -81,19 +81,19 @@ src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>`
 en el encabezado de la página para usar este componente.
 {% endcall %}
 
-## Vídeo
+## Video
 
- Para incluir un vídeo en tu página, utiliza el elemento [`amp-video`](/es/docs/reference/components/amp-video.html) .
+ Para incluir un video en tu página, utiliza el elemento [`amp-video`](/es/docs/reference/components/amp-video.html) .
 
- Úsalo solamente para insertar archivos de vídeo HTML5 directos. Este elemento carga el recurso de vídeo que determina el atributo `src` de manera diferida cuando lo determine la página AMP.
+ Úsalo solamente para insertar archivos de video HTML5 directos. Este elemento carga el recurso de video que determina el atributo `src` de manera diferida cuando lo determine la página AMP.
 
-Incluye un marcador de posición antes del inicio del vídeo y una alternativa, si el navegador no admite vídeos en HTML5, por ejemplo:
+Incluye un marcador de posición antes del inicio del video y una alternativa, si el navegador no admite videos en HTML5, por ejemplo:
 
 [sourcecode:html]
 <amp-video width="400" height="300" src="https://yourhost.com/videos/myvideo.mp4" poster="myvideo-poster.jpg">
 
 <div fallback>
-    <p>Tu navegador no admite vídeos en HTML5</p>
+    <p>Tu navegador no admite videos en HTML5</p>
   </div>
 </amp-video>
 [/sourcecode]
