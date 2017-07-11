@@ -11,13 +11,17 @@ toc: true
 
 Dalam contoh sederhana ini, `srcset` menentukan gambar yang akan digunakan berdasarkan lebar layar. Deskriptor `w` memberi tahu browser tentang lebar setiap gambar dalam daftar:
 
-[sourcecode:html]
-<amp-img
-    src="wide.jpg" width="640" height="480"
-    srcset="wide.jpg 640w,
-        narrow.jpg 320w">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using srcset -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('Catatan', type='note') %}
 
@@ -31,14 +35,18 @@ Anda juga dapat menggunakan atribut `sizes` bersamaan dengan `srcset`. Atribut `
 
 Pertimbangkan contoh berikut:
 
-[sourcecode:html]
-<amp-img
-    src="wide.jpg" width="640" height="480"
-    srcset="wide.jpg 640w,
-        narrow.jpg 320w"
-sizes="(min-width: 650px) 50vw, 100vw">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using sizes -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
+
 
 Atribut `sizes` menentukan lebar elemen menjadi 50% dari ukuran viewport jika viewport berukuran 650px atau lebih. Contoh, jika viewport berukuran 800px, lebar elemen disetel menjadi 400px. Kemudian, browser akan memilih sumber daya `srcset` yang relatif dengan 400px, dengan asumsi rasio piksel perangkat adalah 1, yang dalam kasus ini adalah `narrow.jpg` (320px).
 
@@ -60,12 +68,17 @@ Jika atribut `heights` ditentukan beserta `width` dan `height`, setelan default 
 
 Contoh:
 
-[sourcecode:html]
-<amp-img src="https://acme.org/image1.png"
-    width="320" height="256"
-    heights="(min-width:500px) 200px, 80%">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using heights -->
+<div>
+<amp-iframe height="193"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 Dalam contoh ini, setelan default tinggi elemen adalah 80% dari lebar, namun untuk viewport yang lebih lebar dari `500px` akan dibatasi menjadi `200px`.
 
