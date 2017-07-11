@@ -1,8 +1,7 @@
 ---
-
 $title: AMP での広告の掲載
 $order: 8
-$category: 作成
+$category: Develop
 
 toc: true
 ---
