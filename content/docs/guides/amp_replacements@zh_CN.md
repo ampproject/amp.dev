@@ -135,9 +135,6 @@ src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>`
 
 在音频开始播放前添加占位符，如果浏览器不支持 HTML5 音频，则添加后备音频，例如：
 
-[sourcecode:html]
-<amp-audio width="400" height="300" src="https://yourhost.com/audios/myaudio.mp3">
-
 <!--embedded audio example  -->
 <div>
 <amp-iframe height="314"
