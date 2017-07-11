@@ -24,16 +24,6 @@ toc: true
 
  다음과 같이 [`amp-img`](/ko/docs/reference/components/amp-img.html) 요소를 사용하여 페이지에 이미지를 삽입합니다.
 
-[sourcecode:html]
-<amp-img src="fixed.jpg" width="264" height="96"></amp-img>
-[/sourcecode]
-
-이는 가장 기본적인 예로, 이미지는 지정된 높이와 너비로 고정되어 표시됩니다. 최소한 너비와 높이가 명시적으로 설정되어 있어야 합니다.
-
-#### 자바스크립트가 사용 중지되었을 때 이미지 표시
-
- As `<amp-img>`  는 자바스크립트를 사용하므로, 사용자가 스크립트를 사용 중지한 경우 이미지가 표시되지 않습니다. 이 경우, 다음과 같이 `<img>`, `<noscript>` 를 사용하여 이미지 대신 표시할 내용을 지정해야 합니다.
-
 <!--embedded example - fixed size image -->
 <div>
 <amp-iframe height="174"
@@ -41,6 +31,24 @@ toc: true
             sandbox="allow-scripts allow-forms allow-same-origin"
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
+
+이는 가장 기본적인 예로, 이미지는 지정된 높이와 너비로 고정되어 표시됩니다. 최소한 너비와 높이가 명시적으로 설정되어 있어야 합니다.
+
+#### 자바스크립트가 사용 중지되었을 때 이미지 표시
+
+ As `<amp-img>`  는 자바스크립트를 사용하므로, 사용자가 스크립트를 사용 중지한 경우 이미지가 표시되지 않습니다. 이 경우, 다음과 같이 `<img>`, `<noscript>` 를 사용하여 이미지 대신 표시할 내용을 지정해야 합니다.
+
+<!--embedded example - img with noscript -->
+<div>
+<amp-iframe height="215"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
   <div placeholder></div> 
 </amp-iframe>
