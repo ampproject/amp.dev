@@ -2,7 +2,7 @@
 class: post-blog post-detail
 type: Blog
 $title: AMP Roadmap update to close out Q1
-id: amp-roadmap-update-to-close-out-q1
+id: ads-amp-roadmap-update-to-close-out-q1
 author: Rudy Galfi
 role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2017/03/31/amp-roadmap-update-to-close-out-q1/amp/"
@@ -11,7 +11,9 @@ avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=ide
 date_data: 2017-03-31T14:55:48-07:00
 $date: March 31, 2017
 $parent: /content/latest/list-blog.html
-
+$path: /latest/blog/{base}/
+$localization:
+  path: /{locale}/latest/blog/{base}/
 components:
   - social-share
 ---
