@@ -41,7 +41,7 @@ En este ejemplo muy básico, la imagen se mostrará con la altura y anchura fija
 
 #### Mostrar imágenes cuando JavaScript está inhabilitado
 
- Como `<amp-img>` depende de JavaScript, si el usuario elige inhabilitar las secuencias de comandos, no se mostrarán las imágenes. En este caso, debes proporcionar una alternativa a la imagen usando `<img>` y <noscript>`, como se muestra a continuación:
+ Como `<amp-img>` depende de JavaScript, si el usuario elige inhabilitar las secuencias de comandos, no se mostrarán las imágenes. En este caso, debes proporcionar una alternativa a la imagen usando `<img>` y `<noscript>`, como se muestra a continuación:
 
 <!--embedded example - img with noscript -->
 <div>
