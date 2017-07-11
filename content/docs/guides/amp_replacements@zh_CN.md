@@ -1,7 +1,7 @@
 ---
 $title: 添加图片和视频
 $order: 1
-$category: 开发
+$category: Develop
 
 toc: true
 ---
