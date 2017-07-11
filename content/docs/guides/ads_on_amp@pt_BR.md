@@ -1,8 +1,7 @@
 ---
-
 $title: Como veicular anúncios em AMP
 $order: 8
-$category: Desenvolver
+$category: Develop
 
 toc: true
 ---
