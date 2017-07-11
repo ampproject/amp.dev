@@ -11,13 +11,18 @@ toc: true
 
 次の例では、`srcset` が画面の幅に基づいて使用される画像を指定しています。`w` 記述子は、リスト内の各画像の幅をブラウザに伝えます。
 
-[sourcecode:html]
-<amp-img
-src="wide.jpg" width="640" height="480"
-srcset="wide.jpg 640w,
-narrow.jpg 320w">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using srcset -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
+
 
 {% call callout('注', type='note') %}
 AMP では、すべてのブラウザで srcset に `w` 記述子を使用できます。
@@ -31,14 +36,17 @@ AMP では、すべてのブラウザで srcset に `w` 記述子を使用でき
 
 次の例をご覧ください。
 
-[sourcecode:html]
-<amp-img
-  src="wide.jpg" width="640" height="480"
-  srcset="wide.jpg 640w, narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
-
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using sizes -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 この `sizes` 属性では、ビューポートが 650 ピクセル以上の場合は、要素の幅をビューポートのサイズの 50% にすると定義しています。たとえば、ビューポートが 800 ピクセルの場合、要素の幅は 400 ピクセルに設定されます。ブラウザでは、デバイス ピクセル比を 1 と想定し、400 ピクセルと比較して `srcset` のリソースを選択します。この例では `narrow.jpg`（320 ピクセル）が選択されます。
 
@@ -60,12 +68,16 @@ sizes 属性とともに width と height も指定されている場合、layou
 
 次の例をご覧ください。
 
-[sourcecode:html]
-<amp-img src="https://acme.org/image1.png"
-  width="320" height="256"
-  heights="(min-width:500px) 200px, 80%">
-
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using heights -->
+<div>
+<amp-iframe height="193"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 この例では、要素の高さはデフォルトで幅の 80% ですが、ビューポートが `500px` より広い場合、`200px` が上限となります。
