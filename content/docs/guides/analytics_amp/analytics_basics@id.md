@@ -1,231 +1,151 @@
 ---
-$title: "Analytics: Dasar-Dasarnya"
+$title: "Analtik: Dasar-Dasar"
+$order: 0
 toc: true
 ---
 
-Mulailah di sini untuk mempelajari dasar-dasar analisis AMP.
+Mulailah dari sini untuk mempelajari dasar-dasar terkait analitik AMP.
 
 [TOC]
 
 ## Menggunakan amp-pixel atau amp-analytics?
 
-AMP menyediakan dua komponen untuk memenuhi kebutuhan analisis dan pengukuran Anda:
-[amp-pixel](/docs/reference/amp-pixel.html) dan
-[amp-analytics](/docs/reference/extended/amp-analytics.html).
-Kedua opsi ini mengirim data analisis ke titik akhir yang didefinisikan.
 
-Jika Anda mencari perilaku seperti
-[melacak piksel](https://en.wikipedia.org/wiki/Web_beacon#Implementation),
-komponen `amp-pixel` menyediakan pelacakan tampilan halaman dasar;
-data tampilan halaman dikirim ke URL yang didefinisikan.
-Sebagian integrasi dengan vendor bisa memanggil komponen ini,
-yang mana dalam hal ini integrasi akan menetapkan titik akhir URL yang tepat.
+AMP menyediakan 2 komponen untuk memenuhi kebutuhan analitik dan pengukuran Anda: [amp-pixel](/id/docs/reference/amp-pixel.html) 
+dan [amp-analytics](/id/docs/reference/extended/amp-analytics.html). Kedua opsi akan mengirim data analitik ke titik akhir yang telah ditentukan.
 
-Untuk sebagian besar solusi analisis, gunakan `amp-analytics`.
-Pelacakan tampilan halaman juga bekerja dalam `amp-analytics`.
-Namun Anda juga bisa melacak keterlibatan pengguna dengan segala tipe materi halaman,
-termasuk klik pada tautan dan tombol.
-Dan Anda bisa mengukur sejauh mana pada halaman pengguna telah menggulir,
-entah pengguna itu terlibat dengan media sosial atau tidak, dan lainnya
-(lihat
-[Mendalami AMP Analytics](/id/docs/guides/analytics/deep_dive_analytics.html)).
 
-Sebagai bagian dari pengintegrasian dengan platform,
-penyedia telah menawarkan konfigurasi `amp-analytics` yang telah didefinisikan sebelumnya
-sehingga mudah menangkap data dan mendorongnya ke alat pelacakan mereka.
-Mengakses dokumentasi vendor akses dari
-[spesifikasi amp-analytics](/docs/reference/extended/amp-analytics.html).
+Jika Anda mencari perilaku seperti [piksel pelacakan sederhana](https://en.wikipedia.org/wiki/Web_beacon#Implementation), komponen `amp-pixel` memberikan pelacakan tampilan halaman dasar; data tampilan halaman akan dikirim ke URL yang telah ditentukan. Sebagian integrasi dengan vendor mungkin memerlukan komponen ini, yang mana integrasi tersebut akan menetapkan titik akhir URL yang tepat.
 
-Anda sama-sama bisa menggunakan `amp-pixel` maupun `amp-analytics` di halaman Anda.
-`amp-pixel` untuk pelacakan tampilan halaman sederhana,
-`amp-analytics` untuk semua hal lainnya.
-Anda juga bisa menambahkan beberapa bagian dari setiap tag.
-Jika Anda bekerja dengan beberapa bagian penyedia analisis,
-Anda akan membutuhkan satu tag per solusinya.
-Ingatlah bahwa halaman AMP yang lebih simpel akan lebih baik bagi pengguna,
-jadi jika Anda tidak memerlukan tag ekstra, jangan gunakan tag tersebut.
+Untuk sebagian besar solusi analitik, gunakan `amp-analytics`. Pelacakan tampilan halaman juga dapat berfungsi di `amp-analytics`. Namun, Anda juga dapat melacak interaksi pengguna dengan jenis konten halaman apa pun, termasuk klik pada link dan tombol. Selain itu, Anda dapat mengukur seberapa jauh halaman yang di-scroll oleh pengguna, apakah pengguna berinteraksi dengan media sosial atau tidak, dan aktivitas lainnya.
 
-## Membuat konfigurasi analisis sederhana
+{% call callout('Pelajari lebih lanjut', type='read') %}
+ Lihat [Mendalami Analitik AMP](/id/docs/guides/analytics/deep_dive_analytics.html. 
+ {% endcall %}
 
-Ketahui cara membuat konfigurasi
-[amp-pixel](/docs/reference/amp-pixel.html) dan
-[amp-analytics](/docs/reference/extended/amp-analytics.html) sederhana.
+Sebagai bagian dari proses integrasi dengan platform AMP, penyedia telah menawarkan konfigurasi `amp-analytics` 
+yang telah ditentukan sehingga mempermudah pengambilan dan pemrosesan data ke fitur pelacakannya. Buka dokumentasi vendor dari daftar [Vendor Analitik](/id/docs/guides/analytics/analytics-vendors.html).
+
+Anda dapat menggunakan `amp-pixel` dan `amp-analytics` 
+di halaman Anda: `amp-pixel` untuk pelacakan tampilan halaman sederhana, dan `amp-analytics` untuk pelacakan lainnya. Anda juga dapat menambahkan beberapa konfigurasi untuk setiap tag. Jika bekerja sama dengan beberapa penyedia analitik, Anda memerlukan 1 tag untuk setiap solusi. Perlu diperhatikan bahwa halaman AMP yang lebih sederhana lebih disarankan untuk pengguna, sehingga apabila Anda tidak memerlukan tag tambahan, jangan gunakan tag tersebut.
+
+## Membuat konfigurasi analitik sederhana
+
+
+Pelajari cara membuat konfigurasi [amp-pixel](/id/docs/reference/amp-pixel.html) 
+dan [amp-analytics](/id/docs/reference/extended/amp-analytics.html) sederhana.
 
 ### Konfigurasi amp-pixel sederhana
 
-Untuk membuat konfigurasi `amp-pixel` sederhana,
-masukkan sesuatu seperti yang berikut ke dalam badan halaman AMP Anda:
+ Untuk membuat konfigurasi `amp-pixel` sederhana, masukkan URL seperti contoh berikut ke dalam isi halaman AMP Anda:
 
 [sourcecode:html]
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 [/sourcecode]
 
-Dalam contoh ini,
-data tampilan halaman dikirim ke URL yang didefinisikan, bersama angka acak.
-Variabel `RANDOM` merupakan satu dari banyak
-[variabel penggantian dalam platform AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
-Ketahui selengkapnya tentang
-[Penggantian variabel](/id/docs/guides/analytics/analytics_basics.html#penggantian-variabel) di sini.
+ Pada contoh tersebut, data tampilan halaman dikirim ke URL yang ditentukan, bersama dengan nomor acak: Variabel `RANDOM` 
+adalah salah satu dari banyak [variabel pengganti di platform AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Pelajari lebih lanjut tentang [Penggantian variabel](/id/docs/guides/analytics/analytics_basics.html#variable-substitution) di sini.
 
-Komponen [amp-pixel](/docs/reference/amp-pixel.html)
- adalah komponen bawaan,
-jadi Anda tidak memerlukan deklarasi penyertaan seperti yang biasa dilakukan
-untuk perluasan komponen AMP, termasuk `amp-analytics`.
-Namun Anda harus menempatkan tag `amp-pixel` sedekat mungkin
-dengan awal `<body>`.
-Piksel pelacakan hanya akan dipicu ketika tag dengan sendirinya ditampilkan.
-Jika `amp-pixel` diposisikan di dekat bagian bawah halaman,
-maka ia tidak akan dipicu.
+ Komponen [amp-pixel](/id/docs/reference/amp-pixel.html) bersifat default, sehingga Anda tidak memerlukan deklarasi inklusi seperti saat membuat komponen AMP yang diluaskan, termasuk `amp-analytics`. Namun, Anda harus menempatkan tag `amp-pixel` sedekat mungkin dengan permulaan isi `<body>` halaman AMP Anda. Piksel pelacakan hanya akan diproses jika tag terlihat dengan sendirinya. Jika `amp-pixel` terletak di dekat bagian bawah halaman, tag tersebut tidak akan diproses.
 
 ### Konfigurasi amp-analytics sederhana
 
-Untuk membuat konfigurasi
-[amp-analytics](/docs/reference/extended/amp-analytics.html) sederhana,
-Anda harus terlebih dahulu menyertakan deklarasi `custom-element` ini
-dalam `<head>` dari dokumen AMP (lihat juga
-[Deklarasi penyertaan komponen](/docs/reference/extended.html#component-inclusion-declaration)):
+
+Untuk membuat konfigurasi[ amp-analytics,](/id/docs/reference/extended/amp-analytics.html)  sederhana, Anda harus menyertakan deklarasi `custom-element` terlebih dahulu pada `<head>` dokumen AMP (lihat juga [Deklarasi inklusi komponen](/id/docs/reference/extended.html#component-inclusion-declaration)):
 
 [sourcecode:html]
+
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
 [/sourcecode]
 
-Contoh berikut serupa dengan [contoh `amp-pixel`](/id/docs/guides/analytics/analytics_basics.html#konfigurasi-amp-pixel-sederhana).
-Setiap kali sebuah halaman terlihat,
-kejadian pemicu terjadi, dan
-mengirim data penayangan ke URL yang didefinisikan bersama dengan sebuah ID acak:
+ Contoh berikut mirip dengan contoh [`amp-pixel`](/id/docs/guides/analytics/analytics_basics.html#simple-amp-pixel-configuration). Setiap kali halaman terlihat, peristiwa pemicu akan diproses, dan mengirim data pageview ke URL yang telah ditentukan bersama dengan ID acak:
 
 [sourcecode:html]
 <amp-analytics>
+
 <script type="application/json">
 {
   "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    }
-  }
+    "pageview": "https://foo.com/pixel?RANDOM", 
+    },
+    "triggers": {
+      "trackPageview": {
+        "on": "visible",
+        "request": "pageview"
+    } 
+  } 
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
-Dalam contoh di atas, kita telah mendefinisikan permintaan yang disebut penayangan sebagai https://foo.com/pixel?RANDOM. Seperti yang telah didiskusikan sebelumnya, RANDOM diganti dengan sebuah angka acak, jadi permintaan itu sebenarnya akan terlihat seperti ini https://foo.com/pixel?0.23479283687235653498734.
+ Pada contoh di atas, kita telah menentukan permintaan yang dinamakan pageview sebagai https://foo.com/pixel?RANDOM. Seperti yang telah dijelaskan di awal, RANDOM diganti dengan nomor acak, sehingga permintaan akan benar-benar terlihat seperti https://foo.com/pixel?0.23479283687235653498734.
 
-Ketika halaman menjadi terlihat
-(sebagaimana yang ditetapkan oleh penggunaan kata kunci pemicu `visible`),
-sebuah kejadian terpicu dan permintaan `pageview` dikirim.
-Atribut pemicu menentukan kapan permintaan penayangan dipicu.
-Ketahui selengkapnya tentang [permintaan dan pemicu](/id/docs/guides/analytics/deep_dive_analytics.html#permintaan,-pemicu,-&-transport).
+ Saat halaman terlihat (seperti yang telah ditetapkan oleh penggunaan kata kunci pemicu `visible`), peristiwa akan dipicu dan `permintaan` pageview akan dikirim. Atribut pemicu menentukan waktu permintaan pageview akan diproses. Pelajari lebih lanjut tentang [permintaan dan pemicu](/id/docs/guides/analytics/deep_dive_analytics.html#requests-triggers--transports).
 
 ## Penggantian variabel
 
-Baik komponen [amp-pixel](/docs/reference/amp-pixel.html) maupun
-komponen [amp-analytics](/docs/reference/extended/amp-analytics.html) sama-sama
-memungkinkan semua penggantian variabel URL standar (lihat
-[Penggantian Variabel AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
-Dalam contoh berikut,
-permintaan tampilan halaman dikirim ke URL,
-bersama dengan URL kanonis dokumen AMP saat ini, judulnya, dan
-[ID klien](/docs/guides/analytics/analytics_basics.html#identifikasi-pengguna):
+ Kedua komponen [amp-pixel](/id/docs/reference/amp-pixel.html) 
+dan [amp-analytics](/id/docs/reference/extended/amp-analytics.html) 
+mengizinkan semua penggantian variabel URL standar (lihat [Penggantian Variabel HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)
+). Pada contoh berikut, permintaan tampilan halaman dikirim ke URL, bersama dengan URL kanonis dokumen AMP yang digunakan, title-nya, dan [ID klien](/id/docs/guides/analytics/analytics_basics.html#user-identification):
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 [/sourcecode]
 
-Karena kesederhanaannya,
-tag `amp-pixel` bisa hanya menyertakan variabel yang didefinisikan oleh platform
-atau yang bisa di-parse oleh waktu proses AMP dari halaman AMP.
-Dalam contoh di atas,
-platform mengisi terlebih dahulu nilai baik untuk
-`canonicalURL` maupun `clientId(site-user-id)`.
-Tag `amp-analytics` bisa menyertakan variabel yang sama dengan `amp-pixel`,
-serta variabel yang didefinisikan secara unik di dalam konfigurasi tag.
+Karena sifatnya yang sederhana, tag `amp-pixel`
+hanya dapat menyertakan variabel yang ditentukan oleh platform atau jika waktu proses AMP dapat diuraikan dari halaman AMP. Pada contoh di atas, platform mengisi nilai untuk `canonicalURL` dan `clientId(site-user-id)`. Tag `amp-analytics` dapat menyertakan variabel yang sama sebagai `amp-pixel`, serta variabel unik yang telah ditentukan di dalam konfigurasi tag tersebut.
 
-Gunakan format `${varName}` dalam </string> permintaan untuk variabel yang didefinisikan oleh halaman
-atau platform.
-Tag `amp-analytics` akan mengganti template dengan nilai sebenarnya
-pada saat pembentukan permintaan analisis (lihat juga
-[Variabel yang didukung dalam amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)).
+Gunakan format `${varName}` dalam string permintaan untuk variabel yang ditentukan oleh platform atau halaman. Tag `amp-analytics` 
+akan menggantikan template dengan nilai yang sebenarnya saat konstruksi permintaan analitik dilakukan (lihat juga [Variabel yang didukung dalam amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)).
 
-Dalam contoh `amp-analytics` berikut,
-permintaan tampilan halaman dikirim ke URL,
-dengan data tambahan yang diekstrak dari penggantian variabel,
-sebagian disediakan oleh platform,
-sebagian didefinisikan langsung pada barisnya,
-di dalam konfigurasi `amp-analytics`:
+ Pada contoh `amp-analytics` berikut, permintaan tampilan halaman dikirim ke URL, dengan data tambahan yang diekstrak dari penggantian variabel, sebagian diberikan oleh platform, sebagian ditetapkan inline, dalam konfigurasi `amp-analytics`:
 
 [sourcecode:html]
 <amp-analytics>
 <script type="application/json">
 {
-  "requests": {
-    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
+    "requests": {
+      "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
   },
   "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-    "someEvent": {
-      "on": "visible",
-      "request": "pageview",
-      "vars": {
-        "title": "My homepage",
-      }
-    }
+    "account": "ABC123", 
+    },
+    "triggers": {
+      "someEvent": {
+        "on": "visible",
+        "request": "pageview",
+        "vars": {
+          "title": "My homepage", 
+      } 
+    } 
   }
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
-Dalam contoh di atas,
-variabel, `account` dan `title` didefinisikan
-dalam konfigurasi `amp-analytics`.
-Variabel `canonicalUrl` dan `clientId` tidak didefinisikan dalam konfigurasi,
-sehingga nilai-nilainya diganti oleh platform.
+Pada contoh di atas, variabel, `account` dan `title` ditentukan dalam konfigurasi `amp-analytics`. Variabel `canonicalUrl` dan `clientId` tidak ditentukan dalam konfigurasi, jadi nilai variabel tersebut akan diganti oleh platform.
 
-**Penting:** Penggantian variabel fleksibel;
-variabel yang sama bisa Anda definisikan di lokasi berbeda,
- dan waktu proses AMP akan mem-parse nilai-nilai dalam urutan prioritas ini
- (lihat [Pengurutan penggantian variabel] (/id/docs/guides/analytics/deep_dive_analytics.html#pengurutan-penggantian-variabel)).
+{% call callout('Penting', type='caution') %}
+ Penggantian variabel bersifat fleksibel; Anda dapat memiliki variabel yang sama yang ditentukan di lokasi yang berbeda, dan waktu proses AMP akan menguraikan nilai sesuai dengan urutan yang lebih tinggi (lihat [Urutan penggantian variabel](/id/docs/guides/analytics/deep_dive_analytics.html#variable-substitution-ordering)). 
+{% endcall %}
 
 ## Identifikasi pengguna
 
-Situs web menggunakan cookie untuk menyimpan informasi yang spesifik bagi pengguna dalam browser.
-Cookie bisa digunakan untuk memberi tahu bahwa pengguna sebelumnya telah mengunjungi situs.
-Dalam AMP,
-halaman bisa disajikan baik dari situs web penerbit maupun cache
-(seperti Google AMP Cache).
-Situs web penerbit dan cache kemungkinan memiliki domain yang berbeda,
-Demi alasan keamanan,
-browser bisa (dan sering kali akan) membatasi akses ke cookie domain lain
-(lihat juga
-[Pelacakan pengguna di seluruh asal](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/cross-origin-tracking.md)).
 
-Secara default,
-AMP akan mengelola penyediaan ID klien apakah halaman itu diakses dari situs web asal penerbit maupun melalui cache.
-ID klien yang dihasilkan oleh AMP memiliki nilai `"amp-"`
-diikuti oleh </string> acak yang dienkodekan `base64` dan tetap sama
-untuk pengguna jika pengguna yang sama berkunjung kembali.
+Situs menggunakan cookie untuk menyimpan informasi tertentu kepada pengguna di browser. Cookie dapat digunakan untuk memberikan informasi bahwa pengguna sebelumnya sudah pernah mengunjungi situs. Di AMP, halaman dapat ditayangkan dari situs penayang atau cache (seperti Cache AMP Google). Situs penayang dan cache kemungkinan memiliki domain yang berbeda. Demi alasan keamanan, browser dapat (dan sering kali akan) membatasi akses cookie domain lain (lihat juga [Melacak pengguna di berbagai domain asal](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
 
-AMP mengelola pembacaan dan penulisan ID klien dalam semua hal.
-Ini terutama menonjol dalam hal ketika halaman disajikan
-melalui cache atau juga ketika ditampilkan di luar konteks penayangan
-dari situs asal penerbit.
-Dalam kondisi seperti ini, akses ke cookie situs penerbit tidak tersedia.
+Secara default, AMP akan mengelola penyediaan ID klien apakah halaman diakses dari situs asli penayang atau melalui cache. ID klien yang dibuat AMP memiliki nilai `"amp-"`
+followed by a random `yang diikuti oleh string yang dienkode base64 acak` dan tetap sama bagi pengguna jika pengguna yang sama tersebut mengunjunginya lagi.
 
-Ketika halaman AMP disajikan dari situs penerbit,
-kerangka kerja ID klien yang digunakan AMP bisa diberi tahu mengenai cookie dukungan
-yang harus dicari dan digunakan.
-Dalam hal ini,
-argumen `cid-scope-cookie-fallback-name` dari variabel `clientId`
-ditafsirkan sebagai nama cookie.
-Pemformatan bisa tampak baik sebagai
-`CLIENT_ID(cid-scope-cookie-fallback-name)` maupun
-`${clientId(cid-scope-cookie-fallback-name)}`.
+AMP mengelola pembacaan dan penulisan ID klien pada semua kasus. Hal ini biasanya terlihat saat halaman ditayangkan melalui cache, atau sebaliknya ditampilkan di luar konteks penayangan dari situs asli penayang. Jika hal ini terjadi, cookie situs penayang tidak akan dapat diakses.
+
+ Jika halaman AMP ditayangkan dari situs penayang, framework ID klien yang digunakan AMP dapat diberi tahu untuk mencari dan menggunakan cookie penggantian. Dalam kasus ini, argumen `cid-scope-cookie-fallback-name` dari variabel `clientId` 
+akan diinterpretasikan sebagai nama cookie. Formatnya akan muncul sebagai `CLIENT_ID(cid-scope-cookie-fallback-name)` 
+atau` ${clientId(cid-scope-cookie-fallback-name)}`.
 
 Misalnya:
 
@@ -233,12 +153,12 @@ Misalnya:
 <amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
 [/sourcecode]
 
-Jika AMP menemukan bahwa cookie ini telah diatur,
-maka penggantian ID klien akan mengembalikan nilai cookie tersebut.
-Jika AMP menemukan bahwa cookie ini tidak diatur,
-maka AMP akan menghasilkan nilai dari bentuk `amp-` diikuti
-oleh </string> acak yang dienkodekan base64.
+ Jika AMP menemukan bahwa cookie tersebut ditetapkan, penggantian ID klien akan menampilkan nilai cookie. Jika AMP menemukan bahwa cookie tersebut tidak ditetapkan, AMP akan membuat nilai dari bentuk `amp-` yang diikuti oleh string yang dienkode base64 acak.
 
-Ketahui selengkapnya tentang penggantian ID klien
-termasuk cara menambahkan ID pemberitahuan pengguna opsional, dalam
-[Variabel yang didukung dalam analisis AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+
+Pelajari lebih lanjut tentang penggantian ID klien, termasuk cara menambahkan ID pemberitahuan pengguna opsional, di [Variabel yang didukung dalam analitik AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+
+{% call callout('Pelajari lebih lanjut', type='read') %}
+ Lanjutkan untuk mempelajari tentang analitik dengan [Mendalami Analitik AMP](/id/docs/guides/analytics/deep_dive_analytics.html) dan [Kasus Penggunaan](/id/docs/guides/analytics/use_cases.html). 
+{% endcall %}
+
