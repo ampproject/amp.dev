@@ -14,13 +14,13 @@ Crie imagens responsivas especificando `width` e `height`, definindo o layout pa
 
 [sourcecode:html]
 <amp-img
-src="/img/narrow.jpg"
-srcset="/img/wide.jpg 640w,
-/img/narrow.jpg 320w"
-width="1698"
-height="2911"
-layout="responsive"
-alt="an image">
+    src="/img/narrow.jpg"
+    srcset="/img/wide.jpg 640w,
+           /img/narrow.jpg 320w"
+    width="1698"
+    height="2911"
+    layout="responsive"
+    alt="an image">
 </amp-img>
 [/sourcecode]
 
@@ -143,11 +143,11 @@ Por exemplo, aqui temos duas imagens com consultas de mídia mutuamente excluden
 
 [sourcecode:html]
 <amp-img
-media="(min-width: 650px)"
-src="wide.jpg"
-width=466
-height=355
-layout="responsive">
+    media="(min-width: 650px)"
+    src="wide.jpg"
+    width=466
+    height=355
+    layout="responsive">
 </amp-img>
 [/sourcecode]
 
@@ -155,10 +155,10 @@ Dependendo da largura da tela, uma ou a outra será buscada e renderizada.
 
 [sourcecode:html]
 <amp-img
-media="(max-width: 649px)"
-src="narrow.jpg"
-width=527
-height=193
-layout="responsive">
+    media="(max-width: 649px)"
+    src="narrow.jpg"
+    width=527
+    height=193
+    layout="responsive">
 </amp-img>
 [/sourcecode]
