@@ -23,7 +23,7 @@ y no podrás aprovechar todas las ventajas que aporta AMP.
 
 ## Imágenes
 
- Para incluir una imagen en tu página, utiliza el elemento [`amp-img`](/es/docs/reference/components/amp-img.html) , como se muestra a continuación:
+ Para incluir una imagen en tu página, utiliza el elemento [`amp-img`](/es/docs/reference/components/amp-img.html), como se muestra a continuación:
 
 <!--embedded example - fixed size image -->
 <div>
