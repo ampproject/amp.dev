@@ -132,9 +132,6 @@ Sertakan placeholder sebelum video dimulai, dan penggantian, jika browser tidak 
 
 Sertakan placeholder sebelum audio dimulai, dan penggantian, jika browser tidak mendukung audio HTML5, misalnya:
 
-[sourcecode:html]
-<amp-audio width="400" height="300" src="https://yourhost.com/audios/myaudio.mp3">
-
 <!--embedded audio example  -->
 <div>
 <amp-iframe height="314"
