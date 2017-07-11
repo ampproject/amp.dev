@@ -83,8 +83,7 @@ Al visualizarse la página (según lo especificado por el uso de la palabra clav
 
 Los componentes [amp-pixel](/es/docs/reference/amp-pixel.html)
 y [amp-analytics](/es/docs/reference/extended/amp-analytics.html)
-permiten todas las sustituciones de variables de URL estándares (consulta el artículo sobre [sustituciones de variables AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)
-). En el ejemplo siguiente, la solicitud de página vista se envía a la URL junto con la URL canónica del documento de AMP actual, su title y un [ID de cliente](/es/docs/guides/analytics/analytics_basics.html#user-identification):
+permiten todas las sustituciones de variables de URL estándares (consulta el artículo sobre [sustituciones de variables AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). En el ejemplo siguiente, la solicitud de página vista se envía a la URL junto con la URL canónica del documento de AMP actual, su title y un [ID de cliente](/es/docs/guides/analytics/analytics_basics.html#user-identification):
 
 [sourcecode:html]
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
