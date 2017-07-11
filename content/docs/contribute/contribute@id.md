@@ -1,9 +1,5 @@
 ---
 $title: Cara Berkontribusi
-$order: 0
-$path: /contribute/
-$localization:
-    path: /{locale}/{base}/
 ---
 
 Project AMP tidak akan dapat terealisasi tanpa bantuan dari semua anggota komunitas, baik itu developer, pembuat konten, maupun penyedia layanan yang terkait dengan AMP. Ada banyak cara untuk berkontribusi.
