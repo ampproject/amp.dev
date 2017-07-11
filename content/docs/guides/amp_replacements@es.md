@@ -17,7 +17,7 @@ Contenido. Descubre cómo incluir las versiones AMP equivalentes en tus páginas
 *  Debemos controlar las solicitudes de red para [realizar cargas diferidas y priorizar los recursos de un modo efectivo.](/es/learn/about-how/#prioritize-resource-loading)
 
 {% call callout('Precaución', type='caution') %}
- Aunque no se admitan, se*renderizarán,*  pero AMP no [validará tus páginas](/es/docs/guides/debug/validate.html) 
+ Aunque no se admitan, se *renderizarán*, pero AMP no [validará tus páginas](/es/docs/guides/debug/validate.html) 
 y no podrás aprovechar todas las ventajas que aporta AMP.
 {% endcall %}
 
