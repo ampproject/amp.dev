@@ -1,9 +1,5 @@
 ---
 $title: 如何贡献自己的力量
-$order: 0
-$path: /contribute/
-$localization:
-    path: /{locale}/{base}/
 ---
 
 如果没有社区所有成员（无论是开发者、内容创作者还是与 AMP 相关的服务提供商）的协力帮助，AMP 项目是不可能得以顺利进行的。您可以通过如下几种方式贡献自己的力量。
