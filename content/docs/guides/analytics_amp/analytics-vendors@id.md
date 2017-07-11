@@ -165,7 +165,7 @@ Menambahkan dukungan untuk mParticle. Detail selengkapnya tentang cara menambahk
 
 Nilai atribut type: `nielsen`
 
-Menambahkan dukungan untuk Nielsen DCR. Silakan hubungi perwakilan Nielsen untuk melakukan penyiapan terkait `apid` serta bantuan untuk menetapkan parameter lain di bagian `vars`. Untuk informasi selengkapnya, lihat [Dokumentasi dukungan Nielsen](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API).
+Menambahkan dukungan untuk Nielsen DCR. Silakan hubungi perwakilan Nielsen untuk melakukan penyiapan terkait `apid` serta bantuan untuk menetapkan parameter lain di bagian `vars`. Untuk informasi selengkapnya, lihat [Dokumentasi dukungan Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ### OEWA
 
