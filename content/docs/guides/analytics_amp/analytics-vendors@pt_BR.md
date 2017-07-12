@@ -166,7 +166,7 @@ Valor do atributo de tipo: `mparticle`
 
 Valor do atributo de tipo: `nielsen`
 
- Adiciona compatibilidade com o Nielsen DCR. Entre em contato com o representante da Nielsen para configurar o `apid` e receber ajuda na definição dos outros parâmetros da seção `vars`. Para mais informações, consulte: [Documentação de suporte da Nielsen](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API).
+ Adiciona compatibilidade com o Nielsen DCR. Entre em contato com o representante da Nielsen para configurar o `apid` e receber ajuda na definição dos outros parâmetros da seção `vars`. Para mais informações, consulte: [Documentação de suporte da Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ### OEWA
 

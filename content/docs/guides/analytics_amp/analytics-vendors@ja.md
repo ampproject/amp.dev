@@ -165,7 +165,7 @@ type 属性の値: `mparticle`
 
 type 属性の値: `nielsen`
 
-この値を指定すると、Nielsen DCR を利用できるようになります。`apid` の設定が必要な場合や、`vars` セクションで残りのパラメータを指定する際にサポートが必要な場合は、Nielsen の担当者にお問い合わせください。詳しくは、[Nielsen のサポート ドキュメント](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API) をご覧ください。
+この値を指定すると、Nielsen DCR を利用できるようになります。`apid` の設定が必要な場合や、`vars` セクションで残りのパラメータを指定する際にサポートが必要な場合は、Nielsen の担当者にお問い合わせください。詳しくは、[Nielsen のサポート ドキュメント](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API) をご覧ください。
 
 ### OEWA
 
