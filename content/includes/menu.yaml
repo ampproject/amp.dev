@@ -19,7 +19,7 @@ menu:
     copy@: Docs
     collection: docs
     children:
-      - href: /content/docs/tutorials/create.md
+      - href: /content/docs/getting-started.md
         copy@: "Getting started"
       - href: /content/docs/tutorials/create.md
         copy@: "Tutorials"
