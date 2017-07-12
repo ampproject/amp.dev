@@ -22,6 +22,7 @@ Here are the components grouped by category:
 | Component | Description |
 | --------- | ----------- |
 | [`amp-ad`](components/amp-ad.html) | A container to display an ad. |
+| [`amp-ad-exit`](components/amp-ad-exit.html) | Provides configurable behavior for ad exits for A4A (AMP for Ads).|
 | [`amp-analytics`](components/amp-analytics.html) | Captures analytics data from an AMP document. |
 | [`amp-auto-ads`](components/amp-auto-ads.html) | Dynamically injects ads into an AMP page by using a remotely-served configuration file. |
 | [`amp-call-tracking`](components/amp-call-tracking.html) |  Dynamically replaces a phone number in a hyperlink to enable call tracking. |
