@@ -10,12 +10,17 @@ How to build the site
 
 ### Install
 
-Install [Grow](http://grow.io) and npm dependencies:
+1.  Make sure you have [NodeJS](https://nodejs.org) installed.
+2.  Install [Grow](http://grow.io):
 
-```sh
-$ curl https://install.growsdk.org | bash
-$ npm install
-```
+    ```sh
+    $ curl https://install.growsdk.org | bash
+    ```
+    
+3.  Install the npm dependencies for the project:
+    ```sh
+    $ npm install
+    ```
 
 ### Get a GitHub token or app id/secret
 
@@ -26,14 +31,14 @@ Due to GitHub quotas this fetching will quickly fail unless additional informati
 #### Personal access token
 
   1. Request a GitHub [personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/).  Since the docs are fetched from a public repository you only need to select the "public_repo" scope when creating the token.  (It's a good practice to limit the token to the scope you need.)
-  2. In your shell export the generated personal access token as `AMP_DOC_TOKEN`
+  2. In your shell, export the generated personal access token as `AMP_DOC_TOKEN`
 
 #### Application client id and secret
 
 If you prefer not to use a personal access token, you can also create a GitHub application and use its id and secret.
 
-  1. Register for a [GitHub application](https://github.com/settings/applications/new)
-  2. In your shell export the application client id as `AMP_DOC_ID` and the client secret as `AMP_DOC_SECRET`
+  1. Register for a [GitHub application](https://github.com/settings/applications/new).
+  2. In your shell, export the application client id as `AMP_DOC_ID` and the client secret as `AMP_DOC_SECRET`.
 
 ### Build
 

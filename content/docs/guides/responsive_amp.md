@@ -3,6 +3,8 @@ $title: Style & Layout
 $order: 0
 $category: Develop
 toc: true
+components:
+    - youtube
 ---
 [TOC]
 
@@ -16,6 +18,8 @@ expanding responsive design capabilities with features like [placeholders & fall
 {% call callout('Tip', type='success') %}
 It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](/docs/guides/responsive/responsive_design).
 {% endcall %}
+
+{{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
 
 ## Add styles to a page
 
