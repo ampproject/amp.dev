@@ -3,6 +3,8 @@ $title: Estilo y Layout
 $order: 0
 $category: Develop
 toc: true
+components:
+    - youtube
 ---
 [TOC]
 
@@ -13,6 +15,8 @@ Sin embargo, AMP limita el uso del CSS por razones de performance y usabilidad, 
 {% call callout('Tip', type='success') %}
 Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables](https://www.ampproject.org/es/docs/guides/responsive/responsive_design)
 {% endcall %}
+
+{{ youtube('y6kA3u3GIws', 480, 270, caption='Vea a UpperQuad hablar sobre el rediseño del sitio de AMPproject, incluyendo los retos de usar AMP por primera vez.') }}
 
 ## Agregar estilos a una página
 
