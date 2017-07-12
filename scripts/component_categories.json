@@ -1,5 +1,6 @@
 {
     "amp-ad": "ads-analytics",
+    "amp-ad-exit": "ads-analytics",
     "amp-analytics": "ads-analytics",
     "amp-call-tracking": "ads-analytics",
     "amp-experiment": "ads-analytics",
