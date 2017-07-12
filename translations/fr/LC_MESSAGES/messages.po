@@ -1,10 +1,10 @@
 #: /content/includes/home.yaml
 msgid "A collaborative effort"
-msgstr ""
+msgstr "Un effort collaboratif"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "A faster way to grow your business"
-msgstr ""
+msgstr "Un moyen plus rapide pour developer votre société"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -14,24 +14,32 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
+"Des éditeurs et publicitaires de plus en plus nombreux adoptent AMP pour livrer "
+"du contenu plus rapide et plus engageant à leurs utilisateurs. Quand vos clients "
+"découvreront la vitesse de AMP et de plus en plus d'utilisateurs consommeront votre "
+"contenu sur des pages AMP, soyez sûrs que votre société est orientée vers le futur."
+"Intégrez votre technologie avec AMP aujoud'hui."
 
 #: /content/includes/home.yaml
 msgid "A path to success"
-msgstr ""
+msgstr "Un chemin vers le succès"
 
 #: /views/amp-ads.html:249
 msgid "AMP Ad"
-msgstr ""
+msgstr "Annonce AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "AMP Ads"
-msgstr ""
+msgstr "Annonces AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMP Ads are 6x faster than regular ads on AMP pages, making them more "
 "viewable, more effective and more likely to perform&nbsp;well."
 msgstr ""
+"Les Annonces AMP sont six fois plus rapides que les annonces normales "
+"sur les pages AMP, ce qui les rend plus visibles, plus efficaces et plus "
+"susceptibles de bien performer."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -40,6 +48,11 @@ msgid ""
 "serve ads that are faster, lighter and more effective. Creative developer "
 "tools like Google Web Designer will soon support AMP ads as well."
 msgstr ""
+"Les Annonces AMP sont un format créatif construit en utilisant HTML et CSS, et "
+"non pas une nouvelle technologie. En conséquence, vous pouvez utiliser vos "
+"resources de développement existants pour créer et diffuser des annonces plus "
+"rapides, plus légeres et plus efficaces. Les outils de developpement créatives "
+"comme Google Web Designer seront prochainement compatibles avec les annonces AMP."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
