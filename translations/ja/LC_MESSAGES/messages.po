@@ -1,6 +1,6 @@
 #: /content/includes/home.yaml
 msgid "A collaborative effort"
-msgstr ""
+msgstr "共同努力"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "A faster way to grow your business"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "A path to success"
-msgstr ""
+msgstr "成功への道"
 
 #: /views/amp-ads.html:249
 msgid "AMP Ad"
@@ -129,6 +129,10 @@ msgid ""
 " 1.5B AMP pages have been published to date and 100+ leading analytics, ad "
 "tech and CMS providers support the AMP format."
 msgstr ""
+"AMP は何千人もの開発者との深いコラボレーションにより構築されており、"
+"運営者とウェブサイト、配信プラットフォーム、ハイテク企業などがあります。 "
+"現在までに15億以上のAMPページが公開されており、100以上の主要な分析、"
+"アドテク、CMSプロバイダがAMPフォーマットをサポートしています。"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -258,7 +262,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Building the future web, together."
-msgstr ""
+msgstr "未来のウェブを、一緒に造る"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -439,7 +443,7 @@ msgstr "バグ報告"
 
 #: /content/includes/home.yaml
 msgid "Flexibility and Results"
-msgstr ""
+msgstr "柔軟性と結果"
 
 #: /content/includes/latest.yaml
 msgid "Follow AMP"
@@ -507,7 +511,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Higher Performance and Engagement"
-msgstr ""
+msgstr "より高いパフォーマンスとエンゲージメント"
 
 #: /content/includes/menu.yaml /content/learn/about-how.yaml
 #: /content/learn/about-how@ar.yaml /content/learn/about-how@es.yaml
@@ -573,7 +577,7 @@ msgstr "詳細"
 
 #: /content/includes/home.yaml
 msgid "Learn about AMP"
-msgstr ""
+msgstr "AMP について学ぶ"
 
 #: /content/docs/build.md
 msgid "Learn about each AMP component, including syntax and examples."
@@ -581,7 +585,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "Learn how to build AMP pages and AMP Ads"
-msgstr ""
+msgstr "AMPページとAMP広告を作成する方法を学ぶ"
 
 #: /content/docs/build.md
 msgid "Learn how to create your first AMP page with this short beginner tutorial."
@@ -740,6 +744,8 @@ msgid ""
 "technology vendors to use, all while maintaining and improving key "
 "performance indicators."
 msgstr ""
+"サイト運営者と広告主は重要なパフォーマンス指標を維持しながら、"
+"コンテンツの提供方法とどの技術ベンダーを使用するかを決めることができます。"
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -879,7 +885,7 @@ msgstr "Stack Overflowコミュニティ"
 
 #: /content/includes/home.yaml
 msgid "Start Building"
-msgstr ""
+msgstr "作成を始める"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
@@ -957,6 +963,9 @@ msgid ""
 "consistently fast, beautiful and high-performing across devices and "
 "distribution platforms."
 msgstr ""
+"AMP プロジェクトはウェブをより良いものにすることを目指すオープンソースの"
+"取り組みです。このプロジェクトでは、デバイスや配信プラットフォーム全体で"
+"一貫して高速で美しく高性能なウェブサイトや広告を作成することができます。"
 
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
@@ -1116,6 +1125,8 @@ msgid ""
 "instantly, giving users a smooth, more engaging experience on mobile and "
 "desktop."
 msgstr ""
+"AMP フォーマットで公開されたウェブページおよび広告は即座に読み込まれ、"
+"モバイルとデスクトップでスムーズでより魅力的な体験をユーザーに提供します。"
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -1129,7 +1140,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "What AMP Provides"
-msgstr ""
+msgstr "AMP が提供する物"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "What are AMP Ads?"
@@ -1208,16 +1219,22 @@ msgid ""
 "“AMP was the perfect addition to our business, giving us a new level of "
 "impact for our e-commerce clients.”"
 msgstr ""
+"“AMP は当社のビジネスにとって完璧なものであり、当社のEC顧客にとって"
+"新たなレベルのインパクトをもたらします。”"
 
 #: /content/includes/home.yaml
 msgid ""
 "“Across Teads’ publisher portfolio, video ads perform significantly better on"
 " AMP pages than on the traditional mobile web.”"
 msgstr ""
+"“Teadsの出版社ポートフォリオ全体で、動画広告は従来のモバイルウェブより"
+"AMPページの方が大幅に上回っています。”"
 
 #: /content/includes/home.yaml
 msgid ""
 "“If our site takes a long time to load, it doesn’t matter how great our "
 "journalism is, some people will leave the page before they see what’s there.”"
 msgstr ""
+"“私たちのサイトの読み込みに時間が掛かる場合は、どれほどジャーナリズムが"
+"素晴らしくても、ページを見る前にその場から離れていきます。“"
 
