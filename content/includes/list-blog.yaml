@@ -1,71 +1,67 @@
 blogs:
 
-- type: Video
-  title: "5 Misconceptions About AMP Debunked!"
-  id: q-JO22O1DQ0
-  author: The AMP Channel
-  role: 
-  origin: "https://www.youtube.com/watch?v=q-JO22O1DQ0"
-  excerpt: "There's lots of talk about AMP, but not all of it is based on reality or data. Let's talk about 5 of the top misconceptions in some greater detail. Any questions about AMP you'd like to have answered in a future video? Tell us in the comments below."
-  thumbnail: "https://i2.ytimg.com/vi/q-JO22O1DQ0/hqdefault.jpg"
-  avatar:
-  datedata: 2017-04-20T14:00:15-07:00
-  date: "April 20, 2017"
-
 - type: Blog
-  title: "What’s new in AMP by Example"
-  id: whats-new-in-amp-by-example
-  author: Sebastian Benz
-  role:  Developer Advocate, Google.
-  origin: "https://amphtml.wordpress.com/2017/04/20/whats-new-in-amp-by-example/amp/"
-  excerpt: "The following was posted on Medium by Sebastian Benz, Developer Advocate, Google. A lot has happened since I last wrote about AMP by Example. This post gives you a quick overview about new samples and what’s new on the site itself. A new Design We completely re-designed www.ampbyexample.com using the brand-new AMPStart template and component library. The [&#8230;]"
-  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-  datedata: 2017-04-20T13:00:53-07:00
-  date: "April 20, 2017"
-
-- type: Blog
-  title: "Test amp-bind on your site with an origin trial"
-  id: test-amp-bind-on-your-site-with-an-origin-trial
-  author: Eric Lindley
+  title: "AMP Roadmap Update for Q2"
+  id: amp-roadmap-update-for-q2
+  author: Rudy Galfi
   role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/04/19/test-amp-bind-on-your-site-with-an-origin-trial/amp/"
-  excerpt: "All features in AMP need to be tested (that’s why we build things using experiments). However, particularly large, complex, and flexible features need a bit more attention. In particular, they need to be implemented end-to-end in real-world applications, for real users. That way, we can be sure that these features work well when they’re launched. [&#8230;]"
-  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-  datedata: 2017-04-19T13:38:34-07:00
-  date: "April 19, 2017"
+  origin: "https://amphtml.wordpress.com/2017/05/25/amp-roadmap-update-for-q2/amp/"
+  excerpt: "We’ve updated the AMP Roadmap with our new projects and progress on existing priorities. Specifically we are focusing on format, analytics and ads improvements. Highlights from these areas below. Format We’re doubling down on e-commerce, engagement, and developer tools this quarter, with big features in all three targeting completion by the end of June. amp-bind, [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-05-25T11:11:18-07:00
+  date: "May 25, 2017"
 
-- type: Video
-  title: "Why AMP Caches Exist"
-  id: n8n7fj60lds
-  author: The AMP Channel
+- type: Blog
+  title: "Bringing the speed of AMP to search & display ads"
+  id: bringing-the-speed-of-amp-to-search-display-ads
+  author: Jerry Dischler
+  role:  Vice President, Product Management
+  origin: "https://amphtml.wordpress.com/2017/05/23/bringing-the-speed-of-amp-to-search-display-ads/amp/"
+  excerpt: "The following was posted on Google&#8217;s Inside AdWords Blog by Jerry Dischler, Vice President, Product Management, Google. Succeeding on mobile starts with getting the basics right. People choose brands that meet their needs instantly and seamlessly. That means no matter how great your site looks, if it loads slowly, users will leave and you’ll miss [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-05-23T10:02:55-07:00
+  date: "May 23, 2017"
+
+- type: Blog
+  title: "Growing the AMP Ads Initiative"
+  id: growing-the-amp-ads-initiative
+  author: Vamsee Jasti
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/05/18/growing-the-amp-ads-initiative/amp/"
+  excerpt: "We launched the AMP Ads Initiative last year with the ambitious goal of fixing ad experiences on the web by bringing the speed and performance of AMP to advertising. AMP Ads are faster, lighter and more secure — loading up to 5 seconds faster than regular ads on AMP pages — making them more viewable [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-05-18T09:12:34-07:00
+  date: "May 18, 2017"
+
+- type: Blog
+  title: "Turbocharging AMP"
+  id: turbocharging-amp
+  author: Matt Ludwig
+  role:  AMP Project Marketing Lead at Google
+  origin: "https://amphtml.wordpress.com/2017/05/18/turbocharging-amp/amp/"
+  excerpt: "Improving speed and user experience on the web is core to the AMP Project’s mission. Today at Google’s I/O developer conference we announced that AMP pages load twice as fast from Google Search, as we’ve cut the time it takes to render content in half from last year. Additionally, new platforms and websites have joined [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-05-17T18:17:29-07:00
+  date: "May 17, 2017"
+
+- type: Blog
+  title: "Google Analytics is Enhancing Support for AMP"
+  id: google-analytics-is-enhancing-support-for-amp
+  author: amphtml
   role: 
-  origin: "https://www.youtube.com/watch?v=n8n7fj60lds"
-  excerpt: "So what's the deal with AMP Caches? They are the part of AMP 
-that is most controversial, yet most misunderstood. Learn why they're 
-necessary today."
-  thumbnail: "https://i3.ytimg.com/vi/n8n7fj60lds/hqdefault.jpg"
-  avatar:
-  datedata: 2017-04-06T14:00:01-07:00
-  date: "April 6, 2017"
+  origin: "https://amphtml.wordpress.com/2017/05/16/google-analytics-is-enhancing-support-for-amp/amp/"
+  excerpt: "The following was posted on the Google Analytics blog by the Google Analytics team Over the past year, developers have adopted the Accelerated Mobile Pages (AMP) technology to build faster-loading pages for all types of sites, ranging from news to recipes to e-commerce. Billions of AMP pages have been published to date and Google Analytics continues [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-05-16T12:37:33-07:00
+  date: "May 16, 2017"
 
 - type: Blog
-  title: "From AMP to Progressive Web App"
-  id: from-amp-to-progressive-web-app
-  author: Paul Bakaus
-  role:  Developer Advocate, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/04/06/from-amp-to-progressive-web-app/amp/"
-  excerpt: "If you’ve invested in AMP and are also getting ready to upgrade your mobile website to a next-generation Progressive Web App, I have good news for you: AMP and Progressive Web Apps can be combined and used together to create a fantastic user journey. And we have a new set of docs on AMPproject.org to help [&#8230;]"
-  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-  datedata: 2017-04-06T13:06:14-07:00
-  date: "April 6, 2017"
-
-- type: Blog
-  title: "AMP Conf 2017 Recap (and videos!)"
-  id: amp-conf-2017-recap-and-videos
-  author: Paul Bakaus
-  role:  Developer Advocate, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/04/05/amp-conf-2017-recap-and-videos/amp/"
-  excerpt: "Last month we held our first AMP Conf, and it was a blast. Over 300 of you showed up in-person, and thousands tuned into the live stream. Over two days, 19 talks, panels and workshops – with over half from outside the AMP team – covered topics including building interactive AMP pages and using AMP [&#8230;]"
-  avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
-  datedata: 2017-04-05T09:35:57-07:00
-  date: "April 5, 2017"
+  title: "See AMP live at I/O 2017!"
+  id: see-amp-live-at-io-2017
+  author: pbakaus
+  role: 
+  origin: "https://amphtml.wordpress.com/2017/05/16/see-amp-live-at-io-2017/amp/"
+  excerpt: "We’re just days away from the start of Google I/O 2017, Google’s annual developer conference. Join us live or on the live stream!"
+  avatar: http://0.gravatar.com/avatar/9fb120a88c85d93be416ed62b8ab5e16?s=96&d=identicon&r=G
+  datedata: 2017-05-15T17:39:53-07:00
+  date: "May 15, 2017"

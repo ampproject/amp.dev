@@ -2,7 +2,7 @@
 class: post-blog post-detail
 type: Blog
 $title: What’s new in AMP by Example
-id: whats-new-in-amp-by-example
+id: ads-whats-new-in-amp-by-example
 author: Sebastian Benz
 role:  Developer Advocate, Google.
 origin: "https://amphtml.wordpress.com/2017/04/20/whats-new-in-amp-by-example/amp/"

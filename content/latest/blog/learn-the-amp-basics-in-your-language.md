@@ -7,7 +7,7 @@ author: Tomo Taylor
 role:  AMP Community Manager
 origin: "https://amphtml.wordpress.com/2017/03/14/learn-the-amp-basics-in-your-language/amp/"
 excerpt: "To celebrate the new AMP Project YouTube channel and follow up on AMP Conf, we’re rolling out a fresh series of Local Language AMP office hours. Sessions will include beginner introductions to AMP for a non-technical audience in Italian, French, German, Spanish, Indonesian, Korean, Japanese and English. Native language speaking AMP experts will be on [&#8230;]"
-avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2017-03-14T08:32:09-07:00
 $date: March 14, 2017
 $parent: /content/latest/list-blog.html
