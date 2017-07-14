@@ -7,11 +7,13 @@ author: Paul Bakaus
 role:  Developer Advocate, AMP Project
 origin: "https://amphtml.wordpress.com/2017/04/05/amp-conf-2017-recap-and-videos/amp/"
 excerpt: "Last month we held our first AMP Conf, and it was a blast. Over 300 of you showed up in-person, and thousands tuned into the live stream. Over two days, 19 talks, panels and workshops – with over half from outside the AMP team – covered topics including building interactive AMP pages and using AMP [&#8230;]"
-avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2017-04-05T09:35:57-07:00
 $date: April 5, 2017
 $parent: /content/latest/list-blog.html
-
+$path: /latest/blog/{base}/
+$localization:
+  path: /{locale}/latest/blog/{base}/
 components:
   - social-share
 ---
