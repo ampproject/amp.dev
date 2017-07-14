@@ -1,17 +1,17 @@
 ---
-$title@: Getting Started
+$title@: Empezando
 $order: 0
 toc: true
 ---
 [TOC]
 
-This is a quick start guide to get you up and running with AMP.
+Esta es una guía de inicio rápido para ponerlo en marcha con AMP.
 
-For more detailed instructions, visit the [Create your first AMP page](/docs/tutorials/create.html) tutorial.
+Para obtener instrucciones más detalladas, visite el tutorial [Crea tu primera página AMP](/es/docs/tutorials/create.html).
 
-### Step 1: Get the AMP HTML template
+### Paso 1: Obtenga la plantilla HTML de AMP
 
-This is the basic HTML you need for an AMP page:
+Este es el código HTML básico que necesitas para una página AMP:
 
 ```html
 <!doctype html>
@@ -19,34 +19,34 @@ This is the basic HTML you need for an AMP page:
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Hello AMP world</title>
-    <link rel="canonical" href="hello-world.html">
+    <title>Hola mundo AMP</title>
+    <link rel="canonical" href="hola-mundo.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
-    <h1>Hello AMP World!</h1>
+    <h1>¡Hola Mundo AMP!</h1>
   </body>
 </html>
 ```
 
-{% call callout('Read on', type='read') %}
-Learn more about the [required markup](/docs/reference/spec.html#required-markup) for AMP pages.
+{% call callout('Leer Más', type='read') %}
+Aprende más sobre el [markup requerido](/docs/reference/spec.html#required-markup) para páginas AMP.
 {% endcall %}
 
-### Step 2: Add components to your page
+### Paso 2: Agrega componentes a tu página
 
-Build up your AMP page by adding components, like an image:
+Construya su página AMP agregando componentes, como una imagen:
 
 ```html
 <amp-img src="https://www.ampproject.org/examples/images/amp.jpg"
   width="900" height="508" layout="responsive"></amp-img>
 ```
 
-Or a YouTube video:
+O bien, un video de YouTube:
 
 ```html
-<!-- this script is required for amp-youtube and must be in the <head> section  -->
+<!-- este script es requerido para amp-youtube y debe ser agregado en la sección <head> de tu página AMP  -->
 <script async custom-element="amp-youtube"
       src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
@@ -57,11 +57,11 @@ Or a YouTube video:
     width="480" height="270"></amp-youtube>
 ```
 
-And much more. See the list of [available components in AMP](/docs/reference/components.html).
+Y mucho más. Mira la lista completa de [componentes disponibles para AMP](/es/docs/reference/components.html).
 
-### Step 3: Style your elements
+### Paso 3: Estilo de los elementos
 
-To style elements on your AMP page, add CSS to an inline stylesheet named `<style amp-custom>` in the `<head>` of your document:
+Para darle estilo a tus elementos en una página AMP, agrega CSS directamente a una hoja de estilo denominada `<style amp-custom>` en el  `<head>` de tu página:
 
 ```html
 <style amp-custom>
@@ -74,23 +74,23 @@ To style elements on your AMP page, add CSS to an inline stylesheet named `<styl
 </style>
 ```
 
-{% call callout('Read on', type='read') %}
-Learn more about the [supported CSS](/docs/guides/responsive/style_pages.html) for AMP pages.
+{% call callout('Leer Más', type='read') %}
+Aprende más sobre el [CSS soportado](/es/docs/guides/responsive/style_pages.html) en páginas AMP.
 {% endcall %}
 
-### Step 4: Validate your AMP HTML
+### Paso 4: Valida tu página AMP HTML
 
-Make sure your AMP pages are valid AMP HTML by verifying the pages with the [AMP Validator](https://validator.ampproject.org/).
+Asegúrate que tu página AMP tiene un AMP HTML válido verificando la misma a través del [Validador AMP](https://validator.ampproject.org/).
 
-For other validation tools that you can use, see [Validate AMP pages](/docs/guides/validate.html).
+Para otras herramientas de validación, lee las [páginas para validar AMP](/es/docs/guides/validate.html).
 
-### Next Steps
+### Próximos pasos
 
-To dive further into the basics of an AMP page, visit the [Create your first AMP page](/docs/tutorials/create.html) tutorial.
+Para sumergirte en lo básico sobre páginas AMPm visita el tutorial [Crea tu primera página AMP](/es/docs/tutorials/create.html).
 
-Here are other resources to help your experience:
+Aquí tienes otros recursos que pueden ayudarte con tu experiencia:
 
-* [Make your page discoverable](/docs/guides/discovery.html)
-* [Add analytics to your page](/docs/guides/analytics_amp.html)
-* [Improve user engagement](/docs/guides/engagement.html)
-* Live demos at [AMP BY Example](https://ampbyexample.com/)
+* [Hacer que una página sea visible](/es/docs/guides/discovery.html)
+* [Agregar analytics a tu página](/es/docs/guides/analytics_amp.html)
+* [Mejora la participación del usuario](/es/docs/guides/engagement.html)
+* Ejemplos en [AMP BY Example](https://ampbyexample.com/)
