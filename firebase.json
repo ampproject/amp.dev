@@ -46,7 +46,7 @@
         "destination": "/docs/guides/responsive_amp.html",
         "type": 301
       },
-            {
+      {
         "source": "/:lang/docs/guides",
         "destination": "/:lang/docs/guides/responsive_amp.html",
         "type": 301
@@ -631,7 +631,6 @@
         "destination": "/docs/tutorials/live_blog.html",
         "type": 301
       },
-
       {
         "source": "/contact",
         "destination": "https://github.com/ampproject/amphtml/issues/new",
