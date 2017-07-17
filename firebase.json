@@ -42,6 +42,46 @@
     ],
     "redirects": [
       {
+        "source": "/docs/guides/",
+        "destination": "/docs/guides/responsive_amp.html",
+        "type": 301
+      },
+            {
+        "source": "/:lang/docs/guides",
+        "destination": "/:lang/docs/guides/responsive_amp.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/",
+        "destination": "/docs/tutorials/create.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials",
+        "destination": "/:lang/docs/tutorials/create.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/",
+        "destination": "/docs/reference/components.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/",
+        "destination": "/:lang/docs/reference/components.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/contribute/",
+        "destination": "/contribute/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/contribute/",
+        "destination": "/:lang/contribute/",
+        "type": 301
+      },
+      {
         "source": "/ads",
         "destination": "/learn/who-uses-amp/amp-ads/",
         "type": 301
@@ -51,7 +91,6 @@
         "destination": "/learn/who/",
         "type": 301
       },
-
       {
         "source": "/docs/get_started/technical_overview.html",
         "destination": "/learn/about-how/",
