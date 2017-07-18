@@ -7,11 +7,13 @@ author: Paul Bakaus
 role:  Developer Advocate, AMP Project
 origin: "https://amphtml.wordpress.com/2017/04/06/from-amp-to-progressive-web-app/amp/"
 excerpt: "If you’ve invested in AMP and are also getting ready to upgrade your mobile website to a next-generation Progressive Web App, I have good news for you: AMP and Progressive Web Apps can be combined and used together to create a fantastic user journey. And we have a new set of docs on AMPproject.org to help [&#8230;]"
-avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2017-04-06T13:06:14-07:00
 $date: April 6, 2017
 $parent: /content/latest/list-blog.html
-
+$path: /latest/blog/{base}/
+$localization:
+  path: /{locale}/latest/blog/{base}/
 components:
   - social-share
 ---

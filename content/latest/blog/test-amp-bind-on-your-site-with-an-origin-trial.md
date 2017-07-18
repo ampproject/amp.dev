@@ -7,11 +7,13 @@ author: Eric Lindley
 role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2017/04/19/test-amp-bind-on-your-site-with-an-origin-trial/amp/"
 excerpt: "All features in AMP need to be tested (that’s why we build things using experiments). However, particularly large, complex, and flexible features need a bit more attention. In particular, they need to be implemented end-to-end in real-world applications, for real users. That way, we can be sure that these features work well when they’re launched. [&#8230;]"
-avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2017-04-19T13:38:34-07:00
 $date: April 19, 2017
 $parent: /content/latest/list-blog.html
-
+$path: /latest/blog/{base}/
+$localization:
+  path: /{locale}/latest/blog/{base}/
 components:
   - social-share
 ---

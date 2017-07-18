@@ -1,85 +1,144 @@
 ---
-$title: 支持的布局
+$title: 布局和媒体查询
+$order: 1
+toc: true
 ---
-
-
-要让您的元素能够自适应，请添加 `layout=responsive`。
 
 [TOC]
 
-## 布局属性支持的值
+ AMP 不仅同时支持**媒体查询**和**元素查询** ，还内置强大的功能来控制各个元素的**布局** 。相较于单独使用 CSS，借助 `layout` 属性可以更轻松地使用和创建完全自适应的设计。
 
-默认情况下，请使用自适应布局。
+## 轻松创建自适应图片
 
-以下是布局属性所支持的值的完整列表：
+ 您可以通过以下方法创建自适应图片 - 指定 `width` 和 `height`，将布局设置为 `responsive`，然后使用 [`srcset`](/zh_cn/docs/guides/responsive/art_direction.html) 指定不同的屏幕尺寸下使用哪个图片素材资源：
+
+[sourcecode:html]
+<amp-img
+    src="/img/narrow.jpg"
+    srcset="/img/wide.jpg 640w,
+           /img/narrow.jpg 320w"
+    width="1698"
+    height="2911"
+    layout="responsive"
+    alt="an image">
+</amp-img>
+[/sourcecode]
+
+`amp-img` 元素会自动适应其容器元素的宽度，其高度会根据由指定宽度和高度确定的宽高比自动设定。您可以调整此浏览器窗口的大小，试一试这个功能：
+
+<amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
+
+{% call callout('提示', type='success') %}
+ 请参阅我们关于 `amp-img` 基本示例和高级示例的实际演示：[实际演示](https://ampbyexample.com/components/amp-img/)
+ {% endcall %}
+
+## layout 属性
+
+使用 `layout` 属性，您能够按元素轻松控制元素在屏幕上的呈现方式。单独使用 CSS 也可实现这些目的，但难度更大，而且需要大量技巧。因此，请改用 `layout` 属性。
+
+### `layout` 属性支持的值
+
+`layout` 属性中可使用以下值：
 
 <table>
   <thead>
     <tr>
-      <th class="col-twenty" data-th="Layout type">布局类型</th>
-      <th class="col-twenty" data-th="Width/height required">是否要求提供宽度/高度</th>
+      <th data-th="Layout type" class="col-twenty">布局类型</th>
+      <th data-th="Width/height required" class="col-twenty">是否要求指定宽度/高度</th>
       <th data-th="Behavior">行为</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="col-twenty" data-th="Layout type"><code>nodisplay</code></td>
-      <td class="col-twenty" data-th="Description">否</td>
-      <td data-th="Behavior">元素不显示。该布局可应用于每个 AMP 元素。组件不占用任何屏幕空间，如同没有显示样式。假定元素能够在用户操作时自行显示，例如 <a href="/docs/reference/extended/amp-lightbox.html">amp-lightbox</code></a>。</td>
+      <td data-th="Layout type" class="col-twenty"><code>nodisplay</code></td>
+      <td data-th="Description" class="col-twenty">否</td>
+      <td data-th="Behavior"> 元素不显示。该布局可应用于每个 AMP 元素。组件不占用任何屏幕空间，如同没有显示样式一般。假定元素能够在用户执行操作时自行显示，例如，<a href="/zh_cn/docs/reference/extended/amp-lightbox.html"> <code>amp-lightbox</code></a>。</td>
     </tr>
     <tr>
-      <td class="col-twenty" data-th="Layout type"><code>fixed</code></td>
-      <td class="col-twenty" data-th="Description">是</td>
-      <td data-th="Behavior">元素有固定的宽度和高度，不支持任何自适应功能。其中，只有 <a href="/docs/reference/amp-pixel.html">amp-pixel</code></a> 和 <a href="/docs/reference/extended/amp-audio.html">amp-audio</code></a> 元素例外。</td>
+      <td data-th="Layout type" class="col-twenty"><code>fixed</code></td>
+      <td data-th="Description" class="col-twenty">是</td>
+      <td data-th="Behavior"> 元素有固定的宽度和高度，不支持任何自适应功能。其中，<a href="/zh_cn/docs/reference/amp-pixel.html"><code>amp-pixel</code></a>  和<a href="/zh_cn/docs/reference/extended/amp-audio.html"> <code>amp-audio</code></a> 元素例外。</td>
     </tr>
     <tr>
-      <td class="col-twenty" data-th="Layout type"><code>responsive</code></td>
-      <td class="col-twenty" data-th="Description">是</td>
-      <td data-th="Behavior">元素的宽度根据其容器元素的宽度来设定，高度则根据由宽度和高度属性确定的宽高比自动重新调整。这种布局非常适合大多数 AMP 元素，包括 <a href="/docs/reference/amp-img.html">amp-img</code></a>、<a href="/docs/reference/amp-video.html">amp-video</code></a>。可用空间取决于父级元素，还可使用 <code>max-width</code> CSS 进行自定义。</td>
+      <td data-th="Layout type" class="col-twenty"><code>responsive</code></td>
+      <td data-th="Description" class="col-twenty">是</td>
+      <td data-th="Behavior"> 元素的宽度根据其容器元素的宽度进行调整，高度则根据由宽度和高度属性确定的宽高比自动重新调整。这种布局非常适合大多数 AMP 元素，包括<a href="/zh_cn/docs/reference/amp-img.html"> <code>amp-img</code></a>,<a href="/zh_cn/docs/reference/amp-video.html"> <code>amp-video</code></a>。可用空间取决于父级元素，且可使用 <code>max-width</code> CSS 进行自定义。</td>
     </tr>
     <tr>
-      <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
-      <td class="col-twenty" data-th="Description">仅高度</td>
-      <td data-th="Behavior">元素占用为其提供的空间，但高度保持不变。这种布局非常适合 <a href="/docs/reference/extended/amp-carousel.html">amp-carousel</code></a> 等涉及水平放置内容的元素。<code>width</code> 属性要么不存在，要么必须设为 <code>auto</code>。</td>
+      <td data-th="Layout type" class="col-twenty"><code>fixed-height</code></td>
+      <td data-th="Description" class="col-twenty">仅高度</td>
+      <td data-th="Behavior"> 元素会占用为其提供的空间，但高度保持不变。这种布局非常适合<a href="/zh_cn/docs/reference/extended/amp-carousel.html"> <code>amp-carousel</code></a>  等涉及水平放置内容的元素。 <code>width</code>  属性要么不指定，要么必须设为 <code>auto</code>。</td>
     </tr>
     <tr>
-      <td class="col-twenty" data-th="Layout type"><code>fill</code></td>
-      <td class="col-twenty" data-th="Description">否</td>
-      <td data-th="Behavior">元素占用为其提供的空间，宽度和高度均可填充进来。换言之，填充元素的布局与其父级匹配。</td>
+      <td data-th="Layout type" class="col-twenty"><code>fill</code></td>
+      <td data-th="Description" class="col-twenty">否</td>
+      <td data-th="Behavior">元素会占用为其提供的空间（包括宽度和高度。换言之，填充元素的布局与其父级匹配。</td>
     </tr>
     <tr>
-      <td class="col-twenty" data-th="Layout type"><code>container</code></td>
-      <td class="col-twenty" data-th="Description">否</td>
-      <td data-th="Behavior">元素让其子级定义自己的尺寸，类似于普通 HTML <code>div</code>。假定组件自身没有特定布局，仅充当容器。其子级会立即呈现。</td>
+      <td data-th="Layout type" class="col-twenty"><code>container</code></td>
+      <td data-th="Description" class="col-twenty">否</td>
+      <td data-th="Behavior"> 元素会让其子级定义自己的尺寸，非常类似于普通 HTML <code>div</code>。假定组件自身没有特定布局，仅充当容器。其子级会立即呈现。</td>
+    </tr>
+    <tr>
+      <td data-th="Layout type" class="col-twenty"><code>flex-item</code></td>
+      <td data-th="Description" class="col-twenty">否</td>
+      <td data-th="Behavior"> 如果父级是灵活容器（也就是说 <code>display:flex</code>，则元素和其父级内的其他元素会占用此父级容器的剩余空间。该元素尺寸由父级元素和父级元素内其他元素的数量确定（按照 <code>display:flex</code> CSS 布局。</td>
     </tr>
   </tbody>
 </table>
 
 ### 如果未定义宽度和高度，会怎样？
 
-在少数情况下，如果未指定 `width` 或 `height`，AMP 运行时会将这些值默认如下：
+在少数情况下，如果未指定 `width` 或 `height`，AMP 运行时系统会将这些值默认如下：
 
-* [`amp-pixel`](/docs/reference/amp-pixel.html)：宽度和高度均默认为 0。
-* [`amp-audio`](/docs/reference/extended/amp-audio.html)：从浏览器推断出默认宽度和高度。
+* [`amp-pixel`](/zh_cn/docs/reference/amp-pixel.html)：宽度和高度均默认为 0。
+* [amp-audio](/zh_cn/docs/reference/extended/amp-audio.html)：从浏览器推断出默认宽度和高度。
 
-### 如果未定义布局属性，会怎样？
+###  如果未指定 <code>layout</code> 属性，会怎样？
 
-布局行为按以下方式决定：
+ 如果未指定 <code>layout</code> 属性，则 AMP 会尝试推断或猜测相应的值：
 
-* 如果 `height` 存在，而 `width` 不存在或设为 `auto`，则假定为 `fixed-height` 布局。
-* 如果 `width` 或 `height` 属性存在，且有 `sizes` 属性，则假定为 `responsive` 布局。
-* 如果 `width` 或 `height` 属性存在，则假定为 `fixed` 布局。
-* 如果 `width` 和 `height` 均不存在，则假定为 `container` 布局。
+<table>
+  <thead>
+    <tr>
+      <th data-th="Rule">规则</th>
+      <th data-th="Inferred layout" class="col-thirty">推断的布局</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Rule"><code>height</code>  已指定，而 <code>width</code>  未指定或设为 <code>auto</code></td>
+      <td data-th="Inferred layout"><code>fixed-height</code></td>
+    </tr>
+    <tr>
+      <td data-th="Rule"><code>width</code>  或 <code>height</code>  属性已指定，且 <code>sizes</code> 属性也已指定</td>
+      <td data-th="Inferred layout"><code>responsive</code></td>
+    </tr>
+    <tr>
+      <td data-th="Rule"><code>width</code>  或<code>height</code> 属性已指定</td>
+      <td data-th="Inferred layout"><code>fixed</code></td>
+    </tr>
+    <tr>
+      <td data-th="Rule"><code>width</code>  和 <code>height</code> 均未指定</td>
+      <td data-th="Inferred layout"><code>container</code></td>
+    </tr>
+  </tbody>
+</table>
 
-## 使用 @media 和 media
+## 使用媒体查询
 
-您可以像在其他任何网站上一样，使用 [`@media`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media) 控制网页布局的外观和行为。当浏览器窗口改变尺寸或屏幕方向时，媒体查询会重新接受评估，而元素则会根据新的结果隐藏和显示。
+### CSS 媒体查询
 
-要详细了解如何通过应用媒体查询来控制布局，请参阅[使用 CSS 媒体查询实现自适应功能](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=zh-CN)一文。
+ 使用 [`@media`](https://developer.mozilla.org/es_us/docs/Web/CSS/@media) 来控制网页布局的外观和行为，就像在其他任何网站上一样。当浏览器窗口改变尺寸或屏幕方向时，媒体查询会重新接受评估，而元素则会根据新的结果隐藏和显示。
 
-AMP 中另外一种用于自适应设计的功能是 `media` 属性。该属性可在所有 AMP 元素中使用；其工作方式类似于全局样式表中的媒体查询，不过它只影响单一网页中的特定元素。
+{% call callout('提示', type='success') %}
+ 要详细了解如何通过应用媒体查询来控制布局，请参阅[使用 CSS 媒体查询实现自适应功能](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en)一文。{% endcall %}
 
-举例来讲，以下是包含互斥媒体查询的 2 张图片。
+### 元素媒体查询
+
+AMP 中另外一种用于自适应设计的功能是 `media` 属性。该属性可在所有 AMP 元素中使用；其工作方式类似于全局样式表中的媒体查询，但只影响单个网页中的特定元素。
+
+举例来讲，我们有 2 张图片，这 2 张图片的媒体查询互斥。
 
 [sourcecode:html]
 <amp-img
@@ -87,11 +146,11 @@ AMP 中另外一种用于自适应设计的功能是 `media` 属性。该属性�
     src="wide.jpg"
     width=466
     height=355
-    layout="responsive" >
+    layout="responsive">
 </amp-img>
 [/sourcecode]
 
-根据屏幕宽度，系统将抓取并呈现其中一张图片。
+根据屏幕宽度，系统会抓取并呈现其中一张图片。
 
 [sourcecode:html]
 <amp-img
@@ -99,78 +158,7 @@ AMP 中另外一种用于自适应设计的功能是 `media` 属性。该属性�
     src="narrow.jpg"
     width=527
     height=193
-    layout="responsive" >
+    layout="responsive">
 </amp-img>
 [/sourcecode]
 
-## 使用 srcset 和 sizes
-
-您可以使用 `srcset` 属性来控制元素根据不同的媒体表达式所用的资源。尤其是，您可以将其用于所有 [`amp-img`](/docs/reference/amp-img.html) 标记，以指定根据不同的屏幕尺寸所用的图片资源。
-
-举一个简单的例子，您可以使用 `srcset` 指定根据屏幕宽度所用的图片。`w` 描述符可告知浏览器列表中每张图片的宽度：
-
-[sourcecode:html]
-<amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w >
-</amp-img>
-[/sourcecode]
-
-**注意**：AMP 在所有浏览器上都支持 `w` 描述符。
-
-要详细了解如何使用 `srcset` 制作自适应图片，请参阅[使用自适应图片（现在）](http://alistapart.com/article/using-responsive-images-now)一文。
-
-您还可以将 `sizes` 属性与 `srcset` 结合使用。`sizes` 属性描述如何根据任何媒体表达式计算元素尺寸。用户代理根据相应元素计算而来的尺寸，选择由 `srcset` 属性提供的相关性最高的来源。
-
-请查看下方示例：
-
-[sourcecode:html]
-<amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w
-    sizes="(min-width: 650px) 50vw, 100vw" >
-</amp-img>
-[/sourcecode]
-
-根据 `sizes` 属性的定义，当视口的宽度为 650px 或以上时，元素的宽度将为视口尺寸的 50%。例如，如果视口宽度为 800px，则元素的宽度设为 400px。然后，浏览器会假定设备的像素宽高比为 1，以此来选择接近 400px 的 `srcset` 资源（在本例中为 `narrow.jpg` (320px)）。
-
-**重要提示**：如果指定了 sizes 属性及宽度和高度，则布局默认为 `responsive`。
-
-要详细了解 `sizes` 和 `srcset` 属性与媒体查询之间的对比情况，请参阅这篇 [Srcset 和 sizes](https://ericportis.com/posts/2014/srcset-sizes/) 博文。
-
-## 添加 placeholder 和 fallback
-
-### placeholder
-
-标记有 `placeholder` 属性的元素充当父级 AMP 元素的占位符。如果指定，则 `placeholder` 元素必须是 AMP 元素的直接子级。
-
-[sourcecode:html]
-<amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
-    <amp-img placeholder src="preview.png" layout="fill"></amp-img>
-</amp-anim>
-[/sourcecode]
-
-默认情况下，即使 AMP 元素的资源尚未下载或初始化，与该 AMP 元素对应的占位符也会立即显示。准备就绪后，AMP 元素通常会隐藏其占位符并显示相关内容。
-
-**注意**：占位符不必是 AMP 元素；任何 HTML 元素都可充当占位符。
-
-### fallback
-
-您可以使用 `fallback` 属性指明浏览器不支持的任何元素的后备行为。例如，您可以使用 `fallback` 属性告知用户，浏览器不支持特定功能：
-
-[sourcecode:html]
-<amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
-    poster="myvideo-poster.jpg" >
-  <div fallback>
-        <p>Your browser doesn’t support HTML5 video.</p>
-  </div>
-</amp-video>
-[/sourcecode]
-
-`fallback` 属性可在任何 HTML 元素上设置，而不仅仅是 AMP 元素。如果指定，则 `fallback` 元素必须是 AMP 元素的直接子级。
-
-### noloading
-
-许多 AMP 元素已列入白名单，可以显示“加载指示器”，这是一个基本动画，用于表明元素尚未完全加载。只需添加 `noloading` 属性，元素即可停用此行为。

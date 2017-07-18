@@ -7,11 +7,13 @@ author: Sebastian Benz
 role:  Developer Advocate, Google.
 origin: "https://amphtml.wordpress.com/2017/04/20/whats-new-in-amp-by-example/amp/"
 excerpt: "The following was posted on Medium by Sebastian Benz, Developer Advocate, Google. A lot has happened since I last wrote about AMP by Example. This post gives you a quick overview about new samples and what’s new on the site itself. A new Design We completely re-designed www.ampbyexample.com using the brand-new AMPStart template and component library. The [&#8230;]"
-avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2017-04-20T13:00:53-07:00
 $date: April 20, 2017
 $parent: /content/latest/list-blog.html
-
+$path: /latest/blog/{base}/
+$localization:
+  path: /{locale}/latest/blog/{base}/
 components:
   - social-share
 ---
