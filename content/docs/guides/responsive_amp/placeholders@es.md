@@ -2,6 +2,8 @@
 $title: Placeholders & fallbacks
 $order: 3
 toc: true
+components:
+  - iframe
 ---
 [TOC]
 
@@ -60,6 +62,20 @@ que el navegador no es compatible con una característica concreta:
 El atributo `fallback` se puede establecer en cualquier elemento HTML, no solo en los elementos AMP. 
 Si se especifica, el elemento `fallback` debe ser un elemento secundario directo del elemento AMP.
 
+## Interacción de placeholders y fallbacks
+
+Para los componentes AMP que obedecen a contenido dinámico (por ejemplo, `amp-twitter`, `amp-list`), la interacción de fallbacks y placeholders opera de la siguiente manera:
+ 
+<ol>
+  <li>Muestra el placeholder mientras el contenido está cargando.</li>
+  <li>Si el contenido carga exitosamente, oculta el placeholder y muestra el contenido.</li>
+  <li>Si el contenido falla al cargar:
+    <ol>
+      <li>Si hay elemento fallback, muestra el fallback.</li>
+      <li>Sino, sigue mostrando el placeholder.</li>
+    </ol>
+  </li>
+</ol>
 
 ## Ocultar indicadores de carga
 
