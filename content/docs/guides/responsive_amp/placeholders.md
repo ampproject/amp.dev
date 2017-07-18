@@ -7,7 +7,6 @@ components:
 ---
 [TOC]
 
-
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 
 Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`<amp-iframe>`](/docs/reference/components/amp-iframe.html#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
@@ -43,7 +42,8 @@ any HTML element can act as the placeholder.
 ## Fallbacks
 
 Use the `fallback` attribute to indicate the fallback behavior
-for any element the browser doesn’t support.
+for any element the browser doesn’t support, or if the content fails to load (e.g., Tweet deleted).
+
 For example, use the `fallback` attribute to communicate to the user
 that the browser doesn’t support a particular feature:
 
@@ -61,6 +61,21 @@ that the browser doesn’t support a particular feature:
 
 The `fallback` attribute can be set on any HTML element, not just AMP elements.
 If specified, the `fallback` element must be a direct child of the AMP element.
+
+## Interaction of placeholders and fallbacks
+
+For AMP components that rely on dynamic content (e.g., `amp-twitter`, `amp-list`), the interaction of fallbacks and placeholders operates as follows:
+ 
+<ol>
+  <li>Display the placeholder while the content is loading.</li>
+  <li>If the content loads successfully, hide the placeholder and display the content.</li>
+  <li>If the content fails to load:
+    <ol>
+      <li>If there's a fallback element, display the fallback.</li>
+      <li>Otherwise, continue displaying the placeholder.</li>
+    </ol>
+  </li>
+</ol>
 
 ## Hiding loading indicators
 
