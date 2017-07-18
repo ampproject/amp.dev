@@ -12,7 +12,7 @@ class: bg-triangle-primary
 cards:
   - name@: Empecemos
     desc@: Aprende cómo crear tu primer página AMP con este pequeño tutorial básico.
-    cta@: Crea tu primer AMP.
+    cta@: Crea tu primer AMP
     link: tutorials/create.html
 
   - name@: Guías
