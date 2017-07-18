@@ -72,7 +72,7 @@ For AMP components that rely on dynamic content (e.g., `amp-twitter`, `amp-list`
   <li>If the content fails to load:
     <ol>
       <li>If there's a fallback element, display the fallback.</li>
-      <li>Otherwise, if there's a placeholder, display the placeholder.</li>
+      <li>Otherwise, continue displaying the placeholder.</li>
     </ol>
   </li>
 </ol>
