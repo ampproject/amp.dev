@@ -129,10 +129,10 @@ msgid ""
 " 1.5B AMP pages have been published to date and 100+ leading analytics, ad "
 "tech and CMS providers support the AMP format."
 msgstr ""
-"AMP は何千人もの開発者との深いコラボレーションにより構築されており、"
-"運営者とウェブサイト、配信プラットフォーム、ハイテク企業などがあります。 "
-"現在までに15億以上のAMPページが公開されており、100以上の主要な分析、"
-"アドテク、CMSプロバイダがAMPフォーマットをサポートしています。"
+"AMPは何千人もの開発者との深いコラボレーションにより構築されており、"
+"そのグループには運営者とウェブサイト、配信プラットフォーム、ハイテク企業など"
+"があります。現在までに15億以上のAMPページが公開されており、100以上の主要な"
+"分析ツール、アドテク、CMSプロバイダがAMPフォーマットをサポートしています。"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -577,7 +577,7 @@ msgstr "詳細"
 
 #: /content/includes/home.yaml
 msgid "Learn about AMP"
-msgstr "AMP について学ぶ"
+msgstr "AMPについて学ぶ"
 
 #: /content/docs/build.md
 msgid "Learn about each AMP component, including syntax and examples."
@@ -885,7 +885,7 @@ msgstr "Stack Overflowコミュニティ"
 
 #: /content/includes/home.yaml
 msgid "Start Building"
-msgstr "作成を始める"
+msgstr "作り始める"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
@@ -963,7 +963,7 @@ msgid ""
 "consistently fast, beautiful and high-performing across devices and "
 "distribution platforms."
 msgstr ""
-"AMP プロジェクトはウェブをより良いものにすることを目指すオープンソースの"
+"AMPプロジェクトはウェブをより良いものにすることを目指すオープンソースの"
 "取り組みです。このプロジェクトでは、デバイスや配信プラットフォーム全体で"
 "一貫して高速で美しく高性能なウェブサイトや広告を作成することができます。"
 
@@ -1125,7 +1125,7 @@ msgid ""
 "instantly, giving users a smooth, more engaging experience on mobile and "
 "desktop."
 msgstr ""
-"AMP フォーマットで公開されたウェブページおよび広告は即座に読み込まれ、"
+"AMPフォーマットで公開されたウェブページおよび広告は即座に読み込まれ、"
 "モバイルとデスクトップでスムーズでより魅力的な体験をユーザーに提供します。"
 
 #: /content/learn/amp-design-principles.yaml
@@ -1140,7 +1140,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "What AMP Provides"
-msgstr "AMP が提供する物"
+msgstr "AMPが提供する物"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "What are AMP Ads?"
@@ -1219,7 +1219,7 @@ msgid ""
 "“AMP was the perfect addition to our business, giving us a new level of "
 "impact for our e-commerce clients.”"
 msgstr ""
-"“AMP は当社のビジネスにとって完璧なものであり、当社のEC顧客にとって"
+"“AMPは当社のビジネスにとって完璧なものであり、当社のEC顧客にとって"
 "新たなレベルのインパクトをもたらします。”"
 
 #: /content/includes/home.yaml
