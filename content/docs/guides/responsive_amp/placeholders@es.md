@@ -43,7 +43,8 @@ cualquier elemento HTML puede actuar como marcador de posición.
 ## Fallbacks
 
 Utiliza el atributo  `fallback` para indicar el comportamiento de respaldo
-de cualquier elemento que no sea compatible con el navegador.
+de cualquier elemento que no sea compatible con el navegador, o si hay una falla al cargar el contenido (ej. un tweet borrado).
+
 Por ejemplo, utiliza el atributo `fallback` para comunicar al usuario 
 que el navegador no es compatible con una característica concreta:
 
