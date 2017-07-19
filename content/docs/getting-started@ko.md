@@ -1,5 +1,5 @@
 ---
-$title@: Getting Started
+$title: 시작하기
 $order: 0
 toc: true
 ---
