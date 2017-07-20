@@ -1,6 +1,6 @@
-﻿$title@: 개요
+﻿$title: 개요
 $titles:
-  breadcrumb@: AMP란 무엇인가요?
+  breadcrumb: AMP란 무엇인가요?
 $order: 0
 class: about-overview
 $view: /views/about-overview.html
@@ -9,13 +9,13 @@ components:
   - youtube
 
 hero:
-  title@: AMP는 여러 플랫폼에서 사용자에게 우수한 환경을 제공합니다
+  title: AMP는 여러 플랫폼에서 사용자에게 우수한 환경을 제공합니다
   triangle_img: herobg.svg
   line1_img: herolines1.svg
   line2_img: herolines2.svg
   phone_img_base: /static/img/about/overview/what_phone
-  cta@: 동영상 재생
-  cta_url: '#동영상'
+  cta: 동영상 재생
+  cta_url: '#video'
 
 core:
   title: AMP 페이지는 3개의 핵심 컴포넌트로 구성합니다.
@@ -78,6 +78,6 @@ video:
   line2_img: line4.svg
 
 cta:
-  title@: AMP의 기능을 확인하세요
-  link_text@: AMP 사용 우수사례를 알아보세요
+  title: AMP의 기능을 확인하세요
+  link_text: AMP 사용 우수사례를 알아보세요
   link_url: /content/learn/case-studies.html
