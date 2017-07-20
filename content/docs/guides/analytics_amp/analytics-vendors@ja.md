@@ -230,6 +230,12 @@ type 属性の値: `snowplow`
 
 この値を指定すると、Snowplow Analytics を利用できるようになります。Snowplow Analytics の利用を有効にする方法について詳しくは、[github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker) をご覧ください。
 
+### Rambler/TOP-100
+
+type 属性の値: `top100`
+
+この値を指定すると、Rambler/TOP-100 を利用できるようになります。設定の詳細については、[top100.rambler.ru](https://top100.rambler.ru/docs) をご覧ください.
+
 ### Webtrekk
 
 type 属性の値: `webtrekk`

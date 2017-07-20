@@ -230,6 +230,12 @@ type 属性值：`snowplow`
 
  添加对 Snowplow Analytics 的支持。要详细了解如何添加 Snowplow Analytics 支持，请访问[github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker)。
 
+### Rambler/TOP-100
+
+type 属性值：`top100`
+
+ 添加对 Rambler/TOP-100 的支持。有关配置的详情，请访问 [top100.rambler.ru](https://top100.rambler.ru/docs).
+
 ### Webtrekk
 
 type 属性值：`webtrekk`
