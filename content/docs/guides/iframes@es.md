@@ -39,25 +39,24 @@ primero debe constar la siguiente secuencia de comandos en el `<head>`, que carg
 
 ### Escribir las etiquetas
 
-Un `amp-iframe` de muestra del [ejemplo released.amp](https://github.com/ampproject/amphtml/blob/master/examples/released.amp.html):
+Un ejemplo de `amp-iframe`:
 
-[sourcecode:html]
-<amp-iframe width=300 height=300
-    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+```html
+<amp-iframe width="200" height="100"
+    sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=Alameda,%20CA">
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
 </amp-iframe>
-[/sourcecode]
+```
+
+Preview: 
+
+<amp-iframe width="200" height="100"
+    sandbox="allow-scripts allow-same-origin"
+    layout="responsive"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+</amp-iframe>
 
 ## Ejemplos
 
-Puedes encontrar más ejemplos avanzados en la página de nuestra [demostración avanzada](https://ampbyexample.com/components/amp-iframe/), que está insertada a continuación como `<amp-iframe>`:
-
-<amp-iframe width=300 height=300
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://ampbyexample.com/components/amp-iframe/embed">
-</amp-iframe>
-
+Puedes encontrar más ejemplos avanzados en la página de nuestra [demostración avanzada](https://ampbyexample.com/components/amp-iframe/).
