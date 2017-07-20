@@ -92,5 +92,5 @@ Aquí tienes otros recursos que pueden ayudarte con tu experiencia:
 
 * [Hacer que una página sea visible](/es/docs/guides/discovery.html)
 * [Agregar analytics a tu página](/es/docs/guides/analytics_amp.html)
-* [Mejora la fidelización del usuario](/es/docs/guides/engagement.html)
+* [Mejora la participación del usuario](/es/docs/guides/engagement.html)
 * Ejemplos en [AMP BY Example](https://ampbyexample.com/)
