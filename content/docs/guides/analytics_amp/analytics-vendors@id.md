@@ -231,6 +231,12 @@ Nilai atribut type: `snowplow`
 
 Menambahkan dukungan untuk Snowplow Analytics. Detail selengkapnya tentang cara menambahkan dukungan Snowplow Analytics dapat ditemukan di [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
 
+### Rambler/TOP-100
+
+Nilai atribut type: `top100`
+
+Menambahkan dukungan untuk Rambler/TOP-100. Konfigurasi selengkapnya dapat ditemukan di [top100.rambler.ru](https://top100.rambler.ru/docs).
+
 ### Webtrekk
 
 Nilai atribut type: `webtrekk`

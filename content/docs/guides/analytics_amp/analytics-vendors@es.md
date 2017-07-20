@@ -234,6 +234,12 @@ Valor del atributo type: `snowplow`
 
 Agrega soporte para Snowplow Analytics. Puedes encontrar detalles para agregar soporte a Snowplow Analytics en  [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
 
+### Rambler/TOP-100
+
+Valor del atributo type: `top100`
+
+Agrega soporte para Rambler/TOP-100.  Puedes encontrar detalles sobre configuración en [top100.rambler.ru](https://top100.rambler.ru/docs).
+
 ### Webtrekk
 
 Valor del atributo type: `webtrekk`

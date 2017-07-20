@@ -229,6 +229,12 @@ toc: true
 
  Snowplow Analytics 지원을 추가합니다. Snowplow Analytics 지원 추가에 관한 자세한 내용은 [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker) 에서 확인할 수 있습니다.
 
+### Rambler/TOP-100
+
+속성값 유형: `top100`
+
+ Rambler/TOP-100 지원을 추가합니다. 구성 관련 세부정보는 [top100.rambler.ru](https://top100.rambler.ru/docs) 에서 확인할 수 있습니다.
+
 ### Webtrekk
 
 속성값 유형: `webtrekk`
