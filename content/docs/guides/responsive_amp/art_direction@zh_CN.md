@@ -11,14 +11,17 @@ toc: true
 
 在这个简单的示例中，`srcset` 指定了不同屏幕宽度下所用的图片。`w` 描述符可将列表中每张图片的宽度告知浏览器：
 
-[sourcecode:html]
-<amp-img
-  src="wide.jpg" width="640" height="480"
-  srcset="wide.jpg 640w,
-  narrow.jpg 320w">
-
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using srcset -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('注意', type='note') %}
 AMP 在所有浏览器上都支持具有 `w` 描述符的 srcset。
@@ -32,14 +35,18 @@ AMP 在所有浏览器上都支持具有 `w` 描述符的 srcset。
 
 请查看以下示例：
 
-[sourcecode:html]
-<amp-img
-    src="wide.jpg" width="640" height="480"
-    srcset="wide.jpg 640w,
-    narrow.jpg 320w"
-    sizes="(min-width: 650px) 50vw, 100vw">
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using sizes -->
+<div>
+<amp-iframe height="231"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
+
 
 `sizes` 属性进行了以下定义：当视口的宽度为 650px 或以上时，元素的宽度将为视口尺寸的 50%。例如，如果视口宽度为 800px，则元素的宽度设为 400px。然后，浏览器会在假定设备的像素宽高比为 1 的前提下选择接近 400px 的 `srcset` 资源（在本例中为 `narrow.jpg` (320px)）。
 
@@ -61,12 +68,16 @@ AMP 在所有浏览器上都支持具有 `w` 描述符的 srcset。
 
 示例：
 
-[sourcecode:html]
-<amp-img src="https://acme.org/image1.png"
-  width="320" height="256"
-  heights="(min-width:500px) 200px, 80%">
-
-</amp-img>
-[/sourcecode]
+<!--embedded amp-img example using heights -->
+<div>
+<amp-iframe height="193"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 在此示例中，该元素的高度默认是宽度的 80%，但对于宽度大于 `500px` 的视口而言，其高度上限是 `200px`。

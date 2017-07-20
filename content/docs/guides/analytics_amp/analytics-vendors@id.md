@@ -165,7 +165,7 @@ Menambahkan dukungan untuk mParticle. Detail selengkapnya tentang cara menambahk
 
 Nilai atribut type: `nielsen`
 
-Menambahkan dukungan untuk Nielsen DCR. Silakan hubungi perwakilan Nielsen untuk melakukan penyiapan terkait `apid` serta bantuan untuk menetapkan parameter lain di bagian `vars`. Untuk informasi selengkapnya, lihat [Dokumentasi dukungan Nielsen](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API).
+Menambahkan dukungan untuk Nielsen DCR. Silakan hubungi perwakilan Nielsen untuk melakukan penyiapan terkait `apid` serta bantuan untuk menetapkan parameter lain di bagian `vars`. Untuk informasi selengkapnya, lihat [Dokumentasi dukungan Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ### OEWA
 
@@ -230,6 +230,12 @@ Menambahkan dukungan untuk SimpleReach. Konfigurasi selengkapnya dapat ditemukan
 Nilai atribut type: `snowplow`
 
 Menambahkan dukungan untuk Snowplow Analytics. Detail selengkapnya tentang cara menambahkan dukungan Snowplow Analytics dapat ditemukan di [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
+
+### Rambler/TOP-100
+
+Nilai atribut type: `top100`
+
+Menambahkan dukungan untuk Rambler/TOP-100. Konfigurasi selengkapnya dapat ditemukan di [top100.rambler.ru](https://top100.rambler.ru/docs).
 
 ### Webtrekk
 

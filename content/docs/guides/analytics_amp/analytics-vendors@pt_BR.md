@@ -166,7 +166,7 @@ Valor do atributo de tipo: `mparticle`
 
 Valor do atributo de tipo: `nielsen`
 
- Adiciona compatibilidade com o Nielsen DCR. Entre em contato com o representante da Nielsen para configurar o `apid` e receber ajuda na definição dos outros parâmetros da seção `vars`. Para mais informações, consulte: [Documentação de suporte da Nielsen](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API).
+ Adiciona compatibilidade com o Nielsen DCR. Entre em contato com o representante da Nielsen para configurar o `apid` e receber ajuda na definição dos outros parâmetros da seção `vars`. Para mais informações, consulte: [Documentação de suporte da Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ### OEWA
 
@@ -230,6 +230,12 @@ Valor do atributo de tipo: `simplereach`
 Valor do atributo de tipo: `snowplow`
 
  Adiciona compatibilidade com o Snowplow Analytics. Veja mais detalhes sobre como adicionar compatibilidade com o Snowplow Analytics em [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
+
+### Rambler/TOP-100
+
+Valor do atributo de tipo: `top100`
+
+ Adiciona compatibilidade com a Rambler/TOP-100. Veja mais detalhes sobre a configuração em [top100.rambler.ru](https://top100.rambler.ru/docs).
 
 ### Webtrekk
 

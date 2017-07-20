@@ -165,7 +165,7 @@ type 属性值：`mparticle`
 
 type 属性值：`nielsen`
 
- 添加对 Nielsen DCR 的支持。请与您的 Nielsen 代表联系，以设置您的 `apid`，并在定义 `vars` 部分中的剩余参数时获取相关帮助。要了解详情，请参阅 [Nielsen 的支持文档](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API)。
+ 添加对 Nielsen DCR 的支持。请与您的 Nielsen 代表联系，以设置您的 `apid`，并在定义 `vars` 部分中的剩余参数时获取相关帮助。要了解详情，请参阅 [Nielsen 的支持文档](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API)。
 
 ### OEWA
 
@@ -229,6 +229,12 @@ type 属性值：`simplereach`
 type 属性值：`snowplow`
 
  添加对 Snowplow Analytics 的支持。要详细了解如何添加 Snowplow Analytics 支持，请访问[github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker)。
+
+### Rambler/TOP-100
+
+type 属性值：`top100`
+
+ 添加对 Rambler/TOP-100 的支持。有关配置的详情，请访问 [top100.rambler.ru](https://top100.rambler.ru/docs).
 
 ### Webtrekk
 

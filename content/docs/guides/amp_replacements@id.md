@@ -1,7 +1,7 @@
 ---
 $title: Menyertakan Gambar & Video
 $order: 1
-$category: Mengembangkan
+$category: Develop
 
 toc: true
 ---
@@ -26,9 +26,17 @@ dan Anda tidak akan mendapatkan semua manfaat dari yang diberikan AMP.{% endcall
 
  Sertakan gambar pada halaman Anda menggunakan elemen [`amp-img`,](/id/docs/reference/components/amp-img.html) seperti berikut:
 
-[sourcecode:html]
-<amp-img src="fixed.jpg" width="264" height="96"></amp-img>
-[/sourcecode]
+<!--embedded example - fixed size image -->
+<div>
+<amp-iframe height="174"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan tinggi tetap yang telah ditentukan. Setidaknya, lebar dan tinggi minimum secara eksplisit perlu ditetapkan.
 
@@ -36,22 +44,33 @@ Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan t
 
  Karena `<amp-img>`  bergantung pada JavaScript, jika pengguna memilih menonaktifkan skrip, gambar tidak akan ditampilkan. Dalam hal ini, Anda harus memberikan penggantian pada gambar menggunakan `<img>`  dan `<noscript>`, seperti berikut:
 
-[sourcecode:html]
-<amp-img src="fixed.jpg" width="264" height="96">
-<noscript>
-<img src="fixed.jpg" width="264" height="96" />
-</noscript>
-</amp-img>
-[/sourcecode]
+<!--embedded example - img with noscript -->
+<div>
+<amp-iframe height="215"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ### Tata letak lanjutan
 
  Dibandingkan CSS/HTML standar, AMP memudahkan pembuatan gambar yang benar-benar responsif. Pada sebagian besar bentuk dasarnya, Anda hanya perlu menambahkan `layout="responsive"`:
 
-[sourcecode:html]
-<amp-img src="responsive.jpg" width="527" height="193" layout="responsive">
-</amp-img>
-[/sourcecode]
+<!--embedded example - basic responsive image -->
+<div>
+<amp-iframe height="193"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('Baca juga', type='success') %}
  Pelajari lebih lanjut tentang [teknik tata letak lanjutan](/id/docs/guides/author-develop/responsive/control_layout.html).{% endcall %}
@@ -68,12 +87,17 @@ Waktu proses HTML AMP dapat mengelola konten gambar secara efektif, dengan memil
 
  Elemen [`amp-anim`](/id/docs/reference/components/amp-anim.html) sangat mirip dengan elemen `amp-img`, kedua elemen ini memberikan fungsi tambahan untuk mengelola pemuatan dan pemutaran gambar animasi seperti GIF.
 
-[sourcecode:html]
-<amp-anim width="400" height="300" src="my-gif.gif">
-<amp-img placeholder width="400" height="300" src="my-gif-screencap.jpg">
-</amp-img>
-</amp-anim>
-[/sourcecode]
+<!--embedded amp-anim basic example -->
+<div>
+<amp-iframe height="253"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('Catatan', type='note') %}
  Sertakan `<script async custom-element="amp-anim"
@@ -88,15 +112,17 @@ pada bagian atas halaman untuk menggunakan komponen ini. {% endcall %}
 
 Sertakan placeholder sebelum video dimulai, dan penggantian, jika browser tidak mendukung video HTML5, misalnya:
 
-[sourcecode:html]
-<amp-video width="400" height="300" src="https://yourhost.com/videos/myvideo.mp4"
-poster="myvideo-poster.jpg">
-
-<div fallback>
-    <p>Browser Anda tidak mendukung video HTML5</p>
-  </div>
-</amp-video>
-[/sourcecode]
+<!--embedded video example  -->
+<div>
+<amp-iframe height="234"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 ## Audio
 
@@ -106,16 +132,17 @@ poster="myvideo-poster.jpg">
 
 Sertakan placeholder sebelum audio dimulai, dan penggantian, jika browser tidak mendukung audio HTML5, misalnya:
 
-[sourcecode:html]
-<amp-audio width="400" height="300" src="https://yourhost.com/audios/myaudio.mp3">
-
-<div fallback>
-    <p>Browser Anda tidak mendukung audio HTML5</p>
-  </div>
-  <source type="audio/mpeg" src="foo.mp3">
-  <source type="audio/ogg" src="foo.ogg">
-</amp-audio>
-[/sourcecode]
+<!--embedded audio example  -->
+<div>
+<amp-iframe height="314"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
+  <div placeholder></div> 
+</amp-iframe>
+</div>
 
 {% call callout('Catatan', type='note') %}
  Sertakan `<script async custom-element="amp-audio"

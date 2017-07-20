@@ -165,7 +165,7 @@ type 属性の値: `mparticle`
 
 type 属性の値: `nielsen`
 
-この値を指定すると、Nielsen DCR を利用できるようになります。`apid` の設定が必要な場合や、`vars` セクションで残りのパラメータを指定する際にサポートが必要な場合は、Nielsen の担当者にお問い合わせください。詳しくは、[Nielsen のサポート ドキュメント](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API) をご覧ください。
+この値を指定すると、Nielsen DCR を利用できるようになります。`apid` の設定が必要な場合や、`vars` セクションで残りのパラメータを指定する際にサポートが必要な場合は、Nielsen の担当者にお問い合わせください。詳しくは、[Nielsen のサポート ドキュメント](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API) をご覧ください。
 
 ### OEWA
 
@@ -229,6 +229,12 @@ type 属性の値: `simplereach`
 type 属性の値: `snowplow`
 
 この値を指定すると、Snowplow Analytics を利用できるようになります。Snowplow Analytics の利用を有効にする方法について詳しくは、[github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker) をご覧ください。
+
+### Rambler/TOP-100
+
+type 属性の値: `top100`
+
+この値を指定すると、Rambler/TOP-100 を利用できるようになります。設定の詳細については、[top100.rambler.ru](https://top100.rambler.ru/docs) をご覧ください.
 
 ### Webtrekk
 

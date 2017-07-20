@@ -968,7 +968,7 @@ msgstr "Compañías Tecnológicas usando AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Technology Platforms:<br>Boost your business"
-msgstr ""
+msgstr "Plataformas tecnológicas:<br>Impulse su negocio"
 
 #: /content/docs/build.md
 msgid "Templates"

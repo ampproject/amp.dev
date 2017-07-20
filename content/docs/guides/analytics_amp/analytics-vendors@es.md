@@ -168,7 +168,7 @@ Agrega soporte para mParticle. Más detalles para agregar soporte a mParticle en
 
 Valor del atributo type: `nielsen`
 
-Agrega soporte para Nielsen DCR. Por favor contacte a su representante de Nielsen para recibir asistencia y configurar tu `apid` y la definición de los parámetros en la sección `vars`. Para más información, leer [Nielsen's support documentation](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API).
+Agrega soporte para Nielsen DCR. Por favor contacte a su representante de Nielsen para recibir asistencia y configurar tu `apid` y la definición de los parámetros en la sección `vars`. Para más información, leer [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ### OEWA
 
@@ -233,6 +233,12 @@ Agrega soporte para SimpleReach.  Puedes encontrar detalles sobre configuración
 Valor del atributo type: `snowplow`
 
 Agrega soporte para Snowplow Analytics. Puedes encontrar detalles para agregar soporte a Snowplow Analytics en  [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
+
+### Rambler/TOP-100
+
+Valor del atributo type: `top100`
+
+Agrega soporte para Rambler/TOP-100.  Puedes encontrar detalles sobre configuración en [top100.rambler.ru](https://top100.rambler.ru/docs).
 
 ### Webtrekk
 

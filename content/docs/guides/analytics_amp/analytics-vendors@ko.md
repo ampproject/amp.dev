@@ -164,7 +164,7 @@ toc: true
 
 속성값 유형: `nielsen`
 
- Nielsen DCR 지원을 추가합니다. `apid` 설정 및 `vars` 섹션의 나머지 변수 정의와 관련해 Nielsen 상담원에게 문의하세요. 자세한 내용은 [Nielsen 지원 문서](https://engineeringportal.nielsen.com/wiki/DCR_Static_Google_AMP_Cloud_API) 를 참조하세요.
+ Nielsen DCR 지원을 추가합니다. `apid` 설정 및 `vars` 섹션의 나머지 변수 정의와 관련해 Nielsen 상담원에게 문의하세요. 자세한 내용은 [Nielsen 지원 문서](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API) 를 참조하세요.
 
 ### OEWA
 
@@ -228,6 +228,12 @@ toc: true
 속성값 유형: `snowplow`
 
  Snowplow Analytics 지원을 추가합니다. Snowplow Analytics 지원 추가에 관한 자세한 내용은 [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker) 에서 확인할 수 있습니다.
+
+### Rambler/TOP-100
+
+속성값 유형: `top100`
+
+ Rambler/TOP-100 지원을 추가합니다. 구성 관련 세부정보는 [top100.rambler.ru](https://top100.rambler.ru/docs) 에서 확인할 수 있습니다.
 
 ### Webtrekk
 

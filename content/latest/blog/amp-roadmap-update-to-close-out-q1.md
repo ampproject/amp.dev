@@ -7,7 +7,7 @@ author: Rudy Galfi
 role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2017/03/31/amp-roadmap-update-to-close-out-q1/amp/"
 excerpt: "We’ve updated the AMP Roadmap to reflect some of the progress made in the first quarter of 2017. You can read more about some of the highlights below. Format We continue to place a big focus on making the AMP format conducive to more interactive and engaging user experiences. We’ve made amp-bind, a flexible event [&#8230;]"
-avatar: http://0.gravatar.com/avatar/0342fb9db5636638e886dff44d5ec94c?s=96&d=identicon&r=G
+avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2017-03-31T14:55:48-07:00
 $date: March 31, 2017
 $parent: /content/latest/list-blog.html

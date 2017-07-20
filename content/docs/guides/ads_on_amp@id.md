@@ -1,8 +1,7 @@
 ---
-
 $title: Menayangkan Iklan di AMP
 $order: 8
-$category: Kembangkan
+$category: Develop
 
 toc: true
 ---
