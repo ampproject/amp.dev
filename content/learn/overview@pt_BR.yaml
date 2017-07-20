@@ -1,4 +1,4 @@
-﻿$title@: Visão geral
+﻿$title: Visão geral
 $titles:
   breadcrumb@: O que são as AMP
 $order: 0
@@ -9,12 +9,12 @@ components:
   - youtube
 
 hero:
-  title@: As AMP oferecem uma excelente experiência do usuário em diversas plataformas
+  title: As AMP oferecem uma excelente experiência do usuário em diversas plataformas
   triangle_img: herobg.svg
   line1_img: herolines1.svg
   line2_img: herolines2.svg
   phone_img_base: /static/img/about/overview/what_phone
-  cta@: Reproduzir vídeo
+  cta: Reproduzir vídeo
   cta_url: '#video'
 
 core:
@@ -55,6 +55,6 @@ video:
   line2_img: line4.svg
 
 cta:
-  title@: Saiba o que as AMP podem fazer por você
-  link_text@: Saiba quem usa as AMP
+  title: Saiba o que as AMP podem fazer por você
+  link_text: Saiba quem usa as AMP
   link_url: /content/learn/case-studies.html
