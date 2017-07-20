@@ -231,6 +231,12 @@ Valor do atributo de tipo: `snowplow`
 
  Adiciona compatibilidade com o Snowplow Analytics. Veja mais detalhes sobre como adicionar compatibilidade com o Snowplow Analytics em [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
 
+### Rambler/TOP-100
+
+Valor do atributo de tipo: `top100`
+
+ Adiciona compatibilidade com a Rambler/TOP-100. Veja mais detalhes sobre a configuração em [top100.rambler.ru](https://top100.rambler.ru/docs).
+
 ### Webtrekk
 
 Valor do atributo de tipo: `webtrekk`
