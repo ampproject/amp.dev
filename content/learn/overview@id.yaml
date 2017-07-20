@@ -1,6 +1,6 @@
-﻿$title@: Ringkasan
+﻿$title: Ringkasan
 $titles:
-  breadcrumb@: Apa yang dimaksud dengan AMP
+  breadcrumb: Apa yang dimaksud dengan AMP
 $order: 0
 class: about-overview
 $view: /views/about-overview.html
