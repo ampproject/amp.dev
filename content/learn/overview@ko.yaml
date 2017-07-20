@@ -1,3 +1,22 @@
+﻿$title: 개요
+$titles:
+  breadcrumb: AMP란 무엇인가요?
+$order: 0
+class: about-overview
+$view: /views/about-overview.html
+
+components:
+  - youtube
+
+hero:
+  title: AMP는 여러 플랫폼에서 사용자에게 우수한 환경을 제공합니다
+  triangle_img: herobg.svg
+  line1_img: herolines1.svg
+  line2_img: herolines2.svg
+  phone_img_base: /static/img/about/overview/what_phone
+  cta: 동영상 재생
+  cta_url: '#video'
+
 core:
   title: AMP 페이지는 3개의 핵심 컴포넌트로 구성합니다.
   components:
@@ -17,10 +36,12 @@ core:
         효율적인 방식으로 일반 패턴을 쉽게 구현하도록 해줍니다.
         <p>예를 들어, [`amp-img`](/ko/docs/reference/components/amp-img) 태그는
         아직 지원되지 않는 브라우저에서도 `srcset` 지원을 완벽하게 제공합니다.
-        [첫 번째 AMP HTML 페이지 만들기](/ko/docs/tutorials/create.html) 방법에 대해 알아보세요.
+        [첫 번째 AMP HTML 페이지 만들기](/ko/docs/tutorials/create.html) 방법에 대해 알아보세요. 
+        <p>AMP 페이지는 `<link rel="">` HTML 태그를 통해 검색 엔진 및 다른 플랫폼에서 조회됩니다. AMP가 아닌 버전의 페이지와 AMP 버전의 페이지를 사용할 수도 있고 AMP 버전 페이지만 사용할 수도 있습니다. [페이지가 쉽게 발견되도록 하는 방법](/ko/docs/guides/discovery.html)에 관해 자세히 알아보세요.
+
     - title: AMP JS
       subtitle: |
-        **AMP JS** 라이브러리는 AMP HTML 페이지의 빠른 렌더링을 보장합니다.
+       **AMP JS** 라이브러리는 AMP HTML 페이지의 빠른 렌더링을 보장합니다.
       description: |
         [AMP JS 라이브러리](https://github.com/ampproject/amphtml/tree/master/src)는
         페이지의 빠른 렌더링을 보장하기 위해
@@ -28,12 +49,13 @@ core:
         리소스 로드를 관리하며, 위에 언급된 사용자 지정 태그를 제공합니다.
         <p>최적화의 최대 난제 중 하나는, 외부 리소스에서 들어오는 모든 것들을 비동기화하기 때문에, 페이지에 있는 어느 것도 렌더링되는 것을 막을 수 없다는 점입니다.
         <p>기타 성능 기법에는 모든 iframe의 샌드박싱, 리소스가 로드되기 전에 페이지에 있는 모든 요소의 레이아웃 미리 계산, 느린 CSS 선택기의 비활성화가 포함됩니다.
-        <p>[최적화](/ko/learn/about-how/) 뿐만 아니라 제한에 대해 자세히 알아보려면, [AMP HTML 사양](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)을 참조하세요.
+        <p>[최적화](/ko/learn/about-how/) 뿐만 아니라 제한에 대해 자세히 알아보려면, [AMP HTML 사양](/ko/docs/reference/spec.html)을 참조하세요.
+
     - title: AMP Cache
       subtitle: |
         **Google AMP Cache**(선택 항목)는 AMP HTML 페이지를 제공합니다.
       description: |
-        Google AMP Cache는 모든 유효한 AMP 문서를 전달하기 위한
+        [Google AMP Cache](https://developers.google.com/amp/cache/)는 모든 유효한 AMP 문서를 전달하기 위한
         프록시 기반 콘텐츠 전달 네트워크입니다.
         이 캐시는 AMP HTML 페이지를 가져와서 캐싱하여 페이지 성능을 자동으로 개선해 줍니다.
         Google AMP Cache를 사용할 경우, 최대의 효율성을 위해 문서,
@@ -49,3 +71,13 @@ core:
         렌더링될 때 유효성 검사 오류를 브라우저 콘솔에 직접 기록할 수 있으므로, 코드의 복잡한 변경이 성능과 사용자 경험에
         얼마나 영향을 미치는지 확인할 수 있습니다.
         <p>[AMP HTML 페이지 테스트](/ko/docs/guides/debug/validate.html)에 대해 자세히 알아보세요.
+
+video:
+  id: lBTCB7yLs8Y
+  line1_img: lines3.svg
+  line2_img: line4.svg
+
+cta:
+  title: AMP의 기능을 확인하세요
+  link_text: AMP 사용 우수사례를 알아보세요
+  link_url: /content/learn/case-studies.html

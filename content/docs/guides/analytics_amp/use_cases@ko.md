@@ -1,26 +1,23 @@
 ---
 $title: 사용 사례
+$order: 2
 toc: true
 ---
 [TOC]
 
+이 가이드에서는 사용자 참여를 추적하기 위한 일반적인 사용 사례를 확인할 수 있습니다.
 
-이 가이드에서는 사용자 참여를 추적하기 위한 일반적인 사용 사례를 제공합니다.
+{% call callout('참고', type='note') %}
+사용 사례를 추가하고 싶으신가요? [Google에 알려 주세요.](https://github.com/ampproject/docs/issues/new) 또는 [기여 방법](https://www.ampproject.org/ko/docs/support/contribute.html) 에서 별도의 사용 사례를 제공하는 방법을 확인할 수 있습니다.
+{% endcall %}
 
-사용 사례를 추가하겠습니까?
-[저희에게 알려주세요.](https://github.com/ampproject/docs/issues/new)
+## 페이지 조회수 추적하기
 
-또한 자신만의 사용 사례를 기고할 수도 있습니다.
-[기고 방법](https://www.ampproject.org/docs/support/contribute.html) 참조.
-
-## 페이지 뷰 추적
-
-`amp-pixel` 및 `amp-analytics`를 사용하여 페이지 뷰를 추적하는 방법에 대해 알아보세요.
+`amp-pixel` 및 `amp-analytics` 를 사용하여 페이지 조회수를 추적하는 방법을 알아보세요.
 
 ### amp-pixel 사용
 
-[amp-pixel](/docs/reference/amp-pixel.html)을
-사용하여 지정된 URL에 페이지뷰 데이터 보내기:
+다음과 같이 [amp-pixel](/ko/docs/reference/amp-pixel.html) 을 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
 
 [sourcecode:html]
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -28,217 +25,198 @@ toc: true
 
 ### amp-analytics 사용 - 공급업체 없음
 
-[amp-analytics](/docs/reference/extended/amp-analytics.html)를
-사용하여 지정된 URL에 페이지뷰 데이터 보내기:
+다음과 같이 [amp-analytics](/ko/docs/reference/extended/amp-analytics.html) 를 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
 
 [sourcecode:html]
 <amp-analytics>
 <script type="application/json">
 {
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+    "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}"
+    },
+    "vars": {
+        "account": "ABC123"
+    },
+    "triggers": {
+        "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+        }
     }
-  }
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
-### amp-analytics - googleanalytics 사용
+### amp-analytics 사용 - googleanalytics
 
-Google 애널리틱스에 페이지뷰 데이터 보내기:
-(참고 항목 [Google 애널리틱스에서 페이지 추적](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
+Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애널리틱스에서 페이지 추적하기](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking) 참조).
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">
 <script type="application/json">
 {
-  "vars": {
-    "account": "UA-XXXXX-Y"  // Replace with your property ID.
-  },
-  "triggers": {
-    "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
-      "on": "visible",
-      "request": "pageview"
+    "vars": {
+        "account": "UA-XXXXX-Y"  // Replace with your property ID.
+    },
+    "triggers": {
+        "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
+            "on": "visible",
+            "request": "pageview"
+        }
     }
-  }
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
-## 페이지 클릭 추적
+## 페이지 클릭수 추적하기
 
-[amp-analytics](/docs/reference/extended/amp-analytics.html)를 사용하여 페이지 클릭을 추적하고,
-이벤트 데이터를 지정된 URL과
-[Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/)로 보내는
-방법에 대해 알아보세요.
+[amp-analytics](/ko/docs/reference/extended/amp-analytics.html) 를 사용하여 페이지 클릭수를 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
 
-### 데이터를 지정된 URL로 보내기
+### 지정된 URL 로 데이터 전송하기
 
-다음 예시에서는 사용자가 링크(`<a href>`)를 클릭할
-때마다 `selector` 특성을 사용하여 `click` 이벤트를 지정된 URL로 보냅니다.
+다음 예에서는 `selector` 속성을 사용하여 지정된 URL 로 `click` 이벤트를 전송합니다. 이벤트는 사용자가 링크 (`<a href>`) 를 클릭할 때마다 전송됩니다.
 
 [sourcecode:html]
 <amp-analytics>
+
 <script type="application/json">
 {
-  "requests": {
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
-      "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
-      }
+    "requests": {
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+    },
+    "vars": {
+        "account": "ABC123"
+    },
+    "triggers": {
+        "trackAnchorClicks": {
+            "on": "click",
+            "selector": "a",
+            "request": "event",
+            "vars": {
+                "eventId": "42",
+                "eventLabel": "clicked on a link"
+            }
+        }
     }
-  }
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
-### 데이터를 Google 애널리틱스로 보내기
+### Google 애널리틱스로 데이터 전송하기
 
-다음 예시에서는 특정 요소를 클릭할 때 `trigger`의
-`selector` 특성을 사용하여 `click` 이벤트를 Google 애널리틱스로
-보냅니다(참고 항목
-[Google 애널리틱스에서 AMP 이벤트 추적](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking)):
+다음 예에서는 `trigger` 의 `selector` 속성을 사용하여 특정 요소가 클릭될 때 Google 애널리틱스로 `click` 이벤트를 전송합니다 ([Google 애널리틱스에서 AMP 이벤트 추적하기](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking) 참조).
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics3">
 <script type="application/json">
 {
-  "vars": {
-    "account": "UA-XXXXX-Y"  // Replace with your property ID.
-  },
-  "triggers": {
-    "trackClickOnHeader" : {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
-      "vars": {
-        "eventCategory": "ui-components",
-        "eventAction": "header-click"
-      }
+    "vars": {
+        "account": "UA-XXXXX-Y"  // Replace with your property ID.
+    },
+    "triggers": {
+        "trackClickOnHeader" : {
+            "on": "click",
+            "selector": "#header",
+            "request": "event",
+            "vars": {
+                "eventCategory": "ui-components",
+                "eventAction": "header-click"
+            }
+        }
     }
-  }
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
-## 스크롤 추적
+## 스크롤 추적하기
 
-[amp-analytics](/docs/reference/extended/amp-analytics.html)를 사용하여 페이지 스크롤을 추적합니다.
-다음 예시에서는 페이지가 수직으로 25%, 50%, 90% 스크롤될
-때 `scrollspec` 특성을 사용하여 `scroll` 이벤트를 지정된 URL로 보냅니다.
-이 이벤트는 페이지가 `scroll` 너비의 90%까지 수평으로 스크롤될
-때도 발생합니다.
+[amp-analytics](/ko/docs/reference/extended/amp-analytics.html) 를 사용하여 페이지 스크롤을 추적합니다. 다음 예에서는 `scrollspec` 속성을 사용하여 페이지가 수직으로 25%, 50%, 90% 스크롤되었을 때 지정된 URL 로 `scroll` 이벤트를 전송합니다. 또한 페이지가 `scroll` 너비의 90% 만큼 수평으로 스크롤되었을 때도 이벤트가 전송됩니다.
 
 [sourcecode:html]
 <amp-analytics>
 <script type="application/json">
 {
-  "requests": {
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "scrollPings": {
-      "on": "scroll",
-      "scrollSpec": {
-        "verticalBoundaries": [25, 50, 90],
-        "horizontalBoundaries": [90]
-      }
+    "requests": {
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+    },
+    "vars": {
+        "account": "ABC123"
+    },
+    "triggers": {
+        "scrollPings": {
+            "on": "scroll",
+            "scrollSpec": {
+                "verticalBoundaries": [25, 50, 90],
+                "horizontalBoundaries": [90]
+            }
+        }
     }
-  }
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
-## 소셜 상호작용 추적
+## 소셜 상호작용 추적하기
 
-[amp-analytics](/docs/reference/extended/amp-analytics.html)를 사용하여 소셜 상호작용을 추적하고,
-이벤트 데이터를 지정된 URL과
-[Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/)로 보내는
-방법에 대해 알아보세요.
+[amp-analytics](/ko/docs/reference/extended/amp-analytics.html) 를 사용하여 소셜 상호작용을 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
 
-### 데이터를 지정된 URL로 보내기
+### 지정된 URL 로 데이터 전송하기
 
-다음 예시에서는 사용자가 트윗(`#tweet-link`)을 클릭할
-때마다 `selector` 특성을 사용하여 `click` 이벤트를 지정된 URL로 보냅니다.
+다음 예에서는 `selector` 속성을 사용하여 지정된 URL로 `click` 이벤트를 전송합니다. 이벤트는 사용자가 트윗 (`#tweet-link`) 을 클릭할 때마다 전송됩니다.
 
 [sourcecode:html]
 <amp-analytics>
 <script type="application/json">
 {
-  "requests": {
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "trackClickOnTwitterLink": {
-      "on": "click",
-      "selector": "#tweet-link",
-      "request": "event",
-      "vars": {
-        "eventId": "43",
-        "eventLabel": "clicked on a tweet link"
-      }
+    "requests": {
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+    },
+    "vars": {
+        "account": "ABC123"
+    },
+    "triggers": {
+        "trackClickOnTwitterLink": {
+            "on": "click",
+            "selector": "#tweet-link",
+            "request": "event",
+            "vars": {
+                "eventId": "43",
+                "eventLabel": "clicked on a tweet link"
+            }
+        }
     }
-  }
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
-### 데이터를 Google 애널리틱스로 보내기
+### Google 애널리틱스로 데이터 전송하기
 
-다음 예시에서는 특정 소셜 버튼을 클릭할 때 `trigger`의
-`selector` 특성을 사용하여 이벤트를 Google Analytics로 보냅니다.
-(참고 항목
-[Google 애널리틱스에서 AMP 소셜 상호작용 추적](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions)):
+다음 예에서는 `trigger` 의 `selector` 속성을 사용하여 특정 소셜 버튼이 클릭될 때 이벤트를 전송합니다 ([Google 애널리틱스에서 AMP 소셜 상호작용 추적하기](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions) 참조).
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics4">
 <script type="application/json">
 {
-  "vars": {
-    "account": "UA-XXXXX-Y" // Replace with your property ID.
-  },
-  "triggers": {
-    "trackClickOnTwitterLink" : {
-      "on": "click",
-      "selector": "#tweet-link",
-      "request": "social",
-      "vars": {
-          "socialNetwork": "twitter",
-          "socialAction": "tweet",
-          "socialTarget": "https://www.examplepetstore.com"
-      }
+    "vars": {
+        "account": "UA-XXXXX-Y" // Replace with your property ID.
+    },
+    "triggers": {
+        "trackClickOnTwitterLink" : {
+            "on": "click",
+            "selector": "#tweet-link",
+            "request": "social",
+            "vars": {
+                "socialNetwork": "twitter",
+                "socialAction": "tweet",
+                "socialTarget": "https://www.examplepetstore.com"
+            }
+        }
     }
-  }
 }
 </script>
 </amp-analytics>

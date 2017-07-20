@@ -1,13 +1,31 @@
+﻿$title: Descripción general
+$titles:
+  breadcrumb: ¿Qué es AMP?
+$order: 0
+class: about-overview
+$view: /views/about-overview.html
+
+components:
+  - youtube
+
+hero:
+  title: AMP brinda una gran experiencia de usuario a través de muchas plataformas
+  triangle_img: herobg.svg
+  line1_img: herolines1.svg
+  line2_img: herolines2.svg
+  phone_img_base: /static/img/about/overview/what_phone
+  cta: Reproducir video
+  cta_url: '#video'
+
 core:
-  title: Las páginas AMP están construidas con 3 componentes.
+  title: Las páginas AMP están construidas con tres componentes
   components:
     - title: AMP HTML
       subtitle: |
         **AMP HTML** es HTML con algunas restricciones para lograr un rendimiento confiable,
         y con algunas extensiones para compilar contenido enriquecido más allá del formato HTML básico.
       description: |
-        AMP HTML es básicamente contenido HTML ampliado con propiedades AMP personalizadas.
-        El archivo en AMP HTML más sencillo tiene el siguiente aspecto:
+        AMP HTML es básicamente contenido HTML ampliado con propiedades AMP personalizadas. El archivo en AMP HTML más sencillo tiene el siguiente aspecto: 
       example: /content/includes/html-example.md
       description2: |
         Si bien la mayoría de las etiquetas en una página AMP HTML son etiquetas HTML comunes,
@@ -15,9 +33,10 @@ core:
         [etiquetas HTML en la especificación de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         Estos elementos personalizados, llamados componentes AMP HTML,
         crean patrones comunes que pueden implementarse con buen rendimiento en forma sencilla.
-        <p>Por ejemplo, la etiqueta [`amp-img`](/es/docs/reference/components/amp-img)
-        proporciona soporte completo de `srcset`, incluso en navegadores que todavía no lo admiten.
-        Obtén más información acerca de cómo [crear tu primera página AMP HTML](/es/docs/tutorials/create).
+        <p>Por ejemplo, la etiqueta [`amp-img`](/es/docs/reference/components/amp-img) 
+        proporciona soporte completo de `srcset`, incluso en navegadores que todavía no lo admiten.          Obtén más información acerca de cómo [crear tu primera página AMP HTML](/es/docs/tutorials/create).
+        <p>Para detectar las páginas AMP, los motores de búsqueda y otras  plataformas utilizan la           etiqueta HTML `<link rel="">`. Puedes optar por tener solo una versión AMP de tu página web,         o bien dos versiones: una AMP y otra que no lo sea. Descubre [cómo hacer que una página sea visible](/es/docs/guides/discovery.html).
+
     - title: AMP JS
       subtitle: |
         La biblioteca **AMP JS** garantiza la representación rápida de páginas AMP HTML.
@@ -28,7 +47,8 @@ core:
         garantizar la representación rápida de tu página.
         <p>Una de las optimizaciones más importantes es que transforma en asincrónico todo lo que proviene de recursos externos, de modo que ningún elemento de la página pueda bloquear la representación.
         <p>Entre otras técnicas de rendimiento se incluyen la disposición de todos los iframes en espacios seguros, el cálculo previo del diseño de cada elemento de la página antes de que se carguen los recursos y la desactivación de selectores de CSS lentos.
-        <p>Para obtener más información acerca de las [optimizaciones](/es/learn/about-how/) y las limitaciones, [lee la especificación de AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
+        <p>Para obtener más información acerca de las [optimizaciones](/es/learn/about-how/) y las limitaciones, [lee la especificación de AMP HTML](/es/docs/reference/spec.html).
+
     - title: AMP Cache
       subtitle: |
         El **Google AMP Cache** (opcional) proporciona las páginas AMP HTML.
@@ -49,3 +69,13 @@ core:
         lo que te permite ver cómo los cambios complejos en tu código
         podrían afectar el rendimiento y la experiencia del usuario.
         <p>Obtén más información acerca de [cómo probar tus páginas AMP HTML](/es/docs/guides/debug/validate).
+
+video:
+  id: lBTCB7yLs8Y
+  line1_img: lines3.svg
+  line2_img: line4.svg
+
+cta:
+  title: Ver lo que puedes hacer con AMP
+  link_text: Aprende quién usa AMP
+  link_url: /content/learn/case-studies.html

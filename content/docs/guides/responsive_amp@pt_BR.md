@@ -1,82 +1,54 @@
 ---
-$title: Criar páginas AMP responsivas
+$title: Estilo e layout
+$order: 0
+$category: Develop
 toc: true
+components:
+- youtube
 ---
-
-É muito fácil gerar elementos responsivos nas AMP.
-Basta incluir `layout=responsive` neles.
-
 [TOC]
 
-## Criar imagens responsivas
+O estilo e o layout nas páginas AMP em HTML são muito semelhantes aos de páginas HTML normais. Nos dois casos, você usará CSS.
 
-Todos os recursos que são carregados externamente, incluindo as imagens,
-precisam ter um tamanho e uma posição previamente especificados
-para que a página não "pule" nem passe por refluxo.
+No entanto, as AMP limitam o uso de CSS por motivos de desempenho e usabilidade ao mesmo tempo em que ampliam os recursos do design responsivo com recursos como [marcadores e substitutos](/pt_br/docs/guides/responsive/placeholders.html), [direção artística avançada por meio de srcset](/pt_br/docs/guides/responsive/art_direction.html) e o [atributo de layout](/pt_br/docs/guides/responsive/control_layout.html) para controlar melhor a forma que os elementos são exibidos.
 
-Crie imagens responsivas
-especificando a largura e altura,
-ajustando o layout para o modo responsivo
-e indicando com [`srcset`](/pt_br/docs/guides/author-develop/responsive/style_pages.html)
-qual recurso de imagem será usado conforme diferentes tamanhos de tela:
+{% call callout('Dica', type='success') %}
+É muito fácil tornar os elementos responsivos nas AMP. Simplesmente coloque `layout="responsive"` neles. Para saber mais sobre o design responsivo nas AMP, acesse [Criar páginas AMP responsivas](/pt_br/docs/guides/responsive/responsive_design).
+{% endcall %}
 
-[sourcecode:html]
-<amp-img
-    src="/img/narrow.jpg"
-    srcset="/img/wide.jpg 640w,
-           /img/narrow.jpg 320w"
-    width="1698"
-    height="2911"
-    layout="responsive"
-    alt="an image">
-</amp-img>
-[/sourcecode]
-
-O elemento `amp-img` ajusta-se automaticamente à largura
-do seu elemento contêiner,
-e sua altura é automaticamente definida para a proporção
-determinada pela largura e altura fornecidas:
-
-<amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
-
-Veja também [AMP pelo amp-img de exemplo](https://ampbyexample.com/components/amp-img/).
+{{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
 
 ## Adicionar estilos a uma página
 
-Adicione todos os estilos dentro da tag `<style amp-custom>`
-no cabeçalho do documento.
-Por exemplo:
+Adicione todos os CSS dentro de uma tag `<style amp-custom>` no cabeçalho do documento. Por exemplo:
 
 [sourcecode:html]
 <!doctype html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="canonical" href="hello-world.html" >
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <style amp-custom>
-      /* any custom style goes here. */
-      body {
-        background-color: white;
-      }
-      amp-img {
-        border: 5px solid black;
-      }
+<head>
+  ...
+  <style amp-custom>
+    /* any custom styles go here. */
+    body {
+      background-color: white;
+    }
 
-      amp-img.grey-placeholder {
-        background-color: grey;
-      }
-    </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-  </head>
+    amp-img {
+      border: 5px solid black;
+    }
+
+    amp-img.grey-placeholder {
+      background-color: grey;
+    }
+  </style>
+  ...
+</head>
 [/sourcecode]
 
-**Importante:**
-Certifique-se de que haja só uma tag `<style amp-custom>` na sua página,
-pois a AMP não permite mais de uma delas.
+{% call callout('Importante', type='caution') %}
+Sua página pode ter somente uma tag `<style amp-custom>`, pois não é permitido ter mais de uma nas AMP.
+{% endcall %}
 
-Defina os estilos dos componentes com os seletores de classe ou elemento
-usando as propriedades comuns de CSS. Por exemplo:
+Defina os estilos de componentes com seletores de classe ou elemento usando propriedades CSS comuns. Por exemplo:
 
 [sourcecode:html]
 <body>
@@ -93,38 +65,46 @@ usando as propriedades comuns de CSS. Por exemplo:
 </body>
 [/sourcecode]
 
-**Importante:**
-Verifique se seus estilos são compatíveis com AMP.
-Alguns estilos não têm suporte por conta do desempenho deles
-(veja também [CSS com suporte](/pt_br/docs/guides/author-develop/responsive/style_pages.html)).
+{% call callout('Importante', type='caution') %}
+Verifique se os seus estilos são compatíveis com as AMP. Alguns estilos não são por motivos de desempenho (veja também [CSS compatível](/pt_br/docs/guides/responsive/style_pages.html)).
+{% endcall %}
 
-## Elementos de tamanho e posição
+## Elementos de layout responsivos
 
-A AMP desacopla o layout do documento do carregamento de recursos
-para que ela possa carregar o layout da página sem ter que esperar pelo download dos recursos.
+Especifique o tamanho e a posição de todos os elementos AMP visíveis fornecendo os atributos `width` e `height`. Esses atributos indicam a proporção do elemento, que pode ser dimensionado com o contêiner.
 
-Especifique o tamanho e a posição de todos os elementos visíveis da AMP,
-fornecendo um atributo `width` e `height`.
-Esses atributos implicam a proporção do elemento,
-o que pode ser dimensionado de acordo com o contêiner.
+Defina o layout como responsivo. Isso dimensionará o elemento para a largura do seu elemento de contêiner e redimensionará a altura automaticamente para a proporção indicada nos atributos de largura e altura.
 
-Defina o layout como responsivo.
-Isso redimensiona o elemento de acordo com a largura do seu elemento contêiner e redimensiona a sua altura automaticamente de acordo com a proporção determinada pelos atributos de largura e altura.
+{% call callout('Leia mais', type='read') %}
+Saiba mais sobre [os layouts compatíveis com as AMP](/pt_br/docs/guides/responsive/control_layout.html)
+{% endcall %}
 
-Saiba mais sobre [layouts compatíveis com AMP](/pt_br/docs/guides/author-develop/responsive/control_layout.html).
+## Use marcadores e substitutos
+
+A compatibilidade interna com marcadores e substitutos permite que seus usuários nunca precisem olhar novamente para uma tela em branco.
+
+{% call callout('Leia mais', type='read') %}
+Saiba mais sobre [Marcadores e substitutos](/pt_br/docs/guides/responsive/placeholders.html)
+{% endcall %}
+
+## Seja o diretor de arte das suas imagens
+
+As AMP são compatíveis com os atributos `srcset` e `sizes` para que você tenha controle preciso sobre as imagens que serão carregadas em cada cenário.
+
+{% call callout('Leia mais', type='read') %}
+Saiba mais sobre [a direção artística com srcset e tamanhos](/pt_br/docs/guides/responsive/art_direction.html)
+{% endcall %}
 
 ## Validar seus estilos e layout
 
-Use o validador de AMP para testar
-os valores de CSS e layout da sua página.
+Use o validador de AMP para testar o CSS e os valores de layout da sua página.
 
-O validador confere se a CSS da sua página não ultrapassa o limite de 50.000 bytes,
-verifica a existência de estilos não permitidos e garante que o layout da página seja compatível e esteja formatado corretamente.
-Veja também esta lista completa de [erros de estilo e layout](/pt_br/docs/reference/validation_errors.html#erros-de-estilo-e-layout).
+O validador confirma se o CSS da sua página não ultrapassa o limite de 50 mil bytes, verifica os estilos desativados e garante que o layout da página seja compatível e formatado corretamente. Veja também esta lista completa de [erros de estilo e layout](/pt_br/docs/reference/validation_errors.html#style-and-layout-errors).
 
-Exemplo de erro no console em uma página com CSS que ultrapassa o limite de 50.000 bytes:
+Exemplo de erro no console de uma página com CSS que ultrapassa o limite de 50 mil bytes:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Saiba mais sobre como [validar suas páginas AMP](/pt_br/docs/guides/debug/validate.html),
-incluindo como rastrear e corrigir erros de estilo.
+{% call callout('Leia mais', type='read') %}
+Saiba mais sobre como [validar e corrigir suas páginas AMP](/pt_br/docs/guides/validate.html)
+{% endcall %}

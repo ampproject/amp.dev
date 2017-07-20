@@ -1,103 +1,110 @@
 ---
-$title: レスポンシブな AMP ページを作成する
+$title: スタイルとレイアウト
+$order: 0
+$category: Develop
 toc: true
+components:
+- youtube
 ---
-
-AMP でレスポンシブな要素を作成するのはとても簡単です。要素に `layout=responsive` を指定します。
-
 [TOC]
 
-## レスポンシブな画像を作成する
+AMP HTML のスタイルとレイアウトには、通常の HTML と同じように CSS を使用します。
 
-外部から読み込まれるすべてのリソース（画像など）には、リソースが読み込まれるときにページでジャンプやリフローが起きないように、リソースのサイズと位置を指定しておく必要があります。
+ただし AMP の場合は、パフォーマンスと操作性の関係で、一部の CSS が制限されています。一方、レスポンシブ デザイン機能は、 [プレースホルダとフォールバック](https://www.ampproject.org/ja/docs/guides/responsive/placeholders.html)、[srcset による高度な画像読み込み](https://www.ampproject.org/ja/docs/guides/responsive/art_direction)、[レイアウト属性](https://www.ampproject.org/ja/docs/guides/responsive/control_layout) などの機能で拡張されているため、要素の表示方法を細かく制御できます。
 
-レスポンシブな画像を作成するには、幅と高さを指定し、レイアウトを「responsive」に設定します。また、[`srcset`](/ja/docs/guides/author-develop/responsive/style_pages.html) を使って、さまざまなスクリーン サイズに基づいて使用される画像アセットを指定します。
+{% call callout('ヒント', type='success') %}
+AMP で要素をレスポンシブにするのはとても簡単で、`layout="responsive"` を追加するだけです。AMP でのレスポンシブ デザインについて詳しくは、[レスポンシブな AMP ページを作成する](/ja/docs/guides/responsive/responsive_design)をご覧ください。
+{% endcall %}
 
-[sourcecode:html]
-<amp-img
-    src="/img/narrow.jpg"
-    srcset="/img/wide.jpg 640w,
-           /img/narrow.jpg 320w"
-    width="1698"
-    height="2911"
-    layout="responsive"
-    alt="an image">
-</amp-img>
-[/sourcecode]
-
-この `amp-img` 要素は、コンテナ要素の幅に自動的に適合します。高さは、指定された幅と高さによって決まるアスペクト比に自動的に設定されます。
-
-<amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
-
-[AMP by Example の amp-img](https://ampbyexample.com/components/amp-img/) もご覧ください。
+{{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
 
 ## ページにスタイルを追加する
 
-ドキュメントの先頭で、`<style amp-custom>` タグ内にすべてのスタイルを追加します。次に例を示します。
+すべての CSS は、ドキュメントの `<head>` の `<style amp-custom>` タグ内に追加します。次の例をご覧ください。
 
 [sourcecode:html]
 <!doctype html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="canonical" href="hello-world.html" >
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <style amp-custom>
-      /* any custom style goes here. */
-      body {
-        background-color: white;
-      }
-      amp-img {
-        border: 5px solid black;
-      }
+<head>
+...
+<style amp-custom>
+/* any custom styles go here. */
+body {
+background-color: white;
+}
+amp-img {
+border: 5px solid black;
+}
 
-      amp-img.grey-placeholder {
-        background-color: grey;
-      }
-    </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-  </head>
+amp-img.grey-placeholder {
+background-color: grey;
+}
+</style>
+...
+</head>
 [/sourcecode]
 
-**重要:** `<style amp-custom>` タグは、AMP で複数使用することが許可されていないため、ページに 1 つだけ配置してください。
+{% call callout('重要', type='caution') %}
+ページ内の `<style amp-custom>`
+タグが 1 つのみであることを確認してください。AMP では、このタグを複数使用することはできません。
+{% endcall %}
 
-一般的な CSS プロパティを使用し、クラスまたは要素のセレクタを使ってコンポーネントのスタイルを定義します。次に例を示します。
+一般的な CSS プロパティを使用し、クラスセレクタまたは要素セレクタでコンポーネントのスタイルを定義します。次に例を示します。
 
 [sourcecode:html]
 <body>
-  <p>Hello, Kitty.</p>
-  <amp-img
-    class="grey-placeholder"
-    src="https://placekitten.com/g/500/300"
-    srcset="/img/cat.jpg 640w,
-           /img/kitten.jpg 320w"
-    width="500"
-    height="300"
-    layout="responsive">
-  </amp-img>
+<p>Hello, Kitty.</p>
+<amp-img
+class="grey-placeholder"
+src="https://placekitten.com/g/500/300"
+srcset="/img/cat.jpg 640w,
+/img/kitten.jpg 320w"
+width="500"
+height="300"
+layout="responsive">
+</amp-img>
 </body>
 [/sourcecode]
 
-**重要:** スタイルが AMP でサポートされていることを確認してください。パフォーマンス上の理由からサポートされていないスタイルもあります（[サポートされる CSS](/ja/docs/guides/author-develop/responsive/style_pages.html) もご覧ください）。
+{% call callout('重要', type='caution') %}
+使用するスタイルが AMP でサポートされているかどうかを確認してください。一部のスタイルは、パフォーマンス上の理由でサポートされていません（[サポートされる CSS](/ja/docs/guides/responsive/style_pages.html) もご覧ください）。
+{% endcall %}
 
-## サイズと位置の要素
+## 要素をレスポンシブにレイアウトする
 
-リソースのダウンロードを待たずにページのレイアウトを読み込めるように、AMP はドキュメントのレイアウトとリソースの読み込みを分離しています。
+`width` 属性と `height` 属性を使用して、表示されるすべての AMP 要素のサイズと位置を指定します。これらの属性を指定することで、必然的に要素のアスペクト比が決まり、コンテナによる拡大、縮小が可能になります。
 
-`width` 属性と `height` 属性を指定して、表示可能なすべての AMP 要素のサイズと位置を指定してください。これらの属性によって要素のアスペクト比が示唆されるため、コンテナのスケーリングが可能になります。
+レイアウトはレスポンシブに設定してください。これにより、要素の幅がコンテナ要素に合わせて調整され、width 属性と height 属性で決まったアスペクト比に応じて高さが調整されます。
 
-レイアウトを「responsive」に設定します。これにより、要素のサイズはコンテナ要素の幅に適合され、要素の高さは、幅と高さの属性によって決まるアスペクト比に自動的に調整されます。
+{% call callout('参照', type='read') %}
+詳しくはこちら: [AMP でサポートされるレイアウト](/ja/docs/guides/responsive/control_layout.html)
+{% endcall %}
 
-詳しくは、[AMP でサポートされるレイアウト](/ja/docs/guides/author-develop/responsive/control_layout.html)をご覧ください。
+## プレースホルダとフォールバックを提供する
+
+プレースホルダとフォールバックがビルトイン サポートされていますので、ユーザーに対して何もない画面が表示されることはありません。
+
+{% call callout('参照', type='read') %}
+詳しくはこちら: [プレースホルダとフォールバック](/ja/docs/guides/responsive/placeholders.html)
+{% endcall %}
+
+## 高度な画像読み込み
+
+AMP では、`srcset` 属性と `sizes` 属性の両方がサポートされているため、どの場合にどの画像を読み込むかを細かく制御できます。
+
+{% call callout('参照', type='read') %}
+詳しくはこちら: [srcset と sizes による高度な画像読み込み](/ja/docs/guides/responsive/art_direction.html)
+{% endcall %}
 
 ## スタイルとレイアウトを検証する
 
-AMP 検証ツールを使用して、ページの CSS とレイアウトの値をテストします。
+AMP 検証ツールを使用すると、ページの CSS やレイアウトの値をテストできます。
 
-検証ツールでは、ページの CSS が 50,000 バイトの制限を超えていないことを確認し、許可されていないスタイルがないかチェックし、さらに、ページのレイアウトがサポートされており、形式が正しいかどうか確認します。[スタイルエラーとレイアウト エラー](/ja/docs/reference/validation_errors.html#スタイルとレイアウトのエラー)の詳細なリストもご覧ください。
+AMP 検証ツールは、ページの CSS が上限の 50,000 バイトを超えていないか、許可されていないスタイルはないか、ページのレイアウトがサポートされているか、形式は正しいか、などを検証します。チェックできるエラーの一覧については、[スタイルとレイアウトのエラー](/ja/docs/reference/validation_errors.html#style-and-layout-errors)をご覧ください。
 
-50,000 バイトの制限を超える CSS のページでは、コンソールに次のようなエラーが表示されます。
+CSS が上限の 50,000 バイトを超えた場合、コンソールには次のように表示されます。
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-詳しくは、[AMP ページの検証方法についての記事](/ja/docs/guides/debug/validate.html)（スタイルエラーを特定して修正する方法など）をご覧ください。
+{% call callout('参照', type='read') %}
+詳細はこちら: [AMP ページの検証と修正](/ja/docs/guides/validate.html)
+{% endcall %}
