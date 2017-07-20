@@ -235,6 +235,12 @@ Type attribute value: `snowplow`
 
 Adds support for Snowplow Analytics. More details for adding Snowplow Analytics support can be found at [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
 
+### Rambler/TOP-100
+
+Type attribute value: `top100`
+
+Adds support for Rambler/TOP-100. Configuration details can be found at [top100.rambler.ru](https://top100.rambler.ru/docs).
+
 ### Webtrekk
 
 Type attribute value: `webtrekk`
