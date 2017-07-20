@@ -37,24 +37,24 @@ iframe は、メインページのコンテキストでサポートされてい�
 
 ### マークアップを作成する
 
-[released.amp サンプルでの `amp-iframe` の例](https://github.com/ampproject/amphtml/blob/master/examples/released.amp.html):
+`amp-iframe` の例:
 
-[sourcecode:html]
-<amp-iframe width=300 height=300
-    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+```html
+<amp-iframe width="200" height="100"
+    sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=Alameda,%20CA">
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
 </amp-iframe>
-[/sourcecode]
+```
+
+Preview: 
+
+<amp-iframe width="200" height="100"
+    sandbox="allow-scripts allow-same-origin"
+    layout="responsive"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+</amp-iframe>
 
 ## 例
 
-[デモページ（**上級編**）](https://ampbyexample.com/components/amp-iframe/)では、さらに高度なサンプルをご覧いただけます（以下に `<amp-iframe>` として埋め込まれています）。
-
-<amp-iframe width=300 height=300
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://ampbyexample.com/components/amp-iframe/embed">
-</amp-iframe>
+[デモページ（**上級編**）](https://ampbyexample.com/components/amp-iframe/)では、さらに高度なサンプルをご覧いただけます。
