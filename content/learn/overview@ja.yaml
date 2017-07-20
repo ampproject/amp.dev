@@ -1,6 +1,6 @@
-﻿$title@: 概要
+﻿$title: 概要
 $titles:
-  breadcrumb@: AMP とは
+  breadcrumb: AMP とは
 $order: 0
 class: about-overview
 $view: /views/about-overview.html
@@ -9,12 +9,12 @@ components:
   - youtube
 
 hero:
-  title@: AMP を利用して、さまざまなプラットフォームで優れたユーザー エクスペリエンスを実現
+  title: AMP を利用して、さまざまなプラットフォームで優れたユーザー エクスペリエンスを実現
   triangle_img: herobg.svg
   line1_img: herolines1.svg
   line2_img: herolines2.svg
   phone_img_base: /static/img/about/overview/what_phone
-  cta@: 動画を再生
+  cta: 動画を再生
   cta_url: '#video'
 
 core:
@@ -55,6 +55,6 @@ video:
   line2_img: line4.svg
 
 cta:
-  title@: AMP で得られるメリット
-  link_text@: AMP の導入事例を見る
+  title: AMP で得られるメリット
+  link_text: AMP の導入事例を見る
   link_url: /content/learn/case-studies.html
