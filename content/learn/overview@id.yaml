@@ -9,12 +9,12 @@ components:
   - youtube
 
 hero:
-  title@: AMP memberikan pengalaman yang lebih baik bagi pengguna di berbagai platform
+  title: AMP memberikan pengalaman yang lebih baik bagi pengguna di berbagai platform
   triangle_img: herobg.svg
   line1_img: herolines1.svg
   line2_img: herolines2.svg
   phone_img_base: /static/img/about/overview/what_phone
-  cta@: Putar Video
+  cta: Putar Video
   cta_url: '#video'
 
 core:
@@ -47,6 +47,6 @@ video:
   line2_img: line4.svg
 
 cta:
-  title@: Lihat apa saja yang dapat dilakukan AMP untuk Anda
-  link_text@: Ketahui siapa saja yang menggunakan AMP
+  title: Lihat apa saja yang dapat dilakukan AMP untuk Anda
+  link_text: Ketahui siapa saja yang menggunakan AMP
   link_url: /content/learn/case-studies.html
