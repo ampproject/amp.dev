@@ -76,6 +76,6 @@ video:
   line2_img: line4.svg
 
 cta:
-  title@: Ver lo que puedes hacer con AMP
-  link_text@: Aprende quién usa AMP
+  title: Ver lo que puedes hacer con AMP
+  link_text: Aprende quién usa AMP
   link_url: /content/learn/case-studies.html
