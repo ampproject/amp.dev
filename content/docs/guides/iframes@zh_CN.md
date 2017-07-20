@@ -37,25 +37,24 @@ iframe 在 AMP 中特别有用，可显示主网页中不支持的内容，例�
 
 ### 编写标记
 
-示例 `amp-iframe`[（来自 released.amp 示例）](https://github.com/ampproject/amphtml/blob/master/examples/released.amp.html)：
+示例 `amp-iframe`：
 
-[sourcecode:html]
-<amp-iframe width=300 height=300
-    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+```html
+<amp-iframe width="200" height="100"
+    sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=Alameda,%20CA">
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
 </amp-iframe>
-[/sourcecode]
+```
+
+Preview:
+
+<amp-iframe width="200" height="100"
+    sandbox="allow-scripts allow-same-origin"
+    layout="responsive"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+</amp-iframe>
 
 ## 示例
 
-您可以在我们的高级演示页面[找到更多高级示例，](https://ampbyexample.com/components/amp-iframe/)嵌入为 `<amp-iframe>`，如下所示：
-
-<amp-iframe width=300 height=300
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://ampbyexample.com/components/amp-iframe/embed">
-</amp-iframe>
-
+您可以在我们的高级演示页面[找到更多高级示例，](https://ampbyexample.com/components/amp-iframe/).
