@@ -1,6 +1,7 @@
 ---
 $title: Validar páginas de AMP
 ---
+[TOC]
 
 La ventaja principal de AMP no es solo que aumenta la velocidad de tus páginas, sino que las hace rápidas de una forma que se puede *validar*. De este modo, las plataformas de terceros, como Twitter, Instagram o la Búsqueda de Google, pueden mostrar más predisposición a la hora de ofrecer páginas de AMP a los lectores de formas cada vez más interesantes.
 
