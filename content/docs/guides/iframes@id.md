@@ -37,7 +37,7 @@ tambahan untuk komponen yang diperluas:
 [/sourcecode]
 
 ### Menulis markup
-Renders as: 
+
 Contoh `amp-iframe`:
 
 ```html
