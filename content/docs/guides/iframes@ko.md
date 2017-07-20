@@ -36,25 +36,25 @@ iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 
 
 ### 마크업 작성
 
-예시에서 가져온 `amp-iframe` 예시입니다: 
+`amp-iframe` 예시입니다: 
 
-[sourcecode:html]
-<amp-iframe width=300 height=300
-    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+```html
+<amp-iframe width="200" height="100"
+    sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=Alameda,%20CA">
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
 </amp-iframe>
-[/sourcecode]
+```
+
+Preview: 
+
+<amp-iframe width="200" height="100"
+    sandbox="allow-scripts allow-same-origin"
+    layout="responsive"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+</amp-iframe>
 
 ## 예시
 
-[고급 데모 페이지](https://ampbyexample.com/components/amp-iframe/) 에서 더 복잡한 예를 확인할 수 있으며, 이러한 예는 아래에 `<amp-iframe>` 으로 삽입되어 있습니다:
-
-<amp-iframe width=300 height=300
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://ampbyexample.com/components/amp-iframe/embed">
-</amp-iframe>
+[고급 데모 페이지](https://ampbyexample.com/components/amp-iframe/) 에서 더 복잡한 예를 확인할 수 있으며.
 
