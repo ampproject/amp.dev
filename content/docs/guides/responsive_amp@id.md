@@ -1,64 +1,37 @@
 ---
-$title: Membuat Laman AMP Responsif
+$title: Gaya & Tata Letak
+$order: 0
+$category: Develop
 toc: true
+components:
+- youtube
 ---
-
-Membuat elemen responsif di AMP sangatlah mudah.
-Cukup masukkan `layout=responsive` ke elemen.
-
 [TOC]
 
-## Membuat gambar responsif
+Gaya dan tata letak pada halaman HTML AMP sangat mirip dengan halaman HTML normal – pada kedua kasus tersebut, Anda akan menggunakan CSS.
 
-Semua sumber daya yang dimuat secara eksternal termasuk gambar,
-harus memiliki ukuran dan posisi tertentu
-sehingga ketika sumber daya dimuat, laman tidak akan melompat dan dan mengalir balik.
+Namun, AMP membatasi beberapa penggunaan CSS untuk alasan performa dan kegunaan, sekaligus memperluas kemampuan desain yang responsif dengan fitur seperti [placeholder & fallback](/id/docs/guides/responsive/placeholders.html), [pengarahan seni lanjutan melalui srcset](/id/docs/guides/responsive/art_direction.html) dan [atribut tata letak](/id/docs/guides/responsive/control_layout.html) untuk kontrol yang lebih baik terkait tampilan elemen Anda.
 
-Buat gambar responsif
-dengan menentukan lebar dan tinggi,
-menyetel tata letak menjadi responsif,
-dan mengindikasikan dengan [`srcset`](/id/docs/guides/author-develop/responsive/style_pages.html)
-aset gambar yang akan digunakan berdasarkan ukuran layar yang bervariasi:
+{% call callout('Tip', type='success') %}
+Membuat elemen responsif di AMP sangatlah mudah. Cukup letakkan `layout="responsive"` pada elemen. Untuk mempelajari lebih lanjut tentang Desain Responsif di AMP, buka [Membuat Halaman AMP Responsif](/id/docs/guides/responsive/responsive_design).
+{% endcall %}
 
-[sourcecode:html]
-<amp-img
-    src="/img/narrow.jpg"
-    srcset="/img/wide.jpg 640w,
-           /img/narrow.jpg 320w"
-    width="1698"
-    height="2911"
-    layout="responsive"
-    alt="an image">
-</amp-img>
-[/sourcecode]
+{{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
 
-Elemen `amp-img` ini secara otomatis disesuaikan dengan lebar
-elemen kontennya,
-dan tingginya secara otomatis disetel ke rasio aspek
-yang ditentukan dengan lebar dan tinggi yang diberikan:
+## Tambahkan gaya ke halaman
 
-<amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857"></amp-img>
-
-Lihat juga [amp-img di AMP by Example](https://ampbyexample.com/components/amp-img/).
-
-## Menambahkan gaya ke laman
-
-Tambahkan semua gaya di dalam tag `<style amp-custom>`
-di bagian head dokumen.
-Misalnya:
+Tambahkan semua CSS di dalam `<style amp-custom>` tag pada bagian atas dokumen. Misalnya:
 
 [sourcecode:html]
 <!doctype html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="canonical" href="hello-world.html" >
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<head>
+    ...
     <style amp-custom>
-      /* any custom style goes here. */
+      /* any custom styles go here. */
       body {
         background-color: white;
       }
+
       amp-img {
         border: 5px solid black;
       }
@@ -67,16 +40,15 @@ Misalnya:
         background-color: grey;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-  </head>
+    ...
+</head>
 [/sourcecode]
 
-**Penting:**
-Pastikan hanya ada satu tag `<style amp-custom>` di laman,
-karena tidak boleh ada lebih dari satu tag di AMP.
+{% call callout('Penting', type='caution') %}
+Pastikan hanya ada satu `<style amp-custom>` tag di halaman Anda, karena tag yang berjumlah lebih dari satu tidak diizinkan di AMP.
+{% endcall %}
 
-Tentukan gaya komponen dengan pemilih elemen atau kelas
-menggunakan properti CSS umum. Misalnya:
+Tentukan gaya komponen dengan pemilih elemen atau kelas menggunakan properti CSS umum. Misalnya:
 
 [sourcecode:html]
 <body>
@@ -93,39 +65,46 @@ menggunakan properti CSS umum. Misalnya:
 </body>
 [/sourcecode]
 
-**Penting:**
-Periksa bahwa gaya yang ditambahkan didukung di AMP;
-beberapa gaya tidak untuk alasan performa
-(lihat juga [CSS yang Didukung](/id/docs/guides/author-develop/responsive/style_pages.html)).
+{% call callout('Penting', type='caution') %}
+Periksa apakah gaya Anda didukung di AMP. Beberapa gaya tidak didukung karena alasan performa (lihat juga [CSS yang Didukung](/id/docs/guides/responsive/style_pages.html)).
+{% endcall %}
 
-## Ukuran dan posisi elemen
+## Atur tata letak elemen secara responsif
 
-AMP melepaskan tata letak dokumen dari pemuatan sumber daya
-sehingga AMP dapat memuat tata letak laman tanpa menunggu sumber daya didownload.
+Tentukan ukuran dan posisi untuk semua elemen AMP yang terlihat dengan memberikan atribut `width` dan `height`. Atribut ini menunjukkan rasio aspek elemen, yang kemudian dapat disesuaikan dengan penampung.
 
-Tentukan ukuran dan posisi semua elemen AMP yang terlihat
-dengan memberikan atribut `width` dan `height`.
-Atribut ini mengartikan rasio aspek elemen,
-yang kemudian dapat disesuaikan dengan penampung.
+Setel tata letak ke responsif. Tindakan ini akan mengubah ukuran elemen selebar penampungnya dan ukuran panjangnya diubah secara otomatis ke rasio aspek yang diberikan oleh atribut lebar dan tinggi.
 
-Setel tata letak menjadi responsif.
-Tindakan ini menetapkan ukuran elemen ke lebar elemen penampungnya
-dan otomatis mengubah ukuran tingginya ke rasio aspek yang diberikan oleh atribut lebar dan tinggi.
+{% call callout('Baca lebih lanjut', type='read') %}
+Pelajari lebih lanjut tentang [tata letak yang didukung di AMP](/id/docs/guides/responsive/control_layout.html)
+{% endcall %}
 
-Pelajari lebih lanjut tentang [tata letak yang didukung di AMP](/id/docs/guides/author-develop/responsive/control_layout.html).
+## Berikan placeholder & fallback
 
-## Memvalidasi gaya dan tata letak
+Berkat dukungan yang sudah ada untuk placeholder dan fallback, pengguna Anda tidak perlu melihat layar kosong lagi.
 
-Gunakan validator AMP untuk menguji
-nilai CSS dan tata letak laman.
+{% call callout('Baca lebih lanjut', type='read') %}
+Pelajari lebih lanjut tentang [Placeholder dan fallback](/id/docs/guides/responsive/placeholders.html)
+{% endcall %}
 
-Validator mengonfirmasi bahwa CSS laman tidak melebihi batas 50.000 byte,
-memeriksa gaya yang tidak diizinkan, serta memastikan bahwa tata letak didukung dan diformat dengan benar.
-Lihat juga daftar lengkap [Kesalahan gaya dan tata letak](/id/docs/reference/validation_errors.html#kesalahan-gaya-dan-tata-letak).
+## Seni mengarahkan gambar Anda
 
-Contoh kesalahan di konsol untuk laman dengan CSS yang melebihi batas 50.000 byte:
+AMP mendukung atribut `srcset` dan `sizes` agar Anda dapat mengontrol secara mendalam gambar mana yang dimuat dalam skenario tertentu.
+
+{% call callout('Baca lebih lanjut', type='read') %}
+Pelajari lebih lanjut tentang [pengarahan seni dengan srcset dan ukuran](/id/docs/guides/responsive/art_direction.html)
+{% endcall %}
+
+## Validasikan gaya dan tata letak Anda
+
+Gunakan validator AMP untuk menguji CSS dan nilai tata letak halaman.
+
+Validator mengonfirmasi bahwa halaman CSS Anda tidak melebihi batas 50.00 byte, memeriksa gaya yang tidak diizinkan, dan memastikan tata letak halaman didukung dan diformat dengan benar. Lihat juga daftar lengkap [Error gaya dan tata letak](/id/docs/reference/validation_errors.html#style-and-layout-errors).
+
+Contoh error di konsol halaman dengan CSS yang melebihi batas 50.000 byte:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Pelajari lebih lanjut tentang cara [memvalidasi laman AMP](/id/docs/guides/debug/validate.html),
-termasuk cara melacak dan memperbaiki kesalahan gaya.
+{% call callout('Baca lebih lanjut', type='read') %}
+Pelajari lebih lanjut tentang [memvalidasi dan memperbaiki halaman AMP](/id/docs/guides/validate.html)
+{% endcall %}

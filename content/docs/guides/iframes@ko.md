@@ -1,41 +1,42 @@
 ---
-$title: iframe 가져오기
+$title: iframe 포함하기
+$order: 2
+$category: Develop
+components:
+  - iframe 
+toc: true
 ---
 [TOC]
 
+페이지에 미디어 콘텐츠를 표시하고 iframe 을 사용하여 AMP 의 제약을 넘어서는 고급 콘텐츠를 표시하는 방법을 자세히 알아보세요.
 
-페이지 내에서 미디어 콘텐츠를 처리하는 방법과 AMP 지원 범주 외의 고급 콘텐츠를 표현하기 위한 iframe의 사용법을 배워봅시다.
+## 기본사항
 
-## The basics
+[`amp-iframe`](/ko/docs/reference/components/amp-iframe.html) 요소를 사용하여 페이지에 iframe 을 표시할 수 있습니다.
 
-페이지에서 iframe을 보여줄 때 [`amp-iframe`](/docs/reference/components/amp-iframe.html)을 사용합니다.
+iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 AMP 의 메인 페이지 컨텍스트에서 지원되지 않는 콘텐츠를 표시할 때 특히 유용합니다.
 
-iframe은 사용자가 작성한 자바스크립트가 필요한 콘텐츠 같이  AMP 메인 페이지 컨텍스트에서 지원하지 않는 콘텐츠를 나타내는 데 특히 유용합니다.
+### `amp-iframe` 요구사항:
 
-### `amp-iframe` 요구 사항
+* 첫 번째 표시 영역이 상단에서부터 최소 **600px** 또는 **75%** 떨어져 있어야 합니다.
+* HTTPS 를 통해서만 리소스를 요청할 수 있으며, allow-same-origin을 지정하지 않는 한 컨테이너와 동일한 출처에 있을 수 없습니다.
 
-* 최초 뷰포트의 상단으로부터 최소한 **600px**이나 **75%** 이상 떨어져 있어야 합니다.
-* HTTPS 리소스를 불러오는 것만 가능하며, allow-same-origin으로 정의되지 않은 경우,
-컨테이너 origin이 같아서는 안됩니다.
+{% call callout('도움말', type='read') %}
+[<code>amp-iframe</code> 전체 사양](/ko/docs/reference/components/amp-iframe.html)
+에서 자세한 내용을 알아보세요. {% endcall %}
 
-<aside class="note">
-  <strong>팁:</strong>
-  <span>더 자세한 내용은 <a href="/docs/reference/components/amp-iframe.html">full specification for <code>amp-iframe</code></a>을 참고하세요.</span>
-</aside>
+### 스크립트 포함
 
-### script 가져오기
-
-`amp-iframe`을 페이지에서 사용하려면,
-컴포넌트를 확장하기 위한 추가 코드를 로드하기 위해 `<head>`에 아래 스크립트를 먼저 추가해야합니다.
+페이지에 `amp-iframe` 을 포함하려면 우선 다음 스크립트를 `<head>` 에 포함합니다. 이는 확장 구성요소를 위한 다음과 같은 추가 코드를 로드합니다.
 
 [sourcecode:html]
 <script async custom-element="amp-iframe"
-  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 [/sourcecode]
 
-### 마크업 작성하기
+### 마크업 작성
 
-`amp-iframe` 예제입니다:
+`amp-iframe` 예시입니다: 
 
 ```html
 <amp-iframe width="200" height="100"
@@ -45,7 +46,7 @@ iframe은 사용자가 작성한 자바스크립트가 필요한 콘텐츠 같�
 </amp-iframe>
 ```
 
-レンダリング： 
+Preview: 
 
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
@@ -53,6 +54,7 @@ iframe은 사용자가 작성한 자바스크립트가 필요한 콘텐츠 같�
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
 </amp-iframe>
 
-## 예제
+## 예시
 
-さらに多くの例については、[AMP By Example](https://ampbyexample.com/components/amp-iframe/)を参照してください。
+[고급 데모 페이지](https://ampbyexample.com/components/amp-iframe/) 에서 더 복잡한 예를 확인할 수 있으며.
+

@@ -1,6 +1,7 @@
 ---
 $title: Validar páginas de AMP
 ---
+[TOC]
 
 La ventaja principal de AMP no es solo que aumenta la velocidad de tus páginas, sino que las hace rápidas de una forma que se puede *validar*. De este modo, las plataformas de terceros, como Twitter, Instagram o la Búsqueda de Google, pueden mostrar más predisposición a la hora de ofrecer páginas de AMP a los lectores de formas cada vez más interesantes.
 
@@ -228,7 +229,7 @@ Cada herramienta ofrece varios fragmentos de información:
      documentación para la etiqueta `<amp-img>`. No todos los errores generan
      enlaces de documentación.</li>
 
-Al leer la especificación atentamente, nos damos cuenta de que estamos utilizando una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
+Al leer la [especificación](/es/docs/reference/spec.html) atentamente, nos damos cuenta de que estamos utilizando una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
 
 Para entender mejor la lista completa de los posibles errores,
 consulta la [Guía de errores de validación de AMP](/es/docs/reference/validation_errors.html).

@@ -1,51 +1,52 @@
+﻿$title: Ringkasan
+$titles:
+  breadcrumb: Apa yang dimaksud dengan AMP
+$order: 0
+class: about-overview
+$view: /views/about-overview.html
+
+components:
+  - youtube
+
+hero:
+  title: AMP memberikan pengalaman yang lebih baik bagi pengguna di berbagai platform
+  triangle_img: herobg.svg
+  line1_img: herolines1.svg
+  line2_img: herolines2.svg
+  phone_img_base: /static/img/about/overview/what_phone
+  cta: Putar Video
+  cta_url: '#video'
+
 core:
-  title: AMP pages are built with 3 core components.
+  title: Halaman AMP dibuat dengan 3 komponen inti.
   components:
     - title: AMP HTML
       subtitle: |
-        **AMP HTML** adalah HTML dengan beberapa pembatasan untuk kinerja yang bisa diandalkan
-        dan beberapa ekstensi untuk membangun materi kaya yang melampaui HTML dasar.
+        **AMP HTML** adalah HTML dengan beberapa pembatasan untuk performa yang dapat diandalkan.
       description: |
-        AMP HTML pada dasarnya adalah HTML yang diperluas dengan properti AMP khusus.
-        File AMP HTML paling sederhana tampak seperti ini:
+        AMP HTML pada dasarnya adalah HTML yang diperluas dengan properti AMP khusus. File AMP HTML yang paling sederhana tampak seperti ini:
       example: /content/includes/html-example.md
       description2: |
-        Meski sebagian besar tag dalam halaman AMP HTML adalah tag HTML reguler,
-        sebagian tag HTML digantikan dengan tag spesifik AMP (lihat juga
-        [Tag HTML dalam spesifikasi AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
-        Elemen khusus ini disebut sebagai komponen AMP HTML,
-        membuat pola-pola umum menjadi mudah diimplementasikan berdasarkan kinerja.
-        <p>Misalnya, tag [`amp-img`](/id/docs/reference/components/amp-img)
-        menyediakan dukungan `srcset` lengkap meski dalam browser yang belum mendukungnya.
-        Pelajari cara [membuat halaman AMP HTML pertama Anda](/id/docs/tutorials/create.html).
+        Meski sebagian besar tag dalam halaman AMP HTML adalah tag HTML reguler, sebagian tag HTML digantikan dengan tag AMP yang bersifat spesifik (lihat juga [Tag HTML dalam spesifikasi AMP](/id/docs/reference/spec.html)). Elemen khusus ini, yang disebut sebagai komponen AMP HTML, membuat pola-pola umum mudah diimplementasikan dengan cara yang berperforma tinggi. <p>Misalnya, tag [`amp-img`](/id/docs/reference/amp-img.html) menyediakan dukungan `srcset` lengkap meski dalam browser yang belum mendukungnya. Pelajari cara [membuat halaman AMP HTML pertama Anda](/id/docs/tutorials/create.html). <p>Halaman AMP ditemukan oleh mesin telusur dan platform lainnya melalui tag HTML `<link rel="">`. Anda dapat memilih untuk memiliki versi non-AMP dan versi AMP pada halaman, atau hanya versi AMP. Pelajari lebih lanjut di [Membuat Halaman Anda Dapat Ditemukan](/id/docs/guides/discovery.html).
     - title: AMP JS
       subtitle: |
-        Pustaka **AMP JS** memastikan perenderan halaman AMP HTML yang cepat.
+        Library **AMP JS** memastikan perenderan halaman AMP HTML dilakukan dengan cepat.
       description: |
-        [Pustaka AMP JS](https://github.com/ampproject/amphtml/tree/master/src) mengimplementasikan
-        semua [praktik kinerja terbaik AMP](/id/learn/about-how/),
-        mengelola pemuatan sumber daya dan memberi Anda tag khusus seperti yang disebut di atas,
-        yang semuanya memastikan perenderan halaman Anda dengan cepat.
-        <p>Di antara optimalisasi terbesar adalah fakta bahwa hal tersebut memastikan semua yang berasal dari sumber daya eksternal menjadi asinkron, sehingga tidak ada satu pun yang bisa menghalangi perenderan di halaman.
-        <p>Teknik kinerja lainnya meliputi dilakukannya sandbox semua iframe, perhitungan awal layout setiap elemen pada halaman sebelum sumber daya dimuat dan menonaktifkan pemilih CSS yang lambat.
-        <p>Untuk mengetahui selengkapnya tentang tidak hanya [optimalisasi](/id/learn/about-how/) namun juga pembatasannya, [baca spesifikasi AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md).
+        [Library AMP JS](https://github.com/ampproject/amphtml/tree/master/src) mengimplementasikan semua [praktik performa terbaik AMP](/id/learn/about-how/), mengelola pemuatan konten dan memberi Anda tag khusus seperti yang disebut di atas, yang semuanya memastikan perenderan halaman Anda dilakukan dengan cepat. <p>Di antara pengoptimalan terbesar adalah fakta bahwa hal tersebut memastikan semua yang berasal dari konten eksternal menjadi asinkron, sehingga tidak ada satu pun yang dapat menghalangi perenderan di halaman. <p>Teknik performa lainnya meliputi proses sandbox semua iframe, perhitungan awal layout setiap elemen pada halaman sebelum konten dimuat, dan menonaktifkan pemilih CSS yang lambat. <p>Untuk mempelajari lebih lanjut tentang bukan hanya [pengoptimalan](/id/learn/about-how/) namun juga batasannya, [baca spesifikasi AMP HTML](/id/docs/reference/spec.html).
+    
     - title: AMP Cache
       subtitle: |
-        **Google AMP Cache** (secara opsional) menghasilkan halaman AMP HTML.
+        **Google AMP Cache** dapat digunakan untuk menayangkan halaman AMP HTML dalam cache.
       description: |
-        Google AMP Cache adalah jaringan penyajian materi berbasis proxy
-        untuk menyajikan semua dokumen AMP yang valid.
-        Jaringan ini mengambil halaman AMP HTML, menempatkannya dalam cache, dan memperbaiki halaman kinerja secara otomatis.
-        Ketika menggunakan Google AMP Cache, semua file JS dan semua gambar yang dimuat
-        dari asal yang sama yang menggunakan
-        [HTTP 2.0](https://http2.github.io/) untuk efisiensi maksimum.
-        <p>Cache ini juga disertai dengan
-        [sistem validasi](https://github.com/ampproject/amphtml/tree/master/validator)
-        bawaan yang memastikan bahwa halaman dijamin bekerja,
-        dan halaman tidak bergantung pada sumber daya eksternal.
-        Sistem validasi ini menjalankan serangkaian pernyataan
-        yang mengonfirmasi terpenuhinya markup halaman sesuai dengan spesifikasi AMP HTML.
-        <p>Versi validator lainnya hadir dalam bentuk dibundel dengan setiap halaman AMP. Versi ini bisa mencatat kesalahan validasi secara langsung ke konsol browser ketika halaman dirender,
-        sehingga Anda bisa melihat bagaimana perubahan kompleks dalam kode Anda
-        mungkin berdampak pada kinerja dan pengalaman pengguna.
-        <p>Ketahui selengkapnya tentang [menguji halaman AMP HTML](/id/docs/guides/debug/validate.html).
+        [Google AMP Cache](https://developers.google.com/amp/cache/) adalah jaringan penayangan konten berbasis proxy untuk menayangkan semua dokumen AMP yang valid. Jaringan ini mengambil halaman AMP HTML, menempatkannya dalam cache, dan meningkatkan performa halaman secara otomatis. Ketika menggunakan Google AMP Cache, dokumen, semua file JS, dan semua gambar yang dimuat dari asal yang sama yang menggunakan [HTTP 2.0](https://http2.github.io/) untuk mendapatkan efisiensi maksimum. <p>Cache ini juga disertai dengan [sistem validasi](https://github.com/ampproject/amphtml/tree/master/validator) bawaan yang memastikan bahwa halaman dijamin berfungsi, dan halaman tidak bergantung pada konten eksternal. Sistem validasi ini menjalankan serangkaian pernyataan yang memastikan terpenuhinya markup halaman sesuai dengan spesifikasi AMP HTML. <p>Versi validator lainnya tersedia dalam satu paket pada setiap halaman AMP. Versi ini bisa mencatat error validasi secara langsung ke konsol browser saat halaman dirender, sehingga Anda dapat melihat seberapa besar pengaruh perubahan kompleks dalam kode Anda terhadap performa dan pengalaman pengguna. <p>Pelajari lebih lanjut tentang [menguji halaman AMP HTML](/id/docs/guides/validate.html).
+
+
+video:
+  id: lBTCB7yLs8Y
+  line1_img: lines3.svg
+  line2_img: line4.svg
+
+cta:
+  title: Lihat apa saja yang dapat dilakukan AMP untuk Anda
+  link_text: Ketahui siapa saja yang menggunakan AMP
+  link_url: /content/learn/case-studies.html
