@@ -23,7 +23,7 @@ la página principal, como el contenido que requiere JavaScript creado por usuar
 * Debe tener al menos **600 píxeles** o un **75%** de la primera ventana gráfica si empezamos por el principio de la página.
 * Solo puede solicitar recursos por HTTPS, y estos no deben tener el mismo origen que el contenedor salvo que no se especifique allow-same-origin.
 
-{% call callout('Consejo', type='read') %}
+{% call callout('Leer más', type='read') %}
 Obtén más información [en la especificación completa de <code>amp-iframe</code>](/es/docs/reference/components/amp-iframe.html). 
 {% endcall %}
 
