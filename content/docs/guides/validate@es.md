@@ -228,7 +228,7 @@ Cada herramienta ofrece varios fragmentos de información:
      documentación para la etiqueta `<amp-img>`. No todos los errores generan
      enlaces de documentación.</li>
 
-Al leer la especificación atentamente, nos damos cuenta de que estamos utilizando una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
+Al leer la [especificación](/es/docs/reference/spec.html) atentamente, nos damos cuenta de que estamos utilizando una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
 
 Para entender mejor la lista completa de los posibles errores,
 consulta la [Guía de errores de validación de AMP](/es/docs/reference/validation_errors.html).

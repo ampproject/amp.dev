@@ -1,26 +1,24 @@
 ---
 $title: Kasus Penggunaan
+$order: 2
 toc: true
 ---
 [TOC]
 
+Panduan ini memberikan rangkaian kasus penggunaan umum untuk melacak keterlibatan pengguna:
 
-Panduan ini memberikan satu set kasus penggunaan umum untuk melacak keterlibatan pengguna:
+{% call callout('Catatan', type='note') %} 
+Ingin menambahkan kasus penggunaan? [Beri tahu kami.](https://github.com/ampproject/docs/issues/new) Anda juga dapat memberikan kasus penggunaan Anda sendiri; lihat [Cara Berkontribusi](https://www.ampproject.org/id/docs/support/contribute.html). 
+{% endcall %}
 
-Ingin menambahkan kasus penggunaan?
-[Beri tahu kami.](https://github.com/ampproject/docs/issues/new)
+## Melacak jumlah kunjungan halaman
 
-Anda juga bisa berkontribusi pada kasus penggunaan Anda sendiri;
-lihat [Cara Berkontribusi](https://www.ampproject.org/docs/support/contribute.html).
-
-## Melacak tampilan halaman
-
-Ketahui cara melacak tampilan halaman menggunakan `amp-pixel` dan `amp-analytics`.
+Pelajari cara melacak jumlah kunjungan halaman menggunakan `amp-pixel` dan `amp-analytics`.
 
 ### Menggunakan amp-pixel
 
-Mengirim data penayangan ke URL yang ditetapkan memakai
-[amp-pixel](/docs/reference/amp-pixel.html):
+
+Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [amp-pixel](/id/docs/reference/amp-pixel.html):
 
 [sourcecode:html]
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -28,25 +26,25 @@ Mengirim data penayangan ke URL yang ditetapkan memakai
 
 ### Menggunakan amp-analytics - tanpa vendor
 
-Mengirim data penayangan ke URL yang ditetapkan memakai
-[amp-analytics](/docs/reference/extended/amp-analytics.html):
+
+Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [amp-analytics](/id/docs/reference/extended/amp-analytics.html):
 
 [sourcecode:html]
 <amp-analytics>
 <script type="application/json">
 {
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    }
-  }
+    "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}"
+    },
+    "vars": {
+        "account": "ABC123"
+    },
+    "triggers": {
+        "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+        }
+    } 
 }
 </script>
 </amp-analytics>
@@ -54,22 +52,21 @@ Mengirim data penayangan ke URL yang ditetapkan memakai
 
 ### Menggunakan amp-analytics - googleanalytics
 
-Mengirim data penayangan ke Google Analytics
-(lihat juga [Pelacakan halaman dalam Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
+Kirimkan data jumlah kunjungan halaman ke Google Analytics (lihat juga [Pelacakan halaman di Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics1">
 <script type="application/json">
 {
-  "vars": {
-    "account": "UA-XXXXX-Y"  // Replace with your property ID.
-  },
-  "triggers": {
-    "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
-      "on": "visible",
-      "request": "pageview"
-    }
-  }
+    "vars": {
+        "account": "UA-XXXXX-Y"  // Replace with your property ID.
+    },
+    "triggers": {
+        "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
+            "on": "visible",
+            "request": "pageview"
+        } 
+    } 
 }
 </script>
 </amp-analytics>
@@ -77,37 +74,33 @@ Mengirim data penayangan ke Google Analytics
 
 ## Melacak klik halaman
 
-Mengetahui cara melacak klik halaman memakai
-[amp-analytics](/docs/reference/extended/amp-analytics.html),
-mengirim data kejadian ke URL yang ditetapkan, dan
-[Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Pelajari cara melacak klik halaman menggunakan [amp-analytics](/id/docs/reference/extended/amp-analytics.html), mengirim data peristiwa ke URL yang ditentukan, dan ke [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
-### Mengirim data ke URL yang ditetapkan
+### Mengirim data ke URL yang ditentukan
 
-Contoh berikut menggunakan atribut `selector` untuk mengirim kejadian `click`
-ke URL yang ditetapkan setiap kali pengguna mengeklik tautan (`<a href>`):
+Contoh berikut menggunakan atribut `selector` untuk mengirim peristiwa `click` ke URL yang ditentukan setiap kali pengguna mengklik link (`<a href>`):
 
 [sourcecode:html]
 <amp-analytics>
 <script type="application/json">
 {
-  "requests": {
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
-      "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
-      }
-    }
-  }
+    "requests": {
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+    },
+    "vars": {
+        "account": "ABC123"
+    },
+    "triggers": {
+        "trackAnchorClicks": {
+            "on": "click",
+            "selector": "a",
+            "request": "event",
+            "vars": {
+                "eventId": "42",
+                "eventLabel": "clicked on a link"
+            }
+        } 
+    } 
 }
 </script>
 </amp-analytics>
@@ -115,61 +108,54 @@ ke URL yang ditetapkan setiap kali pengguna mengeklik tautan (`<a href>`):
 
 ### Mengirim data ke Google Analytics
 
-Contoh berikut menggunakan atribut `selector` dari `trigger`
-untuk mengirim kejadian `click` ke Google Analytics ketika elemen tertentu diklik
-(lihat juga
-(lihat juga [Pelacakan kejadian AMP dalam Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking)):
+Contoh berikut menggunakan atribut `selector` `trigger` untuk mengirim peristiwa `click` ke Google Analytics saat elemen tertentu diklik (lihat juga [pelacakan peristiwa AMP di Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics3">
 <script type="application/json">
 {
-  "vars": {
-    "account": "UA-XXXXX-Y"  // Replace with your property ID.
-  },
-  "triggers": {
-    "trackClickOnHeader" : {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
-      "vars": {
-        "eventCategory": "ui-components",
-        "eventAction": "header-click"
-      }
+    "vars": {
+        "account": "UA-XXXXX-Y"  // Replace with your property ID.
+    },
+    "triggers": {
+        "trackClickOnHeader" : {
+            "on": "click",
+            "selector": "#header",
+            "request": "event",
+            "vars": {
+                "eventCategory": "ui-components",
+                "eventAction": "header-click"
+            }
+        } 
     }
-  }
 }
 </script>
 </amp-analytics>
 [/sourcecode]
 
-## Melacak pengguliran
+## Melacak scroll
 
-Melacak pengguliran halaman menggunakan [amp-analytics](/docs/reference/extended/amp-analytics.html).
-Contoh berikut menggunakan atribut `scrollspec` untuk mengirim kejadian `scroll`
-ke URL yang ditetapkan ketika halaman digulirkan secara vertikal sebesar 25%, 50%, dan 90%.
-Kejadian ini juga dipicu ketika halaman digulirkan secara horizontal
-ke 90% lebar `scroll`:
+Lacak scroll halaman menggunakan [amp-analytics](/id/docs/reference/extended/amp-analytics.html). Contoh berikut menggunakan atribut `scrollspec` untuk mengirim peristiwa `scroll` ke URL yang ditentukan jika halaman di-scroll secara vertikal sebanyak 25%, 50%, dan 90%. Peristiwa ini juga dipicu ketika halaman di-scroll secara horizontal hingga 90% lebar `scroll`:
 
 [sourcecode:html]
 <amp-analytics>
 <script type="application/json">
 {
-  "requests": {
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "scrollPings": {
-      "on": "scroll",
-      "scrollSpec": {
-        "verticalBoundaries": [25, 50, 90],
-        "horizontalBoundaries": [90]
-      }
-    }
-  }
+    "requests": {
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+    },
+    "vars": {
+        "account": "ABC123"
+    },
+    "triggers": {
+        "scrollPings": {
+            "on": "scroll",
+            "scrollSpec": {
+                "verticalBoundaries": [25, 50, 90],
+                "horizontalBoundaries": [90]
+            } 
+        } 
+    } 
 }
 </script>
 </amp-analytics>
@@ -177,37 +163,33 @@ ke 90% lebar `scroll`:
 
 ## Melacak interaksi sosial
 
-Ketahui cara melacak interaksi sosial menggunakan
-[amp-analytics](/docs/reference/extended/amp-analytics.html),
-mengirim data kejadian ke URL yang ditetapkan, dan ke
-[Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Pelajari cara melacak interaksi sosial menggunakan [amp-analytics](/id/docs/reference/extended/amp-analytics.html), mengirim data peristiwa ke URL yang ditentukan, dan ke [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
-### Mengirim data ke URL yang ditetapkan
+### Mengirim data ke URL yang ditentukan
 
-Contoh berikut menggunakan atribut `selector` untuk mengirim kejadian `click`
-ke URL yang ditetapkan setiap kali pengguna mengeklik tweet (`#tweet-link`):
+Contoh berikut menggunakan atribut `selector` untuk mengirim peristiwa `click` ke URL yang ditentukan setiap kali pengguna mengklik tweet (`#tweet-link`):
 
 [sourcecode:html]
 <amp-analytics>
 <script type="application/json">
 {
-  "requests": {
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "trackClickOnTwitterLink": {
-      "on": "click",
-      "selector": "#tweet-link",
-      "request": "event",
-      "vars": {
-        "eventId": "43",
-        "eventLabel": "clicked on a tweet link"
-      }
-    }
-  }
+    "requests": {
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+    },
+    "vars": {
+        "account": "ABC123"
+    },
+    "triggers": {
+        "trackClickOnTwitterLink": {
+            "on": "click",
+            "selector": "#tweet-link",
+            "request": "event",
+            "vars": {
+                "eventId": "43",
+                "eventLabel": "clicked on a tweet link"
+            }
+        } 
+    } 
 }
 </script>
 </amp-analytics>
@@ -215,31 +197,29 @@ ke URL yang ditetapkan setiap kali pengguna mengeklik tweet (`#tweet-link`):
 
 ### Mengirim data ke Google Analytics
 
-Contoh berikut menggunakan atribut `selector` dari `trigger`
-untuk mengirim kejadian ketika tombol sosial tertentu diklik
-(lihat juga
-[pelacakan interaksi sosial AMP dalam Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions)):
+Contoh berikut menggunakan atribut `selector` `trigger` untuk mengirim peristiwa saat tombol sosial tertentu diklik (lihat juga [pelacakan interaksi sosial AMP di Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions)):
 
 [sourcecode:html]
 <amp-analytics type="googleanalytics" id="analytics4">
 <script type="application/json">
 {
-  "vars": {
-    "account": "UA-XXXXX-Y" // Replace with your property ID.
-  },
-  "triggers": {
-    "trackClickOnTwitterLink" : {
-      "on": "click",
-      "selector": "#tweet-link",
-      "request": "social",
-      "vars": {
-          "socialNetwork": "twitter",
-          "socialAction": "tweet",
-          "socialTarget": "https://www.examplepetstore.com"
-      }
-    }
-  }
+    "vars": {
+        "account": "UA-XXXXX-Y" // Replace with your property ID.
+    },
+    "triggers": {
+        "trackClickOnTwitterLink" : {
+            "on": "click",
+            "selector": "#tweet-link",
+            "request": "social",
+            "vars": {
+                "socialNetwork": "twitter",
+                "socialAction": "tweet",
+                "socialTarget": "https://www.examplepetstore.com"
+            } 
+        } 
+    } 
 }
 </script>
 </amp-analytics>
 [/sourcecode]
+
