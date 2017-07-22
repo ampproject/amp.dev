@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: Bringing the speed of AMP to search & display ads
+$title: "Bringing the speed of AMP to search & display ads"
 id: bringing-the-speed-of-amp-to-search-display-ads
 author: Jerry Dischler
 role:  Vice President, Product Management

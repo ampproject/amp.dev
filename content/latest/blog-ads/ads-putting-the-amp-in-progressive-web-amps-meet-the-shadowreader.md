@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: Putting the AMP in Progressive Web AMPs: Meet the ShadowReader
+$title: "Putting the AMP in Progressive Web AMPs: Meet the ShadowReader"
 id: ads-putting-the-amp-in-progressive-web-amps-meet-the-shadowreader
 author: amphtml
 role: 

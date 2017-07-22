@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: amp-bind brings flexible interactivity to AMP pages
+$title: "amp-bind brings flexible interactivity to AMP pages"
 id: amp-bind-brings-flexible-interactivity-to-amp-pages
 author: Eric Lindley
 role:  Product Manager, AMP Project

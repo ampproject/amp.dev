@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: AMP Roadmap Update for Q2
+$title: "AMP Roadmap Update for Q2"
 id: ads-amp-roadmap-update-for-q2
 author: Rudy Galfi
 role:  Product Manager, AMP Project

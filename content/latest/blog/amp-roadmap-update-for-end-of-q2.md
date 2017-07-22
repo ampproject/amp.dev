@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: AMP Roadmap update for end of Q2
+$title: "AMP Roadmap update for end of Q2"
 id: amp-roadmap-update-for-end-of-q2
 author: Vamsee Jasti
 role:  Product Manager, AMP Project
