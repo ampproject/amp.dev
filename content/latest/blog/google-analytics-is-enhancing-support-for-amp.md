@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: Google Analytics is Enhancing Support for AMP
+$title: "Google Analytics is Enhancing Support for AMP"
 id: google-analytics-is-enhancing-support-for-amp
 author: amphtml
 role: 

@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: Growing the AMP Ads Initiative
+$title: "Growing the AMP Ads Initiative"
 id: ads-growing-the-amp-ads-initiative
 author: Vamsee Jasti
 role:  Product Manager, AMP Project

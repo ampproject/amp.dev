@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: See AMP live at I/O 2017!
+$title: "See AMP live at I/O 2017!"
 id: see-amp-live-at-io-2017
 author: pbakaus
 role: 

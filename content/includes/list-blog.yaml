@@ -1,6 +1,55 @@
 blogs:
 
 - type: Blog
+  title: "Putting the AMP in Progressive Web AMPs: Meet the ShadowReader"
+  id: putting-the-amp-in-progressive-web-amps-meet-the-shadowreader
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2017/07/20/putting-the-amp-in-progressive-web-amps-meet-the-shadowreader/amp/"
+  excerpt: "We’ve previously written plenty about combining AMP &#38; PWA, short for Progressive Web Apps. While the idea of preloading your PWA while the reader is reading your AMP page is fairly straightforward, the other combination pattern, where AMP is used as data-source to power your PWA, is less understood. In my recent Google I/O talk, [&#8230;]"
+  avatar: http://amphtml.files.wordpress.com/2017/07/featured.png
+  datedata: 2017-07-20T15:50:15-07:00
+  date: "July 20, 2017"
+
+- type: Blog
+  title: "AMP Roadmap update for end of Q2"
+  id: amp-roadmap-update-for-end-of-q2
+  author: Vamsee Jasti
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/07/14/amp-roadmap-update-for-end-of-q2/amp/"
+  excerpt: "We’ve updated the AMP Roadmap to reflect progress on existing priorities as well as several new projects. You can see the highlights below: Format amp-bind, a flexible event binding system supporting more interactivity in AMP is now fully available in production. To find out more about the range of capabilities this feature brings to AMP, [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-07-14T16:49:34-07:00
+  date: "July 14, 2017"
+
+- type: Video
+  title: "What's Allowed in AMP and What Isn't?"
+  id: Gv8A4CktajQ
+  author: The AMP Channel
+  role: 
+  origin: "https://www.youtube.com/watch?v=Gv8A4CktajQ"
+  excerpt: "AMP HTML is a special flavor of HTML, and AMP keeps you on a fast path by not allowing you to shoot yourself in the foot. Here are the most important differences, limitations, and stuff you are not allowed to use in AMP.
+
+
+
+Subscribe to the The AMP Project YouTube channel and never miss an Amplify episode: https://goo.gl/g2Y8h7"
+  thumbnail: "https://i4.ytimg.com/vi/Gv8A4CktajQ/hqdefault.jpg"
+  avatar: 
+  datedata: 2017-07-13T15:00:23-07:00
+  date: "July 13, 2017"
+
+- type: Blog
+  title: "amp-bind brings flexible interactivity to AMP pages"
+  id: amp-bind-brings-flexible-interactivity-to-amp-pages
+  author: Eric Lindley
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/07/12/amp-bind-brings-flexible-interactivity-to-amp-pages/amp/"
+  excerpt: "We invited developers to try out amp-bind in April to experiment with greater AMP page interactivity. Today we’d like to highlight that amp-bind is generally available and take a deeper dive into the feature, in order to give you a sense of just how much this expands AMP support—especially for e-commerce. What is amp-bind? We [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-07-12T12:02:25-07:00
+  date: "July 12, 2017"
+
+- type: Blog
   title: "AMP Roadmap Update for Q2"
   id: amp-roadmap-update-for-q2
   author: Rudy Galfi
@@ -21,47 +70,3 @@ blogs:
   avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
   datedata: 2017-05-23T10:02:55-07:00
   date: "May 23, 2017"
-
-- type: Blog
-  title: "Growing the AMP Ads Initiative"
-  id: growing-the-amp-ads-initiative
-  author: Vamsee Jasti
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/05/18/growing-the-amp-ads-initiative/amp/"
-  excerpt: "We launched the AMP Ads Initiative last year with the ambitious goal of fixing ad experiences on the web by bringing the speed and performance of AMP to advertising. AMP Ads are faster, lighter and more secure — loading up to 5 seconds faster than regular ads on AMP pages — making them more viewable [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-05-18T09:12:34-07:00
-  date: "May 18, 2017"
-
-- type: Blog
-  title: "Turbocharging AMP"
-  id: turbocharging-amp
-  author: Matt Ludwig
-  role:  AMP Project Marketing Lead at Google
-  origin: "https://amphtml.wordpress.com/2017/05/18/turbocharging-amp/amp/"
-  excerpt: "Improving speed and user experience on the web is core to the AMP Project’s mission. Today at Google’s I/O developer conference we announced that AMP pages load twice as fast from Google Search, as we’ve cut the time it takes to render content in half from last year. Additionally, new platforms and websites have joined [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-05-17T18:17:29-07:00
-  date: "May 17, 2017"
-
-- type: Blog
-  title: "Google Analytics is Enhancing Support for AMP"
-  id: google-analytics-is-enhancing-support-for-amp
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2017/05/16/google-analytics-is-enhancing-support-for-amp/amp/"
-  excerpt: "The following was posted on the Google Analytics blog by the Google Analytics team Over the past year, developers have adopted the Accelerated Mobile Pages (AMP) technology to build faster-loading pages for all types of sites, ranging from news to recipes to e-commerce. Billions of AMP pages have been published to date and Google Analytics continues [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-05-16T12:37:33-07:00
-  date: "May 16, 2017"
-
-- type: Blog
-  title: "See AMP live at I/O 2017!"
-  id: see-amp-live-at-io-2017
-  author: pbakaus
-  role: 
-  origin: "https://amphtml.wordpress.com/2017/05/16/see-amp-live-at-io-2017/amp/"
-  excerpt: "We’re just days away from the start of Google I/O 2017, Google’s annual developer conference. Join us live or on the live stream!"
-  avatar: http://0.gravatar.com/avatar/9fb120a88c85d93be416ed62b8ab5e16?s=96&d=identicon&r=G
-  datedata: 2017-05-15T17:39:53-07:00
-  date: "May 15, 2017"

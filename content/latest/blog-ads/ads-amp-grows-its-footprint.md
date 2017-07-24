@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: AMP grows its footprint
+$title: "AMP grows its footprint"
 id: ads-amp-grows-its-footprint
 author: David Besbris
 role:  VP Google Search, AMP Project Lead at Google
