@@ -11,7 +11,7 @@ $title: AMP HTML 페이지 만들기
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ AMP HTML 문서는:
   - Doctype `<!doctype html>`로 시작해야 합니다.
   - 최상위 `<html ⚡>` 태그를 포함해야 합니다(`<html amp>`도 허용됨).
   - `<head>` 및 `<body>` 태그를 포함해야 합니다(HTML에서는 선택 항목).
-  - AMP HTML 문서의 일반 HTML 버전을 가리키는 `<link rel="canonical" href="$SOME_URL" />` 태그를 헤드 내에 포함해야 합니다. 이러한 HTML 버전이 없는 경우 스스로를 가리키는 태그를 포함해야 합니다.
+  - AMP HTML 문서의 일반 HTML 버전을 가리키는 `<link rel="canonical" href="$SOME_URL">` 태그를 헤드 내에 포함해야 합니다. 이러한 HTML 버전이 없는 경우 스스로를 가리키는 태그를 포함해야 합니다.
   - 헤드 태그의 첫 번째 하위 요소로서 `<meta charset="utf-8">` 태그를 포함해야 합니다.
   - 헤드 태그 내에 `<meta name="viewport" content="width=device-width,minimum-scale=1">` 태그를 포함해야 합니다. 또한 initial-scale=1을 포함시키는 것이 좋습니다.
   - 헤드의 마지막 요소로서 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 포함해야 합니다(이 요소는 AMP JS 라이브러리를 포함하고 로드합니다).

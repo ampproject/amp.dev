@@ -11,7 +11,7 @@ $title: 创建 AMP HTML 页面
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ AMP HTML 文档必须：
   - 以文档类型 `<!doctype html>` 开头
   - 包含顶级 `<html ⚡>` 标记（也接受 `<html amp>`）
   - 包含 `<head>` 和 `<body>` 标记（这些标记在 HTML 中是可选的）
-  - 在<head>内包含一个 `<link rel="canonical" href="$SOME_URL" />` 标记，该标记指向 AMP HTML 文档的常规 HTML 版本，或在此类 HTML 版本不存在的情况下指向文档本身
+  - 在<head>内包含一个 `<link rel="canonical" href="$SOME_URL">` 标记，该标记指向 AMP HTML 文档的常规 HTML 版本，或在此类 HTML 版本不存在的情况下指向文档本身
   - 包含 `<meta charset="utf-8">` 标记作为<head>标记的第一个子项
   - 在<head>标记内包含 `<meta name="viewport" content="width=device-width,minimum-scale=1">` 标记。还建议包括 initial-scale=1
   - 包含 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 标记作为<head>中的最后一个元素（这样做将会包括并加载 AMP JS 库）
