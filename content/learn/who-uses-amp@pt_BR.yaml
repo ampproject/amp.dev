@@ -1,0 +1,44 @@
+$title: Para quem as AMP podem ser úteis?
+$order: 1
+class: about-who
+$view: /views/about-who.html
+$parent: /content/learn/overview.yaml
+$path: /learn/who-uses-amp/
+
+hero:
+  title: Para quem as AMP podem ser úteis?
+  subtitle: Participe de um ecossistema com 850.000 domínios, as principais plataformas e mais de 100 provedores de tecnologias usando o formato AMP.
+  hero_img_base: /static/img/about/who-use-amp/who_phones_hero
+  line_img: who_lines1.svg
+  triangle_img: hero_triangle.png
+
+cards:
+  - name: Editores
+    filename: publishers
+    cta: Saiba mais
+    icon: who_icon_publishers.svg
+
+  # - name: SMB
+  #   filename: smb
+  #   cta: Learn More
+  #   icon: card_smb.svg
+
+  - name: Plataformas de tecnologia de anúncios
+    filename: ad-tech-platforms
+    cta: Saiba mais
+    icon: who_icon_adtech.svg
+
+  - name: Anunciantes
+    filename: advertisers
+    cta: Saiba mais
+    icon: who_icon_advertisers.svg
+
+  # - name: Developers
+  #   filename: developers
+  #   cta: Learn More
+  #   icon: card_developers.svg
+
+cta:
+  title: Histórias de sucesso
+  link_text: Ler os estudos de caso
+  link_url: /content/learn/case-studies.html
