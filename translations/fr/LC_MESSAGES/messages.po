@@ -162,7 +162,7 @@ msgstr ""
 #: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "AMP provides a great user experience across many platforms"
-msgstr ""
+msgstr "AMP offre une excellente expérience utilisateur dans de nombreuses plates-formes"
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -713,7 +713,7 @@ msgstr ""
 #: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "Play Video"
-msgstr ""
+msgstr "Lire la vidéo"
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Presentation"
