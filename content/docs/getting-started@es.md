@@ -1,5 +1,5 @@
 ---
-$title@: Empezando
+$title: Empezando
 $order: 0
 toc: true
 ---

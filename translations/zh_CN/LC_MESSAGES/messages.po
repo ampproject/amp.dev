@@ -13,7 +13,9 @@ msgid ""
 "speed of AMP and more users consume content on AMP pages, ensure your "
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
-msgstr "越来越多的发布商和广告客户已开始采用 AMP 来为用户提供更畅快、更具吸引力的内容。随着您的客户开始利用 AMP 的高速度，以及更多用户开始在 AMP 网页上浏览内容，您也要确保自己的业务已为未来的发展做好准备。立即将您的技术与 AMP 集成。"
+msgstr ""
+"越来越多的发布商和广告客户已开始采用 AMP 来为用户提供更畅快、更具吸引力的内容。随着您的客户开始利用 AMP 的高速度，以及更多用户开始在 AMP "
+"网页上浏览内容，您也要确保自己的业务已为未来的发展做好准备。立即将您的技术与 AMP 集成。"
 
 #: /content/includes/home.yaml
 msgid "A path to success"
@@ -39,7 +41,9 @@ msgid ""
 " As a result, you can use your existing development resources to create and "
 "serve ads that are faster, lighter and more effective. Creative developer "
 "tools like Google Web Designer will soon support AMP ads as well."
-msgstr "AMP 广告是一种使用 HTML 和 CSS 制作的广告素材格式，并不是一项新技术。因此，您完全可以依靠自己的现有开发资源来制作并投放更畅快、更精简、更高效的广告。"
+msgstr ""
+"AMP 广告是一种使用 HTML 和 CSS "
+"制作的广告素材格式，并不是一项新技术。因此，您完全可以依靠自己的现有开发资源来制作并投放更畅快、更精简、更高效的广告。"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -128,7 +132,9 @@ msgid ""
 "publishers and websites, distribution platforms and tech companies. More than"
 " 1.5B AMP pages have been published to date and 100+ leading analytics, ad "
 "tech and CMS providers support the AMP format."
-msgstr "AMP 的成功推出要归功于数千个开发者、发布商、网站、分发平台以及技术公司的紧密合作。迄今为止，已有超过 15 亿个 AMP 网页被发布；有超过 100 家领先的分析工具、广告技术和内容管理系统提供商支持 AMP 格式。"
+msgstr ""
+"AMP 的成功推出要归功于数千个开发者、发布商、网站、分发平台以及技术公司的紧密合作。迄今为止，已有超过 15 亿个 AMP 网页被发布；有超过 100 "
+"家领先的分析工具、广告技术和内容管理系统提供商支持 AMP 格式。"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -137,7 +143,9 @@ msgid ""
 "moment they’re looking for it. The net result -- they’re more likely to be "
 "engaged with and receptive to your brand’s messages, and more likely to take "
 "the actions you’re guiding them towards like completing a purchase."
-msgstr "AMP 网页通常可在 1 秒内加载完毕。这意味着，当您的目标受众着陆于 AMP 网页时，他们瞬时就能看到自己所要寻找的内容。而由此带来的最终结果便是，他们更有可能与您的品牌信息互动并接受这些信息，且更有可能执行您希望他们在您的引导下会执行的操作，比如完成购买。"
+msgstr ""
+"AMP 网页通常可在 1 秒内加载完毕。这意味着，当您的目标受众着陆于 AMP "
+"网页时，他们瞬时就能看到自己所要寻找的内容。而由此带来的最终结果便是，他们更有可能与您的品牌信息互动并接受这些信息，且更有可能执行您希望他们在您的引导下会执行的操作，比如完成购买。"
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
 #: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
@@ -157,7 +165,10 @@ msgid ""
 "to AMP pages like Twitter, Google and Pinterest. With faster and more secure "
 "ads, AMP ads deliver great advertising experiences too, ensuring every "
 "interaction with a publisher’s brand is a compelling one."
-msgstr "AMP 能提高内容加载速度，持续吸引用户参与互动 - 无论用户的网络之旅是始于发布商自己的网站，还是始于链接至 AMP 网页的平台（例如 Twitter、Google 和 Pinterest）。AMP 广告更畅快、更安全，因此亦能带来出色的广告体验，可确保与发布商品牌的每一次互动都充满吸引力。"
+msgstr ""
+"AMP 能提高内容加载速度，持续吸引用户参与互动 - 无论用户的网络之旅是始于发布商自己的网站，还是始于链接至 AMP 网页的平台（例如 "
+"Twitter、Google 和 Pinterest）。AMP "
+"广告更畅快、更安全，因此亦能带来出色的广告体验，可确保与发布商品牌的每一次互动都充满吸引力。"
 
 #: /content/includes/menu.yaml
 msgid "About"
@@ -254,7 +265,10 @@ msgid ""
 "fully portable and AMP pages are consistently fast no matter how a user gets "
 "to them.  Similarly, AMP ads may be built once and run across all pages, "
 "including non-AMP pages."
-msgstr "AMP 网页的制作流程简单易懂。您通常可在几天内完成对所有归档文件的转换，特别是在您使用 Wordpress 和 Drupal 等热门内容管理系统的情况下。您的团队无需掌握任何特殊技能，也不用费心针对各个分发平台优化您的代码，因为 AMP 格式是一种完全可移植的格式，且 AMP 网页始终都能高速加载，而不受用户访问方式的影响。同样地，AMP 广告只需一次制作即可在所有网页（包括非 AMP 网页）上投放。"
+msgstr ""
+"AMP 网页的制作流程简单易懂。您通常可在几天内完成对所有归档文件的转换，特别是在您使用 Wordpress 和 Drupal "
+"等热门内容管理系统的情况下。您的团队无需掌握任何特殊技能，也不用费心针对各个分发平台优化您的代码，因为 AMP 格式是一种完全可移植的格式，且 AMP "
+"网页始终都能高速加载，而不受用户访问方式的影响。同样地，AMP 广告只需一次制作即可在所有网页（包括非 AMP 网页）上投放。"
 
 #: /content/includes/home.yaml
 msgid "Building the future web, together."
@@ -267,7 +281,9 @@ msgid ""
 "AMP Ads once and deliver a memorable brand experience everywhere. Similarly, "
 "AMP pages can be built once and distributed across a wide variety of "
 "distribution platforms simultaneously."
-msgstr "制作合适的广告、着陆页或网络内容需要花费一定的时间。AMP 广告既可在 AMP 网页上投放，也可在非 AMP 网页上投放；换句话说，您只需制作一次 AMP 广告，即可在所有平台上提供令人难忘的品牌体验。同样地，AMP 网页只需一次制作即可同时分发到各种分发平台上。"
+msgstr ""
+"制作合适的广告、着陆页或网络内容需要花费一定的时间。AMP 广告既可在 AMP 网页上投放，也可在非 AMP 网页上投放；换句话说，您只需制作一次 AMP"
+" 广告，即可在所有平台上提供令人难忘的品牌体验。同样地，AMP 网页只需一次制作即可同时分发到各种分发平台上。"
 
 #: /content/includes/who.yaml
 msgid "CMS"
@@ -299,7 +315,9 @@ msgid ""
 "your campaigns, you have to speed things up. AMP offers a way for you to give"
 " users a faster experience everywhere -- on ads, landing pages or your entire"
 " website."
-msgstr "网页加载时间每增加 1 秒，转化次数即会下降 12&#37;。如果您希望用户与您的品牌互动，并希望提升您的广告系列效果，则必须提高网页加载速度。借助 AMP，您无论在何处（在广告、着陆页或您的整个网站上）都能提供更畅快的用户体验。"
+msgstr ""
+"网页加载时间每增加 1 秒，转化次数即会下降 12&#37;。如果您希望用户与您的品牌互动，并希望提升您的广告系列效果，则必须提高网页加载速度。借助 "
+"AMP，您无论在何处（在广告、着陆页或您的整个网站上）都能提供更畅快的用户体验。"
 
 #: /content/docs/tutorials/create/_blueprint.yaml
 msgid "Create Your First AMP Page"
@@ -354,7 +372,8 @@ msgstr "设计原则"
 msgid "Developer Support"
 msgstr "开发者支持"
 
-#: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
+#: /content/docs/_blueprint.yaml /content/docs/build.md /content/docs/build@es.md
+#: /content/includes/menu.yaml
 msgid "Docs"
 msgstr "文档"
 
@@ -405,7 +424,9 @@ msgid ""
 "web. That means if the Google AMP Cache, the URL API or the library fails it "
 "should be possible for websites and consumption apps to gracefully degrade. "
 "If something works with an AMP cache it should also work without a cache."
-msgstr "确保 AMP 在出现中断/问题时不会影响网络其余部分的正常运行。这意味着，如果 Google AMP 缓存、URL API 或相关库出现故障，网站和消费型应用的运行状况应可以从容地进行降级。如果某项内容使用了 AMP 缓存，那么在没有缓存的情况下，它应该也能正常运作。"
+msgstr ""
+"确保 AMP 在出现中断/问题时不会影响网络其余部分的正常运行。这意味着，如果 Google AMP 缓存、URL API "
+"或相关库出现故障，网站和消费型应用的运行状况应可以从容地进行降级。如果某项内容使用了 AMP 缓存，那么在没有缓存的情况下，它应该也能正常运作。"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -413,7 +434,9 @@ msgid ""
 "and disruptive for a user. AMP Ads are a new way of building ads, making them"
 " as fast as AMP pages to ensure your ads do what they’re meant to do and "
 "deliver the value you’re looking for."
-msgstr "即便是最令人难忘的广告素材，如果它加载速度缓慢且干扰用户，则亦无法实现预期的投放目的。AMP 广告是一种全新的广告制作方式，可使广告像 AMP 网页一样快速呈现，从而确保您的广告能够实现预期的效果，并能为您带来所需的价值。"
+msgstr ""
+"即便是最令人难忘的广告素材，如果它加载速度缓慢且干扰用户，则亦无法实现预期的投放目的。AMP 广告是一种全新的广告制作方式，可使广告像 AMP "
+"网页一样快速呈现，从而确保您的广告能够实现预期的效果，并能为您带来所需的价值。"
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
 #: /content/latest/list-event.html
@@ -426,8 +449,8 @@ msgstr "示例"
 
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
-msgid "FAQs"
-msgstr "常见问题解答"
+msgid "FAQ"
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Faster ads drive better&nbsp;performance"
@@ -471,10 +494,6 @@ msgstr "开始制作"
 msgid "Get started with AMP"
 msgstr "开始使用 AMP"
 
-#: /content/docs/getting-started.md
-msgid "Getting Started"
-msgstr "开始使用"
-
 #: /content/includes/menu.yaml
 msgid "Getting started"
 msgstr "开始使用"
@@ -503,7 +522,9 @@ msgid ""
 "and can hurt your brand. AMP Ads are 3x lighter and the AMP framework "
 "guarantees that these ads only behave as intended so users always have a "
 "positive experience with your&nbsp;brand."
-msgstr "繁杂冗余且无法预测的广告体验不仅会拖慢网页加载速度、浪费用户资金，还会破坏用户对广告客户和发布商的印象。AMP 广告比传统广告精简 3 倍，可帮助确保良好的品牌体验。"
+msgstr ""
+"繁杂冗余且无法预测的广告体验不仅会拖慢网页加载速度、浪费用户资金，还会破坏用户对广告客户和发布商的印象。AMP 广告比传统广告精简 3 "
+"倍，可帮助确保良好的品牌体验。"
 
 #: /content/includes/home.yaml
 msgid "Higher Performance and Engagement"
@@ -726,7 +747,7 @@ msgid ""
 "needed."
 msgstr "优先处理能提升用户体验的事项，但可在必要时做出适当调整。"
 
-#: /views/partials/footer.html:5
+#: /views/partials/footer.html:18
 msgid "Privacy"
 msgstr "隐私权"
 
@@ -747,7 +768,9 @@ msgid ""
 "business model to use, what technology vendors to use, while maintaining and "
 "often improving key performance indicators, such as time spent on page, "
 "return visits, viewability, CTRs and more."
-msgstr "实施 AMP 的发布商可以决定要以何种方式呈现其内容、要使用哪个业务模式、要使用哪些技术供应商，同时维持并经常改善关键绩效指标（例如用户在网页上停留的时间、回访次数、可见度、点击率等）。"
+msgstr ""
+"实施 AMP "
+"的发布商可以决定要以何种方式呈现其内容、要使用哪个业务模式、要使用哪些技术供应商，同时维持并经常改善关键绩效指标（例如用户在网页上停留的时间、回访次数、可见度、点击率等）。"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Publishers:<br>Keep audiences engaged"
@@ -860,7 +883,9 @@ msgid ""
 "should deliver a fantastic user experience and speed is just one part of "
 "that. Only compromise when lack of support for something would stop AMP from "
 "being widely used and deployed."
-msgstr "有些内容可以实现快速加载，却仍会导致糟糕的用户体验。AMP 应该能够提供非凡的用户体验，而速度只是其中的一部分。请仅在缺少某项支持会妨碍 AMP 被广泛使用和部署时进行调整。"
+msgstr ""
+"有些内容可以实现快速加载，却仍会导致糟糕的用户体验。AMP 应该能够提供非凡的用户体验，而速度只是其中的一部分。请仅在缺少某项支持会妨碍 AMP "
+"被广泛使用和部署时进行调整。"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -871,7 +896,12 @@ msgid ""
 "increase in viewability and engagement with AMP ads. Join the <a "
 "href=\"/learn/who-uses-amp/amp-ads/\">AMP Ads Initiative</a> to improve "
 "performance and grow your revenue."
-msgstr "提高广告加载速度是提升效果的最快捷方法。<a href=\"https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md\">AMP 广告</a>可像网页内容一样快速加载，因此具有更高的可见度，且更有可能吸引用户与之互动。采用 AMP 广告后，Triplelift 的广告的可见度和互动度提升了 10&#37;+。加入 <a href=\"/learn/who-uses-amp/amp-ads/\">AMP 广告计划</a>，改善广告效果并增加收入。"
+msgstr ""
+"提高广告加载速度是提升效果的最快捷方法。<a "
+"href=\"https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs"
+"/a4a-readme.md\">AMP 广告</a>可像网页内容一样快速加载，因此具有更高的可见度，且更有可能吸引用户与之互动。采用 AMP "
+"广告后，Triplelift 的广告的可见度和互动度提升了 10&#37;+。加入 <a href=\"/learn/who-uses-amp/amp-"
+"ads/\">AMP 广告计划</a>，改善广告效果并增加收入。"
 
 #: /content/support/developer/stack-overflow.md
 msgid "Stack Overflow Community"
@@ -948,7 +978,9 @@ msgid ""
 " helping everyone deliver a better, faster user experience. Build a "
 "sustainable future for your business on an open, faster web by joining the "
 "AMP Project."
-msgstr "AMP 项目是一个开放源代码计划，旨在通过帮助所有人提供更优质、更畅快的用户体验来保护网络的未来。加入 AMP 项目，基于更快速且开放的网络为您的业务打造一个可持续发展的未来。"
+msgstr ""
+"AMP 项目是一个开放源代码计划，旨在通过帮助所有人提供更优质、更畅快的用户体验来保护网络的未来。加入 AMP "
+"项目，基于更快速且开放的网络为您的业务打造一个可持续发展的未来。"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -956,7 +988,9 @@ msgid ""
 "for all. The project enables the creation of websites and ads that are "
 "consistently fast, beautiful and high-performing across devices and "
 "distribution platforms."
-msgstr "AMP 项目是一个开放源代码计划，旨在为所有人打造更好的网络体验。借助该项目，用户可以打造出在各种设备和分发平台上都能始终如一地快速加载且效果出色的精美网站和广告。"
+msgstr ""
+"AMP "
+"项目是一个开放源代码计划，旨在为所有人打造更好的网络体验。借助该项目，用户可以打造出在各种设备和分发平台上都能始终如一地快速加载且效果出色的精美网站和广告。"
 
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
@@ -965,7 +999,10 @@ msgid ""
 "The Accelerated Mobile Pages (AMP) Project is an open source initiative that "
 "makes it easy for publishers to create mobile-friendly content once and have "
 "it load instantly everywhere. – Accelerated Mobile Pages Project"
-msgstr "Accelerated Mobile Pages (AMP) 项目是一个开放源代码计划。借助它，发布商只需创建一次适合移动设备的内容，即可在所有平台上瞬时加载该内容。– Accelerated Mobile Pages 项目"
+msgstr ""
+"Accelerated Mobile Pages (AMP) "
+"项目是一个开放源代码计划。借助它，发布商只需创建一次适合移动设备的内容，即可在所有平台上瞬时加载该内容。– Accelerated Mobile "
+"Pages 项目"
 
 #: /content/includes/home.yaml /content/includes/menu.yaml
 #: /content/latest/_blueprint.yaml /content/latest/latest.html
@@ -988,7 +1025,11 @@ msgid ""
 "quality user experiences, and establishing yourself as the adtech platform "
 "for the fast web. Join the hundreds of technology platforms currently "
 "supporting the open source AMP ecosystem."
-msgstr "在连接到 3G 网络的情况下，普通的移动版网站所需的加载时间为 19 秒。再加上网页加载时间每增加 1 秒转化次数就会下降 12&#37; 这一事实，您完全可以相信下面这两项假设：速度等于效果；大多数广告客户的广告系列都有改进空间。这就是您应选择 AMP 的理由。作为 SSP、DSP、分析工具提供商或任何类似平台，提高速度即意味着提升广告系列效果、提供优质的用户体验，以及将自己打造成适用于快速网络的广告技术平台。目前支持开放源代码 AMP 生态系统的技术平台已有数百个之多，赶快加入他们吧。"
+msgstr ""
+"在连接到 3G 网络的情况下，普通的移动版网站所需的加载时间为 19 秒。再加上网页加载时间每增加 1 秒转化次数就会下降 12&#37; "
+"这一事实，您完全可以相信下面这两项假设：速度等于效果；大多数广告客户的广告系列都有改进空间。这就是您应选择 AMP 的理由。作为 "
+"SSP、DSP、分析工具提供商或任何类似平台，提高速度即意味着提升广告系列效果、提供优质的用户体验，以及将自己打造成适用于快速网络的广告技术平台。目前支持开放源代码"
+" AMP 生态系统的技术平台已有数百个之多，赶快加入他们吧。"
 
 #: /content/includes/latest.yaml
 msgid ""
@@ -1002,7 +1043,10 @@ msgid ""
 "year including our annual AMP Conference. Follow us on <a href=\"\" "
 "target=\"_blank\">Facebook</a> or <a href=\"https://twitter.com/amphtml\" "
 "target=\"_blank\">Twitter</a> for the latest news and event listings."
-msgstr "暂无即将举办的活动。我们会在一年中的不同时间举办各种活动，包括一年一度的 AMP 会议。请在 <a href=\"\" target=\"_blank\">Facebook</a> 或 <a href=\"https://twitter.com/amphtml\" target=\"_blank\">Twitter</a> 上关注我们，以便及时了解最新资讯和活动信息。"
+msgstr ""
+"暂无即将举办的活动。我们会在一年中的不同时间举办各种活动，包括一年一度的 AMP 会议。请在 <a href=\"\" "
+"target=\"_blank\">Facebook</a> 或 <a href=\"https://twitter.com/amphtml\" "
+"target=\"_blank\">Twitter</a> 上关注我们，以便及时了解最新资讯和活动信息。"
 
 #: /content/learn/amp-design-principles.yaml
 #: /content/learn/amp-design-principles@es.yaml
@@ -1108,7 +1152,11 @@ msgid ""
 "that link to AMP Pages including Google, Bing, LinkedIn and more. These "
 "performance gains often translate in improvements in the numbers that matter,"
 " such as time spent on page, return visits and CTRs."
-msgstr "提高网页加载速度有助于改善用户体验和<a href=\"https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/\">核心业务指标</a>。AMP 网页几乎可瞬时完成加载，让您能在所有设备和链接至 AMP 网页的平台（包括 Google、Bing、LinkedIn 等）上提供始终如一的畅快体验。这些性能优势通常能使重要数值（例如用户在网页上停留的时间、回访次数和点击率）有所提高。"
+msgstr ""
+"提高网页加载速度有助于改善用户体验和<a href=\"https://www.doubleclickbygoogle.com/articles"
+"/mobile-speed-matters/\">核心业务指标</a>。AMP 网页几乎可瞬时完成加载，让您能在所有设备和链接至 AMP 网页的平台（包括"
+" Google、Bing、LinkedIn "
+"等）上提供始终如一的畅快体验。这些性能优势通常能使重要数值（例如用户在网页上停留的时间、回访次数和点击率）有所提高。"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -1125,7 +1173,10 @@ msgid ""
 "AMP should be fast in today's browsers. When certain optimizations aren't "
 "possible with today's platform, AMP developers should participate in "
 "standards development to get these added to the web platform."
-msgstr "本着[可扩展网络宣言](https://github.com/extensibleweb/manifesto/blob/master/README.md)的精神，我们选择将 AMP 构建成一个库，以便能够修正现今（而非未来）的网络。AMP 网页应能在现今的浏览器中快速加载。如果现今的平台无法实施某些优化方案，AMP 开发者应参与制定相关标准，以便将这些优化方案添加到网络平台中。"
+msgstr ""
+"本着[可扩展网络宣言](https://github.com/extensibleweb/manifesto/blob/master/README.md)的精神，我们选择将"
+" AMP 构建成一个库，以便能够修正现今（而非未来）的网络。AMP 网页应能在现今的浏览器中快速加载。如果现今的平台无法实施某些优化方案，AMP "
+"开发者应参与制定相关标准，以便将这些优化方案添加到网络平台中。"
 
 #: /content/includes/home.yaml
 msgid "What AMP Provides"

@@ -1,6 +1,6 @@
 ﻿$title: Visão geral
 $titles:
-  breadcrumb@: O que são as AMP
+  breadcrumb: O que são as AMP
 $order: 0
 class: about-overview
 $view: /views/about-overview.html
