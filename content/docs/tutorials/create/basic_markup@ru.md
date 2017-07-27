@@ -11,7 +11,7 @@ $title: Создание страницы AMP HTML
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ $title: Создание страницы AMP HTML
   - Начинаться с типа документа `<!doctype html>`.
   - Содержать тег верхнего уровня `<html ⚡>` (также допускается использование `<html amp>`).
   - Содержать теги `<head>` и `<body>` (необязательные в разметке HTML).
-  - Содержать внутри заголовка тег `<link rel="canonical" href="$SOME_URL" />`, который указывает на обычную HTML-версию документа AMP HTML или на сам исходный документ, если такой версии не существует.
+  - Содержать внутри заголовка тег `<link rel="canonical" href="$SOME_URL">`, который указывает на обычную HTML-версию документа AMP HTML или на сам исходный документ, если такой версии не существует.
   - Содержать тег `<meta charset="utf-8">` в качестве первого дочернего элемента тега заголовка.
   - Содержать в теге заголовка тег `<meta name="viewport" content="width=device-width,minimum-scale=1">`. Также рекомендуется включить в него значение initial-scale=1.
   - Содержать в качестве последнего элемента заголовка тег `<script async src="https://cdn.ampproject.org/v0.js"></script>`, который указывает и загружает библиотеку AMP JS.

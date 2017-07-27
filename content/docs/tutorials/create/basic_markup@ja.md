@@ -11,7 +11,7 @@ $title: AMP HTML ページを作成する
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ AMP HTML ドキュメントが満たすべき条件は以下のとおりです�
   - `<!doctype html>` という文書型宣言で開始する。
   - 最上位階層のタグを `<html ⚡>`（`<html amp>` でも可）にする。
   - `<head>` タグと `<body>` タグ（HTML ではどちらも任意）を含める。
-  - ヘッド部に `<link rel="canonical" href="$SOME_URL" />` タグを入れて、AMP HTML 版の通常の HTML バージョンを指定する。該当する HTML が存在しない場合は自身を指定する。
+  - ヘッド部に `<link rel="canonical" href="$SOME_URL">` タグを入れて、AMP HTML 版の通常の HTML バージョンを指定する。該当する HTML が存在しない場合は自身を指定する。
   - head タグの最初の子要素を `<meta charset="utf-8">` タグにする。
   - head タグ内に `<meta name="viewport" content="width=device-width,minimum-scale=1">` タグを含める。initial-scale=1 も入れることをお勧めします。
   - head タグの最後の要素を `<script async src="https://cdn.ampproject.org/v0.js"></script>` タグにする（これによって AMP JS ライブラリがインクルードされ、読み込まれます）。

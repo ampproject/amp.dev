@@ -101,7 +101,7 @@ gulp.task('generate-asset-manifest', function (cb) {
 
     // Add "static" to the path
     entries.forEach(entry => {
-      entry.url = '/static' + entry.url;
+      entry.url = '/static/' + entry.url;
     });
 
     fs.readFile('./pwa/service-worker.js', 'utf8', (err, data) => {

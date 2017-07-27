@@ -11,7 +11,7 @@ Skopiuj go i zapisz w pliku z rozszerzeniem .html.
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ Dokumenty AMP HTML MUSZĄ:
   - Zaczynać się od deklaracji doctype `<!doctype html>`.
   - Zawierać znacznik `<html ⚡>` najwyższego poziomu (akceptowany jest również znacznik `<html amp>`).
   - Zawierać znaczniki `<head>` i `<body>` (w języku HTML są one opcjonalne).
-  - Zawierać w sekcji head znacznik `<link rel="canonical" href="$SOME_URL" />` wskazujący wersję dokumentu AMP HTML w zwykłym HTML lub ten sam dokument, jeśli taka wersja HTML nie istnieje.
+  - Zawierać w sekcji head znacznik `<link rel="canonical" href="$SOME_URL">` wskazujący wersję dokumentu AMP HTML w zwykłym HTML lub ten sam dokument, jeśli taka wersja HTML nie istnieje.
   - Zawierać znacznik `<meta charset="utf-8">` jako pierwszy element podrzędny znacznika head.
   - Zawierać znacznik `<meta name="viewport" content="width=device-width,minimum-scale=1">` wewnątrz znacznika head. Zalecane jest także dodanie atrybutu initial-scale=1.
   - Zawierać znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` jako ostatni element w sekcji head (służy do dołączenia i ładowania biblioteki AMP JS).
