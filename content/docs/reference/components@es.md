@@ -52,69 +52,70 @@ Muestra una notificación descartable para el usuario. |
 
 | Componente | Descripción |
 | --------- | ----------- |
-| [`amp-accordion`](components/amp-accordion.html) | Provides a way for viewers to have a glance at the outline of the content and jump to a section of their choice at will. |
-| [`amp-app-banner`](components/amp-app-banner.html) | A wrapper and minimal UI for a cross-platform, fixed-position banner showing a call-to-action to install an app. |
-| [`amp-carousel`](components/amp-carousel.html) | Displays multiple similar pieces of content along a horizontal axis. |
-| [`amp-fx-flying-carpet`](components/amp-fx-flying-carpet.html) | Wraps its children in a unique full-screen scrolling container allowing you to display a full-screen ad without taking up the entire viewport. |
-| [`amp-fx-parallax`](components/amp-fx-parallax.html) |  An attribute that enables a 3D-perspective effect on an element. |
-| [`amp-iframe`](components/amp-iframe.html) | Displays an iframe. |
-| [`amp-lightbox`](components/amp-lightbox.html) | Allows for a “lightbox” or similar experience. |
-| [`amp-sidebar`](components/amp-sidebar.html) | Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. |
+| [`amp-accordion`](components/amp-accordion.html) | Proporciona una manera para que los lectores tengan una mirada en el contorno del contenido y salten a una sección de su elección a voluntad. |
+| [`amp-app-banner`](components/amp-app-banner.html) | Un contenedor y una interfaz de usuario mínima para un banner de posición fija cruzada y que muestra una llamada a la acción para instalar una aplicación. |
+| [`amp-carousel`](components/amp-carousel.html) | Muestra varias piezas similares de contenido a lo largo de un eje horizontal. |
+| [`amp-fx-flying-carpet`](components/amp-fx-flying-carpet.html) | Envuelve a sus hijos en un único contenedor de desplazamiento a pantalla completa que le permite mostrar un anuncio de pantalla completa sin ocupar toda la ventana de visualización. |
+| [`amp-fx-parallax`](components/amp-fx-parallax.html) |  Un atributo que permite un efecto de perspectiva 3D en un elemento. |
+| [`amp-iframe`](components/amp-iframe.html) | Muestra un iframe. |
+| [`amp-lightbox`](components/amp-lightbox.html) | Permite “lightbox” o experiencia similar. |
+| [`amp-sidebar`](components/amp-sidebar.html) | Proporciona una forma de mostrar meta contenido destinado al acceso temporal, como navegación, enlaces, botones, menús. |
 
 
 ### Media
 
 | Componente | Descripción |
 | --------- | ----------- |
-| [`amp-3q-player`](components/amp-3q-player.html) | Embeds videos from [3Q SDN.](https://www.3qsdn.com) |
-| [`amp-anim`](components/amp-anim.html) | Manages an animated image, typically a GIF. |
-| [`amp-apester-media`](components/amp-apester-media.html) | Displays an [Apester](https://apester.com/) smart unit. |
-| [`amp-audio`](components/amp-audio.html) | Replaces the HTML5 `audio` tag. |
-| [`amp-brid-player`](components/amp-brid-player.html) | Displays a [Brid.tv](https://www.brid.tv/) player. |
-| [`amp-brightcove`](components/amp-brightcove.html) | Displays a Brightcove [Video Cloud](https://www.brightcove.com/en/online-video-platform) or [Perform](https://www.brightcove.com/en/perform) player. |
-| [`amp-dailymotion`](components/amp-dailymotion.html) | Displays a [Dailymotion](https://www.dailymotion.com) video. |
-| [`amp-google-vrview-image`](components/amp-google-vrview-image) | Displays a VR image. |
-| [`amp-hulu`](components/amp-hulu.html) | Displays a simple embedded [Hulu](http://www.hulu.com/) video. |
-| [`amp-ima-video`](components/amp-ima-video.html) | Embeds a video player for instream video ads that are integrated with the [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/). |
-| [`amp-image-lightbox`](components/amp-image-lightbox.html) | Allows for an “image lightbox” or similar experience. |
-| [`amp-img`](components/amp-img.html)  | Replaces the HTML5 `img` tag. |
-| [`amp-izlesene`](components/amp-izlesene.html)  | Displays an [Izlesene](https://www.izlesene.com/) video. |
-| [`amp-jwplayer`](components/amp-jwplayer.html) | Displays a cloud-hosted [JW Player](https://www.jwplayer.com/). |
-| [`amp-kaltura-player`](components/amp-kaltura-player.html) | Displays the Kaltura Player as used in [Kaltura's Video Platform](https://corp.kaltura.com/). |
-| [`amp-nexxtv-player`](components/amp-nexxtv-player.html) | Displays a media stream from the nexxOMNIA platform. |
-| [`amp-o2-player`](components/amp-o2-player.html) | Displays an [AOL O2Player](http://on.aol.com/). |
-| [`amp-ooyala-player`](components/amp-ooyala-player.html) |  Displays an [Ooyala](https://www.ooyala.com/) video. |
-| [`amp-playbuzz`](components/amp-playbuzz.html) |  Displays any [Playbuzz](http://www.playbuzz.com/) content (e.g., list, poll, etc.). |
-| [`amp-reach-player`](components/amp-reach-player.html) | Displays a [Beachfront Reach](https://beachfrontreach.com/) video player. |
-| [`amp-soundcloud`](components/amp-soundcloud.html) | Displays a [Soundcloud](https://soundcloud.com/) clip. |
-| [`amp-springboard-player`](components/amp-springboard-player.html) | Displays a [Springboard Platform](http://publishers.springboardplatform.com/users/login) video player. |
-| [`amp-video`](components/amp-video.html) | Replaces the HTML5 `video` tag. |
-| [`amp-vimeo`](components/amp-vimeo.html) | Displays a [Vimeo](https://vimeo.com/) video. |
-| [`amp-youtube`](components/amp-youtube.html) | Displays a [YouTube](https://www.youtube.com/) video. |
+| [`amp-3q-player`](components/amp-3q-player.html) | Inserta videos desde [3Q SDN.](https://www.3qsdn.com) |
+| [`amp-anim`](components/amp-anim.html) | Gestiona una imagen animada, normalmente un GIF. |
+| [`amp-apester-media`](components/amp-apester-media.html) | Muestra una unidad inteligente [Apester](https://apester.com/). |
+| [`amp-audio`](components/amp-audio.html) | Reemplaza la etiqueta HTML5 `audio`. |
+| [`amp-brid-player`](components/amp-brid-player.html) | Muestra el reproductor [Brid.tv](https://www.brid.tv/). |
+| [`amp-brightcove`](components/amp-brightcove.html) | Muestra el [Brighcove Video Cloud](https://www.brightcove.com/en/online-video-platform) o el reproductor [Perform](https://www.brightcove.com/en/perform). |
+| [`amp-dailymotion`](components/amp-dailymotion.html) | Muestra un video de [Dailymotion](https://www.dailymotion.com). |
+| [`amp-google-vrview-image`](components/amp-google-vrview-image) | Muestra una imagen VR. |
+| [`amp-hulu`](components/amp-hulu.html) | Muestra un video insertado de [Hulu](http://www.hulu.com/). |
+| [`amp-ima-video`](components/amp-ima-video.html) | Inserta un reproductor de video para videos de anuncios integrados desde [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/). |
+| [`amp-image-lightbox`](components/amp-image-lightbox.html) | Permite un “image lightbox” o experiencia similar. |
+| [`amp-img`](components/amp-img.html)  | Reemplaza la etiqueta HTML5 `img`. |
+| [`amp-izlesene`](components/amp-izlesene.html)  | Muestra un video [Izlesene](https://www.izlesene.com/). |
+| [`amp-jwplayer`](components/amp-jwplayer.html) | Muestra un cloud-hosted [JW Player](https://www.jwplayer.com/). |
+| [`amp-kaltura-player`](components/amp-kaltura-player.html) | Muestra el reproductor Kaltura Player como se usa en [Kaltura's Video Platform](https://corp.kaltura.com/). |
+| [`amp-nexxtv-player`](components/amp-nexxtv-player.html) | Muestra un flujo de medios de la plataforma nexxOMNIA. |
+| [`amp-o2-player`](components/amp-o2-player.html) | Muestra un reproductor [AOL O2Player](http://on.aol.com/). |
+| [`amp-ooyala-player`](components/amp-ooyala-player.html) |  Muestra un video [Ooyala](https://www.ooyala.com/). |
+| [`amp-playbuzz`](components/amp-playbuzz.html) |  Muestra cualquier contenido desde [Playbuzz](http://www.playbuzz.com/) (por ejemplo listas, encuestas, etc.). |
+| [`amp-reach-player`](components/amp-reach-player.html) | Muestra el reproductor de videos [Beachfront Reach](https://beachfrontreach.com/). |
+| [`amp-soundcloud`](components/amp-soundcloud.html) | Muestra un clip de [Soundcloud](https://soundcloud.com/). |
+| [`amp-springboard-player`](components/amp-springboard-player.html) | Muestra el reproductor de videos de[Springboard Platform](http://publishers.springboardplatform.com/users/login). |
+| [`amp-video`](components/amp-video.html) | Reemplaza la etiqueta `video`. |
+| [`amp-vimeo`](components/amp-vimeo.html) | Muestra un video de [Vimeo](https://vimeo.com/). |
+| [`amp-youtube`](components/amp-youtube.html) | Muestra un video de [YouTube](https://www.youtube.com/). |
 
 ### Presentación
 
 | Componente | Descripción |
 | --------- | ----------- |
-| [`amp-animation`](components/amp-animation.html) | Defines and displays an animation. |
-| [`amp-dynamic-css-classes`](components/amp-dynamic-css-classes.html) | Adds several dynamic CSS class names onto the HTML element. |
-| [`amp-fit-text`](components/amp-fit-text.html) | Expands or shrinks font size to fit the content within the space given. |
-| [`amp-font`](components/amp-font.html) | Triggers and monitors the loading of custom fonts. |
-| [`amp-timeago`](components/amp-timeago.html) | Provides fuzzy timestamps by formatting dates as "*** time ago" (for example, 3 hours ago). |
-| [`amp-viz-vega`](components/amp-viz-vega.html) | Displays visualizations created by using [Vega](https://vega.github.io/vega/) visualization grammar.|
+| [`amp-animation`](components/amp-animation.html) | Define y muestra una animación. |
+| [`amp-dynamic-css-classes`](components/amp-dynamic-css-classes.html) | Agrega varios nombres de clase CSS dinámicos al elemento HTML.  |
+| [`amp-fit-text`](components/amp-fit-text.html) | Expande o reduce el tamaño de la fuente para que se ajuste al contenido dentro del espacio dado. |
+| [`amp-font`](components/amp-font.html) | Activa y supervisa la carga de las fuentes personalizadas. |
+| [`amp-timeago`](components/amp-timeago.html) | Proporciona marcas de tiempo difusas mediante el formato de fechas como "***hace tiempo***" (por ejemplo, hace 3 horas) |
+| [`amp-viz-vega`](components/amp-viz-vega.html) | Muestra visualizaciones creadas por [Vega](https://vega.github.io/vega/).|
+
 
 
 ### Social
 
 | Componente | Descripción |
 | --------- | ----------- |
-| [`amp-facebook-comments`](components/amp-facebook-comments.html) | Embeds the Facebook comments plugin. |
-| [`amp-facebook-like`](components/amp-facebook-like.html) | Embeds the Facebook like button plugin. |
-| [`amp-facebook`](components/amp-facebook.html) | Displays a Facebook post or video. |
-| [`amp-gfycat`](components/amp-gfycat.html) | Displays a [Gfycat](https://gfycat.com) video GIF. |
-| [`amp-instagram`](components/amp-instagram.html) | Displays an Instagram embed. |
-| [`amp-pinterest`](components/amp-pinterest.html) | Displays a Pinterest widget or Pin It button. |
-| [`amp-reddit`](components/amp-reddit.html) |  Displays a Reddit comment or post embed. |
-| [`amp-social-share`](components/amp-social-share.html) | Displays a social share button. |
-| [`amp-twitter`](components/amp-twitter.html) | Displays a Twitter tweet. |
-| [`amp-vine`](components/amp-vine.html) | Displays a Vine simple embed. |
+| [`amp-facebook-comments`](components/amp-facebook-comments.html) | Inserta el complemento de comentarios de Facebook. |
+| [`amp-facebook-like`](components/amp-facebook-like.html) | Inserta el Facebook like button plugin. |
+| [`amp-facebook`](components/amp-facebook.html) | Muestra un post o video de Facebook. |
+| [`amp-gfycat`](components/amp-gfycat.html) | Muestra un video GIF de [Gfycat](https://gfycat.com). |
+| [`amp-instagram`](components/amp-instagram.html) | Muestra un Instagram embed. |
+| [`amp-pinterest`](components/amp-pinterest.html) | Muestra un Pinterest widget o el botón Pin It. |
+| [`amp-reddit`](components/amp-reddit.html) |  Muestra un comentario de Reddit o inserta un post. |
+| [`amp-social-share`](components/amp-social-share.html) | Muestra botones sociales -para compartir. |
+| [`amp-twitter`](components/amp-twitter.html) | Muestra un tweet de Twitter. |
+| [`amp-vine`](components/amp-vine.html) | Muestra un video insertado desde Vine. |
