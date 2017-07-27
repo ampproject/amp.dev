@@ -1,5 +1,5 @@
 core:
-  title: AMP pages are built with 3 core components.
+  title: Страницы AMP построены с 3-мя основными компонентами.
   components:
     - title: AMP HTML
       subtitle: |
@@ -49,3 +49,13 @@ core:
         что позволяет увидеть, как сложные изменения кода
         могут повлиять на производительность и интерфейс пользователя.
         <p>Ознакомьтесь с дополнительной информацией о [тестировании страниц AMP HTML](/ru/docs/guides/debug/validate.html).
+
+video:
+  id: 5Yjoe54vzwE
+  line1_img: lines3.svg
+  line2_img: line4.svg
+
+cta:
+  title: Узнайте, что может сделать AMP для вас
+  link_text: Узнайте, кто использует AMP
+  link_url: /content/learn/case-studies.html

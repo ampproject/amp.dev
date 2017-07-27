@@ -1,5 +1,5 @@
 core:
-  title: AMP pages are built with 3 core components.
+  title: يتم بناء صفحات أمب مع 3 مكونات أساسية.
   components:
     - title: AMP HTML
       subtitle: |
@@ -49,3 +49,13 @@ core:
         مما يتيح لك مشاهدة كيف قد تؤثر التغييرات المعقّدة في الشفرة
         على الأداء وانطباع المستخدم.
         <p>تعرّف على المزيد بشأن [اختبار صفحات <span dir="ltr" class="nowrap">AMP HTML</span>](/ar/docs/guides/debug/validate.html).
+
+video:
+  id: 5Yjoe54vzwE
+  line1_img: lines3.svg
+  line2_img: line4.svg
+
+cta:
+  title: ترى ما يمكن أمب القيام به بالنسبة لك
+  link_text: تعرف على من يستخدم أمب
+  link_url: /content/learn/case-studies.html
