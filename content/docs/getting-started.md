@@ -1,5 +1,5 @@
 ---
-$title@: Getting Started
+$title: Getting Started
 $order: 0
 toc: true
 ---

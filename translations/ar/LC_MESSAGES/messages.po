@@ -14,9 +14,9 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
-"عدد متزايد من الناشرين والمستشهرين يعتمدون AMP لتحرير محتوى أسرع و أفضل ونشره لمستخدميهم."
-"ما إن يتبنى حرفاؤك سرعة AMP ويبدأ المستخدون استهلاك محتوى أكثر حتى تتأكد أن شركتك على"
-"درب المستقبل. ابدأ دمج تكنولوجيتك مع AMP اليوم."
+"عدد متزايد من الناشرين والمستشهرين يعتمدون AMP لتحرير محتوى أسرع و أفضل ونشره"
+" لمستخدميهم.ما إن يتبنى حرفاؤك سرعة AMP ويبدأ المستخدون استهلاك محتوى أكثر "
+"حتى تتأكد أن شركتك علىدرب المستقبل. ابدأ دمج تكنولوجيتك مع AMP اليوم."
 
 #: /content/includes/home.yaml
 msgid "A path to success"
@@ -35,8 +35,8 @@ msgid ""
 "AMP Ads are 6x faster than regular ads on AMP pages, making them more "
 "viewable, more effective and more likely to perform&nbsp;well."
 msgstr ""
-"اعلانات AMP أسرع بـ6 مرّات من الإعلانات العادية على صفحات AMP, مما يجعلها"
-" مرئية أكثر، فعّالة أكثر وأكثر احتمالا لأن تكون ذات أداء جيد."
+"اعلانات AMP أسرع بـ6 مرّات من الإعلانات العادية على صفحات AMP, مما يجعلها "
+"مرئية أكثر، فعّالة أكثر وأكثر احتمالا لأن تكون ذات أداء جيد."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -45,10 +45,10 @@ msgid ""
 "serve ads that are faster, lighter and more effective. Creative developer "
 "tools like Google Web Designer will soon support AMP ads as well."
 msgstr ""
-"اعلانات AMP هي تصميم جديد مبني على تكنولوجيا الـ HTML والـ CSS وليست تكنولوجيا"
-" جديدة. هذا يعني أنه يمكنك استعمال موارد التطوير الموجودة عندك لانشاء و نشر"
-" اعلانات اسرع, أخف و اكثر فاعلية. أدوات التطوير الجديدة مثل Google Web Designer "
-" ستدعم AMP عن قريب."
+"اعلانات AMP هي تصميم جديد مبني على تكنولوجيا الـ HTML والـ CSS وليست "
+"تكنولوجيا جديدة. هذا يعني أنه يمكنك استعمال موارد التطوير الموجودة عندك "
+"لانشاء و نشر اعلانات اسرع, أخف و اكثر فاعلية. أدوات التطوير الجديدة مثل "
+"Google Web Designer  ستدعم AMP عن قريب."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -363,7 +363,8 @@ msgstr ""
 msgid "Developer Support"
 msgstr ""
 
-#: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
+#: /content/docs/_blueprint.yaml /content/docs/build.md /content/docs/build@es.md
+#: /content/includes/menu.yaml
 msgid "Docs"
 msgstr "المستندات"
 
@@ -435,7 +436,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
-msgid "FAQs"
+msgid "FAQ"
 msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
@@ -478,10 +479,6 @@ msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
-msgstr ""
-
-#: /content/docs/getting-started.md
-msgid "Getting Started"
 msgstr ""
 
 #: /content/includes/menu.yaml
@@ -735,7 +732,7 @@ msgid ""
 "needed."
 msgstr ""
 
-#: /views/partials/footer.html:5
+#: /views/partials/footer.html:18
 msgid "Privacy"
 msgstr ""
 

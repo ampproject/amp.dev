@@ -358,7 +358,8 @@ msgstr "Design Prinzipien"
 msgid "Developer Support"
 msgstr ""
 
-#: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
+#: /content/docs/_blueprint.yaml /content/docs/build.md /content/docs/build@es.md
+#: /content/includes/menu.yaml
 msgid "Docs"
 msgstr "Dokumentation"
 
@@ -430,8 +431,8 @@ msgstr "Beispiele"
 
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
-msgid "FAQs"
-msgstr "Häufige Fragen"
+msgid "FAQ"
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Faster ads drive better&nbsp;performance"
@@ -474,10 +475,6 @@ msgstr ""
 #: /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
 msgstr ""
-
-#: /content/docs/getting-started.md
-msgid "Getting Started"
-msgstr "Erste Schritte"
 
 #: /content/includes/menu.yaml
 msgid "Getting started"
@@ -730,7 +727,7 @@ msgid ""
 "needed."
 msgstr ""
 
-#: /views/partials/footer.html:5
+#: /views/partials/footer.html:18
 msgid "Privacy"
 msgstr ""
 
