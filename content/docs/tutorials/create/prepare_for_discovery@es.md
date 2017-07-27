@@ -29,4 +29,8 @@ Si solo tienes una página y es AMP, debes agregarle el vínculo canónico. Este
 <link rel="canonical" href="https://www.ejemplo.com/url/al/documento/amp.html">
 [/sourcecode]
 
+{% call callout('Leer más', type='read') %}
+Aprende más sobre cómo Google encuentra las páginas AMP en las [Directrices de la Búsqueda de Google para las páginas de AMP](https://support.google.com/webmasters/answer/6340290).
+{% endcall %}
+
 <a class="go-button button" href="/es/docs/tutorials/create/publish.html">Continuar con el paso 6</a>
