@@ -354,7 +354,8 @@ msgstr ""
 msgid "Developer Support"
 msgstr ""
 
-#: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
+#: /content/docs/_blueprint.yaml /content/docs/build.md /content/docs/build@es.md
+#: /content/includes/menu.yaml
 msgid "Docs"
 msgstr "เอกสาร"
 
@@ -426,7 +427,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
-msgid "FAQs"
+msgid "FAQ"
 msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
@@ -469,10 +470,6 @@ msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
-msgstr ""
-
-#: /content/docs/getting-started.md
-msgid "Getting Started"
 msgstr ""
 
 #: /content/includes/menu.yaml
@@ -726,7 +723,7 @@ msgid ""
 "needed."
 msgstr ""
 
-#: /views/partials/footer.html:5
+#: /views/partials/footer.html:18
 msgid "Privacy"
 msgstr ""
 

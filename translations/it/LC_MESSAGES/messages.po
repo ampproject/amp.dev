@@ -397,7 +397,8 @@ msgstr "Principi di progettazione"
 msgid "Developer Support"
 msgstr "Supporto per gli sviluppatori"
 
-#: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
+#: /content/docs/_blueprint.yaml /content/docs/build.md /content/docs/build@es.md
+#: /content/includes/menu.yaml
 msgid "Docs"
 msgstr "Documentazione"
 
@@ -479,8 +480,8 @@ msgstr "Esempi"
 
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
-msgid "FAQs"
-msgstr "FAQ"
+msgid "FAQ"
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Faster ads drive better&nbsp;performance"
@@ -523,10 +524,6 @@ msgstr "Inizia a costruire"
 #: /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
 msgstr "Avviarsi con AMP"
-
-#: /content/docs/getting-started.md
-msgid "Getting Started"
-msgstr "Iniziare"
 
 #: /content/includes/menu.yaml
 msgid "Getting started"
@@ -787,7 +784,7 @@ msgstr ""
 "Priorità delle cose che migliorano l'esperienza dell'utente, ma compromesso "
 "quando necessario."
 
-#: /views/partials/footer.html:5
+#: /views/partials/footer.html:18
 msgid "Privacy"
 msgstr "Privacy"
 
