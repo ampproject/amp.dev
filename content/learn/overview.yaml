@@ -73,11 +73,11 @@ core:
           <p>Learn more about [testing your AMP HTML pages](/docs/guides/validate.html).
 
 video:
-  id: lBTCB7yLs8Y
+  id: 5Yjoe54vzwE
   line1_img: lines3.svg
   line2_img: line4.svg
 
 cta:
-  title@: See what AMP can do for you
-  link_text@: Learn who uses AMP
+  title: See what AMP can do for you
+  link_text: Learn who uses AMP
   link_url: /content/learn/case-studies.html

@@ -148,7 +148,7 @@ msgstr ""
 #: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "AMP provides a great user experience across many platforms"
-msgstr ""
+msgstr "AMP ให้ประสบการณ์การใช้งานที่ยอดเยี่ยมในหลายแพลตฟอร์ม"
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -699,7 +699,7 @@ msgstr ""
 #: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "Play Video"
-msgstr ""
+msgstr "เล่นวีดีโอ"
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Presentation"
