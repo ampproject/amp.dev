@@ -1,7 +1,14 @@
 ---
 $title: Validar páginas de AMP
+$order: 0
+$category: Debug
+toc: true
+components:
+    - youtube
 ---
 [TOC]
+
+{{ youtube('npum8JsITQE', 480, 270, caption='Watch our video about the various validation options.') }}
 
 La ventaja principal de AMP no es solo que aumenta la velocidad de tus páginas, sino que las hace rápidas de una forma que se puede *validar*. De este modo, las plataformas de terceros, como Twitter, Instagram o la Búsqueda de Google, pueden mostrar más predisposición a la hora de ofrecer páginas de AMP a los lectores de formas cada vez más interesantes.
 
@@ -17,14 +24,17 @@ Además de la validación de AMP, también es posible que desees confirmar que t
 
 El validador de AMP viene con la biblioteca AMP JS, por lo que está disponible en todas las páginas de AMP desde el primer momento. Para llevar a cabo la validación, sigue estos pasos:
 
-  * Abre la página de AMP en el navegador.
-  * Añade "`#development=1`" a la URL, por ejemplo,
+  1. Abre la página de AMP en el navegador.
+  1. Añade "`#development=1`" a la URL, por ejemplo,
 `http://localhost:8000/released.amp.html#development=1`.
-  * Abre la [consola DevTools de Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) y comprueba si hay errores de validación.
+  1. Abre la [consola DevTools de Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) y comprueba si hay errores de validación.
 
 Los errores se mostrarán en Developer Console de una forma similar a esta:
 
-<amp-img src="/static/img/docs/validator_errors.png" width="713" height="243" layout="responsive" alt="Grabación de pantalla de errores del validador de AMP en Developer Console de Google Chrome"></amp-img>
+<amp-img src="/static/img/docs/validator_errors.png"
+         width="713" height="243" layout="responsive"
+         alt="Screen grab of AMP Validator errors in chrome developer console">
+</amp-img>
 
 
 ### Interfaz web
@@ -34,7 +44,10 @@ en [validator.ampproject.org](https://validator.ampproject.org/). Esta interfaz 
 La interfaz es un editor interactivo: cambia al resultado del código fuente HTML en
 una revalidación interactiva.
 
-<amp-img src="/static/img/docs/validator_web_ui.png" width="660" height="507" layout="responsive" alt="Grabación de pantalla de validator.ampproject.org con ejemplos de errores."></amp-img>
+<amp-img src="/static/img/docs/validator_web_ui.png"
+         width="660" height="507" layout="responsive"
+         alt="Screen grab of validator.ampproject.org with error examples.">
+</amp-img>
 
 
 ### Extensión del navegador
@@ -204,7 +217,7 @@ Si el servicio de validación de AMP detecta que algo va mal con tu página, no 
 La mayoría de los errores de validación son fáciles de abordar y solucionar. Ten en cuenta esta etiqueta HTML:
 
 [sourcecode:html]
-<img src="cat.png">`
+<img src="cat.png">
 [/sourcecode]
 
 Esta etiqueta genera el error de validación de AMP que se muestra en estas diferentes herramientas:
