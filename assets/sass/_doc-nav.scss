@@ -25,6 +25,13 @@
     h1 {
       font-size: 40px;
     }
+
+    a {
+    color: $color-white;
+    font-size: 40px;
+    text-transform: none;
+    font-weight: 200;
+    }
   }
 
   .current-sections {
