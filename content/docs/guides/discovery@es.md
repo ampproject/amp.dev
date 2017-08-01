@@ -1,9 +1,5 @@
 ---
 $title: Hacer que una página sea visible
-$order: 1
-$category: Deploy
-
-toc: true
 ---
 [TOC]
 
