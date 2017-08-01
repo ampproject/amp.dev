@@ -1,9 +1,5 @@
 ---
 $title: Contribuciones
-$order: 0
-$path: /contribute/
-$localization:
-  path: /{locale}/{base}/
 ---
 
 El proyecto AMP no sería posible sin la ayuda de todos los miembros de la comunidad, ya sean desarrolladores, creadores de contenido o proveedores de servicios relacionados con AMP. Puedes contribuir a este proyecto de diversas formas.
