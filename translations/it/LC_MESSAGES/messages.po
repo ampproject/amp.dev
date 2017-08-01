@@ -26,7 +26,7 @@ msgstr "Un percorso verso il successo"
 
 #: /views/amp-ads.html:249
 msgid "AMP Ad"
-msgstr "AMP Ad"
+msgstr "Annunci AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "AMP Ads"
@@ -110,7 +110,7 @@ msgstr "Specifiche HTML AMP"
 
 #: /views/amp-ads.html:252
 msgid "AMP Landing Page"
-msgstr "AMP Landing Page"
+msgstr "Pagina di destinazione AMP"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
