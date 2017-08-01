@@ -85,7 +85,7 @@ Ejemplo:
 
 Puedes encontrar más ejemplos en la [carpeta de ejemplos de ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), que incluye la sintaxis de atributo HTML alternativa).
 
-{% call callout('Read on', type='read') %} Visita estas páginas para más información sobre datos estructurados:
+{% call callout('Leer más', type='read') %} Visita estas páginas para más información sobre datos estructurados:
 
 * Aprende cómo [Estructurar tu contenido para aparecer en Google como resultado enriquecido](https://developers.google.com/search/docs/guides/mark-up-content) (por ejemplo, top stories carousel, recipe cards, etc.).
 * Prueba tus datos estructurados con la [herramienta de pruebas de datos estructurados](https://developers.google.com/structured-data/testing-tool/).
