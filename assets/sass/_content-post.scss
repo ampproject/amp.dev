@@ -33,6 +33,56 @@
   }
 }
 
+/* tutorial image */
+
+  .img-right  {
+    display: inline-block;
+    float: right;
+    margin-left: 25px;
+    min-width: 350px;
+  }
+
+/* previous & next buttons */
+
+.prev-next-buttons {
+  width: 100%;
+  display: inline-block;
+  padding-top: 30px;
+}
+
+.prev-button {
+  text-align: left;
+  float: left;
+}
+
+.next-button {
+  text-align: right;
+  float: right;
+}
+
+.arrow-prev {
+  &::before {
+    background: url(/static/img/arrow.svg) center/cover no-repeat;
+    content: '';
+    display: inline-block;
+    height: 12px;
+    margin-right: 10px;
+    width: 12px;
+    transform: rotate(180deg);
+  }
+}
+
+.arrow-next {
+  &::after {
+    background: url(/static/img/arrow.svg) center/cover no-repeat;
+    content: '';
+    display: inline-block;
+    height: 12px;
+    margin-left: 10px;
+    width: 12px;
+  }
+}
+
 @include min-screen($toc-breakpoint) {
   .post.has-toc {
     .post-title,
@@ -74,11 +124,30 @@
   .post-content {
     margin: 0 15px;
   }
+
+  .img-right {
+    min-width: 240px;
+    margin-right: 0;
+  }
 }
 
 @include max-screen($mobile-breakpoint) {
   .post-title,
   .post-content {
     margin: 0;
+  }
+
+  .img-right {
+    min-width: 200px;
+    margin-right: 0;
+  }
+}
+
+@include max-screen($mobile-medium-breakpoint) {
+ .img-right {
+    display: block;
+    float: none;
+    margin: 0;
+    width: auto;
   }
 }
