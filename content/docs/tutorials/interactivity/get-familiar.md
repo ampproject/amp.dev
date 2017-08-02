@@ -27,7 +27,7 @@ A bare bones AMP page looks like this:
 
 ## AMP components
 
-The tutorial's starter code (`static/index.html`) builds off the bare bones AMP page with its page content (images, text, etc.) as well as including a few AMP components:
+The tutorial's starter code ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)) builds off the bare bones AMP page with its page content (images, text, etc.) as well as including a few AMP components:
 
 ```html
 <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>

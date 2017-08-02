@@ -33,15 +33,6 @@
   }
 }
 
-/* tutorial image */
-
-  .img-right  {
-    display: inline-block;
-    float: right;
-    margin-left: 25px;
-    min-width: 350px;
-  }
-
 /* previous & next buttons */
 
 .prev-next-buttons {
@@ -124,30 +115,11 @@
   .post-content {
     margin: 0 15px;
   }
-
-  .img-right {
-    min-width: 240px;
-    margin-right: 0;
-  }
 }
 
 @include max-screen($mobile-breakpoint) {
   .post-title,
   .post-content {
     margin: 0;
-  }
-
-  .img-right {
-    min-width: 200px;
-    margin-right: 0;
-  }
-}
-
-@include max-screen($mobile-medium-breakpoint) {
- .img-right {
-    display: block;
-    float: none;
-    margin: 0;
-    width: auto;
   }
 }

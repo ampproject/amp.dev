@@ -15,9 +15,9 @@ Prior to the introduction of the `<amp-bind>` component, adding features like th
 
 ## Install the `<amp-bind>` extension
 
-`<amp-bind>` is a new AMP component that affords custom interactivity via data binding and JS-like expressions. To use `<amp-bind>`, you must install it in the page.
+[`<amp-bind>`](/docs/reference/components/amp-bind.html) is a new AMP component that affords custom interactivity via data binding and JS-like expressions. To use `<amp-bind>`, you must install it in the page.
 
-Open the `static/index.html` file, and add the following script to the list of AMP components in the `<head>` section of the page:
+Open the [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) file, and add the following script to the list of AMP components in the `<head>` section of the page:
 
 ```html
 <script async custom-element="amp-bind"
@@ -26,11 +26,11 @@ Open the `static/index.html` file, and add the following script to the list of A
 
 ## Add a slide indicator
 
-`<amp-bind>` works by binding element attributes to custom expressions. These expressions can reference the "state" (mutable JSON data). We can initialize this state through the `<amp-state>` component included with `<amp-bind>`.
+`<amp-bind>` works by binding element attributes to custom expressions. These expressions can reference the "state" (mutable JSON data). We can initialize this state through the [`<amp-state>`](/docs/reference/components/amp-bind.html#state) component included with `<amp-bind>`.
 
 ### Initialize the slide state
 
-Let's initialize a state variable to keep track of the index of the currently displayed slide in the image carousel. Open `static/index.html` and add the following to the top of the `<body>` of the page (before the `<header>`):
+Let's initialize a state variable to keep track of the index of the currently displayed slide in the image carousel. Open [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) and add the following to the top of the `<body>` of the page (before the `<header>`):
 
 ```html
 <amp-state id="selected">
@@ -50,7 +50,7 @@ selected.slide // Evaluates to 0.
 
 ### Update the slide state
 
-Next, let's update this variable when the user changes slides on the carousel by adding the following `"on"` action to the existing `<amp-carousel>` element:
+Next, let's update this variable when the user changes slides on the carousel by adding the following `"on"` action to the existing [`<amp-carousel>`](/docs/reference/components/amp-carousel.html) element:
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
@@ -103,7 +103,7 @@ By changing the slide on the carousel, it:
 Nice! Now we have a working slide indicator.
 
 {% call callout('Extra credit', type='success') %}
-See if you can add functionality so that when a user taps on a slide's indicator dot, it updates the image carousel with the selected item. As a hint, use the `tap` event and `[slide]` binding on `<amp-carousel>`.
+See if you can add functionality so that when a user taps on a slide's indicator dot, it updates the image carousel with the selected item. As a hint, use the `tap` event and `[slide]` binding on [`<amp-carousel>`](/docs/reference/components/amp-carousel.html).
 {% endcall %}
 
 ## Change the images in the carousel
@@ -178,7 +178,7 @@ If we add another state variable that tracks the selected SKU, we can bind an ex
 
 ### Update the SKU state
 
-Add an "on" action to the `<amp-selector>` that updates the `selected.sku` variable whenever a new color is selected:
+Add an "on" action to the [`<amp-selector>`](/docs/reference/components/amp-selector.html) that updates the `selected.sku` variable whenever a new color is selected:
 
 ```html
 <amp-selector name="color" 
@@ -191,7 +191,7 @@ This could also be done by adding `on="tap:AMP.setState(...)` actions to each `<
 
 ### Bind the image elements
 
-Then, add bindings to the `<amp-img>` elements inside the `<amp-carousel>` (look for `<!-- TODO: "Changing images in amp-carousel-->"`):
+Then, add bindings to the [`<amp-img>`](/docs/reference/components/amp-img.html) elements inside the `<amp-carousel>` (look for `<!-- TODO: "Changing images in amp-carousel-->"`):
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
