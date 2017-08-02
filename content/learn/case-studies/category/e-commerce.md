@@ -9,5 +9,5 @@ class: case-studies bg-triangle-secondary
 cta:
   title@: Create your first AMP page
   link_text@: Start building now
-  link_url: /content/docs/get_started/create.md
+  link_url: /content/docs/tutorials/create.md
 ---

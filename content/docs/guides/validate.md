@@ -3,6 +3,8 @@ $title: Validate AMP Pages
 $order: 0
 $category: Debug
 toc: true
+components:
+    - youtube
 ---
 [TOC]
 
