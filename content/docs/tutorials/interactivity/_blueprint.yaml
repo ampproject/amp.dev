@@ -1,0 +1,5 @@
+$path: /docs/tutorials/interactivity/{base}.html
+$view: /views/doc.html
+$localization:
+  path: /{locale}/docs/tutorials/interactivity/{base}.html
+$title@: Create interactive AMP pages
