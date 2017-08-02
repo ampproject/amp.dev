@@ -1,5 +1,5 @@
 ---
-$title: Serving Ads on AMP
+$title: Serving ads on AMP
 $order: 8
 $category: Develop
 

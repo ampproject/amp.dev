@@ -1,5 +1,5 @@
 ---
-$title: Style & Layout
+$title: Style & layout
 $order: 0
 $category: Develop
 toc: true

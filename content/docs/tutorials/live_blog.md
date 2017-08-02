@@ -1,5 +1,5 @@
 ---
-$title: Create a Live Blog
+$title: Create a live blog
 $order: 3
 ---
 Live blogs are web pages that are updated frequently throughout an on-going event, such as the Super Bowl.

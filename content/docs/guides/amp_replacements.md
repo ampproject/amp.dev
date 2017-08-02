@@ -1,5 +1,5 @@
 ---
-$title: Include Images & Video
+$title: Include images & video
 $order: 1
 $category: Develop
 toc: true
