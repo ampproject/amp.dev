@@ -376,7 +376,7 @@ msgstr "Crear tu primer página AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Dane Knecht"
-msgstr ""
+msgstr "Dane Knecht"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -491,7 +491,7 @@ msgstr "Ejemplos"
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Faster ads drive better&nbsp;performance"
@@ -541,7 +541,7 @@ msgstr "Empezando"
 
 #: /content/docs/contribute/github.md
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Grow engagement and increase conversions with faster experiences"
@@ -615,7 +615,7 @@ msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Kavata Mbondo"
-msgstr ""
+msgstr "Kavata Mbondo"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Keep your audience engaged with AMP pages"
@@ -832,7 +832,7 @@ msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Publishers:<br>Keep audiences engaged"
-msgstr ""
+msgstr "Editores:<br>Mantener a las audiencias comprometidas"
 
 #: /views/partials/grid-card.html:27
 msgid "Read the Case Study"
@@ -916,7 +916,7 @@ msgstr "Compartir"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Shaun Zacharia"
-msgstr ""
+msgstr "Shaun Zacharia"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Simple to build, easy to scale."
