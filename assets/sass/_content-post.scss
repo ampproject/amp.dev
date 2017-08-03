@@ -17,7 +17,7 @@
     text-transform: none;
   }
 
-  a.external::after {
+  a[href*="//"]:not([href*="www.ampproject.org"]):not([href*="github.com/ampproject"])::after {
     content: "";
     display: inline-block;
     background-image: url('/static/img/ic_open_in_new_blue.svg');
