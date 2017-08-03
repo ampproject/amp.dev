@@ -1,5 +1,5 @@
 ---
-$title: Include an Image
+$title: Include an image
 $order: 1
 ---
 

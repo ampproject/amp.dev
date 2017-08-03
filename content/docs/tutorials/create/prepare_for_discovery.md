@@ -1,5 +1,5 @@
 ---
-$title: Prepare Your Page for Discovery and Distribution
+$title: Prepare your page for discovery and distribution
 $order: 4
 ---
 

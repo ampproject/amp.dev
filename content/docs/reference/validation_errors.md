@@ -1,5 +1,5 @@
 ---
-$title: AMP Validation Errors
+$title: AMP validation errors
 $order: 7
 toc: true
 ---

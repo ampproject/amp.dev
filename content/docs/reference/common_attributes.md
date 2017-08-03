@@ -1,5 +1,5 @@
 ---
-$title: Common Attributes
+$title: Common attributes
 $order: 3
 ---
 

@@ -1,5 +1,5 @@
 ---
-$title: Use Cases
+$title: Use cases
 $order: 2
 toc: true
 ---

@@ -5,10 +5,10 @@ $localization:
 $title@: AMP components
 
 custom_children:
-  - title@: Ads & Analytics
+  - title@: Ads & analytics
     href: /content/docs/reference/components/ads-analytics/amp-pixel.md
     collection: /content/docs/reference/components/ads-analytics
-  - title@: Dynamic Content
+  - title@: Dynamic content
     href: /content/docs/reference/components/dynamic-content/amp-access-laterpay.md
     collection: /content/docs/reference/components/dynamic-content
   - title@: Layout

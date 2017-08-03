@@ -1,5 +1,5 @@
 ---
-$title: Final Steps Before Publishing
+$title: Final steps before publishing
 $order: 5
 ---
 

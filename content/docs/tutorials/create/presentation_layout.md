@@ -1,5 +1,5 @@
 ---
-$title: Modify Presentation and Layout
+$title: Modify presentation and layout
 $order: 2
 ---
 
