@@ -1,5 +1,5 @@
 ---
-$title: Create Your AMP HTML Page
+$title: Create your AMP HTML page
 $order: 0
 $parent: /content/docs/tutorials/create.md
 ---

@@ -1,5 +1,5 @@
 ---
-$title: "Analytics Vendors"
+$title: Analytics vendors
 $order: 4
 toc: true
 ---

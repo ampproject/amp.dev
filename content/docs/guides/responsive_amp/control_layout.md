@@ -1,5 +1,5 @@
 ---
-$title: Layout & Media queries
+$title: Layout & media queries
 $order: 1
 toc: true
 ---

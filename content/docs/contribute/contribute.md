@@ -1,5 +1,5 @@
 ---
-$title: How to Contribute
+$title: How to contribute
 $order: 0
 $path: /contribute/
 $localization:

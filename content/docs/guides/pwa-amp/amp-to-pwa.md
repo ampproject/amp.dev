@@ -1,5 +1,5 @@
 ---
-$title: Preload your Progressive Web App from your AMP Pages
+$title: Preload your Progressive Web App from your AMP pages
 $order: 1
 toc: true
 ---
