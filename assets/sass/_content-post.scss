@@ -17,6 +17,17 @@
     text-transform: none;
   }
 
+  a.external::after {
+    content: "";
+    display: inline-block;
+    background-image: url('/static/img/ic_open_in_new_blue.svg');
+    background-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+    vertical-align: text-bottom;
+  }
+
   .button {
     &:before {
       display: none;
