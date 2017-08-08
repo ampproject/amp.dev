@@ -6,4 +6,6 @@ Vous ne savez pas par où commencer ? Dans ce didacticiel, vous allez découvrir
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/fr/docs/tutorials/create/basic_markup.html">Continuer à l'Étape 1</a>
+<div class="prev-next-buttons">
+<a class="button" href="/fr/docs/tutorials/create/basic_markup.html"><span class="arrow-next">Commencer</span></a>
+</div>

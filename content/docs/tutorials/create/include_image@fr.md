@@ -12,4 +12,7 @@ Pour découvrir à quoi ressemblerait un balisage supplémentaire, voici le code
 
 Pour savoir pourquoi nous remplaçons les balises, telles que `<img>` par `<amp-img>`, et combien sont disponibles, accédez à [Inclure des iframes et des éléments multimédias](/fr/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/fr/docs/tutorials/create/presentation_layout.html">Continuer à l'Étape 3</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/fr/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Précédent</span></a>
+  <a class="button next-button" href="/fr/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">Prochain</span></a>
+</div>

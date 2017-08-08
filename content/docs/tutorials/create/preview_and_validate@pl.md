@@ -16,4 +16,7 @@ Następnie upewnij się, że dana strona AMP **jest rzeczywiście prawidłowym k
 
 [Dowiedz się o sprawdzaniu poprawności](/pl/docs/guides/debug/validate.html) i o tym, co robić, gdy wystąpią błędy.
 
-<a class="go-button button" href="/pl/docs/tutorials/create/prepare_for_discovery.html">Przejdź do kroku 5</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/pl/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">Poprzedni</span></a>
+  <a class="button next-button" href="/pl/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">Następny</span></a>
+</div>

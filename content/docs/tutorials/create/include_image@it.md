@@ -12,4 +12,8 @@ Per illustrare il possibile aspetto del markup supplementare, ecco il codice nec
 
 Per capire perché stiamo sostituendo tag come `<img>` con `<amp-img>` e quanti di essi sono disponibili, vai alla sezione [Includere Iframe ed elementi multimediali](/it/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/it/docs/tutorials/create/presentation_layout.html">Vai al Passaggio 3</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/it/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Precedente</span></a>
+  <a class="button next-button" href="/it/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">Prossimo</span></a>
+</div>
+

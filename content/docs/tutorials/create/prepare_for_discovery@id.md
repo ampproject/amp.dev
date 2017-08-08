@@ -28,4 +28,7 @@ Jika Anda hanya menautkan satu halaman, dan halaman itu adalah halaman AMP, Anda
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/id/docs/tutorials/create/publish.html">Lanjutkan ke Langkah 6</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/id/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/tutorials/create/publish.html"><span class="arrow-next">Berikutnya</span></a>
+</div>

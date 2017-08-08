@@ -59,4 +59,7 @@ $title: สร้างหน้า AMP HTML
 
 ข่าวดี! คุณได้ดำเนินการต่างๆ ที่จำเป็นสำหรับการสร้าง AMP หน้าแรกแล้ว อย่างไรก็ตาม ยังมีเนื้อหาในส่วนเนื้อความไม่มากนัก ในส่วนต่อไป เราจะกล่าวถึงวิธีการเพิ่มรายการพื้นฐาน เช่น รูปภาพ อิลิเมนต์ AMP แบบกำหนดเอง การจัดรูปแบบหน้าเว็บของคุณ และการจัดเค้าโครงแบบอินเทอร์แอคทีฟ
 
-<a class="go-button button" href="/th/docs/tutorials/create/include_image.html">ไปยังขั้นตอนที่ 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/th/docs/tutorials/create.html"><span class="arrow-prev">ก่อนหน้า</span></a>
+  <a class="button next-button" href="/th/docs/tutorials/create/include_image.html"><span class="arrow-next">ถัดไป</span></a>
+</div>

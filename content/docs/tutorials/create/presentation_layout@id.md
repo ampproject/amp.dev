@@ -27,4 +27,7 @@ AMP mengikuti aturan yang lebih ketat saat melayout elemen pada halaman. Pada ha
 
 Ketahui tentang cara AMP merender dan melayout halaman dan cara Anda bisa memodifikasi layout dalam [Cara Mengontrol Layout](/id/docs/guides/author-develop/responsive/control_layout.html).
 
-<a class="go-button button" href="/id/docs/tutorials/create/preview_and_validate.html">Lanjutkan ke Langkah 4</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/id/docs/tutorials/create/include_image.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">Berikutnya</span></a>
+</div>

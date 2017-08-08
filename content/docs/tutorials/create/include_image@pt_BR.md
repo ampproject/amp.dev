@@ -12,4 +12,7 @@ Para demonstrar qual seria a aparência de uma marcação adicional, veja o cód
 
 Para saber por que estamos substituindo tags como `<img>` por `<amp-img>` e quantas estão disponíveis, consulte [Incluir iframes e mídia](/pt_br/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/pt_br/docs/tutorials/create/presentation_layout.html">Continuar para a etapa 3</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/pt_br/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">Próxima</span></a>
+</div>

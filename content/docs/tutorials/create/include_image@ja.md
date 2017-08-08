@@ -12,4 +12,8 @@ $title: イメージを含める
 
 `<img>` タグの代わりに `<amp-img>` タグを使っている理由や、使用できるタグの種類については、[iframe とメディアを含める](/ja/docs/guides/author-develop/amp_replacements.html)をご覧ください。
 
-<a class="go-button button" href="/ja/docs/tutorials/create/presentation_layout.html">ステップ 3 に進む</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/ja/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">次へ</span></a>
+</div>
+

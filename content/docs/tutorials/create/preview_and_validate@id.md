@@ -16,4 +16,7 @@ Berikutnya, pastikan bahwa halaman AMP Anda **benar-benar merupakan halaman AMP 
 
 [Ketahui selengkapnya mengenai validasi](/id/docs/guides/debug/validate.html), dan tindakan yang harus Anda lakukan jika menjumpai kesalahan.
 
-<a class="go-button button" href="/id/docs/tutorials/create/prepare_for_discovery.html">Lanjutkan ke Langkah 5</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/id/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">Berikutnya</span></a>
+</div>

@@ -28,4 +28,7 @@ $title: 准备页面以供发现和分发
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/zh_cn/docs/tutorials/create/publish.html">继续执行步骤 6</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/zh_cn/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">以前</span></a>
+  <a class="button next-button" href="/zh_cn/docs/tutorials/create/publish.html"><span class="arrow-next">下一个</span></a>
+</div>

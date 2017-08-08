@@ -59,4 +59,7 @@ Untuk mengetahui selengkapnya tentang meta-data yang akan Anda butuhkan di berba
 
 Kabar gembira! Itulah semua yang kita perlukan untuk membuat halaman AMP kita yang pertama, belum banyak yang terjadi di dalam bagian badan. Dalam bagian berikutnya, kita akan membahas mengenai cara menambahkan hal-hal dasar seperti gambar, elemen AMP khusus, cara menggayakan halaman Anda dan mengerjakan layout responsif.
 
-<a class="go-button button" href="/id/docs/tutorials/create/include_image.html">Lanjutkan ke Langkah 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/id/docs/tutorials/create.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/tutorials/create/include_image.html"><span class="arrow-next">Berikutnya</span></a>
+</div>

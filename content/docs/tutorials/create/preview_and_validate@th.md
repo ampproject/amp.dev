@@ -16,4 +16,7 @@ $title: ดูตัวอย่างและตรวจสอบ
 
 [เรียนรู้เพิ่มเติมเกี่ยวกับการตรวจสอบ](/th/docs/guides/debug/validate.html) และสิ่งที่ควรทำเมื่อพบข้อผิดพลาด
 
-<a class="go-button button" href="/th/docs/tutorials/create/prepare_for_discovery.html">ไปยังขั้นตอนที่ 5</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/th/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">ก่อนหน้า</span></a>
+  <a class="button next-button" href="/th/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">ถัดไป</span></a>
+</div>

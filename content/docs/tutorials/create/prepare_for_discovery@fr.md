@@ -28,4 +28,7 @@ Si vous n'avez qu'une seule page, et que cette page est une page AMP, vous devez
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/fr/docs/tutorials/create/publish.html">Continuer à l'Étape 6</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/fr/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Précédent</span></a>
+  <a class="button next-button" href="/fr/docs/tutorials/create/publish.html"><span class="arrow-next">Prochain</span></a>
+</div>

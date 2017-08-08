@@ -12,4 +12,8 @@ Hier sehen Sie ein Beispiel für den Code, mit dem Sie ein Bild auf der Seite ei
 
 Weshalb wir Tags wie `<img>` durch `<amp-img>` ersetzen und wie viele es gibt, erfahren Sie unter [iFrames und Medien einschließen](/de/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/de/docs/tutorials/create/presentation_layout.html">Weiter mit Schritt 3</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/de/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Bisherige</span></a>
+  <a class="button next-button" href="/de/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">Nächster</span></a>
+</div>
+
