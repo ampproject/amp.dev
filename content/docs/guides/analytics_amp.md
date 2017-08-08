@@ -1,5 +1,5 @@
 ---
-$title: Configure Analytics
+$title: Configure analytics
 $order: 0
 $category: Deploy
 

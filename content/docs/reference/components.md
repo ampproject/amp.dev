@@ -10,14 +10,14 @@ The AMP HTML library provides components that are classified as:
 
 Here are the components grouped by category:
 
-- [Ads & Analytics](#ads-and-analytics)
-- [Dynamic Content](#dynamic-content)
+- [Ads & analytics](#ads-and-analytics)
+- [Dynamic content](#dynamic-content)
 - [Layout](#layout)
 - [Media](#media)
 - [Presentation](#presentation)
 - [Social](#social)
 
-### Ads and Analytics
+### Ads and analytics
 
 | Component | Description |
 | --------- | ----------- |
@@ -30,7 +30,7 @@ Here are the components grouped by category:
 | [`amp-pixel`](components/amp-pixel.html) | A tracking pixel to count page views. |
 | [`amp-sticky-ad`](components/amp-sticky-ad.html) | Provides a way to display and stick ad content at the bottom of the page.|
 
-### Dynamic Content
+### Dynamic content
 
 | Component | Description |
 | --------- | ----------- |

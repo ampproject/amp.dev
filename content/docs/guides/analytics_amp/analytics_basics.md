@@ -1,5 +1,5 @@
 ---
-$title: "Analytics: the Basics"
+$title: "Analytics: the basics"
 $order: 0
 toc: true
 ---

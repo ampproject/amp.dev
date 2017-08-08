@@ -1,5 +1,5 @@
 ---
-$title: Validate AMP Pages
+$title: Validate AMP pages
 $order: 0
 $category: Debug
 toc: true

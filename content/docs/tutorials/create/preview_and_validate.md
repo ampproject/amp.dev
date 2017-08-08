@@ -1,5 +1,5 @@
 ---
-$title: Preview and Validate
+$title: Preview and validate
 $order: 3
 ---
 

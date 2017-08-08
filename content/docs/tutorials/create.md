@@ -1,5 +1,5 @@
 ---
-$title: Create Your First AMP Page
+$title: Create your first AMP page
 $order: 0
 numbered: 1
 ---

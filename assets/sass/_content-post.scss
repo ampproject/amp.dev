@@ -17,6 +17,17 @@
     text-transform: none;
   }
 
+  a[href*="//"]:not([href*="www.ampproject.org"]):not([href*="github.com/ampproject"])::after {
+    content: "";
+    display: inline-block;
+    background-image: url('/static/img/ic_open_in_new_blue.svg');
+    background-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+    vertical-align: text-bottom;
+  }
+
   .button {
     &:before {
       display: none;
@@ -30,6 +41,47 @@
   th.col-twenty,
   td.col-twenty {
     min-width: 90px;
+  }
+}
+
+/* previous & next buttons */
+
+.prev-next-buttons {
+  width: 100%;
+  display: inline-block;
+  padding-top: 30px;
+}
+
+.prev-button {
+  text-align: left;
+  float: left;
+}
+
+.next-button {
+  text-align: right;
+  float: right;
+}
+
+.arrow-prev {
+  &::before {
+    background: url(/static/img/arrow.svg) center/cover no-repeat;
+    content: '';
+    display: inline-block;
+    height: 12px;
+    margin-right: 10px;
+    width: 12px;
+    transform: rotate(180deg);
+  }
+}
+
+.arrow-next {
+  &::after {
+    background: url(/static/img/arrow.svg) center/cover no-repeat;
+    content: '';
+    display: inline-block;
+    height: 12px;
+    margin-left: 10px;
+    width: 12px;
   }
 }
 

@@ -1,7 +1,11 @@
 ---
-$title: Create a Live Blog
+$title: Create a live blog
 $order: 3
+toc: true
 ---
+
+[TOC]
+
 Live blogs are web pages that are updated frequently throughout an on-going event, such as the Super Bowl.
 
 A live blog can be implemented in AMP via the `amp-live-list` component using the LiveBlogPosting markup. To see a sample implementation that you can use as a starting point, visit the [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/) at [ampbyexample.com](https://www.ampbyexample.com).

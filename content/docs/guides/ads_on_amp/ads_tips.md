@@ -1,5 +1,5 @@
 ---
-$title : Tips for Ads on AMP Pages
+$title : Tips for ads on AMP pages
 $order : 1
 ---
 

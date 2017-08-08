@@ -1,5 +1,5 @@
 ---
-$title: Make Your Page Discoverable
+$title: Make your page discoverable
 $order: 1
 $category: Deploy
 
