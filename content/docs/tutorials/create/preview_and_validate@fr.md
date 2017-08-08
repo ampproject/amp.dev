@@ -16,4 +16,7 @@ Ensuite, vérifiez que votre page AMP **est une page AMP valide**. Dans le cas c
 
 [En savoir plus sur la validation](/fr/docs/guides/debug/validate.html) et la procédure à suivre en cas d'erreurs.
 
-<a class="go-button button" href="/fr/docs/tutorials/create/prepare_for_discovery.html">Continuer à l'Étape 5</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/fr/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">Précédent</span></a>
+  <a class="button next-button" href="/fr/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">Prochain</span></a>
+</div>

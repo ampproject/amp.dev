@@ -12,4 +12,7 @@ $title: تضمين صورة
 
 للتعرّف على أسباب إقدامنا على استبدال العلامات، مثل استبدال `<img>` بـ `<amp-img>`، وكم عدد المتاح منها، يُرجى الانتقال إلى [تضمين إطارات Iframe والوسائط](/ar/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/ar/docs/tutorials/create/presentation_layout.html">3</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/ar/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">سابق</span></a>
+  <a class="button next-button" href="/ar/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">سابق</span></a>
+</div>

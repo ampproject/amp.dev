@@ -27,4 +27,7 @@ O AMP segue regras mais restritas para o layout dos elementos na página. Em uma
 
 Saiba mais sobre como o AMP renderiza e faz o layout de uma página e como você pode modificá-lo em [Como controlar o layout](/pt_brdocs/guides/author-develop/responsive/control_layout.html).
 
-<a class="go-button button" href="/pt_br/docs/tutorials/create/preview_and_validate.html">Continuar para a etapa 4</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/pt_br/docs/tutorials/create/include_image.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">Próxima</span></a>
+</div>

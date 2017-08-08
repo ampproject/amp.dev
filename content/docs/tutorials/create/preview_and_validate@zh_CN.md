@@ -16,4 +16,7 @@ $title: 预览和验证
 
 [详细了解验证](/zh_cn/docs/guides/debug/validate.html)，以及在出现错误时要执行的操作。
 
-<a class="go-button button" href="/zh_cn/docs/tutorials/create/prepare_for_discovery.html">继续执行步骤 5</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/zh_cn/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">以前</span></a>
+  <a class="button next-button" href="/zh_cn/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">下一个</span></a>
+</div>

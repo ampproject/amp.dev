@@ -15,4 +15,8 @@ Para demostrar el aspecto que tendría el marcado adicional, a continuación te 
 Para saber por qué reemplazamos etiquetas como `<img>` por `<amp-img>` y cuántas hay disponibles, consulta [Incluir Iframes y medios](/es/docs/guides/amp_replacements.html).
 {% endcall %}
 
-<a class="go-button button" href="/es/docs/tutorials/create/presentation_layout.html">Continuar con el paso 3</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/es/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">Siguiente</span></a>
+</div>
+

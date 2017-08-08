@@ -6,4 +6,6 @@ $title: Создание первой страницы AMP
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/ru/docs/tutorials/create/basic_markup.html">Перейти к шагу 1</a>
+<div class="prev-next-buttons">
+<a class="button" href="/ru/docs/tutorials/create/basic_markup.html"><span class="arrow-next">Начало работы</span></a>
+</div>

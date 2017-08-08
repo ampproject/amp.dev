@@ -59,4 +59,7 @@ Weitere Informationen zu den Metadaten, die Sie an verschiedenen anderen Stellen
 
 Gute Neuigkeiten! Das ist alles, was Sie zum Erstellen Ihrer ersten AMP-Seite brauchen. Aber natürlich passiert bisher noch nicht viel im HTML-Body. In den nächsten Schritten erfahren Sie, wie Sie grundlegende Komponenten wie Bilder und benutzerdefinierte AMP-Elemente hinzufügen, Ihre Seite gestalten und ein responsives Layout erstellen.
 
-<a class="go-button button" href="/de/docs/tutorials/create/include_image.html">Weiter mit Schritt 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/de/docs/tutorials/create.html"><span class="arrow-prev">Bisherige</span></a>
+  <a class="button next-button" href="/de/docs/tutorials/create/include_image.html"><span class="arrow-next">Nächster</span></a>
+</div>
