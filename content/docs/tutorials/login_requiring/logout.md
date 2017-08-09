@@ -22,4 +22,7 @@ When you click the Logout button, you are directed to the URL that you specified
 
 Similar to the login, when the AMPByExample server receives a logout request, it uses the return URL query parameter automatically added by the AMP library and redirects to it, adding `#success=true`. By this time, you are back on the initial page; the AMPByExample cookie previously created for the login page (called `ABE_LOGGED_IN`) would be cleared at this point.
 
-<a class="go-button button" href="/docs/tutorials/login_requiring/summary.html">Continue to Step 4</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/tutorials/login_requiring/summary.html"><span class="arrow-next">Next</span></a>
+</div>
