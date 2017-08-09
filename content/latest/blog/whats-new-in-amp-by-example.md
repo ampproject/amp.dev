@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: What’s new in AMP by Example
+$title: "What’s new in AMP by Example"
 id: whats-new-in-amp-by-example
 author: Sebastian Benz
 role:  Developer Advocate, Google.

@@ -1,6 +1,7 @@
 ---
 $title: Hacer que una página sea visible
 ---
+[TOC]
 
 En ocasiones, puede que prefieras tener tanto una versión de AMP como una que no lo sea de una misma página, por ejemplo, en un artículo de noticias. Pero si la búsqueda de Google encuentra la versión que no es de AMP de esa página, ¿cómo puede saber que también hay una versión de AMP?
 
@@ -27,6 +28,10 @@ Si solo tienes una página, y es una página de AMP, sigues teniendo que añadir
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
+
+{% call callout('Leer más', type='read') %}
+Aprende más sobre cómo Google encuentra las páginas en [Directrices de la Búsqueda de Google para las páginas de AMP](https://support.google.com/webmasters/answer/6340290).
+{% endcall %}
 
 ## Integrar con plataformas de terceros mediante metadatos adicionales
 
@@ -76,8 +81,11 @@ Ejemplo:
 
 Puedes encontrar más ejemplos en la [carpeta de ejemplos de ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), que incluye la sintaxis de atributo HTML alternativa).
 
-Nota: Esta definición de Schema.org es un requisito para que el contenido sea apto para aparecer en la demostración del [carrusel de noticias de la Búsqueda de Google (prueba la versión para móvil)](https://g.co/ampdemo).
-Consulta también las [Historias principales con AMP](https://developers.google.com/structured-data/carousels/top-stories) y la [herramienta de pruebas de datos estructurados](https://developers.google.com/structured-data/testing-tool/).
+{% call callout('Leer más', type='read') %} Visita estas páginas para más información sobre datos estructurados:
+
+* Aprende cómo [Estructurar tu contenido para aparecer en Google como resultado enriquecido](https://developers.google.com/search/docs/guides/mark-up-content) (por ejemplo, top stories carousel, recipe cards, etc.).
+* Prueba tus datos estructurados con la [herramienta de pruebas de datos estructurados](https://developers.google.com/structured-data/testing-tool/).
+{% endcall %}
 
 ### Otros metadatos para aún más plataformas
 

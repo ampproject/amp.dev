@@ -23,4 +23,7 @@ A continuación, asegúrate de que tu página AMP **sea válida**; de lo contrar
 [Obtén más información acerca de la validación](/es/docs/guides/validate.html) y de lo que debes hacer cuando encuentres errores.
 {% endcall %}
 
-<a class="go-button button" href="/es/docs/tutorials/create/prepare_for_discovery.html">Continuar con el paso 5</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/es/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">Siguiente</span></a>
+</div>

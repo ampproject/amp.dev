@@ -11,7 +11,7 @@ Copialo e salvalo in un file con estensione .html.
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ I documenti HTML AMP DEVONO:
   - Iniziare con il doctype `<!doctype html>`.
   - Contenere un tag di primo livello `<html ⚡>` (`<html amp>` è ugualmente accettato).
   - Contenere i tag `<head>` e `<body>` (questi sono opzionali in HTML).
-  - Contenere un tag `<link rel="canonical" href="$SOME_URL" />` all’interno dell’intestazione che faccia riferimento alla normale versione HTML del documento HTML AMP o a sé stesso se non esiste tale versione HTML.
+  - Contenere un tag `<link rel="canonical" href="$SOME_URL">` all’interno dell’intestazione che faccia riferimento alla normale versione HTML del documento HTML AMP o a sé stesso se non esiste tale versione HTML.
   - Contenere un tag `<meta charset="utf-8">` in quanto primo tag secondario del tag dell’intestazione.
   - Contenere un tag `<meta name="viewport" content="width=device-width,minimum-scale=1">` all’interno del tag dell’intestazione. Si consiglia anche di includere initial-scale=1.
   - Contenere un tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` in quanto ultimo elemento dell’intestazione (ciò comprende e carica la libreria AMP JS).
@@ -59,4 +59,7 @@ Per ulteriori informazioni su tutti i metadati che ti serviranno i svariate altr
 
 Buone notizie! Questo è tutto ciò che ci serve per creare la nostra prima pagina AMP, ma naturalmente il corpo della pagina non comprende ancora molte informazioni. Nella prossima sezione parleremo di come aggiungere componenti di base come immagini ed elementi AMP personalizzati, di come applicare uno stile alla pagina e di come definire un layout reattivo.
 
-<a class="go-button button" href="/it/docs/tutorials/create/include_image.html">Vai al Passaggio 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/it/docs/tutorials/create.html"><span class="arrow-prev">Precedente</span></a>
+  <a class="button next-button" href="/it/docs/tutorials/create/include_image.html"><span class="arrow-next">Prossimo</span></a>
+</div>

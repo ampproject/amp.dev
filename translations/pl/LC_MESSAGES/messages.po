@@ -148,7 +148,7 @@ msgstr ""
 #: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "AMP provides a great user experience across many platforms"
-msgstr ""
+msgstr "AMP zapewnia użytkownikom wiele doświadczeń na wielu platformach"
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -354,7 +354,8 @@ msgstr ""
 msgid "Developer Support"
 msgstr ""
 
-#: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
+#: /content/docs/_blueprint.yaml /content/docs/build.md /content/docs/build@es.md
+#: /content/includes/menu.yaml
 msgid "Docs"
 msgstr "Dokumenty"
 
@@ -426,7 +427,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
-msgid "FAQs"
+msgid "FAQ"
 msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
@@ -469,10 +470,6 @@ msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
-msgstr ""
-
-#: /content/docs/getting-started.md
-msgid "Getting Started"
 msgstr ""
 
 #: /content/includes/menu.yaml
@@ -518,7 +515,7 @@ msgstr ""
 #: /content/learn/about-how@th.yaml /content/learn/about-how@tr.yaml
 #: /content/learn/about-how@zh_CN.yaml
 msgid "How AMP Works"
-msgstr ""
+msgstr "Jak działa AMP"
 
 #: /content/learn/who/publishers.yaml
 msgid "How AMP can help publishers"
@@ -702,7 +699,7 @@ msgstr ""
 #: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "Play Video"
-msgstr ""
+msgstr "Odtwórz film"
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Presentation"
@@ -726,7 +723,7 @@ msgid ""
 "needed."
 msgstr ""
 
-#: /views/partials/footer.html:5
+#: /views/partials/footer.html:18
 msgid "Privacy"
 msgstr ""
 
@@ -820,7 +817,7 @@ msgstr ""
 #: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "See what AMP can do for you"
-msgstr ""
+msgstr "Zobacz, co AMP może zrobić dla Ciebie"
 
 #: /content/support/developer.md
 msgid "Send Feedback"
@@ -899,7 +896,7 @@ msgstr ""
 
 #: /content/docs/guides/responsive_amp/_blueprint.yaml
 msgid "Style & Layout"
-msgstr ""
+msgstr "Styl i układ"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
@@ -971,11 +968,11 @@ msgstr ""
 #: /content/latest/_blueprint.yaml /content/latest/latest.html
 #: /content/learn/who/amp-ads.yaml
 msgid "The Latest"
-msgstr ""
+msgstr "Najnowszy"
 
 #: /content/includes/latest.yaml /content/latest/latest.html
 msgid "The Latest News"
-msgstr ""
+msgstr "Najnowsze wiadomości"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -1030,7 +1027,7 @@ msgstr ""
 #: /content/learn/amp-design-principles@ko.yaml
 #: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/publishers.yaml
 msgid "Tutorials"
-msgstr ""
+msgstr "Samouczki"
 
 #: /content/includes/events.yaml
 msgid "Upcoming Events"

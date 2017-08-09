@@ -6,4 +6,6 @@ $title: 创建您的第一个 AMP 页面
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/zh_cn/docs/tutorials/create/basic_markup.html">继续执行步骤 1</a>
+<div class="prev-next-buttons">
+<a class="button" href="/zh_cn/docs/tutorials/create/basic_markup.html"><span class="arrow-next">开始吧</span></a>
+</div>

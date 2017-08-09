@@ -11,7 +11,7 @@ Kopieren Sie es und speichern Sie es in einer Datei mit der Erweiterung ".html".
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ AMP-HTML-Dokumente MÜSSEN:
   - mit dem Doctype `<!doctype html>` beginnen.
   - ein Top-Level-`<html ⚡>`-Tag enthalten (`<html amp>` wird auch akzeptiert).
   - die Tags `<head>` und `body` enthalten (in HTML sind sie optional).
-  - im head-Element das Tag `<link rel="canonical" href="$SOME_URL" />` enthalten, das auf die reguläre HTML-Version des AMP-HTML-Dokuments oder auf sich selbst verweist, falls keine reguläre HTML-Version existiert.
+  - im head-Element das Tag `<link rel="canonical" href="$SOME_URL">` enthalten, das auf die reguläre HTML-Version des AMP-HTML-Dokuments oder auf sich selbst verweist, falls keine reguläre HTML-Version existiert.
   - ein `<meta charset="utf-8">`-Tag als erstes untergeordnetes Element des head-Tags enthalten.
   - das Tag `<meta name="viewport" content="width=device-width,minimum-scale=1">` innerhalb des head-Tags enthalten. Außerdem wird empfohlen, "initial-scale=1" einzufügen.
   - das Tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` als letztes Element im head-Tag enthalten. Damit wird die AMP-JS-Bibliothek eingeschlossen und geladen.
@@ -59,4 +59,7 @@ Weitere Informationen zu den Metadaten, die Sie an verschiedenen anderen Stellen
 
 Gute Neuigkeiten! Das ist alles, was Sie zum Erstellen Ihrer ersten AMP-Seite brauchen. Aber natürlich passiert bisher noch nicht viel im HTML-Body. In den nächsten Schritten erfahren Sie, wie Sie grundlegende Komponenten wie Bilder und benutzerdefinierte AMP-Elemente hinzufügen, Ihre Seite gestalten und ein responsives Layout erstellen.
 
-<a class="go-button button" href="/de/docs/tutorials/create/include_image.html">Weiter mit Schritt 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/de/docs/tutorials/create.html"><span class="arrow-prev">Bisherige</span></a>
+  <a class="button next-button" href="/de/docs/tutorials/create/include_image.html"><span class="arrow-next">Nächster</span></a>
+</div>

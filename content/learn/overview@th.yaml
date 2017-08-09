@@ -1,5 +1,5 @@
 core:
-  title: AMP pages are built with 3 core components.
+  title: หน้า AMP สร้างขึ้นด้วยองค์ประกอบหลัก 3 ส่วน.
   components:
     - title: AMP HTML
       subtitle: |
@@ -46,3 +46,13 @@ core:
         <p>เครื่องมือตรวจสอบอีกเวอร์ชันหนึ่งจะมาพร้อมกับหน้า AMP ทุกหน้า โดยเวอร์ชันนี้สามารถบันทึกข้อผิดพลาดจากการตรวจสอบไปยังคอนโซลของเบราว์เซอร์โดยตรงเมื่อมีการแสดงหน้าเว็บ
         ช่วยให้คุณทราบว่าการเปลี่ยนโค้ดที่ซับซ้อนอาจส่งผลกระทบต่อประสิทธิภาพและประสบการณ์ของผู้ใช้อย่างไรบ้าง
         <p>เรียนรู้เพิ่มเติมเกี่ยวกับ[การทดสอบหน้า AMP HTML](/th/docs/guides/debug/validate.html)
+
+video:
+  id: 5Yjoe54vzwE
+  line1_img: lines3.svg
+  line2_img: line4.svg
+
+cta:
+  title: ดูว่า AMP สามารถทำอะไรให้คุณบ้าง
+  link_text: เรียนรู้ผู้ที่ใช้ AMP
+  link_url: /content/learn/case-studies.html

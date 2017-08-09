@@ -1,11 +1,14 @@
 ---
-$title: Validate AMP Pages
+$title: Validate AMP pages
 $order: 0
 $category: Debug
 toc: true
+components:
+    - youtube
 ---
 [TOC]
 
+{{ youtube('npum8JsITQE', 480, 270, caption='Watch our video about the various validation options.') }}
 
 The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be *validated*. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
 
@@ -97,7 +100,7 @@ AMP Validator Extension for
 As part of your build and test pipelines, you can integrate AMP validation through the AMP Validator NPM packages: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) or [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (a gulp plugin).  For example, you can use the AMP Validator NPM package for integration tests or in a schedule task to verify production AMP pages.
 
 
-##### Example: Validating an AMP HTML file 
+##### Example: Validating an AMP HTML file
 
 In this example, we validate an AMP HTML file by using the [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) NPM package.  The validation status is piped out to the console.
 

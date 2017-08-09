@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: Turbocharging AMP
+$title: "Turbocharging AMP"
 id: turbocharging-amp
 author: Matt Ludwig
 role:  AMP Project Marketing Lead at Google

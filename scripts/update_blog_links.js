@@ -80,7 +80,7 @@ function writeBlogPage(item, directory, parent) {
   body = `---
 class: post-blog post-detail
 type: Blog
-$title: ${ item.title }
+$title: "${ item.title }"
 id: ${ item.id }
 author: ${ item.author }
 role: ${ item.role }

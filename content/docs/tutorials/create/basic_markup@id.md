@@ -11,7 +11,7 @@ Salin yang berikut ini dan simpanlah ke file dengan ekstensi .html.
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ Dokumen AMP HTML HARUS:
   - Mulai dengan tipe dokumen `<!doctype html>`.
   - Berisi tag `<html ⚡>` tingkat atas (`<html amp>` juga berterima).
   - Berisi tag `<head>` dan `<body>` (Keduanya opsional dalam HTML).
-  - Berisi tag `<link rel="canonical" href="$SOME_URL" />` dalam bagian kepala yang menunjuk pada versi HTML reguler dari dokumen AMP HTML atau menunjuk pada dirinya sendiri jika tidak ada versi HTML seperti itu.
+  - Berisi tag `<link rel="canonical" href="$SOME_URL">` dalam bagian kepala yang menunjuk pada versi HTML reguler dari dokumen AMP HTML atau menunjuk pada dirinya sendiri jika tidak ada versi HTML seperti itu.
   - Berisi tag `<meta charset="utf-8">` sebagai anak pertama dari tag kepalanya.
   - Berisi tag `<meta name="viewport" content="width=device-width,minimum-scale=1">` di dalam tag kepalanya. Juga disarankan untuk menyertakan initial-scale=1.
   - Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` sebagai elemen terakhir dalam kepalanya (ini mencakup dan memuat pustaka AMP JS).
@@ -59,4 +59,7 @@ Untuk mengetahui selengkapnya tentang meta-data yang akan Anda butuhkan di berba
 
 Kabar gembira! Itulah semua yang kita perlukan untuk membuat halaman AMP kita yang pertama, belum banyak yang terjadi di dalam bagian badan. Dalam bagian berikutnya, kita akan membahas mengenai cara menambahkan hal-hal dasar seperti gambar, elemen AMP khusus, cara menggayakan halaman Anda dan mengerjakan layout responsif.
 
-<a class="go-button button" href="/id/docs/tutorials/create/include_image.html">Lanjutkan ke Langkah 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/id/docs/tutorials/create.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/tutorials/create/include_image.html"><span class="arrow-next">Berikutnya</span></a>
+</div>

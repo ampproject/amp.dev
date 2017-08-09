@@ -1,5 +1,5 @@
 ---
-$title : "Getting Started"
+$title : Getting started
 $order : 0
 ---
 
@@ -9,33 +9,33 @@ Not sure how to get started? In this short guide, you’ll learn how to quickly 
 
 ### 1. Add the `<amp-ads>` component to your AMP page:
 
-[sourcecode:html]
+```html
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-[/sourcecode]
+```
 
 By adding the `amp-ads` component, you've added the ads framework to your AMP page.
 
 ### 2. Specify the ad server or ad network in the `type` attribute:
 
-[sourcecode:html]
-<amp-ad
-      type="a9">
-  </amp-ad>
-[/sourcecode]
+```html
+<amp-ad type="a9">
+ ...
+</amp-ad>
+```
 
 [Here](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks) is a list of supported ad networks.
 
 ### 3. Specify your ad unit’s height and width:
 
-[sourcecode:html]
+```html
 <amp-ad width="300"
-      height="250"
-      type="a9"
-      data-aax_size="300x250"
-      data-aax_pubname="test123"
-      data-aax_src="302">
-  </amp-ad>
-[/sourcecode]
+    height="250"
+    type="a9"
+    data-aax_size="300x250"
+    data-aax_pubname="test123"
+    data-aax_src="302">
+</amp-ad>
+```
 
 By defining your ad unit's height and weight, you've specified the ad size on your AMP page.
 
@@ -45,14 +45,14 @@ The additional data attributes are telling the ad network to pull the right size
 
 ### 4. [OPTIONAL] Specify a placeholder:
 
-[sourcecode:html]
- <amp-ad width="300"
-      height="200"
-      type="doubleclick"
-      data-slot="/4119129/doesnt-exist">
+```html
+<amp-ad width="300"
+    height="200"
+    type="doubleclick"
+    data-slot="/4119129/doesnt-exist">
     <amp-img placeholder src="placeholder-image.jpg"></amp-img>
-  </amp-ad>
-[/sourcecode]
+</amp-ad>
+```
 
 AMP supports an optional placeholder attribute. Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space.
 
@@ -62,14 +62,14 @@ AMP supports an optional placeholder attribute. Depending on the ad network, you
 
 ### 5. [OPTIONAL] Specify a fallback attribute:
 
-[sourcecode:html]
+```html
 <amp-ad width="300"
-      height="200"
-      type="doubleclick"
-      data-slot="/4119129/doesnt-exist">
+    height="200"
+    type="doubleclick"
+    data-slot="/4119129/doesnt-exist">
     <amp-img fallback src="fallback-image.jpg"></amp-img>
-  </amp-ad>
-[/sourcecode]
+</amp-ad>
+```
 
 AMP supports an optional fallback attribute. Depending on the ad network, you can choose to show this fallback element if no ad is available to serve.
 

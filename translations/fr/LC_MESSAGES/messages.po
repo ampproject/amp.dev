@@ -14,11 +14,11 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
-"Des éditeurs et publicitaires de plus en plus nombreux adoptent AMP pour livrer "
-"du contenu plus rapide et plus engageant à leurs utilisateurs. Quand vos clients "
-"découvreront la vitesse de AMP et de plus en plus d'utilisateurs consommeront votre "
-"contenu sur des pages AMP, soyez sûrs que votre société est orientée vers le futur."
-"Intégrez votre technologie avec AMP aujoud'hui."
+"Des éditeurs et publicitaires de plus en plus nombreux adoptent AMP pour "
+"livrer du contenu plus rapide et plus engageant à leurs utilisateurs. Quand "
+"vos clients découvreront la vitesse de AMP et de plus en plus d'utilisateurs "
+"consommeront votre contenu sur des pages AMP, soyez sûrs que votre société "
+"est orientée vers le futur.Intégrez votre technologie avec AMP aujoud'hui."
 
 #: /content/includes/home.yaml
 msgid "A path to success"
@@ -37,8 +37,8 @@ msgid ""
 "AMP Ads are 6x faster than regular ads on AMP pages, making them more "
 "viewable, more effective and more likely to perform&nbsp;well."
 msgstr ""
-"Les Annonces AMP sont six fois plus rapides que les annonces normales "
-"sur les pages AMP, ce qui les rend plus visibles, plus efficaces et plus "
+"Les Annonces AMP sont six fois plus rapides que les annonces normales sur les"
+" pages AMP, ce qui les rend plus visibles, plus efficaces et plus "
 "susceptibles de bien performer."
 
 #: /content/learn/who/amp-ads.yaml
@@ -48,11 +48,12 @@ msgid ""
 "serve ads that are faster, lighter and more effective. Creative developer "
 "tools like Google Web Designer will soon support AMP ads as well."
 msgstr ""
-"Les Annonces AMP sont un format créatif construit en utilisant HTML et CSS, et "
-"non pas une nouvelle technologie. En conséquence, vous pouvez utiliser vos "
-"resources de développement existants pour créer et diffuser des annonces plus "
-"rapides, plus légeres et plus efficaces. Les outils de developpement créatives "
-"comme Google Web Designer seront prochainement compatibles avec les annonces AMP."
+"Les Annonces AMP sont un format créatif construit en utilisant HTML et CSS, "
+"et non pas une nouvelle technologie. En conséquence, vous pouvez utiliser vos"
+" resources de développement existants pour créer et diffuser des annonces "
+"plus rapides, plus légeres et plus efficaces. Les outils de developpement "
+"créatives comme Google Web Designer seront prochainement compatibles avec les"
+" annonces AMP."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -161,7 +162,7 @@ msgstr ""
 #: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "AMP provides a great user experience across many platforms"
-msgstr ""
+msgstr "AMP offre une excellente expérience utilisateur dans de nombreuses plates-formes"
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -367,7 +368,8 @@ msgstr ""
 msgid "Developer Support"
 msgstr ""
 
-#: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
+#: /content/docs/_blueprint.yaml /content/docs/build.md /content/docs/build@es.md
+#: /content/includes/menu.yaml
 msgid "Docs"
 msgstr "Documents"
 
@@ -439,7 +441,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
-msgid "FAQs"
+msgid "FAQ"
 msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
@@ -482,10 +484,6 @@ msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
-msgstr ""
-
-#: /content/docs/getting-started.md
-msgid "Getting Started"
 msgstr ""
 
 #: /content/includes/menu.yaml
@@ -715,7 +713,7 @@ msgstr ""
 #: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "Play Video"
-msgstr ""
+msgstr "Lire la vidéo"
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Presentation"
@@ -739,7 +737,7 @@ msgid ""
 "needed."
 msgstr ""
 
-#: /views/partials/footer.html:5
+#: /views/partials/footer.html:18
 msgid "Privacy"
 msgstr ""
 

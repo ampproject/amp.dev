@@ -11,7 +11,7 @@ Bunu kopyalayın veya .html uzantılı bir dosyaya kaydedin.
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ AMP HTML belgeleri şu özelliklere sahip olmalıdır:
   - Belge tipiyle `<!doctype html>` başlamalıdır.
   - Üst seviye bir `<html ⚡>` etiketi içermelidir (`<html amp>` de kabul edilir).
   - `<head>` ve `<body>` etiketleri içermelidir (HTML›de isteğe bağlıdır).
-  - Başında AMP HTML belgesinin düzenli HTML sürümünü ya da böyle bir HTML versiyonu mevcut değilse kendisini gösteren bir `<link rel="canonical" href="$SOME_URL" />` etiketi içerir.
+  - Başında AMP HTML belgesinin düzenli HTML sürümünü ya da böyle bir HTML versiyonu mevcut değilse kendisini gösteren bir `<link rel="canonical" href="$SOME_URL">` etiketi içerir.
   - Baş etiketin ilk ürünü olarak `<meta charset="utf-8">` etiketini içerir.
   - Baş etiketin içerisinde bir `<meta name="viewport" content="width=device-width,minimum-scale=1">` etiketi içerir. initial-scale=1›in de eklenmesi önerilir.
   - Başında en son öge olarak`<script async src="https://cdn.ampproject.org/v0.js"></script>` etiketini içerir (Buna AMP JS kitaplığı da eklenip yüklenir).
@@ -59,4 +59,7 @@ Twitter vb. diğer çeşitli yerlerde ihtiyacını olan tüm meta-veriler hakkı
 
 İyi haber! İlk AMP sayfamızı oluşturmak için gerekli olan tek şey bu, fakat tabii ki gövdede devam eden daha birçok şey var. Bir sonraki bölümde görüntü, özel AMP ögeleri gibi temel unsurların nasıl ekleneceğini, sayfanızın nasıl biçimlendirileceğini ve nasıl etkileşimli bir düzen geliştirileceği üzerinde duracağız.
 
-<a class="go-button button" href="/tr/docs/tutorials/create/include_image.html">Adım 2 ile devam edin</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/tr/docs/tutorials/create.html"><span class="arrow-prev">Önceki</span></a>
+  <a class="button next-button" href="/tr/docs/tutorials/create/include_image.html"><span class="arrow-next">Sonraki</span></a>
+</div>

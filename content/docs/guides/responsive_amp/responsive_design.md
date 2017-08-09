@@ -1,5 +1,5 @@
 ---
-$title: Create Responsive AMP Pages
+$title: Create responsive AMP pages
 $order: 5
 toc: true
 components:

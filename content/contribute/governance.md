@@ -1,5 +1,5 @@
 ---
-$title: Open Source Governance
+$title: Open source governance
 $order: 4
 ---
 

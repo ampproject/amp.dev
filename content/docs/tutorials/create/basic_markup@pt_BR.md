@@ -11,7 +11,7 @@ Copie e salve-a em um arquivo de extensão .html.
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ Documentos em AMP HTML DEVEM:
   - Ser iniciados pelo doctype `<!doctype html>`.
   - Conter uma tag `<html ⚡>` de nível superior (`<html amp>` também é aceita).
   - Conter as tags `<head>` e `<body>` (elas são opcionais em HTML).
-  - Conter uma tag `<link rel="canonical" href="$SOME_URL" />` dentro do cabeçalho que aponte para a versão em HTML comum do documento em AMP HTML, ou para o próprio documento se a versão em HTML não existir.
+  - Conter uma tag `<link rel="canonical" href="$SOME_URL">` dentro do cabeçalho que aponte para a versão em HTML comum do documento em AMP HTML, ou para o próprio documento se a versão em HTML não existir.
   - Conter uma tag `<meta charset="utf-8">` como primeira filha da tag do cabeçalho.
   - Conter uma tag `<meta name="viewport" content="width=device-width,minimum-scale=1">`dentro da tag do cabeçalho. Também é recomendável incluir initial-scale=1.
   - Conter uma tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` como o último elemento do cabeçalho (isso inclui e carrega a biblioteca de AMP JS).
@@ -59,4 +59,7 @@ Para saber mais sobre todos os metadados necessários para outros locais, como o
 
 Boa notícia! Isso é tudo de que precisamos para criar nossa primeira página AMP, mas é claro que ainda falta muita coisa no corpo. Na próxima seção, abordaremos como adicionar itens básicos como imagens, elementos AMP personalizados, como compor o estilo da sua página e desenvolver um layout responsivo.
 
-<a class="go-button button" href="/pt_br/docs/tutorials/create/include_image.html">Continuar para a etapa 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/pt_br/docs/tutorials/create.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/tutorials/create/include_image.html"><span class="arrow-next">Próxima</span></a>
+</div>

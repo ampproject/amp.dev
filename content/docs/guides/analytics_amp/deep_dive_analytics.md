@@ -1,5 +1,5 @@
 ---
-$title: Deep Dive into AMP Analytics
+$title: Deep dive into AMP analytics
 $order: 1
 toc: true
 ---

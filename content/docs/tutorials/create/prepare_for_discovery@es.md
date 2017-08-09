@@ -29,4 +29,11 @@ Si solo tienes una página y es AMP, debes agregarle el vínculo canónico. Este
 <link rel="canonical" href="https://www.ejemplo.com/url/al/documento/amp.html">
 [/sourcecode]
 
-<a class="go-button button" href="/es/docs/tutorials/create/publish.html">Continuar con el paso 6</a>
+{% call callout('Leer más', type='read') %}
+Aprende más sobre cómo Google encuentra las páginas AMP en las [Directrices de la Búsqueda de Google para las páginas de AMP](https://support.google.com/webmasters/answer/6340290).
+{% endcall %}
+
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/es/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/tutorials/create/publish.html"><span class="arrow-next">Siguiente</span></a>
+</div>

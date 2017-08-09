@@ -11,7 +11,7 @@ $title: إنشاء صفحة AMP HTML
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -42,7 +42,7 @@ $title: إنشاء صفحة AMP HTML
   - أن تبدأ بـ doctype <span dir="ltr" class="nowrap">`<!doctype html>`</span>.
   - أن تحتوي على علامة المستوى الأعلى <span dir="ltr" class="nowrap">`<html ⚡>`</span> (تكون <span dir="ltr" class="nowrap">`<html amp>`</span> مقبولة كذلك).
   - أن تحتوي على العلامتين `<head>` و`<body>` (هما علامتان اختياريتان في HTML).
-  - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<link rel="canonical" href="$SOME_URL" />`</span> داخل عنوانها، والتي تشير إلى إصدار HTML العادي لمستند <span dir="ltr" class="nowrap">AMP HTML</span> أو إلى نفسها إذا لم يكن إصدار HTML من هذا القبيل موجودًا.
+  - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<link rel="canonical" href="$SOME_URL">`</span> داخل عنوانها، والتي تشير إلى إصدار HTML العادي لمستند <span dir="ltr" class="nowrap">AMP HTML</span> أو إلى نفسها إذا لم يكن إصدار HTML من هذا القبيل موجودًا.
   - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<meta charset="utf-8">`</span> بوصفها التابع الأول للعلامة head.
   - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<meta name="viewport" content="width=device-width,minimum-scale=1">`</span> داخل العلامة head. من الموصى به أيضًا تضمين <span dir="ltr" class="nowrap">initial-scale=1</span>.
   - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<script async src="https://cdn.ampproject.org/v0.js"></script>`</span> بوصفها العنصر الأخير في head (يشمل هذا مكتبة <span dir="ltr" class="nowrap">AMP JS</span> ويقوم بتحميلها).
@@ -59,4 +59,7 @@ $title: إنشاء صفحة AMP HTML
 
 أخبار سارّة! هذا كل ما نحتاجه لإنشاء صفحتنا الأولى في AMP، لكن ليس هناك الكثير مما يجري، بطبيعة الحال، في النص الأساسي حتى اللحظة. في القسم التالي، سوف نتناول كيفية إضافة أساسيات، مثل الصور وعناصر AMP المخصصة، وكيفية إضفاء نمط على صفحتك، وتطوير تنسيق سريع الاستجابة.
 
-<a class="go-button button" href="/ar/docs/tutorials/create/include_image.html">المتابعة إلى الخطوة 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/ar/docs/tutorials/create.html"><span class="arrow-prev">سابق</span></a>
+  <a class="button next-button" href="/ar/docs/tutorials/create/include_image.html"><span class="arrow-next">التالى</span></a>
+</div>

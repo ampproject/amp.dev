@@ -32,3 +32,13 @@ core:
         Das Validierungssystem führt eine Reihe von Assertionen aus, um zu prüfen, ob das Markup der Seite die AMP-HTML-Spezifikation erfüllt.
         <p>Eine weitere Version des Validierungstools ist Teil jeder AMP-Seite. Diese Version kann Validierungsfehler beim Darstellen der Seite direkt in der Browserkonsole protokollieren. So können Sie sehen, wie komplexe Änderungen in Ihrem Code sich auf die Leistung und Nutzererfahrung auswirken.
         <p>[Lesen Sie hier, wie Sie Ihre AMP-HTML-Seiten testen.](/de/docs/guides/debug/validate.html)
+
+video:
+  id: tiLFSnv2LB4
+  line1_img: lines3.svg
+  line2_img: line4.svg
+
+cta:
+  title: Finden Sie heraus, was AMP für Sie bewirken kann
+  link_text: Erfahren Sie, wer AMP bereits verwendet
+  link_url: /content/learn/case-studies.html

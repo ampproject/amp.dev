@@ -27,4 +27,7 @@ $title: تعديل المظهر والتنسيق
 
 تعرّف على كيفية عرض AMP للصفحة وتنسيقها وكيف يمكنك تعديل التنسيق في [كيفية التحكم في التنسيق](/ar/docs/guides/author-develop/responsive/control_layout.html).
 
-<a class="button go-button" href="/ar/docs/tutorials/create/preview_and_validate.html">المتابعة إلى الخطوة 4</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/ar/docs/tutorials/create/include_image.html"><span class="arrow-prev">سابق</span></a>
+  <a class="button next-button" href="/ar/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">التالى</span></a>
+</div>

@@ -1,5 +1,5 @@
 core:
-  title: AMP pages are built with 3 core components.
+  title: AMP sayfaları 3 çekirdek bileşenle oluşturulmuştur.
   components:
     - title: AMP HTML
       subtitle: |
@@ -49,3 +49,13 @@ core:
         bu sayede kodunuzdaki karmaşık değişikliklerin
         performansı ve kullanıcı deneyimini nasıl etkilediğini görmenizi sağlar.
         <p>[AMP HTML sayfalarınızı test etme](/tr/docs/guides/debug/validate.html) ile ilgili daha fazla öğrenin.
+
+video:
+  id: 5Yjoe54vzwE
+  line1_img: lines3.svg
+  line2_img: line4.svg
+
+cta:
+  title: AMP'nin sizin için ne yapabileceğini görün
+  link_text: Kimin AMP kullandığını öğrenin
+  link_url: /content/learn/case-studies.html

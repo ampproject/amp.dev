@@ -12,4 +12,8 @@ Untuk mendemonstrasikan seperti apa tampilan markup tambahan ini, berikut kode y
 
 Untuk mengetahui alasan kami mengganti tag seperti `<img>` dengan `<amp-img>`, dan jumlah ketersediaannya, kunjungi [Menyertakan Iframe dan Media](/id/docs/guides/author-develop/amp_replacements.html).
 
-<a class="go-button button" href="/id/docs/tutorials/create/presentation_layout.html">Lanjutkan ke Langkah 3</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/id/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">Berikutnya</span></a>
+</div>
+

@@ -1,5 +1,5 @@
 ---
-$title: Modify Presentation and Layout
+$title: Modify presentation and layout
 $order: 2
 ---
 
@@ -30,5 +30,7 @@ AMP follows stricter rules when laying out elements on the page. On a normal HTM
 Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries](/docs/guides/responsive/control_layout.html).
 {% endcall %}
 
-
-<a class="button go-button" href="/docs/tutorials/create/preview_and_validate.html">Continue to Step 4</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/docs/tutorials/create/include_image.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">Next</span></a>
+</div>

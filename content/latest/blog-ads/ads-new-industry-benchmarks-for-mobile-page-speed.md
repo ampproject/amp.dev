@@ -1,7 +1,7 @@
 ---
 class: post-blog post-detail
 type: Blog
-$title: New Industry Benchmarks for Mobile Page Speed
+$title: "New Industry Benchmarks for Mobile Page Speed"
 id: ads-new-industry-benchmarks-for-mobile-page-speed
 author: amphtml
 role: 

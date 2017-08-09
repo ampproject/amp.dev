@@ -1,52 +1,106 @@
 ---
 $title: CSS compatível
+$order: 0
+toc: true
 ---
-
-Como todas as páginas da Web, as páginas AMP são estilizadas com CSS,
-mas não é possível fazer referência a folhas de estilo externas
-(com exceção de [fontes personalizadas](#a-exceção-das-fontes-personalizadas)).
-Além disso, certos estilos não são permitidos devido a implicações de desempenho.
-Os atributos de estilo in-line não são permitidos.
-
-Todos os estilos devem estar no cabeçalho do documento
-(leia [Adicionar estilos a uma página](/pt_br/docs/guides/debug/validate.html).
-Contudo, você pode usar pré-processadores e modelos CSS para criar páginas estáticas
-e gerenciar melhor seu conteúdo.
-
-**Observação:**
-Os componentes da AMP vêm com estilos padrão
-para tornar razoavelmente fácil a criação das páginas responsivas.
-Esses estilos estão definidos na [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
-
 [TOC]
 
-## Uso de pré-processadores CSS
+Assim como todas as páginas da Web, as páginas AMP são estilizadas com CSS. Contudo, não é possível fazer referência a folhas de estilos externas (exceto [fontes personalizadas](#the-custom-fonts-exception)). Além disso, alguns estilos não são permitidos devido ao impacto que têm no desempenho. Por exemplo, os atributos de estilo in-line.
 
-O resultado gerado pelos pré-processadores funciona na AMP tão bem como em qualquer outra página da Web.
-Por exemplo, o site [ampproject.org](https://www.ampproject.org/) usa
-[Sass](http://sass-lang.com/).
-Nós usamos <a href="http://grow.io/">Grow</a> para criar as páginas AMP estáticas
-que compõem o site [ampproject.org](https://www.ampproject.org/).
+Todos os estilos precisam estar no cabeçalho do documento (veja [Adicionar estilos a uma página](/pt_br/docs/guides/responsive_amp.html#add-styles-to-a-page)). É possível usar pré-processadores e modelos CSS para criar páginas estáticas e gerenciar melhor seu conteúdo.
 
-Ao usar os pré-processadores, 
-dê atenção especial ao que será incluído: carregue apenas o que as suas páginas usam.
-Por exemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-inclui toda a marcação de AMP necessária e a CSS in-line dos arquivos de origem `*.scss`.
-Ele também inclui o script do elemento personalizado para
-[`amp-youtube`](/docs/reference/extended/amp-youtube.html), entre outros,
-de modo que muitas páginas em todo o site podem incluir vídeos incorporados do YouTube.
+{% call callout('Observação', type='note') %}
+Os componentes das AMP possuem estilos padrão para facilitar a criação de páginas responsivas. Esses estilos estão definidos em [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+{% endcall %}
 
-[sourcecode:html] {% raw %}
+## Estilos não permitidos
+
+Os estilos a seguir não são permitidos em páginas AMP:
+
+<table>
+  <thead>
+    <tr>
+      <th class="col-thirty" data-th="Banned style">Estilo banido</th>
+      <th data-th="Description">Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Banned style">Atributos de estilo in-line</td>
+      <td data-th="Description"> Todos os estilos precisam ser definidos no <code>&lt;head&gt;</code> da página, na tag <code>&lt;style amp-custom&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td data-th="Banned style">Qualificador <code>!important</code></td>
+      <td data-th="Description">O uso não é permitido. Este é um requisito necessário para permitir que as AMP executem suas regras de dimensionamento de elementos.</td>
+    </tr>
+    <tr>
+      <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
+      <td data-th="Description"> Não são permitidos, exceto <a href="#the-custom-fonts-exception">fontes personalizadas</a>.</td>
+    </tr>
+    <tr>
+      <td data-th="Banned style">Classe <code>-amp-</code> e nomes de tags <code>i-amp-</code></td>
+      <td data-th="Description"> Nas folhas de estilo do autor, os nomes de classe não podem iniciar com a string <code>-amp-</code>. Estas strings são reservadas para uso interno no tempo de execução das AMP. A folha de estilo do usuário não pode fazer referência a seletores de CSS para classes <code>-amp-</code> e tags <code>i-amp</code>.</td>
+    </tr>
+    <tr>
+      <td data-th="Banned style"><code>behavior</code> e <code>-moz-binding</code></td>
+      <td data-th="Description">Estas propriedades não são permitidas por razões de segurança.</td>
+    </tr>
+    <tr>
+      <td data-th="Banned style"><code>filter</code></td>
+      <td data-th="Description">Estão na lista negra devido a motivos de desempenho.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Estilos restritos
+
+Os estilos a seguir são permitidos. Contudo, há restrições em relação à compatibilidade deles com alguns valores:
+
+<table>
+  <thead>
+    <tr>
+      <th class="col-thirty" data-th="Banned style">Estilo restrito</th>
+      <th data-th="Description">Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Restricted style">Propriedade <code>transition</code></td>
+      <td data-th="Description"> Somente propriedades aceleradas por GPU (no momento <code>opacity</code>, <code>transform</code> e <code>-vendorPrefix-transform</code>).</td>
+    </tr>
+    <tr>
+      <td data-th="Restricted style"><code>@keyframes {...}</code></td>
+      <td data-th="Description"> Somente propriedades aceleradas por GPU (no momento <code>opacity</code>, <code>transform</code> e <code>-vendorPrefix-transform</code>).</td>
+    </tr>
+  </tbody>
+</table>
+
+## Exceção: fontes personalizadas
+
+As páginas AMP não podem incluir folhas de estilos externas, exceto fontes personalizadas.
+
+{% call callout('Continue lendo', type='success') %}
+Saiba mais sobre [fontes personalizadas nas AMP](/pt_br/docs/guides/responsive/custom_fonts.html).
+{% endcall %}
+
+## Como usar pré-processadores de CSS
+
+O resultado gerado pelos pré-processadores é tão bom nas AMP como em qualquer outra página da Web. Por exemplo, o site [ampproject.org](https://www.ampproject.org/) usa [Sass](http://sass-lang.com/). Usamos [Grow](http://grow.io/) para criar as páginas AMP estáticas que compõem o site [ampproject.org](https://www.ampproject.org/).
+
+
+Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue somente aquilo que as páginas usam. Por exemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclui toda a marcação das AMP necessária e a CSS in-line dos arquivos de origem `*.scss`. Isso também inclui o script do elemento personalizado para [`amp-youtube`](/pt_br/docs/reference/extended/amp-youtube.html), entre outros, fazendo com que diversas páginas do site possam incluir vídeos incorporados do YouTube.
+
+[sourcecode:html]{% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
 
-  <title>Accelerated Mobile Pages Project</title>
-  <link rel="shortcut icon" href="/static/img/amp_favicon.png">
+  <title>Projeto de Accelerated Mobile Pages</title>
+  <link rel="icon" href="/static/img/amp_favicon.png">
   <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
   </style>
@@ -60,106 +114,7 @@ de modo que muitas páginas em todo o site podem incluir vídeos incorporados do
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 </head>
-{% endraw %} [/sourcecode]
+{% endraw %}[/sourcecode]
 
-Para ver como o conteúdo acima se traduz em um HTML de AMP formatado,
-veja o código-fonte de qualquer página em [ampproject.org](https://www.ampproject.org/).
-No Google Chrome, clique com o botão direito e selecione `Exibir código-fonte da página`.
+Para ver como o conteúdo acima se traduz em uma AMP em HTML formatada, veja a fonte de qualquer página em [ampproject.org](https://www.ampproject.org/). (No Chrome, clique com o botão direito e `View Page Source`).
 
-## Estilos não permitidos
-
-Os seguintes estilos não são permitidos em páginas AMP:
-
-<table>
-  <thead>
-    <tr>
-      <th data-th="Banned style">Estilo proibido</th>
-      <th data-th="Description">Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-th="Banned style">Atributos de estilo in-line</td>
-      <td data-th="Description">Todos os estilos devem ser definidos no <code>&lt;head&gt;</code> da página,
-      	dentro de uma tag <code>&lt;style amp-custom&gt;</code>.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style"><code>!</code>qualificador importante </td>
-      <td data-th="Description">Uso não permitido.
-      Este é um requisito necessário para permitir que a AMP coloque em vigor suas regras de dimensionamento de elementos.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
-      <td data-th="Description">Não permitido, com exceção de <a href="#a-exceção-das-fontes-personalizadas">fontes personalizadas</a>.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style"><code>*</code> (seletor universal)</td>
-      <td data-th="Description">Implicações de desempenho negativo e poderia ser usado
-      para violar outras restrições de seletor.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style"><code>:not()</code></td>
-      <td data-th="Description">Poderia ser usado para simular o seletor universal.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style">Pseudosseletores, pseudoclasses e pseudoelementos</td>
-      <td data-th="Description">Pseudosseletores, pseudoclasses e pseudoelementos só são permitidos
-      em seletores que contêm nomes de tags. Esses nomes de tags não podem iniciar com <code>amp-</code>.
-      Exemplo correto: <code>a:hover, div:last-of-type</code>
-      Exemplo incorreto: <code>amp-img:hover, amp-img:last-of-type</code></td>
-    </tr>
-    <tr>
-      <td data-th="Banned style">Classe <code>-amp-</code> e nomes de tags com <code>i-amp-</code></td>
-      <td data-th="Description">Os nomes de classe, nas folhas de estilo de criação, podem não começar com a string <code>-amp-</code>. Estes são reservados para uso interno no tempo de execução da AMP. A folha de estilo do usuário pode não fazer referência a seletores de CSS para classes <code>-amp-</code> e tags <code>i-amp</code>.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
-      <td data-th="Description">Estas propriedades não são permitidas
-      por razões de segurança.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">O elemento é adicionado à lista negra devido a preocupações de desempenho.</td>
-    </tr>
-  </tbody>
-</table>
-
-## Propriedades de transição e animação na lista de permissões
-
-A AMP só permite transições e animações de propriedades
-que podem ser aceleradas por GPU em navegadores comuns.
-No momento, a lista de permissões do projeto de AMP inclui `opacity`, `transform`
-e `-vendorPrefix-transform`.
-
-Nos exemplos a seguir, `<property>` precisa estar na lista de permissões.
-
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
-
-A propriedade `overflow` (incluindo `overflow-y` e `overflow-x`)
-não pode ser estilizada como “auto” nem “scroll”.
-Nenhum elemento definido pelo usuário em um documento de AMP pode ter uma barra de rolagem.
-
-## A exceção das fontes personalizadas
-
-As páginas AMP não podem incluir folhas de estilo externas, com exceção de fontes personalizadas.
-Os dois métodos compatíveis para a referência a fontes personalizadas são
-as tags de links que levam a fornecedores de fontes na lista de permissões e a inclusão de `@font-face`.
-
-Os fornecedores de fontes só serão colocados na lista de permissões
-se oferecerem suporte a integrações "somente CSS" e veicularem por HTTPS.
-Atualmente, apenas estas origens estão na lista de permissões
-e podem veicular fontes via tags de link:
-
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
-
-Exemplo de tag de link que leva ao fornecedor de fontes na lista de permissões, o Google Fonts:
-
-[sourcecode:html]
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-[/sourcecode]
-
-Como alternativa, use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face).
-As fontes incluídas via `@font-face` devem ser buscadas
-por meio do esquema HTTP ou HTTPS.

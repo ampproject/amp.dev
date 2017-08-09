@@ -62,7 +62,7 @@ LiveBlogPosting 마크업을 이용한 `amp-live-list` 컴포넌트를 통해 AM
 예를 들어, [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/)에서는 서버사이드 템플릿을 이용해 페이지를 렌더링하고, 쿼리 파라미터를 이용하여 페이지의 첫번째 블로그 아이템을 지정했습니다.
 우리는 페이지를 5개 아이템으로 제한하였고, 서버가 5개 이상의 아이템을 생성하는 경우, 유저가 기본페이지에 도착하면 네비게이션 영역에 Next 요소가 보입니다.
 
-<amp-img src="/static/img/liveblog-pagination.jpg" alt="Live blog pagination" height="526" width="300"></amp-img>
+<amp-img src="/static/img/liveblog-pagination.png" alt="Live blog pagination" height="526" width="300"></amp-img>
 
 블로그 포스트의 사이즈가 `data-max-items-per-page`로 정의한 최대 갯수를 넘은 경우.
 더 오래된 블로그 아이템은 2번째 페이지 같은 "Next" 페이지에서 보여집니다.

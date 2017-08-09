@@ -1,33 +1,42 @@
 ---
-$title: Komponen Eksperimental
+$title: Fitur eksperimental
+$order: 5
 ---
 
-[Komponen eksperimental AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
-adalah fitur rilis yang masih belum siap untuk penggunaan luas, jadi komponen ini dilindungi dengan status eksperimental.
+[Komponen eksperimental AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) 
+merupakan fitur yang dirilis namun belum siap untuk digunakan secara umum, jadi fitur ini dilindungi oleh
+status eksperimental.
 
-Pengembang dan pengguna dapat ikut serta menggunakan fitur ini sebelum dirilis sepenuhnya.
-Namun perlu diperhatikan, karena mungkin terdapat bug di dalamnya atau memiliki efek samping yang tidak terduga.
+Developer dan pengguna dapat memilih untuk ikut serta menggunakan fitur ini sebelum dirilis sepenuhnya.
+Namun, fitur harus digunakan dengan hati-hati, karena mungkin mengandung bug atau efek samping yang tidak
+diduga.
 
 ## Ikut serta dalam Saluran Dev AMP
 
-Saluran Konsol Dev AMP adalah cara untuk mengikutsertakan browser menggunakan versi pustaka JS AMP yang lebih baru.
+Saluran Dev AMP merupakan cara untuk mengikutsertakan browser agar menggunakan versi pustaka JS AMP terbaru.
 
-Untuk mengikutsertakan browser dalam Saluran Dev AMP,
-buka [laman eksperimental AMP](https://cdn.ampproject.org/experiments.html)
-dan aktifkan eksperimen "Saluran Dev AMP".
+Rilis Saluran Dev AMP **mungkin kurang stabil** dan mungkin berisi fitur yang tidak tersedia untuk semua pengguna. Ikut serta dalam opsi ini jika ingin membantu menguji versi AMP baru, melaporkan bug, atau membuat dokumen yang memerlukan fitur baru yang belum tersedia untuk semua orang.
+
+Ikut serta dalam Saluran Dev sangat bermanfaat untuk:
+
+- menguji dan mencoba fitur baru yang belum tersedia untuk semua pengguna.
+- menggunakan kualitas asuransi (QA), untuk memastikan bahwa situs Anda kompatibel dengan versi AMP selanjutnya.
+
+Jika menemukan masalah yang tampaknya hanya muncul di Saluran Dev versi AMP, [harap ajukan masalah](https://github.com/ampproject/amphtml/issues/new) beserta deskripsi mengenai masalah tersebut. Selalu sertakan URL ke halaman bermasalah tersebut, untuk mereka ulang masalahnya.
+
+Untuk mengikutsertakan browser ke Saluran Dev AMP, buka [halaman eksperimen AMP](https://cdn.ampproject.org/experiments.html)  dan aktifkan eksperimen "Saluran Dev AMP". Untuk mendapatkan notifikasi mengenai perubahan penting/yang merusak tentang AMP, berlanggananlah ke [milis](https://groups.google.com/forum/#!forum/amphtml-announce) amphtml-announce.
 
 ## Mengaktifkan komponen eksperimental
 
-Untuk konten yang disajikan dari [https://cdn.ampproject.org](https://cdn.ampproject.org),
-buka [laman eksperimen AMP](https://cdn.ampproject.org/experiments.html)
-dan aktifkan (atau nonaktifkan) komponen eksperimental dengan mengalihkan pengalih ke aktif (atau nonaktif). Ikut serta akan menetapkan cookie di browser yang akan mengaktifkan eksperimen pada semua laman AMP yang disajikan melalui Cache Google AMP.
+Untuk konten yang ditayangkan dari [https://cdn.ampproject.org](https://cdn.ampproject.org), buka [halaman eksperimen AMP](https://cdn.ampproject.org/experiments.html) dan aktifkan (atau nonaktifkan) komponen eksperimental dengan mengalihkan tombol ke aktif (atau nonaktif). Jika Anda memilih untuk ikut serta, tindakan itu akan menyetel cookie di browser yang akan mengaktifkan eksperimen di semua halaman AMP yang ditayangkan melalui Google AMP Cache.
 
-Untuk konten yang disajikan dari domain lain, eksperimen dapat dialihkan di konsol devtools jika mode pengembangan aktif menggunakan:
+Untuk konten yang ditayangkan dari domain lainnya, fitur eksperimen dapat diaktifkan melalui konsol devtools saat mode pengembangan diaktifkan menggunakan:
 
 [sourcecode:js]
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-File AMP yang menyertakan fitur eksperimental akan gagal saat
-[validasi AMP](/id/docs/guides/debug/validate.html).
-Hapus komponen eksperimental ini dari dokumen AMP yang siap produksi.
+File AMP apa pun yang menyertakan fitur eksperimental akan gagal saat 
+[validasi AMP](/id/docs/guides/validate.html). 
+Hapus komponen eksperimental ini pada dokumen AMP yang siap diproduksi.
+

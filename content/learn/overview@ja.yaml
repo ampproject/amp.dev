@@ -1,42 +1,60 @@
+﻿$title: 概要
+$titles:
+  breadcrumb: AMP とは
+$order: 0
+class: about-overview
+$view: /views/about-overview.html
+
+components:
+  - youtube
+
+hero:
+  title: AMP を利用して、さまざまなプラットフォームで優れたユーザー エクスペリエンスを実現
+  triangle_img: herobg.svg
+  line1_img: herolines1.svg
+  line2_img: herolines2.svg
+  phone_img_base: /static/img/about/overview/what_phone
+  cta: 動画を再生
+  cta_url: '#video'
+
 core:
-  title: AMP pages are built with 3 core components.
+  title: AMP ページを構成する重要な 3 つの要素
   components:
     - title: AMP HTML
       subtitle: |
-        **AMP HTML** は、パフォーマンスを保証するための制約が設けられた HTML で、
-        通常の HTML より優れたリッチ コンテンツを作成できる拡張機能が備わっています。
+        **AMP HTML** は、安定したパフォーマンスを実現するための制限が設定された HTML です。
       description: |
-        AMP HTML は基本的に、カスタム AMP プロパティを追加した HTML です。
-        以下は最もシンプルな AMP HTML ファイルです。
+        AMP HTML は基本的に、カスタム AMP プロパティで拡張された HTML です。ごく単純な AMP HTML ファイルは次のようになります。
       example: /content/includes/html-example.md
       description2: |
-        AMP HTML ページ内のタグは、ほとんどが通常の HTML タグですが、
-        一部の HTML タグは AMP 専用のタグに置き換わっています
-        （[APM 仕様書の HTML タグ](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)の説明もご覧ください）。
-        これらのカスタム要素は AMP HTML コンポーネントと呼ばれ、
-        このコンポーネントを使うと高パフォーマンスな共通のパターンを簡単に実装できます。
-        <p>たとえば [`amp-img`](/ja/docs/reference/components/amp-img) タグは、
-        `srcset` をフルサポートしています。まだこの機能に対応していないブラウザでも問題ありません。
-        [初めての AMP HTML ページを作成する](/ja/docs/tutorials/create.html)方法もご覧ください。
+        AMP HTML ページ内の大半のタグは通常の HTML タグですが、一部の HTML タグは AMP 固有のタグに置き換えられます（[AMP 仕様の HTML タグについての説明](/ja/docs/reference/spec.html)もご覧ください）。こうしたカスタムの要素は AMP HTML 要素と呼ばれるもので、これにより一般的なパターンを効率よく簡単に導入できます。
+        <p>たとえば、[`amp-img`](/ja/docs/reference/amp-img.html) タグを使用すると、まだ対応していないブラウザでも `srcset` の全面的なサポートが可能になります。[AMP HTML ページを初めて作成する方法についての説明](/ja/docs/tutorials/create.html)をご覧ください。 
+        <p>AMP ページは、検索エンジンや他のプラットフォームで ``<link rel="">`` HTML タグにより検出されます。サイトのページについて非 AMP バージョンと AMP バージョンの両方を作成するか、AMP バージョンのみを作成するかを選ぶことができます。詳しくは、[ページを検出可能にする](/ja/docs/guides/discovery.html)をご覧ください。
+
     - title: AMP JS
       subtitle: |
-        そして AMP HTML ページのレンダリングを高速化するのが、**AMP JS** ライブラリです。
+        **AMP JS** ライブラリは、AMP HTML ページの高速なレンダリングを確実に行えるようにするものです。
       description: |
-        [AMP JS ライブラリ](https://github.com/ampproject/amphtml/tree/master/src)では、
-        [AMP のパフォーマンス最適化処理](/ja/learn/about-how/)がすべて実装されています。
-        さらにリソースの読み込み処理を制御し、上記のカスタムタグを提供することで
-        ページのレンダリングを確実に高速化します。
-        <p>最も重要な最適化処理の 1 つが、外部リソースからの読み込みを完全に非同期にすることです。これによりページ内の要素がレンダリング処理をブロックすることはなくなります。
-        <p>その他のパフォーマンス改善技術として、すべての iframe をサンドボックス化する、リソースを読み込む前にページ内のすべての要素のレイアウトを事前計算する、低速の CSS セレクターを無効するなどの方法が導入されています。
-        <p>[最適化](/ja/learn/about-how/)に加えて、制限について詳しく知りたい方は [AMP HTML の仕様書をご覧ください](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)。
+        [AMP JS ライブラリ](https://github.com/ampproject/amphtml/tree/master/src)では、[AMP の最適なパフォーマンスを実現するための方策](/ja/learn/about-how/)をすべて実施し、リソースの読み込みを管理して、上記のカスタムタグを提供することにより、サイトのページの高速レンダリングを確実に行えるようにしています。 <p>大幅な最適化に役立つ機能の 1 つとして、外部リソースの要素がすべて非同期化されるので、ページのレンダリングが妨げられることがなくなります。 
+        <p>パフォーマンスを改善するその他の技術には、すべての iframe のサンドボックス化、リソースが読み込まれる前にページ上のあらゆる要素のレイアウトを事前に計算する機能、遅い CSS セレクタの無効化などがあります。 
+        <p>[最適化](/ja/learn/about-how/)、ならびに制限について詳しくは [AMP HTML の仕様](/ja/docs/reference/spec.html)をご覧ください。
+
     - title: AMP Cache
       subtitle: |
-        **Google AMP Cache** は（必要に応じて）AMP HTML ページを配信します。
+        **Google AMP Cache** は、キャッシュされた AMP HTML ページの配信に利用できます。
       description: |
-        Google AMP Cache はプロキシベースのコンテンツ デリバリ ネットワークで、有効な AMP ドキュメントをすべて配信します。
-        <p>Google AMP Cache は取得した AMP HTML ページをキャッシュして、自動でページのパフォーマンスを改善します。
-        この機能を使用すると、最大限効率化をするために [HTTP 2.0](https://http2.github.io/) を使用している共通の場所からドキュメントやすべての JS ファイルとイメージが読み込まれます。
-        <p>キャッシュに付随するビルトインの [検証システム](https://github.com/ampproject/amphtml/tree/master/validator)は、該当ページが機能すること、そして外部リソースに依存しないことを保証します。
-        <p>この検証システムは一連のアサーションを実行し、ページのマークアップが AMP HTML の仕様に準拠しているかを確認します。
-        <p>もう 1 つの検証ツールは、すべての AMP ページにバンドルされているものです。このツールでは、ページのレンダリング時に検証エラーが直接ブラウザのコンソールに出力されます。そのため、複雑なコード変更がパフォーマンスやユーザー エクスペリエンスにどのような影響を及ぼすかを確認できます。
-        <p>詳細は、[AMP HTML ページをテストする](/ja/docs/guides/debug/validate.html)をご覧ください。
+        [Google AMP Cache](https://developers.google.com/amp/cache/) は、すべての有効な AMP ドキュメントを配信する、プロキシベースのコンテンツ配信ネットワークです。AMP HTML ページをフェッチしてキャッシュし、ページのパフォーマンスを自動的に改善します。Google AMP Cache を使用すると、効率を最大限に高められるように、ドキュメント、すべての JS ファイル、あらゆる画像が、[HTTP 2.0](https://http2.github.io/) を使用する同一の生成元から読み込まれます。 
+        <p>また、Google AMP Cache には、[検証システム](https://github.com/ampproject/amphtml/tree/master/validator)が組み込まれており、ページが適切に機能すること、外部リソースに依存しないことを確認できます。この検証システムでは、ページのマークアップが AMP HTML の仕様を満たしていることを確認する、一連のアサーションを実行します。 
+        <p>別の検証ツールが、各 AMP ページに付属しています。この検証ツールでは、ページのレンダリング時に検証エラーをブラウザのコンソールに直接記録できるので、コード内の複雑な変更がパフォーマンスやユーザー エクスペリエンスにどのように影響するかを確認することが可能です。 
+        <p>詳しくは、[AMP HTML ページのテストについての説明](/ja/docs/guides/validate.html)をご覧ください。
+
+
+video:
+  id: 5ZSxCv12DXo
+  line1_img: lines3.svg
+  line2_img: line4.svg
+
+cta:
+  title: AMP で得られるメリット
+  link_text: AMP の導入事例を見る
+  link_url: /content/learn/case-studies.html

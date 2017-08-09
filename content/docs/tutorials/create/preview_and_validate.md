@@ -1,5 +1,5 @@
 ---
-$title: Preview and Validate
+$title: Preview and validate
 $order: 3
 ---
 
@@ -23,4 +23,7 @@ Next, make sure that your AMP page **is actually valid AMP**, or it won’t get 
 [Learn more about validation](/docs/guides/validate.html), and what to do when you get errors.
 {% endcall %}
 
-<a class="go-button button" href="/docs/tutorials/create/prepare_for_discovery.html">Continue to Step 5</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">Next</span></a>
+</div>

@@ -10,14 +10,14 @@ The AMP HTML library provides components that are classified as:
 
 Here are the components grouped by category:
 
-- [Ads & Analytics](#ads-and-analytics)
-- [Dynamic Content](#dynamic-content)
+- [Ads & analytics](#ads-and-analytics)
+- [Dynamic content](#dynamic-content)
 - [Layout](#layout)
 - [Media](#media)
 - [Presentation](#presentation)
 - [Social](#social)
 
-### Ads and Analytics
+### Ads and analytics
 
 | Component | Description |
 | --------- | ----------- |
@@ -30,7 +30,7 @@ Here are the components grouped by category:
 | [`amp-pixel`](components/amp-pixel.html) | A tracking pixel to count page views. |
 | [`amp-sticky-ad`](components/amp-sticky-ad.html) | Provides a way to display and stick ad content at the bottom of the page.|
 
-### Dynamic Content
+### Dynamic content
 
 | Component | Description |
 | --------- | ----------- |
@@ -98,7 +98,7 @@ Here are the components grouped by category:
 | [`amp-dynamic-css-classes`](components/amp-dynamic-css-classes.html) | Adds several dynamic CSS class names onto the HTML element. |
 | [`amp-fit-text`](components/amp-fit-text.html) | Expands or shrinks font size to fit the content within the space given. |
 | [`amp-font`](components/amp-font.html) | Triggers and monitors the loading of custom fonts. |
-| [`amp-timeago`](components/amp-timeago.html) | Provides fuzzy timestamps by formatting dates as "*** time ago" (for example, 3 hours ago). |
+| [`amp-timeago`](components/amp-timeago.html) | Provides fuzzy timestamps by formatting dates as "***time ago***" (for example, 3 hours ago). |
 | [`amp-viz-vega`](components/amp-viz-vega.html) | Displays visualizations created by using [Vega](https://vega.github.io/vega/) visualization grammar.|
 
 
