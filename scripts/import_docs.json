@@ -25,6 +25,12 @@
         "to": "docs/reference/spec/amp-boilerplate.md"
     },
     {
+        "title": "AMP HTML Layout System",
+        "order": 4,
+        "from": "spec/amp-html-layout.md",
+        "to": "docs/reference/spec/amp-html-layout.md"
+    },
+    {
         "title": "Debug AMP Cache issues",
         "order": 1,
         "from": "spec/amp-cache-debugging.md",

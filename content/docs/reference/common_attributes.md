@@ -1,19 +1,12 @@
 ---
 $title: Common attributes
 $order: 3
+toc: true
 ---
 
-AMP provides a set of common attributes that are extended to many AMP components (and HTML elements).  This document describes each of the following attributes:
+[TOC]
 
-* [fallback](#fallback)
-* [heights](#heights)
-* [layout](#layout)
-* [media](#media)
-* [noloading](#noloading)
-* [on](#on)
-* [placeholder](#placeholder)
-* [sizes](#sizes)
-* [width and height](#width-and-height)
+AMP provides a set of common attributes that are extended to many AMP components (and HTML elements).  This document describes each of common attributes.
 
 ## fallback
 
@@ -29,7 +22,7 @@ Example:
 </amp-anim>
 [/sourcecode]
 
-For more information, see [Placeholders & fallbacks](https://www.ampproject.org/docs/guides/responsive/placeholders).
+For more information, see [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html).
 
 ## heights
 
@@ -52,11 +45,11 @@ Example:
 </amp-img>
 [/sourcecode]
 
-For more information, see [Art direction with srcset, sizes & heights](https://www.ampproject.org/docs/guides/responsive/art_direction).
+For more information, see [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html).
 
 ## layout
 
-AMP provides a set of [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the supported layout values for the element (see the element's documentation for what values are supported).
+AMP provides a set of [layouts](/docs/guides/responsive/control_layout.html#the-layout-attribute) that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the supported layout values for the element (see the element's documentation for what values are supported).
 
 Example:
 
@@ -69,7 +62,7 @@ Example:
 </amp-img>
 [/sourcecode]
 
-For more information, see [Layout & Media queries](https://www.ampproject.org/docs/guides/responsive/control_layout) and the [Layout Spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+For more information, see [Layout & Media queries](https://www.ampproject.org/docs/guides/responsive/control_layout) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
 
 ## media
 
@@ -90,7 +83,7 @@ Example:
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-For more information, see [Layout & Media queries](https://www.ampproject.org/docs/guides/responsive/control_layout#element-media-queries).
+For more information, see [Layout & Media queries](/docs/guides/responsive/control_layout.html#element-media-queries).
 
 ## noloading
 
@@ -146,7 +139,7 @@ Example:
 </amp-anim>
 [/sourcecode]
 
-For more information, see [Placeholders & fallbacks](https://www.ampproject.org/docs/guides/responsive/placeholders).
+For more information, see [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html).
 
 ## sizes
 
@@ -162,11 +155,11 @@ Example:
 </amp-img>
 [/sourcecode]
 
-For more information, see [Art direction with srcset, sizes & heights](https://www.ampproject.org/docs/guides/responsive/art_direction).
+For more information, see [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html).
 
 ## width and height
 
-For some [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute), AMP components must have a `width` and `height` attribute that contains an integer pixel value.
+For some [layouts](/docs/guides/responsive/control_layout.html#the-layout-attribute), AMP components must have a `width` and `height` attribute that contains an integer pixel value.
 
 Example:
 
@@ -178,6 +171,6 @@ Example:
 </amp-anim>
 [/sourcecode]
 
-For more information, see [Layout & Media queries](https://www.ampproject.org/docs/guides/responsive/control_layout) and the [Layout Spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+For more information, see [Layout & Media queries](/docs/guides/responsive/control_layout.html) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
 
 
