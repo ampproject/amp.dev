@@ -241,6 +241,12 @@ Type attribute value: `top100`
 
 Adds support for Rambler/TOP-100. Configuration details can be found at [top100.rambler.ru](https://top100.rambler.ru/docs).
 
+### Top.Mail.Ru
+
+Type attribute value: `topmailru`
+
+Adds support for Top.Mail.Ru. Configuration details can be found at [Top.Mail.Ru Help](https://help.mail.ru/top/amp-analytics).
+
 ### Webtrekk
 
 Type attribute value: `webtrekk`
