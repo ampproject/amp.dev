@@ -85,8 +85,8 @@ The validator throws the `TAG_REQUIRED_BY_MISSING` error
 when it finds an extended component in the AMP document,
 but doesn't find its equivalent `<script>`.
 
-[Extended components](/docs/reference/extended.html)
-must be explicitedly included in the AMP document as custom elements.
+[Extended components](/docs/reference/components.html)
+must be explicitly included in the AMP document as custom elements.
 To fix these errors, navigate to the extended component's reference page,
 copy its required script, and paste it into the AMP document `<head>`.
 
@@ -444,8 +444,8 @@ They refer to expected tags:
 This error occurs when a tag has both of the mutually exclusive attributes.
 For example, only one is allowed for the following tags:
 
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` or `srcdoc`
-* [amp-jwplayer](/docs/reference/extended/amp-jwplayer.html): `data-media-id` or `data-playlist-id`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` or `srcdoc`
+* [amp-jwplayer](/docs/reference/components/amp-jwplayer.html): `data-media-id` or `data-playlist-id`
 
 ### Missing mandatory attribute from list
 
@@ -468,10 +468,10 @@ This error occurs when a tag is missing one required attribute
 from multiple choices.
 For example, these tags require one attribute from two possible choices:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` or `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` or `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` or `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` or `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` or `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` or `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` or `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` or `data-videoid`
 
 ### Wrong parent tag
 
@@ -736,7 +736,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
 see [How to Control Layout](/docs/guides/responsive/control_layout.html) and
-the [AMP HTML layout system specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 **Note:** If you don't specify the layout,
 and you don't include `width` and `height` values,
@@ -767,7 +767,7 @@ or add a `width` and/or `height` value and the error goes away.
 This error occurs when you don't specify a layout for the AMP tag,
 and the implied layout contains a disallowed attribute.
 Disallowed attributes for layout types are described in the
-[AMP HTML layout system specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+[AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 ### Specified layout isn't supported by AMP tag
 
@@ -794,7 +794,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
 see [How to Control Layout](/docs/guides/responsive/control_layout.html) and
-the [AMP HTML layout system specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 ### Attribute not allowed by specified layout
 
@@ -817,7 +817,7 @@ the [AMP HTML layout system specification](https://github.com/ampproject/amphtml
 This error occurs when you specify a layout for the AMP tag,
 and the layout contains a disallowed attribute.
 Disallowed attributes for layout types are described in the
-[AMP HTML layout system specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+[AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 ### Invalid value for attribute required by layout
 
@@ -878,7 +878,7 @@ results in this error message:
 AMP pages can't include templating syntax,
 unless that syntax is within an AMP tag specifically
 designed to include templates, for example,
-[amp-mustache](/docs/reference/extended/amp-mustache.html).
+[amp-mustache](/docs/reference/components/amp-mustache.html).
 
 It's OK to include templates in your source files,
 so long as the generated output of those files doesn't contain the templates

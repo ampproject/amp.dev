@@ -82,7 +82,7 @@ limitations under the License.
 عند عثورها على مكوّن موسّع في مستند AMP،
 وعدم عثورها على المكوّن `<script>` المكافئ له.
 
-يجب تضمين [المكوّنات الموسّعة](/docs/reference/extended.html)
+يجب تضمين [المكوّنات الموسّعة](/docs/reference/components.html)
 بشكل صريح في مستند AMP باعتبارها عناصر مخصصة.
 ولإصلاح هذه الأخطاء، انتقل إلى الصفحة المرجعية للمكوّن الموسّع،
 وانسخ النص البرمجي المطلوب بها، ثم الصقه في مستند AMP `<head>`.
@@ -438,10 +438,10 @@ limitations under the License.
 يحدث هذا الخطأ عندما يكون لإحدى العلامات كلتا السمتين الحصريتين اللتين يمكن استخدامهما بشكل تبادلي.
 على سبيل المثال، يُسمح بسمة واحدة فقط للعلامات التالية:
 
-* ‏[amp-twitter](/docs/reference/extended/amp-twitter.html):‏ `data-tweetid` أو `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html):‏ `data-shortcode` أو `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html):‏ `src` أو `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html):‏ `src` أو `data-videoid`
+* ‏[amp-twitter](/docs/reference/components/amp-twitter.html):‏ `data-tweetid` أو `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html):‏ `data-shortcode` أو `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html):‏ `src` أو `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html):‏ `src` أو `data-videoid`
 
 ### السمة الإلزامية غير موجودة في القائمة
 
@@ -464,10 +464,10 @@ limitations under the License.
 من الخيارات المتعددة.
 على سبيل المثال، تتطلب هذه العلامات سمة واحدة من خيارين محتملين:
 
-* ‏[amp-twitter](/docs/reference/extended/amp-twitter.html):‏ `data-tweetid` أو `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html):‏ `data-shortcode` أو `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html):‏ `src` أو `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html):‏ `src` أو `data-videoid`
+* ‏[amp-twitter](/docs/reference/components/amp-twitter.html):‏ `data-tweetid` أو `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html):‏ `data-shortcode` أو `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html):‏ `src` أو `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html):‏ `src` أو `data-videoid`
 
 ### علامة أصل خاطئة
 
@@ -616,8 +616,8 @@ limitations under the License.
 
 قبل مراجعة أخطاء الأنماط والتنسيقات،
 يجدر بنا التعرف على كيفية عمل
-[الأنماط](/ar/docs/guides/author-develop/responsive/style_pages.html) و
-[التنسيقات](/ar/docs/guides/author-develop/responsive/control_layout.html) في AMP.
+[الأنماط](/ar/docs/guides/responsive/style_pages.html) و
+[التنسيقات](/ar/docs/guides/responsive/control_layout.html) في AMP.
 ونظرًا لأن صفحات AMP هي صفحات HTML، فإن الأنماط تشبه كثيرًا أي صفحات HTML.
 ولكن هناك بعض القيود لضمان سرعة تحميل الصفحات،
 وتعمل أداة التحقق من صحة صفحات AMP على تفعيل هذه القيود.
@@ -730,8 +730,8 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق](/ar/docs/guides/author-develop/responsive/control_layout.html) و
-[مواصفات نظام تنسيق AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+راجع [كيفية التحكم في التنسيق](/ar/docs/guides/responsive/control_layout.html) و
+[مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 **ملاحظة:** إذا لم تحدد التنسيق،
 ولم تضمّن القيمتين `width` و`height`،
@@ -762,7 +762,7 @@ limitations under the License.
 يحدث هذا الخطأ عند عدم تحديد تنسيق لعلامة AMP،
 واحتواء التنسيق الضمني على سمة غير مسموح بها.
 يتم وصف السمات الغير مسموح بها لأنواع التنسيق في
-[مواصفات نظام تنسيق AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+[مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### التنسيق المحدد غير متوافق مع علامة AMP
 
@@ -788,8 +788,8 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق](/ar/docs/guides/author-develop/responsive/control_layout.html) و
-[مواصفات نظام تنسيق AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+راجع [كيفية التحكم في التنسيق](/ar/docs/guides/responsive/control_layout.html) و
+[مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### السمة غير مسموح بها من تنسيق محدد
 
@@ -812,7 +812,7 @@ limitations under the License.
 يحدث هذا الخطأ عند تحديد تنسيق لعلامة AMP،
 واحتواء التنسيق على سمة غير مسموح بها.
 يتم وصف السمات الغير مسموح بها لأنواع التنسيق في
-[مواصفات نظام تنسيق AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+[مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### قيمة غير صالحة للسمة التي يتطلبها التنسيق
 
@@ -834,7 +834,7 @@ limitations under the License.
 يحدث هذا الخطأ عندما تكون قيمة السمة غير صالحة للتنسيق المحدد.
 لاستيعاب سبب ظهور هذا الخطأ،
 ينبغي التعرّف على
-[السلوكيات المختلفة للتنسيقات]/ar/docs/guides/author-develop/responsive/control_layout.html).
+[السلوكيات المختلفة للتنسيقات]/ar/docs/guides/responsive/control_layout.html).
 
 لنفرض أنك عيّنت التنسيق ليكون `fixed-height` و
 وضمّنت القيم الرقمية لكل من `height` و`width`.
@@ -873,12 +873,12 @@ limitations under the License.
 لا يمكن أن تشمل صفحات AMP بنية نماذج،
 ما لم تكن البنية في نطاق علامة AMP المصممة
 خصيصًا لتضمين النماذج، مثل،
-[amp-mustache](/docs/reference/extended/amp-mustache.html).
+[amp-mustache](/docs/reference/components/amp-mustache.html).
 
 يمكن تضمين النماذج في ملفات المصدر،
 طالما أن الناتج الناشئ عن هذه الملفات لا يحتوي على النماذج
 (راجع أيضًا
-[استخدام معالجات CSS التمهيدية](/ar/docs/guides/author-develop/responsive/style_pages.html)).
+[استخدام معالجات CSS التمهيدية](/ar/docs/guides/responsive/style_pages.html)).
 
 ### تحتوي السمة على بنية نموذج
 

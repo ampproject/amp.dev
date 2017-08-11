@@ -21,7 +21,7 @@ limitations under the License.
 Tidak boleh ada kesalahan validasi apa pun dalam dokumen AMP yang valid.
 Tujuan dokumen ini adalah untuk membantu Anda memahami
 dengan lebih baik dan memperbaiki kesalahan validasi yang dihadapi
-ketika [memvalidasi laman AMP](/id/docs/guides/debug/validate.html).
+ketika [memvalidasi laman AMP](/id/docs/guides/validate.html).
 Untuk ringkasan lengkap kesalahan validasi,
 lihat [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -82,7 +82,7 @@ Validator memunculkan kesalahan `TAG_REQUIRED_BY_MISSING`
 ketika menemukan komponen yang diperpanjang di dokumen AMP,
 tetapi tidak menemukan persamaannya `<script>`.
 
-[Komponen yang diperpanjang](/docs/reference/extended.html)
+[Komponen yang diperpanjang](/docs/reference/components.html)
 harus disertakan dalam dokumen AMP sebagai komponen khusus.
 Untuk memperbaiki kesalahan ini, navigasikan ke laman referensi komponen yang diperpanjang,
 salin skrip yang dibutuhkan, dan tempel ke dokumen AMP `<head>`.
@@ -441,10 +441,10 @@ Properti tersebut mengacu pada tag yang diharapkan:
 Kesalahan ini terjadi jika tag memiliki atribut yang saling lepas.
 Misalnya, hanya satu yang diizinkan dari tag berikut:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` atau `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` atau `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` atau `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` atau `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` atau `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` atau `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` atau `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` atau `data-videoid`
 
 ### Atribut wajib di daftar tidak tersedia
 
@@ -467,10 +467,10 @@ Kesalahan ini terjadi jika atribut yang dibutuhkan tag tidak tersedia
 di pilihan.
 Misalnya, tag berikut memerlukan salah satu atribut dari pilihan yang tersedia:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` atau `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.htm): `data-shortcode` atau `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` atau `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` atau `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` atau `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.htm): `data-shortcode` atau `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` atau `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` atau `data-videoid`
 
 ### Tag induk salah
 
@@ -619,8 +619,8 @@ Daftar lengkap tag unik yang diketahui:
 
 Sebelum mendalami kesalahan gaya dan tata letak,
 Anda perlu memahami cara kerja
-[pemberian gaya](/id/docs/guides/author-develop/responsive/style_pages.html) dan
-[tata letak](/id/docs/guides/author-develop/responsive/control_layout.html) di AMP.
+[pemberian gaya](/id/docs/guides/responsive/style_pages.html) dan
+[tata letak](/id/docs/guides/responsive/control_layout.html) di AMP.
 Karena laman AMP adalah laman HTML, pemberian gaya kurang lebih sama seperti pada laman HTML.
 Tetapi ada beberapa pembatasan untuk memastikan laman dimuat dengan cepat,
 dan validator AMP memberlakukan pembatasan ini.
@@ -734,8 +734,8 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui lebih banyak tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak](/id/docs/guides/author-develop/responsive/control_layout.html) dan
-[Spesifikasi sistem tata letak HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+lihat [Cara Mengontrol Tata Letak](/id/docs/guides/responsive/control_layout.html) dan
+[Spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 **Catatan:** Jika tata letak tidak ditentukan,
 serta nilai `width` dan `height` tidak disertakan,
@@ -766,7 +766,7 @@ atau tambahkan nilai `width` dan/atau `height`, maka kesalahan akan hilang.
 Kesalahan ini terjadi jika Anda tidak menentukan tata letak untuk tag AMP,
 dan tata letak tersirat berisi atribut terlarang.
 Atribut terlarang untuk jenis tata letak dijelaskan di
-[spesifikasi sistem tata letak HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+[spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 ### Tata letak yang ditentukan tidak didukung oleh tag AMP
 
@@ -792,8 +792,8 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui lebih banyak tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak](/id/docs/guides/author-develop/responsive/control_layout.html) dan
-[Spesifikasi sistem tata letak HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+lihat [Cara Mengontrol Tata Letak](/id/docs/guides/responsive/control_layout.html) dan
+[Spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 ### Atribut tidak diizinkan oleh tata letak tertentu
 
@@ -816,7 +816,7 @@ lihat [Cara Mengontrol Tata Letak](/id/docs/guides/author-develop/responsive/con
 Kesalahan ini terjadi jika Anda menentukan tata letak untuk tag AMP,
 dan tata letak berisi atribut terlarang.
 Atribut terlarang untuk jenis tata letak dijelaskan di
-[spesifikasi sistem tata letak HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+[spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 ### Nilai yang dibutuhkan tata letak tidak valid
 
@@ -838,7 +838,7 @@ Atribut terlarang untuk jenis tata letak dijelaskan di
 Kesalahan ini terjadi jika nilai atribut tata letak tertentu tidak valid.
 Untuk memahami hal yang memicu kesalahan ini,
 Anda perlu membiasakan diri dengan
-[perilaku tata letak yang berbeda](/id/docs/guides/author-develop/responsive/control_layout.html).
+[perilaku tata letak yang berbeda](/id/docs/guides/responsive/control_layout.html).
 
 Anggap tata letak ditetapkan ke `fixed-height` dan
 Anda menyertakan nilai numerik `height` dan `width`.
@@ -877,12 +877,12 @@ menyebabkan pesan kesalahan:
 Laman AMP tidak dapat menyertakan sintaksis pemberian template,
 kecuali sintaksis tersebut dalam tag AMP yang
 dirancang khusus untuk menyertakan template, misalnya,
-[amp-mustache](/docs/reference/extended/amp-mustache.html).
+[amp-mustache](/docs/reference/components/amp-mustache.html).
 
 Diperbolehkan menyertakan template di file sumber,
 selama keluaran yang dihasilkan file tersebut tidak berisi template
 (lihat juga
-[Menggunakan prapemrosesan CSS](/id/docs/guides/author-develop/responsive/style_pages.html)).
+[Menggunakan prapemrosesan CSS](/id/docs/guides/responsive/style_pages.html)).
 
 ### Atribut berisi sintaksis template
 
