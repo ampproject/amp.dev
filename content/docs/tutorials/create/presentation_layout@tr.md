@@ -27,4 +27,7 @@ AMP sayfadaki ögeleri düzenlerken daha sıkı kurallar takip eder. Normal bir 
 
 AMP›nin bir sayfayı nasıl işlediği ve düzenlediği, ayrıca [Düzeni Kontrol Etme](/tr/docs/guides/author-develop/responsive/control_layout.html) bölümünden düzeni nasıl değiştirebileceğiniz hakkında her şeyi öğrenin.
 
-<a class="go-button button" href="/tr/docs/tutorials/create/preview_and_validate.html">Adım 4 ile devam edin</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/tr/docs/tutorials/create/include_image.html"><span class="arrow-prev">Önceki</span></a>
+  <a class="button next-button" href="/tr/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">Sonraki</span></a>
+</div>

@@ -3,7 +3,7 @@ $title: Erros de validação das AMP
 ---
 
 Os documentos válidos de AMP não podem incluir erros de validação.
-O objetivo deste documento é ajudar você a entender melhor e corrigir erros de validação que encontrar ao [validar suas páginas AMP](/pt_br/docs/guides/debug/validate.html).
+O objetivo deste documento é ajudar você a entender melhor e corrigir erros de validação que encontrar ao [validar suas páginas AMP](/pt_br/docs/guides/validate.html).
 Para ter uma visão geral completa dos erros de validação, consulte as [especificações do validador das AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -60,7 +60,7 @@ Essas tags obrigatórias incluem um campo `mandatory: true` nas [especificaçõe
 
 O validador informa o erro `TAG_REQUIRED_BY_MISSING` quando encontra um componente estendido no documento de AMP, mas não encontra o `<script>` equivalente.
 
-Os [componentes estendidos](/docs/reference/extended.html) precisam ser explicitamente incluídos no documento de AMP como elementos personalizados.
+Os [componentes estendidos](/docs/reference/components.html) precisam ser explicitamente incluídos no documento de AMP como elementos personalizados.
 Para corrigir esses erros, acesse a página de referência do componente estendido, copie o script necessário e cole-lo no `<head>` do documento de AMP.
 
 ### Tag não permitida
@@ -556,7 +556,7 @@ A lista completa de tags únicas é conhecida:
 
 ## Erros de estilo e layout
 
-Antes de nos aprofundarmos em erros de estilo e layout, é importante compreender como os [estilos](/pt_br/docs/guides/author-develop/responsive/style_pages.html) e o [layout](/pt_br/docs/guides/author-develop/responsive/control_layout.html) funcionam nas AMP. Como as páginas AMP são páginas HTML, os estilos são muito parecidos com os de qualquer página HTML.
+Antes de nos aprofundarmos em erros de estilo e layout, é importante compreender como os [estilos](/pt_br/docs/guides/responsive/style_pages.html) e o [layout](/pt_br/docs/guides/responsive/control_layout.html) funcionam nas AMP. Como as páginas AMP são páginas HTML, os estilos são muito parecidos com os de qualquer página HTML.
 No entanto, existem algumas restrições para garantir que as páginas sejam carregadas rapidamente, e o validador de AMP impõe essas restrições.
 
 O layout é mais controlado em páginas AMP.
@@ -649,7 +649,7 @@ Este erro ocorre quando você não especifica um layout para a tag AMP, e o layo
 Verifique os valores `supported_layout` para a tag nas [especificações do validador AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 O comportamento real do layout é determinado pelo atributo `layout`.
-Para saber mais sobre como funciona o layout, consulte [Como controlar o layout](/pt_br/docs/guides/author-develop/responsive/control_layout.html) e as [Especificações do sistema de layout das AMP em HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Para saber mais sobre como funciona o layout, consulte [Como controlar o layout](/pt_br/docs/guides/responsive/control_layout.html) e as [Especificações do sistema de layout das AMP em HTML](/docs/reference/spec/amp-html-layout.html).
 
 **Observação:** se você não especificar o layout e não incluir os valores `width` e `height`, o layout será CONTAINER por padrão. O validador informará um erro, já que CONTAINER não é compatível com todas as tags AMP.
 Especifique um layout diferente de CONTAINER ou adicione um valor de `width` e/ou `height`, e o erro desaparecerá.
@@ -672,7 +672,7 @@ Especifique um layout diferente de CONTAINER ou adicione um valor de `width` e/o
 </table>
 
 Este erro ocorre quando você não especifica um layout para a tag AMP, e o layout implícito tem um atributo não permitido.
-Os atributos não permitidos por tipos de layout são descritos nas [Especificações do sistema de layout das AMP em HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Os atributos não permitidos por tipos de layout são descritos nas [Especificações do sistema de layout das AMP em HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### O layout especificado não é compatível com a tag AMP
 
@@ -695,7 +695,7 @@ Este erro ocorre quando o layout especificado para a tag não é compatível.
 Verifique os valores `supported_layout` para a tag nas [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 O comportamento real do layout é determinado pelo atributo `layout`.
-Para saber mais sobre como funciona o layout, consulte [Como controlar o layout](/pt_br/docs/guides/author-develop/responsive/control_layout.html) e as [Especificações do sistema de layout das AMP em HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Para saber mais sobre como funciona o layout, consulte [Como controlar o layout](/pt_br/docs/guides/responsive/control_layout.html) e as [Especificações do sistema de layout das AMP em HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### Atributo não permitido pelo layout especificado
 
@@ -715,7 +715,7 @@ Para saber mais sobre como funciona o layout, consulte [Como controlar o layout]
 </table>
 
 Este erro ocorre quando você especifica um layout para a tag AMP, e ele tem um atributo não permitido.
-Os atributos não permitidos por tipos de layout são descritos nas [Especificações do sistema de layout das AMP em HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Os atributos não permitidos por tipos de layout são descritos nas [Especificações do sistema de layout das AMP em HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### Valor inválido para o atributo exigido pelo layout
 
@@ -735,7 +735,7 @@ Os atributos não permitidos por tipos de layout são descritos nas [Especifica�
 </table>
 
 Este erro ocorre quando o valor do atributo é inválido para o layout especificado.
-Para entender o que aciona esse erro, é necessário conhecer os [diferentes comportamentos de layouts](/pt_br/docs/guides/author-develop/responsive/control_layout.html).
+Para entender o que aciona esse erro, é necessário conhecer os [diferentes comportamentos de layouts](/pt_br/docs/guides/responsive/control_layout.html).
 
 Vamos supor que você definiu o layout como `fixed-height` e incluiu valores numéricos para `height` e `width`.
 O layout de `fixed-height` assume um valor de `height`.
@@ -770,7 +770,7 @@ Por exemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` 
 
 As páginas AMP não podem incluir a sintaxe de modelos, a menos que essa sintaxe esteja dentro de uma tag AMP projetada especificamente para incluir modelos, como [amp-mustache](/docs/reference/extended/amp-mustache.html).
 
-É possível incluir modelos em seus arquivos de origem, desde que a saída gerada por esses arquivos não tenha os modelos (veja também [Como usar pré-processadores CSS](/pt_br/docs/guides/author-develop/responsive/style_pages.html)).
+É possível incluir modelos em seus arquivos de origem, desde que a saída gerada por esses arquivos não tenha os modelos (veja também [Como usar pré-processadores CSS](/pt_br/docs/guides/responsive/style_pages.html)).
 
 ### O atributo contém sintaxe de modelo
 

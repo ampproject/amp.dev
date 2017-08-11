@@ -6,4 +6,6 @@ AMP ページを初めて作成する方は、このチュートリアルをご�
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/ja/docs/tutorials/create/basic_markup.html">ステップ 1 に進む</a>
+<div class="prev-next-buttons">
+<a class="button" href="/ja/docs/tutorials/create/basic_markup.html"><span class="arrow-next">スタートガイド</span></a>
+</div>

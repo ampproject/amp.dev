@@ -6,4 +6,6 @@ $title: สร้าง AMP หน้าแรกของคุณ
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/th/docs/tutorials/create/basic_markup.html">ไปยังขั้นตอนที่ 1</a>
+<div class="prev-next-buttons">
+<a class="button" href="/th/docs/tutorials/create/basic_markup.html"><span class="arrow-next">เริ่ม</span></a>
+</div>

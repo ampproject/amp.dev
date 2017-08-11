@@ -28,4 +28,7 @@ $title: 검색 및 배포를 위해 페이지 준비
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/ko/docs/tutorials/create/publish.html">6단계로 계속</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/ko/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/tutorials/create/publish.html"><span class="arrow-next">다음</span></a>
+</div>

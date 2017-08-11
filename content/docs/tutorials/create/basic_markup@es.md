@@ -67,4 +67,7 @@ Además de los requisitos básicos, en nuestro ejemplo también se incluye una d
 
 ¡Buenas noticias! Eso es todo lo que necesitamos para crear nuestra primera página AMP, aunque por supuesto falta especificar el `<body>`. En la próxima sección, veremos la manera de agregar componentes básicos, como imágenes, elementos de AMP personalizados, dar estilo a tu página y definir un diseño responsivo.
 
-<a class="go-button button" href="/es/docs/tutorials/create/include_image.html">Continuar con el paso 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/es/docs/tutorials/create.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/tutorials/create/include_image.html"><span class="arrow-next">Siguiente</span></a>
+</div>

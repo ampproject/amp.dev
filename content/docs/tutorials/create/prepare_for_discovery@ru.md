@@ -28,4 +28,7 @@ $title: Подготовка страницы к обнаружению и ра�
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/ru/docs/tutorials/create/publish.html">Перейти к шагу 6</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/ru/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Предыдущий</span></a>
+  <a class="button next-button" href="/ru/docs/tutorials/create/publish.html"><span class="arrow-next">Следующий</span></a>
+</div>

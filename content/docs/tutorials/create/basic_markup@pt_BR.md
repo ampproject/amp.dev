@@ -59,4 +59,7 @@ Para saber mais sobre todos os metadados necessários para outros locais, como o
 
 Boa notícia! Isso é tudo de que precisamos para criar nossa primeira página AMP, mas é claro que ainda falta muita coisa no corpo. Na próxima seção, abordaremos como adicionar itens básicos como imagens, elementos AMP personalizados, como compor o estilo da sua página e desenvolver um layout responsivo.
 
-<a class="go-button button" href="/pt_br/docs/tutorials/create/include_image.html">Continuar para a etapa 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/pt_br/docs/tutorials/create.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/tutorials/create/include_image.html"><span class="arrow-next">Próxima</span></a>
+</div>

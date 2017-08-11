@@ -27,4 +27,7 @@ AMP 是一些网页；页面及其元素的任何样式设置操作都是使用�
 
 如需详细了解 AMP 如何渲染页面和设置页面布局，以及如何修改布局，请参阅[如何控制布局](/zh_cn/docs/guides/author-develop/responsive/control_layout.html)。
 
-<a class="go-button button" href="/zh_cn/docs/tutorials/create/preview_and_validate.html">继续执行步骤 4</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/zh_cn/docs/tutorials/create/include_image.html"><span class="arrow-prev">以前</span></a>
+  <a class="button next-button" href="/zh_cn/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">下一个</span></a>
+</div>

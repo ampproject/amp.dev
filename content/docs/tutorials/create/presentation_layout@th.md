@@ -27,4 +27,7 @@ AMP มีกฎที่เข้มงวดกว่าในการจั�
 
 เรียนรู้เกี่ยวกับวิธีการแสดงผลและการจัดเค้าโครงหน้าเว็บใน AMP และวิธีการปรับเปลี่ยนเค้าโครงใน[วิธีควบคุมเค้าโครง](/th/docs/guides/author-develop/responsive/control_layout.html)
 
-<a class="go-button button" href="/th/docs/tutorials/create/preview_and_validate.html">ไปยังขั้นตอนที่ 4</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/th/docs/tutorials/create/include_image.html"><span class="arrow-prev">ก่อนหน้า</span></a>
+  <a class="button next-button" href="/th/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">ถัดไป</span></a>
+</div>

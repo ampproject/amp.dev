@@ -6,4 +6,6 @@ Nie wiesz jak zacząć? W tym samouczku dowiesz się, jak utworzyć podstawową 
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/pl/docs/tutorials/create/basic_markup.html">Przejdź do kroku 1</a>
+<div class="prev-next-buttons">
+<a class="button" href="/pl/docs/tutorials/create/basic_markup.html"><span class="arrow-next">Zaczynać</span></a>
+</div>

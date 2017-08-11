@@ -8,4 +8,6 @@ Not sure how to get started? In this tutorial, you’ll learn how to create a ba
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/docs/tutorials/create/basic_markup.html">Continue to Step 1</a>
+<div class="prev-next-buttons">
+<a class="button" href="/docs/tutorials/create/basic_markup.html"><span class="arrow-next">Get started</span></a>
+</div>

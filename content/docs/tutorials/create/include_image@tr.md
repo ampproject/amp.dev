@@ -12,4 +12,8 @@ Ek işaretlerin nasıl görüneceğini örneklendirmek için, sayfaya bir görü
 
 `<img>` gibi etiketleri `<amp-img>` ile neden değiştirdiğimizi ve kaç tane mevcut olduğunu öğrenmek için, [Bilgi İletim Birimleri ve Medya Ekle](/tr/docs/guides/author-develop/amp_replacements.html) bölümüne gidin.
 
-<a class="go-button button" href="/tr/docs/tutorials/create/presentation_layout.html">Adım 3 ile devam edin</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/tr/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Önceki</span></a>
+  <a class="button next-button" href="/tr/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">Sonraki</span></a>
+</div>
+

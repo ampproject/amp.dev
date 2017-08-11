@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 Poprawne dokumenty AMP nie mogą zawierać żadnych błędów weryfikacji.
-Ten artykuł pomoże Ci lepiej zrozumieć błędy weryfikacji i skuteczniej usuwać problemy, które możesz napotkać podczas [weryfikacji stron AMP](/pl/docs/guides/debug/validate.html).
+Ten artykuł pomoże Ci lepiej zrozumieć błędy weryfikacji i skuteczniej usuwać problemy, które możesz napotkać podczas [weryfikacji stron AMP](/pl/docs/guides/validate.html).
 Pełny przegląd błędów weryfikacji zawiera [specyfikacja narzędzia do weryfikacji stron AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -76,7 +76,7 @@ Obowiązkowe tagi zawierają pole `mandatory: true` w [specyfikacji narzędzia 
 
 Narzędzie do weryfikacji generuje błąd `TAG_REQUIRED_BY_MISSING` po napotkaniu rozszerzonego komponentu w dokumencie AMP, dla którego nie ma odpowiednika w postaci tagu `<script>`.
 
-[Rozszerzone komponenty](/docs/reference/extended.html) muszą być zawarte w dokumencie AMP jako niestandardowe elementy.
+[Rozszerzone komponenty](/docs/reference/components.html) muszą być zawarte w dokumencie AMP jako niestandardowe elementy.
 Aby usunąć takie błędy, przejdź do referencyjnej strony rozszerzonego elementu, skopiuj wymagany skrypt i wklej go do tagu `<head>` dokumentu AMP.
 
 ### Niedozwolony tag
@@ -406,10 +406,10 @@ Odnoszą się one do oczekiwanych tagów:
 Ten błąd występuje wówczas, gdy tag zawiera oba wzajemnie wykluczające się atrybuty.
 Na przykład w poniższych tagach dozwolony jest tylko jeden z wymienionych atrybutów:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` albo `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` albo `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` albo `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` albo `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` albo `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` albo `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` albo `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` albo `data-videoid`
 
 ### Brak obowiązkowego atrybutu z listy
 
@@ -431,10 +431,10 @@ Na przykład w poniższych tagach dozwolony jest tylko jeden z wymienionych at
 Ten błąd występuje wówczas, gdy w tagu brakuje jednego wymaganego atrybutu.
 Na przykład poniższe tagi wymagają jednego z dwóch atrybutów do wyboru:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` albo `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` albo `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` albo `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` albo `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` albo `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` albo `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` albo `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` albo `data-videoid`
 
 ### Niewłaściwy tag nadrzędny
 
@@ -573,7 +573,7 @@ Znana jest pełna lista unikalnych tagów:
 
 ## Błędy stylu i układu
 
-Zanim przejdziemy do omawiania błędów stylu i układu, warto wyjaśnić działanie [stylu](/pl/docs/guides/author-develop/responsive/style_pages.html) i [układu](/pl/docs/guides/author-develop/responsive/control_layout.html) na stronach AMP. Strony AMP są stronami HTML, dlatego ich styl jest bardzo podobny do stylu każdej strony HTML.
+Zanim przejdziemy do omawiania błędów stylu i układu, warto wyjaśnić działanie [stylu](/pl/docs/guides/responsive/style_pages.html) i [układu](/pl/docs/guides/responsive/control_layout.html) na stronach AMP. Strony AMP są stronami HTML, dlatego ich styl jest bardzo podobny do stylu każdej strony HTML.
 Istnieją jednak pewne ograniczenia, które mają zagwarantować szybkie wczytywanie się stron, a narzędzie do weryfikacji stron AMP wymusza stosowanie tych ograniczeń.
 
 Na stronach AMP układ podlega ściślejszej kontroli.
@@ -666,7 +666,7 @@ Ten błąd występuje wówczas, gdy nie określisz układu dla tagu AMP, a domn
 Sprawdź wartości atrybutu `supported_layout` dla tagu w [specyfikacji narzędzia do weryfikacji stron AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Atrybut `layout` określa faktyczne działanie układu.
-Więcej informacji na temat działania układu zawiera artykuł pt. [Kontrolowanie układu](/pl/docs/guides/author-develop/responsive/control_layout.html) oraz [specyfikacja systemowa układu AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Więcej informacji na temat działania układu zawiera artykuł pt. [Kontrolowanie układu](/pl/docs/guides/responsive/control_layout.html) oraz [specyfikacja systemowa układu AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 **Uwaga:** jeśli nie określisz układu i nie uwzględnisz wartości atrybutu `width` i `height`, układ przyjmie domyślną wartość CONTAINER. Narzędzie do weryfikacji wygeneruje błąd, ponieważ wartość CONTAINER nie jest obsługiwana przez żaden tag AMP.
 Aby usunąć błąd, określ układ inny niż CONTAINER lub dodaj wartość `width` i/lub `height`.
@@ -689,7 +689,7 @@ Aby usunąć błąd, określ układ inny niż CONTAINER lub dodaj wartość `wid
 </table>
 
 Ten błąd występuje wówczas, gdy nie określisz układu dla tagu AMP, a domniemany układ zawiera niedozwolony atrybut.
-Niedozwolone atrybuty typów układów są opisane w [specyfikacji systemowej układu AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Niedozwolone atrybuty typów układów są opisane w [specyfikacji systemowej układu AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### Określony układ nie jest obsługiwany przez tag AMP
 
@@ -712,7 +712,7 @@ Ten błąd występuje wówczas, gdy określony układ dla tagu nie jest obsługi
 Sprawdź wartości atrybutu `supported_layout` dla tagu w [specyfikacji narzędzia do weryfikacji stron AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Atrybut `layout` określa faktyczne działanie układu.
-Więcej informacji na temat działania układu zawiera artykuł [Kontrolowanie układu](/pl/docs/guides/author-develop/responsive/control_layout.html) oraz [specyfikacja systemowa układu AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Więcej informacji na temat działania układu zawiera artykuł [Kontrolowanie układu](/pl/docs/guides/responsive/control_layout.html) oraz [specyfikacja systemowa układu AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### Atrybut niedozwolony przez określony układ
 
@@ -732,7 +732,7 @@ Więcej informacji na temat działania układu zawiera artykuł [Kontrolowanie u
 </table>
 
 Ten błąd występuje wówczas, gdy określisz układ dla tagu AMP, który zawiera niedozwolony atrybut.
-Niedozwolone atrybuty typów układów są opisane w [specyfikacji systemowej układu AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Niedozwolone atrybuty typów układów są opisane w [specyfikacji systemowej układu AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### Nieprawidłowa wartość dla atrybutu wymaganego przez układ
 
@@ -752,7 +752,7 @@ Niedozwolone atrybuty typów układów są opisane w [specyfikacji systemowej u
 </table>
 
 Ten błąd występuje wówczas, gdy wartość atrybutu jest nieprawidłowa dla określonego układu.
-Aby lepiej zrozumieć, co generuje ten błąd, dowiedz się więcej na temat [różnych schematów działania układów](/pl/docs/guides/author-develop/responsive/control_layout.html).
+Aby lepiej zrozumieć, co generuje ten błąd, dowiedz się więcej na temat [różnych schematów działania układów](/pl/docs/guides/responsive/control_layout.html).
 
 Załóżmy, że układ ma być typu `fixed-height`, a parametry `height` i `width` mają określone wartości liczbowe.
 Układ typu `fixed-height` przyjmuje wartość `height`.
@@ -785,9 +785,9 @@ Niespójne jednostki szerokości i wysokości w tagu „amp-img” – szerokoś
 
 ## Błędy związane z użyciem szablonów
 
-Strony AMP nie mogą zawierać składni określającej szablony, chyba że taka składnia jest umieszczona w tagu AMP, który z definicji ma zawierać szablony, na przykład [amp-mustache](/docs/reference/extended/amp-mustache.html).
+Strony AMP nie mogą zawierać składni określającej szablony, chyba że taka składnia jest umieszczona w tagu AMP, który z definicji ma zawierać szablony, na przykład [amp-mustache](/docs/reference/components/amp-mustache.html).
 
-Pliki źródłowe mogą zawierać szablony pod warunkiem, że dane wyjściowe wygenerowane z tych plików nie będą zawierać szablonów (zobacz też [Korzystanie z narzędzi do wstępnej obróbki kodu CSS](/pl/docs/guides/author-develop/responsive/style_pages.html)).
+Pliki źródłowe mogą zawierać szablony pod warunkiem, że dane wyjściowe wygenerowane z tych plików nie będą zawierać szablonów (zobacz też [Korzystanie z narzędzi do wstępnej obróbki kodu CSS](/pl/docs/guides/responsive/style_pages.html)).
 
 ### Atrybut zawiera składnię szablonu
 
