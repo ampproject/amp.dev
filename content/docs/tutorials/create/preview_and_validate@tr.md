@@ -16,4 +16,7 @@ Ardından, AMP sayfanızın **gerçekten geçerli bir AMP olduğundan** ya da Go
 
 [Doğrulama hakkında daha fazla bilgi](/tr/docs/guides/debug/validate.html) ve hata aldığınızda ne yapacağınızı öğrenin.
 
-<a class="go-button button" href="/tr/docs/tutorials/create/prepare_for_discovery.html">Adım 5 ile devam edin</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/tr/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">Önceki</span></a>
+  <a class="button next-button" href="/tr/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">Sonraki</span></a>
+</div>

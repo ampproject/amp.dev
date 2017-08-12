@@ -28,4 +28,7 @@ $title: เตรียมหน้าเว็บของคุณให้ผ
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-<a class="go-button button" href="/th/docs/tutorials/create/publish.html">ไปยังขั้นตอนที่ 6</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/th/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">ก่อนหน้า</span></a>
+  <a class="button next-button" href="/th/docs/tutorials/create/publish.html"><span class="arrow-next">ถัดไป</span></a>
+</div>

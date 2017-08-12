@@ -12,4 +12,8 @@ $title: ใส่รูปภาพ
 
 หากต้องการทราบว่าเหตุใดเราจึงแทนที่แท็ก `<img>` ด้วย `<amp-img>` รวมถึงมีแท็กใดบ้างที่สามารถนำมาใช้แทนได้ โปรดไปที่[การใส่ Iframe และสื่อต่างๆ](/th/docs/guides/author-develop/amp_replacements.html)
 
-<a class="go-button button" href="/th/docs/tutorials/create/presentation_layout.html">ไปยังขั้นตอนที่ 3</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/th/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">ก่อนหน้า</span></a>
+  <a class="button next-button" href="/th/docs/tutorials/create/presentation_layout.html"><span class="arrow-next">ถัดไป</span></a>
+</div>
+

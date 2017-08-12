@@ -16,4 +16,7 @@ $title: Предварительный просмотр и проверка
 
 [Ознакомьтесь с дополнительной информацией о проверке](/ru/docs/guides/debug/validate.html) и способах устранения ошибок.
 
-<a class="go-button button" href="/ru/docs/tutorials/create/prepare_for_discovery.html">Перейти к шагу 5</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/ru/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">Предыдущий</span></a>
+  <a class="button next-button" href="/ru/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">Следующий</span></a>
+</div>

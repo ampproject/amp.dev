@@ -12,4 +12,6 @@ The [comment section sample](https://ampbyexample.com/samples_templates/comment_
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/docs/tutorials/login_requiring/login.html">Continue to Step 1</a>
+<div class="prev-next-buttons">
+<a class="button" href="/docs/tutorials/login_requiring/login.html"><span class="arrow-next">Get started</span></a>
+</div>

@@ -63,3 +63,12 @@ html, body {
     border-right: 2px solid $color-ampblue;
   }
 }
+
+@include max-screen($tablet-breakpoint) {
+    td, th {
+      padding: 10px;
+    }
+    td > pre {
+      white-space: pre-line;
+    }
+}

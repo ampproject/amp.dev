@@ -30,4 +30,7 @@ AMP sigue reglas estrictas al distribuir elementos en la página. En una página
 Aprende todo acerca de cómo AMP representa y diseña una página y cómo puedes modificar el diseño en [Cómo controlar el diseño](/es/docs/guides/responsive/control_layout.html).
 {% endcall %}
 
-<a class="go-button button" href="/es/docs/tutorials/create/preview_and_validate.html">Continuar con el paso 4</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/es/docs/tutorials/create/include_image.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">Siguiente</span></a>
+</div>

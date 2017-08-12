@@ -66,4 +66,7 @@ In addition to the bare requirements, our sample also includes a Schema.org defi
 
 Good news! That’s all we need to create our first AMP page, but of course, there’s not a lot going on in the body yet. In the next section, we’ll cover how to add basics like images, custom AMP elements, how to style your page and work out a responsive layout.
 
-<a class="go-button button" href="/docs/tutorials/create/include_image.html">Continue to Step 2</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/docs/tutorials/create.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/tutorials/create/include_image.html"><span class="arrow-next">Next</span></a>
+</div>
