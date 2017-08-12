@@ -14,25 +14,35 @@ past:
 
 upcoming_events:
   - type: Event
-    title: Google I/O
-    href: https://events.google.com/io/
-    excerpt: "Watch the 4 AMP talks in the live-stream and meet many members of the AMP team in person at Google I/O."
-    date: May 17, 2017
-    event_time: 20170517/20170519
-    event_time_text: May 17 to May 19
-    location: Mountain View, CA
-    participant: Developers
-  - type: Event
-    title: AMP Meetup at ZalandoTech
-    href: https://www.meetup.com/Zalando-Tech-Events-Berlin/events/239183474/
-    excerpt: "Listen to talks of Malte Ubl about 'Beautiful, interactive AMP pages' and Paul Bakaus about 'Progressive Web AMPs'."
-    date: May 3, 2017
-    event_time: 201705203/20170504
-    event_time_text: May 5th
-    location: Berlin, Germany
+    title: AMP Roadshow Toronto
+    href: https://events.withgoogle.com/amp-roadshow-toronto/
+    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+    date: August 30, 2017
+    event_time: 20170830/20170830
+    event_time_text: Aug 30
+    location: Toronto, Canada
     participant: Developers
 
+
 # past_events:
+#  - type: Event
+#    title: Google I/O
+#    href: https://events.google.com/io/
+#    excerpt: "Watch the 4 AMP talks in the live-stream and meet many members of the AMP team in person at Google I/O."
+#    date: May 17, 2017
+#    event_time: 20170517/20170519
+#    event_time_text: May 17 to May 19
+#    location: Mountain View, CA
+#    participant: Developers
+#  - type: Event
+#    title: AMP Meetup at ZalandoTech
+#    href: https://www.meetup.com/Zalando-Tech-Events-Berlin/events/239183474/
+#    excerpt: "Listen to talks of Malte Ubl about 'Beautiful, interactive AMP pages' and Paul Bakaus about 'Progressive Web AMPs'."
+#    date: May 3, 2017
+#    event_time: 201705203/20170504
+#    event_time_text: May 5th
+#    location: Berlin, Germany
+#    participant: Developers
 #  - type: Event
 #    title: Mobile + Web Devcon
 #    href: https://followup.cc/l/10384552/061a51652dd99cea3c8b861d6f50c6c0/http%3A%2F%2Fmobilewebdevconference.com%2F

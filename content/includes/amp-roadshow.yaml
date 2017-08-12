@@ -1,0 +1,79 @@
+next:
+  title: Toronto
+  link: https://events.withgoogle.com/amp-roadshow-toronto/
+
+cities:
+  - title: Toronto
+    date: 2018-08-30
+    link: https://events.withgoogle.com/amp-roadshow-toronto/
+  - title: Singapore
+  - title: Sydney
+  - title: Munich
+  - title: Paris
+  - title: Madrid
+  - title: London
+  - title: Beijing
+  - title: Shanghai
+  - title: Taipei
+
+
+agenda:
+  - title: Intro + Keynote
+    time: "0930"
+    type: keynote
+  - title: "AMP: A library for beautiful, responsive sites"
+    time: "0945"
+    type: session
+  - title: Advanced interactivity with AMP
+    time: "1015"
+    type: session
+  - title: Coffee Break
+    time: "1045"
+  - title: AMP in Production
+    time: "1100"
+    type: session
+  - title: Monetizing AMP pages
+    time: "1130"
+    type: session
+  - title: Progressive Web AMPs
+    time: "1200"
+    type: session
+  - title: Lunch
+    time: "1230"
+  - title: Codelabs
+    time: "1330"
+  - title: What's next in AMP
+    time: "1600"
+    type: keynote
+  - title: Q&A with speakers
+    time: "1615"
+    type: panel
+  - title: Happy hour
+    time: "1700"
+
+pillars:
+  - pillar: Design
+    contents:
+    - AMP as canonical site
+    - Responsive design
+    - New AMP Effects
+    - New AMP UI components
+  - pillar: Interactivity
+    contents:
+    - State management (amp-bind)
+    - Live data
+    - Forms & autocomplete
+    - Selections
+  - pillar: DevOps
+    contents:
+    - Deploying AMP
+    - AMP in your favorite CMS
+    - SEO & Discovery
+    - AMP & PWA
+  - pillar: Monetization
+    contents:
+    - AMP for Ads
+    - AMP for Landing Pages
+    - Integrating ads
+    - Analytics
+    - Paywalls & Payments
