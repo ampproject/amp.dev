@@ -2,6 +2,7 @@
 .DS_Store
 .sass-cache
 .idea
+.podcache.yaml
 node_modules
 
 build
