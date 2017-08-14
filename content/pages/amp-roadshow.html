@@ -50,7 +50,7 @@ $localization:
             <ul>
                     {% for city in conf.cities %}
                     <li>
-                        <a{% if city.link %} href="{{city.link}}"{% endif %}>
+                        <a{% if city.link %} href="{{city.link}}" target="_blank"{% endif %}>
                             {{ city.title }}
                         </a>
                     </li>
@@ -67,12 +67,12 @@ $localization:
                                 <div class="date">{% if city.date %}{{ city.date | date() }}{% else %}To be announced{% endif %}</div>
                                 <div class="flex">
                                     <h4>{{ city.title }}</h4>
-                                    <a href="{{ city.link }}">Register</a>
+                                    <a href="{{ city.link }}" target="_blank">Register</a>
                                 </div>
                                 {% else %}
                                 <div class="flex">
                                     <h4>{{ city.title }}</h4>
-                                    {% if city.link %}<a href="{{ city.link }}">Register</a>{% else %}<a>COMING SOON</a>{% endif %}
+                                    <a>COMING SOON</a>
                                 </div>
                                 {% endif %}
                             </div>
@@ -182,10 +182,10 @@ $localization:
         <dd>No - tickets are free of charge.</dd>
 
         <dt>Who is the event for?</dt>
-        <dd>Web developers and designers who have used AMP and want to create even better AMP experiences, who haven't used AMP and are curious or want to contribute to AMP to make it better for everyone.</dd>
+        <dd>Web developers and designers with an interest in AMP--whether you've had experience using AMP and want to create better experiences, you're curious about how you can use AMP to improve your site, or you want to contribute to AMP to make it better for everyone.</dd>
 
         <dt>Am I all set after registering?</dt>
-        <dd>Depending on the actual city, we will confirm attendees on a case-by-case basis to ensure we attract the right audience. The registration page of the actual city will have more information. Note that your seat is not confirmed until you receive a confirmation code.</dd>
+        <dd>We expect that in some cities more people will be interested in attending than we can accommodate, so we will be confirming attendees on a case-by-case basis.</dd>
 
         </dl>
     </div>

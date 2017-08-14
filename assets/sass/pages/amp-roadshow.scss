@@ -207,6 +207,14 @@
                   opacity: 1;
                   transform: translateY(0px);
                 }
+                .dot {
+                  .circle {
+                    background: #4c4c4c;
+                  }
+                  .ringring {
+                    animation: none;
+                  }
+                }
               }
 
               .bubble {
