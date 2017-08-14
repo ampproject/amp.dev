@@ -15,4 +15,6 @@ numbered: 1
 
 {% include "/views/partials/sub_nav.html" %}
 
-<a class="button go-button" href="/ko/docs/tutorials/login_requiring/login.html">1단계로 계속</a>
+<div class="prev-next-buttons">
+<a class="button" href="/ko/docs/tutorials/login_requiring/login.html"><span class="arrow-next">시작하기</span></a>
+</div>

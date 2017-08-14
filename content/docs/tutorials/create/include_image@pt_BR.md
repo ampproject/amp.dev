@@ -10,7 +10,9 @@ Para demonstrar qual seria a aparência de uma marcação adicional, veja o cód
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Para saber por que estamos substituindo tags como `<img>` por `<amp-img>` e quantas estão disponíveis, consulte [Incluir iframes e mídia](/pt_br/docs/guides/author-develop/amp_replacements.html).
+{% call callout('Leia Mais', type='read') %}
+Para saber por que estamos substituindo tags como `<img>` por `<amp-img>` e quantas estão disponíveis, consulte [Incluir imagens e vídeo](/pt_br/docs/guides/author-develop/amp_replacements.html).
+{% endcall %}
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/pt_br/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Anterior</span></a>

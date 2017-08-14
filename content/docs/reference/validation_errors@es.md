@@ -389,10 +389,10 @@ Hacen referencia a etiquetas previstas:
 Este error se produce cuando una etiqueta contiene dos atributos que se excluyen mutuamente.
 Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` o `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` o `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` o `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` o `data-videoid`
 
 ### Falta un atributo obligatorio en la lista
 
@@ -414,10 +414,10 @@ Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 Este error se produce cuando a una etiqueta le falta un atributo requerido de varias opciones.
 Por ejemplo, las siguientes etiquetas requieren uno de los dos atributos posibles:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` o `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` o `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` o `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` o `data-videoid`
 
 ### Etiqueta principal incorrecta
 
@@ -649,7 +649,7 @@ Este error se produce cuando no se especifica ningún diseño para la etiqueta d
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 **Nota:** Si no se especifica el diseño y no se incluyen los valores de `width` y `height`, el valor predeterminado del diseño es CONTAINER. El validador devuelve un error porque ninguna de las etiquetas de AMP admite CONTAINER.
 Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añade un valor `width` y/o `height`.
@@ -672,7 +672,7 @@ Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añ
 </table>
 
 Este error se produce cuando no se especifica ningún diseño para la etiqueta de AMP y el diseño implícito contiene un atributo no permitido.
-Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### La etiqueta de AMP no admite el diseño especificado
 
@@ -695,7 +695,7 @@ Este error se produce cuando no se admite el diseño especificado para la etique
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### Atributo no permitido por el diseño especificado
 
@@ -715,7 +715,7 @@ Para obtener más información sobre cómo funciona el diseño, consulta [Cómo 
 </table>
 
 Este error se produce cuando se especifica un diseño para la etiqueta de AMP y ese diseño contiene un atributo no permitido.
-Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### El atributo requerido por el diseño tiene un valor no válido
 
@@ -770,7 +770,7 @@ Por ejemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` 
 
 Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [amp-mustache](/es/docs/reference/components/amp-mustache.html).
 
-Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS](/es/docs/guides/author-develop/responsive/style_pages.html)).
+Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS](/es/docs/guides/responsive/style_pages.html)).
 
 ### El atributo contiene sintaxis de la plantilla
 

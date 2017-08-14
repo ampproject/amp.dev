@@ -61,4 +61,7 @@ When you add a comment and click the submit button, you should now see something
 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
 
-<a class="go-button button" href="/docs/tutorials/login_requiring/logout.html">Continue to Step 3</a>
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="/docs/tutorials/login_requiring/login.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/tutorials/login_requiring/logout.html"><span class="arrow-next">Next</span></a>
+</div>

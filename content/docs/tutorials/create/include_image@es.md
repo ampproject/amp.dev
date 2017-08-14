@@ -12,7 +12,7 @@ Para demostrar el aspecto que tendría el marcado adicional, a continuación te 
 [/sourcecode]
 
 {% call callout('Leer más', type='read') %}
-Para saber por qué reemplazamos etiquetas como `<img>` por `<amp-img>` y cuántas hay disponibles, consulta [Incluir Iframes y medios](/es/docs/guides/amp_replacements.html).
+Para saber por qué reemplazamos etiquetas como `<img>` por `<amp-img>` y cuántas hay disponibles, consulta [Incluir imágenes y videos](/es/docs/guides/amp_replacements.html).
 {% endcall %}
 
 <div class="prev-next-buttons">

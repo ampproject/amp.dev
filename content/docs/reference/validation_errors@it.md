@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 I documenti AMP validi non devono contenere errori di convalida.
-Questo documento ha lo scopo di aiutarti a comprendere meglio e a correggere gli eventuali errori riscontrati durante la [convalida delle tue pagine AMP](/it/docs/guides/debug/validate.html).
+Questo documento ha lo scopo di aiutarti a comprendere meglio e a correggere gli eventuali errori riscontrati durante la [convalida delle tue pagine AMP](/it/docs/guides/validate.html).
 Per una panoramica completa degli errori di convalida, leggi la [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -77,7 +77,7 @@ Questi tag obbligatori includono un campo `mandatory: true` nella [specifica del
 
 Lo strumento di convalida genera l'errore `TAG_REQUIRED_BY_MISSING` quando trova un componente esteso nel documento AMP, ma non trova il relativo equivalente `<script>`.
 
-I [componenti estesi](/docs/reference/extended.html) devono essere inclusi esplicitamente nel documento AMP sotto forma di elementi personalizzati.
+I [componenti estesi](/docs/reference/components.html) devono essere inclusi esplicitamente nel documento AMP sotto forma di elementi personalizzati.
 Per correggere questi errori visita la pagina di riferimento del componente esteso, copia lo script obbligatorio e incollalo nell'elemento `<head>` del documento AMP.
 
 ### Tag non consentito
@@ -410,10 +410,10 @@ Si riferiscono ai tag previsti:
 Questo errore si verifica quando un tag ha entrambi gli attributi che si escludono a vicenda.
 Ad esempio, è consentito un solo tag tra i seguenti:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` o `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` o `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` o `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` o `data-videoid`
 
 
 ### Attributo obbligatorio mancante tra quelli dell'elenco
@@ -436,10 +436,10 @@ Ad esempio, è consentito un solo tag tra i seguenti:
 Questo errore si verifica quando in un tag manca un attributo obbligatorio a scelta tra quelli forniti.
 Ad esempio, i seguenti tag richiedono uno dei due attributi possibili:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` o `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` o `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` o `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` o `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` o `data-videoid`
 
 
 ### Tag principale errato
@@ -583,7 +583,7 @@ L'elenco completo di tag univoci è noto ed è riportato di seguito:
 
 ## Errori di stile e layout
 
-Prima di approfondire gli errori di stile e layout, è opportuno capire come funzionano [l'applicazione di stili](/it/docs/guides/author-develop/responsive/style_pages.html) e il [layout](/it/docs/guides/author-develop/responsive/control_layout.html) in AMP. Poiché le pagine AMP sono pagine HTML, l'applicazione di stili è molto simile a quella delle pagine HTML.
+Prima di approfondire gli errori di stile e layout, è opportuno capire come funzionano [l'applicazione di stili](/it/docs/guides/responsive/style_pages.html) e il [layout](/it/docs/guides/responsive/control_layout.html) in AMP. Poiché le pagine AMP sono pagine HTML, l'applicazione di stili è molto simile a quella delle pagine HTML.
 Esistono però alcune limitazioni per garantire il rapido caricamento delle pagine; tali limitazioni vengono applicate dallo strumento di convalida AMP.
 
 Il layout è più contenuto nelle pagine AMP.
@@ -675,7 +675,7 @@ Questo errore si verifica quando non specifichi un layout per il tag AMP e il la
 Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
-Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout](/it/docs/guides/author-develop/responsive/control_layout.html) e la [specifica relativa al sistema di layout HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout](/it/docs/guides/responsive/control_layout.html) e la [specifica relativa al sistema di layout HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 **Nota.** Se non specifichi il layout e non includi i valori `width` e `height`, il valore predefinito per il layout sarà CONTAINER. Lo strumento di convalida genera un errore perché il layout CONTAINER non è supportato nei tag AMP.
 Specifica un layout diverso da CONTAINER oppure aggiungi un valore `width` e/o `height` per eliminare l'errore.
@@ -698,7 +698,7 @@ Specifica un layout diverso da CONTAINER oppure aggiungi un valore `width` e/o `
 </table>
 
 Questo errore si verifica quando non specifichi un layout per il tag AMP e il layout implicito contiene un attributo non consentito.
-Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 ### Layout specificato non supportato dal tag AMP
 
@@ -721,7 +721,7 @@ Questo errore si verifica quando il layout specificato per il tag non è support
 Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
-Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout](/it/docs/guides/author-develop/responsive/control_layout.html) e la [specifica relativa al sistema di layout HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout](/it/docs/guides/responsive/control_layout.html) e la [specifica relativa al sistema di layout HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 ### Attributo non consentito per il layout specificato
 
@@ -741,7 +741,7 @@ Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativ
 </table>
 
 Questo errore si verifica quando specifichi per il tag AMP un layout contenente un attributo non consentito.
-Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md).
+Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 ### Valore non valido per l'attributo richiesto dal layout
 
@@ -761,7 +761,7 @@ Gli attributi non consentiti per i tipi di layout sono descritti nella [specific
 </table>
 
 Questo errore si verifica quando il valore dell'attributo non è valido per il layout specificato.
-Per comprendere la causa di questo errore, è necessario comprendere bene i [diversi comportamenti dei layout](/it/docs/guides/author-develop/responsive/control_layout.html).
+Per comprendere la causa di questo errore, è necessario comprendere bene i [diversi comportamenti dei layout](/it/docs/guides/responsive/control_layout.html).
 
 Supponi di impostare il layout `fixed-height` e di includere valori numerici per entrambi gli attributi `height` e `width`.
 Il valore del layout `fixed-height` è `height`.
@@ -794,9 +794,9 @@ Ad esempio, `<amp-img src="" layout="responsive" width="42px" height="42rem">` g
 
 ## Errori relativi ai modelli
 
-Le pagine AMP non possono includere sintassi dei modelli, a meno che la sintassi sia all'interno di un tag AMP ideato appositamente per includere i modelli, ad esempio [amp-mustache](/docs/reference/extended/amp-mustache.html).
+Le pagine AMP non possono includere sintassi dei modelli, a meno che la sintassi sia all'interno di un tag AMP ideato appositamente per includere i modelli, ad esempio [amp-mustache](/docs/reference/components/amp-mustache.html).
 
-È possibile includere modelli nei file di origine, purché l'output generato da tali file non contenga i modelli (leggi anche la pagina relativa all'[utilizzo dei preprocessori CSS](/it/docs/guides/author-develop/responsive/style_pages.html)).
+È possibile includere modelli nei file di origine, purché l'output generato da tali file non contenga i modelli (leggi anche la pagina relativa all'[utilizzo dei preprocessori CSS](/it/docs/guides/responsive/style_pages.html)).
 
 ### L'attributo contiene la sintassi di un modello
 
