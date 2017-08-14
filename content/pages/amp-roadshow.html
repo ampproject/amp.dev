@@ -22,7 +22,7 @@ $localization:
             <ul>
                 <li><a href="#cities">Cities</a></li>
                 <li><a href="#schedule">Agenda</a></li>
-                <li><a href="#speakers">Content</a></li>
+                <li><a href="#content">Content</a></li>
                 <li><a href="#workshops">Codelabs</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
@@ -33,7 +33,7 @@ $localization:
 
             <p>Come join us in your city for a free, inclusive, full-day dev workshop with the AMP team.</p>
 
-            <p class="next"><span class="icon-plane"></span>Next stop: <a href="{{ conf.next.link }}">{{ conf.next.title }}</a></p>
+            <p class="next"><span class="icon-plane"></span>Next stop: <a href="{{ conf.nextstop.link }}">{{ conf.nextstop.title }}</a></p>
 
         </div>
 
@@ -43,7 +43,7 @@ $localization:
 
 <section class="cities amp-roadshow-section">
     <div class="wrapper">
-        <h3>Cities</h3>
+        <h3 id="cities">Cities</h3>
 
         <div class="flex">
 
@@ -135,7 +135,7 @@ $localization:
 
 <section class="content amp-roadshow-section">
     <div class="wrapper">
-        <h3>Content</h3>
+        <h3 id="content">Content</h3>
         <p>We'll cover a lot of ground in the few hours we have together. To enable you to build full-fledged AMP sites, the roadshow will deep dive into four big pillars:</p>
 
         <div class="pillars box">
