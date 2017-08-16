@@ -7,7 +7,7 @@ toc: true
 
 これは、 AMP を始めるためのクイックスタートガイドです。
 
-詳細な説明については [初めての AMP ページを作成する](/docs/tutorials/create.html) チュートリアルをご覧ください。
+詳細な説明については [初めての AMP ページを作成する](/ja/docs/tutorials/create.html) チュートリアルをご覧ください。
 
 ### ステップ1: AMP HTML テンプレートの取得
 
@@ -31,7 +31,7 @@ toc: true
 ```
 
 {% call callout('もっと読む', type='read') %}
-AMP ページに [必要なマークアップ](/docs/reference/spec.html#required-markup) をご覧ください。
+AMP ページに [必要なマークアップ](/ja/docs/reference/spec.html#required-markup) をご覧ください。
 {% endcall %}
 
 ### ステップ2: ページにコンポーネントを追加する
@@ -57,7 +57,7 @@ imageのようなコンポーネントを追加して AMP ページを構築し�
     width="480" height="270"></amp-youtube>
 ```
 
-他にもたくさんあります。 [AMP の利用可能コンポーネント](/docs/reference/components.html)を見てください。
+他にもたくさんあります。 [AMP の利用可能コンポーネント](/ja/docs/reference/components.html)を見てください。
 
 ### ステップ3: 要素をスタイルする
 
@@ -75,22 +75,22 @@ AMP ページの要素をスタイルするには、`<head>`内の`<style amp-cu
 ```
 
 {% call callout('もっと読む', type='read') %}
-AMP ページで [サポートされているCSS](/docs/guides/responsive/style_pages.html) をご覧ください。
+AMP ページで [サポートされているCSS](/ja/docs/guides/responsive/style_pages.html) をご覧ください。
 {% endcall %}
 
 ### ステップ4: AMP HTML を検証する
 
 AMP ページが有効な AMP HTML であることを [AMP Validator](https://validator.ampproject.org/) で確認してください。
 
-使用できる他の検証ツールについては、 [AMP ページの検証](/docs/guides/validate.html) を見てください。
+使用できる他の検証ツールについては、 [AMP ページの検証](/ja/docs/guides/validate.html) を見てください。
 
 ### 次のステップ
 
-更に AMP ページの基礎を知るためには、 [初めての AMP ページを作成する](/docs/tutorials/create.html) チュートリアルをご覧ください。
+更に AMP ページの基礎を知るためには、 [初めての AMP ページを作成する](/ja/docs/tutorials/create.html) チュートリアルをご覧ください。
 
 あなたの役に立つ他のリソースがあります。
 
-* [ページを発見可能にする](/docs/guides/discovery.html)
-* [ページにアナリティクスを追加する](/docs/guides/analytics_amp.html)
-* [ユーザーエンゲージメントを改善する](/docs/guides/engagement.html)
+* [ページを発見可能にする](/ja/docs/guides/discovery.html)
+* [ページにアナリティクスを追加する](/ja/docs/guides/analytics_amp.html)
+* [ユーザーエンゲージメントを改善する](/ja/docs/guides/engagement.html)
 * [AMP BY Example](https://ampbyexample.com/) ライブデモ
