@@ -4,7 +4,7 @@ nextstop:
 
 cities:
   - title: Toronto
-    date: 2018-08-30
+    date: 2017-08-30
     link: https://events.withgoogle.com/amp-roadshow-toronto/
   - title: Singapore
   - title: Sydney
@@ -72,7 +72,7 @@ pillars:
     - AMP & PWA
   - pillar: Monetization
     contents:
-    - AMP for Ads
+    - AMP Ads
     - AMP for Landing Pages
     - Integrating ads
     - Analytics
