@@ -90,7 +90,7 @@ AMP ページが有効な AMP HTML であることを [AMP Validator](https://va
 
 あなたの役に立つ他のリソースがあります。
 
-* [ページを発見可能にする](/ja/docs/guides/discovery.html)
-* [ページにアナリティクスを追加する](/ja/docs/guides/analytics_amp.html)
-* [ユーザーエンゲージメントを改善する](/ja/docs/guides/engagement.html)
+* [ページを検出可能にする](/ja/docs/guides/discovery.html)
+* [アナリティクスの設定をする](/ja/docs/guides/analytics_amp.html)
+* [ユーザー エンゲージメントを向上させる](/ja/docs/guides/engagement.html)
 * [AMP BY Example](https://ampbyexample.com/) ライブデモ
