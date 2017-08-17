@@ -1,12 +1,5 @@
 [
     {
-        "title": "Design Principles",
-        "order": 4,
-        "from": "contributing/DESIGN_PRINCIPLES.md",
-        "to": "learn/design-principles.md",
-        "toc": true
-    },
-    {
         "title": "Open Source Governance",
         "order": 5,
         "from": "GOVERNANCE.md",
