@@ -109,9 +109,17 @@
         margin-left: 0;
       }
     }
+    &.center {
+      margin: 0 auto;
+      @include max-screen($mobile-breakpoint) {
+        float: none;
+        margin-left: 0;
+      }
+    }
     &.half { width: calc(50% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; }  }
     &.third { width: calc(33% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
     &.margin-none { margin: 0; }
+    &.ninety { width: calc(90% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
 
     amp-img {
       margin: 0;
@@ -177,4 +185,11 @@
   .rtl .main {
     margin-right: 0;
   }
+}
+
+.error-text {
+  color: red;
+}
+.success-text {
+  color: green;
 }
