@@ -1,6 +1,6 @@
 ---
 $title: Create a live blog
-$order: 3
+$order: 4
 toc: true
 ---
 
