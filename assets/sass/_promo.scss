@@ -78,3 +78,9 @@
     transform: rotate(180deg);
   }
 }
+
+/* fixes for other elements when promo is up */
+.doc-sidebar,
+.toc {
+  top: 80px + 60px;
+}

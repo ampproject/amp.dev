@@ -292,6 +292,9 @@
             .city-toronto {
               top: 25%;
               left: 18%;
+              .bubble {
+                top: 6px;
+              }
             }
 
             .city-singapore {
@@ -347,7 +350,7 @@
               display:  block;
             }
             ul {
-              margin-bottom: 2em;
+              margin-bottom: 4em;
               border-right: 0;
               li {
                 display: inline-block;
