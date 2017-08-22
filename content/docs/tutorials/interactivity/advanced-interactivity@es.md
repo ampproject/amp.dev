@@ -11,26 +11,26 @@ El código de inicio proporciona una experiencia de usuario bastante básico. Ha
 - Añada un indicador que muestre la diapositiva actual y el número total de diapositivas.
 - Cuando un usuario selecciona un color de camisa diferente, cambia el carrusel de imagen para mostrar imágenes de camisetas en el color seleccionado.
 
-Prior to the introduction of the `<amp-bind>` component, adding features like these weren't possible. Let's get a hands-on experience with `<amp-bind>` and add these new features to our sample code!
+Antes de la introducción del componente `<amp-bind>`, no era posible añadir funciones como estas. Vamos a tener una experiencia práctica con `<amp-bind>` y añadir estas nuevas características a nuestro código de ejemplo!
 
-## Install the `<amp-bind>` extension
+## Instalar la extensión `<amp-bind>`
 
-[`<amp-bind>`](/docs/reference/components/amp-bind.html) is a new AMP component that affords custom interactivity via data binding and JS-like expressions. To use `<amp-bind>`, you must install it in the page.
+[`<amp-bind>`](/docs/reference/components/amp-bind.html) es un nuevo componente de AMP que ofrece interactividad personalizada a través de enlace de datos y expresiones similares a JS. Para usar `<amp-bind>`, debe instalarlo en la página.
 
-Open the [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) file, and add the following script to the list of AMP components in the `<head>` section of the page:
+Abra el archivo [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html), y agregue el siguiente script a la lista de componentes de AMP en la sección `<head>` de la página:
 
 ```html
 <script async custom-element="amp-bind"
     src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 ```
 
-## Add a slide indicator
+## Añadir un indicador de diapositiva
 
-`<amp-bind>` works by binding element attributes to custom expressions. These expressions can reference the "state" (mutable JSON data). We can initialize this state through the [`<amp-state>`](/docs/reference/components/amp-bind.html#state) component included with `<amp-bind>`.
+`<amp-bind>` funciona vinculando atributos de elementos a expresiones personalizadas. Estas expresiones pueden hacer referencia al "estado" (mutable JSON data). Podemos inicializar este estado a través del componente [`<amp-state>`](/docs/reference/components/amp-bind.html#state) incluido con `<amp-bind>`.
 
-### Initialize the slide state
+### Inicializar el estado de diapositiva
 
-Let's initialize a state variable to keep track of the index of the currently displayed slide in the image carousel. Open [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) and add the following to the top of the `<body>` of the page (before the `<header>`):
+Vamos a inicializar una variable de estado para realizar un seguimiento del índice de la diapositiva actualmente visualizada en el carrusel de imágenes. Abra [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) y añada lo siguiente a la parte superior del `<body>` de la página (antes del `<header>`):
 
 ```html
 <amp-state id="selected">
