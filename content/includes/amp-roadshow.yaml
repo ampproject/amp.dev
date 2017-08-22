@@ -9,13 +9,14 @@ cities:
   - title: Singapore
   - title: Sydney
   - title: Munich
+    date: 2017-11-07
+    link: https://events.withgoogle.com/amp-roadshow-munich/
   - title: Paris
   - title: Madrid
   - title: London
   - title: Beijing
   - title: Shanghai
   - title: Taipei
-
 
 agenda:
   - title: Intro + Keynote
