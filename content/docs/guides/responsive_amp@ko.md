@@ -17,7 +17,7 @@ AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매�
  AMP 에서 요소를 반응형으로 만드는 것은 아주 쉽습니다. `layout="responsive"` 만 추가하면 됩니다. AMP 의 반응형 디자인을 자세히 알아보려면 [반응형 AMP 페이지 만들기](/ko/docs/guides/responsive/responsive_design) 를 참조하세요.
 {% endcall %}
 
-{{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
+{{ youtube('y6kA3u3GIws', 480, 270, caption='AMP를 처음 사용할 때 어려운 점을 비롯하여 새롭게 설계된 AMP 프로젝트 사이트에 관한 UpperQuad의 이야기를 들어보세요.') }}
 
 ## 페이지에 스타일 추가
 
