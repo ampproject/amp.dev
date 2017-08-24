@@ -16,7 +16,7 @@ No entanto, as AMP limitam o uso de CSS por motivos de desempenho e usabilidade 
 É muito fácil tornar os elementos responsivos nas AMP. Simplesmente coloque `layout="responsive"` neles. Para saber mais sobre o design responsivo nas AMP, acesse [Criar páginas AMP responsivas](/pt_br/docs/guides/responsive/responsive_design).
 {% endcall %}
 
-{{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
+{{ youtube('y6kA3u3GIws', 480, 270, caption='Veja o que a equipe da UpperQuad tem a dizer sobre a reforma do site AMPproject e os desafios de usar AMP pela primeira vez.') }}
 
 ## Adicionar estilos a uma página
 
