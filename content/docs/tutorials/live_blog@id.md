@@ -1,7 +1,9 @@
 ---
 $title: Membuat Live Blog
-$order: 3
 ---
+
+[TOC]
+
 Live blog adalah halaman yang diupdate secara berkala selama peristiwa yang sedang berlangsung, seperti Super Bowl.
 
 Live blog dapat diterapkan di AMP melalui komponen `amp-live-list` menggunakan markup LiveBlogPosting. Untuk melihat contoh penerapan yang dapat Anda gunakan sebagai titik awal, kunjungi [contoh live blog](https://www.ampbyexample.com/samples_templates/live_blog/) di [ampbyexample.com](https://www.ampbyexample.com).

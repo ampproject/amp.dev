@@ -1,6 +1,6 @@
 ---
 $title: Create a login-requiring AMP page
-$order: 3
+$order: 4
 numbered: 1
 ---
 Some user interactions with a page, such as leaving a comment, could be conditioned by a login flow. You can implement a login flow with AMP by using the [amp-access](https://www.ampproject.org/docs/reference/components/amp-access) component combined with the [amp-form](https://www.ampproject.org/docs/reference/components/amp-form) component.
