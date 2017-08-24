@@ -188,7 +188,7 @@ Esto también se puede hacer agregando las acciones `on="tap:AMP.setState(...)` 
 
 ### Vincular los elementos de la imagen
 
-A continuación, agregue enlaces a los elementos [`<amp-img>`](/docs/reference/components/amp-img.html) dentro del `<amp-carousel>` (busque `<!-- TODO: "Cambio de imágenes en amp-carousel-->"`):
+A continuación, agregue enlaces a los elementos [`<amp-img>`](/docs/reference/components/amp-img.html) dentro del `<amp-carousel>` (busque `<!-- TODO: "Cambio de imágenes en amp-carousel"-->`):
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
