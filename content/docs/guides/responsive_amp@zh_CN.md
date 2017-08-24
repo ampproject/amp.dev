@@ -17,7 +17,7 @@ AMP HTML 网页的样式和布局与普通的 HTML 网页非常类似，均采�
  在 AMP 中制作自适应元素非常简单：只需在其中添加 `layout="responsive"` 即可。要详细了解 AMP 中的自适应设计，请转到[制作自适应 AMP 网页](/zh_cn/docs/guides/responsive/responsive_design)。
 {% endcall %}
 
-{{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
+{{ youtube('y6kA3u3GIws', 480, 270, caption='观看 UpperQuad 工作人员介绍 AMP 项目网站重新设计相关内容（包括初次使用 AMP 会遇到的难题）的视频。') }}
 
 ## 向网页添加样式
 
