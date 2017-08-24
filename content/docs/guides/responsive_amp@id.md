@@ -16,7 +16,7 @@ Namun, AMP membatasi beberapa penggunaan CSS untuk alasan performa dan kegunaan,
 Membuat elemen responsif di AMP sangatlah mudah. Cukup letakkan `layout="responsive"` pada elemen. Untuk mempelajari lebih lanjut tentang Desain Responsif di AMP, buka [Membuat Halaman AMP Responsif](/id/docs/guides/responsive/responsive_design).
 {% endcall %}
 
-{{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
+{{ youtube('y6kA3u3GIws', 480, 270, caption='Tonton UpperQuad yang menyampaikan perancangan ulang situs proyek AMP, termasuk tantangan dalam menggunakan AMP untuk pertama kalinya.') }}
 
 ## Tambahkan gaya ke halaman
 
