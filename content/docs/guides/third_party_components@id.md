@@ -9,7 +9,7 @@ Pelajari cara menyertakan komponen pihak ketiga di laman.
 ## Menyematkan Tweet
 
 Sematkan Tweet Twitter di laman
-menggunakan elemen [`amp-twitter`](/docs/reference/components/amp-twitter.html).
+menggunakan elemen [`amp-twitter`](/id/docs/reference/components/amp-twitter.html).
 
 Untuk menyertakan tweet di laman,
 sertakan dahulu skrip berikut di `<head>`:
@@ -36,10 +36,14 @@ untuk memilih rasio aspek berdasarkan lebar layar.
 </amp-iframe>
 </div>
 
+{% call callout('Tip', type='success') %}
+Lihat lebih banyak contoh `amp-twitter` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-twitter/).
+{% endcall %}
+
 ## Menyematkan Instagram
 
 Sematkan Instagram di laman
-menggunakan elemen [`amp-instagram`](/docs/reference/extended/amp-instagram.html)
+menggunakan elemen [`amp-instagram`](/id/docs/reference/extended/amp-instagram.html)
 
 Untuk menyertakan Instagram,
 sertakan dahulu skrip berikut di `<head>`:
@@ -66,10 +70,14 @@ sehingga nilai lebar dan tinggi harus universal
 </amp-iframe>
 </div>
 
+{% call callout('Tip', type='success') %}
+Lihat lebih banyak contoh `amp-instagram` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-instagram/).
+{% endcall %}
+
 ## Menampilkan pos atau video Facebook
 
 Tampilkan pos atau video Facebook di laman
-menggunakan elemen [`amp-facebook`](/docs/reference/components/amp-facebook.html).
+menggunakan elemen [`amp-facebook`](/id/docs/reference/components/amp-facebook.html).
 
 Anda harus menyertakan skrip berikut di `<head>`:
 
@@ -109,11 +117,15 @@ Pratinjau:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
+{% call callout('Tip', type='success') %}
+Lihat lebih banyak contoh `amp-facebook` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-facebook/).
+{% endcall %}
+
 
 ## Menyertakan video youtube
 
 Sertakan video youtube di laman
-menggunakan elemen [`amp-youtube`](/docs/reference/components/amp-youtube.html).
+menggunakan elemen [`amp-youtube`](/id/docs/reference/components/amp-youtube.html).
 
 Anda harus menyertakan skrip berikut di `<head>`:
 
@@ -139,10 +151,14 @@ Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk vide
 </amp-iframe>
 </div>
 
+{% call callout('Tip', type='success') %}
+Lihat lebih banyak contoh `amp-youtube` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-youtube/).
+{% endcall %}
+
 ## Menampilkan iklan
 
 Tampilkan iklan di laman
-menggunakan elemen [`amp-ad`](/docs/reference/components/amp-ad.html).
+menggunakan elemen [`amp-ad`](/id/docs/reference/components/amp-ad.html).
 Hanya iklan yang ditayangkan melalui HTTPS yang didukung.
 
 Tidak ada JavaScript yang disediakan jaringan iklan yang diizinkan untuk berjalan di dalam dokumen AMP.
@@ -182,4 +198,8 @@ untuk ditampilkan jika tidak ada iklan yang tersedia:
 </amp-iframe>
 </div>
 
-AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](/docs/reference/components/amp-ad.html#supported-ad-networks).
+AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](/id/docs/reference/components/amp-ad.html#supported-ad-networks).
+
+{% call callout('Baca Lebih Lanjut', type='read') %}
+Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP](/id/docs/guides/ads_on_amp.html) guide.
+{% endcall %}
