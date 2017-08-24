@@ -9,29 +9,30 @@ toc: true
 ¿Qué sucede si los datos enlazables son demasiado grandes o complejos para recuperarse al cargar la página? ¿O qué pasa si cada SKU tiene un precio que toma mucho tiempo para buscar? Buscar precios de SKU para artículos no vistos es un trabajo desperdiciado.
 
 {% call callout('Tip', type='success') %}
-`<amp-state>` supports fetching remote data via its [`src`](https://www.ampproject.org/docs/reference/components/amp-<bind id="attributes"></bind>) attribute, which fetches JSON from a CORS endpoint. This fetch is performed once and at page load and is useful for ensuring freshness of data (especially when served from a cache).
+`<amp-state>` admite la obtención de datos remotos a través de su atributo `src`, que obtiene JSON desde un extremo de CORS. Esta búsqueda se realiza una vez y en la carga de la página y es útil para garantizar la frescura de los datos (especialmente cuando se sirve desde una caché).
 
-You can also bind the `src` attribute for the `<amp-state>` element. This means that a user action can trigger a fetch of remote JSON data into the page's bindable state.
+También puede vincular el atributo `src` para el elemento `<amp-state>`. Esto significa que una acción del usuario puede activar una recuperación de datos JSON remotos en el estado vinculable de la página.
 {% endcall %}
 
 ## Recogiendo los tamaños disponibles para una camiseta
 
-Let's make use of the ability to fetch remote data to look up prices of SKUs in our sample. Our Express.js development server in `app.js` already has an endpoint `/shirts/sizes?shirt=<sku>` which, given a shirt SKU, returns the available sizes and price for each size. It sends the response with an artificial delay of one second to simulate network latency.
+Hagamos uso de la capacidad de obtener datos remotos para buscar precios de SKUs en nuestra muestra. Nuestro servidor de desarrollo Express.js en `app.js` ya tiene un endpoint `/shirts/sizes?shirt=<sku>` que, dado un SKU de camisa, devuelve los tamaños y el precio disponibles para cada tamaño. Envía la respuesta con un retardo artificial de un segundo para simular la latencia de la red.
 
-|  Request                              |  Response |
+
+|  Solicitud                            | Respuesta |
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |  
 
-Similar to the JSON data within `<amp-state>` elements, the remote data returned from these fetches are merged into and available under the element's `id` attribute. For example, the data returned from the example response above can be accessed in an expression:
+De forma similar a los datos JSON dentro de los elementos `<amp-state>`, los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo id del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
 
 
-|  Expression                  |  Result |
-|------------------------------|---------|
-| `shirts['1001'].sizes['XS']` | `8.99`  |
+|  Expresión                   | Resultado |
+|------------------------------|-----------|
+| `shirts['1001'].sizes['XS']` | `8.99`    |
 
 ### Enlazar los datos
 
-Now, let's apply this to our e-commerce example. First let's fetch this shirt data when a new SKU is selected. Add a `[src]` binding to our `amp-state#shirts` element:
+Ahora, apliquemos esto a nuestro ejemplo de comercio electrónico. Primero vamos a buscar esta información de la camiseta cuando se selecciona una nueva SKU. Agregue un enlace `[src]` a nuestro elemento `amp-state#shirts`:
 
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
@@ -41,7 +42,7 @@ Now, let's apply this to our e-commerce example. First let's fetch this shirt da
 
 ### Indicar tamaños no disponibles
 
-Next, let's clearly mark unavailable sizes as such for a given SKU. The `"unavailable"` CSS class adds a diagonal line through an element -- we can add it to the elements within `amp-selector[name="size"]` corresponding to unavailable sizes:
+A continuación, marque claramente los tamaños no disponibles como tales para un SKU determinado. La clase CSS `"unavailable"` añade una línea diagonal a través de un elemento -- podemos añadirlo a los elementos dentro del selector `amp-selector[name="size"]`  correspondientes a tamaños no disponibles:
 
 ```html
 <amp-selector name="size">
@@ -69,11 +70,12 @@ Next, let's clearly mark unavailable sizes as such for a given SKU. The `"unavai
 </amp-selector>
 ```
 
-Now, reload the page and try it out. Selecting a new SKU (shirt color) will cause unavailable sizes to be crossed-out (after a short delay).
+Ahora, vuelva a cargar la página y pruébela. Si selecciona un nuevo SKU (color de la camisa), los tamaños no disponibles se tacharán (después de un breve retraso).
 
 ### Especificar estados iniciales
 
-There's a small problem though -- what about the black shirt, the default selected color?  We'll need to add the size and price data of the black shirt to `amp-state#shirts` because `<amp-bind>` only runs in response to explicit user action:
+Hay, sin embargo, un pequeño problema -- ¿qué pasa con la camisa negra, el color seleccionado por defecto? Necesitaremos agregar los datos de tamaño y precio de la camisa negra a `amp-state#shirts` porque `<amp-bind>` sólo se ejecuta en respuesta a una acción explícita del usuario:
+
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -90,7 +92,7 @@ There's a small problem though -- what about the black shirt, the default select
 <!-- ... -->
 ```
 
-And, we'll need to update the default state of relevant elements:
+Y, debemos actualizar el estado predeterminado de los elementos relevantes:
 
 ```html
 <amp-selector name="size">
@@ -124,14 +126,14 @@ And, we'll need to update the default state of relevant elements:
 ```
 
 {% call callout('Nota', type='note') %}
-`<amp-bind>` does not run on page load -- only in response to explicit user action. This makes sure the initial page load is consistently fast across pages regardless of `<amp-bind>` usage.
+`<amp-bind>` no se ejecuta en carga de página, -- solo en respuesta a una acción explícita del usuario. Esto asegura que la carga inicial de la página sea consistentemente rápida entre las páginas independientemente del uso de `<amp-bind>`.
 {% endcall %}
 
 ## Precios variables
 
-Now that we correctly display the available sizes, let's make sure the correct price also displays.
+Ahora que mostramos correctamente los tamaños disponibles, nos aseguramos de que el precio correcto también se muestre.
 
-Our AMPPAREL store is peculiar in that shirt price is specific to both color AND size. That means we need a new variable to track the user-selected size. Add a new action to our size `<amp-selector>` element:
+Nuestra tienda de AMPPAREL es peculiar en que el precio de la camisa es específico para el color Y el tamaño. Esto significa que necesitamos una nueva variable para rastrear el tamaño seleccionado por el usuario. Agregue una nueva acción a nuestro elemento `<amp-selector>`:
 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
@@ -140,27 +142,27 @@ Our AMPPAREL store is peculiar in that shirt price is specific to both color AND
     on="select:AMP.setState({selectedSize: event.targetOption})">
 ```
 
-Notice that we're not initializing the value of `selectedSize` via the `amp-state#selected` element. That's because we intentionally don't provide a default selected size and instead want to force the user to choose a size.
+Tenga en cuenta que no estamos inicializando el valor de `selectedSize` a través del elemento `amp-state#selected`. Eso es porque intencionalmente no proporcionamos un tamaño seleccionado por defecto y en lugar de eso queremos obligar al usuario a elegir un tamaño.
 
 {% call callout('Tip', type='success') %}
-`AMP.setState()` can be used for defining new variables in addition to modifying exist ones. Expressions will evaluate undefined variables to `null`.
+`AMP.setState()` se puede utilizar para definir nuevas variables además de modificar las existentes. Las expresiones evaluarán las variables indefinidas a `null`.
 {% endcall %}
 
-Add a new `<span>` element wrapping the price label and change the default text to "---" since there's no default size selection.
+Añada un nuevo elemento `<span>` que enrolle la etiqueta de precio y cambie el texto predeterminado a "---" ya que no hay una selección de tamaño predeterminada.
 
 ```html
-<h6>PRICE :
-  <!-- Display the price of the selected shirt in the selected size if available.
-       Otherwise, display the placeholder text '---'. -->
+<h6>PRECIO :
+  <!-- Mostrar el precio de la camisa seleccionada en el tamaño seleccionado si está disponible. 
+       De lo contrario, mostrar el texto del marcador de posición '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
 </h6>
 ```
 
-And we have correct prices! Try it out.
+Y tenemos precios correctos! Pruébalo.
 
 ## Botón habilitado condicionalmente
 
-We're almost done! Let's disable the "Add to cart" button when the selected size is unavailable:
+¡Ya casi hemos terminado! Desactivemos el botón "Añadir al carrito" cuando el tamaño seleccionado no esté disponible:
 
 ```html
 <!-- Disable the "ADD TO CART" button when:
@@ -172,7 +174,7 @@ We're almost done! Let's disable the "Add to cart" button when the selected size
     [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
 ```
 
-**Pruébalo**:  If you select a size that's unavailable, you can't add it to the cart. 
+**Pruébalo**:  si selecciona un tamaño que no está disponible, no puede agregarlo al carrito.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-prev">Anterior</span></a>
