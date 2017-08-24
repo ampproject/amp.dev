@@ -42,22 +42,22 @@ Vamos a inicializar una variable de estado para realizar un seguimiento del índ
 </amp-state>
 ```
 
-The data within `<amp-state>` elements are accessible by their associated ID. For example, we can refer to this variable by the following expression fragment:
+Los datos dentro de los elementos `<amp-state>` son accesibles por su ID asociado. Por ejemplo, podemos referirnos a esta variable con la siguiente expresión:
 
 ```javascript
 selected.slide // Evaluates to 0.
 ```
 
-### Update the slide state
+### Actualizar el estado de diapositiva
 
-Next, let's update this variable when the user changes slides on the carousel by adding the following `"on"` action to the existing [`<amp-carousel>`](/docs/reference/components/amp-carousel.html) element:
+A continuación, actualizamos esta variable cuando el usuario cambia las diapositivas en el carrusel añadiendo la siguiente acción `"on"` al elemento existente de [`<amp-carousel>`](/docs/reference/components/amp-carousel.html):
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
     on="slideChange:AMP.setState({selected: {slide: event.index}})">
 ```
 
-Now, whenever the displayed slide for the `<amp-carousel>`  changes, the action `AMP.setState` will be called with the following argument:
+Ahora, siempre que la diapositiva mostrada para el `<amp-carousel>` cambie, la acción `AMP.setState` será llamada con el siguiente argumento:
 
 ```javascript
 {
@@ -67,19 +67,18 @@ Now, whenever the displayed slide for the `<amp-carousel>`  changes, the action 
 }
 ```
 
-The `event.index` expression evaluates to the new slide index, and the `AMP.setState()` action merges this object literal into the current state. This replaces the current value of `selected.slide` with the value of `event.index`.
-
+La expresión `event.index` se evalúa al nuevo índice de diapositivas y la acción `AMP.setState()` fusiona este literal de objeto en el estado actual. Esto reemplaza el valor actual de `selected.slide` con el valor de `event.index`.
 
 {% call callout('Tip', type='success') %}
-`AMP.setState()` performs a deep merge of nested object literals. For more details, see the [`<amp-bind>`](https://www.ampproject.org/docs/reference/components/amp-bind.html) documentation.
+`AMP.setState()` realiza una fusión profunda de literales de objetos anidados. Para obtener más detalles, consulte la documentación [`<amp-bind>`](https://www.ampproject.org/docs/reference/components/amp-bind.html).
 {% endcall %}
 
-### Bind the indicator elements
+### Vincular los elementos indicadores
 
-Next, let's make use of this state variable that tracks the currently displayed slide, and create a slide indicator. Find the slide indicator element (look for `<!-- TODO: "Add a slide indicator" -->`) and add the following bindings to its children:
+A continuación, utilicemos esta variable de estado que rastrea la diapositiva mostrada actualmente y creamos un indicador de diapositiva. Busque el elemento indicador de diapositivas (busque `<!-- TODO: "Añadir un indicador de diapositiva" -->`) y agregue los siguientes enlaces a sus elementos secundarios:
 
 ```html
-<!-- TODO: "Add a slide indicator" -->
+<!-- TODO: "Añadir un indicador de diapositiva" -->
 <p class="dots">
   <!-- The <span> element corresponding to the current displayed slide
        will have the 'current' CSS class. -->
@@ -88,19 +87,18 @@ Next, let's make use of this state variable that tracks the currently displayed 
   <span [class]="selected.slide == 2 ? 'current' : ''"></span>
 </p>
 ```
+`[class]` es un enlace que cambia el atributo de clase y se puede usar para añadir o eliminar clases CSS de cualquier elemento.
 
-`[class]` is a binding that changes the `class` attribute and you can use it to add or remove CSS classes from any element.
+**Pruébalo**: ¡Actualice la página y cambie la diapositiva!
 
-**Pruébalo**: Refresh the page and change the slide! 
+Cambiando la diapositiva del carrusel:
 
-By changing the slide on the carousel, it:
+1.  Activa el evento `slideChange event` ...
+2.  Que llama a la acción `AMP.setState` ...
+3.  Que actualiza la variable de estado `selected.slide` ...
+4.  ¡Que actualiza el enlace de `[class]` en los elementos del indicador `<span>`!
 
-1.  Triggers the `slideChange event` ...
-2.  Which calls the `AMP.setState` action ...
-3.  Which updates the state variable `selected.slide` ...
-4.  Which updates the `[class]` binding on the indicator `<span>` elements!
-
-Nice! Now we have a working slide indicator.
+¡Excelente! Ahora tenemos un indicador de deslizamiento trabajando.
 
 {% call callout('Extra credit', type='success') %}
 See if you can add functionality so that when a user taps on a slide's indicator dot, it updates the image carousel with the selected item. As a hint, use the `tap` event and `[slide]` binding on [`<amp-carousel>`](/docs/reference/components/amp-carousel.html).
