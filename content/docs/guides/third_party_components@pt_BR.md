@@ -9,7 +9,7 @@ Saiba como incluir componentes de terceiros em suas páginas.
 ## Incorporar um tweet
 
 Incorpore um tweet na sua página
-usando o elemento [`amp-twitter`](/docs/reference/components/amp-twitter.html).
+usando o elemento [`amp-twitter`](/pt_br/docs/reference/components/amp-twitter.html).
 
 Para incluir um tweet em sua página,
 em primeiro lugar inclua o seguinte script no `<head>`:
@@ -36,10 +36,14 @@ para selecionar a proporção com base na largura da tela.
 </amp-iframe>
 </div>
 
+{% call callout('Dica', type='success') %}
+Veja mais exemplos de `amp-twitter` na página [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+{% endcall %}
+
 ## Incorporar uma imagem do Instagram
 
 Incorpore uma imagem do Instagram em sua página
-usando o elemento [`amp-instagram`](/docs/reference/components/amp-instagram.html).
+usando o elemento [`amp-instagram`](/pt_br/docs/reference/components/amp-instagram.html).
 
 Para incluir uma imagem do Instagram,
 em primeiro lugar inclua o seguinte script no `<head>`:
@@ -66,10 +70,14 @@ de modo que os valores de largura e altura são universais.
 </amp-iframe>
 </div>
 
+{% call callout('Dica', type='success') %}
+Veja mais exemplos de `amp-instagram` na página [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+{% endcall %}
+
 ## Exibir postagem ou vídeo do Facebook
 
 Exiba uma postagem ou um vídeo do Facebook na sua página
-usando o elemento [`amp-facebook`](/docs/reference/extended/amp-facebook.html).
+usando o elemento [`amp-facebook`](/pt_br/docs/reference/components/amp-facebook.html).
 
 Você precisa incluir o seguinte script no `<head>`:
 
@@ -109,10 +117,14 @@ Preview:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
+{% call callout('Dica', type='success') %}
+Veja mais exemplos de `amp-facebook` na página [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+{% endcall %}
+
 ## Incluir um vídeo do YouTube
 
 Inclua um vídeo do YouTube em sua página
-usando o elemento [`amp-youtube`](/docs/reference/components/amp-youtube.html).
+usando o elemento [`amp-youtube`](/pt_br/docs/reference/components/amp-youtube.html).
 
 Você precisa incluir o seguinte script no `<head>`:
 
@@ -138,10 +150,14 @@ Use `layout="responsive"` para gerar layouts de forma correta para vídeos com p
 </amp-iframe>
 </div>
 
+{% call callout('Dica', type='success') %}
+Veja mais exemplos de `amp-youtube` na página [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+{% endcall %}
+
 ## Exibir um anúncio
 
 Exiba um anúncio em sua página
-usando o elemento [`amp-ad`](/docs/reference/components/amp-ad.html).
+usando o elemento [`amp-ad`](/pt_br/docs/reference/components/amp-ad.html).
 Somente anúncios veiculados via HTTPS são compatíveis.
 
 Nenhuma rede de anúncios que forneça JavaScript pode ser executada dentro do documento de AMP.
@@ -181,4 +197,8 @@ para ser mostrado quando nenhum anúncio estiver disponível:
 </amp-iframe>
 </div>
 
-A AMP é compatível com uma ampla gama de redes de anúncios. Consulte as [referências para ver a lista completa](/docs/reference/components/amp-ad.html#supported-ad-networks).
+A AMP é compatível com uma ampla gama de redes de anúncios. Consulte as [referências para ver a lista completa](/pt_br/docs/reference/components/amp-ad.html#supported-ad-networks).
+
+{% call callout('Leia Mais', type='read') %}
+Saiba mais sobre anúncios no guia [Como veicular anúncios em AMP](/pt_br/docs/guides/ads_on_amp.html).
+{% endcall %}

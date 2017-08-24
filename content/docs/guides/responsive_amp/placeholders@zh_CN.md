@@ -51,6 +51,21 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.h
 
 `fallback` 属性可在任何 HTML 元素上设置，而不仅仅是 AMP 元素。如果指定的话，则 `fallback` 元素必须是 AMP 元素的直接子级。
 
+## 占位符和后备元素的互动
+
+对于依赖动态内容的 AMP 组件（例如 `amp-twitter`、`amp-list`），后备元素和占位符的互动按如下方式进行：
+
+<ol>
+  <li>在内容加载过程中展示占位符。</li>
+  <li>如果内容成功加载，则隐藏占位符并展示内容。</li>
+  <li>如果内容加载失败：
+    <ol>
+      <li>如果有后备元素，则展示后备元素。</li>
+      <li>否则，继续展示占位符。</li>
+    </ol>
+  </li>
+</ol>
+
 ## 隐藏 "正在加载指示器"
 
 很多 AMP 元素已列入白名单，会显示 "正在加载指示器"，这是一个基本动画，用于表明元素尚未完全加载。只需添加 `noloading` 属性，元素即不会再出现这种行为。

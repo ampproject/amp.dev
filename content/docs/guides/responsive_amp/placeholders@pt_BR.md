@@ -51,6 +51,21 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.h
 
 O atributo `fallback` pode ser definido em qualquer elemento HTML, não somente em elementos AMP. Se o elemento `fallback` for especificado, ele terá que ser um derivado direto do elemento AMP.
 
+## Interação de marcadores e substitutos
+
+No caso dos componentes AMP que dependem de conteúdo dinâmico (por exemplo, `amp-twitter` e `amp-list`), a interação entre marcadores e substitutos é a seguinte:
+
+<ol>
+  <li>O marcador é exibido durante o carregamento do conteúdo.</li>
+  <li>Quando o conteúdo for carregado, o marcador será ocultado para a exibição do conteúdo.</li>
+  <li>Quando ocorrer uma falha no carregamento do conteúdo:
+    <ol>
+      <li>Se houver um elemento substituto, ele será exibido.</li>
+      <li>Caso contrário, o marcador continuará em exibição.</li>
+    </ol>
+  </li>
+</ol>
+
 ## Ocultar indicadores de carregamento
 
 Muitos elementos AMP são colocados na lista de permissões para mostrar um "indicador de carregamento", uma animação básica indicando que o elemento ainda não foi totalmente carregado. É possível desativar esse comportamento nos elementos com a inclusão do atributo `noloading`.
