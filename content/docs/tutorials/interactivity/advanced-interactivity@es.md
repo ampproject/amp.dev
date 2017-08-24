@@ -100,18 +100,18 @@ Cambiando la diapositiva del carrusel:
 
 ¡Excelente! Ahora tenemos un indicador de deslizamiento trabajando.
 
-{% call callout('Extra credit', type='success') %}
-See if you can add functionality so that when a user taps on a slide's indicator dot, it updates the image carousel with the selected item. As a hint, use the `tap` event and `[slide]` binding on [`<amp-carousel>`](/docs/reference/components/amp-carousel.html).
+{% call callout('Extra', type='success') %}
+Compruebe si puede agregar funcionalidad para que cuando un usuario toque en el punto indicador de una diapositiva, actualice el carrusel de imagen con el elemento seleccionado. Como sugerencia, utilice el evento `tap` y el enlace `[slide]` en [`<amp-carousel>`](/docs/reference/components/amp-carousel.html).
 {% endcall %}
 
-## Change the images in the carousel
+## Cambiar las imágenes en el carrusel
 
-It would be nice if we could see images of different shirt colors when we change the selected color. With amp-bind we can do this by binding `[src]` on the `<amp-img>` elements within the `<amp-carousel>`.
+Sería agradable si pudiéramos ver imágenes de diferentes colores de camisa cuando cambiamos el color seleccionado. Con amp-bind podemos hacer esto uniendo `[src]` en los elementos `<amp-img>` dentro del `<amp-carousel>`.
 
 
-### Initialize the SKU state
+### Inicializar el estado SKU
 
-First, we need to initialize the state data with the image source URLs of each color shirt. Let's do this with a new `<amp-state>` element:
+Primero, necesitamos inicializar los datos del estado con las URL de la fuente de la imagen de cada camisa del color. Hagamos esto con un nuevo elemento `<amp-state>`:
 
 ```html
 <!-- Available shirts. Maps unique string identifier to color and image URL string. -->
@@ -154,14 +154,13 @@ First, we need to initialize the state data with the image source URLs of each c
   </script>
 </amp-state>
 ```
+Este elemento `<amp-state>` contiene un objeto JSON que asigna una cadena de identificador de camisa (es decir, una SKU) al URL de color e imagen de la camisa correspondiente. Una matriz JSON también funcionaría aquí, pero el uso de un objeto nos permite hacer algunas cosas más interesantes que veremos pronto.
 
-This `<amp-state> `element contains a JSON object that maps a shirt identifier string (i.e., a SKU) to the color and image URL of the corresponding shirt. A JSON array would also work here, but using an object allows us to do some more cool stuff that you'll see soon.
+Ahora podemos acceder a la URL de la imagen con el identificador de la camiseta. Por ejemplo, el `shirts['10014'].color` se evalúa como `"dark green"` y la `shirts['10030'].image` devuelve la URL de la imagen para el color de la camisa `"wine"`.
 
-Now we can access the image URL via a shirt's identifier. For example, `shirts['10014'].color` evaluates to `"dark green"` and `shirts['10030'].image `returns the image URL for the `"wine"` shirt color.
+### Seguimiento del SKU seleccionado
 
-### Track the selected SKU
-
-If we add another state variable that tracks the selected SKU, we can bind an expression to the `<amp-img>` elements to update their `src` attributes when the selected SKU changes. Add a new `sku` key to the existing `amp-state#selected` element's JSON:
+Si añadimos otra variable de estado que rastrea la SKU seleccionada, podemos vincular una expresión a los elementos `<amp-img>` para actualizar sus atributos `src` cuando cambia el SKU seleccionado. Agregue una nueva clave `sku` al existente `amp-state#selected` del elemento JSON:
 
 ```html
 <amp-state id="selected">
@@ -174,9 +173,9 @@ If we add another state variable that tracks the selected SKU, we can bind an ex
 </amp-state>
 ```
 
-### Update the SKU state
+### Actualizar el estado SKU
 
-Add an "on" action to the [`<amp-selector>`](/docs/reference/components/amp-selector.html) that updates the `selected.sku` variable whenever a new color is selected:
+Agregue una acción "on" al [`<amp-selector>`](/docs/reference/components/amp-selector.html) que actualiza la variable `selected.sku` siempre que se seleccione un nuevo color:
 
 ```html
 <amp-selector name="color" 
@@ -184,12 +183,12 @@ Add an "on" action to the [`<amp-selector>`](/docs/reference/components/amp-sele
 ```
 
 {% call callout('Tip', type='success') %}
-This could also be done by adding `on="tap:AMP.setState(...)` actions to each `<amp-img>` child inside the `<amp-selector>`. One of the great things about `<amp-selector>` is that it simplifies markup in ways like this.
+Esto también se puede hacer agregando las acciones `on="tap:AMP.setState(...)` a cada `<amp-img>` secundario dentro del `<amp-selector>`. Una de las grandes cosas sobre `<amp-selector>` es que simplifica el marcado.
 {% endcall %}
 
-### Bind the image elements
+### Vincular los elementos de la imagen
 
-Then, add bindings to the [`<amp-img>`](/docs/reference/components/amp-img.html) elements inside the `<amp-carousel>` (look for `<!-- TODO: "Changing images in amp-carousel-->"`):
+A continuación, agregue enlaces a los elementos [`<amp-img>`](/docs/reference/components/amp-img.html) dentro del `<amp-carousel>` (busque `<!-- TODO: "Cambio de imágenes en amp-carousel-->"`):
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
@@ -202,10 +201,10 @@ Then, add bindings to the [`<amp-img>`](/docs/reference/components/amp-img.html)
 ```
 
 {% call callout('Nota', type='note') %}
-In practice, each image in the carousel would likely have a different `src`. This could be done by replacing the single image with an array of images. For simplicity, this tutorial uses a single image at different magnifications.
+En la práctica, cada imagen en el carrusel probablemente tendría un `src` diferente. Esto podría hacerse reemplazando la imagen única por una matriz de imágenes. Para simplificar, este tutorial utiliza una sola imagen con diferentes ampliaciones.
 {% endcall %}
 
-**Pruébalo**: Refresh the page and select a different color for a shirt. When you do, the carousel's images are updated to show shirts of the selected color.
+**Pruébalo**: actualice la página y seleccione un color diferente para una camisa. Cuando lo hace, las imágenes del carrusel se actualizan para mostrar las camisetas del color seleccionado.
 
 
 <div class="prev-next-buttons">
