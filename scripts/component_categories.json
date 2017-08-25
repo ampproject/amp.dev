@@ -20,6 +20,7 @@
     "amp-selector": "dynamic-content",
     "amp-user-notification": "dynamic-content",
     "amp-sortable-table": "dynamic-content",
+    "amp-web-push": "dynamic-content",
 
     "amp-accordion": "layout",
     "amp-app-banner": "layout",
@@ -28,6 +29,7 @@
     "amp-fx-parallax": "layout",
     "amp-iframe": "layout",
     "amp-lightbox": "layout",
+    "amp-position-observer": "layout",
     "amp-sidebar": "layout",
 
     "amp-3q-player": "media",
@@ -41,6 +43,7 @@
     "amp-hulu": "media",
     "amp-ima-video": "media",
     "amp-image-lightbox": "media",
+    "amp-imgur": "media",
     "amp-img": "media",
     "amp-izlesene": "media",
     "amp-jwplayer": "media",

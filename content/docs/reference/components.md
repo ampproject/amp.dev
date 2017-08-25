@@ -45,6 +45,7 @@ Here are the components grouped by category:
 | [`amp-mustache`](components/amp-mustache.html) | Allows rendering of [`Mustache.js`](https://github.com/janl/mustache.js/) templates. |
 | [`amp-selector`](components/amp-selector.html) |  Represents a control that presents a menu of options and lets the user choose from it. |
 | [`amp-user-notification`](components/amp-user-notification.html) | Displays a dismissable notification to the user. |
+| [`amp-web-push`](components/amp-web-push.html) | Allows users to subscribe to [web push notifications](https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications/). |
 
 ### Layout
 
@@ -57,6 +58,7 @@ Here are the components grouped by category:
 | [`amp-fx-parallax`](components/amp-fx-parallax.html) |  An attribute that enables a 3D-perspective effect on an element. |
 | [`amp-iframe`](components/amp-iframe.html) | Displays an iframe. |
 | [`amp-lightbox`](components/amp-lightbox.html) | Allows for a “lightbox” or similar experience. |
+| [`amp-position-observer`](components/amp-position-observer.html) | Monitors position of an element within the viewport as a user scrolls and dispatches  events that can be used with other components. |
 | [`amp-sidebar`](components/amp-sidebar.html) | Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. |
 
 
@@ -76,6 +78,7 @@ Here are the components grouped by category:
 | [`amp-ima-video`](components/amp-ima-video.html) | Embeds a video player for instream video ads that are integrated with the [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/). |
 | [`amp-image-lightbox`](components/amp-image-lightbox.html) | Allows for an “image lightbox” or similar experience. |
 | [`amp-img`](components/amp-img.html)  | Replaces the HTML5 `img` tag. |
+| [`amp-imgur`](components/amp-imgur.html)  | Displays an [Imgur](http://imgur.com/) post. |
 | [`amp-izlesene`](components/amp-izlesene.html)  | Displays an [Izlesene](https://www.izlesene.com/) video. |
 | [`amp-jwplayer`](components/amp-jwplayer.html) | Displays a cloud-hosted [JW Player](https://www.jwplayer.com/). |
 | [`amp-kaltura-player`](components/amp-kaltura-player.html) | Displays the Kaltura Player as used in [Kaltura's Video Platform](https://corp.kaltura.com/). |
