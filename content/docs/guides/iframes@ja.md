@@ -16,12 +16,12 @@ toc: true
 
 iframe は、メインページのコンテキストでサポートされていないコンテンツ（ユーザー作成の JavaScript を必要とするコンテンツなど）を AMP で表示する場合に特に便利です。
 
-###`amp-iframe` の要件:
+###`amp-iframe` の要件
 
 * 最初のビューポートが上部から **600 ピクセル** または **75%** 以上離れていること。
 * HTTPS 経由でのみリソースをリクエストできること（allow-same-origin を指定している場合を除き、リソースのオリジンはコンテナとは別である必要があります）。
 
-{% call callout('ヒント', type='read') %}
+{% call callout('参照', type='read') %}
 [<code>amp-iframe</code>](/ja/docs/reference/components/amp-iframe.html) の仕様もご確認ください。
 {% endcall %}
 
@@ -53,6 +53,36 @@ Preview:
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+</amp-iframe>
+
+## プレースホルダの使用
+
+`placeholder` 属性を指定した要素（`amp-img` 要素など）を `amp-iframe` に追加して、iframe が表示できる状態になるまでプレースホルダとしてレンダリングされるようにすると、`amp-iframe` をドキュメントの一番上に表示することが可能です。
+
+{% call callout('参照', type='read') %}
+プレースホルダについて詳しくは、[プレースホルダを含む iframe](/ja/docs/reference/components/amp-iframe.html#iframe-with-placeholder) をご覧ください。
+{% endcall %}
+
+
+プレースホルダを使用した例:
+
+```html
+<amp-iframe width="400" height="225"
+sandbox="allow-scripts allow-same-origin"
+layout="responsive"
+src="https://giphy.com/embed/OWabwoEn7ezug">
+<amp-img placeholder layout="fill"
+src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+</amp-iframe>
+```
+次のようにレンダリングされます:
+
+<amp-iframe width="400" height="225"
+sandbox="allow-scripts allow-same-origin"
+layout="responsive"
+src="https://giphy.com/embed/OWabwoEn7ezug">
+<amp-img placeholder layout="fill"
+src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
 </amp-iframe>
 
 ## 例

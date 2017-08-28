@@ -16,7 +16,7 @@ AMP HTML のスタイルとレイアウトには、通常の HTML と同じよ�
 AMP で要素をレスポンシブにするのはとても簡単で、`layout="responsive"` を追加するだけです。AMP でのレスポンシブ デザインについて詳しくは、[レスポンシブな AMP ページを作成する](/ja/docs/guides/responsive/responsive_design)をご覧ください。
 {% endcall %}
 
-{{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
+{{ youtube('y6kA3u3GIws', 480, 270, caption='初めて AMP を利用するにあたっての課題など、UpperQuad における AMP プロジェクトでのサイト再設計に関する話をご覧になれます。') }}
 
 ## ページにスタイルを追加する
 

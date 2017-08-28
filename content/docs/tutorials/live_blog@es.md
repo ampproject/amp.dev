@@ -1,7 +1,7 @@
 ---
 $title: Crear un blog en directo
-$order: 3
 ---
+[TOC]
 
 Los blogs en directo son páginas web que se actualizan con frecuencia durante el transcurso de un evento, como la Super Bowl.
 

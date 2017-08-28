@@ -22,11 +22,13 @@ Download the sample code for the tutorial either as a [ZIP file](https://github.
 git clone https://github.com/googlecodelabs/accelerated-mobile-pages-foundations.git
 ```
 
-Unzip the archive file (if necessary) and navigate to the directory via the command line on your computer. The directory contains several example resources files and the starting article.html page.
+Unzip the archive file (if necessary) and navigate to the project directory through the command line on your computer:
 
 ```shell
 cd accelerated-mobile-pages-foundations
 ```
+
+The project directory contains several example resources files and the starting [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html) page.
 
 ### Step 2. Run the sample page
 

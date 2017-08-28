@@ -8,7 +8,7 @@ $title: サードパーティ コンテンツを追加する
 
 ## ツイートを埋め込む
 
-ページに Twitter のツイートを埋め込むには、[`amp-twitter`](/docs/reference/components/amp-twitter.html) 要素を使用します。
+ページに Twitter のツイートを埋め込むには、[`amp-twitter`](/ja/docs/reference/components/amp-twitter.html) 要素を使用します。
 
 ページにツイートを追加するには、最初に次のスクリプトを `<head>` に追加します。
 
@@ -30,9 +30,13 @@ $title: サードパーティ コンテンツを追加する
 </amp-iframe>
 </div>
 
+{% call callout('ヒント', type='success') %}
+その他の `amp-twitter` の例については、[AMP By Example](https://ampbyexample.com/components/amp-twitter/) をご覧ください。
+{% endcall %}
+
 ## Instagram を埋め込む
 
-ページに Instagram を埋め込むには、[`amp-instagram`](/docs/reference/components/amp-instagram.html) 要素を使用します。
+ページに Instagram を埋め込むには、[`amp-instagram`](/ja/docs/reference/components/amp-instagram.html) 要素を使用します。
 
 Instagram を埋め込むには、最初に次のスクリプトを `<head>` に追加します。
 
@@ -54,9 +58,13 @@ Instagram の写真 URL にある data-shortcode を指定します。たとえ�
 </amp-iframe>
 </div>
 
+{% call callout('ヒント', type='success') %}
+その他の `amp-instagram` の例については、[AMP By Example](https://ampbyexample.com/components/amp-instagram/) をご覧ください。
+{% endcall %}
+
 ## Facebook の投稿や動画を表示する
 
-Facebook の投稿や動画をページに表示するには、[`amp-facebook`](/docs/reference/components/amp-facebook.html) 要素を使用します。
+Facebook の投稿や動画をページに表示するには、[`amp-facebook`](/ja/docs/reference/components/amp-facebook.html) 要素を使用します。
 
 `<head>` に次のスクリプトを追加する必要があります。
 
@@ -98,9 +106,13 @@ Facebook の投稿や動画をページに表示するには、[`amp-facebook`](
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
+{% call callout('ヒント', type='success') %}
+その他の `amp-facebook` の例については、[AMP By Example](https://ampbyexample.com/components/amp-facebook/) をご覧ください。
+{% endcall %}
+
 ## YouTube 動画を追加する
 
-YouTube 動画をページに追加するには、[`amp-youtube`](/docs/reference/components/amp-youtube.html) 要素を使用します。
+YouTube 動画をページに追加するには、[`amp-youtube`](/ja/docs/reference/components/amp-youtube.html) 要素を使用します。
 
 `<head>` に次のスクリプトを追加する必要があります。
 
@@ -124,9 +136,13 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 </amp-iframe>
 </div>
 
+{% call callout('ヒント', type='success') %}
+その他の `amp-youtube` の例については、[AMP By Example](https://ampbyexample.com/components/amp-youtube/) をご覧ください。
+{% endcall %}
+
 ## 広告を表示する
 
-ページに広告を表示するには、[`amp-ad`](/docs/reference/components/amp-ad.html) 要素を使用します。HTTPS 経由で配信される広告のみがサポートされています。
+ページに広告を表示するには、[`amp-ad`](/ja/docs/reference/components/amp-ad.html) 要素を使用します。HTTPS 経由で配信される広告のみがサポートされています。
 
 広告ネットワークから提供される JavaScript を AMP ドキュメント内で実行することはできません。代わりに、AMP ランタイムは（iframe サンドボックス経由で）別の場所から iframe を読み込んで、広告ネットワークの JS をその iframe サンドボックス内で実行します。
 
@@ -158,4 +174,8 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 </amp-iframe>
 </div>
 
-AMP はさまざまな広告ネットワークに対応しています。詳細なリストについては、[リファレンス](/docs/reference/components/amp-ad.html#supported-ad-networks)をご覧ください。
+AMP はさまざまな広告ネットワークに対応しています。詳細なリストについては、[リファレンス](/ja/docs/reference/components/amp-ad.html#supported-ad-networks)をご覧ください。
+
+{% call callout('参照', type='read') %}
+広告について詳しくは、[AMP での広告の掲載](/ja/docs/guides/ads_on_amp.html) に関するガイドをご覧ください。
+{% endcall %}
