@@ -1,7 +1,9 @@
 ---
 $title: ライブブログを作成する
-$order: 3
 ---
+
+[TOC]
+
 ライブブログとは、イベント（たとえばスーパーボウル）の開催中に頻繁に更新されるウェブページです。
 
 ライブブログを AMP で実装するには、 `amp-live-list` コンポーネントの マークアップを使用します。 開発に利用できる実装サンプルは、[ライブブログのサンプル](https://www.ampbyexample.com/samples_templates/live_blog/)（[ampbyexample.com](https://www.ampbyexample.com)）から入手できます。

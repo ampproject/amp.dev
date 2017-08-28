@@ -51,6 +51,21 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.h
 
 Atribut `fallback` dapat disetel pada elemen HTML apa pun, tidak hanya elemen AMP. Jika ditentukan, elemen `fallback` harus berupa turunan langsung dari elemen AMP.
 
+## Interaksi placeholder dan fallback
+
+Untuk komponen AMP yang bergantung pada konten dinamis (misalnya, `amp-twitter`, `amp-list`), interaksi fallback dan placeholder beroperasi sebagai berikut:
+
+<ol>
+  <li>Tampilkan placeholder saat konten dimuat.</li>
+  <li>Jika konten berhasil dimuat, sembunyikan placeholder dan tampilkan konten.</li>
+  <li>Jika konten gagal dimuat:
+    <ol>
+      <li>Jika ada elemen fallback, tampilkan fallback.</li>
+      <li>Jika tidak, tetap tampilkan placeholder.</li>
+    </ol>
+  </li>
+</ol>
+
 ## Menyembunyikan indikator pemuatan
 
 Beberapa elemen AMP diberi izin untuk menampilkan "indikator pemuatan", yaitu animasi dasar yang menunjukkan bahwa elemen belum dimuat secara penuh. Elemen dapat memilih untuk tidak mengikuti perilaku ini dengan menambahkan atribut `noloading`.

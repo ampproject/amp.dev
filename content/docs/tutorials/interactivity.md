@@ -1,6 +1,6 @@
 ---
 $title: Create interactive AMP pages
-$order: 2
+$order: 3
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='Completed AMP page for this tutorial') }}

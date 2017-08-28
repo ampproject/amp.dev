@@ -9,7 +9,7 @@ Obtén información sobre cómo incluir componentes de terceros en tus páginas.
 ## Insertar un tuit
 
 Inserta un tuit de Twitter en tu página
-con el elemento <a href="/docs/reference/components/amp-twitter.html">`amp-twitter`</a>.
+con el elemento <a href="/es/docs/reference/components/amp-twitter.html">`amp-twitter`</a>.
 
 Para incluir un tuit en tu página,
 incluye en primer lugar la siguiente secuencia de comandos en `<head>`:
@@ -34,9 +34,13 @@ Ajusta la anchura y la altura de forma manual o usa el atributo de medios para s
 </amp-iframe>
 </div>
 
+{% call callout('Tip', type='success') %}
+Puedes encontrar más ejemplos de `amp-twitter` en [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+{% endcall %}
+
 ## Insertar una foto de Instagram
 
-Inserta una foto de Instagram en tu página con el elemento [`amp-instagram`](/docs/reference/components/amp-instagram.html).
+Inserta una foto de Instagram en tu página con el elemento [`amp-instagram`](/es/docs/reference/components/amp-instagram.html).
 
 Para incluir una foto de Instagram, en primer lugar incluye la siguiente secuencia de comandos en `<head>`:
 
@@ -60,9 +64,13 @@ Además, Instagram utiliza una relación de aspecto fija para los diseños adapt
 </amp-iframe>
 </div>
 
+{% call callout('Tip', type='success') %}
+Puedes encontrar más ejemplos de `amp-instagram` en [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+{% endcall %}
+
 ## Mostrar entradas o vídeos de Facebook
 
-Muestra una entrada o un vídeo de Facebook en tu página con el elemento [`amp-facebook`](/docs/reference/extended/amp-facebook.html).
+Muestra una entrada o un vídeo de Facebook en tu página con el elemento [`amp-facebook`](/es/docs/reference/components/amp-facebook.html).
 
 Debes incluir la siguiente secuencia de comandos en `<head>`:
 
@@ -102,9 +110,13 @@ Avance:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
+{% call callout('Tip', type='success') %}
+Puedes encontrar más ejemplos de `amp-facebook` en [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+{% endcall %}
+
 ## Insertar un vídeo de YouTube
 
-Inserta un vídeo de YouTube en tu página con el elemento [`amp-youtube`](/docs/reference/components/amp-youtube.html).
+Inserta un vídeo de YouTube en tu página con el elemento [`amp-youtube`](/es/docs/reference/components/amp-youtube.html).
 
 Debes incluir la siguiente secuencia de comandos en `<head>`:
 
@@ -130,9 +142,13 @@ Utiliza `layout="responsive"` para producir diseños correctos para los vídeos 
 </amp-iframe>
 </div>
 
+{% call callout('Tip', type='success') %}
+Puedes encontrar más ejemplos de `amp-youtube` en [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+{% endcall %}
+
 ## Mostrar un anuncio
 
-Muestra un anuncio en tu página utilizando el elemento [`amp-ad`](/docs/reference/components/amp-ad.html).
+Muestra un anuncio en tu página utilizando el elemento [`amp-ad`](/es/docs/reference/components/amp-ad.html).
 Únicamente son compatibles los anuncios que se publiquen a través de HTTPS.
 
 No se puede ejecutar ningún JavaScript proporcionado por una red publicitaria en el documento de AMP.
@@ -169,4 +185,8 @@ Si la red publicitaria lo admite, incluye un `placeholder` para que se muestre s
 </amp-iframe>
 </div>
 
-AMP es compatible con una amplia gama de redes publicitarias. Consulta la [referencia para obtener una lista completa](/docs/reference/components/amp-ad.html#supported-ad-networks).
+AMP es compatible con una amplia gama de redes publicitarias. Consulta la [referencia para obtener una lista completa](/es/docs/reference/components/amp-ad.html#supported-ad-networks).
+
+{% call callout('Leer más', type='read') %}
+Obtén más información sobre los anuncios en la guía [Publicar anuncios en AMP](/es/docs/guides/ads_on_amp.html).
+{% endcall %}

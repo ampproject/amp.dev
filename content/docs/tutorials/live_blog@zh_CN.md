@@ -1,7 +1,9 @@
 ---
 $title: 制作直播博客
-$order: 3
 ---
+
+[TOC]
+
 直播博客是指在持续进行的活动（例如超级碗）期间不断更新的网页。
 
 您可以使用 LiveBlogPosting 标记通过 `amp-live-list` 组件在 AMP 中实施直播博客。要查看可供您参考的实施示例，请访问[直播博客示例](https://www.ampbyexample.com/samples_templates/live_blog/)（网址为 [ampbyexample.com）](https://www.ampbyexample.com)。

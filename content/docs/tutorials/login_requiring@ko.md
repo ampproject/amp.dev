@@ -1,6 +1,6 @@
 ---
 $title: 로그인이 필요한 AMP 페이지 만들기
-$order: 2
+$order: 4
 numbered: 1
 ---
 

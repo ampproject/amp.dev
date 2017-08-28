@@ -23,7 +23,7 @@ relação à parte superior.
 * Pode solicitar recursos somente através de HTTPS, e eles não podem estar na mesma origem do contêiner, 
 a menos que não especifiquem o valor allow-same-origin.
 
-{% call callout('Dica', type='read') %}
+{% call callout('Leia Mais', type='read') %}
 Saiba mais nas [especificações completas do <code>amp-iframe</code>](/pt_br/docs/reference/components/amp-iframe.html).
 {% endcall %}
 
@@ -54,6 +54,36 @@ Preview:
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+</amp-iframe>
+
+## Usar marcadores
+
+É possível exibir um `amp-iframe` na parte superior de um documento desde que o `amp-iframe` inclua um elemento com o atributo `placeholder` (por exemplo, um elemento `amp-img`) para ser renderizado como marcador até que o iframe esteja pronto para exibição.
+
+{% call callout('Leia Mais', type='read') %}
+Saiba mais sobre marcadores no artigo sobre [iframes com marcadores](/pt_br/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
+{% endcall %}
+
+
+Exemplo com marcador:
+
+```html
+<amp-iframe width="400" height="225"
+sandbox="allow-scripts allow-same-origin"
+layout="responsive"
+src="https://giphy.com/embed/OWabwoEn7ezug">
+<amp-img placeholder layout="fill"
+src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+</amp-iframe>
+```
+Renderização do exemplo:
+
+<amp-iframe width="400" height="225"
+sandbox="allow-scripts allow-same-origin"
+layout="responsive"
+src="https://giphy.com/embed/OWabwoEn7ezug">
+<amp-img placeholder layout="fill"
+src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
 </amp-iframe>
 
 ## Exemplos

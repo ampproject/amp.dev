@@ -1,7 +1,8 @@
 ---
 $title: Criar um blog ao vivo
-$order: 3
 ---
+
+[TOC]
 
 Os blogs ao vivo são páginas da Web atualizadas com frequência durante um evento em andamento, como a Copa do Mundo.
 

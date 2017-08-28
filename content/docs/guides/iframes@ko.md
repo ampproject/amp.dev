@@ -16,12 +16,12 @@ toc: true
 
 iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 AMP 의 메인 페이지 컨텍스트에서 지원되지 않는 콘텐츠를 표시할 때 특히 유용합니다.
 
-### `amp-iframe` 요구사항:
+### `amp-iframe` 요구사항
 
 * 첫 번째 표시 영역이 상단에서부터 최소 **600px** 또는 **75%** 떨어져 있어야 합니다.
 * HTTPS 를 통해서만 리소스를 요청할 수 있으며, allow-same-origin을 지정하지 않는 한 컨테이너와 동일한 출처에 있을 수 없습니다.
 
-{% call callout('도움말', type='read') %}
+{% call callout('읽어보기', type='read') %}
 [<code>amp-iframe</code> 전체 사양](/ko/docs/reference/components/amp-iframe.html)
 에서 자세한 내용을 알아보세요. {% endcall %}
 
@@ -52,6 +52,36 @@ Preview:
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+</amp-iframe>
+
+## 자리표시자 사용하기
+
+'amp-iframe'에 속성이 'placeholder'인 요소(예: 'amp-img' 요소)가 포함되어 있는 경우, 문서 상단에 'amp-iframe'을 표시할 수 있습니다. 이러한 요소는 iframe을 표시할 준비가 될 때까지 자리표시자로 렌더링됩니다.
+
+{% call callout('읽어보기', type='read') %}
+[자리표시자가 포함된 iframe](/ko/docs/reference/components/amp-iframe.html#iframe-with-placeholder)에서 자리표시자에 관해 자세히 알아보세요.
+{% endcall %}
+
+
+자리표시자 사용 예:
+
+```html
+<amp-iframe width="400" height="225"
+sandbox="allow-scripts allow-same-origin"
+layout="responsive"
+src="https://giphy.com/embed/OWabwoEn7ezug">
+<amp-img placeholder layout="fill"
+src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+</amp-iframe>
+```
+다음과 같이 렌더링됩니다:
+
+<amp-iframe width="400" height="225"
+sandbox="allow-scripts allow-same-origin"
+layout="responsive"
+src="https://giphy.com/embed/OWabwoEn7ezug">
+<amp-img placeholder layout="fill"
+src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
 </amp-iframe>
 
 ## 예시
