@@ -14,34 +14,34 @@ $parent: /content/docs/tutorials/converting.md
 
 ## Configure su entorno de desarrollo
 
-### Step 1. Download the code
+### Paso 1. Descargue el código
 
-Download the sample code for the tutorial either as a [ZIP file](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/archive/master.zip) or via git:
+Descargue el código de ejemplo del tutorial como [archivo ZIP](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/archive/master.zip) o mediante git:
 
 ```shell
 git clone https://github.com/googlecodelabs/accelerated-mobile-pages-foundations.git
 ```
 
-Unzip the archive file (if necessary) and navigate to the directory via the command line on your computer. The directory contains several example resources files and the starting article.html page.
+Descomprima el archivo comprimido (si es necesario) y navegue al directorio del proyecto a través de la línea de comandos en su computadora:
 
 ```shell
 cd accelerated-mobile-pages-foundations
 ```
 
-### Step 2. Run the sample page
+### Paso 2. Ejecute la página de ejemplo
 
-To test our sample page we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing.  Here are some options, choose the one that works best for you:
+Para probar nuestra página de ejemplo necesitamos acceder a los archivos desde un servidor web. Hay varias maneras de crear un servidor web local temporal con el propósito de probar. Aquí hay algunas opciones, elija la que mejor funcione para usted:
 
-- [“Web Server for Chrome” Google Chrome app](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
-- [A local HTTP Python server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)
+- [Aplicación Google Chrome "Servidor Web para Chrome"](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
+- [Un servidor local HTTP Python](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
 {% call callout('Nota', type='note') %}
-It is strongly recommended that you use HTTPS in production environments. HTTPS has several benefits beyond just security including SEO. You can read more about this topic in this [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
+Se recomienda encarecidamente que utilice HTTPS en entornos de producción. HTTPS tiene varios beneficios más allá de la seguridad, incluyendo SEO. Puedes leer más sobre este tema en esta entrada de [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
 {% endcall %}
 
-After setting up your local web server, access the sample article in your browser at [this URL](http://localhost:8000/article.html):
+Después de configurar su servidor web local, acceda al artículo de ejemplo en su navegador en esta dirección URL:
 
 ```text
 http://localhost:8000/article.html
