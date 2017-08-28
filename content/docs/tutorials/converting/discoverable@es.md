@@ -3,43 +3,42 @@ $title: Hacer que tu página sea detectable
 $order: 3
 ---
 
-Now that you've made a news article in AMP, let's ensure users can find and discover your content.
+Ahora que ha creado un artículo de noticias en AMP, aseguremos de que los usuarios puedan encontrar y descubrir su contenido.
 
-## Link AMP content
+## Enlazar el contenido de la AMP
 
-Your website can be made of some AMP pages, all AMP pages, or no AMP pages.  We won't discuss the last option, but we will discuss how to incorporate AMP pages inside a website’s structure.
+Su sitio web se puede hacer de algunas páginas de AMP, todas las páginas de AMP, o sin páginas de AMP. No discutiremos la última opción, pero vamos a discutir cómo incorporar páginas de AMP dentro de la estructura de un sitio web.
 
-Canonical linking in regular HTML pages is a common technique for declaring which page should be considered the preferred page when multiple pages include the same content. For the case where you generate AMP documents alongside the traditional article pages, you should treat the traditional HTML pages as the “canonical” pages and pair the AMP pages with those HTML pages.  For the case where your AMP documents are the canonical pages, treat the AMP pages as the canonical; no pairing is required.
+La vinculación canónica en páginas HTML normales es una técnica común para declarar qué página debe considerarse la página preferida cuando varias páginas incluyen el mismo contenido. Para el caso en el que genere documentos AMP junto con las páginas de artículos tradicionales, debe tratar las páginas HTML tradicionales como las páginas "canónicas" y vincular las páginas AMP con esas páginas HTML. Para el caso en que sus documentos AMP sean las páginas canónicas, trate las páginas AMP como canónicas; No se requiere emparejamiento.
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-linking.png', 751, 500, align='center ninety', caption='Linking AMP content') }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-linking.png', 751, 500, align='center ninety', caption='Vinculación de contenido de AMP') }}
 
-Most of the time, we recommend keeping just one version of your page, in this case the AMP page. Sometimes that’s not practical for a multitude of reasons, such as wanting to show a different page for desktop users. So for this tutorial, our website includes a news article that has a non-AMP HTML page (`article.html` file) and an AMP page (`article.amp.html` file), we'll pair these pages through links.
+La mayoría de las veces, recomendamos mantener una sola versión de su página, en este caso la página AMP. A veces eso no es práctico por una multitud de razones, como querer mostrar una página diferente para los usuarios de escritorio. Así que para este tutorial, nuestro sitio web incluye un artículo de noticias que tiene una página HTML que no es AMP (archivo `article.html`) y una página AMP (archivo `article.amp.html`), emparejaremos estas páginas a través de enlaces.
 
-We already took the first step to achieve this in our AMP document by including a link tag in the `<head>` back to the canonical page:
+Ya hemos dado el primer paso para lograr esto en nuestro documento de AMP, incluyendo una etiqueta de enlace en el `<head>` de nuevo a la página canónica:
 
 ```html
 <link rel="canonical" href="/article.html">
 ```
+El siguiente paso es vincular el artículo canónico a la página AMP. Esto se logra mediante la inclusión de una etiqueta `<link rel="amphtml">` en la sección <head> del artículo canónico.
 
-The next step is to link the canonical article to the AMP page. This is achieved by including a `<link rel="amphtml">` tag to the `<head>` section of the canonical article.
-
-In the `article.html` file, **add** the following code into the `<head>` section:
+En el archivo `article.html`, **agregue** el siguiente código en la sección `<head>`:
 
 ```html
 <link rel="amphtml" href="/article.amp.html">
 ```
 
-The following diagram illustrates the directions of link tags:
+El siguiente diagrama ilustra las direcciones de las etiquetas de enlace:
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-link-between.png', 564, 238, align='ninety center', caption='Linking AMP content') }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-link-between.png', 564, 238, align='ninety center', caption='Vinculación de contenido de AMP') }}
 
-It’s necessary to set up this bidirectional linking so that search engines understand the relationship between our regular HTML canonical document and our AMP document. If no links were provided then it wouldn’t necessarily be clear to the crawler as to which articles are the “AMP versions” of the regular HTML documents. By explicitly providing these links we ensure there is no ambiguity!
+Es necesario establecer este enlace bidireccional para que los motores de búsqueda entiendan la relación entre nuestro documento canónico HTML normal y nuestro documento AMP. Si no se proporcionaron enlaces, entonces no necesariamente estaría claro para el rastreador qué artículos son las "versiones AMP" de los documentos HTML normales. Al proporcionar explícitamente estos vínculos aseguramos que no hay ambigüedad!
 
-## Add structured data
+## Añadir datos estructurados
 
-Valid AMP pages do not require [schema.org](http://schema.org/) structured data, but some platforms like Google Search require it for certain experiences like the Top stories carousel. It's generally a good idea to include structured data. Structured data helps search engines to better understand your web page, and to better display your content in Search Engine Result Pages (e.g., in rich snippets).  The structured data is included in the `<head>` tag of your AMP page via an `application/ld+json` type script tag.
+Las páginas de AMP válidas no requieren datos estructurados de [schema.org](http://schema.org/), pero algunas plataformas como Google Search lo requieren para ciertas experiencias como el carrusel de Top stories. En general, es una buena idea incluir datos estructurados. Los datos estructurados ayudan a los motores de búsqueda a comprender mejor su página web ya visualizar mejor su contenido en páginas de resultados de motores de búsqueda (por ejemplo, en fragmentos enriquecidos). Los datos estructurados se incluyen en la etiqueta `<head>` de su página AMP a través de una etiqueta de script `application/ld+json`.
 
-For our news article, **add** the following structured data to the bottom of the `<head>` section of your AMP document:
+Para nuestro artículo de noticias, **añada** los siguientes datos estructurados al final de la sección `<head>` de su documento AMP:
 
 ```html
 
@@ -80,36 +79,35 @@ For our news article, **add** the following structured data to the bottom of the
 ```
 
 
-{% call callout('Note', type='note') %}
-The content should always be the same. For news articles, specify the “NewsArticle” type. The headline should match your article’s title. The image object refers to the hero image of the article.
+{% call callout('Nota', type='note') %}
+El contenido siempre debe ser el mismo. Para artículos de noticias, especifique el tipo "NewsArticle". El titular debe coincidir con el título de su artículo. El objeto de imagen se refiere a la imagen de héroe del artículo.
 {% endcall %}
 
+**Vuelva a cargar** la página en su navegador y verifique que no se hayan introducido errores de validación de AMP.
 
-**Reload** the page in your browser and verify that no AMP Validation errors were introduced.
+{% call callout('Nota', type='note') %}
+Además del formato de datos estructurado schema.org, existen otros formatos compatibles con los motores de búsqueda y redes de redes sociales. Consulte la documentación admitida:
 
-{% call callout('Note', type='note') %}
-In addition to the schema.org structured data format, there are other formats supported by search engines and social media networks. See the supported documentation:
-
-- [Twitter Cards meta tags](https://dev.twitter.com/cards/overview)
-- [Facebook Open Graph meta tags](https://developers.facebook.com/docs/sharing/webmasters)
+- [Meta tags de Twitter](https://dev.twitter.com/cards/overview)
+- [Meta tags de Facebook Open Graph](https://developers.facebook.com/docs/sharing/webmasters)
 {% endcall %}
 
-### Validate the structured data
+### Validar los datos estructurados
 
-To verify that your structured data is correct, many platforms provide validation tools.  In this tutorial, we'll validate our structured data with  the [Google Structured Data Validation Tool](https://developers.google.com/structured-data/testing-tool/).
+Para verificar que sus datos estructurados son correctos, muchas plataformas proporcionan herramientas de validación. En este tutorial, validaremos nuestros datos estructurados con la Herramienta [Google Structured Data Validation Tool](https://developers.google.com/structured-data/testing-tool/).
 
-1.  In a new browser window, open the [Google Structured Data Validation Tool](https://developers.google.com/structured-data/testing-tool/).
-2.  Select the **Code Snippet** tab.
-3.  Copy and paste the full source code from your AMP page into the text editor panel of the validation tool.
-3.  Click **Run Test**.
+1. En una nueva ventana del navegador, abra [Google Structured Data Validation Tool](https://developers.google.com/structured-data/testing-tool/).
+2. Seleccione la pestaña **Code Snippet**.
+3. Copie y pegue el código fuente completo de su página AMP en el panel del editor de texto de la herramienta de validación.
+4. Haga clic en **Run Test**.
 
-If your structured data is valid, you should see **0 errors**, and **0 warnings**.
+Si los datos estructurados son válidos, debería ver **0 errors** y **0 warnings**.
 
-{% call callout('Read on', type='read') %}
-To learn more about page discoverability, see the [Make your page discoverable](https://www.ampproject.org/docs/guides/discovery.html) guide.
+{% call callout('Leer más', type='read') %}
+Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible](https://www.ampproject.org/es/docs/guides/discovery.html).
 {% endcall %}
 
-Awesome work!  You've completed your AMP news article.
+¡Impresionante trabajo! Has completado tu artículo de noticias de AMP.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/tutorials/converting/resolving-errors.html"><span class="arrow-prev">Anterior</span></a>
