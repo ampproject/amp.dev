@@ -3,24 +3,23 @@ $title: Creación de una página HTML normal
 $order: 1
 ---
 
-In the project directory, you will find a file named [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). This is the news article that we are creating an AMP-equivalent page for.
+En el directorio del proyecto, encontrará un archivo denominado [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). Este es el artículo de noticias que estamos creando una página equivalente de AMP para.
 
-1.  **Copy** the entire code from the `article.html `file and paste it into a new file.
-2.  **Save** the new file as `article.amp.html`.
+1. **Copie** el código completo del archivo `article.html` y péguelo en un nuevo archivo.
+2. **Guarde** el archivo nuevo como `article.amp.html`.
 
 {% call callout('Nota', type='note') %}
-You don't have to name your AMP files as `.amp.html`. In fact, AMP files can have any extension you want. It's common to see publishers differentiating AMP pages from their canonical versions by using parameters in the url. For example:  `http://publisher.com/article.html?amp`.
+No es necesario que nombre los archivos AMP como `.amp.html`. De hecho, los archivos AMP pueden tener cualquier extensión que desee. Es común ver editores diferenciando páginas AMP de sus versiones canónicas usando parámetros en la url. Por ejemplo: `http://publisher.com/article.html?amp`.
 {% endcall %}
 
-
-Your `article.amp.html` file should look like the following:
+Su archivo `article.amp.html` debe tener el siguiente aspecto:
 
 ```html
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
 
-    <title>News Article</title>
+    <title>Artículo de noticias</title>
 
     <link href="base.css" rel="stylesheet" />
 
@@ -28,10 +27,10 @@ Your `article.amp.html` file should look like the following:
   </head>
   <body>
     <header>
-      News Site
+      Sitio de Noticias
     </header>
     <article>
-      <h1>Article Name</h1>
+      <h1>Nombre del artículo</h1>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
     </article>
@@ -40,50 +39,49 @@ Your `article.amp.html` file should look like the following:
 </html>
 ```
 
-This is an intentionally simplistic page with common static news article elements: CSS, JavaScript, and an image tag.
+Esta es una página intencionalmente simplista con elementos comunes del artículo de noticias estáticas: CSS, JavaScript y una etiqueta de imagen.
 
-Our AMP version of the article is just a copy of the original article right now. Let's convert it to an AMP. To begin, we will add the AMP JavaScript library file and view what errors appear when the AMP validator is turned on.
+Nuestra versión de AMP del artículo es apenas una copia del artículo original ahora. Vamos a convertirlo a un AMP. Para empezar, agregamos el archivo de biblioteca de JavaScript de AMP y ver qué errores aparecen cuando se activa el validador de AMP.
 
-To include the AMP library, **add** this line to the bottom of the `<head>` tag:
+Para incluir la biblioteca AMP, **agregue** esta línea a la parte inferior de la etiqueta `<head>`:
 
 ```html
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 ```
 
-**Load** the new `article.amp.html` page in your browser at [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html) and then, **open** the [Developer Console](https://developer.chrome.com/devtools/docs/console) in Chrome (or your preferred browser).
+**Cargue** la nueva página `article.amp.html` en su navegador en [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html) y, a continuación, **abra** la [Developer Console](https://developer.chrome.com/devtools/docs/console) (o en su navegador preferido).
 
-When you inspect the JavaScript output in the Developer Console (make sure you have the Console tab selected), you should see this log entry:
+Cuando inspecciona la salida de JavaScript en la Consola del programador (asegúrese de que tiene la ficha Consola seleccionada), debería ver esta entrada de registro:
 
 ```text
 Powered by AMP ⚡ HTML
 ```
 
-**Enable** the [AMP validator](https://www.ampproject.org/docs/guides/validate.html) by adding this fragment identifier to your URL:
+**Habilite** el [AMP validator](https://www.ampproject.org/es/docs/guides/validate.html) agregando este identificador de fragmento a su URL:
 
 ```text
 #development=1
 ```
 
-For example:
+Por ejemplo:
 
 ```text
 http://localhost:8000/article.amp.html#development=1
 ```
 
-You may need to manually refresh the page in your browser.
+Es posible que deba actualizar manualmente la página en su navegador.
 
-In the Developer Console, you should receive several validation errors:
+En la Consola del programador, debe recibir varios errores de validación:
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-validation-errors.png', 905, 427, align='', caption='AMP validation errors for our sample') }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-validation-errors.png', 905, 427, align='', caption='Errores de validación de AMP para nuestra muestra') }}
 
+A medida que trabajamos con un artículo de noticias móvil, vamos a **simular** una experiencia de dispositivo móvil en las herramientas de desarrollo del navegador. Por ejemplo, en Chrome Developer Tools, haz clic en el icono del teléfono móvil y selecciona un dispositivo móvil en el menú.
 
-As we are working with a mobile news article, let's **simulate** a mobile device experience in the browser's developer tools. For example, in Chrome Developer Tools, click the mobile phone icon, and select a mobile device from the menu.
+Debería ver una resolución móvil simulada en su navegador como la siguiente:
 
-You should see a mobile simulated resolution in your browser such as this:
+{{ image('/static/img/docs/tutorials/tut-convert-html-nexus5.png', 436, 812, align='third center', caption='Simulación móvil de nuestra página AMP') }}
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-nexus5.png', 436, 812, align='third center', caption='Mobile simulation of our AMP page') }}
-
-Now we're ready to get to work! Let's step through the validation errors one by one and address how they relate to AMP.
+¡Ahora estamos listos para trabajar! Paso a paso a través de los errores de validación, uno por uno y la dirección de cómo se relacionan con AMP.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/tutorials/converting/setting-up.html"><span class="arrow-prev">Anterior</span></a>
