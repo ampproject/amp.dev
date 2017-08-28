@@ -6,56 +6,55 @@ toc: true
 
 [TOC]
 
-In this section, we'll go through and resolve the AMP validation errors from our AMP page.
+En esta sección, examinaremos y resolveremos los errores de validación de AMP de nuestra página de AMP.
 
-## Include charset
+## Incluir charset
 
-We will begin by fixing the following error:
+Empezaremos por corregir el siguiente error:
 
 <pre class="error-text">
 The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 </pre>
 
-To correctly display text, AMP requires that you specify the charset for the page. The meta charset information must also be the first child of the `<head> ` tag. The reason this tag must be first is to avoid re-interpreting content that was added before the meta charset tag.
+Para mostrar correctamente el texto, AMP requiere que especifique el conjunto de caracteres para la página. La información meta charset también debe ser el primer hijo de la etiqueta `<head>`. La razón por la que esta etiqueta debe ser la primera es evitar la re-interpretación del contenido que se agregó antes de la etiqueta meta charset.
 
-**Add** the following code as the first line of the `<head>` tag:
+**Agregue** el código siguiente como la primera línea de la etiqueta `<head>`:
 
 
 ```html
 <meta charset="utf-8" />
 ```
+**Guarde** el archivo y vuelva a cargar la página. Compruebe que el error de charset ya no aparece.
 
-**Save** the file and reload the page. Verify that the charset error no longer appears.
+## Incluir enlace canónico
 
-## Include canonical link
-
-Now, let's look at the following error:
+Ahora, echemos un vistazo al siguiente error:
 
 <pre class="error-text">
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Every AMP document needs to have a link referencing the canonical page. The canonical page can be the AMP page itself or a non-AMP page.  In this tutorial, the original HTML article is the canonical page. We'll learn more about canonical linking in [Making your page discoverable](/docs/tutorials/converting/discoverable.html).
+Cada documento de AMP necesita tener un vínculo que haga referencia a la página canónica. La página canónica puede ser la propia página de AMP o una página que no sea de AMP. En este tutorial, el artículo HTML original es la página canónica. Aprenderemos más acerca de la vinculación canónica en cómo [hacer que tu página sea detectable](/es/docs/tutorials/converting/discoverable.html).
 
-Go ahead and **add** the following code below the `<meta charset="utf-8" />` tag:
+Adelante, **agregue** el siguiente código debajo de la etiqueta `<meta charset="utf-8" />`:
 
 ```html
 <link rel="canonical" href="/article.html">
 ```
 
-{% call callout('Note', type='note') %}
-You can create a standalone canonical AMP page. The canonical link is still required, but should point to the AMP article itself:
+{% call callout('Nota', type='note') %}
+Puede crear una página AMP canónica autónoma. El vínculo canónico sigue siendo necesario, pero debe señalar el propio artículo AMP:
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
 {% endcall %}
 
-Now, **reload** the page. Although there are still plenty of errors to fix, the  canonical link error is no longer present.
+Ahora, **vuelva a cargar** la página. Aunque todavía hay un montón de errores para corregir, el error de enlace canónico ya no está presente.
 
-## Specify the AMP attribute
+## Especificar el atributo AMP
 
-AMP requires an attribute on the root `<html>` element of a page to declare the page as an AMP document.
+AMP requiere un atributo en el elemento raíz `<html>` de una página para declarar la página como un documento de AMP.
 
 <pre class="error-text">
 The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
@@ -65,7 +64,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 The above errors can be resolved by simply adding the `⚡ `attribute to the `<html>` tag like so:
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="es">
 ```
 
 Now, go ahead, reload the page and check that both errors are gone.
@@ -74,7 +73,7 @@ Now, go ahead, reload the page and check that both errors are gone.
 Although specifying the `⚡` is the recommended approach, it's also possible to use the `amp` attribute in place of the `⚡` attribute, like so:
 
 ```html
-<html amp lang="en">
+<html amp lang="es">
 ```
 {% endcall %}
 
