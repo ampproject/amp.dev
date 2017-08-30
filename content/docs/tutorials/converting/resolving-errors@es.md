@@ -61,57 +61,55 @@ The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
 The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 </pre>
 
-The above errors can be resolved by simply adding the `⚡ `attribute to the `<html>` tag like so:
+Los errores anteriores se pueden resolver simplemente agregando el `⚡ `attributo a la etiqueta `<html>` de la siguiente manera:
 
 ```html
 <html ⚡ lang="es">
 ```
 
-Now, go ahead, reload the page and check that both errors are gone.
+Ahora, adelante, vuelva a cargar la página y compruebe que ambos errores se han ido.
 
 {% call callout('Note', type='note') %}
-Although specifying the `⚡` is the recommended approach, it's also possible to use the `amp` attribute in place of the `⚡` attribute, like so:
+Aunque la especificación de `⚡` es el enfoque recomendado, también es posible utilizar el atributo `amp` en lugar del atributo `⚡`, así:
 
 ```html
 <html amp lang="es">
 ```
 {% endcall %}
 
-## Specify a viewport
+## Especificar un viewport
 
-Next, let's address the following error:
+A continuación, vamos a abordar el siguiente error:
 
 <pre class="error-text">
 The mandatory tag 'meta name=viewport' is missing or incorrect.
 </pre>
 
-AMP requires the definition of a `width` and `minimum-scale` for the viewport. These values must be defined as `device-width` and `1`, respectively. The viewport is a common tag included in the `<head>` of an HTML page.
+AMP requiere la definición de una `width` y un `minimum-scale` para la ventana gráfica. Estos valores deben definirse como `device-width` y `1`, respectivamente. El viewport es una etiqueta común incluida en el `<head>` de una página HTML.
 
-To resolve the viewport error, add the following HTML snippet to the `<head>` tag:
+Para resolver el error de viewport, agregue el siguiente fragmento HTML a la etiqueta `<head>`:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 ```
+Los valores especificados para `width` y `minimum-scale` son los valores requeridos en AMP. Definir `initial-scale` no es obligatorio, pero es comúnmente incluido en el desarrollo web móvil y se recomienda. Puede obtener más información sobre la ventana gráfica y el diseño de respuesta en [Configure the Viewport](https://developers.google.com/speed/docs/insights/ConfigureViewport).
 
-The values specified for `width` and `minimum-scale` are the required values in AMP. Defining `initial-scale` is not mandatory but it’s a commonly included in mobile web development and it's recommended. You can read more about the viewport and responsive design in [Configure the Viewport](https://developers.google.com/speed/docs/insights/ConfigureViewport).
+Como antes, **vuelva a cargar** la página y compruebe si el error ha desaparecido.
 
-As before, **reload** the page and check if the error has disappeared.
+## Reemplazar hojas de estilo externas
 
-## Replace external stylesheets
-
-The following error is related to our use of stylesheets:
+El siguiente error está relacionado con nuestro uso de hojas de estilo:
 
 <pre class="error-text">
 The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
 </pre>
 
-Specifically, this error is complaining about the following stylesheet link tag in our `<head>` tag:
+En concreto, este error se queja de la siguiente etiqueta de enlace de hoja de estilo en nuestra etiqueta `<head>`:
 
 ```html
 <link href="base.css" rel="stylesheet" />
 ```
-
-The problem is that this is an external stylesheet reference. In AMP, to keep the load times of documents as fast as possible, you cannot include external stylesheets. Instead, all stylesheet rules must be added inline in the AMP document using `<style amp-custom></style>` tags.
+El problema es que se trata de una referencia de hoja de estilo externa. En AMP, para mantener los tiempos de carga de documentos lo más rápido posible, no puede incluir hojas de estilo externas. En su lugar, todas las reglas de hoja de estilo deben agregarse en línea en el documento de AMP utilizando las etiquetas `<style amp-custom></style>`.
 
 ```html
 <style amp-custom>
@@ -121,41 +119,41 @@ The problem is that this is an external stylesheet reference. In AMP, to keep th
 </style>
 ```
 
-So, let's resolve the error:
+Por lo tanto, vamos a resolver el error:
 
-1.  **Remove** the `<link>` tag in the `<head>` and replace it with an inline `<style amp-custom></style>` tag. The `amp-custom` attribute on the style tag is mandatory.
-2. **Copy** all the styles from the [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) file into the `<style amp-custom></style>` tags.
+1. **Quite** la etiqueta  `<link>` en el `<head>` y reemplácela con una etiqueta `<style amp-custom></style>`. El atributo `amp-custom` de la etiqueta de estilo es obligatorio.
+2. **Copie** todos los estilos del archivo [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) en las etiquetas `<style amp-custom></style>`.
 
-Once again, **reload** the page and verify that the stylesheets error has disappeared.
+Una vez más, **vuelva a cargar** la página y verifique que el error stylesheets ha desaparecido.
 
-{% call callout('Note', type='note') %}
-Not only is inline styling required but there is a file size limit of 50 kilobytes for all styling information. You should use CSS preprocessors such as [SASS](http://sass-lang.com/) to minify your CSS before inlining the CSS in your AMP pages.
+{% call callout('Nota', type='note') %}
+No sólo se requiere estilo en línea, sino que hay un límite de tamaño de archivo de 50 kilobytes para toda la información de estilo. Debe utilizar preprocesadores CSS como [SASS](http://sass-lang.com/) para minimizar su CSS antes de insertar el CSS en sus páginas AMP.
 {% endcall %}
 
-{% call callout('Important', type='caution') %}
-You can only have one style tag in your entire AMP document. If you have several external stylesheets referenced by your AMP pages, you will need to collate these stylesheets into a single set of rules. To learn what CSS rules are valid in AMP, read [Supported CSS](/docs/guides/responsive/style_pages.html).
+{% call callout('Importante', type='caution') %}
+Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido](/es/docs/guides/responsive/style_pages.html).
 {% endcall %}
 
-## Exclude third-party JavaScript
+## Excluir JavaScript de terceros
 
-While stylesheets can be reworked relatively easily with AMP by inlining the CSS, the same is not true for JavaScript.
+Si bien las hojas de estilo se pueden volver a trabajar con relativa facilidad con AMP al incorporar el CSS, lo mismo no ocurre con JavaScript.
 
 <pre class="error-text">
 The tag 'script' is disallowed except in specific forms.
 </pre>
 
-In AMP, user-generated scripts are not allowed. Scripts in AMP are only allowed if they follow  two major requirements:
+En AMP, los scripts generados por el usuario no están permitidos. Los scripts en AMP sólo están permitidos si cumplen dos requisitos principales:
 
-1.  All JavaScript must be asynchronous (i.e., include the `async` attribute in the script tag).
-2.  The JavaScript is for the AMP library and for any AMP components on the page.
+1. Todo JavaScript debe ser asincrónico (es decir, incluir el atributo `async` en la etiqueta de script).
+2. El JavaScript es para la biblioteca AMP y para cualquier componente de AMP en la página.
 
-This effectively rules out the use of all third-party JavaScript; however, there is one exception--third-party JavaScript may be used in iframes.
+Esto descarta efectivamente el uso de todos los JavaScript de terceros; Sin embargo, hay una excepción: JavaScript de terceros se puede utilizar en iframes.
 
-{% call callout('Important', type='caution') %}
-Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components](/docs/reference/components.html). We will explore our first AMP component in the next section.
+{% call callout('Importante', type='caution') %}
+Incluir JavaScript en un iframe debe considerarse una medida de último recurso. Siempre que sea posible, la funcionalidad de JavaScript se debe reemplazar mediante [AMP components](/docs/reference/components.html). Exploraremos nuestro primer componente de AMP en la siguiente sección.
 {% endcall %}
 
-Try opening the external [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) file. What do you see? The file should be empty of any JavaScript code and only include a comment of information such as this:
+Intente abrir el archivo [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) externo. ¿Que ves? El archivo debe estar vacío de cualquier código JavaScript y sólo incluir un comentario de información como este:
 
 ```javascript
 /*
@@ -168,23 +166,23 @@ use of external JavaScript files.
 */
 ```
 
-Considering that this external JavaScript file is not a functional component of our website, we can safely remove the reference entirely.
+Teniendo en cuenta que este archivo JavaScript externo no es un componente funcional de nuestro sitio web, podemos eliminar con seguridad la referencia por completo.
 
-**Remove** the following external JavaScript reference from your document:
+**Quite** la siguiente referencia JavaScript externa de su documento:
 
 ```html
 <script type="text/javascript" src="base.js"></script>
 ```
 
-Now, **reload** the page and verify that the script error has disappeared.
+Ahora, **vuelva a cargar** la página y compruebe que el error de secuencia de comandos ha desaparecido.
 
-{% call callout('Note', type='note') %}
-The only exceptions for user-generated scripts are when the type attribute is `application/ld+json` or `application/json`.  These script types add metadata to the page and configure AMP components.
+{% call callout('Nota', type='note') %}
+Las únicas excepciones para los scripts generados por el usuario son cuando el atributo de tipo es `application/ld+json` o `application/json`. Estos tipos de script agregan metadatos a la página y configuran los componentes de AMP.
 {% endcall %}
 
-## Include AMP CSS boilerplate
+## Incluir el estándar de CSS de AMP
 
-The following errors reference missing boilerplate code:
+Los siguientes errores se refieren a la falta de código boilerplate:
 
 <pre class="error-text">
 The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
@@ -192,82 +190,80 @@ The mandatory tag 'head > style : boilerplate' is missing or incorrect.
 The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 </pre>
 
-Every AMP document requires the following AMP boilerplate code:
+Cada documento de AMP requiere el siguiente código AMP:
 
 ```html
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 ```
+**Agregue** el código estándar a la parte inferior de la etiqueta `<head>` de su documento.
 
-**Add** the boilerplate code to the bottom of the `<head>` tag of your document.
+La etiqueta `<style amp-boilerplate>` inicialmente oculta el contenido del cuerpo hasta que se carga la biblioteca de JavaScript de AMP y, a continuación, se procesa el contenido. AMP hace esto para evitar que el contenido unstyled se procese, también conocido como Flash Of Unstyled Content (FOUC). Esto ayuda a asegurar que la experiencia del usuario se siente verdaderamente instantánea a medida que el contenido de la página aparece de una vez y todo lo que se encuentra encima del doblez se representa en conjunto. La segunda etiqueta recupera esta lógica si JavaScript está deshabilitado en el navegador.
 
-The `<style amp-boilerplate>`  tag initially hides the content of the body until the AMP JavaScript library is loaded, then the content is rendered. AMP does this to prevent unstyled content from rendering, also known as Flash Of Unstyled Content (FOUC). This helps ensure that the user experience feels truly instant as the page’s content appears all at once and everything above the fold is rendered together. The second tag reverts this logic if JavaScript is disabled in the browser.
+## Reemplazar `<img>` con `<amp-img>`
 
-## Replace `<img>` with `<amp-img>`
-
-AMP doesn't support the default HTML counterparts to displaying media, which explains the following error:
+AMP no admite las contrapartes HTML predeterminadas para mostrar medios, lo que explica el error siguiente:
 
 <pre class="error-text">
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP has a web component specifically designed to replace the `<img>` tag, it's the [`<amp-img>`](/docs/reference/components/amp-img.html) tag:
+AMP tiene un componente web específicamente diseñado para reemplazar la etiqueta `<img>`, es la etiqueta [`<amp-img>`](/docs/reference/components/amp-img.html):
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-**Replace** the `<img>` tag with the above `<amp-img>` tag and run the validator again. You should receive several new errors:
+**Reemplace** la etiqueta `<img>` con la etiqueta `<amp-img>` anterior y vuelva a ejecutar el validador. Debería recibir varios errores nuevos:
 
 <pre class="error-text">
 AMP-IMG# Layout not supported for: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
-Why did `amp-img` trigger another error? Because `amp-img` is not a direct substitute of the traditional HTML img tag. There are additional requirements when using `amp-img`.
+¿Por qué se produjo otro error en `amp-img`? Porque `amp-img` no es un sustituto directo de la tradicional etiqueta HTML img. Hay requisitos adicionales cuando se usa `amp-img`.
 
-### AMP layout system
+### Sistema de distribución AMP
 
-The layout error is telling us that `amp-img` does not support the `container` layout type. One of the most important concepts in AMP’s design is its focus on reducing the amount of DOM reflow required to render its web pages.
+El error de diseño nos dice que `amp-img` no es compatible con el tipo de diseño del `container`. Uno de los conceptos más importantes en el diseño de AMP es su enfoque en la reducción de la cantidad de DOM reflujo necesario para procesar sus páginas web.
 
-To reduce DOM reflow, AMP includes a layout system to ensure the layout of the page is as rigid as possible, as early as possible in the lifecycle of downloading and rendering the page.
+Para reducir el reflujo de DOM, AMP incluye un sistema de disposición para asegurar que el diseño de la página sea lo más rígido posible, tan pronto como sea posible en el ciclo de vida de descarga y representación de la página.
 
-The layout system allows for elements on a page to be positioned and scaled in a variety of ways -- fixed dimensions, responsive design, fixed height and more.
+El sistema de disposición permite que los elementos de una página se posicionen y escalen de varias maneras: dimensiones fijas, diseño sensible, altura fija y más.
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-layout-system.png', 837, 394, align='', caption='How AMP lays out content') }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-layout-system.png', 837, 394, align='', caption='Cómo AMP establece el contenido') }}
 
-In our case, the layout system inferred our layout type for the `amp-img` as the `container` type. However, the `container` type is only applicable to elements that contain children elements. The `container` type is incompatible with the `amp-img` tag, which is the reason for this error.
+En nuestro caso, el sistema de diseño inferido nuestro tipo de diseño para el `amp-img` como el tipo `container`. Sin embargo, el tipo de `container` sólo es aplicable a elementos que contienen elementos de niños. El tipo `container` es incompatible con la etiqueta `amp-img`, que es la razón de este error.
 
-Why was the `container` type inferred? Because we did not specify a `height` attribute for the `amp-img` tag. In HTML, reflow can be reduced by always specifying a fixed width and height for elements on a page. In AMP, you need to define the width and height for amp-img elements so that AMP can pre-determine the aspect ratio of the element.
+¿Por qué se dedujo el tipo `container`? Porque no especificamos un atributo `height` para la etiqueta `amp-img`. En HTML, el reflujo puede reducirse siempre especificando un ancho y una altura fija para los elementos de una página. En AMP, es necesario definir el ancho y la altura de los elementos de amplificador-img para que AMP pueda pre-determinar la relación de aspecto del elemento.
 
-**Add** the `width` and `height` to your `<amg-img>` tag as follows:
+**Añada** el `width` y la `height` a su etiqueta `<amg-img>` de la siguiente manera:
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
 ```
+Actualizar la página y comprobar el validador; Ya no deberías ver ningún error! Sin embargo, la imagen no se ve tan grande porque está mal colocada en la página. Sería genial si pudiéramos *escalar* la imagen para estirar y ajustar adecuadamente la página sin importar el tamaño de la pantalla.
 
-Refresh the page and check the validator; you should no longer see any errors! However, the image doesn’t look so great because it is awkwardly positioned on the page. It would be great if we could scale the image to *responsively* stretch and fit the page no matter the screen size.
+{{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Nuestra imagen no responde.") }}
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
+Sorprendentemente, la definición de la anchura y la altura no restringe el elemento a un tamaño totalmente fijo. El sistema de disposición de AMP puede posicionar y escalar el elemento de una variedad de maneras al conocer su relación de aspecto. El atributo `layout` informa a AMP de cómo desea que el elemento se posicione y se amplíe.
 
-Surprisingly, defining the width and height does not restrict the element to an entirely fixed size. The AMP layout system can position and scale the element in a variety of ways by knowing its aspect ratio.  The `layout` attribute informs AMP of how you want the element positioned and scaled.
-
-Let's **set** the layout attribute to `responsive` so that our image scales and resizes:
+Vamos a **configurar** el atributo de diseño a `responsive` de modo que nuestra imagen se escala y redimensiona:
 
 ```html
 <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
 ```
 
-Voila! Our image is in the correct aspect ratio and responsively fills the width of the screen.
+Voila! Nuestra imagen está en la relación de aspecto correcta y responde responde el ancho de la pantalla.
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Our image is now responsive!") }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Nuestra imagen es ahora responsive!") }}
 
-{% call callout('Read on', type='read') %}
-Learn more about the AMP Layout System in the [AMP Layout Specification](/docs/reference/spec/amp-html-layout.html).
+{% call callout('Leer más', type='read') %}
+Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification](/docs/reference/spec/amp-html-layout.html).
 {% endcall %}
 
-## Success!
+## ¡Éxito!
 
-Now your AMP document should look something like this:
+Ahora su documento de AMP debe ser algo como esto:
 
 ```html
 <!doctype html>
@@ -325,17 +321,17 @@ Now your AMP document should look something like this:
 </html>
 ```
 
-Refresh the page and look at the console output. You should be greeted with the following message:
+Actualice la página y observe la salida de la consola. Usted debe ser recibido con el siguiente mensaje:
 
 <pre class="success-text">
 AMP validation successful.
 </pre>
 
-### Frequently asked questions
+### Preguntas frecuentes 
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [What if the layout attribute isn’t defined?](/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [What if width and height are undefined?](https://www.ampproject.org/docs/guides/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [¿Qué ocurre si el atributo layout no está definido?](/es/docs/guides/responsive/control_layout.html#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
+- [¿Qué ocurre si width y height no están definidos?](https://www.ampproject.org/es/docs/guides/responsive/control_layout#¿qué-ocurre-si-width-y-height-no-están-definidos?)
 
 
 <div class="prev-next-buttons">
