@@ -6,34 +6,34 @@ $parent: /content/docs/tutorials/add_advanced.md
 
 ## Requisitos Previos
 
-**Before starting** this tutorial, you'll need the following:
+**Antes de comenzar** este tutorial, necesitará lo siguiente:
 
-- A basic knowledge of HTML, CSS, and JavaScript
-- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"](/docs/tutorials/converting.html) tutorial)
-- A browser of your choice that can inspect the JavaScript console
-- A text editor of your choice
+- Conocimiento básico de HTML, CSS, y JavaScript
+- Una comprensión básica de los conceptos básicos de AMP (consulte el tutorial ["Convertir HTML en AMP"](/es/docs/tutorials/converting.html))
+- Un navegador de su elección que puede inspeccionar la consola de JavaScript
+- Un editor de texto de su elección
 
-## Set up your development environment
+## Configure su entorno de desarrollo
 
-### Step 1. Download the code
+### Paso 1. Descargue el código
 
-Download the sample code for the tutorial either as a [ZIP file](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/archive/master.zip) or via git:
+Descargue el código de ejemplo del tutorial como el [archivo ZIP](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/archive/master.zip) o mediante git:
 
 ```shell
 git clone https://github.com/googlecodelabs/accelerated-mobile-pages-advanced.git
 ```
 
-Unzip the archive file (if necessary) and navigate to the project directory through the command line on your computer: 
+Descomprima el archivo comprimido (si es necesario) y navegue hasta el directorio del proyecto a través de la línea de comandos en su computadora:
 
 ```shell
 cd accelerated-mobile-pages-advanced
 ```
 
-The project directory contains several example resources files and the starting [`article.amp.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html) page.
+El directorio del proyecto contiene varios archivos de recursos de ejemplo y la página de inicio [`article.amp.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html).
 
-### Step 2. Run the sample page
+### Paso 2. Ejecute la página de ejemplo
 
-To test the sample AMP page, we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing.  Here are some options, choose the one that works best for you:
+Para probar la página de AMP de muestra, necesitamos acceder a los archivos desde un servidor web. Hay varias maneras de crear un servidor web local temporal con el propósito de probar. Aquí hay algunas opciones, elija la que mejor funcione para usted:
 
 - [“Web Server for Chrome” Google Chrome app](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [A local HTTP Python server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)
@@ -41,10 +41,10 @@ To test the sample AMP page, we need to access the files from a web server. Ther
 - [nginx](http://nginx.org/)
 
 {% call callout('Nota', type='note') %}
-It is strongly recommended that you use HTTPS in production environments. HTTPS has several benefits beyond just security including SEO. You can read more about this topic in this [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
+Se recomienda encarecidamente utilizar HTTPS en entornos de producción. HTTPS tiene varios beneficios más allá de la seguridad, incluyendo SEO. Puedes leer más sobre este tema en [Google Webmaster](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
 {% endcall %}
 
-After setting up your local web server, access the sample article in your browser at [this URL](http://localhost:8000/article.amp.html):
+Después de configurar su servidor web local, acceda al artículo de ejemplo en su navegador en esta dirección URL:
 
 ```text
 http://localhost:8000/article.amp.html
