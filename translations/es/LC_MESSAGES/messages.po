@@ -194,6 +194,11 @@ msgid ""
 "ads, AMP ads deliver great advertising experiences too, ensuring every "
 "interaction with a publisher’s brand is a compelling one."
 msgstr ""
+"AMP acelera el contenido, manteniendo a los usuarios comprometidos independientemente de dónde empiecen"
+" su viaje -- en el propio sitio web del editor o desde plataformas que enlazan "
+"a páginas AMP como Twitter, Google y Pinterest. Con anuncios más rápidos y seguros,"
+" los anuncios de AMP ofrecen también una gran experiencia publicitaria, garantizando"
+" que cada interacción con la marca de un editor es convincente."
 
 #: /content/includes/menu.yaml
 msgid "About"
