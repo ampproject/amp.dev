@@ -1,26 +1,26 @@
 ---
-$title: Adding extended AMP components
+$title: Agregando componentes AMP ampliados
 $order: 2
 toc: true
 ---
 
 [TOC]
 
-AMP’s component system allows you to quickly build efficient and responsive features into your articles with minimal effort. The AMP HTML library has three classifications for AMP components:
+El sistema de componentes de AMP le permite crear rápidamente características eficientes y de respuesta en sus artículos con un mínimo esfuerzo. La biblioteca HTML de AMP tiene tres clasificaciones para los componentes de AMP:
 
-- **built-in**: These are components that are included in the base AMP JavaScript library (specified in the `<head>` tag), such as [amp-img](/docs/reference/components/amp-img.html) and [amp-pixel](/docs/reference/components/amp-pixel.html).  These components can be used immediately in an AMP document.
+- **built-in**: Estos son los componentes que se incluyen en la biblioteca base de AMP JavaScript (especificada en la etiqueta `<head>`), como [amp-img](/docs/reference/components/amp-img.html) y [amp-pixel](/docs/reference/components/amp-pixel.html). Estos componentes se pueden utilizar inmediatamente en un documento de AMP.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="amp-video" ...`).
+- **extended**: Son extensiones de la biblioteca base que deben incluirse explícitamente en el documento como elementos personalizados. Los elementos personalizados requieren secuencias de comandos específicas que se agregan a la sección `<head>` (por ejemplo, `<script async custom-element="amp-video" ...`).
 
-- **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released.  Learn more in [Experimental features](/docs/reference/experimental.html).
+- **experimental**: Estos son los componentes que se liberan, pero aún no están listos para un uso amplio. Los desarrolladores pueden elegir optar por utilizar estas características antes de que se liberen completamente. Más información en [Experimental features](/docs/reference/experimental.html).
 
-Our sample already uses a built-in component, [amp-img](/docs/reference/components/amp-img.html), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"](/docs/tutorials/converting.html) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
+Nuestra muestra ya utiliza un componente incorporado, [amp-img](/docs/reference/components/amp-img.html), y exploramos cómo este componente se relaciona con el sistema de diseño AMP en el tutorial ["Convertir HTML a AMP"](/es/docs/tutorials/converting.html). Ahora, vamos a **agregar** algunos componentes de AMP extendidos comúnmente usados a nuestro artículo de noticias.
 
-## Monetize with ads
+## Monetizar con anuncios
 
-Ads in AMP are constructed by using the [amp-ad](/docs/reference/components/amp-ad.html) component. The `amp-ad` component allows you to can configure ads in several ways, such as the width, height and layout mode. However, many ad platforms require additional configuration, such as the account ID for the ad network, which ad should be served, or options for targeting the advertising. These options are easily specified in the `amp-ad` component by using HTML attributes.
+Los anuncios en AMP se construyen utilizando el componente [amp-ad](/docs/reference/components/amp-ad.html). El componente `amp-ad` le permite configurar anuncios de varias maneras, como el ancho, la altura y el modo de diseño. Sin embargo, muchas plataformas de anuncios requieren configuración adicional, como el ID de cuenta de la red publicitaria, el anuncio que debe publicarse o las opciones para segmentar la publicidad. Estas opciones se especifican fácilmente en el componente `amp-ad` mediante el uso de atributos HTML.
 
-Take a look at this example of a **DoubleClick** ad:
+Eche un vistazo a este ejemplo de un anuncio de **DoubleClick**:
 
 ```html
 <amp-ad
@@ -31,9 +31,9 @@ Take a look at this example of a **DoubleClick** ad:
 </amp-ad>
 ```
 
-As you can see, this is a very simple configuration. Take note of the `type` attribute, which informs the `amp-ad` component of the ad platform that we want to use. In this case, we want to use the [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md) platform, so we specified `doubleclick` as the value.
+Como puede ver, esta es una configuración muy simple. Tome nota del atributo `type`, que informa al componente `amp-ad` de la plataforma de anuncios que queremos utilizar. En este caso, queremos utilizar la plataforma de [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), por lo que especificamos `doubleclick` como el valor.
 
-The `data-slot` attribute is more unique. In `amp-ad`, any attributes that start with  `data-` are vendor-specific attributes. This means that not all vendors will necessarily require this particular attribute, nor will they necessarily react if it is supplied. For example, compare the **DoubleClick** example from above with the following test ad from the [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) platform:
+El atributo `data-slot` es más único. En `amp-ad`, cualquier atributo que comience con `data-` son atributos específicos del proveedor. Esto significa que no todos los vendedores necesitarán necesariamente este atributo particular, ni reaccionarán necesariamente si se suministra. Por ejemplo, compare el ejemplo de **DoubleClick** de arriba con el siguiente anuncio de prueba de la plataforma [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
 
 ```html
 <amp-ad
@@ -46,15 +46,15 @@ The `data-slot` attribute is more unique. In `amp-ad`, any attributes that start
 </amp-ad>
 ```
 
-Try **adding** both of the above examples into your article just after the `<header>` tag. **Refresh** the page and you should see two test ads:
+Trate de **añadir** los dos ejemplos anteriores en su artículo justo después de la etiqueta `<header>`. **Actualice** la página y verá dos anuncios de prueba:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Test ads') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Prueba de Anuncios') }}
 
-{% call callout('Important', type='caution') %}
-You might have some errors in your developer console, such as `Mixed Content` or `XMLHttpRequest cannot load`. The former error is likely related to the A9 advertisement because not all the content it loads is secure. This is a notable requirement for all ads served on AMP.
+{% call callout('Importante', type='caution') %}
+Es posible que tenga algunos errores en la consola de desarrollador, como `Mixed Content` o `XMLHttpRequest cannot load`. El error anterior probablemente esté relacionado con el anuncio de A9 porque no todo el contenido que carga es seguro. Este es un requisito notable para todos los anuncios publicados en AMP.
 {% endcall %}
 
-Let’s explore some more options available to use with DoubleClick ads. Try **adding** these two geotargeting ad configurations to the ads:
+Exploremos algunas opciones más disponibles para usar con los anuncios de DoubleClick. Intente **agregar** estas dos configuraciones de anuncios de orientación geográfica a los anuncios:
 
 ```html
 <amp-ad
@@ -74,36 +74,36 @@ Let’s explore some more options available to use with DoubleClick ads. Try **a
 </amp-ad>
 ```
 
-Unfortunately, the geotargeting cannot be controlled from the code of the page itself. However, these test ads have already been configured in the DoubleClick dashboard to only show in particular countries, specifically the United Kingdom and the United States of America.
+Desafortunadamente, la segmentación geográfica no puede controlarse desde el código de la propia página. Sin embargo, estos anuncios de prueba ya se han configurado en el panel de DoubleClick para que sólo se muestren en países concretos, específicamente en el Reino Unido y los Estados Unidos de América.
 
-**Refresh** the page and take a look. The following screenshot was captured from Canada, so neither ad loads:
+**Actualiza** la página y echa un vistazo. La siguiente captura de pantalla se ha capturado desde Canadá, por lo que ni las cargas de anuncios:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Prueba de Anuncios') }}
 
-The above geotargeting example demonstrates how `amp-ad` is flexible enough for all sorts of ad platform features. 
+El ejemplo de orientación geográfica anterior muestra cómo `amp-ad` es lo suficientemente flexible para todo tipo de características de la plataforma de anuncios.
 
-{% call callout('Note', type='note') %}
-You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback`attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Meaning the parent element falls back on the child element, hence the term ‘fallback’. Learn more in [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html).
+{% call callout('Nota', type='note') %}
+Es posible que observe que dentro de estas etiquetas de amp-ad se encuentran etiquetas `div` adicionales con un atributo denominado `fallback` en ellas. ¿Puedes adivinar qué representa el atributo `fallback`? Se informa al sistema de carga de AMP para mostrar sólo el contenido de ese elemento cuando el elemento padre no se carga correctamente. Lo que significa que el elemento padre recae en el elemento hijo, de ahí el término ‘fallback’. Obtenga más información sobre [Placeholders & fallbacks](/es/docs/guides/responsive/placeholders.html).
 {% endcall %}
 
-{% call callout('Read on', type='read') %}
-To see the latest supported ad networks, read the reference documentation for the [amp-ad](/docs/reference/components/amp-ad.html#supported-ad-networks) component.
+{% call callout('Leer más', type='read') %}
+Para ver las últimas redes publicitarias compatibles, lea la documentación de referencia del componente [amp-ad](/docs/reference/components/amp-ad.html#supported-ad-networks).
 {% endcall %}
 
-{% call callout('Note', type='note') %}
-No ad network-provided JavaScript is allowed to run inside the AMP document. Instead, the AMP runtime loads an iframe from a different origin (via an iframe sandbox) as the AMP document and executes the ad network’s JS inside that iframe sandbox.
+{% call callout('Nota', type='note') %}
+No se permite que JavaScript en la red de anuncios se ejecute dentro del documento de AMP. En cambio, el tiempo de ejecución de AMP carga un iframe de origen diferente (a través de un sandbox iframe) como el documento AMP y ejecuta el JS de la red de anuncios dentro de ese sandbox iframe.
 {% endcall %}
 
-Our AMP document now includes text, an image, and an advertisement embedded on the page, which are all key ingredients to telling a story and monetizing your content. However, modern websites often include more functionality than simply pictures and text.
+Nuestro documento de AMP ahora incluye texto, una imagen y un anuncio incrustado en la página, que son todos los ingredientes clave para contar una historia y monetizar su contenido. Sin embargo, los sitios web modernos a menudo incluyen más funcionalidad que simplemente imágenes y texto.
 
-Let’s take our AMP document to the next level and add more advanced web functionality that is commonly found on news articles, like: 
+Vamos a llevar nuestro documento de AMP al siguiente nivel y agregar funcionalidad web más avanzada que se encuentra comúnmente en los artículos de noticias, como:
 
 - YouTube videos
 - Tweets
 - Article quotes
 
-##  Embed a YouTube video
-Let’s try embedding a YouTube video into the document. **Add** the following code just after the `<header>` in your AMP document:
+##  Incluir un video de YouTube
+Intente incrustar un video de YouTube en el documento. **Agregue** el siguiente código justo después del `<header>` en su documento AMP:
 
 ```html
 <amp-youtube
