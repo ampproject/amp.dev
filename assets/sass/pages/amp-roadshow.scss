@@ -289,17 +289,14 @@
 
             }
 
-            .city-toronto {
-              top: 25%;
-              left: 18%;
-              .bubble {
-                top: 6px;
-              }
-            }
-
             .city-singapore {
               top: 57%;
               left: 75%;
+              .bubble {
+                top: 6px;
+                left: auto;
+                right: 6px;
+              }
             }
 
             .city-sydney {
