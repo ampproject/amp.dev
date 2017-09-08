@@ -12,7 +12,11 @@ cities:
     link: https://events.withgoogle.com/amp-roadshow-munich/
   - title: Paris
   - title: Madrid
+    date: 2017-11-14
+    link: https://events.withgoogle.com/amp-roadshow-madrid/
   - title: London
+    date: 2017-11-16
+    link: https://events.withgoogle.com/amp-roadshow-london
   - title: Beijing
   - title: Shanghai
   - title: Taipei

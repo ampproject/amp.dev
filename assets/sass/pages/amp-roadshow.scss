@@ -317,11 +317,20 @@
             .city-london {
               top: 19%;
               left: 41.5%;
+              .bubble {
+                left: auto;
+                right: 6px;
+              }
             }
 
             .city-madrid {
               top: 28%;
               left: 40.5%;
+              .bubble {
+                top: 6px;
+                left: auto;
+                right: 6px;
+              }
             }
 
             .city-beijing {
