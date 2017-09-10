@@ -3,20 +3,20 @@ $title: Agregando letras
 $order: 5
 ---
 
-In AMP, to keep the load times of documents as fast as possible, you cannot include external stylesheets. However, there is one exception to this rule&mdash;**fonts**.  
+En AMP, para mantener los tiempos de carga de documentos lo más rápido posible, no puede incluir hojas de estilo externas. Sin embargo, hay una excepción a esta regla &mdash; **fuentes**.
 
-You can embed custom fonts into your AMP page in two ways:
+Puede incrustar fuentes personalizadas en su página AMP de dos maneras:
 
-1. Through a `<link>` tag: for white-listed font providers only.
-2. By using the `@font-face` CSS rule: there are no restrictions, all fonts are allowed.
+1. A través de una etiqueta `<link>`: sólo para proveedores de fuentes con listas blancas.
+2. Al usar la regla CSS de `@font-face`: no hay restricciones, todas las fuentes están permitidas.
 
-In this tutorial, we'll use a `<link>` tag to add fonts to our page. **Add** a stylesheet link in the `<head>` to request the Raleway font:
+En este tutorial, usaremos una etiqueta `<link>` para añadir fuentes a nuestra página. **Agregue** un enlace de hoja de estilo en el `<head>` para solicitar la fuente Raleway:
 
 ```html
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
 ```
 
-Now, **update** your CSS to include a reference to Raleway:
+Ahora, **actualice** su CSS para incluir la referencia a Raleway:
 
 ```csss
 body {
@@ -27,17 +27,17 @@ body {
 }
 ```
 
-**Refresh** your page and check out your page’s new look. Also, inspect the AMP validator’s output.  There should be no errors for this external stylesheet request.
+**Actualice** su página y echa un vistazo a la nueva imagen de tu página. Además, inspeccione la salida del validador AMP. No debe haber errores para esta solicitud de hoja de estilo externa.
 
 {% call callout('Nota', type='note') %}
-Including a font in your document doesn’t require any additional components. Having said that, there is a component named [`amp-font`](/docs/reference/components/amp-font.html). The `amp-font` component isn’t used to load web fonts, instead you can use it to detect whether a web font has successfully loaded or not and respond appropriately, if necessary.
+La inclusión de una fuente en el documento no requiere ningún componente adicional. Dicho esto, hay un componente llamado [`amp-font`](/docs/reference/components/amp-font.html). El componente `amp-font` no se utiliza para cargar fuentes web, sino que puede utilizarlo para detectar si una fuente web ha cargado correctamente o no y responder adecuadamente, si es necesario.
 
-You can use amp-font to hide your text until your font is fully loaded so that the user doesn’t see the text snap from its temporary font to its true font. In the case where the font fails to load, you might want to just reveal the temporary font instead. After all, the worst scenario would be if the user didn’t get to read any text! Learn more by reading the [`amp-font`](/docs/reference/components/amp-font.html) reference documentation.
+Puede utilizar amp-font para ocultar su texto hasta que su fuente esté completamente cargada para que el usuario no vea el texto de su fuente temporal a su fuente verdadera. En el caso de que la fuente no se cargue, es posible que desee revelar la fuente temporal en su lugar. Después de todo, el peor escenario sería si el usuario no llegó a leer ningún texto! Obtenga más información leyendo la documentación de referencia de [`amp-font`](/docs/reference/components/amp-font.html).
 {% endcall %}
 
-You've completed your AMP news article! Here's what it should look like:
+¡Has completado tu artículo de noticias de AMP! Así es como debería ser:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='center half', caption='Completed news article') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='center half', caption='Artículo completado') }}
 
 
 <div class="prev-next-buttons">
