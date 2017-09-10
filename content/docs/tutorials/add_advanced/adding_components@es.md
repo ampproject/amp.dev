@@ -117,40 +117,40 @@ Intente incrustar un video de YouTube en el documento. **Agregue** el siguiente 
 </amp-youtube>
 ```
 
-**Refresh** the page and look at the page. You should see this text instead of a video: *“The video could not be loaded.”*
+**Actualiza** la página y mira la página. Debería ver este texto en lugar de un video: *“The video could not be loaded.”*
 
-Even if your browser can show YouTube videos without issue, you will still receive this error. Why? The video hasn’t actually failed to load, rather the component itself failed.
+Incluso si su navegador puede mostrar vídeos de YouTube sin problemas, seguirá recibiendo este error. ¿Por qué? El video no ha fallado en la carga, sino que el propio componente falló.
 
-Remember, not all components are included in the core AMP library JavaScript file. We need to include an additional JavaScript request for the YouTube component.  
+Recuerde que no todos los componentes están incluidos en el archivo JavaScript de la biblioteca principal de AMP. Tenemos que incluir una solicitud JavaScript adicional para el componente de YouTube.
 
-**Add** the following script to the `<head>` tag:
+**Agregue** la siguiente secuencia de comandos a la etiqueta `<head>`:
 
 ```html
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 ```
 
-**Refresh** the page and you should see the YouTube video:
+**Actualice** la página y debería ver el video de YouTube:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-youtube.png', 412, 618, align='center half', caption='Embedded Youtube video') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-youtube.png', 412, 618, align='center half', caption='Vídeo incrustado de Youtube') }}
 
-Once again, we specified the `width` and `height` of the video so that the AMP layout system can calculate the aspect ratio. Also, we set the `layout` to `responsive`, so the video fills the width of its parent element.
+Una vez más, especificamos el `width` y la `height` del video para que el sistema de distribución AMP pueda calcular la relación de aspecto. Además, establecemos el `layout` en `responsive`, por lo que el video llena el ancho de su elemento padre.
 
-To learn more about embedding YouTube videos, read the [amp-youtube](/docs/reference/components/amp-youtube.html) component documentation. For even more video and media components, check out the [list of AMP components](/docs/reference/components.html#media).
+Para obtener más información sobre la incorporación de vídeos de YouTube, lea la documentación del componente [amp-youtube](/docs/reference/components/amp-youtube.html). Para obtener más componentes de vídeo y multimedia, consulte la [lista de componentes AMP](/docs/reference/components.html#media).
 
 {% call callout('Tip', type='success') %}
-Use the [`fallback`](/docs/guides/responsive/placeholders.html#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
+Use el atributo [`fallback`](/es/docs/guides/responsive/placeholders.html#fallbacks) para informar a los usuarios si el componente falla en cargar o si el componente no es soportado por su navegador web.
 {% endcall %}
 
-## Display a Tweet
-Embedding preformatted tweets from Twitter is a common feature in news articles. The [amp-twitter](/docs/reference/components/amp-twitter.html) component can provide this functionality with ease.
+## Mostrar un Tweet
+La incorporación de tweets preformateados de Twitter es una característica común en los artículos de noticias. El componente [amp-twitter](/docs/reference/components/amp-twitter.html) puede proporcionar esta funcionalidad con facilidad.
 
-Start by adding the following JavaScript request to the `<head>` tag of your document:
+Comience agregando la siguiente solicitud de JavaScript a la etiqueta `<head>` de su documento:
 
 ```html
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 ```
 
-Now, in your article **add** this code to embed the Tweet:
+Ahora, en su artículo, **agregue** este código para incrustar el Tweet:
 
 ```html
 <amp-twitter
@@ -161,33 +161,34 @@ Now, in your article **add** this code to embed the Tweet:
 </amp-twitter>
 ```
 
-The `data-tweetid` attribute is another example of a custom attribute required by a particular platform. In this case, Twitter correlates the value of the `data-tweetid` attribute to a particular Tweet.
+El atributo `data-tweetid` es otro ejemplo de un atributo personalizado requerido por una plataforma particular. En este caso, Twitter correlaciona el valor del atributo `data-tweetid` con un determinado Tweet.
 
-**Refresh** your browser and take a look at the page. You should see the Tweet appear:
+**Actualiza** tu navegador y echa un vistazo a la página. Usted debe ver el Tweet aparecer:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-twitter.png', 412, 613, align='center half', caption='Embedded Tweet') }}
 
-To learn more about embedding Twitter Tweets, read the [amp-twitter](/docs/reference/components/amp-twitter.html) component documentation.
+{{ image('/static/img/docs/tutorials/tut-advanced-twitter.png', 412, 613, align='center half', caption='Tweet Insertado') }}
+
+Para obtener más información sobre la incorporación de Tweets de Twitter, lea la documentación del componente [amp-twitter](/docs/reference/components/amp-twitter.html).
 
 {% call callout('Tip', type='success') %}
-AMP provides even more components for embedding content from social networks. See the latest [social AMP components](/docs/reference/components.html#social).
+AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components](/docs/reference/components.html#social).
 {% endcall %}
 
-## Highlight an article quote
+## Resaltar una cita de artículo
 
-A common feature in news articles is to highlight particularly engaging snippets of text from the article. For example, a quotation from a particular source or an important fact might be repeated in a larger font to attract the reader's attention.
+Una característica común en los artículos de noticias es resaltar fragmentos particularmente atractivos de texto del artículo. Por ejemplo, una cita de una fuente particular o un hecho importante puede repetirse en una fuente más grande para atraer la atención del lector.
 
-However, not all snippets of text are necessarily the same length of characters, which can make it difficult to balance a larger font size with the amount of space the text consumes on the page.
+Sin embargo, no todos los fragmentos de texto tienen necesariamente la misma longitud de caracteres, lo que puede dificultar el equilibrio entre un tamaño de fuente mayor y la cantidad de espacio que el texto consume en la página.
 
-AMP provides another component specifically designed for this type of situation, it's called the [amp-fit-text](/docs/reference/components/amp-fit-text.html) component. The `amp-fit-text` component allows you to define a fixed width and height element, and a maximum font size. The component intelligently scales the font size to **fit** the text within the available width and height.
+AMP proporciona otro componente específicamente diseñado para este tipo de situación, se llama el componente [amp-fit-text](/docs/reference/components/amp-fit-text.html). El componente `amp-fit-text` le permite definir un elemento de ancho y altura fijos y un tamaño de fuente máximo. El componente escala inteligentemente el tamaño de la fuente para **ajustar** el texto dentro del ancho y la altura disponibles.
 
-Let’s give it a try. First, **add** the component’s library to the `<head>` tag:
+Hagamos un intento. Primero, **agregue** la biblioteca del componente a la etiqueta `<head>`:
 
 ```html
 <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
-Add the following to your page:
+Agregue lo siguiente a su página:
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
@@ -195,9 +196,9 @@ Add the following to your page:
 </amp-fit-text>
 ```
 
-**Refresh** the page and look at the result!
+**Actualice** la página, y vea el resultado!
 
-Now, experiment further. What happens if the quotation is much shorter?
+Ahora, experimente más. ¿Qué pasa si la cita es mucho más corta?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
@@ -205,7 +206,7 @@ Now, experiment further. What happens if the quotation is much shorter?
 </amp-fit-text>
 ```
 
-Or, what if the quotation is longer?
+O, ¿qué pasa si la cita es más larga?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
@@ -213,9 +214,10 @@ Or, what if the quotation is longer?
 </amp-fit-text>
 ```
 
-As a last experiment with `amp-fit-text`, try creating a short piece of text,  such as "Hello" with a much larger height (for example, a value of 400), and maintaining the max-font-size attribute value of 42. What would the resulting page look like? Is the text centered vertically? Or, does the height of the amp-fit-text tag shrink to fit the max font size? With what you already know about AMP’s layout system, try to answer the question before playing with the code!
+Como último experimento con `amp-fit-text`, intente crear un fragmento corto de texto, como "Hello" con una altura mucho mayor (por ejemplo, un valor de 400), y manteniendo el valor de atributo max-font-size de 42. ¿Cómo sería la página resultante? ¿Está el texto centrado verticalmente? ¿O la altura de la etiqueta de ajuste de amplificación de texto se encoge para ajustarse al tamaño de fuente máximo? Con lo que ya sabes sobre el sistema de distribución de AMP, intenta responder a la pregunta antes de jugar con el código!
 
-You can learn more about `amp-fit-text` from [AMP BY Example's live demo](https://ampbyexample.com/components/amp-fit-text/).
+Puede obtener más información sobre el amplificador de ajuste de texto de la demostración en vivo de [AMP BY Example](https://ampbyexample.com/components/amp-fit-text/.
+
 
 
 <div class="prev-next-buttons">
