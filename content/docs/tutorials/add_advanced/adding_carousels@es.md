@@ -1,22 +1,22 @@
 ---
-$title: Adding carousels
+$title: Agregar carruseles
 $order: 2
 toc: true
 ---
 
 [TOC]
 
-Another common feature in mobile pages is a carousel.  You can easily add carousels to AMP pages by using the [amp-carousel](https://www.ampproject.org/docs/reference/components/amp-carousel) component. Let’s start with a simple example, such as a carousel of images.
+Otra característica común en las páginas móviles es un carrusel. Puede agregar fácilmente carruseles a las páginas de AMP utilizando el componente de [amp-carousel](https://www.ampproject.org/docs/reference/components/amp-carousel). Comencemos con un ejemplo simple, como un carrusel de imágenes.
 
-## Simple image carousel
+## Carrusel simple de imagen
 
-Remember to include the amp-carousel component library by **adding** the following JavaScript request to the `<head>` tag of your document:
+Recuerde incluir la biblioteca de componentes del amplificador-carrusel **añadiendo** la siguiente solicitud de JavaScript a la etiqueta `<head>` de su documento:
 
 ```html
 <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 ```
 
-Next, let's embed a simple carousel of images with a responsive layout and a predefined width and height. **Add** the following to your page:
+A continuación, insertemos un simple carrusel de imágenes con un diseño de respuesta y un ancho y una altura predefinidos. **Agregue** lo siguiente a su página:
 
 ```html
 <amp-carousel layout="fixed-height" height="168" type="carousel" >
@@ -26,19 +26,19 @@ Next, let's embed a simple carousel of images with a responsive layout and a pre
 </amp-carousel>
 ```
 
-**Refresh** your page and you should see a carousel in your page:
+**Actualiza** tu página y deberías ver un carrusel en tu página:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-carousel-simple.png', 412, 403, align='center half', caption='Simple images carousel') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-carousel-simple.png', 412, 403, align='center half', caption='Carrusel de imágenes simples') }}
 
-The `amp-carousel` component can be configured in a variety of ways. Try **changing** the `type` from `carousel` to `slides`, and look at the result. To ensure your content scales and sizes responsively for the screen size, in the `amp-carousel` component, **change** the `layout` to `responsive`. Make sure your carousel has both `width` and `height` values defined. Also, **add** the `"layout=responsive"` attribute to the `amp-img` elements. 
+El componente `amp-carousel` se puede configurar de varias maneras. Intente **cambiar** el `type` de `carousel` a `slides`, y mire el resultado. Para asegurarse de que su contenido varíe y responda al tamaño de la pantalla, en el componente `amp-carousel`, **cambie** el `layout` a `responsive`. Asegúrese de que su carrusel tiene valores de `width` y `height` definidos. Además, **agregue** el atributo `"layout=responsive"` a los elementos `amp-img`.
 
-**Reload** your page. Now, instead of a scrolling list of elements you’ll see one element at a time. Try **swiping** horizontally to move through the elements. If you swipe to the third element you won’t be able to swipe any further. 
+**Vuelve a cargar** tu página. Ahora, en lugar de una lista desplegable de elementos, verá un elemento a la vez. Trate de **deslizar** horizontalmente para moverse a través de los elementos. Si pasa al tercer elemento, no podrá desplazarse más. 
 
-Next, **add** the `loop` attribute. **Refresh** the page and try swiping to the left immediately. The carousel loops endlessly.
+A continuación, **agregue** el atributo `loop`. **Actualice** la página e intente deslizar hacia la izquierda inmediatamente. El carrusel se mueve sin cesar.
 
-Lastly, let’s make this carousel autoplay at a rate of every 2 seconds. **Add** the `autoplay` attribute to the page, and the `delay` attribute with a value of `2000` (e.g., `delay="2000"`).
+Por último, vamos a hacer esta autoplay carrusel a una velocidad de cada 2 segundos. **Agregue** el atributo de `autoplay` a la página y el atributo `delay` con un valor de `2000` (por ejemplo, `delay="2000"`).
 
-Your final result should look something like this:
+Su resultado final debe ser algo como esto:
 
 ```html
 <amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
@@ -48,17 +48,17 @@ Your final result should look something like this:
 </amp-carousel>
 ```
 
-**Refresh** the page and give it a spin!
+¡**Actualice** la página y vea cómo gira!
 
 {% call callout('Nota', type='note') %}
-You might have noticed that we’re using the `fixed-height` layout type in the carousel. A `fixed-height` layout is required for the `carousel` type, while the `slides` type requires the `responsive` layout type. Fixed-height elements take the space available to them, but keep the height unchanged. For fixed-height elements, you must define the `height` attribute, while the `width` attribute should not be present, or it should be set to `auto`.
+Podrías haber notado que estamos usando el tipo de disposición `fixed-height` en el carrusel. Se requiere un diseño de `fixed-height` para el tipo `carousel`, mientras que el tipo `slides` requiere el tipo de diseño `responsive`. Fixed-height toma el espacio disponible para ellos, pero mantienen la altura inalterada. Para los elementos de altura fija, debe definir el atributo `height`, mientras que el atributo `width` no debe estar presente, o debe establecerse en `auto`.
 {% endcall %}
 
-## Mixed carousel content
+## Contenido mixto de carrusel
 
-Image carousels are great but what if we want more complex content to appear in our carousel? Let’s try mixing things up a little by placing an ad, some text, and an image all in a single carousel. Can amp-carousel really handle such a mixture all at once? Absolutely!
+Los carruseles de imágenes son geniales, pero ¿y si queremos que aparezca un contenido más complejo en nuestro carrusel? Intentemos mezclar un poco las cosas colocando un anuncio, un texto y una imagen en un único carrusel. ¿Puede el amperio-carrusel realmente manejar tal mezcla de una vez? ¡Absolutamente!
 
-First, let’s **add** this styling to the page to ensure the `amp-fit-text` and `amp-carousel` components work together safely:
+En primer lugar, vamos a **añadir** este estilo a la página para garantizar que el `amp-fit-text` y `amp-carousel` funcionan juntos con seguridad:
 
 ```css
 amp-fit-text {
@@ -66,7 +66,7 @@ amp-fit-text {
 }
 ```
 
-Now, **replace** your simple carousel with this:
+Ahora, **reemplazar** tu carousel simple con éste:
 
 ```html
 <amp-carousel layout="fixed-height" height="250" type="carousel" >
@@ -84,14 +84,14 @@ Now, **replace** your simple carousel with this:
 </amp-carousel>
 ```
 
-**Refresh** the page and you should see something like this:
+**Actualiza** la página y deberías ver algo como ésto:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-carousel-complex.gif', 412, 403, align='center half', caption='A carousel of mixed content') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-carousel-complex.gif', 412, 403, align='center half', caption='Un carousel de contenido mixto') }}
 
-To learn more, see the [amp-carousel](/docs/reference/components/amp-carousel.html) component reference documentation.
+Aprende más sobre el componente [amp-carousel](/docs/reference/components/amp-carousel.html).
 
 {% call callout('Nota', type='note') %}
-In our last example you may have noticed the `amp-ad` component included a child `div` element with the `placeholder` attribute. Earlier in the tutorial, we encountered a similar scenario with `amp-ad` using a `fallback`. What’s the difference between placeholder and fallback? `Fallback` elements appear when the parent element fails to load, i.e. if there was no ad available. Whereas `placeholder` elements appear in place of the parent element, while it is loading. In a sense, each attribute bookends the loading process of the parent element. You can learn more in [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html) guide.
+En nuestro último ejemplo, es posible que haya notado que el componente `amp-ad` incluía un elemento `div` hijo con el atributo de `placeholder`. Anteriormente en el tutorial, nos encontramos con un escenario similar con `amp-ad` con un `fallback`. ¿Cuál es la diferencia entre el marcador de posición y el fallback? Los elementos `fallback` aparecen cuando el elemento primario no se carga, es decir, si no hay ningún anuncio disponible. Mientras que los elementos `placeholder` aparecen en lugar del elemento principal, mientras se está cargando. En cierto sentido, cada atributo sujeta el proceso de carga del elemento padre. Puede obtener más información en la Guía [Placeholders & fallbacks](/es/docs/guides/responsive/placeholders.html).
 {% endcall %}
 
 <div class="prev-next-buttons">
