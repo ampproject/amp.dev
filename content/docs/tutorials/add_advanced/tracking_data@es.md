@@ -1,11 +1,11 @@
 ---
-$title: Tracking engagement with analytics
+$title: Seguimiento del compromiso con analíticas
 $order: 3
 ---
 
-Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system. AMP provides a flexible JSON configuration syntax to replicate this process for several analytics partners.
+Las plataformas de Google Analytics se integran comúnmente en sitios web a través de fragmentos JavaScript en línea y llamadas de función, que activan eventos que se envían al sistema analítico. AMP proporciona una sintaxis de configuración flexible de JSON para replicar este proceso para varios partners de análisis.
 
-The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [amp-analytics'](/docs/reference/components/amp-analytics.html) JSON format but first, let's look at the traditional approach:
+El siguiente es un ejemplo de seguimiento tradicional de Google Analytics basado en JavaScript. Vamos a reescribir esto en el formato JSON de [amp-analytics'](/docs/reference/components/amp-analytics.html), pero primero, veamos el enfoque tradicional:
 
 ```html
 <script>
@@ -19,15 +19,15 @@ ga('send', 'pageview');
 </script>
 ```
 
-This JavaScript is quite simple; it sends a notification to track the pageview event.
+Este JavaScript es bastante simple; envía una notificación para realizar un seguimiento del evento pageview.
 
-To replicate this functionality in AMP, we must first **include** the [amp-analytics](/docs/reference/components/amp-analytics.html) component library in our document’s `<head>`:
+Para replicar esta funcionalidad en AMP, primero debemos **incluir** la biblioteca de componentes [amp-analytics](/docs/reference/components/amp-analytics.html)  en el `<head>` de nuestro documento:
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-Then, let's **add** the `amp-analytics` component to the end of the `body` of the document:
+Luego, vamos a **agregar** el componente `amp-analytics` al final del `body del documento:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -50,11 +50,11 @@ Then, let's **add** the `amp-analytics` component to the end of the `body` of th
 </amp-analytics>
 ```
 
-It may seem more complicated but it’s actually a very flexible format for describing several different types of events. Additionally, the JSON format does not include the blob of JavaScript code that we saw in the traditional example, which could potentially lead to mistakes if accidentally altered.
+Puede parecer más complicado, pero en realidad es un formato muy flexible para describir varios tipos diferentes de eventos. Además, el formato de JSON no incluye la gota del código del Javascript que vimos en el ejemplo tradicional, que podría conducir potencialmente a errores si se altera accidentalmente.
 
-In the JSON format, the `triggers` key includes a set of keys that represent all event triggers we want to track. The keys of those triggers are descriptions of the event, for example `"default pageview"`. The `title` key value represents the name of the page being viewed.
+En el formato JSON, la tecla `triggers` incluye un conjunto de claves que representan todos los disparadores de eventos que queremos realizar el seguimiento. Las claves de estos desencadenantes son descripciones del evento, por ejemplo, `"default pageview"`. El valor de clave de `title` representa el nombre de la página que se está viendo.
 
-Building on the above example, we can **add** another trigger named `"click on #header trigger"`:
+Basándonos en el ejemplo anterior, podemos **agregar** otro disparador denominado `"click on #header trigger"`:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -86,16 +86,16 @@ Building on the above example, we can **add** another trigger named `"click on #
 </amp-analytics>
 ```
 
-This trigger is exactly what it sounds like.  By using the `"#header"` DOM selector, we can query for a tag with the `"header"` ID. For the `"click"`event, we send a `“clicked-header”` event action to the analytics platform with the `“examples”` category label.
+Este disparador es exactamente lo que suena. Utilizando el selector DOM `"#header"`, podemos consultar una etiqueta con el ID de `"#header"`. Para el evento `"click"`, enviamos una acción de evento `“clicked-header”` a la plataforma de análisis con la etiqueta de categoría `“examples”`.
 
-If you have a custom tracking platform that you want to integrate with, you can still use `amp-analytics` and define your own personalised URL endpoints to send tracking data to. Learn more in the [amp-analytics](/docs/reference/components/amp-analytics.html) component reference documentation.
+Si tiene una plataforma de seguimiento personalizada con la que desea integrarse, puede seguir utilizando `amp-analytics` y definir sus propios puntos finales de URL personalizados para enviar datos de seguimiento. Obtenga más información en la documentación de referencia del componente [amp-analytics](/docs/reference/components/amp-analytics.html).
 
 {% call callout('Nota', type='note') %}
-In all of these analytics examples, `“UA-YYYY-Y”` should be replaced with your own website’s Google Analytics tracking code.
+En todos estos ejemplos de análisis, `“UA-YYYY-Y”` debe reemplazarse con el código de seguimiento de Google Analytics de su propio sitio web.
 {% endcall %}
 
 {% call callout('Tip', type='success') %}
-If you are interested in a simpler tracking system, you might want to take a look at [amp-pixel](/docs/reference/components/amp-pixel.html). If you only need to track pageviews, amp-pixel it is a lighter-weight solution than amp-analytics because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](/docs/guides/analytics/analytics_basics.html).
+Si está interesado en un sistema de seguimiento más simple, puede que desee echar un vistazo a [amp-pixel](/docs/reference/components/amp-pixel.html). Si sólo necesita realizar el seguimiento de las vistas de página, amp-pixel es una solución más ligera que amp-analytics porque sólo tiene como objetivo resolver los requisitos del seguimiento de píxeles tradicional. Obtenga más información en [Analytics: aspectos básicos](/es/docs/guides/analytics/analytics_basics.html).
 {% endcall %}
 
 <div class="prev-next-buttons">
