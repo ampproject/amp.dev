@@ -1,21 +1,21 @@
 ---
-$title: Navigating your site 
+$title: Navegando por su sitio
 $order: 4
 toc: true
 ---
 
 [TOC]
 
-Most mobile websites include a site navigation menu. These menus can take many different forms. In this tutorial, we'll try out the following examples for presenting navigation in AMP pages:
+La mayoría de los sitios web para móviles incluyen un menú de navegación del sitio. Estos menús pueden tomar muchas formas diferentes. En este tutorial, probaremos los siguientes ejemplos para presentar la navegación en las páginas de AMP:
 
-- A link back to your home page -- the simplest option.
-- A side navigation bar by using the [amp-sidebar](/docs/reference/components/amp-sidebar.html) component.
+- Un enlace a su página de inicio - la opción más simple.
+- Una barra de navegación lateral utilizando el componente [amp-sidebar](/docs/reference/components/amp-sidebar.html)
 
-## Link back home
+## Link de vuelta al home
 
-The simplest way to get your users to access your website’s regular navigation options is to just funnel them back to your homepage!
+La forma más sencilla de conseguir que los usuarios accedan a las opciones de navegación habituales de su sitio web es simplemente enviarlos de vuelta a su página principal!
 
-Try **adding** this HTML link to the `<header>` tag:
+Intente **agregar** este enlace HTML a la etiqueta `<header>`:
 
 ```html
 <header class="headerbar">
@@ -26,7 +26,7 @@ Try **adding** this HTML link to the `<header>` tag:
 </header>
 ```
 
-And **add** these style rules to your inline CSS:
+Y **agregue** estas reglas de estilo en su CSS:
 
 ```css
 .home-button {
@@ -50,26 +50,25 @@ article {
 }
 ```
 
-Now **refresh** the page. You should see a link in the top-left corner of the page pointing to `homepage.html`.  If you click the home icon, you’ll quickly discover it doesn’t lead anywhere (because we don't have a `homepage.html` file).
+Ahora **actualice** la página. Debería ver un enlace en la esquina superior izquierda de la página que apunta a `homepage.html`. Si hace clic en el icono de inicio, descubrirá rápidamente que no conduce a ninguna parte (porque no tenemos un archivo `homepage.html`).
 
-{{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='Home icon navigation') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='Icono de navigacion al home') }}
 
-This link can be replaced with the URL of your website’s homepage to allow your users to navigate to other parts of your site through your existing website’s navigation.
+Este enlace se puede reemplazar por la URL de la página principal de su sitio web para permitir a sus usuarios navegar a otras partes de su sitio a través de la navegación de su sitio web actual.
 
-This is the simplest approach that leverages your existing website navigation. Next, we’ll explore a popular option for site navigation.
+Este es el enfoque más sencillo que aprovecha la navegación de su sitio web existente. A continuación, exploraremos una opción popular para la navegación del sitio.
 
+## Navegar con una barra lateral
 
-## Navigate with a sidebar
+Una técnica de navegación común es agregar un icono de menú que al hacer clic en el botón muestra un conjunto de enlaces de navegación (desde el lado de la página). En AMP, podemos crear dicha navegación con el componente [amp-sidebar](/docs/reference/components/amp-sidebar.html).
 
-A common navigation technique is to add a menu icon that when clicked reveals a set of navigation links (from the side of the page). In AMP,  we can create such navigation with the [amp-sidebar](/docs/reference/components/amp-sidebar.html) component.
-
-First, we must **add** the `amp-sidebar` component’s JavaScript to the `<head>` tag:
+Primero, debemos **agregar** el componente `amp-sidebar` de JavaScript a la etiqueta `<head>`:
 
 ```html
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 ```
 
-Next, we want to display a menu icon.  When the icon is tapped, it will open the sidebar. **Replace** the `<header>` with the following code to display a ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button) icon instead of a home icon:
+A continuación, queremos mostrar un icono de menú. Cuando se pulsa el icono, se abrirá la barra lateral. **Reemplace** el `<header>` con el código siguiente para mostrar un icono de ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button) en lugar de un icono de inicio:
 
 ```html
 <header class="headerbar">
@@ -78,10 +77,9 @@ Next, we want to display a menu icon.  When the icon is tapped, it will open the
 </header>
 ```
 
-In the above code, we `toggle` the sidebar through the [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) action attribute on the `amp-sidebar` element, which is identified by the `sidebar1` ID.  Let's add the sidebar.
+En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
 
-
-**Add** the following HTML just after the `</header>`:
+**Agregue** el siguiente HTML justo después del `</header>`:
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
@@ -94,9 +92,9 @@ In the above code, we `toggle` the sidebar through the [`on`](https://github.com
 </amp-sidebar>
 ```
 
-Our sidebar will be hidden, but when the user taps the hamburger icon, the menu will appear from the left side of the screen.  To close the menu, the user can tap the X icon.
+Nuestra barra lateral estará oculta, pero cuando el usuario toque el icono de la hamburguesa, el menú aparecerá desde el lado izquierdo de la pantalla. Para cerrar el menú, el usuario puede tocar el icono X.
 
-Finally, **add** these style rules to your inline CSS:
+Finalmente, **agregue** estas reglas de estilo a su CSS:
 
 ```css
 .hamburger {
@@ -119,11 +117,11 @@ Finally, **add** these style rules to your inline CSS:
 }
 ```
 
-Okay, let's see our sidebar. **Refresh** and reload your AMP page.  You should see something like this:
+Bueno, veamos nuestra barra lateral. **Actualiza** y vuelve a cargar tu página de AMP. Debería ver algo como esto:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='Sidebar menu navigation') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='Navegación por el menú de la barra lateral') }}
 
-Our page is looking great!  Let's add one final touch&mdash;a custom font.
+Nuestra página se ve muy bien! Añadamos un toque final: una fuente personalizada!
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/tutorials/add_advanced/tracking_data.html"><span class="arrow-prev">Anterior</span></a>
