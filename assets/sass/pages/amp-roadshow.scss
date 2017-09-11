@@ -222,6 +222,9 @@
                 box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
                 position: absolute;
                 top: -76px;
+                @include max-screen(650px) {
+                  top: -70px;
+                }
                 left: 8px;
                 z-index: 1;
                 font-size: 14px;
@@ -296,6 +299,21 @@
                 top: 6px;
                 left: auto;
                 right: 6px;
+              }
+              @include max-screen(650px) {
+                .bubble {
+                  top: 26px;
+                }
+              }
+            }
+
+            .city-jakarta {
+              top: 64%;
+              left: 78%;
+              @include max-screen(650px) {
+                .bubble {
+                  left: -60px;
+                }
               }
             }
 
