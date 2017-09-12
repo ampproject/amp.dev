@@ -10,6 +10,8 @@ cities:
     date: 2017-10-10
     link: https://events.withgoogle.com/amp-roadshow-jakarta/
   - title: Sydney
+    date: 2017-10-13
+    link: https://events.withgoogle.com/amp-roadshow-sydney-oct2017/
   - title: Munich
     date: 2017-11-07
     link: https://events.withgoogle.com/amp-roadshow-munich/
@@ -19,7 +21,7 @@ cities:
     link: https://events.withgoogle.com/amp-roadshow-madrid/
   - title: London
     date: 2017-11-16
-    link: https://events.withgoogle.com/amp-roadshow-london
+    link: https://events.withgoogle.com/amp-roadshow-london/
   - title: Beijing
   - title: Shanghai
   - title: Taipei
