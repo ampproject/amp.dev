@@ -303,6 +303,7 @@
               @include max-screen(650px) {
                 .bubble {
                   top: 26px;
+                  right: 40px;
                 }
               }
             }
@@ -320,6 +321,14 @@
             .city-sydney {
               top: 84%;
               left: 88%;
+              .bubble {
+                top: 6px;
+              }
+              @include max-screen(650px) {
+                .bubble {
+                  left: -80px;
+                }
+              }
             }
 
             .city-munich {
