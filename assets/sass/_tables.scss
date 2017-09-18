@@ -72,3 +72,9 @@ html, body {
       white-space: pre-line;
     }
 }
+
+@include min-screen($tablet-breakpoint) {
+    td > pre {
+      white-space: pre-line;
+    }
+}
