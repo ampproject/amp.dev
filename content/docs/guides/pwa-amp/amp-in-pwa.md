@@ -36,7 +36,7 @@ The right signal to observe is the availability of the global `AMP` variable, an
 });
 [/sourcecode]
 
-This code will work, and the any number of callbacks added this way will indeed fire when AMP is available, but why?
+This code will work, and any number of callbacks added this way will indeed fire when AMP is available, but why?
 
 This code translates to:
 
