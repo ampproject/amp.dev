@@ -15,7 +15,7 @@ results:
     - stat: 22%
       description: Increase in mobile search users returning to CNBC.com in 7 days
     - stat: 387%
-      description: Increase in mobile page load time
+      description: Decrease in mobile page load time
 
 logo:
   src: "case-studies/cnbc_logo_thumb.png"
