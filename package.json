@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "feedparser": "*",
+    "js-beautify": "1.6.14",
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-plumber": "*",
