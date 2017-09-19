@@ -25,6 +25,7 @@ Los orígenes siguientes se incluyen en la lista blanca y se permite el uso de f
 * Typography.com: **https://cloud.typography.com**
 * Fonts.com: **https://fast.fonts.net**
 * Google Fonts: **https://fonts.googleapis.com**
+* Typekit: **https://use.typekit.net**
 * Font Awesome: **https://maxcdn.bootstrapcdn.com**
 
 ### 2. Usando `@font-face`
