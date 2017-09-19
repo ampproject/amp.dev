@@ -23,7 +23,11 @@ cities:
     date: 2017-11-16
     link: https://events.withgoogle.com/amp-roadshow-london/
   - title: Beijing
+    date: 2017-12-05
+    link: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
   - title: Shanghai
+    date: 2017-12-08
+    link: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
   - title: Taipei
 
 agenda:
