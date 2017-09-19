@@ -45,43 +45,58 @@ stylesheet: pages/amp-roadshow.css
 
         <div class="flex">
 
-            <ul>
-                    {% for city in conf.cities %}
-                    <li>
-                        <a{% if city.link %} href="{{city.link}}" target="_blank"{% endif %}>
-                            {{ city.title }}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
+            <ul class="desktop-up">
+                {% for city in conf.cities %}
+                <li>
+                    <a{% if city.link %} href="{{city.link}}" target="_blank"{% endif %}>
+                        {{ city.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
 
-                <div class="world">
-                    <amp-img src="/static/img/amp-roadshow/world-map.svg" layout="responsive" width="922" height="439"></amp-img>
-                    {% for city in conf.cities %}
-                        <div class="city city-{{ city.title | lower }} {% if not city.link %}city-upcoming{% endif %}">
+            <ul class="tablet-down">
+                {% for city in conf.cities  %}
+                <li class="city city-{{ city.title | lower }} {% if not city.link %}city-upcoming{% endif %}">
+                    <div class="bubble">
+                        <div class="date">
+                            {% if city.date %}{{ city.date | date() }}{% else %}TBA{% endif %}
+                        </div>
+                        <div class="flex">
+                            <h4>{{ city.title }}</h4>
+                            {% if city.link %}
+                            <a href="{{ city.link }}" target="_blank">Register</a>
+                            {% else %}
+                            <a>COMING SOON</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
 
-                            <div class="bubble">
-                                {% if city.link %}
-                                <div class="date">{% if city.date %}{{ city.date | date() }}{% else %}To be announced{% endif %}</div>
-                                <div class="flex">
-                                    <h4>{{ city.title }}</h4>
-                                    <a href="{{ city.link }}" target="_blank">Register</a>
-                                </div>
-                                {% else %}
-                                <div class="flex">
-                                    <h4>{{ city.title }}</h4>
-                                    <a>COMING SOON</a>
-                                </div>
-                                {% endif %}
-                            </div>
+            <div class="world">
+                <amp-img src="/static/img/amp-roadshow/world-map.svg" layout="responsive" width="922" height="439"></amp-img>
+                {% for city in conf.cities %}
+                {% if city.link %}
+                    <div class="city city-{{ city.title | lower }} {% if not city.link %}city-upcoming{% endif %}">
 
-                            <div class="dot">
-                                <div class="ringring"></div>
-                                <div class="circle"></div>
+                        <div class="bubble">
+                            <div class="date">{{ city.date | date() }}</div>
+                            <div class="flex">
+                                <h4>{{ city.title }}</h4>
+                                <a href="{{ city.link }}" target="_blank">Register</a>
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
+
+                        <div class="dot">
+                            <div class="ringring"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
+            </div>
 
         </div>
 

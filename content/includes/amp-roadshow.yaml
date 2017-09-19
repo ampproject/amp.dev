@@ -1,21 +1,33 @@
 nextstop:
-  title: Toronto
-  link: https://events.withgoogle.com/amp-roadshow-toronto/
+  title: Singapore
+  link: https://events.withgoogle.com/amp-roadshow-singapore-oct2017/
 
 cities:
-  - title: Toronto
-    date: 2017-08-30
-    link: https://events.withgoogle.com/amp-roadshow-toronto/
   - title: Singapore
+    date: 2017-10-06
+    link: https://events.withgoogle.com/amp-roadshow-singapore-oct2017/
+  - title: Jakarta
+    date: 2017-10-09
+    link: https://events.withgoogle.com/amp-roadshow-jakarta/
   - title: Sydney
+    date: 2017-10-13
+    link: https://events.withgoogle.com/amp-roadshow-sydney-oct2017/
   - title: Munich
     date: 2017-11-07
     link: https://events.withgoogle.com/amp-roadshow-munich/
   - title: Paris
   - title: Madrid
+    date: 2017-11-14
+    link: https://events.withgoogle.com/amp-roadshow-madrid/
   - title: London
+    date: 2017-11-16
+    link: https://events.withgoogle.com/amp-roadshow-london/
   - title: Beijing
+    date: 2017-12-05
+    link: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
   - title: Shanghai
+    date: 2017-12-08
+    link: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
   - title: Taipei
 
 agenda:
