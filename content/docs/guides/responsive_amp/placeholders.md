@@ -41,11 +41,17 @@ any HTML element can act as the placeholder.
 
 ## Fallbacks
 
-Use the `fallback` attribute to indicate the fallback behavior
-for any element the browser doesn’t support, or if the content fails to load (e.g., Tweet deleted).
+You can specify the `fallback` attribute on an element to indicate the fallback behavior:
 
-For example, use the `fallback` attribute to communicate to the user
-that the browser doesn’t support a particular feature:
+* for any element the browser doesn’t support
+* if the content fails to load (e.g., Tweet deleted)
+* if the image type is unsupported (e.g., WebP isn't supported in all browsers)
+
+You can set the `fallback` attribute on *any* HTML element, not just AMP elements. If specified, the `fallback` element must be a direct child of the AMP element.
+
+##### Example: Unsupported feature
+
+In the following example, we use the `fallback` attribute to communicate to the user that the browser doesn’t support a particular feature:
 
 <!--embedded video example  -->
 <div>
@@ -59,8 +65,12 @@ that the browser doesn’t support a particular feature:
 </amp-iframe>
 </div>
 
-The `fallback` attribute can be set on any HTML element, not just AMP elements.
-If specified, the `fallback` element must be a direct child of the AMP element.
+##### Example: Serve different image formats
+
+In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported. 
+
+<div>
+<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
 ## Interaction of placeholders and fallbacks
 
