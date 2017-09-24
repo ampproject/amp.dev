@@ -6,7 +6,7 @@ toc: true
 
 [TOC]
 
-In this section, we'll go through and resolve the AMP validation errors from our AMP page.
+In this section, we'll go through and resolve the AMP validation errors from our AMP page.  Note that the errors may appear in a different order in your console.
 
 ## Include charset
 
@@ -35,7 +35,9 @@ Now, let's look at the following error:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Every AMP document needs to have a link referencing the canonical page. The canonical page can be the AMP page itself or a non-AMP page.  In this tutorial, the original HTML article is the canonical page. We'll learn more about canonical linking in [Making your page discoverable](/docs/tutorials/converting/discoverable.html).
+Every AMP document needs to have a link referencing the "canonical" version of that document.  We'll learn more about what canonical pages are and different approaches to canonical linking in the [Making your page discoverable](/docs/tutorials/converting/discoverable.html) step of this tutorial.
+
+For this tutorial we'll consider the original HTML article that we're converting to be the canonical page.
 
 Go ahead and **add** the following code below the `<meta charset="utf-8" />` tag:
 
@@ -124,7 +126,7 @@ The problem is that this is an external stylesheet reference. In AMP, to keep th
 
 So, let's resolve the error:
 
-1.  **Remove** the `<link>` tag in the `<head>` and replace it with an inline `<style amp-custom></style>` tag. The `amp-custom` attribute on the style tag is mandatory.
+1.  **Remove** the stylesheet `<link>` tag in the `<head>` and replace it with an inline `<style amp-custom></style>` tag. The `amp-custom` attribute on the style tag is mandatory.
 2. **Copy** all the styles from the [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) file into the `<style amp-custom></style>` tags.
 
 Once again, **reload** the page and verify that the stylesheets error has disappeared.
@@ -145,15 +147,18 @@ While stylesheets can be reworked relatively easily with AMP by inlining the CSS
 The tag 'script' is disallowed except in specific forms.
 </pre>
 
-In AMP, user-generated scripts are not allowed. Scripts in AMP are only allowed if they follow  two major requirements:
+In general, scripts in AMP are only allowed if they follow two major requirements:
 
 1.  All JavaScript must be asynchronous (i.e., include the `async` attribute in the script tag).
 2.  The JavaScript is for the AMP library and for any AMP components on the page.
 
-This effectively rules out the use of all third-party JavaScript; however, there is one exception--third-party JavaScript may be used in iframes.
+This effectively rules out the use of all user-generated/third-party JavaScript in AMP except as noted below.
 
-{% call callout('Important', type='caution') %}
-Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components](/docs/reference/components.html). We will explore our first AMP component in the next section.
+{% call callout('Note', type='note') %}
+The only exceptions to the restriction on user-generated/third-party scripts are:
+
+1.  Script that adds metadata to the page or that configures AMP components. These will have the type attribute  `application/ld+json` or `application/json`.
+2.  Script included in iframes.  Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components](/docs/reference/components.html). We will explore our first AMP component in the next section.
 {% endcall %}
 
 Try opening the external [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) file. What do you see? The file should be empty of any JavaScript code and only include a comment of information such as this:
@@ -178,10 +183,6 @@ Considering that this external JavaScript file is not a functional component of 
 ```
 
 Now, **reload** the page and verify that the script error has disappeared.
-
-{% call callout('Note', type='note') %}
-The only exceptions for user-generated scripts are when the type attribute is `application/ld+json` or `application/json`.  These script types add metadata to the page and configure AMP components.
-{% endcall %}
 
 ## Include AMP CSS boilerplate
 
@@ -220,7 +221,7 @@ AMP has a web component specifically designed to replace the `<img>` tag, it's t
 **Replace** the `<img>` tag with the above `<amp-img>` tag and run the validator again. You should receive several new errors:
 
 <pre class="error-text">
-AMP-IMG# Layout not supported for: container
+Layout not supported: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
@@ -230,13 +231,15 @@ Why did `amp-img` trigger another error? Because `amp-img` is not a direct subst
 
 The layout error is telling us that `amp-img` does not support the `container` layout type. One of the most important concepts in AMP’s design is its focus on reducing the amount of DOM reflow required to render its web pages.
 
-To reduce DOM reflow, AMP includes a layout system to ensure the layout of the page is as rigid as possible, as early as possible in the lifecycle of downloading and rendering the page.
+To reduce DOM reflow, AMP includes a layout system to ensure the layout of the page is known as early as possible in the lifecycle of downloading and rendering the page.
 
-The layout system allows for elements on a page to be positioned and scaled in a variety of ways -- fixed dimensions, responsive design, fixed height and more.
+The image below compares how an HTML page if often laid out compared to the approach AMP enforces.  Notice in the approach on the left how the text reflows each time an ad or image is loaded.  AMP's approach to layout keeps the text from moving around--even if the images and ads take a long time to load.
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-layout-system.png', 837, 394, align='', caption='How AMP lays out content') }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-layout-system.png', 837, 394, align='', caption='A comparison between how content is normally laid out and AMP's approach') }}
 
-In our case, the layout system inferred our layout type for the `amp-img` as the `container` type. However, the `container` type is only applicable to elements that contain children elements. The `container` type is incompatible with the `amp-img` tag, which is the reason for this error.
+The AMP layout system allows for elements on a page to be positioned and scaled in a variety of ways -- fixed dimensions, responsive design, fixed height and more.
+
+In the case of our article, the layout system inferred the layout type for the `amp-img` as the `container` type. However, the `container` type is only applicable to elements that contain children elements. The `container` type is incompatible with the `amp-img` tag, which is the reason for this error.
 
 Why was the `container` type inferred? Because we did not specify a `height` attribute for the `amp-img` tag. In HTML, reflow can be reduced by always specifying a fixed width and height for elements on a page. In AMP, you need to define the width and height for amp-img elements so that AMP can pre-determine the aspect ratio of the element.
 
@@ -246,11 +249,13 @@ Why was the `container` type inferred? Because we did not specify a `height` att
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
 ```
 
-Refresh the page and check the validator; you should no longer see any errors! However, the image doesn’t look so great because it is awkwardly positioned on the page. It would be great if we could scale the image to *responsively* stretch and fit the page no matter the screen size.
+Refresh the page and check the validator; you should no longer see any errors!
+
+You now have a valid AMP document, but the image doesn’t look so great because it is awkwardly positioned on the page.  By default when you specify the height and width for an `amp-img` AMP will fix the dimensions to what you specify--but wouldn't it be great if AMP would scale the image to *responsively* stretch and fit the page no matter the screen size?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 
-Surprisingly, defining the width and height does not restrict the element to an entirely fixed size. The AMP layout system can position and scale the element in a variety of ways by knowing its aspect ratio.  The `layout` attribute informs AMP of how you want the element positioned and scaled.
+Fortunately AMP can figure out the aspect ratio of elements from the width & height you specify.  This allows the AMP layout system to position and scale the element in a variety of ways.  The `layout` attribute informs AMP of how you want the element positioned and scaled.
 
 Let's **set** the layout attribute to `responsive` so that our image scales and resizes:
 
