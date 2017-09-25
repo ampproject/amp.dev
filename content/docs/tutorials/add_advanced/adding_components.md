@@ -18,7 +18,7 @@ Our sample already uses a built-in component, [amp-img](/docs/reference/componen
 
 ## Monetize with ads
 
-Ads in AMP are constructed by using the [amp-ad](/docs/reference/components/amp-ad.html) component. The `amp-ad` component allows you to can configure ads in several ways, such as the width, height and layout mode. However, many ad platforms require additional configuration, such as the account ID for the ad network, which ad should be served, or options for targeting the advertising. These options are easily specified in the `amp-ad` component by using HTML attributes.
+Ads in AMP are constructed by using the [amp-ad](/docs/reference/components/amp-ad.html) component. The `amp-ad` component allows you to configure ads in several ways, such as the width, height and layout mode. However, many ad platforms require additional configuration, such as the account ID for the ad network, which ad should be served, or options for targeting the advertising. These options are easily specified in the `amp-ad` component by using HTML attributes.
 
 Take a look at this example of a **DoubleClick** ad:
 
@@ -54,7 +54,7 @@ Try **adding** both of the above examples into your article just after the `<hea
 You might have some errors in your developer console, such as `Mixed Content` or `XMLHttpRequest cannot load`. The former error is likely related to the A9 advertisement because not all the content it loads is secure. This is a notable requirement for all ads served on AMP.
 {% endcall %}
 
-Let’s explore some more options available to use with DoubleClick ads. Try **adding** these two geotargeting ad configurations to the ads:
+The two `amp-ad`s below provide an example of the flexibility `amp-ad` provides for supporting ad platform features.  In this case we've configured (using DoubleClick's dashboard) two DoubleClick test ads to only show in certain countries--the first will show only in the UK and the second will show only in the US.  Try **adding** these two geotargeting ad configurations in the AMP document below the ads you added earlier:
 
 ```html
 <amp-ad
@@ -74,16 +74,12 @@ Let’s explore some more options available to use with DoubleClick ads. Try **a
 </amp-ad>
 ```
 
-Unfortunately, the geotargeting cannot be controlled from the code of the page itself. However, these test ads have already been configured in the DoubleClick dashboard to only show in particular countries, specifically the United Kingdom and the United States of America.
-
 **Refresh** the page and take a look. The following screenshot was captured from Canada, so neither ad loads:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
-The above geotargeting example demonstrates how `amp-ad` is flexible enough for all sorts of ad platform features. 
-
 {% call callout('Note', type='note') %}
-You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback`attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Meaning the parent element falls back on the child element, hence the term ‘fallback’. Learn more in [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html).
+You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html).
 {% endcall %}
 
 {% call callout('Read on', type='read') %}
@@ -103,7 +99,7 @@ Let’s take our AMP document to the next level and add more advanced web functi
 - Article quotes
 
 ##  Embed a YouTube video
-Let’s try embedding a YouTube video into the document. **Add** the following code just after the `<header>` in your AMP document:
+Let’s try embedding a YouTube video into the document. **Add** the following code just after the `<header>` in your AMP document (above the `amp-ad`s you just added):
 
 ```html
 <amp-youtube
@@ -117,11 +113,15 @@ Let’s try embedding a YouTube video into the document. **Add** the following c
 </amp-youtube>
 ```
 
-**Refresh** the page and look at the page. You should see this text instead of a video: *“The video could not be loaded.”*
+**Refresh** the page. Instead of the video you'll see this text: *“The video could not be loaded.”*
 
 Even if your browser can show YouTube videos without issue, you will still receive this error. Why? The video hasn’t actually failed to load, rather the component itself failed.
 
-Remember, not all components are included in the core AMP library JavaScript file. We need to include an additional JavaScript request for the YouTube component.  
+Remember, not all components are included in the core AMP library JavaScript file. We need to include an additional JavaScript request for the YouTube component.
+
+{% call callout('Note', type='note') %}
+If you still have your developer console open and `#development=1` in your URL, you'll see an AMP validator error at this point reminding you to add the `amp-youtube` JavaScript and a link to documentation that will tell you the `script` tag to add.
+{% endcall %}
 
 **Add** the following script to the `<head>` tag:
 
@@ -133,9 +133,9 @@ Remember, not all components are included in the core AMP library JavaScript fil
 
 {{ image('/static/img/docs/tutorials/tut-advanced-youtube.png', 412, 618, align='center half', caption='Embedded Youtube video') }}
 
-Once again, we specified the `width` and `height` of the video so that the AMP layout system can calculate the aspect ratio. Also, we set the `layout` to `responsive`, so the video fills the width of its parent element.
+As with the other elements on the page, we specified the `width` and `height` of the video so that the AMP layout system can calculate the aspect ratio. Also, we set the `layout` to `responsive`, so the video fills the width of its parent element.
 
-To learn more about embedding YouTube videos, read the [amp-youtube](/docs/reference/components/amp-youtube.html) component documentation. For even more video and media components, check out the [list of AMP components](/docs/reference/components.html#media).
+To learn more about embedding YouTube videos, read the [amp-youtube](/docs/reference/components/amp-youtube.html) component documentation. For even more video and media components, check out the [list of media AMP components](/docs/reference/components.html#media).
 
 {% call callout('Tip', type='success') %}
 Use the [`fallback`](/docs/guides/responsive/placeholders.html#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
@@ -215,7 +215,7 @@ Or, what if the quotation is longer?
 
 As a last experiment with `amp-fit-text`, try creating a short piece of text,  such as "Hello" with a much larger height (for example, a value of 400), and maintaining the max-font-size attribute value of 42. What would the resulting page look like? Is the text centered vertically? Or, does the height of the amp-fit-text tag shrink to fit the max font size? With what you already know about AMP’s layout system, try to answer the question before playing with the code!
 
-You can learn more about `amp-fit-text` from [AMP BY Example's live demo](https://ampbyexample.com/components/amp-fit-text/).
+You can learn more about `amp-fit-text` from [AMP by Example's live demo](https://ampbyexample.com/components/amp-fit-text/).
 
 
 <div class="prev-next-buttons">
