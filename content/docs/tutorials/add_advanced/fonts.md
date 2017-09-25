@@ -16,7 +16,7 @@ In this tutorial, we'll use a `<link>` tag to add fonts to our page. **Add** a s
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
 ```
 
-Now, **update** your CSS to include a reference to Raleway:
+Now, **update** your CSS `body` selector to include a reference to Raleway:
 
 ```csss
 body {
