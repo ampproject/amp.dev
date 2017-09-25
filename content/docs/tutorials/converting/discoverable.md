@@ -85,7 +85,7 @@ For our news article, **add** the following structured data to the bottom of the
 
 
 {% call callout('Note', type='note') %}
-The context should always be the same. For news articles, specify the “NewsArticle” type. The headline should match your article’s title. The image object refers to the hero image of the article.
+The content should always be the same. For news articles, specify the “NewsArticle” type. The headline should match your article’s title. The image object refers to the hero image of the article.
 {% endcall %}
 
 
