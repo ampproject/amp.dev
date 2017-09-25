@@ -15,7 +15,7 @@ Most mobile websites include a site navigation menu. These menus can take many d
 
 The simplest way to get your users to access your website’s regular navigation options is to just funnel them back to your homepage!
 
-Try **adding** this HTML link to the `<header>` tag:
+Try **replacing** your `<header>` tag with this version that includes a link:
 
 ```html
 <header class="headerbar">

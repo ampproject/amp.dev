@@ -5,7 +5,7 @@ $order: 3
 
 Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system. AMP provides a flexible JSON configuration syntax to replicate this process for several analytics partners.
 
-The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [amp-analytics'](/docs/reference/components/amp-analytics.html) JSON format but first, let's look at the traditional approach:
+The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [amp-analytics](/docs/reference/components/amp-analytics.html) JSON format but first, let's look at the traditional approach:
 
 ```html
 <script>
@@ -50,9 +50,11 @@ Then, let's **add** the `amp-analytics` component to the end of the `body` of th
 </amp-analytics>
 ```
 
-It may seem more complicated but it’s actually a very flexible format for describing several different types of events. Additionally, the JSON format does not include the blob of JavaScript code that we saw in the traditional example, which could potentially lead to mistakes if accidentally altered.
+Just as with the JavaScript example at the top of this page, this `amp-analytics` snippet will send a notification to Google Analytics indicating that a page has been viewed.
 
-In the JSON format, the `triggers` key includes a set of keys that represent all event triggers we want to track. The keys of those triggers are descriptions of the event, for example `"default pageview"`. The `title` key value represents the name of the page being viewed.
+To specify this, we've set the `type` to `googleanalytics` and then in the JSON we've created a trigger we've called "default pageview".  This trigger will fire when the page is visible (due to the `"on": "visible"`) and when it fires we'll send a `pageview` analytics request to Google Analytics with the `vars` we have specified.
+
+The JSON used to configure `amp-analytics` is a very flexible format for describing what analytics data to send and when to send it.  The [amp-analytics Specifying configuration data](/docs/reference/components/amp-analytics.html#specifying-configuration-data) has complete details on the format.
 
 Building on the above example, we can **add** another trigger named `"click on #header trigger"`:
 
@@ -86,12 +88,12 @@ Building on the above example, we can **add** another trigger named `"click on #
 </amp-analytics>
 ```
 
-This trigger is exactly what it sounds like.  By using the `"#header"` DOM selector, we can query for a tag with the `"header"` ID. For the `"click"`event, we send a `“clicked-header”` event action to the analytics platform with the `“examples”` category label.
+As you can guess from the name of this new trigger it will fire when the element with the ID `"header"` is clicked (specified by `"on": "click"` and `"selector": "#header"`).  When this trigger fires, we'll send the `event` request to our analytics provider, specifying a couple of variables to include in the request.
 
-If you have a custom tracking platform that you want to integrate with, you can still use `amp-analytics` and define your own personalised URL endpoints to send tracking data to. Learn more in the [amp-analytics](/docs/reference/components/amp-analytics.html) component reference documentation.
+If you have a custom tracking platform that you want to integrate with, you can still use `amp-analytics` and define your own personalized URL endpoints to send tracking data to. Learn more in the [amp-analytics](/docs/reference/components/amp-analytics.html) component reference documentation.
 
 {% call callout('Note', type='note') %}
-In all of these analytics examples, `“UA-YYYY-Y”` should be replaced with your own website’s Google Analytics tracking code.
+`“UA-YYYY-Y”` is an example Google Analytics account; it should be replaced with your own website’s Google Analytics tracking code if you are using this example on your site.
 {% endcall %}
 
 {% call callout('Tip', type='success') %}
