@@ -13,11 +13,11 @@ Canonical linking in regular HTML pages is a common technique for declaring whic
 
 One common approach when adding AMP to a website is to generate AMP versions of traditional non-AMP HTML pages.  Both versions have generally the same content (e.g. the text of an article) but they may have different presentations.  In this scenario you should treat the traditional HTML pages as the “canonical” pages and pair the AMP pages with those HTML pages.
 
-It's possible (and often preferable) to create websites entirely out of AMP documents with no non-AMP version of the documenst.  In this case an AMP page is considered to be the canonical version.
+If you can, use AMP like any other JavaScript library to build your site and forget about the canonical linking.  Using AMP to build a whole website dramatically reduces your maintenance burden.
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-linking.png', 751, 500, align='center ninety', caption='Linking AMP content') }}
 
-Most of the time, we recommend keeping just one version of a page:  the AMP page.  For the purposes of this tutorial, though, we'll focus on the case where you have an AMP and a non-AMP version of a page.  In this tutorial our website includes a news article that has a non-AMP HTML page (`article.html`) and an AMP version of the page (`article.amp.html`).  We'll pair these pages through `link`s.
+For the purposes of this tutorial, we'll focus on the case where you have an AMP and a non-AMP version of a page.  In this tutorial our website includes a news article that has a non-AMP HTML page (`article.html`) and an AMP version of the page (`article.amp.html`).  We'll pair these pages through `link`s.
 
 We already took the first step to achieve this in our AMP document by including a link tag in the `<head>` back to the canonical page:
 
