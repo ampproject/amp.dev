@@ -126,7 +126,7 @@ The problem is that this is an external stylesheet reference. In AMP, to keep th
 
 So, let's resolve the error:
 
-1.  **Remove** the stylesheet `<link>` tag in the `<head>` and replace it with an inline `<style amp-custom></style>` tag. The `amp-custom` attribute on the style tag is mandatory.
+1.  **Remove** the `<link>` tag pointing to the stylesheet in the `<head>` and replace it with an inline `<style amp-custom></style>` tag. The `amp-custom` attribute on the style tag is mandatory.
 2. **Copy** all the styles from the [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) file into the `<style amp-custom></style>` tags.
 
 Once again, **reload** the page and verify that the stylesheets error has disappeared.
