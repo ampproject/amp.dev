@@ -7,13 +7,17 @@ Now that you've made a news article in AMP, let's ensure users can find and disc
 
 ## Link AMP content
 
-Your website can be made of some AMP pages, all AMP pages, or no AMP pages.  We won't discuss the last option, but we will discuss how to incorporate AMP pages inside a website’s structure.
+Your website can be made of all AMP pages, some AMP pages, or no AMP pages.  This part of the tutorial will cover how to incorporate AMP into your website's structure.
 
-Canonical linking in regular HTML pages is a common technique for declaring which page should be considered the preferred page when multiple pages include the same content. For the case where you generate AMP documents alongside the traditional article pages, you should treat the traditional HTML pages as the “canonical” pages and pair the AMP pages with those HTML pages.  For the case where your AMP documents are the canonical pages, treat the AMP pages as the canonical; no pairing is required.
+Canonical linking in regular HTML pages is a common technique for declaring which page should be considered the preferred page when multiple pages include the same content.
+
+One common approach when adding AMP to a website is to generate AMP versions of traditional non-AMP HTML pages.  Both versions have generally the same content (e.g. the text of an article) but they may have different presentations.  In this scenario you should treat the traditional HTML pages as the “canonical” pages and pair the AMP pages with those HTML pages.
+
+If you can, use AMP like any other JavaScript library to build your site and forget about the canonical linking.  Using AMP to build a whole website dramatically reduces your maintenance burden.
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-linking.png', 751, 500, align='center ninety', caption='Linking AMP content') }}
 
-Most of the time, we recommend keeping just one version of your page, in this case the AMP page. Sometimes that’s not practical for a multitude of reasons, such as wanting to show a different page for desktop users. So for this tutorial, our website includes a news article that has a non-AMP HTML page (`article.html` file) and an AMP page (`article.amp.html` file), we'll pair these pages through links.
+For the purposes of this tutorial, we'll focus on the case where you have an AMP and a non-AMP version of a page.  In this tutorial our website includes a news article that has a non-AMP HTML page (`article.html`) and an AMP version of the page (`article.amp.html`).  We'll pair these pages through `link`s.
 
 We already took the first step to achieve this in our AMP document by including a link tag in the `<head>` back to the canonical page:
 
