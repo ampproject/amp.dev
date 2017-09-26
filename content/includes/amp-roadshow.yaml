@@ -16,6 +16,8 @@ cities:
     date: 2017-11-07
     link: https://events.withgoogle.com/amp-roadshow-munich/
   - title: Paris
+    date: 2017-11-10
+    link:  https://events.withgoogle.com/amp-roadshow-paris/
   - title: Madrid
     date: 2017-11-14
     link: https://events.withgoogle.com/amp-roadshow-madrid/
@@ -53,13 +55,16 @@ agenda:
     type: session
   - title: Lunch
     time: "1230"
-  - title: Codelabs
+  - title: Mystery talk
     time: "1330"
+    type: keynote
   - title: What's next in AMP
-    time: "1600"
+    time: "1415"
     type: keynote
   - title: Q&A with speakers
-    time: "1615"
+    time: "1430"
+  - title: Amplify live!
+    time: "1500"
     type: panel
   - title: Happy hour
     time: "1700"

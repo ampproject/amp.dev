@@ -4,6 +4,9 @@ noglobalnote: 1
 class: amp-roadshow
 
 stylesheet: pages/amp-roadshow.css
+
+components:
+  - youtube
 ---
 
 {% set conf = g.doc('/content/includes/amp-roadshow.yaml', locale=doc.locale) %}
@@ -19,20 +22,17 @@ stylesheet: pages/amp-roadshow.css
                 <li><a href="#cities">Cities</a></li>
                 <li><a href="#schedule">Agenda</a></li>
                 <li><a href="#content">Content</a></li>
-                <li><a href="#workshops">Codelabs</a></li>
+                <li><a href="#workshops">Amplify live!</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
         </div>
 
         <div class="right box">
-            <p><strong>We've got plenty of new stuff to share.</strong></p>
+            <amp-youtube data-videoid="5OnSrGU5TsE" width="100" height="56" layout="responsive"></amp-youtube>
 
-            <p>Come join us in your city for a free, inclusive, full-day dev workshop with the AMP team.</p>
+            <p><strong>Come join us in your city for a free, inclusive, dev workshop with the AMP team.</strong></p>
 
-            <p class="next"><span class="icon-plane"></span>Next stop: <a href="{{ conf.nextstop.link }}">{{ conf.nextstop.title }}</a></p>
-
-            <a href="{{ conf.nextstop.link }}" class="button">Register for {{ conf.nextstop.title }}</a>
-
+            <a href="#cities" class="button">Sign up for your city!</a>
         </div>
 
     </div>
@@ -109,7 +109,7 @@ stylesheet: pages/amp-roadshow.css
     <div class="wrapper">
         <h3 id="schedule">Agenda</h3>
 
-        <p>The agenda is designed to enable you to build even more beautiful, interactive and canonical AMP pages. We welcome both newcomers to AMP and those who already ship AMP pages.</p>
+        <p>The agenda is designed to enable you to build even more beautiful, interactive and canonical AMP pages. We welcome both newcomers to AMP and those who already ship AMP pages. <strong>This is a sample agenda – schedule varies based on the city.</strong></p>
 
         {% macro render_session(item) -%}
 
@@ -170,18 +170,9 @@ stylesheet: pages/amp-roadshow.css
 <section class="workshops amp-roadshow-section">
 
     <div class="wrapper">
-        <h3 id="workshops">Codelabs</h3>
-        <p>In the afternoon, you'll be able to digest all the new information by trying out all the things! Bring your laptop and don't be shy to ask us any questions about your existing projects.</p>
+        <h3 id="workshops">Amplify live!</h3>
 
-        {% for item in conf.agenda if item.workshops %}
-            <ul class="workshops">
-            {% for workshop in item.workshops %}
-                <li>
-                    <h6>{{ workshop.title }}</h6>
-                </li>
-            {% endfor %}
-            </ul>
-        {% endfor %}
+        <p>During "Amplify live!", we'll be on stage exploring the most interesting AMP challenges, allowing you to either follow along or do your own thing, like one of the many AMP codelabs. Bring your laptop!</p>
     </div>
 
 </section>

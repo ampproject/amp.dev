@@ -29,6 +29,10 @@
     section.amp-roadshow-section {
         padding: 2em 0;
 
+        amp-youtube {
+          margin: -1em -1em 1em -1em;
+        }
+
         .wrapper {
             margin: 0 auto;
             width: 80%;
@@ -120,7 +124,7 @@
           }
 
           .right {
-            margin-left: 4em;
+            margin-left: 2em;
             width: 40%;
             position: relative;
             text-align: left;
@@ -344,6 +348,9 @@
             .city-paris {
               top: 23%;
               left: 43%;
+              .bubble {
+                top: -159px;
+              }
             }
 
             .city-london {
@@ -402,9 +409,19 @@
             }
           }
 
+          ul.desktop-up {
+            @include min-screen(650px) {
+              display: block;
+              visibility: visible;
+            }
+          }
+
           ul.tablet-down {
 
-            display: flex;
+            display: none;
+            @include max-screen(650px) {
+              display: flex;
+            }
             flex-wrap: wrap;
             padding-right: 0;
             margin-right: -1em;
