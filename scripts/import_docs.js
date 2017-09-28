@@ -82,12 +82,13 @@ function savePage(config, callback) {
 
   var optionalTOC = config.content.indexOf('[TOC]') > -1 ? 'toc: true\n' : '';
   var optionalCategory = (config.category ? "\n$category: " +  config.category : '');
+  var optionalGroup = (config.group ? "\ngroup: " + config.group : '');
   var optionalDependencies = getDependencies(config.content);
   optionalDependencies = optionalDependencies ? '\ncomponents:\n' + '  - ' + optionalDependencies.join('\n  - ') + '\n' : '';
 
   var frontMatter = `---
 $title: "${config.title}"
-$order: ${config.order || 0}${optionalCategory}
+$order: ${config.order || 0}${optionalCategory}${optionalGroup}
 ${optionalTOC}${optionalDependencies}---
 `;
 
@@ -142,7 +143,8 @@ importData.forEach((item) => {
       content: (item.toc ? '[TOC]\n' : '') + pageContent,
       title: item.title,
       order: item.order,
-      category: (item.category ? item.category : '')
+      category: (item.category ? item.category : ''),
+      group: (item.group ? item.group : '')
     }, function (err) {
       if (err) throw err;
       console.log('Successfully imported: ' + item.title);
