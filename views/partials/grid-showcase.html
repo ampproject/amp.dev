@@ -1,0 +1,21 @@
+{% set goto = g.url(doc.goto, locale=doc.locale).path if doc.goto and 'http' not in doc.goto %}
+
+<a class="card" href="{{goto or doc.goto or doc.url.path}}">
+  <div class="card-inner">
+    <div class="card-logo">
+      <amp-img alt="{{doc.title}}"
+        height="{{doc.logo.height}}"
+        layout="fixed"
+        noloading
+        src="/static/img/{{doc.logo.src}}"
+        width="{{doc.logo.width}}"></amp-img>
+    </div>
+    <div class="card-title">
+      <h4>{{doc.headline}}</h4>
+    </div>
+
+    <div class="card-link">
+      <p class="text-label">{{_('Learn More')}}</p>
+    </div>
+  </div>
+</a>

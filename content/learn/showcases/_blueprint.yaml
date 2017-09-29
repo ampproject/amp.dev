@@ -1,0 +1,5 @@
+$path: /showcases/{base}/
+$view: /views/showcase-indiv.html
+$localization:
+  path: /{locale}/showcases/{base}/
+stylesheet: pages/showcase.css
