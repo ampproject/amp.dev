@@ -1,16 +1,16 @@
 year: 2017
-quarter: Q2
-outlook: Q3
-current: End-Q2 2017
-updated: July 14, 2017
+quarter: Q3
+outlook: Q4
+current: End-Q3 2017
+updated: September 29, 2017
 stages:
-    "6": Launched / Stable
-    "5": Code Complete / Experimental
-    "4": Pull Request (Changelist) Created
-    "3": Coding Started
-    "2": Intent to Implement (Feature Description) Posted
-    "1": In Planning and Design
-    "0": Not Started
+    6: Launched / Stable
+    5: Code Complete / Experimental
+    4: Pull Request (Changelist) Created
+    3: Coding Started
+    2: Intent to Implement (Feature Description) Posted
+    1: In Planning and Design
+    0: Not Started
 sections:
     0_format:
         title: Format
@@ -21,37 +21,36 @@ sections:
         - Broaden support toward a variety of content formats, including news articles, recipes, local listings, product listings, and more
         - Support for more engaging video experiences
         quarter:
-            "1":
-            - "[Date picker](https://github.com/ampproject/amphtml/issues/6469)"
-            - "[Messaging between **amp-iframe** and other elements](https://github.com/ampproject/amphtml/issues/9074)"
-            "2":
-            - "[“Hero” mode for video players](https://github.com/ampproject/amphtml/issues/7510)"
-            - "[“Smart” button sample using amp-bind](https://github.com/ampproject/amp-by-example/issues/575)"
+            1:
+            - Infinite scroll
+            2:
+            - "[\"Hero\" mode for video players](https://github.com/ampproject/amphtml/issues/7510)"
+            - "[\"Smart\" button sample using [**amp-bind**]](https://github.com/ampproject/amp-by-example/issues/575)"
             - "[Geo-variation support](https://github.com/ampproject/amphtml/issues/826)"
             - "[Client-side sorting & filtering](https://github.com/ampproject/amphtml/issues/8691)"
-            - "[Contextually displayed headers](https://github.com/ampproject/amphtml/issues/8268)"
+            - "[Contextually-displayed headers](https://github.com/ampproject/amphtml/issues/8268)"
+            3:
             - "[AMP Start configurator](https://github.com/ampproject/ampstart/issues/285)"
-            "3":
-            - "[Create a suite of effects, such as scroll-bound animations, that can be applied to AMP page content and structure](https://github.com/ampproject/amphtml/issues/5483)"
-            "4":
+            - "[Date picker](https://github.com/ampproject/amphtml/issues/6469)"
+            4:
             - "[**amp-lightbox** improvements](https://github.com/ampproject/amphtml/issues/4152)"
-            - "[Scrollbound amp-animation](https://github.com/ampproject/amphtml/issues/8411)"
-            - "[Support for parallax scrolling](https://github.com/ampproject/amphtml/pull/7794)"
-            - "[Re-vamped sidebar component](https://github.com/ampproject/amphtml/projects/27#card-3391591)"
             - "[Minimize video to the corner of viewport on scroll](https://github.com/ampproject/amphtml/issues/8088)"
-            "5":
-            - "[Async form/input validation](https://github.com/ampproject/amphtml/pull/9054)"
-            "6":
-            - "[Provide greater interactivity support by introducing a mechanism to bind element behavior to user actions](https://www.ampproject.org/docs/reference/components/amp-bind)"
-            - "[Batch of dynamic data](https://github.com/ampproject/amphtml/pull/7562)"
-            - "[Bind to amp-list[src] (Server-side sorting/filtering)](https://www.ampproject.org/docs/reference/components/amp-bind#element-specific-attributes)"
-            - "[Support binding to range, radio, and checkbox inputs (custom slider UI)](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#change-event-data)"
-            - "[Pull freshest data into amp-state at page load](https://www.ampproject.org/docs/reference/components/amp-bind#%3Camp-state%3E-specification)"
-            - "[Autocomplete for form input](https://github.com/ampproject/amphtml/blob/master/examples/autosuggest.amp.html)"
-            - "[Tabbed selection interface](https://ampbyexample.com/advanced/tab_panels_with_amp-selector/)"
+            - "[Custom video controls](https://github.com/ampproject/amphtml/pull/10865)"
+            - "[Messaging between amp-iframe and other elements](https://github.com/ampproject/amphtml/issues/9074)"
+            5:
+            - "[Simple support for parallax scrolling](https://github.com/ampproject/amphtml/issues/1443)"
+            - "[Media session API](https://github.com/ampproject/amphtml/pull/10476)"
+            6:
+            - "[Autocomplete for form input (sample code)](https://github.com/ampproject/amphtml/blob/master/examples/autosuggest.amp.html)"
+            - "[Async form/input validation](https://www.ampproject.org/docs/reference/components/amp-form#custom-validations)"
+            - "[Trigger smooth scroll to location on page](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#-all-elements)"
+            - "[Place browser focus on specific element on page](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#-all-elements)"
+            - "[Responsive support for [**amp-sidebar**]](https://www.ampproject.org/docs/reference/components/amp-sidebar)"
+            - "[Coordinate freshest data from server at load](https://github.com/ampproject/amphtml/pull/10610)"
+            - "[Scrollbound amp-animation](https://github.com/ampproject/amphtml/issues/8411)"
         forecast:
-        - Enhanced payment support
-        - Simple configuration and theming in AMP Start
+        - Payment processor and wallet level payment integration
+        - Theming in AMP Start
     1_analytics:
         title: Analytics
         description: Enable analytics on AMP pages and provide interoperability with data analysis solutions
@@ -60,19 +59,19 @@ sections:
         - Provide support for e-commerce analytics
         - Provide support for video analytics
         quarter:
-            "1":
+            1:
             - Expansion of **amp-analytics** capabilities for e-commerce use cases
-            "2":
-            - "[Support for specifying when to report visibility information in amp-analytics](https://github.com/ampproject/amphtml/issues/8977)"
-            - "[Error trigger support for **amp-analytics**](https://github.com/ampproject/amphtml/issues/6415)"
-            "4":
-            - "[Share-tracking support in **amp-analytics**](https://github.com/ampproject/amphtml/issues/3135)"
-            - "[Filter support for variables in amp-analytics](https://github.com/ampproject/amphtml/issues/2198)"
-            "5":
-            - "[Expose events from video players to **amp-analytics**](https://github.com/ampproject/amphtml/issues/9902)"
-            - "[Support for extensions to collect analytics via **amp-analytics**](https://github.com/ampproject/amphtml/issues/6417)"
-            "6":
-            - "[More flexible visibility tracking in **amp-analytics**](https://www.ampproject.org/docs/reference/components/amp-analytics#page-and-element-visibility-trigger)"
+            2:
+            - "[Support for batching requests in [**amp-analytics**]](https://github.com/ampproject/amphtml/issues/11241)"
+            - "[Support for specifying when to report visibility information in [**amp-analytics**]](https://github.com/ampproject/amphtml/issues/8977)"
+            4:
+            - "[Share-tracking support in [**amp-analytics**]](https://github.com/ampproject/amphtml/issues/3135)"
+            - "[Filter support for variables in [**amp-analytics**]](https://github.com/ampproject/amphtml/issues/2198)"
+            - "[Error trigger support for [**amp-analytics**]](https://github.com/ampproject/amphtml/issues/6415)"
+            6:
+            - "[Expose events from video players to [**amp-analytics**]](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)"
+            - "[Support for extensions to collect analytics via [**amp-analytics**]](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md)"
+            - Support viewer-managed Client ID integration
         forecast:
         - Expose batched interaction data (e.g. scroll events) to **amp-analytics**
         - Offline support (i.e. enable queuing until back online)
@@ -81,26 +80,27 @@ sections:
         description: Enable ads on AMP pages, provide interoperability with ad technology providers, and drive ad ecosystem innovation with the AMP format
         themes:
         - Improve the overall ad loading and user experience on AMP
-        - Enable and grow A4A creative format demand  across publishers and advertisers
+        - Enable and grow A4A creative format demand across publishers and advertisers
         - Extend A4A usage beyond AMP pages
         - Enhance AMP-format landing pages for the ads use case
         quarter:
-            "1":
+            1:
             - "[Optimize rendering of 3P ads in AMP](https://github.com/ampproject/amphtml/issues/7500)"
-            - "[Allow elements in AMP ads to correlate loading](https://github.com/ampproject/amphtml/issues/7921)"
-            "5":
+            2:
+            - "[Support for Real Time Config](https://github.com/ampproject/amphtml/issues/11321)"
+            5:
             - "[Allow for serving ads that are in AMP format (A4A - AMP for Ads)](https://github.com/ampproject/amphtml/issues/3133)"
             - "[Support serving AMP Ad creatives in non-AMP pages](https://github.com/ampproject/amphtml/issues/5700)"
-            - "[Ability to serve IMA video pre-roll ads using **amp-ima-video**](https://github.com/ampproject/amphtml/issues/5233)"
-            - "[Ability to request multiple ads on a single ad request](https://github.com/ampproject/amphtml/issues/9115)"
+            - "[Fluid Ad Support](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-doubleclick-impl/amp-ad-network-doubleclick-impl-internal.md#fluid-alpha)"
+            - "[Ability to serve IMA video pre-roll ads using [**amp-ima-video**]](https://github.com/ampproject/amphtml/issues/5233)"
+            6:
+            - "[New advanced AMP Ad samples in AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads)"
             - "[Enhance AMP animations for CSS animations parity](https://github.com/ampproject/amphtml/issues/9129)"
-            - "[Ability for **amp-ad** to auto refresh](https://github.com/ampproject/amphtml/issues/4038)"
-            - "[New advanced AMP ad samples in AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads)"
-            "6":
-            - "Sticky ad behavior improvements: [remove 1-viewport scroll requirement](https://github.com/ampproject/amphtml/issues/6597)"
-            - "[Upgrade all sticky ads to version 1.0](https://github.com/ampproject/amphtml/issues/6169)"
-            - "[New design for ad placeholder](https://github.com/ampproject/amphtml/issues/8261)"
+            - "[Allow elements in AMP ads to correlate loading](Allow elements in AMP ads to correlate loading)"
+            - "[Ability to request multiple ads on a single ad request](https://github.com/ampproject/amphtml/issues/9115)"
+            - "[Ability for amp-ad to auto refresh](https://github.com/ampproject/amphtml/issues/4038)"
         forecast:
+        - Pages trafficking support in DFP and buy-side systems
         - Enable A4A creative demand across the buyer and publisher ecosystem
         - Enable deeper integration of ads with AMP-format landing pages across buyside and sellside systems
     3_access:
@@ -110,7 +110,7 @@ sections:
         - Continue to improve paywall and subscription support in AMP
         - Make sign-in and payment for content a seamless and joyful experience in AMP
         quarter:
-            "4":
+            4:
             - "[Support for delegated sign-in (allow surface hosting AMP to sign-in user to publisher by using available identity information)](https://github.com/ampproject/amphtml/issues/4227)"
         forecast:
         - Enable better mobile payments with AMP
