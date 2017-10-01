@@ -7,7 +7,7 @@ cities:
     date: 2017-10-06
     link: https://events.withgoogle.com/amp-roadshow-singapore-oct2017/
   - title: Jakarta
-    date: 2017-10-10
+    date: 2017-10-09
     link: https://events.withgoogle.com/amp-roadshow-jakarta/
   - title: Sydney
     date: 2017-10-13
@@ -16,6 +16,8 @@ cities:
     date: 2017-11-07
     link: https://events.withgoogle.com/amp-roadshow-munich/
   - title: Paris
+    date: 2017-11-10
+    link:  https://events.withgoogle.com/amp-roadshow-paris/
   - title: Madrid
     date: 2017-11-14
     link: https://events.withgoogle.com/amp-roadshow-madrid/
@@ -23,7 +25,11 @@ cities:
     date: 2017-11-16
     link: https://events.withgoogle.com/amp-roadshow-london/
   - title: Beijing
+    date: 2017-12-05
+    link: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
   - title: Shanghai
+    date: 2017-12-08
+    link: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
   - title: Taipei
 
 agenda:
@@ -49,13 +55,16 @@ agenda:
     type: session
   - title: Lunch
     time: "1230"
-  - title: Codelabs
+  - title: Mystery talk
     time: "1330"
+    type: keynote
   - title: What's next in AMP
-    time: "1600"
+    time: "1415"
     type: keynote
   - title: Q&A with speakers
-    time: "1615"
+    time: "1430"
+  - title: Amplify live!
+    time: "1500"
     type: panel
   - title: Happy hour
     time: "1700"

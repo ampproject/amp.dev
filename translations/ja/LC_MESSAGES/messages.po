@@ -35,6 +35,8 @@ msgid ""
 "AMP Ads are 6x faster than regular ads on AMP pages, making them more "
 "viewable, more effective and more likely to perform&nbsp;well."
 msgstr ""
+"AMP Ads は、AMP ページ上で通常の広告と比べて 6 倍速く表示されるため、"
+"ユーザーの目に触れやすくなり、掲載結果の向上がいっそう期待できます。"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -43,6 +45,10 @@ msgid ""
 "serve ads that are faster, lighter and more effective. Creative developer "
 "tools like Google Web Designer will soon support AMP ads as well."
 msgstr ""
+"AMP Ads は、新しいテクノロジーではなく HTML と CSS を使用して作成されるクリエイティブ フォーマットです。"
+"そのため、既存の開発リソースを使用して、より高速かつ軽量で効果の高い広告を"
+"作成して配信することができます。Google Web Designer などの"
+"クリエイティブ デベロッパー ツールでも、まもなく AMP Ads に対応する予定です。"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -53,6 +59,12 @@ msgid ""
 " they’re free of malware. Most of all, these ads can be delivered anywhere on"
 " the web, not just on AMP pages."
 msgstr ""
+"AMP Ads とは、より高速かつ軽量で安全性の高い広告を作成、配信、測定できる、"
+"新たな優れた手段です。AMP Ads では、広告の作成に AMP HTML を使用します。"
+"また、さまざまな高性能のコンポーネント（amp-analytics など）によって、AMP ページの"
+"高速化が実現されます。こうした広告は、マルウェアが含まれることのないように、"
+"検証が済んだものしか配信されません。なお、このような広告は、AMP ページだけでなく、"
+"ウェブ上のどこにでも配信が可能です。"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -67,12 +79,16 @@ msgid ""
 "AMP Ads need to be validated before they’re served, eliminating the risk of "
 "malware and building trust in the brands users are engaging&nbsp;with."
 msgstr ""
+"AMP Ads では、マルウェアのリスクを排除し、ブランドに対するユーザーの"
+"信頼を高めるため、広告の配信前には検証が必要となります。"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMP Ads represent an opportunity to fix key issues with ad experiences on the"
 " web."
 msgstr ""
+"AMP Ads を利用すれば、ウェブ上の広告に関する主要な問題を解決できる可能性が"
+"ある。"
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
@@ -92,7 +108,7 @@ msgstr "AMP HTML 仕様"
 
 #: /views/amp-ads.html:252
 msgid "AMP Landing Page"
-msgstr ""
+msgstr "AMP ランディング ページ"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
@@ -105,7 +121,7 @@ msgstr "AMP の概要"
 
 #: /views/amp-ads.html:255
 msgid "AMP Page"
-msgstr ""
+msgstr "AMP ページ"
 
 #: /content/includes/lists.yaml
 msgid "AMP Roadmap"
@@ -204,7 +220,7 @@ msgstr "広告主"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Advertisers:<br>Drive campaign ROI"
-msgstr ""
+msgstr "広告主:<br>キャンペーンの投資収益率を高める"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -213,6 +229,10 @@ msgid ""
 "Signed ads reduce the risk of malware and increase confidence in ads for "
 "consumers."
 msgstr ""
+"広告用の AMP 向けの Firebolt で配信される広告コンテンツはすべて、必須の"
+"フォーマットとセキュリティ基準に準拠できるよう暗号化された署名付きとなる。"
+"署名付きの広告では、マルウェアのリスクが減り、広告に対するユーザーの信頼が"
+"高まる。"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Amplify your impact"
@@ -243,6 +263,11 @@ msgid ""
 "a4a-format.md'>AMP HTML</a> or work with a technology provider that already "
 "supports AMP Ads."
 msgstr ""
+"表示速度が 6 倍、軽さが 3 倍にアップした広告により、キャンペーンの掲載結果を"
+"改善し、エンゲージメントを促進します。<a href='https://github.com/google/"
+"amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md'>AMP HTML</a> を使って"
+"クリエイティブを作成したり、すでに AMP Ads に対応している技術プロバイダと"
+"連携したりできます。"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Boost your campaign performance with AMP Ads"
@@ -364,10 +389,14 @@ msgid ""
 "Triplelift already allow you to traffic AMP Ads. Reach out to your account "
 "manager to get started."
 msgstr ""
+"すばやく表示される魅力的な広告を配信します。こうした広告は、ユーザーに好まれ、"
+"広告主に重視されるものです。広告サーバーや広告技術プラットフォーム（DoubleClick や "
+"Triplelift など）ではすでに、AMP Ads の入稿に対応しています。ご利用開始については、"
+"アカウント マネージャーにお問い合わせください。"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Deliver better, faster experiences at every touch point."
-msgstr ""
+msgstr "どの接点でも、より効果的で迅速な広告表示を実現"
 
 #: /content/includes/menu.yaml /content/learn/amp-design-principles.yaml
 #: /content/learn/amp-design-principles@es.yaml
@@ -461,11 +490,11 @@ msgstr "実例"
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
 msgid "FAQ"
-msgstr ""
+msgstr "よくある質問"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Faster ads drive better&nbsp;performance"
-msgstr ""
+msgstr "広告表示の高速化により掲載結果の向上を促す"
 
 #: /content/docs/contribute/file-a-bug.md
 msgid "File a bug"
@@ -525,7 +554,7 @@ msgstr "ガイド"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Head of Product Strategy, Cloudflare"
-msgstr ""
+msgstr "Cloudflare の製品戦略部門の責任者"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -534,6 +563,10 @@ msgid ""
 "guarantees that these ads only behave as intended so users always have a "
 "positive experience with your&nbsp;brand."
 msgstr ""
+"広告が重たく、表示の予測がつかない場合、ページの読み込みが遅くなり、ユーザーに金銭的負担がかかり、"
+"ブランドに傷がつくことにもなりかねません。AMP Ads を導入すれば、広告の軽さが 3 倍にアップします。"
+"また、AMP フレームワークにより、広告の動作が常に想定どおりになることが保証されるので、"
+"ユーザーがいつでも快適にブランドを利用できます。"
 
 #: /content/includes/home.yaml
 msgid "Higher Performance and Engagement"
@@ -575,6 +608,8 @@ msgid ""
 "Join a growing ecosystem of publishers, advertisers and technology platforms "
 "serving faster, lighter and more effective ads."
 msgstr ""
+"サイト運営者、広告主、広告技術プラットフォームのエコシステムは拡大しつつあります。"
+"このエコシステムに加わり、より高速かつ軽量で効果の高い広告を配信しましょう。"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Kavata Mbondo"
@@ -643,7 +678,7 @@ msgstr "AMP の利用者について"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Lighter ads lead to better ad&nbsp;experiences"
-msgstr ""
+msgstr "広告の軽量化が広告効果のアップにつながる"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Maximize ROI everywhere"
@@ -660,6 +695,10 @@ msgid ""
 "href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
 "a4a-format.md'>Join</a> the open source AMP Ads Initiative today."
 msgstr ""
+"高速かつ軽量で安全な広告をユーザーに提供することにより、収益を最大化し、"
+"将来に向けてさらに増大させていきます。現在、オープンソースの AMP Ads "
+"Initiative という取り組みに<a href='https://github.com/google/amphtml/blob"
+"/master/extensions/amp-a4a/amp-a4a-format.md'>ご参加</a>いただけます。"
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Media"
@@ -744,7 +783,7 @@ msgstr "プレゼンテーション - AMP コンポーネント"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "President &amp; Co-Founder, Triplelift"
-msgstr ""
+msgstr "Triplelift の社長兼共同創立者"
 
 #: /views/case-study.html:54
 msgid "Previous Posts"
@@ -783,7 +822,7 @@ msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Publishers:<br>Keep audiences engaged"
-msgstr ""
+msgstr "サイト運営者:<br>ユーザーを引き付けておく"
 
 #: /views/partials/grid-card.html:27
 msgid "Read the Case Study"
@@ -800,7 +839,7 @@ msgstr "リファレンス"
 
 #: /views/amp-ads.html:226
 msgid "Regular Ad"
-msgstr ""
+msgstr "通常の広告"
 
 #: /content/support/developer/documentation-bug.md
 msgid "Report a documentation bug on GitHub"
@@ -816,7 +855,7 @@ msgstr "ロードマップ"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Safer ads build trust in your&nbsp;brands"
-msgstr ""
+msgstr "安全性の高い広告でブランドに対する信頼を築く"
 
 #: /views/partials/promo_banner.html:12
 msgid ""
@@ -979,7 +1018,7 @@ msgstr "AMP を採用しているテクノロジー関連企業"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Technology Platforms:<br>Boost your business"
-msgstr ""
+msgstr "広告技術プラットフォーム:<br>ビジネスを発展させる"
 
 #: /content/docs/build.md
 msgid "Templates"
@@ -1080,6 +1119,9 @@ msgid ""
 "load fast, this has a very positive impact on their perception and advertiser"
 " performance."
 msgstr ""
+"通常の広告よりも読み込みがかなり速い。ユーザーはわずかな遅れもすべて気づくものなので、"
+"広告が速く読み込まれれば、ユーザーの認識や広告主の掲載結果に大きなプラスの影響を"
+"もたらすことになる。"
 
 #: /content/docs/build.md
 msgid "Try out the hands-on examples on AMP by Example."
@@ -1112,7 +1154,7 @@ msgstr "ベンダー サポート"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Vice President of Digital Revenue Strategy and Operations, Time Inc."
-msgstr ""
+msgstr "Time Inc. のデジタル収益戦略および業務担当副社長"
 
 #: /content/includes/menu.yaml
 msgid "Videos"
@@ -1210,7 +1252,7 @@ msgstr "AMP で実現できること"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "What are AMP Ads?"
-msgstr ""
+msgstr "AMP Ads とは"
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
 #: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
@@ -1237,7 +1279,7 @@ msgstr "最新情報"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "What's the difference between an AMP Ad and a regular ad? <i>Seconds</i>."
-msgstr ""
+msgstr "AMP Ads と通常の広告の違い - <i>秒</i>"
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -1262,7 +1304,7 @@ msgstr "AMP の利用者"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Who are AMP Ads for?"
-msgstr ""
+msgstr "AMP Ads の導入対象"
 
 #: /content/includes/menu.yaml
 msgid "Who is AMP for?"
@@ -1274,7 +1316,7 @@ msgstr "AMP Ads をおすすめする理由"
 
 #: /views/amp-ads.html:195
 msgid "Your browser doesn’t support HTML5 video"
-msgstr ""
+msgstr "お使いのブラウザは HTML5 動画に対応していません"
 
 #: /content/learn/case-studies/category/e-commerce.md
 msgid "e-commerce"

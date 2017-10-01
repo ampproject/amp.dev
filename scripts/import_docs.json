@@ -36,5 +36,12 @@
         "from": "spec/amp-cors-requests.md",
         "to": "docs/guides/amp-cors-requests.md",
         "category": "Deploy"
+    },
+    {
+        "title": "Getting Support",
+        "order": 1,
+        "from": "SUPPORT.md",
+        "to": "support/developer/get_support.md",
+        "group": 1
     }
 ]

@@ -37,6 +37,8 @@ msgid ""
 "AMP Ads are 6x faster than regular ads on AMP pages, making them more "
 "viewable, more effective and more likely to perform&nbsp;well."
 msgstr ""
+"Iklan AMP 6x lebih cepat dibanding iklan reguler di halaman AMP, sehingga iklan lebih "
+"dapat dilihat, lebih efektif, dan kemungkinan performanya lebih baik."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -58,6 +60,12 @@ msgid ""
 " they’re free of malware. Most of all, these ads can be delivered anywhere on"
 " the web, not just on AMP pages."
 msgstr ""
+"Iklan AMP adalah cara baru yang lebih baik untuk membuat, menayangkan, dan mengukur iklan yang "
+"lebih cepat, ringan, dan aman. Iklan AMP adalah iklan yang dibuat menggunakan AMP-HTML "
+"dan menggunakan beberapa komponen smart yang membuat halaman AMP lebih cepat (seperti amp-"
+"analytics). Iklan hanya akan ditayangkan setelah divalidasi, sehingga memastikan bahwa "
+"iklan tidak berisi malware. Yang paling penting, iklan ini dapat ditayangkan di mana saja di "
+"web, tidak hanya di halaman AMP."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -73,12 +81,16 @@ msgid ""
 "AMP Ads need to be validated before they’re served, eliminating the risk of "
 "malware and building trust in the brands users are engaging&nbsp;with."
 msgstr ""
+"Iklan AMP perlu divalidasi sebelum ditayangkan untuk mengurangi risiko "
+"malware dan membangun kepercayaan terhadap merek yang berinteraksi dengan pengguna."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMP Ads represent an opportunity to fix key issues with ad experiences on the"
 " web."
 msgstr ""
+"Iklan AMP memberikan peluang untuk memperbaiki masalah utama terkait pengalaman iklan di "
+"web."
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
@@ -98,7 +110,7 @@ msgstr "Spesifikasi HTML AMP"
 
 #: /views/amp-ads.html:252
 msgid "AMP Landing Page"
-msgstr ""
+msgstr "Halaman Landing AMP"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
@@ -111,7 +123,7 @@ msgstr "Ringkasan AMP"
 
 #: /views/amp-ads.html:255
 msgid "AMP Page"
-msgstr ""
+msgstr "Halaman AMP"
 
 #: /content/includes/lists.yaml
 msgid "AMP Roadmap"
@@ -215,7 +227,7 @@ msgstr "Pengiklan"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Advertisers:<br>Drive campaign ROI"
-msgstr ""
+msgstr "Pengiklan:<br>Meningkatkan ROI kampanye"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -224,6 +236,10 @@ msgid ""
 "Signed ads reduce the risk of malware and increase confidence in ads for "
 "consumers."
 msgstr ""
+"Semua konten iklan yang ditayangkan oleh Firebolt bagi AMP untuk Iklan ditandai secara kriptografis "
+"guna memastikan bahwa konten iklan sesuai format yang diperlukan dan standar keamanan. "
+"Iklan yang ditandai mengurangi risiko malware dan meningkatkan kepercayaan pelanggan "
+"terhadap iklan."
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Amplify your impact"
@@ -254,6 +270,11 @@ msgid ""
 "a4a-format.md'>AMP HTML</a> or work with a technology provider that already "
 "supports AMP Ads."
 msgstr ""
+"Tingkatkan performa kampanye dan dorong interaksi dengan iklan yang 6x lebih cepat "
+"dan 3x lebih ringan. Buat materi iklan Anda dengan <a "
+"href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
+"a4a-format@id.md'>HTML AMP</a> atau gunakan penyedia teknologi yang sudah "
+"mendukung Iklan AMP."
 
 #: /content/learn/who/advertisers.yaml
 msgid "Boost your campaign performance with AMP Ads"
@@ -385,10 +406,14 @@ msgid ""
 "Triplelift already allow you to traffic AMP Ads. Reach out to your account "
 "manager to get started."
 msgstr ""
+"Berikan pengalaman iklan yang cepat dan menarik yang diapresiasi pengguna dan "
+"dihargai oleh pengiklan. Server iklan dan platform teknologi seperti DoubleClick dan "
+"Triplelift sudah memungkinkan Anda memasang Iklan AMP. Hubungi account "
+"manager Anda untuk memulai."
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Deliver better, faster experiences at every touch point."
-msgstr ""
+msgstr "Berikan pengalaman iklan yang lebih baik dan lebih cepat di setiap kesempatan."
 
 #: /content/includes/menu.yaml /content/learn/amp-design-principles.yaml
 #: /content/learn/amp-design-principles@es.yaml
@@ -416,9 +441,7 @@ msgstr "Jangan merusak web."
 
 #: /content/learn/amp-design-principles.yaml
 msgid "Don’t design for a hypothetical faster future browser."
-msgstr ""
-"Jangan membuat desain dengan berandai-andai untuk browser masa depan yang "
-"lebih cepat."
+msgstr "Jangan membuat desain dengan berandai-andai untuk browser masa depan yang lebih cepat."
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -493,11 +516,11 @@ msgstr "Contoh"
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Faster ads drive better&nbsp;performance"
-msgstr ""
+msgstr "Iklan yang lebih cepat memberikan performa yang lebih baik"
 
 #: /content/docs/contribute/file-a-bug.md
 msgid "File a bug"
@@ -559,7 +582,7 @@ msgstr "Panduan"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Head of Product Strategy, Cloudflare"
-msgstr ""
+msgstr "Kepala Strategi Produk, Cloudflare"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -614,6 +637,8 @@ msgid ""
 "Join a growing ecosystem of publishers, advertisers and technology platforms "
 "serving faster, lighter and more effective ads."
 msgstr ""
+"Bergabunglah dengan semakin banyak penayang, pengiklan, dan platform teknologi "
+"yang menayangkan iklan yang lebih cepat, ringan, dan efektif."
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Kavata Mbondo"
@@ -703,6 +728,10 @@ msgid ""
 "href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
 "a4a-format.md'>Join</a> the open source AMP Ads Initiative today."
 msgstr ""
+"Maksimalkan pendapatan dan bangun masa depan dengan menawarkan "
+"pengalaman iklan yang cepat, ringan, dan aman kepada pengguna. <a "
+"href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
+"a4a-format@id.md'>Bergabunglah</a> dengan Prakarsa Iklan AMP open source sekarang."
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Media"
@@ -787,7 +816,7 @@ msgstr "Presentasi - Komponen AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "President &amp; Co-Founder, Triplelift"
-msgstr ""
+msgstr "Presiden & Pendiri, Triplelift"
 
 #: /views/case-study.html:54
 msgid "Previous Posts"
@@ -834,7 +863,7 @@ msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Publishers:<br>Keep audiences engaged"
-msgstr ""
+msgstr "Penayang:<br>Buat audiens tetap tertarik"
 
 #: /views/partials/grid-card.html:27
 msgid "Read the Case Study"
@@ -851,7 +880,7 @@ msgstr "Referensi"
 
 #: /views/amp-ads.html:226
 msgid "Regular Ad"
-msgstr ""
+msgstr "Iklan Reguler"
 
 #: /content/support/developer/documentation-bug.md
 msgid "Report a documentation bug on GitHub"
@@ -867,7 +896,7 @@ msgstr "Rencana Kerja"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Safer ads build trust in your&nbsp;brands"
-msgstr ""
+msgstr "Iklan yang lebih aman akan membangun kepercayaan terhadap merek Anda"
 
 #: /views/partials/promo_banner.html:12
 msgid ""
@@ -1033,7 +1062,7 @@ msgstr "Perusahaan Teknologi yang menggunakan AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Technology Platforms:<br>Boost your business"
-msgstr ""
+msgstr "Platform Teknologi:<br>Tingkatkan bisnis Anda"
 
 #: /content/docs/build.md
 msgid "Templates"
@@ -1146,6 +1175,9 @@ msgid ""
 "load fast, this has a very positive impact on their perception and advertiser"
 " performance."
 msgstr ""
+"Iklan dimuat dengan lebih cepat. Pengguna bereaksi terhadap kelambatan sekecil apa pun, dan saat iklan "
+"dimuat dengan cepat, hal ini memberikan dampak positif pada persepsi pengguna dan performa "
+"pengiklan."
 
 #: /content/docs/build.md
 msgid "Try out the hands-on examples on AMP by Example."
@@ -1178,7 +1210,7 @@ msgstr "Dukungan Vendor"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Vice President of Digital Revenue Strategy and Operations, Time Inc."
-msgstr ""
+msgstr "Vice President Strategi dan Operasional Pendapatan Digital, Time Inc."
 
 #: /content/includes/menu.yaml
 msgid "Videos"
@@ -1222,6 +1254,11 @@ msgid ""
 "faster, lighter, and safer ad experiences, starting with ads and extending to"
 " landing&nbsp;pages."
 msgstr ""
+"Kita tidak dapat membuat web menjadi lebih baik jika tidak memperbaiki iklan. Iklan dewasa ini gagal mencapai "
+"tujuannya karena lambat, tidak dapat diprediksi, dan mengganggu. Prakarsa Iklan AMP open-"
+"source bertujuan membuat iklan di web jadi lebih baik dengan "
+"pengalaman iklan yang lebih cepat, ringan, dan aman, dimulai dari iklan hingga "
+"halaman landing."
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -1284,7 +1321,7 @@ msgstr "Hal yang Diberikan AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "What are AMP Ads?"
-msgstr ""
+msgstr "Apa itu Iklan AMP?"
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
 #: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
@@ -1311,7 +1348,7 @@ msgstr "Berita terbaru"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "What's the difference between an AMP Ad and a regular ad? <i>Seconds</i>."
-msgstr ""
+msgstr "Apa perbedaan Iklan AMP dan iklan reguler? <i>Detik</i>."
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""
@@ -1337,7 +1374,7 @@ msgstr "Siapa yang Menggunakan AMP"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Who are AMP Ads for?"
-msgstr ""
+msgstr "Untuk siapa Iklan AMP ditujukan?"
 
 #: /content/includes/menu.yaml
 msgid "Who is AMP for?"
@@ -1349,7 +1386,7 @@ msgstr "Alasan Menggunakan Iklan AMP"
 
 #: /views/amp-ads.html:195
 msgid "Your browser doesn’t support HTML5 video"
-msgstr ""
+msgstr "Browser Anda tidak mendukung video HTML5"
 
 #: /content/learn/case-studies/category/e-commerce.md
 msgid "e-commerce"

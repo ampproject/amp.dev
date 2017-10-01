@@ -13,6 +13,13 @@
   }
 }
 
+.md {
+  ul,
+  ol {
+      margin-left: 40px;
+  }
+}
+
 @include max-screen($mobile-breakpoint) {
   .post-title {
     text-align: left;

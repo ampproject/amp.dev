@@ -37,6 +37,8 @@ msgid ""
 "AMP Ads are 6x faster than regular ads on AMP pages, making them more "
 "viewable, more effective and more likely to perform&nbsp;well."
 msgstr ""
+"Los anuncios AMP son seis veces más rápidos que los anuncios normales en páginas AMP, "
+"por lo que son más visibles, más efectivos y tienen un mejor rendimiento."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -59,6 +61,13 @@ msgid ""
 " they’re free of malware. Most of all, these ads can be delivered anywhere on"
 " the web, not just on AMP pages."
 msgstr ""
+"Los anuncios AMP son más fáciles de crear, entregar y medir, y además son "
+"más rápidos, ligeros y seguros. Estos anuncios se crean mediante código HTML de AMP, "
+"usan muchos de los componentes inteligentes que hacen que las páginas AMP sean rápidas "
+"(como amp-analytics) y solo se entregan después de pasar por una fase de validación "
+"en la que se comprueba que no contengan software malicioso. Y lo más importante: "
+"estos anuncios pueden entregarse en cualquier lugar de la web, no solo en páginas AMP."
+
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -74,6 +83,8 @@ msgid ""
 "AMP Ads need to be validated before they’re served, eliminating the risk of "
 "malware and building trust in the brands users are engaging&nbsp;with."
 msgstr ""
+"Los anuncios AMP deben validarse antes de publicarse, ya que de esta manera se elimina el riesgo de "
+"que contengan software malicioso y se genera confianza en las marcas con las que interactúan los usuarios."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -183,6 +194,11 @@ msgid ""
 "ads, AMP ads deliver great advertising experiences too, ensuring every "
 "interaction with a publisher’s brand is a compelling one."
 msgstr ""
+"AMP acelera el contenido, manteniendo a los usuarios comprometidos independientemente de dónde empiecen"
+" su viaje -- en el propio sitio web del editor o desde plataformas que enlazan "
+"a páginas AMP como Twitter, Google y Pinterest. Con anuncios más rápidos y seguros,"
+" los anuncios de AMP ofrecen también una gran experiencia publicitaria, garantizando"
+" que cada interacción con la marca de un editor es convincente."
 
 #: /content/includes/menu.yaml
 msgid "About"
@@ -214,7 +230,7 @@ msgstr "Anunciantes"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Advertisers:<br>Drive campaign ROI"
-msgstr ""
+msgstr "Anunciantes:<br>Aumentar el retorno de inversión de las campañas"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -223,6 +239,10 @@ msgid ""
 "Signed ads reduce the risk of malware and increase confidence in ads for "
 "consumers."
 msgstr ""
+"Todo el contenido de los anuncios publicado con Firebolt para AMP incluye una firma cifrada "
+"para asegurarse de que cumple con los estándares de seguridad y el formato que se requieran. "
+"Al usar anuncios firmados, se reduce el riesgo de que haya software malicioso "
+"y se aumenta la confianza en los anuncios entre los consumidores."
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Amplify your impact"
@@ -253,6 +273,11 @@ msgid ""
 "a4a-format.md'>AMP HTML</a> or work with a technology provider that already "
 "supports AMP Ads."
 msgstr ""
+"Aumenta el rendimiento de las campañas y genera interacciones con "
+"anuncios seis veces más rápidos y tres veces más ligeros. Crea creatividades con "
+"<a href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
+"a4a-format.md'>HTML de AMP</a> o trabaja con un proveedor de tecnología que ya "
+"admita anuncios AMP."
 
 #: /content/learn/who/advertisers.yaml
 msgid "Boost your campaign performance with AMP Ads"
@@ -385,10 +410,14 @@ msgid ""
 "Triplelift already allow you to traffic AMP Ads. Reach out to your account "
 "manager to get started."
 msgstr ""
+"Ofrece experiencias de anuncios rápidas y atractivas que tus usuarios aprecien "
+"y los anunciantes valoren. Algunos servidores de anuncios y plataformas de tecnología, "
+"como DoubleClick y TripleLift, ya te permiten realizar el tráfico de anuncios AMP. "
+"Contacta con el gestor de tu cuenta para empezar."
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Deliver better, faster experiences at every touch point."
-msgstr ""
+msgstr "Ofrece experiencias más rápidas y de mayor calidad en cualquier punto de contacto."
 
 #: /content/includes/menu.yaml /content/learn/amp-design-principles.yaml
 #: /content/learn/amp-design-principles@es.yaml
@@ -612,6 +641,8 @@ msgid ""
 "Join a growing ecosystem of publishers, advertisers and technology platforms "
 "serving faster, lighter and more effective ads."
 msgstr ""
+"Únete a un ecosistema creciente de editores, anunciantes y plataformas "
+"de tecnología que publican anuncios más rápidos, ligeros y eficaces."
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Kavata Mbondo"
@@ -701,6 +732,10 @@ msgid ""
 "href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
 "a4a-format.md'>Join</a> the open source AMP Ads Initiative today."
 msgstr ""
+"Maximiza tus ingresos y prepárate para el futuro ofreciendo a tus clientes una "
+"experiencia de anuncio rápida, ligera y segura. "
+"<a href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md'>"
+"Únete ya</a> a la iniciativa de código abierto de los anuncios AMP."
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Media"
@@ -785,7 +820,7 @@ msgstr "Presentación - AMP componentes"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "President &amp; Co-Founder, Triplelift"
-msgstr ""
+msgstr "Presidente y cofundador de TripleLift"
 
 #: /views/case-study.html:54
 msgid "Previous Posts"
@@ -1150,6 +1185,8 @@ msgid ""
 "load fast, this has a very positive impact on their perception and advertiser"
 " performance."
 msgstr ""
+"Se cargan de forma más rápida. Los usuarios notan cada retraso por muy pequeño que sea y, cuando los anuncios "
+"se cargan rápido, mejora tanto su percepción de la página como el rendimiento del anunciante."
 
 #: /content/docs/build.md
 msgid "Try out the hands-on examples on AMP by Example."
@@ -1184,7 +1221,7 @@ msgstr "Soporte de Proveedores"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Vice President of Digital Revenue Strategy and Operations, Time Inc."
-msgstr ""
+msgstr "Vicepresidente de Operaciones y Estrategia de Mercado Digital de Time Inc."
 
 #: /content/includes/menu.yaml
 msgid "Videos"
@@ -1228,6 +1265,11 @@ msgid ""
 "faster, lighter, and safer ad experiences, starting with ads and extending to"
 " landing&nbsp;pages."
 msgstr ""
+"No podemos mejorar la Web si no corregimos los anuncios. Los anuncios actuales no siempre cumplen "
+"sus objetivos porque son lentos, impredecibles y provocan interrupciones. La iniciativa "
+"de código abierto de los anuncios AMP pretende mejorar la publicidad digital mediante "
+"experiencias de anuncios más rápidas, ligeras y seguras, empezando por los anuncios y llegando hasta "
+"las páginas de destino."
 
 #: /content/learn/amp-design-principles.yaml
 msgid ""

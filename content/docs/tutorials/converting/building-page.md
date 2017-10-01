@@ -42,7 +42,9 @@ Your `article.amp.html` file should look like the following:
 
 This is an intentionally simplistic page with common static news article elements: CSS, JavaScript, and an image tag.
 
-Our AMP version of the article is just a copy of the original article right now. Let's convert it to an AMP. To begin, we will add the AMP JavaScript library file and view what errors appear when the AMP validator is turned on.
+Our AMP version of the article is just a copy of the original article right now. Let's convert it to an AMP.
+
+To begin, we will add the AMP library file.  This alone won't make your new file a valid AMP page, but we'll see below how the AMP library can help us figure out what we need to do to fix that.
 
 To include the AMP library, **add** this line to the bottom of the `<head>` tag:
 
@@ -58,7 +60,7 @@ When you inspect the JavaScript output in the Developer Console (make sure you h
 Powered by AMP ⚡ HTML
 ```
 
-**Enable** the [AMP validator](https://www.ampproject.org/docs/guides/validate.html) by adding this fragment identifier to your URL:
+The AMP library includes an [AMP validator](https://www.ampproject.org/docs/guides/validate.html) that will tell you if there is anything that is keeping your page from being a valid AMP document.  **Enable** the AMP validator by adding this fragment identifier to your document URL:
 
 ```text
 #development=1
@@ -70,14 +72,13 @@ For example:
 http://localhost:8000/article.amp.html#development=1
 ```
 
-You may need to manually refresh the page in your browser.
-
-In the Developer Console, you should receive several validation errors:
+In the Developer Console, you should receive several validation errors (you may need to manually refresh the page in your browser to see these):
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-validation-errors.png', 905, 427, align='', caption='AMP validation errors for our sample') }}
 
+In order to make this a valid AMP document we're going to have to fix all of these errors--which is exactly what we'll be doing in this codelab.
 
-As we are working with a mobile news article, let's **simulate** a mobile device experience in the browser's developer tools. For example, in Chrome Developer Tools, click the mobile phone icon, and select a mobile device from the menu.
+Before we do that, let's **simulate** a mobile device experience in the browser's developer tools since we are working with a mobile news article.  For example, in Chrome DevTools, click the mobile phone icon, and select a mobile device from the menu.
 
 You should see a mobile simulated resolution in your browser such as this:
 
