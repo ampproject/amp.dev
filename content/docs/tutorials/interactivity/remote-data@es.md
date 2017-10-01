@@ -151,9 +151,9 @@ Tenga en cuenta que no estamos inicializando el valor de `selectedSize` a travé
 Añada un nuevo elemento `<span>` que enrolle la etiqueta de precio y cambie el texto predeterminado a "---" ya que no hay una selección de tamaño predeterminada.
 
 ```html
-<h6>PRECIO :
-  <!-- Mostrar el precio de la camisa seleccionada en el tamaño seleccionado si está disponible. 
-       De lo contrario, mostrar el texto del marcador de posición '---'. -->
+<h6>PRICE :
+  <!-- Display the price of the selected shirt in the selected size if available.
+       Otherwise, display the placeholder text '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
 </h6>
 ```
