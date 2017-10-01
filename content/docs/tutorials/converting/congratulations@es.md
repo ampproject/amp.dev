@@ -23,4 +23,4 @@ Para obtener más información sobre AMP, explore estos recursos:
 - [AMP By Example](https://ampbyexample.com/): Aprende con ejemplos y demos en vivo
 - [AMP Channel on YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Aprenda viendo videos específicos sobre AMP
 - [AMP HTML spec](/docs/reference/spec.html): Más información sobre el marcado HTML necesario en una página AMP
-- [AMP components](https://www.ampproject.org/docs/reference/components): Obtenga detalles sobre todos los componentes de AMP
+- [AMP components](/es/docs/reference/components.html): Obtenga detalles sobre todos los componentes de AMP
