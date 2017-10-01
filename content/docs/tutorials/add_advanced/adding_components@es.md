@@ -12,7 +12,7 @@ El sistema de componentes de AMP le permite crear rápidamente características 
 
 - **extended**: Son extensiones de la biblioteca base que deben incluirse explícitamente en el documento como elementos personalizados. Los elementos personalizados requieren secuencias de comandos específicas que se agregan a la sección `<head>` (por ejemplo, `<script async custom-element="amp-video" ...`).
 
-- **experimental**: Estos son los componentes que se liberan, pero aún no están listos para un uso amplio. Los desarrolladores pueden elegir optar por utilizar estas características antes de que se liberen completamente. Más información en [Experimental features](/docs/reference/experimental.html).
+- **experimental**: Estos son los componentes que se liberan, pero aún no están listos para un uso amplio. Los desarrolladores pueden elegir optar por utilizar estas características antes de que se liberen completamente. Más información en [Experimental features](/es/docs/reference/experimental.html).
 
 Nuestra muestra ya utiliza un componente incorporado, [amp-img](/docs/reference/components/amp-img.html), y exploramos cómo este componente se relaciona con el sistema de diseño AMP en el tutorial ["Convertir HTML a AMP"](/es/docs/tutorials/converting.html). Ahora, vamos a **agregar** algunos componentes de AMP extendidos comúnmente usados a nuestro artículo de noticias.
 
@@ -135,7 +135,7 @@ Recuerde que no todos los componentes están incluidos en el archivo JavaScript 
 
 Una vez más, especificamos el `width` y la `height` del video para que el sistema de distribución AMP pueda calcular la relación de aspecto. Además, establecemos el `layout` en `responsive`, por lo que el video llena el ancho de su elemento padre.
 
-Para obtener más información sobre la incorporación de vídeos de YouTube, lea la documentación del componente [amp-youtube](/docs/reference/components/amp-youtube.html). Para obtener más componentes de vídeo y multimedia, consulte la [lista de componentes AMP](/docs/reference/components.html#media).
+Para obtener más información sobre la incorporación de vídeos de YouTube, lea la documentación del componente [amp-youtube](/docs/reference/components/amp-youtube.html). Para obtener más componentes de vídeo y multimedia, consulte la [lista de componentes AMP](/es/docs/reference/components.html#media).
 
 {% call callout('Tip', type='success') %}
 Use el atributo [`fallback`](/es/docs/guides/responsive/placeholders.html#fallbacks) para informar a los usuarios si el componente falla en cargar o si el componente no es soportado por su navegador web.
@@ -171,7 +171,7 @@ El atributo `data-tweetid` es otro ejemplo de un atributo personalizado requerid
 Para obtener más información sobre la incorporación de Tweets de Twitter, lea la documentación del componente [amp-twitter](/docs/reference/components/amp-twitter.html).
 
 {% call callout('Tip', type='success') %}
-AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components](/docs/reference/components.html#social).
+AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components](/es/docs/reference/components.html#social).
 {% endcall %}
 
 ## Resaltar una cita de artículo
@@ -216,7 +216,7 @@ O, ¿qué pasa si la cita es más larga?
 
 Como último experimento con `amp-fit-text`, intente crear un fragmento corto de texto, como "Hello" con una altura mucho mayor (por ejemplo, un valor de 400), y manteniendo el valor de atributo max-font-size de 42. ¿Cómo sería la página resultante? ¿Está el texto centrado verticalmente? ¿O la altura de la etiqueta de ajuste de amplificación de texto se encoge para ajustarse al tamaño de fuente máximo? Con lo que ya sabes sobre el sistema de distribución de AMP, intenta responder a la pregunta antes de jugar con el código!
 
-Puede obtener más información sobre el amplificador de ajuste de texto de la demostración en vivo de [AMP BY Example](https://ampbyexample.com/components/amp-fit-text/.
+Puede obtener más información sobre el amplificador de ajuste de texto de la demostración en vivo de [AMP BY Example](https://ampbyexample.com/components/amp-fit-text/).
 
 
 
