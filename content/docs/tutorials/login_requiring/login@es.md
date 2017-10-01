@@ -11,8 +11,8 @@ Si busca el botón de inicio de sesión en el código, encontrará:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
-  <h5>Por favor inicia sesión para comentar</h5>
-  <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Inicia Sesión</button>
+  <h5>Please login to comment</h5>
+  <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
 [/sourcecode]
 
