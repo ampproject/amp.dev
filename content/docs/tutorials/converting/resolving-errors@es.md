@@ -150,7 +150,7 @@ En AMP, los scripts generados por el usuario no están permitidos. Los scripts e
 Esto descarta efectivamente el uso de todos los JavaScript de terceros; Sin embargo, hay una excepción: JavaScript de terceros se puede utilizar en iframes.
 
 {% call callout('Importante', type='caution') %}
-Incluir JavaScript en un iframe debe considerarse una medida de último recurso. Siempre que sea posible, la funcionalidad de JavaScript se debe reemplazar mediante [AMP components](/docs/reference/components.html). Exploraremos nuestro primer componente de AMP en la siguiente sección.
+Incluir JavaScript en un iframe debe considerarse una medida de último recurso. Siempre que sea posible, la funcionalidad de JavaScript se debe reemplazar mediante [AMP components](/es/docs/reference/components.html). Exploraremos nuestro primer componente de AMP en la siguiente sección.
 {% endcall %}
 
 Intente abrir el archivo [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) externo. ¿Que ves? El archivo debe estar vacío de cualquier código JavaScript y sólo incluir un comentario de información como este:
