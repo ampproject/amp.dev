@@ -16,10 +16,10 @@ Su archivo `article.amp.html` debe tener el siguiente aspecto:
 
 ```html
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
 
-    <title>Artículo de noticias</title>
+    <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
 
@@ -27,10 +27,10 @@ Su archivo `article.amp.html` debe tener el siguiente aspecto:
   </head>
   <body>
     <header>
-      Sitio de Noticias
+      News Site
     </header>
     <article>
-      <h1>Nombre del artículo</h1>
+      <h1>Article Name</h1>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
     </article>
