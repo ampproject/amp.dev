@@ -27,4 +27,4 @@ Para avanzar más en su experiencia de AMP, eche un vistazo a estos recursos:
 - [AMP Start](https://www.ampstart.com/): Diseñe sus páginas con plantillas y componentes predefinidos
 - [AMP By Example](https://ampbyexample.com/): Aprender de muestras y demostraciones en vivo
 - [AMP Channel on YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Aprenda viendo videos específicos de AMP
-- [AMP components](https://www.ampproject.org/docs/reference/components): Obtenga detalles sobre todos los componentes de AMP
+- [AMP components](/es/docs/reference/components.html): Obtenga detalles sobre todos los componentes de AMP
