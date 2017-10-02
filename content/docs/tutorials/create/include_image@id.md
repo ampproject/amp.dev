@@ -11,7 +11,7 @@ Untuk mendemonstrasikan seperti apa tampilan markup tambahan ini, berikut kode y
 [/sourcecode]
 
 {% call callout('Baca Lebih Lanjut', type='read') %}
-Untuk mengetahui alasan kami mengganti tag seperti `<img>` dengan `<amp-img>`, dan jumlah ketersediaannya, kunjungi [Menyertakan Gambar & Video](/id/docs/guides/author-develop/amp_replacements.html).
+Untuk mengetahui alasan kami mengganti tag seperti `<img>` dengan `<amp-img>`, dan jumlah ketersediaannya, kunjungi [Menyertakan Gambar & Video](/id/docs/guides/amp_replacements.html).
 {% endcall %}
 
 <div class="prev-next-buttons">

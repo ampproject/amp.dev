@@ -11,7 +11,7 @@ $title: 이미지 포함
 [/sourcecode]
 
 {% call callout('읽어보기', type='read') %}
-`<img>`와 같은 태그를 `<amp-img>`로 대체하는 이유와 얼마나 많은 태그를 사용할 수 있는지에 대해 알아보려면, [이미지 및 동영상 삽입](/ko/docs/guides/author-develop/amp_replacements.html)으로 이동하세요.
+`<img>`와 같은 태그를 `<amp-img>`로 대체하는 이유와 얼마나 많은 태그를 사용할 수 있는지에 대해 알아보려면, [이미지 및 동영상 삽입](/ko/docs/guides/amp_replacements.html)으로 이동하세요.
 {% endcall %}
 
 <div class="prev-next-buttons">
