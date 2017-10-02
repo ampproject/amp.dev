@@ -10,7 +10,7 @@ Przedstawiony poniżej kod wymagany do umieszczenia obrazu na stronie demonstruj
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Uzasadnienie zamiany znaczników w rodzaju `<img>` na `<amp-img>` oraz informacje o liczbie dostępnych znaczników znajdziesz w części [Dołączanie ramek iframe i multimediów](/pl/docs/guides/author-develop/amp_replacements.html).
+Uzasadnienie zamiany znaczników w rodzaju `<img>` na `<amp-img>` oraz informacje o liczbie dostępnych znaczników znajdziesz w części [Dołączanie ramek iframe i multimediów](/pl/docs/guides/amp_replacements.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/pl/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Poprzedni</span></a>

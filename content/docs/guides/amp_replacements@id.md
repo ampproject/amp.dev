@@ -24,7 +24,7 @@ dan Anda tidak akan mendapatkan semua manfaat dari yang diberikan AMP.{% endcall
 
 ## Gambar
 
- Sertakan gambar pada halaman Anda menggunakan elemen [`amp-img`,](/id/docs/reference/components/amp-img.html) seperti berikut:
+ Sertakan gambar pada halaman Anda menggunakan elemen [`amp-img`](/id/docs/reference/components/amp-img.html) seperti berikut:
 
 <!--embedded example - fixed size image -->
 <div>
@@ -73,14 +73,14 @@ Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan t
 </div>
 
 {% call callout('Baca juga', type='success') %}
- Pelajari lebih lanjut tentang [teknik tata letak lanjutan](/id/docs/guides/author-develop/responsive/control_layout.html).{% endcall %}
+ Pelajari lebih lanjut tentang [teknik tata letak lanjutan](/id/docs/guides/responsive/control_layout.html).{% endcall %}
 
 ### Perilaku dan placeholder
 
 Waktu proses HTML AMP dapat mengelola konten gambar secara efektif, dengan memilih antara pemuatan konten yang diprioritaskan atau yang mengalami penundaan berdasarkan pada posisi viewport, sumber daya sistem, bandwidth koneksi, atau faktor lainnya.
 
 {% call callout('Baca juga', type='success') %}
- Pelajari cara [memberikan penggantian dan placeholder untuk gambar](/id/docs/guides/author-develop/responsive/placeholders.html)
+ Pelajari cara [memberikan penggantian dan placeholder untuk gambar](/id/docs/guides/responsive/placeholders.html)
 .{% endcall %}
 
 ## Gambar animasi

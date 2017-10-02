@@ -19,13 +19,13 @@ Le pagine AMP sono pagine web; l’applicazione di stili alla pagina e ai suoi e
 </style>
 [/sourcecode]
 
-Ciascuna pagina AMP può avere solamente un foglio di stile incorporato e l’uso di alcuni selettori non è consentito. [Scopri tutte le informazioni utili sullo stile](/it/docs/guides/author-develop/responsive/style_pages.html).
+Ciascuna pagina AMP può avere solamente un foglio di stile incorporato e l’uso di alcuni selettori non è consentito. [Scopri tutte le informazioni utili sullo stile](/it/docs/guides/responsive/style_pages.html).
 
 ## Controllo del layout
 
 AMP segue regole più severe per il layout degli elementi nella pagina. In una normale pagina HTML, per il layout degli elementi utilizzi quasi esclusivamente CSS. Tuttavia, per questioni legate alle prestazioni, AMP impone in partenza un limite esplicito per tutti gli elementi.
 
-Scopri in che modo viene eseguito il rendering e il layout di una pagina in AMP e come fare per modificare il layout nella sezione [Come controllare il layout](/it/docs/guides/author-develop/responsive/control_layout.html).
+Scopri in che modo viene eseguito il rendering e il layout di una pagina in AMP e come fare per modificare il layout nella sezione [Come controllare il layout](/it/docs/guides/responsive/control_layout.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/it/docs/tutorials/create/include_image.html"><span class="arrow-prev">Precedente</span></a>

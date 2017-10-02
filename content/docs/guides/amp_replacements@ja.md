@@ -71,7 +71,7 @@ As `<amp-img>` は JavaScript に依存するので、ユーザーがスクリ�
 </div>
 
 {% call callout('参考情報', type='success') %}
-詳しくは、[高度なレイアウトの手法](/ja/docs/guides/author-develop/responsive/control_layout.html) についての説明をご覧ください。
+詳しくは、[高度なレイアウトの手法](/ja/docs/guides/responsive/control_layout.html) についての説明をご覧ください。
 {% endcall %}
 
 ### 動作とプレースホルダ
@@ -79,7 +79,7 @@ As `<amp-img>` は JavaScript に依存するので、ユーザーがスクリ�
 AMP HTML のランタイムでは、画像のリソースを効果的に管理でき、ビューポートの位置、システム リソース、接続の帯域幅などの要素に基づいて、リソースの読み込みを遅らせるか優先させるかを選べます。
 
 {% call callout('参考情報', type='success') %}
-方法は、[画像のフォールバックやプレースホルダの指定](/ja/docs/guides/author-develop/responsive/placeholders.html) についての説明をご覧ください。
+方法は、[画像のフォールバックやプレースホルダの指定](/ja/docs/guides/responsive/placeholders.html) についての説明をご覧ください。
 {% endcall %}
 
 ## アニメーション画像

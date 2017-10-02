@@ -11,7 +11,7 @@ Para demonstrar qual seria a aparência de uma marcação adicional, veja o cód
 [/sourcecode]
 
 {% call callout('Leia Mais', type='read') %}
-Para saber por que estamos substituindo tags como `<img>` por `<amp-img>` e quantas estão disponíveis, consulte [Incluir imagens e vídeo](/pt_br/docs/guides/author-develop/amp_replacements.html).
+Para saber por que estamos substituindo tags como `<img>` por `<amp-img>` e quantas estão disponíveis, consulte [Incluir imagens e vídeo](/pt_br/docs/guides/amp_replacements.html).
 {% endcall %}
 
 <div class="prev-next-buttons">

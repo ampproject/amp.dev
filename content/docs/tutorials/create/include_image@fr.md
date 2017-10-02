@@ -10,7 +10,7 @@ Pour découvrir à quoi ressemblerait un balisage supplémentaire, voici le code
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Pour savoir pourquoi nous remplaçons les balises, telles que `<img>` par `<amp-img>`, et combien sont disponibles, accédez à [Inclure des iframes et des éléments multimédias](/fr/docs/guides/author-develop/amp_replacements.html).
+Pour savoir pourquoi nous remplaçons les balises, telles que `<img>` par `<amp-img>`, et combien sont disponibles, accédez à [Inclure des iframes et des éléments multimédias](/fr/docs/guides/amp_replacements.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/fr/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Précédent</span></a>
