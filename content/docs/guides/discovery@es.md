@@ -1,5 +1,5 @@
 ---
-$title: Hacer que una página sea visible
+$title: Hacer que una página sea reconocible
 ---
 [TOC]
 
