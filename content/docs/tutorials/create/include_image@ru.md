@@ -10,7 +10,7 @@ $title: Вставка изображения
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Чтобы узнать о причинах замены тегов `<img>` на `<amp-img>`, а также о других доступных возможностях, ознакомьтесь с разделом [Вставка встроенных фреймов и мультимедийного содержимого](/ru/docs/guides/author-develop/amp_replacements.html).
+Чтобы узнать о причинах замены тегов `<img>` на `<amp-img>`, а также о других доступных возможностях, ознакомьтесь с разделом [Вставка встроенных фреймов и мультимедийного содержимого](/ru/docs/guides/amp_replacements.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/ru/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Предыдущий</span></a>

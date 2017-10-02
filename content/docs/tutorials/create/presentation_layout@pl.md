@@ -19,13 +19,13 @@ Strony AMP to strony internetowe; nadawanie stylu stronie i jej elementom odbywa
 </style>
 [/sourcecode]
 
-Każda strona AMP może mieć tylko jeden umieszczony arkusz stylów, a niektórych selektorów nie można używać. [Dowiedz się więcej o stosowaniu stylów](/pl/docs/guides/author-develop/responsive/style_pages.html.
+Każda strona AMP może mieć tylko jeden umieszczony arkusz stylów, a niektórych selektorów nie można używać. [Dowiedz się więcej o stosowaniu stylów](/pl/docs/guides/responsive/style_pages.html).
 
 ## Sterowanie układem
 
 W kwestii rozmieszczania elementów na stronie w AMP obowiązują bardziej rygorystyczne reguły. Na normalnej stronie HTML do rozmieszczania elementów używa się niemal wyłącznie CSS. Jednak ze względu na wydajność AMP wymaga, aby wszystkie elementy miały od początku ustawiony jawny rozmiar.
 
-Wszystkie informacje na temat sposobu renderowania stron AMP i układów strony oraz możliwości modyfikacji układu można znaleźć w części [Jak sterować układem](/pl/docs/guides/author-develop/responsive/control_layout.html).
+Wszystkie informacje na temat sposobu renderowania stron AMP i układów strony oraz możliwości modyfikacji układu można znaleźć w części [Jak sterować układem](/pl/docs/guides/responsive/control_layout.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/pl/docs/tutorials/create/include_image.html"><span class="arrow-prev">Poprzedni</span></a>

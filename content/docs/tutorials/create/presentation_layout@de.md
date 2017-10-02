@@ -19,13 +19,13 @@ AMPs sind Webseiten, das heißt, der Stil der Seite und ihrer Elemente wird mith
 </style>
 [/sourcecode]
 
-Jede AMP-Seite darf nur über ein einziges eingebettetes Stylesheet verfügen und bestimmte Selektoren dürfen nicht verwendet werden. [Weitere Informationen zu Stylesheets](/de/docs/guides/author-develop/responsive/style_pages.html)
+Jede AMP-Seite darf nur über ein einziges eingebettetes Stylesheet verfügen und bestimmte Selektoren dürfen nicht verwendet werden. [Weitere Informationen zu Stylesheets](/de/docs/guides/responsive/style_pages.html)
 
 ## Layout anpassen
 
 Für das Layout von Elementen auf der AMP-Seite gelten strengere Regeln. Auf einer normalen HTML-Seite verwenden Sie für das Layout von Elementen fast ausschließlich CSS. Aus Leistungsgründen müssen jedoch bei AMP alle Elemente von Anfang an eine eindeutige Größe besitzen.
 
-Mehr über das Rendering und Layout von AMP-Seiten und darüber, wie Sie das Layout bearbeiten können, erfahren Sie [im Artikel zu den unterstützten Layouts](/de/docs/guides/author-develop/responsive/control_layout.html).
+Mehr über das Rendering und Layout von AMP-Seiten und darüber, wie Sie das Layout bearbeiten können, erfahren Sie [im Artikel zu den unterstützten Layouts](/de/docs/guides/responsive/control_layout.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/de/docs/tutorials/create/include_image.html"><span class="arrow-prev">Bisherige</span></a>

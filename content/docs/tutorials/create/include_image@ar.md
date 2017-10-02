@@ -10,7 +10,7 @@ $title: تضمين صورة
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-للتعرّف على أسباب إقدامنا على استبدال العلامات، مثل استبدال `<img>` بـ `<amp-img>`، وكم عدد المتاح منها، يُرجى الانتقال إلى [تضمين إطارات Iframe والوسائط](/ar/docs/guides/author-develop/amp_replacements.html).
+للتعرّف على أسباب إقدامنا على استبدال العلامات، مثل استبدال `<img>` بـ `<amp-img>`، وكم عدد المتاح منها، يُرجى الانتقال إلى [تضمين إطارات Iframe والوسائط](/ar/docs/guides/amp_replacements.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/ar/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">سابق</span></a>

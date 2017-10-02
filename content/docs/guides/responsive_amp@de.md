@@ -11,7 +11,7 @@ In AMP können Sie ganz leicht responsive Elemente erstellen, indem Sie einfach 
 
 Für alle extern geladenen Ressourcen, einschließlich Bildern, müssen Größe und Position angegeben werden, damit die Seite beim Laden der Ressourcen ohne Springen und Layoutänderung angezeigt wird.
 
-Wenn Sie responsive Bilder erstellen, geben Sie Breite und Höhe an, legen Sie das Layout als responsiv fest und geben Sie mittels [`srcset`](/de/docs/guides/author-develop/responsive/style_pages.html) an, welches Bild-Asset je nach Bildschirmgröße verwendet werden soll:
+Wenn Sie responsive Bilder erstellen, geben Sie Breite und Höhe an, legen Sie das Layout als responsiv fest und geben Sie mittels [`srcset`](/de/docs/guides/responsive/style_pages.html) an, welches Bild-Asset je nach Bildschirmgröße verwendet werden soll:
 
 [sourcecode:html]
 <amp-img
@@ -80,7 +80,7 @@ Definieren Sie Komponentenstile mit class- oder element-Selektoren unter Verwend
 </body>
 [/sourcecode]
 
-**Wichtig:** Prüfen Sie, ob Ihre Stile in AMP unterstützt werden. Bei einigen Stilen ist dies aus Leistungsgründen nicht der Fall. Weitere Informationen finden Sie unter [Unterstützte CSS-Stile](/de/docs/guides/author-develop/responsive/style_pages.html).
+**Wichtig:** Prüfen Sie, ob Ihre Stile in AMP unterstützt werden. Bei einigen Stilen ist dies aus Leistungsgründen nicht der Fall. Weitere Informationen finden Sie unter [Unterstützte CSS-Stile](/de/docs/guides/responsive/style_pages.html).
 
 ## Größe und Position von Elementen festlegen
 
@@ -92,7 +92,7 @@ Aus diesen Attributen ergibt sich das Seitenverhältnis des Elements, das dann m
 Legen Sie das Layout als responsiv fest.
 Dadurch wird die Breite des Elements an die Breite des Containerelements angepasst. Seine Höhe wird automatisch entsprechend dem Seitenverhältnis festgelegt, dass sich aus den width- und height-Attributen ergibt.
 
-Weitere Informationen finden Sie unter [Unterstützte Layouts in AMP](/de/docs/guides/author-develop/responsive/control_layout.html).
+Weitere Informationen finden Sie unter [Unterstützte Layouts in AMP](/de/docs/guides/responsive/control_layout.html).
 
 ## Stile und Layout überprüfen
 

@@ -73,7 +73,7 @@ toc: true
 </div>
 
 {% call callout('阅读', type='success') %}
-详细了解 [高级布局技术](/zh_cn/doc/guides/author-develop/responsive/control_layout.html)
+详细了解 [高级布局技术](/zh_cn/doc/guides/responsive/control_layout.html)
 。{% endcall %}
 
 ### 行为和占位符
@@ -81,7 +81,7 @@ toc: true
 AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位置、系统资源、连接带宽或其他因素，选择延迟资源加载或排定资源加载的优先顺序。
 
 {% call callout('阅读', type='success') %}
-了解如何 [提供后备图片和占位符](/zh_cn/doc/guides/author-develop/responsive/placeholders.html)
+了解如何 [提供后备图片和占位符](/zh_cn/doc/guides/responsive/placeholders.html)
 。{% endcall %}
 
 ## 动画图片
