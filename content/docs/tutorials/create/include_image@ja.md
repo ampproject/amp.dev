@@ -11,7 +11,7 @@ $title: イメージを含める
 [/sourcecode]
 
 {% call callout('参照', type='read') %}
-`<img>` タグの代わりに `<amp-img>` タグを使っている理由や、使用できるタグの種類については、[画像や動画を含める](/ja/docs/guides/author-develop/amp_replacements.html)をご覧ください。
+`<img>` タグの代わりに `<amp-img>` タグを使っている理由や、使用できるタグの種類については、[画像や動画を含める](/ja/docs/guides/amp_replacements.html)をご覧ください。
 {% endcall %}
 
 <div class="prev-next-buttons">

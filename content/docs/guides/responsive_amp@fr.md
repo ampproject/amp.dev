@@ -11,7 +11,7 @@ Dans le cas d'éléments AMP, c'est facile, il suffit de leur ajouter le code `l
 
 Toutes les ressources chargées en externe, y compris les images, doivent avoir une taille et un emplacement précis. Ainsi, au fil de leur chargement, la page ne saute pas et est redisposée de manière dynamique.
 
-Créez des images responsives en indiquant leur largeur et leur hauteur, en définissant la mise en page comme responsive et en indiquant, au moyen de [`srcset`](/fr/docs/guides/author-develop/responsive/style_pages.html), quelle ressource d'image utiliser en fonction des différentes tailles d'écran :
+Créez des images responsives en indiquant leur largeur et leur hauteur, en définissant la mise en page comme responsive et en indiquant, au moyen de [`srcset`](/fr/docs/guides/responsive/style_pages.html), quelle ressource d'image utiliser en fonction des différentes tailles d'écran :
 
 [sourcecode:html]
 <amp-img
@@ -79,7 +79,7 @@ Définissez des styles de composants avec des sélecteurs de classe ou d'éléme
 </body>
 [/sourcecode]
 
-**Important** : Assurez-vous que vos styles sont compatibles avec les pages AMP ; certains ne le sont pas pour des raisons de performance (voir aussi [CSS compatibles](/fr/docs/guides/author-develop/responsive/style_pages.html)).
+**Important** : Assurez-vous que vos styles sont compatibles avec les pages AMP ; certains ne le sont pas pour des raisons de performance (voir aussi [CSS compatibles](/fr/docs/guides/responsive/style_pages.html)).
 
 ## Éléments de taille et d'emplacement
 
@@ -91,7 +91,7 @@ Ces attributs définissent le format de l'élément, qui peut être mis à l'éc
 Définissez la mise en page comme responsive.
 Cela ajuste la taille de l'élément à la largeur de son élément conteneur, et redimensionne automatiquement sa hauteur au format donné par les attributs de largeur et de hauteur.
 
-Renseignez-vous sur les [mises en page compatibles avec les pages AMP](/fr/docs/guides/author-develop/responsive/control_layout.html).
+Renseignez-vous sur les [mises en page compatibles avec les pages AMP](/fr/docs/guides/responsive/control_layout.html).
 
 ## Valider vos styles et votre mise en page
 

@@ -11,7 +11,7 @@ AMP'de duyarlı öğeleri son derece kolay bir şekilde oluşturabilirsiniz. Bun
 
 Resimler de dahil olmak üzere harici olarak yüklenen tüm kaynakların belirli bir boyutunun ve konumunun olması gerekir. Böylece, kaynaklar yüklendikçe sayfa atlamaz ve yeniden düzenlenmez.
 
-Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzeni duyarlı olarak ayarlayın ve [`srcset`](/tr/docs/guides/author-develop/responsive/style_pages.html) ile değişen ekran boyutlarına göre kullanılacak resim öğesini belirtin:
+Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzeni duyarlı olarak ayarlayın ve [`srcset`](/tr/docs/guides/responsive/style_pages.html) ile değişen ekran boyutlarına göre kullanılacak resim öğesini belirtin:
 
 [sourcecode:html]
 <amp-img
@@ -79,7 +79,7 @@ Ortak CSS özelliklerini kullanarak sınıf veya öğe seçicilerle bileşen sti
 </body>
 [/sourcecode]
 
-**Önemli:** Stillerinizin AMP'de desteklendiğinden emin olun. Bazı stiller performans nedeniyle desteklenmemektedir (ayrıca bkz. [Desteklenen CSS](/tr/docs/guides/author-develop/responsive/style_pages.html)).
+**Önemli:** Stillerinizin AMP'de desteklendiğinden emin olun. Bazı stiller performans nedeniyle desteklenmemektedir (ayrıca bkz. [Desteklenen CSS](/tr/docs/guides/responsive/style_pages.html)).
 
 ## Boyut ve konum öğeleri
 
@@ -91,7 +91,7 @@ Bu öznitelikler, öğenin en boy oranına işaret eder ve daha sonra, kapsayıc
 Düzeni duyarlı değerine ayarlayın.
 Bu seçim, öğenin boyutunu kapsayıcı öğesinin genişliğine ayarlar ve yüksekliğini, otomatik olarak genişlik ve yükseklik öznitelikleri tarafından belirtilen en boy oranına göre yeniden boyutlandırır.
 
-[AMP'de desteklenen düzenler](/tr/docs/guides/author-develop/responsive/control_layout.html) hakkında daha fazla bilgi edinin.
+[AMP'de desteklenen düzenler](/tr/docs/guides/responsive/control_layout.html) hakkında daha fazla bilgi edinin.
 
 ## Stillerinizi ve düzeninizi doğrulama
 

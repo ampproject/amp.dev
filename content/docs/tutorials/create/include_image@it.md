@@ -10,7 +10,7 @@ Per illustrare il possibile aspetto del markup supplementare, ecco il codice nec
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Per capire perché stiamo sostituendo tag come `<img>` con `<amp-img>` e quanti di essi sono disponibili, vai alla sezione [Includere Iframe ed elementi multimediali](/it/docs/guides/author-develop/amp_replacements.html).
+Per capire perché stiamo sostituendo tag come `<img>` con `<amp-img>` e quanti di essi sono disponibili, vai alla sezione [Includere Iframe ed elementi multimediali](/it/docs/guides/amp_replacements.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/it/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Precedente</span></a>

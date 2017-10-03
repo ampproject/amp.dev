@@ -11,7 +11,7 @@ $title: 包括图像
 [/sourcecode]
 
 {% call callout('阅读', type='read') %}
-如需了解我们为何要将诸如 `<img>` 等标记替换为 `<amp-img>` 以及有多少标记可用，请查看[添加图片和视频](/zh_cn/docs/guides/author-develop/amp_replacements.html)。
+如需了解我们为何要将诸如 `<img>` 等标记替换为 `<amp-img>` 以及有多少标记可用，请查看[添加图片和视频](/zh_cn/docs/guides/amp_replacements.html)。
 {% endcall %}
 
 <div class="prev-next-buttons">
