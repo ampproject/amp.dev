@@ -15,8 +15,8 @@
 
           {{doc.html|render|safe}}
 
-          <div class="card-container grid case">
-          {% for item in g.collection('/content/learn/showcases').docs(recursive=false, locale=doc.locale)|reverse %}
+          <div class="card-container grid">
+          {% for item in g.collection('/content/learn/showcases').docs(recursive=false, locale=doc.locale) %}
             {% with doc = item%}
               {% include "/views/partials/grid-showcase.html" %}
             {% endwith %}

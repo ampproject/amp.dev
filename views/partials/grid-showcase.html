@@ -1,21 +1,45 @@
 {% set goto = g.url(doc.goto, locale=doc.locale).path if doc.goto and 'http' not in doc.goto %}
 
-<a class="card" href="{{goto or doc.goto or doc.url.path}}">
+<div class="card">
   <div class="card-inner">
-    <div class="card-logo">
-      <amp-img alt="{{doc.title}}"
-        height="{{doc.logo.height}}"
-        layout="fixed"
-        noloading
-        src="/static/img/{{doc.logo.src}}"
-        width="{{doc.logo.width}}"></amp-img>
+    {% if doc.order is divisibleby 2 %}
+    <div class="hero-image-left">
+    {% else %}
+    <div class="hero-image-right">
+    {% endif %} 
+      <amp-img 
+          noloading
+          width="{{doc.hero.hero_img_width}}"
+          height="{{doc.hero.hero_img_height}}"
+          layout=responsive
+          src="{{doc.hero.hero_img_base}}">
+      </amp-img>
     </div>
-    <div class="card-title">
-      <h4>{{doc.headline}}</h4>
+    <div class="card-inner-content">
+      <div class="card-logo">
+        <amp-img alt="{{doc.title}}"
+          height="{{doc.logo.height}}"
+          layout="fixed"
+          noloading
+          src="/static/img/{{doc.logo.src}}"
+          width="{{doc.logo.width}}"></amp-img>
+      </div>
+      <div class="card-description">
+        <p class="headline">{{doc.headline}}</p>
+      </div> 
+    {% if doc.features %}
+    <div class="card-features">
+      <h4>Features</h4>
+      <ul>
+      {% for feature in doc.features %}
+        <li><a href="/docs/reference/components/amp-{{feature}}.html">amp-{{feature}}</a></li>
+      {% endfor %}
+      </ul>
     </div>
-
-    <div class="card-link">
-      <p class="text-label">{{_('Learn More')}}</p>
+    {% endif %}  
+      <div class="card-link">
+        <a class="underlined cta" href="{{goto or doc.goto or doc.url.path}}">{{_('Learn More')}}</a>
+      </div>
     </div>
   </div>
-</a>
+</div>
