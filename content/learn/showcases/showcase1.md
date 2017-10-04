@@ -3,6 +3,7 @@ $order: 0
 $title: ACME
 $parent: /content/learn/showcases.html
 class: showcase post-detail
+site_url: https://www.ampstart.com/
 headline: ACME travel used AMP to speed up their experience by 1000%. Users on all devices experience the lightning fast experience.
 
 logo:

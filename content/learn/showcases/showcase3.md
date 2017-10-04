@@ -3,6 +3,7 @@ $order: 2
 $title: ACME3
 $parent: /content/learn/showcases.html
 class: showcase post-detail
+site_url: https://www.ampstart.com/
 headline: ACME3 travel used AMP to speed up their experience by 1000%. Users on all devices experience the lightning fast experience.
 
 logo:

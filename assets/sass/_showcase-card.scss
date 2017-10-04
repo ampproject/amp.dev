@@ -1,38 +1,29 @@
 .showcase-container {
   box-sizing: border-box;
   display: flex;
-  //justify-content: space-between;
   padding: 20px 5px;
 }
 
 .hero-image-right,
-.hero-image-left{
-    display: inline-block;
-    width: 25%;
-    padding-right: 75px;
-
+.hero-image-left {
+  display: inline-block;
+  width: 25%;
+}
+.hero-image-left {
+  padding-right: 75px;
 }
 
-/*.hero-image-left {
-  padding-left: 150px;
-  padding-right: 75px;
-}*/
-
 .hero-image-right {
+  padding-left: 75px;
   order: 2;
 }
 
 .headline {
-  max-width: 450px;
-
+  max-width: 500px;
 }
 
 .card-description {
   margin: 35px 0;
-}
-
-.card-inner-content {
-  //margin-right: 150px;
 }
 
 h4 {
@@ -41,7 +32,6 @@ h4 {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: .56px;
-  line-height: 16px;
 }
 
 .card {
@@ -72,10 +62,10 @@ h4 {
     align-items: center;
   }
 
-  &:hover {
+  /*&:hover {
     box-shadow: 0px 3px 50px 0 rgba(0, 0, 0, 0.075);
     transform: translateY(-5px);
-  }
+  }*/
 
   &--spacer {
     box-shadow: none;
@@ -100,7 +90,7 @@ h4 {
   width: 100%;
 
   ul, ol {
-      padding-left: 1.5em;
+      padding-left: 1em;
 
     li {
       list-style-type: none;
@@ -116,21 +106,24 @@ h4 {
 
   .card-features {
     margin-bottom: 1em;
-  }
 
-  .card-link p {
-    @extend a.underlined;
-    color: $color-ampblue;
-    display: inline;
-    margin: 0;
-    padding: 0;
-    position: relative;
-
-    &::before {
-      bottom: -5px;
-      height: 2px;
+    a {
+      text-transform: none;
+      font-size: 18px;
     }
   }
+
+  .card-link a {
+    &::after {
+      background: url(/static/img/arrow-blue.svg) center/cover no-repeat;
+      content: '';
+      display: inline-block;
+      height: 12px;
+      margin-left: 10px;
+      width: 12px;
+    }
+  }
+
 }
 
 .card-content {
@@ -145,10 +138,6 @@ h4 {
       flex: 0 0 48%; // IE10: calc not allowed in flex;
       flex: 0 0 calc(50% - 30px);
       flex-basis: calc(50% - 30px); // IE 11
-    }
-
-    .card-inner {
-      // padding: 10%;
     }
 
     .card-title {
