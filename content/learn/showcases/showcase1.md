@@ -3,23 +3,24 @@ $order: 0
 $title: ACME
 $parent: /content/learn/showcases.html
 class: showcase post-detail
-site_url: https://www.ampstart.com/
-headline: ACME travel used AMP to speed up their experience by 1000%. Users on all devices experience the lightning fast experience.
+site_url: https://www.ampproject.org/
+headline: Company 1 uses AMP to speed up their experience by 1000%. Users on all devices experience lightning-quick rendering.
 
 logo:
-  src: "case-studies/cnbc_logo_thumb.png"
-  width: 200  
-  height: 35
+  src: "showcases/logo-placeholder1.jpg"
+  width: 184
+  height: 64
 
 hero:
   title@: If it’s not instant, it’s not fast enough.
   pargraph: This AMP page has seen a lot of progress!
-  hero_img_base: /static/img/case-studies/cnbc1.png
-  hero_img_width: 271
-  hero_img_height: 539
+  hero_img_base: /static/img/showcases/showcase-placeholder1.png
+  hero_img_width: 400
+  hero_img_height: 716
 
 features:
-  - social-share
+  - ad
+  - carousel
   - video
 
 ---

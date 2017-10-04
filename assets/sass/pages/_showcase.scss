@@ -22,9 +22,9 @@
     max-width: 900px;
   }
 
-  amp-img {
+  /*amp-img {
     margin: 0;
-  }
+  }*/
 }
 
 // individual showcase pages
@@ -222,8 +222,7 @@
   .showcases {
     .post-title,
     .post-tag {
-      text-align: left;
-      text-align: start;
+      text-align: center;
     }
 
     .post-tag {
@@ -232,30 +231,13 @@
 
     .post-title {
       max-width: none;
+      margin-bottom: 20px;
     }
   }
 
   .showcase{
     .post-logo {
       margin: 0;
-    }
-
-    .post-results {
-      margin: 0;
-      padding: 60px 30px;
-    }
-
-    .result {
-      margin: 10px;
-    }
-
-    .result-stat {
-      font-size: 85px;
-      line-height: 85px;
-    }
-
-    .result-description {
-      line-height: 16px;
     }
 
     .img-right,
@@ -306,33 +288,6 @@
       max-width: 150px;
     }
 
-    &--slate {
-      .post-logo {
-        max-width: 100px;
-      }
-    }
-
-    .post-results {
-      padding: 30px;
-    }
-
-    .result {
-      margin: 10px;
-    }
-
-    .result-stat {
-      font-size: 72px;
-      line-height: 72px;
-    }
-
-    .post-download {
-      margin-top: 30px;
-    }
-
-    .post-sheet {
-      margin-top: 0;
-    }
-
     .post-content {
       blockquote {
         margin: 1.5em 0;
@@ -346,63 +301,6 @@
       float: none;
       margin: 0;
       width: auto;
-    }
-
-    .img-right {
-      &.wapo amp-img {
-        left: 10%;
-        top: 50px;
-      }
-
-      &.gizmodo amp-img {
-        left: 20%;
-        top: 50px;
-      }
-
-      &.wired amp-img {
-        left: 13%;
-        top: 20px;
-      }
-
-      &.slate amp-img {
-        left: 10%;
-        top: 70px;
-      }
-
-      &.relay amp-img {
-        left: 13%;
-      }
-
-      &.teads amp-img {
-        left: 17%;
-      }
-    }
-
-    .img-left {
-      &.gizmodo {
-        amp-img {
-          right: 20%;
-        }
-      }
-
-      &.wired {
-        margin-bottom: 180px;
-
-        amp-img {
-          left: 30%;
-        }
-      }
-
-      &.slate amp-img {
-        right: 20%;
-        top: 50px;
-      }
-
-      &.relay {
-        amp-img {
-          right: 20%;
-        }
-      }
     }
 
     .img-desktop {

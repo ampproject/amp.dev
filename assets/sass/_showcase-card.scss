@@ -1,13 +1,7 @@
-.showcase-container {
-  box-sizing: border-box;
-  display: flex;
-  padding: 20px 5px;
-}
-
 .hero-image-right,
 .hero-image-left {
   display: inline-block;
-  width: 25%;
+  width: 30%;
 }
 .hero-image-left {
   padding-right: 75px;
@@ -39,9 +33,6 @@ h4 {
   @extend %text-body;
   box-sizing: border-box;
   display: inline-block;
-  //flex: 0 0 31%; // IE10: calc not allowed in flex
-  //flex: 0 0 calc(33% - 30px);
-  //flex-basis: calc(33% - 30px);
   height: 90%;
   margin: 20px 5px;
   padding: 10px;
@@ -56,30 +47,6 @@ h4 {
     position: absolute;
     right: 0;
     top: -2px;
-  }
-
-  &.centered {
-    align-items: center;
-  }
-
-  /*&:hover {
-    box-shadow: 0px 3px 50px 0 rgba(0, 0, 0, 0.075);
-    transform: translateY(-5px);
-  }*/
-
-  &--spacer {
-    box-shadow: none;
-    height: 0;
-    padding: 0;
-
-    &::before {
-      display: none;
-    }
-
-    &:hover {
-      box-shadow: none;
-    }
-
   }
 }
 
@@ -123,7 +90,6 @@ h4 {
       width: 12px;
     }
   }
-
 }
 
 .card-content {
@@ -131,32 +97,37 @@ h4 {
   text-transform: none;
 }
 
-@include max-screen($mobile-breakpoint) {
-  .showcase-container.grid,
-  .showcase-container.case {
-    .card {
-      flex: 0 0 48%; // IE10: calc not allowed in flex;
-      flex: 0 0 calc(50% - 30px);
-      flex-basis: calc(50% - 30px); // IE 11
-    }
+@include max-screen($mobile-medium-breakpoint) {
 
-    .card-title {
-      margin-bottom: 2em;
-    }
-  }
+  .card-inner {
+    display: inline-flex;
+    flex-direction: column;
 
-  .card-section-heading {
-    margin: 50px 0 0;
+    .hero-image-right ,
+    .hero-image-left  {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      order: 0;
+
+    }
+    .headline {
+      max-width: none;
+    }
+    .card-logo {
+      text-align: center;
+    }
   }
 }
 
 @include max-screen($tablet-portrait-breakpoint) {
-  .showcase-container.grid,
-  .showcase-container.case {
-    .card {
-      flex: 0 0 100%;
-      margin: 10px 0;
-      min-height: 300px;
-    }
-  }
+
+.hero-image-left {
+  padding-right: 40px;
+}
+
+.hero-image-right {
+  padding-left: 40px;
+}
+  
 }
