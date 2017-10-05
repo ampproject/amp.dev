@@ -39,15 +39,6 @@ h4 {
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
   width: 100%;
-
-  &::before {
-    content: '';
-    left: 0;
-    height: 2px;
-    position: absolute;
-    right: 0;
-    top: -2px;
-  }
 }
 
 .card-inner {
@@ -57,7 +48,7 @@ h4 {
   width: 100%;
 
   ul, ol {
-      padding-left: 1em;
+    padding-left: 1em;
 
     li {
       list-style-type: none;
@@ -115,6 +106,7 @@ h4 {
       max-width: none;
     }
     .card-logo {
+      padding-top: 35px;
       text-align: center;
     }
   }
@@ -122,12 +114,10 @@ h4 {
 
 @include max-screen($tablet-portrait-breakpoint) {
 
-.hero-image-left {
-  padding-right: 40px;
-}
-
-.hero-image-right {
-  padding-left: 40px;
-}
-  
+  .hero-image-left {
+    padding-right: 40px;
+  }
+  .hero-image-right {
+    padding-left: 40px;
+  }
 }

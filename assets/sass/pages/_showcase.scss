@@ -21,13 +21,9 @@
     margin: 0 auto 50px;
     max-width: 900px;
   }
-
-  /*amp-img {
-    margin: 0;
-  }*/
 }
 
-// individual showcase pages
+// individual showcase pages (coming later)
 .showcase {
   .post-header,
   .post-footer {
@@ -47,87 +43,6 @@
   .post-logo {
     margin: 25px auto;
     width: 200px;
-  }
-
-  &--slate {
-    .post-logo {
-      width: 150px;
-    }
-  }
-
-  .post-results {
-    background: $gradient-med-faded;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 0 -120px;
-    padding: 75px;
-  }
-
-  .share-module {
-    .share-buttons {
-      top: -291px;
-
-      amp-social-share {
-        bottom: 0;
-        top: auto;
-      }
-    }
-
-    .control[expanded] + section amp-social-share {
-      &:nth-child(1) {
-        transform: translateY(-$share-button-size-full * 4);
-      }
-      &:nth-child(2) {
-        transform: translateY(-$share-button-size-full * 3);
-      }
-      &:nth-child(3) {
-        transform: translateY(-$share-button-size-full * 2);
-      }
-      &:nth-child(4) {
-        transform: translateY(-$share-button-size-full);
-      }
-    }
-  }
-
-  .result {
-    flex: 1 1 auto;
-    margin: 20px;
-  }
-
-  .result-stat,
-  .result-description {
-    margin: 0;
-    text-align: center;
-  }
-
-  .result-stat {
-    color: $color-brightblue;
-    font-size: 120px;
-    font-weight: 200;
-    line-height: 120px;
-    margin-bottom: 10px;
-    overflow-wrap: normal;
-    white-space: nowrap;
-    word-break: normal;
-    word-wrap: normal;
-  }
-
-  .post-results--small .result-stat {
-    font-size: 70px;
-  }
-
-  .result-description {
-    @extend %text-label;
-    color: $color-ampblue;
-    font-weight: 300;
-    line-height: 24px;
-    margin: 0 auto;
-    max-width: 175px;
-  }
-
-  .post-download {
-    margin-top: 50px;
   }
 
   .img-right,
