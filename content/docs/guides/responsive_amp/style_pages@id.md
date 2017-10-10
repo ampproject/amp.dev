@@ -46,10 +46,6 @@ Gaya berikut tidak diizinkan di halaman AMP:
       <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
       <td data-th="Description">Properti ini tidak diizinkan karena alasan keamanan.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">Dimasukkan dalam daftar hitam karena masalah performa.</td>
-    </tr>
   </tbody>
 </table>
 

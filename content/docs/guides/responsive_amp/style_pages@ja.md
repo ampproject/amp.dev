@@ -46,10 +46,6 @@ toc: true
       <td data-th="Banned style"><code>behavior</code>、<code>-moz-binding</code></td>
       <td data-th="Description">これらのプロパティはセキュリティ上の理由から許可されていません。</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">パフォーマンスに関する問題があるためブラックリストに登録されています。</td>
-    </tr>
   </tbody>
 </table>
 
