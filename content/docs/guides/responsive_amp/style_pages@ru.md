@@ -99,10 +99,6 @@ $title: Поддерживаемые элементы CSS
       <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
       <td data-th="Description">Данные элементы запрещены из соображений безопасности.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">Этот элемент запрещен, поскольку он снижает производительность.</td>
-    </tr>
   </tbody>
 </table>
 

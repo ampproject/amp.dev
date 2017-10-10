@@ -99,10 +99,6 @@ Les styles suivants ne sont pas autorisés dans les pages AMP :
       <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
       <td data-th="Description">Ces propriétés ne sont pas autorisées pour des raisons de sécurité.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">Mis sur liste noire en raison de problèmes de performances.</td>
-    </tr>
   </tbody>
 </table>
 
