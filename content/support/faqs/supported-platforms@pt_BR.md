@@ -1,15 +1,15 @@
 ---
-$title: Plataformas, proveedores y socios
+$title@: Plataformas, fornecedores e parceiros compatíveis
 $order: 3
-$parent: /content/support/faqs.md
+$parent: /content/support/faqs@pt_br.md
 class: who
 
-description: El proyecto Accelerated Mobile Pages (AMP) es una iniciativa de código abierto que facilita a los editores crear contenido para móviles una vez y que se cargue instantáneamente en todas partes. – Accelerated Mobile Pages Project
+description@: O projeto Accelerated Mobile Pages (AMP) é uma iniciativa de código aberto que facilita a criação de conteúdo otimizado para dispositivos móveis. Com ele, os editores podem criar conteúdo uma vez só e carregar esse material de maneira instantânea em qualquer lugar. – Projeto Accelerated Mobile Pages
 
 cta:
-  title: Próximo FAQ
-  link_text: AMP Overview
-  link_url: /content/support/faqs/overview@es.md
+  title@: Próximas Perguntas frequentes
+  link_text@: Visão geral de AMP
+  link_url: /content/support/faqs/overview@pt_br.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
@@ -22,7 +22,7 @@ cta:
   </ul>
 </div>
 
-Un número creciente de plataformas, proveedores y socios soportan el proyecto AMP al proporcionar componentes personalizados o ofrecer integración con páginas AMP dentro de sus plataformas.
+Um número cada vez maior de plataformas, fornecedores e parceiros oferece compatibilidade com o projeto AMP por meio de componentes personalizados ou integração de páginas AMP em plataformas.
 
 <div class="who-container">
   <amp-accordion disable-session-states>
