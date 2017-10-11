@@ -57,10 +57,6 @@ The following styles aren’t allowed in AMP pages:
       <td data-th="Description">These properties are not allowed
       for security reasons.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">Blacklisted due to performance concerns.</td>
-    </tr>
   </tbody>
 </table>
 

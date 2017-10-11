@@ -120,10 +120,6 @@ $title: لغة CSS المعتمدة
       <td data-th="Description">هذه الخصائص غير مسموح بها
       لأسباب أمنية.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>الفلتر</code></td>
-      <td data-th="Description">تم وضعه في القائمة السوداء بسبب مشاكل في الأداء.</td>
-    </tr>
   </tbody>
 </table>
 

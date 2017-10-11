@@ -171,6 +171,12 @@ Type attribute value: `nielsen`
 
 Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
+### Nielsen Marketing Cloud
+
+Type attribute value: `nielsen-marketing-cloud`
+
+Adds support for Nielsen Marketing Cloud. More details can be found at [Nielsen Marketing Cloud](http://www.nielsen.com/us/en/solutions/capabilities/nielsen-marketing-cloud.html).
+
 ### OEWA
 
 Type attribute value: `oewa`
