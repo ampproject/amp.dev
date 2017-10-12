@@ -120,10 +120,6 @@ $title: CSS ที่รองรับ
       <td data-th="Description">คุณสมบัติเหล่านี้ไม่อนุญาตให้ใช้
       เนื่องจากเหตุผลด้านความปลอดภัย</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>ฟิลเตอร์</code></td>
-      <td data-th="Description">ขึ้นบัญชีดำเนื่องจากมีข้อกังวลด้านประสิทธิภาพ</td>
-    </tr>
   </tbody>
 </table>
 

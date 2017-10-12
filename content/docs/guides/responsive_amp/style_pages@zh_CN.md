@@ -45,10 +45,6 @@ AMP 网页中不允许出现以下样式：
       <td data-th="Banned style"><code>behavior</code>、<code>-moz-binding</code></td>
       <td data-th="Description">出于安全考虑，禁止使用这些属性。</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">出于性能方面的考虑而被列入黑名单。</td>
-    </tr>
   </tbody>
 </table>
 
