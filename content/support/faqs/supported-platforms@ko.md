@@ -9,7 +9,7 @@ description: AMP (Accelerated Mobile Pages) 프로젝트는 게시자가 모바�
 cta:
   title: 다음 FAQ
   link_text: AMP 살펴보기
-  link_url: /content/support/faqs/overview.md
+  link_url: /content/support/faqs/overview@ko.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}

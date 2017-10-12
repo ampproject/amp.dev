@@ -1,19 +1,20 @@
 ---
-$title: Agregar un comentario
+$title: Añadir un comentario
 $order: 1
 ---
 
-<amp-img src="/static/img/comment.png" alt="Agregar un comentario" height="325" width="300"></amp-img>
+<amp-img src="/static/img/comment.png" alt="Añadir un comentario" height="325" width="300"></amp-img>
 
-En este punto, el usuario puede agregar un comentario utilizando la librería `amp-form`. Observe cómo la presencia del formulario es condicional, dependiendo del estado del componente de `amp-access`:
+En este momento, un usuario puede añadir un comentario utilizando la biblioteca `amp-form`. La presencia del formulario depende del estado del componente `amp-access`:
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
-Especificamos un método POST y una acción XHR, ya que las acciones no XHR no están permitidas con los métodos POST en AMP. Debido a que se trata de una demostración, no estamos persistiendo comentarios, por lo que sólo es posible añadir un comentario en el momento; cada vez que se agrega un comentario, el servidor AMPByExample responde con una respuesta JSON que contiene el texto introducido con algunas adiciones, como una marca de tiempo, un avatar y un nombre para el usuario.
+Determinamos un método POST y una acción XHR, porque las acciones que no son XHR no están permitidas en los métodos POST de AMP.
+Al ser una demostración, no se guardan los comentarios, así que solo es posible añadir un comentario en cada ocasión. Cuando se añade un comentario, el servidor AMPByExample envía una respuesta JSON que contiene el texto introducido con información adicional, como una marca de tiempo, un avatar y un nombre de usuario.
 
-He aquí un ejemplo de respuesta JSON:
+Este es un ejemplo de respuesta JSON:
 
 [sourcecode:json]
 {"Datetime":"09:34:21",
@@ -22,7 +23,7 @@ He aquí un ejemplo de respuesta JSON:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-El componente de formulario simplemente mostrará esos valores dentro de la página usando la plantilla [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache):
+Esos valores sencillamente se mostrarán en la página utilizando la plantilla [amp-mustache](https://www.ampproject.org/es/docs/reference/components/amp-mustache):
 
 [sourcecode:html]
 <div submit-success>
@@ -38,7 +39,7 @@ El componente de formulario simplemente mostrará esos valores dentro de la pág
 </div>
 [/sourcecode]
 
-En este ejemplo, sólo estamos comprobando si el valor del comentario no está vacío; si el valor está vacío, devolvemos un error que hace que el código siguiente se ejecute
+En este ejemplo, solo comprobamos que el valor del comentario no esté vacío; en caso contrario, devolvemos un error que ejecuta el código siguiente:
 
 [sourcecode:html]
 <div submit-error>
@@ -48,19 +49,21 @@ En este ejemplo, sólo estamos comprobando si el valor del comentario no está v
 </div>
 [/sourcecode]
 
-Como un toque extra, añadimos el atributo `required` para reforzar la presencia del texto del comentario antes de enviar el comentario:
+Adicionalmente, añadimos el atributo `required` para exigir que el comentario tenga texto antes de que se pueda enviar:
 
-<amp-img src="/static/img/enforce-comment.png" alt="Enforce comment" height="325" width="300"></amp-img>
+<amp-img src="/static/img/enforce-comment.png" alt="Exigir comentario" height="325" width="300"></amp-img>
 
 [sourcecode:html]
 <input type="text" class="data-input" name="text" placeholder="Your comment..." required>
 [/sourcecode]
 
-Cuando añada un comentario y haga clic en el botón Enviar, debería ver algo similar a la siguiente captura de pantalla:
+Cuando añades un comentario y haces clic en el botón para enviarlo, aparece algo similar a lo que se ve en esta captura de pantalla:
 
-<amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
+<amp-img src="/static/img/logout-button.png" alt="Comentario añadido" height="352" width="300"></amp-img>
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/tutorials/login_requiring/login.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/login_requiring/logout.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button next-button" href="/es/docs/tutorials/login_requiring/logout.html"><span class="arrow-next">Siguiente</span></a>
 </div>
+ 
+ 

@@ -1,15 +1,15 @@
 ---
-$title: Plataformas, proveedores y socios
+$title@: Platform, Vendor, dan Partner yang Didukung
 $order: 3
 $parent: /content/support/faqs.md
 class: who
 
-description: El proyecto Accelerated Mobile Pages (AMP) es una iniciativa de código abierto que facilita a los editores crear contenido para móviles una vez y que se cargue instantáneamente en todas partes. – Accelerated Mobile Pages Project
+description@: Proyek Accelerated Mobile Pages (AMP) adalah inisiatif open source yang mempermudah penayang untuk membuat konten mobile-friendly dan dapat dimuat dengan cepat di mana saja. – Proyek Accelerated Mobile Pages
 
 cta:
-  title: Próximo FAQ
-  link_text: AMP Overview
-  link_url: /content/support/faqs/overview@es.md
+  title@: FAQ Berikutnya
+  link_text@: Ringkasan AMP
+  link_url: /content/support/faqs/overview@id.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
@@ -22,7 +22,7 @@ cta:
   </ul>
 </div>
 
-Un número creciente de plataformas, proveedores y socios soportan el proyecto AMP al proporcionar componentes personalizados o ofrecer integración con páginas AMP dentro de sus plataformas.
+Semakin banyak platform, vendor, dan partner mendukung Proyek AMP dengan menyediakan komponen kustom atau menawarkan integrasi dengan halaman AMP dalam platform mereka.
 
 <div class="who-container">
   <amp-accordion disable-session-states>
