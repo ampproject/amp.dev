@@ -15,8 +15,8 @@ hero:
   title@: If it’s not instant, it’s not fast enough.
   pargraph: This AMP page has seen a lot of progress!
   hero_img_base: /static/img/showcases/showcase-placeholder2.png
-  hero_img_width: 400
-  hero_img_height: 716
+  hero_img_width: 705
+  hero_img_height: 1268
 
 features:
   - form
