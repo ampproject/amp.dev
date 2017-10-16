@@ -87,6 +87,8 @@ function addCMS() {
           link: https://www.fastcommerce.com.br/accelerated-mobile-pages-amp
         - title: Hatena
           link: http://help.hatenablog.com/entry/amp
+        - title: Kentico
+          link: https://github.com/Kentico/kentico-amp
         - title: Marfeel
           link: https://atenea.marfeel.com/atn/product/marfeel-press/360-platform/google-amp/marfeel-s-accelerated-mobile-pages-google-amp-solution
         - title: Squarespace
