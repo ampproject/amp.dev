@@ -1,67 +1,67 @@
 blogs:
 
 - type: Blog
-  title: "Putting the AMP in Progressive Web AMPs: Meet the ShadowReader"
-  id: ads-putting-the-amp-in-progressive-web-amps-meet-the-shadowreader
+  title: "The Argument for AMP: Lessons from 10 Case Studies"
+  id: ads-the-argument-for-amp-lessons-from-10-case-studies
   author: amphtml
   role: 
-  origin: "https://amphtml.wordpress.com/2017/07/20/putting-the-amp-in-progressive-web-amps-meet-the-shadowreader/amp/"
-  excerpt: "We’ve previously written plenty about combining AMP &#38; PWA, short for Progressive Web Apps. While the idea of preloading your PWA while the reader is reading your AMP page is fairly straightforward, the other combination pattern, where AMP is used as data-source to power your PWA, is less understood. In my recent Google I/O talk, [&#8230;]"
-  avatar: http://amphtml.files.wordpress.com/2017/07/featured.png
-  datedata: 2017-07-20T15:50:15-07:00
-  date: "July 20, 2017"
+  origin: "https://amphtml.wordpress.com/2017/10/09/the-argument-for-amp-lessons-from-10-case-studies/amp/"
+  excerpt: "Editor&#8217;s note: The following is an excerpt from an independent study done by Stone Temple, a digital marketing agency, posted with their permission. Read the full study here.  We conducted interviews of more than 10 companies that have invested heavily in AMP, to see if we could learn how hard it was to implement, the [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-10-09T13:14:24-07:00
+  date: "October 9, 2017"
 
 - type: Blog
-  title: "AMP Roadmap update for end of Q2"
-  id: ads-amp-roadmap-update-for-end-of-q2
-  author: Vamsee Jasti
+  title: "New in AMP: Position observers, fluid ads and improved analytics for video & beyond"
+  id: ads-new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond
+  author: Lisa Wang
   role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/07/14/amp-roadmap-update-for-end-of-q2/amp/"
-  excerpt: "We’ve updated the AMP Roadmap to reflect progress on existing priorities as well as several new projects. You can see the highlights below: Format amp-bind, a flexible event binding system supporting more interactivity in AMP is now fully available in production. To find out more about the range of capabilities this feature brings to AMP, [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-07-14T16:49:34-07:00
-  date: "July 14, 2017"
+  origin: "https://amphtml.wordpress.com/2017/09/30/new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond/amp/"
+  excerpt: "We’re trying out something new in the place of our regular AMP Roadmap updates. This new “New in AMP” format focuses on actionable updates. We’re also continuing to update the AMP Roadmap to reflect progress, and we will keep a section in this post dedicated to talking about where we’re heading next. But now, on [&#8230;]"
+  avatar: http://amphtml.files.wordpress.com/2017/09/sidebar.png
+  datedata: 2017-09-29T20:59:10-07:00
+  date: "September 29, 2017"
 
 - type: Blog
-  title: "AMP Roadmap Update for Q2"
-  id: ads-amp-roadmap-update-for-q2
-  author: Rudy Galfi
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/05/25/amp-roadmap-update-for-q2/amp/"
-  excerpt: "We’ve updated the AMP Roadmap with our new projects and progress on existing priorities. Specifically we are focusing on format, analytics and ads improvements. Highlights from these areas below. Format We’re doubling down on e-commerce, engagement, and developer tools this quarter, with big features in all three targeting completion by the end of June. amp-bind, [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-05-25T11:11:18-07:00
-  date: "May 25, 2017"
-
-- type: Blog
-  title: "Bringing the speed of AMP to search & display ads"
-  id: ads-bringing-the-speed-of-amp-to-search-display-ads
-  author: Jerry Dischler
-  role:  Vice President, Product Management
-  origin: "https://amphtml.wordpress.com/2017/05/23/bringing-the-speed-of-amp-to-search-display-ads/amp/"
-  excerpt: "The following was posted on Google&#8217;s Inside AdWords Blog by Jerry Dischler, Vice President, Product Management, Google. Succeeding on mobile starts with getting the basics right. People choose brands that meet their needs instantly and seamlessly. That means no matter how great your site looks, if it loads slowly, users will leave and you’ll miss [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-05-23T10:02:55-07:00
-  date: "May 23, 2017"
-
-- type: Blog
-  title: "Growing the AMP Ads Initiative"
-  id: ads-growing-the-amp-ads-initiative
-  author: Vamsee Jasti
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/05/18/growing-the-amp-ads-initiative/amp/"
-  excerpt: "We launched the AMP Ads Initiative last year with the ambitious goal of fixing ad experiences on the web by bringing the speed and performance of AMP to advertising. AMP Ads are faster, lighter and more secure — loading up to 5 seconds faster than regular ads on AMP pages — making them more viewable [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-05-18T09:12:34-07:00
-  date: "May 18, 2017"
-
-- type: Blog
-  title: "See AMP live at I/O 2017!"
-  id: ads-see-amp-live-at-io-2017
+  title: "Introducing the AMP Roadshow: Bringing the AMP team to you"
+  id: ads-introducing-the-amp-roadshow-bringing-the-amp-team-to-you
   author: pbakaus
   role: 
-  origin: "https://amphtml.wordpress.com/2017/05/16/see-amp-live-at-io-2017/amp/"
-  excerpt: "We’re just days away from the start of Google I/O 2017, Google’s annual developer conference. Join us live or on the live stream!"
-  avatar: http://0.gravatar.com/avatar/9fb120a88c85d93be416ed62b8ab5e16?s=96&d=identicon&r=G
-  datedata: 2017-05-15T17:39:53-07:00
-  date: "May 15, 2017"
+  origin: "https://amphtml.wordpress.com/2017/09/19/introducing-the-amp-roadshow-bringing-the-amp-team-to-you/amp/"
+  excerpt: "TL;DR: The AMP team is traveling around the world to bring the AMP Roadshow, a free one-day developer conference, to you. Register for a city near you. We’ve been hard at work these last few months at improving AMP’s web components and making AMP work for even more use-cases like e-commerce, and we’ve launched numerous [&#8230;]"
+  avatar: http://amphtml.files.wordpress.com/2017/09/screen-shot-2017-09-18-at-6-19-07-pm.png
+  datedata: 2017-09-18T18:29:04-07:00
+  date: "September 18, 2017"
+
+- type: Blog
+  title: "The Why and How of Accelerated Mobile Pages at Condé Nast"
+  id: ads-the-why-and-how-of-accelerated-mobile-pages-at-conde-nast
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2017/09/08/the-why-and-how-of-accelerated-mobile-pages-at-conde-nast/amp/"
+  excerpt: "Editor&#8217;s note: We found this awesome post on the Condé Nast Technology blog. Send feedback to @oscrperez and for more information about Condé Nast Technology, follow @CondeNastTech. Written by Oscar Perez, Condé Nast What is the Google led AMP Project? Accelerated Mobile Pages are a set of performance focused restrictions and limitations on HTML, CSS, and [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-09-08T06:57:02-07:00
+  date: "September 8, 2017"
+
+- type: Blog
+  title: "Faster AMP ad landing page support from AdWords"
+  id: ads-faster-amp-ad-landing-page-support-from-adwords
+  author: Vamsee Jasti
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/09/07/faster-amp-ad-landing-page-support-from-adwords/amp/"
+  excerpt: "Today, AdWords announced support for AMP page delivery from the Google AMP Cache. As a result, advertisers who use AMP pages as ad landing pages in Adwords can expect those landing pages to load near-instantly. This launch, along with all the other recently launched features in AMP like forms, dynamic content and robust analytics support, makes [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-09-07T14:12:49-07:00
+  date: "September 7, 2017"
+
+- type: Blog
+  title: "E-commerce at the speed of AMP"
+  id: ads-e-commerce-at-the-speed-of-amp
+  author: Lisa Wang
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/09/06/e-commerce-at-the-speed-of-amp/amp/"
+  excerpt: "Early results for e-commerce companies that are investing in Accelerated Mobile Pages (AMP) are showing that the format is paying off in terms of conversions, speed, bounce rates and mobile acquisition costs. Brazil-based Fastcommerce&#8217;s clients are seeing a 15% lift in conversions on mobile as compared to non-AMP pages across their 2M AMP pages&#160; WompMobile [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-09-06T06:21:14-07:00
+  date: "September 6, 2017"
