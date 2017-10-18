@@ -124,36 +124,6 @@ ${ body }
 
   });
 
-
-
-
-/*
-  var body = item.description
-    .replace(/\<[A-z]+\>Posted by([^\<]+)\<\/[A-z]+\>/, "")
-    // Replace spans that make text bold to <strong> tags
-    .replace(/<span style="font-weight:400;">(((?!<\/span>)[\s\S])*)<\/span>/g, "<strong>$1</strong>")
-    // Replace spans that add underlines to <u> tags
-    .replace(/<span style="text-decoration:underline;">(((?!<\/span>)[\s\S])*)<\/span>/g, "<u>$1</u>")
-    // Convert centered p's to <center> tags
-    .replace(/<p style="text-align:center;">(((?!<\/p>)[\s\S])*)<\/p>/g, "<center>$1</center>")
-    // Replace Wordpress-style images with their AMP equivalents (don't try this at home)
-    .replace(
-      /<img[^>]+data-orig-size="([\d]+),([\d]+)"[^>]+class="([^"]+)"[^>]+src="([^"]+)"[^>]+srcset="([^"]+)[^>]+sizes="([^"]+)"[^>]+\/>/g,
-      "<div class=\"wp-image $3\"><amp-img layout='responsive' width=\"$1\" height=\"$2\" src=\"$4\" srcset=\"$5\" sizes=\"$6\"></amp-img>"
-    )
-    // Replace Wordpress-style gifs with their AMP equivalents (don't try this at home)
-    .replace(
-      /<img[^>]+[^>]+class="([^"]+)"[^>]+src="([^"]+)"[^>]+width="([\d]+)"[^>]+height="([\d]+)"[^>]+\/>/g,
-      "<div class=\"wp-image $1\"><amp-img layout='fixed' width=\"$3\" height=\"$4\" src=\"$2\"></amp-img>"
-    )
-    // Replace other style tags we didn't catch and hope for the best..
-    .replace(/style="[^"]+"/g, "")
-    // Remove the tracking meta at the bottom of the page
-    .split('<a rel="nofollow"')[0];
-*/
-
-
-
 }
 
 /* Converts the provided RSS blog item into a consistent format. */
