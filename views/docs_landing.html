@@ -16,7 +16,7 @@
       <!-- Getting Started cards -->
       <section class="getting-started">
         <div class="container">
-          <h3>Get started with AMP</h3>
+          <h3>Getting started with AMP</h3>
           <div class="row">
             <div class="twelve columns">
               <amp-carousel class="tablet-up" loop controls
@@ -28,8 +28,8 @@
                 <a class="card centered" href="{{card.link}}">
                   <div class="card-inner">
                     <div class="card-content">
-                      <h4>{{card.name}}</h4>
-                      <p>{{_(card.desc)}}</p>
+                      <h4>{{card.name|safe}}</h4>
+                        <p>{{_(card.desc)}}</p>
                     </div>
                   </div>
                 </a>
@@ -57,7 +57,7 @@
                 <a class="card centered" href="{{card.link}}">
                   <div class="card-inner">
                     <div class="card-content">
-                      <h3>{{card.name}}</h3>
+                      <h3>{{card.name|safe}}</h3>
                       <p>{{(card.desc)}}</p>
                     </div>
                   </div>

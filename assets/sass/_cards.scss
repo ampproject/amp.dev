@@ -72,6 +72,15 @@
 .card-content {
   font-weight: 300;
   text-transform: none;
+
+  h4 {
+    hyphens: auto;
+  }
+
+  p {
+    line-height: 20px;
+    overflow: hidden;
+  }
 }
 
 .card-date {
