@@ -93,6 +93,8 @@ function addCMS() {
           link: https://atenea.marfeel.com/atn/product/marfeel-press/360-platform/google-amp/marfeel-s-accelerated-mobile-pages-google-amp-solution
         - title: Squarespace
           link: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
+        - title: Textpattern
+          link: https://textpattern.com/weblog/401/textpattern-website-redesign/amp
         - title: WordPress.com
           link: https://en.support.wordpress.com/google-amp-accelerated-mobile-pages/
         - title: WordPress.org
