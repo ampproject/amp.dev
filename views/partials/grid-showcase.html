@@ -6,8 +6,8 @@
     <div class="hero-image-left">
     {% else %}
     <div class="hero-image-right">
-    {% endif %} 
-      <a href="{{doc.site_url}}"><amp-img 
+    {% endif %}
+      <a href="{{doc.site_url}}"><amp-img
           noloading
           width="{{doc.hero.hero_img_width}}"
           height="{{doc.hero.hero_img_height}}"
@@ -26,17 +26,17 @@
       </div>
       <div class="card-description">
         <p class="headline">{{doc.headline}}</p>
-      </div> 
+      </div>
     {% if doc.features %}
     <div class="card-features">
       <h4>Features</h4>
       <ul>
       {% for feature in doc.features %}
-        <li><a href="/docs/reference/components/amp-{{feature}}.html">amp-{{feature}}</a></li>
+        <li>{{feature}}</li>
       {% endfor %}
       </ul>
     </div>
-    {% endif %}  
+    {% endif %}
       <div class="card-link">
         <a class="underlined cta" href="{{doc.site_url}}">{{_('See it in action')}}</a>
       </div>
