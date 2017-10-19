@@ -1,72 +1,78 @@
 blogs:
 
 - type: Blog
-  title: "Putting the AMP in Progressive Web AMPs: Meet the ShadowReader"
-  id: putting-the-amp-in-progressive-web-amps-meet-the-shadowreader
+  title: "Start fast with new AMP Start templates"
+  id: start-fast-with-new-amp-start-templates
   author: amphtml
   role: 
-  origin: "https://amphtml.wordpress.com/2017/07/20/putting-the-amp-in-progressive-web-amps-meet-the-shadowreader/amp/"
-  excerpt: "We’ve previously written plenty about combining AMP &#38; PWA, short for Progressive Web Apps. While the idea of preloading your PWA while the reader is reading your AMP page is fairly straightforward, the other combination pattern, where AMP is used as data-source to power your PWA, is less understood. In my recent Google I/O talk, [&#8230;]"
-  avatar: http://amphtml.files.wordpress.com/2017/07/featured.png
-  datedata: 2017-07-20T15:50:15-07:00
-  date: "July 20, 2017"
+  origin: "https://amphtml.wordpress.com/2017/10/13/start-fast-with-new-amp-start-templates/amp/"
+  excerpt: "Two of the core pillars of the Accelerated Mobile Pages (AMP) Project are speed and a great user experience on the web. That said, the AMP Project also cares about making the process of building webpages faster and easier. That’s why we created AMP Start, a library of fully-featured templates and common page elements built [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-10-13T13:01:07-07:00
+  date: "October 13, 2017"
 
 - type: Blog
-  title: "AMP Roadmap update for end of Q2"
-  id: amp-roadmap-update-for-end-of-q2
-  author: Vamsee Jasti
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/07/14/amp-roadmap-update-for-end-of-q2/amp/"
-  excerpt: "We’ve updated the AMP Roadmap to reflect progress on existing priorities as well as several new projects. You can see the highlights below: Format amp-bind, a flexible event binding system supporting more interactivity in AMP is now fully available in production. To find out more about the range of capabilities this feature brings to AMP, [&#8230;]"
+  title: "The Argument for AMP: Lessons from 10 Case Studies"
+  id: the-argument-for-amp-lessons-from-10-case-studies
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2017/10/09/the-argument-for-amp-lessons-from-10-case-studies/amp/"
+  excerpt: "Editor&#8217;s note: The following is an excerpt from an independent study done by Stone Temple, a digital marketing agency, posted with their permission. Read the full study here.  We conducted interviews of more than 10 companies that have invested heavily in AMP, to see if we could learn how hard it was to implement, the [&#8230;]"
   avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-07-14T16:49:34-07:00
-  date: "July 14, 2017"
+  datedata: 2017-10-09T13:14:24-07:00
+  date: "October 9, 2017"
 
 - type: Video
-  title: "What's Allowed in AMP and What Isn't?"
-  id: Gv8A4CktajQ
+  title: "Use AMP HTML with Your Existing Site"
+  id: OO9oKhs80aI
   author: The AMP Channel
   role: 
-  origin: "https://www.youtube.com/watch?v=Gv8A4CktajQ"
-  excerpt: "AMP HTML is a special flavor of HTML, and AMP keeps you on a fast path by not allowing you to shoot yourself in the foot. Here are the most important differences, limitations, and stuff you are not allowed to use in AMP.
+  origin: "https://www.youtube.com/watch?v=OO9oKhs80aI"
+  excerpt: "Starting AMP from scratch is great, but what if you already have an existing site? Learn how you can convert your site to AMP using AMP HTML.
+
+\"What's Allowed in AMP and What Isn't\": https://goo.gl/ugMhHc
+
+Tutorial on how to convert HTML to AMP: https://goo.gl/JwUVyG
+
+Reach out with your AMP related questions: https://goo.gl/UxCWfz
 
 
 
-Subscribe to the The AMP Project YouTube channel and never miss an Amplify episode: https://goo.gl/g2Y8h7"
-  thumbnail: "https://i4.ytimg.com/vi/Gv8A4CktajQ/hqdefault.jpg"
+Subscribe to the The AMP Channel and never miss an Amplify episode: https://goo.gl/g2Y8h7"
+  thumbnail: "https://i4.ytimg.com/vi/OO9oKhs80aI/hqdefault.jpg"
   avatar: 
-  datedata: 2017-07-13T15:00:23-07:00
-  date: "July 13, 2017"
+  datedata: 2017-10-05T14:41:29-07:00
+  date: "October 5, 2017"
 
 - type: Blog
-  title: "amp-bind brings flexible interactivity to AMP pages"
-  id: amp-bind-brings-flexible-interactivity-to-amp-pages
-  author: Eric Lindley
+  title: "New in AMP: Position observers, fluid ads and improved analytics for video & beyond"
+  id: new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond
+  author: Lisa Wang
   role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/07/12/amp-bind-brings-flexible-interactivity-to-amp-pages/amp/"
-  excerpt: "We invited developers to try out amp-bind in April to experiment with greater AMP page interactivity. Today we’d like to highlight that amp-bind is generally available and take a deeper dive into the feature, in order to give you a sense of just how much this expands AMP support—especially for e-commerce. What is amp-bind? We [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-07-12T12:02:25-07:00
-  date: "July 12, 2017"
+  origin: "https://amphtml.wordpress.com/2017/09/30/new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond/amp/"
+  excerpt: "We’re trying out something new in the place of our regular AMP Roadmap updates. This new “New in AMP” format focuses on actionable updates. We’re also continuing to update the AMP Roadmap to reflect progress, and we will keep a section in this post dedicated to talking about where we’re heading next. But now, on [&#8230;]"
+  avatar: http://amphtml.files.wordpress.com/2017/09/sidebar.png
+  datedata: 2017-09-29T20:59:10-07:00
+  date: "September 29, 2017"
 
 - type: Blog
-  title: "AMP Roadmap Update for Q2"
-  id: amp-roadmap-update-for-q2
-  author: Rudy Galfi
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/05/25/amp-roadmap-update-for-q2/amp/"
-  excerpt: "We’ve updated the AMP Roadmap with our new projects and progress on existing priorities. Specifically we are focusing on format, analytics and ads improvements. Highlights from these areas below. Format We’re doubling down on e-commerce, engagement, and developer tools this quarter, with big features in all three targeting completion by the end of June. amp-bind, [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-05-25T11:11:18-07:00
-  date: "May 25, 2017"
+  title: "Introducing the AMP Roadshow: Bringing the AMP team to you"
+  id: introducing-the-amp-roadshow-bringing-the-amp-team-to-you
+  author: pbakaus
+  role: 
+  origin: "https://amphtml.wordpress.com/2017/09/19/introducing-the-amp-roadshow-bringing-the-amp-team-to-you/amp/"
+  excerpt: "TL;DR: The AMP team is traveling around the world to bring the AMP Roadshow, a free one-day developer conference, to you. Register for a city near you. We’ve been hard at work these last few months at improving AMP’s web components and making AMP work for even more use-cases like e-commerce, and we’ve launched numerous [&#8230;]"
+  avatar: http://amphtml.files.wordpress.com/2017/09/screen-shot-2017-09-18-at-6-19-07-pm.png
+  datedata: 2017-09-18T18:29:04-07:00
+  date: "September 18, 2017"
 
 - type: Blog
-  title: "Bringing the speed of AMP to search & display ads"
-  id: bringing-the-speed-of-amp-to-search-display-ads
-  author: Jerry Dischler
-  role:  Vice President, Product Management
-  origin: "https://amphtml.wordpress.com/2017/05/23/bringing-the-speed-of-amp-to-search-display-ads/amp/"
-  excerpt: "The following was posted on Google&#8217;s Inside AdWords Blog by Jerry Dischler, Vice President, Product Management, Google. Succeeding on mobile starts with getting the basics right. People choose brands that meet their needs instantly and seamlessly. That means no matter how great your site looks, if it loads slowly, users will leave and you’ll miss [&#8230;]"
+  title: "The Why and How of Accelerated Mobile Pages at Condé Nast"
+  id: the-why-and-how-of-accelerated-mobile-pages-at-conde-nast
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2017/09/08/the-why-and-how-of-accelerated-mobile-pages-at-conde-nast/amp/"
+  excerpt: "Editor&#8217;s note: We found this awesome post on the Condé Nast Technology blog. Send feedback to @oscrperez and for more information about Condé Nast Technology, follow @CondeNastTech. Written by Oscar Perez, Condé Nast What is the Google led AMP Project? Accelerated Mobile Pages are a set of performance focused restrictions and limitations on HTML, CSS, and [&#8230;]"
   avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-05-23T10:02:55-07:00
-  date: "May 23, 2017"
+  datedata: 2017-09-08T06:57:02-07:00
+  date: "September 8, 2017"
