@@ -10,6 +10,14 @@
 .hero-image {
     display: inline-block;
     width: 30%;
+    background-image: url(/static/img/home/home_hero_phone.png);
+    background-size: cover;
+    background-position: right top;
+
+    amp-img {
+      outline: 1px solid red;
+      transform: rotate3d(0deg, 0deg, 0deg);
+    }
 }
 
 .headline {
