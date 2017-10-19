@@ -159,6 +159,12 @@ Type attribute value: `mediametrie`
 
 Adds support for Médiamétrie tracking pages. Requires defining *var* `serial`. Vars `level1` to `level4` are optional.  More information can be found at [mediametrie.com](http://www.mediametrie.com/).
 
+### mediarithmics
+
+Type attribute value: `mediarithmics`
+
+Adds support for mediarithmics. More information and configuration details can be found at [developer.mediarithmics.com](https://developer.mediarithmics.com/).
+
 ### mParticle
 
 Type attribute value: `mparticle`

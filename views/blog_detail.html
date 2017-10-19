@@ -14,6 +14,7 @@
 
         <div class="post-sheet">
           {% include "/views/partials/share.html" %}
+          {% if doc.author != "amphtml" %}
           <div class="author-meta small">
             <div class="author-avatar">
               <amp-img
@@ -26,6 +27,7 @@
             By <span class="author-name">{{ doc.author }}</span>
             <div class="author-role">{{ doc.role }}</div>
           </div>
+          {% endif %}
           <div class="post-content">
             {{doc.html|render|safe}}
           </div>

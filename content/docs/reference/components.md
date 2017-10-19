@@ -119,3 +119,4 @@ Here are the components grouped by category:
 | [`amp-social-share`](components/amp-social-share.html) | Displays a social share button. |
 | [`amp-twitter`](components/amp-twitter.html) | Displays a Twitter tweet. |
 | [`amp-vine`](components/amp-vine.html) | Displays a Vine simple embed. |
+| [`amp-vk`](components/amp-vk.html) | Embeds a [VK](https://vk.com/) post or poll widget. |
