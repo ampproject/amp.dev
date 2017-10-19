@@ -1,15 +1,15 @@
-.hero-image-right,
-.hero-image-left {
-  display: inline-block;
-  width: 30%;
-}
-.hero-image-left {
-  padding-right: 75px;
+.card:nth-child(even) .hero-image {
+    padding-left: 75px;
+    order: 2;
 }
 
-.hero-image-right {
-  padding-left: 75px;
-  order: 2;
+.card:nth-child(odd) .hero-image {
+    padding-right: 75px;
+}
+
+.hero-image {
+    display: inline-block;
+    width: 30%;
 }
 
 .headline {

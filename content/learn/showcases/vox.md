@@ -20,7 +20,6 @@ features:
   - Dynamic content
   - Video
   - Social sharing
-
 ---
 
 

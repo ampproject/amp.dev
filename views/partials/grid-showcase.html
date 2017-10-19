@@ -2,11 +2,7 @@
 
 <div class="card">
   <div class="card-inner">
-    {% if doc.order is divisibleby 2 %}
-    <div class="hero-image-left">
-    {% else %}
-    <div class="hero-image-right">
-    {% endif %}
+    <div class="hero-image">
       <a href="{{doc.site_url}}"><amp-img
           noloading
           width="{{doc.hero.hero_img_width}}"
