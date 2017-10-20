@@ -13,8 +13,8 @@ logo:
 
 hero:
   hero_img_base: /static/img/showcases/myntra.png
-  hero_img_width: 584
-  hero_img_height: 1128
+  hero_img_width: 1080
+  hero_img_height: 1920
 
 features:
     - Sorting & filtering

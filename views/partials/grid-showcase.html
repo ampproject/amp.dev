@@ -3,13 +3,37 @@
 <div class="card">
   <div class="card-inner">
     <div class="hero-image">
-      <a href="{{doc.site_url}}"><amp-img
-          noloading
-          width="{{doc.hero.hero_img_width}}"
-          height="{{doc.hero.hero_img_height}}"
-          layout=responsive
-          src="{{doc.hero.hero_img_base}}">
-      </amp-img></a>
+      <div class="hero-image-sizer"></div>
+      <a href="{{doc.site_url}}">
+        {% if doc.hero.hero_video_base %}
+        <amp-video autoplay loop
+          width="{{doc.hero.hero_video_width}}"
+          height="{{doc.hero.hero_video_height}}"
+          layout="responsive"
+          poster="{{doc.hero.hero_img_base}}"
+          src="{{doc.hero.hero_video_base}}">
+        </amp-video>
+        {% elif doc.hero.hero_iframe_base %}
+        <amp-iframe
+          width="{{doc.hero.hero_iframe_width}}"
+          height="{{doc.hero.hero_iframe_height}}"
+          sandbox="allow-scripts allow-same-origin"
+          layout="responsive"
+          src="{{doc.hero.hero_iframe_base}}">
+          <amp-img placeholder layout="fill"
+              src="{{doc.hero.hero_img_base}}"></amp-img>
+        </amp-iframe>
+
+        {% else %}
+        <amp-img
+            noloading
+            width="{{doc.hero.hero_img_width}}"
+            height="{{doc.hero.hero_img_height}}"
+            layout=responsive
+            src="{{doc.hero.hero_img_base}}">
+        </amp-img>
+        {% endif %}
+      </a>
     </div>
     <div class="card-inner-content">
       <div class="card-logo">

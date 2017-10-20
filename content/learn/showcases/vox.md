@@ -13,8 +13,11 @@ logo:
 
 hero:
   hero_img_base: /static/img/showcases/vox.png
-  hero_img_width: 584
-  hero_img_height: 1128
+  hero_img_width: 1080
+  hero_img_height: 1920
+  hero_video_base: /static/img/showcases/vox.mp4
+  hero_video_width: 412
+  hero_video_height: 732
 
 features:
   - Dynamic content
