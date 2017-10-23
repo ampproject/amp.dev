@@ -52,32 +52,45 @@ function fetchFeedAsync(options) {
   });
 }
 
+function getDependencies(content) {
+
+  var dependencies = content
+    // remove all sourcecode blocks to not match false positives
+    .replace(/\[sourcecode:?[^\]]*\](((?!\[\/sourcecode\])[\s\S])+)\[\/sourcecode\]/gm, '\n')
+    // remove inline code
+    .replace(/`[^`]+`/g, '')
+    // find all used amp tags in the page
+    .match(/<amp-((?!img[\/\s>])[^>\s]+)[^>]*>/g);
+
+  if (dependencies) {
+    return Array.from(new Set(dependencies.map(item => item.match(/<amp-((?!img[\/\s>])[^>\s]+)[^>]*>/)[1])));
+  }
+
+  return null;
+}
 
 function writeBlogPage(item, directory, parent) {
-  var body = item.description
-    .replace(/\<[A-z]+\>Posted by([^\<]+)\<\/[A-z]+\>/, "")
-    // Replace spans that make text bold to <strong> tags
-    .replace(/<span style="font-weight:400;">(((?!<\/span>)[\s\S])*)<\/span>/g, "<strong>$1</strong>")
-    // Replace spans that add underlines to <u> tags
-    .replace(/<span style="text-decoration:underline;">(((?!<\/span>)[\s\S])*)<\/span>/g, "<u>$1</u>")
-    // Convert centered p's to <center> tags
-    .replace(/<p style="text-align:center;">(((?!<\/p>)[\s\S])*)<\/p>/g, "<center>$1</center>")
-    // Replace Wordpress-style images with their AMP equivalents (don't try this at home)
-    .replace(
-      /<img[^>]+data-orig-size="([\d]+),([\d]+)"[^>]+class="([^"]+)"[^>]+src="([^"]+)"[^>]+srcset="([^"]+)[^>]+sizes="([^"]+)"[^>]+\/>/g,
-      "<div class=\"wp-image $3\"><amp-img layout='responsive' width=\"$1\" height=\"$2\" src=\"$4\" srcset=\"$5\" sizes=\"$6\"></amp-img>"
-    )
-    // Replace Wordpress-style gifs with their AMP equivalents (don't try this at home)
-    .replace(
-      /<img[^>]+[^>]+class="([^"]+)"[^>]+src="([^"]+)"[^>]+width="([\d]+)"[^>]+height="([\d]+)"[^>]+\/>/g,
-      "<div class=\"wp-image $1\"><amp-img layout='fixed' width=\"$3\" height=\"$4\" src=\"$2\"></amp-img>"
-    )
-    // Replace other style tags we didn't catch and hope for the best..
-    .replace(/style="[^"]+"/g, "")
-    // Remove the tracking meta at the bottom of the page
-    .split('<a rel="nofollow"')[0];
 
-  body = `---
+  return new Promise(function (resolve, reject) {
+
+    request(item.origin, function (error, response, body) {
+
+      // collect possible inline styles
+      var inlineStyles = body.match(/\/\* Inline styles \*\/([^\<]+)/);
+      inlineStyles = inlineStyles ? inlineStyles[1] : false;
+
+      // strip wrapping HTML from body copy
+      body = body.split('<div class="amp-wp-article-content">')[1].split('</article>')[0];
+
+      // remove extra footer
+      body = body.replace(/<footer[^>]+>[\s\S]+<\/footer>/, '');
+
+      // collect dependencies
+      var dependencies = getDependencies(body);
+      dependencies = dependencies ? '\n' + '  - ' + dependencies.join('\n  - ') : '';
+
+      // expand with front matter
+      body = `---
 class: post-blog post-detail
 type: Blog
 $title: "${ item.title }"
@@ -88,13 +101,14 @@ origin: "${ item.origin }"
 excerpt: "${ item.excerpt }"
 avatar: ${ item.avatar }
 date_data: ${ moment(item.date).format() }
-$date: ${ moment(item.date).format("MMMM D, YYYY") }
+$date: ${ moment(item.date).format('MMMM D, YYYY') }
 $parent: ${parent}
 $path: /latest/blog/{base}/
 $localization:
   path: /{locale}/latest/blog/{base}/
 components:
-  - social-share
+  - social-share${dependencies}
+inlineCSS: ${inlineStyles.trim()}
 ---
 
 <div class="amp-wp-article-content">
@@ -103,7 +117,13 @@ ${ body }
 
 `;
 
-  fs.writeFileSync(path.join(directory, `${item.id}.md`), body);
+      fs.writeFileSync(path.join(directory, `${item.id}.md`), body);
+
+      resolve();
+    });
+
+  });
+
 }
 
 /* Converts the provided RSS blog item into a consistent format. */
@@ -195,12 +215,16 @@ const fetchLatestContent = Promise.all([
   var videos = all[1];
 
   // write the posts into their own files
+  var promises = [];
   for (var post of posts) {
-    writeBlogPage(post, '../content/latest/blog/', '/content/latest/list-blog.html');
+    promises.push(writeBlogPage(post, '../content/latest/blog/', '/content/latest/list-blog.html'));
   }
 
-  // combine posts and videos, sort, and save into list-blog.yml
-  sortAndSave([].concat(posts, videos), '../content/includes/list-blog.yaml');
+  return Promise.all(promises).then(function () {
+    // combine posts and videos, sort, and save into list-blog.yml
+    sortAndSave([].concat(posts, videos), '../content/includes/list-blog.yaml');
+  });
+
 });
 
 

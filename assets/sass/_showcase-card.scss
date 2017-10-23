@@ -1,15 +1,56 @@
-.hero-image-right,
-.hero-image-left {
-  display: inline-block;
-  width: 30%;
-}
-.hero-image-left {
-  padding-right: 75px;
+.card-inner {
+  align-items: flex-start;
 }
 
-.hero-image-right {
-  padding-left: 75px;
+.hero-image {
+    display: inline-block;
+    width: 30%;
+    background-image: url(/static/img/skewed_phone_alt.png);
+    background-size: contain;
+    background-position: right top;
+    position: relative;
+
+    .hero-image-sizer {
+      padding-top: 197.5%;
+    }
+
+    a {
+      position: absolute;
+      top: 11.2%;
+      left: 7.9%;
+      width: 82.5%;
+      height: 100%;
+      transform-origin: top left;
+      transform: perspective(180vw) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
+
+      @include min-screen(1200px) {
+        transform: perspective(2300px) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
+      }
+    }
+
+}
+
+.card:nth-child(even) .hero-image {
+  background-image: url(/static/img/skewed_phone.png);
+  margin-left: 5vw;
   order: 2;
+
+  a {
+    top: 13%;
+    left: 18%;
+    width: 76.5%;
+
+    transform: perspective(190vw) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
+
+    @include min-screen(1200px) {
+      transform: perspective(2600px) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
+    }
+  }
+
+}
+
+.card:nth-child(odd) .hero-image {
+  margin-right: 5vw;
 }
 
 .headline {
@@ -94,14 +135,18 @@ h4 {
     display: inline-flex;
     flex-direction: column;
 
-    .hero-image-right ,
-    .hero-image-left  {
+    .hero-image  {
       padding: 0;
       margin: 0;
       width: 100%;
       order: 0;
 
+      a {
+        transform: perspective(580vw) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
+      }
+
     }
+
     .headline {
       max-width: none;
     }
@@ -110,6 +155,14 @@ h4 {
       text-align: center;
     }
   }
+
+  .card:nth-child(even) .hero-image {
+    order: 0;
+    a {
+      transform: perspective(690vw) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
+    }
+  }
+
 }
 
 @include max-screen($tablet-portrait-breakpoint) {
