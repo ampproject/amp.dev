@@ -28,7 +28,7 @@
                 <a class="card centered" href="{{card.link}}">
                   <div class="card-inner">
                     <div class="card-content">
-                      <h4>{{card.name}}</h4>
+                      <h4>{{card.name|safe}}</h4>
                       <p>{{_(card.desc)}}</p>
                     </div>
                   </div>
@@ -57,7 +57,7 @@
                 <a class="card centered" href="{{card.link}}">
                   <div class="card-inner">
                     <div class="card-content">
-                      <h3>{{card.name}}</h3>
+                      <h3>{{card.name|safe}}</h3>
                       <p>{{(card.desc)}}</p>
                     </div>
                   </div>
