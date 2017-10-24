@@ -145,8 +145,11 @@ h4 {
       a {
         transform: perspective(580vw) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
 
-        @include min-screen(368px) {
-          transform: perspective(285vw) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
+        @include min-screen(390px) {
+          transform: perspective(430vw) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
+        }
+        @include min-max-screen(575px, $tablet-portrait-breakpoint) {
+          transform: perspective(270vw) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
         }
       }
     }
@@ -164,7 +167,7 @@ h4 {
     order: 0;
     margin: 0 auto;
     a {
-      transform: perspective(690vw) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
+      transform: perspective(650vw) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
 
       @include min-screen(365px) {
         transform: perspective(450vw) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
