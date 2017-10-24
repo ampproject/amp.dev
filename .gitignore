@@ -7,6 +7,7 @@ node_modules
 
 build
 assets/css/*
+.depcache.json
 
 content/includes/who.yaml
 content/docs/contribute/governance.md
