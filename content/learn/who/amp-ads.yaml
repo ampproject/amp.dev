@@ -64,13 +64,13 @@ who:
   subtitle@: Join a growing ecosystem of publishers, advertisers and technology platforms serving faster, lighter and more effective ads.
   reasons:
     - title@: "Advertisers:<br>Drive campaign ROI"
-      paragraph@: "Boost campaign performance and drive engagement with ads that are 6x faster and 3x lighter. Build your creatives with <a href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md'>AMP HTML</a> or work with a technology provider that already supports AMP Ads."
+      paragraph@: "Boost campaign performance and drive engagement with ads that are 6x faster and 3x lighter. Build your creatives with <a href='https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md'>AMP HTML</a> or work with a technology provider that already supports AMP Ads."
       icon: amp-ads/1_outlined.svg
     - title@: "Publishers:<br>Keep audiences engaged"
       paragraph@: Deliver a fast and compelling ad experience that users appreciate and advertisers value. Ad servers and technology platforms like DoubleClick and Triplelift already allow you to traffic AMP Ads. Reach out to your account manager to get started.
       icon: amp-ads/2_outlined.svg
     - title@: "Technology Platforms:<br>Boost your business"
-      paragraph@: "Maximize your revenue and build for the future by offering your customers a fast, light and secure ad experience. <a href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md'>Join</a> the open source AMP Ads Initiative today."
+      paragraph@: "Maximize your revenue and build for the future by offering your customers a fast, light and secure ad experience. <a href='https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md'>Join</a> the open source AMP Ads Initiative today."
       icon: amp-ads/3_outlined.svg
 
 whoquote:
