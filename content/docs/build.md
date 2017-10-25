@@ -12,8 +12,8 @@ components:
   - youtube
 
 start_cards:
-  - name: Introduction to AMP
-    desc: Learn about AMP and its core components (AMP HTML, AMP JS, and AMP Cache).
+  - name: Introduc&shy;tion to AMP
+    desc: Learn about AMP and its core components.
     link: ../learn/overview/
 
   - name: How AMP works

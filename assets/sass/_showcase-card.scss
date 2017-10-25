@@ -133,7 +133,7 @@ h4 {
   text-transform: none;
 }
 
-@include max-screen($mobile-medium-breakpoint) {
+@include max-screen($tablet-portrait-breakpoint) {
 
   .card-inner {
     display: inline-flex;
@@ -143,12 +143,19 @@ h4 {
       padding: 0;
       margin: 0;
       width: 100%;
+      max-width: 287px;
       order: 0;
 
       a {
         transform: perspective(580vw) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
-      }
 
+        @include min-screen(390px) {
+          transform: perspective(430vw) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
+        }
+        @include min-max-screen(575px, $tablet-portrait-breakpoint) {
+          transform: perspective(270vw) rotateY(25.8deg) rotateZ(1.8deg) rotateX(14deg) scaleY(1.01);
+        }
+      }
     }
 
     .headline {
@@ -162,19 +169,21 @@ h4 {
 
   .card:nth-child(even) .hero-image {
     order: 0;
+    margin: 0 auto;
     a {
-      transform: perspective(690vw) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
+      transform: perspective(650vw) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
+
+      @include min-screen(365px) {
+        transform: perspective(450vw) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
+      }
+      @include min-max-screen(500px, $tablet-portrait-breakpoint) {
+        transform: perspective(320vw) rotateY(-26deg) rotateZ(-2.7deg) rotateX(17deg) scaleY(1.04);
+      }
     }
   }
 
-}
-
-@include max-screen($tablet-portrait-breakpoint) {
-
-  .hero-image-left {
-    padding-right: 40px;
-  }
-  .hero-image-right {
-    padding-left: 40px;
+  .card:nth-child(odd) .hero-image {
+    margin: 0 auto;
   }
 }
+
