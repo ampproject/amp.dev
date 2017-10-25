@@ -128,11 +128,12 @@
     }
   }
 
-  .tab {
+  div.tab {
     padding: 6px 20px;
 
     &::before {
       bottom: 0;
+      box-shadow: $header-shadow;
       content: '';
       left: -10px;
       opacity: 0;
