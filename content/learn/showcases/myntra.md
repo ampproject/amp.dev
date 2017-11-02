@@ -4,7 +4,7 @@ $title: Myntra
 $parent: /content/learn/showcases.html
 class: showcase post-detail
 site_url: https://www.myntra.com/amp/lipstick
-headline: Myntra built their product category pages with AMP, making use of capabilities like filtering, sorting and the sidebar menu.
+headline: Myntra built their product category pages with AMP, making use of capabilities like filtering, sorting and a sidebar menu.
 
 logo:
   src: "showcases/myntra-logo.png"
@@ -18,10 +18,6 @@ hero:
 
 features:
     - Sorting & filtering
-    - Sidebar menu
-    - Search
+    - Product search
+    - Linking to other AMP pages
 ---
-
-
-
-

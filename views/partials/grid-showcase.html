@@ -52,7 +52,7 @@
       <h4>Features</h4>
       <ul>
       {% for feature in doc.features %}
-        <li>{{feature}}</li>
+        <li>{{ feature|markdown|safe }}</li>
       {% endfor %}
       </ul>
     </div>
