@@ -27,7 +27,7 @@ Semakin banyak platform, vendor, dan partner mendukung Proyek AMP dengan menyedi
 <div class="who-container">
   <amp-accordion disable-session-states>
   {% for section in who.tech_companies.sections %}
-    <section id="{{section.title|slug}}" {% if loop.index == 1 %}expanded{% endif %}>
+    <section id="{{section.title|slug}}">
       <header class="accordion-header">
         <h4 class="accordion-title">{{_(section.title)}}</h4>
         {% if section.description %}<p>{{_(section.description)}}</p>{% endif %}

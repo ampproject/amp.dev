@@ -55,24 +55,38 @@ function addContentPlatforms() {
   newYaml += `
     - title@: Content Platforms
       section_items:
+        - title: Bing
+          link: https://www.bing.com
+        - title: Baidu
+          link: https://www.baidu.com
+        - title: Flipboard
+          link: https://flipboard.com
         - title: Google
           link: https://google.com
-        - title: Hatena
-          link: https://www.hatena.com/
-        - title: LinkedIn
-          link: https://www.linkedin.com/
-        - title: Medium
-          link: https://medium.com/
-        - title: Nuzzel
-          link: http://nuzzel.com/
-        - title: Pinterest
-          link: https://pinterest.com/
-        - title: Reddit
-          link: https://www.reddit.com/
-        - title: Twitter
-          link: https://twitter.com/
         - title: Ghost
-          link: https://ghost.org`;
+          link: https://ghost.org
+        - title: Hatena
+          link: https://www.hatena.com
+        - title: LinkedIn
+          link: https://www.linkedin.com
+        - title: Medium
+          link: https://medium.com
+        - title: Nuzzel
+          link: http://nuzzel.com
+        - title: Pinterest
+          link: https://pinterest.com
+        - title: Reddit
+          link: https://www.reddit.com
+        - title: Sogou
+          link: https://www.sogou.com
+        - title: Tencent qZone
+          link: https://qzone.qq.com
+        - title: Twitter
+          link: https://twitter.com
+        - title: Weibo
+          link: https://weibo.com
+        - title: Yahoo JP
+          link: https://www.yahoo.co.jp/`;
 }
 
 function addCMS() {
@@ -95,6 +109,8 @@ function addCMS() {
           link: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
         - title: Textpattern
           link: https://textpattern.com/weblog/401/textpattern-website-redesign/amp
+        - title: Tumblr
+          link: https://www.tumblr.com/about
         - title: WordPress.com
           link: https://en.support.wordpress.com/google-amp-accelerated-mobile-pages/
         - title: WordPress.org
@@ -105,6 +121,8 @@ function addVideo() {
   newYaml += `
     - title@: Audio/Video
       section_items:
+        - title: 3Q SN
+          link: https://www.3qsdn.com/
         - title: AOL O2
           link: http://on.aol.com/
         - title: Beachfront Reach
@@ -117,10 +135,18 @@ function addVideo() {
           link: http://www.dailymotion.com/
         - title: Gfycat
           link: https://gfycat.com/
+        - title: Hulu
+          link: https://www.hulu.com/
+        - title: Izlesene
+          link: https://www.izlesene.com/
         - title: JW Player
           link: https://www.jwplayer.com/
         - title: Kaltura
           link: https://corp.kaltura.com/
+        - title: nexxOMNIA
+          link: https://www.nexx.tv/
+        - title: Ooyala
+          link: https://www.ooyala.com/
         - title: Soundcloud
           link: https://soundcloud.com/
         - title: Springboard
