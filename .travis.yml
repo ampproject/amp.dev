@@ -10,7 +10,7 @@ cache:
   - $HOME/.cache/pip
   - /home/travis/.local/bin
 install:
-- pip install grow --user
+- pip install grow==0.3.9 --user $USER
 - npm install -g gulp
 - npm install -g firebase-tools
 - npm install
@@ -19,6 +19,7 @@ script:
 - 'if [ "${TRAVIS_BRANCH}" = "production" ]; then firebase use production; fi'
 - 'if [ "${TRAVIS_BRANCH}" = "master" ]; then firebase use staging; fi'
 - grow build
+- ls build
 after_success:
 - firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
 branches:
