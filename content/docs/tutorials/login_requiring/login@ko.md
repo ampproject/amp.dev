@@ -76,7 +76,7 @@ AMPByExample 서버가 로그인 페이지에서 POST 요청을 받고 로그인
 - 사용자가 로그인 버튼을 클릭하면 서버가 응답을 조정해야합니다.
 
 {% call callout('Tip', type='success') %}
-이 flow에 대한 더 상세한 설명은 [amp-access documentation](https://www.ampproject.org/docs/reference/components/amp-access#login-flow)에서 볼 수 있습니다.
+이 flow에 대한 더 상세한 설명은 [amp-access documentation](https://www.ampproject.org/ko/docs/reference/components/amp-access#login-flow)에서 볼 수 있습니다.
 {% endcall %}
 
 <div class="prev-next-buttons">
