@@ -23,7 +23,7 @@ JSON 응답 예제입니다:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-폼 컴포넌트는 단순히 [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) 템플릿을 이용한 페이지 내에 그 값을 표현합니다.
+폼 컴포넌트는 단순히 [amp-mustache](https://www.ampproject.org/ko/docs/reference/components/amp-mustache) 템플릿을 이용한 페이지 내에 그 값을 표현합니다.
 
 [sourcecode:html]
 <div submit-success>
