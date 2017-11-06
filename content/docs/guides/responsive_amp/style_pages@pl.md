@@ -112,10 +112,6 @@ Poniższe style nie są dozwolone na stronach AMP:
       <td data-th="Description">Korzystanie z tych właściwości nie jest dozwolone
       ze względów bezpieczeństwa.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">Niedozwolony z uwagi na problemy z szybkością.</td>
-    </tr>
   </tbody>
 </table>
 

@@ -159,6 +159,12 @@ Type attribute value: `mediametrie`
 
 Adds support for Médiamétrie tracking pages. Requires defining *var* `serial`. Vars `level1` to `level4` are optional.  More information can be found at [mediametrie.com](http://www.mediametrie.com/).
 
+### mediarithmics
+
+Type attribute value: `mediarithmics`
+
+Adds support for mediarithmics. More information and configuration details can be found at [developer.mediarithmics.com](https://developer.mediarithmics.com/).
+
 ### mParticle
 
 Type attribute value: `mparticle`
@@ -170,6 +176,12 @@ Adds support for mParticle. More details for adding mParticle support can be fou
 Type attribute value: `nielsen`
 
 Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
+
+### Nielsen Marketing Cloud
+
+Type attribute value: `nielsen-marketing-cloud`
+
+Adds support for Nielsen Marketing Cloud. More details can be found at [Nielsen Marketing Cloud](http://www.nielsen.com/us/en/solutions/capabilities/nielsen-marketing-cloud.html).
 
 ### OEWA
 

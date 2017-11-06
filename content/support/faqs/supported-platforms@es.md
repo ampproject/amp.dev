@@ -9,7 +9,7 @@ description: El proyecto Accelerated Mobile Pages (AMP) es una iniciativa de có
 cta:
   title: Próximo FAQ
   link_text: AMP Overview
-  link_url: /content/support/faqs/overview.md
+  link_url: /content/support/faqs/overview@es.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
@@ -27,7 +27,7 @@ Un número creciente de plataformas, proveedores y socios soportan el proyecto A
 <div class="who-container">
   <amp-accordion disable-session-states>
   {% for section in who.tech_companies.sections %}
-    <section id="{{section.title|slug}}" {% if loop.index == 1 %}expanded{% endif %}>
+    <section id="{{section.title|slug}}">
       <header class="accordion-header">
         <h4 class="accordion-title">{{_(section.title)}}</h4>
         {% if section.description %}<p>{{_(section.description)}}</p>{% endif %}

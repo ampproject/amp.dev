@@ -45,10 +45,6 @@ AMP 구성요소에는 기본 스타일이 제공되므로 반응형 페이지�
       <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
       <td data-th="Description"> 이러한 속성은 보안상의 이유로 허용되지 않습니다.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">성능상의 이유로 금지되었습니다.</td>
-    </tr>
   </tbody>
 </table>
 

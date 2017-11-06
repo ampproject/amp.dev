@@ -9,7 +9,7 @@ description: AMP (Accelerated Mobile Pages) 프로젝트는 게시자가 모바�
 cta:
   title: 다음 FAQ
   link_text: AMP 살펴보기
-  link_url: /content/support/faqs/overview.md
+  link_url: /content/support/faqs/overview@ko.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
@@ -27,7 +27,7 @@ AMP 프로젝트를 지원하는 플랫폼, 공급 업체 및 파트너가 증�
 <div class="who-container">
   <amp-accordion disable-session-states>
   {% for section in who.tech_companies.sections %}
-    <section id="{{section.title|slug}}" {% if loop.index == 1 %}expanded{% endif %}>
+    <section id="{{section.title|slug}}">
       <header class="accordion-header">
         <h4 class="accordion-title">{{_(section.title)}}</h4>
         {% if section.description %}<p>{{_(section.description)}}</p>{% endif %}

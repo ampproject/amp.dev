@@ -14,13 +14,13 @@ past:
 
 upcoming_events:
   - type: Event
-    title: AMP Roadshow Toronto
-    href: https://events.withgoogle.com/amp-roadshow-toronto/
+    title: AMP Roadshow Munich
+    href: https://events.withgoogle.com/amp-roadshow-munich/
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: August 30, 2017
-    event_time: 20170830/20170830
-    event_time_text: Aug 30
-    location: Toronto, Canada
+    date: November 7, 2017
+    event_time: 20171107/20171107
+    event_time_text: Nov 7
+    location: Munich, Germany
     participant: Developers
 
 

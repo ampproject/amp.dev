@@ -14,7 +14,7 @@ menu:
         collection: learn/who
       - href: /content/learn/case-studies.html
         copy@: "Case Studies"
-        collection: learn/case-studies
+        collection: learn/case-studies/category
   - href: /content/docs/build.md
     copy@: Docs
     collection: docs
