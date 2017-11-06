@@ -6,8 +6,7 @@ toc: true
 
 ---
 
-This guide is intended for app developers who want to integrate AMP pages into
-their app.
+This guide is intended for mobile and web app developers who want to integrate and link to AMP pages. For example, consider a mobile chat app that loads the AMP version of a shared URL to achieve a faster experience for users.
 
 [TOC]
 
