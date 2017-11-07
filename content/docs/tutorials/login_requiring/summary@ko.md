@@ -7,6 +7,6 @@ $order: 3
 
 자세한 내용은 다음 리소스를 참조하십시오:
 
-- [amp-access](https://www.ampproject.org/docs/reference/components/amp-access)
-- [amp-form](https://www.ampproject.org/docs/reference/components/amp-form)
+- [amp-access](https://www.ampproject.org/ko/docs/reference/components/amp-access)
+- [amp-form](https://www.ampproject.org/ko/docs/reference/components/amp-form)
 - ["댓글 영역" 예제](https://ampbyexample.com/samples_templates/comment_section/)
