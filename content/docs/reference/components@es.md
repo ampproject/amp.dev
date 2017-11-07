@@ -10,11 +10,11 @@ La librería de AMP HTML proporciona componentes que son clasificados así:
 
 Los complementos se clasifican en las siguientes categorías:
 
-- [Anuncios y analíticas](#anumcios-y-analíticas)
+- [Anuncios y analíticas](#anuncios-y-analíticas)
 - [Contenido dinámico](#contenido-dinámico)
 - [Diseño](#diseño)
 - [Contenido multimedia](#contenido-multimedia)
-- [Presentación](#Presentación)
+- [Presentación](#presentación)
 - [Redes sociales](#redes-sociales)
 
 ### Anuncios y Analíticas
