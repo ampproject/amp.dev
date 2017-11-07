@@ -1,0 +1,74 @@
+---
+$title: Cómo se almacenan las páginas de AMP en caché
+$order: 11
+$category: Deploy
+toc: true
+components:
+    - youtube
+
+---
+
+[TOC]
+
+En este documento, aprenderá sobre el papel de AMP Cache en el ecosistema de AMP y cómo se almacena en caché su página de AMP.
+
+## ¿Qué es el AMP Cache?
+Una memoria caché AMP es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
+
+1.  Sirve solo páginas válidas de AMP.
+2.  Permita que las páginas de AMP se carguen de manera eficiente y segura.
+3.  Realice optimizaciones de rendimiento beneficiosas para el usuario adicionales para el contenido.
+
+Obtenga más información acerca de los cachés de AMP en el video de YouTube a continuación, o en la publicación del blog [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456).
+
+{{ youtube('n8n7fj60lds', 480, 270, caption='Watch this video to learn why AMP Caches exist.') }}
+
+## ¿Qué cachés de AMP están disponibles?
+Actualmente, hay dos proveedores de AMP Cache:
+
+- [Google AMP Cache](https://developers.google.com/amp/cache/)
+- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+
+AMP es un ecosistema abierto y el Proyecto AMP fomenta activamente el desarrollo de más cachés de AMP. Para obtener más información sobre la creación de cachés de AMP, consulte las [Pautas de caché de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+
+## How do I choose an AMP Cache?
+
+As a publisher, you don't choose an AMP Cache, it's *actually the platform* that links to your content that chooses the AMP Cache (if any) to use. 
+
+This is an inversion of the typical model where content delivery is the responsibility of the publisher.  However, this model allows platforms to provide their users with predictable load performance and among other things allows them to ensure required security and privacy invariants during AMP’s pre-rendering phase. To learn about the strict guidelines for creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+
+## Can I opt out of caching?
+
+Caching is a core part of the AMP ecosystem. Publishing a valid AMP document automatically opts it into cache delivery.
+
+Should you desire not to have your document cached, one option is to remove the `amp` attribute from the HTML tag. This makes the document technically invalid AMP, while not impacting the functionality of the document.
+
+## Who requests cached AMP pages?
+
+Cached AMP pages are accessed by platforms (like Google Search, Google News, and Cloudflare) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source](https://www.ampproject.org/docs/guides/pwa-amp/amp-in-pwa)).
+
+<amp-img src="/static/img/docs/platforms_accessing_cache.png"
+         width="1054" height="356" layout="responsive"
+         alt="platforms and mobile apps access cached AMP pages">
+</amp-img>
+
+## How does my AMP page get cached?
+By using the AMP format, you are making your content available to be cached by AMP Caches. There are a few ways that your AMP page can end up in an AMP Cache:
+
+* **Platform discovery**:  Platforms discover your AMP content via the `<html ⚡>` or `<html amp>` tag and cache the content. For example, Google Search crawls content; for any identified and valid AMP pages, the content is added to the Google AMP Cache.
+
+* **Cache URL request**: Platforms can specifically request an AMP page by using the AMP Cache URL format.  The AMP Cache acts as a reverse proxy, therefore, when the platform accesses the page, it results in the page being cached automatically.
+    - Cloudflare AMP Cache URL example: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
+    - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+
+{% call callout('Note', type='note') %}
+Note: The AMP Cache URL is not a user-facing URL, that is, users wouldn't typically request content via those URLs.
+{% endcall %}
+
+* **Publisher addition**: Publishers can specifically add the AMP page to the AMP Cache.  This option is applicable only to the Google AMP Cache (see [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-ping)).
+
+## Additional resources
+
+* [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+* [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
+* [Cloudflare AMP Cache documentation](https://amp.cloudflare.com/)
