@@ -1,5 +1,5 @@
 ---
-$title: Cómo se almacenan las páginas de AMP en caché
+$title: Almacenar páginas AMP en caché
 $order: 11
 $category: Deploy
 toc: true
