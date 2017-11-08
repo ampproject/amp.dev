@@ -14,15 +14,32 @@ past:
 
 upcoming_events:
   - type: Event
-    title: AMP Roadshow Munich
-    href: https://events.withgoogle.com/amp-roadshow-munich/
+    title: AMP Roadshow Paris
+    href: https://events.withgoogle.com/amp-roadshow-paris/
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: November 7, 2017
-    event_time: 20171107/20171107
-    event_time_text: Nov 7
-    location: Munich, Germany
+    date: November 10, 2017
+    event_time: 20171110/20171110
+    event_time_text: Nov 10
+    location: Paris, France
     participant: Developers
-
+  - type: Event
+    title: AMP Roadshow Madrid
+    href: https://events.withgoogle.com/amp-roadshow-madrid/
+    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+    date: November 14, 2017
+    event_time: 20171114/20171114
+    event_time_text: Nov 14
+    location: Madrid, Spain
+    participant: Developers
+  - type: Event
+    title: AMP Roadshow London
+    href: https://events.withgoogle.com/amp-roadshow-london/
+    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+    date: November 16, 2017
+    event_time: 20171116/20171116
+    event_time_text: Nov 16
+    location: London, England
+    participant: Developers
 
 # past_events:
 #  - type: Event
