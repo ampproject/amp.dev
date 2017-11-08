@@ -33,9 +33,9 @@ start_cards:
     link: https://ampstart.com/
 
 video_cards:
-  - name: What's Allowed in AMP and What Isn't?
-    link: https://www.youtube.com/watch?v=Gv8A4CktajQ
-    videoid: Gv8A4CktajQ
+  - name: Use AMP HTML with Your Existing Site
+    link: https://www.youtube.com/watch?v=OO9oKhs80aI
+    videoid: OO9oKhs80aI
 
   - name: 5 Misconceptions About AMP Debunked!
     link: https://www.youtube.com/watch?v=q-JO22O1DQ0
