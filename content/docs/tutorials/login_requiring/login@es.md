@@ -1,13 +1,13 @@
 ---
-$title: Iniciar Sesión
+$title: Iniciar sesión
 $order: 0
 ---
 
-La primera vez que aterrizas en la página, puedes ver 2 comentarios y un botón de inicio de sesión.
+Supongamos que la primera vez que accedes a una página ves dos comentarios y un botón para iniciar sesión, tal como se muestra a continuación:
 
-<amp-img src="/static/img/login-button.png" alt="Botón de inicio de sesión" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.png" alt="Botón para iniciar sesión" height="290" width="300"></amp-img>
 
-Si busca el botón de inicio de sesión en el código, encontrará:
+Si buscas el botón en el código de la página, puedes ver que tiene el siguiente formato:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
@@ -16,7 +16,7 @@ Si busca el botón de inicio de sesión en el código, encontrará:
 </span>
 [/sourcecode]
 
-El comportamiento de los atributos relacionados con el `amp-access` depende de una configuración de toda la página para el `amp-access`, en nuestro caso, éste:
+El comportamiento de los atributos relacionados con el componente `amp-access` depende de cómo se haya configurado dicho componente a nivel de página. En este caso, se trata de la siguiente configuración:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -35,44 +35,45 @@ El comportamiento de los atributos relacionados con el `amp-access` depende de u
 </script>
 [/sourcecode]
 
-El punto final de autorización se implementa como parte de AMPByExample. Es responsabilidad del editor de la página proporcionar este punto final. En este caso de ejemplo, por simplicidad, implementamos lógica básica para que cuando se reciba esta solicitud, el servidor lea el valor de una cookie denominada `ABE_LOGGED_IN`. Si la cookie no está allí, devolveremos una respuesta JSON que contenga `loggedIn = false`. Como resultado, la primera vez que un usuario aterriza en la página, esta solicitud devolverá `loggedIn = false` y se mostrará el botón de inicio de sesión.
+El punto de acceso de autorización, que debe proporcionar el editor de la página, se implementa como parte de AMPByExample. Para simplificar, en este ejemplo hemos implementado una lógica sencilla para que el servidor, al recibir esta solicitud, lea el valor de una cookie denominada `ABE_LOGGED_IN`. Si esta cookie no está presente, devolvemos una respuesta JSON con `loggedIn = false`. En consecuencia, la primera vez que un usuario accede a la página, se devuelve `loggedIn = false`, por lo que se muestra el botón para iniciar sesión.
 
-Observando nuevamente el código HTML del botón, usando `on="tap:amp-access.login-sign-in"`, especificamos que una vez que el usuario toque en el botón, se debe usar la URL especificada en el JSON anterior:
+Si nos volvemos a fijar en el código HTML de dicho botón, podemos ver que se utiliza `on="tap:amp-access.login-sign-in"`. Con este fragmento de código indicamos que, cuando un usuario toque el botón, debe usarse la URL que hemos especificado en la respuesta JSON anterior:
 
 [sourcecode:json]
 {
-	"login": {
+    "login": {
     "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
   }
 }
 
 [/sourcecode]
 
-{% call callout('Note', type='success') %}
-Tenga en cuenta que es posible definir diferentes URL dentro del nodo de inicio de sesión, en este caso estamos definiendo `sign-in`, y más tarde definiremos el `sign-out`.
+{% call callout('Nota', type='success') %}
+En el nodo "login", se pueden añadir varias URL; en este caso, definimos una en `sign-in` y, más adelante, haremos lo mismo con `sign-out`.
 {% endcall %}
 
-La página de inicio de sesión es una página que no es AMP en la que rellenamos los valores de inicio de sesión y contraseña por motivos de simplicidad. Observe el uso de `returnURL` como tipo de entrada oculto, que se rellena por el servidor AMPByExample a través de plantillas de servidor. El servidor lee este valor de un parámetro llamado `return`, agregado automáticamente por la biblioteca AMP a la URL de inicio de sesión.
+La página de inicio de sesión es una página que no es AMP y en la que introducimos los valores de inicio de sesión y la contraseña para simplificar el proceso. Puedes observar que utilizamos el tipo de entrada oculta `returnURL`, que rellena el servidor AMPByExample usando plantillas de servidor. AMPByExample obtiene el valor de "returnURL" de un parámetro denominado `return`, que la biblioteca de AMP añade automáticamente a la URL indicada en "sign-in".
 
-En el ejemplo siguiente, el valor del parámetro `return` se agrega a la solicitud una vez que haga clic en el botón de inicio de sesión. Puede explorar este valor utilizando la consola de Chrome DevTools y navegando hasta la pestaña Network.
+En el ejemplo que se muestra a continuación, se añade el valor del parámetro `return` a la solicitud cuando se hace clic en el botón para iniciar sesión. Para explorar este valor, accede a la pestaña Network (Red) de la consola DevTools de Chrome.
 
-<amp-img src="/static/img/return-parameter.png" alt="Parámetro Return" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.png" alt="Parámetro return" height="150" width="600"></amp-img>
 
-Una vez que el servidor AMPByExample recibe la solicitud POST desde la página de inicio de sesión y el inicio de sesión y la contraseña son correctos, redirecciona la solicitud a la `returnURL` que mencionamos anteriormente y agrega el parámetro `#success=true`. El tiempo de ejecución AMP ahora puede autorizar la página y finalmente le permite agregar un comentario.
 
-Es importante entender lo que hace el tiempo de ejecución de AMP y lo que el servidor debe hacer, ya que la implementación del servidor es responsabilidad del editor de la página.
+Cuando el servidor AMPByExample recibe la solicitud POST de la página de inicio de sesión, si las credenciales son correctas, se redirige la solicitud a la URL de `returnURL` que hemos comentado anteriormente y se le añade el parámetro `#success=true`. Una vez hecho, el tiempo de ejecución de AMP puede finalmente autorizar la página, por lo que ya se puede añadir un comentario.
 
-Como repaso rápido:
+Es importante que sepas qué tareas desempeña el tiempo de ejecución de AMP y qué debería hacer el servidor, puesto que el editor de la página debe encargarse de implementar este último.
 
-- El tiempo de ejecución de AMP agrega automáticamente el parámetro de retorno a la solicitud de inicio de sesión especificada dentro del objeto de inicio de sesión JSON
-- El tiempo de ejecución de AMP cierra la página de inicio de sesión y redirige a la página especificada por el parámetro URL de retorno
-- El servidor debe orquestar la respuesta una vez que el usuario haga clic en el botón de inicio de sesión
+A grandes rasgos, las funciones de ambos elementos son las siguientes:
 
-{% call callout('Tip', type='success') %}
-Una explicación más detallada sobre este flujo también se puede encontrar en la documentación de [amp-access documentation](https://www.ampproject.org/docs/reference/components/amp-access#login-flow).
+- El tiempo de ejecución de AMP añade automáticamente el parámetro "return" a la solicitud "sign-in" indicada en el objeto JSON "login".
+- El tiempo de ejecución de AMP cierra la página de inicio de sesión y redirige a los usuarios a la página que se haya especificado en el parámetro "returnURL".
+- El servidor debe organizar la respuesta cuando el usuario haga clic en el botón para iniciar sesión.
+
+{% call callout('Consejo', type='success') %}
+Para obtener una explicación más detallada sobre este tema, consulta la [documentación de amp-access](https://www.ampproject.org/es/docs/reference/components/amp-access#login-flow).
 {% endcall %}
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/tutorials/login_requiring.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button next-button" href="/es/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-next">Siguiente</span></a>
 </div>
