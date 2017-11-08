@@ -48,6 +48,12 @@ Type attribute value: `afsanalytics`
 
 Adds support for AFS Analytics. Additionally, the `websiteid` and `server` variables must be specified. More details for adding AFS Analytics support can be found at [afsanalytics.com](https://www.afsanalytics.com/articles/developers/).
 
+### Alexa Internet
+
+Type attribute value: `alexametrics`
+
+Adds support for Alexa Certified Site Metrics. The `atrk_acct` and `domain` variables must be specified. More information can be found at [Alexa’s Certified Metrics FAQ](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
+
 ### AT Internet
 
 Type attribute value: `atinternet`
