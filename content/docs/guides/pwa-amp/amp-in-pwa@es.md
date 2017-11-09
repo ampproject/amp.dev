@@ -1,4 +1,4 @@
----
+----
 $title: Incruste y use AMP como fuente de datos
 $order: 1
 toc: true
