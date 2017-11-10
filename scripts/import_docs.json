@@ -24,6 +24,12 @@
         "to": "docs/reference/spec/amp-html-layout.md"
     },
     {
+        "title": "Actions and events in AMP",
+        "order": 8,
+        "from": "spec/amp-actions-and-events.md",
+        "to": "docs/reference/amp-actions-and-events.md"
+    },
+    {
         "title": "Debug AMP Cache issues",
         "order": 1,
         "from": "spec/amp-cache-debugging.md",
