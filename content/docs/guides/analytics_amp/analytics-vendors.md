@@ -183,6 +183,12 @@ Type attribute value: `nielsen`
 
 Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
+### New Relic
+
+Type attribute value: `newrelic`
+
+Adds support for New Relic Browser to measure AMP throughput and performance. Instructions to start capturing AMP performance data can be found on the New Relic AMP docs page at [docs.newrelic.com](https://docs.newrelic.com/docs/monitor-amp-pages-new-relic-browser).
+
 ### Nielsen Marketing Cloud
 
 Type attribute value: `nielsen-marketing-cloud`
