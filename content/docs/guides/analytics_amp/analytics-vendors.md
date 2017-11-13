@@ -187,7 +187,7 @@ Adds support for Nielsen DCR. Please contact your Nielsen representative to get 
 
 Type attribute value: `newrelic`
 
-Adds support for New Relic Browser to measure AMP throughput and performance. Instructions to start capturing AMP performance data can be found on the New Relic AMP docs page [docs.newrelic.com](https://docs.newrelic.com/docs/monitor-amp-pages-new-relic-browser).
+Adds support for New Relic Browser to measure AMP throughput and performance. Instructions to start capturing AMP performance data can be found on the New Relic AMP docs page at [docs.newrelic.com](https://docs.newrelic.com/docs/monitor-amp-pages-new-relic-browser).
 
 ### Nielsen Marketing Cloud
 
