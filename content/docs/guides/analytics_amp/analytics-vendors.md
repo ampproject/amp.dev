@@ -108,6 +108,12 @@ Type attribute value: `euleriananalytics`
 
 Adds support for Eulerian Technologies Analytics. Requires defining *var* `analyticsHost` with Eulerian delegated domain. More details can be found at [eulerian.wiki](https://eulerian.wiki).
 
+### Facebook Pixel
+
+Type attribute value: `facebookpixel`
+
+Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your amp-analytics configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+
 ### Gemius
 
 Type attribute value: `gemius`
