@@ -4,7 +4,7 @@ $title: Vox
 $parent: /content/learn/showcases.html
 class: showcase post-detail
 site_url: https://www.vox.com/platform/amp/science-and-health/2017/7/25/16019892/solar-eclipse-2017-interactive-map
-headline: VOX uses AMP for the majority of their content, including interactive data journalism pieces like this one which includes media-like GIFs and videos.
+headline: Online news publisher VOX uses AMP for the majority of their content, including interactive data journalism pieces like this one which includes media-like GIFs and videos.
 
 logo:
   src: "showcases/vox-logo.png"
@@ -12,15 +12,15 @@ logo:
   height: 60
 
 hero:
-  hero_img_base: /static/img/showcases/vox.png
-  hero_img_width: 1080
-  hero_img_height: 1920
+  hero_img_base: /static/img/showcases/vox-hero.png
+  hero_img_width: 412
+  hero_img_height: 732
   hero_video_base: /static/img/showcases/vox.mp4
   hero_video_width: 412
   hero_video_height: 732
 
 features:
-  - "Personalized content via [amp-iframe](/docs/reference/components/amp-iframe.html)"
+  - Content personalized to user location
   - Brand and design parity with canonical site
   - Social sharing & video
 ---
