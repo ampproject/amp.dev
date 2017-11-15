@@ -18,8 +18,9 @@ hero:
   hero_video_base: /static/img/showcases/spiegel.mp4
   hero_video_width: 412
   hero_video_height: 732
+  
 features:
-    - Built entirely with AMP
+    - Canonical AMP implementation
     - Responsive design across all form factors
     - Newsletter signup
     - "Monetization with [amp-ad](/docs/reference/components/amp-ad.html)"

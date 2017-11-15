@@ -8,8 +8,8 @@ headline: Myntra is one of India’s largest e-commerce companies. They built th
 
 logo:
   src: "showcases/myntra-logo.png"
-  width: 58
-  height: 42
+  width: 105
+  height: 70
 
 hero:
   hero_img_base: /static/img/showcases/myntra-hero.png
@@ -18,7 +18,6 @@ hero:
   hero_video_base: /static/img/showcases/myntra.mp4
   hero_video_width: 412
   hero_video_height: 732
-
 
 features:
     - Sorting & filtering functionality

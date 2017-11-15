@@ -20,7 +20,7 @@ hero:
   hero_video_height: 732
 
 features:
-    - Built entirely with AMP
+    - Canonical AMP implementation
     - "Recipe search utilizing the [amp-bind](/docs/reference/components/amp-bind.html) component"
     - "“Show more” recommended content with the [amp-form](/docs/reference/components/amp-form.html) component"
 ---

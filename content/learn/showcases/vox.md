@@ -7,7 +7,7 @@ site_url: https://www.vox.com/platform/amp/science-and-health/2017/7/25/16019892
 headline: Online news publisher VOX uses AMP for the majority of their content, including interactive data journalism pieces like this one which includes media-like GIFs and videos.
 
 logo:
-  src: "showcases/vox-logo.png"
+  src: "showcases/vox-logo.svg"
   width: 125
   height: 60
 
