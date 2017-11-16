@@ -87,6 +87,11 @@
         "type": 301
       },
       {
+        "source": "/showcase",
+        "destination": "/learn/showcases/",
+        "type": 301
+      },
+      {
         "source": "/who",
         "destination": "/learn/who/",
         "type": 301
