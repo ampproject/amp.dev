@@ -27,10 +27,10 @@ sections:
             - "[\"Hero\" mode for video players](https://github.com/ampproject/amphtml/issues/7510)"
             - "[\"Smart\" button sample using [**amp-bind**]](https://github.com/ampproject/amp-by-example/issues/575)"
             - "[Geo-variation support](https://github.com/ampproject/amphtml/issues/826)"
-            - "[Client-side sorting & filtering](https://github.com/ampproject/amphtml/issues/8691)"
             - "[Contextually-displayed headers](https://github.com/ampproject/amphtml/issues/8268)"
             3:
             - "[AMP Start configurator](https://github.com/ampproject/ampstart/issues/285)"
+            - "[Client-side sorting & filtering](https://github.com/ampproject/amphtml/issues/8691)"
             - "[Date picker](https://github.com/ampproject/amphtml/issues/6469)"
             4:
             - "[**amp-lightbox** improvements](https://github.com/ampproject/amphtml/issues/4152)"
