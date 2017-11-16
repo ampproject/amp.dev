@@ -4,7 +4,7 @@ $title: Spiegel Daily
 $parent: /content/learn/showcases.html
 class: showcase post-detail
 site_url: https://daily.spiegel.de/
-headline: Spiegel Daily is the daily product of the German news publisher, Spiegel Online. They built their entire site with AMP to capitalize on AMP’s speed and reliability across all devices. The site is fast, responsive, and retains their brand identity.
+headline: Spiegel Daily is an evening subscription newspaper from the German news publisher, Spiegel Online. They built their entire site with AMP to capitalize on AMP’s speed and reliability across all devices. The site is fast, responsive and retains their brand identity.
 
 logo:
   src: "showcases/spiegel-logo.svg"
