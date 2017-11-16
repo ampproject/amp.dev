@@ -1,2 +1,80 @@
 @import '../_config.scss';
 @import '../_mixins.scss';
+
+.amp-conf {
+
+  section.amp-conf-section {
+    padding: 0;
+
+    .wrapper {
+      margin: 0 auto;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    h2 {
+      font-size: 4em;
+      margin-bottom: 0em;
+    }
+
+    h3 {
+      color: #0379C4;
+      font-size: 26px;
+      font-weight: 300;
+      margin-bottom: 0.5em;
+    }
+
+    &.teaser {
+      margin-top: 80px;
+      text-align: center;
+      padding-bottom: 20px;
+
+      p {
+        padding-bottom: 2em;
+        
+        span {
+            font-weight: 400;
+        }
+      }
+    }
+
+    &.register {
+        padding-top: 5px;
+        text-align: center;
+      }
+
+    &.description {
+      background: $gradient-anglebold;
+      margin-top: 40px;
+      position: relative;
+
+      p {
+        background: #fff;
+        padding: 1em;
+        margin: 0 auto;
+        width: 80%;
+        max-width: 800px;
+        border-top: 5px solid #0379C4;
+        position: relative;
+        top: -40px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.31);
+        text-align: center;
+
+        span {
+            display: block;
+            text-align: left;
+        }
+      }
+    }
+
+    &.footer {
+    ul {
+      text-align: center;
+        li {
+          display: inline-block;
+          padding: 1em;
+        }
+      }
+    }
+  }
+}
