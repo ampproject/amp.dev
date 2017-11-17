@@ -4,7 +4,7 @@ $title: Tasty.co
 $parent: /content/learn/showcases.html
 class: showcase post-detail
 site_url: https://tasty.co/
-headline: Tasty.co is a food and recipe site, which is part of the Buzzfeed family. The site is built using AMP from the ground up, resulting in a fast user experience across devices, while maintaining the look and feel of Tasty’s content.  
+headline: Tasty.co is a food and recipe site, which is part of the BuzzFeed family. The site is built using AMP from the ground up, resulting in a fast user experience across devices, while maintaining the look and feel of Tasty’s content.  
 
 logo:
   src: "showcases/tasty-logo.svg"
