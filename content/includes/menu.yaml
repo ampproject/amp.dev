@@ -15,6 +15,8 @@ menu:
       - href: /content/learn/case-studies.html
         copy@: "Case Studies"
         collection: learn/case-studies/category
+      - href: /content/learn/showcases.html
+        copy@: "Showcase"
   - href: /content/docs/build.md
     copy@: Docs
     collection: docs
