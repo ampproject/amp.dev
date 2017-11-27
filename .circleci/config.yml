@@ -1,0 +1,54 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/fiber
+    docker:
+      - image: grow/base:latest
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - grow-cache-{{ .Branch }}-{{ checksum "package.json" }}
+
+      - run:
+        name: Install firebase tools
+        command: npm install -g firebase-tools
+
+      - run:
+          name: Grow Install
+          command: grow install
+
+      - save_cache:
+          key: grow-cache-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - $(npm config get prefix)/bin/firebase
+
+      - run:
+          name: Master Firebase
+          command: 'if [ "${TRAVIS_BRANCH}" = "master" ]; then firebase use staging; fi'
+
+      - run:
+          name: Production Firebase
+          command: 'if [ "${TRAVIS_BRANCH}" = "production" ]; then firebase use production; fi'
+
+      - run:
+          name: Grow Build
+          command: grow build
+
+      - run:
+          name: Deploy
+          command: firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      # - build:
+      #     filters:
+      #       branches:
+      #         only:
+      #         - production
+      #         - master
