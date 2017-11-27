@@ -10,6 +10,7 @@ cache:
   - $HOME/.cache/pip
   - /home/travis/.local/bin
 install:
+- pip install pyasn1
 - pip install grow==0.3.9 --user $USER
 - pip install pyasn1
 - npm install -g gulp
