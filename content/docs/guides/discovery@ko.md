@@ -1,7 +1,5 @@
 ---
 $title: 페이지를 더 발견할 수 있게 만들기
-$order: 4
-toc: true
 ---
 [TOC]
 

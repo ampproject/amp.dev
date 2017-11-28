@@ -1,7 +1,5 @@
 ---
 $title: 써드 파티 콘텐츠 가져오기
-$order: 3
-toc: true
 ---
 [TOC]
 

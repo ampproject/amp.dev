@@ -1,8 +1,5 @@
 ---
 $title: AMP ページを検証する
-$order: 0
-$category: Debug
-toc: true
 ---
 [TOC]
 

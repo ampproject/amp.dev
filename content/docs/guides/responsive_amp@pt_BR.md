@@ -1,10 +1,5 @@
 ---
 $title: Estilo e layout
-$order: 0
-$category: Develop
-toc: true
-components:
-- youtube
 ---
 [TOC]
 

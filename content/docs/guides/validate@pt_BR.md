@@ -1,8 +1,5 @@
 ---
 $title: Validar páginas AMP
-$order: 0
-$category: Debug
-toc: true
 ---
 [TOC]
 
