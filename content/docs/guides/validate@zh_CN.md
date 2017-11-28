@@ -1,8 +1,5 @@
 ---
 $title: 验证 AMP 网页
-$order: 0
-$category: Debug
-toc: true
 ---
 [TOC]
 

@@ -1,6 +1,5 @@
 ---
 $title: Créer des pages AMP responsives
-toc: true
 ---
 
 Dans le cas d'éléments AMP, c'est facile, il suffit de leur ajouter le code `layout=responsive`.

@@ -1,7 +1,5 @@
 ---
 $title: Melhorar o engajamento dos usuários
-$order: 9
-$category: Deploy
 ---
 
 Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as AMP.

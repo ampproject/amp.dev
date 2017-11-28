@@ -14,31 +14,31 @@ past:
 
 upcoming_events:
   - type: Event
-    title: AMP Roadshow Paris
-    href: https://events.withgoogle.com/amp-roadshow-paris/
-    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: November 10, 2017
-    event_time: 20171110/20171110
-    event_time_text: Nov 10
-    location: Paris, France
+    title: AMP Conf 2018
+    href: https://events.withgoogle.com/amp-conf-2018/registrations/new/
+    excerpt: "Join our yearly flagship conf to connect with the entire AMP team and ecosystem and learn about the latest and greatest. Learn more about AMP Conf <a href='/amp-conf'>here</a>."
+    date: February 13, 2018
+    event_time: 20180213/20180214
+    event_time_text: Feb 13/14
+    location: Amsterdam, Netherlands
     participant: Developers
   - type: Event
-    title: AMP Roadshow Madrid
-    href: https://events.withgoogle.com/amp-roadshow-madrid/
+    title: AMP Roadshow Shanghai
+    href: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
     date: November 14, 2017
-    event_time: 20171114/20171114
-    event_time_text: Nov 14
-    location: Madrid, Spain
+    event_time: 20171208/20171208
+    event_time_text: Dec 8
+    location: Shanghai, China
     participant: Developers
   - type: Event
-    title: AMP Roadshow London
-    href: https://events.withgoogle.com/amp-roadshow-london/
+    title: AMP Roadshow Beijing
+    href: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: November 16, 2017
-    event_time: 20171116/20171116
-    event_time_text: Nov 16
-    location: London, England
+    date: December 5, 2017
+    event_time: 20171205/20171205
+    event_time_text: Dec 5
+    location: Beijing, China
     participant: Developers
 
 # past_events:

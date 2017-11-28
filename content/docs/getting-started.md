@@ -1,11 +1,11 @@
 ---
-$title: Getting started
+$title: Quickstart
 $order: 0
 toc: true
 ---
 [TOC]
 
-This is a quick start guide to get you up and running with AMP.
+This is a quickstart guide to get you up and running with AMP.
 
 For more detailed instructions, visit the [Create your first AMP page](/docs/tutorials/create.html) tutorial.
 

@@ -1,7 +1,5 @@
 ---
 $title: Menyempurnakan Interaksi Pengguna
-$order: 9
-$category: Deploy
 ---
 
 Berikut adalah beberapa tips cepat untuk menyempurnakan interaksi pengguna dengan AMP.

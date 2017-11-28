@@ -1,9 +1,5 @@
 ---
 $title: AMP での広告の掲載
-$order: 8
-$category: Develop
-
-toc: true
 ---
 
 <div class="toc">

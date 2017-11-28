@@ -1,10 +1,5 @@
 ---
 $title: 样式和布局
-$order: 0
-$category: Develop
-toc: true
-components:
-- youtube
 ---
 [TOC]
 

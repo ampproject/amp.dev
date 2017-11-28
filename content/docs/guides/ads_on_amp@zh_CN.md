@@ -1,9 +1,5 @@
 ---
 $title: 在 AMP 上投放广告
-$order: 8
-$category: Develop
-
-toc: true
 ---
 <div class="toc">
 {% include "/views/partials/sub_nav.html" %}

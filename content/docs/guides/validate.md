@@ -1,6 +1,6 @@
 ---
 $title: Validate AMP pages
-$order: 0
+$order: 7
 $category: Debug
 toc: true
 components:
