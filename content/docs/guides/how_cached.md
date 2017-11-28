@@ -1,6 +1,6 @@
 ---
 $title: How AMP pages are cached
-$order: 11
+$order: 13
 $category: Deploy
 toc: true
 components:

@@ -1,6 +1,6 @@
 ---
 $title: Combine AMP with Progressive Web Apps
-$order: 9
+$order: 5
 $category: Develop
 toc: true
 components:

@@ -1,9 +1,5 @@
 ---
 $title: Como veicular anúncios em AMP
-$order: 8
-$category: Develop
-
-toc: true
 ---
 <div class="toc">
 {% include "/views/partials/sub_nav.html" %}

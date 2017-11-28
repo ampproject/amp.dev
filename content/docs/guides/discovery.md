@@ -1,6 +1,6 @@
 ---
 $title: Make your page discoverable
-$order: 1
+$order: 10
 $category: Deploy
 
 toc: true
