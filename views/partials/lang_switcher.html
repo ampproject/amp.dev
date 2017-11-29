@@ -1,9 +1,7 @@
 <div class="language desktop">
   <amp-accordion disable-session-states>
     <section>
-      <h6 class="current">
-        <a class="flag-{{ doc.locale }}"><span>{{ doc.locale.get_language_name() }}</span></a>
-      </h6>
+      <h6 class="current flag-{{ doc.locale }}"><span>{{ doc.locale.get_language_name() }}</span></h6>
       <div class="others">
         <div class="others-inner">
           {% for locale in doc.locales if not locale == doc.locale  %}
