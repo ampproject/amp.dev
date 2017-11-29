@@ -16,7 +16,7 @@ upcoming_events:
   - type: Event
     title: AMP Conf 2018
     href: https://events.withgoogle.com/amp-conf-2018/registrations/new/
-    excerpt: "Join our yearly flagship conf to connect with the entire AMP team and ecosystem and learn about the latest and greatest. Learn more about AMP Conf <a href='/amp-conf'>here</a>."
+    excerpt: "Join our yearly flagship conf to connect with the entire AMP team and ecosystem and learn about the latest and greatest. Learn more <a href='/amp-conf'>here</a>."
     date: February 13, 2018
     event_time: 20180213/20180214
     event_time_text: Feb 13/14
