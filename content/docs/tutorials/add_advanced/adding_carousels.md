@@ -1,6 +1,6 @@
 ---
 $title: Adding carousels
-$order: 2
+$order: 3
 toc: true
 ---
 

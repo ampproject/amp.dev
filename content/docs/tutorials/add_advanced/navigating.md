@@ -1,6 +1,6 @@
 ---
 $title: Navigating your site 
-$order: 4
+$order: 5
 toc: true
 ---
 
