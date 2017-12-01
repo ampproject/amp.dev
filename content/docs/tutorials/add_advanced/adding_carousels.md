@@ -60,7 +60,13 @@ You might have noticed that when the `amp-carousel` had the `carousel` type we u
 
 Image carousels are great but what if we want more complex content to appear in our carousel? Let’s try mixing things up a little by placing an ad, some text, and an image all in a single carousel. Can amp-carousel really handle such a mixture all at once? Absolutely!
 
-First, let’s **add** this style to your `<style amp-custom>` to ensure the `amp-fit-text` and `amp-carousel` components work together safely:
+First, include the amp-fit-text component by **adding** the following inside the `<head>` tag:
+
+```html
+<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+```
+
+Next, let’s **add** this style to your `<style amp-custom>` to ensure the `amp-fit-text` and `amp-carousel` components work together safely:
 
 ```css
 amp-fit-text {
