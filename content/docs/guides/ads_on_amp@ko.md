@@ -1,6 +1,5 @@
 ---
 $title: AMP에서 광고 제공하기
-$order: 8
 ---
 <div class="toc">
 {% include "/views/partials/sub_nav.html" %}

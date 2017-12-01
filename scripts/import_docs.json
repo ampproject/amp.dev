@@ -31,14 +31,14 @@
     },
     {
         "title": "Debug AMP Cache issues",
-        "order": 1,
+        "order": 8,
         "from": "spec/amp-cache-debugging.md",
         "to": "docs/guides/amp-cache-debugging.md",
         "category": "Debug"
     },
     {
         "title": "CORS in AMP",
-        "order": 10,
+        "order": 12,
         "from": "spec/amp-cors-requests.md",
         "to": "docs/guides/amp-cors-requests.md",
         "category": "Deploy"

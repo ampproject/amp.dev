@@ -1,11 +1,5 @@
 ---
 $title: Almacenar páginas AMP en caché
-$order: 11
-$category: Deploy
-toc: true
-components:
-    - youtube
-
 ---
 
 [TOC]

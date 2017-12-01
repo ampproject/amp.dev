@@ -1,8 +1,5 @@
 ---
 $title: 画像や動画を含める
-$order: 1
-$category: Develop
-toc: true
 ---
 
 [TOC]

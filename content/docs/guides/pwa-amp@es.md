@@ -1,10 +1,5 @@
 ---
 $title: Combina AMP con Aplicaciones Web Progresivas
-$order: 9
-$category: Develop
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 

@@ -1,6 +1,6 @@
 ---
 $title: Improve user engagement
-$order: 9
+$order: 11
 $category: Deploy
 ---
 Here are some quick tips to improve user engagement with AMP.

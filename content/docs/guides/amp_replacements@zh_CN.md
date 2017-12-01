@@ -1,9 +1,5 @@
 ---
 $title: 添加图片和视频
-$order: 1
-$category: Develop
-
-toc: true
 ---
 
 [TOC]

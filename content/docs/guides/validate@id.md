@@ -1,8 +1,5 @@
 ---
 $title: Memvalidasi Halaman AMP
-$order: 0
-$category: Debug
-toc: true
 ---
 [TOC]
 

@@ -1,6 +1,6 @@
 ---
 $title: Configure analytics
-$order: 0
+$order: 9
 $category: Deploy
 
 ---

@@ -1,10 +1,5 @@
 ---
 $title: Validar páginas de AMP
-$order: 0
-$category: Debug
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 

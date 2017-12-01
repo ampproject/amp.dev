@@ -21,7 +21,7 @@ menu:
     copy@: Docs
     collection: docs
     children:
-      - href: /content/docs/getting-started.md
+      - href: /content/docs/tutorials/create.md
         copy@: "Getting started"
       - href: /content/docs/tutorials/create.md
         copy@: "Tutorials"

@@ -1,10 +1,5 @@
 ---
 $title: 添加 iframe
-$order: 2
-$category: Develop 
-components:
-  - iframe
-toc: true
 ---
 [TOC]
 
