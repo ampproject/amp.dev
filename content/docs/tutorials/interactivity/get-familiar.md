@@ -41,7 +41,7 @@ AMP components offer additional functionality and UI components that add rich in
 - [`<amp-carousel>`](https://www.ampproject.org/docs/reference/components/amp-carousel.html): An image carousel that displays multiple views of the product.
 - [`<amp-mustache>`](https://www.ampproject.org/docs/reference/components/amp-mustache.html): A templating system for rendering server responses from amp-form.
 - [`<amp-form>`](https://www.ampproject.org/docs/reference/components/amp-form.html): Adds special functionality for `<form>` elements that are necessary for AMP pages.
-- [`<amp-selector>`](https://www.ampproject.org/docs/reference/components/amp-form.html): Offers a semantic way to select one or many elements of a group of elements. Can be used as an input source to amp-form.
+- [`<amp-selector>`](https://www.ampproject.org/docs/reference/components/amp-selector.html): Offers a semantic way to select one or many elements of a group of elements. Can be used as an input source to amp-form.
 
 ## Basic interactivity
 
