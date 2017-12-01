@@ -1,7 +1,5 @@
 ---
 $title: Navegando por su sitio
-$order: 4
-toc: true
 ---
 
 [TOC]

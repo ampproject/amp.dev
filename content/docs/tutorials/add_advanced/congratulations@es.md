@@ -1,6 +1,5 @@
 ---
 $title: ¡Felicitaciones!
-$order: 6
 ---
 
 Ha terminado el tutorial "Añadir características avanzadas de AMP" y ha explorado con éxito muchos componentes avanzados clave de AMP.
