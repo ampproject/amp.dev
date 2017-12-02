@@ -1,21 +1,21 @@
 ---
-$title: Empezando
+$title: 使用入门
 $order: 0
 toc: true
 ---
 [TOC]
 
-Esta es una guía de inicio rápido para ponerlo en marcha con AMP.
+这是一份快速入门指南，旨在帮助您快速上手使用 AMP。
 
-Para obtener instrucciones más detalladas, visite el tutorial [Crea tu primera página AMP](/es/docs/tutorials/create.html).
+如需了解更详细的说明，请访问[创建您的首个 AMP 网页](/zh_cn/docs/tutorials/create.html)教程。
 
 {% call callout('Use HTTPS', type='note') %}
 When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 {% endcall %}
 
-### Paso 1: Obtenga la plantilla HTML de AMP
+### 第 1 步：获取 AMP HTML 模板
 
-Este es el código HTML básico que necesitas para una página AMP:
+以下是 AMP 网页所需的基本 HTML：
 
 ```html
 <!doctype html>
@@ -23,34 +23,34 @@ Este es el código HTML básico que necesitas para una página AMP:
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Hola mundo AMP</title>
-    <link rel="canonical" href="hola-mundo.html">
+    <title>Hello AMP world</title>
+    <link rel="canonical" href="hello-world.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
-    <h1>¡Hola Mundo AMP!</h1>
+    <h1>Hello AMP World!</h1>
   </body>
 </html>
 ```
 
-{% call callout('Leer Más', type='read') %}
-Aprende más sobre el [markup requerido](/es/docs/reference/spec.html#required-markup) para páginas AMP.
+{% call callout('继续阅读', type='read') %}
+详细了解 AMP 网页[必需的标记](/zh_cn/docs/reference/spec.html#required-markup)。
 {% endcall %}
 
-### Paso 2: Agrega componentes a tu página
+### 第 2 步：向网页添加组件
 
-Construya su página AMP agregando componentes, como una imagen:
+请通过添加组件来构建 AMP 网页，例如添加图片组件：
 
 ```html
 <amp-img src="https://www.ampproject.org/examples/images/amp.jpg"
   width="900" height="508" layout="responsive"></amp-img>
 ```
 
-O bien, un video de YouTube:
+或添加 YouTube 视频组件：
 
 ```html
-<!-- este script es requerido para amp-youtube y debe ser agregado en la sección <head> de tu página AMP  -->
+<!-- this script is required for amp-youtube and must be in the <head> section  -->
 <script async custom-element="amp-youtube"
       src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
@@ -61,11 +61,11 @@ O bien, un video de YouTube:
     width="480" height="270"></amp-youtube>
 ```
 
-Y mucho más. Mira la lista completa de [componentes disponibles para AMP](/es/docs/reference/components.html).
+或添加其他所需组件。请参阅 [AMP 中的可用组件](/zh_cn/docs/reference/components.html)列表。
 
-### Paso 3: Estilo de los elementos
+### 第 3 步：设计元素样式
 
-Para darle estilo a tus elementos en una página AMP, agrega CSS directamente a una hoja de estilo denominada `<style amp-custom>` en el  `<head>` de tu página:
+要为 AMP 网页上的元素设计样式，请向文档的 `<head>` 中名为 `<style amp-custom>` 的内嵌样式表添加 CSS：
 
 ```html
 <style amp-custom>
@@ -78,23 +78,25 @@ Para darle estilo a tus elementos en una página AMP, agrega CSS directamente a 
 </style>
 ```
 
-{% call callout('Leer Más', type='read') %}
-Aprende más sobre el [CSS soportado](/es/docs/guides/responsive/style_pages.html) en páginas AMP.
+{% call callout('继续阅读', type='read') %}
+详细了解 AMP 网页[支持的 CSS](/zh_cn/docs/guides/responsive/style_pages.html)。
 {% endcall %}
 
-### Paso 4: Valida tu página AMP HTML
+### 第 4 步：验证 AMP HTML
 
-Asegúrate que tu página AMP tiene un AMP HTML válido verificando la misma a través del [Validador AMP](https://validator.ampproject.org/).
+请使用 [AMP 验证工具](https://validator.ampproject.org/)验证您的 AMP 网页，以确保您的网页是有效的 AMP HTML。
 
-Para otras herramientas de validación, lee las [páginas para validar AMP](/es/docs/guides/validate.html).
+要想了解您可以使用的其他验证工具，请参阅[验证 AMP 网页](/zh_cn/docs/guides/validate.html)。
 
-### Próximos pasos
+### 后续步骤
 
-Para sumergirte en lo básico sobre páginas AMPm visita el tutorial [Crea tu primera página AMP](/es/docs/tutorials/create.html).
+要想深入了解 AMP 网页的基本知识，请访问[创建您的首个 AMP 网页](/zh_cn/docs/tutorials/create.html)教程。
 
-Aquí tienes otros recursos que pueden ayudarte con tu experiencia:
+下面这些资源也有助于您打造出色的体验：
 
-* [Hacer que una página sea visible](/es/docs/guides/discovery.html)
-* [Agregar analytics a tu página](/es/docs/guides/analytics_amp.html)
-* [Mejora la fidelización del usuario](/es/docs/guides/engagement.html)
-* Ejemplos en [AMP BY Example](https://ampbyexample.com/)
+* [使您的网页可被轻松发现](/zh_cn/docs/guides/discovery.html)
+* [向您的网页添加分析工具](/zh_cn/docs/guides/analytics_amp.html)
+* [提高用户互动度](/zh_cn/docs/guides/engagement.html)
+* [AMP BY Example](https://ampbyexample.com/) 上的在线演示
+ 
+ 

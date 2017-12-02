@@ -10,6 +10,10 @@ toc: true
 더 자세한 설명은 [첫번째 AMP 페이지 만들기](/ko/docs/tutorials/create.html)
 튜토리얼을 살펴보시길 바랍니다.
 
+{% call callout('Use HTTPS', type='note') %}
+When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+{% endcall %}
+
 ### 1단계: AMP HTML 템플릿 가져오기
 
 아래는 AMP 페이지에서 필요한 기본 HTML입니다.
