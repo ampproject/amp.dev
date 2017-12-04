@@ -27,7 +27,7 @@ $title: 반응형 AMP 페이지 만들기
 
 ## 반응형 레이아웃 만들기
 
-반응형 디자인에서는 CSS [`@media`](https://developer.mozilla.org/docs/Web/CSS/@media) 쿼리를 사용하여 페이지의 콘텐츠를 변경하지 않고도 다양한 화면 크기에 맞게 웹페이지의 스타일을 조정할 수 있습니다.  AMP에서 동일한 CSS `@media` 쿼리를 계속 사용할 수 있습니다. 또한 요소의 `media` 속성을 지정하여 AMP 요소를 더욱 세밀하게 제어할 수 있습니다. 이 기능은 미디어 쿼리에 따라 요소를 표시하거나 숨겨야 할 때 특히 유용합니다. `media` 속성을 사용하는 예를 보려면 [이미지의 아트 디렉션 변경](#changing-the-art-direction-of-an-image) 섹션을 참조하세요.
+반응형 디자인에서는 CSS [`@media`](https://developer.mozilla.org/docs/Web/CSS/@media) 쿼리를 사용하여 페이지의 콘텐츠를 변경하지 않고도 다양한 화면 크기에 맞게 웹페이지의 스타일을 조정할 수 있습니다.  AMP에서 동일한 CSS `@media` 쿼리를 계속 사용할 수 있습니다. 또한 요소의 `media` 속성을 지정하여 AMP 요소를 더욱 세밀하게 제어할 수 있습니다. 이 기능은 미디어 쿼리에 따라 요소를 표시하거나 숨겨야 할 때 특히 유용합니다. `media` 속성을 사용하는 예를 보려면 [이미지의 아트 디렉션 변경](#이미지의-아트-디렉션-변경) 섹션을 참조하세요.
 
 각 요소의 크기를 화면에 맞게 조정하기가 까다로울 수 있습니다<sup><a href="#fn1" id="ref1">*</a></sup>.  그러나 AMP에서는 요소의 `width` 및 `height` 속성과 함께 `"layout=responsive"` 속성을 지정하여 간편하게 반응형 요소를 만들 수 있습니다. 요소에 `responsive` 레이아웃을 적용하면 요소는 컨테이너 요소의 너비에 맞춰 자동으로 크기를 조절하며, 높이는 요소의 `width` 및 `height`에 지정된 가로세로 비율에 따라 변경됩니다. 거의 모든 AMP 요소가 `responsive` 레이아웃을 지원합니다. 지원되는 레이아웃을 보려면 요소의 참조 문서를 확인하세요.
 
@@ -50,7 +50,7 @@ $title: 반응형 AMP 페이지 만들기
 ```
 
 {% call callout('읽어보기', type='read') %}
-AMP의 다양한 레이아웃을 자세히 알아보려면 [레이아웃 및 미디어 쿼리](/ko/docs/guides/responsive/control_layout.html#the-layout-attribute) 가이드를 참조하세요.
+AMP의 다양한 레이아웃을 자세히 알아보려면 [레이아웃 및 미디어 쿼리](/ko/docs/guides/responsive/control_layout.html#레이아웃-속성) 가이드를 참조하세요.
 {% endcall %}
 
 <a id="fn1"></a>
@@ -120,7 +120,7 @@ AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 
 - 469px 이하인 경우 `cat-small.jpg`(226x340px) 표시
 
 {% call callout('참고', type='note') %}
-변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?'](/ko/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)를 참조하세요.
+변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?'](/ko/docs/guides/responsive/control_layout.html#what-if-the-layout-속성이-지정되지-않은-경우-어떻게-하나요?)를 참조하세요.
 {% endcall %}
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
