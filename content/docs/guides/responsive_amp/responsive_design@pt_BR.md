@@ -27,7 +27,7 @@ Essas são as configurações comuns da janela de visualização que você usari
 
 ## Como criar um layout responsivo
 
-No design responsivo, você pode usar consultas de CSS [`@media`](https://developer.mozilla.org/docs/Web/CSS/@media) para definir o estilo da sua página da Web em várias dimensões de tela. É possível fazer isso sem alterar o conteúdo da página.  Em uma página AMP, você pode continuar usando essas mesmas consultas de CSS `@media`. Além disso, para um controle mais preciso sobre o elemento da página AMP, especifique nele o atributo `media`. Isso será muito útil caso você precise mostrar ou ocultar um elemento com base em uma consulta de mídia. Consulte a seção [Como alterar a direção de arte de uma imagem](#changing-the-art-direction-of-an-image) para ver um exemplo que usa o atributo `media`.
+No design responsivo, você pode usar consultas de CSS [`@media`](https://developer.mozilla.org/docs/Web/CSS/@media) para definir o estilo da sua página da Web em várias dimensões de tela. É possível fazer isso sem alterar o conteúdo da página.  Em uma página AMP, você pode continuar usando essas mesmas consultas de CSS `@media`. Além disso, para um controle mais preciso sobre o elemento da página AMP, especifique nele o atributo `media`. Isso será muito útil caso você precise mostrar ou ocultar um elemento com base em uma consulta de mídia. Consulte a seção [Como alterar a direção de arte de uma imagem](#como-alterar-a-direção-de-arte-de-uma-imagem) para ver um exemplo que usa o atributo `media`.
 
 Redimensionar cada elemento para que ele se ajuste à tela pode ser uma tarefa complicada<sup><a href="#fn1" id="ref1">*</a></sup>.  No entanto, é fácil criar um elemento responsivo usando AMP. Basta você especificar o atributo `"layout=responsive"` junto com os atributos `width` e `height` do elemento. Quando você aplicar o layout `responsive`, o elemento a que ele é aplicado será redimensionado automaticamente à largura do elemento de contêiner. A altura será alterada com base na proporção especificada pelos atributos `width` e `height` do elemento. Quase todos os elementos da página AMP são compatíveis com o layout `responsive`. Consulte a documentação de referência do elemento para ver a compatibilidade dos layouts.
 
@@ -50,7 +50,7 @@ No entanto, queremos que a imagem não se expanda além do tamanho pretendido. P
 ```
 
 {% call callout('Leia mais', type='read') %}
-Para saber mais sobre os diferentes layouts em AMP, consulte o guia [Consultas de mídia e layout](/pt_br/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Para saber mais sobre os diferentes layouts em AMP, consulte o guia [Consultas de mídia e layout](/pt_br/docs/guides/responsive/control_layout.html##atributo-de-layout).
 {% endcall %}
 
 <a id="fn1"></a>
@@ -120,7 +120,7 @@ No exemplo a seguir, você verá três diferentes imagens de um gato cortadas qu
 - 469 pixels ou menos, será exibida `cat-small.jpg` (226 x 340 pixels).
 
 {% call callout('Observação', type='note') %}
-Como queríamos que as imagens tivessem tamanhos fixos (ou seja, sem distorções), não foi especificado um valor de layout. Por padrão, ele é definido como `layout=fixed` porque foram configuradas a altura e a largura. Para mais informações, consulte ["E se o atributo de layout não for especificado?"](/pt_br/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
+Como queríamos que as imagens tivessem tamanhos fixos (ou seja, sem distorções), não foi especificado um valor de layout. Por padrão, ele é definido como `layout=fixed` porque foram configuradas a altura e a largura. Para mais informações, consulte ["E se o atributo de layout não for especificado?"](/pt_br/docs/guides/responsive/control_layout.html##o-que-acontece-se-o-atributo-layout-não-estiver-especificado?).
 {% endcall %}
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Mostrar mais">Mostrar código completo</div><div placeholder></div></amp-iframe></div>
