@@ -1,6 +1,5 @@
 ---
 $title: 貴社のテクノロジーに AMP を統合する
-$order: 1
 ---
 
 サイト運営者の間では、すでに 14 億以上の AMP ドキュメントが作成され、75 万以上の固有ドメインでホストされています。このような成長は、すでに AMP を統合している 100 社以上のサードパーティ テクノロジー企業からの力強い支援がなければ不可能でした。
@@ -13,7 +12,7 @@ AMP を統合するには主に 4 つの方法があります。
 ## 1. amp-analytics 拡張機能のサポートを追加する
 AMP アナリティクスを使用すると、貴社で設定したトリガーに基づいてサーバーにイベントを返送することができます。使用を開始する際は、[アナリティクス統合ガイド](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)をご覧ください。
 
-動的パラメータを含むトラッキング ピクセルをトラッキング URL に追加する必要がある場合は、[amp-pixel](/ja/docs/reference/components/amp-pixel) をご確認ください。貴社のテクノロジーと AMP を併用したいデベロッパーに向けて、サポートページに使用方法を掲載するようおすすめします。
+動的パラメータを含むトラッキング ピクセルをトラッキング URL に追加する必要がある場合は、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) をご確認ください。貴社のテクノロジーと AMP を併用したいデベロッパーに向けて、サポートページに使用方法を掲載するようおすすめします。
 
 20 社以上のアナリティクス プロバイダが amp-analytics のサポートを導入しています。アナリティクス プロバイダ [Parse.ly](https://www.parsely.com/help/integration/google-amp/) による[プルリクエストの例](https://github.com/ampproject/amphtml/pull/1595)をご覧ください。
 
@@ -26,9 +25,9 @@ amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信する
 
 ## 3. amp-call-tracking 拡張機能を使用する
 
-コール トラッキング測定サービスを提供している場合は、貴社のユースケースに新しい [amp-call-tracking](https://github.com/ampproject/amphtml/blob/master/extensions/amp-call-tracking/amp-call-tracking.md) 拡張機能を活用できる可能性があります。この拡張機能は、数値を置換する CORS リクエストを実行することで、ハイパーリンク内の電話番号を動的に置換し、コール トラッキングを実現します。
+コール トラッキング測定サービスを提供している場合は、貴社のユースケースに新しい [amp-call-tracking](/ja/docs/reference/components/amp-call-tracking.html) 拡張機能を活用できる可能性があります。この拡張機能は、数値を置換する CORS リクエストを実行することで、ハイパーリンク内の電話番号を動的に置換し、コール トラッキングを実現します。
 
-この拡張機能の利用方法について詳しくは、[AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) にアクセスするか、[ドキュメント](/ja/docs/reference/components/amp-call-tracking)をご覧ください。
+この拡張機能の利用方法について詳しくは、[AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) にアクセスするか、[ドキュメント](/ja/docs/reference/components/amp-call-tracking.html)をご覧ください。
 
 ## 4. 新しい拡張機能や埋め込みを追加する
 
@@ -50,7 +49,7 @@ amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信する
 
 - [AMP プロジェクト サイト](https://www.ampproject.org/)
 - [AMP GitHub プロジェクト](https://github.com/ampproject/amphtml)
-- [AMP ブログ](https://amphtml.wordpress.com/)
+- [AMP ブログ](/ja/latest/blog)
 - [AMP プロジェクトのロードマップ](https://www.ampproject.org/roadmap/)
  
  
