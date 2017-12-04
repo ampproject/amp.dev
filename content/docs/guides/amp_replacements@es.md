@@ -1,8 +1,5 @@
 ---
 $title: Incluir imágenes y videos
-$order: 1
-$category: Develop
-toc: true
 ---
 [TOC]
 

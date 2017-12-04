@@ -15,11 +15,13 @@ menu:
       - href: /content/learn/case-studies.html
         copy@: "Case Studies"
         collection: learn/case-studies/category
+      - href: /content/learn/showcases.html
+        copy@: "Showcase"
   - href: /content/docs/build.md
     copy@: Docs
     collection: docs
     children:
-      - href: /content/docs/getting-started.md
+      - href: /content/docs/tutorials/create.md
         copy@: "Getting started"
       - href: /content/docs/tutorials/create.md
         copy@: "Tutorials"

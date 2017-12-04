@@ -1,7 +1,5 @@
 ---
 $title: 提高用户互动度
-$order: 9
-$category: Deploy
 ---
 
 下面是通过 AMP 提高用户互动度的几条小提示。

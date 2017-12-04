@@ -25,6 +25,21 @@
     }
   }
 
+  h6 {
+    color: $color-black-95;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
+    text-transform: uppercase;
+
+    span {
+      padding-right: 6px;
+    }
+  }
+
   .current {
     font-size: 1em;
     margin-right: 100px;

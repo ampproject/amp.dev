@@ -1,10 +1,5 @@
 ---
 $title: iframe の追加
-$order: 2
-$category: Develop
-components:
-- iframe
-toc: true
 ---
 [TOC]
 

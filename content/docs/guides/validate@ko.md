@@ -1,8 +1,5 @@
 ---
 $title: AMP 페이지 유효성 검사
-$order: 0
-$category: Debug
-toc: true
 ---
 [TOC]
 

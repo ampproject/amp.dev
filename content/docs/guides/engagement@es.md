@@ -1,7 +1,5 @@
 ---
 $title: Mejora la fidelización del usuario
-$order: 9
-$category: Deploy
 ---
 Aquí hay algunos consejos rápidos para mejorar la fidelización del usuario con AMP.
 

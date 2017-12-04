@@ -48,6 +48,12 @@ Type attribute value: `afsanalytics`
 
 Adds support for AFS Analytics. Additionally, the `websiteid` and `server` variables must be specified. More details for adding AFS Analytics support can be found at [afsanalytics.com](https://www.afsanalytics.com/articles/developers/).
 
+### Alexa Internet
+
+Type attribute value: `alexametrics`
+
+Adds support for Alexa Certified Site Metrics. The `atrk_acct` and `domain` variables must be specified. More information can be found at [Alexa’s Certified Metrics FAQ](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
+
 ### AT Internet
 
 Type attribute value: `atinternet`
@@ -101,6 +107,12 @@ Adds support for Dynatrace real user monitoring. Requires defining *var* `app` w
 Type attribute value: `euleriananalytics`
 
 Adds support for Eulerian Technologies Analytics. Requires defining *var* `analyticsHost` with Eulerian delegated domain. More details can be found at [eulerian.wiki](https://eulerian.wiki).
+
+### Facebook Pixel
+
+Type attribute value: `facebookpixel`
+
+Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your amp-analytics configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius
 
@@ -176,6 +188,12 @@ Adds support for mParticle. More details for adding mParticle support can be fou
 Type attribute value: `nielsen`
 
 Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
+
+### New Relic
+
+Type attribute value: `newrelic`
+
+Adds support for New Relic Browser to measure AMP throughput and performance. Instructions to start capturing AMP performance data can be found on the New Relic AMP docs page at [docs.newrelic.com](https://docs.newrelic.com/docs/monitor-amp-pages-new-relic-browser).
 
 ### Nielsen Marketing Cloud
 

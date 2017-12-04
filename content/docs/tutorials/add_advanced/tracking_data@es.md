@@ -1,6 +1,5 @@
 ---
 $title: Seguimiento del compromiso con analíticas
-$order: 3
 ---
 
 Las plataformas de Google Analytics se integran comúnmente en sitios web a través de fragmentos JavaScript en línea y llamadas de función, que activan eventos que se envían al sistema analítico. AMP proporciona una sintaxis de configuración flexible de JSON para replicar este proceso para varios partners de análisis.

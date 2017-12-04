@@ -31,6 +31,14 @@
     font-size: 40px;
     text-transform: none;
     font-weight: 200;
+    
+    }
+
+    a:lang(it),
+    a:lang(de),
+     {
+      letter-spacing: -3px;
+      margin-left: -10px;
     }
   }
 

@@ -1,9 +1,5 @@
 ---
 $title: Menyertakan Gambar & Video
-$order: 1
-$category: Develop
-
-toc: true
 ---
 
 [TOC]
