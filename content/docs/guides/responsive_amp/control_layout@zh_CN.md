@@ -1,7 +1,5 @@
 ---
 $title: 布局和媒体查询
-$order: 1
-toc: true
 ---
 
 [TOC]

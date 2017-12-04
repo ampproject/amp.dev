@@ -1,7 +1,5 @@
 ---
 $title: Empezando
-$order: 0
-toc: true
 ---
 [TOC]
 

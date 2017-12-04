@@ -1,7 +1,5 @@
 ---
 $title: Kueri Tata Letak & Media
-$order: 1
-toc: true
 ---
 
 [TOC]

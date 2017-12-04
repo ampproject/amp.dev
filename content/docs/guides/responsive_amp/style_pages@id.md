@@ -1,7 +1,5 @@
 ---
 $title: CSS yang didukung
-$order: 0
-toc: true
 ---
 [TOC]
 

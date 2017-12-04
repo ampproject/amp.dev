@@ -1,7 +1,5 @@
 ---
 $title: Agregar fuentes personalizadas
-$order: 6
-toc: true
 ---
 [TOC]
 
