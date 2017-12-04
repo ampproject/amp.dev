@@ -1,7 +1,5 @@
 ---
 $title: Menyematkan & menggunakan AMP sebagai sumber data
-$order: 1
-toc: true
 ---
 [TOC]
 
