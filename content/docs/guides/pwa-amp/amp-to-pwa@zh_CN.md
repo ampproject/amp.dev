@@ -16,7 +16,7 @@ $title: 通过 AMP 网页预加载渐进式网页应用
 
 ### 使用 AMP 进行初始用户获取
 
-AMP 是所谓的**叶级页**的理想解决方案；叶级页是指用户通过某个搜索引擎、朋友提供的某个共享链接或另一网站上的某个链接而自然发现的内容页。由于 AMP 具有[专门的预呈现功能](/zh_cn/learn/about-how/)，因此 AMP 网页的加载速度极快，这便意味着流失率会大幅降低（最新的 [DoubleClick 研究](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)表明，**在所有用户中，有超过 53% 的用户会在 3 秒钟后流失）。
+AMP 是所谓的**叶级页**的理想解决方案；叶级页是指用户通过某个搜索引擎、朋友提供的某个共享链接或另一网站上的某个链接而自然发现的内容页。由于 AMP 具有[专门的预呈现功能](/zh_cn/learn/about-how/)，因此 AMP 网页的加载速度极快，这便意味着流失率会大幅降低（最新的 [DoubleClick 研究](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)表明，**在所有用户中，有超过 53% 的用户会在 3 秒钟后流失）**。
 
 ### 使用 PWA 提升互动性和参与度
 
