@@ -1,7 +1,5 @@
 ---
 $title: Memuat Progressive Web App di awal dari halaman AMP
-$order: 1
-toc: true
 ---
 [TOC]
 
@@ -78,7 +76,7 @@ Tips: Terdapat cara yang lebih mudah untuk menangani Service Worker. Lihat [libr
 
 ## Membuat semua link di Halaman AMP menuju ke PWA
 
-Sebagian besar link di halaman AMP Anda kemungkinan mengarah ke lebih banyak halaman konten. Ada 2 strategi untuk memastikan bahwa klik link berikutnya akan menghasilkan "upgrade" ke Progressive Web App, [bergantung pada cara Anda menggunakan AMP](/id/docs/guides/deploy/discovery):
+Sebagian besar link di halaman AMP Anda kemungkinan mengarah ke lebih banyak halaman konten. Ada 2 strategi untuk memastikan bahwa klik link berikutnya akan menghasilkan "upgrade" ke Progressive Web App, [bergantung pada cara Anda menggunakan AMP](/id/docs/guides/discovery):
 
 ### 1. Jika Anda menyambungkan halaman kanonis dengan halaman AMP
 
