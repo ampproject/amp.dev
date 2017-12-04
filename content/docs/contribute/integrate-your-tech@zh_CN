@@ -1,6 +1,5 @@
 ---
 $title: 将您的技术与 AMP 集成
-$order: 1
 ---
 
 发布商已创建超过 14 亿个 AMP 文档，这些文档托管在超过 75 万个唯一网域上。如果没有已与 AMP 集成的 100 多家第三方技术公司提供大力支持，这样的增长幅度是不可能实现的。
@@ -13,7 +12,7 @@ $order: 1
 ## 1. 添加对 amp-analytics 扩展组件的支持
 AMP 分析可让您根据自己配置的触发条件将事件发送回服务器。我们编写了一份[分析集成指南](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)来帮助您着手使用这款组件。
 
-如果您只是需要向跟踪网址中添加包含动态参数的跟踪像素，请查看 [amp-pixel](/zh_cn/docs/reference/components/amp-pixel)。请务必在您的支持页面上阐明相关用法，以供可能需要将您的技术和 AMP 结合使用的开发者参考。
+如果您只是需要向跟踪网址中添加包含动态参数的跟踪像素，请查看 [amp-pixel](/zh_cn/docs/reference/components/amp-pixel.html)。请务必在您的支持页面上阐明相关用法，以供可能需要将您的技术和 AMP 结合使用的开发者参考。
 
 目前已有超过 20 家分析服务提供商添加了对 amp-analytics 的支持。敬请查看分析提供商 [Parse.ly](https://www.parsely.com/help/integration/google-amp/) 的一个[提取请求示例](https://github.com/ampproject/amphtml/pull/1595)。
 
@@ -26,9 +25,9 @@ amp-ad 扩展组件专用于在 AMP 网页上投放展示广告。目前已有�
 
 ## 3. 使用 amp-call-tracking 扩展组件
 
-如果您提供来电跟踪衡量服务，则可通过 [amp-call-tracking](https://github.com/ampproject/amphtml/blob/master/extensions/amp-call-tracking/amp-call-tracking.md) 这款新扩展组件来支持您的用例。此组件会执行 CORS 请求来动态替换超链接中的电话号码，从而启用来电跟踪。
+如果您提供来电跟踪衡量服务，则可通过 [amp-call-tracking](/zh_cn/docs/reference/components/amp-call-tracking.html) 这款新扩展组件来支持您的用例。此组件会执行 CORS 请求来动态替换超链接中的电话号码，从而启用来电跟踪。
 
-要详细了解此组件是否适合您，请查看 [AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) 或阅读该[文档](/zh_cn/docs/reference/components/amp-call-tracking)。
+要详细了解此组件是否适合您，请查看 [AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) 或阅读该[文档](/zh_cn/docs/reference/components/amp-call-tracking.html)。
 
 ## 4. 添加新的扩展组件/内嵌组件
 
@@ -50,7 +49,7 @@ amp-ad 扩展组件专用于在 AMP 网页上投放展示广告。目前已有�
 
 - [AMP 项目网站](https://www.ampproject.org/)
 - [AMP GitHub 项目](https://github.com/ampproject/amphtml)
-- [AMP 博客](https://amphtml.wordpress.com/)
+- [AMP 博客](https://www.ampproject.org/zh_cn/latest/blog)
 - [AMP 项目蓝图](https://www.ampproject.org/roadmap/)
  
  
