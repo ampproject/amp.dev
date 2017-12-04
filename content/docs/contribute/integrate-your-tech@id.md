@@ -1,6 +1,5 @@
 ---
 $title: Mengintegrasikan teknologi Anda dengan AMP
-$order: 1
 ---
 
 Penayang telah membuat lebih dari 1,4 miliar dokumen AMP yang dihosting di lebih dari 750 ribu domain berbeda. Pertumbuhan ini tidak mungkin terjadi tanpa adanya dukungan yang kuat dari 100 lebih perusahaan teknologi pihak ketiga, yang telah berintegrasi dengan AMP.
@@ -13,7 +12,7 @@ Ada 4 cara utama Anda dapat berintegrasi dengan AMP:
 ## 1. Menambahkan dukungan ke ekstensi amp-analytics
 Analytics AMP memungkinkan Anda mengirimkan peristiwa kembali ke server berdasarkan pemicu yang dikonfigurasi. Kami telah membuat [panduan integrasi analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) untuk membantu Anda memulai.
 
-Jika Anda hanya perlu menambahkan piksel pelacakan dengan parameter dinamis ke URL pelacakan, buka [amp-pixel](/id/docs/reference/components/amp-pixel). Pastikan mendokumentasikan penggunaan di halaman dukungan Anda untuk developer yang mungkin ingin menggunakan teknologi Anda dengan AMP.
+Jika Anda hanya perlu menambahkan piksel pelacakan dengan parameter dinamis ke URL pelacakan, buka [amp-pixel](/id/docs/reference/components/amp-pixel.html). Pastikan mendokumentasikan penggunaan di halaman dukungan Anda untuk developer yang mungkin ingin menggunakan teknologi Anda dengan AMP.
 
 Ada lebih dari 20 penyedia analytics yang telah menambahkan dukungan ke amp-analytics. Berikut adalah [contoh pull request](https://github.com/ampproject/amphtml/pull/1595) dari penyedia analytics [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
 
@@ -26,9 +25,9 @@ Ada lebih dari 90 penyedia iklan yang telah menambahkan dukungan untuk fitur yan
 
 ## 3. Menggunakan ekstensi amp-call-tracking
 
-Jika Anda menyediakan layanan tindakan pelacakan panggilan, kasus penggunaan Anda mungkin didukung oleh ekstensi [amp-call-tracking](https://github.com/ampproject/amphtml/blob/master/extensions/amp-call-tracking/amp-call-tracking.md) yang baru. Ekstensi ini secara dinamis mengganti nomor telepon pada hyperlink untuk mengaktifkan pelacakan panggilan, dengan menjalankan permintaan CORS untuk mengganti nomor tersebut.
+Jika Anda menyediakan layanan tindakan pelacakan panggilan, kasus penggunaan Anda mungkin didukung oleh ekstensi [amp-call-tracking](/id/docs/reference/components/amp-call-tracking.html) yang baru. Ekstensi ini secara dinamis mengganti nomor telepon pada hyperlink untuk mengaktifkan pelacakan panggilan, dengan menjalankan permintaan CORS untuk mengganti nomor tersebut.
 
-Untuk mempelajari lebih lanjut tentang apakah ekstensi ini sesuai untuk Anda, lihat [AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) atau baca [dokumentasi](/id/docs/reference/components/amp-call-tracking).
+Untuk mempelajari lebih lanjut tentang apakah ekstensi ini sesuai untuk Anda, lihat [AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) atau baca [dokumentasi](/id/docs/reference/components/amp-call-tracking.html).
 
 ## 4. Menambahkan sematan/ekstensi baru
 
@@ -36,7 +35,7 @@ Jika kasus penggunaan Anda tidak dapat diselesaikan menggunakan amp-analytics, a
 
 ## 5. Menggunakan amp-iframe
 
-Tunggu sebentar – cara ke-5?! Memang ada, namun cara ini hanya dapat dilakukan sebagai opsi terakhir. Jika cara di atas tidak ada yang sesuai dengan kebutuhan Anda, Anda dapat menggunakan tag umum amp-iframe agar penayang dapat menyematkan konten Anda. Namun, pendekatan ini memiliki sejumlah kelemahan, karena adanya beberapa kesalahan yang berkaitan dengan performa dan pengalaman pengguna, yang dapat Anda baca [di sini](/id/docs/reference/components/amp-iframe#guideline:-prefer-specific-amp-components-to-amp-iframe).
+Tunggu sebentar – cara ke-5?! Memang ada, namun cara ini hanya dapat dilakukan sebagai opsi terakhir. Jika cara di atas tidak ada yang sesuai dengan kebutuhan Anda, Anda dapat menggunakan tag umum amp-iframe agar penayang dapat menyematkan konten Anda. Namun, pendekatan ini memiliki sejumlah kelemahan, karena adanya beberapa kesalahan yang berkaitan dengan performa dan pengalaman pengguna, yang dapat Anda baca [di sini](/docs/reference/components/amp-iframe#guideline:-prefer-specific-amp-components-to-amp-iframe).
 
 ## Ringkasan
 
@@ -48,9 +47,9 @@ Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk [mengajukannya](http
 
 ## Referensi tambahan
 
-- [Situs AMP Project](https://www.ampproject.org/)
+- [Situs AMP Project](https://www.ampproject.org/id/)
 - [GitHub AMP Project](https://github.com/ampproject/amphtml)
-- [Blog AMP](https://amphtml.wordpress.com/)
+- [Blog AMP](https://www.ampproject.org/id/latest/blog)
 - [Panduan AMP Project](https://www.ampproject.org/roadmap/)
  
  
