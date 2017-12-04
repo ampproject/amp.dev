@@ -1,7 +1,5 @@
 ---
 $title: Incorporar e usar AMP como fonte de dados
-$order: 1
-toc: true
 ---
 [TOC]
 
