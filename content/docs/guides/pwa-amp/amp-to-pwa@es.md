@@ -1,7 +1,5 @@
 ---
 $title: Precargar una aplicación web progresiva (PWA) desde páginas AMP
-$order: 1
-toc: true
 ---
 [TOC]
 
