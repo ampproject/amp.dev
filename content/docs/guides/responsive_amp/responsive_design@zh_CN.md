@@ -1,9 +1,5 @@
 ---
 $title: 制作自适应 AMP 网页
-$order: 5
-toc: true
-components:
-  - iframe
 ---
 [TOC]
 
@@ -21,7 +17,7 @@ components:
 
 要想优化网页以便内容能够自动缩放并适应任何设备的浏览器窗口，您需要指定 `meta` 视口元素。视口元素会指示浏览器如何缩放网页的可见区域（视口）以及如何调整其大小。
 
-不过，应该使用哪些值呢？对于这个问题，AMP 中已给出明确答案。您需要指定以下视口作为 AMP 网页[必需标记](https://www.ampproject.org/zh_cn/docs/reference/spec#required-markup)的一部分：
+不过，应该使用哪些值呢？对于这个问题，AMP 中已给出明确答案。您需要指定以下视口作为 AMP 网页[必需标记](/zh_cn/docs/reference/spec.html#required-markup)的一部分：
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -54,7 +50,7 @@ components:
 ```
 
 {% call callout('继续阅读', type='read') %}
-要详细了解 AMP 中的各种不同布局，请参阅[布局和媒体查询](https://www.ampproject.org/zh_cn/docs/guides/responsive/control_layout#the-layout-attribute)指南。
+要详细了解 AMP 中的各种不同布局，请参阅[布局和媒体查询](/zh_cn/docs/guides/responsive/control_layout.html#the-layout-attribute)指南。
 {% endcall %}
 
 <a id="fn1"></a>
@@ -76,11 +72,11 @@ components:
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div> <div placeholder></div> </amp-iframe></div> 
 
-您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件](https://www.ampproject.org/zh_cn/docs/reference/components#media)列表。
+您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件](/zh_cn/docs/reference/components.html#media)列表。
 
 ### 显示自适应图片
 
-图片会占据网页的很大一部分幅面（约占[网页字节数的 65%](http://httparchive.org/interesting.php#bytesperpage)）。最起码，您的图片在各种屏幕尺寸和方向上都应处于可见状态（即用户无需滚动屏幕或张合手指便可看到完整图片）。在 AMP 中，这可通过 `"layout=responsive"` 属性轻松实现（请参阅[在 AMP 中添加图片](https://www.ampproject.org/zh_cn/docs/guides/amp_replacements)）。除了基本的自适应图片之外，您可能会想添加多种图片资源以便：
+图片会占据网页的很大一部分幅面（约占[网页字节数的 65%](http://httparchive.org/interesting.php#bytesperpage)）。最起码，您的图片在各种屏幕尺寸和方向上都应处于可见状态（即用户无需滚动屏幕或张合手指便可看到完整图片）。在 AMP 中，这可通过 `"layout=responsive"` 属性轻松实现（请参阅[在 AMP 中添加图片](/zh_cn/docs/guides/amp_replacements.html)）。除了基本的自适应图片之外，您可能会想添加多种图片资源以便：
 
 - [提供分辨率合适的清晰图片](#提供分辨率合适的清晰图片)
 - [更改图片的艺术设计](#更改图片的艺术设计)
@@ -108,7 +104,7 @@ components:
 例如，假设我们的某部设备的视口宽度为 412 像素，DPR 为 2.6。根据上面的代码，图片必须以 75% 的视口宽度显示，因此浏览器会选择一张接近 803 像素 (412 * .75 * 2.6) 的图片，而 `apple-800.jpg` 正好符合条件。
 
 {% call callout('继续阅读', type='read') %}
-要详细了解如何在 AMP 中使用 srcset 和 sizes，请参阅[借助 srcset、sizes 和 heights 进行艺术设计](https://www.ampproject.org/zh_cn/docs/guides/responsive/art_direction)指南。
+要详细了解如何在 AMP 中使用 srcset 和 sizes，请参阅[借助 srcset、sizes 和 heights 进行艺术设计](/zh_cn/docs/guides/responsive/art_direction.html)指南。
 {% endcall %}
 
 #### 更改图片的艺术设计
@@ -130,7 +126,7 @@ components:
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
 
 {% call callout('继续阅读', type='read') %}
-要详细了解 AMP 中的艺术设计，请参阅[借助 srcset、sizes 和 heights 进行艺术设计](https://www.ampproject.org/zh_cn/docs/guides/responsive/art_direction)指南。
+要详细了解 AMP 中的艺术设计，请参阅[借助 srcset、sizes 和 heights 进行艺术设计](/zh_cn/docs/guides/responsive/art_direction.html)指南。
 {% endcall %}
 
 #### 提供经过优化的图片
@@ -140,7 +136,7 @@ components:
 在 HTML 中，您可以使用 `picture` 标记来提供不同格式的图片。在 AMP 中，虽然 `picture` 标记不受支持，但您可以使用 `fallback` 属性来提供不同的图片。
 
 {% call callout('继续阅读', type='read') %}
-要详细了解备用行为，请参阅[占位符和备用行为](https://www.ampproject.org/zh_cn/docs/guides/responsive/placeholders)指南。
+要详细了解备用行为，请参阅[占位符和备用行为](/zh_cn/docs/guides/responsive/placeholders.html)指南。
 {% endcall %}
 
 ##### 示例：提供不同格式的图片
