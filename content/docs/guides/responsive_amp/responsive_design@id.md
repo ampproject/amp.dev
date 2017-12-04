@@ -17,7 +17,7 @@ Dalam panduan ini, kami akan menunjukkan cara menerapkan dasar-dasar komponen re
 
 Guna mengoptimalkan halaman sehingga konten diubah skalanya dan menyesuaikan jendela browser untuk semua perangkat, Anda harus menentukan elemen viewport `meta`. Elemen viewport memberikan petunjuk ke browser tentang cara mengubah skala dan menyesuaikan ukuran area yang terlihat (viewport) dari halaman.
 
-Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan](/id/docs/reference/spec#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
+Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan](/id/docs/reference/spec.html#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -50,7 +50,7 @@ Namun, kami ingin gambar tersebut tidak berukuran melebihi batas yang ditentukan
 ```
 
 {% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media](/id/docs/guides/responsive/control_layout#the-layout-attribute).
+Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media](/id/docs/guides/responsive/control_layout.html#the-layout-attribute).
 {% endcall %}
 
 <a id="fn1"></a>
@@ -72,11 +72,11 @@ Pada contoh berikut, kami ingin menampilkan video YouTube tersemat yang dapat di
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Tampilkan kode lengkap</div> <div placeholder></div> </amp-iframe></div>
 
-Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailnya,  lihat daftar [komponen media](/id/docs/reference/components#media) yang tersedia.
+Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailnya,  lihat daftar [komponen media](/id/docs/reference/components.html#media) yang tersedia.
 
 ### Menampilkan gambar responsif
 
-Gambar menghasilkan byte paling besar dari keseluruhan halaman (sekitar [65% dari byte halaman](http://httparchive.org/interesting.php#bytesperpage)).  Setidaknya, gambar harus terlihat di berbagai orientasi dan ukuran layar (misalnya, pengguna tidak perlu melakukan scrolling, mencubit/melakukan zoom untuk melihat keseluruhan gambar).  Hal ini dapat dilakukan di AMP dengan mudah menggunakan atribut  `"layout=responsive"` (lihat [Menyertakan Gambar di AMP](/id/docs/guides/amp_replacements)).  Selain gambar responsif dasar, Anda mungkin ingin menampilkan beberapa resource gambar untuk:
+Gambar menghasilkan byte paling besar dari keseluruhan halaman (sekitar [65% dari byte halaman](http://httparchive.org/interesting.php#bytesperpage)).  Setidaknya, gambar harus terlihat di berbagai orientasi dan ukuran layar (misalnya, pengguna tidak perlu melakukan scrolling, mencubit/melakukan zoom untuk melihat keseluruhan gambar).  Hal ini dapat dilakukan di AMP dengan mudah menggunakan atribut  `"layout=responsive"` (lihat [Menyertakan Gambar di AMP](/id/docs/guides/amp_replacements.html)).  Selain gambar responsif dasar, Anda mungkin ingin menampilkan beberapa resource gambar untuk:
 
 - [Menayangkan gambar tajam untuk resolusi yang sesuai](#menayangkan-gambar-tajam-untuk-resolusi-yang-sesuai)
 - [Mengubah gambar responsif dari suatu gambar](#mengubah-gambar-responsif-dari-suatu-gambar)
@@ -104,7 +104,7 @@ Pada contoh berikut, ada beberapa file gambar yang memiliki rasio tinggi lebar y
 Misalnya, ada perangkat yang memiliki lebar viewport 412 piksel dan DPR 2,6. Berdasarkan kode di atas, gambar harus ditampilkan 75% dari lebar viewport, jadi browser akan memilih gambar yang ukurannya mendekati 803 piksel  (412 * 0,75 * 2,6), yang akan disimpan sebagai `apple-800.jpg`.
 
 {% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/guides/responsive/art_direction).
+Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/guides/responsive/art_direction.html).
 {% endcall %}
 
 #### Mengubah gambar responsif dari suatu gambar
@@ -126,7 +126,7 @@ Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak me
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Tampilkan kode penuh</div><div placeholder></div></amp-iframe></div>
 
 {% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/guides/responsive/art_direction).
+Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/guides/responsive/art_direction.html).
 {% endcall %}
 
 #### Memberikan format gambar yang dioptimalkan
@@ -136,7 +136,7 @@ Menampilkan halaman yang dimuat dengan cepat memerlukan gambar yang dioptimalkan
 Di HTML, Anda dapat menampilkan format gambar yang berbeda menggunakan tag `picture`.  Di AMP, meskipun tag `picture` tidak didukung, Anda dapat menampilkan gambar yang berbeda menggunakan atribut `fallback`.
 
 {% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback](/id/docs/guides/responsive/placeholders).
+Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback](/id/docs/guides/responsive/placeholders.html).
 {% endcall %}
 
 ##### Contoh: Menampilkan format gambar yang berbeda
