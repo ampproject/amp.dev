@@ -1,7 +1,5 @@
 ---
 $title: 使用入门
-$order: 0
-toc: true
 ---
 [TOC]
 
