@@ -1,7 +1,5 @@
 ---
 $title: AMP 삽입 및 데이터 소스로 사용하기
-$order: 1
-toc: true
 ---
 [TOC]
 
