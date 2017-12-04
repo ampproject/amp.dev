@@ -1,6 +1,5 @@
 ---
 $title: Integrar AMP à sua tecnologia
-$order: 1
 ---
 
 Mais de 1,4 bilhão de documentos AMP já foram criados por editores e hospedados em mais de 750.000 domínios exclusivos. Esse crescimento não seria possível sem o apoio de mais de 100 empresas de tecnologia de terceiros que já fizeram a integração com a tecnologia AMP.
@@ -13,7 +12,7 @@ Há quatro maneiras principais de fazer a integração com AMP:
 ## 1. Adicionar compatibilidade com a extensão amp-analytics
 Com AMP Analytics, é possível enviar eventos de volta ao servidor com base em acionadores configurados por você. Criamos um [guia de integração de análise](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) para ajudá-lo a começar.
 
-Se você só precisar adicionar um pixel de rastreamento com parâmetros dinâmicos ao URL de rastreamento, confira [amp-pixel](/pt_br/docs/reference/components/amp-pixel). Documente o uso nas suas páginas de suporte para os desenvolvedores que queiram usar sua tecnologia com AMP.
+Se você só precisar adicionar um pixel de rastreamento com parâmetros dinâmicos ao URL de rastreamento, confira [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html). Documente o uso nas suas páginas de suporte para os desenvolvedores que queiram usar sua tecnologia com AMP.
 
 Mais de 20 fornecedores de análise já oferecem compatibilidade com a extensão amp-analytics. Veja um [exemplo de solicitação pull](https://github.com/ampproject/amphtml/pull/1595) do fornecedor de análise [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
 
@@ -26,9 +25,9 @@ Mais de 90 fornecedores de anúncios já oferecem compatibilidade com recursos r
 
 ## 3. Usar a extensão amp-call-tracking
 
-Se você fornecer serviços de medição de rastreamento de chamadas, seu caso de uso poderá ser compatível com a nova extensão [amp-call-tracking](https://github.com/ampproject/amphtml/blob/master/extensions/amp-call-tracking/amp-call-tracking.md). Essa extensão substitui dinamicamente números de telefone em hiperlinks para permitir o rastreamento de chamadas, fazendo uma solicitação CORS para substituir o número.
+Se você fornecer serviços de medição de rastreamento de chamadas, seu caso de uso poderá ser compatível com a nova extensão [amp-call-tracking](/pt_br/docs/reference/components/amp-call-tracking.html). Essa extensão substitui dinamicamente números de telefone em hiperlinks para permitir o rastreamento de chamadas, fazendo uma solicitação CORS para substituir o número.
 
-Para saber mais sobre como essa extensão pode ajudá-lo, consulte a [AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) ou leia a [documentação](/pt_br/docs/reference/components/amp-call-tracking).
+Para saber mais sobre como essa extensão pode ajudá-lo, consulte a [AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) ou leia a [documentação](/pt_br/docs/reference/components/amp-call-tracking.html).
 
 ## 4. Adicionar uma nova extensão/incorporação
 
@@ -50,7 +49,7 @@ Caso tenha dúvidas ou sugestões, [envie seus comentários](https://github.com/
 
 - [Site do projeto AMP](https://www.ampproject.org/pt_br/)
 - [Projeto AMP no GitHub](https://github.com/ampproject/amphtml)
-- [Blog das AMP](https://amphtml.wordpress.com/)
+- [Blog das AMP](https://www.ampproject.org/pt_br/latest/blog)
 - [Roteiro do projeto AMP](https://www.ampproject.org/pt_br/roadmap/)
  
  
