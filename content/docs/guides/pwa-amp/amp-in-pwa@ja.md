@@ -1,7 +1,5 @@
 ---
 $title: AMP を埋め込んでデータソースとして使用する
-$order: 1
-toc: true
 ---
 [TOC]
 
