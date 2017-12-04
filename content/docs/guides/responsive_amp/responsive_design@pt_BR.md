@@ -167,7 +167,3 @@ Veja alguns exemplos para inspirar você a criar páginas AMP responsivas (pági
 - [AMP by Example: modelos e amostras](https://ampbyexample.com/#samples_templates)
 - [Modelos da AMP Start](https://www.ampstart.com/)
 - [Codelab do workshop da conferência sobre AMP: como criar lindas páginas AMP](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
- 
- 
- 
- 
