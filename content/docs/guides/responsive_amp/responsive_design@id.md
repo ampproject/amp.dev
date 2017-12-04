@@ -27,7 +27,7 @@ Setelan tersebut adalah setelan viewport umum yang digunakan untuk situs respons
 
 ## Membuat tata letak responsif
 
-Dengan desain yang responsif, Anda dapat menggunakan kueri CSS [`@media`](https://developer.mozilla.org/en-US/Web/CSS/@media) guna menyesuaikan gaya halaman untuk berbagai dimensi layar, tanpa harus mengubah konten halaman.  Di AMP, Anda tetap dapat menggunakan kueri `@media` CSS yang sama. Selain itu, agar elemen AMP mendapakan kontrol yang lebih baik, Anda dapat menentukan atribut `media` pada elemen. Cara ini khususnya berguna saat Anda perlu menampilkan atau menyembunyikan elemen berdasarkan kueri media. Lihat bagian [Mengubah gambar responsif dari suatu gambar](#changing-the-art-direction-of-an-image) untuk mengetahui contoh penggunaan atribut `media`.
+Dengan desain yang responsif, Anda dapat menggunakan kueri CSS [`@media`](https://developer.mozilla.org/en-US/Web/CSS/@media) guna menyesuaikan gaya halaman untuk berbagai dimensi layar, tanpa harus mengubah konten halaman.  Di AMP, Anda tetap dapat menggunakan kueri `@media` CSS yang sama. Selain itu, agar elemen AMP mendapakan kontrol yang lebih baik, Anda dapat menentukan atribut `media` pada elemen. Cara ini khususnya berguna saat Anda perlu menampilkan atau menyembunyikan elemen berdasarkan kueri media. Lihat bagian [Mengubah gambar responsif dari suatu gambar](#mengubah-gambar-responsif-dari-suatu-gambar) untuk mengetahui contoh penggunaan atribut `media`.
 
 Mengubah ukuran setiap elemen agar sesuai dengan ukuran layar bisa jadi rumit<sup><a href="#fn1" id="ref1">*</a></sup>.  Tapi di AMP, Anda dapat membuat elemen responsif hanya dengan menentukan atribut `"layout=responsive"` beserta atribut `width` dan `height` elemen. Saat Anda menerapkan tata letak `responsive` ke sebuah elemen, elemen tersebut otomatis akan berubah ukurannya sesuai dengan lebar elemen penampungnya, dan tinggi elemen akan berubah berdasarkan rasio tinggi lebar yang ditentukan oleh `width` dan `height` elemen. Hampir semua elemen AMP mendukung tata letak `responsive`; buka dokumentasi referensi elemen untuk mengetahui tata letak apa saja yang didukung.
 
@@ -50,7 +50,7 @@ Namun, kami ingin gambar tersebut tidak berukuran melebihi batas yang ditentukan
 ```
 
 {% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media](/id/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media](/id/docs/guides/responsive/control_layout.html#atribut-tata-letak).
 {% endcall %}
 
 <a id="fn1"></a>
@@ -120,7 +120,7 @@ Pada contoh berikut, kami memiliki 3 gambar kucing yang di-crop berbeda, yang in
 - 469 piksel atau lebih kecil, tampilkan `cat-small.jpg` (226x340 piksel)
 
 {% call callout('Catatan', type='note') %}
-Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"](/id/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
+Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"](/id/docs/guides/responsive/control_layout.html#bagaimana-jika-lebar-dan-tinggi-tidak-ditentukan?).
 {% endcall %}
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Tampilkan kode penuh</div><div placeholder></div></amp-iframe></div>
