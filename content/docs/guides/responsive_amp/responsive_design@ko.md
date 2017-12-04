@@ -1,9 +1,5 @@
 ---
 $title: 반응형 AMP 페이지 만들기
-$order: 5
-toc: true
-components:
-  - iframe
 ---
 [TOC]
 
@@ -21,7 +17,7 @@ components:
 
 콘텐츠가 모든 기기의 브라우저 창에 맞게 조정될 수 있도록 웹페이지를 최적화하려면 `meta` 표시 영역 요소를 지정해야 합니다. 표시 영역 요소는 웹페이지의 표시 영역 비율과 크기를 조정하는 방법을 브라우저에 알려줍니다.
 
-그렇다면 어떤 값을 사용해야 할까요?  AMP에 이미 준비되어 있습니다.  AMP 페이지에 있는 [필수 마크업](https://www.ampproject.org/ko/docs/reference/spec#required-markup)의 일부로서 다음 표시 영역을 지정해야 합니다.
+그렇다면 어떤 값을 사용해야 할까요?  AMP에 이미 준비되어 있습니다.  AMP 페이지에 있는 [필수 마크업](/ko/docs/reference/spec.html#required-markup)의 일부로서 다음 표시 영역을 지정해야 합니다.
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -54,7 +50,7 @@ components:
 ```
 
 {% call callout('읽어보기', type='read') %}
-AMP의 다양한 레이아웃을 자세히 알아보려면 [레이아웃 및 미디어 쿼리](https://www.ampproject.org/ko/docs/guides/responsive/control_layout#the-layout-attribute) 가이드를 참조하세요.
+AMP의 다양한 레이아웃을 자세히 알아보려면 [레이아웃 및 미디어 쿼리](/ko/docs/guides/responsive/control_layout.html#the-layout-attribute) 가이드를 참조하세요.
 {% endcall %}
 
 <a id="fn1"></a>
@@ -76,11 +72,11 @@ AMP의 다양한 레이아웃을 자세히 알아보려면 [레이아웃 및 미
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">전체 코드 표시</div> <div placeholder></div> </amp-iframe></div>
 
-다양한 유형의 동영상을 AMP 페이지에 추가할 수 있습니다.  자세한 내용은 사용 가능한 [미디어 구성요소](https://www.ampproject.org/ko/docs/reference/components#media) 목록을 참조하세요.
+다양한 유형의 동영상을 AMP 페이지에 추가할 수 있습니다.  자세한 내용은 사용 가능한 [미디어 구성요소](/ko/docs/reference/components.html#media) 목록을 참조하세요.
 
 ### 반응형 이미지 표시하기
 
-이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함](https://www.ampproject.org/ko/docs/guides/amp_replacements) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
+이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함](/ko/docs/guides/amp_replacements.html) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
 
 - [적절한 해상도로 선명한 이미지 게재](#적절한-해상도로-선명한-이미지-게재)
 - [이미지의 아트 디렉션 변경](#이미지의-아트-디렉션-변경)
@@ -108,7 +104,7 @@ DPR (`x`) 기반의 srcset 선택자도 사용할 수 있지만 더 높은 유�
 표시 영역의 너비가 412px이고 DPR이 2.6인 기기가 있다고 가정해 보겠습니다. 위의 코드에 따라 이미지가 표시 영역 너비의 75%로 표시되어야 하므로 브라우저에서는 803px(412 * .75 * 2.6)에 가까운 `apple-800.jpg` 이미지를 선택합니다.
 
 {% call callout('읽어보기', type='read') %}
-AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](https://www.ampproject.org/ko/docs/guides/responsive/art_direction) 가이드를 참조하세요.
+AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](/ko/docs/guides/responsive/art_direction.html) 가이드를 참조하세요.
 {% endcall %}
 
 #### 이미지의 아트 디렉션 변경
@@ -124,13 +120,13 @@ AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 
 - 469px 이하인 경우 `cat-small.jpg`(226x340px) 표시
 
 {% call callout('참고', type='note') %}
-변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?'](/ko/docs/guides/author-develop/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)를 참조하세요.
+변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?'](/ko/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)를 참조하세요.
 {% endcall %}
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
 
 {% call callout('읽어보기', type='read') %}
-AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](https://www.ampproject.org/ko/docs/guides/responsive/art_direction) 가이드를 참조하세요.
+AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](/ko/docs/guides/responsive/art_direction.html) 가이드를 참조하세요.
 {% endcall %}
 
 #### 최적화된 이미지 제공
@@ -140,7 +136,7 @@ AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높
 HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재할 수 있습니다.  AMP에서는 `picture` 태그가 지원되지 않지만 `fallback` 속성을 사용하여 다른 이미지를 게재할 수 있습니다.
 
 {% call callout('읽어보기', type='read') %}
-fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback](https://www.ampproject.org/ko/docs/guides/responsive/placeholders) 가이드를 참조하세요.
+fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback](/ko/docs/guides/responsive/placeholders.html) 가이드를 참조하세요.
 {% endcall %}
 
 ##### 예: 다른 이미지 형식 게재
