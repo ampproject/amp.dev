@@ -1,7 +1,5 @@
 ---
 $title: "カスタム フォントの追加"
-$order: 6
-toc: true
 ---
 [TOC]
 

@@ -1,7 +1,5 @@
 ---
 $title: "맞춤 글꼴 추가하기"
-$order: 6
-toc: true
 ---
 [TOC]
 
