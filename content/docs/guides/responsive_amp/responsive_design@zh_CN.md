@@ -27,7 +27,7 @@ $title: 制作自适应 AMP 网页
 
 ## 创建自适应布局
 
-在自适应设计中，您可以使用 CSS [`@media`](https://developer.mozilla.org/docs/Web/CSS/@media) 查询来针对各种屏幕尺寸定制网页样式，而无需更改网页内容。在 AMP 中，您可以继续使用相同的 CSS `@media` 查询。此外，若想更精细地控制某个 AMP 元素，您可为该元素指定 `media` 属性。如果您需要根据媒体查询显示或隐藏某个元素，这项设置会特别有用。请参阅[更改图片的艺术设计](#changing-the-art-direction-of-an-image)部分，查看使用 `media` 属性的示例。
+在自适应设计中，您可以使用 CSS [`@media`](https://developer.mozilla.org/docs/Web/CSS/@media) 查询来针对各种屏幕尺寸定制网页样式，而无需更改网页内容。在 AMP 中，您可以继续使用相同的 CSS `@media` 查询。此外，若想更精细地控制某个 AMP 元素，您可为该元素指定 `media` 属性。如果您需要根据媒体查询显示或隐藏某个元素，这项设置会特别有用。请参阅[更改图片的艺术设计](#更改图片的艺术设计)部分，查看使用 `media` 属性的示例。
 
 使每个元素都能根据屏幕尺寸调整大小可能会有些棘手<sup><a href="#fn1" id="ref1">*</a></sup>。不过，在 AMP 中，您只需指定 `"layout=responsive"` 属性以及元素的 `width` 和 `height` 属性，即可轻松打造自适应元素。如果您将 `responsive` 布局应用于某个元素，该元素的宽度便会自动根据容器元素的宽度进行调整，高度则会自动根据由该元素的 `width` 和 `height` 所确定的宽高比进行调整。几乎所有 AMP 元素都支持 `responsive` 布局；要了解哪些布局受支持，请参阅相应元素的参考文档。
 
@@ -50,7 +50,7 @@ $title: 制作自适应 AMP 网页
 ```
 
 {% call callout('继续阅读', type='read') %}
-要详细了解 AMP 中的各种不同布局，请参阅[布局和媒体查询](/zh_cn/docs/guides/responsive/control_layout.html#the-layout-attribute)指南。
+要详细了解 AMP 中的各种不同布局，请参阅[布局和媒体查询](/zh_cn/docs/guides/responsive/control_layout.html#layout-属性)指南。
 {% endcall %}
 
 <a id="fn1"></a>
@@ -120,7 +120,7 @@ $title: 制作自适应 AMP 网页
 - 如果视口宽度为 469 像素或以下，则显示 `cat-small.jpg`（226 x 340 像素）
 
 {% call callout('注意', type='note') %}
-由于我们希望图片采用固定尺寸（即不倾斜），因此没有指定布局值；但由于我们设置了宽度和高度，因此布局值将默认设为 `layout=fixed`。有关详情，请参阅[“如果没有指定 layout 属性，会怎样？”](/zh_cn/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)。
+由于我们希望图片采用固定尺寸（即不倾斜），因此没有指定布局值；但由于我们设置了宽度和高度，因此布局值将默认设为 `layout=fixed`。有关详情，请参阅[“如果没有指定 layout 属性，会怎样？”](/zh_cn/docs/guides/responsive/control_layout.html#如果未定义宽度和高度，会怎样？)。
 {% endcall %}
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
