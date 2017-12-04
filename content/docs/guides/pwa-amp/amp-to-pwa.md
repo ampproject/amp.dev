@@ -78,7 +78,7 @@ Tip: There are easier ways to deal with a Service Worker. Take a look at the [Se
 
 ## Make all links on an AMP Page navigate to the PWA
 
-Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP](/docs/guides/deploy/discovery):
+Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP](/docs/guides/discovery):
 
 ### 1. If you pair your canonical pages with AMP pages
 
