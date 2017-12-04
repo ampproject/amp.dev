@@ -1,7 +1,5 @@
 ---
 $title: 嵌入 AMP 网页并将其用作数据源
-$order: 1
-toc: true
 ---
 [TOC]
 
