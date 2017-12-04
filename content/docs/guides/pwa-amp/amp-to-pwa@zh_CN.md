@@ -1,7 +1,5 @@
 ---
 $title: 通过 AMP 网页预加载渐进式网页应用
-$order: 1
-toc: true
 ---
 [TOC]
 
@@ -78,7 +76,7 @@ self.addEventListener('install', function(event) {
 
 ## 将 AMP 网页上的所有链接都指向 PWA
 
-可能会发生的情况是：您的 AMP 网页上的大多数链接都会指向更多内容页。您可以采用两种策略来确保后续的链接点击能够将 AMP 网页“升级”为渐进式网页应用，[具体取决于您使用 AMP 的方式](/zh_cn/docs/guides/deploy/discovery)：
+可能会发生的情况是：您的 AMP 网页上的大多数链接都会指向更多内容页。您可以采用两种策略来确保后续的链接点击能够将 AMP 网页“升级”为渐进式网页应用，[具体取决于您使用 AMP 的方式](/zh_cn/docs/guides/discovery)：
 
 ### 1. 如果您的规范网页有对应的 AMP 网页
 
