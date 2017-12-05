@@ -1,7 +1,5 @@
 ---
 $title: Layout & consultas de medios
-$order: 1
-toc: true
 ---
 [TOC]
 

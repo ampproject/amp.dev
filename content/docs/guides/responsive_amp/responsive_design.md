@@ -21,7 +21,7 @@ In this guide, we'll show you how you can easily implement these responsive fund
 
 To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.
 
-But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup](https://www.ampproject.org/docs/reference/spec#required-markup) for AMP pages, you need to specify the following viewport:
+But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup](/docs/reference/spec#required-markup.html) for AMP pages, you need to specify the following viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -54,7 +54,7 @@ However, we want the image to not stretch beyond its intended size, so we set th
 ```
 
 {% call callout('Read on', type='read') %}
-To learn more about the different layouts in AMP, see the [Layout & Media queries](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) guide.
+To learn more about the different layouts in AMP, see the [Layout & Media queries](/docs/guides/responsive/control_layout.html#the-layout-attribute) guide.
 {% endcall %}
 
  <a id="fn1"></a>
@@ -76,11 +76,11 @@ In the following example, we want to display an embedded YouTube video that resp
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div> <div placeholder></div> </amp-iframe></div>
 
-There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components](https://www.ampproject.org/docs/reference/components#media).
+There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components](/docs/reference/components#media).
 
 ### Displaying responsive images
 
-Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP](https://www.ampproject.org/docs/guides/amp_replacements)).  In addition to the basic responsive image, you might want to serve multiple image resources to:
+Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP](/docs/guides/amp_replacements.html)).  In addition to the basic responsive image, you might want to serve multiple image resources to:
 
 - [Serve crisp images for the right resolution](#serving-crisp-images-for-the-right-resolution)
 - [Change the art direction of an image](#changing-the-art-direction-of-an-image)
@@ -108,7 +108,7 @@ In the following example we have several image files that are of the same aspect
 For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px  (412 * .75 * 2.6), which happens to be `apple-800.jpg`.
 
 {% call callout('Read on', type='read') %}
-To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](https://www.ampproject.org/docs/guides/responsive/art_direction) guide.
+To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html) guide.
 {% endcall %}
 
 #### Changing the art direction of an image
@@ -130,7 +130,7 @@ As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
 {% call callout('Read on', type='read') %}
-To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights](https://www.ampproject.org/docs/guides/responsive/art_direction) guide.
+To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html) guide.
 {% endcall %}
 
 #### Providing optimized images
@@ -140,7 +140,7 @@ Delivering fast loading pages requires optimized images--in size, quality, and f
 In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.
 
 {% call callout('Read on', type='read') %}
-To learn more about fallbacks, see the [Placeholders & Fallbacks](https://www.ampproject.org/docs/guides/author-develop/responsive/placeholders) guide.
+To learn more about fallbacks, see the [Placeholders & Fallbacks](/docs/guides/responsive/placeholders.html) guide.
 {% endcall %}
 
 ##### Example: Serve different image formats

@@ -8,7 +8,7 @@ AMP'nin temel gücü sadece sayfalarınızı hızlandırması değil, aynı zama
 
 Bir AMP dokümanını doğrulamanın çeşitli yolları vardır. Bu yolların tümü tam olarak aynı sonucu verir. Bu yüzden, geliştirme stiliniz için en uygun yolu kullanın.
 
-AMP'nin geçerliliğine ek olarak, AMP dokümanınızın üçüncü taraf platformları için [bulunabilirliğini](/tr/docs/guides/deploy/discovery.html) de onaylamak isteyebilirsiniz.
+AMP'nin geçerliliğine ek olarak, AMP dokümanınızın üçüncü taraf platformları için [bulunabilirliğini](/tr/docs/guides/discovery.html) de onaylamak isteyebilirsiniz.
 
 ### Tarayıcı Developer Console.
 

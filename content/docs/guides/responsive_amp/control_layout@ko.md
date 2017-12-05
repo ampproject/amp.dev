@@ -1,7 +1,5 @@
 ---
 $title: 레이아웃 및 미디어 쿼리
-$order: 1
-toc: true
 ---
 
 [TOC]

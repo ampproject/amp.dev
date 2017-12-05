@@ -1,7 +1,5 @@
 ---
 $title: 지원되는 CSS
-$order: 0
-toc: true
 ---
 [TOC]
 

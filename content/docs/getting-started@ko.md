@@ -1,7 +1,5 @@
 ---
 $title: 시작하기
-$order: 0
-toc: true
 ---
 [TOC]
 

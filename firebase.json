@@ -197,7 +197,6 @@
         "destination": "/docs/guides/engagement.html",
         "type": 301
       },
-
       {
         "source": "/docs/guides/login-paywalls",
         "destination": "/docs/tutorials/login_requiring",
@@ -674,6 +673,11 @@
       {
         "source": "/docs/reference/amp-video.html",
         "destination": "/docs/reference/components/amp-video.html",
+        "type": 301
+      },
+      {
+        "source": "/amp-conf-2017/code-of-conduct/",
+        "destination": "/amp-conf/code-of-conduct/",
         "type": 301
       },
       {

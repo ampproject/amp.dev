@@ -1,7 +1,5 @@
 ---
 $title: 添加自定义字体
-$order: 6
-toc: true
 ---
 
 [TOC]
