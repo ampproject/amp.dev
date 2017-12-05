@@ -1,9 +1,5 @@
 ---
 $title: Crear páginas AMP responsivas
-$order: 5
-toc: true
-components:
-  - iframe
 ---
 [TOC]
 
@@ -21,7 +17,7 @@ En esta guía, le mostraremos cómo puede implementar fácilmente estos fundamen
 
 Para optimizar su página web para que el contenido sea escalable y se ajuste a la ventana del navegador para cualquier dispositivo, debe especificar un `viewport` (elemento de vista gráfica) `meta`. El elemento viewport indica al navegador cómo escalar y dimensionar el área visible (viewport) de la página web.
 
-Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](https://www.ampproject.org/docs/reference/spec#required-markup) para páginas AMP, se debe especificar el  siguiente viewport:
+Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](/es/docs/reference/spec.html#required-markup) para páginas AMP, se debe especificar el  siguiente viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -56,7 +52,7 @@ Sin embargo, si no queremos que la imagen se vaya más allá de su tamaño, conf
 
 
 {% call callout('Leer más', type='read') %}
-Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios](https://www.ampproject.org/es/docs/guides/responsive/control_layout#el-atributo-layout).
+Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios](/es/docs/guides/responsive/control_layout.html#el-atributo-layout).
 {% endcall %}
 
  <a id="fn1"></a>
@@ -79,13 +75,13 @@ En el próximo ejemplo, queremos mostrar un video insertado desde YouTube que re
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div> <div placeholder></div> </amp-iframe></div>
 
-Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más detalles, mira la lista de [media components](https://www.ampproject.org/docs/reference/components#media) -en inglés.
+Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más detalles, mira la lista de [media components](/es/docs/reference/components.html#contenido-multimedia) -en inglés.
 
 ### Mostrando imágenes responsivas
 
-Las imágenes forman una gran parte de una página web (aproximadamente el [65% de los bytes de la página](http://httparchive.org/interesting.php#bytesperpage)). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP](https://www.ampproject.org/docs/guides/amp_replacements)). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
+Las imágenes forman una gran parte de una página web (aproximadamente el [65% de los bytes de la página](http://httparchive.org/interesting.php#bytesperpage)). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP](/es/docs/guides/amp_replacements.html)). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
 
-- [Sirve imágenes nítidas para obtener la resolución correcta](#mostrando-imágenes-nítidas-para-la-resolución-correcta)
+- [Mostrando imágenes nítidas para la resolución correcta](#mostrando-imágenes-nítidas-para-la-resolución-correcta)
 - [Cambiando la dirección de arte de una imagen](#cambiando-la-dirección-artística-de-una-imagen)
 - [Proporcionar formatos de imagen optimizados](#proporcionar-imágenes-optimizadas)
 
@@ -111,7 +107,7 @@ En el siguiente ejemplo tenemos varias imágenes que tienen el mismo radio de as
 Por ejemplo, digamos que tenemos un dispositivo que tiene un ancho de ventana de 412 px y un DPR de 2.6. Basándose en el código anterior, la imagen debe mostrarse al 75% del ancho de la ventana de visualización, por lo que el navegador elige una imagen cercana a 803 px (412 * .75 * 2.6), que pasa a ser `apple-800.jpg`.
 
 {% call callout('Leer más', type='read') %}
-Para aprender más sobre el `srcset` y `sizes` en AMP, see the [Imágenes adaptativas con srcset, sizes & heights](https://www.ampproject.org/es/docs/guides/responsive/art_direction) guide.
+Para aprender más sobre el `srcset` y `sizes` en AMP, see the [Imágenes adaptativas con srcset, sizes & heights](/es/docs/guides/responsive/art_direction.html) guide.
 {% endcall %}
 
 #### Cambiando la dirección artística de una imagen
@@ -133,7 +129,7 @@ Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no sesgamos
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
 {% call callout('Leer más', type='read') %}
-Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights](https://www.ampproject.org/es/docs/guides/responsive/art_direction).
+Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights](/es/docs/guides/responsive/art_direction.html).
 {% endcall %}
 
 #### Proporcionar imágenes optimizadas
@@ -143,7 +139,7 @@ La entrega de páginas de carga rápida requiere imágenes optimizadas: en tama�
 En HTML, puede servir diferentes formatos de imagen utilizando la etiqueta `picture`. En AMP, aunque la etiqueta `picture` no es compatible, puede servir a diferentes imágenes mediante el atributo de `fallback`.
 
 {% call callout('Leer más', type='read') %}
-Para aprender más acerca de los fallbacks, lee la guía [Placeholders & Fallbacks](https://www.ampproject.org/es/docs/guides/responsive/placeholders).
+Para aprender más acerca de los fallbacks, lee la guía [Placeholders & Fallbacks](/es/docs/guides/responsive/placeholders.html).
 {% endcall %}
 
 ##### Ejemplo: Sirva diferentes formatos de imagen

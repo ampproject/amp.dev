@@ -1,7 +1,5 @@
 ---
 $title: Imágenes adaptativas con srcset, sizes & heights
-$order: 4
-toc: true
 ---
 [TOC]
 

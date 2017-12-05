@@ -8,7 +8,7 @@ La principale force de l'AMP n'est pas seulement d'accélérer le chargement de 
 
 Il existe plusieurs façons de valider un document AMP. Elles produiront toutes le même résultat. Vous pouvez donc utiliser la plus adaptée à votre style de développement.
 
-En plus d'être valide, votre document AMP doit également être [visible](/fr/docs/guides/deploy/discovery.html) par les plates-formes tierces.
+En plus d'être valide, votre document AMP doit également être [visible](/fr/docs/guides/discovery.html) par les plates-formes tierces.
 
 ### Developer Console dans le navigateur
 
