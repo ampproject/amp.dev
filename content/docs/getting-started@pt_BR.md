@@ -9,10 +9,6 @@ Este guia de início rápido ajudará você nos primeiros passos com as AMP.
 
 Para ver instruções mais detalhadas, acesse o tutorial [criar sua primeira página AMP](/pt_br/docs/tutorials/create.html).
 
-{% call callout('Use HTTPS', type='note') %}
-When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
-{% endcall %}
-
 ### Etapa 1: usar o modelo de HTML para AMP
 
 Este é o HTML básico que você precisa ter em uma página AMP:
