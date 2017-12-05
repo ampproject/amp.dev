@@ -1,6 +1,5 @@
 ---
 $title: Revisar el código de inicio
-$order: 1
 ---
 
 Antes de comenzar a agregar código, revisemos la página [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html) de ejemplo, que debería ser la siguiente:

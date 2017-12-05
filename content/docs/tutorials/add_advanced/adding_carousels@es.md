@@ -1,7 +1,5 @@
 ---
 $title: Agregar carruseles
-$order: 2
-toc: true
 ---
 
 [TOC]

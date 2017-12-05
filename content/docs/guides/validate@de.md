@@ -9,7 +9,7 @@ Das Besondere an AMP ist nicht einfach, dass es Ihre Seiten schnell macht, sonde
 
 Es gibt verschiedene Möglichkeiten zur Überprüfung eines AMP-Dokuments. Sie alle führen zum selben Ergebnis. Wählen Sie also einfach jene, die am besten zu Ihrem Entwicklungsstil passt.
 
-Neben der AMP-Gültigkeit ist es für Sie vielleicht auch sinnvoll zu prüfen, ob Ihr AMP-Dokument auf Drittanbieterplattformen [auffindbar](/de/docs/guides/deploy/discovery.html) ist.
+Neben der AMP-Gültigkeit ist es für Sie vielleicht auch sinnvoll zu prüfen, ob Ihr AMP-Dokument auf Drittanbieterplattformen [auffindbar](/de/docs/guides/discovery.html) ist.
 
 ### Entwicklerkonsole des Browsers
 

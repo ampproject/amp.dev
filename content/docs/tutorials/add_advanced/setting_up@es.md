@@ -1,7 +1,5 @@
 ---
 $title: Configuración
-$order: 0
-$parent: /content/docs/tutorials/add_advanced.md
 ---
 
 ## Requisitos Previos

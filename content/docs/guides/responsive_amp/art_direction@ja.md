@@ -1,7 +1,5 @@
 ---
 $title: srcset、sizes、heights を使ったレスポンシブな画像
-$order: 4
-toc: true
 ---
 [TOC]
 

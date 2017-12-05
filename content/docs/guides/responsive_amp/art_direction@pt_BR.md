@@ -1,7 +1,5 @@
 ---
 $title: Imagens responsivas com os atributos "srcset", "sizes" e "heights"
-$order: 4
-toc: true
 ---
 [TOC]
 
