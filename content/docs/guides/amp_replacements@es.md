@@ -69,7 +69,7 @@ En este ejemplo muy básico, la imagen se mostrará con la altura y anchura fija
 </div>
 
 {% call callout('Más artículos', type='success') %}
- Consulta más información sobre [las técnicas de diseño avanzadas](/es/docs/guides/author-develop/responsive/control_layout.html).
+ Consulta más información sobre [las técnicas de diseño avanzadas](/es/docs/guides/responsive/control_layout.html).
 {% endcall %}
 
 ### Comportamiento y marcadores de posición
@@ -77,7 +77,7 @@ En este ejemplo muy básico, la imagen se mostrará con la altura y anchura fija
 El tiempo de ejecución de HTML en AMP permite gestionar recursos de imagen de una forma muy eficaz porque puedes elegir si retrasar o priorizar la carga de recursos en función de la posición de la ventana gráfica, los recursos del sistema, el ancho de banda de la conexión y otros factores.
 
 {% call callout('Más artículos', type='success') %}
- Descubre cómo [proporcionar alternativas y marcadores de posición para imágenes](/es/docs/guides/author-develop/responsive/placeholders.html).
+ Descubre cómo [proporcionar alternativas y marcadores de posición para imágenes](/es/docs/guides/responsive/placeholders.html).
 {% endcall %}
 
 ## Imágenes animadas

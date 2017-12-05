@@ -1,7 +1,5 @@
 ---
 $title: Agregando componentes AMP ampliados
-$order: 2
-toc: true
 ---
 
 [TOC]

@@ -1,6 +1,6 @@
 ---
 $title: Congratulations!
-$order: 6
+$order: 7
 ---
 
 You’ve finished the "Add advanced AMP features" tutorial and successfully explored many key advanced components of AMP!

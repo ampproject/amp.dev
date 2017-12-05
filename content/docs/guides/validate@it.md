@@ -8,7 +8,7 @@ Il punto di forza di AMP non sta semplicemente nel fatto che velocizza le pagine
 
 Per convalidare un documento AMP esistono diversi modi che consentono di ottenere lo stesso risultato, quindi puoi utilizzare il metodo più adatto al tuo stile di sviluppo.
 
-Oltre alla validità delle tue pagine AMP, potresti voler verificare che il tuo documento AMP sia [rilevabile](/it/docs/guides/deploy/discovery.html) per le piattaforme di terze parti.
+Oltre alla validità delle tue pagine AMP, potresti voler verificare che il tuo documento AMP sia [rilevabile](/it/docs/guides/discovery.html) per le piattaforme di terze parti.
 
 ### Console per sviluppatori del browser
 
