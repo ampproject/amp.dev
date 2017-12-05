@@ -7,10 +7,6 @@ $title: 使用入门
 
 如需了解更详细的说明，请访问[创建您的首个 AMP 网页](/zh_cn/docs/tutorials/create.html)教程。
 
-{% call callout('Use HTTPS', type='note') %}
-When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
-{% endcall %}
-
 ### 第 1 步：获取 AMP HTML 模板
 
 以下是 AMP 网页所需的基本 HTML：
