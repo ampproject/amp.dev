@@ -1,17 +1,15 @@
 ---
 $title: はじめに
-$order: 0
-toc: true
 ---
 [TOC]
 
-これは、 AMP を始めるためのクイックスタートガイドです。
+これは AMP の使用を開始するためのクイックスタート ガイドです。
 
-詳細な説明については [初めての AMP ページを作成する](/ja/docs/tutorials/create.html) チュートリアルをご覧ください。
+詳しい手順については、「[初めての AMP ページを作成する](/ja/docs/tutorials/create.html)」チュートリアルをご覧ください。
 
-### ステップ1: AMP HTML テンプレートの取得
+### ステップ 1: AMP HTML テンプレートを取得する
 
-これは、 AMP ページに必要な基本のHTMLです。
+これは AMP ページに必要な基本の HTML です。
 
 ```html
 <!doctype html>
@@ -30,23 +28,23 @@ toc: true
 </html>
 ```
 
-{% call callout('もっと読む', type='read') %}
-AMP ページに [必要なマークアップ](/ja/docs/reference/spec.html#required-markup) をご覧ください。
+{% call callout('詳細情報', type='read') %}
+詳しくは、AMP ページの[必須のマークアップ](/ja/docs/reference/spec.html#required-markup)についてご覧ください。
 {% endcall %}
 
-### ステップ2: ページにコンポーネントを追加する
+### ステップ 2: ページにコンポーネントを追加する
 
-imageのようなコンポーネントを追加して AMP ページを構築します。
+画像などのコンポーネントを追加して AMP ページを構築します。
 
 ```html
 <amp-img src="https://www.ampproject.org/examples/images/amp.jpg"
   width="900" height="508" layout="responsive"></amp-img>
 ```
 
-または Youtube ビデオ
+YouTube 動画の場合:
 
 ```html
-<!-- このscriptは amp-youtube に必須で、<head>内に記述する必要があります -->
+<!-- this script is required for amp-youtube and must be in the <head> section  -->
 <script async custom-element="amp-youtube"
       src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
@@ -57,11 +55,11 @@ imageのようなコンポーネントを追加して AMP ページを構築し�
     width="480" height="270"></amp-youtube>
 ```
 
-他にもたくさんあります。 [AMP の利用可能コンポーネント](/ja/docs/reference/components.html)を見てください。
+詳しくは、[AMP で使用可能なコンポーネント](/ja/docs/reference/components.html)のリストをご覧ください。
 
-### ステップ3: 要素をスタイルする
+### ステップ 3: 要素のスタイルを設定する
 
-AMP ページの要素をスタイルするには、`<head>`内の`<style amp-custom>`というインラインスタイルシートにCSSを追加します。
+AMP ページの要素のスタイルを設定するには、ドキュメントの `<head>` 内で `<style amp-custom>` というインライン スタイルシートに CSS を追加します。
 
 ```html
 <style amp-custom>
@@ -74,23 +72,25 @@ AMP ページの要素をスタイルするには、`<head>`内の`<style amp-cu
 </style>
 ```
 
-{% call callout('もっと読む', type='read') %}
-AMP ページで [サポートされているCSS](/ja/docs/guides/responsive/style_pages.html) をご覧ください。
+{% call callout('詳細情報', type='read') %}
+詳しくは、AMP ページで[サポートされる CSS](/ja/docs/guides/responsive/style_pages.html) をご覧ください。
 {% endcall %}
 
-### ステップ4: AMP HTML を検証する
+### ステップ 4: AMP HTML を検証する
 
-AMP ページが有効な AMP HTML であることを [AMP Validator](https://validator.ampproject.org/) で確認してください。
+ページを [AMP Validator](https://validator.ampproject.org/) で検証して、AMP ページが有効な AMP HTML であることを確認します。
 
-使用できる他の検証ツールについては、 [AMP ページの検証](/ja/docs/guides/validate.html) を見てください。
+使用できる他の検証ツールについては、[AMP ページを検証する](/ja/docs/guides/validate.html)をご覧ください。
 
 ### 次のステップ
 
-更に AMP ページの基礎を知るためには、 [初めての AMP ページを作成する](/ja/docs/tutorials/create.html) チュートリアルをご覧ください。
+AMP ページの基本をさらに理解するには、「[初めての AMP ページを作成する](/ja/docs/tutorials/create.html)」チュートリアルをご覧ください。
 
-あなたの役に立つ他のリソースがあります。
+役立つその他のリソースを以下にご紹介します。
 
 * [ページを検出可能にする](/ja/docs/guides/discovery.html)
-* [アナリティクスの設定をする](/ja/docs/guides/analytics_amp.html)
+* [ページにアナリティクスを追加する](/ja/docs/guides/analytics_amp.html)
 * [ユーザー エンゲージメントを向上させる](/ja/docs/guides/engagement.html)
 * [AMP BY Example](https://ampbyexample.com/) ライブデモ
+ 
+ 

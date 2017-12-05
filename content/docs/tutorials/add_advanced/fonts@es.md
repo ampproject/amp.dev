@@ -1,6 +1,5 @@
 ---
 $title: Agregando fuentes
-$order: 5
 ---
 
 En AMP, para mantener los tiempos de carga de documentos lo más rápido posible, no puede incluir hojas de estilo externas. Sin embargo, hay una excepción a esta regla &mdash; **fuentes**.

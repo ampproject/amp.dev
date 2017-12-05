@@ -1,7 +1,5 @@
 ---
 $title: Menambahkan font kustom
-$order: 6
-toc: true
 ---
 
 [TOC]

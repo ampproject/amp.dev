@@ -1,7 +1,5 @@
 ---
 $title: Empezando
-$order: 0
-toc: true
 ---
 [TOC]
 
@@ -31,7 +29,7 @@ Este es el código HTML básico que necesitas para una página AMP:
 ```
 
 {% call callout('Leer Más', type='read') %}
-Aprende más sobre el [markup requerido](/docs/reference/spec.html#required-markup) para páginas AMP.
+Aprende más sobre el [markup requerido](/es/docs/reference/spec.html#required-markup) para páginas AMP.
 {% endcall %}
 
 ### Paso 2: Agrega componentes a tu página

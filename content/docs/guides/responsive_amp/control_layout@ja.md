@@ -1,7 +1,5 @@
 ---
 $title: レイアウトとメディアクエリ
-$order: 1
-toc: true
 ---
 
 [TOC]
