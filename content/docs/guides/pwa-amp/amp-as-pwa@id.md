@@ -1,7 +1,5 @@
 ---
 $title: Mengaktifkan fitur Progressive Web App untuk halaman AMP
-$order: 0
-toc: true
 ---
 
 [TOC]
@@ -68,7 +66,7 @@ Service Worker adalah proxy sisi-klien yang berada di antara halaman dan server,
 Jika konsep Service Worker merupakan hal baru bagi Anda, baca [pendahuluan di WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 {% endcall %}
 
-Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, browser tidak akan menemukan atau menjalankannya. Secara default, tindakan ini dilakukan dengan bantuan [sedikit JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Pada Halaman AMP, Anda menggunakan komponen [`<amp-install-serviceworker>`](/id/docs/reference/components/amp-install-serviceworker) untuk melakukan hal yang sama.
+Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, browser tidak akan menemukan atau menjalankannya. Secara default, tindakan ini dilakukan dengan bantuan [sedikit JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Pada Halaman AMP, Anda menggunakan komponen [`<amp-install-serviceworker>`](/id/docs/reference/components/amp-install-serviceworker.html) untuk melakukan hal yang sama.
 
 Untuk melakukannya, sertakan komponen `<amp-install-serviceworker>` terlebih dahulu melalui skripnya pada `<head>` halaman Anda:
 
