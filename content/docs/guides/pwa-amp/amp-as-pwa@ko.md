@@ -1,7 +1,5 @@
 ---
 $title: AMP 페이지에 프로그레시브 웹 앱 기능 사용 설정
-$order: 0
-toc: true
 ---
 
 [TOC]
@@ -68,7 +66,7 @@ AMP 페이지에 [웹 앱 매니페스트](https://developers.google.com/web/fun
 서비스 워커라는 개념을 처음 접하시는 분은 [WebFundamentals 소개](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)를 읽어보세요.
 {% endcall %}
 
-서비스 워커는 특정 페이지에 등록되어야 합니다. 그렇지 않으면 브라우저에서 서비스 워커를 찾거나 실행할 수 없습니다. 기본적으로 이 작업에는 [자바스크립트](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration)가 필요합니다. AMP 페이지에서는 [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker) 구성요소를 사용하여 동일한 작업을 처리할 수 있습니다.
+서비스 워커는 특정 페이지에 등록되어야 합니다. 그렇지 않으면 브라우저에서 서비스 워커를 찾거나 실행할 수 없습니다. 기본적으로 이 작업에는 [자바스크립트](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration)가 필요합니다. AMP 페이지에서는 [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker.html) 구성요소를 사용하여 동일한 작업을 처리할 수 있습니다.
 
 우선 페이지의 `<head>`에 있는 스크립트를 통해 `<amp-install-serviceworker>` 구성요소를 포함시킵니다.
 
