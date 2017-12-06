@@ -13,8 +13,8 @@ components:
 Progressive Web Apps and AMP pages work great together. In fact, in many cases, they complement each other in one way or another. Learn how to:
 
 1. [Enable PWA features](/docs/guides/pwa-amp/amp-as-pwa.html) for your AMP pages
-1. Create a [compelling, super-fast user journey](/docs/guides/pwa-amp/amp-to-pwa.html) from AMP to PWA
-1. [Simplify your PWA](/docs/guides/pwa-amp/amp-in-pwa.html) by using the power of AMP
+2. Create a [compelling, super-fast user journey](/docs/guides/pwa-amp/amp-to-pwa.html) from AMP to PWA
+3. [Simplify your PWA](/docs/guides/pwa-amp/amp-in-pwa.html) by using the power of AMP
 
 {% call callout('Progressive Web App?', type='note') %}
 Learn more about [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) at Web Fundamentals.
