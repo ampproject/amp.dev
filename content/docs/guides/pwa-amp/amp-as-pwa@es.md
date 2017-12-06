@@ -1,7 +1,5 @@
 ---
 $title: Habilitar las funciones de las aplicaciones web progresivas en páginas AMP
-$order: 0
-toc: true
 ---
 
 [TOC]
@@ -68,7 +66,7 @@ Un service worker es un proxy de cliente que se sitúa entre tu página y el ser
 Si es la primera vez que oyes hablar de los componentes service worker, consulta este [artículo de introducción en Web Fundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 {% endcall %}
 
-Los componentes service worker tienen que estar registrados en una página concreta; de lo contrario, el navegador no los encontrará ni ejecutará. Para registrarlos, debes usar un [pequeño fragmento de JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) o, en páginas AMP, un componente [`<amp-install-serviceworker>`](/es/docs/reference/components/amp-install-serviceworker).
+Los componentes service worker tienen que estar registrados en una página concreta; de lo contrario, el navegador no los encontrará ni ejecutará. Para registrarlos, debes usar un [pequeño fragmento de JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) o, en páginas AMP, un componente [`<amp-install-serviceworker>`](/es/docs/reference/components/amp-install-serviceworker.html).
 
 En este caso, introduce primero la secuencia de comandos del componente `<amp-install-serviceworker>` en la sección `<head>` de tu página:
 
