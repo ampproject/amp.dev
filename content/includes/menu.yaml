@@ -39,6 +39,19 @@ menu:
       - href: /content/docs/contribute/contribute.md
         copy@: "Contribute"
         collection: docs/contribute
+  - href: none
+    copy@: Tools
+    children:
+      - href: https://validator.ampproject.org
+        copy@: "AMP Validator"
+      - href: https://ampbyexample.com
+        copy@: "AMP By Example"
+      - href: https://ampbyexample.com/playground/
+        copy@: "AMP Playground"
+      - href: https://www.ampstart.com
+        copy@: "AMP Start"
+      - href: https://cdn.ampproject.org/experiments.html
+        copy@: "AMP Experiments"
   - href: /content/latest/latest.html
     copy@: The Latest
     collection: latest
