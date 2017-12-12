@@ -1,10 +1,5 @@
 ---
 $title: AMP와 프로그레시브 웹 앱 통합하기
-$order: 9
-$category: Develop
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 
