@@ -1,10 +1,5 @@
 ---
 $title: AMP とプログレッシブ ウェブアプリを組み合わせる
-$order: 9
-$category: Develop
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 
