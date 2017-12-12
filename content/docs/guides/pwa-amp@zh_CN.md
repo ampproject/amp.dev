@@ -1,10 +1,5 @@
 ---
 $title: 将 AMP 与渐进式网页应用相结合
-$order: 9
-$category: Develop
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 
