@@ -1,10 +1,5 @@
 ---
 $title: Mengombinasikan AMP dengan Progressive Web App
-$order: 9
-$category: Develop
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 
