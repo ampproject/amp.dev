@@ -1,7 +1,5 @@
 ---
 $title: 共通の属性
-$order: 3
-toc: true
 ---
 
 [TOC]
@@ -62,7 +60,7 @@ AMP では、一連の [レイアウト](/ja/docs/guides/responsive/control_layo
 </amp-img>
 [/sourcecode]
 
-詳しくは、[レイアウトとメディアクエリ](https://www.ampproject.org/ja/docs/guides/responsive/control_layout) および [レイアウトの仕様](/ja/docs/reference/spec/amp-html-layout.html) をご覧ください。
+詳しくは、[レイアウトとメディアクエリ](/ja/docs/guides/responsive/control_layout.html) および [レイアウトの仕様](/ja/docs/reference/spec/amp-html-layout.html) をご覧ください。
 
 ## media
 
@@ -172,7 +170,3 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 [/sourcecode]
 
 詳しくは、[レイアウトとメディアクエリ](/ja/docs/guides/responsive/control_layout.html) および [レイアウトの仕様](/ja/docs/reference/spec/amp-html-layout.html) をご覧ください。
-
- 
- 
- 
