@@ -169,4 +169,4 @@ Por exemplo:
 </amp-anim>
 [/sourcecode]
 
-Para saber mais, consulte [Consultas de mídia e layout](/pt_br/docs/guides/responsive/control_layout) e a [Especificação de layout](/pt_BR/docs/reference/spec/amp-html-layout).
+Para saber mais, consulte [Consultas de mídia e layout](/pt_br/docs/guides/responsive/control_layout) e a [Especificação de layout](/pt_br/docs/reference/spec/amp-html-layout).
