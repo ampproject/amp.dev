@@ -1,7 +1,5 @@
 ---
 $title: Atributos comunes
-$order: 3
-toc: true
 ---
 
 [TOC]
@@ -62,7 +60,7 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries](https://www.ampproject.org/es/docs/guides/responsive/control_layout) y las [especificaciones de diseño](/es/docs/reference/spec/amp-html-layout.html).
+Para obtener más información, consulta [Diseño y media queries](/es/docs/guides/responsive/control_layout.html) y las [especificaciones de diseño](/es/docs/reference/spec/amp-html-layout.html).
 
 ## media
 
