@@ -170,7 +170,3 @@ Ejemplo:
 [/sourcecode]
 
 Para obtener más información, consulta [Diseño y media queries](/es/docs/guides/responsive/control_layout.html) y las [especificaciones de diseño](/es/docs/reference/spec/amp-html-layout.html).
-
- 
- 
- 
