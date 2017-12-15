@@ -1,7 +1,5 @@
 ---
 $title: Atribut umum
-$order: 3
-toc: true
 ---
 
 [TOC]
@@ -172,7 +170,3 @@ Contoh:
 [/sourcecode]
 
 Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](/id/docs/guides/responsive/control_layout.html) dan [Spesifikasi Tata Letak](/id/docs/reference/spec/amp-html-layout.html).
-
- 
- 
- 
