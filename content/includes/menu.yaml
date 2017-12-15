@@ -77,3 +77,5 @@ menu:
       - href: /assets/img/brand-guidelines.pdf
         static: true
         copy@: "Brand Guidelines"
+      - href: https://status.ampproject.org/
+        copy@: "AMP Status"
