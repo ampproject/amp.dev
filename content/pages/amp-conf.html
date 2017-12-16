@@ -5,32 +5,90 @@ class: amp-conf
 
 stylesheet: pages/amp-conf-2018.css
 
+components:
+  - iframe
 ---
 
 <section class="teaser amp-conf-section">
 
-  <h2>AMP Conf 2018</h2>
-  <h3>is turning Amsterdam into <strong>AMP</strong>sterdam.</h3>
+  <div class="wrapper">
+    <h2>AMP Conf 2018</h2>
+    <h3>is turning Amsterdam into <strong>AMP</strong>sterdam.</h3>
+  </div>
 
-    <ul class="facts">
-      <li><strong>When</strong>: Feb 13 & 14, 2018</li>
-      <li><strong>Where</strong>: Near Amsterdam's city center (exact location TBD)</li>
-      <li><strong>For</strong>: Developers and designers</li>
-    </ul>
-    
+  <div class="menu">
+    <div class="wrapper">
+
+        <ul>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+
+      <a href="https://events.withgoogle.com/amp-conf-2018/registrations/new/" class="button">Register now</a>
+    </div>
+  </div>
 </section>
 
 <section class="description amp-conf-section">
-  <p>AMP Conf is coming back in 2018, which means two days of talks by developers for developers, all crafted to help you create the best user experiences possible. With more pure CSS talks, more applied knowledge, and maybe probably live coding (gasp!). We'll go deep in how to achieve UX excellence, not just basic functionality.</p>
+  <div class="wrapper">
+    <p>
+      The AMP team and community is bringing its yearly gathering to Amsterdam for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.
+    </p>
+
+    <ul class="facts">
+      <li class="card"><strong>When</strong>Feb 13 & 14, 2018</li>
+      <li class="card"><strong>Where</strong><a href="http://www.westergasfabriek.nl/">Westergasfabriek</a>, Amsterdam</li>
+      <li class="card"><strong>For</strong>Developers and designers</li>
+    </ul>
+  </div>
 </section>
 
-<section class="register amp-conf-section">
-  <a href="https://events.withgoogle.com/amp-conf-2018/registrations/new/" class="button"> Register now</a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUa2J5te_UkkNCUjjhNc5jhD22Fb5jj2cksKK4tTI6LN33Nw/viewform" class="button"> Submit a talk proposal</a>
+<section class="schedule amp-conf-section">
+  <div class="wrapper">
+    <h3 id="schedule">Schedule</h3>
+    <p>The full schedule will be published early January.</p>
+  </div>
 </section>
+
+<section class="speakers amp-conf-section">
+    <div class="wrapper">
+      <h3 id="speakers">Speakers</h3>
+      <p>The full speaker line up will be published early January.</p>
+    </div>
+</section>
+
+<section class="location amp-conf-section">
+    <div class="wrapper">
+      <h3 id="location">Location</h3>
+
+      <div class="flex">
+          <amp-iframe width=300 height=300
+              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+              layout="responsive"
+              frameborder="0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.132650398833!2d4.870299815820313!3d52.38614557978905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5e27e8db35611%3A0x81c378bc80a7370c!2sWestergasfabriek+B.V.!5e0!3m2!1sen!2sus!4v1513411205719">
+              <p placeholder>Loading..</p>
+          </amp-iframe>
+          <div>
+              <h4><a href="http://www.westergasfabriek.nl/">Westergasfabriek</a></h4>
+
+              <p>
+                  <span>Pazzanistraat 33</span>
+                  <span>1014 DB Amsterdam</span>
+                  <span>Netherlands</span>
+              </p>
+
+              <p>..and live-streamed around the world.</p>
+          </div>
+      </div>
+    </div>
+</section>
+
 <section class="faq amp-conf-section">
   <div class="wrapper">
-    <h3 id="faq">Frequently Asked Questions</h3>
+    <h3 id="faq">FAQ</h3>
     <dl>
 
     <dt>Does it cost anything?</dt>
@@ -42,7 +100,7 @@ stylesheet: pages/amp-conf-2018.css
     <dt>Who is the event for?</dt>
     <dd>Web developers and designers who have used AMP and want to create even better AMP experiences, who haven't used AMP and are curious or want to contribute to AMP to make it better for everyone, and the web at large.</dd>
 
-    <dt>Does reserving a spot mean I am signed up?</dt>
+    <dt>Does registering mean I am all set to attend?</dt>
     <dd>Not yet. While your chances of getting a seat are pretty good, we will confirm attendees on a case-by-case basis to ensure we attract the right audience. Note that your seat is not confirmed until you receive a confirmation code.</dd>
 
     <dt>When will I hear back if I have a spot?</dt>
@@ -55,4 +113,12 @@ stylesheet: pages/amp-conf-2018.css
     <dd>We'll announce a detailed schedule in the coming month.</dd>
     </dl>
   </div>
+</section>
+
+<section class="footer amp-conf-section">
+    <ul>
+        <li><a href="/amp-conf/code-of-conduct">Code of Conduct</a></li>
+        <li><a href="/amp-conf/accessibility">Accessibility</a></li>
+        <li><a href="mailto:amp-conf-2018@google.com">Contact</a></li>
+    </ul>
 </section>
