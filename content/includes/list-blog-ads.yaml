@@ -1,6 +1,28 @@
 blogs:
 
 - type: Blog
+  title: "An AMP Paywall and Subscription Model for All Publishers"
+  id: ads-an-amp-paywall-and-subscription-model-for-all-publishers
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2017/11/28/an-amp-paywall-and-subscription-model-for-all-publishers/amp/"
+  excerpt: "The following was posted on LaterPay&#8217;s Blog by Cosmin Ene, CEO, LaterPay. A majority of mobile users will not wait longer than 3 seconds for a page to load before moving on, creating a marked decline in revenue for sites that load slowly. It’s this desire for speed and convenience on both the user and publisher’s part that spurred [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-11-28T09:49:35-08:00
+  date: "November 28, 2017"
+
+- type: Blog
+  title: "AMP: Two years of user-first webpages"
+  id: ads-amp-two-years-of-user-first-webpages
+  author: David Besbris
+  role:  VP Google Search, AMP Project Lead at Google
+  origin: "https://amphtml.wordpress.com/2017/10/19/amp-two-years-of-user-first-webpages/amp/"
+  excerpt: "It’s hard to believe it’s been two years since publishers and platforms came together to launch the open source Accelerated Mobile Pages (AMP) Project. Speed and user experience remain more important than ever across the web, with 53% of mobile site visits abandoned for pages taking longer than 3 seconds to load. In two years [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-10-19T10:19:44-07:00
+  date: "October 19, 2017"
+
+- type: Blog
   title: "The Argument for AMP: Lessons from 10 Case Studies"
   id: ads-the-argument-for-amp-lessons-from-10-case-studies
   author: amphtml
@@ -43,25 +65,3 @@ blogs:
   avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
   datedata: 2017-09-08T06:57:02-07:00
   date: "September 8, 2017"
-
-- type: Blog
-  title: "Faster AMP ad landing page support from AdWords"
-  id: ads-faster-amp-ad-landing-page-support-from-adwords
-  author: Vamsee Jasti
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/09/07/faster-amp-ad-landing-page-support-from-adwords/amp/"
-  excerpt: "Today, AdWords announced support for AMP page delivery from the Google AMP Cache. As a result, advertisers who use AMP pages as ad landing pages in Adwords can expect those landing pages to load near-instantly. This launch, along with all the other recently launched features in AMP like forms, dynamic content and robust analytics support, makes [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-09-07T14:12:49-07:00
-  date: "September 7, 2017"
-
-- type: Blog
-  title: "E-commerce at the speed of AMP"
-  id: ads-e-commerce-at-the-speed-of-amp
-  author: Lisa Wang
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/09/06/e-commerce-at-the-speed-of-amp/amp/"
-  excerpt: "Early results for e-commerce companies that are investing in Accelerated Mobile Pages (AMP) are showing that the format is paying off in terms of conversions, speed, bounce rates and mobile acquisition costs. Brazil-based Fastcommerce&#8217;s clients are seeing a 15% lift in conversions on mobile as compared to non-AMP pages across their 2M AMP pages&#160; WompMobile [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-09-06T06:21:14-07:00
-  date: "September 6, 2017"

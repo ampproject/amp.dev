@@ -1,6 +1,61 @@
 blogs:
 
 - type: Blog
+  title: "Twitter uses AMP to improve reading experience, enables publishers to understand their audience"
+  id: twitter-uses-amp-to-improve-reading-experience-enables-publishers-to-understand-their-audience
+  author: Ben Ward
+  role:  Product Manager for AMP &amp; Publisher Platform, Twitter
+  origin: "https://amphtml.wordpress.com/2017/12/13/twitter-uses-amp-to-improve-reading-experience-enables-publishers-to-understand-their-audience/amp/"
+  excerpt: "Editor&#8217;s note: This post is authored by Ben Ward, Product Manager for AMP &#38; Publisher Platform, Twitter. Read more about their support for AMP article analytics here. Twitter sits at the heart of news, with millions of people using the service to stay updated about what’s happening in the world, right as it happens. An essential [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-12-13T12:03:20-08:00
+  date: "December 13, 2017"
+
+- type: Blog
+  title: "The Total Economic Impact™ of AMP across publishers and e-commerce"
+  id: the-total-economic-impact-of-amp-across-publishers-and-e-commerce
+  author: Lisa Wang
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2017/11/29/the-total-economic-impact-of-amp-across-publishers-and-e-commerce/amp/"
+  excerpt: "Speed equals revenue on the web, especially mobile. In fact, studies have shown even 100ms delays in page load time correlate with lower conversion rates. To better understand the impact AMP can provide for mobile sites on speed and revenue, Google commissioned Forrester Consulting, a leading global research and advisory firm, to conduct a Total Economic Impact™ [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-11-29T08:34:45-08:00
+  date: "November 29, 2017"
+
+- type: Blog
+  title: "An AMP Paywall and Subscription Model for All Publishers"
+  id: an-amp-paywall-and-subscription-model-for-all-publishers
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2017/11/28/an-amp-paywall-and-subscription-model-for-all-publishers/amp/"
+  excerpt: "The following was posted on LaterPay&#8217;s Blog by Cosmin Ene, CEO, LaterPay. A majority of mobile users will not wait longer than 3 seconds for a page to load before moving on, creating a marked decline in revenue for sites that load slowly. It’s this desire for speed and convenience on both the user and publisher’s part that spurred [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-11-28T09:49:35-08:00
+  date: "November 28, 2017"
+
+- type: Blog
+  title: "AMP Conf 2018: Turning Amsterdam into AMPsterdam"
+  id: amp-conf-2018-turning-amsterdam-into-ampsterdam
+  author: Matt Ludwig
+  role:  AMP Project Marketing Lead, Google
+  origin: "https://amphtml.wordpress.com/2017/11/27/amp-conf-2018-turning-amsterdam-into-ampsterdam/amp/"
+  excerpt: "Last year over 300 developers came together to learn and share about the latest in AMP at AMP Conf in NYC. Since then we’ve had many new developments and uses of AMP emerge, from e-commerce functionality, to building canonically with AMP, to using AMP pages within a Progressive Web App. To share all the latest [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-11-27T13:46:50-08:00
+  date: "November 27, 2017"
+
+- type: Blog
+  title: "AMP: Two years of user-first webpages"
+  id: amp-two-years-of-user-first-webpages
+  author: David Besbris
+  role:  VP Google Search, AMP Project Lead at Google
+  origin: "https://amphtml.wordpress.com/2017/10/19/amp-two-years-of-user-first-webpages/amp/"
+  excerpt: "It’s hard to believe it’s been two years since publishers and platforms came together to launch the open source Accelerated Mobile Pages (AMP) Project. Speed and user experience remain more important than ever across the web, with 53% of mobile site visits abandoned for pages taking longer than 3 seconds to load. In two years [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2017-10-19T10:19:44-07:00
+  date: "October 19, 2017"
+
+- type: Blog
   title: "Start fast with new AMP Start templates"
   id: start-fast-with-new-amp-start-templates
   author: amphtml
@@ -10,69 +65,3 @@ blogs:
   avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
   datedata: 2017-10-13T13:01:07-07:00
   date: "October 13, 2017"
-
-- type: Blog
-  title: "The Argument for AMP: Lessons from 10 Case Studies"
-  id: the-argument-for-amp-lessons-from-10-case-studies
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2017/10/09/the-argument-for-amp-lessons-from-10-case-studies/amp/"
-  excerpt: "Editor&#8217;s note: The following is an excerpt from an independent study done by Stone Temple, a digital marketing agency, posted with their permission. Read the full study here.  We conducted interviews of more than 10 companies that have invested heavily in AMP, to see if we could learn how hard it was to implement, the [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-10-09T13:14:24-07:00
-  date: "October 9, 2017"
-
-- type: Video
-  title: "Use AMP HTML with Your Existing Site"
-  id: OO9oKhs80aI
-  author: The AMP Channel
-  role: 
-  origin: "https://www.youtube.com/watch?v=OO9oKhs80aI"
-  excerpt: "Starting AMP from scratch is great, but what if you already have an existing site? Learn how you can convert your site to AMP using AMP HTML.
-
-\"What's Allowed in AMP and What Isn't\": https://goo.gl/ugMhHc
-
-Tutorial on how to convert HTML to AMP: https://goo.gl/JwUVyG
-
-Reach out with your AMP related questions: https://goo.gl/UxCWfz
-
-
-
-Subscribe to the The AMP Channel and never miss an Amplify episode: https://goo.gl/g2Y8h7"
-  thumbnail: "https://i4.ytimg.com/vi/OO9oKhs80aI/hqdefault.jpg"
-  avatar: 
-  datedata: 2017-10-05T14:41:29-07:00
-  date: "October 5, 2017"
-
-- type: Blog
-  title: "New in AMP: Position observers, fluid ads and improved analytics for video & beyond"
-  id: new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond
-  author: Lisa Wang
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/09/30/new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond/amp/"
-  excerpt: "We’re trying out something new in the place of our regular AMP Roadmap updates. This new “New in AMP” format focuses on actionable updates. We’re also continuing to update the AMP Roadmap to reflect progress, and we will keep a section in this post dedicated to talking about where we’re heading next. But now, on [&#8230;]"
-  avatar: http://amphtml.files.wordpress.com/2017/09/sidebar.png
-  datedata: 2017-09-29T20:59:10-07:00
-  date: "September 29, 2017"
-
-- type: Blog
-  title: "Introducing the AMP Roadshow: Bringing the AMP team to you"
-  id: introducing-the-amp-roadshow-bringing-the-amp-team-to-you
-  author: pbakaus
-  role: 
-  origin: "https://amphtml.wordpress.com/2017/09/19/introducing-the-amp-roadshow-bringing-the-amp-team-to-you/amp/"
-  excerpt: "TL;DR: The AMP team is traveling around the world to bring the AMP Roadshow, a free one-day developer conference, to you. Register for a city near you. We’ve been hard at work these last few months at improving AMP’s web components and making AMP work for even more use-cases like e-commerce, and we’ve launched numerous [&#8230;]"
-  avatar: http://amphtml.files.wordpress.com/2017/09/screen-shot-2017-09-18-at-6-19-07-pm.png
-  datedata: 2017-09-18T18:29:04-07:00
-  date: "September 18, 2017"
-
-- type: Blog
-  title: "The Why and How of Accelerated Mobile Pages at Condé Nast"
-  id: the-why-and-how-of-accelerated-mobile-pages-at-conde-nast
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2017/09/08/the-why-and-how-of-accelerated-mobile-pages-at-conde-nast/amp/"
-  excerpt: "Editor&#8217;s note: We found this awesome post on the Condé Nast Technology blog. Send feedback to @oscrperez and for more information about Condé Nast Technology, follow @CondeNastTech. Written by Oscar Perez, Condé Nast What is the Google led AMP Project? Accelerated Mobile Pages are a set of performance focused restrictions and limitations on HTML, CSS, and [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-09-08T06:57:02-07:00
-  date: "September 8, 2017"
