@@ -2,7 +2,7 @@
 $order: 19
 $title: U.S. Xpress
 $date: December 20, 2017
-$category: e-commerce
+$category: Advertisers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
