@@ -22,7 +22,7 @@ logo:
   src: "case-studies/etc_logo.png"
   width: 200
   height: 59
-download: "case-studies/event_ticket_center.pdf"
+download: "case-studies/Event_Ticket_Center.pdf"
 
 ---
 
