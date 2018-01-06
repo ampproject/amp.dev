@@ -7,7 +7,11 @@ stylesheet: pages/amp-conf-2018.css
 
 components:
   - iframe
+  - selector
+  - bind
 ---
+
+{% set conf = g.doc('/content/includes/amp-conf.yaml', locale=doc.locale) %}
 
 <section class="teaser amp-conf-section">
 
@@ -48,15 +52,103 @@ components:
 <section class="schedule amp-conf-section">
   <div class="wrapper">
     <h3 id="schedule">Schedule</h3>
-    <p>The full schedule will be published early January.</p>
+
+    <p class="note">Note: This is a rough first cut of the agenda. More talks will be added in the upcoming days, and times are subject to change.</p>
+
+    {% macro render_session(item) -%}
+
+        {% if conf.speakers[item.speaker] %}
+        <span class="image">{% if conf.speakers[item.speaker].pic %}<amp-img src="{{ conf.speakers[item.speaker].pic }}" width="100" height="100"></amp-img>{% endif %}</span>
+        {% endif %}
+
+        {% if item.speakers %}
+            {% for speaker in item.speakers if conf.speakers[speaker]  %}
+            <span class="image multiple">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="60" height="60"></amp-img>{% endif %}</span>
+            {% endfor %}
+        {% endif %}
+
+        <time>{{ item.time }}</time>
+        <div>
+            <h5 class="{{ item.type }}">{{ item.title }}</h5>
+            {% if conf.speakers[item.speaker] %}
+            <small><a href="#{{ item.speaker }}">{{ conf.speakers[item.speaker].name }}, {{ conf.speakers[item.speaker].company }}</a></small>
+            {% endif %}
+            {% if item.speakers %}
+                {% if conf.speakers[item.moderator] %}
+                    <small><a href="#{{ item.moderator }}">{{ conf.speakers[item.moderator].name }}, {{ conf.speakers[item.moderator].company }} (Moderator)</a></small>
+                {% endif %}
+                {% for speaker in item.speakers %}
+                    {% if conf.speakers[speaker] %}
+                    <small><a href="#{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</a></small>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% if item.description %}
+            <p>{{ item.description }}</p>
+            {% endif %}
+            {% if item.workshops %}
+                <ul class="workshops">
+                {% for workshop in item.workshops %}
+                    <li>
+                        <h6>{{ workshop.title }}</h6>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+    {%- endmacro %}
+
+    <amp-selector role="tablist" layout="container" class="days">
+      <div role="tab" class="tab" selected option="a">Day 1</div>
+      <div role="tabpanel" class="day">
+        <ul class="schedule">
+          {% for item in conf.agenda.day_1 %}
+          <li class="{{ item.type }}">
+            {{ render_session(item) }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div role="tab" class="tab" option="b">Day 2</div>
+      <div role="tabpanel" class="day">
+        <ul class="schedule">
+          {% for item in conf.agenda.day_2 %}
+          <li class="{{ item.type }}">
+            {{ render_session(item) }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </amp-selector>
+
   </div>
 </section>
 
 <section class="speakers amp-conf-section">
     <div class="wrapper">
       <h3 id="speakers">Speakers</h3>
-      <p>The full speaker line up will be published early January.</p>
-    </div>
+
+      <ul class="speakers">
+          {% set sortedSpeakers = conf.speakers|sort %}
+          {% for speaker in sortedSpeakers if conf.speakers[speaker].bio %}
+          <li class="card">
+              <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="400" height="400" layout="responsive"></amp-img>{% endif %}</span>
+              <div>
+                  <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}<small>{{ conf.speakers[speaker].company }}</small></h4>
+                  {{ conf.speakers[speaker].bio|markdown|safe }}
+              </div>
+          </li>
+          {% endfor %}
+
+          <li class="card">
+            <div>
+                <h4 id="{{ speaker }}">More to be announced soon!</h4>
+            </div>
+        </li>
+      </ul>
+
+  </div>
 </section>
 
 <section class="location amp-conf-section">
