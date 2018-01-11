@@ -93,6 +93,8 @@ function addCMS() {
   newYaml += `
     - title@: CMS
       section_items:
+        - title: Arc Publishing
+          link: https://www.arcpublishing.com
         - title: Canvas
           link: https://www.roya.com/blog/roya-announces-addition-of-amp-to-canvas-cms-amp.html
         - title: Drupal

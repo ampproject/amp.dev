@@ -3,6 +3,8 @@
 
 .amp-conf {
 
+  background: #f5f5f5;
+
   section.amp-conf-section {
     padding: 2em 0;
     background: #f5f5f5;
@@ -27,6 +29,15 @@
         text-align: center;
       }
 
+      clip-path: polygon( 0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw) );
+      &::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: red;
+      }
+
       h2 {
         font-size: 3.37em;
         margin-top: 0;
@@ -45,7 +56,7 @@
 
       .menu {
         background: rgba(0,0,0,0.05);
-        padding: 1em 0;
+        padding: 1em 0 2em 0;
         margin-top: 1em;
 
         .wrapper {
@@ -155,14 +166,233 @@
       h3 {
         color: inherit;
       }
+
+      .note {
+        color: #999;
+        font-style: italic;
+      }
+
+      .days {
+        display: flex;
+        flex-wrap: wrap;
+        box-shadow: 0px 3px 20px 0 rgba(0,0,0,0.075);
+      }
+
+      .tab[selected] {
+        outline: none;
+        background: $gradient-anglebold;
+        color: #fff;
+      }
+
+      .tab {
+        list-style: none;
+        flex-grow: 1;
+        text-align: center;
+        cursor: pointer;
+        padding: 0.5em;
+        background: #f5f5f5;
+      }
+
+      .day {
+        display: none;
+        order: 1; /* must be greater than the order of the tab buttons to flex to the next line */
+        padding: 1em;
+      }
+
+      .tab[selected]+.day {
+        display: block;
+      }
+
+      .day {
+        box-sizing: border-box;
+        min-width: 300px;
+
+        h4 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+      }
+
+      ul.schedule {
+        list-style: none;
+        margin-left: 114px;
+
+        > li {
+          padding: 5px;
+          padding-bottom: 10px;
+          display: flex;
+          align-items: flex-start;
+          position: relative;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 1px;
+            background: #bbb;
+            bottom: 0px;
+            top: 35px;
+            left: 23px;
+          }
+
+          div {
+            padding-left: 23px;
+          }
+
+          span.image {
+            display: block;
+            border-radius: 50px;
+            overflow: hidden;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top: -30px;
+            left: -115px;
+            background: #eee;
+          }
+
+          span.image.multiple {
+            width: 60px;
+            height: 60px;
+            &:nth-child(even) {
+              left: -75px;
+            }
+
+            &:nth-child(2) { top: 10px; }
+            &:nth-child(3) { top: 50px; }
+            &:nth-child(4) { top: 90px; }
+            &:nth-child(5) { top: 130px; }
+            &:nth-child(6) { top: 170px; }
+          }
+
+          h5 {
+            font-size: 1em;
+            margin: 0;
+            color: inherit;
+            &::before {
+              display: none;
+            }
+            &.session {
+              font-weight: 500;
+            }
+            &.keynote {
+              font-weight: 500;
+              color: #0379C4;
+            }
+            &.panel,
+            &.workshop {
+              font-weight: 500;
+              color: #FF9800;
+            }
+          }
+
+          p {
+            font-size: 13px;
+            line-height: 1.6em;
+          }
+
+        }
+
+        time {
+          position: relative;
+          display: inline-block;
+          font-family: monospace;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 1px;
+            background: #bbb;
+            right: -17px;
+            top: 50%;
+          }
+        }
+
+        > li.session,
+        > li.keynote {
+          time::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 1px;
+            background: #bbb;
+            left: -17px;
+            top: 50%;
+          }
+        }
+
+        small {
+          display: block;
+          line-height: 1.6em;
+        }
+
+      }
+
+      @include max-screen(500px) {
+        ul.schedule {
+          margin-left: 0;
+          > li span.image {
+            display: none;
+          }
+          > li.session,
+          > li.keynote {
+            time::after {
+                display: none;
+            }
+          }
+        }
+      }
+
     }
 
     &.speakers {
+      ul {
+        margin-top: 2em;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fill,minmax(150px, 1fr));
+        list-style: none;
+        li {
 
+          margin: 0;
+          padding: 0;
+          height: auto;
+
+          span.image {
+            clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 10px));
+            display: block;
+            position: relative;
+            z-index: 1;
+          }
+
+          div {
+            background: #fff;
+            font-size: 0.8em;
+            line-height: 1.5em;
+            padding: 1em;
+            padding-top: 1em;
+
+            p {
+              display: none;
+            }
+
+            h4 {
+              color: #333;
+              small {
+                display: block;
+              }
+            }
+          }
+
+        }
+      }
     }
 
     &.location {
       padding: 2em 0;
+      clip-path: polygon(0 2vw,100% 0vw,100% 100%,0 calc(100% - 2vw));
 
       .flex {
         display: flex;

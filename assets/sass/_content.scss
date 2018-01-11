@@ -70,6 +70,22 @@
     }
   }
 
+  /* For use in components docs */
+  .centered-fig {
+      text-align: center;
+  }
+
+  .flex-images {
+    display: flex;
+    align-items: center;
+  }
+
+  .special-char {
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px;
+  }
+
   .content {
     flex-grow: 1;
     -webkit-flex-grow: 1;

@@ -359,6 +359,21 @@ components:
             "eventValue": "${totalVisibleTime}"
           }
         },
+        "heroImageVisible7": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 2000,
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "hero-image visible",
+            "eventLabel": "continuousTimeMin: 2000 & totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
         "heroImageHidden1": {
           "on": "hidden",
           "request": "event",
@@ -425,6 +440,21 @@ components:
             "eventCategory": "hidden",
             "eventAction": "hero-image hidden",
             "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "heroImageHidden6": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#hero-image",
+            "continuousTimeMin": 2000,
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "hero-image hidden",
+            "eventLabel": "continuousTimeMin: 2000 & totalTimeMin: 5000",
             "eventValue": "${totalVisibleTime}"
           }
         },
@@ -525,6 +555,21 @@ components:
             "eventValue": "${totalVisibleTime}"
           }
         },
+        "experienceImageVisible7": {
+          "on": "visible",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 2000,
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "visible",
+            "eventAction": "experience-image visible",
+            "eventLabel": "continuousTimeMin: 2000 & totalTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
         "experienceImageHidden1": {
           "on": "hidden",
           "request": "event",
@@ -591,6 +636,21 @@ components:
             "eventCategory": "hidden",
             "eventAction": "experience-image hidden",
             "eventLabel": "continuousTimeMin: 5000",
+            "eventValue": "${totalVisibleTime}"
+          }
+        },
+        "experienceImageHidden6": {
+          "on": "hidden",
+          "request": "event",
+          "visibilitySpec": {
+            "selector": "#experience-image",
+            "continuousTimeMin": 2000,
+            "totalTimeMin": 5000
+          },
+          "vars": {
+            "eventCategory": "hidden",
+            "eventAction": "experience-image hidden",
+            "eventLabel": "continuousTimeMin: 2000 & totalTimeMin: 5000",
             "eventValue": "${totalVisibleTime}"
           }
         }
