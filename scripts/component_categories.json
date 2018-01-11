@@ -28,6 +28,7 @@
     "amp-fx-flying-carpet": "layout",
     "amp-fx-parallax": "layout",
     "amp-iframe": "layout",
+    "amp-layout": "layout",
     "amp-lightbox": "layout",
     "amp-position-observer": "layout",
     "amp-sidebar": "layout",

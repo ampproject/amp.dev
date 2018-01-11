@@ -1,0 +1,190 @@
+speakers:
+  davidbesbris:
+    name: David Besbris
+    company: Google
+    pic: /static/img/amp-conf/speakers/bez.jpg
+    bio: Bez joined Google in 2008 and leads the Google News, Google Play Newsstand, AMP and Google Search fresh content teams. Before that he's led several other products, including Google+, Google Photos, Gmail and Google Calendar.
+  vamseejasti:
+    name: Vamsee Jasti
+    company: Google
+    pic: /static/img/amp-conf/speakers/vamsee.jpg
+    bio: Vamsee Jasti is the product manager for advertising in AMP. His mission is to keep the web open and free by helping publishers make money without comprising on user experience. The other way he helps publishers is by clicking on every ad he sees on the web.
+  paulbakaus:
+    name: Paul Bakaus
+    company: Google
+    pic: /static/img/amp-conf/speakers/paul.jpg
+    bio: Paul Bakaus is a Developer Advocate at Google, heading up outreach for AMP. He assists developers, designers, and filmmakers to create better, faster, more immersive and more convincing digital experiences.
+  malteubl:
+    name: Malte Ubl
+    company: Google
+    pic: /static/img/amp-conf/speakers/malte.jpg
+    bio: Malte Ubl is the tech lead of the AMP Project. He previously spent 5 years at Google making JavaScript based apps go fast and in his free time, he is one of the co-organizers of JSConf EU.
+  rudygalfi:
+    name: Rudy Galfi
+    company: Google
+    pic: /static/img/amp-conf/speakers/rudy.jpg
+    bio: Rudy Galfi is the product management lead for the AMP Project since August 2015. He previously spent four years at Google building personalized content recommendation experiences for various Google products and was product manager for Google News. Prior to Google, Rudy was a software engineer at Microsoft.
+  ericlindley:
+    name: Eric Lindley
+    company: Google
+    pic: /static/img/amp-conf/speakers/eric.jpg
+    bio: Eric Lindley is a product manager on the AMP Project, focused on format support. Previously at Google he worked on the initial launch of the standalone Google Photos app.
+  sebastianbenz:
+    name: Sebastian Benz
+    company: Google
+    pic: /static/img/amp-conf/speakers/sebastian.jpg
+    bio: Sebastian Benz is a Developer Advocate at Google. He created ampbyexample.com and helps partners be more successful on the web and on Android. Sebastian has a PhD in Computer Science from TU Muenchen.
+  alighassemi:
+    name: Ali Ghassemi
+    company: Google
+    pic: /static/img/amp-conf/speakers/ali.jpg
+  aleydasolis:
+    name: Aleyda Solis
+    company: Orainti
+    pic: https://www.aleydasolis.com/images/aleyda-solis.jpg
+    bio: Aleyda Solis is an International SEO Consultant, service that she provides with her boutique consultancy, Orainti; a blogger (Search Engine Land, State of Digital and Moz), speaker (with more than 100 conferences in 20 countries in English and Spanish) & author (of "SEO, Las Claves Esenciales").
+  kseniacoulter:
+    name: Ksenia Coulter
+    company: Washington Post
+    pic: https://pbs.twimg.com/profile_images/948278828597694464/dH1AWydi_400x400.jpg
+    bio: TBD
+  gilbirman:
+    name: Gil Birman
+    company: Airbnb
+    pic: /static/img/amp-conf/speakers/gil.jpg
+    bio: Gil Birman is a software engineer who has worked at airbnb since 2015. During most of that time, he worked on the SEO team developing new products to increase airbnb.com's search engine presence.
+  lisawang:
+    name: Lisa Wang
+    company: Google
+    pic: /static/img/amp-conf/speakers/lisa.jpg
+    bio: Lisa is a product manager on the AMP team, focusing on e-commerce. Her mission is to empower business owners in building fast, user-friendly e-commerce experiences. Lisa earned a bachelor’s degree in Math and Computer Science from Harvard College.
+
+
+agenda:
+  day_1:
+    - title: Registration
+      time: "0800"
+    - title: Day One Keynote
+      time: "0900"
+      type: keynote
+      speaker: malteubl
+      description: Malte Ubl, creator of AMP, will open the day presenting a new vision for the future of AMP.
+    - title: ???
+      time: "0930"
+      type: session
+    - title: Telling Stories with AMP
+      time: "1000"
+      type: session
+    - title: Coffee Break
+      time: "1030"
+    - title: Parallax done...right?!
+      time: "1100"
+      type: session
+      speaker: alighassemi
+    - title: ???
+      time: "1130"
+      type: session
+    - title: ???
+      time: "1200"
+      type: session
+    - title: "Q&A and Panel: Amazing Stories, told through AMP"
+      time: "1230"
+      type: panel
+    - title: Lunch
+      time: "1300"
+    - title: "AMP Optimization: Do's & Dont's"
+      time: "1400"
+      type: session
+      speaker: aleydasolis
+      description: "Avoid common optimization mistakes when implementing AMP: this session is going to go through the most common error scenarios found when validating AMP Urls in order to be effectively displayed in Google search results, with examples, actionable advice to make it easier to follow Google's best practices as well as tools to validate."
+    - title: "AMPing Airbnb: A Magic Carpet Ride"
+      time: "1430"
+      type: session
+      description: The Airbnb AMP team will walk you through their strategy around AMP, their development process, and experimentation. They will provide you insights on technical challenges, what's worked, and the gains seen on both page speed and organic traffic.
+      speaker: gilbirman
+    - title: ???
+      time: "1500"
+      type: session
+    - title: Coffee Break
+      time: "1530"
+    - title: ???
+      time: "1600"
+      type: session
+    - title: ???
+      time: "1630"
+      type: session
+    - title: ???
+      time: "1700"
+      type: session
+    - title: "Q&A and Panel: AMP in Production"
+      time: "1730"
+      type: panel
+    - title: Party!
+      time: "1800"
+  day_2:
+    - title: Registration
+      time: "0800"
+    - title: "Progressive Web AMPs: The story so far"
+      time: "9000"
+      type: keynote
+      speaker: ericlindley
+      description:
+    - title: ???
+      time: "0930"
+      type: session
+    - title: ???
+      time: "1000"
+      type: session
+    - title: Coffee Break
+      time: "1030"
+    - title: "How AMP is helping the open web stay sustainable "
+      time: "1100"
+      type: session
+      speaker: vamseejasti
+      description:
+    - title: "The Definitive Guide to Building an AMP e-commerce Experience"
+      time: "1130"
+      type: session
+      speaker: lisawang
+    - title: "AMPbyExample Live"
+      time: "1200"
+      type: session
+      speaker: sebastianbenz
+    - title: "Q&A and Panel: Monetization, e-commerce and PWAMP"
+      time: "1230"
+      type: panel
+    - title: Lunch
+      time: "1300"
+    - title: "???"
+      time: "1400"
+      type: session
+      speaker: asahney
+    - title: "Fast by default: AMP powering WordPress"
+      time: "1430"
+      type: session
+      speaker: albertomedina
+    - title: ???
+      time: "1500"
+      type: session
+    - title: Break
+      time: "1530"
+    - title: ???
+      time: "1600"
+      type: session
+    - title: ???
+      time: "1630"
+      type: session
+    - title: "Q&A & Panel: Advancing the web, the AMP way"
+      time: "1700"
+      type: panel
+    - title: What's next in AMP
+      time: "1730"
+      type: keynote
+      speakers:
+        - malteubl
+        - rudygalfi
+      company: Google
+      description: What does the future for AMP look like? Malte Ubl, engineering lead of AMP, and Rudy Galfi, PM on the AMP team, are here to tell you all about it.
+    - title: Wrap-up
+      time: "1800"
+

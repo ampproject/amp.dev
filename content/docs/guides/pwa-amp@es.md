@@ -1,44 +1,51 @@
 ---
-$title: Combina AMP con Aplicaciones Web Progresivas
+$title: Combinar AMP con aplicaciones web progresivas
+$order: 9
+$category: Develop
+toc: true
+components:
+    - youtube
 ---
 [TOC]
 
-{{ youtube('Yllbfu3JE2Y', 480, 270, caption='Mira la introducción a combinar AMP y PWA.') }}
+{{ youtube('Yllbfu3JE2Y', 480, 270, caption='Introducción a la combinación de páginas AMP y PWA.') }}
 
-Las Aplicaciones Web Progresivas, en inglés PWA (o Progressive Web Apps) y las páginas AMP trabajan muy bien juntas. De hecho, en muchos casos, se complentan entre ellas de una forma u otra. Aprenda cómo:
+Las aplicaciones web progresivas (PWA) y las páginas AMP se complementan muy bien. De hecho, casi siempre se mejoran mutuamente de alguna manera. Descubre cómo:
 
-1. [Habilite características PWA](/es/docs/guides/pwa-amp/amp-as-pwa.html) en su página AMP
-1. Cree un [viaje para el usuario convincente y super rápido](/es/docs/guides/pwa-amp/amp-to-pwa.html) desde AMP a PWA
-1. [Simplifique su PWA](/es/docs/guides/pwa-amp/amp-in-pwa.html) utilizando la potencia de AMP
+1. [Habilitar las funciones de las PWA](/es/docs/guides/pwa-amp/amp-as-pwa.html) en tus páginas AMP.
+2. Crear una [transición superrápida y atractiva para el usuario](/es/docs/guides/pwa-amp/amp-to-pwa.html) de las páginas AMP a las PWA.
+3. [Simplificar tus PWA](/es/docs/guides/pwa-amp/amp-in-pwa.html) aprovechando la potencia de la tecnología AMP.
 
-{% call callout('Progressive Web App?', type='note') %}
-Aprende más sobre [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) en Web Fundamentals.
+{% call callout('¿Qué son las aplicaciones web progresivas?', type='note') %}
+Consulta más información sobre las [aplicaciones web progresivas](https://developers.google.com/web/progressive-web-apps/) en Web Fundamentals.
 {% endcall %}
 
-## Páginas AMP con características PWA
+## Páginas AMP con funciones de PWA
 
-Las páginas de AMP pueden utilizar muchas características de PWA por sí solas, siempre y cuando sean servidas desde su origen (el dominio de su sitio) en lugar de una caché de AMP. Esto significa que las características de PWA no se activarán al consumir una página de AMP dentro de una plataforma como Google o Bing, pero sí en el futuro, o si los usuarios navegan directamente a las páginas de AMP.
+Las páginas AMP pueden aprovechar muchas de las funciones de las PWA, siempre que se publiquen desde tu origen (el dominio de tu sitio web) y no desde una caché de AMP. Esto significa que estas funciones no se activarán si se llega a una página AMP desde plataformas como Google o Bing, pero sí si los usuarios se empiezan a desplazar por el sitio web o si navegan directamente hasta tus páginas AMP.
 
-{% call callout('Leer más', type='read') %}
-Aprenda cómo [habilitar características PWA](/es/docs/guides/pwa-amp/amp-as-pwa.html) para sus páginas AMP.
+{% call callout('Más información', type='read') %}
+Descubre cómo [habilitar funciones de las PWA](/es/docs/guides/pwa-amp/amp-as-pwa.html) en tus páginas AMP.
 {% endcall %}
 
-## AMP como punto de entrada en su PWA
+## Usar páginas AMP como punto de entrada de una PWA
 
-El punto de venta único de AMP es la **entrega casi instantánea**, una característica que hace que AMP sea el ajuste perfecto para la primera interacción del usuario con su sitio. *Las aplicaciones web progresivas* permiten mucho **más interactividad y características de habilitación de compromiso**, pero su primera carga se ve obstaculizada por el hecho de que el site's Service Worker y, por lo tanto, sus activos y shell de aplicaciones, sólo aceleran la entrega en cargas posteriores.
+El punto fuerte de las páginas AMP es la **publicación casi instantánea**, que permite optimizar la primera interacción entre el usuario y el sitio web. Las *aplicaciones web progresivas* ofrecen funciones que **mejoran la interactividad y la interacción**, pero la carga inicial se ve perjudicada por el hecho de que el componente service worker del sitio web y, por tanto, sus recursos y el esqueleto de aplicación solo aceleran la publicación de las páginas a partir de la siguiente carga.
 
-Una buena estrategia es hacer que el punto de entrada en su sitio una página de AMP, luego preparar el PWA detrás de las escenas y cambiarse a ella para el viaje de ida.
+Una buena estrategia sería, por ejemplo, definir que una página AMP fuese el punto de entrada de los usuarios a tu sitio web y después preparar la PWA de tapadillo y dirigirlos a ella durante el resto de la visita.
 
-{% call callout('Leer más', type='read') %}
-Aprender más sobre cómo [conectar AMP con PWA](/es/docs/guides/pwa-amp/amp-to-pwa.html) a través del `amp-install-serviceworker`.
+{% call callout('Más información', type='read') %}
+Descubre cómo [conectar una página AMP a una PWA](/es/docs/guides/pwa-amp/amp-to-pwa.html) con `amp-install-serviceworker`.
 {% endcall %}
 
-## AMP como fuente de datos para su PWA
+## Usar las páginas AMP como fuente de datos de una PWA
 
-Una de las características principales de las páginas de AMP es que son fáciles y seguras de integrar, por lo que un número cada vez mayor de plataformas se complace en distribuir y servir.
+Una de las características principales de las páginas AMP es que insertarlas es fácil y seguro, y, por este motivo precisamente, cada vez son más las plataformas que las distribuyen y las publican.
 
-Si está creando una aplicación web progresiva, puede recibir los mismos beneficios y reducir drásticamente la complejidad de su backend y cliente al **volver a utilizar sus páginas AMP como fuente de datos para su PWA**.
+Si estás creando una aplicación web progresiva, puedes obtener los mismos beneficios y reducir de forma radical la complejidad del backend y del cliente si **reutilizas tus páginas AMP como fuente de datos de tus PWA**.
 
-{% call callout('Leer más', type='read') %}
-Aprender más sobre cómo [consumir páginas AMP con PWA](/es/docs/guides/pwa-amp/amp-in-pwa.html).
+{% call callout('Más información', type='read') %}
+Descubre cómo [utilizar páginas AMP en una PWA](/es/docs/guides/pwa-amp/amp-in-pwa.html).
 {% endcall %}
+ 
+ 

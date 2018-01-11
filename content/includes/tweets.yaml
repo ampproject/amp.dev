@@ -12,41 +12,39 @@ tweets:
   - origin_name: AMP Project
     origin_id: AMPhtml
     origin_href: https://twitter.com/AMPhtml
-    tweet_id: 888181282168946688
-    date_data: 2017-07-20T16:38:13-07:00
-    date: July 20, 2017
+    tweet_id: 941336239206207493
+    date_data: 2017-12-14T07:57:03-08:00
+    date: December 14, 2017
     text: >
-      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Meet the⚡️ ShadowReader, a production-ready PWA+AMP sample that uses real data from <a href="https://twitter.com/guardian" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="87818409"><s>@</s><b>guardian</b></a>. Learn all about it 👇<a href="https://t.co/jpPEPXLWLZ" rel="nofollow noopener" dir="ltr" data-expanded-url="https://amphtml.wordpress.com/2017/07/20/putting-the-amp-in-progressive-web-amps-meet-the-shadowreader/" class="twitter-timeline-link u-hidden" target="_blank" title="https://amphtml.wordpress.com/2017/07/20/putting-the-amp-in-progressive-web-amps-meet-the-shadowreader/"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">amphtml.wordpress.com/2017/07/20/put</span><span class="invisible">ting-the-amp-in-progressive-web-amps-meet-the-shadowreader/</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
+      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Twitter uses AMP to give users lightning ⚡️ fast, seamless reading experiences. Learn more about their latest support for AMP: <a href="https://t.co/XRmuMhus4f" rel="nofollow noopener" dir="ltr" data-expanded-url="https://www.ampproject.org/latest/blog/twitter-uses-amp-to-improve-reading-experience-enables-publishers-to-understand-their-audience/" class="twitter-timeline-link" target="_blank" title="https://www.ampproject.org/latest/blog/twitter-uses-amp-to-improve-reading-experience-enables-publishers-to-understand-their-audience/"><span class="tco-ellipsis"></span><span class="invisible">https://www.</span><span class="js-display-url">ampproject.org/latest/blog/tw</span><span class="invisible">itter-uses-amp-to-improve-reading-experience-enables-publishers-to-understand-their-audience/</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
 
-  - origin_name: WeeblrPress
-    origin_id: WeeblrPress
-    origin_href: https://twitter.com/WeeblrPress
+  - origin_name: Malte Ubl
+    origin_id: cramforce
+    origin_href: https://twitter.com/cramforce
     retweet_id: AMPhtml
     retweet_href: https://twitter.com/amphtml
-    tweet_id: 877190652500598784
-    date_data: 2017-06-20T08:45:23-07:00
-    date: June 20, 2017
+    tweet_id: 941051181823967232
+    date_data: 2017-12-13T13:04:20-08:00
+    date: December 13, 2017
     text: >
-      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">weeblrAMP: insert ads automatically in your AMP pages: every 3 paragraphs, or after par. #2, #5, #8... <a href="https://t.co/7ftWbYwTuY" rel="nofollow noopener" dir="ltr" data-expanded-url="https://www.weeblrpress.com/xk" class="twitter-timeline-link" target="_blank" title="https://www.weeblrpress.com/xk"><span class="tco-ellipsis"></span><span class="invisible">https://www.</span><span class="js-display-url">weeblrpress.com/xk</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible"> </span></span></a> <a href="https://twitter.com/hashtag/AMPhtml?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMPhtml</b></a><a href="https://t.co/bUbn1yf5Yh" class="twitter-timeline-link u-hidden" data-pre-embedded="true" dir="ltr">pic.twitter.com/bUbn1yf5Yh</a></p>
+      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">The <a href="https://twitter.com/AMPhtml" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="3450662892"><s>@</s><b>amphtml</b></a> design review is live now<a href="https://t.co/rVTPWNMvzX" rel="nofollow noopener" dir="ltr" data-expanded-url="https://github.com/ampproject/amphtml/issues/12119" class="twitter-timeline-link u-hidden" target="_blank" title="https://github.com/ampproject/amphtml/issues/12119"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">github.com/ampproject/amp</span><span class="invisible">html/issues/12119</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
 
-  - origin_name: Hadley Beeman
-    origin_id: hadleybeeman
-    origin_href: https://twitter.com/hadleybeeman
+  - origin_name: malev
+    origin_id: malev
+    origin_href: https://twitter.com/malev
     retweet_id: AMPhtml
     retweet_href: https://twitter.com/amphtml
-    tweet_id: 887342037414105088
-    date_data: 2017-07-18T09:03:22-07:00
-    date: July 18, 2017
+    tweet_id: 940282852352102400
+    date_data: 2017-12-11T10:11:16-08:00
+    date: December 11, 2017
     text: >
-      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Today's <a href="https://twitter.com/w3ctag" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="1078600664"><s>@</s><b>w3ctag</b></a> mtg: AMP, potential for standardisation &amp; what questions it poses for the web platform. W <a href="https://twitter.com/cramforce" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="15534471"><s>@</s><b>cramforce</b></a> <a href="https://t.co/kCiTimRIdG" rel="nofollow noopener" dir="ltr" data-expanded-url="https://github.com/w3ctag/meetings/blob/gh-pages/2017/telcons/07-18-agenda.md" class="twitter-timeline-link" target="_blank" title="https://github.com/w3ctag/meetings/blob/gh-pages/2017/telcons/07-18-agenda.md"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">github.com/w3ctag/meeting</span><span class="invisible">s/blob/gh-pages/2017/telcons/07-18-agenda.md</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
+      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Hey Y'all, I've blogged about our AMP implementation at Condé Nast, come and take a look<a href="https://t.co/beqslC8Dpf" rel="nofollow noopener" dir="ltr" data-expanded-url="https://technology.condenast.com/story/evolving-google-amp-at-conde-nast" class="twitter-timeline-link u-hidden" target="_blank" title="https://technology.condenast.com/story/evolving-google-amp-at-conde-nast"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">technology.condenast.com/story/evolving</span><span class="invisible">-google-amp-at-conde-nast</span><span class="tco-ellipsis"><span class="invisible"> </span>…</span></a></p>
 
-  - origin_name: Puneet Bhalla
-    origin_id: puneetbhalla24
-    origin_href: https://twitter.com/puneetbhalla24
-    retweet_id: AMPhtml
-    retweet_href: https://twitter.com/amphtml
-    tweet_id: 866363046540726272
-    date_data: 2017-05-21T11:40:21-07:00
-    date: May 21, 2017
+  - origin_name: AMP Project
+    origin_id: AMPhtml
+    origin_href: https://twitter.com/AMPhtml
+    tweet_id: 940298137503223809
+    date_data: 2017-12-11T11:12:00-08:00
+    date: December 11, 2017
     text: >
-      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Really loving the next level of AMP project. Check out the templates on <a href="https://t.co/4vpVT8I9KB" rel="nofollow noopener" dir="ltr" data-expanded-url="http://ampstart.com" class="twitter-timeline-link" target="_blank" title="http://ampstart.com"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">ampstart.com</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible"> </span></span></a> and <a href="https://t.co/IZP6bMUjcX" rel="nofollow noopener" dir="ltr" data-expanded-url="http://ampbyexample.com" class="twitter-timeline-link" target="_blank" title="http://ampbyexample.com"><span class="tco-ellipsis"></span><span class="invisible">http://</span><span class="js-display-url">ampbyexample.com</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible"> </span></span></a> <a href="https://twitter.com/hashtag/amp?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>amp</b></a> <a href="https://twitter.com/hashtag/AMPHTML?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMPHTML</b></a></p>
+      <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Check out the latest <a href="https://twitter.com/hashtag/UX?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>UX</b></a> recommendations (including <a href="https://twitter.com/hashtag/AMP?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>AMP</b></a>!) for the <a href="https://twitter.com/hashtag/Mobile?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>Mobile</b></a> <a href="https://twitter.com/hashtag/Web?src=hash" data-query-source="hashtag_click" class="twitter-hashtag pretty-link js-nav" dir="ltr"><s>#</s><b>Web</b></a> from Sr. Staff UX Researcher <a href="https://twitter.com/jennylg" class="twitter-atreply pretty-link js-nav" dir="ltr" data-mentioned-user-id="12865172"><s>@</s><b>jennylg</b></a>Learn more here ↓<a href="https://t.co/StcV0Ktyez" rel="nofollow noopener" dir="ltr" data-expanded-url="https://goo.gl/FCzsV8" class="twitter-timeline-link u-hidden" target="_blank" title="https://goo.gl/FCzsV8"><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">goo.gl/FCzsV8</span><span class="invisible"></span><span class="tco-ellipsis"><span class="invisible"> </span></span></a></p>

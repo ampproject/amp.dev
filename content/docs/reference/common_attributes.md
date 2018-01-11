@@ -62,7 +62,7 @@ Example:
 </amp-img>
 [/sourcecode]
 
-For more information, see [Layout & Media queries](https://www.ampproject.org/docs/guides/responsive/control_layout) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
+For more information, see [Layout & Media queries](/docs/guides/responsive/control_layout.html) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
 
 ## media
 
@@ -123,7 +123,7 @@ Example:
 </amp-lightbox>
 [/sourcecode]
 
-For more information, see  [Actions and Events in AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md).
+For more information, see  [Actions and Events in AMP](/docs/reference/amp-actions-and-events.html).
 
 ## placeholder
 

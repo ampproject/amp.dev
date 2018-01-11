@@ -57,6 +57,7 @@ Here are the components grouped by category:
 | [`amp-fx-flying-carpet`](components/amp-fx-flying-carpet.html) | Wraps its children in a unique full-screen scrolling container allowing you to display a full-screen ad without taking up the entire viewport. |
 | [`amp-fx-parallax`](components/amp-fx-parallax.html) |  An attribute that enables a 3D-perspective effect on an element. |
 | [`amp-iframe`](components/amp-iframe.html) | Displays an iframe. |
+| [`amp-layout`](components/amp-layout.html) | Provides a generic, multi-purpose container element that brings AMP's powerful [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) to any element. |
 | [`amp-lightbox`](components/amp-lightbox.html) | Allows for a “lightbox” or similar experience. |
 | [`amp-position-observer`](components/amp-position-observer.html) | Monitors position of an element within the viewport as a user scrolls and dispatches  events that can be used with other components. |
 | [`amp-sidebar`](components/amp-sidebar.html) | Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. |
