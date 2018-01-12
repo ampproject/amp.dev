@@ -57,6 +57,11 @@
         "type": 301
       },
       {
+        "source": "/docs/tutorials",
+        "destination": "/docs/tutorials/create.html",
+        "type": 301
+      },
+      {
         "source": "/:lang/docs/tutorials",
         "destination": "/:lang/docs/tutorials/create.html",
         "type": 301
