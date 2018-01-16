@@ -131,7 +131,7 @@ components:
 
       <ul class="speakers">
           {% set sortedSpeakers = conf.speakers|sort %}
-          {% for speaker in sortedSpeakers if conf.speakers[speaker].bio %}
+          {% for speaker in sortedSpeakers if conf.speakers[speaker].pic %}
           <li class="card">
               <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="400" height="400" layout="responsive"></amp-img>{% endif %}</span>
               <div>
