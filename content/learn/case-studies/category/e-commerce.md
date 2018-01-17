@@ -1,5 +1,5 @@
 ---
-$title@: e-commerce
+$title@: E-commerce
 $titles:
   page@: Success stories of the domains publishing AMP pages
 $order: 3

@@ -138,6 +138,24 @@ body.about-who-vertical {
           flex: 0 0 25%;
           top: -8px;
         }
+        &.ebay {
+          flex: 0 0 16%;
+          top: -4px;
+        }
+        &.overstock {
+          flex: 0 0 8%;
+          top: -14px;
+        }
+        &.aliexpress {
+          flex: 0 0 18%;
+        }
+        &.jcrew{
+          flex: 0 0 15%;
+        }
+        &.eventbrite{
+          flex: 0 0 17%;
+          top: -1px;
+        }
       }
     }
   }
@@ -270,7 +288,8 @@ body.about-who-vertical {
     }
   }
 
-  .about-who-block.publishers {
+  .about-who-block.publishers,
+  .about-who-block.ecommerce {
     .hero-images .triangle {
       top: -80px;
     }
