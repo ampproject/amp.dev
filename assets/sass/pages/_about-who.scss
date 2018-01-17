@@ -60,9 +60,12 @@ body.about-who {
 
   .user-categories {
     flex-wrap: wrap;
-    padding: 0 8.95% 75px 8.95%;
+    padding: 0 10px 75px 10px;
 
     .card {
+      flex: 0 0 calc(25% - 20px);
+      flex-basis: calc(25% - 20px);
+      height: 100%;
       padding: 45px 10px 35px 10px;
       text-align: center;
 

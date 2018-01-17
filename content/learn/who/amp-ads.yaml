@@ -1,7 +1,7 @@
 $title@: AMPHTML Ads
 $view: /views/amp-ads.html
 class: amp-ads
-$order: 3
+$order: 1
 $hidden: true
 $parent: /content/learn/who-uses-amp.yaml
 components:
