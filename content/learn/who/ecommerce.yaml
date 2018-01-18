@@ -71,6 +71,8 @@ case:
   cases:
     - filename: greenweez.md
     - filename: fastcommerce.md
+  morecases: /case-studies/e-commerce/
+
 
 cta:
   title@: Get Started Building
