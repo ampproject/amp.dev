@@ -161,7 +161,7 @@ body.about-who-vertical {
   }
 
   .why-use {
-    padding: 0 5% 165px 5%;
+    padding: 0 5% 100px 5%;
 
     h3 {
       text-align: center;
@@ -207,7 +207,12 @@ body.about-who-vertical {
     padding: 0 15.4% 115px 15.4%;
 
     h3 {
-      margin-bottom: 45px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    h4.more {
+      margin-top: -15px;
       text-align: center;
     }
 
