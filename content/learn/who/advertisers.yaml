@@ -30,17 +30,17 @@ why:
       paragraph@: AMP pages typically load in under one second. That means when your target audience lands on an AMP page, they get what they’re looking for in the moment they’re looking for it. The net result -- they’re more likely to be engaged with and receptive to your brand’s messages, and more likely to take the actions you’re guiding them towards like completing a purchase.
       icon: advertisers/advertisers_icon_audience.svg
 
-    - title@: Boost your campaign performance with AMPHTML Ads
-      paragraph@: Even the most memorable creative won’t serve its purpose if the ad is slow and disruptive for a user. AMPHTML Ads are a new way of building ads, making them as fast as AMP pages to ensure your ads do what they’re meant to do and deliver the value you’re looking for.
+    - title@: Boost your campaign performance with AMPHTML ads
+      paragraph@: Even the most memorable creative won’t serve its purpose if the ad is slow and disruptive for a user. AMPHTML ads are a new way of building ads, making them as fast as AMP pages to ensure your ads do what they’re meant to do and deliver the value you’re looking for.
       icon: advertisers/advertisers_icon_everywhere.svg
 
     - title@: Maximize ROI everywhere
-      paragraph@: Building the right ad, landing page or web content takes time. With AMPHTML Ads, your ads can serve on both AMP and non-AMP pages, meaning you can build your AMPHTML Ads once and deliver a memorable brand experience everywhere. Similarly, AMP pages can be built once and distributed across a wide variety of distribution platforms simultaneously.
+      paragraph@: Building the right ad, landing page or web content takes time. With AMPHTML ads, your ads can serve on both AMP and non-AMP pages, meaning you can build your AMPHTML ads once and deliver a memorable brand experience everywhere. Similarly, AMP pages can be built once and distributed across a wide variety of distribution platforms simultaneously.
       icon: advertisers/advertisers_icon_ROI.svg
 
 large_cta:
   title@: Get started with AMP
-  subtitle@: Learn more about AMPHTML Ads and building AMP pages for your campaigns and website.
+  subtitle@: Learn more about AMPHTML ads and building AMP pages for your campaigns and website.
   cta@: Learn More
   cta_url: /content/learn/who/amp-ads.yaml
   lines_left: /static/img/about/who-use-amp/amp-ads/lines_5.svg

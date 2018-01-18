@@ -49,7 +49,7 @@ why:
   title@: How AMP can help publishers
   reasons:
     - title@: Enable compelling, consistently fast experiences
-      paragraph@: AMP speeds up content, keeping users engaged irrespective of where they start their journey -- on the publisher’s own website or from platforms that link to AMP pages like Twitter, Google and Pinterest. With faster and more secure ads, AMPHTML Ads deliver great advertising experiences too, ensuring every interaction with a publisher’s brand is a compelling one.
+      paragraph@: AMP speeds up content, keeping users engaged irrespective of where they start their journey -- on the publisher’s own website or from platforms that link to AMP pages like Twitter, Google and Pinterest. With faster and more secure ads, AMPHTML ads deliver great advertising experiences too, ensuring every interaction with a publisher’s brand is a compelling one.
       icon: publishers/publisher_icon_fast.svg
 
     - title@: Strengthen your business while maintaining control
@@ -57,7 +57,7 @@ why:
       icon: publishers/publisher_icon_simple.svg
 
     - title@: Reduce complexity in your operations.
-      paragraph@: Building AMP pages is simple and straightforward. You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress and Drupal. Your teams do not need any special skills nor worry about optimizing your code for each distribution platform as the AMP format is fully portable and AMP pages are consistently fast no matter how a user gets to them.  Similarly, AMPHTML Ads may be built once and run across all pages, including non-AMP pages.
+      paragraph@: Building AMP pages is simple and straightforward. You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress and Drupal. Your teams do not need any special skills nor worry about optimizing your code for each distribution platform as the AMP format is fully portable and AMP pages are consistently fast no matter how a user gets to them.  Similarly, AMPHTML ads may be built once and run across all pages, including non-AMP pages.
       icon: publishers/publisher_icon_business.svg
 
 case:
