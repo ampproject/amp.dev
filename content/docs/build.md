@@ -62,8 +62,8 @@ doc_cards:
     desc: See AMP By Example's sample and guide to get started using AMP with e-commerce. 
     link: https://ampbyexample.com/introduction/amp_for_e-commerce_getting_started/
 
-  - name: AMP Ads
-    desc: Learn about AMP Ads and building AMP pages for your campaigns and website.
+  - name: AMPHTML Ads
+    desc: Learn about AMPHTML Ads and building AMP pages for your campaigns and website.
     link: https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md
 
   - name: Analytics
