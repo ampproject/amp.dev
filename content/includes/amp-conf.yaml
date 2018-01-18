@@ -81,8 +81,8 @@ speakers:
     bio: Alberto Medina is a Developer Advocate currently working towards making the AMP experience for Content Management Systems awesome. Before AMP he worked helping companies and developers build progressive web applications using modern web technologies.
   thierrymuller:
     name: Thierry Muller
-    company: Google
-    pic:
+    company: XWP
+    pic: /static/img/amp-conf/speakers/thierry.jpg
     bio:
   somogyi:
     name: Stephan Somogyi
@@ -130,7 +130,7 @@ speakers:
     pic:
     bio:
   chrisluke:
-    name: chrisluke
+    name: Chris Luke
     company: The Johnson Group
     pic:
     bio:
@@ -149,6 +149,21 @@ speakers:
     company: Reddit
     pic:
     bio:
+  madisonminer:
+    name: Madison Miner
+    company: WompMobile
+    pic: /static/img/amp-conf/speakers/madison.jpg
+    bio: Madison Miner is CEO of WompMobile, a digital agency that helps brands realize big results on small screens. WompMobile creates Accelerated Mobile Pages and Progressive Web Apps that enable companies to deliver mobile experiences that rival the desktop. Madison, a software engineer, is relentless about finding creative ways to combine rich functionality with performant architecture to achieve faster, more elegant mobile websites.
+  oliverarmstrong:
+    name: Oliver Armstrong
+    company: Instapage
+    pic: /static/img/amp-conf/speakers/oliver.jpg
+    bio: Oliver Armstrong is the Vice President of Product at Instapage. He drives the Instapage product strategy and roadmap with the mission of bringing scale to post-click optimization. Oliver has founded two companies and loves working in fast-paced startup environments, building the right things, for the right customers, in the right way.
+  piotrdolistowski:
+    name: Piotr Dolistowski
+    company: Instapage
+    pic: /static/img/amp-conf/speakers/piotr.jpg
+    bio: Piotr Dolistowski is a Senior Director of Engineering at Instapage where he leads the Front-end development team. A Full-Stack Developer with 11 years of experience, Pior implemented the UI-Kit based on Material Design using Sass and Angular. His team optimized the Instapage website and successfully implemented AMP on the blog. He is now using his learnings to implement AMP within the Instapage landing page platform.
 
 agenda:
   day_1:
@@ -187,6 +202,7 @@ agenda:
         - abbybeck
         - andrebarrara
     - title: "Q&A and Panel: Amazing Stories, told through AMP"
+      description: Ask the speakers of the previous talks any questions you have about storytelling, canonical AMP, animations and more in this special Q&A panel wrapping up this half-day theme.
       time: "1230"
       type: panel
       moderator: paulbakaus
@@ -205,7 +221,7 @@ agenda:
     - title: "Fast by default: AMP powering WordPress"
       time: "1430"
       type: session
-      description: The AMP plugin pioneered by Automattic is already powering millions of sites, but there's still a long way to go. To help the WordPress ecosystem push forward into a bright, fast, and user-friendly future, AMP, Automattic and Google have formed a unique collaboration. See the first fruits, announced here at AMP Conf.
+      description: The WordPress AMP plugin, pioneered by Automattic, has enabled AMP for millions of sites, but there is still a lot of room for expanding its capabilities. To help the WordPress ecosystem push forward into a bright, fast, user-friendly future, Automattic, XWP, the AMP team and Google have formed a unique collaboration to bolster the plugin capabilities and enable AMP Canonical experiences by default for WordPress sites. See the first results of our work here at AMP Conf!
       speakers:
         - albertomedina
         - thierrymuller
@@ -216,8 +232,8 @@ agenda:
       speaker: somogyi
     - title: Coffee Break
       time: "1530"
-    - title: "Progressive Web AMPs: The story so far (feat. the new BMW.com by JvM)"
-      description: In this hour long special, Eric, PM on the AMP team, will walk through the latest progress with the AMP+PWA combinations patterns and the industry trends we're seeing. Afterwards the BMW.com team at famous creative agency Jung von Matt will enter the stage to show you in detail how they've build a magical new experience for BMW with the power of AMP and PWA.
+    - title: "Progressive Web AMPs: The story so far (feat. the new BMW.com by JvM, and WompMobile)"
+      description: In this hour long special, Eric, PM on the AMP team, will walk through the latest progress with the AMP+PWA combinations patterns and the industry trends we're seeing. Afterwards the BMW.com team at famous creative agency Jung von Matt will enter the stage to show you in detail how they've build a magical new experience for BMW with the power of AMP and PWA. Finally, Madison of WompMobile will venture into the nitty gritty and talk numbers with some of the client sites he's built.
       time: "1600"
       type: session
       speakers:
@@ -225,7 +241,9 @@ agenda:
         - thomasfeldhaus
         - peerweidner
         - matthiasrohmer
+        - madisonminer
     - title: "Q&A & Panel: Advancing the web, for platforms and publishers"
+      description: Ask the speakers of the previous talks any questions you have about WordPress, Chrome, PWAs and more in this special Q&A panel wrapping up this half-day theme.
       time: "1700"
       type: panel
       moderator: bpalser
@@ -235,8 +253,7 @@ agenda:
         - somogyi
         - ericlindley
         - thomasfeldhaus
-        - peerweidner
-        - matthiasrohmer
+        - madisonminer
     - title: "What's next in AMP"
       time: "1730"
       type: keynote
@@ -269,9 +286,13 @@ agenda:
         - jamesavery
         - hdouglass
       description:
-    - title: "???"
+    - title: "How to Balance AMP Limitations with Optimization Features - The Instapage Journey"
+      description: Instapage is a landing page platform that offers advanced conversion optimization features like A/B testing, Heatmaps, conversion tracking, analytics, and attribution. With the majority of our visitors coming from mobile devices, Instapage saw the necessity to support AMP. But many of our advanced features require technology that has limited or no support within the AMP framework. Join us to discuss the challenges in supporting advanced optimization within the AMP framework, and how we’re working with the AMP development team to make AMP a reality for conversion-focused landing pages at scale.
       time: "1200"
       type: session
+      speakers:
+        - oliverarmstrong
+        - piotrdolistowski
     - title: "Q&A and Panel: Making money on the web"
       time: "1230"
       type: panel
@@ -322,7 +343,6 @@ agenda:
         - chrisluke
         - aleydasolis
         - sebastianbenz
-        - chiarachiappini
         - nickcaldwell
     - title: Q&A with the AMP leadership
       time: "1730"

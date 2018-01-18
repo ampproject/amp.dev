@@ -77,7 +77,7 @@ function writeBlogPage(item, directory, parent) {
 
       // collect possible inline styles
       var inlineStyles = body.match(/\/\* Inline styles \*\/([^\<]+)/);
-      inlineStyles = inlineStyles ? inlineStyles[1] : false;
+      inlineStyles = inlineStyles ? inlineStyles[1].trim() : false;
 
       // strip wrapping HTML from body copy
       body = body.split('<div class="amp-wp-article-content">')[1].split('</article>')[0];
@@ -108,7 +108,7 @@ $localization:
   path: /{locale}/latest/blog/{base}/
 components:
   - social-share${dependencies}
-inlineCSS: ${inlineStyles.trim()}
+inlineCSS: ${inlineStyles}
 ---
 
 <div class="amp-wp-article-content">
