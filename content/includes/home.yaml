@@ -53,7 +53,7 @@ success_stories:
       class: teads
 
 large_cta:
-  title@: Learn how to build AMP pages and AMP Ads
+  title@: Learn how to build AMP pages and AMPHTML ads
   cta@: Start Building
   cta_url: /content/docs/tutorials/general/create.md
   lines_left: /static/img/home/lines3.svg
