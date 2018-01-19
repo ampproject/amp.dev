@@ -87,7 +87,7 @@ pre {
   }
 }
 
-.highlight {
+.code {
   .hll { background-color: #ffffcc }
   .c { color: #0099FF; font-style: italic } /* Comment */
   .k { color: #006699; font-weight: bold } /* Keyword */
@@ -151,6 +151,6 @@ pre {
 }
 
 /* Make line numbers unselectable: excludes line numbers from copy-paste user ops */
-.highlight .lineno {-webkit-user-select: none;-moz-user-select: none; -o-user-select: none;}
+.code .lineno {-webkit-user-select: none;-moz-user-select: none; -o-user-select: none;}
 .lineno::-moz-selection {background-color: transparent;} /* Mozilla specific */
 .lineno::selection {background-color: transparent;} /* Other major browsers */
