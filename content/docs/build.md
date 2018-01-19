@@ -49,7 +49,7 @@ video_cards:
     link: https://www.youtube.com/watch?v=y6kA3u3GIwswOqU
     videoid: y6kA3u3GIws
 
-  - name: AMP Ads &#58; Better Advertising on a Faster Web
+  - name: AMPHTML ads &#58; Better Advertising on a Faster Web
     link: https://www.youtube.com/watch?v=K6zKOtS_2FU
     videoid: K6zKOtS_2FU
 
@@ -62,8 +62,8 @@ doc_cards:
     desc: See AMP By Example's sample and guide to get started using AMP with e-commerce. 
     link: https://ampbyexample.com/introduction/amp_for_e-commerce_getting_started/
 
-  - name: AMP Ads
-    desc: Learn about AMP Ads and building AMP pages for your campaigns and website.
+  - name: AMPHTML ads
+    desc: Learn about AMPHTML ads and building AMP pages for your campaigns and website.
     link: https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md
 
   - name: Analytics
