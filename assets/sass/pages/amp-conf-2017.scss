@@ -194,6 +194,12 @@
             }
         }
 
+        &.note {
+            text-align: center;
+            padding: 5em 0;
+            border-bottom: 1em solid #f0f0f0;
+        }
+
     }
 
     .code-of-conduct {
