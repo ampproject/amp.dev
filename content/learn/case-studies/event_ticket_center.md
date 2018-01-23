@@ -1,7 +1,7 @@
 ---
 $order: 20
 $title: Event Ticket Center
-$date: December 20, 2017
+$date: Dec 20, 2017
 $category: e-commerce
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
