@@ -1,7 +1,7 @@
 ---
 $order: 18
 $title: ConsumersAdvocate.org
-$date: December 20, 2017
+$date: Dec 20, 2017
 $category: Publishers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
