@@ -1,7 +1,7 @@
 ---
 $order: 19
 $title: U.S. Xpress
-$date: December 20, 2017
+$date: Dec 20, 2017
 $category: Advertisers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
