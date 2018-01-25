@@ -2,7 +2,7 @@
 $order: 8
 $title: Milestone
 $date: March 6, 2017
-$category: e-commerce
+$category: ecommerce
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
