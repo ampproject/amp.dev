@@ -2,7 +2,7 @@
 $order: 13
 $title: Wego
 $date: May 11, 2017
-$category: e-commerce
+$category: ecommerce
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 

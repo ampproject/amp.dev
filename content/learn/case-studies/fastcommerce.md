@@ -2,7 +2,7 @@
 $order: 17
 $title: Fastcommerce
 $date: June 12, 2017
-$category: e-commerce
+$category: ecommerce
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
