@@ -27,17 +27,17 @@ hero:
       logo_height: 54
       class: ebay
 
-    - name: Overstock
-      logo: ecommerce/overstock_logo.svg
-      logo_width: 29
-      logo_height: 29
-      class: overstock 
-
     - name: Eventbrite
-      logo: ecommerce/eventbrite_logo.png
-      logo_width: 646
-      logo_height: 108
+      logo: ecommerce/Eventbrite_wordmark_orange.png
+      logo_width: 4800
+      logo_height: 1125
       class: eventbrite
+
+    - name: Overstock
+      logo: ecommerce/Overstock_logo_wordmark.png
+      logo_width: 4020
+      logo_height: 1032
+      class: overstock 
 
     - name: AliExpress
       logo: ecommerce/aliexpress_logo.svg
