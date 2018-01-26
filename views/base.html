@@ -58,13 +58,14 @@
   </figure>
   {%- endmacro %}
 
-  {% macro video(src, width, height, layout='responsive', caption='', align='', margin='', autoplay='', loop='', controls='true') -%}
+  {% macro video(src, width, height, poster, layout='responsive', caption='', align='', margin='', autoplay='', loop='', controls='') -%}
   <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
     <amp-video
       src="{{ src }}"
       layout="{{ layout }}"
+      poster="{{ poster }}"
       width="{{ width }}" height="{{ height }}" {% if autoplay %}autoplay{% endif %} {% if loop %}loop{% endif %} {% if controls %}controls{% endif %}>
-    </amp-youtube>
+    </amp-video>
     {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
   </figure>
   {%- endmacro %}
