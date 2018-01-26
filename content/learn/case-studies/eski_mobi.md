@@ -1,7 +1,7 @@
 ---
 $order: 21
 $title: Eski.mobi
-$date: Jan 23, 2017
+$date: Jan 23, 2018
 $category: ecommerce
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
