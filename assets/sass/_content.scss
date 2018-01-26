@@ -137,6 +137,7 @@
     &.margin-none { margin: 0; }
     &.ninety { width: calc(90% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
     &.seventyfive { width: calc(75% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
+    &.forty { width: calc(40% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
 
     amp-img {
       margin: 0;

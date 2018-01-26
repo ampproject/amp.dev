@@ -5,7 +5,7 @@ components:
     - video
 ---
 
-{{ video('/static/video/tut_pets-story-complete.mp4', 374, 667, '/static/img/docs/tutorials/amp_story/story_poster.png', caption='Completed AMP Story', align='right third', autoplay='true', loop='true' ) }}
+{{ video('/static/video/tut_pets-story-complete.mp4', 374, 667, '/static/img/docs/tutorials/amp_story/story_poster.png', caption='Completed AMP Story', align='right forty', autoplay='true', loop='true' ) }}
 
 In this tutorial, we'll introduce you to the [amp-story](/docs/reference/components/amp-story.html) component, which you can use to create visually engaging stories in AMP. By the end of this tutorial, you'll have created a story about "The Joy of Pets" that provides bite-sized information and visuals to entertain and engage readers.
 

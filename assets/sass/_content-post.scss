@@ -58,21 +58,27 @@
 
   table.noborder {
 
-    code {
+    code.filename {
+      background: none;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    code.nopad {
       padding: 0;
     }
 
     h5 {
       margin-top: 2px;
+      font-size: 16px;
     }
     td {
       padding: 10px;
     }
-     td:first-child {
+    td:first-child {
       border: none;
-     }
+    }
   }
-
 }
 
 /* previous & next buttons */
