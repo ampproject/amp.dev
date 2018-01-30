@@ -8,7 +8,7 @@ role:  AMP Project Marketing Lead, Google
 origin: "https://amphtml.wordpress.com/2017/11/27/amp-conf-2018-turning-amsterdam-into-ampsterdam/amp/"
 excerpt: "Last year over 300 developers came together to learn and share about the latest in AMP at AMP Conf in NYC. Since then we’ve had many new developments and uses of AMP emerge, from e-commerce functionality, to building canonically with AMP, to using AMP pages within a Progressive Web App. To share all the latest [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2017-11-27T13:46:50-08:00
+date_data: 2017-11-27T16:46:50-05:00
 $date: November 27, 2017
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

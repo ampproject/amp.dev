@@ -8,7 +8,7 @@ role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2017/11/29/the-total-economic-impact-of-amp-across-publishers-and-e-commerce/amp/"
 excerpt: "Speed equals revenue on the web, especially mobile. In fact, studies have shown even 100ms delays in page load time correlate with lower conversion rates. To better understand the impact AMP can provide for mobile sites on speed and revenue, Google commissioned Forrester Consulting, a leading global research and advisory firm, to conduct a Total Economic Impact™ [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2017-11-29T08:34:45-08:00
+date_data: 2017-11-29T11:34:45-05:00
 $date: November 29, 2017
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
