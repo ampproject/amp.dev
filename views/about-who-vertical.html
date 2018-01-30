@@ -58,7 +58,6 @@
         <div class="example-users">
           {% for user in doc.hero.users %}
             <div class="example-user-logo{% if user.class %} {{user.class}}{% endif %}">
-              {% if user.site_url %}<a href="{{user.site_url}}">{% endif %}
               <amp-img
                   noloading
                   width={{user.logo_width}}
@@ -66,7 +65,6 @@
                   layout=responsive
                   src="/static/img/about/who-use-amp/{{user.logo}}">
               </amp-img>
-              {%if user.site_url%}</a>{% endif %}
             </div>
           {% endfor %}
         </div>

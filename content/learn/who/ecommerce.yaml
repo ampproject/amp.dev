@@ -22,35 +22,30 @@ hero:
 
   users:
     - name: ebay
-      site_url: https://www.ebay.com/
       logo: ecommerce/ebay_logo.svg
       logo_width: 134
       logo_height: 54
       class: ebay
 
     - name: Eventbrite
-      site_url: https://www.eventbrite.com
       logo: ecommerce/Eventbrite_wordmark_orange.png
       logo_width: 4800
       logo_height: 1125
       class: eventbrite
 
     - name: Overstock
-      site_url: https://www.overstock.com
       logo: ecommerce/Overstock_logo_wordmark.png
       logo_width: 4020
       logo_height: 1032
       class: overstock 
 
     - name: AliExpress
-      site_url: https://www.aliexpress.com/
       logo: ecommerce/aliexpress_logo.svg
       logo_width: 218
       logo_height: 51
       class: aliexpress
 
     - name: J Crew
-      site_url: https://www.jcrew.com/
       logo: ecommerce/jcrew_logo.svg
       logo_width: 299
       logo_height: 150
