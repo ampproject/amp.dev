@@ -8,7 +8,7 @@ role:  Product Manager for AMP &amp; Publisher Platform, Twitter
 origin: "https://amphtml.wordpress.com/2017/12/13/twitter-uses-amp-to-improve-reading-experience-enables-publishers-to-understand-their-audience/amp/"
 excerpt: "Editor&#8217;s note: This post is authored by Ben Ward, Product Manager for AMP &#38; Publisher Platform, Twitter. Read more about their support for AMP article analytics here. Twitter sits at the heart of news, with millions of people using the service to stay updated about what’s happening in the world, right as it happens. An essential [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2017-12-13T12:03:20-08:00
+date_data: 2017-12-13T15:03:20-05:00
 $date: December 13, 2017
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
