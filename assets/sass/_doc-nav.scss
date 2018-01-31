@@ -16,7 +16,7 @@
 
   .current-header {
     background: $gradient-anglebuild;
-    padding: 28px 30px 5px;
+    padding: 20px 30px 5px;
 
     h1 {
       color: $color-white;
@@ -31,7 +31,7 @@
     font-size: 40px;
     text-transform: none;
     font-weight: 200;
-    
+
     }
 
     a:lang(it),
@@ -70,6 +70,15 @@
   ul, ol, li {
     list-style-type: none;
   }
+  
+  .tutorial::before  {
+    font-family: FontAwesome;
+    font-size: 12px;
+    content: "\f19d";
+    line-height: 14px;
+    padding-left: 3px;
+    color: #b3b3b3;
+  }
 
   li {
     background: none;
@@ -85,6 +94,7 @@
     margin-right: 10px;
     position: relative;
     display: block;
+    letter-spacing: 0;
 
     @extend %text-base;
     @extend %text-small;
@@ -99,7 +109,7 @@
   li {
 
     a {
-      padding: 15px 0;
+      padding: 10px 0;
     }
 
     .open {
@@ -121,7 +131,13 @@
   li.top-level {
 
     > a {
-      padding-left: 20px;
+      padding-left: 10px;
+    }
+
+    > a.section-name {
+      font-size:  18px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
     }
 
     &.expandable {
@@ -264,6 +280,14 @@
     }
 
   }
+
+  hr {
+    height: 1px;
+    background: #ededed;
+    border: 0;
+    margin: 0 1em;
+  }
+
 }
 
 .doc-footer {

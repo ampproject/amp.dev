@@ -1,6 +1,6 @@
 ---
 $title: Common attributes
-$order: 3
+$order: 2
 toc: true
 ---
 

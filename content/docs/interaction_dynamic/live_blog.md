@@ -2,6 +2,7 @@
 $title: Create a live blog
 $order: 5
 toc: true
+tutorial: true
 ---
 
 [TOC]

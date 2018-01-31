@@ -1,5 +1,5 @@
 ---
-$title: Components / Tags
+$title: Components
 $order: 0
 ---
 The AMP HTML library provides components that are classified as:

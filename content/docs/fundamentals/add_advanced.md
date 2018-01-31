@@ -1,6 +1,7 @@
 ---
 $title: Add advanced AMP features
 $order: 2
+tutorial: true
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}
