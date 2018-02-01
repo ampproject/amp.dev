@@ -1,0 +1,34 @@
+---
+$title: Stories
+
+stylesheet: pages/stories.css
+---
+
+{% set stories = g.doc('/content/includes/stories.yaml', locale=doc.locale) %}
+
+<div class="stories container xl">
+  <section class="hero">
+    <div class="images">
+      images here...
+    </div>
+    <div class="text">
+      <div class="title-wrap">
+        <amp-img
+          noloading
+          height={{stories.hero.icon_height}}
+          width={{stories.hero.icon_width}}
+          src="{{stories.hero.icon}}"
+          sizes="(min-width: 650px) {{stories.hero.icon_width}}px, {{stories.hero.icon_mobile_width}}px">
+        </amp-img>
+        <h1>{{_(stories.hero.title)}}</h1>
+      </div>
+      <h3>{{_(stories.hero.subtitle)}}</h3>
+      <p>{{_(stories.hero.description)}}</p>
+      <a class="button" href="{{stories.hero.url}}">
+        {{_(stories.hero.cta)}}
+        <span class="arrow"></span>
+      </a>
+
+    </div>
+  </section>
+</div>

@@ -1,0 +1,10 @@
+hero:
+  icon: /static/img/stories/icon.png
+  icon_width: 57
+  icon_height: 58
+  icon_mobile_width: 33
+  title@: AMP stories
+  subtitle@: A visual storytelling format for the open web
+  description@: AMP stories immerse readers in tappable, full-screen content. Building on the possibilities of the AMP project, this format enables the creation of visual content that is fast, open, and user-first.
+  cta@: Build an AMP Story
+  url: /docs/tutorials/create.html
