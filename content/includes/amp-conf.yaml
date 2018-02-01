@@ -28,7 +28,7 @@ speakers:
     name: Eric Lindley
     company: Google
     pic: /static/img/amp-conf/speakers/eric.jpg
-    bio: Eric Lindley is a product manager on the AMP Project, focused on format support. Previously at Google he worked on the initial launch of the standalone Google Photos app.
+    bio: As a product manager for AMP, Eric is focused on making the web a faster, better experience for users, developers, site owners, and web merchants. Before joining the AMP team, Eric worked on Google Photos. Prior to joining Google in 2014, Eric has worked in various development and management roles at the intersection of technology, science, and the arts.
   sebastianbenz:
     name: Sebastian Benz
     company: Google
@@ -127,8 +127,11 @@ speakers:
   anandmariappan:
     name: Anand Mariappan
     company: Reddit
-    pic:
-    bio:
+    pic: /static/img/amp-conf/speakers/anand.jpg
+    bio: |
+      Anand Mariappan is the Senior Director of Engineering for the Experiences team at Reddit, the 4th most visited site in the US. In his role, Anand is leading the redesign of the Reddit desktop experience. He is also responsible for overseeing the native video platform and the subreddit experiences for consumers, creators, and moderators across mobile and web. Prior to Reddit, Anand spent eight years at Microsoft in various engineering leadership roles working on compilers, data analysis tools, mobile apps and business applications. Anand's most notable role was as Engineering Manager for the PowerBI app experiences and cloud services team, in which he helped to drive the product as it scaled from 0 to 5 Million subscribers.
+
+      Anand was recognized by the Seattle Times for his work done in Africa to evangelize PowerBI and train local businesses and startups to integrate BI Analytics into their data analysis solutions. He holds an MS degree from Purdue University and is passionate about mentoring students and rising leaders alike.
   jamesavery:
     name: James Avery
     company: AdZerk
@@ -217,18 +220,13 @@ speakers:
   paulli:
     name: Paul Li
     company: Yahoo Taiwan
-    pic:
-    bio:
+    pic: /static/img/amp-conf/speakers/paulli.jpg
+    bio: Paul is the lead programmer of the AMP project at Yahoo Taiwan, and is always eager for modern web technologies. He is also a frontend engineer at Yahoo Taiwan focusing on user experience and bringing a vivid and smooth flow for users. Paul surveyed the AMP project during Q4 of last year and adopted it for an e-commerce service - Auction in Yahoo Taiwan. To make gains in both better mobile UX and organic traffic, AMP adoption will be his major focus in 2018.
   ralfohlenbostel:
     name: Ralf Ohlenbostel
     company: Zalando
-    pic:
-    bio:
-  normannielsen:
-    name: Norman Nielsen
-    company: Zalando
-    pic:
-    bio:
+    pic: /static/img/amp-conf/speakers/ralf.jpg
+    bio: Ralf Ohlenbostel leads the technical content marketing at Zalando SE. He ensures that the technical setup of a complex platform is optimized for aquiring traffic. In this role he focuses on mobile site performance, mobile technologies and multilanguage shop setups. As former software engineer he connects tech with marketing and builds synergies between both worlds.
   michaelyeung:
     name: Michael Yeung
     company: Google
@@ -357,7 +355,6 @@ agenda:
         - lisawang
         - paulli
         - ralfohlenbostel
-        - normannielsen
         - michaelyeung
       description: In this hour long special, Lisa, PM on the AMP team with focus on e-commerce, will walk through the latest advancements in AMP that benefit e-commerce and how to get started. To then get real, a few companies whose names you know will talk you through the nitty gritty.
     - title: "AMPing Airbnb: A Magic Carpet Ride"
@@ -407,6 +404,7 @@ agenda:
         - sebastianbenz
         - chiarachiappini
     - title: "Reddit &AMP; Mobile Web"
+      description: Reddit has a large number of initiatives in 2018. From leveraging AMP for Growth, to the upcoming Redesign, this presentation will walk listeners through the technology, features, and relationships that are an integral part of Reddit 2018.
       time: "1430"
       type: session
       speaker: anandmariappan
