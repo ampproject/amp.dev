@@ -26,7 +26,6 @@
     "amp-app-banner": "layout",
     "amp-carousel": "layout",
     "amp-fx-flying-carpet": "layout",
-    "amp-fx-parallax": "layout",
     "amp-iframe": "layout",
     "amp-layout": "layout",
     "amp-lightbox": "layout",
@@ -64,6 +63,7 @@
     "amp-dynamic-css-classes": "presentation",
     "amp-fit-text": "presentation",
     "amp-font": "presentation",
+    "amp-mathml": "presentation",
     "amp-timeago": "presentation",
     "amp-viz-vega": "presentation",
 
@@ -74,6 +74,7 @@
     "amp-instagram": "social",
     "amp-pinterest": "social",
     "amp-reddit": "social",
+    "amp-riddle-quiz": "social",
     "amp-social-share": "social",
     "amp-twitter": "social",
     "amp-vine": "social",
