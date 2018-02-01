@@ -13,13 +13,15 @@ stylesheet: pages/stories.css
     </div>
     <div class="text">
       <div class="title-wrap">
-        <amp-img
-          noloading
-          height={{stories.hero.icon_height}}
-          width={{stories.hero.icon_width}}
-          src="{{stories.hero.icon}}"
-          sizes="(min-width: 650px) {{stories.hero.icon_width}}px, {{stories.hero.icon_mobile_width}}px">
-        </amp-img>
+        <div class="icon">
+          <amp-img
+            noloading
+            height={{stories.hero.icon_height}}
+            width={{stories.hero.icon_width}}
+            src="{{stories.hero.icon}}"
+            layout="responsive">
+          </amp-img>
+        </div>
         <h1>{{_(stories.hero.title)}}</h1>
       </div>
       <h3>{{_(stories.hero.subtitle)}}</h3>
@@ -28,7 +30,26 @@ stylesheet: pages/stories.css
         {{_(stories.hero.cta)}}
         <span class="arrow"></span>
       </a>
-
+    </div>
+  </section>
+  <section class="why">
+    <h2>{{_(stories.why.title)}}</h2>
+    <div class="reasons row">
+      {% for reason in stories.why.reasons %}
+      <div class="reason {{reason.class}} column one-third">
+        <div class="icon">
+          <amp-img
+            noloading
+            height="{{reason.icon_height}}"
+            width="{{reason.icon_width}}"
+            src="{{reason.icon}}"
+            layout="responsive">
+          </amp-img>
+        </div>
+        <h3>{{_(reason.title)}}</h3>
+        <p>{{_(reason.description)}}</p>
+      </div>
+      {% endfor %}
     </div>
   </section>
 </div>

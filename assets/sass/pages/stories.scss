@@ -1,13 +1,15 @@
 @import "../config";
+@import "../grid";
 
 .stories {
 
   .hero {
 
     h1 {
-      font-weight: 100;
-      font-size: 50px;
       color: $color-ampblue;
+      font-size: 50px;
+      font-weight: 100;
+      margin: 0;
     }
 
     h3 {
@@ -22,5 +24,64 @@
       line-height: 1.625;
       margin-bottom: 31px;
     }
+
+    .icon {
+      margin-right: 23px;
+      width: 57px;
+    }
+
+    .title-wrap {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  .why {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 99px;
+    }
+
+    h2,
+    h3 {
+      font-size: 30px;
+      font-weight: 300;
+    }
+
+    .reason {
+
+      &.immersive {
+
+        .icon {
+          width: 73px;
+        }
+      }
+
+      &.fast {
+
+        .icon {
+          width: 87px;
+        }
+      }
+
+      &.open {
+
+        .icon {
+          width: 83px;
+        }
+      }
+    }
+  }
+
+  .icon {
+    margin: 0 auto 18px;
+  }
+
+  p {
+    color: $color-black-95;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.625;
   }
 }

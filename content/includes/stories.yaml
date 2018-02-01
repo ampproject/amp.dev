@@ -8,3 +8,24 @@ hero:
   description@: AMP stories immerse readers in tappable, full-screen content. Building on the possibilities of the AMP project, this format enables the creation of visual content that is fast, open, and user-first.
   cta@: Build an AMP Story
   url: /docs/tutorials/create.html
+why:
+  title@: Why AMP Stories?
+  reasons:
+    - title@: Immersive
+      description@: By expanding to visually fill readers’ screens, AMP stories offer creative opportunities for storytelling, with flexibility in design. The tappable experience can be used to create engaging stories.
+      icon: /static/img/stories/icon-immersive.png
+      icon_width: 73
+      icon_height: 119
+      class: immersive
+    - title@: Fast
+      description@: AMP stories are built with the same technology used in AMP pages, meaning they’ll load quickly,  while providing users with a smooth experience.
+      icon: /static/img/stories/icon-fast.png
+      icon_width: 87
+      icon_height: 115
+      class: fast
+    - title@: Open
+      description@: AMP stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem.
+      icon: /static/img/stories/icon-open.png
+      icon_width: 83
+      icon_height: 107
+      class: open
