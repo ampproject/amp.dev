@@ -38,7 +38,7 @@ sections:
             - "[Simple support for parallax scrolling [**amp-fx-parallax**]](https://github.com/ampproject/amphtml/blob/master/extensions/amp-fx-parallax/amp-fx-parallax.md)"
             - "[Date picker [**amp-date-picker**]](https://github.com/ampproject/amphtml/issues/6469)"
             6:
-            - "[Media session API](hhttps://www.ampproject.org/docs/reference/components/amp-video#media-session-api-attributes)"
+            - "[Media session API](https://www.ampproject.org/docs/reference/components/amp-video#media-session-api-attributes)"
             - "['Smart' button sample using amp-bind](https://ampbyexample.com/advanced/favorite_button/)"
             - "[CSS tool: replace !important](https://www.npmjs.com/package/replace-important)"
             - "[New templates in AMP Start](https://ampstart.com)"
