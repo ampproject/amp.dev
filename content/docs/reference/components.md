@@ -91,6 +91,7 @@ Here are the components grouped by category:
 | [`amp-springboard-player`](components/amp-springboard-player.html) | Displays a [Springboard Platform](http://publishers.springboardplatform.com/users/login) video player. |
 | [`amp-video`](components/amp-video.html) | Replaces the HTML5 `video` tag. |
 | [`amp-vimeo`](components/amp-vimeo.html) | Displays a [Vimeo](https://vimeo.com/) video. |
+| [`amp-wistia-player`](components/amp-wistia-player.html) | Displays a [Wistia](https://wistia.com/) video. |
 | [`amp-youtube`](components/amp-youtube.html) | Displays a [YouTube](https://www.youtube.com/) video. |
 
 ### Presentation
