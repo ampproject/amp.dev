@@ -55,7 +55,6 @@ Here are the components grouped by category:
 | [`amp-app-banner`](components/amp-app-banner.html) | A wrapper and minimal UI for a cross-platform, fixed-position banner showing a call-to-action to install an app. |
 | [`amp-carousel`](components/amp-carousel.html) | Displays multiple similar pieces of content along a horizontal axis. |
 | [`amp-fx-flying-carpet`](components/amp-fx-flying-carpet.html) | Wraps its children in a unique full-screen scrolling container allowing you to display a full-screen ad without taking up the entire viewport. |
-| [`amp-fx-parallax`](components/amp-fx-parallax.html) |  An attribute that enables a 3D-perspective effect on an element. |
 | [`amp-iframe`](components/amp-iframe.html) | Displays an iframe. |
 | [`amp-layout`](components/amp-layout.html) | Provides a generic, multi-purpose container element that brings AMP's powerful [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) to any element. |
 | [`amp-lightbox`](components/amp-lightbox.html) | Allows for a “lightbox” or similar experience. |
@@ -92,6 +91,7 @@ Here are the components grouped by category:
 | [`amp-springboard-player`](components/amp-springboard-player.html) | Displays a [Springboard Platform](http://publishers.springboardplatform.com/users/login) video player. |
 | [`amp-video`](components/amp-video.html) | Replaces the HTML5 `video` tag. |
 | [`amp-vimeo`](components/amp-vimeo.html) | Displays a [Vimeo](https://vimeo.com/) video. |
+| [`amp-wistia-player`](components/amp-wistia-player.html) | Displays a [Wistia](https://wistia.com/) video. |
 | [`amp-youtube`](components/amp-youtube.html) | Displays a [YouTube](https://www.youtube.com/) video. |
 
 ### Presentation
@@ -102,7 +102,8 @@ Here are the components grouped by category:
 | [`amp-dynamic-css-classes`](components/amp-dynamic-css-classes.html) | Adds several dynamic CSS class names onto the HTML element. |
 | [`amp-fit-text`](components/amp-fit-text.html) | Expands or shrinks font size to fit the content within the space given. |
 | [`amp-font`](components/amp-font.html) | Triggers and monitors the loading of custom fonts. |
-| [`amp-timeago`](components/amp-timeago.html) | Provides fuzzy timestamps by formatting dates as "***time ago***" (for example, 3 hours ago). |
+| [`amp-mathml`](components/amp-mathml.html) | Displays a [MathML formula](https://www.w3.org/Math/). |
+| [`amp-timeago`](components/amp-timeago.html) | Provides fuzzy timestamps by formatting dates as "*time ago*" (for example, 3 hours ago). |
 | [`amp-viz-vega`](components/amp-viz-vega.html) | Displays visualizations created by using [Vega](https://vega.github.io/vega/) visualization grammar.|
 
 
@@ -117,6 +118,7 @@ Here are the components grouped by category:
 | [`amp-instagram`](components/amp-instagram.html) | Displays an Instagram embed. |
 | [`amp-pinterest`](components/amp-pinterest.html) | Displays a Pinterest widget or Pin It button. |
 | [`amp-reddit`](components/amp-reddit.html) |  Displays a Reddit comment or post embed. |
+| [`amp-riddle-quiz`](components/amp-riddle-quiz.html) |  Displays [Riddle](https://www.riddle.com/) content (e.g., quiz, list, poll, etc.). |
 | [`amp-social-share`](components/amp-social-share.html) | Displays a social share button. |
 | [`amp-twitter`](components/amp-twitter.html) | Displays a Twitter tweet. |
 | [`amp-vine`](components/amp-vine.html) | Displays a Vine simple embed. |
