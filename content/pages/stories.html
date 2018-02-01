@@ -2,54 +2,137 @@
 $title: Stories
 
 stylesheet: pages/stories.css
+components:
+  - carousel
 ---
 
 {% set stories = g.doc('/content/includes/stories.yaml', locale=doc.locale) %}
 
-<div class="stories container xl">
-  <section class="hero">
-    <div class="images">
-      images here...
-    </div>
-    <div class="text">
-      <div class="title-wrap">
-        <div class="icon">
-          <amp-img
-            noloading
-            height={{stories.hero.icon_height}}
-            width={{stories.hero.icon_width}}
-            src="{{stories.hero.icon}}"
-            layout="responsive">
-          </amp-img>
+<div class="stories">
+  <div class="container xl">
+    <section class="hero">
+      <div class="text">
+        <div class="title-wrap">
+          <div class="icon">
+            <amp-img
+              noloading
+              height={{stories.hero.icon_height}}
+              width={{stories.hero.icon_width}}
+              src="{{stories.hero.icon}}"
+              layout="responsive">
+            </amp-img>
+          </div>
+          <h1>{{_(stories.hero.title)}}</h1>
         </div>
-        <h1>{{_(stories.hero.title)}}</h1>
+        <h3>{{_(stories.hero.subtitle)}}</h3>
+        <p>{{_(stories.hero.description)}}</p>
+        <a class="button" href="{{g.doc(stories.hero.url, locale=doc.locale).url.path}}">
+          {{_(stories.hero.cta)}}
+          <span class="arrow"></span>
+        </a>
       </div>
-      <h3>{{_(stories.hero.subtitle)}}</h3>
-      <p>{{_(stories.hero.description)}}</p>
-      <a class="button" href="{{stories.hero.url}}">
-        {{_(stories.hero.cta)}}
-        <span class="arrow"></span>
-      </a>
-    </div>
-  </section>
-  <section class="why">
-    <h2>{{_(stories.why.title)}}</h2>
-    <div class="reasons row">
-      {% for reason in stories.why.reasons %}
-      <div class="reason {{reason.class}} column one-third">
-        <div class="icon">
-          <amp-img
-            noloading
-            height="{{reason.icon_height}}"
-            width="{{reason.icon_width}}"
-            src="{{reason.icon}}"
-            layout="responsive">
-          </amp-img>
+      <div class="images">
+        images here...
+      </div>
+    </section>
+    <section class="why">
+      <h2>{{_(stories.why.title)}}</h2>
+      <div class="reasons row">
+        {% for reason in stories.why.reasons %}
+        <div class="reason {{reason.class}} column one-third">
+          <div class="icon">
+            <amp-img
+              height="{{reason.icon_height}}"
+              width="{{reason.icon_width}}"
+              src="{{reason.icon}}"
+              layout="responsive">
+            </amp-img>
+          </div>
+          <h3>{{_(reason.title)}}</h3>
+          <p>{{_(reason.description)}}</p>
         </div>
-        <h3>{{_(reason.title)}}</h3>
-        <p>{{_(reason.description)}}</p>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
+    </section>
+    <section class="features">
+      <h2>{{_(stories.features.title)}}</h2>
+      <div class="features-wrap">
+        {% for feature in stories.features.features %}
+        <div class="feature">
+          <div class="image">
+            <amp-img
+              noloading
+              height="{{feature.image_height}}"
+              width="{{feature.image_width}}"
+              src="{{feature.image}}"
+              alt="{{_(feature.image_alt)}}"
+              layout="responsive">
+            </amp-img>
+          </div>
+          <p>{{_(feature.description)}}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <section class="news">
+      <div class="card-container">
+        {% for card in stories.news.cards %}
+        <a
+          class="card centered {{card.class}}"
+          href="{{g.doc(card.url, locale=doc.locale).url.path}}">
+          <div class="card-inner">
+            <div class="card-content">
+              <p>{{_(card.quote)}}</p>
+              <div class="card-source">{{_(card.source)}}</div>
+            </div>
+            <amp-img
+              class="card-icon"
+              height="{{card.image_height}}"
+              width="{{card.image_width}}"
+              layout=responsive
+              src="{{card.image}}">
+            </amp-img>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    <section class="web-stories">
+      <h2>{{_(stories.web_stories.title)}}</h2>
+      <amp-carousel
+        id="web-stories-carousel"
+        layout="fixed-height"
+        height="726"
+        type="carousel">
+        {% for story in stories.web_stories.stories %}
+        <div class="slide">
+          <div class="image">
+            <amp-img
+              src="{{story.image}}"
+              height="{{story.image_height}}"
+              width="{{story.image_width}}"
+              alt="{{_(story.image_alt)}}">
+            </amp-img>
+          </div>
+          <div class="logo">
+            <amp-img
+              src="{{story.logo}}"
+              height="{{story.logo_height}}"
+              width="{{story.logo_width}}"
+              alt="{{_(story.logo_alt)}}">
+            </amp-img>
+          </div>
+        </div>
+        {% endfor %}
+      </amp-carousel>
+    </section>
+  </div>
+  <section class="large-cta">
+    <h2>{{_(stories.footer.title)}}</h2>
+    <a
+      href="{{g.doc(stories.footer.url, locale=doc.locale).url.path}}"
+      class="button light">
+      <span>{{_(stories.footer.cta)}}</span>
+    </a>
   </section>
 </div>

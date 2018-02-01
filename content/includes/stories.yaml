@@ -29,3 +29,81 @@ why:
       icon_width: 83
       icon_height: 107
       class: open
+features:
+  title@: AMP story features
+  features:
+    - description@: Supports rich visuals with native video and image performance
+      image: /static/img/stories/feature-0.png
+      image_width: 404
+      image_height: 487
+      image_alt@: A Pod Races Through the Hyperloop for the First Time
+    - description@: Enriches storytelling through animations and tappable interactions
+      image: /static/img/stories/feature-0.png
+      image_width: 404
+      image_height: 487
+      image_alt@: A Pod Races Through the Hyperloop for the First Time
+    - description@: Works across mobile and desktop devices on the open web
+      image: /static/img/stories/feature-0.png
+      image_width: 404
+      image_height: 487
+      image_alt@: A Pod Races Through the Hyperloop for the First Time
+    - description@: Builds atop AMP’s component library to support features like analytics
+      image: /static/img/stories/feature-0.png
+      image_width: 404
+      image_height: 487
+      image_alt@: A Pod Races Through the Hyperloop for the First Time
+news:
+  cards:
+    - url: /content/learn/case-studies/washingtonpost.md
+      quote@: “As a source for breaking news and information, this format allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.”
+      source@: Greg Manifold, Design Director
+      image: /static/img/stories/wapo-logo.png
+      image_width: 284
+      image_height: 44
+      class: wapo
+    - url: /content/learn/case-studies/washingtonpost.md
+      quote@: “AMP stories have incredible potential to enhance how we create mobile content. Our team can easily create beautiful, media-rich stories that our users will now be able to access quickly across the web. We continue to be focused on creating the best content for every platform and the creative possibilities on AMP stories are endless”
+      source@: Doug Parker, Vice President of Digital Design
+      image: /static/img/stories/time-logo.png
+      image_width: 116
+      image_height: 35
+      class: time
+web_stories:
+  title@: Check out AMP stories on the web
+  stories:
+    - image: /static/img/stories/story-cnn.png
+      image_width: 385
+      image_height: 641
+      immage_alt@: Yes, climate change is making hurricanes worse
+      logo: /static/img/stories/logo-cnn.png
+      logo_width: 93
+      logo_height: 45
+      logo_alt@: CNN
+    - image: /static/img/stories/story-cnn.png
+      image_width: 385
+      image_height: 641
+      immage_alt@: Yes, climate change is making hurricanes worse
+      logo: /static/img/stories/logo-cnn.png
+      logo_width: 93
+      logo_height: 45
+      logo_alt@: CNN
+    - image: /static/img/stories/story-cnn.png
+      image_width: 385
+      image_height: 641
+      immage_alt@: Yes, climate change is making hurricanes worse
+      logo: /static/img/stories/logo-cnn.png
+      logo_width: 93
+      logo_height: 45
+      logo_alt@: CNN
+    - image: /static/img/stories/story-cnn.png
+      image_width: 385
+      image_height: 641
+      immage_alt@: Yes, climate change is making hurricanes worse
+      logo: /static/img/stories/logo-cnn.png
+      logo_width: 93
+      logo_height: 45
+      logo_alt@: CNN
+footer:
+  title@: Build immersive experiences with AMP stories.
+  cta@: Get Started
+  url: /docs/tutorials/create.html
