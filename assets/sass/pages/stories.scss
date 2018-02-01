@@ -1,16 +1,36 @@
 @import "../config";
 @import "../grid";
+@import "../mixins";
 
 .stories {
 
   h2 {
     margin-bottom: 99px;
+
+    @include max-screen($mobile-breakpoint) {
+      margin-bottom: 41px;
+    }
   }
 
   h2,
   h3 {
     font-size: 30px;
     font-weight: 300;
+  }
+
+  h3 {
+
+    @include max-screen($mobile-breakpoint) {
+      font-size: 20px;
+    }
+  }
+
+  section:not(:first-child) {
+    margin-top: 142px;
+
+    @include max-screen($mobile-breakpoint) {
+      font-size: 60px;
+    }
   }
 
   p {
@@ -23,16 +43,29 @@
   .hero {
     display: flex;
 
+    @include max-screen($mobile-breakpoint) {
+      display: block;
+    }
+
     h1 {
       color: $color-ampblue;
       font-size: 50px;
       font-weight: 100;
       margin: 0;
+
+      @include max-screen($mobile-breakpoint) {
+        font-size: 35px;
+      }
     }
 
     h3 {
-      margin-top: 107px;
+      font-weight: 100;
       margin-bottom: 36px;
+      margin-top: 107px;
+
+      @include max-screen($mobile-breakpoint) {
+        font-size: 30px;
+      }
     }
 
     p {
@@ -42,57 +75,61 @@
     .icon {
       margin-right: 23px;
       width: 57px;
+
+      @include max-screen($mobile-breakpoint) {
+        margin-right: 11px;
+        width: 33px;
+      }
     }
 
     .title-wrap {
       align-items: center;
       display: flex;
+
+      @include max-screen($mobile-breakpoint) {
+        justify-content: center;
+      }
     }
 
     .text,
     .images {
       width: 50%;
+
+      @include max-screen($mobile-breakpoint) {
+        width: 100%;
+      }
     }
 
     .text {
       margin-top: 222px;
+
+      @include max-screen($mobile-breakpoint) {
+        margin-top: 37px;
+      }
     }
   }
 
   .why {
     text-align: center;
 
-    .reason {
+    .icon {
+      margin: 0 auto 18px;
+      width: 83px;
 
-      &.immersive {
-
-        .icon {
-          width: 73px;
-        }
-      }
-
-      &.fast {
-
-        .icon {
-          width: 87px;
-        }
-      }
-
-      &.open {
-
-        .icon {
-          width: 83px;
-        }
+      @include max-screen($mobile-breakpoint) {
+        width: 56px;
       }
     }
 
-    .icon {
-      margin: 0 auto 18px;
+    .reason:not(:first-child) {
+
+      @include max-screen($mobile-breakpoint) {
+        margin-top: 33px;
+      }
     }
   }
 
   .features {
-    margin-top: 142px;
     text-align: center;
 
     .features-wrap {
@@ -100,11 +137,20 @@
       flex-wrap: wrap;
       justify-content: space-between;
       margin-top: -46px;
+
+      @include max-screen($mobile-breakpoint) {
+        justify-content: center;
+      }
     }
 
     .feature {
       width: 33%;
-      margin: 46px 8%;
+      margin: 46px 8% 0;
+
+      @include max-screen($mobile-breakpoint) {
+        max-width: 320px;
+        width: 100%;
+      }
     }
 
     p {
@@ -114,12 +160,26 @@
   }
 
   .news {
-    margin-top: 110px;
+
+    .card-container {
+
+      @include max-screen($mobile-breakpoint) {
+        display: block;
+      }
+    }
+
+    .card-icon {
+      max-width: 80%;
+    }
 
     .wapo {
 
       .card-icon {
         width: 284px;
+
+        @include max-screen($mobile-breakpoint) {
+          font-size: 227px;
+        }
       }
     }
 
@@ -127,6 +187,10 @@
 
       .card-icon {
         width: 116px;
+
+        @include max-screen($mobile-breakpoint) {
+          font-size: 96px;
+        }
       }
     }
 
@@ -137,29 +201,46 @@
     .card-content {
       padding-left: 54px;
       padding-right: 54px;
+
+      @include max-screen($mobile-breakpoint) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
 
     p {
       color: $color-black-95;
       font-size: 20px;
       line-height: 1.7;
+
+      @include max-screen($mobile-breakpoint) {
+        font-size: 16px;
+      }
     }
 
     .card-source {
       color: $color-black-95;
       font-size: 20px;
       font-weight: 100;
+      margin: 15px 0;
+
+      @include max-screen($mobile-breakpoint) {
+        font-size: 18px;
+      }
     }
 
     .card {
       flex: 0 0 calc(50% - 30px);
       flex-basis: calc(50% - 30px);
       height: auto;
+
+      @include max-screen($mobile-breakpoint) {
+        width: 100%;
+      }
     }
   }
 
   .web-stories {
-    margin-top: 169px;
 
     h2 {
       text-align: center;
@@ -177,7 +258,6 @@
   }
 
   .large-cta {
-    margin-top: 206px;
 
     h2 {
       color: $color-white;
