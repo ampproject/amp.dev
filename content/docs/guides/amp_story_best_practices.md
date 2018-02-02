@@ -12,7 +12,7 @@ This document provides recommended practices that you should implement when crea
 
 ## Background color  
 
-You should specify a background color for your AMP story pages.  By having a background color, you allow users to consume your story even if poor network conditions prevent them from downloading any image or video assets.
+You should specify a background color for your AMP story pages. By having a background color, you provide a good fallback user experience even if poor network conditions prevent them from downloading any image or video assets.
 
 *   The background color should be representative of the dominant color on the page's background asset.
 *   Choose a color that allows for a smooth transition with the image or page itself. You can choose to:
@@ -55,7 +55,7 @@ The recommended dimensions for a poster image are: 720p (720w x 1280h) .
 
 ### Specify `<source>` vs `src` 
 
-When specifying the source for an [amp-video](/docs/reference/components/amp-video.html), use `<source>` child elements instead of the `src` attribute. By using the `<source>` element, you can specify the video type, and later on add more video sources. In the `<source>` element, specify the MIME type via the `"type"` attribute. For HLS videos, you must specify one of the following MIME types: `application/x-mpegurl` or `application/vnd.apple.mpegurl`. For all other videos, specify the `video/` MIME prefix and the video format (e.g., "`video/mp4`").
+When specifying the source for an [amp-video](/docs/reference/components/amp-video.html), use `<source>` child elements instead of the `src` attribute. By using the `<source>` element, you can specify the video type, as well as add more video sources. In the `<source>` element, specify the MIME type via the `"type"` attribute. For HLS videos, you must specify one of the following MIME types: `application/x-mpegurl` or `application/vnd.apple.mpegurl`. For all other videos, specify the `video/` MIME prefix and the video format (e.g., "`video/mp4`").
 
 *Example: Specifying multiple source files*
 
@@ -154,7 +154,7 @@ There are various tools you can use to encode videos and adjust the quality of t
     </tr>
     <tr>
      <td><a href="https://github.com/google/shaka-packager">Shaka Packager</a></td>
-     <td>An encoder that can also output the HLS format.
+     <td>An encoder that can also output the HLS format including the playlist.
      </td>
     </tr>
   </tbody>
