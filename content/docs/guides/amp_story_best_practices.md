@@ -53,8 +53,6 @@ The recommended dimensions for a poster image are: 720p (720w x 1280h) .
 </amp-video>
 ```
 
-
-
 ### Specify `<source>` vs `src` 
 
 When specifying the source for an [amp-video](/docs/reference/components/amp-video.html), use `<source>` child elements instead of the `src` attribute. By using the `<source>` element, you can specify the video type, and later on add more video sources. In the `<source>` element, specify the MIME type via the `"type"` attribute. For HLS videos, you must specify one of the following MIME types: `application/x-mpegurl` or `application/vnd.apple.mpegurl`. For all other videos, specify the `video/` MIME prefix and the video format (e.g., "`video/mp4`").
@@ -74,9 +72,9 @@ When specifying the source for an [amp-video](/docs/reference/components/amp-vid
 
 ### Size/Length of video
 
-
+*  For optimal performance, you should aim to provide videos that are no larger than 4 MB.
 *   For long videos, consider splitting the video over multiple pages.
-*   Especially the first cover page, avoid particularly large videos.
+*   For the cover page, avoid particularly large videos.
 
 ### Video formats
 
