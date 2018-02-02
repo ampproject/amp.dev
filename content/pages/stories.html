@@ -134,40 +134,38 @@ components:
       </div>
     </div>
   </section>
-  <div class="container xl">
-    <section class="web-stories">
-      <h2>{{_(stories.web_stories.title)}}</h2>
-      <amp-carousel
-        id="web-stories-carousel"
-        layout="fixed-height"
-        height="726"
-        type="carousel">
-        {% for story in stories.web_stories.stories %}
-        <a
-          class="slide"
-          href="{{story.url}}"
-          target="_blank">
-          <div class="image">
-            <amp-img
-              src="{{story.image}}"
-              height="{{story.image_height}}"
-              width="{{story.image_width}}"
-              alt="{{_(story.image_alt)}}">
-            </amp-img>
-          </div>
-          <div class="logo">
-            <amp-img
-              src="{{story.logo}}"
-              height="{{story.logo_height}}"
-              width="{{story.logo_width}}"
-              alt="{{_(story.logo_alt)}}">
-            </amp-img>
-          </div>
-        </a>
-        {% endfor %}
-      </amp-carousel>
-    </section>
-  </div>
+  <section class="web-stories">
+    <h2>{{_(stories.web_stories.title)}}</h2>
+    <amp-carousel
+      id="web-stories-carousel"
+      layout="fixed-height"
+      height="726"
+      type="carousel">
+      {% for story in stories.web_stories.stories %}
+      <a
+        class="slide"
+        href="{{story.url}}"
+        target="_blank">
+        <div class="image">
+          <amp-img
+            src="{{story.image}}"
+            height="{{story.image_height}}"
+            width="{{story.image_width}}"
+            alt="{{_(story.image_alt)}}">
+          </amp-img>
+        </div>
+        <div class="logo">
+          <amp-img
+            src="{{story.logo}}"
+            height="{{story.logo_height}}"
+            width="{{story.logo_width}}"
+            alt="{{_(story.logo_alt)}}">
+          </amp-img>
+        </div>
+      </a>
+      {% endfor %}
+    </amp-carousel>
+  </section>
   <section class="large-cta">
     <h2>{{_(stories.footer.title)}}</h2>
     <a
