@@ -8,26 +8,38 @@ hero:
   description@: AMP stories immerse readers in tappable, full-screen content. Building on the possibilities of the AMP project, this format enables the creation of visual content that is fast, open, and user-first.
   cta@: Build an AMP Story
   url: /docs/tutorials/create.html
+  accent_image: /static/img/stories/hero-accent.png
+  accent_image_width: 213
+  accent_image_height: 10
+  background_image: /static/img/stories/background-hero.jpg
+  background_image_width: 604
+  background_image_height: 975
+  foreground_image_base: /static/img/stories/hero-phone
+  foreground_image_width: 662
+  foreground_image_height: 798
+  animated_image: /static/img/stories/animated-hero.gif
+  animated_image_width: 260
+  animated_image_height: 448
 why:
   title@: Why AMP Stories?
   reasons:
     - title@: Immersive
       description@: By expanding to visually fill readers’ screens, AMP stories offer creative opportunities for storytelling, with flexibility in design. The tappable experience can be used to create engaging stories.
       icon: /static/img/stories/icon-immersive.png
-      icon_width: 73
+      icon_width: 87
       icon_height: 119
       class: immersive
     - title@: Fast
       description@: AMP stories are built with the same technology used in AMP pages, meaning they’ll load quickly,  while providing users with a smooth experience.
       icon: /static/img/stories/icon-fast.png
       icon_width: 87
-      icon_height: 115
+      icon_height: 119
       class: fast
     - title@: Open
       description@: AMP stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem.
       icon: /static/img/stories/icon-open.png
-      icon_width: 83
-      icon_height: 107
+      icon_width: 87
+      icon_height: 119
       class: open
 features:
   title@: AMP story features
@@ -74,35 +86,75 @@ web_stories:
     - image: /static/img/stories/story-cnn.png
       image_width: 385
       image_height: 641
-      immage_alt@: Yes, climate change is making hurricanes worse
+      immage_alt@: The Missions Still Exploring Our Solar System
       logo: /static/img/stories/logo-cnn.png
       logo_width: 93
       logo_height: 45
       logo_alt@: CNN
-    - image: /static/img/stories/story-cnn.png
+      url: https://stamps.cnn.io/solar-system-missions/index.html
+    - image: /static/img/stories/story-hearst.png
       image_width: 385
       image_height: 641
-      immage_alt@: Yes, climate change is making hurricanes worse
+      immage_alt@: Apple Cider Vinegar is the Magic Potion You Need in Your Life
       logo: /static/img/stories/logo-cnn.png
       logo_width: 93
       logo_height: 45
-      logo_alt@: CNN
-    - image: /static/img/stories/story-cnn.png
+      logo_alt@: Hearst
+      url: http://www.cosmopolitan.com/stamp/apple-cider-vinegar/
+    - image: /static/img/stories/story-mashable.png
       image_width: 385
       image_height: 641
-      immage_alt@: Yes, climate change is making hurricanes worse
+      immage_alt@: Black Panther
       logo: /static/img/stories/logo-cnn.png
       logo_width: 93
       logo_height: 45
-      logo_alt@: CNN
-    - image: /static/img/stories/story-cnn.png
+      logo_alt@: Mashable
+      url: https://mashable.com/2017/10/24/reels-guide-to-black-panther.amp
+    - image: /static/img/stories/story-mic.png
       image_width: 385
       image_height: 641
-      immage_alt@: Yes, climate change is making hurricanes worse
+      immage_alt@: The Art of an Organized Refrigerator
       logo: /static/img/stories/logo-cnn.png
       logo_width: 93
       logo_height: 45
-      logo_alt@: CNN
+      logo_alt@: Mic
+      url: https://mic.com/stories/262/the-art-of-an-organized-refrigerator
+    - image: /static/img/stories/story-time.png
+      image_width: 385
+      image_height: 641
+      immage_alt@: Harry & Meghan A to Z
+      logo: /static/img/stories/logo-cnn.png
+      logo_width: 93
+      logo_height: 45
+      logo_alt@: Time
+      url: https://people.com/amp-stories/royal-a-to-z/
+    - image: /static/img/stories/story-vox.png
+      image_width: 385
+      image_height: 641
+      immage_alt@: How College Football Playoff Rankings Actualloy Work
+      logo: /static/img/stories/logo-cnn.png
+      logo_width: 93
+      logo_height: 45
+      logo_alt@: Vox
+      url: https://www.sbnation.com/2017/12/1/16719476/college-football-playoff-rankings-explained
+    - image: /static/img/stories/story-wapo.png
+      image_width: 385
+      image_height: 641
+      immage_alt@: The Evolution of Trump's Wall
+      logo: /static/img/stories/logo-cnn.png
+      logo_width: 93
+      logo_height: 45
+      logo_alt@: Washington Post
+      url: https://www.washingtonpost.com/graphics/2018/national/border-wall/
+    - image: /static/img/stories/story-wired.png
+      image_width: 385
+      image_height: 641
+      immage_alt@: Space Photos of the Week
+      logo: /static/img/stories/logo-cnn.png
+      logo_width: 93
+      logo_height: 45
+      logo_alt@: Wired
+      url: http://stamp.wired.com/stamp/space-photos-of-the-week-111817?key=wired_stamp_m3aIz8a21lyTY11n
 footer:
   title@: Build immersive experiences with AMP stories.
   cta@: Get Started

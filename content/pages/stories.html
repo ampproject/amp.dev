@@ -9,6 +9,24 @@ components:
 {% set stories = g.doc('/content/includes/stories.yaml', locale=doc.locale) %}
 
 <div class="stories">
+  <div class="hero-accent">
+    <amp-img
+      noloading
+      height="{{stories.hero.accent_image_height}}"
+      width="{{stories.hero.accent_image_width}}"
+      src="{{stories.hero.accent_image}}"
+      layout="responsive">
+    </amp-img>
+  </div>
+  <div class="hero-background">
+    <amp-img
+      noloading
+      height="{{stories.hero.background_image_height}}"
+      width="{{stories.hero.background_image_width}}"
+      src="{{stories.hero.background_image}}"
+      layout="responsive">
+    </amp-img>
+  </div>
   <div class="container xl">
     <section class="hero">
       <div class="text">
@@ -32,7 +50,23 @@ components:
         </a>
       </div>
       <div class="images">
-        images here...
+        <div class="animated-image">
+          <amp-img
+            noloading
+            height="{{stories.hero.animated_image_height}}"
+            width="{{stories.hero.animated_image_width}}"
+            src="{{stories.hero.animated_image}}"
+            layout="responsive">
+          </amp-img>
+        </div>
+        <amp-img
+          noloading
+          height="{{stories.hero.foreground_image_height}}"
+          width="{{stories.hero.foreground_image_width}}"
+          src="{{stories.hero.foreground_image_base}}@2x.png"
+          srcset="{{stories.hero.foreground_image_base}}@2x.png 1324w, {{stories.hero.foreground_image_base}}@1x.png 662w"
+          layout="responsive">
+        </amp-img>
       </div>
     </section>
     <section class="why">
@@ -74,7 +108,9 @@ components:
         {% endfor %}
       </div>
     </section>
-    <section class="news">
+  </div>
+  <section class="news">
+    <div class="container xl">
       <div class="card-container">
         {% for card in stories.news.cards %}
         <a
@@ -96,7 +132,9 @@ components:
         </a>
         {% endfor %}
       </div>
-    </section>
+    </div>
+  </section>
+  <div class="container xl">
     <section class="web-stories">
       <h2>{{_(stories.web_stories.title)}}</h2>
       <amp-carousel
@@ -105,7 +143,10 @@ components:
         height="726"
         type="carousel">
         {% for story in stories.web_stories.stories %}
-        <div class="slide">
+        <a
+          class="slide"
+          href="{{story.url}}"
+          target="_blank">
           <div class="image">
             <amp-img
               src="{{story.image}}"
@@ -122,7 +163,7 @@ components:
               alt="{{_(story.logo_alt)}}">
             </amp-img>
           </div>
-        </div>
+        </a>
         {% endfor %}
       </amp-carousel>
     </section>

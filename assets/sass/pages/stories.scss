@@ -3,6 +3,7 @@
 @import "../mixins";
 
 .stories {
+  position: relative;
 
   h2 {
     margin-bottom: 99px;
@@ -25,11 +26,11 @@
     }
   }
 
-  section:not(:first-child) {
+  section {
     margin-top: 142px;
 
     @include max-screen($mobile-breakpoint) {
-      font-size: 60px;
+      margin-top: 60px;
     }
   }
 
@@ -40,8 +41,23 @@
     line-height: 1.625;
   }
 
+  .hero-accent {
+    left: 0;
+    position: absolute;
+    top: 324px;
+    width: 213px;
+  }
+
+  .hero-background {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 42%;
+  }
+
   .hero {
     display: flex;
+    margin-top: 0;
 
     @include max-screen($mobile-breakpoint) {
       display: block;
@@ -91,20 +107,31 @@
       }
     }
 
-    .text,
     .images {
-      width: 50%;
+      margin-left: 200px;
+      margin-top: 165px;
+      position: relative;
+      right: -5%;
+      width: calc(50% - 100px);
+    }
 
-      @include max-screen($mobile-breakpoint) {
-        width: 100%;
-      }
+    .animated-image {
+      left: -6%;
+      position: absolute;
+      top: 0;
+      width: 41%;
+      z-index: 1;
     }
 
     .text {
       margin-top: 222px;
+      width: calc(50% - 100px);
+      position: relative;
+      z-index: 1;
 
       @include max-screen($mobile-breakpoint) {
         margin-top: 37px;
+        width: 100%;
       }
     }
   }
@@ -246,8 +273,12 @@
       text-align: center;
     }
 
-    .slide:first-child {
-      margin-left: 15%;
+    .slide {
+      display: block;
+
+      &:first-child {
+        margin-left: 15%;
+      }
     }
 
     .logo {
@@ -258,6 +289,13 @@
   }
 
   .large-cta {
+    padding-left: 22px;
+    padding-right: 22px;
+
+    @include max-screen($mobile-breakpoint) {
+      padding-bottom: 64px;
+      padding-top: 64px;
+    }
 
     h2 {
       color: $color-white;
