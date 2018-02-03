@@ -132,56 +132,21 @@ speakers:
       Anand Mariappan is the Senior Director of Engineering for the Experiences team at Reddit, the 4th most visited site in the US. In his role, Anand is leading the redesign of the Reddit desktop experience. He is also responsible for overseeing the native video platform and the subreddit experiences for consumers, creators, and moderators across mobile and web. Prior to Reddit, Anand spent eight years at Microsoft in various engineering leadership roles working on compilers, data analysis tools, mobile apps and business applications. Anand's most notable role was as Engineering Manager for the PowerBI app experiences and cloud services team, in which he helped to drive the product as it scaled from 0 to 5 Million subscribers.
 
       Anand was recognized by the Seattle Times for his work done in Africa to evangelize PowerBI and train local businesses and startups to integrate BI Analytics into their data analysis solutions. He holds an MS degree from Purdue University and is passionate about mentoring students and rising leaders alike.
-  jamesavery:
-    name: James Avery
-    company: AdZerk
-    pic:
-    bio:
   hdouglass:
     name: Heather Douglass
     company: Google
     pic: /static/img/amp-conf/speakers/heather.jpg
     bio: Heather is a software engineer at Google where she works on Google Web Designer.  She has contributed to many features in Google Web Designer including leading development efforts for the animation timeline, improving the UI and workspace layout and most recently adding support for creating AMPHTML ads.
-  cathyzhu:
-    name: Cathy Zhu
+  abbybeck:
+    name: Abby Beck
     company: Google
-    pic:
-    bio:
-  thomasfeldhaus:
-    name: Thomas Feldhaus
-    company: Jung von Matt
-    pic:
-    bio:
-  peerweidner:
-    name: Peer Weidner
-    company: Jung von Matt
-    pic:
-    bio:
-  matthiasrohmer:
-    name: Matthias Rohmer
-    company: Jung von Matt
-    pic:
-    bio:
+    pic: /static/img/amp-conf/speakers/abby.jpg
+    bio: Leads UX on AMP and loves solving complex design and human computer interaction problems.
   thierrymuller:
     name: Thierry Muller
     company: XWP
     pic: /static/img/amp-conf/speakers/thierry.jpg
     bio:
-  jonnewmuis:
-    name: Jon Newmuis
-    company: Google
-    pic:
-    bio:
-  abbybeck:
-    name: Abby Beck
-    company: Google
-    pic: /static/img/amp-conf/speakers/abby.jpg
-    bio:
-  aakashsahney:
-    name: Aakash Sahney
-    company: Google
-    pic:
-    bio: Aakash is a Product Manager at Google on the G Suite team. His team builds platform and extensibility features that enable rich integrations with G Suite.
   sethweisfeld:
     name: Seth Weisfeld
     company: Pinterest
@@ -222,6 +187,41 @@ speakers:
     company: Google
     pic: /static/img/amp-conf/speakers/michael.jpg
     bio: Michael is a Partner Developer Advocate at Google. He works with top developers in the Asia-Pacific region like Alibaba, Tencent, and Sina Weibo to build awesome experiences on the mobile web.
+  jamesavery:
+    name: James Avery
+    company: AdZerk
+    pic: /static/img/amp-conf/speakers/james.jpg
+    bio: James Avery is the founder and CEO of Adzerk, an API focused ad serving company. Adzerk works with top tier publishers and e-commerce companies to help them build innovative ad solutions that break the mold of traditional banners. James comes from an engineering background and has written books for O'Reilly and Microsoft Press and has been published in MSDN and Dr. Dobbs.
+  cathyzhu:
+    name: Cathy Zhu
+    company: Google
+    pic: /static/img/amp-conf/speakers/cathy.jpg
+    bio: Cathy Zhu is a software engineer at Google working on enabling delightful user experiences with AMP. Prior to Google, she was a software engineer at Palantir.
+  thomasfeldhaus:
+    name: Thomas Feldhaus
+    company: Jung von Matt
+    pic: /static/img/amp-conf/speakers/thomas.jpg
+    bio: Thomas Feldhaus has been developing digital products and platforms for over 18 years. He has been working for JvM since 2009, where he is responsible for the interface between technology and modern data-driven marketing. In addition to topics such as web performance and SEO, in his spare time he enjoys riding singlespeed bikes and racing bikes.
+  peerweidner:
+    name: Peer Weidner
+    company: Jung von Matt
+    pic: /static/img/amp-conf/speakers/peer.jpg
+    bio: Peer Weidner is working on web projects in agency environments since 2012 and helped shape the process and architecture that led to the new BMW.com. His goal is to close the gap between an existing technology stack and the desired target audiences with the fitting means of technology. He enjoys prototyping, electric mobility and wakeboarding.
+  matthiasrohmer:
+    name: Matthias Rohmer
+    company: Jung von Matt
+    pic: /static/img/amp-conf/speakers/matthiasr.jpg
+    bio: In the context of the BMW.com project Matthias reached to bridge the gap between the AMP framework in the frontend and the Adobe Experience Manager backend. When not in the office he pursues his passion for movie theatres by supporting the small arthouse cinema www.lamm-lichtspiele.de in his hometown Erlangen.
+  jonnewmuis:
+    name: Jon Newmuis
+    company: Google
+    pic:
+    bio:
+  aakashsahney:
+    name: Aakash Sahney
+    company: Google
+    pic:
+    bio: Aakash is a Product Manager at Google on the G Suite team. His team builds platform and extensibility features that enable rich integrations with G Suite.
   elitetruong:
     name: Elite Truong
     company: Vox Media
