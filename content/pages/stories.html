@@ -110,6 +110,24 @@ components:
     </section>
   </div>
   <section class="news">
+    <div class="accent-left">
+      <amp-img
+        noloading
+        height="{{stories.news.accent_left_height}}"
+        width="{{stories.news.accent_left_width}}"
+        src="{{stories.news.accent_left}}"
+        layout="responsive">
+      </amp-img>
+    </div>
+    <div class="accent-right">
+      <amp-img
+        noloading
+        height="{{stories.news.accent_right_height}}"
+        width="{{stories.news.accent_right_width}}"
+        src="{{stories.news.accent_right}}"
+        layout="responsive">
+      </amp-img>
+    </div>
     <div class="container xl">
       <div class="card-container">
         {% for card in stories.news.cards %}
@@ -167,6 +185,24 @@ components:
     </amp-carousel>
   </section>
   <section class="large-cta">
+    <div class="accent-left">
+      <amp-img
+        noloading
+        height="{{stories.news.accent_left_height}}"
+        width="{{stories.news.accent_left_width}}"
+        src="{{stories.news.accent_left}}"
+        layout="responsive">
+      </amp-img>
+    </div>
+    <div class="accent-right">
+      <amp-img
+        noloading
+        height="{{stories.news.accent_right_height}}"
+        width="{{stories.news.accent_right_width}}"
+        src="{{stories.news.accent_right}}"
+        layout="responsive">
+      </amp-img>
+    </div>
     <h2>{{_(stories.footer.title)}}</h2>
     <a
       href="{{g.doc(stories.footer.url, locale=doc.locale).url.path}}"

@@ -187,6 +187,21 @@
   }
 
   .news {
+    position: relative;
+
+    .accent-left {
+      bottom: -69px;
+      left: -28px;
+      position: absolute;
+      width: 328px;
+    }
+
+    .accent-right {
+      bottom: 20px;
+      right: -8px;
+      position: absolute;
+      width: 107px;
+    }
 
     .card-container {
 
@@ -277,11 +292,11 @@
       display: block;
 
       &:first-child {
-        margin-left: 15%;
+        margin-left: 20%;
       }
 
       &:last-child {
-        margin-right: 15%;
+        margin-right: 22px;
       }
     }
 
@@ -290,15 +305,38 @@
       margin-top: 33px;
       text-align: center;
     }
+
+    .amp-carousel-button-next {
+      right: 44px;
+    }
+
+    .amp-carousel-button-prev {
+      left: 44px;
+    }
   }
 
   .large-cta {
     padding-left: 22px;
     padding-right: 22px;
+    position: relative;
 
     @include max-screen($mobile-breakpoint) {
       padding-bottom: 64px;
       padding-top: 64px;
+    }
+
+    .accent-left {
+      top: -69px;
+      left: -28px;
+      position: absolute;
+      width: 328px;
+    }
+
+    .accent-right {
+      top: -25px;
+      right: -8px;
+      position: absolute;
+      width: 107px;
     }
 
     h2 {
