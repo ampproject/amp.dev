@@ -8,9 +8,6 @@ hero:
   description@: AMP stories immerse readers in tappable, full-screen content. Building on the possibilities of the AMP project, this format enables the creation of visual content that is fast, open, and user-first.
   cta@: Build an AMP Story
   url: /docs/tutorials/create.html
-  accent_image: /static/img/stories/hero-accent.png
-  accent_image_width: 213
-  accent_image_height: 10
   background_image: /static/img/stories/background-hero.jpg
   background_image_width: 604
   background_image_height: 975
@@ -65,12 +62,6 @@ features:
       image_height: 581
       image_alt@: A Pod Races Through the Hyperloop for the First Time
 news:
-  accent_left: /static/img/stories/accent-left.png
-  accent_left_width: 328
-  accent_left_height: 237
-  accent_right: /static/img/stories/accent-right.png
-  accent_right_width: 107
-  accent_right_height: 77
   cards:
     - url: /content/learn/case-studies/washingtonpost.md
       quote@: “As a source for breaking news and information, this format allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.”

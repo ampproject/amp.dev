@@ -5,6 +5,60 @@
 .stories {
   position: relative;
 
+  .accent-left {
+    bottom: 64px;
+    height: 34px;
+    left: -100px;
+    position: absolute;
+    transform: rotate(-40deg);
+    width: 396px;
+
+    .accent-left__top {
+      background: linear-gradient(45deg, $color-lightblue, $color-white);
+      height: 9px;
+      left: 38px;
+      position: absolute;
+      top: 0;
+      width: 260px;
+    }
+
+    .accent-left__bottom {
+      background: linear-gradient(45deg, $color-brightblue, $color-lightblue);
+      bottom: 0;
+      height: 9px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  .accent-right {
+    bottom: 25px;
+    height: 27px;
+    position: absolute;
+    right: -50px;
+    transform: rotate(-40deg);
+    width: 195px;
+
+    .accent-right__top {
+      height: 9px;
+      width: 138px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(45deg, $color-white, $color-lightblue);
+    }
+
+    .accent-right__bottom {
+      height: 9px;
+      width: 163px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(45deg, $color-lightblue, $color-brightblue);
+    }
+  }
+
   h2 {
     margin-bottom: 99px;
 
@@ -42,6 +96,8 @@
   }
 
   .hero-accent {
+    background: linear-gradient(45deg, $color-lightblue, $color-white);
+    height: 10px;
     left: 0;
     position: absolute;
     top: 324px;
@@ -191,20 +247,6 @@
   .news {
     position: relative;
 
-    .accent-left {
-      bottom: -69px;
-      left: -28px;
-      position: absolute;
-      width: 328px;
-    }
-
-    .accent-right {
-      bottom: 20px;
-      right: -8px;
-      position: absolute;
-      width: 107px;
-    }
-
     .card-container {
 
       @include max-screen($mobile-breakpoint) {
@@ -328,10 +370,8 @@
     }
 
     .accent-left {
-      top: -69px;
-      left: -28px;
-      position: absolute;
-      width: 328px;
+      left: -108px;
+      top: 21px;
     }
 
     .accent-right {

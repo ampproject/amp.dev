@@ -9,15 +9,7 @@ components:
 {% set stories = g.doc('/content/includes/stories.yaml', locale=doc.locale) %}
 
 <div class="stories">
-  <div class="hero-accent">
-    <amp-img
-      noloading
-      height="{{stories.hero.accent_image_height}}"
-      width="{{stories.hero.accent_image_width}}"
-      src="{{stories.hero.accent_image}}"
-      layout="responsive">
-    </amp-img>
-  </div>
+  <div class="hero-accent"></div>
   <div class="hero-background">
     <amp-img
       noloading
@@ -109,22 +101,12 @@ components:
   </div>
   <section class="news">
     <div class="accent-left">
-      <amp-img
-        noloading
-        height="{{stories.news.accent_left_height}}"
-        width="{{stories.news.accent_left_width}}"
-        src="{{stories.news.accent_left}}"
-        layout="responsive">
-      </amp-img>
+      <div class="accent-left__top"></div>
+      <div class="accent-left__bottom"></div>
     </div>
     <div class="accent-right">
-      <amp-img
-        noloading
-        height="{{stories.news.accent_right_height}}"
-        width="{{stories.news.accent_right_width}}"
-        src="{{stories.news.accent_right}}"
-        layout="responsive">
-      </amp-img>
+      <div class="accent-right__top"></div>
+      <div class="accent-right__bottom"></div>
     </div>
     <div class="container xl">
       <div class="card-container">
@@ -184,22 +166,12 @@ components:
   </section>
   <section class="large-cta">
     <div class="accent-left">
-      <amp-img
-        noloading
-        height="{{stories.news.accent_left_height}}"
-        width="{{stories.news.accent_left_width}}"
-        src="{{stories.news.accent_left}}"
-        layout="responsive">
-      </amp-img>
+      <div class="accent-left__top"></div>
+      <div class="accent-left__bottom"></div>
     </div>
     <div class="accent-right">
-      <amp-img
-        noloading
-        height="{{stories.news.accent_right_height}}"
-        width="{{stories.news.accent_right_width}}"
-        src="{{stories.news.accent_right}}"
-        layout="responsive">
-      </amp-img>
+      <div class="accent-right__top"></div>
+      <div class="accent-right__bottom"></div>
     </div>
     <h2>{{_(stories.footer.title)}}</h2>
     <a
