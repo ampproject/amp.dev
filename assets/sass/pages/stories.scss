@@ -333,8 +333,29 @@
       text-align: center;
     }
 
+    .amp-carousel-button {
+      background: $color-brightblue;
+      border-radius: 8px;
+      height: 44px;
+      width: 44px;
+    }
+
+    .amp-carousel-button:before,
+    .amp-carousel-button:after {
+      background-color: $color-white;
+    }
+
+    .amp-carousel-button:before {
+      transform: translate(12px, 15px) rotate(45deg);
+    }
+
+    .amp-carousel-button:after {
+      transform: translate(12px, 26px) rotate(-45deg);
+    }
+
     .slide {
       display: block;
+      margin-left: 85px;
 
       &:first-child {
         margin-left: 20%;
