@@ -138,12 +138,28 @@ body.about-who-vertical {
           flex: 0 0 25%;
           top: -8px;
         }
+        &.ebay {
+          flex: 0 0 16%;
+          top: -3px;
+        }
+        &.overstock {
+          flex: 0 0 20%;
+        }
+        &.aliexpress {
+          flex: 0 0 18%;
+        }
+        &.jcrew{
+          flex: 0 0 15%;
+        }
+        &.eventbrite{
+          flex: 0 0 20%;
+        }
       }
     }
   }
 
   .why-use {
-    padding: 0 5% 165px 5%;
+    padding: 0 5% 100px 5%;
 
     h3 {
       text-align: center;
@@ -189,7 +205,12 @@ body.about-who-vertical {
     padding: 0 15.4% 115px 15.4%;
 
     h3 {
-      margin-bottom: 45px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    h4.more {
+      margin-top: -15px;
       text-align: center;
     }
 
@@ -270,7 +291,8 @@ body.about-who-vertical {
     }
   }
 
-  .about-who-block.publishers {
+  .about-who-block.publishers,
+  .about-who-block.ecommerce {
     .hero-images .triangle {
       top: -80px;
     }
@@ -607,6 +629,21 @@ body.about-who-vertical {
         }
 
         &.cloudflare {
+          flex: 0 0 40%;
+        }
+        &.ebay {
+          flex: 0 0 28%;
+        }
+        &.overstock {
+          flex: 0 0 40%;
+        }
+        &.aliexpress {
+          flex: 0 0 35%;
+        }
+        &.jcrew{
+          flex: 0 0 30%;
+        }
+        &.eventbrite{
           flex: 0 0 40%;
         }
       }
