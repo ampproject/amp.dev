@@ -140,11 +140,10 @@ body.about-who-vertical {
         }
         &.ebay {
           flex: 0 0 16%;
-          top: -4px;
+          top: -3px;
         }
         &.overstock {
-          flex: 0 0 8%;
-          top: -14px;
+          flex: 0 0 20%;
         }
         &.aliexpress {
           flex: 0 0 18%;
@@ -153,8 +152,7 @@ body.about-who-vertical {
           flex: 0 0 15%;
         }
         &.eventbrite{
-          flex: 0 0 17%;
-          top: -1px;
+          flex: 0 0 20%;
         }
       }
     }
