@@ -109,6 +109,7 @@
     right: 0;
     top: 0;
     width: 42%;
+    z-index: -1;
   }
 
   .hero {
@@ -341,6 +342,17 @@
 
       &:last-child {
         margin-right: 22px;
+      }
+
+      .image {
+        border-radius: 31px;
+        box-shadow: 0 2px 14px rgba(0, 0, 0, .24);
+        overflow: hidden;
+
+        amp-img,
+        img {
+          display: block;
+        }
       }
     }
 

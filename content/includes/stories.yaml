@@ -80,7 +80,7 @@ news:
 web_stories:
   title@: Check out AMP stories on the web
   stories:
-    - image: /static/img/stories/story-cnn.png
+    - base_image: /static/img/stories/story-cnn
       image_width: 385
       image_height: 641
       immage_alt@: The Missions Still Exploring Our Solar System
@@ -89,7 +89,7 @@ web_stories:
       logo_height: 45
       logo_alt@: CNN
       url: https://stamps.cnn.io/solar-system-missions/index.html
-    - image: /static/img/stories/story-hearst.png
+    - base_image: /static/img/stories/story-hearst
       image_width: 385
       image_height: 641
       immage_alt@: Apple Cider Vinegar is the Magic Potion You Need in Your Life
@@ -98,7 +98,7 @@ web_stories:
       logo_height: 45
       logo_alt@: Hearst
       url: http://www.cosmopolitan.com/stamp/apple-cider-vinegar/
-    - image: /static/img/stories/story-mashable.png
+    - base_image: /static/img/stories/story-mashable
       image_width: 385
       image_height: 641
       immage_alt@: Black Panther
@@ -107,7 +107,7 @@ web_stories:
       logo_height: 45
       logo_alt@: Mashable
       url: https://mashable.com/2017/10/24/reels-guide-to-black-panther.amp
-    - image: /static/img/stories/story-mic.png
+    - base_image: /static/img/stories/story-mic
       image_width: 385
       image_height: 641
       immage_alt@: The Art of an Organized Refrigerator
@@ -116,7 +116,7 @@ web_stories:
       logo_height: 45
       logo_alt@: Mic
       url: https://mic.com/stories/262/the-art-of-an-organized-refrigerator
-    - image: /static/img/stories/story-time.png
+    - base_image: /static/img/stories/story-time
       image_width: 385
       image_height: 641
       immage_alt@: Harry & Meghan A to Z
@@ -125,7 +125,7 @@ web_stories:
       logo_height: 45
       logo_alt@: Time
       url: https://people.com/amp-stories/royal-a-to-z/
-    - image: /static/img/stories/story-vox.png
+    - base_image: /static/img/stories/story-vox
       image_width: 385
       image_height: 641
       immage_alt@: How College Football Playoff Rankings Actualloy Work
@@ -134,7 +134,7 @@ web_stories:
       logo_height: 45
       logo_alt@: Vox
       url: https://www.sbnation.com/2017/12/1/16719476/college-football-playoff-rankings-explained
-    - image: /static/img/stories/story-wapo.png
+    - base_image: /static/img/stories/story-wapo
       image_width: 385
       image_height: 641
       immage_alt@: The Evolution of Trump's Wall
@@ -143,7 +143,7 @@ web_stories:
       logo_height: 45
       logo_alt@: Washington Post
       url: https://www.washingtonpost.com/graphics/2018/national/border-wall/
-    - image: /static/img/stories/story-wired.png
+    - base_image: /static/img/stories/story-wired
       image_width: 385
       image_height: 641
       immage_alt@: Space Photos of the Week

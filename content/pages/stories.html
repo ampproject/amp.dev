@@ -146,7 +146,8 @@ components:
         target="_blank">
         <div class="image">
           <amp-img
-            src="{{story.image}}"
+            src="{{story.base_image}}@2x.jpg"
+            srcset="{{story.base_image}}@1x.jpg 385w, {{story.base_image}}@2x.jpg 770w"
             height="{{story.image_height}}"
             width="{{story.image_width}}"
             alt="{{_(story.image_alt)}}">
