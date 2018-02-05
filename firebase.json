@@ -92,6 +92,11 @@
         "type": 301
       },
       {
+        "source": "/ecommerce",
+        "destination": "/learn/who-uses-amp/ecommerce/",
+        "type": 301
+      },
+      {
         "source": "/showcase",
         "destination": "/learn/showcases/",
         "type": 301
