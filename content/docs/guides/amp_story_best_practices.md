@@ -7,7 +7,7 @@ toc: true
 
 [TOC]
 
-This document provides recommended practices that you should implement when creating an [AMP Story](/docs/reference/components/amp-story.html).
+This guide provides recommended practices that you should implement when creating an [AMP Story](/docs/reference/components/amp-story.html).
 
 
 ## Background color  
@@ -19,7 +19,6 @@ You should specify a background color for your AMP story pages. By having a back
     *   Pick a dominant color representative of the image/video.
     *   Pick a consistent theme color for all pages in the story. 
 *   The background color should be different from the font color so that the text is readable even before the image loads.
-
 
 ## Text 
 
@@ -59,7 +58,6 @@ When specifying the source for an [amp-video](/docs/reference/components/amp-vid
 
 *Example: Specifying multiple source files*
 
-
 ```html
 <amp-video id="video-page1" autoplay loop
   layout="fill" poster="https://example.com/media/poster.jpg">
@@ -78,13 +76,15 @@ When specifying the source for an [amp-video](/docs/reference/components/amp-vid
 
 ### Video formats
 
-If you can only provide a single video format, provide **MP4**.  However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.   
+If you can only provide a single video format, provide **MP4**.  However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
+{% call callout('Note', type='note') %}
+The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. HLS videos can only be debugged with an actual mobile device via USB-debugging.
+{% endcall %}
 
 ### Video resolution
 
 AMP Story videos are always vertical (i.e., portrait view), with an expected aspect ratio of 16:9. Use the recommended resolution for the video streaming type: 
-
 
 <table>
   <thead>
