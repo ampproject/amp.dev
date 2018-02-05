@@ -1,0 +1,21 @@
+{
+  "share-providers": {
+    "facebook": true,
+    "twitter": true,
+    "email": true
+  },
+  "related-articles": {
+    "Articles": [
+      {
+        "title": "Pet adoption",
+        "url": "https://en.wikipedia.org/wiki/Pet_adoption",
+        "image": "assets/related-dogs.jpg"
+      },
+      {
+        "title": "Learn about cats",
+        "url": "https://en.wikipedia.org/wiki/Cat",
+        "image": "assets/related-cats.jpg"
+      }
+    ]
+  }
+}
