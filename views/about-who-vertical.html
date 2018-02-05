@@ -169,7 +169,9 @@
             </div>
           {% endfor %}
           </amp-carousel>
-
+          {% if doc.case.morecases %}
+            <h4 class="more"><a href="{{ doc.case.morecases }}">More case studies</a></h4> 
+          {% endif %}
           {% if doc.case.lines_img %}
             <amp-img class="lines"
                 noloading
