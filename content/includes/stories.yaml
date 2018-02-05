@@ -45,24 +45,24 @@ features:
   title@: AMP story features
   features:
     - description@: Supports rich visuals with native video and image performance
-      image: /static/img/stories/feature-0.png
-      image_width: 404
-      image_height: 487
+      image: /static/img/stories/features-wired.gif
+      image_width: 600
+      image_height: 581
       image_alt@: A Pod Races Through the Hyperloop for the First Time
     - description@: Enriches storytelling through animations and tappable interactions
-      image: /static/img/stories/feature-0.png
-      image_width: 404
-      image_height: 487
+      image: /static/img/stories/features-people.gif
+      image_width: 600
+      image_height: 581
       image_alt@: A Pod Races Through the Hyperloop for the First Time
     - description@: Works across mobile and desktop devices on the open web
-      image: /static/img/stories/feature-0.png
-      image_width: 404
-      image_height: 487
+      image: /static/img/stories/features-hearst.gif
+      image_width: 600
+      image_height: 581
       image_alt@: A Pod Races Through the Hyperloop for the First Time
     - description@: Builds atop AMP’s component library to support features like analytics
-      image: /static/img/stories/feature-0.png
-      image_width: 404
-      image_height: 487
+      image: /static/img/stories/features-amp.png
+      image_width: 600
+      image_height: 581
       image_alt@: A Pod Races Through the Hyperloop for the First Time
 news:
   accent_left: /static/img/stories/accent-left.png

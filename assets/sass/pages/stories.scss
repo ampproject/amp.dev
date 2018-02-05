@@ -171,8 +171,8 @@
     }
 
     .feature {
-      width: 33%;
-      margin: 46px 8% 0;
+      width: 50%;
+      margin: 46px 0 0;
 
       @include max-screen($mobile-breakpoint) {
         max-width: 320px;
@@ -181,8 +181,10 @@
     }
 
     p {
+      margin: -132px auto 0;
       max-width: 179px;
-      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
   }
 
