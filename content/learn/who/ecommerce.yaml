@@ -71,7 +71,7 @@ case:
   cases:
     - filename: greenweez.md
     - filename: fastcommerce.md
-  morecases: /case-studies/e-commerce/
+  morecases: /case-studies/ecommerce/
 
 
 cta:
