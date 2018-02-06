@@ -7,7 +7,7 @@ hero:
   subtitle@: A visual storytelling format for the open web
   description@: AMP stories immerse readers in tappable, full-screen content. Building on the possibilities of the AMP project, this format enables the creation of visual content that is fast, open, and user-first.
   cta@: Build an AMP Story
-  url: /docs/tutorials/create.html
+  url: /docs/tutorials/visual_story
   background_image: /static/img/stories/background-hero.jpg
   background_image_width: 1617
   background_image_height: 1715
@@ -123,10 +123,10 @@ web_stories:
       image_width: 385
       image_height: 641
       immage_alt@: Harry & Meghan A to Z
-      base_logo: /static/img/stories/logo-time
+      base_logo: /static/img/stories/logo-meredith
       logo_width: 395
       logo_height: 45
-      logo_alt@: Time
+      logo_alt@: Meredith
       url: https://people.com/amp-stories/royal-a-to-z/
     - base_image: /static/img/stories/story-vox
       image_width: 385
@@ -158,4 +158,4 @@ web_stories:
 footer:
   title@: Build immersive experiences with AMP stories.
   cta@: Get Started
-  url: /docs/tutorials/create.html
+  url: /docs/tutorials/visual_story
