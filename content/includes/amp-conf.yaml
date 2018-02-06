@@ -65,7 +65,7 @@ speakers:
     pic: /static/img/amp-conf/speakers/lisa.jpg
     bio: Lisa is a product manager on the AMP team, focusing on e-commerce. Her mission is to empower business owners in building fast, user-friendly e-commerce experiences. Lisa earned a bachelor’s degree in Math and Computer Science from Harvard College.
   andrebarrara:
-    name: André Barrara
+    name: André Bandarra
     company: Google
     pic: /static/img/amp-conf/speakers/andre.jpg
     bio: André Bandarra is a Developer Advocate at Google, and helps partners to be more successful on the web and on Android. He has been working with partners to build great AMP pages since the early days of the technology.
@@ -220,7 +220,7 @@ speakers:
   aakashsahney:
     name: Aakash Sahney
     company: Google
-    pic:
+    pic: /static/img/amp-conf/speakers/aakash.jpg
     bio: Aakash is a Product Manager at Google on the G Suite team. His team builds platform and extensibility features that enable rich integrations with G Suite.
   elitetruong:
     name: Elite Truong
