@@ -1,0 +1,19 @@
+---
+$title: Uses
+class: amp-uses
+
+stylesheet: pages/uses.css
+
+components:
+- youtube
+---
+
+{% set uses = g.doc('/content/includes/uses.yaml', locale=doc.locale) %}
+
+<div>USES PAGE</div>
+
+{% with large_cta = uses.large_cta %}
+{% include "/views/partials/large-cta.html" %}
+{% endwith %}
+
+

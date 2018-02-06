@@ -1,0 +1,7 @@
+large_cta:
+  title@: Create your first AMP page
+  cta@: Start Building Now
+  cta_url: /content/docs/tutorials/general/create.md
+  lines_right: /static/img/home/lines3.svg
+  lines_right_width: 360
+  lines_right_height: 377
