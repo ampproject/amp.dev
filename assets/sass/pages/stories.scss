@@ -328,6 +328,43 @@
   }
 
   .web-stories {
+    position: relative;
+
+    .background {
+      position: absolute;
+      bottom: -142px;
+      right: -5%;
+      width: 70%;
+      height: 80%;
+
+      &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 520px solid transparent;
+        border-right: 520px solid transparent;
+        border-bottom: 520px solid #F2F8FD;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 520px solid transparent;
+        border-bottom: 520px solid transparent;
+        border-right: 520px solid #F2F8FD;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      @include max-screen($mobile-breakpoint) {
+        bottom: -60px;
+      }
+    }
 
     h2 {
       text-align: center;

@@ -133,6 +133,7 @@ components:
     </div>
   </section>
   <section class="web-stories">
+    <div class="background"></div>
     <h2>{{_(stories.web_stories.title)}}</h2>
     <amp-carousel
       id="web-stories-carousel"
@@ -156,8 +157,8 @@ components:
         <div class="logo">
           <amp-img
             layout="responsive"
-            src="{{story.base_logo}}@2x.jpg"
-            srcset="{{story.base_logo}}@2x.jpg {{story.logo_width * 2}}w, {{story.base_logo}}@1x.jpg {{story.logo_width}}w"
+            src="{{story.base_logo}}@2x.png"
+            srcset="{{story.base_logo}}@2x.png {{story.logo_width * 2}}w, {{story.base_logo}}@1x.png {{story.logo_width}}w"
             height="{{story.logo_height}}"
             width="{{story.logo_width}}"
             alt="{{_(story.logo_alt)}}">
