@@ -10,8 +10,9 @@
     height: 34px;
     left: -100px;
     position: absolute;
-    transform: rotate(-40deg);
+    transform: rotate(-45deg);
     width: 396px;
+    z-index: -1;
 
     .accent-left__top {
       background: linear-gradient(45deg, $color-lightblue, $color-white);
@@ -39,6 +40,7 @@
     right: -50px;
     transform: rotate(-40deg);
     width: 195px;
+    z-index: -1;
 
     .accent-right__top {
       height: 9px;
@@ -71,6 +73,7 @@
   h3 {
     font-size: 30px;
     font-weight: 300;
+    line-height: 1.2;
   }
 
   h3 {
@@ -102,14 +105,24 @@
     position: absolute;
     top: 324px;
     width: 213px;
+
+    @include max-screen($mobile-breakpoint) {
+      top: 93px;
+    }
   }
 
   .hero-background {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 42%;
+    right: -1013px;
+    top: -840px;
+    width: 1617px;
     z-index: -1;
+
+    @include max-screen($mobile-breakpoint) {
+      width: 676px;
+      right: -451px;
+      top: -220px;
+    }
   }
 
   .hero {
@@ -138,6 +151,7 @@
 
       @include max-screen($mobile-breakpoint) {
         font-size: 30px;
+        margin-top: 0;
       }
     }
 
@@ -170,6 +184,20 @@
       position: relative;
       right: -5%;
       width: calc(50% - 100px);
+
+      @include max-screen($mobile-breakpoint) {
+        display: none;
+      }
+    }
+
+    .mobile-image {
+      display: none;
+
+      @include max-screen($mobile-breakpoint) {
+        display: block;
+        margin-top: 90px;
+        transform: translateX(23%);
+      }
     }
 
     .animated-image {
@@ -181,13 +209,13 @@
     }
 
     .text {
-      margin-top: 222px;
+      padding-top: 222px;
       width: calc(50% - 100px);
       position: relative;
       z-index: 1;
 
       @include max-screen($mobile-breakpoint) {
-        margin-top: 37px;
+        padding-top: 37px;
         width: 100%;
       }
     }
@@ -242,11 +270,22 @@
       max-width: 179px;
       position: relative;
       z-index: 1;
+
+      @include max-screen($mobile-breakpoint) {
+        margin-top: -50px;
+      }
     }
   }
 
   .news {
     position: relative;
+
+    .accent-left {
+
+      @include max-screen($mobile-breakpoint) {
+        top: 110px;
+      }
+    }
 
     .card-container {
 
@@ -336,6 +375,11 @@
       right: -5%;
       width: 70%;
       height: 80%;
+      z-index: -1;
+
+      @include max-screen($mobile-breakpoint) {
+        right: -184%;
+      }
 
       &::before {
         content: '';
@@ -370,6 +414,11 @@
       text-align: center;
     }
 
+    amp-carousel {
+      position: relative;
+      z-index: 2;
+    }
+
     .amp-carousel-button {
       background: $color-brightblue;
       border-radius: 8px;
@@ -393,6 +442,10 @@
     .slide {
       display: block;
       margin-left: 85px;
+
+      @include max-screen($mobile-breakpoint) {
+        margin-left: 25px;
+      }
 
       &:first-child {
         margin-left: 20%;
@@ -442,6 +495,12 @@
     .accent-left {
       left: -108px;
       top: 21px;
+      z-index: 1;
+
+      @include max-screen($mobile-breakpoint) {
+        left: -194px;
+        top: 61px;
+      }
     }
 
     .accent-right {
@@ -449,6 +508,7 @@
       right: -8px;
       position: absolute;
       width: 107px;
+      z-index: 1;
     }
 
     h2 {

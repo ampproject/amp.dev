@@ -34,6 +34,16 @@ components:
           </div>
           <h1>{{_(stories.hero.title)}}</h1>
         </div>
+        <div class="mobile-image">
+          <amp-img
+            media="(max-width: 956px)"
+            layout="responsive"
+            width="{{stories.hero.static_image_width}}"
+            height="{{stories.hero.static_image_width}}"
+            src="{{stories.hero.static_base_image}}@2x.png"
+            srcset="{{stories.hero.static_base_image}}@2x.png {{stories.hero.static_image_width * 2}}w, {{stories.hero.static_base_image}}@1x.png {{stories.hero.static_image_width}}w">
+          </amp-img>
+        </div>
         <h3>{{_(stories.hero.subtitle)}}</h3>
         <p>{{_(stories.hero.description)}}</p>
         <a class="button" href="{{g.doc(stories.hero.url, locale=doc.locale).url.path}}">
@@ -138,6 +148,7 @@ components:
     <amp-carousel
       id="web-stories-carousel"
       layout="fixed-height"
+      media="(min-width: 957px)"
       height="726"
       type="carousel">
       {% for story in stories.web_stories.stories %}
@@ -151,6 +162,39 @@ components:
             srcset="{{story.base_image}}@1x.jpg 385w, {{story.base_image}}@2x.jpg 770w"
             height="{{story.image_height}}"
             width="{{story.image_width}}"
+            alt="{{_(story.image_alt)}}">
+          </amp-img>
+        </div>
+        <div class="logo">
+          <amp-img
+            layout="responsive"
+            src="{{story.base_logo}}@2x.png"
+            srcset="{{story.base_logo}}@2x.png {{story.logo_width * 2}}w, {{story.base_logo}}@1x.png {{story.logo_width}}w"
+            height="{{story.logo_height}}"
+            width="{{story.logo_width}}"
+            alt="{{_(story.logo_alt)}}">
+          </amp-img>
+        </div>
+      </a>
+      {% endfor %}
+    </amp-carousel>
+    <amp-carousel
+      id="web-stories-carousel"
+      layout="fixed-height"
+      media="(max-width: 956px)"
+      height="370"
+      type="carousel">
+      {% for story in stories.web_stories.stories %}
+      <a
+        class="slide"
+        href="{{story.url}}"
+        target="_blank">
+        <div class="image">
+          <amp-img
+            src="{{story.base_image}}@2x.jpg"
+            srcset="{{story.base_image}}@1x.jpg 385w, {{story.base_image}}@2x.jpg 770w"
+            height="314"
+            width="188"
             alt="{{_(story.image_alt)}}">
           </amp-img>
         </div>

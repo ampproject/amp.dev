@@ -9,14 +9,17 @@ hero:
   cta@: Build an AMP Story
   url: /docs/tutorials/create.html
   background_image: /static/img/stories/background-hero.jpg
-  background_image_width: 604
-  background_image_height: 975
+  background_image_width: 1617
+  background_image_height: 1715
   foreground_image_base: /static/img/stories/hero-phone
   foreground_image_width: 662
   foreground_image_height: 798
   animated_image: /static/img/stories/animated-hero.gif
   animated_image_width: 260
   animated_image_height: 448
+  static_base_image: /static/img/stories/static-phone
+  static_image_height: 365
+  static_image_width: 324
 why:
   title@: Why AMP Stories?
   reasons:
