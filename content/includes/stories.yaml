@@ -84,8 +84,8 @@ web_stories:
       image_width: 385
       image_height: 641
       immage_alt@: The Missions Still Exploring Our Solar System
-      logo: /static/img/stories/logo-cnn.png
-      logo_width: 93
+      base_logo: /static/img/stories/logo-cnn
+      logo_width: 395
       logo_height: 45
       logo_alt@: CNN
       url: https://stamps.cnn.io/solar-system-missions/index.html
@@ -93,8 +93,8 @@ web_stories:
       image_width: 385
       image_height: 641
       immage_alt@: Apple Cider Vinegar is the Magic Potion You Need in Your Life
-      logo: /static/img/stories/logo-cnn.png
-      logo_width: 93
+      base_logo: /static/img/stories/logo-hearst
+      logo_width: 395
       logo_height: 45
       logo_alt@: Hearst
       url: http://www.cosmopolitan.com/stamp/apple-cider-vinegar/
@@ -102,8 +102,8 @@ web_stories:
       image_width: 385
       image_height: 641
       immage_alt@: Black Panther
-      logo: /static/img/stories/logo-cnn.png
-      logo_width: 93
+      base_logo: /static/img/stories/logo-mashable
+      logo_width: 395
       logo_height: 45
       logo_alt@: Mashable
       url: https://mashable.com/2017/10/24/reels-guide-to-black-panther.amp
@@ -111,8 +111,8 @@ web_stories:
       image_width: 385
       image_height: 641
       immage_alt@: The Art of an Organized Refrigerator
-      logo: /static/img/stories/logo-cnn.png
-      logo_width: 93
+      base_logo: /static/img/stories/logo-mic
+      logo_width: 395
       logo_height: 45
       logo_alt@: Mic
       url: https://mic.com/stories/262/the-art-of-an-organized-refrigerator
@@ -120,17 +120,17 @@ web_stories:
       image_width: 385
       image_height: 641
       immage_alt@: Harry & Meghan A to Z
-      logo: /static/img/stories/logo-cnn.png
-      logo_width: 93
+      base_logo: /static/img/stories/logo-time
+      logo_width: 395
       logo_height: 45
       logo_alt@: Time
       url: https://people.com/amp-stories/royal-a-to-z/
     - base_image: /static/img/stories/story-vox
       image_width: 385
       image_height: 641
-      immage_alt@: How College Football Playoff Rankings Actualloy Work
-      logo: /static/img/stories/logo-cnn.png
-      logo_width: 93
+      image_alt@: How College Football Playoff Rankings Actualloy Work
+      base_logo: /static/img/stories/logo-vox
+      logo_width: 395
       logo_height: 45
       logo_alt@: Vox
       url: https://www.sbnation.com/2017/12/1/16719476/college-football-playoff-rankings-explained
@@ -138,8 +138,8 @@ web_stories:
       image_width: 385
       image_height: 641
       immage_alt@: The Evolution of Trump's Wall
-      logo: /static/img/stories/logo-cnn.png
-      logo_width: 93
+      base_logo: /static/img/stories/logo-wapo
+      logo_width: 395
       logo_height: 45
       logo_alt@: Washington Post
       url: https://www.washingtonpost.com/graphics/2018/national/border-wall/
@@ -147,8 +147,8 @@ web_stories:
       image_width: 385
       image_height: 641
       immage_alt@: Space Photos of the Week
-      logo: /static/img/stories/logo-cnn.png
-      logo_width: 93
+      base_logo: /static/img/stories/logo-wired
+      logo_width: 395
       logo_height: 45
       logo_alt@: Wired
       url: http://stamp.wired.com/stamp/space-photos-of-the-week-111817?key=wired_stamp_m3aIz8a21lyTY11n

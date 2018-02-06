@@ -155,7 +155,9 @@ components:
         </div>
         <div class="logo">
           <amp-img
-            src="{{story.logo}}"
+            layout="responsive"
+            src="{{story.base_logo}}@2x.jpg"
+            srcset="{{story.base_logo}}@2x.jpg {{story.logo_width * 2}}w, {{story.base_logo}}@1x.jpg {{story.logo_width}}w"
             height="{{story.logo_height}}"
             width="{{story.logo_width}}"
             alt="{{_(story.logo_alt)}}">
