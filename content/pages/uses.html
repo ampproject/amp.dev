@@ -9,11 +9,36 @@ components:
 ---
 
 {% set uses = g.doc('/content/includes/uses.yaml', locale=doc.locale) %}
-
-<div>USES PAGE</div>
-
+<div class="uses-page">
+  <div class="hero-background"></div>
+  <div class="hero-background-white"></div>
+  <section class="hero">
+    <h1 class="hero-title">{{_(uses.hero.title)}}</h1>
+    <h2 class="hero-description">{{_(uses.hero.description)}}</h2>
+  </section>
+  <div class="cards-wrapper-outer">
+    <div class="cards-wrapper">
+      {% for card in uses.cards %}
+      <a class="link-card" href="{{ card.url }}">
+        <amp-img
+          class="card-image"
+          noloading
+          height={{card.img_height}}
+          width={{card.img_width}}
+          layout=responsive
+          src="{{card.img}}">
+        </amp-img>
+        <div class="card-title-wrapper">
+          <div class="card-title">
+            {{_(card.title)}}
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% with large_cta = uses.large_cta %}
-{% include "/views/partials/large-cta.html" %}
+  {% include "/views/partials/large-cta.html" %}
 {% endwith %}
-
 
