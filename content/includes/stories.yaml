@@ -59,7 +59,7 @@ features:
       image_width: 600
       image_height: 581
       image_alt@: A Pod Races Through the Hyperloop for the First Time
-    - description@: Builds atop AMP’s component library to support features like analytics
+    - description@: Builds on top of AMP’s component library to support features like analytics
       image: /static/img/stories/features-amp.png
       image_width: 600
       image_height: 581
@@ -110,15 +110,6 @@ web_stories:
       logo_height: 45
       logo_alt@: Mashable
       url: https://mashable.com/2017/10/24/reels-guide-to-black-panther.amp
-    - base_image: /static/img/stories/story-mic
-      image_width: 385
-      image_height: 641
-      immage_alt@: The Art of an Organized Refrigerator
-      base_logo: /static/img/stories/logo-mic
-      logo_width: 395
-      logo_height: 45
-      logo_alt@: Mic
-      url: https://mic.com/stories/262/the-art-of-an-organized-refrigerator
     - base_image: /static/img/stories/story-time
       image_width: 385
       image_height: 641
@@ -128,6 +119,15 @@ web_stories:
       logo_height: 45
       logo_alt@: Meredith
       url: https://people.com/amp-stories/royal-a-to-z/
+    - base_image: /static/img/stories/story-mic
+      image_width: 385
+      image_height: 641
+      immage_alt@: The Art of an Organized Refrigerator
+      base_logo: /static/img/stories/logo-mic
+      logo_width: 395
+      logo_height: 45
+      logo_alt@: Mic
+      url: https://mic.com/stories/262/the-art-of-an-organized-refrigerator
     - base_image: /static/img/stories/story-vox
       image_width: 385
       image_height: 641

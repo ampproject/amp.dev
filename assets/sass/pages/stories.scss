@@ -127,10 +127,15 @@
 
   .hero {
     display: flex;
-    margin-top: 0;
+    margin: 0;
 
     @include max-screen($mobile-breakpoint) {
       display: block;
+      margin: 0;
+    }
+
+    @include min-screen($toc-breakpoint) {
+      margin: 0 10%;
     }
 
     h1 {
