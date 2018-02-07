@@ -269,7 +269,7 @@ agenda:
       time: "1130"
       type: session
       speaker: kseniacoulter
-    - title: "AMP as Canonical: Using AMP as library to build user friendly sites"
+    - title: "Using AMP as a library to build user friendly sites"
       description: Contrary to popular opinion, it's not only possible to build a whole site with AMP, it's rewarding as well! Learn how your development process will change when going all in on AMP, what tools are available and how to design responsively, from top to bottom.
       time: "1200"
       type: session
@@ -277,7 +277,7 @@ agenda:
         - abbybeck
         - andrebarrara
     - title: "Q&A and Panel: Amazing Stories, told through AMP"
-      description: Ask the speakers of the previous talks any questions you have about storytelling, canonical AMP, animations and more in this special Q&A panel wrapping up this half-day theme.
+      description: Ask the speakers of the previous talks any questions you have about storytelling, AMP Websites, animations and more in this special Q&A panel wrapping up this half-day theme.
       time: "1230"
       type: panel
       moderator: paulbakaus
@@ -306,7 +306,7 @@ agenda:
     - title: "Fast by default: AMP powering WordPress"
       time: "1445"
       type: session
-      description: The WordPress AMP plugin, pioneered by Automattic, has enabled AMP for millions of sites, but there is still a lot of room for expanding its capabilities. To help the WordPress ecosystem push forward into a bright, fast, user-friendly future, Automattic, XWP, the AMP team and Google have formed a unique collaboration to bolster the plugin capabilities and enable AMP Canonical experiences by default for WordPress sites. See the first results of our work here at AMP Conf!
+      description: The WordPress AMP plugin, pioneered by Automattic, has enabled AMP for millions of sites, but there is still a lot of room for expanding its capabilities. To help the WordPress ecosystem push forward into a bright, fast, user-friendly future, Automattic, XWP, the AMP team and Google have formed a unique collaboration to bolster the plugin capabilities and enable full AMP experiences by default for WordPress sites. See the first results of our work here at AMP Conf!
       speakers:
         - albertomedina
         - thierrymuller
