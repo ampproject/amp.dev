@@ -4,7 +4,7 @@ hero:
   cta@: Learn about AMP
   cta_url: /content/learn/overview.yaml
   secondary_cta@: Start Building
-  secondary_cta_url: /content/docs/tutorials/general/create.md
+  secondary_cta_url: /content/docs/getting-started.md
   phone_img_base: /static/img/home/home_hero_phone
   carousel_title@: The Latest
 
@@ -55,7 +55,7 @@ success_stories:
 large_cta:
   title@: Learn how to build AMP pages and AMPHTML ads
   cta@: Start Building
-  cta_url: /content/docs/tutorials/general/create.md
+  cta_url: /content/docs/getting-started.md
   lines_left: /static/img/home/lines3.svg
   lines_left_width: 360
   lines_left_height: 377
