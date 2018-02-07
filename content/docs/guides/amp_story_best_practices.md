@@ -79,7 +79,7 @@ When specifying the source for an [amp-video](/docs/reference/components/amp-vid
 If you can only provide a single video format, provide **MP4**.  However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
 {% call callout('Note', type='note') %}
-The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. HLS videos can only be debugged with an actual mobile device via USB-debugging.
+The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
 {% endcall %}
 
 ### Video resolution
