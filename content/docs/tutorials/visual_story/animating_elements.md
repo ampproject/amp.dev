@@ -223,7 +223,7 @@ Refresh and reload your story.  Your last page should look like this:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-There are a lot of possibilities with animations in AMP Stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [AMP Story spec](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#animations).
+There are a lot of possibilities with animations in AMP Stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [amp-story](/docs/reference/components/amp-story.html#animations) reference documentation.
 
 
 <div class="prev-next-buttons">
