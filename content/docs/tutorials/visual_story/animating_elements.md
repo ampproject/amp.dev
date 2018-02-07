@@ -191,7 +191,7 @@ If you refresh and reload the page, each of the images fade in.  That's great bu
 
 Let's delay the entrance of the first image so that it comes in close to when the text banner finishes entering, say .4s. The remaining three images can come .2s after the previous image's entrance. For each of the amp-img elements, add `animate-in-delay=""` with the appropriate time delay value. Your code should look like this:
 
-```html hl_lines="5 10 15 20"
+```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
