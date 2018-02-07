@@ -70,6 +70,12 @@
     }
   }
 
+  hr {
+    margin-top: 30px;
+    border: 0;
+    border-bottom: 2px solid $color-ampblue;
+  }
+
   /* For use in components docs */
   .centered-fig {
       text-align: center;
