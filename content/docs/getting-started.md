@@ -4,6 +4,8 @@ $order: 0
 toc: true
 ---
 
+[TOC]
+
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 
 This guide provides key resources to quickly get you up and running with AMP.  For in-depth information, dive into the [AMP documentation](https://www.ampproject.org/docs/) or our [YouTube channel](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw). 
