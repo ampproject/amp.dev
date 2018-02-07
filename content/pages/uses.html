@@ -23,10 +23,13 @@ components:
         <amp-img
           class="card-image"
           noloading
-          height={{card.img_height}}
-          width={{card.img_width}}
+          width={{card.img_height}}
+          height={{card.img_width}}
           layout=responsive
-          src="{{card.img}}">
+          alt="{{_(card.title)}}"
+          srcset="{{card.img2x}} {{card.img_width2x}}w,
+                {{card.img}} {{card.img_width}}w"
+          src="{{card.img2x}}">
         </amp-img>
         <div class="card-title-wrapper">
           <div class="card-title">

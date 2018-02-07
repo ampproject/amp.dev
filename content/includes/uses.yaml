@@ -12,49 +12,73 @@ large_cta:
 
 cards:
   - title@: Retail & Commerce
-    img: /static/img/uses/card-01@2x.jpg
-    img_width: 582
-    img_height: 965
+    img: /static/img/uses/card-01@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-01@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
     url: /latest/blog
 
   - title@: News Articles
-    img: /static/img/uses/card-02@2x.jpg
-    img_width: 582
-    img_height: 965
+    img: /static/img/uses/card-02@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-02@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
     url: /latest/blog
 
   - title@: Blogs
-    img: /static/img/uses/card-03@2x.jpg
-    img_width: 582
-    img_height: 965
+    img: /static/img/uses/card-03@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-03@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
     url: /latest/blog
 
   - title@: Advertising
-    img: /static/img/uses/card-04@2x.jpg
-    img_width: 582
-    img_height: 965
+    img: /static/img/uses/card-04@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-04@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
     url: /latest/blog
 
   - title@: Recipes
-    img: /static/img/uses/card-05@2x.jpg
-    img_width: 582
-    img_height: 965
+    img: /static/img/uses/card-05@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-05@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
     url: /latest/blog
 
   - title@: Visual Stories
-    img: /static/img/uses/card-06@2x.jpg
-    img_width: 582
-    img_height: 965
+    img: /static/img/uses/card-06@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-06@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
     url: /latest/blog
 
   - title@: Travel
-    img: /static/img/uses/card-07@2x.jpg
-    img_width: 582
-    img_height: 965
+    img: /static/img/uses/card-07@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-07@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
     url: /latest/blog
 
   - title@: You Decide!
-    img: /static/img/uses/card-08@2x.jpg
-    img_width: 582
-    img_height: 965
+    img: /static/img/uses/card-08@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-08@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
     url: /latest/blog
