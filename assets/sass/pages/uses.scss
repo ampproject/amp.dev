@@ -89,7 +89,7 @@
 
     @media only screen and (min-width: 1300px) {
       border-width: 0 0 50vw 100vw;
-      left: -15px;
+      left: 0;
     }
   }
 
@@ -193,6 +193,7 @@
   .card-image {
     width: 291px;
     height: 481px;
+    max-width: calc(100vw - 40px);
     border-radius: 28px;
     box-shadow: rgba(0, 0, 0, 0.12) -2px 15px 12px 0;
     transition: box-shadow 0.2s ease-in-out;
