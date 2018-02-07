@@ -1,6 +1,6 @@
 $title@: AMP for Ad Tech Platforms
 class: about-who-vertical
-$order: 1
+$order: 4
 $parent: /content/learn/who-uses-amp.yaml
 components:
   - carousel

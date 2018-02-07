@@ -1,7 +1,7 @@
 $title@: AMPHTML Ads
 $view: /views/amp-ads.html
 class: amp-ads
-$order: 3
+$order: 1
 $hidden: true
 $parent: /content/learn/who-uses-amp.yaml
 components:
@@ -91,7 +91,7 @@ latest:
 
 large_cta:
   title@: Whether you’re an advertiser, ad tech platform or publisher, deliver better ads by joining the AMP Project today.
-  cta@: Join Today
+  cta@: Build Your AMPHTML Ad Today
   cta_url: https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md
   lines_left: /static/img/about/who-use-amp/amp-ads/lines_5.svg
   lines_left_width: 325
