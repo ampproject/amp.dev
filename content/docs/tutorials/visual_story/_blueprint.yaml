@@ -1,0 +1,5 @@
+$path: /docs/tutorials/visual_story/{base}.html
+$view: /views/doc.html
+$localization:
+  path: /{locale}/docs/tutorials/visual_story/{base}.html
+$title@: Create a visual AMP Story
