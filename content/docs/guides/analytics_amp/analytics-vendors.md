@@ -277,6 +277,12 @@ Type attribute value: `topmailru`
 
 Adds support for Top.Mail.Ru. Configuration details can be found at [Top.Mail.Ru Help](https://help.mail.ru/top/amp-analytics).
 
+### Umeng+ Analytics
+
+Type attribute value: `umenganalytics`
+
+Adds support for Umeng+ Analytics. More details for adding Umeng+ Analytics support can be found at [dev.umeng.com](http://dev.umeng.com/udplus/js-sdkdoc#5).
+
 ### Webtrekk
 
 Type attribute value: `webtrekk`
