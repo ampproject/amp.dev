@@ -19,7 +19,7 @@ components:
   <div class="cards-wrapper-outer">
     <div class="cards-wrapper">
       {% for card in uses.cards %}
-      <a class="link-card" href="{{ card.url }}">
+      <a class="link-card" href="{{ card.url }}" {% if card.external %}target="_blank"{% endif %}>
         <amp-img
           class="card-image"
           noloading
