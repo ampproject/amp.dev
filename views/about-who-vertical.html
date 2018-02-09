@@ -183,6 +183,16 @@
           {% endif %}
         </section>
       {% endif %}
+      {% if doc.resources %}
+      <section class="resources">
+        <h3>{{ doc.resources.title }}</h3>
+        <ul>
+          {%for resource in doc.resources.resource_locs %}
+            <li><a class="underlined cta" href="{{resource.url}}">{{ resource.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
     </div>
 
     {% if doc.large_cta %}

@@ -71,7 +71,18 @@ case:
   cases:
     - filename: greenweez.md
     - filename: fastcommerce.md
-  morecases: /case-studies/ecommerce/
+
+resources:
+  title@: "Resources for ecommerce"
+  resource_locs:
+    - name: Case Studies
+      url: /case-studies/ecommerce/
+    - name: Demos
+      url: https://ampbyexample.com/
+    - name: Templates
+      url: "https://www.ampstart.com/templates#commerce"
+    - name: Tutorials
+      url: /docs/tutorials/interactivity.html
 
 
 cta:

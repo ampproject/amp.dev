@@ -224,6 +224,37 @@ body.about-who-vertical {
     }
   }
 
+.resources {
+  margin-bottom: 50px;
+  margin-top: -30px;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 25px;
+  }
+
+  a {
+    color: $color-black-95;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: .56px;
+    line-height: 28px;
+    position: relative;
+    text-transform: none;
+  }
+}
+
   .large-cta {
     .button {
       font-size: 14px;
