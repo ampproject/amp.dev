@@ -225,8 +225,11 @@ speakers:
   elitetruong:
     name: Elite Truong
     company: Vox Media
-    pic:
-    bio:
+    pic: /static/img/amp-conf/speakers/elite.jpg
+    bio: |
+      Elite Truong is a product manager at Vox Media, where she leads off-platform distribution products company known for its standout technology, high-fidelity advertising, and editorial brands that go deeper into the topics passionate people care about most. She was previously the product lead on the brave new world of partner platforms, including AMP, Apple News, Instant Articles, and newsletters.
+
+      She serves as a board member at Online News Association, where she represents technologists in the digital news industry, and previously wrote a column on technology, product and design's role in the newsroom for Poynter. Prior to her current role, she worked at the intersection of product and editorial at Food Network Digital, Chicago Tribune, and Time Out Chicago. She lives in DC and, in her free time, she writes about food and travels as much as she can.
   scottmenzer:
     name: Scott Menzer
     company: AppNexus
@@ -256,6 +259,7 @@ agenda:
         - davidbesbris
         - malteubl
         - lisawang
+        - aakashsahney
       description: Tune in to see Dave, Malte and Lisa open our second AMP Conf with a highlight reel packed with exciting announcements and developments happening in the AMP ecosystem and AMP itself.
     - title: Telling Stories with AMP
       time: "1000"
