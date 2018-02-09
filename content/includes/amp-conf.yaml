@@ -215,7 +215,7 @@ speakers:
   jonnewmuis:
     name: Jon Newmuis
     company: Google
-    pic:
+    pic: /static/img/amp-conf/speakers/jon.jpg
     bio:
   aakashsahney:
     name: Aakash Sahney
@@ -232,6 +232,11 @@ speakers:
     company: AppNexus
     pic:
     bio:
+  jessanastasio:
+    name: Jess Anastasio
+    company: BuzzFeed
+    bio: Jess Anastasio is a software engineer at BuzzFeed, the leading independent digital media and tech company delivering news and entertainment content to a global audience.
+    pic: /static/img/amp-conf/speakers/jess.jpg
 
 
 agenda:
@@ -276,6 +281,7 @@ agenda:
       speakers:
         - abbybeck
         - andrebarrara
+        - jessanastasio
     - title: "Q&A and Panel: Amazing Stories, told through AMP"
       description: Ask the speakers of the previous talks any questions you have about storytelling, AMP Websites, animations and more in this special Q&A panel wrapping up this half-day theme.
       time: "1230"
