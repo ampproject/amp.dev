@@ -17,6 +17,8 @@ menu:
         collection: learn/case-studies/category
       - href: /content/learn/showcases.html
         copy@: "Showcase"
+      - href: /content/pages/stories.html
+        copy@: "AMP Stories"
   - href: /content/docs/build.md
     copy@: Docs
     collection: docs
