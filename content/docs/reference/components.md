@@ -103,6 +103,7 @@ Here are the components grouped by category:
 | [`amp-fit-text`](components/amp-fit-text.html) | Expands or shrinks font size to fit the content within the space given. |
 | [`amp-font`](components/amp-font.html) | Triggers and monitors the loading of custom fonts. |
 | [`amp-mathml`](components/amp-mathml.html) | Displays a [MathML formula](https://www.w3.org/Math/). |
+| [`amp-story`](components/amp-story.html) | A rich, visual storytelling format. |
 | [`amp-timeago`](components/amp-timeago.html) | Provides fuzzy timestamps by formatting dates as "*time ago*" (for example, 3 hours ago). |
 | [`amp-viz-vega`](components/amp-viz-vega.html) | Displays visualizations created by using [Vega](https://vega.github.io/vega/) visualization grammar.|
 
