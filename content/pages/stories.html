@@ -4,6 +4,7 @@ $title: Stories
 stylesheet: pages/stories.css
 components:
   - carousel
+  - video
 ---
 
 {% set stories = g.doc('/content/includes/stories.yaml', locale=doc.locale) %}
@@ -53,12 +54,15 @@ components:
       </div>
       <div class="images">
         <div class="animated-image">
-          <amp-img
-            height="{{stories.hero.animated_image_height}}"
-            width="{{stories.hero.animated_image_width}}"
-            src="{{stories.hero.animated_image}}"
+          <amp-video
+            autoplay
+            loop
+            muted
+            height="{{stories.hero.video_height}}"
+            width="{{stories.hero.video_width}}"
+            src="{{stories.hero.video}}"
             layout="responsive">
-          </amp-img>
+          </amp-video>
         </div>
         <amp-img
           noloading
