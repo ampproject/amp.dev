@@ -278,10 +278,20 @@
             flex: 1 1 auto;
             .city {
               position: absolute;
+              cursor: pointer;
 
               .bubble {
-                @include max-screen(650px) {
-                  display: none;
+                  opacity: 0;
+                  pointer-events: none;
+                  transition: all 0.2s ease-out;
+                  transform: translate(0, -20px);
+              }
+
+              &:hover {
+                .bubble {
+                  opacity: 1;
+                  pointer-events: all;
+                  transform: translate(0, 0);
                 }
               }
 
@@ -317,40 +327,43 @@
 
             }
 
-            .city-singapore {
-              top: 57%;
-              left: 75%;
-              .bubble {
-                top: 6px;
-                left: auto;
-                right: 6px;
-              }
+            .city-new {
+              top: 28%;
+              left: 19%;
             }
 
-            .city-jakarta {
-              top: 64%;
-              left: 78%;
-            }
-
-            .city-sydney {
-              top: 84%;
-              left: 88%;
+            .city-chicago {
+              top: 29%;
+              left: 14%;
               .bubble {
+                bottom: auto;
                 top: 6px;
               }
             }
 
-            .city-munich {
-              top: 22%;
-              left: 46%;
+            .city-sunnyvale {
+              top: 30%;
+              left: 5%;
             }
 
-            .city-paris {
+            .city-los {
+              top: 33%;
+              left: 5%;
+            }
+
+            .city-seattle {
               top: 23%;
-              left: 43%;
-              .bubble {
-                top: -159px;
-              }
+              left: 6%;
+            }
+
+            .city-cambridge {
+              top: 26%;
+              left: 19%;
+            }
+
+            .city-austin {
+              top: 33%;
+              left: 10%;
             }
 
             .city-london {
@@ -360,36 +373,6 @@
                 left: auto;
                 right: 6px;
               }
-            }
-
-            .city-madrid {
-              top: 28%;
-              left: 40.5%;
-              .bubble {
-                top: 6px;
-                left: auto;
-                right: 6px;
-              }
-            }
-
-            .city-beijing {
-              top: 29%;
-              left: 78%;
-              .bubble {
-                top: 12px;
-                left: auto;
-                right: 6px;
-              }
-            }
-
-            .city-shanghai {
-              top: 36%;
-              left: 80%;
-            }
-
-            .city-taipei {
-              top: 40%;
-              left: 80.3%;
             }
 
           }

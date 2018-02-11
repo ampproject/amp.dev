@@ -240,6 +240,11 @@ speakers:
     company: BuzzFeed
     bio: Jess Anastasio is a software engineer at BuzzFeed, the leading independent digital media and tech company delivering news and entertainment content to a global audience.
     pic: /static/img/amp-conf/speakers/jess.jpg
+  xavibeumala:
+    name: Xavi Beumala
+    company: Marfeel
+    bio:
+    pic:
 
 
 agenda:
@@ -353,6 +358,7 @@ agenda:
         - thomasfeldhaus
         - madisonminer
         - aakashsahney
+        - xavibeumala
     - title: "What's next in AMP"
       time: "1745"
       type: keynote

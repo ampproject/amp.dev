@@ -3,12 +3,27 @@ nextstop:
   link: https://events.withgoogle.com/amp-roadshow-singapore-oct2017/
 
 cities:
-  - title: Beijing
-    date: 2017-12-05
-    link: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
-  - title: Shanghai
-    date: 2017-12-08
-    link: https://gdgdocs.org/forms/d/e/1FAIpQLSeDd-mv4pfEO3eLIQBwiFUMwGmDJhUvQkHk1Tf02KZPh00g1Q/viewform
+  - title: New York
+    date: 2018-03-21
+    link: https://events.withgoogle.com/amp-roadshow-in-nyc/
+  - title: Chicago
+    date: 2018-03-27
+    link: https://events.withgoogle.com/amp-roadshow-in-chicago/
+  - title: Sunnyvale
+    date: 2018-04-04
+    link: https://events.withgoogle.com/amp-roadshow-in-sunnyvale/
+  - title: Los Angeles
+    date: 2018-06-06
+    link: https://events.withgoogle.com/amp-roadshow-in-los-angeles/
+  - title: Seattle
+    date: 2018-06-12
+    link: https://events.withgoogle.com/amp-roadshow-in-seattle/
+  - title: Austin
+    date: 2018-07-11
+    link: https://events.withgoogle.com/amp-roadshow-in-austin/
+  - title: Cambridge
+    date: 2018-08-07
+    link: https://events.withgoogle.com/amp-roadshow-in-cambridge/
   - title: ???
 
 agenda:
