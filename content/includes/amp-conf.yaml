@@ -230,8 +230,8 @@ speakers:
       Elite Truong is a product manager at Vox Media, where she leads off-platform distribution products company known for its standout technology, high-fidelity advertising, and editorial brands that go deeper into the topics passionate people care about most. She was previously the product lead on the brave new world of partner platforms, including AMP, Apple News, Instant Articles, and newsletters.
 
       She serves as a board member at Online News Association, where she represents technologists in the digital news industry, and previously wrote a column on technology, product and design's role in the newsroom for Poynter. Prior to her current role, she worked at the intersection of product and editorial at Food Network Digital, Chicago Tribune, and Time Out Chicago. She lives in DC and, in her free time, she writes about food and travels as much as she can.
-  scottmenzer:
-    name: Scott Menzer
+  mattjacobson:
+    name: Matt Jacobson
     company: AppNexus
     pic:
     bio:
@@ -240,6 +240,11 @@ speakers:
     company: BuzzFeed
     bio: Jess Anastasio is a software engineer at BuzzFeed, the leading independent digital media and tech company delivering news and entertainment content to a global audience.
     pic: /static/img/amp-conf/speakers/jess.jpg
+  xavibeumala:
+    name: Xavi Beumala
+    company: Marfeel
+    bio:
+    pic:
 
 
 agenda:
@@ -353,6 +358,7 @@ agenda:
         - thomasfeldhaus
         - madisonminer
         - aakashsahney
+        - xavibeumala
     - title: "What's next in AMP"
       time: "1745"
       type: keynote
@@ -390,7 +396,7 @@ agenda:
         - adamleslie
         - jamesavery
         - hdouglass
-        - scottmenzer
+        - mattjacobson
       description:
     - title: "How to Balance AMP Limitations with Optimization Features - The Instapage Journey"
       description: Instapage is a landing page platform that offers advanced conversion optimization features like A/B testing, Heatmaps, conversion tracking, analytics, and attribution. With the majority of our visitors coming from mobile devices, Instapage saw the necessity to support AMP. But many of our advanced features require technology that has limited or no support within the AMP framework. Join us to discuss the challenges in supporting advanced optimization within the AMP framework, and how we’re working with the AMP development team to make AMP a reality for conversion-focused landing pages at scale.
@@ -403,7 +409,7 @@ agenda:
       description: Ask the speakers of the previous talks any questions you have about monetization, retail & e-commerce in this special Q&A panel wrapping up this half-day theme.
       time: "1230"
       type: panel
-      moderator: bpalser
+      moderator: paulbakaus
       speakers:
         - vamseejasti
         - adamleslie
@@ -458,6 +464,7 @@ agenda:
     - title: Q&A with the AMP leadership
       time: "1730"
       type: keynote
+      moderator: paulbakaus
       speakers:
         - malteubl
         - rudygalfi
