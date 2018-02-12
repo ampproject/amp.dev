@@ -6,7 +6,7 @@ hero:
   title@: AMP stories
   subtitle@: A visual storytelling format for the open web
   description@: AMP stories immerse readers in tappable, full-screen content. Building on the possibilities of the AMP project, this format enables the creation of visual content that is fast, open, and user-first.
-  cta@: Build an AMP Story
+  cta@: Build an AMP story
   url: /docs/tutorials/visual_story
   background_image: /static/img/stories/background-hero.jpg
   background_image_width: 1617
