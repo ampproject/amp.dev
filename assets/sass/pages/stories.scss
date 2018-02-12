@@ -304,30 +304,9 @@
       max-width: 80%;
     }
 
-    .wapo {
-
-      .card-icon {
-        width: 284px;
-
-        @include max-screen($mobile-breakpoint) {
-          font-size: 227px;
-        }
-      }
-    }
-
-    .time {
-
-      .card-icon {
-        width: 116px;
-
-        @include max-screen($mobile-breakpoint) {
-          font-size: 96px;
-        }
-      }
-    }
-
     .card-icon {
       margin: 12px auto 32px;
+      width: 194px;
     }
 
     .card-content {
