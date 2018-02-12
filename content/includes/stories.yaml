@@ -17,9 +17,7 @@ hero:
   video: /static/video/stories/phone.mp4
   video_width: 416
   video_height: 720
-  static_base_image: /static/img/stories/static-phone
-  static_image_height: 365
-  static_image_width: 324
+  poster: /static/img/stories/video-poster.jpg
 why:
   title@: Why AMP stories?
   reasons:

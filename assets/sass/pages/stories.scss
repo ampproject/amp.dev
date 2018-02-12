@@ -200,8 +200,9 @@
 
       @include max-screen($mobile-breakpoint) {
         display: block;
-        margin-top: 90px;
-        transform: translateX(23%);
+        margin: 90px auto 30px;
+        position: relative;
+        width: 200px;
       }
     }
 

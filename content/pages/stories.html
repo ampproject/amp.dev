@@ -36,13 +36,25 @@ components:
           <h1>{{_(stories.hero.title)}}</h1>
         </div>
         <div class="mobile-image">
+          <div class="animated-image">
+            <amp-video
+              autoplay
+              loop
+              muted
+              height="{{stories.hero.video_height}}"
+              width="{{stories.hero.video_width}}"
+              src="{{stories.hero.video}}"
+              poster="{{stories.hero.poster}}"
+              layout="responsive">
+            </amp-video>
+          </div>
           <amp-img
-            media="(max-width: 956px)"
-            layout="responsive"
-            width="{{stories.hero.static_image_width}}"
-            height="{{stories.hero.static_image_width}}"
-            src="{{stories.hero.static_base_image}}@2x.png"
-            srcset="{{stories.hero.static_base_image}}@2x.png {{stories.hero.static_image_width * 2}}w, {{stories.hero.static_base_image}}@1x.png {{stories.hero.static_image_width}}w">
+            noloading
+            height="{{stories.hero.foreground_image_height}}"
+            width="{{stories.hero.foreground_image_width}}"
+            src="{{stories.hero.foreground_image_base}}@2x.png"
+            srcset="{{stories.hero.foreground_image_base}}@2x.png 1324w, {{stories.hero.foreground_image_base}}@1x.png 662w"
+            layout="responsive">
           </amp-img>
         </div>
         <h3>{{_(stories.hero.subtitle)}}</h3>
@@ -61,6 +73,7 @@ components:
             height="{{stories.hero.video_height}}"
             width="{{stories.hero.video_width}}"
             src="{{stories.hero.video}}"
+            poster="{{stories.hero.poster}}"
             layout="responsive">
           </amp-video>
         </div>
