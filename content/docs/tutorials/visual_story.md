@@ -20,6 +20,9 @@ In this tutorial, we'll introduce you to the [amp-story](/docs/reference/compone
 - Verify that your story implements best practices for AMP Stories
 
 
+{% call callout('Note', type='note') %} The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**. To sign up for the origin trial to publish pages with this component, please visit <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>. {% endcall %}
+
+
 <div class="start-button">
 <a class="button" href="/docs/tutorials/visual_story/setting_up.html"><span class="arrow-next">Get started</span></a>
 </div>
