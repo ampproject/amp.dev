@@ -409,7 +409,7 @@ agenda:
       description: Ask the speakers of the previous talks any questions you have about monetization, retail & e-commerce in this special Q&A panel wrapping up this half-day theme.
       time: "1230"
       type: panel
-      moderator: bpalser
+      moderator: paulbakaus
       speakers:
         - vamseejasti
         - adamleslie
@@ -464,6 +464,7 @@ agenda:
     - title: Q&A with the AMP leadership
       time: "1730"
       type: keynote
+      moderator: paulbakaus
       speakers:
         - malteubl
         - rudygalfi
