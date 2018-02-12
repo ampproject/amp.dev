@@ -1,11 +1,11 @@
 ---
-$title: Understanding the parts of an AMP Story
+$title: Understanding the parts of an AMP story
 $order: 2
 ---
 
-An AMP Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users who want bite-sized, visually-rich content.  
+An AMP story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users who want bite-sized, visually-rich content.  
 
-The basic ingredients that go into an AMP Story are individual **pages**. These pages, in turn, are composed of individual **layers** that contain basic HTML and AMP **elements**.
+The basic ingredients that go into an AMP story are individual **pages**. These pages, in turn, are composed of individual **layers** that contain basic HTML and AMP **elements**.
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 

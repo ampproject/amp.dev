@@ -34,7 +34,7 @@ In development mode for AMP stories, the AMP Runtime performs special checks tha
 
 Go through the screens, and verify that all pages adhere to the best practices. You should see green check marks in the logs for all pages.
 
-For more information on best practices, see the [AMP Story best practices](/docs/guides/amp_story_best_practices.html) guide.
+For more information on best practices, see the [AMP story best practices](/docs/guides/amp_story_best_practices.html) guide.
 
 
 
