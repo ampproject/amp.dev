@@ -188,7 +188,7 @@
       margin-top: 165px;
       position: relative;
       right: -5%;
-      width: calc(50% - 100px);
+      width: 368px;
 
       @include max-screen($mobile-breakpoint) {
         display: none;
@@ -206,10 +206,10 @@
     }
 
     .animated-image {
-      left: 15.9%;
+      left: 5.4%;
       position: absolute;
-      top: 12.9%;
-      width: 67.6%;
+      top: 11%;
+      width: 83.2%;
       z-index: 1;
     }
 

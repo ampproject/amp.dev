@@ -12,8 +12,8 @@ hero:
   background_image_width: 1617
   background_image_height: 1715
   foreground_image_base: /static/img/stories/hero-phone
-  foreground_image_width: 555
-  foreground_image_height: 933
+  foreground_image_width: 368
+  foreground_image_height: 714
   video: /static/video/stories/phone.mp4
   video_width: 416
   video_height: 720
@@ -21,7 +21,7 @@ hero:
   static_image_height: 365
   static_image_width: 324
 why:
-  title@: Why AMP Stories?
+  title@: Why AMP stories?
   reasons:
     - title@: Immersive
       description@: By expanding to visually fill readers’ screens, AMP stories offer creative opportunities for storytelling, with flexibility in design. The tappable experience can be used to create engaging stories.
