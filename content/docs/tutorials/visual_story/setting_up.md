@@ -39,6 +39,8 @@ http://localhost:8000/pets-completed.html
 
 {% call callout('Important', type='caution') %}
 You may encounter a screen that states "<b>You must enable the amp-story experiment to view this content</b>". The amp-story component is currently [experimental](/docs/reference/experimental.html).  To view the story, you must click the **Enable** button to turn on the amp-story component for your domain, and then reload the page. Although not necessary for this tutorial, you might want to opt your browser into the AMP Dev Channel, which allows your browser to use a newer, experimental version of the AMP JS libraries.  You can learn more about the [AMP Dev Channel here](/docs/reference/experimental.html).
+
+To sign up for the origin trial to publish pages with the `amp-story` component, please visit <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.
 {% endcall %}
 
 Click through the completed story and get a sense of what we'll be creating.
