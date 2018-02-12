@@ -51,17 +51,17 @@ features:
       image: /static/img/stories/features-people.gif
       image_width: 600
       image_height: 581
-      image_alt@: A Pod Races Through the Hyperloop for the First Time
+      image_alt@: The 25 most intriguing people of 2017
     - description@: Works across mobile and desktop devices on the open web
       image: /static/img/stories/features-hearst.gif
       image_width: 600
       image_height: 581
-      image_alt@: A Pod Races Through the Hyperloop for the First Time
+      image_alt@: 10 sneaky signs you are dehydrated
     - description@: Builds on top of AMP’s component library to support features like analytics
       image: /static/img/stories/features-amp.png
       image_width: 600
       image_height: 581
-      image_alt@: A Pod Races Through the Hyperloop for the First Time
+      image_alt@: AMP Component Library
 news:
   cards:
     - quote@: “As a source for breaking news and information, this format allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.”
