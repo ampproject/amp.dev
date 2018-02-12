@@ -228,6 +228,11 @@ body.about-who-vertical {
   margin-bottom: 50px;
   margin-top: -30px;
 
+  a {
+    display: flex;
+    align-items: flex-start;
+  }
+
   h3 {
     text-align: center;
     margin-bottom: 15px;
@@ -235,15 +240,13 @@ body.about-who-vertical {
 
   ul {
     list-style: none;
-    margin: 0 auto;
-    text-align: center;
-    flex-wrap: nowrap;
     display: flex;
     justify-content: space-between;
   }
 
   li {
-    margin: 0 20px;
+    margin-right: 20px;
+    flex: 0 0 25%;
   }
 
 
@@ -252,10 +255,9 @@ body.about-who-vertical {
   }
 
   .resource-icon {
-    flex: 0 0 4rem;
-    width: 48px;
-    height: 48px;
-    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
   }
 
   .resource-description {
@@ -263,7 +265,6 @@ body.about-who-vertical {
 
     h4 {
       max-width: 60rem;
-      margin-bottom: .8em;
       font-size: 14px;
       font-weight: 500;
       line-height: 1.6;
@@ -272,6 +273,10 @@ body.about-who-vertical {
 
     p {
       text-transform: none;
+      text-decoration: none;
+      line-height: 1.55;
+      color: #637381;
+      margin: 0;
     }
   }
 }

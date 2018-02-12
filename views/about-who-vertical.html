@@ -191,16 +191,16 @@
           {%for resource in doc.resources.resource_locs %}
             <li><a href="{{resource.url}}">
               <div class="resource-icon">
-                 <amp-img
-                       height=90
-                        width=90
-                        layout=responsive
-                        src="/static/img/about/who-use-amp/{{resource.icon}}">
-                    </amp-img>
+                  <amp-img
+                      height=90
+                      width=90
+                      layout=responsive
+                      src="/static/img/about/who-use-amp/{{resource.icon}}">
+                  </amp-img>
               </div>
               <div class="resource-description">
                 <h4>{{ resource.name }}</h4>
-                <p>Grab the code</p>
+                <p>{{ resource.description }}</p>
               </div>
             </a></li>
           {% endfor %}

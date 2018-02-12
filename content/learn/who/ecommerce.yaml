@@ -9,7 +9,7 @@ vertical_class: ecommerce
 
 hero:
   title@: Improve conversions with fast, user-friendly experiences.
-  paragraph@: With instant page load, your customers can find the products they want quickly and easily. Platforms such as Google, Pinterest, Bing, and Twitter all link to AMP pages, creating a supercharged discovery experience for your users. This improved user experience often translates into better engagement and conversions. 
+  paragraph@: With instant page load, your customers can find the products they want quickly and easily. Platforms such as Google, Pinterest, Bing, and Twitter all link to AMP pages, creating a supercharged discovery experience for your users. This improved user experience often translates into better engagement and conversions.
   hero_img_base: /static/img/about/who-use-amp/ecommerce/ecomm_phone_ebay
   hero_img_width: 1079
   hero_img_height: 1316
@@ -63,7 +63,7 @@ why:
       icon: publishers/publisher_icon_simple.svg
 
     - title@: Maximize sales
-      paragraph@: By building AMP pages, you are able to take bring the speed of AMP to your users. With faster loading times, many retailers see higher conversions and higher engagement. And we’ve seen that users are more willing to return to a e-commerce site that performs well. Whether you’re a smaller store or a larger marketplace, AMP can help you make the sale. 
+      paragraph@: By building AMP pages, you are able to take bring the speed of AMP to your users. With faster loading times, many retailers see higher conversions and higher engagement. And we’ve seen that users are more willing to return to a e-commerce site that performs well. Whether you’re a smaller store or a larger marketplace, AMP can help you make the sale.
       icon: advertisers/advertisers_icon_ROI.svg
 
 case:
@@ -76,16 +76,20 @@ resources:
   title@: "Resources for ecommerce"
   resource_locs:
     - name: Case Studies
-      icon: advertisers/advertisers_icon_ROI.svg
+      description: Explore success stories with AMP and ecommerce.
+      icon: card_developers.svg
       url: /case-studies/ecommerce/
     - name: Demos
-      icon: advertisers/advertisers_icon_ROI.svg
+      description: Try out live demos.
+      icon: ecommerce/ecomm_icon.svg
       url: https://ampbyexample.com/
     - name: Templates
+      description: Grab ready-to-use templates.
       icon: advertisers/advertisers_icon_ROI.svg
       url: "https://www.ampstart.com/templates#commerce"
     - name: Tutorials
-      icon: advertisers/advertisers_icon_ROI.svg
+      description: Create your first AMP ecommerce page.
+      icon: publishers/publisher_icon_simple.svg
       url: /docs/tutorials/interactivity.html
 
 
