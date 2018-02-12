@@ -186,11 +186,26 @@
       {% if doc.resources %}
       <section class="resources">
         <h3>{{ doc.resources.title }}</h3>
+        <div class="resources-container">
         <ul>
           {%for resource in doc.resources.resource_locs %}
-            <li><a class="underlined cta" href="{{resource.url}}">{{ resource.name }}</a></li>
+            <li><a href="{{resource.url}}">
+              <div class="resource-icon">
+                 <amp-img
+                       height=90
+                        width=90
+                        layout=responsive
+                        src="/static/img/about/who-use-amp/{{resource.icon}}">
+                    </amp-img>
+              </div>
+              <div class="resource-description">
+                <h4>{{ resource.name }}</h4>
+                <p>Grab the code</p>
+              </div>
+            </a></li>
           {% endfor %}
         </ul>
+        </div>
       </section>
     {% endif %}
     </div>
