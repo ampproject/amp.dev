@@ -66,19 +66,17 @@ features:
       image_alt@: A Pod Races Through the Hyperloop for the First Time
 news:
   cards:
-    - url: /content/learn/case-studies/washingtonpost.md
-      quote@: “As a source for breaking news and information, this format allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.”
+    - quote@: “As a source for breaking news and information, this format allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.”
       source@: Greg Manifold, Design Director
       image: /static/img/stories/wapo-logo.png
       image_width: 284
       image_height: 44
       class: wapo
-    - url: /content/learn/case-studies/washingtonpost.md
-      quote@: “AMP stories have incredible potential to enhance how we create mobile content. Our team can easily create beautiful, media-rich stories that our users will now be able to access quickly across the web. We continue to be focused on creating the best content for every platform and the creative possibilities on AMP stories are endless”
+    - quote@: “AMP stories have incredible potential to enhance how we create mobile content. Our team can easily create beautiful, media-rich stories that our users will now be able to access quickly across the web. We continue to be focused on creating the best content for every platform and the creative possibilities on AMP stories are endless”
       source@: Doug Parker, Vice President of Digital Design
-      image: /static/img/stories/time-logo.png
-      image_width: 116
-      image_height: 35
+      image: /static/img/stories/meredith-logo.png
+      image_width: 194
+      image_height: 45
       class: time
 web_stories:
   title@: Check out AMP stories on the web
@@ -91,7 +89,7 @@ web_stories:
       logo_width: 395
       logo_height: 45
       logo_alt@: CNN
-      url: https://stamps.cnn.io/solar-system-missions/index.html
+      url: https://www.cnn.com/ampstories/us/still-missing-cassini-heres-what-else-is-out-there
     - base_image: /static/img/stories/story-hearst
       image_width: 385
       image_height: 641
@@ -131,7 +129,7 @@ web_stories:
     - base_image: /static/img/stories/story-vox
       image_width: 385
       image_height: 641
-      image_alt@: How College Football Playoff Rankings Actualloy Work
+      image_alt@: How College Football Playoff Rankings Actually Work
       base_logo: /static/img/stories/logo-vox
       logo_width: 395
       logo_height: 45
@@ -145,7 +143,7 @@ web_stories:
       logo_width: 395
       logo_height: 45
       logo_alt@: Washington Post
-      url: https://www.washingtonpost.com/graphics/2018/national/border-wall/
+      url: https://www.washingtonpost.com/graphics/2018/national/amp-stories/border-wall/
     - base_image: /static/img/stories/story-wired
       image_width: 385
       image_height: 641
@@ -154,7 +152,7 @@ web_stories:
       logo_width: 395
       logo_height: 45
       logo_alt@: Wired
-      url: http://stamp.wired.com/stamp/space-photos-of-the-week-111817?key=wired_stamp_m3aIz8a21lyTY11n
+      url: https://www.wired.com/amp-stories/space-photos-of-the-week-111817/
 footer:
   title@: Build immersive experiences with AMP stories.
   cta@: Get Started

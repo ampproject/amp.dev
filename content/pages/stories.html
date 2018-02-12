@@ -125,9 +125,7 @@ components:
     <div class="container xl">
       <div class="card-container">
         {% for card in stories.news.cards %}
-        <a
-          class="card centered {{card.class}}"
-          href="{{g.doc(card.url, locale=doc.locale).url.path}}">
+        <div class="card centered {{card.class}}">
           <div class="card-inner">
             <div class="card-content">
               <p>{{_(card.quote)}}</p>
@@ -141,7 +139,7 @@ components:
               src="{{card.image}}">
             </amp-img>
           </div>
-        </a>
+        </div>
         {% endfor %}
       </div>
     </div>
