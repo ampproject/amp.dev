@@ -6,7 +6,7 @@ toc: true
 
 [TOC]
 
-A page within an AMP Story is represented by the `<amp-story-page>` component. Within an `<amp-story>`, you can have one or more `<amp-story-page>` components, containing each of the individual screens of a story. The first page you specify in the document order is the first page that displays in the story.  
+A page within an AMP story is represented by the `<amp-story-page>` component. Within an `<amp-story>`, you can have one or more `<amp-story-page>` components, containing each of the individual screens of a story. The first page you specify in the document order is the first page that displays in the story.  
 
 To create a page, **add** the `<amp-story-page>` element as a child of `amp-story`. **Assign** a unique id to the page. For our first page, which is the cover page, let's assign a unique id of `cover`:
 
@@ -22,7 +22,7 @@ Now we have the shell for our cover page. However, our story still isn't valid. 
 
 ## Layers in a page
 
-Like layers in graphics, you can use layers in AMP Story pages to create visual effects. Layers are stacked on top of one another, so, the first layer is the bottom layer and the next layer is on top of that, and so on.
+Like layers in graphics, you can use layers in AMP story pages to create visual effects. Layers are stacked on top of one another, so, the first layer is the bottom layer and the next layer is on top of that, and so on.
 
 Our cover page is actually comprised of two layers:
 
