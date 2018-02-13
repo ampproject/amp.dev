@@ -15,7 +15,7 @@ results:
       description: Increase in traffic on AMP pages
     - stat: 2X
       description: Increase in time spent on site
-    - stat: 3X
+    - stat: 2X
       description: Increase in CTR across all ad formats
 
 logo:
