@@ -39,12 +39,11 @@ Grupo Expansión sought to enhance the user experience on their mobile websites,
 
 > “When we noticed traffic to our AMP pages was growing,” says Marco Fernandez, development manager at Grupo Expansión, “we started paying more attention to the advertising, looking around at which formats worked better and which ad positions would be nice to have on the search results page.”
 
-
-## Results
-
 <div class="img-left">
     <amp-img width="1198" height="2409" layout="responsive" src="/static/img/case-studies/grupo_hero2_framed.png"></amp-img>
 </div>
+
+## Results
 
 Since launching their AMP pages, Grupo Expansión has seen a 76% increase in traffic with users spending more than twice the amount of time on site. Additionally, their AMP pages are 80% faster than non-AMP pages.
 
