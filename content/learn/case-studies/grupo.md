@@ -16,7 +16,7 @@ results:
     - stat: 2X
       description: Increase in time spent on site
     - stat: 2X
-      description: Increase in CTR across all ad formats
+      description: Increase in CTR
 
 logo:
   src: "case-studies/grupo_logo.png"
