@@ -14,9 +14,9 @@ results:
     - stat: 23%
       description: Higher revenue per page on AMP vs. non-AMP
     - stat: 2X
-      description: Higher CTR on AMP vs. non-AMP
+      description: Increase in CTR
     - stat: 3X
-      description: Higher ad viewability rates on AMP vs. non-AMP
+      description: Increase in ad viewability rates
 
 logo:
   src: "case-studies/indiatoday_logo.jpg"
