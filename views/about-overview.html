@@ -9,51 +9,27 @@
 
   <div class="container xl about-overview-block">
     <section class="hero">
-      <div class="images">
-        <amp-img class="triangle"
-            noloading
-            height=1575
-            width=1076
-            layout=responsive
-            src="/static/img/about/overview/{{doc.hero.triangle_img}}">
-        </amp-img>
-        <amp-img class="line1"
-            noloading
-            height=522
-            width=583
-            layout=responsive
-            src="/static/img/about/overview/{{doc.hero.line1_img}}">
-        </amp-img>
-        <amp-img class="line2"
-            noloading
-            height=327
-            width=359
-            layout=responsive
-            src="/static/img/about/overview/{{doc.hero.line2_img}}">
-        </amp-img>
-        <amp-img class="phone"
-            noloading
-            height=1568
-            width=1844
-            layout=responsive
-            srcset="{{doc.hero.phone_img_base + '.png 1844w'}},
-                    {{doc.hero.phone_img_base + '@1_5x.png 1217w'}},
-                    {{doc.hero.phone_img_base + '@1x.png 922w'}}"
-            src="{{doc.hero.phone_img_base + '.png'}}">
-        </amp-img>
-      </div>
+
       <div class="text">
         <h1>{{_(doc.hero.title)}}</h1>
-        <a class="button" href="{{doc.hero.cta_url}}">
-          {{_(doc.hero.cta)}}
-          <span class="arrow"></span>
-        </a>
-
+        <div class="intro-content">
+          <p class="intro">{{_(doc.hero.content)}}</p>
+        </div>
+      </div>
+      <div class="video" id="video">
+        <figure>
+        <amp-youtube
+            data-videoid="{{doc.video.id}}"
+            layout="responsive"
+            width="480" height="270">
+        </amp-youtube>
+        <figcaption>{{doc.video.description}}</figcaption>
+      </figure>
       </div>
     </section>
 
     <section class="core">
-      <h2 class="h1">{{_(doc.core.title)}}</h2>
+      <h2>{{_(doc.core.title)}}</h2>
       <amp-accordion disable-session-states>
         {% for component in doc.core.components %}
           <section>
@@ -75,30 +51,15 @@
           </section>
         {% endfor %}
       </amp-accordion>
+      <div class="resources">
+        <h3>{{_(doc.resources.title)}}</h3>
+        <a class="button" href="{{doc.resources.link_url}}">{{_(doc.resources.link_text)}}</a>
+     </div>
     </section>
+   
   </div>
 
-  <div class="video" id="video">
-    <amp-img class="line1 desktop-up"
-        noloading
-        height=363
-        width=563
-        layout=responsive
-        src="/static/img/about/overview/{{doc.video.line1_img}}">
-    </amp-img>
-    <amp-img class="line2 desktop-up"
-        noloading
-        height=191
-        width=254
-        layout=responsive
-        src="/static/img/about/overview/{{doc.video.line2_img}}">
-    </amp-img>
-    <amp-youtube
-        data-videoid="{{doc.video.id}}"
-        layout="responsive"
-        width="480" height="270">
-    </amp-youtube>
-  </div>
+
 
   {% with cta = doc.cta %}
     {% include "/views/partials/footer-cta.html" %}

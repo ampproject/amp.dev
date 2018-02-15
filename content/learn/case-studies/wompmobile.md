@@ -2,7 +2,7 @@
 $order: 10
 $title: WompMobile
 $date: March 15, 2017
-$category: e-commerce
+$category: ecommerce
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
