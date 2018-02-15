@@ -5,10 +5,9 @@ menu:
     children:
       - href: /content/learn/overview.html
         copy@: "What is AMP?"
+        collection: learn/about
       - href: /content/learn/about-how.yaml
         copy@: "How AMP Works"
-      - href: /content/learn/amp-design-principles.yaml
-        copy@: "Design Principles"
       - href: /content/learn/who-uses-amp.yaml
         copy@: "Who is AMP for?"
         collection: learn/who
@@ -17,11 +16,13 @@ menu:
         collection: learn/case-studies/category
       - href: /content/learn/showcases.html
         copy@: "Showcase"
+      - href: /content/pages/stories.html
+        copy@: "AMP stories"
   - href: /content/docs/build.md
     copy@: Docs
     collection: docs
     children:
-      - href: /content/docs/tutorials/create.md
+      - href: /content/docs/getting-started.md
         copy@: "Getting started"
       - href: /content/docs/tutorials/create.md
         copy@: "Tutorials"

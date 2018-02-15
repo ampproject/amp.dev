@@ -71,12 +71,13 @@ submitting a pull request through GitHub.
 License
 -------
 
-All image and audio files except in folders "source/img/partners",
-"source/img/publishers" and "source/img/quotes" (including *.png, *.jpg, *.svg,
+All image and audio files except in folders "assets/img/partners",
+"assets/img/publishers", "assets/img/quotes", and ""assets/img/about" (including *.png, *.jpg, *.svg,
 *.mp3, *.wav and *.ogg) are licensed under the CC-BY-NC license. Images in the
 excluded folders are not licensed.
 
-All other files are licensed under the Apache 2 license.
+All other files are licensed under the [Apache License, Version 2.0](LICENSE).
+
 
 - - -
 

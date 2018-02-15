@@ -70,6 +70,12 @@
     }
   }
 
+  hr {
+    margin-top: 30px;
+    border: 0;
+    border-bottom: 2px solid $color-ampblue;
+  }
+
   /* For use in components docs */
   .centered-fig {
       text-align: center;
@@ -136,6 +142,8 @@
     &.third { width: calc(33% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
     &.margin-none { margin: 0; }
     &.ninety { width: calc(90% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
+    &.seventyfive { width: calc(75% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
+    &.forty { width: calc(40% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
 
     amp-img {
       margin: 0;

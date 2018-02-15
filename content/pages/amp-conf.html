@@ -9,6 +9,8 @@ components:
   - iframe
   - selector
   - bind
+  - lightbox
+  - youtube
 ---
 
 {% set conf = g.doc('/content/includes/amp-conf.yaml', locale=doc.locale) %}
@@ -30,13 +32,20 @@ components:
             <li><a href="#faq">FAQ</a></li>
         </ul>
 
-      <a href="https://events.withgoogle.com/amp-conf-2018/registrations/new/" class="button">Register now</a>
+      <a href="https://events.withgoogle.com/amp-conf-2018/registrations/new/" class="button">Join waitlist</a>
     </div>
   </div>
 </section>
 
 <section class="description amp-conf-section">
   <div class="wrapper">
+
+    <h4>Watch the live stream:</h4>
+    <amp-youtube
+    data-videoid="BUVzSV6jmXA"
+    layout="responsive"
+    width="480" height="270"></amp-youtube>
+
     <p>
       The AMP team and community is bringing its yearly gathering to Amsterdam for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.
     </p>
@@ -132,20 +141,22 @@ components:
       <ul class="speakers">
           {% set sortedSpeakers = conf.speakers|sort %}
           {% for speaker in sortedSpeakers if conf.speakers[speaker].pic %}
-          <li class="card">
+          <li class="card" on="tap:lightbox-{{ speaker }}" role="button" tabindex="0">
               <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="400" height="400" layout="responsive"></amp-img>{% endif %}</span>
               <div>
                   <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}<small>{{ conf.speakers[speaker].company }}</small></h4>
                   {{ conf.speakers[speaker].bio|markdown|safe }}
               </div>
           </li>
-          {% endfor %}
-
-          <li class="card">
-            <div>
-                <h4 id="{{ speaker }}">More to be announced soon!</h4>
+          <amp-lightbox id="lightbox-{{ speaker }}" layout="nodisplay">
+            <div class="lightbox" on="tap:lightbox-{{ speaker }}.close" role="button" tabindex="0">
+              <div class="inner-lightbox">
+                <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}<small>{{ conf.speakers[speaker].company }}</small></h4>
+                {{ conf.speakers[speaker].bio|markdown|safe }}
+              </div>
             </div>
-        </li>
+          </amp-lightbox>
+          {% endfor %}
       </ul>
 
   </div>
