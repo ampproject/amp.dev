@@ -18,25 +18,20 @@ cards:
     cta: Pelajari Lebih Lanjut
     icon: who_icon_publishers.svg
 
-  # - name: SMB
-  #   filename: smb
-  #   cta: Learn More
-  #   icon: card_smb.svg
-
-  - name: Platform Teknologi Iklan
-    filename: ad-tech-platforms
-    cta: Pelajari Lebih Lanjut
-    icon: who_icon_adtech.svg
-
   - name: Pengiklan
     filename: advertisers
     cta: Pelajari Lebih Lanjut
     icon: who_icon_advertisers.svg
 
-  # - name: Developers
-  #   filename: developers
-  #   cta: Learn More
-  #   icon: card_developers.svg
+  - name: Ecommerce
+    filename: ecommerce
+    cta: Pelajari Lebih Lanjut
+    icon: who_icon_ecomm.svg
+
+  - name: Platform Teknologi Iklan
+    filename: ad-tech-platforms
+    cta: Pelajari Lebih Lanjut
+    icon: who_icon_adtech.svg
 
 cta:
   title: Kisah sukses

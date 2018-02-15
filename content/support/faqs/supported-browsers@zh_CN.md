@@ -1,13 +1,13 @@
 ---
-$title@: 支持的浏览器
+$title: 支持的浏览器
 $order: 4
 $parent: /content/support/faqs.md
 class: who
 
 cta:
-  title@: 下一个常见问题解答
-  link_text@: AMP 概览
-  link_url: /content/support/faqs/overview@zh_cn.md
+  title: 下一个常见问题解答
+  link_text: AMP 概览
+  link_url: /content/support/faqs/overview.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}

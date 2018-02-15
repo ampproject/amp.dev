@@ -1,15 +1,15 @@
 ---
-$title@: 支持的平台、供应商和合作伙伴
+$title: 支持的平台、供应商和合作伙伴
 $order: 3
 $parent: /content/support/faqs.md
 class: who
 
-description@: Accelerated Mobile Pages (AMP) 项目是一项开放源代码计划，旨在让发布商轻松做到：只需创建一次适合在移动设备上浏览的内容，即可使这些内容在各种设备上都能瞬间完成加载 - Accelerated Mobile Pages 项目
+description: Accelerated Mobile Pages (AMP) 项目是一项开放源代码计划，旨在让发布商轻松做到：只需创建一次适合在移动设备上浏览的内容，即可使这些内容在各种设备上都能瞬间完成加载 - Accelerated Mobile Pages 项目
 
 cta:
-  title@: 下一个常见问题解答
-  link_text@: AMP 概览
-  link_url: /content/support/faqs/overview@zh_cn.md
+  title: 下一个常见问题解答
+  link_text: AMP 概览
+  link_url: /content/support/faqs/overview.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}

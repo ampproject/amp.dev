@@ -1,3 +1,11 @@
+#: /content/includes/stories.yaml
+msgid "10 sneaky signs you are dehydrated"
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "A Pod Races Through the Hyperloop for the First Time"
+msgstr ""
+
 #: /content/includes/home.yaml
 msgid "A collaborative effort"
 msgstr "Upaya kolaboratif"
@@ -24,114 +32,104 @@ msgstr ""
 msgid "A path to success"
 msgstr "Jalur menuju kesuksesan"
 
-#: /views/amp-ads.html:249
-msgid "AMP Ad"
-msgstr "Iklan AMP"
-
-#: /content/learn/who/amp-ads.yaml
-msgid "AMP Ads"
-msgstr "Iklan AMP"
-
-#: /content/learn/who/amp-ads.yaml
-msgid ""
-"AMP Ads are 6x faster than regular ads on AMP pages, making them more "
-"viewable, more effective and more likely to perform&nbsp;well."
+#: /content/includes/stories.yaml
+msgid "A visual storytelling format for the open web"
 msgstr ""
-"Iklan AMP 6x lebih cepat dibanding iklan reguler di halaman AMP, sehingga iklan lebih "
-"dapat dilihat, lebih efektif, dan kemungkinan performanya lebih baik."
-
-#: /content/learn/who/amp-ads.yaml
-msgid ""
-"AMP Ads are a creative format built using HTML and CSS, not a new technology."
-" As a result, you can use your existing development resources to create and "
-"serve ads that are faster, lighter and more effective. Creative developer "
-"tools like Google Web Designer will soon support AMP ads as well."
-msgstr ""
-"Iklan AMP adalah format materi iklan yang dibuat menggunakan HTML dan CSS, "
-"bukan teknologi baru.Jadi, Anda dapat menggunakan sumber daya yang ada untuk "
-"membuat dan menayangkan iklan yang lebih cepat, ringan, dan efektif."
-
-#: /content/learn/who/amp-ads.yaml
-msgid ""
-"AMP Ads are a new, better way of building, delivering and measuring ads that"
-"  are faster, lighter and more secure. AMP Ads are ads built using AMP-HTML "
-"and use many of the smart components that make AMP pages fast (like amp-"
-"analytics). These ads are only delivered after being validated, ensuring that"
-" they’re free of malware. Most of all, these ads can be delivered anywhere on"
-" the web, not just on AMP pages."
-msgstr ""
-"Iklan AMP adalah cara baru yang lebih baik untuk membuat, menayangkan, dan mengukur iklan yang "
-"lebih cepat, ringan, dan aman. Iklan AMP adalah iklan yang dibuat menggunakan AMP-HTML "
-"dan menggunakan beberapa komponen smart yang membuat halaman AMP lebih cepat (seperti amp-"
-"analytics). Iklan hanya akan ditayangkan setelah divalidasi, sehingga memastikan bahwa "
-"iklan tidak berisi malware. Yang paling penting, iklan ini dapat ditayangkan di mana saja di "
-"web, tidak hanya di halaman AMP."
-
-#: /content/learn/who/amp-ads.yaml
-msgid ""
-"AMP Ads can serve on both AMP and non-AMP pages so you can build your AMP Ad "
-"once and deliver a fast, memorable brand experience everywhere."
-msgstr ""
-"Iklan AMP dapat ditayangkan pada halaman AMP dan non-AMP sekaligus, sehingga "
-"Anda cukup membuat Iklan AMPsekali dan memberikan pengalaman merek yang "
-"mengesankan di mana pun."
-
-#: /content/learn/who/amp-ads.yaml
-msgid ""
-"AMP Ads need to be validated before they’re served, eliminating the risk of "
-"malware and building trust in the brands users are engaging&nbsp;with."
-msgstr ""
-"Iklan AMP perlu divalidasi sebelum ditayangkan untuk mengurangi risiko "
-"malware dan membangun kepercayaan terhadap merek yang berinteraksi dengan pengguna."
-
-#: /content/learn/who/amp-ads.yaml
-msgid ""
-"AMP Ads represent an opportunity to fix key issues with ad experiences on the"
-" web."
-msgstr ""
-"Iklan AMP memberikan peluang untuk memperbaiki masalah utama terkait pengalaman iklan di "
-"web."
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
 msgstr "Blog AMP"
 
+#: /content/includes/menu.yaml
+msgid "AMP By Example"
+msgstr ""
+
 #: /content/support/vendor/amp-certification.md
 msgid "AMP Certification"
 msgstr "Sertifikasi AMP"
 
-#: /views/partials/promo_banner.html:15
-msgid "AMP Conf. March 7/8."
-msgstr "Konferensi AMP 7/8 Maret."
+#: /content/includes/stories.yaml
+msgid "AMP Component Library"
+msgstr ""
+
+#: /views/partials/promo_banner.html:5
+msgid "AMP Conf 2018. Feb 13/14."
+msgstr ""
+
+#: /views/partials/promo_banner.html:8
+msgid "AMP Conf."
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "AMP Experiments"
+msgstr ""
 
 #: /content/docs/reference/spec/_blueprint.yaml
 msgid "AMP HTML Specification"
 msgstr "Spesifikasi HTML AMP"
 
-#: /views/amp-ads.html:252
+#: /views/amp-ads.html:249
 msgid "AMP Landing Page"
 msgstr "Halaman Landing AMP"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
+#: /content/support/faqs/supported-browsers@id.md
+#: /content/support/faqs/supported-browsers@ja.md
 #: /content/support/faqs/supported-browsers@ko.md
+#: /content/support/faqs/supported-browsers@pt_BR.md
+#: /content/support/faqs/supported-browsers@zh_CN.md
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
+#: /content/support/faqs/supported-platforms@id.md
+#: /content/support/faqs/supported-platforms@ja.md
 #: /content/support/faqs/supported-platforms@ko.md
+#: /content/support/faqs/supported-platforms@pt_BR.md
+#: /content/support/faqs/supported-platforms@zh_CN.md
 msgid "AMP Overview"
 msgstr "Ringkasan AMP"
 
-#: /views/amp-ads.html:255
+#: /views/amp-ads.html:252
 msgid "AMP Page"
 msgstr "Halaman AMP"
+
+#: /content/includes/menu.yaml
+msgid "AMP Playground"
+msgstr ""
 
 #: /content/includes/lists.yaml
 msgid "AMP Roadmap"
 msgstr "Rencana Kerja AMP"
 
+#: /views/partials/promo_banner.html:18
+msgid "AMP Roadshows."
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "AMP Start"
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "AMP Status"
+msgstr ""
+
+#: /content/includes/menu.yaml
+msgid "AMP Validator"
+msgstr ""
+
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "AMP components"
 msgstr "Komponen AMP"
+
+#: /content/learn/who/ecommerce.yaml
+msgid ""
+"AMP enables your pages to load quickly, keeping your customers engaged as "
+"they move through browse and purchase flows. Whether they start their journey"
+" on your site or on platforms that link to AMP pages, your users will find a "
+"consistently fast experience. A site powered by AMP is a truly mobile-"
+"friendly experience that enables your customers to stay engaged with your "
+"site."
+msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "AMP for Ad Tech Platforms"
@@ -140,6 +138,10 @@ msgstr "AMP untuk Platform Teknologi Iklan"
 #: /content/learn/who/advertisers.yaml
 msgid "AMP for Advertisers"
 msgstr "AMP untuk Pengiklan"
+
+#: /content/learn/who/ecommerce.yaml
+msgid "AMP for Ecommerce"
+msgstr ""
 
 #: /content/learn/who/publishers.yaml
 msgid "AMP for Publishers"
@@ -157,7 +159,7 @@ msgstr ""
 "miliar halaman AMP telah dipublikasikan hingga sekarang dan lebih dari 100 "
 "penyedia analisis, teknologi iklan, dan CMS terkemuka mendukung format AMP."
 
-#: /content/learn/who/advertisers.yaml
+#: /content/learn/about/benefits.yaml /content/learn/who/advertisers.yaml
 msgid ""
 "AMP pages typically load in under one second. That means when your target "
 "audience lands on an AMP page, they get what they’re looking for in the "
@@ -171,51 +173,124 @@ msgstr ""
 "pesan merek Anda, dan lebih mungkin mengambil tindakan seperti yang Anda "
 "arahkan, misalnya melakukan pembelian."
 
-#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@zh_CN.yaml
-msgid "AMP provides a great user experience across many platforms"
-msgstr "AMP memberikan pengalaman pengguna yang lebih baik di berbagai platform"
-
 #: /content/learn/who/publishers.yaml
 msgid ""
 "AMP speeds up content, keeping users engaged irrespective of where they start"
 " their journey -- on the publisher’s own website or from platforms that link "
 "to AMP pages like Twitter, Google and Pinterest. With faster and more secure "
-"ads, AMP ads deliver great advertising experiences too, ensuring every "
+"ads, AMPHTML ads deliver great advertising experiences too, ensuring every "
 "interaction with a publisher’s brand is a compelling one."
 msgstr ""
-"AMP mempercepat pemuatan konten, membuat pengguna tetap terlibat tak peduli "
-"dari mana pun mereka mulai mengakses konten -- di situs milik penayang atau "
-"dari platform yang menghubungkan ke halaman AMP seperti Twitter, Google, dan "
-"Pinterest. Dengan iklan yang lebih cepat dan aman, iklan AMP juga memberikan "
-"pengalaman periklanan yang lebih baik, yang memastikan interaksi yang menarik"
-" dengan merek penayang setiap kalinya."
+
+#: /content/includes/menu.yaml /content/includes/stories.yaml
+msgid "AMP stories"
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid ""
+"AMP stories are built with the same technology used in AMP pages, meaning "
+"they’ll load quickly,  while providing users with a smooth experience."
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid ""
+"AMP stories are part of the open web and can be shared and embedded across "
+"sites and apps without being confined to a single ecosystem."
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid ""
+"AMP stories immerse readers in tappable, full-screen content. Building on the"
+" possibilities of the AMP project, this format enables the creation of visual"
+" content that is fast, open, and user-first."
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "AMP story features"
+msgstr ""
+
+#: /views/amp-ads.html:219 /views/amp-ads.html:246
+msgid "AMPHTML Ad"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid "AMPHTML Ads"
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMPHTML ads are 6x faster than regular ads on AMP pages, making them more "
+"viewable, more effective and more likely to perform&nbsp;well."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMPHTML ads are a creative format built using HTML and CSS, not a new "
+"technology. As a result, you can use your existing development resources to "
+"create and serve ads that are faster, lighter and more effective. Creative "
+"developer tools like Google Web Designer will soon support AMP ads as well."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMPHTML ads are a new, better way of building, delivering and measuring ads "
+"that  are faster, lighter and more secure. AMPHTML ads are ads built using "
+"AMP-HTML and use many of the smart components that make AMP pages fast (like "
+"amp-analytics). These ads are only delivered after being validated, ensuring "
+"that they’re free of malware. Most of all, these ads can be delivered "
+"anywhere on the web, not just on AMP pages."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMPHTML ads can serve on both AMP and non-AMP pages so you can build your "
+"AMPHTML ad once and deliver a fast, memorable brand experience everywhere."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMPHTML ads need to be validated before they’re served, eliminating the risk "
+"of malware and building trust in the brands users are engaging&nbsp;with."
+msgstr ""
+
+#: /content/learn/who/amp-ads.yaml
+msgid ""
+"AMPHTML ads represent an opportunity to fix key issues with ad experiences on"
+" the web."
+msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "About"
 msgstr "Tentang"
 
+#: /content/docs/tutorials/add_advanced/_blueprint.yaml
+msgid "Add advanced AMP features"
+msgstr ""
+
 #: /content/includes/latest.yaml
 msgid "Add to Calendar"
 msgstr "Tambahkan ke Kalender"
+
+#: /content/learn/about/benefits.yaml
+msgid ""
+"Adopting the AMP format allows you to retain your own branding and tooling "
+"while taking advantage of AMP's optimized web components. You can use CSS to "
+"customize your styling, dynamic data to fetch the freshest data where needed,"
+" and A/B testing to experiment and build the best possible user experience "
+"for your customers."
+msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Ads"
 msgstr "Iklan"
 
-#: /content/docs/reference/components/_blueprint.yaml
-msgid "Ads & Analytics"
-msgstr "Iklan & Analisis"
-
 #: /content/docs/reference/components/ads-analytics/_blueprint.yaml
 msgid "Ads & Analytics - AMP components"
 msgstr "Iklan & Analisis - Komponen AMP"
+
+#: /content/docs/reference/components/_blueprint.yaml
+msgid "Ads & analytics"
+msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Adtech success stories"
@@ -231,31 +306,49 @@ msgstr "Pengiklan:<br>Meningkatkan ROI kampanye"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
-"All ad content delivered by Firebolt for AMP for Ads is cryptographically "
+"All ad content delivered by Firebolt for AMPHTML ads is cryptographically "
 "signed to ensure that it meets the required format and security standards. "
 "Signed ads reduce the risk of malware and increase confidence in ads for "
 "consumers."
 msgstr ""
-"Semua konten iklan yang ditayangkan oleh Firebolt bagi AMP untuk Iklan ditandai secara kriptografis "
-"guna memastikan bahwa konten iklan sesuai format yang diperlukan dan standar keamanan. "
-"Iklan yang ditandai mengurangi risiko malware dan meningkatkan kepercayaan pelanggan "
-"terhadap iklan."
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Amplify your impact"
 msgstr "Perkuat pengaruh Anda"
 
+#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
+#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
+#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
+#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
+#: /content/learn/overview@ko.yaml /content/learn/overview@pt_BR.yaml
+#: /content/learn/overview@ru.yaml /content/learn/overview@tr.yaml
+#: /content/learn/overview@zh_CN.yaml
+msgid "An open source effort to improve the content ecosystem for everyone."
+msgstr ""
+
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr "Analisis"
+
+#: /content/includes/stories.yaml
+msgid "Apple Cider Vinegar is the Magic Potion You Need in Your Life"
+msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Audio/Video"
 msgstr "Audio/Video"
 
+#: /content/learn/about/benefits.yaml
+msgid "Benefits"
+msgstr ""
+
 #: /content/learn/who/amp-ads.yaml
 msgid "Better ads on a faster web."
 msgstr "Iklan yang lebih baik di web yang lebih cepat."
+
+#: /content/includes/stories.yaml
+msgid "Black Panther"
+msgstr ""
 
 #: /content/includes/latest.yaml /content/latest/blog-ads/_blueprint.yaml
 #: /content/latest/blog/_blueprint.yaml
@@ -266,31 +359,48 @@ msgstr "Blog"
 msgid ""
 "Boost campaign performance and drive engagement with ads that are 6x faster "
 "and 3x lighter. Build your creatives with <a "
-"href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
-"a4a-format.md'>AMP HTML</a> or work with a technology provider that already "
-"supports AMP Ads."
+"href='https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a"
+"/amp-a4a-format.md'>AMP HTML</a> or work with a technology provider that "
+"already supports AMPHTML ads."
 msgstr ""
-"Tingkatkan performa kampanye dan dorong interaksi dengan iklan yang 6x lebih cepat "
-"dan 3x lebih ringan. Buat materi iklan Anda dengan <a "
-"href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
-"a4a-format@id.md'>HTML AMP</a> atau gunakan penyedia teknologi yang sudah "
-"mendukung Iklan AMP."
 
 #: /content/learn/who/advertisers.yaml
-msgid "Boost your campaign performance with AMP Ads"
-msgstr "Tingkatkan performa kampanye Anda dengan Iklan AMP"
+msgid "Boost your campaign performance with AMPHTML ads"
+msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Brand Guidelines"
 msgstr "Panduan Merek"
 
+#: /content/learn/who/amp-ads.yaml
+msgid "Build Your AMPHTML Ad Today"
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "Build an AMP story"
+msgstr ""
+
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Build for a sustainable future"
 msgstr "Buat untuk keberlanjutan di masa mendatang"
 
+#: /content/includes/stories.yaml
+msgid "Build immersive experiences with AMP stories."
+msgstr ""
+
 #: /content/learn/who/amp-ads.yaml
 msgid "Build once, serve everywhere."
 msgstr "Buat sekali, tayangkan di mana saja."
+
+#: /content/learn/about/benefits.yaml
+msgid ""
+"Building AMP pages is simple and straightforward. You can often convert your "
+"entire archive in days especially if you use a popular CMS such as Wordpress "
+"and Drupal. Your teams do not need any special skills nor worry about "
+"optimizing your code for each distribution platform as the AMP format is "
+"fully portable and AMP pages are consistently fast no matter how a user gets "
+"to them."
+msgstr ""
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -299,17 +409,9 @@ msgid ""
 "and Drupal. Your teams do not need any special skills nor worry about "
 "optimizing your code for each distribution platform as the AMP format is "
 "fully portable and AMP pages are consistently fast no matter how a user gets "
-"to them.  Similarly, AMP ads may be built once and run across all pages, "
+"to them.  Similarly, AMPHTML ads may be built once and run across all pages, "
 "including non-AMP pages."
 msgstr ""
-"Membuat halaman AMP simpel dan mudah dilakukan. Anda sering kali dapat "
-"mengonversikan keseluruhan arsip dalam hitungan hari khususnya jika "
-"menggunakan CMS populer seperti Wordpress dan Drupal. Tim Anda tidak perlu "
-"keahlian khusus atau repot mengoptimalkan kode untuk setiap platform "
-"distribusi karena format AMP sepenuhnya portabel dan halaman AMP selalu "
-"dimuat dengan cepat bagaimana pun penggunamengaksesnya. Di samping itu, iklan"
-" AMP dapat dibuat sekali dan dijalankan di semuahalaman, termasuk halaman "
-"non-AMP."
 
 #: /content/includes/home.yaml
 msgid "Building the future web, together."
@@ -317,27 +419,59 @@ msgstr "Membuat web masa depan bersama-sama."
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
-"Building the right ad, landing page or web content takes time. With AMP Ads, "
-"your ads can serve on both AMP and non-AMP pages, meaning you can build your "
-"AMP Ads once and deliver a memorable brand experience everywhere. Similarly, "
-"AMP pages can be built once and distributed across a wide variety of "
-"distribution platforms simultaneously."
+"Building the right ad, landing page or web content takes time. With AMPHTML "
+"ads, your ads can serve on both AMP and non-AMP pages, meaning you can build "
+"your AMPHTML ads once and deliver a memorable brand experience everywhere. "
+"Similarly, AMP pages can be built once and distributed across a wide variety "
+"of distribution platforms simultaneously."
 msgstr ""
-"Diperlukan waktu untuk membuat iklan, halaman landing, atau konten web yang "
-"tepat. Dengan Iklan AMP, iklan dapat ditayangkan pada halaman AMP dan non-AMP"
-" sekaligus, sehingga Anda cukup membuat Iklan AMP sekali dan memberikan "
-"pengalaman merek yang mengesankan di mana saja. Halaman AMP juga dapat dibuat"
-" sekali dan didistribusikan di berbagai platform distribusi secara bersamaan."
+
+#: /content/learn/about/benefits.yaml
+msgid ""
+"Building the right landing page, ad, or web content takes time. AMP pages can"
+" be built once and distributed across a wide variety of distribution "
+"platforms simultaneously. With AMPHTML Ads, your ads can serve on both AMP "
+"and non-AMP pages, meaning you can build your ads once and deliver a "
+"memorable brand experience everywhere."
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "Builds on top of AMP’s component library to support features like analytics"
+msgstr ""
+
+#: /content/learn/who/ecommerce.yaml
+msgid ""
+"By building AMP pages, you are able to take bring the speed of AMP to your "
+"users. With faster loading times, many retailers see higher conversions and "
+"higher engagement. And we’ve seen that users are more willing to return to a "
+"e-commerce site that performs well. Whether you’re a smaller store or a "
+"larger marketplace, AMP can help you make the sale."
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid ""
+"By expanding to visually fill readers’ screens, AMP stories offer creative "
+"opportunities for storytelling, with flexibility in design. The tappable "
+"experience can be used to create engaging stories."
+msgstr ""
 
 #: /content/includes/who.yaml
 msgid "CMS"
 msgstr "CMS"
+
+#: /content/includes/stories.yaml
+msgid "CNN"
+msgstr ""
 
 #: /content/includes/menu.yaml /content/learn/case-studies.html
 #: /content/learn/case-studies/category/_blueprint.yaml
 #: /content/learn/case-studies@es.html /views/about-casestudies.html:12
 msgid "Case Studies"
 msgstr "Studi Kasus"
+
+#: /content/includes/stories.yaml
+msgid "Check out AMP stories on the web"
+msgstr ""
 
 #: /content/support/developer.md
 msgid "Community Resources"
@@ -351,6 +485,15 @@ msgstr "Platform Konten"
 #: /content/docs/reference/_blueprint.yaml /content/includes/menu.yaml
 msgid "Contribute"
 msgstr "Kontribusi"
+
+#: /content/learn/about/benefits.yaml
+msgid ""
+"Conversions fall by 12 percent for every extra second a webpage takes to "
+"load. If you want people to engage with your brand and increase your sales "
+"and the performance of your campaigns, you have to speed things up. AMP "
+"offers a way for you to give users a faster experience everywhere -- on ads, "
+"landing pages or your entire website."
+msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -367,6 +510,10 @@ msgstr ""
 " pengguna di mana saja -- di iklan, halaman landing, atau keseluruhan situs "
 "Anda."
 
+#: /content/docs/tutorials/converting/_blueprint.yaml
+msgid "Convert HTML to AMP"
+msgstr ""
+
 #: /content/docs/tutorials/create/_blueprint.yaml
 msgid "Create Your First AMP Page"
 msgstr "Membuat Halaman AMP Pertama"
@@ -375,23 +522,23 @@ msgstr "Membuat Halaman AMP Pertama"
 msgid "Create a login-requiring AMP page"
 msgstr "Membuat halaman AMP yang memerlukan login"
 
-#: /content/docs/build.md
-msgid ""
-"Create beautiful AMP pages with pre-styled page templates and components from"
-" AMP Start."
+#: /content/docs/tutorials/visual_story/_blueprint.yaml
+msgid "Create a visual AMP Story"
 msgstr ""
-"Buat halaman AMP yang menarik dengan komponen dan template halaman yang telah"
-" diberi gaya dari AMP Start."
 
-#: /content/docs/build.md
-msgid "Create your First AMP"
-msgstr "Membuat AMP Pertama"
+#: /content/learn/who/ecommerce.yaml
+msgid "Create fast, user-friendly ecommerce experiences"
+msgstr ""
+
+#: /content/docs/tutorials/interactivity/_blueprint.yaml
+msgid "Create interactive AMP pages"
+msgstr ""
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
-#: /content/learn/case-studies/category/e-commerce.md
+#: /content/learn/case-studies/category/ecommerce.md
 #: /content/learn/case-studies/category/publishers.md
-#: /content/learn/case-studies@es.html
+#: /content/learn/case-studies@es.html /content/learn/showcases.html
 msgid "Create your first AMP page"
 msgstr "Membuat halaman AMP pertama"
 
@@ -403,21 +550,17 @@ msgstr "Dane Knecht"
 msgid ""
 "Deliver a fast and compelling ad experience that users appreciate and "
 "advertisers value. Ad servers and technology platforms like DoubleClick and "
-"Triplelift already allow you to traffic AMP Ads. Reach out to your account "
-"manager to get started."
+"Triplelift already allow you to traffic AMPHTML ads. Reach out to your "
+"account manager to get started."
 msgstr ""
-"Berikan pengalaman iklan yang cepat dan menarik yang diapresiasi pengguna dan "
-"dihargai oleh pengiklan. Server iklan dan platform teknologi seperti DoubleClick dan "
-"Triplelift sudah memungkinkan Anda memasang Iklan AMP. Hubungi account "
-"manager Anda untuk memulai."
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Deliver better, faster experiences at every touch point."
 msgstr "Berikan pengalaman iklan yang lebih baik dan lebih cepat di setiap kesempatan."
 
-#: /content/includes/menu.yaml /content/learn/amp-design-principles.yaml
-#: /content/learn/amp-design-principles@es.yaml
-#: /content/learn/amp-design-principles@ko.yaml
+#: /content/learn/about/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles@es.yaml
+#: /content/learn/about/amp-design-principles@ko.yaml
 msgid "Design Principles"
 msgstr "Prinsip Desain"
 
@@ -435,15 +578,17 @@ msgstr "Dokumen"
 msgid "Don't miss AMP Events"
 msgstr "Jangan lewatkan Acara AMP"
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid "Don’t break the web."
 msgstr "Jangan merusak web."
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid "Don’t design for a hypothetical faster future browser."
-msgstr "Jangan membuat desain dengan berandai-andai untuk browser masa depan yang lebih cepat."
+msgstr ""
+"Jangan membuat desain dengan berandai-andai untuk browser masa depan yang "
+"lebih cepat."
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid ""
 "Don’t introduce components or features to AMP that can’t reliably run at "
 "60fps or hinder the instant load experience on today’s most common mobile "
@@ -453,19 +598,23 @@ msgstr ""
 "dengan kecepatan 60 fps atau menghalangi proses pemuatan instan di perangkat "
 "seluler yang paling banyak digunakan saat ini."
 
+#: /content/includes/stories.yaml
+msgid "Doug Parker, Vice President of Digital Design"
+msgstr ""
+
 #: /views/case-study.html:45
 msgid "Download PDF Case study"
 msgstr "Download Studi Kasus dalam PDF"
-
-#: /content/docs/reference/components/_blueprint.yaml
-msgid "Dynamic Content"
-msgstr "Konten Dinamis"
 
 #: /content/docs/reference/components/dynamic-content/_blueprint.yaml
 msgid "Dynamic Content - AMP components"
 msgstr "Konten Dinamis - Komponen AMP"
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/docs/reference/components/_blueprint.yaml
+msgid "Dynamic content"
+msgstr ""
+
+#: /content/learn/about/amp-design-principles.yaml
 msgid ""
 "E.g. don’t integrate things on the client side, just because that is easier, "
 "when the user experience would be better with a server side integration."
@@ -474,11 +623,33 @@ msgstr ""
 "mudah, jika pengalaman pengguna akan lebih baik dengan integrasi di sisi "
 "server."
 
+#: /content/learn/case-studies/category/ecommerce.md
+msgid "Ecommerce"
+msgstr ""
+
+#: /content/learn/who/ecommerce.yaml
+msgid ""
+"Ecommerce sites choosing to adopt AMP can still maintain their own branding "
+"and tooling. We have over 40 embed and analytics integrations to take "
+"advantage of and more can be built. You can use CSS to customize your "
+"styling, dynamic data to fetch the freshest data where needed, and A/B "
+"testing to experiment and build the best possible user experience for your "
+"customers."
+msgstr ""
+
+#: /content/learn/who/ecommerce.yaml
+msgid "Ecommerce success stories"
+msgstr ""
+
 #: /content/learn/who/publishers.yaml
 msgid "Enable compelling, consistently fast experiences"
 msgstr "Hadirkan pengalaman iklan yang menarik, cepat, dan konsisten"
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/includes/stories.yaml
+msgid "Enriches storytelling through animations and tappable interactions"
+msgstr ""
+
+#: /content/learn/about/amp-design-principles.yaml
 msgid ""
 "Ensure that if AMP has outages or problems it doesn’t hurt the rest of the "
 "web. That means if the Google AMP Cache, the URL API or the library fails it "
@@ -495,21 +666,17 @@ msgstr ""
 #: /content/learn/who/advertisers.yaml
 msgid ""
 "Even the most memorable creative won’t serve its purpose if the ad is slow "
-"and disruptive for a user. AMP Ads are a new way of building ads, making them"
-" as fast as AMP pages to ensure your ads do what they’re meant to do and "
+"and disruptive for a user. AMPHTML ads are a new way of building ads, making "
+"them as fast as AMP pages to ensure your ads do what they’re meant to do and "
 "deliver the value you’re looking for."
 msgstr ""
-"Bahkan materi iklan yang paling mengesankan pun tidak akan mencapai tujuannya"
-" jika iklan lambat dimuat dan mengganggu pengguna. Iklan AMP adalah cara baru"
-" dalam membuat iklan, menjadikannya secepat halaman AMP untuk memastikan agar"
-" iklan berfungsi sebagaimana mestinya dan memberikan nilai yang Anda cari."
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
 #: /content/latest/list-event.html
 msgid "Events"
 msgstr "Acara"
 
-#: /content/docs/build.md /content/includes/menu.yaml
+#: /content/includes/menu.yaml
 msgid "Examples"
 msgstr "Contoh"
 
@@ -517,6 +684,10 @@ msgstr "Contoh"
 #: /content/support/faqs/_blueprint.yaml
 msgid "FAQ"
 msgstr "FAQ"
+
+#: /content/includes/stories.yaml
+msgid "Fast"
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Faster ads drive better&nbsp;performance"
@@ -538,11 +709,12 @@ msgstr "Ikuti AMP"
 msgid "Follow us on Twitter"
 msgstr "Ikuti kami di Twitter"
 
-#: /content/docs/build.md
+#: /content/includes/stories.yaml /content/learn/about/benefits.yaml
 msgid "Get Started"
 msgstr "Mulai"
 
-#: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/publishers.yaml
+#: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/ecommerce.yaml
+#: /content/learn/who/publishers.yaml
 msgid "Get Started Building"
 msgstr "Mulai"
 
@@ -550,9 +722,9 @@ msgstr "Mulai"
 msgid "Get in touch"
 msgstr "Jalin komunikasi"
 
-#: /content/learn/amp-design-principles.yaml
-#: /content/learn/amp-design-principles@es.yaml
-#: /content/learn/amp-design-principles@ko.yaml
+#: /content/learn/about/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles@es.yaml
+#: /content/learn/about/amp-design-principles@ko.yaml
 msgid "Get started building"
 msgstr "Mulai Membuat"
 
@@ -568,34 +740,40 @@ msgstr "Mulai"
 msgid "GitHub"
 msgstr "GitHub"
 
+#: /content/includes/stories.yaml
+msgid "Greg Manifold, Design Director"
+msgstr ""
+
 #: /content/learn/who/advertisers.yaml
 msgid "Grow engagement and increase conversions with faster experiences"
 msgstr ""
 "Tumbuhkan keterlibatan dan tingkatkan konversi dengan pengalaman yang lebih "
 "cepat"
 
-#: /content/docs/build.md /content/docs/guides.md
-#: /content/docs/guides/_blueprint.yaml /content/docs/reference/_blueprint.yaml
-#: /content/includes/menu.yaml
+#: /content/docs/guides.md /content/docs/guides/_blueprint.yaml
+#: /content/docs/reference/_blueprint.yaml /content/includes/menu.yaml
 msgid "Guides"
 msgstr "Panduan"
+
+#: /content/includes/stories.yaml
+msgid "Harry & Meghan A to Z"
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Head of Product Strategy, Cloudflare"
 msgstr "Kepala Strategi Produk, Cloudflare"
 
+#: /content/includes/stories.yaml
+msgid "Hearst"
+msgstr ""
+
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "Heavy and unpredictable ad experiences slow down the page, cost users money, "
-"and can hurt your brand. AMP Ads are 3x lighter and the AMP framework "
+"and can hurt your brand. AMPHTML ads are 3x lighter and the AMP framework "
 "guarantees that these ads only behave as intended so users always have a "
 "positive experience with your&nbsp;brand."
 msgstr ""
-"Pemuatan iklan yang berat dan tidak dapat diprediksi akan memperlambat "
-"pemuatan halaman, menambah biaya bagi pengguna, dan berdampak negatif pada "
-"persepsi terhadap pengiklan dan penayang. Iklan AMP 3 kali lebih ringan "
-"daripada iklan biasa, sehingga membantu menghasilkan pengalaman merek yang "
-"positif."
 
 #: /content/includes/home.yaml
 msgid "Higher Performance and Engagement"
@@ -605,22 +783,41 @@ msgstr "Keterlibatan dan Performa yang Lebih Baik"
 #: /content/learn/about-how@ar.yaml /content/learn/about-how@es.yaml
 #: /content/learn/about-how@fr.yaml /content/learn/about-how@id.yaml
 #: /content/learn/about-how@it.yaml /content/learn/about-how@ja.yaml
-#: /content/learn/about-how@ko.yaml /content/learn/about-how@pl.yaml
-#: /content/learn/about-how@pt_BR.yaml /content/learn/about-how@ru.yaml
-#: /content/learn/about-how@th.yaml /content/learn/about-how@tr.yaml
+#: /content/learn/about-how@ko.yaml /content/learn/about-how@pt_BR.yaml
+#: /content/learn/about-how@ru.yaml /content/learn/about-how@tr.yaml
 #: /content/learn/about-how@zh_CN.yaml
 msgid "How AMP Works"
 msgstr "Cara Kerja AMP"
+
+#: /content/learn/who/ecommerce.yaml
+msgid "How AMP can help ecommerce"
+msgstr ""
 
 #: /content/learn/who/publishers.yaml
 msgid "How AMP can help publishers"
 msgstr "Cara AMP dapat membantu penayang"
 
+#: /content/learn/about/benefits.yaml
+msgid "How AMP can help you"
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "How College Football Playoff Rankings Actually Work"
+msgstr ""
+
 #: /content/learn/who/advertisers.yaml
 msgid "If it’s not instant, it’s not fast enough."
 msgstr "Jika tidak dimuat secara instan, berarti iklan tidak cukup cepat."
 
-#: /content/learn/who/publishers.yaml
+#: /content/includes/stories.yaml
+msgid "Immersive"
+msgstr ""
+
+#: /content/learn/who/ecommerce.yaml
+msgid "Improve conversions with fast, user-friendly experiences."
+msgstr ""
+
+#: /content/learn/about/benefits.yaml /content/learn/who/publishers.yaml
 msgid "Improve user engagement with fast, compelling experiences."
 msgstr "Tingkatkan keterlibatan pengguna dengan pengalaman yang cepat dan menarik."
 
@@ -637,12 +834,16 @@ msgid ""
 "Join a growing ecosystem of publishers, advertisers and technology platforms "
 "serving faster, lighter and more effective ads."
 msgstr ""
-"Bergabunglah dengan semakin banyak penayang, pengiklan, dan platform teknologi "
-"yang menayangkan iklan yang lebih cepat, ringan, dan efektif."
+"Bergabunglah dengan semakin banyak penayang, pengiklan, dan platform "
+"teknologi yang menayangkan iklan yang lebih cepat, ringan, dan efektif."
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Kavata Mbondo"
 msgstr "Kavat Mbondo"
+
+#: /content/learn/about/benefits.yaml
+msgid "Keep your audience engaged"
+msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Keep your audience engaged with AMP pages"
@@ -661,7 +862,6 @@ msgid "Learn"
 msgstr "Pelajari"
 
 #: /content/learn/who/advertisers.yaml /views/partials/grid-card.html:28
-#: /views/partials/promo_banner.html:17
 msgid "Learn More"
 msgstr "Pelajari Lebih Lanjut"
 
@@ -669,43 +869,22 @@ msgstr "Pelajari Lebih Lanjut"
 msgid "Learn about AMP"
 msgstr "Pelajari tentang AMP"
 
-#: /content/docs/build.md
-msgid "Learn about each AMP component, including syntax and examples."
-msgstr "Pelajari masing-masing komponen AMP, termasuk sintaksis dan contohnya."
-
 #: /content/includes/home.yaml
-msgid "Learn how to build AMP pages and AMP Ads"
-msgstr "Pelajari cara membuat halaman AMP dan Iklan AMP"
-
-#: /content/docs/build.md
-msgid "Learn how to create your first AMP page with this short beginner tutorial."
+msgid "Learn how to build AMP pages and AMPHTML ads"
 msgstr ""
-"Pelajari cara membuat halaman AMP pertama Anda dengan tutorial pendek bagi "
-"pemula."
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
-"Learn more about AMP Ads and building AMP pages for your campaigns and "
+"Learn more about AMPHTML ads and building AMP pages for your campaigns and "
 "website."
 msgstr ""
-"Pelajari lebih lanjut tentang Iklan AMP dan cara membuat halaman AMP untuk "
-"kampanye dan situs Anda."
 
 #: /content/learn/about-how.yaml /content/learn/about-how@ar.yaml
 #: /content/learn/about-how@es.yaml /content/learn/about-how@fr.yaml
 #: /content/learn/about-how@id.yaml /content/learn/about-how@it.yaml
 #: /content/learn/about-how@ja.yaml /content/learn/about-how@ko.yaml
-#: /content/learn/about-how@pl.yaml /content/learn/about-how@pt_BR.yaml
-#: /content/learn/about-how@ru.yaml /content/learn/about-how@th.yaml
+#: /content/learn/about-how@pt_BR.yaml /content/learn/about-how@ru.yaml
 #: /content/learn/about-how@tr.yaml /content/learn/about-how@zh_CN.yaml
-#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@zh_CN.yaml
 msgid "Learn who uses AMP"
 msgstr "Cari tahu siapa yang menggunakan AMP"
 
@@ -713,11 +892,27 @@ msgstr "Cari tahu siapa yang menggunakan AMP"
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr "Iklan yang lebih ringan meningkatkan persepsi merek"
 
+#: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
+msgid "Maintain flexibility and control"
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "Mashable"
+msgstr ""
+
 #: /content/learn/who/advertisers.yaml
 msgid "Maximize ROI everywhere"
 msgstr "Maksimalkan ROI di mana saja"
 
-#: /content/learn/who/ad-tech-platforms.yaml
+#: /content/learn/who/ecommerce.yaml
+msgid "Maximize sales"
+msgstr ""
+
+#: /content/learn/about/benefits.yaml
+msgid "Maximize your ROI"
+msgstr ""
+
+#: /content/learn/about/benefits.yaml /content/learn/who/ad-tech-platforms.yaml
 msgid "Maximize your revenue"
 msgstr "Maksimalkan pendapatan Anda"
 
@@ -725,13 +920,9 @@ msgstr "Maksimalkan pendapatan Anda"
 msgid ""
 "Maximize your revenue and build for the future by offering your customers a "
 "fast, light and secure ad experience. <a "
-"href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
-"a4a-format.md'>Join</a> the open source AMP Ads Initiative today."
+"href='https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a"
+"/amp-a4a-format.md'>Join</a> the AMP Project today."
 msgstr ""
-"Maksimalkan pendapatan dan bangun masa depan dengan menawarkan "
-"pengalaman iklan yang cepat, ringan, dan aman kepada pengguna. <a "
-"href='https://github.com/google/amphtml/blob/master/extensions/amp-a4a/amp-"
-"a4a-format@id.md'>Bergabunglah</a> dengan Prakarsa Iklan AMP open source sekarang."
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Media"
@@ -741,6 +932,14 @@ msgstr "Media"
 msgid "Media - AMP components"
 msgstr "Media - Komponen AMP"
 
+#: /content/includes/stories.yaml
+msgid "Meredith"
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "Mic"
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid "More Past Events"
 msgstr "Acara Lalu Lainnya"
@@ -749,42 +948,51 @@ msgstr "Acara Lalu Lainnya"
 msgid "Need more help?"
 msgstr "Perlu bantuan lainnya?"
 
+#: /views/partials/promo_banner.html:15
+msgid "New AMP Roadshows."
+msgstr ""
+
 #: /content/pages/home.html:37 /content/pages/home.html:77
 msgid "New Video"
 msgstr "Video Baru"
 
 #: /content/includes/menu.yaml /content/pages/home.html:37
-#: /content/pages/home.html:77 /views/amp-ads.html:409 /views/amp-ads.html:444
+#: /content/pages/home.html:77 /views/amp-ads.html:406 /views/amp-ads.html:441
 msgid "News"
 msgstr "Berita"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
+#: /content/support/faqs/supported-browsers@id.md
+#: /content/support/faqs/supported-browsers@ja.md
 #: /content/support/faqs/supported-browsers@ko.md
+#: /content/support/faqs/supported-browsers@pt_BR.md
+#: /content/support/faqs/supported-browsers@zh_CN.md
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
+#: /content/support/faqs/supported-platforms@id.md
+#: /content/support/faqs/supported-platforms@ja.md
 #: /content/support/faqs/supported-platforms@ko.md
+#: /content/support/faqs/supported-platforms@pt_BR.md
+#: /content/support/faqs/supported-platforms@zh_CN.md
 msgid "Next FAQ"
 msgstr "FAQ Berikutnya"
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid "No whitelists."
 msgstr "Tidak ada whitelist."
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/showcases.html
+msgid "Noteworthy AMP pages on the web, using key AMP features."
+msgstr ""
+
+#: /content/learn/about/amp-design-principles.yaml
 msgid "Only do things if they can be made fast."
 msgstr "Hanya lakukan sesuatu jika hal tersebut dapat dilakukan dengan cepat."
 
-#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@zh_CN.yaml
-msgid "Overview"
-msgstr "Ringkasan"
+#: /content/includes/stories.yaml
+msgid "Open"
+msgstr ""
 
 #: /content/includes/events.yaml /content/includes/lists.yaml
 #: /content/latest/list-past-event.html
@@ -794,17 +1002,6 @@ msgstr "Acara Lalu"
 #: /content/support/platform.md
 msgid "Platform Support"
 msgstr "Dukungan Platform"
-
-#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@zh_CN.yaml
-msgid "Play Video"
-msgstr "Putar Video"
 
 #: /content/docs/reference/components/_blueprint.yaml
 msgid "Presentation"
@@ -822,7 +1019,7 @@ msgstr "Presiden & Pendiri, Triplelift"
 msgid "Previous Posts"
 msgstr "Postingan Sebelumnya"
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid ""
 "Prioritise things that improve the user experience – but compromise when "
 "needed."
@@ -865,20 +1062,28 @@ msgstr ""
 msgid "Publishers:<br>Keep audiences engaged"
 msgstr "Penayang:<br>Buat audiens tetap tertarik"
 
+#: /content/learn/about/benefits.yaml
+msgid "Quickstart"
+msgstr ""
+
 #: /views/partials/grid-card.html:27
 msgid "Read the Case Study"
 msgstr "Baca Studi Kasus"
+
+#: /content/learn/about/benefits.yaml
+msgid "Reduce complexity in your operations"
+msgstr ""
 
 #: /content/learn/who/publishers.yaml
 msgid "Reduce complexity in your operations."
 msgstr "Kurangi kompleksitas di sisi operasional."
 
-#: /content/docs/build.md /content/docs/reference.md
-#: /content/docs/reference/_blueprint.yaml /content/includes/menu.yaml
+#: /content/docs/reference.md /content/docs/reference/_blueprint.yaml
+#: /content/includes/menu.yaml
 msgid "Reference"
 msgstr "Referensi"
 
-#: /views/amp-ads.html:226
+#: /views/amp-ads.html:223
 msgid "Regular Ad"
 msgstr "Iklan Reguler"
 
@@ -898,17 +1103,13 @@ msgstr "Rencana Kerja"
 msgid "Safer ads build trust in your&nbsp;brands"
 msgstr "Iklan yang lebih aman akan membangun kepercayaan terhadap merek Anda"
 
-#: /views/partials/promo_banner.html:12
-msgid ""
-"Save the date: Tune in live on March 7/8 or join us in person in NYC for our "
-"first-ever AMP Conf."
-msgstr ""
-"Catat tanggalnya: Tonton secara live pada tanggal 7/8 Maret atau bergabunglah"
-" bersama kami langsung di NYC dalam Konferensi AMP yang pertama."
-
 #: /content/includes/latest.yaml
 msgid "See More"
 msgstr "Lihat Lainnya"
+
+#: /content/learn/about/benefits.yaml
+msgid "See Success Stories"
+msgstr ""
 
 #: /content/latest/list-blog.html:12
 msgid "See all posts"
@@ -918,21 +1119,16 @@ msgstr "Lihat semua postingan"
 msgid "See how other publishers have found success with AMP"
 msgstr "Lihat bagaimana penayang lainnya sukses dengan AMP"
 
+#: /views/partials/grid-showcase.html:61
+msgid "See it in action"
+msgstr ""
+
 #: /content/learn/about-how.yaml /content/learn/about-how@ar.yaml
 #: /content/learn/about-how@es.yaml /content/learn/about-how@fr.yaml
 #: /content/learn/about-how@id.yaml /content/learn/about-how@it.yaml
 #: /content/learn/about-how@ja.yaml /content/learn/about-how@ko.yaml
-#: /content/learn/about-how@pl.yaml /content/learn/about-how@pt_BR.yaml
-#: /content/learn/about-how@ru.yaml /content/learn/about-how@th.yaml
+#: /content/learn/about-how@pt_BR.yaml /content/learn/about-how@ru.yaml
 #: /content/learn/about-how@tr.yaml /content/learn/about-how@zh_CN.yaml
-#: /content/learn/overview.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@zh_CN.yaml
 msgid "See what AMP can do for you"
 msgstr "Lihat apa yang dapat dilakukan AMP untuk Anda"
 
@@ -947,6 +1143,15 @@ msgstr "Bagikan"
 #: /content/learn/who/amp-ads.yaml
 msgid "Shaun Zacharia"
 msgstr "Shaun Zacharia"
+
+#: /content/includes/menu.yaml /content/learn/showcases.html
+#: /views/showcase-main.html:12
+msgid "Showcase"
+msgstr ""
+
+#: /views/partials/promo_banner.html:20
+msgid "Sign up"
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Simple to build, easy to scale."
@@ -964,11 +1169,11 @@ msgstr "Sosial"
 msgid "Social - AMP components"
 msgstr "Sosial - Komponen AMP"
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid "Solve problems on the right layer."
 msgstr "Selesaikan masalah di tingkat yang tepat."
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid ""
 "Some things can be made fast and are still a terrible user experience. AMPs "
 "should deliver a fantastic user experience and speed is just one part of "
@@ -981,23 +1186,19 @@ msgstr ""
 " lakukan kompromi jika kurangnya dukungan untuk suatu komponen membuat AMP "
 "tidak dapat digunakan dan diterapkan secara luas."
 
+#: /content/includes/stories.yaml
+msgid "Space Photos of the Week"
+msgstr ""
+
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
 "Speeding up ads is the fastest way to boost performance. <a "
 "href=\"https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs"
-"/a4a-readme.md\">AMP Ads</a> load as fast as content, so they are more "
+"/a4a-readme.md\">AMPHTML ads</a> load as fast as content, so they are more "
 "viewable and more likely to be engaged with. Triplelift saw a 10&#37;+ "
-"increase in viewability and engagement with AMP ads. Join the <a "
-"href=\"/learn/who-uses-amp/amp-ads/\">AMP Ads Initiative</a> to improve "
-"performance and grow your revenue."
+"increase in viewability and engagement with AMPHTML ads. Join the AMP Project"
+" to improve performance and grow your revenue."
 msgstr ""
-"Mempercepat iklan adalah cara tercepat untuk meningkatkan performa. <a "
-"href=\"https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs"
-"/a4a-readme.md\">Iklan AMP</a> dimuat secepat konten, sehingga lebih dapat "
-"dilihat dan lebih memicu interaksi. Triplelift mencapai peningkatan lebih "
-"dari 10&#37; dalam visibilitas dan keterlibatan dengan iklan AMP. Gabung "
-"dengan <a href=\"/learn/who-uses-amp/amp-ads/\">Inisiatif Iklan AMP</a> untuk"
-" meningkatkan performa dan pendapatan Anda."
 
 #: /content/support/developer/stack-overflow.md
 msgid "Stack Overflow Community"
@@ -1009,9 +1210,9 @@ msgstr "Mulai Membuat"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
-#: /content/learn/case-studies/category/e-commerce.md
+#: /content/learn/case-studies/category/ecommerce.md
 #: /content/learn/case-studies/category/publishers.md
-#: /content/learn/case-studies@es.html
+#: /content/learn/case-studies@es.html /content/learn/showcases.html
 msgid "Start building now"
 msgstr "Mulai membuat sekarang"
 
@@ -1029,7 +1230,7 @@ msgstr "Gaya & Tata Letak"
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
-#: /content/learn/case-studies/category/e-commerce.md
+#: /content/learn/case-studies/category/ecommerce.md
 #: /content/learn/case-studies/category/publishers.md
 #: /content/learn/case-studies@es.html
 msgid "Success stories of the domains publishing AMP pages"
@@ -1040,21 +1241,29 @@ msgstr "Kisah sukses domain yang memublikasikan halaman AMP"
 msgid "Support"
 msgstr "Dukungan"
 
-#: /content/support/developer/mailing-list.md
-msgid "Support Forum"
-msgstr "Forum Dukungan"
-
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
+#: /content/support/faqs/supported-browsers@id.md
+#: /content/support/faqs/supported-browsers@ja.md
 #: /content/support/faqs/supported-browsers@ko.md
+#: /content/support/faqs/supported-browsers@pt_BR.md
+#: /content/support/faqs/supported-browsers@zh_CN.md
 msgid "Supported Browsers"
 msgstr "Browser yang Didukung"
 
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
+#: /content/support/faqs/supported-platforms@id.md
+#: /content/support/faqs/supported-platforms@ja.md
 #: /content/support/faqs/supported-platforms@ko.md
+#: /content/support/faqs/supported-platforms@pt_BR.md
+#: /content/support/faqs/supported-platforms@zh_CN.md
 msgid "Supported Platforms, Vendors and Partners"
 msgstr "Platform, Vendor, dan Partner yang Didukung"
+
+#: /content/includes/stories.yaml
+msgid "Supports rich visuals with native video and image performance"
+msgstr ""
 
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
@@ -1064,9 +1273,9 @@ msgstr "Perusahaan Teknologi yang menggunakan AMP"
 msgid "Technology Platforms:<br>Boost your business"
 msgstr "Platform Teknologi:<br>Tingkatkan bisnis Anda"
 
-#: /content/docs/build.md
-msgid "Templates"
-msgstr "Template"
+#: /content/includes/stories.yaml
+msgid "The 25 most intriguing people of 2017"
+msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -1094,7 +1303,11 @@ msgstr ""
 
 #: /content/support/faqs/supported-platforms.md
 #: /content/support/faqs/supported-platforms@es.md
+#: /content/support/faqs/supported-platforms@id.md
+#: /content/support/faqs/supported-platforms@ja.md
 #: /content/support/faqs/supported-platforms@ko.md
+#: /content/support/faqs/supported-platforms@pt_BR.md
+#: /content/support/faqs/supported-platforms@zh_CN.md
 msgid ""
 "The Accelerated Mobile Pages (AMP) Project is an open source initiative that "
 "makes it easy for publishers to create mobile-friendly content once and have "
@@ -1103,6 +1316,14 @@ msgstr ""
 "Accelerated Mobile Pages (AMP) Project adalah inisiatif sumber terbuka yang "
 "memudahkan penayang membuat konten yang mobile-friendly sekali dan dapat "
 "langsung dimuat di mana saja. – Accelerated Mobile Pages Project"
+
+#: /content/includes/stories.yaml
+msgid "The Art of an Organized Refrigerator"
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "The Evolution of Trump's Wall"
+msgstr ""
 
 #: /content/includes/home.yaml /content/includes/menu.yaml
 #: /content/latest/_blueprint.yaml /content/latest/latest.html
@@ -1113,6 +1334,10 @@ msgstr "Terbaru"
 #: /content/includes/latest.yaml /content/latest/latest.html
 msgid "The Latest News"
 msgstr "Berita Terbaru"
+
+#: /content/includes/stories.yaml
+msgid "The Missions Still Exploring Our Solar System"
+msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -1158,9 +1383,9 @@ msgstr ""
 "target=\"_blank\">Twitter</a> untuk mengetahui berita terbaru dan daftar "
 "acara."
 
-#: /content/learn/amp-design-principles.yaml
-#: /content/learn/amp-design-principles@es.yaml
-#: /content/learn/amp-design-principles@ko.yaml
+#: /content/learn/about/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles@es.yaml
+#: /content/learn/about/amp-design-principles@ko.yaml
 msgid ""
 "These design principles are meant to guide the ongoing design and development"
 " of AMP. They should help us make internally consistent decisions."
@@ -1175,20 +1400,20 @@ msgid ""
 "load fast, this has a very positive impact on their perception and advertiser"
 " performance."
 msgstr ""
-"Iklan dimuat dengan lebih cepat. Pengguna bereaksi terhadap kelambatan sekecil apa pun, dan saat iklan "
-"dimuat dengan cepat, hal ini memberikan dampak positif pada persepsi pengguna dan performa "
-"pengiklan."
+"Iklan dimuat dengan lebih cepat. Pengguna bereaksi terhadap kelambatan "
+"sekecil apa pun, dan saat iklan dimuat dengan cepat, hal ini memberikan "
+"dampak positif pada persepsi pengguna dan performa pengiklan."
 
-#: /content/docs/build.md
-msgid "Try out the hands-on examples on AMP by Example."
-msgstr "Cobalah contoh praktik langsung di AMP berdasarkan Contoh."
+#: /content/includes/menu.yaml
+msgid "Tools"
+msgstr ""
 
-#: /content/docs/build.md /content/docs/tutorials.md
-#: /content/docs/tutorials/_blueprint.yaml /content/includes/menu.yaml
-#: /content/learn/amp-design-principles.yaml
-#: /content/learn/amp-design-principles@es.yaml
-#: /content/learn/amp-design-principles@ko.yaml
-#: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/publishers.yaml
+#: /content/docs/tutorials.md /content/docs/tutorials/_blueprint.yaml
+#: /content/includes/menu.yaml /content/learn/about/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles@es.yaml
+#: /content/learn/about/amp-design-principles@ko.yaml
+#: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/ecommerce.yaml
+#: /content/learn/who/publishers.yaml
 msgid "Tutorials"
 msgstr "Tutorial"
 
@@ -1200,7 +1425,7 @@ msgstr "Acara Mendatang"
 msgid "Use your existing resources"
 msgstr "Gunakan sumber daya yang ada"
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid "User Experience > Developer Experience > Ease of Implementation."
 msgstr "Pengalaman Pengguna &gt; Pengalaman Developer &gt; Kemudahan Implementasi."
 
@@ -1216,51 +1441,27 @@ msgstr "Vice President Strategi dan Operasional Pendapatan Digital, Time Inc."
 msgid "Videos"
 msgstr "Video"
 
-#: /content/docs/build.md
-msgid "View AMP Components"
-msgstr "Lihat Komponen AMP"
-
-#: /content/docs/build.md
-msgid "View Guides"
-msgstr "Lihat Panduan"
-
-#: /content/docs/build.md
-msgid "View Tutorials"
-msgstr "Lihat Tutorial"
-
-#: /content/docs/build.md
-msgid "View examples"
-msgstr "Lihat contoh"
-
-#: /content/docs/build.md
-msgid "View our in-depth guides for how to develop, debug, and deploy in AMP."
+#: /content/includes/stories.yaml
+msgid "Vox"
 msgstr ""
-"Lihat panduan mendalam kami tentang cara mengembangkan, melakukan debug, dan "
-"menerapkan AMP."
 
-#: /content/docs/build.md
-msgid "View templates"
-msgstr "Lihat template"
+#: /content/includes/stories.yaml
+msgid "Washington Post"
+msgstr ""
 
-#: /content/docs/build.md
-msgid "Walk through how to use AMP features with our tutorials."
-msgstr "Lihat panduan cara menggunakan fitur AMP dengan tutorial kami."
+#: /views/partials/promo_banner.html:10
+msgid "Watch live"
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "We can’t make the web better if we don’t fix ads. Today’s ads fail to meet "
-"their goals because they are slow, unpredictable and disruptive. The open-"
-"source AMP Ads Initiative aims to make advertising on the web better with "
-"faster, lighter, and safer ad experiences, starting with ads and extending to"
-" landing&nbsp;pages."
+"their goals because they are slow, unpredictable and disruptive. AMPHTML aims"
+" to make advertising on the web better with faster, lighter, and safer ad "
+"experiences, starting with ads and extending to landing pages."
 msgstr ""
-"Kita tidak dapat membuat web menjadi lebih baik jika tidak memperbaiki iklan. Iklan dewasa ini gagal mencapai "
-"tujuannya karena lambat, tidak dapat diprediksi, dan mengganggu. Prakarsa Iklan AMP open-"
-"source bertujuan membuat iklan di web jadi lebih baik dengan "
-"pengalaman iklan yang lebih cepat, ringan, dan aman, dimulai dari iklan hingga "
-"halaman landing."
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid ""
 "We won’t give any special treatment to specific sites, domains or origins "
 "except where needed for security or performance reasons."
@@ -1268,7 +1469,7 @@ msgstr ""
 "Kami tidak akan memberikan perlakuan khusus pada situs, domain, atau asal "
 "tertentu, kecuali jika diperlukan demi alasan keamanan atau performa."
 
-#: /content/learn/who/publishers.yaml
+#: /content/learn/about/benefits.yaml /content/learn/who/publishers.yaml
 msgid ""
 "Web page speed improves the user experience and <a "
 "href=\"https://www.doubleclickbygoogle.com/articles/mobile-speed-"
@@ -1297,7 +1498,7 @@ msgstr ""
 "secara hampir instan, sehingga memberikan pengalaman yang lancar dan "
 "menyenangkan di perangkat seluler dan desktop."
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid ""
 "We’ve chosen to build AMP as a library in the spirit of the [extensible web "
 "manifesto](https://github.com/extensibleweb/manifesto/blob/master/README.md) "
@@ -1320,16 +1521,15 @@ msgid "What AMP Provides"
 msgstr "Hal yang Diberikan AMP"
 
 #: /content/learn/who/amp-ads.yaml
-msgid "What are AMP Ads?"
-msgstr "Apa itu Iklan AMP?"
+msgid "What are AMPHTML ads?"
+msgstr ""
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
 #: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
 #: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
 #: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pl.yaml
-#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
-#: /content/learn/overview@th.yaml /content/learn/overview@tr.yaml
+#: /content/learn/overview@ko.yaml /content/learn/overview@pt_BR.yaml
+#: /content/learn/overview@ru.yaml /content/learn/overview@tr.yaml
 #: /content/learn/overview@zh_CN.yaml
 msgid "What is AMP"
 msgstr "Apa Itu AMP"
@@ -1347,10 +1547,10 @@ msgid "What's hot?"
 msgstr "Berita terbaru"
 
 #: /content/learn/who/amp-ads.yaml
-msgid "What's the difference between an AMP Ad and a regular ad? <i>Seconds</i>."
-msgstr "Apa perbedaan Iklan AMP dan iklan reguler? <i>Detik</i>."
+msgid "What's the difference between an AMPHTML ad and a regular ad? <i>Seconds</i>."
+msgstr ""
 
-#: /content/learn/amp-design-principles.yaml
+#: /content/learn/about/amp-design-principles.yaml
 msgid ""
 "When in doubt, do what’s best for the end user experience, even if it means "
 "that it’s harder for the page creator to build or for the library developer "
@@ -1363,38 +1563,62 @@ msgstr ""
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "Whether you’re an advertiser, ad tech platform or publisher, deliver better "
-"ads by joining the AMP Ads Initiative today."
+"ads by joining the AMP Project today."
 msgstr ""
-"Apakah Anda pengiklan, platform teknologi iklan, atau penayang, jadikan dunia"
-" periklanan lebih baik dengan bergabung dalam Inisiatif Iklan AMP sekarang."
 
 #: /content/learn/who/_blueprint.yaml
 msgid "Who Uses AMP"
 msgstr "Siapa yang Menggunakan AMP"
 
 #: /content/learn/who/amp-ads.yaml
-msgid "Who are AMP Ads for?"
-msgstr "Untuk siapa Iklan AMP ditujukan?"
+msgid "Who are AMPHTML ads for?"
+msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Who is AMP for?"
 msgstr "Untuk Siapa AMP Dibuat?"
 
+#: /content/includes/stories.yaml
+msgid "Why AMP stories?"
+msgstr ""
+
 #: /content/learn/who/amp-ads.yaml
-msgid "Why AMP Ads?"
-msgstr "Alasan Menggunakan Iklan AMP"
+msgid "Why AMPHTML ads?"
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "Wired"
+msgstr ""
+
+#: /content/learn/who/ecommerce.yaml
+msgid ""
+"With instant page load, your customers can find the products they want "
+"quickly and easily. Platforms such as Google, Pinterest, Bing, and Twitter "
+"all link to AMP pages, creating a supercharged discovery experience for your "
+"users. This improved user experience often translates into better engagement "
+"and conversions."
+msgstr ""
+
+#: /content/includes/stories.yaml
+msgid "Works across mobile and desktop devices on the open web"
+msgstr ""
 
 #: /views/amp-ads.html:195
 msgid "Your browser doesn’t support HTML5 video"
 msgstr "Browser Anda tidak mendukung video HTML5"
 
-#: /content/learn/case-studies/category/e-commerce.md
-msgid "e-commerce"
-msgstr "e-commerce"
-
 #: /content/pages/home.html:61
 msgid "or"
 msgstr "atau"
+
+#: /content/includes/stories.yaml
+msgid ""
+"“AMP stories have incredible potential to enhance how we create mobile "
+"content. Our team can easily create beautiful, media-rich stories that our "
+"users will now be able to access quickly across the web. We continue to be "
+"focused on creating the best content for every platform and the creative "
+"possibilities on AMP stories are endless”"
+msgstr ""
 
 #: /content/includes/home.yaml
 msgid ""
@@ -1411,6 +1635,15 @@ msgid ""
 msgstr ""
 "&ldquo;Di berbagai portofolio penayang Teads, performa iklan video jauh lebih"
 " baik di halaman AMP dibandingkan dengan web seluler biasa.&rdquo;"
+
+#: /content/includes/stories.yaml
+msgid ""
+"“As a source for breaking news and information, this format allows us to "
+"showcase our quality journalism when there are multiple elements we want to "
+"bring together. Combining reporting, photography, videos and motion graphics,"
+" this gives readers a more visual entry point when they are searching for our"
+" coverage.”"
+msgstr ""
 
 #: /content/includes/home.yaml
 msgid ""

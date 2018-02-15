@@ -1,15 +1,15 @@
 ---
-$title@: AMP を支持するプラットフォーム、ベンダー、パートナー
+$title: AMP を支持するプラットフォーム、ベンダー、パートナー
 $order: 3
 $parent: /content/support/faqs.md
 class: who
 
-description@: AMP（Accelerated Mobile Pages）は、どこにいても瞬時に読み込まれるモバイル フレンドリーなコンテンツを簡単に作成できるようにするためのオープンソース プロジェクトです。- Accelerated Mobile Pages プロジェクト
+description: AMP（Accelerated Mobile Pages）は、どこにいても瞬時に読み込まれるモバイル フレンドリーなコンテンツを簡単に作成できるようにするためのオープンソース プロジェクトです。- Accelerated Mobile Pages プロジェクト
 
 cta:
-  title@: 次のよくある質問
-  link_text@: AMP の概要
-  link_url: /content/support/faqs/overview@ja.md
+  title: 次のよくある質問
+  link_text: AMP の概要
+  link_url: /content/support/faqs/overview.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}

@@ -1,23 +1,4 @@
-﻿$title: Visão geral
-$titles:
-  breadcrumb: O que são as AMP
-$order: 0
-class: about-overview
-$view: /views/about-overview.html
-
-components:
-  - youtube
-
-hero:
-  title: As AMP oferecem uma excelente experiência do usuário em diversas plataformas
-  triangle_img: herobg.svg
-  line1_img: herolines1.svg
-  line2_img: herolines2.svg
-  phone_img_base: /static/img/about/overview/what_phone
-  cta: Reproduzir vídeo
-  cta_url: '#video'
-
-core:
+﻿core:
   title: As páginas AMP são desenvolvidas com três componentes principais.
   components:
     - title: AMP em HTML

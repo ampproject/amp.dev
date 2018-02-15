@@ -18,25 +18,20 @@ cards:
     cta: Aprender Más
     icon: who_icon_publishers.svg
 
-  # - name: SMB
-  #   filename: smb
-  #   cta: Learn More
-  #   icon: card_smb.svg
-
-  - name: Plataformas Tecnológicas de Anuncios
-    filename: ad-tech-platforms
-    cta: Aprender Más
-    icon: who_icon_adtech.svg
-
   - name: Anunciantes
     filename: advertisers
     cta: Aprender Más
     icon: who_icon_advertisers.svg
 
-  # - name: Developers
-  #   filename: developers
-  #   cta: Learn More
-  #   icon: card_developers.svg
+  - name: Ecommerce
+    filename: ecommerce
+    cta: Aprender Más
+    icon: who_icon_ecomm.svg
+
+  - name: Plataformas Tecnológicas de Anuncios
+    filename: ad-tech-platforms
+    cta: Aprender Más
+    icon: who_icon_adtech.svg
 
 cta:
   title: Historias de Éxito

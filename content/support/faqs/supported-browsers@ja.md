@@ -1,13 +1,13 @@
 ---
-$title@: 対応ブラウザ
+$title: 対応ブラウザ
 $order: 4
 $parent: /content/support/faqs.md
 class: who
 
 cta:
-  title@: 次のよくある質問
-  link_text@: AMP の概要
-  link_url: /content/support/faqs/overview@ja.md
+  title: 次のよくある質問
+  link_text: AMP の概要
+  link_url: /content/support/faqs/overview.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
