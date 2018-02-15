@@ -1,23 +1,4 @@
-﻿$title: Ringkasan
-$titles:
-  breadcrumb: Apa yang dimaksud dengan AMP
-$order: 0
-class: about-overview
-$view: /views/about-overview.html
-
-components:
-  - youtube
-
-hero:
-  title: AMP memberikan pengalaman yang lebih baik bagi pengguna di berbagai platform
-  triangle_img: herobg.svg
-  line1_img: herolines1.svg
-  line2_img: herolines2.svg
-  phone_img_base: /static/img/about/overview/what_phone
-  cta: Putar Video
-  cta_url: '#video'
-
-core:
+﻿core:
   title: Halaman AMP dibuat dengan 3 komponen inti.
   components:
     - title: AMP HTML
@@ -33,7 +14,6 @@ core:
         Library **AMP JS** memastikan perenderan halaman AMP HTML dilakukan dengan cepat.
       description: |
         [Library AMP JS](https://github.com/ampproject/amphtml/tree/master/src) mengimplementasikan semua [praktik performa terbaik AMP](/id/learn/about-how/), mengelola pemuatan konten dan memberi Anda tag khusus seperti yang disebut di atas, yang semuanya memastikan perenderan halaman Anda dilakukan dengan cepat. <p>Di antara pengoptimalan terbesar adalah fakta bahwa hal tersebut memastikan semua yang berasal dari konten eksternal menjadi asinkron, sehingga tidak ada satu pun yang dapat menghalangi perenderan di halaman. <p>Teknik performa lainnya meliputi proses sandbox semua iframe, perhitungan awal layout setiap elemen pada halaman sebelum konten dimuat, dan menonaktifkan pemilih CSS yang lambat. <p>Untuk mempelajari lebih lanjut tentang bukan hanya [pengoptimalan](/id/learn/about-how/) namun juga batasannya, [baca spesifikasi AMP HTML](/id/docs/reference/spec.html).
-    
     - title: AMP Cache
       subtitle: |
         **Google AMP Cache** dapat digunakan untuk menayangkan halaman AMP HTML dalam cache.

@@ -1,23 +1,4 @@
-﻿$title: 概览
-$titles:
-  breadcrumb: 什么是 AMP
-$order: 0
-class: about-overview
-$view: /views/about-overview.html
-
-components:
-  - youtube
-
-hero:
-  title: AMP 在很多平台上提供出色的用户体验
-  triangle_img: herobg.svg
-  line1_img: herolines1.svg
-  line2_img: herolines2.svg
-  phone_img_base: /static/img/about/overview/what_phone
-  cta: 播放视频
-  cta_url: '#video'
-
-core:
+﻿core:
   title: AMP 网页采用 3 大核心组件构建而成。
   components:
     - title: AMP HTML

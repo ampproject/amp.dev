@@ -263,6 +263,10 @@
 
 .rtl.about-overview {
   .hero {
+    .video {
+      right: 60px;
+      left: auto;
+    }
     .images {
       right: 700px;
       left: auto;
@@ -272,6 +276,8 @@
         right: auto;
         transform: rotate(180deg);
       }
+
+
     }
   }
 
