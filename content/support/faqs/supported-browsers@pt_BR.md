@@ -1,13 +1,13 @@
 ---
-$title@: Navegadores compatíveis
+$title: Navegadores compatíveis
 $order: 4
-$parent: /content/support/faqs@pt_br.md
+$parent: /content/support/faqs.md
 classe: quem
 
 cta:
-  title@: Próximas Perguntas frequentes
-  link_text@: Visão geral de AMP
-  link_url: /content/support/faqs/overview@pt_br.md
+  title: Próximas Perguntas frequentes
+  link_text: Visão geral de AMP
+  link_url: /content/support/faqs/overview.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}

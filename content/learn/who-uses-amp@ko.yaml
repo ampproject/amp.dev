@@ -17,25 +17,20 @@ cards:
     cta: 더 알아보기
     icon: who_icon_publishers.svg
 
-  # - name: SMB
-  #   filename: smb
-  #   cta: Learn More
-  #   icon: card_smb.svg
+  - name: 광고게시자
+    filename: advertisers
+    cta: 더 알아보기
+    icon: who_icon_advertisers.sv
+
+  - name: Ecommerce
+    filename: ecommerce
+    cta: 더 알아보기
+    icon: who_icon_ecomm.svg
 
   - name: 광고 기술 플랫폼
     filename: ad-tech-platforms
     cta: 더 알아보기
     icon: who_icon_adtech.svg
-
-  - name: 광고게시자
-    filename: advertisers
-    cta: 더 알아보기
-    icon: who_icon_advertisers.svg
-
-  # - name: Developers
-  #   filename: developers
-  #   cta: Learn More
-  #   icon: card_developers.svg
 
 cta:
   title: 성공 사례
