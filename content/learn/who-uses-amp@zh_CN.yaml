@@ -18,25 +18,20 @@ cards:
     cta: 了解详情
     icon: who_icon_publishers.svg
 
-  # - name: SMB
-  #   filename: smb
-  #   cta: Learn More
-  #   icon: card_smb.svg
-
-  - name: 广告技术平台
-    filename: ad-tech-platforms
-    cta: 了解详情
-    icon: who_icon_adtech.svg
-
   - name: 广告客户
     filename: advertisers
     cta: 了解详情
     icon: who_icon_advertisers.svg
 
-  # - name: Developers
-  #   filename: developers
-  #   cta: Learn More
-  #   icon: card_developers.svg
+  - name: Ecommerce
+    filename: ecommerce
+    cta: 了解详情
+    icon: who_icon_ecomm.svg
+
+  - name: 广告技术平台
+    filename: ad-tech-platforms
+    cta: 了解详情
+    icon: who_icon_adtech.svg
 
 cta:
   title: 成功案例

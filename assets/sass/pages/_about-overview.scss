@@ -2,17 +2,6 @@
   .wrap {
     overflow: hidden;
     position: relative;
-
-    &::after {
-      background: url(/static/img/about/overview/bg2.svg) bottom left/contain no-repeat;
-      bottom: 0;
-      content: '';
-      height: 68vw;
-      left: 0;
-      position: absolute;
-      width: 90vw;
-      z-index: -1;
-    }
   }
 
   .about-overview-block {
@@ -21,61 +10,50 @@
   }
 
   .hero {
-    margin: 100px 0 300px;
+    margin: 100px 0 50px;
     position: relative;
-    padding: 100px 5% 140px 5%;
+    padding: 30px 5% 30px 5%;
+    display: flex;
 
-    .images {
-      position: absolute;
-      width: 800px;
-      left: 700px;
-      top: 30px;
+    .video {
+      flex: 10 1 auto;
+      position: relative;
+      width: 600px;
+      top: 130px;
+      left: 60px;
 
-      amp-img {
-        position: absolute;
-        width: 100%;
-      }
-
-      .triangle {
-        right: calc((1440px - 100vw)/2);
-        top: -250px;
-      }
-
-      .line1 {
-        left: 0;
-        top: -10px;
-        width: 583px;
-      }
-
-      .line2 {
-        left: 75%;
-        top: -50px;
-        width: 359px;
-      }
-
-      .phone {
-        left: -5%;
-        top: 0px;
-        transform: rotate(25deg) scale(1.4);
-        width: 90%;
+      figcaption {
+        font-size: 0.8em;
+        color: #666;
+        padding: 1em 0;
+        text-align: center;
       }
     }
 
     .text {
-      width: 510px;
+      max-width: 600px;
+      flex: 1 1 auto;
 
       h1 {
         margin-bottom: 50px;
-        max-width: 500px;
       }
+    }
+    .intro-content {
+        line-height: 32px;
+        a {
+          font-size: inherit;
+          text-transform: none;
+        }
     }
   }
 
   .core {
     h2 {
       margin: 0 auto;
-      max-width: 550px;
+      max-width: 600px;
       text-align: center;
+      font-size: 40px;
+      font-weight: 100;
     }
 
     amp-accordion {
@@ -137,26 +115,21 @@
         }
       }
     }
-  }
 
-  .video {
-    margin: 200px auto;
-    max-width: 800px;
-    padding: 0 30px;
-    position: relative;
+    .resources {
+      text-align: center;
+      margin-top: 60px;
 
-    .line1 {
-      position: absolute;
-      left: -32%;
-      top: 9%;
-      width: 563px;
-    }
+      h3 {
+        margin-bottom: 20px;
+        font-weight: 100;
+      }
 
-    .line2 {
-      bottom: -10%;
-      position: absolute;
-      right: -10%;
-      width: 254px;
+      .button {
+        margin-top: 10px;
+        margin-bottom: 60px;
+
+      }
     }
   }
 
@@ -174,6 +147,13 @@
       flex-direction: column;
       margin-bottom: 100px;
       padding: 0;
+
+      .video {
+        flex: none;
+        top: 30px;
+        left: 0px;
+        width: inherit;
+      }
 
       .images {
         position: relative;
@@ -197,12 +177,6 @@
 
         .line2 {
           display: none;
-        }
-
-        .phone {
-          width: 80%;
-          top: 20%;
-          left: 10%;
         }
       }
 
@@ -273,15 +247,26 @@
         }
       }
     }
+  }
 
-    .video {
-      margin: 50px auto 100px;
+  @include min-max-screen($mobile-breakpoint,1154px) {
+    .hero .images {
+
+      .triangle {
+        left: calc((1440px - 140vw)/2);
+      }
     }
   }
 }
 
+
+
 .rtl.about-overview {
   .hero {
+    .video {
+      right: 60px;
+      left: auto;
+    }
     .images {
       right: 700px;
       left: auto;
@@ -291,6 +276,8 @@
         right: auto;
         transform: rotate(180deg);
       }
+
+
     }
   }
 

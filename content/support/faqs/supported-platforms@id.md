@@ -1,15 +1,15 @@
 ---
-$title@: Platform, Vendor, dan Partner yang Didukung
+$title: Platform, Vendor, dan Partner yang Didukung
 $order: 3
 $parent: /content/support/faqs.md
 class: who
 
-description@: Proyek Accelerated Mobile Pages (AMP) adalah inisiatif open source yang mempermudah penayang untuk membuat konten mobile-friendly dan dapat dimuat dengan cepat di mana saja. – Proyek Accelerated Mobile Pages
+description: Proyek Accelerated Mobile Pages (AMP) adalah inisiatif open source yang mempermudah penayang untuk membuat konten mobile-friendly dan dapat dimuat dengan cepat di mana saja. – Proyek Accelerated Mobile Pages
 
 cta:
-  title@: FAQ Berikutnya
-  link_text@: Ringkasan AMP
-  link_url: /content/support/faqs/overview@id.md
+  title: FAQ Berikutnya
+  link_text: Ringkasan AMP
+  link_url: /content/support/faqs/overview.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
