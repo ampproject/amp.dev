@@ -224,63 +224,61 @@ body.about-who-vertical {
     }
   }
 
-.resources {
-  margin-bottom: 50px;
-  margin-top: -30px;
+  .resources {
+    margin-top: -40px;
+    padding: 0 10% 100px 5%;
 
-  a {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  h3 {
-    text-align: center;
-    margin-bottom: 15px;
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  li {
-    margin-right: 20px;
-    flex: 0 0 25%;
-  }
-
-
-  .resources-container {
-    display: flex;
-  }
-
-  .resource-icon {
-    width: 100px;
-    height: 100px;
-    margin: 0 10px;
-  }
-
-  .resource-description {
-    flex: 1 1 auto;
-
-    h4 {
-      max-width: 60rem;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.6;
-      text-transform: uppercase;
-    }
-
-    p {
-      text-transform: none;
-      text-decoration: none;
-      line-height: 1.55;
+    a {
+      display: flex;
+      align-items: flex-start;
       color: #637381;
-      margin: 0;
+     
+      &:hover {
+        color: $color-ampblue;
+      }
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    li { 
+      margin-right: 20px;
+      margin-top: 10px;
+      flex: 0 0 25%;
+    }
+
+    .resource-icon {
+     flex: 0 0 4rem;
+     margin-right: 5px;
+     margin-top: 10px;
+    }
+
+    .resource-description {
+      flex: 1 1 auto;
+
+      h4 {
+        max-width: 60rem;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.6;
+        text-transform: uppercase;
+      }
+
+      p {
+        text-transform: none;
+        line-height: 1.55;
+        margin: 0;
+      }
     }
   }
-}
-/*resources */
 
   .large-cta {
     .button {
@@ -584,7 +582,7 @@ body.about-who-vertical {
         left: -3%;
 
         .card-container {
-          padding: 0;
+          padding: 0 15px;
           justify-content: center;
         }
 
@@ -602,7 +600,7 @@ body.about-who-vertical {
         left: -3%;
 
         .card-container {
-          padding: 0;
+          padding: 0 15px;
           justify-content: center;
         }
 
@@ -712,6 +710,13 @@ body.about-who-vertical {
         left: 3%;
         max-width: 450px;
       }
+    }
+
+    .resources-container {
+
+      ul {
+      flex-direction: column;
+    }
     }
 
     &.rtl {

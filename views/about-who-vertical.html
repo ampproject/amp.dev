@@ -86,7 +86,7 @@
           {% endfor %}
         </div>
         <div class="reasons tablet">
-          <amp-carousel class="latest-carousel"
+          <amp-carousel class="latest-carousel" controls
             height="550"
             layout="fixed-height"
             type="slides">
@@ -117,7 +117,7 @@
           </amp-carousel>
         </div>
         <div class="reasons mobile">
-          <amp-carousel class="latest-carousel"
+          <amp-carousel class="latest-carousel" controls
             height="550"
             layout="fixed-height"
             type="slides">
@@ -158,7 +158,7 @@
             {% endfor %}
           </div>
           <amp-carousel
-              height="430"
+              height="430" controls
               layout="fixed-height"
               type="slides">
           {% for case in doc.case.cases %}
@@ -185,22 +185,22 @@
       {% endif %}
       {% if doc.resources %}
       <section class="resources">
-        <h3>{{ doc.resources.title }}</h3>
+        <h3>{{ _(doc.resources.title) }}</h3>
         <div class="resources-container">
         <ul>
           {%for resource in doc.resources.resource_locs %}
             <li><a href="{{resource.url}}">
               <div class="resource-icon">
                   <amp-img
-                      height=90
-                      width=90
-                      layout=responsive
+                      height="90"
+                      width="90"
+                      layout="responsive"
                       src="/static/img/about/who-use-amp/{{resource.icon}}">
                   </amp-img>
               </div>
               <div class="resource-description">
-                <h4>{{ resource.name }}</h4>
-                <p>{{ resource.description }}</p>
+                <h4>{{ _(resource.name) }}</h4>
+                <p>{{ _(resource.description) }}</p>
               </div>
             </a></li>
           {% endfor %}
