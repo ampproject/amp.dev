@@ -47,15 +47,24 @@ amp-carousel {
 }
 
 @include max-screen($mobile-breakpoint) {
-  amp-carousel {
-    .amp-carousel-button {
-      display: none;
-    }
+  amp-carousel .card-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
-    .card-container {
-      padding-left: 10px;
-      padding-right: 10px;
+  .amp-carousel-button {
+    &::before, &::after {
+      opacity: 0.6;
     }
   }
-}
 
+  .amp-carousel-button-prev {
+    left: -2px;
+    transform: translateY(-50%) translateY(-10px) rotateY(180deg) scale(0.7);
+  }
+
+  .amp-carousel-button-next {
+    right: -9px;
+    transform: translateY(-50%) translateY(-10px) scale(0.7);
+  }
+}
