@@ -1,24 +1,23 @@
-$title@: Overview
+$title@: What is AMP
 $titles:
   breadcrumb@: What is AMP
 $order: 0
-class: about-overview
+class: about-overview bg-triangle-secondary
 $view: /views/about-overview.html
 
 components:
   - youtube
 
 hero:
-  title@: AMP provides a great user experience across many platforms
+  title@: An open source effort to improve the content ecosystem for everyone.
   triangle_img: herobg.svg
   line1_img: herolines1.svg
   line2_img: herolines2.svg
   phone_img_base: /static/img/about/overview/what_phone
-  cta@: Play Video
-  cta_url: '#video'
+  content: AMP is an open-source library that provides a straightforward way to create web pages that are compelling, smooth, and load near instantaneously for users. AMP pages are just web pages that you can link to and are controlled by you.<p>AMP builds on your existing skill sets and frameworks to create web pages. AMP is supported by many <a href="/support/faqs/supported-platforms.html">different platforms</a>, and it's compatible across <a href="/support/faqs/supported-browsers.html">browsers</a>.</p><p>AMP's ecosystem includes 25 million domains, 100+ technology providers, and leading platforms, that span the areas of publishing, advertising, e-commerce,  local and small businesses, and more!</p>
 
 core:
-  title: AMP pages are built with 3 core components.
+  title: "AMP pages are built with 3 core components:"
   components:
     - title: AMP HTML
       subtitle: |
@@ -73,9 +72,15 @@ core:
           <p>Learn more about [testing your AMP HTML pages](/docs/guides/validate.html).
 
 video:
+  description: "Learn more from this introductory video"
   id: 5Yjoe54vzwE
   line1_img: lines3.svg
   line2_img: line4.svg
+
+resources:
+  title: Learn AMP's design principles
+  link_url: /about/amp-design-principles
+  link_text: Explore Design Principles
 
 cta:
   title: See what AMP can do for you

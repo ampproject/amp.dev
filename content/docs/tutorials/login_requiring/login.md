@@ -3,7 +3,7 @@ $title: Login
 $order: 0
 ---
 
-The first time you land on the page, you can see 2 comments and a login button.
+The first time you land on the [page](https://ampbyexample.com/samples_templates/comment_section/preview/), you can see 2 comments and a login button.
 
 <amp-img src="/static/img/login-button.png" alt="Login button" height="290" width="300"></amp-img>
 

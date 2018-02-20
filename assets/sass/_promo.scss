@@ -1,15 +1,36 @@
 .promo {
-  align-items: center;
-  background: $gradient-anglebold;
   display: flex;
-  font-weight: 300;
   height: 60px;
   justify-content: center;
   overflow: hidden;
-  padding: 0 20px;
   position: relative;
   text-align: center;
-  text-transform: none;
+
+  .left,
+  .right {
+    background: $gradient-anglebold;
+    flex: 1 1 50%;
+    padding: 4px 0;
+    display: block;
+    text-transform: none;
+    font-weight: 300;
+  }
+
+  .right {
+    background: $gradient-anglebold;
+    position: relative;
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: -10px;
+      background: #fff;
+      width: 20px;
+      height: 120%;
+      transform: rotate(20deg);
+    }
+  }
 
   .description, .link {
     color: white;
@@ -23,7 +44,7 @@
 
   @include min-screen($mobile-breakpoint + 1) {
     .description.desktop-up {
-      display: inline-block;
+      display: block;
     }
   }
 
@@ -52,7 +73,7 @@
       }
 
       .description.mobile-down {
-        display: inline-block;
+        display: block;
       }
     }
 

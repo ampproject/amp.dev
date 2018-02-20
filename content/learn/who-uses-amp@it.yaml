@@ -18,25 +18,20 @@ cards:
     cta: Ulteriori informazioni
     icon: who_icon_publishers.svg
 
-  # - name: SMB
-  #   filename: smb
-  #   cta: Learn More
-  #   icon: card_smb.svg
-
-  - name: Piattaforme di pubblicità
-    filename: ad-tech-platforms
-    cta: Ulteriori informazioni
-    icon: who_icon_adtech.svg
-
   - name: Inserzionisti
     filename: advertisers
     cta: Ulteriori informazioni
     icon: who_icon_advertisers.svg
 
-  # - name: Developers
-  #   filename: developers
-  #   cta: Learn More
-  #   icon: card_developers.svg
+  - name: Ecommerce
+    filename: ecommerce
+    cta: Ulteriori informazioni
+    icon: who_icon_ecomm.svg
+
+  - name: Piattaforme di pubblicità
+    filename: ad-tech-platforms
+    cta: Ulteriori informazioni
+    icon: who_icon_adtech.svg
 
 cta:
   title: Storie di successo

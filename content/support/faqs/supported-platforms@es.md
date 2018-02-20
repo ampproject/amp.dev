@@ -9,7 +9,7 @@ description: El proyecto Accelerated Mobile Pages (AMP) es una iniciativa de có
 cta:
   title: Próximo FAQ
   link_text: AMP Overview
-  link_url: /content/support/faqs/overview@es.md
+  link_url: /content/support/faqs/overview.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}

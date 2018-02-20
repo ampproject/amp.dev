@@ -31,7 +31,7 @@ git clone https://github.com/googlecodelabs/advanced-interactivity-in-amp.git
 Descomprima el archivo de archivo (si es necesario) y navegue hacia el directorio. Instale las dependencias ejecutando `npm install`.
 
 ```shell
-cd advanced-interactivity-in-amp-codelab
+cd advanced-interactivity-in-amp
 npm install
 ```
 
