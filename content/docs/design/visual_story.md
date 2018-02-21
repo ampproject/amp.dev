@@ -3,6 +3,7 @@ $title: Create a visual AMP story
 $order: 4
 components:
     - video
+tutorial: true
 ---
 
 {{ video('/static/video/tut_pets-story-complete.mp4', 374, 667, '/static/img/docs/tutorials/amp_story/story_poster.png', caption='Completed AMP story', align='right third', autoplay='true', loop='true' ) }}
