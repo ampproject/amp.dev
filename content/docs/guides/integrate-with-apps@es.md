@@ -67,23 +67,18 @@ Hay tres formas de transformar enlaces programáticamente:
     como el contenido esté disponible, antes de que haya tenido lugar la interacción del usuario.
 
 {% call callout('Importante', type='caution') %}
-Never request AMP URLs through the Google's AMP API as a result of a user
-interaction because that degrades the performance of your app as it introduces
-an additional network request. Instead, use one of the three approaches 
-described above.
+Nunca solicite las URL de AMP a través de la API de AMP de Google como resultado de la interacción
+del usuario, ya que eso degrada el rendimiento de su aplicación cuando introduce una solicitud de red adicional. 
+En su lugar, use uno de los tres enfoques descritos anteriormente.
 {% endcall %}
 
 
-#### Google's AMP URL API  
+#### API de URL de AMP de Google
 
-Google provides the AMP URL API to retrieve the matching AMP HTML URLs for a
-given list of URLs ([official documentation](https://developers.google.com/amp/cache/use-amp-url) /
-[demo](https://ampbyexample.com/advanced/using_the_amp_url_api/)). The URLs do
-not need to be the canonical versions. If an AMP version exists, the response
-includes the original AMP URL and the URL for the cached AMP page on the Google
-AMP Cache. 
+Google proporciona la API AMP URL para recuperar las URL HTML AMP correspondientes 
+para una lista dada de URL ([documentación oficial](https://developers.google.com/amp/cache/use-amp-url) / [demostración](https://ampbyexample.com/advanced/using_the_amp_url_api/)). Las URL no necesitan ser las versiones canónicas. Si existe una versión de AMP, la respuesta incluye la URL AMP original y la URL de la página AMP en caché en Google AMP Cache.
 
-For example, for a given list of URLs:
+Por ejemplo, para una lista dada de URLs:
 
 
 ```json
@@ -94,7 +89,7 @@ For example, for a given list of URLs:
 ```
 
 
-The response body contains the AMP URL mapping in JSON format:
+El cuerpo de respuesta contiene la asignación de URL de AMP en formato JSON:
 
 
 ```json
@@ -116,84 +111,54 @@ The response body contains the AMP URL mapping in JSON format:
 }
 ```
 
-{% call callout('Note', type='note') %}
-URLs for cached AMP pages on non-Google AMP Caches cannot be retrieved via the
-AMP URL API. However, you can easily derive the cached URL from the returned AMP
-URL (ampURL).
+{% call callout('Nota', type='note') %}
+Las URL de las páginas de AMP almacenadas en caché en los cachés de AMP que no son de Google no se pueden recuperar a través de la API de URL de AMP. Sin embargo, puede derivar fácilmente la URL en caché de la URL de AMP devuelta (ampURL).
 {% endcall %}
 
 
-## Using AMP Caches
+## Usando cachés AMP
 
-An [AMP Cache](https://www.ampproject.org/docs/guides/how_cached) is a
-proxy-based content delivery network (CDN) for delivering valid AMP documents.
-AMP Caches are designed to:
+Un [caché AMP](https://www.ampproject.org/es/docs/guides/how_cached) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
 
-*   Serve only valid AMP pages.
-*   Allow AMP pages to be preloaded efficiently and safely.
-*   Perform additional user-beneficial performance optimizations to content.
+*   Entregar solo páginas válidas de AMP.
+*   Permitir que las páginas de AMP se carguen de manera eficiente y segura.
+*   Realizar optimizaciones de rendimiento beneficiosas para el usuario adicionales para el contenido.
 
-Currently, there are two AMP Cache providers:
+Actualmente, hay dos proveedores de AMP Cache:
 
 *   [Google AMP Cache](https://developers.google.com/amp/cache/)
 *   [Cloudflare AMP Cache](https://amp.cloudflare.com/)
 
-This gives two choices to display an AMP file in an app by using either:
+Esto le da dos opciones para mostrar un archivo AMP en una aplicación mediante:
 
-1.  the version hosted by the publisher 
-1.  the version hosted in an AMP Cache
+1.  la versión alojada por el editor
+1.  la versión alojada en un caché AMP
 
-We recommend using the AMP Cache for the following reasons:
+Recomendamos usar AMP Cache por los siguientes motivos:
 
-*   Better user experience due to faster load time and low latency (>1s faster
-    loading time).
-*   Performance and bandwidth benefits due to additional caching of client
-    dependent artifacts, e.g. caching different versions of the same image
-    depending on the client's viewport size.
-*   The original AMP file might no longer be valid AMP, which could lead to a
-    bad user experience. In this case, the AMP Cache serves the last valid
-    version of the AMP file.
-*   A not-so-upstanding publisher could serve two different documents to an AMP
-    Cache crawler and to your users. Using an AMP Cache guarantees that users
-    always see the same AMP file as the Cache.
+*   Mejor experiencia de usuario debido a un tiempo de carga más rápido y baja latencia (> 1s tiempo de carga más rápido).
+*   Beneficios de rendimiento y ancho de banda debido al almacenamiento adicional en caché de objetos dependientes del cliente, por ejemplo, almacenamiento en caché de diferentes versiones de la misma imagen según el tamaño de la ventana gráfica del cliente.
+*   Es posible que el archivo AMP original ya no sea un AMP válido, lo que podría ocasionar una mala experiencia del usuario. En este caso, AMP Cache sirve la última versión válida del archivo AMP.
+*   Un editor no tan fiel podría servir dos documentos diferentes a un rastreador de AMP Cache y a sus usuarios. El uso de un caché AMP garantiza que los usuarios siempre vean el mismo archivo AMP que el caché.
 
-{% call callout('Important', type='caution') %}
-When serving AMP pages through the AMP Cache, provide a viewer experience that
-clearly shows the AMP's origin and offers the possibility for users to share the
-canonical URL (see also the following two sections for more about this).
+{% call callout('Importante', type='caution') %}
+Al servir páginas de AMP a través de AMP Cache, proporcione una experiencia de visor que muestre claramente el origen de AMP y ofrezca a los usuarios la posibilidad de compartir la URL canónica (para obtener más información, consulte también las dos secciones siguientes).
 {% endcall %}
 
-## Implementing an AMP Viewer
+## Implementando un Visor AMP
 
-The AMP Runtime provides a Viewer API, which provides a protocol to send and
-receive  messages between the AMP Runtime and the Viewer. This makes it possible
-to control the pre-rendering of AMP documents, swiping between articles, and AMP
-Runtime instrumentation. You can learn more about the AMP Viewer API in the
-[Connecting AMP Viewers with AMP pages](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)
-guide. Viewer implementations for [web](https://github.com/ampproject/amp-viewer/blob/master/mobile-web/README.md)
-and [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) are
-available on [GitHub](https://github.com/ampproject/amp-viewer). An Android
-viewer is not yet available, see [this answer](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038)
-on Stack Overflow for how to best configure a WebView for displaying AMP pages. 
+AMP Runtime proporciona una API Viewer (o visor de AMP), que proporciona un protocolo para enviar y recibir mensajes entre AMP Runtime y Viewer. Esto permite controlar la preproducción de documentos AMP, al deslizar entre artículos y la instrumentación AMP Runtime. Puede obtener más información sobre la API de AMP Viewer en la guía de [Connecting AMP Viewers with AMP pages](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md). Las implementaciones de visor para [web](https://github.com/ampproject/amp-viewer/blob/master/mobile-web/README.md) e [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) están disponibles en [GitHub](https://github.com/ampproject/amp-viewer). Un visor de Android aún no está disponible, consulte [esta respuesta](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038) en Stack Overflow para saber cómo configurar mejor un WebView para mostrar páginas AMP.
 
-Here are some general best practices for implementing an AMP Viewer:
+Estas son algunas de las mejores prácticas generales para implementar un AMP Viewer:
 
-*   Serve the AMP page from an AMP Cache (>1s faster loading time).
-*   Display the article's publisher origin (e.g., in a collapsible header).
-*   Provide a sharing action (see also the "[Sharing AMP Content](#sharing-amp-content)"
-    section below).
-*   In webView-based viewers, enable third-party cookies.
-*   Set a referrer for your platform/app.
+*   Sirva la página AMP desde un caché AMP (>1s tiempo de carga más rápido).
+*   Muestra el origen del editor del artículo (por ejemplo, en un encabezado plegable).
+*   Proporcione una acción de intercambio (consulte también la sección "[Compartir contenido AMP](#compartir-contenido-amp)" a continuación).
+*   En los visores basados en webView, habilite las cookies de terceros.
+*   Establezca un referente para su plataforma / aplicación.
 
+### Compartir contenido AMP
 
-### Sharing AMP Content
+Al compartir un documento AMP desde el AMP Viewer de una plataforma, la plataforma debe compartir la URL canónica cuando sea técnicamente posible. Por ejemplo, si la plataforma proporciona un botón para compartir, este botón debe compartir la URL canónica.
 
-When sharing an AMP document from within a platform's AMP Viewer, the platform
-should share the canonical URL when technically possible. For example, if the
-platform provides a share button, this button should share the canonical URL.
-
-The philosophy of the AMP Project is that platforms should get to choose which
-version of a document to present to the user. For this reason, it makes most
-sense to share the canonical version (as opposed to the AMP version) when
-sharing to a different platform, and then expect the target platform to make the
-right choice. 
+La filosofía del Proyecto AMP es que las plataformas deben elegir qué versión de un documento presentar al usuario. Por esta razón, tiene más sentido compartir la versión canónica (a diferencia de la versión AMP) cuando se comparte a una plataforma diferente, y luego esperar que la plataforma objetivo tome la decisión correcta.
