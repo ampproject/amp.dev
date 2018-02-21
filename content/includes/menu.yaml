@@ -24,12 +24,10 @@ menu:
     children:
       - href: /content/docs/build.md
         copy@: "Guides & Tutorials"
-        collection: docs/guides
-      - href: https://ampbyexample.com/
-        copy@: "Examples"
       - href: /content/reference/components.md
         copy@: "Reference"
-        collection: docs/reference
+      - href: https://ampbyexample.com/
+        copy@: "Examples"
       - href: https://youtube.com/TheAMPProject
         copy@: "Videos"
   - href: /content/reference/components.md

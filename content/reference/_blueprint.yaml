@@ -1,5 +1,5 @@
 $title@: Reference
-$path: /reference/{base}.html
+$path: /docs/reference/{base}.html
 $view: /views/doc.html
 $localization:
   path: /{locale}/reference/{base}.html
