@@ -5,7 +5,7 @@ components:
     - anim
 ---
 
-You can further enhance an AMP Story by applying animation entrances to elements inside a page. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on.  The AMP Story framework provides the following preset animations:
+You can further enhance an AMP story by applying animation entrances to elements inside a page. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on.  The AMP story framework provides the following preset animations:
 
 <table>
 <thead>
@@ -116,7 +116,7 @@ You can customize the timing of an animation by changing the delay or duration t
 
 ## Animating our last page
 
-Our last AMP Story page is comprised of two layers: the first layer is a collage of animal images and the second layer displays some banner text.  To create this page, **add** the following code just after your previous story page:
+Our last AMP story page is comprised of two layers: the first layer is a collage of animal images and the second layer displays some banner text.  To create this page, **add** the following code just after your previous story page:
 
 ```html
 <amp-story-page id="page5">
@@ -145,7 +145,7 @@ Our last AMP Story page is comprised of two layers: the first layer is a collage
   </amp-story-grid-layer>
 </amp-story-page>
 ```
-Reload the AMP Story in your browser, and verify that the page renders correctly and looks like this:
+Reload the AMP story in your browser, and verify that the page renders correctly and looks like this:
 
 {{ image('/static/img/docs/tutorials/amp_story/pg5-collage.png', 720, 1280, align='center third', alt='Static page 5' ) }}
 
@@ -191,7 +191,7 @@ If you refresh and reload the page, each of the images fade in.  That's great bu
 
 Let's delay the entrance of the first image so that it comes in close to when the text banner finishes entering, say .4s. The remaining three images can come .2s after the previous image's entrance. For each of the amp-img elements, add `animate-in-delay=""` with the appropriate time delay value. Your code should look like this:
 
-```html hl_lines="5 10 15 20"
+```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
@@ -223,7 +223,7 @@ Refresh and reload your story.  Your last page should look like this:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-There are a lot of possibilities with animations in AMP Stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [AMP Story spec](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#animations).
+There are a lot of possibilities with animations in AMP stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [amp-story](/docs/reference/components/amp-story.html#animations) reference documentation.
 
 
 <div class="prev-next-buttons">

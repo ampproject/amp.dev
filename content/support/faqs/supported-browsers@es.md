@@ -6,7 +6,7 @@ class: who
 
 cta:
   title: Próximo FAQ
-  link_text@: AMP Overview
+  link_text: Descripción general de AMP
   link_url: /content/support/faqs/overview.md
 
 ---

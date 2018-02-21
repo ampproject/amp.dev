@@ -1,19 +1,23 @@
-<a href="{{g.doc('/content/pages/amp-conf.html').url.path}}" class="promo">
-  <div class="promo-inner">
-    <amp-img class="promo-line left desktop-up"
-        noloading
-        height=279
-        width=312
-        layout=responsive
-        src="/static/img/footer/line-left.png">
-    </amp-img>
+<div class="promo">
 
+  <a href="https://www.youtube.com/playlist?list=PLXTOW_XMsIDSl5iyPxgtEI0ts5HfBTH8c" class="left">
     <div class="description desktop-up">
-      {{_('AMP Conf 2018. Feb 13/14. Amsterdam.')}}
+      {{_('AMP Conf 2018. Feb 13/14.')}}
     </div>
     <div class="description mobile-down">
-      {{_('AMP Conf. Feb 13/14.')}}
+      {{_('AMP Conf.')}}
     </div>
-    <div class="link">{{_('Learn more')}}</div>
-  </div>
-</a>
+    <div class="link">{{_('See all videos')}}</div>
+  </a>
+
+  <a href="{{g.doc('/content/pages/amp-roadshow.html').url.path}}" class="right">
+    <div class="description desktop-up">
+      {{_('New AMP Roadshows.')}}
+    </div>
+    <div class="description mobile-down">
+      {{_('AMP Roadshows.')}}
+    </div>
+    <div class="link">{{_('Sign up')}}</div>
+  </a>
+
+</div>

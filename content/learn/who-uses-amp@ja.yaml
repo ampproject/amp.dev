@@ -18,25 +18,20 @@ cards:
     cta: 詳細
     icon: who_icon_publishers.svg
 
-  # - name: SMB
-  #   filename: smb
-  #   cta: Learn More
-  #   icon: card_smb.svg
-
-  - name: 広告技術プラットフォーム
-    filename: ad-tech-platforms
-    cta: 詳細
-    icon: who_icon_adtech.svg
-
   - name: 広告主
     filename: advertisers
     cta: 詳細
     icon: who_icon_advertisers.svg
 
-  # - name: Developers
-  #   filename: developers
-  #   cta: Learn More
-  #   icon: card_developers.svg
+  - name: Ecommerce
+    filename: ecommerce
+    cta: 詳細
+    icon: who_icon_ecomm.svg
+
+  - name: 広告技術プラットフォーム
+    filename: ad-tech-platforms
+    cta: 詳細
+    icon: who_icon_adtech.svg
 
 cta:
   title: 成功事例

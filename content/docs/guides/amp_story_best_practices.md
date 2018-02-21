@@ -1,5 +1,5 @@
 ---
-$title: Best practices for creating an AMP Story
+$title: Best practices for creating an AMP story
 $order: 7
 $category: Develop
 toc: true
@@ -7,7 +7,7 @@ toc: true
 
 [TOC]
 
-This guide provides recommended practices that you should implement when creating an [AMP Story](/docs/reference/components/amp-story.html).
+This guide provides recommended practices that you should implement when creating an [AMP story](/docs/reference/components/amp-story.html).
 
 
 ## Background color  
@@ -31,7 +31,7 @@ Ensure that text overlays on a page are readable:
 
 ### Bite-sized text   
 
-Keep in mind that AMP Stories are designed to offer a more visual experience, so keep text on a page limited to bite-size chunks (i.e., no more than 1-2 sentences). Carefully consider your aims and the reading flow if you believe more text on a page would be appropriate.
+Keep in mind that AMP stories are designed to offer a more visual experience, so keep text on a page limited to bite-size chunks (i.e., no more than 1-2 sentences). Carefully consider your aims and the reading flow if you believe more text on a page would be appropriate.
 
 ## Video  
 
@@ -84,7 +84,7 @@ The HLS video format is not supported in the Chrome for Desktop browser (not eve
 
 ### Video resolution
 
-AMP Story videos are always vertical (i.e., portrait view), with an expected aspect ratio of 16:9. Use the recommended resolution for the video streaming type: 
+AMP story videos are always vertical (i.e., portrait view), with an expected aspect ratio of 16:9. Use the recommended resolution for the video streaming type: 
 
 <table>
   <thead>

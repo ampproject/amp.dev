@@ -46,7 +46,7 @@ Let's look at the JSON file.  Open the [bookend.json](https://github.com/ampproj
 }
 ```
 
-The three social share buttons (Facebook, Twitter, Email) that display on the bookend screen are specified in the `share-providers` object.  Each social share provider has a specific [type name](/docs/reference/components/amp-social-share#pre-configured-providers) with the value set to `true`.
+The three social share buttons (Facebook, Twitter, Email) that display on the bookend screen are specified in the `share-providers` object.  Each social share provider has a specific [type name](/docs/reference/components/amp-social-share.html#pre-configured-providers) with the value set to `true`.
 
 Our related articles are specified in the `related-articles` object.  Within this object, we specified a single array named "Articles", which represents a section on that screen; it's also the heading name for that section.  Then we provided the articles we want to link to, with the following properties:
 

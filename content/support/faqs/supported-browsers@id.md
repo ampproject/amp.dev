@@ -1,13 +1,13 @@
 ---
-$title@: Browser yang Didukung
+$title: Browser yang Didukung
 $order: 4
 $parent: /content/support/faqs.md
 class: who
 
 cta:
-  title@: FAQ Selanjutnya
-  link_text@: Ringkasan AMP
-  link_url: /content/support/faqs/overview@id.md
+  title: FAQ Selanjutnya
+  link_text: Ringkasan AMP
+  link_url: /content/support/faqs/overview.md
 
 ---
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}

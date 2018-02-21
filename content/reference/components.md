@@ -37,6 +37,7 @@ Here are the components grouped by category:
 | [`amp-access-laterpay`](components/amp-access-laterpay.html) | Allows publishers to easily integrate with the [LaterPay](https://www.laterpay.net/) micropayments platform.
 | [`amp-access`](components/amp-access.html) | Provides an AMP paywall and subscription support.  |
 | [`amp-bind`](components/amp-bind.html) | Allows elements to mutate in response to user actions or data changes via data binding and simple JS-like expressions. |
+| [`amp-byside-content`](components/amp-byside-content.html) | Displays dynamic content from the [BySide service](http://www.byside.com/). |
 | [`amp-form`](components/amp-form.html) | Provides form support. |
 | [`amp-gist`](components/amp-gist.html) | Displays a [GitHub Gist](https://gist.github.com/). |
 | [`amp-install-serviceworker`](components/amp-install-serviceworker.html) | Installs a ServiceWorker. |
@@ -55,9 +56,11 @@ Here are the components grouped by category:
 | [`amp-app-banner`](components/amp-app-banner.html) | A wrapper and minimal UI for a cross-platform, fixed-position banner showing a call-to-action to install an app. |
 | [`amp-carousel`](components/amp-carousel.html) | Displays multiple similar pieces of content along a horizontal axis. |
 | [`amp-fx-flying-carpet`](components/amp-fx-flying-carpet.html) | Wraps its children in a unique full-screen scrolling container allowing you to display a full-screen ad without taking up the entire viewport. |
+| [`amp-fx-collection`](components/amp-fx-collection.html) | Provides a collection of preset visual effects, such as parallax. |
 | [`amp-iframe`](components/amp-iframe.html) | Displays an iframe. |
+| [`amp-image-lightbox`](components/amp-image-lightbox.html) | Provides a lightbox effect for a specified image. |
 | [`amp-layout`](components/amp-layout.html) | Provides a generic, multi-purpose container element that brings AMP's powerful [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) to any element. |
-| [`amp-lightbox`](components/amp-lightbox.html) | Allows for a “lightbox” or similar experience. |
+| [`amp-lightbox`](components/amp-lightbox.html) | Displays elements in a full-viewport “lightbox” modal. |
 | [`amp-position-observer`](components/amp-position-observer.html) | Monitors position of an element within the viewport as a user scrolls and dispatches  events that can be used with other components. |
 | [`amp-sidebar`](components/amp-sidebar.html) | Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. |
 
@@ -76,7 +79,6 @@ Here are the components grouped by category:
 | [`amp-google-vrview-image`](components/amp-google-vrview-image) | Displays a VR image. |
 | [`amp-hulu`](components/amp-hulu.html) | Displays a simple embedded [Hulu](http://www.hulu.com/) video. |
 | [`amp-ima-video`](components/amp-ima-video.html) | Embeds a video player for instream video ads that are integrated with the [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/). |
-| [`amp-image-lightbox`](components/amp-image-lightbox.html) | Allows for an “image lightbox” or similar experience. |
 | [`amp-img`](components/amp-img.html)  | Replaces the HTML5 `img` tag. |
 | [`amp-imgur`](components/amp-imgur.html)  | Displays an [Imgur](http://imgur.com/) post. |
 | [`amp-izlesene`](components/amp-izlesene.html)  | Displays an [Izlesene](https://www.izlesene.com/) video. |
@@ -114,6 +116,7 @@ Here are the components grouped by category:
 | --------- | ----------- |
 | [`amp-facebook-comments`](components/amp-facebook-comments.html) | Embeds the Facebook comments plugin. |
 | [`amp-facebook-like`](components/amp-facebook-like.html) | Embeds the Facebook like button plugin. |
+| [`amp-facebook-page`](components/amp-facebook-page.html) | Embeds the [Facebook page plugin](https://developers.facebook.com/docs/plugins/page-plugin). |
 | [`amp-facebook`](components/amp-facebook.html) | Displays a Facebook post or video. |
 | [`amp-gfycat`](components/amp-gfycat.html) | Displays a [Gfycat](https://gfycat.com) video GIF. |
 | [`amp-instagram`](components/amp-instagram.html) | Displays an Instagram embed. |
