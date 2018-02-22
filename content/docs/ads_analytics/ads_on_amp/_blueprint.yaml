@@ -1,5 +1,5 @@
-$path: /docs/guides/ads/{base}.html
+$path: /docs/ads_analytics/{base}.html
 $view: /views/doc.html
 $localization:
-  path: /{locale}/docs/guides/ads/{base}.html
+  path: /{locale}/docs/ads_analytics/{base}.html
 

@@ -6,8 +6,4 @@ $view: /views/doc_grid.html
 
 class: bg-triangle-secondary
 goto_internal: /content/docs/contribute/contribute.md
-
-localization:
-  locales:
-  - en
 ---

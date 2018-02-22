@@ -1,4 +1,4 @@
-$path: /docs/guides/pwa-amp/{base}.html
+$path: /docs/integration/pwa-amp/{base}.html
 $view: /views/doc.html
 $localization:
-  path: /{locale}/docs/guides/pwa-amp/{base}.html
+  path: /{locale}/docs/integration/pwa-amp/{base}.html
