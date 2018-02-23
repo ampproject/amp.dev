@@ -283,6 +283,12 @@ Type attribute value: `umenganalytics`
 
 Adds support for Umeng+ Analytics. More details for adding Umeng+ Analytics support can be found at [dev.umeng.com](http://dev.umeng.com/udplus/js-sdkdoc#5).
 
+### Treasure Data
+
+Type attribute value: `treasuredata`
+
+Adds support for Treasure Data. Configuration details can be found at [treasuredata.com](https://docs.treasuredata.com/articles/javascript-sdk-google-amp).
+
 ### Webtrekk
 
 Type attribute value: `webtrekk`
