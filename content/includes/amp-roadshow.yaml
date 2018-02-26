@@ -3,6 +3,15 @@ nextstop:
   link: https://events.withgoogle.com/amp-roadshow-singapore-oct2017/
 
 cities:
+  - title: Buenos Aires
+    date: 2018-03-13
+    link: https://events.withgoogle.com/splatam-amp-2018/
+  - title: Bogota
+    date: 2018-03-16
+    link: https://events.withgoogle.com/splatam-amp-2018/
+  - title: Mexico City
+    date: 2018-03-21
+    link: https://events.withgoogle.com/splatam-amp-2018/
   - title: New York
     date: 2018-03-21
     link: https://events.withgoogle.com/amp-roadshow-in-nyc/
