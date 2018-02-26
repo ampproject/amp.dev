@@ -1,7 +1,5 @@
 ---
 $title: Crea tu página AMP HTML
-$order: 0
-$parent: /content/docs/tutorials/create.md
 ---
 
 El siguiente marcado es un punto de partida o código estándar aceptable.

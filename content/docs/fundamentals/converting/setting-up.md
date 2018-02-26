@@ -1,7 +1,7 @@
 ---
 $title: Setting up
 $order: 0
-$parent: /content/docs/tutorials/converting.md
+$parent: /content/docs/fundamentals/converting.md
 ---
 
 ## Prerequisites

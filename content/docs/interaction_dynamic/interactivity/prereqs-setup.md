@@ -2,7 +2,7 @@
 $title: Setting up
 $order: 0
 toc: true
-$parent: /content/docs/tutorials/interactivity.md
+$parent: /content/docs/interaction_dynamic/interactivity.md
 ---
 
 [TOC]

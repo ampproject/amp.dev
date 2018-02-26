@@ -1,7 +1,7 @@
 ---
 $title: Setting up
 $order: 0
-$parent: /content/docs/tutorials/add_advanced.md
+$parent: /content/docs/fundamentals/add_advanced.md
 ---
 
 ## Prerequisites

@@ -1,7 +1,5 @@
 ---
 $title: Resolución de errores de validación
-$order: 2
-toc: true
 ---
 
 [TOC]
