@@ -1099,7 +1099,7 @@
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/debug/validate?(.html)",
+        "source": "/:lang/docs/guides/debug/validate",
         "destination": "/:lang/docs/fundamentals/validate.html",
         "type": 301
       },
@@ -1114,317 +1114,317 @@
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/ads_on_amp?(.html)",
+        "source": "/:lang/docs/guides/ads_on_amp",
         "destination": "/:lang/docs/ads_analytics/ads_on_amp.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/ads/ads_getting_started?(.html)",
+        "source": "/:lang/docs/guides/ads/ads_getting_started",
         "destination": "/:lang/docs/ads_analytics/ads_getting_started.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/ads/ads_tips?(.html)",
+        "source": "/:lang/docs/guides/ads/ads_tips",
         "destination": "/:lang/docs/ads_analytics/ads_tips.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/amp_replacements?(.html)",
+        "source": "/:lang/docs/guides/amp_replacements",
         "destination": "/:lang/docs/media/amp_replacements.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics_amp?(.html)",
+        "source": "/:lang/docs/guides/analytics_amp",
         "destination": "/:lang/docs/ads_analytics/analytics_amp.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics/analytics_basics?(.html)",
+        "source": "/:lang/docs/guides/analytics/analytics_basics",
         "destination": "/:lang/docs/ads_analytics/analytics_basics.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics/analytics-vendors?(.html)",
+        "source": "/:lang/docs/guides/analytics/analytics-vendors",
         "destination": "/:lang/docs/ads_analytics/analytics-vendors.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics/deep_dive_analytics?(.html)",
+        "source": "/:lang/docs/guides/analytics/deep_dive_analytics",
         "destination": "/:lang/docs/ads_analytics/deep_dive_analytics.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics/use_cases?(.html)",
+        "source": "/:lang/docs/guides/analytics/use_cases",
         "destination": "/:lang/docs/ads_analytics/use_cases.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/discovery?(.html)",
+        "source": "/:lang/docs/guides/discovery",
         "destination": "/:lang/docs/fundamentals/discovery.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/engagement?(.html)",
+        "source": "/:lang/docs/guides/engagement",
         "destination": "/:lang/docs/fundamentals/engagement.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/how_cached?(.html)",
+        "source": "/:lang/docs/guides/how_cached",
         "destination": "/:lang/docs/fundamentals/how_cached.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/pwa-amp.html?(.html)",
+        "source": "/:lang/docs/guides/pwa-amp.html",
         "destination": "/:lang/docs/integration/pwa-amp.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/pwa-amp/amp-as-pwa?(.html)",
+        "source": "/:lang/docs/guides/pwa-amp/amp-as-pwa",
         "destination": "/:lang/docs/integration/pwa-amp/amp-as-pwa.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/pwa-amp/amp-in-pwa?(.html)",
+        "source": "/:lang/docs/guides/pwa-amp/amp-in-pwa",
         "destination": "/:lang/docs/integration/pwa-amp/amp-in-pwa.html",
         "type": 301
       },
         {
-        "source": "/:lang/docs/guides/pwa-amp/amp-to-pwa?(.html)",
+        "source": "/:lang/docs/guides/pwa-amp/amp-to-pwa",
         "destination": "/:lang/docs/integration/pwa-amp/amp-to-pwa.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive_amp?(.html)",
+        "source": "/:lang/docs/guides/responsive_amp",
         "destination": "/:lang/docs/design/responsive_amp.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/art_direction?(.html)",
+        "source": "/:lang/docs/guides/responsive/art_direction",
         "destination": "/:lang/docs/design/responsive/art_direction.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/control_layout?(.html)",
+        "source": "/:lang/docs/guides/responsive/control_layout",
         "destination": "/:lang/docs/design/responsive/control_layout.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/custom_fonts?(.html)",
+        "source": "/:lang/docs/guides/responsive/custom_fonts",
         "destination": "/:lang/docs/design/responsive/custom_fonts.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/placeholders?(.html)",
+        "source": "/:lang/docs/guides/responsive/placeholders",
         "destination": "/:lang/docs/design/responsive/placeholders.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/responsive_design?(.html)",
+        "source": "/:lang/docs/guides/responsive/responsive_design",
         "destination": "/:lang/docs/design/responsive/responsive_design.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/style_pages?(.html)",
+        "source": "/:lang/docs/guides/responsive/style_pages",
         "destination": "/:lang/docs/design/responsive/style_pages.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/third_party_components?(.html)",
+        "source": "/:lang/docs/guides/third_party_components",
         "destination": "/:lang/docs/fundamentals/third_party_components.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/validate?(.html)",
+        "source": "/:lang/docs/guides/validate",
         "destination": "/:lang/docs/fundamentals/validate.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/reference/spec?(.html)",
+        "source": "/:lang/docs/reference/spec",
         "destination": "/:lang/docs/fundamentals/spec.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/reference/spec/amp-boilerplate?(.html)",
+        "source": "/:lang/docs/reference/spec/amp-boilerplate",
         "destination": "/:lang/docs/fundamentals/spec/amp-boilerplate.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/reference/spec/amp-html-layout?(.html)",
+        "source": "/:lang/docs/reference/spec/amp-html-layout",
         "destination": "/:lang/docs/design/amp-html-layout.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/reference/validation_errors?(.html)",
+        "source": "/:lang/docs/reference/validation_errors",
         "destination": "/:lang/docs/troubleshooting/validation_errors.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced?(.html)",
+        "source": "/:lang/docs/tutorials/add_advanced",
         "destination": "/:lang/docs/fundamentals/add_advanced.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/adding_carousels?(.html)",
+        "source": "/:lang/docs/tutorials/add_advanced/adding_carousels",
         "destination": "/:lang/docs/fundamentals/add_advanced/adding_carousels.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/adding_components?(.html)",
+        "source": "/:lang/docs/tutorials/add_advanced/adding_components",
         "destination": "/:lang/docs/fundamentals/add_advanced/adding_components.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/congratulations?(.html)",
+        "source": "/:lang/docs/tutorials/add_advanced/congratulations",
         "destination": "/:lang/docs/fundamentals/add_advanced/congratulations.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/fonts?(.html)",
+        "source": "/:lang/docs/tutorials/add_advanced/fonts",
         "destination": "/:lang/docs/fundamentals/add_advanced/fonts.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/navigating?(.html)",
+        "source": "/:lang/docs/tutorials/add_advanced/navigating",
         "destination": "/:lang/docs/fundamentals/add_advanced/navigating.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/review_code?(.html)",
+        "source": "/:lang/docs/tutorials/add_advanced/review_code",
         "destination": "/:lang/docs/fundamentals/add_advanced/review_code.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/setting_up?(.html)",
+        "source": "/:lang/docs/tutorials/add_advanced/setting_up",
         "destination": "/:lang/docs/fundamentals/add_advanced/setting_up.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/tracking_data?(.html)",
+        "source": "/:lang/docs/tutorials/add_advanced/tracking_data",
         "destination": "/:lang/docs/fundamentals/add_advanced/tracking_data.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting?(.html)",
+        "source": "/:lang/docs/tutorials/converting",
         "destination": "/:lang/docs/fundamentals/converting.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/building-page?(.html)",
+        "source": "/:lang/docs/tutorials/converting/building-page",
         "destination": "/:lang/docs/fundamentals/converting/building-page.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/congratulations?(.html)",
+        "source": "/:lang/docs/tutorials/converting/congratulations",
         "destination": "/:lang/docs/fundamentals/converting/congratulations.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/discoverable?(.html)",
+        "source": "/:lang/docs/tutorials/converting/discoverable",
         "destination": "/:lang/docs/fundamentals/converting/discoverable.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/resolving-errors?(.html)",
+        "source": "/:lang/docs/tutorials/converting/resolving-errors",
         "destination": "/:lang/docs/fundamentals/converting/resolving-errors.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/setting-up?(.html)",
+        "source": "/:lang/docs/tutorials/converting/setting-up",
         "destination": "/:lang/docs/fundamentals/converting/setting-up.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create?(.html)",
+        "source": "/:lang/docs/tutorials/create",
         "destination": "/:lang/docs/getting_started/create.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/basic_markup?(.html)",
+        "source": "/:lang/docs/tutorials/create/basic_markup",
         "destination": "/:lang/docs/getting_started/create/basic_markup.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/include_image?(.html)",
+        "source": "/:lang/docs/tutorials/create/include_image",
         "destination": "/:lang/docs/getting_started/create/include_image.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/prepare_for_discovery?(.html)",
+        "source": "/:lang/docs/tutorials/create/prepare_for_discovery",
         "destination": "/:lang/docs/getting_started/create/prepare_for_discovery.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/presentation_layout?(.html)",
+        "source": "/:lang/docs/tutorials/create/presentation_layout",
         "destination": "/:lang/docs/getting_started/create/presentation_layout.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/preview_and_validate?(.html)",
+        "source": "/:lang/docs/tutorials/create/preview_and_validate",
         "destination": "/:lang/docs/getting_started/create/preview_and_validate.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/publish?(.html)",
+        "source": "/:lang/docs/tutorials/create/publish",
         "destination": "/:lang/docs/getting_started/create/publish.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity?(.html)",
+        "source": "/:lang/docs/tutorials/interactivity",
         "destination": "/:lang/docs/interaction_dynamic/interactivity.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/advanced-interactivity?(.html)",
+        "source": "/:lang/docs/tutorials/interactivity/advanced-interactivity",
         "destination": "/:lang/docs/interaction_dynamic/interactivity/advanced-interactivity.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/get-familiar?(.html)",
+        "source": "/:lang/docs/tutorials/interactivity/get-familiar",
         "destination": "/:lang/docs/interaction_dynamic/interactivity/get-familiar.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/prereqs-setup?(.html)",
+        "source": "/:lang/docs/tutorials/interactivity/prereqs-setup",
         "destination": "/:lang/docs/interaction_dynamic/interactivity/prereqs-setup.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/remote-data?(.html)",
+        "source": "/:lang/docs/tutorials/interactivity/remote-data",
         "destination": "/:lang/docs/interaction_dynamic/interactivity/remote-data.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/wrapping-up?(.html)",
+        "source": "/:lang/docs/tutorials/interactivity/wrapping-up",
         "destination": "/:lang/docs/interaction_dynamic/interactivity/wrapping-up.html",
         "type": 301
       },
      {
-        "source": "/:lang/docs/tutorials/live_blog?(.html)",
+        "source": "/:lang/docs/tutorials/live_blog",
         "destination": "/:lang/docs/interaction_dynamic/live_blog.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring?(.html)",
+        "source": "/:lang/docs/tutorials/login_requiring",
         "destination": "/:lang/docs/interaction_dynamic/login_requiring.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring/add_comment?(.html)",
+        "source": "/:lang/docs/tutorials/login_requiring/add_comment",
         "destination": "/:lang/docs/interaction_dynamic/login_requiring/add_comment.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring/login?(.html)",
+        "source": "/:lang/docs/tutorials/login_requiring/login",
         "destination": "/:lang/docs/interaction_dynamic/login_requiring/login.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring/logout?(.html)",
+        "source": "/:lang/docs/tutorials/login_requiring/logout",
         "destination": "/:lang/docs/interaction_dynamic/login_requiring/logout.html",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring/summary?(.html)",
+        "source": "/:lang/docs/tutorials/login_requiring/summary",
         "destination": "/:lang/docs/interaction_dynamic/login_requiring/summary.html",
         "type": 301
       }
