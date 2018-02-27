@@ -78,7 +78,7 @@ resources:
     - name@: Case Studies
       description@: Discover more success stories with AMP.
       icon: resources/studies.svg
-      url: /case-studies/ecommerce/
+      url: /content/learn/case-studies/category/ecommerce.md
     - name@: Demos
       description@: Explore live code samples and demos.
       icon: resources/demos.svg
@@ -90,7 +90,7 @@ resources:
     - name@: Tutorials
       description@: Create your first ecommerce page in AMP.
       icon: resources/tutorials.svg
-      url: /docs/tutorials/interactivity.html
+      url: /content/docs/tutorials/interactivity.md
 
 
 cta:
