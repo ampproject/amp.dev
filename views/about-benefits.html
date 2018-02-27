@@ -86,7 +86,7 @@
       </section>
         {% if doc.case %}
         <section class="case-study">
-          <div class="learn"><a class="button" href="{{doc.case.link_url}}">{{_(doc.case.title)}}</a></div>
+       <div class="learn"><a class="button" href="{% if doc.case.link_url.startswith('http') %}{{ doc.case.link_url }}{% else %}{{ g.doc(doc.case.link_url, locale=doc.locale).url.path }}{% endif %}">{{_(doc.case.title)}}</a></div>
         </section>
       {% endif %}
 

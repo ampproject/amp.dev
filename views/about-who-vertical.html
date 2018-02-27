@@ -189,7 +189,7 @@
         <div class="resources-container">
         <ul>
           {%for resource in doc.resources.resource_locs %}
-            <li><a href="{{resource.url}}">
+            <li><a href="{% if resource.url.startswith('http') %}{{ resource.url }}{% else %}{{ g.doc(resource.url, locale=doc.locale).url.path }}{% endif %}">
               <div class="resource-icon">
                   <amp-img
                       height="90"
