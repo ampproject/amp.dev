@@ -6,7 +6,7 @@ toc: true
 
 [TOC]
 
-AMP provides a set of common attributes that are extended to many AMP components (and HTML elements).  This document describes each of common attributes.
+AMP provides a set of common attributes that are extended to many AMP components (and HTML elements).  This document describes each of the common attributes.
 
 ## fallback
 

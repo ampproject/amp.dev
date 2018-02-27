@@ -1,21 +1,18 @@
 ---
 $title: Components
 $order: 0
+toc: true
 ---
+
+[TOC]
+
 The AMP HTML library provides components that are classified as:
 
 - **built-in**: Components that are included in the base library, such as `amp-img` and `amp-pixel`.
-- **[extended](https://github.com/ampproject/amphtml/blob/master/extensions/README.md)**: Extensions to the base library that must be explicitly included in the document as custom elements (e.g., `<script async custom-element="amp-audio" ...`).
+- **extended**: Extensions to the base library that must be explicitly included in the document as custom elements (e.g., `<script async custom-element="amp-audio" ...`).
 - **[experimental](experimental.html)**: Components that are released but are not yet ready for wide use.
 
-Here are the components grouped by category:
-
-- [Ads & analytics](#ads-and-analytics)
-- [Dynamic content](#dynamic-content)
-- [Layout](#layout)
-- [Media](#media)
-- [Presentation](#presentation)
-- [Social](#social)
+The list of available components are listed below in related categories.
 
 ### Ads and analytics
 

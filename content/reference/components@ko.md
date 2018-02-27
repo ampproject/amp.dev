@@ -1,21 +1,19 @@
 ---
 $title: 구성요소 / 태그
 $order: 0
+toc: true
 ---
+
+[TOC]
+
 AMP HTML 라이브러리에서 제공하는 구성요소는 다음과 같이 분류됩니다.
 
 - **기본 제공**: 기본 라이브러리에 포함된 `amp-img` 및 `amp-pixel` 등의 구성요소입니다.
-- **[확장](https://github.com/ampproject/amphtml/blob/master/extensions/README.md)**: 기본 라이브러리의 확장 프로그램이며, 맞춤 요소로 문서에 분명히 포함되어야 합니다(예: `<script async custom-element="amp-audio"...`).
+- **확장**: 기본 라이브러리의 확장 프로그램이며, 맞춤 요소로 문서에 분명히 포함되어야 합니다(예: `<script async custom-element="amp-audio"...`).
 - **[실험용](experimental.html)**: 이미 출시되었지만 아직 일반적으로 사용할 수 없는 구성요소입니다.
 
 다음은 구성요소를 카테고리별로 분류한 것입니다.
 
-- [광고 및 애널리틱스](#광고-및-애널리틱스)
-- [동적 콘텐츠](#동적-콘텐츠)
-- [레이아웃](#레이아웃)
-- [미디어](#미디어)
-- [프레젠테이션](#프레젠테이션)
-- [소셜](#소셜)
 
 ### 광고 및 애널리틱스
 

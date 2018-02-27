@@ -1,21 +1,18 @@
 ---
 $title: Komponen/Tag
 $order: 0
+toc: true
 ---
+
+[TOC]
+
 Koleksi HTML AMP menyediakan komponen yang dikelompokkan sebagai:
 
 - **bawaan**: Komponen yang disertakan dalam koleksi dasar, seperti `amp-img` dan `amp-pixel`.
-- **[diperpanjang](https://github.com/ampproject/amphtml/blob/master/extensions/README@id.md)**: Ekstensi ke koleksi dasar yang harus disertakan secara eksplisit di dokumen sebagai elemen kustom (misalnya, `<script async custom-element="amp-audio" ...`).
+- **diperpanjang**: Ekstensi ke koleksi dasar yang harus disertakan secara eksplisit di dokumen sebagai elemen kustom (misalnya, `<script async custom-element="amp-audio" ...`).
 - **[eksperimental](experimental.html)**: Komponen yang dirilis namun belum siap untuk penggunaan luas.
 
 Berikut merupakan komponen yang dikelompokkan berdasarkan kategori:
-
-- [Iklan & analisis](#iklan-dan-analisis)
-- [Konten dinamis](#konten-dinamis)
-- [Tata letak](#tata-letak)
-- [Media](#media)
-- [Presentasi](#presentasi)
-- [Sosial](#sosial)
 
 ### Iklan dan analisis
 

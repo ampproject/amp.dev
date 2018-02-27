@@ -1,21 +1,19 @@
 ---
 $title: 组件/标记
 $order: 0
+toc: true
 ---
+
+[TOC]
+
 AMP HTML 库提供的组件可划分为：
 
 - **内置**：基础库中包含的组件，例如 `amp-img` 和 `amp-pixel`。
-- **[扩展](https://github.com/ampproject/amphtml/blob/master/extensions/README.md)**：相对于基础库而言的扩展组件，必须作为自定义元素明确包含在文档中（例如 `<script async custom-element="amp-audio" ...`）。
+- **扩展**：相对于基础库而言的扩展组件，必须作为自定义元素明确包含在文档中（例如 `<script async custom-element="amp-audio" ...`）。
 - **[实验](experimental.html)**：已发布但尚不能广泛使用的组件。
 
 若按类别，这些组件则可分别归为：
 
-- [广告与分析](#广告与分析)
-- [动态内容](#动态内容)
-- [布局](#布局)
-- [媒体](#媒体)
-- [呈现](#呈现)
-- [社交](#社交)
 
 ### 广告与分析
 

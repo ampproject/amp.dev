@@ -1,21 +1,18 @@
 ---
 $title: Componentes / tags
 $order: 0
+toc: true
 ---
+
+[TOC]
+
 A biblioteca de HTML para AMP fornece componentes classificados das seguintes maneiras:
 
 - **Incorporados**: são os componentes incluídos na biblioteca de base, como `amp-img` e `amp-pixel`.
-- **[Estendidos](https://github.com/ampproject/amphtml/blob/master/extensions/README.md)**: são as extensões da biblioteca de base que precisam ser incluídas explicitamente no documento como elementos personalizados (por exemplo, `<script async custom-element="amp-audio" ...`).
+- **Estendidos**: são as extensões da biblioteca de base que precisam ser incluídas explicitamente no documento como elementos personalizados (por exemplo, `<script async custom-element="amp-audio" ...`).
 - **[Experimentais](experimental.html)**: são componentes que foram lançados, mas não estão prontos para uso geral.
 
 Veja os componentes agrupados por categoria:
-
-- [Anúncios e análises](#anúncios-e-análises)
-- [Conteúdo dinâmico](#conteúdo-dinâmico)
-- [Layout](#layout)
-- [Mídia](#mídia)
-- [Apresentação](#apresentação)
-- [Conteúdo social](#conteúdo-social)
 
 ### Anúncios e análises
 
