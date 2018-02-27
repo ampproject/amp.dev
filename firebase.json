@@ -1339,7 +1339,7 @@
         "type": 301
       },
       {
-        "source": "/:langdocs/tutorials/create/basic_markup?(.html)",
+        "source": "/:lang/docs/tutorials/create/basic_markup?(.html)",
         "destination": "/:lang/docs/getting_started/create/basic_markup.html",
         "type": 301
       },
