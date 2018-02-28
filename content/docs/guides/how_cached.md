@@ -65,7 +65,7 @@ By using the AMP format, you are making your content available to be cached by A
 Note: The AMP Cache URL is not a user-facing URL, that is, users wouldn't typically request content via those URLs.
 {% endcall %}
 
-* **Publisher addition**: Publishers can specifically add the AMP page to the AMP Cache.  This option is applicable only to the Google AMP Cache (see [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-ping)).
+* **Publisher addition**: Publishers can specifically add the AMP page to the AMP Cache.  This option is applicable only to the Google AMP Cache (see [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache)).
 
 ## Additional resources
 
