@@ -43,27 +43,27 @@
     "redirects": [
       {
         "source": "/docs/guides/",
-        "destination": "/docs/guides/responsive_amp.html",
+        "destination": "/docs/",
         "type": 301
       },
       {
         "source": "/:lang/docs/guides",
-        "destination": "/:lang/docs/guides/responsive_amp.html",
+        "destination": "/:lang/docs/",
         "type": 301
       },
       {
         "source": "/docs/tutorials/",
-        "destination": "/docs/tutorials/create.html",
+        "destination": "/docs/",
         "type": 301
       },
       {
         "source": "/docs/tutorials",
-        "destination": "/docs/tutorials/create.html",
+        "destination": "/docs/",
         "type": 301
       },
       {
         "source": "/:lang/docs/tutorials",
-        "destination": "/:lang/docs/tutorials/create.html",
+        "destination": "/:lang/docs/",
         "type": 301
       },
       {
@@ -119,97 +119,97 @@
 
       {
         "source": "/docs/guides/author-develop/responsive_amp?(.html)",
-        "destination": "/docs/guides/responsive_amp",
+        "destination": "/docs/design/responsive_amp.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/responsive/style_pages?(.html)",
-        "destination": "/docs/guides/responsive/style_pages.html",
+        "destination": "/docs/design/responsive/style_pages.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/responsive/control_layout?(.html)",
-        "destination": "/docs/guides/responsive/control_layout.html",
+        "destination": "/docs/design/responsive/control_layout.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/responsive/placeholders?(.html)",
-        "destination": "/docs/guides/responsive/placeholders.html",
+        "destination": "/docs/design/responsive/placeholders.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/responsive/art_direction?(.html)",
-        "destination": "/docs/guides/responsive/art_direction.html",
+        "destination": "/docs/design/responsive/art_direction.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/responsive/custom_fonts?(.html)",
-        "destination": "/docs/guides/responsive/custom_fonts.html",
+        "destination": "/docs/design/responsive/custom_fonts.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/amp_replacements?(.html)",
-        "destination": "/docs/guides/amp_replacements.html",
+        "destination": "/docs/media/amp_replacements.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/iframes?(.html)",
-        "destination": "/docs/guides/iframes.html",
+        "destination": "/docs/media/iframes.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/third_party_components?(.html)",
-        "destination": "/docs/guides/third_party_components.html",
+        "destination": "/docs/fundamentals/third_party_components.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/ads_on_amp?(.html)",
-        "destination": "/docs/guides/ads_on_amp.html",
+        "destination": "/docs/ads_analytics/ads_on_amp.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/pwa-amp?(.html)",
-        "destination": "/docs/guides/pwa-amp.html",
+        "destination": "/docs/integration/pwa-amp.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/pwa-amp/amp-as-pwa?(.html)",
-        "destination": "/docs/guides/pwa-amp/amp-as-pwa.html",
+        "destination": "/docs/integration/pwa-amp/amp-as-pwa.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/pwa-amp/amp-to-pwa?(.html)",
-        "destination": "/docs/guides/pwa-amp/amp-to-pwa.html",
+        "destination": "/docs/integration/pwa-amp/amp-to-pwa.html",
         "type": 301
       },
       {
         "source": "/docs/guides/author-develop/pwa-amp/amp-in-pwa?(.html)",
-        "destination": "/docs/guides/pwa-amp/amp-in-pwa.html",
+        "destination": "/docs/integration/pwa-amp/amp-in-pwa.html",
         "type": 301
       },
       {
         "source": "/docs/guides/debug/validate?(.html)",
-        "destination": "/docs/guides/validate.html",
+        "destination": "/docs/fundamentals/validate.html",
         "type": 301
       },
       {
         "source": "/docs/guides/deploy/analytics_amp?(.html)",
-        "destination": "/docs/guides/analytics_amp.html",
+        "destination": "/docs/ads_analytics/analytics_amp.html",
         "type": 301
       },
       {
         "source": "/docs/guides/deploy/discovery?(.html)",
-        "destination": "/docs/guides/discovery.html",
+        "destination": "/docs/fundamentals/discovery.html",
         "type": 301
       },
       {
         "source": "/docs/guides/deploy/engagement?(.html)",
-        "destination": "/docs/guides/engagement.html",
+        "destination": "/docs/fundamentals/engagement.html",
         "type": 301
       },
       {
         "source": "/docs/guides/login-paywalls",
-        "destination": "/docs/tutorials/login_requiring",
+        "destination": "/docs/interaction_dynamic/login_requiring.html",
         "type": 301
       },
 
@@ -579,75 +579,74 @@
         "destination": "/support/faqs/",
         "type": 301
       },
-
       {
         "source": "/docs/get_started/create_page.html",
-        "destination": "/docs/tutorials/create.html",
+        "destination": "/docs/getting_started/create.html",
         "type": 301
       },
       {
         "source": "docs/get_started/create?(.html)",
-        "destination": "/docs/tutorials/create.html",
+        "destination": "/docs/getting_started/create.html",
         "type": 301
       },
       {
         "source": "docs/get_started/create/basic_markup?(.html)",
-        "destination": "/docs/tutorials/create/basic_markup.html",
+        "destination": "/docs/getting_started/create/basic_markup.html",
         "type": 301
       },
       {
         "source": "docs/get_started/create/include_image?(.html)",
-        "destination": "/docs/tutorials/create/include_image.html",
+        "destination": "/docs/getting_started/create/include_image.html",
         "type": 301
       },
       {
         "source": "docs/get_started/create/presentation_layout?(.html)",
-        "destination": "/docs/tutorials/create/presentation_layout.html",
+        "destination": "/docs/getting_started/create/presentation_layout.html",
         "type": 301
       },
       {
         "source": "docs/get_started/create/preview_and_validate?(.html)",
-        "destination": "/docs/tutorials/create/preview_and_validate.html",
+        "destination": "/docs/getting_started/create/preview_and_validate.html",
         "type": 301
       },
       {
         "source": "docs/get_started/create/prepare_for_discovery?(.html)",
-        "destination": "/docs/tutorials/create/prepare_for_discovery.html",
+        "destination": "/docs/getting_started/create/prepare_for_discovery.html",
         "type": 301
       },
       {
         "source": "docs/get_started/create/publish?(.html)",
-        "destination": "/docs/tutorials/create/publish.html",
+        "destination": "/docs/getting_started/create/publish.html",
         "type": 301
       },
       {
         "source": "docs/get_started/login_requiring?(.html)",
-        "destination": "/docs/tutorials/login_requiring.html",
+        "destination": "/docs/interaction_dynamic/login_requiring.html",
         "type": 301
       },
       {
         "source": "docs/get_started/login_requiring/login?(.html)",
-        "destination": "/docs/tutorials/login_requiring/login.html",
+        "destination": "/docs/interaction_dynamic/login_requiring/login.html",
         "type": 301
       },
       {
         "source": "docs/get_started/login_requiring/add_comment?(.html)",
-        "destination": "/docs/tutorials/login_requiring/add_comment.html",
+        "destination": "/docs/interaction_dynamic/login_requiring/add_comment.html",
         "type": 301
       },
       {
         "source": "docs/get_started/login_requiring/logout?(.html)",
-        "destination": "/docs/tutorials/login_requiring/logout.html",
+        "destination": "/docs/interaction_dynamic/login_requiring/logout.html",
         "type": 301
       },
       {
         "source": "docs/get_started/login_requiring/summary?(.html)",
-        "destination": "/docs/tutorials/login_requiring/summary.html",
+        "destination": "/docs/interaction_dynamic/login_requiring/summary.html",
         "type": 301
       },
       {
         "source": "docs/get_started/live_blog?(.html)",
-        "destination": "/docs/tutorials/live_blog.html",
+        "destination": "/docs/interaction_dynamic/live_blog.html",
         "type": 301
       },
       {
@@ -698,6 +697,735 @@
       {
         "source": "/docs/reference/extended/:post*",
         "destination": "/docs/reference/components/:post*",
+        "type": 301
+      },
+      {
+        "source": "/docs/contribute/integrate-your-tech/",
+        "destination": "/docs/integration/integrate-your-tech.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/getting-started/",
+        "destination": "/docs/getting_started/quickstart.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/ads_on_amp?(.html)",
+        "destination": "/docs/ads_analytics/ads_on_amp.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/ads/ads_getting_started?(.html)",
+        "destination": "/docs/ads_analytics/ads_getting_started.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/ads/ads_tips?(.html)",
+        "destination": "/docs/ads_analytics/ads_tips.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/amp_replacements?(.html)",
+        "destination": "/docs/media/amp_replacements.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/amp_story_best_practices?(.html)",
+        "destination": "/docs/design/amp_story_best_practices.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/amp-cache-debugging?(.html)",
+        "destination": "/docs/troubleshooting/amp-cache-debugging.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/amp-cors-requests?(.html)",
+        "destination": "/docs/fundamentals/amp-cors-requests.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/analytics_amp?(.html)",
+        "destination": "/docs/ads_analytics/analytics_amp.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/analytics/analytics_basics?(.html)",
+        "destination": "/docs/ads_analytics/analytics_basics.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/analytics/analytics-vendors?(.html)",
+        "destination": "/docs/ads_analytics/analytics-vendors.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/analytics/deep_dive_analytics?(.html)",
+        "destination": "/docs/ads_analytics/deep_dive_analytics.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/analytics/use_cases?(.html)",
+        "destination": "/docs/ads_analytics/use_cases.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/discovery?(.html)",
+        "destination": "/docs/fundamentals/discovery.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/engagement?(.html)",
+        "destination": "/docs/fundamentals/engagement.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/how_cached?(.html)",
+        "destination": "/docs/fundamentals/how_cached.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/iframes?(.html)",
+        "destination": "/docs/media/iframes.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/integrate-with-apps?(.html)",
+        "destination": "/docs/integration/integrate-with-apps.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/pwa-amp.html?(.html)",
+        "destination": "/docs/integration/pwa-amp.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/pwa-amp/amp-as-pwa?(.html)",
+        "destination": "/docs/integration/pwa-amp/amp-as-pwa.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/pwa-amp/amp-in-pwa?(.html)",
+        "destination": "/docs/integration/pwa-amp/amp-in-pwa.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/pwa-amp/amp-to-pwa?(.html)",
+        "destination": "/docs/integration/pwa-amp/amp-to-pwa.html",
+        "type": 301
+      },      {
+        "source": "/docs/guides/responsive_amp?(.html)",
+        "destination": "/docs/design/responsive_amp.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/responsive/art_direction?(.html)",
+        "destination": "/docs/design/responsive/art_direction.html",
+        "type": 301
+      },      
+      {
+        "source": "/docs/guides/responsive/control_layout?(.html)",
+        "destination": "/docs/design/responsive/control_layout.html",
+        "type": 301
+      },     
+      {
+        "source": "/docs/guides/responsive/custom_fonts?(.html)",
+        "destination": "/docs/design/responsive/custom_fonts.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/responsive/placeholders?(.html)",
+        "destination": "/docs/design/responsive/placeholders.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/responsive/responsive_design?(.html)",
+        "destination": "/docs/design/responsive/responsive_design.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/responsive/style_pages?(.html)",
+        "destination": "/docs/design/responsive/style_pages.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/third_party_components?(.html)",
+        "destination": "/docs/fundamentals/third_party_components.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/guides/validate?(.html)",
+        "destination": "/docs/fundamentals/validate.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/amp-actions-and-events?(.html)",
+        "destination": "/docs/interaction_dynamic/amp-actions-and-events.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/spec?(.html)",
+        "destination": "/docs/fundamentals/spec.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/spec/amp-boilerplate?(.html)",
+        "destination": "/docs/fundamentals/spec/amp-boilerplate.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/spec/amp-html-layout?(.html)",
+        "destination": "/docs/design/amp-html-layout.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/validation_errors?(.html)",
+        "destination": "/docs/troubleshooting/validation_errors.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/add_advanced?(.html)",
+        "destination": "/docs/fundamentals/add_advanced.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/add_advanced/adding_carousels?(.html)",
+        "destination": "/docs/fundamentals/add_advanced/adding_carousels.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/add_advanced/adding_components?(.html)",
+        "destination": "/docs/fundamentals/add_advanced/adding_components.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/add_advanced/congratulations?(.html)",
+        "destination": "/docs/fundamentals/add_advanced/congratulations.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/add_advanced/fonts?(.html)",
+        "destination": "/docs/fundamentals/add_advanced/fonts.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/add_advanced/navigating?(.html)",
+        "destination": "/docs/fundamentals/add_advanced/navigating.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/add_advanced/review_code?(.html)",
+        "destination": "/docs/fundamentals/add_advanced/review_code.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/add_advanced/setting_up?(.html)",
+        "destination": "/docs/fundamentals/add_advanced/setting_up.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/add_advanced/tracking_data?(.html)",
+        "destination": "/docs/fundamentals/add_advanced/tracking_data.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/converting?(.html)",
+        "destination": "/docs/fundamentals/converting.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/converting/building-page?(.html)",
+        "destination": "/docs/fundamentals/converting/building-page.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/converting/congratulations?(.html)",
+        "destination": "/docs/fundamentals/converting/congratulations.html",
+        "type": 301
+      },
+       {
+        "source": "/docs/tutorials/converting/discoverable?(.html)",
+        "destination": "/docs/fundamentals/converting/discoverable.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/converting/resolving-errors?(.html)",
+        "destination": "/docs/fundamentals/converting/resolving-errors.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/converting/setting-up?(.html)",
+        "destination": "/docs/fundamentals/converting/setting-up.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/create?(.html)",
+        "destination": "/docs/getting_started/create.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/create/basic_markup?(.html)",
+        "destination": "/docs/getting_started/create/basic_markup.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/create/include_image?(.html)",
+        "destination": "/docs/getting_started/create/include_image.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/create/prepare_for_discovery?(.html)",
+        "destination": "/docs/getting_started/create/prepare_for_discovery.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/create/presentation_layout?(.html)",
+        "destination": "/docs/getting_started/create/presentation_layout.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/create/preview_and_validate?(.html)",
+        "destination": "/docs/getting_started/create/preview_and_validate.html",
+        "type": 301
+      },
+       {
+        "source": "/docs/tutorials/create/publish?(.html)",
+        "destination": "/docs/getting_started/create/publish.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/interactivity?(.html)",
+        "destination": "/docs/interaction_dynamic/interactivity.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/interactivity/advanced-interactivity?(.html)",
+        "destination": "/docs/interaction_dynamic/interactivity/advanced-interactivity.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/interactivity/get-familiar?(.html)",
+        "destination": "/docs/interaction_dynamic/interactivity/get-familiar.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/interactivity/prereqs-setup?(.html)",
+        "destination": "/docs/interaction_dynamic/interactivity/prereqs-setup.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/interactivity/remote-data?(.html)",
+        "destination": "/docs/interaction_dynamic/interactivity/remote-data.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/interactivity/wrapping-up?(.html)",
+        "destination": "/docs/interaction_dynamic/interactivity/wrapping-up.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/live_blog?(.html)",
+        "destination": "/docs/interaction_dynamic/live_blog.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/login_requiring?(.html)",
+        "destination": "/docs/interaction_dynamic/login_requiring.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/login_requiring/add_comment?(.html)",
+        "destination": "/docs/interaction_dynamic/login_requiring/add_comment.html",
+        "type": 301
+      },
+       {
+        "source": "/docs/tutorials/login_requiring/login?(.html)",
+        "destination": "/docs/interaction_dynamic/login_requiring/login.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/login_requiring/logout?(.html)",
+        "destination": "/docs/interaction_dynamic/login_requiring/logout.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/login_requiring/summary?(.html)",
+        "destination": "/docs/interaction_dynamic/login_requiring/summary.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/visual_story?(.html)",
+        "destination": "/docs/design/visual_story.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/visual_story/add_more_pages?(.html)",
+        "destination": "/docs/design/visual_story/add_more_pages.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/visual_story/animating_elements?(.html)",
+        "destination": "/docs/design/visual_story/animating_elements.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/visual_story/congratulations?(.html)",
+        "destination": "/docs/design/visual_story/congratulations.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/visual_story/create_bookend?(.html)",
+        "destination": "/docs/design/visual_story/create_bookend.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/visual_story/create_cover_page?(.html)",
+        "destination": "/docs/design/visual_story/create_cover_page.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/visual_story/parts_of_story?(.html)",
+        "destination": "/docs/design/visual_story/parts_of_story.html",
+        "type": 301
+      },
+       {
+        "source": "/docs/tutorials/visual_story/setting_up?(.html)",
+        "destination": "/docs/design/visual_story/setting_up.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/tutorials/visual_story/validation?(.html)",
+        "destination": "/docs/design/visual_story/validation.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/debug/validate",
+        "destination": "/:lang/docs/fundamentals/validate.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/",
+        "destination": "/:lang/docs/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting-started/",
+        "destination": "/:lang/docs/getting_started/quickstart.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/ads_on_amp",
+        "destination": "/:lang/docs/ads_analytics/ads_on_amp.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/ads/ads_getting_started",
+        "destination": "/:lang/docs/ads_analytics/ads_getting_started.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/ads/ads_tips",
+        "destination": "/:lang/docs/ads_analytics/ads_tips.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/amp_replacements",
+        "destination": "/:lang/docs/media/amp_replacements.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/analytics_amp",
+        "destination": "/:lang/docs/ads_analytics/analytics_amp.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/analytics/analytics_basics",
+        "destination": "/:lang/docs/ads_analytics/analytics_basics.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/analytics/analytics-vendors",
+        "destination": "/:lang/docs/ads_analytics/analytics-vendors.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/analytics/deep_dive_analytics",
+        "destination": "/:lang/docs/ads_analytics/deep_dive_analytics.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/analytics/use_cases",
+        "destination": "/:lang/docs/ads_analytics/use_cases.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/discovery",
+        "destination": "/:lang/docs/fundamentals/discovery.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/engagement",
+        "destination": "/:lang/docs/fundamentals/engagement.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/how_cached",
+        "destination": "/:lang/docs/fundamentals/how_cached.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/pwa-amp",
+        "destination": "/:lang/docs/integration/pwa-amp.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/pwa-amp/amp-as-pwa",
+        "destination": "/:lang/docs/integration/pwa-amp/amp-as-pwa.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/pwa-amp/amp-in-pwa",
+        "destination": "/:lang/docs/integration/pwa-amp/amp-in-pwa.html",
+        "type": 301
+      },
+        {
+        "source": "/:lang/docs/guides/pwa-amp/amp-to-pwa",
+        "destination": "/:lang/docs/integration/pwa-amp/amp-to-pwa.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/responsive_amp",
+        "destination": "/:lang/docs/design/responsive_amp.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/responsive/art_direction",
+        "destination": "/:lang/docs/design/responsive/art_direction.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/responsive/control_layout",
+        "destination": "/:lang/docs/design/responsive/control_layout.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/responsive/custom_fonts",
+        "destination": "/:lang/docs/design/responsive/custom_fonts.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/responsive/placeholders",
+        "destination": "/:lang/docs/design/responsive/placeholders.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/responsive/responsive_design",
+        "destination": "/:lang/docs/design/responsive/responsive_design.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/responsive/style_pages",
+        "destination": "/:lang/docs/design/responsive/style_pages.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/third_party_components",
+        "destination": "/:lang/docs/fundamentals/third_party_components.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/validate",
+        "destination": "/:lang/docs/fundamentals/validate.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/spec",
+        "destination": "/:lang/docs/fundamentals/spec.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/spec/amp-boilerplate",
+        "destination": "/:lang/docs/fundamentals/spec/amp-boilerplate.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/spec/amp-html-layout",
+        "destination": "/:lang/docs/design/amp-html-layout.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/validation_errors",
+        "destination": "/:lang/docs/troubleshooting/validation_errors.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/add_advanced",
+        "destination": "/:lang/docs/fundamentals/add_advanced.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/add_advanced/adding_carousels",
+        "destination": "/:lang/docs/fundamentals/add_advanced/adding_carousels.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/add_advanced/adding_components",
+        "destination": "/:lang/docs/fundamentals/add_advanced/adding_components.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/add_advanced/congratulations",
+        "destination": "/:lang/docs/fundamentals/add_advanced/congratulations.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/add_advanced/fonts",
+        "destination": "/:lang/docs/fundamentals/add_advanced/fonts.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/add_advanced/navigating",
+        "destination": "/:lang/docs/fundamentals/add_advanced/navigating.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/add_advanced/review_code",
+        "destination": "/:lang/docs/fundamentals/add_advanced/review_code.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/add_advanced/setting_up",
+        "destination": "/:lang/docs/fundamentals/add_advanced/setting_up.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/add_advanced/tracking_data",
+        "destination": "/:lang/docs/fundamentals/add_advanced/tracking_data.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/converting",
+        "destination": "/:lang/docs/fundamentals/converting.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/converting/building-page",
+        "destination": "/:lang/docs/fundamentals/converting/building-page.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/converting/congratulations",
+        "destination": "/:lang/docs/fundamentals/converting/congratulations.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/converting/discoverable",
+        "destination": "/:lang/docs/fundamentals/converting/discoverable.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/converting/resolving-errors",
+        "destination": "/:lang/docs/fundamentals/converting/resolving-errors.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/converting/setting-up",
+        "destination": "/:lang/docs/fundamentals/converting/setting-up.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/create",
+        "destination": "/:lang/docs/getting_started/create.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/create/basic_markup",
+        "destination": "/:lang/docs/getting_started/create/basic_markup.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/create/include_image",
+        "destination": "/:lang/docs/getting_started/create/include_image.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/create/prepare_for_discovery",
+        "destination": "/:lang/docs/getting_started/create/prepare_for_discovery.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/create/presentation_layout",
+        "destination": "/:lang/docs/getting_started/create/presentation_layout.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/create/preview_and_validate",
+        "destination": "/:lang/docs/getting_started/create/preview_and_validate.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/create/publish",
+        "destination": "/:lang/docs/getting_started/create/publish.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/interactivity",
+        "destination": "/:lang/docs/interaction_dynamic/interactivity.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/interactivity/advanced-interactivity",
+        "destination": "/:lang/docs/interaction_dynamic/interactivity/advanced-interactivity.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/interactivity/get-familiar",
+        "destination": "/:lang/docs/interaction_dynamic/interactivity/get-familiar.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/interactivity/prereqs-setup",
+        "destination": "/:lang/docs/interaction_dynamic/interactivity/prereqs-setup.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/interactivity/remote-data",
+        "destination": "/:lang/docs/interaction_dynamic/interactivity/remote-data.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/interactivity/wrapping-up",
+        "destination": "/:lang/docs/interaction_dynamic/interactivity/wrapping-up.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/live_blog",
+        "destination": "/:lang/docs/interaction_dynamic/live_blog.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/login_requiring",
+        "destination": "/:lang/docs/interaction_dynamic/login_requiring.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/login_requiring/add_comment",
+        "destination": "/:lang/docs/interaction_dynamic/login_requiring/add_comment.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/login_requiring/login",
+        "destination": "/:lang/docs/interaction_dynamic/login_requiring/login.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/login_requiring/logout",
+        "destination": "/:lang/docs/interaction_dynamic/login_requiring/logout.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/tutorials/login_requiring/summary",
+        "destination": "/:lang/docs/interaction_dynamic/login_requiring/summary.html",
         "type": 301
       },
       {

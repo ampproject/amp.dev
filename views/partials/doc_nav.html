@@ -16,7 +16,7 @@
   {% set open = sub_collection.pod_path in usedDoc.pod_path[:-3] %}
   <li class="{{class}} {% if sub_collection.exists %}expandable{% endif %}">
 
-    <a class="{% if doc == item %}current{% endif %} section-name {% if open %}open{% endif %} section-name {% if item.goto %}external{% endif %}" href="{% if item.goto_internal %} {{g.doc(item.goto_internal, locale=usedDoc.locale).url.path}} {% else %} {{item.goto or item.url.path}} {% endif %}">{{_(item.title)}}</a>
+    <a class="{% if doc == item %}current{% endif %} section-name {% if open %}open{% endif %} section-name {% if item.goto %}external{% endif %}" href="{% if item.goto_internal %} {{g.doc(item.goto_internal, locale=usedDoc.locale).url.path}} {% else %} {{item.goto or item.url.path}} {% endif %}">{{_(item.title)}}{% if item.tutorial %}<span class="tutorial" title="Tutorial"></span>{% endif %}</a>
 
     {% if open and sub_collection.exists%}
       {% if sub_collection.custom_children %}
@@ -63,8 +63,19 @@
     {% endfor %}
   {% else %}
     <{{tag(item)}}>
+      {% set hasTutorials = [] %}
       {% for child in docs %}
-        {{render_item(child, "sub-level")}}
+        {% if not child.tutorial %}
+          {{render_item(child, "sub-level")}}
+        {% else %}
+          {% do hasTutorials.append(1) %}
+        {% endif %}
+      {% endfor %}
+
+      {% for child in docs %}
+        {% if child.tutorial %}
+            {{render_item(child, "sub-level")}}
+        {% endif %}
       {% endfor %}
     </{{tag(item)}}>
   {% endif %}

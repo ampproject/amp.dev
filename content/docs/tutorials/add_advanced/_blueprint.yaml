@@ -1,5 +1,0 @@
-$path: /docs/tutorials/add_advanced/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/tutorials/add_advanced/{base}.html
-$title@: Add advanced AMP features

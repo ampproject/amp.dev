@@ -1,5 +1,0 @@
-$view: /views/doc.html
-$path: /docs/guides/responsive/{base}.html
-$localization:
-  path: /{locale}/docs/guides/responsive/{base}.html
-$title@: Style & Layout

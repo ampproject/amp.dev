@@ -90,10 +90,9 @@ resources:
     - name@: Tutorials
       description@: Create your first ecommerce page in AMP.
       icon: resources/tutorials.svg
-      url: /content/docs/tutorials/interactivity.md
-
+      url: /content/docs/interaction_dynamic/interactivity.md
 
 cta:
   title@: Get Started
   link_text@: Quickstart
-  link_url: /content/docs/getting-started.md
+  link_url: /content/docs/getting_started/quickstart.md

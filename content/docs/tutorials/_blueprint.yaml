@@ -1,6 +1,0 @@
-$title@: Tutorials
-$view: /views/doc.html
-$path: /docs/tutorials/{base}.html
-$localization:
-  path: /{locale}/docs/tutorials/{base}.html
-index_path: /content/docs/getting-started.md

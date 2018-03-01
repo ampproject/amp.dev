@@ -22,24 +22,22 @@ menu:
     copy@: Docs
     collection: docs
     children:
-      - href: /content/docs/getting-started.md
-        copy@: "Getting started"
-      - href: /content/docs/tutorials/create.md
-        copy@: "Tutorials"
-        collection: docs/tutorials
-      - href: /content/docs/guides/responsive_amp.md
-        copy@: "Guides"
-        collection: docs/guides
-      - href: /content/docs/reference/components.md
+      - href: /content/docs/build.md
+        copy@: "Guides & Tutorials"
+      - href: /content/reference/components.md
         copy@: "Reference"
-        collection: docs/reference
       - href: https://ampbyexample.com/
         copy@: "Examples"
       - href: https://youtube.com/TheAMPProject
         copy@: "Videos"
-      - href: /content/docs/contribute/contribute.md
-        copy@: "Contribute"
-        collection: docs/contribute
+  - href: /content/reference/components.md
+    copy@: "Reference"
+    collection: reference
+    children:
+      - href: /content/reference/components.md
+        copy@: "Components"
+      - href: /content/reference/experimental.md
+        copy@: "Experimental features"
   - href: none
     copy@: Tools
     children:

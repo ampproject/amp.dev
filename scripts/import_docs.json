@@ -9,39 +9,37 @@
         "title": "AMP HTML Specification",
         "order": 2,
         "from": "spec/amp-html-format.md",
-        "to": "docs/reference/spec.md"
+        "to": "docs/fundamentals/spec.md"
     },
     {
         "title": "AMP Boilerplate Code",
         "order": 3,
         "from": "spec/amp-boilerplate.md",
-        "to": "docs/reference/spec/amp-boilerplate.md"
+        "to": "docs/fundamentals/spec/amp-boilerplate.md"
     },
     {
         "title": "AMP HTML Layout System",
         "order": 4,
         "from": "spec/amp-html-layout.md",
-        "to": "docs/reference/spec/amp-html-layout.md"
+        "to": "docs/design/amp-html-layout.md"
     },
     {
         "title": "Actions and events in AMP",
         "order": 8,
         "from": "spec/amp-actions-and-events.md",
-        "to": "docs/reference/amp-actions-and-events.md"
+        "to": "docs/interaction_dynamic/amp-actions-and-events.md"
     },
     {
         "title": "Debug AMP Cache issues",
         "order": 8,
         "from": "spec/amp-cache-debugging.md",
-        "to": "docs/guides/amp-cache-debugging.md",
-        "category": "Debug"
+        "to": "docs/troubleshooting/amp-cache-debugging.md"
     },
     {
         "title": "CORS in AMP",
         "order": 12,
         "from": "spec/amp-cors-requests.md",
-        "to": "docs/guides/amp-cors-requests.md",
-        "category": "Deploy"
+        "to": "docs/fundamentals/amp-cors-requests.md"
     },
     {
         "title": "Getting Support",

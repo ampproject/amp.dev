@@ -1,4 +1,0 @@
-$path: /docs/guides/analytics/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/guides/analytics/{base}.html
