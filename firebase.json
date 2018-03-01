@@ -1398,7 +1398,7 @@
         "destination": "/:lang/docs/interaction_dynamic/interactivity/wrapping-up.html",
         "type": 301
       },
-     {
+      {
         "source": "/:lang/docs/tutorials/live_blog",
         "destination": "/:lang/docs/interaction_dynamic/live_blog.html",
         "type": 301
@@ -1426,6 +1426,11 @@
       {
         "source": "/:lang/docs/tutorials/login_requiring/summary",
         "destination": "/:lang/docs/interaction_dynamic/login_requiring/summary.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/debug/validate.html",
+        "destination": "/:lang/docs/guides/validate.html",
         "type": 301
       }
     ],
