@@ -699,6 +699,11 @@
         "source": "/docs/reference/extended/:post*",
         "destination": "/docs/reference/components/:post*",
         "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/debug/validate.html",
+        "destination": "/:lang/docs/guides/validate.html",
+        "type": 301
       }
     ],
     "ignore": [
