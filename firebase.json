@@ -1174,7 +1174,7 @@
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/pwa-amp.html",
+        "source": "/:lang/docs/guides/pwa-amp",
         "destination": "/:lang/docs/integration/pwa-amp.html",
         "type": 301
       },
