@@ -1,0 +1,87 @@
+hero:
+  title: AMP fits anywhere.
+  description: AMP is a versatile format allowing for design customization and flexibility.
+
+large_cta:
+  title@: Create your first AMP page
+  cta@: Start Building Now
+  cta_url: /content/docs/getting-started.md
+  lines_right: /static/img/home/lines3.svg
+  lines_right_width: 360
+  lines_right_height: 377
+
+cards:
+  - title@: Retail & Commerce
+    img: /static/img/uses/card-01@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-01@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
+    url: /learn/who-uses-amp/ecommerce/
+
+  - title@: News Articles
+    img: /static/img/uses/card-02@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-02@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
+    url: /learn/who-uses-amp/publishers/
+
+  - title@: Blogs
+    img: /static/img/uses/card-03@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-03@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
+    url: https://www.ampstart.com/templates#news-blog
+    external: true
+
+  - title@: Advertising
+    img: /static/img/uses/card-04@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-04@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
+    url: /learn/who-uses-amp/amp-ads/
+
+  - title@: Recipes
+    img: /static/img/uses/card-05@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-05@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
+    url: https://ampbyexample.com/samples_templates/recipe/
+    external: true
+
+  - title@: Visual Stories
+    img: /static/img/uses/card-06@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-06@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
+    url: /stories
+
+  - title@: Travel
+    img: /static/img/uses/card-07@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-07@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
+    url: /learn/who-uses-amp/ecommerce/
+
+  - title@: You Decide!
+    img: /static/img/uses/card-08@1x.jpg
+    img_width: 289
+    img_height: 478
+    img2x: /static/img/uses/card-08@2x.jpg
+    img_width2x: 578
+    img_height2x: 956
+    url: https://ampbyexample.com/
+    external: true

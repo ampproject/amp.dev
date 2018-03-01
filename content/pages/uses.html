@@ -1,0 +1,47 @@
+---
+$title: Uses
+class: amp-uses
+
+stylesheet: pages/uses.css
+
+components:
+- youtube
+---
+
+{% set uses = g.doc('/content/includes/uses.yaml', locale=doc.locale) %}
+<div class="uses-page">
+  <div class="hero-background"></div>
+  <div class="hero-background-white"></div>
+  <section class="hero">
+    <h1 class="hero-title">{{_(uses.hero.title)}}</h1>
+    <h2 class="hero-description">{{_(uses.hero.description)}}</h2>
+  </section>
+  <div class="cards-wrapper-outer">
+    <div class="cards-wrapper">
+      {% for card in uses.cards %}
+      <a class="link-card" href="{{ card.url }}" {% if card.external %}target="_blank"{% endif %}>
+        <amp-img
+          class="card-image"
+          noloading
+          width={{card.img_height}}
+          height={{card.img_width}}
+          layout=responsive
+          alt="{{_(card.title)}}"
+          srcset="{{card.img2x}} {{card.img_width2x}}w,
+                {{card.img}} {{card.img_width}}w"
+          src="{{card.img2x}}">
+        </amp-img>
+        <div class="card-title-wrapper">
+          <div class="card-title">
+            {{_(card.title)}}
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% with large_cta = uses.large_cta %}
+  {% include "/views/partials/large-cta.html" %}
+{% endwith %}
+
