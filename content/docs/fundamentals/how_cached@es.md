@@ -60,7 +60,7 @@ Al usar el formato AMP, usted está haciendo que su contenido esté disponible p
 La URL de caché de AMP no es una URL de usuario, es decir, los usuarios normalmente no solicitan contenido a través de esas URL.
 {% endcall %}
 
-* **Agregados del Editor**: los editores pueden agregar específicamente la página de AMP al caché de AMP. Esta opción solo se aplica a Google AMP Cache (consulte [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-ping)).
+* **Agregados del Editor**: los editores pueden agregar específicamente la página de AMP al caché de AMP. Esta opción solo se aplica a Google AMP Cache (consulte [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache)).
 
 
 ## Recursos Adicionales
