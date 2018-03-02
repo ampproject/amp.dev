@@ -15,12 +15,12 @@ $title: 添加图片和视频
 *  我们需要控制网络请求，以 [延迟加载并高效排定资源的优先顺序](/zh_cn/learn/about-how/#prioritize-resource-loading)
 
 {% call callout('注意', type='caution') %}
- 尽管默认的 HTML 组件不受支持，但仍*会*  呈现在网页上，不过 AMP 不会 [验证您的网页，](/zh_cn/doc/guides/debug/validate.html) 
+ 尽管默认的 HTML 组件不受支持，但仍*会*  呈现在网页上，不过 AMP 不会 [验证您的网页，](/zh_cn/docs/guides/debug/validate.html) 
 如果您的网页上显示了 HTML 组件，您将无法享受 AMP 提供的所有优势。{% endcall %}
 
 ## 图片
 
- 使用 [`amp-img`](/zh_cn/doc/reference/components/amp-img.html) 元素向您的网页中添加图片，如下所示：
+ 使用 [`amp-img`](/zh_cn/docs/reference/components/amp-img.html) 元素向您的网页中添加图片，如下所示：
 
 <!--embedded example - fixed size image -->
 <div>
@@ -69,7 +69,7 @@ $title: 添加图片和视频
 </div>
 
 {% call callout('阅读', type='success') %}
-详细了解 [高级布局技术](/zh_cn/doc/guides/responsive/control_layout.html)
+详细了解 [高级布局技术](/zh_cn/docs/guides/responsive/control_layout.html)
 。{% endcall %}
 
 ### 行为和占位符
@@ -77,12 +77,12 @@ $title: 添加图片和视频
 AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位置、系统资源、连接带宽或其他因素，选择延迟资源加载或排定资源加载的优先顺序。
 
 {% call callout('阅读', type='success') %}
-了解如何 [提供后备图片和占位符](/zh_cn/doc/guides/responsive/placeholders.html)
+了解如何 [提供后备图片和占位符](/zh_cn/docs/guides/responsive/placeholders.html)
 。{% endcall %}
 
 ## 动画图片
 
- The [`amp-anim`](/zh_cn/doc/reference/components/amp-anim.html) 元素与 `amp-img` 元素非常相似，且前者提供额外功能，可以管理 GIF 等动画图片的加载和播放。
+ The [`amp-anim`](/zh_cn/docs/reference/components/amp-anim.html) 元素与 `amp-img` 元素非常相似，且前者提供额外功能，可以管理 GIF 等动画图片的加载和播放。
 
 <!--embedded amp-anim basic example -->
 <div>
@@ -103,7 +103,7 @@ src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>`
 
 ## 视频
 
- 使用 [`amp-video`](/zh_cn/doc/reference/components/amp-video.html) 元素向您的网页中添加视频。
+ 使用 [`amp-video`](/zh_cn/docs/reference/components/amp-video.html) 元素向您的网页中添加视频。
 
  仅针对直接 HTML5 视频文件嵌入使用此元素。此元素能以 AMP 确定的时间延迟加载由
 `src` 属性所指定的视频资源。
@@ -124,7 +124,7 @@ src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>`
 
 ## 音频
 
- 使用 [`amp-audio`](/zh_cn/doc/reference/components/amp-audio.html) 元素向您的网页中添加音频资源。
+ 使用 [`amp-audio`](/zh_cn/docs/reference/components/amp-audio.html) 元素向您的网页中添加音频资源。
 
  仅针对直接 HTML5 音频文件嵌入使用此元素。像 AMP 网页中所有嵌入的外部资源一样，此元素能以 AMP 确定的时间延迟加载由
 `src` 属性所指定的音频资源。
