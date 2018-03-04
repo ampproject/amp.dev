@@ -1,10 +1,10 @@
 .searchbar {
   position: absolute;
-  right: 175px;
+  right: 150px;
   top: 23px;
   z-index: 2;
 
-  @include max-screen(1030px) {
+  @include max-screen(1140px) {
     display: none;
   }
 

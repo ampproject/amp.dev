@@ -64,7 +64,7 @@ msgstr ""
 msgid "AMP Experiments"
 msgstr ""
 
-#: /content/docs/reference/spec/_blueprint.yaml
+#: /content/docs/fundamentals/spec/_blueprint.yaml
 msgid "AMP HTML Specification"
 msgstr "Especificación AMP HTML"
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "AMP Validator"
 msgstr ""
 
-#: /content/docs/reference/components/_blueprint.yaml
+#: /content/reference/components/_blueprint.yaml
 msgid "AMP components"
 msgstr "Componentes AMP"
 
@@ -265,7 +265,7 @@ msgstr ""
 msgid "About"
 msgstr "Acerca de"
 
-#: /content/docs/tutorials/add_advanced/_blueprint.yaml
+#: /content/docs/fundamentals/add_advanced/_blueprint.yaml
 msgid "Add advanced AMP features"
 msgstr ""
 
@@ -286,13 +286,13 @@ msgstr ""
 msgid "Ads"
 msgstr "Anuncios"
 
-#: /content/docs/reference/components/ads-analytics/_blueprint.yaml
+#: /content/reference/components/ads-analytics/_blueprint.yaml
 msgid "Ads & Analytics - AMP components"
 msgstr "Anuncios y Analíticas - AMP componentes"
 
-#: /content/docs/reference/components/_blueprint.yaml
+#: /content/reference/components/_blueprint.yaml
 msgid "Ads & analytics"
-msgstr ""
+msgstr "Anuncios y Analíticas"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Adtech success stories"
@@ -305,6 +305,10 @@ msgstr "Anunciantes"
 #: /content/learn/who/amp-ads.yaml
 msgid "Advertisers:<br>Drive campaign ROI"
 msgstr "Anunciantes:<br>Aumentar el retorno de inversión de las campañas"
+
+#: /content/docs/ads_analytics.md /content/docs/ads_analytics/_blueprint.yaml
+msgid "Advertising & Analytics"
+msgstr "Anuncios y Analíticas"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -467,7 +471,8 @@ msgstr ""
 
 #: /content/includes/menu.yaml /content/learn/case-studies.html
 #: /content/learn/case-studies/category/_blueprint.yaml
-#: /content/learn/case-studies@es.html /views/about-casestudies.html:12
+#: /content/learn/case-studies@es.html /content/learn/who/ecommerce.yaml
+#: /views/about-casestudies.html:12
 msgid "Case Studies"
 msgstr "Casos de Estudio"
 
@@ -479,12 +484,15 @@ msgstr ""
 msgid "Community Resources"
 msgstr "Recursos de la Comunidad"
 
+#: /content/includes/menu.yaml
+msgid "Components"
+msgstr "Componentes"
+
 #: /content/includes/who.yaml
 msgid "Content Platforms"
 msgstr "Plataformas de Contenido"
 
 #: /content/docs/contribute.md /content/docs/contribute/_blueprint.yaml
-#: /content/docs/reference/_blueprint.yaml /content/includes/menu.yaml
 msgid "Contribute"
 msgstr "Contribuye"
 
@@ -512,19 +520,19 @@ msgstr ""
 "cualquier lugar, ya sea en anuncios, en páginas de destino o en tu sitio web "
 "completo."
 
-#: /content/docs/tutorials/converting/_blueprint.yaml
+#: /content/docs/fundamentals/converting/_blueprint.yaml
 msgid "Convert HTML to AMP"
 msgstr ""
 
-#: /content/docs/tutorials/create/_blueprint.yaml
+#: /content/docs/getting_started/create/_blueprint.yaml
 msgid "Create Your First AMP Page"
 msgstr "Crear tu primer página AMP"
 
-#: /content/docs/tutorials/login_requiring/_blueprint.yaml
+#: /content/docs/interaction_dynamic/login_requiring/_blueprint.yaml
 msgid "Create a login-requiring AMP page"
 msgstr "Crea una página AMP con login requerido"
 
-#: /content/docs/tutorials/visual_story/_blueprint.yaml
+#: /content/docs/design/visual_story/_blueprint.yaml
 msgid "Create a visual AMP Story"
 msgstr ""
 
@@ -532,7 +540,7 @@ msgstr ""
 msgid "Create fast, user-friendly ecommerce experiences"
 msgstr ""
 
-#: /content/docs/tutorials/interactivity/_blueprint.yaml
+#: /content/docs/interaction_dynamic/interactivity/_blueprint.yaml
 msgid "Create interactive AMP pages"
 msgstr ""
 
@@ -540,9 +548,13 @@ msgstr ""
 #: /content/learn/case-studies/category/advertisers.md
 #: /content/learn/case-studies/category/ecommerce.md
 #: /content/learn/case-studies/category/publishers.md
-#: /content/learn/case-studies@es.html /content/learn/showcases.html
+#: /content/learn/case-studies@es.html
 msgid "Create your first AMP page"
 msgstr "Crear tu primer página AMP"
+
+#: /content/learn/who/ecommerce.yaml
+msgid "Create your first ecommerce page in AMP."
+msgstr ""
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Dane Knecht"
@@ -562,6 +574,14 @@ msgstr ""
 "Ofrece experiencias más rápidas y de mayor calidad en cualquier punto de "
 "contacto."
 
+#: /content/learn/who/ecommerce.yaml
+msgid "Demos"
+msgstr ""
+
+#: /content/docs/design.md /content/docs/design/_blueprint.yaml
+msgid "Design & Layout"
+msgstr "Diseño"
+
 #: /content/learn/about/amp-design-principles.yaml
 #: /content/learn/about/amp-design-principles@es.yaml
 #: /content/learn/about/amp-design-principles@ko.yaml
@@ -573,8 +593,11 @@ msgstr "Principios de Diseño"
 msgid "Developer Support"
 msgstr "Soporte a Desarrolladores"
 
-#: /content/docs/_blueprint.yaml /content/docs/build.md /content/docs/build@es.md
-#: /content/includes/menu.yaml
+#: /content/learn/who/ecommerce.yaml
+msgid "Discover more success stories with AMP."
+msgstr ""
+
+#: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
 msgid "Docs"
 msgstr "Documentos"
 
@@ -608,13 +631,13 @@ msgstr ""
 msgid "Download PDF Case study"
 msgstr "Descargar Caso de Estudio en PDF"
 
-#: /content/docs/reference/components/dynamic-content/_blueprint.yaml
+#: /content/reference/components/dynamic-content/_blueprint.yaml
 msgid "Dynamic Content - AMP components"
 msgstr "Contenido Dinámico - AMP componentes"
 
-#: /content/docs/reference/components/_blueprint.yaml
+#: /content/reference/components/_blueprint.yaml
 msgid "Dynamic content"
-msgstr ""
+msgstr "Contenido Dinámico"
 
 #: /content/learn/about/amp-design-principles.yaml
 msgid ""
@@ -681,6 +704,14 @@ msgstr "Eventos"
 msgid "Examples"
 msgstr "Ejemplos"
 
+#: /content/includes/menu.yaml
+msgid "Experimental features"
+msgstr ""
+
+#: /content/learn/who/ecommerce.yaml
+msgid "Explore live code samples and demos."
+msgstr ""
+
 #: /content/includes/menu.yaml /content/support/faqs.md
 #: /content/support/faqs/_blueprint.yaml
 msgid "FAQ"
@@ -710,12 +741,16 @@ msgstr "Seguir AMP"
 msgid "Follow us on Twitter"
 msgstr "Seguinos en Twitter"
 
+#: /content/docs/fundamentals.md /content/docs/fundamentals/_blueprint.yaml
+msgid "Fundamentals"
+msgstr "Fundamentos"
+
 #: /content/includes/stories.yaml /content/learn/about/benefits.yaml
+#: /content/learn/showcases.html /content/learn/who/ecommerce.yaml
 msgid "Get Started"
 msgstr "Empezar"
 
-#: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/ecommerce.yaml
-#: /content/learn/who/publishers.yaml
+#: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/publishers.yaml
 msgid "Get Started Building"
 msgstr "Empezar armando"
 
@@ -733,13 +768,17 @@ msgstr "Empezar armando"
 msgid "Get started with AMP"
 msgstr "Empezar con AMP"
 
-#: /content/includes/menu.yaml
-msgid "Getting started"
+#: /content/docs/getting_started.md /content/docs/getting_started/_blueprint.yaml
+msgid "Getting Started"
 msgstr "Empezando"
 
 #: /content/docs/contribute/github.md
 msgid "GitHub"
 msgstr "GitHub"
+
+#: /content/learn/who/ecommerce.yaml
+msgid "Grab ready-made design templates."
+msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Greg Manifold, Design Director"
@@ -751,10 +790,9 @@ msgstr ""
 "Aumentar el compromiso y aumentar las conversiones con experiencias más "
 "rápidas"
 
-#: /content/docs/guides.md /content/docs/guides/_blueprint.yaml
-#: /content/docs/reference/_blueprint.yaml /content/includes/menu.yaml
-msgid "Guides"
-msgstr "Guías"
+#: /content/includes/menu.yaml
+msgid "Guides & Tutorials"
+msgstr "Guías y Tutoriales"
 
 #: /content/includes/stories.yaml
 msgid "Harry & Meghan A to Z"
@@ -826,6 +864,22 @@ msgstr "Mejora el compromiso de los usuarios con experiencias rápidas y convinc
 msgid "Increase your reach"
 msgstr "Aumenta tu alcance"
 
+#: /content/docs/integration/_blueprint.yaml
+msgid "Integrate with AMP"
+msgstr ""
+
+#: /content/docs/integration.md
+msgid "Integration"
+msgstr "Integración"
+
+#: /content/docs/interaction_dynamic.md
+msgid "Interactivity & Dynamic content"
+msgstr "Interactividad y Contenido Dinámico"
+
+#: /content/docs/interaction_dynamic/_blueprint.yaml
+msgid "Interactivity & dynamic content"
+msgstr "Interactividad y Contenido Dinámico"
+
 #: /content/learn/who/amp-ads.yaml
 msgid "Join Today"
 msgstr "Unete hoy"
@@ -850,11 +904,11 @@ msgstr ""
 msgid "Keep your audience engaged with AMP pages"
 msgstr "Manten a tu audiencia comprometida con páginas AMP"
 
-#: /content/docs/reference/components/_blueprint.yaml
+#: /content/reference/components/_blueprint.yaml
 msgid "Layout"
 msgstr "Diseño"
 
-#: /content/docs/reference/components/layout/_blueprint.yaml
+#: /content/reference/components/layout/_blueprint.yaml
 msgid "Layout - AMP components"
 msgstr "Diseño - AMP componentes"
 
@@ -893,6 +947,10 @@ msgstr "Aprende quién usa AMP"
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr "Los anuncios más livianos conducen a mejores experiencias publicitarias"
 
+#: /content/docs/integration/supported_integrations.md
+msgid "List of supported partners & integrations"
+msgstr ""
+
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
 msgstr ""
@@ -925,11 +983,11 @@ msgid ""
 "/amp-a4a-format.md'>Join</a> the AMP Project today."
 msgstr ""
 
-#: /content/docs/reference/components/_blueprint.yaml
+#: /content/reference/components/_blueprint.yaml
 msgid "Media"
 msgstr "Media"
 
-#: /content/docs/reference/components/media/_blueprint.yaml
+#: /content/reference/components/media/_blueprint.yaml
 msgid "Media - AMP components"
 msgstr "Media - AMP componentes"
 
@@ -944,6 +1002,14 @@ msgstr ""
 #: /content/includes/events.yaml
 msgid "More Past Events"
 msgstr "Más Eventos Pasados"
+
+#: /content/docs/media.md
+msgid "Multimedia & Animations"
+msgstr "Multimedia y Animaciones"
+
+#: /content/docs/media/_blueprint.yaml
+msgid "Multimedia & animations"
+msgstr "Multimedia y Animaciones"
 
 #: /content/includes/doc.yaml
 msgid "Need more help?"
@@ -1004,11 +1070,11 @@ msgstr "Eventos Pasados"
 msgid "Platform Support"
 msgstr "Soporte de Plataforma"
 
-#: /content/docs/reference/components/_blueprint.yaml
+#: /content/reference/components/_blueprint.yaml
 msgid "Presentation"
 msgstr "Presentación"
 
-#: /content/docs/reference/components/presentation/_blueprint.yaml
+#: /content/reference/components/presentation/_blueprint.yaml
 msgid "Presentation - AMP components"
 msgstr "Presentación - AMP componentes"
 
@@ -1063,9 +1129,10 @@ msgstr ""
 msgid "Publishers:<br>Keep audiences engaged"
 msgstr "Editores:<br>Mantener a las audiencias comprometidas"
 
-#: /content/learn/about/benefits.yaml
+#: /content/learn/about/benefits.yaml /content/learn/who/ad-tech-platforms.yaml
+#: /content/learn/who/ecommerce.yaml /content/learn/who/publishers.yaml
 msgid "Quickstart"
-msgstr ""
+msgstr "Empezar"
 
 #: /views/partials/grid-card.html:27
 msgid "Read the Case Study"
@@ -1079,8 +1146,8 @@ msgstr ""
 msgid "Reduce complexity in your operations."
 msgstr "Reducir la complejidad en tus operaciones"
 
-#: /content/docs/reference.md /content/docs/reference/_blueprint.yaml
-#: /content/includes/menu.yaml
+#: /content/includes/menu.yaml /content/reference/_blueprint.yaml
+#: /content/reference/reference.md
 msgid "Reference"
 msgstr "Referencia"
 
@@ -1095,6 +1162,10 @@ msgstr "Reportar error de documentación en GitHub"
 #: /content/support/developer/platform-bug.md
 msgid "Report a platform bug on GitHub"
 msgstr "Reportar un error de plataforma en GitHub"
+
+#: /content/learn/who/ecommerce.yaml
+msgid "Resources for ecommerce"
+msgstr ""
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
 msgid "Roadmap"
@@ -1115,6 +1186,10 @@ msgstr ""
 #: /content/latest/list-blog.html:12
 msgid "See all posts"
 msgstr "Ver todos los posts"
+
+#: /views/partials/promo_banner.html:10
+msgid "See all videos"
+msgstr ""
 
 #: /content/learn/who/publishers.yaml
 msgid "See how other publishers have found success with AMP"
@@ -1162,11 +1237,11 @@ msgstr "Fácil de construir, fácil de escalar."
 msgid "Slack Channel"
 msgstr "Canal de Slack"
 
-#: /content/docs/reference/components/_blueprint.yaml
+#: /content/reference/components/_blueprint.yaml
 msgid "Social"
 msgstr "Social"
 
-#: /content/docs/reference/components/social/_blueprint.yaml
+#: /content/reference/components/social/_blueprint.yaml
 msgid "Social - AMP components"
 msgstr "Social - AMP componentes"
 
@@ -1225,7 +1300,7 @@ msgstr "¡Manténganse al tanto!"
 msgid "Strengthen your business while maintaining control"
 msgstr "Fortalezca su negocio manteniendo el control"
 
-#: /content/docs/guides/responsive_amp/_blueprint.yaml
+#: /content/docs/design/responsive_amp/_blueprint.yaml
 msgid "Style & Layout"
 msgstr "Estilo y diseño"
 
@@ -1273,6 +1348,10 @@ msgstr "Compañías Tecnológicas usando AMP"
 #: /content/learn/who/amp-ads.yaml
 msgid "Technology Platforms:<br>Boost your business"
 msgstr "Plataformas tecnológicas:<br>Impulse su negocio"
+
+#: /content/learn/who/ecommerce.yaml
+msgid "Templates"
+msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "The 25 most intriguing people of 2017"
@@ -1410,14 +1489,16 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "Tools"
-msgstr ""
+msgstr "Herramientas"
 
-#: /content/docs/tutorials.md /content/docs/tutorials/_blueprint.yaml
-#: /content/includes/menu.yaml /content/learn/about/amp-design-principles.yaml
+#: /content/docs/troubleshooting.md /content/docs/troubleshooting/_blueprint.yaml
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: /content/learn/about/amp-design-principles.yaml
 #: /content/learn/about/amp-design-principles@es.yaml
 #: /content/learn/about/amp-design-principles@ko.yaml
-#: /content/learn/who/ad-tech-platforms.yaml /content/learn/who/ecommerce.yaml
-#: /content/learn/who/publishers.yaml
+#: /content/learn/who/ecommerce.yaml
 msgid "Tutorials"
 msgstr "Tutoriales"
 
@@ -1453,10 +1534,6 @@ msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Washington Post"
-msgstr ""
-
-#: /views/partials/promo_banner.html:10
-msgid "Watch live"
 msgstr ""
 
 #: /content/learn/who/amp-ads.yaml

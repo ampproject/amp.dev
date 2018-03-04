@@ -1,0 +1,6 @@
+$title@: Advertising & Analytics
+$view: /views/doc.html
+$path: /docs/ads_analytics/{base}.html
+$localization:
+  path: /{locale}/docs/ads_analytics/{base}.html
+index_path: /content/docs/ads_analytics.md

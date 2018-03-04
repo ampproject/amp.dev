@@ -53,7 +53,7 @@
       </amp-accordion>
       <div class="resources">
         <h3>{{_(doc.resources.title)}}</h3>
-        <a class="button" href="{{doc.resources.link_url}}">{{_(doc.resources.link_text)}}</a>
+        <a class="button" href="{% if doc.resources.link_url.startswith('http') %}{{ doc.resources.link_url }}{% else %}{{ g.doc(doc.resources.link_url, locale=doc.locale).url.path }}{% endif %}">{{_(doc.resources.link_text)}}</a>
      </div>
     </section>
    

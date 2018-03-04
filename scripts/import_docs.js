@@ -178,7 +178,7 @@ ghrepo.contents('builtins', 'master', function(err, data) {
 
     downloadPage(component.path, function(pageContent) {
       savePage({
-        destination: '../content/docs/reference/components/' + subfolder + '/' + component.name,
+        destination: '../content/reference/components/' + subfolder + '/' + component.name,
         content: pageContent,
         title: component.name.replace('.md', '') + ' (Built-in)'
       }, function (err) {
@@ -235,10 +235,10 @@ ghrepo.contents('extensions', "master", function(err, data) {
         // save it to the extended folder
 
         savePage({
-          destination: '../content/docs/reference/components/' + subfolder + '/' + subComponent.name,
+          destination: '../content/reference/components/' + subfolder + '/' + subComponent.name,
           content: pageContent,
           order: order,
-          parent: '/content/docs/components.md',
+          parent: '/content/reference/components.md',
           title: title || subComponent.name.replace('.md', '')
         }, function (err) {
           if (err) throw err;

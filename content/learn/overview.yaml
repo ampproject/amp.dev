@@ -79,7 +79,7 @@ video:
 
 resources:
   title: Learn AMP's design principles
-  link_url: /about/amp-design-principles
+  link_url: /content/learn/about/amp-design-principles.yaml
   link_text: Explore Design Principles
 
 cta:

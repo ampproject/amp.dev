@@ -1,6 +1,0 @@
-$title@: Guides
-$path: /docs/guides/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/guides/{base}.html
-index_path: /content/docs/guides.md
