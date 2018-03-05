@@ -1,32 +1,46 @@
 ---
 $title: Analytics vendors
-$order: 4
+$order: 3
 toc: true
 ---
 [TOC]
 
 This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`](/docs/reference/components/amp-analytics.html) component.
 
-By specifying the name of an analytics vendor with the `type` attribute you can quickly configure `amp-analytics` to use the respective product. Additional configuration (such as your user id) may still be necessary.
+To send analytics data to a third-party vendor:
 
-Please consult the documentation from your vendor, which may be linked in the sections below.
+1. In the [`<amp-analytics> `]((/docs/reference/components/amp-analytics.html) ) tag, add the `type` attribute and set its value to the specified vendor as described in the [*Vendors*](#vendors) section below.
+2. Determine what data you want to capture and track, and specify those details in the configuration data. See the vendor's documentation for instructions on how to capture analytics data.
+
+In the following example, we send pageview data to [Google Analytics](#google-analytics), a third-party analytics provider with a built-in configuration for amp-analytics:
+
+```html
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+  "vars": {
+    "account": "UA-XXXXX-Y" 
+  },
+  "triggers": {
+    "trackPageview": { 
+      "on": "visible",
+      "request": "pageview"
+    }
+  }
+}
+</script>
+</amp-analytics>
+```
 
 {% call callout('Tip', type='success') %}
 If you're comfortable digging through code, you can explore the raw configurations in the [vendors.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) file.
 {% endcall %}
 
-
-**Example:**
-
-Here's a snippet that specifies the `type` for an analytics provider named `XYZ`:
-
-```html
-<amp-analytics type="XYZ"> ... </amp-analytics>
-```
-
-{% call callout('Read on', type='read') %}
-Learn more about tracking analytics with [`amp-analytics`](/docs/reference/components/amp-analytics.html).
+{% call callout('Note', type='note') %}
+Vendors that wish to integrate their service with [`<amp-analytics> `]((/docs/reference/components/amp-analytics.html) ) should refer to the details in [Integrate your analytics tools in AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
 {% endcall %}
+
+<hr>
 
 ## Vendors
 
@@ -183,17 +197,17 @@ Type attribute value: `mparticle`
 
 Adds support for mParticle. More details for adding mParticle support can be found at [docs.mparticle.com](http://docs.mparticle.com/?javascript#amp).
 
-### Nielsen
-
-Type attribute value: `nielsen`
-
-Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
-
 ### New Relic
 
 Type attribute value: `newrelic`
 
 Adds support for New Relic Browser to measure AMP throughput and performance. Instructions to start capturing AMP performance data can be found on the New Relic AMP docs page at [docs.newrelic.com](https://docs.newrelic.com/docs/monitor-amp-pages-new-relic-browser).
+
+### Nielsen
+
+Type attribute value: `nielsen`
+
+Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ### Nielsen Marketing Cloud
 

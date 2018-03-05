@@ -1,7 +1,5 @@
 ---
 $title: "分析ベンダー"
-$order: 4
-toc: true
 ---
 
 [TOC]

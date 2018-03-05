@@ -1,7 +1,5 @@
 ---
 $title: "Proveedores Analytics"
-$order: 4
-toc: true
 ---
 [TOC]
 

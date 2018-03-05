@@ -1,6 +1,6 @@
 ---
 $title: Configure analytics
-$order: 9
+$order: 2
 $category: Deploy
 
 ---
@@ -25,7 +25,7 @@ and social engagement data to another URL.
 
 AMP analytics is specifically designed to measure once and report to many.
 If you are already working with one or more analytics vendors,
-check the list of [Analytics Vendors](/docs/guides/analytics/analytics-vendors.html) to see if they’ve integrated their solution with AMP.
+check the list of [Analytics Vendors](/docs/ads_analytics/analytics-vendors.html) to see if they’ve integrated their solution with AMP.
 If they have, review their configuration details and follow the instructions.
 
 If the analytics vendor hasn’t integrated with AMP,

@@ -1,7 +1,5 @@
 ---
 $title: "애널리틱스 공급업체"
-$order: 4
-toc: true
 ---
 
 [TOC]

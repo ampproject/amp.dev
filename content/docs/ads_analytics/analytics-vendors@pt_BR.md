@@ -1,8 +1,5 @@
 ---
-
 $title: "Fornecedores de análise"
-$order: 4
-toc: true
 ---
 
 [TOC]
