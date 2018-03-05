@@ -1,6 +1,6 @@
 ---
 $title: Serving ads on AMP
-$order: 4
+$order: 1
 $category: Develop
 
 toc: true

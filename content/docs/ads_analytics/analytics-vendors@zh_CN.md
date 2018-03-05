@@ -1,7 +1,5 @@
 ---
 $title: 分析数据供应商
-$order: 4
-toc: true
 ---
 [TOC]
 

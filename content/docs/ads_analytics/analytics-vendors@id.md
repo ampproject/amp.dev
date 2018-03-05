@@ -1,7 +1,5 @@
 ---
 $title: "Vendor Analitik"
-$order: 4
-toc: true
 ---
 [TOC]
 
