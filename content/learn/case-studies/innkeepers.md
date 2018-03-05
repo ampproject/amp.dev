@@ -31,7 +31,7 @@ download: "case-studies/Innkeepers_Advantage.pdf"
     <amp-img width="300" height="601" layout="responsive" src="/static/img/case-studies/innkeepers_1.png"></amp-img>
 </div>
 
-[Innkeeper’s Advantage](https://www.innkeepersadvantage.com/) provides inns and bed and breakfasts with integrated online reservations, guest management, a website content management system, online gift certificates, and shops, blogs, and analytics. From their headquarters outside Pittsburgh, they serve businesses across the U.S., Canada, Mexico, and the Caribbean.
+[Innkeeper’s Advantage](http://www.innkeepersadvantage.com/) provides inns and bed and breakfasts with integrated online reservations, guest management, a website content management system, online gift certificates, and shops, blogs, and analytics. From their headquarters outside Pittsburgh, they serve businesses across the U.S., Canada, Mexico, and the Caribbean.
 
 ## Solution
 
