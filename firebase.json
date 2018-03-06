@@ -67,6 +67,11 @@
         "type": 301
       },
       {
+        "source": "/:lang/docs/get_started/create",
+        "destination": "/:lang/docs/getting_started/create.html",
+        "type": 301
+      },
+      {
         "source": "/docs/reference/",
         "destination": "/docs/reference/components.html",
         "type": 301
