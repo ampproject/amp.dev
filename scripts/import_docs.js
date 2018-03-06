@@ -126,9 +126,6 @@ function convertMarkdown(content, relativePath, headingToStrip) {
   // create absolute urls from relative github urls
   content = content.replace(/\[([^\]]+)\]\((?!http|#)([^\)]+)\)/g, '[$1](https://github.com/ampproject/amphtml/blob/master/' + relativePath + '/$2)');
 
-  // now substitute links going to extensions with relative urls to the downloaded ones
-  content = content.replace(/https\:\/\/github.com\/ampproject\/amphtml\/blob\/master\/extensions\/[^\/]+\/([^\.]+)\.md/g, "components/$1.html");
-
   return content;
 }
 
