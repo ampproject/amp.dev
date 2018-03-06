@@ -44,10 +44,6 @@ msgstr "Blog das AMP"
 msgid "AMP By Example"
 msgstr ""
 
-#: /content/support/vendor/amp-certification.md
-msgid "AMP Certification"
-msgstr "Certificação de AMP"
-
 #: /content/includes/stories.yaml
 msgid "AMP Component Library"
 msgstr ""
@@ -1059,14 +1055,14 @@ msgstr "Só faça o que for rápido."
 msgid "Open"
 msgstr ""
 
+#: /content/pages/404.html
+msgid "Page not Found (404)"
+msgstr ""
+
 #: /content/includes/events.yaml /content/includes/lists.yaml
 #: /content/latest/list-past-event.html
 msgid "Past Events"
 msgstr "Eventos anteriores"
-
-#: /content/support/platform.md
-msgid "Platform Support"
-msgstr "Compatibilidade de plataformas"
 
 #: /content/reference/components/_blueprint.yaml
 msgid "Presentation"
@@ -1163,6 +1159,10 @@ msgstr "Comunicar um bug de plataforma no GitHub"
 
 #: /content/learn/who/ecommerce.yaml
 msgid "Resources for ecommerce"
+msgstr ""
+
+#: /content/pages/404.html:174
+msgid "Restart game"
 msgstr ""
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
@@ -1448,6 +1448,12 @@ msgstr ""
 "O projeto AMP tem código aberto e ajuda a criar conteúdo otimizado para "
 "dispositivos móveis, com carregamento instantâneo."
 
+#: /content/pages/404.html:15
+msgid ""
+"The page you've requested can't be found. Why don't you browse around, or "
+"while you're here, play a game of tic-tac-toe made with AMP?"
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid ""
 "There are no upcomming events at this time. We host events throughout the "
@@ -1496,6 +1502,10 @@ msgstr "Solução de problemas"
 msgid "Tutorials"
 msgstr "Tutoriais"
 
+#: /content/pages/404.html:11
+msgid "Uh oh! That's an error."
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid "Upcoming Events"
 msgstr "Próximos eventos"
@@ -1509,10 +1519,6 @@ msgid "User Experience > Developer Experience > Ease of Implementation."
 msgstr ""
 "Experiência do usuário &gt; experiência do desenvolvedor &gt; facilidade de "
 "implementação."
-
-#: /content/support/vendor.md /content/support/vendor/_blueprint.yaml
-msgid "Vendor Support"
-msgstr "Suporte ao fornecedor"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Vice President of Digital Revenue Strategy and Operations, Time Inc."
