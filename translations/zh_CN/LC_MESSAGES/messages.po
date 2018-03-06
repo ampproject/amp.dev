@@ -41,10 +41,6 @@ msgstr "AMP 博客"
 msgid "AMP By Example"
 msgstr ""
 
-#: /content/support/vendor/amp-certification.md
-msgid "AMP Certification"
-msgstr "AMP 认证"
-
 #: /content/includes/stories.yaml
 msgid "AMP Component Library"
 msgstr ""
@@ -1032,14 +1028,14 @@ msgstr "只做有助于提升速度的事情。"
 msgid "Open"
 msgstr ""
 
+#: /content/pages/404.html
+msgid "Page not Found (404)"
+msgstr ""
+
 #: /content/includes/events.yaml /content/includes/lists.yaml
 #: /content/latest/list-past-event.html
 msgid "Past Events"
 msgstr "以往活动"
-
-#: /content/support/platform.md
-msgid "Platform Support"
-msgstr "平台支持"
 
 #: /content/reference/components/_blueprint.yaml
 msgid "Presentation"
@@ -1128,6 +1124,10 @@ msgstr "在 GitHub 上报告平台错误"
 
 #: /content/learn/who/ecommerce.yaml
 msgid "Resources for ecommerce"
+msgstr ""
+
+#: /content/pages/404.html:174
+msgid "Restart game"
 msgstr ""
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
@@ -1398,6 +1398,12 @@ msgid ""
 "loads in an instant."
 msgstr "开放源代码 AMP 项目能帮助您创建针对移动设备进行了优化且可瞬时加载的内容。"
 
+#: /content/pages/404.html:15
+msgid ""
+"The page you've requested can't be found. Why don't you browse around, or "
+"while you're here, play a game of tic-tac-toe made with AMP?"
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid ""
 "There are no upcomming events at this time. We host events throughout the "
@@ -1439,6 +1445,10 @@ msgstr "故障排除"
 msgid "Tutorials"
 msgstr "教程"
 
+#: /content/pages/404.html:11
+msgid "Uh oh! That's an error."
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid "Upcoming Events"
 msgstr "即将举办的活动"
@@ -1450,10 +1460,6 @@ msgstr "使用您现有的资源"
 #: /content/learn/about/amp-design-principles.yaml
 msgid "User Experience > Developer Experience > Ease of Implementation."
 msgstr "用户体验 &gt; 开发者体验 &gt; 实施难易程度。"
-
-#: /content/support/vendor.md /content/support/vendor/_blueprint.yaml
-msgid "Vendor Support"
-msgstr "供应商支持"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Vice President of Digital Revenue Strategy and Operations, Time Inc."

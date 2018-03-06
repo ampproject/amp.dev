@@ -42,10 +42,6 @@ msgstr "AMP ブログ"
 msgid "AMP By Example"
 msgstr ""
 
-#: /content/support/vendor/amp-certification.md
-msgid "AMP Certification"
-msgstr "AMP 認定資格"
-
 #: /content/includes/stories.yaml
 msgid "AMP Component Library"
 msgstr ""
@@ -1038,14 +1034,14 @@ msgstr "高速化が可能なものだけ採用する。"
 msgid "Open"
 msgstr ""
 
+#: /content/pages/404.html
+msgid "Page not Found (404)"
+msgstr ""
+
 #: /content/includes/events.yaml /content/includes/lists.yaml
 #: /content/latest/list-past-event.html
 msgid "Past Events"
 msgstr "過去のイベント"
-
-#: /content/support/platform.md
-msgid "Platform Support"
-msgstr "プラットフォーム サポート"
 
 #: /content/reference/components/_blueprint.yaml
 msgid "Presentation"
@@ -1134,6 +1130,10 @@ msgstr "プラットフォームのバグ報告"
 
 #: /content/learn/who/ecommerce.yaml
 msgid "Resources for ecommerce"
+msgstr ""
+
+#: /content/pages/404.html:174
+msgid "Restart game"
 msgstr ""
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
@@ -1408,6 +1408,12 @@ msgid ""
 "loads in an instant."
 msgstr "オープンソースの AMP プロジェクトに参加すれば、モバイル向けに最適化され、瞬時に読み込まれるコンテンツを作成できるようになります。"
 
+#: /content/pages/404.html:15
+msgid ""
+"The page you've requested can't be found. Why don't you browse around, or "
+"while you're here, play a game of tic-tac-toe made with AMP?"
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid ""
 "There are no upcomming events at this time. We host events throughout the "
@@ -1451,6 +1457,10 @@ msgstr "トラブルシューティング"
 msgid "Tutorials"
 msgstr "チュートリアル"
 
+#: /content/pages/404.html:11
+msgid "Uh oh! That's an error."
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid "Upcoming Events"
 msgstr "今後のイベント"
@@ -1462,10 +1472,6 @@ msgstr "既存のリソースを使用する"
 #: /content/learn/about/amp-design-principles.yaml
 msgid "User Experience > Developer Experience > Ease of Implementation."
 msgstr "デベロッパーにとっての実装のしやすさよりも、ユーザー エクスペリエンスを優先する。"
-
-#: /content/support/vendor.md /content/support/vendor/_blueprint.yaml
-msgid "Vendor Support"
-msgstr "ベンダー サポート"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Vice President of Digital Revenue Strategy and Operations, Time Inc."
