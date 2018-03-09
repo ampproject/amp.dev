@@ -1,8 +1,8 @@
 ---
 $order: 26
-$title: Innkeeper's Advantage
+$title: BMW.com
 $date: Mar 12, 2018
-$category: ecommerce
+$category: Publishers
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
 
