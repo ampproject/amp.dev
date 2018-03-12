@@ -800,7 +800,7 @@
         "type": 301
       },      
       {
-        "source": "/docs/guides/pwa-amp.html?(.html)",
+        "source": "/docs/guides/pwa-amp?(.html)",
         "destination": "/docs/integration/pwa-amp.html",
         "type": 301
       },      
