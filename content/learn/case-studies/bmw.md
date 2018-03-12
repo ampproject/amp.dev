@@ -35,7 +35,7 @@ BMW is one of the world’s largest automotive companies, known for the style an
 
 ## Solution
 
-BMW set out to create a high-performance, mobile-first approach that offered entertaining stories, videos, and images to the target audience. Christian Liedgens, BMW digital marketer, says the company’s goals for the site were: “Speed, speed, speed, and highly engaging content based on data insights.” To create a new “main stage” for their brand, BMW turned to Hamburg-based digital agency J[Jung von Matt] (https://www.jvm.com/en/). The site incorporates a Progressive Web App (PWA) shell, which loads custom-built, all-AMP content to deliver a fast page experience for first and all following page visits. BMW and Jung von Matt are such strong believers in AMP that they used all across the completely relaunched BWM.com.
+BMW set out to create a high-performance, mobile-first approach that offered entertaining stories, videos, and images to the target audience. Christian Liedgens, BMW digital marketer, says the company’s goals for the site were: “Speed, speed, speed, and highly engaging content based on data insights.” To create a new “main stage” for their brand, BMW turned to Hamburg-based digital agency [Jung von Matt](https://www.jvm.com/en/). The site incorporates a Progressive Web App (PWA) shell, which loads custom-built, all-AMP content to deliver a fast page experience for first and all following page visits. BMW and Jung von Matt are such strong believers in AMP that they used all across the completely relaunched BWM.com.
 
 <div class="img-right">
     <amp-img width="400" height="754" layout="responsive" src="/static/img/case-studies/bmw_2.png"></amp-img>
