@@ -156,6 +156,17 @@
     }
   }
 
+  .newsletter {
+      text-align: center;
+      p {
+        font-size: 16px;
+        color: #333;
+      }
+      a {
+        margin-left: 10px;
+      }
+  }
+
   .experience {
     align-items: center;
     display: flex;
@@ -203,6 +214,7 @@
 
   .success-stories {
     margin-bottom: -80px;
+    margin-top: -80px;
     padding: 0;
     position: relative;
     z-index: 1;
@@ -257,7 +269,7 @@
   }
 
   .wrap section {
-    padding: 100px 0 60px 0;
+    padding: 80px 0 60px 0;
   }
 
   &.rtl {
@@ -393,6 +405,10 @@
       }
     }
 
+    .newsletter {
+      padding-bottom: 40px;
+    }
+
     .experience {
       flex-direction: column;
       margin-top: 0;
@@ -410,6 +426,7 @@
 
     .success-stories {
       margin-bottom: 0;
+      margin-top: 0;
 
       h1 {
         max-width: 300px;
