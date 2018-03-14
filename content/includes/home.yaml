@@ -23,6 +23,11 @@ benefits:
       img_width: 77
       img_height: 92
 
+newsletter:
+  title@: "Get the latest news and tips from our newsletter:"
+  cta@: Subscribe
+  cta_url: https://services.google.com/fb/forms/ampnewsletter/
+
 experience:
   title@: A collaborative effort
   content@: AMP is built thanks to a deep collaboration with thousands of developers, publishers and websites, distribution platforms and tech companies. More than 1.5B AMP pages have been published to date and 100+ leading analytics, ad tech and CMS providers support the AMP format.
@@ -53,7 +58,7 @@ success_stories:
       class: teads
 
 large_cta:
-  title@: Learn how to build AMP pages and AMPHTML ads
+  title@: Get started with AMP
   cta@: Start Building
   cta_url: /content/docs/getting_started/quickstart.md
   lines_left: /static/img/home/lines3.svg
