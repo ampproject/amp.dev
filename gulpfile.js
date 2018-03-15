@@ -90,17 +90,16 @@ gulp.task('update-platforms-page', ['import-docs'], function (cb) {
 });
 
 gulp.task('generate-asset-manifest', function (cb) {
-  swBuild.getFileManifestEntries({
+  swBuild.getManifest({
     globDirectory: './assets',
-    staticFileGlobs: [
+    globPatterns: [
       'img/*.{svg,png,jpg}',
       'img/nav/*.{svg,png,jpg}',
       'img/footer/*.{svg,png,jpg}'
     ]
-  }).then(entries => {
-
+  }).then((entries) => {
     // Add "static" to the path
-    entries.forEach(entry => {
+    entries['manifestEntries'].forEach(entry => {
       entry.url = '/static/' + entry.url;
     });
 
