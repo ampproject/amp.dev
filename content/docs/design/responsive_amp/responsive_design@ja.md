@@ -1,9 +1,5 @@
 ---
 $title: レスポンシブな AMP ページを作成する
-$order: 5
-toc: true
-components:
-  - iframe
 ---
 [TOC]
 
@@ -21,7 +17,7 @@ components:
 
 ウェブページを最適化して、拡大縮小によってコンテンツがあらゆる端末のブラウザ ウィンドウに収まるようにするには、`meta` ビューポート要素を指定する必要があります。このビューポート要素は、ブラウザでウェブページの表示エリア（ビューポート）をどのように拡大縮小およびサイズ設定するかを指定します。
 
-この要素にどの値を使用するかが問題になりますが、AMP では指定する値がすでに決まっています。AMP ページ用の[必須のマークアップ](https://www.ampproject.org/ja/docs/reference/spec#required-markup)の一環として、下記のようにビューポートを指定する必要があります。
+この要素にどの値を使用するかが問題になりますが、AMP では指定する値がすでに決まっています。AMP ページ用の[必須のマークアップ](/ja/docs/reference/spec.html#required-markup)の一環として、下記のようにビューポートを指定する必要があります。
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -54,7 +50,7 @@ components:
 ```
 
 {% call callout('詳細情報', type='read') %}
-AMP のさまざまなレイアウトについて詳しくは、[レイアウトとメディアクエリ](https://www.ampproject.org/ja/docs/guides/responsive/control_layout#layout-属性)をご覧ください。
+AMP のさまざまなレイアウトについて詳しくは、[レイアウトとメディアクエリ](/ja/docs/design/responsive/control_layout.html#layout-属性)をご覧ください。
 {% endcall %}
 
 <a id="fn1"></a>
@@ -76,11 +72,11 @@ AMP のさまざまなレイアウトについて詳しくは、[レイアウト
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="さらに表示">コードをすべて表示</div> <div placeholder></div> </amp-iframe></div>
 
-AMP ページには数多くの種類の動画を追加できます。詳しくは、利用可能な[メディア コンポーネント](https://www.ampproject.org/ja/docs/reference/components#メディア)の一覧をご覧ください。
+AMP ページには数多くの種類の動画を追加できます。詳しくは、利用可能な[メディア コンポーネント](/ja/docs/reference/components.html#メディア)の一覧をご覧ください。
 
 ### レスポンシブな画像を表示する
 
-画像はウェブページの大部分（[ページのデータ量の約 65%](http://httparchive.org/interesting.php#bytesperpage)）を構成しています。少なくとも、どのような画面サイズや画面の向きでも画像が表示される（つまり、スクロール、ピンチ、ズームをしなくても画像全体を見られる）ようにする必要があります。AMP では `"layout=responsive"` 属性を使ってこれを簡単に実現できます（[画像や動画を含める](https://www.ampproject.org/ja/docs/guides/amp_replacements)をご覧ください）。基本となるレスポンシブの画像に加えて、複数の画像リソースを配信して次のようにすることをおすすめします。
+画像はウェブページの大部分（[ページのデータ量の約 65%](http://httparchive.org/interesting.php#bytesperpage)）を構成しています。少なくとも、どのような画面サイズや画面の向きでも画像が表示される（つまり、スクロール、ピンチ、ズームをしなくても画像全体を見られる）ようにする必要があります。AMP では `"layout=responsive"` 属性を使ってこれを簡単に実現できます（[画像や動画を含める](/ja/docs/media/amp_replacements.html)をご覧ください）。基本となるレスポンシブの画像に加えて、複数の画像リソースを配信して次のようにすることをおすすめします。
 
 - [解像度に合った鮮明な画像を配信する](#解像度に合った鮮明な画像を配信する)
 - [画像のアート ディレクションを変更する](#例:%2D画面にフィットするくっきりした画像を表示する)
@@ -108,7 +104,7 @@ DPR（`x`）ベースの srcset セレクタでも機能しますが、柔軟性
 たとえば、端末のビューポートの幅が 412 px で DPR が 2.6 の場合、上記のコードに基づいて画像をビューポートの幅の 75% で表示する必要があるため、ブラウザは 803 px（412 * 0.75 * 2.6）に近い画像である `apple-800.jpg` を選択します。
 
 {% call callout('詳細情報', type='read') %}
-AMP での srcset と sizes の使用について詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像](https://www.ampproject.org/ja/docs/guides/responsive/art_direction)をご覧ください。
+AMP での srcset と sizes の使用について詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像](/ja/docs/design/responsive/art_direction.html)をご覧ください。
 {% endcall %}
 
 #### 画像のアート ディレクションを変更する
@@ -130,7 +126,7 @@ AMP での srcset と sizes の使用について詳しくは、[srcset、sizes�
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="さらに表示">コードをすべて表示</div><div placeholder></div></amp-iframe></div>
 
 {% call callout('詳細情報', type='read') %}
-AMP でのアート ディレクションについて詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像](https://www.ampproject.org/ja/docs/guides/responsive/art_direction)をご覧ください。
+AMP でのアート ディレクションについて詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像](/ja/docs/design/responsive/art_direction.html)をご覧ください。
 {% endcall %}
 
 #### 最適な画像を配信する
@@ -140,7 +136,7 @@ AMP でのアート ディレクションについて詳しくは、[srcset、si
 HTML では `picture` タグを使うことで、異なる画像形式を配信できます。AMP では `picture` タグはサポートされていませんが、`fallback` 属性を使うことで、異なる画像を配信できます。
 
 {% call callout('詳細情報', type='read') %}
-フォールバックについて詳しくは、[プレースホルダとフォールバック](https://www.ampproject.org/ja/docs/guides/responsive/placeholders)をご覧ください。
+フォールバックについて詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
 {% endcall %}
 
 ##### 例: 異なる画像形式を配信する
