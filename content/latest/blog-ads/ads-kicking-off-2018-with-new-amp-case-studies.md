@@ -2,7 +2,7 @@
 class: post-blog post-detail
 type: Blog
 $title: "Kicking off 2018 with new AMP case studies"
-id: kicking-off-2018-with-new-amp-case-studies
+id: ads-kicking-off-2018-with-new-amp-case-studies
 author: David Li
 role:  Marketing Manager, Google
 origin: "https://amphtml.wordpress.com/2018/01/25/kicking-off-2018-with-new-amp-case-studies/amp/"

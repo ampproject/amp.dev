@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2017/11/28/an-amp-paywall-and-subscription-model-for-all-publishers/amp/"
 excerpt: "The following was posted on LaterPay&#8217;s Blog by Cosmin Ene, CEO, LaterPay. A majority of mobile users will not wait longer than 3 seconds for a page to load before moving on, creating a marked decline in revenue for sites that load slowly. It’s this desire for speed and convenience on both the user and publisher’s part that spurred [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2017-11-28T09:49:35-08:00
+date_data: 2017-11-28T12:49:35-05:00
 $date: November 28, 2017
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
@@ -35,14 +35,12 @@ inlineCSS: .amp-wp-inline-a6ec8840dd8107f0c4f9cbd7d00cece0{text-align:center;}
 <p>When browsing paid content, users are prompted with a number of purchasing options – as shown below – predetermined by the publisher. For instance, publishers can prompt users to purchase a specific article, a time pass, or a full subscription.</p>
 <p class="amp-wp-inline-a6ec8840dd8107f0c4f9cbd7d00cece0"><span class="amp-wp-inline-a6ec8840dd8107f0c4f9cbd7d00cece0"><amp-img class="alignnone size-large wp-image-1901 amp-wp-enforced-sizes" src="https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_daily_weekly_sub.png?w=660&amp;h=877" alt="LaterPay_Image_Article_Daily_Weekly_Sub" srcset="https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_daily_weekly_sub.png?w=660&amp;h=877 660w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_daily_weekly_sub.png?w=113&amp;h=150 113w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_daily_weekly_sub.png?w=226&amp;h=300 226w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_daily_weekly_sub.png?w=768&amp;h=1021 768w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_daily_weekly_sub.png?w=771&amp;h=1024 771w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_daily_weekly_sub.png 1070w" sizes="(min-width: 660px) 660px, 100vw" width="660" height="877"></amp-img><br/><em>LaterPay – daily/weekly subscription mask</em></span></p>
 </div>
-</div>
-<div id="block-yui_3_17_2_1_1511873004377_46542" class="sqs-block html-block sqs-block-html">
+</div><div id="block-yui_3_17_2_1_1511873004377_46542" class="sqs-block html-block sqs-block-html">
 <div class="sqs-block-content">
 Alternatively, publishers can customize their offering and forgo certain options such as time passes.
 <p><amp-img class="aligncenter size-full wp-image-1902 amp-wp-enforced-sizes" src="https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_sub.png?w=660" alt="LaterPay_Image_Article_Sub" srcset="https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_sub.png?w=660 660w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_sub.png?w=150 150w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_sub.png?w=300 300w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_sub.png?w=768 768w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_sub.png?w=1024 1024w, https://amphtml.files.wordpress.com/2017/11/laterpay_image_article_sub.png 1060w" sizes="(min-width: 660px) 660px, 100vw" width="660" height="639"></amp-img></p>
 </div>
-</div>
-<div id="block-yui_3_17_2_1_1511873004377_41533" class="sqs-block image-block sqs-block-image sqs-text-ready">
+</div><div id="block-yui_3_17_2_1_1511873004377_41533" class="sqs-block image-block sqs-block-image sqs-text-ready">
 <div id="yui_3_17_2_1_1511890880208_117" class="sqs-block-content">
 <div id="yui_3_17_2_1_1511890880208_116" class="image-block-outer-wrapper layout-caption-below design-layout-inline">
 <div id="yui_3_17_2_1_1511890880208_115" class="intrinsic">
@@ -54,8 +52,7 @@ Alternatively, publishers can customize their offering and forgo certain options
 </div>
 </div>
 </div>
-</div>
-<div id="block-yui_3_17_2_1_1511873004377_41813" class="sqs-block html-block sqs-block-html">
+</div><div id="block-yui_3_17_2_1_1511873004377_41813" class="sqs-block html-block sqs-block-html">
 <div class="sqs-block-content">
 Users make their selection quickly and begin to accumulate a running tab based on the content they consume. Purchased content is aggregated and consumers are only prompted to register and pay once they hit the threshold of $5 or €5. LaterPay streamlines the registration process as well by enabling users to sign up using their Facebook or Google+ login information, rather than creating a new account.
 <p>By deferring registration and payment until users reach the threshold, LaterPay has been show to increase the user’s propensity to pay (with currently 75.5% registering and paying once reaching the threshold.) Further, by providing content providers with multiple options for monetization, publishers can more effectively convert users and take advantage of the vast space between ads and subscriptions.</p>
@@ -69,11 +66,9 @@ Users make their selection quickly and begin to accumulate a running tab based o
 <p>LaterPay is a SaaS payment infrastructure specifically created to enable “on platform” monetization. The patented solution provides a frictionless way to convert users into paying customers without upfront registration or payment. With LaterPay, customers are able to generate incremental revenues that complement subscription and ad models. By deferring registration and payment until users reach a $5* threshold, and by aggregating purchases across websites and devices, LaterPay increases the user’s propensity to pay and reaches unprecedented conversion rates. LaterPay offers a variety of optional revenue models including Time Passes and Subscriptions. Please visit LaterPay.net to learn more.</p>
 <p><em>The above was <a href="https://www.laterpay.net/blog/2017/11/28/an-amp-paywall-and-subscription-model-for-all-publishers" target="_blank" rel="noopener">posted on LaterPay’s Blog</a> by Cosmin Ene, CEO, LaterPay.</em></p>
 </div>
-</div>
-	</div>
+</div>	</div>
 
 	
-
 
 </div>
 
