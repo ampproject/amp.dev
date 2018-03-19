@@ -305,7 +305,7 @@ Adds support for Treasure Data. Configuration details can be found at [treasured
 
 ### Webtrekk
 
-Type attribute value: `webtrekk`
+The attribute value ~~`webtrekk`~~ is deprecated (will remove on 31/12/2018) - use `webtrekk_2` instead
 
 Adds support for Webtrekk. Configuration details can be found at [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/en/public/amp-analytics.html).
 

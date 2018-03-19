@@ -2,7 +2,7 @@
 class: post-blog post-detail
 type: Blog
 $title: "AMP’ing Up The AMP Framework"
-id: amping-up-the-amp-framework
+id: ads-amping-up-the-amp-framework
 author: amphtml
 role: 
 origin: "https://amphtml.wordpress.com/2018/01/19/amping-up-the-amp-framework/amp/"
