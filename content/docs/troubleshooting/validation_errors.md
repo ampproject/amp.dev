@@ -328,12 +328,7 @@ The following results in a INVALID_PROPERTY_VALUE_IN_ATTR_VALUE error:
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-As another example,
-the following would result in an error:
-
-`<meta http-equiv="X-UA-Compatible" content="ie=invalidfoo">`
-
-It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
+Note, if you're attempting to output a valueless attribute (for example, an attribute such as `autoplay`, `controls` or `loop` for the `<amp-video>` component), but your HTML build process is generating a default (but invalid) value such as `true` (React, for example, will produce `<amp-video autoplay="true" ...>` [by default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), the workaround is to output the attribute's name as the value. For example, `<amp-video autoplay="autoplay" ...>`.
 
 ### Missing URL
 
