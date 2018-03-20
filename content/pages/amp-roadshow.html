@@ -64,11 +64,13 @@ components:
             <ul class="list-cities">
                 {% for city in conf.cities %}
                 <li>
-                    <a{% if city.link %} href="{{city.link}}" target="_blank"{% endif %}>
-                    {{ city.title }}
-                    </a>
-                    <div class="text-label">
-                        {{ city.date | date() }}
+                    <div class="group">
+                        <a{% if city.link %} href="{{city.link}}" target="_blank"{% endif %}>
+                        {{ city.title }}
+                        </a>
+                        <div class="text-label">
+                            {{ city.date | date() }}
+                        </div>
                     </div>
                 </li>
                 {% endfor %}

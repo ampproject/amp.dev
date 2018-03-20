@@ -29,9 +29,23 @@
       margin-top: 27px;
       padding-top: 13px;
 
+      @include max-screen(846px) {
+        column-count: 3;
+      }
+
+      @include max-screen(500px) {
+        column-count: 2;
+        margin-top: 10px;
+        padding-top: 10px;
+      }
+
       li {
-        display: inline-block;
+        display: block;
         line-height: 2;
+      }
+
+      .group {
+        display: inline-block;
       }
 
       a:not([href]) {
@@ -320,47 +334,6 @@
             }
 
           }
-
-
-          @include max-screen(900px) {
-            .wrapper > .flex {
-              display:  block;
-            }
-            ul {
-              margin-bottom: 4em;
-              border-right: 0;
-              li {
-                display: inline-block;
-                margin: 0 0.4em;
-              }
-            }
-          }
-
-          ul.desktop-up {
-            @include min-screen(650px) {
-              display: block;
-              visibility: visible;
-            }
-          }
-
-          ul.tablet-down {
-
-            display: none;
-            @include max-screen(650px) {
-              display: flex;
-            }
-            flex-wrap: wrap;
-            padding-right: 0;
-            margin-right: -1em;
-            margin-left: -1em;
-
-            li {
-              margin: 0.4em 0;
-              flex: 1 1 50%;
-            }
-          }
-
-
         }
 
         &.schedule {
