@@ -27,7 +27,7 @@ experience:
   title@: A collaborative effort
   content@: AMP is built thanks to a deep collaboration with thousands of developers, publishers and websites, distribution platforms and tech companies. More than 1.5B AMP pages have been published to date and 100+ leading analytics, ad tech and CMS providers support the AMP format.
   bg_img: /static/img/home/bg_experience.png
-  phone_img_base: /static/img/home/home_phone_ebay
+  phone_img_base: /static/img/home/home_phone_airbnb
   lines_img: /static/img/home/lines2.svg
 
 success_stories:
