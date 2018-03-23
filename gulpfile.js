@@ -13,47 +13,52 @@ const Path = {
 };
 
 // build example snippets that are used as sample embeds in docs
-gulp.task('build-examples', function() {
+gulp.task('build-examples', function () {
+
   const expath = require('path');
   const abe = require('amp-by-example');
   const config = {
-      src: expath.join(__dirname, 'examples/src'), // root folder w examples
-      destRoot: expath.join(__dirname, 'build'), // target dir for generated embeds
-      destDir: '/examples', // optional sub dir
-      host: 'https://ampproject-b5f4c.firebaseapp.com' // where embeds are to be served
-}
+    src: expath.join(__dirname, 'examples/src'), // root folder w examples
+    destRoot: expath.join(__dirname, 'build'), // target dir for generated embeds
+    destDir: '/examples', // optional sub dir
+    host: 'https://ampproject-b5f4c.firebaseapp.com' // where embeds are to be served
+  };
+
   abe.generatePreview(config);
-  gulp.src('./examples/src/images/*')
-      .pipe(gulp.dest('build/examples/images/'));
-  gulp.src('./examples/src/data/*')
-    .pipe(gulp.dest('build/examples/data/'));
-  gulp.src('./examples/src/videos/*')
-      .pipe(gulp.dest('build/examples/videos/'));
+
+  return Promise.all([
+    gulp.src('./examples/src/images/*')
+      .pipe(gulp.dest('build/examples/images/')),
+    gulp.src('./examples/src/data/*')
+      .pipe(gulp.dest('build/examples/data/')),
+    gulp.src('./examples/src/videos/*')
+      .pipe(gulp.dest('build/examples/videos/')),
     gulp.src('./examples/src/audio/*')
-      .pipe(gulp.dest('build/examples/audio/'));
+      .pipe(gulp.dest('build/examples/audio/'))
+  ]);
+
 });
 
 gulp.task('import-docs', function (cb) {
-  exec('cd ./scripts && ./import_docs.js', function (err, stdout, stderr) {
+  exec('cd ./scripts && ./import_docs.js', function (err) {
     if (err instanceof Error) {
       cb(err);
     }
-    //console.log(stdout);
     cb();
   });
 });
 
-gulp.task('optimize-images', function (cb) {
+gulp.task('optimize-images', function () {
   return gulp.src('./assets/img/symbols/*.svg')
     .pipe(svgSprite({
       mode: {
         css: {
-          sprite: "../sprite.svg",
+          sprite: '../sprite.svg',
           bust: false,
           render: {
             scss: {
-              template: "./assets/img/symbols/template.scss",
-              dest: "../../sass/_sprite_generated.scss"
+              template: './assets/img/symbols/template.scss',
+              dest: '../../sass/_sprite_generated.scss'
             }
           }
         }
@@ -63,7 +68,7 @@ gulp.task('optimize-images', function (cb) {
 });
 
 gulp.task('update-blog-links', function (cb) {
-  exec('cd ./scripts && ./update_blog_links.js', function (err, stdout, stderr) {
+  exec('cd ./scripts && ./update_blog_links.js', function (err) {
     if (err instanceof Error) {
       cb(err);
     }
@@ -72,7 +77,7 @@ gulp.task('update-blog-links', function (cb) {
 });
 
 gulp.task('update-tweets', function (cb) {
-  exec('cd ./scripts && ./update_tweets.js', function (err, stdout, stderr) {
+  exec('cd ./scripts && ./update_tweets.js', function (err) {
     if (err instanceof Error) {
       cb(err);
     }
@@ -80,8 +85,8 @@ gulp.task('update-tweets', function (cb) {
   });
 });
 
-gulp.task('update-platforms-page', ['import-docs'], function (cb) {
-  return exec('cd ./scripts && ./update_platforms_page.js', function (err, stdout, stderr) {
+gulp.task('update-platforms-page', function (cb) {
+  return exec('cd ./scripts && ./update_platforms_page.js', function (err) {
     if (err instanceof Error) {
       cb(err);
     }
@@ -133,14 +138,35 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([Path.CSS_SOURCES], ['sass']);
+  gulp.watch(Path.CSS_SOURCES, gulp.series('sass'));
   gulp.watch([
     './assets\/img\/*.{svg,png,jpg}',
     './assets\/img\/nav/*.{svg,png,jpg}',
     './assets\/img\/footer/*.{svg,png,jpg}'
-  ], ['generate-asset-manifest']);
+  ], gulp.series('generate-asset-manifest'));
 });
 
 
-gulp.task('build', [ 'update-blog-links', 'update-tweets', 'import-docs', 'update-platforms-page', 'optimize-images', 'sass', 'build-examples', 'generate-asset-manifest' ]);
-gulp.task('default', [ 'update-platforms-page', 'sass', 'generate-asset-manifest', 'watch' ]);
+gulp.task('build',
+  gulp.parallel(
+    'update-blog-links',
+    /*'update-tweets',*/ //TODO: endpoint is broken, fix with proper Twitter API
+    gulp.series('import-docs', 'update-platforms-page'),
+    'optimize-images',
+    'sass',
+    'build-examples',
+    'generate-asset-manifest'
+  )
+);
+
+gulp.task('default',
+  gulp.series(
+    gulp.parallel(
+      gulp.series(
+        'import-docs', 'update-platforms-page'),
+      'sass',
+      'generate-asset-manifest'
+    ),
+    'watch'
+  )
+);

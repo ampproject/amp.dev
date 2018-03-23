@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "feedparser": "*",
-    "gulp": "3.9.1",
+    "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-plumber": "*",
     "gulp-sass": "*",

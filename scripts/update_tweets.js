@@ -33,27 +33,27 @@ feedparser.on('readable', function () {
   while (item = this.read()) {
 
     // write into the body for the homepage excerpt file
-  if (--count >= 0) {
+    if (--count >= 0) {
 
-    var author = item.title.match(/^\@([^\s]+) (.+)/);
-    var tweetId = item.link.substr(20).split('/')[2];
+      var author = item.title.match(/^\@([^\s]+) (.+)/);
+      var tweetId = item.link.substr(20).split('/')[2];
 
-    body += `
+      body += `
   - origin_name: ${ author[2] }
     origin_id: ${ author[1] }
     origin_href: https://twitter.com/${ author[1] }`;
 
-    if (author[1] !== 'AMPhtml') {
-      body += `
+      if (author[1] !== 'AMPhtml') {
+        body += `
     retweet_id: AMPhtml
     retweet_href: https://twitter.com/amphtml`;
-    }
+      }
 
-    var description = item.description
-      .replace(/\<img class=\"Emoji[^\>]+alt=\"([^\"]+)\"[^\>]+\>/g, "$1")
-      .replace(/\n/g, '');
+      var description = item.description
+        .replace(/\<img class=\"Emoji[^\>]+alt=\"([^\"]+)\"[^\>]+\>/g, "$1")
+        .replace(/\n/g, '');
 
-    body += `
+      body += `
     tweet_id: ${ tweetId }
     date_data: ${ moment(item.date).format() }
     date: ${ moment(item.date).format("MMMM D, YYYY") }
@@ -61,8 +61,6 @@ feedparser.on('readable', function () {
       ${ description }
 `;
     }
-
-
 
   }
 });
