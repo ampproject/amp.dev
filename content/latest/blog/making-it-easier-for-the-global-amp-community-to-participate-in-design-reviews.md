@@ -8,7 +8,7 @@ role:  Engineer on the AMP Project
 origin: "https://amphtml.wordpress.com/2018/01/29/making-it-easier-for-the-global-amp-community-to-participate-in-design-reviews/amp/"
 excerpt: "The AMP Project community is global&#8211;with over 400 developers from around the world contributing to AMP&#8211;yet the design reviews have thus far been held at a time that was generally convenient only for people in the Americas.  We&#8217;ve heard the feedback from members of the global AMP community and we are happy to announce that [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-01-29T11:30:22-05:00
+date_data: 2018-01-29T08:30:22-08:00
 $date: January 29, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

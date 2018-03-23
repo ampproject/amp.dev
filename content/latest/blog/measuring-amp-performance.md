@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2018/01/17/measuring-amp-performance/amp/"
 excerpt: "Editor’s note: The following was posted on Medium by Martin Schierle, Mobile Solutions Consultant, Google. TL;DR: Whenever performance testing AMP, keep in mind that a test from origin will include potentially suboptimal server settings like bad cache headers or missing image optimizations. Also the biggest speed gain (near instant load through prerendering) will not be reflected in [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-01-17T08:00:32-05:00
+date_data: 2018-01-17T05:00:32-08:00
 $date: January 17, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

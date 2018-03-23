@@ -8,7 +8,7 @@ role:  Engineering Lead, AMP Project, Google
 origin: "https://amphtml.wordpress.com/2018/02/13/amps-new-horizons/amp/"
 excerpt: "Hallo uit Amsterdam! We’re kicking off the second AMP Conf today in Europe, celebrating the global reach of the AMP community. This year we have over 400 developers joining the AMP team in Amsterdam for two days and thousands more watching the livestream, marking our biggest event yet. Since last year’s AMP Conf, we&#8217;ve seen [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-02-13T03:39:02-05:00
+date_data: 2018-02-13T00:39:02-08:00
 $date: February 13, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

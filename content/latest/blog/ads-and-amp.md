@@ -8,7 +8,7 @@ role:  Product Marketing Manager, AMP Project, Google
 origin: "https://amphtml.wordpress.com/2018/02/14/ads-and-amp/amp/"
 excerpt: "In the world of online advertising, the saying “time equals money” seems more pertinent than ever. Consumer attention is a scarce commodity, meaning ads need to be not only relevant and engaging, but also fast. Since the Accelerated Mobile Pages (AMP) Project launched in October 2015, over 31M domains have embraced AMP to grow their [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-02-14T05:06:16-05:00
+date_data: 2018-02-14T02:06:16-08:00
 $date: February 14, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

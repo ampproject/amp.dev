@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2018/01/19/amping-up-the-amp-framework/amp/"
 excerpt: "Editor’s note: The following was posted on Medium by Konstantin Sokhan, Design Director &#38; David Tapp, Client Partner, MetaLab. Checkout all the AMP templates on ampstart.com. TL;DR — We Journeyed Into the World of AMP and Learned Some Stuff We teamed up with Google to focus on The AMP Project and received a dream brief: create anything your heart desires, so long [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-01-19T11:43:47-05:00
+date_data: 2018-01-19T08:43:47-08:00
 $date: January 19, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

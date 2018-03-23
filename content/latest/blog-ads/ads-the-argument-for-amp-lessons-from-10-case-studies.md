@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2017/10/09/the-argument-for-amp-lessons-from-10-case-studies/amp/"
 excerpt: "Editor&#8217;s note: The following is an excerpt from an independent study done by Stone Temple, a digital marketing agency, posted with their permission. Read the full study here.  We conducted interviews of more than 10 companies that have invested heavily in AMP, to see if we could learn how hard it was to implement, the [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2017-10-09T16:14:24-04:00
+date_data: 2017-10-09T13:14:24-07:00
 $date: October 9, 2017
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2017/11/28/an-amp-paywall-and-subscription-model-for-all-publishers/amp/"
 excerpt: "The following was posted on LaterPay&#8217;s Blog by Cosmin Ene, CEO, LaterPay. A majority of mobile users will not wait longer than 3 seconds for a page to load before moving on, creating a marked decline in revenue for sites that load slowly. It’s this desire for speed and convenience on both the user and publisher’s part that spurred [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2017-11-28T12:49:35-05:00
+date_data: 2017-11-28T09:49:35-08:00
 $date: November 28, 2017
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
