@@ -1,20 +1,21 @@
 language: node_js
 node_js:
-- 7
+- "node"
+
+git:
+  depth: 3
+
 cache:
+  pip: true
   directories:
-  - node_modules # NPM packages
-  - $(npm config get prefix)/bin/gulp
-  - $(npm config get prefix)/bin/firebase
-  - /home/travis/.nvm/versions/node/v7.10.1/lib/node_modules
-  - $HOME/.cache/pip
-  - /home/travis/.local/bin
+  - node_modules
+
 install:
 - pip install grow --user
-- npm install -g gulp
+- npm install -g gulp-cli
 - npm install -g firebase-tools
 - npm install
-- npm update
+
 script:
 - 'if [ "${TRAVIS_BRANCH}" = "production" ]; then firebase use production; fi'
 - 'if [ "${TRAVIS_BRANCH}" = "master" ]; then firebase use staging; fi'
