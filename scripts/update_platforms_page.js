@@ -178,7 +178,9 @@ browsers:
   - title: Safari
     img: /static/img/platforms/safari.png
   - title: Opera
-    img: /static/img/platforms/opera.png `;
+    img: /static/img/platforms/opera.png
+  - title: UC Browser
+    img: /static/img/platforms/uc_browser.png `;
 }
 
 // Put them into the right location in the YAML
