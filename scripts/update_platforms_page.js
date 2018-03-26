@@ -113,6 +113,8 @@ function addCMS() {
           link: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
         - title: Textpattern
           link: https://textpattern.com/weblog/401/textpattern-website-redesign/amp
+        - title: TownNews
+          link: https://www.townnews365.com/
         - title: Tumblr
           link: https://www.tumblr.com/about
         - title: WordPress.com
