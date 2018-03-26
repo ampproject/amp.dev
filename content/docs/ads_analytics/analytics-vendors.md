@@ -201,7 +201,7 @@ Adds support for mParticle. More details for adding mParticle support can be fou
 
 Type attribute value: `newrelic`
 
-Adds support for New Relic Browser to measure AMP throughput and performance. Instructions to start capturing AMP performance data can be found on the New Relic AMP docs page at [docs.newrelic.com](https://docs.newrelic.com/docs/monitor-amp-pages-new-relic-browser).
+Adds support for New Relic Browser to measure AMP throughput and performance. By adding the `newrelic` attribute value you’ll need to add your `app ID` and `license key` from your New Relic Browser account to start capturing data. More details can be found on the New Relic Browser AMP docs page at [docs.newrelic.com](https://docs.newrelic.com/docs/browser/new-relic-browser/installation/monitor-amp-pages-new-relic-browser).
 
 ### Nielsen
 
