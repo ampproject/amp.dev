@@ -46,7 +46,17 @@ The `data-slot` attribute is more unique. In `amp-ad`, any attributes that start
 </amp-ad>
 ```
 
-Try **adding** both of the above examples into your article just after the `<header>` tag. **Refresh** the page and you should see two test ads:
+Try **adding** both of the above examples into your article just after the `<header>` tag. 
+
+Remember, not all components are included in the core AMP library JavaScript file. We need to include an additional JavaScript request for the ad component.
+
+**Add** the following script to the `<head>` tag:
+
+```html
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+```
+
+**Refresh** the page and you should see two test ads:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Test ads') }}
 
