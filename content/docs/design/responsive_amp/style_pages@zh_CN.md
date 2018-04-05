@@ -39,10 +39,6 @@ AMP 网页中不允许出现以下样式：
       <td data-th="Banned style"><code>-amp-</code> 类和 <code>i-amp-</code> 标记名称</td>
       <td data-th="Description"> 在开发者定义的样式表中，类名称不能以字符串 <code>-amp-</code> 开头。 这些类专门预留给系统在 AMP 运行时使用。此外，面向用户的样式表不能针对 <code>-amp-</code> 类和 <code>i-amp</code> 标记引用 CSS 选择器。</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>behavior</code>、<code>-moz-binding</code></td>
-      <td data-th="Description">出于安全考虑，禁止使用这些属性。</td>
-    </tr>
   </tbody>
 </table>
 
