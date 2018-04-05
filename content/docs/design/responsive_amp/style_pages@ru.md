@@ -95,10 +95,6 @@ $title: Поддерживаемые элементы CSS
       <td data-th="Banned style">Названия классов <code>-amp-</code> и тегов <code>i-amp-</code></td>
       <td data-th="Description">Названия классов в специальных таблицах стилей не должны начинаться со строки <code>-amp-</code>. Они зарезервированы для внутреннего использования AMP-страницами. Из этого следует, что таблица стилей пользователя не может ссылаться на селекторы CSS для классов <code>-amp-</code> и тегов <code>i-amp</code>.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
-      <td data-th="Description">Данные элементы запрещены из соображений безопасности.</td>
-    </tr>
   </tbody>
 </table>
 

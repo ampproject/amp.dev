@@ -40,10 +40,6 @@ $title: サポートされる CSS
       <td data-th="Banned style"><code>-amp-</code> クラス名、<code>i-amp-</code> タグ名</td>
       <td data-th="Description"> 作成者のスタイルシートで、クラス名を文字列 <code>-amp-</code> で始めることはできません。この文字列は AMP ランタイムが内部で使用する予約文字列です。また、ユーザーのスタイルシートで <code>-amp-</code> クラスや <code>i-amp</code> タグの CSS セレクタを参照することはできません。</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>behavior</code>、<code>-moz-binding</code></td>
-      <td data-th="Description">これらのプロパティはセキュリティ上の理由から許可されていません。</td>
-    </tr>
   </tbody>
 </table>
 
