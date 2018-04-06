@@ -23,7 +23,7 @@ Tidak tahu cara memulainya? Dalam panduan singkat ini, Anda akan mempelajari car
   </amp-ad>
 [/sourcecode]
 
-[Berikut ini](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks) daftar jaringan iklan yang didukung.
+[Berikut ini](/id/docs/ads_analytics/ads_vendors.html) daftar jaringan iklan yang didukung.
 
 ### 3. Tetapkan lebar dan tinggi unit iklan:
 
@@ -40,7 +40,7 @@ Tidak tahu cara memulainya? Dalam panduan singkat ini, Anda akan mempelajari car
 Dengan menentukan lebar dan tinggi unit iklan, Anda telah menetapkan ukuran iklan di halaman AMP.
 
 {% call callout('Catatan', type='note') %}
- Atribut data tambahan akan memberikan informasi kepada jaringan iklan untuk mendapatkan pub dan ukuran yang tepat dari servernya. Setiap jaringan iklan mengirimkan atribut yang berbeda.[Pelajari lebih lanjut](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks).
+ Atribut data tambahan akan memberikan informasi kepada jaringan iklan untuk mendapatkan pub dan ukuran yang tepat dari servernya. Setiap jaringan iklan mengirimkan atribut yang berbeda.[Pelajari lebih lanjut](/id/docs/ads_analytics/ads_vendors.html).
  {% endcall %}
 
 ###  4. [OPSIONAL] Tetapkan placeholder:

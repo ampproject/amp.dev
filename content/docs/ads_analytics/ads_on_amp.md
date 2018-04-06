@@ -8,7 +8,7 @@ toc: true
 <div class="toc">
 {% include "/views/partials/sub_nav.html" %}
   <ul>
-    <li><a href="/learn/who/#ads">Supported Platforms</a></li>
+    <li><a href="/docs/ads_analytics/ads_vendors.html">Ad Vendors</a></li>
     <li><a href="/roadmap">Roadmap</a></li>
   </ul>
 </div>

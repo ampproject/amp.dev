@@ -25,7 +25,7 @@ type="a9">
 </amp-ad>
 [/sourcecode]
 
-[此处是受支持的广告网络列表](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks)。
+[此处是受支持的广告网络列表](/zh_cn/docs/ads_analytics/ads_vendors.html)。
 
 ### 3. 指定您的广告单元的高度和宽度：
 
@@ -42,7 +42,7 @@ data-aax_src="302">
 定义广告单元的高度和宽度后，意味着您指定了自己 AMP 网页上的广告尺寸。
 
 {% call callout('注意', type='note') %}
- 其他数据属性用于指示广告网络从服务器提取合适的尺寸和发布商数据。每个广告网络都有不同的属性要发送。[了解详情](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks)
+ 其他数据属性用于指示广告网络从服务器提取合适的尺寸和发布商数据。每个广告网络都有不同的属性要发送。[了解详情](/zh_cn/docs/ads_analytics/ads_vendors.html)
 。 {% endcall %}
 
 ###  4. [可选] 指定占位符：

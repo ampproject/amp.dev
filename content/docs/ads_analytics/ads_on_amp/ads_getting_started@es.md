@@ -7,7 +7,7 @@ $order : 0
 
 ¿No sabe cómo empezar? En esta breve guía, aprenderá cómo publicar anuncios de forma rápida y sencilla en su página de AMP.
 
-### 1. Agregar el componente `<amp-ads>` a tu página AMP:
+### 1. Agregar el componente `<amp-ads>` a tu página AMP
 
 [sourcecode:html]
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
@@ -15,7 +15,7 @@ $order : 0
 
 Al agregar el componente `amp-ads`, ha agregado el framework de anuncios a su página de AMP.
 
-### 2. Especificar al servidor de anuncios el atributo `type`:
+### 2. Especificar al servidor de anuncios el atributo `type`
 
 [sourcecode:html]
 <amp-ad
@@ -23,9 +23,9 @@ Al agregar el componente `amp-ads`, ha agregado el framework de anuncios a su p�
   </amp-ad>
 [/sourcecode]
 
-[Aquí](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks) está una lista de los servidores de anuncios soportados o aceptados.
+[Aquí](/es/docs/ads_analytics/ads_vendors.html) está una lista de los servidores de anuncios soportados o aceptados.
 
-### 3. Especificar la altura y el ancho de su anuncio:
+### 3. Especificar la altura y el ancho de su anuncio
 
 [sourcecode:html]
 <amp-ad width="300"
@@ -40,10 +40,10 @@ Al agregar el componente `amp-ads`, ha agregado el framework de anuncios a su p�
 Al definir el `height` y `weight` de su anuncio, usted especifica el tamaño del anuncio en su página AMP.
 
 {% call callout('Nota', type='note') %}
-Los atributos de datos adicionales le indican a la red de anuncios que extraiga el tamaño correcto y el editor de sus servidores. Cada red de anuncios tiene diferentes atributos para enviar. [Aprende más](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks).
+Los atributos de datos adicionales le indican a la red de anuncios que extraiga el tamaño correcto y el editor de sus servidores. Cada red de anuncios tiene diferentes atributos para enviar. [Aprende más](/es/docs/ads_analytics/ads_vendors.html).
 {% endcall %}
 
-### 4. [OPCIONAL] Especificar un `placeholder`:
+### 4. [OPCIONAL] Especificar un `placeholder`
 
 [sourcecode:html]
  <amp-ad width="300"
@@ -60,7 +60,7 @@ AMP admite un atributo de marcador de posición opcional. Dependiendo de la red 
 [Aprende más sobre el `placeholder`](/es/docs/guides/responsive/placeholders#placeholders).
 {% endcall %}
 
-### 5. [OPCIONAL] Especificar un atributo `fallback`:
+### 5. [OPCIONAL] Especificar un atributo `fallback`
 
 [sourcecode:html]
 <amp-ad width="300"
