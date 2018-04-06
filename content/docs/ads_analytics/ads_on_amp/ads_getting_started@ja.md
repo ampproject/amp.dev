@@ -25,7 +25,7 @@ type="a9">
 </amp-ad>
 [/sourcecode]
 
-[こちら](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks)から、利用可能な広告ネットワークを確認できます。
+[こちら](/ja/docs/ads_analytics/ads_vendors.html)から、利用可能な広告ネットワークを確認できます。
 
 ### 3. 広告ユニットの高さと幅を指定する
 
@@ -42,7 +42,7 @@ data-aax_src="302">
 広告ユニットの高さと幅を定義することで、AMP ページ上の広告のサイズが指定されます。
 
 {% call callout('注', type='note') %}
- 追加的なデータ属性は、広告ネットワークがサーバーから適切なサイズとサイト運営者を取得できるようにするための情報です。送信できる属性は広告ネットワークにより異なります。[詳細](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks)
+ 追加的なデータ属性は、広告ネットワークがサーバーから適切なサイズとサイト運営者を取得できるようにするための情報です。送信できる属性は広告ネットワークにより異なります。[詳細](/ja/docs/ads_analytics/ads_vendors.html)
 {% endcall %}
 
 ###  4. [省略可能] プレースホルダを指定する

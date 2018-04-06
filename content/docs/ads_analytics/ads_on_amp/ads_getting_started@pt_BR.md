@@ -25,7 +25,7 @@ type="a9">
 </amp-ad>
 [/sourcecode]
 
-[Veja](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks) uma lista de redes de anúncio compatíveis.
+[Veja](/pt_br/docs/ads_analytics/ads_vendors.html) uma lista de redes de anúncio compatíveis.
 
 ### 3. Especifique a altura e largura do bloco de anúncios:
 
@@ -42,7 +42,7 @@ data-aax_src="302">
 Ao definir a altura e largura do bloco de anúncios, você especifica o tamanho do anúncio na página AMP.
 
 {% call callout('Observação', type='note') %}
- Os atributos de dados adicionais estão informando à rede de anúncios para buscar o pub e o tamanho correto nos servidores. Cada rede de anúncios tem atributos diferentes para enviar. [Saiba mais](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks)
+ Os atributos de dados adicionais estão informando à rede de anúncios para buscar o pub e o tamanho correto nos servidores. Cada rede de anúncios tem atributos diferentes para enviar. [Saiba mais](/pt_br/docs/ads_analytics/ads_vendors.html)
 . {% endcall %}
 
 ###  4. [Opcional] Especifique um marcador de posição:
