@@ -17,4 +17,4 @@ AMP pages are just web pages with some extra features (and a few limitations), m
 
 For optimal results, approach ads on AMP pages in the same manner as ads on non-AMP pages.
 
-<a class="button go-button" href="/docs/guides/ads/ads_getting_started.html">Let's get started!</a>
+<a class="button go-button" href="/docs/ads_analytics/ads_getting_started.html">Let's get started!</a>
