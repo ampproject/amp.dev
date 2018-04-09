@@ -10,15 +10,7 @@ assets/css/*
 .depcache.json
 
 content/includes/who.yaml
-content/docs/contribute/governance.md
 content/learn/design-principles.md
-content/docs/reference/amp-actions-and-events.md
-content/docs/reference/spec.md
-content/docs/reference/spec/*.md
-content/docs/reference/components/**/*.md
-content/docs/guides/amp-cors-requests.md
-content/docs/guides/amp-cache-debugging.md
-content/support/developer/get_support.md
 
 content/docs/contribute/governance.md
 content/docs/fundamentals/spec.md
@@ -29,3 +21,4 @@ content/docs/interaction_dynamic/amp-actions-and-events.md
 content/docs/troubleshooting/amp-cache-debugging.md
 content/reference/components/**/*.md
 content/support/developer/get_support.md
+content/docs/ads_analytics/integration-guide.md
