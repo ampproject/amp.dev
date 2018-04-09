@@ -1,6 +1,5 @@
 ---
 $title: まとめ
-$order: 4
 ---
 
 これで、e コマースのインタラクティブな商品詳細ページが完成しました。ページに表示されるサイズと価格は必要時にリモートの JSON エンドポイントから取得されるもので、各 SKU に応じて変化します。
@@ -16,5 +15,5 @@ $order: 4
 
 ## 次のステップ
 
-インタラクティブな AMP ページは効果的かつ柔軟に作成することができます。詳しくは、[`<amp-bind>`](https://www.ampproject.org/ja/docs/reference/components/amp-bind.html) のドキュメントや、他の [動的な AMP コンポーネント](https://www.ampproject.org/ja/docs/reference/components#dynamic-content)についての説明をご覧ください。
+インタラクティブな AMP ページは効果的かつ柔軟に作成することができます。詳しくは、[`<amp-bind>`](/ja/docs/reference/components/amp-bind.html) のドキュメントや、他の [動的な AMP コンポーネント](/ja/docs/reference/components#動的コンテンツ)についての説明をご覧ください。
  
