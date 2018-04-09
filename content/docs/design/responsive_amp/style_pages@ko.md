@@ -39,10 +39,6 @@ AMP 구성요소에는 기본 스타일이 제공되므로 반응형 페이지�
       <td data-th="Banned style"><code>-amp-</code> 클래스 및 <code>i-amp-</code> 태그 이름</td>
       <td data-th="Description"> 작성자 스타일시트의 클래스 이름은 문자열 <code>-amp-</code> 로 시작할 수 없습니다. 이러한 문자열은 AMP 런타임에서 내부용으로만 사용할 수 있습니다. 따라서 사용자의 스타일시트는  <code>-amp-</code> 클래스 및 <code>i-amp</code> 태그의 CSS 선택기를 참조할 수 없습니다.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
-      <td data-th="Description"> 이러한 속성은 보안상의 이유로 허용되지 않습니다.</td>
-    </tr>
   </tbody>
 </table>
 

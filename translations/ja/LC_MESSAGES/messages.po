@@ -280,7 +280,7 @@ msgstr "広告と分析 - AMP コンポーネント"
 
 #: /content/reference/components/_blueprint.yaml
 msgid "Ads & analytics"
-msgstr ""
+msgstr "広告と分析"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Adtech success stories"

@@ -23,7 +23,7 @@ $order : 0
   </amp-ad>
 [/sourcecode]
 
-지원하는 ad 네트워크 목록은 [여기](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks)에서 볼 수 있습니다.
+지원하는 ad 네트워크 목록은 [여기](/ko/docs/ads_analytics/ads_vendors.html)에서 볼 수 있습니다.
 
 ### 3. ad 유닛에 width와 height를 정의하세요:
 
@@ -40,7 +40,7 @@ $order : 0
 ad 유닛에 width와 height를 정의하여, AMP 페이지 내 ad 사이즈를 정의할 수 있습니다.
 
 {% call callout('Note', type='note') %}
-추가 데이터 속성은 서버에 배포하고 적절한 사이즈를 가져오도록 광고 네트워크에 알리는 것입니다. 각 광고 네트워크별로 보내는 속성이 다릅니다. [Learn more](https://www.ampproject.org/docs/reference/components/amp-ad#supported-ad-networks).
+추가 데이터 속성은 서버에 배포하고 적절한 사이즈를 가져오도록 광고 네트워크에 알리는 것입니다. 각 광고 네트워크별로 보내는 속성이 다릅니다. [Learn more](/ko/docs/ads_analytics/ads_vendors.html).
 {% endcall %}
 
 ### 4. [옵션] placeholder 정의:

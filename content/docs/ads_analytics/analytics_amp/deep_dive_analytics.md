@@ -228,6 +228,8 @@ and each time an `a` tag is clicked:
 }
 [/sourcecode]
 
+{% call callout('Important', type='caution') %} The above approach is only recommended for AMP pages and not AMPHTML ads. Since analytics priority is lower compared to content on the page, it's recommended that clicks are tracked using a browser redirect to avoid click loss. {% endcall %}
+
 AMP supports the following trigger configurations:
 
 <table>
