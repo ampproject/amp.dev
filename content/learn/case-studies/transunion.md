@@ -37,7 +37,7 @@ TransUnion had a hypothesis that slow loading mobile pages could be leading to h
 
 ## Solution
 
-To enhance the mobile experience, TransUnion turned to Accelerated Mobile Pages (AMP)—recommended by the brand’s marketing consultant, BrightEdge—with the hope of increasing mobile conversions at an efficient cost per order. Because the site was already mobile-friendly, TransUnion didn’t have to redesign the content. This allowed the bureau to go live with AMP in less than a week—a quick turnaround. 
+To enhance the mobile experience, TransUnion turned to Accelerated Mobile Pages (AMP)—recommended by the brand’s marketing consultant, [BrightEdge](https://www.brightedge.com/)—with the hope of increasing mobile conversions at an efficient cost per order. Because the site was already mobile-friendly, TransUnion didn’t have to redesign the content. This allowed the bureau to go live with AMP in less than a week—a quick turnaround. 
 
 <div class="img-right">
     <amp-img width="400" height="810" layout="responsive" src="/static/img/case-studies/transunion_2.png"></amp-img>
