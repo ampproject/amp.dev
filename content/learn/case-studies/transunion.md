@@ -1,7 +1,7 @@
 ---
 $order: 26
 $title: TransUnion
-$date: Mar 12, 2018
+$date: Apr 9, 2018
 $category: ecommerce
 $parent: /content/learn/case-studies.html
 class: case-study post-detail
