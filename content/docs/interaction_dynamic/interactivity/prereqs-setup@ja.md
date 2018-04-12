@@ -1,8 +1,5 @@
 ---
 $title: 設定
-$order: 0
-toc: true
-$parent: /content/docs/tutorials/interactivity.md
 ---
 
 [TOC]
@@ -47,8 +44,8 @@ node app.js
 次に、ウェブブラウザで <a href="http://localhost:3000">http://localhost:3000</a> に移動して、AMP ページが機能していることを確認します。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/interactivity.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/interactivity/get-familiar.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/interaction_dynamic/interactivity.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-next">次へ</span></a>
 </div>
  
  
