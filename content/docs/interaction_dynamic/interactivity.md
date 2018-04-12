@@ -18,5 +18,5 @@ You'll build an e-commerce product page that:
 
 
 <div class="prev-next-buttons">
-<a class="button" href="/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-next">Get started</span></a>
+<a class="button" href="/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-next">Get started</span></a>
 </div>

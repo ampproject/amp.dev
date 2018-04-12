@@ -1,6 +1,5 @@
 ---
 $title: 댓글 추가
-$order: 1
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
@@ -23,7 +22,7 @@ JSON 응답 예제입니다:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-폼 컴포넌트는 단순히 [amp-mustache](https://www.ampproject.org/ko/docs/reference/components/amp-mustache) 템플릿을 이용한 페이지 내에 그 값을 표현합니다.
+폼 컴포넌트는 단순히 [amp-mustache](/ko/docs/reference/components/amp-mustache) 템플릿을 이용한 페이지 내에 그 값을 표현합니다.
 
 [sourcecode:html]
 <div submit-success>
@@ -62,6 +61,6 @@ JSON 응답 예제입니다:
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/tutorials/login_requiring/login.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/tutorials/login_requiring/logout.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/interaction_dynamic/login_requiring/logout.html"><span class="arrow-next">다음</span></a>
 </div>

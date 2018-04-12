@@ -1,6 +1,5 @@
 ---
 $title: Login
-$order: 0
 ---
 
 Na primeira vez em que chegar na página, você verá dois comentários e um botão de login.
@@ -70,10 +69,10 @@ Veja abaixo um breve resumo:
 - O servidor deve coordenar a resposta assim que o usuário clicar no botão de login.
 
 {% call callout('Dica', type='success') %}
-Veja uma explicação detalhada sobre esse fluxo na [documentação sobre amp-access](https://www.ampproject.org/pt_br/docs/reference/components/amp-access#login-flow).
+Veja uma explicação detalhada sobre esse fluxo na [documentação sobre amp-access](/pt_br/docs/reference/components/amp-access#login-flow).
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/tutorials/login_requiring.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-next">Próxima</span></a>
 </div>

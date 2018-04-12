@@ -1,7 +1,5 @@
 ---
 $title: Trabajar con datos remotos
-$order: 3
-toc: true
 ---
 
 [TOC]
@@ -177,6 +175,6 @@ Y tenemos precios correctos! Pruébalo.
 **Pruébalo**:  si selecciona un tamaño que no está disponible, no puede agregarlo al carrito.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/interactivity/wrapping-up.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="/es/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">Próximo</span></a>
 </div>
