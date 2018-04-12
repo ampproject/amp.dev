@@ -47,6 +47,6 @@ node app.js
 Then, navigate to <a href="http://localhost:3000">http://localhost:3000</a> in your web browser to see the AMP page running!
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/interactivity.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/interactivity/get-familiar.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/interaction_dynamic/interactivity.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-next">Next</span></a>
 </div>
