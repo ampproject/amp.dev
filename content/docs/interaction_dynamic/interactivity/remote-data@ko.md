@@ -1,7 +1,5 @@
 ---
 $title: 원격 데이터 사용하기
-$order: 3
-toc: true
 ---
 
 [TOC]
@@ -9,7 +7,7 @@ toc: true
 페이지 로드 시 바인딩할 수 있는 데이터가 가져오기에 너무 크거나 복잡한 경우 어떻게 해야 할까요? 또는 각 SKU에 찾는 데 시간이 오래 걸리는 가격이 지정된 경우에는 어떻게 할까요? 표시되지 않는 항목의 SKU 가격을 찾는 것은 헛수고입니다.
 
 {% call callout('도움말', type='success') %}
-`<amp-state>`는 [`src`](https://www.ampproject.org/ko/docs/reference/components/amp-<bind id="attributes"></bind>) 속성을 통한 원격 데이터 가져오기를 지원하며, CORS 엔드포인트에서 JSON을 가져옵니다. 페이지 로드 시 한 번만 가져오며 데이터를 최신 상태로 유지하는 데 유용합니다(특히 캐시에서 제공되는 경우).
+`<amp-state>`는 [`src`](/ko/docs/reference/components/amp-<bind id="attributes"></bind>) 속성을 통한 원격 데이터 가져오기를 지원하며, CORS 엔드포인트에서 JSON을 가져옵니다. 페이지 로드 시 한 번만 가져오며 데이터를 최신 상태로 유지하는 데 유용합니다(특히 캐시에서 제공되는 경우).
 
 `<amp-state>` 요소의 `src` 속성을 바인딩할 수도 있습니다. 즉 사용자의 동작이 원격 JSON 데이터 가져오기를 트리거할 수 있으며 이렇게 가져온 데이터는 페이지에 바인딩할 수 있는 상태가 됩니다.
 {% endcall %}
@@ -175,7 +173,7 @@ AMPPAREL 매장은 특이하게도 색상과 사이즈에 따라 셔츠 가격�
 **시도해 보기**: 주문할 수 없는 사이즈를 선택하면 장바구니에 추가할 수 없습니다. 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/ko/docs/tutorials/interactivity/wrapping-up.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/ko/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/ko/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">Next</span></a>
 </div>
  
