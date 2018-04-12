@@ -1,7 +1,5 @@
 ---
 $title: インタラクティブ性の向上
-$order: 2
-toc: true
 ---
 
 [TOC]
@@ -71,7 +69,7 @@ selected.slide // Evaluates to 0.
 
 
 {% call callout('ヒント', type='success') %}
-`AMP.setState()` は、ネストされたオブジェクト リテラルのディープマージを行います。詳しくは、[`<amp-bind>`](https://www.ampproject.org/ja/docs/reference/components/amp-bind.html) のドキュメントをご覧ください。
+`AMP.setState()` は、ネストされたオブジェクト リテラルのディープマージを行います。詳しくは、[`<amp-bind>`](/ja/docs/reference/components/amp-bind.html) のドキュメントをご覧ください。
 {% endcall %}
 
 ### インジケーターの要素をバインドする
@@ -211,7 +209,7 @@ selected.slide // Evaluates to 0.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/interactivity/get-familiar.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/interactivity/remote-data.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">次へ</span></a>
 </div>
  
