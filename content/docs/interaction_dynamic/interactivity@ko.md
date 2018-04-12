@@ -17,5 +17,5 @@ $order: 3
 
 
 <div class="prev-next-buttons">
-<a class="button" href="/ko/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-next">시작하기</span></a>
+<a class="button" href="/ko/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-next">시작하기</span></a>
 </div>
