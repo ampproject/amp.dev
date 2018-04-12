@@ -1,6 +1,5 @@
 ---
 $title: インタラクティブな AMP ページを作成する
-$order: 3
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='このチュートリアルで作成する AMP ページ') }}
@@ -17,7 +16,7 @@ e コマース商品ページを作成しながら、以下の内容について
 
 
 <div class="prev-next-buttons">
-<a class="button" href="/ja/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-next">開始する</span></a>
+<a class="button" href="/ja/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-next">開始する</span></a>
 </div>
  
  
