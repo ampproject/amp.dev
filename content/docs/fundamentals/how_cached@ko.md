@@ -37,7 +37,7 @@ AMP는 오픈 에코 시스템이며 AMP 프로젝트는 AMP 캐시의 개발을
 
 당신의 문서가 캐시되지 않도록 하려면 HTML 태그에서 'amp'속성을 제거하는 방법이 있습니다. 이렇게 하면 문서의 기능에 영향을 미치지 않으면서 기술적으로 유효하지 않은 AMP가 됩니다.
 
-## 캐시 된 AMP 페이지는 누가 요청합니까>
+## 캐시 된 AMP 페이지는 누가 요청합니까?
 
 캐시 된 AMP 페이지는 플랫폼(예 : GoogleSearch, GoogleNews 및 Cloudflare)및 모바일 앱들에 의해 액세스됩니다. 모바일 앱들은 URL이나 Progressive Web Apps의 cross-origin XHRs를 통해 캐시 된 AMP 콘텐츠에 링크할 수 있습니다. (Google의 [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)참고) (더욱 자세한 것은 "[Embed & use AMP as a data source](https://www.ampproject.org/docs/guides/pwa-amp/amp-in-pwa)"를 참고하십시오).
 
