@@ -1,7 +1,5 @@
 ---
 $title: スターター コードについて
-$order: 1
-toc: true
 ---
 
 [TOC]
@@ -38,10 +36,10 @@ AMP ページは、安定したパフォーマンスのために制限がいく�
 
 AMP コンポーネントでさらに機能や UI コンポーネントが加わることにより、AMP ページのインタラクティビティが向上します。スターター コードでは次のような AMP コンポーネントを使用します。
 
-- [`<amp-carousel>`](https://www.ampproject.org/ja/docs/reference/components/amp-carousel.html): 商品を複数のビューで表示する画像カルーセル。
-- [`<amp-mustache>`](https://www.ampproject.org/ja/docs/reference/components/amp-mustache.html): amp-form からサーバーの応答をレンダリングするためのテンプレート システム。
-- [`<amp-form>`](https://www.ampproject.org/ja/docs/reference/components/amp-form.html): AMP ページに必要な `<form>` 要素に対し、特別な機能を追加します。
-- [`<amp-selector>`](https://www.ampproject.org/ja/docs/reference/components/amp-form.html): 要素のグループから 1 つまたは複数の要素を意味に基づき選択できるようにします。amp-form の入力ソースとして使用可能です。
+- [`<amp-carousel>`](/ja/docs/reference/components/amp-carousel.html): 商品を複数のビューで表示する画像カルーセル。
+- [`<amp-mustache>`](/ja/docs/reference/components/amp-mustache.html): amp-form からサーバーの応答をレンダリングするためのテンプレート システム。
+- [`<amp-form>`](/ja/docs/reference/components/amp-form.html): AMP ページに必要な `<form>` 要素に対し、特別な機能を追加します。
+- [`<amp-selector>`](/ja/docs/reference/components/amp-form.html): 要素のグループから 1 つまたは複数の要素を意味に基づき選択できるようにします。amp-form の入力ソースとして使用可能です。
 
 ## 基本的なインタラクティビティ
 
@@ -54,7 +52,7 @@ AMP コンポーネントでさらに機能や UI コンポーネントが加わ
 **試してみる**: 画像カルーセルをスワイプして [カートに追加] ボタンをタップします。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-next">次へ</span></a>
 </div>
  
