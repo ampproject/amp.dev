@@ -1,6 +1,5 @@
 ---
 $title: 마무리
-$order: 4
 ---
 
 축하합니다! 이제 요청에 따라 원격 JSON 엔드포인트에서 SKU별로 다르게 가져온 사이즈와 가격이 포함된 양방향 전자상거래 제품 세부정보 페이지를 만들었습니다.
@@ -16,5 +15,5 @@ $order: 4
 
 ## 다음 단계
 
-[`<amp-bind>`](https://www.ampproject.org/ko/docs/reference/components/amp-bind.html) 설명서 및 기타 [동적 AMP 구성요소](https://www.ampproject.org/ko/docs/reference/components#dynamic-content)에서 양방향 AMP 페이지를 구축하여 얻을 수 있는 강력한 기능과 유연성에 관해 자세히 알아보세요.
+[`<amp-bind>`](/ko/docs/reference/components/amp-bind.html) 설명서 및 기타 [동적 AMP 구성요소](/ko/docs/reference/components#dynamic-content)에서 양방향 AMP 페이지를 구축하여 얻을 수 있는 강력한 기능과 유연성에 관해 자세히 알아보세요.
  
