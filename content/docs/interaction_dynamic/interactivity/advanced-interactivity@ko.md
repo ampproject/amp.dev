@@ -1,7 +1,5 @@
 ---
 $title: 상호작용 개선
-$order: 2
-toc: true
 ---
 
 [TOC]
@@ -71,7 +69,7 @@ selected.slide // 0으로 평가합니다.
 
 
 {% call callout('도움말', type='success') %}
-`AMP.setState()`는 중첩된 객체 리터럴을 완전히 병합합니다. 자세한 내용은 [`<amp-bind>`](https://www.ampproject.org/ko/docs/reference/components/amp-bind.html) 도움말을 참조하세요.
+`AMP.setState()`는 중첩된 객체 리터럴을 완전히 병합합니다. 자세한 내용은 [`<amp-bind>`](/ko/docs/reference/components/amp-bind.html) 도움말을 참조하세요.
 {% endcall %}
 
 ### 표시기 요소 바인딩
@@ -211,7 +209,7 @@ selected.slide // 0으로 평가합니다.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/tutorials/interactivity/get-familiar.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/tutorials/interactivity/remote-data.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">다음</span></a>
 </div>
  
