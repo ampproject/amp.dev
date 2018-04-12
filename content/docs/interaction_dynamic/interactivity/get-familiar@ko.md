@@ -1,7 +1,5 @@
 ---
 $title: 시작 코드에 익숙해지기
-$order: 1
-toc: true
 ---
 
 [TOC]
@@ -38,10 +36,10 @@ AMP 페이지는 안정적인 성능을 제공하기 위한 몇 가지 제한사
 
 AMP 구성요소는 AMP 페이지에 풍부한 상호작용을 더해주는 추가적인 기능과 UI 구성요소를 제공합니다. 시작 코드는 다음과 같은 AMP 구성요소를 사용합니다.
 
-- [`<amp-carousel>`](https://www.ampproject.org/ko/docs/reference/components/amp-carousel.html): 해당 제품의 다양한 모습을 보여주는 이미지 캐러셀입니다.
-- [`<amp-mustache>`](https://www.ampproject.org/ko/docs/reference/components/amp-mustache.html): amp-form의 서버 응답을 렌더링하는 템플릿 시스템입니다.
-- [`<amp-form>`](https://www.ampproject.org/ko/docs/reference/components/amp-form.html): AMP 페이지에 필요한 `<form>` 요소에 사용되는 특수한 기능을 추가합니다.
-- [`<amp-selector>`](https://www.ampproject.org/ko/docs/reference/components/amp-form.html): 요소 그룹에서 하나 또는 여러 요소를 선택하는 의미론적 방법을 제공합니다. amp-form의 입력 소스로 사용할 수 있습니다.
+- [`<amp-carousel>`](/ko/docs/reference/components/amp-carousel.html): 해당 제품의 다양한 모습을 보여주는 이미지 캐러셀입니다.
+- [`<amp-mustache>`](/ko/docs/reference/components/amp-mustache.html): amp-form의 서버 응답을 렌더링하는 템플릿 시스템입니다.
+- [`<amp-form>`](/ko/docs/reference/components/amp-form.html): AMP 페이지에 필요한 `<form>` 요소에 사용되는 특수한 기능을 추가합니다.
+- [`<amp-selector>`](/ko/docs/reference/components/amp-form.html): 요소 그룹에서 하나 또는 여러 요소를 선택하는 의미론적 방법을 제공합니다. amp-form의 입력 소스로 사용할 수 있습니다.
 
 ## 기본적인 상호작용
 
@@ -54,7 +52,7 @@ AMP 구성요소는 AMP 페이지에 풍부한 상호작용을 더해주는 추�
 **사용해보기**: 이미지 캐러셀을 스와이프하고 '장바구니에 추가' 버튼을 탭하세요.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-next">다음</span></a>
 </div>
  
