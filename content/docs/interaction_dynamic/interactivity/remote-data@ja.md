@@ -1,7 +1,5 @@
 ---
 $title: リモートデータの使用
-$order: 3
-toc: true
 ---
 
 [TOC]
@@ -175,7 +173,7 @@ toc: true
 **試してみる**: 購入できないサイズを選択した場合は、そのサイズの商品をカートに追加することはできません。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/interactivity/wrapping-up.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">次へ</span></a>
 </div>
  
