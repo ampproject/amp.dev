@@ -23,7 +23,7 @@ By adding the `amp-ads` component, you've added the ads framework to your AMP pa
 </amp-ad>
 ```
 
-[Here](/docs/ads_analytics/ads_vendors.html) is a list of supported ad networks.
+[Here](/docs/ads/ads_vendors.html) is a list of supported ad networks.
 
 ### 3. Specify your ad unit’s height and width
 
