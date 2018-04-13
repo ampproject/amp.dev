@@ -70,10 +70,10 @@ As a quick recap:
 - The server should orchestrate the response once the user clicks on the login button
 
 {% call callout('Tip', type='success') %}
-A more detailed explanation about this flow can also be found in the [amp-access documentation](https://www.ampproject.org/docs/reference/components/amp-access#login-flow).
+A more detailed explanation about this flow can also be found in the [amp-access documentation](/docs/reference/components/amp-access#login-flow).
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/login_requiring.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-next">Next</span></a>
 </div>

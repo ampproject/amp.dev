@@ -1,6 +1,5 @@
 ---
 $title: Menambahkan komentar
-$order: 1
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
@@ -23,7 +22,7 @@ Berikut adalah contoh respons JSON:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-Komponen formulir hanya akan menampilkan nilai di dalam halaman menggunakan [amp-mustache](https://www.ampproject.org/id/docs/reference/components/amp-mustache) template:
+Komponen formulir hanya akan menampilkan nilai di dalam halaman menggunakan [amp-mustache](/id/docs/reference/components/amp-mustache) template:
 
 [sourcecode:html]
 <div submit-success>
@@ -62,8 +61,8 @@ Saat menambahkan komentar dan mengklik tombol kirim, Anda kini harusnya melihat 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/tutorials/login_requiring/login.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/tutorials/login_requiring/logout.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="/id/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/interaction_dynamic/login_requiring/logout.html"><span class="arrow-next">Berikutnya</span></a>
 </div>
  
  

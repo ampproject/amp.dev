@@ -1,55 +1,55 @@
 ---
-$title: 貴社のテクノロジーに AMP を統合する
+$title: 자체 기술을 AMP와 통합하기
 ---
 
-サイト運営者の間では、すでに 14 億以上の AMP ドキュメントが作成され、75 万以上の固有ドメインでホストされています。このような成長は、すでに AMP を統合している 100 社以上のサードパーティ テクノロジー企業からの力強い支援がなければ不可能でした。
+지금까지 게시자들은 14억 개 이상의 AMP 문서를 제작했고, 이 문서들은 750,000가지가 넘는 도메인에 호스팅되어 있습니다. 이미 AMP를 통합한 100곳 이상의 기술 기업의 적극적인 참여가 없었더라면 이러한 성장은 불가능했을 것입니다.
 
-ウェブ上のサイト運営者や広告主向けのテクノロジー プロバイダの皆様は、お客様が貴社のテクノロジーを利用し続け、よりよいウェブを構築するという私たちに共通のビジョンを実現できるように、AMP のサポートを追加することをおすすめします。
+웹상의 게시자나 광고주를 대상으로 하는 기술 제공업체라면 AMP를 지원하시기 바랍니다. 고객은 계속해서 여러분의 기술을 활용할 수 있으며, 더 나은 웹을 만들겠다는 여러분과 AMP의 공통된 목표에도 한 걸음 더 다가갈 수 있습니다.
 
-AMP を統合するには主に 4 つの方法があります。
-
-
-## 1. amp-analytics 拡張機能のサポートを追加する
-AMP アナリティクスを使用すると、貴社で設定したトリガーに基づいてサーバーにイベントを返送することができます。使用を開始する際は、[アナリティクス統合ガイド](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)をご覧ください。
-
-動的パラメータを含むトラッキング ピクセルをトラッキング URL に追加する必要がある場合は、[amp-pixel](/ko/docs/reference/components/amp-pixel.html) をご確認ください。貴社のテクノロジーと AMP を併用したいデベロッパーに向けて、サポートページに使用方法を掲載するようおすすめします。
-
-20 社以上のアナリティクス プロバイダが amp-analytics のサポートを導入しています。アナリティクス プロバイダ [Parse.ly](https://www.parsely.com/help/integration/google-amp/) による[プルリクエストの例](https://github.com/ampproject/amphtml/pull/1595)をご覧ください。
+AMP를 통합하는 방법으로는 크게 다음과 같은 4가지가 있습니다.
 
 
-## 2. amp-ad 拡張機能を使用する
+## 1. amp-analytics 확장 프로그램 지원
+AMP 애널리틱스를 사용하면 구성된 트리거에 따라 이벤트를 서버로 돌려보낼 수 있습니다. AMP 통합을 시작하려면 [애널리틱스 통합 가이드](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)를 확인하세요.
 
-amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信するためのものです。90 社以上の広告テクノロジー プロバイダが AMP のサポートを導入しています。開始する際は、[開発の概要](https://github.com/ampproject/amphtml/tree/master/ads#overview)をお読みください。また、amp-ad 拡張機能のサポートの追加に関する[デベロッパー向けの手順](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)もご覧ください。提供している広告テクノロジーによっては、こちらの[統合の手順](https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md)も役立ちます。
+동적 매개변수가 있는 추적 픽셀을 추적 URL에 추가하기만 하면 되는 경우 [amp-pixel](/ko/docs/reference/components/amp-pixel)을 확인하세요. 여러분의 기술을 AMP와 함께 사용하려는 개발자를 위해 지원 페이지에서 사용법을 제공하시기 바랍니다.
 
-90 社以上の広告プロバイダが amp-ad のような広告関連機能のサポートを導入しています。広告ネットワーク [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) による[プルリクエスト](https://github.com/ampproject/amphtml/pull/2299)の例をご覧ください。
+20곳 이상의 분석 서비스 제공업체에서 amp-analytics를 지원합니다. 다음은 분석 서비스 제공업체 [Parse.ly](https://www.parsely.com/help/integration/google-amp/)의 [샘플 참여 요청](https://github.com/ampproject/amphtml/pull/1595)입니다.
 
-## 3. amp-call-tracking 拡張機能を使用する
 
-コール トラッキング測定サービスを提供している場合は、貴社のユースケースに新しい [amp-call-tracking](/ko/docs/reference/components/amp-call-tracking.html) 拡張機能を活用できる可能性があります。この拡張機能は、数値を置換する CORS リクエストを実行することで、ハイパーリンク内の電話番号を動的に置換し、コール トラッキングを実現します。
+## 2. amp-ad 확장 프로그램 사용
 
-この拡張機能の利用方法について詳しくは、[AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) にアクセスするか、[ドキュメント](/ko/docs/reference/components/amp-call-tracking.html)をご覧ください。
+amp-ad 확장 프로그램은 AMP 페이지에 디스플레이 광고를 게재하기 위한 것입니다. 90곳 이상의 광고 기술 제공업체에서 AMP를 지원합니다.  amp-ad 확장 프로그램을 사용하려면 [개발 개요](https://github.com/ampproject/amphtml/tree/master/ads#overview)를 읽어 보거나 amp-ad 확장 프로그램 지원과 관련된 [개발자 안내](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)를 확인하세요. 여러분의 회사에서 제공하는 광고 기술에 따라 다음의 [통합 안내](https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md)를 유용하게 참고할 수도 있습니다.
 
-## 4. 新しい拡張機能や埋め込みを追加する
+90곳 이상의 광고 제공업체에서 amp-ad와 같은 광고 관련 기능을 지원합니다. 다음은 광고 네트워크 [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md)의 샘플 [참여 요청](https://github.com/ampproject/amphtml/pull/2299)입니다.
 
-貴社のユースケースに amp-analytics、amp-pixel、amp-ad の使用が適さない場合は、[GitHub の問題]を公開して、代わりの方法について検討してください。Google はさまざまな企業で幅広くご利用いただける新しい拡張機能を歓迎いたします。詳しくは、[拡張コンポーネントへの貢献](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components)をご覧ください。
+## 3. amp-call-tracking 확장 프로그램 사용
 
-## 5. amp-iframe を使用する
+통화 추적 측정 서비스를 제공하는 경우 새로운 [amp-call-tracking](https://github.com/ampproject/amphtml/blob/master/extensions/amp-call-tracking/amp-call-tracking.md) 확장 프로그램으로 사용 사례를 지원할 수 있습니다. 이 확장 프로그램은 하이퍼링크에 있는 전화번호를 동적으로 대체하여 통화 추적을 가능하게 해 줍니다. 즉, CORS 요청을 실행하여 번호를 대체합니다.
 
-さらに 5 つ目の方法をご紹介しますが、これは最後の手段としてお考えください。上記のどの方法もニーズに適していない場合は、汎用的な amp-iframe タグを使って、サイト運営者が貴社のコンテンツを埋め込むことができるようにします。しかし、この方法には、パフォーマンスやユーザー エクスペリエンスに関する落とし穴に起因するマイナス面がいくつかあります。詳しくは、[こちら](/ko/docs/reference/components/amp-iframe#guideline:-prefer-specific-amp-components-to-amp-iframe)をご覧ください。
+이 확장 프로그램이 어떻게 도움이 될지 알아보려면 [AMP by Example](https://ampbyexample.com/components/amp-call-tracking/)을 확인하거나 [도움말](/ko/docs/reference/components/amp-call-tracking)을 읽어 보세요.
 
-## まとめ
+## 4. 새로운 확장 프로그램/삽입 추가
 
-開始するにあたっては、まず、Google の[サードパーティ デベロッパー向けガイドライン](https://github.com/ampproject/amphtml/blob/master/3p/README.md)をご覧ください。AMP プロジェクトでは、すでにさまざまなサードパーティのユースケースをサポートしていますが、まだ構築されていないウェブの機能があるはずです。
+amp-analytics, amp-pixel 또는 amp-ad를 사용하여 사용 사례를 지원할 수 없다면 [GitHub에 문제를 게시](https://github.com/ampproject/amphtml/issues/new)하여 다른 옵션을 논의해 보세요. Google에서는 다양한 회사에서 폭넓게 사용될 수 있는 신규 확장 프로그램을 환영합니다. 자세한 내용은 [확장된 구성요소로 참여하기](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components) 섹션을 확인하세요.
 
-たとえば、動的なコール トラッキングはまだ AMP でサポートされていないユースケースですが、このサポートを追加するため、コミュニティと[積極的に協力](https://github.com/ampproject/amphtml/issues/5276)しているところです。
+## 5. amp-iframe 사용
 
-ご質問やご提案がある場合は、お気軽に[問題を送信](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#filing-issues)してください。または、いずれかの[ディスカッション チャンネル](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#discussion-channels)にご投稿ください。
+잠깐, 다섯 번째 방법이 있다고요? 사실 이 방법은 최후의 수단입니다. 위의 방법 중 아무것도 도움이 되지 않는 경우, 일반적인 amp-iframe 태그를 사용하여 게시자가 내 콘텐츠를 삽입하게 할 수 있습니다. 하지만 성능 및 사용자 환경과 관련된 몇 가지 함정([여기](/ko/docs/reference/components/amp-iframe#guideline:-prefer-specific-amp-components-to-amp-iframe)에서 확인)으로 인해 이 접근방식에는 몇 가지 단점이 있습니다.
 
-## その他のリソース
+## 요약
 
-- [AMP プロジェクト サイト](https://www.ampproject.org/)
-- [AMP GitHub プロジェクト](https://github.com/ampproject/amphtml)
-- [AMP ブログ](https://www.ampproject.org/ko/latest/blog)
-- [AMP プロジェクトのロードマップ](https://www.ampproject.org/roadmap/)
+시작하려면 [타사 개발자 가이드라인](https://github.com/ampproject/amphtml/blob/master/3p/README.md)을 확인하세요. AMP 프로젝트에서는 이미 다양한 타사 사용 사례를 지원하고 있지만, 아직 개발되지 않은 웹 기능도 많습니다.
+
+예를 들어, AMP에서는 아직 동적 통화 추적 사용 사례가 지원되지 않습니다. 하지만 이 사용 사례를 지원하기 위해 커뮤니티와 [적극적으로 협력](https://github.com/ampproject/amphtml/issues/5276)하고 있습니다.
+
+질문이나 제안할 내용이 있다면 언제든지 [문제를 제기](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#filing-issues)하거나 [논의 채널](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#discussion-channels) 중 하나를 통해 문의해 주시기 바랍니다.
+
+## 추가 리소스
+
+- [AMP 프로젝트 사이트](https://www.ampproject.org/ko/)
+- [AMP GitHub 프로젝트](https://github.com/ampproject/amphtml)
+- [AMP 블로그](https://amphtml.wordpress.com/)
+- [AMP 프로젝트 로드맵](https://www.ampproject.org/roadmap/)
  
  

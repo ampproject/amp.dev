@@ -1,6 +1,5 @@
 ---
 $title: Adicionar um comentário
-$order: 1
 ---
 
 <amp-img src="/static/img/comment.png" alt="Adicionar comentário" height="325" width="300"></amp-img>
@@ -23,7 +22,7 @@ Veja um exemplo de resposta JSON:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-O componente do formulário exibirá esses valores dentro da página usando o modelo [amp-mustache](https://www.ampproject.org/pt_br/docs/reference/components/amp-mustache):
+O componente do formulário exibirá esses valores dentro da página usando o modelo [amp-mustache](/pt_br/docs/reference/components/amp-mustache):
 
 [sourcecode:html]
 <div submit-success>
@@ -62,6 +61,6 @@ Após inserir um comentário e clicar no botão para enviá-lo, você verá algo
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/tutorials/login_requiring/login.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/tutorials/login_requiring/logout.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/login_requiring/logout.html"><span class="arrow-next">Próxima</span></a>
 </div>
