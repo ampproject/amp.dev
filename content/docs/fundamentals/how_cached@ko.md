@@ -4,7 +4,7 @@ $title: AMP 페이지 캐시 방법
 
 [TOC]
 
-이 문서에서는 AMP 생태계에서의 AMP 캐시의 역할과 AMP 페이지의 캐시 처리 방법에 대해 설명합니다.
+이 문서에서는 AMP 에코 시스템에서의 AMP 캐시의 역할과 AMP 페이지의 캐시 처리 방법에 대해 설명합니다.
 
 ## AMP 캐시란 무엇인가요?
 AMP 캐시는 유효한 AMP 문서들을 제공하기 위한 프록시 기반 CDN(Content Delivery Network)입니다. AMP 캐시의 용도는 다음과 같습니다.
@@ -19,7 +19,7 @@ AMP 캐시는 유효한 AMP 문서들을 제공하기 위한 프록시 기반 CD
 
 ## 어떤 AMP 캐시가 이용가능한가요?
 
-현재, 두가지 AMP 캐시 공급업체가 있습니다.
+현재, 두 가지 AMP 캐시 공급업체가 있습니다.
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Cloudflare AMP Cache](https://amp.cloudflare.com/)
 
