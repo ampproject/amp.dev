@@ -1,5 +1,0 @@
-$path: /docs/ads_analytics/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/ads_analytics/{base}.html
-
