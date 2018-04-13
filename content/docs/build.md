@@ -68,7 +68,7 @@ doc_cards:
 
   - name: Analytics
     desc: Integrate analytics into your AMP pages to measure activity and user engagement.
-    link: ads_analytics/analytics_amp.html
+    link: analytics/analytics_amp.html
 
   - name: CORS in AMP
     desc: Learn why you need CORS for dynamic AMP content.
