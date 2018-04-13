@@ -1,6 +1,5 @@
 ---
 $title: 고급 AMP 기능 추가
-$order: 2
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='완성된 뉴스 기사') }}
@@ -10,11 +9,11 @@ $order: 2
 
 ## 이런 것들을 배웁니다:
 
-- [amp-ad](/docs/reference/components/amp-ad.html)를 사용하여 광고 표시
+- [amp-ad](/ko/docs/reference/components/amp-ad.html)를 사용하여 광고 표시
 - 유튜브 동영상, 트위터 카드, 반응적인 텍스트 요소 포함
-- [amp-carousel](/docs/reference/components/amp-carousel.html)을 사용하여 이미지와 콘텐츠들의 조합으로 캐러셀을 구축
-- [amp-analytics](/docs/reference/components/amp-analytics.html)로 단순한 패턴들 추적
-- [amp-sidebar](/docs/reference/components/amp-sidebar.html)를 사용하여 사이트 탐색 기능 추가
+- [amp-carousel](/ko/docs/reference/components/amp-carousel.html)을 사용하여 이미지와 콘텐츠들의 조합으로 캐러셀을 구축
+- [amp-analytics](/ko/docs/reference/components/amp-analytics.html)로 단순한 패턴들 추적
+- [amp-sidebar](/ko/docs/reference/components/amp-sidebar.html)를 사용하여 사이트 탐색 기능 추가
 - AMP에서 사용자 정의 글꼴을 사용
 
 ## 다음을 구축합니다:
@@ -22,9 +21,9 @@ $order: 2
 AMP 사양에 부합하고 광고, 분석, 임베디드 비디오, 임베디드 소셜 미디어, 캐러셀 및 사이트 탐색 메뉴를 포함하는 뉴스 기사 페이지
 
 {% call callout('Nota', type='note') %}
-이 튜토리얼은 ["HTML을 AMP로 변환"](/ko/docs/tutorials/converting.html)에서 소개된 개념들의 연장입니다. AMP의 핵심 개념에 대한 기본적인 이해가 없는 경우, ["HTML을 AMP로 변환"](/ko/docs/tutorials/converting.html)을 시도해보십시오.
+이 튜토리얼은 ["HTML을 AMP로 변환"](/ko/docs/fundamentals/converting.html)에서 소개된 개념들의 연장입니다. AMP의 핵심 개념에 대한 기본적인 이해가 없는 경우, ["HTML을 AMP로 변환"](/ko/docs/fundamentals/converting.html)을 시도해보십시오.
 {% endcall %}
 
 <div class="start-button">
-<a class="button" href="/ko/docs/tutorials/add_advanced/setting_up.html"><span class="arrow-next">시작하기</span></a>
+<a class="button" href="/ko/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-next">시작하기</span></a>
 </div>
