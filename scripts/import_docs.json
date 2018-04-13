@@ -52,7 +52,7 @@
         "title": "Guidelines for integrating ad technologies with AMP",
         "order": 1,
         "from": "ads/_integration-guide.md",
-        "to": "docs/ads_analytics/integration-guide.md",
+        "to": "docs/ads/integration-guide.md",
         "toc": true
     }
 ]
