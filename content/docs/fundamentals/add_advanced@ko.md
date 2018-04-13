@@ -12,7 +12,7 @@ $order: 2
 
 - [amp-ad](/docs/reference/components/amp-ad.html)를 사용하여 광고 표시
 - 유튜브 동영상, 트위터 카드, 반응적인 텍스트 요소 포함
-- [amp-carousel](/docs/reference/components/amp-carousel.html)을 사용하여 이미지와 텐츠들의 조합으로 캐러셀을 구축
+- [amp-carousel](/docs/reference/components/amp-carousel.html)을 사용하여 이미지와 콘텐츠들의 조합으로 캐러셀을 구축
 - [amp-analytics](/docs/reference/components/amp-analytics.html)로 단순한 패턴들 추적
 - [amp-sidebar](/docs/reference/components/amp-sidebar.html)를 사용하여 사이트 탐색 기능 추가
 - AMP에서 사용자 정의 글꼴을 사용
