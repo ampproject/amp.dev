@@ -1,6 +1,5 @@
 ---
 $title: HTML을 AMP로 변환
-$order: 1
 ---
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='완성된 뉴스 기사') }}
@@ -21,6 +20,5 @@ $order: 1
 AMP 사양에 부합하고 모바일 뉴스 사이트들의 일반적인 기능을 통합한 간단한 뉴스 기사 페이지
 
 <div class="start-button">
-<a class="button" href="/ko/docs/tutorials/converting/setting-up.html"><span class="arrow-next">시작하기</span></a>
+<a class="button" href="/ko/docs/fundamentals/converting/setting-up.html"><span class="arrow-next">시작하기</span></a>
 </div>
-
