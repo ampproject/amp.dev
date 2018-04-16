@@ -302,9 +302,9 @@ msgstr "Anunciantes"
 msgid "Advertisers:<br>Drive campaign ROI"
 msgstr "Anunciantes:<br>Como aumentar o ROI de campanhas"
 
-#: /content/docs/ads_analytics.md /content/docs/ads_analytics/_blueprint.yaml
-msgid "Advertising & Analytics"
-msgstr "Anúncios e análises"
+#: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
+msgid "Advertising"
+msgstr "Propaganda"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -328,6 +328,7 @@ msgstr "Aumente seu impacto"
 msgid "An open source effort to improve the content ecosystem for everyone."
 msgstr ""
 
+#: /content/docs/analytics.md /content/docs/analytics/_blueprint.yaml
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr "Análises"
@@ -941,10 +942,6 @@ msgstr "Saiba quem usa as AMP"
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr "Quanto mais leves os anúncios, melhores as experiências"
 
-#: /content/docs/integration/supported_integrations.md
-msgid "List of supported partners & integrations"
-msgstr ""
-
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
 msgstr ""
@@ -1333,6 +1330,10 @@ msgstr "Navegadores compatíveis"
 #: /content/support/faqs/supported-platforms@zh_CN.md
 msgid "Supported Platforms, Vendors and Partners"
 msgstr "Plataformas, fornecedores e parceiros compatíveis"
+
+#: /content/docs/integration/supported_integrations.md
+msgid "Supported partners & integrations"
+msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Supports rich visuals with native video and image performance"

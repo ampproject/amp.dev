@@ -292,9 +292,9 @@ msgstr "광고게시자"
 msgid "Advertisers:<br>Drive campaign ROI"
 msgstr "광고주:<br>캠페인 ROI 향상"
 
-#: /content/docs/ads_analytics.md /content/docs/ads_analytics/_blueprint.yaml
-msgid "Advertising & Analytics"
-msgstr "광고 & 애널리틱스"
+#: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
+msgid "Advertising"
+msgstr "광고하는"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -318,6 +318,7 @@ msgstr "효과를 증폭시키세요"
 msgid "An open source effort to improve the content ecosystem for everyone."
 msgstr ""
 
+#: /content/docs/analytics.md /content/docs/analytics/_blueprint.yaml
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr "애널리틱스"
@@ -918,10 +919,6 @@ msgstr "누가 AMP 를 사용하는 지 살펴봅시다"
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr "가벼운 광고는 만족스러운 광고 경험으로 이어집니다."
 
-#: /content/docs/integration/supported_integrations.md
-msgid "List of supported partners & integrations"
-msgstr ""
-
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
 msgstr ""
@@ -1300,6 +1297,10 @@ msgstr "지원하는 브라우저"
 #: /content/support/faqs/supported-platforms@zh_CN.md
 msgid "Supported Platforms, Vendors and Partners"
 msgstr "지원하는 플랫폼, 벤더 및 파트너"
+
+#: /content/docs/integration/supported_integrations.md
+msgid "Supported partners & integrations"
+msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Supports rich visuals with native video and image performance"
