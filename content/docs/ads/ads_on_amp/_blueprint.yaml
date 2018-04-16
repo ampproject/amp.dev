@@ -1,5 +1,0 @@
-$path: /docs/ads/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/ads/{base}.html
-
