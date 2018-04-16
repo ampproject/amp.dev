@@ -294,9 +294,9 @@ msgstr "広告主"
 msgid "Advertisers:<br>Drive campaign ROI"
 msgstr "広告主:<br>キャンペーンの投資収益率を高める"
 
-#: /content/docs/ads_analytics.md /content/docs/ads_analytics/_blueprint.yaml
-msgid "Advertising & Analytics"
-msgstr "広告と分析"
+#: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
+msgid "Advertising"
+msgstr "広告"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -320,6 +320,7 @@ msgstr "広告の効果をさらに高める"
 msgid "An open source effort to improve the content ecosystem for everyone."
 msgstr ""
 
+#: /content/docs/analytics.md /content/docs/analytics/_blueprint.yaml
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr "分析"
@@ -920,10 +921,6 @@ msgstr "AMP の利用者について"
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr "広告の軽量化が広告効果のアップにつながる"
 
-#: /content/docs/integration/supported_integrations.md
-msgid "List of supported partners & integrations"
-msgstr ""
-
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
 msgstr ""
@@ -1303,6 +1300,10 @@ msgstr "サポートブラウザ"
 #: /content/support/faqs/supported-platforms@zh_CN.md
 msgid "Supported Platforms, Vendors and Partners"
 msgstr "AMP に対応しているプラットフォーム、ベンダー、パートナー"
+
+#: /content/docs/integration/supported_integrations.md
+msgid "Supported partners & integrations"
+msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Supports rich visuals with native video and image performance"

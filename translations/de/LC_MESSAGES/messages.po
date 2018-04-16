@@ -290,9 +290,9 @@ msgstr "Werbetreibende"
 msgid "Advertisers:<br>Drive campaign ROI"
 msgstr ""
 
-#: /content/docs/ads_analytics.md /content/docs/ads_analytics/_blueprint.yaml
-msgid "Advertising & Analytics"
-msgstr ""
+#: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
+msgid "Advertising"
+msgstr "Werbung"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -316,6 +316,7 @@ msgstr ""
 msgid "An open source effort to improve the content ecosystem for everyone."
 msgstr ""
 
+#: /content/docs/analytics.md /content/docs/analytics/_blueprint.yaml
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr "Analytics"
@@ -908,10 +909,6 @@ msgstr "Erfahren Sie, wer AMP bereits verwendet"
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr ""
 
-#: /content/docs/integration/supported_integrations.md
-msgid "List of supported partners & integrations"
-msgstr ""
-
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
 msgstr ""
@@ -1288,6 +1285,10 @@ msgstr ""
 #: /content/support/faqs/supported-platforms@pt_BR.md
 #: /content/support/faqs/supported-platforms@zh_CN.md
 msgid "Supported Platforms, Vendors and Partners"
+msgstr ""
+
+#: /content/docs/integration/supported_integrations.md
+msgid "Supported partners & integrations"
 msgstr ""
 
 #: /content/includes/stories.yaml

@@ -300,9 +300,9 @@ msgstr "Pengiklan"
 msgid "Advertisers:<br>Drive campaign ROI"
 msgstr "Pengiklan:<br>Meningkatkan ROI kampanye"
 
-#: /content/docs/ads_analytics.md /content/docs/ads_analytics/_blueprint.yaml
-msgid "Advertising & Analytics"
-msgstr "Iklan & Analisis"
+#: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
+msgid "Advertising"
+msgstr "Iklan"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -326,6 +326,7 @@ msgstr "Perkuat pengaruh Anda"
 msgid "An open source effort to improve the content ecosystem for everyone."
 msgstr ""
 
+#: /content/docs/analytics.md /content/docs/analytics/_blueprint.yaml
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr "Analisis"
@@ -942,10 +943,6 @@ msgstr "Cari tahu siapa yang menggunakan AMP"
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr "Iklan yang lebih ringan meningkatkan persepsi merek"
 
-#: /content/docs/integration/supported_integrations.md
-msgid "List of supported partners & integrations"
-msgstr ""
-
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
 msgstr ""
@@ -1335,6 +1332,10 @@ msgstr "Browser yang Didukung"
 #: /content/support/faqs/supported-platforms@zh_CN.md
 msgid "Supported Platforms, Vendors and Partners"
 msgstr "Platform, Vendor, dan Partner yang Didukung"
+
+#: /content/docs/integration/supported_integrations.md
+msgid "Supported partners & integrations"
+msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Supports rich visuals with native video and image performance"
