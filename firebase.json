@@ -169,12 +169,17 @@
       },
       {
         "source": "/docs/guides/author-develop/ads_on_amp?(.html)",
-        "destination": "/docs/ads/ads_on_amp.html",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/docs/ads_analytics/ads_on_amp?(.html)",
-        "destination": "/docs/ads/ads_on_amp.html",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/ads/ads_on_amp?(.html)",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },
       {
@@ -721,32 +726,42 @@
       },      
       {
         "source": "/docs/guides/ads_on_amp?(.html)",
-        "destination": "/docs/ads/ads_on_amp.html",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },  
       {
         "source": "/docs/ads_analytics/ads_on_amp?(.html)",
-        "destination": "/docs/ads/ads_on_amp.html",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },      
       {
         "source": "/docs/guides/ads/ads_getting_started?(.html)",
-        "destination": "/docs/ads/ads_getting_started.html",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/docs/ads_analytics/ads_getting_started?(.html)",
-        "destination": "/docs/ads/ads_getting_started.html",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
-      },       
+      },
+      {
+        "source": "/docs/ads/ads_getting_started?(.html)",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      },          
       {
         "source": "/docs/guides/ads/ads_tips?(.html)",
-        "destination": "/docs/ads/ads_tips.html",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/ddocs/ads_analytics/ads_tips?(.html)",
-        "destination": "/docs/ads/ads_tips.html",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      }, 
+      {
+        "source": "/ddocs/ads/ads_tips?(.html)",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },      
       {
@@ -1175,32 +1190,47 @@
       },
       {
         "source": "/:lang/docs/guides/ads_on_amp",
-        "destination": "/:lang/docs/ads/ads_on_amp.html",
+        "destination": "/:lang/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/ads_analytics/ads_on_amp",
-        "destination": "/:lang/docs/ads/ads_on_amp.html",
+        "destination": "/:lang/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads/ads_on_amp",
+        "destination": "/:lang/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/guides/ads/ads_getting_started",
-        "destination": "/:lang/docs/ads/ads_getting_started.html",
+        "destination": "/:lang/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/ads_analytics/ads_getting_started",
-        "destination": "/:lang/docs/ads/ads_getting_started.html",
+        "destination": "/:lang/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads/ads_getting_started",
+        "destination": "/:lang/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/guides/ads/ads_tips",
-        "destination": "/:lang/docs/ads/ads_tips.html",
+        "destination": "/:lang/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/ads_analytics/ads_tips",
-        "destination": "/:lang/docs/ads/ads_tips.html",
+        "destination": "/:lang/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads/ads_tips",
+        "destination": "/:lang/docs/ads/monetization.html",
         "type": 301
       },
       {
