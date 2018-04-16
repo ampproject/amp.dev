@@ -67,6 +67,16 @@
         "type": 301
       },
       {
+        "source": "/docs/ads",
+        "destination": "/docs/ads/introduction_ads",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads",
+        "destination": "/:lang/docs/ads/introduction_ads",
+        "type": 301
+      },
+      {
         "source": "/:lang/docs/get_started/create",
         "destination": "/:lang/docs/getting_started/create.html",
         "type": 301
