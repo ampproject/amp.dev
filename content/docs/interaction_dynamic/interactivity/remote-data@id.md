@@ -1,7 +1,5 @@
 ---
 $title: Bekerja dengan data jarak jauh
-$order: 3
-toc: true
 ---
 
 [TOC]
@@ -9,7 +7,7 @@ toc: true
 Bagaimana jika data Anda yang dapat diikat terlalu besar atau kompleks untuk diambil saat pemuatan halaman? Atau, bagaimana jika setiap SKU memiliki harga yang butuh waktu lama untuk dicari? Mencari harga SKU untuk item yang tidak dilihat adalah pekerjaan yang sia-sia.
 
 {% call callout('Tips', type='success') %}
-`<amp-state>` mendukung pengambilan data jarak jauh melalui atribut [`src`](https://www.ampproject.org/id/docs/reference/components/amp-<bind id="attributes"></bind>) miliknya, yang mengambil JSON dari titik akhir CORS. Pengambilan ini dilakukan sekali saat pemuatan halaman, dan berguna untuk memastikan baru tidaknya data (khususnya jika ditayangkan dari cache).
+`<amp-state>` mendukung pengambilan data jarak jauh melalui atribut [`src`](/id/docs/reference/components/amp-bind.htmlamp-bind#attributes) miliknya, yang mengambil JSON dari titik akhir CORS. Pengambilan ini dilakukan sekali saat pemuatan halaman, dan berguna untuk memastikan baru tidaknya data (khususnya jika ditayangkan dari cache).
 
 Anda juga dapat mengikat atribut `src` untuk elemen `<amp-state>`. Hal ini berarti tindakan pengguna dapat memicu pengambilan data JSON jarak jauh ke status halaman yang dapat diikat.
 {% endcall %}
@@ -175,7 +173,6 @@ Kita hampir selesai. Mari nonaktifkan tombol "Tambahkan ke keranjang" jika ukura
 **Cobalah**:  Jika memilih ukuran yang tidak tersedia, Anda tidak dapat menambahkannya ke keranjang. 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/tutorials/interactivity/wrapping-up.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="/id/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">Berikutnya</span></a>
 </div>
- 
