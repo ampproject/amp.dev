@@ -118,7 +118,6 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 
 ### Placement & controls: optimize your ad placements
 
-*   **Create separate ad units** on AMP pages for targeting, reporting, and control purposes.
 *   **Place the same number of ads** on AMP Pages as your non-AMP pages to generate maximum revenue per page.
 *   **Place the first ad immediately below the first viewport** ("below the fold") to provide an optimal user experience.
 *   Unless you're using advanced CSS or media queries, **ensure your ad units are centered on the page** to provide your users with an optimal mobile web experience.
