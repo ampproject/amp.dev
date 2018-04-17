@@ -1,6 +1,5 @@
 ---
 $title: Menyelesaikan
-$order: 4
 ---
 
 Selamat! Anda baru saja membuat halaman detail produk e-commerce interaktif dengan ukuran variabel dan harga untuk setiap SKU, diambil dengan pesanan dari titik akhir JSON jarak jauh.
@@ -16,4 +15,4 @@ Jika mengalami kesulitan, lihat file [`static/final.html`](https://github.com/go
 
 ## Langkah berikutnya
 
-Pelajari lebih lanjut tentang kecanggihan dan fleksibilitas dalam pembuatan halaman AMP interaktif di dokumentasi  [`<amp-bind>`](https://www.ampproject.org/id/docs/reference/components/amp-bind.html) dan dari [komponen AMP dinamis](https://www.ampproject.org/id/docs/reference/components#dynamic-content) lainnya.
+Pelajari lebih lanjut tentang kecanggihan dan fleksibilitas dalam pembuatan halaman AMP interaktif di dokumentasi  [`<amp-bind>`](/id/docs/reference/components/amp-bind.html) dan dari [komponen AMP dinamis](/id/docs/reference/components.html#dynamic-content) lainnya.
