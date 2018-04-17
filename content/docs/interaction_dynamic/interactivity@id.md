@@ -1,6 +1,5 @@
 ---
 $title: Membuat halaman AMP interaktif
-$order: 3
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='Menyelesaikan halaman AMP untuk tutorial ini') }}
@@ -17,5 +16,5 @@ Anda akan membuat halaman produk e-commerce yang:
 
 
 <div class="prev-next-buttons">
-<a class="button" href="/id/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-next">Mulai</span></a>
+<a class="button" href="/id/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-next">Mulai</span></a>
 </div>
