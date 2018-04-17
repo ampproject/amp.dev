@@ -1,7 +1,5 @@
 ---
 $title: Mempelajari kode pembuka
-$order: 1
-toc: true
 ---
 
 [TOC]
@@ -38,10 +36,10 @@ Kode pembuka tutorial ([`static/index.html`](https://github.com/googlecodelabs/a
 
 Komponen AMP menawarkan komponen UI dan fungsi tambahan yang menambahkan interaktivitas yang kaya ke halaman AMP. Kode pembuka menggunakan komponen AMP berikut:
 
-- [`<amp-carousel>`](https://www.ampproject.org/id/docs/reference/components/amp-carousel.html): Carousel gambar yang menampilkan beberapa tampilan produk.
-- [`<amp-mustache>`](https://www.ampproject.org/id/docs/reference/components/amp-mustache.html): Sistem pemberian template untuk merender respons server dari amp-form.
-- [`<amp-form>`](https://www.ampproject.org/id/docs/reference/components/amp-form.html): Menambahkan fungsi khusus untuk elemen `<form>` yang penting bagi halaman AMP.
-- [`<amp-selector>`](https://www.ampproject.org/id/docs/reference/components/amp-form.html): Menawarkan cara semantik untuk memilih 1 atau banyak elemen dari grup elemen. Dapat digunakan sebagai sumber masukan untuk amp-form.
+- [`<amp-carousel>`](/id/docs/reference/components/amp-carousel.html): Carousel gambar yang menampilkan beberapa tampilan produk.
+- [`<amp-mustache>`](/id/docs/reference/components/amp-mustache.html): Sistem pemberian template untuk merender respons server dari amp-form.
+- [`<amp-form>`](/id/docs/reference/components/amp-form.html): Menambahkan fungsi khusus untuk elemen `<form>` yang penting bagi halaman AMP.
+- [`<amp-selector>`](/id/docs/reference/components/amp-form.html): Menawarkan cara semantik untuk memilih 1 atau banyak elemen dari grup elemen. Dapat digunakan sebagai sumber masukan untuk amp-form.
 
 ## Interaktivitas dasar
 
@@ -54,7 +52,7 @@ Kode pembuka menawarkan beberapa interaktivitas dasar:
 **Cobalah**: Geser carousel gambar lalu tap tombol "Tambahkan ke keranjang".
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="/id/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-next">Berikutnya</span></a>
 </div>
  
