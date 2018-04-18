@@ -14,33 +14,6 @@ past:
 
 upcoming_events:
   - type: Event
-    title: AMP Roadshow New York
-    href: https://events.withgoogle.com/amp-roadshow-in-nyc/
-    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: March 21, 2018
-    event_time: 20180321/20180322
-    event_time_text: Mar 21
-    location: New York, NY
-    participant: Developers
-  - type: Event
-    title: AMP Roadshow Chicago
-    href: https://events.withgoogle.com/amp-roadshow-in-chicago/
-    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: March 27, 2018
-    event_time: 20180327/20180328
-    event_time_text: Mar 27
-    location: Chicago, IL
-    participant: Developers
-  - type: Event
-    title: AMP Roadshow Sunnyvale
-    href: https://events.withgoogle.com/amp-roadshow-in-sunnyvale/
-    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: April 4, 2018
-    event_time: 20180404/20180405
-    event_time_text: Apr 4
-    location: Sunnyvale, CA
-    participant: Developers
-  - type: Event
     title: AMP Roadshow Los Angeles
     href: https://events.withgoogle.com/amp-roadshow-in-los-angeles/
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
