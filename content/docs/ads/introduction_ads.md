@@ -13,7 +13,7 @@ Delivering ads to AMP pages is not much different than serving traditional ads o
 
 2.  When the user loads an AMP page, the `<amp-ad>` tag sends an ad request to the ad network. To return an ad to the AMP page, ad networks build an `amp-ad` implementation. To learn the details, see the [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md) guide.
 
-3.  Ad networks supply creatives built by advertisers. Advertisers can build creatives using traditional HTML, or in the new format,  AMPHTML. 
+3.  Ad networks supply creatives built by advertisers. Advertisers can build creatives using traditional HTML, or in the new format, [AMPHTML](/docs/ads/amphtml_ads.html). 
 
 ## Supported ad networks
 
@@ -31,13 +31,13 @@ AMP supports both traditional ads, and the faster, more secure AMPHTML ads.  Reg
 
 AMPHTML ads are a faster, lighter and more secure way to advertise on the web. Although AMP pages support traditional HTML ads, these ads can be slow to load. To make ads themselves as fast as the rest of the AMP page, you can build ads in AMPHTML. AMPHTML ads are only delivered after being validated, ensuring that the ads are free of malware. Most of all, these ads can be delivered anywhere on the web, not just on AMP pages.
 
-Learn more about AMPHTML ads in the [AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md) guide.
+Learn more about AMPHTML ads in the [AMPHTML ads](/docs/ads/amphtml_ads.html) guide.
 
 
 ## Get started
 
 Visit these resources to get started with ads in AMP:
 
-*   [Monetizing your AMP page with ads](/docs/ads/monetization.html)
-*   [Integrating ad networks with AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md)
-*   [AMPHTML ad spec](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md)
+* [Monetizing your AMP page with ads](/docs/ads/monetization.html)
+* [Integrating with AMP to serve display ads](/docs/ads/adnetwork_integration.html)
+* [AMPHTML ads](/docs/ads/amphtml_ads.html)

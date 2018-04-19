@@ -62,7 +62,6 @@ Each network has specific data attributes they require to serve ads.  Refer to t
 </amp-ad>
 ```
 
-
 ### Step 5: (Optional) Specify a placeholder 
 
 Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space.  To specify a placeholder, add a child element with the `placeholder` attribute. Learn more in [Placeholders & fallbacks](/docs/design/responsive/placeholders.html).
@@ -95,7 +94,7 @@ Congratulations! You are now serving ads on your AMP page!
 
 ## Serving direct-sold AMPHTML ads
 
-The [amp-ad](/docs/reference/components/amp-ad.html) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML Ad spec](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+The [`amp-ad`](/docs/reference/components/amp-ad.html) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec](/docs/ads/a4a_spec.html) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Augmenting targeting data on ad requests
 
