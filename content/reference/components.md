@@ -35,8 +35,10 @@ The list of available components are listed below in related categories.
 | [`amp-access`](components/amp-access.html) | Provides an AMP paywall and subscription support.  |
 | [`amp-bind`](components/amp-bind.html) | Allows elements to mutate in response to user actions or data changes via data binding and simple JS-like expressions. |
 | [`amp-byside-content`](components/amp-byside-content.html) | Displays dynamic content from the [BySide service](http://www.byside.com/). |
+| [`amp-consent`](components/amp-consent.html) | Provides the ability to collect and store a user's consent through a UI control. |
 | [`amp-date-picker`](components/amp-date-picker.html) | Provides a calendar widget to select dates. |
 | [`amp-form`](components/amp-form.html) | Provides form support. |
+| [`amp-geo`](components/amp-geo.html) | Provides an approximate country-level geolocation interface. |
 | [`amp-gist`](components/amp-gist.html) | Displays a [GitHub Gist](https://gist.github.com/). |
 | [`amp-install-serviceworker`](components/amp-install-serviceworker.html) | Installs a ServiceWorker. |
 | [`amp-list`](components/amp-list.html) | Dynamically downloads data and creates list items using a template. |
@@ -113,6 +115,8 @@ The list of available components are listed below in related categories.
 
 | Component | Description |
 | --------- | ----------- |
+| [`amp-beopinion`](components/amp-beopinion.html) | Embeds [BeOpinion](https://beopinion.com/) content. |
+| [`amp-addthis`](components/amp-addthis.html) | Displays an [AddThis](https://www.addthis.com/) website tools embed. |
 | [`amp-facebook-comments`](components/amp-facebook-comments.html) | Embeds the Facebook comments plugin. |
 | [`amp-facebook-like`](components/amp-facebook-like.html) | Embeds the Facebook like button plugin. |
 | [`amp-facebook-page`](components/amp-facebook-page.html) | Embeds the [Facebook page plugin](https://developers.facebook.com/docs/plugins/page-plugin). |
