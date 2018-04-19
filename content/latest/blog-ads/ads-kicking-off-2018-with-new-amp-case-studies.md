@@ -8,7 +8,7 @@ role:  Marketing Manager, Google
 origin: "https://amphtml.wordpress.com/2018/01/25/kicking-off-2018-with-new-amp-case-studies/amp/"
 excerpt: "Over the past two years, the Accelerated Mobile Pages (AMP) Project has helped users have a fast and seamless experience on the web. In the weeks leading up to AMP Conf, we wanted to share four new AMP case studies to highlight how AMP implementation has unlocked further potential and has provided businesses the opportunity [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-01-25T07:03:46-08:00
+date_data: 2018-01-25T10:03:46-05:00
 $date: January 25, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

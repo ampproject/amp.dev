@@ -8,7 +8,7 @@ role:  Tech Lead for the AMP Project at Google.
 origin: "https://amphtml.wordpress.com/2018/03/08/standardizing-lessons-learned-from-amp/amp/"
 excerpt: "For over two years, AMP has been a leading format for creating consistently excellent user experiences on the web, and Google continues to invest strongly in it as our well-lit path to achieving a user-first web. We&#8217;ve long believed that the goal of a user-first web can be built in many ways, but, until we [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-03-08T08:58:16-08:00
+date_data: 2018-03-08T11:58:16-05:00
 $date: March 8, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
