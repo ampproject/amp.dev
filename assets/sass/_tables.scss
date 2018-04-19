@@ -38,6 +38,18 @@ td:first-child {
   border-right: 2px solid $color-ampblue;
 }
 
+.nocolor {
+  td {
+    text-align: center;
+  }
+  td:first-child {
+    border-right: 0;
+  }
+  tr {
+    background-color: $color-white;
+  }
+}
+
 .rtl {
   td:first-child {
     border-left: 2px solid $color-ampblue;

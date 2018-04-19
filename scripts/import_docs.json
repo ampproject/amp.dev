@@ -50,9 +50,16 @@
     },
     {
         "title": "Guidelines for integrating ad technologies with AMP",
-        "order": 2,
+        "order": 3,
         "from": "ads/_integration-guide.md",
         "to": "docs/ads/integration-guide.md",
+        "toc": true
+    },
+    {
+        "title": "AMPHTML ad specification",
+        "order": 3,
+        "from": "extensions/amp-a4a/amp-a4a-format.md",
+        "to": "docs/ads/amphtml_ads/a4a_spec.md",
         "toc": true
     }
 ]

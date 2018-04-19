@@ -8,7 +8,7 @@ role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2018/01/31/new-in-amp-date-picker-easier-css-development-and-more-amp-by-example-content/amp/"
 excerpt: "We’re back with another post to highlight the most notable changes to AMP in the past few months. amp-date-picker experimental beta Our new date picker is now available for experimenting with. To get started, make sure that you enable the Dev Channel and run the following command in the devtools console: AMP.toggleExperiment(&#8216;amp-date-picker&#8217;) Full details for [&#8230;]"
 avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-01-31T15:08:57-08:00
+date_data: 2018-01-31T18:08:57-05:00
 $date: January 31, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
