@@ -61,5 +61,12 @@
         "from": "extensions/amp-a4a/amp-a4a-format.md",
         "to": "docs/ads/amphtml_ads/a4a_spec.md",
         "toc": true
+    },
+    {
+        "title": "Integrating your analytics tool with AMP",
+        "order": 1,
+        "from": "extensions/amp-analytics/integrating-analytics.md",
+        "to": "docs/analytics/integrating-analytics.md",
+        "toc": true
     }
 ]
