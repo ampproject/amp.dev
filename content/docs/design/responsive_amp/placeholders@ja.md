@@ -54,7 +54,7 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.
             sandbox="allow-scripts allow-forms allow-same-origin"
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="さらに表示">コードをすべて表示</div>
+  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
   <div placeholder></div> 
 </amp-iframe>
 </div>
