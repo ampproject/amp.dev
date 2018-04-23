@@ -35,36 +35,29 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.
 
 ## フォールバック
 
-`fallback` 属性を使用して、ブラウザがサポートしていない要素に対する代わりの動作を指定します。たとえば、`fallback` 属性を使用して、ブラウザが特定の機能に対応していないことをユーザーに伝えます。
+要素で `fallback` 属性を使うことで代わりの動作を指定できます。
+
+* ブラウザがサポートしていない要素
+* コンテンツを読み込めなかった場合（削除されたツイートなど）
+* 画像の種類がサポートされていない場合（WebP は一部のブラウザでサポートされません）
+
+`fallback` 属性は、AMP 要素だけでなく、「あらゆる」HTML 要素で設定できます。この属性を指定する場合は、`fallback` 要素を AMP 要素の直接の子にする必要があります。
+
+##### 例: サポートされていない機能
+
+次の例では、`fallback` 属性を使用して、ブラウザが特定の機能に対応していないことをユーザーに伝えます。
 
 <!--embedded video example  -->
 <div>
 <amp-iframe height="234"
-layout="fixed-height"
-sandbox="allow-scripts allow-forms allow-same-origin"
-resizable
-src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-<div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+            layout="fixed-height"
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            resizable
+            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
+  <div overflow tabindex="0" role="button" aria-label="さらに表示">コードをすべて表示</div>
+  <div placeholder></div> 
 </amp-iframe>
 </div>
-
-`fallback` 属性は、AMP 要素だけでなく、どの HTML 要素でも設定できます。指定する場合、`fallback` 要素は AMP 要素の直接の子にする必要があります。
-
-## プレースホルダとフォールバックの相互関係
-
-動的なコンテンツに依存する AMP コンポーネント（`amp-twitter`、`amp-list` など）では、フォールバックとプレースホルダの相互関係は次のようになります:
-
-<ol>
-  <li>コンテンツが読み込まれている最中は、プレースホルダが表示されます。</li>
-  <li>コンテンツが正常に読み込まれると、プレースホルダは非表示となり、コンテンツが表示されます。</li>
-  <li>コンテンツの読み込みに失敗した場合:
-    <ol>
-      <li>フォールバック要素がある場合は、フォールバックが表示されます。</li>
-      <li>それ以外の場合は、引き続きプレースホルダが表示されます。</li>
-    </ol>
-  </li>
-</ol>
 
 ## 読み込みインジケータを非表示にする
 
