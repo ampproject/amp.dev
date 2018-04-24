@@ -1,6 +1,5 @@
 ---
 $title: 設定
-$parent: /content/docs/fundamentals/add_advanced.md
 ---
 
 ## 必要な準備
@@ -8,7 +7,7 @@ $parent: /content/docs/fundamentals/add_advanced.md
 このチュートリアルを**始める前に**、次のものが必要となります。
 
 - HTML、CSS、JavaScript の基本的な知識
-- AMP の中心的な概念についての基本的な理解（「[HTML を AMP に変換する](/ja/docs/tutorials/converting.html)」チュートリアルをご覧ください）
+- AMP の中心的な概念についての基本的な理解（「[HTML を AMP に変換する](/ja/docs/fundamentals/converting.html)」チュートリアルをご覧ください）
 - JavaScript コンソールを確認できる任意のブラウザ
 - 任意のテキスト エディタ
 
@@ -50,6 +49,6 @@ http://localhost:8000/article.amp.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/add_advanced.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/docs/tutorials/add_advanced/review_code.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-next">次へ</span></a>
 </div>
