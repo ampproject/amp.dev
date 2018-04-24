@@ -100,6 +100,6 @@ AMP でこの機能を再現するには、まず、対象ドキュメントの 
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/add_advanced/adding_carousels.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/add_advanced/navigating.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-next">次へ</span></a>
 </div>
