@@ -1,105 +1,222 @@
 ---
-$title: アナリティクスによりエンゲージメントをトラッキングする
+$title: 拡張 AMP コンポーネントを追加する
 ---
 
-アナリティクス プラットフォームは、インライン JavaScript スニペットと関数呼び出しを使用してウェブサイトに統合するのが一般的で、ウェブサイトでイベントがトリガーされると、このメカニズムによってアナリティクス システムに通知されます。AMP は、複数のアナリティクス パートナー向けに、柔軟な JSON 設定構文を提供してこのプロセスを再現しています。
+[TOC]
 
-以下は、従来の JavaScript 主導の Google アナリティクスによるトラッキングの例です。これを [amp-analytics](/ja/docs/reference/components/amp-analytics.html) JSON 形式に書き換えますが、まずは従来のアプローチを見てみましょう。
+コンポーネント システムを採用する AMP では、効率的でレスポンシブな機能を簡単に記事に組み込むことができます。AMP HTML ライブラリには、次の 3 種類の AMP コンポーネントが用意されています。
 
-```html
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+- **組み込みコンポーネント**: [amp-img](/ja/docs/reference/components/amp-img.html) や [amp-pixel](/ja/docs/reference/components/amp-pixel.html) のような、AMP JavaScript の基本ライブラリに含まれるコンポーネント（`<head>` タグ内に指定）。組み込みコンポーネントは、AMP ドキュメントの中で直接使用できます。
 
-ga('create', 'UA-XXXXX-Y', 'auto');
-ga('send', 'pageview');
-</script>
-```
+- **拡張コンポーネント**: 基本ライブラリを拡張するもので、カスタム要素としてドキュメントに明示的に含める必要のあるコンポーネント。カスタム要素を使用するには、特定のスクリプトを `<head>` セクションに追加する必要があります（たとえば、`<script async custom-element="amp-video" ...` のようにします）。
 
-非常にシンプルなこの JavaScript は、ページビュー イベントをトラッキングするための通知を送信します。
+- **試験運用コンポーネント**: リリースされているが、まだ一般公開する前の段階にあるコンポーネント。デベロッパーは、完全リリースされる前のこれらの機能を使用するかどうか、ご自身の意思で選択できます。詳しくは、[試験運用機能](/ja/docs/reference/experimental.html)をご覧ください。
 
-AMP でこの機能を再現するには、まず、対象ドキュメントの `<head>` 内に [amp-analytics](/ja/docs/reference/components/amp-analytics.html) コンポーネント ライブラリを**含める**必要があります。
+「[HTML を AMP に変換する](/ja/docs/tutorials/converting.html)」チュートリアルのサンプルでは、組み込みコンポーネントの [amp-img](/ja/docs/reference/components/amp-img.html) を使用し、このコンポーネントと AMP レイアウト システムの関係について解説しました。ここでは、一般に広く使用されているいくつかの**拡張** AMP コンポーネントを新しい記事に追加してみます。
+
+## 広告で収益化する
+
+AMP ページに広告を掲載するには、[amp-ad](/ja/docs/reference/components/amp-ad.html) コンポーネントを使用します。`amp-ad` コンポーネントを使用すると、幅、高さ、レイアウト モードなど、複数の方法で広告を設定できます。ただし、多くの広告プラットフォームではこれ以外にも設定が必要となります。たとえば、広告ネットワークのアカウント ID や掲載する広告の条件、広告のターゲットを設定するオプションなどです。`amp-ad` コンポーネントでも、HTML 属性を使用することでこれらのオプションを簡単に指定できます。
+
+**DoubleClick** 広告を設定する場合の例を見てみましょう。
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<amp-ad
+  width="300"
+  height="250"
+  type="doubleclick"
+  data-slot="/35096353/amptesting/image/static">
+</amp-ad>
 ```
 
-次に、`amp-analytics` コンポーネントをドキュメントの `body` の最後に**追加**してみましょう。
+ご覧のとおり、設定は非常にシンプルです。`amp-ad` コンポーネントに対し、使用する広告プラットフォームを `type` 属性で指定しています。ここでは、[DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md) プラットフォームを使用するために、値として `doubleclick` を指定しています。
+
+`data-slot` はさらにユニークな属性です。`amp-ad` コンポーネントでは、`data-` で始まる属性はすべてベンダー固有の属性です。この属性はすべてのベンダーに必須指定するものではなく、指定しても必ず反応するとは限りません。上に示した **DoubleClick** の場合の例と、以下に示す [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) プラットフォームの広告の例を比べてみましょう。
 
 ```html
-<amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
-      "vars": {
-        "title": "Name of the Article"
-      }
-    }
-  }
-}
-</script>
-</amp-analytics>
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302">
+</amp-ad>
 ```
 
-ページ上部の JavaScript の例と同様に、この `amp-analytics` スニペットは、ページが表示されたことを示す通知を Google アナリティクスに送信します。
+ご自身の記事の `<header>` タグの直後に、上の 2 つの例を**追加**してみてください。ページを**更新**すると、次のように 2 つの広告が表示されるはずです。
 
-これを指定するため、AMP では、`type` を `googleanalytics` に設定して、JSON で「デフォルト ページビュー」という名前のトリガーを作成しました。このトリガーは、ページが表示されると（`"on": "visible"` の指定に従って）起動し、続いて `vars` に指定された値を含む `pageview` アナリティクス リクエストを Google アナリティクスに送信します。
+{{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='テスト広告') }}
 
-`amp-analytics` の設定に使用される JSON は非常に柔軟な形式で、送信するアナリティクス データと送信するタイミングを記述することができます。形式に関する詳細な情報は、[amp-analytics の「設定データを指定する」](/ja/docs/reference/components/amp-analytics.html#specifying-configuration-data)に記載されています。
+{% call callout('重要', type='caution') %}
+場合によっては、`Mixed Content` や `XMLHttpRequest cannot load` などのエラーがデベロッパー コンソールに出力されることがあります。前者のエラーは、A9 広告に関係している可能性があります。A9 広告では、セキュリティで保護されていないコンテンツが読み込まれる場合がありますが、AMP では、広告はすべてセキュリティで保護されていることが要求されます。
+{% endcall %}
 
-上記の例を基にして、次のように別のトリガー `"click on #header trigger"` を**追加**することもできます。
+`amp-ad` コンポーネントは、広告プラットフォームの機能を柔軟にサポートします。それを示す `amp-ad` コンポーネントの 2 つの設定例を見てみましょう。以下では、DoubleClick のダッシュボードを使用して、特定の国のユーザーにだけ表示される DoubleClick 広告を 2 つ設定しています。1 つ目の広告は英国のユーザーにだけ表示され、2 つ目の広告は米国のユーザーにだけ表示されます。先ほど AMP ドキュメントに追加した広告の下に、次の 2 つの地域ターゲティング広告設定を**追加**してみてください。
 
 ```html
-<amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
-      "vars": {
-        "title": "Name of the Article"
-      }
-    },
-    "click on #header trigger": {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
-      "vars": {
-        "eventCategory": "examples",
-        "eventAction": "clicked-header"
-      }
-    }
-  }
-}
-</script>
-</amp-analytics>
+<amp-ad
+  width="300"
+  height="250"
+  type="doubleclick"
+  data-slot="/35096353/amptesting/geo/uk">
+  <div fallback>No ad appeared because you're not browsing from the UK!</div>
+</amp-ad>
+
+<amp-ad
+  width="300"
+  height="250"
+  type="doubleclick"
+  data-slot="/35096353/amptesting/geo/us">
+  <div fallback>No ad appeared because you're not browsing from the US!</div>
+</amp-ad>
 ```
 
-名前から推測できるように、この新しいトリガーは ID `"header"` を持つ要素がクリックされたときに起動します（`"on": "click"` および `"selector": "#header"` によって指定されています）。このトリガーは、指定された 2 つの変数を含む `event` リクエストをアナリティクス プロバイダに送信します。
+ページを**更新**して、表示内容を確認してください。次のスクリーンショットは、カナダ国内でキャプチャされたものですが、どちらの広告も表示されていません。
 
-カスタム トラッキング プラットフォームを統合する場合でも、`amp-analytics` を使用して、トラッキング データの送信先となる独自の URL エンドポイントを定義できます。詳しくは、[amp-analytics](/ja/docs/reference/components/amp-analytics.html) コンポーネントのリファレンス ドキュメントをご覧ください。
+{{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='テスト広告') }}
 
 {% call callout('注', type='note') %}
-`“UA-YYYY-Y”` は Google アナリティクス アカウントの例です。このサンプルをご自身のサイトで使用する場合は、実際のウェブサイトの Google アナリティクス トラッキング コードに置き換える必要があります。
+上記の amp-ad タグには `div` タグが追加されており、そこには `fallback` という属性が指定されています。この `fallback` 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
 {% endcall %}
+
+{% call callout('詳細情報', type='read') %}
+サポートされる広告ネットワークの最新リストについては、[amp-ad](/ja/docs/reference/components/amp-ad.html#supported-ad-networks) コンポーネントの関連ドキュメントをご覧ください。
+{% endcall %}
+
+{% call callout('注', type='note') %}
+広告ネットワークから提供される JavaScript を AMP ドキュメント内で実行することはできません。代わりに、AMP ランタイムは（iframe サンドボックス経由で）別の場所から iframe を AMP ドキュメントとして読み込み、広告ネットワークの JavaScript をその iframe サンドボックス内で実行します。
+{% endcall %}
+
+ここまでで、ページに埋め込まれるテキスト、画像、広告を AMP ドキュメントに記述することができました。これらの要素はいずれも、ストーリーを発信し、コンテンツを収益化するためには欠かせない重要な要素です。しかし、現代のウェブサイトでは、単にテキストと画像を掲載するだけでは十分とはいえません。
+
+ここからは、AMP ドキュメントをより充実した内容にするため、多くのニュース記事に見られる次のような最新のウェブ機能を追加していきます。
+
+- YouTube 動画
+- ツイート
+- 記事の引用
+
+##  YouTube 動画を埋め込む
+では、YouTube 動画を AMP ドキュメントに埋め込んでみましょう。AMP ドキュメントの `<header>` の直後（先ほど追加した 2 つの `amp-ad` の上）に次のコードを**追加**します。
+
+```html
+<amp-youtube
+  data-videoid="npum8JsITQE"
+  layout="responsive"
+  width="480"
+  height="270">
+  <div fallback>
+    <p>The video could not be loaded.</p>
+  </div>
+</amp-youtube>
+```
+
+ページを**更新**します。動画の代わりに、*「動画を読み込めませんでした。」*というテキストが表示されるはずです。
+
+このエラーは、ブラウザで他の YouTube 動画を問題なく表示できる場合でも発生します。なぜなら、実際には動画の読み込みに失敗しているのではなく、コンポーネント自体が失敗しているからです。
+
+すでに説明したように、AMP 基本ライブラリの JavaScript ファイルには、すべてのコンポーネントが含まれているわけではありません。YouTube コンポーネントのための JavaScript リクエストをファイルに追加する必要があります。
+
+{% call callout('注', type='note') %}
+デベロッパー コンソールがまだ開いていて、URL に `#development=1` と表示されている場合は、`amp-youtube` JavaScript の追加を促す AMP 検証エラーと、追加する必要のある `script` タグの説明を含むキュメントへのリンクが表示されます。
+{% endcall %}
+
+次のスクリプトを `<head>` タグに**追加**します。
+
+```html
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+```
+
+ページを**更新**すると、YouTube 動画が表示されるはずです。
+
+{{ image('/static/img/docs/tutorials/tut-advanced-youtube.png', 412, 618, align='center half', caption='埋め込まれた YouTube 動画') }}
+
+設定では、ページ上の他の要素と同様に、動画の `width` と `height` を 指定しています。AMP レイアウト システムは、この値に基づいてアスペクト比を計算します。また、`layout` を `responsive` に設定しているため、動画は親要素の幅一杯まで拡大されます。
+
+YouTube 動画の埋め込みについて詳しくは、[amp-youtube](/ja/docs/reference/components/amp-youtube.html) コンポーネントのドキュメントをご覧ください。動画やメディアに関するその他のコンポーネントについては、[メディア AMP コンポーネントのリスト](/ja/docs/reference/components.html#media)をご覧ください。
 
 {% call callout('ヒント', type='success') %}
-より単純なトラッキング システムについては、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) の記事を参照してください。amp-pixel は従来のピクセル トラッキングの要件を満たすことのみを目的としているため、ページビューのトラッキングのみが必要な場合は、amp-pixel の方が amp-analytics よりも軽量なソリューションです。詳しくは、[アナリティクス: 基本ガイド](/ja/docs/guides/analytics/analytics_basics.html)をご覧ください。
+コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、[`fallback`](/ja/docs/design/responsive/placeholders.html#fallbacks) 属性を使用します。
 {% endcall %}
 
+## ツイートを表示する
+Twitter に投稿されたツイートをそのまま埋め込む機能も、ニュース記事で広く使用されています。[amp-twitter](/ja/docs/reference/components/amp-twitter.html) コンポーネントを使用すると、この機能を簡単に実現できます。
+
+まず、次の JavaScript リクエストをドキュメントの `<head>` タグに追加します。
+
+```html
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+```
+
+続いて、ツイートの埋め込み先となる記事に次のコードを**追加**します。
+
+```html
+<amp-twitter
+  width="486"
+  height="657"
+  layout="responsive"
+  data-tweetid="638793490521001985">
+</amp-twitter>
+```
+
+`data-tweetid` 属性も、特定のプラットフォームで必要となるカスタム属性です。Twitter は、`data-tweetid` 属性の値を特定のツイートに関連付けます。
+
+ブラウザを**更新**してページの表示を確認してください。次のようにツイートが表示されるはずです。
+
+{{ image('/static/img/docs/tutorials/tut-advanced-twitter.png', 412, 613, align='center half', caption='埋め込まれたツイート') }}
+
+ツイートの埋め込みについて詳しくは、[amp-twitter](/ja/docs/reference/components/amp-twitter.html) コンポーネントのドキュメントをご覧ください。
+
+{% call callout('ヒント', type='success') %}
+AMP には、ソーシャル ネットワークのコンテンツを埋め込むためのコンポーネントが他にも用意されています。詳しくは、[ソーシャル AMP コンポーネント](/ja/docs/reference/components.html#social)の最新リストをご覧ください。
+{% endcall %}
+
+## 記事の引用をハイライト表示する
+
+ニュース記事では、記事の重要部分を抜粋してハイライト表示する機能もよく使われます。たとえば、特定の情報源からの引用や重要な事実を、読者の注意を引くために大きなフォントで抜粋するといったことがよく行われています。
+
+ただし、抜粋するテキストの文字数は必ずしも一定ではないため、フォントのサイズは、そのテキストがページ上で占有するスペースとのバランスを考慮して決めなければなりません。
+
+AMP には、この問題を解決するための専用のコンポーネントとして、[amp-fit-text](/ja/docs/reference/components/amp-fit-text.html) が用意されています。`amp-fit-text` コンポーネントを使用すると、テキストの幅と高さに固定値を設定し、最大のフォントサイズを指定することができます。フォントサイズは、指定された幅と高さにテキストが**収まる**ようインテリジェントに調整されます。
+
+実際に試してみましょう。まず、次のようにコンポーネントのライブラリを `<head>` タグに**追加**します。
+
+```html
+<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+```
+
+次の内容をページに追加します。
+
+```html
+<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
+  Big, bold article quote goes here.
+</amp-fit-text>
+```
+
+ページを**更新**して表示を確認してください。
+
+続いて、別の設定も試してみましょう。引用をもっと短くするとどうなるでしょうか。
+
+```html
+<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
+  Hello!
+</amp-fit-text>
+```
+
+今度は引用を長くしてみましょう。
+
+```html
+<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
+   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+</amp-fit-text>
+```
+
+`amp-fit-text` を使った最後の実験として、max-font-size 属性の値は 42 のまま、height に 400 などの大きな値を設定し、「こんにちは」などの短いテキストを指定してみましょう。 テキストはページ上でどのように表示されるでしょうか。垂直方向の中央揃えで表示されるでしょうか。それとも、最大フォントサイズに合わせて、amp-fit-text タグの高さが縮小されるでしょうか。AMP のレイアウト システムについてこれまでに学んだ知識を踏まえ、実際にコードを試す前に答えを考えてみてください。
+
+`amp-fit-text` について詳しくは、[AMP by Example のライブデモ](https://ampbyexample.com/components/amp-fit-text/)をご覧ください。
+
+
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">次へ</span></a>
 </div>
