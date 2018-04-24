@@ -1,7 +1,7 @@
 [
     {
         "title": "Open Source Governance",
-        "order": 5,
+        "order": 2,
         "from": "GOVERNANCE.md",
         "to": "docs/contribute/governance.md"
     },
