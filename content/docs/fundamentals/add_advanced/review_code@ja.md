@@ -132,6 +132,6 @@ AMP ページを検証するには、他のツールも使用できます。次�
 これで、ページの操作を開始できるようになりました。AMP コンポーネントをページに追加してみましょう。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-next">次へ</span></a>
 </div>
