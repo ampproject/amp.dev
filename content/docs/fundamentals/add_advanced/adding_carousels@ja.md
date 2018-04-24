@@ -1,11 +1,10 @@
 ---
 $title: カルーセルを追加する
-toc: true
 ---
 
 [TOC]
 
-モバイルページでよく使われるもう 1 つの機能は、カルーセルです。[amp-carousel](https://www.ampproject.org/ja/docs/reference/components/amp-carousel) コンポーネントを使用すると、AMP ページにカルーセルを簡単に追加できます。まずは、画像のカルーセルなどの簡単な例から見てみましょう。
+モバイルページでよく使われるもう 1 つの機能は、カルーセルです。[amp-carousel](/ja/docs/reference/components/amp-carousel.html) コンポーネントを使用すると、AMP ページにカルーセルを簡単に追加できます。まずは、画像のカルーセルなどの簡単な例から見てみましょう。
 
 ## シンプルな画像のカルーセル
 
@@ -96,6 +95,6 @@ amp-fit-text {
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/add_advanced/adding_components.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/add_advanced/tracking_data.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">次へ</span></a>
 </div>
