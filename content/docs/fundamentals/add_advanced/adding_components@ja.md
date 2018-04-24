@@ -1,6 +1,5 @@
 ---
 $title: 拡張 AMP コンポーネントを追加する
-toc: true
 ---
 
 [TOC]
@@ -78,7 +77,7 @@ AMP ページに広告を掲載するには、[amp-ad](/ja/docs/reference/compon
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='テスト広告') }}
 
 {% call callout('注', type='note') %}
-上記の amp-ad タグには `div` タグが追加されており、そこには `fallback` という属性が指定されています。この `fallback` 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、[プレースホルダとフォールバック](/ja/docs/guides/responsive/placeholders.html)をご覧ください。
+上記の amp-ad タグには `div` タグが追加されており、そこには `fallback` という属性が指定されています。この `fallback` 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
 {% endcall %}
 
 {% call callout('詳細情報', type='read') %}
@@ -137,7 +136,7 @@ AMP ページに広告を掲載するには、[amp-ad](/ja/docs/reference/compon
 YouTube 動画の埋め込みについて詳しくは、[amp-youtube](/ja/docs/reference/components/amp-youtube.html) コンポーネントのドキュメントをご覧ください。動画やメディアに関するその他のコンポーネントについては、[メディア AMP コンポーネントのリスト](/ja/docs/reference/components.html#media)をご覧ください。
 
 {% call callout('ヒント', type='success') %}
-コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、[`fallback`](/ja/docs/guides/responsive/placeholders.html#fallbacks) 属性を使用します。
+コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、[`fallback`](/ja/docs/design/responsive/placeholders.html#fallbacks) 属性を使用します。
 {% endcall %}
 
 ## ツイートを表示する
@@ -218,6 +217,6 @@ AMP には、この問題を解決するための専用のコンポーネント�
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/add_advanced/review_code.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/docs/tutorials/add_advanced/adding_carousels.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">次へ</span></a>
 </div>
