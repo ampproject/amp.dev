@@ -1,6 +1,5 @@
 ---
 $title: Creación de una página HTML normal
-$order: 1
 ---
 
 En el directorio del proyecto, encontrará un archivo denominado [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). Este es el artículo de noticias que estamos creando una página equivalente de AMP para.
@@ -57,7 +56,7 @@ Cuando inspecciona la salida de JavaScript en la Consola del programador (asegú
 Powered by AMP ⚡ HTML
 ```
 
-**Habilite** el [AMP validator](https://www.ampproject.org/es/docs/guides/validate.html) agregando este identificador de fragmento a su URL:
+**Habilite** el [AMP validator](/es/docs/fundamentals/validate.html) agregando este identificador de fragmento a su URL:
 
 ```text
 #development=1
@@ -84,6 +83,6 @@ Debería ver una resolución móvil simulada en su navegador como la siguiente:
 ¡Ahora estamos listos para trabajar! Paso a paso a través de los errores de validación, uno por uno y la dirección de cómo se relacionan con AMP.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/converting/setting-up.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/converting/resolving-errors.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="/es/docs/fundamentals/converting/setting-up.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-next">Próximo</span></a>
 </div>

@@ -6,7 +6,7 @@ toc: true
 
 [TOC]
 
-Another common feature in mobile pages is a carousel.  You can easily add carousels to AMP pages by using the [amp-carousel](https://www.ampproject.org/docs/reference/components/amp-carousel) component. Let’s start with a simple example, such as a carousel of images.
+Another common feature in mobile pages is a carousel.  You can easily add carousels to AMP pages by using the [amp-carousel](/docs/reference/components/amp-carousel.html) component. Let’s start with a simple example, such as a carousel of images.
 
 ## Simple image carousel
 
@@ -97,6 +97,6 @@ In our last example you may have noticed the `amp-ad` component included a child
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/add_advanced/adding_components.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/add_advanced/tracking_data.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">Next</span></a>
 </div>

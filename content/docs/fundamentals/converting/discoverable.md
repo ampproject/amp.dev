@@ -110,12 +110,12 @@ To verify that your structured data is correct, many platforms provide validatio
 If your structured data is valid, you should see **0 errors**, and **0 warnings**.
 
 {% call callout('Read on', type='read') %}
-To learn more about page discoverability, see the [Make your page discoverable](https://www.ampproject.org/docs/guides/discovery.html) guide.
+To learn more about page discoverability, see the [Make your page discoverable](/docs/fundamentals/discovery.html) guide.
 {% endcall %}
 
 Awesome work!  You've completed your AMP news article.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/converting/resolving-errors.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/converting/congratulations.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/converting/congratulations.html"><span class="arrow-next">Next</span></a>
 </div>

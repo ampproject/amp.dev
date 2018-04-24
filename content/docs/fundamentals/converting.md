@@ -21,5 +21,5 @@ In this tutorial, you’ll learn the key concepts of AMP and how AMP documents d
 A simple news article page that conforms to AMP specifications and incorporates common features found on mobile news sites.
 
 <div class="start-button">
-<a class="button" href="/docs/tutorials/converting/setting-up.html"><span class="arrow-next">Get started</span></a>
+<a class="button" href="/docs/fundamentals/converting/setting-up.html"><span class="arrow-next">Get started</span></a>
 </div>

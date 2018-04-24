@@ -60,7 +60,7 @@ When you inspect the JavaScript output in the Developer Console (make sure you h
 Powered by AMP ⚡ HTML
 ```
 
-The AMP library includes an [AMP validator](https://www.ampproject.org/docs/guides/validate.html) that will tell you if there is anything that is keeping your page from being a valid AMP document.  **Enable** the AMP validator by adding this fragment identifier to your document URL:
+The AMP library includes an [AMP validator](/docs/fundamentals/validate.html) that will tell you if there is anything that is keeping your page from being a valid AMP document.  **Enable** the AMP validator by adding this fragment identifier to your document URL:
 
 ```text
 #development=1
@@ -87,6 +87,6 @@ You should see a mobile simulated resolution in your browser such as this:
 Now we're ready to get to work! Let's step through the validation errors one by one and address how they relate to AMP.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/converting/setting-up.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/converting/resolving-errors.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/converting/setting-up.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-next">Next</span></a>
 </div>

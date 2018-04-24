@@ -9,7 +9,7 @@ $parent: /content/docs/fundamentals/add_advanced.md
 **Before starting** this tutorial, you'll need the following:
 
 - A basic knowledge of HTML, CSS, and JavaScript
-- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"](/docs/tutorials/converting.html) tutorial)
+- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"](/docs/fundamentals/converting.html) tutorial)
 - A browser of your choice that can inspect the JavaScript console
 - A text editor of your choice
 
@@ -51,6 +51,6 @@ http://localhost:8000/article.amp.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/add_advanced.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/add_advanced/review_code.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/add_advanced.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-next">Next</span></a>
 </div>
