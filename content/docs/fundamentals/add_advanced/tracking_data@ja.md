@@ -96,10 +96,10 @@ AMP でこの機能を再現するには、まず、対象ドキュメントの 
 {% endcall %}
 
 {% call callout('ヒント', type='success') %}
-より単純なトラッキング システムについては、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) の記事を参照してください。amp-pixel は従来のピクセル トラッキングの要件を満たすことのみを目的としているため、ページビューのトラッキングのみが必要な場合は、amp-pixel の方が amp-analytics よりも軽量なソリューションです。詳しくは、[アナリティクス: 基本ガイド](/ja/docs/guides/analytics/analytics_basics.html)をご覧ください。
+より単純なトラッキング システムについては、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) の記事を参照してください。amp-pixel は従来のピクセル トラッキングの要件を満たすことのみを目的としているため、ページビューのトラッキングのみが必要な場合は、amp-pixel の方が amp-analytics よりも軽量なソリューションです。詳しくは、[アナリティクス: 基本ガイド](/ja/docs/analytics/analytics_basics.html)をご覧ください。
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/add_advanced/adding_carousels.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/add_advanced/navigating.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-next">次へ</span></a>
 </div>
