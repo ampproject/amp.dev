@@ -1,7 +1,5 @@
 ---
 $title: 高度な AMP 機能を追加する
-$order: 2
-tutorial: true
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='完成したニュース記事') }}
@@ -22,9 +20,9 @@ tutorial: true
 AMP 仕様に準拠し、広告、分析、埋め込み動画、ソーシャル メディアの埋め込み、カルーセル、サイト ナビゲーション メニューが含まれるニュース記事のページ。
 
 {% call callout('注', type='note') %}
-このチュートリアルは、「[HTML を AMP に変換する](/ja/docs/tutorials/converting.html)」チュートリアルで紹介された概念の続きです。AMP の中心的な概念について基本を十分に理解していない場合は、「[HTML を AMP に変換する](/ja/docs/tutorials/converting.html)」チュートリアルに取り組んでください。
+このチュートリアルは、「[HTML を AMP に変換する](/ja/docs/fundamentals/converting.html)」チュートリアルで紹介された概念の続きです。AMP の中心的な概念について基本を十分に理解していない場合は、「[HTML を AMP に変換する](/ja/docs/fundamentals/converting.html)」チュートリアルに取り組んでください。
 {% endcall %}
 
 <div class="start-button">
-<a class="button" href="/docs/tutorials/add_advanced/setting_up.html"><span class="arrow-next">開始する</span></a>
+<a class="button" href="/ja/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-next">開始する</span></a>
 </div>
