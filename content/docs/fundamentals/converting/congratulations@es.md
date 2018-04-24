@@ -1,6 +1,5 @@
 ---
 $title: ¡Felicitaciones!
-$order: 4
 ---
 
 Ha terminado el tutorial y convertido correctamente un documento HTML en un documento de AMP.
@@ -17,10 +16,4 @@ En este tutorial, aprendió a:
 
 ## Próximos pasos
 
-Para obtener más información sobre AMP, explore estos recursos:
-
-- [AMP Start](https://www.ampstart.com/): Brinde estilo a sus páginas con plantillas pre-diseñadas y componentes
-- [AMP By Example](https://ampbyexample.com/): Aprende con ejemplos y demos en vivo
-- [AMP Channel on YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Aprenda viendo videos específicos sobre AMP
-- [AMP HTML spec](/docs/reference/spec.html): Más información sobre el marcado HTML necesario en una página AMP
-- [AMP components](/es/docs/reference/components.html): Obtenga detalles sobre todos los componentes de AMP
+Continúe su aprendizaje de AMP mediante la creación de funciones más avanzadas en su página de AMP con el tutorial [Añadir funciones avanzadas de AMP](/es/docs/fundamentals/add_advanced.html).

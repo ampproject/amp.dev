@@ -35,7 +35,7 @@ Now, let's look at the following error:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Every AMP document needs to have a link referencing the "canonical" version of that document.  We'll learn more about what canonical pages are and different approaches to canonical linking in the [Making your page discoverable](/docs/tutorials/converting/discoverable.html) step of this tutorial.
+Every AMP document needs to have a link referencing the "canonical" version of that document.  We'll learn more about what canonical pages are and different approaches to canonical linking in the [Making your page discoverable](/docs/fundamentals/converting/discoverable.html) step of this tutorial.
 
 For this tutorial we'll consider the original HTML article that we're converting to be the canonical page.
 
@@ -136,7 +136,7 @@ Not only is inline styling required but there is a file size limit of 50 kilobyt
 {% endcall %}
 
 {% call callout('Important', type='caution') %}
-You can only have one style tag in your entire AMP document. If you have several external stylesheets referenced by your AMP pages, you will need to collate these stylesheets into a single set of rules. To learn what CSS rules are valid in AMP, read [Supported CSS](/docs/guides/responsive/style_pages.html).
+You can only have one style tag in your entire AMP document. If you have several external stylesheets referenced by your AMP pages, you will need to collate these stylesheets into a single set of rules. To learn what CSS rules are valid in AMP, read [Supported CSS](/docs/design/responsive/style_pages.html).
 {% endcall %}
 
 ## Exclude third-party JavaScript
@@ -233,7 +233,7 @@ The layout error is telling us that `amp-img` does not support the `container` l
 
 To reduce DOM reflow, AMP includes a layout system to ensure the layout of the page is known as early as possible in the lifecycle of downloading and rendering the page.
 
-The image below compares how an HTML page if often laid out compared to the approach AMP enforces.  Notice in the approach on the left how the text reflows each time an ad or image is loaded.  AMP's approach to layout keeps the text from moving around--even if the images and ads take a long time to load.
+The image below compares how an HTML page is often laid out compared to the approach AMP enforces.  Notice in the approach on the left how the text reflows each time an ad or image is loaded.  AMP's approach to layout keeps the text from moving around--even if the images and ads take a long time to load.
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-layout-system.png', 837, 394, align='', caption="A comparison between how content is normally laid out and AMP's approach") }}
 
@@ -268,7 +268,7 @@ Voila! Our image is in the correct aspect ratio and responsively fills the width
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Our image is now responsive!") }}
 
 {% call callout('Read on', type='read') %}
-Learn more about the AMP Layout System in the [AMP Layout Specification](/docs/reference/spec/amp-html-layout.html).
+Learn more about the AMP Layout System in the [AMP Layout Specification](/docs/design/amp-html-layout.html).
 {% endcall %}
 
 ## Success!
@@ -340,11 +340,11 @@ AMP validation successful.
 ### Frequently asked questions
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [What if the layout attribute isn’t defined?](/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [What if width and height are undefined?](https://www.ampproject.org/docs/guides/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [What if the layout attribute isn’t defined?](/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
+- [What if width and height are undefined?](/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/converting/building-page.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/converting/discoverable.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">Next</span></a>
 </div>

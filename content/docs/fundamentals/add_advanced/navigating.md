@@ -78,7 +78,7 @@ Next, we want to display a menu icon.  When the icon is tapped, it will open the
 </header>
 ```
 
-In the above code, we `toggle` the sidebar through the [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) action attribute on the `amp-sidebar` element, which is identified by the `sidebar1` ID.  Let's add the sidebar.
+In the above code, we `toggle` the sidebar through the [`on`](/docs/interaction_dynamic/amp-actions-and-events.html) action attribute on the `amp-sidebar` element, which is identified by the `sidebar1` ID.  Let's add the sidebar.
 
 
 **Add** the following HTML just after the `</header>`:
@@ -126,6 +126,6 @@ Okay, let's see our sidebar. **Refresh** and reload your AMP page.  You should s
 Our page is looking great!  Let's add one final touch&mdash;a custom font.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/add_advanced/tracking_data.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/add_advanced/fonts.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/add_advanced/fonts.html"><span class="arrow-next">Next</span></a>
 </div>

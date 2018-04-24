@@ -98,7 +98,7 @@ $title: スターター コードを確認する
 
 ## AMP 検証ツールを有効にする
 
-ページを変更する前に、有効な AMP HTML を扱っていることがわかるように、[AMP 検証ツール](/ja/docs/guides/validate.html)を有効にしましょう。URL に次のフラグメント識別子を**追加**します。
+ページを変更する前に、有効な AMP HTML を扱っていることがわかるように、[AMP 検証ツール](/ja/docs/fundamentals/validate.html)を有効にしましょう。URL に次のフラグメント識別子を**追加**します。
 
 ```text
 #development=1
@@ -120,7 +120,7 @@ AMP ページを検証するには、他のツールも使用できます。次�
 - [AMP 検証ツール ウェブ インターフェース](https://validator.ampproject.org/)
 その他
 
-詳しくは、[AMP ページを検証する](/ja/docs/guides/validate.html)のガイドをご覧ください。
+詳しくは、[AMP ページを検証する](/ja/docs/fundamentals/validate.html)のガイドをご覧ください。
 {% endcall %}
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Nexus 5X 端末でのシミュレーション') }}

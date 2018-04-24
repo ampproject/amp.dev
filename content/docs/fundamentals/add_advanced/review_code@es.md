@@ -94,11 +94,11 @@ Antes de comenzar a agregar código, revisemos la página [article.amp.html](htt
 </html>
 ```
 
-Esta es una página de AMP simple que pasa tanto la [validación de AMP](https://www.ampproject.org/es/docs/guides/validate) como la validación de datos estructurados [schema.org](http://schema.org/). Si esta página se ha implementado en un sitio web de noticias, los usuarios pueden descubrir la página a través de ricas experiencias en Páginas de resultados de motores de búsqueda (por ejemplo, en el Carrusel de historias superiores de la Búsqueda de Google).
+Esta es una página de AMP simple que pasa tanto la [validación de AMP](/es/docs/fundamentals/validate.html) como la validación de datos estructurados [schema.org](http://schema.org/). Si esta página se ha implementado en un sitio web de noticias, los usuarios pueden descubrir la página a través de ricas experiencias en Páginas de resultados de motores de búsqueda (por ejemplo, en el Carrusel de historias superiores de la Búsqueda de Google).
 
 ## Habilitación de Validator AMP
 
-Antes de modificar la página, habilitemos el [validador de AMP](https://www.ampproject.org/es/docs/guides/validate.html) para que sepamos que estamos trabajando con HTML válido de AMP. **Agregue** este identificador de fragmento a su URL:
+Antes de modificar la página, habilitemos el [validador de AMP](/es/docs/fundamentals/validate.html) para que sepamos que estamos trabajando con HTML válido de AMP. **Agregue** este identificador de fragmento a su URL:
 
 ```text
 #development=1
@@ -120,7 +120,7 @@ Puede utilizar varias otras herramientas para validar su página AMP, como:
 - La [interfaz web de validación AMP](https://validator.ampproject.org/)
 - ... y muchos más.
 
-Obtenga más información en la guía de páginas de [Validación AMP](https://www.ampproject.org/es/docs/guides/validate).
+Obtenga más información en la guía de páginas de [Validación AMP](/es/docs/fundamentals/validate.html).
 {% endcall %}
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulado en un dispositivo Nexus 5X') }}
@@ -132,6 +132,6 @@ Estamos diseñando esta página para un dispositivo móvil, así que vamos a **s
 Ahora, podemos empezar a trabajar en la propia página. Añadamos algunos componentes de AMP a nuestra página.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/add_advanced/setting_up.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/add_advanced/adding_components.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="/es/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-next">Próximo</span></a>
 </div>

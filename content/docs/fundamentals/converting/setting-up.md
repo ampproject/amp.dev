@@ -50,6 +50,6 @@ http://localhost:8000/article.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/converting.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/converting/building-page.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/converting.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/converting/building-page.html"><span class="arrow-next">Next</span></a>
 </div>

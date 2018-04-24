@@ -1,6 +1,5 @@
 ---
 $title: Hacer que tu página sea detectable
-$order: 3
 ---
 
 Ahora que ha creado un artículo de noticias en AMP, aseguremos de que los usuarios puedan encontrar y descubrir su contenido.
@@ -104,12 +103,12 @@ Para verificar que sus datos estructurados son correctos, muchas plataformas pro
 Si los datos estructurados son válidos, debería ver **0 errors** y **0 warnings**.
 
 {% call callout('Leer más', type='read') %}
-Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible](https://www.ampproject.org/es/docs/guides/discovery.html).
+Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible](/es/docs/fundamentals/discovery.html).
 {% endcall %}
 
 ¡Impresionante trabajo! Has completado tu artículo de noticias de AMP.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/converting/resolving-errors.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/converting/congratulations.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="/es/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/fundamentals/converting/congratulations.html"><span class="arrow-next">Próximo</span></a>
 </div>

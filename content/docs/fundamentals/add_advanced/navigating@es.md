@@ -7,7 +7,7 @@ $title: Navegando por su sitio
 La mayoría de los sitios web para móviles incluyen un menú de navegación del sitio. Estos menús pueden tomar muchas formas diferentes. En este tutorial, probaremos los siguientes ejemplos para presentar la navegación en las páginas de AMP:
 
 - Un enlace a su página de inicio - la opción más simple.
-- Una barra de navegación lateral utilizando el componente [amp-sidebar](/docs/reference/components/amp-sidebar.html)
+- Una barra de navegación lateral utilizando el componente [amp-sidebar](/es/docs/reference/components/amp-sidebar.html)
 
 ## Link de vuelta al home
 
@@ -58,7 +58,7 @@ Este es el enfoque más sencillo que aprovecha la navegación de su sitio web ex
 
 ## Navegar con una barra lateral
 
-Una técnica de navegación común es agregar un icono de menú que al hacer clic en el botón muestra un conjunto de enlaces de navegación (desde el lado de la página). En AMP, podemos crear dicha navegación con el componente [amp-sidebar](/docs/reference/components/amp-sidebar.html).
+Una técnica de navegación común es agregar un icono de menú que al hacer clic en el botón muestra un conjunto de enlaces de navegación (desde el lado de la página). En AMP, podemos crear dicha navegación con el componente [amp-sidebar](/es/docs/reference/components/amp-sidebar.html).
 
 Primero, debemos **agregar** el componente `amp-sidebar` de JavaScript a la etiqueta `<head>`:
 
@@ -75,7 +75,7 @@ A continuación, queremos mostrar un icono de menú. Cuando se pulsa el icono, s
 </header>
 ```
 
-En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
+En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`](/es/docs/interaction_dynamic/amp-actions-and-events.html) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
 
 **Agregue** el siguiente HTML justo después del `</header>`:
 
@@ -122,6 +122,6 @@ Bueno, veamos nuestra barra lateral. **Actualiza** y vuelve a cargar tu página 
 Nuestra página se ve muy bien! Añadamos un toque final: una fuente personalizada!
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/add_advanced/tracking_data.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/add_advanced/fonts.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="/es/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/fundamentals/add_advanced/fonts.html"><span class="arrow-next">Próximo</span></a>
 </div>

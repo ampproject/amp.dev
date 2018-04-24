@@ -21,5 +21,5 @@ En este tutorial, aprenderá los conceptos clave de AMP y cómo los documentos d
 Una sencilla página de noticias que se ajusta a las especificaciones de AMP e incorpora características comunes que se encuentran en los sitios de noticias para móviles.
 
 <div class="start-button">
-<a class="button" href="/es/docs/tutorials/converting/setting-up.html"><span class="arrow-next">Comenzar</span></a>
+<a class="button" href="/es/docs/fundamentals/converting/setting-up.html"><span class="arrow-next">Comenzar</span></a>
 </div>

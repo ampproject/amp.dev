@@ -4,7 +4,7 @@ $title: Agregar carruseles
 
 [TOC]
 
-Otra característica común en las páginas móviles es un carrusel. Puede agregar fácilmente carruseles a las páginas de AMP utilizando el componente de [amp-carousel](https://www.ampproject.org/docs/reference/components/amp-carousel). Comencemos con un ejemplo simple, como un carrusel de imágenes.
+Otra característica común en las páginas móviles es un carrusel. Puede agregar fácilmente carruseles a las páginas de AMP utilizando el componente de [amp-carousel](/es/docs/reference/components/amp-carousel.html). Comencemos con un ejemplo simple, como un carrusel de imágenes.
 
 ## Carrusel simple de imagen
 
@@ -86,13 +86,13 @@ Ahora, **reemplazar** tu carousel simple con éste:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-carousel-complex.gif', 412, 403, align='center half', caption='Un carousel de contenido mixto') }}
 
-Aprende más sobre el componente [amp-carousel](/docs/reference/components/amp-carousel.html).
+Aprende más sobre el componente [amp-carousel](/es/docs/reference/components/amp-carousel.html).
 
 {% call callout('Nota', type='note') %}
 En nuestro último ejemplo, es posible que haya notado que el componente `amp-ad` incluía un elemento `div` hijo con el atributo de `placeholder`. Anteriormente en el tutorial, nos encontramos con un escenario similar con `amp-ad` con un `fallback`. ¿Cuál es la diferencia entre el marcador de posición y el fallback? Los elementos `fallback` aparecen cuando el elemento primario no se carga, es decir, si no hay ningún anuncio disponible. Mientras que los elementos `placeholder` aparecen en lugar del elemento principal, mientras se está cargando. En cierto sentido, cada atributo sujeta el proceso de carga del elemento padre. Puede obtener más información en la Guía [Placeholders & fallbacks](/es/docs/guides/responsive/placeholders.html).
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/add_advanced/adding_components.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/add_advanced/tracking_data.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="/es/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">Próximo</span></a>
 </div>

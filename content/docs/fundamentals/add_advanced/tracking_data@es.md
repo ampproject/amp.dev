@@ -4,7 +4,7 @@ $title: Seguimiento del compromiso con analíticas
 
 Las plataformas de Google Analytics se integran comúnmente en sitios web a través de fragmentos JavaScript en línea y llamadas de función, que activan eventos que se envían al sistema analítico. AMP proporciona una sintaxis de configuración flexible de JSON para replicar este proceso para varios partners de análisis.
 
-El siguiente es un ejemplo de seguimiento tradicional de Google Analytics basado en JavaScript. Vamos a reescribir esto en el formato JSON de [amp-analytics'](/docs/reference/components/amp-analytics.html), pero primero, veamos el enfoque tradicional:
+El siguiente es un ejemplo de seguimiento tradicional de Google Analytics basado en JavaScript. Vamos a reescribir esto en el formato JSON de [amp-analytics'](/es/docs/reference/components/amp-analytics.html), pero primero, veamos el enfoque tradicional:
 
 ```html
 <script>
@@ -87,17 +87,17 @@ Basándonos en el ejemplo anterior, podemos **agregar** otro disparador denomina
 
 Este disparador es exactamente lo que suena. Utilizando el selector DOM `"#header"`, podemos consultar una etiqueta con el ID de `"#header"`. Para el evento `"click"`, enviamos una acción de evento `“clicked-header”` a la plataforma de análisis con la etiqueta de categoría `“examples”`.
 
-Si tiene una plataforma de seguimiento personalizada con la que desea integrarse, puede seguir utilizando `amp-analytics` y definir sus propios puntos finales de URL personalizados para enviar datos de seguimiento. Obtenga más información en la documentación de referencia del componente [amp-analytics](/docs/reference/components/amp-analytics.html).
+Si tiene una plataforma de seguimiento personalizada con la que desea integrarse, puede seguir utilizando `amp-analytics` y definir sus propios puntos finales de URL personalizados para enviar datos de seguimiento. Obtenga más información en la documentación de referencia del componente [amp-analytics](/es/docs/reference/components/amp-analytics.html).
 
 {% call callout('Nota', type='note') %}
 En todos estos ejemplos de análisis, `“UA-YYYY-Y”` debe reemplazarse con el código de seguimiento de Google Analytics de su propio sitio web.
 {% endcall %}
 
 {% call callout('Tip', type='success') %}
-Si está interesado en un sistema de seguimiento más simple, puede que desee echar un vistazo a [amp-pixel](/docs/reference/components/amp-pixel.html). Si sólo necesita realizar el seguimiento de las vistas de página, amp-pixel es una solución más ligera que amp-analytics porque sólo tiene como objetivo resolver los requisitos del seguimiento de píxeles tradicional. Obtenga más información en [Analytics: aspectos básicos](/es/docs/guides/analytics/analytics_basics.html).
+Si está interesado en un sistema de seguimiento más simple, puede que desee echar un vistazo a [amp-pixel](/es/docs/reference/components/amp-pixel.html). Si sólo necesita realizar el seguimiento de las vistas de página, amp-pixel es una solución más ligera que amp-analytics porque sólo tiene como objetivo resolver los requisitos del seguimiento de píxeles tradicional. Obtenga más información en [Analytics: aspectos básicos](/es/docs/analytics/analytics_basics.html).
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/add_advanced/adding_carousels.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/add_advanced/navigating.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="/es/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-next">Próximo</span></a>
 </div>

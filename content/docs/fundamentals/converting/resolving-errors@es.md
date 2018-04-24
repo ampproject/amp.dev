@@ -32,7 +32,7 @@ Ahora, echemos un vistazo al siguiente error:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Cada documento de AMP necesita tener un vínculo que haga referencia a la página canónica. La página canónica puede ser la propia página de AMP o una página que no sea de AMP. En este tutorial, el artículo HTML original es la página canónica. Aprenderemos más acerca de la vinculación canónica en cómo [hacer que tu página sea detectable](/es/docs/tutorials/converting/discoverable.html).
+Cada documento de AMP necesita tener un vínculo que haga referencia a la página canónica. La página canónica puede ser la propia página de AMP o una página que no sea de AMP. En este tutorial, el artículo HTML original es la página canónica. Aprenderemos más acerca de la vinculación canónica en cómo [hacer que tu página sea detectable](/es/docs/fundamentals/converting/discoverable.html).
 
 Adelante, **agregue** el siguiente código debajo de la etiqueta `<meta charset="utf-8" />`:
 
@@ -129,7 +129,7 @@ No sólo se requiere estilo en línea, sino que hay un límite de tamaño de arc
 {% endcall %}
 
 {% call callout('Importante', type='caution') %}
-Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido](/es/docs/guides/responsive/style_pages.html).
+Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido](/es/docs/design/responsive/style_pages.html).
 {% endcall %}
 
 ## Excluir JavaScript de terceros
@@ -205,7 +205,7 @@ AMP no admite las contrapartes HTML predeterminadas para mostrar medios, lo que 
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP tiene un componente web específicamente diseñado para reemplazar la etiqueta `<img>`, es la etiqueta [`<amp-img>`](/docs/reference/components/amp-img.html):
+AMP tiene un componente web específicamente diseñado para reemplazar la etiqueta `<img>`, es la etiqueta [`<amp-img>`](/es/docs/reference/components/amp-img.html):
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
@@ -256,7 +256,7 @@ Voila! Nuestra imagen está en la relación de aspecto correcta y responde respo
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Nuestra imagen es ahora responsive!") }}
 
 {% call callout('Leer más', type='read') %}
-Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification](/docs/reference/spec/amp-html-layout.html).
+Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification](/es/docs/design/amp-html-layout.html).
 {% endcall %}
 
 ## ¡Éxito!
@@ -328,11 +328,11 @@ AMP validation successful.
 ### Preguntas frecuentes 
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [¿Qué ocurre si el atributo layout no está definido?](/es/docs/guides/responsive/control_layout.html#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
-- [¿Qué ocurre si width y height no están definidos?](https://www.ampproject.org/es/docs/guides/responsive/control_layout#¿qué-ocurre-si-width-y-height-no-están-definidos?)
+- [¿Qué ocurre si el atributo layout no está definido?](/es/docs/design/responsive/control_layout.html#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
+- [¿Qué ocurre si width y height no están definidos?](/es/docs/design/responsive/control_layout#¿qué-ocurre-si-width-y-height-no-están-definidos?)
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/converting/building-page.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/converting/discoverable.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="/es/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">Próximo</span></a>
 </div>
