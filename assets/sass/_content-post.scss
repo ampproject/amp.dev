@@ -36,6 +36,10 @@
     letter-spacing: 0px;
   }
 
+  .noshowtoc {
+    display: none;
+  }
+
   .button {
     &:before {
       display: none;
