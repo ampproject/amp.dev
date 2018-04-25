@@ -68,5 +68,11 @@
         "from": "extensions/amp-analytics/integrating-analytics.md",
         "to": "docs/analytics/integrating-analytics.md",
         "toc": true
+    },
+    {
+        "title": "Managing non-authenticated user state with AMP",
+        "order": 2,
+        "from": "spec/amp-managing-user-state.md",
+        "to": "docs/analytics/amp-managing-user-state.md"
     }
 ]
