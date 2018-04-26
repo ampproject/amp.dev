@@ -1,6 +1,5 @@
 ---
 $title: Aprimoramento da interatividade
-toc: true
 ---
 
 [TOC]
@@ -70,7 +69,7 @@ A expressão `event.index` é avaliada com o novo índice de slide, e a ação `
 
 
 {% call callout('Dica', type='success') %}
-`AMP.setState()` faz uma combinação direta dos literais de objetos aninhados. Para mais detalhes, consulte a documentação de [`<amp-bind>`](https://www.ampproject.org/pt_br/docs/reference/components/amp-bind.html).
+`AMP.setState()` faz uma combinação direta dos literais de objetos aninhados. Para mais detalhes, consulte a documentação de [`<amp-bind>`](/pt_br/docs/reference/components/amp-bind.html).
 {% endcall %}
 
 ### Vincular os elementos do indicador
@@ -210,7 +209,7 @@ Na prática, é provável que cada imagem do carrossel tenha um "src" diferente.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/interactivity/get-familiar.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/docs/tutorials/interactivity/remote-data.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">Próxima</span></a>
 </div>
  
