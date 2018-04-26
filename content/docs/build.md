@@ -64,7 +64,7 @@ doc_cards:
 
   - name: AMPHTML ads
     desc: Learn about AMPHTML ads and building AMP pages for your campaigns and website.
-    link: ads/ads/amphtml_ads.html
+    link: ads/amphtml_ads.html
 
   - name: Analytics
     desc: Integrate analytics into your AMP pages to measure activity and user engagement.

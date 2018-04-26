@@ -11,7 +11,7 @@ There are 4 primary ways you can integrate with AMP:
 
 
 ## 1. Add your support to the amp-analytics extension
-AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) to get you started.
+AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide](/docs/analytics/integrating-analytics.html) to get you started.
 
 If you simply need to add a tracking pixel with dynamic parameters to your tracking URL, check out [amp-pixel](/docs/reference/components/amp-pixel.html). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
 
@@ -20,7 +20,7 @@ There are 20+ analytics providers who have added support to amp-analytics. Here 
 
 ## 2. Using an amp-ad extension
 
-The amp-ad extension is reserved for serving display ads on AMP pages. Over 90 ad tech providers have added support to AMP.  To get started, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to the amp-ad extension. Depending on the ad technology your company provides, you might find these [integration instructions](https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md) useful.
+The amp-ad extension is reserved for serving display ads on AMP pages. Over 90 ad tech providers have added support to AMP.  To get started, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to the amp-ad extension. Depending on the ad technology your company provides, you might find these [integration instructions](/docs/ads/integration-guide.html) useful.
 
 There are 90+ ad providers who have added support for advertising related features like amp-ad. Here is a sample [pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
@@ -36,7 +36,7 @@ If your use case cannot be accommodated by using amp-analytics, amp-pixel or amp
 
 ## 5. Using amp-iframe
 
-Hold on – a 5th way?! There is indeed, but only as a last resort. If none of the above suit your needs, you could use the generic amp-iframe tag to allow publishers to embed your content, but this approach comes with a number of downsides, due to a few pitfalls related to performance and user experience that you can read about [here](/docs/reference/components/amp-iframe#guideline:-prefer-specific-amp-components-to-amp-iframe).
+Hold on – a 5th way?! There is indeed, but only as a last resort. If none of the above suit your needs, you could use the generic amp-iframe tag to allow publishers to embed your content, but this approach comes with a number of downsides, due to a few pitfalls related to performance and user experience that you can read about [here](/docs/reference/components/amp-iframe.html#guideline:-prefer-specific-amp-components-to-amp-iframe).
 
 ## Summary
 
