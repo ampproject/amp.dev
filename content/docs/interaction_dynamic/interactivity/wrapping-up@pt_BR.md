@@ -15,5 +15,5 @@ Se você ainda tiver dúvidas, consulte o arquivo [`static/final.html`](https://
 
 ## Próximas etapas
 
-Saiba mais sobre a eficiência e a flexibilidade da criação de páginas AMP interativas na documentação do componente [`<amp-bind>`](https://www.ampproject.org/pt_br/docs/reference/components/amp-bind.html) e de outros [componentes AMP dinâmicos](https://www.ampproject.org/pt_br/docs/reference/components#dynamic-content).
+Saiba mais sobre a eficiência e a flexibilidade da criação de páginas AMP interativas na documentação do componente [`<amp-bind>`](/pt_br/docs/reference/components/amp-bind.html) e de outros [componentes AMP dinâmicos](/pt_br/docs/reference/components.html#dynamic-content).
  
