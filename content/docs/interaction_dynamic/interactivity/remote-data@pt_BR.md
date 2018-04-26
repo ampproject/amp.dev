@@ -7,7 +7,7 @@ $title: Como trabalhar com dados remotos
 E se os dados vinculáveis forem muito grandes ou complexos de recuperar no carregamento de página? E se levar muito tempo para pesquisar o preço de cada SKU? Não vale a pena pesquisar preços de SKUs para itens não visualizados.
 
 {% call callout('Dica', type='success') %}
-`<amp-state>` oferece suporte à busca de dados remotos por meio do atributo [`src`](/pt_br/docs/reference/components/amp-bind#attributes), que busca JSON em um ponto de extremidade CORS. Essa busca é executada uma vez no carregamento de página e é útil para garantir dados atualizados (especialmente quando exibidos de um cache).
+`<amp-state>` oferece suporte à busca de dados remotos por meio do atributo [`src`](/pt_br/docs/reference/components/amp-bind.html#attributes), que busca JSON em um ponto de extremidade CORS. Essa busca é executada uma vez no carregamento de página e é útil para garantir dados atualizados (especialmente quando exibidos de um cache).
 
 Também é possível vincular o atributo `src` do elemento `<amp-state>`. Assim, uma ação do usuário poderá acionar uma busca dos dados remotos JSON no estado vinculável da página.
 {% endcall %}
