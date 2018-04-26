@@ -1,6 +1,5 @@
 ---
 $title: Como trabalhar com dados remotos
-toc: true
 ---
 
 [TOC]
@@ -8,7 +7,7 @@ toc: true
 E se os dados vinculáveis forem muito grandes ou complexos de recuperar no carregamento de página? E se levar muito tempo para pesquisar o preço de cada SKU? Não vale a pena pesquisar preços de SKUs para itens não visualizados.
 
 {% call callout('Dica', type='success') %}
-`<amp-state>` oferece suporte à busca de dados remotos por meio do atributo [`src`](https://www.ampproject.org/docs/reference/components/amp-<bind id="attributes"></bind>), que busca JSON em um ponto de extremidade CORS. Essa busca é executada uma vez no carregamento de página e é útil para garantir dados atualizados (especialmente quando exibidos de um cache).
+`<amp-state>` oferece suporte à busca de dados remotos por meio do atributo [`src`](/pt_br/docs/reference/components/amp-bind#attributes), que busca JSON em um ponto de extremidade CORS. Essa busca é executada uma vez no carregamento de página e é útil para garantir dados atualizados (especialmente quando exibidos de um cache).
 
 Também é possível vincular o atributo `src` do elemento `<amp-state>`. Assim, uma ação do usuário poderá acionar uma busca dos dados remotos JSON no estado vinculável da página.
 {% endcall %}
@@ -174,7 +173,7 @@ Estamos quase terminando. Desative o botão "Adicionar ao carrinho" quando o tam
 **Faça um teste**: se você selecionar um tamanho indisponível, não será possível adicioná-lo ao carrinho. 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/docs/tutorials/interactivity/wrapping-up.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">Próxima</span></a>
 </div>
  
