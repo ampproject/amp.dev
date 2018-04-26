@@ -1,17 +1,8 @@
 nextstop:
-  title: Singapore
-  link: https://events.withgoogle.com/amp-roadshow-singapore-oct2017/
+  title: Tokyo
+  link: https://events.withgoogle.com/amp-roadshow-tokyo/
 
 cities:
-  - title: Chicago
-    date: 2018-03-27
-    link: https://events.withgoogle.com/amp-roadshow-in-chicago/
-  - title: Sunnyvale
-    date: 2018-04-04
-    link: https://events.withgoogle.com/amp-roadshow-in-sunnyvale/
-  - title: Taipei
-    date: 2018-04-24
-    link: https://events.withgoogle.com/amp-roadshow-taiwan/
   - title: Tokyo
     date: 2018-04-27
     link: https://events.withgoogle.com/amp-roadshow-tokyo/
@@ -24,6 +15,9 @@ cities:
   - title: Austin
     date: 2018-07-11
     link: https://events.withgoogle.com/amp-roadshow-in-austin/
+  - title: New York
+    date: 2018-07-24
+    link: https://events.withgoogle.com/amp-roadshow-in-new-york/
   - title: Cambridge
     date: 2018-08-07
     link: https://events.withgoogle.com/amp-roadshow-in-cambridge/
