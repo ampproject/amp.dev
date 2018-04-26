@@ -11,23 +11,23 @@ Existen 4 maneras principales de integrarse con AMP:
 
 ## 1. Agregue su soporte a la extensión amp-analytics
 
-AMP Analytics le permite enviar eventos de vuelta a su servidor basado en disparadores configurados por usted. Hemos escrito una [guía de integración de análisis](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) para empezar.
+AMP Analytics le permite enviar eventos de vuelta a su servidor basado en disparadores configurados por usted. Hemos escrito una [guía de integración de análisis](/es/docs/analytics/integrating-analytics.html) para empezar.
 
-Si solo necesita agregar un píxel de seguimiento con parámetros dinámicos a su URL de seguimiento, eche un vistazo a [amp-pixel](/docs/reference/components/amp-pixel.html). Asegúrese de documentar el uso en sus páginas de soporte para los desarrolladores que deseen utilizar su tecnología con AMP.
+Si solo necesita agregar un píxel de seguimiento con parámetros dinámicos a su URL de seguimiento, eche un vistazo a [amp-pixel](/es/docs/reference/components/amp-pixel.html). Asegúrese de documentar el uso en sus páginas de soporte para los desarrolladores que deseen utilizar su tecnología con AMP.
 
 Hay más de 20 proveedores de análisis que han añadido soporte a amp-analytics. A continuación se muestra una [solicitud de extracción de ejemplo](https://github.com/ampproject/amphtml/pull/1595) del proveedor de análisis [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
 
 ## 2. Usando la extensión amp-ad
 
-La extensión amp-ad está reservada para publicar anuncios de visualización en las páginas de AMP. Más de 90 proveedores de tecnología de anuncios han añadido soporte a AMP. Para empezar, lea la [descripción general del desarrollo](https://github.com/ampproject/amphtml/tree/master/ads#overview) o salte a las [instrucciones del desarrollador](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) para agregar su soporte a la extensión amp-ad. Dependiendo de la tecnología de anuncios que su empresa proporcione, es posible que encuentre útiles estas [instrucciones de integración](https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md).
+La extensión amp-ad está reservada para publicar anuncios de visualización en las páginas de AMP. Más de 90 proveedores de tecnología de anuncios han añadido soporte a AMP. Para empezar, lea la [descripción general del desarrollo](https://github.com/ampproject/amphtml/tree/master/ads#overview) o salte a las [instrucciones del desarrollador](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) para agregar su soporte a la extensión amp-ad. Dependiendo de la tecnología de anuncios que su empresa proporcione, es posible que encuentre útiles estas [instrucciones de integración](/es/docs/ads/integration-guide.html).
 
 Hay más de 90 proveedores de anuncios que han añadido soporte para funciones publicitarias relacionadas, como amp-ad. A continuación se muestra una [solicitud de extracción](https://github.com/ampproject/amphtml/pull/2299) de muestra de la red publicitaria [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
 ## 3. Uso de la extensión amp-call-tracking
 
-Si proporciona servicios de medición de seguimiento de llamadas, su caso de uso puede ser compatible con la nueva extensión [amp-call-tracking](/docs/reference/components/amp-call-tracking.html). Esta extensión reemplaza dinámicamente un número de teléfono en un hipervínculo para habilitar el seguimiento de llamadas, ejecutando una petición de CORS para sustituir el número.
+Si proporciona servicios de medición de seguimiento de llamadas, su caso de uso puede ser compatible con la nueva extensión [amp-call-tracking](/es/docs/reference/components/amp-call-tracking.html). Esta extensión reemplaza dinámicamente un número de teléfono en un hipervínculo para habilitar el seguimiento de llamadas, ejecutando una petición de CORS para sustituir el número.
 
-Para obtener más información sobre cómo esta extensión podría funcionar para usted, consulte el sitio [AMP by Example](https://ampbyexample.com/components/amp-call-tracking.html) o lea acerca de la [documentación](/docs/reference/components/amp-call-tracking).
+Para obtener más información sobre cómo esta extensión podría funcionar para usted, consulte el sitio [AMP by Example](https://ampbyexample.com/components/amp-call-tracking.html) o lea acerca de la [documentación](/es/docs/reference/components/amp-call-tracking).
 
 ## 4. Agregar una nueva extensión o incrustar
 
@@ -35,7 +35,7 @@ Si su caso de uso no se puede acomodar mediante amp-analytics, amp-pixel o amp-a
 
 ## 5. Usando el amp-iframe
 
-Se espera su uso solamente como último recurso. Si ninguno de las extensiones anteriores se ajustan a sus necesidades, podría utilizar la etiqueta genérica amp-iframe para permitir a los editores integrar su contenido, pero este enfoque viene con una serie de desventajas, para optimizar el rendimiento y la experiencia del usuario que puede leer [aquí](/docs/reference/components/amp-iframe.html#guideline:-prefer-specific-amp-components-to-amp-iframe).
+Se espera su uso solamente como último recurso. Si ninguno de las extensiones anteriores se ajustan a sus necesidades, podría utilizar la etiqueta genérica amp-iframe para permitir a los editores integrar su contenido, pero este enfoque viene con una serie de desventajas, para optimizar el rendimiento y la experiencia del usuario que puede leer [aquí](/es/docs/reference/components/amp-iframe.html#guideline:-prefer-specific-amp-components-to-amp-iframe).
 
 ## Resumen
 

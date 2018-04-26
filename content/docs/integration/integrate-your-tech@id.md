@@ -10,7 +10,7 @@ Ada 4 cara utama Anda dapat berintegrasi dengan AMP:
 
 
 ## 1. Menambahkan dukungan ke ekstensi amp-analytics
-Analytics AMP memungkinkan Anda mengirimkan peristiwa kembali ke server berdasarkan pemicu yang dikonfigurasi. Kami telah membuat [panduan integrasi analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) untuk membantu Anda memulai.
+Analytics AMP memungkinkan Anda mengirimkan peristiwa kembali ke server berdasarkan pemicu yang dikonfigurasi. Kami telah membuat [panduan integrasi analytics](/id/docs/analytics/integrating-analytics.html) untuk membantu Anda memulai.
 
 Jika Anda hanya perlu menambahkan piksel pelacakan dengan parameter dinamis ke URL pelacakan, buka [amp-pixel](/id/docs/reference/components/amp-pixel.html). Pastikan mendokumentasikan penggunaan di halaman dukungan Anda untuk developer yang mungkin ingin menggunakan teknologi Anda dengan AMP.
 
@@ -19,7 +19,7 @@ Ada lebih dari 20 penyedia analytics yang telah menambahkan dukungan ke amp-anal
 
 ## 2. Menggunakan ekstensi amp-ad
 
-Ekstensi amp-ad digunakan untuk menayangkan iklan Display di halaman AMP. Lebih dari 90 penyedia teknologi iklan telah menambahkan dukungan ke AMP.  Untuk memulai, baca [ringkasan pengembangan](https://github.com/ampproject/amphtml/tree/master/ads#overview) atau lihat bagian [petunjuk developer](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke ekstensi amp-ad. Bergantung pada teknologi iklan yang disediakan oleh perusahaan Anda, [petunjuk integrasi](https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md) ini mungkin berguna.
+Ekstensi amp-ad digunakan untuk menayangkan iklan Display di halaman AMP. Lebih dari 90 penyedia teknologi iklan telah menambahkan dukungan ke AMP.  Untuk memulai, baca [ringkasan pengembangan](https://github.com/ampproject/amphtml/tree/master/ads#overview) atau lihat bagian [petunjuk developer](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke ekstensi amp-ad. Bergantung pada teknologi iklan yang disediakan oleh perusahaan Anda, [petunjuk integrasi](/id/docs/ads/integration-guide.html) ini mungkin berguna.
 
 Ada lebih dari 90 penyedia iklan yang telah menambahkan dukungan untuk fitur yang berkaitan dengan iklan seperti amp-ad. Berikut adalah contoh [pull request](https://github.com/ampproject/amphtml/pull/2299) dari jaringan iklan [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
@@ -35,7 +35,7 @@ Jika kasus penggunaan Anda tidak dapat diselesaikan menggunakan amp-analytics, a
 
 ## 5. Menggunakan amp-iframe
 
-Tunggu sebentar – cara ke-5?! Memang ada, namun cara ini hanya dapat dilakukan sebagai opsi terakhir. Jika cara di atas tidak ada yang sesuai dengan kebutuhan Anda, Anda dapat menggunakan tag umum amp-iframe agar penayang dapat menyematkan konten Anda. Namun, pendekatan ini memiliki sejumlah kelemahan, karena adanya beberapa kesalahan yang berkaitan dengan performa dan pengalaman pengguna, yang dapat Anda baca [di sini](/docs/reference/components/amp-iframe#guideline:-prefer-specific-amp-components-to-amp-iframe).
+Tunggu sebentar – cara ke-5?! Memang ada, namun cara ini hanya dapat dilakukan sebagai opsi terakhir. Jika cara di atas tidak ada yang sesuai dengan kebutuhan Anda, Anda dapat menggunakan tag umum amp-iframe agar penayang dapat menyematkan konten Anda. Namun, pendekatan ini memiliki sejumlah kelemahan, karena adanya beberapa kesalahan yang berkaitan dengan performa dan pengalaman pengguna, yang dapat Anda baca [di sini](/docs/reference/components/amp-iframe.html#guideline:-prefer-specific-amp-components-to-amp-iframe).
 
 ## Ringkasan
 
@@ -43,7 +43,7 @@ Untuk memulai, Anda dapat membaca [panduan developer pihak ketiga](https://githu
 
 Misalnya, pelacakan panggilan dinamis merupakan kasus penggunaan yang belum kami dukung di AMP, namun kami [terus berupaya](https://github.com/ampproject/amphtml/issues/5276) menambahkan dukungan tersebut bersama komunitas terkait.
 
-Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk [mengajukannya](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#filing-issues) atau hubungi salah satu [saluran diskusi] (https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#discussion-channels) kami.
+Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk [mengajukannya](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#filing-issues) atau hubungi salah satu [saluran diskusi](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#discussion-channels) kami.
 
 ## Referensi tambahan
 

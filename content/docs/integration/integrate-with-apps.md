@@ -124,7 +124,7 @@ URL (ampURL).
 
 ## Using AMP Caches
 
-An [AMP Cache](https://www.ampproject.org/docs/guides/how_cached) is a
+An [AMP Cache](/docs/fundamentals/how_cached.html) is a
 proxy-based content delivery network (CDN) for delivering valid AMP documents.
 AMP Caches are designed to:
 

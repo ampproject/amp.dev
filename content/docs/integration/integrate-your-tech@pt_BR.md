@@ -10,7 +10,7 @@ Há quatro maneiras principais de fazer a integração com AMP:
 
 
 ## 1. Adicionar compatibilidade com a extensão amp-analytics
-Com AMP Analytics, é possível enviar eventos de volta ao servidor com base em acionadores configurados por você. Criamos um [guia de integração de análise](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) para ajudá-lo a começar.
+Com AMP Analytics, é possível enviar eventos de volta ao servidor com base em acionadores configurados por você. Criamos um [guia de integração de análise](/pt_br/docs/analytics/integrating-analytics.html) para ajudá-lo a começar.
 
 Se você só precisar adicionar um pixel de rastreamento com parâmetros dinâmicos ao URL de rastreamento, confira [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html). Documente o uso nas suas páginas de suporte para os desenvolvedores que queiram usar sua tecnologia com AMP.
 
@@ -19,7 +19,7 @@ Mais de 20 fornecedores de análise já oferecem compatibilidade com a extensão
 
 ## 2. Usar uma extensão amp-ad
 
-A extensão amp-ad é reservada para a veiculação de anúncios gráficos em páginas AMP. Mais de 90 fornecedores de tecnologia de anúncios já oferecem compatibilidade com AMP.  Para começar, leia a [visão geral de desenvolvimento](https://github.com/ampproject/amphtml/tree/master/ads#overview) ou vá direto para as [instruções do desenvolvedor](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) se quiser adicionar a compatibilidade com a extensão amp-ad. Dependendo do tipo de tecnologia de anúncios que sua empresa oferece, as [instruções de integração](https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md) podem ser úteis.
+A extensão amp-ad é reservada para a veiculação de anúncios gráficos em páginas AMP. Mais de 90 fornecedores de tecnologia de anúncios já oferecem compatibilidade com AMP.  Para começar, leia a [visão geral de desenvolvimento](https://github.com/ampproject/amphtml/tree/master/ads#overview) ou vá direto para as [instruções do desenvolvedor](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) se quiser adicionar a compatibilidade com a extensão amp-ad. Dependendo do tipo de tecnologia de anúncios que sua empresa oferece, as [instruções de integração](/pt_br/docs/ads/integration-guide.html) podem ser úteis.
 
 Mais de 90 fornecedores de anúncios já oferecem compatibilidade com recursos relacionados à publicidade, como a extensão amp-ad. Veja um exemplo de [solicitação pull](https://github.com/ampproject/amphtml/pull/2299) da rede de publicidade [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
@@ -35,7 +35,7 @@ Se o caso de uso não puder ser atendido pelas extensões amp-analytics, amp-pix
 
 ## 5. Usar amp-iframe
 
-Como assim? Existe uma 5ª maneira? Sim, existe, mas ela deve ser usada somente em último caso. Caso nenhuma das opções acima seja adequada às suas necessidades, você poderá usar uma tag amp-iframe genérica para permitir que os editores incorporem conteúdo. No entanto, essa abordagem traz uma série de desvantagens devido a dificuldades relacionadas ao desempenho e à experiência do usuário. [Saiba mais aqui](/pt_br/docs/reference/components/amp-iframe#guideline:-prefer-specific-amp-components-to-amp-iframe).
+Como assim? Existe uma 5ª maneira? Sim, existe, mas ela deve ser usada somente em último caso. Caso nenhuma das opções acima seja adequada às suas necessidades, você poderá usar uma tag amp-iframe genérica para permitir que os editores incorporem conteúdo. No entanto, essa abordagem traz uma série de desvantagens devido a dificuldades relacionadas ao desempenho e à experiência do usuário. [Saiba mais aqui](/pt_br/docs/reference/components/amp-iframe.html#guideline:-prefer-specific-amp-components-to-amp-iframe).
 
 ## Resumo
 
