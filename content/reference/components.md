@@ -61,6 +61,7 @@ The list of available components are listed below in related categories.
 | [`amp-image-lightbox`](components/amp-image-lightbox.html) | Provides a lightbox effect for a specified image. |
 | [`amp-layout`](components/amp-layout.html) | Provides a generic, multi-purpose container element that brings AMP's powerful [layouts](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) to any element. |
 | [`amp-lightbox`](components/amp-lightbox.html) | Displays elements in a full-viewport “lightbox” modal. |
+| [`amp-lightbox-gallery`](components/amp-lightbox-gallery.html) | Provides a "lightbox” experience. Upon user interaction, a UI component expands to fill the viewport until it is closed by the user. |
 | [`amp-position-observer`](components/amp-position-observer.html) | Monitors position of an element within the viewport as a user scrolls and dispatches  events that can be used with other components. |
 | [`amp-sidebar`](components/amp-sidebar.html) | Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. |
 

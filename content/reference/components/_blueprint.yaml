@@ -12,14 +12,14 @@ custom_children:
     href: /content/reference/components/dynamic-content/amp-access-laterpay.md
     collection: /content/reference/components/dynamic-content
   - title@: Layout
-    href: /content/reference/components/layout/amp-accordion.md
+    href: /content/reference/components/layout/amp-layout.md
     collection: /content/reference/components/layout
   - title@: Media
-    href: /content/reference/components/media/amp-img.md
+    href: /content/reference/components/media/amp-3q-player.md
     collection: /content/reference/components/media
   - title@: Presentation
     href: /content/reference/components/presentation/amp-animation.md
     collection: /content/reference/components/presentation
   - title@: Social
-    href: /content/reference/components/social/amp-facebook-comments.md
+    href: /content/reference/components/social/amp-addthis.md
     collection: /content/reference/components/social
