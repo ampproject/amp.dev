@@ -11,7 +11,7 @@ Com este tutorial, você aprenderá como usar a vinculação de dados e as expre
 Você criará uma página de produto para comércio eletrônico que:
 
 - usa componentes AMP e HTML para AMP, a fim de gerar uma experiência do usuário rápida e satisfatória;
-- inclui a interatividade entre diferentes elementos com [`<amp-bind>`](/pt_br/docs/reference/components/amp-bind.html);
+- inclui a interatividade entre diferentes elementos com [`<amp-bind>`](/pt_br/docs/reference/components/amp-bind.html).
 - busca dados adicionais do produto sob demanda com [`<amp-state>`](/pt_br/docs/reference/components/amp-bind.html#state).
 
 
