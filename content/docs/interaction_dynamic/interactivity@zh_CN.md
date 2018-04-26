@@ -1,6 +1,5 @@
 ---
 $title: 创建互动式 AMP 网页
-
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='本教程的最终完成版 AMP 网页') }}
