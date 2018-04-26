@@ -1,7 +1,5 @@
 ---
 $title: Configuração
-toc: true
-$parent: /content/docs/tutorials/interactivity.md
 ---
 
 [TOC]
@@ -46,8 +44,8 @@ node app.js
 Depois disso, acesse <a href="http://localhost:3000">http://localhost:3000</a> no seu navegador da Web para ver a página AMP em funcionamento.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/tutorials/interactivity.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/tutorials/interactivity/get-familiar.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/interactivity.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-next">Próxima</span></a>
 </div>
  
  
