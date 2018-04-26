@@ -16,5 +16,5 @@ Você criará uma página de produto para comércio eletrônico que:
 
 
 <div class="prev-next-buttons">
-<a class="button" href="/pt_br/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-next">Primeiros passos</span></a>
+<a class="button" href="/pt_br/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-next">Primeiros passos</span></a>
 </div>
