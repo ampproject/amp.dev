@@ -1,6 +1,5 @@
 ---
 $title: Apresentação do código inicial
-toc: true
 ---
 
 [TOC]
@@ -37,10 +36,10 @@ O código inicial do tutorial ([`static/index.html`](https://github.com/googleco
 
 Os componentes AMP oferecem elementos de IU e recursos adicionais que dão uma interatividade avançada às páginas AMP. O código inicial usa os seguintes componentes AMP:
 
-- [`<amp-carousel>`](https://www.ampproject.org/pt_br/docs/reference/components/amp-carousel): é um carrossel de imagens que exibe várias visualizações do produto.
-- [`<amp-mustache>`](https://www.ampproject.org/pt_br/docs/reference/components/amp-mustache.html): é um sistema de modelos que renderiza as respostas do servidor de amp-form.
-- [`<amp-form>`](https://www.ampproject.org/pt_br/docs/reference/components/amp-form.html): adiciona aos elementos `<form>` recursos especiais que são necessários paras as páginas AMP.
-- [`<amp-selector>`](https://www.ampproject.org/pt_br/docs/reference/components/amp-form.html): oferece uma forma semântica de selecionar um ou mais elementos de um grupo. Pode ser usado como origem de entrada para amp-form.
+- [`<amp-carousel>`](/pt_br/docs/reference/components/amp-carousel.html): é um carrossel de imagens que exibe várias visualizações do produto.
+- [`<amp-mustache>`](/pt_br/docs/reference/components/amp-mustache.html): é um sistema de modelos que renderiza as respostas do servidor de amp-form.
+- [`<amp-form>`](/pt_br/docs/reference/components/amp-form.html): adiciona aos elementos `<form>` recursos especiais que são necessários paras as páginas AMP.
+- [`<amp-selector>`](/pt_br/docs/reference/components/amp-form.html): oferece uma forma semântica de selecionar um ou mais elementos de um grupo. Pode ser usado como origem de entrada para amp-form.
 
 ## Interatividade básica
 
@@ -53,7 +52,7 @@ O código inicial oferece alguns elementos de interatividade básica:
 **Faça um teste**: deslize o carrossel de imagens e toque no botão "Adicionar ao carrinho".
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-next">Próxima</span></a>
 </div>
  
