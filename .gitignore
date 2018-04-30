@@ -10,8 +10,8 @@ assets/css/*
 .depcache.json
 
 content/includes/who.yaml
-content/learn/design-principles.md
 
+# Ignore imported files
 content/docs/contribute/governance.md
 content/docs/fundamentals/spec.md
 content/docs/fundamentals/spec/*.md
