@@ -4,7 +4,7 @@ $title: Tencent
 $parent: /content/learn/showcases.html
 class: showcase post-detail
 site_url: https://globalnews.qq.com/
-headline: Tencent News is one of the largest news publishers in China, from Tencent Group. They rebuilt their international edition entirely with AMP, to serve global readers with a great user experience. The site is fast, interactive with many dynamic elements, and efficient to maintain performannce. 
+headline: Tencent News is one of the largest news publishers in China, from Tencent Group. They rebuilt their international edition entirely with AMP, to serve global readers with a great user experience. The site is fast, interactive with many dynamic elements, and efficient to maintain performance. 
 
 logo:
   src: "showcases/tencent.png"
