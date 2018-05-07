@@ -20,7 +20,7 @@ hero:
   hero_video_height: 732
 
 features:
-    - Canonical AMP implementation
+    - Site built entirely with AMP
     - Loads additional content on user tap
     - "Shrinking header with [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer)"
 ---
