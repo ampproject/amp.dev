@@ -675,6 +675,11 @@
         "type": 301
       },
       {
+        "source": "/io",
+        "destination": "https://amphtml.wordpress.com/2018/05/03/google-io-2018",
+        "type": 301
+      },
+      {
         "source": "/contact",
         "destination": "https://github.com/ampproject/amphtml/issues/new",
         "type": 301
