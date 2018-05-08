@@ -37,7 +37,7 @@ components:
       <div class="latest-mobile tablet-down">
         <h2 class="latest-label">{{_(home.hero.carousel_title)}}</h2>
         <amp-carousel class="latest-carousel"
-          height="200" controls
+          height="220" controls
           layout="flex-item"
           type="slides">
 
@@ -61,6 +61,10 @@ components:
             {% endif %}
           {% endfor %}
         </amp-carousel>
+        <div class="newsletter">
+          <p>{{_(home.newsletter.title)}}</p>
+          <a id="newsletter-cta" class="button" href="{{home.newsletter.cta_url}}">{{_(home.newsletter.cta)}}</a>
+        </div>
       </div>
     </div>
     <div class="hero-content">
@@ -111,10 +115,15 @@ components:
           {% endfor %}
           </div>
         </amp-carousel>
+        <div class="newsletter">
+          <p>{{home.newsletter.title}}
+          <a id="newsletter-cta" class="button" href="{{home.newsletter.cta_url}}">{{_(home.newsletter.cta)}}</a></p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="benefits">
   <h1>{{_(home.benefits.title)}}</h1>
