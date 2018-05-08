@@ -58,11 +58,13 @@ menu:
       - href: /content/latest/latest.html
         copy@: "What's New"
       - href: /content/latest/list-blog.html
-        copy@: "News"
+        copy@: "Blog"
       - href: /content/latest/list-event.html
         copy@: "Events"
       - href: /content/latest/roadmap.html
         copy@: "Roadmap"
+      - href: https://services.google.com/fb/forms/ampnewsletter/
+        copy@: "Newsletter"
   - href: /content/support/support.md
     copy@: Support
     collection: support
