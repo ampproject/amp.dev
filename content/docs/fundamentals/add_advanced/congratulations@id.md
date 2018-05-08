@@ -1,6 +1,5 @@
 ---
 $title: Selamat!
-$order: 7
 ---
 
 Anda telah menyelesaikan tutorial "Menambahkan fitur AMP lanjutan" dan berhasil mempelajari berbagai komponen lanjutan utama AMP!
@@ -22,9 +21,9 @@ Dalam tutorial ini, Anda akan mempelajari cara:
 
 Untuk lebih meningkatkan keahlian Anda terkait AMP, lihat resource berikut:
 
-- Tutorial [Membuat halaman AMP interaktif](/id/docs/tutorials/interactivity.html): Pelajari cara menggunakan amp-bind untuk membuat halaman AMP interaktif
-- [Menggabungkan AMP dengan PWA](/id/docs/guides/pwa-amp.html): Pelajari bagaimana Progressive Web App dan halaman AMP saling melengkapi satu sama lain
+- Tutorial [Membuat halaman AMP interaktif](/id/docs/interaction_dynamic/interactivity.html): Pelajari cara menggunakan amp-bind untuk membuat halaman AMP interaktif
+- [Menggabungkan AMP dengan PWA](/id/docs/integration/pwa-amp.html): Pelajari bagaimana Progressive Web App dan halaman AMP saling melengkapi satu sama lain
 - [AMP Start](https://www.ampstart.com/): Sesuaikan halaman Anda menggunakan komponen dan template yang telah diberi gaya sebelumnya
 - [AMP By Example](https://ampbyexample.com/): Pelajari dari contoh dan demo langsung
 - [Channel AMP di YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Pelajari dengan menonton video khusus AMP
-- [Komponen AMP](/id/docs/reference/components): Pelajari detail tentang semua komponen AMP
+- [Komponen AMP](/id/docs/reference/components.html): Pelajari detail tentang semua komponen AMP
