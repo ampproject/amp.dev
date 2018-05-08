@@ -7,9 +7,9 @@ site_url: https://globalnews.qq.com/
 headline: Tencent News is one of the largest news publishers in China, from Tencent Group. They rebuilt their international edition entirely with AMP, to serve global readers with a great user experience. The site is fast, interactive with many dynamic elements, and efficient to maintain performance. 
 
 logo:
-  src: "showcases/tencent.png"
-  width: 300
-  height: 60
+  src: "showcases/tencent.svg"
+  width: 271
+  height: 54
 
 hero:
   hero_img_base: /static/img/showcases/tencent_hero.png
