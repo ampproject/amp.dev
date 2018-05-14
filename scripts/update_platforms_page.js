@@ -93,6 +93,8 @@ function addCMS() {
   newYaml += `
     - title@: CMS
       section_items:
+        - title: AMPize.me
+          link: https://www.ampize.me
         - title: Arc Publishing
           link: https://www.arcpublishing.com
         - title: Canvas
