@@ -50,7 +50,7 @@ $title: 로그인
 
 [/sourcecode]
 
-{% call callout('Note', type='success') %}
+{% call callout('참고', type='note') %}
 로그인 노드 내부에 다른 URL을 정의할 수 있습니다. 위 경우 `sign-in`을 지정하고, 나중에 `sign-out`을 지정할겁니다.
 {% endcall %}
 
@@ -74,7 +74,7 @@ AMPByExample 서버가 로그인 페이지에서 POST 요청을 받고 로그인
 - AMP 런타임은 로그인 페이지를 닫고 return URL 매개 변수로 지정된 페이지로 리디렉션합니다
 - 사용자가 로그인 버튼을 클릭하면 서버가 응답을 조정해야합니다.
 
-{% call callout('Tip', type='success') %}
+{% call callout('도움말', type='success') %}
 이 flow에 대한 더 상세한 설명은 [amp-access documentation](/ko/docs/reference/components/amp-access#login-flow)에서 볼 수 있습니다.
 {% endcall %}
 

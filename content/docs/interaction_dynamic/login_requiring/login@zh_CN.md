@@ -47,7 +47,7 @@ $title: 登录
 
 [/sourcecode]
 
-{% call callout('注意', type='success') %}
+{% call callout('注意', type='note') %}
 请注意，您可在登录节点内指定不同的网址。在此示例中，我们指定的是 `sign-in`，稍后我们将指定 `sign-out`。
 {% endcall %}
 

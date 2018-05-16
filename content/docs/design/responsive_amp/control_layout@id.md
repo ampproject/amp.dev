@@ -26,7 +26,7 @@ Elemen `amp-img` ini otomatis menyesuaikan lebar elemen penampungnya, dan tinggi
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('Tips', type='success') %}
+{% call callout('Tip', type='success') %}
 Lihat demo live `amp-img` bersamaan yang ditampilkan dalam dua sisi untuk contoh dasar dan lanjutan: [Demo Live](https://ampbyexample.com/components/amp-img/)
 {% endcall %}
 
@@ -129,7 +129,7 @@ Jika atribut<code>layout</code> tidak ditetapkan, AMP mencoba memperkirakan atau
 
 Gunakan [`@media`](https://developer.mozilla.org/id-ID/docs/Web/CSS/@media) untuk mengontrol tampilan dan perilaku tata letak halaman, seperti yang akan Anda lakukan di situs lainnya. Jika jendela browser mengubah ukuran atau orientasi, kueri media akan dievaluasi ulang serta elemen disembunyikan dan ditampilkan berdasarkan hasil yang baru.
 
-{% call callout('Tips', type='success') %}
+{% call callout('Tip', type='success') %}
 Pelajari lebih lanjut tentang cara mengontrol tata letak dengan menerapkan kueri media di [Menggunakan kueri media CSS untuk responsivitas](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
 {% endcall %}
 

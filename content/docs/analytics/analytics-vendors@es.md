@@ -21,7 +21,7 @@ Aquí hay un fragmento que especifica el tipo (`type`) de un proveedor de analyt
 <amp-analytics type="XYZ"> ... </amp-analytics>
 ```
 
-{% call callout('Read on', type='read') %}
+{% call callout('Leer más', type='read') %}
 Aprende más acerca del seguimiento de analytics con [`amp-analytics`](/es/docs/reference/components/amp-analytics.html).
 {% endcall %}
 
@@ -185,7 +185,7 @@ En la sección `requests`:
 
 - `url`: dirección HTTPS para `amp-analytics-oewa.html`
 
-{% call callout('Nota', type='caution') %}
+{% call callout('Nota', type='note') %}
 Existe una variación denominada `oewadirect` que no utiliza la solución iframe-ping y tiene una mejor detección de cliente mediante `AMP CLIENT_ID`. Esto es actualmente EXPERIMENTAL, y está prohibido por el OEWA porque no usa `oewa2.js`.
 {% endcall %}
 

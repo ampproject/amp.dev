@@ -47,7 +47,7 @@ Si nos volvemos a fijar en el código HTML de dicho botón, podemos ver que se u
 
 [/sourcecode]
 
-{% call callout('Nota', type='success') %}
+{% call callout('Nota', type='note') %}
 En el nodo "login", se pueden añadir varias URL; en este caso, definimos una en `sign-in` y, más adelante, haremos lo mismo con `sign-out`.
 {% endcall %}
 
