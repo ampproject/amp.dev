@@ -33,6 +33,10 @@ start_cards:
     link: https://ampstart.com/
 
 video_cards:
+  - name: Responsive design in AMP
+    link: https://www.youtube.com/watch?v=XDvbJ2apaiA
+    videoid: XDvbJ2apaiA
+
   - name: Use AMP HTML with Your Existing Site
     link: https://www.youtube.com/watch?v=OO9oKhs80aI
     videoid: OO9oKhs80aI
