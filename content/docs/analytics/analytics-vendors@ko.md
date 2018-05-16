@@ -181,7 +181,7 @@ $title: "애널리틱스 공급업체"
 
 - `url`: `amp-analytics-oewa.html`의 HTTPS 위치
 
-{% call callout('참고', type='caution') %}
+{% call callout('참고', type='note') %}
 이와 비슷하지만 iframe-ping 솔루션을 사용하지 않으며, `AMP CLIENT_ID`를 사용하여 더욱 우수한 클라이언트 탐지 기능을 갖는 `oewadirect`도 있습니다. 이는 현재 실험 단계이며 `oewa2.js`를 사용하지 않기 때문에 OEWA에서 금지하고 있습니다.
 {% endcall %}
 

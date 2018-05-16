@@ -68,7 +68,7 @@ Sekarang, kapan pun slide yang ditampilkan untuk `<amp-carousel>`  berubah, tind
 Ekspresi `event.index` dievaluasi ke indeks slide yang baru, dan tindakan `AMP.setState()` akan menggabungkan literal objek ini ke dalam status saat ini. Tindakan ini mengganti nilai `selected.slide` saat ini dengan nilai `event.index`.
 
 
-{% call callout('Tips', type='success') %}
+{% call callout('Tip', type='success') %}
 `AMP.setState()` menjalankan penggabungan mendalam dari literal objek bertingkat. Untuk detail selengkapnya, lihat dokumentasi [`<amp-bind>`](/id/docs/reference/components/amp-bind.html).
 {% endcall %}
 
@@ -183,7 +183,7 @@ Tambahkan tindakan "on" ke [`<amp-selector>`](/id/docs/reference/components/amp-
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-{% call callout('Tips', type='success') %}
+{% call callout('Tip', type='success') %}
 Hal ini juga dapat dilakukan dengan menambahkan tindakan `on="tap:AMP.setState(...)` ke setiap elemen turunan `<amp-img>` dalam `<amp-selector>`. Salah satu kelebihan komponen `<amp-selector>` adalah menyederhanakan markup dengan cara seperti ini.
 {% endcall %}
 

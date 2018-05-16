@@ -232,7 +232,7 @@ In the `requests` section:
 
 - `url`: HTTPS location of `amp-analytics-oewa.html`
 
-{% call callout('Note', type='caution') %}
+{% call callout('Note', type='note') %}
 There is a variation named `oewadirect` that does not use the iframe-ping solution and has a better client detection by using `AMP CLIENT_ID`.  This is currently EXPERIMENTAL, and prohibited by the OEWA because it does not use `oewa2.js`.
 {% endcall %}
 

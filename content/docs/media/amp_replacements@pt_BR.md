@@ -69,7 +69,7 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
 </amp-iframe>
 </div>
 
-{% call callout('Leia mais', type='success') %}
+{% call callout('Leia mais', type='read') %}
  Saiba mais sobre [técnicas de layout avançadas](/pt_br/docs/guides/responsive/control_layout.html)
 . {% endcall %}
 
@@ -77,7 +77,7 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
 
 O tempo de execução das AMP em HTML pode gerenciar recursos de imagens de maneira eficiente, escolhendo atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na conexão de largura de banda ou em outros fatores.
 
-{% call callout('Leia mais', type='success') %}
+{% call callout('Leia mais', type='read') %}
  Saiba como [fornecer fallbacks e marcadores de posição para imagens](/pt_br/docs/guides/responsive/placeholders.html)
 . {% endcall %}
 
