@@ -460,7 +460,7 @@ body.amp-ads {
       }
     }
 
-    .latest-carousel.mobile-down {
+    .latest-carousel.tablet-down {
       margin: 0 auto 60px;
 
       & > div::-webkit-scrollbar {
@@ -471,20 +471,9 @@ body.amp-ads {
       .card-container {
         margin-left: 0;
         margin-right: 0;
-        padding-left: 2px;
-        padding-right: 2px;
-
-        &:first-child {
-          margin-left: 10vw;
-        }
-
-        &:last-child {
-          margin-right: 10vw;
-        }
 
         .card {
-          width: 80vw;
-          padding: 20px 30px 5px;
+          flex-basis: 100%;
         }
       }
     }

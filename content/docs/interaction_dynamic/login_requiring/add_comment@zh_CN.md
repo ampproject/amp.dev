@@ -1,6 +1,5 @@
 ---
 $title: 添加评论
-$order: 1
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
@@ -23,7 +22,7 @@ $order: 1
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-表单组件会通过使用 [amp-mustache](https://www.ampproject.org/zh_cn/docs/reference/components/amp-mustache) 模板来仅将上述值显示在该网页内：
+表单组件会通过使用 [amp-mustache](/zh_cn/docs/reference/components/amp-mustache) 模板来仅将上述值显示在该网页内：
 
 [sourcecode:html]
 <div submit-success>
@@ -62,6 +61,6 @@ $order: 1
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/tutorials/login_requiring/login.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/tutorials/login_requiring/logout.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="/zh_cn/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="/zh_cn/docs/interaction_dynamic/login_requiring/logout.html"><span class="arrow-next">下一页</span></a>
 </div>

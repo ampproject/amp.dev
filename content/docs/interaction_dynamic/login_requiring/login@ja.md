@@ -1,6 +1,5 @@
 ---
 $title: ログイン
-$order: 0
 ---
 
 このページを初めて開いたときには、2 つのコメントとログインボタンが表示されます。
@@ -48,7 +47,7 @@ $order: 0
 
 [/sourcecode]
 
-{% call callout('メモ', type='success') %}
+{% call callout('メモ', type='note') %}
 ログインノード内には、異なる URL を定義することができます。この例では、まず `sign-in` の URL を定義し、後で `sign-out` を定義します。
 {% endcall %}
 
@@ -70,10 +69,10 @@ AMPByExample サーバーがログインページから POST リクエストを�
 - ユーザーがログインボタンをクリックすると、サーバーはレスポンスを調整する必要があります
 
 {% call callout('ヒント', type='success') %}
-このフローの詳細については、[amp-access ドキュメント](https://www.ampproject.org/ja/docs/reference/components/amp-access#login-flow)をご覧ください。
+このフローの詳細については、[amp-access ドキュメント](/ja/docs/reference/components/amp-access#login-flow)をご覧ください。
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/login_requiring.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-next">次へ</span></a>
 </div>

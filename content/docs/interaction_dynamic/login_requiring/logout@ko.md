@@ -1,6 +1,5 @@
 ---
 $title: 로그아웃
-$order: 2
 ---
 
 로그인 버튼과 마찬가지로 로그아웃 버튼의 존재 여부는 `amp-access` 컴포넌트의 상태에 따라 다릅니다.
@@ -24,6 +23,6 @@ $order: 2
 이 시점에 여러분은 처음 페이지로 돌아왔으며, 동일 시점에서 로그인 페이지(`ABE_LOGGED_IN`)에 대해 이전에 생성 된 AMPByExample 쿠키가 지워집니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/tutorials/login_requiring/summary.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/interaction_dynamic/login_requiring/summary.html"><span class="arrow-next">다음</span></a>
 </div>

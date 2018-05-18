@@ -27,7 +27,7 @@ You should specify a background color for your AMP story pages. By having a back
 Ensure that text overlays on a page are readable:
 
 * Choose a font color that contrasts with the background image and background color.
-* Add a bit gradient overlay between the image and text to contrast the text and image.
+* Add a gradient overlay between the image and text to contrast the text and image.
 
 ### Bite-sized text   
 
@@ -163,3 +163,19 @@ There are various tools you can use to encode videos and adjust the quality of t
 #### HLS segment size
 
 Ensure the size of your HLS segments are typically no more than 10 seconds in duration.
+
+### Advance to next page after video ends
+
+If attempting to automatically advance from one page to another after a video finishes playing, you should set the value of the `auto-advance-after` attribute of `<amp-story-page>` to the id of the video, rather than the expected length of the video. That is, use
+
+```html
+<amp-story-page auto-advance-after="myvideo">
+```
+
+not
+
+```html
+<amp-story-page auto-advance-after="9s">
+```
+
+This is because the video may not start playing at exactly the same time as the page is displayed, or the given length may not be correct, leading to a different between the expected and actual durations. This can cause the video to loop, which can be distracting to the user.

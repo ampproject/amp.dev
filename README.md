@@ -1,12 +1,10 @@
-AMPProject.org [![Build Status](https://travis-ci.org/ampproject/docs.svg?branch=production)](https://travis-ci.org/ampproject/docs)
-=========================
+# AMPProject.org [![Build Status](https://travis-ci.org/ampproject/docs.svg?branch=production)](https://travis-ci.org/ampproject/docs)
 
 You're looking at the source code of the official website of the AMP Project. 
 Even if you don't plan on contributing, explore how we've built the site for 
 a good example of how to build a canonical, responsive standalone AMP site.
 
-How to build the site
----------------------
+## How to build the site
 
 ### Install
 
@@ -59,17 +57,18 @@ $ grow run
 
 You can now open http://localhost:8080/ and continue working on the source files, then reload the page to see changes appear.
 
-Support
--------
+## Support
 
-If you've found an error or inconsistency, please file an issue:
-https://github.com/ampproject/docs/issues
+If you've found an error or inconsistency, please [file an issue](
+https://github.com/ampproject/docs/issues).
 
-Patches are encouraged, and may be submitted by forking this project and
-submitting a pull request through GitHub.
+Patches are encouraged. See [Contributing](CONTRIBUTING.md) for details.
 
-License
--------
+## Site details
+
+If you're working with the ampproject.org site, see [AMPProject.org files & build process](contributing/ampproject-files-build-process.md) for details on how  the site is built, the purpose of certain files, and other important information.
+
+## License
 
 All image and audio files except in folders "assets/img/partners",
 "assets/img/publishers", "assets/img/quotes", and ""assets/img/about" (including *.png, *.jpg, *.svg,

@@ -1,26 +1,11 @@
 nextstop:
-  title: Singapore
-  link: https://events.withgoogle.com/amp-roadshow-singapore-oct2017/
+  title: Tokyo
+  link: https://events.withgoogle.com/amp-roadshow-tokyo/
 
 cities:
-  - title: Buenos Aires
-    date: 2018-03-13
-    link: https://events.withgoogle.com/splatam-amp-2018/
-  - title: Bogota
-    date: 2018-03-16
-    link: https://events.withgoogle.com/splatam-amp-2018/
-  - title: Mexico City
-    date: 2018-03-21
-    link: https://events.withgoogle.com/splatam-amp-2018/
-  - title: New York
-    date: 2018-03-21
-    link: https://events.withgoogle.com/amp-roadshow-in-nyc/
-  - title: Chicago
-    date: 2018-03-27
-    link: https://events.withgoogle.com/amp-roadshow-in-chicago/
-  - title: Sunnyvale
-    date: 2018-04-04
-    link: https://events.withgoogle.com/amp-roadshow-in-sunnyvale/
+  - title: Tokyo
+    date: 2018-04-27
+    link: https://events.withgoogle.com/amp-roadshow-tokyo/
   - title: Los Angeles
     date: 2018-06-06
     link: https://events.withgoogle.com/amp-roadshow-in-los-angeles/
@@ -30,10 +15,12 @@ cities:
   - title: Austin
     date: 2018-07-11
     link: https://events.withgoogle.com/amp-roadshow-in-austin/
+  - title: New York
+    date: 2018-07-24
+    link: https://events.withgoogle.com/amp-roadshow-in-new-york/
   - title: Cambridge
     date: 2018-08-07
     link: https://events.withgoogle.com/amp-roadshow-in-cambridge/
-  - title: ???
 
 agenda:
   - title: Intro + Keynote

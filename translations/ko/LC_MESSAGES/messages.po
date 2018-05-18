@@ -41,10 +41,6 @@ msgstr "AMP 블로그"
 msgid "AMP By Example"
 msgstr ""
 
-#: /content/support/vendor/amp-certification.md
-msgid "AMP Certification"
-msgstr "AMP 인증"
-
 #: /content/includes/stories.yaml
 msgid "AMP Component Library"
 msgstr ""
@@ -296,9 +292,9 @@ msgstr "광고게시자"
 msgid "Advertisers:<br>Drive campaign ROI"
 msgstr "광고주:<br>캠페인 ROI 향상"
 
-#: /content/docs/ads_analytics.md /content/docs/ads_analytics/_blueprint.yaml
-msgid "Advertising & Analytics"
-msgstr "광고 & 애널리틱스"
+#: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
+msgid "Advertising"
+msgstr "광고하는"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -322,6 +318,7 @@ msgstr "효과를 증폭시키세요"
 msgid "An open source effort to improve the content ecosystem for everyone."
 msgstr ""
 
+#: /content/docs/analytics.md /content/docs/analytics/_blueprint.yaml
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr "애널리틱스"
@@ -922,10 +919,6 @@ msgstr "누가 AMP 를 사용하는 지 살펴봅시다"
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr "가벼운 광고는 만족스러운 광고 경험으로 이어집니다."
 
-#: /content/docs/integration/supported_integrations.md
-msgid "List of supported partners & integrations"
-msgstr ""
-
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
 msgstr ""
@@ -1036,14 +1029,14 @@ msgstr "높은 속도가 가능할 때만 실행하십시오."
 msgid "Open"
 msgstr ""
 
+#: /content/pages/404.html
+msgid "Page not Found (404)"
+msgstr ""
+
 #: /content/includes/events.yaml /content/includes/lists.yaml
 #: /content/latest/list-past-event.html
 msgid "Past Events"
 msgstr "이전 이벤트"
-
-#: /content/support/platform.md
-msgid "Platform Support"
-msgstr "지원 플랫폼"
 
 #: /content/reference/components/_blueprint.yaml
 msgid "Presentation"
@@ -1132,6 +1125,10 @@ msgstr "GitHub에서 플랫폼 버그 제보"
 
 #: /content/learn/who/ecommerce.yaml
 msgid "Resources for ecommerce"
+msgstr ""
+
+#: /content/pages/404.html:174
+msgid "Restart game"
 msgstr ""
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
@@ -1301,6 +1298,10 @@ msgstr "지원하는 브라우저"
 msgid "Supported Platforms, Vendors and Partners"
 msgstr "지원하는 플랫폼, 벤더 및 파트너"
 
+#: /content/docs/integration/supported_integrations.md
+msgid "Supported partners & integrations"
+msgstr ""
+
 #: /content/includes/stories.yaml
 msgid "Supports rich visuals with native video and image performance"
 msgstr ""
@@ -1402,6 +1403,12 @@ msgid ""
 "loads in an instant."
 msgstr "오픈 소스 AMP 프로젝트를 활용하면 즉시 로드되는 모바일에 최적화된 콘텐츠를 만들 수 있습니다."
 
+#: /content/pages/404.html:15
+msgid ""
+"The page you've requested can't be found. Why don't you browse around, or "
+"while you're here, play a game of tic-tac-toe made with AMP?"
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid ""
 "There are no upcomming events at this time. We host events throughout the "
@@ -1445,6 +1452,10 @@ msgstr "문제 해결"
 msgid "Tutorials"
 msgstr "튜토리얼"
 
+#: /content/pages/404.html:11
+msgid "Uh oh! That's an error."
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid "Upcoming Events"
 msgstr "다가오는 이벤트"
@@ -1456,10 +1467,6 @@ msgstr "기존 리소스 사용"
 #: /content/learn/about/amp-design-principles.yaml
 msgid "User Experience > Developer Experience > Ease of Implementation."
 msgstr "사용자 환경 &gt; 개발자 환경 &gt; 편리한 구현"
-
-#: /content/support/vendor.md /content/support/vendor/_blueprint.yaml
-msgid "Vendor Support"
-msgstr "공급업체 지원"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Vice President of Digital Revenue Strategy and Operations, Time Inc."

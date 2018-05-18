@@ -23,7 +23,7 @@ hero:
   lines_img_width: 700
   lines_img_height: 486
   cta@: Join Today
-  cta_external_url: 'https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md'
+  cta_external_url: 'https://www.ampproject.org/docs/ads/amphtml_ads'
 
 what:
   title@: What are AMPHTML ads?
@@ -91,8 +91,8 @@ latest:
 
 large_cta:
   title@: Whether you’re an advertiser, ad tech platform or publisher, deliver better ads by joining the AMP Project today.
-  cta@: Build Your AMPHTML Ad Today
-  cta_url: https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md
+  cta@: Build your AMPHTML ad today
+  cta_url: /content/docs/ads/amphtml_ads.md
   lines_left: /static/img/about/who-use-amp/amp-ads/lines_5.svg
   lines_left_width: 325
   lines_left_height: 303

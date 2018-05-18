@@ -37,7 +37,7 @@ components:
       <div class="latest-mobile tablet-down">
         <h2 class="latest-label">{{_(home.hero.carousel_title)}}</h2>
         <amp-carousel class="latest-carousel"
-          height="200" controls
+          height="220" controls
           layout="flex-item"
           type="slides">
 
@@ -61,18 +61,22 @@ components:
             {% endif %}
           {% endfor %}
         </amp-carousel>
+        <div class="newsletter">
+          <p>{{_(home.newsletter.title)}}</p>
+          <a id="newsletter-cta" class="button" href="{{home.newsletter.cta_url}}">{{_(home.newsletter.cta)}}</a>
+        </div>
       </div>
     </div>
     <div class="hero-content">
       <div class="intro-container">
         <h1>{{_(home.hero.title)}}</h1>
         <p class="intro">{{_(home.hero.content)}}</p>
-        <a class="button" href="{{g.doc(home.hero.cta_url, locale=doc.locale).url.path}}">
+        <a id="learn-amp" class="button" href="{{g.doc(home.hero.cta_url, locale=doc.locale).url.path}}">
           {{_(home.hero.cta)}}
         </a>
         <br class="tablet-down">
         <span class="cta_connector light">{{_('or')}}</span>
-        <a class="underlined cta" href="{{g.doc(home.hero.secondary_cta_url, locale=doc.locale).url.path}}">{{_(home.hero.secondary_cta)}}</a>
+        <a id="start-build" class="underlined cta" href="{{g.doc(home.hero.secondary_cta_url, locale=doc.locale).url.path}}">{{_(home.hero.secondary_cta)}}</a>
       </div>
       <div class="latest tablet-up">
         <h3 class="latest-label light">{{_(home.hero.carousel_title)}}</h3>
@@ -111,10 +115,15 @@ components:
           {% endfor %}
           </div>
         </amp-carousel>
+        <div class="newsletter">
+          <p>{{home.newsletter.title}}
+          <a id="newsletter-cta" class="button" href="{{home.newsletter.cta_url}}">{{_(home.newsletter.cta)}}</a></p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="benefits">
   <h1>{{_(home.benefits.title)}}</h1>
@@ -254,6 +263,26 @@ components:
   {% include "/views/partials/large-cta.html" %}
 {% endwith %}
 
+  <amp-analytics type="googleanalytics" id="analytics-ga-clicks">
+    <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-67833617-1"
+      },
+      "triggers": {
+        "anchorClicks": {
+          "on": "click",
+          "selector": "#learn-amp, #start-build",
+          "request": "event",
+          "vars": {
+            "eventCategory": "cta-anchors",
+            "eventAction": "cta-click"
+          }   
+        }
+      }
+    }
+    </script>
+  </amp-analytics>
 
 <amp-analytics type="googleanalytics" id="analytics-ga-visibility">
   <script type="application/json">

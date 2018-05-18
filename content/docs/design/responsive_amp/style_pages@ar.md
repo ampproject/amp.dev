@@ -115,11 +115,6 @@ $title: لغة CSS المعتمدة
       <td data-th="Banned style">أسماء فئات <code>-amp-</code> وعلامات <code>i-amp-</code></td>
       <td data-th="Description">لا يمكن أن تبدأ أسماء الفئات، في أوراق أنماط المؤلف، بالسلسلة <code>-amp-</code>. وهو محجوزة للاستخدام الداخلي فقط من خلال وقت تشغيل AMP. ويترتب على ذلك، أن ورقة أنماط المستخدم لا يمكنها الإشارة إلى محددات CSS لفئات <code>-amp-</code> وعلامات <code>i-amp</code>.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
-      <td data-th="Description">هذه الخصائص غير مسموح بها
-      لأسباب أمنية.</td>
-    </tr>
   </tbody>
 </table>
 

@@ -277,11 +277,7 @@ La cadena siguiente devuelve un error INVALID_PROPERTY_VALUE_IN_ATTR_VALUE:
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-Igual que el ejemplo anterior, la cadena siguiente daría lugar a un error:
-
-`<meta http-equiv="X-UA-Compatible" content="ie=invalidfoo">`
-
-Debería ser `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
+Tenga en cuenta que si está intentando generar un atributo sin valor (por ejemplo, un atributo como `autoplay`, `controls` o `loop` para el componente `<amp-video>`), pero su proceso de compilación HTML está generando un valor predeterminado (pero no válido) como `true` (React, por ejemplo, producirá `<amp-video autoplay = "true" ...>` [de forma predeterminada](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), la solución alternativa es mostrar el nombre del atributo como el valor. Por ejemplo, `<amp-video autoplay="autoplay"...>`.
 
 ### Falta la URL
 

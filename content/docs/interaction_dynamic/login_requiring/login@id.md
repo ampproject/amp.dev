@@ -1,6 +1,5 @@
 ---
 $title: Login
-$order: 0
 ---
 
 Saat pertama kali membuka halaman, Anda dapat melihat 2 komentar dan sebuah tombol login.
@@ -48,7 +47,7 @@ Jika melihat lagi kode HTML tombol menggunakan `on="tap:amp-access.login-sign-in
 
 [/sourcecode]
 
-{% call callout('Catatan', type='success') %}
+{% call callout('Catatan', type='note') %}
 Perhatikan bahwa Anda dapat menentukan URL berbeda di dalam node login, dalam kasus ini kita menentukan `sign-in`, dan nanti kita akan menentukan `sign-out`.
 {% endcall %}
 
@@ -69,13 +68,13 @@ Sebagai rangkuman singkat:
 - Waktu proses AMP menutup halaman login dan mengalihkan ke halaman yang ditentukan oleh parameter URL respons
 - Server harus mengatur respons setelah pengguna mengklik tombol login
 
-{% call callout('Tips', type='success') %}
-Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation](https://www.ampproject.org/id/docs/reference/components/amp-access#login-flow).
+{% call callout('Tip', type='success') %}
+Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation](/id/docs/reference/components/amp-access#login-flow).
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/tutorials/login_requiring.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="/id/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-next">Berikutnya</span></a>
 </div>
  
  

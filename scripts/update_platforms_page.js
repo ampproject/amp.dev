@@ -30,7 +30,7 @@ function addAds() {
 function addAnalytics() {
 
   // Read in amp-ad file, and the ad vendors
-  var ampAnalytics = fs.readFileSync('../content/docs/ads_analytics/analytics_amp/analytics-vendors.md', { encoding: 'utf8' });
+  var ampAnalytics = fs.readFileSync('../content/docs/analytics/analytics-vendors.md', { encoding: 'utf8' });
   var supportPortion = (ampAnalytics.split('## Vendors')[1]).split('\n## ')[0];
   var individualVendors = supportPortion.split('\n###');
   individualVendors.shift();
@@ -93,6 +93,8 @@ function addCMS() {
   newYaml += `
     - title@: CMS
       section_items:
+        - title: AMPize.me
+          link: https://www.ampize.me
         - title: Arc Publishing
           link: https://www.arcpublishing.com
         - title: Canvas
@@ -113,6 +115,8 @@ function addCMS() {
           link: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
         - title: Textpattern
           link: https://textpattern.com/weblog/401/textpattern-website-redesign/amp
+        - title: TownNews
+          link: https://www.townnews365.com/
         - title: Tumblr
           link: https://www.tumblr.com/about
         - title: WordPress.com
@@ -176,7 +180,9 @@ browsers:
   - title: Safari
     img: /static/img/platforms/safari.png
   - title: Opera
-    img: /static/img/platforms/opera.png `;
+    img: /static/img/platforms/opera.png
+  - title: UC Browser
+    img: /static/img/platforms/uc_browser.png `;
 }
 
 // Put them into the right location in the YAML

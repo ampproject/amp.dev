@@ -10,7 +10,7 @@ AMP を統合するには主に 4 つの方法があります。
 
 
 ## 1. amp-analytics 拡張機能のサポートを追加する
-AMP アナリティクスを使用すると、貴社で設定したトリガーに基づいてサーバーにイベントを返送することができます。使用を開始する際は、[アナリティクス統合ガイド](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)をご覧ください。
+AMP アナリティクスを使用すると、貴社で設定したトリガーに基づいてサーバーにイベントを返送することができます。使用を開始する際は、[アナリティクス統合ガイド](/ja/docs/analytics/integrating-analytics.html)をご覧ください。
 
 動的パラメータを含むトラッキング ピクセルをトラッキング URL に追加する必要がある場合は、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) をご確認ください。貴社のテクノロジーと AMP を併用したいデベロッパーに向けて、サポートページに使用方法を掲載するようおすすめします。
 
@@ -19,7 +19,7 @@ AMP アナリティクスを使用すると、貴社で設定したトリガー�
 
 ## 2. amp-ad 拡張機能を使用する
 
-amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信するためのものです。90 社以上の広告テクノロジー プロバイダが AMP のサポートを導入しています。開始する際は、[開発の概要](https://github.com/ampproject/amphtml/tree/master/ads#overview)をお読みください。また、amp-ad 拡張機能のサポートの追加に関する[デベロッパー向けの手順](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)もご覧ください。提供している広告テクノロジーによっては、こちらの[統合の手順](https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md)も役立ちます。
+amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信するためのものです。90 社以上の広告テクノロジー プロバイダが AMP のサポートを導入しています。開始する際は、[開発の概要](https://github.com/ampproject/amphtml/tree/master/ads#overview)をお読みください。また、amp-ad 拡張機能のサポートの追加に関する[デベロッパー向けの手順](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)もご覧ください。提供している広告テクノロジーによっては、こちらの[統合の手順](/ja/docs/ads/integration-guide.html)も役立ちます。
 
 90 社以上の広告プロバイダが amp-ad のような広告関連機能のサポートを導入しています。広告ネットワーク [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) による[プルリクエスト](https://github.com/ampproject/amphtml/pull/2299)の例をご覧ください。
 
@@ -35,7 +35,7 @@ amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信する
 
 ## 5. amp-iframe を使用する
 
-さらに 5 つ目の方法をご紹介しますが、これは最後の手段としてお考えください。上記のどの方法もニーズに適していない場合は、汎用的な amp-iframe タグを使って、サイト運営者が貴社のコンテンツを埋め込むことができるようにします。しかし、この方法には、パフォーマンスやユーザー エクスペリエンスに関する落とし穴に起因するマイナス面がいくつかあります。詳しくは、[こちら](/ja/docs/reference/components/amp-iframe#guideline:-prefer-specific-amp-components-to-amp-iframe)をご覧ください。
+さらに 5 つ目の方法をご紹介しますが、これは最後の手段としてお考えください。上記のどの方法もニーズに適していない場合は、汎用的な amp-iframe タグを使って、サイト運営者が貴社のコンテンツを埋め込むことができるようにします。しかし、この方法には、パフォーマンスやユーザー エクスペリエンスに関する落とし穴に起因するマイナス面がいくつかあります。詳しくは、[こちら](/ja/docs/reference/components/amp-iframe.html#guideline:-prefer-specific-amp-components-to-amp-iframe)をご覧ください。
 
 ## まとめ
 

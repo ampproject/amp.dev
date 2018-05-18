@@ -1,67 +1,67 @@
 blogs:
 
 - type: Blog
-  title: "Twitter uses AMP to improve reading experience, enables publishers to understand their audience"
-  id: twitter-uses-amp-to-improve-reading-experience-enables-publishers-to-understand-their-audience
-  author: Ben Ward
-  role:  Product Manager for AMP &amp; Publisher Platform, Twitter
-  origin: "https://amphtml.wordpress.com/2017/12/13/twitter-uses-amp-to-improve-reading-experience-enables-publishers-to-understand-their-audience/amp/"
-  excerpt: "Editor&#8217;s note: This post is authored by Ben Ward, Product Manager for AMP &#38; Publisher Platform, Twitter. Read more about their support for AMP article analytics here. Twitter sits at the heart of news, with millions of people using the service to stay updated about what’s happening in the world, right as it happens. An essential [&#8230;]"
+  title: "Jung von Matt’s road to the world’s fastest* automotive content marketing website"
+  id: jung-von-matts-road-to-the-worlds-fastest-automotive-content-marketing-website
+  author: Thomas Feldhaus
+  role:  Managing Director, Jung von Matt/NEXT ALSTER
+  origin: "https://amphtml.wordpress.com/2018/03/21/jung-von-matts-road-to-the-worlds-fastest-automotive-content-marketing-website/amp/"
+  excerpt: "Posted by Thomas Feldhaus, Managing Director, Jung von Matt/NEXT ALSTER Read more about BMW.com in the AMP case study on AMPproject.org or on Jung von Matt&#8217;s page here. “What a nice challenge!” That’s what we thought when we won the job to relaunch the digital home of BMW, BMW.com, and to excite users by transforming the [&#8230;]"
   avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-12-13T12:03:20-08:00
-  date: "December 13, 2017"
+  datedata: 2018-03-21T09:57:45-07:00
+  date: "March 21, 2018"
 
 - type: Blog
-  title: "The Total Economic Impact™ of AMP across publishers and e-commerce"
-  id: the-total-economic-impact-of-amp-across-publishers-and-e-commerce
-  author: Lisa Wang
+  title: "Standardizing lessons learned from AMP"
+  id: standardizing-lessons-learned-from-amp
+  author: Malte Ubl
+  role:  Tech Lead for the AMP Project at Google.
+  origin: "https://amphtml.wordpress.com/2018/03/08/standardizing-lessons-learned-from-amp/amp/"
+  excerpt: "For over two years, AMP has been a leading format for creating consistently excellent user experiences on the web, and Google continues to invest strongly in it as our well-lit path to achieving a user-first web. We&#8217;ve long believed that the goal of a user-first web can be built in many ways, but, until we [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-03-08T08:58:16-08:00
+  date: "March 8, 2018"
+
+- type: Blog
+  title: "Faster ads with ‘Render on Idle’"
+  id: faster-ads-with-render-on-idle
+  author: Keith Wright
+  role:  Technical Lead, AMP Project
+  origin: "https://amphtml.wordpress.com/2018/03/05/faster-ads-with-render-on-idle/amp/"
+  excerpt: "We’ve launched a new feature called “Render on Idle” now available for publishers using the DoubleClick AMP ad tag, and any ad network choosing to implement Fast Fetch can also take advantage of it. With Render on Idle, ads load 12 viewports from the user’s scroll position (as opposed to 3) when the browser is [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-03-05T10:41:06-08:00
+  date: "March 5, 2018"
+
+- type: Blog
+  title: "Ads and AMP: Year in Review and Looking Ahead"
+  id: ads-and-amp
+  author: Gabe Bender
+  role:  Product Marketing Manager, AMP Project, Google
+  origin: "https://amphtml.wordpress.com/2018/02/14/ads-and-amp/amp/"
+  excerpt: "In the world of online advertising, the saying “time equals money” seems more pertinent than ever. Consumer attention is a scarce commodity, meaning ads need to be not only relevant and engaging, but also fast. Since the Accelerated Mobile Pages (AMP) Project launched in October 2015, over 31M domains have embraced AMP to grow their [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-02-14T02:06:16-08:00
+  date: "February 14, 2018"
+
+- type: Blog
+  title: "AMP’s New Horizons"
+  id: amps-new-horizons
+  author: Malte Ubl
+  role:  Engineering Lead, AMP Project, Google
+  origin: "https://amphtml.wordpress.com/2018/02/13/amps-new-horizons/amp/"
+  excerpt: "Hallo uit Amsterdam! We’re kicking off the second AMP Conf today in Europe, celebrating the global reach of the AMP community. This year we have over 400 developers joining the AMP team in Amsterdam for two days and thousands more watching the livestream, marking our biggest event yet. Since last year’s AMP Conf, we&#8217;ve seen [&#8230;]"
+  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-02-13T00:39:02-08:00
+  date: "February 13, 2018"
+
+- type: Blog
+  title: "New in AMP: Date picker, easier CSS development, and more AMP By Example content"
+  id: new-in-amp-date-picker-easier-css-development-and-more-amp-by-example-content
+  author: Rudy Galfi
   role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2017/11/29/the-total-economic-impact-of-amp-across-publishers-and-e-commerce/amp/"
-  excerpt: "Speed equals revenue on the web, especially mobile. In fact, studies have shown even 100ms delays in page load time correlate with lower conversion rates. To better understand the impact AMP can provide for mobile sites on speed and revenue, Google commissioned Forrester Consulting, a leading global research and advisory firm, to conduct a Total Economic Impact™ [&#8230;]"
+  origin: "https://amphtml.wordpress.com/2018/01/31/new-in-amp-date-picker-easier-css-development-and-more-amp-by-example-content/amp/"
+  excerpt: "We’re back with another post to highlight the most notable changes to AMP in the past few months. amp-date-picker experimental beta Our new date picker is now available for experimenting with. To get started, make sure that you enable the Dev Channel and run the following command in the devtools console: AMP.toggleExperiment(&#8216;amp-date-picker&#8217;) Full details for [&#8230;]"
   avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-11-29T08:34:45-08:00
-  date: "November 29, 2017"
-
-- type: Blog
-  title: "An AMP Paywall and Subscription Model for All Publishers"
-  id: an-amp-paywall-and-subscription-model-for-all-publishers
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2017/11/28/an-amp-paywall-and-subscription-model-for-all-publishers/amp/"
-  excerpt: "The following was posted on LaterPay&#8217;s Blog by Cosmin Ene, CEO, LaterPay. A majority of mobile users will not wait longer than 3 seconds for a page to load before moving on, creating a marked decline in revenue for sites that load slowly. It’s this desire for speed and convenience on both the user and publisher’s part that spurred [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-11-28T09:49:35-08:00
-  date: "November 28, 2017"
-
-- type: Blog
-  title: "AMP Conf 2018: Turning Amsterdam into AMPsterdam"
-  id: amp-conf-2018-turning-amsterdam-into-ampsterdam
-  author: Matt Ludwig
-  role:  AMP Project Marketing Lead, Google
-  origin: "https://amphtml.wordpress.com/2017/11/27/amp-conf-2018-turning-amsterdam-into-ampsterdam/amp/"
-  excerpt: "Last year over 300 developers came together to learn and share about the latest in AMP at AMP Conf in NYC. Since then we’ve had many new developments and uses of AMP emerge, from e-commerce functionality, to building canonically with AMP, to using AMP pages within a Progressive Web App. To share all the latest [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-11-27T13:46:50-08:00
-  date: "November 27, 2017"
-
-- type: Blog
-  title: "AMP: Two years of user-first webpages"
-  id: amp-two-years-of-user-first-webpages
-  author: David Besbris
-  role:  VP Google Search, AMP Project Lead at Google
-  origin: "https://amphtml.wordpress.com/2017/10/19/amp-two-years-of-user-first-webpages/amp/"
-  excerpt: "It’s hard to believe it’s been two years since publishers and platforms came together to launch the open source Accelerated Mobile Pages (AMP) Project. Speed and user experience remain more important than ever across the web, with 53% of mobile site visits abandoned for pages taking longer than 3 seconds to load. In two years [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-10-19T10:19:44-07:00
-  date: "October 19, 2017"
-
-- type: Blog
-  title: "Start fast with new AMP Start templates"
-  id: start-fast-with-new-amp-start-templates
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2017/10/13/start-fast-with-new-amp-start-templates/amp/"
-  excerpt: "Two of the core pillars of the Accelerated Mobile Pages (AMP) Project are speed and a great user experience on the web. That said, the AMP Project also cares about making the process of building webpages faster and easier. That’s why we created AMP Start, a library of fully-featured templates and common page elements built [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2017-10-13T13:01:07-07:00
-  date: "October 13, 2017"
+  datedata: 2018-01-31T15:08:57-08:00
+  date: "January 31, 2018"

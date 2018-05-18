@@ -1,6 +1,5 @@
 ---
 $title: ログアウト
-$order: 2
 ---
 
 ログアウト ボタンも、ログインボタンと同じように `amp-access` コンポーネントの状態に応じて表示が切り替わります。
@@ -23,6 +22,6 @@ Logout ボタンをクリックすると、`amp-access` JSON 設定の login オ
 ログインの場合と同様に、AMPByExample サーバーはログアウト リクエストを受け取ると、AMP ライブラリによって自動的に追加されるリターン URL クエリ パラメータを使用し、`#success=true` を追加してリダイレクトします。この時点で初期ページに戻り、ログインページで作成した AMPByExample Cookie（`ABE_LOGGED_IN`）は削除されます。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/login_requiring/summary.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/interaction_dynamic/login_requiring/summary.html"><span class="arrow-next">次へ</span></a>
 </div>

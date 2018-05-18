@@ -1,6 +1,6 @@
 ---
+$title@: Page not Found (404)
 $path: /404.html
-$title: Page not Found (404)
 components:
 - bind
 class: 404
@@ -18,11 +18,11 @@ stylesheet: pages/404.css
     }
     </script>
   </amp-state>
-    <h1 [class]="max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd + c),abs(bd + c),abs(mc + c),abs(mr + c)) == 3 ? 'hide' : 'show'">Uh oh! That's an error.</h1>
+    <h1 [class]="max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd + c),abs(bd + c),abs(mc + c),abs(mr + c)) == 3 ? 'hide' : 'show'">{{_("Uh oh! That's an error.")}}</h1>
     <h1 [class]="max(tr,br,lc,rc,fd + c,bd + c,mc + c,mr + c) == 3 ? 'show' : 'hide'" class='hide'>⚡ wins!!!</h1>
     <h1 [class]="min(tr,br,lc,rc,fd + c,bd + c,mc + c,mr + c) == -3 ? 'show' : 'hide'" class='hide'>O wins!!!</h1>
 
-    <p>The page you've requested can't be found. Why don't you browse around, or while you're here, play a game of tic-tac-toe made with AMP?</p>
+    <p>{{_("The page you've requested can't be found. Why don't you browse around, or while you're here, play a game of tic-tac-toe made with AMP?")}}</p>
 
     <div class="playingboard"> 
     <table>
@@ -181,7 +181,7 @@ stylesheet: pages/404.css
                       bd: null,
                       c: null,
                       b: null
-                    })'>Restart game</button>
+                    })'>{{_("Restart game")}}</button>
       </div>
     </div>
 </section>

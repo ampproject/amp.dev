@@ -1,6 +1,5 @@
 ---
 $title: 登录
-$order: 0
 ---
 
 当您首次到达该页面时，您会看到 2 条评论和一个“登录”按钮。
@@ -48,7 +47,7 @@ $order: 0
 
 [/sourcecode]
 
-{% call callout('注意', type='success') %}
+{% call callout('注意', type='note') %}
 请注意，您可在登录节点内指定不同的网址。在此示例中，我们指定的是 `sign-in`，稍后我们将指定 `sign-out`。
 {% endcall %}
 
@@ -70,10 +69,10 @@ $order: 0
 - 一旦用户点击了“登录”按钮，服务器即应编排响应
 
 {% call callout('提示', type='success') %}
-您可在 [amp-access 文档](https://www.ampproject.org/zh_cn/docs/reference/components/amp-access#login-flow) 中找到有关此流程的更详细的说明。
+您可在 [amp-access 文档](/zh_cn/docs/reference/components/amp-access#login-flow) 中找到有关此流程的更详细的说明。
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/tutorials/login_requiring.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="/zh_cn/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="/zh_cn/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-next">下一页</span></a>
 </div>

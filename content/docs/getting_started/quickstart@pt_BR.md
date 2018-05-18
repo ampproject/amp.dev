@@ -86,7 +86,7 @@ Para ver outras ferramentas de validação que você pode usar, acesse a página
 
 ### Próximas etapas
 
-Para conhecer melhor os aspectos básicos das páginas AMP, acesse o tutorial sobre como [criar sua primeira página AMP](pt_br/docs/tutorials/create.html).
+Para conhecer melhor os aspectos básicos das páginas AMP, acesse o tutorial sobre como [criar sua primeira página AMP](/pt_br/docs/getting_started/create.html).
 
 Veja outros recursos para aprimorar sua experiência:
 

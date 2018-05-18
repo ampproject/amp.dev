@@ -4,7 +4,7 @@ $order: 4
 numbered: 1
 tutorial: true
 ---
-Some user interactions with a page, such as leaving a comment, could be conditioned by a login flow. You can implement a login flow with AMP by using the [amp-access](https://www.ampproject.org/docs/reference/components/amp-access) component combined with the [amp-form](https://www.ampproject.org/docs/reference/components/amp-form) component.
+Some user interactions with a page, such as leaving a comment, could be conditioned by a login flow. You can implement a login flow with AMP by using the [amp-access](/docs/reference/components/amp-access) component combined with the [amp-form](/docs/reference/components/amp-form) component.
 {% call callout('Tip', type='success') %}
 To see a sample implementation, visit the [comment section sample](https://ampbyexample.com/samples_templates/comment_section/) at [ampbyexample.com](https://ampbyexample.com).
 {% endcall %}
@@ -14,5 +14,5 @@ The [comment section sample](https://ampbyexample.com/samples_templates/comment_
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/docs/tutorials/login_requiring/login.html"><span class="arrow-next">Get started</span></a>
+<a class="button" href="/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-next">Get started</span></a>
 </div>

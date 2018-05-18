@@ -44,10 +44,6 @@ msgstr ""
 msgid "AMP By Example"
 msgstr ""
 
-#: /content/support/vendor/amp-certification.md
-msgid "AMP Certification"
-msgstr ""
-
 #: /content/includes/stories.yaml
 msgid "AMP Component Library"
 msgstr ""
@@ -295,9 +291,9 @@ msgstr ""
 msgid "Advertisers:<br>Drive campaign ROI"
 msgstr ""
 
-#: /content/docs/ads_analytics.md /content/docs/ads_analytics/_blueprint.yaml
-msgid "Advertising & Analytics"
-msgstr ""
+#: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
+msgid "Advertising"
+msgstr "La publicité"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -321,6 +317,7 @@ msgstr ""
 msgid "An open source effort to improve the content ecosystem for everyone."
 msgstr ""
 
+#: /content/docs/analytics.md /content/docs/analytics/_blueprint.yaml
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr ""
@@ -913,10 +910,6 @@ msgstr ""
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr ""
 
-#: /content/docs/integration/supported_integrations.md
-msgid "List of supported partners & integrations"
-msgstr ""
-
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
 msgstr ""
@@ -1027,13 +1020,13 @@ msgstr ""
 msgid "Open"
 msgstr ""
 
+#: /content/pages/404.html
+msgid "Page not Found (404)"
+msgstr ""
+
 #: /content/includes/events.yaml /content/includes/lists.yaml
 #: /content/latest/list-past-event.html
 msgid "Past Events"
-msgstr ""
-
-#: /content/support/platform.md
-msgid "Platform Support"
 msgstr ""
 
 #: /content/reference/components/_blueprint.yaml
@@ -1121,6 +1114,10 @@ msgstr ""
 
 #: /content/learn/who/ecommerce.yaml
 msgid "Resources for ecommerce"
+msgstr ""
+
+#: /content/pages/404.html:174
+msgid "Restart game"
 msgstr ""
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
@@ -1288,6 +1285,10 @@ msgstr ""
 msgid "Supported Platforms, Vendors and Partners"
 msgstr ""
 
+#: /content/docs/integration/supported_integrations.md
+msgid "Supported partners & integrations"
+msgstr ""
+
 #: /content/includes/stories.yaml
 msgid "Supports rich visuals with native video and image performance"
 msgstr ""
@@ -1378,6 +1379,12 @@ msgid ""
 "loads in an instant."
 msgstr ""
 
+#: /content/pages/404.html:15
+msgid ""
+"The page you've requested can't be found. Why don't you browse around, or "
+"while you're here, play a game of tic-tac-toe made with AMP?"
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid ""
 "There are no upcomming events at this time. We host events throughout the "
@@ -1416,6 +1423,10 @@ msgstr ""
 msgid "Tutorials"
 msgstr ""
 
+#: /content/pages/404.html:11
+msgid "Uh oh! That's an error."
+msgstr ""
+
 #: /content/includes/events.yaml
 msgid "Upcoming Events"
 msgstr ""
@@ -1426,10 +1437,6 @@ msgstr ""
 
 #: /content/learn/about/amp-design-principles.yaml
 msgid "User Experience > Developer Experience > Ease of Implementation."
-msgstr ""
-
-#: /content/support/vendor.md /content/support/vendor/_blueprint.yaml
-msgid "Vendor Support"
 msgstr ""
 
 #: /content/learn/who/amp-ads.yaml

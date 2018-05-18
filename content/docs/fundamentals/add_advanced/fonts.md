@@ -41,6 +41,6 @@ You've completed your AMP news article! Here's what it should look like:
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/add_advanced/navigating.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/add_advanced/congratulations.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/add_advanced/congratulations.html"><span class="arrow-next">Next</span></a>
 </div>
