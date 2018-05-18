@@ -215,6 +215,10 @@ msgstr ""
 msgid "AMPHTML Ads"
 msgstr ""
 
+#: /content/docs/ads/amphtml_ads/_blueprint.yaml
+msgid "AMPHTML ads"
+msgstr ""
+
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMPHTML ads are 6x faster than regular ads on AMP pages, making them more "
@@ -319,12 +323,11 @@ msgid "Amplify your impact"
 msgstr "Aumente seu impacto"
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pt_BR.yaml
-#: /content/learn/overview@ru.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@zh_CN.yaml
+#: /content/learn/overview@es.yaml /content/learn/overview@fr.yaml
+#: /content/learn/overview@id.yaml /content/learn/overview@it.yaml
+#: /content/learn/overview@ja.yaml /content/learn/overview@ko.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@tr.yaml /content/learn/overview@zh_CN.yaml
 msgid "An open source effort to improve the content ecosystem for everyone."
 msgstr ""
 
@@ -353,8 +356,8 @@ msgstr "O melhor da publicidade em uma Web mais rápida."
 msgid "Black Panther"
 msgstr ""
 
-#: /content/includes/latest.yaml /content/latest/blog-ads/_blueprint.yaml
-#: /content/latest/blog/_blueprint.yaml
+#: /content/includes/latest.yaml /content/includes/menu.yaml
+#: /content/latest/blog-ads/_blueprint.yaml /content/latest/blog/_blueprint.yaml
 msgid "Blog"
 msgstr "Blog"
 
@@ -375,10 +378,6 @@ msgstr ""
 msgid "Brand Guidelines"
 msgstr "Diretrizes de marca"
 
-#: /content/learn/who/amp-ads.yaml
-msgid "Build Your AMPHTML Ad Today"
-msgstr ""
-
 #: /content/includes/stories.yaml
 msgid "Build an AMP story"
 msgstr ""
@@ -394,6 +393,10 @@ msgstr ""
 #: /content/learn/who/amp-ads.yaml
 msgid "Build once, serve everywhere."
 msgstr "Crie uma vez, veicule em todos os lugares."
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Build your AMPHTML ad today"
+msgstr ""
 
 #: /content/learn/about/benefits.yaml
 msgid ""
@@ -530,6 +533,10 @@ msgstr "Criar uma página AMP com login"
 
 #: /content/docs/design/visual_story/_blueprint.yaml
 msgid "Create a visual AMP Story"
+msgstr ""
+
+#: /content/docs/ads/amphtml_ads/create_amphtml_ad/_blueprint.yaml
+msgid "Create an AMPHTML ad"
 msgstr ""
 
 #: /content/learn/who/ecommerce.yaml
@@ -722,10 +729,6 @@ msgstr ""
 msgid "Faster ads drive better&nbsp;performance"
 msgstr "Quanto mais rápidos os anúncios, melhor o desempenho"
 
-#: /content/docs/contribute/file-a-bug.md
-msgid "File a bug"
-msgstr "Comunicar um bug"
-
 #: /content/includes/home.yaml
 msgid "Flexibility and Results"
 msgstr "Flexibilidade e resultados"
@@ -761,17 +764,17 @@ msgstr "Entrar em contato"
 msgid "Get started building"
 msgstr "Primeiros passos para a criação"
 
-#: /content/learn/who/advertisers.yaml
+#: /content/includes/home.yaml /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
 msgstr "Primeiros passos com AMP"
+
+#: /content/includes/home.yaml
+msgid "Get the latest news and tips from our newsletter:"
+msgstr ""
 
 #: /content/docs/getting_started.md /content/docs/getting_started/_blueprint.yaml
 msgid "Getting Started"
 msgstr "Primeiros Passos"
-
-#: /content/docs/contribute/github.md
-msgid "GitHub"
-msgstr "GitHub"
 
 #: /content/learn/who/ecommerce.yaml
 msgid "Grab ready-made design templates."
@@ -919,10 +922,6 @@ msgstr "Saiba mais"
 msgid "Learn about AMP"
 msgstr "Conheça as AMP"
 
-#: /content/includes/home.yaml
-msgid "Learn how to build AMP pages and AMPHTML ads"
-msgstr ""
-
 #: /content/learn/who/advertisers.yaml
 msgid ""
 "Learn more about AMPHTML ads and building AMP pages for your campaigns and "
@@ -1010,14 +1009,18 @@ msgstr "Precisa de mais ajuda?"
 msgid "New AMP Roadshows."
 msgstr ""
 
-#: /content/pages/home.html:37 /content/pages/home.html:77
+#: /content/pages/home.html:37 /content/pages/home.html:81
 msgid "New Video"
 msgstr "Novo vídeo"
 
-#: /content/includes/menu.yaml /content/pages/home.html:37
-#: /content/pages/home.html:77 /views/amp-ads.html:406 /views/amp-ads.html:441
+#: /content/pages/home.html:37 /content/pages/home.html:81 /views/amp-ads.html:406
+#: /views/amp-ads.html:441
 msgid "News"
 msgstr "Notícias"
+
+#: /content/includes/menu.yaml
+msgid "Newsletter"
+msgstr ""
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
@@ -1297,6 +1300,10 @@ msgstr "Fortaleça seus negócios e mantenha o controle"
 #: /content/docs/design/responsive_amp/_blueprint.yaml
 msgid "Style & Layout"
 msgstr "Estilo e layout"
+
+#: /content/includes/home.yaml
+msgid "Subscribe"
+msgstr ""
 
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
@@ -1608,12 +1615,11 @@ msgid "What are AMPHTML ads?"
 msgstr ""
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pt_BR.yaml
-#: /content/learn/overview@ru.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@zh_CN.yaml
+#: /content/learn/overview@es.yaml /content/learn/overview@fr.yaml
+#: /content/learn/overview@id.yaml /content/learn/overview@it.yaml
+#: /content/learn/overview@ja.yaml /content/learn/overview@ko.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@tr.yaml /content/learn/overview@zh_CN.yaml
 msgid "What is AMP"
 msgstr "O que é o AMP"
 
@@ -1690,7 +1696,7 @@ msgstr ""
 msgid "Your browser doesn’t support HTML5 video"
 msgstr "Seu navegador não é compatível com vídeo em HTML5"
 
-#: /content/pages/home.html:61
+#: /content/pages/home.html:65
 msgid "or"
 msgstr "ou"
 
