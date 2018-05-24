@@ -39,10 +39,6 @@ Os estilos a seguir não são permitidos em páginas AMP:
       <td data-th="Banned style">Classe <code>-amp-</code> e nomes de tags <code>i-amp-</code></td>
       <td data-th="Description"> Nas folhas de estilo do autor, os nomes de classe não podem iniciar com a string <code>-amp-</code>. Estas strings são reservadas para uso interno no tempo de execução das AMP. A folha de estilo do usuário não pode fazer referência a seletores de CSS para classes <code>-amp-</code> e tags <code>i-amp</code>.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>behavior</code> e <code>-moz-binding</code></td>
-      <td data-th="Description">Estas propriedades não são permitidas por razões de segurança.</td>
-    </tr>
   </tbody>
 </table>
 

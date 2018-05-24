@@ -1,6 +1,5 @@
 ---
 $title: Sair
-$order: 2
 ---
 
 Assim como o botão de login, a presença do botão de saída depende do estado do componente `amp-access`:
@@ -23,6 +22,6 @@ Quando você clica no botão "Sair", é direcionado ao URL especificado na confi
 Assim como no caso do login, quando o servidor AMPByExample recebe uma solicitação de saída, ele usa o parâmetro de consulta do URL de retorno incluído automaticamente pela biblioteca AMP e faz o redirecionamento para ele, adicionando `#success=true`. Nesse momento, você volta à página inicial. O cookie AMPByExample criado anteriormente para a página de login (chamado de `ABE_LOGGED_IN`) é apagado.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/tutorials/login_requiring/summary.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/login_requiring/summary.html"><span class="arrow-next">Próxima</span></a>
 </div>

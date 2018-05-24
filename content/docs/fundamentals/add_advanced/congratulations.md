@@ -22,9 +22,9 @@ In this tutorial, you learned to:
 
 To further advance your AMP expertise, check out these resources:
 
-- [Create interactive AMP pages](/docs/tutorials/interactivity.html) tutorial : Learn how to use amp-bind to build interactive AMP pages
-- [Combine AMP with PWA](/docs/guides/pwa-amp.html): Learn how Progressive Web Apps and AMP pages complement each other
+- [Create interactive AMP pages](/docs/interaction_dynamic/interactivity.html) tutorial : Learn how to use amp-bind to build interactive AMP pages
+- [Combine AMP with PWA](/docs/integration/pwa-amp.html): Learn how Progressive Web Apps and AMP pages complement each other
 - [AMP Start](https://www.ampstart.com/): Style your pages with pre-styled templates and components
 - [AMP By Example](https://ampbyexample.com/): Learn from live samples and demos
 - [AMP Channel on YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Learn by watching AMP-specific videos
-- [AMP components](https://www.ampproject.org/docs/reference/components): Get details on all of the AMP components
+- [AMP components](/docs/reference/components.html): Get details on all of the AMP components

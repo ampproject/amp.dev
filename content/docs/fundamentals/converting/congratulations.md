@@ -17,4 +17,4 @@ In this tutorial, you learned to:
 
 ## Next steps
 
-Continue your AMP learning by building more advanced features into your AMP page with the [Add advanced AMP features](/docs/tutorials/add_advanced.html) tutorial.
+Continue your AMP learning by building more advanced features into your AMP page with the [Add advanced AMP features](/docs/fundamentals/add_advanced.html) tutorial.

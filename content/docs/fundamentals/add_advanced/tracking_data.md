@@ -97,10 +97,10 @@ If you have a custom tracking platform that you want to integrate with, you can 
 {% endcall %}
 
 {% call callout('Tip', type='success') %}
-If you are interested in a simpler tracking system, you might want to take a look at [amp-pixel](/docs/reference/components/amp-pixel.html). If you only need to track pageviews, amp-pixel it is a lighter-weight solution than amp-analytics because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](/docs/guides/analytics/analytics_basics.html).
+If you are interested in a simpler tracking system, you might want to take a look at [amp-pixel](/docs/reference/components/amp-pixel.html). If you only need to track pageviews, amp-pixel it is a lighter-weight solution than amp-analytics because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](/docs/analytics/analytics_basics.html).
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/add_advanced/adding_carousels.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/add_advanced/navigating.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-next">Next</span></a>
 </div>

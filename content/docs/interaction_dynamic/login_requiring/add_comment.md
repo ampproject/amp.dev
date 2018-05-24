@@ -23,7 +23,7 @@ Here's an example of JSON response:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-The form component will simply display those values inside the page using the [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) template:
+The form component will simply display those values inside the page using the [amp-mustache](/docs/reference/components/amp-mustache) template:
 
 [sourcecode:html]
 <div submit-success>
@@ -62,6 +62,6 @@ When you add a comment and click the submit button, you should now see something
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/login_requiring/login.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/login_requiring/logout.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/interaction_dynamic/login_requiring/logout.html"><span class="arrow-next">Next</span></a>
 </div>

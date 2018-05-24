@@ -1,9 +1,7 @@
 ---
 $title: ログインが必要な AMP ページを作成する
-$order: 4
-numbered: 1
 ---
-ページ上でユーザーが行う操作（たとえば「コメントを投稿する」）は、ログインフローを使って条件付けできます。AMP ページにログインフローを実装するには、[amp-access](https://www.ampproject.org/ja/docs/reference/components/amp-access) コンポーネントと [amp-form](https://www.ampproject.org/ja/docs/reference/components/amp-form) コンポーネントを組み合わせて使用します。
+ページ上でユーザーが行う操作（たとえば「コメントを投稿する」）は、ログインフローを使って条件付けできます。AMP ページにログインフローを実装するには、[amp-access](/ja/docs/reference/components/amp-access) コンポーネントと [amp-form](/ja/docs/reference/components/amp-form) コンポーネントを組み合わせて使用します。
 {% call callout('ヒント', type='success') %}
 実装のサンプルを用意しています。[ampbyexample.com](https://ampbyexample.com) の[コメント欄の例](https://ampbyexample.com/samples_templates/comment_section/)をご覧ください。
 {% endcall %}
@@ -13,5 +11,5 @@ numbered: 1
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/ja/docs/tutorials/login_requiring/login.html"><span class="arrow-next">始める</span></a>
+<a class="button" href="/ja/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-next">始める</span></a>
 </div>

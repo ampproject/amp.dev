@@ -207,6 +207,10 @@ msgstr ""
 msgid "AMPHTML Ads"
 msgstr ""
 
+#: /content/docs/ads/amphtml_ads/_blueprint.yaml
+msgid "AMPHTML ads"
+msgstr ""
+
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMPHTML ads are 6x faster than regular ads on AMP pages, making them more "
@@ -280,7 +284,7 @@ msgstr "広告と分析 - AMP コンポーネント"
 
 #: /content/reference/components/_blueprint.yaml
 msgid "Ads & analytics"
-msgstr ""
+msgstr "広告と分析"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Adtech success stories"
@@ -294,9 +298,9 @@ msgstr "広告主"
 msgid "Advertisers:<br>Drive campaign ROI"
 msgstr "広告主:<br>キャンペーンの投資収益率を高める"
 
-#: /content/docs/ads_analytics.md /content/docs/ads_analytics/_blueprint.yaml
-msgid "Advertising & Analytics"
-msgstr "広告と分析"
+#: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
+msgid "Advertising"
+msgstr "広告"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -311,15 +315,15 @@ msgid "Amplify your impact"
 msgstr "広告の効果をさらに高める"
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pt_BR.yaml
-#: /content/learn/overview@ru.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@zh_CN.yaml
+#: /content/learn/overview@es.yaml /content/learn/overview@fr.yaml
+#: /content/learn/overview@id.yaml /content/learn/overview@it.yaml
+#: /content/learn/overview@ja.yaml /content/learn/overview@ko.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@tr.yaml /content/learn/overview@zh_CN.yaml
 msgid "An open source effort to improve the content ecosystem for everyone."
 msgstr ""
 
+#: /content/docs/analytics.md /content/docs/analytics/_blueprint.yaml
 #: /content/includes/who.yaml
 msgid "Analytics"
 msgstr "分析"
@@ -344,8 +348,8 @@ msgstr "ウェブの高速化で広告効果もアップ"
 msgid "Black Panther"
 msgstr ""
 
-#: /content/includes/latest.yaml /content/latest/blog-ads/_blueprint.yaml
-#: /content/latest/blog/_blueprint.yaml
+#: /content/includes/latest.yaml /content/includes/menu.yaml
+#: /content/latest/blog-ads/_blueprint.yaml /content/latest/blog/_blueprint.yaml
 msgid "Blog"
 msgstr "ブログ"
 
@@ -366,10 +370,6 @@ msgstr ""
 msgid "Brand Guidelines"
 msgstr "ブランド ガイドライン"
 
-#: /content/learn/who/amp-ads.yaml
-msgid "Build Your AMPHTML Ad Today"
-msgstr ""
-
 #: /content/includes/stories.yaml
 msgid "Build an AMP story"
 msgstr ""
@@ -385,6 +385,10 @@ msgstr ""
 #: /content/learn/who/amp-ads.yaml
 msgid "Build once, serve everywhere."
 msgstr "一度作成すれば、どこにでも配信できる。"
+
+#: /content/learn/who/amp-ads.yaml
+msgid "Build your AMPHTML ad today"
+msgstr ""
 
 #: /content/learn/about/benefits.yaml
 msgid ""
@@ -519,6 +523,10 @@ msgstr "ログインが必要な AMP ページを作成する"
 
 #: /content/docs/design/visual_story/_blueprint.yaml
 msgid "Create a visual AMP Story"
+msgstr ""
+
+#: /content/docs/ads/amphtml_ads/create_amphtml_ad/_blueprint.yaml
+msgid "Create an AMPHTML ad"
 msgstr ""
 
 #: /content/learn/who/ecommerce.yaml
@@ -702,10 +710,6 @@ msgstr ""
 msgid "Faster ads drive better&nbsp;performance"
 msgstr "広告表示の高速化により掲載結果の向上を促す"
 
-#: /content/docs/contribute/file-a-bug.md
-msgid "File a bug"
-msgstr "バグ報告"
-
 #: /content/includes/home.yaml
 msgid "Flexibility and Results"
 msgstr "柔軟性と成果の獲得"
@@ -741,17 +745,17 @@ msgstr "サポート情報"
 msgid "Get started building"
 msgstr "作成を開始する"
 
-#: /content/learn/who/advertisers.yaml
+#: /content/includes/home.yaml /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
 msgstr "AMP を使ってみましょう"
+
+#: /content/includes/home.yaml
+msgid "Get the latest news and tips from our newsletter:"
+msgstr ""
 
 #: /content/docs/getting_started.md /content/docs/getting_started/_blueprint.yaml
 msgid "Getting Started"
 msgstr "はじめに"
-
-#: /content/docs/contribute/github.md
-msgid "GitHub"
-msgstr "GitHub"
 
 #: /content/learn/who/ecommerce.yaml
 msgid "Grab ready-made design templates."
@@ -897,10 +901,6 @@ msgstr "詳細"
 msgid "Learn about AMP"
 msgstr "AMP の詳細"
 
-#: /content/includes/home.yaml
-msgid "Learn how to build AMP pages and AMPHTML ads"
-msgstr ""
-
 #: /content/learn/who/advertisers.yaml
 msgid ""
 "Learn more about AMPHTML ads and building AMP pages for your campaigns and "
@@ -919,10 +919,6 @@ msgstr "AMP の利用者について"
 #: /content/learn/who/amp-ads.yaml
 msgid "Lighter ads lead to better ad&nbsp;experiences"
 msgstr "広告の軽量化が広告効果のアップにつながる"
-
-#: /content/docs/integration/supported_integrations.md
-msgid "List of supported partners & integrations"
-msgstr ""
 
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
@@ -992,14 +988,18 @@ msgstr "ご不明な点がある場合"
 msgid "New AMP Roadshows."
 msgstr ""
 
-#: /content/pages/home.html:37 /content/pages/home.html:77
+#: /content/pages/home.html:37 /content/pages/home.html:81
 msgid "New Video"
 msgstr "新着動画"
 
-#: /content/includes/menu.yaml /content/pages/home.html:37
-#: /content/pages/home.html:77 /views/amp-ads.html:406 /views/amp-ads.html:441
+#: /content/pages/home.html:37 /content/pages/home.html:81 /views/amp-ads.html:406
+#: /views/amp-ads.html:441
 msgid "News"
 msgstr "ニュース"
+
+#: /content/includes/menu.yaml
+msgid "Newsletter"
+msgstr ""
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
@@ -1271,6 +1271,10 @@ msgstr "ビジネスを強化しながら重要な指標を管理できる"
 msgid "Style & Layout"
 msgstr "スタイルとレイアウト"
 
+#: /content/includes/home.yaml
+msgid "Subscribe"
+msgstr ""
+
 #: /content/learn/case-studies.html
 #: /content/learn/case-studies/category/advertisers.md
 #: /content/learn/case-studies/category/ecommerce.md
@@ -1303,6 +1307,10 @@ msgstr "サポートブラウザ"
 #: /content/support/faqs/supported-platforms@zh_CN.md
 msgid "Supported Platforms, Vendors and Partners"
 msgstr "AMP に対応しているプラットフォーム、ベンダー、パートナー"
+
+#: /content/docs/integration/supported_integrations.md
+msgid "Supported partners & integrations"
+msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Supports rich visuals with native video and image performance"
@@ -1552,12 +1560,11 @@ msgid "What are AMPHTML ads?"
 msgstr ""
 
 #: /content/learn/overview.yaml /content/learn/overview@ar.yaml
-#: /content/learn/overview@de.yaml /content/learn/overview@es.yaml
-#: /content/learn/overview@fr.yaml /content/learn/overview@id.yaml
-#: /content/learn/overview@it.yaml /content/learn/overview@ja.yaml
-#: /content/learn/overview@ko.yaml /content/learn/overview@pt_BR.yaml
-#: /content/learn/overview@ru.yaml /content/learn/overview@tr.yaml
-#: /content/learn/overview@zh_CN.yaml
+#: /content/learn/overview@es.yaml /content/learn/overview@fr.yaml
+#: /content/learn/overview@id.yaml /content/learn/overview@it.yaml
+#: /content/learn/overview@ja.yaml /content/learn/overview@ko.yaml
+#: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
+#: /content/learn/overview@tr.yaml /content/learn/overview@zh_CN.yaml
 msgid "What is AMP"
 msgstr "AMP とは"
 
@@ -1633,7 +1640,7 @@ msgstr ""
 msgid "Your browser doesn’t support HTML5 video"
 msgstr "お使いのブラウザは HTML5 動画に対応していません"
 
-#: /content/pages/home.html:61
+#: /content/pages/home.html:65
 msgid "or"
 msgstr "または"
 

@@ -14,7 +14,7 @@ AMP’s component system allows you to quickly build efficient and responsive fe
 
 - **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released.  Learn more in [Experimental features](/docs/reference/experimental.html).
 
-Our sample already uses a built-in component, [amp-img](/docs/reference/components/amp-img.html), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"](/docs/tutorials/converting.html) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
+Our sample already uses a built-in component, [amp-img](/docs/reference/components/amp-img.html), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"](/docs/fundamentals/converting.html) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
 
 ## Monetize with ads
 
@@ -46,7 +46,17 @@ The `data-slot` attribute is more unique. In `amp-ad`, any attributes that start
 </amp-ad>
 ```
 
-Try **adding** both of the above examples into your article just after the `<header>` tag. **Refresh** the page and you should see two test ads:
+Try **adding** both of the above examples into your article just after the `<header>` tag. 
+
+Remember, not all components are included in the core AMP library JavaScript file. We need to include an additional JavaScript request for the ad component.
+
+**Add** the following script to the `<head>` tag:
+
+```html
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+```
+
+**Refresh** the page and you should see two test ads:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Test ads') }}
 
@@ -79,7 +89,7 @@ The two `amp-ad`s below provide an example of the flexibility `amp-ad` provides 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
 {% call callout('Note', type='note') %}
-You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html).
+You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks](/docs/fundamentals/responsive/placeholders.html).
 {% endcall %}
 
 {% call callout('Read on', type='read') %}
@@ -138,7 +148,7 @@ As with the other elements on the page, we specified the `width` and `height` of
 To learn more about embedding YouTube videos, read the [amp-youtube](/docs/reference/components/amp-youtube.html) component documentation. For even more video and media components, check out the [list of media AMP components](/docs/reference/components.html#media).
 
 {% call callout('Tip', type='success') %}
-Use the [`fallback`](/docs/guides/responsive/placeholders.html#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
+Use the [`fallback`](/docs/design/responsive/placeholders.html#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
 {% endcall %}
 
 ## Display a Tweet
@@ -219,6 +229,6 @@ You can learn more about `amp-fit-text` from [AMP by Example's live demo](https:
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/add_advanced/review_code.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/add_advanced/adding_carousels.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">Next</span></a>
 </div>

@@ -1,6 +1,5 @@
 ---
 $title: Iniciar sesión
-$order: 0
 ---
 
 Supongamos que la primera vez que accedes a una página ves dos comentarios y un botón para iniciar sesión, tal como se muestra a continuación:
@@ -48,7 +47,7 @@ Si nos volvemos a fijar en el código HTML de dicho botón, podemos ver que se u
 
 [/sourcecode]
 
-{% call callout('Nota', type='success') %}
+{% call callout('Nota', type='note') %}
 En el nodo "login", se pueden añadir varias URL; en este caso, definimos una en `sign-in` y, más adelante, haremos lo mismo con `sign-out`.
 {% endcall %}
 
@@ -70,10 +69,10 @@ A grandes rasgos, las funciones de ambos elementos son las siguientes:
 - El servidor debe organizar la respuesta cuando el usuario haga clic en el botón para iniciar sesión.
 
 {% call callout('Consejo', type='success') %}
-Para obtener una explicación más detallada sobre este tema, consulta la [documentación de amp-access](https://www.ampproject.org/es/docs/reference/components/amp-access#login-flow).
+Para obtener una explicación más detallada sobre este tema, consulta la [documentación de amp-access](/es/docs/reference/components/amp-access#login-flow).
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/login_requiring.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/login_requiring/add_comment.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="/es/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-next">Siguiente</span></a>
 </div>

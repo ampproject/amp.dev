@@ -1,6 +1,5 @@
 ---
 $title: コメントを追加する
-$order: 1
 ---
 
 <amp-img src="/static/img/comment.png" alt="コメントの追加" height="325" width="300"></amp-img>
@@ -23,7 +22,7 @@ JSON レスポンスの例を次に示します。
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-フォーム コンポーネントは、[amp-mustache](https://www.ampproject.org/ja/docs/reference/components/amp-mustache) テンプレートを使用して、ページ内に値を表示します。
+フォーム コンポーネントは、[amp-mustache](/ja/docs/reference/components/amp-mustache) テンプレートを使用して、ページ内に値を表示します。
 
 [sourcecode:html]
 <div submit-success>
@@ -62,6 +61,6 @@ JSON レスポンスの例を次に示します。
 <amp-img src="/static/img/logout-button.png" alt="コメントが追加されました" height="352" width="300"></amp-img>
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/login_requiring/login.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/login_requiring/logout.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/interaction_dynamic/login_requiring/logout.html"><span class="arrow-next">次へ</span></a>
 </div>

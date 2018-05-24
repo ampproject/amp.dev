@@ -1,12 +1,10 @@
 ---
 $title: 로그인이 필요한 AMP 페이지 만들기
-$order: 4
-numbered: 1
 ---
 
 댓글 남기기 같은 사용자의 페이지 인터랙션은 로그인 흐름이 필요할 수 있습니다
-[amp-form](https://www.ampproject.org/ko/docs/reference/components/amp-form) 컴포넌트와 [amp-access](https://www.ampproject.org/ko/docs/reference/components/amp-access) 컴포넌트를 함께 사용하여 AMP로 로그인 흐름을 구현할 수 있습니다.
-{% call callout('Tip', type='success') %}
+[amp-form](/ko/docs/reference/components/amp-form) 컴포넌트와 [amp-access](/ko/docs/reference/components/amp-access) 컴포넌트를 함께 사용하여 AMP로 로그인 흐름을 구현할 수 있습니다.
+{% call callout('도움말', type='success') %}
 구현 샘플을 보고싶다면,[ampbyexample.com](https://ampbyexample.com)의 [댓글 영역 예제](https://ampbyexample.com/samples_templates/comment_section/)을 방문하세요.
 {% endcall %}
 
@@ -16,5 +14,5 @@ numbered: 1
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/ko/docs/tutorials/login_requiring/login.html"><span class="arrow-next">시작하기</span></a>
+<a class="button" href="/ko/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-next">시작하기</span></a>
 </div>

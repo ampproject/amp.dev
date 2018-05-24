@@ -3,6 +3,8 @@ $title: Memvalidasi Halaman AMP
 ---
 [TOC]
 
+{{ youtube('npum8JsITQE', 480, 270, caption='Tonton video kami tentang berbagai opsi validasi.') }}
+
 Kekuatan utama AMP bukan hanya membuat halaman cepat dimuat, tetapi melakukannya dengan cara yang dapat *divalidasi*. Dengan cara ini, pihak ketiga seperti Twitter, Instagram, atau Google Penelusuran dapat merasa puas dalam menayangkan halaman AMP kepada pembaca dengan cara yang semakin menarik.
 
 ## Bagaimana saya mengetahui apakah halaman saya merupakan AMP yang valid?

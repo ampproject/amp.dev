@@ -68,14 +68,14 @@ Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan t
 </amp-iframe>
 </div>
 
-{% call callout('Baca juga', type='success') %}
+{% call callout('Baca juga', type='read') %}
  Pelajari lebih lanjut tentang [teknik tata letak lanjutan](/id/docs/guides/responsive/control_layout.html).{% endcall %}
 
 ### Perilaku dan placeholder
 
 Waktu proses HTML AMP dapat mengelola konten gambar secara efektif, dengan memilih antara pemuatan konten yang diprioritaskan atau yang mengalami penundaan berdasarkan pada posisi viewport, sumber daya sistem, bandwidth koneksi, atau faktor lainnya.
 
-{% call callout('Baca juga', type='success') %}
+{% call callout('Baca juga', type='read') %}
  Pelajari cara [memberikan penggantian dan placeholder untuk gambar](/id/docs/guides/responsive/placeholders.html)
 .{% endcall %}
 

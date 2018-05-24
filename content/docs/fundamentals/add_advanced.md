@@ -22,9 +22,9 @@ In this tutorial, you'll build on your understanding of AMP foundations and lear
 A news article page that conforms to AMP specifications and incorporates advertising, analytics, embedded video, embedded social media, carousels, and a site navigation menu.
 
 {% call callout('Note', type='note') %}
-This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"](/docs/tutorials/converting.html) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"](/docs/tutorials/converting.html)  tutorial.
+This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"](/docs/fundamentals/converting.html) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"](/docs/fundamentals/converting.html)  tutorial.
 {% endcall %}
 
 <div class="start-button">
-<a class="button" href="/docs/tutorials/add_advanced/setting_up.html"><span class="arrow-next">Get started</span></a>
+<a class="button" href="/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-next">Get started</span></a>
 </div>

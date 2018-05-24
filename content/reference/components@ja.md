@@ -116,3 +116,4 @@ AMP HTML ライブラリで提供されるコンポーネントは、次のよ�
 | [`amp-social-share`](components/amp-social-share.html) | ソーシャル共有ボタンを表示します。|
 | [`amp-twitter`](components/amp-twitter.html) | Twitter のツイートを表示します。|
 | [`amp-vine`](components/amp-vine.html) | Vine の「Simple」スタイルの埋め込みを表示します。|
+| [`amp-vk`](components/amp-vk.html) |  [VK](https://vk.com/) の投稿または投票ウィジェットを埋め込む。|

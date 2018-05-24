@@ -22,7 +22,7 @@ start_cards:
 
   - name: Starting from scratch?
     desc: Create your first AMP page with this beginner tutorial.
-    link: tutorials/create.html
+    link: getting_started/create.html
 
   - name: Demos & samples
     desc: Learn by doing with AMP By Example's samples and live demos.
@@ -33,6 +33,10 @@ start_cards:
     link: https://ampstart.com/
 
 video_cards:
+  - name: Responsive design in AMP
+    link: https://www.youtube.com/watch?v=XDvbJ2apaiA
+    videoid: XDvbJ2apaiA
+
   - name: Use AMP HTML with Your Existing Site
     link: https://www.youtube.com/watch?v=OO9oKhs80aI
     videoid: OO9oKhs80aI
@@ -64,22 +68,22 @@ doc_cards:
 
   - name: AMPHTML ads
     desc: Learn about AMPHTML ads and building AMP pages for your campaigns and website.
-    link: https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md
+    link: ads/amphtml_ads.html
 
   - name: Analytics
     desc: Integrate analytics into your AMP pages to measure activity and user engagement.
-    link: guides/analytics_amp.html
+    link: analytics/analytics_amp.html
 
   - name: CORS in AMP
     desc: Learn why you need CORS for dynamic AMP content.
-    link: guides/amp-cors-requests.html
+    link: fundamentals/amp-cors-requests.html
 
   - name: PWA & AMP
     desc: Learn how Progressive Web Apps and AMP pages can work great together.
-    link: guides/pwa-amp.html
+    link: integration/pwa-amp.html
 
   - name: Responsive AMP
     desc: Learn how to easily create responsive web pages in AMP.
-    link: guides/responsive/responsive_design.html
+    link: design/responsive/responsive_design.html
 
 ---

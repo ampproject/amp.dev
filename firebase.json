@@ -67,6 +67,16 @@
         "type": 301
       },
       {
+        "source": "/docs/ads",
+        "destination": "/docs/ads/introduction_ads",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads",
+        "destination": "/:lang/docs/ads/introduction_ads",
+        "type": 301
+      },
+      {
         "source": "/:lang/docs/get_started/create",
         "destination": "/:lang/docs/getting_started/create.html",
         "type": 301
@@ -169,7 +179,17 @@
       },
       {
         "source": "/docs/guides/author-develop/ads_on_amp?(.html)",
-        "destination": "/docs/ads_analytics/ads_on_amp.html",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/ads_analytics/ads_on_amp?(.html)",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/ads/ads_on_amp?(.html)",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },
       {
@@ -655,6 +675,16 @@
         "type": 301
       },
       {
+        "source": "/io",
+        "destination": "https://www.ampproject.org/latest/blog/google-io-2018/",
+        "type": 301
+      },
+      {
+        "source": "/IO",
+        "destination": "https://www.ampproject.org/latest/blog/google-io-2018/",
+        "type": 301
+      },
+      {
         "source": "/contact",
         "destination": "https://github.com/ampproject/amphtml/issues/new",
         "type": 301
@@ -716,17 +746,42 @@
       },      
       {
         "source": "/docs/guides/ads_on_amp?(.html)",
-        "destination": "/docs/ads_analytics/ads_on_amp.html",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      },  
+      {
+        "source": "/docs/ads_analytics/ads_on_amp?(.html)",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },      
       {
         "source": "/docs/guides/ads/ads_getting_started?(.html)",
-        "destination": "/docs/ads_analytics/ads_getting_started.html",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
-      },      
+      },
+      {
+        "source": "/docs/ads_analytics/ads_getting_started?(.html)",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/ads/ads_getting_started?(.html)",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      },          
       {
         "source": "/docs/guides/ads/ads_tips?(.html)",
-        "destination": "/docs/ads_analytics/ads_tips.html",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/ddocs/ads_analytics/ads_tips?(.html)",
+        "destination": "/docs/ads/monetization.html",
+        "type": 301
+      }, 
+      {
+        "source": "/ddocs/ads/ads_tips?(.html)",
+        "destination": "/docs/ads/monetization.html",
         "type": 301
       },      
       {
@@ -751,27 +806,62 @@
       },      
       {
         "source": "/docs/guides/analytics_amp?(.html)",
-        "destination": "/docs/ads_analytics/analytics_amp.html",
+        "destination": "/docs/analytics/analytics_amp.html",
+        "type": 301
+      },  
+      {
+        "source": "/docs/ads_analytics/analytics_amp?(.html)",
+        "destination": "/docs/analytics/analytics_amp.html",
         "type": 301
       },      
       {
         "source": "/docs/guides/analytics/analytics_basics?(.html)",
-        "destination": "/docs/ads_analytics/analytics_basics.html",
+        "destination": "/docs/analytics/analytics_basics.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/ads_analytics/analytics_basics?(.html)",
+        "destination": "/docs/analytics/analytics_basics.html",
         "type": 301
       },      
       {
         "source": "/docs/guides/analytics/analytics-vendors?(.html)",
-        "destination": "/docs/ads_analytics/analytics-vendors.html",
+        "destination": "/docs/analytics/analytics-vendors.html",
         "type": 301
-      },      
+      }, 
+      {
+        "source": "/docs/ads_analytics/ads-vendors?(.html)",
+        "destination": "/docs/ads/ads-vendors.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/ads_analytics/integration-guide?(.html)",
+        "destination": "/docs/ads/integration-guide.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/ads_analytics/analytics-vendors?(.html)",
+        "destination": "/docs/analytics/analytics-vendors.html",
+        "type": 301
+      },   
       {
         "source": "/docs/guides/analytics/deep_dive_analytics?(.html)",
-        "destination": "/docs/ads_analytics/deep_dive_analytics.html",
+        "destination": "/docs/analytics/deep_dive_analytics.html",
         "type": 301
-      },      
+      },
+      {
+        "source": "/docs/ads_analytics/deep_dive_analytics?(.html)",
+        "destination": "/docs/analytics/deep_dive_analytics.html",
+        "type": 301
+      },       
       {
         "source": "/docs/guides/analytics/use_cases?(.html)",
-        "destination": "/docs/ads_analytics/use_cases.html",
+        "destination": "/docs/analytics/use_cases.html",
+        "type": 301
+      }, 
+      {
+        "source": "/docs/ads_analytics/use_cases?(.html)",
+        "destination": "/docs/analytics/use_cases.html",
         "type": 301
       },      
       {
@@ -800,7 +890,7 @@
         "type": 301
       },      
       {
-        "source": "/docs/guides/pwa-amp.html?(.html)",
+        "source": "/docs/guides/pwa-amp?(.html)",
         "destination": "/docs/integration/pwa-amp.html",
         "type": 301
       },      
@@ -1120,17 +1210,47 @@
       },
       {
         "source": "/:lang/docs/guides/ads_on_amp",
-        "destination": "/:lang/docs/ads_analytics/ads_on_amp.html",
+        "destination": "/:lang/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/ads_on_amp",
+        "destination": "/:lang/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads/ads_on_amp",
+        "destination": "/:lang/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/guides/ads/ads_getting_started",
-        "destination": "/:lang/docs/ads_analytics/ads_getting_started.html",
+        "destination": "/:lang/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/ads_getting_started",
+        "destination": "/:lang/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads/ads_getting_started",
+        "destination": "/:lang/docs/ads/monetization.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/guides/ads/ads_tips",
-        "destination": "/:lang/docs/ads_analytics/ads_tips.html",
+        "destination": "/:lang/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/ads_tips",
+        "destination": "/:lang/docs/ads/monetization.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads/ads_tips",
+        "destination": "/:lang/docs/ads/monetization.html",
         "type": 301
       },
       {
@@ -1140,27 +1260,62 @@
       },
       {
         "source": "/:lang/docs/guides/analytics_amp",
-        "destination": "/:lang/docs/ads_analytics/analytics_amp.html",
+        "destination": "/:lang/docs/analytics/analytics_amp.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/analytics_amp",
+        "destination": "/:lang/docs/analytics/analytics_amp.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/guides/analytics/analytics_basics",
-        "destination": "/:lang/docs/ads_analytics/analytics_basics.html",
+        "destination": "/:lang/docs/analytics/analytics_basics.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/analytics_basics",
+        "destination": "/:lang/docs/analytics/analytics_basics.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/guides/analytics/analytics-vendors",
-        "destination": "/:lang/docs/ads_analytics/analytics-vendors.html",
+        "destination": "/:lang/docs/analytics/analytics-vendors.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/analytics-vendors",
+        "destination": "/:lang/docs/analytics/analytics-vendors.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/ads-vendors",
+        "destination": "/:lang/docs/ads/ads-vendors.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/integration-guide",
+        "destination": "/:lang/docs/ads/integration-guide.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/guides/analytics/deep_dive_analytics",
-        "destination": "/:lang/docs/ads_analytics/deep_dive_analytics.html",
+        "destination": "/:lang/docs/analytics/deep_dive_analytics.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/deep_dive_analytics",
+        "destination": "/:lang/docs/analytics/deep_dive_analytics.html",
         "type": 301
       },
       {
         "source": "/:lang/docs/guides/analytics/use_cases",
-        "destination": "/:lang/docs/ads_analytics/use_cases.html",
+        "destination": "/:lang/docs/analytics/use_cases.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads_analytics/use_cases",
+        "destination": "/:lang/docs/analytics/use_cases.html",
         "type": 301
       },
       {

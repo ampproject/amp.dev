@@ -36,6 +36,10 @@
     letter-spacing: 0px;
   }
 
+  .noshowtoc {
+    display: none;
+  }
+
   .button {
     &:before {
       display: none;
@@ -126,6 +130,31 @@
   }
 }
 
+
+.ads-container {
+  margin-top: 40px;
+
+  ol.item-container {
+    margin-left: 0px;
+  }
+}
+
+.item-container {
+  column-count: 4;
+  column-gap: $grid-gutters;
+  list-style: none;
+
+  .item {
+    padding: 5px 0;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    -o-column-break-inside: avoid;
+    -ms-column-break-inside: avoid;
+    column-break-inside: avoid;
+  }
+}
+
+
 @include min-screen($toc-breakpoint) {
   .post.has-toc {
     .post-title,
@@ -152,6 +181,10 @@
     }
   }
 
+  .item-container {
+    column-count: 3;
+  }
+
   .rtl {
     .post.has-toc {
       .post-title,
@@ -167,6 +200,9 @@
   .post-content {
     margin: 0 15px;
   }
+  .item-container {
+    column-count: 3;
+  }
 }
 
 @include max-screen($mobile-breakpoint) {
@@ -174,4 +210,8 @@
   .post-content {
     margin: 0;
   }
+  .item-container {
+    column-count: 3;
+  }
 }
+

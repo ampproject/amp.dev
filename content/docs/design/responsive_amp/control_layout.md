@@ -69,7 +69,7 @@ The following values can be used in the `layout` attribute:
     <tr>
       <td data-th="Layout type"><code>responsive</code></td>
       <td data-th="Description">Yes</td>
-      <td data-th="Behavior">Element sized to the width of its container element and resizes its height automatically to the aspect ratio given by width and height attributes. This layout works very well for most of AMP elements, including <a href="/docs/reference/components/amp-img.html"><code>amp-img</code></a>, <a href="/docs/reference/components/amp-video.html"><code>amp-video</code></a>. Available space depends on the parent element and can also be customized using <code>max-width</code> CSS.</td>
+      <td data-th="Behavior">Element sized to the width of its container element and resizes its height automatically to the aspect ratio given by width and height attributes. This layout works very well for most of AMP elements, including <a href="/docs/reference/components/amp-img.html"><code>amp-img</code></a>, <a href="/docs/reference/components/amp-video.html"><code>amp-video</code></a>. Available space depends on the parent element and can also be customized using <code>max-width</code> CSS.<p><strong>Note</strong>: Elements with <code>"layout=responsive"</code> have no intrinsic size. The size of the element is determined from its container element. To ensure your AMP element displays, you must specify a width and height for the  containing element. Do not specify <code>"display:table"</code> on the containing element as this overrides the display of the AMP element, rendering the AMP element invisible.</p></td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
@@ -79,7 +79,7 @@ The following values can be used in the `layout` attribute:
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
       <td data-th="Description">No</td>
-      <td data-th="Behavior">Element takes the space available to it, both width and height. In other words, the layout of a fill element matches its parent.</td>
+      <td data-th="Behavior">Element takes the space available to it, both width and height. In other words, the layout of a fill element matches its parent. For an element to fill its parent container, ensure the parent container specifies `position:relative` or `position:absolute`.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>container</code></td>
@@ -90,6 +90,11 @@ The following values can be used in the `layout` attribute:
       <td data-th="Layout type"><code>flex-item</code></td>
       <td data-th="Description">No</td>
       <td data-th="Behavior">Element and other elements in its parent take the parent container's remaining space when the parent is a flexible container (i.e., <code>display:flex</code>). The element size is determined by the parent element and the number of other elements inside the parent according to the <code>display:flex</code> CSS layout.</td>
+    </tr>
+    <tr>
+      <td data-th="Layout type"><code>intrinsic</code></td>
+      <td data-th="Description">Yes</td>
+      <td data-th="Behavior">Element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes. This layout works very well for most AMP elements, including <a href="/docs/reference/components/amp-img.html"><code>amp-img</code></a>, <a href="/docs/reference/components/amp-video.html"><code>amp-video</code></a>, etc.  The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout renders as 0x0 and an <code>intrinsic</code> layout inflates to the smaller of its natural size or any CSS constraint. </td>
     </tr>
   </tbody>
 </table>

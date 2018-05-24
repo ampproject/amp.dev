@@ -10,7 +10,7 @@ $title: 将您的技术与 AMP 集成
 
 
 ## 1. 添加对 amp-analytics 扩展组件的支持
-AMP 分析可让您根据自己配置的触发条件将事件发送回服务器。我们编写了一份[分析集成指南](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)来帮助您着手使用这款组件。
+AMP 分析可让您根据自己配置的触发条件将事件发送回服务器。我们编写了一份[分析集成指南](/zh_cn/docs/analytics/integrating-analytics.html)来帮助您着手使用这款组件。
 
 如果您只是需要向跟踪网址中添加包含动态参数的跟踪像素，请查看 [amp-pixel](/zh_cn/docs/reference/components/amp-pixel.html)。请务必在您的支持页面上阐明相关用法，以供可能需要将您的技术和 AMP 结合使用的开发者参考。
 
@@ -19,7 +19,7 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 ## 2. 使用 amp-ad 扩展组件
 
-amp-ad 扩展组件专用于在 AMP 网页上投放展示广告。目前已有超过 90 家广告技术提供商添加了对 AMP 的支持。要开始使用这款组件，请先通过阅读[开发概览](https://github.com/ampproject/amphtml/tree/master/ads#overview)或转到[开发者指南](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)了解如何添加对 amp-ad 扩展组件的支持。另外，您可能会发现这些[集成指南](https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md)比较有用，具体取决于贵公司提供的广告技术。
+amp-ad 扩展组件专用于在 AMP 网页上投放展示广告。目前已有超过 90 家广告技术提供商添加了对 AMP 的支持。要开始使用这款组件，请先通过阅读[开发概览](https://github.com/ampproject/amphtml/tree/master/ads#overview)或转到[开发者指南](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)了解如何添加对 amp-ad 扩展组件的支持。另外，您可能会发现这些[集成指南](/zh_cn/docs/ads/integration-guide.html)比较有用，具体取决于贵公司提供的广告技术。
 
 目前已有超过 90 家广告技术提供商添加了对广告相关功能（如 amp-ad）的支持。敬请查看广告网络 [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) 的一个[提取请求示例](https://github.com/ampproject/amphtml/pull/2299)。
 
@@ -35,7 +35,7 @@ amp-ad 扩展组件专用于在 AMP 网页上投放展示广告。目前已有�
 
 ## 5. 使用 amp-iframe
 
-等一下 - 还有第 5 种方法？嗯，确实有，但我们建议您仅在万不得已时才使用该方法。如果以上方法都不符合您的需求，您可以使用通用的 amp-iframe 标记来允许发布商嵌入您的内容，但由于该方法有几项与性能和用户体验相关的缺陷（详情请见[此处](/zh_cn/docs/reference/components/amp-iframe#guideline:-prefer-specific-amp-components-to-amp-iframe)），这样做会带来不少弊端。
+等一下 - 还有第 5 种方法？嗯，确实有，但我们建议您仅在万不得已时才使用该方法。如果以上方法都不符合您的需求，您可以使用通用的 amp-iframe 标记来允许发布商嵌入您的内容，但由于该方法有几项与性能和用户体验相关的缺陷（详情请见[此处](/zh_cn/docs/reference/components/amp-iframe.html#guideline:-prefer-specific-amp-components-to-amp-iframe)），这样做会带来不少弊端。
 
 ## 总结
 

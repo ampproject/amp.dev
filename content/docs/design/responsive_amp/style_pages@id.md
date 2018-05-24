@@ -40,10 +40,6 @@ Gaya berikut tidak diizinkan di halaman AMP:
       <td data-th="Banned style">Nama kelas <code>-amp-</code> dan tag<code> i-amp-</code> tag names</td>
       <td data-th="Description">Nama kelas, di stylesheets penulis, tidak dapat dimulai dengan string<code> -amp-</code>. Ini dikhususkan untuk penggunaan internal oleh waktu proses AMP. Demikian pula, stylesheet pengguna tidak dapat mereferensikan pemilih CSS untuk kelas<code> -amp-</code> dan tag<code> i-amp</code>.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
-      <td data-th="Description">Properti ini tidak diizinkan karena alasan keamanan.</td>
-    </tr>
   </tbody>
 </table>
 

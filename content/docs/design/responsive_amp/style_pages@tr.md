@@ -95,14 +95,6 @@ Aşağıdaki stillere AMP sayfalarında izin verilmez:
       <td data-th="Banned style"><code>-amp-</code> sınıfı ve <code>i-amp-</code> etiket adları</td>
       <td data-th="Description">Yazar stil sayfalarındaki sınıf adları, <code>-amp-</code> dizesiyle başlayamaz. Bunlar, AMP çalışma zamanı tarafından dahili kullanım için ayrılmıştır. Kullanıcı stil sayfasının <code>-amp-</code> sınıflarına ve <code>i-amp</code> etiketlerine ilişkin CSS seçicilerini referans alamayacağı kuralına uyar.</td>
     </tr>
-    <tr>
-      <td data-th="Banned style"><code>behavior</code>, <code>-moz-binding</code></td>
-      <td data-th="Description">Bu özelliklere güvenlik nedeniyle izin verilmez.</td>
-    </tr>
-    <tr>
-      <td data-th="Banned style"><code>filter</code></td>
-      <td data-th="Description">Performansla ilgili kaygılardan dolayı kara listeye alınmıştır.</td>
-    </tr>
   </tbody>
 </table>
 

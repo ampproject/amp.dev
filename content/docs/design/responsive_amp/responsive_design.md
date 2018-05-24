@@ -4,6 +4,7 @@ $order: 5
 toc: true
 components:
   - iframe
+  - youtube
 ---
 [TOC]
 
@@ -16,6 +17,8 @@ In this guide, we'll show you how you can easily implement these responsive fund
 - [Controlling the viewport](#controlling-the-viewport)
 - [Creating a responsive layout](#creating-a-responsive-layout)
 - [Scaling media](#scaling-media-for-the-page)
+
+{{ youtube('XDvbJ2apaiA', 480, 270, caption='Learn about responsive design in AMP from this video.') }}
 
 ## Controlling the viewport
 
