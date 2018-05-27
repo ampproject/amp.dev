@@ -111,6 +111,34 @@ Tags are whitelisted, so there is no definitive list of all disallowed tags;
 however, the [AMP specification](/docs/reference/spec.html)
 broadly defines the set of disallowed tags.
 
+### Custom JavaScript is not allowed.
+
+<table>
+   <tr>
+  	<td class="col-thirty"><strong>Code</strong></td>
+  	<td>DISALLOWED_SCRIPT_TAG</td>
+  </tr>
+   <tr>
+  	<td class="col-thirty"><strong>Format</strong></td>
+  	<td>"Custom JavaScript is not allowed."</td>
+  </tr>
+   <tr>
+  	<td class="col-thirty"><strong>Fix</strong></td>
+  	<td>Remove the javascript tags.</td>
+  </tr>
+</table>
+
+The AMP format does not JavaScript added to pages, except for JavaScript files
+provided by the AMP Project itself. Many common uses of javascript have AMP
+HTML library equivalent implemenations. See [AMP
+components](/docs/reference/components) for the set of components that can be
+used to enhance AMP HTML pages.
+
+If your use case is not covered, you may also consider contributing new
+components to the AMP Project. See the AMP Project's
+[contributing](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)
+document for more information.
+
 ### Mandatory attribute missing
 
 <table>
