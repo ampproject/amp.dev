@@ -111,7 +111,7 @@ Tags are whitelisted, so there is no definitive list of all disallowed tags;
 however, the [AMP specification](/docs/reference/spec.html)
 broadly defines the set of disallowed tags.
 
-### Custom JavaScript is not allowed.
+### Custom JavaScript is not allowed
 
 <table>
    <tr>
@@ -128,9 +128,9 @@ broadly defines the set of disallowed tags.
   </tr>
 </table>
 
-The AMP format does not JavaScript added to pages, except for JavaScript files
-provided by the AMP Project itself. Many common uses of javascript have AMP
-HTML library equivalent implemenations. See [AMP
+The AMP format does not allow custom JavaScript to be added to pages, except for JavaScript files
+provided by the AMP Project itself. Many common uses of JavaScript have AMP
+HTML library equivalent implementations. See [AMP
 components](/docs/reference/components) for the set of components that can be
 used to enhance AMP HTML pages.
 
