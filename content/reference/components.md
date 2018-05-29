@@ -44,6 +44,7 @@ The list of available components are listed below in related categories.
 | [`amp-list`](components/amp-list.html) | Dynamically downloads data and creates list items using a template. |
 | [`amp-live-list`](components/amp-live-list.html) | Provides a way to display and update content live. |
 | [`amp-mustache`](components/amp-mustache.html) | Allows rendering of [`Mustache.js`](https://github.com/janl/mustache.js/) templates. |
+| [`amp-next-page`](components/amp-next-page.html) | Dynamically loads more documents recommended for the user. |
 | [`amp-selector`](components/amp-selector.html) |  Represents a control that presents a menu of options and lets the user choose from it. |
 | [`amp-user-notification`](components/amp-user-notification.html) | Displays a dismissable notification to the user. |
 | [`amp-web-push`](components/amp-web-push.html) | Allows users to subscribe to [web push notifications](https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications/). |
@@ -70,6 +71,7 @@ The list of available components are listed below in related categories.
 
 | Component | Description |
 | --------- | ----------- |
+| [`amp-3d-gltf`](components/amp-3d-gltf.html) | Displays GL Transmission Format (gITF) 3D models. |
 | [`amp-3q-player`](components/amp-3q-player.html) | Embeds videos from [3Q SDN.](https://www.3qsdn.com) |
 | [`amp-anim`](components/amp-anim.html) | Manages an animated image, typically a GIF. |
 | [`amp-apester-media`](components/amp-apester-media.html) | Displays an [Apester](https://apester.com/) smart unit. |
