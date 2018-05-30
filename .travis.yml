@@ -34,7 +34,7 @@ jobs:
         - ./build_scripts/build.sh tr zh_CN ru
     - stage: deploy
       install:
-        - npm install -g firebase-tools
+        - yarn global add firebase-tools
       script:
         - ./build_scripts/deploy.sh
 branches:
