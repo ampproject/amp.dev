@@ -15,7 +15,7 @@ custom_children:
     href: /content/reference/components/layout/amp-layout.md
     collection: /content/reference/components/layout
   - title@: Media
-    href: /content/reference/components/media/amp-3q-player.md
+    href: /content/reference/components/media/amp-3d-gltf.md
     collection: /content/reference/components/media
   - title@: Presentation
     href: /content/reference/components/presentation/amp-animation.md

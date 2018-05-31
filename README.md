@@ -1,23 +1,31 @@
 # AMPProject.org [![Build Status](https://travis-ci.org/ampproject/docs.svg?branch=production)](https://travis-ci.org/ampproject/docs)
 
-You're looking at the source code of the official website of the AMP Project. 
-Even if you don't plan on contributing, explore how we've built the site for 
+You're looking at the source code of the official website of the AMP Project.
+Even if you don't plan on contributing, explore how we've built the site for
 a good example of how to build a canonical, responsive standalone AMP site.
 
 ## How to build the site
 
 ### Install
 
-1.  Make sure you have [NodeJS](https://nodejs.org) installed.
-2.  Install [Grow](http://grow.io):
+1.  Install the LTS version of [NodeJS](https://nodejs.org). An easy way to do so is with `nvm`. (Mac and Linux: [here](https://github.com/creationix/nvm), Windows: [here](https://github.com/coreybutler/nvm-windows))
+    ```sh
+    $ nvm install --lts
+    ```
 
+2.  Install [Grow](http://grow.io):
     ```sh
     $ curl https://install.growsdk.org | bash
     ```
-    
-3.  Install the npm dependencies for the project:
+
+3.  Install the stable version of [Yarn](https://yarnpkg.com/). (Mac and Linux: [here](https://yarnpkg.com/en/docs/install#alternatives-stable), Windows: [here](https://yarnpkg.com/lang/en/docs/install/#windows-stable))
     ```sh
-    $ npm install
+    curl -o- -L https://yarnpkg.com/install.sh | bash
+    ```
+
+4.  Install the dependencies for the project:
+    ```sh
+    $ yarn
     ```
 
 ### Get a GitHub token or app id/secret
