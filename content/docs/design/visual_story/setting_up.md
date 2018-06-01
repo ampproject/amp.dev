@@ -21,7 +21,6 @@ Before starting this tutorial, you'll need the following:
 
 2. Extract the contents of the zip file.  In the **amp-pets-story** directory are the images, video, audio, and data files that we'll use to create our story.  The **pets.html** file is our starting point for the story. The completed version of the story can be found in the [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html) file.
 
-
 #### Step 2. Run the sample page
 
 To test our sample story, we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing.  Here are some options, choose the one that works best for you:
@@ -50,6 +49,6 @@ To sign up for the origin trial to publish pages with the `amp-story` component,
 Click through the completed story and get a sense of what we'll be creating.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/visual_story.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/visual_story/parts_of_story.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/design/visual_story.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/design/visual_story/parts_of_story.html"><span class="arrow-next">Next</span></a>
 </div>

@@ -1,21 +1,49 @@
 {
-  "share-providers": {
-    "facebook": true,
-    "twitter": true,
-    "email": true
-  },
-  "related-articles": {
-    "Articles": [
-      {
-        "title": "Pet adoption",
-        "url": "https://en.wikipedia.org/wiki/Pet_adoption",
-        "image": "assets/related-dogs.jpg"
-      },
-      {
-        "title": "Learn about cats",
-        "url": "https://en.wikipedia.org/wiki/Cat",
-        "image": "assets/related-cats.jpg"
-      }
-    ]
-  }
+  "bookend-version": "v1.0",
+  "share-providers": [
+    "facebook",
+    "twitter",
+    "email"
+  ],
+  "components": [
+    {
+      "type": "heading",
+      "text": "More to read"
+    },
+    {
+      "type": "small",
+      "title": "Learn about cats",
+      "url": "https://en.wikipedia.org/wiki/Cat",
+      "image": "assets/related_cats.jpg"
+    },
+    {
+      "type": "small",
+      "title": "Pet adoption",
+      "url": "https://en.wikipedia.org/wiki/Pet_adoption",
+      "image": "assets/related_dogs.jpg"
+    },
+    {
+      "type": "landscape",
+      "title": "11 Bright Facts About Border Collies",
+      "url": "http://mentalfloss.com/article/67113/11-bright-facts-about-border-collies",
+      "image": "assets/related_collie.jpg",
+      "category": "Dogs"
+    },
+    {
+      "type": "portrait",
+      "title": "Macaws",
+      "url": "https://en.wikipedia.org/wiki/Macaw",
+      "image": "assets/related_birds.png",
+      "category": "birds"
+    },
+    {
+      "type": "cta-link",
+      "links": [
+        {
+          "text": "Learn more",
+          "url": "https://www.ampproject.org/stories/"
+        }
+      ]
+    }
+  ]
 }
