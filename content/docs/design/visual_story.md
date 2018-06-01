@@ -25,5 +25,5 @@ In this tutorial, we'll introduce you to the [amp-story](/docs/reference/compone
 
 
 <div class="start-button">
-<a class="button" href="/docs/tutorials/visual_story/setting_up.html"><span class="arrow-next">Get started</span></a>
+<a class="button" href="/docs/design/visual_story/setting_up.html"><span class="arrow-next">Get started</span></a>
 </div>
