@@ -13,27 +13,21 @@
     {
       "type": "small",
       "title": "Learn about cats",
-      "url": "https://en.wikipedia.org/wiki/Cat",
-      "image": "assets/related_cats.jpg"
-    },
-    {
-      "type": "small",
-      "title": "Pet adoption",
-      "url": "https://en.wikipedia.org/wiki/Pet_adoption",
-      "image": "assets/related_dogs.jpg"
+      "url": "https://wikipedia.org/wiki/Cat",
+      "image": "assets/bookend_cats.jpg"
     },
     {
       "type": "landscape",
-      "title": "11 Bright Facts About Border Collies",
-      "url": "http://mentalfloss.com/article/67113/11-bright-facts-about-border-collies",
-      "image": "assets/related_collie.jpg",
+      "title": "Learn about border collies",
+      "url": "https://wikipedia.org/wiki/Border_Collie",
+      "image": "assets/bookend_dogs.jpg",
       "category": "Dogs"
     },
     {
       "type": "portrait",
-      "title": "Macaws",
-      "url": "https://en.wikipedia.org/wiki/Macaw",
-      "image": "assets/related_birds.png",
+      "title": "Learn about macaws",
+      "url": "https://wikipedia.org/wiki/Macaw",
+      "image": "assets/bookend_birds.jpg",
       "category": "birds"
     },
     {

@@ -83,10 +83,16 @@ html, body {
     td > pre {
       white-space: pre-line;
     }
+    td > pre.nopreline {
+      white-space: pre;
+    }
 }
 
 @include min-screen($tablet-breakpoint) {
     td > pre {
       white-space: pre-line;
+    }
+    td > pre.nopreline {
+      white-space: pre;
     }
 }
