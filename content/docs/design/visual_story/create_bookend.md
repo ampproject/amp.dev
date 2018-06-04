@@ -5,10 +5,9 @@ $order: 6
 
 Now that you've added all of your pages, let's look at the last screen of the story, the "bookend".  This last screen wraps up the story, and allows you to provide social sharing and related links to your story, so users can share your story or dive further into other content on your site.
 
-The information on the bookend screen comes from a JSON file that's specified in the `<amp-story-bookend>` tag, which is the last tag within `<amp-story>`.
-For our tutorial, we already have a JSON file ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) that contains the bookend data.
+The information on the bookend screen comes from a JSON file that's specified in the `<amp-story-bookend>` tag. For our tutorial, we already have a JSON file ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) that contains the bookend data.
 
-**Add** the  `<amp-story-bookend></amp-story-bookend>` tag as the last tag of `amp-story` (i.e., just before the ending `</amp-story>` tag). In the `amp-story-bookend`, add  `src="bookend.json"` and `layout="nodisplay"`:
+The `<amp-story-bookend>` tag must be the last tag in `amp-story`. So, let's **add** `<amp-story-bookend></amp-story-bookend>` just before the ending `</amp-story>` tag.  In the `amp-story-bookend` tag, point the `src` attribute to the `bookend.json` file and set `layout="nodisplay"`:
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -18,65 +17,136 @@ For our tutorial, we already have a JSON file ([bookend.json](https://github.com
 
 If you refresh your browser and go to the last screen, you'll see the following bookend:
 
-{{ image('/static/img/docs/tutorials/amp_story/pg6-bookend.png', 720, 1280, align='center third', alt='Bookend' ) }}
+{{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center half', alt='Bookend' ) }}
 
 Let's look at the JSON file.  Open the [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) file in your text editor.
 
+Every bookend screen requires a `bookend-version`, which is `v1.0` for this tutorial:
+
 ```json
+"bookend-version": "v1.0",
+```
+
+Social share buttons allow readers to share your content through social platforms, like Twitter, Facebook, Pinterest, and so on. You specify social share providers in a share-providers object, and create an array containing [type names](/docs/reference/components/amp-social-share.html#pre-configured-providers) for each of the social platforms.
+
+For this tutorial, we chose Facebook, Twitter, and email for our share providers:
+
+```json
+"share-providers": [
+  "facebook",
+  "twitter",
+  "email"
+],
+```
+
+{{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='Bookend social share' ) }}
+
+The rest of the bookend screen is for related content.  All related content is contained in a `components` object. 
+
+There are various components that you can use to display related content and links; each component is specified with a type attribute. Let's look at the available components:
+
+<table>
+<thead>
+<tr>
+  <th width="20%">Type</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>heading</td>
+  <td>Allows you to specify a heading to group articles.
+<pre class="nopreline">
 {
-  "bookend-version": "v1.0",
-  "share-providers": [
-    "facebook",
-    "twitter",
-    "email"
-  ],
-  "components": [
+  "type": "heading",
+  "text": "More to read"
+},
+</pre>
+  <br>
+  <figure class="alignment-wrapper seventyfive">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="bookend heading"></amp-img>
+  </figure>
+  </td>
+</tr>
+<tr>
+  <td>small</td>
+  <td>Allows you to link to related articles with the option to include an associated small image.
+<pre class="nopreline">
+{
+  "type": "small",
+  "title": "Learn about cats",
+  "url": "https://wikipedia.org/wiki/Cat",
+  "image": "assets/bookend_cats.jpg"
+},
+</pre>
+  <br>
+  <figure class="alignment-wrapper seventyfive">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="bookend small article"></amp-img>
+  </figure>
+</td>
+</tr>
+<tr>
+  <td>landscape</td>
+  <td>Allows you to link to articles or other content, like videos. The image associated with this type is larger and in landscape format.
+<pre class="nopreline">
+{
+  "type": "landscape",
+  "title": "Learn about border collies",
+  "url": "https://wikipedia.org/wiki/Border_Collie",
+  "image": "assets/bookend_dogs.jpg",
+  "category": "Dogs"
+},
+</pre>
+  <br>
+  <figure class="alignment-wrapper seventyfive">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="bookend landscape article"></amp-img>
+  </figure>
+  </td>
+</tr>
+<tr>
+  <td>portrait</td>
+  <td>Allows you to link to stories or other content.  The image associated with this type is larger and in portrait format.
+<pre class="nopreline">
+{
+  "type": "portrait",
+  "title": "Learn about macaws",
+  "url": "https://wikipedia.org/wiki/Macaw",
+  "image": "assets/bookend_birds.jpg",
+  "category": "birds"
+},
+</pre>
+  <br>
+  <figure class="alignment-wrapper seventyfive">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="bookend portrait article"></amp-img>
+  </figure>
+  </td>
+</tr>
+<tr>
+  <td>cta-link</td>
+  <td>Allows you to specify calls to action links that are displayed as buttons (e.g., read more, Subscribe).
+<pre class="nopreline">
+{
+  "type": "cta-link",
+  "links": [
     {
-      "type": "heading",
-      "text": "More to read"
-    },
-    {
-      "type": "small",
-      "title": "Learn about cats",
-      "url": "https://en.wikipedia.org/wiki/Cat",
-      "image": "assets/related-cats.jpg"
-    },
-    {
-      "type": "small",
-      "title": "Pet adoption",
-      "url": "https://en.wikipedia.org/wiki/Pet_adoption",
-      "image": "assets/related-dogs.jpg"
-    },
-    {
-      "type": "landscape",
-      "title": "11 Bright Facts About Border Collies",
-      "url": "http://mentalfloss.com/article/67113/11-bright-facts-about-border-collies",
-      "image": "assets/dog-border-collie.jpg",
-      "category": "collies"
-    },
-    {
-      "type": "cta-link",
-      "links": [
-        {
-          "text": "Learn more",
-          "url": "https://www.ampproject.org/stories/"
-        }
-      ]
+      "text": "Learn more",
+      "url": "https://www.ampproject.org/stories/"
     }
   ]
 }
-```
+</pre>
+  <br>
+  <figure class="alignment-wrapper seventyfive">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="bookend cta"></amp-img>
+  </figure>
+  </td>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-The three social share buttons (Facebook, Twitter, Email) that display on the bookend screen are specified in the `share-providers` object.  Each social share provider has a specific [type name](/docs/reference/components/amp-social-share.html#pre-configured-providers).
-
-Our related articles are specified in the `related-articles` object.  Within this object, we specified a single array named "Articles", which represents a section on that screen; it's also the heading name for that section.  Then we provided the articles we want to link to, with the following properties:
-
-* `title`: Represents the title of the article or link
-* `url`: A URL to the article or link
-* `image`: A URL to an image for the specified article or link  (optional) 
+There's more to learn about the bookend component, check out the details in the [amp-story](/docs/reference/components/amp-story.html) reference documentation.
 
 Our story is nearly complete.  Before we can publish our content, let's check that our AMP HTML is valid.
-
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/docs/design/visual_story/animating_elements.html"><span class="arrow-prev">Prev</span></a>
