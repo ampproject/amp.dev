@@ -22,5 +22,6 @@ hero:
 features:
     - Site built entirely with AMP 
     - Search with autocomplete
-    - amp-sidebar menu for easy navigation
+    - "[amp-sidebar]((/docs/reference/components/amp-sidebar.html) menu for easy navigation"
+    "Monetization with [amp-ad](/docs/reference/components/amp-ad.html)"
 ---
