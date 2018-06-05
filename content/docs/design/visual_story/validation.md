@@ -21,23 +21,6 @@ Open the [Developer Console](https://developer.chrome.com/devtools/docs/console)
  AMP validation successful.
 ```
 
-## Checking best practices
-
-{{ image('/static/img/docs/tutorials/amp_story/pg7-dev-logs.png', 720, 1280, align='right third', alt='Developer Logs for Cover Page'  ) }}
-
-When you turned on the development mode, you might have noticed something else that appears on your AMP page--developer logs.
-
-In development mode for AMP stories, the AMP Runtime performs special checks that provide guidance on making your AMP stories performant.  The checks provide best practices, such as:
-
-* For videos and images larger than 720 px, you should use srcset.
-* Images and videos in the "fill" layout should be in portrait orientation.
-
-Go through the screens, and verify that all pages adhere to the best practices. You should see green check marks in the logs for all pages.
-
-For more information on best practices, see the [AMP story best practices](/docs/guides/amp_story_best_practices.html) guide.
-
-
-
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/docs/design/visual_story/create_bookend.html"><span class="arrow-prev">Prev</span></a>
   <a class="button next-button" href="/docs/design/visual_story/congratulations.html"><span class="arrow-next">Next</span></a>
