@@ -3,7 +3,7 @@ $order: 5
 $title: Iena
 $parent: /content/learn/showcases.html
 class: showcase post-detail
-site_url: https://https://www.iene.mediaset.it/
+site_url: https://www.iene.mediaset.it/
 headline: Iene is a site containing material from the LeIene TV show. The site is built completely with AMP and delivers a fast user experience across devices.
 
 logo:
