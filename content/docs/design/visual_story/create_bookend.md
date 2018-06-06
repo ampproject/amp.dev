@@ -17,7 +17,7 @@ The `<amp-story-bookend>` tag must be the last tag in `amp-story`. So, let's **a
 
 If you refresh your browser and go to the last screen, you'll see the following bookend:
 
-{{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center half', alt='Bookend' ) }}
+{{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='Bookend' ) }}
 
 Let's look at the JSON file.  Open the [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) file in your text editor.
 
@@ -61,7 +61,7 @@ There are various components that you can use to display related content and lin
 },
 </pre>
   <br>
-  <figure class="alignment-wrapper seventyfive">
+  <figure class="alignment-wrapper half">
     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="bookend heading"></amp-img>
   </figure>
   </td>
@@ -78,7 +78,7 @@ There are various components that you can use to display related content and lin
 },
 </pre>
   <br>
-  <figure class="alignment-wrapper seventyfive">
+  <figure class="alignment-wrapper half">
     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="bookend small article"></amp-img>
   </figure>
 </td>
@@ -96,7 +96,7 @@ There are various components that you can use to display related content and lin
 },
 </pre>
   <br>
-  <figure class="alignment-wrapper seventyfive">
+  <figure class="alignment-wrapper half">
     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="bookend landscape article"></amp-img>
   </figure>
   </td>
@@ -114,7 +114,7 @@ There are various components that you can use to display related content and lin
 },
 </pre>
   <br>
-  <figure class="alignment-wrapper seventyfive">
+  <figure class="alignment-wrapper half">
     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="bookend portrait article"></amp-img>
   </figure>
   </td>
@@ -134,7 +134,7 @@ There are various components that you can use to display related content and lin
 }
 </pre>
   <br>
-  <figure class="alignment-wrapper seventyfive">
+  <figure class="alignment-wrapper half">
     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="bookend cta"></amp-img>
   </figure>
   </td>
@@ -144,7 +144,7 @@ There are various components that you can use to display related content and lin
 </tbody>
 </table>
 
-There's more to learn about the bookend component, check out the details in the [amp-story](/docs/reference/components/amp-story.html) reference documentation.
+There's more to learn about the bookend component. For details, see the [amp-story](/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) reference documentation.
 
 Our story is nearly complete.  Before we can publish our content, let's check that our AMP HTML is valid.
 
