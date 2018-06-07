@@ -4,6 +4,7 @@
 .idea
 .podcache.yaml
 node_modules
+*.pyc
 
 build
 assets/css/*
