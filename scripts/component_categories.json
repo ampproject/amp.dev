@@ -21,6 +21,7 @@
     "amp-list": "dynamic-content",
     "amp-live-list": "dynamic-content",
     "amp-mustache": "dynamic-content",
+    "amp-next-page": "dynamic-content",
     "amp-selector": "dynamic-content",
     "amp-user-notification": "dynamic-content",
     "amp-sortable-table": "dynamic-content",
@@ -39,6 +40,7 @@
     "amp-position-observer": "layout",
     "amp-sidebar": "layout",
 
+    "amp-3d-gltf": "media",
     "amp-3q-player": "media",
     "amp-anim": "media",
     "amp-apester-media": "media",
