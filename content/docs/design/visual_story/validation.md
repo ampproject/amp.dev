@@ -22,6 +22,6 @@ Open the [Developer Console](https://developer.chrome.com/devtools/docs/console)
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/visual_story/create_bookend.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/visual_story/congratulations.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/design/visual_story/create_bookend.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/design/visual_story/congratulations.html"><span class="arrow-next">Next</span></a>
 </div>

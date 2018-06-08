@@ -10,8 +10,12 @@ A page within an AMP story is represented by the `<amp-story-page>` component. W
 
 To create a page, **add** the `<amp-story-page>` element as a child of `amp-story`. **Assign** a unique id to the page. For our first page, which is the cover page, let's assign a unique id of `cover`:
 
-```html hl_lines="2 3"
- <amp-story standalone>
+```html hl_lines="6 7"
+<amp-story standalone
+    title="Joy of Pets"
+    publisher="AMP tutorials"
+    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+    poster-portrait-src="assets/cover.jpg">
    <amp-story-page id="cover">
    </amp-story-page>
 </amp-story>
@@ -154,7 +158,7 @@ Refresh your browser and review your work.  Our cover page is complete.
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Completed cover page' ) }}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/visual_story/parts_of_story.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/visual_story/add_more_pages.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/design/visual_story/start_story.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/design/visual_story/add_more_pages.html"><span class="arrow-next">Next</span></a>
 </div>
 

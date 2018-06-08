@@ -5,59 +5,150 @@ $order: 6
 
 Now that you've added all of your pages, let's look at the last screen of the story, the "bookend".  This last screen wraps up the story, and allows you to provide social sharing and related links to your story, so users can share your story or dive further into other content on your site.
 
-The information on the bookend screen comes from a JSON file that's specified by the `bookend-config-src` attribute in the `<amp-story>` component.  
+The information on the bookend screen comes from a JSON file that's specified in the `<amp-story-bookend>` tag. For our tutorial, we already have a JSON file ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) that contains the bookend data.
 
-For our tutorial, we already have a JSON file ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) that contains the bookend data. In your `amp-story element`, **add** the  `bookend-config-src` attribute and point it to the `bookend.json` file, like so:
+The `<amp-story-bookend>` tag must be the last tag in `amp-story`. So, let's **add** `<amp-story-bookend></amp-story-bookend>` just before the ending `</amp-story>` tag.  In the `amp-story-bookend` tag, point the `src` attribute to the `bookend.json` file and set `layout="nodisplay"`:
 
 ```html hl_lines="2"
-<amp-story standalone
-    bookend-config-src="bookend.json">
-    ...
+  </amp-story-page>
+  <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
 </amp-story>
 ```
 
 If you refresh your browser and go to the last screen, you'll see the following bookend:
 
-{{ image('/static/img/docs/tutorials/amp_story/pg6-bookend.png', 720, 1280, align='center third', alt='Bookend' ) }}
+{{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='Bookend' ) }}
 
 Let's look at the JSON file.  Open the [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) file in your text editor.
 
+Every bookend screen requires a `bookend-version`, which is `v1.0` for this tutorial:
+
 ```json
-{
-  "share-providers": {
-    "facebook": true,
-    "twitter": true,
-    "email": true
-  },
-  "related-articles": {
-    "Articles": [
-      {
-        "title": "Pet adoption",
-        "url": "https://en.wikipedia.org/wiki/Pet_adoption",
-        "image": "/assets/related-dogs.jpg"
-      },
-      {
-        "title": "Learn about cats",
-        "url": "https://en.wikipedia.org/wiki/Cat",
-        "image": "/assets/related-cats.jpg"
-      }
-    ]
-  }
-}
+"bookend-version": "v1.0",
 ```
 
-The three social share buttons (Facebook, Twitter, Email) that display on the bookend screen are specified in the `share-providers` object.  Each social share provider has a specific [type name](/docs/reference/components/amp-social-share.html#pre-configured-providers) with the value set to `true`.
+Social share buttons allow readers to share your content through social platforms, like Twitter, Facebook, Pinterest, and so on. You specify social share providers in a share-providers object, and create an array containing [type names](/docs/reference/components/amp-social-share.html#pre-configured-providers) for each of the social platforms.
 
-Our related articles are specified in the `related-articles` object.  Within this object, we specified a single array named "Articles", which represents a section on that screen; it's also the heading name for that section.  Then we provided the articles we want to link to, with the following properties:
+For this tutorial, we chose Facebook, Twitter, and email for our share providers:
 
-* `title`: Represents the title of the article or link
-* `url`: A URL to the article or link
-* `image`: A URL to an image for the specified article or link  (optional) 
+```json
+"share-providers": [
+  "facebook",
+  "twitter",
+  "email"
+],
+```
+
+{{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='Bookend social share' ) }}
+
+The rest of the bookend screen is for related content.  All related content is contained in a `components` object. 
+
+There are various components that you can use to display related content and links; each component is specified with a type attribute. Let's look at the available components:
+
+<table>
+<thead>
+<tr>
+  <th width="20%">Type</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>heading</td>
+  <td>Allows you to specify a heading to group articles.
+<pre class="nopreline">
+{
+  "type": "heading",
+  "text": "More to read"
+},
+</pre>
+  <br>
+  <figure class="alignment-wrapper half">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="bookend heading"></amp-img>
+  </figure>
+  </td>
+</tr>
+<tr>
+  <td>small</td>
+  <td>Allows you to link to related articles with the option to include an associated small image.
+<pre class="nopreline">
+{
+  "type": "small",
+  "title": "Learn about cats",
+  "url": "https://wikipedia.org/wiki/Cat",
+  "image": "assets/bookend_cats.jpg"
+},
+</pre>
+  <br>
+  <figure class="alignment-wrapper half">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="bookend small article"></amp-img>
+  </figure>
+</td>
+</tr>
+<tr>
+  <td>landscape</td>
+  <td>Allows you to link to articles or other content, like videos. The image associated with this type is larger and in landscape format.
+<pre class="nopreline">
+{
+  "type": "landscape",
+  "title": "Learn about border collies",
+  "url": "https://wikipedia.org/wiki/Border_Collie",
+  "image": "assets/bookend_dogs.jpg",
+  "category": "Dogs"
+},
+</pre>
+  <br>
+  <figure class="alignment-wrapper half">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="bookend landscape article"></amp-img>
+  </figure>
+  </td>
+</tr>
+<tr>
+  <td>portrait</td>
+  <td>Allows you to link to stories or other content.  The image associated with this type is larger and in portrait format.
+<pre class="nopreline">
+{
+  "type": "portrait",
+  "title": "Learn about macaws",
+  "url": "https://wikipedia.org/wiki/Macaw",
+  "image": "assets/bookend_birds.jpg",
+  "category": "birds"
+},
+</pre>
+  <br>
+  <figure class="alignment-wrapper half">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="bookend portrait article"></amp-img>
+  </figure>
+  </td>
+</tr>
+<tr>
+  <td>cta-link</td>
+  <td>Allows you to specify calls to action links that are displayed as buttons (e.g., read more, Subscribe).
+<pre class="nopreline">
+{
+  "type": "cta-link",
+  "links": [
+    {
+      "text": "Learn more",
+      "url": "https://www.ampproject.org/stories/"
+    }
+  ]
+}
+</pre>
+  <br>
+  <figure class="alignment-wrapper half">
+    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="bookend cta"></amp-img>
+  </figure>
+  </td>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+There's more to learn about the bookend component. For details, see the [amp-story](/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) reference documentation.
 
 Our story is nearly complete.  Before we can publish our content, let's check that our AMP HTML is valid.
 
-
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/visual_story/animating_elements.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/visual_story/validation.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/design/visual_story/animating_elements.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/design/visual_story/validation.html"><span class="arrow-next">Next</span></a>
 </div>
