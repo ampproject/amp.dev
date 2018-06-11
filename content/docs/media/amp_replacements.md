@@ -80,7 +80,7 @@ images. In its most basic form, all you have to do is to add `layout="responsive
 </amp-iframe>
 </div>
 
-{% call callout('Read on', type='success') %}
+{% call callout('Read on', type='read') %}
 Learn more about [advanced layout techniques](/docs/guides/responsive/control_layout.html).
 {% endcall %}
 
@@ -90,7 +90,7 @@ The AMP HTML runtime can effectively manage image resources,
 choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
-{% call callout('Read on', type='success') %}
+{% call callout('Read on', type='read') %}
 Learn how to [provide fallbacks and placeholders for images](/docs/guides/responsive/placeholders.html).
 {% endcall %}
 

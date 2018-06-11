@@ -183,7 +183,7 @@ type 属性值：`oewa`
 
 - `url`：`amp-analytics-oewa.html` 的 HTTPS 位置
 
-{% call callout('注意', type='caution') %}
+{% call callout('注意', type='note') %}
 有一个名为 `oewadirect` 的变量，它不使用 iframe-ping 解决方案，但可使用 `AMP CLIENT_ID` 更高效地检测客户端。该变量目前仍处于试验阶段，而且由于它不使用 `oewa2.js`，OEWA 不允许使用该变量。
 {% endcall %}
 

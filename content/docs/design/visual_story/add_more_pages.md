@@ -124,6 +124,6 @@ Demonstrates how to arrange text and display a screen-filling video for the page
 Our "Joy of Pets" story is nearly complete. We'll use animations in our last page to bring all the pets together.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/visual_story/create_cover_page.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/visual_story/animating_elements.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/design/visual_story/create_cover_page.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/design/visual_story/animating_elements.html"><span class="arrow-next">Next</span></a>
 </div>

@@ -47,7 +47,7 @@ Ao usar `on="tap:amp-access.login-sign-in"` para verificar novamente o código H
 
 [/sourcecode]
 
-{% call callout('Observação', type='success') %}
+{% call callout('Observação', type='note') %}
 É possível definir URLs diferentes dentro do nó de login. Neste caso, estamos definindo `sign-in` e depois definiremos `sign-out`.
 {% endcall %}
 

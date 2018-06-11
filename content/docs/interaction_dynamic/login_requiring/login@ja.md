@@ -47,7 +47,7 @@ $title: ログイン
 
 [/sourcecode]
 
-{% call callout('メモ', type='success') %}
+{% call callout('メモ', type='note') %}
 ログインノード内には、異なる URL を定義することができます。この例では、まず `sign-in` の URL を定義し、後で `sign-out` を定義します。
 {% endcall %}
 
