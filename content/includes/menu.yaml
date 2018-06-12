@@ -51,6 +51,8 @@ menu:
         copy@: "AMP Start"
       - href: https://cdn.ampproject.org/experiments.html
         copy@: "AMP Experiments"
+      - href: https://github.com/ampproject/amp-toolbox
+        copy@: "AMP Toolbox"
   - href: /content/latest/latest.html
     copy@: The Latest
     collection: latest
