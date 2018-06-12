@@ -1,6 +1,9 @@
 table {
   border-collapse: collapse;
-  width: 100%;
+  max-width: 100%;
+  display: block;
+  overflow-x: auto;
+  word-break: keep-all;
 }
 
 td, th {
@@ -30,7 +33,7 @@ td.col-thirty {
 
 th.col-twenty,
 td.col-twenty,
- {
+{
   width: 20%;
 }
 
@@ -79,20 +82,5 @@ html, body {
 @include max-screen($tablet-breakpoint) {
     td, th {
       padding: 10px;
-    }
-    td > pre {
-      white-space: pre-line;
-    }
-    td > pre.nopreline {
-      white-space: pre;
-    }
-}
-
-@include min-screen($tablet-breakpoint) {
-    td > pre {
-      white-space: pre-line;
-    }
-    td > pre.nopreline {
-      white-space: pre;
     }
 }
