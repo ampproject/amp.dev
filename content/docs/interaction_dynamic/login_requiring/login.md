@@ -48,7 +48,7 @@ Looking again at the button's HTML code, by using `on="tap:amp-access.login-sign
 
 [/sourcecode]
 
-{% call callout('Note', type='success') %}
+{% call callout('Note', type='note') %}
 Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`.
 {% endcall %}
 

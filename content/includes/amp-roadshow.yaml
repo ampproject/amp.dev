@@ -1,11 +1,8 @@
 nextstop:
-  title: Tokyo
-  link: https://events.withgoogle.com/amp-roadshow-tokyo/
+  title: Los Angeles
+  link: https://events.withgoogle.com/amp-roadshow-in-los-angeles/
 
 cities:
-  - title: Tokyo
-    date: 2018-04-27
-    link: https://events.withgoogle.com/amp-roadshow-tokyo/
   - title: Los Angeles
     date: 2018-06-06
     link: https://events.withgoogle.com/amp-roadshow-in-los-angeles/
@@ -21,6 +18,9 @@ cities:
   - title: Cambridge
     date: 2018-08-07
     link: https://events.withgoogle.com/amp-roadshow-in-cambridge/
+  - title: Vancouver
+    date: 2018-09-05
+    link: https://events.withgoogle.com/amp-roadshow-in-vancouver/
 
 agenda:
   - title: Intro + Keynote

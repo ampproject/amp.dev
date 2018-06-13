@@ -18,7 +18,7 @@ Berikut cuplikan yang menentukan `type` untuk penyedia analitik yang disebut `XY
 ```
 
 
-{% call callout('Baca terus', type='read') %}
+{% call callout('Baca lebih lanjut', type='read') %}
 Pelajari lebih lanjut cara melacak analitik dengan [`amp-analytics`](/id/docs/reference/components/amp-analytics.html)
 .{% endcall %}
 
@@ -182,7 +182,7 @@ Di bagian `requests`:
 
 - `url`: lokasi HTTPS `amp-analytics-oewa.html`
 
-{% call callout('Catatan', type='caution') %}
+{% call callout('Catatan', type='note') %}
 Terdapat variasi yang disebut `oewadirect` yang tidak menggunakan solusi iframe-ping dan memiliki deteksi klien yang lebih baik dengan menggunakan `AMP CLIENT_ID`. Variasi ini masih bersifat EKSPERIMENTAL, dan dilarang oleh OEWA karena tidak menggunakan `oewa2.js`.
 {% endcall %}
 

@@ -3,6 +3,8 @@ $order: 1
 class: design-principles bg-triangle-primary
 $view: /views/design-principles.html
 $parent: /content/learn/overview.yaml
+components:
+  - youtube
 
 subtitle@: These design principles are meant to guide the ongoing design and development of AMP. They should help us make internally consistent decisions.
 
@@ -30,6 +32,9 @@ AMP should be fast in today's browsers. When certain optimizations aren't possib
   - title@: No whitelists.
     description@: We won’t give any special treatment to specific sites, domains or origins except where needed for security or performance reasons.
     icon: design_icon_whitelist.svg
+
+video:
+  id: uPOElMgRy2Y
 
 cta:
   title@: Get started building

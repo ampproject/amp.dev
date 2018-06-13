@@ -14,7 +14,7 @@ thumb: "case-studies/cnbc_logo_thumb.jpg"
 results:
     - stat: 22%
       description: Increase in mobile search users returning to CNBC.com in 7 days
-    - stat: 387%
+    - stat: 4X
       description: Decrease in mobile page load time
 
 logo:

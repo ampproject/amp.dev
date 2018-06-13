@@ -59,6 +59,10 @@
     margin-top: 30px;
   }
 
+  h6 {
+    font-size: 14px;
+  }
+
 
   a {
     font-size: 16px;
@@ -118,7 +122,7 @@
     &.left {
       float: left;
       margin-right: 1em;
-      @include max-screen($mobile-breakpoint) {
+      @include max-screen($mobile-medium-breakpoint) {
         float: none;
         margin-right: 0;
       }
@@ -126,24 +130,24 @@
     &.right {
       float: right;
       margin-left: 1em;
-      @include max-screen($mobile-breakpoint) {
+      @include max-screen($mobile-medium-breakpoint) {
         float: none;
         margin-left: 0;
       }
     }
     &.center {
       margin: 0 auto;
-      @include max-screen($mobile-breakpoint) {
+      @include max-screen($mobile-medium-breakpoint) {
         float: none;
         margin-left: 0;
       }
     }
-    &.half { width: calc(50% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; }  }
-    &.third { width: calc(33% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
+    &.half { width: calc(50% - 0.5em); @include max-screen($mobile-medium-breakpoint) { width: auto; }  }
+    &.third { width: calc(33% - 0.5em); @include max-screen($mobile-medium-breakpoint) { width: auto; } }
     &.margin-none { margin: 0; }
-    &.ninety { width: calc(90% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
-    &.seventyfive { width: calc(75% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
-    &.forty { width: calc(40% - 0.5em); @include max-screen($mobile-breakpoint) { width: auto; } }
+    &.ninety { width: calc(90% - 0.5em); @include max-screen($mobile-medium-breakpoint) { width: auto; } }
+    &.seventyfive { width: calc(75% - 0.5em); @include max-screen($mobile-medium-breakpoint) { width: auto; } }
+    &.forty { width: calc(40% - 0.5em); @include max-screen($mobile-medium-breakpoint) { width: auto; } }
 
     amp-img {
       margin: 0;

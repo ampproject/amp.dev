@@ -76,6 +76,36 @@ You can further enhance an AMP story by applying animation entrances to elements
   <td>500</td>
   <td>0</td>
 </tr>
+<tr>
+  <td><code>pan-left</code></td>
+  <td>1000</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td><code>pan-right</code></td>
+  <td>1000</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td><code>pan-down</code></td>
+  <td>1000</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td><code>pan-up</code></td>
+  <td>1000</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td><code>zoom-in</code></td>
+  <td>1000</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td><code>zoom-out</code></td>
+  <td>1000</td>
+  <td>0</td>
+</tr>
 </tbody>
 </table>
 
@@ -227,6 +257,6 @@ There are a lot of possibilities with animations in AMP stories  (e.g., combinin
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/visual_story/add_more_pages.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/visual_story/create_bookend.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/design/visual_story/add_more_pages.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/design/visual_story/create_bookend.html"><span class="arrow-next">Next</span></a>
 </div>

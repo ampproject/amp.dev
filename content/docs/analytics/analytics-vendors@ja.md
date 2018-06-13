@@ -18,7 +18,7 @@ $title: "分析ベンダー"
 <amp-analytics type="XYZ"> ... </amp-analytics>
 ```
 
-{% call callout('参考情報', type='read') %}
+{% call callout('参照', type='read') %}
 トラッキング分析について詳しくは、[amp-analytics](/ja/docs/reference/components/amp-analytics.html) に関する説明をご覧ください
 {% endcall %}
 
@@ -182,7 +182,7 @@ type 属性の値: `oewa`
 
 - `url`: `amp-analytics-oewa.html` の場所（HTTPS）
 
-{% call callout('注', type='caution') %}
+{% call callout('注', type='note') %}
 iframe-ping のソリューションを使用しない `oewadirect` というバリエーションもあります。こちらは、`AMP CLIENT_ID` を使うことでクライアントが検出されやすくなりますが、現在のところ試験運用中であり、`oewa2.js` を使用しないため OEWA により禁止されています。
 {% endcall %}
 
