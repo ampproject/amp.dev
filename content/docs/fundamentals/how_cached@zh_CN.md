@@ -23,7 +23,7 @@ AMP 缓存是一种基于代理的内容传送网络 (CDN)，用于传送有效�
 - [Google AMP 缓存](https://developers.google.com/amp/cache/) 
 - [Cloudflare AMP 缓存](https://amp.cloudflare.com/)
 
-AMP 是一个开放式生态系统，AMP 项目会积极地推动开发更多 AMP 缓存。要想了解如何创建 AMP 缓存，请参阅 [AMP 缓存指南] (https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)。
+AMP 是一个开放式生态系统，AMP 项目会积极地推动开发更多 AMP 缓存。要想了解如何创建 AMP 缓存，请参阅 [AMP 缓存指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)。
 
 ## 我该如何选择 AMP 缓存？
 
