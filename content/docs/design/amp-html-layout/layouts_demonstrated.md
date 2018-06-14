@@ -1,13 +1,14 @@
 ---
 $title: Demonstrating AMP layouts
-$order: 5
+$order: 1
+class: layouts
 components:
     - selector
 ---
 
 This page demonstrates the different [layouts in AMP](https://www.ampproject.org/docs/design/amp-html-layout#layout), and how they work when a screen is resized.
  
-<div class="main-layouts">
+<div class="layouts">
 
   <!-- fill -->
   <div class="layout-item">
@@ -56,7 +57,7 @@ This page demonstrates the different [layouts in AMP](https://www.ampproject.org
       <!-- flex-item -->
       <div class="layout-item">
         <h3>flex-item</h3> 
-        <div class="description">With a <code>fixed-height</code> layout, the element and other elements in its parent take the parent container's remaining space when the parent is a flexible container (i.e., display: <code>flex</code>).</div>
+        <div class="description">With a <code>flex-item</code> layout, the element and other elements in its parent take the parent container's remaining space when the parent is a flexible container (i.e., display: <code>flex</code>).</div>
         <div class="fixed-container">
           <div class="parent">
             <div class="wrapper">
