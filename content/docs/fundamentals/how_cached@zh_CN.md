@@ -1,11 +1,5 @@
 ---
 $title: AMP 网页是如何缓存的
-$order: 13
-$category: Deploy
-toc: true
-components:
-    - youtube
-
 ---
 
 [TOC]
@@ -45,7 +39,7 @@ AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓�
 
 ## 谁会请求访问缓存的 AMP 网页？
 
-缓存的 AMP 网页会被各类平台（如 Google 搜索、Google 新闻和 Cloudflare）和移动应用访问。移动应用可通过网址（请参阅 Google 的 [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)）或通过渐进式网页应用中的跨源 XHR（详情请见[嵌入 AMP 网页并将其用作数据源](https://www.ampproject.org/zh_cn/docs/guides/pwa-amp/amp-in-pwa)）关联到缓存的 AMP 内容。
+缓存的 AMP 网页会被各类平台（如 Google 搜索、Google 新闻和 Cloudflare）和移动应用访问。移动应用可通过网址（请参阅 Google 的 [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)）或通过渐进式网页应用中的跨源 XHR（详情请见[嵌入 AMP 网页并将其用作数据源](/zh_cn/docs/guides/pwa-amp/amp-in-pwa.html)）关联到缓存的 AMP 内容。
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"
