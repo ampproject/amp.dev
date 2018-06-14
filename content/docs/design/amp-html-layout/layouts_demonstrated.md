@@ -1,7 +1,6 @@
 ---
 $title: Demonstrating AMP layouts
 $order: 1
-class: layouts
 components:
     - selector
 ---
