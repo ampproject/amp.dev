@@ -7,7 +7,4 @@ $localization:
 $view: /views/grid_page.html
 
 class: bg-triangle-secondary
-sections:
-  - title@: Community Resources
-  - title@: Send Feedback
 ---
