@@ -7,7 +7,7 @@ author: Rudy Galfi
 role:  Product Manager for AMP 
 origin: "https://amphtml.wordpress.com/2018/04/02/enabling-publishers-to-implement-user-controls-on-amp-pages/amp/"
 excerpt: "Read new details about this post here.  Users today want additional control over their online experience. Additionally, publishers are faced with a variety of different demands on how they provide notice and choice to their users –  from vendor policies to evolving legal requirements, like the forthcoming General Data Protection Regulation (GDPR). The open source AMP [&#8230;]"
-avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2018-04-02T19:06:35-04:00
 $date: April 2, 2018
 $parent: /content/latest/list-blog.html

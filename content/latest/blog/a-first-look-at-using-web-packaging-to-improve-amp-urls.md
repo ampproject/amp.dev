@@ -7,7 +7,7 @@ author: Kinuko Yasuda
 role:  Chrome Software Engineer, and Eric Steinlauf, Software Engineer, Google Search
 origin: "https://amphtml.wordpress.com/2018/05/08/a-first-look-at-using-web-packaging-to-improve-amp-urls/amp/"
 excerpt: "One of the top pieces of feedback that people share about AMP is about the “google.com/amp…” URLs that are used when linking to a piece of AMP content in Google Search. A couple of months ago, the AMP team at Google outlined a plan to display better AMP URLs, and today we’d like to share [&#8230;]"
-avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2018-05-08T16:47:43-04:00
 $date: May 8, 2018
 $parent: /content/latest/list-blog.html
