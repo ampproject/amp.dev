@@ -94,13 +94,13 @@ The following values can be used in the `layout` attribute:
     <tr>
       <td data-th="Layout type"><code>intrinsic</code></td>
       <td data-th="Description">Yes</td>
-      <td data-th="Behavior">Element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes. This layout works very well for most AMP elements, including <a href="/docs/reference/components/amp-img.html"><code>amp-img</code></a>, <a href="/docs/reference/components/amp-video.html"><code>amp-video</code></a>, etc.  The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout renders as 0x0 and an <code>intrinsic</code> layout inflates to the smaller of its natural size or any CSS constraint. </td>
+      <td data-th="Behavior">The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes <em>until</em> it reaches the element's natural size or reaches a CSS constraint (e.g., max-width). The width and height attributes must be present. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-carousel</code>, etc. The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout will render 0x0 and an <code>intrinsic</code> layout will inflate to the smaller of its natural size or any CSS constraint. </td>
     </tr>
   </tbody>
 </table>
 
 {% call callout('Tip', type='success') %}
-See live demos of all the different layout types in [AMP By Example: Layout System](https://ampbyexample.com/advanced/layout_system/).
+Visit the [Demonstrating AMP layouts](/docs/design/amp-html-layout/layouts_demonstrated.html) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
 {% endcall %}
 
 
