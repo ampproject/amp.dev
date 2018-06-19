@@ -21,18 +21,18 @@ If you refresh your browser and go to the last screen, you'll see the following 
 
 Let's look at the JSON file.  Open the [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) file in your text editor.
 
-Every bookend screen requires a `bookend-version`, which is `v1.0` for this tutorial:
+Every bookend screen requires a `bookendVersion`, which is `v1.0` for this tutorial:
 
 ```json
-"bookend-version": "v1.0",
+"bookendVersion": "v1.0",
 ```
 
-Social share buttons allow readers to share your content through social platforms, like Twitter, Facebook, Pinterest, and so on. You specify social share providers in a share-providers object, and create an array containing [type names](/docs/reference/components/amp-social-share.html#pre-configured-providers) for each of the social platforms.
+Social share buttons allow readers to share your content through social platforms, like Twitter, Facebook, Pinterest, and so on. You specify social share providers in a shareProviders object, and create an array containing [type names](/docs/reference/components/amp-social-share.html#pre-configured-providers) for each of the social platforms.
 
 For this tutorial, we chose Facebook, Twitter, and email for our share providers:
 
 ```json
-"share-providers": [
+"shareProviders": [
   "facebook",
   "twitter",
   "email"
