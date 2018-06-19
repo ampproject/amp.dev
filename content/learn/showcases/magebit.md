@@ -4,7 +4,7 @@ $title: Magebit
 $parent: /content/learn/showcases.html
 class: showcase post-detail
 site_url: https://magebit.com/
-headline:  Magebit is a full-service eCommerce agency specialized in Magento and Shopify. Their site is built using AMP and PWA, delivering fast and lightweight user experience across all devices.  
+headline:  Magebit is a full-service ecommerce agency specialized in Magento and Shopify. Their site is built using AMP and PWA, delivering a fast and lightweight user experience across all devices.  
 
 logo:
   src: "showcases/magebit_logo.svg"
@@ -22,5 +22,5 @@ hero:
 features:
     - Site built entirely with AMP
     - Progressive Web App functionality
-    - Animations with amp-animation
+    - "Animations with [amp-animation](/docs/reference/components/amp-animation.html)"
 ---
