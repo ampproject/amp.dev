@@ -8,8 +8,8 @@ headline:  Magebit is a full-service ecommerce agency specialized in Magento and
 
 logo:
   src: "showcases/magebit_logo.svg"
-  width: 200
-  height: 200
+  width: 310
+  height: 80
 
 hero:
   hero_img_base: /static/img/showcases/magebit_hero.png
