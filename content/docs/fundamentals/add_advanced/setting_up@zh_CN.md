@@ -1,7 +1,5 @@
 ---
 $title: 设置
-$order: 0
-$parent: /content/docs/fundamentals/add_advanced.md
 ---
 
 ## 前提条件
@@ -9,7 +7,7 @@ $parent: /content/docs/fundamentals/add_advanced.md
 **在开始学习本教程之前**，您需要做好以下准备：
 
 - 掌握基本的 HTML、CSS 和 JavaScript 知识
-- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”](/zh_cn/docs/tutorials/converting.html)教程）
+- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”](/zh_cn/docs/fundamentals/converting.html)教程）
 - 选择一种可以查看 JavaScript 控制台的浏览器
 - 选择一种文本编辑器
 
@@ -51,6 +49,6 @@ http://localhost:8000/article.amp.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/tutorials/add_advanced.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/tutorials/add_advanced/review_code.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="/zh_cn/docs/fundamentals/add_advanced.html"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="/zh_cn/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-next">下一页</span></a>
 </div>
