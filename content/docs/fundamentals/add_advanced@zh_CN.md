@@ -1,7 +1,5 @@
 ---
 $title: 添加高级 AMP 功能
-$order: 2
-tutorial: true
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='完成后的新闻报道') }}
@@ -22,10 +20,10 @@ tutorial: true
 一个新闻报道网页，该网页不仅要遵循 AMP 规范，还要囊括广告、数据分析、嵌入式视频、嵌入式社交媒体、轮换展示内容和网站导航菜单。
 
 {% call callout('注意', type='note') %}
-本教程在[“将 HTML 转换成 AMP”](/zh_cn/docs/tutorials/converting.html)教程中所述概念的基础上进行延伸。如果您对 AMP 的核心概念尚无一个基本了解，请先学习[“将 HTML 转换成 AMP”](/zh_cn/docs/tutorials/converting.html)教程。
+本教程在[“将 HTML 转换成 AMP”](/zh_cn/docs/fundamentals/converting.html)教程中所述概念的基础上进行延伸。如果您对 AMP 的核心概念尚无一个基本了解，请先学习[“将 HTML 转换成 AMP”](/zh_cn/docs/fundamentals/converting.html)教程。
 {% endcall %}
 
 <div class="start-button">
-<a class="button" href="/zh_cn/docs/tutorials/add_advanced/setting_up.html"><span class="arrow-next">开始</span></a>
+<a class="button" href="/zh_cn/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-next">开始</span></a>
 </div>
  
