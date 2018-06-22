@@ -39,7 +39,8 @@
         "title": "CORS in AMP",
         "order": 12,
         "from": "spec/amp-cors-requests.md",
-        "to": "docs/fundamentals/amp-cors-requests.md"
+        "to": "docs/fundamentals/amp-cors-requests.md",
+        "toc": true
     },
     {
         "title": "Getting Support",
