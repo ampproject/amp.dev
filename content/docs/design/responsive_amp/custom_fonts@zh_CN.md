@@ -24,7 +24,7 @@ AMP 网页不得包含外部样式表（自定义字体除外）。您可以通�
 *  Fonts.com：**https://fast.fonts.net**
 *  Google Fonts：**https://fonts.googleapis.com**
 *  Typekit: **https://use.typekit.net**
-*  Font Awesome：**https://maxcdn.bootstrapcdn.com**
+*  Font Awesome：**https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
 ###  2. 使用 `@font-face`
 

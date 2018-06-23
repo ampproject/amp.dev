@@ -22,7 +22,7 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 �
 *  Fonts.com:**https://fast.fonts.net**
 *  Google Fonts:**https://fonts.googleapis.com**
 *  Typekit: **https://use.typekit.net**
-*  Font Awesome:**https://maxcdn.bootstrapcdn.com**
+*  Font Awesome:**https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
 ###  2. `@font-face`
 

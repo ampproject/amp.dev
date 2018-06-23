@@ -24,7 +24,7 @@ Domain asal berikut diizinkan untuk font yang ditayangkan melalui tag link:
 *  Fonts.com: **https://fast.fonts.net**
 *  Google Fonts: **https://fonts.googleapis.com**
 *  Typekit: **https://use.typekit.net**
-*  Font Awesome: **https://maxcdn.bootstrapcdn.com**
+*  Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
 ###  2. Menggunakan `@font-face`
 
