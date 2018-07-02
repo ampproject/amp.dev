@@ -1,6 +1,6 @@
 ---
 $order: 28
-$title: Carved
+$title: Metromile
 $date: Jun 20, 2018
 $category: ecommerce
 $parent: /content/learn/case-studies.html
