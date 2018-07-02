@@ -23,7 +23,7 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 *  Fonts.com: **https://fast.fonts.net**
 *  Google Fonts: **https://fonts.googleapis.com**
 *  Typekit: **https://use.typekit.net**
-*  Font Awesome: **https://maxcdn.bootstrapcdn.com**
+*  Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
 ###  2. `@font-face`
 

@@ -26,7 +26,7 @@ The following origins are whitelisted and allowed for font serving via link tags
 * Fonts.com: **https://fast.fonts.net**
 * Google Fonts: **https://fonts.googleapis.com**
 * Typekit: **https://use.typekit.net**
-* Font Awesome: **https://maxcdn.bootstrapcdn.com**
+* Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
 ### 2. Using `@font-face`
 
