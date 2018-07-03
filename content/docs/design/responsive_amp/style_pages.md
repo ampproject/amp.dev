@@ -35,11 +35,6 @@ The following styles aren’t allowed in AMP pages:
   </thead>
   <tbody>
     <tr>
-      <td data-th="Banned style">Inline style attributes</td>
-      <td data-th="Description">All styles must be defined in the <code>&lt;head&gt;</code> of the page,
-        within a <code>&lt;style amp-custom&gt;</code> tag.</td>
-    </tr>
-    <tr>
       <td data-th="Banned style"><code>!important</code> qualifier </td>
       <td data-th="Description">Usage is not allowed.
       This is a necessary requirement to enable AMP to enforce its element sizing rules.</td>
