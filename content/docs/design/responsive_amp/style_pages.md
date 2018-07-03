@@ -8,8 +8,7 @@ toc: true
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets
 (with the exception of [custom fonts](#the-custom-fonts-exception)).
-Also certain styles are disallowed due to performance implications;
-inline style attributes aren't allowed.
+Also certain styles are disallowed due to performance implications.
 
 All styles must live in the head of the document
 (see [Add styles to a page](/docs/guides/responsive_amp.html#add-styles-to-a-page)).
