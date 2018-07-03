@@ -10,7 +10,7 @@ but you can’t reference external stylesheets
 (with the exception of [custom fonts](#the-custom-fonts-exception)).
 Also certain styles are disallowed due to performance implications.
 
-All styles must live in the head of the document
+Styles may live in the head of the document or as inline `style` attributes
 (see [Add styles to a page](/docs/guides/responsive_amp.html#add-styles-to-a-page)).
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
