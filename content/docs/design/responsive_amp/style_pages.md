@@ -8,10 +8,9 @@ toc: true
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets
 (with the exception of [custom fonts](#the-custom-fonts-exception)).
-Also certain styles are disallowed due to performance implications;
-inline style attributes aren't allowed.
+Also certain styles are disallowed due to performance implications.
 
-All styles must live in the head of the document
+Styles may live in the head of the document or as inline `style` attributes
 (see [Add styles to a page](/docs/guides/responsive_amp.html#add-styles-to-a-page)).
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
@@ -34,11 +33,6 @@ The following styles aren’t allowed in AMP pages:
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td data-th="Banned style">Inline style attributes</td>
-      <td data-th="Description">All styles must be defined in the <code>&lt;head&gt;</code> of the page,
-        within a <code>&lt;style amp-custom&gt;</code> tag.</td>
-    </tr>
     <tr>
       <td data-th="Banned style"><code>!important</code> qualifier </td>
       <td data-th="Description">Usage is not allowed.
