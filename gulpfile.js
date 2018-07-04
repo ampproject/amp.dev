@@ -155,7 +155,7 @@ gulp.task('build',
     'optimize-images',
     'sass',
     'build-examples',
-    'generate-asset-manifest'
+    /*'generate-asset-manifest'*/
   )
 );
 
@@ -165,7 +165,7 @@ gulp.task('default',
       gulp.series(
         'import-docs', 'update-platforms-page'),
       'sass',
-      'generate-asset-manifest'
+      /*'generate-asset-manifest'*/
     ),
     'watch'
   )
