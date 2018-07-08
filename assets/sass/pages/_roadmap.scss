@@ -4,6 +4,25 @@
     font-weight: 400;
   }
 
+  .post-title {
+    margin: 0;
+  }
+
+  .note,
+  .roadmap-section-wrapper {
+    max-width: 1100px;
+  }
+
+  .note {
+    margin: 1em auto;
+    background: #fff;
+    padding: 0.5em;
+    box-shadow: 0px 1px 3px #0c569217;
+    font-size: 0.8em;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
   .workstream-title {
     background: $gradient-bold;
     padding: 1em 16px;
@@ -18,8 +37,14 @@
   }
 
   .roadmap-section-wrapper {
+    margin: 0 auto;
     display: flex;
+    @include max-screen($tablet-portrait-breakpoint) {
+      display: block;
+    }
   }
+
+
 
   section {
     background: #fff;
@@ -46,12 +71,23 @@
         padding: 0.5em;
         font-size: 0.8em;
 
+        a {
+          font-weight: inherit;
+          letter-spacing: 0;
+          line-height: 1.5;
+          text-transform: none;
+        }
+
         h5 {
-          font-size: 1.3em;
+          font-size: 1em;
+          font-weight: 400;
         }
 
         p {
           margin-top: 0;
+          font-size: 10pt;
+          line-height: 1.5;
+          color: #444;
         }
       }
 
@@ -64,13 +100,15 @@
 
       li {
         display: inline-block;
-        background: #f3f3f3;
+        background: #09bfff;
+        color: #fff;
         padding: 0.2em 0.5em;
         border-radius: 4px;
         text-transform: uppercase;
         font-weight: 400;
         font-size: 0.7em;
         text-align: left;
+        margin-bottom: 4px;
       }
     }
 
@@ -84,10 +122,3 @@
 
 }
 
-
-
-/* Them responsive awesomeness */
-
-@include max-screen($mobile-breakpoint) {
-
-}
