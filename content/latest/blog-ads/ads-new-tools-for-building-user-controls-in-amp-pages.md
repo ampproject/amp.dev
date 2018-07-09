@@ -7,8 +7,8 @@ author: Rudy Galfi
 role:  Product Manager for AMP
 origin: "https://amphtml.wordpress.com/2018/04/18/new-tools-for-building-user-controls-in-amp-pages/amp/"
 excerpt: "A couple weeks ago, we talked about our plans to give publishers and tech vendors tools to implement their preferred user controls on AMP pages. Today we’re announcing the initial availability of these tools. We are introducing the new &#60;amp-consent&#62; component, in AMP, as a new tool for publishers to implement user controls. The component [&#8230;]"
-avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-04-18T19:29:53-04:00
+avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+date_data: 2018-04-18T16:29:53-07:00
 $date: April 18, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
