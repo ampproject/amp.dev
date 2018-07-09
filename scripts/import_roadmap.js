@@ -78,7 +78,10 @@ async function importRoadmap() {
     card.issue = {
       url: issue.data.html_url,
       title: issue.data.title.replace(/\[Master [fF]eature\] /, ''),
-      description: issue.data.body.replace('Feature description:\r\n\r\n', '').split('\r\n\r\n')[0],
+      description: issue.data.body
+        .replace('Feature description:\r\n\r\n', '')
+        .replace(/\[ \]/g, '')
+        .split('\r\n\r\n')[0],
       labels: (issue.data.labels || []).map(label => {
 
         return label.name.startsWith('Category:') ? { url: label.url, name: label.name.replace('Category:', ''), color: label.color } : false;

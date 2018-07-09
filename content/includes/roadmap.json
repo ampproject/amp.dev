@@ -71,7 +71,7 @@
         "issue": {
           "url": "https://github.com/ampproject/amphtml/issues/16555",
           "title": "Instrument & tweak legacy ad performance with no impact to UX",
-          "description": "- [ ] Legacy ads (ads that consist of JS) on AMP pages some times have indeterministic behavior in regards to how quickly they appear on screen. This can happen in two different situations: 1) When the AMP page loads and looks entirely loaded by the ads take close to 5-6 seconds to load 2) Ads further down the viewport (even within 5 viewports) are not rendered even when scrolling down 10 seconds after pausing in the first viewport. ",
+          "description": "-  Legacy ads (ads that consist of JS) on AMP pages some times have indeterministic behavior in regards to how quickly they appear on screen. This can happen in two different situations: 1) When the AMP page loads and looks entirely loaded by the ads take close to 5-6 seconds to load 2) Ads further down the viewport (even within 5 viewports) are not rendered even when scrolling down 10 seconds after pausing in the first viewport. ",
           "labels": [
             {
               "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
@@ -151,7 +151,7 @@
         "issue": {
           "url": "https://github.com/ampproject/amphtml/issues/16535",
           "title": "Add new analytics for stories",
-          "description": "- [ ] Add an analytics trigger for when the user education overlay is shown (#15420)\r\n- [ ] Add an analytics trigger for when the video spinner is shown",
+          "description": "-  Add an analytics trigger for when the user education overlay is shown (#15420)\r\n-  Add an analytics trigger for when the video spinner is shown",
           "labels": [
             {
               "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
@@ -209,7 +209,7 @@
         "issue": {
           "url": "https://github.com/ampproject/amphtml/issues/16533",
           "title": "Design/test a new desktop experience for stories",
-          "description": "- [ ] Create a prototype of a new desktop experience\r\n- [ ] Test the prototype\r\n- [ ] Integrate feedback\r\n- [ ] Design a launch/rollout plan\r\n- [ ] Roll out the new desktop experience",
+          "description": "-  Create a prototype of a new desktop experience\r\n-  Test the prototype\r\n-  Integrate feedback\r\n-  Design a launch/rollout plan\r\n-  Roll out the new desktop experience",
           "labels": [
             {
               "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",

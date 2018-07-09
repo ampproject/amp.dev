@@ -30,7 +30,8 @@
     text-align: center;
 
     h4,
-    p {
+    p,
+    ul:not(.tags) {
       color: $color-white;
       margin: 0 0 5px 0;
     }
@@ -83,12 +84,19 @@
           font-weight: 400;
         }
 
-        p {
+        p,
+        ul:not(.tags) {
           margin-top: 0;
           font-size: 10pt;
           line-height: 1.5;
           color: #444;
         }
+
+        ul:not(.tags) {
+          padding-left: 1.1em;
+          list-style-type: square;
+        }
+
       }
 
     }
