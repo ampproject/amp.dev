@@ -25,7 +25,7 @@
     },
     {
         "title": "Actions and events in AMP",
-        "order": 8,
+        "order": 1,
         "from": "spec/amp-actions-and-events.md",
         "to": "docs/interaction_dynamic/amp-actions-and-events.md"
     },
@@ -39,7 +39,8 @@
         "title": "CORS in AMP",
         "order": 12,
         "from": "spec/amp-cors-requests.md",
-        "to": "docs/fundamentals/amp-cors-requests.md"
+        "to": "docs/fundamentals/amp-cors-requests.md",
+        "toc": true
     },
     {
         "title": "Getting Support",
@@ -74,5 +75,12 @@
         "order": 2,
         "from": "spec/amp-managing-user-state.md",
         "to": "docs/analytics/amp-managing-user-state.md"
+    },
+    {
+        "title": "AMPHTML email",
+        "order": 2,
+        "from": "spec/amp-email-format.md",
+        "to": "docs/interaction_dynamic/amp-email-format.md",
+        "toc": true
     }
 ]

@@ -51,6 +51,8 @@ menu:
         copy@: "AMP Start"
       - href: https://cdn.ampproject.org/experiments.html
         copy@: "AMP Experiments"
+      - href: https://github.com/ampproject/amp-toolbox
+        copy@: "AMP Toolbox"
   - href: /content/latest/latest.html
     copy@: The Latest
     collection: latest
@@ -72,9 +74,8 @@ menu:
       - href: /content/support/faqs.md
         copy@: "FAQ"
         collection: support/faqs
-      - href: /content/support/developer.md
+      - href: /content/support/developer/get_support.md
         copy@: "Developer Support"
-        collection: support/developer
       - href: /assets/img/brand-guidelines.pdf
         static: true
         copy@: "Brand Guidelines"

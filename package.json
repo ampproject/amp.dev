@@ -1,20 +1,23 @@
 {
   "name": "AMPProject.org",
   "private": true,
+  "scripts": {
+    "preinstall": "node build_scripts/check-package-manager.js"
+  },
   "dependencies": {
-    "feedparser": "^2.2.9",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^3.2.1",
-    "gulp-svg-sprite": "^1.4.0",
-    "moment": "^2.21.0",
-    "octonode": "^0.9.2",
-    "request": "^2.85.0"
+    "feedparser": "2.2.9",
+    "gulp": "4.0.0",
+    "gulp-autoprefixer": "5.0.0",
+    "gulp-plumber": "1.2.0",
+    "gulp-sass": "4.0.1",
+    "gulp-svg-sprite": "1.4.0",
+    "moment": "2.22.2",
+    "octonode": "0.9.2",
+    "request": "2.87.0"
   },
   "devDependencies": {
+    "amp-by-example": "*",
     "workbox-build": "*",
-    "workbox-sw": "*",
-    "amp-by-example": "*"
+    "workbox-sw": "*"
   }
 }

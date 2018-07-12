@@ -41,8 +41,7 @@ build_file="${build_file}.zip"
 echo $(GREEN "Building locales: ") $(CYAN "${locales}")
 echo -e 'travis_fold:start:build\n'
 echo "Running \"${cmd}\"..."
-# TODO(rsimha): Remove "|| true" after #968 is fixed.
-${cmd} || true
+${cmd}
 echo -e 'travis_fold:end:build\n'
 
 # Compress build output

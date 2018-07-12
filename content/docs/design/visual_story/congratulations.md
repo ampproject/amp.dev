@@ -13,7 +13,6 @@ In this tutorial, you learned to:
 - Add audio that plays while a page is viewed
 - Animate elements on a page
 - Keep readers engaged with your content by adding related links to the end of the story
-- Verify that your story implements best practices for AMP stories
 
 ## Next steps
 

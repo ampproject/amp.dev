@@ -70,6 +70,15 @@ A number of docs original source are located in the AMPHTML repo that we import 
 
 > Why do we import instead of having the canonical file in the docs repo? Keeping the doc with source code is good for findability, smoother PRs, and incentive for developers to maintain docs.
 
+#### Testing AMPHTML changes in your local ampproject site
+
+If you've made changes to docs in the AMPHTML repo (e.g., fixing a component doc), and you want to see how your changes appear in ampproject (*before submitting your PR*), you'll need to:
+
+1. Make sure you have the AMPHTML repository on your local machine, and check out the branch with your changes.
+2. Add the following to your path: `export AMP_DOC_LOCAL_PATH=~/amphtml` (change the path to whatever your amphtml directory  is).
+3. Run `grow run` to run the local instance of ampproject.
+
+If you want to switch back to pointing to the AMPHTML production docs, remove the `AMP_DOC_LOCAL_PATH` path (comment it out) and rebuild your local instance of ampproject.
 
 ## Build process
 

@@ -20,7 +20,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Valid AMP documents must not inlude any validation errors.
+Valid AMP documents must not include any validation errors.
 The purpose of this document is to help you better understand
 and fix any validation errors you encounter
 when you [validate your AMP pages](/docs/guides/validate.html).
