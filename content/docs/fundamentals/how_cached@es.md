@@ -55,10 +55,8 @@ Al usar el formato AMP, usted está haciendo que su contenido esté disponible p
 * **Solicitud de URL de caché**: las plataformas pueden solicitar específicamente una página de AMP utilizando el formato de URL de caché de AMP. La memoria caché de AMP actúa como un proxy inverso, por lo tanto, cuando la plataforma accede a la página, la página se almacena en caché automáticamente.
     - Ejemplo Cloudflare AMP Cache URL: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Ejemplo Google AMP Cache URL: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
-    
-{% call callout('Nota', type='note') %}
-La URL de caché de AMP no es una URL de usuario, es decir, los usuarios normalmente no solicitan contenido a través de esas URL.
-{% endcall %}
+
+Nota: La URL de caché de AMP no es una URL de usuario, es decir, los usuarios normalmente no solicitan contenido a través de esas URL.
 
 * **Agregados del Editor**: los editores pueden agregar específicamente la página de AMP al caché de AMP. Esta opción solo se aplica a Google AMP Cache (consulte [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache)).
 

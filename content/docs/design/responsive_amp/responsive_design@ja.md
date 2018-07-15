@@ -49,9 +49,7 @@ $title: レスポンシブな AMP ページを作成する
 </style>
 ```
 
-{% call callout('詳細情報', type='read') %}
-AMP のさまざまなレイアウトについて詳しくは、[レイアウトとメディアクエリ](/ja/docs/design/responsive/control_layout.html#layout-属性)をご覧ください。
-{% endcall %}
+詳細情報: AMP のさまざまなレイアウトについて詳しくは、[レイアウトとメディアクエリ](/ja/docs/design/responsive/control_layout.html#layout-属性)をご覧ください。
 
 <a id="fn1"></a>
 {% call callout2(type='none') %}*** "width=100%" スタイルを使って要素を簡単にサイズ変更できるのに、要素をサイズ変更して画面にフィットさせる処理が複雑である理由: **  レスポンシブな要素を、パフォーマンス指標やユーザーの利便性に悪影響を与えずにページに表示する処理が、複雑な部分になります。"width=100%" を指定すれば簡単に画像を画面にフィットさせることができますが、パフォーマンスへの影響が生じます。ブラウザは、まず画像をダウンロードして画像のサイズを取得し、次に画面サイズに合わせて画像をサイズ変更したうえで、ページをリフローおよび再描画する必要があります。AMP ではレンダリング パスが最適化されており、まずページのレイアウトが行われ、その際に amp-img で指定されたサイズに基づいて画像のプレースホルダが確保され（その値を使用してアスペクト比を算出）、次にリソースがダウンロードされて、ページが描画されます。リフローは不要となっています。
@@ -86,9 +84,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 高解像度の画面（Retina ディスプレイなど）ではくっきりとした鮮明な画像を配信するメリットはありますが、低解像度の端末では不必要に長い読み込み時間の原因となることから、同じ画像を使用するのは避けるべきです。`srcset` に幅の記述子（`w`）を使用することで、非 AMP ページと AMP ページの両方で画面のピクセル密度に応じて適切な画像を配信できます。
 
-{% call callout('注', type='note') %}
-DPR（`x`）ベースの srcset セレクタでも機能しますが、柔軟性を高めるために `w` セレクタの使用をおすすめします。以前は（古い srcset の提案では）、`w` 記述子はビューポートの幅を指していましたが、現在は画像のソースファイルの幅を指すように変更されており、ユーザー エージェントでこの値を使用して各画像の実際のピクセル密度を計算し、適切な画像を選択して表示することができます。
-{% endcall %}
+注: DPR（`x`）ベースの srcset セレクタでも機能しますが、柔軟性を高めるために `w` セレクタの使用をおすすめします。以前は（古い srcset の提案では）、`w` 記述子はビューポートの幅を指していましたが、現在は画像のソースファイルの幅を指すように変更されており、ユーザー エージェントでこの値を使用して各画像の実際のピクセル密度を計算し、適切な画像を選択して表示することができます。
 
 ##### 例: 画面にフィットするくっきりした画像を表示する
 
@@ -103,9 +99,7 @@ DPR（`x`）ベースの srcset セレクタでも機能しますが、柔軟性
 
 たとえば、端末のビューポートの幅が 412 px で DPR が 2.6 の場合、上記のコードに基づいて画像をビューポートの幅の 75% で表示する必要があるため、ブラウザは 803 px（412 * 0.75 * 2.6）に近い画像である `apple-800.jpg` を選択します。
 
-{% call callout('詳細情報', type='read') %}
-AMP での srcset と sizes の使用について詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像](/ja/docs/design/responsive/art_direction.html)をご覧ください。
-{% endcall %}
+詳細情報: AMP での srcset と sizes の使用について詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像](/ja/docs/design/responsive/art_direction.html)をご覧ください。
 
 #### 画像のアート ディレクションを変更する
 
@@ -119,15 +113,11 @@ AMP での srcset と sizes の使用について詳しくは、[srcset、sizes�
 - 470～669 px の場合、`cat-medium.jpg`（450 x 340 px）を表示
 - 469 px 以下の場合、`cat-small.jpg`（226 x 340 px）を表示
 
-{% call callout('注', type='note') %}
-画像のサイズを固定する（つまり、歪みが生じないようにする）必要があるため、レイアウトの値は指定していません。幅と高さが設定されているため、デフォルトで `layout=fixed` に設定されます。詳しくは、[「layout 属性が指定されていない場合」](/ja/docs/design/responsive/control_layout.html#layout-属性が指定されていない場合)をご覧ください。
-{% endcall %}
+注: 画像のサイズを固定する（つまり、歪みが生じないようにする）必要があるため、レイアウトの値は指定していません。幅と高さが設定されているため、デフォルトで `layout=fixed` に設定されます。詳しくは、[「layout 属性が指定されていない場合」](/ja/docs/design/responsive/control_layout.html#layout-属性が指定されていない場合)をご覧ください。
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="さらに表示">コードをすべて表示</div><div placeholder></div></amp-iframe></div>
 
-{% call callout('詳細情報', type='read') %}
-AMP でのアート ディレクションについて詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像](/ja/docs/design/responsive/art_direction.html)をご覧ください。
-{% endcall %}
+詳細情報: AMP でのアート ディレクションについて詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像](/ja/docs/design/responsive/art_direction.html)をご覧ください。
 
 #### 最適な画像を配信する
 
@@ -135,9 +125,7 @@ AMP でのアート ディレクションについて詳しくは、[srcset、si
 
 HTML では `picture` タグを使うことで、異なる画像形式を配信できます。AMP では `picture` タグはサポートされていませんが、`fallback` 属性を使うことで、異なる画像を配信できます。
 
-{% call callout('詳細情報', type='read') %}
-フォールバックについて詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
-{% endcall %}
+詳細情報: フォールバックについて詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
 
 ##### 例: 異なる画像形式を配信する
 
@@ -148,9 +136,7 @@ HTML では `picture` タグを使うことで、異なる画像形式を配信�
 
 便利なことに、Google AMP Cache など一部のキャッシュでは、画像が自動的に圧縮されて WebP 形式や適切な解像度に変換されます。ただし、キャッシュを利用していないプラットフォームもあるため、デベロッパーの側でも手動で画像を最適化する必要があります。
 
-{% call callout('詳細情報', type='read') %}
-Google AMP Cache によって適用される画像の最適化について詳しくは、ブログ記事[「Google AMP Cache、AMP Lite、そして高速化のニーズ」](https://developers-jp.googleblog.com/2017/01/google-amp-cache-and-amp-lite.html)をご覧ください。
-{% endcall %}
+詳細情報: Google AMP Cache によって適用される画像の最適化について詳しくは、ブログ記事[「Google AMP Cache、AMP Lite、そして高速化のニーズ」](https://developers-jp.googleblog.com/2017/01/google-amp-cache-and-amp-lite.html)をご覧ください。
 
 ## 参考となる例
 

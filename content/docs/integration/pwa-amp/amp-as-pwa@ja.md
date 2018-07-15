@@ -13,9 +13,7 @@ $title: AMP ページでプログレッシブ ウェブアプリ機能を有効�
 
 ユーザーが AMP 対応プラットフォームから [AMPbyExample](http://ampbyexample.com/) にアクセスした後、クリックで引き続き同じサイトへ進む場合、AMP キャッシュから離れて配信元に移動することになります。このような場合も当然、ウェブサイトは AMP ライブラリを使用しますが、この時点で配信元に存在しているので、Service Worker を利用したり、インストールを求めるメッセージを表示したりすることなどが可能です。
 
-{% call callout('注意', type='caution') %}
 Service Worker は、ページの AMP キャッシュ バージョンには対応できません。配信元へ進む際に使用してください。
-{% endcall %}
 
 ## ウェブアプリ マニフェストを追加する
 
@@ -54,17 +52,13 @@ AMP ページに[ウェブアプリ マニフェスト](https://developers.googl
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
-{% call callout('ヒント', type='success') %}
-詳しくは、[Web Fundamentals のウェブアプリ マニフェストについての説明](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/) をご覧ください。
-{% endcall %}
+ヒント: 詳しくは、[Web Fundamentals のウェブアプリ マニフェストについての説明](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/) をご覧ください。
 
 ## Service Worker をインストールしてオフライン アクセスを有効にする
 
 Service Worker は、ページとサーバーの間に存在するクライアント サイドのプロキシです。Service Worker を利用すると、オフラインでの優れたユーザー エクスペリエンスを実現したり、アプリケーション シェルのシナリオの読み込みを高速化したり、プッシュ通知を送信したりできます。
 
-{% call callout('メモ', type='note') %}
-Service Worker をご存知ない場合は、[Web Fundamentals の概要説明](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) をご覧ください。
-{% endcall %}
+メモ: Service Worker をご存知ない場合は、[Web Fundamentals の概要説明](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) をご覧ください。
 
 Service Worker は、ブラウザで見つけて実行できるように、特定のページに登録する必要があります。デフォルトでは、こうした登録は [少しの JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) を利用して行います。AMP ページの場合、[`<amp-install-serviceworker>`](/ja/docs/reference/components/amp-install-serviceworker.html) コンポーネントを使って同じことができます。
 
@@ -115,5 +109,5 @@ self.addEventListener('fetch', function(event) {
 
 * カスタム JS を必要とする動的な機能
 * サイト向けにカスタマイズされたコンポーネントやサイトにのみ関連するコンポーネント
- 
- 
+
+

@@ -28,9 +28,7 @@ $title: はじめに
 </html>
 ```
 
-{% call callout('詳細情報', type='read') %}
-詳しくは、AMP ページの[必須のマークアップ](/ja/docs/reference/spec.html#required-markup)についてご覧ください。
-{% endcall %}
+詳細情報: 詳しくは、AMP ページの[必須のマークアップ](/ja/docs/reference/spec.html#required-markup)についてご覧ください。
 
 ### ステップ 2: ページにコンポーネントを追加する
 
@@ -72,9 +70,7 @@ AMP ページの要素のスタイルを設定するには、ドキュメント�
 </style>
 ```
 
-{% call callout('詳細情報', type='read') %}
-詳しくは、AMP ページで[サポートされる CSS](/ja/docs/guides/responsive/style_pages.html) をご覧ください。
-{% endcall %}
+詳細情報: 詳しくは、AMP ページで[サポートされる CSS](/ja/docs/guides/responsive/style_pages.html) をご覧ください。
 
 ### ステップ 4: AMP HTML を検証する
 
@@ -92,5 +88,5 @@ AMP ページの基本をさらに理解するには、「[初めての AMP ペ�
 * [ページにアナリティクスを追加する](/ja/docs/guides/analytics_amp.html)
 * [ユーザー エンゲージメントを向上させる](/ja/docs/guides/engagement.html)
 * [AMP BY Example](https://ampbyexample.com/) ライブデモ
- 
- 
+
+

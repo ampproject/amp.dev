@@ -29,9 +29,7 @@ Si solo tienes una página, y es una página de AMP, sigues teniendo que añadir
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-{% call callout('Leer más', type='read') %}
-Aprende más sobre cómo Google encuentra las páginas en [Directrices de la Búsqueda de Google para las páginas de AMP](https://support.google.com/webmasters/answer/6340290).
-{% endcall %}
+Leer más: Aprende más sobre cómo Google encuentra las páginas en [Directrices de la Búsqueda de Google para las páginas de AMP](https://support.google.com/webmasters/answer/6340290).
 
 ## Integrar con plataformas de terceros mediante metadatos adicionales
 

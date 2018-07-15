@@ -36,9 +36,7 @@ After setting up your local web server, have a look at what our completed story 
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('Important', type='caution') %}
-Make sure the URL serves from `localhost` otherwise the AMP story might not load correctly, and you may encounter errors like `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
-{% endcall %}
+Important: Make sure the URL serves from `localhost` otherwise the AMP story might not load correctly, and you may encounter errors like `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
 
 {% call callout('Important', type='caution') %}
 You may encounter a screen that states "<b>You must enable the amp-story experiment to view this content</b>". The amp-story component is currently [experimental](/docs/reference/experimental.html).  To view the story, you must click the **Enable** button to turn on the amp-story component for your domain, and then reload the page. Although not necessary for this tutorial, you might want to opt your browser into the AMP Dev Channel, which allows your browser to use a newer, experimental version of the AMP JS libraries.  You can learn more about the [AMP Dev Channel here](/docs/reference/experimental.html).

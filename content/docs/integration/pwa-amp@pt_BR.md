@@ -19,9 +19,7 @@ Saiba mais sobre os [Progressive Web Apps](https://developers.google.com/web/pro
 
 As páginas AMP podem usar muitos recursos de PWA por conta própria, desde que sejam veiculadas a partir da sua origem (o domínio do site), e não de um cache de AMP. Isso significa que os recursos de PWA não serão iniciados ao usar uma página AMP de uma plataforma como o Google ou o Bing, mas sim durante a navegação ou se os usuários acessarem as páginas AMP diretamente.
 
-{% call callout('Leia mais', type='read') %}
-Saiba como [ativar recursos de PWA](/pt_br/docs/guides/pwa-amp/amp-as-pwa.html) para suas páginas AMP.
-{% endcall %}
+Leia mais: Saiba como [ativar recursos de PWA](/pt_br/docs/guides/pwa-amp/amp-as-pwa.html) para suas páginas AMP.
 
 ## AMP como ponto de entrada para o PWA
 
@@ -29,9 +27,7 @@ Uma vantagem exclusiva das AMP é a **exibição quase instantânea**, uma carac
 
 Uma boa estratégia é fazer com que o ponto de entrada do seu site seja uma página AMP, carregar o PWA em segundo plano e mudar para ele durante a navegação.
 
-{% call callout('Leia mais', type='read') %}
-Saiba como [conectar AMP a um PWA](/pt_br/docs/guides/pwa-amp/amp-to-pwa.html) usando `amp-install-serviceworker`.
-{% endcall %}
+Leia mais: Saiba como [conectar AMP a um PWA](/pt_br/docs/guides/pwa-amp/amp-to-pwa.html) usando `amp-install-serviceworker`.
 
 ## AMP como fonte de dados para seu PWA
 
@@ -39,8 +35,4 @@ Um dos principais recursos das páginas AMP é a incorporação fácil e segura.
 
 Ao criar um Progressive Web App, você pode ter os mesmos benefícios e reduzir drasticamente a complexidade do cliente e do seu back-end **reutilizando suas páginas AMP como fonte de dados para seu PWA**.
 
-{% call callout('Leia mais', type='read') %}
-Saiba como [usar páginas AMP em um PWA](/pt_br/docs/guides/pwa-amp/amp-in-pwa.html).
-{% endcall %}
- 
- 
+Leia mais: Saiba como [usar páginas AMP em um PWA](/pt_br/docs/guides/pwa-amp/amp-in-pwa.html).

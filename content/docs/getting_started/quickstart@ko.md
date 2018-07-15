@@ -29,9 +29,7 @@ $title: 시작하기
 </html>
 ```
 
-{% call callout('읽어보기', type='read') %}
-AMP 페이지를 위한 [필수 마크업](/ko/docs/reference/spec.html#required-markup)에 대해서 살펴보세요.
-{% endcall %}
+읽어보기: AMP 페이지를 위한 [필수 마크업](/ko/docs/reference/spec.html#required-markup)에 대해서 살펴보세요.
 
 ### 2단계: 페이지에 컴포넌트 추가하기
 
@@ -75,9 +73,7 @@ AMP 페이지의 요소를 스타일하기 위해, 문서의 `<head>` 요소 내
 </style>
 ```
 
-{% call callout('읽어보기', type='read') %}
-AMP 페이지에서 [지원하는 CSS](/ko/docs/guides/responsive/style_pages.html)에 대해 살펴보세요.
-{% endcall %}
+읽어보기: AMP 페이지에서 [지원하는 CSS](/ko/docs/guides/responsive/style_pages.html)에 대해 살펴보세요.
 
 ### 4단계: AMP HTML 검증하기
 

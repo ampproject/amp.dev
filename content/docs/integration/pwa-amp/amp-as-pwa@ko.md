@@ -13,9 +13,7 @@ $title: AMP 페이지에 프로그레시브 웹 앱 기능 사용 설정
 
 AMP를 지원하는 플랫폼 사용자가 [AMPbyExample](http://ampbyexample.com/)에 방문한 다음 클릭을 통해 해당 사이트에서 계속 탐색하면, AMP 캐시에서 원본으로 이동하게 됩니다. 웹사이트에서는 계속해서 AMP 라이브러리를 사용합니다. 하지만 이제 원본에서 게시되기 때문에 서비스 워커 사용, 설치 메시지 표시 등의 기능을 사용할 수 있습니다.
 
-{% call callout('주의사항', type='caution') %}
-서비스 워커는 AMP 캐시 버전의 페이지와 상호작용할 수 없습니다. 원본으로 이동할 때 서비스 워커를 사용하세요.
-{% endcall %}
+주의사항: 서비스 워커는 AMP 캐시 버전의 페이지와 상호작용할 수 없습니다. 원본으로 이동할 때 서비스 워커를 사용하세요.
 
 ## 웹 앱 매니페스트 추가하기
 
@@ -54,17 +52,13 @@ AMP 페이지에 [웹 앱 매니페스트](https://developers.google.com/web/fun
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
-{% call callout('팁', type='success') %}
-[WebFundamentals 웹 앱 매니페스트](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/)에 관해 자세히 알아보세요.
-{% endcall %}
+팁: [WebFundamentals 웹 앱 매니페스트](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/)에 관해 자세히 알아보세요.
 
 ## 서비스 워커를 설치하여 오프라인 액세스 사용
 
 서비스 워커는 페이지와 서버 사이에 위치하는 클라이언트측 프록시로서 멋진 오프라인 환경을 구축하고, 앱 셸 시나리오를 빠르게 로드하고, 푸시 알림을 전송하는 데 사용할 수 있습니다.
 
-{% call callout('참고', type='note') %}
-서비스 워커라는 개념을 처음 접하시는 분은 [WebFundamentals 소개](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)를 읽어보세요.
-{% endcall %}
+참고: 서비스 워커라는 개념을 처음 접하시는 분은 [WebFundamentals 소개](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)를 읽어보세요.
 
 서비스 워커는 특정 페이지에 등록되어야 합니다. 그렇지 않으면 브라우저에서 서비스 워커를 찾거나 실행할 수 없습니다. 기본적으로 이 작업에는 [자바스크립트](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration)가 필요합니다. AMP 페이지에서는 [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker.html) 구성요소를 사용하여 동일한 작업을 처리할 수 있습니다.
 
@@ -115,5 +109,5 @@ self.addEventListener('fetch', function(event) {
 
 * 맞춤 JS를 필요로 하는 동적 기능
 * 내 사이트에 맞춤설정되었거나 내 사이트에만 관련이 있는 구성요소
- 
- 
+
+

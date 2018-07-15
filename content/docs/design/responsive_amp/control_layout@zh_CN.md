@@ -26,9 +26,7 @@ $title: 布局和媒体查询
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('提示', type='success') %}
- 请参阅我们关于 `amp-img` 基本示例和高级示例的实际演示：[实际演示](https://ampbyexample.com/components/amp-img/)
- {% endcall %}
+提示: 请参阅我们关于 `amp-img` 基本示例和高级示例的实际演示：[实际演示](https://ampbyexample.com/components/amp-img/)
 
 ## layout 属性
 
@@ -129,8 +127,7 @@ $title: 布局和媒体查询
 
  使用 [`@media`](https://developer.mozilla.org/es_us/docs/Web/CSS/@media) 来控制网页布局的外观和行为，就像在其他任何网站上一样。当浏览器窗口改变尺寸或屏幕方向时，媒体查询会重新接受评估，而元素则会根据新的结果隐藏和显示。
 
-{% call callout('提示', type='success') %}
- 要详细了解如何通过应用媒体查询来控制布局，请参阅[使用 CSS 媒体查询实现自适应功能](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en)一文。{% endcall %}
+提示: 要详细了解如何通过应用媒体查询来控制布局，请参阅[使用 CSS 媒体查询实现自适应功能](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en)一文。
 
 ### 元素媒体查询
 

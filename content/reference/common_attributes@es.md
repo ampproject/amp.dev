@@ -30,9 +30,7 @@ Todos los elementos AMP compatibles con el diseño `responsive` también admiten
 1. El valor se aplica a la altura, pero no al ancho del elemento.
 2. Se permiten valores porcentuales. Un valor porcentual indica el porcentaje del ancho del elemento. Por ejemplo, un valor de `80%` indica que la altura del elemento representa el 80 % del ancho del mismo.
 
-{% call callout('Nota', type='note') %}
-Si el atributo `heights` se especifica junto a `width` y `height`, el `layout` será `responsive` de forma predeterminada.
-{% endcall %}
+Nota: Si el atributo `heights` se especifica junto a `width` y `height`, el `layout` será `responsive` de forma predeterminada.
 
 Ejemplo:
 

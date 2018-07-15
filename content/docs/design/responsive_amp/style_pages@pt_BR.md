@@ -7,9 +7,7 @@ Assim como todas as páginas da Web, as páginas AMP são estilizadas com CSS. C
 
 Todos os estilos precisam estar no cabeçalho do documento (veja [Adicionar estilos a uma página](/pt_br/docs/guides/responsive_amp.html#add-styles-to-a-page)). É possível usar pré-processadores e modelos CSS para criar páginas estáticas e gerenciar melhor seu conteúdo.
 
-{% call callout('Observação', type='note') %}
-Os componentes das AMP possuem estilos padrão para facilitar a criação de páginas responsivas. Esses estilos estão definidos em [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
-{% endcall %}
+Observação: Os componentes das AMP possuem estilos padrão para facilitar a criação de páginas responsivas. Esses estilos estão definidos em [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
 ## Estilos não permitidos
 
@@ -69,9 +67,7 @@ Os estilos a seguir são permitidos. Contudo, há restrições em relação à c
 
 As páginas AMP não podem incluir folhas de estilos externas, exceto fontes personalizadas.
 
-{% call callout('Continue lendo', type='success') %}
-Saiba mais sobre [fontes personalizadas nas AMP](/pt_br/docs/guides/responsive/custom_fonts.html).
-{% endcall %}
+Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP](/pt_br/docs/guides/responsive/custom_fonts.html).
 
 ## Como usar pré-processadores de CSS
 

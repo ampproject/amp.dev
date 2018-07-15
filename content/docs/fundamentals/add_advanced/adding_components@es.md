@@ -48,9 +48,7 @@ Trate de **añadir** los dos ejemplos anteriores en su artículo justo después 
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Prueba de Anuncios') }}
 
-{% call callout('Importante', type='caution') %}
-Es posible que tenga algunos errores en la consola de desarrollador, como `Mixed Content` o `XMLHttpRequest cannot load`. El error anterior probablemente esté relacionado con el anuncio de A9 porque no todo el contenido que carga es seguro. Este es un requisito notable para todos los anuncios publicados en AMP.
-{% endcall %}
+Importante: Es posible que tenga algunos errores en la consola de desarrollador, como `Mixed Content` o `XMLHttpRequest cannot load`. El error anterior probablemente esté relacionado con el anuncio de A9 porque no todo el contenido que carga es seguro. Este es un requisito notable para todos los anuncios publicados en AMP.
 
 Exploremos algunas opciones más disponibles para usar con los anuncios de DoubleClick. Intente **agregar** estas dos configuraciones de anuncios de orientación geográfica a los anuncios:
 
@@ -80,17 +78,11 @@ Desafortunadamente, la segmentación geográfica no puede controlarse desde el c
 
 El ejemplo de orientación geográfica anterior muestra cómo `amp-ad` es lo suficientemente flexible para todo tipo de características de la plataforma de anuncios.
 
-{% call callout('Nota', type='note') %}
-Es posible que observe que dentro de estas etiquetas de amp-ad se encuentran etiquetas `div` adicionales con un atributo denominado `fallback` en ellas. ¿Puedes adivinar qué representa el atributo `fallback`? Se informa al sistema de carga de AMP para mostrar sólo el contenido de ese elemento cuando el elemento padre no se carga correctamente. Lo que significa que el elemento padre recae en el elemento hijo, de ahí el término ‘fallback’. Obtenga más información sobre [Placeholders & fallbacks](/es/docs/design/responsive/placeholders.html).
-{% endcall %}
+Nota: Es posible que observe que dentro de estas etiquetas de amp-ad se encuentran etiquetas `div` adicionales con un atributo denominado `fallback` en ellas. ¿Puedes adivinar qué representa el atributo `fallback`? Se informa al sistema de carga de AMP para mostrar sólo el contenido de ese elemento cuando el elemento padre no se carga correctamente. Lo que significa que el elemento padre recae en el elemento hijo, de ahí el término ‘fallback’. Obtenga más información sobre [Placeholders & fallbacks](/es/docs/design/responsive/placeholders.html).
 
-{% call callout('Leer más', type='read') %}
-Para ver las últimas redes publicitarias compatibles, lea la documentación de referencia del componente [amp-ad](/es/docs/reference/components/amp-ad.html#supported-ad-networks).
-{% endcall %}
+Leer más: Para ver las últimas redes publicitarias compatibles, lea la documentación de referencia del componente [amp-ad](/es/docs/reference/components/amp-ad.html#supported-ad-networks).
 
-{% call callout('Nota', type='note') %}
-No se permite que JavaScript en la red de anuncios se ejecute dentro del documento de AMP. En cambio, el tiempo de ejecución de AMP carga un iframe de origen diferente (a través de un sandbox iframe) como el documento AMP y ejecuta el JS de la red de anuncios dentro de ese sandbox iframe.
-{% endcall %}
+Nota: No se permite que JavaScript en la red de anuncios se ejecute dentro del documento de AMP. En cambio, el tiempo de ejecución de AMP carga un iframe de origen diferente (a través de un sandbox iframe) como el documento AMP y ejecuta el JS de la red de anuncios dentro de ese sandbox iframe.
 
 Nuestro documento de AMP ahora incluye texto, una imagen y un anuncio incrustado en la página, que son todos los ingredientes clave para contar una historia y monetizar su contenido. Sin embargo, los sitios web modernos a menudo incluyen más funcionalidad que simplemente imágenes y texto.
 
@@ -135,9 +127,7 @@ Una vez más, especificamos el `width` y la `height` del video para que el siste
 
 Para obtener más información sobre la incorporación de vídeos de YouTube, lea la documentación del componente [amp-youtube](/es/docs/reference/components/amp-youtube.html). Para obtener más componentes de vídeo y multimedia, consulte la [lista de componentes AMP](/es/docs/reference/components.html#media).
 
-{% call callout('Tip', type='success') %}
-Use el atributo [`fallback`](/es/docs/design/responsive/placeholders.html#fallbacks) para informar a los usuarios si el componente falla en cargar o si el componente no es soportado por su navegador web.
-{% endcall %}
+Tip: Use el atributo [`fallback`](/es/docs/design/responsive/placeholders.html#fallbacks) para informar a los usuarios si el componente falla en cargar o si el componente no es soportado por su navegador web.
 
 ## Mostrar un Tweet
 La incorporación de tweets preformateados de Twitter es una característica común en los artículos de noticias. El componente [amp-twitter](/es/docs/reference/components/amp-twitter.html) puede proporcionar esta funcionalidad con facilidad.
@@ -168,9 +158,7 @@ El atributo `data-tweetid` es otro ejemplo de un atributo personalizado requerid
 
 Para obtener más información sobre la incorporación de Tweets de Twitter, lea la documentación del componente [amp-twitter](/es/docs/reference/components/amp-twitter.html).
 
-{% call callout('Tip', type='success') %}
-AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components](/es/docs/reference/components.html#social).
-{% endcall %}
+Tip: AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components](/es/docs/reference/components.html#social).
 
 ## Resaltar una cita de artículo
 

@@ -13,9 +13,7 @@ $title: 为 AMP 网页启用渐进式网页应用功能
 
 如果某位用户通过某个支持 AMP 的平台访问 [AMPbyExample](http://ampbyexample.com/)，然后通过执行点击操作进入该网站以继续进行浏览之旅，该用户就会从 AMP 缓存转到源网域。当然，该网站仍会使用 AMP 库，但由于该网站现在位于源网域，它就可以使用 Service Worker、可以提示用户进行安装，等等。
 
-{% call callout('注意', type='caution') %}
 Service Worker 无法与网页的 AMP 缓存版本互动。请在用户进入您的源网域以继续进行浏览之旅时使用 Service Worker。
-{% endcall %}
 
 ## 添加网络应用清单
 
@@ -54,17 +52,13 @@ Service Worker 无法与网页的 AMP 缓存版本互动。请在用户进入您
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
-{% call callout('提示', type='success') %}
-如有需要，请[在“网页基础知识”网站上详细了解网络应用清单](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/)。
-{% endcall %}
+提示: 如有需要，请[在“网页基础知识”网站上详细了解网络应用清单](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/)。
 
 ## 安装 Service Worker 以允许离线访问
 
 Service Worker 是您的网页与服务器之间的客户端代理，可用于打造出色的离线体验、快速加载应用 Shell 场景以及发送推送通知。
 
-{% call callout('注意', type='note') %}
-如果您不熟悉 Service Worker 这一概念，请[在“网页基础知识”网站上阅读相关简介](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)。
-{% endcall %}
+注意: 如果您不熟悉 Service Worker 这一概念，请[在“网页基础知识”网站上阅读相关简介](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)。
 
 您需要在一个给定的网页上注册 Service Worker，否则浏览器将无法找到或运行该文件。默认情况下，注册过程是借助[少量 JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) 完成的。在 AMP 网页上，您可以使用 [`<amp-install-serviceworker>`](/zh_cn/docs/reference/components/amp-install-serviceworker.html) 组件实现同样的目的。
 
@@ -115,5 +109,5 @@ self.addEventListener('fetch', function(event) {
 
 * 需要使用自定义 JS 的动态功能。
 * 专为您的网站定制/仅与您的网站相关的组件。
- 
- 
+
+

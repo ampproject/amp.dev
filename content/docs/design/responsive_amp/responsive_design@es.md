@@ -50,10 +50,7 @@ Sin embargo, si no queremos que la imagen se vaya más allá de su tamaño, conf
 </style>
 ```
 
-
-{% call callout('Leer más', type='read') %}
-Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios](/es/docs/guides/responsive/control_layout.html#el-atributo-layout).
-{% endcall %}
+Leer más: Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios](/es/docs/guides/responsive/control_layout.html#el-atributo-layout).
 
  <a id="fn1"></a>
 {% call callout2(type='none') %}
@@ -89,9 +86,7 @@ Las imágenes forman una gran parte de una página web (aproximadamente el [65% 
 
 Para pantallas de alta resolución (por ejemplo, pantalla Retina), debe proporcionar imágenes que parezcan claras y nítidas; sin embargo, no desea utilizar esa misma imagen en dispositivos de baja resolución porque esto causará un tiempo de carga extra innecesario. En páginas no AMP y AMP, puede servir la imagen correcta para la densidad de píxeles de la pantalla utilizando `srcset` con el descriptor de anchura (`w`).
 
-{% call callout('Nota', type='note') %}
-El selector `srcset` basado en DPR (`x`) también funciona; sin embargo, para mayor flexibilidad, recomendamos utilizar el selector `w`. Anteriormente (en la antigua propuesta srcset), el descriptor `w` describía el ancho del viewport, pero ahora describe el ancho del archivo fuente de la imagen, lo que permite al agente del usuario calcular la densidad de píxeles efectiva de cada imagen y elegir la imagen apropiada para renderizarla.
-{% endcall %}
+Nota: El selector `srcset` basado en DPR (`x`) también funciona; sin embargo, para mayor flexibilidad, recomendamos utilizar el selector `w`. Anteriormente (en la antigua propuesta srcset), el descriptor `w` describía el ancho del viewport, pero ahora describe el ancho del archivo fuente de la imagen, lo que permite al agente del usuario calcular la densidad de píxeles efectiva de cada imagen y elegir la imagen apropiada para renderizarla.
 
 ##### Ejemplo: Mostrando una imagen nítida que encaje en la pantalla
 
@@ -106,9 +101,7 @@ En el siguiente ejemplo tenemos varias imágenes que tienen el mismo radio de as
 
 Por ejemplo, digamos que tenemos un dispositivo que tiene un ancho de ventana de 412 px y un DPR de 2.6. Basándose en el código anterior, la imagen debe mostrarse al 75% del ancho de la ventana de visualización, por lo que el navegador elige una imagen cercana a 803 px (412 * .75 * 2.6), que pasa a ser `apple-800.jpg`.
 
-{% call callout('Leer más', type='read') %}
-Para aprender más sobre el `srcset` y `sizes` en AMP, see the [Imágenes adaptativas con srcset, sizes & heights](/es/docs/guides/responsive/art_direction.html) guide.
-{% endcall %}
+Leer más: Para aprender más sobre el `srcset` y `sizes` en AMP, see the [Imágenes adaptativas con srcset, sizes & heights](/es/docs/guides/responsive/art_direction.html) guide.
 
 #### Cambiando la dirección artística de una imagen
 
@@ -122,15 +115,11 @@ En el ejemplo siguiente, tenemos 3 imágenes recortadas diferentes de un gato qu
 - 470 - 669 px, muestra cat-medium.jpg (450 x 340 px)
 - 469 px o menos, muestra cat-small.jpg (226 x 340 px)
 
-{% call callout('Nota', type='note') %}
-Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no sesgamos), no especificamos un valor de diseño, que por defecto se establecerá en `layout=fixed` porque establecemos el `width` y el `height`. Para obtener más información, consulte ["¿Qué ocurre si width y height no están definidos?"](/es/docs/guides/responsive/control_layout.html#¿qué-ocurre-si-width-y-height-no-están-definidos?).
-{% endcall %}
+Nota: Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no sesgamos), no especificamos un valor de diseño, que por defecto se establecerá en `layout=fixed` porque establecemos el `width` y el `height`. Para obtener más información, consulte ["¿Qué ocurre si width y height no están definidos?"](/es/docs/guides/responsive/control_layout.html#¿qué-ocurre-si-width-y-height-no-están-definidos?).
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
-{% call callout('Leer más', type='read') %}
-Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights](/es/docs/guides/responsive/art_direction.html).
-{% endcall %}
+Leer más: Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights](/es/docs/guides/responsive/art_direction.html).
 
 #### Proporcionar imágenes optimizadas
 
@@ -138,9 +127,7 @@ La entrega de páginas de carga rápida requiere imágenes optimizadas: en tama�
 
 En HTML, puede servir diferentes formatos de imagen utilizando la etiqueta `picture`. En AMP, aunque la etiqueta `picture` no es compatible, puede servir a diferentes imágenes mediante el atributo de `fallback`.
 
-{% call callout('Leer más', type='read') %}
-Para aprender más acerca de los fallbacks, lee la guía [Placeholders & Fallbacks](/es/docs/guides/responsive/placeholders.html).
-{% endcall %}
+Leer más: Para aprender más acerca de los fallbacks, lee la guía [Placeholders & Fallbacks](/es/docs/guides/responsive/placeholders.html).
 
 ##### Ejemplo: Sirva diferentes formatos de imagen
 
@@ -151,9 +138,7 @@ En el ejemplo siguiente, si el navegador admite WebP, sirva mountains.webp, de l
 
 Como un buen bono, algunas cachés, como el caché de Google AMP, comprimen y convierten automáticamente imágenes a WebP y las resoluciones correctas si no lo hacen. Sin embargo, no todas las plataformas utilizan cachés, por lo que todavía debe optimizar imágenes manualmente.
 
-{% call callout('Leer más', type='read') %}
-Para aprender más acerca de las optimizaciones que aplica el Cache de Google AMP sobre imágenes, lee el siguiente post en inglés: ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html).
-{% endcall %}
+Leer más: Para aprender más acerca de las optimizaciones que aplica el Cache de Google AMP sobre imágenes, lee el siguiente post en inglés: ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html).
 
 ## Ejemplos para inspirar
 

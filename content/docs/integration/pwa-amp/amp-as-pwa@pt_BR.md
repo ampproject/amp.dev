@@ -13,9 +13,7 @@ Muitos sites não precisam de recursos além dos oferecidos pelas AMP. [AMPbyExa
 
 Quando o usuário visita [AMPbyExample](http://ampbyexample.com/) de uma plataforma compatível com AMP e clica para navegar no site, ele sai do cache de AMP e acessa a origem. O site ainda usa a biblioteca AMP, mas, como ele fica na origem, é possível usar um service worker, solicitar instalações e assim por diante.
 
-{% call callout('Lembre-se', type='caution') %}
-O service worker não poderá interagir com a versão AMP em cache da sua página. Use o recurso para caminhos direcionados à sua origem.
-{% endcall %}
+Lembre-se: O service worker não poderá interagir com a versão AMP em cache da sua página. Use o recurso para caminhos direcionados à sua origem.
 
 ## Adicionar um manifesto de app da Web
 
@@ -54,17 +52,13 @@ Em seguida, vincule-o à seção `<head>` da página AMP:
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
-{% call callout('Dica', type='success') %}
-Saiba mais sobre o [Manifesto de app da Web no WebFundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
-{% endcall %}
+Dica: Saiba mais sobre o [Manifesto de app da Web no WebFundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
 
 ## Instalar um service worker para permitir o acesso off-line
 
 O service worker é um proxy do lado do cliente que fica entre a página e o servidor. Ele pode ser usado para criar experiências off-line incríveis, cenários de shell do app com carregamento rápido e enviar notificações push.
 
-{% call callout('Observação', type='note') %}
-Se o conceito de service workers for novidade para você, leia [esta introdução no WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
-{% endcall %}
+Observação: Se o conceito de service workers for novidade para você, leia [esta introdução no WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 
 O service worker precisa ser registrado em uma página determinada, caso contrário, o navegador não será capaz de encontrá-lo ou executá-lo. Por padrão, isso é feito com [uma pequena ajuda do JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Em páginas AMP, use o componente [`<amp-install-serviceworker>`](/pt_br/docs/reference/components/amp-install-serviceworker.html) para alcançar o mesmo resultado.
 
@@ -115,5 +109,5 @@ funcionalidades adicionais que não passariam na [validação de AMP](/pt_br/doc
 
 * recursos dinâmicos que exigem JS personalizado
 * componentes personalizados/relevantes apenas para seu site
- 
- 
+
+

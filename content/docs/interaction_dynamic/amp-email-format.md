@@ -238,9 +238,7 @@ All CSS in any AMP document must be included in a `<style amp-custom>` tag withi
 </head>
 [/sourcecode]
 
-{% call callout('Note', type='note') %}
-The entire `<style>` tag cannot exceed 50,000 bytes. The validator will check for this.
-{% endcall %}
+Note: The entire `<style>` tag cannot exceed 50,000 bytes. The validator will check for this.
 
 ## Document dimensions
 
@@ -410,9 +408,7 @@ To start, the email client strips out the `text/x-amp-html` part of the MIME tre
 
 There is no authentication for outgoing XHR calls from AMP email messages.  Every XHR request is considered anonymous. Email senders should not rely on cookies to authenticate outgoing XHR requests from emails.
 
-{% call callout('Note', type='note') %}
-There is also no plan to include things like OAuth tokens to authenticate a user to a request.
-{% endcall %}
+Note: There is also no plan to include things like OAuth tokens to authenticate a user to a request.
 
 ## Feedback & Support
 

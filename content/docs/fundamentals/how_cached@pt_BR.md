@@ -18,16 +18,16 @@ Saiba mais sobre os caches de AMP neste vídeo do YouTube ou na postagem do blog
 {{ youtube('n8n7fj60lds', 480, 270, caption='Assista esse vídeo para saber por que existem caches de AMP.') }}
 
 ## Quais caches de AMP estão disponíveis?
-No momento, há dois provedores de cache de AMP: 
+No momento, há dois provedores de cache de AMP:
 
-- [Cache de AMP do Google](https://developers.google.com/amp/cache/) 
+- [Cache de AMP do Google](https://developers.google.com/amp/cache/)
 - [Cache de AMP do Cloudflare](https://amp.cloudflare.com/)
 
 AMP é um ecossistema aberto, e o Projeto AMP incentiva ativamente o desenvolvimento de mais caches de AMP.  Para saber mais sobre a criação de caches de AMP, consulte as [Diretrizes de cache de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
 ## Como escolher um cache de AMP?
 
-O editor não escolhe um cache de AMP. Essa escolha é feita pela *plataforma* que vincula seu conteúdo (se houver). 
+O editor não escolhe um cache de AMP. Essa escolha é feita pela *plataforma* que vincula seu conteúdo (se houver).
 
 Isso é o contrário do modelo normal em que a entrega de conteúdo é de responsabilidade do editor.  No entanto, esse modelo permite que as plataformas forneçam aos usuários um desempenho de carregamento previsível e, entre outras coisas, que garantam as constantes necessárias de segurança e privacidade durante a fase de pré-renderização de AMP. [Clique aqui](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md) se quiser saber mais sobre as diretrizes rígidas para a criação de caches de AMP.
 
@@ -55,9 +55,7 @@ Ao usar o formato AMP, você disponibiliza conteúdo para ser armazenado em cach
     - Exemplo de URL do cache de AMP do Cloudflare: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Exemplo de URL do cache de AMP do Google: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
-{% call callout('Observação', type='note') %}
 Observação: o URL do cache de AMP não é um URL voltado ao usuário, ou seja, normalmente ele não solicita conteúdo por meio desses URLs.
-{% endcall %}
 
 * **Inclusão de editores**: os editores podem adicionar especificamente a página AMP ao cache de AMP.  Essa opção é aplicável somente ao cache de AMP do Google (consulte [Cache de AMP do Google: atualizar o conteúdo AMP] (https://developers.google.com/amp/cache/update-cache)).
 

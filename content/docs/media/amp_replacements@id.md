@@ -14,9 +14,7 @@ Isi. Pelajari perbedaan mengenai fitur yang setara dengan AMP dan pelajari cara 
 *  Kami perlu memahami tata letak halaman sebelum aset dimuat, karena ini penting untuk [mendukung prapemuatan viewport pertama](/id/learn/about-how/#size-all-resources-statically)
 *  Kami perlu mengontrol permintaan jaringan agar [konten diprioritaskan dan dimuat secara perlahan dan efektif](/id/learn/about-how/#prioritize-resource-loading)
 
-{% call callout('Perhatian', type='caution') %}
- Meski tidak didukung, pasangan HTML default*akan*  dirender, tetapi AMP tidak akan [memvalidasi halaman Anda](/id/docs/guides/debug/validate.html) 
-dan Anda tidak akan mendapatkan semua manfaat dari yang diberikan AMP.{% endcall %}
+Perhatian: Meski tidak didukung, pasangan HTML default*akan*  dirender, tetapi AMP tidak akan [memvalidasi halaman Anda](/id/docs/guides/debug/validate.html) dan Anda tidak akan mendapatkan semua manfaat dari yang diberikan AMP.
 
 ## Gambar
 
@@ -30,7 +28,7 @@ dan Anda tidak akan mendapatkan semua manfaat dari yang diberikan AMP.{% endcall
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -48,7 +46,7 @@ Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan t
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -64,20 +62,17 @@ Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan t
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Baca juga', type='read') %}
- Pelajari lebih lanjut tentang [teknik tata letak lanjutan](/id/docs/guides/responsive/control_layout.html).{% endcall %}
+Baca juga: Pelajari lebih lanjut tentang [teknik tata letak lanjutan](/id/docs/guides/responsive/control_layout.html).
 
 ### Perilaku dan placeholder
 
 Waktu proses HTML AMP dapat mengelola konten gambar secara efektif, dengan memilih antara pemuatan konten yang diprioritaskan atau yang mengalami penundaan berdasarkan pada posisi viewport, sumber daya sistem, bandwidth koneksi, atau faktor lainnya.
 
-{% call callout('Baca juga', type='read') %}
- Pelajari cara [memberikan penggantian dan placeholder untuk gambar](/id/docs/guides/responsive/placeholders.html)
-.{% endcall %}
+Baca juga: Pelajari cara [memberikan penggantian dan placeholder untuk gambar](/id/docs/guides/responsive/placeholders.html).
 
 ## Gambar animasi
 
@@ -91,14 +86,11 @@ Waktu proses HTML AMP dapat mengelola konten gambar secara efektif, dengan memil
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Catatan', type='note') %}
- Sertakan `<script async custom-element="amp-anim"
-src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` 
-pada bagian atas halaman untuk menggunakan komponen ini. {% endcall %}
+Catatan: Sertakan `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` pada bagian atas halaman untuk menggunakan komponen ini.
 
 ## Video
 
@@ -116,7 +108,7 @@ Sertakan placeholder sebelum video dimulai, dan penggantian, jika browser tidak 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -136,12 +128,8 @@ Sertakan placeholder sebelum audio dimulai, dan penggantian, jika browser tidak 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Catatan', type='note') %}
- Sertakan `<script async custom-element="amp-audio"
-src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` 
-pada bagian atas halaman untuk menggunakan komponen ini. {% endcall %}
-
+Catatan: Sertakan `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` pada bagian atas halaman untuk menggunakan komponen ini.

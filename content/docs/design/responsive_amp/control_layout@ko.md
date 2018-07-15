@@ -26,9 +26,7 @@ $title: 레이아웃 및 미디어 쿼리
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('도움말', type='success') %}
- 자세한 `amp-img` 실시간 데모에서 기본/응용 예시를 확인하세요. [실시간 데모](https://ampbyexample.com/components/amp-img/)
-{% endcall %}
+도움말: 자세한 `amp-img` 실시간 데모에서 기본/응용 예시를 확인하세요. [실시간 데모](https://ampbyexample.com/components/amp-img/)
 
 ## 레이아웃 속성
 
@@ -129,9 +127,7 @@ $title: 레이아웃 및 미디어 쿼리
 
  Use [`@media`](https://developer.mozilla.org/ja/docs/Web/CSS/@media) 를 사용하여 다른 웹사이트에서처럼 페이지 레이아웃의 모양과 작동 방식을 제어하세요. 브라우저 창의 크기 또는 방향이 바뀌면 미디어 쿼리가 재평가되고 새로운 결과에 따라 요소가 숨겨지거나 표시됩니다.
 
-{% call callout('도움말', type='success') %}
- Learn more about controlling layout by applying media queries in [CSS 미디어 쿼리를 사용하여 반응성 제어하기](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en)
-에서 미디어 쿼리를 적용하여 레이아웃을 제어하는 방법을 자세히 알아보세요. {% endcall %}
+도움말: Learn more about controlling layout by applying media queries in [CSS 미디어 쿼리를 사용하여 반응성 제어하기](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en) 에서 미디어 쿼리를 적용하여 레이아웃을 제어하는 방법을 자세히 알아보세요.
 
 ### 요소 미디어 쿼리
 

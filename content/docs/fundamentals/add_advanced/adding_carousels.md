@@ -32,9 +32,9 @@ Next, let's embed a simple carousel of images with a responsive layout and a pre
 
 The `amp-carousel` component can be configured in a variety of ways.  Let's change the UI to show only a single image at a time and make the layout of the carousel responsive.
 
-To do this, first **change** the `type` of the `amp-carousel` from `carousel` to `slides`, **change** the `layout` to `responsive` and **set** the `width` to 300 (ensuring it has both a `height` and `width` defined).  **Add** the `"layout=responsive"` attribute to the `amp-img` children of the `amp-carousel`. 
+To do this, first **change** the `type` of the `amp-carousel` from `carousel` to `slides`, **change** the `layout` to `responsive` and **set** the `width` to 300 (ensuring it has both a `height` and `width` defined).  **Add** the `"layout=responsive"` attribute to the `amp-img` children of the `amp-carousel`.
 
-**Reload** your page. Now, instead of a scrolling list of elements you’ll see one element at a time. Try **swiping** horizontally to move through the elements. If you swipe to the third element you won’t be able to swipe any further. 
+**Reload** your page. Now, instead of a scrolling list of elements you’ll see one element at a time. Try **swiping** horizontally to move through the elements. If you swipe to the third element you won’t be able to swipe any further.
 
 Next, **add** the `loop` attribute. **Refresh** the page and try swiping to the left immediately. The carousel loops endlessly.
 
@@ -52,9 +52,7 @@ Your final result should look something like this:
 
 **Refresh** the page and give it a spin!
 
-{% call callout('Note', type='note') %}
-You might have noticed that when the `amp-carousel` had the `carousel` type we used the `fixed-height` layout type.  The supported layout types for the `carousel` type are limited; for example the `carousel` type does not support `responsive` layout.  As the name implies, fixed-height elements take the space available to them, but keep the height unchanged. For fixed-height elements, you must define the `height` attribute, while the `width` attribute should either be `auto` or not set.
-{% endcall %}
+Note: You might have noticed that when the `amp-carousel` had the `carousel` type we used the `fixed-height` layout type.  The supported layout types for the `carousel` type are limited; for example the `carousel` type does not support `responsive` layout.  As the name implies, fixed-height elements take the space available to them, but keep the height unchanged. For fixed-height elements, you must define the `height` attribute, while the `width` attribute should either be `auto` or not set.
 
 ## Mixed carousel content
 
@@ -92,9 +90,7 @@ Now, **replace** your simple carousel with this:
 
 To learn more, see the [amp-carousel](/docs/reference/components/amp-carousel.html) component reference documentation.
 
-{% call callout('Note', type='note') %}
-In our last example you may have noticed the `amp-ad` component included a child `div` element with the `placeholder` attribute. Earlier in the tutorial, we encountered a similar scenario with `amp-ad` using a `fallback`. What’s the difference between placeholder and fallback? `Fallback` elements appear when the parent element fails to load, i.e. if there was no ad available. `placeholder` elements appear in place of the parent element, while it is loading. In a sense, these elements bookend the loading process of the parent element. You can learn more in [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html) guide.
-{% endcall %}
+Note: In our last example you may have noticed the `amp-ad` component included a child `div` element with the `placeholder` attribute. Earlier in the tutorial, we encountered a similar scenario with `amp-ad` using a `fallback`. What’s the difference between placeholder and fallback? `Fallback` elements appear when the parent element fails to load, i.e. if there was no ad available. `placeholder` elements appear in place of the parent element, while it is loading. In a sense, these elements bookend the loading process of the parent element. You can learn more in [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html) guide.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Prev</span></a>

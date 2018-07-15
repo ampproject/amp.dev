@@ -28,9 +28,7 @@ AMP는 사용자가 검색 엔진, 친구에게 받은 공유 링크 또는 다�
 
 AMP를 사용하면 AMP 캐시에서 AMP 페이지가 게시되는 경우에도 AMP 페이지 내에서 프로그레시브 웹 앱의 서비스 워커를 설치할 수 있습니다. 설치가 올바르게 이루어졌다면 AMP 페이지 중 하나에서 PWA로 연결되는 링크는 AMP 페이지로 처음 이동하는 것과 비슷하게 거의 즉시 로드되는 것처럼 느껴집니다.
 
-{% call callout('도움말', type='success') %}
-아직 서비스 워커에 익숙하지 않다면 Jake Archibald의 [Udacity 교육 과정](https://www.udacity.com/course/offline-web-applications--ud899)을 추천해 드립니다.
-{% endcall %}
+도움말: 아직 서비스 워커에 익숙하지 않다면 Jake Archibald의 [Udacity 교육 과정](https://www.udacity.com/course/offline-web-applications--ud899)을 추천해 드립니다.
 
 먼저 스크립트를 통해 페이지의 `<head>`에 구성요소를 포함하여 [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker)를 사용하는 방법으로 모든 AMP 페이지에 서비스 워커를 설치합니다.
 
@@ -70,9 +68,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-{% call callout('도움말', type='success') %}
 도움말: 서비스 워커를 다루는 더 쉬운 방법도 있습니다. [서비스 워커 도우미 라이브러리](https://github.com/GoogleChrome/sw-helpers)를 참조하세요.
-{% endcall %}
 
 ## AMP 페이지의 모든 링크를 PWA로 연결하기
 
@@ -115,8 +111,4 @@ AMP에서는 이 문제를 [셸 URL 재작성](/ko/docs/reference/components/amp
 
 이러한 속성이 있다면 AMP에서 첫 로드 이후 클릭되는 모든 링크는 서비스 워커에 관계없이 PWA로 연결됩니다.
 
-{% call callout('계속 읽어 보기', type='read') %}
-여기까지 읽어 보셨으니, 기존 AMP 페이지를 재사용하여 PWA를 구축해 보면 어떨까요? 방법은 [이 문서](/ko/docs/guides/pwa-amp/amp-in-pwa)를 참조하세요.
-{% endcall %}
- 
- 
+자세히 알아보기: 여기까지 읽어 보셨으니, 기존 AMP 페이지를 재사용하여 PWA를 구축해 보면 어떨까요? 방법은 [이 문서](/ko/docs/guides/pwa-amp/amp-in-pwa)를 참조하세요.

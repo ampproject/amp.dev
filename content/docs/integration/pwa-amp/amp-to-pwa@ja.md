@@ -28,9 +28,7 @@ AMP は、検索エンジンによるオーガニック検索、友だちから�
 
 AMP では、プログレッシブ ウェブアプリの Service Worker を AMP ページ内からインストールすることができます。その AMP ページが AMP キャッシュから配信される場合でも問題ありません。インストールが成功すると、いずれかの AMP ページから PWA へのリンクが、AMP ページの最初の高速読み込みのようにほぼ一瞬で機能するようになります。
 
-{% call callout('ヒント', type='success') %}
-Service Worker についてよく知らないという方は、Jake Archibald の [Udacity のコース](https://www.udacity.com/course/offline-web-applications--ud899)を受講することをおすすめします。
-{% endcall %}
+ヒント: Service Worker についてよく知らないという方は、Jake Archibald の [Udacity のコース](https://www.udacity.com/course/offline-web-applications--ud899)を受講することをおすすめします。
 
 まず、[`<amp-install-serviceworker>`](/ja/docs/reference/components/amp-install-serviceworker) を使用してすべての AMP ページに Service Worker をインストールします。つまり、次のようにスクリプトを使って、このコンポーネントをページの `<head>` に追加します。
 
@@ -70,9 +68,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-{% call callout('ヒント', type='success') %}
 ヒント: Service Worker には、簡単な利用方法がいろいろあります。[Service Worker の使い方を集めたライブラリ](https://github.com/GoogleChrome/sw-helpers)をご覧ください。
-{% endcall %}
 
 ## AMP ページ上のすべてのリンクで PWA に誘導する
 
@@ -115,8 +111,4 @@ AMP では、[シェル URL の書き換え](/ja/docs/reference/components/amp-i
 
 これらの属性を指定することで、Service Worker 対応かどうかにかかわらず、AMP ページで発生する初回以降のすべてのクリックで PWA に移動できるようになります。
 
-{% call callout('詳細情報', type='read') %}
-ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](/ja/docs/guides/pwa-amp/amp-in-pwa)。
-{% endcall %}
- 
- 
+詳細情報: ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](/ja/docs/guides/pwa-amp/amp-in-pwa)。

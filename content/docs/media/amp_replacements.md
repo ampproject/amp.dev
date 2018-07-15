@@ -23,9 +23,7 @@ We provide equivalent components for the following reasons:
 * We need to control network requests to [lazy load and prioritize resources
 effectively](/learn/about-how/#prioritize-resource-loading)
 
-{% call callout('Caution', type='caution') %}
-While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/guides/validate.html) and you won't get all the benefits AMP provides.
-{% endcall %}
+Caution: While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/guides/validate.html) and you won't get all the benefits AMP provides.
 
 ## Images
 
@@ -40,7 +38,7 @@ using the [`amp-img`](/docs/reference/components/amp-img.html) element, like so:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -59,7 +57,7 @@ As `<amp-img>` relies on JavaScript, if the user chooses to disable scripts, ima
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -76,13 +74,11 @@ images. In its most basic form, all you have to do is to add `layout="responsive
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Read on', type='read') %}
-Learn more about [advanced layout techniques](/docs/guides/responsive/control_layout.html).
-{% endcall %}
+Read on: Learn more about [advanced layout techniques](/docs/guides/responsive/control_layout.html).
 
 ### Behavior and placeholders
 
@@ -90,9 +86,7 @@ The AMP HTML runtime can effectively manage image resources,
 choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
-{% call callout('Read on', type='read') %}
-Learn how to [provide fallbacks and placeholders for images](/docs/guides/responsive/placeholders.html).
-{% endcall %}
+Read on: Learn how to [provide fallbacks and placeholders for images](/docs/guides/responsive/placeholders.html).
 
 ## Animated images
 
@@ -107,14 +101,11 @@ and provides additional functionality to manage loading and playing of animated 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Note', type='note') %}
-Include `<script async custom-element="amp-anim"
-  src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` in the head of your page to use this component.
-{% endcall %}
+Note: Include `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` in the head of your page to use this component.
 
 ## Video
 
@@ -136,7 +127,7 @@ if the browser doesn't support HTML5 video, for example:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -161,11 +152,8 @@ if the browser doesn't support HTML5 audio, for example:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Note', type='note') %}
-Include `<script async custom-element="amp-audio"
-  src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` in the head of your page to use this component.
-{% endcall %}
+Note: Include `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` in the head of your page to use this component.

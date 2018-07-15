@@ -7,9 +7,7 @@ Dar diseño y mejorar el layout de las páginas AMP HTML es muy similar al HTML 
 
 Sin embargo, AMP limita el uso del CSS por razones de performance y usabilidad, mientras expande algunas capacidades de diseño responsivo con caracteristicas como [placeholders & fallbacks](/es/docs/guides/responsive/placeholders.html), [uso avanzado vía srcset](/es/docs/guides/responsive/art_direction.html) y los [atributos del layout](/es/docs/guides/responsive/control_layout.html) para un mejor control sobre cómo se muestran los elementos en la página.
 
-{% call callout('Tip', type='success') %}
-Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables](https://www.ampproject.org/es/docs/guides/responsive/responsive_design)
-{% endcall %}
+Tip: Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables](https://www.ampproject.org/es/docs/guides/responsive/responsive_design)
 
 {{ youtube('y6kA3u3GIws', 480, 270, caption='Vea a UpperQuad hablar sobre el rediseño del sitio de AMPproject, incluyendo los retos de usar AMP por primera vez.') }}
 
@@ -39,10 +37,7 @@ Por ejemplo:
   </head>
 [/sourcecode]
 
-{% call callout('Importante', type='caution') %}
-Asegúrate de que solo hay una etiqueta `<style amp-custom>` en la página,
-ya que en AMP solo se admite la presencia de una.
-{% endcall %}
+Importante: Asegúrate de que solo hay una etiqueta `<style amp-custom>` en la página, ya que en AMP solo se admite la presencia de una.
 
 Define los estilos de los componentes con selectores de clase o de elemento
 usando propiedades comunes de CSS. Por ejemplo:
@@ -62,11 +57,7 @@ usando propiedades comunes de CSS. Por ejemplo:
 </body>
 [/sourcecode]
 
-{% call callout('Importante', type='caution') %}
-Comprueba que los estilos estén admitidos en AMP, ya que
-algunos estilos no lo están por cuestiones de rendimiento
-(consulta también [CSS compatibles](/es/docs/guides/responsive/style_pages.html)).
-{% endcall %}
+Importante: Comprueba que los estilos estén admitidos en AMP, ya que algunos estilos no lo están por cuestiones de rendimiento (consulta también [CSS compatibles](/es/docs/guides/responsive/style_pages.html)).
 
 ## Diseña elementos de forma responsive
 
@@ -79,27 +70,19 @@ Configure el diseño como adaptable (responsive).
 Esto ajusta el tamaño del elemento a la anchura del elemento contenedor
 y cambia la altura automáticamente a la relación de aspecto determinada por los atributos de anchura y altura.
 
-{% call callout('Leer más', type='read') %}
-Aprende más acerca de [los diseños compatibles con AMP](/es/docs/guides/responsive/control_layout.html)
-{% endcall %}
-
+Leer más: Aprende más acerca de [los diseños compatibles con AMP](/es/docs/guides/responsive/control_layout.html)
 
 ## Proporcionar placeholders & fallbacks
 
 El soporte incorporado para placeholders y fallbacks significará que los usuarios nunca tendrán que mirar una pantalla en blanco de nuevo.
 
-{% call callout('Leer más', type='read') %}
-Aprende más sobre [Placeholders y fallbacks](/es/docs/guides/responsive/placeholders.html)
-{% endcall %}
-
+Leer más: Aprende más sobre [Placeholders y fallbacks](/es/docs/guides/responsive/placeholders.html)
 
 ## Dirige tus imágenes
 
 AMP admite los atributos `srcset` y `sizes` para darle un control fino sobre cuáles imágenes se cargarán en qué escenario.
 
-{% call callout('Leer más', type='read') %}
-Aprende más sobre [dirección con srcset y tamaños](/es/docs/guides/responsive/art_direction.html)
-{% endcall %}
+Leer más: Aprende más sobre [dirección con srcset y tamaños](/es/docs/guides/responsive/art_direction.html)
 
 ## Valida tus estilos y diseños
 
@@ -114,6 +97,4 @@ Ejemplo de error en la consola de una página con CSS que excede el límite de 5
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-{% call callout('Leer más', type='read') %}
-Aprende más sobre cómo [validar las páginas de AMP](/es/docs/guides/validate.html).
-{% endcall %}
+Leer más: Aprende más sobre cómo [validar las páginas de AMP](/es/docs/guides/validate.html).

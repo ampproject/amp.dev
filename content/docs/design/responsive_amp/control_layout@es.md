@@ -26,15 +26,13 @@ cuál imagen se usará en la variedad de pantallas:
 Este elemento `amp-img` se ajustará automáticamente al ancho
 de su elemento contenedor,
 y su altura también se ajustará automáticamente en relación a su aspecto
-determinado por los valores de ancho y alto que se dieron. 
+determinado por los valores de ancho y alto que se dieron.
 
 Pruebalo ahora mismo, cambiando el tamaño de la ventana del navegador con ésta imagen:
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('Tip', type='success') %}
-Vea nuestras demostraciones en vivo de `amp-img`: [Live Demos on AMP By Example](https://ampbyexample.com/components/amp-img/).
-{% endcall %}
+Tip: Vea nuestras demostraciones en vivo de `amp-img`: [Live Demos on AMP By Example](https://ampbyexample.com/components/amp-img/).
 
 ## El atributo layout
 
@@ -93,9 +91,7 @@ Los siguientes valores pueden ser soportados por el atributo `layout`:
   </tbody>
 </table>
 
-{% call callout('Tip', type='success') %}
-Ver ejemplos en vivo de todos los tipos diferentes de diseños en [AMP By Example: Layout System](https://ampbyexample.com/advanced/layout_system/).
-{% endcall %}
+Tip: Ver ejemplos en vivo de todos los tipos diferentes de diseños en [AMP By Example: Layout System](https://ampbyexample.com/advanced/layout_system/).
 
 ### ¿Qué ocurre si width y height no están definidos?
 
@@ -107,7 +103,7 @@ la rutina AMP puede ofrecer estos valores de forma predeterminada del siguiente 
 
 ### ¿Qué ocurre si el atributo <code>layout</code> no está definido?
 
-Si el atributo <code>layout</code> no está especificado, AMP trata de inferir o adivinar 
+Si el atributo <code>layout</code> no está especificado, AMP trata de inferir o adivinar
 el valor apropiado:
 
 <table>
@@ -147,15 +143,13 @@ Cuando la ventana del navegador cambia de tamaño u orientación,
 las consultas de medios se reevaluan y los elementos se ocultan y se muestran
 basado en los nuevos resultados.
 
-{% call callout('Leer más', type='read') %}
-Aprende más sobre controlar el layout aplicando [Consultas de medios en CSS para una mayor receptividad](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=es).
-{% endcall %}
+Leer más: Aprende más sobre controlar el layout aplicando [Consultas de medios en CSS para una mayor receptividad](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=es).
 
 ### Elemento consultas de medios
 
-Una característica adicional para el diseño receptivo disponible en AMP es el atributo `media`. 
-Este atributo se puede utilizar en cada elemento AMP; 
-funciona de forma similar a las consultas de medios en su hoja de estilo global, 
+Una característica adicional para el diseño receptivo disponible en AMP es el atributo `media`.
+Este atributo se puede utilizar en cada elemento AMP;
+funciona de forma similar a las consultas de medios en su hoja de estilo global,
 pero sólo afecta al elemento específico en una sola página.
 
 Por ejemplo, aquí tenemos dos imágenes con consultas de medios mutuamente exclusivas.

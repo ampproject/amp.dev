@@ -42,7 +42,7 @@ Even though you can easily make elements responsive with `"layout=responsive"`, 
 
 ##### Example: Restricting width of responsive images
 
-In the following example, we have a flowers image (640 x 427 px) that we want to display on all screen sizes, so we specified the `width` and `height`, and set the layout to `responsive`.  
+In the following example, we have a flowers image (640 x 427 px) that we want to display on all screen sizes, so we specified the `width` and `height`, and set the layout to `responsive`.
 
 <div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
@@ -56,9 +56,7 @@ However, we want the image to not stretch beyond its intended size, so we set th
 </style>
 ```
 
-{% call callout('Read on', type='read') %}
-To learn more about the different layouts in AMP, see the [Layout & Media queries](/docs/guides/responsive/control_layout.html#the-layout-attribute) guide.
-{% endcall %}
+Read on: To learn more about the different layouts in AMP, see the [Layout & Media queries](/docs/guides/responsive/control_layout.html#the-layout-attribute) guide.
 
  <a id="fn1"></a>
 {% call callout2(type='none') %}***Why is it tricky to make elements resize to fit the screen when I can easily do this with the "width=100%" style ?**  The tricky part is having responsive elements render on the page without adversely affecting performance metrics or user experience.  Yes, you can easily get images to fit the screen with "width=100%" but there are performance hits.  The browser must download the image first to get the dimensions of the image, then resize the image appropriately for the screen size, and finally reflow and repaint the page.  In AMP,  the rendering path is optimized so that first the page is laid out, setting aside placeholders for the images based on the dimensions provided in amp-img (using those numbers to establish aspect ratio), then the resources are downloaded, and the page is painted.  No reflow is required.
@@ -93,9 +91,7 @@ Images make up a large part of a web page (approximately [65% of the page's byte
 
 For high-resolution screens (e.g., Retina display), you should provide images that look crisp and sharp; however, you don't want to use that same image on low-res devices because that'll cause unnecessary extra load time.  In non-AMP and AMP pages,  you can serve the correct image for the screen's pixel density by using `srcset` with the width descriptor ( `w` ).
 
-{% call callout('Note', type='note') %}
-The DPR (`x`) based srcset selector also works; however, for more flexibility, we recommend using the `w` selector. Previously (in the old srcset proposal), the `w` descriptor described the viewport width, but now it describes the width of the image source file, which allows the user agent to calculate the effective pixel density of each image and choose the appropriate image to render.
-{% endcall %}
+Note: The DPR (`x`) based srcset selector also works; however, for more flexibility, we recommend using the `w` selector. Previously (in the old srcset proposal), the `w` descriptor described the viewport width, but now it describes the width of the image source file, which allows the user agent to calculate the effective pixel density of each image and choose the appropriate image to render.
 
 ##### Example: Displaying a crisp image that fits the screen
 
@@ -110,9 +106,7 @@ In the following example we have several image files that are of the same aspect
 
 For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px  (412 * .75 * 2.6), which happens to be `apple-800.jpg`.
 
-{% call callout('Read on', type='read') %}
-To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html) guide.
-{% endcall %}
+Read on: To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html) guide.
 
 #### Changing the art direction of an image
 
@@ -126,15 +120,11 @@ In the following example, we have 3 different cropped images of a cat that we wa
 - 470 - 669 px,  display `cat-medium.jpg`  (450 x 340 px)
 - 469 px or less, display `cat-small.jpg` (226 x 340 px)
 
-{% call callout('Note', type='note') %}
-As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
-{% endcall %}
+Note: As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
-{% call callout('Read on', type='read') %}
-To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html) guide.
-{% endcall %}
+Read on: To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html) guide.
 
 #### Providing optimized images
 
@@ -142,9 +132,7 @@ Delivering fast loading pages requires optimized images--in size, quality, and f
 
 In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.
 
-{% call callout('Read on', type='read') %}
-To learn more about fallbacks, see the [Placeholders & Fallbacks](/docs/guides/responsive/placeholders.html) guide.
-{% endcall %}
+Read on: To learn more about fallbacks, see the [Placeholders & Fallbacks](/docs/guides/responsive/placeholders.html) guide.
 
 ##### Example: Serve different image formats
 
@@ -155,9 +143,7 @@ In the following example, if the browser supports WebP, serve mountains.webp, ot
 
 As a nice bonus, some caches, like the Google AMP Cache, automatically compress and convert images to WebP and the right resolutions if you don't. However, not all platforms use caches, so you should still optimize images manually on your end.
 
-{% call callout('Read on', type='read') %}
-To learn more about the image optimizations that the Google AMP Cache applies, see the ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html) blog post.
-{% endcall %}
+Read on: To learn more about the image optimizations that the Google AMP Cache applies, see the ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html) blog post.
 
 ## Examples to inspire you
 

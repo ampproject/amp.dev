@@ -28,9 +28,7 @@ Di sisi lain, Progressive Web App memungkinkan interaktivitas dan engagement yan
 
 AMP memiliki kemampuan untuk menginstal Service Worker Progressive Web App Anda dari dalam halaman AMP – ya, meskipun halaman AMP tersebut ditayangkan dari Cache AMP. Jika dilakukan dengan benar, link yang mengarah ke PWA (dari salah satu halaman AMP Anda) akan terasa hampir instan, mirip dengan saat pertama kali membuka halaman AMP.
 
-{% call callout('Tip', type='success') %}
-Jika Anda belum terbiasa dengan Service Worker, sebaiknya buka [kursus Udacity](https://www.udacity.com/course/offline-web-applications--ud899) yang disampaikan oleh Jake Archibald.
-{% endcall %}
+Tip: Jika Anda belum terbiasa dengan Service Worker, sebaiknya buka [kursus Udacity](https://www.udacity.com/course/offline-web-applications--ud899) yang disampaikan oleh Jake Archibald.
 
 Pertama-tama, instal Service Worker di semua Halaman AMP Anda menggunakan [`<amp-install-serviceworker>`](/id/docs/reference/components/amp-install-serviceworker), dengan terlebih dahulu menyertakan komponen melalui skripnya di `<head>` halaman Anda:
 
@@ -70,9 +68,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-{% call callout('Tip', type='success') %}
-Terdapat cara yang lebih mudah untuk menangani Service Worker. Lihat [library bantuan Service Worker](https://github.com/GoogleChrome/sw-helpers).
-{% endcall %}
+Tip: Terdapat cara yang lebih mudah untuk menangani Service Worker. Lihat [library bantuan Service Worker](https://github.com/GoogleChrome/sw-helpers).
 
 ## Membuat semua link di Halaman AMP menuju ke PWA
 
@@ -115,8 +111,4 @@ AMP memecahkan masalah ini dengan sesuatu yang disebut [penulisan ulang URL shel
 
 Ketika semua atribut ini diterapkan, semua klik berikutnya di AMP akan mengarah ke PWA Anda, terlepas dari Service Worker apa pun.
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/guides/pwa-amp/amp-in-pwa).
-{% endcall %}
- 
- 
+Baca lebih lanjut: Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/guides/pwa-amp/amp-in-pwa).

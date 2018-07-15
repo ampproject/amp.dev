@@ -34,9 +34,7 @@ If you only have one page, and that page is an AMP page, you must still add the 
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-{% call callout('Read on', type='read') %}
-Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
-{% endcall %}
+Read on: Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
 
 ## Integrate with third-party platforms through additional metadata
 

@@ -11,9 +11,7 @@ To demonstrate what additional markup could look like, here’s the code require
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-{% call callout('Read on', type='read') %}
-To learn why we’re replacing tags like `<img>` with `<amp-img>`, and how many are available, visit [Include Images & Video](/docs/guides/amp_replacements.html).
-{% endcall %}
+Read on: To learn why we’re replacing tags like `<img>` with `<amp-img>`, and how many are available, visit [Include Images & Video](/docs/guides/amp_replacements.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Prev</span></a>

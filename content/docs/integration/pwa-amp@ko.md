@@ -19,9 +19,7 @@ $title: AMP와 프로그레시브 웹 앱 통합하기
 
 AMP 페이지가 AMP 캐시가 아닌 원본(사이트 도메인)에서 게시되는 한, AMP 페이지에서 자체적으로 여러 PWA 기능을 활용할 수 있습니다. 즉, Google 또는 Bing과 같은 플랫폼 내에서 AMP 페이지를 사용하는 동안에는 PWA 기능이 작동하지 않지만, 향후 사용자 여정에서는 작동하게 됩니다. 또한 사용자가 직접 AMP 페이지로 이동하는 경우에도 작동합니다.
 
-{% call callout('계속 읽어 보기', type='read') %}
-AMP 페이지에서 [PWA 기능을 사용 설정](/ko/docs/guides/pwa-amp/amp-as-pwa.html)하는 방법을 자세히 알아보세요.
-{% endcall %}
+계속 읽어 보기: AMP 페이지에서 [PWA 기능을 사용 설정](/ko/docs/guides/pwa-amp/amp-as-pwa.html)하는 방법을 자세히 알아보세요.
 
 ## PWA로 이동하는 진입점으로 AMP 활용
 
@@ -29,9 +27,7 @@ AMP만의 차별화된 장점은 **거의 즉각적인 전송**입니다. 이 �
 
 따라서 AMP 페이지를 사이트의 진입점으로 만든 다음, 향후 사용자 여정을 위해 보이지 않는 곳에서 PWA를 준비시킨 후 전환하는 것이 좋습니다.
 
-{% call callout('계속 읽어 보기', type='read') %}
-'amp-install-serviceworker'를 통해 [AMP를 PWA에 연결](/ko/docs/guides/pwa-amp/amp-to-pwa.html)하는 방법을 자세히 알아보세요.
-{% endcall %}
+계속 읽어 보기: 'amp-install-serviceworker'를 통해 [AMP를 PWA에 연결](/ko/docs/guides/pwa-amp/amp-to-pwa.html)하는 방법을 자세히 알아보세요.
 
 ## PWA의 데이터 소스로 AMP 사용
 
@@ -39,8 +35,4 @@ AMP 페이지의 핵심 기능 중 하나는 쉽고 안전하게 삽입할 수 �
 
 프로그레시브 웹 앱을 개발하는 경우 같은 이점을 활용할 수 있으며, **AMP 페이지를 PWA의 데이터 소스로 재사용**하여 백엔드 및 클라이언트의 복잡성을 크게 줄일 수 있습니다.
 
-{% call callout('계속 읽어 보기', type='read') %}
-[PWA 내에서 AMP 페이지를 사용](/ko/docs/guides/pwa-amp/amp-in-pwa.html)하는 방법을 자세히 알아보세요.
-{% endcall %}
- 
- 
+계속 읽어 보기: [PWA 내에서 AMP 페이지를 사용](/ko/docs/guides/pwa-amp/amp-in-pwa.html)하는 방법을 자세히 알아보세요.

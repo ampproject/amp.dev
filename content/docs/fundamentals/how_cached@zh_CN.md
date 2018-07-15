@@ -20,7 +20,7 @@ AMP 缓存是一种基于代理的内容传送网络 (CDN)，用于传送有效�
 ## 可用的 AMP 缓存有哪些？
 目前，有 2 个 AMP 缓存提供商：
 
-- [Google AMP 缓存](https://developers.google.com/amp/cache/) 
+- [Google AMP 缓存](https://developers.google.com/amp/cache/)
 - [Cloudflare AMP 缓存](https://amp.cloudflare.com/)
 
 AMP 是一个开放式生态系统，AMP 项目会积极地推动开发更多 AMP 缓存。要想了解如何创建 AMP 缓存，请参阅 [AMP 缓存指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)。
@@ -55,9 +55,7 @@ AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓�
     - Cloudflare AMP 缓存网址示例：`https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Google AMP 缓存网址示例：`https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
-{% call callout('注意', type='note') %}
-AMP 缓存网址不是面向用户的网址，也就是说，用户通常不会通过这些网址来请求获取内容。
-{% endcall %}
+注意: AMP 缓存网址不是面向用户的网址，也就是说，用户通常不会通过这些网址来请求获取内容。
 
 * **发布商添加**：发布商可以非常明确地将 AMP 网页添加到 AMP 缓存中。此选项仅适用于 Google AMP 缓存（请参阅 [Google AMP 缓存：更新 AMP 内容](https://developers.google.com/amp/cache/update-cache)）。
 

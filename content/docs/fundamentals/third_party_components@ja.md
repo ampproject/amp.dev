@@ -26,13 +26,11 @@ $title: サードパーティ コンテンツを追加する
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('ヒント', type='success') %}
-その他の `amp-twitter` の例については、[AMP By Example](https://ampbyexample.com/components/amp-twitter/) をご覧ください。
-{% endcall %}
+ヒント: その他の `amp-twitter` の例については、[AMP By Example](https://ampbyexample.com/components/amp-twitter/) をご覧ください。
 
 ## Instagram を埋め込む
 
@@ -54,13 +52,11 @@ Instagram の写真 URL にある data-shortcode を指定します。たとえ�
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('ヒント', type='success') %}
-その他の `amp-instagram` の例については、[AMP By Example](https://ampbyexample.com/components/amp-instagram/) をご覧ください。
-{% endcall %}
+ヒント: その他の `amp-instagram` の例については、[AMP By Example](https://ampbyexample.com/components/amp-instagram/) をご覧ください。
 
 ## Facebook の投稿や動画を表示する
 
@@ -106,9 +102,7 @@ Facebook の投稿や動画をページに表示するには、[`amp-facebook`](
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-{% call callout('ヒント', type='success') %}
-その他の `amp-facebook` の例については、[AMP By Example](https://ampbyexample.com/components/amp-facebook/) をご覧ください。
-{% endcall %}
+ヒント: その他の `amp-facebook` の例については、[AMP By Example](https://ampbyexample.com/components/amp-facebook/) をご覧ください。
 
 ## YouTube 動画を追加する
 
@@ -132,13 +126,11 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('ヒント', type='success') %}
-その他の `amp-youtube` の例については、[AMP By Example](https://ampbyexample.com/components/amp-youtube/) をご覧ください。
-{% endcall %}
+ヒント: その他の `amp-youtube` の例については、[AMP By Example](https://ampbyexample.com/components/amp-youtube/) をご覧ください。
 
 ## 広告を表示する
 
@@ -156,7 +148,7 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -170,12 +162,10 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 AMP はさまざまな広告ネットワークに対応しています。詳細なリストについては、[リファレンス](/ja/docs/reference/components/amp-ad.html#supported-ad-networks)をご覧ください。
 
-{% call callout('参照', type='read') %}
-広告について詳しくは、[AMP での広告の掲載](/ja/docs/guides/ads_on_amp.html) に関するガイドをご覧ください。
-{% endcall %}
+参照: 広告について詳しくは、[AMP での広告の掲載](/ja/docs/guides/ads_on_amp.html) に関するガイドをご覧ください。

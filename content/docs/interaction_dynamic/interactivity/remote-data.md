@@ -20,7 +20,7 @@ Let's make use of the ability to fetch remote data to look up prices of SKUs in 
 
 |  Request                              |  Response |
 |---------------------------------------|-----------|
-| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |  
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Similar to the JSON data within `<amp-state>` elements, the remote data returned from these fetches are merged into and available under the element's `id` attribute. For example, the data returned from the example response above can be accessed in an expression:
 
@@ -106,15 +106,15 @@ And, we'll need to update the default state of relevant elements:
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
         <div option="M">M</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
         <div option="L">L</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
         <div option="XL">XL</div>
       </td>
@@ -123,9 +123,7 @@ And, we'll need to update the default state of relevant elements:
 </amp-selector>
 ```
 
-{% call callout('Note', type='note') %}
-`<amp-bind>` does not run on page load -- only in response to explicit user action. This makes sure the initial page load is consistently fast across pages regardless of `<amp-bind>` usage.
-{% endcall %}
+Note: `<amp-bind>` does not run on page load -- only in response to explicit user action. This makes sure the initial page load is consistently fast across pages regardless of `<amp-bind>` usage.
 
 ## Variable shirt prices
 
@@ -136,15 +134,13 @@ Our AMPPAREL store is peculiar in that shirt price is specific to both color AND
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size" 
+<amp-selector name="size"
     on="select:AMP.setState({selectedSize: event.targetOption})">
 ```
 
 Notice that we're not initializing the value of `selectedSize` via the `amp-state#selected` element. That's because we intentionally don't provide a default selected size and instead want to force the user to choose a size.
 
-{% call callout('Tip', type='success') %}
-`AMP.setState()` can be used for defining new variables in addition to modifying exist ones. Expressions will evaluate undefined variables to `null`.
-{% endcall %}
+Tip: `AMP.setState()` can be used for defining new variables in addition to modifying exist ones. Expressions will evaluate undefined variables to `null`.
 
 Add a new `<span>` element wrapping the price label and change the default text to "---" since there's no default size selection.
 
@@ -172,7 +168,7 @@ We're almost done! Let's disable the "Add to cart" button when the selected size
     [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
 ```
 
-**Try it out**:  If you select a size that's unavailable, you can't add it to the cart. 
+**Try it out**:  If you select a size that's unavailable, you can't add it to the cart.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">Prev</span></a>

@@ -47,9 +47,7 @@ Si nos volvemos a fijar en el código HTML de dicho botón, podemos ver que se u
 
 [/sourcecode]
 
-{% call callout('Nota', type='note') %}
-En el nodo "login", se pueden añadir varias URL; en este caso, definimos una en `sign-in` y, más adelante, haremos lo mismo con `sign-out`.
-{% endcall %}
+Nota: En el nodo "login", se pueden añadir varias URL; en este caso, definimos una en `sign-in` y, más adelante, haremos lo mismo con `sign-out`.
 
 La página de inicio de sesión es una página que no es AMP y en la que introducimos los valores de inicio de sesión y la contraseña para simplificar el proceso. Puedes observar que utilizamos el tipo de entrada oculta `returnURL`, que rellena el servidor AMPByExample usando plantillas de servidor. AMPByExample obtiene el valor de "returnURL" de un parámetro denominado `return`, que la biblioteca de AMP añade automáticamente a la URL indicada en "sign-in".
 
@@ -68,9 +66,7 @@ A grandes rasgos, las funciones de ambos elementos son las siguientes:
 - El tiempo de ejecución de AMP cierra la página de inicio de sesión y redirige a los usuarios a la página que se haya especificado en el parámetro "returnURL".
 - El servidor debe organizar la respuesta cuando el usuario haga clic en el botón para iniciar sesión.
 
-{% call callout('Consejo', type='success') %}
-Para obtener una explicación más detallada sobre este tema, consulta la [documentación de amp-access](/es/docs/reference/components/amp-access#login-flow).
-{% endcall %}
+Consejo: Para obtener una explicación más detallada sobre este tema, consulta la [documentación de amp-access](/es/docs/reference/components/amp-access#login-flow).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">Anterior</span></a>

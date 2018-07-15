@@ -47,6 +47,4 @@ Puntos de datos claves que debes considerar:
 el dispositivo o el navegador (consulta también la sección sobre [sustitución de variables](/es/docs/analytics/analytics_basics.html#sustitución-de-variables))?
 * ¿Cómo identificarás a tus usuarios (consulta también [Identificación de usuarios](/es/docs/analytics/analytics_basics.html#identificación-del-usuario))?
 
-{% call callout('Leer Más', type='read') %}
-Continúa el aprendizaje sobre analytics with [Analytics: aspectos básicos](/es/docs/analytics/analytics_basics.html).
-{% endcall %}
+Leer Más: Continúa el aprendizaje sobre analytics with [Analytics: aspectos básicos](/es/docs/analytics/analytics_basics.html).

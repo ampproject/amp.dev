@@ -13,9 +13,7 @@ Banyak situs yang tidak akan memerlukan apa pun di luar batas AMP. [AMPbyExample
 
 Ketika pengguna membuka [AMPbyExample](http://ampbyexample.com/) dari platform yang mendukung AMP lalu lanjut mengklik ke situs yang sama, mereka keluar dari Cache AMP ke halaman asli. Tentunya situs masih menggunakan koleksi AMP, namun karena saat ini ditayangkan di halaman asli, situs dapat menggunakan service worker, meminta penginstalan, dan lain-lain.
 
-{% call callout('Ingat', type='caution') %}
-Service Worker tidak akan dapat berinteraksi dengan versi halaman yang tersimpan dalam cache AMP. Gunakan untuk melanjutkan perjalanan berikutnya ke halaman asli.
-{% endcall %}
+Ingat: Service Worker tidak akan dapat berinteraksi dengan versi halaman yang tersimpan dalam cache AMP. Gunakan untuk melanjutkan perjalanan berikutnya ke halaman asli.
 
 ## Menambahkan Manifes Aplikasi Web
 
@@ -54,17 +52,13 @@ Kemudian, tautkan manifes dari `<head>` halaman AMP:
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
-{% call callout('Tips', type='success') %}
-Pelajari lebih lanjut tentang [Manifes Aplikasi Web di WebFundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
-{% endcall %}
+Tip: Pelajari lebih lanjut tentang [Manifes Aplikasi Web di WebFundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
 
 ## Menginstal Service Worker untuk mengaktifkan akses offline
 
 Service Worker adalah proxy sisi-klien yang berada di antara halaman dan server, serta dapat digunakan untuk menciptakan pengalaman akses offline yang memuaskan, skenario pemuatan app shell yang cepat, dan mengirimkan notifikasi push.
 
-{% call callout('Catatan', type='note') %}
-Jika konsep Service Worker merupakan hal baru bagi Anda, baca [pendahuluan di WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
-{% endcall %}
+Catatan: Jika konsep Service Worker merupakan hal baru bagi Anda, baca [pendahuluan di WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 
 Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, browser tidak akan menemukan atau menjalankannya. Secara default, tindakan ini dilakukan dengan bantuan [sedikit JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Pada Halaman AMP, Anda menggunakan komponen [`<amp-install-serviceworker>`](/id/docs/reference/components/amp-install-serviceworker.html) untuk melakukan hal yang sama.
 
@@ -115,5 +109,5 @@ tambahan yang sebaliknya akan menggagalkan [validasi AMP](/id/docs/guides/valida
 
 * Fitur dinamis yang memerlukan JS kustom.
 * Komponen yang disesuaikan/hanya relevan untuk situs Anda.
- 
- 
+
+

@@ -23,11 +23,9 @@ main page context, such as content requiring user-authored JavaScript.
 ### Requirements for `amp-iframe`
 
 * Must be at least **600px** or **75%** of the first viewport away from the top (except for iframes that use a [`placeholder`](#using-placeholders)).
-* Can only request resources via HTTPS, and they must not be in the same origin as the container, unless they do not specify allow-same-origin. 
+* Can only request resources via HTTPS, and they must not be in the same origin as the container, unless they do not specify allow-same-origin.
 
-{% call callout('Read on', type='read') %}
-Learn more at the [full specification for <code>amp-iframe</code>](/docs/reference/components/amp-iframe.html).
-{% endcall %}
+Read on: Learn more at the [full specification for <code>amp-iframe</code>](/docs/reference/components/amp-iframe.html).
 
 ### Include the script
 
@@ -52,7 +50,7 @@ In the following example, we created a responsive `amp-iframe` to embed a Google
 </amp-iframe>
 ```
 
-Renders as: 
+Renders as:
 
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
@@ -64,9 +62,7 @@ Renders as:
 
 You can display an `amp-iframe` at the top of a document, provided the `amp-iframe` contains an element with the `placeholder` attribute, (for example, an `amp-img` element) which would be rendered as a placeholder until the iframe is ready to be displayed.
 
-{% call callout('Read on', type='read') %}
-Learn more about placeholders in [Iframe with placeholder](/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
-{% endcall %}
+Read on: Learn more about placeholders in [Iframe with placeholder](/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
 
 
 Example with placeholder:
@@ -80,7 +76,7 @@ Example with placeholder:
       src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
 </amp-iframe>
 ```
-Renders as: 
+Renders as:
 
 <amp-iframe width="400" height="225"
     sandbox="allow-scripts allow-same-origin"

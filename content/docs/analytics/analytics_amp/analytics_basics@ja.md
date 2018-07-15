@@ -14,9 +14,7 @@ AMP にはアナリティクスや測定に役立つ 2 つのコンポーネン�
 
 ほとんどのアナリティクス ソリューションでは、 `amp-analytics` を使用します。ページビュー トラッキングも `amp-analytics` で動作します。リンクやボタンのクリックなど、あらゆるページ コンテンツに対するユーザー エンゲージメントもトラッキングできます。ユーザーがページをどのくらいスクロールしたか、ソーシャル メディアを使用しているかなどもわかります。
 
-{% call callout('詳細', type='read') %}
-詳しくは、[AMP アナリティクスについて深く学ぶ](/ja/docs/analytics/deep_dive_analytics.html)をご覧ください。
-{% endcall %}
+詳細: 詳しくは、[AMP アナリティクスについて深く学ぶ](/ja/docs/analytics/deep_dive_analytics.html)をご覧ください。
 
 AMP プラットフォームを統合するにあたり、データの取得やトラッキング ツールへの転送が簡単に行えるよう、プロバイダーはあらかじめ定義した `amp-analytics` 設定を提示しています。ベンダーのドキュメントは、[アナリティクス ベンダー](/ja/docs/analytics/analytics-vendors.html) リストからアクセスできます。
 
@@ -112,9 +110,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 上の例では、変数 `account` と `title` は `amp-analytics` 設定内で定義されています。変数 `canonicalUrl` と `clientId` は定義されていないので、プラットフォーム側で置換されます。
 
-{% call callout('重要', type='caution') %}
-変数置換は柔軟性が高いため、同じ変数を別の場所で使用できます。この場合、AMP ランタイムは先行順に値を解析します（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご覧ください）。
-{% endcall %}
+重要: 変数置換は柔軟性が高いため、同じ変数を別の場所で使用できます。この場合、AMP ランタイムは先行順に値を解析します（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご覧ください）。
 
 ## ユーザー認証
 
@@ -137,6 +133,4 @@ AMP で Cookie が設定済みと判断されると、クライアント ID は�
 
 クライアント ID の置換や任意のユーザー通知 ID の追加方法については、[AMP アナリティクスでサポートされる変数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)をご覧ください。
 
-{% call callout('詳細', type='read') %}
-引き続き、[AMP アナリティクスについて深く学ぶ](/ja/docs/analytics/deep_dive_analytics.html)と[ユースケース](/ja/docs/analytics/use_cases.html) でアナリティクスの詳細をご覧ください。
-{% endcall %}
+詳細: 引き続き、[AMP アナリティクスについて深く学ぶ](/ja/docs/analytics/deep_dive_analytics.html)と[ユースケース](/ja/docs/analytics/use_cases.html) でアナリティクスの詳細をご覧ください。

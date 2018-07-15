@@ -14,9 +14,7 @@ Si lo que buscas es un comportamiento como el de un [píxel de seguimiento senci
 
 En la mayor parte de las soluciones de análisis se debe utilizar `amp-analytics`. El seguimiento de páginas vistas también funciona con `amp-analytics`. También puedes hacer el seguimiento de la interacción de los usuarios con cualquier tipo de contenido de la página, incluidos los clics en los enlaces y en los botones. Además, permite medir hasta qué punto de la página llegó el usuario o saber si el usuario utilizó los medios sociales, entre otros datos.
 
-{% call callout('Más información', type='read') %}
-Consulta el artículo [Información detallada de AMP Analytics](/es/docs/analytics/deep_dive_analytics.html)
-.{% endcall %}
+Más información: Consulta el artículo [Información detallada de AMP Analytics](/es/docs/analytics/deep_dive_analytics.html)
 
 Como parte de la integración en la plataforma AMP, los proveedores han ofrecido configuraciones de `amp-analytics` predefinidas, con lo que es más fácil captar datos y enviarlos a las herramientas de seguimiento. Se puede acceder a la documentación del proveedor desde la lista [de proveedores de Analytics](/es/docs/analytics/analytics-vendors.html).
 
@@ -57,14 +55,14 @@ El siguiente ejemplo es parecido al [ejemplo de `amp-pixel`](/es/docs/analytics/
 <script type="application/json">
 {
   "requests": {
-      "pageview": "https://foo.com/pixel?RANDOM", 
+      "pageview": "https://foo.com/pixel?RANDOM",
     },
       "triggers": {
         "trackPageview": {
           "on": "visible",
           "request": "pageview"
-    } 
-  } 
+    }
+  }
 }
 </script>
 </amp-analytics>
@@ -100,17 +98,17 @@ En el ejemplo de `amp-analytics` que se encuentra a continuación, la solicitud 
       "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
   },
   "vars": {
-      "account": "ABC123", 
+      "account": "ABC123",
   },
   "triggers": {
       "someEvent": {
         "on": "visible",
         "request": "pageview",
         "vars": {
-          "title": "My homepage", 
-      } 
-    } 
-  } 
+          "title": "My homepage",
+      }
+    }
+  }
 }
 </script>
 </amp-analytics>
@@ -118,9 +116,7 @@ En el ejemplo de `amp-analytics` que se encuentra a continuación, la solicitud 
 
 En el ejemplo anterior, las variables, `account` y `title` aparecen definidas en la configuración `amp-analytics`. Las variables `canonicalUrl` y `clientId` no están definidas en la configuración y, por lo tanto, la plataforma sustituye sus valores.
 
-{% call callout('Importante', type='caution') %}
-La sustitución de variables es flexible, lo que significa que puedes tener las mismas variables definidas en distintas ubicaciones y que el tiempo de ejecución de AMP analizará los valores en este orden de procedencia (consulta el apartado [Orden de sustitución de variables](/es/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)
-).{% endcall %}
+Importante: La sustitución de variables es flexible, lo que significa que puedes tener las mismas variables definidas en distintas ubicaciones y que el tiempo de ejecución de AMP analizará los valores en este orden de procedencia (consulta el apartado [Orden de sustitución de variables](/es/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering) ).
 
 ## Identificación del usuario
 
@@ -142,6 +138,4 @@ Si AMP detecta que esta cookie está definida, la sustitución del ID de cliente
 
 Si quieres obtener más información acerca de la sustitución del ID de cliente y de cómo añadir una ID de notificación del usuario opcional, consulta el artículo sobre [variables compatibles con las analíticas de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
-{% call callout('Más información', type='read') %}
-Obtén más información sobre Analytics en [Información detallada de AMP Analytics](/es/docs/analytics/deep_dive_analytics.html) y [Casos de uso](/es/docs/analytics/use_cases.html)
-.{% endcall %}
+Más información: Obtén más información sobre Analytics en [Información detallada de AMP Analytics](/es/docs/analytics/deep_dive_analytics.html) y [Casos de uso](/es/docs/analytics/use_cases.html).

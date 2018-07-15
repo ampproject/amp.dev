@@ -24,16 +24,16 @@ Learn more about AMP Caches in the YouTube video below, or in the [Why AMP Cache
 {{ youtube('n8n7fj60lds', 480, 270, caption='Watch this video to learn why AMP Caches exist.') }}
 
 ## What AMP Caches are available?
-Currently, there are two AMP Cache providers: 
+Currently, there are two AMP Cache providers:
 
-- [Google AMP Cache](https://developers.google.com/amp/cache/) 
+- [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Cloudflare AMP Cache](https://amp.cloudflare.com/)
 
 AMP is an open ecosystem and the AMP Project actively encourages the development of more AMP Caches.  To learn about creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
 ## How do I choose an AMP Cache?
 
-As a publisher, you don't choose an AMP Cache, it's *actually the platform* that links to your content that chooses the AMP Cache (if any) to use. 
+As a publisher, you don't choose an AMP Cache, it's *actually the platform* that links to your content that chooses the AMP Cache (if any) to use.
 
 This is an inversion of the typical model where content delivery is the responsibility of the publisher.  However, this model allows platforms to provide their users with predictable load performance and among other things allows them to ensure required security and privacy invariants during AMP’s pre-rendering phase. To learn about the strict guidelines for creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
@@ -61,9 +61,7 @@ By using the AMP format, you are making your content available to be cached by A
     - Cloudflare AMP Cache URL example: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
-{% call callout('Note', type='note') %}
 Note: The AMP Cache URL is not a user-facing URL, that is, users wouldn't typically request content via those URLs.
-{% endcall %}
 
 * **Publisher addition**: Publishers can specifically add the AMP page to the AMP Cache.  This option is applicable only to the Google AMP Cache (see [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache)).
 

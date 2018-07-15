@@ -10,9 +10,7 @@ $title: 包括图像
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-{% call callout('阅读', type='read') %}
-如需了解我们为何要将诸如 `<img>` 等标记替换为 `<amp-img>` 以及有多少标记可用，请查看[添加图片和视频](/zh_cn/docs/guides/amp_replacements.html)。
-{% endcall %}
+阅读: 如需了解我们为何要将诸如 `<img>` 等标记替换为 `<amp-img>` 以及有多少标记可用，请查看[添加图片和视频](/zh_cn/docs/guides/amp_replacements.html)。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/zh_cn/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">以前</span></a>

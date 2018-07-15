@@ -14,9 +14,7 @@ This guide provides  instructions and best practices for displaying ads on your 
 
 In non-AMP pages (traditional HTML), if you want to display ads on your page, you'd include a snippet of JavaScript to serve ads from your ad network.  For performance and security reasons, you cannot include third-party JavaScript in AMP pages.  So, to display ads in AMP, you need to add the custom [`<amp-ad>`](/docs/reference/components/amp-ad.html) component to your AMP page.
 
-{% call callout('Tip', type='success') %}
-See [AMP By Example for a live demo](https://ampbyexample.com/components/amp-ad/) that demonstrates adding an amp-ad tag to an AMP page.
-{% endcall %}
+Tip: See [AMP By Example for a live demo](https://ampbyexample.com/components/amp-ad/) that demonstrates adding an amp-ad tag to an AMP page.
 
 Let's walk through the steps of adding the component so you can display ads on your AMP page.
 
@@ -32,7 +30,7 @@ The `<amp-ad>` component is a custom ad extension to the AMP library. Under the 
 
 Over 100+ [ad servers and networks](/docs/ads/ads_vendors.html) provide built-in integrations with AMP.  To add an ad for a given ad network, add the `<amp-ad>` tag, and specify the network in the `type` attribute.
 
-In this example, we are adding an ad slot to serve ads from the a9 network: 
+In this example, we are adding an ad slot to serve ads from the a9 network:
 
 ```html
 <amp-ad type="a9">
@@ -41,7 +39,7 @@ In this example, we are adding an ad slot to serve ads from the a9 network:
 
 ### Step 3: Specify the size of the ad unit
 
-Add the `width` and `height` attributes to the `<amp-ad>`  tag.  This specifies the size of the ad on your AMP page: 
+Add the `width` and `height` attributes to the `<amp-ad>`  tag.  This specifies the size of the ad on your AMP page:
 
 ```html hl_lines="2"
 <amp-ad type="a9">
@@ -62,7 +60,7 @@ Each network has specific data attributes they require to serve ads.  Refer to t
 </amp-ad>
 ```
 
-### Step 5: (Optional) Specify a placeholder 
+### Step 5: (Optional) Specify a placeholder
 
 Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space.  To specify a placeholder, add a child element with the `placeholder` attribute. Learn more in [Placeholders & fallbacks](/docs/design/responsive/placeholders.html).
 
@@ -76,7 +74,7 @@ Depending on the ad network, you can choose to show a placeholder until the ad i
 </amp-ad>
 ```
 
-### Step 6: (Optional) Specify a fallback 
+### Step 6: (Optional) Specify a fallback
 
 Depending on the ad network, you can choose to show a fallback element if no ad is available to serve. To specify a fallback, add a child element with the `fallback` attribute. Learn more in [Placeholders & fallbacks](/docs/design/responsive/placeholders.html).
 
@@ -98,7 +96,7 @@ The [`amp-ad`](/docs/reference/components/amp-ad.html) component serves ads from
 
 ## Augmenting targeting data on ad requests
 
-As part of the Fast Fetch serving mechanism, the Real-Time Config (RTC) feature allows publishers to augment ad requests with first-party and third-party targeting information that's retrieved at runtime. RTC allows up to 5 callouts to targeting servers for each individual ad slot, the results of which are appended to the ad request.  To use RTC on your ads, the ad network you use must support RTC and Fast Fetch.  
+As part of the Fast Fetch serving mechanism, the Real-Time Config (RTC) feature allows publishers to augment ad requests with first-party and third-party targeting information that's retrieved at runtime. RTC allows up to 5 callouts to targeting servers for each individual ad slot, the results of which are appended to the ad request.  To use RTC on your ads, the ad network you use must support RTC and Fast Fetch.
 
 You can learn more about RTC from this YouTube video:
 

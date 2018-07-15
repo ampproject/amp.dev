@@ -77,10 +77,7 @@ Para nuestro artículo de noticias, **añada** los siguientes datos estructurado
 </script>
 ```
 
-
-{% call callout('Nota', type='note') %}
-El contenido siempre debe ser el mismo. Para artículos de noticias, especifique el tipo "NewsArticle". El titular debe coincidir con el título de su artículo. El objeto de imagen se refiere a la imagen de héroe del artículo.
-{% endcall %}
+Nota: El contenido siempre debe ser el mismo. Para artículos de noticias, especifique el tipo "NewsArticle". El titular debe coincidir con el título de su artículo. El objeto de imagen se refiere a la imagen de héroe del artículo.
 
 **Vuelva a cargar** la página en su navegador y verifique que no se hayan introducido errores de validación de AMP.
 
@@ -102,9 +99,7 @@ Para verificar que sus datos estructurados son correctos, muchas plataformas pro
 
 Si los datos estructurados son válidos, debería ver **0 errors** y **0 warnings**.
 
-{% call callout('Leer más', type='read') %}
-Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible](/es/docs/fundamentals/discovery.html).
-{% endcall %}
+Leer más: Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible](/es/docs/fundamentals/discovery.html).
 
 ¡Impresionante trabajo! Has completado tu artículo de noticias de AMP.
 

@@ -48,7 +48,4 @@ Key data points to consider:
 the device or browser (see also [Variable substitution](/docs/analytics/analytics_basics.html#variable-substitution))?
 * How will you identify your users (see also [User identification](/docs/analytics/analytics_basics.html#user-identification))?
 
-
-{% call callout('Learn more', type='read') %}
-Continue to learn about analytics with [Analytics: the Basics](/docs/analytics/analytics_basics.html).
-{% endcall %}
+Learn more: Continue to learn about analytics with [Analytics: the Basics](/docs/analytics/analytics_basics.html).

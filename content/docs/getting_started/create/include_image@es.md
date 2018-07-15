@@ -11,9 +11,7 @@ Para demostrar el aspecto que tendría el marcado adicional, a continuación te 
 <amp-img src="bienvenido.jpg" alt="Bienvenido" height="400" width="800"></amp-img>
 [/sourcecode]
 
-{% call callout('Leer más', type='read') %}
-Para saber por qué reemplazamos etiquetas como `<img>` por `<amp-img>` y cuántas hay disponibles, consulta [Incluir imágenes y videos](/es/docs/guides/amp_replacements.html).
-{% endcall %}
+Leer más: Para saber por qué reemplazamos etiquetas como `<img>` por `<amp-img>` y cuántas hay disponibles, consulta [Incluir imágenes y videos](/es/docs/guides/amp_replacements.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/tutorials/create/basic_markup.html"><span class="arrow-prev">Anterior</span></a>

@@ -19,9 +19,7 @@ $title: AMP とプログレッシブ ウェブアプリを組み合わせる
 
 AMP ページでは、AMP キャッシュとは対照的に自分のサイトのドメインから配信する限り、さまざまな PWA の機能を独力で使用することができます。つまり、Google や Bing などのプラットフォーム内にある AMP ページが消費される時点では PWA の機能は作動しませんが、ユーザーが AMP ページに直接アクセスすると、処理が行われます。
 
-{% call callout('詳細情報', type='read') %}
-詳しくは、AMP ページで [PWA の機能を有効にする方法](/ja/docs/guides/pwa-amp/amp-as-pwa.html)についてご覧ください。
-{% endcall %}
+詳細情報: 詳しくは、AMP ページで [PWA の機能を有効にする方法](/ja/docs/guides/pwa-amp/amp-as-pwa.html)についてご覧ください。
 
 ## PWA へのエントリ ポイントとしての AMP
 
@@ -29,9 +27,7 @@ AMP の独自のセールス ポイントは、**ほとんど瞬時の配信**�
 
 サイトへのエントリ ポイントとして AMP ページを使用し、背後で PWA を準備しておいて、進行中に PWA に切り替えるのが、効果的な戦略です。
 
-{% call callout('詳細情報', type='read') %}
-`amp-install-serviceworker` を使って [AMP を PWA に接続する方法](/ja/docs/guides/pwa-amp/amp-to-pwa.html)についてご覧ください。
-{% endcall %}
+詳細情報: `amp-install-serviceworker` を使って [AMP を PWA に接続する方法](/ja/docs/guides/pwa-amp/amp-to-pwa.html)についてご覧ください。
 
 ## PWA のデータソースとしての AMP
 
@@ -39,8 +35,4 @@ AMP ページの基本的な特徴は、簡単で安全に埋め込みできる�
 
 プログレッシブ ウェブアプリを作成する場合は、**AMP ページを PWA のデータソースとして再利用する**ことで、AMP のメリットを享受しながら、バックエンドとクライアントの複雑さを大幅に緩和することができます。
 
-{% call callout('詳細情報', type='read') %}
-[PWA 内で AMP ページを消費する方法](/ja/docs/guides/pwa-amp/amp-in-pwa.html)についてご覧ください。
-{% endcall %}
- 
- 
+詳細情報: [PWA 内で AMP ページを消費する方法](/ja/docs/guides/pwa-amp/amp-in-pwa.html)についてご覧ください。

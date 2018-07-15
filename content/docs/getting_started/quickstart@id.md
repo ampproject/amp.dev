@@ -28,9 +28,7 @@ Ini adalah template HTML biasa yang Anda butuhkan untuk halaman AMP:
 </html>
 ```
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Pelajari lebih lanjut tentang [markup yang diperlukan](/id/docs/reference/spec.html#required-markup) untuk halaman AMP.
-{% endcall %}
+Baca lebih lanjut: Pelajari lebih lanjut tentang [markup yang diperlukan](/id/docs/reference/spec.html#required-markup) untuk halaman AMP.
 
 ### Langkah 2: Tambahkan komponen ke halaman Anda
 
@@ -72,9 +70,7 @@ Untuk menyesuaikan gaya elemen di halaman AMP, tambahkan CSS ke lembar gaya inli
 </style>
 ```
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Pelajari lebih lanjut tentang [CSS yang didukung](/id/docs/guides/responsive/style_pages.html) untuk halaman AMP.
-{% endcall %}
+Baca lebih lanjut: Pelajari lebih lanjut tentang [CSS yang didukung](/id/docs/guides/responsive/style_pages.html) untuk halaman AMP.
 
 ### Langkah 4: Lakukan validasi HTML AMP
 
@@ -92,5 +88,5 @@ Berikut referensi lain untuk meningkatkan pengalaman Anda:
 * [Menambahkan analytics ke halaman](/id/docs/guides/analytics_amp.html)
 * [Meningkatkan interaksi pengguna](/id/docs/guides/engagement.html)
 * Demo langsung di [AMP BY Example](https://ampbyexample.com/)
- 
- 
+
+

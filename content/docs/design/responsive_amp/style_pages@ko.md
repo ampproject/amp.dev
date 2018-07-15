@@ -7,9 +7,7 @@ $title: 지원되는 CSS
 
 모든 스타일은 문서 헤드에 배치되어야 합니다 ([페이지에 스타일 추가](/ko/docs/guides/responsive_amp.html#add-styles-to-a-page) 참조). 하지만 CSS 전처리기 및 템플릿을 사용하여 정적 페이지를 만들 수 있으며, 이를 통해 콘텐츠를 더 효과적으로 관리할 수 있습니다.
 
-{% call callout('참고', type='note') %}
-AMP 구성요소에는 기본 스타일이 제공되므로 반응형 페이지를 비교적 간편하게 제작할 수 있습니다. 이러한 스타일은 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) 에 정의되어 있습니다.
-{% endcall %}
+참고: AMP 구성요소에는 기본 스타일이 제공되므로 반응형 페이지를 비교적 간편하게 제작할 수 있습니다. 이러한 스타일은 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) 에 정의되어 있습니다.
 
 ## 허용되지 않는 스타일
 
@@ -69,9 +67,7 @@ AMP 구성요소에는 기본 스타일이 제공되므로 반응형 페이지�
 
 AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 글꼴은 예외입니다.
 
-{% call callout('읽어보기', type='success') %}
-[AMP의 맞춤 글꼴](/ko/docs/guides/responsive/custom_fonts.html) 에 관해 자세히 알아보세요.
-{% endcall %}
+읽어보기: [AMP의 맞춤 글꼴](/ko/docs/guides/responsive/custom_fonts.html) 에 관해 자세히 알아보세요.
 
 ## CSS 전처리기 사용하기
 

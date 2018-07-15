@@ -46,8 +46,5 @@ within your AMP stylesheet:
 
 [/sourcecode]
 
-{% call callout('注意', type='note') %}
- 使用 `@font-face` 
-添加的字体必须通过 HTTP 或 HTTPS 架构抓取。
-{% endcall %}
+注意: 使用 `@font-face` 添加的字体必须通过 HTTP 或 HTTPS 架构抓取。
 

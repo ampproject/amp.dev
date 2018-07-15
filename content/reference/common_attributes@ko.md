@@ -30,9 +30,7 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 1. 요소의 너비가 아닌 높이에 적용되는 값입니다.
 2. 백분율 값이 허용됩니다. 백분율 값은 요소 너비에 대한 백분율을 나타냅니다. 예를 들어 `80%`라는 값은 요소의 높이가 요소 너비의 80%라는 사실을 뜻합니다.
 
-{% call callout('참고', type='note') %}
-`heights` 속성이 `width` 및 `height`와 함께 지정되는 경우 `layout`의 기본값은 'responsive`입니다.
-{% endcall %}
+참고: `heights` 속성이 `width` 및 `height`와 함께 지정되는 경우 `layout`의 기본값은 'responsive`입니다.
 
 예:
 

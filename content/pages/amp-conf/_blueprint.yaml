@@ -1,5 +1,6 @@
 path: /amp-conf/{base}/
 view: /views/base.html
 $localization:
+  path: /{locale}/{base}/
   locales:
     - en

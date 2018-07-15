@@ -32,9 +32,7 @@ All AMP elements that support the `responsive` layout, also support the `heights
  1. The value applies to the height, not the width of the element.
  2. Percent values are allowed. A percent value indicates the percent of the element's width. For example, a value of `80%` indicates that the height of the element will be 80% of the element's width.
 
-{% call callout('Note', type='note') %}
-When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
-{% endcall %}
+Note: When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
 
 Example:
 

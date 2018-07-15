@@ -124,13 +124,9 @@ Por lo tanto, vamos a resolver el error:
 
 Una vez más, **vuelva a cargar** la página y verifique que el error stylesheets ha desaparecido.
 
-{% call callout('Nota', type='note') %}
-No sólo se requiere estilo en línea, sino que hay un límite de tamaño de archivo de 50 kilobytes para toda la información de estilo. Debe utilizar preprocesadores CSS como [SASS](http://sass-lang.com/) para minimizar su CSS antes de insertar el CSS en sus páginas AMP.
-{% endcall %}
+Nota: No sólo se requiere estilo en línea, sino que hay un límite de tamaño de archivo de 50 kilobytes para toda la información de estilo. Debe utilizar preprocesadores CSS como [SASS](http://sass-lang.com/) para minimizar su CSS antes de insertar el CSS en sus páginas AMP.
 
-{% call callout('Importante', type='caution') %}
-Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido](/es/docs/design/responsive/style_pages.html).
-{% endcall %}
+Importante: Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido](/es/docs/design/responsive/style_pages.html).
 
 ## Excluir JavaScript de terceros
 
@@ -147,9 +143,7 @@ En AMP, los scripts generados por el usuario no están permitidos. Los scripts e
 
 Esto descarta efectivamente el uso de todos los JavaScript de terceros; Sin embargo, hay una excepción: JavaScript de terceros se puede utilizar en iframes.
 
-{% call callout('Importante', type='caution') %}
-Incluir JavaScript en un iframe debe considerarse una medida de último recurso. Siempre que sea posible, la funcionalidad de JavaScript se debe reemplazar mediante [AMP components](/es/docs/reference/components.html). Exploraremos nuestro primer componente de AMP en la siguiente sección.
-{% endcall %}
+Importante: Incluir JavaScript en un iframe debe considerarse una medida de último recurso. Siempre que sea posible, la funcionalidad de JavaScript se debe reemplazar mediante [AMP components](/es/docs/reference/components.html). Exploraremos nuestro primer componente de AMP en la siguiente sección.
 
 Intente abrir el archivo [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) externo. ¿Que ves? El archivo debe estar vacío de cualquier código JavaScript y sólo incluir un comentario de información como este:
 
@@ -174,9 +168,7 @@ Teniendo en cuenta que este archivo JavaScript externo no es un componente funci
 
 Ahora, **vuelva a cargar** la página y compruebe que el error de secuencia de comandos ha desaparecido.
 
-{% call callout('Nota', type='note') %}
-Las únicas excepciones para los scripts generados por el usuario son cuando el atributo de tipo es `application/ld+json` o `application/json`. Estos tipos de script agregan metadatos a la página y configuran los componentes de AMP.
-{% endcall %}
+Nota: Las únicas excepciones para los scripts generados por el usuario son cuando el atributo de tipo es `application/ld+json` o `application/json`. Estos tipos de script agregan metadatos a la página y configuran los componentes de AMP.
 
 ## Incluir el estándar de CSS de AMP
 
@@ -255,9 +247,7 @@ Voila! Nuestra imagen está en la relación de aspecto correcta y responde respo
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Nuestra imagen es ahora responsive!") }}
 
-{% call callout('Leer más', type='read') %}
-Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification](/es/docs/design/amp-html-layout.html).
-{% endcall %}
+Leer más: Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification](/es/docs/design/amp-html-layout.html).
 
 ## ¡Éxito!
 
@@ -325,7 +315,7 @@ Actualice la página y observe la salida de la consola. Usted debe ser recibido 
 AMP validation successful.
 </pre>
 
-### Preguntas frecuentes 
+### Preguntas frecuentes
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
 - [¿Qué ocurre si el atributo layout no está definido?](/es/docs/design/responsive/control_layout.html#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
