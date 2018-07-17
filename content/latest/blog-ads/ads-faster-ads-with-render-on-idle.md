@@ -7,8 +7,8 @@ author: Keith Wright
 role:  Technical Lead, AMP Project
 origin: "https://amphtml.wordpress.com/2018/03/05/faster-ads-with-render-on-idle/amp/"
 excerpt: "We’ve launched a new feature called “Render on Idle” now available for publishers using the DoubleClick AMP ad tag, and any ad network choosing to implement Fast Fetch can also take advantage of it. With Render on Idle, ads load 12 viewports from the user’s scroll position (as opposed to 3) when the browser is [&#8230;]"
-avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-03-05T13:41:06-05:00
+avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+date_data: 2018-03-05T10:41:06-08:00
 $date: March 5, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

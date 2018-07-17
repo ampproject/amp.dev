@@ -8,7 +8,7 @@ role:  AMP Product Manager
 origin: "https://amphtml.wordpress.com/2018/05/03/dynamic-geo-personalization/amp/"
 excerpt: "AMP documents are often served from a third-party cache; this means it’s not always clear how to support dynamic or personalized content. There are a range of components and techniques to achieve many of these use cases (amp-list, amp-state, amp-form, and amp-iframe just to name a few), but there are some common cases the AMP [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-05-03T13:54:36-04:00
+date_data: 2018-05-03T10:54:36-07:00
 $date: May 3, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

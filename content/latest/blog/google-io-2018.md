@@ -8,7 +8,7 @@ role:  Marketing Lead for AMP at Google
 origin: "https://amphtml.wordpress.com/2018/05/08/google-io-2018/amp/"
 excerpt: "For the latest AMP project updates, subscribe to our new newsletter! A strong network of AMP contributors and collaborators has been critical to achieving the project’s mission of building a user-first web. At Google’s I/O developer conference this week, members of the AMP team are sharing recent ways the AMP community has come together to [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-05-08T16:56:04-04:00
+date_data: 2018-05-08T13:56:04-07:00
 $date: May 8, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

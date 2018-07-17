@@ -7,8 +7,8 @@ author: pbakaus
 role: 
 origin: "https://amphtml.wordpress.com/2018/04/03/amp-roadshow-more-cities-more-content/amp/"
 excerpt: "We started the AMP Roadshow in the first half of 2017 to educate and meet developers around the world in a free one-day hands-on conference and workshop. To date, we’ve met over 2,000 of you in 13 cities, but we’re far from done: We’re planning to go to over 20 additional cities in 2018 and [&#8230;]"
-avatar: http://amphtml.files.wordpress.com/2018/03/1t_cqmiqziwkvjbqt0lhouxmr25nxokh8purus4y-e1522455028228.jpg
-date_data: 2018-04-03T13:10:30-04:00
+avatar: https://amphtml.files.wordpress.com/2018/03/1t_cqmiqziwkvjbqt0lhouxmr25nxokh8purus4y-e1522455028228.jpg
+date_data: 2018-04-03T10:10:30-07:00
 $date: April 3, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

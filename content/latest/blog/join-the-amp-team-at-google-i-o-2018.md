@@ -8,7 +8,7 @@ role:  AMP Outreach/Marketing lead at Google
 origin: "https://amphtml.wordpress.com/2018/05/07/join-the-amp-team-at-google-i-o-2018/amp/"
 excerpt: "Starting Tuesday, May 8th, many members of the team will share the latest AMP updates and news at Google I/O 2018, Google’s annual developer conference. With many of the core AMP contributors working at Google, it gives us an opportunity to share the most recent work from the team. This year there are many talks [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-05-07T11:52:33-04:00
+date_data: 2018-05-07T08:52:33-07:00
 $date: May 7, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
