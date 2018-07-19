@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@octokit/rest@^15.9.4":
+"@octokit/rest@15.9.4":
   version "15.9.4"
   resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-15.9.4.tgz#c6cf0f483275d9c798b18419b7c9d417493bb70f"
   dependencies:
