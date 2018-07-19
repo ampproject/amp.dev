@@ -6,6 +6,19 @@ const clientSecret = process.argv[2] || process.env.AMP_DOC_SECRET;
 const clientId = process.argv[3] || process.env.AMP_DOC_ID;
 const clientToken = process.env.AMP_DOC_TOKEN;
 const writeDestination = '../content/includes/roadmap.json';
+const templateSource = fs.readFileSync('../content/latest/roadmap.html', 'utf8')
+  .replace('$parent: /content/latest/latest.html', '$parent: /content/latest/roadmap.html')
+  .replace('\n$path: /{base}/', '');
+
+function slugify(text) {
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[\/\&]/g, '-')           // Replace \ and & with dash
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
+}
 
 // exit early if the proper environment variables aren't available
 if(!(clientToken || (clientSecret && clientId))) {
@@ -84,7 +97,7 @@ async function importRoadmap() {
         .split('\r\n\r\n')[0],
       labels: (issue.data.labels || []).map(label => {
 
-        return label.name.startsWith('Category:') ? { url: label.url, name: label.name.replace('Category:', ''), color: label.color } : false;
+        return label.name.startsWith('Category:') ? { url: label.url, name: label.name.replace('Category:', '').trim(), color: label.color } : false;
       }).filter(label => !!label)
     };
 
@@ -93,9 +106,24 @@ async function importRoadmap() {
 
   });
 
+  // create a list of unique labels
+  const labels = cards
+    .map(card => card.issue.labels.map(label => label.name))
+    .reduce((acc, val) => acc.concat(val), [])
+    .filter((value, index, self) => self.indexOf(value) === index);
+
+
+
+
+  // copy the roadmap page for each label (ugh, needed for filtering)
+  labels.forEach(label => {
+    fs.writeFileSync('../content/latest/roadmap/' + slugify(label) + '.html', templateSource);
+  });
+
   // Write finalized JSON to config file that gets imported by the roadmap template
+  fs.writeFileSync(writeDestination, JSON.stringify({ labels: labels, columns: columns }, null, '  '));
+
   console.log('Successfully imported roadmap');
-  fs.writeFileSync(writeDestination, JSON.stringify(columns, null, '  '));
 
 }
 importRoadmap();
