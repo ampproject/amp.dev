@@ -3,6 +3,7 @@
 .sass-cache
 .idea
 .podcache.yaml
+.vscode
 node_modules
 
 build

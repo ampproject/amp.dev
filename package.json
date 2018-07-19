@@ -5,6 +5,7 @@
     "preinstall": "node build_scripts/check-package-manager.js"
   },
   "dependencies": {
+    "@octokit/rest": "^15.9.4",
     "feedparser": "2.2.9",
     "gulp": "4.0.0",
     "gulp-autoprefixer": "5.0.0",
