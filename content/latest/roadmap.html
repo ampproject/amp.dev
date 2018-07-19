@@ -26,7 +26,7 @@ components:
       <ul>
         {% for label in roadmap.labels %}
         {% set labelSlug = label|slug %}
-        <li class="tag tag-{{ label|slug }}{% if tag %} {% if tag == labelSlug %}active{% else %}inactive{%endif%}{% endif %}"><a href="{% if tag == labelSlug %}/roadmap{% else %}./{{ label|slug }}{% endif %}">{{ label }}</a></li>
+        <li class="tag tag-{{ label|slug }}{% if tag %} {% if tag == labelSlug %}active{% else %}inactive{%endif%}{% endif %}"><a href="{% if tag == labelSlug %}/roadmap{% else %}/roadmap/{{ label|slug }}{% endif %}">{{ label }}</a></li>
         {% endfor %}
       </ul>
     </div>
@@ -58,7 +58,7 @@ components:
                     {{ card.issue.description|markdown|safe }}
                     <ul class="tags">
                         {% for label in card.issue.labels %}
-                        <li class="tag tag-{{label.name|slug}}"><a href="./{{label.name|slug}}">{{ label.name }}</a></li>
+                        <li class="tag tag-{{label.name|slug}}"><a href="/roadmap/{{label.name|slug}}">{{ label.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
