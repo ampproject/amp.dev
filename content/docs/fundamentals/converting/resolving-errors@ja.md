@@ -11,7 +11,7 @@ $title: 検証エラーを解決する
 まず、次のエラーを修正します。
 
 <pre class="error-text">
-必須タグ「meta charset=utf-8」がないか、正しくありません。
+The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 </pre>
 
 AMP でテキストを正しく表示するには、ページの文字セットを指定する必要があります。また、`<head>` タグの最初の子として、meta charset 情報を指定する必要があります。このタグを最初に指定する理由は、meta charset タグより前に追加されたコンテンツを再解釈するのを避けるためです。
@@ -30,7 +30,7 @@ AMP でテキストを正しく表示するには、ページの文字セット�
 次のエラーを見てみましょう。
 
 <pre class="error-text">
-必須タグ「link rel=canonical」がないか、正しくありません。
+The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
 すべての AMP ドキュメントで、そのドキュメントの「正規（canonical）」バージョンを参照するリンクを指定する必要があります。正規ページの概要と正規リンクのさまざまな手法については、このチュートリアルの[ページが検出されるようにする](/ja/docs/fundamentals/converting/discoverable.html)の手順で詳しく取り上げます。
@@ -58,8 +58,8 @@ AMP でテキストを正しく表示するには、ページの文字セット�
 AMP では、ページのルートの `<html>` 要素で属性を指定し、ページを AMP ドキュメントとして宣言する必要があります。
 
 <pre class="error-text">
-必須属性「⚡」がタグ「html ⚡ for top-level html」にありません
-必須タグ「html ⚡ for top-level html」がないか、正しくありません。
+The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
+The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 </pre>
 
 上記のエラーを解決するには、次のように、`<html>` タグに `⚡` 属性を追加します。
@@ -83,7 +83,7 @@ AMP では、ページのルートの `<html>` 要素で属性を指定し、ペ
 次は、以下のエラーに対応しましょう。
 
 <pre class="error-text">
-必須タグ「meta name=viewport」がないか、正しくありません。
+The mandatory tag 'meta name=viewport' is missing or incorrect.
 </pre>
 
 AMP にはビューポートの `width` と `minimum-scale` の定義が必要です。これらの値はそれぞれ、`device-width`、`1` と定義する必要があります。ビューポートは、HTML ページの `<head>` タグに含まれる共通のタグです。
@@ -103,7 +103,7 @@ AMP にはビューポートの `width` と `minimum-scale` の定義が必要�
 次のエラーはスタイルシートの使用に関連しています。
 
 <pre class="error-text">
-タグ「link rel=stylesheet for fonts」の属性「href」に無効な値「base.css」が設定されています。
+The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
 </pre>
 
 特にこのエラーは、`<head>` タグ内の次のスタイルシート リンクタグについて指摘しています。
@@ -142,7 +142,7 @@ AMP ドキュメント全体で style タグは 1 つだけ指定できます。
 CSS をインライン化することにより、スタイルシートは比較的簡単に AMP に合わせて修正できますが、JavaScript にはこれは当てはまりません。
 
 <pre class="error-text">
-タグ「script」は特定の形式以外は許可されていません。
+The tag 'script' is disallowed except in specific forms.
 </pre>
 
 一般に AMP では、次の 2 つの主な要件を満たした場合にのみ、スクリプトが許可されます。
@@ -187,9 +187,9 @@ CSS をインライン化することにより、スタイルシートは比較�
 以下のエラーでは、ボイラープレート コードがないことを指摘しています。
 
 <pre class="error-text">
-必須タグ「noscript enclosure for boilerplate」がないか、正しくありません。
-必須タグ「head > style : boilerplate」がないか、正しくありません。
-必須タグ「noscript > style : boilerplate」がないか、正しくありません。
+The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
+The mandatory tag 'head > style : boilerplate' is missing or incorrect.
+The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 </pre>
 
 すべての AMP ドキュメントには次のような AMP ボイラープレート コードが必要です。
@@ -207,7 +207,7 @@ CSS をインライン化することにより、スタイルシートは比較�
 AMP では、メディアの表示に対応するデフォルトの HTML をサポートしていません。そのため、次のようなエラーが発生します。
 
 <pre class="error-text">
-タグ「img」はタグ「noscript」の子孫としてのみ使用できます。「amp-img」ではありませんか？
+The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
 AMP には、`<img>` タグを置き換えるための専用のウェブ コンポーネントとして、[`<amp-img>`](/ja/docs/reference/components/amp-img.html) タグが用意されています。
@@ -219,8 +219,8 @@ AMP には、`<img>` タグを置き換えるための専用のウェブ コン�
 `<img>` タグを上記の `<amp-img>` タグで**置き換えて**から、検証ツールを再度実行してください。新しいエラーがいくつか発生します。
 
 <pre class="error-text">
-レイアウトがサポートされていません: container
-暗黙的レイアウト「CONTAINER」はタグ「amp-img」ではサポートされません。
+Layout not supported: container
+The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
 なぜ `amp-img` によって別のエラーが発生したのでしょうか。`amp-img` は従来の HTML img タグを直接置き換えたものではないからです。`amp-img` を使用する場合は、追加の要件があります。
@@ -332,7 +332,7 @@ AMP ドキュメントは次のようになります。
 ページを更新して、コンソールの出力を確認してください。次のようなメッセージが表示されるはずです。
 
 <pre class="success-text">
-AMP の検証に成功しました。
+AMP validation successful.
 </pre>
 
 ### よくある質問
