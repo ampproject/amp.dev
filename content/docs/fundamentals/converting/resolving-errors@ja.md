@@ -117,7 +117,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 ```html
 <style amp-custom>
 
-/* base.css の内容 */
+/* The content from base.css */
 
 </style>
 ```
@@ -164,10 +164,10 @@ The tag 'script' is disallowed except in specific forms.
 ```javascript
 /*
 
-この外部 JavaScript ファイルは意図的に空になっています。
+This external JavaScript file is intentionally empty.
 
-外部 JavaScript ファイルの使用に関連する AMP 検証エラーを
-例示することだけを目的としています。
+Its purpose is merely to demonstrate the AMP validation error related to the
+use of external JavaScript files.
 
 */
 ```
@@ -300,7 +300,7 @@ AMP ドキュメントは次のようになります。
         text-align: center;
       }
 
-#h01 
+      h1 { 
         margin: 0;
         padding: 0.5em;
         background: white;
