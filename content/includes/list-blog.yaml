@@ -1,6 +1,39 @@
 blogs:
 
 - type: Blog
+  title: "Track development with the new AMP Roadmap"
+  id: track-development-with-the-new-amp-roadmap
+  author: Vamsee Jasti
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2018/07/19/track-development-with-the-new-amp-roadmap/amp/"
+  excerpt: "As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each. Starting today, you can head over to the AMP roadmap and see an updated view of feature development across the project. We hope this is easy [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-07-19T17:42:43-04:00
+  date: "July 19, 2018"
+
+- type: Blog
+  title: "New in AMP stories: Monetization, Revamped bookends and Metadata"
+  id: new-in-amp-stories-monetization-revamped-bookends-and-metadata
+  author: Jon Newmuis
+  role:  AMP Stories Lead Engineer, Google
+  origin: "https://amphtml.wordpress.com/2018/07/16/new-in-amp-stories-monetization-revamped-bookends-and-metadata/amp/"
+  excerpt: "We announced the developer preview of AMP stories in February at AMP Conf. Since then, publishers have authored thousands of stories, experimenting with the format and providing valuable feedback to the AMP team. Based on this input, we recently released new capabilities in AMP stories v1.0, open to all developers without origin trials or a [&#8230;]"
+  avatar: https://videos.files.wordpress.com/pqK8yXrk/amp_blog_story_ad_hd.mp4
+  datedata: 2018-07-16T18:03:22-04:00
+  date: "July 16, 2018"
+
+- type: Blog
+  title: "Serverless AMP solution on AWS"
+  id: serverless-amp-solution-on-aws
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/07/11/serverless-amp-solution-on-aws/amp/"
+  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit. You can see their site featured on the showcase page of AMPproject.org It all started when we realized our website gets outdated very fast and we are always so busy with our customers we forget about ourselves. We had to build something [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-07-11T16:09:31-04:00
+  date: "July 11, 2018"
+
+- type: Blog
   title: "amp-date-picker is launched!"
   id: amp-date-picker-is-launched
   author: Eric Lindley
@@ -8,7 +41,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/06/29/amp-date-picker-is-launched/amp/"
   excerpt: "Earlier this month we announced a limited release of amp-date-picker, a calendar-style interactive date picker for form input. With this component users can specify single dates or date ranges with a calendar interface that makes the process faster and less error prone. After a great round of feedback from developers trying it out on their [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-29T08:32:41-07:00
+  datedata: 2018-06-29T11:32:41-04:00
   date: "June 29, 2018"
 
 - type: Blog
@@ -19,7 +52,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/06/28/announcing-the-amp-contributor-summit/amp/"
   excerpt: "We are happy to share that the first AMP Contributor Summit for developers in AMP&#8217;s open source community will be held in San Francisco, California this September! The summit will take place from September 25-26, with an optional New Contributor Day on September 24th that&#8217;s especially for people new to contributing to AMP.  If you [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-28T11:20:48-07:00
+  datedata: 2018-06-28T14:20:48-04:00
   date: "June 28, 2018"
 
 - type: Blog
@@ -30,43 +63,5 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/06/21/contributing-to-the-amp-project/amp/"
   excerpt: "Editor&#8217;s note: The following was originally posted by Adam Silverstein, Lead Web Engineer at 10up on the Google Open Source Blog. I started my web career building websites for small businesses on WordPress, so when I decided to begin contributing to open source, WordPress was a natural place to start. Now I work at the digital [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-21T12:22:46-07:00
+  datedata: 2018-06-21T15:22:46-04:00
   date: "June 21, 2018"
-
-- type: Blog
-  title: "The Shadow Reader, Improved"
-  id: the-shadow-reader-improved
-  author: Ben Morss
-  role:  Developer Advocate, Google
-  origin: "https://amphtml.wordpress.com/2018/06/19/the-shadow-reader-improved/amp/"
-  excerpt: "We made the Shadow Reader even faster &#8211; and friendlier to search engines! We created the Shadow Reader to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site repurposes existing articles from The Guardian into an immersive news reader experience. More than [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-19T11:22:01-07:00
-  date: "June 19, 2018"
-
-- type: Video
-  title: "10 ways to improve user engagement on your AMP pages"
-  id: xkPwauFXrMA
-  author: The AMP Channel
-  role: 
-  origin: "https://www.youtube.com/watch?v=xkPwauFXrMA"
-  excerpt: "Unsure how to create engaging AMP pages? Suffering from high bounce rates? In this episode, Paul covers 10 ways you can improve user experience for your AMP pages. He discusses how you can reflect your brand, feature your most engaging content, implement a side-bar menu, and more!
-
-Watch all the Amplify episodes here → http://bit.ly/2LHsFX3
-
-Subscribe to the The AMP Channel and never miss an Amplify episode → http://bit.ly/AMPchannel1"
-  thumbnail: "https://i1.ytimg.com/vi/xkPwauFXrMA/hqdefault.jpg"
-  avatar: 
-  datedata: 2018-06-14T12:35:41-07:00
-  date: "June 14, 2018"
-
-- type: Blog
-  title: "New in AMP: Q2, 2018 Edition"
-  id: 2058
-  author: Vamsee Jasti
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2018/06/06/2058/amp/"
-  excerpt: "Monetization support for AMP stories AMP stories now supports ‘Publisher placed ads’, the ability for a publisher to serve ads for which they can control delivery sales and delivery. Ad Server support in DoubleClick for Publishers (DFP) is planned for the end of June. We urge other ad networks that are interested in adding monetization [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-06T17:17:52-07:00
-  date: "June 6, 2018"
