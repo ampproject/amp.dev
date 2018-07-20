@@ -40,6 +40,7 @@ The list of available components are listed below in related categories.
 | [`amp-form`](components/amp-form.html) | Provides form support. |
 | [`amp-geo`](components/amp-geo.html) | Provides an approximate country-level geolocation interface. |
 | [`amp-gist`](components/amp-gist.html) | Displays a [GitHub Gist](https://gist.github.com/). |
+| [`amp-google-document-embed`](components/amp-google-document-embed.html) | Displays a document file supported by Google Drive. |
 | [`amp-install-serviceworker`](components/amp-install-serviceworker.html) | Installs a ServiceWorker. |
 | [`amp-list`](components/amp-list.html) | Dynamically downloads data and creates list items using a template. |
 | [`amp-live-list`](components/amp-live-list.html) | Provides a way to display and update content live. |
@@ -98,6 +99,7 @@ The list of available components are listed below in related categories.
 | [`amp-video`](components/amp-video.html) | Replaces the HTML5 `video` tag. |
 | [`amp-vimeo`](components/amp-vimeo.html) | Displays a [Vimeo](https://vimeo.com/) video. |
 | [`amp-wistia-player`](components/amp-wistia-player.html) | Displays a [Wistia](https://wistia.com/) video. |
+| [`amp-yotpo`](components/amp-yotpo.html) | Embeds a [Yotpo](https://support.yotpo.com/en/on-site/reviews-widget) on-site widget. |
 | [`amp-youtube`](components/amp-youtube.html) | Displays a [YouTube](https://www.youtube.com/) video. |
 
 ### Presentation
@@ -105,10 +107,12 @@ The list of available components are listed below in related categories.
 | Component | Description |
 | --------- | ----------- |
 | [`amp-animation`](components/amp-animation.html) | Defines and displays an animation. |
+| [`amp-date-countdown`](components/amp-date-countdown.html) | Display a sequence of backward counting to indicate the time remaining before an event is scheduled to occur. |
 | [`amp-dynamic-css-classes`](components/amp-dynamic-css-classes.html) | Adds several dynamic CSS class names onto the HTML element. |
 | [`amp-fit-text`](components/amp-fit-text.html) | Expands or shrinks font size to fit the content within the space given. |
 | [`amp-font`](components/amp-font.html) | Triggers and monitors the loading of custom fonts. |
 | [`amp-mathml`](components/amp-mathml.html) | Displays a [MathML formula](https://www.w3.org/Math/). |
+| [`amp-pan-zoom`](components/amp-pan-zoom.html) | Provides zooming and panning for arbitrary content. |
 | [`amp-story`](components/amp-story.html) | A rich, visual storytelling format. |
 | [`amp-timeago`](components/amp-timeago.html) | Provides fuzzy timestamps by formatting dates as "*time ago*" (for example, 3 hours ago). |
 | [`amp-viz-vega`](components/amp-viz-vega.html) | Displays visualizations created by using [Vega](https://vega.github.io/vega/) visualization grammar.|

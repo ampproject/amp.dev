@@ -1,7 +1,11 @@
 {
+    "parserOptions": {
+        "ecmaVersion": 6
+    },
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true
     },
     "extends": "eslint:recommended",
     "rules": {
@@ -32,6 +36,7 @@
         "brace-style": [
             "error",
             "1tbs"
-        ]
+        ],
+        "no-console": 0
     }
 }
