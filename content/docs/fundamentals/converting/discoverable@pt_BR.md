@@ -1,6 +1,5 @@
 ---
 $title: Tornar sua página detectável
-$order: 3
 ---
 
 Agora que você criou um artigo em AMP, vamos garantir que os usuários possam encontrar e descobrir seu conteúdo.
@@ -46,7 +45,6 @@ Páginas AMP válidas não exigem dados estruturados [schema.org](http://schema.
 Para nosso artigo, **adicione** os seguintes dados estruturados na parte inferior da seção `<head>` do seu documento AMP:
 
 ```html
-
 <script type="application/ld+json">
 {
 "@context": "http://schema.org",
