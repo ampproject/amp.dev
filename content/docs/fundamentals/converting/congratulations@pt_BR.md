@@ -1,6 +1,5 @@
 ---
 $title: Parabéns!
-$order: 4
 ---
 
 Você terminou o tutorial e conseguiu converter um documento HTML em um documento AMP.
