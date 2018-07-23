@@ -1,6 +1,5 @@
 ---
 $title: 페이지를 검색할 수 있도록 설정
-$order: 3
 ---
 
 이제 뉴스 기사를 AMP로 만들었으니 사용자가 내 콘텐츠를 찾고 검색할 수 있게 해야 합니다.
@@ -46,7 +45,6 @@ $order: 3
 뉴스 기사에 대해 AMP 문서의 `<head>` 섹션 하단에 다음의 구조화된 데이터를 **추가** 하세요.
 
 ```html
-
 <script type="application/ld+json">
 {
 "@context": "http://schema.org",
