@@ -1,6 +1,5 @@
 ---
 $title: Selamat!
-$order: 4
 ---
 
 Anda telah menyelesaikan tutorial dan berhasil mengonversi dokumen HTML menjadi dokumen AMP.
