@@ -1,6 +1,5 @@
 ---
 $title: 使您的网页可被轻松发现
-$order: 3
 ---
 
 现在，您已经完成了 AMP 新闻报道，下面我们来确保用户可以找到并发现您的内容。
@@ -46,7 +45,6 @@ $order: 3
 对于我们的新闻报道，请将以下结构化数据**添加**到 AMP 文档的 `<head>` 部分底部：
 
 ```html
-
 <script type="application/ld+json">
 {
 "@context": "http://schema.org",
