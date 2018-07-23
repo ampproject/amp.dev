@@ -1,6 +1,5 @@
 ---
 $title: Membuat halaman Anda dapat ditemukan
-$order: 3
 ---
 
 Setelah Anda membuat artikel berita di AMP, pastikan pengguna dapat mencari dan menemukan konten Anda.
@@ -46,7 +45,6 @@ Halaman AMP yang valid tidak membutuhkan data terstruktur [schema.org](http://sc
 Untuk artikel berita kami, **tambahkan** data terstruktur berikut ke bagian bawah bagian `<head>` pada dokumen AMP Anda:
 
 ```html
-
 <script type="application/ld+json">
 {
 "@context": "http://schema.org",
