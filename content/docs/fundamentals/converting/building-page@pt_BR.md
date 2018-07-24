@@ -1,6 +1,5 @@
 ---
 $title: Criar uma página HTML comum
-$order: 1
 ---
 
 O diretório do projeto contém um arquivo chamado [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). É para esse artigo que estamos criando uma página AMP equivalente.
