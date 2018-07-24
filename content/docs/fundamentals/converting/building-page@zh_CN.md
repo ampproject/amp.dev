@@ -1,6 +1,5 @@
 ---
 $title: 构建一个常规的 HTML 网页
-$order: 1
 ---
 
 在项目目录中，您会看到一个名为 [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html) 的文件。这是一篇新闻报道，我们就是要为它构建一个等效的 AMP 网页。
