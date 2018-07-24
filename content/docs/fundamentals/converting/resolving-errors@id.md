@@ -11,7 +11,7 @@ Pada bagian ini, kita akan membahas dan menyelesaikan error validasi AMP dari ha
 Kita akan memulai dengan memperbaiki error berikut:
 
 <pre class="error-text">
-Tag wajib 'meta charset=utf-8' tidak ada atau salah.
+The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 </pre>
 
 Untuk menampilkan teks dengan benar, AMP mewajibkan Anda menentukan charset untuk halaman. Informasi charset meta juga harus menjadi turunan pertama tag `<head>`. Tag ini harus menjadi turunan pertama untuk menghindari konten yang ditafsirkan ulang ditambahkan sebelum tag charset meta.
