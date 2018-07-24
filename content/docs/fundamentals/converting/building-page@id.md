@@ -1,6 +1,5 @@
 ---
 $title: Membuat halaman HTML reguler
-$order: 1
 ---
 
 Di direktori project, Anda akan menemukan file dengan nama [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). Ini adalah artikel berita yang kita buatkan halaman setara AMP-nya.
