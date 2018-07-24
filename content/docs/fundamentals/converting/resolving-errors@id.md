@@ -30,7 +30,7 @@ Untuk menampilkan teks dengan benar, AMP mewajibkan Anda menentukan charset untu
 Sekarang, mari kita lihat error berikut:
 
 <pre class="error-text">
-Tag wajib 'link rel=canonical' tidak ada atau salah.
+The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
 Setiap dokumen AMP harus memiliki link yang merujuk pada versi "kanonis" dokumen tersebut.  Kita akan mempelajari lebih lanjut apa itu halaman kanonis dan berbagai pendekatan terhadap penautan kanonis dalam langkah [Membuat halaman Anda dapat ditemukan](/id/docs/fundamentals/converting/discoverable.html) di tutorial ini.
@@ -58,8 +58,8 @@ Sekarang, **muat ulang** halaman. Meskipun masih ada banyak error yang perlu dip
 AMP memerlukan atribut di elemen `<html>` utama halaman untuk menyatakan halaman sebagai dokumen AMP.
 
 <pre class="error-text">
-Atribut wajib '⚡' tidak ada di tag 'html ⚡ for top-level html'
-Tag wajib 'html ⚡ for top-level html' tidak ada atau salah.
+The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
+The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 </pre>
 
 Error di atas dapat diatasi hanya dengan menambahkan atribut `⚡` ke tag `<html>` seperti berikut:
@@ -83,7 +83,7 @@ Meskipun direkomendasikan untuk menentukan `⚡`, kita juga dapat menggunakan at
 Selanjutnya, mari kita selesaikan error berikut:
 
 <pre class="error-text">
-Tag wajib 'meta name=viewport' tidak ada atau salah.
+The mandatory tag 'meta name=viewport' is missing or incorrect.
 </pre>
 
 AMP memerlukan definisi `width` dan `minimum-scale` untuk viewport. Nilai ini masing-masing harus ditetapkan sebagai `device-width` dan `1`. Viewport adalah tag umum yang disertakan dalam `<head>` pada halaman HTML.
@@ -103,7 +103,7 @@ Seperti sebelumnya, **muat ulang** halaman dan periksa apakah error sudah tidak 
 Error berikut berkaitan dengan penggunaan kita atas stylesheet:
 
 <pre class="error-text">
-Atribut 'href' di tag 'link rel=stylesheet for fonts' ditetapkan ke nilai yang tidak valid 'base.css'.
+The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
 </pre>
 
 Secara spesifik, error ini berkaitan dengan tag link stylesheet berikut di tag `<head>`:
@@ -142,7 +142,7 @@ Anda hanya dapat memiliki 1 tag gaya di seluruh dokumen AMP. Jika Anda memiliki 
 Meskipun stylesheet dapat dikerjakan ulang dengan relatif mudah menggunakan AMP dengan membuat CSS menjadi inline, hal yang sama tidak berlaku untuk JavaScript.
 
 <pre class="error-text">
-Tag 'script' tidak diizinkan, kecuali dalam bentuk yang spesifik.
+The tag 'script' is disallowed except in specific forms.
 </pre>
 
 Secara umum, skrip di AMP hanya diizinkan jika mengikuti 2 persyaratan utama:
@@ -187,9 +187,9 @@ Sekarang, **muat ulang** halaman dan verifikasi bahwa error skrip sudah tidak mu
 Error berikut merujuk pada kode boilerplate yang tidak ada:
 
 <pre class="error-text">
-Tag wajib 'noscript enclosure for boilerplate' tidak ada atau salah.
-Tag wajib 'head > style : boilerplate' tidak ada atau salah.
-Tag wajib 'noscript > style : boilerplate' tidak ada atau salah.
+The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
+The mandatory tag 'head > style : boilerplate' is missing or incorrect.
+The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 </pre>
 
 Setiap dokumen AMP memerlukan kode boilerplate AMP berikut:
@@ -207,7 +207,7 @@ Tag `<style amp-boilerplate>`  awalnya menyembunyikan konten di bagian isi sampa
 AMP tidak mendukung partner HTML default untuk menampilkan media, yang menjelaskan error berikut:
 
 <pre class="error-text">
-Tag 'img' mungkin hanya muncul sebagai turunan tag 'noscript'. Apakah maksud Anda 'amp-img'?
+The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
 AMP memiliki komponen web yang secara spesifik dirancang untuk menggantikan tag `<img>`, yaitu tag [`<amp-img>`](/id/docs/reference/components/amp-img.html):
@@ -219,8 +219,8 @@ AMP memiliki komponen web yang secara spesifik dirancang untuk menggantikan tag 
 **Ganti** tag `<img>` dengan tag `<amp-img>` di atas, dan jalankan validator lagi. Anda akan menerima beberapa error baru:
 
 <pre class="error-text">
-Tata letak tidak didukung: container
-Tata letak yang tersirat 'CONTAINER' tidak didukung oleh tag 'amp-img'.
+Layout not supported: container
+The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
 Mengapa `amp-img` memicu error lain? Karena `amp-img` bukanlah pengganti langsung untuk tag img HTML tradisional. Terdapat persyaratan tambahan saat menggunakan `amp-img`.
@@ -332,7 +332,7 @@ Sekarang dokumen AMP Anda akan terlihat seperti berikut:
 Muat ulang halaman dan lihat keluaran konsolnya. Anda seharusnya disambut dengan pesan berikut:
 
 <pre class="success-text">
-Validasi AMP berhasil.
+AMP validation successful.
 </pre>
 
 ### Pertanyaan Umum (FAQ)
