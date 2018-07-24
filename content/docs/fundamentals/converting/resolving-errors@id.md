@@ -1,7 +1,5 @@
 ---
 $title: Mengatasi error validasi
-$order: 2
-toc: true
 ---
 
 [TOC]
