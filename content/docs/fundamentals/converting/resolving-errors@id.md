@@ -117,7 +117,7 @@ Masalahnya, ini adalah referensi stylesheet eksternal. Di AMP, agar kecepatan wa
 ```html
 <style amp-custom>
 
-/* Konten dari base.css */
+/* The content from base.css */
 
 </style>
 ```
@@ -164,10 +164,10 @@ Coba buka file [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-
 ```javascript
 /*
 
-File JavaScript eksternal ini sengaja dikosongkan.
+This external JavaScript file is intentionally empty.
 
-Tujuannya hanyalah untuk menunjukkan error validasi AMP yang terkait dengan
-penggunaan file JavaScript eksternal.
+Its purpose is merely to demonstrate the AMP validation error related to the
+use of external JavaScript files.
 
 */
 ```
