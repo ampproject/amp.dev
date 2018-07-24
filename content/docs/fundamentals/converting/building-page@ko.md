@@ -1,6 +1,5 @@
 ---
 $title: 일반 HTML 페이지 만들기
-$order: 1
 ---
 
 프로젝트 디렉토리에서는 [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html)이라는 이름의 파일을 찾을 수 있습니다. 이 가이드에서는 해당 파일에 포함된 뉴스 기사로 AMP 페이지를 만들 것입니다.
