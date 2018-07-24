@@ -1,7 +1,5 @@
 ---
 $title: Corrigir erros de validação
-$order: 2
-toc: true
 ---
 
 [TOC]
