@@ -1,7 +1,5 @@
 ---
 $title: 유효성 검사 오류 해결
-$order: 2
-toc: true
 ---
 
 [TOC]
