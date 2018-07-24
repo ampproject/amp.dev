@@ -1,7 +1,5 @@
 ---
 $title: 解决验证错误
-$order: 2
-toc: true
 ---
 
 [TOC]
