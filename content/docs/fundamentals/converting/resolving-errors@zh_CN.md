@@ -11,7 +11,7 @@ $title: 解决验证错误
 首先，我们将修正以下错误：
 
 <pre class="error-text">
-必需的标记“meta charset=utf-8”缺失或不正确。
+The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 </pre>
 
 要正确显示文字，AMP 要求您为网页指定字符集。此外，元字符集信息必须是 `<head>` 标记的第一个子级。之所以必须将该标记作为第一个子级，是为了避免重复解析在元字符集标记前面添加的内容。
@@ -30,7 +30,7 @@ $title: 解决验证错误
 现在，我们来看看以下错误：
 
 <pre class="error-text">
-必需的标记“link rel=canonical”缺失或不正确。
+The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
 每个 AMP 文档都必须拥有引用此文档“权威”版本的链接。在本教程的[使您的网页可被轻松发现](/zh_cn/docs/fundamentals/converting/discoverable.html)步骤中，我们将详细了解权威网页的定义，以及实现权威关联的不同方法。
@@ -58,8 +58,8 @@ $title: 解决验证错误
 AMP 要求网页的根 `<html>` 元素中具有相关属性，以将网页声明为 AMP 文档。
 
 <pre class="error-text">
-标记“html ⚡ for top-level html”中缺少必需的属性“⚡”
-必需的标记“html ⚡ for top-level html”缺失或不正确。
+The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
+The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 </pre>
 
 只需将 `⚡` 属性添加到 `<html>` 标记，即可解决上述错误，如下所示：
@@ -83,7 +83,7 @@ AMP 要求网页的根 `<html>` 元素中具有相关属性，以将网页声明
 接下来，我们将解决以下错误：
 
 <pre class="error-text">
-必需的标记“meta name=viewport”缺失或不正确。
+The mandatory tag 'meta name=viewport' is missing or incorrect.
 </pre>
 
 AMP 要求您为视口定义 `width` 和 `minimum-scale`。这两个值必须分别定义为 `device-width` 和 `1`。视口是 HTML 网页的 `<head>` 中包含的常用标记。
@@ -103,7 +103,7 @@ AMP 要求您为视口定义 `width` 和 `minimum-scale`。这两个值必须分
 以下错误与使用样式表有关：
 
 <pre class="error-text">
-标记“link rel=stylesheet for fonts”中的属性“href”设为了无效值“base.css”。
+The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
 </pre>
 
 具体来说，该错误涉及的是 `<head>` 标记中的下列样式表链接标记：
@@ -142,7 +142,7 @@ AMP 要求您为视口定义 `width` 和 `minimum-scale`。这两个值必须分
 虽然对于 AMP 网页，您可以通过内嵌 CSS 的方式相对轻松地重新制作样式表，但 JavaScript 却并非如此。
 
 <pre class="error-text">
-不允许使用标记“script”（特定形式除外）。
+The tag 'script' is disallowed except in specific forms.
 </pre>
 
 一般来说，只有符合以下两项主要要求的脚本才允许在 AMP 中使用：
@@ -187,9 +187,9 @@ use of external JavaScript files.
 以下错误涉及缺失的样板代码：
 
 <pre class="error-text">
-必需的标记“noscript enclosure for boilerplate”缺失或不正确。
-必需的标记“head > style : boilerplate”缺失或不正确。
-必需的标记“noscript > style : boilerplate”缺失或不正确。
+The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
+The mandatory tag 'head > style : boilerplate' is missing or incorrect.
+The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 </pre>
 
 每个 AMP 文档都必须具有以下 AMP 样板代码：
@@ -207,7 +207,7 @@ use of external JavaScript files.
 AMP 不支持默认 HTML 对应项来显示媒体，这就解释了出现以下错误的原因：
 
 <pre class="error-text">
-“img”标记只能是“noscript”标记的子级。您是不是要使用“amp-img”？
+The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
 AMP 拥有一个专门用来替换 `<img>` 标记的网络组件，即 [`<amp-img>`](/zh_cn/docs/reference/components/amp-img.html) 标记：
@@ -219,8 +219,8 @@ AMP 拥有一个专门用来替换 `<img>` 标记的网络组件，即 [`<amp-im
 将 `<img>` 标记**替换**为上述 `<amp-img>` 标记，然后再次运行验证工具。您应该会遇到几个新的错误：
 
 <pre class="error-text">
-以下布局不受支持：container
-标记“amp-img”不支持隐式布局“CONTAINER”。
+Layout not supported: container
+The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
 为什么 `amp-img` 触发了另一个错误？因为 `amp-img` 不能直接替代传统 HTML img 标记。使用 `amp-img` 时还须遵守其他要求。
@@ -332,7 +332,7 @@ AMP 拥有一个专门用来替换 `<img>` 标记的网络组件，即 [`<amp-im
 刷新网页，看看控制台的输出结果。您应该会看到以下消息：
 
 <pre class="success-text">
-AMP 验证成功。
+AMP validation successful.
 </pre>
 
 ### 常见问题解答
