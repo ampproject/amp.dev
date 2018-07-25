@@ -30,7 +30,7 @@ AMP에서 텍스트를 올바르게 표시하려면 페이지의 문자 집합�
 이제 다음 오류를 살펴보겠습니다.
 
 <pre class="error-text">
-필수 'link rel=canonical' 태그가 누락되었거나 잘못되었습니다.
+The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
 모든 AMP 문서에는 해당 문서의 '표준' 버전을 참조하는 링크가 있어야 합니다.  이 가이드에 포함되어 있는 [페이지를 검색할 수 있도록 설정](/ko/docs/fundamentals/converting/discoverable.html) 단계에서 표준 페이지란 무엇이며 표준 연결에 사용할 수 있는 접근방식으로는 어떤 것이 있는지 자세히 알아보겠습니다.
@@ -58,8 +58,8 @@ AMP에서 텍스트를 올바르게 표시하려면 페이지의 문자 집합�
 페이지를 AMP 문서로 선언하려면 페이지의 루트 `<html>` 요소에 속성이 필요합니다.
 
 <pre class="error-text">
-'html ⚡ for top-level html' 태그에서 필수 '⚡' 속성이 누락되었습니다.
-필수 'html ⚡ for top-level html' 태그가 누락되었거나 잘못되었습니다.
+The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
+The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 </pre>
 
 위에 표시된 오류는 다음과 같이 `<html>` 태그에 `⚡` 속성을 추가하면 간단히 해결됩니다.
@@ -83,7 +83,7 @@ AMP에서 텍스트를 올바르게 표시하려면 페이지의 문자 집합�
 이제 다음 오류를 해결해 보겠습니다.
 
 <pre class="error-text">
-필수 'meta name=viewport' 태그가 누락되었거나 잘못되었습니다.
+The mandatory tag 'meta name=viewport' is missing or incorrect.
 </pre>
 
 AMP에서는 표시 영역의 `width` 및 `minimum-scale`을 정의해야 합니다. 이 값은 각각 `device-width` 및 `1`로 정의되어야 합니다. 표시 영역은 HTML 페이지의 `<head>`에 포함되어 있는 일반적인 태그입니다.
@@ -103,7 +103,7 @@ AMP에서는 표시 영역의 `width` 및 `minimum-scale`을 정의해야 합니
 다음의 오류는 스타일시트 사용과 관련되어 있습니다.
 
 <pre class="error-text">
-'link rel=stylesheet for fonts' 태그에 있는 'href' 속성이 잘못된 값인 'base.css'로 설정되어 있습니다.
+The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
 </pre>
 
 특히 이 오류는 `<head>` 태그에 있는 다음과 같은 스타일시트 링크 태그와 관련되어 있습니다.
@@ -142,7 +142,7 @@ AMP에서는 표시 영역의 `width` 및 `minimum-scale`을 정의해야 합니
 CSS를 인라인 처리하면 스타일시트를 AMP로 비교적 쉽게 다시 작성할 수 있지만 자바스크립트에서는 그렇지 않습니다.
 
 <pre class="error-text">
-'script' 태그는 특정 형식 이외에는 허용되지 않습니다.
+The tag 'script' is disallowed except in specific forms.
 </pre>
 
 일반적으로 AMP에서 스크립트는 두 가지 주요 요구사항을 따르는 경우에만 허용됩니다.
@@ -164,10 +164,10 @@ CSS를 인라인 처리하면 스타일시트를 AMP로 비교적 쉽게 다시 
 ```javascript
 /*
 
-이 외부 자바스크립트 파일은 의도적으로 비어 있습니다.
+This external JavaScript file is intentionally empty.
 
-이 파일은 외부 자바스크립트 파일 사용과 관련된
-AMP 유효성 검사 오류를 보여주기 위해 사용됩니다.
+Its purpose is merely to demonstrate the AMP validation error related to the
+use of external JavaScript files.
 
 */
 ```
@@ -187,9 +187,9 @@ AMP 유효성 검사 오류를 보여주기 위해 사용됩니다.
 다음 오류는 누락된 상용구 코드를 참조합니다.
 
 <pre class="error-text">
-필수 'noscript enclosure for boilerplate' 태그가 누락되었거나 잘못되었습니다.
-필수 'head > style : boilerplate' 태그가 누락되었거나 잘못되었습니다.
-필수 'noscript > style : boilerplate' 태그가 누락되었거나 잘못되었습니다.
+The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
+The mandatory tag 'head > style : boilerplate' is missing or incorrect.
+The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 </pre>
 
 모든 AMP 문서에는 다음과 같은 AMP 상용구 코드가 필요합니다.
@@ -207,7 +207,7 @@ AMP 유효성 검사 오류를 보여주기 위해 사용됩니다.
 AMP에서는 미디어를 표시할 때 기본 HTML의 상응하는 페이지를 지원하지 않으므로 다음과 같은 오류가 발생합니다.
 
 <pre class="error-text">
-'img' 태그는 'noscript' 태그의 하위 요소로만 표시될 수 있습니다. 'amp-img'를 의미하셨나요?
+The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
 AMP에는 `<img>` 태그를 대체하기 위해 특별히 만들어진 웹 구성요소인 [`<amp-img>`](/ko/docs/reference/components/amp-img.html) 태그가 있습니다.
@@ -219,8 +219,8 @@ AMP에는 `<img>` 태그를 대체하기 위해 특별히 만들어진 웹 구�
 `<img>` 태그를 위에 설명된 `<amp-img>` 태그로 **교체**하고 검사기를 다시 실행합니다. 다음과 같이 여러 가지 새로운 오류가 표시될 것입니다.
 
 <pre class="error-text">
-지원되지 않는 레이아웃: 컨테이너
-암시된 레이아웃 'CONTAINER'는 'amp-img' 태그에서 지원되지 않습니다.
+Layout not supported: container
+The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
 `amp-img`가 다른 오류를 유발하는 이유는 무엇일까요? `amp-img`는 전통적인 HTML img 태그를 직접적으로 대체하지 않기 때문입니다. `amp-img`를 사용하려면 추가 요구사항이 있습니다.
@@ -332,7 +332,7 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
 페이지를 새로고침하고 콘솔 출력을 확인합니다. 다음 메시지가 표시되어야 합니다.
 
 <pre class="success-text">
-AMP 유효성 검사에 성공했습니다.
+AMP validation successful.
 </pre>
 
 ### 자주 묻는 질문(FAQ)
