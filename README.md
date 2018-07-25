@@ -15,8 +15,9 @@ In the meantime we encourage you to keep using the [current repository](https://
     $ nvm install --lts
     ```
 
-2.  Install [Grow](http://grow.io):
+2.  Install libyaml alongside with [Grow](http://grow.io) as it heavily increases performance while running `grow build`:
     ```sh
+    $ brew install libyaml
     $ curl https://install.growsdk.org | bash
     ```
 
