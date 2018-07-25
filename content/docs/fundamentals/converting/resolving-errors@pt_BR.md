@@ -11,7 +11,7 @@ Nesta seção, analisaremos e resolveremos os erros de validação de AMP na nos
 Para começar, corrigiremos o seguinte erro:
 
 <pre class="error-text">
-A tag obrigatória "meta charset=utf-8" está ausente ou incorreta.
+The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 </pre>
 
 Para que o texto seja exibido corretamente, é necessário especificar o charset das páginas AMP. As informações do meta charset também precisam ser o primeiro filho da tag `<head> `. Essa tag precisa ser a primeira para evitar a reinterpretação de conteúdo adicionado antes da tag meta charset.
@@ -30,7 +30,7 @@ Para que o texto seja exibido corretamente, é necessário especificar o charset
 Agora, veja este erro:
 
 <pre class="error-text">
-A tag obrigatória "link rel=canonical" está ausente ou incorreta.
+The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
 Todo documento AMP precisa ter um link que faça referência à respectiva versão "canônica".  Veja mais sobre o que é uma página canônica e quais são as diferentes abordagens para vincular o conteúdo canônico na etapa deste tutorial sobre [como fazer com que a página seja detectável](/pt_br/docs/fundamentals/converting/discoverable.html).
@@ -58,8 +58,8 @@ Agora, **atualize** a página. Embora ainda haja muitos erros para corrigir, o e
 A AMP exige um atributo no elemento raiz `<html>` das páginas para declarar que elas são documentos AMP.
 
 <pre class="error-text">
-O atributo "⚡" obrigatório está ausente na tag "html ⚡ for top-level html".
-A tag obrigatória "html ⚡ for top-level html" está ausente ou incorreta.
+The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
+The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 </pre>
 
 Para corrigir os erros acima, basta adicionar o atributo `⚡` à tag `<html>` da seguinte forma:
@@ -83,7 +83,7 @@ A abordagem recomendada é especificar `⚡`, mas também é possível usar o at
 Agora, vejamos o seguinte erro:
 
 <pre class="error-text">
-A tag obrigatória "meta name=viewport" está ausente ou incorreta.
+The mandatory tag 'meta name=viewport' is missing or incorrect.
 </pre>
 
 A AMP exige a definição de `width` e `minimum-scale` para a janela de visualização. Esses valores precisam ser definidos como `device-width` e `1`, respectivamente. A janela de visualização é uma tag comum incluída no elemento `<head>` de uma página HTML.
@@ -103,7 +103,7 @@ Assim como antes, **atualize** a página e verifique se o erro desapareceu.
 O erro a seguir está relacionado com o uso de folhas de estilo:
 
 <pre class="error-text">
-O atributo "href" na tag "link rel=stylesheet for fonts" está definido para o valor inválido "base.css".
+The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
 </pre>
 
 Especificamente, este erro se refere à seguinte tag de link da folha de estilo na tag `<head>`:
@@ -117,7 +117,7 @@ O problema é que essa é uma referência de folha de estilo externa. Na AMP, pa
 ```html
 <style amp-custom>
 
-/* O conteúdo de base.css */
+/* The content from base.css */
 
 </style>
 ```
@@ -142,7 +142,7 @@ O estilo in-line é obrigatório. Além disso, há um limite de tamanho de arqui
 É relativamente fácil alterar as folhas de estilo inserindo CSS in-line, mas isso não se aplica ao JavaScript.
 
 <pre class="error-text">
-A tag "script" não é permitida, exceto em formulários específicos.
+The tag 'script' is disallowed except in specific forms.
 </pre>
 
 Em geral, os scripts só são permitidos na AMP quando cumprem dois requisitos principais:
@@ -187,9 +187,9 @@ Agora, **atualize** a página e verifique se o erro do script desapareceu.
 Os seguintes erros se referem à ausência de código boilerplate:
 
 <pre class="error-text">
-A tag obrigatória "noscript enclosure for boilerplate" está ausente ou incorreta.
-A tag obrigatória "head > style : boilerplate" está ausente ou incorreta.
-A tag obrigatória "noscript > style : boilerplate" está ausente ou incorreta.
+The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
+The mandatory tag 'head > style : boilerplate' is missing or incorrect.
+The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 </pre>
 
 Todo documento AMP exige o seguinte código boilerplate correspondente:
@@ -207,7 +207,7 @@ Inicialmente, a tag `<style amp-boilerplate>` oculta o conteúdo do corpo até q
 A AMP não é compatível com os elementos HTML padrão correspondentes à exibição de mídia, o que explica este erro:
 
 <pre class="error-text">
-A tag "img" só pode aparecer como descendente da tag "noscript". Você quis dizer "amp-img"?
+The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
 A AMP tem um componente Web criado especificamente para substituir a tag `<img>`, a tag [`<amp-img>`](/pt_br/docs/reference/components/amp-img.html):
@@ -219,8 +219,8 @@ A AMP tem um componente Web criado especificamente para substituir a tag `<img>`
 **Substitua** a tag `<img>` pela tag `<amp-img>` acima e repita a validação. Vários novos erros serão exibidos:
 
 <pre class="error-text">
-Layout incompatível: container
-O layout "CONTAINER" implícito não é compatível com a tag "amp-img".
+Layout not supported: container
+The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
 Por que o `amp-img` acionou outro erro? Porque `amp-img` não é um substituto direto da tag HTML img tradicional. Existem requisitos adicionais ao usar o `amp-img`.
@@ -332,7 +332,7 @@ O documento AMP será parecido com isto:
 Atualize a página e observe o resultado do console. Você verá a seguinte mensagem:
 
 <pre class="success-text">
-Validação de AMP concluída.
+AMP validation successful.
 </pre>
 
 ### Perguntas frequentes
