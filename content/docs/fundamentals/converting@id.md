@@ -1,7 +1,5 @@
 ---
 $title: Mengonversi HTML menjadi AMP
-$order: 1
-tutorial: true
 ---
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Artikel berita yang lengkap') }}
