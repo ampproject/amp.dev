@@ -1,7 +1,5 @@
 ---
 $title: 将 HTML 网页转换成 AMP 网页
-$order: 1
-tutorial: true
 ---
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='完成后的新闻报道') }}
