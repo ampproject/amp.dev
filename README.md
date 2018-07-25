@@ -1,8 +1,10 @@
-# AMPProject.org [![Build Status](https://travis-ci.org/ampproject/docs.svg?branch=production)](https://travis-ci.org/ampproject/docs)
+# amp.dev
 
-You're looking at the source code of the official website of the AMP Project.
-Even if you don't plan on contributing, explore how we've built the site for
-a good example of how to build a canonical, responsive standalone AMP site.
+This repository is meant to work towards the relaunch of the official website
+of [ampproject.org](https://www.ampproject.org/) until we reach a progress
+that makes a merge over to the original repository beneficial.
+
+In the meantime we encourage you to keep using the [current repository](https://github.com/ampproject/amphtml) for feedback and updates.
 
 ## How to build the site
 
@@ -88,7 +90,7 @@ All other files are licensed under the [Apache License, Version 2.0](LICENSE).
 
 - - -
 
-Copyright 2015 Google, Inc.
+Copyright 2018 Google, Inc.
 
 Licensed to the Apache Software Foundation (ASF) under one or more contributor
 license agreements.  See the NOTICE file distributed with this work for
