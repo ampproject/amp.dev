@@ -7,7 +7,7 @@ author: Vamsee Jasti
 role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2018/05/04/new-functionality-to-help-manage-user-choice-in-amp-pages/amp/"
 excerpt: "Over the past few weeks, we launched tools to help publishers collect user consent. Today, we’d like to give you an update on some new functionality  that may make it easier for publishers to collect consent on AMP pages. Ad Network integrations with the &#60;amp-consent&#62; component The DoubleClick and AdSense implementations of &#60;amp-ad&#62; now support [&#8230;]"
-avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2018-05-04T16:50:15-04:00
 $date: May 4, 2018
 $parent: /content/latest/list-blog.html

@@ -16,13 +16,13 @@ Often used with: images, animations, audio, and videos
 
 Example:
 
-[sourcecode:html]
+```html
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
-[/sourcecode]
+```
 
-For more information, see [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html).
+For more information, see [Placeholders & fallbacks](/docs/design/responsive/placeholders.html).
 
 ## heights
 
@@ -38,39 +38,39 @@ When the `heights` attribute is specified along with `width` and `height`, the `
 
 Example:
 
-[sourcecode:html]
+```html
 <amp-img src="amp.png"
     width="320" height="256"
     heights="(min-width:500px) 200px, 80%">
 </amp-img>
-[/sourcecode]
+```
 
-For more information, see [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html).
+For more information, see [Art direction with srcset, sizes & heights](/docs/design/responsive/art_direction.html).
 
 ## layout
 
-AMP provides a set of [layouts](/docs/guides/responsive/control_layout.html#the-layout-attribute) that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the supported layout values for the element (see the element's documentation for what values are supported).
+AMP provides a set of [layouts](/docs/design/responsive/control_layout.html#the-layout-attribute) that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the supported layout values for the element (see the element's documentation for what values are supported).
 
 Example:
 
-[sourcecode:html]
+```html
 <amp-img src="/img/amp.jpg"
     width="1080"
     height="610"
     layout="responsive"
     alt="an image">
 </amp-img>
-[/sourcecode]
+```
 
-For more information, see [Layout & Media queries](/docs/guides/responsive/control_layout.html) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
+For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
 
 ## media
 
-All AMP elements support the `media` attribute. The value of `media` is a media query. If the query does not match, the element is not rendered and its resources and potentially its child resources will not be fetched. If the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
+Most AMP elements support the `media` attribute. The value of `media` is a media query. If the query does not match, the element is not rendered and its resources and potentially its child resources will not be fetched. If the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
 
 Example:
 
-[sourcecode:html]
+```html
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
@@ -81,9 +81,9 @@ Example:
     src="narrow.jpg"
     width="527"
     height="193" layout="responsive"></amp-img>
-[/sourcecode]
+```
 
-For more information, see [Layout & Media queries](/docs/guides/responsive/control_layout.html#element-media-queries).
+For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html#element-media-queries).
 
 ## noloading
 
@@ -93,14 +93,14 @@ Often used with: images, animations, videos, and ads
 
 Example:
 
-[sourcecode:html]
+```html
 <amp-img src="card.jpg"
     noloading
     height="190"
     width="297"
     layout="responsive">
 </amp-img>
-[/sourcecode]
+```
 
 ## on
 
@@ -110,18 +110,18 @@ Often used with: lightboxes, sidebars, live lists, and forms
 
 Syntax:
 
-[sourcecode:text]
+```text
 eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+```
 
 Example:
 
-[sourcecode:html]
+```html
 <button on="tap:my-lightbox">Open lightbox</button>
 <amp-lightbox id="my-lightbox" layout="nodisplay">
   ...
 </amp-lightbox>
-[/sourcecode]
+```
 
 For more information, see  [Actions and Events in AMP](/docs/reference/amp-actions-and-events.html).
 
@@ -133,13 +133,13 @@ Often used with: images, animations, videos, and ads
 
 Example:
 
-[sourcecode:html]
+```html
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
-[/sourcecode]
+```
 
-For more information, see [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html).
+For more information, see [Placeholders & fallbacks](/docs/design/responsive/placeholders.html).
 
 ## sizes
 
@@ -147,30 +147,30 @@ All AMP elements that support the `responsive` layout, also support the `sizes` 
 
 Example:
 
-[sourcecode:html]
+```html
 <amp-img src="amp.png"
     width="400" height="300"
     layout="responsive"
     sizes="(min-width: 320px) 320px, 100vw">
 </amp-img>
-[/sourcecode]
+```
 
-For more information, see [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html).
+For more information, see [Art direction with srcset, sizes & heights](/docs/design/responsive/art_direction.html).
 
 ## width and height
 
-For some [layouts](/docs/guides/responsive/control_layout.html#the-layout-attribute), AMP components must have a `width` and `height` attribute that contains an integer pixel value.
+For some [layouts](/docs/design/responsive/control_layout.html#the-layout-attribute), AMP components must have a `width` and `height` attribute that contains an integer pixel value.
 
 Example:
 
-[sourcecode:html]
+```html
 <amp-anim width="245"
     height="300"
     src="/img/cat.gif"
     alt="cat animation">
 </amp-anim>
-[/sourcecode]
+```
 
-For more information, see [Layout & Media queries](/docs/guides/responsive/control_layout.html) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
+For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
 
 

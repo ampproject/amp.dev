@@ -3,6 +3,7 @@
 .sass-cache
 .idea
 .podcache.yaml
+.vscode
 node_modules
 
 build
@@ -25,3 +26,4 @@ content/docs/ads/integration-guide.md
 content/docs/ads/amphtml_ads/a4a_spec.md
 content/docs/analytics/integrating-analytics.md
 content/docs/analytics/amp-managing-user-state.md
+content/docs/interaction_dynamic/amp-email-format.md

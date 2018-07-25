@@ -7,7 +7,7 @@ author: amphtml
 role: 
 origin: "https://amphtml.wordpress.com/2018/05/03/amp-and-advertising-conversions/amp/"
 excerpt: "The following was posted by Oliver Armstrong, VP of Product, Instapage. Learn more about Instapage&#8217;s AMP integration on their blog. You don’t have to be an advertiser to know that mobile ad experiences are lacking. According to research from Google and SOASTA, the average load time for mobile landing pages is 22 seconds. For more than half [&#8230;]"
-avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
 date_data: 2018-05-03T12:04:32-04:00
 $date: May 3, 2018
 $parent: /content/latest/list-blog.html

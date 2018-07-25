@@ -48,6 +48,15 @@ gulp.task('import-docs', function (cb) {
   });
 });
 
+gulp.task('import-roadmap', function (cb) {
+  exec('cd ./scripts && ./import_roadmap.js', function (err) {
+    if (err instanceof Error) {
+      cb(err);
+    }
+    cb();
+  });
+});
+
 gulp.task('optimize-images', function () {
   return gulp.src('./assets/img/symbols/*.svg')
     .pipe(svgSprite({
@@ -112,7 +121,7 @@ gulp.task('generate-asset-manifest', function (cb) {
       if (err) throw err;
 
       // Inline precache manifest directly into the Service Worker
-      data = data.replace(/\/\* START_PRECACHE_MANIFEST \*\/.*\/\* END_PRECACHE_MANIFEST \*\//, "/* START_PRECACHE_MANIFEST */" + JSON.stringify(entries) + "/* END_PRECACHE_MANIFEST */");
+      data = data.replace(/\/\* START_PRECACHE_MANIFEST \*\/.*\/\* END_PRECACHE_MANIFEST \*\//, '/* START_PRECACHE_MANIFEST */' + JSON.stringify(entries) + '/* END_PRECACHE_MANIFEST */');
 
       fs.writeFile('./pwa/service-worker.js', data, (err) => {
         if (err) throw err;
@@ -151,7 +160,7 @@ gulp.task('build',
   gulp.parallel(
     'update-blog-links',
     /*'update-tweets',*/ //TODO: endpoint is broken, fix with proper Twitter API
-    gulp.series('import-docs', 'update-platforms-page'),
+    gulp.series('import-docs', 'import-roadmap', 'update-platforms-page'),
     'optimize-images',
     'sass',
     'build-examples',
@@ -163,7 +172,7 @@ gulp.task('default',
   gulp.series(
     gulp.parallel(
       gulp.series(
-        'import-docs', 'update-platforms-page'),
+        'import-docs', 'import-roadmap', 'update-platforms-page'),
       'sass',
       'generate-asset-manifest'
     ),

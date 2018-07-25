@@ -1,67 +1,67 @@
 blogs:
 
 - type: Blog
-  title: "Jung von Matt’s road to the world’s fastest* automotive content marketing website"
-  id: ads-jung-von-matts-road-to-the-worlds-fastest-automotive-content-marketing-website
-  author: Thomas Feldhaus
-  role:  Managing Director, Jung von Matt/NEXT ALSTER
-  origin: "https://amphtml.wordpress.com/2018/03/21/jung-von-matts-road-to-the-worlds-fastest-automotive-content-marketing-website/amp/"
-  excerpt: "Posted by Thomas Feldhaus, Managing Director, Jung von Matt/NEXT ALSTER Read more about BMW.com in the AMP case study on AMPproject.org or on Jung von Matt&#8217;s page here. “What a nice challenge!” That’s what we thought when we won the job to relaunch the digital home of BMW, BMW.com, and to excite users by transforming the [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-03-21T09:57:45-07:00
-  date: "March 21, 2018"
-
-- type: Blog
-  title: "Faster ads with ‘Render on Idle’"
-  id: ads-faster-ads-with-render-on-idle
-  author: Keith Wright
-  role:  Technical Lead, AMP Project
-  origin: "https://amphtml.wordpress.com/2018/03/05/faster-ads-with-render-on-idle/amp/"
-  excerpt: "We’ve launched a new feature called “Render on Idle” now available for publishers using the DoubleClick AMP ad tag, and any ad network choosing to implement Fast Fetch can also take advantage of it. With Render on Idle, ads load 12 viewports from the user’s scroll position (as opposed to 3) when the browser is [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-03-05T10:41:06-08:00
-  date: "March 5, 2018"
-
-- type: Blog
-  title: "Ads and AMP: Year in Review and Looking Ahead"
-  id: ads-ads-and-amp
-  author: Gabe Bender
-  role:  Product Marketing Manager, AMP Project, Google
-  origin: "https://amphtml.wordpress.com/2018/02/14/ads-and-amp/amp/"
-  excerpt: "In the world of online advertising, the saying “time equals money” seems more pertinent than ever. Consumer attention is a scarce commodity, meaning ads need to be not only relevant and engaging, but also fast. Since the Accelerated Mobile Pages (AMP) Project launched in October 2015, over 31M domains have embraced AMP to grow their [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-02-14T02:06:16-08:00
-  date: "February 14, 2018"
-
-- type: Blog
-  title: "AMP’s New Horizons"
-  id: ads-amps-new-horizons
-  author: Malte Ubl
-  role:  Engineering Lead, AMP Project, Google
-  origin: "https://amphtml.wordpress.com/2018/02/13/amps-new-horizons/amp/"
-  excerpt: "Hallo uit Amsterdam! We’re kicking off the second AMP Conf today in Europe, celebrating the global reach of the AMP community. This year we have over 400 developers joining the AMP team in Amsterdam for two days and thousands more watching the livestream, marking our biggest event yet. Since last year’s AMP Conf, we&#8217;ve seen [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-02-13T00:39:02-08:00
-  date: "February 13, 2018"
-
-- type: Blog
-  title: "New in AMP: Date picker, easier CSS development, and more AMP By Example content"
-  id: ads-new-in-amp-date-picker-easier-css-development-and-more-amp-by-example-content
-  author: Rudy Galfi
+  title: "Track development with the new AMP Roadmap"
+  id: ads-track-development-with-the-new-amp-roadmap
+  author: Vamsee Jasti
   role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2018/01/31/new-in-amp-date-picker-easier-css-development-and-more-amp-by-example-content/amp/"
-  excerpt: "We’re back with another post to highlight the most notable changes to AMP in the past few months. amp-date-picker experimental beta Our new date picker is now available for experimenting with. To get started, make sure that you enable the Dev Channel and run the following command in the devtools console: AMP.toggleExperiment(&#8216;amp-date-picker&#8217;) Full details for [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-01-31T15:08:57-08:00
-  date: "January 31, 2018"
+  origin: "https://amphtml.wordpress.com/2018/07/19/track-development-with-the-new-amp-roadmap/amp/"
+  excerpt: "As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each. Starting today, you can head over to the AMP roadmap and see an updated view of feature development across the project. We hope this is easy [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-07-19T17:42:43-04:00
+  date: "July 19, 2018"
 
 - type: Blog
-  title: "Kicking off 2018 with new AMP case studies"
-  id: ads-kicking-off-2018-with-new-amp-case-studies
-  author: David Li
-  role:  Marketing Manager, Google
-  origin: "https://amphtml.wordpress.com/2018/01/25/kicking-off-2018-with-new-amp-case-studies/amp/"
-  excerpt: "Over the past two years, the Accelerated Mobile Pages (AMP) Project has helped users have a fast and seamless experience on the web. In the weeks leading up to AMP Conf, we wanted to share four new AMP case studies to highlight how AMP implementation has unlocked further potential and has provided businesses the opportunity [&#8230;]"
-  avatar: http://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-01-25T07:03:46-08:00
-  date: "January 25, 2018"
+  title: "New in AMP stories: Monetization, Revamped bookends and Metadata"
+  id: ads-new-in-amp-stories-monetization-revamped-bookends-and-metadata
+  author: Jon Newmuis
+  role:  AMP Stories Lead Engineer, Google
+  origin: "https://amphtml.wordpress.com/2018/07/16/new-in-amp-stories-monetization-revamped-bookends-and-metadata/amp/"
+  excerpt: "We announced the developer preview of AMP stories in February at AMP Conf. Since then, publishers have authored thousands of stories, experimenting with the format and providing valuable feedback to the AMP team. Based on this input, we recently released new capabilities in AMP stories v1.0, open to all developers without origin trials or a [&#8230;]"
+  avatar: https://videos.files.wordpress.com/pqK8yXrk/amp_blog_story_ad_hd.mp4
+  datedata: 2018-07-16T18:03:22-04:00
+  date: "July 16, 2018"
+
+- type: Blog
+  title: "Serverless AMP solution on AWS"
+  id: ads-serverless-amp-solution-on-aws
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/07/11/serverless-amp-solution-on-aws/amp/"
+  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit. You can see their site featured on the showcase page of AMPproject.org It all started when we realized our website gets outdated very fast and we are always so busy with our customers we forget about ourselves. We had to build something [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-07-11T16:09:31-04:00
+  date: "July 11, 2018"
+
+- type: Blog
+  title: "The Shadow Reader, Improved"
+  id: ads-the-shadow-reader-improved
+  author: Ben Morss
+  role:  Developer Advocate, Google
+  origin: "https://amphtml.wordpress.com/2018/06/19/the-shadow-reader-improved/amp/"
+  excerpt: "We made the Shadow Reader even faster &#8211; and friendlier to search engines! We created the Shadow Reader to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site repurposes existing articles from The Guardian into an immersive news reader experience. More than [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-06-19T14:22:01-04:00
+  date: "June 19, 2018"
+
+- type: Blog
+  title: "New in AMP: Q2, 2018 Edition"
+  id: ads-2058
+  author: Vamsee Jasti
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2018/06/06/2058/amp/"
+  excerpt: "Monetization support for AMP stories AMP stories now supports ‘Publisher placed ads’, the ability for a publisher to serve ads for which they can control delivery sales and delivery. Ad Server support in DoubleClick for Publishers (DFP) is planned for the end of June. We urge other ad networks that are interested in adding monetization [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-06-06T20:17:52-04:00
+  date: "June 6, 2018"
+
+- type: Blog
+  title: "AMP at Google I/O: Strengthening the AMP ecosystem"
+  id: ads-google-io-2018
+  author: Matt Ludwig
+  role:  Marketing Lead for AMP at Google 
+  origin: "https://amphtml.wordpress.com/2018/05/08/google-io-2018/amp/"
+  excerpt: "For the latest AMP project updates, subscribe to our new newsletter! A strong network of AMP contributors and collaborators has been critical to achieving the project’s mission of building a user-first web. At Google’s I/O developer conference this week, members of the AMP team are sharing recent ways the AMP community has come together to [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-05-08T16:56:04-04:00
+  date: "May 8, 2018"

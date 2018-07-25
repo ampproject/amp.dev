@@ -81,7 +81,7 @@
       {% include "/assets/css/case-study.min.css" %}
     {% elif doc.view == '/views/list_page.html' or doc.url.path.endswith('/latest/') %}
       {% include "/assets/css/list.min.css" %}
-    {% elif doc.view == '/views/blog_detail.html' or doc.url.path.endswith('/roadmap/') %}
+    {% elif doc.view == '/views/blog_detail.html' or doc.url.path.find('/roadmap/') != -1 %}
       {% include "/assets/css/blog.min.css" %}
     {% elif doc.pod_path == '/content/pages/home.html' %}
       {% include "/assets/css/home.min.css" %}

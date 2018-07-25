@@ -22,7 +22,7 @@ As origens a seguir estão na lista de permissões e podem veicular fontes atrav
 *  Fonts.com:**https://fast.fonts.net**
 *  Google Fonts:**https://fonts.googleapis.com**
 *  Typekit: **https://use.typekit.net**
-*  Font Awesome:**https://maxcdn.bootstrapcdn.com**
+*  Font Awesome:**https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
 ###  2. Como usar a tag `@font-face`
 
