@@ -11,7 +11,7 @@ $title: 유효성 검사 오류 해결
 우선 다음 오류를 해결해 보겠습니다.
 
 <pre class="error-text">
-필수 'meta charset=utf-8' 태그가 누락되었거나 잘못되었습니다.
+The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 </pre>
 
 AMP에서 텍스트를 올바르게 표시하려면 페이지의 문자 집합을 지정해야 합니다. 또한 메타 문자 집합 정보는 `<head> ` 태그의 첫 번째 하위 요소여야 합니다. 이 태그를 첫 번째로 사용해야 하는 이유는 메타 문자 집합 태그 앞에 추가된 콘텐츠를 다시 해석하는 일을 피하기 위해서입니다.
