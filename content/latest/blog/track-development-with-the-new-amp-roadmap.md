@@ -8,7 +8,7 @@ role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2018/07/19/track-development-with-the-new-amp-roadmap/amp/"
 excerpt: "As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each. Starting today, you can head over to the AMP roadmap and see an updated view of feature development across the project. We hope this is easy [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-07-19T17:42:43-04:00
+date_data: 2018-07-19T23:42:43+02:00
 $date: July 19, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
