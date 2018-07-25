@@ -1,0 +1,23 @@
+{
+  "name": "amp-dev-frontend",
+  "version": "1.0.0",
+  "description": "Frontend package for the relaunch of ampproject.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jungvonmatt/amp.dev.git"
+  },
+  "keywords": [
+    "amphtml",
+    "ampproject"
+  ],
+  "author": "The AMP HTML Authors",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jungvonmatt/amp.dev/issues"
+  },
+  "homepage": "https://github.com/jungvonmatt/amp.dev#readme"
+}
