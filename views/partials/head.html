@@ -4,8 +4,8 @@
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
   <meta property="og:image" content="https://www.ampproject.org/static/img/logo-og-image.jpg">
   {% if doc.description %}<meta name="description" content="{{doc.description}} – AMP">{% endif %}
-  <meta name="amp-experiments-opt-in" content="">
-  <meta name="amp-google-client-id-api" content="googleanalytics">
+  <meta name="amp-experiments-opt-in" content="url-replacement-v2">
+  <meta name="google-site-verification" content="DPQFQ0Loo-Qiz2pYWfboqYb03QnnVUMb0RDvg7O2u2c" />
   <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -51,7 +51,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/static/img/icons/180.png">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
-
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
@@ -60,7 +60,6 @@
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
   <script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
-
 
   {% if doc.components %}
     {% for component in doc.components %}
@@ -77,11 +76,13 @@
       {% include "/assets/css/docs-landing.min.css" %}
     {% elif doc.view == '/views/doc_grid.html' %}
       {% include "/assets/css/section_docs.min.css" %}
+    {% elif doc.view == '/views/showcase-main.html' or doc.view == '/views/showcase-indiv.html' %}
+      {% include "/assets/css/showcase.min.css" %}
     {% elif doc.view == '/views/case-study.html' or doc.view == '/views/about-casestudies.html' %}
       {% include "/assets/css/case-study.min.css" %}
     {% elif doc.view == '/views/list_page.html' or doc.url.path.endswith('/latest/') %}
       {% include "/assets/css/list.min.css" %}
-    {% elif doc.view == '/views/blog_detail.html' or doc.url.path.find('/roadmap/') != -1 %}
+    {% elif doc.view == '/views/blog_detail.html' or doc.url.path.endswith('/roadmap/') %}
       {% include "/assets/css/blog.min.css" %}
     {% elif doc.pod_path == '/content/pages/home.html' %}
       {% include "/assets/css/home.min.css" %}
@@ -93,6 +94,8 @@
       {% include "/assets/css/about-who.min.css" %}
     {% elif doc.view == '/views/about-who-vertical.html' %}
       {% include "/assets/css/about-who-vertical.min.css" %}
+    {% elif doc.view == '/views/about-benefits.html' %}
+      {% include "/assets/css/about-benefits.min.css" %}
     {% elif doc.view == '/views/amp-ads.html' %}
       {% include "/assets/css/amp-ads.min.css" %}
     {% elif doc.view == '/views/design-principles.html' %}

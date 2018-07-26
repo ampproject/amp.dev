@@ -47,6 +47,12 @@
   </figure>
   {%- endmacro %}
 
+  {% macro anim(src, width, height, poster, layout='responsive', alt='', align='', margin='') -%}
+  <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+    <amp-anim src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"><amp-img placeholder width="{{ width }}" height="{{ height }}" src="{{ poster }}"></amp-img></amp-anim>
+  </figure>
+  {%- endmacro %}
+
   {% macro youtube(id, width, height, layout='responsive', caption='', align='', margin='') -%}
   <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
     <amp-youtube
@@ -58,13 +64,14 @@
   </figure>
   {%- endmacro %}
 
-  {% macro video(src, width, height, layout='responsive', caption='', align='', margin='', autoplay='', loop='', controls='true') -%}
+  {% macro video(src, width, height, poster, layout='responsive', caption='', align='', margin='', autoplay='', loop='', controls='') -%}
   <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
     <amp-video
       src="{{ src }}"
       layout="{{ layout }}"
+      poster="{{ poster }}"
       width="{{ width }}" height="{{ height }}" {% if autoplay %}autoplay{% endif %} {% if loop %}loop{% endif %} {% if controls %}controls{% endif %}>
-    </amp-youtube>
+    </amp-video>
     {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
   </figure>
   {%- endmacro %}
