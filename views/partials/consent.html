@@ -8,7 +8,7 @@
   </script>
 </amp-geo>
 
-<amp-consent id="consent-config" layout="nodisplay">
+<amp-consent id="consent" layout="nodisplay">
   <script type="application/json">
     {
       "consents": {
@@ -22,11 +22,11 @@
 
   <div id="consent-popup" class="consent-popup">
     <div>
-      <button type="reset" class="close-button" on="tap:consent-popup.dismiss" role="button" tabindex="0"></button>
+      <button type="reset" class="close-button" on="tap:consent.dismiss" role="button" tabindex="0"></button>
       <p>
         {{_('We use cookies to understand how you use our site and to improve your experience. By continuing to use our site, you accept our')}} <a href="https://policies.google.com/technologies/cookies">{{_('use of cookies')}}</a> and <a href="https://policies.google.com/privacy">{{_('privacy policy')}}</a>.
       </p>
-      <button on="tap:consent-popup.accept" class="button text-label" role="button" tabindex="1">{{_('OK')}}</button>
+      <button on="tap:consent.accept" class="button text-label" role="button" tabindex="1">{{_('OK')}}</button>
     </div>
   </div>
 </amp-consent>
