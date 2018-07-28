@@ -18,22 +18,6 @@
     {
       "cards": [
         {
-          "createdAt": "2018-07-16T22:48:43Z",
-          "updatedAt": "2018-07-16T22:48:43Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16755",
-            "title": "Reimplement viewport implementation as a shadow root",
-            "description": "https://medium.com/@dvoytenko/amp-ios-scrolling-redo-2-the-shadow-wrapper-approach-experimental-3362ed3c2fa2",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Runtime",
-                "name": "Runtime",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-16T22:44:59Z",
           "updatedAt": "2018-07-16T22:45:00Z",
           "issue": {
@@ -55,7 +39,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16737",
             "title": "AMP ID link decoration ",
-            "description": "## 🔗amp-linker\r\nWe intend to implement a link decoration based solution for AMP pages to sync IDs across domains.",
+            "description": "We intend to implement a link decoration based solution for AMP pages to sync IDs across domains.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Analytics",
@@ -203,22 +187,6 @@
           }
         },
         {
-          "createdAt": "2018-07-02T23:05:04Z",
-          "updatedAt": "2018-07-02T23:05:04Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/15847",
-            "title": "Support video-interface videos in amp-story",
-            "description": "Right now, the only video player supported is `<amp-video>`; we should also support other video interface players like `<amp-youtube>` or `<amp-dailymotion>`, etc.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
-                "name": "AMP Story",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-02T23:04:55Z",
           "updatedAt": "2018-07-02T23:04:55Z",
           "issue": {
@@ -357,27 +325,11 @@
           }
         },
         {
-          "createdAt": "2018-07-02T20:57:39Z",
-          "updatedAt": "2018-07-02T20:57:39Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16522",
-            "title": "Increase component support for Stories",
-            "description": "Currently `<amp-story>` supports few AMP elements as descendants.  We should improve the component support for stories.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
-                "name": "AMP Story",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-02T20:39:23Z",
           "updatedAt": "2018-07-02T20:39:23Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16521",
-            "title": "Allow tapping on elements outside of amp-story-cta-layer",
+            "title": "Allow tapping on elements in amp-story-grid-layer",
             "description": "For any clickable element outside of amp-story-cta-layer, we should show a tooltip that defers the action until after the user has clicked on the tooltip.",
             "labels": [
               {
@@ -394,7 +346,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16509",
             "title": "Support dynamic & responsive content in amp-carousel",
-            "description": "Implement two frequently requested improvements to amp-carousel:",
+            "description": "Implement two frequently requested improvements to amp-carousel to support dynamic and responsive content.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
@@ -415,7 +367,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16507",
             "title": "amp-list v2",
-            "description": "amp-list addressed a number of critical use cases when AMP first launched, but there have been a few issues and opportunities that this task endeavors to address:",
+            "description": "amp-list addressed a number of critical use cases when AMP first launched, but developers have struggled with a set of smaller issues that make the component generally hard to use. This issue is to fix those issues and relaunch under a new name.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
@@ -447,7 +399,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16501",
             "title": "Ideation to better support for dynamic content",
-            "description": "Developers have a range of options in AMP for supporting dynamic data (data that changes based on user-related parameters) when served from a cache: amp-list, amp-geo, amp-bind, etc.",
+            "description": "Developers have a range of options in AMP for supporting dynamic data (data that changes based on user-related parameters) when served from a cache: amp-list, amp-geo, amp-bind, etc. However, AMP does not currently offer good support for a number of remaining use cases. This issue tracks the task of identifying additional use cases and brainstorming with core AMP contributors how to better support a broader range of dynamic data in AMP",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
@@ -509,6 +461,54 @@
               }
             ]
           }
+        },
+        {
+          "createdAt": "2018-04-02T19:56:47Z",
+          "updatedAt": "2018-04-02T19:56:48Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14365",
+            "title": "Support AMPHTML ads in mobile apps",
+            "description": "This will require the ads SDK that renders the ad to recognize and deliver the AMPHTML ad to get information like view-ability and getting scroll bound animations to work. ",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-04-02T17:19:24Z",
+          "updatedAt": "2018-04-02T17:19:25Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14355",
+            "title": "Support Viewability and Spam Detection instrumentation in AMPHTML ads ",
+            "description": "Unlike regular ads where viewability and spam detection services can run custom JavaScript, AMPHTML ads don't allow that. This feature enhances amp-analytics in a way that 3rd parties can integrate to instrument viewability and collect signals for spam detection.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-04-02T13:35:45Z",
+          "updatedAt": "2018-04-02T13:35:45Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14346",
+            "title": "Instrument and speed up non-AMPHTML ads ",
+            "description": "AMPHTML ads are given preference over non-AMPHTML ads on AMP pages. This is because we don't know how non-AMPHTML ads can affect performance of the AMP page. The degree to which they are throttled should be instrumented and ensured that there are no idle cycles being spent after page load and before the ads are being loaded.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
+                "color": "1d76db"
+              }
+            ]
+          }
         }
       ],
       "id": 2325992,
@@ -543,7 +543,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16508",
             "title": "Improve basic amp-carousel UX",
-            "description": "Fix some low-hanging fruit for amp-carousel UX:",
+            "description": "Fix some low-hanging fruit for amp-carousel UX, including better visual and interaction design for the slide-advance affordances.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
@@ -559,7 +559,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16503",
             "title": "amp-video-iframe",
-            "description": "amp-video increasingly supports engaging and useful video features (analytics, muted autoplay, minimize-on-scroll), and some third-party players have adopted these features through video interface as well.",
+            "description": "amp-video increasingly supports engaging and useful video features (analytics, muted autoplay, minimize-on-scroll), and some third-party players have adopted these features through video interface as well. However, single-business custom players can't get these features because they slip through the cracks: implementing them as new components isn't a good approach for AMP since they're not broadly useful to the community, which means they can't use video interface. [amp-video-iframe](https://github.com/ampproject/amphtml/issues/16252) would solve this by making these features available for custom video players via a special wrapper",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Audio&Video",
@@ -591,7 +591,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/14073",
             "title": "Improved resizing rules for amp-list",
-            "description": "amp-list currently doesn't resize in a number of situations that prevent AMP from supporting important use cases, including:",
+            "description": "This issue captures the work needed to address a number of related amp-list resizing issues.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
@@ -654,7 +654,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/14745",
             "title": "Input masking",
-            "description": "A common pattern on the web to assist form completion is input masking: automatically inserting expected characters and spaces in a given form input. For instance, \"+1 (_ _ _) _ _ _-_ _ _ _\" for a phone number in the United States. As the user types, their input fills out the blank entries, and sometimes showing validation issues automatically.",
+            "description": "A common pattern on the web to assist form completion is input masking: automatically inserting expected characters and spaces in a given form input. For instance, \"+1 (_ _ _) _ _ _-_ _ _ _\" for a phone number in the United States. As the user types, their input fills out the blank entries, and sometimes showing validation issues automatically. This feature is to implement this type of input masking, with a flexible way to implement a system of expected characters and spaces, good default UI for the spaces, ways to easily customize, and a way to integrate with standard form validation.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20User%20Input",
@@ -765,22 +765,6 @@
           }
         },
         {
-          "createdAt": "2018-04-19T17:46:36Z",
-          "updatedAt": "2018-07-02T15:33:37Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14740",
-            "title": "Tilt-based animations",
-            "description": "Developers sometimes link device title to the background position of images, so that the content shifts on the screen in different directions and at different speeds based on the direction and degree of tilt. Ideally we can link this to an intuitive natural metaphor, so it feels predictable and natural.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
-                "name": "Presentation",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-02T16:33:00Z",
           "updatedAt": "2018-07-12T00:47:21Z",
           "issue": {
@@ -802,7 +786,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/14738",
             "title": "Seamless page transitions",
-            "description": "Feature description: TODO",
+            "description": "Users highly value page transitions that preserve as much context and happen as quickly as possible, but standard page navigations refresh the entire page (header bars, menus, etc disappear and reappear again), increasing actual and perceived loading time. App shell patterns (as with progressive web apps) address this opportunity—[this feature](https://github.com/ampproject/amphtml/issues/12981) is to provide a trivially-easy-to-implement way to get similar functionality with minimal effort.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
@@ -818,7 +802,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16536",
             "title": "Experimental availability of amp-script",
-            "description": "amp-script is being developed in order to support a much broader set of interactivity in AMP and interoperability with non-AMP libraries & frameworks by:",
+            "description": "amp-script is being developed in order to support a much broader set of interactivity in AMP and interoperability with non-AMP libraries & frameworks. This issue tracks the experimental release of amp-script. The viability of amp-script in production is still being investigated",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
@@ -834,7 +818,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/14063",
             "title": "Loading state improvements for amp-list",
-            "description": "amp-list is associated with multiple loading states, particularly when integrated w/ with amp-bind & infinite scroll. For example:\r\n• Content not loaded (initial page load)\r\n• src changed by amp-bind, content not yet loaded\r\n• content to be appended via button or scroll-trigger, not yet loaded",
+            "description": "amp-list is associated with multiple loading states, particularly when integrated w/ with amp-bind & infinite scroll. Some of these states can already be configured by developers and get a default loading state in order to communicate status to users. This feature is to ensure that more of these states are configurable by developers and get good default states to the extent possible",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
@@ -860,6 +844,38 @@
     },
     {
       "cards": [
+        {
+          "createdAt": "2018-04-19T17:46:36Z",
+          "updatedAt": "2018-07-27T20:14:44Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14740",
+            "title": "Tilt-based animations",
+            "description": "Developers sometimes link device title to the background position of images, so that the content shifts on the screen in different directions and at different speeds based on the direction and degree of tilt. Ideally we can link this to an intuitive natural metaphor, so it feels predictable and natural. Phase one will be a low-level API along the lines of amp-position-observer, that allows such animations at a basic level.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
+                "name": "Presentation",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-07-16T22:48:43Z",
+          "updatedAt": "2018-07-19T22:16:48Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/16755",
+            "title": "Reimplement viewport implementation as a shadow root",
+            "description": "https://medium.com/@dvoytenko/amp-ios-scrolling-redo-2-the-shadow-wrapper-approach-experimental-3362ed3c2fa2",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Runtime",
+                "name": "Runtime",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
         {
           "createdAt": "2018-03-16T18:54:21Z",
           "updatedAt": "2018-07-18T03:24:03Z",
@@ -1053,7 +1069,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/14737",
             "title": "Geo-variation",
-            "description": "Developers often want to vary content with a small geo-dependent variation, like a sale promotion for a particular locale. This is sometimes possible with components that make a server-side call, like amp-list, but it can be somewhat complex, and doesn't cover all related use-cases well.",
+            "description": "Developers often want to vary content with a small geo-dependent variation, like a sale promotion for a particular locale. This is sometimes possible with components that make a server-side call, like amp-list, but it can be somewhat complex, and doesn't cover all related use-cases well. This feature, amp-geo, will make it easy to vary small sections of web content for users based on an approximation of the users’ country-level location, similar to the level of an ISO Country Code. ",
             "labels": []
           }
         },

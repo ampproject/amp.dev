@@ -1,6 +1,17 @@
 blogs:
 
 - type: Blog
+  title: "Privacy and user choice in AMP’s software architecture"
+  id: ads-privacy-and-user-choice-in-amps-software-architecture
+  author: <a href="https://twitter.com/cramforce">Malte Ubl</a>
+  role:  Tech Lead of the AMP Project.
+  origin: "https://amphtml.wordpress.com/2018/07/23/privacy-and-user-choice-in-amps-software-architecture/amp/"
+  excerpt: "Early choices in designing the AMP HTML JavaScript library have made it uniquely suited for publishers to implement effective privacy controls for users. In web pages, resource requests and browser storage access that may have privacy impact can be initiated through a multitude of mechanisms, many of which are often controlled by third parties. This [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-07-23T10:36:25-07:00
+  date: "July 23, 2018"
+
+- type: Blog
   title: "Track development with the new AMP Roadmap"
   id: ads-track-development-with-the-new-amp-roadmap
   author: Vamsee Jasti
@@ -8,7 +19,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/19/track-development-with-the-new-amp-roadmap/amp/"
   excerpt: "As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each. Starting today, you can head over to the AMP roadmap and see an updated view of feature development across the project. We hope this is easy [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-19T17:42:43-04:00
+  datedata: 2018-07-19T14:42:43-07:00
   date: "July 19, 2018"
 
 - type: Blog
@@ -19,7 +30,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/16/new-in-amp-stories-monetization-revamped-bookends-and-metadata/amp/"
   excerpt: "We announced the developer preview of AMP stories in February at AMP Conf. Since then, publishers have authored thousands of stories, experimenting with the format and providing valuable feedback to the AMP team. Based on this input, we recently released new capabilities in AMP stories v1.0, open to all developers without origin trials or a [&#8230;]"
   avatar: https://videos.files.wordpress.com/pqK8yXrk/amp_blog_story_ad_hd.mp4
-  datedata: 2018-07-16T18:03:22-04:00
+  datedata: 2018-07-16T15:03:22-07:00
   date: "July 16, 2018"
 
 - type: Blog
@@ -30,7 +41,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/11/serverless-amp-solution-on-aws/amp/"
   excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit. You can see their site featured on the showcase page of AMPproject.org It all started when we realized our website gets outdated very fast and we are always so busy with our customers we forget about ourselves. We had to build something [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-11T16:09:31-04:00
+  datedata: 2018-07-11T13:09:31-07:00
   date: "July 11, 2018"
 
 - type: Blog
@@ -41,7 +52,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/06/19/the-shadow-reader-improved/amp/"
   excerpt: "We made the Shadow Reader even faster &#8211; and friendlier to search engines! We created the Shadow Reader to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site repurposes existing articles from The Guardian into an immersive news reader experience. More than [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-19T14:22:01-04:00
+  datedata: 2018-06-19T11:22:01-07:00
   date: "June 19, 2018"
 
 - type: Blog
@@ -52,16 +63,5 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/06/06/2058/amp/"
   excerpt: "Monetization support for AMP stories AMP stories now supports ‘Publisher placed ads’, the ability for a publisher to serve ads for which they can control delivery sales and delivery. Ad Server support in DoubleClick for Publishers (DFP) is planned for the end of June. We urge other ad networks that are interested in adding monetization [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-06T20:17:52-04:00
+  datedata: 2018-06-06T17:17:52-07:00
   date: "June 6, 2018"
-
-- type: Blog
-  title: "AMP at Google I/O: Strengthening the AMP ecosystem"
-  id: ads-google-io-2018
-  author: Matt Ludwig
-  role:  Marketing Lead for AMP at Google 
-  origin: "https://amphtml.wordpress.com/2018/05/08/google-io-2018/amp/"
-  excerpt: "For the latest AMP project updates, subscribe to our new newsletter! A strong network of AMP contributors and collaborators has been critical to achieving the project’s mission of building a user-first web. At Google’s I/O developer conference this week, members of the AMP team are sharing recent ways the AMP community has come together to [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-05-08T16:56:04-04:00
-  date: "May 8, 2018"

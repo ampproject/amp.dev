@@ -8,7 +8,7 @@ role:  Developer Advocate, Google
 origin: "https://amphtml.wordpress.com/2018/06/19/the-shadow-reader-improved/amp/"
 excerpt: "We made the Shadow Reader even faster &#8211; and friendlier to search engines! We created the Shadow Reader to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site repurposes existing articles from The Guardian into an immersive news reader experience. More than [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-06-19T14:22:01-04:00
+date_data: 2018-06-19T11:22:01-07:00
 $date: June 19, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
