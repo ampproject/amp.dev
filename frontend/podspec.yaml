@@ -14,9 +14,7 @@ localization:
   locales:
     - de_DE
 
-preprocessors:
-- kind: gulp
+# preprocessors:
+# - kind: gulp
+#   build_task: "build"
 
-deployments:
-  default: local
-  out_dir: fontend/
