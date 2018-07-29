@@ -3,8 +3,7 @@ $title: 실험 기능
 $order: 5
 ---
 
-[AMP 실험 구성요소](https://github.com/ampproject/amphtml/tree/master/tools/experiments) 는 출시는 되었으나 아직 널리 사
-용될 준비가 되지 않은 기능이기 때문에 실험 상태로 표시됩니다.
+[AMP 실험 구성요소](https://github.com/ampproject/amphtml/tree/master/tools/experiments) 는 출시는 되었으나 아직 널리 사용될 준비가 되지 않은 기능이기 때문에 실험 상태로 표시됩니다.
 
 개발자 및 사용자는 실험 기능이 정식으로 출시되기 전에 사용해 볼 수 있습니다. 하지만 버그가 있거나 예상치 못한 부작용이 발생할 수 있으므로 신중하게 
 사용해야 합니다.
