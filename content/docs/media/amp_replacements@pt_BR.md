@@ -16,7 +16,7 @@ include them in your pages.
 *  Precisamos controlar as solicitações de rede para [carregamento lento e priorizar os recursos de maneira efetiva.](/pt_br/learn/about-how/#prioritize-resource-loading)
 
 {% call callout('Cuidado', type='caution') %}
- Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas](/pt_br/docs/guides/debug/validate.html) 
+ Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas](/pt_br/docs/fundamentals/validate.html) 
 e não será possível aproveitar todos os benefícios que as AMP oferecem. {% endcall %}
 
 ## Imagens
@@ -70,7 +70,7 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
 </div>
 
 {% call callout('Leia mais', type='read') %}
- Saiba mais sobre [técnicas de layout avançadas](/pt_br/docs/guides/responsive/control_layout.html)
+ Saiba mais sobre [técnicas de layout avançadas](/pt_br/docs/design/responsive/control_layout.html)
 . {% endcall %}
 
 ### Comportamento e marcadores de posição
@@ -78,7 +78,7 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
 O tempo de execução das AMP em HTML pode gerenciar recursos de imagens de maneira eficiente, escolhendo atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na conexão de largura de banda ou em outros fatores.
 
 {% call callout('Leia mais', type='read') %}
- Saiba como [fornecer fallbacks e marcadores de posição para imagens](/pt_br/docs/guides/responsive/placeholders.html)
+ Saiba como [fornecer fallbacks e marcadores de posição para imagens](/pt_br/docs/design/responsive/placeholders.html)
 . {% endcall %}
 
 ## Imagens animadas

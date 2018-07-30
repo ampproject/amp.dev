@@ -75,14 +75,14 @@ Para definir o estilo dos elementos nas suas páginas AMP, adicione CSS em uma f
 ```
 
 {% call callout('Leia mais', type='read') %}
-Saiba mais sobre o [CSS compatível](/pt_br/docs/guides/responsive/style_pages.html) com páginas AMP.
+Saiba mais sobre o [CSS compatível](/pt_br/docs/design/responsive/style_pages.html) com páginas AMP.
 {% endcall %}
 
 ### Etapa 4: validar o HTML para AMP
 
 Use o [validador de AMP](https://validator.ampproject.org/) e confira se o HTML para AMP das páginas é válido.
 
-Para ver outras ferramentas de validação que você pode usar, acesse a página sobre como [validar páginas AMP](/pt_br/docs/guides/validate.html).
+Para ver outras ferramentas de validação que você pode usar, acesse a página sobre como [validar páginas AMP](/pt_br/docs/fundamentals/validate.html).
 
 ### Próximas etapas
 
@@ -90,9 +90,9 @@ Para conhecer melhor os aspectos básicos das páginas AMP, acesse o tutorial so
 
 Veja outros recursos para aprimorar sua experiência:
 
-* [Permita que sua página seja detectada](/pt_br/docs/guides/discovery.html).
-* [Adicione análises à página](/pt_br/docs/guides/analytics_amp.html).
-* [Melhore o engajamento dos usuários](/pt_br/docs/guides/engagement.html).
+* [Permita que sua página seja detectada](/pt_br/docs/fundamentals/discovery.html).
+* [Adicione análises à página](/pt_br/docs/analytics/analytics_amp.html).
+* [Melhore o engajamento dos usuários](/pt_br/docs/fundamentals/engagement.html).
 * Veja demonstrações ativas no site [AMP BY Example](https://ampbyexample.com).
  
  

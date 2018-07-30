@@ -1,7 +1,6 @@
 ---
 $title: Include images & video
 $order: 1
-$category: Develop
 toc: true
 components:
   - iframe
@@ -24,7 +23,7 @@ We provide equivalent components for the following reasons:
 effectively](/learn/about-how/#prioritize-resource-loading)
 
 {% call callout('Caution', type='caution') %}
-While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/guides/validate.html) and you won't get all the benefits AMP provides.
+While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/fundamentals/validate.html) and you won't get all the benefits AMP provides.
 {% endcall %}
 
 ## Images
@@ -81,7 +80,7 @@ images. In its most basic form, all you have to do is to add `layout="responsive
 </div>
 
 {% call callout('Read on', type='read') %}
-Learn more about [advanced layout techniques](/docs/guides/responsive/control_layout.html).
+Learn more about [advanced layout techniques](/docs/design/responsive/control_layout.html).
 {% endcall %}
 
 ### Behavior and placeholders
@@ -91,7 +90,7 @@ choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
 {% call callout('Read on', type='read') %}
-Learn how to [provide fallbacks and placeholders for images](/docs/guides/responsive/placeholders.html).
+Learn how to [provide fallbacks and placeholders for images](/docs/design/responsive/placeholders.html).
 {% endcall %}
 
 ## Animated images

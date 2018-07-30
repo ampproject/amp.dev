@@ -1,6 +1,5 @@
 ---
 $title: Fitur eksperimental
-$order: 5
 ---
 
 [Komponen eksperimental AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) 
@@ -37,6 +36,6 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 File AMP apa pun yang menyertakan fitur eksperimental akan gagal saat 
-[validasi AMP](/id/docs/guides/validate.html). 
+[validasi AMP](/id/docs/fundamentals/validate.html). 
 Hapus komponen eksperimental ini pada dokumen AMP yang siap diproduksi.
 

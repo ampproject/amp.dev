@@ -1,6 +1,5 @@
 ---
 $title: Recursos experimentais
-$order: 5
 ---
 
 [Os componentes experimentais de AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) 
@@ -39,6 +38,6 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 Nenhum arquivo AMP que inclua recursos experimentais passará na 
-[validação de AMP](/pt_br/docs/guides/validate.html). 
+[validação de AMP](/pt_br/docs/fundamentals/validate.html). 
 Remova os componentes experimentais de documentos AMP prontos para produção.
 

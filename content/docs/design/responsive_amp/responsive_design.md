@@ -57,7 +57,7 @@ However, we want the image to not stretch beyond its intended size, so we set th
 ```
 
 {% call callout('Read on', type='read') %}
-To learn more about the different layouts in AMP, see the [Layout & Media queries](/docs/guides/responsive/control_layout.html#the-layout-attribute) guide.
+To learn more about the different layouts in AMP, see the [Layout & Media queries](/docs/design/responsive/control_layout.html#the-layout-attribute) guide.
 {% endcall %}
 
  <a id="fn1"></a>
@@ -83,7 +83,7 @@ There are many types of videos that you can add to your AMP pages.  For details,
 
 ### Displaying responsive images
 
-Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP](/docs/guides/amp_replacements.html)).  In addition to the basic responsive image, you might want to serve multiple image resources to:
+Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP](/docs/media/amp_replacements.html)).  In addition to the basic responsive image, you might want to serve multiple image resources to:
 
 - [Serve crisp images for the right resolution](#serving-crisp-images-for-the-right-resolution)
 - [Change the art direction of an image](#changing-the-art-direction-of-an-image)
@@ -111,7 +111,7 @@ In the following example we have several image files that are of the same aspect
 For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px  (412 * .75 * 2.6), which happens to be `apple-800.jpg`.
 
 {% call callout('Read on', type='read') %}
-To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html) guide.
+To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](/docs/design/responsive/art_direction.html) guide.
 {% endcall %}
 
 #### Changing the art direction of an image
@@ -127,13 +127,13 @@ In the following example, we have 3 different cropped images of a cat that we wa
 - 469 px or less, display `cat-small.jpg` (226 x 340 px)
 
 {% call callout('Note', type='note') %}
-As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](/docs/guides/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
+As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
 {% endcall %}
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
 {% call callout('Read on', type='read') %}
-To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights](/docs/guides/responsive/art_direction.html) guide.
+To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights](/docs/design/responsive/art_direction.html) guide.
 {% endcall %}
 
 #### Providing optimized images
@@ -143,7 +143,7 @@ Delivering fast loading pages requires optimized images--in size, quality, and f
 In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.
 
 {% call callout('Read on', type='read') %}
-To learn more about fallbacks, see the [Placeholders & Fallbacks](/docs/guides/responsive/placeholders.html) guide.
+To learn more about fallbacks, see the [Placeholders & Fallbacks](/docs/design/responsive/placeholders.html) guide.
 {% endcall %}
 
 ##### Example: Serve different image formats
