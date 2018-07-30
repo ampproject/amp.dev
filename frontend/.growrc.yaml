@@ -5,4 +5,4 @@ grow:
     clear-cache: false
     locate-untranslated: false
     re-route: false
-    out-dir: './docs/'
+    out-dir: '../docs/'
