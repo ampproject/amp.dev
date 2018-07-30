@@ -1,7 +1,5 @@
 ---
 $title: 为您的网站添加导航元素
-$order: 5
-toc: true
 ---
 
 [TOC]
