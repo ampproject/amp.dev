@@ -6,8 +6,21 @@ $localization:
 
 description: Welcome to JvM/Amp.dev style guide
 
+templates:
+- title: Reference
+  ref: /reference
+- title: Components
+  ref: /components
 ---
 
 <div class="home">
   <h1>{{doc.description}}</h1>
 </div>
+{% include "/views/atoms/a-index.html" %}
+{% include "/views/molecules/m-index.html" %}
+{% include "/views/organisms/o-index.html" %}
+<h1 class="templates">Templates
+  {% for template in doc.templates %}
+    <a href={{template.ref }}><h2>{{template.title}}</h2></a>
+  {% endfor %}
+</h1>
