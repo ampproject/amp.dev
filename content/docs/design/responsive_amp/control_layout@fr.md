@@ -1,4 +1,5 @@
---- $title: Mises en page compatibles
+---
+$title: Mises en page compatibles
 ---
 
 Dans le cas d'éléments, il suffit d'inclure le code `layout=responsive`.
