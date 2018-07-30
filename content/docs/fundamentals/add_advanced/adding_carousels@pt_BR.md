@@ -1,12 +1,10 @@
 ---
 $title: Adicionar carrosséis
-$order: 3
-toc: verdadeiro
 ---
 
 [TOC]
 
-Outra funcionalidade comum das páginas para dispositivos móveis são os carrosséis.  Pode adicionar facilmente carrosséis a páginas AMP ao utilizar o componente [amp-carousel](https://www.ampproject.org/pt_br/docs/reference/components/amp-carousel). Vamos começar com um exemplo simples, como um carrossel de imagens.
+Outra funcionalidade comum das páginas para dispositivos móveis são os carrosséis.  Pode adicionar facilmente carrosséis a páginas AMP ao utilizar o componente [amp-carousel](/pt_br/docs/reference/components/amp-carousel.html). Vamos começar com um exemplo simples, como um carrossel de imagens.
 
 ## Carrossel simples de imagens
 
@@ -93,7 +91,7 @@ Agora, **substitua** o seu carrossel simples pelo seguinte:
 Para saber mais, consulte a documentação de referência do componente [amp-carousel](/pt_pt/docs/reference/components/amp-carousel.html).
 
 {% call callout('Nota', type='note') %}
-No nosso último exemplo, deverá ter reparado que o componente `amp-ad` incluía um elemento `div` secundário com o atributo `placeholder`. Anteriormente, no tutorial, deparámo-nos com um cenário semelhante com o `amp-ad` a utilizar um `fallback`. Qual é a diferença entre um marcador de posição e um alternativo? Os elementos `fallback` surgem quando ocorre uma falha ao carregar o elemento superior, ou seja, se não houver nenhum anúncio disponível. Os elementos `placeholder` aparecem em vez do elemento superior, enquanto este é carregado. De certo modo, estes elementos suportam o processo de carregamento do elemento superior. Pode saber mais no guia [Marcadores de posição e alternativos](pt_pt/docs/guides/responsive/placeholders.html).
+No nosso último exemplo, deverá ter reparado que o componente `amp-ad` incluía um elemento `div` secundário com o atributo `placeholder`. Anteriormente, no tutorial, deparámo-nos com um cenário semelhante com o `amp-ad` a utilizar um `fallback`. Qual é a diferença entre um marcador de posição e um alternativo? Os elementos `fallback` surgem quando ocorre uma falha ao carregar o elemento superior, ou seja, se não houver nenhum anúncio disponível. Os elementos `placeholder` aparecem em vez do elemento superior, enquanto este é carregado. De certo modo, estes elementos suportam o processo de carregamento do elemento superior. Pode saber mais no guia [Marcadores de posição e alternativos](pt_pt/docs/design/responsive/placeholders.html).
 {% endcall %}
 
 <div class="prev-next-buttons">
