@@ -30,7 +30,7 @@ download: "case-studies/consumers_advocate.pdf"
     <amp-img width="350" height="678" layout="responsive" src="/static/img/case-studies/ca_1.png"></amp-img>
 </div>
 
-ConsumersAdvocate.org helps millions of people make smarter buying decisions across close to 100 product and service categories, including everything from accounting software to identity theft protection. The site’s editors research and compare top performing companies, based on factors such as price, quality, and customer satisfaction, to help consumers save time and money. ConsumersAdvocate.org’s earns referral commissions from their advertising partners’ sites if users choose to click through and buy. “Our team works to write helpful and thorough comparisons, and we try to buy and test out as many of the products and services as we can” explains CEO Greg Powel.
+[ConsumersAdvocate.org](https://www.consumersadvocate.org/) helps millions of people make smarter buying decisions across close to 100 product and service categories, including everything from accounting software to identity theft protection. The site’s editors research and compare top performing companies, based on factors such as price, quality, and customer satisfaction, to help consumers save time and money. ConsumersAdvocate.org’s earns referral commissions from their advertising partners’ sites if users choose to click through and buy. “Our team works to write helpful and thorough comparisons, and we try to buy and test out as many of the products and services as we can” explains CEO Greg Powel.
 
 ## Solution
 
