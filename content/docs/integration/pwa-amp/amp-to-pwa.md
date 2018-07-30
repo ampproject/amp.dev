@@ -118,5 +118,5 @@ AMP solves this with something called [shell URL rewriting](/docs/reference/comp
 With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
 
 {% call callout('Read on', type='read') %}
-You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](/docs/guides/pwa-amp/amp-in-pwa.html).
+You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](/docs/integration/pwa-amp/amp-in-pwa.html).
 {% endcall %}

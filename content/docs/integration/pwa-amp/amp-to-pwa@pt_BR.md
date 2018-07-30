@@ -116,7 +116,7 @@ As AMP resolvem isso com um recurso chamado [reescrita do URL do shell](/pt_br/d
 Com esses atributos, todos os cliques subsequentes em uma AMP direcionarão para o PWA, independentemente de qualquer service worker.
 
 {% call callout('Leia mais', type='read') %}
-Se você já chegou até aqui, que tal reutilizar as páginas AMP existentes para criar seu PWA? [Saiba como fazer isso](/pt_br/docs/guides/pwa-amp/amp-in-pwa).
+Se você já chegou até aqui, que tal reutilizar as páginas AMP existentes para criar seu PWA? [Saiba como fazer isso](/pt_br/docs/integration/pwa-amp/amp-in-pwa).
 {% endcall %}
  
  

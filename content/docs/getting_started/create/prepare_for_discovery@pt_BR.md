@@ -29,6 +29,6 @@ Se você só tiver uma página, e essa página for AMP, ainda assim deverá adic
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/tutorials/create/publish.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="/pt_br/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/getting_started/create/publish.html"><span class="arrow-next">Próxima</span></a>
 </div>

@@ -46,8 +46,8 @@ Los documentos AMP HTML DEBEN:
 | Contener las etiquetas `<head>` y `<body>`. | Opcional en HTML pero requerido en AMP.
 | Contener la etiqueta `<meta charset="utf-8">` como el primer hijo de su etiqueta `<head>`. | Identifica la codificación de la página. | 
 | Contener la etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` como el segundo hijo de su etiqueta `<head>`. | Incluye y carga la librería AMP JS. |
-| Contener una etiqueta `<link rel="canonical" href="$SOME_URL">` en la etiqueta `<head>`. | Apunta a la versión regular en HTML de la página AMP, o bien apunta a sí mmisma si dicha versión no existe. Aprende más en [Hacer que tu página sea visible](/es/docs/guides/discovery.html).
-| Contener una etiqueta `<meta name="viewport" content="width=device-width,minimum-scale=1">` en la etiqueta `<head>`. También se recomienda incluir `initial-scale=1`. | Especifica un `viewport` responsivo. Aprende más en [Crear páginas AMP responsivas](/es/docs/guides/responsive/responsive_design.html). |
+| Contener una etiqueta `<link rel="canonical" href="$SOME_URL">` en la etiqueta `<head>`. | Apunta a la versión regular en HTML de la página AMP, o bien apunta a sí mmisma si dicha versión no existe. Aprende más en [Hacer que tu página sea visible](/es/docs/fundamentals/discovery.html).
+| Contener una etiqueta `<meta name="viewport" content="width=device-width,minimum-scale=1">` en la etiqueta `<head>`. También se recomienda incluir `initial-scale=1`. | Especifica un `viewport` responsivo. Aprende más en [Crear páginas AMP responsivas](/es/docs/design/responsive/responsive_design.html). |
 | Contener el [código AMP boilerplate](/docs/reference/spec/amp-boilerplate.html) en la etiqueta `<head>`.  | CSS para ocultar inicialmente el contenido hasta que se carga AMP JS. |
 
 
@@ -66,6 +66,6 @@ Además de los requisitos básicos, en nuestro ejemplo también se incluye una d
 ¡Buenas noticias! Eso es todo lo que necesitamos para crear nuestra primera página AMP, aunque por supuesto falta especificar el `<body>`. En la próxima sección, veremos la manera de agregar componentes básicos, como imágenes, elementos de AMP personalizados, dar estilo a tu página y definir un diseño responsivo.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/create.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/create/include_image.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="/es/docs/getting_started/create.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/getting_started/create/include_image.html"><span class="arrow-next">Siguiente</span></a>
 </div>

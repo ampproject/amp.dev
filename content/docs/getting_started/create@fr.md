@@ -7,5 +7,5 @@ Vous ne savez pas par où commencer ? Dans ce didacticiel, vous allez découvrir
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/fr/docs/tutorials/create/basic_markup.html"><span class="arrow-next">Commencer</span></a>
+<a class="button" href="/fr/docs/getting_started/create/basic_markup.html"><span class="arrow-next">Commencer</span></a>
 </div>

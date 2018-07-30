@@ -34,6 +34,6 @@ Aprende más sobre cómo Google encuentra las páginas AMP en las [Directrices d
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/create/publish.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="/es/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/getting_started/create/publish.html"><span class="arrow-next">Siguiente</span></a>
 </div>

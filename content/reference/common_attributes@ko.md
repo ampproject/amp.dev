@@ -20,7 +20,7 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [자리표시자 및 대체 동작](/ko/docs/guides/responsive/placeholders.html)을 참조하세요.
+자세한 내용은 [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html)을 참조하세요.
 
 ## heights
 
@@ -43,11 +43,11 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리](/ko/docs/guides/responsive/art_direction.html)를 참조하세요.
+자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리](/ko/docs/design/responsive/art_direction.html)를 참조하세요.
 
 ## layout
 
-AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지정하는 [레이아웃](/ko/docs/guides/responsive/control_layout.html#the-layout-attribute) 집합을 제공합니다. 요소에 지원되는 레이아웃 값 중 하나와 함께 `layout` 속성을 추가하여 구성요소의 레이아웃을 지정할 수 있습니다. 해당하는 요소에 관한 도움말에서 어떤 값이 지원되는지 확인하세요.
+AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지정하는 [레이아웃](/ko/docs/design/responsive/control_layout.html#the-layout-attribute) 집합을 제공합니다. 요소에 지원되는 레이아웃 값 중 하나와 함께 `layout` 속성을 추가하여 구성요소의 레이아웃을 지정할 수 있습니다. 해당하는 요소에 관한 도움말에서 어떤 값이 지원되는지 확인하세요.
 
 예:
 
@@ -60,7 +60,7 @@ AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지�
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리](/ko/docs/guides/responsive/control_layout.html) 및 [레이아웃 사양](/ko/docs/reference/spec/amp-html-layout.html)을 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리](/ko/docs/design/responsive/control_layout.html) 및 [레이아웃 사양](/ko/docs/design/amp-html-layout.html)을 참조하세요.
 
 ## media
 
@@ -81,7 +81,7 @@ AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지�
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리](/ko/docs/guides/responsive/control_layout.html#element-media-queries)를 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리](/ko/docs/design/responsive/control_layout.html#element-media-queries)를 참조하세요.
 
 ## noloading
 
@@ -121,7 +121,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-lightbox>
 [/sourcecode]
 
-자세한 내용은 [AMP 작업 및 이벤트](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md)를 참조하세요.
+자세한 내용은 [AMP 작업 및 이벤트](/ko/docs/interaction_dynamic/amp-actions-and-events.html)를 참조하세요.
 
 ## placeholder
 
@@ -137,7 +137,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [자리표시자 및 대체 동작](/ko/docs/guides/responsive/placeholders.html)을 참조하세요.
+자세한 내용은 [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html)을 참조하세요.
 
 ## sizes
 
@@ -153,11 +153,11 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리](/ko/docs/guides/responsive/art_direction.html)를 참조하세요.
+자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리](/ko/docs/design/responsive/art_direction.html)를 참조하세요.
 
 ## width 및 height
 
-일부 [레이아웃](/ko/docs/guides/responsive/control_layout.html#the-layout-attribute)의 경우 AMP 구성요소에 정수 픽셀 값이 포함된 `width` 및 `height` 속성이 있어야 합니다.
+일부 [레이아웃](/ko/docs/design/responsive/control_layout.html#the-layout-attribute)의 경우 AMP 구성요소에 정수 픽셀 값이 포함된 `width` 및 `height` 속성이 있어야 합니다.
 
 예:
 
@@ -169,4 +169,4 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리](/ko/docs/guides/responsive/control_layout.html) 및 [레이아웃 사양](/ko/docs/reference/spec/amp-html-layout.html)을 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리](/ko/docs/design/responsive/control_layout.html) 및 [레이아웃 사양](/ko/docs/design/amp-html-layout.html)을 참조하세요.

@@ -60,6 +60,6 @@ AMP HTML 文档必须：
 好消息！这就是创建第一个 AMP 页面所需的全部内容，当然在正文中还有很多工作要做。在下一部分中，我们将介绍如何添加像图像、自定义 AMP 元素这样的基本内容，如何设置页面样式，以及如何实现响应式布局。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/tutorials/create.html"><span class="arrow-prev">以前</span></a>
-  <a class="button next-button" href="/zh_cn/docs/tutorials/create/include_image.html"><span class="arrow-next">下一个</span></a>
+  <a class="button prev-button" href="/zh_cn/docs/getting_started/create.html"><span class="arrow-prev">以前</span></a>
+  <a class="button next-button" href="/zh_cn/docs/getting_started/create/include_image.html"><span class="arrow-next">下一个</span></a>
 </div>

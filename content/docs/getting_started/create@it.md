@@ -7,5 +7,5 @@ Non sai bene come iniziare? Con questo tutorial scoprirai come creare una pagina
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/it/docs/tutorials/create/basic_markup.html"><span class="arrow-next">Inizia</span></a>
+<a class="button" href="/it/docs/getting_started/create/basic_markup.html"><span class="arrow-next">Inizia</span></a>
 </div>

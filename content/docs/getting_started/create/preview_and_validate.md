@@ -20,10 +20,10 @@ Next, make sure that your AMP page **is actually valid AMP**, or it won’t get 
   1. Open the [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) and check for validation errors.
 
 {% call callout('Read on', type='read') %}
-[Learn more about validation](/docs/guides/validate.html), and what to do when you get errors.
+[Learn more about validation](/docs/fundamentals/validate.html), and what to do when you get errors.
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/getting_started/create/prepare_for_discovery.html"><span class="arrow-next">Next</span></a>
 </div>

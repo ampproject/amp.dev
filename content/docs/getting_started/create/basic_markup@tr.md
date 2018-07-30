@@ -60,6 +60,6 @@ Twitter vb. diğer çeşitli yerlerde ihtiyacını olan tüm meta-veriler hakkı
 İyi haber! İlk AMP sayfamızı oluşturmak için gerekli olan tek şey bu, fakat tabii ki gövdede devam eden daha birçok şey var. Bir sonraki bölümde görüntü, özel AMP ögeleri gibi temel unsurların nasıl ekleneceğini, sayfanızın nasıl biçimlendirileceğini ve nasıl etkileşimli bir düzen geliştirileceği üzerinde duracağız.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/tr/docs/tutorials/create.html"><span class="arrow-prev">Önceki</span></a>
-  <a class="button next-button" href="/tr/docs/tutorials/create/include_image.html"><span class="arrow-next">Sonraki</span></a>
+  <a class="button prev-button" href="/tr/docs/getting_started/create.html"><span class="arrow-prev">Önceki</span></a>
+  <a class="button next-button" href="/tr/docs/getting_started/create/include_image.html"><span class="arrow-next">Sonraki</span></a>
 </div>
