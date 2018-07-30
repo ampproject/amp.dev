@@ -1,12 +1,10 @@
 ---
 $title: Menambahkan carousel
-$order: 3
-toc: true
 ---
 
 [TOC]
 
-Fitur umum lainnya di halaman seluler adalah carousel.  Anda dapat dengan mudah menambahkan carousel ke halaman AMP dengan menggunakan komponen [amp-carousel](https://www.ampproject.org/id/docs/reference/components/amp-carousel). Mari kita mulai dengan contoh sederhana, misalnya carousel gambar.
+Fitur umum lainnya di halaman seluler adalah carousel.  Anda dapat dengan mudah menambahkan carousel ke halaman AMP dengan menggunakan komponen [amp-carousel](/id/docs/reference/components/amp-carousel.html). Mari kita mulai dengan contoh sederhana, misalnya carousel gambar.
 
 ## Carousel gambar yang sederhana
 
@@ -93,7 +91,7 @@ Sekarang, **ganti** carousel sederhana Anda dengan ini:
 Untuk mempelajari lebih lanjut, lihat dokumentasi referensi komponen [amp-carousel](/id/docs/reference/components/amp-carousel.html).
 
 {% call callout('Catatan', type='note') %}
-Pada contoh terakhir, Anda mungkin menyadari bahwa komponen `amp-ad` menyertakan elemen `div` turunan dengan atribut `placeholder`. Sebelumnya pada tutorial ini, kita menghadapi skenario serupa terkait `amp-ad` yang menggunakan `fallback`. Apa perbedaan antara placeholder dan fallback? Elemen `Fallback` muncul ketika elemen induk gagal dimuat, misalnya, jika tidak ada iklan yang tersedia. Elemen `placeholder` muncul di tempat elemen induk, saat elemen induk sedang dimuat. Artinya, elemen ini menandai berakhirnya proses pemuatan elemen induk. Anda dapat mempelajari lebih lanjut di panduan [Placeholder & fallback](/id/docs/guides/responsive/placeholders.html).
+Pada contoh terakhir, Anda mungkin menyadari bahwa komponen `amp-ad` menyertakan elemen `div` turunan dengan atribut `placeholder`. Sebelumnya pada tutorial ini, kita menghadapi skenario serupa terkait `amp-ad` yang menggunakan `fallback`. Apa perbedaan antara placeholder dan fallback? Elemen `Fallback` muncul ketika elemen induk gagal dimuat, misalnya, jika tidak ada iklan yang tersedia. Elemen `placeholder` muncul di tempat elemen induk, saat elemen induk sedang dimuat. Artinya, elemen ini menandai berakhirnya proses pemuatan elemen induk. Anda dapat mempelajari lebih lanjut di panduan [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
 {% endcall %}
 
 <div class="prev-next-buttons">
