@@ -1,7 +1,5 @@
 ---
 $title: Menambahkan komponen AMP yang diperpanjang
-$order: 2
-toc: true
 ---
 
 [TOC]
@@ -79,7 +77,7 @@ Dua `amp-ad` di bawah memberikan contoh fleksibilitas yang dimiliki `amp-ad` unt
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Iklan pengujian') }}
 
 {% call callout('Catatan', type='note') %}
-Anda mungkin mengetahui bahwa yang ada dalam tag amp-ad ini adalah tag `div` tambahan dengan atribut yang diberi nama `fallback`. Dapatkah Anda menebak apa yang ditunjukkan oleh atribut `fallback`? Atribut ini memberi tahu sistem pemuatan AMP agar hanya menampilkan konten elemen tersebut saat elemen induk gagal dimuat. Pelajari lebih lanjut di [Placeholder & fallback](/id/docs/guides/responsive/placeholders.html).
+Anda mungkin mengetahui bahwa yang ada dalam tag amp-ad ini adalah tag `div` tambahan dengan atribut yang diberi nama `fallback`. Dapatkah Anda menebak apa yang ditunjukkan oleh atribut `fallback`? Atribut ini memberi tahu sistem pemuatan AMP agar hanya menampilkan konten elemen tersebut saat elemen induk gagal dimuat. Pelajari lebih lanjut di [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
 {% endcall %}
 
 {% call callout('Baca lebih lanjut', type='read') %}
@@ -138,7 +136,7 @@ Seperti elemen lainnya di halaman, kami menentukan `lebar` dan `tinggi` video, s
 Untuk mempelajari lebih lanjut tentang menyematkan video YouTube, baca dokumentasi komponen [amp-youtube](/id/docs/reference/components/amp-youtube.html). Untuk mengetahui komponen video dan media lainnya, lihat [daftar komponen AMP media](/id/docs/reference/components.html#media).
 
 {% call callout('Tips', type='success') %}
-Gunakan atribut [`fallback`](/id/docs/guides/responsive/placeholders.html#fallbacks) untuk memberi tahu pengguna jika ada komponen yang gagal dimuat atau jika komponen tersebut tidak didukung di browser mereka.
+Gunakan atribut [`fallback`](/id/docs/design/responsive/placeholders.html#fallbacks) untuk memberi tahu pengguna jika ada komponen yang gagal dimuat atau jika komponen tersebut tidak didukung di browser mereka.
 {% endcall %}
 
 ## Menampilkan Tweet
