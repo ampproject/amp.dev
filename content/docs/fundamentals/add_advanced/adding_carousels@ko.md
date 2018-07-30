@@ -1,12 +1,10 @@
 ---
 $title: 캐러셀 추가
-$order: 3
-toc: true
 ---
 
 [TOC]
 
-또 다른 모바일 페이지의 일반적인 특징은 캐러셀입니다.  [amp-carousel](https://www.ampproject.org/ko/docs/reference/components/amp-carousel) 구성요소를 사용하여 AMP 페이지에 캐러셀을 쉽게 추가할 수 있습니다. 이미지 캐러셀과 같은 간단한 예로 시작해 보겠습니다.
+또 다른 모바일 페이지의 일반적인 특징은 캐러셀입니다.  [amp-carousel](/ko/docs/reference/components/amp-carousel.html) 구성요소를 사용하여 AMP 페이지에 캐러셀을 쉽게 추가할 수 있습니다. 이미지 캐러셀과 같은 간단한 예로 시작해 보겠습니다.
 
 ## 간단한 이미지 캐러셀
 
@@ -93,7 +91,7 @@ amp-fit-text {
 자세히 알아보려면 [amp-carousel](/ko/docs/reference/components/amp-carousel.html) 구성요소 참조 문서를 확인하세요.
 
 {% call callout('참고', type='note') %}
-마지막 예를 보면 `amp-ad` 구성요소에 하위 `div` 요소와 `placeholder` 속성이 포함되어 있습니다. 이전 가이드에서 `fallback`을 사용한 `amp-ad`가 포함된 비슷한 시나리오를 본 적이 있습니다. placeholder와 fallback 요소의 차이는 무엇일까요? `Fallback` 요소는 상위 요소를 로드할 수 없을 때(예: 표시할 광고가 없는 경우) 표시됩니다. 반면에 `placeholder` 요소는 상위 요소를 로드하는 중에 상위 요소 대신 표시됩니다. 어떤 의미에서 이러한 요소는 상위 요소의 로드 과정 전후에 표시됩니다. [자리표시자 및 대체 동작](/ko/docs/guides/responsive/placeholders.html) 가이드에서 자세히 알아볼 수 있습니다.
+마지막 예를 보면 `amp-ad` 구성요소에 하위 `div` 요소와 `placeholder` 속성이 포함되어 있습니다. 이전 가이드에서 `fallback`을 사용한 `amp-ad`가 포함된 비슷한 시나리오를 본 적이 있습니다. placeholder와 fallback 요소의 차이는 무엇일까요? `Fallback` 요소는 상위 요소를 로드할 수 없을 때(예: 표시할 광고가 없는 경우) 표시됩니다. 반면에 `placeholder` 요소는 상위 요소를 로드하는 중에 상위 요소 대신 표시됩니다. 어떤 의미에서 이러한 요소는 상위 요소의 로드 과정 전후에 표시됩니다. [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html) 가이드에서 자세히 알아볼 수 있습니다.
 {% endcall %}
 
 <div class="prev-next-buttons">
