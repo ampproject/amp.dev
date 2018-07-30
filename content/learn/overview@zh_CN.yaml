@@ -10,7 +10,7 @@
       description2: |
         尽管 AMP HTML 网页中的大多数标记都是常规 HTML 标记，但部分 HTML 标记替换为了 AMP 专用标记（另请参阅 [AMP 规范中的 HTML 标记](/zh_cn/docs/fundamentals/spec.html))。利用这些自定义元素（称为 AMP HTML 组件）可以轻松高效地实现常见的模式。 
         <p>例如，[`amp-img`](/zh_cn/docs/reference/amp-img.html) 标记可提供完整的 `srcset` 支持，即使在尚不支持该标记的浏览器中也是如此。了解如何[创建您的首个 AMP HTML 网页](/zh_cn/docs/getting_started/create.html)。 
-        <p>AMP 网页通过 HTML 标记被搜索引擎和其他平台 `<link rel="">` 发现。您可以选择分别提供您网页的非 AMP 版本和 AMP 版本，而不仅仅提供 AMP 版本。详细了解如何[让您的网页易于被发现](/zh_cn/docs/guides/discovery.html)。
+        <p>AMP 网页通过 HTML 标记被搜索引擎和其他平台 `<link rel="">` 发现。您可以选择分别提供您网页的非 AMP 版本和 AMP 版本，而不仅仅提供 AMP 版本。详细了解如何[让您的网页易于被发现](/zh_cn/docs/fundamentals/discovery.html)。
 
     - title: AMP JS
       subtitle: |

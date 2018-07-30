@@ -8,7 +8,7 @@ A AMP é compatível com**consultas de mídia**  e**consultas de elementos** e t
 
 ## Imagens responsivas mais fáceis
 
-Crie imagens responsivas especificando `width` e `height`, definindo o layout para `responsive` e indicando com [`srcset`](/pt/docs/guides/responsive/art_direction.html) qual recurso de imagem usar com base em diferentes tamanhos de tela:
+Crie imagens responsivas especificando `width` e `height`, definindo o layout para `responsive` e indicando com [`srcset`](/pt/docs/design/responsive/art_direction.html) qual recurso de imagem usar com base em diferentes tamanhos de tela:
 
 [sourcecode:html]
 <amp-img
@@ -50,12 +50,12 @@ Os valores a seguir podem ser usados no atributo `layout`:
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>nodisplay</code></td>
       <td data-th="Description" class="col-twenty">Não</td>
-      <td data-th="Behavior"> O elemento não é exibido. Esse layout pode ser aplicado a todos os elementos da AMP. O componente não ocupa espaço na tela, pois não tem estilo de exibição. Presume-se que o elemento pode exibir a si mesmo por uma ação do usuário, como<a href="/docs/reference/extended/amp-lightbox.html"><code> amp-lightbox</code></a>.</td>
+      <td data-th="Behavior"> O elemento não é exibido. Esse layout pode ser aplicado a todos os elementos da AMP. O componente não ocupa espaço na tela, pois não tem estilo de exibição. Presume-se que o elemento pode exibir a si mesmo por uma ação do usuário, como<a href="/docs/reference/amp-lightbox.html"><code> amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed</code></td>
       <td data-th="Description" class="col-twenty">Sim</td>
-      <td data-th="Behavior"> O elemento tem uma largura e uma altura sem responsividade compatível. As únicas exceções são os elementos<a href="/docs/reference/amp-pixel.html"><code> amp-pixel</code></a>  e<a href="/docs/reference/extended/amp-audio.html"><code> amp-audio</code></a>.</td>
+      <td data-th="Behavior"> O elemento tem uma largura e uma altura sem responsividade compatível. As únicas exceções são os elementos<a href="/docs/reference/amp-pixel.html"><code> amp-pixel</code></a>  e<a href="/docs/reference/amp-audio.html"><code> amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>responsive</code></td>
@@ -65,7 +65,7 @@ Os valores a seguir podem ser usados no atributo `layout`:
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed-height</code></td>
       <td data-th="Description" class="col-twenty">Somente altura</td>
-      <td data-th="Behavior"> O elemento ocupa o espaço disponível, mas mantém a altura inalterada. Esse layout funciona bem para elementos como<a href="/docs/reference/extended/amp-carousel.html"><code> amp-carousel</code></a>  ,que envolve conteúdo posicionado horizontalmente. Se o atributo <code> width</code>  estiver presente, precisa ser igual a<code> auto</code>.</td>
+      <td data-th="Behavior"> O elemento ocupa o espaço disponível, mas mantém a altura inalterada. Esse layout funciona bem para elementos como<a href="/docs/reference/amp-carousel.html"><code> amp-carousel</code></a>  ,que envolve conteúdo posicionado horizontalmente. Se o atributo <code> width</code>  estiver presente, precisa ser igual a<code> auto</code>.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fill</code></td>
@@ -90,7 +90,7 @@ Os valores a seguir podem ser usados no atributo `layout`:
 Em alguns casos, se `width` ou `height` não forem especificados, o tempo de execução da AMP pode usar o padrão desses valores, como mostrado a seguir:
 
 * [`amp-pixel`](/pt/docs/reference/amp-pixel.html): a largura e a altura estão definidas como o padrão de 0.
-* [`amp-audio`](/pt/docs/reference/extended/amp-audio.html): a largura e a altura padrão são inferidas do navegador.
+* [`amp-audio`](/pt/docs/reference/amp-audio.html): a largura e a altura padrão são inferidas do navegador.
 
 ###  O que acontece se o atributo <code>layout</code> não estiver especificado?
 

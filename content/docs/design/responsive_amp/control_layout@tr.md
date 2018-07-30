@@ -24,12 +24,12 @@ Düzen özniteliğine ilişkin desteklenen değerlerin tam listesini aşağıda 
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>nodisplay</code></td>
       <td class="col-twenty" data-th="Description">Hayır</td>
-      <td data-th="Behavior">Öğe görüntülenmez. Bu düzen, her AMP öğesine uygulanabilir. Bileşenin görüntüleme stili yoksa ekranda hiç alan kaplamaz. Öğenin kendisini kullanıcı etkileşiminde görüntüleyebileceği varsayılır (ör. <a href="/docs/reference/extended/amp-lightbox.html"><code>amp-lightbox</code></a>).</td>
+      <td data-th="Behavior">Öğe görüntülenmez. Bu düzen, her AMP öğesine uygulanabilir. Bileşenin görüntüleme stili yoksa ekranda hiç alan kaplamaz. Öğenin kendisini kullanıcı etkileşiminde görüntüleyebileceği varsayılır (ör. <a href="/docs/reference/amp-lightbox.html"><code>amp-lightbox</code></a>).</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed</code></td>
       <td class="col-twenty" data-th="Description">Evet</td>
-      <td data-th="Behavior">Öğenin, duyarlılığı desteklemeyen sabit bir genişliği ve yüksekliği vardır. Bunun tek istisnası <a href="/docs/reference/amp-pixel.html"><code>amp-pixel</code></a> ve <a href="/docs/reference/extended/amp-audio.html"><code>amp-audio</code></a> öğeleridir.</td>
+      <td data-th="Behavior">Öğenin, duyarlılığı desteklemeyen sabit bir genişliği ve yüksekliği vardır. Bunun tek istisnası <a href="/docs/reference/amp-pixel.html"><code>amp-pixel</code></a> ve <a href="/docs/reference/amp-audio.html"><code>amp-audio</code></a> öğeleridir.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>responsive</code></td>
@@ -39,7 +39,7 @@ Düzen özniteliğine ilişkin desteklenen değerlerin tam listesini aşağıda 
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Yalnızca yükseklik</td>
-      <td data-th="Behavior">Öğe, kendi kullanımına sunulan alanı kaplar ancak yüksekliğini değiştirmez. Bu düzen, yatay olarak konumlandırılmış içerik barındıran <a href="/docs/reference/extended/amp-carousel.html"><code>amp-carousel</code></a> gibi öğeler için iyi bir şekilde çalışır. <code>width</code> özniteliği mevcut olmamalı veya <code>auto</code> değerine ayarlanmış olmalıdır.</td>
+      <td data-th="Behavior">Öğe, kendi kullanımına sunulan alanı kaplar ancak yüksekliğini değiştirmez. Bu düzen, yatay olarak konumlandırılmış içerik barındıran <a href="/docs/reference/amp-carousel.html"><code>amp-carousel</code></a> gibi öğeler için iyi bir şekilde çalışır. <code>width</code> özniteliği mevcut olmamalı veya <code>auto</code> değerine ayarlanmış olmalıdır.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>
@@ -59,7 +59,7 @@ Düzen özniteliğine ilişkin desteklenen değerlerin tam listesini aşağıda 
 Birkaç örnekte, `width` veya `height` belirtilmemişse AMP çalışma zamanı bunları aşağıdaki gibi varsayılan değerlerine ayarlayabilir:
 
 * [`amp-pixel`](/docs/reference/amp-pixel.html): Genişlik ve yükseklik varsayılan olarak 0 değerine ayarlanır.
-* [`amp-audio`](/docs/reference/extended/amp-audio.html): Varsayılan genişlik ve yükseklik tarayıcıdan belirlenir.
+* [`amp-audio`](/docs/reference/amp-audio.html): Varsayılan genişlik ve yükseklik tarayıcıdan belirlenir.
 
 ### Düzen özniteliği tanımlanmamışsa ne olur?
 

@@ -8,7 +8,7 @@ $title: 레이아웃 및 미디어 쿼리
 
 ## 간편한 반응형 이미지
 
- `width` 및 `height`를 지정하고 레이아웃을 `responsive` 로 설정한 다음 [`srcset`](/ja/docs/guides/responsive/art_direction.html) 를 사용하여 다양한 화면 크기에 따라 사용할 광고 애셋을 지정합니다.
+ `width` 및 `height`를 지정하고 레이아웃을 `responsive` 로 설정한 다음 [`srcset`](/ja/docs/design/responsive/art_direction.html) 를 사용하여 다양한 화면 크기에 따라 사용할 광고 애셋을 지정합니다.
 
 [sourcecode:html]
 <amp-img
@@ -50,12 +50,12 @@ $title: 레이아웃 및 미디어 쿼리
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>nodisplay</code></td>
       <td data-th="Description" class="col-twenty">아니요</td>
-      <td data-th="Behavior"> 요소가 표시되지 않습니다. 이 레이아웃은 모든 AMP 요소에 적용할 수 있습니다. 마치 디스플레이 스타일이 없는 것과 같이 구성요소가 화면의 공간을 전혀 차지하지 않습니다. 사용자 작업에 따라 요소가 표시될 수 있다고 간주됩니다(예:<a href="/ja/docs/reference/extended/amp-lightbox.html"> <code>amp-lightbox</code></a>).</td>
+      <td data-th="Behavior"> 요소가 표시되지 않습니다. 이 레이아웃은 모든 AMP 요소에 적용할 수 있습니다. 마치 디스플레이 스타일이 없는 것과 같이 구성요소가 화면의 공간을 전혀 차지하지 않습니다. 사용자 작업에 따라 요소가 표시될 수 있다고 간주됩니다(예:<a href="/ja/docs/reference/amp-lightbox.html"> <code>amp-lightbox</code></a>).</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed</code></td>
       <td data-th="Description" class="col-twenty">예</td>
-      <td data-th="Behavior"> 요소의 너비와 높이가 고정되어 있으며 반응성이 지원되지 않습니다. 유일한 예외는<a href="/ja/docs/reference/amp-pixel.html"> <code>amp-pixel</code></a>  및<a href="/ja/docs/reference/extended/amp-audio.html"> <code>amp-audio</code></a> 요소입니다.</td>
+      <td data-th="Behavior"> 요소의 너비와 높이가 고정되어 있으며 반응성이 지원되지 않습니다. 유일한 예외는<a href="/ja/docs/reference/amp-pixel.html"> <code>amp-pixel</code></a>  및<a href="/ja/docs/reference/amp-audio.html"> <code>amp-audio</code></a> 요소입니다.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>responsive</code></td>
@@ -65,7 +65,7 @@ $title: 레이아웃 및 미디어 쿼리
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed-height</code></td>
       <td data-th="Description" class="col-twenty">높이만 필요함</td>
-      <td data-th="Behavior"> 요소가 사용 가능한 공간을 차지하나 높이는 변경되지 않은 상태로 유지됩니다. 이 레이아웃은<a href="/ja/docs/reference/extended/amp-carousel.html"> <code>amp-carousel</code></a>  등 가로로 배치된 콘텐츠가 포함된 요소에 적합합니다. The <code>width</code>  속성은 제시되지 않거나 <code>auto</code> 와 같아야 합니다.</td>
+      <td data-th="Behavior"> 요소가 사용 가능한 공간을 차지하나 높이는 변경되지 않은 상태로 유지됩니다. 이 레이아웃은<a href="/ja/docs/reference/amp-carousel.html"> <code>amp-carousel</code></a>  등 가로로 배치된 콘텐츠가 포함된 요소에 적합합니다. The <code>width</code>  속성은 제시되지 않거나 <code>auto</code> 와 같아야 합니다.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fill</code></td>
@@ -90,7 +90,7 @@ $title: 레이아웃 및 미디어 쿼리
 드물지만 `width` 또는 `height` 가 지정되지 않은 경우, AMP 런타임에서 이러한 값의 기본값을 다음과 같이 지정할 수 있습니다.
 
 * [`amp-pixel`](/ja/docs/reference/amp-pixel.html): 너비와 높이의 기본값이 모두 0으로 설정됩니다.
-* [`amp-audio`](/ja/docs/reference/extended/amp-audio.html): 브라우저를 통해 기본 너비와 높이를 추정합니다.
+* [`amp-audio`](/ja/docs/reference/amp-audio.html): 브라우저를 통해 기본 너비와 높이를 추정합니다.
 
 ###  What if the <code>layout</code> 속성이 지정되지 않은 경우 어떻게 하나요?
 
