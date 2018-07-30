@@ -1,6 +1,5 @@
 ---
 $title: Revisão do código inicial
-$order: 1
 ---
 
 Antes de começar a adicionar código, revise a página de exemplo [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html), que terá uma aparência semelhante a esta:
@@ -95,11 +94,11 @@ Antes de começar a adicionar código, revise a página de exemplo [article.amp.
 </html>
 ```
 
-Essa é uma página AMP simples que passa tanto pela [validação da AMP](https://www.ampproject.org/pt_br/docs/guides/validate) quanto pela validação de dados estruturados de [schema.org](http://schema.org/). Se essa página fosse implementada em um site de notícias, os usuários poderiam descobri-la por meio de experiências avançadas nas páginas de resultados do mecanismo de pesquisa. Por exemplo, no carrossel de notícias principais da Pesquisa Google.
+Essa é uma página AMP simples que passa tanto pela [validação da AMP](/pt_br/docs/fundamentals/validate.html) quanto pela validação de dados estruturados de [schema.org](http://schema.org/). Se essa página fosse implementada em um site de notícias, os usuários poderiam descobri-la por meio de experiências avançadas nas páginas de resultados do mecanismo de pesquisa. Por exemplo, no carrossel de notícias principais da Pesquisa Google.
 
 ## Ativar o validador de AMP
 
-Antes de alterar a página, ative o [validador de AMP](https://www.ampproject.org/pt_br/docs/guides/validate.html) para ter certeza de que está trabalhando com um HTML para AMP válido.  **Adicione** este identificador de fragmento ao URL:
+Antes de alterar a página, ative o [validador de AMP](/pt_br/docs/fundamentals/validate.html) para ter certeza de que está trabalhando com um HTML para AMP válido.  **Adicione** este identificador de fragmento ao URL:
 
 ```text
 #development=1
@@ -121,7 +120,7 @@ Abra o [Developers Console](https://developer.chrome.com/devtools/docs/console) 
 - a [interface da Web do validador de AMP](https://validator.ampproject.org/);
 - … e muito mais.
 
-Saiba mais no guia [Validar páginas AMP](https://www.ampproject.org/pt_br/docs/guides/validate).
+Saiba mais no guia [Validar páginas AMP](/pt_br/docs/fundamentals/validate.html).
 {% endcall %}
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulated on a Nexus 5X device') }}
