@@ -1,6 +1,5 @@
 ---
 $title: Adicionar fontes
-$order: 6
 ---
 
 Nas AMP, para carregar documentos com a maior velocidade possível, não inclua folhas de estilo externas. A única exceção a essa regra são as **fontes**.  
@@ -18,7 +17,7 @@ Neste tutorial, usaremos uma tag `<link>` para incluir fontes na página. **Adic
 
 Agora **atualize** o seletor CSS `body` para incluir uma referência à Raleway:
 
-```csss
+```css
 body {
   width: auto;
   margin: 0;
