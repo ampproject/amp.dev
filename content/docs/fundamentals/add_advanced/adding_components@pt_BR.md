@@ -1,24 +1,22 @@
 ---
 $title: Adicionar componentes estendidos de AMP
-$order: 2
-toc: true
 ---
 
 [TOC]
 
 Com o sistema de componentes AMP, é fácil e rápido criar recursos eficientes e responsivos nos seus artigos. A biblioteca de HTML para AMP tem três classificações de componentes AMP:
 
-- **Incorporados**: são os componentes incluídos na biblioteca JavaScript para AMP de base (especificados na tag `<head>`), como [amp-img](pt_br/docs/reference/components/amp-img.html) e [amp-pixel](pt_br/docs/reference/components/amp-pixel.html).  Esses componentes podem ser usados imediatamente em documentos AMP.
+- **Incorporados**: são os componentes incluídos na biblioteca JavaScript para AMP de base (especificados na tag `<head>`), como [amp-img](/pt_br/docs/reference/components/amp-img.html) e [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html).  Esses componentes podem ser usados imediatamente em documentos AMP.
 
 - **Estendidos**: são as extensões da biblioteca de base que precisam ser incluídas explicitamente no documento como elementos personalizados.  Os elementos personalizados exigem a inclusão de scripts específicos na seção `<head>`, por exemplo, `<script async custom-element="amp-video" ...`).
 
-- **Experimentais**: são componentes que foram lançados, mas não estão prontos para uso geral. Os desenvolvedores podem optar por usar esses recursos antes que eles estejam totalmente disponíveis para o público.  Saiba mais em [Recursos experimentais](pt_br/docs/reference/experimental.html).
+- **Experimentais**: são componentes que foram lançados, mas não estão prontos para uso geral. Os desenvolvedores podem optar por usar esses recursos antes que eles estejam totalmente disponíveis para o público.  Saiba mais em [Recursos experimentais](/pt_br/docs/reference/experimental.html).
 
-Nosso exemplo já usa um componente incorporado, [amp-img](pt_br/docs/reference/components/amp-img.html), e mostramos como esse componente se relaciona com o sistema de layout AMP neste tutorial de [conversão de HTML para AMP](pt_br/docs/tutorials/converting.html).  Agora, adicione alguns componentes AMP **estendidos** de uso comum ao artigo de notícias.
+Nosso exemplo já usa um componente incorporado, [amp-img](/pt_br/docs/reference/components/amp-img.html), e mostramos como esse componente se relaciona com o sistema de layout AMP neste tutorial de [conversão de HTML para AMP](/pt_br/docs/fundamentals/converting.html).  Agora, adicione alguns componentes AMP **estendidos** de uso comum ao artigo de notícias.
 
 ## Gerar receita com anúncios
 
-Nas AMP, os anúncios são elaborados por meio do componente [amp-ad](pt_br/docs/reference/components/amp-ad.html). O componente `amp-ad` permite definir várias configurações dos anúncios, como a largura, a altura e o modo de layout. No entanto, várias plataformas de anúncios exigem configurações adicionais, como o ID da conta da rede de publicidade, o anúncio veiculado ou opções de segmentação da publicidade. Use atributos HTML para definir essas opções com facilidade no componente `amp-ad`.
+Nas AMP, os anúncios são elaborados por meio do componente [amp-ad](/pt_br/docs/reference/components/amp-ad.html). O componente `amp-ad` permite definir várias configurações dos anúncios, como a largura, a altura e o modo de layout. No entanto, várias plataformas de anúncios exigem configurações adicionais, como o ID da conta da rede de publicidade, o anúncio veiculado ou opções de segmentação da publicidade. Use atributos HTML para definir essas opções com facilidade no componente `amp-ad`.
 
 Veja este exemplo de um anúncio da **DoubleClick**:
 
@@ -79,11 +77,11 @@ Os dois `amp-ad` a seguir são um exemplo da compatibilidade flexível do compon
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Anúncios de teste') }}
 
 {% call callout('Observação', type='note') %}
-Dentro dessas tags amp-ad existem tags `div` adicionais com um atributo chamado `fallback`. Você sabe o que o atributo `fallback` indica? Ele informa ao sistema de carregamento AMP que somente os conteúdos desse elemento são mostrados quando o elemento principal não é carregado. Saiba mais em [Marcadores e substitutos](pt_br/docs/guides/responsive/placeholders.html).
+Dentro dessas tags amp-ad existem tags `div` adicionais com um atributo chamado `fallback`. Você sabe o que o atributo `fallback` indica? Ele informa ao sistema de carregamento AMP que somente os conteúdos desse elemento são mostrados quando o elemento principal não é carregado. Saiba mais em [Marcadores e substitutos](/pt_br/docs/design/responsive/placeholders.html).
 {% endcall %}
 
 {% call callout('Leia mais', type='read') %}
-Para ver as redes de publicidade compatíveis mais recentes, leia a documentação de referência do componente [amp-ad](pt_br/docs/reference/components/amp-ad.html#supported-ad-networks).
+Para ver as redes de publicidade compatíveis mais recentes, leia a documentação de referência do componente [amp-ad](/pt_br/docs/reference/components/amp-ad.html#supported-ad-networks).
 {% endcall %}
 
 {% call callout('Observação', type='note') %}
@@ -135,14 +133,14 @@ Se o console de desenvolvimento ainda estiver aberto e o URL tiver `#development
 
 Assim como os outros elementos da página, os elementos `width` e `height` do vídeo foram especificados para que o sistema de layout AMP possa calcular a proporção. Além disso, o `layout` foi definido como `responsive`, para que o vídeo preencha a largura do respectivo elemento principal.
 
-Para saber mais sobre a incorporação de vídeos do YouTube, leia a documentação do componente [amp-youtube](pt_br/docs/reference/components/amp-youtube.html). Para ver ainda mais componentes de vídeo e mídia, consulte a [lista de componentes AMP de mídia](pt_br/docs/reference/components.html#media).
+Para saber mais sobre a incorporação de vídeos do YouTube, leia a documentação do componente [amp-youtube](/pt_br/docs/reference/components/amp-youtube.html). Para ver ainda mais componentes de vídeo e mídia, consulte a [lista de componentes AMP de mídia](/pt_br/docs/reference/components.html#media).
 
 {% call callout('Dica', type='success') %}
-Use o atributo [`fallback`](pt_br/docs/guides/responsive/placeholders.html#fallbacks) para informar os usuários caso haja uma falha no carregamento do componente ou ele não seja compatível com o navegador.
+Use o atributo [`fallback`](/pt_br/docs/design/responsive/placeholders.html#fallbacks) para informar os usuários caso haja uma falha no carregamento do componente ou ele não seja compatível com o navegador.
 {% endcall %}
 
 ## Mostrar um tweet
-Incorporar tweets pré-formatados do Twitter é um recurso comum em artigos de notícias. O componente [amp-twitter](pt_br/docs/reference/components/amp-twitter.html) é uma maneira fácil de incluir esse conteúdo.
+Incorporar tweets pré-formatados do Twitter é um recurso comum em artigos de notícias. O componente [amp-twitter](/pt_br/docs/reference/components/amp-twitter.html) é uma maneira fácil de incluir esse conteúdo.
 
 Para começar, adicione a solicitação JavaScript a seguir à tag `<head>` do documento:
 
@@ -167,10 +165,10 @@ O atributo `data-tweetid` é outro exemplo de atributo do cliente exigido por um
 
 {{ image('/static/img/docs/tutorials/tut-advanced-twitter.png', 412, 613, align='center half', caption='Tweet incorporado') }}
 
-Para saber mais sobre como incorporar tweets do Twitter, leia a documentação do componente [amp-twitter](pt_br/docs/reference/components/amp-twitter.html).
+Para saber mais sobre como incorporar tweets do Twitter, leia a documentação do componente [amp-twitter](/pt_br/docs/reference/components/amp-twitter.html).
 
 {% call callout('Dica', type='success') %}
-A AMP oferece ainda mais componentes para incorporar conteúdo de redes sociais. Confira os [componentes AMP de redes sociais mais recentes](pt_br/docs/reference/components.html#social).
+A AMP oferece ainda mais componentes para incorporar conteúdo de redes sociais. Confira os [componentes AMP de redes sociais mais recentes](/pt_br/docs/reference/components.html#social).
 {% endcall %}
 
 ## Destacar uma citação do artigo
@@ -179,7 +177,7 @@ Um recurso comum em artigos de notícias é destacar os trechos de texto mais in
 
 No entanto, nem todos os snippets de texto têm necessariamente o mesmo comprimento em termos de caracteres. Por isso, pode ser mais difícil equilibrar um tamanho de fonte maior com a quantidade de espaço que o texto preenche na página.
 
-As AMP fornecem outro componente especificamente projetado para esse tipo de situação, chamado [amp-fit-text](pt_br/docs/reference/components/amp-fit-text.html). O componente `amp-fit-text` permite definir um elemento de largura e altura fixas, bem como um tamanho máximo de fonte. De maneira inteligente, o componente dimensiona o tamanho da fonte para **ajustar** o texto à largura e à altura disponíveis.
+As AMP fornecem outro componente especificamente projetado para esse tipo de situação, chamado [amp-fit-text](/pt_br/docs/reference/components/amp-fit-text.html). O componente `amp-fit-text` permite definir um elemento de largura e altura fixas, bem como um tamanho máximo de fonte. De maneira inteligente, o componente dimensiona o tamanho da fonte para **ajustar** o texto à largura e à altura disponíveis.
 
 Vamos testar. Primeiro, **adicione** a biblioteca do componente à tag `<head>`:
 
@@ -219,6 +217,6 @@ Saiba mais sobre o `amp-fit-text` com a [demonstração ao vivo da AMP](https://
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="/pt_br/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/pt_br/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">Próxima</span></a>
 </div>
