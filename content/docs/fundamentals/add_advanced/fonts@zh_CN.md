@@ -1,6 +1,5 @@
 ---
 $title: 添加字体
-$order: 6
 ---
 
 在 AMP 网页中，为尽可能缩短文档的加载用时，您不能添加外部样式表。但是，这条规则有一个例外情况&mdash;**字体**。
@@ -18,7 +17,7 @@ $order: 6
 
 现在，**更新**您的 CSS `body` 选择器，以添加对 Raleway 的引用：
 
-```csss
+```css
 body {
   width: auto;
   margin: 0;
