@@ -1,6 +1,5 @@
 ---
 $title: Menambahkan font
-$order: 6
 ---
 
 Di AMP, agar kecepatan waktu pemuatan dokumen tetap maksimal, Anda tidak dapat menyertakan stylesheet eksternal. Namun, ada 1 pengecualian untuk aturan ini&mdash;**font**.  
@@ -18,7 +17,7 @@ Dalam tutorial ini, kami akan menggunakan tag `<link>` untuk menambahkan font ke
 
 Sekarang, **perbarui** pemilih `body` CSS Anda untuk menyertakan referensi ke Raleway:
 
-```csss
+```css
 body {
   width: auto;
   margin: 0;
@@ -41,6 +40,6 @@ Anda telah menyelesaikan artikel berita AMP! AMP akan terlihat seperti ini:
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/docs/fundamentals/add_advanced/congratulations.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="/id/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/fundamentals/add_advanced/congratulations.html"><span class="arrow-next">Berikutnya</span></a>
 </div>
