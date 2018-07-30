@@ -1,0 +1,22 @@
+grow_version: ">=0.0.66"
+
+home: /content/pages/index.html
+
+static_dirs:
+- static_dir: /assets/
+  serve_at: /static/
+
+error_routes:
+  default: /views/errors/default.html
+
+localization:
+  default_locale: en
+  locales:
+    - de_DE
+
+preprocessors:
+- kind: gulp
+
+deployments:
+  default: local
+  out_dir: fontend/

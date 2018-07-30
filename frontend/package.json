@@ -1,0 +1,33 @@
+{
+  "name": "amp-dev-frontend",
+  "version": "1.0.0",
+  "description": "Frontend package for the relaunch of ampproject.org",
+  "main": "gulpfile.babel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jungvonmatt/amp.dev.git"
+  },
+  "keywords": [
+    "amphtml",
+    "ampproject"
+  ],
+  "author": "The AMP HTML Authors",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jungvonmatt/amp.dev/issues"
+  },
+  "homepage": "https://github.com/jungvonmatt/amp.dev#readme",
+  "devDependencies": {
+    "babel-plugin-root-import": "^6.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "babelify": "^8.0.0",
+    "gulp": "^4.0.0",
+    "gulp-multi-dest": "^1.3.7",
+    "gulp-sass": "^4.0.1"
+  }
+}
