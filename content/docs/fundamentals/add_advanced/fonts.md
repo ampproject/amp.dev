@@ -18,7 +18,7 @@ In this tutorial, we'll use a `<link>` tag to add fonts to our page. **Add** a s
 
 Now, **update** your CSS `body` selector to include a reference to Raleway:
 
-```csss
+```css
 body {
   width: auto;
   margin: 0;
