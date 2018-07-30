@@ -1,20 +1,8 @@
 nextstop:
-  title: Los Angeles
-  link: https://events.withgoogle.com/amp-roadshow-in-los-angeles/
+  title: Cambridge
+  link: https://events.withgoogle.com/amp-roadshow-in-cambridge/
 
 cities:
-  - title: Los Angeles
-    date: 2018-06-06
-    link: https://events.withgoogle.com/amp-roadshow-in-los-angeles/
-  - title: Seattle
-    date: 2018-06-12
-    link: https://events.withgoogle.com/amp-roadshow-in-seattle/
-  - title: Austin
-    date: 2018-07-11
-    link: https://events.withgoogle.com/amp-roadshow-in-austin/
-  - title: New York
-    date: 2018-07-24
-    link: https://events.withgoogle.com/amp-roadshow-in-new-york/
   - title: Cambridge
     date: 2018-08-07
     link: https://events.withgoogle.com/amp-roadshow-in-cambridge/
