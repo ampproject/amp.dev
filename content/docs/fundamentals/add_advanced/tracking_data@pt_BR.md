@@ -1,6 +1,5 @@
 ---
 $title: Acompanhar o engajamento com análises
-$order: 4
 ---
 
 Em geral, as plataformas de análise são integradas aos sites por meio de snippets de JavaScript in-line e chamadas de função, que acionam eventos retornados ao sistema de análise. A tecnologia AMP oferece uma sintaxe de configuração JSON flexível para reproduzir esse processo em diversos parceiros de análise.
