@@ -48,7 +48,7 @@ core:
         <p>Une autre version du système de validation est intégrée à chaque page AMP. Cette version peut consigner les erreurs de validation directement dans la console du navigateur lors du rendu de la page
         pour vous permettre de connaître l'impact des changements de code
         complexes sur la performance et l'expérience utilisateur.
-        <p>En savoir plus sur le [test des pages AMP HTML](/fr/docs/guides/debug/validate.html).
+        <p>En savoir plus sur le [test des pages AMP HTML](/fr/docs/fundamentals/validate.html).
 
 video:
   id: FUXGfjII5iA

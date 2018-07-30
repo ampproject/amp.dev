@@ -5,7 +5,7 @@ $title: 시작하기
 
 이 문서는 AMP를 시작하기 위한 퀵 스타트 가이드입니다.
 
-더 자세한 설명은 [첫번째 AMP 페이지 만들기](/ko/docs/tutorials/create.html)
+더 자세한 설명은 [첫번째 AMP 페이지 만들기](/ko/docs/fundamentals/create.html)
 튜토리얼을 살펴보시길 바랍니다.
 
 ### 1단계: AMP HTML 템플릿 가져오기
@@ -30,7 +30,7 @@ $title: 시작하기
 ```
 
 {% call callout('읽어보기', type='read') %}
-AMP 페이지를 위한 [필수 마크업](/ko/docs/reference/spec.html#required-markup)에 대해서 살펴보세요.
+AMP 페이지를 위한 [필수 마크업](/ko/docs/fundamentals/spec.html#required-markup)에 대해서 살펴보세요.
 {% endcall %}
 
 ### 2단계: 페이지에 컴포넌트 추가하기
@@ -76,7 +76,7 @@ AMP 페이지의 요소를 스타일하기 위해, 문서의 `<head>` 요소 내
 ```
 
 {% call callout('읽어보기', type='read') %}
-AMP 페이지에서 [지원하는 CSS](/ko/docs/guides/responsive/style_pages.html)에 대해 살펴보세요.
+AMP 페이지에서 [지원하는 CSS](/ko/docs/design/responsive/style_pages.html)에 대해 살펴보세요.
 {% endcall %}
 
 ### 4단계: AMP HTML 검증하기
@@ -94,7 +94,7 @@ AMP 페이지의 기본을 더 깊이 살펴보고 싶다면, [첫번째 AMP 페
 
 도움이 될 리소스 목록은 다음을 참조하세요.
 
-* [페이지를 더 발견할 수 있게 만들기](/ko/docs/guides/discovery.html)
-* [Analytics 구성](/ko/docs/guides/analytics_amp.html)
-* [사용자 참여 향상하기](/ko/docs/guides/engagement.html)
+* [페이지를 더 발견할 수 있게 만들기](/ko/docs/fundamentals/discovery.html)
+* [Analytics 구성](/ko/docs/analytics/analytics_amp.html)
+* [사용자 참여 향상하기](/ko/docs/fundamentals/engagement.html)
 * [AMP BY Example](https://ampbyexample.com/)에서 라이브 데모를 볼 수 있습니다.

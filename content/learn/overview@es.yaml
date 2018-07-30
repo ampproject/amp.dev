@@ -16,7 +16,7 @@
         crean patrones comunes que pueden implementarse con buen rendimiento en forma sencilla.
         <p>Por ejemplo, la etiqueta [`amp-img`](/es/docs/reference/components/amp-img) 
         proporciona soporte completo de `srcset`, incluso en navegadores que todavía no lo admiten.          Obtén más información acerca de cómo [crear tu primera página AMP HTML](/es/docs/tutorials/create).
-        <p>Para detectar las páginas AMP, los motores de búsqueda y otras  plataformas utilizan la           etiqueta HTML `<link rel="">`. Puedes optar por tener solo una versión AMP de tu página web,         o bien dos versiones: una AMP y otra que no lo sea. Descubre [cómo hacer que una página sea visible](/es/docs/guides/discovery.html).
+        <p>Para detectar las páginas AMP, los motores de búsqueda y otras  plataformas utilizan la           etiqueta HTML `<link rel="">`. Puedes optar por tener solo una versión AMP de tu página web,         o bien dos versiones: una AMP y otra que no lo sea. Descubre [cómo hacer que una página sea visible](/es/docs/fundamentals/discovery.html).
 
     - title: AMP JS
       subtitle: |
@@ -28,7 +28,7 @@
         garantizar la representación rápida de tu página.
         <p>Una de las optimizaciones más importantes es que transforma en asincrónico todo lo que proviene de recursos externos, de modo que ningún elemento de la página pueda bloquear la representación.
         <p>Entre otras técnicas de rendimiento se incluyen la disposición de todos los iframes en espacios seguros, el cálculo previo del diseño de cada elemento de la página antes de que se carguen los recursos y la desactivación de selectores de CSS lentos.
-        <p>Para obtener más información acerca de las [optimizaciones](/es/learn/about-how/) y las limitaciones, [lee la especificación de AMP HTML](/es/docs/reference/spec.html).
+        <p>Para obtener más información acerca de las [optimizaciones](/es/learn/about-how/) y las limitaciones, [lee la especificación de AMP HTML](/es/docs/fundamentals/spec.html).
 
     - title: AMP Cache
       subtitle: |
@@ -49,7 +49,7 @@
         <p>Cada página AMP viene con otra versión del validador integrada. Esta versión puede registrar errores de validación directamente en la consola del navegador cuando se representa la página,
         lo que te permite ver cómo los cambios complejos en tu código
         podrían afectar el rendimiento y la experiencia del usuario.
-        <p>Obtén más información acerca de [cómo probar tus páginas AMP HTML](/es/docs/guides/debug/validate).
+        <p>Obtén más información acerca de [cómo probar tus páginas AMP HTML](/es/docs/fundamentals/validate.html).
 
 video:
   id: 5M8RCFZIiCE
