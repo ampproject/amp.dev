@@ -1,7 +1,5 @@
 ---
 $title: 사이트 탐색 
-$order: 5
-toc: true
 ---
 
 [TOC]
