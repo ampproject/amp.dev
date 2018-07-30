@@ -17,7 +17,7 @@ En este tutorial, usaremos una etiqueta `<link>` para añadir fuentes a nuestra 
 
 Ahora, **actualice** su CSS para incluir la referencia a Raleway:
 
-```csss
+```css
 body {
   width: auto;
   margin: 0;
