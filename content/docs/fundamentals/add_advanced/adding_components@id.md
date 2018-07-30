@@ -12,7 +12,7 @@ Sistem komponen AMP memungkinkan Anda membuat fitur yang efisien dan responsif k
 
 - **eksperimental**: Ini adalah komponen yang dirilis, namun belum siap untuk digunakan secara luas. Developer dapat memilih untuk menggunakan fitur ini sebelum dirilis sepenuhnya.  Pelajari lebih lanjut di [Fitur eksperimental](/id/docs/reference/experimental.html).
 
-Sampel kami sudah menggunakan komponen bawaan, [amp-img](/id/docs/reference/components/amp-img.html), dan kami telah mempelajari hubungan antara komponen tersebut dengan sistem tata letak AMP dalam tutorial ["Mengonversi HTML menjadi AMP"](/id/docs/tutorials/converting.html).  Sekarang, mari tambahkan beberapa komponen AMP **diperpanjang** yang umum digunakan di artikel berita.
+Sampel kami sudah menggunakan komponen bawaan, [amp-img](/id/docs/reference/components/amp-img.html), dan kami telah mempelajari hubungan antara komponen tersebut dengan sistem tata letak AMP dalam tutorial ["Mengonversi HTML menjadi AMP"](/id/docs/fundamentals/converting.html).  Sekarang, mari tambahkan beberapa komponen AMP **diperpanjang** yang umum digunakan di artikel berita.
 
 ## Monetisasi dengan iklan
 
