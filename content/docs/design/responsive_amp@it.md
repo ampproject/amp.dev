@@ -10,7 +10,7 @@ $title: Creare pagine AMP reattive
 
 Tutte le risorse caricate esternamente, incluse le immagini, devono avere posizione e dimensioni specifiche in modo che, quando vengono caricate, la pagina non salti e non si adatti dinamicamente.
 
-Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il layout reattivo e utilizza [`srcset`](/it/docs/guides/responsive/style_pages.html) per indicare quale asset di immagine utilizzare in base alle dimensioni dello schermo:
+Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il layout reattivo e utilizza [`srcset`](/it/docs/design/responsive/style_pages.html) per indicare quale asset di immagine utilizzare in base alle dimensioni dello schermo:
 
 [sourcecode:html]
 <amp-img
@@ -78,7 +78,7 @@ Definisci gli stili dei componenti con i selettori di classe o di elemento utili
 </body>
 [/sourcecode]
 
-**Importante.** Verifica che gli stili siano supportati nel formato AMP perché alcuni non sono supportati per motivi di rendimento (leggi anche la pagina [Stili CSS supportati](/it/docs/guides/responsive/style_pages.html)).
+**Importante.** Verifica che gli stili siano supportati nel formato AMP perché alcuni non sono supportati per motivi di rendimento (leggi anche la pagina [Stili CSS supportati](/it/docs/design/responsive/style_pages.html)).
 
 ## Specificare le dimensioni e la posizione degli elementi
 
@@ -90,7 +90,7 @@ Questi attributi connotano le proporzioni dell'elemento, che potrà ridimensiona
 Imposta il layout reattivo.
 In questo modo l'elemento si adatta alla larghezza del relativo elemento contenitore, mentre la sua altezza viene ridimensionata automaticamente in base alle proporzioni stabilite dagli attributi di larghezza e altezza.
 
-Leggi ulteriori informazioni sui [layout supportati in AMP](/it/docs/guides/responsive/control_layout.html).
+Leggi ulteriori informazioni sui [layout supportati in AMP](/it/docs/design/responsive/control_layout.html).
 
 ## Convalidare stili e layout
 
@@ -103,4 +103,4 @@ Esempio di errore nella console relativo a una pagina i cui elementi CSS superan
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Leggi ulteriori informazioni su come [convalidare le tue pagine AMP](/it/docs/guides/debug/validate.html), incluse informazioni su come trovare gli errori di stile e risolverli.
+Leggi ulteriori informazioni su come [convalidare le tue pagine AMP](/it/docs/fundamentals/validate.html), incluse informazioni su come trovare gli errori di stile e risolverli.

@@ -116,7 +116,7 @@ AMP memecahkan masalah ini dengan sesuatu yang disebut [penulisan ulang URL shel
 Ketika semua atribut ini diterapkan, semua klik berikutnya di AMP akan mengarah ke PWA Anda, terlepas dari Service Worker apa pun.
 
 {% call callout('Baca lebih lanjut', type='read') %}
-Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/guides/pwa-amp/amp-in-pwa).
+Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/integration/pwa-amp/amp-in-pwa).
 {% endcall %}
  
  

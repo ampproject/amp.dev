@@ -111,7 +111,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 Com essa técnica, você poderá alterar sua página AMP com várias
-funcionalidades adicionais que não passariam na [validação de AMP](/pt_br/docs/guides/validate.html) se fossem usadas de outra forma. Por exemplo:
+funcionalidades adicionais que não passariam na [validação de AMP](/pt_br/docs/fundamentals/validate.html) se fossem usadas de outra forma. Por exemplo:
 
 * recursos dinâmicos que exigem JS personalizado
 * componentes personalizados/relevantes apenas para seu site

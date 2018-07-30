@@ -29,6 +29,6 @@ Sadece tek bir sayfanız var ve bu sayfa bir AMP sayfasıysa, yine de standart b
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/tr/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Önceki</span></a>
-  <a class="button next-button" href="/tr/docs/tutorials/create/publish.html"><span class="arrow-next">Sonraki</span></a>
+  <a class="button prev-button" href="/tr/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">Önceki</span></a>
+  <a class="button next-button" href="/tr/docs/getting_started/create/publish.html"><span class="arrow-next">Sonraki</span></a>
 </div>

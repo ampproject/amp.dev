@@ -31,6 +31,6 @@ Aprende todo acerca de cómo AMP representa y diseña una página y cómo puedes
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/create/include_image.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="/es/docs/getting_started/create/include_image.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/getting_started/create/preview_and_validate.html"><span class="arrow-next">Siguiente</span></a>
 </div>

@@ -29,6 +29,6 @@ $title: Подготовка страницы к обнаружению и ра�
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ru/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Предыдущий</span></a>
-  <a class="button next-button" href="/ru/docs/tutorials/create/publish.html"><span class="arrow-next">Следующий</span></a>
+  <a class="button prev-button" href="/ru/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">Предыдущий</span></a>
+  <a class="button next-button" href="/ru/docs/getting_started/create/publish.html"><span class="arrow-next">Следующий</span></a>
 </div>

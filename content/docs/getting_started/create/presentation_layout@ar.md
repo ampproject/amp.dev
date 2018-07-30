@@ -19,15 +19,15 @@ $title: تعديل المظهر والتنسيق
 </style>
 [/sourcecode]
 
-يمكن لكل صفحة AMP أن تحتوي فقط على ورقة أنماط واحدة مضمّنة، وهناك محدّدات معينة ليس مسموح لك باستخدامها. [تعرّف على كل المعلومات بخصوص التحكم في الأنماط](/ar/docs/guides/responsive/style_pages.html).
+يمكن لكل صفحة AMP أن تحتوي فقط على ورقة أنماط واحدة مضمّنة، وهناك محدّدات معينة ليس مسموح لك باستخدامها. [تعرّف على كل المعلومات بخصوص التحكم في الأنماط](/ar/docs/design/responsive/style_pages.html).
 
 ## التحكم في التنسيق
 
 تتبع AMP قواعد أكثر صرامة عند تنسيق العناصر في الصفحة. في صفحة HTML عادية، أنت تقريبًا تستخدم CSS حصريًا لتنسيق العناصر. لكن لأسباب تتعلق بالأداء، يتطلب AMP أن تتميز كل العناصر بحجم واضح محدّد منذ البداية.
 
-تعرّف على كيفية عرض AMP للصفحة وتنسيقها وكيف يمكنك تعديل التنسيق في [كيفية التحكم في التنسيق](/ar/docs/guides/responsive/control_layout.html).
+تعرّف على كيفية عرض AMP للصفحة وتنسيقها وكيف يمكنك تعديل التنسيق في [كيفية التحكم في التنسيق](/ar/docs/design/responsive/control_layout.html).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ar/docs/tutorials/create/include_image.html"><span class="arrow-prev">سابق</span></a>
-  <a class="button next-button" href="/ar/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">التالى</span></a>
+  <a class="button prev-button" href="/ar/docs/getting_started/create/include_image.html"><span class="arrow-prev">سابق</span></a>
+  <a class="button next-button" href="/ar/docs/getting_started/create/preview_and_validate.html"><span class="arrow-next">التالى</span></a>
 </div>
