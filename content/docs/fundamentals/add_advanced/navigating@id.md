@@ -1,7 +1,5 @@
 ---
 $title: Bernavigasi di situs Anda 
-$order: 5
-toc: true
 ---
 
 [TOC]
