@@ -1,7 +1,5 @@
 ---
 $title: 확장 AMP 구성요소 추가
-$order: 2
-toc: true
 ---
 
 [TOC]
@@ -14,7 +12,7 @@ AMP의 구성요소 시스템을 이용하면 최소한의 노력으로 기사�
 
 - **실험용**: 이미 출시되었지만 아직 폭넓게 사용할 수 없는 구성요소입니다. 개발자는 실험용 구성요소가 완전히 출시되기 전에 이러한 기능을 사용할 수 있습니다.  [실험 기능](/ko/docs/reference/experimental.html)에서 자세히 알아보세요.
 
-Google의 샘플에서는 이미 기본 제공 구성요소인 [amp-img](/ko/docs/reference/components/amp-img.html)를 사용하고 있으며 ['HTML을 AMP로 변환하기'](/ko/docs/tutorials/converting.html) 가이드에서는 이 구성요소가 AMP 레이아웃 시스템과 어떤 관련이 있는지 살펴보았습니다.  이제 자주 사용되는 **확장** AMP 구성요소를 뉴스 기사에 추가해 보겠습니다.
+Google의 샘플에서는 이미 기본 제공 구성요소인 [amp-img](/ko/docs/reference/components/amp-img.html)를 사용하고 있으며 ['HTML을 AMP로 변환하기'](/ko/docs/fundamentals/converting.html) 가이드에서는 이 구성요소가 AMP 레이아웃 시스템과 어떤 관련이 있는지 살펴보았습니다.  이제 자주 사용되는 **확장** AMP 구성요소를 뉴스 기사에 추가해 보겠습니다.
 
 ## 광고로 수익 창출하기
 
@@ -79,7 +77,7 @@ AMP 광고는 [amp-ad](/ko/docs/reference/components/amp-ad.html) 구성요소�
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
 {% call callout('참고', type='note') %}
-이 amp-ad 태그 내에 `fallback`이라는 속성이 있는 `div` 태그가 추가되었음을 알 수 있습니다. `fallback` 속성이 무엇을 의미하는지 짐작할 수 있으신가요? 이 속성에서는 상위 요소가 로드되지 않았을 때 이 속성의 콘텐츠만 표시하도록 AMP의 로딩 시스템에 알려줍니다. [자리표시자 및 대체 동작](/ko/docs/guides/responsive/placeholders.html)에서 자세히 알아보세요.
+이 amp-ad 태그 내에 `fallback`이라는 속성이 있는 `div` 태그가 추가되었음을 알 수 있습니다. `fallback` 속성이 무엇을 의미하는지 짐작할 수 있으신가요? 이 속성에서는 상위 요소가 로드되지 않았을 때 이 속성의 콘텐츠만 표시하도록 AMP의 로딩 시스템에 알려줍니다. [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html)에서 자세히 알아보세요.
 {% endcall %}
 
 {% call callout('읽어보기', type='read') %}
@@ -138,7 +136,7 @@ AMP 광고는 [amp-ad](/ko/docs/reference/components/amp-ad.html) 구성요소�
 YouTube 동영상 삽입에 관해 자세히 알아보려면 [amp-youtube](/ko/docs/reference/components/amp-youtube.html) 구성요소 문서를 읽어보세요. 더 많은 동영상 및 미디어 구성요소는 [미디어 AMP 구성요소 목록](/ko/docs/reference/components.html#media)에서 확인하세요.
 
 {% call callout('팁', type='success') %}
-구성요소가 로드되지 않거나 브라우저에서 구성요소가 지원되지 않으면 [`fallback`](/ko/docs/guides/responsive/placeholders.html#fallbacks) 속성을 사용하여 사용자에게 알리세요.
+구성요소가 로드되지 않거나 브라우저에서 구성요소가 지원되지 않으면 [`fallback`](/ko/docs/design/responsive/placeholders.html#fallbacks) 속성을 사용하여 사용자에게 알리세요.
 {% endcall %}
 
 ## 트윗 표시하기
