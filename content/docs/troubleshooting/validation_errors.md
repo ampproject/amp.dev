@@ -23,7 +23,7 @@ limitations under the License.
 Valid AMP documents must not include any validation errors.
 The purpose of this document is to help you better understand
 and fix any validation errors you encounter
-when you [validate your AMP pages](/docs/guides/validate.html).
+when you [validate your AMP pages](/docs/fundamentals/validate.html).
 For a complete overview of the validation errors,
 see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -643,8 +643,8 @@ The full list of unique tags is known:
 
 Before diving into style and layout errors,
 it's worth understanding how
-[styling](/docs/guides/responsive/style_pages.html) and
-[layout](/docs/guides/responsive/control_layout.html) work in AMP.
+[styling](/docs/design/responsive/style_pages.html) and
+[layout](/docs/design/responsive/control_layout.html) work in AMP.
 Since AMP pages are HTML pages, styling is very much the same as any HTML page.
 But there are some restrictions to ensure pages load fast,
 and the AMP validator enforces these restrictions.
@@ -758,7 +758,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
-see [How to Control Layout](/docs/guides/responsive/control_layout.html) and
+see [How to Control Layout](/docs/design/responsive/control_layout.html) and
 the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 **Note:** If you don't specify the layout,
@@ -816,7 +816,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
-see [How to Control Layout](/docs/guides/responsive/control_layout.html) and
+see [How to Control Layout](/docs/design/responsive/control_layout.html) and
 the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 ### Attribute not allowed by specified layout
@@ -862,7 +862,7 @@ Disallowed attributes for layout types are described in the
 This error occurs when the attribute value is invalid for the specified layout.
 To understand what triggers this error,
 you need to familiarize yourself with
-the [different behaviors of layouts](/docs/guides/responsive/control_layout.html#size-and-position-elements).
+the [different behaviors of layouts](/docs/design/responsive/control_layout.html#size-and-position-elements).
 
 Let's say you set the layout to be `fixed-height` and
 you include numeric values for both `height` and `width`.
@@ -906,7 +906,7 @@ designed to include templates, for example,
 It's OK to include templates in your source files,
 so long as the generated output of those files doesn't contain the templates
 (see also
-[Use CSS preprocessors](/docs/guides/responsive/style_pages.html#use-css-preprocessors)).
+[Use CSS preprocessors](/docs/design/responsive/style_pages.html#use-css-preprocessors)).
 
 ### Attribute contains template syntax
 

@@ -177,5 +177,5 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 AMP はさまざまな広告ネットワークに対応しています。詳細なリストについては、[リファレンス](/ja/docs/reference/components/amp-ad.html#supported-ad-networks)をご覧ください。
 
 {% call callout('参照', type='read') %}
-広告について詳しくは、[AMP での広告の掲載](/ja/docs/guides/ads_on_amp.html) に関するガイドをご覧ください。
+広告について詳しくは、[AMP での広告の掲載](/ja/docs/ads/monetization.html) に関するガイドをご覧ください。
 {% endcall %}

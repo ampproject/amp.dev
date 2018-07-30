@@ -96,7 +96,7 @@ ga('send', 'pageview');
 {% endcall %}
 
 {% call callout('提示', type='success') %}
-如果您想使用一种更简单的跟踪系统，不妨了解一下 [amp-pixel](/zh_cn/docs/reference/components/amp-pixel.html)。如果您只需要跟踪网页浏览情况，amp-pixel 无疑是一种比 amp-analytics 更简便的解决方案，因为它的唯一目标就是满足传统像素跟踪的需求。有关详情，请参阅[“分析：基础知识”指南](/zh_cn/docs/guides/analytics/analytics_basics.html)。
+如果您想使用一种更简单的跟踪系统，不妨了解一下 [amp-pixel](/zh_cn/docs/reference/components/amp-pixel.html)。如果您只需要跟踪网页浏览情况，amp-pixel 无疑是一种比 amp-analytics 更简便的解决方案，因为它的唯一目标就是满足传统像素跟踪的需求。有关详情，请参阅[“分析：基础知识”指南](/zh_cn/docs/analytics/analytics_basics.html)。
 {% endcall %}
 
 <div class="prev-next-buttons">

@@ -85,7 +85,7 @@ AMP 페이지가 유효한 AMP HTML인 지 확인하기 위해
 [AMP 검증기](https://validator.ampproject.org/)를 사용해 검증할 수 있습니다.
 
 사용 가능한 다른 검증 도구를 살펴보려면, [AMP 페이지
-검증하기](/ko/docs/guides/validate.html)를 살펴보시길 바랍니다.
+검증하기](/ko/docs/fundamentals/validate.html)를 살펴보시길 바랍니다.
 
 ### 다음 단계
 

@@ -5,7 +5,7 @@ $title: Formato CSS admitido
 
 Al igual que el resto de las páginas web, las páginas AMP extraen su estilo de un elemento CSS, pero en ellas no se puede hacer referencia a hojas de estilo externas (salvo en el caso de las [fuentes personalizadas](#the-custom-fonts-exception)). Además, algunos estilos no están permitidos porque afectan al rendimiento. Por ejemplo, los atributos de estilo insertados no se admiten.
 
-Todos los estilos deben encontrarse en el encabezado del documento (consulta [Agregar estilos a una página](/es/docs/guides/responsive_amp.html#add-styles-to-a-page)). Pero puedes utilizar preprocesadores CSS y plantillas para crear páginas estáticas y así mejorar la gestión del contenido.
+Todos los estilos deben encontrarse en el encabezado del documento (consulta [Agregar estilos a una página](/es/docs/design/responsive_amp.html#add-styles-to-a-page)). Pero puedes utilizar preprocesadores CSS y plantillas para crear páginas estáticas y así mejorar la gestión del contenido.
 
 {% call callout('Nota', type='note') %}
 Los componentes de AMP incluyen estilos predeterminados para facilitar en gran medida la creación de páginas adaptables. Estos estilos están definidos en el atributo [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
@@ -70,7 +70,7 @@ Los siguientes estilos están permitidos, pero están restringidos en lo que res
 Las páginas AMP no pueden incluir hojas de estilo externas, salvo en el caso de las fuentes personalizadas.
 
 {% call callout('Más artículos', type='success') %}
-Consulta más información [sobre las fuentes personalizadas en AMP](/es/docs/guides/responsive/custom_fonts.html).
+Consulta más información [sobre las fuentes personalizadas en AMP](/es/docs/design/responsive/custom_fonts.html).
 {% endcall %}
 
 ## Usar preprocesadores CSS

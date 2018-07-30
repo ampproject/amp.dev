@@ -96,7 +96,7 @@ Se você tiver uma plataforma personalizada de acompanhamento para integração,
 {% endcall %}
 
 {% call callout('Dica', type='success') %}
-Se você estiver interessado em um sistema de acompanhamento mais simples, dê uma olhada em [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html). Caso você só precise acompanhar exibições de página, o amp-pixel é uma solução mais leve do que o amp-analytics, porque só atende aos requisitos do acompanhamento de pixels tradicional. Saiba mais em [Analytics: conceitos básicos](/pt_br/docs/guides/analytics/analytics_basics.html).
+Se você estiver interessado em um sistema de acompanhamento mais simples, dê uma olhada em [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html). Caso você só precise acompanhar exibições de página, o amp-pixel é uma solução mais leve do que o amp-analytics, porque só atende aos requisitos do acompanhamento de pixels tradicional. Saiba mais em [Analytics: conceitos básicos](/pt_br/docs/analytics/analytics_basics.html).
 {% endcall %}
 
 <div class="prev-next-buttons">

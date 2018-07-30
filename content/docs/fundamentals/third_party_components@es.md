@@ -188,5 +188,5 @@ Si la red publicitaria lo admite, incluye un `placeholder` para que se muestre s
 AMP es compatible con una amplia gama de redes publicitarias. Consulta la [referencia para obtener una lista completa](/es/docs/reference/components/amp-ad.html#supported-ad-networks).
 
 {% call callout('Leer más', type='read') %}
-Obtén más información sobre los anuncios en la guía [Publicar anuncios en AMP](/es/docs/guides/ads_on_amp.html).
+Obtén más información sobre los anuncios en la guía [Publicar anuncios en AMP](/es/docs/ads/monetization.html).
 {% endcall %}
