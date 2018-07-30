@@ -1,6 +1,5 @@
 ---
 $title: Melacak interaksi dengan analisis
-$order: 4
 ---
 
 Platform analisis biasanya diintegrasikan dengan situs melalui panggilan fungsi dan cuplikan JavaScript sebaris, yang akan memicu peristiwa yang dikirimkan kembali ke sistem analisis. AMP memberikan sintaks konfigurasi JSON yang fleksibel untuk membuat replika proses ini untuk beberapa partner analisis.
