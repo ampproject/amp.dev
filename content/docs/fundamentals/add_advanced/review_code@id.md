@@ -1,6 +1,5 @@
 ---
 $title: Meninjau kode pembuka
-$order: 1
 ---
 
 Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html), yang terlihat seperti berikut:
@@ -95,11 +94,11 @@ Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman [article.amp.htm
 </html>
 ```
 
-Ini adalah halaman AMP sederhana yang lolos [validasi AMP](https://www.ampproject.org/id/docs/guides/validate) dan validasi data terstruktur [schema.org](http://schema.org/). Jika halaman ini diterapkan di situs berita, pengguna dapat menemukan halaman melalui pengalaman yang kaya di Halaman Hasil Mesin Telusur (misalnya, Carousel cerita teratas di Google Penelusuran).
+Ini adalah halaman AMP sederhana yang lolos [validasi AMP](/id/docs/fundamentals/validate.html) dan validasi data terstruktur [schema.org](http://schema.org/). Jika halaman ini diterapkan di situs berita, pengguna dapat menemukan halaman melalui pengalaman yang kaya di Halaman Hasil Mesin Telusur (misalnya, Carousel cerita teratas di Google Penelusuran).
 
 ## Mengaktifkan Validator AMP
 
-Sebelum mengubah halaman, mari kita aktifkan [validator AMP](https://www.ampproject.org/id/docs/guides/validate.html) sehingga kita tahu bahwa kita menggunakan HTML AMP yang valid.  **Tambahkan** ID fragmen berikut ke URL Anda:
+Sebelum mengubah halaman, mari kita aktifkan [validator AMP](/id/docs/fundamentals/validate.html) sehingga kita tahu bahwa kita menggunakan HTML AMP yang valid.  **Tambahkan** ID fragmen berikut ke URL Anda:
 
 ```text
 #development=1
@@ -121,7 +120,7 @@ Anda dapat menggunakan berbagai fitur lainnya untuk memvalidasi halaman AMP, sep
 - [Antarmuka Web Validator AMP](https://validator.ampproject.org/)
 - ... dan masih banyak lagi
 
-Pelajari lebih lanjut di panduan [Memvalidasi halaman AMP](https://www.ampproject.org/id/docs/guides/validate).
+Pelajari lebih lanjut di panduan [Memvalidasi halaman AMP](/id/docs/fundamentals/validate.html).
 {% endcall %}
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulated on a Nexus 5X device') }}
