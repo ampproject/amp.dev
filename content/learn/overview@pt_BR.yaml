@@ -9,7 +9,7 @@
       example: /content/includes/html-example.md
       description2: |
         Em sua maioria, as tags em uma página AMP em HTML são tags HTML comuns. No entanto, algumas dessas tags são substituídas por outras específicas a AMP (veja também [Tags HTML nas especificações de AMP](/pt_br/docs/fundamentals/spec.html)). Esses elementos personalizados, chamados de componentes AMP em HTML, facilitam a implementação de padrões comuns de maneira eficiente. 
-        <p>Por exemplo, a tag [`amp-img`](/pt_br/docs/reference/amp-img.html) é totalmente compatível com `srcset`, até mesmo em navegadores que ainda são incompatíveis. Saiba como [criar sua primeira página AMP em HTML](/pt_br/docs/tutorials/create.html). 
+        <p>Por exemplo, a tag [`amp-img`](/pt_br/docs/reference/amp-img.html) é totalmente compatível com `srcset`, até mesmo em navegadores que ainda são incompatíveis. Saiba como [criar sua primeira página AMP em HTML](/pt_br/docs/getting_started/create.html). 
         <p>As páginas AMP são detectadas por mecanismos de pesquisa e outras plataformas por meio da `<link rel="">` tag HTML. É possível optar por ter versões não AMP e AMP da página ou somente uma versão AMP. Saiba mais em [Faça com que sua página seja detectável](/pt_br/docs/fundamentals/discovery.html).
 
     - title: JS de AMP

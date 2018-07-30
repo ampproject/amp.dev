@@ -17,7 +17,7 @@ core:
         yaygın desenlerin başarılı bir şekilde uygulanmasını kolaylaştırmıştır.
         <p>Örneğin, [`amp-img`](/tr/docs/reference/components/amp-img) etiketi
         bu özelliği henüz desteklemeyen tarayıcılarda bile tam `srcset` desteği sağlamaktadır.
-        [İlk AMP HTML sayfanızı nasıl oluşturacağınızı] öğrenin(/tr/docs/fundamentals/create.html).
+        [İlk AMP HTML sayfanızı nasıl oluşturacağınızı] öğrenin(/tr/docs/getting_started/create.html).
     - title: AMP JS
       subtitle: |
         **AMP JS** kitaplığı AMP HTML sayfalarının hızlı sonuç vermesini sağlar.

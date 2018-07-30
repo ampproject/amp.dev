@@ -17,7 +17,7 @@
         효율적인 방식으로 일반 패턴을 쉽게 구현하도록 해줍니다.
         <p>예를 들어, [`amp-img`](/ko/docs/reference/components/amp-img) 태그는
         아직 지원되지 않는 브라우저에서도 `srcset` 지원을 완벽하게 제공합니다.
-        [첫 번째 AMP HTML 페이지 만들기](/ko/docs/tutorials/create.html) 방법에 대해 알아보세요. 
+        [첫 번째 AMP HTML 페이지 만들기](/ko/docs/getting_started/create.html) 방법에 대해 알아보세요. 
         <p>AMP 페이지는 `<link rel="">` HTML 태그를 통해 검색 엔진 및 다른 플랫폼에서 조회됩니다. AMP가 아닌 버전의 페이지와 AMP 버전의 페이지를 사용할 수도 있고 AMP 버전 페이지만 사용할 수도 있습니다. [페이지가 쉽게 발견되도록 하는 방법](/ko/docs/fundamentals/discovery.html)에 관해 자세히 알아보세요.
 
     - title: AMP JS

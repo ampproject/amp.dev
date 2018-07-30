@@ -17,7 +17,7 @@ core:
         تسهّل تنفيذ الأنماط الشائعة بطريقة فائقة الأداء.
         <p>على سبيل المثال، توفر العلامة [`amp-img`](/ar/docs/reference/components/amp-img.html)
         الدعم الكامل لـ `srcset` حتى في المتصفحات التي لا تدعمها حتى الآن.
-        تعرّف على كيفية [إنشاء صفحة <span dir="ltr" class="nowrap">AMP HTML</span> الأولى لك](/ar/docs/fundamentals/create.html).
+        تعرّف على كيفية [إنشاء صفحة <span dir="ltr" class="nowrap">AMP HTML</span> الأولى لك](/ar/docs/getting_started/create.html).
     - title: AMP JS
       subtitle: |
         تضمن مكتبة **<span dir="ltr" class="nowrap">AMP JS</span>** العرض السريع لصفحات <span dir="ltr" class="nowrap">AMP HTML</span>.

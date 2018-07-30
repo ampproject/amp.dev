@@ -84,7 +84,7 @@ Untuk fitur validasi lainnya yang dapat Anda gunakan, lihat [Memvalidasi halaman
 
 ### Langkah Berikutnya
 
-Untuk mempelajari lebih lanjut tentang dasar-dasar halaman AMP, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/tutorials/create.html).
+Untuk mempelajari lebih lanjut tentang dasar-dasar halaman AMP, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/fundamentals/create.html).
 
 Berikut referensi lain untuk meningkatkan pengalaman Anda:
 

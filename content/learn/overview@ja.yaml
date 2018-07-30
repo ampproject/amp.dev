@@ -9,7 +9,7 @@
       example: /content/includes/html-example.md
       description2: |
         AMP HTML ページ内の大半のタグは通常の HTML タグですが、一部の HTML タグは AMP 固有のタグに置き換えられます（[AMP 仕様の HTML タグについての説明](/ja/docs/fundamentals/spec.html)もご覧ください）。こうしたカスタムの要素は AMP HTML 要素と呼ばれるもので、これにより一般的なパターンを効率よく簡単に導入できます。
-        <p>たとえば、[`amp-img`](/ja/docs/reference/amp-img.html) タグを使用すると、まだ対応していないブラウザでも `srcset` の全面的なサポートが可能になります。[AMP HTML ページを初めて作成する方法についての説明](/ja/docs/tutorials/create.html)をご覧ください。 
+        <p>たとえば、[`amp-img`](/ja/docs/reference/amp-img.html) タグを使用すると、まだ対応していないブラウザでも `srcset` の全面的なサポートが可能になります。[AMP HTML ページを初めて作成する方法についての説明](/ja/docs/getting_started/create.html)をご覧ください。 
         <p>AMP ページは、検索エンジンや他のプラットフォームで ``<link rel="">`` HTML タグにより検出されます。サイトのページについて非 AMP バージョンと AMP バージョンの両方を作成するか、AMP バージョンのみを作成するかを選ぶことができます。詳しくは、[ページを検出可能にする](/ja/docs/fundamentals/discovery.html)をご覧ください。
 
     - title: AMP JS

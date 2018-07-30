@@ -90,7 +90,7 @@ AMP 페이지가 유효한 AMP HTML인 지 확인하기 위해
 ### 다음 단계
 
 AMP 페이지의 기본을 더 깊이 살펴보고 싶다면, [첫번째 AMP 페이지
-만들기](/ko/docs/tutorials/create.html)를 살펴보시길 바랍니다.
+만들기](/ko/docs/fundamentals/create.html)를 살펴보시길 바랍니다.
 
 도움이 될 리소스 목록은 다음을 참조하세요.
 

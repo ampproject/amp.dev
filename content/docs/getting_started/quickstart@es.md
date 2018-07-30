@@ -5,7 +5,7 @@ $title: Empezando
 
 Esta es una guía de inicio rápido para ponerlo en marcha con AMP.
 
-Para obtener instrucciones más detalladas, visite el tutorial [Crea tu primera página AMP](/es/docs/tutorials/create.html).
+Para obtener instrucciones más detalladas, visite el tutorial [Crea tu primera página AMP](/es/docs/fundamentals/create.html).
 
 ### Paso 1: Obtenga la plantilla HTML de AMP
 

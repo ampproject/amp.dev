@@ -84,7 +84,7 @@ $title: 使用入门
 
 ### 后续步骤
 
-要想深入了解 AMP 网页的基本知识，请访问[创建您的首个 AMP 网页](/zh_cn/docs/tutorials/create.html)教程。
+要想深入了解 AMP 网页的基本知识，请访问[创建您的首个 AMP 网页](/zh_cn/docs/fundamentals/create.html)教程。
 
 下面这些资源也有助于您打造出色的体验：
 
