@@ -1,7 +1,5 @@
 ---
 $title: 添加 AMP 扩展组件
-$order: 2
-toc: true
 ---
 
 [TOC]
@@ -14,7 +12,7 @@ toc: true
 
 - **实验**：此类组件是指已发布但尚不可广泛使用的组件。开发者可以选择使用这些尚未全面发布的功能。有关详情，请参阅[实验性功能](/zh_cn/docs/reference/experimental.html)。
 
-我们已在示例中使用了内置组件 [amp-img](/zh_cn/docs/reference/components/amp-img.html)，另外还在[“将 HTML 转换成 AMP”](/zh_cn/docs/tutorials/converting.html)教程中探讨了该组件与 AMP 布局系统之间的关系。现在，我们将向新闻报道中添加一些常用的 AMP **扩展**组件。
+我们已在示例中使用了内置组件 [amp-img](/zh_cn/docs/reference/components/amp-img.html)，另外还在[“将 HTML 转换成 AMP”](/zh_cn/docs/fundamentals/converting.html)教程中探讨了该组件与 AMP 布局系统之间的关系。现在，我们将向新闻报道中添加一些常用的 AMP **扩展**组件。
 
 ## 通过广告获利
 
@@ -79,7 +77,7 @@ AMP 网页中的广告是使用 [amp-ad](/zh_cn/docs/reference/components/amp-ad
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='测试广告') }}
 
 {% call callout('注意', type='note') %}
-您可能会注意到，这些 amp-ad 标记中有包含 `fallback` 属性的额外 `div` 标记。您能猜出 `fallback` 属性是何用意吗？它会指示 AMP 的加载系统仅在父级元素未能成功加载时显示该元素的内容。有关详情，请参阅[占位符和备用行为](/zh_cn/docs/guides/responsive/placeholders.html)。
+您可能会注意到，这些 amp-ad 标记中有包含 `fallback` 属性的额外 `div` 标记。您能猜出 `fallback` 属性是何用意吗？它会指示 AMP 的加载系统仅在父级元素未能成功加载时显示该元素的内容。有关详情，请参阅[占位符和备用行为](/zh_cn/docs/design/responsive/placeholders.html)。
 {% endcall %}
 
 {% call callout('继续阅读', type='read') %}
@@ -138,7 +136,7 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 要想详细了解如何嵌入 YouTube 视频，请参阅 [amp-youtube](/zh_cn/docs/reference/components/amp-youtube.html) 组件文档。要想了解更多视频组件和媒体组件，请查看 [AMP 媒体组件列表](/zh_cn/docs/reference/components.html#media)。
 
 {% call callout('提示', type='success') %}
-如果某个组件无法正常加载或在浏览器中不受支持，请使用 [`fallback`](/zh_cn/docs/guides/responsive/placeholders.html#fallbacks) 属性通知用户。
+如果某个组件无法正常加载或在浏览器中不受支持，请使用 [`fallback`](/zh_cn/docs/design/responsive/placeholders.html#fallbacks) 属性通知用户。
 {% endcall %}
 
 ## 显示 Twitter 微博
