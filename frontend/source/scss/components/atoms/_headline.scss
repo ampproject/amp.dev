@@ -1,0 +1,51 @@
+/*
+
+######################
+### ATOM: headline ###
+######################
+
+### SAMPLE MARKUP:
+
+<h2 class="a-hl-h1 a-hl-mono">
+    Text
+</h2>
+
+### INFO:
+
+This is a regular headline.
+It should be never overwritten in any other file.
+New modifiers can be added below.
+
+### MODIFIERS:
+
+h1 - h6
+    Self explaining.
+
+light
+    Changes the text color to light (default is dark).
+
+mono
+    Changes the font-family to a monospaced font.
+
+*/
+
+// TODO: use rem instead of px for font sizes
+
+#{map-get($prefix, atom)}-hl {
+
+    &-h1 {}
+
+    &-h2 {}
+
+    &-h3 {}
+
+    &-h4 {}
+
+    &-h5 {}
+
+    &-h6 {}
+
+    &-light {}
+
+    &-mono {}
+}
