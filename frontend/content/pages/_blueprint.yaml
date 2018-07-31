@@ -1,6 +1,2 @@
 path: /{base}/
 view: /views/index.html
-
-localization:
-  path: /templates/{slug}
-
