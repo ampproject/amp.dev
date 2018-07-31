@@ -79,7 +79,7 @@ If needed, AMP also allows inline styles. For example:
 
 [sourcecode:html]
 <body>
-  <p style="color:pink;margin-left:30px;>Hello, Kitty.</p>
+  <p style="color:pink;margin-left:30px;">Hello, Kitty.</p>
 </body>
 [/sourcecode]
 
