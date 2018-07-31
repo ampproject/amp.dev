@@ -2,5 +2,5 @@ path: /{base}/
 view: /views/index.html
 
 localization:
-  path: /{locale}/{base}/
+  path: /templates/{slug}
 

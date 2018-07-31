@@ -8,9 +8,9 @@ description: Welcome to JvM/Amp.dev style guide
 
 templates:
 - title: Reference
-  ref: /reference
+  ref: /templates/reference
 - title: Components
-  ref: /components
+  ref: /templates/components
 ---
 
 <div class="home">
@@ -21,6 +21,6 @@ templates:
 {% include "/views/organisms/o-index.html" %}
 <h1 class="templates">Templates
   {% for template in doc.templates %}
-    <a href={{template.ref }}><h2>{{template.title}}</h2></a>
+    <h2><a href={{template.ref }}>{{template.title}}</a></h2>
   {% endfor %}
 </h1>

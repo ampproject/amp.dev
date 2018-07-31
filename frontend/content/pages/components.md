@@ -1,4 +1,4 @@
 ---
-$path: /components/
+$title: components
 $view: /views/templates/components.html
 ---
