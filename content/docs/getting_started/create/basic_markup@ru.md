@@ -60,6 +60,6 @@ $title: Создание страницы AMP HTML
 Это все, что потребуется для создания нашей первой страницы AMP, однако в ее теле пока ничего нет. В следующем разделе мы рассмотрим способы добавления основных компонентов, таких как изображения и персонализированные элементы AMP, а также настройку стиля страницы и разработку отзывчивого макета.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ru/docs/tutorials/create.html"><span class="arrow-prev">Предыдущий</span></a>
-  <a class="button next-button" href="/ru/docs/tutorials/create/include_image.html"><span class="arrow-next">Следующий</span></a>
+  <a class="button prev-button" href="/ru/docs/getting_started/create.html"><span class="arrow-prev">Предыдущий</span></a>
+  <a class="button next-button" href="/ru/docs/getting_started/create/include_image.html"><span class="arrow-next">Следующий</span></a>
 </div>

@@ -8,7 +8,7 @@ AMP soporta ambos, **consultas de medios** &amp; **consultas de elementos**, ade
 ## Imágenes adaptables, de forma fácil
 
 Crear imágenes adaptables (responsive) bastará con especificar el `width` y `height`, configurar el layout a `responsive`,
-e indicar con [`srcset`](/es/docs/guides/responsive/art_direction.html)
+e indicar con [`srcset`](/es/docs/design/responsive/art_direction.html)
 cuál imagen se usará en la variedad de pantallas:
 
 [sourcecode:html]

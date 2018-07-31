@@ -34,6 +34,6 @@ Learn more about how Google finds AMP pages in [Google Search guidelines for AMP
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/create/publish.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/getting_started/create/publish.html"><span class="arrow-next">Next</span></a>
 </div>

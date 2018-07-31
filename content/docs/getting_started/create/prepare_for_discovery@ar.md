@@ -29,6 +29,6 @@ $title: تحضير صفحتك للاكتشاف والتوزيع
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ar/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">سابق</span></a>
-  <a class="button next-button" href="/ar/docs/tutorials/create/publish.html"><span class="arrow-next">التالى</span></a>
+  <a class="button prev-button" href="/ar/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">سابق</span></a>
+  <a class="button next-button" href="/ar/docs/getting_started/create/publish.html"><span class="arrow-next">التالى</span></a>
 </div>

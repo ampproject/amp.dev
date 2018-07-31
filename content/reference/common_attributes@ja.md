@@ -20,7 +20,7 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 </amp-anim>
 [/sourcecode]
 
-詳しくは、[プレースホルダとフォールバック](/ja/docs/guides/responsive/placeholders.html) をご覧ください。
+詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html) をご覧ください。
 
 ## heights
 
@@ -43,11 +43,11 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 </amp-img>
 [/sourcecode]
 
-詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明](/ja/docs/guides/responsive/art_direction.html) をご覧ください。
+詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明](/ja/docs/design/responsive/art_direction.html) をご覧ください。
 
 ## layout
 
-AMP では、一連の [レイアウト](/ja/docs/guides/responsive/control_layout.html#the-layout-attribute) を使って、AMP コンポーネントがドキュメントのレイアウトでどのように動作するかを指定できます。特定のコンポーネントのレイアウトを指定するには、`layout` 属性と、その要素で使用可能なレイアウト値をいずれか 1 つ追加します（使用できる値については、該当要素のドキュメントをご覧ください）。
+AMP では、一連の [レイアウト](/ja/docs/design/responsive/control_layout.html#the-layout-attribute) を使って、AMP コンポーネントがドキュメントのレイアウトでどのように動作するかを指定できます。特定のコンポーネントのレイアウトを指定するには、`layout` 属性と、その要素で使用可能なレイアウト値をいずれか 1 つ追加します（使用できる値については、該当要素のドキュメントをご覧ください）。
 
 例:
 
@@ -60,7 +60,7 @@ AMP では、一連の [レイアウト](/ja/docs/guides/responsive/control_layo
 </amp-img>
 [/sourcecode]
 
-詳しくは、[レイアウトとメディアクエリ](/ja/docs/guides/responsive/control_layout.html) および [レイアウトの仕様](/ja/docs/reference/spec/amp-html-layout.html) をご覧ください。
+詳しくは、[レイアウトとメディアクエリ](/ja/docs/design/responsive/control_layout.html) および [レイアウトの仕様](/ja/docs/design/amp-html-layout.html) をご覧ください。
 
 ## media
 
@@ -81,7 +81,7 @@ AMP では、一連の [レイアウト](/ja/docs/guides/responsive/control_layo
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-詳しくは、[レイアウトとメディアクエリ](/ja/docs/guides/responsive/control_layout.html#element-media-queries) をご覧ください。
+詳しくは、[レイアウトとメディアクエリ](/ja/docs/design/responsive/control_layout.html#element-media-queries) をご覧ください。
 
 ## noloading
 
@@ -121,7 +121,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-lightbox>
 [/sourcecode]
 
-詳しくは、[AMP のアクションとイベントについてのページ](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) をご覧ください。
+詳しくは、[AMP のアクションとイベントについてのページ](/ja/docs/interaction_dynamic/amp-actions-and-events.html) をご覧ください。
 
 ## placeholder
 
@@ -137,7 +137,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-詳しくは、[プレースホルダとフォールバック](/ja/docs/guides/responsive/placeholders.html) をご覧ください。
+詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html) をご覧ください。
 
 ## sizes
 
@@ -153,11 +153,11 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 [/sourcecode]
 
-詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明](/ja/docs/guides/responsive/art_direction.html) をご覧ください。
+詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明](/ja/docs/design/responsive/art_direction.html) をご覧ください。
 
 ## width と height
 
-一部の [レイアウト](/ja/docs/guides/responsive/control_layout.html#the-layout-attribute) では、AMP コンポーネントに、整数のピクセル値を含む `width` と `height` の属性を指定する必要があります。
+一部の [レイアウト](/ja/docs/design/responsive/control_layout.html#the-layout-attribute) では、AMP コンポーネントに、整数のピクセル値を含む `width` と `height` の属性を指定する必要があります。
 
 例:
 
@@ -169,4 +169,4 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-詳しくは、[レイアウトとメディアクエリ](/ja/docs/guides/responsive/control_layout.html) および [レイアウトの仕様](/ja/docs/reference/spec/amp-html-layout.html) をご覧ください。
+詳しくは、[レイアウトとメディアクエリ](/ja/docs/design/responsive/control_layout.html) および [レイアウトの仕様](/ja/docs/design/amp-html-layout.html) をご覧ください。

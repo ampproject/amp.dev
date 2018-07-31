@@ -1,7 +1,6 @@
 ---
 $title: Integrate AMP with your app 
 $order: 6
-$category: Develop
 toc: true
 
 ---

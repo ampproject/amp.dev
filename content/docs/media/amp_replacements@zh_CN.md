@@ -15,7 +15,7 @@ $title: 添加图片和视频
 *  我们需要控制网络请求，以 [延迟加载并高效排定资源的优先顺序](/zh_cn/learn/about-how/#prioritize-resource-loading)
 
 {% call callout('注意', type='caution') %}
- 尽管默认的 HTML 组件不受支持，但仍*会*  呈现在网页上，不过 AMP 不会 [验证您的网页，](/zh_cn/docs/guides/debug/validate.html) 
+ 尽管默认的 HTML 组件不受支持，但仍*会*  呈现在网页上，不过 AMP 不会 [验证您的网页，](/zh_cn/docs/fundamentals/validate.html) 
 如果您的网页上显示了 HTML 组件，您将无法享受 AMP 提供的所有优势。{% endcall %}
 
 ## 图片
@@ -69,7 +69,7 @@ $title: 添加图片和视频
 </div>
 
 {% call callout('阅读', type='read') %}
-详细了解 [高级布局技术](/zh_cn/docs/guides/responsive/control_layout.html)
+详细了解 [高级布局技术](/zh_cn/docs/design/responsive/control_layout.html)
 。{% endcall %}
 
 ### 行为和占位符
@@ -77,7 +77,7 @@ $title: 添加图片和视频
 AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位置、系统资源、连接带宽或其他因素，选择延迟资源加载或排定资源加载的优先顺序。
 
 {% call callout('阅读', type='read') %}
-了解如何 [提供后备图片和占位符](/zh_cn/docs/guides/responsive/placeholders.html)
+了解如何 [提供后备图片和占位符](/zh_cn/docs/design/responsive/placeholders.html)
 。{% endcall %}
 
 ## 动画图片

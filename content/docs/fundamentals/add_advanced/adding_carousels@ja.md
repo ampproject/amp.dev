@@ -91,7 +91,7 @@ amp-fit-text {
 詳しくは、[amp-carousel](/ja/docs/reference/components/amp-carousel.html) コンポーネントのリファレンス ドキュメントをご覧ください。
 
 {% call callout('注', type='note') %}
-最後の例では、`amp-ad` コンポーネントに `placeholder` 属性を持つ子要素 `div` が含まれていたことに気づいたかもしれません。このチュートリアルの前半では、`fallback` 属性を持つ `amp-ad` の同様のシナリオがありました。プレースホルダとフォールバックの違いは何でしょうか。`fallback` 要素は、親要素が読み込まれなかった場合、つまり利用可能な広告がない場合に表示されます。一方 `placeholder` 要素は、読み込み中に親要素の代わりに表示されます。いわば、これらは親要素の読み込みプロセスの前後に表示される要素です。詳しくは、[プレースホルダとフォールバック](/ja/docs/guides/responsive/placeholders.html)をご覧ください。
+最後の例では、`amp-ad` コンポーネントに `placeholder` 属性を持つ子要素 `div` が含まれていたことに気づいたかもしれません。このチュートリアルの前半では、`fallback` 属性を持つ `amp-ad` の同様のシナリオがありました。プレースホルダとフォールバックの違いは何でしょうか。`fallback` 要素は、親要素が読み込まれなかった場合、つまり利用可能な広告がない場合に表示されます。一方 `placeholder` 要素は、読み込み中に親要素の代わりに表示されます。いわば、これらは親要素の読み込みプロセスの前後に表示される要素です。詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
 {% endcall %}
 
 <div class="prev-next-buttons">

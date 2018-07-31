@@ -111,7 +111,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 이 방법을 사용하면 AMP 페이지에서
-[AMP 유효성 검사](/ko/docs/guides/validate.html)를 통과하지 못하는 모든 추가 기능을 수정할 수 있습니다.
+[AMP 유효성 검사](/ko/docs/fundamentals/validate.html)를 통과하지 못하는 모든 추가 기능을 수정할 수 있습니다.
 
 * 맞춤 JS를 필요로 하는 동적 기능
 * 내 사이트에 맞춤설정되었거나 내 사이트에만 관련이 있는 구성요소
