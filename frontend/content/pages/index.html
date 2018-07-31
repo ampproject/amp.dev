@@ -4,18 +4,30 @@ $path: /
 $localization:
   path: /{locale}/
 
+$category: ''
+
 sections:
 - title: Templates
+  category: "pages/templates"
 - title: Contents
+  category: "pages/contents"
 - title: Content Molecules
+  category: "pages/contentMolecules"
 - title: List Organisms
+  category: "pages/listOrganisms"
 - title: Teaser Molecules
+  category: "pages/teaserMolecules"
 ---
+
 <amp-accordion>
   {% for section in doc.sections %}
     <section>
       <h1>{{section.title}}</h1>
-      <ul></ul>
+      <ul>
+        {% for category, docs in g.categories(section.category) %}
+          <h3>{{category}}</h3>
+        {% endfor %}
+      </ul>
     </section>
   {% endfor %}
 </amp-accordion>
