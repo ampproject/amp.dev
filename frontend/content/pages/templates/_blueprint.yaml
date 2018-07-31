@@ -1,0 +1,5 @@
+path: /{base}/templates/
+view: /views/templates/index.html
+
+localization:
+  path: /{base}/templates/{slug}/
