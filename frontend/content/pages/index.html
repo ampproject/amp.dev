@@ -4,16 +4,18 @@ $path: /
 $localization:
   path: /{locale}/
 
-templates:
-- title: Reference
-  ref: /templates/reference
-- title: Components
-  ref: /templates/components
+sections:
+- title: Templates
+- title: Contents
+- title: Content Molecules
+- title: List Organisms
+- title: Teaser Molecules
 ---
-
-{% include "/views/molecules/m-index.html" %}
-<h1 class="templates">Templates
-  {% for template in doc.templates %}
-    <h2><a href={{template.ref }}>{{template.title}}</a></h2>
+<amp-accordion>
+  {% for section in doc.sections %}
+    <section>
+      <h1>{{section.title}}</h1>
+      <ul></ul>
+    </section>
   {% endfor %}
-</h1>
+</amp-accordion>
