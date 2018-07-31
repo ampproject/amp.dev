@@ -114,7 +114,7 @@ Specifically, this error is complaining about the following stylesheet link tag 
 <link href="base.css" rel="stylesheet" />
 ```
 
-The problem is that this is an external stylesheet reference. In AMP, to keep the load times of documents as fast as possible, you cannot include external stylesheets. Instead, all stylesheet rules must be added inline in the AMP document using `<style amp-custom></style>` tags.
+The problem is that this is an external stylesheet reference. In AMP, to keep the load times of documents as fast as possible, you cannot include external stylesheets. Instead, all stylesheet rules must be embedded in the AMP document using `<style amp-custom></style>` tags, or as inline styles.
 
 ```html
 <style amp-custom>
@@ -132,7 +132,7 @@ So, let's resolve the error:
 Once again, **reload** the page and verify that the stylesheets error has disappeared.
 
 {% call callout('Note', type='note') %}
-Not only is inline styling required but there is a file size limit of 50 kilobytes for all styling information. You should use CSS preprocessors such as [SASS](http://sass-lang.com/) to minify your CSS before inlining the CSS in your AMP pages.
+Not only is embedded styling required but there is a file size limit of 50 kilobytes for all styling information. You should use CSS preprocessors such as [SASS](http://sass-lang.com/) to minify your CSS before inlining the CSS in your AMP pages.
 {% endcall %}
 
 {% call callout('Important', type='caution') %}
