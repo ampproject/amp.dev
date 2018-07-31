@@ -1,0 +1,35 @@
+/*
+
+#######################
+### MOLECULE: quote ###
+#######################
+
+### SAMPLE MARKUP:
+
+<div class="m-quote">
+    <text />
+
+    <div class="author">
+        <image />
+        <headline />
+        <text />
+        <image />
+    </div>
+</div>
+
+TODO: Update sample markup.
+
+### INFO:
+
+This molecule outputs three kinds of atoms: text, image and headline.
+NOTE: It is important to not overwrite the atoms in the molecule.
+If custom changes are needed, they have to be added as modifiers in the atoms.
+
+### MODIFIERS:
+
+TODO: Discuss about which different modifiers will be needed here.
+
+*/
+
+#{map-get($prefix, molecule)}-quote {
+}
