@@ -2,16 +2,18 @@
 
 
 {% block nav %}
-  <amp-accordion>
-  {% for doc in g.docs('pages') %}
-    <section>
-      <h1>{{doc.title}}</h1>
+{% set foo = g.doc('/content/pages/index.html') %}
+ {% for category in foo.categories %}
+    <amp-accordion>
+      <section>
+      <h1>{{ category.title }}</h1>
       <ul>
-        {% for category in doc.categories %}
-          <h3><a href={{category.path}}>{{ category.title }}</a></h3>
-        {% endfor %}
+       {% set bar = g.doc(category.text) %}
+       {% for item in bar.categories %}
+        <h1><a href={{item.path}}>{{ item.title }}</a></h1>
+       {% endfor %}
       </ul>
-    </section>
+      </section>
+    </amp-accordion>
   {% endfor %}
-</amp-accordion>
 {% endblock %}
