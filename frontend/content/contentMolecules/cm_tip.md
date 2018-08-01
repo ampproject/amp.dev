@@ -1,5 +1,8 @@
 ---
 $title: CM_Tip
-$path: /contentMolecules/CM_Tip
-$view: /views/molecules/cm_Tip.html
+$path: /contentMolecules/CM_Tip/
+$view: /views/molecules/cm_tip.html
+
+$localization:
+  path: /{locale}/contentMolecules/CM_Tip/
 ---

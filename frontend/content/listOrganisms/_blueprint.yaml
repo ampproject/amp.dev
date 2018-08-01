@@ -1,2 +1,4 @@
 path: /listOrganisms/
-view: /content/listOrganisms/index.md
+localization:
+  path: /{locale}/listOrganisms/
+view: /content/listOrganisms/index.html

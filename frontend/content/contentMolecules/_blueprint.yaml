@@ -1,2 +1,4 @@
 path: /contentMolecules/
-view: /content/contentMolecules/index.md
+localization:
+  path: /{locale}/contentMolecules/
+view: /content/contentMolecules/index.html

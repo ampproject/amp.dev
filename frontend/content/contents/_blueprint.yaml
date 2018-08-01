@@ -1,2 +1,4 @@
 path: /contents/
-view: /contents/content/index.md
+localization:
+  path: /{locale}/contents/
+view: /content/contents/index.html
