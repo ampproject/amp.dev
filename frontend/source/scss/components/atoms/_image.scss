@@ -1,0 +1,45 @@
+/*
+
+###################
+### ATOM: image ###
+###################
+
+### SAMPLE MARKUP:
+
+<amp-img alt="Text"
+    src="images/sample.jpg"
+    width="900"
+    height="900"
+    layout="responsive"
+    class="a-img a-img-circle">
+</amp-img>
+
+### INFO:
+
+Some basic styling for images.
+If using images in stages, no modifiers should be applied.
+Please notice the modifiers description.
+
+### MODIFIERS:
+
+circle
+    Sets a border-radius 50% to the image (make sure it is a sqaure).
+
+shadow-static
+    Adds a simple static drop-shadow to the image.
+
+shadow-animated
+    Adds the same shadow as the static one, but also moves up and down while scrolling.
+
+*/
+
+// TODO: make decissions about how to implement animated shadow modifier
+
+#{map-get($prefix, atom)}-img {
+
+    &-circle {}
+
+    &-shadow-static {}
+
+    &-shadow-animated {}
+}
