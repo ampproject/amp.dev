@@ -22,7 +22,7 @@ It is super easy to make elements responsive in AMP. Just put `layout="responsiv
 
 ## Add styles to a page
 
-Add all CSS inside a `<style amp-custom>` tag in the head of the document.
+Add your CSS inside a `<style amp-custom>` tag in the head of the document.
 For example:
 
 [sourcecode:html]
@@ -74,6 +74,14 @@ Check that your styles are supported in AMP;
 some styles aren't for performance reasons
 (see also [Supported CSS](/docs/design/responsive/style_pages.html)).
 {% endcall %}
+
+If needed, AMP also allows inline styles. For example:
+
+[sourcecode:html]
+<body>
+  <p style="color:pink;margin-left:30px;">Hello, Kitty.</p>
+</body>
+[/sourcecode]
 
 ## Layout elements responsively
 
