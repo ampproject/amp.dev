@@ -1,5 +1,0 @@
-path: /{base}/contents/
-view: /views/contents/index.html
-
-localization:
-  path: /{base}/contents/{slug}/

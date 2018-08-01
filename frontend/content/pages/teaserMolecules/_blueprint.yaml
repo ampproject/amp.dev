@@ -1,5 +1,0 @@
-path: /{base}/teaserMolecules/
-view: /views/teaserMolecules/index.html
-
-localization:
-  path: /{base}/teaserMolecules/{slug}/

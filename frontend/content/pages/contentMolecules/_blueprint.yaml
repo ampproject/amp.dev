@@ -1,5 +1,0 @@
-path: /{base}/contentMolecules/
-view: /views/contentMolecules/index.html
-
-localization:
-  path: /{base}/contentMolecules/{slug}/

@@ -1,5 +1,0 @@
-path: /{base}/listOrganisms/
-view: /views/listOrganisms/index.html
-
-localization:
-  path: /{base}/listOrganisms/{slug}/
