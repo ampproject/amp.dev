@@ -1,4 +1,4 @@
-path: /contentMolecules/
+path: /{collection.basename}/
 localization:
   path: /{locale}/contentMolecules/
 view: /content/contentMolecules/index.html
