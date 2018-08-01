@@ -1,0 +1,5 @@
+---
+$title: Contents
+$path: /contents/
+
+---
