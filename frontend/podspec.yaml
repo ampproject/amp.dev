@@ -1,6 +1,6 @@
 grow_version: ">=0.0.66"
 
-home: /content/pages/index.html
+home: /content/pages/home.html
 
 static_dirs:
 - static_dir: /assets/
