@@ -1,6 +1,3 @@
 path: /
-view: /views/index.html
+view: /content/pages/index.html
 title: Pages
-
-localization:
-  path: /{base}/{slug}/
