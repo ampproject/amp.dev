@@ -1,6 +1,5 @@
 ---
-$title: CM_Quote
-$path: /contentMolecules/CM_Quote/
+$title: CM Quote
 $view: /views/molecules/cm_quote.html
 
 $localization:

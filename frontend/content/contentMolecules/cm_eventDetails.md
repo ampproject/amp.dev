@@ -1,6 +1,5 @@
 ---
-$title: CM_Event_Details
-$path: /contentMolecules/CM_Event_Details/
+$title: CM Event Details
 $view: /views/molecules/cm_eventDetails.html
 
 $localization:

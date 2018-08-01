@@ -1,6 +1,5 @@
 ---
-$title: CM_Table
-$path: /contentMolecules/CM_Table/
+$title: CM Table
 $view: /views/molecules/cm_table.html
 
 $localization:

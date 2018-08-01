@@ -1,6 +1,5 @@
 ---
-$title: CM_KPIs
-$path: /contentMolecules/CM_KPIs/
+$title: CM KPIs
 $view: /views/molecules/cm_kpis.html
 
 $localization:

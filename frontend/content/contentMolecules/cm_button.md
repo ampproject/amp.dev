@@ -1,6 +1,5 @@
 ---
-$title: CM_Button
-$path: /contentMolecules/CM_Button/
+$title: CM Button
 $view: /views/molecules/cm_button.html
 
 $localization:

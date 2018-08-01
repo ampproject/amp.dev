@@ -1,4 +1,4 @@
-path: /frameworkMolecules/
-localization:
-  path: /{locale}/frameworkMolecules/
+path: /{collection.basename}/{slug}
 view: /content/frameworkMolecules/index.html
+localization:
+  path: /{locale}/{collection.basename}/{slug}

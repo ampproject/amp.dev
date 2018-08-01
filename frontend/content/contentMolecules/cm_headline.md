@@ -1,6 +1,5 @@
 ---
-$title: CM_Headline
-$path: /contentMolecules/CM_Headline/
+$title: CM Headline
 $view: /views/molecules/cm_headline.html
 
 $localization:

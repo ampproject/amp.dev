@@ -1,4 +1,5 @@
-path: /listOrganisms/
-localization:
-  path: /{locale}/listOrganisms/
+path: /{collection.basename}/{slug}
 view: /content/listOrganisms/index.html
+
+localization:
+  path: /{locale}/{collection.basename}/{slug}

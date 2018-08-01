@@ -1,6 +1,5 @@
 ---
-$title: CM_Code_Interactive
-$path: /contentMolecules/CM_Code_Interactive/
+$title: CM Code Interactive
 $view: /views/molecules/cm_codeInteractive.html
 
 $localization:
