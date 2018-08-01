@@ -22,7 +22,7 @@ It is super easy to make elements responsive in AMP. Just put `layout="responsiv
 
 ## Add styles to a page
 
-Migrate CSS inside a `<style amp-custom>` tag in the head of the document.
+Add your CSS inside a `<style amp-custom>` tag in the head of the document.
 For example:
 
 [sourcecode:html]
