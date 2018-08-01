@@ -1,5 +1,17 @@
 {% extends "/views/base.html" %}
 
-{% block main %}
-  {{doc.html|render|safe}}
+
+{% block nav %}
+  <amp-accordion>
+  {% for doc in g.docs('pages') %}
+    <section>
+      <h1>{{doc.title}}</h1>
+      <ul>
+        {% for category in doc.categories %}
+          <h3><a href={{category.path}}>{{ category.title }}</a></h3>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</amp-accordion>
 {% endblock %}
