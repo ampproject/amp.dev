@@ -32,6 +32,6 @@ Si solo tienes una página y es AMP, debes agregarle el vínculo canónico. Este
 Leer más: Aprende más sobre cómo Google encuentra las páginas AMP en las [Directrices de la Búsqueda de Google para las páginas de AMP](https://support.google.com/webmasters/answer/6340290).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/create/publish.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="/es/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/getting_started/create/publish.html"><span class="arrow-next">Siguiente</span></a>
 </div>

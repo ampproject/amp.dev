@@ -29,6 +29,6 @@ $title: 검색 및 배포를 위해 페이지 준비
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/tutorials/create/publish.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/getting_started/create/publish.html"><span class="arrow-next">다음</span></a>
 </div>

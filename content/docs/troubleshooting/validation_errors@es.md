@@ -3,7 +3,7 @@ $title: Errores de validación de AMP
 ---
 
 Los documentos de AMP no pueden tener errores de validación.
-La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP](/es/docs/guides/validate.html).
+La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP](/es/docs/fundamentals/validate.html).
 Para obtener una visión general completa de los errores de validación, consulta la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -39,7 +39,7 @@ Todos los documentos de AMP deben contener las siguientes etiquetas:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](/es/docs/reference/spec.html).
+Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](/es/docs/fundamentals/spec.html).
 
 ### Falta una etiqueta requerida por otra etiqueta
 
@@ -80,7 +80,7 @@ Para corregir estos errores, ve a la página de referencia del componente amplia
   </tr>
 </table>
 
-Las etiquetas se incluyen en una lista blanca, por lo que no hay ninguna lista que incluya todas las etiquetas no permitidas. Sin embargo, en la [especificación de AMP](/es/docs/reference/spec.html) se define en términos generales el conjunto de etiquetas no permitidas.
+Las etiquetas se incluyen en una lista blanca, por lo que no hay ninguna lista que incluya todas las etiquetas no permitidas. Sin embargo, en la [especificación de AMP](/es/docs/fundamentals/spec.html) se define en términos generales el conjunto de etiquetas no permitidas.
 
 ### Falta un atributo obligatorio
 
@@ -552,7 +552,7 @@ La lista completa de etiquetas únicas es la siguiente:
 
 ## Errores de estilo y de diseño
 
-Antes de entrar en los errores de [estilo](/es/docs/guides/responsive/style_pages) y de [diseño](/es/docs/guides/responsive/control_layout), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
+Antes de entrar en los errores de [estilo](/es/docs/design/responsive/style_pages) y de [diseño](/es/docs/design/responsive/control_layout), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
 Sin embargo, para garantizar que las páginas se carguen rápidamente, presentan algunas restricciones que el validador de AMP se encarga de hacer cumplir.
 
 El diseño está más controlado en las páginas de AMP.
@@ -620,7 +620,7 @@ Si no estás seguro de lo que está provocando el error, intenta ejecutar el CSS
 </table>
 
 Este error se refiere a las reglas de CSS que contienen @, para las que AMP solo permite una serie de reglas
-(consulta también la [especificación de AMP](/es/docs/reference/spec.html)).
+(consulta también la [especificación de AMP](/es/docs/fundamentals/spec.html)).
 Por ejemplo, la regla `@import` no está permitida.
 En el error de validación se indica cuál es concretamente la regla no válida para que puedas corregirla más fácilmente.
 
@@ -645,7 +645,7 @@ Este error se produce cuando no se especifica ningún diseño para la etiqueta d
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/design/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 **Nota:** Si no se especifica el diseño y no se incluyen los valores de `width` y `height`, el valor predeterminado del diseño es CONTAINER. El validador devuelve un error porque ninguna de las etiquetas de AMP admite CONTAINER.
 Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añade un valor `width` y/o `height`.
@@ -691,7 +691,7 @@ Este error se produce cuando no se admite el diseño especificado para la etique
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/guides/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/design/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### Atributo no permitido por el diseño especificado
 
@@ -731,7 +731,7 @@ Los atributos no permitidos por los tipos de diseño se describen en la [especif
 </table>
 
 Este error se produce cuando el valor del atributo no es válido para el diseño especificado.
-Para entender lo que desencadena este error, es necesario familiarizarse con los [diferentes comportamientos de los diseños](/es/docs/guides/responsive/control_layout).
+Para entender lo que desencadena este error, es necesario familiarizarse con los [diferentes comportamientos de los diseños](/es/docs/design/responsive/control_layout).
 
 Imaginemos que se establece que el diseño sea `fixed-height` y se incluyen valores numéricos para `height` y para `width`.
 El diseño `fixed-height` adquiere un valor `height`.
@@ -766,7 +766,7 @@ Por ejemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` 
 
 Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [amp-mustache](/es/docs/reference/components/amp-mustache.html).
 
-Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS](/es/docs/guides/responsive/style_pages.html)).
+Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS](/es/docs/design/responsive/style_pages.html)).
 
 ### El atributo contiene sintaxis de la plantilla
 

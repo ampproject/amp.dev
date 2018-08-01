@@ -231,6 +231,6 @@ AMP 유효성 검사 서비스가 페이지에서 오류를 감지한 경우, �
 1.  오류를 설명하는 텍스트 줄. 이 경우 텍스트는 현재 `<img>` 태그가 사용되고 있음을 나타냅니다 (원래 사용해야 하는 태그는 `<amp-img>`).
 1.  오류 관련 문서의 링크. 이 경우 `<amp-img>` 태그 관련 문서. 모든 오류에서 문서 링크가 생성되는 것은 아닙니다.
 
-[사양](/ko/docs/reference/spec.html) 을 다시 자세히 검토해보니, `<img>` 태그가 사용되고 있음을 알 수 있습니다(원래 사용해야 하는 태그는 `<amp-img>`).
+[사양](/ko/docs/fundamentals/spec.html) 을 다시 자세히 검토해보니, `<img>` 태그가 사용되고 있음을 알 수 있습니다(원래 사용해야 하는 태그는 `<amp-img>`).
 
 발생 가능한 오류의 전체 목록을 더 잘 파악하려면 [AMP 유효성 검사 오류 가이드](https://www.ampproject.org/ko/docs/reference/validation_errors.html) 를 참조하세요. 면밀히 평가한 후에도 문제가 해결되지 않는 경우 [질문해주시면](http://stackoverflow.com/questions/tagged/amp-html) 도와드리겠습니다.

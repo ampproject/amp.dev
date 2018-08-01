@@ -8,7 +8,7 @@ AMP mendukung **kueri media** & **kueri elemen**, juga dilengkapi dengan cara ya
 
 ## Memudahkan pembuatan gambar yang responsif
 
-Buat gambar yang responsif dengan menetapkan `width` dan `height`, menyetel tata letak ke `responsive`, dan menunjukkan dengan [`srcset`](/id/docs/guides/responsive/art_direction.html) aset gambar mana yang digunakan berdasarkan berbagai ukuran layar:
+Buat gambar yang responsif dengan menetapkan `width` dan `height`, menyetel tata letak ke `responsive`, dan menunjukkan dengan [`srcset`](/id/docs/design/responsive/art_direction.html) aset gambar mana yang digunakan berdasarkan berbagai ukuran layar:
 
 [sourcecode:html]
 <amp-img
@@ -48,12 +48,12 @@ Nilai berikut dapat digunakan di atribut `layout`:
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>nodisplay</code></td>
       <td data-th="Description" class="col-twenty">Tidak</td>
-      <td data-th="Behavior"> Elemen tidak ditampilkan. Tata letak ini dapat diterapkan untuk setiap elemen AMP. Komponen tidak memerlukan ruang di layar seakan-akan gaya tampilannya tidak ada. Diasumsikan bahwa elemen dapat ditampilkan dengan sendirinya pada tindakan pengguna, misalnya,<a href="/docs/reference/extended/amp-lightbox.html"><code> amp-lightbox</code></a>.</td>
+      <td data-th="Behavior"> Elemen tidak ditampilkan. Tata letak ini dapat diterapkan untuk setiap elemen AMP. Komponen tidak memerlukan ruang di layar seakan-akan gaya tampilannya tidak ada. Diasumsikan bahwa elemen dapat ditampilkan dengan sendirinya pada tindakan pengguna, misalnya,<a href="/docs/reference/amp-lightbox.html"><code> amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code> fixed</code></td>
       <td data-th="Description" class="col-twenty">Ya</td>
-      <td data-th="Behavior"> Elemen memiliki lebar dan tinggi tetap tanpa ada responsivitas yang didukung. Satu-satunya pengecualian adalah elemen<a href="/docs/reference/amp-pixel.html"><code> amp-pixel</code></a>  dan<a href="/docs/reference/extended/amp-audio.html"><code> amp-audio</code></a> .</td>
+      <td data-th="Behavior"> Elemen memiliki lebar dan tinggi tetap tanpa ada responsivitas yang didukung. Satu-satunya pengecualian adalah elemen<a href="/docs/reference/amp-pixel.html"><code> amp-pixel</code></a>  dan<a href="/docs/reference/amp-audio.html"><code> amp-audio</code></a> .</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code> responsive</code></td>
@@ -63,7 +63,7 @@ Nilai berikut dapat digunakan di atribut `layout`:
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed-height</code></td>
       <td data-th="Description" class="col-twenty">Tinggi saja</td>
-      <td data-th="Behavior"> Elemen mengambil ruang yang tersedia, namun tingginya tetap tidak berubah. Tata letak ini berfungsi dengan baik untuk elemen seperti<a href="/docs/reference/extended/amp-carousel.html"><code> amp-carousel</code></a>  yang menyertakan konten dengan posisi horizontal. Atribut<code> width</code>  tidak boleh ada atau harus sama dengan<code> auto</code>.</td>
+      <td data-th="Behavior"> Elemen mengambil ruang yang tersedia, namun tingginya tetap tidak berubah. Tata letak ini berfungsi dengan baik untuk elemen seperti<a href="/docs/reference/amp-carousel.html"><code> amp-carousel</code></a>  yang menyertakan konten dengan posisi horizontal. Atribut<code> width</code>  tidak boleh ada atau harus sama dengan<code> auto</code>.</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fill</code></td>
@@ -88,7 +88,7 @@ Nilai berikut dapat digunakan di atribut `layout`:
 Dalam kasus tertentu, jika `width` atau `height` tidak ditetapkan, waktu proses AMP dapat menetapkan nilai tersebut secara default seperti berikut:
 
 * [`amp-pixel`](/id/docs/reference/amp-pixel.html): Lebar dan tinggi ditetapkan sebagai default ke 0.
-* [`amp-audio`](/id/docs/reference/extended/amp-audio.html): Lebar dan tinggi default diperkirakan dari browser.
+* [`amp-audio`](/id/docs/reference/amp-audio.html): Lebar dan tinggi default diperkirakan dari browser.
 
 ###  Bagaimana jika atribut<code>layout</code> tidak ditetapkan?
 

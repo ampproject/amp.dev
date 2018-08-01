@@ -8,7 +8,7 @@ $title: レイアウトとメディアクエリ
 
 ## レスポンシブな画像を手軽に作成
 
- レスポンシブな画像を作成するには、`width` と `height` を指定し、レイアウトを `responsive` に設定します。さらに、[srcset](ja/docs/guides/responsive/art_direction.html) を使って、さまざまな画面サイズに基づいて使用される画像アセットを指定します。
+ レスポンシブな画像を作成するには、`width` と `height` を指定し、レイアウトを `responsive` に設定します。さらに、[srcset](ja/docs/design/responsive/art_direction.html) を使って、さまざまな画面サイズに基づいて使用される画像アセットを指定します。
 
 [sourcecode:html]
 <amp-img
@@ -48,12 +48,12 @@ $title: レイアウトとメディアクエリ
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>nodisplay</code></td>
       <td data-th="Description" class="col-twenty">不要</td>
-      <td data-th="Behavior"> 要素は表示されません。このレイアウトはすべての AMP 要素に適用できます。このコンポーネントは、表示スタイルが none（なし）の場合のように、画面上での占有スペースがありません。この要素は、ユーザーの操作（たとえば <a href="ja/docs/reference/extended/amp-lightbox.html"><code>amp-lightbox</code></a>）で表示されることを想定しています。</td>
+      <td data-th="Behavior"> 要素は表示されません。このレイアウトはすべての AMP 要素に適用できます。このコンポーネントは、表示スタイルが none（なし）の場合のように、画面上での占有スペースがありません。この要素は、ユーザーの操作（たとえば <a href="ja/docs/reference/amp-lightbox.html"><code>amp-lightbox</code></a>）で表示されることを想定しています。</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed</code></td>
       <td data-th="Description" class="col-twenty">必要</td>
-      <td data-th="Behavior"> 要素は幅と高さが固定され、レスポンシブではありません。ただし、<a href="ja/docs/reference/amp-pixel.html"><code>amp-pixel</code></a>  要素と <a href="ja/docs/reference/extended/amp-audio.html"><code> amp-audio</code></a> 要素は例外です。</td>
+      <td data-th="Behavior"> 要素は幅と高さが固定され、レスポンシブではありません。ただし、<a href="ja/docs/reference/amp-pixel.html"><code>amp-pixel</code></a>  要素と <a href="ja/docs/reference/amp-audio.html"><code> amp-audio</code></a> 要素は例外です。</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>responsive</code></td>
@@ -63,7 +63,7 @@ $title: レイアウトとメディアクエリ
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed-height</code></td>
       <td data-th="Description" class="col-twenty">高さのみ必要</td>
-      <td data-th="Behavior"> 要素は使用できるスペースを占有しますが、高さは変わりません。このレイアウトは、水平に配置されるコンテンツを含む要素（<a href="ja/docs/reference/extended/amp-carousel.html"><code>amp-carousel</code></a>   など）に適しています。なお、<code>width</code>  属性については、何も指定しないか、または<code> auto </code>に設定する必要があります。</td>
+      <td data-th="Behavior"> 要素は使用できるスペースを占有しますが、高さは変わりません。このレイアウトは、水平に配置されるコンテンツを含む要素（<a href="ja/docs/reference/amp-carousel.html"><code>amp-carousel</code></a>   など）に適しています。なお、<code>width</code>  属性については、何も指定しないか、または<code> auto </code>に設定する必要があります。</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fill</code></td>
@@ -88,7 +88,7 @@ $title: レイアウトとメディアクエリ
 `width` または `height` が指定されていない場合、AMP ランタイムはデフォルトで次の値を使用します。
 
 * [amp-pixel](ja/docs/reference/amp-pixel.html): 幅と高さの両方がデフォルトで 0 に設定されます。
-* [amp-audio](ja/docs/reference/extended/amp-audio.html): ブラウザから推測される幅と高さをデフォルトとして使用します。
+* [amp-audio](ja/docs/reference/amp-audio.html): ブラウザから推測される幅と高さをデフォルトとして使用します。
 
 ###  <code>layout</code> 属性が指定されていない場合
 

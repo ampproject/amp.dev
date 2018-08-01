@@ -39,7 +39,7 @@ AMP はオープン エコシステムであり、AMP プロジェクトでは A
 
 ## キャッシュされた AMP ページのリクエスト元
 
-キャッシュされた AMP ページには、プラットフォーム（Google 検索、Google ニュース、Cloudflare など）やモバイルアプリがアクセスします。モバイルアプリは、URL を介して（Google の [AMP URL API](https://developers.google.com/amp/cache/use-amp-url) をご覧ください）、または、プログレッシブ ウェブアプリのクロスオリジン XHR によって（[AMP を埋め込んでデータソースとして使用する](/ja/docs/integration/pwa-amp/amp-in-pwa)をご覧ください）、キャッシュされた AMP コンテンツにリンクすることができます。
+キャッシュされた AMP ページには、プラットフォーム（Google 検索、Google ニュース、Cloudflare など）やモバイルアプリがアクセスします。モバイルアプリは、URL を介して（Google の [AMP URL API](https://developers.google.com/amp/cache/use-amp-url) をご覧ください）、または、プログレッシブ ウェブアプリのクロスオリジン XHR によって（[AMP を埋め込んでデータソースとして使用する](/ja/docs/integration/pwa-amp/amp-in-pwa.html)をご覧ください）、キャッシュされた AMP コンテンツにリンクすることができます。
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"

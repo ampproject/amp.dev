@@ -19,15 +19,15 @@ AMP›ler web sayfalarıdır; sayfa ve ögelerinde yapılacak biçimlendirmeler 
 </style>
 [/sourcecode]
 
-Her AMP sayfasında yalnızca tek bir yerleştirilmiş stil sayfası olabilir ve kullanmanıza izin verilmeyen belli selektörler vardır. [Biçimlendirme hakkında her şeyi öğrenin](/tr/docs/guides/responsive/style_pages.html).
+Her AMP sayfasında yalnızca tek bir yerleştirilmiş stil sayfası olabilir ve kullanmanıza izin verilmeyen belli selektörler vardır. [Biçimlendirme hakkında her şeyi öğrenin](/tr/docs/design/responsive/style_pages.html).
 
 ## Düzeni kontrol edin
 
 AMP sayfadaki ögeleri düzenlerken daha sıkı kurallar takip eder. Normal bir HTML sayfasında, ögeleri düzenlemek için neredeyse özel olarak CSS kullanırsınız. Ancak performans nedenlerinden dolayı, AMP tüm ögelerin en başından beri özel bir boyuta ayarlanmış olmasını gerektirir.
 
-AMP›nin bir sayfayı nasıl işlediği ve düzenlediği, ayrıca [Düzeni Kontrol Etme](/tr/docs/guides/responsive/control_layout.html) bölümünden düzeni nasıl değiştirebileceğiniz hakkında her şeyi öğrenin.
+AMP›nin bir sayfayı nasıl işlediği ve düzenlediği, ayrıca [Düzeni Kontrol Etme](/tr/docs/design/responsive/control_layout.html) bölümünden düzeni nasıl değiştirebileceğiniz hakkında her şeyi öğrenin.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/tr/docs/tutorials/create/include_image.html"><span class="arrow-prev">Önceki</span></a>
-  <a class="button next-button" href="/tr/docs/tutorials/create/preview_and_validate.html"><span class="arrow-next">Sonraki</span></a>
+  <a class="button prev-button" href="/tr/docs/getting_started/create/include_image.html"><span class="arrow-prev">Önceki</span></a>
+  <a class="button next-button" href="/tr/docs/getting_started/create/preview_and_validate.html"><span class="arrow-next">Sonraki</span></a>
 </div>

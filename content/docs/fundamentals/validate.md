@@ -1,7 +1,6 @@
 ---
 $title: Validate AMP pages
 $order: 7
-$category: Debug
 toc: true
 components:
     - youtube
@@ -266,7 +265,7 @@ Each tool gives several pieces of information:
      documentation for the `<amp-img>` tag. Not all errors generate
      documentation links.
 
-Carefully re-reading the [spec](/docs/reference/spec.html), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
+Carefully re-reading the [spec](/docs/fundamentals/spec.html), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
 
 To better understand the complete list of potential errors,
 see the [AMP Validation Errors guide](https://www.ampproject.org/docs/reference/validation_errors.html).

@@ -191,4 +191,4 @@ untuk ditampilkan jika tidak ada iklan yang tersedia:
 
 AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](/id/docs/reference/components/amp-ad.html#supported-ad-networks).
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP](/id/docs/guides/ads_on_amp.html) guide.
+Baca lebih lanjut: Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP](/id/docs/ads/monetization.html) guide.

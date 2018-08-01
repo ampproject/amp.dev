@@ -1,6 +1,39 @@
 blogs:
 
 - type: Blog
+  title: "Track development with the new AMP Roadmap"
+  id: ads-track-development-with-the-new-amp-roadmap
+  author: Vamsee Jasti
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2018/07/19/track-development-with-the-new-amp-roadmap/amp/"
+  excerpt: "As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each. Starting today, you can head over to the AMP roadmap and see an updated view of feature development across the project. We hope this is easy [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-07-19T17:42:43-04:00
+  date: "July 19, 2018"
+
+- type: Blog
+  title: "New in AMP stories: Monetization, Revamped bookends and Metadata"
+  id: ads-new-in-amp-stories-monetization-revamped-bookends-and-metadata
+  author: Jon Newmuis
+  role:  AMP Stories Lead Engineer, Google
+  origin: "https://amphtml.wordpress.com/2018/07/16/new-in-amp-stories-monetization-revamped-bookends-and-metadata/amp/"
+  excerpt: "We announced the developer preview of AMP stories in February at AMP Conf. Since then, publishers have authored thousands of stories, experimenting with the format and providing valuable feedback to the AMP team. Based on this input, we recently released new capabilities in AMP stories v1.0, open to all developers without origin trials or a [&#8230;]"
+  avatar: https://videos.files.wordpress.com/pqK8yXrk/amp_blog_story_ad_hd.mp4
+  datedata: 2018-07-16T18:03:22-04:00
+  date: "July 16, 2018"
+
+- type: Blog
+  title: "Serverless AMP solution on AWS"
+  id: ads-serverless-amp-solution-on-aws
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/07/11/serverless-amp-solution-on-aws/amp/"
+  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit. You can see their site featured on the showcase page of AMPproject.org It all started when we realized our website gets outdated very fast and we are always so busy with our customers we forget about ourselves. We had to build something [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-07-11T16:09:31-04:00
+  date: "July 11, 2018"
+
+- type: Blog
   title: "The Shadow Reader, Improved"
   id: ads-the-shadow-reader-improved
   author: Ben Morss
@@ -8,7 +41,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/06/19/the-shadow-reader-improved/amp/"
   excerpt: "We made the Shadow Reader even faster &#8211; and friendlier to search engines! We created the Shadow Reader to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site repurposes existing articles from The Guardian into an immersive news reader experience. More than [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-19T11:22:01-07:00
+  datedata: 2018-06-19T14:22:01-04:00
   date: "June 19, 2018"
 
 - type: Blog
@@ -19,7 +52,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/06/06/2058/amp/"
   excerpt: "Monetization support for AMP stories AMP stories now supports ‘Publisher placed ads’, the ability for a publisher to serve ads for which they can control delivery sales and delivery. Ad Server support in DoubleClick for Publishers (DFP) is planned for the end of June. We urge other ad networks that are interested in adding monetization [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-06T17:17:52-07:00
+  datedata: 2018-06-06T20:17:52-04:00
   date: "June 6, 2018"
 
 - type: Blog
@@ -30,38 +63,5 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/05/08/google-io-2018/amp/"
   excerpt: "For the latest AMP project updates, subscribe to our new newsletter! A strong network of AMP contributors and collaborators has been critical to achieving the project’s mission of building a user-first web. At Google’s I/O developer conference this week, members of the AMP team are sharing recent ways the AMP community has come together to [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-05-08T13:56:04-07:00
+  datedata: 2018-05-08T16:56:04-04:00
   date: "May 8, 2018"
-
-- type: Blog
-  title: "A first look at using web packaging to improve AMP URLs"
-  id: ads-a-first-look-at-using-web-packaging-to-improve-amp-urls
-  author: Kinuko Yasuda
-  role:  Chrome Software Engineer, and Eric Steinlauf, Software Engineer, Google Search
-  origin: "https://amphtml.wordpress.com/2018/05/08/a-first-look-at-using-web-packaging-to-improve-amp-urls/amp/"
-  excerpt: "One of the top pieces of feedback that people share about AMP is about the “google.com/amp…” URLs that are used when linking to a piece of AMP content in Google Search. A couple of months ago, the AMP team at Google outlined a plan to display better AMP URLs, and today we’d like to share [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-05-08T13:47:43-07:00
-  date: "May 8, 2018"
-
-- type: Blog
-  title: "New functionality to help manage user choice in AMP pages"
-  id: ads-new-functionality-to-help-manage-user-choice-in-amp-pages
-  author: Vamsee Jasti
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2018/05/04/new-functionality-to-help-manage-user-choice-in-amp-pages/amp/"
-  excerpt: "Over the past few weeks, we launched tools to help publishers collect user consent. Today, we’d like to give you an update on some new functionality  that may make it easier for publishers to collect consent on AMP pages. Ad Network integrations with the &#60;amp-consent&#62; component The DoubleClick and AdSense implementations of &#60;amp-ad&#62; now support [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-05-04T13:50:15-07:00
-  date: "May 4, 2018"
-
-- type: Blog
-  title: "AMP and Advertising Conversions"
-  id: ads-amp-and-advertising-conversions
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/05/03/amp-and-advertising-conversions/amp/"
-  excerpt: "The following was posted by Oliver Armstrong, VP of Product, Instapage. Learn more about Instapage&#8217;s AMP integration on their blog. You don’t have to be an advertiser to know that mobile ad experiences are lacking. According to research from Google and SOASTA, the average load time for mobile landing pages is 22 seconds. For more than half [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-05-03T09:04:32-07:00
-  date: "May 3, 2018"

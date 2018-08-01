@@ -5,7 +5,7 @@ $title: CSS yang didukung
 
 Seperti semua halaman, halaman AMP digayakan dengan CSS, tapi tidak dapat mereferensikan stylesheet eksternal (dengan pengecualian [font kustom](#the-custom-fonts-exception)). Selain itu, gaya tertentu tidak diizinkan karena implikasi performa. Atribut gaya sisipan pun tidak diizinkan.
 
-Semua gaya harus ada di kepala dokumen (lihat [Tambahkan gaya ke halaman](/id/docs/guides/responsive_amp.html#add-styles-to-a-page)). Namun Anda dapat menggunakan pembuatan template dan praprosesor CSS untuk membuat halaman statis agar dapat mengelola konten Anda dengan lebih baik.
+Semua gaya harus ada di kepala dokumen (lihat [Tambahkan gaya ke halaman](/id/docs/design/responsive_amp.html#add-styles-to-a-page)). Namun Anda dapat menggunakan pembuatan template dan praprosesor CSS untuk membuat halaman statis agar dapat mengelola konten Anda dengan lebih baik.
 
 Catatan: Komponen AMP hadir dengan gaya default untuk mempermudah pembuatan halaman responsif. Gaya ini ditentukan di [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
@@ -68,7 +68,7 @@ Gaya berikut diizinkan, namun dibatasi dalam hal nilai yang didukung:
 
 Halaman AMP tidak dapat menyertakan stylesheet eksternal, dengan pengecualian font kustom.
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP](/id/docs/guides/responsive/custom_fonts.html).
+Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP](/id/docs/design/responsive/custom_fonts.html).
 
 ## Menggunakan praprosesor CSS
 

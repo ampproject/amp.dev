@@ -1,7 +1,6 @@
 ---
 $title: Include images & video
 $order: 1
-$category: Develop
 toc: true
 components:
   - iframe
@@ -23,7 +22,7 @@ We provide equivalent components for the following reasons:
 * We need to control network requests to [lazy load and prioritize resources
 effectively](/learn/about-how/#prioritize-resource-loading)
 
-Caution: While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/guides/validate.html) and you won't get all the benefits AMP provides.
+Caution: While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/fundamentals/validate.html) and you won't get all the benefits AMP provides.
 
 ## Images
 
@@ -78,7 +77,7 @@ images. In its most basic form, all you have to do is to add `layout="responsive
 </amp-iframe>
 </div>
 
-Read on: Learn more about [advanced layout techniques](/docs/guides/responsive/control_layout.html).
+Read on: Learn more about [advanced layout techniques](/docs/design/responsive/control_layout.html).
 
 ### Behavior and placeholders
 
@@ -86,7 +85,7 @@ The AMP HTML runtime can effectively manage image resources,
 choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
-Read on: Learn how to [provide fallbacks and placeholders for images](/docs/guides/responsive/placeholders.html).
+Read on: Learn how to [provide fallbacks and placeholders for images](/docs/design/responsive/placeholders.html).
 
 ## Animated images
 

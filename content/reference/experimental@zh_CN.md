@@ -1,6 +1,5 @@
 ---
 $title: 实验性功能
-$order: 5
 ---
 
 [AMP 实验性组件](https://github.com/ampproject/amphtml/tree/master/tools/experiments)是已经发布但尚不能广泛使用的功
@@ -34,6 +33,6 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 包含实验性功能的所有 AMP 文件均无法成功通过 
-[AMP 验证](/zh_cn/docs/guides/validate.html)。
+[AMP 验证](/zh_cn/docs/fundamentals/validate.html)。
 对于可直接在生产环境中使用的 AMP 文档，请移除此类实验性组件。
 

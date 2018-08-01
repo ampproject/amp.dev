@@ -204,6 +204,6 @@ Note: In practice, each image in the carousel would likely have a different `src
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/interactivity/get-familiar.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/interactivity/remote-data.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">Next</span></a>
 </div>

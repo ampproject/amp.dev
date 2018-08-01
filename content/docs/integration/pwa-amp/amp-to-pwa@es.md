@@ -72,7 +72,7 @@ Consejo: Hay formas más sencillas de trabajar con un service worker. Echa un vi
 
 ## Redirigir a la PWA todos los enlaces de una página AMP
 
-Es posible que la mayoría de los enlaces de tus páginas AMP dirijan a otras páginas de contenido. Se pueden seguir dos estrategias distintas para asegurarse de que los clics a otros enlaces provoquen una "actualización" de la aplicación web progresiva, [según cómo utilices AMP](/es/docs/guides/discovery):
+Es posible que la mayoría de los enlaces de tus páginas AMP dirijan a otras páginas de contenido. Se pueden seguir dos estrategias distintas para asegurarse de que los clics a otros enlaces provoquen una "actualización" de la aplicación web progresiva, [según cómo utilices AMP](/es/docs/fundamentals/discovery.html):
 
 ### 1. Si emparejas tus páginas canónicas con páginas AMP
 
@@ -111,4 +111,4 @@ AMP resuelve esta cuestión [reescribiendo la URL del esqueleto](/es/docs/refere
 
 Después de colocar todos estos atributos, los clics a enlaces posteriores de una página AMP llevarán al usuario a tu PWA, independientemente de si se cuenta con un componente service worker.
 
-Más información: Una vez que ya has llegado hasta aquí, ¿por qué no reutilizas tus páginas AMP para construir la PWA? [Descubre cómo se hace](/es/docs/guides/pwa-amp/amp-in-pwa).
+Más información: Una vez que ya has llegado hasta aquí, ¿por qué no reutilizas tus páginas AMP para construir la PWA? [Descubre cómo se hace](/es/docs/integration/pwa-amp/amp-in-pwa).

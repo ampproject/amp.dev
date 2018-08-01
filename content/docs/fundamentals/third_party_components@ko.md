@@ -194,4 +194,4 @@ AMP 문서 내에서 자바스크립트로 제공하는 광고 네트워크는 �
 AMP는 광범위한 광고 네트워크를 지원합니다.
 [reference for a full list](/ko/docs/reference/components/amp-ad.html#supported-ad-networks)를 참고하시길 바랍니다.
 
-읽어보기: [AMP에 광고 게재](/ko/docs/guides/ads_on_amp.html) 가이드에서 광고에 관해 자세히 알아보세요.
+읽어보기: [AMP에 광고 게재](/ko/docs/ads/monetization.html) 가이드에서 광고에 관해 자세히 알아보세요.

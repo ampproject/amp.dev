@@ -60,7 +60,7 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
+For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html) and the [Layout Spec](/docs/design/amp-html-layout.html).
 
 ## media
 
@@ -121,7 +121,7 @@ Example:
 </amp-lightbox>
 ```
 
-For more information, see  [Actions and Events in AMP](/docs/reference/amp-actions-and-events.html).
+For more information, see  [Actions and Events in AMP](/docs/interaction_dynamic/amp-actions-and-events.html).
 
 ## placeholder
 
@@ -169,6 +169,6 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html) and the [Layout Spec](/docs/reference/spec/amp-html-layout.html).
+For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html) and the [Layout Spec](/docs/design/amp-html-layout.html).
 
 

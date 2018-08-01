@@ -5,7 +5,7 @@ $title: 使用入门
 
 这是一份快速入门指南，旨在帮助您快速上手使用 AMP。
 
-如需了解更详细的说明，请访问[创建您的首个 AMP 网页](/zh_cn/docs/tutorials/create.html)教程。
+如需了解更详细的说明，请访问[创建您的首个 AMP 网页](/zh_cn/docs/fundamentals/create.html)教程。
 
 ### 第 1 步：获取 AMP HTML 模板
 
@@ -28,7 +28,7 @@ $title: 使用入门
 </html>
 ```
 
-继续阅读: 详细了解 AMP 网页[必需的标记](/zh_cn/docs/reference/spec.html#required-markup)。
+继续阅读: 详细了解 AMP 网页[必需的标记](/zh_cn/docs/fundamentals/spec.html#required-markup)。
 
 ### 第 2 步：向网页添加组件
 
@@ -70,23 +70,23 @@ $title: 使用入门
 </style>
 ```
 
-继续阅读: 详细了解 AMP 网页[支持的 CSS](/zh_cn/docs/guides/responsive/style_pages.html)。
+继续阅读: 详细了解 AMP 网页[支持的 CSS](/zh_cn/docs/design/responsive/style_pages.html)。
 
 ### 第 4 步：验证 AMP HTML
 
 请使用 [AMP 验证工具](https://validator.ampproject.org/)验证您的 AMP 网页，以确保您的网页是有效的 AMP HTML。
 
-要想了解您可以使用的其他验证工具，请参阅[验证 AMP 网页](/zh_cn/docs/guides/validate.html)。
+要想了解您可以使用的其他验证工具，请参阅[验证 AMP 网页](/zh_cn/docs/fundamentals/validate.html)。
 
 ### 后续步骤
 
-要想深入了解 AMP 网页的基本知识，请访问[创建您的首个 AMP 网页](/zh_cn/docs/tutorials/create.html)教程。
+要想深入了解 AMP 网页的基本知识，请访问[创建您的首个 AMP 网页](/zh_cn/docs/fundamentals/create.html)教程。
 
 下面这些资源也有助于您打造出色的体验：
 
-* [使您的网页可被轻松发现](/zh_cn/docs/guides/discovery.html)
-* [向您的网页添加分析工具](/zh_cn/docs/guides/analytics_amp.html)
-* [提高用户互动度](/zh_cn/docs/guides/engagement.html)
+* [使您的网页可被轻松发现](/zh_cn/docs/fundamentals/discovery.html)
+* [向您的网页添加分析工具](/zh_cn/docs/analytics/analytics_amp.html)
+* [提高用户互动度](/zh_cn/docs/fundamentals/engagement.html)
 * [AMP BY Example](https://ampbyexample.com/) 上的在线演示
 
 

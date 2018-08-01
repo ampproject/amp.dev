@@ -20,7 +20,7 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Placeholder & fallback](/id/docs/guides/responsive/placeholders.html).
+Untuk informasi selengkapnya, lihat [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
 
 ## heights
 
@@ -41,11 +41,11 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/guides/responsive/art_direction.html).
+Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/design/responsive/art_direction.html).
 
 ## layout
 
-AMP menyediakan kumpulan [tata letak](/id/docs/guides/responsive/control_layout.html#the-layout-attribute) yang menentukan perilaku komponen AMP dalam tata letak dokumen. Anda dapat menentukan tata letak komponen dengan menambahkan atribut `layout` menggunakan salah satu nilai tata letak yang didukung untuk elemen tersebut (lihat dokumentasi elemen untuk mengetahui nilai apa saja yang didukung).
+AMP menyediakan kumpulan [tata letak](/id/docs/design/responsive/control_layout.html#the-layout-attribute) yang menentukan perilaku komponen AMP dalam tata letak dokumen. Anda dapat menentukan tata letak komponen dengan menambahkan atribut `layout` menggunakan salah satu nilai tata letak yang didukung untuk elemen tersebut (lihat dokumentasi elemen untuk mengetahui nilai apa saja yang didukung).
 
 Contoh:
 
@@ -58,7 +58,7 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](/id/docs/guides/responsive/control_layout.html) dan [Spesifikasi Tata Letak](/id/docs/reference/spec/amp-html-layout.html).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](/id/docs/design/responsive/control_layout.html) dan [Spesifikasi Tata Letak](/id/docs/design/amp-html-layout.html).
 
 ## media
 
@@ -79,7 +79,7 @@ Contoh:
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](/id/docs/guides/responsive/control_layout.html#element-media-queries).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](/id/docs/design/responsive/control_layout.html#element-media-queries).
 
 ## noloading
 
@@ -119,7 +119,7 @@ Contoh:
 </amp-lightbox>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat  [Tindakan dan Kejadian di AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md).
+Untuk informasi selengkapnya, lihat  [Tindakan dan Kejadian di AMP](/id/docs/interaction_dynamic/amp-actions-and-events.html).
 
 ## placeholder
 
@@ -135,7 +135,7 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Placeholder & fallback](/id/docs/guides/responsive/placeholders.html).
+Untuk informasi selengkapnya, lihat [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
 
 ## sizes
 
@@ -151,11 +151,11 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/guides/responsive/art_direction.html).
+Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/design/responsive/art_direction.html).
 
 ## width dan height
 
-Untuk sebagian [tata letak](/id/docs/guides/responsive/control_layout.html#the-layout-attribute), komponen AMP harus memiliki atribut `width` dan `height` yang berisi nilai piksel bilangan bulat.
+Untuk sebagian [tata letak](/id/docs/design/responsive/control_layout.html#the-layout-attribute), komponen AMP harus memiliki atribut `width` dan `height` yang berisi nilai piksel bilangan bulat.
 
 Contoh:
 
@@ -167,4 +167,4 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](/id/docs/guides/responsive/control_layout.html) dan [Spesifikasi Tata Letak](/id/docs/reference/spec/amp-html-layout.html).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](/id/docs/design/responsive/control_layout.html) dan [Spesifikasi Tata Letak](/id/docs/design/amp-html-layout.html).

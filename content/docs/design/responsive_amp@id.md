@@ -5,9 +5,9 @@ $title: Gaya & Tata Letak
 
 Gaya dan tata letak pada halaman HTML AMP sangat mirip dengan halaman HTML normal – pada kedua kasus tersebut, Anda akan menggunakan CSS.
 
-Namun, AMP membatasi beberapa penggunaan CSS untuk alasan performa dan kegunaan, sekaligus memperluas kemampuan desain yang responsif dengan fitur seperti [placeholder & fallback](/id/docs/guides/responsive/placeholders.html), [pengarahan seni lanjutan melalui srcset](/id/docs/guides/responsive/art_direction.html) dan [atribut tata letak](/id/docs/guides/responsive/control_layout.html) untuk kontrol yang lebih baik terkait tampilan elemen Anda.
+Namun, AMP membatasi beberapa penggunaan CSS untuk alasan performa dan kegunaan, sekaligus memperluas kemampuan desain yang responsif dengan fitur seperti [placeholder & fallback](/id/docs/design/responsive/placeholders.html), [pengarahan seni lanjutan melalui srcset](/id/docs/design/responsive/art_direction.html) dan [atribut tata letak](/id/docs/design/responsive/control_layout.html) untuk kontrol yang lebih baik terkait tampilan elemen Anda.
 
-Tip: Membuat elemen responsif di AMP sangatlah mudah. Cukup letakkan `layout="responsive"` pada elemen. Untuk mempelajari lebih lanjut tentang Desain Responsif di AMP, buka [Membuat Halaman AMP Responsif](/id/docs/guides/responsive/responsive_design).
+Tip: Membuat elemen responsif di AMP sangatlah mudah. Cukup letakkan `layout="responsive"` pada elemen. Untuk mempelajari lebih lanjut tentang Desain Responsif di AMP, buka [Membuat Halaman AMP Responsif](/id/docs/design/responsive/responsive_design).
 
 {{ youtube('y6kA3u3GIws', 480, 270, caption='Tonton UpperQuad yang menyampaikan perancangan ulang situs proyek AMP, termasuk tantangan dalam menggunakan AMP untuk pertama kalinya.') }}
 
@@ -56,7 +56,7 @@ Tentukan gaya komponen dengan pemilih elemen atau kelas menggunakan properti CSS
 </body>
 [/sourcecode]
 
-Penting: Periksa apakah gaya Anda didukung di AMP. Beberapa gaya tidak didukung karena alasan performa (lihat juga [CSS yang Didukung](/id/docs/guides/responsive/style_pages.html)).
+Penting: Periksa apakah gaya Anda didukung di AMP. Beberapa gaya tidak didukung karena alasan performa (lihat juga [CSS yang Didukung](/id/docs/design/responsive/style_pages.html)).
 
 ## Atur tata letak elemen secara responsif
 
@@ -64,19 +64,19 @@ Tentukan ukuran dan posisi untuk semua elemen AMP yang terlihat dengan memberika
 
 Setel tata letak ke responsif. Tindakan ini akan mengubah ukuran elemen selebar penampungnya dan ukuran panjangnya diubah secara otomatis ke rasio aspek yang diberikan oleh atribut lebar dan tinggi.
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [tata letak yang didukung di AMP](/id/docs/guides/responsive/control_layout.html)
+Baca lebih lanjut: Pelajari lebih lanjut tentang [tata letak yang didukung di AMP](/id/docs/design/responsive/control_layout.html)
 
 ## Berikan placeholder & fallback
 
 Berkat dukungan yang sudah ada untuk placeholder dan fallback, pengguna Anda tidak perlu melihat layar kosong lagi.
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [Placeholder dan fallback](/id/docs/guides/responsive/placeholders.html)
+Baca lebih lanjut: Pelajari lebih lanjut tentang [Placeholder dan fallback](/id/docs/design/responsive/placeholders.html)
 
 ## Seni mengarahkan gambar Anda
 
 AMP mendukung atribut `srcset` dan `sizes` agar Anda dapat mengontrol secara mendalam gambar mana yang dimuat dalam skenario tertentu.
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [pengarahan seni dengan srcset dan ukuran](/id/docs/guides/responsive/art_direction.html)
+Baca lebih lanjut: Pelajari lebih lanjut tentang [pengarahan seni dengan srcset dan ukuran](/id/docs/design/responsive/art_direction.html)
 
 ## Validasikan gaya dan tata letak Anda
 
@@ -88,4 +88,4 @@ Contoh error di konsol halaman dengan CSS yang melebihi batas 50.000 byte:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [memvalidasi dan memperbaiki halaman AMP](/id/docs/guides/validate.html)
+Baca lebih lanjut: Pelajari lebih lanjut tentang [memvalidasi dan memperbaiki halaman AMP](/id/docs/fundamentals/validate.html)

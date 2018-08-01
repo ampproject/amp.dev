@@ -15,7 +15,7 @@ include them in your pages.
 *  Precisamos entender o layout da página antes de carregar os recursos, algo crucial para [oferecer suporte ao pré-carregamento da janela de visualização primária.](/pt_br/learn/about-how/#size-all-resources-statically)
 *  Precisamos controlar as solicitações de rede para [carregamento lento e priorizar os recursos de maneira efetiva.](/pt_br/learn/about-how/#prioritize-resource-loading)
 
-Cuidado: Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas](/pt_br/docs/guides/debug/validate.html) e não será possível aproveitar todos os benefícios que as AMP oferecem.
+Cuidado: Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas](/pt_br/docs/fundamentals/validate.html) e não será possível aproveitar todos os benefícios que as AMP oferecem.
 
 ## Imagens
 
@@ -67,13 +67,13 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
 </amp-iframe>
 </div>
 
-Leia mais Saiba mais sobre [técnicas de layout avançadas](/pt_br/docs/guides/responsive/control_layout.html).
+Leia mais Saiba mais sobre [técnicas de layout avançadas](/pt_br/docs/design/responsive/control_layout.html).
 
 ### Comportamento e marcadores de posição
 
 O tempo de execução das AMP em HTML pode gerenciar recursos de imagens de maneira eficiente, escolhendo atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na conexão de largura de banda ou em outros fatores.
 
-Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens](/pt_br/docs/guides/responsive/placeholders.html).
+Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens](/pt_br/docs/design/responsive/placeholders.html).
 
 ## Imagens animadas
 

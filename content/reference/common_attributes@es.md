@@ -20,7 +20,7 @@ Ejemplo:
 </amp-anim>
 [/sourcecode]
 
-Para obtener más información, consulta [Marcadores de posición y respaldos](/es/docs/guides/responsive/placeholders.html).
+Para obtener más información, consulta [Marcadores de posición y respaldos](/es/docs/design/responsive/placeholders.html).
 
 ## heights
 
@@ -41,11 +41,11 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights](/es/docs/guides/responsive/art_direction.html).
+Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights](/es/docs/design/responsive/art_direction.html).
 
 ## layout
 
-AMP proporciona un conjunto de [diseños](/es/docs/guides/responsive/control_layout.html#the-layout-attribute) que especifican cómo se comporta un componente AMP dentro del diseño del documento. Se puede especificar el diseño del componente añadiendo el atributo `layout` con un valor de diseño válido para el elemento (para saber qué valores se admiten, consulta la documentación del elemento).
+AMP proporciona un conjunto de [diseños](/es/docs/design/responsive/control_layout.html#the-layout-attribute) que especifican cómo se comporta un componente AMP dentro del diseño del documento. Se puede especificar el diseño del componente añadiendo el atributo `layout` con un valor de diseño válido para el elemento (para saber qué valores se admiten, consulta la documentación del elemento).
 
 Ejemplo:
 
@@ -58,7 +58,7 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries](/es/docs/guides/responsive/control_layout.html) y las [especificaciones de diseño](/es/docs/reference/spec/amp-html-layout.html).
+Para obtener más información, consulta [Diseño y media queries](/es/docs/design/responsive/control_layout.html) y las [especificaciones de diseño](/es/docs/design/amp-html-layout.html).
 
 ## media
 
@@ -79,7 +79,7 @@ Ejemplo:
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries](/es/docs/guides/responsive/control_layout.html#element-media-queries).
+Para obtener más información, consulta [Diseño y media queries](/es/docs/design/responsive/control_layout.html#element-media-queries).
 
 ## noloading
 
@@ -119,7 +119,7 @@ Ejemplo:
 </amp-lightbox>
 [/sourcecode]
 
-Para obtener más información, consulta [Acciones y eventos en AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md).
+Para obtener más información, consulta [Acciones y eventos en AMP](/es/docs/interaction_dynamic/amp-actions-and-events.html).
 
 ## placeholder
 
@@ -135,7 +135,7 @@ Ejemplo:
 </amp-anim>
 [/sourcecode]
 
-Para obtener más información, consulta [Marcadores de posición y respaldos](/es/docs/guides/responsive/placeholders.html).
+Para obtener más información, consulta [Marcadores de posición y respaldos](/es/docs/design/responsive/placeholders.html).
 
 ## sizes
 
@@ -151,11 +151,11 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights](/es/docs/guides/responsive/art_direction.html).
+Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights](/es/docs/design/responsive/art_direction.html).
 
 ## width y height
 
-En el caso de algunos [diseños](/es/docs/guides/responsive/control_layout.html#the-layout-attribute), los componentes AMP deben tener un atributo `width` y otro atributo `height` con valores de píxeles en números enteros.
+En el caso de algunos [diseños](/es/docs/design/responsive/control_layout.html#the-layout-attribute), los componentes AMP deben tener un atributo `width` y otro atributo `height` con valores de píxeles en números enteros.
 
 Ejemplo:
 
@@ -167,4 +167,4 @@ Ejemplo:
 </amp-anim>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries](/es/docs/guides/responsive/control_layout.html) y las [especificaciones de diseño](/es/docs/reference/spec/amp-html-layout.html).
+Para obtener más información, consulta [Diseño y media queries](/es/docs/design/responsive/control_layout.html) y las [especificaciones de diseño](/es/docs/design/amp-html-layout.html).

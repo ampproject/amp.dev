@@ -8,7 +8,7 @@ $title: 布局和媒体查询
 
 ## 轻松创建自适应图片
 
- 您可以通过以下方法创建自适应图片 - 指定 `width` 和 `height`，将布局设置为 `responsive`，然后使用 [`srcset`](/zh_cn/docs/guides/responsive/art_direction.html) 指定不同的屏幕尺寸下使用哪个图片素材资源：
+ 您可以通过以下方法创建自适应图片 - 指定 `width` 和 `height`，将布局设置为 `responsive`，然后使用 [`srcset`](/zh_cn/docs/design/responsive/art_direction.html) 指定不同的屏幕尺寸下使用哪个图片素材资源：
 
 [sourcecode:html]
 <amp-img
@@ -48,12 +48,12 @@ $title: 布局和媒体查询
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>nodisplay</code></td>
       <td data-th="Description" class="col-twenty">否</td>
-      <td data-th="Behavior"> 元素不显示。该布局可应用于每个 AMP 元素。组件不占用任何屏幕空间，如同没有显示样式一般。假定元素能够在用户执行操作时自行显示，例如，<a href="/zh_cn/docs/reference/extended/amp-lightbox.html"> <code>amp-lightbox</code></a>。</td>
+      <td data-th="Behavior"> 元素不显示。该布局可应用于每个 AMP 元素。组件不占用任何屏幕空间，如同没有显示样式一般。假定元素能够在用户执行操作时自行显示，例如，<a href="/zh_cn/docs/reference/amp-lightbox.html"> <code>amp-lightbox</code></a>。</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed</code></td>
       <td data-th="Description" class="col-twenty">是</td>
-      <td data-th="Behavior"> 元素有固定的宽度和高度，不支持任何自适应功能。其中，<a href="/zh_cn/docs/reference/amp-pixel.html"><code>amp-pixel</code></a>  和<a href="/zh_cn/docs/reference/extended/amp-audio.html"> <code>amp-audio</code></a> 元素例外。</td>
+      <td data-th="Behavior"> 元素有固定的宽度和高度，不支持任何自适应功能。其中，<a href="/zh_cn/docs/reference/amp-pixel.html"><code>amp-pixel</code></a>  和<a href="/zh_cn/docs/reference/amp-audio.html"> <code>amp-audio</code></a> 元素例外。</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>responsive</code></td>
@@ -63,7 +63,7 @@ $title: 布局和媒体查询
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fixed-height</code></td>
       <td data-th="Description" class="col-twenty">仅高度</td>
-      <td data-th="Behavior"> 元素会占用为其提供的空间，但高度保持不变。这种布局非常适合<a href="/zh_cn/docs/reference/extended/amp-carousel.html"> <code>amp-carousel</code></a>  等涉及水平放置内容的元素。 <code>width</code>  属性要么不指定，要么必须设为 <code>auto</code>。</td>
+      <td data-th="Behavior"> 元素会占用为其提供的空间，但高度保持不变。这种布局非常适合<a href="/zh_cn/docs/reference/amp-carousel.html"> <code>amp-carousel</code></a>  等涉及水平放置内容的元素。 <code>width</code>  属性要么不指定，要么必须设为 <code>auto</code>。</td>
     </tr>
     <tr>
       <td data-th="Layout type" class="col-twenty"><code>fill</code></td>
@@ -88,7 +88,7 @@ $title: 布局和媒体查询
 在少数情况下，如果未指定 `width` 或 `height`，AMP 运行时系统会将这些值默认如下：
 
 * [`amp-pixel`](/zh_cn/docs/reference/amp-pixel.html)：宽度和高度均默认为 0。
-* [amp-audio](/zh_cn/docs/reference/extended/amp-audio.html)：从浏览器推断出默认宽度和高度。
+* [amp-audio](/zh_cn/docs/reference/amp-audio.html)：从浏览器推断出默认宽度和高度。
 
 ###  如果未指定 <code>layout</code> 属性，会怎样？
 

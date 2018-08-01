@@ -32,6 +32,6 @@ If you only have one page, and that page is an AMP page, you must still add the 
 Read on: Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/create/publish.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/getting_started/create/publish.html"><span class="arrow-next">Next</span></a>
 </div>

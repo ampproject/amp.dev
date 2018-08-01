@@ -39,7 +39,7 @@ Jika Anda ingin agar dokumen tidak disimpan dalam cache, salah satu opsinya adal
 
 ## Siapa yang meminta halaman AMP yang disimpan dalam cache?
 
-Halaman AMP yang disimpan dalam cache diakses oleh platform (seperti Google Penelusuran, Google Berita, dan Cloudflare) dan aplikasi seluler. Aplikasi seluler dapat ditautkan ke konten AMP yang disimpan dalam cache melalui URL (lihat [AMP URL API](https://developers.google.com/amp/cache/use-amp-url) Google) atau dengan XHR lintas-asal di  Progressive Web App (pelajari lebih lanjut di [Menyematkan & menggunakan AMP sebagai sumber data](https://www.ampproject.org/id/docs/integration/pwa-amp/amp-in-pwa))).
+Halaman AMP yang disimpan dalam cache diakses oleh platform (seperti Google Penelusuran, Google Berita, dan Cloudflare) dan aplikasi seluler. Aplikasi seluler dapat ditautkan ke konten AMP yang disimpan dalam cache melalui URL (lihat [AMP URL API](https://developers.google.com/amp/cache/use-amp-url) Google) atau dengan XHR lintas-asal di  Progressive Web App (pelajari lebih lanjut di [Menyematkan.html))).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"

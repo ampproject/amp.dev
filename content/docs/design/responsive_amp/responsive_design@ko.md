@@ -17,7 +17,7 @@ $title: 반응형 AMP 페이지 만들기
 
 콘텐츠가 모든 기기의 브라우저 창에 맞게 조정될 수 있도록 웹페이지를 최적화하려면 `meta` 표시 영역 요소를 지정해야 합니다. 표시 영역 요소는 웹페이지의 표시 영역 비율과 크기를 조정하는 방법을 브라우저에 알려줍니다.
 
-그렇다면 어떤 값을 사용해야 할까요?  AMP에 이미 준비되어 있습니다.  AMP 페이지에 있는 [필수 마크업](/ko/docs/reference/spec.html#required-markup)의 일부로서 다음 표시 영역을 지정해야 합니다.
+그렇다면 어떤 값을 사용해야 할까요?  AMP에 이미 준비되어 있습니다.  AMP 페이지에 있는 [필수 마크업](/ko/docs/fundamentals/spec.html#required-markup)의 일부로서 다음 표시 영역을 지정해야 합니다.
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -49,7 +49,7 @@ $title: 반응형 AMP 페이지 만들기
 </style>
 ```
 
-읽어보기: AMP의 다양한 레이아웃을 자세히 알아보려면 [레이아웃 및 미디어 쿼리](/ko/docs/guides/responsive/control_layout.html#레이아웃-속성) 가이드를 참조하세요.
+읽어보기: AMP의 다양한 레이아웃을 자세히 알아보려면 [레이아웃 및 미디어 쿼리](/ko/docs/design/responsive/control_layout.html#레이아웃-속성) 가이드를 참조하세요.
 
 <a id="fn1"></a>
 {% call callout2(type='none') %}***'width=100%' 스타일을 사용하여 간편하게 수행할 수 있는데 화면에 맞게 요소의 크기를 조정하는 것이 까다로운 이유가 무엇일까요?**  성능 통계와 사용자 환경에 부정적인 영향을 주지 않으면서 반응형 요소가 페이지에 렌더링되도록 하는 것이 까다롭습니다.  물론 'width=100%'를 사용하면 화면에 이미지를 간편하게 맞출 수 있지만, 대신 성능이 저하됩니다.  브라우저는 먼저 이미지를 다운로드하여 이미지의 크기를 파악하고 화면 크기에 맞게 이미지 크기를 조정한 후 마지막으로 페이지를 리플로우하고 다시 채워야 합니다.  AMP에서는 렌더링 경로를 최적화함으로써 amp-img에 제공된 크기(이 숫자를 사용하여 가로세로 비율을 설정)를 바탕으로 이미지의 자리 표시자가 준비된 페이지가 먼저 배치된 후 리소스를 다운로드하고 페이지를 채웁니다.  리플로우는 필요하지 않습니다.
@@ -74,7 +74,7 @@ $title: 반응형 AMP 페이지 만들기
 
 ### 반응형 이미지 표시하기
 
-이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함](/ko/docs/guides/amp_replacements.html) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
+이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함](/ko/docs/media/amp_replacements.html) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
 
 - [적절한 해상도로 선명한 이미지 게재](#적절한-해상도로-선명한-이미지-게재)
 - [이미지의 아트 디렉션 변경](#이미지의-아트-디렉션-변경)
@@ -99,7 +99,7 @@ $title: 반응형 AMP 페이지 만들기
 
 표시 영역의 너비가 412px이고 DPR이 2.6인 기기가 있다고 가정해 보겠습니다. 위의 코드에 따라 이미지가 표시 영역 너비의 75%로 표시되어야 하므로 브라우저에서는 803px(412 * .75 * 2.6)에 가까운 `apple-800.jpg` 이미지를 선택합니다.
 
-읽어보기: AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](/ko/docs/guides/responsive/art_direction.html) 가이드를 참조하세요.
+읽어보기: AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](/ko/docs/design/responsive/art_direction.html) 가이드를 참조하세요.
 
 #### 이미지의 아트 디렉션 변경
 
@@ -113,11 +113,11 @@ $title: 반응형 AMP 페이지 만들기
 - 470~669px인 경우 `cat-medium.jpg`(450x340px) 표시
 - 469px 이하인 경우 `cat-small.jpg`(226x340px) 표시
 
-참고: 변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?'](/ko/docs/guides/responsive/control_layout.html#what-if-the-layout-속성이-지정되지-않은-경우-어떻게-하나요?)를 참조하세요.
+참고: 변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?'](/ko/docs/design/responsive/control_layout.html#what-if-the-layout-속성이-지정되지-않은-경우-어떻게-하나요?)를 참조하세요.
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
 
-읽어보기: AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](/ko/docs/guides/responsive/art_direction.html) 가이드를 참조하세요.
+읽어보기: AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](/ko/docs/design/responsive/art_direction.html) 가이드를 참조하세요.
 
 #### 최적화된 이미지 제공
 
@@ -125,7 +125,7 @@ $title: 반응형 AMP 페이지 만들기
 
 HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재할 수 있습니다.  AMP에서는 `picture` 태그가 지원되지 않지만 `fallback` 속성을 사용하여 다른 이미지를 게재할 수 있습니다.
 
-읽어보기: fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback](/ko/docs/guides/responsive/placeholders.html) 가이드를 참조하세요.
+읽어보기: fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback](/ko/docs/design/responsive/placeholders.html) 가이드를 참조하세요.
 
 ##### 예: 다른 이미지 형식 게재
 

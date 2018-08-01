@@ -187,6 +187,12 @@ Type attribute value: `mediarithmics`
 
 Adds support for mediarithmics. More information and configuration details can be found at [developer.mediarithmics.com](https://developer.mediarithmics.com/).
 
+### Mobify
+
+Type attribute value: `mobify`
+
+Adds support for Mobify. More details for adding Mobify support can be found at [docs.mobify.com](https://docs.mobify.com/amp-sdk/latest/guides/amp-analytics/).
+
 ### mParticle
 
 Type attribute value: `mparticle`

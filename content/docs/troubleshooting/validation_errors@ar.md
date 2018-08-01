@@ -21,7 +21,7 @@ limitations under the License.
 يجب ألا تتضمن مستندات AMP الصالحة أي أخطاء تتعلق بالتحقق من الصحة.
 والغرض من هذا المستند هو مساعدتك في فهم أفضل
 لأي أخطاء تتعلق بالتحقق من الصحة قد تصادفها عند
-[التحقق من صحة صفحات AMP](/ar/docs/guides/debug/validate.html) وإصلاح هذه الأخطاء.
+[التحقق من صحة صفحات AMP](/ar/docs/fundamentals/validate.html) وإصلاح هذه الأخطاء.
 للحصول على نظرة عامة حول أخطاء التحقق من الصحة،
 راجع [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -59,7 +59,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 تشتمل هذه العلامات الإلزامية على حقل `mandatory: true` في [مواصفات أداة التحقق من صفحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)؛
-كما تتم الإشارة إليها أيضًا في [مواصفات صفحات AMP](/docs/reference/spec.html).
+كما تتم الإشارة إليها أيضًا في [مواصفات صفحات AMP](/docs/fundamentals/spec.html).
 
 ### العلامة المطلوبة من قبل علامة أخرى غير موجودة
 
@@ -105,7 +105,7 @@ limitations under the License.
 </table>
 
 العلامات مدرجة في القائمة البيضاء، وبالتالي ليست هناك قائمة محددة تضم جميع العلامات الغير مسموح بها؛
-ومع ذلك فإن [مواصفات صفحة AMP](/docs/reference/spec.html)
+ومع ذلك فإن [مواصفات صفحة AMP](/docs/fundamentals/spec.html)
 تحدد مجموعة من العلامات الغير مسموح بها على نطاق واسع.
 
 ### السمة الإلزامية غير موجودة
@@ -616,8 +616,8 @@ limitations under the License.
 
 قبل مراجعة أخطاء الأنماط والتنسيقات،
 يجدر بنا التعرف على كيفية عمل
-[الأنماط](/ar/docs/guides/responsive/style_pages.html) و
-[التنسيقات](/ar/docs/guides/responsive/control_layout.html) في AMP.
+[الأنماط](/ar/docs/design/responsive/style_pages.html) و
+[التنسيقات](/ar/docs/design/responsive/control_layout.html) في AMP.
 ونظرًا لأن صفحات AMP هي صفحات HTML، فإن الأنماط تشبه كثيرًا أي صفحات HTML.
 ولكن هناك بعض القيود لضمان سرعة تحميل الصفحات،
 وتعمل أداة التحقق من صحة صفحات AMP على تفعيل هذه القيود.
@@ -700,7 +700,7 @@ limitations under the License.
 
 يشير هذا الخطأ إلى قواعد @ داخل CSS،
 والتي تسمح لها AMP بمجموعة من القواعد فقط.
-(راجع أيضًا [مواصفات AMP](/docs/reference/spec.html)).
+(راجع أيضًا [مواصفات AMP](/docs/fundamentals/spec.html)).
 على سبيل المثال، لا يُسمح بالقاعدة `@import`.
 ويوضح خطأ التحقق من الصحة القاعدة غير الصالحة
 على وجه التحديد،
@@ -730,7 +730,7 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق](/ar/docs/guides/responsive/control_layout.html) و
+راجع [كيفية التحكم في التنسيق](/ar/docs/design/responsive/control_layout.html) و
 [مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 **ملاحظة:** إذا لم تحدد التنسيق،
@@ -788,7 +788,7 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق](/ar/docs/guides/responsive/control_layout.html) و
+راجع [كيفية التحكم في التنسيق](/ar/docs/design/responsive/control_layout.html) و
 [مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### السمة غير مسموح بها من تنسيق محدد
@@ -834,7 +834,7 @@ limitations under the License.
 يحدث هذا الخطأ عندما تكون قيمة السمة غير صالحة للتنسيق المحدد.
 لاستيعاب سبب ظهور هذا الخطأ،
 ينبغي التعرّف على
-[السلوكيات المختلفة للتنسيقات]/ar/docs/guides/responsive/control_layout.html).
+[السلوكيات المختلفة للتنسيقات]/ar/docs/design/responsive/control_layout.html).
 
 لنفرض أنك عيّنت التنسيق ليكون `fixed-height` و
 وضمّنت القيم الرقمية لكل من `height` و`width`.
@@ -878,7 +878,7 @@ limitations under the License.
 يمكن تضمين النماذج في ملفات المصدر،
 طالما أن الناتج الناشئ عن هذه الملفات لا يحتوي على النماذج
 (راجع أيضًا
-[استخدام معالجات CSS التمهيدية](/ar/docs/guides/responsive/style_pages.html)).
+[استخدام معالجات CSS التمهيدية](/ar/docs/design/responsive/style_pages.html)).
 
 ### تحتوي السمة على بنية نموذج
 

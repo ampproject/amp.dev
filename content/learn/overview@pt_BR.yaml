@@ -8,9 +8,9 @@
         AMP em HTML é basicamente uma página HTML estendida com propriedades personalizadas de AMP. O arquivo AMP em HTML mais simples tem a seguinte aparência:
       example: /content/includes/html-example.md
       description2: |
-        Em sua maioria, as tags em uma página AMP em HTML são tags HTML comuns. No entanto, algumas dessas tags são substituídas por outras específicas a AMP (veja também [Tags HTML nas especificações de AMP](/pt_br/docs/reference/spec.html)). Esses elementos personalizados, chamados de componentes AMP em HTML, facilitam a implementação de padrões comuns de maneira eficiente. 
-        <p>Por exemplo, a tag [`amp-img`](/pt_br/docs/reference/amp-img.html) é totalmente compatível com `srcset`, até mesmo em navegadores que ainda são incompatíveis. Saiba como [criar sua primeira página AMP em HTML](/pt_br/docs/tutorials/create.html). 
-        <p>As páginas AMP são detectadas por mecanismos de pesquisa e outras plataformas por meio da `<link rel="">` tag HTML. É possível optar por ter versões não AMP e AMP da página ou somente uma versão AMP. Saiba mais em [Faça com que sua página seja detectável](/pt_br/docs/guides/discovery.html).
+        Em sua maioria, as tags em uma página AMP em HTML são tags HTML comuns. No entanto, algumas dessas tags são substituídas por outras específicas a AMP (veja também [Tags HTML nas especificações de AMP](/pt_br/docs/fundamentals/spec.html)). Esses elementos personalizados, chamados de componentes AMP em HTML, facilitam a implementação de padrões comuns de maneira eficiente. 
+        <p>Por exemplo, a tag [`amp-img`](/pt_br/docs/reference/amp-img.html) é totalmente compatível com `srcset`, até mesmo em navegadores que ainda são incompatíveis. Saiba como [criar sua primeira página AMP em HTML](/pt_br/docs/getting_started/create.html). 
+        <p>As páginas AMP são detectadas por mecanismos de pesquisa e outras plataformas por meio da `<link rel="">` tag HTML. É possível optar por ter versões não AMP e AMP da página ou somente uma versão AMP. Saiba mais em [Faça com que sua página seja detectável](/pt_br/docs/fundamentals/discovery.html).
 
     - title: JS de AMP
       subtitle: |
@@ -19,7 +19,7 @@
         A [Biblioteca JS de AMP](https://github.com/ampproject/amphtml/tree/master/src) implementa todas as [práticas recomendadas de desempenho de AMP](/pt_br/learn/about-how/), gerencia o carregamento de recursos e fornece as tags personalizadas mencionadas acima. Tudo isso para garantir rapidez na renderização da sua página. 
         <p>Uma das principais otimizações é o fato de que ela torna todos os recursos externos assíncronos. Dessa forma, nenhum elemento da página pode bloquear renderizações. 
         <p>Outras técnicas de desempenho são o sandbox de todos os iframes, o cálculo prévio do layout de cada elemento da página antes do carregamento de recursos e a desativação dos seletores de CSS lentos. 
-        <p>Para saber mais sobre [otimizações](/pt_br/learn/about-how/) e também sobre limitações, [leia as especificações de AMP em HTML](/pt_br/docs/reference/spec.html).
+        <p>Para saber mais sobre [otimizações](/pt_br/learn/about-how/) e também sobre limitações, [leia as especificações de AMP em HTML](/pt_br/docs/fundamentals/spec.html).
 
     - title: Cache de AMP
       subtitle: |
@@ -28,7 +28,7 @@
         O [Cache de AMP do Google](https://developers.google.com/amp/cache/) é uma Rede de fornecimento de conteúdo com base no proxy para o envio de todos os documentos válidos de AMP. Ele busca páginas AMP em HTML e as armazena em cache, além de aprimorar o desempenho da página automaticamente. Ao usar o Cache de AMP do Google, o documento, todas as imagens e todos os arquivos JS são carregados a partir da mesma origem que usa [HTTP 2.0](https://http2.github.io/) para ser o mais eficiente possível. 
         <p>O cache vem ainda com um [sistema de validação](https://github.com/ampproject/amphtml/tree/master/validator) interno que confirma se a página está pronta para funcionar e se é independente de recursos externos. O sistema de validação gera uma série de declarações que confirmam a correspondência entre a marcação das páginas e as especificações de AMP em HTML. 
         <p>Outra versão do validador vem no pacote com cada uma das páginas AMP. Essa versão pode registrar erros de validação diretamente no console do navegador quando a página é renderizada. Isso permite ver como alterações complexas no seu código podem afetar o desempenho e a experiência do usuário. 
-        <p>Saiba mais sobre o [teste de páginas AMP em HTML](/pt_br/docs/guides/validate.html).
+        <p>Saiba mais sobre o [teste de páginas AMP em HTML](/pt_br/docs/fundamentals/validate.html).
 
 video:
   id: 5Yjoe54vzwE

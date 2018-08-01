@@ -5,7 +5,7 @@ $title: Memulai
 
 Ini adalah panduan memulai cepat untuk membantu Anda agar dapat bekerja dengan AMP tanpa kendala.
 
-Untuk petunjuk lebih mendetail, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/tutorials/create.html).
+Untuk petunjuk lebih mendetail, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/fundamentals/create.html).
 
 ### Langkah 1: Dapatkan template HTML AMP
 
@@ -28,7 +28,7 @@ Ini adalah template HTML biasa yang Anda butuhkan untuk halaman AMP:
 </html>
 ```
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [markup yang diperlukan](/id/docs/reference/spec.html#required-markup) untuk halaman AMP.
+Baca lebih lanjut: Pelajari lebih lanjut tentang [markup yang diperlukan](/id/docs/fundamentals/spec.html#required-markup) untuk halaman AMP.
 
 ### Langkah 2: Tambahkan komponen ke halaman Anda
 
@@ -70,23 +70,23 @@ Untuk menyesuaikan gaya elemen di halaman AMP, tambahkan CSS ke lembar gaya inli
 </style>
 ```
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [CSS yang didukung](/id/docs/guides/responsive/style_pages.html) untuk halaman AMP.
+Baca lebih lanjut: Pelajari lebih lanjut tentang [CSS yang didukung](/id/docs/design/responsive/style_pages.html) untuk halaman AMP.
 
 ### Langkah 4: Lakukan validasi HTML AMP
 
 Pastikan halaman AMP Anda adalah HTML AMP yang valid dengan memverifikasi halaman menggunakan [Validator AMP](https://validator.ampproject.org/).
 
-Untuk fitur validasi lainnya yang dapat Anda gunakan, lihat [Memvalidasi halaman AMP](/id/docs/guides/validate.html).
+Untuk fitur validasi lainnya yang dapat Anda gunakan, lihat [Memvalidasi halaman AMP](/id/docs/fundamentals/validate.html).
 
 ### Langkah Berikutnya
 
-Untuk mempelajari lebih lanjut tentang dasar-dasar halaman AMP, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/tutorials/create.html).
+Untuk mempelajari lebih lanjut tentang dasar-dasar halaman AMP, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/fundamentals/create.html).
 
 Berikut referensi lain untuk meningkatkan pengalaman Anda:
 
-* [Membuat halaman mudah ditemukan](/id/docs/guides/discovery.html)
-* [Menambahkan analytics ke halaman](/id/docs/guides/analytics_amp.html)
-* [Meningkatkan interaksi pengguna](/id/docs/guides/engagement.html)
+* [Membuat halaman mudah ditemukan](/id/docs/fundamentals/discovery.html)
+* [Menambahkan analytics ke halaman](/id/docs/analytics/analytics_amp.html)
+* [Meningkatkan interaksi pengguna](/id/docs/fundamentals/engagement.html)
 * Demo langsung di [AMP BY Example](https://ampbyexample.com/)
 
 

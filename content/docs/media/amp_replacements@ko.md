@@ -13,7 +13,7 @@ $title: 이미지 및 동영상 삽입
 *  애셋이 로드되기 전에 페이지의 레이아웃을 파악해야 하며, 이는 [첫 표시 영역을 미리 로드하는 데 필수적입니다.](/ko/learn/about-how/#size-all-resources-statically)
 *  네트워크의 레이지 로드 요청을 제어하고 [리소스의 우선순위를 효과적으로 지정해야 합니다.](/ko/learn/about-how/#prioritize-resource-loading)
 
-주의:  지원되지 않는 &lt;img&gt;, &lt;video&gt;, &lt;audio&gt; 도 렌더링이 됩니다. 하지만 AMP 에서 [페이지를 확인하지](/ko/docs/guides/debug/validate.html) 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다.
+주의:  지원되지 않는 &lt;img&gt;, &lt;video&gt;, &lt;audio&gt; 도 렌더링이 됩니다. 하지만 AMP 에서 [페이지를 확인하지](/ko/docs/fundamentals/validate.html) 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다.
 
 ## 이미지
 
@@ -65,14 +65,14 @@ $title: 이미지 및 동영상 삽입
 </amp-iframe>
 </div>
 
-읽어보기: Learn more about [고급 레이아웃 기술](/ko/docs/guides/responsive/control_layout.html)
+읽어보기: Learn more about [고급 레이아웃 기술](/ko/docs/design/responsive/control_layout.html)
 에 관해 자세히 알아보세요.
 
 ### 동작 및 자리표시자
 
 AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시 영역 위치, 시스템 리소스, 연결 대역폭 등과 같은 요인을 바탕으로 리소스 로드를 지연시킬지 우선할지 선택할 수 있습니다.
 
-읽어보기: [이미지의 대체 내용 및 자리표시자를 제공](/ko/docs/guides/responsive/placeholders.html) 하는 방법에 관해 자세히 알아보세요.
+읽어보기: [이미지의 대체 내용 및 자리표시자를 제공](/ko/docs/design/responsive/placeholders.html) 하는 방법에 관해 자세히 알아보세요.
 
 ## 애니메이션 이미지
 

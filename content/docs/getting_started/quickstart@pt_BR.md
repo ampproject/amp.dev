@@ -7,7 +7,7 @@ toc: true
 
 Este guia de início rápido ajudará você nos primeiros passos com as AMP.
 
-Para ver instruções mais detalhadas, acesse o tutorial [criar sua primeira página AMP](/pt_br/docs/tutorials/create.html).
+Para ver instruções mais detalhadas, acesse o tutorial [criar sua primeira página AMP](/pt_br/docs/fundamentals/create.html).
 
 ### Etapa 1: usar o modelo de HTML para AMP
 
@@ -30,7 +30,7 @@ Este é o HTML básico que você precisa ter em uma página AMP:
 </html>
 ```
 
-Leia mais: Saiba mais sobre a [marcação necessária](/pt_br/docs/reference/spec.html#required-markup) para páginas AMP.
+Leia mais: Saiba mais sobre a [marcação necessária](/pt_br/docs/fundamentals/spec.html#required-markup) para páginas AMP.
 
 ### Etapa 2: adicionar componentes à página
 
@@ -72,13 +72,13 @@ Para definir o estilo dos elementos nas suas páginas AMP, adicione CSS em uma f
 </style>
 ```
 
-Leia mais: Saiba mais sobre o [CSS compatível](/pt_br/docs/guides/responsive/style_pages.html) com páginas AMP.
+Leia mais: Saiba mais sobre o [CSS compatível](/pt_br/docs/design/responsive/style_pages.html) com páginas AMP.
 
 ### Etapa 4: validar o HTML para AMP
 
 Use o [validador de AMP](https://validator.ampproject.org/) e confira se o HTML para AMP das páginas é válido.
 
-Para ver outras ferramentas de validação que você pode usar, acesse a página sobre como [validar páginas AMP](/pt_br/docs/guides/validate.html).
+Para ver outras ferramentas de validação que você pode usar, acesse a página sobre como [validar páginas AMP](/pt_br/docs/fundamentals/validate.html).
 
 ### Próximas etapas
 
@@ -86,9 +86,9 @@ Para conhecer melhor os aspectos básicos das páginas AMP, acesse o tutorial so
 
 Veja outros recursos para aprimorar sua experiência:
 
-* [Permita que sua página seja detectada](/pt_br/docs/guides/discovery.html).
-* [Adicione análises à página](/pt_br/docs/guides/analytics_amp.html).
-* [Melhore o engajamento dos usuários](/pt_br/docs/guides/engagement.html).
+* [Permita que sua página seja detectada](/pt_br/docs/fundamentals/discovery.html).
+* [Adicione análises à página](/pt_br/docs/analytics/analytics_amp.html).
+* [Melhore o engajamento dos usuários](/pt_br/docs/fundamentals/engagement.html).
 * Veja demonstrações ativas no site [AMP BY Example](https://ampbyexample.com).
 
 

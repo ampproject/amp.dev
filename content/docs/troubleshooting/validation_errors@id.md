@@ -21,7 +21,7 @@ limitations under the License.
 Tidak boleh ada kesalahan validasi apa pun dalam dokumen AMP yang valid.
 Tujuan dokumen ini adalah untuk membantu Anda memahami
 dengan lebih baik dan memperbaiki kesalahan validasi yang dihadapi
-ketika [memvalidasi laman AMP](/id/docs/guides/validate.html).
+ketika [memvalidasi laman AMP](/id/docs/fundamentals/validate.html).
 Untuk ringkasan lengkap kesalahan validasi,
 lihat [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -59,7 +59,7 @@ Tag berikut harus ada di semua dokumen AMP:
 * <a name="body"></a>`body`
 
 Tag wajib ini termasuk bidang `mandatory: true` di [spek validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii);
-juga dirujuk dalam [spesifikasi AMP](/docs/reference/spec.html).
+juga dirujuk dalam [spesifikasi AMP](/docs/fundamentals/spec.html).
 
 ### Tag yang dibutuhkan oleh tag lain tidak tersedia
 
@@ -105,7 +105,7 @@ salin skrip yang dibutuhkan, dan tempel ke dokumen AMP `<head>`.
 </table>
 
 Tag dimasukkan ke daftar putih, sehingga tidak ada daftar definitif semua tag terlarang;
-namun, [spesifikasi AMP](/docs/reference/spec.html)
+namun, [spesifikasi AMP](/docs/fundamentals/spec.html)
 mendefinisikan secara luas kumpulan tag terlarang.
 
 ### Atribut wajib tidak tersedia
@@ -619,8 +619,8 @@ Daftar lengkap tag unik yang diketahui:
 
 Sebelum mendalami kesalahan gaya dan tata letak,
 Anda perlu memahami cara kerja
-[pemberian gaya](/id/docs/guides/responsive/style_pages.html) dan
-[tata letak](/id/docs/guides/responsive/control_layout.html) di AMP.
+[pemberian gaya](/id/docs/design/responsive/style_pages.html) dan
+[tata letak](/id/docs/design/responsive/control_layout.html) di AMP.
 Karena laman AMP adalah laman HTML, pemberian gaya kurang lebih sama seperti pada laman HTML.
 Tetapi ada beberapa pembatasan untuk memastikan laman dimuat dengan cepat,
 dan validator AMP memberlakukan pembatasan ini.
@@ -704,7 +704,7 @@ lewat validator CSS online, misalnya,
 
 Kesalahan ini mengacu pada @-aturan dalam CSS,
 untuk setiap AMP yang hanya mengizinkan beberapa aturan.
-(lihat juga [spesifikasi AMP ](/docs/reference/spec.html)).
+(lihat juga [spesifikasi AMP ](/docs/fundamentals/spec.html)).
 Misalnya, `@import` tidak diizinkan.
 Kesalahan validasi secara khusus
 memberi tahu Anda aturan yang tidak valid,
@@ -734,7 +734,7 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui lebih banyak tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak](/id/docs/guides/responsive/control_layout.html) dan
+lihat [Cara Mengontrol Tata Letak](/id/docs/design/responsive/control_layout.html) dan
 [Spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 **Catatan:** Jika tata letak tidak ditentukan,
@@ -792,7 +792,7 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui lebih banyak tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak](/id/docs/guides/responsive/control_layout.html) dan
+lihat [Cara Mengontrol Tata Letak](/id/docs/design/responsive/control_layout.html) dan
 [Spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 ### Atribut tidak diizinkan oleh tata letak tertentu
@@ -838,7 +838,7 @@ Atribut terlarang untuk jenis tata letak dijelaskan di
 Kesalahan ini terjadi jika nilai atribut tata letak tertentu tidak valid.
 Untuk memahami hal yang memicu kesalahan ini,
 Anda perlu membiasakan diri dengan
-[perilaku tata letak yang berbeda](/id/docs/guides/responsive/control_layout.html).
+[perilaku tata letak yang berbeda](/id/docs/design/responsive/control_layout.html).
 
 Anggap tata letak ditetapkan ke `fixed-height` dan
 Anda menyertakan nilai numerik `height` dan `width`.
@@ -882,7 +882,7 @@ dirancang khusus untuk menyertakan template, misalnya,
 Diperbolehkan menyertakan template di file sumber,
 selama keluaran yang dihasilkan file tersebut tidak berisi template
 (lihat juga
-[Menggunakan prapemrosesan CSS](/id/docs/guides/responsive/style_pages.html)).
+[Menggunakan prapemrosesan CSS](/id/docs/design/responsive/style_pages.html)).
 
 ### Atribut berisi sintaksis template
 

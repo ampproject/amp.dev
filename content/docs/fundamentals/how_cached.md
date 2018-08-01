@@ -1,7 +1,6 @@
 ---
 $title: How AMP pages are cached
 $order: 13
-$category: Deploy
 toc: true
 components:
     - youtube
@@ -45,7 +44,7 @@ Should you desire not to have your document cached, one option is to remove the 
 
 ## Who requests cached AMP pages?
 
-Cached AMP pages are accessed by platforms (like Google Search, Google News, and Cloudflare) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source](https://www.ampproject.org/docs/guides/pwa-amp/amp-in-pwa)).
+Cached AMP pages are accessed by platforms (like Google Search, Google News, and Cloudflare) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source](/docs/integration/pwa-amp/amp-in-pwa.html)).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"

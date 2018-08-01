@@ -20,7 +20,7 @@ ga('send', 'pageview');
 
 Este JavaScript es bastante simple; envía una notificación para realizar un seguimiento del evento pageview.
 
-Para replicar esta funcionalidad en AMP, primero debemos **incluir** la biblioteca de componentes [amp-analytics](/docs/reference/components/amp-analytics.html)  en el `<head>` de nuestro documento:
+Para replicar esta funcionalidad en AMP, primero debemos **incluir** la biblioteca de componentes [amp-analytics](/es/docs/reference/components/amp-analytics.html)  en el `<head>` de nuestro documento:
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

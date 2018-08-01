@@ -5,7 +5,7 @@ $title: Empezando
 
 Esta es una guía de inicio rápido para ponerlo en marcha con AMP.
 
-Para obtener instrucciones más detalladas, visite el tutorial [Crea tu primera página AMP](/es/docs/tutorials/create.html).
+Para obtener instrucciones más detalladas, visite el tutorial [Crea tu primera página AMP](/es/docs/fundamentals/create.html).
 
 ### Paso 1: Obtenga la plantilla HTML de AMP
 
@@ -28,7 +28,7 @@ Este es el código HTML básico que necesitas para una página AMP:
 </html>
 ```
 
-Leer más: Aprende más sobre el [markup requerido](/es/docs/reference/spec.html#required-markup) para páginas AMP.
+Leer más: Aprende más sobre el [markup requerido](/es/docs/fundamentals/spec.html#required-markup) para páginas AMP.
 
 ### Paso 2: Agrega componentes a tu página
 
@@ -70,21 +70,21 @@ Para darle estilo a tus elementos en una página AMP, agrega CSS directamente a 
 </style>
 ```
 
-Leer más: Aprende más sobre el [CSS soportado](/es/docs/guides/responsive/style_pages.html) en páginas AMP.
+Leer más: Aprende más sobre el [CSS soportado](/es/docs/design/responsive/style_pages.html) en páginas AMP.
 
 ### Paso 4: Valida tu página AMP HTML
 
 Asegúrate que tu página AMP tiene un AMP HTML válido verificando la misma a través del [Validador AMP](https://validator.ampproject.org/).
 
-Para otras herramientas de validación, lee las [páginas para validar AMP](/es/docs/guides/validate.html).
+Para otras herramientas de validación, lee las [páginas para validar AMP](/es/docs/fundamentals/validate.html).
 
 ### Próximos pasos
 
-Para sumergirte en lo básico sobre páginas AMPm visita el tutorial [Crea tu primera página AMP](/es/docs/tutorials/create.html).
+Para sumergirte en lo básico sobre páginas AMPm visita el tutorial [Crea tu primera página AMP](/es/docs/fundamentals/create.html).
 
 Aquí tienes otros recursos que pueden ayudarte con tu experiencia:
 
-* [Hacer que una página sea visible](/es/docs/guides/discovery.html)
-* [Agregar analytics a tu página](/es/docs/guides/analytics_amp.html)
-* [Mejora la fidelización del usuario](/es/docs/guides/engagement.html)
+* [Hacer que una página sea visible](/es/docs/fundamentals/discovery.html)
+* [Agregar analytics a tu página](/es/docs/analytics/analytics_amp.html)
+* [Mejora la fidelización del usuario](/es/docs/fundamentals/engagement.html)
 * Ejemplos en [AMP BY Example](https://ampbyexample.com/)
