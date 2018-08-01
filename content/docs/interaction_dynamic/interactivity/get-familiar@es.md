@@ -54,6 +54,6 @@ El código de inicio ofrece alguna interactividad básica:
 **Pruébalo**: Desliza el carrusel de imágenes y toca el botón "Añadir al carrito".
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="/es/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-next">Próximo</span></a>
 </div>

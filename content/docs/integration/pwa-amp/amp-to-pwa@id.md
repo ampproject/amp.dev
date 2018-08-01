@@ -76,7 +76,7 @@ Terdapat cara yang lebih mudah untuk menangani Service Worker. Lihat [library ba
 
 ## Membuat semua link di Halaman AMP menuju ke PWA
 
-Sebagian besar link di halaman AMP Anda kemungkinan mengarah ke lebih banyak halaman konten. Ada 2 strategi untuk memastikan bahwa klik link berikutnya akan menghasilkan "upgrade" ke Progressive Web App, [bergantung pada cara Anda menggunakan AMP](/id/docs/guides/discovery):
+Sebagian besar link di halaman AMP Anda kemungkinan mengarah ke lebih banyak halaman konten. Ada 2 strategi untuk memastikan bahwa klik link berikutnya akan menghasilkan "upgrade" ke Progressive Web App, [bergantung pada cara Anda menggunakan AMP](/id/docs/fundamentals/discovery.html):
 
 ### 1. Jika Anda menyambungkan halaman kanonis dengan halaman AMP
 
@@ -116,7 +116,7 @@ AMP memecahkan masalah ini dengan sesuatu yang disebut [penulisan ulang URL shel
 Ketika semua atribut ini diterapkan, semua klik berikutnya di AMP akan mengarah ke PWA Anda, terlepas dari Service Worker apa pun.
 
 {% call callout('Baca lebih lanjut', type='read') %}
-Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/guides/pwa-amp/amp-in-pwa).
+Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/integration/pwa-amp/amp-in-pwa).
 {% endcall %}
  
  

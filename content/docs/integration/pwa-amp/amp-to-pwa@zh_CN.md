@@ -76,7 +76,7 @@ self.addEventListener('install', function(event) {
 
 ## 将 AMP 网页上的所有链接都指向 PWA
 
-可能会发生的情况是：您的 AMP 网页上的大多数链接都会指向更多内容页。您可以采用两种策略来确保后续的链接点击能够将 AMP 网页“升级”为渐进式网页应用，[具体取决于您使用 AMP 的方式](/zh_cn/docs/guides/discovery)：
+可能会发生的情况是：您的 AMP 网页上的大多数链接都会指向更多内容页。您可以采用两种策略来确保后续的链接点击能够将 AMP 网页“升级”为渐进式网页应用，[具体取决于您使用 AMP 的方式](/zh_cn/docs/fundamentals/discovery.html)：
 
 ### 1. 如果您的规范网页有对应的 AMP 网页
 
@@ -116,7 +116,7 @@ AMP 采用一种名为 [Shell 网址重写](/zh_cn/docs/reference/components/amp
 待您设置好上述属性后，在相应 AMP 网页上发生的所有后续点击都会跳转到您的 PWA，而无论采用何种 Service Worker。
 
 {% call callout('继续阅读', type='read') %}
-您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作](/zh_cn/docs/guides/pwa-amp/amp-in-pwa)。
+您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作](/zh_cn/docs/integration/pwa-amp/amp-in-pwa)。
 {% endcall %}
  
  

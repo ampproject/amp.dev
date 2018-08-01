@@ -1,6 +1,5 @@
 ---
 $title: 실험 기능
-$order: 5
 ---
 
 [AMP 실험 구성요소](https://github.com/ampproject/amphtml/tree/master/tools/experiments) 는 출시는 되었으나 아직 널리 사용될 준비가 되지 않은 기능이기 때문에 실험 상태로 표시됩니다.
@@ -35,5 +34,5 @@ AMP.toggleExperiment('experiment')
 
 
 실험 기능이 포함된 모든 AMP 파일은 
-[AMP 유효성 검사](/ko/docs/guides/validate.html) 를 통과하지 못합니다. 
+[AMP 유효성 검사](/ko/docs/fundamentals/validate.html) 를 통과하지 못합니다. 
 따라서 프로덕션 채널을 통해 출시할 준비가 되어 있는 AMP 문서에서는 실험 구성요소를 삭제해야 합니다.

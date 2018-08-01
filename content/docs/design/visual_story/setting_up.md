@@ -9,7 +9,7 @@ $parent: /content/docs/design/visual_story.md
 Before starting this tutorial, you'll need the following:
 
 - A basic knowledge of HTML, CSS, and JavaScript
-- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"](/docs/tutorials/converting.html) tutorial)
+- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"](/docs/fundamentals/converting.html) tutorial)
 - A browser of your choice
 - A text editor of your choice
 

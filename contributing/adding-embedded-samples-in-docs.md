@@ -2,7 +2,7 @@
 
 This document describes how to include embedded samples in [www.ampproject.org](http://www.ampproject.org)
 documents, like the ones in the [Create Responsive AMP
-pages](https://www.ampproject.org/docs/guides/responsive/responsive_design#example:-embedding-a-youtube-video)
+pages](https://www.ampproject.org/docs/design/responsive/responsive_design#example:-embedding-a-youtube-video)
 guide.
 
 <img src="sample-embed.gif">
@@ -34,7 +34,7 @@ document, you'll need to do this in two parts:
         Note that the comments in the file delimit the examples and are used as
         part of the generated file name.
     *   Images are stored in the `images/` subdirectory.
-    *   Make sure the file is [valid AMP HTML](https://www.ampproject.org/docs/guides/validate).
+    *   Make sure the file is [valid AMP HTML](https://www.ampproject.org/docs/fundamentals/validate.html).
 1.  Create a **gulp** task to generate the sample snippets. For an example,
     see the ["build-examples"](https://github.com/ampproject/docs/blob/master/gulpfile.js#L16)
     task in ampproject's  gulpfile. The `amp-by-example` node module requires

@@ -7,5 +7,5 @@ $title: Crea tu primera página AMP
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/es/docs/tutorials/create/basic_markup.html"><span class="arrow-next">Empezar</span></a>
+<a class="button" href="/es/docs/getting_started/create/basic_markup.html"><span class="arrow-next">Empezar</span></a>
 </div>

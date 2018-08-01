@@ -1,7 +1,6 @@
 ---
 $title: Include third-party content
 $order: 3
-$category: Develop
 toc: true
 components:
   - iframe
@@ -212,5 +211,5 @@ to be shown if no ad is available:
 AMP supports a wide range of ad networks. See the [amp-ad reference documentation](/docs/reference/components/amp-ad.html#supported-ad-networks)  for a full list.
 
 {% call callout('Read on', type='read') %}
-Learn more about ads in the [Serving Ads on AMP](/docs/guides/ads_on_amp.html) guide.
+Learn more about ads in the [Serving Ads on AMP](/docs/ads/monetization.html) guide.
 {% endcall %}

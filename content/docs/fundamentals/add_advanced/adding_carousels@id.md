@@ -95,6 +95,6 @@ Pada contoh terakhir, Anda mungkin menyadari bahwa komponen `amp-ad` menyertakan
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="/id/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">Berikutnya</span></a>
 </div>

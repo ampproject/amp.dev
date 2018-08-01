@@ -41,7 +41,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 Any AMP file that includes experimental features will fail
-[AMP validation](/docs/guides/validate.html).
+[AMP validation](/docs/fundamentals/validate.html).
 Remove these experimental components for production-ready AMP documents.
 
 ## Enable an experiment for a particular document

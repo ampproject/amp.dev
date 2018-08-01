@@ -1,6 +1,5 @@
 ---
 $title: 試験運用機能
-$order: 5
 ---
 
 [AMP 試験運用コンポーネント](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
@@ -37,6 +36,6 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 試験運用機能が含まれている AMP ファイルは、
-[AMP の検証](/ja/docs/guides/validate.html)でエラーになります。
+[AMP の検証](/ja/docs/fundamentals/validate.html)でエラーになります。
 実用段階の AMP ドキュメントでは、試験運用コンポーネントを削除してください。
 

@@ -54,6 +54,6 @@ The starter code offers some basic interactivity:
 **Try it out**: Swipe the image carousel and tap the "Add to cart" button.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/tutorials/interactivity/prereqs-setup.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/tutorials/interactivity/advanced-interactivity.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-next">Next</span></a>
 </div>

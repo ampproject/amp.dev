@@ -96,7 +96,7 @@ Jika memiliki platform pelacakan kustom yang ingin diintegrasikan, Anda tetap da
 {% endcall %}
 
 {% call callout('Tips', type='success') %}
-Jika tertarik pada sistem pelacakan yang lebih sederhana, Anda mungkin ingin melihat [amp-pixel](/id/docs/reference/components/amp-pixel.html). Jika hanya perlu melacak pageview, amp-pixel adalah solusi yang lebih sederhana daripada amp-analytics karena hanya bertujuan untuk menyelesaikan persyaratan pelacakan piksel tradisional. Pelajari lebih lanjut di [Analytics: panduan dasar-dasar](/id/docs/guides/analytics/analytics_basics.html).
+Jika tertarik pada sistem pelacakan yang lebih sederhana, Anda mungkin ingin melihat [amp-pixel](/id/docs/reference/components/amp-pixel.html). Jika hanya perlu melacak pageview, amp-pixel adalah solusi yang lebih sederhana daripada amp-analytics karena hanya bertujuan untuk menyelesaikan persyaratan pelacakan piksel tradisional. Pelajari lebih lanjut di [Analytics: panduan dasar-dasar](/id/docs/analytics/analytics_basics.html).
 {% endcall %}
 
 <div class="prev-next-buttons">
