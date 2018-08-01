@@ -1112,7 +1112,7 @@ msgstr "운영 복잡성을 줄입니다."
 #: /content/includes/menu.yaml /content/reference/_blueprint.yaml
 #: /content/reference/reference.md
 msgid "Reference"
-msgstr "참조"
+msgstr "참고"
 
 #: /views/amp-ads.html:223
 msgid "Regular Ad"
