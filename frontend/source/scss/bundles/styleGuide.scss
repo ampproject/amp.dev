@@ -20,8 +20,13 @@
 .mainContainer {
   display: grid;
   grid-area: body;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 163px auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 163px minmax(100vh, auto);
+
+  @media screen and (min-width: 500px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 163px auto;
+  }
 }
 
 .navigation {
@@ -29,7 +34,11 @@
 }
 
 .mc-header {
-  grid-column-start: 2;
+  grid-column-start: 1;
+
+  @media screen and (min-width: 500px) {
+    grid-column-start: 2;
+  }
 }
 
 .mc-body {
