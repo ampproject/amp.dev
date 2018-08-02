@@ -1,6 +1,5 @@
 {% extends "/views/base.html" %}
 
-
 {% block nav %}
 {% set homeDoc = g.doc('/content/pages/home.html') %}
     <amp-accordion>
@@ -8,9 +7,10 @@
         <section>
         <h1>{{ category.title }}</h1>
         <ul>
-         {% set catDoc = g.doc(category.text) %}
-         {% for category in catDoc.categories %}
-          <h1><a href= {{category.path}}>{{category.title}}</a></h1>
+        {% for category, docs in g.categories(category.text) %}
+          {% for doc in docs %}
+            <h1><a href={{doc.url.path}}>{{doc.title}}</a></h1>
+          {% endfor %}
          {% endfor %}
         </ul>
         </section>
