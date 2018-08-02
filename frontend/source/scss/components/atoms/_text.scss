@@ -28,7 +28,7 @@ mono (inline, block)
 
 */
 
-#{map-get($prefix, atom)}-txt {
+.#{atom('txt')} {
 
     &-#{map-get($sizes, xs)} {}
 

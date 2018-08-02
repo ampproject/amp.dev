@@ -23,7 +23,8 @@ outline
 
 */
 
-#{map-get($prefix, atom)}-btn {
+.#{atom('btn')} {
+    color: red;
 
     &-outline {}
 }

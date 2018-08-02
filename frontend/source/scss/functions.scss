@@ -6,3 +6,20 @@
   @warn "Unknown `#{$name}` in $colors.";
   @return null;
 }
+
+@function prefix($category, $selector) {
+    @if map-has-key($categoryPrefixes, $category) {
+      @return #{$projectPrefix}-#{map-get($categoryPrefixes, $category)}-#{$selector};
+    }
+
+    @warn "There is no component category `#{$category}`.";
+    @return null;
+}
+
+@function atom($selector) {
+    @return prefix('atom', $selector);
+}
+
+@function molecule($selector) {
+    @return prefix('molecule', $selector);
+}
