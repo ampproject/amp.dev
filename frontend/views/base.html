@@ -5,7 +5,12 @@
     <div class="gridContainer">
       {% block nav %}{% endblock %}
       <div class="mainContainer">
-        {% block main %}{% endblock %}
+        <div class="mc-header">
+          {% block header %}{% endblock %}
+        </div>
+        <div class="mc-body">
+          {% block body %}{% endblock %}
+        </div>
       </div>
     </div>
   </body>
