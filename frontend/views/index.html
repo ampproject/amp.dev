@@ -2,7 +2,7 @@
 
 {% block nav %}
 {% set homeDoc = g.doc('/content/pages/home.html') %}
-    <amp-accordion>
+    <amp-accordion animate>
       {% for category in homeDoc.categories %}
         <section>
         <h1>{{ category.title }}</h1>
