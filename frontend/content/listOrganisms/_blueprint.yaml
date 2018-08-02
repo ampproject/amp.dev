@@ -1,3 +1,5 @@
 path: /{collection.basename}/{slug}
-view: /content/listOrganisms/index.html
+ ##todo, create index.html for listOrganisms
+view: /views/molecules/index.html
+
 

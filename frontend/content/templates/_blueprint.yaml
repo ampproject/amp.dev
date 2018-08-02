@@ -1,2 +1,2 @@
 path: /{collection.basename}/{slug}
-view: /content/templates/index.html
+view: /views/templates/index.html
