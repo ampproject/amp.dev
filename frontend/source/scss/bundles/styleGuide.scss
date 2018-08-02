@@ -1,8 +1,15 @@
 @import '../variables.scss';
+@import '../partials/guideHeader.scss';
 
 .gridContainer {
   display: grid;
   grid-template-columns: 25% auto;
+}
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 163px repeat(5, 1fr);
 }
 
 .m-acc >* h1{
@@ -11,6 +18,7 @@
   font-weight: bold;
   font-family: Poppins;
   font-size: 16px;
+  outline: none;
 }
 
 .m-acc ul >* li {
