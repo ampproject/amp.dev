@@ -3,7 +3,9 @@
  {% include "/views/partials/head.html" %}
   <body>
     <div class="gridContainer">
-      {% block nav %}{% endblock %}
+      <div class="navigation">
+        {% block nav %}{% endblock %}
+      </div>
       <div class="mainContainer">
         <div class="mc-header">
           {% block header %}{% endblock %}

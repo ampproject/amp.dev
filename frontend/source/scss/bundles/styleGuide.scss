@@ -4,13 +4,28 @@
 .gridContainer {
   display: grid;
   height: 100vh;
-  grid-template-columns: 25% auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "navigation"
+    "body";
+
+  @media screen and (min-width: 500px) {
+      grid-template-columns: 25% auto;
+      grid-template-areas:
+        "navigation body"
+  }
 }
 
 .mainContainer {
   display: grid;
+  grid-area: body;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 163px auto;
+}
+
+.navigation {
+  grid-area: navigation;
 }
 
 .mc-header {
@@ -20,6 +35,7 @@
 .mc-body {
   background: map-get($colors, 'guideBody');
   grid-column-start: 2;
+  height: 100vh;
 }
 
 .m-acc >* h1{
