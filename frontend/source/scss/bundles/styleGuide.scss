@@ -9,7 +9,16 @@
 .mainContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 163px repeat(5, 1fr);
+  grid-template-rows: 163px auto;
+}
+
+.mc-header {
+  grid-column-start: 2;
+}
+
+.mc-body {
+  background: map-get($colors, 'guideBody');
+  grid-column-start: 2;
 }
 
 .m-acc >* h1{
