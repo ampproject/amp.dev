@@ -12,3 +12,6 @@ error_routes:
 localization:
   default_locale: en
 
+preprocessors:
+- kind: gulp
+  run_task: 'styles'
