@@ -1,5 +1,6 @@
 ---
 $title: CM Videoplayer
-$view: /views/molecules/cm_videoplayer.html
+$category: Content Molecules
 
+$view: /views/molecules/cm_videoplayer.html
 ---

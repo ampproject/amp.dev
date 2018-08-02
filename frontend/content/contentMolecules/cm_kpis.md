@@ -1,5 +1,6 @@
 ---
 $title: CM KPIs
-$view: /views/molecules/cm_kpis.html
+$category: Content Molecules
 
+$view: /views/molecules/cm_kpis.html
 ---

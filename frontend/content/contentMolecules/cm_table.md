@@ -1,5 +1,6 @@
 ---
 $title: CM Table
-$view: /views/molecules/cm_table.html
+$category: Content Molecules
 
+$view: /views/molecules/cm_table.html
 ---
