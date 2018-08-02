@@ -1,0 +1,32 @@
+@import '../variables.scss';
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 25% auto;
+}
+
+.m-acc >* h1{
+  background: map-get($colors, 'white');
+  color: map-get($colors , 'black2' );
+  font-weight: bold;
+  font-family: Poppins;
+  font-size: 16px;
+}
+
+.m-acc ul >* li {
+  list-style: none;
+  color: map-get($colors, 'black');
+}
+
+.m-acc ul >* a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: Noto Sans;
+  color: map-get($colors , 'grey');
+
+  &:hover {
+    color: map-get($colors, 'hoverBlue');
+    font-weight: bold;
+  }
+}
