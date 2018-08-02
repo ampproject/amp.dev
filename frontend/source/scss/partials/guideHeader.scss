@@ -6,15 +6,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
-  padding-left: 25px;
-  padding-right: 10px;
-  height: 100%;
+  padding: 0 25px;
+  min-height: 100%;
 
   & .md-hd {
     font-family: Nato Sans;
     font-size: 16px;
     margin:0;
+    white-space: nowrap;
+    padding-bottom: 10px;
   }
 
   & .lg-hd {
@@ -23,5 +23,6 @@
     font-family: Poppins;
     font-weight: bold;
     margin: 0;
+    white-space: nowrap;
   }
 }
