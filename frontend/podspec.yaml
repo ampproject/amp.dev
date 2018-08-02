@@ -11,6 +11,4 @@ error_routes:
 
 localization:
   default_locale: en
-  locales:
-    - de_DE
 

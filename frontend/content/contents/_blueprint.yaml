@@ -1,5 +1,3 @@
 path: /{collection.basename}/{slug}
 view: /content/contents/index.html
 
-localization:
-  path: /{locale}/{collection.basename}/{slug}
