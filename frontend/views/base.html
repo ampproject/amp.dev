@@ -4,7 +4,9 @@
   <body>
     <div class="gridContainer">
       {% block nav %}{% endblock %}
-      {% block main %}{% endblock %}
+      <div class="mainContainer">
+        {% block main %}{% endblock %}
+      </div>
     </div>
   </body>
 </html>
