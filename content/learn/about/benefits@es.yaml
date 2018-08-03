@@ -1,0 +1,48 @@
+$title@: Beneficios
+$titles:
+  breadcrumb@: Beneficios
+class: about-benefits centered
+$parent: /content/learn/overview.yaml
+$view: /views/about-benefits.html
+components:
+  - carousel
+
+intro:
+  title@: Mejore la fidelidad del usuario Improve user engagement with fast, compelling experiences.
+  paragraph@: La velocidad de las páginas web mejora la experiencia de usuario y <a href="https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/">las métricas principales de la empresa</a>. Las páginas AMP se cargan casi instantáneamente, lo que te permite ofrecer una experiencia rápida en todo momento en cualquier dispositivo y plataforma que se haya enlazado a las páginas AMP, como Google, Bing y LinkedIn, entre otros. Estas mejoras en el rendimiento a menudo se traducen en mejoras en las métricas más importantes, como el tiempo que pasan los usuarios en las páginas, los visitantes que vuelven y los CTR.
+
+why:
+  title@: Cómo le puede ayudar AMP
+  reasons:
+    - title@: Mantiene a tu audiencia enganchada
+      paragraph@: Las páginas AMP típicamente cargan en menos de un segundo. Eso significa que cuando el público objetivo llega a una página de AMP, obtienen lo que buscan en el momento en que lo buscan. El resultado: es más probable que estén comprometidos y receptivoscon los mensajes de su marca, y más propensos a tomar las acciones que están guiándolos hacia completar una compra.
+      icon: publishers/publisher_icon_fast.svg
+
+    - title@: Maximice sus ingresos
+      paragraph@: Las conversiones caen un 12 por ciento por cada segundo extra que tarda una página web en cargarse. Si desea que las personas interactúen con su marca, aumenten sus ventas y el rendimiento de sus campañas, debe acelerar las cosas. AMP ofrece una forma de brindarles a los usuarios una experiencia más rápida en cualquier lugar -- en anuncios, páginas principales o en sitios webs completos.
+      icon: adtech/adtech_icon_revenue.svg
+
+    - title@: Mantener la flexibilidad y el control
+      paragraph@: La adopción del formato AMP le permite conservar su propia marca y herramientas mientras aprovecha los componentes web optimizados de AMP. Puede usar CSS para personalizar su estilo, datos dinámicos para buscar los datos más frescos donde sea necesario, y pruebas A/B para experimentar y crear la mejor experiencia de usuario posible para sus clientes. 
+      icon: card_developers.svg
+
+    - title@: Reduzca la complejidad en sus operaciones
+      paragraph@: La creación de páginas AMP es simple y directa. A menudo puede convertir su archivo completo en días, especialmente si utiliza un CMS popular, como Wordpress y Drupal. Sus equipos no necesitan ninguna habilidad especial ni se preocupan por optimizar su código para cada plataforma de distribución, ya que el formato AMP es totalmente portátil y las páginas AMP son consistentemente rápidas, sin importar cómo les llegue el usuario.
+      icon: publishers/publisher_icon_simple.svg
+
+    - title@: Maximice su ROI
+      paragraph@: Crear la página de destino, el anuncio o el contenido web correcto lleva tiempo. Las páginas de AMP pueden construirse una vez y distribuirse a través de una amplia variedad de plataformas de distribución simultáneamente. Con AMPHTML Ads, sus anuncios pueden publicarse tanto en páginas AMP como en páginas que no son de AMP, lo que significa que puede crear sus anuncios una sola vez y ofrecer una experiencia de marca memorable en cualquier lugar.
+      icon: advertisers/advertisers_icon_ROI.svg
+
+    - title: Construir para un futuro sostenible
+      paragraph: El proyecto AMP es una iniciativa de software libre que tiene como objetivo proteger el futuro de los sitios web, y para ello ayuda a todos a ofrecer una experiencia de usuario mejor y más inmediata. Crea un futuro sostenible para tu empresa con un sitio web abierto más rápido participando en el proyecto AMP.
+      icon: adtech/adtech_icon_customize.svg
+
+case:
+  title@: Ver historias de éxito
+  link_url: /content/learn/case-studies.html
+
+cta:
+  title@: Empezar
+  link_text@: Empezar
+  link_url: /content/docs/getting-started.md
