@@ -58,9 +58,9 @@ AMP supports integration with many third-party publishing platforms. Refer to th
 
 If you're creating AMP pages or creatives from scratch, visit these resources:
 
-*   [Tutorial: Create your first AMP page](/docs/tutorials/create.html)
-*   [Tutorial: Add advanced AMP features](/docs/tutorials/add_advanced.html)
-*   [AMP HTML specification](/docs/reference/spec.html#the-amp-html-format): *includes boilerplate, required markup, allowed HTML*
+*   [Tutorial: Create your first AMP page](/docs/fundamentals/create.html)
+*   [Tutorial: Add advanced AMP features](/docs/fundamentals/add_advanced.html)
+*   [AMP HTML specification](/docs/fundamentals/spec.html#the-amp-html-format): *includes boilerplate, required markup, allowed HTML*
 *   [AMPHTML Ads format](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): *provides details on creating performant ads in AMP*
 *   [YouTube video: What's allowed in AMP and what isn't?](https://youtu.be/Gv8A4CktajQ)
 *   [Templates from AMP Start](https://www.ampstart.com/): *Try out some ready-made AMP page templates*
@@ -69,22 +69,22 @@ If you're creating AMP pages or creatives from scratch, visit these resources:
 
 If you are converting your existing HTML pages to AMPHTML, visit these resources:
 
-*   [Tutorial: Convert HTML to AMP](/docs/tutorials/converting.html)
+*   [Tutorial: Convert HTML to AMP](/docs/fundamentals/converting.html)
 *   [YouTube video: Use AMP HTML for your existing site](https://youtu.be/OO9oKhs80aI)
 
 ### Validate and test AMP pages
 
 Before publishing your content, make sure your AMP pages are valid.  Here are some resources to use:
 
-*   [Validate AMP pages](/docs/guides/validate.html): *provides a list of validation tools and instructions for validating your pages*
+*   [Validate AMP pages](/docs/fundamentals/validate.html): *provides a list of validation tools and instructions for validating your pages*
 *   [YouTube video: How to validate & debug AMP pages](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
-*   [Testing CORS in AMP](/docs/guides/amp-cors-requests.html#testing-cors-in-amp)
+*   [Testing CORS in AMP](/docs/fundamentals/amp-cors-requests.html#testing-cors-in-amp)
 
 ### Make your content discoverable
 
 Ensure users can discover your content on third-party platforms (e.g., Twitter, Google, Bing, etc.). Here are some helpful resources:
 
-*   [Make your page discoverable](/docs/guides/discovery.html): *tips for linking AMP pages and using metadata*
+*   [Make your page discoverable](/docs/fundamentals/discovery.html): *tips for linking AMP pages and using metadata*
 *   [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290)
 
 <hr>

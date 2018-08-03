@@ -17,7 +17,7 @@ AMP ページにカスタム フォントを埋め込むには、次の 2 つの
 
 次に、CSS の `body` セレクタを次のように**更新**して、Raleway への参照を含めます。
 
-```csss
+```css
 body {
   width: auto;
   margin: 0;

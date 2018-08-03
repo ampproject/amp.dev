@@ -5,7 +5,7 @@ $title: はじめに
 
 これは AMP の使用を開始するためのクイックスタート ガイドです。
 
-詳しい手順については、「[初めての AMP ページを作成する](/ja/docs/tutorials/create.html)」チュートリアルをご覧ください。
+詳しい手順については、「[初めての AMP ページを作成する](/ja/docs/fundamentals/create.html)」チュートリアルをご覧ください。
 
 ### ステップ 1: AMP HTML テンプレートを取得する
 
@@ -29,7 +29,7 @@ $title: はじめに
 ```
 
 {% call callout('詳細情報', type='read') %}
-詳しくは、AMP ページの[必須のマークアップ](/ja/docs/reference/spec.html#required-markup)についてご覧ください。
+詳しくは、AMP ページの[必須のマークアップ](/ja/docs/fundamentals/spec.html#required-markup)についてご覧ください。
 {% endcall %}
 
 ### ステップ 2: ページにコンポーネントを追加する
@@ -73,24 +73,24 @@ AMP ページの要素のスタイルを設定するには、ドキュメント�
 ```
 
 {% call callout('詳細情報', type='read') %}
-詳しくは、AMP ページで[サポートされる CSS](/ja/docs/guides/responsive/style_pages.html) をご覧ください。
+詳しくは、AMP ページで[サポートされる CSS](/ja/docs/design/responsive/style_pages.html) をご覧ください。
 {% endcall %}
 
 ### ステップ 4: AMP HTML を検証する
 
 ページを [AMP Validator](https://validator.ampproject.org/) で検証して、AMP ページが有効な AMP HTML であることを確認します。
 
-使用できる他の検証ツールについては、[AMP ページを検証する](/ja/docs/guides/validate.html)をご覧ください。
+使用できる他の検証ツールについては、[AMP ページを検証する](/ja/docs/fundamentals/validate.html)をご覧ください。
 
 ### 次のステップ
 
-AMP ページの基本をさらに理解するには、「[初めての AMP ページを作成する](/ja/docs/tutorials/create.html)」チュートリアルをご覧ください。
+AMP ページの基本をさらに理解するには、「[初めての AMP ページを作成する](/ja/docs/fundamentals/create.html)」チュートリアルをご覧ください。
 
 役立つその他のリソースを以下にご紹介します。
 
-* [ページを検出可能にする](/ja/docs/guides/discovery.html)
-* [ページにアナリティクスを追加する](/ja/docs/guides/analytics_amp.html)
-* [ユーザー エンゲージメントを向上させる](/ja/docs/guides/engagement.html)
+* [ページを検出可能にする](/ja/docs/fundamentals/discovery.html)
+* [ページにアナリティクスを追加する](/ja/docs/analytics/analytics_amp.html)
+* [ユーザー エンゲージメントを向上させる](/ja/docs/fundamentals/engagement.html)
 * [AMP BY Example](https://ampbyexample.com/) ライブデモ
  
  

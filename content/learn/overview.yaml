@@ -29,16 +29,16 @@ core:
       description2: |
         Though most tags in an AMP HTML page are regular HTML tags,
         some HTML tags are replaced with AMP-specific tags (see also
-        [HTML Tags in the AMP spec](/docs/reference/spec.html)).
+        [HTML Tags in the AMP spec](/docs/fundamentals/spec.html)).
         These custom elements, called AMP HTML components,
         make common patterns easy to implement in a performant way.
         <p>For example, the [`amp-img`](/docs/reference/amp-img.html) tag
         provides full `srcset` support even in browsers that don’t support it yet.
-        Learn how to [create your first AMP HTML page](/docs/tutorials/create.html).
+        Learn how to [create your first AMP HTML page](/docs/getting_started/create.html).
         <p>AMP pages are discovered by search engines and other platforms
         through the `<link rel="">` HTML tag.  You can choose to have a non-AMP
         version and an AMP version of your page, or just an AMP version. Learn
-        more in [Make Your Page Discoverable](/docs/guides/discovery.html).
+        more in [Make Your Page Discoverable](/docs/fundamentals/discovery.html).
     - title: AMP JS
       subtitle: |
           The **AMP JS** library ensures the fast rendering of AMP HTML pages.
@@ -49,7 +49,7 @@ core:
         all to ensure a fast rendering of your page.
         <p>Among the biggest optimizations is the fact that it makes everything that comes from external resources asynchronous, so nothing in the page can block anything from rendering.
         <p>Other performance techniques include the sandboxing of all iframes, the pre-calculation of the layout of every element on page before resources are loaded and the disabling of slow CSS selectors.
-        <p>To learn more about not just the [optimizations](/learn/about-how/) but the limitations, [read the AMP HTML specification](/docs/reference/spec.html).
+        <p>To learn more about not just the [optimizations](/learn/about-how/) but the limitations, [read the AMP HTML specification](/docs/fundamentals/spec.html).
     - title: AMP Cache
       subtitle: |
           The **Google AMP Cache** can be used to serve cached AMP HTML pages.
@@ -69,7 +69,7 @@ core:
           <p>Another version of the validator comes bundled with every AMP page. This version can log validation errors directly to the browser’s console when the page is rendered,
           allowing you to see how complex changes in your code
           might impact performance and user experience.
-          <p>Learn more about [testing your AMP HTML pages](/docs/guides/validate.html).
+          <p>Learn more about [testing your AMP HTML pages](/docs/fundamentals/validate.html).
 
 video:
   description: "Learn more from this introductory video"

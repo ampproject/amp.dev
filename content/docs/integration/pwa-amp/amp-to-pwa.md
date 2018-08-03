@@ -78,7 +78,7 @@ Tip: There are easier ways to deal with a Service Worker. Take a look at the [Se
 
 ## Make all links on an AMP Page navigate to the PWA
 
-Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP](/docs/guides/discovery.html):
+Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP](/docs/fundamentals/discovery.html):
 
 ### 1. If you pair your canonical pages with AMP pages
 
@@ -118,5 +118,5 @@ AMP solves this with something called [shell URL rewriting](/docs/reference/comp
 With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
 
 {% call callout('Read on', type='read') %}
-You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](/docs/guides/pwa-amp/amp-in-pwa.html).
+You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](/docs/integration/pwa-amp/amp-in-pwa.html).
 {% endcall %}

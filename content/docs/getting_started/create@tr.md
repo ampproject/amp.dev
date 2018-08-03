@@ -7,5 +7,5 @@ Nasıl başlayacağınızdan emin değil misiniz? Bu eğiticide, temel bir AMP H
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/tr/docs/tutorials/create/basic_markup.html"><span class="arrow-next">Başlamak</span></a>
+<a class="button" href="/tr/docs/getting_started/create/basic_markup.html"><span class="arrow-next">Başlamak</span></a>
 </div>

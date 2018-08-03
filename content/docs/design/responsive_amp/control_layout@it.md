@@ -24,12 +24,12 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>nodisplay</code></td>
       <td class="col-twenty" data-th="Description">No</td>
-      <td data-th="Behavior">Elemento non visualizzato. Questo layout può essere applicato a ogni elemento AMP. Il componente non occupa spazio sullo schermo, come non ci fosse alcuno stile di visualizzazione applicato. Si presume che l'elemento possa visualizzarsi automaticamente in seguito all'azione dell'utente, ad esempio <a href="/docs/reference/extended/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
+      <td data-th="Behavior">Elemento non visualizzato. Questo layout può essere applicato a ogni elemento AMP. Il componente non occupa spazio sullo schermo, come non ci fosse alcuno stile di visualizzazione applicato. Si presume che l'elemento possa visualizzarsi automaticamente in seguito all'azione dell'utente, ad esempio <a href="/docs/reference/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed</code></td>
       <td class="col-twenty" data-th="Description">Sì</td>
-      <td data-th="Behavior">L'elemento ha larghezza e altezza fisse; la reattività non è supportata. Le uniche eccezioni sono gli elementi <a href="/docs/reference/amp-pixel.html"><code>amp-pixel</code></a> e <a href="/docs/reference/extended/amp-audio.html"><code>amp-audio</code></a>.</td>
+      <td data-th="Behavior">L'elemento ha larghezza e altezza fisse; la reattività non è supportata. Le uniche eccezioni sono gli elementi <a href="/docs/reference/amp-pixel.html"><code>amp-pixel</code></a> e <a href="/docs/reference/amp-audio.html"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>responsive</code></td>
@@ -39,7 +39,7 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Solo l'altezza</td>
-      <td data-th="Behavior">L'elemento occupa lo spazio a sua disposizione, ma la sua altezza rimane invariata. Questo layout è adatto per elementi quali <a href="/docs/reference/extended/amp-carousel.html"><code>amp-carousel</code></a>, che prevede contenuti in posizione orizzontale. L'attributo <code>width</code> non deve essere presente o deve essere impostato su <code>auto</code>.</td>
+      <td data-th="Behavior">L'elemento occupa lo spazio a sua disposizione, ma la sua altezza rimane invariata. Questo layout è adatto per elementi quali <a href="/docs/reference/amp-carousel.html"><code>amp-carousel</code></a>, che prevede contenuti in posizione orizzontale. L'attributo <code>width</code> non deve essere presente o deve essere impostato su <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>
@@ -59,7 +59,7 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
 Se i valori `width` o `height` non vengono specificati, in alcuni casi il runtime AMP può stabilire i seguente valori predefiniti:
 
 * [`amp-pixel`](/docs/reference/amp-pixel.html): per larghezza e altezza viene impostato il valore predefinito 0.
-* [`amp-audio`](/docs/reference/extended/amp-audio.html): la larghezza e l'altezza predefinite vengono dedotte dal browser.
+* [`amp-audio`](/docs/reference/amp-audio.html): la larghezza e l'altezza predefinite vengono dedotte dal browser.
 
 ### Che cosa succede se non viene definito l'attributo layout?
 

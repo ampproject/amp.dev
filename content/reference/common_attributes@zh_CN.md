@@ -20,7 +20,7 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[占位符和备用行为](/zh_cn/docs/guides/responsive/placeholders.html)。
+有关详情，请参阅[占位符和备用行为](/zh_cn/docs/design/responsive/placeholders.html)。
 
 ## heights
 
@@ -43,11 +43,11 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导](/zh_cn/docs/guides/responsive/art_direction.html)。
+有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导](/zh_cn/docs/design/responsive/art_direction.html)。
 
 ## layout
 
-AMP 提供了一系列[布局](/zh_cn/docs/guides/responsive/control_layout.html#the-layout-attribute)，以用于指定某个 AMP 组件在文档布局中的行为方式。您可通过下述方法为某个组件指定一种布局：为该元素添加 `layout` 属性，并指定一个受支持的布局值（请参阅该元素的文档以了解哪些值受支持）。
+AMP 提供了一系列[布局](/zh_cn/docs/design/responsive/control_layout.html#the-layout-attribute)，以用于指定某个 AMP 组件在文档布局中的行为方式。您可通过下述方法为某个组件指定一种布局：为该元素添加 `layout` 属性，并指定一个受支持的布局值（请参阅该元素的文档以了解哪些值受支持）。
 
 示例：
 
@@ -60,7 +60,7 @@ AMP 提供了一系列[布局](/zh_cn/docs/guides/responsive/control_layout.html
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询](/zh_cn/docs/guides/responsive/control_layout.html)以及[布局规范](/zh_cn/docs/reference/spec/amp-html-layout.html)。
+有关详情，请参阅[布局和媒体查询](/zh_cn/docs/design/responsive/control_layout.html)以及[布局规范](/zh_cn/docs/design/amp-html-layout.html)。
 
 ## media
 
@@ -81,7 +81,7 @@ AMP 提供了一系列[布局](/zh_cn/docs/guides/responsive/control_layout.html
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询](/zh_cn/docs/guides/responsive/control_layout.html#element-media-queries)。
+有关详情，请参阅[布局和媒体查询](/zh_cn/docs/design/responsive/control_layout.html#element-media-queries)。
 
 ## noloading
 
@@ -137,7 +137,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[占位符和备用行为](/zh_cn/docs/guides/responsive/placeholders.html)。
+有关详情，请参阅[占位符和备用行为](/zh_cn/docs/design/responsive/placeholders.html)。
 
 ## sizes
 
@@ -153,11 +153,11 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导](/zh_cn/docs/guides/responsive/art_direction.html)。
+有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导](/zh_cn/docs/design/responsive/art_direction.html)。
 
 ## width 和 height
 
-对于某些[布局](/zh_cn/docs/guides/responsive/control_layout.html#the-layout-attribute)，AMP 组件必须具有包含整数像素值的 `width` 和 `height` 属性。
+对于某些[布局](/zh_cn/docs/design/responsive/control_layout.html#the-layout-attribute)，AMP 组件必须具有包含整数像素值的 `width` 和 `height` 属性。
 
 示例：
 
@@ -169,7 +169,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询](/zh_cn/docs/guides/responsive/control_layout.html)以及[布局规范](/zh_cn/docs/reference/spec/amp-html-layout.html)。
+有关详情，请参阅[布局和媒体查询](/zh_cn/docs/design/responsive/control_layout.html)以及[布局规范](/zh_cn/docs/design/amp-html-layout.html)。
 
  
  

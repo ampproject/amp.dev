@@ -93,7 +93,7 @@ Now, **replace** your simple carousel with this:
 To learn more, see the [amp-carousel](/docs/reference/components/amp-carousel.html) component reference documentation.
 
 {% call callout('Note', type='note') %}
-In our last example you may have noticed the `amp-ad` component included a child `div` element with the `placeholder` attribute. Earlier in the tutorial, we encountered a similar scenario with `amp-ad` using a `fallback`. What’s the difference between placeholder and fallback? `Fallback` elements appear when the parent element fails to load, i.e. if there was no ad available. `placeholder` elements appear in place of the parent element, while it is loading. In a sense, these elements bookend the loading process of the parent element. You can learn more in [Placeholders & fallbacks](/docs/guides/responsive/placeholders.html) guide.
+In our last example you may have noticed the `amp-ad` component included a child `div` element with the `placeholder` attribute. Earlier in the tutorial, we encountered a similar scenario with `amp-ad` using a `fallback`. What’s the difference between placeholder and fallback? `Fallback` elements appear when the parent element fails to load, i.e. if there was no ad available. `placeholder` elements appear in place of the parent element, while it is loading. In a sense, these elements bookend the loading process of the parent element. You can learn more in [Placeholders & fallbacks](/docs/design/responsive/placeholders.html) guide.
 {% endcall %}
 
 <div class="prev-next-buttons">

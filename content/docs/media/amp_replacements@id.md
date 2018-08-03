@@ -15,7 +15,7 @@ Isi. Pelajari perbedaan mengenai fitur yang setara dengan AMP dan pelajari cara 
 *  Kami perlu mengontrol permintaan jaringan agar [konten diprioritaskan dan dimuat secara perlahan dan efektif](/id/learn/about-how/#prioritize-resource-loading)
 
 {% call callout('Perhatian', type='caution') %}
- Meski tidak didukung, pasangan HTML default*akan*  dirender, tetapi AMP tidak akan [memvalidasi halaman Anda](/id/docs/guides/debug/validate.html) 
+ Meski tidak didukung, pasangan HTML default*akan*  dirender, tetapi AMP tidak akan [memvalidasi halaman Anda](/id/docs/fundamentals/validate.html) 
 dan Anda tidak akan mendapatkan semua manfaat dari yang diberikan AMP.{% endcall %}
 
 ## Gambar
@@ -69,14 +69,14 @@ Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan t
 </div>
 
 {% call callout('Baca juga', type='read') %}
- Pelajari lebih lanjut tentang [teknik tata letak lanjutan](/id/docs/guides/responsive/control_layout.html).{% endcall %}
+ Pelajari lebih lanjut tentang [teknik tata letak lanjutan](/id/docs/design/responsive/control_layout.html).{% endcall %}
 
 ### Perilaku dan placeholder
 
 Waktu proses HTML AMP dapat mengelola konten gambar secara efektif, dengan memilih antara pemuatan konten yang diprioritaskan atau yang mengalami penundaan berdasarkan pada posisi viewport, sumber daya sistem, bandwidth koneksi, atau faktor lainnya.
 
 {% call callout('Baca juga', type='read') %}
- Pelajari cara [memberikan penggantian dan placeholder untuk gambar](/id/docs/guides/responsive/placeholders.html)
+ Pelajari cara [memberikan penggantian dan placeholder untuk gambar](/id/docs/design/responsive/placeholders.html)
 .{% endcall %}
 
 ## Gambar animasi

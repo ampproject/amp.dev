@@ -11,40 +11,40 @@ yang sama dengan yang ada di halaman non-AMP untuk memastikan halaman dapat dike
 
 - **Tampilkan konten yang paling menarik** saat mengonversi halaman. Sertakan elemen halaman utama seperti
 gambar, video, penyematan, data terstruktur, komentar, dan media sosial. Pelajari cara 
-[menyertakan konten pihak ketiga](https://www.ampproject.org/id/docs/guides/third_party_components).
+[menyertakan konten pihak ketiga](/id/docs/fundamentals/third_party_components.html).
 
-- **Simpan halaman AMP saat ini.** Update live blog secara dinamis dengan [`amp-live-list`](https://www.ampproject.org/id/docs/reference/components/amp-live-list).
+- **Simpan halaman AMP saat ini.** Update live blog secara dinamis dengan [`amp-live-list`](/id/docs/reference/components/amp-live-list.html).
 
 ### Optimalkan untuk retensi dan interaksi pengguna
 
-- **Berikan pengalaman interaktif** di halaman AMP. Gunakan komponen seperti [`amp-carousel`](https://www.ampproject.org/id/docs/reference/components/amp-carousel) untuk membuat korsel yang penuh gambar
-dan [`amp-iframe`](https://www.ampproject.org/id/docs/reference/components/amp-iframe) untuk menyatukan
+- **Berikan pengalaman interaktif** di halaman AMP. Gunakan komponen seperti [`amp-carousel`](/id/docs/reference/components/amp-carousel.html) untuk membuat korsel yang penuh gambar
+dan [`amp-iframe`](/id/docs/reference/components/amp-iframe.html) untuk menyatukan
 elemen interaktif yang tidak didukung AMP.
 
 - **Buat alur menjelajah yang dipersonalisasikan untuk pengguna.** Tawarkan tombol login, dan jika konten
-dilapis oleh paywall, implementasikan peraturan dan tawaran menggunakan[`amp-access`](https://www.ampproject.org/id/docs/reference/components/amp-access).
+dilapis oleh paywall, implementasikan peraturan dan tawaran menggunakan[`amp-access`](/id/docs/reference/components/amp-access.html).
 
 - **Perpanjang alur menjelajah.** Tautkan artikel terkait atau artikel yang disarankan, dan tautkan juga ke 
 bagian situs lainnya yang relevan.
 
-- **Personalisasikan konten** dengan menyertakan rekomendasi melalui [`amp-list`](https://www.ampproject.org/id/docs/reference/components/amp-list).
+- **Personalisasikan konten** dengan menyertakan rekomendasi melalui [`amp-list`](/id/docs/reference/components/amp-list.html).
 
-- **Implementasikan menu** dengan [`amp-sidebar`](https://www.ampproject.org/id/docs/reference/components/amp-sidebar) untuk mendorong pengguna agar menjelajahi seluruh situs Anda.
+- **Implementasikan menu** dengan [`amp-sidebar`](/id/docs/reference/components/amp-sidebar.html) untuk mendorong pengguna agar menjelajahi seluruh situs Anda.
 
-- **Bantu pembaca membagikan konten** dengan [`amp-social-share`](https://www.ampproject.org/id/docs/reference/components/amp-social-share) dan tombol bagikan yang Anda buat sendiri.
+- **Bantu pembaca membagikan konten** dengan [`amp-social-share`](/id/docs/reference/components/amp-social-share.html) dan tombol bagikan yang Anda buat sendiri.
 
 - **Kembangkan interaksi baru** seperti perolehan prospek, pendaftaran newsletter, dan dukungan komentar
-dengan [`amp-form`](https://www.ampproject.org/id/docs/reference/components/amp-form).
+dengan [`amp-form`](/id/docs/reference/components/amp-form.html).
 
 - **Incar jenis iklan yang menawarkan pengalaman yang baik bagi pembaca.** Jelajahi format iklan AMP seperti
-[`amp-sticky-ad`](https://www.ampproject.org/id/docs/reference/components/amp-sticky-ad) dan 
-[`amp-fx-flying-carpet`](https://www.ampproject.org/id/docs/reference/components/amp-fx-flying-carpet). 
-Ikuti praktik terbaik [monetisasi iklan](/id/docs/guides/ads/ads_tips.html).
+[`amp-sticky-ad`](/id/docs/reference/components/amp-sticky-ad.html) dan 
+[`amp-fx-flying-carpet`](/id/docs/reference/components/amp-fx-flying-carpet.html). 
+Ikuti praktik terbaik [monetisasi iklan](/id/docs/ads/monetization.html).
 
-- **Download aplikasi Drive.** Sertakan link instal aplikasi di banner dengan [`amp-app-banner`](https://www.ampproject.org/id/docs/reference/components/amp-app-banner).
+- **Download aplikasi Drive.** Sertakan link instal aplikasi di banner dengan [`amp-app-banner`](/id/docs/reference/components/amp-app-banner.html).
 
 - **Pastikan transisi yang cepat** ke situs Aplikasi Web Progresif (PWA) non-AMP untuk pembaca. Gunakan 
-[`amp-install-serviceworker`](https://www.ampproject.org/id/docs/reference/components/amp-install-serviceworker) untuk mengisi cache.
+[`amp-install-serviceworker`](/id/docs/reference/components/amp-install-serviceworker.html) untuk mengisi cache.
 
 ### Berpartisipasi di Project AMP open source untuk membantu dalam membentuk pengembangannya
 

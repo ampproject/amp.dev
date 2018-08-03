@@ -76,7 +76,7 @@ self.addEventListener('install', function(event) {
 
 ## AMP ページ上のすべてのリンクで PWA に誘導する
 
-おそらく、AMP ページ上の大部分のリンクは多くのコンテンツ ページにつながっていることでしょう。初回以降のリンクのクリックがプログレッシブ ウェブアプリに「アップグレード」されるようにする場合、[AMP の使用方法に応じて](/ja/docs/guides/discovery)次の 2 つの方法があります。
+おそらく、AMP ページ上の大部分のリンクは多くのコンテンツ ページにつながっていることでしょう。初回以降のリンクのクリックがプログレッシブ ウェブアプリに「アップグレード」されるようにする場合、[AMP の使用方法に応じて](/ja/docs/fundamentals/discovery.html)次の 2 つの方法があります。
 
 ### 1. 正規ページと AMP ページを組み合わせている場合
 
@@ -116,7 +116,7 @@ AMP では、[シェル URL の書き換え](/ja/docs/reference/components/amp-i
 これらの属性を指定することで、Service Worker 対応かどうかにかかわらず、AMP ページで発生する初回以降のすべてのクリックで PWA に移動できるようになります。
 
 {% call callout('詳細情報', type='read') %}
-ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](/ja/docs/guides/pwa-amp/amp-in-pwa)。
+ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](/ja/docs/integration/pwa-amp/amp-in-pwa)。
 {% endcall %}
  
  

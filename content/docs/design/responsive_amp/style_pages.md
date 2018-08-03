@@ -11,7 +11,7 @@ but you can’t reference external stylesheets
 Also certain styles are disallowed due to performance implications.
 
 Styles may live in the head of the document or as inline `style` attributes
-(see [Add styles to a page](/docs/guides/responsive_amp.html#add-styles-to-a-page)).
+(see [Add styles to a page](/docs/design/responsive_amp.html#add-styles-to-a-page)).
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
@@ -78,7 +78,7 @@ they support:
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 
 {% call callout('Read on', type='success') %}
-Learn more about [custom fonts in AMP](/docs/guides/responsive/custom_fonts.html).
+Learn more about [custom fonts in AMP](/docs/design/responsive/custom_fonts.html).
 {% endcall %}
 
 ## Using CSS preprocessors
