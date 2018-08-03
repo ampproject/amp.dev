@@ -8,9 +8,9 @@
         AMP HTML 本质上是使用自定义 AMP 属性扩展的 HTML。最简单的 AMP HTML 文件如下所示：
       example: /content/includes/html-example.md
       description2: |
-        尽管 AMP HTML 网页中的大多数标记都是常规 HTML 标记，但部分 HTML 标记替换为了 AMP 专用标记（另请参阅 [AMP 规范中的 HTML 标记](/zh_cn/docs/reference/spec.html))。利用这些自定义元素（称为 AMP HTML 组件）可以轻松高效地实现常见的模式。 
+        尽管 AMP HTML 网页中的大多数标记都是常规 HTML 标记，但部分 HTML 标记替换为了 AMP 专用标记（另请参阅 [AMP 规范中的 HTML 标记](/zh_cn/docs/fundamentals/spec.html))。利用这些自定义元素（称为 AMP HTML 组件）可以轻松高效地实现常见的模式。 
         <p>例如，[`amp-img`](/zh_cn/docs/reference/amp-img.html) 标记可提供完整的 `srcset` 支持，即使在尚不支持该标记的浏览器中也是如此。了解如何[创建您的首个 AMP HTML 网页](/zh_cn/docs/getting_started/create.html)。 
-        <p>AMP 网页通过 HTML 标记被搜索引擎和其他平台 `<link rel="">` 发现。您可以选择分别提供您网页的非 AMP 版本和 AMP 版本，而不仅仅提供 AMP 版本。详细了解如何[让您的网页易于被发现](/zh_cn/docs/guides/discovery.html)。
+        <p>AMP 网页通过 HTML 标记被搜索引擎和其他平台 `<link rel="">` 发现。您可以选择分别提供您网页的非 AMP 版本和 AMP 版本，而不仅仅提供 AMP 版本。详细了解如何[让您的网页易于被发现](/zh_cn/docs/fundamentals/discovery.html)。
 
     - title: AMP JS
       subtitle: |
@@ -18,7 +18,7 @@
       description: |
         [AMP JS 库](https://github.com/ampproject/amphtml/tree/master/src) 可实现所有 [AMP 的最佳性能做法](/zh_cn/learn/about-how/)、管理资源加载，并为您提供上面提到的自定义标记，所有这些都是为了确保快速渲染您的网页。 
         <p>最重大的优化之一就是它可使来自外部资源的所有内容保持异步，让网页中的任何内容都能毫无阻碍地渲染。 
-        <p>其他性能技术还包括：将所有 iframe 沙盒化，加载资源之前对网页上每个元素的布局进行预先计算，以及禁用性能缓慢的 CSS 选择器。 <p>如需详细了解[优化](/zh_cn/learn/about-how/) 和相关限制，请[阅读 AMP HTML 规范](/zh_cn/docs/reference/spec.html)。
+        <p>其他性能技术还包括：将所有 iframe 沙盒化，加载资源之前对网页上每个元素的布局进行预先计算，以及禁用性能缓慢的 CSS 选择器。 <p>如需详细了解[优化](/zh_cn/learn/about-how/) 和相关限制，请[阅读 AMP HTML 规范](/zh_cn/docs/fundamentals/spec.html)。
 
     - title: AMP Cache
       subtitle: |
@@ -27,7 +27,7 @@
         [Google AMP Cache](https://developers.google.com/amp/cache/) 是一种基于代理的内容交付网络，用于交付所有有效的 AMP 文档。它可提取 AMP HTML 网页，对这些网页进行缓存，并自动改进网页性能。使用 Google AMP Cache 时，文档，所有 JS 文件及所有图片都从使用 [HTTP 2.0](https://http2.github.io/) 的同一来源加载，从而可实现最高效率。 
         <p>此外，Google AMP Cache 还带有内置[验证系统](https://github.com/ampproject/amphtml/tree/master/validator)，可确认网页能够正常工作，并且不依赖于外部资源。此验证系统运行一系列断言，确认网页的标记符合 AMP HTML 规范。 
         <p>另一个版本的验证器与各个 AMP 网页捆绑提供。此版本可在网页渲染时将验证错误直接记录到浏览器的控制台中，让您可以看到代码中的复杂变化可能会对性能和用户体验产生怎样的影响
-        <p>详细了解如何[测试 AMP HTML 网页](/zh_cn/docs/guides/validate.html)。
+        <p>详细了解如何[测试 AMP HTML 网页](/zh_cn/docs/fundamentals/validate.html)。
 
 
 video:

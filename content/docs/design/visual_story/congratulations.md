@@ -19,7 +19,7 @@ In this tutorial, you learned to:
 Learn more about AMP story from these resources:
 
 - [amp-story reference documentation](/docs/reference/components/amp-story.html)
-- [AMP story best practices](/docs/guides/amp_story_best_practices.html)
+- [AMP story best practices](/docs/design/amp_story_best_practices.html)
 
 {% call callout('Note', type='note') %}
 The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**. To sign up for the origin trial to publish pages with this component, please visit <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.

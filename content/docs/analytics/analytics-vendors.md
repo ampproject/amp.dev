@@ -19,10 +19,10 @@ In the following example, we send pageview data to [Google Analytics](#google-an
 <script type="application/json">
 {
   "vars": {
-    "account": "UA-XXXXX-Y" 
+    "account": "UA-XXXXX-Y"
   },
   "triggers": {
-    "trackPageview": { 
+    "trackPageview": {
       "on": "visible",
       "request": "pageview"
     }
@@ -190,6 +190,12 @@ Adds support for Médiamétrie tracking pages. Requires defining *var* `serial`.
 Type attribute value: `mediarithmics`
 
 Adds support for mediarithmics. More information and configuration details can be found at [developer.mediarithmics.com](https://developer.mediarithmics.com/).
+
+### Mobify
+
+Type attribute value: `mobify`
+
+Adds support for Mobify. More details for adding Mobify support can be found at [docs.mobify.com](https://docs.mobify.com/amp-sdk/latest/guides/amp-analytics/).
 
 ### mParticle
 

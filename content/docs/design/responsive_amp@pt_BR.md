@@ -5,10 +5,10 @@ $title: Estilo e layout
 
 O estilo e o layout nas páginas AMP em HTML são muito semelhantes aos de páginas HTML normais. Nos dois casos, você usará CSS.
 
-No entanto, as AMP limitam o uso de CSS por motivos de desempenho e usabilidade ao mesmo tempo em que ampliam os recursos do design responsivo com recursos como [marcadores e substitutos](/pt_br/docs/guides/responsive/placeholders.html), [direção artística avançada por meio de srcset](/pt_br/docs/guides/responsive/art_direction.html) e o [atributo de layout](/pt_br/docs/guides/responsive/control_layout.html) para controlar melhor a forma que os elementos são exibidos.
+No entanto, as AMP limitam o uso de CSS por motivos de desempenho e usabilidade ao mesmo tempo em que ampliam os recursos do design responsivo com recursos como [marcadores e substitutos](/pt_br/docs/design/responsive/placeholders.html), [direção artística avançada por meio de srcset](/pt_br/docs/design/responsive/art_direction.html) e o [atributo de layout](/pt_br/docs/design/responsive/control_layout.html) para controlar melhor a forma que os elementos são exibidos.
 
 {% call callout('Dica', type='success') %}
-É muito fácil tornar os elementos responsivos nas AMP. Simplesmente coloque `layout="responsive"` neles. Para saber mais sobre o design responsivo nas AMP, acesse [Criar páginas AMP responsivas](/pt_br/docs/guides/responsive/responsive_design).
+É muito fácil tornar os elementos responsivos nas AMP. Simplesmente coloque `layout="responsive"` neles. Para saber mais sobre o design responsivo nas AMP, acesse [Criar páginas AMP responsivas](/pt_br/docs/design/responsive/responsive_design).
 {% endcall %}
 
 {{ youtube('y6kA3u3GIws', 480, 270, caption='Veja o que a equipe da UpperQuad tem a dizer sobre a reforma do site AMPproject e os desafios de usar AMP pela primeira vez.') }}
@@ -61,7 +61,7 @@ Defina os estilos de componentes com seletores de classe ou elemento usando prop
 [/sourcecode]
 
 {% call callout('Importante', type='caution') %}
-Verifique se os seus estilos são compatíveis com as AMP. Alguns estilos não são por motivos de desempenho (veja também [CSS compatível](/pt_br/docs/guides/responsive/style_pages.html)).
+Verifique se os seus estilos são compatíveis com as AMP. Alguns estilos não são por motivos de desempenho (veja também [CSS compatível](/pt_br/docs/design/responsive/style_pages.html)).
 {% endcall %}
 
 ## Elementos de layout responsivos
@@ -71,7 +71,7 @@ Especifique o tamanho e a posição de todos os elementos AMP visíveis fornecen
 Defina o layout como responsivo. Isso dimensionará o elemento para a largura do seu elemento de contêiner e redimensionará a altura automaticamente para a proporção indicada nos atributos de largura e altura.
 
 {% call callout('Leia mais', type='read') %}
-Saiba mais sobre [os layouts compatíveis com as AMP](/pt_br/docs/guides/responsive/control_layout.html)
+Saiba mais sobre [os layouts compatíveis com as AMP](/pt_br/docs/design/responsive/control_layout.html)
 {% endcall %}
 
 ## Use marcadores e substitutos
@@ -79,7 +79,7 @@ Saiba mais sobre [os layouts compatíveis com as AMP](/pt_br/docs/guides/respons
 A compatibilidade interna com marcadores e substitutos permite que seus usuários nunca precisem olhar novamente para uma tela em branco.
 
 {% call callout('Leia mais', type='read') %}
-Saiba mais sobre [Marcadores e substitutos](/pt_br/docs/guides/responsive/placeholders.html)
+Saiba mais sobre [Marcadores e substitutos](/pt_br/docs/design/responsive/placeholders.html)
 {% endcall %}
 
 ## Seja o diretor de arte das suas imagens
@@ -87,7 +87,7 @@ Saiba mais sobre [Marcadores e substitutos](/pt_br/docs/guides/responsive/placeh
 As AMP são compatíveis com os atributos `srcset` e `sizes` para que você tenha controle preciso sobre as imagens que serão carregadas em cada cenário.
 
 {% call callout('Leia mais', type='read') %}
-Saiba mais sobre [a direção artística com srcset e tamanhos](/pt_br/docs/guides/responsive/art_direction.html)
+Saiba mais sobre [a direção artística com srcset e tamanhos](/pt_br/docs/design/responsive/art_direction.html)
 {% endcall %}
 
 ## Validar seus estilos e layout
@@ -101,5 +101,5 @@ Exemplo de erro no console de uma página com CSS que ultrapassa o limite de 50 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
 {% call callout('Leia mais', type='read') %}
-Saiba mais sobre como [validar e corrigir suas páginas AMP](/pt_br/docs/guides/validate.html)
+Saiba mais sobre como [validar e corrigir suas páginas AMP](/pt_br/docs/fundamentals/validate.html)
 {% endcall %}

@@ -14,9 +14,9 @@ Successivamente assicurati che la pagina AMP **sia effettivamente valida**, in c
   1. Aggiungi "`#development=1`" all’URL, ad esempio, `http://localhost:8000/released.amp.html#development=1`.
   1. Apri la [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) e verifica se sono presenti errori di convalida.
 
-[Consulta ulteriori informazioni sulla convalida](/it/docs/guides/debug/validate.html) e scopri cosa fare se vengono rilevati errori.
+[Consulta ulteriori informazioni sulla convalida](/it/docs/fundamentals/validate.html) e scopri cosa fare se vengono rilevati errori.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/it/docs/tutorials/create/presentation_layout.html"><span class="arrow-prev">Precedente</span></a>
-  <a class="button next-button" href="/it/docs/tutorials/create/prepare_for_discovery.html"><span class="arrow-next">Prossimo</span></a>
+  <a class="button prev-button" href="/it/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">Precedente</span></a>
+  <a class="button next-button" href="/it/docs/getting_started/create/prepare_for_discovery.html"><span class="arrow-next">Prossimo</span></a>
 </div>

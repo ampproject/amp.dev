@@ -39,6 +39,6 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 Los archivos de AMP que incluyan funciones experimentales no superarán
-[la validación de AMP](/es/docs/guides/validate.html). 
+[la validación de AMP](/es/docs/fundamentals/validate.html). 
 Retira estos componentes experimentales de los documentos de AMP listos para producirse.
 

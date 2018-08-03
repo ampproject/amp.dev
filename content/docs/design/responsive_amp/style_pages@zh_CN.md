@@ -5,7 +5,7 @@ $title: 支持的 CSS
 
 和所有网页一样，AMP 网页也通过 CSS 来设定样式，但是您无法引用外部样式表（[自定义字体](#the-custom-fonts-exception)除外）。 此外，由于性能会受到影响，某些样式不允许使用；内嵌样式属性也不允许使用。
 
-所有样式都必须放置在文档的标头部分（请参阅[向网页中添加样式](/zh_cn/docs/guides/responsive_amp.html#add-styles-to-a-page)）。 但是您可以使用 CSS 预处理器和模板来构建静态网页，以便更好地管理您的内容。
+所有样式都必须放置在文档的标头部分（请参阅[向网页中添加样式](/zh_cn/docs/design/responsive_amp.html#add-styles-to-a-page)）。 但是您可以使用 CSS 预处理器和模板来构建静态网页，以便更好地管理您的内容。
 
 {% call callout('注意', type='note') %}
 AMP 组件本身具有默认的样式，使自适应网页的创建过程变得容易。 这些样式在 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) 中进行了定义。
@@ -70,7 +70,7 @@ AMP 网页中不允许出现以下样式：
 AMP 网页不能包含外部样式表，但是自定义字体除外。
 
 {% call callout('其他资料', type='success') %}
- 详细了解 [AMP 中的自定义字体](/zh_cn/docs/guides/responsive/custom_fonts.html)。
+ 详细了解 [AMP 中的自定义字体](/zh_cn/docs/design/responsive/custom_fonts.html)。
 {% endcall %}
 
 ## 使用 CSS 预处理器

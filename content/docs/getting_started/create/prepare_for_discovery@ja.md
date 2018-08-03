@@ -29,6 +29,6 @@ $title: ページの検出、配信の準備をする
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/tutorials/create/preview_and_validate.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/tutorials/create/publish.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="/ja/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="/ja/docs/getting_started/create/publish.html"><span class="arrow-next">次へ</span></a>
 </div>
