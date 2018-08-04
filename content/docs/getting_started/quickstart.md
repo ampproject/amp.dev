@@ -58,7 +58,7 @@ AMP supports integration with many third-party publishing platforms. Refer to th
 
 If you're creating AMP pages or creatives from scratch, visit these resources:
 
-*   [Tutorial: Create your first AMP page](/docs/fundamentals/create.html)
+*   [Tutorial: Create your first AMP page](/docs/getting_started/create.html)
 *   [Tutorial: Add advanced AMP features](/docs/fundamentals/add_advanced.html)
 *   [AMP HTML specification](/docs/fundamentals/spec.html#the-amp-html-format): *includes boilerplate, required markup, allowed HTML*
 *   [AMPHTML Ads format](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): *provides details on creating performant ads in AMP*
