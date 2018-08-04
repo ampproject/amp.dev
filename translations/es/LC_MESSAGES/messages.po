@@ -281,6 +281,11 @@ msgid ""
 " and A/B testing to experiment and build the best possible user experience "
 "for your customers."
 msgstr ""
+"La adopción del formato AMP le permite conservar su propia marca y herramientas "
+"mientras aprovecha los componentes web optimizados de AMP. Puede usar CSS para "
+"personalizar su estilo, datos dinámicos para buscar los datos más frescos donde sea necesario,"
+" y pruebas A/B para experimentar y crear la mejor experiencia "
+"de usuario posible para sus clientes."
 
 #: /content/includes/who.yaml
 msgid "Ads"
@@ -346,7 +351,7 @@ msgstr "Audio/Video"
 
 #: /content/learn/about/benefits.yaml
 msgid "Benefits"
-msgstr ""
+msgstr "Beneficios"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Better ads on a faster web."
@@ -407,6 +412,12 @@ msgid ""
 "fully portable and AMP pages are consistently fast no matter how a user gets "
 "to them."
 msgstr ""
+"La creación de páginas AMP es simple y directa. A menudo puede convertir su "
+"archivo completo en días, especialmente si utiliza un CMS popular, como Wordpress "
+"y Drupal. Sus equipos no necesitan ninguna habilidad especial ni se preocupan por "
+"optimizar su código para cada plataforma de distribución, ya que el formato AMP es "
+"totalmente portátil y las páginas AMP son consistentemente rápidas, sin importar "
+"cómo les llegue el usuario."
 
 #: /content/learn/who/publishers.yaml
 msgid ""
@@ -440,6 +451,12 @@ msgid ""
 "and non-AMP pages, meaning you can build your ads once and deliver a "
 "memorable brand experience everywhere."
 msgstr ""
+"Crear la página de destino, el anuncio o el contenido web correcto lleva tiempo. "
+"Las páginas de AMP pueden construirse una vez y distribuirse a través de una amplia "
+"variedad de plataformas de distribución simultáneamente. Con AMPHTML Ads, sus anuncios "
+"pueden publicarse tanto en páginas AMP como en páginas que no son de AMP, lo que "
+"significa que puede crear sus anuncios una sola vez y ofrecer una experiencia de marca "
+"memorable en cualquier lugar."
 
 #: /content/includes/stories.yaml
 msgid "Builds on top of AMP’s component library to support features like analytics"
@@ -504,6 +521,11 @@ msgid ""
 "offers a way for you to give users a faster experience everywhere -- on ads, "
 "landing pages or your entire website."
 msgstr ""
+"Las conversiones caen un 12 por ciento por cada segundo extra que tarda una página web "
+"en cargarse. Si desea que las personas interactúen con su marca, aumenten sus ventas "
+"y el rendimiento de sus campañas, debe acelerar las cosas. AMP "
+"ofrece una forma de brindarles a los usuarios una experiencia más rápida en "
+"cualquier lugar -- en anuncios, páginas principales o en sitios webs completos."
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -838,7 +860,7 @@ msgstr "Cómo AMP puede ayudar a editores"
 
 #: /content/learn/about/benefits.yaml
 msgid "How AMP can help you"
-msgstr ""
+msgstr "Cómo le puede ayudar AMP"
 
 #: /content/includes/stories.yaml
 msgid "How College Football Playoff Rankings Actually Work"
@@ -898,7 +920,7 @@ msgstr "Kavata Mbondo"
 
 #: /content/learn/about/benefits.yaml
 msgid "Keep your audience engaged"
-msgstr ""
+msgstr "Mantiene a tu audiencia enganchada"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Keep your audience engaged with AMP pages"
@@ -945,7 +967,7 @@ msgstr "Los anuncios más livianos conducen a mejores experiencias publicitarias
 
 #: /content/learn/about/benefits.yaml /content/learn/who/ecommerce.yaml
 msgid "Maintain flexibility and control"
-msgstr ""
+msgstr "Mantiene flexibilidad y control"
 
 #: /content/includes/stories.yaml
 msgid "Mashable"
@@ -961,7 +983,7 @@ msgstr ""
 
 #: /content/learn/about/benefits.yaml
 msgid "Maximize your ROI"
-msgstr ""
+msgstr "Maximice su ROI"
 
 #: /content/learn/about/benefits.yaml /content/learn/who/ad-tech-platforms.yaml
 msgid "Maximize your revenue"
@@ -1136,7 +1158,7 @@ msgstr "Leer el Caso de Estudio"
 
 #: /content/learn/about/benefits.yaml
 msgid "Reduce complexity in your operations"
-msgstr ""
+msgstr "Reduzca la complejidad en sus operaciones"
 
 #: /content/learn/who/publishers.yaml
 msgid "Reduce complexity in your operations."
@@ -1181,7 +1203,7 @@ msgstr "Ver más"
 
 #: /content/learn/about/benefits.yaml
 msgid "See Success Stories"
-msgstr ""
+msgstr "Ver Historias de Éxito"
 
 #: /content/latest/list-blog.html:12
 msgid "See all posts"
