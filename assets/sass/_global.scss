@@ -311,3 +311,7 @@ amp-youtube, amp-vimeo {
     margin-top: -70px;
   }
 }
+
+/* Styles used on all pages */
+@import '_consent.scss';
+
