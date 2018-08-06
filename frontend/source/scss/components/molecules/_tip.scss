@@ -1,0 +1,53 @@
+@import '../functions.scss';
+@import '../variables.scss';
+
+.#{map-get($prefix, molecule)}-tip {
+  width: 315px;
+  background: color('white');
+  border-right: 5px solid color('tipGreen');
+  box-shadow: 0 5px 25px 0 rgba(72, 82, 92, 0.7);
+  padding: 20px;
+  grid-row: span 1;
+  position: relative;
+
+  &-default {
+    box-shadow: 0 10px 30px 0 rgba(72, 82, 92, 0.7);
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0px;
+      bottom: -25px;
+      border-right: 25px solid transparent;
+      border-top: 25px solid color('white');
+    }
+  }
+
+
+  &-read-on {
+    border-right: 5px solid color('tipYellow');
+    &:before {
+      content: '';
+      position: absolute;
+      right: 8px;
+      bottom: -38px;
+      border-left: 25px solid transparent;
+      border-bottom: 25px solid color('tipYellow');
+      border-top: 25px solid color('tipYellow');
+      transform: rotate(-90deg);
+    }
+  }
+  &-important {
+    border-right: 5px solid color('tipRed');
+  }
+  &-note {
+    border-right: 5px solid color('hoverBlue');
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      border-left: 25px solid transparent;
+      border-bottom: 25px solid color('hoverBlue');
+    }
+  }
+}

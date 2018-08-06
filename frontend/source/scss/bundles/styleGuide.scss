@@ -1,4 +1,8 @@
 @import '../variables.scss';
+@import '../components/atoms/_headline.scss';
+@import '../components/atoms/_text.scss';
+@import '../components/molecules/_tip.scss';
+@import '../functions.scss';
 @import '../partials/guideHeader.scss';
 
 .gridContainer {
@@ -10,7 +14,7 @@
     "navigation"
     "body";
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 768px) {
       grid-template-columns: 25% auto;
       grid-template-areas:
         "navigation body"
@@ -25,7 +29,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 163px minmax(100vh, auto);
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 163px auto;
   }
@@ -38,19 +42,26 @@
 .mc-header {
   grid-column-start: 1;
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 768px) {
     grid-column-start: 2;
   }
 }
 
 .mc-body {
-  background: map-get($colors, 'guideBody');
-  grid-column-start: 2;
+  background: color('guideBody');
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 30px;
+  margin: 20px 0;
+
+  @media screen and (min-width: 768px) {
+    grid-column-start: 2;
+  }
 }
 
 .m-acc >* h1{
-  background: map-get($colors, 'white');
-  color: map-get($colors , 'black2' );
+  background: color('white');
+  color: color('black2');
   font-weight: bold;
   font-family: Poppins;
   font-size: 16px;
@@ -59,7 +70,7 @@
 
 .m-acc ul >* li {
   list-style: none;
-  color: map-get($colors, 'black');
+  color: color('black');
 }
 
 .m-acc ul >* a {
@@ -67,10 +78,10 @@
   font-size: 12px;
   font-weight: normal;
   font-family: Noto Sans;
-  color: map-get($colors , 'grey');
+  color: color('grey');
 
   &:hover {
-    color: map-get($colors, 'hoverBlue');
+    color: color('hoverBlue');
     font-weight: bold;
   }
 }
