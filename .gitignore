@@ -33,3 +33,6 @@ content/docs/interaction_dynamic/amp-email-format.md
 frontend/templates
 frontend/partials
 frontend/views
+
+# Ignore static files as they will either be built or gathered by gulp
+frontend/static
