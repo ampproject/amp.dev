@@ -14,4 +14,4 @@ localization:
 
 preprocessors:
 - kind: gulp
-  run_task: 'styles'
+  run_task: 'develop'
