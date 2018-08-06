@@ -38,16 +38,26 @@
   }
   &-important {
     border-right: 5px solid color('tipRed');
+    -webkit-clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
+    clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
+    &-container {
+      filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
+    }
   }
   &-note {
     border-right: 5px solid color('hoverBlue');
+    -webkit-clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
+    clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
     &:before {
       content: '';
       position: absolute;
-      right: 0px;
+      right: -4px;
       bottom: 0px;
-      border-left: 25px solid transparent;
-      border-bottom: 25px solid color('hoverBlue');
+      border-right: 35px solid transparent;
+      border-top: 30px solid color('hoverBlue');
+    }
+    &-container {
+      filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
     }
   }
 }
