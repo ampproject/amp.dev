@@ -25,4 +25,18 @@
     </ul>
   </section>
   {% endif %}
+
+  {% set prototypes = g.collection('/content/styleguide/prototypes') %}
+  {% if prototypes %}
+  <section>
+    <b>Prototypes</b>
+    <ul>
+      {% for doc in prototypes %}
+      <li>
+        <a href="{{ doc.url }}">{{ doc.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 </amp-sidebar>
