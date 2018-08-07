@@ -154,7 +154,7 @@ Adds support for [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de
 
 Additionally, the following variables must be defined:
 
-* `st`: Angebotskennung
+* `st`: offer ID
 * `co`: comment
 * `cp`: code
 * `url`: HTTPS location of `amp-analytics-infonline.html`
