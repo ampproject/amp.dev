@@ -22,4 +22,3 @@ deployments:
     destination: git
     repo: https://github.com/jungvonmatt/amp.dev.git
     branch: gh-pages
-    root_dir: styleguide
