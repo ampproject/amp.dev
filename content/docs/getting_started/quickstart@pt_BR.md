@@ -1,13 +1,11 @@
 ---
 $title: Primeiros passos
-$order: 0
-toc: true
 ---
 [TOC]
 
 Este guia de início rápido ajudará você nos primeiros passos com as AMP.
 
-Para ver instruções mais detalhadas, acesse o tutorial [criar sua primeira página AMP](/pt_br/docs/fundamentals/create.html).
+Para ver instruções mais detalhadas, acesse o tutorial [criar sua primeira página AMP](/pt_br/docs/getting_started/create.html).
 
 ### Etapa 1: usar o modelo de HTML para AMP
 

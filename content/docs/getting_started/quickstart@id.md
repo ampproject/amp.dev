@@ -5,7 +5,7 @@ $title: Memulai
 
 Ini adalah panduan memulai cepat untuk membantu Anda agar dapat bekerja dengan AMP tanpa kendala.
 
-Untuk petunjuk lebih mendetail, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/fundamentals/create.html).
+Untuk petunjuk lebih mendetail, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/getting_started/create.html).
 
 ### Langkah 1: Dapatkan template HTML AMP
 
@@ -84,7 +84,7 @@ Untuk fitur validasi lainnya yang dapat Anda gunakan, lihat [Memvalidasi halaman
 
 ### Langkah Berikutnya
 
-Untuk mempelajari lebih lanjut tentang dasar-dasar halaman AMP, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/fundamentals/create.html).
+Untuk mempelajari lebih lanjut tentang dasar-dasar halaman AMP, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/getting_started/create.html).
 
 Berikut referensi lain untuk meningkatkan pengalaman Anda:
 
