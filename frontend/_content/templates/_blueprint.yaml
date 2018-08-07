@@ -1,2 +1,0 @@
-path: /{collection.basename}/{slug}
-view: /views/templates/index.html
