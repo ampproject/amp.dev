@@ -2,6 +2,12 @@
 @import '../mixins.scss';
 @import '../functions.scss';
 
+@import '../components/molecules/tip';
+
+/* The following styles only define the styles needed to make the styleguide
+a little more appealing. All component styles should reside in their dedicated
+file and may be imported at the top of this file */
+
 body {
   padding: 0;
   margin: 0;
@@ -13,172 +19,70 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: 'header' 'main';
 }
 
-.a-menu-button {
-  position: fixed;
-  top: 7px;
-  left: 7px;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 50%;
+.styleguide {
 
-  @media (min-width: 500px) {
-    top: 15px;
-    left: 15px;
-    width: 60px;
-    height: 60px;
-  }
-
-  svg {
+  &__header {
+    display: flex;
     width: 100%;
-    height: 100%;
-    cursor: pointer;
-  }
-}
+    position: fixed;
+    align-items: center;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: color('white');
+    background-color: color('black');
 
-.m-sidebar {
-  padding: 15px;
-
-  ul {
-    list-style: none;
-    padding-left: 15px;
-  }
-}
-
-.o-header {
-  display: grid;
-  grid-area: header;
-  color: color('white');
-  padding-left: 45px;
-  background-color: color('black');
-
-  @media (min-width: 500px) {
-    padding-left: calc((100% - 1070px) / 2);
-    padding-right: calc((100% - 1070px) / 2);
-  }
-}
-
-.o-content {
-  display: grid;
-  grid-area: content;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 12px;
-  max-width: 1070px;
-  margin: 0 auto;
-
-  &--index {
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-.gridContainer {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    "navigation"
-    "body";
-
-  @media screen and (min-width: 500px) {
-      grid-template-columns: 25% auto;
-      grid-template-areas:
-        "navigation body"
-  }
-}
-
-.mainContainer {
-  display: grid;
-  grid-area: body;
-  height: auto;
-  min-height: 100vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: 163px minmax(100vh, auto);
-
-  @media screen and (min-width: 500px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 163px auto;
-  }
-}
-
-.navigation {
-  grid-area: navigation;
-}
-
-.mc-header {
-  grid-column-start: 1;
-
-  @media screen and (min-width: 500px) {
-    grid-column-start: 2;
-  }
-}
-
-.mc-body {
-  background: map-get($colors, 'guideBody');
-  grid-column-start: 2;
-}
-
-.m-acc >* h1{
-  background: map-get($colors, 'white');
-  color: map-get($colors , 'black2' );
-  font-weight: bold;
-  font-family: Poppins;
-  font-size: 16px;
-  outline: none;
-}
-
-.m-acc ul >* li {
-  list-style: none;
-  color: map-get($colors, 'black');
-}
-
-.m-acc ul >* a {
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: normal;
-  font-family: Noto Sans;
-  color: map-get($colors , 'grey');
-
-  &:hover {
-    color: map-get($colors, 'hoverBlue');
-    font-weight: bold;
-  }
-}
-
-@import '../variables.scss';
-
-.p-guideHeader {
-  background: map-get($colors, 'black');
-  color: map-get($colors, 'white');
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 25px;
-  min-height: 100%;
-
-  & .md-hd {
-    font-family: Nato Sans;
-    font-size: 16px;
-    margin:0;
-    white-space: nowrap;
-    padding-bottom: 10px;
+    @media (min-width: 500px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 
-  & .lg-hd {
-    font-size: 34px;
-    line-height: 42px;
-    font-family: Poppins;
-    font-weight: bold;
-    margin: 0;
-    white-space: nowrap;
+    &__toggle {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: none;
+      border: none;
+
+      @media (min-width: 500px) {
+        width: 60px;
+        height: 60px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+
+  &__sidebar {
+    padding: 7px;
+
+    @media (min-width: 500px) {
+      padding: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 15px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 163px minmax(100vh, auto);
+
+    @media screen and (min-width: 500px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 163px auto;
+    }
   }
 }
