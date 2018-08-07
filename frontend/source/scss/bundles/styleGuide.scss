@@ -43,6 +43,12 @@ body {
       padding-left: 15px;
       padding-right: 15px;
     }
+
+    &--overview {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
   }
 
     &__toggle {
@@ -64,6 +70,10 @@ body {
         height: 100%;
         cursor: pointer;
       }
+    }
+
+    &__title, &__hint {
+      margin: 0;
     }
 
   &__sidebar {
