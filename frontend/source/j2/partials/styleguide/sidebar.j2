@@ -5,7 +5,7 @@
     <ul>
       {% for doc in atoms %}
       <li>
-        <a href="{{ doc.url }}">{{ doc.title }}</a>
+        <a href="{{ doc.url|relative }}">{{ doc.title }}</a>
       </li>
       {% endfor %}
     </ul>
@@ -19,7 +19,7 @@
     <ul>
       {% for doc in molecules %}
       <li>
-        <a href="{{ doc.url }}">{{ doc.title }}</a>
+        <a href="{{ doc.url|relative }}">{{ doc.title }}</a>
       </li>
       {% endfor %}
     </ul>
@@ -33,7 +33,7 @@
     <ul>
       {% for doc in prototypes %}
       <li>
-        <a href="{{ doc.url }}">{{ doc.title }}</a>
+        <a href="{{ doc.url|relative }}">{{ doc.title }}</a>
       </li>
       {% endfor %}
     </ul>
