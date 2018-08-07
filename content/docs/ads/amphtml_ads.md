@@ -82,7 +82,8 @@ If you are a creative agency, you must create the ads in accordance with  the [A
 
 ### Ad networks/servers
 
-To deliver AMPHTML ads to AMP pages, you need to create an `amp-ad` extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads](/docs/ads/adnetwork_integration.html) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
+To deliver AMPHTML ads to AMP pages, you need to create an `amp-ad` extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads](/docs/ads/adnetwork_
+.html) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
 
 ## Creating AMPHTML ads
 
@@ -99,7 +100,7 @@ To deliver AMPHTML ads to AMP pages, you need to create an `amp-ad` extension fo
 
 After creating your AMPHTML ad, you should make sure that the ad is using the correct AMPHTML syntax. Depending on your development environment, there are a few options for you to validate your AMPHTML ads:
 
-*   Use the [AMP validator NPM](https://www.npmjs.com/package/amphtml-validator) module to integration validation into your build CI.
+*   Use the [AMP validator NPM](https://www.npmjs.com/package/amphtml-validator) module to integrate validation into your build CI.
 *   Use the [AMP validator](https://validator.ampproject.org/) for one-off testing.
 *   Partner with [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) and use their public validator end point.
 
