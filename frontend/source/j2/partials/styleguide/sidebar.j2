@@ -1,6 +1,7 @@
 <amp-sidebar class="styleguide__sidebar" id="sidebar" layout="nodisplay" side="left">
-  {% if atoms %}
-  {% set atoms = g.collection('/content/styleguide/atoms') %}  <section>
+  {% set atoms = g.collection('/content/styleguide/atoms') %}
+  <section>
+    {% if atoms %}
     <b>Atoms</b>
     <ul>
       {% for doc in atoms %}
