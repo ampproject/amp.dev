@@ -6,6 +6,7 @@
   {% if doc.description %}<meta name="description" content="{{doc.description}} – AMP">{% endif %}
   <meta name="amp-experiments-opt-in" content="url-replacement-v2">
   <meta name="google-site-verification" content="DPQFQ0Loo-Qiz2pYWfboqYb03QnnVUMb0RDvg7O2u2c" />
+  <meta name="amp-google-client-id-api" content="googleanalytics">
   <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -58,6 +59,8 @@
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+  <script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
 
   {% if doc.components %}
     {% for component in doc.components %}
