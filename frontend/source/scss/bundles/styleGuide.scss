@@ -75,14 +75,16 @@ body {
 
   &__content {
     display: grid;
+    padding-top: 90px;
     height: auto;
     min-height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 163px minmax(100vh, auto);
+    // grid-template-rows: 163px minmax(100vh, auto);
 
     @media screen and (min-width: 500px) {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 163px auto;
+      grid-template-rows: auto;
+      // grid-template-rows: 163px auto;
     }
   }
 }
