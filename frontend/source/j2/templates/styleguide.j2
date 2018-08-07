@@ -1,0 +1,31 @@
+{% extends '/templates/default.j2' %}
+
+{% block components %}
+{# All styleguide pages will need amp-sidebar for the navigation so inject
+it and then get in other components that may have been referenced #}
+<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+{{ super () }}
+{% endblock %}
+
+{% block style %}
+{% include 'static/css/styleguide.css' %}
+{% endblock %}
+
+{% block icons %}
+{% include 'partials/icons/amp.svg' %}
+{% endblock %}
+
+{% block main %}
+{% include 'partials/styleguide/sidebar.j2' %}
+{% block header %}
+<header class="o-header">
+  <h1>{{ doc.title }}</h1>
+</header>
+{% endblock header %}
+
+{% block content %}
+<main class="o-content">
+  {{ doc.html|safe }}
+</main>
+{% endblock content %}
+{% endblock main %}

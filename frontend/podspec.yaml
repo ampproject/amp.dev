@@ -1,13 +1,13 @@
 grow_version: ">=0.0.66"
 
-home: /content/pages/home.html
+root: /styleguide/index
 
 static_dirs:
-- static_dir: /assets/
+- static_dir: /static/
   serve_at: /static/
 
 error_routes:
-  default: /views/errors/default.html
+  default: /views/errors/default.j2
 
 localization:
   default_locale: en

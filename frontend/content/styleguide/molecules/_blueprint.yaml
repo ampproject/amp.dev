@@ -1,0 +1,3 @@
+path: /styleguide/molecules/{base}
+view: /views/styleguide/component.j2
+$category: Molecules

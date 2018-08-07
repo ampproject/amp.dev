@@ -1,5 +1,84 @@
 @import '../variables.scss';
-@import '../partials/guideHeader.scss';
+@import '../mixins.scss';
+@import '../functions.scss';
+
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 320px;
+  color: color('black');
+  background: color('white');
+  font-size: 16px;
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 'header' 'main';
+}
+
+.a-menu-button {
+  position: fixed;
+  top: 7px;
+  left: 7px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 50%;
+
+  @media (min-width: 500px) {
+    top: 15px;
+    left: 15px;
+    width: 60px;
+    height: 60px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
+.m-sidebar {
+  padding: 15px;
+
+  ul {
+    list-style: none;
+    padding-left: 15px;
+  }
+}
+
+.o-header {
+  display: grid;
+  grid-area: header;
+  color: color('white');
+  padding-left: 45px;
+  background-color: color('black');
+
+  @media (min-width: 500px) {
+    padding-left: calc((100% - 1070px) / 2);
+    padding-right: calc((100% - 1070px) / 2);
+  }
+}
+
+.o-content {
+  display: grid;
+  grid-area: content;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 12px;
+  max-width: 1070px;
+  margin: 0 auto;
+
+  &--index {
+    width: 100vw;
+    height: 100vh;
+  }
+}
 
 .gridContainer {
   display: grid;
@@ -72,5 +151,34 @@
   &:hover {
     color: map-get($colors, 'hoverBlue');
     font-weight: bold;
+  }
+}
+
+@import '../variables.scss';
+
+.p-guideHeader {
+  background: map-get($colors, 'black');
+  color: map-get($colors, 'white');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 25px;
+  min-height: 100%;
+
+  & .md-hd {
+    font-family: Nato Sans;
+    font-size: 16px;
+    margin:0;
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }
+
+  & .lg-hd {
+    font-size: 34px;
+    line-height: 42px;
+    font-family: Poppins;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
   }
 }

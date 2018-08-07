@@ -1,0 +1,32 @@
+<amp-sidebar class="m-sidebar" id="sidebar" layout="nodisplay" side="left">
+  {% if atoms %}
+  {% set atoms = g.collection('/content/styleguide/atoms') %}  <section>
+    <b>Atoms</b>
+    <ul>
+      {% for doc in atoms %}
+      <li>
+        <a href="{{ doc.url }}">{{ doc.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% set molecules = g.collection('/content/styleguide/molecules') %}
+  {% if molecules %}
+  <section>
+    <b>Molecules</b>
+    <ul>
+      {% for doc in molecules %}
+      <li>
+        <a href="{{ doc.url }}">{{ doc.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</amp-sidebar>
+
+<button class="a-menu-button" on="tap:sidebar.toggle">
+   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp"></use></svg>
+</button>
