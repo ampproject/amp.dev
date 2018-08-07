@@ -2,6 +2,10 @@
 @import '../mixins.scss';
 @import '../functions.scss';
 
+@import '../components/atoms/headline';
+@import '../components/atoms/text';
+@import '../components/atoms/button';
+
 @import '../components/molecules/tip';
 
 /* The following styles only define the styles needed to make the styleguide

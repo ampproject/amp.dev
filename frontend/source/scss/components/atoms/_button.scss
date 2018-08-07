@@ -23,7 +23,24 @@ outline
 
 */
 
-#{map-get($prefix, atom)}-btn {
+.#{map-get($prefix, atom)}-btn {
+	@extend .a-hl, .a-hl-h3, .a-hl-light;
 
-    &-outline {}
+    display: inline-block;
+    max-width: 100%;
+    min-width: 230px;
+    width: auto;
+    height: auto;
+    padding: .813rem 1.626rem;
+    margin: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    background-color: color('hoverBlue');
+    border: 3px solid color('hoverBlue');
+
+    &:hover {
+    	background-color: color('grey');
+    	border: 3px solid color('grey');
+    }
 }
