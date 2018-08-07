@@ -31,27 +31,19 @@ mono
 
 // TODO: use rem instead of px for font sizes
 
-.#{map-get($prefix, atom)}-hl {
-  font-family: Poppins;
-  font-weight: bold;
-  line-height: 1.2em;
-  color: map-get($colors ,'black2');
+.#{atom('hl')} {
 
-    &-h1 {
-      font-size: 3em;
-    }
+    &-h1 {}
 
-    &-h2 {
-      font-size: 2.25em;
-    }
+    &-h2 {}
 
-    &-h3 {
-      font-size: 1.5em;
-    }
+    &-h3 {}
 
-    &-h4 {
-      font-size: 1em;
-    }
+    &-h4 {}
+
+    &-h5 {}
+
+    &-h6 {}
 
     &-light {}
 

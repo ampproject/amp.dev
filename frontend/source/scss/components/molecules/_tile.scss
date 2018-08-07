@@ -32,5 +32,5 @@ TODO: Discuss about how to implement the different modifiers (bg-colors, stackin
 
 */
 
-#{map-get($prefix, atom)}-tile {
+.#{molecule('tile')} {
 }
