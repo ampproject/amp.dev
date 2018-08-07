@@ -1,2 +1,2 @@
-path: /styleguide/{base}
+path: /styleguide/{base}.html
 view: /templates/default.j2

@@ -1,3 +1,3 @@
-path: /styleguide/prototypes/{base}
+path: /styleguide/prototypes/{base}.html
 view: /views/styleguide/prototype.j2
 $category: Prototypes

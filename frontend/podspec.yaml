@@ -1,6 +1,6 @@
 grow_version: ">=0.0.66"
 
-root: /styleguide/index
+root: /styleguide/index.html
 
 static_dirs:
 - static_dir: /static/
