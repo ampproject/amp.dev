@@ -11,7 +11,7 @@ const settings = {
             './build/assets/css/',
         ],
         'options': {
-            'outputStyle': 'compressed'
+            'outputStyle': 'expanded'
         }
     }
 };

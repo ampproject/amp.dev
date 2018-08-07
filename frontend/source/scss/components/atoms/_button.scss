@@ -1,0 +1,30 @@
+/*
+
+####################
+### ATOM: button ###
+####################
+
+### SAMPLE MARKUP:
+
+<button type="button" name="button" class="a-btn a-btn-outline">
+    Text
+</button>
+
+### INFO:
+
+The regular button has only one size and one modifier.
+It should be never overwritten in any other file.
+New modifiers can be added below.
+
+### MODIFIERS:
+
+outline
+    Changes the button style to outline (default is filled).
+
+*/
+
+.#{atom('btn')} {
+    color: red;
+
+    &-outline {}
+}

@@ -1,0 +1,29 @@
+/*
+
+######################
+### MOLECULE: copy ###
+######################
+
+### SAMPLE MARKUP:
+
+<div class="m-copy">
+    <headline />
+    <text />
+</div>
+
+TODO: Update sample markup.
+
+### INFO:
+
+This molecule outputs two atoms: headline and text.
+NOTE: It is important to not overwrite the atoms in the molecule.
+If custom changes are needed, they have to be added as modifiers in the atoms.
+
+### MODIFIERS:
+
+TODO: Discuss about which different modifiers will be needed here.
+
+*/
+
+.#{molecule('copy')} {
+}

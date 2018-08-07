@@ -1,0 +1,31 @@
+/*
+
+######################
+### MOLECULE: link ###
+######################
+
+### SAMPLE MARKUP:
+
+<a href="#" class="m-link">
+	<icon />
+	<text />
+	?<hr />?
+</a>
+
+TODO: Update sample markup.
+TODO: Discuss about the hr-tag or other kind of divider.
+
+### INFO:
+
+This molecule outputs two atoms: icon and text.
+NOTE: It is important to not overwrite the atoms in the molecule.
+If custom changes are needed, they have to be added as modifiers in the atoms.
+
+### MODIFIERS:
+
+TODO: Discuss about which different modifiers will be needed here. (maybe direction?)
+
+*/
+
+.#{molecule('link')} {
+}
