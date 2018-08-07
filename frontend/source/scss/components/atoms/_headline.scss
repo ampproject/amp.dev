@@ -35,7 +35,7 @@ mono
   font-family: Poppins;
   font-weight: bold;
   line-height: 1.2em;
-  color: map-get($colors ,'black2');
+  color: color('black2');
 
     &-h1 {
       font-size: 3em;
@@ -53,7 +53,9 @@ mono
       font-size: 1em;
     }
 
-    &-light {}
+    &-light {
+      color: color('white');
+    }
 
     &-mono {}
 }
