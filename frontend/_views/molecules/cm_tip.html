@@ -5,6 +5,12 @@
 {% endblock %}
 
 {% block body %}
-  {# todo add body content #}
-  <div class="m-cmCodeInteractive"></div>
+  {% for tip in doc.tips %}
+  <div class="m-tip{{ tip.modifier }}-container">
+    <div class="m-tip m-tip{{ tip.modifier }}">
+      <h4 class="a-hl a-hl-h4">{{ tip.headline }}</h4>
+      <p class="a-hl a-txt-3">{{ tip.text }}</p>
+    </div>
+  </div>
+  {% endfor %}
 {% endblock %}

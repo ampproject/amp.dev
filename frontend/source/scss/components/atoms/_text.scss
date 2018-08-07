@@ -28,15 +28,34 @@ mono (inline, block)
 
 */
 
-#{map-get($prefix, atom)}-txt {
+.#{map-get($prefix, atom)}-txt {
 
-    &-#{map-get($sizes, xs)} {}
+    &-#{map-get($sizes, xs)} {
+    }
 
-    &-#{map-get($sizes, sm)} {}
+    &-#{map-get($sizes, sm)} {
+      font-family: Nato Sans;
+      line-height: 1.6em;
+      font-size: 0.75em;
+      font-weight: normal;
+      color: map-get($colors, 'grey');
+    }
 
-    &-#{map-get($sizes, md)} {}
+    &-#{map-get($sizes, md)} {
+      font-family: Nato Sans;
+      line-height: 1.6em;
+      font-size: 0.875em;
+      font-weight: normal;
+      color: map-get($colors, 'grey');
+    }
 
-    &-#{map-get($sizes, lg)} {}
+    &-#{map-get($sizes, lg)} {
+      font-family: Nato Sans;
+      line-height: 1.6em;
+      font-size: 1em;
+      font-weight: normal;
+      color: map-get($colors, 'grey');
+    }
 
     &-#{map-get($sizes, xl)} {}
 
