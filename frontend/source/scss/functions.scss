@@ -1,3 +1,9 @@
+/**
+/// Pulls a name out of the $colors array by key and throws a warning
+/// if the specified color name does not exist
+/// @param  {String} $name A color name inside that is inside $colors
+/// @return {String}       The matching color or null
+*/
 @function color($name) {
   @if map-has-key($colors, $name) {
     @return map-get($colors, $name);
@@ -7,6 +13,13 @@
   @return null;
 }
 
+/**
+/// Prefixes a given string with the $projectPrefix and a category prefix out
+/// of $categoryPrefixes by the key $category
+/// @param  {String} $category A category name in $categoryPrefixes
+/// @param  {String} $selector The selector that gets prefixed
+/// @return {String}           The prefixed selector
+*/
 @function prefix($category, $selector) {
     @if map-has-key($categoryPrefixes, $category) {
       @return #{$projectPrefix}-#{map-get($categoryPrefixes, $category)}-#{$selector};
