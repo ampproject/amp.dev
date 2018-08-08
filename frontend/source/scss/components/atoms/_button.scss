@@ -24,10 +24,9 @@ outline
 */
 
 .#{atom('btn')} {
-	@extend
-		.#{atom('hl')} !optional,
-		.#{atom('hl-h3')} !optional,
-		.#{atom('hl-light')} !optional;
+	@extend .#{atom('hl')} !optional;
+	@extend .#{atom('hl-h3')} !optional;
+	@extend .#{atom('hl-light')} !optional;
 
     display: inline-block;
     max-width: 100%;
