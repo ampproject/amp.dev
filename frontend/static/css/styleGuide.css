@@ -1,3 +1,74 @@
+/* A project prefix that is added by using the prefix() function. Abbreviation
+of the project name amp.dev */
+/* All category codes which are prepended to selector by using either atom(selector),
+molecule(selector) or organism(selector) */
+/* The following map contains every color that is used inside the project. The
+names are identified by using the http://chir.ag/projects/name-that-color to
+prevent double colors and/or hirarchy dicussions */
+amp-accordion > h1 {
+  background: white;
+}
+
+/**
+/// Pulls a name out of the $colors array by key and throws a warning
+/// if the specified color name does not exist
+/// @param  {String} $name A color name inside that is inside $colors
+/// @return {String}       The matching color or null
+*/
+/**
+/// Prefixes a given string with the $projectPrefix and a category prefix out
+/// of $categoryPrefixes by the key $category
+/// @param  {String} $category A category name in $categoryPrefixes
+/// @param  {String} $selector The selector that gets prefixed
+/// @return {String}           The prefixed selector
+*/
+/*
+
+##################
+### ATOM: text ###
+##################
+
+### SAMPLE MARKUP:
+
+<p class="a-txt a-txt-p">
+    Text
+</p>
+
+### INFO:
+
+Text atom could be used almost everywhere.
+It has multiple size modifiers (more could be added below).
+
+### MODIFIERS:
+
+sizes
+    Selector names of the sizes could be changed globally in variables.
+
+p
+    Paragraph style text.
+
+mono (inline, block)
+    Changes the font-family to a monospaced font as inline or block text.
+
+*/
+.ad-a-txt {
+  font-family: Nato Sans;
+  line-height: 1.6em;
+  font-weight: normal;
+}
+
+.ad-a-txt-2 {
+  font-size: 0.75em;
+}
+
+.ad-a-txt-3 {
+  font-size: 0.875em;
+}
+
+.ad-a-txt-4 {
+  font-size: 1em;
+}
+
 /*
 
 ######################
@@ -28,97 +99,95 @@ mono
     Changes the font-family to a monospaced font.
 
 */
-.a-hl {
+.ad-a-hl {
   font-family: Poppins;
   font-weight: bold;
   line-height: 1.2em;
-  color: #20202A;
+  margin: 0;
 }
 
-.a-hl-h1 {
+.ad-a-hl-h1 {
   font-size: 3em;
 }
 
-.a-hl-h2 {
+.ad-a-hl-h2 {
   font-size: 2.25em;
 }
 
-.a-hl-h3 {
+.ad-a-hl-h3 {
   font-size: 1.5em;
 }
 
-.a-hl-h4 {
+.ad-a-hl-h4 {
   font-size: 1em;
 }
 
 /*
 
-##################
-### ATOM: text ###
-##################
+####################
+### ATOM: button ###
+####################
 
 ### SAMPLE MARKUP:
 
-<p class="a-txt a-txt-p">
+<button type="button" name="button" class="a-btn a-btn-outline">
     Text
-</p>
+</button>
 
 ### INFO:
 
-Text atom could be used almost everywhere.
-It has multiple size modifiers (more could be added below).
+The regular button has only one size and one modifier.
+It should be never overwritten in any other file.
+New modifiers can be added below.
 
 ### MODIFIERS:
 
-sizes
-    Selector names of the sizes could be changed globally in variables.
-
-p
-    Paragraph style text.
-
-mono (inline, block)
-    Changes the font-family to a monospaced font as inline or block text.
+outline
+    Changes the button style to outline (default is filled).
 
 */
-.a-txt-2 {
-  font-family: Nato Sans;
-  line-height: 1.6em;
-  font-size: 0.75em;
-  font-weight: normal;
-  color: #48525C;
+.ad-a-btn {
+  color: red;
+  font-weight: bold;
 }
 
-.a-txt-3 {
-  font-family: Nato Sans;
-  line-height: 1.6em;
-  font-size: 0.875em;
-  font-weight: normal;
-  color: #48525C;
-}
-
-.a-txt-4 {
-  font-family: Nato Sans;
-  line-height: 1.6em;
-  font-size: 1em;
-  font-weight: normal;
-  color: #48525C;
-}
-
-.m-tip {
-  width: 315px;
+/**
+/// Pulls a name out of the $colors array by key and throws a warning
+/// if the specified color name does not exist
+/// @param  {String} $name A color name inside that is inside $colors
+/// @return {String}       The matching color or null
+*/
+/**
+/// Prefixes a given string with the $projectPrefix and a category prefix out
+/// of $categoryPrefixes by the key $category
+/// @param  {String} $category A category name in $categoryPrefixes
+/// @param  {String} $selector The selector that gets prefixed
+/// @return {String}           The prefixed selector
+*/
+/* A project prefix that is added by using the prefix() function. Abbreviation
+of the project name amp.dev */
+/* All category codes which are prepended to selector by using either atom(selector),
+molecule(selector) or organism(selector) */
+/* The following map contains every color that is used inside the project. The
+names are identified by using the http://chir.ag/projects/name-that-color to
+prevent double colors and/or hirarchy dicussions */
+.ad-m-tip {
+  width: 100%;
   background: #FFFFFF;
   border-right: 5px solid #00CD3C;
-  box-shadow: 0 5px 25px 0 rgba(72, 82, 92, 0.7);
-  padding: 20px;
+  padding: 25px 30px 50px 25px;
   grid-row: span 1;
   position: relative;
 }
 
-.m-tip-default {
-  box-shadow: 0 10px 30px 0 rgba(72, 82, 92, 0.7);
+@media screen and (min-width: 768px) {
+  .ad-m-tip {
+    width: auto;
+    padding: 25px 55px 35px 40px;
+  }
 }
 
-.m-tip-default:before {
+.ad-m-tip-default:before {
   content: '';
   position: absolute;
   left: 0px;
@@ -127,159 +196,172 @@ mono (inline, block)
   border-top: 25px solid #FFFFFF;
 }
 
-.m-tip-read-on {
+.ad-m-tip-read-on {
   border-right: 5px solid #FFE100;
 }
 
-.m-tip-read-on:before {
+.ad-m-tip-read-on:before {
   content: '';
   position: absolute;
-  right: 8px;
-  bottom: -38px;
-  border-left: 25px solid transparent;
-  border-bottom: 25px solid #FFE100;
-  border-top: 25px solid #FFE100;
-  transform: rotate(-90deg);
+  height: calc(100% + 32px);
+  width: 37px;
+  top: 0;
+  left: calc(100% - 32px);
+  z-index: -1;
+  background-color: #FFE100;
+  -webkit-clip-path: polygon(0% 0%, 0 100%, 50% 80%, 100% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 0 100%, 50% 80%, 100% 100%, 100% 0%);
 }
 
-.m-tip-important {
+.ad-m-tip-important {
   border-right: 5px solid #EF0000;
   -webkit-clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
   clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
 }
 
-.m-tip-important-container {
-  filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
-}
-
-.m-tip-note {
-  border-right: 5px solid #005AF0;
-  -webkit-clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
-  clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
-}
-
-.m-tip-note:before {
-  content: '';
-  position: absolute;
-  right: -4px;
-  bottom: 0px;
-  border-right: 35px solid transparent;
-  border-top: 30px solid #005AF0;
-}
-
-.m-tip-note-container {
-  filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
-}
-
-.p-guideHeader {
-  background: #262626;
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 25px;
-  min-height: 100%;
-}
-
-.p-guideHeader .md-hd {
-  font-family: Nato Sans;
-  font-size: 16px;
-  margin: 0;
-  white-space: nowrap;
-  padding-bottom: 10px;
-}
-
-.p-guideHeader .lg-hd {
-  font-size: 34px;
-  line-height: 42px;
-  font-family: Poppins;
-  font-weight: bold;
-  margin: 0;
-  white-space: nowrap;
-}
-
-.gridContainer {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "navigation" "body";
+.ad-m-tip-note {
+  border: none;
+  width: 100%;
+  padding: 25px 10px 20px 25px;
 }
 
 @media screen and (min-width: 768px) {
-  .gridContainer {
-    grid-template-columns: 25% auto;
-    grid-template-areas: "navigation body";
+  .ad-m-tip-note {
+    width: calc(100% - 67px);
+    padding: 25px 0px 35px 40px;
   }
 }
 
-.mainContainer {
+.ad-m-tip-note:before {
+  content: '';
+  position: absolute;
+  border-bottom: 32px solid transparent;
+  border-left: 25px solid #005AF0;
+  left: 100%;
+  right: 0;
+  bottom: 0;
+}
+
+.ad-m-tip-note:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0px;
+  height: calc(100% - 32px);
+  left: 100%;
+  width: 20px;
+  background-color: #FFFFFF;
+  border-right: 5px solid #005AF0;
+}
+
+.ad-m-tip-container {
+  grid-column: 1 / span 1;
+  padding: 0px 80px 40px 20px;
+  filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
+}
+
+@media screen and (min-width: 768px) {
+  .ad-m-tip-container {
+    grid-column: 2 / span 1;
+    padding: 0px 50px 40px 10px;
+  }
+}
+
+/* The following styles only define the styles needed to make the styleguide
+a little more appealing. All component styles should reside in their dedicated
+file and may be imported at the top of this file */
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 320px;
+  color: #20202A;
+  background: #FFFFFF;
+  font-size: 16px;
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.styleguide__header {
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  width: 100%;
+  height: 90px;
+  align-items: center;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: #FFFFFF;
+  background-color: #20202A;
+}
+
+@media (min-width: 500px) {
+  .styleguide__header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.styleguide__header--overview {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.styleguide__toggle {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+}
+
+@media (min-width: 500px) {
+  .styleguide__toggle {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.styleguide__toggle svg {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.styleguide__title, .styleguide__hint {
+  margin: 0;
+}
+
+.styleguide__sidebar {
+  padding: 7px;
+}
+
+@media (min-width: 500px) {
+  .styleguide__sidebar {
+    padding: 15px;
+  }
+}
+
+.styleguide__sidebar ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.styleguide__content {
   display: grid;
-  grid-area: body;
+  padding-top: 110px;
   height: auto;
   min-height: 100vh;
   grid-template-columns: 1fr;
-  grid-template-rows: 163px minmax(100vh, auto);
 }
 
 @media screen and (min-width: 768px) {
-  .mainContainer {
+  .styleguide__content {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 163px auto;
+    grid-template-rows: auto;
   }
-}
-
-.navigation {
-  grid-area: navigation;
-}
-
-.mc-header {
-  grid-column-start: 1;
-}
-
-@media screen and (min-width: 768px) {
-  .mc-header {
-    grid-column-start: 2;
-  }
-}
-
-.mc-body {
-  background: #FAFAFC;
-  display: grid;
-  grid-template-rows: auto;
-  grid-row-gap: 30px;
-  margin: 20px 0;
-}
-
-@media screen and (min-width: 768px) {
-  .mc-body {
-    grid-column-start: 2;
-  }
-}
-
-.m-acc > * h1 {
-  background: #FFFFFF;
-  color: #20202A;
-  font-weight: bold;
-  font-family: Poppins;
-  font-size: 16px;
-  outline: none;
-}
-
-.m-acc ul > * li {
-  list-style: none;
-  color: #262626;
-}
-
-.m-acc ul > * a {
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: normal;
-  font-family: Noto Sans;
-  color: #48525C;
-}
-
-.m-acc ul > * a:hover {
-  color: #005AF0;
-  font-weight: bold;
 }
