@@ -1,0 +1,285 @@
+/*
+
+######################
+### ATOM: headline ###
+######################
+
+### SAMPLE MARKUP:
+
+<h2 class="a-hl-h1 a-hl-mono">
+    Text
+</h2>
+
+### INFO:
+
+This is a regular headline.
+It should be never overwritten in any other file.
+New modifiers can be added below.
+
+### MODIFIERS:
+
+h1 - h6
+    Self explaining.
+
+light
+    Changes the text color to light (default is dark).
+
+mono
+    Changes the font-family to a monospaced font.
+
+*/
+.a-hl {
+  font-family: Poppins;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: #20202A;
+}
+
+.a-hl-h1 {
+  font-size: 3em;
+}
+
+.a-hl-h2 {
+  font-size: 2.25em;
+}
+
+.a-hl-h3 {
+  font-size: 1.5em;
+}
+
+.a-hl-h4 {
+  font-size: 1em;
+}
+
+/*
+
+##################
+### ATOM: text ###
+##################
+
+### SAMPLE MARKUP:
+
+<p class="a-txt a-txt-p">
+    Text
+</p>
+
+### INFO:
+
+Text atom could be used almost everywhere.
+It has multiple size modifiers (more could be added below).
+
+### MODIFIERS:
+
+sizes
+    Selector names of the sizes could be changed globally in variables.
+
+p
+    Paragraph style text.
+
+mono (inline, block)
+    Changes the font-family to a monospaced font as inline or block text.
+
+*/
+.a-txt-2 {
+  font-family: Nato Sans;
+  line-height: 1.6em;
+  font-size: 0.75em;
+  font-weight: normal;
+  color: #48525C;
+}
+
+.a-txt-3 {
+  font-family: Nato Sans;
+  line-height: 1.6em;
+  font-size: 0.875em;
+  font-weight: normal;
+  color: #48525C;
+}
+
+.a-txt-4 {
+  font-family: Nato Sans;
+  line-height: 1.6em;
+  font-size: 1em;
+  font-weight: normal;
+  color: #48525C;
+}
+
+.m-tip {
+  width: 315px;
+  background: #FFFFFF;
+  border-right: 5px solid #00CD3C;
+  box-shadow: 0 5px 25px 0 rgba(72, 82, 92, 0.7);
+  padding: 20px;
+  grid-row: span 1;
+  position: relative;
+}
+
+.m-tip-default {
+  box-shadow: 0 10px 30px 0 rgba(72, 82, 92, 0.7);
+}
+
+.m-tip-default:before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: -25px;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #FFFFFF;
+}
+
+.m-tip-read-on {
+  border-right: 5px solid #FFE100;
+}
+
+.m-tip-read-on:before {
+  content: '';
+  position: absolute;
+  right: 8px;
+  bottom: -38px;
+  border-left: 25px solid transparent;
+  border-bottom: 25px solid #FFE100;
+  border-top: 25px solid #FFE100;
+  transform: rotate(-90deg);
+}
+
+.m-tip-important {
+  border-right: 5px solid #EF0000;
+  -webkit-clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
+  clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
+}
+
+.m-tip-important-container {
+  filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
+}
+
+.m-tip-note {
+  border-right: 5px solid #005AF0;
+  -webkit-clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
+  clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
+}
+
+.m-tip-note:before {
+  content: '';
+  position: absolute;
+  right: -4px;
+  bottom: 0px;
+  border-right: 35px solid transparent;
+  border-top: 30px solid #005AF0;
+}
+
+.m-tip-note-container {
+  filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
+}
+
+.p-guideHeader {
+  background: #262626;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 25px;
+  min-height: 100%;
+}
+
+.p-guideHeader .md-hd {
+  font-family: Nato Sans;
+  font-size: 16px;
+  margin: 0;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+.p-guideHeader .lg-hd {
+  font-size: 34px;
+  line-height: 42px;
+  font-family: Poppins;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.gridContainer {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "navigation" "body";
+}
+
+@media screen and (min-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 25% auto;
+    grid-template-areas: "navigation body";
+  }
+}
+
+.mainContainer {
+  display: grid;
+  grid-area: body;
+  height: auto;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 163px minmax(100vh, auto);
+}
+
+@media screen and (min-width: 768px) {
+  .mainContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 163px auto;
+  }
+}
+
+.navigation {
+  grid-area: navigation;
+}
+
+.mc-header {
+  grid-column-start: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .mc-header {
+    grid-column-start: 2;
+  }
+}
+
+.mc-body {
+  background: #FAFAFC;
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 30px;
+  margin: 20px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .mc-body {
+    grid-column-start: 2;
+  }
+}
+
+.m-acc > * h1 {
+  background: #FFFFFF;
+  color: #20202A;
+  font-weight: bold;
+  font-family: Poppins;
+  font-size: 16px;
+  outline: none;
+}
+
+.m-acc ul > * li {
+  list-style: none;
+  color: #262626;
+}
+
+.m-acc ul > * a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: Noto Sans;
+  color: #48525C;
+}
+
+.m-acc ul > * a:hover {
+  color: #005AF0;
+  font-weight: bold;
+}

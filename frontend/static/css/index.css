@@ -1,0 +1,29 @@
+amp-accordion > h1 {
+  background: white;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  min-width: 320px;
+  color: #262626;
+  background: #FFFFFF;
+  font-size: 16px;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * This file only contains styles that are required in (nearly) any page
+ * like text, headline and grid styling. Everything else belongs in dedicated
+ * component files
+**/
+p {
+  display: block;
+  margin: 0;
+  line-height: 1.45em;
+  font-style: normal;
+  font-family: sans-serif;
+}
