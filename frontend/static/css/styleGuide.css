@@ -114,6 +114,10 @@ mono (inline, block)
   font-weight: normal;
 }
 
+.ad-a-txt-1 {
+  font-size: 0.625em;
+}
+
 .ad-a-txt-2 {
   font-size: 0.75em;
 }
@@ -124,6 +128,10 @@ mono (inline, block)
 
 .ad-a-txt-4 {
   font-size: 1em;
+}
+
+.ad-a-txt-bold {
+  font-weight: bold;
 }
 
 /*

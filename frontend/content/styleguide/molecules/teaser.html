@@ -1,0 +1,35 @@
+---
+$view: /views/styleguide/component.j2
+$title: Teaser
+
+contents:
+- lgAccent: Category Accent Large
+  smAccent: Category Accent Small
+  text: An accordion provides a way for viewers to have a glance at the outline of the content and jump to a section or their choice.
+  link: '/styleguide/molecules/teaser.html'
+  linkCopy: Code now
+- lgAccent: Category Accent Large
+  smAccent: Category Accent Small
+  text: An accordion provides a way for viewers to have a glance at the outline of the content and jump to a section or their choice.
+  link: '/styleguide/molecules/teaser.html'
+  linkCopy: Code now
+- lgAccent: Category Accent Large
+  smAccent: Category Accent Small
+  text: An accordion provides a way for viewers to have a glance at the outline of the content and jump to a section or their choice.
+  link: '/styleguide/molecules/teaser.html'
+  linkCopy: Code now
+- lgAccent: Category Accent Large
+  smAccent: Category Accent Small
+  text: An accordion provides a way for viewers to have a glance at the outline of the content and jump to a section or their choice.
+  link: '/styleguide/molecules/teaser.html'
+  linkCopy: Code now
+---
+
+  {% for content in doc.contents %}
+  <div class="ad-m-teaser-container">
+    <h5 class="ad-a-txt ad-a-txt-1">{{content.smAccent}}</h5>
+    <h4 class="ad-a-txt ad-a-txt-4 ad-a-txt-bold">{{content.lgAccent}}</h4>
+    <p class="ad-a-txt ad-a-txt-3">{{content.text}}</p>
+    {# todo bring in link atom  #}
+  </div>
+  {% endfor %}
