@@ -1,4 +1,17 @@
 ---
 $view: /views/styleguide/component.j2
 $title: Copy
+
+copies:
+- headline: Headline Three
+  text: Text medium Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
 ---
+
+<div class="ad-m-copy-container">
+  {% for copy in doc.copies %}
+  <div class="ad-m-copy-wrapper">
+    <h3 class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</h3>
+    <p class="ad-a-txt ad-a-txt-sm">{{ copy.text }}</p>
+  </div>
+  {% endfor %}
+</div>
