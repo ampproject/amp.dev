@@ -32,20 +32,30 @@ mono
 // TODO: use rem instead of px for font sizes
 
 .#{atom('hl')} {
+  font-family: Poppins;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: color('black');
 
-    &-h1 {}
+    &-h1 {
+      font-size: 3em;
+    }
 
-    &-h2 {}
+    &-h2 {
+      font-size: 2.25em;
+    }
 
-    &-h3 {}
+    &-h3 {
+      font-size: 1.5em;
+    }
 
-    &-h4 {}
+    &-h4 {
+      font-size: 1em;
+    }
 
-    &-h5 {}
-
-    &-h6 {}
-
-    &-light {}
+    &-light {
+      color: color('white');
+    }
 
     &-mono {}
 }
