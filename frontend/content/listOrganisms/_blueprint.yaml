@@ -1,5 +1,0 @@
-path: /{collection.basename}/{slug}
- ##todo, create index.html for listOrganisms
-view: /views/templates/index.html
-
-

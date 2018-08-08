@@ -1,0 +1,16 @@
+{% extends '/templates/styleguide.j2' %}
+
+{% block main %}
+{% include 'partials/styleguide/sidebar.j2' %}
+
+<header class="styleguide__header styleguide__header--overview">
+  <button class="styleguide__toggle" on="tap:sidebar.toggle">
+     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp"></use></svg>
+  </button>
+
+  <div>
+    <h1 class="styleguide__title">amp.dev Styleguide</h1>
+    <p class="styleguide__hint">{{ doc.html|render|safe }}</p>
+  <div>
+</header>
+{% endblock main %}

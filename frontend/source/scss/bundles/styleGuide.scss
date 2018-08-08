@@ -1,87 +1,104 @@
 @import '../variables.scss';
-@import '../components/atoms/_headline.scss';
-@import '../components/atoms/_text.scss';
-@import '../components/molecules/_tip.scss';
+@import '../mixins.scss';
 @import '../functions.scss';
-@import '../partials/guideHeader.scss';
 
-.gridContainer {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    "navigation"
-    "body";
+@import '../components/atoms/text';
+@import '../components/atoms/headline';
+@import '../components/atoms/button';
 
-  @media screen and (min-width: 768px) {
-      grid-template-columns: 25% auto;
-      grid-template-areas:
-        "navigation body"
-  }
-}
+@import '../components/molecules/tip';
 
-.mainContainer {
-  display: grid;
-  grid-area: body;
-  height: auto;
-  min-height: 100vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: 163px minmax(100vh, auto);
+/* The following styles only define the styles needed to make the styleguide
+a little more appealing. All component styles should reside in their dedicated
+file and may be imported at the top of this file */
 
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 163px auto;
-  }
-}
-
-.navigation {
-  grid-area: navigation;
-}
-
-.mc-header {
-  grid-column-start: 1;
-
-  @media screen and (min-width: 768px) {
-    grid-column-start: 2;
-  }
-}
-
-.mc-body {
-  background: color('guideBody');
-  display: grid;
-  grid-template-rows: auto;
-  grid-row-gap: 30px;
-  margin: 20px 0;
-
-  @media screen and (min-width: 768px) {
-    grid-column-start: 2;
-  }
-}
-
-.m-acc >* h1{
-  background: color('white');
-  color: color('black2');
-  font-weight: bold;
-  font-family: Poppins;
-  font-size: 16px;
-  outline: none;
-}
-
-.m-acc ul >* li {
-  list-style: none;
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 320px;
   color: color('black');
+  background: color('white');
+  font-size: 16px;
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.m-acc ul >* a {
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: normal;
-  font-family: Noto Sans;
-  color: color('grey');
+.styleguide {
 
-  &:hover {
-    color: color('hoverBlue');
-    font-weight: bold;
+  &__header {
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    width: 100%;
+    height: 90px;
+    align-items: center;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: color('white');
+    background-color: color('black');
+
+    @media (min-width: 500px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    &--overview {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
+  }
+
+    &__toggle {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: none;
+      border: none;
+
+      @media (min-width: 500px) {
+        width: 45px;
+        height: 45px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+
+    &__title, &__hint {
+      margin: 0;
+    }
+
+  &__sidebar {
+    padding: 7px;
+
+    @media (min-width: 500px) {
+      padding: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 15px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    padding-top: 110px;
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 500px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+    }
   }
 }

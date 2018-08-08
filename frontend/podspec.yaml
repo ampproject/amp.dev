@@ -1,17 +1,24 @@
 grow_version: ">=0.0.66"
 
-home: /content/pages/home.html
+root: /styleguide/index.html
 
 static_dirs:
-- static_dir: /assets/
+- static_dir: /static/
   serve_at: /static/
 
 error_routes:
-  default: /views/errors/default.html
+  default: /views/errors/default.j2
 
 localization:
   default_locale: en
 
 preprocessors:
 - kind: gulp
-  run_task: 'styles'
+  build_task: ''
+  run_task: 'develop'
+
+deployments:
+  default:
+    destination: git
+    repo: https://github.com/jungvonmatt/amp.dev.git
+    branch: gh-pages
