@@ -8,11 +8,19 @@ const settings = {
     'styles': {
         'src': 'source/scss/bundles/*.scss',
         'dest': [
-            './build/assets/css/',
+            './static/css/',
         ],
         'options': {
-            'outputStyle': 'compressed'
+            'outputStyle': 'expanded'
         }
+    },
+    'templates': {
+      'src': 'source/j2/**/*.j2',
+      'dest': './'
+    },
+    'icons': {
+      'src': 'source/svg/icons/**/*.svg',
+      'dest': './partials/icons/'
     }
 };
 

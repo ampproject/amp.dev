@@ -1,0 +1,42 @@
+<amp-sidebar class="styleguide__sidebar" id="sidebar" layout="nodisplay" side="left">
+  {% set atoms = g.collection('/content/styleguide/atoms') %}  <section>
+  {% if atoms %}
+    <b>Atoms</b>
+    <ul>
+      {% for doc in atoms %}
+      <li>
+        <a href="{{ doc.url|relative }}">{{ doc.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% set molecules = g.collection('/content/styleguide/molecules') %}
+  {% if molecules %}
+  <section>
+    <b>Molecules</b>
+    <ul>
+      {% for doc in molecules %}
+      <li>
+        <a href="{{ doc.url|relative }}">{{ doc.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% set prototypes = g.collection('/content/styleguide/prototypes') %}
+  {% if prototypes %}
+  <section>
+    <b>Prototypes</b>
+    <ul>
+      {% for doc in prototypes %}
+      <li>
+        <a href="{{ doc.url|relative }}">{{ doc.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</amp-sidebar>

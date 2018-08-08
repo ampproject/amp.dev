@@ -1,6 +1,33 @@
-$selectorPrefix: 'ad';
+/* A project prefix that is added by using the prefix() function. Abbreviation
+of the project name amp.dev */
+$projectPrefix: 'ad';
 
+/* All category codes which are prepended to selector by using either atom(selector),
+molecule(selector) or organism(selector) */
+$categoryPrefixes: (
+  atom: 'a',
+  molecule: 'm',
+  organism: 'o',
+);
+
+$sizes: (
+  xs: '1',
+  sm: '2',
+  md: '3',
+  lg: '4',
+  xl: '5',
+);
+
+/* The following map contains every color that is used inside the project. The
+names are identified by using the http://chir.ag/projects/name-that-color to
+prevent double colors and/or hirarchy dicussions */
 $colors: (
-    'white'  : #FFFFFF,
-    'black'  : #262626
+  'black': #20202A,
+  'blue-ribbon': #005AF0,
+  'malachite': #00CD3C,
+  'red': #EF0000,
+  'river-bed': #48525C,
+  'turbo': #FFE100,
+  'whisper': #FAFAFC,
+  'white': #FFFFFF,
 );
