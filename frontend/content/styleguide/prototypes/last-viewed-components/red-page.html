@@ -1,0 +1,70 @@
+---
+$title: Red page
+---
+<!doctype html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>{{ doc.title }}</title>
+    <link rel="canonical" href="self.html" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+
+    <style amp-custom>
+    body {
+        font-family: sans-serif;
+        color: #FFF;
+        background: linear-gradient(to top right, #d60045, #ab3a3a);
+    }
+
+    main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    section {
+
+    }
+
+    a {
+      text-transform: uppercase;
+      color: #FFF;
+      margin: 0 5px;
+    }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <nav>
+          <a href="{{ g.doc('styleguide/prototypes/last-viewed-components/blue-page.html').url|relative }}">Blue page</a>
+
+          <a href="{{ g.doc('styleguide/prototypes/last-viewed-components/green-page.html').url|relative }}">Green page</a>
+
+          <a href="{{ g.doc('styleguide/prototypes/last-viewed-components/red-page.html').url|relative }}">Red page</a>
+        </nav>
+
+        <hr>
+
+        <p>History</p>
+        <amp-list width="auto" height="100" layout="fixed-height" src="/last-viewed-components-history.json">
+          {% raw %}
+          <template type="amp-mustache">
+            <div><i>{{date}}</i>: {{title}}</div>
+          </template>
+          {% endraw %}
+
+          <div placeholder>Loading ...</div>
+          <div fallback>Failed to load data.</div>
+          <div overflow><button>Show more</button></div>
+        </amp-list>
+      </section>
+    </main>
+  </body>
+</html>
