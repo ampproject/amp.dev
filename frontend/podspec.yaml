@@ -3,8 +3,10 @@ grow_version: ">=0.0.66"
 root: /styleguide/index.html
 
 static_dirs:
-- static_dir: /static/
+- static_dir: /static/static/
   serve_at: /static/
+- static_dir: /static/root/
+  serve_at: /
 
 error_routes:
   default: /views/errors/default.j2

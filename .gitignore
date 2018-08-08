@@ -35,4 +35,4 @@ frontend/partials
 frontend/views
 
 # Ignore static files as they will either be built or gathered by gulp
-frontend/static
+frontend/static/static
