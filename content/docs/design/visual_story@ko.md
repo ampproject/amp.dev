@@ -19,6 +19,8 @@ tutorial: true
 - 페이지안에서 애니메이션 효과를 줄 수 있다.
 - 이야기가 끝나면 독자들이 관심있을만한 다른 콘텐츠로 가는 링크를 추가할 수 있다.
 
+{% call callout('Note', type='note') %} [amp-story](/docs/reference/components/amp-story.html) 콤포넌트는 현재 **실험 상태**입니다. {% endcall %}
+
 <div class="start-button">
 <a class="button" href="/docs/design/visual_story/setting_up.html"><span class="arrow-next">시작하기</span></a>
 </div>
