@@ -24,7 +24,7 @@ outline
 */
 
 .#{atom('btn')} {
-	@extend .a-hl, .a-hl-h3, .a-hl-light;
+	// @extend .#{atom('hl')}, .#{atom('hl-h3')}, .#{atom('hl-light')};
 
     display: inline-block;
     max-width: 100%;
@@ -36,11 +36,11 @@ outline
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
-    background-color: color('hoverBlue');
-    border: 3px solid color('hoverBlue');
+    background-color: color('blue-ribbon');
+    border: 3px solid color('blue-ribbon');
 
     &:hover {
-    	background-color: color('grey');
-    	border: 3px solid color('grey');
+    	background-color: color('river-bed');
+    	border: 3px solid color('river-bed');
     }
 }
