@@ -1,4 +1,0 @@
-path: /{collection.basename}/{slug}
- ##todo, create index.html for contents
-view: /views/molecules/index.html
-

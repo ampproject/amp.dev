@@ -1,3 +1,0 @@
-path: /{collection.basename}/{slug}
- ##todo, create index.html for frameworkMolecules
-view: /views/molecules/index.html

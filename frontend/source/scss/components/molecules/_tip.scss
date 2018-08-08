@@ -1,10 +1,10 @@
 @import '../functions.scss';
 @import '../variables.scss';
 
-.#{map-get($prefix, molecule)}-tip {
+.#{molecule('tip')} {
   width: 315px;
   background: color('white');
-  border-right: 5px solid color('tipGreen');
+  border-right: 5px solid color('malachite');
   box-shadow: 0 5px 25px 0 rgba(72, 82, 92, 0.7);
   padding: 20px;
   grid-row: span 1;
@@ -12,6 +12,7 @@
 
   &-default {
     box-shadow: 0 10px 30px 0 rgba(72, 82, 92, 0.7);
+
     &:before {
       content: '';
       position: absolute;
@@ -24,20 +25,20 @@
 
 
   &-read-on {
-    border-right: 5px solid color('tipYellow');
+    border-right: 5px solid color('turbo');
     &:before {
       content: '';
       position: absolute;
       right: 8px;
       bottom: -38px;
       border-left: 25px solid transparent;
-      border-bottom: 25px solid color('tipYellow');
-      border-top: 25px solid color('tipYellow');
+      border-bottom: 25px solid color('turbo');
+      border-top: 25px solid color('turbo');
       transform: rotate(-90deg);
     }
   }
   &-important {
-    border-right: 5px solid color('tipRed');
+    border-right: 5px solid color('red');
     -webkit-clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
     clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
     &-container {
@@ -45,7 +46,7 @@
     }
   }
   &-note {
-    border-right: 5px solid color('hoverBlue');
+    border-right: 5px solid color('blue-ribbon');
     -webkit-clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
     clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
     &:before {
@@ -54,10 +55,14 @@
       right: -4px;
       bottom: 0px;
       border-right: 35px solid transparent;
-      border-top: 30px solid color('hoverBlue');
+      border-top: 30px solid color('blue-ribbon');
     }
     &-container {
       filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
     }
+  }
+
+  &-container {
+    grid-column: 2 / span 1;
   }
 }

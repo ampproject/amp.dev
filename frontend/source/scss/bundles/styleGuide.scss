@@ -28,9 +28,11 @@ body {
 .styleguide {
 
   &__header {
+    position: fixed;
+    z-index: 5;
     display: flex;
     width: 100%;
-    position: fixed;
+    height: 90px;
     align-items: center;
     padding-left: 7px;
     padding-right: 7px;
@@ -40,6 +42,12 @@ body {
     @media (min-width: 500px) {
       padding-left: 15px;
       padding-right: 15px;
+    }
+
+    &--overview {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
     }
   }
 
@@ -53,8 +61,8 @@ body {
       border: none;
 
       @media (min-width: 500px) {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
       }
 
       svg {
@@ -62,6 +70,10 @@ body {
         height: 100%;
         cursor: pointer;
       }
+    }
+
+    &__title, &__hint {
+      margin: 0;
     }
 
   &__sidebar {
@@ -79,14 +91,14 @@ body {
 
   &__content {
     display: grid;
+    padding-top: 110px;
     height: auto;
     min-height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 163px minmax(100vh, auto);
 
     @media screen and (min-width: 500px) {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 163px auto;
+      grid-template-rows: auto;
     }
   }
 }

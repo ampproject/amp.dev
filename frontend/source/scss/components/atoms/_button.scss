@@ -23,7 +23,7 @@ outline
 
 */
 
-.#{map-get($prefix, atom)}-btn {
+.#{atom('btn')} {
 	@extend .a-hl, .a-hl-h3, .a-hl-light;
 
     display: inline-block;

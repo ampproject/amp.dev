@@ -31,7 +31,7 @@ mono
 
 // TODO: use rem instead of px for font sizes
 
-.#{map-get($prefix, atom)}-hl {
+.#{atom('hl')} {
   font-family: Poppins;
   font-weight: bold;
   line-height: 1.2em;
