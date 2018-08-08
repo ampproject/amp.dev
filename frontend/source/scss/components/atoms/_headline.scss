@@ -47,10 +47,15 @@ mono
 
     &-h3 {
       font-size: 1.5em;
+      margin-bottom: 40px;
     }
 
     &-h4 {
       font-size: 1em;
+      margin-bottom: 10px;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 20px;
+      }
     }
 
     &-light {

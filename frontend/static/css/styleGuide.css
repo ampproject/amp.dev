@@ -69,10 +69,18 @@ mono
 
 .ad-a-hl-h3, .ad-a-btn {
   font-size: 1.5em;
+  margin-bottom: 40px;
 }
 
 .ad-a-hl-h4 {
   font-size: 1em;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .ad-a-hl-h4 {
+    margin-bottom: 20px;
+  }
 }
 
 .ad-a-hl-light, .ad-a-btn {
@@ -109,9 +117,10 @@ mono (inline, block)
 
 */
 .ad-a-txt {
-  font-family: Nato Sans;
+  font-family: Noto Sans;
   line-height: 1.6em;
   font-weight: normal;
+  margin: 0;
 }
 
 .ad-a-txt-2 {
@@ -170,26 +179,6 @@ outline
   border: 3px solid #48525C;
 }
 
-/**
-/// Pulls a name out of the $colors array by key and throws a warning
-/// if the specified color name does not exist
-/// @param  {String} $name A color name inside that is inside $colors
-/// @return {String}       The matching color or null
-*/
-/**
-/// Prefixes a given string with the $projectPrefix and a category prefix out
-/// of $categoryPrefixes by the key $category
-/// @param  {String} $category A category name in $categoryPrefixes
-/// @param  {String} $selector The selector that gets prefixed
-/// @return {String}           The prefixed selector
-*/
-/* A project prefix that is added by using the prefix() function. Abbreviation
-of the project name amp.dev */
-/* All category codes which are prepended to selector by using either atom(selector),
-molecule(selector) or organism(selector) */
-/* The following map contains every color that is used inside the project. The
-names are identified by using the http://chir.ag/projects/name-that-color to
-prevent double colors and/or hirarchy dicussions */
 .ad-m-tip {
   width: 100%;
   background: #FFFFFF;
@@ -283,6 +272,30 @@ prevent double colors and/or hirarchy dicussions */
   .ad-m-tip-container {
     grid-column: 2 / span 1;
     padding: 0px 50px 40px 10px;
+  }
+}
+
+.ad-m-copy-container {
+  grid-column: 2 / span 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .ad-m-copy-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.ad-m-copy-wrapper {
+  grid-column: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .ad-m-copy-wrapper {
+    grid-column: 4 / span 6;
   }
 }
 
