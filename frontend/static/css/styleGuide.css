@@ -24,6 +24,63 @@ amp-accordion > h1 {
 */
 /*
 
+######################
+### ATOM: headline ###
+######################
+
+### SAMPLE MARKUP:
+
+<h2 class="a-hl-h1 a-hl-mono">
+    Text
+</h2>
+
+### INFO:
+
+This is a regular headline.
+It should be never overwritten in any other file.
+New modifiers can be added below.
+
+### MODIFIERS:
+
+h1 - h6
+    Self explaining.
+
+light
+    Changes the text color to light (default is dark).
+
+mono
+    Changes the font-family to a monospaced font.
+
+*/
+.ad-a-hl, .ad-a-btn {
+  font-family: Poppins;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: #20202A;
+}
+
+.ad-a-hl-h1 {
+  font-size: 3em;
+}
+
+.ad-a-hl-h2 {
+  font-size: 2.25em;
+}
+
+.ad-a-hl-h3, .ad-a-btn {
+  font-size: 1.5em;
+}
+
+.ad-a-hl-h4 {
+  font-size: 1em;
+}
+
+.ad-a-hl-light, .ad-a-btn {
+  color: #FFFFFF;
+}
+
+/*
+
 ##################
 ### ATOM: text ###
 ##################
@@ -71,59 +128,6 @@ mono (inline, block)
 
 /*
 
-######################
-### ATOM: headline ###
-######################
-
-### SAMPLE MARKUP:
-
-<h2 class="a-hl-h1 a-hl-mono">
-    Text
-</h2>
-
-### INFO:
-
-This is a regular headline.
-It should be never overwritten in any other file.
-New modifiers can be added below.
-
-### MODIFIERS:
-
-h1 - h6
-    Self explaining.
-
-light
-    Changes the text color to light (default is dark).
-
-mono
-    Changes the font-family to a monospaced font.
-
-*/
-.ad-a-hl {
-  font-family: Poppins;
-  font-weight: bold;
-  line-height: 1.2em;
-  margin: 0;
-}
-
-.ad-a-hl-h1 {
-  font-size: 3em;
-}
-
-.ad-a-hl-h2 {
-  font-size: 2.25em;
-}
-
-.ad-a-hl-h3 {
-  font-size: 1.5em;
-}
-
-.ad-a-hl-h4 {
-  font-size: 1em;
-}
-
-/*
-
 ####################
 ### ATOM: button ###
 ####################
@@ -147,8 +151,23 @@ outline
 
 */
 .ad-a-btn {
-  color: red;
-  font-weight: bold;
+  display: inline-block;
+  max-width: 100%;
+  min-width: 230px;
+  width: auto;
+  height: auto;
+  padding: .813rem 1.626rem;
+  margin: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  background-color: #005AF0;
+  border: 3px solid #005AF0;
+}
+
+.ad-a-btn:hover {
+  background-color: #48525C;
+  border: 3px solid #48525C;
 }
 
 /**

@@ -73,6 +73,21 @@ outline
 
 */
 .ad-a-btn {
-  color: red;
-  font-weight: bold;
+  display: inline-block;
+  max-width: 100%;
+  min-width: 230px;
+  width: auto;
+  height: auto;
+  padding: .813rem 1.626rem;
+  margin: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  background-color: #005AF0;
+  border: 3px solid #005AF0;
+}
+
+.ad-a-btn:hover {
+  background-color: #48525C;
+  border: 3px solid #48525C;
 }
