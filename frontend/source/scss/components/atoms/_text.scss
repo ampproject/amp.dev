@@ -32,7 +32,7 @@ mono (inline, block)
     font-family: Noto Sans;
     line-height: 1.6em;
     font-weight: normal;
-    color: map-get($colors, 'river-bed');
+    color: color('river-bed');
     margin: 0;
 
     &-#{map-get($sizes, xs)} {
