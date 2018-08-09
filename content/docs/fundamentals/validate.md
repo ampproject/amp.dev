@@ -176,8 +176,7 @@ several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the inv
 [/sourcecode]
 
 The format of the error messages consists of file name, line, column, and message,
-often followed by a link to the AMP HTML reference. Some editors, including Emacs
-(look for compile command and compilation mode), can interpret this format and let
+often followed by a link to the AMP HTML reference. Some editors, including Emacs, can interpret this format and let
 you jump to the errors in the original file.
 
 For a good starting point to make your own AMP page consider [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
