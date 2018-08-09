@@ -54,22 +54,13 @@ body {
   }
 
     &__toggle {
-      width: 30px;
-      height: 30px;
       padding: 0;
       margin-right: 7px;
       border-radius: 50%;
       background: none;
       border: none;
 
-      @media (min-width: 500px) {
-        width: 45px;
-        height: 45px;
-      }
-
       svg {
-        width: 100%;
-        height: 100%;
         cursor: pointer;
       }
     }
