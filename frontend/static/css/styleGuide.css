@@ -57,6 +57,7 @@ mono
   font-weight: bold;
   line-height: 1.2em;
   color: #20202A;
+  margin: 0;
 }
 
 .ad-a-hl-h1 {
@@ -73,6 +74,13 @@ mono
 
 .ad-a-hl-h4 {
   font-size: 1em;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .ad-a-hl-h4 {
+    margin-bottom: 20px;
+  }
 }
 
 .ad-a-hl-light, .ad-a-btn {
@@ -112,6 +120,8 @@ mono (inline, block)
   font-family: Nato Sans;
   line-height: 1.6em;
   font-weight: normal;
+  color: #48525C;
+  margin: 0;
 }
 
 .ad-a-txt-1 {
@@ -130,7 +140,9 @@ mono (inline, block)
   font-size: 1em;
 }
 
-.ad-a-txt-bold {
+.ad-a-txt-teaserSm {
+  opacity: 0.5;
+  text-transform: uppercase;
   font-weight: bold;
 }
 
@@ -291,6 +303,19 @@ prevent double colors and/or hirarchy dicussions */
   .ad-m-tip-container {
     grid-column: 2 / span 1;
     padding: 0px 50px 40px 10px;
+  }
+}
+
+.ad-m-teaser-container {
+  grid-column: 1;
+  width: 315px;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .ad-m-teaser-container {
+    grid-column: 2 / span 1;
+    width: auto;
   }
 }
 
