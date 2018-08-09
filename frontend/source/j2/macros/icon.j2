@@ -1,0 +1,5 @@
+{% macro icon(name, size=3, color='blue-ribbon') -%}
+  <svg class="ad-a-ico ad-a-ico-{{ name }} ad-a-ico-{{ size }} ad-a-ico-{{ color }}">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ name }}"></use>
+  </svg>
+{%- endmacro %}
