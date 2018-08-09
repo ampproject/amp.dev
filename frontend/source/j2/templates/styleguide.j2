@@ -11,7 +11,10 @@ it and then get in other components that may have been referenced #}
 {% endblock %}
 
 {% block style %}
-{% include 'static/css/styleguide.css' %}
+{# Use import rather than include as later ones get cached which is hindering
+during development #}
+{% import 'static/css/styleguide.css' as styles %}
+{{ styles }}
 {% endblock %}
 
 {% block icons %}
@@ -23,6 +26,7 @@ it and then get in other components that may have been referenced #}
 {% block main %}
 {% include 'partials/styleguide/sidebar.j2' %}
 {% block header %}
+<h1></h1>
 <header class="styleguide__header">
   <button class="styleguide__toggle" on="tap:sidebar.toggle">
      {{ atoms.icon('amp', size=4) }}
