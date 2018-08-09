@@ -38,6 +38,7 @@
     "amp-layout": "layout",
     "amp-lightbox": "layout",
     "amp-lightbox-gallery": "layout",
+    "amp-orientation-observer": "layout",
     "amp-position-observer": "layout",
     "amp-sidebar": "layout",
 
