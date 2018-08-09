@@ -229,8 +229,8 @@ outline
   left: calc(100% - 32px);
   z-index: -1;
   background-color: #FFE100;
-  -webkit-clip-path: polygon(0% 0%, 0 100%, 50% 80%, 100% 100%, 100% 0%);
-  clip-path: polygon(0% 0%, 0 100%, 50% 80%, 100% 100%, 100% 0%);
+  -webkit-clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
 }
 
 .ad-m-tip-important {
@@ -290,11 +290,6 @@ outline
 .ad-m-teaser-container {
   grid-column: 1;
   width: 315px;
-}
-.ad-m-copy-container {
-  grid-column: 2 / span 1;
-  display: grid;
-  grid-template-columns: 1fr;
   padding: 0 20px;
 }
 
@@ -303,6 +298,20 @@ outline
     grid-column: 2 / span 1;
     width: auto;
   }
+}
+
+.ad-m-teaser-container-whiteBg {
+  background-color: white;
+}
+
+.ad-m-copy-container {
+  grid-column: 2 / span 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
   .ad-m-copy-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
