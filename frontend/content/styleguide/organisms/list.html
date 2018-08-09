@@ -14,14 +14,12 @@ items:
   link: '/styleguide/molecules/teaser.html'
   linkCopy: Code now
 ---
-
-
-  <ul class="ad-o-list">
-  {% for item in doc.items %}
-    <div class="ad-o-list-container">
-      <div class="ad-m-teaser-wrapper ad-m-teaser-wrapper-whiteBg">
-        {{ molecules.teaser(item.smAccent, item.lgAccent, item.text) }}
-      </div>
+<ul class="ad-o-list">
+{% for item in doc.items %}
+<li class="ad-o-list-container">
+    <div class="ad-m-teaser-wrapper ad-m-teaser-wrapper-whiteBg">
+      {{ molecules.teaser(item.smAccent, item.lgAccent, item.text) }}
     </div>
-  {% endfor %}
-  </ul>
+</li>
+{% endfor %}
+</ul>
