@@ -9,7 +9,10 @@ link: '/styleguide/molecules/teaser.html'
 linkCopy: Code now
 ---
 
-{% import '/source/j2/macros/teaser.j2' as teaser %}
-<div class="ad-m-teaser-container">
-  {{ teaser.teaser(doc.smAccent, doc.lgAccent, doc.text) }}
-</div>
+{% import '/source/j2/macros/teaser.j2' as t %}
+
+  <div class="ad-m-teaser-container">
+    <div class="ad-m-teaser-wrapper ad-m-teaser-wrapper-whiteBg">
+      {{ t.teaser(doc.smAccent, doc.lgAccent, doc.text) }}
+    </div>
+  </div>

@@ -2,17 +2,19 @@
 
   &-container {
     grid-column:1;
-    width: 315px;
     padding: 0 20px;
 
     @media screen and (min-width: 768px) {
       grid-column: 2 / span 1;
-      width: auto;
-    }
-
-    &-whiteBg {
-      background-color: white;
     }
   }
 
+  &-wrapper {
+
+    &-whiteBg {
+      padding: 20px 40px 50px 25px;
+      background-color: white;
+      box-shadow: 0 5px 25px 0 rgba(72,82,92,0.70);
+    }
+  }
 }
