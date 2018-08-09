@@ -1,0 +1,17 @@
+.#{organism('list')} {
+
+  grid-column: 1;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-left: 20px;
+
+  @media screen and (min-width: 768px) {
+    grid-column: 2;
+  }
+
+  &-container {
+    min-width: 60%;
+    padding: 20px 20px 0px 0px;
+  }
+}

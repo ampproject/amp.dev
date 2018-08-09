@@ -27,6 +27,20 @@
   </section>
   {% endif %}
 
+  {% set organisms = g.collection('/content/styleguide/organisms') %}
+  {% if organisms %}
+  <section>
+    <b>Organisms</b>
+    <ul>
+      {% for doc in organisms %}
+      <li>
+        <a href="{{ doc.url|relative }}">{{ doc.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
   {% set prototypes = g.collection('/content/styleguide/prototypes') %}
   {% if prototypes %}
   <section>

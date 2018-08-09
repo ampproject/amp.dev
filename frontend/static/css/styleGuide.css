@@ -57,6 +57,7 @@ mono
   font-weight: bold;
   line-height: 1.2em;
   color: #20202A;
+  margin: 0;
 }
 
 .ad-a-hl-h1 {
@@ -120,7 +121,12 @@ mono (inline, block)
   font-family: Noto Sans;
   line-height: 1.6em;
   font-weight: normal;
+  color: #48525C;
   margin: 0;
+}
+
+.ad-a-txt-1 {
+  font-size: 0.625em;
 }
 
 .ad-a-txt-2 {
@@ -133,6 +139,12 @@ mono (inline, block)
 
 .ad-a-txt-4 {
   font-size: 1em;
+}
+
+.ad-a-txt-teaserSm {
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /*
@@ -217,8 +229,8 @@ outline
   left: calc(100% - 32px);
   z-index: -1;
   background-color: #FFE100;
-  -webkit-clip-path: polygon(0% 0%, 0 100%, 50% 80%, 100% 100%, 100% 0%);
-  clip-path: polygon(0% 0%, 0 100%, 50% 80%, 100% 100%, 100% 0%);
+  -webkit-clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
 }
 
 .ad-m-tip-important {
@@ -275,6 +287,23 @@ outline
   }
 }
 
+.ad-m-teaser-container {
+  grid-column: 1;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .ad-m-teaser-container {
+    grid-column: 2 / span 1;
+  }
+}
+
+.ad-m-teaser-wrapper-whiteBg {
+  padding: 20px 40px 50px 25px;
+  background-color: white;
+  box-shadow: 0 5px 25px 0 rgba(72, 82, 92, 0.7);
+}
+
 .ad-m-copy-container {
   grid-column: 2 / span 1;
   display: grid;
@@ -297,6 +326,25 @@ outline
   .ad-m-copy-wrapper {
     grid-column: 4 / span 6;
   }
+}
+
+.ad-o-list {
+  grid-column: 1;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-left: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .ad-o-list {
+    grid-column: 2;
+  }
+}
+
+.ad-o-list-container {
+  min-width: 60%;
+  padding: 20px 20px 0px 0px;
 }
 
 /* The following styles only define the styles needed to make the styleguide

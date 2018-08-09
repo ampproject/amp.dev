@@ -36,3 +36,8 @@
 @function molecule($selector) {
     @return prefix('molecule', $selector);
 }
+
+@function organism($selector) {
+  @return prefix('organism', $selector);
+}
+

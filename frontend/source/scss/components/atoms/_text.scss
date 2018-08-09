@@ -32,10 +32,11 @@ mono (inline, block)
     font-family: Noto Sans;
     line-height: 1.6em;
     font-weight: normal;
-    color: map-get($colors, 'grey');
+    color: map-get($colors, 'river-bed');
     margin: 0;
 
     &-#{map-get($sizes, xs)} {
+      font-size: 0.625em;
     }
 
     &-#{map-get($sizes, sm)} {
@@ -57,4 +58,10 @@ mono (inline, block)
     &-mono-inline {}
 
     &-mono-block {}
+
+    &-teaserSm {
+      opacity: 0.5;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
 }
