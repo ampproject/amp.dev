@@ -289,19 +289,19 @@ outline
 
 .ad-m-teaser-container {
   grid-column: 1;
-  width: 315px;
   padding: 0 20px;
 }
 
 @media screen and (min-width: 768px) {
   .ad-m-teaser-container {
     grid-column: 2 / span 1;
-    width: auto;
   }
 }
 
-.ad-m-teaser-container-whiteBg {
+.ad-m-teaser-wrapper-whiteBg {
+  padding: 20px 40px 50px 25px;
   background-color: white;
+  box-shadow: 0 5px 25px 0 rgba(72, 82, 92, 0.7);
 }
 
 .ad-m-copy-container {
@@ -326,6 +326,25 @@ outline
   .ad-m-copy-wrapper {
     grid-column: 4 / span 6;
   }
+}
+
+.ad-o-list {
+  grid-column: 1;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-left: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .ad-o-list {
+    grid-column: 2;
+  }
+}
+
+.ad-o-list-container {
+  min-width: 60%;
+  padding: 20px 20px 0px 0px;
 }
 
 /* The following styles only define the styles needed to make the styleguide
