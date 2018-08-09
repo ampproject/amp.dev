@@ -5,7 +5,7 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp"
+    "start": "grow run"
   },
   "repository": {
     "type": "git",
