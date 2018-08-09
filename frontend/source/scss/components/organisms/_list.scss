@@ -1,8 +1,8 @@
 .#{organism('list')} {
-
   grid-column: 1;
   display: flex;
   justify-content: flex-start;
+  list-style: none;
   overflow: hidden;
   padding-left: 20px;
 
