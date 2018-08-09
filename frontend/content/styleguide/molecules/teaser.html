@@ -8,11 +8,8 @@ text: An accordion provides a way for viewers to have a glance at the outline of
 link: '/styleguide/molecules/teaser.html'
 linkCopy: Code now
 ---
-
-{% import '/source/j2/macros/teaser.j2' as t %}
-
-  <div class="ad-m-teaser-container">
-    <div class="ad-m-teaser-wrapper ad-m-teaser-wrapper-whiteBg">
-      {{ t.teaser(doc.smAccent, doc.lgAccent, doc.text) }}
-    </div>
+<div class="ad-m-teaser-container">
+  <div class="ad-m-teaser-wrapper ad-m-teaser-wrapper-whiteBg">
+    {{ molecules.teaser(doc.smAccent, doc.lgAccent, doc.text) }}
   </div>
+</div>
