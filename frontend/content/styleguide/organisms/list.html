@@ -15,13 +15,12 @@ items:
   linkCopy: Code now
 ---
 
-{% import '/source/j2/macros/teaser.j2' as t %}
 
   <ul class="ad-o-list">
   {% for item in doc.items %}
     <div class="ad-o-list-container">
       <div class="ad-m-teaser-wrapper ad-m-teaser-wrapper-whiteBg">
-        {{ t.teaser(item.smAccent, item.lgAccent, item.text) }}
+        {{ molecules.teaser(item.smAccent, item.lgAccent, item.text) }}
       </div>
     </div>
   {% endfor %}

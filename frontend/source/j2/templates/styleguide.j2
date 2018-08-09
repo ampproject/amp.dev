@@ -1,6 +1,7 @@
 {% extends '/templates/default.j2' %}
 
-{% import '/source/j2/macros/icon.j2' as icon %}
+{% import '/source/j2/macros/atoms.j2' as atoms %}
+{% import '/source/j2/macros/molecules.j2' as molecules %}
 
 {% block components %}
 {# All styleguide pages will need amp-sidebar for the navigation so inject
@@ -24,7 +25,7 @@ it and then get in other components that may have been referenced #}
 {% block header %}
 <header class="styleguide__header">
   <button class="styleguide__toggle" on="tap:sidebar.toggle">
-     {{ icon.icon('amp', size=4) }}
+     {{ atoms.icon('amp', size=4) }}
   </button>
 
   <h1>{{ doc.title }}</h1>
