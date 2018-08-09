@@ -1,5 +1,7 @@
 {% extends '/templates/default.j2' %}
 
+{% import '/source/j2/macros/icon.j2' as icon %}
+
 {% block components %}
 {# All styleguide pages will need amp-sidebar for the navigation so inject
 it and then get in other components that may have been referenced #}
@@ -12,7 +14,9 @@ it and then get in other components that may have been referenced #}
 {% endblock %}
 
 {% block icons %}
-{% include 'partials/icons/amp.svg' %}
+{% for ico in ['amp', 'code', 'edit', 'discussion', 'lego', 'lock', 'magazine', 'map', 'money', 'browser', 'search', 'stories', 'template', 'time', 'user', 'flask', 'arrow-right', 'arrow-right-dot', 'arrow-down-thick', 'arrow-down-thin', 'bookmark', 'basket'] %}
+{% include 'partials/icons/' + ico + '.svg' %}
+{% endfor %}
 {% endblock %}
 
 {% block main %}
@@ -20,7 +24,7 @@ it and then get in other components that may have been referenced #}
 {% block header %}
 <header class="styleguide__header">
   <button class="styleguide__toggle" on="tap:sidebar.toggle">
-     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp"></use></svg>
+     {{ icon.icon('amp', size=4) }}
   </button>
 
   <h1>{{ doc.title }}</h1>

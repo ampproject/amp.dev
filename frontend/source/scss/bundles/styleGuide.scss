@@ -5,6 +5,7 @@
 @import '../components/atoms/headline';
 @import '../components/atoms/text';
 @import '../components/atoms/button';
+@import '../components/atoms/icon';
 
 @import '../components/molecules/tip';
 @import '../components/molecules/teaser';
@@ -56,22 +57,13 @@ body {
   }
 
     &__toggle {
-      width: 30px;
-      height: 30px;
       padding: 0;
       margin-right: 7px;
       border-radius: 50%;
       background: none;
       border: none;
 
-      @media (min-width: 500px) {
-        width: 45px;
-        height: 45px;
-      }
-
       svg {
-        width: 100%;
-        height: 100%;
         cursor: pointer;
       }
     }
