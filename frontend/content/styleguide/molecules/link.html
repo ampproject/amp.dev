@@ -1,0 +1,32 @@
+---
+$view: /views/styleguide/component.j2
+$title: Link
+links:
+- text: Internal link
+  type: 'internal'
+  href: '#'
+- text: External link
+  type: 'external'
+  href: '#'
+- text: Download link
+  type: 'download'
+  href: '#'
+- text: 'Accent text medium'
+  type: ''
+  href: '#'
+---
+{% for lnk in doc.links %}
+  <div class="o-container">
+		{% call molecules.link(lnk.text, lnk.type, lnk.href) %}
+			{% if lnk.type == 'external' %}
+				{{ atoms.icon('arrow-right-dot', size=1) }}
+			{% endif %}
+			{% if lnk.type == 'internal' %}
+				{{ atoms.icon('arrow-right', size=1) }}
+			{% endif %}
+			{% if lnk.type == 'download' %}
+				{{ atoms.icon('arrow-down-thin', size=1) }}
+			{% endif %}
+		{% endcall %}
+  </div>
+{% endfor %}

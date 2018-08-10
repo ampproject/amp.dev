@@ -3,3 +3,12 @@
     <h4 class="ad-a-hl ad-a-hl-h4">{{ hdLrg }}</h4>
     <p class="ad-a-txt ad-a-txt-3">{{ text }}</p>
 {%- endmacro %}
+
+{% macro link(text, type, href) -%}
+  <a class="ad-a-lnk ad-a-lnk-{{ type }}" href="{{ href }}" {% if type == 'external' %}target="_blank"{% endif %}>
+		{% if caller %}
+				{{ caller() }}
+		{% endif %}
+		{{ text }}
+	</a>
+{%- endmacro %}
