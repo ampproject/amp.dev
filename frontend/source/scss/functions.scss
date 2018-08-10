@@ -41,3 +41,17 @@
   @return prefix('organism', $selector);
 }
 
+/**
+/// Pulls a name out of the $shadows array by key and throws a warning
+/// if the specified shadow name does not exist
+/// @param  {String} $name A shadow name inside that is inside $shadows
+/// @return {String}       The matching shadow or null
+*/
+@function shadows($name) {
+  @if map-has-key($shadows, $name) {
+    @return map-get($shadows, $name);
+  }
+
+  @warn "Unknown `#{$name}` in $colors.";
+  @return null;
+}
