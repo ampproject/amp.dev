@@ -24,3 +24,8 @@ deployments:
     destination: git
     repo: https://github.com/jungvonmatt/amp.dev.git
     branch: gh-pages
+    env:
+      name: gh-pages
+      host: jungvonmatt.github.io
+      port: 80
+      scheme: https

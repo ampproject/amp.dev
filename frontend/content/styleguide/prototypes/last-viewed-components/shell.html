@@ -1,5 +1,13 @@
 ---
 $title: Last viewed components
+
+serviceWorker:
+  location: /last-viewed-components-sw.js
+  scope: /styleguide/prototypes/last-viewed-components
+
+serviceWorker@env.gh-pages:
+  location: /amp.dev/last-viewed-components-sw.js
+  scope: /amp.dev/styleguide/prototypes/last-viewed-components
 ---
 <!doctype html>
 <html>
@@ -27,8 +35,8 @@ $title: Last viewed components
     <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/last-viewed-components-sw.js', {
-          'scope': '/styleguide/prototypes/last-viewed-components'
+        navigator.serviceWorker.register('{{ doc.serviceWorker.location }}', {
+          'scope': '{{ doc.serviceWorker.scope }}'
         });
 
         console.log('Installed Service Worker.');
@@ -48,7 +56,7 @@ $title: Last viewed components
       console.log('Bootstrapped PWA shell.');
     }
 
-    App.DEFAULT_DOCUMENT = '/styleguide/prototypes/last-viewed-components/blue-page.html';
+    App.DEFAULT_DOCUMENT = '{{ g.doc('styleguide/prototypes/last-viewed-components/blue-page.html').url|relative }}';
 
     App.HISTORY_MAX_LENGTH = 4;
 
