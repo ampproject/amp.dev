@@ -1,5 +1,8 @@
 ---
 $title: Red page
+
+ampListSrc: /last-viewed-components-history.json
+ampListSrc@env.gh-pages: /amp.dev/last-viewed-components-history.json
 ---
 <!doctype html>
 <html ⚡>
@@ -53,7 +56,7 @@ $title: Red page
         <hr>
 
         <p>History</p>
-        <amp-list width="auto" height="100" layout="fixed-height" src="/last-viewed-components-history.json">
+				<amp-list width="auto" height="100" layout="fixed-height" src="{{ doc.ampListSrc }}">
           {% raw %}
           <template type="amp-mustache">
             <div><i>{{date}}</i>: {{title}}</div>
