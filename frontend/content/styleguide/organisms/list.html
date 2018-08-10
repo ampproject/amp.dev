@@ -6,19 +6,24 @@ items:
 - lgAccent: Category Accent Large
   smAccent: Category Accent Small
   text: An accordion provides a way for viewers to have a glance at the outline of the content and jump to a section or their choice.
-  link: '/styleguide/molecules/teaser.html'
+  link: '/styleguide/organisms/list.html'
   linkCopy: Code now
 - lgAccent: Category Accent Large
   smAccent: Category Accent Small
   text: An accordion provides a way for viewers to have a glance at the outline of the content and jump to a section or their choice.
-  link: '/styleguide/molecules/teaser.html'
+  link: '/styleguide/organisms/list.html'
   linkCopy: Code now
 ---
 <ul class="ad-o-list">
 {% for item in doc.items %}
 <li class="ad-o-list-container">
-    <div class="ad-m-teaser-wrapper ad-m-teaser-wrapper-whiteBg">
-      {{ molecules.teaser(item.smAccent, item.lgAccent, item.text) }}
+    <div class="ad-m-teaser-wrapper ad-m-teaser-white">
+      {% call molecules.teaser(item.smAccent, item.lgAccent, item.text) %}
+      <a href={{ item.link }} class="ad-m-link">
+        {{atoms.icon('arrow-right', size=1)}}
+        <p class="ad-a-txt-3 ad-a-txt-bl">{{ item.linkCopy }}</p>
+      </a>
+    {% endcall %}
     </div>
 </li>
 {% endfor %}
