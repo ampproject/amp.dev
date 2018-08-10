@@ -13,7 +13,7 @@ it and then get in other components that may have been referenced #}
 {% block style %}
 {# Use import rather than include as later ones get cached which is hindering
 during development #}
-{% import 'static/css/styleguide.css' as styles %}
+{% import 'static/static/css/styleguide.css' as styles %}
 {{ styles }}
 {% endblock %}
 
