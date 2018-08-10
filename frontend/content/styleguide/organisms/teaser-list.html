@@ -14,9 +14,9 @@ items:
   link: '/styleguide/organisms/list.html'
   linkCopy: Code now
 ---
-<ul class="ad-o-list">
+<ul class="ad-o-teaser-list">
 {% for item in doc.items %}
-<li class="ad-o-list-container">
+<li class="ad-o-teaser-list-container">
     <div class="ad-m-teaser-wrapper ad-m-teaser-white">
       {% call molecules.teaser(item.smAccent, item.lgAccent, item.text) %}
       <a href={{ item.link }} class="ad-m-link">
