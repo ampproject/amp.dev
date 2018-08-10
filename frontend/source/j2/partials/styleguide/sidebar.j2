@@ -1,6 +1,7 @@
 <amp-sidebar class="styleguide__sidebar" id="sidebar" layout="nodisplay" side="left">
-  {% set atoms = g.collection('/content/styleguide/atoms') %}  <section>
-  {% if atoms %}
+  {% set atoms = g.collection('/content/styleguide/atoms') %}
+  <section>
+    {% if atoms %}
     <b>Atoms</b>
     <ul>
       {% for doc in atoms %}
@@ -18,6 +19,20 @@
     <b>Molecules</b>
     <ul>
       {% for doc in molecules %}
+      <li>
+        <a href="{{ doc.url|relative }}">{{ doc.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% set organisms = g.collection('/content/styleguide/organisms') %}
+  {% if organisms %}
+  <section>
+    <b>Organisms</b>
+    <ul>
+      {% for doc in organisms %}
       <li>
         <a href="{{ doc.url|relative }}">{{ doc.title }}</a>
       </li>

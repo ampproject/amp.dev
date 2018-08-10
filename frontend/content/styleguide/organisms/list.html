@@ -1,0 +1,25 @@
+---
+$view: /views/styleguide/component.j2
+$title: List
+
+items:
+- lgAccent: Category Accent Large
+  smAccent: Category Accent Small
+  text: An accordion provides a way for viewers to have a glance at the outline of the content and jump to a section or their choice.
+  link: '/styleguide/molecules/teaser.html'
+  linkCopy: Code now
+- lgAccent: Category Accent Large
+  smAccent: Category Accent Small
+  text: An accordion provides a way for viewers to have a glance at the outline of the content and jump to a section or their choice.
+  link: '/styleguide/molecules/teaser.html'
+  linkCopy: Code now
+---
+<ul class="ad-o-list">
+{% for item in doc.items %}
+<li class="ad-o-list-container">
+    <div class="ad-m-teaser-wrapper ad-m-teaser-wrapper-whiteBg">
+      {{ molecules.teaser(item.smAccent, item.lgAccent, item.text) }}
+    </div>
+</li>
+{% endfor %}
+</ul>

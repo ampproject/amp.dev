@@ -1,0 +1,32 @@
+---
+$view: /views/styleguide/component.j2
+$title: Icon
+icons:
+- name: 'amp'
+- name: 'basket'
+- name: 'bookmark'
+- name: 'code'
+- name: 'edit'
+- name: 'discussion'
+- name: 'lego'
+- name: 'lock'
+- name: 'magazine'
+- name: 'map'
+- name: 'money'
+- name: 'browser'
+- name: 'search'
+- name: 'stories'
+- name: 'template'
+- name: 'time'
+- name: 'user'
+- name: 'flask'
+- name: 'arrow-right'
+- name: 'arrow-right-dot'
+- name: 'arrow-down-thick'
+- name: 'arrow-down-thin'
+---
+{% for ico in doc.icons %}
+  <div class="o-container">
+    {{ icon.icon(ico.name, size=4) }}
+  </div>
+{% endfor %}

@@ -29,14 +29,27 @@ mono (inline, block)
 */
 
 .#{atom('txt')} {
+    font-family: Noto Sans;
+    line-height: 1.6em;
+    font-weight: normal;
+    color: color('river-bed');
+    margin: 0;
 
-    &-#{map-get($sizes, xs)} {}
+    &-#{map-get($sizes, xs)} {
+      font-size: 0.625em;
+    }
 
-    &-#{map-get($sizes, sm)} {}
+    &-#{map-get($sizes, sm)} {
+      font-size: 0.75em;
+    }
 
-    &-#{map-get($sizes, md)} {}
+    &-#{map-get($sizes, md)} {
+      font-size: 0.875em;
+    }
 
-    &-#{map-get($sizes, lg)} {}
+    &-#{map-get($sizes, lg)} {
+      font-size: 1em;
+    }
 
     &-#{map-get($sizes, xl)} {}
 
@@ -45,4 +58,10 @@ mono (inline, block)
     &-mono-inline {}
 
     &-mono-block {}
+
+    &-teaserSm {
+      opacity: 0.5;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
 }

@@ -1,18 +1,18 @@
-@import '../functions.scss';
-@import '../variables.scss';
 
 .#{molecule('tip')} {
-  width: 315px;
+  width: 100%;
   background: color('white');
   border-right: 5px solid color('malachite');
-  box-shadow: 0 5px 25px 0 rgba(72, 82, 92, 0.7);
-  padding: 20px;
+  padding: 25px 30px 50px 25px;
   grid-row: span 1;
   position: relative;
 
-  &-default {
-    box-shadow: 0 10px 30px 0 rgba(72, 82, 92, 0.7);
+  @media screen and (min-width: 768px) {
+    width: auto;
+    padding: 25px 55px 35px 40px;
+  }
 
+  &-default {
     &:before {
       content: '';
       position: absolute;
@@ -23,46 +23,72 @@
     }
   }
 
-
   &-read-on {
     border-right: 5px solid color('turbo');
+
     &:before {
       content: '';
       position: absolute;
-      right: 8px;
-      bottom: -38px;
-      border-left: 25px solid transparent;
-      border-bottom: 25px solid color('turbo');
-      border-top: 25px solid color('turbo');
-      transform: rotate(-90deg);
+      height: calc(100% + 32px);
+      width: 37px;
+      top: 0;
+      left: calc(100% - 32px);
+      z-index: -1;
+      background-color: color('turbo');
+      -webkit-clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
+      clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
     }
+
   }
+
   &-important {
     border-right: 5px solid color('red');
     -webkit-clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
     clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
-    &-container {
-      filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
-    }
   }
+
   &-note {
-    border-right: 5px solid color('blue-ribbon');
-    -webkit-clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
-    clip-path: polygon(13% 0, 83% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
+    border: none;
+    width: 100%;
+    padding: 25px 10px 20px 25px;
+    @media screen and (min-width: 768px) {
+      width: calc(100% - 67px);
+      padding: 25px 0px 35px 40px;
+    }
+
+
     &:before {
       content: '';
       position: absolute;
-      right: -4px;
-      bottom: 0px;
-      border-right: 35px solid transparent;
-      border-top: 30px solid color('blue-ribbon');
+      border-bottom: 32px solid transparent;
+      border-left: 25px solid color('blue-ribbon');
+      left: 100%;
+      right: 0;
+      bottom: 0;
     }
-    &-container {
-      filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0px;
+      height: calc(100% - 32px);
+      left: 100%;
+      width: 20px;
+      background-color: color('white');
+      border-right: 5px solid color('blue-ribbon');
+
     }
   }
 
   &-container {
-    grid-column: 2 / span 1;
+    grid-column: 1 / span 1;
+    padding: 0px 80px 40px 20px;
+    filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.7));
+
+    @media screen and (min-width: 768px) {
+      grid-column: 2 / span 1;
+      padding: 0px 50px 40px 10px;
+    }
   }
 }

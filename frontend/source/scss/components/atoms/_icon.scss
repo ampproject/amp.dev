@@ -1,0 +1,70 @@
+/*
+
+####################
+### ATOM: icon ###
+####################
+
+### SAMPLE MARKUP:
+
+<svg class="ad-a-ico ad-a-ico-amp">
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp"></use>
+</svg>
+
+### INFO:
+
+An icon could have fice different sizes and multiple (background)colors.
+New colors can be added below.
+
+### MODIFIERS:
+
+sizes
+    Selector names of the sizes could be changed globally in variables.
+
+colors
+    Color of icons are based on original color names.
+
+TODO: background
+    Gaves the icon a background color (default is transparent).
+
+*/
+
+
+.#{atom('ico')} {
+
+    &-#{map-get($sizes, xs)} {
+      width: 1em;
+      height: 1em;
+    }
+
+    &-#{map-get($sizes, sm)} {
+      width: 2em;
+      height: 2em;
+    }
+
+    &-#{map-get($sizes, md)} {
+      width: 3em;
+      height: 3em;
+    }
+
+    &-#{map-get($sizes, lg)} {
+      width: 4em;
+      height: 4em;
+    }
+
+    &-#{map-get($sizes, xl)} {
+      width: 5em;
+      height: 5em;
+    }
+
+    &-blue-ribbon {
+      fill: color('blue-ribbon');
+    }
+
+    &-white {
+      fill: color('white');
+    }
+
+    &-river-bed {
+      fill: color('river-bed');
+    }
+}

@@ -1,0 +1,23 @@
+.#{molecule('copy')} {
+
+  &-container {
+    grid-column: 2 / span 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &-wrapper {
+    grid-column: 1;
+
+    @media screen and (min-width: 768px) {
+      grid-column: 4 / span 6;
+    }
+  }
+}
+

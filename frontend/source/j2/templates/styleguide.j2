@@ -1,5 +1,8 @@
 {% extends '/templates/default.j2' %}
 
+{% import '/source/j2/macros/atoms.j2' as atoms %}
+{% import '/source/j2/macros/molecules.j2' as molecules %}
+
 {% block components %}
 {# All styleguide pages will need amp-sidebar for the navigation so inject
 it and then get in other components that may have been referenced #}
@@ -8,19 +11,25 @@ it and then get in other components that may have been referenced #}
 {% endblock %}
 
 {% block style %}
-{% include 'static/static/css/styleguide.css' %}
+{# Use import rather than include as later ones get cached which is hindering
+during development #}
+{% import 'static/css/styleguide.css' as styles %}
+{{ styles }}
 {% endblock %}
 
 {% block icons %}
-{% include 'partials/icons/amp.svg' %}
+{% for ico in ['amp', 'code', 'edit', 'discussion', 'lego', 'lock', 'magazine', 'map', 'money', 'browser', 'search', 'stories', 'template', 'time', 'user', 'flask', 'arrow-right', 'arrow-right-dot', 'arrow-down-thick', 'arrow-down-thin', 'bookmark', 'basket'] %}
+{% include 'partials/icons/' + ico + '.svg' %}
+{% endfor %}
 {% endblock %}
 
 {% block main %}
 {% include 'partials/styleguide/sidebar.j2' %}
 {% block header %}
+<h1></h1>
 <header class="styleguide__header">
   <button class="styleguide__toggle" on="tap:sidebar.toggle">
-     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp"></use></svg>
+     {{ atoms.icon('amp', size=4) }}
   </button>
 
   <h1>{{ doc.title }}</h1>

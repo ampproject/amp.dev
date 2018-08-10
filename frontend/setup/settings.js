@@ -11,7 +11,7 @@ const settings = {
             './static/static/css/',
         ],
         'options': {
-            'outputStyle': 'expanded'
+            'outputStyle': 'compact'
         }
     },
     'templates': {
