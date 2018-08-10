@@ -43,10 +43,6 @@ $title: Last viewed components
       // Attach handlers
       document.body.addEventListener('click', this.clickHandler.bind(this), false);
 
-      // Propagate the current history to the service worker
-      console.log('Sending current history to Service Worker.');
-      this.propagateHistory();
-
       // Load the default document into the view
       this.navigateTo(App.DEFAULT_DOCUMENT);
       console.log('Bootstrapped PWA shell.');
@@ -54,15 +50,27 @@ $title: Last viewed components
 
     App.DEFAULT_DOCUMENT = '/styleguide/prototypes/last-viewed-components/blue-page.html';
 
+    App.HISTORY_MAX_LENGTH = 4;
+
     App.prototype.getHistory = function getHistory() {
       // Check if there already is a history if not assume a empty one
       var history = localStorage.getItem('history');
-      return history ? JSON.parse(history) : [];
+      history = history ? JSON.parse(history) : [];
+
+      // Verify that the history is not longer than the defined maximum
+      // and if so shift before pushing a new one
+      if (history.length > App.HISTORY_MAX_LENGTH) {
+        history.shift();
+      }
+
+      return history;
     }
 
     App.prototype.updateHistory = function updateHistory(doc) {
-      var history = this.getHistory();
+      document.title = doc.title;
+      window.history.pushState({}, doc.title, doc.url);
 
+      var history = this.getHistory();
       history.push({
         'title': doc.title,
         'date': new Date().toISOString()
@@ -82,14 +90,10 @@ $title: Last viewed components
 
     App.prototype.navigateTo = function navigateTo(url) {
       this.fetchDocument(url).then(((doc) => {
-        this.attachDocument(doc, url).then(((doc) => {
-          // After loading and attaching the document manipulate the history
-          document.title = doc.title;
-          window.history.pushState({}, doc.title, doc.url);
-
-          // And update the history in the local storage
-          this.updateHistory(doc);
-        }).bind(this));
+        // Update history before attaching the document. This way there is
+        // time to post updates for virtual endpoints to the Service Worker
+        this.updateHistory(doc);
+        this.attachDocument(doc, url);
       }).bind(this));
     }
 
