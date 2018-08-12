@@ -31,7 +31,7 @@ msgstr "성공으로 가는 길"
 
 #: /content/includes/stories.yaml
 msgid "A visual storytelling format for the open web"
-msgstr "열린 웹 세상의 눈이 즐거운 이야기 전달 포맷"
+msgstr "열린 웹 세상의 눈이 즐거운 스토리텔링 포맷"
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
@@ -186,7 +186,7 @@ msgid ""
 "AMP stories are part of the open web and can be shared and embedded across "
 "sites and apps without being confined to a single ecosystem."
 msgstr ""
-"AMP 스토리는 열린 웹을 지향합니다. 특정 생태계에 갇히지 않고 어떤 사이트나 앱에서도 공유 또는 임베딩할 수 있습니다."
+"AMP 스토리는 열린 웹을 지향합니다. 특정 생태계에 갇히지 않고 어떤 사이트나 앱에서도 공유하거나 임베딩할 수 있습니다."
 
 #: /content/includes/stories.yaml
 msgid ""
@@ -930,7 +930,7 @@ msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Mashable"
-msgstr "매셔블"
+msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Maximize ROI everywhere"
