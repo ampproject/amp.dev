@@ -31,7 +31,7 @@ msgstr "성공으로 가는 길"
 
 #: /content/includes/stories.yaml
 msgid "A visual storytelling format for the open web"
-msgstr ""
+msgstr "열린 웹 세상의 눈이 즐거운 이야기 전달 포맷"
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
@@ -172,19 +172,21 @@ msgstr ""
 
 #: /content/includes/menu.yaml /content/includes/stories.yaml
 msgid "AMP stories"
-msgstr ""
+msgstr "AMP 스토리"
 
 #: /content/includes/stories.yaml
 msgid ""
 "AMP stories are built with the same technology used in AMP pages, meaning "
 "they’ll load quickly,  while providing users with a smooth experience."
 msgstr ""
+"AMP 스토리는 AMP를 뒷받침하는 기술을 그대로 사용합니다. 부드럽게 동작하면서도 로딩 속도가 빠릅니다."
 
 #: /content/includes/stories.yaml
 msgid ""
 "AMP stories are part of the open web and can be shared and embedded across "
 "sites and apps without being confined to a single ecosystem."
 msgstr ""
+"AMP 스토리는 열린 웹을 지향합니다. 특정 생태계에 갇히지 않고 어떤 사이트나 앱에서도 공유 또는 임베딩할 수 있습니다."
 
 #: /content/includes/stories.yaml
 msgid ""
@@ -192,10 +194,13 @@ msgid ""
 " possibilities of the AMP project, this format enables the creation of visual"
 " content that is fast, open, and user-first."
 msgstr ""
+"AMP 스토리는 독자들이 화면을 꽉 채우는 컨텐츠를 손끝에서 체험할 수 있게 "
+"만듭니다. AMP 프로젝트의 무한한 가능성을 바탕으로 AMP 스토리 포맷은 빠르고 "
+"열려있으며 사용자 중심의 시각 컨텐츠를 제작할 수 있게 도와줍니다."
 
 #: /content/includes/stories.yaml
 msgid "AMP story features"
-msgstr ""
+msgstr "AMP 스토리의 특징"
 
 #: /views/amp-ads.html:219 /views/amp-ads.html:246
 msgid "AMPHTML Ad"
@@ -370,7 +375,7 @@ msgstr "브랜드 가이드라인"
 
 #: /content/includes/stories.yaml
 msgid "Build an AMP story"
-msgstr ""
+msgstr "AMP 스토리 제작하기"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "Build for a sustainable future"
@@ -378,7 +383,7 @@ msgstr "미래 지향적이고 안정적인 구축"
 
 #: /content/includes/stories.yaml
 msgid "Build immersive experiences with AMP stories."
-msgstr ""
+msgstr "깊이 빠져들게 만드는 AMP 스토리 제작하기"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Build once, serve everywhere."
@@ -433,7 +438,7 @@ msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Builds on top of AMP’s component library to support features like analytics"
-msgstr ""
+msgstr "AMP 컴포넌트 라이브러리를 그대로 적용하여 애널리틱스 등의 기능을 지원"
 
 #: /content/learn/who/ecommerce.yaml
 msgid ""
@@ -450,6 +455,7 @@ msgid ""
 "opportunities for storytelling, with flexibility in design. The tappable "
 "experience can be used to create engaging stories."
 msgstr ""
+"AMP 스토리는 독자의 화면을 꽉 채우는 방식으로 디자인의 유연성을 제공하며 독창적인 이야기를 전달하도록 도와줍니다. 손끝으로 두드리며 동작하는 탭방식의 경험은 스토리에 재미를 더합니다."
 
 #: /content/includes/who.yaml
 msgid "CMS"
@@ -468,7 +474,7 @@ msgstr "사례 연구"
 
 #: /content/includes/stories.yaml
 msgid "Check out AMP stories on the web"
-msgstr ""
+msgstr "웹에서 AMP 스토리를 확인해보세요"
 
 #: /content/support/developer.md
 msgid "Community Resources"
@@ -657,7 +663,7 @@ msgstr "강력하고 일관성있는 빠른 경험 제공"
 
 #: /content/includes/stories.yaml
 msgid "Enriches storytelling through animations and tappable interactions"
-msgstr ""
+msgstr "애니메이션과 탭 동작을 통해 이야기를 풍성하게 만듦"
 
 #: /content/learn/about/amp-design-principles.yaml
 msgid ""
@@ -702,7 +708,7 @@ msgstr "FAQ"
 
 #: /content/includes/stories.yaml
 msgid "Fast"
-msgstr ""
+msgstr "빠른 속도"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Faster ads drive better&nbsp;performance"
@@ -827,7 +833,7 @@ msgstr "즉시 로딩되지 않는다면 충분한 성능이 아닙니다."
 
 #: /content/includes/stories.yaml
 msgid "Immersive"
-msgstr ""
+msgstr "몰입감"
 
 #: /content/learn/who/ecommerce.yaml
 msgid "Improve conversions with fast, user-friendly experiences."
@@ -924,7 +930,7 @@ msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Mashable"
-msgstr ""
+msgstr "매셔블"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Maximize ROI everywhere"
@@ -1030,7 +1036,7 @@ msgstr "높은 속도가 가능할 때만 실행하십시오."
 
 #: /content/includes/stories.yaml
 msgid "Open"
-msgstr ""
+msgstr "열린 생태계"
 
 #: /content/pages/404.html
 msgid "Page not Found (404)"
@@ -1311,7 +1317,7 @@ msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Supports rich visuals with native video and image performance"
-msgstr ""
+msgstr "빠른 동영상, 이미지 처리를 기본으로 제공하면서 풍부한 시각효과를 지원"
 
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
@@ -1599,7 +1605,7 @@ msgstr "AMP 는 어떤 이들을 위해 존재할까요?"
 
 #: /content/includes/stories.yaml
 msgid "Why AMP stories?"
-msgstr ""
+msgstr "왜 AMP 스토리인가?"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Why AMPHTML ads?"
@@ -1620,7 +1626,7 @@ msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "Works across mobile and desktop devices on the open web"
-msgstr ""
+msgstr "열린 웹 생태계의 모바일 및 데스크탑 장비에서 모두 동작"
 
 #: /views/amp-ads.html:195
 msgid "Your browser doesn’t support HTML5 video"
@@ -1638,6 +1644,9 @@ msgid ""
 "focused on creating the best content for every platform and the creative "
 "possibilities on AMP stories are endless”"
 msgstr ""
+"“AMP 스토리는 모바일 컨텐츠를 제작하는 방식을 극적으로 향상시키면서 엉청난 가능성을 보여주었습니다. "
+"저희 팀은 미려하고 미디어로 가득한 이야기를 쉽게 만들 수 있게 되었습니다. 독자들은 웹에서 저희가 만든 이야기를 빠르게 접할 수 있습니다. "
+"저희는 무궁무진한 AMP 스토리의 가능성을 바탕으로 플랫폼에 구애받지 않고 최고의 컨텐츠를 지속적으로 만들어나갈 것입니다.”"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -1661,6 +1670,8 @@ msgid ""
 " this gives readers a more visual entry point when they are searching for our"
 " coverage.”"
 msgstr ""
+"“저희는 속보와 정보를 제공합니다. 이 포맷은 저희가 다양한 재료를 엮어서 양질의 저널리즘을 선보일 수 있도록 해주었습니다."
+"리포트, 보도사진, 동영상 및 모션그래픽을 버무려서 저희의 보도 자료를 쉽게 찾을 수 있도록 독자들의 눈길을 끄는 관문이 되어 주었습니다.”"
 
 #: /content/includes/home.yaml
 msgid ""
