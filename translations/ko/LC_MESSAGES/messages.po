@@ -303,7 +303,7 @@ msgstr "광고주:<br>캠페인 ROI 향상"
 
 #: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
 msgid "Advertising"
-msgstr "광고하는"
+msgstr "광고"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
