@@ -8,7 +8,7 @@ const settings = {
     'styles': {
         'src': 'source/scss/bundles/*.scss',
         'dest': [
-            './static/css/',
+            './static/static/css/',
         ],
         'options': {
             'outputStyle': 'compact'

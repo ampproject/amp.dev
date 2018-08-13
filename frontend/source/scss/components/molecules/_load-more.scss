@@ -1,0 +1,9 @@
+.#{molecule('load-more')} {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@media screen and (min-width: 768px) {
+		grid-column: 2 / span 1;
+	}
+}

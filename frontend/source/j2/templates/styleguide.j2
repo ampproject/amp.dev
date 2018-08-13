@@ -11,10 +11,13 @@ it and then get in other components that may have been referenced #}
 {% endblock %}
 
 {% block style %}
-{# Use import rather than include as later ones get cached which is hindering
-during development #}
-{% import 'static/css/styleguide.css' as styles %}
-{{ styles }}
+{% if env.name == 'dev' %}
+<link href="{{ g.static('/static/static/css/styleguide.css').url|relative }}" rel="stylesheet">
+{% else %}
+<style amp-custom>
+{% include '/static/static/css/styleguide.css' %}
+</style>
+{% endif %}
 {% endblock %}
 
 {% block icons %}
@@ -26,7 +29,6 @@ during development #}
 {% block main %}
 {% include 'partials/styleguide/sidebar.j2' %}
 {% block header %}
-<h1></h1>
 <header class="styleguide__header">
   <button class="styleguide__toggle" on="tap:sidebar.toggle">
      {{ atoms.icon('amp', size=4) }}

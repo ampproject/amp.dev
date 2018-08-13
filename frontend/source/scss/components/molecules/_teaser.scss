@@ -1,20 +1,21 @@
 .#{molecule('teaser')} {
-
-  &-container {
-    grid-column:1;
-    padding: 0 20px;
-
-    @media screen and (min-width: 768px) {
-      grid-column: 2 / span 1;
-    }
+  &-white {
+    padding: 20px 40px 50px 25px;
+    background-color: white;
+    box-shadow: shadows('regular');
   }
+}
 
-  &-wrapper {
-
-    &-whiteBg {
-      padding: 20px 40px 50px 25px;
-      background-color: white;
-      box-shadow: 0 5px 25px 0 rgba(72,82,92,0.70);
-    }
+.#{organism('container')} {
+  grid-column:1;
+  padding: 0 20px;
+  @media screen and (min-width: 768px) {
+    grid-column: 2 / span 1;
   }
+}
+
+.#{molecule('link')} {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
