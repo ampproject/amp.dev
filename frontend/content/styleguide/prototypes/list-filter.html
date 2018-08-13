@@ -115,6 +115,7 @@ $title: List filter
     <amp-bind-macro id="isFilterActive" arguments="filter" expression="activeFilters[filter] == true || values(activeFilters).indexOf(true) == -1"/>
 
     <main>
+			<h1>{{ doc.title }}</h1>
       <p>Click one ore more colors to filter the tiles.</p>
   		<ul class="filter-list">
         <li class="filter-list__item"><button class="filter-list__button filter-list__button--active" [class]="isFilterActive('red') ? 'filter-list__button filter-list__button--active' : 'filter-list__button'" on="tap:AMP.setState({'activeFilters': {'red': !activeFilters.red}})">Red</button></li>

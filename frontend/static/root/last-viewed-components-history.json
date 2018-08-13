@@ -1,12 +1,4 @@
 {
- "items": [
-   {
-     "title": "No service worker available.",
-     "url": "."
-   },
-   {
-     "title": "Try reloading the page!",
-     "url": "."
-   }
- ]
+	"empty": [],
+ 	"items": []
 }
