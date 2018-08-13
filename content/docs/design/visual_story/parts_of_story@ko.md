@@ -21,6 +21,6 @@ AMP 스토리를 구성하는 부품을 기술용어로는 AMP 컴포넌트라�
 자, 그럼 `amp-story` 컨테이너를 가지고 본격적으로 이야기를 시작해보겠습니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/design/visual_story/setting_up.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/docs/design/visual_story/start_story.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/design/visual_story/setting_up.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/design/visual_story/start_story.html"><span class="arrow-next">다음</span></a>
 </div>
