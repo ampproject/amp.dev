@@ -29,6 +29,8 @@ AMP 스토리의 페이지는 `<amp-story-page>`로 표현합니다. `<amp-story
 커버 페이지의 껍데기가 만들어졌습니다.  하지만 이 정도 가지고는 아직 유효한
 스토리가 아닙니다. 페이지안에는 최소한 하나의 레이어(layer)가 들어있어야 합니다.
 
+{{ image('/static/img/docs/tutorials/amp_story/cover_layers.png', 416, 679, alt='cover page has two layers', align='right third' ) }}
+
 ## 페이지 안의 레이어
 
 그래픽 저작도구를 다뤄보았다면 이해하기 쉬운데 AMP 스토리에서 레이어는 시각적
