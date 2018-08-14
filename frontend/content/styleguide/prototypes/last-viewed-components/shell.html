@@ -81,7 +81,7 @@ serviceWorker@env.gh-pages:
       var history = this.getHistory();
       history.push({
         'title': doc.title,
-        'date': new Date().toISOString()
+        'date': new Date().toLocaleString()
       });
 
       // Write the updated history back to the local storage

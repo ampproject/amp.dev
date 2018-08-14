@@ -1,6 +1,5 @@
 ---
 $title: Blue page
-
 ampListSrc: /last-viewed-components-history.json
 ampListSrc@env.gh-pages: /amp.dev/last-viewed-components-history.json
 ---
@@ -8,66 +7,95 @@ ampListSrc@env.gh-pages: /amp.dev/last-viewed-components-history.json
 <html ⚡>
 <head>
     <meta charset="utf-8">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-
     <title>{{ doc.title }}</title>
-    <link rel="canonical" href="self.html" />
     <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+		<script async src="https://cdn.ampproject.org/v0.js"></script>
+		<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400|Poppins:700" rel="stylesheet">
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
-    body {
-        font-family: sans-serif;
-        color: #FFF;
-        background: linear-gradient(to top right, #42b4c6, #2b4e73);
-    }
-
     main {
+      padding: 20px;
+      max-width: 1600px;
+      margin: 0 auto;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+		nav {
+			padding: 20px;
+			margin: 0 -20px 0 -20px;
+			background-color: #e0e0e0;
+		}
+
+		.--meta, .--error {
+			font-style: italic;
+		}
+
+		.--error {
+			color: #EF0000;
+		}
+
+		.--meta {
+			color: #e0e0e0;
+		}
+
+		header {
+			margin: -20px -20px 0 -20px;
+			padding: 20px;
+			color: #FFF;
+			background-color: #005AF0;
+		}
+
+    .link-list {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
     }
 
-    section {
-
-    }
-
-    a {
-      text-transform: uppercase;
-      color: #FFF;
-      margin: 0 5px;
-    }
+      .link-list__link {
+				font-family: 'Poppins', sans-serif;
+				font-weight: 700;
+				padding-right: 12px;
+				color: #005AF0;
+      }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <main>
-      <section>
-        <nav>
-          <a href="{{ g.doc('styleguide/prototypes/last-viewed-components/blue-page.html').url|relative }}">Blue page</a>
+			<header>
+				<h1>Last viewed components</h1>
+	      <p>Move through the linked pages to create history events that get tracked by the sourrounding app shell and then delivered by a virtual endpoint inside the Service Worker.</p>
+				<p>This is the {{ doc.title }}.</p>
+			</header>
 
-          <a href="{{ g.doc('styleguide/prototypes/last-viewed-components/green-page.html').url|relative }}">Green page</a>
+			<nav>
+	  		<ul class="link-list">
+					<a class="link-list__link" href="{{ g.doc('styleguide/prototypes/last-viewed-components/blue-page.html').url|relative }}">Blue page</a>
 
-          <a href="{{ g.doc('styleguide/prototypes/last-viewed-components/red-page.html').url|relative }}">Red page</a>
-        </nav>
+					<a class="link-list__link" href="{{ g.doc('styleguide/prototypes/last-viewed-components/green-page.html').url|relative }}">Green page</a>
 
-        <hr>
+					<a class="link-list__link" href="{{ g.doc('styleguide/prototypes/last-viewed-components/red-page.html').url|relative }}">Red page</a>
+	  		</ul>
+			</nav>
 
-        <p>History</p>
-        <amp-list width="auto" height="100" layout="fixed-height" src="{{ doc.ampListSrc }}">
-          {% raw %}
-          <template type="amp-mustache">
-            <div><i>{{date}}</i>: {{title}}</div>
-          </template>
-          {% endraw %}
+			<h2>History</h2>
+			<amp-list class="history" width="auto" height="100" layout="fixed-height" src="{{ doc.ampListSrc }}" max-items="4">
+				{% raw %}
+				<template type="amp-mustache">
+					<div class="history__item">
+						<span class="history__item --meta">{{ date }}: </span><span>{{ title }}</span>
+					</div>
+				</template>
+				{% endraw %}
 
-          <div placeholder>Loading ...</div>
-          <div fallback>Failed to load data.</div>
-          <div overflow><button>Show more</button></div>
-        </amp-list>
-      </section>
+				<div class="--meta" placeholder>Loading ...</div>
+				<div class="--error" fallback>Failed to load data.</div>
+			</amp-list>
     </main>
-  </body>
+</body>
 </html>
