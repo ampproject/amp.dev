@@ -15,7 +15,6 @@ install:
   - pip install grow --user
   - grow --version
   - yarn global add gulp-cli
-  # - yarn global add firebase-tools
   - yarn
 
 jobs:
