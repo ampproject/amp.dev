@@ -122,8 +122,8 @@ $title: 에니메이션 적용하기
 </amp-story-page>
 ```
 
-{% call callout('For fun', type='success') %}
-재미삼아 `animate-in="<animation preset>"` 속성으로 여러가지 효과를 다른 요소에도
+{% call callout('재미를 위해', type='success') %}
+`animate-in="<animation preset>"` 속성으로 다른 요소에도 여러가지 효과를
 적용해보십시오.
 {% endcall %}
 
@@ -148,7 +148,7 @@ $title: 에니메이션 적용하기
       animate-in="fly-in-left"
       animate-in-delay="0.3s"
       animate-in-duration="0.5s">
-    왼쪽에서부터 날아오는 문구
+    I'm going to fly into the page from the left!
   </div>
 </amp-story-page>
 ```
@@ -277,6 +277,6 @@ Pets can lower your stress levels!</p>
 더 자세한 내용이 있으니 참고하십시오.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/design/visual_story/add_more_pages.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/ko/docs/design/visual_story/create_bookend.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/ko/docs/design/visual_story/add_more_pages.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/design/visual_story/create_bookend.html"><span class="arrow-next">다음</span></a>
 </div>
