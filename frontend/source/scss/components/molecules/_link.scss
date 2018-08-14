@@ -36,5 +36,11 @@ TODO: Discuss about which different modifiers will be needed here. (maybe direct
 
 	.#{atom('ico')} {
 		margin-bottom: auto;
+		margin-right: 0.625em;
+		padding: 0.438em 0;
+
+		&-square {
+			padding: 0.438em;
+		}
 	}
 }

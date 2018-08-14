@@ -30,8 +30,6 @@ TODO: background
 
 .#{atom('ico')} {
 	display: flex;
-	margin-right: 0.625em;
-	padding: 0.438em 0;
 
 	&-#{map-get($sizes, xs)} {
 		width: 1em;
@@ -71,7 +69,6 @@ TODO: background
 	}
 
 	&-square {
-		padding: 0.438em;
 		fill: color('white');
 		background-color: color('blue-ribbon');
 	}
