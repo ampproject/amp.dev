@@ -6,7 +6,9 @@ text: Load More
 icon: arrow-down-thin
 ---
 
-<div class="ad-m-load-more">
-	<p class="ad-a-hl ad-a-hl-h4 ad-a-hl-no-margin">{{doc.text}}</p>
-	{{ atoms.icon(doc.icon, size=1, color="river-bed") }}
+<div class="ad-o-container col-2-6">
+	<div class="ad-m-load-more">
+		<p class="ad-a-hl ad-a-hl-h4 ad-a-hl-no-margin">{{doc.text}}</p>
+		{{ atoms.icon(doc.icon, size=1, fill='river-bed') }}
+	</div>
 </div>
