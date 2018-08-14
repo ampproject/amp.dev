@@ -7,7 +7,7 @@ $title: 커버 페이지를 작성합니다
 AMP 스토리의 페이지는 `<amp-story-page>`로 표현합니다. `<amp-story>`
 컴포넌트는 하나 이상의 페이지, 즉 `<amp-story-page>` 컴포넌트를 포함합니다.
 페이지는 이야기의 한 장면이라고 할 수 있습니다. AMP 스토리는 여러개의 페이지
-중에 먼저 기술된 순서대로 사용자에게 페이지를 보여줍니다. 예를 들면, 처음
+중에 먼저 작성한 순서대로 사용자에게 페이지를 보여줍니다. 예를 들면, 처음
 기술된 페이지가 사용자가 가장 먼저 보는 페이지입니다.
 
 `<amp-story-page>` 요소를 `<amp-story>`의 자식으로 추가하여 페이지를
@@ -48,9 +48,9 @@ AMP 스토리의 페이지는 `<amp-story-page>`로 표현합니다. `<amp-story
 
 `<amp-story-grid-layer>` 요소를 `<amp-story-page>`안에
 추가합니다. 화면전체를 채우는 레이어이기 때문에 `template=”fill”` 속성을
-`amp-story-grid-layer`에 명기해야 합니다. 레이어안에 `cover.jpg` 이미지 파일을
-`<amp-image>` 요소로 추가하세요. 이미지의 크기는 720 x 1280 픽셀로 하되 해당
-amp-image가 반응형(responsive)임을 `layout=”responsive”`속성으로 알려주세요.
+`amp-story-grid-layer`에 기입해야 합니다. 레이어안에 `cover.jpg` 이미지 파일을
+`<amp-img>` 요소로 추가하세요. 이미지의 크기는 720 x 1280 픽셀로 하되 해당
+amp-img가 반응형(responsive)임을 `layout=”responsive”`속성으로 알려주세요.
 여기까지 왔으면 다음과 같은 코드가 나왔을 것입니다:
 
 ```html hl_lines="2 3 4 5 6 7"
