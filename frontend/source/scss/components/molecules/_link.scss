@@ -27,5 +27,14 @@ TODO: Discuss about which different modifiers will be needed here. (maybe direct
 
 */
 
-.#{molecule('link')} {
+.#{molecule('lnk')} {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	padding: 0.75em 0;
+	margin: 0.75em 0;
+
+	.#{atom('ico')} {
+		margin-bottom: auto;
+	}
 }
