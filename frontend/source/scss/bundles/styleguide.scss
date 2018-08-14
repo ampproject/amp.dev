@@ -77,15 +77,44 @@ body {
     }
 
   &__sidebar {
-    padding: 7px;
+    padding: 10px;
+		background: color('white');
 
     @media (min-width: 500px) {
-      padding: 15px;
+      padding: 20px;
     }
 
     ul {
       list-style: none;
-      padding-left: 15px;
+      padding: 0;
+			margin: 0 0 2em;
+
+			li {
+				a {
+					margin: 0;
+					padding-right: 10px;
+					border-bottom: 1px solid darken(color('whisper'), 3%);
+					transition: all 0.25s cubic-bezier(.55,0,.1,1);
+
+					.ad-a-txt,
+					.ad-a-ico {
+						transition: all 0.25s cubic-bezier(.55,0,.1,1);
+					}
+
+					&:hover {
+						border-bottom-color: color('blue-ribbon');
+
+						.ad-a-txt {
+							color: color('blue-ribbon');
+						}
+
+						.ad-a-ico {
+							fill: color('blue-ribbon');
+							transform: translateX(0.313em);
+						}
+					}
+				}
+			}
     }
   }
 
