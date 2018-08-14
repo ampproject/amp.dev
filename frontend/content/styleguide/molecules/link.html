@@ -1,0 +1,46 @@
+---
+$view: /views/styleguide/component.j2
+$title: Link
+links1:
+- text: Internal link with square icon
+  type: 'internal'
+  href: '#'
+- text: External link with square icon
+  type: 'external'
+  href: '#'
+- text: Download link with square icon
+  type: 'download'
+  href: '#'
+links2:
+- text: Internal link with transparent icon
+  type: 'internal'
+  href: '#'
+- text: External link with transparent icon
+  type: 'external'
+  href: '#'
+- text: Download link with transparent icon
+  type: 'download'
+  href: '#'
+---
+<div class="ad-o-container ad-o-container col-4-5">
+	{% for link in doc.links1 %}
+		<a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
+
+			{{ atoms.icon(link.type, size=1, bg='square') }}
+			<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-black">{{ link.text }}</span>
+
+		</a>
+	{% endfor %}
+
+	{% for link in doc.links2 %}
+	<a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
+
+		{{ atoms.icon(link.type, size=1) }}
+		<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ link.text }}</span>
+
+	</a>
+	{% endfor %}
+</div>
+
+
+

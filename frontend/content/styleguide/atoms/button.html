@@ -7,7 +7,7 @@ buttons:
   target: ''
 ---
 {% for btn in doc.buttons %}
-  <div class="o-container">
+  <div class="ad-o-container col-4-5">
     <a class="ad-a-btn ad-a-btn{{ btn.modifier }}" href="{{ btn.link }}" target="{{ btn.target }}">{{ btn.label }}</a>
   </div>
 {% endfor %}

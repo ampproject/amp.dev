@@ -28,43 +28,48 @@ TODO: background
 
 */
 
-
 .#{atom('ico')} {
+	display: flex;
 
-    &-#{map-get($sizes, xs)} {
-      width: 1em;
-      height: 1em;
-    }
+	&-#{map-get($sizes, xs)} {
+		width: 1em;
+		height: 1em;
+	}
 
-    &-#{map-get($sizes, sm)} {
-      width: 2em;
-      height: 2em;
-    }
+	&-#{map-get($sizes, sm)} {
+		width: 2em;
+		height: 2em;
+	}
 
-    &-#{map-get($sizes, md)} {
-      width: 3em;
-      height: 3em;
-    }
+	&-#{map-get($sizes, md)} {
+		width: 3em;
+		height: 3em;
+	}
 
-    &-#{map-get($sizes, lg)} {
-      width: 4em;
-      height: 4em;
-    }
+	&-#{map-get($sizes, lg)} {
+		width: 4em;
+		height: 4em;
+	}
 
-    &-#{map-get($sizes, xl)} {
-      width: 5em;
-      height: 5em;
-    }
+	&-#{map-get($sizes, xl)} {
+		width: 5em;
+		height: 5em;
+	}
 
-    &-blue-ribbon {
-      fill: color('blue-ribbon');
-    }
+	&-blue-ribbon {
+		fill: color('blue-ribbon');
+	}
 
-    &-white {
-      fill: color('white');
-    }
+	&-white {
+		fill: color('white');
+	}
 
-    &-river-bed {
-      fill: color('river-bed');
-    }
+	&-river-bed {
+		fill: color('river-bed');
+	}
+
+	&-square {
+		fill: color('white');
+		background-color: color('blue-ribbon');
+	}
 }

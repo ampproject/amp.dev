@@ -8,12 +8,12 @@ text: An accordion provides a way for viewers to have a glance at the outline of
 link: '/styleguide/molecules/teaser.html'
 linkCopy: Code now
 ---
-<div class="ad-o-container">
+<div class="ad-o-container col-6-4">
   <div class="ad-m-teaser ad-m-teaser-white">
     {% call molecules.teaser(doc.smAccent, doc.lgAccent, doc.text) %}
-      <a href={{ doc.link }} class="ad-m-link">
-        {{atoms.icon('arrow-right', size=1)}}
-        <p class="ad-a-txt-3 ad-a-txt-bl">{{ doc.linkCopy }}</p>
+      <a href={{ doc.link }} class="ad-m-lnk">
+				{{ atoms.icon('internal', size=1) }}
+				<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ doc.linkCopy }}</span>
       </a>
     {% endcall %}
   </div>

@@ -59,11 +59,17 @@ mono (inline, block)
 
     &-mono-block {}
 
-    &-bl {
+    &-strong {
       font-weight: bold;
-      padding-left: 10px;
-      color: color('blue-ribbon');
     }
+
+		&-black {
+			color: color('black');
+		}
+
+		&-blue-ribbon {
+			color: color('blue-ribbon');
+		}
 
     &-teaser-sm {
       opacity: 0.5;

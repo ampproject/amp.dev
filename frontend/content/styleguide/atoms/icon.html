@@ -20,13 +20,14 @@ icons:
 - name: 'time'
 - name: 'user'
 - name: 'flask'
-- name: 'arrow-right'
-- name: 'arrow-right-dot'
+- name: 'internal'
+- name: 'external'
+- name: 'download'
 - name: 'arrow-down-thick'
 - name: 'arrow-down-thin'
 ---
 {% for ico in doc.icons %}
-  <div class="o-container">
+  <div class="ad-o-container col-span-2">
     {{ atoms.icon(ico.name, size=4) }}
   </div>
 {% endfor %}

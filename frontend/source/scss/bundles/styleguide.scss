@@ -7,6 +7,7 @@
 @import '../components/atoms/button';
 @import '../components/atoms/icon';
 
+@import '../components/molecules/link';
 @import '../components/molecules/tip';
 @import '../components/molecules/teaser';
 @import '../components/molecules/copy';
@@ -34,14 +35,16 @@ body {
 .styleguide {
 
   &__header {
-    position: fixed;
-    z-index: 5;
     display: flex;
     width: 100%;
     height: 90px;
-    align-items: center;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 5;
     padding-left: 7px;
     padding-right: 7px;
+		align-items: center;
     color: color('white');
     background-color: color('black');
 
@@ -74,28 +77,154 @@ body {
     }
 
   &__sidebar {
-    padding: 7px;
+    padding: 10px;
+		background: color('white');
 
     @media (min-width: 500px) {
-      padding: 15px;
+      padding: 20px;
     }
 
     ul {
       list-style: none;
-      padding-left: 15px;
+      padding: 0;
+			margin: 0 0 2em;
+
+			li {
+				a {
+					margin: 0;
+					padding-right: 10px;
+					border-bottom: 1px solid darken(color('whisper'), 3%);
+					transition: all 0.25s cubic-bezier(.55,0,.1,1);
+
+					.ad-a-txt,
+					.ad-a-ico {
+						transition: all 0.25s cubic-bezier(.55,0,.1,1);
+					}
+
+					&:hover {
+						border-bottom-color: color('blue-ribbon');
+
+						.ad-a-txt {
+							color: color('blue-ribbon');
+						}
+
+						.ad-a-ico {
+							fill: color('blue-ribbon');
+							transform: translateX(0.313em);
+						}
+					}
+				}
+			}
     }
   }
 
   &__content {
     display: grid;
-    padding-top: 110px;
+		grid-gap: 10px;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
     height: auto;
-    min-height: 100vh;
-    grid-template-columns: 1fr;
+		margin-top: 110px;
 
     @media screen and (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
+      grid-template-columns: repeat(12, 1fr);
+
+			.col-1-1 { grid-column: 1 / 2; }
+			.col-1-2 { grid-column: 2 / 3; }
+			.col-1-3 { grid-column: 3 / 4; }
+			.col-1-4 { grid-column: 4 / 5; }
+			.col-1-5 { grid-column: 5 / 6; }
+			.col-1-6 { grid-column: 6 / 7; }
+			.col-1-7 { grid-column: 7 / 8; }
+			.col-1-8 { grid-column: 8 / 9; }
+			.col-1-9 { grid-column: 9 / 10; }
+			.col-1-10 { grid-column: 10 / 11; }
+			.col-1-11 { grid-column: 11 / 12; }
+			.col-1-12 { grid-column: 12 / 13; }
+
+			.col-2-1 { grid-column: 1 / 3; }
+			.col-2-2 { grid-column: 2 / 4; }
+			.col-2-3 { grid-column: 3 / 5; }
+			.col-2-4 { grid-column: 4 / 6; }
+			.col-2-5 { grid-column: 5 / 7; }
+			.col-2-6 { grid-column: 6 / 8; }
+			.col-2-7 { grid-column: 7 / 9; }
+			.col-2-8 { grid-column: 8 / 10; }
+			.col-2-9 { grid-column: 9 / 11; }
+			.col-2-10 { grid-column: 10 / 12; }
+			.col-2-11 { grid-column: 11 / 13; }
+
+			.col-3-1 { grid-column: 1 / 4; }
+			.col-3-2 { grid-column: 2 / 5; }
+			.col-3-3 { grid-column: 3 / 6; }
+			.col-3-4 { grid-column: 4 / 7; }
+			.col-3-5 { grid-column: 5 / 8; }
+			.col-3-6 { grid-column: 6 / 9; }
+			.col-3-7 { grid-column: 7 / 10; }
+			.col-3-8 { grid-column: 8 / 11; }
+			.col-3-9 { grid-column: 9 / 12; }
+			.col-3-10 { grid-column: 10 / 13; }
+
+			.col-4-1 { grid-column: 1 / 5; }
+			.col-4-2 { grid-column: 2 / 6; }
+			.col-4-3 { grid-column: 3 / 7; }
+			.col-4-4 { grid-column: 4 / 8; }
+			.col-4-5 { grid-column: 5 / 9; }
+			.col-4-6 { grid-column: 6 / 10; }
+			.col-4-7 { grid-column: 7 / 11; }
+			.col-4-8 { grid-column: 8 / 12; }
+			.col-4-9 { grid-column: 9 / 13; }
+
+			.col-5-1 { grid-column: 1 / 6; }
+			.col-5-2 { grid-column: 2 / 7; }
+			.col-5-3 { grid-column: 3 / 8; }
+			.col-5-4 { grid-column: 4 / 9; }
+			.col-5-5 { grid-column: 5 / 10; }
+			.col-5-6 { grid-column: 6 / 11; }
+			.col-5-7 { grid-column: 7 / 12; }
+			.col-5-8 { grid-column: 8 / 13; }
+
+			.col-6-1 { grid-column: 1 / 7; }
+			.col-6-2 { grid-column: 2 / 8; }
+			.col-6-3 { grid-column: 3 / 9; }
+			.col-6-4 { grid-column: 4 / 10; }
+			.col-6-5 { grid-column: 5 / 11; }
+			.col-6-6 { grid-column: 6 / 12; }
+			.col-6-7 { grid-column: 7 / 13; }
+
+			.col-7-1 { grid-column: 1 / 8; }
+			.col-7-2 { grid-column: 2 / 9; }
+			.col-7-3 { grid-column: 3 / 10; }
+			.col-7-4 { grid-column: 4 / 11; }
+			.col-7-5 { grid-column: 5 / 12; }
+			.col-7-6 { grid-column: 6 / 13; }
+
+			.col-8-1 { grid-column: 1 / 9; }
+			.col-8-2 { grid-column: 2 / 10; }
+			.col-8-3 { grid-column: 3 / 11; }
+			.col-8-4 { grid-column: 4 / 12; }
+			.col-8-5 { grid-column: 5 / 13; }
+
+			.col-9-1 { grid-column: 1 / 10; }
+			.col-9-2 { grid-column: 2 / 11; }
+			.col-9-3 { grid-column: 3 / 12; }
+			.col-9-4 { grid-column: 4 / 13; }
+
+			.col-10-1 { grid-column: 1 / 11; }
+			.col-10-2 { grid-column: 2 / 12; }
+			.col-10-3 { grid-column: 3 / 13; }
+
+			.col-11-1 { grid-column: 1 / 12; }
+			.col-11-2 { grid-column: 2 / 13; }
+
+			.col-12 { grid-column: 1 / 13; }
+
+			.col-span-1 { grid-column: span 1; }
+			.col-span-2 { grid-column: span 2; }
+			.col-span-3 { grid-column: span 3; }
+			.col-span-4 { grid-column: span 4; }
+			.col-span-5 { grid-column: span 5; }
+			.col-span-6 { grid-column: span 6; }
     }
   }
 }
