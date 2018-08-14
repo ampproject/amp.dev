@@ -21,7 +21,6 @@ set -e
 
 GREEN() { echo -e "\033[1;32m$1\033[0m"; }
 CYAN() { echo -e "\033[1;36m$1\033[0m"; }
-RED() { echo -e "\033[1;31m$1\033[0m"; }
 
 echo $(GREEN "Deploying build output for TRAVIS_BRANCH") $(CYAN "${TRAVIS_BRANCH}")
 
@@ -76,12 +75,6 @@ ls -la build/
 
 # Deploy build
 echo $(GREEN "Deploying to firebase...")
-echo -e 'travis_fold:start:deploy\n'
-firebase deploy --token "${FIREBASE_TOKEN}" --non-interactive --debug
-DEPLOY_RESULT=$?
-echo -e 'travis_fold:end:deploy\n'
-if [ DEPLOY_RESULT != 0 ]; then
-  echo $(RED "ERROR: Something went wrong during") $(CYAN "firebase deploy") $(RED ". Expand section above for logs.")
-fi
+firebase deploy --token "${FIREBASE_TOKEN}" --non-interactive
 
 echo $(GREEN "Done deploying build output for TRAVIS_BRANCH") $(CYAN "${TRAVIS_BRANCH}")
