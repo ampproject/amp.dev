@@ -21,7 +21,7 @@ it and then get in other components that may have been referenced #}
 {% endblock %}
 
 {% block icons %}
-{% for ico in ['amp', 'code', 'edit', 'discussion', 'lego', 'lock', 'magazine', 'map', 'money', 'browser', 'search', 'stories', 'template', 'time', 'user', 'flask', 'arrow-right', 'arrow-down', 'arrow-right-dot', 'arrow-down-thick', 'arrow-down-thin', 'bookmark', 'basket'] %}
+{% for ico in ['amp', 'code', 'edit', 'discussion', 'lego', 'lock', 'magazine', 'map', 'money', 'browser', 'search', 'stories', 'template', 'time', 'user', 'flask', 'internal', 'external', 'download', 'arrow-down-thick', 'arrow-down-thin', 'bookmark', 'basket'] %}
 {% include 'partials/icons/' + ico + '.svg' %}
 {% endfor %}
 {% endblock %}
