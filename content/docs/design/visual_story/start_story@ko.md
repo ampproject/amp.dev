@@ -4,7 +4,7 @@ $title: 본격적으로 스토리를 시작합니다
 
 이제부터 작성할 이야기는 `amp-story` 컴포넌트안에 들어가는데 `amp-story`는 이야기를
 구성하는 모든 페이지를 포함하는 컨테이너 역할을 합니다. `amp-story` 컴포넌트는
-사용자의 동작(gesture)과 이동(navigation)을 처리하는 UI상의 외피 역할도 합니다.
+사용자의 동작(gesture)과 이동(navigation)을 처리하는 UI 셸 역할도 합니다.
 
 `amp-story`는 커스텀 AMP 컴포넌트라서 해당 AMP 문서에서 미리
 필요한 스크립트를 추가해주어야 합니다. 예제에서 보면 `pets.html` 파일을 에디터에서
@@ -18,7 +18,7 @@ $title: 본격적으로 스토리를 시작합니다
 ```
 
 이제 `<amp-story>` 요소를 `<body>`안에 **추가**합니다. 참, `standalone` 속성을 
-추가하는 것을 잊지 마세요.
+추가하는 것을 잊지 마십시오.
 
 ```html hl_lines="2 3" 
 <body>
@@ -52,9 +52,9 @@ $title: 본격적으로 스토리를 시작합니다
     poster-portrait-src="assets/cover.jpg">
 ```
 
-위의 필수 속성외에도 다른 속성도 있어요. 다른 속성에 대해서도 알고 싶으면
+위의 필수 속성외에도 다른 속성도 있습니다. 다른 속성에 대해서도 알고 싶으면
 `amp-story` 레퍼런스 문서의 [attributes](/ko/docs/reference/components/amp-story.html#attributes)
-섹션을 참고하세요.
+섹션을 참고하십시오.
 
 {% call callout('Note', type='note') %}
 여기에서 설명한 메타데이터 속성은 해당 페이지의 Structured Data (예를 들면
