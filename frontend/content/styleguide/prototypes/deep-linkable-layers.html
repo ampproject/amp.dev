@@ -8,8 +8,8 @@ $title: Deep linkable layers
     <title>{{ doc.title }}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-		<script async src="/v0/amp.js"></script>
-    <script async custom-element="amp-lightbox" src="/v0/amp-lightbox-0.1.max.js"></script>
+		<script async src="{{ g.static('/static/root/v0/amp.js').url|relative }}"></script>
+    <script async custom-element="amp-lightbox" src="{{ g.static('/static/root/v0/amp-lightbox-0.1.max.js').url|relative }}"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400|Poppins:700" rel="stylesheet">
 
