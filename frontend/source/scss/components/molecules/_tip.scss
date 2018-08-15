@@ -43,8 +43,8 @@
 
   &-important {
     border-right: 5px solid color('red');
-    -webkit-clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
-    clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
+    -webkit-clip-path: polygon(0% 20px, 20px 0%, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
+    clip-path: polygon(0% 20px, 20px 0%, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
   }
 
   &-note {
