@@ -4,7 +4,7 @@ $title: 북엔드 만들기
 
 자, 이제 모든 페이지를 추가했습니다. 이번에는 스토리의 마지막 화면인 북엔드(bookend)를 살펴보겠습니다. 마지막 화면은 스토리를 마감하면서 SNS 공유 또는 연관된 스토리에 대한 링크를 제공합니다. 독자들이 여러분의 스토리를 공유하거나 다른 컨텐츠로 자연스럽게 이동할 수 있습니다.
 
-북엔드 화면의 정보는 `<amp-story-bookend>` 컴포넌트에 명시된 JSON 파일로부터 옵니다. 이번 자습서를 위해 ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) JSON 파일을 미리 만들어 두었습니다.
+북엔드 화면의 정보는 `<amp-story-bookend>` 컴포넌트에 명시된 JSON 파일로부터 옵니다. 이번 자습서를 위해 JSON 파일([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json))을 미리 만들어 두었습니다.
 
 `<amp-story-bookend>` 태그는 `<amp-story>`안에서 가장 마지막에 두어야 할 태그입니다. 따라서 `<amp-story-bookend></amp-story-bookend>`를 `</amp-story>`태그 **앞에 넣습니다**. `amp-story-bookend` 태그의 `src` 속성은 `bookend.json`으로 설정하고 `layout="nodisplay"` 속성을 추가합니다:
 
@@ -14,7 +14,7 @@ $title: 북엔드 만들기
 </amp-story>
 ```
 
-여러분의 웹브라우저에서 새로고침을 하고 마지막 화면까지 오면 다음과 같은 화면이 보일 것입니다:
+웹브라우저에서 새로고침을 하고 마지막 화면까지 오면 다음과 같은 화면이 보일 것입니다:
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='Bookend' ) }}
 
