@@ -3,24 +3,17 @@
   width: 100%;
   background: color('white');
   border-right: 5px solid color('malachite');
-  padding: 25px 30px 50px 25px;
+  padding: 25px 30px 70px 25px;
   grid-row: span 1;
   position: relative;
 
   @media screen and (min-width: 768px) {
     width: auto;
-    padding: 25px 55px 35px 40px;
+    padding: 25px 55px 55px 40px;
   }
 
   &-default {
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0px;
-      bottom: -25px;
-      border-right: 25px solid transparent;
-      border-top: 25px solid color('white');
-    }
+    clip-path: polygon(0px 0px, 100% 0px, 100% calc(100% - 30px), 30px calc(100% - 30px), 0px 100%);
   }
 
   &-read-on {
