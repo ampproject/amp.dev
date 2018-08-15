@@ -1,0 +1,32 @@
+---
+$view: /views/styleguide/component.j2
+$title: Shift Image
+
+components:
+- name: amp-img
+  src: https://cdn.ampproject.org/v0.js
+- name: amp-fx-collection
+  src: https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js
+---
+<div class="ad-o-container">
+	<div class="ad-m-image-wrapper">
+		<div class="ad-m-image">
+			<amp-img src="../../../static/img/amp-img-02.png"
+				height="250"
+				width="250"
+				layout="flex-item"
+  			alt="AMP">
+			</amp-img>
+		</div>
+		<div class="ad-m-image ad-m-image-parallax"
+		amp-fx="parallax"
+		data-parallax-factor="1.3">
+			<amp-img src="../../../static/img/amp-img-03.png"
+				height="150"
+				width="250"
+				layout="flex-item"
+  			alt="AMP">
+			</amp-img>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+.#{organism('container')} {
+	padding: 0;
+	grid-column: 1;
+
+	@media screen and (min-width: 768px) {
+		grid-column: 2 / span 1;
+	}
+}
+
+.#{molecule('image')} {
+	@include box-shadow;
+
+	&-parallax {
+		position: absolute;
+		z-index: 10;
+		margin-left: 10%;
+		margin-top: -40px;
+
+		@media screen and (min-width: 768px) {
+			margin-left: 7%;
+		}
+	}
+
+	&-wrapper {
+		justify-content: center;
+		display: flex;
+	}
+}

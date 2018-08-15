@@ -1,0 +1,21 @@
+---
+$view: /views/styleguide/component.j2
+$title: Image
+
+images:
+- src: ../../../static/img/amp-img-01.png
+  parallax: true
+---
+
+<div class="ad-o-container">
+	{% for image in images %}
+		<div class="ad-a-img ad-a-img-shadow-static">
+			<amp-img src="../../../static/img/amp-img-01.png"
+				height="250"
+				width="250"
+				layout="flex-item"
+				alt="AMP">
+			</amp-img>
+	</div>
+	{% endfor %}
+</div>
