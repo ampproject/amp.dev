@@ -150,7 +150,7 @@ Adds support for Google Analytics. More details for adding Google Analytics supp
 
 Type attribute value: N/A
 
-Google Tag Manager is [supported](https://developers.google.com/google-ads/amp/landing-pages#google_tag_manager) in AMP, and a list of supported tags can be found [here](https://support.google.com/tagmanager/answer/6106924). To add Google Tag Manager to your AMP page, follow the instructions [here](https://support.google.com/tagmanager/answer/6103696). Unlike other vendors, Google Tag Manager does not require the `type` attribute to be set.
+Unlike other analytics vendors, Google Tag Manager is a tag management service, and does not require the `type` attribute. Google Tag Manager is [supported](https://developers.google.com/google-ads/amp/landing-pages#google_tag_manager) in AMP.  Consult the Google Tag Manager documentation for [supported tags](https://support.google.com/tagmanager/answer/6106924) and for instructions on [adding Google Tag Manager to your AMP page](https://support.google.com/tagmanager/answer/6103696). 
 
 ### INFOnline / IVW
 
