@@ -1,0 +1,58 @@
+.#{organism('container')} {
+	height: 100vh;
+}
+
+.#{molecule('shift-image')} {
+	display: grid;
+	grid-template-columns: repeat(6, 75px);
+	grid-template-rows: 40px repeat(5, 75px);
+	padding: 30px 0px;
+
+	& .#{atom('img')} {
+		grid-column: 1 / 4;
+		grid-row: 2 / 6;
+		position: relative;
+
+		&-parallax {
+			grid-column: 2 / 5;
+			grid-row: 1 / 4;
+			z-index: 4;
+		}
+
+		&-static-image {
+			grid-column: 3 / 6;
+			grid-row: 2 / 5;
+
+			@media screen and (min-width: 768px) {
+				grid-column: 4 / 7;
+			}
+		}
+	}
+}
+
+.#{molecule('static-image')} {
+	display: grid;
+	grid-template-columns: repeat(3, 75px);
+	grid-template-rows: repeat(3, 75px);
+}
+
+.#{molecule('copy-wrapper')} {
+	display: grid;
+	grid-template-columns: repeat(6, 75px);
+	grid-template-rows: repeat(6, 75px);
+}
+
+.#{atom('txt')} {
+	grid-column: 1 / 6;
+	grid-row: 2 / 5;
+	padding-right: 40px;
+
+	@media screen and (min-width: 768px) {
+		grid-column: 1 / 7;
+		padding: 0;
+	}
+}
+
+.#{atom('hl')} {
+	grid-column: 1 / 4;
+}
