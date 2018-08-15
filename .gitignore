@@ -36,4 +36,4 @@ frontend/views
 frontend/macros
 
 # Ignore static files as they will either be built or gathered by gulp
-frontend/static/static
+frontend/static/static/css
