@@ -82,9 +82,9 @@
   }
 
   &-container {
+    @include drop-shadow;
     grid-column: 1 / span 1;
     padding: 0px 80px 40px 20px;
-    filter: drop-shadow(shadows('drop'));
 
     @media screen and (min-width: 768px) {
       grid-column: 2 / span 1;
