@@ -20,6 +20,6 @@ AMP 스토리에 대한 좀 더 자세한 자료는 다음과 같습니다:
 - [amp-story 레퍼런스 문서](/ko/docs/reference/components/amp-story.html)
 - [AMP 스토리 베스트 프랙티스](/ko/docs/design/amp_story_best_practices.html)
 
-{% call callout('Note', type='note') %}
+{% call callout('노트', type='note') %}
 [amp-story](/ko/docs/reference/components/amp-story.html) 컴포넌트는 현재 **실험 상태**입니다. 
 {% endcall %}
