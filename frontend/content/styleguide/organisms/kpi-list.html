@@ -5,6 +5,8 @@ $title: KPI List
 components:
 - name: amp-carousel
   src: https://cdn.ampproject.org/v0/amp-carousel-0.1.js
+- name: amp-selector
+  src: https://cdn.ampproject.org/v0/amp-selector-0.1.js
 
 kpis:
 - documentation:
@@ -35,6 +37,10 @@ kpis:
     text: Lorem ipsum dolor sit amet
     type: orange
     icon: search
+  - title: 63%
+    text: Lorem ipsum dolor sit amet
+    type: orange
+    icon: search
 - amp:
   items:
   - title: 63%
@@ -53,8 +59,8 @@ kpis:
 
 <div class="ad-o-kpi-list col-6-5">
 {% for kpi in doc.kpis %}
-	<amp-carousel height="190" layout="fixed-height" type="carousel">
-		{% for item in kpi['items'] %}
+	<amp-carousel height="170" media="(max-width: 767px)" layout="fixed-height" type="carousel">
+	{% for item in kpi['items'] %}
 			<div class="ad-m-kpi ad-m-kpi-{{ item.type }}">
 				{{ atoms.icon( item.icon , size=2, fill="white") }}
 				<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">{{ item.title }}</span>
@@ -62,5 +68,16 @@ kpis:
 		</div>
 		{% endfor %}
   </amp-carousel>
+	<amp-selector media="(min-width: 768px)" layout="container">
+		<div class="ad-o-kpi-list-wrapper">
+			{% for item in kpi['items'] %}
+				<div class="ad-m-kpi ad-m-kpi-{{ item.type }}">
+					{{ atoms.icon( item.icon , size=2, fill="white") }}
+					<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">{{ item.title }}</span>
+					<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">{{ item.text }}</p>
+			</div>
+			{% endfor %}
+		</div>
+  </amp-selector>
 {% endfor %}
 </div>
