@@ -36,7 +36,6 @@ mono
   font-weight: bold;
   line-height: 1.2em;
   color: color('black');
-  margin: 0;
 
     &-h1 {
       font-size: 3em;
@@ -48,19 +47,10 @@ mono
 
     &-h3 {
       font-size: 1.5em;
-      margin-bottom: 40px;
     }
 
     &-h4 {
       font-size: 1em;
-      margin-bottom: 10px;
-      @media screen and (min-width: 768px) {
-        margin-bottom: 20px;
-      }
-    }
-
-    &-no-margin {
-      margin: 0;
     }
 
     &-light {
