@@ -17,3 +17,7 @@ amp-accordion > h1 {
 @mixin emerald-doger {
 	background: linear-gradient(45deg, color('emerald'), color('doger-blue'));
 }
+
+@include river-ebony {
+	background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+}
