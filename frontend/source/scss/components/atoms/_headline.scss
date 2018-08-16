@@ -6,8 +6,8 @@
 
 ### SAMPLE MARKUP:
 
-<h2 class="a-hl-h1 a-hl-mono">
-    Text
+<h2 class="ad-a-hl ad-a-hl-h1">
+  The Headline Text
 </h2>
 
 ### INFO:
@@ -19,17 +19,14 @@ New modifiers can be added below.
 ### MODIFIERS:
 
 h1 - h6
-    Self explaining.
+  All values in em depending on base font-size of 16 px.
 
 light
-    Changes the text color to light (default is dark).
-
-mono
-    Changes the font-family to a monospaced font.
+  Changes the text color to light (default is dark).
 
 */
 
-// TODO: use rem instead of px for font sizes
+// TODO: implement mono font and modifier
 
 .#{atom('hl')} {
   font-family: Poppins;

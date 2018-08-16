@@ -6,20 +6,18 @@
 
 ### SAMPLE MARKUP:
 
-<button type="button" name="button" class="a-btn a-btn-outline">
-    Text
-</button>
+<a class="ad-a-btn" href="#">
+	The Button Text
+</a>
 
 ### INFO:
 
-The regular button has only one size and one modifier.
-It should be never overwritten in any other file.
-New modifiers can be added below.
+The regular button has only one size and no modifiers yet.
+The text style is always extended from light headline 3 but in uppercase letters.
 
 ### MODIFIERS:
 
-outline
-    Changes the button style to outline (default is filled).
+none
 
 */
 

@@ -1,3 +1,42 @@
+/*
+
+#####################
+### MOLECULE: tip ###
+#####################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-tip-container">
+	<div class="ad-m-tip ad-m-tip-default">
+		<h4 class="ad-a-hl ad-a-hl-h4">
+			The Headline Text
+		</h4>
+		<p class="ad-a-txt ad-a-txt-3  ad-a-txt-p">
+			The Copy Text
+		</p>
+	</div>
+</div>
+
+### INFO:
+
+The tip molecule includes headline and text atoms.
+It has 4 different modifiers for different use-cases.
+
+### MODIFIERS:
+
+default
+	Green border on the right and triangle outside the lower left corner.
+
+note
+	Blue border on the right and triangle inside the lower right corner.
+
+important
+	Red border on the right and cutted triangles inside the left corners.
+
+read-on
+	Yellow border on the right and ribbon shape outside the lower right corner.
+
+*/
 
 .#{molecule('tip')} {
   width: 100%;

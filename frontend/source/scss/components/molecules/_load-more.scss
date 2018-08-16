@@ -1,3 +1,32 @@
+/*
+
+###########################
+### MOLECULE: load-more ###
+###########################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-load-more">
+	<span class="ad-a-hl ad-a-hl-h4">
+		The Text
+	</span>
+	<svg class="ad-a-ico ad-a-ico-arrow-down-thin ad-a-ico-1 ad-a-ico-river-bed ad-a-ico-transparent">
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down-thin"></use>
+	</svg>
+</div>
+
+### INFO:
+
+The load-more molecule is a combination of headline and icon atom.
+The size of the icon should be 1 and headline should be h4.
+The icon should be arrow-down-thin.
+
+### MODIFIERS:
+
+none
+
+*/
+
 .#{molecule('load-more')} {
 	display: flex;
 	flex-direction: column;
