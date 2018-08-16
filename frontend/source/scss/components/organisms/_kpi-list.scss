@@ -1,5 +1,7 @@
 .#{organism('kpi-list')} {
 	width: 100vw;
+	display: grid;
+	grid-gap: 20px;
 
 	@media screen and (min-width: 768px) {
 		width: auto;
