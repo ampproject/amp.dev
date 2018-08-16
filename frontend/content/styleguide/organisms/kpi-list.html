@@ -1,0 +1,34 @@
+---
+$view: /views/styleguide/component.j2
+$title: KPI List
+
+components:
+- name: amp-carousel
+  src: https://cdn.ampproject.org/v0/amp-carousel-0.1.js
+
+kpis:
+- title: 63%
+  text: Lorem ipsum dolor sit amet
+  type: stories
+  icon: stories
+- title: 63%
+  text: Lorem ipsum dolor sit amet
+  type: code
+  icon: code
+- title: 63%
+  text: Lorem ipsum dolor sit amet
+  type: statistics
+  icon: stories
+---
+
+<div class="ad-o-kpi-list col-6-6">
+	<amp-carousel height="190" layout="fixed-height" type="carousel">
+		{% for kpi in doc.kpis %}
+			<div class="ad-m-kpi ad-m-kpi-{{ kpi.type }}">
+				{{ atoms.icon( kpi.icon , size=2, fill="white") }}
+				<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">{{ kpi.title }}</span>
+				<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">{{ kpi.text }}</p>
+		</div>
+		{% endfor %}
+  </amp-carousel>
+</div>
