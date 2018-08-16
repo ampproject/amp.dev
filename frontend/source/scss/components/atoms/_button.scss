@@ -6,20 +6,18 @@
 
 ### SAMPLE MARKUP:
 
-<button type="button" name="button" class="a-btn a-btn-outline">
-    Text
-</button>
+<a class="ad-a-btn" href="#">
+	The Button Text
+</a>
 
 ### INFO:
 
-The regular button has only one size and one modifier.
-It should be never overwritten in any other file.
-New modifiers can be added below.
+The regular button has only one size and no modifiers yet.
+The text style is always extended from light headline 3 but in uppercase letters.
 
 ### MODIFIERS:
 
-outline
-    Changes the button style to outline (default is filled).
+none
 
 */
 
@@ -28,21 +26,21 @@ outline
 	@extend .#{atom('hl-h3')} !optional;
 	@extend .#{atom('hl-light')} !optional;
 
-    display: inline-block;
-    max-width: 100%;
-    min-width: 230px;
-    width: auto;
-    height: auto;
-    padding: .813rem 1.626rem;
-    margin: 0;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    background-color: color('blue-ribbon');
-    border: 3px solid color('blue-ribbon');
+	display: inline-block;
+	max-width: 100%;
+	min-width: 230px;
+	width: auto;
+	height: auto;
+	padding: .813rem 1.626rem;
+	margin: 0;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	background-color: color('blue-ribbon');
+	border: 3px solid color('blue-ribbon');
 
-    &:hover {
-    	background-color: color('river-bed');
-    	border: 3px solid color('river-bed');
-    }
+	&:hover {
+		background-color: color('river-bed');
+		border: 3px solid color('river-bed');
+	}
 }

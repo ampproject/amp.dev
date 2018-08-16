@@ -6,24 +6,23 @@
 
 ### SAMPLE MARKUP:
 
-<a href="#" class="m-link">
-	<icon />
-	<text />
-	?<hr />?
+<a class="ad-m-lnk" href="#" target="_blank">
+	<svg class="ad-a-ico ad-a-ico-external ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
+	</svg>
+	<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">
+		The Link Text
+	</span>
 </a>
-
-TODO: Update sample markup.
-TODO: Discuss about the hr-tag or other kind of divider.
 
 ### INFO:
 
-This molecule outputs two atoms: icon and text.
-NOTE: It is important to not overwrite the atoms in the molecule.
-If custom changes are needed, they have to be added as modifiers in the atoms.
+The link molecule is a combination of icon and text atom.
+The size of the icon should be 1 (xsmall) and text should be 3 (medium).
 
 ### MODIFIERS:
 
-TODO: Discuss about which different modifiers will be needed here. (maybe direction?)
+none
 
 */
 

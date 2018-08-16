@@ -1,3 +1,45 @@
+/*
+
+########################
+### MOLECULE: teaser ###
+########################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-teaser ad-m-teaser-white">
+	<h5 class="ad-a-txt ad-a-txt-1">
+		The Subline Text
+	</h5>
+	<h4 class="ad-a-hl ad-a-hl-h4">
+		The Headline Text
+	</h4>
+	<p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">
+		The Text
+	</p>
+
+	<a class="ad-m-lnk" href="#">
+		<svg class="ad-a-ico ad-a-ico-internal ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
+		</svg>
+		<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">
+			The Link Text
+		</span>
+	</a>
+</div>
+
+
+### INFO:
+
+The teaser molecule includes link molecule and headline, text and icon atom.
+The link molecule inside this should not be customized.
+
+### MODIFIERS:
+
+white
+	Gaves the teaser a white background, padding and drop-shadow. (Default is transparent)
+
+*/
+
 .#{molecule('teaser')} {
   &-white {
     @include box-shadow;
