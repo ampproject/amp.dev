@@ -11,15 +11,15 @@
 		white-space: normal;
 	}
 
-	&-stories {
-		background: linear-gradient(45deg, color('emerald'), color('doger-blue'));
+	&-blue {
+		@include emerald-doger;
 	}
 
-	&-code {
-		background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+	&-orange {
+		@include turbo-pizazz;
 	}
 
-	&-statistics {
-		background: linear-gradient(45deg, color('turbo'), color('pizazz'));
+	&-black {
+		@include river-ebony;
 	}
 }
