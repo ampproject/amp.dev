@@ -2,7 +2,7 @@
 $title: AMP HTML 유효성 검사
 ---
 
-AMP 페이지를 작성하고 나면 꼭 AMP HTML 유효성 검사를 하십시오. [유효성 검사를 하는 방법에는 여러가지가 있습니다](/ko/docs/fundamentals/validate.html). 이번 자습서에서는 개발자 모드를 켜서 AMP 유효성 검사기(AMP Validator)를 사용해보겠습니다. 다음의 프래그먼트를 URL에 추가하고 새로고침을 하면 개발자 모드가 켜집니다.
+AMP 페이지를 작성하고 나면 꼭 AMP HTML 유효성 검사를 하십시오. [유효성 검사를 하는 방법에는 여러가지가 있습니다](/ko/docs/fundamentals/validate.html). 이번 튜토리얼에서는 개발자 모드를 켜서 AMP 유효성 검사기(AMP Validator)를 사용해보겠습니다. 다음의 프래그먼트를 URL에 추가하고 새로고침을 하면 개발자 모드가 켜집니다.
 
 ```text
 #development=1
