@@ -197,6 +197,12 @@ Type attribute value: `mediarithmics`
 
 Adds support for mediarithmics. More information and configuration details can be found at [developer.mediarithmics.com](https://developer.mediarithmics.com/).
 
+### Moat Analytics
+
+Type attribute value: `moat`
+
+Adds support for Moat. Please contact your Moat representative for configuration details. More information on Moat can be found at [moat.com/analytics](https://moat.com/analytics).
+
 ### Mobify
 
 Type attribute value: `mobify`
