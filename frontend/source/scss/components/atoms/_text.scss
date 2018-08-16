@@ -6,8 +6,8 @@
 
 ### SAMPLE MARKUP:
 
-<p class="a-txt a-txt-p">
-    Text
+<p class="ad-a-txt ad-a-txt-p">
+  The Text
 </p>
 
 ### INFO:
@@ -18,54 +18,54 @@ It has multiple size modifiers (more could be added below).
 ### MODIFIERS:
 
 sizes
-    Selector names of the sizes could be changed globally in variables.
+  Selector names of the sizes could be changed globally in variables.
 
 p
-    Paragraph style text.
+  Paragraph style text.
 
-mono (inline, block)
-    Changes the font-family to a monospaced font as inline or block text.
+TODO: mono (inline, block)
+  Changes the font-family to a monospaced font as inline or block text.
 
 */
 
 .#{atom('txt')} {
-    font-family: Noto Sans;
-    line-height: 1.6em;
-    font-weight: normal;
-    color: color('river-bed');
-    margin: 0;
+	font-family: Noto Sans;
+	line-height: 1.6em;
+	font-weight: normal;
+	color: color('river-bed');
+	margin: 0;
 
-    &-#{map-get($sizes, xs)} {
-      font-size: 0.625em;
-    }
+	&-#{map-get($sizes, xs)} {
+		font-size: 0.625em;
+	}
 
-    &-#{map-get($sizes, sm)} {
-      font-size: 0.75em;
-    }
+	&-#{map-get($sizes, sm)} {
+		font-size: 0.75em;
+	}
 
-    &-#{map-get($sizes, md)} {
-      font-size: 0.875em;
-    }
+	&-#{map-get($sizes, md)} {
+		font-size: 0.875em;
+	}
 
-    &-#{map-get($sizes, lg)} {
-      font-size: 1em;
-    }
+	&-#{map-get($sizes, lg)} {
+		font-size: 1em;
+	}
 
-    &-#{map-get($sizes, xl)} {}
+	&-#{map-get($sizes, xl)} {}
 
-    &-p {}
+	&-p {}
 
-    &-mono-inline {}
+	&-mono-inline {}
 
-    &-mono-block {}
+	&-mono-block {}
 
-    &-strong {
-      font-weight: bold;
-    }
+	&-strong {
+		font-weight: bold;
+	}
 
-		&-black {
-			color: color('black');
-		}
+	&-black {
+		color: color('black');
+	}
 
 		&-blue-ribbon {
 			color: color('blue-ribbon');
@@ -75,9 +75,9 @@ mono (inline, block)
       color: color('white');
     }
 
-    &-teaser-sm {
-      opacity: 0.5;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
+	&-teaser-sm {
+		opacity: 0.5;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 }
