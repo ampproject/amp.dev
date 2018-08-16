@@ -14,12 +14,19 @@
 @import '../components/molecules/copy';
 @import '../components/molecules/load-more';
 @import '../components/molecules/float-image';
+@import '../components/molecules/kpi';
+
 
 @import '../components/organisms/teaser-list';
+@import '../components/organisms/kpi-list';
 
 /* The following styles only define the styles needed to make the styleguide
 a little more appealing. All component styles should reside in their dedicated
 file and may be imported at the top of this file */
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
 
 body {
   padding: 0;
