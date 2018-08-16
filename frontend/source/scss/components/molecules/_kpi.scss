@@ -1,0 +1,25 @@
+.#{molecule('kpi')} {
+	height: 190px;
+	width: 190px;
+	@include box-shadow;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 1.5em;
+
+	.ad-a-txt {
+		white-space: normal;
+	}
+
+	&-stories {
+		background: linear-gradient(45deg, color('emerald'), color('doger-blue'));
+	}
+
+	&-code {
+		background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+	}
+
+	&-statistics {
+		background: linear-gradient(45deg, color('turbo'), color('pizazz'));
+	}
+}
