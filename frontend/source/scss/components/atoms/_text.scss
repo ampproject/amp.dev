@@ -69,7 +69,11 @@ mono (inline, block)
 
 		&-blue-ribbon {
 			color: color('blue-ribbon');
-		}
+    }
+
+    &-light {
+      color: color('white');
+    }
 
     &-teaser-sm {
       opacity: 0.5;
