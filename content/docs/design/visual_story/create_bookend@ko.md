@@ -2,7 +2,7 @@
 $title: 북엔드 만들기
 ---
 
-자, 이제 모든 페이지를 추가했습니다. 이번에는 스토리의 마지막 화면인 북엔드(bookend)를 살펴보겠습니다. 마지막 화면은 스토리를 마감하면서 SNS 공유 또는 연관된 스토리에 대한 링크를 제공합니다. 독자들이 여러분의 스토리를 공유하거나 다른 컨텐츠로 자연스럽게 이동할 수 있습니다.
+자, 이제 모든 페이지를 추가했습니다. 이번에는 스토리의 마지막 화면인 북엔드(bookend)를 살펴보겠습니다. 마지막 화면은 스토리를 마무리하면서 SNS 공유 또는 연관된 스토리에 대한 링크를 제공합니다. 독자들이 여러분의 스토리를 공유하거나 다른 컨텐츠로 자연스럽게 이동할 수 있습니다.
 
 북엔드 화면의 정보는 `<amp-story-bookend>` 컴포넌트에 명시된 JSON 파일로부터 옵니다. 이번 자습서를 위해 JSON 파일([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json))을 미리 만들어 두었습니다.
 
@@ -26,7 +26,7 @@ JSON 파일을 살펴보겠습니다. 텍스트 에디터에서 [bookend.json](h
 "bookendVersion": "v1.0",
 ```
 
-소셜 공유 버튼은 독자들이 여러분의 콘텐츠를 트위터와 페이스북 그리고 핀터레스트 등의 소셜 네트웍 플랫폼에 공유할 수 있도록 합니다. 소셜 네트웍의 목록은 shareProviders 객체에 넣습니다. 소셜 네트웍의 [type name](/ko/docs/reference/components/amp-social-share.html#pre-configured-providers)은 여기에서 확인하십시오.
+소셜 공유 버튼은 독자들이 여러분의 콘텐츠를 트위터와 페이스북 그리고 핀터레스트 등의 소셜 네트워크 플랫폼에 공유할 수 있도록 합니다. 소셜 네트워크의 목록은 shareProviders 객체에 넣습니다. 소셜 네트워크의 [type name](/ko/docs/reference/components/amp-social-share.html#pre-configured-providers)은 여기에서 확인하십시오.
 
 이번 스토리 예제에는 페이스북과 트위터 그리고 이메일을 shareProviders에 넣겠습니다:
 
