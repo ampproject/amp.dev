@@ -33,10 +33,26 @@ shadow-animated
 // TODO: make decissions about how to implement animated shadow modifier
 
 .#{atom('img')} {
+	position: relative;
 
 	&-circle {}
 
-	&-shadow-static {}
+	&-shadow-static {
+		@include box-shadow;
+	}
 
 	&-shadow-animated {}
+}
+
+.#{organism('container-image')} {
+	display: grid;
+	grid-template-rows: repeat(3, 75px);
+	grid-template-columns: repeat(3, 75px);
+
+	.#{atom('img')} {
+		&-shadow-static {
+			grid-column: 1 / 4;
+			grid-row: 1 / 4;
+		}
+	}
 }

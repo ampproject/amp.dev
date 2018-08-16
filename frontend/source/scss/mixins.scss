@@ -1,3 +1,11 @@
 amp-accordion > h1 {
   background: white;
 }
+
+@mixin box-shadow {
+  box-shadow: 0 5px 25px 0 rgba(72,82,92,0.30);
+}
+
+@mixin drop-shadow {
+  filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.3));
+}

@@ -42,9 +42,9 @@ white
 
 .#{molecule('teaser')} {
   &-white {
+    @include box-shadow;
     padding: 20px 40px 50px 25px;
     background-color: white;
-    box-shadow: shadows('regular');
   }
 }
 

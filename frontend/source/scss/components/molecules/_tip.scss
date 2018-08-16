@@ -42,24 +42,17 @@ read-on
   width: 100%;
   background: color('white');
   border-right: 5px solid color('malachite');
-  padding: 25px 30px 50px 25px;
+  padding: 25px 30px 70px 25px;
   grid-row: span 1;
   position: relative;
 
   @media screen and (min-width: 768px) {
     width: auto;
-    padding: 25px 55px 35px 40px;
+    padding: 25px 55px 55px 40px;
   }
 
   &-default {
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0px;
-      bottom: -25px;
-      border-right: 25px solid transparent;
-      border-top: 25px solid color('white');
-    }
+    clip-path: polygon(0px 0px, 100% 0px, 100% calc(100% - 30px), 30px calc(100% - 30px), 0px 100%);
   }
 
   &-read-on {
@@ -82,8 +75,8 @@ read-on
 
   &-important {
     border-right: 5px solid color('red');
-    -webkit-clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
-    clip-path: polygon(5% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 5% 100%, 0% 90%, 0% 10%);
+    -webkit-clip-path: polygon(0% 20px, 20px 0%, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
+    clip-path: polygon(0% 20px, 20px 0%, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
   }
 
   &-note {
@@ -121,9 +114,9 @@ read-on
   }
 
   &-container {
+    @include drop-shadow;
     grid-column: 1 / span 1;
     padding: 0px 80px 40px 20px;
-    filter: drop-shadow(shadows('drop'));
 
     @media screen and (min-width: 768px) {
       grid-column: 2 / span 1;
