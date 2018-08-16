@@ -29,51 +29,51 @@ TODO: mono (inline, block)
 */
 
 .#{atom('txt')} {
-    font-family: Noto Sans;
-    line-height: 1.6em;
-    font-weight: normal;
-    color: color('river-bed');
-    margin: 0;
+	font-family: Noto Sans;
+	line-height: 1.6em;
+	font-weight: normal;
+	color: color('river-bed');
+	margin: 0;
 
-    &-#{map-get($sizes, xs)} {
-      font-size: 0.625em;
-    }
+	&-#{map-get($sizes, xs)} {
+		font-size: 0.625em;
+	}
 
-    &-#{map-get($sizes, sm)} {
-      font-size: 0.75em;
-    }
+	&-#{map-get($sizes, sm)} {
+		font-size: 0.75em;
+	}
 
-    &-#{map-get($sizes, md)} {
-      font-size: 0.875em;
-    }
+	&-#{map-get($sizes, md)} {
+		font-size: 0.875em;
+	}
 
-    &-#{map-get($sizes, lg)} {
-      font-size: 1em;
-    }
+	&-#{map-get($sizes, lg)} {
+		font-size: 1em;
+	}
 
-    &-#{map-get($sizes, xl)} {}
+	&-#{map-get($sizes, xl)} {}
 
-    &-p {}
+	&-p {}
 
-    &-mono-inline {}
+	&-mono-inline {}
 
-    &-mono-block {}
+	&-mono-block {}
 
-    &-strong {
-      font-weight: bold;
-    }
+	&-strong {
+		font-weight: bold;
+	}
 
-		&-black {
-			color: color('black');
-		}
+	&-black {
+		color: color('black');
+	}
 
-		&-blue-ribbon {
-			color: color('blue-ribbon');
-		}
+	&-blue-ribbon {
+		color: color('blue-ribbon');
+	}
 
-    &-teaser-sm {
-      opacity: 0.5;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
+	&-teaser-sm {
+		opacity: 0.5;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 }
