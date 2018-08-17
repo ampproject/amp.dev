@@ -4,7 +4,7 @@ $title: 페이지 추가
 
 이제 AMP 스토리에 페이지를 추가하는 것은 어렵지 않을 것입니다. “The Joy of Pets” 이야기에 몇 페이지를 더 추가할텐데 특별히 어렵지는 않습니다. 아래의 설명을 바탕으로 **남은 페이지를 만들어보십시오**. 하다가 막혀도 걱정할 필요가 없습니다. 최종 완성본(<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>)을 보고 따라하면 됩니다.
 
-{% call callout('Tip', type='success') %}
+{% call callout('팁', type='success') %}
 페이지마다 고유한 “id” 속성을 추가하는 것을 잊지 마십시오. 예) `id=”page1”`
 {% endcall %}
 

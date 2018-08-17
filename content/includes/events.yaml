@@ -14,13 +14,13 @@ past:
 
 upcoming_events:
   - type: Event
-    title: AMP Roadshow Cambridge
-    href: https://events.withgoogle.com/amp-roadshow-in-cambridge/
+    title: AMP Roadshow São Paulo
+    href: https://events.withgoogle.com/amp-roadshow-in-sao-paulo/
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: August 7, 2018
-    event_time: 20180807/20180808
-    event_time_text: Aug 7
-    location: Cambridge, MA
+    date: August 21, 2018
+    event_time: 20180821/20180822
+    event_time_text: Aug 21
+    location: São Paulo, Brazil
     participant: Developers
 
 # past_events:

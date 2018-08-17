@@ -1,5 +1,5 @@
 ---
-$title: 본격적으로 스토리를 시작합니다
+$title: 본격적으로 스토리 시작하기
 ---
 
 이제부터 작성할 이야기는 `amp-story` 컴포넌트안에 들어가는데 `amp-story`는 이야기를
@@ -56,7 +56,7 @@ $title: 본격적으로 스토리를 시작합니다
 `amp-story` 레퍼런스 문서의 [attributes](/ko/docs/reference/components/amp-story.html#attributes)
 섹션을 참고하십시오.
 
-{% call callout('Note', type='note') %}
+{% call callout('노트', type='note') %}
 여기에서 설명한 메타데이터 속성은 해당 페이지의 Structured Data (예를 들면
 JSON-LD)를 대체하는 것은 아닙니다. amp-story에 들어가는 title, publisher 등이
 페이지에 이미 있는 Structured Data와 중복된다고 Structured Data를 없애면

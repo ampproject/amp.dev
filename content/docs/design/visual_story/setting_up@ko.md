@@ -17,7 +17,7 @@ $title: 준비 작업
 
 1. 다음 URL에서 본 자습서용 코드를 다운받습니다. zip으로 압축되어 있습니다: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
 
-2. zip파일을 압축해제하세요. **amp-pets-story** 디렉토리에 이번에 만들 스토리에 대한 이미지, 비디오, 오디오 및 관련 데이터 파일이 들어있습니다. **pets.html**을 가지고 스토리를 만들어볼텐데, 완성된 스토리는 [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html)에 있으니 궁금하면 한번 열어보세요.
+2. zip파일의 압축을 푸십시오. **amp-pets-story** 디렉토리에 이번에 만들 스토리에 대한 이미지, 비디오, 오디오 및 관련 데이터 파일이 들어있습니다. **pets.html**을 가지고 스토리를 만들어볼텐데, 완성된 스토리는 [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html)에 있으니 궁금하면 한번 열어보십시오.
 
 #### 2단계. 예제 페이지를 돌려보기
 
@@ -28,17 +28,17 @@ $title: 준비 작업
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-로컬 웹서버 설정을 완료했다면 완성될 스토리가 어떻게 보일지 한번 보세요. <a href="http://localhost:8000/pets-completed.html">URL</a>은 다음과 같습니다:
+로컬 웹서버 설정을 완료했다면 완성될 스토리가 어떻게 보일지 한번 보십시오. <a href="http://localhost:8000/pets-completed.html">URL</a>은 다음과 같습니다:
 
 ```html
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('Important', type='caution') %}
+{% call callout('중요', type='caution') %}
 `localhost`에서 해당 페이지(위의 URL참고)를 제공하도록 해야 합니다. 그렇지 않으면 AMP 스토리가 제대로 동작하지 않을 수 있습니다. 예를 들어, 다음과 같은 에러가 날 수 있습니다: `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
 {% endcall %}
 
-이제 완성된 스토리가 어떻게 보이는지 클릭해보면서 감상해보세요.
+이제 완성된 스토리가 어떻게 보이는지 클릭해보면서 감상해보십시오.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/ko/docs/design/visual_story.html"><span class="arrow-prev">이전</span></a>

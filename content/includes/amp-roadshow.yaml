@@ -1,14 +1,11 @@
 nextstop:
-  title: Cambridge
-  link: https://events.withgoogle.com/amp-roadshow-in-cambridge/
+  title: São Paulo
+  link: https://events.withgoogle.com/amp-roadshow-in-sao-paulo
 
 cities:
   - title: São Paulo
     date: 2018-08-21
     link: https://events.withgoogle.com/amp-roadshow-in-sao-paulo/
-  - title: Recife
-    date: 2018-08-27
-    link: https://events.withgoogle.com/amp-roadshow-em-recife/
 
 agenda:
   - title: Intro + Keynote
