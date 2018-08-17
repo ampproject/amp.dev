@@ -1,4 +1,4 @@
-.#{organism('kpi-list')} {
+.#{organism('list')} {
 	display: grid;
 	grid-template-rows: repeat(3, (minmax(190px, 100%)));
 	grid-gap: 20px;
