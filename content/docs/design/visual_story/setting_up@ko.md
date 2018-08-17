@@ -17,7 +17,7 @@ $title: 준비 작업
 
 1. 다음 URL에서 본 자습서용 코드를 다운받습니다. zip으로 압축되어 있습니다: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
 
-2. zip파일을 압축해제하십시오. **amp-pets-story** 디렉토리에 이번에 만들 스토리에 대한 이미지, 비디오, 오디오 및 관련 데이터 파일이 들어있습니다. **pets.html**을 가지고 스토리를 만들어볼텐데, 완성된 스토리는 [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html)에 있으니 궁금하면 한번 열어보십시오.
+2. zip파일을 압축 푸십시오. **amp-pets-story** 디렉토리에 이번에 만들 스토리에 대한 이미지, 비디오, 오디오 및 관련 데이터 파일이 들어있습니다. **pets.html**을 가지고 스토리를 만들어볼텐데, 완성된 스토리는 [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html)에 있으니 궁금하면 한번 열어보십시오.
 
 #### 2단계. 예제 페이지를 돌려보기
 
