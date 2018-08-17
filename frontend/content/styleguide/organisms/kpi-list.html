@@ -61,11 +61,11 @@ kpis:
 {% for kpi in doc.kpis %}
 	<amp-carousel height="170" media="(max-width: 767px)" layout="fixed-height" type="carousel">
 	{% for item in kpi['items'] %}
-			<div class="ad-m-kpi ad-m-kpi-{{ item.type }}">
+			<li class="ad-m-kpi ad-m-kpi-{{ item.type }}">
 				{{ atoms.icon( item.icon , size=2, fill="white") }}
 				<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">{{ item.title }}</span>
 				<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">{{ item.text }}</p>
-		</div>
+		</li>
 		{% endfor %}
   </amp-carousel>
 	<amp-selector media="(min-width: 768px)" layout="container">
