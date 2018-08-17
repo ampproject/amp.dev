@@ -31,7 +31,7 @@ msgstr "성공으로 가는 길"
 
 #: /content/includes/stories.yaml
 msgid "A visual storytelling format for the open web"
-msgstr "열린 웹 세상의 눈이 즐거운 스토리텔링 포맷"
+msgstr "열린 웹과 함께하는 눈이 즐거운 스토리텔링 포맷"
 
 #: /content/includes/lists.yaml
 msgid "AMP Blog"
@@ -194,9 +194,10 @@ msgid ""
 " possibilities of the AMP project, this format enables the creation of visual"
 " content that is fast, open, and user-first."
 msgstr ""
-"AMP 스토리는 독자들이 화면을 꽉 채우는 컨텐츠를 손끝에서 체험할 수 있게 "
-"만듭니다. AMP 프로젝트의 무한한 가능성을 바탕으로 AMP 스토리 포맷은 빠르고 "
-"열려있으며 사용자 중심의 시각 컨텐츠를 제작할 수 있게 도와줍니다."
+"AMP 스토리는 이야기에 몰입하게 합니다. 화면 가득한 페이지를 손끝으로 톡톡 넘기는 사이 이야기에 빠져듭니다. "
+"AMP 스토리는 AMP 프로젝트의 무한한 가능성을 보여주는 사례입니다. "
+"AMP 스토리는 빠르게 동작하고 어떤 사이트에서도 공유할 수 있도록 열려있으며 "
+"독자의 눈이 즐거운 컨텐츠를 쉽게 제작할 수 있게 도와줍니다."
 
 #: /content/includes/stories.yaml
 msgid "AMP story features"
