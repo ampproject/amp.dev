@@ -96,7 +96,7 @@
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16589",
             "title": "One-line PWA",
-            "description": "Some PWA features are technically simple, but others can be challenging to implement and maintain. This means that a great AMP & PWA site is out of reach for many developers. This feature feature would make it trivially easy to implement an AMP & PWA combination with just one line of code.",
+            "description": "Some PWA features are technically simple, but others can be challenging to implement and maintain. This means that a great AMP & PWA site is out of reach for many developers. This feature feature would make it trivially easy to implement a good AMP & PWA combination with just one line of code.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20PWA",
@@ -749,22 +749,6 @@
           }
         },
         {
-          "createdAt": "2018-03-16T18:46:16Z",
-          "updatedAt": "2018-03-16T18:48:18Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14062",
-            "title": "Trigger video fullscreen in landscape",
-            "description": "Some browsers offer the capability to automatically trigger video fullscreen in landscape, sometimes at the browser level and sometimes through a developer opt-in. We want this feature to work just as it does per browser (either automatically or via opt-in).",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Audio&Video",
-                "name": "Audio&Video",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-02T16:33:00Z",
           "updatedAt": "2018-07-12T00:47:21Z",
           "issue": {
@@ -850,6 +834,22 @@
     },
     {
       "cards": [
+        {
+          "createdAt": "2018-03-16T18:46:16Z",
+          "updatedAt": "2018-08-04T00:36:23Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14062",
+            "title": "Trigger video fullscreen in landscape",
+            "description": "Some browsers offer the capability to automatically trigger video fullscreen in landscape, sometimes at the browser level and sometimes through a developer opt-in. We want this feature to work just as it does per browser (either automatically or via opt-in).",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Audio&Video",
+                "name": "Audio&Video",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
         {
           "createdAt": "2018-04-19T17:46:36Z",
           "updatedAt": "2018-07-27T20:14:44Z",
