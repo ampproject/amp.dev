@@ -1,0 +1,11 @@
+.#{organism('kpi-list')} {
+	display: grid;
+	grid-template-rows: repeat(3, (minmax(190px, 100%)));
+	grid-gap: 20px;
+
+
+	&-wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 190px);
+	}
+}

@@ -29,35 +29,30 @@ light
 // TODO: implement mono font and modifier
 
 .#{atom('hl')} {
-	margin: 0;
-	font-family: Poppins;
-	font-weight: bold;
-	line-height: 1.2em;
-	color: color('black');
+  font-family: Poppins;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: color('black');
 
-	&-h1 {
-		font-size: 3em;
-	}
+    &-h1 {
+      font-size: 3em;
+    }
 
-	&-h2 {
-		font-size: 2.25em;
-	}
+    &-h2 {
+      font-size: 2.25em;
+    }
 
-	&-h3 {
-		font-size: 1.5em;
-		margin-bottom: 2.5em;
-	}
+    &-h3 {
+      font-size: 1.5em;
+    }
 
-	&-h4 {
-		font-size: 1em;
-		margin-bottom: 0.625em;
+    &-h4 {
+      font-size: 1em;
+    }
 
-		@media screen and (min-width: 768px) {
-			margin-bottom: 1.25em;
-		}
-	}
+    &-light {
+      color: color('white');
+    }
 
-	&-light {
-		color: color('white');
-	}
+    &-mono {}
 }
