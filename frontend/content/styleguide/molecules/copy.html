@@ -9,7 +9,7 @@ copies:
 <div class="ad-o-container col-4-5">
   {% for copy in doc.copies %}
   <div class="ad-m-copy-wrapper">
-    <h3 class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</h3>
+    <span class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</span>
 		<p class="ad-a-txt ad-a-txt-3">{{ lipsum(n=4, html=False) }}</p>
   </div>
   {% endfor %}
