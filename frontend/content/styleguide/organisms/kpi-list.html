@@ -69,7 +69,7 @@ kpis:
 		{% endfor %}
   </amp-carousel>
 	<amp-selector media="(min-width: 768px)" layout="container">
-		<ul class="ad-o-list-wrapper" aria-labelledby="KPI list">
+		<ul class="ad-o-list ad-o-list-columns-fixed-width" aria-labelledby="KPI list">
 			{% for item in kpi['items'] %}
 				<li class="ad-m-kpi ad-m-kpi-{{ item.type }}">
 					{{ atoms.icon( item.icon , size=2, fill="white") }}
