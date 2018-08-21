@@ -1,0 +1,24 @@
+---
+$view: /views/styleguide/component.j2
+$title: Benefit List
+
+items:
+- title: Ready to use
+  icon: lego
+- title: Easy as abc
+  icon: edit
+- title: Lightning fast
+  icon: browser
+---
+	<ul class="ad-o-list ad-o-list-columns col-6-4" aria-labelledby="Benefit list">
+	{% for item in doc.items %}
+		<li class="ad-m-benefit">
+		{{ atoms.icon(item.icon, size=3) }}
+		<span class="ad-a-hl ad-a-hl-h3">{{item.title}}</span>
+		<p class="ad-a-txt ad-a-txt-2">{{ lipsum(n=1, html=False) }}</p>
+		{% if item != doc.items|last() %}
+			<span class="ad-a-divider"></span>
+		{% endif %}
+	</li>
+	{% endfor %}
+	</ul>
