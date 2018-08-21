@@ -45,20 +45,27 @@ none
 
 */
 
-.#{organism('teaser-list')} {
-  grid-column: 1;
-  display: flex;
-  justify-content: flex-start;
+.#{organism('list')} {
   list-style: none;
-  overflow: hidden;
-  padding-left: 20px;
+	padding-left: 20px;
+	display: grid;
+	grid-gap: 20px;
 
-  @media screen and (min-width: 768px) {
-    grid-column: 2;
-  }
-
-  &-container {
+  &-item {
     min-width: 60%;
-    padding: 20px 20px 0px 0px;
-  }
+		padding: 20px 20px 0px 0px;
+	}
+
+	&-columns {
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	&-columns-fixed-width {
+
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(3, 190px);
+		}
+	}
 }

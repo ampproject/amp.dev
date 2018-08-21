@@ -1,0 +1,31 @@
+.#{molecule('kpi')} {
+	height: 170px;
+	width: 170px;
+	@include box-shadow;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 1.5em;
+
+	@media screen and (min-width: 768px){
+		height: 100%;
+		width: 100%;
+	}
+
+	.ad-a-txt {
+		white-space: normal;
+		padding: 0;
+	}
+
+	&-emerald-doger {
+		@include emerald-doger;
+	}
+
+	&-turbo-pizazz {
+		@include turbo-pizazz;
+	}
+
+	&-river-ebony {
+		@include river-ebony;
+	}
+}
