@@ -9,7 +9,7 @@ events:
 ---
 {% for event in doc.events %}
 	<div class="ad-m-event col-2-6">
-		<h3 class="ad-a-hl ad-a-hl-h3">{{ event.headline }}</h3>
+		<h2 class="ad-a-hl ad-a-hl-h3">{{ event.headline }}</h2>
 		<div class="ad-m-event-content">
 			{{ atoms.icon('time', size=2) }}
 			<p class="ad-a-txt ad-a-txt-4">{{ event.date }}</p>
