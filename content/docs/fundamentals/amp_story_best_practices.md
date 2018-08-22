@@ -1,6 +1,6 @@
 ---
 $title: Best practices for creating an AMP story
-$order: 7
+$order: 14
 $category: Develop
 toc: true
 components:
