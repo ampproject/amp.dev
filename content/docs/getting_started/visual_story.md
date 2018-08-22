@@ -1,5 +1,5 @@
 ---
-$title: Create a visual AMP story
+$title: Create your first AMP Story
 $order: 3
 components:
     - video

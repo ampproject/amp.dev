@@ -2,4 +2,4 @@ $path: /docs/getting_started/visual_story/{base}.html
 $view: /views/doc.html
 $localization:
   path: /{locale}/docs/getting_started/visual_story/{base}.html
-$title@: Create a visual AMP Story
+$title@: Create your first AMP Story
