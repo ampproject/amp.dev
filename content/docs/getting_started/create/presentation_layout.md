@@ -5,7 +5,7 @@ $order: 2
 
 ## Modify the presentation
 
-AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors in an inline stylesheet in the `<head>`, called `<style amp-custom>`:
+AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors in an embedded stylesheet in the `<head>`, called `<style amp-custom>`:
 
 [sourcecode:html]
 <style amp-custom>
@@ -20,7 +20,7 @@ AMP pages are web pages; any styling to the page and its elements is done using 
 </style>
 [/sourcecode]
 
-Every AMP page can only have a single embedded stylesheet, and there are certain selectors you’re not allowed to use. [Learn all about styling](/docs/design/responsive/style_pages.html).
+Every AMP page can only have a single embedded stylesheet and inline styles, but there are certain selectors you’re not allowed to use. [Learn all about styling](/docs/design/responsive/style_pages.html).
 
 ## Control the layout
 

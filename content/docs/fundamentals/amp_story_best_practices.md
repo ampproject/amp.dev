@@ -1,13 +1,17 @@
 ---
 $title: Best practices for creating an AMP story
-$order: 7
+$order: 14
 $category: Develop
 toc: true
+components:
+    - youtube
 ---
 
 [TOC]
 
 This guide provides recommended practices that you should implement when creating an [AMP story](/docs/reference/components/amp-story.html).
+
+{{ youtube('2WjFBnCj2ew', 480, 270, caption='Watch our video on creating delightful AMP story experiences.') }}
 
 
 ## Background color

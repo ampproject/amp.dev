@@ -38,6 +38,7 @@
     "amp-layout": "layout",
     "amp-lightbox": "layout",
     "amp-lightbox-gallery": "layout",
+    "amp-orientation-observer": "layout",
     "amp-position-observer": "layout",
     "amp-sidebar": "layout",
 
@@ -50,6 +51,7 @@
     "amp-brid-player": "media",
     "amp-brightcove": "media",
     "amp-dailymotion": "media",
+    "amp-embedly-card": "media",
     "amp-google-vrview-image": "media",
     "amp-hulu": "media",
     "amp-ima-video": "media",

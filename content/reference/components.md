@@ -64,7 +64,8 @@ The list of available components are listed below in related categories.
 | [`amp-layout`](components/amp-layout.html) | Provides a generic, multi-purpose container element that brings AMP's powerful [layouts](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) to any element. |
 | [`amp-lightbox`](components/amp-lightbox.html) | Displays elements in a full-viewport “lightbox” modal. |
 | [`amp-lightbox-gallery`](components/amp-lightbox-gallery.html) | Provides a "lightbox” experience. Upon user interaction, a UI component expands to fill the viewport until it is closed by the user. |
-| [`amp-position-observer`](components/amp-position-observer.html) | Monitors position of an element within the viewport as a user scrolls and dispatches  events that can be used with other components. |
+| [`amp-orientation-observer`](components/amp-orientation-observer.html) | Monitors the orientation of an element within the viewport as a user scrolls, and dispatches events that can be used with other AMP components.|
+| [`amp-position-observer`](components/amp-position-observer.html) | Monitors the position of an element within the viewport as a user scrolls and dispatches events that can be used with other AMP components. |
 | [`amp-sidebar`](components/amp-sidebar.html) | Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. |
 
 
@@ -81,6 +82,7 @@ The list of available components are listed below in related categories.
 | [`amp-brid-player`](components/amp-brid-player.html) | Displays a [Brid.tv](https://www.brid.tv/) player. |
 | [`amp-brightcove`](components/amp-brightcove.html) | Displays a Brightcove [Video Cloud](https://www.brightcove.com/en/online-video-platform) or [Perform](https://www.brightcove.com/en/perform) player. |
 | [`amp-dailymotion`](components/amp-dailymotion.html) | Displays a [Dailymotion](https://www.dailymotion.com) video. |
+| [`amp-embedly-card`](components/amp-embedly-card) | Displays an [Embedly](https://docs.embed.ly/docs/cards) card. |
 | [`amp-google-vrview-image`](components/amp-google-vrview-image) | Displays a VR image. |
 | [`amp-hulu`](components/amp-hulu.html) | Displays a simple embedded [Hulu](http://www.hulu.com/) video. |
 | [`amp-ima-video`](components/amp-ima-video.html) | Embeds a video player for instream video ads that are integrated with the [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/). |

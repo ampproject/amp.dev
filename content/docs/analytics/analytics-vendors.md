@@ -130,17 +130,23 @@ Type attribute value: `gemius`
 
 Adds support for Gemius Audience/Prism analytics. Additionally, the gemius-provided `prefix` and `identifier` variables must be specified. It's also possible to specify the optional variable `extraparams` (key1=value1|key2=value2). More details can be found at [gemius.com](https://www.gemius.com).
 
-### Google AdWords
+### Google Ads
 
 Type attribute value: `googleadwords`
 
-Adds support for Google AdWords conversion tracking and remarketing. See more details in the AdWords help center for [conversion tracking](https://support.google.com/adwords/answer/1722054?hl=en) and [remarketing](https://support.google.com/adwords/answer/2453998?hl=en). Both tags can be used independent of each other.
+Adds support for Google Ads conversion tracking and remarketing. See more details in the Google Ads help center for [conversion tracking](https://support.google.com/adwords/answer/1722054?hl=en) and [remarketing](https://support.google.com/adwords/answer/2453998?hl=en). Both tags can be used independent of each other.
 
 ### Google Analytics
 
 Type attribute value: `googleanalytics`
 
 Adds support for Google Analytics. More details for adding Google Analytics support can be found at [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+
+### Google Tag Manager
+
+Type attribute value: N/A
+
+Unlike other analytics vendors, Google Tag Manager is a tag management service, and does not require the `type` attribute. Google Tag Manager is [supported](https://developers.google.com/google-ads/amp/landing-pages#google_tag_manager) in AMP.  Consult the Google Tag Manager documentation for [supported tags](https://support.google.com/tagmanager/answer/6106924) and for instructions on [adding Google Tag Manager to your AMP page](https://support.google.com/tagmanager/answer/6103696). 
 
 ### INFOnline / IVW
 
@@ -150,7 +156,7 @@ Adds support for [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de
 
 Additionally, the following variables must be defined:
 
-* `st`: Angebotskennung
+* `st`: offer ID
 * `co`: comment
 * `cp`: code
 * `url`: HTTPS location of `amp-analytics-infonline.html`
@@ -186,6 +192,12 @@ Adds support for Médiamétrie tracking pages. Requires defining *var* `serial`.
 Type attribute value: `mediarithmics`
 
 Adds support for mediarithmics. More information and configuration details can be found at [developer.mediarithmics.com](https://developer.mediarithmics.com/).
+
+### Moat Analytics
+
+Type attribute value: `moat`
+
+Adds support for Moat. Please contact your Moat representative for configuration details. More information on Moat can be found at [moat.com/analytics](https://moat.com/analytics).
 
 ### Mobify
 

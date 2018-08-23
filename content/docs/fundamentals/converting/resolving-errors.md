@@ -114,7 +114,7 @@ Specifically, this error is complaining about the following stylesheet link tag 
 <link href="base.css" rel="stylesheet" />
 ```
 
-The problem is that this is an external stylesheet reference. In AMP, to keep the load times of documents as fast as possible, you cannot include external stylesheets. Instead, all stylesheet rules must be added inline in the AMP document using `<style amp-custom></style>` tags.
+The problem is that this is an external stylesheet reference. In AMP, to keep the load times of documents as fast as possible, you cannot include external stylesheets. Instead, all stylesheet rules must be embedded in the AMP document using `<style amp-custom></style>` tags, or as inline styles.
 
 ```html
 <style amp-custom>
@@ -131,7 +131,7 @@ So, let's resolve the error:
 
 Once again, **reload** the page and verify that the stylesheets error has disappeared.
 
-Note: Not only is inline styling required but there is a file size limit of 50 kilobytes for all styling information. You should use CSS preprocessors such as [SASS](http://sass-lang.com/) to minify your CSS before inlining the CSS in your AMP pages.
+Note: Not only is embedded styling required but there is a file size limit of 50 kilobytes for all styling information. You should use CSS preprocessors such as [SASS](http://sass-lang.com/) to minify your CSS before inlining the CSS in your AMP pages.
 
 Important: You can only have one style tag in your entire AMP document. If you have several external stylesheets referenced by your AMP pages, you will need to collate these stylesheets into a single set of rules. To learn what CSS rules are valid in AMP, read [Supported CSS](/docs/design/responsive/style_pages.html).
 

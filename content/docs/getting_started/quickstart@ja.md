@@ -5,7 +5,7 @@ $title: はじめに
 
 これは AMP の使用を開始するためのクイックスタート ガイドです。
 
-詳しい手順については、「[初めての AMP ページを作成する](/ja/docs/fundamentals/create.html)」チュートリアルをご覧ください。
+詳しい手順については、「[初めての AMP ページを作成する](/ja/docs/getting_started/create.html)」チュートリアルをご覧ください。
 
 ### ステップ 1: AMP HTML テンプレートを取得する
 
@@ -80,7 +80,7 @@ AMP ページの要素のスタイルを設定するには、ドキュメント�
 
 ### 次のステップ
 
-AMP ページの基本をさらに理解するには、「[初めての AMP ページを作成する](/ja/docs/fundamentals/create.html)」チュートリアルをご覧ください。
+AMP ページの基本をさらに理解するには、「[初めての AMP ページを作成する](/ja/docs/getting_started/create.html)」チュートリアルをご覧ください。
 
 役立つその他のリソースを以下にご紹介します。
 

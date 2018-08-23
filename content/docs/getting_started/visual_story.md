@@ -1,6 +1,6 @@
 ---
-$title: Create a visual AMP story
-$order: 4
+$title: Create your first AMP Story
+$order: 3
 components:
     - video
 tutorial: true
@@ -19,8 +19,7 @@ In this tutorial, we'll introduce you to the [amp-story](/docs/reference/compone
 - Animate elements on a page
 - Keep readers engaged with your content by adding related links to the end of the story
 
-Note: The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**. To sign up for the origin trial to publish pages with this component, please visit <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.
-
+Note: The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**.
 
 <div class="start-button">
 <a class="button" href="/docs/design/visual_story/setting_up.html"><span class="arrow-next">Get started</span></a>

@@ -96,7 +96,7 @@ AMP Validator Extension for
 
 ### NPM Packages for CI
 
-As part of your build and test pipelines, you can integrate AMP validation through the AMP Validator NPM packages: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) or [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (a gulp plugin).  For example, you can use the AMP Validator NPM package for integration tests or in a schedule task to verify production AMP pages.
+As part of your build and test pipelines, you can integrate AMP validation through the AMP Validator NPM packages: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) or [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (a gulp plugin).  For example, you can use the AMP Validator NPM package for integration tests or in a scheduled task to verify production AMP pages.
 
 
 ##### Example: Validating an AMP HTML file
@@ -176,8 +176,7 @@ several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the inv
 [/sourcecode]
 
 The format of the error messages consists of file name, line, column, and message,
-often followed by a link to the AMP HTML reference. Some editors, including Emacs
-(look for compile command and compilation mode), can interpret this format and let
+often followed by a link to the AMP HTML reference. Some editors, including Emacs, can interpret this format and let
 you jump to the errors in the original file.
 
 For a good starting point to make your own AMP page consider [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
