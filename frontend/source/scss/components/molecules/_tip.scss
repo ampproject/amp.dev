@@ -81,10 +81,9 @@ read-on
 
   &-note {
     border: none;
-    width: 100%;
+		width: calc(100% - 25px);
     padding: 25px 10px 20px 25px;
     @media screen and (min-width: 768px) {
-      width: calc(100% - 67px);
       padding: 25px 0px 35px 40px;
     }
 
@@ -106,7 +105,7 @@ read-on
       top: 0px;
       height: calc(100% - 32px);
       left: 100%;
-      width: 20px;
+      width: 25px;
       background-color: color('white');
       border-right: 5px solid color('blue-ribbon');
 
