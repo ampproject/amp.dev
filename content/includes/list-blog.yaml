@@ -1,6 +1,58 @@
 blogs:
 
 - type: Blog
+  title: "WorkerDOM: Concurrency for JavaScript programming with the DOM"
+  id: workerdom
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/08/21/workerdom/amp/"
+  excerpt: "We are happy to announce the alpha release of WorkerDOM – a JavaScript library that makes the Document Object Model (DOM) available to Web Workers. This allows web developers to take advantage of pervasive multi-core processor architectures when programming their web pages to make them more performant. While the WorkerDOM library is designed for general [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-08-21T23:15:43+00:00
+  date: "August 21, 2018"
+
+- type: Video
+  title: "Best practices for creating an AMP story"
+  id: 2WjFBnCj2ew
+  author: The AMP Channel
+  role: 
+  origin: "https://www.youtube.com/watch?v=2WjFBnCj2ew"
+  excerpt: "AMP stories are a new and dynamic form of visual storytelling that are specifically designed for mobile. In this episode of Amplify, Paul Bakaus (@pbakaus) explores some of the best practices for creating visually rich, tap-through AMP stories. Subscribe to the channel to stay up to date with the latest from the AMP team!
+
+See AMP stories in action → http://bit.ly/2n1MaiE
+AMP stories blog article → http://bit.ly/2LHE6Cr
+Telling Stories with AMP (AMP Conf 2018) → http://bit.ly/2KmQ3YC
+
+Watch more Amplify episodes → http://bit.ly/2LHsFX3
+Subscribe to the The AMP Channel→ http://bit.ly/AMPchannel1"
+  thumbnail: "https://i3.ytimg.com/vi/2WjFBnCj2ew/hqdefault.jpg"
+  avatar: 
+  datedata: 2018-08-02T20:49:46+00:00
+  date: "August 2, 2018"
+
+- type: Blog
+  title: "AddThis is Now Available for AMP"
+  id: addthis-is-now-available-for-amp
+  author: Chad Edmonds
+  role:  Sr. Marketing Manager, AddThis
+  origin: "https://amphtml.wordpress.com/2018/07/30/addthis-is-now-available-for-amp/amp/"
+  excerpt: "Editor&#8217;s note: the following was originally posted on AddThis&#8217; blog by Chad Edmonds, Sr. Marketing Manager, AddThis Just because AddThis is now free, doesn’t mean we’re slowing down on pushing out more great features and functionalities! We recently rolled out AddThis Inline Share Buttons for AMP and it is ready for you to integrate into your AMP compatible [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-07-30T14:50:10+00:00
+  date: "July 30, 2018"
+
+- type: Blog
+  title: "Privacy and user choice in AMP’s software architecture"
+  id: privacy-and-user-choice-in-amps-software-architecture
+  author: Malte Ubl
+  role:  Tech Lead of the AMP Project.
+  origin: "https://amphtml.wordpress.com/2018/07/23/privacy-and-user-choice-in-amps-software-architecture/amp/"
+  excerpt: "Early choices in designing the AMP HTML JavaScript library have made it uniquely suited for publishers to implement effective privacy controls for users. In web pages, resource requests and browser storage access that may have privacy impact can be initiated through a multitude of mechanisms, many of which are often controlled by third parties. This [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-07-23T17:36:25+00:00
+  date: "July 23, 2018"
+
+- type: Blog
   title: "Track development with the new AMP Roadmap"
   id: track-development-with-the-new-amp-roadmap
   author: Vamsee Jasti
@@ -8,7 +60,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/19/track-development-with-the-new-amp-roadmap/amp/"
   excerpt: "As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each. Starting today, you can head over to the AMP roadmap and see an updated view of feature development across the project. We hope this is easy [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-19T17:42:43-04:00
+  datedata: 2018-07-19T21:42:43+00:00
   date: "July 19, 2018"
 
 - type: Blog
@@ -19,49 +71,5 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/16/new-in-amp-stories-monetization-revamped-bookends-and-metadata/amp/"
   excerpt: "We announced the developer preview of AMP stories in February at AMP Conf. Since then, publishers have authored thousands of stories, experimenting with the format and providing valuable feedback to the AMP team. Based on this input, we recently released new capabilities in AMP stories v1.0, open to all developers without origin trials or a [&#8230;]"
   avatar: https://videos.files.wordpress.com/pqK8yXrk/amp_blog_story_ad_hd.mp4
-  datedata: 2018-07-16T18:03:22-04:00
+  datedata: 2018-07-16T22:03:22+00:00
   date: "July 16, 2018"
-
-- type: Blog
-  title: "Serverless AMP solution on AWS"
-  id: serverless-amp-solution-on-aws
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/07/11/serverless-amp-solution-on-aws/amp/"
-  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit. You can see their site featured on the showcase page of AMPproject.org It all started when we realized our website gets outdated very fast and we are always so busy with our customers we forget about ourselves. We had to build something [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-11T16:09:31-04:00
-  date: "July 11, 2018"
-
-- type: Blog
-  title: "amp-date-picker is launched!"
-  id: amp-date-picker-is-launched
-  author: Eric Lindley
-  role:  AMP Product Manager
-  origin: "https://amphtml.wordpress.com/2018/06/29/amp-date-picker-is-launched/amp/"
-  excerpt: "Earlier this month we announced a limited release of amp-date-picker, a calendar-style interactive date picker for form input. With this component users can specify single dates or date ranges with a calendar interface that makes the process faster and less error prone. After a great round of feedback from developers trying it out on their [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-29T11:32:41-04:00
-  date: "June 29, 2018"
-
-- type: Blog
-  title: "Announcing the AMP Contributor Summit"
-  id: announcing-the-amp-contributor-summit
-  author: Joey Rozier
-  role:  AMP Engineering Manager at Google
-  origin: "https://amphtml.wordpress.com/2018/06/28/announcing-the-amp-contributor-summit/amp/"
-  excerpt: "We are happy to share that the first AMP Contributor Summit for developers in AMP&#8217;s open source community will be held in San Francisco, California this September! The summit will take place from September 25-26, with an optional New Contributor Day on September 24th that&#8217;s especially for people new to contributing to AMP.  If you [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-28T14:20:48-04:00
-  date: "June 28, 2018"
-
-- type: Blog
-  title: "Contributing to the AMP Project"
-  id: contributing-to-the-amp-project
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/06/21/contributing-to-the-amp-project/amp/"
-  excerpt: "Editor&#8217;s note: The following was originally posted by Adam Silverstein, Lead Web Engineer at 10up on the Google Open Source Blog. I started my web career building websites for small businesses on WordPress, so when I decided to begin contributing to open source, WordPress was a natural place to start. Now I work at the digital [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-21T15:22:46-04:00
-  date: "June 21, 2018"
