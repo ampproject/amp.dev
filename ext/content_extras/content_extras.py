@@ -1,5 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """Content extras extension for preprocessing content to add extra features Grow sites."""
 
+from __future__ import unicode_literals
 import re
 from grow import extensions
 from grow.extensions import hooks
