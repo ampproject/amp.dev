@@ -23,15 +23,13 @@ sandbox="allow-scripts allow-forms allow-same-origin"
 resizable
 src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
 <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+<div placeholder></div>
 </amp-iframe>
 </div>
 
 默认情况下，即使 AMP 元素的资源尚未下载或初始化，与该 AMP 元素对应的占位符也会立即显示。准备就绪后，AMP 元素通常会隐藏其占位符并显示相应内容。
 
-{% call callout('注意', type='note') %}
-占位符不一定非得是 AMP 元素；任何 HTML 元素都可充当占位符。
-{% endcall %}
+注意: 占位符不一定非得是 AMP 元素；任何 HTML 元素都可充当占位符。
 
 ## 备用行为
 
@@ -45,7 +43,7 @@ sandbox="allow-scripts allow-forms allow-same-origin"
 resizable
 src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
 <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+<div placeholder></div>
 </amp-iframe>
 </div>
 

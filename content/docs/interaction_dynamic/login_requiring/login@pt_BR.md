@@ -47,9 +47,7 @@ Ao usar `on="tap:amp-access.login-sign-in"` para verificar novamente o código H
 
 [/sourcecode]
 
-{% call callout('Observação', type='note') %}
-É possível definir URLs diferentes dentro do nó de login. Neste caso, estamos definindo `sign-in` e depois definiremos `sign-out`.
-{% endcall %}
+Observação: É possível definir URLs diferentes dentro do nó de login. Neste caso, estamos definindo `sign-in` e depois definiremos `sign-out`.
 
 A página de login não é AMP e, para simplificar o processo, é onde preenchemos os valores de login e senha. O tipo de entrada oculta `returnURL` é preenchido pelo servidor AMPByExample por meio de modelos do servidor. O servidor lê esse valor de um parâmetro chamado `return`, adicionado automaticamente pela biblioteca AMP ao URL de login.
 
@@ -68,9 +66,7 @@ Veja abaixo um breve resumo:
 - O tempo de execução de AMP fecha a página de login e faz o redirecionamento para a página especificada pelo parâmetro do URL de retorno.
 - O servidor deve coordenar a resposta assim que o usuário clicar no botão de login.
 
-{% call callout('Dica', type='success') %}
-Veja uma explicação detalhada sobre esse fluxo na [documentação sobre amp-access](/pt_br/docs/reference/components/amp-access#login-flow).
-{% endcall %}
+Dica: Veja uma explicação detalhada sobre esse fluxo na [documentação sobre amp-access](/pt_br/docs/reference/components/amp-access#login-flow).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">Anterior</span></a>

@@ -13,9 +13,7 @@ Muchos sitios web no necesitan más de lo que ya les ofrece AMP. [AMPbyExample](
 
 Cuando un usuario visita [AMPbyExample](http://ampbyexample.com/) desde una plataforma compatible con AMP y después sigue desplazándose por el sitio web, sale de la caché de AMP y pasa al origen. El sitio web sigue usando la biblioteca de AMP, pero al encontrarse en el origen, puede usar un componente service worker, pedir instalaciones, etc.
 
-{% call callout('Nota', type='caution') %}
-Service worker no puede interactuar con la versión de tu página almacenada en la caché de AMP. Úsalo en el resto del recorrido hasta el origen.
-{% endcall %}
+Nota: Service worker no puede interactuar con la versión de tu página almacenada en la caché de AMP. Úsalo en el resto del recorrido hasta el origen.
 
 ## Añadir un archivo de manifiesto de aplicación web
 
@@ -54,17 +52,13 @@ A continuación, enlázalo desde la sección `<head>` de tu página AMP:
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
-{% call callout('Nota', type='success') %}
-Consulta más información sobre el [archivo de manifiesto de aplicación web en Web Fundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
-{% endcall %}
+Nota: Consulta más información sobre el [archivo de manifiesto de aplicación web en Web Fundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
 
 ## Instalar un componente service worker para habilitar el acceso sin conexión
 
 Un service worker es un proxy de cliente que se sitúa entre tu página y el servidor, y que puede usarse para crear fantásticas experiencias sin conexión, generar esqueletos de aplicación de carga rápida y enviar notificaciones push.
 
-{% call callout('Nota', type='note') %}
-Si es la primera vez que oyes hablar de los componentes service worker, consulta este [artículo de introducción en Web Fundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
-{% endcall %}
+Nota: Si es la primera vez que oyes hablar de los componentes service worker, consulta este [artículo de introducción en Web Fundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 
 Los componentes service worker tienen que estar registrados en una página concreta; de lo contrario, el navegador no los encontrará ni ejecutará. Para registrarlos, debes usar un [pequeño fragmento de JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) o, en páginas AMP, un componente [`<amp-install-serviceworker>`](/es/docs/reference/components/amp-install-serviceworker.html).
 
@@ -115,5 +109,5 @@ que, de otra manera, no superarían la [validación de AMP](/es/docs/fundamental
 
 * Las funciones dinámicas que necesitan código JavaScript personalizado.
 * Los componentes que están personalizados o que solo son relevantes para tu sitio web.
- 
- 
+
+

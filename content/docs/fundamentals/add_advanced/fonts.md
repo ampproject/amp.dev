@@ -3,7 +3,7 @@ $title: Adding fonts
 $order: 6
 ---
 
-In AMP, to keep the load times of documents as fast as possible, you cannot include external stylesheets. However, there is one exception to this rule&mdash;**fonts**.  
+In AMP, to keep the load times of documents as fast as possible, you cannot include external stylesheets. However, there is one exception to this rule&mdash;**fonts**.
 
 You can embed custom fonts into your AMP page in two ways:
 

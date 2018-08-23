@@ -6,17 +6,17 @@ Esta guía está destinada a desarrolladores de aplicaciones móviles y webs que
 
 [TOC]
 
-## Transforme enlaces a AMP  
+## Transforme enlaces a AMP
 
 Con AMP, es posible renderizar casi instantáneamente sitios web externos dentro de su
 aplicación web nativa o móvil. Puede lograr esto al hacer coincidir las URL de su contenido
-con sus URL de AMP correspondientes (si existe) y al abrir la versión de AMP 
-en lugar de la versión original. Puede utilizar herramientas como la 
+con sus URL de AMP correspondientes (si existe) y al abrir la versión de AMP
+en lugar de la versión original. Puede utilizar herramientas como la
 [API AMP URL de Google](https://developers.google.com/amp/cache/use-amp-url) para ayudarlo con esto.
 
 Por ejemplo, el siguiente mensaje se puede transformar para servir a las versiones
-de AMP al reemplazar todas las URL con sus correspondientes versiones de AMP (si existen). Para 
-reducir el tiempo de carga y garantizar que se sirva AMP válido, debe vincular las 
+de AMP al reemplazar todas las URL con sus correspondientes versiones de AMP (si existen). Para
+reducir el tiempo de carga y garantizar que se sirva AMP válido, debe vincular las
 páginas de AMP en caché en el caché de AMP.
 
 Mensaje Original:
@@ -34,44 +34,36 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-{% call callout('Tip', type='success') %}
-Considere proporcionar a los usuarios la opción de ver la versión que no es de AMP en lugar de 
-la versión de AMP a través de la configuración de preferencias en su aplicación.
-{% endcall %}
+Tip: Considere proporcionar a los usuarios la opción de ver la versión que no es de AMP en lugar de la versión de AMP a través de la configuración de preferencias en su aplicación.
 
 ### Maneras de transformar enlaces
 
 Hay tres formas de transformar enlaces programáticamente:
 
-1.  **Tiempo de escritura en el lado del servidor (preferido)**: Recupere la URL de AMP 
-    a través de la API de AMP URL de Google en el momento de escribir de una URL y almacene 
-    las URL de AMP en el lado del servidor. Pase ambas URL al cliente porque la URL original 
-    puede ser necesaria para compartir. 
-    Este es el enfoque recomendado porque hay menos solicitudes de red del lado del cliente. 
-    Cuando se adopta este enfoque, es importante realizar regularmente (por ejemplo, diariamente) 
-    enlaces de exploración para las versiones de AMP porque los sitios web adoptan 
+1.  **Tiempo de escritura en el lado del servidor (preferido)**: Recupere la URL de AMP
+    a través de la API de AMP URL de Google en el momento de escribir de una URL y almacene
+    las URL de AMP en el lado del servidor. Pase ambas URL al cliente porque la URL original
+    puede ser necesaria para compartir.
+    Este es el enfoque recomendado porque hay menos solicitudes de red del lado del cliente.
+    Cuando se adopta este enfoque, es importante realizar regularmente (por ejemplo, diariamente)
+    enlaces de exploración para las versiones de AMP porque los sitios web adoptan
     cada vez más el formato de AMP.
-1.  **Tiempo de lectura del lado del servidor (algo de uso)**: Recupere la URL de AMP 
-    a través de la API de AMP URL de Google antes de pasar el contenido a su cliente. 
-    Como se mencionó anteriormente, pase ambas URL (AMP y no AMP) al cliente porque la URL 
-    original puede ser necesaria para compartir. 
+1.  **Tiempo de lectura del lado del servidor (algo de uso)**: Recupere la URL de AMP
+    a través de la API de AMP URL de Google antes de pasar el contenido a su cliente.
+    Como se mencionó anteriormente, pase ambas URL (AMP y no AMP) al cliente porque la URL
+    original puede ser necesaria para compartir.
     Este método puede ser bueno para servicios con poco despliegue.
-1.  **Del lado del cliente (si el lado del servidor no es posible)**: Recupere la URL AMP 
-    a través de la API AMP URL de Google del cliente. Utilice este enfoque si la transformación de URL 
-    del lado del servidor no es posible (por ejemplo, para aplicaciones de mensajería que utilizan 
-    el cifrado de extremo a extremo). Asegúrese de activar la transformación de URL tan pronto 
+1.  **Del lado del cliente (si el lado del servidor no es posible)**: Recupere la URL AMP
+    a través de la API AMP URL de Google del cliente. Utilice este enfoque si la transformación de URL
+    del lado del servidor no es posible (por ejemplo, para aplicaciones de mensajería que utilizan
+    el cifrado de extremo a extremo). Asegúrese de activar la transformación de URL tan pronto
     como el contenido esté disponible, antes de que haya tenido lugar la interacción del usuario.
 
-{% call callout('Importante', type='caution') %}
-Nunca solicite las URL de AMP a través de la API de AMP de Google como resultado de la interacción
-del usuario, ya que eso degrada el rendimiento de su aplicación cuando introduce una solicitud de red adicional. 
-En su lugar, use uno de los tres enfoques descritos anteriormente.
-{% endcall %}
-
+Importante: Nunca solicite las URL de AMP a través de la API de AMP de Google como resultado de la interacción del usuario, ya que eso degrada el rendimiento de su aplicación cuando introduce una solicitud de red adicional. En su lugar, use uno de los tres enfoques descritos anteriormente.
 
 #### API de URL de AMP de Google
 
-Google proporciona la API AMP URL para recuperar las URL HTML AMP correspondientes 
+Google proporciona la API AMP URL para recuperar las URL HTML AMP correspondientes
 para una lista dada de URL ([documentación oficial](https://developers.google.com/amp/cache/use-amp-url) / [demostración](https://ampbyexample.com/advanced/using_the_amp_url_api/)). Las URL no necesitan ser las versiones canónicas. Si existe una versión de AMP, la respuesta incluye la URL AMP original y la URL de la página AMP en caché en Google AMP Cache.
 
 Por ejemplo, para una lista dada de URLs:
@@ -107,10 +99,7 @@ El cuerpo de respuesta contiene la asignación de URL de AMP en formato JSON:
 }
 ```
 
-{% call callout('Nota', type='note') %}
-Las URL de las páginas de AMP almacenadas en caché en los cachés de AMP que no son de Google no se pueden recuperar a través de la API de URL de AMP. Sin embargo, puede derivar fácilmente la URL en caché de la URL de AMP devuelta (ampURL).
-{% endcall %}
-
+Nota: Las URL de las páginas de AMP almacenadas en caché en los cachés de AMP que no son de Google no se pueden recuperar a través de la API de URL de AMP. Sin embargo, puede derivar fácilmente la URL en caché de la URL de AMP devuelta (ampURL).
 
 ## Usando cachés AMP
 
@@ -137,9 +126,7 @@ Recomendamos usar AMP Cache por los siguientes motivos:
 *   Es posible que el archivo AMP original ya no sea un AMP válido, lo que podría ocasionar una mala experiencia del usuario. En este caso, AMP Cache sirve la última versión válida del archivo AMP.
 *   Un editor no tan fiel podría servir dos documentos diferentes a un rastreador de AMP Cache y a sus usuarios. El uso de un caché AMP garantiza que los usuarios siempre vean el mismo archivo AMP que el caché.
 
-{% call callout('Importante', type='caution') %}
-Al servir páginas de AMP a través de AMP Cache, proporcione una experiencia de visor que muestre claramente el origen de AMP y ofrezca a los usuarios la posibilidad de compartir la URL canónica (para obtener más información, consulte también las dos secciones siguientes).
-{% endcall %}
+Importante: Al servir páginas de AMP a través de AMP Cache, proporcione una experiencia de visor que muestre claramente el origen de AMP y ofrezca a los usuarios la posibilidad de compartir la URL canónica (para obtener más información, consulte también las dos secciones siguientes).
 
 ## Implementando un Visor AMP
 

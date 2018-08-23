@@ -7,9 +7,7 @@ toc: true
 
 Este guia mostra um conjunto de casos de uso comuns do rastreamento de engajamento do usuário:
 
-{% call callout('Observação', type='note') %} 
-Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos. Veja [como contribuir](/pt_br/docs/support/contribute.html).
-{% endcall %}
+Observação: Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos. Veja [como contribuir](/pt_br/docs/support/contribute.html).
 
 ## Rastrear visualizações de página
 
@@ -42,7 +40,7 @@ Envie dados de visualização de página a um URL especificado usando [amp-analy
             "on": "visible",
             "request": "pageview"
         }
-  } 
+  }
 }
 </script>
 </amp-analytics>
@@ -63,8 +61,8 @@ Envie dados de visualização de página ao Google Analytics. Veja também como 
         "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
             "on": "visible",
             "request": "pageview"
-        } 
-    } 
+        }
+    }
 }
 </script>
 
@@ -99,8 +97,8 @@ O exemplo a seguir usa o atributo `selector` para enviar um evento `click` ao UR
                 "eventId": "42",
                 "eventLabel": "clicked on a link"
             }
-        } 
-    } 
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -154,8 +152,8 @@ Rastreie a rolagem de página usando [amp-analytics](/pt_br/docs/reference/compo
                 "verticalBoundaries": [25, 50, 90],
                 "horizontalBoundaries": [90]
             }
-        } 
-    } 
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -218,7 +216,7 @@ O exemplo a seguir usa o atributo `selector` do `trigger` para enviar um evento 
                 "socialTarget": "https://www.examplepetstore.com"
             }
         }
-    } 
+    }
 }
 </script>
 </amp-analytics>

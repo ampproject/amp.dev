@@ -15,11 +15,7 @@ Styles may live in the head of the document or as inline `style` attributes
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
-{% call callout('Note', type='note') %}
-AMP components come with default styles
-to make authoring responsive pages reasonably easy.
-These styles are defined in the [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
-{% endcall %}
+Note: AMP components come with default styles to make authoring responsive pages reasonably easy. These styles are defined in the [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
 ## Disallowed styles
 
@@ -77,9 +73,7 @@ they support:
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 
-{% call callout('Read on', type='success') %}
-Learn more about [custom fonts in AMP](/docs/design/responsive/custom_fonts.html).
-{% endcall %}
+Read on: Learn more about [custom fonts in AMP](/docs/design/responsive/custom_fonts.html).
 
 ## Using CSS preprocessors
 

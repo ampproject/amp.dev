@@ -91,13 +91,9 @@ Sesuai dengan perkiraan Anda tentang namanya, pemicu ini akan diaktifkan ketika 
 
 Jika memiliki platform pelacakan kustom yang ingin diintegrasikan, Anda tetap dapat menggunakan `amp-analytics` dan menentukan endpoint URL Anda yang dipersonalisasi sebagai tujuan data pelacakan dikirimkan. Pelajari lebih lanjut di dokumetasi referensi komponen [amp-analytics](/id/docs/reference/components/amp-analytics.html).
 
-{% call callout('Catatan', type='note') %}
-`“UA-YYYY-Y”` adalah contoh akun Google Analytics; contoh ini akan diganti dengan kode pelacakan Google Analytics situs Anda, jika Anda menerapkan contoh ini di situs.
-{% endcall %}
+Catatan: `“UA-YYYY-Y”` adalah contoh akun Google Analytics; contoh ini akan diganti dengan kode pelacakan Google Analytics situs Anda, jika Anda menerapkan contoh ini di situs.
 
-{% call callout('Tips', type='success') %}
-Jika tertarik pada sistem pelacakan yang lebih sederhana, Anda mungkin ingin melihat [amp-pixel](/id/docs/reference/components/amp-pixel.html). Jika hanya perlu melacak pageview, amp-pixel adalah solusi yang lebih sederhana daripada amp-analytics karena hanya bertujuan untuk menyelesaikan persyaratan pelacakan piksel tradisional. Pelajari lebih lanjut di [Analytics: panduan dasar-dasar](/id/docs/analytics/analytics_basics.html).
-{% endcall %}
+Tips: Jika tertarik pada sistem pelacakan yang lebih sederhana, Anda mungkin ingin melihat [amp-pixel](/id/docs/reference/components/amp-pixel.html). Jika hanya perlu melacak pageview, amp-pixel adalah solusi yang lebih sederhana daripada amp-analytics karena hanya bertujuan untuk menyelesaikan persyaratan pelacakan piksel tradisional. Pelajari lebih lanjut di [Analytics: panduan dasar-dasar](/id/docs/analytics/analytics_basics.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/id/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">Sebelumnya</span></a>

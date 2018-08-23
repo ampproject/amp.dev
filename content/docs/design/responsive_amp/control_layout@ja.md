@@ -26,9 +26,7 @@ $title: レイアウトとメディアクエリ
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('ヒント', type='success') %}
- `amp-img` の基本的な設定と高度な設定のサンプルを並べて比較するライブデモをご覧ください。[ライブデモ](https://ampbyexample.com/components/amp-img/) 
-{% endcall %}
+ヒント: `amp-img` の基本的な設定と高度な設定のサンプルを並べて比較するライブデモをご覧ください。[ライブデモ](https://ampbyexample.com/components/amp-img/)
 
 ## layout 属性
 
@@ -129,9 +127,7 @@ $title: レイアウトとメディアクエリ
 
  [@media](https://developer.mozilla.org/ja/docs/Web/CSS/@media) を使用すると、他のウェブサイトの場合と同じように、ページ レイアウトの見え方や動作を管理できます。ブラウザ ウィンドウのサイズや向きが変わると、メディアクエリが再評価され、新しい結果に基づいて要素の表示、非表示が決まります。
 
-{% call callout('ヒント', type='success') %}
- メディアクエリを使用してレイアウトを管理する方法について詳しくは、[CSS メディアクエリを使用してレスポンシブにする](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en)
-をご覧ください。{% endcall %}
+ヒント: メディアクエリを使用してレイアウトを管理する方法について詳しくは、[CSS メディアクエリを使用してレスポンシブにする](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en) をご覧ください。
 
 ### 要素のメディアクエリ
 

@@ -32,13 +32,11 @@ $title: 써드 파티 콘텐츠 가져오기
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('도움말', type='success') %}
-[AMP By Example](https://ampbyexample.com/components/amp-twitter/)에서 더 많은 `amp-twitter` 예시를 확인하세요.
-{% endcall %}
+도움말: [AMP By Example](https://ampbyexample.com/components/amp-twitter/)에서 더 많은 `amp-twitter` 예시를 확인하세요.
 
 ## 인스타그램 가져오기
 
@@ -67,13 +65,11 @@ width와 height 값은 전역으로 사용해야합니다.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('도움말', type='success') %}
-[AMP By Example](https://ampbyexample.com/components/amp-instagram/)에서 더 많은 `amp-instagram` 예시를 확인하세요.
-{% endcall %}
+도움말: [AMP By Example](https://ampbyexample.com/components/amp-instagram/)에서 더 많은 `amp-instagram` 예시를 확인하세요.
 
 ## 페이스북 포스트나 비디오 보여주기
 
@@ -119,10 +115,7 @@ width와 height 값은 전역으로 사용해야합니다.
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-{% call callout('도움말', type='success') %}
-[AMP By Example](https://ampbyexample.com/components/amp-facebook/)에서 더 많은 `amp-facebook` 예시를 확인하세요.
-{% endcall %}
-
+도움말: [AMP By Example](https://ampbyexample.com/components/amp-facebook/)에서 더 많은 `amp-facebook` 예시를 확인하세요.
 
 ## 유튜브 비디오 가져오기
 
@@ -150,13 +143,11 @@ Z1q71gFeRqM가 video id입니다.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('도움말', type='success') %}
-[AMP By Example](https://ampbyexample.com/components/amp-youtube/)에서 더 많은 `amp-youtube` 예시를 확인하세요.
-{% endcall %}
+도움말: [AMP By Example](https://ampbyexample.com/components/amp-youtube/)에서 더 많은 `amp-youtube` 예시를 확인하세요.
 
 ## 광고 보여주기
 
@@ -180,7 +171,7 @@ AMP 문서 내에서 자바스크립트로 제공하는 광고 네트워크는 �
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -196,13 +187,11 @@ AMP 문서 내에서 자바스크립트로 제공하는 광고 네트워크는 �
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 AMP는 광범위한 광고 네트워크를 지원합니다.
 [reference for a full list](/ko/docs/reference/components/amp-ad.html#supported-ad-networks)를 참고하시길 바랍니다.
 
-{% call callout('읽어보기', type='read') %}
-[AMP에 광고 게재](/ko/docs/ads/monetization.html) 가이드에서 광고에 관해 자세히 알아보세요.
-{% endcall %}
+읽어보기: [AMP에 광고 게재](/ko/docs/ads/monetization.html) 가이드에서 광고에 관해 자세히 알아보세요.

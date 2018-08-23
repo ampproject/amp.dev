@@ -16,10 +16,7 @@ iframe 在 AMP 中特别有用，可显示主网页中不支持的内容，例�
 * 必须距离顶部至少 **600px** 或位于第一个视口 **75%** 下方的位置。
 * 只能通过 HTTPS 请求资源，且不得与容器的来源相同，除非未指定。
 
-{% call callout('阅读', type='read') %}
-有关详情，[请参阅 <code>amp-iframe</code>](/zh_cn/docs/reference/components/amp-iframe.html)
-的完整规范。
-{% endcall %}
+阅读: 有关详情，[请参阅 <code>amp-iframe</code>](/zh_cn/docs/reference/components/amp-iframe.html) 的完整规范。
 
 ### 添加脚本
 
@@ -54,10 +51,7 @@ Preview:
 
 您可以在文档顶部展示 `amp-iframe` ，前提是 `amp-iframe` 包含具有 `placeholder` 属性的元素（例如 `amp-img` 元素）。在 iframe 准备就绪，可以进行展示之前，该元素会以占位符的形式呈现。
 
-{% call callout('阅读', type='read') %} 
-要详细了解占位符，请参阅[包含占位符的 Iframe](/zh_cn/docs/reference/components/amp-iframe.html#iframe-with-placeholder)。
-{% endcall %}
-
+阅读: 要详细了解占位符，请参阅[包含占位符的 Iframe](/zh_cn/docs/reference/components/amp-iframe.html#iframe-with-placeholder)。
 
 包含占位符的示例：
 

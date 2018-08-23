@@ -81,11 +81,7 @@ Para nosso artigo, **adicione** os seguintes dados estruturados na parte inferio
 </script>
 ```
 
-
-{% call callout('Observação', type='note') %}
-O conteúdo deve ser sempre o mesmo. Para artigos, especifique o tipo "NewsArticle". O cabeçalho precisa corresponder ao título do artigo. O objeto de imagem faz referência à imagem principal do artigo.
-{% endcall %}
-
+Observação: O conteúdo deve ser sempre o mesmo. Para artigos, especifique o tipo "NewsArticle". O cabeçalho precisa corresponder ao título do artigo. O objeto de imagem faz referência à imagem principal do artigo.
 
 **Atualize** a página no seu navegador e verifique se não há erros de validação de AMP.
 
@@ -107,9 +103,7 @@ Para verificar se os dados estruturados estão corretos, várias plataformas ofe
 
 Se os dados estruturados forem válidos, você verá **0 erros** e **0 avisos**.
 
-{% call callout('Leia mais', type='read') %}
-Para saber mais sobre detecção de página, consulte o guia [Torne sua página detectável](/pt_br/docs/fundamentals/discovery.html).
-{% endcall %}
+Leia mais: Para saber mais sobre detecção de página, consulte o guia [Torne sua página detectável](/pt_br/docs/fundamentals/discovery.html).
 
 Bom trabalho!  Seu artigo em AMP está pronto!
 

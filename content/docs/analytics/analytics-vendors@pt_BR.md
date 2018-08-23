@@ -18,9 +18,7 @@ Veja um snippet que especifica `type` para um fornecedor de análise chamado `XY
 <amp-analytics type="XYZ"> … </amp-analytics>
 ```
 
-{% call callout('Leia mais', type='read') %}
- Saiba mais sobre as análises de rastreamento com [`amp-analytics`](/pt_br/docs/reference/components/amp-analytics.html)
-.{% endcall %}
+Leia mais: Saiba mais sobre as análises de rastreamento com [`amp-analytics`](/pt_br/docs/reference/components/amp-analytics.html).
 
 ## Fornecedores
 
@@ -182,9 +180,7 @@ Na seção `requests`:
 
 - `url`: localização HTTPS de `amp-analytics-oewa.html`
 
-{% call callout('Observação', type='note') %}
-há uma variação chamada `oewadirect` que não usa a solução iframe-ping e tem uma melhor detecção de cliente com o uso de `AMP CLIENT_ID`. Esse recurso atualmente é EXPERIMENTAL e proibido pela OEWA, porque não usa `oewa2.js`.
-{% endcall %}
+Observação: há uma variação chamada `oewadirect` que não usa a solução iframe-ping e tem uma melhor detecção de cliente com o uso de `AMP CLIENT_ID`. Esse recurso atualmente é EXPERIMENTAL e proibido pela OEWA, porque não usa `oewa2.js`.
 
 ### Parsely
 

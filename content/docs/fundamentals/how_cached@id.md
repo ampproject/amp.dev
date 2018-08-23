@@ -18,16 +18,16 @@ Pelajari lebih lanjut tentang Cache AMP di video YouTube di bawah, atau pada ent
 {{ youtube('n8n7fj60lds', 480, 270, caption='Tonton video ini untuk mempelajari alasan dibuatnya Cache AMP.') }}
 
 ## Cache AMP apa saja yang tersedia?
-Saat ini, ada 2 penyedia Cache AMP: 
+Saat ini, ada 2 penyedia Cache AMP:
 
-- [Google AMP Cache](https://developers.google.com/amp/cache/) 
+- [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Cloudflare AMP Cache](https://amp.cloudflare.com/)
 
 AMP adalah ekosistem terbuka dan Project AMP secara aktif mendorong pengembangan lebih banyak Cache AMP.  Untuk mempelajari tentang cara membuat Cache AMP, lihat [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
 ## Bagaimana cara memilih Cache AMP?
 
-Sebagai penayang, Anda tidak memilih Cache AMP, *sebenarnya platform* yang ditautkan ke konten Anda yang memilih Cache AMP (jika ada) untuk digunakan. 
+Sebagai penayang, Anda tidak memilih Cache AMP, *sebenarnya platform* yang ditautkan ke konten Anda yang memilih Cache AMP (jika ada) untuk digunakan.
 
 Ini adalah kebalikan dari model pada umumnya yang mana penayangan konten adalah tanggung jawab dari penayang.  Namun, model ini memungkinkan platform memberikan performa pemuatan yang dapat diprediksi kepada penggunanya. Selain itu, model ini juga memungkinkan platform memastikan invarian privasi dan keamanan yang diperlukan selama fase prarender AMP. Untuk mempelajari tentang panduan ketat dalam membuat Cache AMP, lihat [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
@@ -55,9 +55,7 @@ Dengan menggunakan format AMP, Anda membuat konten dapat disimpan dalam cache ol
     - Contoh URL Cache AMP Cloudflare: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Contoh URL Cache AMP Google: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
-{% call callout('Catatan', type='note') %}
 Catatan: URL Cache AMP bukanlah URL yang diakses langsung oleh pengguna, artinya pengguna biasanya tidak akan meminta konten melalui URL tersebut.
-{% endcall %}
 
 * **Penambahan oleh penayang**: Penayang dapat secara khusus menambahkan halaman AMP ke Cache AMP.  Opsi ini hanya berlaku untuk Cache AMP Google (lihat [Cache AMP Google: Memperbarui Konten AMP](https://developers.google.com/amp/cache/update-cache)).
 

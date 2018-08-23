@@ -67,10 +67,7 @@ selected.slide // Evaluates to 0.
 
 `event.index` 表达式求得的值即是新幻灯片的索引，并且 `AMP.setState()` 操作会将此对象常量合并到当前状态中。这样一来，`selected.slide` 的当前值便会替换为 `event.index` 的值。
 
-
-{% call callout('提示', type='success') %}
-`AMP.setState()` 会对嵌套的对象常量执行深度合并。有关详情，请参阅 [`<amp-bind>`](/zh_cn/docs/reference/components/amp-bind.html) 文档。
-{% endcall %}
+提示: `AMP.setState()` 会对嵌套的对象常量执行深度合并。有关详情，请参阅 [`<amp-bind>`](/zh_cn/docs/reference/components/amp-bind.html) 文档。
 
 ### 绑定指示器元素
 
@@ -179,13 +176,11 @@ selected.slide // Evaluates to 0.
 为 [`<amp-selector>`](/zh_cn/docs/reference/components/amp-selector.html) 添加“on”操作，以便每当用户选择了新的颜色时，系统就会更新 `selected.sku` 变量：
 
 ```html
-<amp-selector name="color" 
+<amp-selector name="color"
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-{% call callout('提示', type='success') %}
-您也可通过为 `<amp-selector>` 内的每个 `<amp-img>` 子级添加 `on="tap:AMP.setState(...)` 操作来实现这种效果。`<amp-selector>` 的好处之一就是，它会以诸如此类的方式来简化标记。
-{% endcall %}
+提示: 您也可通过为 `<amp-selector>` 内的每个 `<amp-img>` 子级添加 `on="tap:AMP.setState(...)` 操作来实现这种效果。`<amp-selector>` 的好处之一就是，它会以诸如此类的方式来简化标记。
 
 ### 绑定图片元素
 
@@ -201,9 +196,7 @@ selected.slide // Evaluates to 0.
     [src]="shirts[selected.sku].image"></amp-img>
 ```
 
-{% call callout('注意', type='note') %}
-在实践中，轮换展示内容中的每张图片都可能需要具有不同的 `src`。若想实现这一点，只需将单张图片替换为一组图片即可。为简单起见，本教程就以不同的放大程度使用了单张图片。
-{% endcall %}
+注意: 在实践中，轮换展示内容中的每张图片都可能需要具有不同的 `src`。若想实现这一点，只需将单张图片替换为一组图片即可。为简单起见，本教程就以不同的放大程度使用了单张图片。
 
 **试试看**：刷新网页，并另选一种衬衫颜色。当您选完之后，轮换展示内容中的图片便会更新为显示与所选颜色对应的衬衫。
 

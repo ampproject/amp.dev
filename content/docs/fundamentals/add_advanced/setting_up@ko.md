@@ -21,7 +21,7 @@ $title: 설정
 git clone https://github.com/googlecodelabs/accelerated-mobile-pages-advanced.git
 ```
 
-필요한 경우 압축 파일을 풀고 컴퓨터에서 명령줄을 사용하여 프로젝트 디렉토리로 이동합니다. 
+필요한 경우 압축 파일을 풀고 컴퓨터에서 명령줄을 사용하여 프로젝트 디렉토리로 이동합니다.
 
 ```shell
 cd accelerated-mobile-pages-advanced
@@ -38,9 +38,7 @@ cd accelerated-mobile-pages-advanced
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('참고', type='note') %}
-프로덕션 환경에서는 HTTPS를 사용하는 것이 좋습니다. HTTPS는 보안상의 장점 외에도 검색엔진 최적화 등의 여러 다른 장점이 있습니다. [Google 웹마스터 블로그 게시물](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)에서 이 주제에 관해 자세히 읽어 볼 수 있습니다.
-{% endcall %}
+참고: 프로덕션 환경에서는 HTTPS를 사용하는 것이 좋습니다. HTTPS는 보안상의 장점 외에도 검색엔진 최적화 등의 여러 다른 장점이 있습니다. [Google 웹마스터 블로그 게시물](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)에서 이 주제에 관해 자세히 읽어 볼 수 있습니다.
 
 로컬 웹 서버를 설정하고 나면 브라우저에서 [이 URL](http://localhost:8000/article.amp.html)을 통해 샘플 도움말에 액세스하세요.
 

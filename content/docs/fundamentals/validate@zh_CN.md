@@ -236,6 +236,6 @@ AMP 验证工具不仅能在开发过程中为您提供便利，还可供将您�
 1.  描述错误的一行文字。在本例中，这些文字指明我们使用的是 `<img>` 标记，而我们本应使用 `<amp-img>` 标记。
 1.  指向与错误相关的文档的链接。本例中是指 `<amp-img>` 标记的文档。并非所有错误都会生成文档链接。
 
-再次仔细阅读[规范](/zh_cn/docs/reference/spec.html)之后，我们意识到我们使用的是 `<img>` 标记，而我们本应使用 `<amp-img>` 标记的文档。
+再次仔细阅读[规范](/zh_cn/docs/fundamentals/spec.html)之后，我们意识到我们使用的是 `<img>` 标记，而我们本应使用 `<amp-img>` 标记的文档。
 
 为了更好地全面了解可能出现的错误，请参阅 [AMP 验证错误指南](/zh_cn/docs/reference/validation_errors.html)。如果在认真评估之后仍有疑问，请 [提出问题](http://stackoverflow.com/questions/tagged/amp-html)，我们将尽力提供帮助。

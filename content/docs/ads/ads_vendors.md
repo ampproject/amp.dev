@@ -3,12 +3,9 @@ $title: Advertising vendors
 $order: 6
 ---
 
-This document lists advertising vendors and platforms that provide a built-in configuration for use with the [`amp-ad`](/docs/reference/components/amp-ad.html) component. To see configuration details for the specific vendor, click the vendor's link. 
+This document lists advertising vendors and platforms that provide a built-in configuration for use with the [`amp-ad`](/docs/reference/components/amp-ad.html) component. To see configuration details for the specific vendor, click the vendor's link.
 
-{% call callout('Note', type='note') %}
-For ad vendors who wish to provide an integration with AMP, please see the [developer guidelines for Integrating with AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md#developer-guidelines-for-a-pull-request).
-{% endcall %}
-
+Note: For ad vendors who wish to provide an integration with AMP, please see the [developer guidelines for Integrating with AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md#developer-guidelines-for-a-pull-request).
 
 {% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 

@@ -38,14 +38,11 @@ to select the aspect ratio based on screen width.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Tip', type='success') %}
-See more `amp-twitter` examples at [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
-{% endcall %}
-
+Tip: See more `amp-twitter` examples at [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
 
 ## Embed an Instagram
 
@@ -74,13 +71,11 @@ so the value for width and height should be universal.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Tip', type='success') %}
-See more `amp-instagram` examples at [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
-{% endcall %}
+Tip: See more `amp-instagram` examples at [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
 
 ## Display a Facebook post or video
 
@@ -96,14 +91,14 @@ You must include the following script in the `<head>`:
 
 ##### Example: Embedding a post
 
-Source: 
+Source:
 ```html
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
@@ -111,7 +106,7 @@ Preview:
 
 ##### Example: Embedding a video
 
-Source: 
+Source:
 ```html
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -119,20 +114,18 @@ Source:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-{% call callout('Tip', type='success') %}
-See more `amp-facebook` examples at [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
-{% endcall %}
+Tip: See more `amp-facebook` examples at [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
 
 ## Embed a YouTube video
 
-Embed a YouTube video in your page by 
+Embed a YouTube video in your page by
 using the [`amp-youtube`](/docs/reference/components/amp-youtube.html) element.
 
 You must include the following script in the `<head>`:
@@ -156,18 +149,15 @@ Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Tip', type='success') %}
-See more `amp-youtube` examples at [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
-{% endcall %}
-
+Tip: See more `amp-youtube` examples at [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
 
 ## Display an ad
 
-Display an ad in your page by 
+Display an ad in your page by
 using the [`amp-ad`](/docs/reference/components/amp-ad.html) element.
 Only ads served via HTTPS are supported.
 
@@ -188,7 +178,7 @@ Different ad types require different `data-*` attributes.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -204,12 +194,10 @@ to be shown if no ad is available:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 AMP supports a wide range of ad networks. See the [amp-ad reference documentation](/docs/reference/components/amp-ad.html#supported-ad-networks)  for a full list.
 
-{% call callout('Read on', type='read') %}
-Learn more about ads in the [Serving Ads on AMP](/docs/ads/monetization.html) guide.
-{% endcall %}
+Read on: Learn more about ads in the [Serving Ads on AMP](/docs/ads/monetization.html) guide.

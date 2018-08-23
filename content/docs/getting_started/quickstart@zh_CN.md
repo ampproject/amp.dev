@@ -28,9 +28,7 @@ $title: 使用入门
 </html>
 ```
 
-{% call callout('继续阅读', type='read') %}
-详细了解 AMP 网页[必需的标记](/zh_cn/docs/fundamentals/spec.html#required-markup)。
-{% endcall %}
+继续阅读: 详细了解 AMP 网页[必需的标记](/zh_cn/docs/fundamentals/spec.html#required-markup)。
 
 ### 第 2 步：向网页添加组件
 
@@ -72,9 +70,7 @@ $title: 使用入门
 </style>
 ```
 
-{% call callout('继续阅读', type='read') %}
-详细了解 AMP 网页[支持的 CSS](/zh_cn/docs/design/responsive/style_pages.html)。
-{% endcall %}
+继续阅读: 详细了解 AMP 网页[支持的 CSS](/zh_cn/docs/design/responsive/style_pages.html)。
 
 ### 第 4 步：验证 AMP HTML
 
@@ -92,5 +88,5 @@ $title: 使用入门
 * [向您的网页添加分析工具](/zh_cn/docs/analytics/analytics_amp.html)
 * [提高用户互动度](/zh_cn/docs/fundamentals/engagement.html)
 * [AMP BY Example](https://ampbyexample.com/) 上的在线演示
- 
- 
+
+

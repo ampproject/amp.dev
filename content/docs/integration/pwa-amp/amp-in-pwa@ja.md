@@ -43,9 +43,7 @@ Shadow AMP ライブラリが使用可能になったかどうかは、グロー
 
 Shadow AMP ライブラリが実際に読み込まれると、すでに `window.AMP` にコールバックの配列があることを認識してキュー全体を処理します。この関数は、もう一度実行しても正常に動作します。Shadow AMP によって `window.AMP` が置き換えられ、カスタムの `push` メソッドによって直ちにコールバックが処理されるからです。
 
-{% call callout('ヒント', type='success') %}
-上のサンプルコードを実際に使用するときは、Promise でラップし、AMP API にアクセスする前には常に Promise を使用することをおすすめします。例として、[React デモコード](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20)をご覧ください。
-{% endcall %}
+ヒント: 上のサンプルコードを実際に使用するときは、Promise でラップし、AMP API にアクセスする前には常に Promise を使用することをおすすめします。例として、[React デモコード](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20)をご覧ください。
 
 ## PWA のナビゲーションを処理する
 
@@ -77,9 +75,7 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-{% call callout('重要', type='caution') %}
 上のサンプルコードは、エラー処理を省略して単純化されています。エラーは、必ず適切に処理してください。
-{% endcall %}
 
 これで `Document` オブジェクトが準備できたので、AMP に引き継いでレンダリングします。次のように、AMP ドキュメントのコンテナとして機能する DOM 要素への参照を取得し、`AMP.attachShadowDoc()` を呼び出します。
 
@@ -97,9 +93,7 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-{% call callout('ヒント', type='success') %}
-AMP ページを単独で表示する場合（ヘッダーやフッターなどを埋め込んでいない場合）、ページ要素を削除するタイミングとしては、ドキュメントを実際に AMP に引き継ぐ前が最適です。
-{% endcall %}
+ヒント: AMP ページを単独で表示する場合（ヘッダーやフッターなどを埋め込んでいない場合）、ページ要素を削除するタイミングとしては、ドキュメントを実際に AMP に引き継ぐ前が最適です。
 
 これで、リクエストした AMP ページが PWA の子としてレンダリングされます。
 
@@ -128,5 +122,5 @@ Polymer フレームワークを使用した PWA と AMP のサンプルも用�
 
 * コードはこちら: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
 * 操作可能なサンプルはこちら: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
- 
- 
+
+

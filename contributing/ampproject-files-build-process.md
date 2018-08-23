@@ -1,4 +1,4 @@
-# AMPProject.org files & build process 
+# AMPProject.org files & build process
 
 This document provides information on how the site is built, the purpose of certain files, and other important information if you're working with the ampproject.org site.
 
@@ -11,12 +11,13 @@ This document provides information on how the site is built, the purpose of cert
   + [Branches](#branches)
   + [Continuous build](#continuous-build)
   + [Gulp preprocess tasks](#gulp-preprocess-tasks)
+* [Authoring](#authoring)
 * [Localization](#localization)
 * [Hosting](#hosting)
 
 ## TL;DR;
 
-*   Content in Github repository: https://github.com/ampproject/docs 
+*   Content in Github repository: https://github.com/ampproject/docs
     *   Administrators:[@bpaduch](https://github.com/bpaduch), [@pbakaus](https://github.com/pbakaus)
 *   Site is built using [Grow SDK](https://grow.io/) -- a static site generator, generating HTML files from Markdown files
 *   Git branches: production and master
@@ -30,7 +31,7 @@ The contents for the ampproject.org site can be found in the [ampproject/docs Gi
 
 
 ```bash
-├──  /assets                         # Visual assets  
+├──  /assets                         # Visual assets
 ├──  /content                        # All the content for the site
 |    ├──  /docs                      # Content for "Docs" section
 |         ├──  /_blueprint.yaml      # Blueprint for collection
@@ -47,6 +48,7 @@ The contents for the ampproject.org site can be found in the [ampproject/docs Gi
 ├──  /pwa                            # PWA implementation for site
 ├──  /scripts                        # Scripts for automated tasks
 |    ├──  component_categories.json  # Associate amp components with category
+|    ├──  import_roadmap.js          # Imports roadmap from AMPHTML repo
 |    ├──  import_docs.js             # Imports docs from AMPHTML repo
 |    ├──  import_docs.json           # Specific docs to import
 |    ├──  update_blog_links.js       # Gets blogs WP and formats for site
@@ -90,11 +92,11 @@ To build the site, we use [Grow](https://grow.io/), which generates HTML files f
 
 ### Branches
 
-There are two main branches that we use to build and maintain the ampproject.org site: 
+There are two main branches that we use to build and maintain the ampproject.org site:
 
 
 ```text
-------------- Production   <--  reflects what's running on www.ampproject.org 
+------------- Production   <--  reflects what's running on www.ampproject.org
     \
      \------- Master       <-- where code changes are made, and pull requests are made
 ```
@@ -121,6 +123,50 @@ The following gulp tasks are performed in a build (details are in [gulpfile.js](
 *   **update-platforms-page**: Run [`update_platforms_page.js`](https://github.com/ampproject/docs/blob/master/scripts/update_platforms_page.js) to get the latest [supported platforms](https://www.ampproject.org/support/faqs/supported-platforms).
 *   **generate-asset-manifest**: Generate asset manifest for PWA.
 *   **sass**: Create SASS from CSS resources.
+
+## Authoring
+
+### Notes and tips
+
+To write a nicely formatted note or tip, simply write it as single line, prefaced with "Tip:", "Note:", "Learn more" or "Caution:" (also works for localized versions), like so:
+
+  > Tip: This will turn into a nicely formatted block. I can contain any kind of markdown, like \[links](https://ampproject.org).
+
+In situations where you need multiple lines, or if you want to customize the title, use the macro syntax of Grow, like so:
+
+    {% call callout('Here's a fancy tip', type='success') %}
+    Tips can have multiple lines.
+
+    Unfortunately you have to write out the macro then.
+    {% endcall %}
+
+Here, the first attribute to the `callout` function can be customized to any string, the type accepts either `none`, `note`, `caution`, `warning`, `success` or `read`.
+
+# Images
+
+Images should be written with the following macro (as standard Markdown syntax will produce invalid `<img>` tags, which are invalid in AMP):
+
+    {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third', caption='Optional caption', alt='optional alt text') }}
+
+# Animated images
+
+Animated images should be written with the following macro (as standard Markdown syntax will produce invalid `<img>` tags, which are invalid in AMP):
+
+    {{ anim('anim.gif', 700, 1441, 'anim-placeholder.png', align='right third', alt='optional alt text') }}
+
+# YouTube
+
+Include YouTube videos with the following macro:
+
+    {{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
+
+# Video
+
+Include generic HTML5 video with the following macro:
+
+    {{ video('video.mp4', 480, 270, 'poster.jpg', caption='optional caption', autoplay='1', loop='1', controls='1') }}
+
+`autoplay`, `loop`, `controls` are all optional and off by default.
 
 
 ## Localization

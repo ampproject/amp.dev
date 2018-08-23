@@ -7,7 +7,7 @@ An entire story is represented by the `amp-story` component, which serves as a c
 
 The `amp-story` component is a custom AMP component, and like all custom components, you must add the associated script for the component to the AMP document.
 
-**Open** the `pets.html` file in your text editor, and in the `<head>` section, **add** the following script: 
+**Open** the `pets.html` file in your text editor, and in the `<head>` section, **add** the following script:
 
 ```html hl_lines="2 3"
 <head>
@@ -18,7 +18,7 @@ The `amp-story` component is a custom AMP component, and like all custom compone
 
 **Add** the `<amp-story>` element to the `<body>` of your document, and specify the mandatory `standalone` attribute, like so:
 
-```html hl_lines="2 3" 
+```html hl_lines="2 3"
 <body>
   <amp-story standalone>
   </amp-story>
@@ -36,9 +36,9 @@ For stories to be discovered in the AMP stories ecosystem, certain metadata is r
 * The publisher's logo, represented by the `publisher-logo-src` attribute.  This is a URL for a logo image, in square format with a 1x1 aspect ratio.
 * A poster image of the story, represented by the `poster-portrait-src` attribute. This is a URL for the poster, and the image must be in portrait format with a 3x4 aspect ratio.
 
-Let's add these attributes to our `<amp-story>` tag: 
+Let's add these attributes to our `<amp-story>` tag:
 
-```html hl_lines="2 3 4 5" 
+```html hl_lines="2 3 4 5"
 <amp-story standalone
     title="Joy of Pets"
     publisher="AMP tutorials"
@@ -48,9 +48,7 @@ Let's add these attributes to our `<amp-story>` tag:
 
 In addition to these required attributes, there are other attributes you can apply. To learn more, see the [attributes](/docs/reference/components/amp-story.html#attributes) section of the amp-story reference documentation.
 
-{% call callout('Note', type='note') %}
-These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your AMP pages are discovered across all platforms, you should add [Structured Data](/docs/fundamentals/discovery.html#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories.
-{% endcall %}
+Note: These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your AMP pages are discovered across all platforms, you should add [Structured Data](/docs/fundamentals/discovery.html#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories.
 
 At this point, we have a shell of a story without any content. Let's create that page.
 

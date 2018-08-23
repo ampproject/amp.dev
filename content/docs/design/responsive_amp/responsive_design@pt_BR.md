@@ -17,7 +17,7 @@ Neste guia, você verá como implementar facilmente estes princípios básicos e
 
 Para otimizar sua página da Web e fazer com que o conteúdo seja dimensionado e se ajuste ao tamanho da janela do navegador em qualquer dispositivo, é preciso especificar o elemento `meta` da janela de visualização. Esse elemento indica ao navegador como dimensionar e ajustar a área visível (a janela de visualização) da página da Web.
 
-Quais valores devem ser usados?  Isso já está especificado nas páginas AMP.  Como parte da [marcação obrigatória](/pt_br/docs/reference/spec.html#required-markup) das páginas AMP, especifique a janela de visualização a seguir:
+Quais valores devem ser usados?  Isso já está especificado nas páginas AMP.  Como parte da [marcação obrigatória](/pt_br/docs/fundamentals/spec.html#required-markup) das páginas AMP, especifique a janela de visualização a seguir:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -35,7 +35,7 @@ Redimensionar cada elemento para que ele se ajuste à tela pode ser uma tarefa c
 
 ##### Exemplo: como restringir a largura de imagens responsivas
 
-No exemplo a seguir, temos uma imagem de flores (640 x 427 pixels) que será exibida em todos os tamanhos de tela. Por isso, especificaremos os atributos `width` e `height` e definiremos o layout como `responsive`.  
+No exemplo a seguir, temos uma imagem de flores (640 x 427 pixels) que será exibida em todos os tamanhos de tela. Por isso, especificaremos os atributos `width` e `height` e definiremos o layout como `responsive`.
 
 <div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="Mostrar mais">Mostrar código completo</div><div placeholder></div></amp-iframe></div>
 
@@ -49,9 +49,7 @@ No entanto, queremos que a imagem não se expanda além do tamanho pretendido. P
 </style>
 ```
 
-{% call callout('Leia mais', type='read') %}
-Para saber mais sobre os diferentes layouts em AMP, consulte o guia [Consultas de mídia e layout](/pt_br/docs/design/responsive/control_layout.html##atributo-de-layout).
-{% endcall %}
+Leia mais: Para saber mais sobre os diferentes layouts em AMP, consulte o guia [Consultas de mídia e layout](/pt_br/docs/design/responsive/control_layout.html##atributo-de-layout).
 
 <a id="fn1"></a>
 {% call callout2(type='none') %}***Por que é difícil redimensionar elementos para que eles se ajustem ao tamanho da tela quando posso fazer isso facilmente com o estilo "width=100%"?** A parte complicada é renderizar os elementos responsivos na página sem prejudicar as métricas de desempenho nem a experiência do usuário.  Sim, é fácil ajustar imagens à tela com "width=100%", mas isso afetará o desempenho.  Primeiro, o navegador precisa fazer download da imagem para identificar as dimensões dela. Depois, ele redimensionará a imagem para que ela se ajuste ao tamanho da tela. Por fim, fará o reflow e preencherá a página novamente.  Ao usar AMP, o caminho de renderização é otimizado para que a página seja gerada primeiro com marcadores de imagens. Essa marcação é feita com base nas dimensões fornecidas no "amp-img", a partir dos números usados para definir a proporção. Depois, os recursos são transferidos por download, e a página é preenchida.  O reflow não é obrigatório.
@@ -86,9 +84,7 @@ As imagens compõem grande parte de uma página da Web, (aproximadamente [65% do
 
 Para telas de alta resolução, como a tela Retina, você deve fornecer imagens claras e nítidas. Porém, não convém usar essas mesmas imagens em dispositivos de baixa resolução porque isso aumentará o tempo de carregamento.  Em páginas AMP e não AMP, é possível veicular a imagem correta para a densidade de pixels da tela usando o `srcset` com o descritor de largura ( `w` ).
 
-{% call callout('Observação', type='note') %}
-O seletor srcset baseado no DPR (`x`) também funciona. No entanto, para uma maior flexibilidade, recomendamos o uso do seletor `w`. Anteriormente, (na proposta srcset antiga), o descritor `w` definia a largura da janela de visualização. Agora, ele descreve a largura do arquivo de origem da imagem. Isso permite que o user agent calcule a densidade de pixels efetiva de cada imagem e escolha a mais apropriada para renderizar.
-{% endcall %}
+Observação: O seletor srcset baseado no DPR (`x`) também funciona. No entanto, para uma maior flexibilidade, recomendamos o uso do seletor `w`. Anteriormente, (na proposta srcset antiga), o descritor `w` definia a largura da janela de visualização. Agora, ele descreve a largura do arquivo de origem da imagem. Isso permite que o user agent calcule a densidade de pixels efetiva de cada imagem e escolha a mais apropriada para renderizar.
 
 ##### Exemplo: como exibir uma imagem nítida que se ajusta à tela
 
@@ -103,9 +99,7 @@ No exemplo a seguir, há diversos arquivos de imagem que têm a mesma proporçã
 
 Por exemplo, digamos que você tenha um dispositivo com a largura da janela de visualização de 412 pixels e um DPR de 2,6. Com base no código acima, a imagem precisa ser exibida em 75% da largura da janela de visualização. Assim, o navegador escolherá uma imagem de tamanho próximo a 803 pixels (412 * ,75 * 2,6), que é `apple-800.jpg`.
 
-{% call callout('Leia mais', type='read') %}
-Para saber mais sobre o uso de srcset e tamanhos em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas](/pt_br/docs/design/responsive/art_direction.html).
-{% endcall %}
+Leia mais: Para saber mais sobre o uso de srcset e tamanhos em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas](/pt_br/docs/design/responsive/art_direction.html).
 
 #### Como alterar a direção de arte de uma imagem
 
@@ -119,15 +113,11 @@ No exemplo a seguir, você verá três diferentes imagens de um gato cortadas qu
 - 470 a 669 pixels, será exibida `cat-medium.jpg` (450 x 340 pixels);
 - 469 pixels ou menos, será exibida `cat-small.jpg` (226 x 340 pixels).
 
-{% call callout('Observação', type='note') %}
-Como queríamos que as imagens tivessem tamanhos fixos (ou seja, sem distorções), não foi especificado um valor de layout. Por padrão, ele é definido como `layout=fixed` porque foram configuradas a altura e a largura. Para mais informações, consulte ["E se o atributo de layout não for especificado?"](/pt_br/docs/design/responsive/control_layout.html##o-que-acontece-se-o-atributo-layout-não-estiver-especificado?).
-{% endcall %}
+Observação: Como queríamos que as imagens tivessem tamanhos fixos (ou seja, sem distorções), não foi especificado um valor de layout. Por padrão, ele é definido como `layout=fixed` porque foram configuradas a altura e a largura. Para mais informações, consulte ["E se o atributo de layout não for especificado?"](/pt_br/docs/design/responsive/control_layout.html##o-que-acontece-se-o-atributo-layout-não-estiver-especificado?).
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Mostrar mais">Mostrar código completo</div><div placeholder></div></amp-iframe></div>
 
-{% call callout('Leia mais', type='read') %}
-Para saber mais sobre a direção de arte em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas](/pt_br/docs/design/responsive/art_direction.html).
-{% endcall %}
+Leia mais: Para saber mais sobre a direção de arte em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas](/pt_br/docs/design/responsive/art_direction.html).
 
 #### Como fornecer imagens otimizadas
 
@@ -135,9 +125,7 @@ Para exibir páginas de carregamento rápido, é preciso ter imagens otimizadas 
 
 Em HTML, você pode veicular diferentes formatos de imagem usando a tag `picture`.  Em AMP, embora a tag `picture` não seja compatível, é possível veicular diferentes imagens com o atributo `fallback`.
 
-{% call callout('Leia mais', type='read') %}
-Para saber mais sobre substitutos, consulte o guia [Substitutos e marcadores](/pt_br/docs/design/responsive/placeholders.html).
-{% endcall %}
+Leia mais: Para saber mais sobre substitutos, consulte o guia [Substitutos e marcadores](/pt_br/docs/design/responsive/placeholders.html).
 
 ##### Exemplo: como veicular diferentes formatos de imagem
 
@@ -148,9 +136,7 @@ No exemplo a seguir, se o navegador for compatível com WebP, veicule mountains.
 
 Alguns caches têm um ótimo recurso de bônus, como o cache de AMP do Google. Eles compactam e convertem automaticamente imagens para WebP e em resoluções corretas caso você não consiga fazer isso. Porém, nem todas as plataformas usam caches. Isso significa que talvez você precise otimizar manualmente as imagens.
 
-{% call callout('Leia mais', type='read') %}
-Para saber mais sobre as otimizações de imagem aplicadas pelo cache de AMP do Google, consulte a postagem do blog ["Cache de AMP do Google, AMP Lite e a necessidade de velocidade"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html).
-{% endcall %}
+Leia mais: Para saber mais sobre as otimizações de imagem aplicadas pelo cache de AMP do Google, consulte a postagem do blog ["Cache de AMP do Google, AMP Lite e a necessidade de velocidade"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html).
 
 ## Exemplos para inspirar você
 

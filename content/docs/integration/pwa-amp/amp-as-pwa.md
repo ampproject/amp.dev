@@ -15,9 +15,7 @@ Many websites won’t ever need things beyond the boundaries of AMP. [AMPbyExamp
 
 When a user visits [AMPbyExample](http://ampbyexample.com/) from a AMP-supporting platform and then clicks continues the onward journey onto the same site, they navigate away from the AMP Cache to the origin. The website still uses the AMP library, of course, but because it now lives on the origin, it can use a service worker, can prompt to install and so on.
 
-{% call callout('Remember', type='caution') %}
-The Service Worker won't be able to interact with the AMP-cached version of your page. Use it for onward journeys to your origin.
-{% endcall %}
+Remember: The Service Worker won't be able to interact with the AMP-cached version of your page. Use it for onward journeys to your origin.
 
 ## Add a Web App Manifest
 
@@ -56,17 +54,13 @@ Then link to it from the `<head>` of your AMP page:
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
-{% call callout('Tip', type='success') %}
-Learn more about the [Web App Manifest at WebFundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
-{% endcall %}
+Tip: Learn more about the [Web App Manifest at WebFundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
 
 ## Install a Service Worker to enable offline access
 
 A Service Worker is a client-side proxy that sits between your page and your server, and can be used to build fantastic offline experiences, fast-loading app shell scenarios, and send push notifications.
 
-{% call callout('Note', type='note') %}
-If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
-{% endcall %}
+Note: If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 
 Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`<amp-install-serviceworker>`](/docs/reference/components/amp-install-serviceworker.html) component to achieve the same.
 

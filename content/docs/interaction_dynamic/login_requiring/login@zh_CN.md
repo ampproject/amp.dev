@@ -47,9 +47,7 @@ $title: 登录
 
 [/sourcecode]
 
-{% call callout('注意', type='note') %}
-请注意，您可在登录节点内指定不同的网址。在此示例中，我们指定的是 `sign-in`，稍后我们将指定 `sign-out`。
-{% endcall %}
+注意: 请注意，您可在登录节点内指定不同的网址。在此示例中，我们指定的是 `sign-in`，稍后我们将指定 `sign-out`。
 
 登录页面是一个非 AMP 网页，为方便起见，我们会在该页面上填充登录值和密码值。请注意，我们使用了 `returnURL` 隐藏输入类型，该类型是由 AMPByExample 服务器通过服务器端模板进行填充的。该服务器会从名为 `return` 的参数（由 AMP 库自动添加到登录网址）中读取此值。
 
@@ -68,9 +66,7 @@ $title: 登录
 - AMP 运行时会关闭登录页面，并会重定向到由返回网址参数指定的页面
 - 一旦用户点击了“登录”按钮，服务器即应编排响应
 
-{% call callout('提示', type='success') %}
-您可在 [amp-access 文档](/zh_cn/docs/reference/components/amp-access#login-flow) 中找到有关此流程的更详细的说明。
-{% endcall %}
+提示: 您可在 [amp-access 文档](/zh_cn/docs/reference/components/amp-access#login-flow) 中找到有关此流程的更详细的说明。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/zh_cn/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">上一页</span></a>

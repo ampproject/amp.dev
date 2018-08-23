@@ -26,13 +26,11 @@ $title: 包含第三方内容
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('提示', type='success') %}
-要查看更多 `amp-twitter` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-twitter/)。
-{% endcall %}
+提示: 要查看更多 `amp-twitter` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-twitter/)。
 
 ## 嵌入 Instagram
 
@@ -54,13 +52,11 @@ $title: 包含第三方内容
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('提示', type='success') %}
-要查看更多 `amp-instagram` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-instagram/)。
-{% endcall %}
+提示: 要查看更多 `amp-instagram` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-instagram/)。
 
 ## 显示 Facebook 帖子或视频
 
@@ -74,14 +70,14 @@ $title: 包含第三方内容
 
 ##### 示例 - 嵌入帖子
 
-Source: 
+Source:
 ```html
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
@@ -89,7 +85,7 @@ Preview:
 
 ##### 示例 - 嵌入视频
 
-Source: 
+Source:
 ```html
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -97,16 +93,14 @@ Source:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-{% call callout('提示', type='success') %}
-要查看更多 `amp-facebook` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-facebook/)。
-{% endcall %}
+提示: 要查看更多 `amp-facebook` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-facebook/)。
 
 ## 包含 YouTube 视频
 
@@ -130,13 +124,11 @@ Preview:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('提示', type='success') %}
-要查看更多 `amp-youtube` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-youtube/)。
-{% endcall %}
+提示: 要查看更多 `amp-youtube` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-youtube/)。
 
 ## 显示广告
 
@@ -154,7 +146,7 @@ AMP 文档中不得运行任何广告网络提供的 JavaScript。AMP 运行时�
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -168,12 +160,10 @@ AMP 文档中不得运行任何广告网络提供的 JavaScript。AMP 运行时�
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 AMP 支持众多广告网络。请参阅[完整列表参考](/zh_cn/docs/reference/components/amp-ad.html#supported-ad-networks)。
 
-{% call callout('阅读', type='read') %}
-要详细了解广告，请参阅[在 AMP 网页上投放广告](/zh_cn/docs/ads/monetization.html)指南。
-{% endcall %}
+阅读: 要详细了解广告，请参阅[在 AMP 网页上投放广告](/zh_cn/docs/ads/monetization.html)指南。

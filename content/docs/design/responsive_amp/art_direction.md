@@ -27,13 +27,11 @@ of each image in the list:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Note', type='note') %}
-AMP supports srcset with the `w` descriptor across all browsers.
-{% endcall %}
+Note: AMP supports srcset with the `w` descriptor across all browsers.
 
 Learn more about creating responsive images using `srcset`
 in [Using Responsive Images (Now)](http://alistapart.com/article/using-responsive-images-now).
@@ -56,7 +54,7 @@ Consider the following example:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -68,10 +66,7 @@ The browser then selects the `srcset` resource relative to 400px,
 assuming the device pixel ratio is 1,
 which in this instance is `hummingbird-narrow.jpg` (320px).
 
-{% call callout('Important', type='caution') %}
-When sizes attribute is specified along with width and height,
-layout defaults to `responsive`.
-{% endcall %}
+Important: When sizes attribute is specified along with width and height, layout defaults to `responsive`.
 
 Learn more about how `sizes` and `srcset` attributes compare
 to media queries in this
@@ -100,7 +95,7 @@ An example:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 

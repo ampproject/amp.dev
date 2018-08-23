@@ -67,10 +67,7 @@ Sekarang, kapan pun slide yang ditampilkan untuk `<amp-carousel>`  berubah, tind
 
 Ekspresi `event.index` dievaluasi ke indeks slide yang baru, dan tindakan `AMP.setState()` akan menggabungkan literal objek ini ke dalam status saat ini. Tindakan ini mengganti nilai `selected.slide` saat ini dengan nilai `event.index`.
 
-
-{% call callout('Tip', type='success') %}
-`AMP.setState()` menjalankan penggabungan mendalam dari literal objek bertingkat. Untuk detail selengkapnya, lihat dokumentasi [`<amp-bind>`](/id/docs/reference/components/amp-bind.html).
-{% endcall %}
+Tip: `AMP.setState()` menjalankan penggabungan mendalam dari literal objek bertingkat. Untuk detail selengkapnya, lihat dokumentasi [`<amp-bind>`](/id/docs/reference/components/amp-bind.html).
 
 ### Mengikat elemen indikator
 
@@ -89,7 +86,7 @@ Berikutnya, gunakan variabel status ini yang melacak slide yang saat ini ditampi
 
 `[class]` adalah pengikatan yang mengubah atribut `class`, dan Anda dapat menggunakannya untuk menambahkan atau menghapus kelas CSS dari elemen apa pun.
 
-**Cobalah**: Muat ulang halaman dan ubah slide. 
+**Cobalah**: Muat ulang halaman dan ubah slide.
 
 Dengan mengubah slide di carousel, perubahan ini:
 
@@ -179,13 +176,11 @@ Jika menambahkan variabel status lain yang melacak SKU yang dipilih, kita dapat 
 Tambahkan tindakan "on" ke [`<amp-selector>`](/id/docs/reference/components/amp-selector.html) yang akan mengupdate variabel `selected.sku` kapan pun warna baru dipilih:
 
 ```html
-<amp-selector name="color" 
+<amp-selector name="color"
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-{% call callout('Tip', type='success') %}
-Hal ini juga dapat dilakukan dengan menambahkan tindakan `on="tap:AMP.setState(...)` ke setiap elemen turunan `<amp-img>` dalam `<amp-selector>`. Salah satu kelebihan komponen `<amp-selector>` adalah menyederhanakan markup dengan cara seperti ini.
-{% endcall %}
+Tip: Hal ini juga dapat dilakukan dengan menambahkan tindakan `on="tap:AMP.setState(...)` ke setiap elemen turunan `<amp-img>` dalam `<amp-selector>`. Salah satu kelebihan komponen `<amp-selector>` adalah menyederhanakan markup dengan cara seperti ini.
 
 ### Mengikat elemen gambar
 
@@ -201,9 +196,7 @@ Kemudian, tambahkan pengikatan ke elemen [`<amp-img>`](/id/docs/reference/compon
     [src]="shirts[selected.sku].image"></amp-img>
 ```
 
-{% call callout('Catatan', type='note') %}
-Dalam praktiknya, setiap gambar di carousel kemungkinan akan memiliki `src` yang berbeda. Hal ini dapat dilakukan dengan mengganti 1 gambar dengan deretan gambar. Ringkasnya, tutorial ini menggunakan 1 gambar dengan berbagai pembesaran.
-{% endcall %}
+Catatan: Dalam praktiknya, setiap gambar di carousel kemungkinan akan memiliki `src` yang berbeda. Hal ini dapat dilakukan dengan mengganti 1 gambar dengan deretan gambar. Ringkasnya, tutorial ini menggunakan 1 gambar dengan berbagai pembesaran.
 
 **Cobalah**: Muat ulang halaman dan pilih warna kemeja yang berbeda. Saat Anda melakukannya, gambar carousel akan diupdate untuk menampilkan kemeja dengan warna yang dipilih.
 
@@ -212,4 +205,4 @@ Dalam praktiknya, setiap gambar di carousel kemungkinan akan memiliki `src` yang
   <a class="button prev-button" href="/id/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">Sebelumnya</span></a>
   <a class="button next-button" href="/id/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">Berikutnya</span></a>
 </div>
- 
+

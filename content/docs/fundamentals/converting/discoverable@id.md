@@ -81,11 +81,7 @@ Untuk artikel berita kami, **tambahkan** data terstruktur berikut ke bagian bawa
 </script>
 ```
 
-
-{% call callout('Catatan', type='note') %}
-Konten harus selalu sama. Untuk artikel berita, tentukan jenis “NewsArticle”. Judulnya harus cocok dengan judul artikel Anda. Objek gambar merujuk pada banner besar artikel.
-{% endcall %}
-
+Catatan: Konten harus selalu sama. Untuk artikel berita, tentukan jenis “NewsArticle”. Judulnya harus cocok dengan judul artikel Anda. Objek gambar merujuk pada banner besar artikel.
 
 **Muat ulang** halaman di browser dan verifikasi bahwa tidak ada error Validasi AMP yang ditunjukkan.
 
@@ -107,9 +103,7 @@ Untuk memverifikasi bahwa data terstruktur Anda benar, banyak platform menyediak
 
 Jika data terstruktur valid, Anda seharusnya melihat **0 error** dan **0 peringatan**.
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang kemampuan halaman untuk ditemukan, lihat panduan [Membuat halaman Anda dapat ditemukan](/id/docs/fundamentals/discovery.html).
-{% endcall %}
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang kemampuan halaman untuk ditemukan, lihat panduan [Membuat halaman Anda dapat ditemukan](/id/docs/fundamentals/discovery.html).
 
 Kerja bagus!  Anda telah menyelesaikan artikel berita AMP.
 

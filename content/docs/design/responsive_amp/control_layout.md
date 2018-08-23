@@ -33,9 +33,7 @@ determined by the given width and height. Try it out by resizing this browser wi
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('Tip', type='success') %}
-See our side-by-side live demos of `amp-img`: [Live Demos on AMP By Example](https://ampbyexample.com/components/amp-img/).
-{% endcall %}
+Tip: See our side-by-side live demos of `amp-img`: [Live Demos on AMP By Example](https://ampbyexample.com/components/amp-img/).
 
 ## The layout attribute
 
@@ -99,9 +97,7 @@ The following values can be used in the `layout` attribute:
   </tbody>
 </table>
 
-{% call callout('Tip', type='success') %}
-Visit the [Demonstrating AMP layouts](/docs/design/amp-html-layout/layouts_demonstrated.html) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
-{% endcall %}
+Tip: Visit the [Demonstrating AMP layouts](/docs/design/amp-html-layout/layouts_demonstrated.html) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
 
 
 ### What if width and height are undefined?
@@ -154,9 +150,7 @@ When the browser window changes size or orientation,
 the media queries are re-evaluated and elements are hidden and shown
 based on the new results.
 
-{% call callout('Read on', type='read') %}
-Learn more about controlling layout by applying media queries in [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
-{% endcall %}
+Read on: Learn more about controlling layout by applying media queries in [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
 
 ### Element media queries
 

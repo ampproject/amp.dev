@@ -39,9 +39,7 @@ To test our sample page we need to access the files from a web server. There are
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('Note', type='note') %}
-It is strongly recommended that you use HTTPS in production environments. HTTPS has several benefits beyond just security including SEO. You can read more about this topic in this [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
-{% endcall %}
+Note: It is strongly recommended that you use HTTPS in production environments. HTTPS has several benefits beyond just security including SEO. You can read more about this topic in this [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
 
 After setting up your local web server, access the sample article in your browser at [this URL](http://localhost:8000/article.html):
 

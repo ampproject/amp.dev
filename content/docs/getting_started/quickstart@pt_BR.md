@@ -28,9 +28,7 @@ Este é o HTML básico que você precisa ter em uma página AMP:
 </html>
 ```
 
-{% call callout('Leia mais', type='read') %}
-Saiba mais sobre a [marcação necessária](/pt_br/docs/reference/spec.html#required-markup) para páginas AMP.
-{% endcall %}
+Leia mais: Saiba mais sobre a [marcação necessária](/pt_br/docs/fundamentals/spec.html#required-markup) para páginas AMP.
 
 ### Etapa 2: adicionar componentes à página
 
@@ -72,9 +70,7 @@ Para definir o estilo dos elementos nas suas páginas AMP, adicione CSS em uma f
 </style>
 ```
 
-{% call callout('Leia mais', type='read') %}
-Saiba mais sobre o [CSS compatível](/pt_br/docs/design/responsive/style_pages.html) com páginas AMP.
-{% endcall %}
+Leia mais: Saiba mais sobre o [CSS compatível](/pt_br/docs/design/responsive/style_pages.html) com páginas AMP.
 
 ### Etapa 4: validar o HTML para AMP
 
@@ -92,5 +88,5 @@ Veja outros recursos para aprimorar sua experiência:
 * [Adicione análises à página](/pt_br/docs/analytics/analytics_amp.html).
 * [Melhore o engajamento dos usuários](/pt_br/docs/fundamentals/engagement.html).
 * Veja demonstrações ativas no site [AMP BY Example](https://ampbyexample.com).
- 
- 
+
+

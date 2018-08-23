@@ -28,9 +28,7 @@ AMP 是所谓的**叶级页**的理想解决方案；叶级页是指用户通过
 
 AMP 技术能够从 AMP 网页内安装渐进式网页应用的 Service Worker - 对，即使相应 AMP 网页是由 AMP 缓存提供也能如此！如果操作正确，（从您的某一 AMP 网页中）指向您的 PWA 的链接会给用户带来几乎即时交付内容的感觉，与首次跳转到 AMP 网页的体验相似。
 
-{% call callout('提示', type='success') %}
-如果您还不熟悉 Service Worker，我们强烈建议您学习一下 Jake Archibald 的 [Udacity 课程](https://www.udacity.com/course/offline-web-applications--ud899)。
-{% endcall %}
+提示: 如果您还不熟悉 Service Worker，我们强烈建议您学习一下 Jake Archibald 的 [Udacity 课程](https://www.udacity.com/course/offline-web-applications--ud899)。
 
 首先，使用 [`<amp-install-serviceworker>`](/zh_cn/docs/reference/components/amp-install-serviceworker) 在您的所有 AMP 网页上安装 Service Worker；为此，请先通过相应脚本在您网页的 `<head>` 中添加该组件：
 
@@ -70,9 +68,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-{% call callout('提示', type='success') %}
-您也可采用更简单的方法来设置 Service Worker。请查看 [Service Worker 辅助工具库](https://github.com/GoogleChrome/sw-helpers)。
-{% endcall %}
+提示: 您也可采用更简单的方法来设置 Service Worker。请查看 [Service Worker 辅助工具库](https://github.com/GoogleChrome/sw-helpers)。
 
 ## 将 AMP 网页上的所有链接都指向 PWA
 
@@ -115,8 +111,4 @@ AMP 采用一种名为 [Shell 网址重写](/zh_cn/docs/reference/components/amp
 
 待您设置好上述属性后，在相应 AMP 网页上发生的所有后续点击都会跳转到您的 PWA，而无论采用何种 Service Worker。
 
-{% call callout('继续阅读', type='read') %}
-您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作](/zh_cn/docs/integration/pwa-amp/amp-in-pwa)。
-{% endcall %}
- 
- 
+继续阅读: 您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作](/zh_cn/docs/integration/pwa-amp/amp-in-pwa)。
