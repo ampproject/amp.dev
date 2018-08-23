@@ -40,7 +40,9 @@ it and then get in other components that may have been referenced #}
 
 {% block content %}
 <main class="styleguide__content">
-  {{ doc.html|render|safe }}
+  <div class="container">
+    {{ doc.html|render|safe }}
+  </div>
 </main>
 {% endblock content %}
 {% endblock main %}
