@@ -1,6 +1,6 @@
 ---
-$title: Create a visual AMP story
-$order: 4
+$title: Create your first AMP Story
+$order: 3
 components:
     - video
 tutorial: true

@@ -1,7 +1,7 @@
 ---
 $title: Setting up
 $order: 0
-$parent: /content/docs/design/visual_story.md
+$parent: /content/docs/getting_started/visual_story.md
 ---
 
 ## Prerequisites
