@@ -50,9 +50,7 @@ Hasil akhirnya akan terlihat seperti berikut:
 
 **Refresh** halaman dan cobalah.
 
-{% call callout('Catatan', type='note') %}
-Anda mungkin menyadari bahwa ketika `amp-carousel` memiliki jenis `carousel`, kami menggunakan jenis tata letak `fixed-height`.  Jenis tata letak untuk jenis `carousel` terbatas; misalnya, jenis `carousel` tidak mendukung tata letak `responsive`.  Sesuai dengan namanya, elemen fixed-height mengambil ruang yang tersedia untuknya, namun lebarnya tidak berubah. Untuk elemen fixed-height, Anda harus menentukan atribut `height`, sementara atribut `width` sebaiknya tidak disetel atau disetel ke `auto`.
-{% endcall %}
+Catatan: Anda mungkin menyadari bahwa ketika `amp-carousel` memiliki jenis `carousel`, kami menggunakan jenis tata letak `fixed-height`.  Jenis tata letak untuk jenis `carousel` terbatas; misalnya, jenis `carousel` tidak mendukung tata letak `responsive`.  Sesuai dengan namanya, elemen fixed-height mengambil ruang yang tersedia untuknya, namun lebarnya tidak berubah. Untuk elemen fixed-height, Anda harus menentukan atribut `height`, sementara atribut `width` sebaiknya tidak disetel atau disetel ke `auto`.
 
 ## Konten carousel campuran
 
@@ -90,9 +88,7 @@ Sekarang, **ganti** carousel sederhana Anda dengan ini:
 
 Untuk mempelajari lebih lanjut, lihat dokumentasi referensi komponen [amp-carousel](/id/docs/reference/components/amp-carousel.html).
 
-{% call callout('Catatan', type='note') %}
-Pada contoh terakhir, Anda mungkin menyadari bahwa komponen `amp-ad` menyertakan elemen `div` turunan dengan atribut `placeholder`. Sebelumnya pada tutorial ini, kita menghadapi skenario serupa terkait `amp-ad` yang menggunakan `fallback`. Apa perbedaan antara placeholder dan fallback? Elemen `Fallback` muncul ketika elemen induk gagal dimuat, misalnya, jika tidak ada iklan yang tersedia. Elemen `placeholder` muncul di tempat elemen induk, saat elemen induk sedang dimuat. Artinya, elemen ini menandai berakhirnya proses pemuatan elemen induk. Anda dapat mempelajari lebih lanjut di panduan [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
-{% endcall %}
+Catatan: Pada contoh terakhir, Anda mungkin menyadari bahwa komponen `amp-ad` menyertakan elemen `div` turunan dengan atribut `placeholder`. Sebelumnya pada tutorial ini, kita menghadapi skenario serupa terkait `amp-ad` yang menggunakan `fallback`. Apa perbedaan antara placeholder dan fallback? Elemen `Fallback` muncul ketika elemen induk gagal dimuat, misalnya, jika tidak ada iklan yang tersedia. Elemen `placeholder` muncul di tempat elemen induk, saat elemen induk sedang dimuat. Artinya, elemen ini menandai berakhirnya proses pemuatan elemen induk. Anda dapat mempelajari lebih lanjut di panduan [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/id/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Sebelumnya</span></a>

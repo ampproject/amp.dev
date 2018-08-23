@@ -91,13 +91,9 @@ Como você já deve imaginar pelo nome desse novo acionador, ele será disparado
 
 Se você tiver uma plataforma personalizada de acompanhamento para integração, ainda poderá usar `amp-analytics` e definir pontos de extremidade do URL personalizados que receberão os dados de acompanhamento. Saiba mais nos documentos de referência do componente [amp-analytics](/pt_br/docs/reference/components/amp-analytics.html).
 
-{% call callout('Observação', type='note') %}
-`“UA-YYYY-Y”` é uma conta de exemplo do Google Analytics. Se você usar esse exemplo, substitua esse valor pelo código de acompanhamento do Google Analytics do seu site.
-{% endcall %}
+Observação: `“UA-YYYY-Y”` é uma conta de exemplo do Google Analytics. Se você usar esse exemplo, substitua esse valor pelo código de acompanhamento do Google Analytics do seu site.
 
-{% call callout('Dica', type='success') %}
-Se você estiver interessado em um sistema de acompanhamento mais simples, dê uma olhada em [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html). Caso você só precise acompanhar exibições de página, o amp-pixel é uma solução mais leve do que o amp-analytics, porque só atende aos requisitos do acompanhamento de pixels tradicional. Saiba mais em [Analytics: conceitos básicos](/pt_br/docs/analytics/analytics_basics.html).
-{% endcall %}
+Dica: Se você estiver interessado em um sistema de acompanhamento mais simples, dê uma olhada em [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html). Caso você só precise acompanhar exibições de página, o amp-pixel é uma solução mais leve do que o amp-analytics, porque só atende aos requisitos do acompanhamento de pixels tradicional. Saiba mais em [Analytics: conceitos básicos](/pt_br/docs/analytics/analytics_basics.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/pt_br/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">Anterior</span></a>
