@@ -129,7 +129,7 @@ ${ body }
 /* Converts the provided RSS blog item into a consistent format. */
 function onParseBlogPost(item) {
   var authorInBody = item.description.match(/\>Posted by ([^,]+),([^\<]+)/);
-  var author = authorInBody ? authorInBody[1] : item.author;
+  var author = authorInBody ? authorInBody[1].replace(/<[^>]+>/g, '') : item.author;
   var role = authorInBody ? authorInBody[2] : '';
 
   return {
