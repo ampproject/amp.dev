@@ -16,7 +16,7 @@ However, AMP pages are not always served from an AMP cache. A website may decide
 
 As a consequence, you can't always be sure that your AMP pages are only served from an AMP cache. For these cases, where you are serving AMP pages from your own servers, it is important to make sure that your AMP pages offer the optimal loading performance.
 
-AMP pages load fast by default, but there are some additional performance optimizations you can implement to help the browser load AMP pages even faster. This guide describes a few optimizations you should consider when publishing AMP pages. However, before you start reading this guide, make sure that you've already covered all the [basic web performance best practices](#bookmark=id.ec90hwj5vhqo). In particular, image optimization has a big impact on loading performance.
+AMP pages load fast by default, but there are some additional performance optimizations you can implement to help the browser load AMP pages even faster. This guide describes a few optimizations you should consider when publishing AMP pages. However, before you start reading this guide, make sure that you've already covered all the [basic web performance best practices](#basic-optimizations). In particular, image optimization has a big impact on loading performance.
 
 For example, by applying the following optimization techniques:
 
