@@ -13,6 +13,7 @@
 	}
 
 	& .ad-a-txt {
+		display: block;
 		padding-left: 95px;
 	}
 
@@ -30,7 +31,7 @@
 		height: 28px;
 		width: 60px;
 		position: relative;
-		margin-left: 95px
+		margin-left: 95px;
 	}
 
 	&-bio {
