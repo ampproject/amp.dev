@@ -32,19 +32,17 @@ shadow-static
 .#{atom('img')} {
 	position: relative;
 
-<<<<<<< Updated upstream
 	&-single {
 		margin-right: -30px;
-=======
-	&-circle {
-		overflow: hidden;
-		border-radius: 50%;
-	}
->>>>>>> Stashed changes
 
 		@media screen and (min-width: 768px) {
 			margin-right: 0;
 		}
+	}
+
+	&-circle {
+		overflow: hidden;
+		border-radius: 50%;
 	}
 
 	&-shadow-static amp-img {
