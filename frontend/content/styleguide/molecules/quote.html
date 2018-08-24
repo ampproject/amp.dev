@@ -10,13 +10,13 @@ quotes:
   source_image: "../../../static/img/wired_logo.png"
 ---
 {% for quote in doc.quotes %}
-<div class="ad-m-quote col-3-5">
+<div class="ad-m-quote col-5-5">
 	<blockquote><p class="ad-a-txt ad-a-txt-5 ad-m-blockquote">{{ quote.content }}</p></blockquote>
 	<div class="ad-m-quote ad-m-quote-bio">
-		{{ atoms.image(['static', 'circle'], src=quote.author_image)}}
-		<strong><p class="ad-a-txt ad-a-txt-strong ad-a-txt-3">{{ quote.author }}</p></strong>
-		<p class="ad-a-txt ad-a-txt-3">{{ quote.bio }}</p>
-		{{ atoms.image(['static', 'source'], src=quote.source_image)}}
+		{{ atoms.image(['static', 'circle'], src=quote.author_image, width="70", height="70")}}
+		<b class="ad-a-txt ad-a-txt-strong ad-a-txt-3">{{ quote.author }}</b>
+		<span class="ad-a-txt ad-a-txt-3">{{ quote.bio }}</span>
+		{{ atoms.image(['static', 'source'], src=quote.source_image, width="60", height="28")}}
 	</div>
 </div>
 {% endfor %}
