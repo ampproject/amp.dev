@@ -1,3 +1,44 @@
+/*
+
+######################
+### MOLECULE: event ###
+######################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-event col-3-5">
+		<div class="ad-m-event-date">
+			<span class="ad-a-hl ad-a-hl-h5 ad-a-hl-silver ad-m-event-header">{{ event.year }}</span>
+			<span class="ad-a-hl ad-a-hl-h5">{{ event.month }}</span>
+			<span class="ad-a-hl ad-a-hl-h5">{{ event.day }}</span>
+		</div>
+		<div class="ad-m-event-content">
+			<span class="ad-a-hl ad-a-hl-h5 ad-m-event-header">{{ event.city }}</span>
+			<ul class="ad-m-event-detail-list">
+				<li class="ad-m-event-detail">
+					{{ atoms.icon('map', size=1) }}
+					<span class="ad-a-txt ad-a-txt-2">{{ event.location }}</span>
+				</li>
+				<li class="ad-m-event-detail">
+					{{ atoms.icon('time', size=1) }}
+					<span class="ad-a-txt ad-a-txt-2">Register by: {{ event.registration }}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+### INFO:
+
+The event molecule is a combination of icon, headline and text atoms. The event molecule also creates a list for the event details (location, registration).
+Positioning of the atoms (eg. padding, margin) are defined in this style sheet.
+The size of the icon should be 1 (xsmall) and text should be 2 (small).
+
+### MODIFIERS:
+
+none
+
+*/
+
 .#{molecule('event')} {
 	padding: 20px;
 	min-width: 250px;
