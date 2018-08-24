@@ -24,7 +24,7 @@ benefits:
       img_height: 92
 
 newsletter:
-  title@: Get the latest news and tips from our newsletter:
+  title@: Get the latest news and tips from our newsletter
   cta@: Subscribe
   cta_url: https://services.google.com/fb/forms/ampnewsletter/
 
