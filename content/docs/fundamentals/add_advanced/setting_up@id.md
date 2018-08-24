@@ -21,7 +21,7 @@ Download kode sampel untuk tutorial dalam format [file ZIP](https://github.com/g
 git clone https://github.com/googlecodelabs/accelerated-mobile-pages-advanced.git
 ```
 
-Ekstrak file arsip (jika perlu) dan buka direktori project melalui baris perintah di komputer Anda: 
+Ekstrak file arsip (jika perlu) dan buka direktori project melalui baris perintah di komputer Anda:
 
 ```shell
 cd accelerated-mobile-pages-advanced
@@ -38,9 +38,7 @@ Untuk menguji halaman AMP sampel, kami perlu mengakses file dari server web. Ada
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('Catatan', type='note') %}
-Sebaiknya Anda menggunakan HTTPS di lingkungan produksi. HTTPS memiliki beberapa keunggulan selain di sektor keamanan, termasuk SEO. Anda dapat membaca selengkapnya tentang topik ini di artikel [entri blog Google Webmaster] ini(https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
-{% endcall %}
+Catatan: Sebaiknya Anda menggunakan HTTPS di lingkungan produksi. HTTPS memiliki beberapa keunggulan selain di sektor keamanan, termasuk SEO. Anda dapat membaca selengkapnya tentang topik ini di artikel [entri blog Google Webmaster] ini(https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
 
 Setelah menyiapkan server web lokal, buka artikel sampel pada browser Anda di [URL ini](http://localhost:8000/article.amp.html):
 

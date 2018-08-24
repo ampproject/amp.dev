@@ -13,9 +13,7 @@ AMP は、メディアの表示に使用されるデフォルトの HTML タグ�
 *  アセットの読み込み前にページのレイアウトを把握しなければならない（[最初のビューポートのプリロードに対応](/ja/learn/about-how/#size-all-resources-statically) するために不可欠）
 *  ネットワーク リクエストを管理して、[リソースの遅延読み込みと優先順位付けを効果的に行えるように](/ja/learn/about-how/#prioritize-resource-loading) しなければならない
 
-{% call callout('注', type='caution') %}
-こうしたタグの使用は、非対応ですが、*will* 表示には有効です。ただし、AMP で [ページの検証](/ja/docs/fundamentals/validate.html) が行われないので、AMP のメリットをすべて利用することはできなくなります。
-{% endcall %}
+注: こうしたタグの使用は、非対応ですが、*will* 表示には有効です。ただし、AMP で [ページの検証](/ja/docs/fundamentals/validate.html) が行われないので、AMP のメリットをすべて利用することはできなくなります。
 
 ## 画像
 
@@ -29,7 +27,7 @@ AMP は、メディアの表示に使用されるデフォルトの HTML タグ�
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -47,7 +45,7 @@ As `<amp-img>` は JavaScript に依存するので、ユーザーがスクリ�
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -63,21 +61,17 @@ As `<amp-img>` は JavaScript に依存するので、ユーザーがスクリ�
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('参考情報', type='read') %}
-詳しくは、[高度なレイアウトの手法](/ja/docs/design/responsive/control_layout.html) についての説明をご覧ください。
-{% endcall %}
+参考情報: 詳しくは、[高度なレイアウトの手法](/ja/docs/design/responsive/control_layout.html) についての説明をご覧ください。
 
 ### 動作とプレースホルダ
 
 AMP HTML のランタイムでは、画像のリソースを効果的に管理でき、ビューポートの位置、システム リソース、接続の帯域幅などの要素に基づいて、リソースの読み込みを遅らせるか優先させるかを選べます。
 
-{% call callout('参考情報', type='read') %}
-方法は、[画像のフォールバックやプレースホルダの指定](/ja/docs/design/responsive/placeholders.html) についての説明をご覧ください。
-{% endcall %}
+参考情報: 方法は、[画像のフォールバックやプレースホルダの指定](/ja/docs/design/responsive/placeholders.html) についての説明をご覧ください。
 
 ## アニメーション画像
 
@@ -91,13 +85,11 @@ The [amp-anim](/ja/docs/reference/components/amp-anim.html) 要素は`amp-img` �
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('注', type='note') %}
-このコンポーネントを使用するには、`<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` をページの先頭に追加します。
-{% endcall %}
+注: このコンポーネントを使用するには、`<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` をページの先頭に追加します。
 
 ## 動画
 
@@ -115,7 +107,7 @@ The [amp-anim](/ja/docs/reference/components/amp-anim.html) 要素は`amp-img` �
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -135,10 +127,8 @@ The [amp-anim](/ja/docs/reference/components/amp-anim.html) 要素は`amp-img` �
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('注', type='note') %}
-このコンポーネントを使用するには、`<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` をページの先頭に追加します。
-{% endcall %}
+注: このコンポーネントを使用するには、`<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` をページの先頭に追加します。

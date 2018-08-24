@@ -5,9 +5,7 @@ $title: 使用情形
 
 本指南提供了一系列跟踪用户互动的常见使用情形：
 
-{% call callout('备注', type='note') %}
-想要添加使用情形？[请告诉我们。](https://github.com/ampproject/docs/issues/new) 或者您也可以提供自己的使用情形，请参见[如何贡献自己的力量](/zh_cn/docs/support/contribute.html)
-{% endcall %}
+备注: 想要添加使用情形？[请告诉我们。](https://github.com/ampproject/docs/issues/new) 或者您也可以提供自己的使用情形，请参见[如何贡献自己的力量](/zh_cn/docs/support/contribute.html)
 
 ## 跟踪网页浏览量
 
@@ -151,7 +149,7 @@ $title: 使用情形
             "scrollSpec": {
                 "verticalBoundaries": [25, 50, 90],
                 "horizontalBoundaries": [90]
-            }   
+            }
         }
     }
 }

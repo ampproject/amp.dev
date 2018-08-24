@@ -18,7 +18,7 @@ $title: 使用远程数据
 
 |  Request                              |  Response |
 |---------------------------------------|-----------|
-| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |  
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 与 `<amp-state>` 元素中的 JSON 数据类似，这些提取操作所返回的远程数据会被合并到相应元素的 `id` 属性中，且会显示在该属性下。例如，若要访问上文中的示例响应所返回的数据，您可以使用如下表达式：
 
@@ -104,15 +104,15 @@ $title: 使用远程数据
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
         <div option="M">M</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
         <div option="L">L</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
         <div option="XL">XL</div>
       </td>
@@ -121,9 +121,7 @@ $title: 使用远程数据
 </amp-selector>
 ```
 
-{% call callout('注意', type='note') %}
-`<amp-bind>` 不会在网页加载时运行 - 它只会为响应明确的用户操作而运行。这可确保所有网页都能以非常快的速度完成初始网页加载，无论相应网页是否使用了 `<amp-bind>`。
-{% endcall %}
+注意: `<amp-bind>` 不会在网页加载时运行 - 它只会为响应明确的用户操作而运行。这可确保所有网页都能以非常快的速度完成初始网页加载，无论相应网页是否使用了 `<amp-bind>`。
 
 ## 多变的衬衫价格
 
@@ -134,15 +132,13 @@ $title: 使用远程数据
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size" 
+<amp-selector name="size"
     on="select:AMP.setState({selectedSize: event.targetOption})">
 ```
 
 请注意：我们不会通过 `amp-state#selected` 元素对 `selectedSize` 的值进行初始化，因为我们是有意不提供默认选定尺寸的 - 我们想藉此强制用户选择一种尺寸。
 
-{% call callout('提示', type='success') %}
-`AMP.setState()` 可用于定义新变量以及修改现有变量。相关表达式对未定义的变量的计算结果将是 `null`。
-{% endcall %}
+提示: `AMP.setState()` 可用于定义新变量以及修改现有变量。相关表达式对未定义的变量的计算结果将是 `null`。
 
 然后，添加一个新的 `<span>` 元素来封装价格标签，并将默认文本改为“---”，因为没有默认选定的尺寸。
 
@@ -176,4 +172,4 @@ $title: 使用远程数据
   <a class="button prev-button" href="/zh_cn/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">上一页</span></a>
   <a class="button next-button" href="/zh_cn/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">下一页</span></a>
 </div>
- 
+

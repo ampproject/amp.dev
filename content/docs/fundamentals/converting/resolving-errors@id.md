@@ -129,13 +129,9 @@ Mari kita selesaikan error-nya:
 
 Sekali lagi, **muat ulang** halaman dan verifikasi bahwa error stylesheet sudah tidak muncul.
 
-{% call callout('Catatan', type='note') %}
-Tidak hanya gaya inline yang diperlukan tetapi ada batas ukuran file sebesar 50 kilobyte untuk semua informasi gaya. Anda harus menggunakan prapemrosesan CSS seperti [SASS](http://sass-lang.com/) untuk memperkecil CSS sebelum membuat CSS di halaman AMP menjadi inline.
-{% endcall %}
+Catatan: Tidak hanya gaya inline yang diperlukan tetapi ada batas ukuran file sebesar 50 kilobyte untuk semua informasi gaya. Anda harus menggunakan prapemrosesan CSS seperti [SASS](http://sass-lang.com/) untuk memperkecil CSS sebelum membuat CSS di halaman AMP menjadi inline.
 
-{% call callout('Penting', type='caution') %}
-Anda hanya dapat memiliki 1 tag gaya di seluruh dokumen AMP. Jika Anda memiliki beberapa stylesheet eksternal yang dirujuk oleh halaman AMP, Anda harus menyusun stylesheet ini menjadi 1 kumpulan aturan. Untuk mempelajari tentang aturan CSS apa yang berlaku di AMP, baca [CSS yang Didukung](/id/docs/design/responsive/style_pages.html).
-{% endcall %}
+Penting: Anda hanya dapat memiliki 1 tag gaya di seluruh dokumen AMP. Jika Anda memiliki beberapa stylesheet eksternal yang dirujuk oleh halaman AMP, Anda harus menyusun stylesheet ini menjadi 1 kumpulan aturan. Untuk mempelajari tentang aturan CSS apa yang berlaku di AMP, baca [CSS yang Didukung](/id/docs/design/responsive/style_pages.html).
 
 ## Jangan sertakan JavaScript pihak ketiga
 
@@ -265,9 +261,7 @@ Bagus! Gambar kita memiliki aspek tinggi lebar yang benar dan secara responsif m
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Gambar kini menjadi responsif!") }}
 
-{% call callout('Baca selengkapnya', type='read') %}
-Pelajari lebih lanjut Sistem Tata Letak AMP di [Spesifikasi Tata Letak AMP](/id/docs/design/amp-html-layout.html).
-{% endcall %}
+Baca selengkapnya: Pelajari lebih lanjut Sistem Tata Letak AMP di [Spesifikasi Tata Letak AMP](/id/docs/design/amp-html-layout.html).
 
 ## Berhasil!
 

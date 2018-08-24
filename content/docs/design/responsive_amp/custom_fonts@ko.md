@@ -42,8 +42,5 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 �
 </style>
 [/sourcecode]
 
-{% call callout('참고', type='note') %}
-`@font-face` 
-를 사용하여 삽입된 글꼴은 HTTP 또는 HTTPS 스키마를 통해 가져와야 합니다.
-{% endcall %}
+참고: `@font-face` 를 사용하여 삽입된 글꼴은 HTTP 또는 HTTPS 스키마를 통해 가져와야 합니다.
 

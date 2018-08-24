@@ -39,7 +39,7 @@ Tüm AMP dokümanlarında aşağıdaki etiketler bulunmalıdır:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Bu zorunlu etiketlerin [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bir `mandatory: true` alanı olur; bunlara [AMP spesifikasyonunda](/docs/reference/spec.html) da başvuruda bulunulur.
+Bu zorunlu etiketlerin [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bir `mandatory: true` alanı olur; bunlara [AMP spesifikasyonunda](/docs/fundamentals/spec.html) da başvuruda bulunulur.
 
 ### Başka bir etiketin gerektirdiği etiket eksik
 
@@ -80,7 +80,7 @@ Bu hataları düzeltmek için genişletilmiş bileşenin referans sayfasına gid
   </tr>
 </table>
 
-Etiketler beyaz listede yer alır, bu yüzden izin verilmeyen tüm etiketlerin tanımlandığı bir liste yoktur; ancak, izin verilmeyen etiketler grubu [AMP spesifikasyonunda](/docs/reference/spec.html) geniş bir şekilde tanımlanmaktadır.
+Etiketler beyaz listede yer alır, bu yüzden izin verilmeyen tüm etiketlerin tanımlandığı bir liste yoktur; ancak, izin verilmeyen etiketler grubu [AMP spesifikasyonunda](/docs/fundamentals/spec.html) geniş bir şekilde tanımlanmaktadır.
 
 ### Zorunlu öznitelik eksik
 
@@ -624,7 +624,7 @@ Hataya neyin neden olduğundan emin değilseniz, örneğin [csslint](http://cssl
 </table>
 
 Bu hata, CSS içindeki @ kurallarına gönderme yapar. AMP, bunlar için yalnızca bir avuç kurala izin vermektedir.
-(ayrıca [AMP spesifikasyonuna](/docs/reference/spec.html) da bakın).
+(ayrıca [AMP spesifikasyonuna](/docs/fundamentals/spec.html) da bakın).
 Örneğin, `@import` kuralına izin verilmez.
 Doğrulama hatası özel olarak geçersiz olan kuralı size bildirerek söz konusu kuralın düzeltilmesini kolaylaştırır.
 

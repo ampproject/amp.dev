@@ -15,9 +15,7 @@ include them in your pages.
 *  Precisamos entender o layout da página antes de carregar os recursos, algo crucial para [oferecer suporte ao pré-carregamento da janela de visualização primária.](/pt_br/learn/about-how/#size-all-resources-statically)
 *  Precisamos controlar as solicitações de rede para [carregamento lento e priorizar os recursos de maneira efetiva.](/pt_br/learn/about-how/#prioritize-resource-loading)
 
-{% call callout('Cuidado', type='caution') %}
- Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas](/pt_br/docs/fundamentals/validate.html) 
-e não será possível aproveitar todos os benefícios que as AMP oferecem. {% endcall %}
+Cuidado: Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas](/pt_br/docs/fundamentals/validate.html) e não será possível aproveitar todos os benefícios que as AMP oferecem.
 
 ## Imagens
 
@@ -31,7 +29,7 @@ e não será possível aproveitar todos os benefícios que as AMP oferecem. {% e
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -49,7 +47,7 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -65,21 +63,17 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Leia mais', type='read') %}
- Saiba mais sobre [técnicas de layout avançadas](/pt_br/docs/design/responsive/control_layout.html)
-. {% endcall %}
+Leia mais Saiba mais sobre [técnicas de layout avançadas](/pt_br/docs/design/responsive/control_layout.html).
 
 ### Comportamento e marcadores de posição
 
 O tempo de execução das AMP em HTML pode gerenciar recursos de imagens de maneira eficiente, escolhendo atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na conexão de largura de banda ou em outros fatores.
 
-{% call callout('Leia mais', type='read') %}
- Saiba como [fornecer fallbacks e marcadores de posição para imagens](/pt_br/docs/design/responsive/placeholders.html)
-. {% endcall %}
+Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens](/pt_br/docs/design/responsive/placeholders.html).
 
 ## Imagens animadas
 
@@ -93,14 +87,11 @@ O tempo de execução das AMP em HTML pode gerenciar recursos de imagens de mane
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Observação', type='note') %}
- Para usar esse componente, inclua `<script async custom-element="amp-anim"
-src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` 
-no topo da página. {% endcall %}
+Observação: Para usar esse componente, inclua `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` no topo da página.
 
 ## Vídeo
 
@@ -118,7 +109,7 @@ Inclua um marcador de posição antes do começo do vídeo e um fallback, caso o
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -138,12 +129,8 @@ Inclua um marcador de posição antes do começo do áudio e um fallback, caso o
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Observação', type='note') %}
- Para usar esse componente, inclua `<script async custom-element="amp-audio"
-src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` 
-no cabeçalho da página. {% endcall %}
-
+Observação: Para usar esse componente, inclua `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` no cabeçalho da página.

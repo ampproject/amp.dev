@@ -39,9 +39,7 @@ Para testar nossa página de exemplo, é preciso acessar os arquivos por meio de
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('Observação', type='note') %}
-É altamente recomendável usar o HTTPS em ambientes de produção. O HTTPS oferece vários benefícios além da segurança, incluindo SEO. Se quiser saber mais sobre esse tópico, leia esta [postagem do blog do Google para webmasters](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
-{% endcall %}
+Observação: É altamente recomendável usar o HTTPS em ambientes de produção. O HTTPS oferece vários benefícios além da segurança, incluindo SEO. Se quiser saber mais sobre esse tópico, leia esta [postagem do blog do Google para webmasters](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
 
 Após configurar o servidor da Web local, acesse o artigo de exemplo no navegador [neste URL](http://localhost:8000/article.html):
 

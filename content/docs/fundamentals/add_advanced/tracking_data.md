@@ -92,13 +92,9 @@ As you can guess from the name of this new trigger it will fire when the element
 
 If you have a custom tracking platform that you want to integrate with, you can still use `amp-analytics` and define your own personalized URL endpoints to send tracking data to. Learn more in the [amp-analytics](/docs/reference/components/amp-analytics.html) component reference documentation.
 
-{% call callout('Note', type='note') %}
-`“UA-YYYY-Y”` is an example Google Analytics account; it should be replaced with your own website’s Google Analytics tracking code if you are using this example on your site.
-{% endcall %}
+Note: `“UA-YYYY-Y”` is an example Google Analytics account; it should be replaced with your own website’s Google Analytics tracking code if you are using this example on your site.
 
-{% call callout('Tip', type='success') %}
-If you are interested in a simpler tracking system, you might want to take a look at [amp-pixel](/docs/reference/components/amp-pixel.html). If you only need to track pageviews, amp-pixel it is a lighter-weight solution than amp-analytics because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](/docs/analytics/analytics_basics.html).
-{% endcall %}
+Tip: If you are interested in a simpler tracking system, you might want to take a look at [amp-pixel](/docs/reference/components/amp-pixel.html). If you only need to track pageviews, amp-pixel it is a lighter-weight solution than amp-analytics because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](/docs/analytics/analytics_basics.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">Prev</span></a>

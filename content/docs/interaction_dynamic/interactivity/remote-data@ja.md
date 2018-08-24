@@ -18,7 +18,7 @@ $title: リモートデータの使用
 
 |  リクエスト                              |  応答 |
 |---------------------------------------|-----------|
-| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |  
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 `<amp-state>` 要素内の JSON データと同様に、こうした取得から返されるリモートデータは、その要素の `id` 属性の下に統合されて利用可能となります。たとえば、上記の例の応答から返されたデータは、次のような式でアクセスできます。
 
@@ -104,15 +104,15 @@ $title: リモートデータの使用
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
         <div option="M">M</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
         <div option="L">L</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
         <div option="XL">XL</div>
       </td>
@@ -121,9 +121,7 @@ $title: リモートデータの使用
 </amp-selector>
 ```
 
-{% call callout('メモ', type='note') %}
-`<amp-bind>` は、明示的なユーザー操作に対してのみ実行され、ページの読み込み時には実行されません。そのため、`<amp-bind>` の使用に関係なく、最初のページの読み込みを常に速くすることができます。
-{% endcall %}
+メモ: `<amp-bind>` は、明示的なユーザー操作に対してのみ実行され、ページの読み込み時には実行されません。そのため、`<amp-bind>` の使用に関係なく、最初のページの読み込みを常に速くすることができます。
 
 ## 変化するシャツの価格
 
@@ -134,15 +132,13 @@ $title: リモートデータの使用
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size" 
+<amp-selector name="size"
     on="select:AMP.setState({selectedSize: event.targetOption})">
 ```
 
 ここで、`selectedSize` の値は `amp-state#selected` 要素により初期化していません。これは、デフォルトで選択されるサイズを意図的に指定しないでおき、代わりに、ユーザーにサイズを選択させるようにしたいためです。
 
-{% call callout('ヒント', type='success') %}
-`AMP.setState()` は、既存の変数に変更を加えるだけでなく、新しい変数を定義する際にも使用できます。式では、未定義の変数は `null` と評価されます。
-{% endcall %}
+ヒント: `AMP.setState()` は、既存の変数に変更を加えるだけでなく、新しい変数を定義する際にも使用できます。式では、未定義の変数は `null` と評価されます。
 
 価格のラベルを囲む新しい `<span>` 要素を追加して、デフォルトで選択されるサイズがないので、デフォルトのテキストを「---」に変更します。
 
@@ -176,4 +172,4 @@ $title: リモートデータの使用
   <a class="button prev-button" href="/ja/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">前へ</span></a>
   <a class="button next-button" href="/ja/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">次へ</span></a>
 </div>
- 
+

@@ -30,9 +30,7 @@ Progressive Web Apps, on the other hand, allow for much greater interactivity an
 
 AMP has the ability to install the Service Worker of your Progressive Web App from within an AMP page – yes, even if that AMP page is served from an AMP Cache! If done correctly, a link that leads to your PWA (from one of your AMP pages) will feel almost instant, similar to the first hop to the AMP page.
 
-{% call callout('Tip', type='success') %}
-If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899).
-{% endcall %}
+Tip: If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899).
 
 First, install the service worker on all of your AMP Pages using [`<amp-install-serviceworker>`](/docs/reference/components/amp-install-serviceworker.html), by first including the component via its script in the `<head>` of your page:
 
@@ -72,9 +70,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-{% call callout('Tip', type='success') %}
 Tip: There are easier ways to deal with a Service Worker. Take a look at the [Service Worker helper libraries](https://github.com/GoogleChrome/sw-helpers).
-{% endcall %}
 
 ## Make all links on an AMP Page navigate to the PWA
 
@@ -117,6 +113,4 @@ AMP solves this with something called [shell URL rewriting](/docs/reference/comp
 
 With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
 
-{% call callout('Read on', type='read') %}
-You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](/docs/integration/pwa-amp/amp-in-pwa.html).
-{% endcall %}
+Read on: You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](/docs/integration/pwa-amp/amp-in-pwa.html).

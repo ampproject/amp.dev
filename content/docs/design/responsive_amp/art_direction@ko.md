@@ -22,13 +22,11 @@ $title: srcset, sizes & heights를 이용한 미적 이미지 처리
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('노트', type='note') %}
-AMP는 `w` 설명자가 있는 srcset을 모든 브라우저에서 지원합니다.
-{% endcall %}
+노트: AMP는 `w` 설명자가 있는 srcset을 모든 브라우저에서 지원합니다.
 
 `srcset`을 사용한 반응형 이미지 제작 방법에 대한 더 자세한 내용은
 [반응형 이미지 사용하기 (Now)](http://alistapart.com/article/using-responsive-images-now)를 참고하시길 바랍니다.
@@ -49,7 +47,7 @@ AMP는 `w` 설명자가 있는 srcset을 모든 브라우저에서 지원합니�
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -60,9 +58,7 @@ AMP는 `w` 설명자가 있는 srcset을 모든 브라우저에서 지원합니�
 이 경우 브라우저에서는 `srcset` 리소스 중 가장 400px과 가까우며,
 디바이스 픽셀 해상도를 1로 가정하여, `narrow.jpg`(320px)를 불러옵니다
 
-{% call callout('중요', type='caution') %}
-sizes 속성이 width와 height와 함께 정의된 경우, 기본 layout은 `responsive`로 정의합니다.
-{% endcall %}
+중요: sizes 속성이 width와 height와 함께 정의된 경우, 기본 layout은 `responsive`로 정의합니다.
 
 `sizes`와 `srcset` 속성이 미디어 쿼리에 비교하여 어떻게 동작하는 지에 대한 더 상세한 정보는,
 [Srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/) 블로그 글을 참고하길 바랍니다.
@@ -89,7 +85,7 @@ sizes 속성이 width와 height와 함께 정의된 경우, 기본 layout은 `re
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 

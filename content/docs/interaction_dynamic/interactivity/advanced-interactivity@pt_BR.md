@@ -67,10 +67,7 @@ Agora, sempre que o slide exibido em `<amp-carousel>` mudar, a ação `AMP.setSt
 
 A expressão `event.index` é avaliada com o novo índice de slide, e a ação `AMP.setState()` combina o literal desse objeto com o estado atual. Isso substituirá o valor atual de `selected.slide` pelo valor de `event.index`.
 
-
-{% call callout('Dica', type='success') %}
-`AMP.setState()` faz uma combinação direta dos literais de objetos aninhados. Para mais detalhes, consulte a documentação de [`<amp-bind>`](/pt_br/docs/reference/components/amp-bind.html).
-{% endcall %}
+Dica: `AMP.setState()` faz uma combinação direta dos literais de objetos aninhados. Para mais detalhes, consulte a documentação de [`<amp-bind>`](/pt_br/docs/reference/components/amp-bind.html).
 
 ### Vincular os elementos do indicador
 
@@ -89,7 +86,7 @@ Em seguida, vamos usar a variável de estado que rastreia o slide exibido no mom
 
 `[class]` é uma vinculação que altera o atributo `class`. Com ela, é possível adicionar ou remover classes CSS de qualquer elemento.
 
-**Faça um teste**: atualize a página e mude o slide. 
+**Faça um teste**: atualize a página e mude o slide.
 
 Mudar o slide no carrossel fará o seguinte:
 
@@ -179,13 +176,11 @@ Ao adicionar outra variável de estado que rastreie o SKU selecionado, podemos v
 Adicione uma ação "on" ao [`<amp-selector>`](/pt_br/docs/reference/components/amp-selector.html) para atualizar a variável `selected.sku` sempre que uma cor nova for selecionada:
 
 ```html
-<amp-selector name="color" 
+<amp-selector name="color"
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-{% call callout('Dica', type='success') %}
-Você também pode fazer isso adicionando ações `on="tap:AMP.setState(...)` a cada elemento filho de `<amp-img>` em `<amp-selector>`. Uma das vantagens do `<amp-selector>` é que ele simplifica a marcação dessa forma.
-{% endcall %}
+Dica: Você também pode fazer isso adicionando ações `on="tap:AMP.setState(...)` a cada elemento filho de `<amp-img>` em `<amp-selector>`. Uma das vantagens do `<amp-selector>` é que ele simplifica a marcação dessa forma.
 
 ### Vinculação de elementos de imagem
 
@@ -201,9 +196,7 @@ Em seguida, adicione vinculações aos elementos [`<amp-img>`](/pt_br/docs/refer
     [src]="shirts[selected.sku].image"></amp-img>
 ```
 
-{% call callout('Observação', type='note') %}
-Na prática, é provável que cada imagem do carrossel tenha um "src" diferente. Você pode fazer isso substituindo a imagem única por uma matriz de imagens. Para simplificar, este tutorial usa uma imagem única em diferentes ampliações.
-{% endcall %}
+Observação: Na prática, é provável que cada imagem do carrossel tenha um "src" diferente. Você pode fazer isso substituindo a imagem única por uma matriz de imagens. Para simplificar, este tutorial usa uma imagem única em diferentes ampliações.
 
 **Faça um teste**: atualize a página e selecione uma cor de camisa diferente. Ao fazer isso, as imagens do carrossel serão atualizadas para mostrar as camisas da cor selecionada.
 
@@ -212,4 +205,4 @@ Na prática, é provável que cada imagem do carrossel tenha um "src" diferente.
   <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">Anterior</span></a>
   <a class="button next-button" href="/pt_br/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">Próxima</span></a>
 </div>
- 
+

@@ -48,9 +48,7 @@ AMP ページに広告を掲載するには、[amp-ad](/ja/docs/reference/compon
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='テスト広告') }}
 
-{% call callout('重要', type='caution') %}
-場合によっては、`Mixed Content` や `XMLHttpRequest cannot load` などのエラーがデベロッパー コンソールに出力されることがあります。前者のエラーは、A9 広告に関係している可能性があります。A9 広告では、セキュリティで保護されていないコンテンツが読み込まれる場合がありますが、AMP では、広告はすべてセキュリティで保護されていることが要求されます。
-{% endcall %}
+重要: 場合によっては、`Mixed Content` や `XMLHttpRequest cannot load` などのエラーがデベロッパー コンソールに出力されることがあります。前者のエラーは、A9 広告に関係している可能性があります。A9 広告では、セキュリティで保護されていないコンテンツが読み込まれる場合がありますが、AMP では、広告はすべてセキュリティで保護されていることが要求されます。
 
 `amp-ad` コンポーネントは、広告プラットフォームの機能を柔軟にサポートします。それを示す `amp-ad` コンポーネントの 2 つの設定例を見てみましょう。以下では、DoubleClick のダッシュボードを使用して、特定の国のユーザーにだけ表示される DoubleClick 広告を 2 つ設定しています。1 つ目の広告は英国のユーザーにだけ表示され、2 つ目の広告は米国のユーザーにだけ表示されます。先ほど AMP ドキュメントに追加した広告の下に、次の 2 つの地域ターゲティング広告設定を**追加**してみてください。
 
@@ -76,17 +74,11 @@ AMP ページに広告を掲載するには、[amp-ad](/ja/docs/reference/compon
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='テスト広告') }}
 
-{% call callout('注', type='note') %}
-上記の amp-ad タグには `div` タグが追加されており、そこには `fallback` という属性が指定されています。この `fallback` 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
-{% endcall %}
+注: 上記の amp-ad タグには `div` タグが追加されており、そこには `fallback` という属性が指定されています。この `fallback` 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
 
-{% call callout('詳細情報', type='read') %}
-サポートされる広告ネットワークの最新リストについては、[amp-ad](/ja/docs/reference/components/amp-ad.html#supported-ad-networks) コンポーネントの関連ドキュメントをご覧ください。
-{% endcall %}
+詳細情報: サポートされる広告ネットワークの最新リストについては、[amp-ad](/ja/docs/reference/components/amp-ad.html#supported-ad-networks) コンポーネントの関連ドキュメントをご覧ください。
 
-{% call callout('注', type='note') %}
-広告ネットワークから提供される JavaScript を AMP ドキュメント内で実行することはできません。代わりに、AMP ランタイムは（iframe サンドボックス経由で）別の場所から iframe を AMP ドキュメントとして読み込み、広告ネットワークの JavaScript をその iframe サンドボックス内で実行します。
-{% endcall %}
+注: 広告ネットワークから提供される JavaScript を AMP ドキュメント内で実行することはできません。代わりに、AMP ランタイムは（iframe サンドボックス経由で）別の場所から iframe を AMP ドキュメントとして読み込み、広告ネットワークの JavaScript をその iframe サンドボックス内で実行します。
 
 ここまでで、ページに埋め込まれるテキスト、画像、広告を AMP ドキュメントに記述することができました。これらの要素はいずれも、ストーリーを発信し、コンテンツを収益化するためには欠かせない重要な要素です。しかし、現代のウェブサイトでは、単にテキストと画像を掲載するだけでは十分とはいえません。
 
@@ -117,9 +109,7 @@ AMP ページに広告を掲載するには、[amp-ad](/ja/docs/reference/compon
 
 すでに説明したように、AMP 基本ライブラリの JavaScript ファイルには、すべてのコンポーネントが含まれているわけではありません。YouTube コンポーネントのための JavaScript リクエストをファイルに追加する必要があります。
 
-{% call callout('注', type='note') %}
-デベロッパー コンソールがまだ開いていて、URL に `#development=1` と表示されている場合は、`amp-youtube` JavaScript の追加を促す AMP 検証エラーと、追加する必要のある `script` タグの説明を含むキュメントへのリンクが表示されます。
-{% endcall %}
+注: デベロッパー コンソールがまだ開いていて、URL に `#development=1` と表示されている場合は、`amp-youtube` JavaScript の追加を促す AMP 検証エラーと、追加する必要のある `script` タグの説明を含むキュメントへのリンクが表示されます。
 
 次のスクリプトを `<head>` タグに**追加**します。
 
@@ -135,9 +125,7 @@ AMP ページに広告を掲載するには、[amp-ad](/ja/docs/reference/compon
 
 YouTube 動画の埋め込みについて詳しくは、[amp-youtube](/ja/docs/reference/components/amp-youtube.html) コンポーネントのドキュメントをご覧ください。動画やメディアに関するその他のコンポーネントについては、[メディア AMP コンポーネントのリスト](/ja/docs/reference/components.html#media)をご覧ください。
 
-{% call callout('ヒント', type='success') %}
-コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、[`fallback`](/ja/docs/design/responsive/placeholders.html#fallbacks) 属性を使用します。
-{% endcall %}
+ヒント: コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、[`fallback`](/ja/docs/design/responsive/placeholders.html#fallbacks) 属性を使用します。
 
 ## ツイートを表示する
 Twitter に投稿されたツイートをそのまま埋め込む機能も、ニュース記事で広く使用されています。[amp-twitter](/ja/docs/reference/components/amp-twitter.html) コンポーネントを使用すると、この機能を簡単に実現できます。
@@ -167,9 +155,7 @@ Twitter に投稿されたツイートをそのまま埋め込む機能も、ニ
 
 ツイートの埋め込みについて詳しくは、[amp-twitter](/ja/docs/reference/components/amp-twitter.html) コンポーネントのドキュメントをご覧ください。
 
-{% call callout('ヒント', type='success') %}
-AMP には、ソーシャル ネットワークのコンテンツを埋め込むためのコンポーネントが他にも用意されています。詳しくは、[ソーシャル AMP コンポーネント](/ja/docs/reference/components.html#social)の最新リストをご覧ください。
-{% endcall %}
+ヒント: AMP には、ソーシャル ネットワークのコンテンツを埋め込むためのコンポーネントが他にも用意されています。詳しくは、[ソーシャル AMP コンポーネント](/ja/docs/reference/components.html#social)の最新リストをご覧ください。
 
 ## 記事の引用をハイライト表示する
 

@@ -30,7 +30,7 @@ A continuación, insertemos un simple carrusel de imágenes con un diseño de re
 
 El componente `amp-carousel` se puede configurar de varias maneras. Intente **cambiar** el `type` de `carousel` a `slides`, y mire el resultado. Para asegurarse de que su contenido varíe y responda al tamaño de la pantalla, en el componente `amp-carousel`, **cambie** el `layout` a `responsive`. Asegúrese de que su carrusel tiene valores de `width` y `height` definidos. Además, **agregue** el atributo `"layout=responsive"` a los elementos `amp-img`.
 
-**Vuelve a cargar** tu página. Ahora, en lugar de una lista desplegable de elementos, verá un elemento a la vez. Trate de **deslizar** horizontalmente para moverse a través de los elementos. Si pasa al tercer elemento, no podrá desplazarse más. 
+**Vuelve a cargar** tu página. Ahora, en lugar de una lista desplegable de elementos, verá un elemento a la vez. Trate de **deslizar** horizontalmente para moverse a través de los elementos. Si pasa al tercer elemento, no podrá desplazarse más.
 
 A continuación, **agregue** el atributo `loop`. **Actualice** la página e intente deslizar hacia la izquierda inmediatamente. El carrusel se mueve sin cesar.
 
@@ -48,9 +48,7 @@ Su resultado final debe ser algo como esto:
 
 ¡**Actualice** la página y vea cómo gira!
 
-{% call callout('Nota', type='note') %}
-Podrías haber notado que estamos usando el tipo de disposición `fixed-height` en el carrusel. Se requiere un diseño de `fixed-height` para el tipo `carousel`, mientras que el tipo `slides` requiere el tipo de diseño `responsive`. Fixed-height toma el espacio disponible para ellos, pero mantienen la altura inalterada. Para los elementos de altura fija, debe definir el atributo `height`, mientras que el atributo `width` no debe estar presente, o debe establecerse en `auto`.
-{% endcall %}
+Nota: Podrías haber notado que estamos usando el tipo de disposición `fixed-height` en el carrusel. Se requiere un diseño de `fixed-height` para el tipo `carousel`, mientras que el tipo `slides` requiere el tipo de diseño `responsive`. Fixed-height toma el espacio disponible para ellos, pero mantienen la altura inalterada. Para los elementos de altura fija, debe definir el atributo `height`, mientras que el atributo `width` no debe estar presente, o debe establecerse en `auto`.
 
 ## Contenido mixto de carrusel
 
@@ -88,9 +86,7 @@ Ahora, **reemplazar** tu carousel simple con éste:
 
 Aprende más sobre el componente [amp-carousel](/es/docs/reference/components/amp-carousel.html).
 
-{% call callout('Nota', type='note') %}
-En nuestro último ejemplo, es posible que haya notado que el componente `amp-ad` incluía un elemento `div` hijo con el atributo de `placeholder`. Anteriormente en el tutorial, nos encontramos con un escenario similar con `amp-ad` con un `fallback`. ¿Cuál es la diferencia entre el marcador de posición y el fallback? Los elementos `fallback` aparecen cuando el elemento primario no se carga, es decir, si no hay ningún anuncio disponible. Mientras que los elementos `placeholder` aparecen en lugar del elemento principal, mientras se está cargando. En cierto sentido, cada atributo sujeta el proceso de carga del elemento padre. Puede obtener más información en la Guía [Placeholders & fallbacks](/es/docs/design/responsive/placeholders.html).
-{% endcall %}
+Nota: En nuestro último ejemplo, es posible que haya notado que el componente `amp-ad` incluía un elemento `div` hijo con el atributo de `placeholder`. Anteriormente en el tutorial, nos encontramos con un escenario similar con `amp-ad` con un `fallback`. ¿Cuál es la diferencia entre el marcador de posición y el fallback? Los elementos `fallback` aparecen cuando el elemento primario no se carga, es decir, si no hay ningún anuncio disponible. Mientras que los elementos `placeholder` aparecen en lugar del elemento principal, mientras se está cargando. En cierto sentido, cada atributo sujeta el proceso de carga del elemento padre. Puede obtener más información en la Guía [Placeholders & fallbacks](/es/docs/design/responsive/placeholders.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Anterior</span></a>

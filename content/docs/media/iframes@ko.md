@@ -16,9 +16,7 @@ iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 
 * 첫 번째 표시 영역이 상단에서부터 최소 **600px** 또는 **75%** 떨어져 있어야 합니다.
 * HTTPS 를 통해서만 리소스를 요청할 수 있으며, allow-same-origin을 지정하지 않는 한 컨테이너와 동일한 출처에 있을 수 없습니다.
 
-{% call callout('읽어보기', type='read') %}
-[<code>amp-iframe</code> 전체 사양](/ko/docs/reference/components/amp-iframe.html)
-에서 자세한 내용을 알아보세요. {% endcall %}
+읽어보기: [<code>amp-iframe</code> 전체 사양](/ko/docs/reference/components/amp-iframe.html) 에서 자세한 내용을 알아보세요.
 
 ### 스크립트 포함
 
@@ -31,7 +29,7 @@ iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 
 
 ### 마크업 작성
 
-`amp-iframe` 예시입니다: 
+`amp-iframe` 예시입니다:
 
 ```html
 <amp-iframe width="200" height="100"
@@ -41,7 +39,7 @@ iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 
 </amp-iframe>
 ```
 
-Preview: 
+Preview:
 
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
@@ -53,10 +51,7 @@ Preview:
 
 'amp-iframe'에 속성이 'placeholder'인 요소(예: 'amp-img' 요소)가 포함되어 있는 경우, 문서 상단에 'amp-iframe'을 표시할 수 있습니다. 이러한 요소는 iframe을 표시할 준비가 될 때까지 자리표시자로 렌더링됩니다.
 
-{% call callout('읽어보기', type='read') %}
-[자리표시자가 포함된 iframe](/ko/docs/reference/components/amp-iframe.html#iframe-with-placeholder)에서 자리표시자에 관해 자세히 알아보세요.
-{% endcall %}
-
+읽어보기: [자리표시자가 포함된 iframe](/ko/docs/reference/components/amp-iframe.html#iframe-with-placeholder)에서 자리표시자에 관해 자세히 알아보세요.
 
 자리표시자 사용 예:
 

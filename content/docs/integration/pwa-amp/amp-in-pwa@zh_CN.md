@@ -43,9 +43,7 @@ $title: 嵌入 AMP 网页并将其用作数据源
 
 该代码之所以会正常运行，是因为 Shadow AMP 库在实际加载时会发现 `window.AMP` 下已有一个回调数组，然后便会处理整个队列。如果您日后再次执行同一函数，该代码仍会正常运行，因为 Shadow AMP 会使用其自身以及一种能立即触发回调的自定义 `push` 方法来替换 `window.AMP`。
 
-{% call callout('提示', type='success') %}
-为了使上述代码样例切实可行，我们建议您：将其封装在 Promise 中，然后始终在使用 AMP API 之前先使用此 Promise。有关示例，请查看我们的 [React 演示代码](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20)。
-{% endcall %}
+提示: 为了使上述代码样例切实可行，我们建议您：将其封装在 Promise 中，然后始终在使用 AMP API 之前先使用此 Promise。有关示例，请查看我们的 [React 演示代码](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20)。
 
 ## 实现渐进式网页应用中的导航机制
 
@@ -77,9 +75,7 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-{% call callout('重要提示', type='caution') %}
-为了简化上述代码示例，我们跳过了纠错过程。您应始终确保能够有效地捕捉并处理错误。
-{% endcall %}
+重要提示: 为了简化上述代码示例，我们跳过了纠错过程。您应始终确保能够有效地捕捉并处理错误。
 
 由于现在我们已经拥有了即时可用的 `Document` 对象，接下来就该让 AMP 接管并呈现此文档了。获取对作为 AMP 文档容器的 DOM 元素的引用，然后调用 `AMP.attachShadowDoc()`，所需代码如下所示：
 
@@ -97,9 +93,7 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-{% call callout('提示', type='success') %}
-将文档实际移交给 AMP 之前的这段时间是移除以下内容的绝好时机：在 AMP 网页单独展示时有用但在嵌入模式中无用的页面元素（例如页脚和标头）。
-{% endcall %}
+提示: 将文档实际移交给 AMP 之前的这段时间是移除以下内容的绝好时机：在 AMP 网页单独展示时有用但在嵌入模式中无用的页面元素（例如页脚和标头）。
 
 大功告成！现在，您的 AMP 网页就会作为整个渐进式网页应用中的一个子级元素进行呈现了。
 
@@ -128,5 +122,5 @@ ampedDoc.close();
 
 * 获取代码：[https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
 * 了解实际运作方式：[https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
- 
- 
+
+

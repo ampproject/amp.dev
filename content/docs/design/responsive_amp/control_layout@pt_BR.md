@@ -26,9 +26,7 @@ Esse elemento `amp-img` se ajusta automaticamente à largura do elemento contêi
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('Dica', type='success') %}
-Confira nossa demonstração lado a lado de `amp-img` ao vivo para ver um exemplo básico e um avançado: [Demonstração ao vivo](https://ampbyexample.com/components/amp-img/)
-{% endcall %}
+Dica: Confira nossa demonstração lado a lado de `amp-img` ao vivo para ver um exemplo básico e um avançado: [Demonstração ao vivo](https://ampbyexample.com/components/amp-img/)
 
 ## Atributo de layout
 
@@ -129,9 +127,7 @@ Se o atributo<code>layout</code> não estiver especificado, a AMP tenta inferir 
 
 Use [`@media`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/@media) para controlar a aparência e o comportamento do layout da página, como em qualquer outro website. Quando o tamanho ou a orientação da janela do navegador mudam, as consultas de mídia são reavaliadas, e os elementos são ocultos e exibidos com base nos novos resultados.
 
-{% call callout('Dica', type='success') %}
-Saiba mais sobre como controlar o layout aplicando consultas de mídia em [Usar consultas de mídia CSS para responsividade](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
-{% endcall %}
+Dica: Saiba mais sobre como controlar o layout aplicando consultas de mídia em [Usar consultas de mídia CSS para responsividade](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
 
 ### Consultas de mídia de elementos
 

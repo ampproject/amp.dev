@@ -43,9 +43,7 @@ O código pode ser traduzido como:
 
 Isso funciona porque, após o carregamento, a biblioteca Shadow AMP detectará que já existe uma matriz de retornos de chamada em `window.AMP` e processará a fila toda. Se você usar a mesma função novamente, ela ainda funcionará, porque a Shadow AMP substitui `window.AMP` por ela própria e um método `push` personalizado que ativa o retorno de chamada imediatamente.
 
-{% call callout('Dica', type='success') %}
-Para usar o código de exemplo acima na prática, recomendamos que você o una a uma Promise e use-a antes de trabalhar com a AMP API. Para ver um exemplo, confira nosso [código React de demonstração](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) (em inglês).
-{% endcall %}
+Dica: Para usar o código de exemplo acima na prática, recomendamos que você o una a uma Promise e use-a antes de trabalhar com a AMP API. Para ver um exemplo, confira nosso [código React de demonstração](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) (em inglês).
 
 ## Controlar a navegação no seu Progressive Web App
 
@@ -77,9 +75,7 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-{% call callout('Importante', type='caution') %}
-Para simplificar o código de exemplo acima, ignoramos o tratamento de erros. Sempre detecte e resolva os erros de modo adequado.
-{% endcall %}
+Importante: Para simplificar o código de exemplo acima, ignoramos o tratamento de erros. Sempre detecte e resolva os erros de modo adequado.
 
 Agora que temos o objeto `Document` pronto para usar, é hora de deixar a AMP assumir o controle e fazer a renderização. Use uma referência ao elemento DOM que serve de contêiner para o documento AMP e chame a função `AMP.attachShadowDoc()`. Por exemplo:
 
@@ -97,9 +93,7 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-{% call callout('Dica', type='success') %}
-Antes de entregar o documento para a AMP, remova elementos que fazem sentido ao exibir a página AMP autônoma, mas não no modo incorporado, como rodapés e cabeçalhos.
-{% endcall %}
+Dica: Antes de entregar o documento para a AMP, remova elementos que fazem sentido ao exibir a página AMP autônoma, mas não no modo incorporado, como rodapés e cabeçalhos.
 
 Pronto. Sua página AMP será renderizada como derivada do Progressive Web App.
 
@@ -128,5 +122,5 @@ Você também pode ver uma amostra de PWA e AMP usando a biblioteca Polymer. A a
 
 * Encontre o código aqui: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp) (em inglês).
 * Veja na prática aqui: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/) (em inglês).
- 
- 
+
+

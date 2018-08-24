@@ -5,9 +5,7 @@ $title: Casos prácticos
 
 Esta guía presenta un conjunto de casos prácticos que se utilizan con frecuencia al realizar el seguimiento de las interacciones de los usuarios:
 
-{% call callout('Nota', type='note') %} 
-¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones](/es/docs/support/contribute.html).
-{% endcall %}
+Note: ¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones](/es/docs/support/contribute.html).
 
 ## Seguimiento de páginas vistas
 
@@ -62,7 +60,7 @@ Envía los datos de páginas vistas a Google Analytics (consulta también [Segui
             "on": "visible",
             "request": "pageview"
         }
-    } 
+    }
 }
 </script>
 </amp-analytics>
@@ -95,8 +93,8 @@ En el siguiente ejemplo se utiliza el atributo `selector` para enviar un evento 
                 "eventId": "42",
                 "eventLabel": "clicked on a link"
             }
-        } 
-    } 
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -122,8 +120,8 @@ En el siguiente ejemplo se utiliza el atributo `selector` del `trigger` para env
                 "eventCategory": "ui-components",
                 "eventAction": "header-click"
             }
-        } 
-    } 
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -149,9 +147,9 @@ Realiza el seguimiento del desplazamiento en la página usando [amp-analytics](/
             "scrollSpec": {
                 "verticalBoundaries": [25, 50, 90],
                 "horizontalBoundaries": [90]
-            } 
-        } 
-    } 
+            }
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -184,8 +182,8 @@ En el siguiente ejemplo se utiliza el atributo `selector` para enviar un evento 
                 "eventId": "43",
                 "eventLabel": "clicked on a tweet link"
             }
-        } 
-    } 
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -212,8 +210,8 @@ En el ejemplo siguiente se utiliza el atributo `selector` del `trigger` para env
                 "socialAction": "tweet",
                 "socialTarget": "https://www.examplepetstore.com"
             }
-        } 
-    } 
+        }
+    }
 }
 </script>
 </amp-analytics>

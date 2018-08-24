@@ -28,9 +28,7 @@ Este es el código HTML básico que necesitas para una página AMP:
 </html>
 ```
 
-{% call callout('Leer Más', type='read') %}
-Aprende más sobre el [markup requerido](/es/docs/fundamentals/spec.html#required-markup) para páginas AMP.
-{% endcall %}
+Leer más: Aprende más sobre el [markup requerido](/es/docs/fundamentals/spec.html#required-markup) para páginas AMP.
 
 ### Paso 2: Agrega componentes a tu página
 
@@ -72,9 +70,7 @@ Para darle estilo a tus elementos en una página AMP, agrega CSS directamente a 
 </style>
 ```
 
-{% call callout('Leer Más', type='read') %}
-Aprende más sobre el [CSS soportado](/es/docs/design/responsive/style_pages.html) en páginas AMP.
-{% endcall %}
+Leer más: Aprende más sobre el [CSS soportado](/es/docs/design/responsive/style_pages.html) en páginas AMP.
 
 ### Paso 4: Valida tu página AMP HTML
 

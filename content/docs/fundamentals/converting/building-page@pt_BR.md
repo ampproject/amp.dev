@@ -7,10 +7,7 @@ O diretório do projeto contém um arquivo chamado [`article.html`](https://gith
 1.  **Copie** todo o código do arquivo `article.html` e cole-o em um novo arquivo.
 2.  **Salve** o novo arquivo como `article.amp.html`.
 
-{% call callout('Observação', type='note') %}
-Não é preciso acrescentar `.amp.html` aos arquivos AMP. Eles podem ter qualquer extensão. Os editores normalmente adicionam parâmetros ao URL para diferenciar as páginas AMP das versões canônicas (por exemplo,  `http://publisher.com/article.html?amp`).
-{% endcall %}
-
+Observação: Não é preciso acrescentar `.amp.html` aos arquivos AMP. Eles podem ter qualquer extensão. Os editores normalmente adicionam parâmetros ao URL para diferenciar as páginas AMP das versões canônicas (por exemplo,  `http://publisher.com/article.html?amp`).
 
 Seu arquivo `article.amp.html` precisa ter a seguinte forma:
 

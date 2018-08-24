@@ -39,9 +39,7 @@ Untuk menguji halaman sampel, kami perlu mengakses file dari server web. Ada beb
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('Catatan', type='note') %}
-Sebaiknya Anda menggunakan HTTPS di lingkungan produksi. HTTPS memiliki beberapa keunggulan selain di sektor keamanan, termasuk SEO. Anda dapat membaca selengkapnya tentang topik ini di artikel [entri blog Google Webmaster](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html) ini.
-{% endcall %}
+Catatan: Sebaiknya Anda menggunakan HTTPS di lingkungan produksi. HTTPS memiliki beberapa keunggulan selain di sektor keamanan, termasuk SEO. Anda dapat membaca selengkapnya tentang topik ini di artikel [entri blog Google Webmaster](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html) ini.
 
 Setelah menyiapkan server web lokal, buka artikel sampel pada browser Anda di [URL ini](http://localhost:8000/article.html):
 

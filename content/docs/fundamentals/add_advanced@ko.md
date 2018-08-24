@@ -20,9 +20,7 @@ $title: 고급 AMP 기능 추가
 
 AMP 사양에 부합하고 광고, 분석, 임베디드 비디오, 임베디드 소셜 미디어, 캐러셀 및 사이트 탐색 메뉴를 포함하는 뉴스 기사 페이지
 
-{% call callout('Nota', type='note') %}
-이 튜토리얼은 ["HTML을 AMP로 변환"](/ko/docs/fundamentals/converting.html)에서 소개된 개념들의 연장입니다. AMP의 핵심 개념에 대한 기본적인 이해가 없는 경우, ["HTML을 AMP로 변환"](/ko/docs/fundamentals/converting.html)을 시도해보십시오.
-{% endcall %}
+Nota: 이 튜토리얼은 ["HTML을 AMP로 변환"](/ko/docs/fundamentals/converting.html)에서 소개된 개념들의 연장입니다. AMP의 핵심 개념에 대한 기본적인 이해가 없는 경우, ["HTML을 AMP로 변환"](/ko/docs/fundamentals/converting.html)을 시도해보십시오.
 
 <div class="start-button">
 <a class="button" href="/ko/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-next">시작하기</span></a>

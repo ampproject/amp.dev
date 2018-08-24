@@ -47,9 +47,7 @@ $title: ログイン
 
 [/sourcecode]
 
-{% call callout('メモ', type='note') %}
-ログインノード内には、異なる URL を定義することができます。この例では、まず `sign-in` の URL を定義し、後で `sign-out` を定義します。
-{% endcall %}
+メモ: ログインノード内には、異なる URL を定義することができます。この例では、まず `sign-in` の URL を定義し、後で `sign-out` を定義します。
 
 このログインページは非 AMP ページですが、ここではわかりやすいように、このページにログイン ID とパスワードの値を入力します。input type="hidden" である `returnURL` の使い方に注意してください。この値はサーバー側のテンプレート作成を通じて AMPByExample サーバーが設定します。サーバーは、AMP ライブラリによってログイン URL に自動的に追加される `return` というパラメータからこの値を読み取ります。
 
@@ -68,9 +66,7 @@ AMPByExample サーバーがログインページから POST リクエストを�
 - AMP ランタイムはログインページを閉じて、return URL パラメータで指定されたページにリダイレクトします
 - ユーザーがログインボタンをクリックすると、サーバーはレスポンスを調整する必要があります
 
-{% call callout('ヒント', type='success') %}
-このフローの詳細については、[amp-access ドキュメント](/ja/docs/reference/components/amp-access#login-flow)をご覧ください。
-{% endcall %}
+ヒント: このフローの詳細については、[amp-access ドキュメント](/ja/docs/reference/components/amp-access#login-flow)をご覧ください。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/ja/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">前へ</span></a>
