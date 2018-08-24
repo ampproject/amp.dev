@@ -47,11 +47,3 @@ white
     background-color: white;
   }
 }
-
-.#{organism('container')} {
-  grid-column:1;
-  padding: 0 20px;
-  @media screen and (min-width: 768px) {
-    grid-column: 2 / span 1;
-  }
-}
