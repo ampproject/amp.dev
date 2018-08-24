@@ -51,7 +51,9 @@ TODO: mono (inline, block)
 		font-size: 1em;
 	}
 
-	&-#{map-get($sizes, xl)} {}
+	&-#{map-get($sizes, xl)} {
+		font-size: 1.125em;
+	}
 
 	&-p {}
 
