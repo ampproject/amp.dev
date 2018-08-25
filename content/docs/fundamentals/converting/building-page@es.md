@@ -7,9 +7,7 @@ En el directorio del proyecto, encontrará un archivo denominado [`article.html`
 1. **Copie** el código completo del archivo `article.html` y péguelo en un nuevo archivo.
 2. **Guarde** el archivo nuevo como `article.amp.html`.
 
-{% call callout('Nota', type='note') %}
-No es necesario que nombre los archivos AMP como `.amp.html`. De hecho, los archivos AMP pueden tener cualquier extensión que desee. Es común ver editores diferenciando páginas AMP de sus versiones canónicas usando parámetros en la url. Por ejemplo: `http://publisher.com/article.html?amp`.
-{% endcall %}
+Nota: No es necesario que nombre los archivos AMP como `.amp.html`. De hecho, los archivos AMP pueden tener cualquier extensión que desee. Es común ver editores diferenciando páginas AMP de sus versiones canónicas usando parámetros en la url. Por ejemplo: `http://publisher.com/article.html?amp`.
 
 Su archivo `article.amp.html` debe tener el siguiente aspecto:
 

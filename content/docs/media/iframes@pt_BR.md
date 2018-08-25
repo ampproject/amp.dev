@@ -13,18 +13,16 @@ Nas AMP, os iframes são úteis principalmente para exibir conteúdos incompatí
 
 ### Requisitos do elemento `amp-iframe`:
 
-* Precisa estar a uma distância de pelo menos **600 px** ou **75%** da primeira janela de visualização em 
+* Precisa estar a uma distância de pelo menos **600 px** ou **75%** da primeira janela de visualização em
 relação à parte superior.
-* Pode solicitar recursos somente através de HTTPS, e eles não podem estar na mesma origem do contêiner, 
+* Pode solicitar recursos somente através de HTTPS, e eles não podem estar na mesma origem do contêiner,
 a menos que não especifiquem o valor allow-same-origin.
 
-{% call callout('Leia Mais', type='read') %}
-Saiba mais nas [especificações completas do <code>amp-iframe</code>](/pt_br/docs/reference/components/amp-iframe.html).
-{% endcall %}
+Leia mais: Saiba mais nas [especificações completas do <code>amp-iframe</code>](/pt_br/docs/reference/components/amp-iframe.html).
 
 ### Incluir o script
 
-Para incluir o `amp-iframe` em sua página, inclua primeiro o script a seguir em `<head>`. 
+Para incluir o `amp-iframe` em sua página, inclua primeiro o script a seguir em `<head>`.
 Ele carregará código adicional para o componente estendido:
 
 [sourcecode:html]
@@ -43,7 +41,7 @@ Um `amp-iframe` exemplo:
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
 </amp-iframe>
 ```
-Preview: 
+Preview:
 
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
@@ -55,10 +53,7 @@ Preview:
 
 É possível exibir um `amp-iframe` na parte superior de um documento desde que o `amp-iframe` inclua um elemento com o atributo `placeholder` (por exemplo, um elemento `amp-img`) para ser renderizado como marcador até que o iframe esteja pronto para exibição.
 
-{% call callout('Leia Mais', type='read') %}
-Saiba mais sobre marcadores no artigo sobre [iframes com marcadores](/pt_br/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
-{% endcall %}
-
+Leia mais: Saiba mais sobre marcadores no artigo sobre [iframes com marcadores](/pt_br/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
 
 Exemplo com marcador:
 

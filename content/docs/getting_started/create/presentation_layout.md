@@ -26,9 +26,7 @@ Every AMP page can only have a single embedded stylesheet and inline styles, but
 
 AMP follows stricter rules when laying out elements on the page. On a normal HTML page, you almost exclusively use CSS to lay out elements. But for performance reasons, AMP requires all elements to have an explicit size set from the get-go.
 
-{% call callout('Read on', type='read') %}
-Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries](/docs/design/responsive/control_layout.html).
-{% endcall %}
+Read on: Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries](/docs/design/responsive/control_layout.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/docs/getting_started/create/include_image.html"><span class="arrow-prev">Prev</span></a>

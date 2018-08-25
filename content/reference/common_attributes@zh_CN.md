@@ -30,9 +30,7 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 1. 该值适用于元素的高度，但不适用于宽度。
 2. 允许采用百分比值。百分比值表示元素的高度占宽度的百分比。例如，如果值为 `80%`，则表示元素的高度将是宽度的 80%。
 
-{% call callout('注意', type='note') %}
-如果同时指定了 `heights` 属性及 `width` 和 `height`，则 `layout` 默认为 `responsive`。
-{% endcall %}
+注意: 如果同时指定了 `heights` 属性及 `width` 和 `height`，则 `layout` 默认为 `responsive`。
 
 示例：
 
@@ -171,6 +169,6 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 有关详情，请参阅[布局和媒体查询](/zh_cn/docs/design/responsive/control_layout.html)以及[布局规范](/zh_cn/docs/design/amp-html-layout.html)。
 
- 
- 
- 
+
+
+

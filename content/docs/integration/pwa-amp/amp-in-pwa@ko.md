@@ -43,9 +43,7 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 
 이 코드가 작동하는 이유는 그림자 AMP 라이브러리가 실제로 로드될 때 `window.AMP` 아래에 콜백 배열이 있다는 것을 인식하고 전체 대기열을 처리하기 때문입니다. 나중에 동일한 함수를 다시 실행해 보면 여전히 제대로 작동할 것입니다. `window.AMP'가 그림자 AMP와 콜백을 바로 실행하는 맞춤 `push` 메소드로 대체되기 때문입니다.
 
-{% call callout('도움말', type='success') %}
-위의 코드 샘플을 실제로 사용할 수 있게 만들려면, 코드를 Promise에 넣은 다음 AMP API를 사용하기 전에 항상 앞서 말한 Promise를 사용하는 것이 좋습니다. [React 데모 코드](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20)에서 예시를 확인하세요.
-{% endcall %}
+도움말: 위의 코드 샘플을 실제로 사용할 수 있게 만들려면, 코드를 Promise에 넣은 다음 AMP API를 사용하기 전에 항상 앞서 말한 Promise를 사용하는 것이 좋습니다. [React 데모 코드](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20)에서 예시를 확인하세요.
 
 ## 프로그레시브 웹 앱에서 탐색 처리하기
 
@@ -77,9 +75,7 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-{% call callout('중요', type='caution') %}
-위의 코드 예제에서는 코드를 간소화하기 위해 오류 처리 과정을 건너뛰었습니다. 하지만 항상 오류를 찾아내고 적절히 처리해야 합니다.
-{% endcall %}
+중요: 위의 코드 예제에서는 코드를 간소화하기 위해 오류 처리 과정을 건너뛰었습니다. 하지만 항상 오류를 찾아내고 적절히 처리해야 합니다.
 
 이제 사용할 준비가 끝난 `Document` 개체가 생겼으므로 AMP가 이를 넘겨받아 렌더링할 차례입니다. AMP 문서의 컨테이너 역할을 하는 DOM 요소를 참조한 후 다음과 같이 `AMP.attachShadowDoc()`을 호출합니다.
 
@@ -97,9 +93,7 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-{% call callout('도움말', type='success') %}
-문서를 실제로 AMP에 넘기기 전에 헤더 및 푸터와 같이 AMP 페이지가 단독으로 표시될 때는 있어야 하지만 삽입 모드에서는 의미가 없는 페이지 요소를 삭제하는 것이 좋습니다.
-{% endcall %}
+도움말: 문서를 실제로 AMP에 넘기기 전에 헤더 및 푸터와 같이 AMP 페이지가 단독으로 표시될 때는 있어야 하지만 삽입 모드에서는 의미가 없는 페이지 요소를 삭제하는 것이 좋습니다.
 
 이제 끝났습니다. AMP 페이지가 전체 프로그레시브 웹 앱의 하위 항목으로 렌더링됩니다.
 
@@ -128,5 +122,5 @@ Google에서 제작한 [React 샘플](https://ko/github.com/ampproject/amp-publi
 
 * 코드 받기: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
 * 실제 작동 모습 확인하기: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
- 
- 
+
+

@@ -24,11 +24,11 @@ components:
 <p><strong>In addition, you can now reuse the entire content library you already have in the form of AMP pages and use them as a centerpiece in your Progressive Web App, saving engineering resources and complexity.</strong></p>
 <p><strong>To learn more about how to combine AMP and Progressive Web Apps, head to one of the following resources:</strong></p>
 <ol>
-<li ><strong>Our brand new set of </strong><a href="https://www.ampproject.org/docs/guides/author-develop/pwa-amp"><strong>docs discussing AMP and Progressive Web Apps</strong></a><strong>, deep diving into </strong><a href="https://www.ampproject.org/docs/guides/pwa-amp/amp-as-pwa"><strong>how to enable Progressive Web App features for your AMP pages</strong></a><strong>, how to </strong><a href="https://www.ampproject.org/docs/guides/pwa-amp/amp-to-pwa"><strong>preload your Progressive Web App from your AMP Pages</strong></a><strong> and </strong><a href="https://www.ampproject.org/docs/guides/pwa-amp/amp-in-pwa"><strong>embed &amp; use AMP as a data source</strong></a></li>
+<li ><strong>Our brand new set of </strong><a href="https://www.ampproject.org/docs/guides/author-develop/pwa-amp"><strong>docs discussing AMP and Progressive Web Apps</strong></a><strong>, deep diving into </strong><a href="https://www.ampproject.org/docs/integration/pwa-amp/amp-as-pwa"><strong>how to enable Progressive Web App features for your AMP pages</strong></a><strong>, how to </strong><a href="https://www.ampproject.org/docs/integration/pwa-amp/amp-to-pwa"><strong>preload your Progressive Web App from your AMP Pages</strong></a><strong> and </strong><a href="https://www.ampproject.org/docs/integration/pwa-amp/amp-in-pwa"><strong>embed &amp; use AMP as a data source</strong></a></li>
 <li ><strong>The </strong><a href="https://www.smashingmagazine.com/2016/12/progressive-web-amps/"><strong>primer released in Smashing Mag</strong></a></li>
 <li ><strong>The </strong><a href="https://www.youtube.com/watch?v=tnR83mWP9M0"><strong>conference talk by Alex Russell</strong></a><strong> from the AMP Conf 2017</strong></li>
 </ol>
 <p><strong>Get in touch via our </strong><a href="https://www.ampproject.org/support/developer/"><strong>developer support channels</strong></a><strong> if you have questions or feedback. We can’t wait to see what you will build!</strong></p>
-<p></p><br />  
+<p></p><br />
 </div>
 

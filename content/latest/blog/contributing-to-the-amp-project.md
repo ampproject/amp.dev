@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2018/06/21/contributing-to-the-amp-project/amp/"
 excerpt: "Editor&#8217;s note: The following was originally posted by Adam Silverstein, Lead Web Engineer at 10up on the Google Open Source Blog. I started my web career building websites for small businesses on WordPress, so when I decided to begin contributing to open source, WordPress was a natural place to start. Now I work at the digital [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-06-21T15:22:46-04:00
+date_data: 2018-06-21T19:22:46+00:00
 $date: June 21, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

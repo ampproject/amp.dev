@@ -67,10 +67,7 @@ selected.slide // Evaluates to 0.
 
 `event.index` の評価結果は新しいスライドのインデックスになり、`AMP.setState()` アクションによってこのオブジェクト リテラルが現在のステータスにマージされます。これにより、`selected.slide` の現在の値が `event.index` の値に置き換えられます。
 
-
-{% call callout('ヒント', type='success') %}
-`AMP.setState()` は、ネストされたオブジェクト リテラルのディープマージを行います。詳しくは、[`<amp-bind>`](/ja/docs/reference/components/amp-bind.html) のドキュメントをご覧ください。
-{% endcall %}
+ヒント: `AMP.setState()` は、ネストされたオブジェクト リテラルのディープマージを行います。詳しくは、[`<amp-bind>`](/ja/docs/reference/components/amp-bind.html) のドキュメントをご覧ください。
 
 ### インジケーターの要素をバインドする
 
@@ -179,13 +176,11 @@ selected.slide // Evaluates to 0.
 [`<amp-selector>`](/ja/docs/reference/components/amp-selector.html) に "on" アクションを追加します。このアクションは、別の色が選択されるたびに `selected.sku` 変数を更新します。
 
 ```html
-<amp-selector name="color" 
+<amp-selector name="color"
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-{% call callout('ヒント', type='success') %}
-この処理は、`<amp-selector>` 内の各 `<amp-img>` 下位要素に `on="tap:AMP.setState(...)` を追加することによっても実装できます。`<amp-selector>` の利点の 1 つは、上記のような方法でマークアップを簡素化できることです。
-{% endcall %}
+ヒント: この処理は、`<amp-selector>` 内の各 `<amp-img>` 下位要素に `on="tap:AMP.setState(...)` を追加することによっても実装できます。`<amp-selector>` の利点の 1 つは、上記のような方法でマークアップを簡素化できることです。
 
 ### 画像要素をバインドする
 
@@ -201,9 +196,7 @@ selected.slide // Evaluates to 0.
     [src]="shirts[selected.sku].image"></amp-img>
 ```
 
-{% call callout('注', type='note') %}
-実際には、カルーセル内の各画像はそれぞれ別の `src` を持つ可能性があります。そのようにするには、上記の単一の画像を複数の画像で置き換えます。説明を簡単にするため、このチュートリアルでは単一の画像を異なる複数のサイズで使用しています。
-{% endcall %}
+注: 実際には、カルーセル内の各画像はそれぞれ別の `src` を持つ可能性があります。そのようにするには、上記の単一の画像を複数の画像で置き換えます。説明を簡単にするため、このチュートリアルでは単一の画像を異なる複数のサイズで使用しています。
 
 **試してみる**: ページを更新して、シャツに別の色を選択してみましょう。別の色を選択するとカルーセルの画像が更新され、選択した色のシャツが表示されます。
 
@@ -212,4 +205,4 @@ selected.slide // Evaluates to 0.
   <a class="button prev-button" href="/ja/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">前へ</span></a>
   <a class="button next-button" href="/ja/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">次へ</span></a>
 </div>
- 
+

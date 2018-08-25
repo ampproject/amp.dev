@@ -21,7 +21,7 @@ Faça o download do código de exemplo do tutorial como um [arquivo ZIP](https:/
 git clone https://github.com/googlecodelabs/accelerated-mobile-pages-advanced.git
 ```
 
-Descompacte o arquivo (caso necessário) e acesse o diretório do projeto por meio da linha de comando do computador. 
+Descompacte o arquivo (caso necessário) e acesse o diretório do projeto por meio da linha de comando do computador.
 
 ```shell
 cd accelerated-mobile-pages-advanced
@@ -38,9 +38,7 @@ Para testar a página AMP de exemplo, você precisa acessar os arquivos por meio
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('Observação', type='note') %}
-É altamente recomendável usar o HTTPS em ambientes de produção. O HTTPS oferece vários benefícios além da segurança, incluindo SEO. Se quiser saber mais sobre esse tópico, leia esta [postagem do blog do Google para webmasters](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
-{% endcall %}
+Observação: É altamente recomendável usar o HTTPS em ambientes de produção. O HTTPS oferece vários benefícios além da segurança, incluindo SEO. Se quiser saber mais sobre esse tópico, leia esta [postagem do blog do Google para webmasters](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
 
 Após configurar o servidor da Web local, acesse o artigo de exemplo no navegador [neste URL](http://localhost:8000/article.amp.html):
 

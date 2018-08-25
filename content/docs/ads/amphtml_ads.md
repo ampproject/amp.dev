@@ -16,13 +16,13 @@ AMPHTML ads are written in AMP HTML according to the [AMPHTML ad spec](/docs/ads
 
 ### Benefits
 
-Why are AMPHTML ads better than traditional ads? 
+Why are AMPHTML ads better than traditional ads?
 
 1.  **Faster**: AMPHTML ads are faster because the ads are requested earlier in the page rendering process, and immediately displayed just before the user is about to view the ad. The reduced file size of AMPHTML ads also increases speed.
 1.  **Lighter**: AMPHTML ads combine commonly used ad functionality, which reduces the ad's file size. Once on the page, AMPHTML ads also consume less resources. For example, instead of 10 trackers requesting their own information in regular ads, AMPHTML ads collect all the data once and distribute it to any number of interested trackers.
 1.  **Coordinated**: On AMP pages, the [AMP runtime](https://www.ampproject.org/docs/fundamentals/spec#amp-runtime) can coordinate a mobile phone's limited resources to the right component at the right time to give the best user experience. For example, AMPHTML ads with animations are paused when the ads are not in the current viewport.
 1.  **More Engaging**: Users can't engage with ads they can't see. Faster ads lead to higher viewability and therefore higher click-through rates, which ultimately leads to better ad performance.
-1.  **Safe from Malware**: It's impossible to spread malware with AMPHTML ads because the ads are verified before being served. Because of this, advertisers can ensure a safe user experience and positive brand perception. 
+1.  **Safe from Malware**: It's impossible to spread malware with AMPHTML ads because the ads are verified before being served. Because of this, advertisers can ensure a safe user experience and positive brand perception.
 1.  **More Flexible**: AMPHTML ads are designed to work on both AMP and non-AMP web pages, as well as across any device.
 
 
@@ -55,7 +55,7 @@ AMPHTML ads are flexible and dynamic, allowing for many creative formats like ca
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
 
 1.  Publishers insert an ad slot on their AMP page via the [`<amp-ad>`](/docs/reference/components/amp-ad.html) tag, specifying the ad network they wish to use.
-1.  The AMP Runtime sends an ad request to the specified ad network to retrieve the ad. Ad networks capable of serving AMPHTML ads provide a [Fast Fetch implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) that validates and signs the creative. 
+1.  The AMP Runtime sends an ad request to the specified ad network to retrieve the ad. Ad networks capable of serving AMPHTML ads provide a [Fast Fetch implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) that validates and signs the creative.
 1.  The ad network responds with the AMPHTML ad and the AMP Runtime renders the ad on the AMP page.
 
 ## Serving AMPHTML ads
@@ -104,9 +104,7 @@ After creating your AMPHTML ad, you should make sure that the ad is using the co
 *   Use the [AMP validator](https://validator.ampproject.org/) for one-off testing.
 *   Partner with [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) and use their public validator end point.
 
-{% call callout('Note', type='note') %}
-To render AMPHTML ads quickly on AMP pages (i.e., using preferential rendering in Fast Fetch), the syntax must be correct.  If the syntax isn't valid, the ad will still render, just not as quickly.
-{% endcall %}
+Note: To render AMPHTML ads quickly on AMP pages (i.e., using preferential rendering in Fast Fetch), the syntax must be correct.  If the syntax isn't valid, the ad will still render, just not as quickly.
 
 ## Supporting AMPHTML ads in RTB
 

@@ -18,7 +18,7 @@ Vamos fazer uso da capacidade de busca de dados remotos para pesquisar os preço
 
 |  Solicitação                              |  Resposta |
 |---------------------------------------|-----------|
-| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |  
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Assim como os dados JSON nos elementos `<amp-state>`, os dados remotos retornados por essas buscas são mesclados e disponibilizados no atributo `id` do elemento. Por exemplo, os dados retornados do exemplo de resposta acima podem ser acessados em uma expressão:
 
@@ -104,15 +104,15 @@ Também será necessário atualizar o estado padrão dos elementos relevantes:
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
         <div option="M">M</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
         <div option="L">L</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
         <div option="XL">XL</div>
       </td>
@@ -121,9 +121,7 @@ Também será necessário atualizar o estado padrão dos elementos relevantes:
 </amp-selector>
 ```
 
-{% call callout('Observação', type='note') %}
-`<amp-bind>` não é executado no carregamento de página, mas somente em resposta a uma ação explícita do usuário. Isso garante que o carregamento de página inicial sempre seja rápido em todas as páginas, independentemente do uso de `<amp-bind>`.
-{% endcall %}
+Observação: `<amp-bind>` não é executado no carregamento de página, mas somente em resposta a uma ação explícita do usuário. Isso garante que o carregamento de página inicial sempre seja rápido em todas as páginas, independentemente do uso de `<amp-bind>`.
 
 ## Preços variáveis da camiseta
 
@@ -134,15 +132,13 @@ A loja AMPPAREL é peculiar, porque o preço da camiseta é específico em rela�
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size" 
+<amp-selector name="size"
     on="select:AMP.setState({selectedSize: event.targetOption})">
 ```
 
 O valor de `selectedSize` não é inicializado por meio do elemento `amp-state#selected`. Isso ocorre porque o tamanho padrão selecionado não é fornecido. Fazemos isso intencionalmente para que o usuário seja obrigado a escolher um tamanho.
 
-{% call callout('Dica', type='success') %}
-`AMP.setState()` pode ser usado para definir novas variáveis, além de modificar as existentes. As expressões avaliarão as variáveis indefinidas como `null`.
-{% endcall %}
+Dica: `AMP.setState()` pode ser usado para definir novas variáveis, além de modificar as existentes. As expressões avaliarão as variáveis indefinidas como `null`.
 
 Adicione um novo elemento `<span>` que contenha a etiqueta de preço e altere o texto padrão para "---", já que não há seleção de tamanho padrão.
 
@@ -170,10 +166,10 @@ Estamos quase terminando. Desative o botão "Adicionar ao carrinho" quando o tam
     [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
 ```
 
-**Faça um teste**: se você selecionar um tamanho indisponível, não será possível adicioná-lo ao carrinho. 
+**Faça um teste**: se você selecionar um tamanho indisponível, não será possível adicioná-lo ao carrinho.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">Anterior</span></a>
   <a class="button next-button" href="/pt_br/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">Próxima</span></a>
 </div>
- 
+

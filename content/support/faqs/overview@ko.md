@@ -64,7 +64,7 @@ faq:
   - title: 퍼블리셔로써, AMP에서 콘텐츠 작업을하는 데 더 많은 작업이 필요합니까?
     answer: |
       간단히 말해, 그렇게까진 아닙니다. “AMP HTML”은 완전히 기존 웹 기술로 만들어졌기 때문에, 개발 프로세스는 퍼블리셔가 이미 사용하고 있는 기술을 반영합니다.
-      퍼블리셔는 GitHub의 [AMP HTML specification](/ko/docs/reference/spec.html)을 숙지할 수 있습니다.
+      퍼블리셔는 GitHub의 [AMP HTML specification](/ko/docs/fundamentals/spec.html)을 숙지할 수 있습니다.
       현재 프로세스에 익숙한 사용자에게는, 상당한 러닝 커브가 필요하지 않습니다.
   - title: 퍼블리셔가 어떻게 AMP HTML 내 콘텐츠를 가져옵니까?
     answer: |

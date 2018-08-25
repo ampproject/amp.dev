@@ -23,15 +23,13 @@ sandbox="allow-scripts allow-forms allow-same-origin"
 resizable
 src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
 <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+<div placeholder></div>
 </amp-iframe>
 </div>
 
 Secara default, placeholder langsung ditampilkan untuk elemen AMP, meski referensi elemen AMP belum didownload atau diinisialisasi. Setelah siap, elemen AMP biasanya menyembunyikan placeholder-nya dan menampilkan kontennya.
 
-{% call callout('Catatan', type='note') %}
-Placeholder tidak harus berupa elemen AMP. Elemen HTML apa pun dapat bertindak sebagai placeholder.
-{% endcall %}
+Catatan: Placeholder tidak harus berupa elemen AMP. Elemen HTML apa pun dapat bertindak sebagai placeholder.
 
 ## Fallback
 
@@ -45,7 +43,7 @@ sandbox="allow-scripts allow-forms allow-same-origin"
 resizable
 src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
 <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+<div placeholder></div>
 </amp-iframe>
 </div>
 

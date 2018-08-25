@@ -122,7 +122,7 @@ gulp.task('amphtml:validate', () => {
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
-gulp.task('default', ['amphtml:validate'], function () { 
+gulp.task('default', ['amphtml:validate'], function () {
 });
 ```
 
@@ -233,6 +233,6 @@ Setiap fitur memberikan beberapa informasi:
   1.  Baris teks mendeskripsikan kesalahannya. Pada kasus ini, teks menunjukkan bahwa kami menggunakan tag `<img>`, padahal tag yang digunakan seharusnya `<amp-img>`.
   1.  Link ke dokumen yang relevan tentang error. Pada kasus ini, dokumentasi tersebut untuk tag `<amp-img>`. Tidak semua error menghasilkan link dokumentasi.
 
-Saat membaca ulang [spesifikasi](/id/docs/reference/spec.html), kami menyadari bahwa kami menggunakan tag `<img>`, padahal tag yang digunakan seharusnya `<amp-img>`.
+Saat membaca ulang [spesifikasi](/id/docs/fundamentals/spec.html), kami menyadari bahwa kami menggunakan tag `<img>`, padahal tag yang digunakan seharusnya `<amp-img>`.
 
 Untuk lebih memahami daftar lengkap error yang mungkin terjadi, lihat [panduan Error Validasi AMP](https://www.ampproject.org/docs/reference/validation_errors.html). Jika masih mengalami masalah setelah mengevaluasi dengan saksama, [ajukan pertanyaan](http://stackoverflow.com/questions/tagged/amp-html) dan kami akan mencoba membantu.

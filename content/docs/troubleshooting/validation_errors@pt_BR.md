@@ -39,7 +39,7 @@ As seguintes tags precisam estar presentes em todos os documentos de AMP:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Essas tags obrigatórias incluem um campo `mandatory: true` nas [especificações do validador das AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Elas também são referidas nas [especificações das AMP](/docs/reference/spec.html).
+Essas tags obrigatórias incluem um campo `mandatory: true` nas [especificações do validador das AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Elas também são referidas nas [especificações das AMP](/docs/fundamentals/spec.html).
 
 ### A tag exigida por outra tag está ausente
 
@@ -80,7 +80,7 @@ Para corrigir esses erros, acesse a página de referência do componente estendi
   </tr>
 </table>
 
-As tags são colocadas na lista de permissões, por isso não há uma lista definitiva de todas as tags não permitidas. No entanto, as [especificações das AMP](/docs/reference/spec.html) definem amplamente o conjunto de tags não permitidas.
+As tags são colocadas na lista de permissões, por isso não há uma lista definitiva de todas as tags não permitidas. No entanto, as [especificações das AMP](/docs/fundamentals/spec.html) definem amplamente o conjunto de tags não permitidas.
 
 ### Atributo obrigatório ausente
 
@@ -624,7 +624,7 @@ Se você não tem certeza do que está gerando o erro, tente executar o CSS por 
 </table>
 
 Este erro se refere às regras "@" dentro do CSS, para os quais a AMP só permite algumas regras
-(veja também as [especificações das AMP](/docs/reference/spec.html)).
+(veja também as [especificações das AMP](/docs/fundamentals/spec.html)).
 Por exemplo, `@import` não é permitido.
 O erro de validação especificamente diz que a regra é inválida, facilitando a correção dela.
 

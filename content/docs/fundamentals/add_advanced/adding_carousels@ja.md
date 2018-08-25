@@ -50,9 +50,7 @@ $title: カルーセルを追加する
 
 ページを**更新**して回転してみましょう。
 
-{% call callout('注', type='note') %}
-`amp-carousel` のタイプが `carousel` のときに使用したレイアウト タイプが `fixed-height` だったことに気づいたかもしれません。`carousel` タイプでサポートされるレイアウト タイプは限られています。たとえば、`carousel` タイプでは `responsive` レイアウトをサポートしていません。名前が示すように、fixed-height 要素は使用できるスペースを占有しますが、高さは変わりません。fixed-height 要素の場合、`height` 属性の定義は必須ですが、`width` 属性は `auto` に設定することも、未設定のままにすることもできます。
-{% endcall %}
+注: `amp-carousel` のタイプが `carousel` のときに使用したレイアウト タイプが `fixed-height` だったことに気づいたかもしれません。`carousel` タイプでサポートされるレイアウト タイプは限られています。たとえば、`carousel` タイプでは `responsive` レイアウトをサポートしていません。名前が示すように、fixed-height 要素は使用できるスペースを占有しますが、高さは変わりません。fixed-height 要素の場合、`height` 属性の定義は必須ですが、`width` 属性は `auto` に設定することも、未設定のままにすることもできます。
 
 ## カルーセル コンテンツの組み合わせ
 
@@ -90,9 +88,7 @@ amp-fit-text {
 
 詳しくは、[amp-carousel](/ja/docs/reference/components/amp-carousel.html) コンポーネントのリファレンス ドキュメントをご覧ください。
 
-{% call callout('注', type='note') %}
-最後の例では、`amp-ad` コンポーネントに `placeholder` 属性を持つ子要素 `div` が含まれていたことに気づいたかもしれません。このチュートリアルの前半では、`fallback` 属性を持つ `amp-ad` の同様のシナリオがありました。プレースホルダとフォールバックの違いは何でしょうか。`fallback` 要素は、親要素が読み込まれなかった場合、つまり利用可能な広告がない場合に表示されます。一方 `placeholder` 要素は、読み込み中に親要素の代わりに表示されます。いわば、これらは親要素の読み込みプロセスの前後に表示される要素です。詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
-{% endcall %}
+注: 最後の例では、`amp-ad` コンポーネントに `placeholder` 属性を持つ子要素 `div` が含まれていたことに気づいたかもしれません。このチュートリアルの前半では、`fallback` 属性を持つ `amp-ad` の同様のシナリオがありました。プレースホルダとフォールバックの違いは何でしょうか。`fallback` 要素は、親要素が読み込まれなかった場合、つまり利用可能な広告がない場合に表示されます。一方 `placeholder` 要素は、読み込み中に親要素の代わりに表示されます。いわば、これらは親要素の読み込みプロセスの前後に表示される要素です。詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">前へ</span></a>

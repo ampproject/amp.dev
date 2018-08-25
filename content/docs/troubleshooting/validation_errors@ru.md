@@ -39,7 +39,7 @@ $title: Ошибки на AMP-страницах
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Обязательные теги включают в себя поле `mandatory: true` в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Также они приведены в [документации по AMP](/docs/reference/spec.html).
+Обязательные теги включают в себя поле `mandatory: true` в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Также они приведены в [документации по AMP](/docs/fundamentals/spec.html).
 
 ### Отсутствует тег, который требуется для работы другого тега
 
@@ -80,7 +80,7 @@ $title: Ошибки на AMP-страницах
   </tr>
 </table>
 
-Теги вносятся в белый список, так что единого списка всех недопустимых тегов не существует. Однако в [документации по AMP](/docs/reference/spec.html) в целом описано, какие теги могут быть недопустимыми.
+Теги вносятся в белый список, так что единого списка всех недопустимых тегов не существует. Однако в [документации по AMP](/docs/fundamentals/spec.html) в целом описано, какие теги могут быть недопустимыми.
 
 ### Отсутствует обязательный атрибут
 
@@ -624,7 +624,7 @@ CDATA – это контент между открывающим и закры
 </table>
 
 Эта ошибка относится к директивам CSS. Для них существует совсем немного правил, относящихся к AMP-страницам
-(см. также [требования к AMP](/docs/reference/spec.html)).
+(см. также [требования к AMP](/docs/fundamentals/spec.html)).
 Например, директива `@import` не поддерживается.
 Ошибка валидации указывает на недействительное правило.
 

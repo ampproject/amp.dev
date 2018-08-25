@@ -61,7 +61,7 @@ The following tags must be present in all AMP docs:
 * <a name="body"></a>`<body>`
 
 These mandatory tags include a `mandatory: true` field in the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP validator spec</a>;
-they are also referenced in the [AMP specification](/docs/reference/spec.html).
+they are also referenced in the [AMP specification](/docs/fundamentals/spec.html).
 
 ### Tag required by another tag is missing
 
@@ -108,7 +108,7 @@ copy its required script, and paste it into the AMP document `<head>`.
 </table>
 
 Tags are whitelisted, so there is no definitive list of all disallowed tags;
-however, the [AMP specification](/docs/reference/spec.html)
+however, the [AMP specification](/docs/fundamentals/spec.html)
 broadly defines the set of disallowed tags.
 
 ### Custom JavaScript is not allowed
@@ -728,7 +728,7 @@ through an online CSS validator, for example,
 
 This error refers to the @-rules within CSS,
 for which AMP only allows a handful of rules.
-(see also the [AMP specification](/docs/reference/spec.html)).
+(see also the [AMP specification](/docs/fundamentals/spec.html)).
 For example, <code>@import</code> isn't allowed.
 The validation error specifically
 tells you the rule that's invalid,

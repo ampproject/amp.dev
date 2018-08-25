@@ -10,9 +10,7 @@ $title: イメージを含める
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-{% call callout('参照', type='read') %}
-`<img>` タグの代わりに `<amp-img>` タグを使っている理由や、使用できるタグの種類については、[画像や動画を含める](/ja/docs/media/amp_replacements.html)をご覧ください。
-{% endcall %}
+参照: `<img>` タグの代わりに `<amp-img>` タグを使っている理由や、使用できるタグの種類については、[画像や動画を含める](/ja/docs/media/amp_replacements.html)をご覧ください。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/ja/docs/getting_started/create/basic_markup.html"><span class="arrow-prev">前へ</span></a>

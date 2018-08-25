@@ -18,7 +18,7 @@ Mari kita manfaatkan kemampuan pengambilan data jarak jauh untuk mencari harga S
 
 |  Permintaan                              |  Respons |
 |---------------------------------------|-----------|
-| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |  
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Serupa dengan data JSON dalam elemen `<amp-state>`, data jarak jauh yang ditampilkan dari pengambilan ini digabungkan dan tersedia di atribut `id` elemen. Misalnya, data yang ditampilkan dari contoh respons di atas dapat diakses di ekspresi:
 
@@ -104,15 +104,15 @@ Selain itu, kita perlu mengupdate status default elemen yang relevan:
       </td>
       <!-- Tambahkan kelas 'unavailable' ke 3 elemen <td> berikutnya
            agar konsisten dengan ukuran SKU default yang tersedia. -->
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
         <div option="M">M</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
         <div option="L">L</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
         <div option="XL">XL</div>
       </td>
@@ -121,9 +121,7 @@ Selain itu, kita perlu mengupdate status default elemen yang relevan:
 </amp-selector>
 ```
 
-{% call callout('Catatan', type='note') %}
-`<amp-bind>` tidak berjalan saat pemuatan halaman, melainkan hanya sebagai tanggapan terhadap tindakan pengguna yang eksplisit. Hal ini memastikan pemuatan halaman awal tetap cepat pada semua halaman, terlepas dari penggunaan `<amp-bind>`.
-{% endcall %}
+Catatan: `<amp-bind>` tidak berjalan saat pemuatan halaman, melainkan hanya sebagai tanggapan terhadap tindakan pengguna yang eksplisit. Hal ini memastikan pemuatan halaman awal tetap cepat pada semua halaman, terlepas dari penggunaan `<amp-bind>`.
 
 ## Harga kemeja variabel
 
@@ -134,15 +132,13 @@ Toko AMPPAREL kita tidak biasa karena harga kemeja berbeda berdasarkan warna mau
 ```html
 <!-- Jika elemen dipilih, setel variabel `selectedSize` ke
      nilai atribut "option" elemen yang dipilih.  -->
-<amp-selector name="size" 
+<amp-selector name="size"
     on="select:AMP.setState({selectedSize: event.targetOption})">
 ```
 
 Perhatikan bahwa kita tidak menginisialisasi nilai `selectedSize` melalui elemen `amp-state#selected`. Hal ini karena kita sengaja tidak memberikan ukuran default yang dipilih, dan ingin mendorong pengguna untuk memilih ukuran.
 
-{% call callout('Tips', type='success') %}
-Selain untuk mengubah variabel yang ada, `AMP.setState()` juga dapat digunakan untuk menentukan variabel baru. Ekspresi akan mengevaluasi variabel yang tidak ditentukan menjadi `null`.
-{% endcall %}
+Tips: Selain untuk mengubah variabel yang ada, `AMP.setState()` juga dapat digunakan untuk menentukan variabel baru. Ekspresi akan mengevaluasi variabel yang tidak ditentukan menjadi `null`.
 
 Tambahkan elemen `<span>` baru yang mencakup label harga dan ubah teks defaultnya menjadi "---" karena tidak ada pilihan ukuran default.
 
@@ -170,7 +166,7 @@ Kita hampir selesai. Mari nonaktifkan tombol "Tambahkan ke keranjang" jika ukura
     [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
 ```
 
-**Cobalah**:  Jika memilih ukuran yang tidak tersedia, Anda tidak dapat menambahkannya ke keranjang. 
+**Cobalah**:  Jika memilih ukuran yang tidak tersedia, Anda tidak dapat menambahkannya ke keranjang.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/id/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">Sebelumnya</span></a>

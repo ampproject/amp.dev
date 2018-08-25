@@ -9,7 +9,7 @@ Pelajari cara menampilkan penyertaan konten media di halaman, dan cara menggunak
 
 Menampilkan iframe di halaman menggunakan elemen [`amp-iframe`](/id/docs/reference/components/amp-iframe.html).
 
-Iframe sangat bermanfaat di AMP untuk menampilkan konten yang tidak didukung di konteks halaman menu, 
+Iframe sangat bermanfaat di AMP untuk menampilkan konten yang tidak didukung di konteks halaman menu,
 seperti konten yang memerlukan JavaScript yang ditulis oleh pengguna.
 
 ### `amp-iframe` persyaratan
@@ -17,9 +17,7 @@ seperti konten yang memerlukan JavaScript yang ditulis oleh pengguna.
 * Harus setidaknya **600 piksel** atau **75%** viewport pertama yang jauh dari bagian atas.
 * Hanya dapat meminta referensi melalui HTTPS, dan tidak boleh memiliki asal yang sama dengan penampung, kecuali permintaan tidak menentukan izinkan-asal-yang-sama.
 
-{% call callout('Baca Lebih Lanjut', type='read') %}
- Pelajari lebih lanjut di [spesifikasi penuh untuk <code>amp-iframe</code>](/id/docs/reference/components/amp-iframe.html). 
-{% endcall %}
+Baca Lebih Lanjut: Pelajari lebih lanjut di [spesifikasi penuh untuk <code>amp-iframe</code>](/id/docs/reference/components/amp-iframe.html).
 
 ### Menyertakan Skrip
 
@@ -55,10 +53,7 @@ Preview:
 
 Anda dapat menampilkan `amp-iframe` di bagian atas dokumen, `amp-iframe` yang diberikan berisi elemen dengan atribut `placeholder`, (misalnya, elemen `amp-img`) yang akan dirender sebagai placeholder sampai iframe siap ditampilkan.
 
-{% call callout('Baca Lebih Lanjut', type='read') %}
-Pelajari lebih lanjut tentang placeholder di [Iframe dengan placeholder](/id/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
-{% endcall %}
-
+Baca Lebih Lanjut: Pelajari lebih lanjut tentang placeholder di [Iframe dengan placeholder](/id/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
 
 Contoh dengan placeholder:
 

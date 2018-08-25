@@ -38,7 +38,7 @@ $title: AMP 验证错误
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-在 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中，这些必需的标记包含 `mandatory: true` 字段；[AMP 规范](/docs/reference/spec.html)中也提到了这些标记。
+在 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中，这些必需的标记包含 `mandatory: true` 字段；[AMP 规范](/docs/fundamentals/spec.html)中也提到了这些标记。
 
 ### 缺少其他标记必需的标记
 
@@ -78,7 +78,7 @@ $title: AMP 验证错误
   </tr>
 </table>
 
-标记已列入白名单，因此不存在包含所有禁止使用的标记的明确列表；不过，[AMP 规范](/docs/reference/spec.html)粗略地定义了一组禁止使用的标记。
+标记已列入白名单，因此不存在包含所有禁止使用的标记的明确列表；不过，[AMP 规范](/docs/fundamentals/spec.html)粗略地定义了一组禁止使用的标记。
 
 ### 缺少必需的属性
 
@@ -601,7 +601,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，目前同时通过�
   </tr>
 </table>
 
-此错误指的是 CSS 中的 @-rules。对于 CSS 中的 @-rules，AMP 仅允许少量规则（另请参阅 [AMP 规范](/docs/reference/spec.html)）。例如，`@import` 是不被允许的。验证错误消息会明确告诉您该规则是无效的，以便您更轻松地更正该规则。
+此错误指的是 CSS 中的 @-rules。对于 CSS 中的 @-rules，AMP 仅允许少量规则（另请参阅 [AMP 规范](/docs/fundamentals/spec.html)）。例如，`@import` 是不被允许的。验证错误消息会明确告诉您该规则是无效的，以便您更轻松地更正该规则。
 
 ### AMP 标记不支持隐式布局
 

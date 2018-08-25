@@ -35,9 +35,7 @@ Para probar nuestra página de ejemplo necesitamos acceder a los archivos desde 
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('Nota', type='note') %}
-Se recomienda encarecidamente que utilice HTTPS en entornos de producción. HTTPS tiene varios beneficios más allá de la seguridad, incluyendo SEO. Puedes leer más sobre este tema en esta entrada de [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
-{% endcall %}
+Nota: Se recomienda encarecidamente que utilice HTTPS en entornos de producción. HTTPS tiene varios beneficios más allá de la seguridad, incluyendo SEO. Puedes leer más sobre este tema en esta entrada de [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
 
 Después de configurar su servidor web local, acceda al artículo de ejemplo en su navegador en esta dirección URL:
 

@@ -69,7 +69,6 @@ function getDependencies(content) {
     // find all used amp tags in the page
     .match(/<amp-((?!img[\/\s>])[^>\s]+)[^>]*>/g);
 
-  console.log("Dependencies: " + dependencies);
   if (dependencies) {
     return Array.from(new Set(dependencies.map(item => item.match(/<amp-((?!img[\/\s>])[^>\s]+)[^>]*>/)[1])));
   }
@@ -144,7 +143,7 @@ importData.forEach((item) => {
       group: (item.group ? item.group : '')
     }, function (err) {
       if (err) throw err;
-      console.log('Successfully imported: ' + item.title);
+      //console.log('Successfully imported: ' + item.title);
     });
   }, 1);
 
@@ -180,7 +179,7 @@ ghrepo.contents('builtins', 'master', function(err, data) {
         title: component.name.replace('.md', '') + ' (Built-in)'
       }, function (err) {
         if (err) throw err;
-        console.log('Successfully imported: ' + component.name + ' (Built-in)');
+        //console.log('Successfully imported: ' + component.name + ' (Built-in)');
       });
     }, 1);
 
@@ -239,7 +238,7 @@ ghrepo.contents('extensions', "master", function(err, data) {
           title: title || subComponent.name.replace('.md', '')
         }, function (err) {
           if (err) throw err;
-          console.log('Successfully imported: ' + subComponent.name + ' (Extended)');
+          //console.log('Successfully imported: ' + subComponent.name + ' (Extended)');
         });
       }, 1);
 

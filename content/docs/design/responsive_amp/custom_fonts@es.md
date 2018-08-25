@@ -43,7 +43,4 @@ Alternativamente, puedes utilizar [`@font-face`](https://developer.mozilla.org/e
 </style>
 [/sourcecode]
 
-{% call callout('Nota', type='note') %}
-Las fuentes incluídas con `@font-face` debe ser buscado
-a través de ambos esquemas, ya sea HTTP o HTTPS.
-{% endcall %}
+Nota: Las fuentes incluídas con `@font-face` debe ser buscado a través de ambos esquemas, ya sea HTTP o HTTPS.

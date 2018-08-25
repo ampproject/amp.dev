@@ -54,7 +54,7 @@ una extensión del navegador. Durante la navegación, se validarán automáticam
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_invalid.png" width="20" height="20" alt="El icono rojo de AMP indica que el documento AMP no es válido."></amp-img>
-      
+
     </td>
     <td>Si una página de AMP contiene errores, el icono de la extensión
       se mostrará de color rojo y se indicará el número de errores detectados.
@@ -63,7 +63,7 @@ una extensión del navegador. Durante la navegación, se validarán automáticam
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_valid.png" width="20" height="20" alt="El icono verde de AMP indica que el documento AMP es válido."></amp-img>
-      
+
     </td>
     <td>Si una página de AMP no contiene errores, el icono se mostrará de
       color verde y se indicará el número de advertencias, si es que hay alguna.
@@ -72,7 +72,7 @@ una extensión del navegador. Durante la navegación, se validarán automáticam
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_link.png" width="20" height="20" alt="El icono azul de AMP indica la variante HTML de AMP si se hace clic."></amp-img>
-      
+
     </td>
     <td>Si la página no es de AMP pero en ella se indica que hay una versión de AMP
       disponible, el icono se mostrará de color azul con un icono de enlace. Al hacer clic en
@@ -89,7 +89,7 @@ Extensión del validador de AMP para
 Como parte de la construcción y pruebas de pipelines, puede integrar la validación de AMP a través de los paquetes NPM de Validación de AMP: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) o [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (un plugin gulp).  Por ejemplo, puede utilizar el paquete AMP Validator NPM para pruebas de integración o en una tarea de programación para verificar las páginas de AMP de producción.
 
 
-##### Ejemplo: Validando un archivo AMP HTML 
+##### Ejemplo: Validando un archivo AMP HTML
 
 En este ejemplo, validaremos un archivo AMP HTML usando el [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) NPM package.  El estado de validación se transmite a la consola.
 
@@ -142,7 +142,7 @@ Puede validar archivos HTML de AMP utilizando [AMP HTML validator con la linea d
 
 Empezando:
 
-1.  Asegúrese de tener [Node.js con su gestor de paquetes 
+1.  Asegúrese de tener [Node.js con su gestor de paquetes
 'npm'](https://docs.npmjs.com/getting-started/installing-node) en tu sistema.
 2.  Instale el  [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator) ejecutando la siguiente linea de comandos: `npm install -g amphtml-validator`.
 
@@ -237,7 +237,7 @@ Cada herramienta ofrece varios fragmentos de información:
      documentación para la etiqueta `<amp-img>`. No todos los errores generan
      enlaces de documentación.</li>
 
-Al leer la [especificación](/es/docs/reference/spec.html) atentamente, nos damos cuenta de que estamos utilizando una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
+Al leer la [especificación](/es/docs/fundamentals/spec.html) atentamente, nos damos cuenta de que estamos utilizando una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
 
 Para entender mejor la lista completa de los posibles errores,
 consulta la [Guía de errores de validación de AMP](/es/docs/reference/validation_errors.html).

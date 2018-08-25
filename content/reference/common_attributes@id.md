@@ -30,9 +30,7 @@ Semua elemen AMP yang mendukung tata letak `responsive`, juga mendukung atribut 
 1. Nilainya berlaku pada tinggi, bukan lebar elemen.
 2. Nilai persen diizinkan. Nilai persen menunjukkan persentase lebar elemen tersebut. Misalnya, nilai `80%` menunjukkan bahwa tinggi elemen akan menjadi 80% dari lebar elemen.
 
-{% call callout('Catatan', type='note') %}
-Jika atribut `heights` ditentukan bersamaan dengan `width` dan `height`, setelan default `layout` diubah menjadi `responsive`.
-{% endcall %}
+Catatan: Jika atribut `heights` ditentukan bersamaan dengan `width` dan `height`, setelan default `layout` diubah menjadi `responsive`.
 
 Contoh:
 

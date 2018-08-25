@@ -38,9 +38,7 @@ cd accelerated-mobile-pages-advanced
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('注意', type='note') %}
-我们强烈建议您在生产环境中使用 HTTPS。除了能够提供可靠的安全性，HTTPS 还具有包括 SEO 在内的诸多优势。若想详细了解此主题，请阅读这篇 [Google 网站站长博文](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)。
-{% endcall %}
+注意: 我们强烈建议您在生产环境中使用 HTTPS。除了能够提供可靠的安全性，HTTPS 还具有包括 SEO 在内的诸多优势。若想详细了解此主题，请阅读这篇 [Google 网站站长博文](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)。
 
 待您设置完本地网络服务器之后，请在浏览器中通过[此网址](http://localhost:8000/article.amp.html)访问示例文章：
 

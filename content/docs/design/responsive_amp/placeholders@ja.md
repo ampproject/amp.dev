@@ -23,15 +23,13 @@ sandbox="allow-scripts allow-forms allow-same-origin"
 resizable
 src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
 <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+<div placeholder></div>
 </amp-iframe>
 </div>
 
 デフォルトでは、AMP 要素のリソースのダウンロードや初期化がまだ行われていない場合でも、プレースホルダが AMP 要素にすぐに表示されます。準備ができると、AMP 要素は通常はプレースホルダを非表示にして、コンテンツを表示します。
 
-{% call callout('注', type='note') %}
-プレースホルダは AMP 要素でなくてもかまいません。HTML 要素もプレースホルダとして使用できます。
-{% endcall %}
+注: プレースホルダは AMP 要素でなくてもかまいません。HTML 要素もプレースホルダとして使用できます。
 
 ## フォールバック
 
@@ -55,7 +53,7 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
