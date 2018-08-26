@@ -1,0 +1,64 @@
+{% extends 'partials/base.html.twig' %}
+
+{% if admin.route %}
+    {% set user = admin.data('users/' ~ admin.route) %}
+    {% set title = "PLUGIN_ADMIN.USER"|tu ~ ": " ~ admin.route|e %}
+{% else %}
+    {% set title = "PLUGIN_ADMIN_PRO.USERS"|tu %}
+{% endif %}
+
+{% block titlebar %}
+    {% if not admin.route %}
+        {% if authorize(['admin.users', 'admin.super']) %}
+            <div class="button-bar">
+                <a class="button" href="#modal" data-remodal-target="modal"><i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD_ACCOUNT"|tu }}</a>
+            </div>
+            <h1><i class="fa fa-fw fa-users"></i> {{ "PLUGIN_ADMIN.USERS"|tu }}</h1>
+        {% else %}
+            <h1>{{ "PLUGIN_ADMIN.ACCESS_DENIED"|tu }}</h1>
+        {% endif %}
+    {% else %}
+        {% if authorize(['admin.users', 'admin.super']) or grav.user.username == user.username %}
+            <div class="button-bar">
+                {% if config.plugins["admin-pro"].enabled %}
+                <a class="button" href="{{ base_url }}/users"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+                {% endif %}
+                <button class="button" type="submit" name="task" value="save" form="blueprints"><i class="fa fa-check"></i> {{ "PLUGIN_ADMIN.SAVE"|tu }}</button>
+            </div>
+            <h1><i class="fa fa-fw fa-user"></i> {{ "PLUGIN_ADMIN.USER"|tu }}: {{ user.username|e }}</h1>
+        {% else %}
+            <h1>{{ "PLUGIN_ADMIN.ACCESS_DENIED"|tu }}</h1>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if authorize(['admin.users', 'admin.super']) or grav.user.username == user.username %}
+    <div>
+        {% if not admin.route %}
+            {% include 'partials/users-list.html.twig' %}
+
+            <div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
+                {% include 'partials/blueprints-new.html.twig' with { blueprints: admin.blueprints('user/account_new') } %}
+            </div>
+        {% else %}
+            {% include 'partials/blueprints.html.twig' with { data: user, blueprints: user.blueprints } %}
+        {% endif %}
+    </div>
+
+    <div class="remodal" data-remodal-id="changes">
+        <form>
+            <h1>{{ "PLUGIN_ADMIN.MODAL_CHANGED_DETECTED_TITLE"|tu }}</h1>
+            <p class="bigger">
+                {{ "PLUGIN_ADMIN.MODAL_CHANGED_DETECTED_DESC"|tu }}
+            </p>
+            <br>
+            <div class="button-bar">
+                <a class="button secondary" data-leave-action="cancel" href="#"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</a>
+                <a class="button" data-leave-action="continue" href="#"><i class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONTINUE"|tu }}</a>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}
+

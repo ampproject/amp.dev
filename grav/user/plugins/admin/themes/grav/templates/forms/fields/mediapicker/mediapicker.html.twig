@@ -1,0 +1,20 @@
+{% extends "forms/fields/text/text.html.twig" %}
+
+{% set originalValue = value %}
+{% set value = (value is null ? field.default : value) %}
+
+{% set unique_identifier = random_string() %}
+
+{% block global_attributes %}
+{{ parent() }}
+data-mediapicker-modal-trigger
+data-grav-mediapicker-unique-identifier="{{ unique_identifier }}"
+{% endblock %}
+
+
+{% block contents %}
+{{ parent() }}
+<div class="remodal remodal-mediapicker" data-remodal-mediapicker data-remodal-unique-identifier="{{ unique_identifier }}" data-remodal-options="hashTracking: false">
+    {% include 'partials/media-list-wrapper.html.twig' with { is_modal: true } %}
+</div>
+{% endblock %}

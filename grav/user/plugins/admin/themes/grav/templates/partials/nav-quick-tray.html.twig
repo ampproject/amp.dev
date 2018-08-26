@@ -1,0 +1,40 @@
+{% set clear_cache_url = base_url_relative ~ '/cache.json/task' ~ config.system.param_sep ~ 'clearCache'|e('html_attr') %}
+<ul id="admin-nav-quick-tray">
+    {% if authorize(['admin.maintenance', 'admin.super', 'admin.cache']) %}
+    <li class="hint--bottom" data-hint="{{ "PLUGIN_ADMIN.CLEAR_CACHE"|tu }}">
+        <a data-clear-cache-type="" data-clear-cache="{{ uri.addNonce(clear_cache_url, 'admin-form', 'admin-nonce') }}">
+            <i class="fa fa-trash"></i>
+        </a>
+    </li>
+    {% endif %}
+    {% if grav.twig.plugins_quick_tray %}
+    {% for label, item in grav.twig.plugins_quick_tray %}
+        {% if authorize((item.authorize is defined and item.authorize is iterable) ? item.authorize : [item.authorize ?: ('admin.' ~ (item.location ?: item.route)), 'admin.super']) %}
+            {% set data_tags = '' %}
+            {% if (item.data) %}
+                {% for key, value in item.data %}
+                    {% set data_tags = data_tags ~ ' data-' ~ key ~ '="' ~ value ~ '"' %}
+                {% endfor %}
+            {% endif %}
+            <li class="{{ item.class }} hint--bottom" data-hint="{{ item.hint }}" {{ data_tags|raw }}>
+            {% if item.route %}
+                <a href="{{ url(item.route) }}">
+                    <i class="fa fa-fw {{ item.icon }}"></i>
+                </a>
+            {% else %}
+                <i class="fa fa-fw {{ item.icon }}"></i>
+            {% endif %}
+            </li>
+        {% endif %}
+    {% endfor %}
+    {% else %}
+        {% if authorize(['admin.maintenance', 'admin.super']) %}
+        <li class="hint--bottom" data-hint="Add the 'quick-tray-links' plugin for more...">
+            <a href="{{ base_url_relative ~ '/plugins/install' }}">
+                <i class="fa fa-plus"></i>
+            </a>
+        </li>
+        {% endif %}
+    {% endif %}
+</ul>
+

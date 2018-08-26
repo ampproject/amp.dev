@@ -1,0 +1,96 @@
+$tab-label-height: 50px;
+
+// New JS powered tabs
+.form-tabs {
+
+    .admin-pages &:first-child {
+        margin-top: -1rem;
+    }
+    .admin-pages & {
+        .tabs-nav {
+            margin-right: 180px;
+
+            @include breakpoint(mobile-only) {
+                margin-right: 0 !important;
+            }
+        }
+    }
+
+    .tabs-nav {
+        @include display(flex);
+        padding-top: 1px;
+
+        a {
+            @include flex(1);
+            transition: color 0.5s ease, background 0.5s ease;
+            cursor: pointer;
+            min-height: $tab-label-height;
+            text-align:center;
+
+            padding: 4px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        span {
+            display: inline-block;
+            line-height: 1.1;
+        }
+
+
+    }
+
+    &.subtle .tabs-nav {
+        margin-right: 0 !important;
+    }
+
+    .tabs-content {
+
+        .tab__content {
+            display: none;
+            padding-top: 2rem;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+
+// Old tabs here for posterity!
+//.tab-bar {
+//    @include clearfix;
+//    margin: 0;
+//    padding: 0;
+//    list-style: none;
+//
+//    li {
+//
+//        display: block;
+//        float: left;
+//        height: $tab-label-height;
+//
+//        @include breakpoint(mobile-only) {
+//            width: 100%;
+//            span, a {
+//                width: 100%;
+//                text-align: center;
+//            }
+//        }
+//    }
+//
+//    span, a {
+//        @extend .default-animation;
+//        display: inline-block;
+//        padding: 0 4rem;
+//        line-height: $tab-label-height;
+//    }
+//}
+
+
+
+

@@ -1,0 +1,11 @@
+{% set legend = {'VISIBLE':'', 'NON_ROUTABLE':'not-routable', 'NON_VISIBLE':'not-visible', 'MODULAR':'modular'} %}
+<div id="pages-legend">
+    <strong>{{ 'PLUGIN_ADMIN.LEGEND'|tu }}:</strong>
+    <ul>
+        {% for key, class in legend %}
+        <li><i class="page-icon fa fa-fw fa-circle-o {{ class }}"></i> {{ ('PLUGIN_ADMIN.'~key)|tu }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+

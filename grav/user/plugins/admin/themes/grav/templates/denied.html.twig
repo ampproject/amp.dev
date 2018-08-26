@@ -1,0 +1,18 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block messages %}{% endblock %}
+
+{% block content %}
+    <div class="admin-block">
+        <h1>
+            {{ "PLUGIN_ADMIN.ACCESS_DENIED"|tu }}
+        </h1>
+
+        {% include 'partials/messages.html.twig' %}
+
+        <p>{{ admin.user.fullname }}, {{ "PLUGIN_ADMIN.ACCOUNT_NOT_ADMIN"|tu }}. <a href="{{ uri.addNonce(base_url_relative ~ '/task' ~ config.system.param_sep ~ 'logout', 'logout-form', 'logout-nonce') }}">{{ "PLUGIN_ADMIN.LOGOUT"|tu }}</a></p>
+    </div>
+{% endblock %}
+
+{% block navigation %}
+{% endblock %}

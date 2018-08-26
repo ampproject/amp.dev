@@ -1,0 +1,24 @@
+{% if uri.param('token') and uri.param('task') %}
+<section id="grav-login">
+    {{ content|raw }}
+
+    <form method="post" action="{{ (base_url_relative ~ uri.path)|e }}" classes="{{ form_outer_classes }}">
+        {% for field in form.fields %}
+            {% set value = attribute(grav.twig.twig_vars, field.name) is defined ? attribute(grav.twig.twig_vars, field.name) : null %}
+
+            {% if field.type %}
+                <div>
+                    {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="form-actions secondary-accent">
+            <button type="submit" class="button primary" name="task" value="login.reset"><i class="fa fa-key"></i> {{ "PLUGIN_LOGIN.BTN_RESET"|t }}</button>
+        </div>
+
+        {{ nonce_field('reset-form', 'reset-form-nonce')|raw }}
+    </form>
+</section>
+{% endif %}
+
+

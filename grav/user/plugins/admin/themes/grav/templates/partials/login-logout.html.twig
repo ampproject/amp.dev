@@ -1,0 +1,15 @@
+{% embed 'partials/login.html.twig' with {title:'Grav Admin Logout'} %}
+
+{% block integration %}
+{% endblock %}
+
+{% block form %}
+
+    <div class="form-actions primary-accent">
+        <a class="button secondary" onclick="window.history.back()"><i class="fa fa-reply"></i> {{ 'PLUGIN_ADMIN.BACK'|tu }}</a>
+        <button type="submit" class="button primary" name="task" value="logout"><i class="fa fa-sign-in"></i> {{ 'PLUGIN_ADMIN.LOGOUT'|tu }}</button>
+    </div>
+
+{% endblock %}
+
+{% endembed %}

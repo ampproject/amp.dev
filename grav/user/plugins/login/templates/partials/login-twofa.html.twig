@@ -1,0 +1,20 @@
+{% set form = forms('login-twofa') %}
+
+<form method="post" action="{{ (base_url_relative ~ uri.path)|e }}" class="{{ form_outer_classes }}">
+    {% for field in form.fields %}
+        {% if field.type %}
+            <div>
+                {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    {{ nonce_field('login-form', 'login-form-nonce')|raw }}
+
+    <div class="{{ form_button_outer_classes ?: 'form-actions secondary-accent' }}">
+        <div class="form-actions primary-accent">
+            <button type="submit" class="button" name="task" value="login.logout">{{ 'PLUGIN_LOGIN.BTN_CANCEL'|t }}</button>
+            <button type="submit" class="button primary" name="task" value="login.twofa">{{ 'PLUGIN_LOGIN.BTN_LOGIN'|t }}</button>
+        </div>
+    </div>
+</form>

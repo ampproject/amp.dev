@@ -1,0 +1,39 @@
+{
+    "name": "grav-plugin-login",
+    "description": "Enables user authentication and login screen.",
+    "keywords": ["login", "authentication", "admin", "security"],
+    "homepage": "https://github.com/getgrav/grav-plugin-login",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Team Grav",
+            "email": "devs@getgrav.org",
+            "homepage": "http://getgrav.org",
+            "role": "Developer"
+        },
+        {
+            "name": "Sommerregen",
+            "email": "sommerregen@benjamin-regler.de",
+            "homepage": "http://benjamin-regler.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@example.org",
+        "issues": "https://github.com/getgrav/grav-plugin-login/issues",
+        "irc": "https://gitter.im/getgrav/grav",
+        "forum": "http://getgrav.org/forum",
+        "docs": "https://github.com/getgrav/grav-plugin-login/blob/master/README.md"
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "birke/rememberme": "1.*",
+        "robthree/twofactorauth": "^1.6",
+        "bacon/bacon-qr-code": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Grav\\Plugin\\Login\\": "classes/"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<div id="offline-status">
+    <span><i class="fa fa-fw fa-plane"></i> You are offline</span>
+</div>
+<div id="admin-user-details">
+    <a href="{{ base_url_relative }}/user/{{ admin.user.username|e }}">
+        {% include 'partials/nav-user-avatar.html.twig' %}
+
+        <div class="admin-user-names">
+            <h4>{{ admin.user.fullname|e }} {% if admin.user.twofa_enabled %}<span class="badge">2FA</span>{% endif %}</h4>
+            <h5>{{ admin.user.title|e }}</h5>
+        </div>
+    </a>
+</div>

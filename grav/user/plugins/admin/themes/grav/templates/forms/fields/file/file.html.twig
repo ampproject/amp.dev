@@ -1,0 +1,89 @@
+{% extends "forms/field.html.twig" %}
+{% set defaults = config.plugins.form %}
+{% set files = defaults.files|merge(field|default([])) %}
+{% set limit = not field.multiple ? 1 : files.limit %}
+
+
+
+{% macro bytesToSize(bytes) -%}
+    {% spaceless %}
+        {% set kilobyte = 1024 %}
+        {% set megabyte = kilobyte * 1024 %}
+        {% set gigabyte = megabyte * 1024 %}
+        {% set terabyte = gigabyte * 1024 %}
+
+        {% if bytes < kilobyte %}
+            {{ bytes ~ ' B' }}
+        {% elseif bytes < megabyte %}
+            {{ (bytes / kilobyte)|number_format(2, '.') ~ ' KB' }}
+        {% elseif bytes < gigabyte %}
+            {{ (bytes / megabyte)|number_format(2, '.') ~ ' MB' }}
+        {% elseif bytes < terabyte %}
+            {{ (bytes / gigabyte)|number_format(2, '.') ~ ' GB' }}
+        {% else %}
+            {{ (bytes / terabyte)|number_format(2, '.') ~ ' TB' }}
+        {% endif %}
+    {% endspaceless %}
+{%- endmacro %}
+
+{% macro preview(path, value, global) %}
+    {% if value %}
+        {% set uri = global.grav.uri %}
+        {% set files = global.files %}
+        {% set config = global.grav.config %}
+        {% set route = global.context.route() %}
+
+        {% set type = global.blueprint_type ? global.blueprint_type : global.admin.location ? global.admin.location : 'config' %}
+
+        {% set blueprint_name = global.blueprints.getFilename %}
+        {% if type == 'pages' %}
+            {% set blueprint_name = type ~ '/' ~ blueprint_name %}
+        {% endif %}
+        {% set blueprint = base64_encode(blueprint_name) %}
+        {% set real_path = global.admin.getPagePathFromToken(path) %}
+        {% set remove = global.file_url_remove ? global.file_url_remove : (global.base_url_relative ~ '/media.json') %}
+        {% set remove = uri.addNonce(
+        remove ~
+        '/route' ~ config.system.param_sep ~ base64_encode(global.base_path ~ '/' ~ real_path) ~
+        '/task' ~ config.system.param_sep ~ 'removeFileFromBlueprint' ~
+        '/proute' ~ config.system.param_sep ~ base64_encode(route) ~
+        '/blueprint' ~ config.system.param_sep ~ blueprint ~
+        '/type' ~ config.system.param_sep ~ type ~
+        '/field' ~ config.system.param_sep ~ files.name ~
+        '/path' ~ config.system.param_sep ~ base64_encode(value.path), 'admin-form', 'admin-nonce') %}
+
+        {% set file = value|merge({remove: remove, path: (uri.rootUrl == '/' ? '/' : uri.rootUrl ~ '/' ~ real_path) }) %}
+        <div class="hidden" data-file="{{ file|json_encode|e('html_attr') }}"></div>
+    {% endif %}
+{% endmacro %}
+
+{% block input %}
+    {% set upload_limit = config.system.media.upload_limit  / 1024 / 1024 %}
+    {% set page_can_upload = exists or (type == 'page' and not exists and not (field.destination starts with '@self' or field.destination starts with 'self@')) %}
+    {% if type is not defined or page_can_upload %}
+
+    {% set settings = {name: field.name, paramName: (scope ~ field.name)|fieldName ~ (files.multiple ? '[]' : ''), limit: limit, filesize: upload_limit, accept: files.accept, resolution: files.resolution, resizeWidth: files.resizeWidth, resizeHeight: files.resizeHeight, resizeQuality: files.resizeQuality } %}
+
+    <div class="form-input-wrapper dropzone files-upload {% if field.fancy is not same as(false) %}form-input-file{% endif %} {{ field.size|default('xlarge') }}" data-grav-file-settings="{{ settings|json_encode|e('html_attr') }}" {% if file_url_add %}data-file-url-add="{{ file_url_add }}"{% endif %} {% if file_url_remove %}data-file-url-remove="{{ file_url_remove }}"{% endif %}>
+        <input
+            {# required attribute structures #}
+            {% block input_attributes %}
+                type="file"
+                {% if files.multiple %}multiple="multiple"{% endif %}
+                {% if files.accept %}accept="{{ files.accept|join(',') }}"{% endif %}
+                {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+                {% if field.random_name %}random="true"{% endif %}
+                {{ parent() }}
+            {% endblock %}
+        />
+
+        {% for path, file in value %}
+            {{ _self.preview(path, file, _context) }}
+        {% endfor %}
+        {% include 'forms/fields/hidden/hidden.html.twig' with {field: {name: '_json.' ~ field.name}, value:value|raw|json_encode} %}
+    </div>
+
+    {% else %}
+        <span class="note">{{ "PLUGIN_ADMIN.CANNOT_ADD_FILES_PAGE_NOT_SAVED"|tu|raw }}</span>
+    {% endif %}
+{% endblock %}

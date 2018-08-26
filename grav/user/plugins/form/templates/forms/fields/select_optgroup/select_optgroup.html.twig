@@ -1,0 +1,44 @@
+{% extends "forms/field.html.twig" %}
+
+{% block global_attributes %}
+    data-grav-selectize="{{ (field.selectize is defined ? field.selectize : {})|json_encode()|e('html_attr') }}"
+    {{ parent() }}
+{% endblock %}
+
+{% block input %}
+    <div class="{{ form_field_wrapper_classes ?: 'form-select-wrapper' }} {{ field.size }} {{ field.wrapper_classes }}">
+        <select name="{{ (scope ~ field.name)|fieldName ~ (field.multiple ? '[]' : '') }}"
+                class="{{ form_field_select_classes }} {{ field.classes }}"
+                {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
+                {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
+                {% if field.disabled %}disabled="disabled"{% endif %}
+                {% if field.autofocus in ['on', 'true', 1] %}autofocus="autofocus"{% endif %}
+                {% if field.novalidate in ['on', 'true', 1] %}novalidate="novalidate"{% endif %}
+                {% if required %}required="required"{% endif %}
+                {% if field.multiple in ['on', 'true', 1] %}multiple="multiple"{% endif %}
+                {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+                {% if field.form %}form="{{ field.form }}"{% endif %}
+                {% if field.key %}
+                    data-key-observe="{{ (scope ~ field.name)|fieldName }}"
+                {% endif %}
+                >
+            {% if field.placeholder %}<option value="" disabled selected>{% if grav.twig.twig.filters['tu'] is defined %}{{ field.placeholder|tu|raw }}{% else %}{{ field.placeholder|t|raw }}{% endif %}</option>{% endif %}
+
+            {% for key, optgroup in field.options %}
+                {% set optgroup_label = optgroup|keys|first %}
+                
+                <optgroup label="{{ optgroup_label }}">
+                {%for subkey, suboption in field.options[key][optgroup_label] %}
+                {% set selected = field.selectize ? suboption : subkey %}
+                {% set item_value = field.selectize and field.multiple ? suboption : subkey %}
+                    <option {% if subkey == value or (field.multiple and selected in value) %}selected="selected"{% endif %} value="{{ suboption }}">
+                        {% if grav.twig.twig.filters['tu'] is defined %}
+                        {{ suboption|tu|raw }}{% else %}{{ suboption|t|raw }}
+                        {% endif %}
+                    </option>
+                {% endfor %}
+                </optgroup>
+            {% endfor %}
+        </select>
+    </div>
+{% endblock %}

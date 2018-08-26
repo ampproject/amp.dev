@@ -1,0 +1,33 @@
+<div class="form-spacer {{ field.classes }}">
+    {% if field.title %}
+        <h3>
+            {% if grav.twig.twig.filters['tu'] is defined %}
+                {{- field.title|tu|raw -}}
+            {% else %}
+                {{- field.title|t|raw -}}
+            {% endif %}
+        </h3>
+    {% endif %}
+
+    {% if field.markdown %}
+        <p>
+            {% if grav.twig.twig.filters['tu'] is defined %}
+                {{- field.text|tu|markdown|raw -}}
+            {% else %}
+                {{- field.text|t|markdown|raw -}}
+            {% endif %}
+        </p>
+    {% else %}
+        <p>
+            {% if grav.twig.twig.filters['tu'] is defined %}
+                {{- field.text|tu|raw -}}
+            {% else %}
+                {{- field.text|t|raw -}}
+            {% endif %}
+        </p>
+    {% endif %}
+
+    {% if field.underline %}
+    <hr />
+    {% endif %}
+</div>

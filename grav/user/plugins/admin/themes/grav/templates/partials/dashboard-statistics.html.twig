@@ -1,0 +1,24 @@
+{% if authorize(['admin.statistics', 'admin.super']) %}
+    <div id="popularity" class="dashboard-item dashboard-right" data-chart-name="popularity" data-chart-type="bar" data-chart-data="{{ {'series': [popularity.getDailyChartData['data']], 'labels': popularity.getDailyChartData['labels']}|json_encode|e('html_attr') }}">
+        <div class="primary-accent default-box-shadow">
+            <h1>{{ "PLUGIN_ADMIN.STATISTICS"|tu }}</h1>
+            <div class="admin-statistics-chart">
+                <div class="ct-chart chart-loader"><i class="fa fa-refresh fa-spin"></i></div>
+                <div class="flush-bottom button-bar stats-bar">
+                    <span class="stat">
+                        <b>{{ popularity.getDailyTotal }}</b>
+                        <i>{{ "PLUGIN_ADMIN.TODAY"|tu }}</i>
+                    </span>
+                    <span class="stat">
+                        <b>{{ popularity.getWeeklyTotal }}</b>
+                        <i>{{ "PLUGIN_ADMIN.WEEK"|tu }}</i>
+                    </span>
+                    <span class="stat">
+                        <b>{{ popularity.getMonthlyTotal }}</b>
+                        <i>{{ "PLUGIN_ADMIN.MONTH"|tu }}</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

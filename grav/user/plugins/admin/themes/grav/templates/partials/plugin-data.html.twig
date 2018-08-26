@@ -1,0 +1,63 @@
+<table>
+    {% if plugin.author %}
+    <tr>
+        <td>{{ "PLUGIN_ADMIN.AUTHOR"|tu }}:</td>
+        <td class="double">
+            {% if plugin.author.url %}
+                <a href="{{ plugin.author.url }}" target="_blank">{{ plugin.author.name }}</a>
+            {% else %}
+                {{ plugin.author.name }}
+            {% endif %}
+            {% if plugin.author.email %}
+                - <a href="mailto:{{ plugin.author.email }}">{{ plugin.author.email }}</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endif %}
+    {% if plugin.homepage %}
+        <tr>
+            <td>{{ "PLUGIN_ADMIN.HOMEPAGE"|tu }}:</td>
+            <td class="double"><a href="{{ plugin.homepage }}" target="_blank">{{ plugin.homepage }}</a></td>
+        </tr>
+    {% endif %}
+    {% if plugin.demo %}
+        <tr>
+            <td>{{ "PLUGIN_ADMIN.DEMO"|tu }}:</td>
+            <td class="double"><a href="{{ plugin.demo }}" target="_blank">{{ plugin.demo }}</a></td>
+        </tr>
+    {% endif %}
+    {% if plugin.bugs %}
+        <tr>
+            <td>{{ "PLUGIN_ADMIN.BUG_TRACKER"|tu }}:</td>
+            <td class="double"><a href="{{ plugin.bugs }}" target="_blank">{{ plugin.bugs }}</a></td>
+        </tr>
+    {% endif %}
+    {% if plugin.keywords %}
+        <tr>
+            <td>{{ "PLUGIN_ADMIN.KEYWORDS"|tu }}:</td>
+            <td class="double">{{ plugin.keywords|join(', ') }}</td>
+        </tr>
+    {% endif %}
+    {% if plugin.license %}
+        <tr>
+            <td>{{ "PLUGIN_ADMIN.LICENSE"|tu }}:</td>
+            <td class="double">{{ plugin.license }}</td>
+        </tr>
+    {% endif %}
+
+    {% if plugin.description %}
+        <tr>
+            <td>{{ "PLUGIN_ADMIN.DESCRIPTION"|tu }}:</td>
+            <td class="double">{{ plugin.description_html|raw }}</td>
+        </tr>
+    {% endif %}
+
+    {% if plugin.readme or plugin.homepage %}
+        {% set readme_link = plugin.readme ?: plugin.docs|default(plugin.homepage ~ '/blob/master/README.md') %}
+        <tr>
+            <td>{{ "PLUGIN_ADMIN.README"|tu }}:</td>
+            <td class="double"><a href="{{ readme_link }}" target="_blank">{{ readme_link }}</a></td>
+        </tr>
+    {% endif %}
+
+</table>

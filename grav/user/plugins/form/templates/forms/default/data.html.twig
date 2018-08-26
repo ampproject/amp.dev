@@ -1,0 +1,44 @@
+{% macro render_field(form, fields, scope) %}
+    {% for index, field in fields %}
+        {% set input = attribute(field, "input@") %}
+
+        {% if input is null or input == true %}
+
+            {% if form.value(scope ~ field.name) %}
+                {% block field %}
+                    <div>
+                        {% block field_label %}
+                            <strong>{{ field.label|t|e }}</strong>:
+                        {% endblock %}
+
+                        {% block field_value %}
+                            {% if field.type == 'checkboxes' %}
+                                <ul>
+                                    {% set use_keys = field.use is defined and field.use == 'keys' %}
+                                    {% for key,value in form.value(scope ~ field.name) %}
+                                        {% set index = (use_keys ? key : value) %}
+                                        <li>{{ field.options[index]|e }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% elseif field.type == 'checkbox' %}
+                                {{ (form.value(scope ~ field.name) == 1) ? "PLUGIN_FORM.YES"|t|e : "PLUGIN_FORM.NO"|t|e }}
+                            {% elseif field.type == 'select' %}
+                                {{ field.options[form.value(scope ~ field.name)]|e }}
+                            {% else %}
+                                {{ string(form.value(scope ~ field.name))|nl2br }}
+                            {% endif %}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            {% endif %}
+        {% else %}
+            {% if field.fields %}
+                {% set new_scope = field.nest_id ? scope ~ field.name ~ '.' : scope %}
+                {{ _self.render_field(form, field.fields, new_scope) }}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{{ _self.render_field(form, form.fields, '') }}
+

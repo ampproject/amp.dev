@@ -1,0 +1,25 @@
+{% extends "forms/field.html.twig" %}
+
+{% if field.file %}
+    {% set content = read_file(field.file) %}
+{% else %}
+    {% set content = field.content %}
+{% endif %}
+
+{% block input %}
+    <div class="form-display-wrapper {{ field.size }} {{ field.classes }}" {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}>
+        {% if field.markdown %}
+            {% if grav.twig.twig.filters['tu'] is defined %}
+                {{ content|tu|markdown|raw }}
+            {% else %}
+                {{ content|t|markdown|raw }}
+            {% endif %}
+        {% else %}
+            {% if grav.twig.twig.filters['tu'] is defined %}
+                {{ content|tu|raw }}
+            {% else %}
+                {{ content|t|raw }}
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,3 @@
+{% set inline_errors = form.inline_errors is not null ? form.inline_errors : config.plugins.form.inline_errors(false) %}
+{% set message = inline_errors and form.messages ? "FORM.VALIDATION_FAIL"|t : form.message %}
+{{ {'status':form.status, 'message':message}|json_encode|raw }}

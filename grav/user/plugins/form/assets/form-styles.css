@@ -1,0 +1,136 @@
+.form-group.has-errors {
+    background: rgba(255,0,0,0.05);
+    border: 1px solid rgba(255,0,0,0.2);
+    border-radius: 3px;
+    margin: 0 -5px;
+    padding: 0 5px;
+}
+
+.form-errors {
+    color: #b52b27;
+}
+
+.form-honeybear {
+    visibility: hidden;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.form-errors p {
+    margin: 0;
+}
+
+.form-input-file input {
+    display: none;
+}
+
+.form-input-file .dz-default.dz-message {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+.form-input-file.dropzone {
+    position: relative;
+    min-height: 70px;
+    border-radius: 3px;
+    margin-bottom: .85rem;
+    border: 2px dashed #ccc;
+    color: #aaa;
+    padding: 0.5rem;
+}
+
+.form-input-file.dropzone .dz-preview {
+    margin: 0.5rem;
+}
+
+.form-input-file.dropzone .dz-preview:hover {
+    z-index: 2;
+}
+
+.form-input-file.dropzone .dz-preview .dz-error-message {
+    min-width: 140px;
+    width: auto;
+}
+
+.form-input-file.dropzone .dz-preview .dz-image,
+.form-input-file.dropzone .dz-preview.dz-file-preview .dz-image {
+    border-radius: 3px;
+    z-index: 1;
+}
+
+/* Signature Pad */
+.signature-pad {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: 10px;
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+    max-height: 460px;
+    border: 1px solid #f0f0f0;
+    background-color: #fff;
+    padding: 16px;
+}
+
+.signature-pad--body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border: 1px solid #f6f6f6;
+    height: 100px;
+}
+
+.signature-pad--body canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
+}
+
+.signature-pad--footer {
+    color: #C3C3C3;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.signature-pad--actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+[data-grav-field="array"] .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+[data-grav-field="array"] .form-row > input,
+[data-grav-field="array"] .form-row > textarea
+{
+    margin: 0 0.5rem;
+    display: inline-block;
+}
+

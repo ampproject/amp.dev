@@ -1,0 +1,44 @@
+<div class="remodal"
+     data-remodal-id="remove-package"
+     data-remodal-options="hashTracking: false">
+    <form>
+        <div class="remove-package-confirm">
+            <h1>{{ "PLUGIN_ADMIN.REMOVE_THE"|tu([("PLUGIN_ADMIN." ~ type|upper)|tu]) }}</h1>
+            <p class="bigger">
+                {{ "PLUGIN_ADMIN.CONFIRM_REMOVAL"|tu([("PLUGIN_ADMIN." ~ type|upper)|tu]) }}
+            </p>
+
+            <div class="button-bar">
+                <button data-remodal-action="cancel" class="button secondary remodal-cancel"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</button>
+                <button data-{{ type }}-action="remove-package" data-packages-slugs="{{ package.slug }}" class="button"><i class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONTINUE"|tu }}</button>
+            </div>
+        </div>
+
+        <div class="remove-package-dependencies hidden">
+            <h1>{{ "PLUGIN_ADMIN.REMOVED_SUCCESSFULLY"|tu([("PLUGIN_ADMIN." ~ type|upper)|tu]) }}</h1>
+            <p>
+                {{ "PLUGIN_ADMIN.ADDITIONAL_DEPENDENCIES_CAN_BE_REMOVED"|tu([("PLUGIN_ADMIN." ~ type|upper)|tu]) }}
+            </p>
+            <div>
+                <ul class="package-dependencies-container"></ul>
+            </div>
+            <div class="button-bar">
+                <a href="{{ base_url_relative ~ '/' ~ type ~ 's' }}" class="button secondary"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CLOSE"|tu }}</a>
+            </div>
+        </div>
+
+        <div class="remove-package-done hidden">
+            <h1>{{ "PLUGIN_ADMIN.REMOVED_SUCCESSFULLY"|tu([("PLUGIN_ADMIN." ~ type|upper)|tu]) }}</h1>
+            <div class="button-bar">
+                <a href="{{ base_url_relative ~ '/' ~ type ~ 's' }}" class="button secondary"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CLOSE"|tu }}</a>
+            </div>
+        </div>
+
+        <div class="remove-package-error hidden">
+            <h1>{{ "PLUGIN_ADMIN.ERROR_REMOVING_THE"|tu([("PLUGIN_ADMIN." ~ type|upper)|tu]) }}</h1>
+            <div class="button-bar">
+                <button data-remodal-action="cancel" class="button secondary remodal-cancel"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+b, strong {
+	font-weight: $font-weight-bold
+}
+
+.bigger {
+    font-size: 1.2rem;
+
+}
+
+.button-bar {
+    text-align: right;
+    float: right;
+    z-index: 0;
+}
+
+.alert {
+    font-size: 1rem;
+    padding: 0.5rem $padding-default;
+
+    @include breakpoint(mobile-only) {
+        padding: 0.5rem 1rem;
+    }
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 0px 6px;
+    min-width: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.empty-state {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+}

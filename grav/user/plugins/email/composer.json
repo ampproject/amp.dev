@@ -1,0 +1,10 @@
+{
+    "require": {
+        "swiftmailer/swiftmailer": "~5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Grav\\Plugin\\Email\\": "classes/"
+        }
+    }
+}

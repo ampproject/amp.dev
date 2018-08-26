@@ -1,0 +1,17 @@
+{%- macro render_field(form, fields, scope) %}
+{%- for index, field in fields %}
+    {%- set input = attribute(field, "input@") %}
+        {%- if input is null or input == true %}
+        {%- set value = form.value(scope ~ (field.name ?? index)) %}
+        {{- scope ~ (field.name ?? index) }}: {{ string(value is iterable ? value|json_encode : value|escape('yaml')) ~ "\r\n" }}
+    {%- else %}
+        {%- if field.fields %}
+        {%- set new_scope = field.nest_id ? scope ~ field.name ~ '.' : scope -%}
+        {{- _self.render_field(form, field.fields, new_scope) }}
+        {%- endif %}
+    {%- endif %}
+{%- endfor %}
+{%- endmacro %}
+{%- autoescape false %}
+{{- _self.render_field(form, form.fields, '') ~ "\r\n" }}
+{%- endautoescape %}

@@ -1,0 +1,3 @@
+{% set value = (value is null ? (field.evaluate ? evaluate(field.default) : field.default) : value) %}
+
+<input data-grav-field="hidden" data-grav-disabled="false" type="hidden" class="input" name="{{ (scope ~ field.name)|fieldName }}" value="{{ value|join(', ') }}" />

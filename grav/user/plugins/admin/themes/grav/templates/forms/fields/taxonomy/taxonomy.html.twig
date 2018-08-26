@@ -1,0 +1,26 @@
+{% set taxonomies = (taxonomies is null ? (field.taxonomies ? field.taxonomies : admin.data('config/site').taxonomies) : taxonomies) %}
+{% set parentname = field.name %}
+{% set options = field.options %}
+{% set default = field.default %}
+
+{% for name in taxonomies %}
+
+    {% set value = array(data.value('header.taxonomy.' ~ name)|default(default[name] ?? [])) %}
+    {% set sub_taxonomies = attribute(grav.taxonomy.taxonomy, name)|default([])|keys %}
+    {% set list = (options[name] ?? [])|merge(sub_taxonomies)|merge(value)|array_unique %}
+
+    {% set field = {
+        type: 'select',
+        classes: 'fancy create',
+        label: name|capitalize,
+        name: parentname ~ '.' ~ name,
+        multiple: true,
+        options: list,
+        style: field.style,
+        selectize: {
+            create: true
+        }
+    } %}
+
+    {% include ['forms/fields/select/select.html.twig'] %}
+{% endfor %}

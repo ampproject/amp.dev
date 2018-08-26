@@ -1,0 +1,60 @@
+{% extends "forms/field.html.twig" %}
+
+{% set value = (value is null ? field.default : value) %}
+{% set value = (value is same as(false) ? 0 : value) %}
+
+{% set has_hidden = false %}
+{% for key, text in field.options %}
+    {% if key is empty %}
+      {% set has_hidden = true %}
+    {% endif %}
+{% endfor %}
+
+{% block global_attributes %}
+    {{ parent() }}
+    data-grav-field-name="{{ (scope ~ field.name)|fieldName }}"
+{% endblock %}
+
+{% macro spanToggle(input, length) %}
+    {% set space = repeat('&nbsp;&nbsp;', (length - input|length) / 2) %}
+    {{ (space ~ input ~ space)|raw }}
+{% endmacro %}
+
+{% block input %}
+
+    <div class="switch-toggle switch-grav {{ field.size }} switch-{{ field.options|length }} {{ field.classes }}">
+        {% set maxLen = 0 %}
+        {% for text in field.options %}
+            {% set translation = grav.twig.twig.filters['tu'] is defined ? text|tu : text|t %}
+            {% set maxLen = max(translation|length, maxLen) %}
+        {% endfor %}
+
+        {% for key, text in field.options %}
+            {% set id = "toggle_" ~ field.name ~ key %}
+            {% set translation = (grav.twig.twig.filters['tu'] is defined ? text|tu : text|t)|trim %}
+
+            <input type="radio"
+                value="{{ key }}"
+                id="{{ id }}"
+                name="{{ (scope ~ field.name)|fieldName }}"
+                {% if field.highlight is defined %}
+                class="{{ field.highlight == '' ~ key ? 'highlight' : '' }}"
+                {% endif %}
+                {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+                {% if field.toggleable %}
+                    {% if '' ~ key == '' ~ value %}
+                        checked="checked"
+                    {% elseif value is defined and (key == 1 or key == '1') %}
+                        checked="checked"
+                    {% endif %}
+                {% else %}
+                    {% if '' ~ key == '' ~ value %}
+                        checked="checked"
+                    {% endif %}
+                {% endif %}
+                {% if field.validate.required in ['on', 'true', 1] %}required="required"{% endif %}
+            />
+            <label for="{{ id }}">{{ (_self.spanToggle(translation, maxLen)|trim)|raw }}</label>
+        {% endfor %}
+    </div>
+{% endblock %}

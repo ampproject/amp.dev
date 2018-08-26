@@ -1,0 +1,44 @@
+<div class="form-tabs {{ field.class }} {{ field.classes }}">
+
+{% if field.fields %}
+
+    {% set tabsKey = field.fields|keys|join('.') %}
+    {% set storedValue = get_cookie('grav-tabs-state')|default('{}')|json_decode %}
+    {% set storedTab = attribute(storedValue, 'tab-' ~ tabsKey) %}
+
+    {% if storedTab is empty %}
+        {% if uri.params.tab %}
+            {% set active = uri.params.tab %}
+        {% elseif field.active %}
+            {% set active = field.active %}
+        {% else %}
+            {% set active = 1 %}
+        {% endif %}
+    {% endif %}
+
+    <div class="tabs-nav">
+    {% for tab in field.fields %}
+        {% if tab.type == 'tab' and (tab.security is empty or authorize(array(tab.security))) %}
+            <a class="tab__link {{ (storedTab == scope ~ tab.name) or active == loop.index ? 'active' : '' }}" data-tabid="tab-{{ tabsKey ~ loop.index }}" data-tabkey="tab-{{ tabsKey }}" data-scope="{{ scope ~ tab.name }}">
+                <span>
+                {% if grav.twig.twig.filters['tu'] is defined %}{{ tab.title|tu }}{% else %}{{ tab.title|t }}{% endif %}
+                </span>
+            </a>
+        {% endif %}
+    {% endfor %}
+    </div>
+    <div class="tabs-content">
+        {% for field in field.fields %}
+            {% if field.type == 'tab' %}
+                {% if field.security is empty or authorize(array(field.security)) %}
+                    {% set value = field.name ? data.value(field.name) : data.toArray %}
+                    <div id="tab-{{ tabsKey ~ loop.index }}" class="tab__content {{ (storedTab == scope ~ field.name) or active == loop.index ? 'active' : '' }}">
+                        {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+</div>
+

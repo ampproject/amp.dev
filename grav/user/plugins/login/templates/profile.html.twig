@@ -1,0 +1,9 @@
+{% extends 'partials/base.html.twig' %}
+
+{% do form.setAllData(grav.user.toArray) %}
+
+{% block content %}
+    {% include 'partials/messages.html.twig' %}
+    {{ page.content }}
+    {% include 'forms/form.html.twig' %}
+{% endblock %}

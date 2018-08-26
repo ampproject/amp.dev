@@ -1,0 +1,15 @@
+enabled: true
+built_in_css: true
+inline_css: true
+refresh_prevention: false
+client_side_validation: true
+inline_errors: false
+files:
+  multiple: false          # To allow multiple files, default is single
+  limit: 10                # Number of allowed files per field (multiple required)
+  destination: 'self@'     # Where to upload the files (path and self@, page@, theme@)
+  avoid_overwriting: false # Prevent files with the same name to be overridden. Date prefix will be added
+  random_name: false       # Generate a random 15 long string name for the uploaded files
+  filesize: 0              # Maximum file size allowed (in MB)
+  accept:                  # List of mime/types or file extensions allowed (ie, image/*,.zip,.mp4)
+    - image/*

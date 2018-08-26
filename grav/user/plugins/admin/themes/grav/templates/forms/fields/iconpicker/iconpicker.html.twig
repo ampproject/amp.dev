@@ -1,0 +1,45 @@
+{% extends "forms/field.html.twig" %}
+{% set originalValue = originalValue is defined ? originalValue : value %}
+{% set value = (value is null ? field.default : value) %}
+
+{% block global_attributes %}
+    data-grav-iconpicker
+    data-name="{{field.name}}"
+    data-value="{{value}}"
+    {{ parent() }}
+{% endblock %}
+
+{% block input %}
+    <div class="form-list-wrapper {{ field.size }}" data-type="collection">
+        <div class="icon-picker" data-pickerid="fa" data-iconsets='{"fa":"FontAwesome Icons"}'>
+            <input
+                {# required attribute structures #}
+                name="{{ (scope ~ field.name)|fieldName }}"
+                data-format="{{ field.format == 'short' ? 'short' : 'long' }}"
+                value="{{ value|raw|join(', ') }}"
+                type="text"
+                {# input attribute structures #}
+                {% block input_attributes %}
+                    {% if field.classes is defined %}class="{{ field.classes }}" {% endif %}
+                    {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
+                    {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
+                    {% if field.disabled %}disabled="disabled"{% endif %}
+                    {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+                    {% if field.autofocus in ['on', 'true', 1] %}autofocus="autofocus"{% endif %}
+                    {% if field.novalidate in ['on', 'true', 1] %}novalidate="novalidate"{% endif %}
+                    {% if field.readonly in ['on', 'true', 1] %}readonly="readonly"{% endif %}
+                    {% if field.autocomplete in ['on', 'off'] %}autocomplete="{{ field.autocomplete }}"{% endif %}
+                    {% if field.validate.required in ['on', 'true', 1] %}required="required"{% endif %}
+                {% endblock %}
+            />
+        </div>
+
+        <div class="fa-set icon-set">
+            <ul>
+                {% for icon in fa_icons %}
+                <li data-code="{{icon.unicode}}" data-class="fa fa-{{icon.id}}" class="fa fa-{{icon.id}}"></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

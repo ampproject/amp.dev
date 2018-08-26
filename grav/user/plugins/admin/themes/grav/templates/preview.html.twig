@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set route = admin.route == '' ? '' : '/' ~ admin.route %}
+{% set preview_link = base_url_relative_frontend|rtrim('/') ~ route %}
+{% set preview_html = (base_url|rtrim('/') ~ '/preview' ~ (context.home ? '' : context.route)) ?: '/' %}
+{% set admin_route = '/' ~ admin.route %}
+{% set back_link = base_url|rtrim('/') ~ '/pages' ~ page.find(admin_route).rawRoute() %}
+
+{% block titlebar %}
+    <div class="button-bar">
+        <a class="button" href="{{ back_link }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+        <a class="button" href="{{ preview_link }}" target="_blank"><i class="fa fa-external-link"></i> {{ "PLUGIN_ADMIN.OPEN_NEW_TAB"|tu }}</a>
+    </div>
+    <h1><i class="fa fa-fw fa-eye"></i> {{ "PLUGIN_ADMIN.PREVIEW"|tu }}: <strong>/{{ admin.route }}</strong></h1>
+{% endblock %}
+
+{% block content_wrapper %}
+
+    <div class="content-wrapper preview-wrapper">
+        <div class="content-padding" width="100%" height="100%">
+            <iframe width="100%" height="100%" frameborder="0" src="{{ preview_link }}" />
+        </div>
+    </div>
+{% endblock %}

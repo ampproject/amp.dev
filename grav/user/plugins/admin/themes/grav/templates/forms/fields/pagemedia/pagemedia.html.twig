@@ -1,0 +1,49 @@
+{% set value = (value is null ? field.default : value) %}
+{% set pagemedia = config.get('plugins.admin.pagemedia') %}
+{% set pagemedia_settings = {
+    resolution: {
+        min: {
+            width: pagemedia.res_min_width ?: null,
+            height: pagemedia.res_min_height ?: null
+        },
+        max: {
+            width: pagemedia.res_max_width ?: null,
+            height: pagemedia.res_max_height ?: null
+        }
+    },
+    resizeWidth: pagemedia.resize_width ?: null,
+    resizeHeight: pagemedia.resize_height ?: null,
+    resizeQuality: pagemedia.resize_quality ?: 0.8
+} %}
+
+{% if context.folderExists %}
+<div class="form-field grid vertical {% if field.classes is defined %}{{ field.classes }}{% endif %}">
+    <div class="form-label">
+        <label>{{ field.label|tu }}</label>
+    </div>
+    <div class="form-data form-uploads-wrapper">
+        {% set uploadLimit = grav.config.system.media.upload_limit / 1024 / 1024 %}
+        {% set dropzoneSettings = { maxFileSize: uploadLimit }|merge(pagemedia_settings) %}
+        <div id="grav-dropzone"
+             class="dropzone"
+             data-media-url="{{ base_url }}/media/{{ admin.route|trim('/') }}.json"
+             data-media-local="{{ base_url_relative_frontend|rtrim('/') }}/{{ admin.route|trim('/') }}"
+             data-media-path="{{ url(context.relativePagePath) }}"
+             data-media-uri="{{ context.mediaUri }}"
+             data-dropzone-options="{{ dropzoneSettings|json_encode|e('html_attr') }}"
+             data-dropzone-field="{{ (scope ~ field.name)|fieldName }}"></div>
+
+        {% if admin.session.expert == '0' %}
+        <input type="hidden" name="{{ (scope ~ field.name)|fieldName }}" value="{{ value|e }}" />
+        {% endif %}
+    </div>
+</div>
+{% else %}
+<div class="form-tab">
+    <div class="form-field">
+        <div class="form-label">
+            {{ "PLUGIN_ADMIN.CANNOT_ADD_MEDIA_FILES_PAGE_NOT_SAVED"|tu }}
+        </div>
+    </div>
+</div>
+{% endif %}

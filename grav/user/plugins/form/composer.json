@@ -1,0 +1,31 @@
+{
+  "name": "grav-plugin-form",
+  "type": "grav-plugin",
+  "description": "Grav Plugin Form",
+  "keywords": ["form"],
+  "homepage": "https://github.com/getgrav/grav-plugin-form",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Team Grav",
+      "email": "devs@getgrav.org",
+      "homepage": "http://getgrav.org",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/getgrav/grav-plugin-form/issues",
+    "irc": "https://gitter.im/getgrav/grav",
+    "forum": "http://getgrav.org/forum",
+    "docs": "https://github.com/getgrav/grav-plugin-form/blob/master/README.md"
+  },
+  "require": {
+    "php": ">=5.4.0"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Grav\\Plugin\\Form\\": "classes/"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{% if form is null %}
+    {% set form = grav.session.getFlashObject('form') %}
+{% endif  %}
+
+{% include 'partials/form-messages.html.twig' %}
+
+{% set scope = scope ?: 'data.' %}
+{% set multipart = '' %}
+{% set method = form.method|upper|default('POST') %}
+{% set client_side_validation = form.client_side_validation is not null ? form.client_side_validation : config.plugins.form.client_side_validation|default(true) %}
+{% set inline_errors = form.inline_errors is not null ? form.inline_errors : config.plugins.form.inline_errors(false) %}
+
+{% for field in form.fields %}
+    {% if (method == 'POST' and field.type == 'file') %}
+        {% set multipart = ' enctype="multipart/form-data"' %}
+    {% endif %}
+{% endfor %}
+
+{% set action = form.action ? base_url ~ form.action : base_url ~ page.route ~ uri.params %}
+
+{% if (action == base_url_relative) %}
+    {% set action = base_url_relative ~ '/' ~ page.slug %}
+{% endif %}
+
+{% if form.keep_alive %}
+    {% do assets.addJs('plugin://form/assets/form.vendor.js', { 'loading': 'defer', 'group': 'bottom' }) %}
+    {% do assets.addJs('plugin://form/assets/form.min.js', { 'loading': 'defer', 'group': 'bottom' }) %}
+{% endif %}
+
+    {% do assets.addInlineJs("
+        window.GravForm = window.GravForm || {};
+        window.GravForm.config = {
+            current_url: '" ~ uri.route(true) ~"',
+            base_url_relative: '" ~ base_url_relative ~ "',
+            param_sep: '"~ config.system.param_sep ~ "',
+            form_nonce: '" ~ form.getNonce ~ "',
+            session_timeout: " ~ config.system.session.timeout ~ "
+        };
+        window.GravForm.translations = jQuery.extend({}, window.GravForm.translations || {}, { PLUGIN_FORM: {} });
+    ", { 'group': 'bottom' }) %}
+<form name="{{ form.name }}"
+      action="{{ action | trim('/', 'right') }}"
+      method="{{ method }}"{{ multipart }}
+      {% if form.id %}id="{{ form.id }}"{% endif %}
+      {% block form_classes %}
+      class="{{ form_outer_classes }} {{ form.classes }}"
+      {% endblock %}
+      {% if form.novalidate %}novalidate{% endif %}
+      {% if form.keep_alive %}data-grav-keepalive="true"{% endif %}
+>
+
+  {% block inner_markup_fields_start %}{% endblock %}
+
+  {% set data = data ?? form.data %}
+  {% for field in form.fields %}
+    {% set value = form.value(field.name) %}
+    {% include "forms/fields/#{field.type}/#{field.type}.html.twig" ignore missing %}
+  {% endfor %}
+
+  {% include "forms/fields/formname/formname.html.twig" %}
+
+  {% block inner_markup_fields_end %}{% endblock %}
+
+  {% block inner_markup_buttons_start %}
+  <div class="{{ form_button_outer_classes ?: 'buttons'}}">
+  {% endblock %}
+
+  {% for button in form.buttons %}
+      {% if button.outerclasses is defined %}<div class=" {{ button.outerclasses }}">{% endif %}
+          {% if button.url %}
+              <a href="{{ button.url starts with 'http' ? button.url : url(button.url) }}">
+          {% endif %}
+          <button
+                {% if button.id %}id="{{ button.id }}"{% endif %}
+                {% block button_classes %}
+                class="{{ form_button_classes ?: 'button' }} {{ button.classes }}"
+                {% endblock %}
+                {% if button.disabled %}disabled="disabled"{% endif %}
+
+                type="{{ button.type|default('submit') }}"
+
+                {% if button.task %}
+                    name="task" value="{{ button.task }}"
+                {% endif %}
+            >
+                {{ button.value|t|default('Submit') }}
+          </button>
+          {% if button.url %}
+              </a>
+          {% endif %}
+      {% if button.outerclasses is defined %}</div>{% endif %}
+  {% endfor %}
+
+  {% block inner_markup_buttons_end %}
+  </div>
+  {% endblock %}
+
+  {% include 'forms/fields/uniqueid/uniqueid.html.twig' %}
+  {{ nonce_field('form', 'form-nonce')|raw }}
+</form>
+
+{% if config.forms.dropzone.enabled %}
+<div id="dropzone-template" style="display:none;">
+    {% include 'forms/dropzone/template.html.twig' %}
+</div>
+{% endif %}

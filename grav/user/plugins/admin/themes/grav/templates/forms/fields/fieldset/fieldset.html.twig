@@ -1,0 +1,96 @@
+{% extends "forms/field.html.twig" %}
+
+{% block field %}
+  <div class="form-fieldset{% if vertical %} vertical{% endif %}">
+    {% block contents %}
+      <input type="checkbox" class="hidden" id="fieldset_collapsible_{{ field.name }}"{% if not field.collapsible or not field.collapsed %} checked="checked"{% endif %} />
+
+      <div class="form-label form-fieldset--label">
+        <h2>
+          <label{% if field.collapsible %} for="fieldset_collapsible_{{ field.name }}" class="form-fieldset--cursor"{% endif %}>
+            {% if field.help %}
+            <span class="hint--bottom" data-hint="{{ field.help|e|tu }}">
+            {% endif %}
+            {% block label %}
+              {% if field.icon %}
+                <i class="fa fa-fw fa-{{ field.icon }}"></i>
+              {% endif %}
+              {{ field.title|tu }}
+              {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}
+              {% if field.info %}
+                <span class="form-fieldset--info">{{ field.info|tu }}</span>
+              {% endif %}
+            {% endblock %}
+          {% if field.help %}
+          </span>
+          {% endif %}
+
+          {# Actions panel #}
+          <span class="actions">
+            {% block actions %}
+              {% if field.collapsible %}
+                <span class="form-fieldset--collapsible">
+                  <i class="fa fa-chevron-down open"></i>
+                  <i class="fa fa-chevron-up close"></i>
+                </span>
+              {% endif %}
+            {% endblock %}
+          </span>
+        </label>
+      </h2>
+      </div>
+      <div class="form-data"
+        {#{% block global_attributes %}
+          data-grav-field="{{ field.type }}"
+          data-grav-disabled="{{ originalValue is null ? 'true' : 'false' }}"
+          data-grav-default="{{ field.default|json_encode()|e('html_attr') }}"
+        {% endblock %}#}
+      >
+
+          {% block group %}
+          {% if field.text %}
+          <p>{% if grav.twig.twig.filters['tu'] is defined %}{{ field.text|tu }}{% else %}{{ field.text|t }}{% endif %}
+          <p>
+              {% endif %}
+
+              {% if field.fields %}
+                  {% for childName, child in field.fields %}
+                      {%- if childName == 'value' -%}
+                          {% set childKey = '' %}
+                          {% set childName = itemName -%}
+                      {%- elseif childName starts with '.' -%}
+                          {% set childKey = childName|trim('.') %}
+                          {% set childName = itemName ~ childName %}
+                      {% else %}
+                          {% set childKey = childName %}
+                          {% set childName = childName|replace({'*': key}) %}
+                      {% endif %}
+                      {% set child = child|merge({ name: childName }) %}
+
+                      {% if child.type == 'key' %}
+                          {%
+                              include 'forms/fields/key/key.html.twig'
+                              with { field: child, value: key }
+                          %}
+                      {% elseif child.key == true %}
+                          {% include [
+                              "forms/fields/#{child.type}/#{child.type}.html.twig",
+                              'forms/fields/key/key.html.twig'
+                              ] with { field: child, value: key }
+                          %}
+                      {% elseif child.type %}
+                          {% set originalValue = data.value(child.name) %}
+                          {%
+                              include [
+                              "forms/fields/#{child.type}/#{child.type}.html.twig",
+                              'forms/fields/text/text.html.twig'
+                              ] with { field: child, value: data.value(child.name) }
+                          %}
+                      {% endif %}
+                  {% endfor %}
+              {% endif %}
+              {% endblock %}
+      </div>
+    {% endblock %}
+  </div>
+{% endblock %}

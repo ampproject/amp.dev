@@ -1,0 +1,26 @@
+{% macro nav_loop(page) %}
+    {% for p in page.children.visible %}
+        {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
+        {% if p.children.visible.count > 0 %}
+            <li>
+                <a href="{{ p.url }}" class="{{ active_page }}">
+                    {{ p.menu }}
+                </a>
+                <ul>
+                    {{ _self.nav_loop(p) }}
+                </ul>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ p.url }}" class="{{ active_page }}">
+                    {{ p.menu }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+<ul {{ tree ? 'class="tree"' : '' }}>
+    {{ _self.nav_loop(pages) }}
+</ul>
+

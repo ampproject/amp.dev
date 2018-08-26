@@ -1,0 +1,6 @@
+{% if form.message %}
+    {% set icon_mapping = {'success':'checkmark', 'error':'wrong', 'warning':'information'} %}
+    {% set message = form.inline_errors and form.messages ? "FORM.VALIDATION_FAIL"|t : form.message %}
+
+    <div class="toast toast-{{ form.status }} mt-2 mb-2"><i class="icon dripicons-{{ icon_mapping[form.status] }}"></i> {{ message }}</div>
+{% endif %}

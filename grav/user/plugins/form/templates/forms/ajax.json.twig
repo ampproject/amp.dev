@@ -1,0 +1,5 @@
+{% if form_json_response %}
+{{ form_json_response|json_encode|raw }}
+{% else %}
+{}
+{% endif %}

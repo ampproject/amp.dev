@@ -1,0 +1,11 @@
+{% do assets.add('jquery',101) %}
+{% if authorize(['admin.login', 'admin.super']) %}
+{% do assets.addJs(theme_url~'/js/vendor.min.js', { 'loading':'defer' }) %}
+{% do assets.addJs(theme_url~'/js/admin.min.js' , { 'loading':'defer' }) %}
+
+{% if browser.getBrowser == 'msie' or browser.getBrowser == 'edge' %}
+    {% do assets.addJs(theme_url~'/js/form-attr.polyfill.js') %}
+{% endif %}
+
+{% include 'partials/javascripts-extra.html.twig' ignore missing %}
+{% endif %}

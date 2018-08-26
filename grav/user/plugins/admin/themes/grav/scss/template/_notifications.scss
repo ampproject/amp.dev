@@ -1,0 +1,114 @@
+.single-notification.alert {
+    position: relative;
+}
+
+.hide-notification {
+	right: 1rem;
+    position: absolute;
+}
+
+.alert.raw {
+    padding: 0 !important;
+}
+
+#admin-dashboard {
+    #notifications {
+        .admin-block {
+            padding: 1rem 0;
+        }
+
+        li {
+            white-space: nowrap;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.dashboard-notifications-container, .plugins-notifications-container, .themes-notifications-container {
+
+    margin: 2rem 0 2rem 0;
+
+    .raw {
+        position: relative;
+
+        .hide-notification {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            line-height: 1;
+            font-size: 1.2rem;
+            color: #333;
+            text-shadow:
+                -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff;
+        }
+    }
+
+    &:empty {
+        margin: 0;
+    }
+}
+
+#admin-main {
+    .content-padding {
+
+        div[class*=notifications-container] .alert {
+            a:hover {
+                text-decoration: underline;
+            }
+
+            a.button, span.button, button.button {
+                float: right;
+                text-decoration: none;
+            }
+
+        }
+
+
+
+        .top-notifications-container {
+
+            .alert {
+                a {
+                    cursor: pointer;
+                }
+            }
+
+            @include breakpoint(mobile-only) {
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    #notifications {
+        td:last-child {
+            position: relative;
+            span {
+                position: absolute;
+                display: block;
+                right: 2rem;
+                top: 6px;
+            }
+        }
+        .badge.alert {
+            margin: 0;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-right: 5px;
+            border-radius: 4px;
+            vertical-align: middle;
+            line-height: 1.7;
+
+            i {
+                margin-right: 3px;
+            }
+        }
+    }
+}
+
+
+
