@@ -34,16 +34,18 @@ frontend/templates
 frontend/partials
 frontend/views
 frontend/macros
+grav/user/themes/amp-dev/templates
 
 # Ignore static files as they will either be built or gathered by gulp
 frontend/static/static/css
 
 # Ignore folders that are dynamically used by Grav CMS
-grav/logs
-grav/images
-grav/assets
-grav/backup
-grav/cache
+grav/logs/**/*
+grav/tmp/**/*
+grav/images/**/*
+grav/assets/**/*
+grav/backup/**/*
+grav/cache/**/*
 
 # But make sure to take .gitkeep files
-!.gitkeep
+!**/.gitkeep
