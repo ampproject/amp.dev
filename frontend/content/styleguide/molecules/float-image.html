@@ -8,36 +8,21 @@ components:
 - name: amp-fx-collection
   src: https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js
 copies:
-- headline: Headline Three
+- headline: Placeholder copy text
 ---
-<div class="ad-o-container col-6-5">
-	<div class="ad-m-shift-image">
-		{{atoms.image(['shadow-static', 'static-image'], src="../../../static/img/amp-img-01.png")}}
-	</div>
+<div class="ad-o-container col-6-4">
   {% for copy in doc.copies %}
-  <div class="ad-m-copy-wrapper">
-    <h3 class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</h3>
-		<p class="ad-a-txt ad-a-txt-3">{{ lipsum(n=1, html=False) }}</p>
-  </div>
+  <h3 class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</h3>
+	<p class="ad-a-txt ad-a-txt-3">{{ lipsum(n=4, html=False) }}</p>
   {% endfor %}
-	<div class="ad-m-shift-image">
-		{{atoms.image(['shadow-static', 'parallax'], src="../../../static/img/amp-img-03.png", type="parallax")}}
-		{{atoms.image([''], src="../../../static/img/amp-img-02.png")}}
+  <div class="ad-m-float-image">
+    {{atoms.image(['static'], src='../../../static/img/amp-img-02.png', layout='fill', width='', height='', alt='Alt of static image.')}}
+		{{atoms.image(['shadow-static', 'parallax'], src='../../../static/img/amp-img-03.png', layout='fill', alt='Alt for floating image.', type='parallax')}}
 	</div>
+</div>
+<div class="ad-o-container col-6-4">
 	{% for copy in doc.copies %}
-  <div class="ad-m-copy-wrapper">
-    <h3 class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</h3>
-		<p class="ad-a-txt ad-a-txt-3">{{ lipsum(n=1, html=False) }}</p>
-  </div>
-  {% endfor %}
-	<div class="ad-m-shift-image">
-		{{atoms.image(['shadow-static', 'parallax'], src="../../../static/img/amp-img-03.png", type="parallax")}}
-		{{atoms.image([''], src="../../../static/img/amp-img-02.png")}}
-	</div>
-	{% for copy in doc.copies %}
-  <div class="ad-m-copy-wrapper">
-    <h3 class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</h3>
-		<p class="ad-a-txt ad-a-txt-3">{{ lipsum(n=1, html=False) }}</p>
-  </div>
+  <h3 class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</h3>
+	<p class="ad-a-txt ad-a-txt-3">{{ lipsum(n=4, html=False) }}</p>
   {% endfor %}
 </div>

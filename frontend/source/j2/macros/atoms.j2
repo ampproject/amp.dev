@@ -6,16 +6,20 @@
 	</div>
 {%- endmacro %}
 
-{% macro image(modifiers, src='../../../static/img/amp-img-01.png', type='static') -%}
-  	<div
-      class="ad-a-img {% for modifier in modifiers %}ad-a-img-{{ modifier }} {% endfor %}"
-      {% if type == 'parallax' %}
+{% macro image(modifiers, src='../../../static/img/amp-img-01.png', layout='responsive', width='300', height='300', alt='Image', type='static') -%}
+	<div
+    class="ad-a-img {% for modifier in modifiers %}ad-a-img-{{ modifier }} {% endfor %}"
+    {% if type == 'parallax' %}
       amp-fx="parallax"
 		  data-parallax-factor="1.1"
-    {% endif %}>
-		  <amp-img src={{src}}
-		  	layout="fill"
-		  	alt="AMP">
-		  </amp-img>
+  	{% endif %}
+	>
+	  <amp-img
+			src={{src}}
+	  	layout="{{layout}}"
+			width="{{width}}"
+			height="{{height}}"
+	  	alt="{{alt}}">
+		</amp-img>
 	</div>
 {%- endmacro %}
