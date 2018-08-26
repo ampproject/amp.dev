@@ -1,7 +1,0 @@
-$title@: Reference
-$path: /docs/reference/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/reference/{base}.html
-build_root: true
-index_path: /content/reference/reference.md

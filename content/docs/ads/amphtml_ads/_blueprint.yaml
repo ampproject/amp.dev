@@ -1,5 +1,0 @@
-$view: /views/doc.html
-$path: /docs/ads/{base}.html
-$localization:
-  path: /{locale}/docs/ads/{base}.html
-$title@: AMPHTML ads

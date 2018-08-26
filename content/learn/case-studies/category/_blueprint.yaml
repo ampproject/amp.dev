@@ -1,5 +1,0 @@
-$title@: Case Studies
-$path: /case-studies/{base}/
-$view: /views/about-casestudies.html
-$localization:
-  path: /{locale}/case-studies/{base}/

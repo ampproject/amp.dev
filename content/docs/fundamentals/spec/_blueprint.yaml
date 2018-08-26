@@ -1,5 +1,0 @@
-$view: /views/doc.html
-$path: /docs/fundamentals/spec/{base}.html
-$localization:
-  path: /{locale}/docs/fundamentals/spec/{base}.html
-$title@: AMP HTML Specification

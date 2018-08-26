@@ -1,6 +1,0 @@
-$title@: Multimedia & animations
-$view: /views/doc.html
-$path: /docs/media/{base}.html
-$localization:
-  path: /{locale}/docs/media/{base}.html
-index_path: /content/docs/media.md

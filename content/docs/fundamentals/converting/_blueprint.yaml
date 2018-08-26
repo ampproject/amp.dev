@@ -1,5 +1,0 @@
-$path: /docs/fundamentals/converting/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/fundamentals/converting/{base}.html
-$title@: Convert HTML to AMP

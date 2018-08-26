@@ -1,6 +1,0 @@
-$title@: Analytics
-$view: /views/doc.html
-$path: /docs/analytics/{base}.html
-$localization:
-  path: /{locale}/docs/analytics/{base}.html
-index_path: /content/docs/analytics.md
