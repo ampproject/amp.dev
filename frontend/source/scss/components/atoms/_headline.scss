@@ -29,12 +29,13 @@ light
 // TODO: implement mono font and modifier
 
 .#{atom('hl')} {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0.75em;
   font-family: 'Poppins';
   font-weight: bold;
   line-height: 1.2em;
   color: color('black');
-  margin-top: 0;
-  margin-bottom: 0.75em;
 
   &-h1 {
     font-size: 3em;
