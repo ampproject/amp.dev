@@ -3,20 +3,32 @@ $view: /views/styleguide/component.j2
 $title: Event
 
 events:
-- headline: Event Details
-  date: 11th July, 2018 Wednesday, 9am-5pm
-  address: Google Building 500 500 W 2nd St, Austin, TX 78701, USA
+- city: Austin, TX
+  year: 2018
+  month: Jul
+  day: 11
+  location: Google Building
+  registration: 08/01/18 12:00
 ---
 {% for event in doc.events %}
-	<div class="ad-m-event col-2-6">
-		<h2 class="ad-a-hl ad-a-hl-h3">{{ event.headline }}</h2>
-		<div class="ad-m-event-content">
-			{{ atoms.icon('time', size=2) }}
-			<p class="ad-a-txt ad-a-txt-4">{{ event.date }}</p>
+	<div class="ad-m-event col-3-5">
+		<div class="ad-m-event-date">
+			<span class="ad-a-hl ad-a-hl-h5 ad-a-hl-silver ad-m-event-header">{{ event.year }}</span>
+			<span class="ad-a-hl ad-a-hl-h5">{{ event.month }}</span>
+			<span class="ad-a-hl ad-a-hl-h5">{{ event.day }}</span>
 		</div>
 		<div class="ad-m-event-content">
-			{{ atoms.icon('map', size=2) }}
-			<p class="ad-a-txt ad-a-txt-4">{{ event.address }}</p>
+			<span class="ad-a-hl ad-a-hl-h5 ad-m-event-header">{{ event.city }}</span>
+			<ul class="ad-m-event-detail-list" aria-labelledby="Details about the event">
+				<li class="ad-m-event-detail">
+					{{ atoms.icon('map', size=1) }}
+					<span class="ad-a-txt ad-a-txt-2">{{ event.location }}</span>
+				</li>
+				<li class="ad-m-event-detail">
+					{{ atoms.icon('time', size=1) }}
+					<span class="ad-a-txt ad-a-txt-2">Register by: {{ event.registration }}</span>
+				</li>
+			</ul>
 		</div>
 	</div>
 {% endfor %}
