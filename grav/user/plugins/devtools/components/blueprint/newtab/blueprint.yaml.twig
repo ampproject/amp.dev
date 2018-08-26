@@ -1,0 +1,15 @@
+title: Item
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        blog:
+          type: tab
+          title: {{ component.bpname }}
+          
+          fields:
+            header.mytextfield:
