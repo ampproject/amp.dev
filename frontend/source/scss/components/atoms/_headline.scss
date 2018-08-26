@@ -25,7 +25,6 @@ light
   Changes the text color to light (default is dark).
 
 */
-
 // TODO: implement mono font and modifier
 
 .#{atom('hl')} {
@@ -34,7 +33,7 @@ light
   margin-bottom: 0.75em;
   font-family: 'Poppins';
   font-weight: bold;
-  line-height: 1.2em;
+  line-height: 1.25em;
   color: color('black');
 
   &-h1 {
@@ -59,6 +58,23 @@ light
     @media screen and (min-width: 768px) {
       font-size: 1.75em;
     }
+  }
+
+  &-h4 {
+    font-size: 1em;
+  }
+
+  &-h5 {
+    font-size: 0.875em;
+  }
+
+  &-silver {
+    color: color('silver');
+    font-size: 0.625em;
+  }
+
+  &-blue-ribbon {
+    color: color('blue-ribbon');
   }
 
   &-h4 {

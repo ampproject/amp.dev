@@ -40,6 +40,11 @@ shadow-static
 		}
 	}
 
+	&-circle {
+		overflow: hidden;
+		border-radius: 50%;
+	}
+
 	&-shadow-static amp-img {
 		@include drop-shadow;
 	}
