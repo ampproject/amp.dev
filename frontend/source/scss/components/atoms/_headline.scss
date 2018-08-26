@@ -48,7 +48,15 @@ light
 
     &-h4 {
       font-size: 1em;
-    }
+		}
+
+		&-h5 {
+			font-size: 0.625em;
+		}
+
+		&-blue-ribbon {
+			color: color('blue-ribbon');
+		}
 
     &-light {
       color: color('white');

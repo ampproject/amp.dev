@@ -1,0 +1,20 @@
+.#{molecule('news')} {
+	padding: 25px 20px 20px;
+
+	& .ad-a-hl {
+		margin: 0;
+		display: block;
+	}
+
+	& .ad-a-hl-h4 {
+		padding-bottom: 20px;
+	}
+
+	& .ad-m-lnk {
+		margin: 0;
+	}
+
+	&-shadow {
+		@include box-shadow;
+	}
+}
