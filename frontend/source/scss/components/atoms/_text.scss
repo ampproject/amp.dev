@@ -29,35 +29,62 @@ TODO: mono (inline, block)
 */
 
 .#{atom('txt')} {
-	font-family: Noto Sans;
+	font-family: 'Noto Sans';
 	line-height: 1.6em;
 	font-weight: normal;
 	color: color('river-bed');
 	margin: 0;
 
-	&-#{map-get($sizes, xs)} {
-		font-size: 0.625em;
+	&-1 {
+		font-size: 1em;
+
+		@media screen and (min-width: 768px) {
+			font-size: 1.25em;
+		}
 	}
 
-	&-#{map-get($sizes, sm)} {
+	&-2 {
+		font-size: 0.875em;
+
+		@media screen and (min-width: 768px) {
+			font-size: 1em;
+		}
+	}
+
+	&-3 {
 		font-size: 0.75em;
 	}
 
-	&-#{map-get($sizes, md)} {
-		font-size: 0.875em;
-	}
-
-	&-#{map-get($sizes, lg)} {
+	&-accent-1 {
 		font-size: 1em;
 	}
 
-	&-#{map-get($sizes, xl)} {}
+	&-accent-2 {
+		font-size: 0.875em;
+	}
 
-	&-p {}
+	&-accent-3 {
+		font-size: 0.625em;
+	}
 
-	&-mono-inline {}
+	&-p {
+		display: block;
+	}
 
-	&-mono-block {}
+	&-mono-inline {
+		display: inline-block;
+		padding: 0 4px;
+		font-weight: bold;
+		font-family: monospace;
+		color: color('black');
+		background-color: #eee;
+	}
+
+	&-mono-block {
+		display: block;
+		font-family: monospace;
+		background-color: color('whisper');
+	}
 
 	&-strong {
 		font-weight: bold;
@@ -67,13 +94,13 @@ TODO: mono (inline, block)
 		color: color('black');
 	}
 
-		&-blue-ribbon {
-			color: color('blue-ribbon');
-    }
+	&-blue-ribbon {
+		color: color('blue-ribbon');
+	}
 
-    &-light {
-      color: color('white');
-    }
+	&-light {
+		color: color('white');
+	}
 
 	&-teaser-sm {
 		opacity: 0.5;

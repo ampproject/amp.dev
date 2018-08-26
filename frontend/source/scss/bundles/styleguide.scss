@@ -42,6 +42,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+	font-weight: bold;
+	text-decoration: none;
+	color: color('blue-ribbon');
+}
+
 .styleguide {
 
   &__header {

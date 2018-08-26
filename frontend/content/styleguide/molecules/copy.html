@@ -1,16 +1,26 @@
 ---
 $view: /views/styleguide/component.j2
 $title: Copy
-
-copies:
-- headline: Headline Three
 ---
 
-<div class="ad-o-container col-4-5">
-  {% for copy in doc.copies %}
-  <div class="ad-m-copy-wrapper">
-    <span class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</span>
-		<p class="ad-a-txt ad-a-txt-3">{{ lipsum(n=4, html=False) }}</p>
+<div class="ad-o-container col-6-4">
+  <div class="ad-m-copy">
+    <h2 class="ad-a-hl ad-a-hl-h2">Section Big Headline</h2>
+    <p class="ad-a-txt ad-a-txt-p ad-a-txt-1">{{ lipsum(n=1, html=False) }}</p>
   </div>
-  {% endfor %}
+</div>
+
+<div class="ad-o-container col-6-4">
+  <div class="ad-m-copy">
+    <h3 class="ad-a-hl ad-a-hl-h3">Headline ipsum</h3>
+    <p class="ad-a-txt ad-a-txt-p ad-a-txt-2">{{ lipsum(n=1, html=False) }}</p>
+  </div>
+</div>
+
+<div class="ad-o-container col-6-4">
+  <div class="ad-m-copy">
+    <p class="ad-a-txt ad-a-txt-p ad-a-txt-2">
+      <span class="ad-a-txt ad-a-txt-mono-inline">amp-accordion</span> adds the expanded attribute to any expanded element. You can use <a href="#">Hyperlinks selectors</a> to style an accordion section based on whether it's expanded or collapsed. Use <span class="ad-a-txt ad-a-txt-mono-inline">section[expanded]</span> to style the expanded <span class="ad-a-txt ad-a-txt-mono-inline"><a href="#">hyperlink inline code</a></span> to style the collapsed state.
+    </p>
+  </div>
 </div>
