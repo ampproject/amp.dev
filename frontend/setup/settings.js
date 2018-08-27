@@ -8,15 +8,15 @@ const settings = {
     'styles': {
         'src': 'source/scss/bundles/*.scss',
         'dest': [
-            './static/static/css/',
+            '../grav/user/themes/amp-dev/css',
         ],
         'options': {
             'outputStyle': 'compact'
         }
     },
     'templates': {
-      'src': 'source/j2/**/*.j2',
-      'dest': './'
+      'src': 'source/twig/**/*.twig',
+      'dest': '../grav/user/themes/amp-dev/templates'
     },
     'icons': {
       'src': 'source/svg/icons/**/*.svg',
