@@ -15,7 +15,7 @@ gulp.task('default', gulp.series(templates, icons, styles));
 
 // Use develop to watch files and automatically run corresponding tasks
 gulp.task('develop', gulp.series(templates, icons, styles, function watch() {
-  gulp.watch('source/j2/**/*', templates);
+  gulp.watch('source/twig/**/*', templates);
   gulp.watch('source/svg/**/*', icons);
   gulp.watch('source/scss/**/*', styles);
 
