@@ -1,3 +1,28 @@
+/*
+
+######################
+### MOLECULE: benefit ###
+######################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-benefit col-2-6">
+	{{ atoms.icon('lego', size=3) }}
+	<span class="ad-a-hl ad-a-hl-h3">Ready to use</span>
+	<p class="ad-a-txt ad-a-txt-2">{{ lipsum(n=1, html=False) }}</p>
+</div>
+
+### INFO:
+
+The copy molecule is a combination of icon and text atom.
+The Icon atom size should be 3 (medium) and the txt size should be 2 (small).
+
+### MODIFIERS:
+
+none
+
+*/
+
 .#{molecule('benefit')} {
 	display: flex;
 	flex-direction: column;
