@@ -35,6 +35,7 @@ frontend/partials
 frontend/views
 frontend/macros
 grav/user/themes/amp-dev/templates
+grav/user/themes/amp-dev/css
 
 # Ignore static files as they will either be built or gathered by gulp
 frontend/static/static/css
