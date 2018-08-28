@@ -28,17 +28,13 @@ Please refer to mixins.scss to see gradients.
 */
 
 .#{molecule('kpi')} {
-	height: 170px;
-	width: auto;
-	@include box-shadow;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
+	min-width: 170px;
 	padding: 1.5em;
+	margin: 1em;
+	@include box-shadow;
 
 	@media screen and (min-width: 768px){
 		width: 190px;
-		height: auto;
 	}
 
 	.ad-a-txt {
@@ -58,3 +54,4 @@ Please refer to mixins.scss to see gradients.
 		@include river-ebony;
 	}
 }
+
