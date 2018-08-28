@@ -2,12 +2,13 @@
 namespace Grav\Theme\AmpDev;
 
 use Grav\Common\Grav;
-use Grav\Common\Assets;
 use Grav\Common\Uri;
 use Grav\Common\Utils;
 
-class AmpAssets extends Assets
+class Assets extends \Grav\Common\Assets
 {
+
+  const AMP_COMPONENTS_PLACEHOLDER = '{!AmpDev/AmpComponents!}';
 
   const AMP_COMPONENT_PREFIX = 'amp-';
 
@@ -69,16 +70,24 @@ class AmpAssets extends Assets
   /**
    * Similiar to js() though it only takes care of components registered in
    * $this->amp_components and leaves everything in $js untouched.
+   *
+   * Additionally this method is lazily evaluated on the onOutputGenerated
+   * event to be able to add further dependencies on runtime
    * @return string <script> elements for all registered amp components
    */
-  public function ampComponents() {
-    $output = '';
+  public function ampComponents($lazy = true) {
+    if ($lazy) {
+      return self::AMP_COMPONENTS_PLACEHOLDER;
+    } else {
+      $output = Grav::instance()->output;
+      $scripts = '';
 
-    foreach ($this->amp_components as $component) {
-      $output .= '<script src="'.$component['url'].'" '.$component['type'].'="'.$component['name'].'"></script>';
+      foreach ($this->amp_components as $component) {
+        $scripts .= '<script src="'.$component['url'].'" '.$component['type'].'="'.$component['name'].'"></script>';
+      }
+
+      return str_replace(self::AMP_COMPONENTS_PLACEHOLDER, $scripts, $output);
     }
-
-    return $output;
   }
 
 }

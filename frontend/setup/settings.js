@@ -20,7 +20,7 @@ const settings = {
     },
     'icons': {
       'src': 'source/svg/icons/**/*.svg',
-      'dest': './partials/icons/'
+      'dest': '../grav/user/themes/amp-dev/icons'
     }
 };
 

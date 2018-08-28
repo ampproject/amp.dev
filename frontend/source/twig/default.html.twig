@@ -1,5 +1,41 @@
-{% extends 'layouts/default.html.twig' %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>
+      {% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}
+    </title>
 
-{% block content %}
-    {{ page.content }}
-{% endblock %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css/styleguide.css', {'loading': 'inline'}) %}
+    {% endblock %}
+    {{ assets.ampCustomCss() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('https://cdn.ampproject.org/v0.js', {'loading': 'async'}) %}
+        {% do assets.addAmpComponent('amp-sidebar') %}
+    {% endblock %}
+    {{ assets.js() }}
+    {{ assets.ampComponents() }}
+
+
+    {% block icons %}
+    {% endblock icons %}
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      {{ icons.definitions() }}
+    </svg>
+{% endblock head %}
+</head>
+
+<body>
+{% block body %}
+{{ page.content }}
+{% endblock body %}
+</body>
