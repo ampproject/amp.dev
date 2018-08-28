@@ -58,7 +58,7 @@ kpis:
 ---
 
 {% for kpi in doc.kpis %}
-	<ul class="ad-o-list ad-o-list-scroll col-5-4" aria-labelledby="KPI list">
+	<ul class="ad-o-list ad-o-list-scroll col-6-4" aria-labelledby="KPI list">
 	{% for item in kpi['items'] %}
 			<li class="ad-m-kpi ad-m-kpi-{{ item.type }}" aria-labelledby="KPI item">
 				{{ atoms.icon( item.icon , size=2, fill="white") }}
