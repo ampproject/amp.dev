@@ -7,9 +7,7 @@ Al igual que el resto de las páginas web, las páginas AMP extraen su estilo de
 
 Todos los estilos deben encontrarse en el encabezado del documento (consulta [Agregar estilos a una página](/es/docs/design/responsive_amp.html#add-styles-to-a-page)). Pero puedes utilizar preprocesadores CSS y plantillas para crear páginas estáticas y así mejorar la gestión del contenido.
 
-{% call callout('Nota', type='note') %}
-Los componentes de AMP incluyen estilos predeterminados para facilitar en gran medida la creación de páginas adaptables. Estos estilos están definidos en el atributo [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
-{% endcall %}
+Nota: Los componentes de AMP incluyen estilos predeterminados para facilitar en gran medida la creación de páginas adaptables. Estos estilos están definidos en el atributo [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
 ## Estilos no permitidos
 
@@ -69,17 +67,15 @@ Los siguientes estilos están permitidos, pero están restringidos en lo que res
 
 Las páginas AMP no pueden incluir hojas de estilo externas, salvo en el caso de las fuentes personalizadas.
 
-{% call callout('Más artículos', type='success') %}
-Consulta más información [sobre las fuentes personalizadas en AMP](/es/docs/design/responsive/custom_fonts.html).
-{% endcall %}
+Más artículos: Consulta más información [sobre las fuentes personalizadas en AMP](/es/docs/design/responsive/custom_fonts.html).
 
 ## Usar preprocesadores CSS
 
-El resultado generado de los preprocesadores funciona tan bien en AMP como en cualquier otra página web. Por ejemplo, el sitio web [ampproject.org](https://www.ampproject.org/) 
+El resultado generado de los preprocesadores funciona tan bien en AMP como en cualquier otra página web. Por ejemplo, el sitio web [ampproject.org](https://www.ampproject.org/)
 emplea [Sass](http://sass-lang.com/). Nosotros utilizamos [Grow](http://grow.io/) para crear las páginas AMP estáticas que conforman el sitio web [ampproject.org](https://www.ampproject.org/).
 
 
-Cuando utilices preprocesadores, presta especial atención a los elementos que incluyes. Debes cargar solo lo que utilicen tus páginas. Por ejemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) 
+Cuando utilices preprocesadores, presta especial atención a los elementos que incluyes. Debes cargar solo lo que utilicen tus páginas. Por ejemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`](/es/docs/reference/extended/amp-youtube.html), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.
 
 [sourcecode:html]{% raw %}

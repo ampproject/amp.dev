@@ -19,7 +19,7 @@ Hagamos uso de la capacidad de obtener datos remotos para buscar precios de SKUs
 
 |  Solicitud                            | Respuesta |
 |---------------------------------------|-----------|
-| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |  
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 De forma similar a los datos JSON dentro de los elementos `<amp-state>`, los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo id del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
 
@@ -106,15 +106,15 @@ Y, debemos actualizar el estado predeterminado de los elementos relevantes:
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
         <div option="M">M</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
         <div option="L">L</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
         <div option="XL">XL</div>
       </td>
@@ -123,9 +123,7 @@ Y, debemos actualizar el estado predeterminado de los elementos relevantes:
 </amp-selector>
 ```
 
-{% call callout('Nota', type='note') %}
-`<amp-bind>` no se ejecuta en carga de página, -- solo en respuesta a una acción explícita del usuario. Esto asegura que la carga inicial de la página sea consistentemente rápida entre las páginas independientemente del uso de `<amp-bind>`.
-{% endcall %}
+Nota: `<amp-bind>` no se ejecuta en carga de página, -- solo en respuesta a una acción explícita del usuario. Esto asegura que la carga inicial de la página sea consistentemente rápida entre las páginas independientemente del uso de `<amp-bind>`.
 
 ## Precios variables
 
@@ -136,15 +134,13 @@ Nuestra tienda de AMPPAREL es peculiar en que el precio de la camisa es específ
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size" 
+<amp-selector name="size"
     on="select:AMP.setState({selectedSize: event.targetOption})">
 ```
 
 Tenga en cuenta que no estamos inicializando el valor de `selectedSize` a través del elemento `amp-state#selected`. Eso es porque intencionalmente no proporcionamos un tamaño seleccionado por defecto y en lugar de eso queremos obligar al usuario a elegir un tamaño.
 
-{% call callout('Tip', type='success') %}
-`AMP.setState()` se puede utilizar para definir nuevas variables además de modificar las existentes. Las expresiones evaluarán las variables indefinidas a `null`.
-{% endcall %}
+Tip: `AMP.setState()` se puede utilizar para definir nuevas variables además de modificar las existentes. Las expresiones evaluarán las variables indefinidas a `null`.
 
 Añada un nuevo elemento `<span>` que enrolle la etiqueta de precio y cambie el texto predeterminado a "---" ya que no hay una selección de tamaño predeterminada.
 

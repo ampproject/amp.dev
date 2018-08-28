@@ -17,15 +17,13 @@ Dalam contoh sederhana ini, `srcset` menentukan gambar yang akan digunakan berda
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Catatan', type='note') %}
+Catatan: AMP mendukung srcset dengan deskriptor `w` di semua browser.
 
-AMP mendukung srcset dengan deskriptor `w` di semua browser. {% endcall %}
-
- Pelajari lebih lanjut cara membuat gambar responsif menggunakan `srcset` di [Menggunakan Gambar Responsif (Sekarang)](http://alistapart.com/article/using-responsive-images-now).
+Pelajari lebih lanjut cara membuat gambar responsif menggunakan `srcset` di [Menggunakan Gambar Responsif (Sekarang)](http://alistapart.com/article/using-responsive-images-now).
 
 ## sizes
 
@@ -41,17 +39,14 @@ Pertimbangkan contoh berikut:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 
 Atribut `sizes` menentukan lebar elemen menjadi 50% dari ukuran viewport jika viewport berukuran 650px atau lebih. Contoh, jika viewport berukuran 800px, lebar elemen disetel menjadi 400px. Kemudian, browser akan memilih sumber daya `srcset` yang relatif dengan 400px, dengan asumsi rasio piksel perangkat adalah 1, yang dalam kasus ini adalah `narrow.jpg` (320px).
 
-{% call callout('Penting', type='caution') %}
-
-Jika atribut sizes ditetapkan beserta lebar dan tinggi, setelan default tata letak diatur menjadi `responsive`. {% endcall %}
-
+Penting: Jika atribut sizes ditetapkan beserta lebar dan tinggi, setelan default tata letak diatur menjadi `responsive`.
 
 Pelajari lebih lanjut cara atribut `sizes` dan `srcset` dibandingkan dengan kueri media dalam entri blog [Srcset dan sizes](https://ericportis.com/posts/2014/srcset-sizes/) ini.
 
@@ -74,7 +69,7 @@ Contoh:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 

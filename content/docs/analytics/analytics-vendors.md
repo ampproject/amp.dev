@@ -32,13 +32,9 @@ In the following example, we send pageview data to [Google Analytics](#google-an
 </amp-analytics>
 ```
 
-{% call callout('Tip', type='success') %}
-If you're comfortable digging through code, you can explore the raw configurations in the [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) file.
-{% endcall %}
+Tip: If you're comfortable digging through code, you can explore the raw configurations in the [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) file.
 
-{% call callout('Note', type='note') %}
-Vendors that wish to integrate their service with [`<amp-analytics>`](/docs/reference/components/amp-analytics.html) should refer to the details in [Integrate your analytics tools with AMP](/docs/analytics/integrating-analytics.html).
-{% endcall %}
+Note: Vendors that wish to integrate their service with [`<amp-analytics>`](/docs/reference/components/amp-analytics.html) should refer to the details in [Integrate your analytics tools with AMP](/docs/analytics/integrating-analytics.html).
 
 <hr>
 
@@ -250,9 +246,8 @@ In the `requests` section:
 
 - `url`: HTTPS location of `amp-analytics-oewa.html`
 
-{% call callout('Note', type='note') %}
-There is a variation named `oewadirect` that does not use the iframe-ping solution and has a better client detection by using `AMP CLIENT_ID`.  This is currently EXPERIMENTAL, and prohibited by the OEWA because it does not use `oewa2.js`.
-{% endcall %}
+
+Note: There is a variation named `oewadirect` that does not use the iframe-ping solution and has a better client detection by using `AMP CLIENT_ID`.  This is currently EXPERIMENTAL, and prohibited by the OEWA because it does not use `oewa2.js`.
 
 ### Parsely
 

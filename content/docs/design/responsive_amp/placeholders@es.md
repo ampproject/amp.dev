@@ -13,8 +13,8 @@ Algunos elementos incluso le recompensarán por hacerlo limitando las restriccio
 
 ## Placeholders
 
-El elemento marcado con el atributo `placeholder` actúa 
-como marcador de posición para el elemento AMP principal. 
+El elemento marcado con el atributo `placeholder` actúa
+como marcador de posición para el elemento AMP principal.
 Si se especifica, un elemento `placeholder` debe ser un elemento secundario directo del elemento AMP.
 El elemento marcado como `placeholder` siempre será `fill` para el elemento AMP principal.
 
@@ -26,7 +26,7 @@ El elemento marcado como `placeholder` siempre será `fill` para el elemento AMP
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -35,17 +35,14 @@ Por defecto, el placeholder se muestra inmediatamente para el elemento AMP,
 incluso si no se han descargado o inicializado los recursos del elemento AMP.
 Una vez listo, el elemento AMP normalmente oculta su placeholder (o marcador de posición) y muestra el contenido.
 
-{% call callout('Nota', type='note') %}
-El placeholder no tiene que ser un elemento AMP; 
-cualquier elemento HTML puede actuar como marcador de posición.
-{% endcall %}
+Nota: El placeholder no tiene que ser un elemento AMP; cualquier elemento HTML puede actuar como marcador de posición.
 
 ## Fallbacks
 
 Utiliza el atributo  `fallback` para indicar el comportamiento de respaldo
 de cualquier elemento que no sea compatible con el navegador, o si hay una falla al cargar el contenido (ej. un tweet borrado).
 
-Por ejemplo, utiliza el atributo `fallback` para comunicar al usuario 
+Por ejemplo, utiliza el atributo `fallback` para comunicar al usuario
 que el navegador no es compatible con una característica concreta:
 
 <!--embedded video example  -->
@@ -56,17 +53,17 @@ que el navegador no es compatible con una característica concreta:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-El atributo `fallback` se puede establecer en cualquier elemento HTML, no solo en los elementos AMP. 
+El atributo `fallback` se puede establecer en cualquier elemento HTML, no solo en los elementos AMP.
 Si se especifica, el elemento `fallback` debe ser un elemento secundario directo del elemento AMP.
 
 ## Interacción de placeholders y fallbacks
 
 Para los componentes AMP que obedecen a contenido dinámico (por ejemplo, `amp-twitter`, `amp-list`), la interacción de fallbacks y placeholders opera de la siguiente manera:
- 
+
 <ol>
   <li>Muestra el placeholder mientras el contenido está cargando.</li>
   <li>Si el contenido carga exitosamente, oculta el placeholder y muestra el contenido.</li>
@@ -80,6 +77,6 @@ Para los componentes AMP que obedecen a contenido dinámico (por ejemplo, `amp-t
 
 ## Ocultar indicadores de carga
 
-Muchos elementos AMP están incluidos en la lista blanca para mostrar un "indicador de carga", 
-que es una animación básica que muestra que el elemento aún no se ha cargado completamente. 
+Muchos elementos AMP están incluidos en la lista blanca para mostrar un "indicador de carga",
+que es una animación básica que muestra que el elemento aún no se ha cargado completamente.
 Los elementos pueden excluirse de este comportamiento añadiendo el atributo `noloading`.

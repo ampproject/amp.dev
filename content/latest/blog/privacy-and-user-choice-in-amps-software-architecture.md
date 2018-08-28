@@ -3,12 +3,12 @@ class: post-blog post-detail
 type: Blog
 $title: "Privacy and user choice in AMP’s software architecture"
 id: privacy-and-user-choice-in-amps-software-architecture
-author: <a href="https://twitter.com/cramforce">Malte Ubl</a>
+author: Malte Ubl
 role:  Tech Lead of the AMP Project.
 origin: "https://amphtml.wordpress.com/2018/07/23/privacy-and-user-choice-in-amps-software-architecture/amp/"
 excerpt: "Early choices in designing the AMP HTML JavaScript library have made it uniquely suited for publishers to implement effective privacy controls for users. In web pages, resource requests and browser storage access that may have privacy impact can be initiated through a multitude of mechanisms, many of which are often controlled by third parties. This [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-07-23T10:36:25-07:00
+date_data: 2018-07-23T17:36:25+00:00
 $date: July 23, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

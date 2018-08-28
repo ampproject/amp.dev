@@ -56,7 +56,7 @@ I tag che seguono devono essere presenti in tutti i documenti AMP:
 * <a name="body"></a>`<body>`
 
 
-Questi tag obbligatori includono un campo `mandatory: true` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii); vengono inoltre citati nella [specifica AMP](/docs/reference/spec.html).
+Questi tag obbligatori includono un campo `mandatory: true` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii); vengono inoltre citati nella [specifica AMP](/docs/fundamentals/spec.html).
 
 ### Tag richiesto da un altro tag mancante
 
@@ -97,7 +97,7 @@ Per correggere questi errori visita la pagina di riferimento del componente este
   </tr>
 </table>
 
-Esiste una whitelist dei tag, ma non esiste un elenco definitivo di tutti i tag non consentiti; tuttavia, la [specifica AMP](/docs/reference/spec.html) definisce un insieme approssimativo dei tag non consentiti.
+Esiste una whitelist dei tag, ma non esiste un elenco definitivo di tutti i tag non consentiti; tuttavia, la [specifica AMP](/docs/fundamentals/spec.html) definisce un insieme approssimativo dei tag non consentiti.
 
 ### Attributo obbligatorio mancante
 
@@ -650,7 +650,7 @@ Se hai dubbi in merito alla causa dell'errore, prova a eseguire CSS tramite uno 
   </tr>
 </table>
 
-Questo errore si riferisce alle regole at-rule in CSS, per cui AMP consente soltanto alcune regole (vedi anche la [specifica AMP](/docs/reference/spec.html)).
+Questo errore si riferisce alle regole at-rule in CSS, per cui AMP consente soltanto alcune regole (vedi anche la [specifica AMP](/docs/fundamentals/spec.html)).
 Ad esempio, la regola `@import` non è consentita.
 L'errore di convalida ti indica la regola esatta non valida, facilitandoti così la correzione.
 

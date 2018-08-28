@@ -43,9 +43,7 @@ El código se puede leer así:
 
 Funciona porque la biblioteca Shadow AMP, después de cargarse, se da cuenta de que ya hay una matriz de devoluciones de llamada en `window.AMP`, y procesa toda la cola. Si ejecutas la misma función más tarde, seguirá funcionando porque `window.AMP` se sustituye por Shadow AMP y por un método `push` personalizado que sencillamente activa la devolución de llamada al momento.
 
-{% call callout('Nota', type='success') %}
-Para que el código de ejemplo sea viable, te recomendamos que lo incluyas en un objeto Promise. De este modo, puedes usar este objeto siempre que vayas a trabajar con la API de AMP. Consulta nuestro [código de muestra React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20).
-{% endcall %}
+Nota: Para que el código de ejemplo sea viable, te recomendamos que lo incluyas en un objeto Promise. De este modo, puedes usar este objeto siempre que vayas a trabajar con la API de AMP. Consulta nuestro [código de muestra React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20).
 
 ## Gestionar la navegación por una aplicación web progresiva
 
@@ -77,9 +75,7 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-{% call callout('Importante', type='caution') %}
-Para simplificar el código anterior, nos hemos saltado la corrección de errores. Asegúrate de detectar y corregir errores y, posteriormente, comprueba que no se hayan incluido nuevos.
-{% endcall %}
+Importante: Para simplificar el código anterior, nos hemos saltado la corrección de errores. Asegúrate de detectar y corregir errores y, posteriormente, comprueba que no se hayan incluido nuevos.
 
 Ahora que ya tenemos el objeto `Document` listo para usar, vamos a dejar que AMP tome el control y lo renderice. Consigue una referencia al elemento DOM que pueda usarse de contenedor del documento AMP y, a continuación, llama a `AMP.attachShadowDoc()` como se muestra a continuación:
 
@@ -97,9 +93,7 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-{% call callout('Nota', type='success') %}
-Antes de pasar el documento a AMP, hay que eliminar los elementos de página, como los encabezados o los pies de página, que solo tienen sentido si se muestra la página AMP de forma independiente, pero no si está insertada.
-{% endcall %}
+Nota: Antes de pasar el documento a AMP, hay que eliminar los elementos de página, como los encabezados o los pies de página, que solo tienen sentido si se muestra la página AMP de forma independiente, pero no si está insertada.
 
 ¡Y ya está! Tu página AMP se renderiza como un elemento secundario de tu aplicación web progresiva global.
 
@@ -128,5 +122,5 @@ También puedes consultar una muestra de páginas AMP y PWA con un framework Pol
 
 * Toma el código fuente de este enlace: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp).
 * Mira cómo funciona en esta página: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/).
- 
- 
+
+

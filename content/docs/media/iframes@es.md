@@ -7,10 +7,10 @@ Descubre cómo incluir contenido multimedia en tus páginas y cómo usar iframes
 
 ## Aspectos básicos
 
-Incluye un iframe en tu página usando el elemento 
+Incluye un iframe en tu página usando el elemento
 [`amp-iframe`](/es/docs/reference/components/amp-iframe.html).
 
-Los iframes son especialmente útiles en AMP para mostrar contenido que no se admita en 
+Los iframes son especialmente útiles en AMP para mostrar contenido que no se admita en
 la página principal, como el contenido que requiere JavaScript creado por usuarios.
 
 ### Requisitos de `amp-iframe`
@@ -18,13 +18,11 @@ la página principal, como el contenido que requiere JavaScript creado por usuar
 * Debe tener al menos **600 píxeles** o un **75%** de la primera ventana gráfica si empezamos por el principio de la página.
 * Solo puede solicitar recursos por HTTPS, y estos no deben tener el mismo origen que el contenedor salvo que no se especifique allow-same-origin.
 
-{% call callout('Leer más', type='read') %}
-Obtén más información [en la especificación completa de <code>amp-iframe</code>](/es/docs/reference/components/amp-iframe.html). 
-{% endcall %}
+Leer más: Obtén más información [en la especificación completa de <code>amp-iframe</code>](/es/docs/reference/components/amp-iframe.html).
 
 ### Incluir la secuencia de comandos
 
-Para incluir un `amp-iframe` en tu página, 
+Para incluir un `amp-iframe` en tu página,
 primero debe constar la siguiente secuencia de comandos en el `<head>`, que carga el código adicional del componente ampliado:
 
 [sourcecode:html]
@@ -44,7 +42,7 @@ Un ejemplo de `amp-iframe`:
 </amp-iframe>
 ```
 
-Preview: 
+Preview:
 
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
@@ -56,9 +54,7 @@ Preview:
 
 Puedes mostrar un `amp-iframe` en la parte superior de un documento siempre y cuando el atributo `placeholder` se incluya en algún elemento de `amp-iframe` como, (por ejemplo, `amp-img`). Este elemento se renderizará como un marcador de posición hasta que el iframe esté listo para mostrarse.
 
-{% call callout('Leer más', type='read') %}
-Obtén más información sobre los elementos placeholder en la sección [Iframes con elementos placeholder](/es/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
-{% endcall %}
+Leer más: Obtén más información sobre los elementos placeholder en la sección [Iframes con elementos placeholder](/es/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
 
 
 Este ejemplo de un elemento placeholder:

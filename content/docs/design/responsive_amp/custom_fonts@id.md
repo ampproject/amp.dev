@@ -46,7 +46,5 @@ within your AMP stylesheet:
 
 [/sourcecode]
 
-{% call callout('Catatan', type='note') %}
- Font yang disertakan melalui `@font-face` 
-harus diambil melalui skema HTTP atau HTTPS. {% endcall %}
+Catatan: Font yang disertakan melalui `@font-face` harus diambil melalui skema HTTP atau HTTPS.
 

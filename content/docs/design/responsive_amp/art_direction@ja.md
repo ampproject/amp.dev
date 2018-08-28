@@ -17,14 +17,11 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-
-{% call callout('注', type='note') %}
-AMP では、すべてのブラウザで srcset に `w` 記述子を使用できます。
-{% endcall %}
+注: AMP では、すべてのブラウザで srcset に `w` 記述子を使用できます。
 
 `srcset` を使ってレスポンシブな画像を作成する方法について詳しくは、[レスポンシブな画像の使用に関する記事](http://alistapart.com/article/using-responsive-images-now) をご覧ください。
 
@@ -42,16 +39,13 @@ AMP では、すべてのブラウザで srcset に `w` 記述子を使用でき
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 この `sizes` 属性では、ビューポートが 650 ピクセル以上の場合は、要素の幅をビューポートのサイズの 50% にすると定義しています。たとえば、ビューポートが 800 ピクセルの場合、要素の幅は 400 ピクセルに設定されます。ブラウザでは、デバイス ピクセル比を 1 と想定し、400 ピクセルと比較して `srcset` のリソースを選択します。この例では `narrow.jpg`（320 ピクセル）が選択されます。
 
-{% call callout('重要', type='caution') %}
-sizes 属性とともに width と height も指定されている場合、layout はデフォルトで `responsive` に設定されます。
-{% endcall %}
-
+重要: sizes 属性とともに width と height も指定されている場合、layout はデフォルトで `responsive` に設定されます。
 
 `sizes` および `srcset` 属性とメディアクエリの比較について詳しくは、[srcset と sizes](https://ericportis.com/posts/2014/srcset-sizes/) に関するブログ投稿をご覧ください。
 
@@ -74,7 +68,7 @@ sizes 属性とともに width と height も指定されている場合、layou
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 

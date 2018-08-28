@@ -43,9 +43,7 @@ Kode ini berarti:
 
 Cara ini dapat berfungsi karena library AMP Bayangan, saat pemuatan yang sebenarnya, akan mengetahui bahwa telah ada array panggilan balik pada `window.AMP`, lalu memproses seluruh antrean. Jika kemudian Anda menjalankan kembali fungsi yang sama, fungsi tersebut akan tetap bekerja, karena AMP Bayangan menggantikan `window.AMP` dengan sendirinya beserta metode `push` kustom, yang langsung mengaktifkan panggilan balik.
 
-{% call callout('Tips', type='success') %}
-Agar contoh kode di atas lebih praktis, sebaiknya gabungkan ke dalam 1 Promise, lalu selalu gunakan Promise tersebut sebelum dijalankan dengan API AMP. Lihat [Kode demo React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) kami untuk mengetahui contohnya.
-{% endcall %}
+Tip: Agar contoh kode di atas lebih praktis, sebaiknya gabungkan ke dalam 1 Promise, lalu selalu gunakan Promise tersebut sebelum dijalankan dengan API AMP. Lihat [Kode demo React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) kami untuk mengetahui contohnya.
 
 ## Menangani navigasi di Progressive Web App
 
@@ -77,9 +75,7 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-{% call callout('Penting', type='caution') %}
-Untuk menyederhanakan contoh kode di atas, kami mengabaikan penanganan error. Anda harus selalu memastikan untuk menemukan dan menangani error dengan baik.
-{% endcall %}
+Penting: Untuk menyederhanakan contoh kode di atas, kami mengabaikan penanganan error. Anda harus selalu memastikan untuk menemukan dan menangani error dengan baik.
 
 Setelah kita memiliki objek `Dokumen` yang siap digunakan, biarkan AMP menjalankan fungsinya dan merender objek tersebut. Dapatkan referensi ke elemen DOM yang berfungsi sebagai penampung untuk dokumen AMP, lalu panggil `AMP.attachShadowDoc()`, seperti contoh berikut:
 
@@ -97,9 +93,7 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-{% call callout('Tips', type='success') %}
-Sebelum Anda benar-benar menyerahkan dokumen ke AMP, saatnya menghapus elemen halaman yang dapat dimengerti saat menampilkan halaman AMP secara mandiri, namun bukan dalam mode tersemat: Misalnya, footer dan header.
-{% endcall %}
+Tip: Sebelum Anda benar-benar menyerahkan dokumen ke AMP, saatnya menghapus elemen halaman yang dapat dimengerti saat menampilkan halaman AMP secara mandiri, namun bukan dalam mode tersemat: Misalnya, footer dan header.
 
 Dan selesai! Halaman AMP Anda akan dirender sebagai turunan dari seluruh Progressive Web App.
 
@@ -128,5 +122,5 @@ Anda juga dapat melihat contoh PWA dan AMP menggunakan framework Polymer. Contoh
 
 * Dapatkan kodenya di sini: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
 * Lihat cara kerjanya di sini: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
- 
- 
+
+

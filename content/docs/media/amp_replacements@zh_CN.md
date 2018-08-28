@@ -14,9 +14,8 @@ $title: 添加图片和视频
 *  我们需要在素材资源加载之前了解网页布局，这对 [为第一视口预加载提供支持来说至关重要](/zh_cn/learn/about-how/#size-all-resources-statically)
 *  我们需要控制网络请求，以 [延迟加载并高效排定资源的优先顺序](/zh_cn/learn/about-how/#prioritize-resource-loading)
 
-{% call callout('注意', type='caution') %}
- 尽管默认的 HTML 组件不受支持，但仍*会*  呈现在网页上，不过 AMP 不会 [验证您的网页，](/zh_cn/docs/fundamentals/validate.html) 
-如果您的网页上显示了 HTML 组件，您将无法享受 AMP 提供的所有优势。{% endcall %}
+注意: 尽管默认的 HTML 组件不受支持，但仍*会*  呈现在网页上，不过 AMP 不会 [验证您的网页，](/zh_cn/docs/fundamentals/validate.html)
+如果您的网页上显示了 HTML 组件，您将无法享受 AMP 提供的所有优势。
 
 ## 图片
 
@@ -30,7 +29,7 @@ $title: 添加图片和视频
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -48,7 +47,7 @@ $title: 添加图片和视频
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -64,21 +63,17 @@ $title: 添加图片和视频
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('阅读', type='read') %}
-详细了解 [高级布局技术](/zh_cn/docs/design/responsive/control_layout.html)
-。{% endcall %}
+阅读: 详细了解 [高级布局技术](/zh_cn/docs/design/responsive/control_layout.html)。
 
 ### 行为和占位符
 
 AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位置、系统资源、连接带宽或其他因素，选择延迟资源加载或排定资源加载的优先顺序。
 
-{% call callout('阅读', type='read') %}
-了解如何 [提供后备图片和占位符](/zh_cn/docs/design/responsive/placeholders.html)
-。{% endcall %}
+阅读: 了解如何 [提供后备图片和占位符](/zh_cn/docs/design/responsive/placeholders.html)。
 
 ## 动画图片
 
@@ -92,14 +87,11 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('注意', type='note') %}
- 您需要在网页的标头部分添加 `<script async custom-element="amp-anim"
-src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` 
-才能使用此组件。{% endcall %}
+注意: 您需要在网页的标头部分添加 `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` 才能使用此组件。
 
 ## 视频
 
@@ -118,7 +110,7 @@ src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>`
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -139,12 +131,8 @@ src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>`
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('注意', type='note') %}
- 您需要在网页的标头部分添加 ` <script async custom-element="amp-audio"
-src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>`  
- 才能使用此组件。{% endcall %}
-
+注意: 您需要在网页的标头部分添加 ` <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` 才能使用此组件。

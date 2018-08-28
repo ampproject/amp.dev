@@ -23,15 +23,13 @@ sandbox="allow-scripts allow-forms allow-same-origin"
 resizable
 src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
 <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+<div placeholder></div>
 </amp-iframe>
 </div>
 
 Por padrão, o marcador do elemento AMP é exibido imediatamente, mesmo que isso seja antes do download ou da inicialização dos recursos do elemento AMP. Quando estiver pronto, o elemento AMP normalmente ocultará o marcador e exibirá o conteúdo.
 
-{% call callout('Observação', type='note') %}
-O marcador não precisa ser um elemento AMP. Qualquer elemento HTML pode agir como marcador.
-{% endcall %}
+Observação: O marcador não precisa ser um elemento AMP. Qualquer elemento HTML pode agir como marcador.
 
 ## Substitutos
 
@@ -45,7 +43,7 @@ sandbox="allow-scripts allow-forms allow-same-origin"
 resizable
 src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
 <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+<div placeholder></div>
 </amp-iframe>
 </div>
 

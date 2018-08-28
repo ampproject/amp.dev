@@ -7,10 +7,7 @@ Di direktori project, Anda akan menemukan file dengan nama [`article.html`](http
 1.  **Salin** seluruh kode dari file `article.html` kemudian tempel ke file baru.
 2.  **Simpan** file baru sebagai `article.amp.html`.
 
-{% call callout('Catatan', type='note') %}
-Anda tidak perlu memberi nama file AMP sebagai `.amp.html`. Bahkan, file AMP dapat memiliki ekstensi apa pun yang Anda inginkan. Penayang umumnya membedakan halaman AMP dari versi kanonisnya menggunakan parameter dalam URL. Misalnya:  `http://publisher.com/article.html?amp`.
-{% endcall %}
-
+Catatan: Anda tidak perlu memberi nama file AMP sebagai `.amp.html`. Bahkan, file AMP dapat memiliki ekstensi apa pun yang Anda inginkan. Penayang umumnya membedakan halaman AMP dari versi kanonisnya menggunakan parameter dalam URL. Misalnya:  `http://publisher.com/article.html?amp`.
 
 File `article.amp.html` Anda akan terlihat seperti berikut:
 

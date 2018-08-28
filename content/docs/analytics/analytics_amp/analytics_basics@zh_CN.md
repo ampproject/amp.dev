@@ -16,9 +16,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[amp-pi
 
 对于大多数分析解决方案，请使用 `amp-analytics`。`amp-analytics` 也提供了网页浏览跟踪功能。此外，您还可以跟踪用户与任何类型的网页内容的互动情况，包括链接点击和按钮点击。而且，您还可以衡量用户在网页上滚动浏览了多少内容、用户是否与社交媒体进行了互动等信息。
 
-{% call callout('了解详情', type='read') %}
-请参阅[深入了解 AMP 分析](/zh_cn/docs/analytics/deep_dive_analytics.html)。
-{% endcall %}
+了解详情: 请参阅[深入了解 AMP 分析](/zh_cn/docs/analytics/deep_dive_analytics.html)。
 
 在与 AMP 平台集成的过程中，各个提供商均提供了预定义的 `amp-analytics` 配置，以便能够轻松地捕获数据并推送到其跟踪工具。您可以通过[分析供应商](/zh_cn/docs/analytics/analytics-vendors.html)列表访问各个供应商文档。
 
@@ -113,9 +111,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[amp-pi
 
 在上面的示例中，变量 `account` 和 `title` 是在 `amp-analytics` 配置中定义的。变量 `canonicalUrl` 和 `clientId` 不是在配置中定义的，因此它们的值将被平台替换。
 
-{% call callout('重要提示', type='caution') %}
-变量替换非常灵活；您可以在不同位置定义相同的变量，并且 AMP 运行期间系统会按相应优先顺序解析值（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
-{% endcall %}
+重要提示: 变量替换非常灵活；您可以在不同位置定义相同的变量，并且 AMP 运行期间系统会按相应优先顺序解析值（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
 
 ## 用户识别
 
@@ -138,6 +134,4 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[amp-pi
 
 如需详细了解客户端 ID 替换（包括如何添加可选的用户通知 ID），请参阅 [AMP 分析中支持的变量](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)。
 
-{% call callout('了解详情', type='read') %}
-要继续了解分析相关知识，请参阅 [深入了解 AMP 分析](/zh_cn/docs/analytics/deep_dive_analytics.html)和[使用情形](/zh_cn/docs/analytics/use_cases.html)。
-{% endcall %}
+了解详情: 要继续了解分析相关知识，请参阅 [深入了解 AMP 分析](/zh_cn/docs/analytics/deep_dive_analytics.html)和[使用情形](/zh_cn/docs/analytics/use_cases.html)。

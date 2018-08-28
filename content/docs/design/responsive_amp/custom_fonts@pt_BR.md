@@ -44,9 +44,6 @@ within your AMP stylesheet:
 
 [/sourcecode]
 
-{% call callout('Observação', type='note') %}
- Fontes incluídas através de `@font-face` 
-precisam ser buscadas por meio do esquema HTTP ou HTTPS.
-{% endcall %}
+Observação: Fontes incluídas através de `@font-face` precisam ser buscadas por meio do esquema HTTP ou HTTPS.
 
 

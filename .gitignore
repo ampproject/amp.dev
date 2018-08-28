@@ -5,6 +5,7 @@
 .podcache.yaml
 .vscode
 node_modules
+*.pyc
 
 build
 assets/css/*

@@ -14,9 +14,7 @@ However, AMP limits some use of CSS for performance and usability reasons, while
 expanding responsive design capabilities with features like [placeholders & fallbacks](/docs/design/responsive/placeholders.html),
 [advanced art direction via srcset](/docs/design/responsive/art_direction.html) and the [layout attribute](/docs/design/responsive/control_layout.html) for better control over how your elements display.
 
-{% call callout('Tip', type='success') %}
-It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](/docs/design/responsive/responsive_design).
-{% endcall %}
+Tip: It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](/docs/design/responsive/responsive_design).
 
 {{ youtube('y6kA3u3GIws', 480, 270, caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.') }}
 
@@ -46,10 +44,7 @@ For example:
   </head>
 [/sourcecode]
 
-{% call callout('Important', type='caution') %}
-Make sure there’s only one `<style amp-custom>` tag on your page,
-as more than one isn’t allowed in AMP.
-{% endcall %}
+Important: Make sure there’s only one `<style amp-custom>` tag on your page, as more than one isn’t allowed in AMP.
 
 Define component styles with class or element selectors
 using common CSS properties. For example:
@@ -69,11 +64,7 @@ using common CSS properties. For example:
 </body>
 [/sourcecode]
 
-{% call callout('Important', type='caution') %}
-Check that your styles are supported in AMP;
-some styles aren't for performance reasons
-(see also [Supported CSS](/docs/design/responsive/style_pages.html)).
-{% endcall %}
+Important: Check that your styles are supported in AMP; some styles aren't for performance reasons (see also [Supported CSS](/docs/design/responsive/style_pages.html)).
 
 If needed, AMP also allows inline styles. For example:
 
@@ -94,25 +85,19 @@ Set the layout to responsive.
 This sizes the element to the width of its container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
-{% call callout('Read on', type='read') %}
-Learn more about [supported layouts in AMP](/docs/design/responsive/control_layout.html)
-{% endcall %}
+Read on: Learn more about [supported layouts in AMP](/docs/design/responsive/control_layout.html)
 
 ## Provide placeholders & fallbacks
 
 The built-in support for placeholders and fallbacks means your users never have to stare at a blank screen again.
 
-{% call callout('Read on', type='read') %}
-Learn more about [Placeholders and fallbacks](/docs/design/responsive/placeholders.html)
-{% endcall %}
+Read on: Learn more about [Placeholders and fallbacks](/docs/design/responsive/placeholders.html)
 
 ## Art direct your images
 
 AMP supports both `srcset` and `sizes` attributes to give you fine grained control, of which images to load in which scenario.
 
-{% call callout('Read on', type='read') %}
-Learn more about [art direction with srcset and sizes](/docs/design/responsive/art_direction.html)
-{% endcall %}
+Read on: Learn more about [art direction with srcset and sizes](/docs/design/responsive/art_direction.html)
 
 ## Validate your styles and layout
 
@@ -128,6 +113,4 @@ Example error in console for page with CSS that exceeds the 50,000 bytes limit:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-{% call callout('Read on', type='read') %}
-Learn more about how to [validate and fix your AMP pages](/docs/fundamentals/validate.html)
-{% endcall %}
+Read on: Learn more about how to [validate and fix your AMP pages](/docs/fundamentals/validate.html)

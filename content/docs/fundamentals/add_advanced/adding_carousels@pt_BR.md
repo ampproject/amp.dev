@@ -50,9 +50,7 @@ O resultado final deverá ser semelhante ao seguinte:
 
 **Atualize** a página e experimente!
 
-{% call callout('Nota', type='note') %}
-Deverá ter reparado que, quando o `amp-carousel` tinha o tipo `carousel`, utilizámos o tipo de esquema `fixed-height`.  Os tipos de esquema suportados para o tipo `carousel` são limitados. Por exemplo, o tipo `carousel` não suporta o esquema `responsive`.  Tal como o nome sugere, os elementos de altura fixa ocupam o espaço disponível para os mesmos, mas mantêm a altura inalterada. Para elementos de altura fixa, tem de definir o atributo `height`, enquanto o atributo `width` deve estar definido como `auto` ou deve ser deixado por definir.
-{% endcall %}
+Nota: Deverá ter reparado que, quando o `amp-carousel` tinha o tipo `carousel`, utilizámos o tipo de esquema `fixed-height`.  Os tipos de esquema suportados para o tipo `carousel` são limitados. Por exemplo, o tipo `carousel` não suporta o esquema `responsive`.  Tal como o nome sugere, os elementos de altura fixa ocupam o espaço disponível para os mesmos, mas mantêm a altura inalterada. Para elementos de altura fixa, tem de definir o atributo `height`, enquanto o atributo `width` deve estar definido como `auto` ou deve ser deixado por definir.
 
 ## Conteúdo misto do carrossel
 
@@ -90,9 +88,7 @@ Agora, **substitua** o seu carrossel simples pelo seguinte:
 
 Para saber mais, consulte a documentação de referência do componente [amp-carousel](/pt_pt/docs/reference/components/amp-carousel.html).
 
-{% call callout('Nota', type='note') %}
-No nosso último exemplo, deverá ter reparado que o componente `amp-ad` incluía um elemento `div` secundário com o atributo `placeholder`. Anteriormente, no tutorial, deparámo-nos com um cenário semelhante com o `amp-ad` a utilizar um `fallback`. Qual é a diferença entre um marcador de posição e um alternativo? Os elementos `fallback` surgem quando ocorre uma falha ao carregar o elemento superior, ou seja, se não houver nenhum anúncio disponível. Os elementos `placeholder` aparecem em vez do elemento superior, enquanto este é carregado. De certo modo, estes elementos suportam o processo de carregamento do elemento superior. Pode saber mais no guia [Marcadores de posição e alternativos](pt_pt/docs/design/responsive/placeholders.html).
-{% endcall %}
+Nota: No nosso último exemplo, deverá ter reparado que o componente `amp-ad` incluía um elemento `div` secundário com o atributo `placeholder`. Anteriormente, no tutorial, deparámo-nos com um cenário semelhante com o `amp-ad` a utilizar um `fallback`. Qual é a diferença entre um marcador de posição e um alternativo? Os elementos `fallback` surgem quando ocorre uma falha ao carregar o elemento superior, ou seja, se não houver nenhum anúncio disponível. Os elementos `placeholder` aparecem em vez do elemento superior, enquanto este é carregado. De certo modo, estes elementos suportam o processo de carregamento do elemento superior. Pode saber mais no guia [Marcadores de posição e alternativos](pt_pt/docs/design/responsive/placeholders.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Anterior</span></a>

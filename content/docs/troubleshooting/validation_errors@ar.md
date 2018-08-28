@@ -59,7 +59,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 تشتمل هذه العلامات الإلزامية على حقل `mandatory: true` في [مواصفات أداة التحقق من صفحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)؛
-كما تتم الإشارة إليها أيضًا في [مواصفات صفحات AMP](/docs/reference/spec.html).
+كما تتم الإشارة إليها أيضًا في [مواصفات صفحات AMP](/docs/fundamentals/spec.html).
 
 ### العلامة المطلوبة من قبل علامة أخرى غير موجودة
 
@@ -105,7 +105,7 @@ limitations under the License.
 </table>
 
 العلامات مدرجة في القائمة البيضاء، وبالتالي ليست هناك قائمة محددة تضم جميع العلامات الغير مسموح بها؛
-ومع ذلك فإن [مواصفات صفحة AMP](/docs/reference/spec.html)
+ومع ذلك فإن [مواصفات صفحة AMP](/docs/fundamentals/spec.html)
 تحدد مجموعة من العلامات الغير مسموح بها على نطاق واسع.
 
 ### السمة الإلزامية غير موجودة
@@ -700,7 +700,7 @@ limitations under the License.
 
 يشير هذا الخطأ إلى قواعد @ داخل CSS،
 والتي تسمح لها AMP بمجموعة من القواعد فقط.
-(راجع أيضًا [مواصفات AMP](/docs/reference/spec.html)).
+(راجع أيضًا [مواصفات AMP](/docs/fundamentals/spec.html)).
 على سبيل المثال، لا يُسمح بالقاعدة `@import`.
 ويوضح خطأ التحقق من الصحة القاعدة غير الصالحة
 على وجه التحديد،
