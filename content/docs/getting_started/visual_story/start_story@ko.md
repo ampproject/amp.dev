@@ -17,10 +17,10 @@ $title: 본격적으로 스토리 시작하기
 </head>
 ```
 
-이제 `<amp-story>` 요소를 `<body>`안에 **추가**합니다. 참, `standalone` 속성을 
+이제 `<amp-story>` 요소를 `<body>`안에 **추가**합니다. 참, `standalone` 속성을
 추가하는 것을 잊지 마십시오.
 
-```html hl_lines="2 3" 
+```html hl_lines="2 3"
 <body>
   <amp-story standalone>
   </amp-story>
@@ -29,7 +29,7 @@ $title: 본격적으로 스토리 시작하기
 
 여기서 중요한 것 한가지. `<body>` 요소는 `<amp-story>` 컴포넌트를 딱 하나만
 포함해야만 합니다. 그리고 다른 요소들은 모두 `<amp-story>` 컴포넌트안에
-들어있어야 합니다. 
+들어있어야 합니다.
 
 ## 메타 정보 설정
 
@@ -44,7 +44,7 @@ $title: 본격적으로 스토리 시작하기
 
 자, `<amp-story>` 태그의 필수 속성에 적절한 값을 채워보겠습니다:
 
-```html hl_lines="2 3 4 5" 
+```html hl_lines="2 3 4 5"
 <amp-story standalone
     title="Joy of Pets"
     publisher="AMP tutorials"
@@ -71,6 +71,6 @@ amp-story 컴포넌트는 최소한 하나 이상의 페이지를 갖고 있어�
 페이지를 만들어보겠습니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/design/visual_story/parts_of_story.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/ko/docs/design/visual_story/create_cover_page.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/ko/docs/getting_started/visual_story/create_cover_page.html"><span class="arrow-next">Next</span></a>
 </div>

@@ -19,8 +19,8 @@ In this tutorial, we'll introduce you to the [amp-story](/docs/reference/compone
 - Animate elements on a page
 - Keep readers engaged with your content by adding related links to the end of the story
 
-Note: The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**.
+{% call callout('Note', type='note') %} The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**. {% endcall %}
 
 <div class="start-button">
-<a class="button" href="/docs/design/visual_story/setting_up.html"><span class="arrow-next">Get started</span></a>
+<a class="button" href="/docs/getting_started/visual_story/setting_up.html"><span class="arrow-next">Get started</span></a>
 </div>
