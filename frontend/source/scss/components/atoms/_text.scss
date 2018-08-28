@@ -98,13 +98,11 @@ TODO: mono (inline, block)
 		color: color('blue-ribbon');
 	}
 
-	&-light {
-		color: color('white');
+	&-gray-chateau {
+		color: color('gray-chateau');
 	}
 
-	&-teaser-sm {
-		opacity: 0.5;
-		text-transform: uppercase;
-		font-weight: bold;
+	&-light {
+		color: color('white');
 	}
 }
