@@ -33,7 +33,6 @@ TODO: mono (inline, block)
 	line-height: 1.6em;
 	font-weight: normal;
 	color: color('river-bed');
-	margin: 0;
 
 	&-1 {
 		font-size: 1em;
@@ -65,6 +64,17 @@ TODO: mono (inline, block)
 
 	&-accent-3 {
 		font-size: 0.625em;
+	}
+
+	&-font-accent {
+		font-family: 'Poppins', sans-serif;
+	}
+
+	&-hl {
+		display: block;
+		margin-top: 0;
+		margin-bottom: 0.75em;
+		line-height: 1.25em;
 	}
 
 	&-p {
