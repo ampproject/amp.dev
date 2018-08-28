@@ -3,7 +3,9 @@
 <head>
 {% block head %}
     <meta charset="utf-8" />
-    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    <title>
+      {% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}
+    </title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,20 +16,17 @@
     {% block stylesheets %}
         {% do assets.addCss('theme://css/styleguide.css', {'loading': 'inline'}) %}
     {% endblock %}
-    {{ assets.css() }}
+    {{ assets.ampCustomCss() }}
 
     {% block javascripts %}
-        {% do assets.addJs('jquery', 101) %}
+        {% do assets.addJs('https://cdn.ampproject.org/v0.js', {'loading': 'async'}) %}
+        {% do assets.addAmpComponent('amp-sidebar') %}
     {% endblock %}
     {{ assets.js() }}
-
+    {{ assets.ampComponents() }}
 {% endblock head %}
 </head>
 
 <body>
-	{% block content %}{% endblock %}
-
-	{% block bottom %}
-	    {{ assets.js('bottom') }}
-	{% endblock %}
+  {% block content %}{% endblock %}
 </body>

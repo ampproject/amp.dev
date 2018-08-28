@@ -13,7 +13,7 @@ class AmpDev extends Theme
     require_once(__DIR__.'/classes/AmpAssets.php');
 
     return [
-      'onAssetsInitialized' => ['onAssetsInitialized', 0],
+      'onAssetsInitialized' => ['onAssetsInitialized', 0]
     ];
   }
 
