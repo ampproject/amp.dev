@@ -2,17 +2,17 @@
 $view: /views/styleguide/component.j2
 $title: Teaser
 
-lgAccent: Category Accent Large
-smAccent: Category Accent Small
+headline: Component Accent One
+subline: Category Accent 3
 link: '/styleguide/molecules/teaser.html'
-linkCopy: Code now
+label: Code now
 ---
-<div class="ad-o-container col-6-4">
+<div class="ad-o-container col-3-4">
   <div class="ad-m-teaser ad-m-teaser-white">
-    {% call molecules.teaser(doc.smAccent, doc.lgAccent, lipsum(n=1, html=False)) %}
+    {% call molecules.teaser(doc.subline, doc.headline, lipsum(n=1, html=False, min=15, max=16)) %}
       <a href={{ doc.link }} class="ad-m-lnk">
-				{{ atoms.icon('internal', size=3) }}
-				<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ doc.linkCopy }}</span>
+				{{ atoms.icon('internal', size=1) }}
+				<span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ doc.label }}</span>
       </a>
     {% endcall %}
   </div>

@@ -43,7 +43,12 @@ white
 .#{molecule('teaser')} {
   &-white {
     @include box-shadow;
-    padding: 20px 40px 50px 25px;
+    padding: 20px;
     background-color: white;
+  }
+
+  .#{molecule('lnk')} {
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 }
