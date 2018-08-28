@@ -14,13 +14,13 @@ past:
 
 upcoming_events:
   - type: Event
-    title: AMP Roadshow São Paulo
-    href: https://events.withgoogle.com/amp-roadshow-in-sao-paulo/
+    title: AMP Roadshow Seoul
+    href: https://events.withgoogle.com/amp-roadshow-seoul/iljeong/
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
     date: August 21, 2018
-    event_time: 20180821/20180822
-    event_time_text: Aug 21
-    location: São Paulo, Brazil
+    event_time: 20180911/20180912
+    event_time_text: Sept 11
+    location: Seoul, South Korea
     participant: Developers
 
 # past_events:
