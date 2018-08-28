@@ -1,0 +1,28 @@
+---
+$view: /views/styleguide/component.j2
+$title: News
+
+articles:
+- date: July 11, 2018
+  headline: Serverless AMP solution on AWS
+  teaser: "Editor’s note: The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit. You can see their site featured on the showcase page of AMPproject.org."
+  href: '#'
+- date: July 19, 2018
+  headline: Track development with the new AMP Roadmap
+  teaser: As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each.
+  href: '#'
+  modifier: shadow
+---
+
+{% for article in doc.articles %}
+
+	<article class="ad-m-news ad-m-news-{{article.modifier}} col-4-4">
+	<span class="ad-a-hl ad-a-hl-blue-ribbon ad-a-hl-h5">{{ article.date }}</span>
+	<h4 class="ad-a-hl ad-a-hl-h4">{{ article.headline }}</h4>
+	<p class="ad-a-txt ad-a-txt-3">{{ article.teaser }}</p>
+	<a class="ad-m-lnk" href={{ article.href }}>
+		{{atoms.icon('internal', size=1)}}
+		<span class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Read More</span>
+	</a>
+	</article>
+{% endfor %}
