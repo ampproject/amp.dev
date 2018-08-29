@@ -10,7 +10,7 @@ This guide provides tips and guidance for webmasters on how to optimize their ho
 
 ### Isn't AMP fast by default?
 
-The AMP runtime is [optimized for speed](/learn/about-how/) and if your AMP pages are served by an [AMP cache](/docs/fundamentals/how_cached), they are fully optimized and offer the optimal loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
+The AMP runtime is [optimized for speed](/learn/about-how/) and if your AMP pages are served by an [AMP cache](/docs/fundamentals/how_cached), they are fully optimized and offer hightes loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
 
 However, AMP pages are not always served from an AMP cache. A website may decide to show AMP pages from their own servers for other traffic sources. The most frequent use case are sites built completely in AMP, such as [tasty.co](https://tasty.co), where users go straight to the site. Another traffic source is Twitter, which [started linking to AMP pages](https://searchengineland.com/twitter-ramps-amp-278300) instead of delivering the standard mobile version. This means that if a user clicks a link in one of Twitter's mobile apps, the link goes to the AMP version of your page on your own origin (if one is available).
 
@@ -30,7 +30,7 @@ If you want to skip the details, check out the [AMP Boilerplate generator](https
 
 ### Optimize the AMP Runtime loading
 
-AMP is already quite restrictive about which markup is allowed in the `<head> `section. However, there are a few basic optimizations that you can apply. The key is to structure the `<head>` section in a way so that all render-blocking scripts and custom fonts load as fast as possible.
+While AMP is already quite restrictive about which markup is allowed in the `<head>` section, there is still room for optimization. The key is to structure the `<head>` section in a way so that all render-blocking scripts and custom fonts load as fast as possible.
 
 Here is the recommended order for the `<head>` section in an AMP page:
 
