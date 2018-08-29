@@ -25,9 +25,6 @@ circle
 shadow-static
   Adds a simple static drop-shadow to the image.
 
-shadow-animated
-  Adds the same shadow as the static one, but also moves up and down while scrolling.
-
 */
 
 // TODO: make decissions about how to implement animated shadow modifier
@@ -35,24 +32,20 @@ shadow-animated
 .#{atom('img')} {
 	position: relative;
 
-	&-circle {}
+	&-single {
+		margin-right: -30px;
 
-	&-shadow-static {
-		@include box-shadow;
+		@media screen and (min-width: 768px) {
+			margin-right: 0;
+		}
 	}
 
-	&-shadow-animated {}
-}
+	&-circle {
+		overflow: hidden;
+		border-radius: 50%;
+	}
 
-.#{organism('container-image')} {
-	display: grid;
-	grid-template-rows: repeat(3, 75px);
-	grid-template-columns: repeat(3, 75px);
-
-	.#{atom('img')} {
-		&-shadow-static {
-			grid-column: 1 / 4;
-			grid-row: 1 / 4;
-		}
+	&-shadow-static amp-img {
+		@include drop-shadow;
 	}
 }

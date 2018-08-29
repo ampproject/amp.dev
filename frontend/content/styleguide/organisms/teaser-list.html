@@ -16,15 +16,13 @@ items:
 ---
 <ul class="ad-o-list col-6-4" aria-labelledby="teaser list">
 	{% for item in doc.items %}
-		<li class="ad-o-list-item" aria-labelledby="teaser item">
-			<div class="ad-m-teaser ad-m-teaser-white">
+			<li class="ad-m-teaser ad-m-teaser-white">
 			  {% call molecules.teaser(item.smAccent, item.lgAccent, lipsum(n=1, html=False)) %}
 			  	<a href={{ item.link }} class="ad-m-lnk">
-			  	  {{atoms.icon('internal', size=3)}}
+			  	  {{atoms.icon('internal', size=2)}}
 			  	  <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ item.linkCopy }}</span>
 			  	</a>
 				{% endcall %}
-			</div>
-		</li>
+			</li>
 	{% endfor %}
 </ul>
