@@ -1,3 +1,32 @@
+/*
+
+###########################
+### MOLECULE: news ###
+###########################
+
+### SAMPLE MARKUP:
+
+<article class="ad-m-news col-4-4">
+	<span class="ad-a-hl ad-a-hl-blue-ribbon ad-a-hl-h5"> July 11, 2018</span>
+	<h4 class="ad-a-hl ad-a-hl-h4">Serverless AMP solution on AWS</h4>
+	<p class="ad-a-txt ad-a-txt-3">The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit.</p>
+	<a class="ad-m-lnk" href='#'>
+		{{atoms.icon('internal', size=1)}}
+		<span class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Read More</span>
+	</a>
+	</article>
+
+### INFO:
+
+The news molecule is a combination of headline and icon atom.
+The size of the icon should be 1 and headline should be h4. However, the headline size tag may change in the future depending on the template it is used in.
+
+### MODIFIERS:
+
+-shadow, adds a box shadow to the molecule.
+
+*/
+
 .#{molecule('news')} {
 	padding: 25px 20px 20px;
 
