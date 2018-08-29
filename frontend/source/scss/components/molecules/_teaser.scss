@@ -41,6 +41,8 @@ white
 */
 
 .#{molecule('teaser')} {
+	margin: 20px 0;
+
   &-white {
     @include box-shadow;
     padding: 20px 40px 50px 25px;
