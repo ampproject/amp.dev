@@ -116,9 +116,7 @@ a {
 			li {
 				a {
 					margin: 0;
-					padding-right: 10px;
-					border-bottom: 1px solid darken(color('whisper'), 3%);
-					transition: all 0.25s cubic-bezier(.55,0,.1,1);
+					padding: 0.375em 0;
 
 					.ad-a-txt,
 					.ad-a-ico {
@@ -126,8 +124,6 @@ a {
 					}
 
 					&:hover {
-						border-bottom-color: color('blue-ribbon');
-
 						.ad-a-txt {
 							color: color('blue-ribbon');
 						}
