@@ -18,5 +18,5 @@ $title: 눈이 즐거운 AMP 스토리 제작하기
 {% call callout('노트', type='note') %} [amp-story](/ko/docs/reference/components/amp-story.html) 컴포넌트는 현재 **실험 상태**입니다. {% endcall %}
 
 <div class="start-button">
-<a class="button" href="/ko/docs/design/visual_story/setting_up.html"><span class="arrow-next">시작하기</span></a>
+<a class="button" href="/ko/docs/getting_started/visual_story/setting_up.html"><span class="arrow-next">시작하기</span></a>
 </div>

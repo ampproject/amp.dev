@@ -129,7 +129,7 @@ $title: 에니메이션 적용하기
 
 ## 애니메이션 타이밍
 
-애니메이션 프리셋은 몇 가지 타이밍 변수에 대해서 기본값을 갖고 있습니다: 
+애니메이션 프리셋은 몇 가지 타이밍 변수에 대해서 기본값을 갖고 있습니다:
 
 * **delay**: 애니메이션 시작전에 얼마만큼 지체할지에 대한 변수. 예를 들어, .3s는
   해당 페이지로 전환 후 0.3초 이후에 애니메이션을 시작한다는 뜻입니다. 0s는
@@ -242,13 +242,13 @@ Pets can lower your stress levels!</p>
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
@@ -277,6 +277,6 @@ Pets can lower your stress levels!</p>
 더 자세한 내용이 있으니 참고하십시오.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/design/visual_story/add_more_pages.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/design/visual_story/create_bookend.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/getting_started/visual_story/create_bookend.html"><span class="arrow-next">다음</span></a>
 </div>
