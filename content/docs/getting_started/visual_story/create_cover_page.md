@@ -37,20 +37,20 @@ Our cover page is actually comprised of two layers:
 
 Let's add our first layer to our cover page. The layer contains an image that fills the screen.  
 
-Create the layer by adding the `<amp-story-grid-layer>` element as a child of `<amp-story-page>`. As we want the image to fill the screen, specify the `template="fill"` attribute for the `amp-story-grid-layer`. Inside the layer, add an `<amp-image>` element for the `cover.jpg` file, and make sure it's responsive (i.e., `layout="responsive"`) with the image's dimensions of 720 x 1280 px.  Here's what our layer looks like: 
+Create the layer by adding the `<amp-story-grid-layer>` element as a child of `<amp-story-page>`. As we want the image to fill the screen, specify the `template="fill"` attribute for the `amp-story-grid-layer`. Inside the layer, add an `<amp-image>` element for the `cover.jpg` file, and make sure it's responsive (i.e., `layout="responsive"`) with the image's dimensions of 720 x 1280 px.  Here's what our layer looks like:
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
     <amp-img src="assets/cover.jpg"
-        width="720" height="1280" 
+        width="720" height="1280"
         layout="responsive">
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
 ```
 
-Let's see how the page displays.  Open the page in your browser: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>. 
+Let's see how the page displays.  Open the page in your browser: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
 
 Here's what it should look like:
 
@@ -62,19 +62,19 @@ So, we have our backdrop but now we need the second layer, which sits on top of 
 
 #### Laying out elements with a template
 
-The `<amp-story-grid-layer>` element lays out its children elements in a grid (based off the [CSS grid](https://www.w3.org/TR/css-grid-1/)).  To indicate how you want the children arranged, you need to specify one of the following layout templates: 
+The `<amp-story-grid-layer>` element lays out its children elements in a grid (based off the [CSS grid](https://www.w3.org/TR/css-grid-1/)).  To indicate how you want the children arranged, you need to specify one of the following layout templates:
 
 <table class="noborder">
 <tr>
     <td colspan="2"><h5 id="fill">Template: Fill</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">The <strong>fill</strong> template fills the screen with the first child element in the layer. Any other children in this layer aren't shown.
-    
+
     <p>The fill template works well for backgrounds, including images and videos.</p>
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
   &lt;amp-img src="dog.png"
-      width="720" height="1280" 
+      width="720" height="1280"
       layout="responsive">
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
@@ -86,8 +86,8 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
 <tr>
     <td colspan="2"><h5 id="vertical">Template: Vertical</h5></td>
 </tr>
-<tr> 
-    <td width="65%">The <strong>vertical</strong> template lays the children elements along the y-axis. The elements are aligned to the top of the screen, and take up the entire screen along the x-axis. 
+<tr>
+    <td width="65%">The <strong>vertical</strong> template lays the children elements along the y-axis. The elements are aligned to the top of the screen, and take up the entire screen along the x-axis.
 
     <p>The vertical template works well when you want to vertically stack elements one right after the other.</p>
 
@@ -103,7 +103,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
 <tr>
     <td colspan="2"><h5 id="horizontal">Template: Horizontal</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">The <strong>horizontal</strong> template lays the children elements along the x-axis.  The elements are aligned to the start of the screen, and take up the entire screen along the y-axis.
 
     <p>The horizontal template works well when you want to horizontally stack elements one right after the other.</p>
@@ -121,7 +121,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
 <tr>
     <td colspan="2"><h5 id="thirds">Template: Thirds</h5></td>
 </tr>
-<tr> 
+<tr>
 <td width="65%">
 The <strong>thirds</strong> template divides the screen into three equally-sized rows, and allows you to slot content into each area.
 
@@ -153,12 +153,11 @@ For layer 2, we want the heading and byline to be at the top, and we want the el
 </amp-story-grid-layer>
 ```
 
-Refresh your browser and review your work.  Our cover page is complete. 
+Refresh your browser and review your work.  Our cover page is complete.
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Completed cover page' ) }}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/design/visual_story/start_story.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/design/visual_story/add_more_pages.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/getting_started/visual_story/start_story.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-next">Next</span></a>
 </div>
-

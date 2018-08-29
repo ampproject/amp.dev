@@ -189,7 +189,7 @@ We'll start by animating the entrance of the banner text and have it "whoosh in"
 Pets can lower your stress levels!</p>
 ```
 
-Reload your story page in your browser, and verify that the banner whooshes in. 
+Reload your story page in your browser, and verify that the banner whooshes in.
 
 Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of the `amp-img` elements so the code looks like this:
 
@@ -225,13 +225,13 @@ Let's delay the entrance of the first image so that it comes in close to when th
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
@@ -257,6 +257,6 @@ There are a lot of possibilities with animations in AMP stories  (e.g., combinin
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/design/visual_story/add_more_pages.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/design/visual_story/create_bookend.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/getting_started/visual_story/create_bookend.html"><span class="arrow-next">Next</span></a>
 </div>

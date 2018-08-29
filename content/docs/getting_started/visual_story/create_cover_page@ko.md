@@ -59,7 +59,7 @@ amp-img가 반응형(responsive)임을 `layout=”responsive”`속성으로 알
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
     <amp-img src="assets/cover.jpg"
-        width="720" height="1280" 
+        width="720" height="1280"
         layout="responsive">
     </amp-img>
   </amp-story-grid-layer>
@@ -74,13 +74,13 @@ amp-img가 반응형(responsive)임을 `layout=”responsive”`속성으로 알
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_layer1.jpg', 720, 1280, align='center third' ) }}
 
-### 레이어 2 작성하기 
+### 레이어 2 작성하기
 
 배경은 그럴듯하게 나왔습니다. 이제 두 번째 레이어를 추가하겠습니다. 두 번째
 레이어는 제목과 부제가 들어있고 배경 위에 올라갈 것입니다. 첫 번째 레이어를 만든
 것과 똑같이 하되 이번에는 `fill` 템플릿 대신 **`vertical`** 템플릿을 사용합니다.
 이쯤에서 `<amp-story-grid-layer>`에 들어있는 AMP 또는 HTML 요소를 template을
-가지고 배치하는 방법에 대해서 알아보겠습니다. 
+가지고 배치하는 방법에 대해서 알아보겠습니다.
 
 #### 템플릿으로 요소 배치하기
 
@@ -92,7 +92,7 @@ amp-img가 반응형(responsive)임을 `layout=”responsive”`속성으로 알
 <tr>
     <td colspan="2"><h5 id="fill">Fill 템플릿</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">
     <strong>fill</strong> 템플릿은 레이어안의 첫 번째 요소를 화면에 채웁니다. 그리고 다른 자식 요소는
     화면에 나오지 않습니다.
@@ -113,7 +113,7 @@ amp-img가 반응형(responsive)임을 `layout=”responsive”`속성으로 알
 <tr>
     <td colspan="2"><h5 id="vertical">Vertical 템플릿</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">
     <strong>vertical</strong> 템플릿은 자식 요소를 세로로 배치합니다. 요소를 상단에서부터
     시작하여 배치하고 가로 화면쪽으로는 길게 채우는 형태가 됩니다.
@@ -131,7 +131,7 @@ amp-img가 반응형(responsive)임을 `layout=”responsive”`속성으로 알
 <tr>
     <td colspan="2"><h5 id="horizontal">Horizontal 템플릿</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">
     <strong>horizontal</strong> 템플릿은 자식 요소를 가로축을 기준으로 배치합니다. 왼쪽부터
     시작해서 배치하는데 세로 화면쪽으로 길게 채우는 형태가 됩니다.
@@ -151,7 +151,7 @@ amp-img가 반응형(responsive)임을 `layout=”responsive”`속성으로 알
 <tr>
     <td colspan="2"><h5 id="thirds">Thirds 템플릿</h5></td>
 </tr>
-<tr> 
+<tr>
 <td width="65%">
   <strong>thirds</strong> 템플릿은 화면으로 수직으로 3등분으로 나눈 다음에 콘텐츠를 각
   영역(grid-area)에 배치합니다.
@@ -198,7 +198,6 @@ amp-img가 반응형(responsive)임을 `layout=”responsive”`속성으로 알
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Completed cover page' ) }}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/design/visual_story/start_story.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/design/visual_story/add_more_pages.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/start_story.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-next">다음</span></a>
 </div>
-
