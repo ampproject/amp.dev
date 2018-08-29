@@ -1,44 +1,56 @@
 /*
 
-#############################
-### ORGANISM: teaser-list ###
-#############################
+######################
+### ORGANISM: list ###
+######################
 
 ### SAMPLE MARKUP:
 
-	<ul class="ad-o-list ad-o-list-scroll col-5-4"  aria-labelledby="KPI list">
-		<li class="ad-m-kpi" aria-labelledby="KPI item">
-				{{ atoms.icon( item.icon , size=2, fill="white") }}
-				<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">title</span>
-				<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">text</p>
-		</li>
-		<li class="ad-m-kpi" aria-labelledby="KPI item">
-				{{ atoms.icon( item.icon , size=2, fill="white") }}
-				<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">title</span>
-				<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">text</p>
-		</li>
-	</ul>
+<ul class="ad-o-list ad-o-list-scroll col-5-4"  aria-labelledby="KPI list">
+	<li class="ad-o-list-item" aria-labelledby="KPI item">
+		<div class="ad-m-kpi">
+			<svg class="ad-a-ico ad-a-ico-stories ad-a-ico-3 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stories"></use>
+			</svg>
+			<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">title</span>
+			<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">text</p>
+		</div>
+	</li>
+	<li class="ad-o-list-item" aria-labelledby="KPI item">
+		<div class="ad-m-kpi">
+			<svg class="ad-a-ico ad-a-ico-stories ad-a-ico-3 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stories"></use>
+			</svg>
+			<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">title</span>
+			<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">text</p>
+		</div>
+	</li>
+</ul>
 
 ### INFO:
 
-The teaser-list organism includes multiple teaser molecules. All lists should be <ul> tags with <li> tags for their items (accessibility reasons).
+The teaser-list organism includes multiple teaser molecules.
+All lists should be <ul> tags with <li> tags for their items (accessibility reasons).
 
 ### MODIFIERS:
 
--default: wrapping flex container for both mobile and desktop.
+default
+	Wrapping flex container for both mobile and desktop.
 
--scroll: scrolling list without wrapping for mobile, desktop is a normal wraping flex container.
+scroll
+	Scrolling list without wrapping for mobile, desktop is a normal wraping flex container.
 
--nowrap-desktop: items wrap on mobile, but do not wrap on desktop (ex: benefits list).
+nowrap-desktop
+	Items wrap on mobile, but do not wrap on desktop (ex: benefits list).
 
 */
 
 .#{organism('list')} {
-	display: flex;
-	flex-wrap: wrap;
-	list-style: none;
 
 	&-nowrap-desktop {
+		display: flex;
+		flex-wrap: wrap;
+
 		@media screen and (min-width: 768px) {
 			flex-wrap: nowrap;
 		}
@@ -53,5 +65,4 @@ The teaser-list organism includes multiple teaser molecules. All lists should be
 			flex-wrap: wrap;
 		}
 	}
-
 }
