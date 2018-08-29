@@ -4,21 +4,20 @@ $title: Benefit List
 
 items:
 - title: Ready to use
+  text: Components with high quality user experience.
   icon: lego
 - title: Easy as abc
+  text: Create clean, performant and safe Code.
   icon: edit
 - title: Lightning fast
+  text: From small website projects to complex platforms.
   icon: browser
 ---
-	<ul class="ad-o-list ad-o-list-nowrap-desktop col-8-3" aria-labelledby="Benefit list">
-	{% for item in doc.items %}
-		<li class="ad-m-benefit">
-		{{ atoms.icon(item.icon, size=3) }}
-		<span class="ad-a-hl ad-a-hl-h3">{{item.title}}</span>
-		<p class="ad-a-txt ad-a-txt-2">{{ lipsum(n=1, html=False, min=5, max=20) }}</p>
-		{% if item != doc.items|last() %}
-			<span class="ad-a-divider"></span>
-		{% endif %}
-	</li>
-	{% endfor %}
-	</ul>
+<div class="col-span-3"></div>
+{% for item in doc.items %}
+<div class="ad-m-benefit col-span-2">
+	{{ atoms.icon(item.icon, size=3) }}
+	<h4 class="ad-a-hl ad-a-hl-h4">{{ item.title }}</h4>
+	<p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">{{ item.text }}</p>
+</div>
+{% endfor %}
