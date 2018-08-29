@@ -57,7 +57,10 @@ TODO: mono (inline, block)
 
 	&-p {}
 
-	&-mono-inline {}
+	/*TODO: replace courier font with correct mono-sans font */
+	&-mono-inline {
+		font-family: Courier;
+	}
 
 	&-mono-block {}
 
