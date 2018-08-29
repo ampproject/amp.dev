@@ -28,14 +28,9 @@ Please refer to mixins.scss to see gradients.
 */
 
 .#{molecule('kpi')} {
-	min-width: 170px;
 	padding: 1.5em;
 	margin: 1em;
 	@include box-shadow;
-
-	@media screen and (min-width: 768px){
-		width: 190px;
-	}
 
 	.ad-a-txt {
 		white-space: normal;
