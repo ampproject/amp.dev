@@ -30,10 +30,11 @@ square
 
 .#{atom('ico')} {
 	display: flex;
+	font-size: initial;
 
 	&-#{map-get($sizes, xs)} {
-		width: 1em;
-		height: 1em;
+		width: 0.875em;
+		height: 0.875em;
 	}
 
 	&-#{map-get($sizes, sm)} {
