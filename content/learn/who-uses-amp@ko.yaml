@@ -22,7 +22,7 @@ cards:
     cta: 더 알아보기
     icon: who_icon_advertisers.sv
 
-  - name: Ecommerce
+  - name: 전자상거래
     filename: ecommerce
     cta: 더 알아보기
     icon: who_icon_ecomm.svg
