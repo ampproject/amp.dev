@@ -8,20 +8,20 @@
 
 <div class="ad-m-event col-3-5">
 		<div class="ad-m-event-date">
-			<span class="ad-a-hl ad-a-hl-h5 ad-a-hl-silver ad-m-event-header">{{ event.year }}</span>
-			<span class="ad-a-hl ad-a-hl-h5">{{ event.month }}</span>
-			<span class="ad-a-hl ad-a-hl-h5">{{ event.day }}</span>
+			<span class="ad-a-hl ad-a-hl-h5 ad-a-hl-silver ad-m-event-header">2018</span>
+			<span class="ad-a-hl ad-a-hl-h5">aug</span>
+			<span class="ad-a-hl ad-a-hl-h5">15</span>
 		</div>
 		<div class="ad-m-event-content">
-			<span class="ad-a-hl ad-a-hl-h5 ad-m-event-header">{{ event.city }}</span>
+			<span class="ad-a-hl ad-a-hl-h5 ad-m-event-header">Hamburg</span>
 			<ul class="ad-m-event-detail-list">
 				<li class="ad-m-event-detail">
 					{{ atoms.icon('map', size=1) }}
-					<span class="ad-a-txt ad-a-txt-2">{{ event.location }}</span>
+					<span class="ad-a-txt ad-a-txt-2">location</span>
 				</li>
 				<li class="ad-m-event-detail">
 					{{ atoms.icon('time', size=1) }}
-					<span class="ad-a-txt ad-a-txt-2">Register by: {{ event.registration }}</span>
+					<span class="ad-a-txt ad-a-txt-2">Register by: some date</span>
 				</li>
 			</ul>
 		</div>
