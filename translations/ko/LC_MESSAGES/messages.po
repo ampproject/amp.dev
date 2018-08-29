@@ -1,6 +1,6 @@
 #: /content/includes/stories.yaml
 msgid "10 sneaky signs you are dehydrated"
-msgstr "탈수되었는지 알 수 있는 10가지 미묘한 신호"
+msgstr "탈수 증세를 알 수 있는 10가지 미묘한 신호"
 
 #: /content/includes/stories.yaml
 msgid "A Pod Races Through the Hyperloop for the First Time"
@@ -43,11 +43,11 @@ msgstr "AMP By Example"
 
 #: /content/includes/stories.yaml
 msgid "AMP Component Library"
-msgstr "AMP 구성요소 라이브러리"
+msgstr "AMP 컴포넌트 라이브러리"
 
 #: /views/partials/promo_banner.html:5
 msgid "AMP Conf 2018. Feb 13/14."
-msgstr "AMP 컨퍼런스 2018. 2월 13~14일."
+msgstr "2018년 2월 13일~14일, AMP 컨퍼런스 2018."
 
 #: /views/partials/promo_banner.html:8
 msgid "AMP Conf."
@@ -55,7 +55,7 @@ msgstr "AMP 컨퍼런스"
 
 #: /content/includes/menu.yaml
 msgid "AMP Experiments"
-msgstr "AMP 실험"
+msgstr "AMP 실험실"
 
 #: /content/docs/fundamentals/spec/_blueprint.yaml
 msgid "AMP HTML Specification"
@@ -100,7 +100,7 @@ msgstr "AMP 로드쇼."
 
 #: /content/includes/menu.yaml
 msgid "AMP Start"
-msgstr "AMP 시작"
+msgstr "AMP Start"
 
 #: /content/includes/menu.yaml
 msgid "AMP Status"
@@ -108,7 +108,7 @@ msgstr "AMP 상태"
 
 #: /content/includes/menu.yaml
 msgid "AMP Validator"
-msgstr "AMP 유효성 검사 도구"
+msgstr "AMP 유효성 검사기"
 
 #: /content/reference/components/_blueprint.yaml
 msgid "AMP components"
@@ -123,7 +123,7 @@ msgid ""
 "friendly experience that enables your customers to stay engaged with your "
 "site."
 msgstr ""
-"AMP를 사용하면 페이지가 빠르게 로드되어 탐색 및 구매 절차에서 "
+"AMP를 사용하면 페이지가 빠르게 로딩되어 탐색 및 구매 절차에서 "
 "고객의 이탈을 방지할 수 있습니다. 사용자는 직접 사이트에서 시작할 때와 "
 "AMP 페이지로 연결되는 플랫폼에서 시작할 때 모두 일관되게 "
 "빠른 환경을 이용하게 됩니다. AMP를 사용하는 사이트는 모바일 친화적인 "
@@ -243,7 +243,7 @@ msgid ""
 msgstr ""
 "AMP HTML 광고는 HTML과 CSS를 사용하여 제작되는 광고 소재 형식으로, "
 "완전히 새로운 기술이 아닙니다. 그러므로 기존의 개발 리소스를 사용하여 더 빠르고 "
-"가벼우며 효과적인 광고를 만들고 게재할 수 있습니다. Google Web Designer와 "
+"가벼우면서 효과적인 광고를 만들고 게재할 수 있습니다. Google Web Designer와 "
 "같은 광고 소재 개발자 도구에서도 곧 AMP 광고가 지원될 예정입니다."
 
 #: /content/learn/who/amp-ads.yaml
@@ -771,7 +771,7 @@ msgid ""
 msgstr ""
 "아무리 눈길을 끄는 광고 소재라도 광고의 속도가 느리고 사용자에게 방해가 된다면 "
 "목적을 달성할 수 없습니다. AMP HTML 광고는 새로운 광고 제작 방식으로, 광고가 AMP "
-"페이지만큼 빠르게 로드되도록 함으로써 의도한 성과를 달성하고 원하는 가치를 "
+"페이지만큼 빠르게 동작하도록 함으로써 의도한 성과를 달성하고 원하는 가치를 "
 "얻을 수 있도록 해 줍니다."
 
 #: /content/includes/latest.yaml /content/includes/menu.yaml
@@ -1042,7 +1042,7 @@ msgstr "ROI 극대화"
 
 #: /content/learn/about/benefits.yaml /content/learn/who/ad-tech-platforms.yaml
 msgid "Maximize your revenue"
-msgstr "수익을 극대화하세요"
+msgstr "수익 극대화하기"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -1345,9 +1345,9 @@ msgid ""
 "increase in viewability and engagement with AMPHTML ads. Join the AMP Project"
 " to improve performance and grow your revenue."
 msgstr ""
-"광고 속도를 높이는 것은 실적을 올리는 가장 빠른 방법입니다. <a "
+"광고 속도를 높이는 것이 실적을 올리는 가장 빠른 방법입니다. <a "
 "href=\"https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs"
-"/a4a-readme.md\">AMP HTML 광고</a>는 콘텐츠만큼 빠르게 로드되므로 조회가능성과 "
+"/a4a-readme.md\">AMP HTML 광고</a>는 콘텐츠만큼 빠르게 동작하므로 조회가능성과 "
 "참여율이 높아집니다. Triplelift는 AMP HTML 광고를 통해 조회가능성과 참여율을 "
 "10% 이상 올렸습니다. AMP 프로젝트에 참여하여 실적을 개선하고 "
 "수익을 늘려 보세요."
@@ -1478,7 +1478,7 @@ msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "The Art of an Organized Refrigerator"
-msgstr "정리된 냉장고의 기술"
+msgstr "냉장고 정리 기술"
 
 #: /content/includes/stories.yaml
 msgid "The Evolution of Trump's Wall"
@@ -1496,7 +1496,7 @@ msgstr "최신 뉴스"
 
 #: /content/includes/stories.yaml
 msgid "The Missions Still Exploring Our Solar System"
-msgstr "여전히 태양계를 탐사 중인 임무"
+msgstr "태양계 탐사 임무는 계속된다"
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -1654,12 +1654,11 @@ msgid ""
 "possible with today's platform, AMP developers should participate in "
 "standards development to get these added to the web platform."
 msgstr ""
-"Google은 미래의 웹이 아닌 지금의 웹을 개선하기 위해 [확장 가능한 웹 "
-"선언](https://github.com/extensibleweb/manifesto/blob/master/README.md)에 "
-"따라 라이브러리를 사용하여 AMP를 구현했습니다.\n"
-"AMP는 현재 브라우저에서 빠르게 로드될 수 있어야 합니다. 지금의 플랫폼에서 "
-"구현할 수 없는 최적화가 있다면 AMP 개발자들이 이러한 최적화가 웹 플랫폼에 "
-"추가될 수 있도록 표준 개발에 참여해야 합니다."
+"우리는 [확장 가능한 웹 선언](https://github.com/extensibleweb/manifesto/blob/master/README.md)의 "
+"정신으로 AMP를 개발했습니다. AMP라는 라이브러리는 웹이 저절로 좋아지기를 기다리기보다 현재의 "
+"웹을 직접 개선한다는 정신의 결과물입니다. AMP는 현재의 브라우저에서도 빠르게 동작해야 합니다. "
+"어떤 성능 개선 요구가 플랫폼의 제약 때문에 구현이 어렵다면 AMP 개발자들이 표준화 작업에 직접 "
+"참여하여 웹 플랫폼 자체를 개선해야 합니다."
 
 #: /content/includes/home.yaml
 msgid "What AMP Provides"
