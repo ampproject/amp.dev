@@ -20,4 +20,7 @@ items:
 	<h4 class="ad-a-hl ad-a-hl-h4">{{ item.title }}</h4>
 	<p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">{{ item.text }}</p>
 </div>
+{% if item != doc.items|last() %}
+<span class="ad-a-divider"></span>
+{% endif %}
 {% endfor %}

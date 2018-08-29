@@ -1,6 +1,8 @@
 .#{atom('divider')} {
-	height: 1px;
+	display: block;
 	width: 100%;
+	height: 1px;
+	margin-bottom: 1em;
 	background-color: color('whisper2');
 
 	@media screen and (min-width: 768px) {
