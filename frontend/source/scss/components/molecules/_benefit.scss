@@ -27,12 +27,14 @@ none
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
+	margin-right: 20px;
 
 	@media screen and (min-width: 768px) {
 		padding: 0;
 	}
 
 	& .ad-a-hl {
+		white-space: nowrap;
 		padding-top: 20px;
 	}
 
