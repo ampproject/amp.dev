@@ -2,33 +2,34 @@
 $view: /views/styleguide/component.j2
 $title: Event
 
-events:
-- city: Austin, TX
-  year: 2018
-  month: Jul
-  day: 11
-  location: Google Building
-  registration: 08/01/18 12:00
+city: Los Angeles, CA
+year: 2018
+month: Aug
+day: 08
+location: Ambassador Auditorium
+registration: 'Register by: 08/01/18 12:00'
 ---
-{% for event in doc.events %}
-	<div class="ad-m-event col-3-5">
+<div class="ad-o-container col-4-5">
+	<div class="ad-m-event">
 		<div class="ad-m-event-date">
-			<span class="ad-a-hl ad-a-hl-h5 ad-a-hl-silver ad-m-event-header">{{ event.year }}</span>
-			<span class="ad-a-hl ad-a-hl-h5">{{ event.month }}</span>
-			<span class="ad-a-hl ad-a-hl-h5">{{ event.day }}</span>
+			<span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-silver ad-a-txt-hl">{{ doc.year }}</span>
+			<span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black">
+        {{ doc.month }}<br>
+        {{ doc.day }}
+      </span>
 		</div>
 		<div class="ad-m-event-content">
-			<span class="ad-a-hl ad-a-hl-h5 ad-m-event-header">{{ event.city }}</span>
-			<ul class="ad-m-event-detail-list" aria-labelledby="Details about the event">
-				<li class="ad-m-event-detail">
+			<span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black ad-a-txt-hl">{{ doc.city }}</span>
+			<ul aria-labelledby="Details about the event">
+				<li class="ad-a-txt ad-a-txt-3">
 					{{ atoms.icon('map', size=1) }}
-					<span class="ad-a-txt ad-a-txt-2">{{ event.location }}</span>
+					{{ doc.location }}
 				</li>
-				<li class="ad-m-event-detail">
+				<li class="ad-a-txt ad-a-txt-3">
 					{{ atoms.icon('time', size=1) }}
-					<span class="ad-a-txt ad-a-txt-2">Register by: {{ event.registration }}</span>
+					{{ doc.registration }}
 				</li>
 			</ul>
 		</div>
 	</div>
-{% endfor %}
+</div>
