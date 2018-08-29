@@ -1,8 +1,24 @@
 @import '../variables.scss';
-@import '../functions.scss';
 @import '../mixins.scss';
-@import '../extends.scss';
+@import '../functions.scss';
 
 @import '../base.scss';
 
-@import '../components/atoms/button.scss';
+@import '../components/atoms/headline';
+@import '../components/atoms/text';
+@import '../components/atoms/button';
+@import '../components/atoms/icon';
+@import '../components/atoms/image';
+@import '../components/atoms/divider';
+
+@import '../components/molecules/link';
+@import '../components/molecules/tip';
+@import '../components/molecules/teaser';
+@import '../components/molecules/copy';
+@import '../components/molecules/load-more';
+@import '../components/molecules/float-image';
+@import '../components/molecules/kpi';
+@import '../components/molecules/benefit';
+@import '../components/molecules/event';
+
+@import '../components/organisms/list';
