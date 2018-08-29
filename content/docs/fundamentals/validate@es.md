@@ -1,10 +1,5 @@
 ---
 $title: Validar páginas AMP
-$order: 7
-$category: Depuración
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 
@@ -18,7 +13,7 @@ Existen varias formas de validar un documento AMP. Todas ellas
 producen exactamente el mismo resultado, por lo que puedes utilizar la que más se ajuste
 a tu estilo de desarrollo.
 
-Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible](es/docs/guides/discovery.html) para las plataformas de terceros.
+Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible](/es/docs/guides/discovery.html) para las plataformas de terceros.
 
 ### Developers Console para el navegador
 
@@ -266,7 +261,7 @@ Cada herramienta ofrece varios fragmentos de información:
      documentación para la etiqueta `<amp-img>`. No todos los errores generan
      enlaces de documentación.
 
-Al leer de nuevo la [especificación](es/docs/reference/spec.html) atentamente, nos damos cuenta de que utilizamos una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
+Al leer de nuevo la [especificación](/es/docs/fundamentals/spec.html) atentamente, nos damos cuenta de que utilizamos una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
 
 Para entender mejor la lista completa de los posibles errores,
 consulta la [guía Errores de validación de AMP](https://www.ampproject.org/es/docs/reference/validation_errors.html).
