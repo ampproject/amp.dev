@@ -43,11 +43,11 @@ white
 .#{molecule('teaser')} {
 	margin-bottom: 2em;
 
-  &-white {
-    @include box-shadow;
-    padding: 1.5em 1.25em;
-    background-color: white;
-  }
+	&-white {
+		@include box-shadow;
+		padding: 1.5em 1.25em;
+		background-color: white;
+	}
 
 	&-headline {
 		position: relative;
@@ -62,8 +62,8 @@ white
 		}
 	}
 
-  .#{molecule('lnk')} {
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
+	.#{molecule('lnk')} {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
 }
