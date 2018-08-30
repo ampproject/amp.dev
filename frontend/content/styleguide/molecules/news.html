@@ -22,13 +22,15 @@ articles:
   <div class="ad-o-container col-2-1">
     <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">{{ article.description }}</p>
   </div>
-  <article class="ad-m-news ad-m-news-{{article.modifier}} col-4-4">
-    <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-font-accent ad-a-txt-blue-ribbon">{{ article.date }}</span>
-    <span class="ad-a-txt ad-a-txt-hl ad-a-txt-2 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black">{{ article.headline }}</span>
-    <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">{{ article.text }}</p>
-    <a href={{ article.link }} class="ad-m-lnk">
-      {{ atoms.icon('internal', size=1) }}
-      <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ article.label }}</span>
-    </a>
-  </article>
+  <div class="ad-o-container col-4-4">
+    <article class="ad-m-news {% if article.modifier %}ad-m-news-{{article.modifier}} {% endif %}">
+      <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-font-accent ad-a-txt-blue-ribbon">{{ article.date }}</span>
+      <span class="ad-a-txt ad-a-txt-hl ad-a-txt-2 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black">{{ article.headline }}</span>
+      <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">{{ article.text }}</p>
+      <a href={{ article.link }} class="ad-m-lnk">
+        {{ atoms.icon('internal', size=1) }}
+        <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ article.label }}</span>
+      </a>
+    </article>
+  </div>
 {% endfor %}
