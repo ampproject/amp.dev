@@ -254,9 +254,20 @@ a {
       }
     }
   }
-
 }
 
 .ad-o-container {
 	margin-bottom: 5em;
+}
+
+.icon-demo-container {
+	margin-bottom: 2em !important;
+
+	.ad-a-ico {
+		margin: 0 auto 1.5em;
+	}
+
+	&:not(.final) .ad-a-ico {
+		background-color: rgba(color('red'), 0.25);
+	}
 }
