@@ -102,6 +102,10 @@ TODO: mono (inline, block)
 		font-weight: bold;
 	}
 
+	&-uppercase {
+		text-transform: uppercase;
+	}
+
 	&-black {
 		color: color('black');
 	}
