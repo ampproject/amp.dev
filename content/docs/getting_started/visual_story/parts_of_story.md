@@ -16,6 +16,6 @@ Each of those ingredients are translated into AMP components, where the story is
 Let's start creating our story with the `amp-story` container.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/design/visual_story/setting_up.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/design/visual_story/start_story.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/getting_started/visual_story/setting_up.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/getting_started/visual_story/start_story.html"><span class="arrow-next">Next</span></a>
 </div>
