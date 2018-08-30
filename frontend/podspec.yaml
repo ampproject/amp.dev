@@ -8,15 +8,12 @@ static_dirs:
 - static_dir: /static/root/
   serve_at: /
 
-error_routes:
-  default: /views/errors/default.j2
-
 localization:
   default_locale: en
 
 preprocessors:
 - kind: gulp
-  build_task: ''
+  build_task: '--production'
   run_task: 'develop'
 
 deployments:
