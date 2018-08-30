@@ -41,13 +41,26 @@ white
 */
 
 .#{molecule('teaser')} {
-	margin: 20px 0;
+	margin-bottom: 2em;
 
   &-white {
     @include box-shadow;
-    padding: 20px;
+    padding: 1.5em 1.25em;
     background-color: white;
   }
+
+	&-headline {
+		position: relative;
+		padding-right: 30px;
+
+		.#{atom('ico')} {
+			position: absolute;
+			right: 0;
+			top: 25%;
+			opacity: 0.2;
+			transform: translateY(-50%);
+		}
+	}
 
   .#{molecule('lnk')} {
     padding-bottom: 0;
