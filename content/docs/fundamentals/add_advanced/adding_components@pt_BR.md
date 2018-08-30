@@ -48,9 +48,7 @@ Tente **adicionar** ambos os exemplos acima ao artigo logo após a tag `<header>
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Anúncios de teste') }}
 
-{% call callout('Importante', type='caution') %}
-Pode haver alguns erros no console de desenvolvimento, como `Mixed Content` ou `XMLHttpRequest cannot load`. É provável que esse último erro seja relacionado à publicidade da A9, porque nem todo conteúdo carregado por ela é seguro. Esse é um requisito importante para todos os anúncios veiculados nas AMP.
-{% endcall %}
+Importante: Pode haver alguns erros no console de desenvolvimento, como `Mixed Content` ou `XMLHttpRequest cannot load`. É provável que esse último erro seja relacionado à publicidade da A9, porque nem todo conteúdo carregado por ela é seguro. Esse é um requisito importante para todos os anúncios veiculados nas AMP.
 
 Os dois `amp-ad` a seguir são um exemplo da compatibilidade flexível do componente `amp-ad` com recursos de plataformas de anúncios.  Nesse caso, dois anúncios de teste da DoubleClick foram configurados (usando o painel da DoubleClick) para serem exibidos somente em alguns países. O primeiro será exibido só no Reino Unido, e o segundo, só nos EUA.  Tente **adicionar** essas duas configurações de segmentação geográfica ao documento AMP abaixo dos anúncios adicionados anteriormente:
 
@@ -76,17 +74,11 @@ Os dois `amp-ad` a seguir são um exemplo da compatibilidade flexível do compon
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Anúncios de teste') }}
 
-{% call callout('Observação', type='note') %}
-Dentro dessas tags amp-ad existem tags `div` adicionais com um atributo chamado `fallback`. Você sabe o que o atributo `fallback` indica? Ele informa ao sistema de carregamento AMP que somente os conteúdos desse elemento são mostrados quando o elemento principal não é carregado. Saiba mais em [Marcadores e substitutos](/pt_br/docs/design/responsive/placeholders.html).
-{% endcall %}
+Observação: Dentro dessas tags amp-ad existem tags `div` adicionais com um atributo chamado `fallback`. Você sabe o que o atributo `fallback` indica? Ele informa ao sistema de carregamento AMP que somente os conteúdos desse elemento são mostrados quando o elemento principal não é carregado. Saiba mais em [Marcadores e substitutos](/pt_br/docs/design/responsive/placeholders.html).
 
-{% call callout('Leia mais', type='read') %}
-Para ver as redes de publicidade compatíveis mais recentes, leia a documentação de referência do componente [amp-ad](/pt_br/docs/reference/components/amp-ad.html#supported-ad-networks).
-{% endcall %}
+Leia mais: Para ver as redes de publicidade compatíveis mais recentes, leia a documentação de referência do componente [amp-ad](/pt_br/docs/reference/components/amp-ad.html#supported-ad-networks).
 
-{% call callout('Observação', type='note') %}
-Não é permitido exibir JavaScript fornecido pela rede de publicidade no documento AMP. Em vez disso, o ambiente de tempo de execução de AMP carrega um iframe de uma origem diferente (por meio de um sandbox de iframe) e executa o JS da rede de publicidade dentro do sandbox desse iframe.
-{% endcall %}
+Observação: Não é permitido exibir JavaScript fornecido pela rede de publicidade no documento AMP. Em vez disso, o ambiente de tempo de execução de AMP carrega um iframe de uma origem diferente (por meio de um sandbox de iframe) e executa o JS da rede de publicidade dentro do sandbox desse iframe.
 
 Agora nosso documento AMP inclui texto, uma imagem e um anúncio incorporado na página, os principais ingredientes para contar uma história e gerar receita com seu conteúdo. No entanto, os sites modernos geralmente incluem outros recursos além de imagens e texto.
 
@@ -117,9 +109,7 @@ Mesmo que seu navegador possa mostrar vídeos do YouTube sem problemas, esse err
 
 Nem todos os componentes estão incluídos no arquivo JavaScript da biblioteca AMP principal. É necessário incluir uma solicitação JavaScript adicional para o componente do YouTube.
 
-{% call callout('Observação', type='note') %}
-Se o console de desenvolvimento ainda estiver aberto e o URL tiver `#development=1`, um erro do validador de AMP será exibido para lembrar você de adicionar o JavaScript `amp-youtube`. A mensagem também incluirá um link para a documentação que informa qual tag `script` precisa ser adicionada.
-{% endcall %}
+Observação: Se o console de desenvolvimento ainda estiver aberto e o URL tiver `#development=1`, um erro do validador de AMP será exibido para lembrar você de adicionar o JavaScript `amp-youtube`. A mensagem também incluirá um link para a documentação que informa qual tag `script` precisa ser adicionada.
 
 **Adicione** o script a seguir à tag `<head>`:
 
@@ -135,9 +125,7 @@ Assim como os outros elementos da página, os elementos `width` e `height` do v�
 
 Para saber mais sobre a incorporação de vídeos do YouTube, leia a documentação do componente [amp-youtube](/pt_br/docs/reference/components/amp-youtube.html). Para ver ainda mais componentes de vídeo e mídia, consulte a [lista de componentes AMP de mídia](/pt_br/docs/reference/components.html#media).
 
-{% call callout('Dica', type='success') %}
-Use o atributo [`fallback`](/pt_br/docs/design/responsive/placeholders.html#fallbacks) para informar os usuários caso haja uma falha no carregamento do componente ou ele não seja compatível com o navegador.
-{% endcall %}
+Dica: Use o atributo [`fallback`](/pt_br/docs/design/responsive/placeholders.html#fallbacks) para informar os usuários caso haja uma falha no carregamento do componente ou ele não seja compatível com o navegador.
 
 ## Mostrar um tweet
 Incorporar tweets pré-formatados do Twitter é um recurso comum em artigos de notícias. O componente [amp-twitter](/pt_br/docs/reference/components/amp-twitter.html) é uma maneira fácil de incluir esse conteúdo.
@@ -167,9 +155,7 @@ O atributo `data-tweetid` é outro exemplo de atributo do cliente exigido por um
 
 Para saber mais sobre como incorporar tweets do Twitter, leia a documentação do componente [amp-twitter](/pt_br/docs/reference/components/amp-twitter.html).
 
-{% call callout('Dica', type='success') %}
-A AMP oferece ainda mais componentes para incorporar conteúdo de redes sociais. Confira os [componentes AMP de redes sociais mais recentes](/pt_br/docs/reference/components.html#social).
-{% endcall %}
+Dica: A AMP oferece ainda mais componentes para incorporar conteúdo de redes sociais. Confira os [componentes AMP de redes sociais mais recentes](/pt_br/docs/reference/components.html#social).
 
 ## Destacar uma citação do artigo
 

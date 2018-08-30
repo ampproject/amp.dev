@@ -40,9 +40,9 @@ JSON 파일을 살펴보겠습니다. 텍스트 에디터에서 [bookend.json](h
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='Bookend social share' ) }}
 
-북엔드 화면의 나머지는 연관 콘텐츠에 대한 것입니다. 연관 콘텐츠는 `components` 객체안에 나열합니다. 
+북엔드 화면의 나머지는 연관 콘텐츠에 대한 것입니다. 연관 콘텐츠는 `components` 객체안에 나열합니다.
 
-컴포넌트의 type 속성으로 연관 콘텐츠와 링크를 어떤 방식으로 보여줄지 선택할 수 있습니다. 컴포넌트의 타입에는 어떤 것들이 있는지 살펴보겠습니다. 
+컴포넌트의 type 속성으로 연관 콘텐츠와 링크를 어떤 방식으로 보여줄지 선택할 수 있습니다. 컴포넌트의 타입에는 어떤 것들이 있는지 살펴보겠습니다.
 
 <table>
 <thead>
@@ -143,11 +143,11 @@ JSON 파일을 살펴보겠습니다. 텍스트 에디터에서 [bookend.json](h
 </tbody>
 </table>
 
-북엔드 컴포넌트에 대해서 더 알고 싶으면 [amp-story](/ko/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) 레퍼런스 문서를 참고하십시오. 
+북엔드 컴포넌트에 대해서 더 알고 싶으면 [amp-story](/ko/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) 레퍼런스 문서를 참고하십시오.
 
 이제 거의 끝나갑니다. 지금까지 작성한 스토리를 공개(publish)하기 전에 AMP HTML 유효성 검사를 돌려보겠습니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/design/visual_story/animating_elements.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/design/visual_story/validation.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/getting_started/visual_story/validation.html"><span class="arrow-next">다음</span></a>
 </div>

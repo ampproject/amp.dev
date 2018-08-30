@@ -8,7 +8,7 @@ role:  Sr. Marketing Manager, AddThis
 origin: "https://amphtml.wordpress.com/2018/07/30/addthis-is-now-available-for-amp/amp/"
 excerpt: "Editor&#8217;s note: the following was originally posted on AddThis&#8217; blog by Chad Edmonds, Sr. Marketing Manager, AddThis Just because AddThis is now free, doesn’t mean we’re slowing down on pushing out more great features and functionalities! We recently rolled out AddThis Inline Share Buttons for AMP and it is ready for you to integrate into your AMP compatible [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-07-30T07:50:10-07:00
+date_data: 2018-07-30T14:50:10+00:00
 $date: July 30, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

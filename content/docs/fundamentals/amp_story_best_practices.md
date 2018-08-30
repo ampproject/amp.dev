@@ -14,7 +14,7 @@ This guide provides recommended practices that you should implement when creatin
 {{ youtube('2WjFBnCj2ew', 480, 270, caption='Watch our video on creating delightful AMP story experiences.') }}
 
 
-## Background color  
+## Background color
 
 You should specify a background color for your AMP story pages. By having a background color, you provide a good fallback user experience even if poor network conditions prevent them from downloading any image or video assets.
 
@@ -33,11 +33,11 @@ Ensure that text overlays on a page are readable:
 * Choose a font color that contrasts with the background image and background color.
 * Add a gradient overlay between the image and text to contrast the text and image.
 
-### Bite-sized text   
+### Bite-sized text
 
 Keep in mind that AMP stories are designed to offer a more visual experience, so keep text on a page limited to bite-size chunks (i.e., no more than 1-2 sentences). Carefully consider your aims and the reading flow if you believe more text on a page would be appropriate.
 
-## Video  
+## Video
 
 ### Specify a poster attribute
 
@@ -82,9 +82,7 @@ When specifying the source for an [amp-video](/docs/reference/components/amp-vid
 
 If you can only provide a single video format, provide **MP4**.  However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
-{% call callout('Note', type='note') %}
-The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
-{% endcall %}
+Note: The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
 
 ### Video resolution
 
@@ -109,11 +107,7 @@ AMP story videos are always vertical (i.e., portrait view), with an expected asp
   </tbody>
 </table>
 
-
-{% call callout('Note', type='note') %}
-For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
-{% endcall %}
-
+Note: For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
 
 ### Video codec
 

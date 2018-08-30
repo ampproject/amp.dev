@@ -18,7 +18,7 @@ $title: 원격 데이터 사용하기
 
 |  요청                              |  응답 |
 |---------------------------------------|-----------|
-| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |  
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 `<amp-state>` 요소 내의 JSON 데이터와 유사하게, 이 가져오기에서 반환되는 원격 데이터는 요소의 `id` 속성 아래에 병합되어 사용할 수 있습니다. 예를 들어 위의 예제 응답에서 반환되는 데이터는 다음과 같은 표현식에서 액세스할 수 있습니다.
 
@@ -104,15 +104,15 @@ $title: 원격 데이터 사용하기
       </td>
       <!-- 기본 SKU의 주문할 수 있는 사이즈와 일치하도록
            다음 3개의 <td> 요소에 'unavailable' 클래스를 추가합니다. -->
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
         <div option="M">M</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
         <div option="L">L</div>
       </td>
-      <td class="unavailable" 
+      <td class="unavailable"
           [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
         <div option="XL">XL</div>
       </td>
@@ -121,9 +121,7 @@ $title: 원격 데이터 사용하기
 </amp-selector>
 ```
 
-{% call callout('참고', type='note') %}
-`<amp-bind>`는 페이지 로드 시 실행되지 않으며 명시적인 사용자 작업의 응답으로만 실행됩니다. 따라서 `<amp-bind>`가 쓰이는지에 관계없이 모든 페이지에서 일관되게 초기 페이지 로드가 빨라집니다.
-{% endcall %}
+참고: `<amp-bind>`는 페이지 로드 시 실행되지 않으며 명시적인 사용자 작업의 응답으로만 실행됩니다. 따라서 `<amp-bind>`가 쓰이는지에 관계없이 모든 페이지에서 일관되게 초기 페이지 로드가 빨라집니다.
 
 ## 가변적인 셔츠 가격
 
@@ -134,15 +132,13 @@ AMPPAREL 매장은 특이하게도 색상과 사이즈에 따라 셔츠 가격�
 ```html
 <!-- 요소가 선택되면 `selectedSize` 변수를 선택한 요소의
      "option" 속성 값으로 설정합니다.  -->
-<amp-selector name="size" 
+<amp-selector name="size"
     on="select:AMP.setState({selectedSize: event.targetOption})">
 ```
 
 `amp-state#selected` 요소를 통해 `selectedSize`의 값을 초기화하는 게 아니라는 점에 주목하세요. 의도적으로 기본 선택된 사이즈를 제공하지 않고 대신 사용자가 사이즈를 선택하도록 하기 때문입니다.
 
-{% call callout('도움말', type='success') %}
-`AMP.setState()`는 기존 변수를 수정하는 외에 새 변수를 정의하는 데에도 사용할 수 있습니다. 표현식에서는 정의되지 않은 변수를 `null`로 간주합니다.
-{% endcall %}
+도움말: `AMP.setState()`는 기존 변수를 수정하는 외에 새 변수를 정의하는 데에도 사용할 수 있습니다. 표현식에서는 정의되지 않은 변수를 `null`로 간주합니다.
 
 선택된 기본 사이즈가 없으므로 가격 라벨을 래핑하는 새로운 `<span>` 요소를 추가하고 기본 텍스트를 '---'로 변경합니다.
 
@@ -170,10 +166,10 @@ AMPPAREL 매장은 특이하게도 색상과 사이즈에 따라 셔츠 가격�
     [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
 ```
 
-**시도해 보기**: 주문할 수 없는 사이즈를 선택하면 장바구니에 추가할 수 없습니다. 
+**시도해 보기**: 주문할 수 없는 사이즈를 선택하면 장바구니에 추가할 수 없습니다.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/ko/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">Prev</span></a>
   <a class="button next-button" href="/ko/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">Next</span></a>
 </div>
- 
+

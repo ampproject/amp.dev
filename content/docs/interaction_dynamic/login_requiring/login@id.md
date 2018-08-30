@@ -47,9 +47,7 @@ Jika melihat lagi kode HTML tombol menggunakan `on="tap:amp-access.login-sign-in
 
 [/sourcecode]
 
-{% call callout('Catatan', type='note') %}
-Perhatikan bahwa Anda dapat menentukan URL berbeda di dalam node login, dalam kasus ini kita menentukan `sign-in`, dan nanti kita akan menentukan `sign-out`.
-{% endcall %}
+Catatan: Perhatikan bahwa Anda dapat menentukan URL berbeda di dalam node login, dalam kasus ini kita menentukan `sign-in`, dan nanti kita akan menentukan `sign-out`.
 
 Halaman login merupakan halaman non-AMP tempat kita mengisi nilai login dan sandi supaya mudah. Perhatikan penggunaan jenis masukan tersembunyi `returnURL`, yang diisi oleh server AMPByExample melalui pemberian template sisi server. Server membaca nilai ini dari parameter yang disebut `return`, yang secara otomatis ditambahkan oleh koleksi AMP ke URL login.
 
@@ -68,13 +66,11 @@ Sebagai rangkuman singkat:
 - Waktu proses AMP menutup halaman login dan mengalihkan ke halaman yang ditentukan oleh parameter URL respons
 - Server harus mengatur respons setelah pengguna mengklik tombol login
 
-{% call callout('Tip', type='success') %}
-Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation](/id/docs/reference/components/amp-access#login-flow).
-{% endcall %}
+Tip: Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation](/id/docs/reference/components/amp-access#login-flow).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/id/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">Sebelumnya</span></a>
   <a class="button next-button" href="/id/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-next">Berikutnya</span></a>
 </div>
- 
- 
+
+

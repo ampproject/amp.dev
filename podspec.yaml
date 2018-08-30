@@ -41,3 +41,6 @@ deployments:
     server: googwebreview.appspot.com
     project: search/amp
     name: amp
+
+ext:
+- ext.content_extras.ContentExtrasExtension

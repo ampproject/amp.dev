@@ -91,13 +91,9 @@ AMP でこの機能を再現するには、まず、対象ドキュメントの 
 
 カスタム トラッキング プラットフォームを統合する場合でも、`amp-analytics` を使用して、トラッキング データの送信先となる独自の URL エンドポイントを定義できます。詳しくは、[amp-analytics](/ja/docs/reference/components/amp-analytics.html) コンポーネントのリファレンス ドキュメントをご覧ください。
 
-{% call callout('注', type='note') %}
-`“UA-YYYY-Y”` は Google アナリティクス アカウントの例です。このサンプルをご自身のサイトで使用する場合は、実際のウェブサイトの Google アナリティクス トラッキング コードに置き換える必要があります。
-{% endcall %}
+注: `“UA-YYYY-Y”` は Google アナリティクス アカウントの例です。このサンプルをご自身のサイトで使用する場合は、実際のウェブサイトの Google アナリティクス トラッキング コードに置き換える必要があります。
 
-{% call callout('ヒント', type='success') %}
-より単純なトラッキング システムについては、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) の記事を参照してください。amp-pixel は従来のピクセル トラッキングの要件を満たすことのみを目的としているため、ページビューのトラッキングのみが必要な場合は、amp-pixel の方が amp-analytics よりも軽量なソリューションです。詳しくは、[アナリティクス: 基本ガイド](/ja/docs/analytics/analytics_basics.html)をご覧ください。
-{% endcall %}
+ヒント: より単純なトラッキング システムについては、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) の記事を参照してください。amp-pixel は従来のピクセル トラッキングの要件を満たすことのみを目的としているため、ページビューのトラッキングのみが必要な場合は、amp-pixel の方が amp-analytics よりも軽量なソリューションです。詳しくは、[アナリティクス: 基本ガイド](/ja/docs/analytics/analytics_basics.html)をご覧ください。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">前へ</span></a>

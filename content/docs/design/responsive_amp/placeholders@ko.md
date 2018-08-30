@@ -23,15 +23,13 @@ sandbox="allow-scripts allow-forms allow-same-origin"
 resizable
 src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
 <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+<div placeholder></div>
 </amp-iframe>
 </div>
 
 AMP 요소의 자리표시자는 기본적으로 AMP 요소의 리소스가 다운로드되지 않았거나 초기화되지 않은 경우에도 즉시 표시됩니다. 일반적으로 AMP 요소가 준비되면 자리표시자가 숨겨지고 콘텐츠가 표시됩니다.
 
-{% call callout('참고', type='note') %}
-자리표시자가 AMP 요소일 필요는 없습니다. HTML 요소라면 모두 자리표시자 역할을 할 수 있습니다. 
-{% endcall %}
+참고: 자리표시자가 AMP 요소일 필요는 없습니다. HTML 요소라면 모두 자리표시자 역할을 할 수 있습니다.
 
 ## 대체 동작
 
@@ -45,7 +43,7 @@ sandbox="allow-scripts allow-forms allow-same-origin"
 resizable
 src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
 <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-<div placeholder></div> 
+<div placeholder></div>
 </amp-iframe>
 </div>
 

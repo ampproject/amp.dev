@@ -59,7 +59,7 @@ Tag berikut harus ada di semua dokumen AMP:
 * <a name="body"></a>`body`
 
 Tag wajib ini termasuk bidang `mandatory: true` di [spek validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii);
-juga dirujuk dalam [spesifikasi AMP](/docs/reference/spec.html).
+juga dirujuk dalam [spesifikasi AMP](/docs/fundamentals/spec.html).
 
 ### Tag yang dibutuhkan oleh tag lain tidak tersedia
 
@@ -105,7 +105,7 @@ salin skrip yang dibutuhkan, dan tempel ke dokumen AMP `<head>`.
 </table>
 
 Tag dimasukkan ke daftar putih, sehingga tidak ada daftar definitif semua tag terlarang;
-namun, [spesifikasi AMP](/docs/reference/spec.html)
+namun, [spesifikasi AMP](/docs/fundamentals/spec.html)
 mendefinisikan secara luas kumpulan tag terlarang.
 
 ### Atribut wajib tidak tersedia
@@ -704,7 +704,7 @@ lewat validator CSS online, misalnya,
 
 Kesalahan ini mengacu pada @-aturan dalam CSS,
 untuk setiap AMP yang hanya mengizinkan beberapa aturan.
-(lihat juga [spesifikasi AMP ](/docs/reference/spec.html)).
+(lihat juga [spesifikasi AMP ](/docs/fundamentals/spec.html)).
 Misalnya, `@import` tidak diizinkan.
 Kesalahan validasi secara khusus
 memberi tahu Anda aturan yang tidak valid,

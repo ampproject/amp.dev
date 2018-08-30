@@ -18,10 +18,7 @@ $title: 分析数据供应商
 <amp-analytics type="XYZ">  ...</amp-analytics>
 ```
 
-
-{% call callout('阅读', type='read') %}
- 详细了解如何使用 [`amp-analytics`](/zh_cn/docs/reference/components/amp-analytics.html) 
-跟踪分析数据。{% endcall %}
+阅读: 详细了解如何使用 [`amp-analytics`](/zh_cn/docs/reference/components/amp-analytics.html) 跟踪分析数据。
 
 ## 供应商
 
@@ -183,9 +180,7 @@ type 属性值：`oewa`
 
 - `url`：`amp-analytics-oewa.html` 的 HTTPS 位置
 
-{% call callout('注意', type='note') %}
-有一个名为 `oewadirect` 的变量，它不使用 iframe-ping 解决方案，但可使用 `AMP CLIENT_ID` 更高效地检测客户端。该变量目前仍处于试验阶段，而且由于它不使用 `oewa2.js`，OEWA 不允许使用该变量。
-{% endcall %}
+注意: 有一个名为 `oewadirect` 的变量，它不使用 iframe-ping 解决方案，但可使用 `AMP CLIENT_ID` 更高效地检测客户端。该变量目前仍处于试验阶段，而且由于它不使用 `oewa2.js`，OEWA 不允许使用该变量。
 
 ### Parsely
 

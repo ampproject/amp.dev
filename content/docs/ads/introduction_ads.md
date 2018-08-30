@@ -3,7 +3,7 @@ $title: Introduction to advertising on AMP
 $order: 0
 ---
 
-The AMP Project's goals are to do what's best for the user by helping to deliver fast web pages. Advertising on AMP embraces those same goals by supporting ads that are fast, safe, compelling and effective for users. How does that get done?  
+The AMP Project's goals are to do what's best for the user by helping to deliver fast web pages. Advertising on AMP embraces those same goals by supporting ads that are fast, safe, compelling and effective for users. How does that get done?
 
 Delivering ads to AMP pages is not much different than serving traditional ads on HTML pages:
 
@@ -13,15 +13,13 @@ Delivering ads to AMP pages is not much different than serving traditional ads o
 
 2.  When the user loads an AMP page, the `<amp-ad>` tag sends an ad request to the ad network. To return an ad to the AMP page, ad networks build an `amp-ad` implementation. To learn the details, see the [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md) guide.
 
-3.  Ad networks supply creatives built by advertisers. Advertisers can build creatives using traditional HTML, or in the new format, [AMPHTML](/docs/ads/amphtml_ads.html). 
+3.  Ad networks supply creatives built by advertisers. Advertisers can build creatives using traditional HTML, or in the new format, [AMPHTML](/docs/ads/amphtml_ads.html).
 
 ## Supported ad networks
 
 AMP supports a large number of [ad servers and networks](/docs/ads/ads_vendors.html).
 
-{% call callout('Note', type='note') %}
-Looking to integrate your ad technology with AMP? See these [guidelines](/docs/ads/integration-guide.html).
-{% endcall %}
+Note: Looking to integrate your ad technology with AMP? See these [guidelines](/docs/ads/integration-guide.html).
 
 ## Supported ads
 

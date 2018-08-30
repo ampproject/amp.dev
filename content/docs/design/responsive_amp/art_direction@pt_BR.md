@@ -17,13 +17,11 @@ Neste exemplo simples, o `srcset` especifica qual imagem usar com base na largur
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Observação', type='note') %}
-
-As AMPs oferecem suporte ao atributo srcset com o descritor `w` em todos os navegadores. {% endcall %}
+Observação: As AMPs oferecem suporte ao atributo srcset com o descritor `w` em todos os navegadores.
 
  Saiba mais sobre como criar imagens responsivas com o `srcset` em [Usar imagens responsivas (agora)](http://alistapart.com/article/using-responsive-images-now).
 
@@ -41,15 +39,13 @@ Veja o seguinte exemplo:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 O atributo `sizes` define a largura do elemento como 50% do tamanho da janela de visualização, quando ela tiver 650 px ou mais. Por exemplo, se a janela de visualização tiver 800 px, a largura do elemento será definida como 400 px. Em seguida, o navegador seleciona o recurso `srcset` relativo a 400 px, assumindo que a proporção de pixels do dispositivo seja 1, que neste caso é `narrow.jpg` (320 px).
 
-{% call callout('Importante', type='caution') %}
-
-Quando o atributo sizes for especificado juntamente com width e height, o layout será `responsive` por padrão. {% endcall %}
+Importante: Quando o atributo sizes for especificado juntamente com width e height, o layout será `responsive` por padrão.
 
 
 Saiba mais sobre como os atributos `sizes` e `srcset` se comparam às consultas de mídia nesta postagem de blog [Srcset e sizes](https://ericportis.com/posts/2014/srcset-sizes/).
@@ -73,7 +69,7 @@ Exemplo:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 

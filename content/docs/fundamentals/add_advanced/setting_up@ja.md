@@ -38,9 +38,7 @@ cd accelerated-mobile-pages-advanced
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('注', type='note') %}
-本番環境では HTTPS を使用することを強くおすすめします。HTTPS には SEO など、セキュリティ以外のメリットもあります。このトピックについては、こちらの [Google ウェブマスター向け公式ブログの投稿](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)をご覧ください。
-{% endcall %}
+注: 本番環境では HTTPS を使用することを強くおすすめします。HTTPS には SEO など、セキュリティ以外のメリットもあります。このトピックについては、こちらの [Google ウェブマスター向け公式ブログの投稿](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)をご覧ください。
 
 ローカル ウェブサーバーを設定したら、ブラウザで[こちらの URL](http://localhost:8000/article.amp.html) からサンプルの記事にアクセスします。
 

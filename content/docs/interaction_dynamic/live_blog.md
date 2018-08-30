@@ -13,11 +13,9 @@ Live blogs are web pages that are updated frequently throughout an on-going even
 
 This tutorial provides a short overview of the `amp-live-list` component and focuses on some implementation details for live blogs, like [pagination](#pagination) and [deep linking](#deeplinking). We'll use AMP By Example's [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/) to illustrate implementing live blogs in AMP.
 
-{% call callout('Tip', type='success') %}
-Use the [LiveBlogPosting](http://schema.org/LiveBlogPosting) metadata markup so your blog can be integrated with third-party platform features.
-{% endcall %}
+Tip: Use the [LiveBlogPosting](http://schema.org/LiveBlogPosting) metadata markup so your blog can be integrated with third-party platform features.
 
-{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 
 ## Overview of `amp-live-list`
 
@@ -74,9 +72,9 @@ With pagination, the simple code we used earlier becomes:
 </amp-live-list>
 ```
 
-{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}  
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-It’s your responsibility to populate the navigation items correctly by updating the hosted page. For example, in the [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/) we render the page via a server-side template and we use a query parameter to specify what the first blog item of the page should be. We limit the size of the page to 5 items, so if the server has generated more than 5 items, when a user lands on the main page shows the "Next" element in the navigation area. Refer to [amp-live-list.go](https://github.com/ampproject/amp-by-example/blob/master/backend/amp-live-list.go#L182) and [Live_Blog.html](https://github.com/ampproject/amp-by-example/blob/master/src/60_Samples_%2526_Templates/Live_Blog.html) for details.
+It’s your responsibility to populate the navigation items correctly by updating the hosted page. For example, in the [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/) we render the page via a server-side template and we use a query parameter to specify what the first blog item of the page should be. We limit the size of the page to 5 items, so if the server has generated more than 5 items, a user landing on the main page will see the "Next" element in the navigation area. Refer to [amp-live-list.go](https://github.com/ampproject/amp-by-example/blob/master/backend/amp-live-list.go#L182) and [Live_Blog.html](https://github.com/ampproject/amp-by-example/blob/master/src/60_Samples_%2526_Templates/Live_Blog.html) for details.
 
 After the size of blog posts has exceeded the maximum number of items specified by `data-max-items-per-page`, the older blog items are displayed in the “Next” pages, for example on page 2. Given that the `amp-live-list` polls the server at intervals to see if there is any change in the items, there's no need to poll the server if the user isn't on the first page.
 

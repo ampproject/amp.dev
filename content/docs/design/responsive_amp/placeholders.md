@@ -26,7 +26,7 @@ An element marked as a `placeholder` will always `fill` the parent AMP element.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -34,10 +34,7 @@ By default, the placeholder is immediately shown for the AMP element,
 even if the AMP element's resources have not been downloaded or initialized.
 Once ready, the AMP element typically hides its placeholder and shows the content.
 
-{% call callout('Note', type='note') %}
-The placeholder doesn’t have to be an AMP element;
-any HTML element can act as the placeholder.
-{% endcall %}
+Note: The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder.
 
 ## Fallbacks
 
@@ -61,13 +58,13 @@ In the following example, we use the `fallback` attribute to communicate to the 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 ##### Example: Serve different image formats
 
-In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported. 
+In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported.
 
 <div>
 <amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
@@ -75,7 +72,7 @@ In the following example, we use the `fallback` attribute to tell the browser to
 ## Interaction of placeholders and fallbacks
 
 For AMP components that rely on dynamic content (e.g., `amp-twitter`, `amp-list`), the interaction of fallbacks and placeholders operates as follows:
- 
+
 <ol>
   <li>Display the placeholder while the content is loading.</li>
   <li>If the content loads successfully, hide the placeholder and display the content.</li>

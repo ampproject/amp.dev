@@ -32,13 +32,11 @@ untuk memilih rasio aspek berdasarkan lebar layar.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Tip', type='success') %}
-Lihat lebih banyak contoh `amp-twitter` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-twitter/).
-{% endcall %}
+Tip: Lihat lebih banyak contoh `amp-twitter` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-twitter/).
 
 ## Menyematkan Instagram
 
@@ -66,13 +64,11 @@ sehingga nilai lebar dan tinggi harus universal
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Tip', type='success') %}
-Lihat lebih banyak contoh `amp-instagram` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-instagram/).
-{% endcall %}
+Tip: Lihat lebih banyak contoh `amp-instagram` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-instagram/).
 
 ## Menampilkan pos atau video Facebook
 
@@ -87,14 +83,14 @@ Anda harus menyertakan skrip berikut di `<head>`:
 
 ##### Contoh: Menyematkan pos
 
-Sumber: 
+Sumber:
 ```html
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
 ```
-Pratinjau: 
+Pratinjau:
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
@@ -102,7 +98,7 @@ Pratinjau:
 
 ##### Contoh: Menyematkan video
 
-Sumber: 
+Sumber:
 ```html
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -110,17 +106,14 @@ Sumber:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 ```
-Pratinjau: 
+Pratinjau:
 <amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-{% call callout('Tip', type='success') %}
-Lihat lebih banyak contoh `amp-facebook` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-facebook/).
-{% endcall %}
-
+Tip: Lihat lebih banyak contoh `amp-facebook` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-facebook/).
 
 ## Menyertakan video youtube
 
@@ -147,13 +140,11 @@ Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk vide
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Tip', type='success') %}
-Lihat lebih banyak contoh `amp-youtube` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-youtube/).
-{% endcall %}
+Tip: Lihat lebih banyak contoh `amp-youtube` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-youtube/).
 
 ## Menampilkan iklan
 
@@ -178,7 +169,7 @@ Jenis iklan yang berbeda membutuhkan atribut `data-*` yang berbeda.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -194,12 +185,10 @@ untuk ditampilkan jika tidak ada iklan yang tersedia:
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](/id/docs/reference/components/amp-ad.html#supported-ad-networks).
 
-{% call callout('Baca Lebih Lanjut', type='read') %}
-Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP](/id/docs/ads/monetization.html) guide.
-{% endcall %}
+Baca lebih lanjut: Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP](/id/docs/ads/monetization.html) guide.

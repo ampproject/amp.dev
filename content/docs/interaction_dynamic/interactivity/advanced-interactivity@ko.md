@@ -67,10 +67,7 @@ selected.slide // 0으로 평가합니다.
 
 `event.index` 표현식이 새 슬라이드 색인으로 평가되고 `AMP.setState()` 작업으로 이 객체 리터럴이 현재 상태로 병합됩니다. 이렇게 하면 `selected.slide`의 현재 값이 `event.index` 값으로 대체됩니다.
 
-
-{% call callout('도움말', type='success') %}
-`AMP.setState()`는 중첩된 객체 리터럴을 완전히 병합합니다. 자세한 내용은 [`<amp-bind>`](/ko/docs/reference/components/amp-bind.html) 도움말을 참조하세요.
-{% endcall %}
+도움말: `AMP.setState()`는 중첩된 객체 리터럴을 완전히 병합합니다. 자세한 내용은 [`<amp-bind>`](/ko/docs/reference/components/amp-bind.html) 도움말을 참조하세요.
 
 ### 표시기 요소 바인딩
 
@@ -89,7 +86,7 @@ selected.slide // 0으로 평가합니다.
 
 `[class]`는 `class` 속성을 변경하는 바인딩이며 이를 사용하여 모든 요소에 CSS 클래스를 추가하거나 삭제할 수 있습니다.
 
-**직접 해보기**: 페이지를 새로고침하고 슬라이드를 변경해 보세요. 
+**직접 해보기**: 페이지를 새로고침하고 슬라이드를 변경해 보세요.
 
 캐러셀의 슬라이드를 변경하면 다음과 같은 작업이 실행됩니다.
 
@@ -179,13 +176,11 @@ selected.slide // 0으로 평가합니다.
 새 색상이 선택될 때마다 `selected.sku` 변수를 업데이트하는 [`<amp-selector>`](/ko/docs/reference/components/amp-selector.html)에 "on" 작업을 추가합니다.
 
 ```html
-<amp-selector name="color" 
+<amp-selector name="color"
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-{% call callout('도움말', type='success') %}
-이는 `on="tap:AMP.setState(...)` 작업을 `<amp-selector>` 내의 각 `<amp-img>` 하위 요소에 추가함으로써 실행할 수도 있습니다. `<amp-selector>`의 장점 중 하나는 이러한 방식으로 마크업을 단순화한다는 것입니다.
-{% endcall %}
+도움말: 이는 `on="tap:AMP.setState(...)` 작업을 `<amp-selector>` 내의 각 `<amp-img>` 하위 요소에 추가함으로써 실행할 수도 있습니다. `<amp-selector>`의 장점 중 하나는 이러한 방식으로 마크업을 단순화한다는 것입니다.
 
 ### 이미지 요소 바인딩
 
@@ -201,9 +196,7 @@ selected.slide // 0으로 평가합니다.
     [src]="shirts[selected.sku].image"></amp-img>
 ```
 
-{% call callout('참고', type='note') %}
-실제 상황에서는 캐러셀의 각 이미지에 다른 `src`가 있을 가능성이 높습니다. 이는 하나의 이미지를 이미지 배열로 대체함으로써 실행할 수 있습니다. 간단한 설명을 위해 이 가이드에서는 다양한 배율에서 하나의 이미지를 사용합니다.
-{% endcall %}
+참고: 실제 상황에서는 캐러셀의 각 이미지에 다른 `src`가 있을 가능성이 높습니다. 이는 하나의 이미지를 이미지 배열로 대체함으로써 실행할 수 있습니다. 간단한 설명을 위해 이 가이드에서는 다양한 배율에서 하나의 이미지를 사용합니다.
 
 **직접 해보기**: 페이지를 새로고침하고 다른 색상의 셔츠를 선택하세요. 다른 색상을 선택하면 캐러셀의 이미지가 업데이트되어 선택한 색상의 셔츠가 표시됩니다.
 
@@ -212,4 +205,4 @@ selected.slide // 0으로 평가합니다.
   <a class="button prev-button" href="/ko/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">이전</span></a>
   <a class="button next-button" href="/ko/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">다음</span></a>
 </div>
- 
+

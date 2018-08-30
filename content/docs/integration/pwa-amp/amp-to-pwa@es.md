@@ -28,9 +28,7 @@ Por otro lado, las aplicaciones web progresivas aumentan el grado de interactivi
 
 AMP puede instalar el componente service worker de tu aplicación web progresiva desde una página AMP, incluso aunque la página AMP en cuestión se sirva desde una memoria caché de AMP. Si se hace correctamente, el enlace que dirige a tu PWA (desde una de las páginas AMP) dará la impresión de cargar el contenido casi inmediatamente, como en la primera carga de la página AMP.
 
-{% call callout('Consejo', type='success') %}
-Si todavía no estás familiarizado con Service Worker, te recomendamos este [curso de Udacity](https://www.udacity.com/course/offline-web-applications--ud899) de Jake Archibald.
-{% endcall %}
+Consejo: Si todavía no estás familiarizado con Service Worker, te recomendamos este [curso de Udacity](https://www.udacity.com/course/offline-web-applications--ud899) de Jake Archibald.
 
 En primer lugar, instala el componente service worker en todas tus páginas AMP con [`<amp-install-serviceworker>`](/es/docs/reference/components/amp-install-serviceworker), incluyéndolo junto a su secuencia de comandos en la sección `<head>` de la página:
 
@@ -70,9 +68,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-{% call callout('Consejo', type='success') %}
-Hay formas más sencillas de trabajar con un service worker. Echa un vistazo a las [bibliotecas auxiliares de Service Worker](https://github.com/GoogleChrome/sw-helpers).
-{% endcall %}
+Consejo: Hay formas más sencillas de trabajar con un service worker. Echa un vistazo a las [bibliotecas auxiliares de Service Worker](https://github.com/GoogleChrome/sw-helpers).
 
 ## Redirigir a la PWA todos los enlaces de una página AMP
 
@@ -115,8 +111,4 @@ AMP resuelve esta cuestión [reescribiendo la URL del esqueleto](/es/docs/refere
 
 Después de colocar todos estos atributos, los clics a enlaces posteriores de una página AMP llevarán al usuario a tu PWA, independientemente de si se cuenta con un componente service worker.
 
-{% call callout('Más información', type='read') %}
-Una vez que ya has llegado hasta aquí, ¿por qué no reutilizas tus páginas AMP para construir la PWA? [Descubre cómo se hace](/es/docs/integration/pwa-amp/amp-in-pwa).
-{% endcall %}
- 
- 
+Más información: Una vez que ya has llegado hasta aquí, ¿por qué no reutilizas tus páginas AMP para construir la PWA? [Descubre cómo se hace](/es/docs/integration/pwa-amp/amp-in-pwa).

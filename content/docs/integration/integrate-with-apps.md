@@ -1,5 +1,5 @@
 ---
-$title: Integrate AMP with your app 
+$title: Integrate AMP with your app
 $order: 6
 toc: true
 
@@ -9,7 +9,7 @@ This guide is intended for mobile and web app developers who want to integrate a
 
 [TOC]
 
-## Transform links to AMP  
+## Transform links to AMP
 
 With AMP, it's possible to near-instantly render external websites inside your
 native or mobile web app. You can achieve this by matching URLs in your content
@@ -38,10 +38,7 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-{% call callout('Tip', type='success') %}
-Consider providing users the option to view the non-AMP version instead of the
-AMP version through the preference settings in your app.
-{% endcall %}
+Tip: Consider providing users the option to view the non-AMP version instead of the AMP version through the preference settings in your app.
 
 ### Ways to transform links
 
@@ -62,24 +59,19 @@ There are three ways to programmatically transform links:
     Google's AMP URL API from the client. Use this approach if server-side URL
     transformation is not possible (for example, for messaging apps using
     end-to-end encryption). Make sure to trigger URL transformation as soon as
-    the content is available, before any user interaction has taken place. 
+    the content is available, before any user interaction has taken place.
 
-{% call callout('Important', type='caution') %}
-Never request AMP URLs through the Google's AMP API as a result of a user
-interaction because that degrades the performance of your app as it introduces
-an additional network request. Instead, use one of the three approaches 
-described above.
-{% endcall %}
+Important: Never request AMP URLs through the Google's AMP API as a result of a user interaction because that degrades the performance of your app as it introduces an additional network request. Instead, use one of the three approaches described above.
 
 
-#### Google's AMP URL API  
+#### Google's AMP URL API
 
 Google provides the AMP URL API to retrieve the matching AMP HTML URLs for a
 given list of URLs ([official documentation](https://developers.google.com/amp/cache/use-amp-url) /
 [demo](https://ampbyexample.com/advanced/using_the_amp_url_api/)). The URLs do
 not need to be the canonical versions. If an AMP version exists, the response
 includes the original AMP URL and the URL for the cached AMP page on the Google
-AMP Cache. 
+AMP Cache.
 
 For example, for a given list of URLs:
 
@@ -114,12 +106,7 @@ The response body contains the AMP URL mapping in JSON format:
 }
 ```
 
-{% call callout('Note', type='note') %}
-URLs for cached AMP pages on non-Google AMP Caches cannot be retrieved via the
-AMP URL API. However, you can easily derive the cached URL from the returned AMP
-URL (ampURL).
-{% endcall %}
-
+Note: URLs for cached AMP pages on non-Google AMP Caches cannot be retrieved via the AMP URL API. However, you can easily derive the cached URL from the returned AMP URL (ampURL).
 
 ## Using AMP Caches
 
@@ -138,7 +125,7 @@ Currently, there are two AMP Cache providers:
 
 This gives two choices to display an AMP file in an app by using either:
 
-1.  the version hosted by the publisher 
+1.  the version hosted by the publisher
 1.  the version hosted in an AMP Cache
 
 We recommend using the AMP Cache for the following reasons:
@@ -155,11 +142,7 @@ We recommend using the AMP Cache for the following reasons:
     Cache crawler and to your users. Using an AMP Cache guarantees that users
     always see the same AMP file as the Cache.
 
-{% call callout('Important', type='caution') %}
-When serving AMP pages through the AMP Cache, provide a viewer experience that
-clearly shows the AMP's origin and offers the possibility for users to share the
-canonical URL (see also the following two sections for more about this).
-{% endcall %}
+Important: When serving AMP pages through the AMP Cache, provide a viewer experience that clearly shows the AMP's origin and offers the possibility for users to share the canonical URL (see also the following two sections for more about this).
 
 ## Implementing an AMP Viewer
 
@@ -172,7 +155,7 @@ guide. Viewer implementations for [web](https://github.com/ampproject/amp-viewer
 and [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) are
 available on [GitHub](https://github.com/ampproject/amp-viewer). An Android
 viewer is not yet available, see [this answer](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038)
-on Stack Overflow for how to best configure a WebView for displaying AMP pages. 
+on Stack Overflow for how to best configure a WebView for displaying AMP pages.
 
 Here are some general best practices for implementing an AMP Viewer:
 
@@ -194,4 +177,4 @@ The philosophy of the AMP Project is that platforms should get to choose which
 version of a document to present to the user. For this reason, it makes most
 sense to share the canonical version (as opposed to the AMP version) when
 sharing to a different platform, and then expect the target platform to make the
-right choice. 
+right choice.

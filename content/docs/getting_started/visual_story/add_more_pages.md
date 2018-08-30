@@ -5,9 +5,7 @@ $order: 4
 
 Now that you are familiar with adding a page to an AMP story, adding the next pages in our "The Joy of Pets" story is very similar. Based on the information provided below, **go ahead and create the remaining pages** by using what you've learned so far.  If you get stuck, look at the completed (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) code.
 
-{% call callout('Tip', type='success') %}
-Remember that each page needs a unique "id" attribute (e.g., `id="page1"`).
-{% endcall %}
+Tip: Remember that each page needs a unique "id" attribute (e.g., `id="page1"`).
 
 ## Page 1: Cats
 
@@ -19,7 +17,7 @@ Demonstrates how to display an image and text in a single layer.
       <ul>
         <li>Contains 1 layer:
       <ul>
-        <li>Implements the <a href="/docs/design/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> template.</li>
+        <li>Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> template.</li>
         <li>Contains 3 elements:
           <ul>
             <li>An <code>&lt;h1></code> element with the title: <em>Cats</em></li>
@@ -43,11 +41,11 @@ Demonstrates how to arrange text and display a screen-filling image with two lay
       <ul>
         <li>Contains 2 layers:
       <ul>
-        <li><b>Layer 1</b>: Implements the <a href="/docs/design/visual_story/create_cover_page.html#fill"><code>fill</code></a> template, and contains a responsive <a href="/docs/reference/components/amp-img">amp-img</a> (<code class="filename">dog.jpg</code>, 720 x 1280px).</li>
-        <li><b>Layer 2</b>:  Implements the <a href="/docs/design/visual_story/create_cover_page.html#thirds"><code>thirds</code></a> template and contains 2 elements:
+        <li><b>Layer 1</b>: Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> template, and contains a responsive <a href="/docs/reference/components/amp-img">amp-img</a> (<code class="filename">dog.jpg</code>, 720 x 1280px).</li>
+        <li><b>Layer 2</b>:  Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>thirds</code></a> template and contains 2 elements:
           <ul>
             <li>An <code>&lt;h1></code> element with the title: <em>Dogs</em></li>
-            <li>A <code>&lt;p></code> element that specifies a <a href="/docs/design/visual_story/create_cover_page.html#thirds"><code>grid-area</code></a> that occupies the <a href="/docs/design/visual_story/create_cover_page.html#thirds"><code>lower-third</code></a> and contains the following text: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em></li>
+            <li>A <code>&lt;p></code> element that specifies a <a href="/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>grid-area</code></a> that occupies the <a href="/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>lower-third</code></a> and contains the following text: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em></li>
           </ul>
         </li>
       </ul></li></ul>
@@ -66,13 +64,13 @@ Demonstrates how to arrange text, display a screen-filling image, and provide ba
       <ul>
       <li>Contains 3 layers:
       <ul>
-        <li><b>Layer 1</b>: Implements the <a href="/docs/design/visual_story/create_cover_page.html#fill"><code>fill</code></a> template, and contains a responsive <a href="/docs/reference/components/amp-img">amp-img</a> (<code class="filename">bird.jpg</code>, 720 x 1280px).</li>
-        <li><b>Layer 2</b>  Implements the <a href="/docs/design/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> template and contains one element:
+        <li><b>Layer 1</b>: Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> template, and contains a responsive <a href="/docs/reference/components/amp-img">amp-img</a> (<code class="filename">bird.jpg</code>, 720 x 1280px).</li>
+        <li><b>Layer 2</b>  Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> template and contains one element:
           <ul>
             <li>An <code>&lt;h1></code> element with the title: <em>Birds</em></li>
           </ul>
         </li>
-        <li><b>Layer 3</b>:  Implements the <a href="/docs/design/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> template and contains one element:
+        <li><b>Layer 3</b>:  Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> template and contains one element:
           <ul>
             <li>A <code>&lt;q></code> element for the following quotation: <em>A bird is three things: Feathers, flight and song, And feathers are the least of these.--Marjorie Allen Seiffert</em></li>
             <li>This third layer specifies <code>class="bottom"</code> to align the child elements to the bottom of screen.</li>
@@ -124,6 +122,6 @@ Demonstrates how to arrange text and display a screen-filling video for the page
 Our "Joy of Pets" story is nearly complete. We'll use animations in our last page to bring all the pets together.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/design/visual_story/create_cover_page.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/design/visual_story/animating_elements.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="/docs/getting_started/visual_story/create_cover_page.html"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-next">Next</span></a>
 </div>

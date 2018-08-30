@@ -16,9 +16,7 @@ iframe は、メインページのコンテキストでサポートされてい�
 * 最初のビューポートが上部から **600 ピクセル** または **75%** 以上離れていること。
 * HTTPS 経由でのみリソースをリクエストできること（allow-same-origin を指定している場合を除き、リソースのオリジンはコンテナとは別である必要があります）。
 
-{% call callout('参照', type='read') %}
-[<code>amp-iframe</code>](/ja/docs/reference/components/amp-iframe.html) の仕様もご確認ください。
-{% endcall %}
+参照: [<code>amp-iframe</code>](/ja/docs/reference/components/amp-iframe.html) の仕様もご確認ください。
 
 ### スクリプトを追加する
 
@@ -42,7 +40,7 @@ iframe は、メインページのコンテキストでサポートされてい�
 </amp-iframe>
 ```
 
-Preview: 
+Preview:
 
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
@@ -54,9 +52,7 @@ Preview:
 
 `placeholder` 属性を指定した要素（`amp-img` 要素など）を `amp-iframe` に追加して、iframe が表示できる状態になるまでプレースホルダとしてレンダリングされるようにすると、`amp-iframe` をドキュメントの一番上に表示することが可能です。
 
-{% call callout('参照', type='read') %}
-プレースホルダについて詳しくは、[プレースホルダを含む iframe](/ja/docs/reference/components/amp-iframe.html#iframe-with-placeholder) をご覧ください。
-{% endcall %}
+参照: プレースホルダについて詳しくは、[プレースホルダを含む iframe](/ja/docs/reference/components/amp-iframe.html#iframe-with-placeholder) をご覧ください。
 
 
 プレースホルダを使用した例:

@@ -34,9 +34,7 @@ In the `<html> `tag,  add the  `⚡4ads` attribute, which identifies the documen
 ...
 ```
 
-{% call callout('Note', type='note') %}
-Unlike AMP pages, [AMPHTML ads do not require a `<link rel="canonical">` tag](/docs/ads/a4a_spec.html#amphtml-ad-format-rules).
-{% endcall %}
+Note: Unlike AMP pages, [AMPHTML ads do not require a `<link rel="canonical">` tag](/docs/ads/a4a_spec.html#amphtml-ad-format-rules).
 
 AMPHTML ads require their own version of the AMP runtime, so add the following `<script>` tag to the `<head>`section of your document:
 
@@ -52,9 +50,7 @@ AMPHTML ad creatives require a different, and considerably simple [boilerplate](
 
 To style your AMPHTML ad, your CSS must be embedded inline in the AMPHTML document using `<style amp-custom></style> `tags in the `<head>` section. As we're rendering a basic image ad, we don't require any CSS, so we won't add these tags.
 
-{% call callout('Note', type='note') %}
-For AMPHTML ads, the maximum size for an inline style sheet is *20 kilobytes*. Learn more about [CSS requirements in the AMPHTML ad spec](/docs/ads/a4a_spec.html#css). 
-{% endcall %}
+Note: For AMPHTML ads, the maximum size for an inline style sheet is *20 kilobytes*. Learn more about [CSS requirements in the AMPHTML ad spec](/docs/ads/a4a_spec.html#css).
 
 Here's the complete code for your HTML file:
 

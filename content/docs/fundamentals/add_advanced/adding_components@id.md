@@ -48,9 +48,7 @@ Coba **tambahkan** kedua contoh di atas ke dalam artikel tepat setelah tag `<hea
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Iklan pengujian') }}
 
-{% call callout('Penting', type='caution') %}
-Anda mungkin menemukan beberapa error di konsol developer, seperti `Konten Campuran` atau `XMLHttpRequest tidak dapat dimuat`. Error yang pertama kemungkinan berkaitan dengan iklan A9 karena tidak semua konten yang dimuat aman. Ini adalah persyaratan penting untuk semua iklan yang ditayangkan di AMP.
-{% endcall %}
+Penting: Anda mungkin menemukan beberapa error di konsol developer, seperti `Konten Campuran` atau `XMLHttpRequest tidak dapat dimuat`. Error yang pertama kemungkinan berkaitan dengan iklan A9 karena tidak semua konten yang dimuat aman. Ini adalah persyaratan penting untuk semua iklan yang ditayangkan di AMP.
 
 Dua `amp-ad` di bawah memberikan contoh fleksibilitas yang dimiliki `amp-ad` untuk mendukung fitur platform iklan.  Dalam kasus ini, kami telah mengonfigurasi (menggunakan dasbor DoubleClick) 2 iklan pengujian DoubleClick agar hanya ditampilkan di negara tertentu--pengujian pertama hanya akan ditampilkan di Inggris Raya dan pengujian kedua hanya akan ditampilkan di Amerika Serikat.  Coba **tambahkan** 2 konfigurasi iklan penargetan-geo ini dalam dokumen AMP di bawah iklan yang Anda tambahkan sebelumnya:
 
@@ -76,17 +74,11 @@ Dua `amp-ad` di bawah memberikan contoh fleksibilitas yang dimiliki `amp-ad` unt
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Iklan pengujian') }}
 
-{% call callout('Catatan', type='note') %}
-Anda mungkin mengetahui bahwa yang ada dalam tag amp-ad ini adalah tag `div` tambahan dengan atribut yang diberi nama `fallback`. Dapatkah Anda menebak apa yang ditunjukkan oleh atribut `fallback`? Atribut ini memberi tahu sistem pemuatan AMP agar hanya menampilkan konten elemen tersebut saat elemen induk gagal dimuat. Pelajari lebih lanjut di [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
-{% endcall %}
+Catatan: Anda mungkin mengetahui bahwa yang ada dalam tag amp-ad ini adalah tag `div` tambahan dengan atribut yang diberi nama `fallback`. Dapatkah Anda menebak apa yang ditunjukkan oleh atribut `fallback`? Atribut ini memberi tahu sistem pemuatan AMP agar hanya menampilkan konten elemen tersebut saat elemen induk gagal dimuat. Pelajari lebih lanjut di [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Untuk melihat jaringan iklan yang didukung baru-baru ini, baca dokumentasi referensi untuk komponen [amp-ad](/id/docs/reference/components/amp-ad.html#supported-ad-networks).
-{% endcall %}
+Baca lebih lanjut: Untuk melihat jaringan iklan yang didukung baru-baru ini, baca dokumentasi referensi untuk komponen [amp-ad](/id/docs/reference/components/amp-ad.html#supported-ad-networks).
 
-{% call callout('Catatan', type='note') %}
-Tidak ada JavaScript yang disediakan jaringan iklan yang diizinkan untuk dijalankan di dalam dokumen AMP. Sebagai gantinya, AMP runtime memuat iframe dari asal yang berbeda (melalui sandbox iframe) sebagai dokumen AMP dan menjalankan JavaScript jaringan iklan dalam sandbox iframe tersebut.
-{% endcall %}
+Catatan: Tidak ada JavaScript yang disediakan jaringan iklan yang diizinkan untuk dijalankan di dalam dokumen AMP. Sebagai gantinya, AMP runtime memuat iframe dari asal yang berbeda (melalui sandbox iframe) sebagai dokumen AMP dan menjalankan JavaScript jaringan iklan dalam sandbox iframe tersebut.
 
 Dokumen AMP kami kini menyertakan teks, gambar, dan iklan yang disematkan di halaman, yang semuanya merupakan komponen utama untuk menceritakan kisah dan memonetisasi konten Anda. Namun, situs modern sering kali menyertakan lebih banyak fungsi daripada sekadar gambar dan teks.
 
@@ -117,9 +109,7 @@ Meskipun browser dapat menampilkan video YouTube tanpa masalah, Anda masih akan 
 
 Perlu diingat, tidak semua komponen disertakan dalam file JavaScript koleksi AMP dasar. Kami perlu menyertakan permintaan JavaScript tambahan untuk komponen YouTube.
 
-{% call callout('Catatan', type='note') %}
-Jika konsol developer masih terbuka dan `#development=1` masih ada di dalam URL, pada saat ini Anda akan melihat error validator AMP yang mengingatkan Anda untuk menambahkan JavaScript `amp-youtube` dan link ke dokumentasi yang akan menunjukkan tag `script` yang akan ditambahkan.
-{% endcall %}
+Catatan: Jika konsol developer masih terbuka dan `#development=1` masih ada di dalam URL, pada saat ini Anda akan melihat error validator AMP yang mengingatkan Anda untuk menambahkan JavaScript `amp-youtube` dan link ke dokumentasi yang akan menunjukkan tag `script` yang akan ditambahkan.
 
 **Tambahkan** skrip berikut ke tag `<head>`:
 
@@ -135,9 +125,7 @@ Seperti elemen lainnya di halaman, kami menentukan `lebar` dan `tinggi` video, s
 
 Untuk mempelajari lebih lanjut tentang menyematkan video YouTube, baca dokumentasi komponen [amp-youtube](/id/docs/reference/components/amp-youtube.html). Untuk mengetahui komponen video dan media lainnya, lihat [daftar komponen AMP media](/id/docs/reference/components.html#media).
 
-{% call callout('Tips', type='success') %}
-Gunakan atribut [`fallback`](/id/docs/design/responsive/placeholders.html#fallbacks) untuk memberi tahu pengguna jika ada komponen yang gagal dimuat atau jika komponen tersebut tidak didukung di browser mereka.
-{% endcall %}
+Tips: Gunakan atribut [`fallback`](/id/docs/design/responsive/placeholders.html#fallbacks) untuk memberi tahu pengguna jika ada komponen yang gagal dimuat atau jika komponen tersebut tidak didukung di browser mereka.
 
 ## Menampilkan Tweet
 Menyematkan tweet yang telah diformat sebelummnya dari Twitter merupakan fitur umum dalam artikel berita. Komponen [amp-twitter](/id/docs/reference/components/amp-twitter.html) dapat memberikan fungsi ini dengan mudah.
@@ -167,9 +155,7 @@ Atribut `data-tweetid` adalah contoh lain dari atribut khusus yang diperlukan ol
 
 Untuk mempelajari lebih lanjut tentang menyematkan Tweet dari Twitter, baca dokumentasi komponen [amp-twitter](/id/docs/reference/components/amp-twitter.html).
 
-{% call callout('Tips', type='success') %}
-AMP memberikan lebih banyak komponen untuk menyematkan konten dari jaringan sosial. Lihat [komponen AMP sosial](/id/docs/reference/components.html#social) terbaru.
-{% endcall %}
+Tips: AMP memberikan lebih banyak komponen untuk menyematkan konten dari jaringan sosial. Lihat [komponen AMP sosial](/id/docs/reference/components.html#social) terbaru.
 
 ## Menandai kutipan artikel
 

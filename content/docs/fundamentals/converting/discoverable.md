@@ -83,11 +83,7 @@ For our news article, **add** the following structured data to the bottom of the
 </script>
 ```
 
-
-{% call callout('Note', type='note') %}
-The content should always be the same. For news articles, specify the “NewsArticle” type. The headline should match your article’s title. The image object refers to the hero image of the article.
-{% endcall %}
-
+Note: The content should always be the same. For news articles, specify the “NewsArticle” type. The headline should match your article’s title. The image object refers to the hero image of the article.
 
 **Reload** the page in your browser and verify that no AMP Validation errors were introduced.
 
@@ -109,9 +105,7 @@ To verify that your structured data is correct, many platforms provide validatio
 
 If your structured data is valid, you should see **0 errors**, and **0 warnings**.
 
-{% call callout('Read on', type='read') %}
-To learn more about page discoverability, see the [Make your page discoverable](/docs/fundamentals/discovery.html) guide.
-{% endcall %}
+Read on: To learn more about page discoverability, see the [Make your page discoverable](/docs/fundamentals/discovery.html) guide.
 
 Awesome work!  You've completed your AMP news article.
 

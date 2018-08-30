@@ -56,7 +56,7 @@ limitations under the License.
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)では、上記の必須タグには `mandatory: true` フィールドが含まれています。また、[AMP 仕様](/docs/reference/spec.html)にも必須タグについての説明があります。
+[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)では、上記の必須タグには `mandatory: true` フィールドが含まれています。また、[AMP 仕様](/docs/fundamentals/spec.html)にも必須タグについての説明があります。
 
 ### あるタグで必要な別のタグがない
 
@@ -97,7 +97,7 @@ limitations under the License.
   </tr>
 </table>
 
-タグはホワイトリストに登録されていて、許可されていないタグを網羅したリストはありません。ただし、[AMP 仕様](/docs/reference/spec.html)では許可されていないタグを大まかに定義しています。
+タグはホワイトリストに登録されていて、許可されていないタグを網羅したリストはありません。ただし、[AMP 仕様](/docs/fundamentals/spec.html)では許可されていないタグを大まかに定義しています。
 
 ### 必須属性がない
 
@@ -638,7 +638,7 @@ AMP 検証ツールがこのエラーを返すのは、`<style amp-custom>` 内�
 </table>
 
 このエラーは、CSS 内のアットルールに関するものです。
-AMP で使用できるアットルールはごくわずかです（[AMP 仕様](/docs/reference/spec.html)もご覧ください）。たとえば、`@import` は許可されていません。
+AMP で使用できるアットルールはごくわずかです（[AMP 仕様](/docs/fundamentals/spec.html)もご覧ください）。たとえば、`@import` は許可されていません。
 検証エラーでは無効なルールが具体的に示されるため、該当するルールを簡単に修正できます。
 
 ### 暗黙的レイアウトが AMP タグでサポートされていない
@@ -882,7 +882,7 @@ AMP ページにテンプレートの構文を含めることはできません�
 この警告は、以前有効だった AMP 属性が AMP ドキュメント内で検出されたときに表示されます。これは単なる警告であり、警告付きのままでも AMP ドキュメントは引き続き有効です。
 
 各 AMP タグについて、サポートが終了した属性を確認するには、
-[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)で 
+[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)で
 `deprecation` を検索してください。
 </body>
 </html>

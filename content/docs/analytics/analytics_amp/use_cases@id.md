@@ -5,9 +5,7 @@ $title: Kasus Penggunaan
 
 Panduan ini memberikan rangkaian kasus penggunaan umum untuk melacak keterlibatan pengguna:
 
-{% call callout('Catatan', type='note') %} 
-Ingin menambahkan kasus penggunaan? [Beri tahu kami.](https://github.com/ampproject/docs/issues/new) Anda juga dapat memberikan kasus penggunaan Anda sendiri; lihat [Cara Berkontribusi](/id/docs/support/contribute.html). 
-{% endcall %}
+Catatan: Ingin menambahkan kasus penggunaan? [Beri tahu kami.](https://github.com/ampproject/docs/issues/new) Anda juga dapat memberikan kasus penggunaan Anda sendiri; lihat [Cara Berkontribusi](/id/docs/support/contribute.html).
 
 ## Melacak jumlah kunjungan halaman
 
@@ -42,7 +40,7 @@ Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [amp-a
             "on": "visible",
             "request": "pageview"
         }
-    } 
+    }
 }
 </script>
 </amp-analytics>
@@ -63,8 +61,8 @@ Kirimkan data jumlah kunjungan halaman ke Google Analytics (lihat juga [Pelacaka
         "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
             "on": "visible",
             "request": "pageview"
-        } 
-    } 
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -97,8 +95,8 @@ Contoh berikut menggunakan atribut `selector` untuk mengirim peristiwa `click` k
                 "eventId": "42",
                 "eventLabel": "clicked on a link"
             }
-        } 
-    } 
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -124,7 +122,7 @@ Contoh berikut menggunakan atribut `selector` `trigger` untuk mengirim peristiwa
                 "eventCategory": "ui-components",
                 "eventAction": "header-click"
             }
-        } 
+        }
     }
 }
 </script>
@@ -151,9 +149,9 @@ Lacak scroll halaman menggunakan [amp-analytics](/id/docs/reference/components/a
             "scrollSpec": {
                 "verticalBoundaries": [25, 50, 90],
                 "horizontalBoundaries": [90]
-            } 
-        } 
-    } 
+            }
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -186,8 +184,8 @@ Contoh berikut menggunakan atribut `selector` untuk mengirim peristiwa `click` k
                 "eventId": "43",
                 "eventLabel": "clicked on a tweet link"
             }
-        } 
-    } 
+        }
+    }
 }
 </script>
 </amp-analytics>
@@ -213,9 +211,9 @@ Contoh berikut menggunakan atribut `selector` `trigger` untuk mengirim peristiwa
                 "socialNetwork": "twitter",
                 "socialAction": "tweet",
                 "socialTarget": "https://www.examplepetstore.com"
-            } 
-        } 
-    } 
+            }
+        }
+    }
 }
 </script>
 </amp-analytics>

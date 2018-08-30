@@ -69,9 +69,7 @@ Ahora, siempre que la diapositiva mostrada para el `<amp-carousel>` cambie, la a
 
 La expresión `event.index` se evalúa al nuevo índice de diapositivas y la acción `AMP.setState()` fusiona este literal de objeto en el estado actual. Esto reemplaza el valor actual de `selected.slide` con el valor de `event.index`.
 
-{% call callout('Tip', type='success') %}
-`AMP.setState()` realiza una fusión profunda de literales de objetos anidados. Para obtener más detalles, consulte la documentación [`<amp-bind>`](https://www.ampproject.org/docs/reference/components/amp-bind.html).
-{% endcall %}
+Tip: `AMP.setState()` realiza una fusión profunda de literales de objetos anidados. Para obtener más detalles, consulte la documentación [`<amp-bind>`](https://www.ampproject.org/docs/reference/components/amp-bind.html).
 
 ### Vincular los elementos indicadores
 
@@ -178,13 +176,11 @@ Si añadimos otra variable de estado que rastrea la SKU seleccionada, podemos vi
 Agregue una acción "on" al [`<amp-selector>`](/docs/reference/components/amp-selector.html) que actualiza la variable `selected.sku` siempre que se seleccione un nuevo color:
 
 ```html
-<amp-selector name="color" 
+<amp-selector name="color"
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-{% call callout('Tip', type='success') %}
-Esto también se puede hacer agregando las acciones `on="tap:AMP.setState(...)` a cada `<amp-img>` secundario dentro del `<amp-selector>`. Una de las grandes cosas sobre `<amp-selector>` es que simplifica el marcado.
-{% endcall %}
+Tip: Esto también se puede hacer agregando las acciones `on="tap:AMP.setState(...)` a cada `<amp-img>` secundario dentro del `<amp-selector>`. Una de las grandes cosas sobre `<amp-selector>` es que simplifica el marcado.
 
 ### Vincular los elementos de la imagen
 
@@ -200,9 +196,7 @@ A continuación, agregue enlaces a los elementos [`<amp-img>`](/docs/reference/c
     [src]="shirts[selected.sku].image"></amp-img>
 ```
 
-{% call callout('Nota', type='note') %}
-En la práctica, cada imagen en el carrusel probablemente tendría un `src` diferente. Esto podría hacerse reemplazando la imagen única por una matriz de imágenes. Para simplificar, este tutorial utiliza una sola imagen con diferentes ampliaciones.
-{% endcall %}
+Nota: En la práctica, cada imagen en el carrusel probablemente tendría un `src` diferente. Esto podría hacerse reemplazando la imagen única por una matriz de imágenes. Para simplificar, este tutorial utiliza una sola imagen con diferentes ampliaciones.
 
 **Pruébalo**: actualice la página y seleccione un color diferente para una camisa. Cuando lo hace, las imágenes del carrusel se actualizan para mostrar las camisetas del color seleccionado.
 

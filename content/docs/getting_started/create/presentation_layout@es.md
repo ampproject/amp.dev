@@ -26,9 +26,7 @@ Las páginas AMP pueden tener solo una hoja de estilo integrada y hay ciertos se
 
 AMP sigue reglas estrictas al distribuir elementos en la página. En una página HTML normal, CSS se usa casi exclusivamente para distribuir elementos. Sin embargo, por motivos de rendimiento, AMP requiere que todos los elementos tengan un tamaño explícito configurado desde el principio.
 
-{% call callout('Leer más', type='read') %}
-Aprende todo acerca de cómo AMP representa y diseña una página y cómo puedes modificar el diseño en [Cómo controlar el diseño](/es/docs/design/responsive/control_layout.html).
-{% endcall %}
+Leer más: Aprende todo acerca de cómo AMP representa y diseña una página y cómo puedes modificar el diseño en [Cómo controlar el diseño](/es/docs/design/responsive/control_layout.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/es/docs/getting_started/create/include_image.html"><span class="arrow-prev">Anterior</span></a>

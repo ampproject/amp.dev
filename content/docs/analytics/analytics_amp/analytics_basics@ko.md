@@ -8,26 +8,24 @@ AMP 애널리틱스의 기초에 관해 알아보세요.
 
 ## amp-pixel과 amp-analytics 중 무엇을 사용해야 할까요?
 
-AMP는 분석 및 측정용으로 [amp-pixel](/ko/docs/reference/components/amp-pixel.html) 
+AMP는 분석 및 측정용으로 [amp-pixel](/ko/docs/reference/components/amp-pixel.html)
 및 [amp-analytics](/ko/docs/reference/components/amp-analytics.html) 라는 두 가지 구성요소를 제공합니다. 두 가지 옵션 모두 애널리틱스 데이터를 정의된 엔드포인트로 전송합니다.
 
 추적 픽셀과 같은 [단순한 행동을](https://en.wikipedia.org/wiki/Web_beacon#Implementation) 사용하려면 `amp-pixel` 구성요소를 통해 기본적인 페이지 조회수 추적을 할 수 있습니다. 페이지 조회수 데이터는 정의된 URL로 전송됩니다. 공급업체와의 통합으로 인해 이 구성요소가 필요할 때도 있습니다. 이 경우 공급업체에서 정확한 URL 엔드포인트를 지정합니다.
 
 대부분의 애널리틱스 솔루션의 경우 `amp-analytics` 를 사용할 수 있습니다. 페이지 조회수 추적은 `amp-analytics` 에서도 작동합니다. 한편 링크 및 버튼 클릭 등 모든 유형의 페이지 콘텐츠를 대상으로 한 사용자 참여도 추적할 수 있습니다. 또한 사용자가 페이지를 얼마나 스크롤했는지와 사용자의 소셜 미디어 참여 여부도 측정할 수 있습니다.
 
-{% call callout('자세히 알아보기', type='read') %}
- AMP 애널리틱스 [심도 있게 알아보기](/ko/docs/analytics/deep_dive_analytics.html)
-를 참조하세요. {% endcall %}
+자세히 알아보기: AMP 애널리틱스 [심도 있게 알아보기](/ko/docs/analytics/deep_dive_analytics.html)
 
-AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp-analytics` 
+AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp-analytics`
 구성을 제공하여 데이터를 손쉽게 캡처하고 이를 추적 도구로 간편하게 전송할 수 있도록 했습니다. 업체 문서에 액세스하려면 [애널리틱스 공급업체](/ko/docs/analytics/analytics-vendors.html) 목록을 참조하세요.
 
-페이지에서 `amp-pixel`  및 `amp-analytics` 
+페이지에서 `amp-pixel`  및 `amp-analytics`
 둘 다 사용 가능합니다. `amp-pixel` 은 간단한 페이지 조회수를 추적하는 데 사용할 수 있으며 `amp-analytics` 는 기타 모든 용도로 사용 가능합니다. 또한 각 태그를 여러 개 추가할 수도 있습니다. 여러 애널리틱스 제공업체와 함께 일하는 경우 솔루션마다 별도의 태그가 필요합니다. AMP 페이지가 단순할수록 사용자가 사용하기에 편리하므로 여분의 태그가 필요 없는 경우 사용하지 않는 것이 좋습니다.
 
 ## 단순한 애널리틱스 구성 만들기
 
-단순한 [amp-pixel](/ko/docs/reference/components/amp-pixel.html) 
+단순한 [amp-pixel](/ko/docs/reference/components/amp-pixel.html)
 및 [amp-analytics](/ko/docs/reference/components/amp-analytics.html) 구성을 만드는 방법을 자세히 알아보세요.
 
 ### 단순한 amp-pixel 구성
@@ -38,14 +36,14 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-이 예에서 페이지 조회수 데이터는 임의의 숫자와 함께 정의된 URL으로 전송됩니다. `RANDOM` 
+이 예에서 페이지 조회수 데이터는 임의의 숫자와 함께 정의된 URL으로 전송됩니다. `RANDOM`
 변수는 [AMP 플랫폼에서 사용되는 다양한 치환 변수 중 하나입니다](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). 여기에서 [변수 치환](/ko/docs/analytics/analytics_basics.html#variable-substitution) 에 관해 자세히 알아보세요.
 
 [amp-pixel](/ko/docs/reference/components/amp-pixel.html) 구성요소는 내장되어 있으므로 `amp-analytics` 와 같은 AMP의 확장 구성요소와는 달리 포함 선언이 없어도 됩니다. 하지만 `amp-pixel` 태그는 `<body>` 가 시작하는 부분에 최대한 가깝게 위치시켜야 합니다. 추적 픽셀은 태그가 뷰 안에 들어오는 경우에만 시작됩니다. 만약 `amp-pixel` 이 페이지 하단에 위치하게 되면 추적 픽셀이 시작되지 않을 수도 있습니다.
 
 ### 단순한 amp-analytics 구성
 
-단순한 [amp-analytics](/ko/docs/reference/components/amp-analytics.html) 구성을 작성하려면 우선 `custom-element` 선언을 AMP 문서의 `<head>` 
+단순한 [amp-analytics](/ko/docs/reference/components/amp-analytics.html) 구성을 작성하려면 우선 `custom-element` 선언을 AMP 문서의 `<head>`
 에 포함시켜야 합니다 ([구성요소 포함 선언](/ko/docs/reference/components.html) 참고).
 
 ```html
@@ -59,13 +57,13 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp
 
 <script type="application/json">
 
-  {"requests": 
+  {"requests":
     {"pageview": "https://foo.com/pixel?RANDOM
-  ", },"triggers": 
-    {"trackPageview": 
+  ", },"triggers":
+    {"trackPageview":
       {"on": "visible",
       "request": "pageview"
-    
+
 } } }</script>
 
 </amp-analytics>
@@ -77,8 +75,8 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp
 
 ## 변수 치환
 
-[amp-pixel](/ko/docs/reference/components/amp-pixel.html) 
-및 [amp-analytics](/ko/docs/reference/components/amp-analytics.html) 
+[amp-pixel](/ko/docs/reference/components/amp-pixel.html)
+및 [amp-analytics](/ko/docs/reference/components/amp-analytics.html)
 구성요소 둘 다 모든 표준 URL 변수 치환을 허용합니다 ([AMP HTML 변수 치환](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)
 참조). 다음의 예에서는 페이지 조회수 요청이 URL로 전송되며, 현재 AMP 문서의 기본 URL, title, [클라이언트 ID](/ko/docs/analytics/analytics_basics.html#user-identification) 도 함께 전송됩니다.
 
@@ -86,10 +84,10 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
-`amp-pixel` 
+`amp-pixel`
 태그는 단순하므로 플랫폼에서 정의된 변수나 AMP 런타임이 AMP 페이지에서 파싱할 수 있는 변수만 포함할 수 있습니다. 위의 예에서는 플랫폼에서 `canonicalURL` 및 `clientId(site-user-id)` 값이 자동완성됩니다. `amp-analytics` 태그에는 `amp-pixel` 과 동일한 변수 및 태그 구성 내에 고유하게 정의된 변수를 포함시킬 수 있습니다.
 
-페이지 또는 플랫폼에서 정의된 변수 요청 문자열에서 `${varName}` 형식을 사용하세요. 애널리틱스 요청이 구축될 때 `amp-analytics` 
+페이지 또는 플랫폼에서 정의된 변수 요청 문자열에서 `${varName}` 형식을 사용하세요. 애널리틱스 요청이 구축될 때 `amp-analytics`
 태그로 인해 템플릿이 실제 값으로 대체됩니다 ([amp-analytics 에서 지원되는 변수](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) 참조).
 
 다음의 `amp-analytics` 예에서 페이지 조회수 요청은 변수 치환에서 추출된 추가 데이터와 함께 지정된 URL로 전송됩니다. 이 데이터 중 일부는 플랫폼에서 제공되며 일부는 `amp-analytics` 구성 내에서 인라인으로 정의됩니다.
@@ -99,17 +97,17 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp
 
 <script type="application/json">
 
-  {"requests": 
+  {"requests":
     {"pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
   },
-  "vars": 
-    {"account": 
-  "ABC123", },"triggers": 
-    {"someEvent": 
+  "vars":
+    {"account":
+  "ABC123", },"triggers":
+    {"someEvent":
       {"on": "visible",
       "request": "pageview",
-      "vars": 
-        {"title": 
+      "vars":
+        {"title":
 "My homepage", } } } }</script>
 
 </amp-analytics>
@@ -117,9 +115,7 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp
 
 위의 예에서 `account`  및 `title`  변수는 `amp-analytics` 구성에서 정의됩니다. `canonicalUrl` 및 `clientId` 변수는 구성에서 정의되지 않기 때문에 이러한 변수의 값은 플랫폼에 의해 치환됩니다.
 
-{% call callout('중요', type='caution') %}
- 변수 치환은 유연하게 조정될 수 있습니다. 서로 다른 위치에서 동일한 변수가 정의될 수 있으며, AMP 런타임에서는 [변수 치환 순서](/ko/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)
-에 나와 있는 우선순위에 따라 값이 파싱됩니다. {% endcall %}
+중요: 변수 치환은 유연하게 조정될 수 있습니다. 서로 다른 위치에서 동일한 변수가 정의될 수 있으며, AMP 런타임에서는 [변수 치환 순서](/ko/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering) 에 나와 있는 우선순위에 따라 값이 파싱됩니다.
 
 ## 사용자 식별
 
@@ -129,8 +125,8 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp
 
 모든 경우에 AMP 는 클라이언트 ID 의 읽기 및 쓰기를 관리합니다. 특히 페이지가 캐시를 통해 게재되거나 기타 방식으로 게시자의 원래 사이트에 표시되는 맥락을 벗어나 표시될 때 이러한 점을 확인할 수 있습니다. 이 경우 게시자 사이트 쿠키에 대한 액세스는 사용할 수 없습니다.
 
-AMP 페이지가 게시자 사이트에서 게재되는 경우 AMP 에서 사용하는 클라이언트 ID 프레임워크를 보면 검색 및 사용할 대체 쿠키를 알 수 있습니다. 이 경우 `cid-scope-cookie-fallback-name` 인수 (`clientId` 변수에 포함됨) 가 
-쿠키 이름으로 해석됩니다. 해당 서식은 `CLIENT_ID(cid-scope-cookie-fallback-name)` 
+AMP 페이지가 게시자 사이트에서 게재되는 경우 AMP 에서 사용하는 클라이언트 ID 프레임워크를 보면 검색 및 사용할 대체 쿠키를 알 수 있습니다. 이 경우 `cid-scope-cookie-fallback-name` 인수 (`clientId` 변수에 포함됨) 가
+쿠키 이름으로 해석됩니다. 해당 서식은 `CLIENT_ID(cid-scope-cookie-fallback-name)`
 또는 `${clientId(cid-scope-cookie-fallback-name)}` 으로 표시됩니다.
 
 예:
@@ -143,8 +139,5 @@ AMP 에서 이 쿠키가 설정되었다는 사실이 확인된 경우 클라이
 
 사용자 알림 ID 추가 (선택사항) 등 클라이언트 ID 치환에 관해 자세히 알아보려면 [AMP 애널리틱스에서 지원되는 변수](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) 를 확인하세요.
 
-{% call callout('자세히 알아보기', type='read') %}
-애널리틱스에 관해 자세히 알아보려면 계속해서 [AMP 애널리틱스 심도 있게 알아보기](/ko/docs/analytics/deep_dive_analytics.html)  및 [사용 사례](/ko/docs/analytics/use_cases.html)
-를 확인하세요. 
-{% endcall %}
+자세히 알아보기: 애널리틱스에 관해 자세히 알아보려면 계속해서 [AMP 애널리틱스 심도 있게 알아보기](/ko/docs/analytics/deep_dive_analytics.html)  및 [사용 사례](/ko/docs/analytics/use_cases.html) 를 확인하세요.
 

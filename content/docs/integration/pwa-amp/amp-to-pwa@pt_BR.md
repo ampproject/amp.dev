@@ -28,9 +28,7 @@ Por sua vez, os Progressive Web Apps possibilitam muito mais interatividade e en
 
 É possível instalar o service worker do seu Progressive Web App a partir de uma página AMP, mesmo que essa página seja veiculada a partir de um cache de AMP. Se isso for feito corretamente, o funcionamento dos links que direcionam ao PWA a partir de suas páginas AMP será quase instantâneo, semelhante ao primeiro acesso à página AMP.
 
-{% call callout('Dica', type='success') %}
-Caso você ainda não esteja familiarizado com o service worker, recomendamos o [curso da Udacity](https://www.udacity.com/course/offline-web-applications--ud899) de Jake Archibald (em inglês).
-{% endcall %}
+Dica: Caso você ainda não esteja familiarizado com o service worker, recomendamos o [curso da Udacity](https://www.udacity.com/course/offline-web-applications--ud899) de Jake Archibald (em inglês).
 
 Primeiro, instale o service worker em todas as suas páginas AMP usando [`<amp-install-serviceworker>`](/pt_br/docs/reference/components/amp-install-serviceworker). Para isso, inclua antes o componente por meio do script correspondente na seção `<head>` da página:
 
@@ -70,9 +68,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-{% call callout('Dica', type='success') %}
 Dica: existem maneiras mais fáceis de lidar com o service worker. Confira as [bibliotecas de ajuda do service worker](https://github.com/GoogleChrome/sw-helpers) (em inglês).
-{% endcall %}
 
 ## Fazer todos os links de uma página AMP navegarem para o PWA
 
@@ -115,8 +111,4 @@ As AMP resolvem isso com um recurso chamado [reescrita do URL do shell](/pt_br/d
 
 Com esses atributos, todos os cliques subsequentes em uma AMP direcionarão para o PWA, independentemente de qualquer service worker.
 
-{% call callout('Leia mais', type='read') %}
-Se você já chegou até aqui, que tal reutilizar as páginas AMP existentes para criar seu PWA? [Saiba como fazer isso](/pt_br/docs/integration/pwa-amp/amp-in-pwa).
-{% endcall %}
- 
- 
+Leia mais: Se você já chegou até aqui, que tal reutilizar as páginas AMP existentes para criar seu PWA? [Saiba como fazer isso](/pt_br/docs/integration/pwa-amp/amp-in-pwa).

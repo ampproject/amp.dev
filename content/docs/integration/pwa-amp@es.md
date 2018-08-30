@@ -19,9 +19,7 @@ Consulta más información sobre las [aplicaciones web progresivas](https://deve
 
 Las páginas AMP pueden aprovechar muchas de las funciones de las PWA, siempre que se publiquen desde tu origen (el dominio de tu sitio web) y no desde una caché de AMP. Esto significa que estas funciones no se activarán si se llega a una página AMP desde plataformas como Google o Bing, pero sí si los usuarios se empiezan a desplazar por el sitio web o si navegan directamente hasta tus páginas AMP.
 
-{% call callout('Más información', type='read') %}
-Descubre cómo [habilitar funciones de las PWA](/es/docs/integration/pwa-amp/amp-as-pwa.html) en tus páginas AMP.
-{% endcall %}
+Más información: Descubre cómo [habilitar funciones de las PWA](/es/docs/integration/pwa-amp/amp-as-pwa.html) en tus páginas AMP.
 
 ## Usar páginas AMP como punto de entrada de una PWA
 
@@ -29,9 +27,7 @@ El punto fuerte de las páginas AMP es la **publicación casi instantánea**, qu
 
 Una buena estrategia sería, por ejemplo, definir que una página AMP fuese el punto de entrada de los usuarios a tu sitio web y después preparar la PWA de tapadillo y dirigirlos a ella durante el resto de la visita.
 
-{% call callout('Más información', type='read') %}
-Descubre cómo [conectar una página AMP a una PWA](/es/docs/integration/pwa-amp/amp-to-pwa.html) con `amp-install-serviceworker`.
-{% endcall %}
+Más información: Descubre cómo [conectar una página AMP a una PWA](/es/docs/integration/pwa-amp/amp-to-pwa.html) con `amp-install-serviceworker`.
 
 ## Usar las páginas AMP como fuente de datos de una PWA
 
@@ -39,8 +35,4 @@ Una de las características principales de las páginas AMP es que insertarlas e
 
 Si estás creando una aplicación web progresiva, puedes obtener los mismos beneficios y reducir de forma radical la complejidad del backend y del cliente si **reutilizas tus páginas AMP como fuente de datos de tus PWA**.
 
-{% call callout('Más información', type='read') %}
-Descubre cómo [utilizar páginas AMP en una PWA](/es/docs/integration/pwa-amp/amp-in-pwa.html).
-{% endcall %}
- 
- 
+Más información: Descubre cómo [utilizar páginas AMP en una PWA](/es/docs/integration/pwa-amp/amp-in-pwa.html).

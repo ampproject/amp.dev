@@ -10,9 +10,7 @@ Untuk mendemonstrasikan seperti apa tampilan markup tambahan ini, berikut kode y
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-{% call callout('Baca Lebih Lanjut', type='read') %}
-Untuk mengetahui alasan kami mengganti tag seperti `<img>` dengan `<amp-img>`, dan jumlah ketersediaannya, kunjungi [Menyertakan Gambar & Video](/id/docs/media/amp_replacements.html).
-{% endcall %}
+Baca lebih lanjut: Untuk mengetahui alasan kami mengganti tag seperti `<img>` dengan `<amp-img>`, dan jumlah ketersediaannya, kunjungi [Menyertakan Gambar & Video](/id/docs/media/amp_replacements.html).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/id/docs/getting_started/create/basic_markup.html"><span class="arrow-prev">Sebelumnya</span></a>

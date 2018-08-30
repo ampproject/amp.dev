@@ -41,6 +41,6 @@ http://localhost:8000/pets-completed.html
 이제 완성된 스토리가 어떻게 보이는지 클릭해보면서 감상해보십시오.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/design/visual_story.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/design/visual_story/parts_of_story.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/getting_started/visual_story.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">다음</span></a>
 </div>

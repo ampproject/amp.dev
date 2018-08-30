@@ -55,9 +55,7 @@ AMP 形式を使用することで、コンテンツは AMP キャッシュに�
     - Cloudflare AMP キャッシュ URL の例: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Google AMP キャッシュ URL の例: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
-{% call callout('注', type='note') %}
 注: AMP キャッシュ URL はユーザーに表示される URL ではありません。つまり、通常、ユーザーがその URL を介してコンテンツをリクエストすることはありません。
-{% endcall %}
 
 * **サイト運営者による追加**: サイト運営者は AMP ページを明示的に AMP キャッシュに追加することができます。これは Google AMP キャッシュ（[Google AMP キャッシュ: AMP コンテンツの更新](https://developers.google.com/amp/cache/update-cache)をご覧ください）でのみ使用できる方法です。
 

@@ -30,13 +30,11 @@ Ajusta la anchura y la altura de forma manual o usa el atributo de medios para s
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Tip', type='success') %}
-Puedes encontrar más ejemplos de `amp-twitter` en [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
-{% endcall %}
+Tip: Puedes encontrar más ejemplos de `amp-twitter` en [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
 
 ## Insertar una foto de Instagram
 
@@ -60,13 +58,11 @@ Además, Instagram utiliza una relación de aspecto fija para los diseños adapt
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Tip', type='success') %}
-Puedes encontrar más ejemplos de `amp-instagram` en [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
-{% endcall %}
+Tip: Puedes encontrar más ejemplos de `amp-instagram` en [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
 
 ## Mostrar entradas o vídeos de Facebook
 
@@ -80,14 +76,14 @@ Debes incluir la siguiente secuencia de comandos en `<head>`:
 
 ##### Ejemplo: insertar una entrada
 
-Fuente: 
+Fuente:
 ```html
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
 ```
-Avance: 
+Avance:
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
@@ -103,16 +99,14 @@ Fuente:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 ```
-Avance: 
+Avance:
 <amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-{% call callout('Tip', type='success') %}
-Puedes encontrar más ejemplos de `amp-facebook` en [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
-{% endcall %}
+Tip: Puedes encontrar más ejemplos de `amp-facebook` en [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
 
 ## Insertar un vídeo de YouTube
 
@@ -138,13 +132,11 @@ Utiliza `layout="responsive"` para producir diseños correctos para los vídeos 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-{% call callout('Tip', type='success') %}
-Puedes encontrar más ejemplos de `amp-youtube` en [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
-{% endcall %}
+Tip: Puedes encontrar más ejemplos de `amp-youtube` en [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
 
 ## Mostrar un anuncio
 
@@ -168,7 +160,7 @@ Los diferentes tipos de anuncios requieren diferentes atributos `data-*`.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 Si la red publicitaria lo admite, incluye un `placeholder` para que se muestre si no hay anuncios disponibles:
@@ -181,12 +173,10 @@ Si la red publicitaria lo admite, incluye un `placeholder` para que se muestre s
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 AMP es compatible con una amplia gama de redes publicitarias. Consulta la [referencia para obtener una lista completa](/es/docs/reference/components/amp-ad.html#supported-ad-networks).
 
-{% call callout('Leer más', type='read') %}
-Obtén más información sobre los anuncios en la guía [Publicar anuncios en AMP](/es/docs/ads/monetization.html).
-{% endcall %}
+Leer más: Obtén más información sobre los anuncios en la guía [Publicar anuncios en AMP](/es/docs/ads/monetization.html).

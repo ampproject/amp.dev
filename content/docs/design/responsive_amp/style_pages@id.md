@@ -7,9 +7,7 @@ Seperti semua halaman, halaman AMP digayakan dengan CSS, tapi tidak dapat merefe
 
 Semua gaya harus ada di kepala dokumen (lihat [Tambahkan gaya ke halaman](/id/docs/design/responsive_amp.html#add-styles-to-a-page)). Namun Anda dapat menggunakan pembuatan template dan praprosesor CSS untuk membuat halaman statis agar dapat mengelola konten Anda dengan lebih baik.
 
-{% call callout('Catatan', type='note') %}
-Komponen AMP hadir dengan gaya default untuk mempermudah pembuatan halaman responsif. Gaya ini ditentukan di [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
-{% endcall %}
+Catatan: Komponen AMP hadir dengan gaya default untuk mempermudah pembuatan halaman responsif. Gaya ini ditentukan di [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
 ## Gaya yang tidak diizinkan
 
@@ -25,7 +23,7 @@ Gaya berikut tidak diizinkan di halaman AMP:
   <tbody>
     <tr>
       <td data-th="Banned style">Atribut gaya sisipan</td>
-      <td data-th="Description">Semua gaya harus ditentukan di <code>&lt;head&gt;</code> halaman, 
+      <td data-th="Description">Semua gaya harus ditentukan di <code>&lt;head&gt;</code> halaman,
         dalam tag <code>&lt;style amp-custom&gt;</code>.</td>
     </tr>
     <tr>
@@ -70,17 +68,15 @@ Gaya berikut diizinkan, namun dibatasi dalam hal nilai yang didukung:
 
 Halaman AMP tidak dapat menyertakan stylesheet eksternal, dengan pengecualian font kustom.
 
-{% call callout('Baca lebih lanjut', type='success') %}
- Pelajari lebih lanjut tentang [font kustom di AMP](/id/docs/design/responsive/custom_fonts.html).
-{% endcall %}
+Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP](/id/docs/design/responsive/custom_fonts.html).
 
 ## Menggunakan praprosesor CSS
 
-Keluaran praprosesor berfungsi sama baiknya di AMP dengan di halaman web lainnya. Misalnya, situs [ampproject.org](https://www.ampproject.org/) 
+Keluaran praprosesor berfungsi sama baiknya di AMP dengan di halaman web lainnya. Misalnya, situs [ampproject.org](https://www.ampproject.org/)
 menggunakan [Sass](http://sass-lang.com/) . (Kami menggunakan [Grow](http://grow.io/)  untuk membangun halaman AMP statis yang menyusun situs [ampproject.org](https://www.ampproject.org/) .)
 
 
-Jika menggunakan praprosesor, selalu perhatikan hal yang Anda sertakan. Muatlah hanya yang digunakan halaman Anda. Misalnya, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) 
+Jika menggunakan praprosesor, selalu perhatikan hal yang Anda sertakan. Muatlah hanya yang digunakan halaman Anda. Misalnya, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 menyertakan semua markup AMP yang diperlukan dan CSS yang disisipkan dari file sumber `*.scss`. Juga disertakan skrip elemen kustom untuk [`amp-youtube`](/id/docs/reference/extended/amp-youtube.html), di antara lainnya, agar banyak halaman di seluruh situs dapat menyertakan video YouTube yang disematkan.
 
 [sourcecode:html]{% raw %}

@@ -17,7 +17,7 @@ Dalam panduan ini, kami akan menunjukkan cara menerapkan dasar-dasar komponen re
 
 Guna mengoptimalkan halaman sehingga konten diubah skalanya dan menyesuaikan jendela browser untuk semua perangkat, Anda harus menentukan elemen viewport `meta`. Elemen viewport memberikan petunjuk ke browser tentang cara mengubah skala dan menyesuaikan ukuran area yang terlihat (viewport) dari halaman.
 
-Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan](/id/docs/reference/spec.html#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
+Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan](/id/docs/fundamentals/spec.html#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -35,7 +35,7 @@ Meskipun Anda dapat membuat elemen responsif dengan mudah menggunakan `"layout=r
 
 ##### Misalnya: Membatasi lebar gambar responsif
 
-Pada contoh berikut, kami memiliki gambar bunga (640x427 piksel) yang ingin ditampilkan di semua ukuran layar, jadi kami menentukan `width` dan `height`, lalu menetapkan tata letak ke `responsive`.  
+Pada contoh berikut, kami memiliki gambar bunga (640x427 piksel) yang ingin ditampilkan di semua ukuran layar, jadi kami menentukan `width` dan `height`, lalu menetapkan tata letak ke `responsive`.
 
 <div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Tampilkan kode lengkap</div><div placeholder></div></amp-iframe></div>
 
@@ -49,9 +49,7 @@ Namun, kami ingin gambar tersebut tidak berukuran melebihi batas yang ditentukan
 </style>
 ```
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media](/id/docs/design/responsive/control_layout.html#atribut-tata-letak).
-{% endcall %}
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media](/id/docs/design/responsive/control_layout.html#atribut-tata-letak).
 
 <a id="fn1"></a>
 {% call callout2(type='none') %}***Mengapa mengubah ukuran elemen agar sesuai dengan ukuran layar dikatakan rumit, padahal saya dapat melakukannya dengan mudah menggunakan gaya "width=100%"?**  Bagian rumitnya adalah merender elemen responsif di halaman tanpa memengaruhi metrik performa atau pengalaman pengguna.  Ya, Anda dapat menyesuaikan ukuran gambar dan ukuran layar dengan mudah menggunakan "width=100%", namun akan ada penurunan performa.  Browser harus mendownload gambar terlebih dahulu untuk mendapatkan dimensi gambar, lalu mengubah ukuran gambar agar sesuai dengan ukuran layar, dan pada akhirnya menyesuaikan tata letak (reflow) dan tampilan (repaint) halaman.  Di AMP,  jalur perenderan akan dioptimalkan sehingga halaman ditampilkan, dengan menetapkan gambar di samping placeholder berdasarkan dimensi yang diberikan oleh amp-img (angka tersebut digunakan untuk menetapkan rasio tinggi lebar), kemudian resource didownload, dan halaman disesuaikan tampilannya (repaint).  Tidak perlu menyesuaikan tata letak (reflow).
@@ -86,9 +84,7 @@ Gambar menghasilkan byte paling besar dari keseluruhan halaman (sekitar [65% dar
 
 Untuk layar beresolusi tinggi (misalnya, tampilan Retina), Anda harus memberikan gambar yang tajam; namun, sebaiknya jangan menggunakan gambar yang tajam di perangkat beresolusi rendah karena akan menyebabkan waktu muat jadi lebih lama.  Di halaman non-AMP dan AMP,  Anda dapat menampilkan gambar yang sesuai untuk kepadatan piksel layar menggunakan atribut `srcset` dengan deskripsi lebar (`w`).
 
-{% call callout('Catatan', type='note') %}
-Pemilih srcset berbasis DPR (`x`) juga dapat digunakan; namun, agar lebih fleksibel, sebaiknya gunakan pemilih `w`. Sebelumnya (pada proposal srcset yang lama), deskripsi `w` menjelaskan lebar viewport, namun deskripsi tersebut kini menjelaskan lebar file sumber gambar, yang memungkinkan agen pengguna menghitung kepadatan piksel yang efektif untuk setiap gambar dan memilih gambar yang sesuai untuk dirender.
-{% endcall %}
+Catatan: Pemilih srcset berbasis DPR (`x`) juga dapat digunakan; namun, agar lebih fleksibel, sebaiknya gunakan pemilih `w`. Sebelumnya (pada proposal srcset yang lama), deskripsi `w` menjelaskan lebar viewport, namun deskripsi tersebut kini menjelaskan lebar file sumber gambar, yang memungkinkan agen pengguna menghitung kepadatan piksel yang efektif untuk setiap gambar dan memilih gambar yang sesuai untuk dirender.
 
 ##### Contoh: Menampilkan gambar tajam yang sesuai dengan ukuran layar
 
@@ -103,9 +99,7 @@ Pada contoh berikut, ada beberapa file gambar yang memiliki rasio tinggi lebar y
 
 Misalnya, ada perangkat yang memiliki lebar viewport 412 piksel dan DPR 2,6. Berdasarkan kode di atas, gambar harus ditampilkan 75% dari lebar viewport, jadi browser akan memilih gambar yang ukurannya mendekati 803 piksel  (412 * 0,75 * 2,6), yang akan disimpan sebagai `apple-800.jpg`.
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/design/responsive/art_direction.html).
-{% endcall %}
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/design/responsive/art_direction.html).
 
 #### Mengubah gambar responsif dari suatu gambar
 
@@ -119,15 +113,11 @@ Pada contoh berikut, kami memiliki 3 gambar kucing yang di-crop berbeda, yang in
 - 470-669 piksel,  tampilkan `cat-medium.jpg`  (450x340 piksel)
 - 469 piksel atau lebih kecil, tampilkan `cat-small.jpg` (226x340 piksel)
 
-{% call callout('Catatan', type='note') %}
-Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"](/id/docs/design/responsive/control_layout#bagaimana-jika-atributlayout-tidak-ditetapkan?).
-{% endcall %}
+Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"](/id/docs/design/responsive/control_layout#bagaimana-jika-atributlayout-tidak-ditetapkan?).
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Tampilkan kode penuh</div><div placeholder></div></amp-iframe></div>
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/design/responsive/art_direction.html).
-{% endcall %}
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/design/responsive/art_direction.html).
 
 #### Memberikan format gambar yang dioptimalkan
 
@@ -135,9 +125,7 @@ Menampilkan halaman yang dimuat dengan cepat memerlukan gambar yang dioptimalkan
 
 Di HTML, Anda dapat menampilkan format gambar yang berbeda menggunakan tag `picture`.  Di AMP, meskipun tag `picture` tidak didukung, Anda dapat menampilkan gambar yang berbeda menggunakan atribut `fallback`.
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback](/id/docs/design/responsive/placeholders.html).
-{% endcall %}
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback](/id/docs/design/responsive/placeholders.html).
 
 ##### Contoh: Menampilkan format gambar yang berbeda
 
@@ -148,9 +136,7 @@ Pada contoh berikut, apabila browser mendukung WebP, tampilkan mountains.webp, j
 
 Sebagai tambahan yang menarik, beberapa cache, seperti Google AMP Cache, otomatis mengompresi dan mengonversi gambar menjadi WebP dan resolusi yang sesuai, jika Anda tidak melakukannya. Namun, tidak semua platform menggunakan cache, jadi Anda harus mengoptimalkan gambar secara manual sendiri.
 
-{% call callout('Baca lebih lanjut', type='read') %}
-Untuk mempelajari lebih lanjut tentang pengoptimalan gambar yang diterapkan oleh Google AMP Cache, lihat entri blog ["Google AMP Cache, AMP Lite, dan kebutuhan kecepatan"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html).
-{% endcall %}
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang pengoptimalan gambar yang diterapkan oleh Google AMP Cache, lihat entri blog ["Google AMP Cache, AMP Lite, dan kebutuhan kecepatan"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html).
 
 ## Contoh yang dapat Anda gunakan sebagai inspirasi
 
@@ -167,7 +153,3 @@ Berikut beberapa contoh yang dapat Anda gunakan sebagai inspirasi untuk membuat 
 - [AMP by Example:  Contoh & Template](https://ampbyexample.com/#samples_templates)
 - [Template AMP Start](https://www.ampstart.com/)
 - [Workshop Konferensi AMP Codelab: Membuat AMP yang menarik](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
- 
- 
- 
- 

@@ -102,7 +102,7 @@ amphtmlValidator.getInstance().then(function (validator) {
       msg += ' (see ' + error.specUrl + ')';
     }
     ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
-  } 
+  }
 });
 ```
 
@@ -232,7 +232,7 @@ Cada ferramenta fornece várias informações:
 1.  Uma linha de texto que descreve o erro. Nesse caso, o texto indica que uma tag `<img>` está em uso quando na verdade a tag `<amp-img>` é que deveria estar sendo usada.
 1.  Um link para um documento relevante sobre o erro. Nesse caso, a documentação da tag `<amp-img>`. Nem todos os erros geram links de documentação.
 
- Ao reler cuidadosamente as [especificações](/pt_br/docs/reference/spec.html), percebemos que estamos usando uma tag `<img>` quando deveríamos ter usado uma tag `<amp-img>`.
+ Ao reler cuidadosamente as [especificações](/pt_br/docs/fundamentals/spec.html), percebemos que estamos usando uma tag `<img>` quando deveríamos ter usado uma tag `<amp-img>`.
 
  Para entender melhor a lista completa de possíveis erros, consulte o [guia de erros de validação de AMP](https://www.ampproject.org/pt_br/docs/reference/validation_errors.html). Se você ainda tiver dúvidas após uma avaliação cuidadosa, [faça uma pergunta,](http://stackoverflow.com/questions/tagged/amp-html) e tentaremos ajudar.
 

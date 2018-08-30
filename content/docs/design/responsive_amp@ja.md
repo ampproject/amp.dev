@@ -7,9 +7,7 @@ AMP HTML のスタイルとレイアウトには、通常の HTML と同じよ�
 
 ただし AMP の場合は、パフォーマンスと操作性の関係で、一部の CSS が制限されています。一方、レスポンシブ デザイン機能は、 [プレースホルダとフォールバック](https://www.ampproject.org/ja/docs/design/responsive/placeholders.html)、[srcset による高度な画像読み込み](https://www.ampproject.org/ja/docs/design/responsive/art_direction)、[レイアウト属性](https://www.ampproject.org/ja/docs/design/responsive/control_layout) などの機能で拡張されているため、要素の表示方法を細かく制御できます。
 
-{% call callout('ヒント', type='success') %}
-AMP で要素をレスポンシブにするのはとても簡単で、`layout="responsive"` を追加するだけです。AMP でのレスポンシブ デザインについて詳しくは、[レスポンシブな AMP ページを作成する](/ja/docs/design/responsive/responsive_design)をご覧ください。
-{% endcall %}
+ヒント: AMP で要素をレスポンシブにするのはとても簡単で、`layout="responsive"` を追加するだけです。AMP でのレスポンシブ デザインについて詳しくは、[レスポンシブな AMP ページを作成する](/ja/docs/design/responsive/responsive_design)をご覧ください。
 
 {{ youtube('y6kA3u3GIws', 480, 270, caption='初めて AMP を利用するにあたっての課題など、UpperQuad における AMP プロジェクトでのサイト再設計に関する話をご覧になれます。') }}
 
@@ -38,10 +36,7 @@ background-color: grey;
 </head>
 [/sourcecode]
 
-{% call callout('重要', type='caution') %}
-ページ内の `<style amp-custom>`
-タグが 1 つのみであることを確認してください。AMP では、このタグを複数使用することはできません。
-{% endcall %}
+重要: ページ内の `<style amp-custom>` タグが 1 つのみであることを確認してください。AMP では、このタグを複数使用することはできません。
 
 一般的な CSS プロパティを使用し、クラスセレクタまたは要素セレクタでコンポーネントのスタイルを定義します。次に例を示します。
 
@@ -60,9 +55,7 @@ layout="responsive">
 </body>
 [/sourcecode]
 
-{% call callout('重要', type='caution') %}
-使用するスタイルが AMP でサポートされているかどうかを確認してください。一部のスタイルは、パフォーマンス上の理由でサポートされていません（[サポートされる CSS](/ja/docs/design/responsive/style_pages.html) もご覧ください）。
-{% endcall %}
+重要: 使用するスタイルが AMP でサポートされているかどうかを確認してください。一部のスタイルは、パフォーマンス上の理由でサポートされていません（[サポートされる CSS](/ja/docs/design/responsive/style_pages.html) もご覧ください）。
 
 ## 要素をレスポンシブにレイアウトする
 
@@ -70,25 +63,19 @@ layout="responsive">
 
 レイアウトはレスポンシブに設定してください。これにより、要素の幅がコンテナ要素に合わせて調整され、width 属性と height 属性で決まったアスペクト比に応じて高さが調整されます。
 
-{% call callout('参照', type='read') %}
-詳しくはこちら: [AMP でサポートされるレイアウト](/ja/docs/design/responsive/control_layout.html)
-{% endcall %}
+参照: 詳しくはこちら: [AMP でサポートされるレイアウト](/ja/docs/design/responsive/control_layout.html)
 
 ## プレースホルダとフォールバックを提供する
 
 プレースホルダとフォールバックがビルトイン サポートされていますので、ユーザーに対して何もない画面が表示されることはありません。
 
-{% call callout('参照', type='read') %}
-詳しくはこちら: [プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)
-{% endcall %}
+参照: 詳しくはこちら: [プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)
 
 ## 高度な画像読み込み
 
 AMP では、`srcset` 属性と `sizes` 属性の両方がサポートされているため、どの場合にどの画像を読み込むかを細かく制御できます。
 
-{% call callout('参照', type='read') %}
-詳しくはこちら: [srcset と sizes による高度な画像読み込み](/ja/docs/design/responsive/art_direction.html)
-{% endcall %}
+参照: 詳しくはこちら: [srcset と sizes による高度な画像読み込み](/ja/docs/design/responsive/art_direction.html)
 
 ## スタイルとレイアウトを検証する
 
@@ -100,6 +87,4 @@ CSS が上限の 50,000 バイトを超えた場合、コンソールには次�
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-{% call callout('参照', type='read') %}
-詳細はこちら: [AMP ページの検証と修正](/ja/docs/fundamentals/validate.html)
-{% endcall %}
+参照: 詳細はこちら: [AMP ページの検証と修正](/ja/docs/fundamentals/validate.html)

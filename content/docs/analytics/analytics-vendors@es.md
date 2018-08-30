@@ -9,9 +9,7 @@ Al especificar el nombre de un proveedor de análisis con el atributo `type`, pu
 
 Puede consultar la documentación de su proveedor si está vinculada en las secciones siguientes.
 
-{% call callout('Tip', type='success') %}
-Si se siente cómodo explorando el código, puede explorar las configuraciones sin procesar del archivo [vendors.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) -en inglés.
-{% endcall %}
+Tip: Si se siente cómodo explorando el código, puede explorar las configuraciones sin procesar del archivo [vendors.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) -en inglés.
 
 **Ejemplo:**
 
@@ -21,9 +19,7 @@ Aquí hay un fragmento que especifica el tipo (`type`) de un proveedor de analyt
 <amp-analytics type="XYZ"> ... </amp-analytics>
 ```
 
-{% call callout('Leer más', type='read') %}
-Aprende más acerca del seguimiento de analytics con [`amp-analytics`](/es/docs/reference/components/amp-analytics.html).
-{% endcall %}
+Leer más: Aprende más acerca del seguimiento de analytics con [`amp-analytics`](/es/docs/reference/components/amp-analytics.html).
 
 ## Proveedores
 
@@ -185,9 +181,7 @@ En la sección `requests`:
 
 - `url`: dirección HTTPS para `amp-analytics-oewa.html`
 
-{% call callout('Nota', type='note') %}
-Existe una variación denominada `oewadirect` que no utiliza la solución iframe-ping y tiene una mejor detección de cliente mediante `AMP CLIENT_ID`. Esto es actualmente EXPERIMENTAL, y está prohibido por el OEWA porque no usa `oewa2.js`.
-{% endcall %}
+Nota: Existe una variación denominada `oewadirect` que no utiliza la solución iframe-ping y tiene una mejor detección de cliente mediante `AMP CLIENT_ID`. Esto es actualmente EXPERIMENTAL, y está prohibido por el OEWA porque no usa `oewa2.js`.
 
 ### Parsely
 

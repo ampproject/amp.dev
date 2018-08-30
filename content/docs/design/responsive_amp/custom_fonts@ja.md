@@ -43,8 +43,5 @@ within your AMP stylesheet:
 </style>
 [/sourcecode]
 
-{% call callout('注', type='note') %}
- `@font-face` 
-を介して追加されるフォントは、HTTP または HTTPS スキームで取得する必要があります。
-{% endcall %}
+注: `@font-face` を介して追加されるフォントは、HTTP または HTTPS スキームで取得する必要があります。
 
