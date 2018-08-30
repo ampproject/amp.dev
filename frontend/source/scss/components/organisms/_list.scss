@@ -46,6 +46,28 @@ nowrap-desktop
 */
 
 .#{organism('list')} {
+	margin: 0 -0.625em;
+
+	&-item {
+		flex: 1 0 75%;
+		padding: 0 0.625em;
+
+		@media screen and (min-width: 768px) {
+			flex: 1 0 auto;
+		}
+
+		&-col-2 {
+			@media screen and (min-width: 768px) {
+				flex: 0 0 50%;
+			}
+		}
+
+		&-col-3 {
+			@media screen and (min-width: 768px) {
+				flex: 0 0 33.3333333%;
+			}
+		}
+	}
 
 	&-nowrap-desktop {
 		display: flex;
@@ -57,8 +79,10 @@ nowrap-desktop
 	}
 
 	&-scroll {
+		display: flex;
 		flex-wrap: nowrap;
-		overflow: scroll;
+		overflow-y: hidden;
+		overflow-x: scroll;
 
 		@media screen and (min-width: 768px) {
 			overflow: visible;
