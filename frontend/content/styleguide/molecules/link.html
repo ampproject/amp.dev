@@ -22,6 +22,9 @@ links2:
   type: 'download'
   href: '#'
 ---
+<div class="ad-o-container col-2-1">
+	<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">Three link molecules with square icon modifier.</p>
+</div>
 <div class="ad-o-container ad-o-container col-4-5">
 {% for link in doc.links1 %}
   <a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
@@ -32,6 +35,9 @@ links2:
 {% endfor %}
 </div>
 
+<div class="ad-o-container col-2-1">
+	<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">Three link molecules without modifiers.</p>
+</div>
 <div class="ad-o-container ad-o-container col-4-5">
 {% for link in doc.links2 %}
   <a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
