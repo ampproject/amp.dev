@@ -6,8 +6,14 @@
 
 ### SAMPLE MARKUP:
 
-<div class="ad-a-img ad-a-img-circle">
-	<amp-img src="images/sample.jpg" layout="fill" alt="The Alt Text"></amp-img>
+<div class="ad-a-img ad-a-img-circle ">
+  <amp-img
+		src="source/to/img.jpg"
+		layout="responsive"
+		width="300"
+		height="300"
+		alt="The Alt Text"
+	</amp-img>
 </div>
 
 ### INFO:
@@ -18,6 +24,9 @@ Image atoms are implemented by a macro.
 Give the image macro the parameter "parallax" to add the amp-parallax-fx to it.
 
 ### MODIFIERS:
+
+pull-edge
+	Just for mobile: pulls the image to the edge with a negative margin.
 
 circle
   Sets a border-radius 50% to the image (make sure it is a sqaure).
@@ -32,7 +41,7 @@ shadow-static
 .#{atom('img')} {
 	position: relative;
 
-	&-single {
+	&-pull-edge {
 		margin-right: -30px;
 
 		@media screen and (min-width: 768px) {
