@@ -1,30 +1,42 @@
 /*
 
-###########################
+######################
 ### MOLECULE: news ###
-###########################
+######################
 
 ### SAMPLE MARKUP:
 
-<article class="ad-m-news col-4-4">
-	<span class="ad-a-hl ad-a-hl-blue-ribbon ad-a-hl-h5"> July 11, 2018</span>
-	<h4 class="ad-a-hl ad-a-hl-h4">Serverless AMP solution on AWS</h4>
-	<p class="ad-a-txt ad-a-txt-3">The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit.</p>
-	<a class="ad-m-lnk" href='#'>
-		{{atoms.icon('internal', size=1)}}
-		<span class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Read More</span>
+<article class="ad-m-news ad-m-news-shadow">
+	<span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-font-accent ad-a-txt-blue-ribbon">
+		June 1, 2018
+	</span>
+	<span class="ad-a-txt ad-a-txt-hl ad-a-txt-2 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black">
+		The news headline
+	</span>
+	<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">
+		The news copy text.
+	</p>
+
+	<a href="#" class="ad-m-lnk">
+		<div class="ad-a-ico ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+			<svg>
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+			</svg>
+		</div>
+		<span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">Read More</span>
 	</a>
-	</article>
+</article>
 
 ### INFO:
 
-The news molecule is a combination of headline and icon atom.
-The size of the icon should be 1 and headline should be h4. However, the headline size tag may change in the future depending on the template it is used in.
+The news molecule is a combination of text atoms and link molecule.
+There is one modifier for setting a shadow.
+The default has always a white background color but without shadow.
 
 ### MODIFIERS:
 
 shadow
-	adds a box shadow to the molecule.
+	Adds a box shadow to the molecule.
 
 */
 
