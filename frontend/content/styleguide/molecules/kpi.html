@@ -4,17 +4,17 @@ $title: KPI
 
 kpis:
 - title: 63%
-  text: Lorem ipsum dolor sit amet
-  type: river-ebony
-  icon: stories
-- title: 63%
-  text: Lorem ipsum dolor sit amet
-  type: turbo-pizazz
-  icon: stories
-- title: 63%
-  text: Lorem ipsum dolor sit amet
+  text: Increase in CTR on ads in AMP Stories
   type: emerald-doger
   icon: stories
+- title: 455
+  text: Code examples
+  type: river-ebony
+  icon: code
+- title: 1226
+  text: Active Discussions
+  type: turbo-pizazz
+  icon: user
 ---
 {% for kpi in doc.kpis %}
 	<div class="ad-o-container col-2-1">
@@ -22,11 +22,13 @@ kpis:
 			Single KPI molecule with <span class="ad-a-txt ad-a-txt-strong">{{ kpi.type }}</span> modifier.
 		</p>
 	</div>
-	<div class="ad-o-container col-3-4">
+	<div class="ad-o-container col-2-4">
 		<div class="ad-m-kpi ad-m-kpi-{{ kpi.type }}">
-			{{ atoms.icon( kpi.icon , size=2, fill="white") }}
-			<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">{{ kpi.title }}</span>
-			<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">{{ kpi.text }}</p>
-		</div>
+      <div class="ad-m-kpi-content">
+  			{{ atoms.icon( kpi.icon , size=2, fill="white") }}
+  			<span class="ad-a-txt ad-a-txt-strong ad-a-txt-light ad-m-kpi-number">{{ kpi.title }}</span>
+  			<p class="ad-a-txt ad-a-txt-p ad-a-txt-3 ad-a-txt-light ad-m-kpi-text">{{ kpi.text }}</p>
+  		</div>
+    </div>
 	</div>
 {% endfor %}
