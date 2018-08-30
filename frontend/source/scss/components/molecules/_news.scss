@@ -23,27 +23,22 @@ The size of the icon should be 1 and headline should be h4. However, the headlin
 
 ### MODIFIERS:
 
--shadow, adds a box shadow to the molecule.
+shadow
+	adds a box shadow to the molecule.
 
 */
 
 .#{molecule('news')} {
-	padding: 25px 20px 20px;
-
-	& .ad-a-hl {
-		margin: 0;
-		display: block;
-	}
-
-	& .ad-a-hl-h4 {
-		padding-bottom: 20px;
-	}
-
-	& .ad-m-lnk {
-		margin: 0;
-	}
+	padding: 1.5em 1.25em;
+	margin-bottom: 2em;
+	background-color: white;
 
 	&-shadow {
 		@include box-shadow;
+	}
+
+	.#{molecule('lnk')} {
+		padding-bottom: 0;
+		margin-bottom: 0;
 	}
 }
