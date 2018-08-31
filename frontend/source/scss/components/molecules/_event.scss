@@ -6,26 +6,40 @@
 
 ### SAMPLE MARKUP:
 
-<div class="ad-m-event col-3-5">
-		<div class="ad-m-event-date">
-			<span class="ad-a-hl ad-a-hl-h5 ad-a-hl-silver ad-m-event-header">2018</span>
-			<span class="ad-a-hl ad-a-hl-h5">aug</span>
-			<span class="ad-a-hl ad-a-hl-h5">15</span>
-		</div>
-		<div class="ad-m-event-content">
-			<span class="ad-a-hl ad-a-hl-h5 ad-m-event-header">Hamburg</span>
-			<ul class="ad-m-event-detail-list">
-				<li class="ad-m-event-detail">
-					{{ atoms.icon('map', size=1) }}
-					<span class="ad-a-txt ad-a-txt-2">location</span>
-				</li>
-				<li class="ad-m-event-detail">
-					{{ atoms.icon('time', size=1) }}
-					<span class="ad-a-txt ad-a-txt-2">Register by: some date</span>
-				</li>
-			</ul>
-		</div>
-	</div>
+<div class="ad-m-event">
+  <div class="ad-m-event-date">
+    <span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-silver ad-a-txt-hl">
+			2018
+		</span>
+    <span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black">
+      Jul<br>
+      11
+    </span>
+  </div>
+  <div class="ad-m-event-content">
+    <span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black ad-a-txt-hl">
+			Austin, TX
+		</span>
+    <ul aria-labelledby="Details about the event">
+      <li class="ad-a-txt ad-a-txt-3">
+        <div class="ad-a-ico ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+          </svg>
+        </div>
+        Google Building
+      </li>
+      <li class="ad-a-txt ad-a-txt-3">
+        <div class="ad-a-ico ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time"></use>
+          </svg>
+        </div>
+        08/01/18 12:00
+      </li>
+    </ul>
+  </div>
+</div>
 
 ### INFO:
 
