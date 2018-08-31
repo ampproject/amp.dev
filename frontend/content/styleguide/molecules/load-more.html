@@ -6,9 +6,15 @@ text: Load More
 icon: arrow-down-thin
 ---
 
-<div class="ad-o-container col-2-6">
+<div class="ad-o-container col-2-1">
+	<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">
+		Load-more molecule with divider.
+	</p>
+</div>
+<div class="ad-o-container col-6-4">
 	<div class="ad-m-load-more">
-		<p class="ad-a-hl ad-a-hl-h4 ad-a-hl-no-margin">{{doc.text}}</p>
-		{{ atoms.icon(doc.icon, size=1, fill='river-bed') }}
+		<span class="ad-a-txt ad-a-txt-accent-1 ad-a-txt-strong ad-a-txt-black ad-a-txt-font-accent">{{doc.text}}</span>
+		{{ atoms.icon(doc.icon, size=2, fill='black') }}
+		<span class="ad-a-divider ad-a-divider-desktop"></span>
 	</div>
 </div>

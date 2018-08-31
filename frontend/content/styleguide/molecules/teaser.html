@@ -2,18 +2,38 @@
 $view: /views/styleguide/component.j2
 $title: Teaser
 
-lgAccent: Category Accent Large
-smAccent: Category Accent Small
-link: '/styleguide/molecules/teaser.html'
-linkCopy: Code now
+items:
+- headline: Component Accent One
+  subline: Category Accent 3
+  icon: stories
+  link: '/styleguide/organisms/teaser-list.html'
+  label: Code now
+  description: Single teaser without modifiers.
+- headline: Component Accent One
+  subline: Category Accent 3
+  icon: flask
+  link: '/styleguide/organisms/teaser-list.html'
+  label: Code now
+  modifier: white
+  description: Single teaser with background modifier.
 ---
-<div class="ad-o-container col-6-4">
-  <div class="ad-m-teaser ad-m-teaser-white">
-    {% call molecules.teaser(doc.smAccent, doc.lgAccent, lipsum(n=1, html=False)) %}
-      <a href={{ doc.link }} class="ad-m-lnk">
-				{{ atoms.icon('internal', size=2) }}
-				<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ doc.linkCopy }}</span>
-      </a>
-    {% endcall %}
+
+{% for item in doc.items %}
+  <div class="ad-o-container col-2-1">
+    <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">{{ item.description }}</p>
   </div>
-</div>
+  <div class="ad-o-container col-3-4">
+    <div class="ad-m-teaser {% if item.modifier %}ad-m-teaser-{{item.modifier}}{% endif %}">
+      <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-gray-chateau">{{ item.subline }}</span>
+      <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-1 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black ad-m-teaser-headline">
+        {{ item.headline }}
+        {{ atoms.icon(item.icon, size=2, fill='river-bed') }}
+      </span>
+      <p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">{{ lipsum(n=1, html=False, min=15, max=16) }}</p>
+      <a href={{ item.link }} class="ad-m-lnk">
+        {{ atoms.icon('internal', size=1) }}
+        <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ item.label }}</span>
+      </a>
+    </div>
+  </div>
+{% endfor %}
