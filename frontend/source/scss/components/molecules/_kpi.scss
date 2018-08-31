@@ -28,14 +28,9 @@ Please refer to mixins.scss to see gradients.
 */
 
 .#{molecule('kpi')} {
-	padding: 1.5em;
-	margin: 1em;
+	position: relative;
+	padding-bottom: 100%;
 	@include box-shadow;
-
-	.ad-a-txt {
-		white-space: normal;
-		padding: 0;
-	}
 
 	&-emerald-doger {
 		@include emerald-doger;
@@ -48,5 +43,38 @@ Please refer to mixins.scss to see gradients.
 	&-river-ebony {
 		@include river-ebony;
 	}
-}
 
+	&-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-start;
+		width: 100%;
+		height: auto;
+		min-height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: 1.5em;
+	}
+
+	&-number {
+		font-size: 3em;
+		line-height: 1;
+		margin: 0.25em 0 0;
+	}
+
+	&-text {
+		display: block; /* Fallback for non-webkit */
+		display: -webkit-box;
+		height: 100%;
+		max-height: 12px*1.6*3; /* Fallback for non-webkit */
+		margin: 0;
+		font-size: 12px;
+		line-height: 1.6;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

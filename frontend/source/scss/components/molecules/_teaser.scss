@@ -7,31 +7,41 @@
 ### SAMPLE MARKUP:
 
 <div class="ad-m-teaser ad-m-teaser-white">
-	<h5 class="ad-a-txt ad-a-txt-1">
-		The Subline Text
-	</h5>
-	<h4 class="ad-a-hl ad-a-hl-h4">
-		The Headline Text
-	</h4>
+	<span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-gray-chateau">
+		The teaser subline
+	</span>
+
+	<span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-1 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black ad-m-teaser-headline">
+		The teaser headline
+
+		<div class="ad-a-ico ad-a-ico-2 ad-a-ico-river-bed ad-a-ico-transparent">
+			<svg>
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#flask"></use>
+			</svg>
+		</div>
+	</span>
+
 	<p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">
-		The Text
+		The teaser copy text.
 	</p>
 
-	<a class="ad-m-lnk" href="#">
-		<svg class="ad-a-ico ad-a-ico-internal ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
-		</svg>
-		<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">
-			The Link Text
+	<a href="#" class="ad-m-lnk">
+		<div class="ad-a-ico ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+			<svg>
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+			</svg>
+		</div>
+		<span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">
+			The link text
 		</span>
 	</a>
 </div>
 
-
 ### INFO:
 
-The teaser molecule includes link molecule and headline, text and icon atom.
-The link molecule inside this should not be customized.
+The teaser molecule includes link molecule and text and icon atoms.
+There is one modifier that enables a white background color with shadow.
+By default the teaser background is transparent and has no padding or shadows.
 
 ### MODIFIERS:
 
@@ -41,11 +51,29 @@ white
 */
 
 .#{molecule('teaser')} {
-	margin: 20px 0;
+	margin-bottom: 2em;
 
-  &-white {
-    @include box-shadow;
-    padding: 20px 40px 50px 25px;
-    background-color: white;
-  }
+	&-white {
+		@include box-shadow;
+		padding: 1.5em 1.25em;
+		background-color: white;
+	}
+
+	&-headline {
+		position: relative;
+		padding-right: 30px;
+
+		.#{atom('ico')} {
+			position: absolute;
+			right: 0;
+			top: 25%;
+			opacity: 0.2;
+			transform: translateY(-50%);
+		}
+	}
+
+	.#{molecule('lnk')} {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
 }
