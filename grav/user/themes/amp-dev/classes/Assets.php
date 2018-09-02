@@ -54,7 +54,7 @@ class Assets extends \Grav\Common\Assets
       $url = "https://cdn.ampproject.org/v0/$name-$version.js";
 
       // TODO: More carefully evaluate type
-      $type = $component == 'amp-mustache' ? 'custom-template' : 'custom-element';
+      $type = $name == 'amp-mustache' ? 'custom-template' : 'custom-element';
 
       $this->amp_components[$name] = [
         'name' => $name,
