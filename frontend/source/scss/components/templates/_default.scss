@@ -1,0 +1,5 @@
+p {
+	@extend .#{atom('txt')} !optional;
+	@extend .#{atom('txt-3')} !optional;
+	@extend .#{atom('txt-p')} !optional;
+}
