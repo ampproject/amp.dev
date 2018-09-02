@@ -1,0 +1,19 @@
+{
+    "name": "ampproject/amp-dev",
+    "description": "Grav theme for the homepage of the AMP Project at amp.dev",
+    "type": "project",
+    "require": {
+        "scrivo/highlight.php": "v9.12.0.5"
+    },
+    "autoload": {
+      "psr-4": {
+        "Grav\\Theme\\AmpDev\\": "classes/"
+      }
+    },
+    "authors": [
+        {
+            "name": "Matthias Rohmer",
+            "email": "rohmer.matthias@anyvent.org"
+        }
+    ]
+}
