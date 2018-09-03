@@ -1,4 +1,3 @@
----
 $title: Stage
 ---
 
@@ -27,38 +26,73 @@ $title: Stage
 				}
 			}
 
+			@keyframes growRight {
+				from {
+					width: 0%;
+				}
+				to {
+					width: 100%;
+				}
+			}
 
 			.stage {
+				display: inline;
+			}
+
+			.hero {
+				position: absolute;
+				padding-top: 35%;
 				width: 100%;
+				z-index: 1;
+			}
+
+			.hero--active {
+				width: 100%;
+				animation: growRight 1s ease-in-out;
+				z-index: 10;
+			}
+
+			.hero-websites {
+				z-index: 2;
+				background: linear-gradient(45deg, #38CA71, #21C1FA);
+			}
+
+			.hero-stories {
+				background: linear-gradient(45deg, #FF8F00, #FFE100);
+			}
+
+			.hero-ads {
+				background: linear-gradient(45deg, #005AF0, #EF0000);
+			}
+
+			.hero-email {
+				background: linear-gradient(45deg, #38CA71,#005AF0);
+			}
+
+			.content {
+				display: flex;
+				flex-direction: column;
+				margin: 5% 0 0 10%;
 			}
 
 			.headline {
-				position: absolute;
-				top: 50%;
-				right: 60%;
-			}
-
-			.header {
-				position: relative;
-				padding-top: 35%;
-				opacity: 1;
-				background: linear-gradient(45deg, #38CA71, #21C1FA);
-				display: flex;
-				justify-content: center;
+				z-index: 10;
+				margin: 0;
+				font-size: 2em;
+				font-family: Poppins;
 			}
 
 			.stage-list {
-				position: absolute;
+				position: relative;
 				overflow: hidden;
 				height: 50px;
-				top: 50%;
-				transform: translateY(-50%);
 				background-color: #ffffff;
 				padding: 0;
 				min-width: 170px;
+				max-width: 250px;
 				list-style: none;
-				display: flex;
-				align-items: center;
+				margin: 0;
+				z-index: 10;
 			}
 
 
@@ -110,16 +144,16 @@ $title: Stage
     {
       "currentStage": "0",
       "0": {
-				"class": "stage-list-item websites"
+				"class": "header header-websites"
       },
 			"1": {
-				"class": "stage-list-item stories"
+				"class": "header header-stories"
       },
 			"2": {
-				"class": "stage-list-item ads"
+				"class": "header header-anotherClass"
       },
 			"3": {
-				"class": "stage-list-item email"
+				"class": "header header-email"
       }
     }
   </script>
@@ -128,17 +162,21 @@ $title: Stage
     <option value="0">websites</option>
     <option value="1">stories</option>
     <option value="2">ads</option>
-    <option value="3">email</option>
+    <option value="3">emails</option>
   </select>
 	<div class="stage">
-		<div class="header">
-			<h3 class="headline">some text</h3>
-			<ul class="stage-list">
+		<div [class]="stages.currentStage == 0 ? 'hero hero-websites hero--active' : 'hero hero-websites'" class="hero hero-websites"></div>
+		<div [class]="stages.currentStage == 1 ? 'hero hero-stories hero--active' : 'hero hero-stories'" class="hero hero-stories"></div>
+		<div [class]="stages.currentStage == 2 ? 'hero hero-ads hero--active' : 'hero hero-ads'"  class="hero hero-ads"></div>
+		<div [class]="stages.currentStage == 3 ? 'hero hero-email hero--active' : 'hero hero-email'"class="hero hero-email"></div>
+		<div class="content">
+			<h3 class="headline">AMP is a web component based framework for easily creating user first </h3>
+			<div class="stage-list">
 				<option selected [selected]="stages.currentStage == 0" class="stage-list-item websites">websites</option>
 				<option [selected]="stages.currentStage == 1" class="stage-list-item stories">stories</option>
 				<option [selected]="stages.currentStage == 2" class="stage-list-item ads">ads</option>
-				<option [selected]="stages.currentStage == 3" class="stage-list-item email">email</option>
-			</ul>
+				<option [selected]="stages.currentStage == 3" class="stage-list-item email">emails</option>
+			</div>
 		</div>
 	</div>
 </body>
