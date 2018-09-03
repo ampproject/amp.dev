@@ -1,8 +1,0 @@
-{% macro teaser(hdSm, hdLrg, text) -%}
-    <h5 class="ad-a-txt ad-a-txt-1 ad-a-txt-teaserSm">{{ hdSm }}</h5>
-    <h4 class="ad-a-hl ad-a-hl-h4">{{ hdLrg }}</h4>
-    <p class="ad-a-txt ad-a-txt-3">{{ text }}</p>
-    {% if caller %}
-      {{ caller() }}
-    {% endif %}
-{%- endmacro %}

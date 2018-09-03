@@ -25,47 +25,71 @@ light
   Changes the text color to light (default is dark).
 
 */
-
 // TODO: implement mono font and modifier
 
 .#{atom('hl')} {
-  font-family: Poppins;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  font-family: 'Poppins';
   font-weight: bold;
   line-height: 1.25em;
   color: color('black');
 
-    &-h1 {
-      font-size: 3em;
+  &-h1 {
+    font-size: 3em;
+
+    @media screen and (min-width: 768px) {
+      font-size: 3.25em;
     }
+  }
 
-    &-h2 {
-      font-size: 2.25em;
+  &-h2 {
+    font-size: 2.25em;
+
+    @media screen and (min-width: 768px) {
+      font-size: 2.625em;
     }
+  }
 
-    &-h3 {
-      font-size: 1.5em;
+  &-h3 {
+    font-size: 1.5em;
+
+    @media screen and (min-width: 768px) {
+      font-size: 1.75em;
     }
+  }
 
-    &-h4 {
-      font-size: 1em;
-		}
+  &-h4 {
+    font-size: 1em;
+  }
 
-		&-h5 {
-			font-size: 0.875em;
-		}
+  &-h5 {
+    font-size: 0.875em;
+  }
 
-		&-silver {
-			color: color('silver');
-			font-size: 0.625em;
-		}
+  &-silver {
+    color: color('silver');
+    font-size: 0.625em;
+  }
 
-		&-blue-ribbon {
-			color: color('blue-ribbon');
-		}
+  &-blue-ribbon {
+    color: color('blue-ribbon');
+  }
 
-    &-light {
-      color: color('white');
+  &-h4 {
+    font-size: 1em;
+
+    @media screen and (min-width: 768px) {
+      font-size: 1.25em;
     }
+  }
 
-    &-mono {}
+  &-light {
+    color: color('white');
+  }
+
+  &-mono {
+    font-family: monospace;
+  }
 }

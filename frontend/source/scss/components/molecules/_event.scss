@@ -1,27 +1,27 @@
 /*
 
-######################
+#######################
 ### MOLECULE: event ###
-######################
+#######################
 
 ### SAMPLE MARKUP:
 
 <div class="ad-m-event col-3-5">
 		<div class="ad-m-event-date">
-			<span class="ad-a-hl ad-a-hl-h5 ad-a-hl-silver ad-m-event-header">{{ event.year }}</span>
-			<span class="ad-a-hl ad-a-hl-h5">{{ event.month }}</span>
-			<span class="ad-a-hl ad-a-hl-h5">{{ event.day }}</span>
+			<span class="ad-a-hl ad-a-hl-h5 ad-a-hl-silver ad-m-event-header">2018</span>
+			<span class="ad-a-hl ad-a-hl-h5">aug</span>
+			<span class="ad-a-hl ad-a-hl-h5">15</span>
 		</div>
 		<div class="ad-m-event-content">
-			<span class="ad-a-hl ad-a-hl-h5 ad-m-event-header">{{ event.city }}</span>
+			<span class="ad-a-hl ad-a-hl-h5 ad-m-event-header">Hamburg</span>
 			<ul class="ad-m-event-detail-list">
 				<li class="ad-m-event-detail">
 					{{ atoms.icon('map', size=1) }}
-					<span class="ad-a-txt ad-a-txt-2">{{ event.location }}</span>
+					<span class="ad-a-txt ad-a-txt-2">location</span>
 				</li>
 				<li class="ad-m-event-detail">
 					{{ atoms.icon('time', size=1) }}
-					<span class="ad-a-txt ad-a-txt-2">Register by: {{ event.registration }}</span>
+					<span class="ad-a-txt ad-a-txt-2">Register by: some date</span>
 				</li>
 			</ul>
 		</div>
@@ -40,45 +40,43 @@ none
 */
 
 .#{molecule('event')} {
-	padding: 20px;
-	min-width: 250px;
-	display: grid;
-	grid-template-columns: 15% auto;
-	grid-column-gap: 20px;
+  display: flex;
+	padding: 0.875em 1.25em;
+	margin-bottom: 2.750em;
+	background-color: color('white');
 	@include box-shadow;
 
 	&-date {
-		grid-column: 1;
-		display: flex;
-		flex-direction: column;
+		flex-grow: 0;
+		margin-right: 1.4em;
 		text-align: right;
+
+		span:last-child {
+			display: block;
+			line-height: 1.4em;
+		}
 	}
 
-	&-detail-list {
-		padding: 0;
-		margin: 0;
-		list-style: none;
+	&-content {
+		flex-grow: 1;
 	}
 
-	&-detail {
-		position: relative;
-		padding-bottom: 4px;
+	.#{atom('txt-hl')} {
+		margin-bottom: 0.5em;
 	}
 
-	&-header {
-		display: block;
-		padding-bottom: 10px;
-	}
+	ul {
+		li {
+			position: relative;
+			padding-left: 20px;
+		}
 
-	& .ad-a-txt {
-		display: block;
-		padding-left: 20px;
+		.#{atom('ico')} {
+			width: 0.875em;
+			height: 0.875em;
+			position: absolute;
+			left: 1px;
+			top: 3px;
+		}
 	}
-
-	& .ad-a-ico {
-		position: absolute;
-		left:0;
-		top:0;
-	}
-
 }

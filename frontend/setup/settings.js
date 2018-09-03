@@ -1,3 +1,5 @@
+import yargs from 'yargs';
+
 /**
  * These settings are meant to define sensible defaults for each of the tasks
  * defined inside ~setup/tasks/. This pattern provides the ability to easily
@@ -24,6 +26,10 @@ const settings = {
     }
 };
 
-// TODO: Maybe overwrite settings for other environments.
+// Settings that take effect as soon as the --production flag is set while
+// running the gulp task
+if (yargs.argv.production) {
+	settings['styles'].options.outputStyle = 'compressed';
+}
 
 export default settings;

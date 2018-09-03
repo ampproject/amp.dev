@@ -2,13 +2,13 @@
   {% set demoAtoms = g.collection('/content/styleguide/atoms') %}
   <section>
     {% if demoAtoms %}
-    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-river-bed">Atoms</p>
+    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Atoms</p>
     <ul>
       {% for doc in demoAtoms %}
       <li>
         <a class="ad-m-lnk" href="{{ doc.url|relative }}">
-					{{ atoms.icon('internal', size=1, fill='black') }}
-					<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-black">{{ doc.title }}</span>
+					{{ atoms.icon('internal', size=1, fill='river-bed') }}
+					<span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-river-bed">{{ doc.title }}</span>
 				</a>
       </li>
       {% endfor %}
@@ -19,13 +19,13 @@
   {% set demoMolecules = g.collection('/content/styleguide/molecules') %}
   {% if demoMolecules %}
   <section>
-    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-river-bed">Molecules</p>
+    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Molecules</p>
     <ul>
       {% for doc in demoMolecules %}
       <li>
         <a class="ad-m-lnk" href="{{ doc.url|relative }}">
-					{{ atoms.icon('internal', size=1, fill='black') }}
-					<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-black">{{ doc.title }}</span>
+					{{ atoms.icon('internal', size=1, fill='river-bed') }}
+					<span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-river-bed">{{ doc.title }}</span>
 				</a>
       </li>
       {% endfor %}
@@ -36,13 +36,13 @@
   {% set demoOrganisms = g.collection('/content/styleguide/organisms') %}
   {% if demoOrganisms %}
   <section>
-    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-river-bed">Organisms</p>
+    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Organisms</p>
     <ul>
       {% for doc in demoOrganisms %}
       <li>
         <a class="ad-m-lnk" href="{{ doc.url|relative }}">
-					{{ atoms.icon('internal', size=1, fill='black') }}
-					<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-black">{{ doc.title }}</span>
+					{{ atoms.icon('internal', size=1, fill='river-bed') }}
+					<span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-river-bed">{{ doc.title }}</span>
 				</a>
       </li>
       {% endfor %}
@@ -53,13 +53,13 @@
   {% set prototypes = g.collection('/content/styleguide/prototypes') %}
   {% if prototypes %}
   <section>
-    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-river-bed">Prototypes</p>
+    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Prototypes</p>
     <ul>
       {% for doc in prototypes %}
       <li>
         <a class="ad-m-lnk" href="{{ doc.url|relative }}">
-					{{ atoms.icon('internal', size=1, fill='black') }}
-					<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-black">{{ doc.title }}</span>
+					{{ atoms.icon('internal', size=1, fill='river-bed') }}
+					<span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-river-bed">{{ doc.title }}</span>
 				</a>
       </li>
       {% endfor %}

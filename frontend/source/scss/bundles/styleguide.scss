@@ -44,6 +44,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	font-weight: bold;
+	text-decoration: none;
+	color: color('blue-ribbon');
+}
+
 .styleguide {
 
   &__header {
@@ -104,9 +116,7 @@ body {
 			li {
 				a {
 					margin: 0;
-					padding-right: 10px;
-					border-bottom: 1px solid darken(color('whisper'), 3%);
-					transition: all 0.25s cubic-bezier(.55,0,.1,1);
+					padding: 0.375em 0;
 
 					.ad-a-txt,
 					.ad-a-ico {
@@ -114,8 +124,6 @@ body {
 					}
 
 					&:hover {
-						border-bottom-color: color('blue-ribbon');
-
 						.ad-a-txt {
 							color: color('blue-ribbon');
 						}
@@ -136,11 +144,11 @@ body {
 
     .container {
       display: grid;
-      grid-gap: 10px;
+      grid-gap: 15px;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
       width: 100%;
-      max-width: 1130px;
+      max-width: 1260px;
       margin: 0 auto;
       padding: 0 30px;
 
@@ -246,9 +254,20 @@ body {
       }
     }
   }
-
 }
 
 .ad-o-container {
 	margin-bottom: 5em;
+}
+
+.icon-demo-container {
+	margin-bottom: 2em !important;
+
+	.ad-a-ico {
+		margin: 0 auto 1.5em;
+	}
+
+	&:not(.final) .ad-a-ico {
+		background-color: rgba(color('red'), 0.25);
+	}
 }
