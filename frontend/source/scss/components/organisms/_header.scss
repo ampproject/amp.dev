@@ -1,0 +1,36 @@
+/*
+
+#############################
+### ORGANISM: header ###
+#############################
+
+*/
+
+.#{organism('header')} {
+
+  &-lnk-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &-lnk {
+  }
+
+  &-main-nav {
+
+  }
+
+    &-main-nav &-lnk-list {
+    }
+
+  &-sub-nav {
+    background-color: color('wild-sand');
+  }
+
+    &-sub-nav &-lnk-list {
+    }
+}

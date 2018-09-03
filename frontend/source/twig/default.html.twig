@@ -14,7 +14,7 @@
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
-        {% do assets.addCss('theme://css/styleguide.css', {'loading': 'inline'}) %}
+        {% do assets.addCss('theme://css/index.css', {'loading': 'inline'}) %}
     {% endblock %}
     {{ assets.ampCustomCss() }}
 
@@ -35,6 +35,10 @@
 </head>
 
 <body>
+{% block header %}
+{% include 'partials/default/header.html.twig' %}
+{% endblock %}
+
 {% block body %}
 {{ page.content }}
 {% endblock body %}
