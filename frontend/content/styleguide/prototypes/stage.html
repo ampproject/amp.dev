@@ -139,25 +139,6 @@ $title: Stage
     </style>
 </head>
 <body>
-<amp-state id="stages">
-  <script type="application/json">
-    {
-      "currentStage": "0",
-      "0": {
-				"class": "header header-websites"
-      },
-			"1": {
-				"class": "header header-stories"
-      },
-			"2": {
-				"class": "header header-anotherClass"
-      },
-			"3": {
-				"class": "header header-email"
-      }
-    }
-  </script>
-</amp-state>
 	<select on="change:AMP.setState({stages:{currentStage: event.value }})">
     <option value="0">websites</option>
     <option value="1">stories</option>
