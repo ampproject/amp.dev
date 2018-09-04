@@ -1,3 +1,25 @@
+/*
+
+#####################
+### ATOM: divider ###
+#####################
+
+### SAMPLE MARKUP:
+
+<span class="ad-a-divider ad-a-divider-desktop"></span>
+
+### INFO:
+
+A simple element that can be used anywhere.
+More modifiers can be added below.
+
+### MODIFIERS:
+
+desktop
+	Displays the divider also on desktop resolution. Default is just for mobile.
+
+*/
+
 .#{atom('divider')} {
 	display: block;
 	width: 100%;
