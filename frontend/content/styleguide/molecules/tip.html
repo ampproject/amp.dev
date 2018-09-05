@@ -4,31 +4,28 @@ $title: Tip
 tips:
 - headline: Tip Accent Large
   modifier: '-default'
-  text: Text small super easy to make elements responsive in AMP. Just put on them. To learn more about Responsive Design in AMP, head to Create Responsive AMP Pages.
+  minText: 20
+  maxText: 30
 - headline: Note
   modifier: '-note'
-  text: It is strongly recommended that you use HTTPS in production environments. HTTPS has several benefits beyond just security including SEO. You can read more about this topic in this Google Webmaster blog post.
+  minText: 20
+  maxText: 50
 - headline: Important
   modifier: '-important'
-  text: Check that your styles are supported in AMP; some styles aren't for performance reasons (see also Supported CSS).
+  minText: 20
+  maxText: 40
 - headline: Read On
   modifier: '-read-on'
-  text: Learn more about art direction with srcset and sizes.
+  minText: 25
+  maxText: 45
 ---
 <div class="ad-o-container col-6-4">
 	{% for tip in doc.tips %}
 	<div class="ad-m-tip-container ad-m-tip{{ tip.modifier }}-container">
 	  <div class="ad-m-tip ad-m-tip{{ tip.modifier }}">
-	    <strong><p class="ad-a-hl ad-a-hl-h4">{{ tip.headline }}</p></strong>
-	    <p class="ad-a-txt ad-a-txt-3">{{ tip.text }}</p>
+	    <h4 class="ad-a-txt ad-a-txt-2 ad-a-txt-hl ad-a-txt-strong ad-a-txt-black ad-a-txt-font-accent">{{ tip.headline }}</h4>
+	    <p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">{{ lipsum(n=1, html=False, min=tip.minText, max=tip.maxText) }}</p>
 	  </div>
 	</div>
 	{% endfor %}
-
-	<div class="ad-m-tip-container ad-m-tip-default-container">
-	  <div class="ad-m-tip ad-m-tip-default">
-	    <strong><p class="ad-a-hl ad-a-hl-h4">{{ lipsum(n=1, html=False, min=3, max=15) }}</p></strong>
-	    <p class="ad-a-txt ad-a-txt-3">{{ lipsum(n=1, html=False) }}</p>
-	  </div>
-	</div>
 </div>

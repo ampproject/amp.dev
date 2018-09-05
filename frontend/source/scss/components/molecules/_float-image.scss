@@ -1,3 +1,36 @@
+/*
+
+#############################
+### MOLECULE: float-image ###
+#############################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-float-image">
+  <div class="ad-a-img ad-a-img-static">
+    <amp-img src="source/to/img.jpg" layout="fill" alt="The Alt Text"></amp-img>
+  </div>
+  <div class="ad-a-img ad-a-img-shadow-static ad-a-img-parallax" amp-fx="parallax" data-parallax-factor="1.1">
+    <amp-img src="source/to/img.jpg" layout="fill" alt="The Alt Text"></amp-img>
+  </div>
+</div>
+
+### INFO:
+
+The float-image molecule uses amp-fx-collection to animate one image while scrolling.
+The grid is builded up with two on the corner overlaying squares.
+The images that are inside this squares will contained, it doesn't matter which aspect ratio they have.
+
+### MODIFIERS:
+
+static
+	This image is the static one. It is positioned in the lower left corner.
+
+parallax
+	This image is floating over the static one. Is is positioned in the upper right corner.
+
+*/
+
 .#{molecule('float-image')} {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
