@@ -1,46 +1,54 @@
 ---
 $title: Torne sua página detectável
----
+$order: 10
+$category: Deploy
 
+toc: true
+---
 [TOC]
 
-Em alguns casos, você pode ter uma versão AMP e uma versão não AMP da mesma página, por exemplo, uma página com um artigo de notícias. Considere o seguinte: se a Pesquisa Google encontra a versão não AMP dessa página, como ela saberá que há uma versão AMP dela?
 
-### Vinculação de páginas com `<link>`
+Em alguns casos, você pode ter uma versão AMP e uma não AMP da mesma página (um artigo de notícias, por exemplo). Se a Pesquisa Google encontrar a versão não AMP dessa página, como ela poderá saber que há uma versão AMP do conteúdo?
 
-A fim de resolver esse problema, nós adicionamos informações sobre a página AMP à página não AMP, e vice-versa, sob a forma de tags `<link>` no `<head>`.
+### Vinculação de páginas com &lt;link&gt;
 
-Adicione o seguinte conteúdo à página não AMP:
+Para resolver esse problema, adicionamos informações sobre a página AMP à versão não AMP e vice-versa usando tags `<link>` no `<head>`.
+
+Adicione o seguinte à página não AMP:
 
 [sourcecode:html]
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-E isto à página AMP:
+Da mesma forma, inclua isto na página AMP:
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
-### E se eu tiver apenas uma página?
+### E se eu só tiver uma página?
 
-Se você tiver apenas uma página, e ela for AMP, precisará adicionar o link canônico a ela, que levará à própria página:
+Se você só tiver uma página, e ela for uma AMP, ainda assim será preciso adicionar o link canônico (que levará à mesma página):
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-## Integração a plataformas de terceiros por meio de metadados adicionais
+{% call callout('Leia mais', type='read') %}
+Saiba mais sobre como o Google encontra páginas AMP nas [diretrizes da Pesquisa Google para páginas AMP](https://support.google.com/webmasters/answer/6340290).
+{% endcall %}
 
-Às vezes, um site de terceiros (que incorpora sua página AMP ou inclui links que levam a ela) precisa saber mais sobre sua página, além do fato de ela ser uma página AMP. As plataformas podem precisar de diversas informações sobre a sua página, como se ela é um artigo de notícias ou um vídeo e se ela tem uma captura de tela e uma breve descrição, entre outras.
+## Integração com plataformas de terceiros por meio de metadados adicionais
 
-Isso não é relevante apenas para as páginas AMP, mas para todas as páginas da Web. Em algumas plataformas, esses metadados são adicionais. Em outras, eles são um requisito, ou seja, **os links para o seu conteúdo não serão exibidos se você não incluir os metadados certos**. Verifique se você incluiu os metadados certos nas plataformas em que deseja exibir seu conteúdo.
+Às vezes, um site de terceiros (que incorpora sua página AMP ou inclui links que levam a ela) precisa saber mais sobre sua página, além do fato de ela ser uma página AMP. As plataformas podem precisar de diversas informações sobre sua página, por exemplo: ela é um artigo de notícias ou um vídeo? Ela tem uma captura de tela e uma breve descrição?
+
+Isso é relevante tanto para as AMP como para todas as páginas da Web. Em algumas plataformas, esses metadados são adicionais. Em outras, são um requisito, ou seja, **os links para seu conteúdo não serão exibidos se você não incluir os metadados certos**. Verifique se você incluiu os metadados certos nas plataformas em que pretende exibir seu conteúdo.
 
 ### Use Schema.org na maioria dos mecanismos de pesquisa
 
-O [Schema.org](http://schema.org/) oferece vocabulários abertos para a adição de metadados a todos os tipos de conteúdo. No caso da AMP, as propriedades que fazem sentido nesse contexto incluem o tipo específico de conteúdo (por exemplo, "artigo"), o título, a data de publicação e as imagens de visualização associadas.
+O [Schema.org](http://schema.org/) (em inglês) oferece vocabulários abertos para a adição de metadados a todos os tipos de conteúdo. No caso das AMP, as propriedades que fazem sentido no contexto incluem o tipo específico de conteúdo (por exemplo, "artigo"), o título, a data de publicação e as imagens de visualização associadas.
 
-Por exemplo:
+Exemplo:
 
 [sourcecode:html]
 <script type="application/ld+json">
@@ -76,11 +84,16 @@ Por exemplo:
 </script>
 [/sourcecode]
 
-Mais exemplos podem ser encontrados na [pasta de exemplos do ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), incluindo a sintaxe de atributo HTML alternativo.
+Há mais material na [pasta de exemplos do ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), incluindo a sintaxe alternativa de atributo HTML.
 
-Observação: esta definição do Schema.org é um requisito que qualifica seu conteúdo para ser apresentado na demonstração do [carrossel de notícias da Pesquisa Google (experimente no seu dispositivo móvel)](https://g.co/ampdemo).
-Veja também [Notícias principais com a AMP](https://developers.google.com/structured-data/carousels/top-stories) e a [ferramenta de teste de dados estruturados](https://developers.google.com/structured-data/testing-tool/).
+{% call callout('Leia mais', type='read') %} Acesse estes recursos para saber mais sobre os dados estruturados:
+
+* Saiba como [estruturar seu conteúdo para exibição na versão aprimorada da Pesquisa Google](https://developers.google.com/search/docs/guides/mark-up-content), por exemplo, notícias principais, carrossel, cards de receitas etc.
+* Teste seus dados estruturados com a [Ferramenta de teste de dados estruturados do Google](https://developers.google.com/structured-data/testing-tool/).
+{% endcall %}
 
 ### Outros metadados para mais plataformas
 
-Consulte o [guia para descobertas em mídias sociais em "Fundamentos da Web"](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) para saber mais sobre as diferentes formas de preparar seu conteúdo para descoberta e distribuição.
+Acesse o [guia Descoberta social no site Fundamentos da Web](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) para saber mais sobre as diferentes formas de preparar seu conteúdo para detecção e distribuição.
+ 
+ 
