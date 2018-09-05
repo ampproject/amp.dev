@@ -35,8 +35,20 @@ $title: Stage
 				}
 			}
 
-			.stage {
-				display: inline;
+			.hero-selector {
+				height: 30px;
+				margin: 15px 0 0 50px;
+				outline: #ffffff;
+				background-color: #ffffff;
+				font-size: 1.25em;
+				font-family: Poppins;
+				border: none;
+				position: relative;
+				z-index: 10;
+			}
+
+			.hero-selector > option {
+				background-color: #fff;
 			}
 
 			.hero {
@@ -46,7 +58,7 @@ $title: Stage
 				z-index: 1;
 			}
 
-			.hero--active {
+			.hero-active {
 				width: 100%;
 				animation: growRight 1s ease-in-out;
 				z-index: 10;
@@ -112,7 +124,7 @@ $title: Stage
 				transition: transform 1s ease;
 			}
 
-			.stage-list-item--active {
+			.stage-list-item-active {
 				display: block;
 				opacity: 1;
 				animation: fadeIn 1s ease;
@@ -139,24 +151,24 @@ $title: Stage
     </style>
 </head>
 <body>
-	<select on="change:AMP.setState({stages:{currentStage: event.value }})">
-    <option value="0">websites</option>
-    <option value="1">stories</option>
-    <option value="2">ads</option>
-    <option value="3">emails</option>
-  </select>
 	<div class="stage">
-		<div [class]="stages.currentStage == 0 ? 'hero hero-websites hero--active' : 'hero hero-websites'" class="hero hero-websites"></div>
-		<div [class]="stages.currentStage == 1 ? 'hero hero-stories hero--active' : 'hero hero-stories'" class="hero hero-stories"></div>
-		<div [class]="stages.currentStage == 2 ? 'hero hero-ads hero--active' : 'hero hero-ads'"  class="hero hero-ads"></div>
-		<div [class]="stages.currentStage == 3 ? 'hero hero-email hero--active' : 'hero hero-email'"class="hero hero-email"></div>
+		<div [class]="stages.currentStage == 0 ? 'hero hero-websites hero-active' : 'hero hero-websites'" class="hero hero-websites"></div>
+		<div [class]="stages.currentStage == 1 ? 'hero hero-stories hero-active' : 'hero hero-stories'" class="hero hero-stories"></div>
+		<div [class]="stages.currentStage == 2 ? 'hero hero-ads hero-active' : 'hero hero-ads'"  class="hero hero-ads"></div>
+		<div [class]="stages.currentStage == 3 ? 'hero hero-email hero-active' : 'hero hero-email'"class="hero hero-email"></div>
+		<select on="change:AMP.setState({stages:{currentStage: event.value }})" class="hero-selector">
+    	<option value="0" class="option">websites</option>
+    	<option value="1" class="option">stories</option>
+    	<option value="2" class="option">ads</option>
+    	<option value="3" class="option">emails</option>
+  	</select>
 		<div class="content">
 			<h3 class="headline">AMP is a web component based framework for easily creating user first </h3>
 			<ul class="stage-list">
-				<li [class]="stages.currentStage == 0 ? 'stage-list-item stage-list-item--active websites' : 'stage-list-item websites'" class="stage-list-item stage-list-item--active websites">websites</li>
-				<li [class]="stages.currentStage == 1 ? 'stage-list-item stage-list-item--active stories' : 'stage-list-item stories'" class="stage-list-item stories">stories</li>
-				<li [class]="stages.currentStage == 2 ? 'stage-list-item stage-list-item--active ads': 'stage-list-item ads'" class="stage-list-item ads">ads</li>
-				<li [class]="stages.currentStage == 3 ? 'stage-list-item stage-list-item--active email' : 'stage-list-item email'" class="stage-list-item email">emails</li>
+				<li [class]="stages.currentStage == 0 ? 'stage-list-item stage-list-item-active websites' : 'stage-list-item websites'" class="stage-list-item stage-list-item-active websites">websites</li>
+				<li [class]="stages.currentStage == 1 ? 'stage-list-item stage-list-item-active stories' : 'stage-list-item stories'" class="stage-list-item stories">stories</li>
+				<li [class]="stages.currentStage == 2 ? 'stage-list-item stage-list-item-active ads': 'stage-list-item ads'" class="stage-list-item ads">ads</li>
+				<li [class]="stages.currentStage == 3 ? 'stage-list-item stage-list-item-active email' : 'stage-list-item email'" class="stage-list-item email">emails</li>
 			</ul>
 		</div>
 	</div>
