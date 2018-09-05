@@ -1,5 +1,34 @@
 blogs:
 
+- type: Video
+  title: "AMP HTML Layout System"
+  id: v0BVLgEEuMY
+  author: The AMP Channel
+  role: 
+  origin: "https://www.youtube.com/watch?v=v0BVLgEEuMY"
+  excerpt: "Did you know about AMP’s HTML layout system? If you’re looking for greater flexibility than standard HTML when layouting your pages, then you’ve come to the right place! Watch this video to find out why AMP lays out its web components in a certain way, and see all the attributes you will need to get started. 
+
+Placeholders →  http://bit.ly/2MZD2tC
+AMPs HTML layout system → http://bit.ly/2PcsIfg
+
+Watch other videos in series here → http://bit.ly/2Pbk0O7
+Subscribe to the AMP channel! → http://bit.ly/AMPchannel1"
+  thumbnail: "https://i3.ytimg.com/vi/v0BVLgEEuMY/hqdefault.jpg"
+  avatar: 
+  datedata: 2018-08-30T13:14:13-07:00
+  date: "August 30, 2018"
+
+- type: Blog
+  title: "Are you leaving revenue on the table with AMP?"
+  id: are-you-leaving-revenue-on-the-table-with-amp
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/08/28/are-you-leaving-revenue-on-the-table-with-amp/amp/"
+  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google I’m a product manager working on AMP and we strive to make advertising better on the web while helping publishers thrive. I’m writing this to give you some background on design choices we made for advertising in AMP [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-08-28T08:08:11-07:00
+  date: "August 28, 2018"
+
 - type: Blog
   title: "WorkerDOM: Concurrency for JavaScript programming with the DOM"
   id: workerdom
@@ -8,7 +37,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/08/21/workerdom/amp/"
   excerpt: "We are happy to announce the alpha release of WorkerDOM – a JavaScript library that makes the Document Object Model (DOM) available to Web Workers. This allows web developers to take advantage of pervasive multi-core processor architectures when programming their web pages to make them more performant. While the WorkerDOM library is designed for general [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-08-21T23:15:43+00:00
+  datedata: 2018-08-21T16:15:43-07:00
   date: "August 21, 2018"
 
 - type: Video
@@ -27,7 +56,7 @@ Watch more Amplify episodes → http://bit.ly/2LHsFX3
 Subscribe to the The AMP Channel→ http://bit.ly/AMPchannel1"
   thumbnail: "https://i3.ytimg.com/vi/2WjFBnCj2ew/hqdefault.jpg"
   avatar: 
-  datedata: 2018-08-02T20:49:46+00:00
+  datedata: 2018-08-02T13:49:46-07:00
   date: "August 2, 2018"
 
 - type: Blog
@@ -38,7 +67,7 @@ Subscribe to the The AMP Channel→ http://bit.ly/AMPchannel1"
   origin: "https://amphtml.wordpress.com/2018/07/30/addthis-is-now-available-for-amp/amp/"
   excerpt: "Editor&#8217;s note: the following was originally posted on AddThis&#8217; blog by Chad Edmonds, Sr. Marketing Manager, AddThis Just because AddThis is now free, doesn’t mean we’re slowing down on pushing out more great features and functionalities! We recently rolled out AddThis Inline Share Buttons for AMP and it is ready for you to integrate into your AMP compatible [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-30T14:50:10+00:00
+  datedata: 2018-07-30T07:50:10-07:00
   date: "July 30, 2018"
 
 - type: Blog
@@ -49,27 +78,5 @@ Subscribe to the The AMP Channel→ http://bit.ly/AMPchannel1"
   origin: "https://amphtml.wordpress.com/2018/07/23/privacy-and-user-choice-in-amps-software-architecture/amp/"
   excerpt: "Early choices in designing the AMP HTML JavaScript library have made it uniquely suited for publishers to implement effective privacy controls for users. In web pages, resource requests and browser storage access that may have privacy impact can be initiated through a multitude of mechanisms, many of which are often controlled by third parties. This [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-23T17:36:25+00:00
+  datedata: 2018-07-23T10:36:25-07:00
   date: "July 23, 2018"
-
-- type: Blog
-  title: "Track development with the new AMP Roadmap"
-  id: track-development-with-the-new-amp-roadmap
-  author: Vamsee Jasti
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2018/07/19/track-development-with-the-new-amp-roadmap/amp/"
-  excerpt: "As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each. Starting today, you can head over to the AMP roadmap and see an updated view of feature development across the project. We hope this is easy [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-19T21:42:43+00:00
-  date: "July 19, 2018"
-
-- type: Blog
-  title: "New in AMP stories: Monetization, Revamped bookends and Metadata"
-  id: new-in-amp-stories-monetization-revamped-bookends-and-metadata
-  author: Jon Newmuis
-  role:  AMP Stories Lead Engineer, Google
-  origin: "https://amphtml.wordpress.com/2018/07/16/new-in-amp-stories-monetization-revamped-bookends-and-metadata/amp/"
-  excerpt: "We announced the developer preview of AMP stories in February at AMP Conf. Since then, publishers have authored thousands of stories, experimenting with the format and providing valuable feedback to the AMP team. Based on this input, we recently released new capabilities in AMP stories v1.0, open to all developers without origin trials or a [&#8230;]"
-  avatar: https://videos.files.wordpress.com/pqK8yXrk/amp_blog_story_ad_hd.mp4
-  datedata: 2018-07-16T22:03:22+00:00
-  date: "July 16, 2018"

@@ -8,7 +8,7 @@ role:  AMP Engineering Manager at Google
 origin: "https://amphtml.wordpress.com/2018/06/28/announcing-the-amp-contributor-summit/amp/"
 excerpt: "We are happy to share that the first AMP Contributor Summit for developers in AMP&#8217;s open source community will be held in San Francisco, California this September! The summit will take place from September 25-26, with an optional New Contributor Day on September 24th that&#8217;s especially for people new to contributing to AMP.  If you [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-06-28T18:20:48+00:00
+date_data: 2018-06-28T11:20:48-07:00
 $date: June 28, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

@@ -8,7 +8,7 @@ role:  AMP Stories Lead Engineer, Google
 origin: "https://amphtml.wordpress.com/2018/07/16/new-in-amp-stories-monetization-revamped-bookends-and-metadata/amp/"
 excerpt: "We announced the developer preview of AMP stories in February at AMP Conf. Since then, publishers have authored thousands of stories, experimenting with the format and providing valuable feedback to the AMP team. Based on this input, we recently released new capabilities in AMP stories v1.0, open to all developers without origin trials or a [&#8230;]"
 avatar: https://videos.files.wordpress.com/pqK8yXrk/amp_blog_story_ad_hd.mp4
-date_data: 2018-07-16T22:03:22+00:00
+date_data: 2018-07-16T15:03:22-07:00
 $date: July 16, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

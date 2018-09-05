@@ -8,7 +8,7 @@ role:  AMP Product Manager
 origin: "https://amphtml.wordpress.com/2018/06/29/amp-date-picker-is-launched/amp/"
 excerpt: "Earlier this month we announced a limited release of amp-date-picker, a calendar-style interactive date picker for form input. With this component users can specify single dates or date ranges with a calendar interface that makes the process faster and less error prone. After a great round of feedback from developers trying it out on their [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-06-29T15:32:41+00:00
+date_data: 2018-06-29T08:32:41-07:00
 $date: June 29, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
