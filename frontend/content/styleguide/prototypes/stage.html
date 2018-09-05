@@ -112,7 +112,7 @@ $title: Stage
 				transition: transform 1s ease;
 			}
 
-			.stage-list-item[selected] {
+			.stage-list-item--active {
 				display: block;
 				opacity: 1;
 				animation: fadeIn 1s ease;
@@ -152,12 +152,12 @@ $title: Stage
 		<div [class]="stages.currentStage == 3 ? 'hero hero-email hero--active' : 'hero hero-email'"class="hero hero-email"></div>
 		<div class="content">
 			<h3 class="headline">AMP is a web component based framework for easily creating user first </h3>
-			<div class="stage-list">
-				<option selected [selected]="stages.currentStage == 0" class="stage-list-item websites">websites</option>
-				<option [selected]="stages.currentStage == 1" class="stage-list-item stories">stories</option>
-				<option [selected]="stages.currentStage == 2" class="stage-list-item ads">ads</option>
-				<option [selected]="stages.currentStage == 3" class="stage-list-item email">emails</option>
-			</div>
+			<ul class="stage-list">
+				<li [class]="stages.currentStage == 0 ? 'stage-list-item stage-list-item--active websites' : 'stage-list-item websites'" class="stage-list-item stage-list-item--active websites">websites</li>
+				<li [class]="stages.currentStage == 1 ? 'stage-list-item stage-list-item--active stories' : 'stage-list-item stories'" class="stage-list-item stories">stories</li>
+				<li [class]="stages.currentStage == 2 ? 'stage-list-item stage-list-item--active ads': 'stage-list-item ads'" class="stage-list-item ads">ads</li>
+				<li [class]="stages.currentStage == 3 ? 'stage-list-item stage-list-item--active email' : 'stage-list-item email'" class="stage-list-item email">emails</li>
+			</ul>
 		</div>
 	</div>
 </body>
