@@ -3,16 +3,18 @@ namespace Grav\Theme\AmpDev;
 
 use Highlight\Highlighter;
 
-class Markdown {
+class MarkdownExtender {
 
-  public static function extend($markdown) {
-    self::extendFencedCode($markdown);
+  protected $markdown;
 
-    return $markdown;
+  function __construct($markdown) {
+      $this->markdown = $markdown;
+
+      $this->extendFencedCode();
   }
 
-  public static function extendFencedCode($markdown) {
-    $markdown->addBlockType('`', 'FencedCodeExtended', true, true, 0);
+  protected function extendFencedCode() {
+    $this->markdown->addBlockType('`', 'FencedCodeExtended', true, true, 0);
 
     $blockFencedCodeExtended = function($Line) {
       $Block = parent::blockFencedCode($Line);
@@ -44,13 +46,10 @@ class Markdown {
       return $Block;
     };
 
-    // $markdown->blockFencedCodeExtended = $blockFencedCodeExtended->bindTo($markdown, $markdown);
-    // $markdown->blockFencedCodeExtendedContinue = $blockFencedCodeExtendedContinue->bindTo($markdown, $markdown);
-    // $markdown->blockFencedCodeExtendedComplete = $blockFencedCodeExtendedComplete->bindTo($markdown, $markdown);
-
-    echo "extended fenced code";
+    $this->markdown->blockFencedCodeExtended = $blockFencedCodeExtended->bindTo($this->markdown, $this->markdown);
+    $this->markdown->blockFencedCodeExtendedContinue = $blockFencedCodeExtendedContinue->bindTo($this->markdown, $this->markdown);
+    $this->markdown->blockFencedCodeExtendedComplete = $blockFencedCodeExtendedComplete->bindTo($this->markdown, $this->markdown);
   }
 
 }
-
- ?>
+?>

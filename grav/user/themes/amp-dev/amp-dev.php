@@ -4,7 +4,7 @@ namespace Grav\Theme;
 use Grav\Common\Theme;
 use Grav\Theme\AmpDev\Assets;
 use Grav\Theme\AmpDev\Icons;
-use Grav\Theme\AmpDev\Markdown;
+use Grav\Theme\AmpDev\MarkdownExtender;
 use RocketTheme\Toolbox\Event\Event;
 
 class AmpDev extends Theme
@@ -58,8 +58,7 @@ class AmpDev extends Theme
   public function onMarkdownInitialized(Event $event) {
     // Extend Parsedown to handle custom BBCodes and class additions to default
     // markdown elements
-    $markdown = $event['markdown'];
-    Markdown::extend($markdown);
+    $markdown = new MarkdownExtender($event['markdown']);
   }
 
   public function onTwigSiteVariables(Event $event) {
