@@ -1,49 +1,55 @@
 ---
-$title: Analytics 구성
+$title: 분석 설정
+$order: 0
+$category: Deploy
+
 ---
 
-## 시작하기 전에 결정하세요.
+## 시작하기 전 결정할 사항
 
-모든 분석 솔루션은 여러분에게 어떤 데이터가 필요한지
-그리고 여러분이 이 데이터를 분석하는 방법을 알고 있다는 전제 하에 작성됩니다. 시작하기 전에 결정하세요:
+모든 분석 솔루션은 필요한 데이터와
+데이터를 분석하기 위한 방법을 기반으로 구축됩니다. 시작하기 전에 결정해야 할 사항은 다음과 같습니다.
 
-* 사용자 참여 분석을 위해 타사의 분석 도구를 사용하겠습니까
-아니면 자신의 사내 솔루션을 사용하겠습니까?
-* 사용자 참여를 이해하기 위해 어떤 사용자 동작을 측정하겠습니까?
+* 사용자 참여도를 분석하는 데 타사 분석 도구 또는
+자체적인 사내 솔루션 중 무엇을 사용할 것인가?
+* 사용자 참여도를 파악하기 위해 어떤 사용자 행동을 측정할 것인가?
 
-### 데이터를 공급업체나 자신에게 보내겠습니까?
+### 데이터 제공 대상(공급업체 또는 자체 전송?)
 
-사용자 참여를 측정하기 위한 사내 솔루션이 있는 경우,
-AMP Analytics를 이 솔루션과 통합하기 위해 URL만 있으면 됩니다.
-여기에서 데이터를 보냅니다.
-또한 데이터를 다양한 URL로 보낼 수도 있습니다.
-예를 들어, 페이지 뷰 데이터를 한 URL로 보내고,
-소셜 참여 데이터를 다른 URL로 보낼 수 있습니다.
+사용자 참여도 측정을 위한 자체적인 사내 솔루션이 있는 경우,
+이 솔루션으로 AMP 애널리틱스를 통합하기 위해 필요한 것은 URL뿐입니다.
+이 URL을 통해 데이터를 전송할 것입니다.
+다양한 URL로 데이터를 전송할 수도 있습니다.
+예를 들어 페이지 조회수 데이터를 한 URL로 전송하고,
+소셜 참여도 데이터를 다른 URL로 보낼 수 있습니다.
 
-AMP Analytics는 한 번의 측정으로 여러 곳에 보고하도록 특별히 설계되었습니다.
-하나 이상의 분석 공급업체와 이미 작업 중인 경우,
-[amp-analytics 사양](/ko/docs/reference/components/amp-analytics.html)
-을 참조하여 이들 업체가 자사의 솔루션을 AMP와 통합했는지 여부를
-확인하세요.
-이들 업체가 솔루션을 통합했다면, 사양에서 해당 문서의 링크를
-누르고 지시에 따릅니다.
+AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별히 설계되었습니다.
+이미 하나 이상의 분석 공급업체와 협력 중이라면,
+[분석 공급업체](/ko/docs/analytics/analytics-vendors.html) 목록에서 공급업체가 솔루션을 AMP와 통합했는지 확인하세요.
+통합한 경우, 설정 세부정보를 검토하고 안내를 따르세요.
 
-분석 공급업체가 AMP와 통합하지 않은 경우에는,
-이 공급업체에 연락하여 지원을 요청하세요.
-또한 [AMP 프로젝트에서 문제점을 생성](https://github.com/ampproject/amphtml/issues/new)
-하도록 권장하며, 공급업체가 추가되도록 요청하세요.
-참고 항목
-[AMP HTML에서 분석 도구 통합](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+분석 공급업체가 AMP와 통합하지 않은 경우,
+공급업체에 연락하여 지원을 요청합니다.
+또한 [AMP 프로젝트에서 문제를 제기](https://github.com/ampproject/amphtml/issues/new)하여
+공급업체를 추가하도록 요청하는 것이 좋습니다.
+또한
+[AMP HTML 분석 도구 통합](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)을 확인해 보세요.
 
-### 어떤 데이터가 필요합니까?
+### 필요한 데이터
 
-사용자 참여를 측정하기 위해 사용자에 관한 어떤 데이터를 캡처하겠습니까?
-이를 구성하려면 먼저 이 데이터를 식별해야 합니다.
+참여도 측정을 위해 사용자에 관해 어떤 데이터를 확보해야 할까요?
+먼저 이 데이터를 파악해야 설정할 수 있습니다.
 
-고려할 핵심 데이터 포인트:
+고려해야 할 주요 데이터 요소:
 
-* 페이지 뷰만 추적하겠습니까 아니면 추가적인 사용자 참여
-패턴도 추적하겠습니까(참고 항목 [amp-pixel 또는 amp-analytics](/ko/docs/analytics/analytics_basics.html#amp-pixel-또는-amp-analytics-사용?))?
-* 사용자, 콘텐츠 기기 또는 브라우저에 관한 어떤 데이터를 캡처하겠습니까
-(참고 항목 [변수 대체](/ko/docs/analytics/analytics_basics.html#변수-대체))?
-* 어떻게 사용자를 식별하겠습니까(참고 항목 [사용자 식별](/ko/docs/analytics/analytics_basics.html#사용자-식별))?
+* 페이지 조회수만 추적할 것인가, 아니면 추가 사용자 참여도 패턴도 추적할 것인가?
+([amp-pixel 또는 amp-analytics](/ko/docs/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics?)도 참조)
+* 사용자, 콘텐츠, 기기 또는 브라우저에 관한
+어떤 유형의 데이터를 확보할 것인가?([Variable substitution](/ko/docs/analytics/analytics_basics.html#variable-substitution)도 참조)
+* 어떤 방법으로 사용자를 파악할 것인가?([사용자 파악](/ko/docs/analytics/analytics_basics.html#user-identification)도 참조)
+
+
+{% call callout('자세히 알아보기', type='read') %}
+[애널리틱스: 기본사항](/ko/docs/analytics/analytics_basics.html)에서 애널리틱스에 대해 계속해서 자세히 알아보세요.
+{% endcall %}
+ 
