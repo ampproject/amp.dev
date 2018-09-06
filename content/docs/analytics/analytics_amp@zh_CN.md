@@ -1,49 +1,55 @@
 ---
-$title: 配置 Analytics
+$title: 配置分析工具
+$order: 0
+$category: Deploy
+
 ---
 
-## 在开始之前决定
+## 在开始之前做出决定
 
-所有分析解决方案都是在了解您所需的数据以及您打算如何分析这些数据的基础上构建的。
-在开始之前决定：
+所有的分析解决方案都要根据以下情况来制定：您需要哪些数据，以及
+您打算如何分析这些数据。请在开始之前做出以下决定：
 
-* 您是否将使用第三方分析工具来分析用户互动，还是要使用您自己的内部解决方案进行分析？
+* 您将使用第三方分析工具还是您自己的内部解决方案来分析用户
+互动情况？
+* 您将衡量哪些用户行为来了解用户互动情况？
 
-* 您将衡量哪些用户行为来了解用户互动？将数据发送给供应商还是自己？
+### 将数据发送给供应商还是自己？
 
-### 
+如果您有自己的内部解决方案可用于衡量用户互动情况，
+那么您只需有一个网址，就能将 AMP 分析与该解决方案集成。
+您会将数据发送到该网址。
+您也可将数据发送到多个网址。
+例如，您可以将网页浏览量数据发送到一个网址，
+将社交互动数据发送到另一个网址。
 
-如果您自己已有用来衡量用户互动的内部解决方案，则您只需一个 URL 便可将 AMP Analytics 与该解决方案集成。
+AMP 分析的设计宗旨是“一次衡量，多方报告”。
+如果您已在与一个或多个分析服务供应商合作，
+请查阅[分析服务供应商](/zh_cn/docs/analytics/analytics-vendors.html)列表，看看他们是否已将自己的解决方案与 AMP 集成。
+如果已与 AMP 集成，请查看相应供应商的配置详情并按照说明操作。
 
-您将在其中发送数据。
-您也可以将数据发送到不同的 URL。
-例如，您可以将页面视图数据发送到一个 URL，将社交数据发送到另一个 URL。
+倘若分析服务供应商未与 AMP 集成，
+请联系相应供应商以寻求支持。
+我们也建议您[在 AMP 项目中创建一个问题](https://github.com/ampproject/amphtml/issues/new)，
+以请求添加该供应商。
+另请参阅
+[在 AMP HTML 中集成您的分析工具](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)。
+
+### 您需要哪些数据？
+
+您需要获取哪些用户数据来衡量互动情况？
+您必须先确定这些数据，然后才能进行配置。
+
+关于数据，您需要考虑以下几个要点：
+
+* 您是想仅跟踪网页浏览量，还是也要跟踪用户互动模式
+（另请参阅 [amp-pixel 或 amp-analytics](/zh_cn/docs/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics?)）？
+* 您要获取与您的用户、您的内容、
+设备或浏览器相关的哪些类型的数据（另请参阅[变量替换](/zh_cn/docs/analytics/analytics_basics.html#variable-substitution)）？
+* 您将如何识别您的用户（另请参阅[用户识别](/zh_cn/docs/analytics/analytics_basics.html#user-identification)）？
 
 
-AMP Analytics 经过专门设计，测量一次便可报告给多方。
-如果您已经在与一家或多家分析供应商合作，请查看
-[amp-analytics 规范](/zh_cn/docs/reference/components/amp-analytics.html)，了解这些供应商是否已将其解决方案与 AMP 集成。
-
-
-如果已集成，则只需从规范中链接到其文档，开始按照相关说明进行操作即可。
-
-
-如果分析供应商尚未与 AMP 集成，请与该供应商联系，要求其提供相关支持。
-
-同时，我们建议您[在 AMP 项目中创建问题](https://github.com/ampproject/amphtml/issues/new)，请求添加供应商。
-
-另请参阅[在 AMP HTML 中集成您的分析工具](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)。
-
-
-### 您需要什么数据？
-
-您将捕获哪些用户相关数据来衡量互动？
-您必须先明确这些数据才能对其进行配置。
-
-请考虑以下几个关键数据点：
-
-* 您是仅跟踪页面视图，还是跟踪其他用户互动模式（另请参阅 [amp-pixel 或 amp-analytics](/zh_cn/docs/analytics/analytics_basics.html#使用-amp-pixel-还是-amp-analytics？)）？
-
-* 您将捕获哪些类型的用户相关数据，内容、设备还是浏览器（另请参阅[变量替代项](/zh_cn/docs/analytics/analytics_basics.html#变量替代)）？
-
-* 您将如何识别用户（另请参阅[用户识别](/zh_cn/docs/analytics/analytics_basics.html#用户识别)）？
+{% call callout('了解详情', type='read') %}
+若想进一步了解与分析相关的信息，请参阅[分析：基础知识](/zh_cn/docs/analytics/analytics_basics.html)。
+{% endcall %}
+ 

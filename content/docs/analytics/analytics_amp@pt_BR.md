@@ -1,49 +1,55 @@
 ---
 $title: Configurar Analytics
+$order: 0
+$category: Deploy
+
 ---
 
 ## Decida antes de começar
 
-Todas as soluções de análise são baseadas no conhecimento dos dados de que você precisa
+Todas as soluções de análise dependem dos dados de que você precisa
 e de como pretende analisar esses dados. Decida antes de começar:
 
-* Você vai usar ferramentas de análise de terceiros para analisar o envolvimento do usuário
+* Você usará ferramentas de análise de terceiros para analisar o engajamento do usuário
 ou sua própria solução interna?
-* Que comportamentos você medirá para entender o envolvimento do usuário?
+* Que comportamentos você avaliará para entender o engajamento do usuário?
 
-### Você pretende enviar os dados para o fornecedor ou para você mesmo?
+### Você pretende enviar os dados para um fornecedor ou para você mesmo?
 
-Se você tiver sua própria solução interna para medir o envolvimento do usuário,
-a única coisa que você precisa para integrar o Analytics do AMP a essa solução é um URL.
-É para ele que você enviará os dados.
-Você também podem enviar os dados a vários URLs.
-Por exemplo, é possível enviar dados de visualização de páginas a um URL
-e dados de envolvimento social a outro.
+Caso você tenha sua própria solução interna para avaliar o engajamento do usuário,
+basta um URL para integrar o AMP Analytics a essa solução.
+Você enviará os dados para esse destino.
+Outra opção é enviar os dados a vários URLs.
+Por exemplo, é possível enviar dados de exibição de página a um URL
+e dados de envolvimento com redes sociais a outro.
 
-O Analytics do AMP foi projetado especificamente para medir uma vez e relatar a muitos.
-Se você já está trabalhando com um ou mais fornecedores de análise,
-verifique a
-[especificação do amp-analytics](/pt_br/docs/reference/components/amp-analytics.html)
-para ver se eles integraram a solução com o AMP.
-Em caso positivo, basta vincular aos documentos da especificação
-e começar a seguir as instruções.
+O AMP Analytics foi criado especialmente para fazer a avaliação uma vez e gerar relatórios para vários destinos.
+Se você já estiver trabalhando com um ou mais fornecedores de análise,
+verifique a lista de [fornecedores de análise](/pt_br/docs/analytics/analytics-vendors.html) para ver se eles integraram a solução com as AMP.
+Em caso afirmativo, veja os dados de configuração e siga as instruções.
 
-Se o fornecedor de análise não tiver feito a integração com o AMP,
-entre em contato com ele para obter suporte.
-Também recomendamos [criar um problema no projeto AMP](https://github.com/ampproject/amphtml/issues/new)
+Se o fornecedor de análise não tiver feito a integração com as AMP,
+entre em contato com ele para receber suporte.
+Também recomendamos [indicar um problema no projeto AMP](https://github.com/ampproject/amphtml/issues/new) (em inglês)
 solicitando que o fornecedor seja adicionado.
-Consulte também
-[Integrar suas ferramentas de análise no AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Veja também como
+[integrar suas ferramentas de análise no HTML para AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) (em inglês).
 
 ### De que dados você precisa?
 
-Que dados sobre seus usuários você pretende capturar para medir o envolvimento?
-Você deve identificar esses dados antes de fazer a configuração.
+Você pretende coletar que dados sobre seus usuários para avaliar o engajamento?
+É preciso determinar isso antes de fazer a configuração.
 
-Os principais pontos a serem considerados:
+Principais pontos a serem considerados:
 
-* Você pretende rastrear somente as visualizações de páginas ou outros padrões de envolvimento do usuário
-(consulte também [amp-pixel ou amp-analytics](/pt_br/docs/analytics/analytics_basics.html#usar-amp-pixel-ou-amp-analytics?))?
-* Que tipos de dados você pretende capturar sobre seus usuários, seu conteúdo,
-o dispositivo ou navegador (consulte também [Substituição de variáveis](/pt_br/docs/analytics/analytics_basics.html#substituição-de-variáveis))?
-* Como você pretende identificar seus usuários (consulte também [Identificação de usuários](/pt_br/docs/analytics/analytics_basics.html#identificação-do-usuário))?
+Você pretende rastrear somente as exibições de página ou outros padrões de engajamento do usuário
+(consulte também [amp-pixel ou amp-analytics](/pt_br/docs/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics?))?
+Que tipos de dados você pretende coletar sobre seus usuários, seu conteúdo,
+o dispositivo ou o navegador (consulte também [Substituição de variáveis](/pt_br/docs/analytics/analytics_basics.html#variable-substitution))?
+* Como você pretende identificar seus usuários (consulte também [Identificação de usuários](/pt_br/docs/analytics/analytics_basics.html#user-identification))?
+
+
+{% call callout('Saiba mais', type='read') %}
+Conheça os recursos de análise no artigo [Analytics: conceitos básicos](/pt_br/docs/analytics/analytics_basics.html).
+{% endcall %}
+ 
