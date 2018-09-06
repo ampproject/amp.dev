@@ -35,102 +35,129 @@ $title: Stage
 				}
 			}
 
-			.hero-selector {
-				height: 30px;
-				margin: 15px 0 0 50px;
-				outline: #ffffff;
-				background-color: #ffffff;
-				font-size: 1.25em;
-				font-family: Poppins;
-				border: none;
-				position: relative;
-				z-index: 10;
+			@keyframes growDown {
+				from {
+					height: 50px;
+				}
+				to {
+					height: 200px;
+				}
 			}
 
-			.hero-selector > option {
-				background-color: #fff;
+			@keyframes roll {
+				0% {
+					transform: translateY(0%);
+				}
+
+				35% {
+					transform: translateY(-20%);
+				}
+
+				65% {
+					transform: translateY(-45%);
+				}
+
+				100% {
+					transform: translateY(-70%);
+				}
 			}
 
 			.hero {
-				position: absolute;
-				padding-top: 35%;
 				width: 100%;
+				height: 100vh;
 				z-index: 1;
+				position: absolute;
 			}
 
 			.hero-active {
-				width: 100%;
 				animation: growRight 1s ease-in-out;
 				z-index: 10;
 			}
 
-			.hero-websites {
-				z-index: 2;
-				background: linear-gradient(45deg, #38CA71, #21C1FA);
-			}
-
-			.hero-stories {
-				background: linear-gradient(45deg, #FF8F00, #FFE100);
-			}
-
-			.hero-ads {
-				background: linear-gradient(45deg, #005AF0, #EF0000);
-			}
-
-			.hero-email {
-				background: linear-gradient(45deg, #38CA71,#005AF0);
-			}
 
 			.content {
-				display: flex;
-				flex-direction: column;
-				margin: 5% 0 0 10%;
+				position: relative;
+				padding: 10% 0 0 5%;
+				z-index: 10;
 			}
 
 			.headline {
-				z-index: 10;
 				margin: 0;
 				font-size: 2em;
 				font-family: Poppins;
 			}
 
-			.stage-list {
-				position: relative;
-				overflow: hidden;
+			.stage-list-viewbox {
 				height: 50px;
-				background-color: #ffffff;
-				padding: 0;
+				overflow: hidden;
 				min-width: 170px;
 				max-width: 250px;
+			}
+
+			.stage-list-viewbox:hover {
+				overflow: visibile;
+				animation: none;
+				height: 300px;
+				animation: growDown 0.5s ease;
+			}
+
+			.stage-list-viewbox:hover .stage-list {
+				animation: none;
+			}
+
+			.stage-list {
+				position: relative;
+				height: 200px;
+				background-color: #ffffff;
+				padding: 0;
 				list-style: none;
 				margin: 0;
-				z-index: 10;
 			}
 
+			.stage-list-animate {
+				animation: roll 20s infinite ease;
+				animation-delay: 1s;
+			}
+
+			{# default list item #}
 
 			.stage-list-item {
-				position: absolute;
-				display: block;
-				opacity: 1;
-				outline: none;
+				position: relative;
+				border: none;
 				font-family: Poppins;
-				font-size: 30px;
-				margin: 5px 20px 5px 5px;
-				padding: 5px;
+				font-size: 32px;
+				order: 2;
+				outline: #ffffff;
 			}
 
-			.stage-list-item {
-				transform: translateY(-100%);
-				transition: transform 1s ease;
+
+			.stage-list-item:hover {
+				margin-left: 20px;
 			}
 
-			.stage-list-item-active {
-				display: block;
-				opacity: 1;
+			{# selcted list item #}
+
+			.stage-list-item[selected] {
+				order: 1;
+			}
+
+			.stage-list-item[selected]:hover {
+				margin-left: 5px;
+			}
+
+			.stage-list:hover .stage-list-item[selected] {
+				background-color: #CCCCCC;
+				transform: translateY(0%);
+				outline: #ffffff;
+			}
+
+			.stage-list:not(:hover) .stage-list-item[selected] {
 				animation: fadeIn 1s ease;
 				transition: transform 1s ease;
-				transform: translateY(0%);
+				outline: #ffffff;
 			}
+
+			{# stage-list-item font colors #}
 
 			.websites {
 				color: #21C1FA;
@@ -148,6 +175,24 @@ $title: Stage
 				color: #38CA71;
 			}
 
+			{# hero gradients #}
+
+			.hero-websites {
+				background: linear-gradient(45deg, #38CA71, #21C1FA);
+			}
+
+			.hero-stories {
+				background: linear-gradient(45deg, #FF8F00, #FFE100);
+			}
+
+			.hero-ads {
+				background: linear-gradient(45deg, #005AF0, #EF0000);
+			}
+
+			.hero-email {
+				background: linear-gradient(45deg, #38CA71,#005AF0);
+			}
+
     </style>
 </head>
 <body>
@@ -156,20 +201,18 @@ $title: Stage
 		<div [class]="stages.currentStage == 1 ? 'hero hero-stories hero-active' : 'hero hero-stories'" class="hero hero-stories"></div>
 		<div [class]="stages.currentStage == 2 ? 'hero hero-ads hero-active' : 'hero hero-ads'"  class="hero hero-ads"></div>
 		<div [class]="stages.currentStage == 3 ? 'hero hero-email hero-active' : 'hero hero-email'"class="hero hero-email"></div>
-		<select on="change:AMP.setState({stages:{currentStage: event.value }})" class="hero-selector">
-    	<option value="0" class="option">websites</option>
-    	<option value="1" class="option">stories</option>
-    	<option value="2" class="option">ads</option>
-    	<option value="3" class="option">emails</option>
-  	</select>
 		<div class="content">
 			<h3 class="headline">AMP is a web component based framework for easily creating user first </h3>
-			<ul class="stage-list">
-				<li [class]="stages.currentStage == 0 ? 'stage-list-item stage-list-item-active websites' : 'stage-list-item websites'" class="stage-list-item stage-list-item-active websites">websites</li>
-				<li [class]="stages.currentStage == 1 ? 'stage-list-item stage-list-item-active stories' : 'stage-list-item stories'" class="stage-list-item stories">stories</li>
-				<li [class]="stages.currentStage == 2 ? 'stage-list-item stage-list-item-active ads': 'stage-list-item ads'" class="stage-list-item ads">ads</li>
-				<li [class]="stages.currentStage == 3 ? 'stage-list-item stage-list-item-active email' : 'stage-list-item email'" class="stage-list-item email">emails</li>
-			</ul>
+				<div class="stage-list-viewbox">
+					<amp-selector layout="container" on="select:AMP.setState({stages:{currentStage: event.targetOption}})">
+						<ul class="stage-list stage-list-animate" [class]="stages.currentStage == 'default' ? 'stage-list stage-list-animate' : 'stage-list'">
+							<li option="0" class="stage-list-item websites">websites</li>
+							<li option="1" class="stage-list-item stories">stories</li>
+							<li option="2" class="stage-list-item ads">ads</li>
+							<li option="3" class="stage-list-item email">email</li>
+						</ul>
+					</amp-selector>
+				</div>
 		</div>
 	</div>
 </body>
