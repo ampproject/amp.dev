@@ -44,9 +44,9 @@ class Markdown {
       return $Block;
     };
 
-    $markdown->blockFencedCodeExtended = $blockFencedCodeExtended->bindTo($markdown, $markdown);
-    $markdown->blockFencedCodeExtendedContinue = $blockFencedCodeExtendedContinue->bindTo($markdown, $markdown);
-    $markdown->blockFencedCodeExtendedComplete = $blockFencedCodeExtendedComplete->bindTo($markdown, $markdown);
+    // $markdown->blockFencedCodeExtended = $blockFencedCodeExtended->bindTo($markdown, $markdown);
+    // $markdown->blockFencedCodeExtendedContinue = $blockFencedCodeExtendedContinue->bindTo($markdown, $markdown);
+    // $markdown->blockFencedCodeExtendedComplete = $blockFencedCodeExtendedComplete->bindTo($markdown, $markdown);
 
     echo "extended fenced code";
   }
