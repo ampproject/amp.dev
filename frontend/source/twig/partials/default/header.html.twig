@@ -1,13 +1,13 @@
 <header class="ad-o-header">
   <nav class="ad-o-header-main-nav">
     <ul class="ad-o-header-lnk-list">
-      <li class="ad-a-ico ad-a-ico-2 ad-a-ico-blue-ribbon">
-        {{ icons.useIcon('logo') }}
+      <li class="ad-o-header-lnk">
+        <a class="ad-a-ico ad-a-ico-5 ad-a-ico-blue-ribbon" href="#">{{ icons.useIcon('logo') }}</a>
       </li>
 
       {% for link in ['Why AMP', 'Documentation', 'Community', 'News', 'Events'] %}
       <li class="ad-o-header-lnk">
-        <a class="ad-m-lnk" href="#">
+        <a class="ad-m-lnk" href="#/{{link}}">
           <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-black">{{ link }}</span>
         </a>
       </li>
