@@ -1,90 +1,108 @@
 ---
 $title: Validar páginas AMP
+$order: 7
+$category: Depuração
+toc: true
+components:
+    - youtube
 ---
 [TOC]
 
 {{ youtube('npum8JsITQE', 480, 270, caption='Assista nosso vídeo sobre as diversas opções de validação.') }}
 
-A principal vantagem das AMP não é somente deixar as páginas mais rápidas, mas fazer isso de uma forma que pode ser *validada*. Assim, alguns terceiros, como o Twitter, o Instagram ou a Pesquisa Google, podem veicular páginas AMP para os leitores de maneiras cada vez mais interessantes.
+A principal vantagem da tecnologia AMP não é simplesmente deixar as páginas mais rápidas, mas sim fazer isso de uma maneira que pode ser *validada*. Assim, os terceiros, como o Twitter, o Instagram ou a Pesquisa Google, podem ficar tranquilos ao disponibilizar páginas AMP para os leitores de maneiras cada vez mais interessantes.
 
-## Como posso verificar se minha página é uma AMP válida?
+## Como posso verificar se a minha página é uma AMP válida?
 
-Há várias formas de validar um documento AMP. Todas elas terão o mesmo resultado, então use a que mais se adaptar ao seu estilo de desenvolvimento.
+Há várias formas de validar um documento AMP. Todas elas
+terão o mesmo resultado. Por isso, use a opção mais adequada ao
+seu estilo de desenvolvimento.
 
- Além da validade das AMP, também é possível confirmar se o documento AMP [pode ser encontrado](/pt_br/docs/guides/discovery.html) por plataformas de terceiros.
+Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado](/pt_br/docs/fundamentals/discovery.html) por plataformas de terceiros.
 
-### Developer Console do navegador
+### Console do navegador para desenvolvedores
 
-O validador de AMP vem com a biblioteca JavaScript AMP e está disponível em todas as páginas AMP por padrão. Para validar:
+O validador de AMP vem com a biblioteca JavaScript AMP. Assim, ele está disponível em todas as páginas AMP por padrão. Para validar uma página, siga estas etapas:
 
-1. Abra sua página AMP no navegador.
-1. Anexe "`#development=1`" ao URL, por exemplo, `http://localhost:8000/released.amp.html#development=1`.
-1.  Abra o [console do Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) e verifique se há erros de validação.
+  1. Abra a página AMP no navegador.
+  2. Anexe "`#development=1`" ao URL, por exemplo, `http://localhost:8000/released.amp.html#development=1`.
+  3. Abra o [DevTools Console no Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) e verifique se há erros de validação.
 
-Os erros do Developer Console serão semelhantes ao exemplo:
+Os erros do console serão exibidos assim:
 
 <amp-img src="/static/img/docs/validator_errors.png"
-    width="713" height="243" layout="responsive"
-    alt="Screen grab of AMP Validator errors in chrome developer console">
+         width="713" height="243" layout="responsive"
+         alt="Captura de tela de erros do validador de AMP no console para desenvolvedores do Chrome">
 </amp-img>
 
 ### Interface da Web
 
-
-O validador de AMP pode ser usado como uma interface da Web em <a href="https://validator.ampproject.org/">validator.ampproject.org</a>. Essa interface exibe os erros in-line junto ao código-fonte HTML da página. A interface é um editor interativo: alterações no código-fonte HTML resultam na revalidação interativa.
+O validador de AMP pode ser usado como uma interface da Web em
+<a href="https://validator.ampproject.org/">validator.ampproject.org</a>. Nessa
+interface, os erros são exibidos in-line ao lado da fonte HTML da página.
+A interface é um editor interativo. Se você fizer alterações na fonte HTML,
+o conteúdo será validado novamente de maneira interativa.
 
 <amp-img src="/static/img/docs/validator_web_ui.png"
-    width="660" height="507" layout="responsive"
-    alt="Screen grab of validator.ampproject.org with error examples.">
+         width="660" height="507" layout="responsive"
+         alt="Captura de tela de validator.ampproject.org com exemplos de erro.">
 </amp-img>
 
 ### Extensão do navegador
 
-O validador de AMP pode ser acessado diretamente na barra de ferramentas do seu navegador por meio de uma extensão. Enquanto você navega, ele valida automaticamente cada página AMP visitada e fornece uma indicação visual sobre essa validade por meio de um ícone colorido.
+É possível acessar o validador de AMP diretamente na barra de ferramentas do navegador com
+uma extensão. Durante a navegação, ele validará automaticamente cada página AMP
+acessada e exibirá um ícone colorido como indicador visual da validade
+do conteúdo.
 
 <table>
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_invalid.png"
                width="20" height="20" layout="fixed"
-               alt="Red AMP icon indicating invalid AMP document.">
+               alt="Ícone das AMP em vermelho indicando um documento AMP inválido.">
       </amp-img>
     </td>
-    <td>
-    Quando houver erros em uma página AMP, o ícone da extensão ficará vermelho e informará o número de erros encontrados.</td>
+    <td>Quando houver erros em uma página AMP, o ícone da extensão
+      será exibido em vermelho e informará o número de problemas encontrados.
+    </td>
   </tr>
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_valid.png"
                width="20" height="20" layout="fixed"
-               alt="Green AMP icon indicating valid AMP document.">
+               alt="Ícone das AMP em verde indicando um documento AMP válido.">
       </amp-img>
     </td>
-    <td>
-    Quando não houver erros em uma página AMP, o ícone ficará verde e exibirá o número de avisos, caso tenha algum.</td>
+    <td>Quando não houver erros em uma página AMP, o ícone será exibido em
+      verde e informará o número de avisos, se for o caso.
+    </td>
   </tr>
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_link.png"
                width="20" height="20" layout="fixed"
-               alt="Blue AMP icon indicating AMP HTML variant if clicked.">
+               alt="Ícone das AMP em azul indicando variante HTML para AMP disponível com um clique.">
       </amp-img>
     </td>
-    <td>
-    Quando a página não for AMP, mas houver uma versão AMP disponível, será exibido um ícone azul de link. Clicar na extensão redirecionará o navegador para a versão AMP.</td>
+    <td>Quando a página não for AMP, mas houver uma versão AMP disponível,
+      o ícone será exibido em azul com um link. Ao clicar na extensão,
+      o navegador será redirecionado à versão AMP da página.
+    </td>
   </tr>
 </table>
 
-
-Extensão do validador de AMP para [Google Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) e [Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/).
+Extensão do validador de AMP para
+[Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) e [Opera](https://addons.opera.com/pt-br/extensions/details/amp-validator/).
 
 ### Pacotes de NPM para CI
 
- Como parte do fluxo de criação e testes, é possível integrar a validação de AMP por meio dos pacotes de NPM do validador de AMP: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) ou [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (um plug-in do gulp). Por exemplo, é possível usar o pacote de NPM do validador de AMP para testes de integração ou em uma tarefa programada para verificar páginas AMP em produção.
+Você pode integrar a validação de AMP aos seus canais de desenvolvimento e testes usando os pacotes da NPM: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) ou o plug-in Gulp [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (páginas em inglês).  Por exemplo, você pode usar o pacote de validador de AMP da NPM em testes de integração ou em uma tarefa programada para verificar as páginas AMP de produção.
 
-##### Exemplo: validar um arquivo HTML das AMP
 
- Neste exemplo, a validação do arquivo HTML das AMP será feita usado o pacote de NPM [amphtml-validator](https://www.npmjs.com/package/amphtml-validator). O status de validação passa pelo fluxo do console.
+##### Exemplo: como validar um arquivo HTML para AMP
+
+Neste exemplo, validamos um arquivo HTML para AMP usando o pacote da NPM [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) (em inglês).  O status de validação é enviado ao console.
 
 ```javascript
 'use strict';
@@ -106,9 +124,9 @@ amphtmlValidator.getInstance().then(function (validator) {
 });
 ```
 
-##### Exemplo: usar uma tarefa do gulp para validar o HTML das AMP
+#####Exemplo: como usar uma tarefa Gulp na validação de HTML para AMP
 
-Neste exemplo, será usada uma tarefa do gulp para a validação de todos os arquivos HTML AMP. Se houver um erro de validação das AMP, a tarefa retornará um código de erro (1).
+Neste exemplo, temos uma tarefa Gulp que valida todos os arquivos HTML para AMP.  Se houver um erro de validação de AMP, a tarefa será encerrada com um código de erro (1).
 
 ```javascript
 const gulp = require('gulp');
@@ -116,8 +134,9 @@ const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
   src: 'src/*.html'
+};
 
-};gulp.task('amphtml:validate', () => {
+gulp.task('amphtml:validate', () => {
   return gulp.src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
@@ -130,42 +149,48 @@ gulp.task('default', ['amphtml:validate'], function () {
 
 ### Ferramenta de linha de comando
 
- É possível validar arquivos HTML AMP usando a [ferramenta de linha de comando do validador de HTML das AMP](https://www.npmjs.com/package/amphtml-validator).
+Você pode validar arquivos HTML para AMP com a [ferramenta de linha de comando do validador de HTML para AMP](https://www.npmjs.com/package/amphtml-validator) (em inglês).
 
 Primeiros passos:
 
-1.  É preciso ter o [Node.js com o respectivo gerenciador de pacote "NPM"](https://docs.npmjs.com/getting-started/installing-node) no seu sistema.
-2.   Instale a [ferramenta de linha de comando do validador de HTML das AMP](https://www.npmjs.com/package/amphtml-validator) executando o comando "`npm install -g amphtml-validator`".
+1.  Verifique se você tem [Node.js com o gerenciador de pacotes
+'npm'](https://docs.npmjs.com/getting-started/installing-node) (em inglês) no seu sistema.
+2.  Gere o comando `npm install -g amphtml-validator` para instalar a [ferramenta de linha de comando do validador de HTML para AMP](https://www.npmjs.com/package/amphtml-validator) (em inglês).
 
-Agora, validaremos uma página AMP real em HTML:
+Agora, veja a validação de uma página HTML para AMP real.
 
 [sourcecode:console]
 $ amphtml-validator https://www.ampproject.org/
 https://www.ampproject.org/: PASS
 [/sourcecode]
 
-
-Como era de se esperar, o HTML da AMP é válido. Vejamos agora uma página que não é válida: [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). Para executar o comando `amphtml-validator`, você pode fornecer o URL da página ou um nome de arquivo local. Faça download e salve [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) como um arquivo. Em seguida, execute:
+Obviamente, essa página tem uma versão HTML para AMP válida. Agora, vejamos uma página que não é válida:
+[several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) (em inglês). Para gerar o comando `amphtml-validator`, forneça o URL da página ou um nome de arquivo local. Faça o download e salve [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) em um arquivo. Depois, gere o seguinte:
 
 [sourcecode:console]
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/pt_br/docs/reference/components/amp-img.html)
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/pt_br/docs/reference/components/amp-ad.html)
 ...
 [/sourcecode]
 
-As mensagens de erro são formadas por nome de arquivo, linha, coluna e mensagem, geralmente seguida por um link para a referência HTML AMP. Alguns editores, incluindo o Emacs (procure o comando e o modo de compilação), podem interpretar esse formato e levar você diretamente para os erros no arquivo original.
+As mensagens de erro incluem nome do arquivo, linha, coluna e um texto,
+e costumam terminar com um link da referência HTML para AMP. Alguns editores, incluindo o Emacs
+(procure o comando e o modo de compilação), conseguem interpretar esse formato
+e levam você diretamente aos erros no arquivo original.
 
- Como um bom ponto de partida para a criação da sua própria página AMP, recomendamos [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
+Para começar, faça sua página AMP identificar [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html) (em inglês):
 
 [sourcecode:console]
 $ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
 [/sourcecode]
 
-A ferramenta de linha de comando oferece outros recursos, incluindo desativação da cor, impressão da saída JSON ou execução de uma versão específica do validador JavaScript. Por padrão, ele executa o script que foi publicado por último.
+A ferramenta de linha de comando oferece recursos adicionais, incluindo desativação
+da cor, impressão da saída JSON ou geração de uma versão
+específica do JavaScript do validador. Por padrão, ele gera o script publicado mais recentemente.
 
 [sourcecode:console]
 $ amphtml-validator --help
@@ -192,11 +217,11 @@ $ amphtml-validator --help
               message in validator.proto.
 [/sourcecode]
 
-## O que acontece se minha página não é válida?
+## O que acontece quando minha página não é válida?
 
-O validador de AMP não é somente uma conveniência para você durante o desenvolvimento. Ele também é usado por plataformas como Twitter ou Google, que integram as páginas AMP aos conteúdos e resultados da pesquisa deles. Além disso, eles não costumam solicitar as páginas diretamente do seu servidor, mas usam o Google AMP Cache, um serviço gratuito que armazena em cache suas páginas e as disponibiliza em todo o mundo para que sejam carregadas ainda mais rápido.
+O validador de AMP não é só uma ferramenta conveniente para ajudar você durante o desenvolvimento. Ele também é usado por plataformas como Twitter ou Google, que integram as páginas AMP aos seus conteúdos e resultados de pesquisa. Mais ainda, eles não costumam solicitar as páginas diretamente do seu servidor, mas usam o Google AMP Cache, um serviço gratuito que armazena em cache as suas páginas e as disponibiliza em todo o mundo para que sejam carregadas ainda mais rápido.
 
-Se o serviço de validação de AMP detectar que há algo errado com sua página, ela não será detectada nem distribuída por websites de terceiros. Além disso, não aparecerá no Google AMP Cache. Dessa forma, não só você perderia os benefícios do cache em termos de velocidade, mas também correria o risco de não exibir sua página em vários lugares. Queremos garantir que isso não aconteça.
+Se o serviço de validação de AMP detectar que há algo de errado com a sua página, ela não será detectada e distribuída por sites de terceiros e não aparecerá no Google AMP Cache. Desse modo, não só você perde os benefícios do cache em termos de velocidade, como corre o risco de não ter sua página sendo exibida em muitos lugares. Tome cuidado para que isso não aconteça.
 
 ## Como faço para corrigir os erros de validação?
 
@@ -206,33 +231,48 @@ A maioria dos erros de validação é fácil de verificar e corrigir. Veja esta 
 <img src="cat.png">
 [/sourcecode]
 
-Ela gera o seguinte erro de validação de AMP, exibido nestas ferramentas:
+Ela gera este erro de validação de AMP, visto em diferentes ferramentas:
 
-* Developer Console do navegador
+*Console do navegador para desenvolvedores
 <amp-img src="/static/img/docs/validator_console_imgerror.png"
-    width="696" height="30" layout="responsive"
-    alt="AMP error: The tag 'img' may only appear as a descendant of tag
-    'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
+         width="696" height="30" layout="responsive"
+         alt="Erro de AMP: a tag 'img' só pode aparecer como descendente da tag
+         'noscript'. Você quis dizer "amp-img"? linha 11, coluna 2">
+</amp-img>
 
 * Interface da Web
 <amp-img src="/static/img/docs/validator_webui_imgerror.png"
-    width="676" height="58" layout="responsive"
-    alt="AMP error: The tag 'img' may only appear as a descendant of tag
-    'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
+         width="676" height="58" layout="responsive"
+         alt="Erro de AMP: a tag 'img' só pode aparecer como descendente da tag
+         'noscript'. Você quis dizer "amp-img"? linha 11, coluna 2">
+</amp-img>
 
 * Extensão do navegador
 <amp-img src="/static/img/docs/validator_extension_imgerror.png"
-    width="724" height="108" layout="responsive"
-    alt="AMP error: The tag 'img' may only appear as a descendant of tag
-    'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
+         width="724" height="108" layout="responsive"
+         alt="Erro de AMP: a tag 'img' só pode aparecer como descendente da tag
+         'noscript'. Você quis dizer "amp-img"? linha 11, coluna 2">
+</amp-img>
 
 Cada ferramenta fornece várias informações:
 
-1. A localização (linha e coluna) no documento HTML onde ocorreu o erro, que pode receber cliques em algumas interfaces para destacar esse local. Nesse caso, o problema ocorre na linha 11, coluna 2.
-1.  Uma linha de texto que descreve o erro. Nesse caso, o texto indica que uma tag `<img>` está em uso quando na verdade a tag `<amp-img>` é que deveria estar sendo usada.
-1.  Um link para um documento relevante sobre o erro. Nesse caso, a documentação da tag `<amp-img>`. Nem todos os erros geram links de documentação.
 
- Ao reler cuidadosamente as [especificações](/pt_br/docs/fundamentals/spec.html), percebemos que estamos usando uma tag `<img>` quando deveríamos ter usado uma tag `<amp-img>`.
+  1. A mensagem indica a localização (linha e coluna) no documento HTML onde ocorreu o erro.
+     Em algumas interfaces, é possível clicar no texto para destacar esse local. Nesse
+     caso, o problema ocorre na linha 11, coluna 2.
+  2. Uma linha de texto descreve o erro. Nesse caso, o texto indica que
+     estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag `<amp-img>`.
+  3. Há um link para um documento relevante sobre o erro. Nesse caso, o link
+     leva à documentação da tag `<amp-img>`. Nem todos os erros geram
+     links de documentação.
 
- Para entender melhor a lista completa de possíveis erros, consulte o [guia de erros de validação de AMP](https://www.ampproject.org/pt_br/docs/reference/validation_errors.html). Se você ainda tiver dúvidas após uma avaliação cuidadosa, [faça uma pergunta,](http://stackoverflow.com/questions/tagged/amp-html) e tentaremos ajudar.
+Se relermos com atenção o [artigo de especificações](/pt_br/docs/fundamentals/spec.html), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag `<amp-img>`.
 
+Para entender melhor a lista completa de possíveis erros,
+consulte o [guia sobre erros de validação de AMP](https://www.ampproject.org/pt_br/docs/troubleshooting/validation_errors.html).
+Se você ainda tiver dúvidas após uma análise detalhada, [faça uma
+pergunta](http://stackoverflow.com/questions/tagged/amp-html) (em inglês) para receber
+ajuda.
+ 
+ 
+ 
