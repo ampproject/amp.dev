@@ -1,0 +1,5 @@
+{
+    "require": {
+        "thunderer/shortcode": "^0.6.4"
+    }
+}
