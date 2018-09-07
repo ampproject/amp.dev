@@ -7,6 +7,18 @@
 */
 
 .#{organism('header')} {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+
+  &-background {
+    width: 100vw;
+    height: 50vh;
+
+    &-overview {
+      @include emerald-doger;
+    }
+  }
 
   &-lnk-list {
     display: flex;
@@ -26,7 +38,11 @@
   }
 
   &-main-nav {
+    background-color: transparent;
 
+    &-background {
+      background-color: color('white');
+    }
   }
 
     &-main-nav &-lnk-list {
