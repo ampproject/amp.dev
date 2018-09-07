@@ -1,5 +1,5 @@
 ---
-$title: 组件/标记
+$title: 组件
 $order: 0
 toc: true
 ---
@@ -12,8 +12,7 @@ AMP HTML 库提供的组件可划分为：
 - **扩展**：相对于基础库而言的扩展组件，必须作为自定义元素明确包含在文档中（例如 `<script async custom-element="amp-audio" ...`）。
 - **[实验](experimental.html)**：已发布但尚不能广泛使用的组件。
 
-若按类别，这些组件则可分别归为：
-
+下面列出了可用的组件（按类别划分）。
 
 ### 广告与分析
 
@@ -35,12 +34,17 @@ AMP HTML 库提供的组件可划分为：
 | [`amp-access-laterpay`](components/amp-access-laterpay.html) | 可让发布者轻松集成 [LaterPay](https://www.laterpay.net/) 微支付平台。
 | [`amp-access`](components/amp-access.html) | 提供 AMP 付费墙和订阅支持。|
 | [`amp-bind`](components/amp-bind.html) | 允许元素发生变化，以通过数据绑定关系和与 JS 相似的简单表达式来响应用户操作或数据变更。|
+| [`amp-byside-content`](components/amp-byside-content.html) | 显示 [BySide 服务](http://www.byside.com/)中的动态内容。|
+| [`amp-consent`](components/amp-consent.html) | 支持通过界面控件收集和存储用户意见征求结果。|
+| [`amp-date-picker`](components/amp-date-picker.html) | 提供一个日历微件，用于选择日期。|
 | [`amp-form`](components/amp-form.html) | 提供表单支持。|
+| [`amp-geo`](components/amp-geo.html) | 提供大致国家/地区级地理定位接口。|
 | [`amp-gist`](components/amp-gist.html) | 显示 [GitHub Gist](https://gist.github.com/)。|
 | [`amp-install-serviceworker`](components/amp-install-serviceworker.html) | 安装 ServiceWorker。|
 | [`amp-list`](components/amp-list.html) | 动态下载数据并使用模板创建列表项。|
 | [`amp-live-list`](components/amp-live-list.html) | 提供一种方式，以实时地显示和更新内容。|
 | [`amp-mustache`](components/amp-mustache.html) | 允许呈现 [`Mustache.js`](https://github.com/janl/mustache.js/) 模板。|
+| [`amp-next-page`](components/amp-next-page.html) | 动态加载推荐给用户的更多文档。|
 | [`amp-selector`](components/amp-selector.html) | 表示一种控件，可显示选项菜单并让用户从中选择。|
 | [`amp-user-notification`](components/amp-user-notification.html) | 向用户显示可关闭的通知。|
 | [`amp-web-push`](components/amp-web-push.html) | 让用户能够订阅[网络推送通知](https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications/)。|
@@ -50,12 +54,15 @@ AMP HTML 库提供的组件可划分为：
 | 组件 | 说明 |
 | --------- | ----------- |
 | [`amp-accordion`](components/amp-accordion.html) | 提供一种方式，让观看者可以大致了解网页内容并随意跳至想查看的部分。|
-| [`amp-app-banner`](components/amp-app-banner.html) | 一个封装容器和极简界面，用于呈现一个跨平台且具有固定位置的横幅，以显示应用安装号召性用语。|
+| [`amp-app-banner`](components/amp-app-banner.html) | 一个封装容器和极简界面，用于呈现一个跨平台且位置固定的横幅，以显示号召用户安装应用的号召性用语。|
 | [`amp-carousel`](components/amp-carousel.html) | 沿着一条横轴显示多个相似的内容片段。|
 | [`amp-fx-flying-carpet`](components/amp-fx-flying-carpet.html) | 将其子对象封装在一个独特的全屏滚动容器中，可让您在不占用整个视口的情况下展示全屏广告。|
-| [`amp-fx-parallax`](components/amp-fx-parallax.html) | 一种属性，可让元素呈现 3D 透视效果。|
+| [`amp-fx-collection`](components/amp-fx-collection.html) | 提供一系列预设视觉效果，例如视差。|
 | [`amp-iframe`](components/amp-iframe.html) | 显示 iframe。|
-| [`amp-lightbox`](components/amp-lightbox.html) | 可带来“灯箱”或类似体验。|
+| [`amp-image-lightbox`](components/amp-image-lightbox.html) | 为指定图片提供灯箱效果。|
+| [`amp-layout`](components/amp-layout.html) | 提供一个常规的多用途容器元素，将 AMP 功能强大的[布局](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute)运用到任何元素中。|
+| [`amp-lightbox`](components/amp-lightbox.html) | 以完整视口“灯箱”模式显示元素。|
+| [`amp-lightbox-gallery`](components/amp-lightbox-gallery.html) | 提供“灯箱”体验。在用户进行互动时，界面组件会展开以填充视口，直到用户将其关闭为止。|
 | [`amp-position-observer`](components/amp-position-observer.html) | 在用户滚动屏幕并调度可与其他组件一起使用的事件时，监控视口内某个元素的位置。|
 | [`amp-sidebar`](components/amp-sidebar.html) | 提供一种方式，以显示那些供临时访问的元内容，例如导航、链接、按钮、菜单。|
 
@@ -64,17 +71,18 @@ AMP HTML 库提供的组件可划分为：
 
 | 组件 | 说明 |
 | --------- | ----------- |
+| [`amp-3d-gltf`](components/amp-3d-gltf.html) | 显示 GL 传输格式 (gITF) 3D 模型。|
 | [`amp-3q-player`](components/amp-3q-player.html) | 嵌入来自 [3Q SDN](https://www.3qsdn.com) 的视频。|
 | [`amp-anim`](components/amp-anim.html) | 管理动画图片，通常是 GIF 格式。|
 | [`amp-apester-media`](components/amp-apester-media.html) | 显示 [Apester](https://apester.com/) 智能单元。|
 | [`amp-audio`](components/amp-audio.html) | 替换 HTML5 `audio` 标记。|
+| [`amp-bodymovin-animation`](components/amp-bodymovin-animation.html) | 显示 [AirBnB Bodymovin 动画播放器](http://airbnb.io/lottie/)，该播放器可呈现由 [Adobe After Effects](https://www.adobe.com/products/aftereffects.html) 生成的 JSON 格式的动画。|
 | [`amp-brid-player`](components/amp-brid-player.html) | 显示 [Brid.tv](https://www.brid.tv/) 播放器。|
 | [`amp-brightcove`](components/amp-brightcove.html) | 显示 Brightcove [视频云](https://www.brightcove.com/en/online-video-platform)或[执行](https://www.brightcove.com/en/perform)播放器。|
 | [`amp-dailymotion`](components/amp-dailymotion.html) | 显示 [Dailymotion](https://www.dailymotion.com) 视频。|
 | [`amp-google-vrview-image`](components/amp-google-vrview-image) | 显示 VR 图片。|
 | [`amp-hulu`](components/amp-hulu.html) | 显示简单的嵌入式 [Hulu](http://www.hulu.com/) 视频。|
 | [`amp-ima-video`](components/amp-ima-video.html) | 为与 [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/) 集成的插播视频广告嵌入一个视频播放器。|
-| [`amp-image-lightbox`](components/amp-image-lightbox.html) | 可带来“图片灯箱”或类似体验。|
 | [`amp-img`](components/amp-img.html) | 替换 HTML5 `img` 标记。|
 | [`amp-imgur`](components/amp-imgur.html) | 显示 [Imgur](http://imgur.com/) 帖子。|
 | [`amp-izlesene`](components/amp-izlesene.html) | 显示 [Izlesene](https://www.izlesene.com/) 视频。|
@@ -89,6 +97,7 @@ AMP HTML 库提供的组件可划分为：
 | [`amp-springboard-player`](components/amp-springboard-player.html) | 显示 [Springboard 平台](http://publishers.springboardplatform.com/users/login) 视频播放器。|
 | [`amp-video`](components/amp-video.html) | 替换 HTML5 `video` 标记。|
 | [`amp-vimeo`](components/amp-vimeo.html) | 显示 [Vimeo](https://vimeo.com/) 视频。|
+| [`amp-wistia-player`](components/amp-wistia-player.html) | 显示 [Wistia](https://wistia.com/) 视频。|
 | [`amp-youtube`](components/amp-youtube.html) | 显示 [YouTube](https://www.youtube.com/) 视频。|
 
 ### 呈现
@@ -99,7 +108,9 @@ AMP HTML 库提供的组件可划分为：
 | [`amp-dynamic-css-classes`](components/amp-dynamic-css-classes.html) | 在 HTML 元素上添加几个动态 CSS 类名称。|
 | [`amp-fit-text`](components/amp-fit-text.html) | 放大或缩小字体，以适合给定空间内的内容。|
 | [`amp-font`](components/amp-font.html) | 触发并监控自定义字体的加载。|
-| [`amp-timeago`](components/amp-timeago.html) | 通过将日期格式设为“***多长时间前***”（例如 3 小时前）来提供模糊的时间戳。|
+| [`amp-mathml`](components/amp-mathml.html) | 显示 [MathML 公式](https://www.w3.org/Math/)。|
+| [`amp-story`](components/amp-story.html) | 丰富而直观的叙事格式。|
+| [`amp-timeago`](components/amp-timeago.html) | 通过将日期格式设为“*多长时间前*”（例如 3 小时前）来提供模糊的时间戳。|
 | [`amp-viz-vega`](components/amp-viz-vega.html) | 显示使用 [Vega](https://vega.github.io/vega/) 可视化语法创建的可视内容。|
 
 
@@ -107,14 +118,19 @@ AMP HTML 库提供的组件可划分为：
 
 | 组件 | 说明 |
 | --------- | ----------- |
+| [`amp-beopinion`](components/amp-beopinion.html) | 嵌入 [BeOpinion](https://beopinion.com/) 内容。|
+| [`amp-addthis`](components/amp-addthis.html) | 显示嵌入的 [AddThis](https://www.addthis.com/) 网站工具。|
 | [`amp-facebook-comments`](components/amp-facebook-comments.html) | 嵌入 Facebook 评论插件。|
 | [`amp-facebook-like`](components/amp-facebook-like.html) | 嵌入 Facebook 的“赞”按钮插件。|
+| [`amp-facebook-page`](components/amp-facebook-page.html) | 嵌入 [Facebook 页面插件](https://developers.facebook.com/docs/plugins/page-plugin)。|
 | [`amp-facebook`](components/amp-facebook.html) | 显示 Facebook 帖子或视频。|
 | [`amp-gfycat`](components/amp-gfycat.html) | 显示 [Gfycat](https://gfycat.com) 视频 GIF。|
 | [`amp-instagram`](components/amp-instagram.html) | 显示 Instagram 嵌入内容。|
 | [`amp-pinterest`](components/amp-pinterest.html) | 显示 Pinterest 微件或“Pin”按钮。|
 | [`amp-reddit`](components/amp-reddit.html) | 显示嵌入的 Reddit 评论或帖子。|
+| [`amp-riddle-quiz`](components/amp-riddle-quiz.html) | 显示 [Riddle](https://www.riddle.com/) 内容（例如测验、列表、意见调查，等等）。|
 | [`amp-social-share`](components/amp-social-share.html) | 显示社交分享按钮。|
 | [`amp-twitter`](components/amp-twitter.html) | 显示 Twitter 微博。|
 | [`amp-vine`](components/amp-vine.html) | 显示简单的 Vine 嵌入内容。|
+| [`amp-vk`](components/amp-vk.html) | 嵌入 [VK](https://vk.com/) 帖子或意见调查微件。|
  
