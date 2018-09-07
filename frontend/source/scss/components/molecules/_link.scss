@@ -44,9 +44,16 @@ none
 		}
   }
 
-  &-underline {
+  &-underline-dark {
     &:hover {
-      text-decoration: underline #000;
+      text-decoration: underline color('black');
     }
   }
+
+  &-underline-light {
+    &:hover {
+      text-decoration: underline color('white');
+    }
+  }
+
 }
