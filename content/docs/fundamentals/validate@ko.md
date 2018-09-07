@@ -113,7 +113,7 @@ amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
   ((result.status === 'PASS') ? console.log : console.error)(result.status);
-  여기에서 (var ii = 0; ii < result.errors.length; ii++) {
+  for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
     var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
@@ -171,8 +171,8 @@ https://www.ampproject.org/: PASS
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (https://www.ampproject.org/ko/docs/reference/components/amp-img.html 참조)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (https://www.ampproject.org/ko/docs/reference/components/amp-ad.html 참조)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (https://www.ampproject.org/ko/docs/reference/components/amp-img.html)
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (https://www.ampproject.org/ko/docs/reference/components/amp-ad.html)
 ...
 [/sourcecode]
 
