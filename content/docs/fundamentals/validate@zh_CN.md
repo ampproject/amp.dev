@@ -1,10 +1,5 @@
 ---
 $title: 验证 AMP 网页
-$order: 7
-$category: Debug
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 
@@ -25,7 +20,7 @@ AMP 的强大之处在于它不仅能提升网页加载速度，还能以可验�
 AMP 验证工具绑定了 AMP JS 库，因此可直接在任何 AMP 网页上使用。要验证 AMP 网页，请执行以下操作：
 
   1. 在浏览器中打开 AMP 网页。
-  1. 将“`#development=1`”附加到网址后面，例如，`http://localhost:8000/released.amp.html#development=1`。
+  1. 将 &ldquo;`#development=1` &rdquo; 附加到网址后面，例如，`http://localhost:8000/released.amp.html#development=1`。
   1. 打开 [Chrome 开发者工具控制台](https://developers.google.com/web/tools/chrome-devtools/debug/console/)并检查有无验证错误。
 
 开发者控制台中显示的错误与下面屏幕截图中的类似：
