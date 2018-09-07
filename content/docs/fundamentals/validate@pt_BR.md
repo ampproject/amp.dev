@@ -1,10 +1,5 @@
 ---
 $title: Validar páginas AMP
-$order: 7
-$category: Depuração
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 
