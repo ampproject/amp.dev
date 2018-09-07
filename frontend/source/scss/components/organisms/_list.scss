@@ -1,71 +1,92 @@
 /*
 
-#############################
-### ORGANISM: teaser-list ###
-#############################
+######################
+### ORGANISM: list ###
+######################
 
 ### SAMPLE MARKUP:
 
-<ul class="ad-o-teaser-list>
-	<li class="ad-o-teaser-list-container">
-
-		<div class="ad-m-teaser ad-m-teaser-white">
-			<h5 class="ad-a-txt ad-a-txt-1">
-				The Subline Text
-			</h5>
-			<h4 class="ad-a-hl ad-a-hl-h4">
-				The Headline Text
-			</h4>
-			<p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">
-				The Text
-			</p>
-
-			<a class="ad-m-lnk" href="#">
-				<svg class="ad-a-ico ad-a-ico-internal ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
-					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
-				</svg>
-				<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">
-					The Link Text
-				</span>
-			</a>
+<ul class="ad-o-list ad-o-list-scroll col-5-4"  aria-labelledby="KPI list">
+	<li class="ad-o-list-item" aria-labelledby="KPI item">
+		<div class="ad-m-kpi">
+			<svg class="ad-a-ico ad-a-ico-stories ad-a-ico-3 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stories"></use>
+			</svg>
+			<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">title</span>
+			<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">text</p>
 		</div>
-
 	</li>
-
-	<li>...</li>
+	<li class="ad-o-list-item" aria-labelledby="KPI item">
+		<div class="ad-m-kpi">
+			<svg class="ad-a-ico ad-a-ico-stories ad-a-ico-3 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stories"></use>
+			</svg>
+			<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">title</span>
+			<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">text</p>
+		</div>
+	</li>
 </ul>
 
 ### INFO:
 
 The teaser-list organism includes multiple teaser molecules.
+All lists should be <ul> tags with <li> tags for their items (accessibility reasons).
 
 ### MODIFIERS:
 
-none
+default
+	Wrapping flex container for both mobile and desktop.
+
+scroll
+	Scrolling list without wrapping for mobile, desktop is a normal wraping flex container.
+
+nowrap-desktop
+	Items wrap on mobile, but do not wrap on desktop (ex: benefits list).
 
 */
 
 .#{organism('list')} {
-  list-style: none;
-	padding-left: 20px;
-	display: grid;
-	grid-gap: 20px;
+	margin: 0 -0.625em;
 
-  &-item {
-    min-width: 60%;
-		padding: 20px 20px 0px 0px;
-	}
+	&-item {
+		flex: 1 0 75%;
+		padding: 0 0.625em;
 
-	&-columns {
 		@media screen and (min-width: 768px) {
-			grid-template-columns: repeat(3, 1fr);
+			flex: 1 0 auto;
+		}
+
+		&-col-2 {
+			@media screen and (min-width: 768px) {
+				flex: 0 0 50%;
+			}
+		}
+
+		&-col-3 {
+			@media screen and (min-width: 768px) {
+				flex: 0 0 33.3333333%;
+			}
 		}
 	}
 
-	&-columns-fixed-width {
+	&-nowrap-desktop {
+		display: flex;
+		flex-wrap: wrap;
 
 		@media screen and (min-width: 768px) {
-			grid-template-columns: repeat(3, 190px);
+			flex-wrap: nowrap;
+		}
+	}
+
+	&-scroll {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-y: hidden;
+		overflow-x: scroll;
+
+		@media screen and (min-width: 768px) {
+			overflow: visible;
+			flex-wrap: wrap;
 		}
 	}
 }

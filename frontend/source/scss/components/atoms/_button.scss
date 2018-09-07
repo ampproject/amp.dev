@@ -43,4 +43,8 @@ none
 		background-color: color('river-bed');
 		border: 3px solid color('river-bed');
 	}
+
+	@media screen and (min-width: 768px) {
+		min-width: 280px;
+	}
 }

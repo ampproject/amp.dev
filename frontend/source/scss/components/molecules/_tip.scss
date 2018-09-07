@@ -115,11 +115,12 @@ read-on
   &-container {
     @include drop-shadow;
     grid-column: 1 / span 1;
-    padding: 0px 80px 40px 20px;
+    padding: 0;
+    margin-bottom: 3em;
 
     @media screen and (min-width: 768px) {
       grid-column: 2 / span 1;
-      padding: 0px 50px 40px 10px;
+      padding: 0;
     }
   }
 }

@@ -5,7 +5,9 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "grow run"
+    "start": "grow run",
+    "build": "grow build",
+    "deploy": "grow deploy"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "babelify": "^8.0.0",
     "gulp": "^4.0.0",
     "gulp-multi-dest": "^1.3.7",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "yargs": "^12.0.1"
   }
 }

@@ -3,20 +3,58 @@ $view: /views/styleguide/component.j2
 $title: Event
 
 events:
-- headline: Event Details
-  date: 11th July, 2018 Wednesday, 9am-5pm
-  address: Google Building 500 500 W 2nd St, Austin, TX 78701, USA
+- city: Austin, TX
+  year: 2018
+  month: Jul
+  day: 11
+  location: Google Building
+  registration: 08/01/18 12:00
+- city: New York, NY
+  year: 2018
+  month: Aug
+  day: 23
+  location: The Seaport, Pier 17
+  registration: 08/01/18 12:00
+- city: Jackson, MS
+  year: 2018
+  month: Oct
+  day: 15
+  location: Ambassador Auditorium
+  registration: 08/01/18 12:00
+- city: Nashville, TN
+  year: 2018
+  month: Nov
+  day: 07
+  location: House of Blues
+  registration: 08/01/18 12:00
 ---
-{% for event in doc.events %}
-	<div class="ad-m-event col-2-6">
-		<h2 class="ad-a-hl ad-a-hl-h3">{{ event.headline }}</h2>
-		<div class="ad-m-event-content">
-			{{ atoms.icon('time', size=2) }}
-			<p class="ad-a-txt ad-a-txt-4">{{ event.date }}</p>
-		</div>
-		<div class="ad-m-event-content">
-			{{ atoms.icon('map', size=2) }}
-			<p class="ad-a-txt ad-a-txt-4">{{ event.address }}</p>
-		</div>
-	</div>
-{% endfor %}
+
+<div class="ad-o-container col-2-1">
+	<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">Multiple event molecules with different contents.</p>
+</div>
+<div class="ad-o-container col-4-5">
+	{% for event in doc.events %}
+    <div class="ad-m-event">
+  		<div class="ad-m-event-date">
+  			<span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-silver ad-a-txt-hl">{{ event.year }}</span>
+  			<span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black">
+          {{ event.month }}<br>
+          {{ event.day }}
+        </span>
+  		</div>
+  		<div class="ad-m-event-content">
+  			<span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black ad-a-txt-hl">{{ event.city }}</span>
+  			<ul aria-labelledby="Details about the event">
+  				<li class="ad-a-txt ad-a-txt-3">
+  					{{ atoms.icon('map', size=1) }}
+  					{{ event.location }}
+  				</li>
+  				<li class="ad-a-txt ad-a-txt-3">
+  					{{ atoms.icon('time', size=1) }}
+  					{{ event.registration }}
+  				</li>
+  			</ul>
+  		</div>
+  	</div>
+	{% endfor %}
+</div>

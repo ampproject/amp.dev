@@ -6,8 +6,14 @@
 
 ### SAMPLE MARKUP:
 
-<div class="ad-a-img ad-a-img-circle">
-	<amp-img src="images/sample.jpg" layout="fill" alt="The Alt Text"></amp-img>
+<div class="ad-a-img ad-a-img-circle ">
+  <amp-img
+		src="source/to/img.jpg"
+		layout="responsive"
+		width="300"
+		height="300"
+		alt="The Alt Text"
+	</amp-img>
 </div>
 
 ### INFO:
@@ -19,14 +25,14 @@ Give the image macro the parameter "parallax" to add the amp-parallax-fx to it.
 
 ### MODIFIERS:
 
+pull-edge
+	Just for mobile: pulls the image to the edge with a negative margin.
+
 circle
   Sets a border-radius 50% to the image (make sure it is a sqaure).
 
 shadow-static
   Adds a simple static drop-shadow to the image.
-
-shadow-animated
-  Adds the same shadow as the static one, but also moves up and down while scrolling.
 
 */
 
@@ -35,24 +41,20 @@ shadow-animated
 .#{atom('img')} {
 	position: relative;
 
-	&-circle {}
+	&-pull-edge {
+		margin-right: -30px;
 
-	&-shadow-static {
-		@include box-shadow;
+		@media screen and (min-width: 768px) {
+			margin-right: 0;
+		}
 	}
 
-	&-shadow-animated {}
-}
+	&-circle {
+		overflow: hidden;
+		border-radius: 50%;
+	}
 
-.#{organism('container-image')} {
-	display: grid;
-	grid-template-rows: repeat(3, 75px);
-	grid-template-columns: repeat(3, 75px);
-
-	.#{atom('img')} {
-		&-shadow-static {
-			grid-column: 1 / 4;
-			grid-row: 1 / 4;
-		}
+	&-shadow-static amp-img {
+		@include drop-shadow;
 	}
 }

@@ -7,6 +7,9 @@ buttons:
   target: ''
 ---
 {% for btn in doc.buttons %}
+  <div class="ad-o-container col-2-1">
+    <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">Regular button without any modifier.</p>
+  </div>
   <div class="ad-o-container col-4-5">
     <a class="ad-a-btn" href="{{ btn.link }}" target="{{ btn.target }}">{{ btn.label }}</a>
   </div>

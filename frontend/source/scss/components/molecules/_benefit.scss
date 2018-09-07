@@ -1,17 +1,52 @@
+/*
+
+#########################
+### MOLECULE: benefit ###
+#########################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-benefit col-2-4">
+	<svg class="ad-a-ico ad-a-ico-lego ad-a-ico-3 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lego"></use>
+	</svg>
+	<h4 class="ad-a-hl ad-a-hl-h4">The headline</h4>
+	<p class="ad-a-txt ad-a-txt-3">The benefit copy text</p>
+</div>
+
+### INFO:
+
+The benefit molecule is a combination of icon, headline and text atom.
+No list organismn is needed here, you can use as much benefit molecules as desired.
+
+### MODIFIERS:
+
+none
+
+*/
+
+// TODO: implement mono font and modifier
+
 .#{molecule('benefit')} {
-	display: flex;
-	flex-direction: column;
-	padding: 20px;
+	position: relative;
+	padding-left: 4em;
 
 	@media screen and (min-width: 768px) {
 		padding: 0;
 	}
 
-	& .ad-a-hl {
-		padding-top: 20px;
+	.#{atom('hl')} {
+		margin: 0 0 0.375em;
 	}
 
-	& .ad-a-txt {
-		padding: 20px 0;
+	.#{atom('ico')} {
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		@media screen and (min-width: 768px) {
+			position: static;
+			margin-bottom: 0.75em;
+		}
 	}
 }

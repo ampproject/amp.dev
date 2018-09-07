@@ -1,22 +1,96 @@
-.#{molecule('event')} {
-	width: 200px;
-	padding: 0 20px;
+/*
 
-	@media screen and (min-width: 768px){
-		padding: 0;
+#######################
+### MOLECULE: event ###
+#######################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-event">
+  <div class="ad-m-event-date">
+    <span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-silver ad-a-txt-hl">
+			2018
+		</span>
+    <span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black">
+      Jul<br>
+      11
+    </span>
+  </div>
+  <div class="ad-m-event-content">
+    <span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black ad-a-txt-hl">
+			Austin, TX
+		</span>
+    <ul aria-labelledby="Details about the event">
+      <li class="ad-a-txt ad-a-txt-3">
+        <div class="ad-a-ico ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
+          </svg>
+        </div>
+        Google Building
+      </li>
+      <li class="ad-a-txt ad-a-txt-3">
+        <div class="ad-a-ico ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time"></use>
+          </svg>
+        </div>
+        08/01/18 12:00
+      </li>
+    </ul>
+  </div>
+</div>
+
+### INFO:
+
+The event molecule is a combination of icon, headline and text atoms. The event molecule also creates a list for the event details (location, registration).
+Positioning of the atoms (eg. padding, margin) are defined in this style sheet.
+The size of the icon should be 1 (xsmall) and text should be 2 (small).
+
+### MODIFIERS:
+
+none
+
+*/
+
+.#{molecule('event')} {
+  display: flex;
+	padding: 0.875em 1.25em;
+	margin-bottom: 2.750em;
+	background-color: color('white');
+	@include box-shadow;
+
+	&-date {
+		flex-grow: 0;
+		margin-right: 1.4em;
+		text-align: right;
+
+		span:last-child {
+			display: block;
+			line-height: 1.4em;
+		}
 	}
 
 	&-content {
-		position: relative;
-		padding-bottom: 20px;
-		display: block;
+		flex-grow: 1;
 	}
 
-	& .ad-a-ico {
-		position: absolute;
+	.#{atom('txt-hl')} {
+		margin-bottom: 0.5em;
 	}
 
-	& .ad-a-txt {
-		padding-left: 30px;
+	ul {
+		li {
+			position: relative;
+			padding-left: 20px;
+		}
+
+		.#{atom('ico')} {
+			width: 0.875em;
+			height: 0.875em;
+			position: absolute;
+			left: 1px;
+			top: 3px;
+		}
 	}
 }
