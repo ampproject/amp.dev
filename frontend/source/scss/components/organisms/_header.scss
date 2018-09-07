@@ -16,10 +16,13 @@
     max-width: 1280px;
     margin: 0 auto;
     align-items: center;
+    left: 0;
+    margin-right: 100%;
   }
 
   &-lnk {
     margin: 0 20px;
+    white-space: nowrap;
   }
 
   &-main-nav {
