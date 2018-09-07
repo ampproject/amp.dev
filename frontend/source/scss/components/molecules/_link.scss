@@ -42,5 +42,11 @@ none
 		&-square {
 			padding: 0.438em;
 		}
-	}
+  }
+
+  &-underline {
+    &:hover {
+      text-decoration: underline #000;
+    }
+  }
 }
