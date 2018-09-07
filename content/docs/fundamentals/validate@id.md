@@ -1,10 +1,5 @@
 ---
 $title: Memvalidasi halaman AMP
-$order: 7
-$category: Debug
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 
@@ -102,7 +97,7 @@ Sebagai bagian dari pipeline build dan pengujian, Anda dapat mengintegrasikan va
 
 ##### Contoh: Memvalidasi file HTML AMP
 
-Dalam contoh ini, kita memvalidasi file HTML AMP menggunakan paket NPM [amphtml-validator](https://www.npmjs.com/package/amphtml-validator).  Status validasi diteruskan ke konsol.
+Dalam contoh ini, kita memvalidasi file HTML AMP menggunakan paket NPM [amphtml-validator](https://www.npmjs.com/package/amphtml-validator). Status validasi diteruskan ke konsol.
 
 ```javascript
 'use strict';
