@@ -26,6 +26,9 @@ class AmpDev extends Theme
 
     return [
       'onThemeInitialized' => ['onThemeInitialized', 0],
+      // onShortcodeHandlers can not be evaluated lazily as it is
+      // to late then
+      'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
     ];
   }
 
@@ -59,6 +62,10 @@ class AmpDev extends Theme
     // Extend Parsedown to handle custom BBCodes and class additions to default
     // markdown elements
     $markdown = new MarkdownExtender($event['markdown']);
+  }
+
+  public function onShortcodeHandlers() {
+    $this->grav['shortcode']->registerAllShortcodes(__DIR__.'/classes/shortcodes');
   }
 
   public function onTwigSiteVariables(Event $event) {
