@@ -1,0 +1,37 @@
+---
+$view: /views/styleguide/component.j2
+$title: Code Interactive
+
+components:
+- name: amp-accordion
+  src: https://cdn.ampproject.org/v0/amp-accordion-0.1.js
+---
+<div class="ad-m-code-interactive col-4-5">
+<amp-accordion>
+  <section expanded>
+    <span class="ad-a-txt ad-a-txt-mono-inline"> Section 1</span>
+    <span class="ad-a-txt">Bunch of awesome content.</span>
+  </section>
+  <section>
+    <span class="ad-a-txt ad-a-txt-mono-inline">Section 2</span>
+    <div class="ad-a-txt">Bunch of even more awesome content. This time in a
+      <code>&lt;div&gt;</code>.</div>
+  </section>
+  <section>
+    <span class="ad-a-txt ad-a-txt-mono-inline">Section 3</span>
+    <figure>
+      <amp-img src="../../../static/img/amp-img-01.png"
+        width="110"
+        height="110"
+        layout="responsive"
+        alt="an image"></amp-img>
+      <figcaption class="ad-a-txt">Images work as well.</figcaption>
+    </figure>
+  </section>
+</amp-accordion>
+
+<a class="ad-m-lnk" href='#'>
+	{{atoms.icon('internal', size=1)}}
+	<span class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Open in AMP Playground</span>
+</a>
+</div>

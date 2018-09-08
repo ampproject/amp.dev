@@ -30,17 +30,31 @@ none
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	padding: 0.75em 0;
-	margin: 0.75em 0;
+	padding: 0.813em 0;
+	margin: 0.813em 0;
 
 	.#{atom('ico')} {
+		padding: 0.438em 0;
 		margin-bottom: auto;
 		margin-right: 0.625em;
-		padding: 0.438em 0;
 		box-sizing: initial;
 
 		&-square {
 			padding: 0.438em;
+			@include box-shadow;
 		}
-	}
+  }
+
+  &-underline-dark {
+    &:hover {
+      text-decoration: underline color('black');
+    }
+  }
+
+  &-underline-light {
+    &:hover {
+      text-decoration: underline color('white');
+    }
+  }
+
 }

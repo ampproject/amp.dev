@@ -1,55 +1,59 @@
+/*
 
-.#{molecule('shift-image')} {
+#############################
+### MOLECULE: float-image ###
+#############################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-float-image">
+  <div class="ad-a-img ad-a-img-static">
+    <amp-img src="source/to/img.jpg" layout="fill" alt="The Alt Text"></amp-img>
+  </div>
+  <div class="ad-a-img ad-a-img-shadow-static ad-a-img-parallax" amp-fx="parallax" data-parallax-factor="1.1">
+    <amp-img src="source/to/img.jpg" layout="fill" alt="The Alt Text"></amp-img>
+  </div>
+</div>
+
+### INFO:
+
+The float-image molecule uses amp-fx-collection to animate one image while scrolling.
+The grid is builded up with two on the corner overlaying squares.
+The images that are inside this squares will contained, it doesn't matter which aspect ratio they have.
+
+### MODIFIERS:
+
+static
+	This image is the static one. It is positioned in the lower left corner.
+
+parallax
+	This image is floating over the static one. Is is positioned in the upper right corner.
+
+*/
+
+.#{molecule('float-image')} {
 	display: grid;
-	grid-template-columns: repeat(6, 75px);
-	grid-template-rows: 40px repeat(5, 75px);
-	padding: 30px 0px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	padding-top: 6em;
 
-	& .#{atom('img')} {
-		grid-column: 1 / 4;
-		grid-row: 2 / 6;
-		position: relative;
+	.#{atom('img')} {
+		padding-top: 100%;
+		margin-right: 0;
+
+		img {
+			object-fit: contain;
+			object-position: left bottom;
+		}
+
+		&-static {
+			grid-column: 1 / 3;
+			grid-row: 2 / 4;
+		}
 
 		&-parallax {
-			grid-column: 2 / 5;
-			grid-row: 1 / 4;
-			z-index: 4;
-		}
-
-		&-static-image {
-			grid-column: 3 / 6;
-			grid-row: 2 / 5;
-
-			@media screen and (min-width: 768px) {
-				grid-column: 4 / 7;
-			}
+			grid-column: 2 / 4;
+			grid-row: 1 / 3;
 		}
 	}
-}
-
-.#{molecule('static-image')} {
-	display: grid;
-	grid-template-columns: repeat(3, 75px);
-	grid-template-rows: repeat(3, 75px);
-}
-
-.#{molecule('copy-wrapper')} {
-	display: grid;
-	grid-template-columns: repeat(6, 75px);
-	grid-template-rows: repeat(6, 75px);
-}
-
-.#{atom('txt')} {
-	grid-column: 1 / 6;
-	grid-row: 2 / 5;
-	padding-right: 40px;
-
-	@media screen and (min-width: 768px) {
-		grid-column: 1 / 7;
-		padding: 0;
-	}
-}
-
-.#{atom('hl')} {
-	grid-column: 1 / 4;
 }

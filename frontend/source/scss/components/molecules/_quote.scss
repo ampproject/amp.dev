@@ -1,0 +1,40 @@
+.#{molecule('quote')} {
+
+	blockquote {
+		margin: 0;
+	}
+
+	blockquote p::before {
+    content: '\201C';
+	}
+
+	blockquote p::after {
+    content: '\201D';
+	}
+
+	& .ad-a-txt {
+		display: block;
+		padding-left: 95px;
+	}
+
+	& .ad-m-blockquote {
+		padding: 20px 50px;
+	}
+
+	& .ad-a-img-circle {
+		height: 70px;
+		width: 70px;
+		position: absolute;
+	}
+
+	& .ad-a-img-source {
+		height: 28px;
+		width: 60px;
+		position: relative;
+		margin-left: 95px;
+	}
+
+	&-bio {
+		padding: 0 50px;
+	}
+}

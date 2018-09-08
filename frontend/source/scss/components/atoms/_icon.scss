@@ -1,8 +1,8 @@
 /*
 
-####################
+##################
 ### ATOM: icon ###
-####################
+##################
 
 ### SAMPLE MARKUP:
 
@@ -30,6 +30,7 @@ square
 
 .#{atom('ico')} {
 	display: flex;
+	font-size: initial;
 
 	&-#{map-get($sizes, xs)} {
 		width: 1em;
@@ -42,8 +43,8 @@ square
 	}
 
 	&-#{map-get($sizes, md)} {
-		width: 3em;
-		height: 3em;
+		width: 2.5em;
+		height: 2.5em;
 	}
 
 	&-#{map-get($sizes, lg)} {
