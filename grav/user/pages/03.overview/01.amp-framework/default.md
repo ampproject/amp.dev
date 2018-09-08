@@ -1,5 +1,5 @@
 ---
-title: 'Amp Framework'
+title: 'AMP Framework'
 routes:
     default: overview/amp-framework
 content:
@@ -19,4 +19,3 @@ subnav:
         -
             '@page': /overview
 ---
-
