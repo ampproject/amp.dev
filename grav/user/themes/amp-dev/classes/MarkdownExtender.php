@@ -13,6 +13,11 @@ class MarkdownExtender {
       $this->extendFencedCode();
   }
 
+  /**
+   * Extends the default markup syntax for fenced code in a way that it is
+   * statically highlighted by the use of highlight.php
+   * @return array A block valid for Parsedown::element()
+   */
   protected function extendFencedCode() {
     $this->markdown->addBlockType('`', 'FencedCodeExtended', true, true, 0);
 
