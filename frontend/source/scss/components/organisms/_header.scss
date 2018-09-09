@@ -14,10 +14,7 @@
   &-background {
     width: 100vw;
     height: 50vh;
-
-    &-overview {
-      @include emerald-doger;
-    }
+    @include emerald-doger;
   }
 
   &-lnk-list {
