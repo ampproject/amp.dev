@@ -15,7 +15,7 @@ past:
 upcoming_events:
   - type: Event
     title: AMP Roadshow Seoul
-    href: https://events.withgoogle.com/amp-roadshow-seoul/iljeong/
+    href: https://events.withgoogle.com/amp-roadshow-seoul
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
     date: August 21, 2018
     event_time: 20180911/20180912
