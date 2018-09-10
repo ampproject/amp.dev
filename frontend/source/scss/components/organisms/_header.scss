@@ -14,10 +14,7 @@
   &-background {
     width: 100vw;
     height: 50vh;
-
-    &-overview {
-      @include emerald-doger;
-    }
+    @include emerald-doger;
   }
 
   &-lnk-list {
@@ -29,7 +26,6 @@
     margin: 0 auto;
     align-items: center;
     left: 0;
-    margin-right: 100%;
   }
 
   &-lnk {

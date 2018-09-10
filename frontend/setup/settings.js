@@ -2,13 +2,13 @@ import yargs from 'yargs';
 
 /**
  * These settings are meant to define sensible defaults for each of the tasks
- * defined inside ~setup/tasks/. This pattern provides the ability to easily
+ * defined inside ~/setup/tasks/. This pattern provides the ability to easily
  * change settings based on environments and flags.
  * @type {Object}
  */
 const settings = {
     'styles': {
-        'src': 'source/scss/bundles/*.scss',
+        'src': 'source/scss/components/templates/*',
         'dest': [
             '../grav/user/themes/amp-dev/css',
         ],

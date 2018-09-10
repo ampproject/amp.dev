@@ -4,7 +4,7 @@ namespace Grav\Theme;
 use Grav\Common\Theme;
 use Grav\Theme\AmpDev\Assets;
 use Grav\Theme\AmpDev\Icons;
-use Grav\Theme\AmpDev\Markdown;
+use Grav\Theme\AmpDev\MarkdownExtender;
 use RocketTheme\Toolbox\Event\Event;
 
 class AmpDev extends Theme
@@ -26,6 +26,9 @@ class AmpDev extends Theme
 
     return [
       'onThemeInitialized' => ['onThemeInitialized', 0],
+      // onShortcodeHandlers can not be evaluated lazily as it is
+      // to late then
+      'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
     ];
   }
 
@@ -58,8 +61,11 @@ class AmpDev extends Theme
   public function onMarkdownInitialized(Event $event) {
     // Extend Parsedown to handle custom BBCodes and class additions to default
     // markdown elements
-    $markdown = $event['markdown'];
-    Markdown::extend($markdown);
+    $markdown = new MarkdownExtender($event['markdown']);
+  }
+
+  public function onShortcodeHandlers() {
+    $this->grav['shortcode']->registerAllShortcodes(__DIR__.'/classes/shortcodes');
   }
 
   public function onTwigSiteVariables(Event $event) {

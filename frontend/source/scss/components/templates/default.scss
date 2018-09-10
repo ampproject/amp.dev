@@ -1,0 +1,32 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+@import '../../functions.scss';
+
+@import '../../base.scss';
+
+@import '../atoms/headline';
+@import '../atoms/text';
+@import '../atoms/code';
+@import '../atoms/button';
+@import '../atoms/icon';
+@import '../atoms/image';
+@import '../atoms/divider';
+
+@import '../molecules/link';
+@import '../molecules/tip';
+@import '../molecules/teaser';
+@import '../molecules/copy';
+@import '../molecules/load-more';
+@import '../molecules/float-image';
+@import '../molecules/kpi';
+@import '../molecules/benefit';
+@import '../molecules/event';
+
+@import '../organisms/list';
+@import '../organisms/header';
+
+p {
+	@extend .#{atom('txt')} !optional;
+	@extend .#{atom('txt-3')} !optional;
+	@extend .#{atom('txt-p')} !optional;
+}

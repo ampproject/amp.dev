@@ -1,32 +1,32 @@
-{% set subnav_collection = page.collection('subnav')%}
-
-{% for p in page.collection %}
-  <div class="ad-o-header-background ad-o-header-background-{{ p.slug }}"></div>
-{% endfor %}
+<div class="ad-o-header-background ad-o-header-background-{{ p.slug }}"></div>
 
 <header class="ad-o-header">
+  {# TODO: Comparing the title to 'Home' will not work in i18n #}
   <nav class="ad-o-header-main-nav{% if page.title != 'Home' %} ad-o-header-main-nav-background {% endif %}">
     <ul class="ad-o-header-lnk-list">
       <li class="ad-o-header-lnk">
         <a class="ad-a-ico ad-a-ico-5 ad-a-ico-blue-ribbon " href="/">{{ icons.useIcon('logo') }}</a>
       </li>
-      {% for navitem in page.collection %}
+      {% set mainNavigation = page.evaluate([{'@root':'/'}]).visible().published().routable() %}
+      {% for mainPage in mainNavigation %}
       <li class="ad-o-header-lnk">
-        <a class="ad-m-lnk ad-m-lnk-underline-{% if page.title != 'Home' %}dark{% else %}light{% endif %}" href="{{ navitem.route }}">
-          <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-{% if page.title == navitem.title %}blue-ribbon{% elseif page.title != 'Home' %}dark{% else %}light{% endif %}">{{ navitem.title }}</span>
+        {# TODO: Comparing the title to 'Home' will not work in i18n #}
+        <a class="ad-m-lnk ad-m-lnk-underline-{% if page.title != 'Home' %}dark{% else %}light{% endif %}" href="{{ mainPage.route }}">
+          <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-{% if page.title == mainPage.title %}blue-ribbon{% elseif page.title != 'Home' %}dark{% else %}light{% endif %}">{{ mainPage.title }}</span>
         </a>
       </li>
       {% endfor %}
     </ul>
   </nav>
 
-{% if subnav_collection != '' %}
+  {% set subNavigation = page.evaluate([{'@page.children':page.route}]).visible().published().routable() %}
+  {% if subNavigation %}
   <nav class="ad-o-header-sub-nav">
     <ul class="ad-o-header-lnk-list">
-      {% for p in subnav_collection %}
+      {% for subPage in subNavigation %}
       <li class="ad-o-header-lnk">
-        <a class="ad-m-lnk ad-m-lnk-underline-dark" href="{{ p.route }}">
-          <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-{% if page.title == p.title %}blue-ribbon{% else %}dark{% endif %}">{{ p.title }}</span>
+        <a class="ad-m-lnk ad-m-lnk-underline-dark" href="{{ subPage.route }}">
+          <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-{% if page.title == subPage.title %}blue-ribbon{% else %}dark{% endif %}">{{ subPage.title }}</span>
         </a>
       </li>
       {% endfor %}
