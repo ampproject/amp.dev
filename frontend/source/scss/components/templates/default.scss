@@ -22,11 +22,35 @@
 @import '../molecules/benefit';
 @import '../molecules/event';
 
+@import '../organisms/container';
 @import '../organisms/list';
 @import '../organisms/header';
 
+main {
+  width: 40%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend .#{atom('hl')} !optional;
+}
+
+h1 {
+  @extend .#{atom('ad-a-hl-h1')} !optional;
+}
+
+h2 {
+  @extend .#{atom('ad-a-hl-h2')} !optional;
+}
+
+h3 {
+  @extend .#{atom('ad-a-hl-h3')} !optional;
+}
+
 p {
-	@extend .#{atom('txt')} !optional;
-	@extend .#{atom('txt-3')} !optional;
-	@extend .#{atom('txt-p')} !optional;
+  @extend .#{atom('txt')} !optional;
+  @extend .#{atom('txt-2')} !optional;
+  @extend .#{atom('txt-p')} !optional;
 }
