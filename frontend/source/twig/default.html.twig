@@ -41,7 +41,9 @@
   {% endblock %}
 
   {% block body %}
+  <main>
   {{ page.content }}
+  </main>
   {% endblock body %}
 
   {% do assets.addAmpComponent('amp-font') %}

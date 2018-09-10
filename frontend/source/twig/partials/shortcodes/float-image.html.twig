@@ -1,0 +1,15 @@
+<div class="ad-o-container col-6-4">
+  <div class="ad-m-float-image">
+    {% set staticImage = images.0 %}
+    <div class="ad-a-img ad-a-img-static">
+      <amp-img src="{{ staticImage.src }}" layout="responsive" width="{{staticImage.width}}" height="{{staticImage.width}}" alt="{{ staticImage.alt}}"></amp-img>
+    </div>
+
+    {% set parallaxImage = images.1 %}
+    <div class="ad-a-img ad-a-img-shadow-static ad-a-img-parallax">
+      {% do assets.addAmpComponent('amp-fx-collection') %}
+      <amp-img src="{{ parallaxImage.src }}" layout="fill" width="{{parallaxImage.width}}" height="{{parallaxImage.width}}" alt="{{ parallaxImage.alt}}" amp-fx="parallax"
+		  data-parallax-factor="1.1"></amp-img>
+    </div>
+  </div>
+</div>

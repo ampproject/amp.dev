@@ -1,6 +1,6 @@
 ---
 title: Styleguide
-visible: false
+visible: true
 ---
 
 # Styleguide
