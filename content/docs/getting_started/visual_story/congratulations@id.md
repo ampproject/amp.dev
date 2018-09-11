@@ -1,6 +1,5 @@
 ---
 $title: Selamat!
-$order: 8
 ---
 
 Anda berhasil menyelesaikan artikel AMP pertama Anda!
