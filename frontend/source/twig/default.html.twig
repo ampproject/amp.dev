@@ -21,8 +21,10 @@
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Poppins:700" rel="stylesheet">
 
   {% block javascripts %}
-      {% do assets.addJs('https://cdn.ampproject.org/v0.js', {'loading': 'async'}) %}
-      {% do assets.addAmpComponent('amp-sidebar') %}
+    {% do assets.addJs('https://cdn.ampproject.org/v0.js', {'loading': 'async'}) %}
+    {% do assets.addAmpComponent('amp-sidebar') %}
+    {% do assets.addAmpComponent('amp-animation') %}
+
   {% endblock %}
   {{ assets.js() }}
   {{ assets.ampComponents() }}
@@ -31,6 +33,40 @@
 </head>
 
 <body>
+  <amp-animation id="subnavAnim" layout="nodisplay">
+    <script type="application/json">
+        {
+        "duration": "0500ms",
+        "fill": "both",
+        "animations": [
+          {
+            "selector": ".ad-o-header",
+            "keyframes": [
+              { "transform": "translateY(0px)" },
+              { "transform": "translateY(-75px)" }
+            ]
+          }
+        ]
+      }
+    </script>
+  </amp-animation>
+  <amp-animation id="subnavAnimReverse" layout="nodisplay">
+      <script type="application/json">
+          {
+          "duration": "0500ms",
+          "fill": "both",
+          "animations": [
+            {
+              "selector": ".ad-o-header",
+              "keyframes": [
+                { "transform": "translateY(-75px)" },
+                { "transform": "translateY(0px)" }
+              ]
+            }
+          ]
+        }
+      </script>
+    </amp-animation>
     {% block icons %}
     {% endblock icons %}
     <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
