@@ -83,8 +83,11 @@ class MarkdownExtender {
         $highlightedCode = $highlighter->highlight($language, $code);
         $Block['element']['text']['text'] = $highlightedCode->value;
 
-        // Unset the language class as it is not needed anymore
-        $Block['element']['text']['attributes']['class'] = '';
+        // Unset the class as it is not needed anymore
+        unset($Block['element']['text']['attributes']['class']);
+
+        // Set the code-snippet class to the outermost element
+        $Block['element']['attributes']['class'] = 'ad-m-code-snippet';
       }
 
       return $Block;
