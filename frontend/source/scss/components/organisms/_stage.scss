@@ -1,0 +1,38 @@
+/*
+
+#############################
+### ORGANISM: stage ###
+#############################
+
+*/
+
+.#{organism('stage')} {
+  padding-top: 50vh;
+  margin-bottom: 2em;
+
+  &-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 50vh;
+    font-size: 1.75em;
+    color: color('white');
+    background: linear-gradient(45deg, color('emerald'), color('doger-blue'));
+
+    &-bg-orange {
+      background: linear-gradient(45deg, color('pizazz'), color('turbo'));
+    }
+
+    &-bg-grey {
+      background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+    }
+  }
+
+    &-content {
+      max-width: 60%;
+      margin: 0 auto;
+    }
+}

@@ -25,17 +25,18 @@
 @import '../organisms/container';
 @import '../organisms/list';
 @import '../organisms/header';
+@import '../organisms/stage';
 
 main {
   width: 100%;
   max-width: 1260px;
   margin: 0 auto;
   padding: 0 30px;
+  color: color('black');
 
   @media screen and (min-width: 768px){
     width: 40%;
   }
-
 }
 
 h1, h2, h3, h4, h5, h6 {
