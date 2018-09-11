@@ -1,9 +1,5 @@
 ---
 $title: Mengintegrasikan AMP dengan aplikasi Anda 
-$order: 6
-$category: Develop
-toc: true
-
 ---
 
 Panduan ini ditujukan untuk developer aplikasi seluler dan web yang ingin mengintegrasikan dan menautkan aplikasi ke halaman AMP. Sebagai contoh, pertimbangkan aplikasi chat seluler yang memuat versi AMP dari sebuah URL bersama untuk memberikan pengalaman yang lebih cepat kepada pengguna.
