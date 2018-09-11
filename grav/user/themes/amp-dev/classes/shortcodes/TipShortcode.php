@@ -4,15 +4,15 @@ namespace Grav\Plugin\Shortcodes;
 use Grav\Common\Grav;
 use Thunder\Shortcode\Shortcode\ShortcodeInterface;
 
-class StageShortcode extends Shortcode {
+class TipShortcode extends Shortcode {
 
-  const TEMPLATE_PATH = 'partials/shortcodes/stage.html.twig';
+  const TEMPLATE_PATH = 'partials/shortcodes/tip.html.twig';
 
   public function init() {
-    $this->shortcode->getHandlers()->add('stage', function(ShortcodeInterface $sc) {
+    $this->shortcode->getHandlers()->add('tip', function(ShortcodeInterface $sc) {
 
       $output = $this->twig->processTemplate(self::TEMPLATE_PATH, [
-        'color' => $sc->getParameter('color'),
+        'type' => $sc->getParameter('type'),
         'content' => $sc->getContent()
       ]);
 

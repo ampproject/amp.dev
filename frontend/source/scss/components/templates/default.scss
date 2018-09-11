@@ -57,6 +57,14 @@ h3 {
   @extend .#{atom('ad-a-hl-h3')} !optional;
 }
 
+h4 {
+  @extend .#{atom('ad-a-hl-h4')} !optional;
+}
+
+h5 {
+  @extend .#{atom('ad-a-hl-h5')} !optional;
+}
+
 p {
   @extend .#{atom('txt')} !optional;
   @extend .#{atom('txt-2')} !optional;
