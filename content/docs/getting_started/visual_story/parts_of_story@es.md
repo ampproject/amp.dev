@@ -1,6 +1,5 @@
 ---
 $title: Partes de las historias de AMP
-$order: 1
 ---
 
 Una historia de AMP es una experiencia narrativa visual a pantalla completa que transmite información con imágenes, vídeos, elementos gráficos, audio y mucho más. Es ideal para los usuarios que quieren contenido breve y visualmente atractivo.  
