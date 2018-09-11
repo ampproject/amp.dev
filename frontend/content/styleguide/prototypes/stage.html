@@ -106,13 +106,13 @@ $title: Stage
 				overflow: hidden;
 				min-width: 170px;
 				max-width: 250px;
-				display: inline-block;
+				display: flex;
 			}
 
 			.stage-list-viewbox:hover {
 				overflow: visibile;
 				animation: none;
-				height: 300px;
+				height: 200px;
 				animation: growDown 0.5s ease;
 			}
 
@@ -123,6 +123,11 @@ $title: Stage
 
 			.stage-list-viewbox:hover .stage-list-item-repeat {
 				display: none;
+			}
+
+			.stage-list-viewbox:hover svg {
+				transform: rotate(180deg);
+				transition: transform 0.5s ease;
 			}
 
 			.stage-list {
@@ -216,6 +221,17 @@ $title: Stage
 				background: linear-gradient(45deg, #38CA71,#00CD3C);
 			}
 
+			.ad-a-ico {
+				height: 50px;
+				width: 25px;
+				z-index: 10;
+				background: #fff;
+				padding: 0 20px 100% 20px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
     </style>
 </head>
 <body>
@@ -237,6 +253,11 @@ $title: Stage
 							<li option="0" class="stage-list-item stage-list-item-repeat websites" [class]="stage.currentStage == 'default' ? 'stage-list-item websites': 'stage-list-item stage-list-item-repeat websites'">websites</li>
 						</ul>
 					</amp-selector>
+					<div class="ad-a-ico">
+						<svg id="arrow-down-thin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+							<path d="M59.863 17.14l4.137 5.488-32 24.232-32-24.232 4.137-5.488 27.863 21.108z"></path>
+						</svg>
+					</div>
 				</div>
 			</div>
 		</div>
