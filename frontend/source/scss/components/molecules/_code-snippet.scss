@@ -1,9 +1,23 @@
 /*
 
-Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+#########################
+### MOLECULE: code-snippet ###
+#########################
 
 */
 
+.#{molecule('code-snippet')} {
+  overflow: scroll;
+  margin-top: 0;
+  margin-bottom: 1em;
+  padding: 1em;
+  color: color('white');
+  font-weight: bold;
+  background: linear-gradient(10deg, color('river-bed'), color('ebony-clay'));
+}
+
+/* The following classes define a skin valid for highlight.js - to not create
+long messy selectors it is not nested inside the code-snippet molecule */
 .hljs {
   display: block;
   overflow-x: auto;
