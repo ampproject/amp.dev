@@ -1,6 +1,5 @@
 ---
 $title: ¡Bien hecho!
-$order: 8
 ---
 
 Has creado correctamente tu primera historia de AMP.
