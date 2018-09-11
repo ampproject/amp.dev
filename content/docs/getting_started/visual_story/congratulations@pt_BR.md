@@ -1,6 +1,5 @@
 ---
 $title: Parabéns!
-$order: 8
 ---
 
 Você concluiu sua primeira história AMP!
