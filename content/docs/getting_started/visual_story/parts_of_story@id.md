@@ -1,6 +1,5 @@
 ---
 $title: Memahami bagian dari artikel AMP
-$order: 1
 ---
 
 Artikel AMP adalah fitur bercerita visual dengan layar penuh yang menyampaikan informasi dengan gambar, video, grafik, audio, dan lainnya. Fitur ini sangat cocok untuk pengguna yang menginginkan konten berukuran kecil tetapi kaya secara visual.  
