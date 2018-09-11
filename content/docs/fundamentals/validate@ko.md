@@ -1,10 +1,5 @@
 ---
 $title: AMP 페이지 유효성 검사
-$order: 7
-$category: Debug
-toc: true
-components:
-    - youtube
 ---
 [TOC]
 
