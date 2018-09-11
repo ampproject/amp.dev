@@ -8,7 +8,7 @@ media_order: 'amp-img-01.png,amp-img-02.png'
 # Float Image
 [/stage]
 
-## How to use
+### How to use
 In documents you can simply add in a float image by using the `[raw][float-image][/raw]` shortcode together with two default images.
 ````markdown
 [raw]
@@ -37,10 +37,10 @@ This shortcode renders the following twig template.
   </div>
 </div>
 ```
-  
+
 ---
-  
-## Demo
+
+### Demo
 The `[raw][float-image][/raw]` shortcode renders something similiar to the following
 [float-image]
 ![](amp-img-01.png)

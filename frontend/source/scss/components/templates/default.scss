@@ -46,23 +46,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @extend .#{atom('ad-a-hl-h1')} !optional;
+  @extend .#{atom('hl-h1')} !optional;
 }
 
 h2 {
-  @extend .#{atom('ad-a-hl-h2')} !optional;
+  @extend .#{atom('hl-h2')} !optional;
 }
 
 h3 {
-  @extend .#{atom('ad-a-hl-h3')} !optional;
+  @extend .#{atom('hl-h3')} !optional;
 }
 
 h4 {
-  @extend .#{atom('ad-a-hl-h4')} !optional;
+  @extend .#{atom('hl-h4')} !optional;
 }
 
 h5 {
-  @extend .#{atom('ad-a-hl-h5')} !optional;
+  @extend .#{atom('hl-h5')} !optional;
 }
 
 p {

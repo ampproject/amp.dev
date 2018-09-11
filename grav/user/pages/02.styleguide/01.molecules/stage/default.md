@@ -7,7 +7,7 @@ title: Stage
 # Stage
 [/stage]
 
-## How to use
+### How to use
 To add a stage to your document use the shortcode `[raw][stage color=blue|grey|orange][/raw]` shortcode and add any text content you like between the opening and closing tag.
 ````markdown
 [raw]
@@ -31,7 +31,7 @@ This shortcode renders the following twig template.
 
 ---
 
-## Demo
+### Demo
 For example `[raw][stage color=blue][/raw]` would render the following stage
 [stage color=blue]
 ### This is a incredible
