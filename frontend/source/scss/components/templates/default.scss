@@ -27,10 +27,15 @@
 @import '../organisms/header';
 
 main {
-  width: 40%;
+  width: 100%;
   max-width: 1260px;
   margin: 0 auto;
   padding: 0 30px;
+
+  @media screen and (min-width: 768px){
+    width: 40%;
+  }
+
 }
 
 h1, h2, h3, h4, h5, h6 {
