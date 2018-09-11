@@ -1,6 +1,5 @@
 ---
 $title: Criação do bookend
-$order: 6
 ---
 
 Depois de adicionar todas as páginas, veremos a última tela da história, o "bookend".  Essa tela encerra a história e permite incluir links de compartilhamento social e relacionados à sua história. Assim, os usuários podem compartilhar o material ou navegar mais em outros conteúdos do seu site.
