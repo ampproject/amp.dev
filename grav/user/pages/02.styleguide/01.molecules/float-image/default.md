@@ -5,7 +5,7 @@ media_order: 'amp-img-01.png,amp-img-02.png'
 
 [stage color=orange]
 ### What is AMP?
-# AMP is a web component framework for easily creating user first websites
+# AMP is a web component framework for easily creating user first websites that are getting stacked on top of each other.
 [/stage]
 
 # Float Image
