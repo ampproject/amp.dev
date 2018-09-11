@@ -1,9 +1,5 @@
 ---
 $title: Integrar AMP ao seu aplicativo 
-$order: 6
-$category: Develop
-toc: true
-
 ---
 
 Este guia é voltado a desenvolvedores de apps da Web e para dispositivos móveis que queiram integrar e vincular aplicativos a páginas AMP. Um exemplo disso seria um aplicativo de bate-papo para dispositivos móveis que carrega a versão AMP de um URL compartilhado para proporcionar uma experiência mais rápida aos usuários.
