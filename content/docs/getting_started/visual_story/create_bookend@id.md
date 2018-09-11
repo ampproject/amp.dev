@@ -1,6 +1,5 @@
 ---
 $title: Membuat bookend
-$order: 6
 ---
 
 Setelah menambahkan semua halaman, sekarang mari kita lihat layar terakhir artikel, yang disebut "bookend".  Layar terakhir ini menjadi penutup artikel, dan dapat Anda gunakan untuk menampilkan opsi berbagi di media sosial dan link terkait ke artikel Anda agar pengguna dapat membagikan berita tersebut atau mencari informasi lebih lanjut tentang konten lain di situs Anda.
