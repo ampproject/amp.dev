@@ -83,7 +83,7 @@ class Assets extends \Grav\Common\Assets
       $scripts = '';
 
       foreach ($this->amp_components as $component) {
-        $scripts .= '<script src="'.$component['url'].'" '.$component['type'].'="'.$component['name'].'"></script>';
+        $scripts .= '<script async src="'.$component['url'].'" '.$component['type'].'="'.$component['name'].'"></script>';
       }
 
       return str_replace(self::AMP_COMPONENTS_PLACEHOLDER, $scripts, $output);

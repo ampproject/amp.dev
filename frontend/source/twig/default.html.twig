@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<html amp lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
   {% block head %}
   <meta charset="utf-8" />
@@ -8,7 +8,8 @@
   </title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   {% include 'partials/metadata.html.twig' %}
 
   <link rel="canonical" href="{{ page.url(true, true) }}" />
@@ -26,22 +27,22 @@
   {{ assets.js() }}
   {{ assets.ampComponents() }}
 
-
-  {% block icons %}
-  {% endblock icons %}
-  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    {{ icons.definitions() }}
-  </svg>
   {% endblock head %}
 </head>
 
 <body>
+    {% block icons %}
+    {% endblock icons %}
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      {{ icons.definitions() }}
+    </svg>
   {% block header %}
+
   {% include 'partials/default/header.html.twig' %}
   {% endblock %}
 
   {% block body %}
-  {{ page.content }}
+  <div id="content">{{ page.content }}</div>
   {% endblock body %}
 
   {% do assets.addAmpComponent('amp-font') %}
