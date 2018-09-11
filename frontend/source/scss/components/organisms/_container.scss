@@ -7,4 +7,18 @@
 */
 
 .#{organism('container')} {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 100%;
+	margin-bottom: 5em;
+
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(12, 1fr);
+
+    .col-full {
+      grid-column: 1 / -1;
+    }
+  }
 }
