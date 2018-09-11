@@ -15,7 +15,28 @@ class MarkdownExtender {
       $this->markdown = $markdown;
 
       $this->addAmpImage();
+      $this->addStyledInlineCode();
       $this->addHighlightedFencedCode();
+  }
+
+  protected function addStyledInlineCode() {
+    $this->markdown->addInlineType('`', 'StyledInlineCode', 0);
+
+    /**
+     * Rewrites the default <img> to an <amp-img> while using responsive as
+     * default layout
+     * @var string $Excerpt
+     * @return array An Inline valid for Parsedown::element()
+     */
+    $inlineStyledInlineCode = function($Excerpt) {
+      $Inline = parent::inlineCode($Excerpt);
+
+      $Inline['element']['attributes']['class'] = 'ad-a-txt ad-a-txt-mono-inline';
+
+      return $Inline;
+    };
+
+    $this->markdown->inlineStyledInlineCode = $inlineStyledInlineCode->bindTo($this->markdown, $this->markdown);
   }
 
   protected function addAmpImage() {
