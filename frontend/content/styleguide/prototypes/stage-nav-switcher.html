@@ -1,4 +1,4 @@
-$title: Stage Home
+$title: Stage drop down
 ---
 
 <!doctype html>
@@ -24,15 +24,6 @@ $title: Stage Home
 				}
 				to {
 					width: 100%;
-				}
-			}
-
-			@keyframes growDown {
-				from {
-					height: 50px;
-				}
-				to {
-					height: 200px;
 				}
 			}
 
@@ -75,11 +66,12 @@ $title: Stage Home
 				height: 50px;
 				overflow: hidden;
 				display: flex;
+        transition: height 0.5s ease;
 			}
 
 			.stage-list-viewbox:hover {
-				animation: growDown 0.5s ease;
-				animation-fill-mode: forwards;
+        height: 200px;
+        transition: height 0.5s ease;
 			}
 
       .stage-list-viewbox:hover .ad-a-ico {
@@ -106,8 +98,6 @@ $title: Stage Home
 			{# default list item #}
 
 			.stage-list-item {
-				position: relative;
-				border: none;
 				font-family: Poppins;
 				font-size: 32px;
 				order: 2;
@@ -116,7 +106,7 @@ $title: Stage Home
 
 
 			.stage-list-item:hover {
-				margin-left: 20px;
+				margin-left: 2px;
 			}
 
 			{# selcted list item #}
@@ -178,10 +168,7 @@ $title: Stage Home
 				width: 25px;
 				z-index: 10;
 				background: #fff;
-				padding: 0 20px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
+				padding: 10px 10px;
 			}
 
     </style>
@@ -198,7 +185,7 @@ $title: Stage Home
 				<div class="stage-list-viewbox">
 					<amp-selector layout="container" on="select:AMP.setState({stages:{currentStage: event.targetOption}})">
 						<ul class="stage-list stage-list-animate" [class]="stages.currentStage == 'default' ? 'stage-list stage-list-animate' : 'stage-list'">
-							<li option="0" class="stage-list-item websites">websites</li>
+							<li option="0" class="stage-list-item websites" selected>websites</li>
 							<li option="1" class="stage-list-item stories">stories</li>
 							<li option="2" class="stage-list-item ads">ads</li>
 							<li option="3" class="stage-list-item email">emails</li>
