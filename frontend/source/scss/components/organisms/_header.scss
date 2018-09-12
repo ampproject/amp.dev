@@ -47,3 +47,12 @@
     &-sub-nav &-lnk-list {
     }
 }
+
+##{organism('header')}-content-indicator {
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 100vh);
+  top: calc(100vh + 2px);
+  left: 0;
+  pointer-events: none;
+}

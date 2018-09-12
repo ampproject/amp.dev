@@ -18,15 +18,28 @@
   </nav>
 
   {% set subNavigation = page.evaluate([{'@page.children':page.route}]).visible().published().routable() %}
-  {% if subNavigation is not empty  %}
-    {% do assets.addAmpComponent('amp-position-observer') %}
+  {% if not subNavigation|empty  %}
     {% do assets.addAmpComponent('amp-animation') %}
-    <amp-position-observer
-      intersection-ratios="1"
-      target="content"
-      on="enter:subnavAnim.start;exit:subnavAnimReverse.start"
-      layout="nodisplay">
-    </amp-position-observer>
+    <amp-animation id="header-animation" layout="nodisplay">
+      <script type="application/json">
+          {
+          "duration": "500ms",
+          "fill": "both",
+          "animations": [
+            {
+              "selector": ".ad-o-header",
+              "keyframes": [
+                { "transform": "translateY(0%)" },
+                { "transform": "translateY(-50%)" }
+              ]
+            }
+          ]
+        }
+      </script>
+    </amp-animation>
+
+    {% do assets.addAmpComponent('amp-position-observer') %}
+    <amp-position-observer intersection-ratios="0 1" target="ad-o-header-content-indicator" on="enter:header-animation.start;exit:header-animation.start,header-animation.reverse" layout="nodisplay"></amp-position-observer>
 
     <nav class="ad-o-header-sub-nav">
       <ul class="ad-o-header-lnk-list">
@@ -41,3 +54,9 @@
     </nav>
   {% endif %}
 </header>
+
+{% if not subNavigation|empty  %}
+{# The following element is the target used for the position observer - as <thead>
+  header itself is fixed it needs to be outside of <header> #}
+<div id="ad-o-header-content-indicator"></div>
+{% endif %}

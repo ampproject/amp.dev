@@ -27,7 +27,7 @@
 @import '../organisms/header';
 @import '../organisms/stage';
 
-main {
+main#content {
   width: 100%;
   margin: 0 auto;
   padding-top: 80px;
@@ -38,7 +38,6 @@ main {
   @media screen and (min-width: 768px){
     max-width: 1260px;
     width: 40%;
-    min-height: 300vh;
   }
 }
 
