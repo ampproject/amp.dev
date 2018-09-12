@@ -84,6 +84,13 @@ $title: Stage drop down
 				transition: transform 0.5s ease;
 			}
 
+      .stage-list-viewbox:hover .stage-list-item[selected] {
+				background-color: #CCCCCC;
+				transform: translateY(0%);
+				margin: 5px;
+			}
+
+
 			.stage-list {
 				display: flex;
 				flex-direction: column; {# set to display:flex for order of items, selected item is always at top of list #}
@@ -118,12 +125,6 @@ $title: Stage drop down
 
 			.stage-list-item[selected]:hover {
 				margin-left: 5px;
-			}
-
-			.stage-list:hover .stage-list-item[selected] {
-				background-color: #CCCCCC;
-				transform: translateY(0%);
-				margin: 5px;
 			}
 
 
