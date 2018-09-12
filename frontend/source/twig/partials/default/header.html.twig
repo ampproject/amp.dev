@@ -18,7 +18,7 @@
   </nav>
 
   {% set subNavigation = page.evaluate([{'@page.children':page.route}]).visible().published().routable() %}
-  {% if not subNavigation|empty  %}
+  {% if subNavigation is not empty  %}
     {% do assets.addAmpComponent('amp-animation') %}
     <amp-animation id="header-animation" layout="nodisplay">
       <script type="application/json">
@@ -55,7 +55,7 @@
   {% endif %}
 </header>
 
-{% if not subNavigation|empty  %}
+{% if subNavigation is not empty %}
 {# The following element is the target used for the position observer - as <thead>
   header itself is fixed it needs to be outside of <header> #}
 <div id="ad-o-header-content-indicator"></div>
