@@ -1,6 +1,6 @@
 ---
 $order: 29
-$title: Renovation Brands
+$title: Jagran New Media
 $date: Sep 12, 2018
 $category: Publishers
 $parent: /content/learn/case-studies.html
