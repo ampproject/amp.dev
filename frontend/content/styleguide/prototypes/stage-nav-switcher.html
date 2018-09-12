@@ -1,0 +1,204 @@
+$title: Stage drop down
+---
+
+<!doctype html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+    <title>{{ doc.title }}</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+		<link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+
+		<script async src="https://cdn.ampproject.org/v0.js"></script>
+		<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+		<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400|Poppins:700" rel="stylesheet">
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+
+
+			@keyframes growRight {
+				from {
+					width: 0%;
+				}
+				to {
+					width: 100%;
+				}
+			}
+
+			.hero {
+				width: 100%;
+				height: 100vh;
+				z-index: 1;
+				position: absolute;
+			}
+
+			.hero-active {
+				animation: growRight 1s ease-in-out;
+				z-index: 10;
+			}
+
+
+			.content {
+				position: relative;
+				padding: 10% 0 0 5%;
+				z-index: 10;
+				max-width: 250px;
+			}
+
+			@media screen and (min-width: 768px) {
+				.content {
+					max-width: 550px;
+				}
+			}
+
+			.headline {
+				margin: 0;
+				display: inline;
+				font-size: 2em;
+				font-family: Poppins;
+				padding-right: 12px;
+				color: #ffffff;
+			}
+
+			.stage-list-viewbox {
+				height: 50px;
+				overflow: hidden;
+				display: flex;
+        transition: height 0.5s ease;
+			}
+
+			.stage-list-viewbox:hover {
+        height: 200px;
+        transition: height 0.5s ease;
+			}
+
+      .stage-list-viewbox:hover .ad-a-ico {
+        justify-content: flex-start;
+        padding-top: 10px;
+      }
+
+			.stage-list-viewbox:hover svg {
+				transform: rotate(180deg);
+				transition: transform 0.5s ease;
+			}
+
+			.stage-list {
+				display: flex;
+				flex-direction: column; {# set to display:flex for order of items, selected item is always at top of list #}
+				background-color: #ffffff;
+				padding: 0;
+				list-style: none;
+				margin: 0;
+				padding-left: 5px;
+				height: 100%;
+			}
+
+			{# default list item #}
+
+			.stage-list-item {
+				font-family: Poppins;
+				font-size: 32px;
+				order: 2;
+				outline: #ffffff;
+			}
+
+
+			.stage-list-item:hover {
+				margin-left: 2px;
+			}
+
+			{# selcted list item #}
+
+			.stage-list-item[selected][option] {
+				order: 1;
+				outline:  1px solid #ffffff;
+			}
+
+			.stage-list-item[selected]:hover {
+				margin-left: 5px;
+			}
+
+			.stage-list:hover .stage-list-item[selected] {
+				background-color: #CCCCCC;
+				transform: translateY(0%);
+				margin: 5px;
+			}
+
+
+			{# stage-list-item font colors #}
+
+			.websites {
+				color: #21C1FA;
+			}
+
+			.stories {
+				color: #FFE100;
+			}
+
+			.ads {
+				color: #FF8F00;
+			}
+
+			.email {
+				color: #38CA71;
+			}
+
+			{# hero gradients #}
+
+			.hero-websites {
+				background: linear-gradient(45deg,  #21C1FA, #005AF0);
+			}
+
+			.hero-stories {
+				background: linear-gradient(45deg, #FFE100, #FF8F00);
+			}
+
+			.hero-ads {
+				background: linear-gradient(45deg, #FF8F00, #EF0000);
+			}
+
+			.hero-email {
+				background: linear-gradient(45deg, #38CA71,#00CD3C);
+			}
+
+			.ad-a-ico {
+				height: 100%;
+				width: 25px;
+				z-index: 10;
+				background: #fff;
+				padding: 10px 10px;
+			}
+
+    </style>
+</head>
+<body>
+	<div class="stage">
+		<div [class]="stages.currentStage == 0 ? 'hero hero-websites hero-active' : 'hero hero-websites'" class="hero hero-websites"></div>
+		<div [class]="stages.currentStage == 1 ? 'hero hero-stories hero-active' : 'hero hero-stories'" class="hero hero-stories"></div>
+		<div [class]="stages.currentStage == 2 ? 'hero hero-ads hero-active' : 'hero hero-ads'"  class="hero hero-ads"></div>
+		<div [class]="stages.currentStage == 3 ? 'hero hero-email hero-active' : 'hero hero-email'"class="hero hero-email"></div>
+		<div class="content">
+			<h3 class="headline">AMP is a web component based framework for easily creating user first </h3>
+			<div style="display:inline; position: absolute; height: 50px;">
+				<div class="stage-list-viewbox">
+					<amp-selector layout="container" on="select:AMP.setState({stages:{currentStage: event.targetOption}})">
+						<ul class="stage-list stage-list-animate" [class]="stages.currentStage == 'default' ? 'stage-list stage-list-animate' : 'stage-list'">
+							<li option="0" class="stage-list-item websites" selected>websites</li>
+							<li option="1" class="stage-list-item stories">stories</li>
+							<li option="2" class="stage-list-item ads">ads</li>
+							<li option="3" class="stage-list-item email">emails</li>
+						</ul>
+					</amp-selector>
+					<div class="ad-a-ico">
+						<svg id="arrow-down-thin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+							<path d="M59.863 17.14l4.137 5.488-32 24.232-32-24.232 4.137-5.488 27.863 21.108z"></path>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
