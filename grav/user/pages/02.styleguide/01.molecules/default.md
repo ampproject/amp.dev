@@ -1,3 +1,3 @@
 ---
-title: Styleguide
+title: Molecules
 ---

@@ -70,3 +70,11 @@ p {
   @extend .#{atom('txt-2')} !optional;
   @extend .#{atom('txt-p')} !optional;
 }
+
+a {
+  @extend .#{atom('txt')} !optional;
+  @extend .#{atom('txt-blue-ribbon')} !optional;
+  @extend .#{atom('txt-font-accent')} !optional;
+  @extend .#{atom('txt-strong')} !optional;
+  text-decoration: none;
+}

@@ -79,7 +79,9 @@
 
   {% block body %}
   <main id="content">
-  {{ page.content }}
+    {% block content %}
+    {{ page.content }}
+    {% endblock %}
   </main>
   {% endblock body %}
 
