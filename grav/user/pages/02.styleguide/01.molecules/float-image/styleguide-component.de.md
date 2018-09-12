@@ -2,15 +2,9 @@
 title: 'Float Image'
 media_order: 'amp-img-01.png,amp-img-02.png'
 ---
-
-[stage color=grey]
-### Molecule
-# Float Image
-[/stage]
-
-### How to use
-In documents you can simply add in a float image by using the `[raw][float-image][/raw]` shortcode together with two default images.
-````markdown
+[section name="howToUse"]
+Zwei übereinander schwebende Bilder können über den Shortcode `[raw][float-image][/raw]` eingefügt werden, die zwei Bildtags umschließen.
+```markdown
 [raw]
 [float-image]
 ![](amp-img-01.png)
@@ -19,7 +13,7 @@ In documents you can simply add in a float image by using the `[raw][float-image
 [/raw]
 ```
 
-This shortcode renders the following twig template.
+Dieser Shortcode rendert dann das folgende Template
 ```twig
 <div class="ad-o-container">
   <div class="ad-m-float-image col-full">
@@ -37,12 +31,12 @@ This shortcode renders the following twig template.
   </div>
 </div>
 ```
+[/section]
 
----
-
-### Demo
-The `[raw][float-image][/raw]` shortcode renders something similiar to the following
+[section name="demo"]
+Der Shortcode `[raw][float-image][/raw]` sieht auf der Seite eingebunden dann so aus
 [float-image]
 ![](amp-img-01.png)
 ![](amp-img-02.png)
 [/float-image]
+[/section]

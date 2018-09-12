@@ -1,17 +1,11 @@
 ---
 title: Stage
 ---
-
-[stage color=grey]
-### Molecule
-# Stage
-[/stage]
-
-### How to use
-To add a stage to your document use the shortcode `[raw][stage color=blue|grey|orange][/raw]` shortcode and add any text content you like between the opening and closing tag.
-````markdown
+[section name="howToUse"]
+To add a stage to your document use the shortcode `[raw][stage color="blue|grey|orange"][/raw]` shortcode and add any text content you like between the opening and closing tag.
+```markdown
 [raw]
-[stage color=grey]
+[stage color="grey"]
 ### Molecule
 # Stage
 [/stage]
@@ -28,10 +22,9 @@ This shortcode renders the following twig template.
   </div>
 </section>
 ```
+[/section]
 
----
-
-### Demo
+[section name="demo"]
 For example `[raw][stage color=blue][/raw]` would render the following stage
 [stage color=blue]
 ### This is a incredible
@@ -43,3 +36,4 @@ While changing the color like in `[raw][stage color=orange][/raw]` would resolve
 ### This is a splendid
 # Orange demo stage
 [/stage]
+[/section]

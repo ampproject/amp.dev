@@ -62,9 +62,12 @@ long messy selectors it is not nested inside the code-snippet molecule */
 
 .hljs-keyword,
 .hljs-selector-tag,
-.hljs-name,
+.hljs-name {
+  color: #FC5880;
+}
+
 .hljs-attr {
-  color: #f92672;
+  color: #54E4FA;
 }
 
 .hljs-symbol,
@@ -87,7 +90,7 @@ long messy selectors it is not nested inside the code-snippet molecule */
 .hljs-addition,
 .hljs-variable,
 .hljs-template-variable {
-  color: #e6db74;
+  color: #FBCF57;
 }
 
 .hljs-comment,
