@@ -1,0 +1,19 @@
+{% extends 'default.html.twig' %}
+
+{% block content %}
+{{ page.content }}
+
+{# Check for child pages, list them as headlines and their childpages as
+a links list #}
+{% set categoryPages = page.evaluate([{'@page.children': page.route}]).visible().published().routable() %}
+{% for category in categoryPages %}
+<h2>{{ category.title }}</h2>
+{% set childPages = page.evaluate([{'@page.children': category.route}]).routable() %}
+<ul>
+  {% for child in childPages %}
+  <li><a href="{{ child.route }}">{{ child.title }}</a></li>
+  {% endfor %}
+</ul>
+<hr>
+{% endfor %}
+{% endblock %}
