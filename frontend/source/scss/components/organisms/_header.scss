@@ -8,6 +8,7 @@
 
 .#{organism('header')} {
   position: fixed;
+  z-index: 1;
   top: 0;
   width: 100vw;
 
@@ -25,12 +26,15 @@
     max-width: 1280px;
     margin: 0 auto;
     align-items: center;
-    margin-left: 0;
   }
 
   &-lnk {
     margin: 0 20px;
     white-space: nowrap;
+
+    &-lang {
+      margin-left: auto;
+    }
   }
 
   &-main-nav {
@@ -46,4 +50,13 @@
 
     &-sub-nav &-lnk-list {
     }
+}
+
+##{organism('header')}-content-indicator {
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 100vh);
+  top: calc(100vh + 2px);
+  left: 0;
+  pointer-events: none;
 }

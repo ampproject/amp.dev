@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit46d66fae84b676494dd01b62a3075e4f
 {
     public static $prefixLengthsPsr4 = array (
+        'M' => 
+        array (
+            'Masterminds\\' => 12,
+        ),
         'G' => 
         array (
             'Grav\\Theme\\AmpDev\\' => 18,
@@ -14,6 +18,10 @@ class ComposerStaticInit46d66fae84b676494dd01b62a3075e4f
     );
 
     public static $prefixDirsPsr4 = array (
+        'Masterminds\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
         'Grav\\Theme\\AmpDev\\' => 
         array (
             0 => __DIR__ . '/../..' . '/classes',

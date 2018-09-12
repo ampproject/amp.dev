@@ -8,7 +8,6 @@ import settings from '~/setup/settings.js';
  * Builds the sass files to CSS
  */
 export default function styles(done) {
-  console.log('Building', settings.styles.src);
     let stream = gulp.src(settings.styles.src)
                      .pipe(sass(settings.styles.options).on('error', sass.logError));
 

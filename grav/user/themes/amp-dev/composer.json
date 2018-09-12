@@ -3,7 +3,8 @@
     "description": "Grav theme for the homepage of the AMP Project at amp.dev",
     "type": "project",
     "require": {
-        "scrivo/highlight.php": "v9.12.0.5"
+        "scrivo/highlight.php": "v9.12.0.5",
+        "masterminds/html5": "^2.3"
     },
     "autoload": {
       "psr-4": {

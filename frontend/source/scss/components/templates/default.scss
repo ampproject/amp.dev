@@ -6,7 +6,6 @@
 
 @import '../atoms/headline';
 @import '../atoms/text';
-@import '../atoms/code';
 @import '../atoms/button';
 @import '../atoms/icon';
 @import '../atoms/image';
@@ -21,12 +20,61 @@
 @import '../molecules/kpi';
 @import '../molecules/benefit';
 @import '../molecules/event';
+@import '../molecules/code-snippet';
 
+@import '../organisms/container';
 @import '../organisms/list';
 @import '../organisms/header';
+@import '../organisms/stage';
+
+main#content {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-right: 30px;
+  padding-left: 30px;
+  color: color('black');
+
+  @media screen and (min-width: 768px){
+    max-width: 1260px;
+    width: 40%;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend .#{atom('hl')} !optional;
+}
+
+h1 {
+  @extend .#{atom('hl-h1')} !optional;
+}
+
+h2 {
+  @extend .#{atom('hl-h2')} !optional;
+}
+
+h3 {
+  @extend .#{atom('hl-h3')} !optional;
+}
+
+h4 {
+  @extend .#{atom('hl-h4')} !optional;
+}
+
+h5 {
+  @extend .#{atom('hl-h5')} !optional;
+}
 
 p {
-	@extend .#{atom('txt')} !optional;
-	@extend .#{atom('txt-3')} !optional;
-	@extend .#{atom('txt-p')} !optional;
+  @extend .#{atom('txt')} !optional;
+  @extend .#{atom('txt-2')} !optional;
+  @extend .#{atom('txt-p')} !optional;
+}
+
+a {
+  @extend .#{atom('txt')} !optional;
+  @extend .#{atom('txt-blue-ribbon')} !optional;
+  @extend .#{atom('txt-font-accent')} !optional;
+  @extend .#{atom('txt-strong')} !optional;
+  text-decoration: none;
 }

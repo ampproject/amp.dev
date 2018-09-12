@@ -22,8 +22,6 @@
 
   {% block javascripts %}
     {% do assets.addJs('https://cdn.ampproject.org/v0.js', {'loading': 'async'}) %}
-    {% do assets.addAmpComponent('amp-sidebar') %}
-    {% do assets.addAmpComponent('amp-animation') %}
 
   {% endblock %}
   {{ assets.js() }}
@@ -33,52 +31,20 @@
 </head>
 
 <body>
-  <amp-animation id="subnavAnim" layout="nodisplay">
-    <script type="application/json">
-        {
-        "duration": "0500ms",
-        "fill": "both",
-        "animations": [
-          {
-            "selector": ".ad-o-header",
-            "keyframes": [
-              { "transform": "translateY(0%)" },
-              { "transform": "translateY(-50%)" }
-            ]
-          }
-        ]
-      }
-    </script>
-  </amp-animation>
-  <amp-animation id="subnavAnimReverse" layout="nodisplay">
-      <script type="application/json">
-          {
-          "duration": "0500ms",
-          "fill": "both",
-          "animations": [
-            {
-              "selector": ".ad-o-header",
-              "keyframes": [
-                { "transform": "translateY(-50%)" },
-                { "transform": "translateY(0%)" }
-              ]
-            }
-          ]
-        }
-      </script>
-    </amp-animation>
-    {% block icons %}
-    {% endblock icons %}
-    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      {{ icons.definitions() }}
-    </svg>
-  {% block header %}
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    {{ icons.definitions() }}
+  </svg>
 
+  {% block header %}
   {% include 'partials/default/header.html.twig' %}
   {% endblock %}
 
   {% block body %}
-  <div id="content">{{ page.content }}</div>
+  <main id="content">
+    {% block content %}
+    {{ page.content }}
+    {% endblock %}
+  </main>
   {% endblock body %}
 
   {% do assets.addAmpComponent('amp-font') %}

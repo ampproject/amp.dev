@@ -1,7 +1,4 @@
-<div class="ad-o-header-background ad-o-header-background-{{ page.slug }}"></div>
-
 <header class="ad-o-header">
-
   {# TODO: Comparing the title to 'Home' will not work in i18n #}
   <nav class="ad-o-header-main-nav">
     <ul class="ad-o-header-lnk-list">
@@ -12,30 +9,52 @@
       {% for mainPage in mainNavigation %}
       <li class="ad-o-header-lnk">
         {# TODO: Comparing the title to 'Home' will not work in i18n #}
-        <a class="ad-m-lnk ad-m-lnk-underline-{% if page.title != 'Home' %}dark{% else %}light{% endif %}" href="{{ mainPage.route }}">
+        <a class="ad-m-lnk ad-m-lnk-underline-{% if page.title != 'Home' %}dark{% else %}light{% endif %}" href="{{ mainPage.url }}">
           <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-{% if page.title == mainPage.title %}blue-ribbon{% else %}dark{% endif %}">{{ mainPage.title }}</span>
         </a>
       </li>
       {% endfor %}
+      <li class="ad-o-header-lnk ad-o-header-lnk-lang">
+        {% for language in grav.language.getLanguages %}
+        <a href="{{ grav.language.getLanguageURLPrefix(language) }}{{ page.route }}">
+          <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-dark">
+            {{ language|upper }}
+          </span>
+        </a>
+        {% endfor %}
+      </li>
     </ul>
   </nav>
 
   {% set subNavigation = page.evaluate([{'@page.children':page.route}]).visible().published().routable() %}
   {% if subNavigation is not empty  %}
-    {% do assets.addAmpComponent('amp-position-observer') %}
     {% do assets.addAmpComponent('amp-animation') %}
-    <amp-position-observer
-      intersection-ratios="1"
-      target="content"
-      on="enter:subnavAnim.start;exit:subnavAnimReverse.start"
-      layout="nodisplay">
-    </amp-position-observer>
+    <amp-animation id="header-animation" layout="nodisplay">
+      <script type="application/json">
+          {
+          "duration": "500ms",
+          "fill": "both",
+          "animations": [
+            {
+              "selector": ".ad-o-header",
+              "keyframes": [
+                { "transform": "translateY(0%)" },
+                { "transform": "translateY(-50%)" }
+              ]
+            }
+          ]
+        }
+      </script>
+    </amp-animation>
+
+    {% do assets.addAmpComponent('amp-position-observer') %}
+    <amp-position-observer intersection-ratios="0 1" target="ad-o-header-content-indicator" on="enter:header-animation.start;exit:header-animation.start,header-animation.reverse" layout="nodisplay"></amp-position-observer>
 
     <nav class="ad-o-header-sub-nav">
       <ul class="ad-o-header-lnk-list">
         {% for subPage in subNavigation %}
         <li class="ad-o-header-lnk">
-          <a class="ad-m-lnk ad-m-lnk-underline-dark" href="{{ subPage.route }}">
+          <a class="ad-m-lnk ad-m-lnk-underline-dark" href="{{ subPage.url }}">
             <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-{% if page.title == subPage.title %}blue-ribbon{% else %}dark{% endif %}">{{ subPage.title }}</span>
           </a>
         </li>
@@ -44,3 +63,9 @@
     </nav>
   {% endif %}
 </header>
+
+{% if subNavigation is not empty %}
+{# The following element is the target used for the position observer - as <thead>
+  header itself is fixed it needs to be outside of <header> #}
+<div id="ad-o-header-content-indicator"></div>
+{% endif %}
