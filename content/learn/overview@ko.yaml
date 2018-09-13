@@ -54,9 +54,15 @@
         <p>[AMP HTML 페이지 테스트](/ko/docs/fundamentals/debug/validate.html)에 대해 자세히 알아보세요.
 
 video:
+  description: 입문 동영상으로 AMP 프로젝트에 대해 더 알아보세요
   id: CZExvFDi0D0
   line1_img: lines3.svg
   line2_img: line4.svg
+
+resources:
+  title: AMP의 설계 원칙을 배워보세요
+  link_url: /content/learn/about/amp-design-principles.yaml
+  link_text: 설계 원칙 알아보기
 
 cta:
   title: AMP의 기능을 확인하세요
