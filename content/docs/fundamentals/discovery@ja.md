@@ -1,9 +1,5 @@
 ---
 $title: ページが検出されるようにする
-$order: 10
-$category: Deploy
-
-toc: true
 ---
 [TOC]
 
