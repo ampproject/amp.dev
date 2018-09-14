@@ -1,9 +1,5 @@
 ---
 $title: Criar uma história visual com AMP
-$order: 4
-components:
-    - video
-tutorial: true
 ---
 
 {{ video('/static/video/tut_pets-story-complete.mp4', 374, 667, '/static/img/docs/tutorials/amp_story/story_poster.png', caption='História AMP concluída', align='right third', autoplay='true', loop='true' ) }}
