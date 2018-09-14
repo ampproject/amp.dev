@@ -1,6 +1,5 @@
 ---
 $title: Validar o HTML para AMP 
-$order: 7
 ---
 
 Sempre que você criar uma página AMP, será preciso confirmar que o HTML para AMP está correto. Há [vários métodos possíveis para validar suas páginas AMP](/pt_br/docs/fundamentals/validate.html).  Neste tutorial, ativaremos o validador de AMP usando o modo de desenvolvedor.  Para isso, adicione o seguinte identificador de fragmentos ao seu URL e atualize a página:
