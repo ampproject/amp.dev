@@ -1,9 +1,5 @@
 ---
 $title: 使您的网页可被轻松发现
-$order: 10
-$category: Deploy
-
-toc: true
 ---
 [TOC]
 
