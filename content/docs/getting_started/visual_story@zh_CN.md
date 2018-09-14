@@ -1,9 +1,5 @@
 ---
 $title: 创建一个视觉效果丰富的 AMP 故事
-$order: 4
-components:
-    - 视频
-tutorial: true
 ---
 
 {{ video('/static/video/tut_pets-story-complete.mp4', 374, 667, '/static/img/docs/tutorials/amp_story/story_poster.png', caption='已完工的 AMP 故事', align='right third', autoplay='true', loop='true' ) }}
