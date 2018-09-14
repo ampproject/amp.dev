@@ -1,9 +1,5 @@
 ---
 $title: ビジュアルに訴える AMP ストーリーを作成する
-$order: 4
-components:
-    - video
-tutorial: true
 ---
 
 {{ video('/static/video/tut_pets-story-complete.mp4', 374, 667, '/static/img/docs/tutorials/amp_story/story_poster.png', caption='完成した AMP ストーリー', align='right third', autoplay='true', loop='true' ) }}
