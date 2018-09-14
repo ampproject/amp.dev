@@ -1,9 +1,5 @@
 ---
 $title: Membuat halaman Anda mudah ditemukan
-$order: 10
-$category: Deploy
-
-toc: true
 ---
 [TOC]
 
