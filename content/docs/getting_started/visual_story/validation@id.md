@@ -1,6 +1,5 @@
 ---
 $title: Memvalidasi HTML AMP Anda 
-$order: 7
 ---
 
 Setiap kali membuat halaman AMP, Anda harus selalu memvalidasi bahwa HTML AMP sudah benar. Terdapat [beberapa metode yang dapat digunakan untuk memvalidasi halaman AMP](/id/docs/fundamentals/validate.html).  Dalam tutorial ini, kita akan mengaktifkan Validator AMP dengan mengaktifkan mode developer.  Untuk mengaktifkan mode developer, tambahkan ID fragmen berikut ke URL Anda lalu muat ulang halaman:
