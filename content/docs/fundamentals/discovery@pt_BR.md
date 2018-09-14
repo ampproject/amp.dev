@@ -1,9 +1,5 @@
 ---
 $title: Torne sua página detectável
-$order: 10
-$category: Deploy
-
-toc: true
 ---
 [TOC]
 
