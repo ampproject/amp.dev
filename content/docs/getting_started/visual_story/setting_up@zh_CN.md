@@ -1,7 +1,5 @@
 ---
 $title: 设置
-$order: 0
-$parent: /content/docs/design/visual_story.md
 ---
 
 ## 前提条件
