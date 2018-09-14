@@ -1,7 +1,5 @@
 ---
 $title: コンポーネント
-$order: 0
-toc: true
 ---
 
 [TOC]
