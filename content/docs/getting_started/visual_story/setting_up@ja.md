@@ -1,7 +1,5 @@
 ---
 $title: 設定
-$order: 0
-$parent: /content/docs/design/visual_story@ja.md
 ---
 
 ## 必要な準備
