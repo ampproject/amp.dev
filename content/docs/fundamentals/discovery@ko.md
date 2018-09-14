@@ -1,9 +1,5 @@
 ---
 $title: 페이지를 검색할 수 있도록 설정
-$order: 10
-$category: Deploy
-
-toc: true
 ---
 [TOC]
 
