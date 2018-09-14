@@ -1,7 +1,5 @@
 ---
 $title: Komponen
-$order: 0
-toc: true
 ---
 
 [TOC]
