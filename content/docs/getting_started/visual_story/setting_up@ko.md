@@ -1,7 +1,5 @@
 ---
 $title: 설정
-$order: 0
-$parent: /content/docs/design/visual_story@ko.md
 ---
 
 ## 기본 요건
