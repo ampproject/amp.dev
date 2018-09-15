@@ -47,12 +47,12 @@ $title: ブックエンドを作成する
 <table>
 <thead>
 <tr>
-<th width="20%">Type</th>
-<th>説明</th>
+  <th width="20%">Type</th>
+  <th>説明</th>
 </tr>
 <tr>
-<td>heading</td>
-<td>一連の記事の見出しを指定できます。
+  <td>heading</td>
+  <td>一連の記事の見出しを指定できます。
 <pre class="nopreline">
 {
   "type": "heading",
@@ -60,14 +60,14 @@ $title: ブックエンドを作成する
 },
 </pre>
 <br>
-<figure class="alignment-wrapper half">
-<amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="ブックエンドの見出し"></amp-img>
-</figure>
+  <figure class="alignment-wrapper half">
+  <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="ブックエンドの見出し"></amp-img>
+  </figure>
 </td>
 </tr>
 <tr>
-<td>small</td>
-<td>関連記事へのリンクを設定できます。必要に応じて、小さい画像を指定することもできます。
+  <td>small</td>
+  <td>関連記事へのリンクを設定できます。必要に応じて、小さい画像を指定することもできます。
 <pre class="nopreline">
 {
   "type": "small",
@@ -76,15 +76,15 @@ $title: ブックエンドを作成する
   "image": "assets/bookend_cats.jpg"
 },
 </pre>
-<br>
-<figure class="alignment-wrapper half">
-<amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="ブックエンドの小さい記事"></amp-img>
-</figure>
+  <br>
+  <figure class="alignment-wrapper half">
+  <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="ブックエンドの小さい記事"></amp-img>
+  </figure>
 </td>
 </tr>
 <tr>
-<td>landscape</td>
-<td>記事やその他のコンテンツ（動画など）へのリンクを設定できます。このタイプに関連付けられた画像は、横向きで大きく表示されます。
+  <td>landscape</td>
+  <td>記事やその他のコンテンツ（動画など）へのリンクを設定できます。このタイプに関連付けられた画像は、横向きで大きく表示されます。
 <pre class="nopreline">
 {
   "type": "landscape",
@@ -94,15 +94,15 @@ $title: ブックエンドを作成する
   "category": "Dogs"
 },
 </pre>
-<br>
-<figure class="alignment-wrapper half">
-<amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="ブックエンドの横向きの記事"></amp-img>
-</figure>
+  <br>
+  <figure class="alignment-wrapper half">
+  <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="ブックエンドの横向きの記事"></amp-img>
+  </figure>
 </td>
 </tr>
 <tr>
-<td>portrait</td>
-<td>ストーリーやその他のコンテンツへのリンクを設定できます。このタイプに関連付けられた画像は、縦向きで大きく表示されます。
+  <td>portrait</td>
+  <td>ストーリーやその他のコンテンツへのリンクを設定できます。このタイプに関連付けられた画像は、縦向きで大きく表示されます。
 <pre class="nopreline">
 {
   "type": "portrait",
@@ -112,15 +112,15 @@ $title: ブックエンドを作成する
   "category": "birds"
 },
 </pre>
-<br>
-<figure class="alignment-wrapper half">
-<amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="ブックエンドの縦向きの記事"></amp-img>
-</figure>
+  <br>
+  <figure class="alignment-wrapper half">
+  <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="ブックエンドの縦向きの記事"></amp-img>
+  </figure>
 </td>
 </tr>
 <tr>
-<td>cta-link</td>
-<td>詳細、登録などのボタンとして表示されるカスタム外部リンクを設定できます。
+  <td>cta-link</td>
+  <td>詳細、登録などのボタンとして表示されるカスタム外部リンクを設定できます。
 <pre class="nopreline">
 {
   "type": "cta-link",
@@ -132,10 +132,10 @@ $title: ブックエンドを作成する
   ]
 }
 </pre>
-<br>
-<figure class="alignment-wrapper half">
-<amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="ブックエンドのカスタム外部リンク"></amp-img>
-</figure>
+  <br>
+  <figure class="alignment-wrapper half">
+  <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="ブックエンドのカスタム外部リンク"></amp-img>
+  </figure>
 </td>
 </tr>
 </thead>
