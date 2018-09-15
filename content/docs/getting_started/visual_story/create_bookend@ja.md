@@ -32,9 +32,9 @@ $title: ブックエンドを作成する
 
 ```json
 "shareProviders": [
-"facebook",
-"twitter",
-"email"
+  "facebook",
+  "twitter",
+  "email"
 ],
 ```
 
@@ -55,8 +55,8 @@ $title: ブックエンドを作成する
 <td>一連の記事の見出しを指定できます。
 <pre class="nopreline">
 {
-"type": "heading",
-"text": "More to read"
+  "type": "heading",
+  "text": "More to read"
 },
 </pre>
 <br>
@@ -70,10 +70,10 @@ $title: ブックエンドを作成する
 <td>関連記事へのリンクを設定できます。必要に応じて、小さい画像を指定することもできます。
 <pre class="nopreline">
 {
-"type": "small",
-"title": "Learn about cats",
-"url": "https://wikipedia.org/wiki/Cat",
-"image": "assets/bookend_cats.jpg"
+  "type": "small",
+  "title": "Learn about cats",
+  "url": "https://wikipedia.org/wiki/Cat",
+  "image": "assets/bookend_cats.jpg"
 },
 </pre>
 <br>
@@ -87,11 +87,11 @@ $title: ブックエンドを作成する
 <td>記事やその他のコンテンツ（動画など）へのリンクを設定できます。このタイプに関連付けられた画像は、横向きで大きく表示されます。
 <pre class="nopreline">
 {
-"type": "landscape",
-"title": "Learn about border collies",
-"url": "https://wikipedia.org/wiki/Border_Collie",
-"image": "assets/bookend_dogs.jpg",
-"category": "Dogs"
+  "type": "landscape",
+  "title": "Learn about border collies",
+  "url": "https://wikipedia.org/wiki/Border_Collie",
+  "image": "assets/bookend_dogs.jpg",
+  "category": "Dogs"
 },
 </pre>
 <br>
@@ -105,11 +105,11 @@ $title: ブックエンドを作成する
 <td>ストーリーやその他のコンテンツへのリンクを設定できます。このタイプに関連付けられた画像は、縦向きで大きく表示されます。
 <pre class="nopreline">
 {
-"type": "portrait",
-"title": "Learn about macaws",
-"url": "https://wikipedia.org/wiki/Macaw",
-"image": "assets/bookend_birds.jpg",
-"category": "birds"
+  "type": "portrait",
+  "title": "Learn about macaws",
+  "url": "https://wikipedia.org/wiki/Macaw",
+  "image": "assets/bookend_birds.jpg",
+  "category": "birds"
 },
 </pre>
 <br>
@@ -123,13 +123,13 @@ $title: ブックエンドを作成する
 <td>詳細、登録などのボタンとして表示されるカスタム外部リンクを設定できます。
 <pre class="nopreline">
 {
-"type": "cta-link",
-"links": [
-{
-"text": "Learn more",
-"url": "https://www.ampproject.org/stories/"
-}
-]
+  "type": "cta-link",
+  "links": [
+    {
+      "text": "Learn more",
+      "url": "https://www.ampproject.org/stories/"
+    }
+  ]
 }
 </pre>
 <br>
