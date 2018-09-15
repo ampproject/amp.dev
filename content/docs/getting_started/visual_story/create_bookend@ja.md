@@ -9,7 +9,7 @@ $title: ブックエンドを作成する
 `<amp-story-bookend>` タグは、`amp-story` 内の最後のタグにする必要があります。終了タグ `</amp-story>` の直前に、`<amp-story-bookend></amp-story-bookend>` を**追加**しましょう。`amp-story-bookend` タグ内では、次のように `src` 属性で `bookend.json` ファイルを指定し、`layout="nodisplay"` を設定します。
 
 ```html hl_lines="2"
-   </amp-story-page>
+  </amp-story-page>
   <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
 </amp-story>
 ```
