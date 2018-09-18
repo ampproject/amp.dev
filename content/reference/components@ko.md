@@ -1,7 +1,5 @@
 ---
 $title: 구성요소
-$order: 0
-toc: true
 ---
 
 [TOC]
