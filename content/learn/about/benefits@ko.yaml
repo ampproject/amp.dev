@@ -1,0 +1,48 @@
+$title@: 이점
+$titles:
+  breadcrumb@: Benefits
+class: about-benefits centered
+$parent: /content/learn/overview.yaml
+$view: /views/about-benefits.html
+components:
+  - carousel
+
+intro:
+  title@: 빠르고 매력적인 경험으로 사용자의 참여를 복돋아줍니다.
+  paragraph@: 웹 페이지의 속도는 사용자 경험 및 <a href="https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/">핵심 비즈니스 지표</a>를 향상시킵니다. AMP 페이지는 즉시 로딩되어 Google, Bing, LinkedIn 등을 포함한 AMP 페이지에 링크하는모든 기기 및 플랫폼에서 일관되게 빠른 경험을 제공할 수 있습니다.이러한 성능 향상은 페이지 소비 시간, 재방문 및 클릭를 같은 중요한 수치의 개선을 의미합니다. 
+  
+why:
+  title@: AMP 활용 방법
+  reasons:
+    - title@: 잠재고객의 참여 유도하기
+      paragraph@: AMP 페이지는 일반적으로 1초 이내에 로딩됩니다. 즉 타겟 고객이 AMP 페이지에 도달했을 때 원하는 순간에 원하는 정보를 얻게됩니다. 이 결과, 브랜드 메시지에 적극적으로 참여하고,구매를 완료하는 등 원하는 행동을 이끌어낼 수 있습니다.
+      icon: publishers/publisher_icon_fast.svg
+
+    - title@: 수익 극대화하기
+      paragraph@: 웹페이지가 로드되는 데 1초가 더 걸릴 때마다 전환율은 12%씩 떨어집니다. 사람들이 브랜드와 소통하도록 유도하고 캠페인의 판매 및 실적을 늘리고 싶다면 페이지가 로드되는 속도를 높여야 합니다. AMP는 광고, 방문 페이지 또는 전체 웹사이트 등 어디에서나 사용자에게 더 빠른 환경을 제공합니다.
+      icon: adtech/adtech_icon_revenue.svg
+
+    - title@: 유연성과 제어 기능 유지
+      paragraph@: AMP 형식을 채택하면 AMP의 최적화된 웹 구성 요소를 활용하는 동시에 자체 브랜딩 및 툴링을 유지할 수 있습니다. CSS를 사용하여 스타일 지정을 할 수 있고, 동적 데이터를 사용하여 필요한 경우 최신 데이터를 가져올수 있습니다. 또한, A/B 테스트를 통해 고객을 위한 최상의 사용자 경험을 제공할 수 있습니다.
+      icon: card_developers.svg
+
+    - title@: 작업의 복잡성 줄이기
+      paragraph@: AMP 페이지를 만드는 것은 복잡하지않고 간단합니다. 만약 Wordpress 및 Drupal과 같은 널리 사용되는 CMS를 사용하는 경우, 전체 소유한 파일을 며칠 이내에 변환할 수 있습니다. AMP 형식은 쉽게 다룰 수 있으며 AMP 페이지는 사용자가 어떻게 접속하든지 관계없이 일관되게 빠르기 때문에, AMP를 사용하면 각 배포 플랫폼에 맞게 코드를 최적화하는 데 특별한 기술이 필요하거나 걱정할 필요가 없습니다.
+      icon: publishers/publisher_icon_simple.svg
+
+    - title@: ROI 극대화
+      paragraph@: 일반적으로 랜딩 페이지, 광고 또는 웹 컨텐츠를 구축하는 데는 시간이 걸립니다. AMP 페이지는 한 번 제작되어 다양한 배포 플랫폼에 배포될 수 있습니다. AMPHTML 광고로 AMP와 non-AMP 페이지에서 모두 광고를 제공할 수 있습니다. 즉, 광고를 한 번 제작한다면 어디에서나 인상적인 브랜드 경험을 제공할 수 있습니다.
+      icon: advertisers/advertisers_icon_ROI.svg
+
+    - title: 미래 지향적이고 안정적인 구축
+      paragraph: AMP 프로젝트는 웹의 미래를 지키는 오픈 소스 이니셔티브로써 모든 사람에게 더 빠르고 더 나은 사용자 경험을 제공할 수 있도록 도와줍니다. AMP 프로젝트에 참여하여 개방적이고 빠른 웹에서비즈니스의 지속 가능한 미래를 구축하세요.
+      icon: adtech/adtech_icon_customize.svg
+
+case:
+  title@: 성공사례 보기
+  link_url: /content/learn/case-studies.html
+
+cta:
+  title@: 시작하기
+  link_text@: Quickstart
+  link_url: /content/docs/getting-started.md
