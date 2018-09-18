@@ -9,7 +9,7 @@
     "eslint": "^5.5.0",
     "feedparser": "2.2.9",
     "gulp": "4.0.0",
-    "gulp-autoprefixer": "5.0.0",
+    "gulp-autoprefixer": "6.0.0",
     "gulp-plumber": "1.2.0",
     "gulp-sass": "4.0.1",
     "gulp-svg-sprite": "1.4.0",
