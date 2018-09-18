@@ -1,92 +1,104 @@
 ---
-$title: 使用入门
+$title: 快速入门
 ---
+
 [TOC]
 
-这是一份快速入门指南，旨在帮助您快速上手使用 AMP。
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 
-如需了解更详细的说明，请访问[创建您的首个 AMP 网页](/zh_cn/docs/getting_started/create.html)教程。
+本指南提供了一些可帮助您快速上手使用 AMP 的关键资源。若想深入了解更多信息，请查看 [AMP 文档](/zh_cn/docs/)或我们的 [YouTube 频道](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw)。
 
-### 第 1 步：获取 AMP HTML 模板
+<hr>
 
-以下是 AMP 网页所需的基本 HTML：
+## 开始使用 AMP
 
-```html
-<!doctype html>
-<html ⚡>
-  <head>
-    <meta charset="utf-8">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Hello AMP world</title>
-    <link rel="canonical" href="hello-world.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  </head>
-  <body>
-    <h1>Hello AMP World!</h1>
-  </body>
-</html>
-```
+执行下面这些关键步骤可帮助您快速上手使用 AMP：
 
-继续阅读: 详细了解 AMP 网页[必需的标记](/zh_cn/docs/fundamentals/spec.html#required-markup)。
+1.  [制作您的 AMP 网页](#create-your-amp-pages)
+2.  [验证您的 AMP 网页](#validate-and-test-amp-pages)
+3.  [使您的内容可被轻松发现](#make-your-content-discoverable)
 
-### 第 2 步：向网页添加组件
+## 日常使用 AMP
 
-请通过添加组件来构建 AMP 网页，例如添加图片组件：
+利用 AMP 所提供的所有资源，让您的 AMP 技能日益精进。
 
-```html
-<amp-img src="https://www.ampproject.org/examples/images/amp.jpg"
-  width="900" height="508" layout="responsive"></amp-img>
-```
+<a class="button" href="#amp-day-to-day-resources">查看资源</a>
 
-或添加 YouTube 视频组件：
+<hr>
 
-```html
-<!-- this script is required for amp-youtube and must be in the <head> section  -->
-<script async custom-element="amp-youtube"
-      src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+### 制作您的 AMP 网页
 
-...
+请参阅以下与制作 AMP 网页相关的部分：[使用了 CMS](#using-a-cms?)、[从头开始制作](#starting-from-scratch?)或[转换现有内容](#converting-existing-content?)。
 
-<amp-youtube data-videoid="9Cfxm7cikMY"
-    layout="responsive"
-    width="480" height="270"></amp-youtube>
-```
+#### 使用了 CMS？
 
-或添加其他所需组件。请参阅 [AMP 中的可用组件](/zh_cn/docs/reference/components.html)列表。
+AMP 支持与许多第三方发布平台集成。要了解如何制作 AMP 网页，请查看您的发布平台的文档。
 
-### 第 3 步：设计元素样式
+<div>
+  {% for section in who.tech_companies.sections %}
+    {% if section.title == 'CMS' %}
+      <ul>
+        {% for item in section.section_items %}
+          <li class="item">
+            {% if item.link %}
+              <a href="{{item.link}}">{{item.title}}</a>
+            {% else %}
+              {{item.title}}
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+  {% endfor %}
+</div>
 
-要为 AMP 网页上的元素设计样式，请向文档的 `<head>` 中名为 `<style amp-custom>` 的内嵌样式表添加 CSS：
+#### 从头开始制作？
 
-```html
-<style amp-custom>
-  amp-img {
-    margin: 0.5em;
-  }
-  body {
-    max-width: 900px;
-  }
-</style>
-```
+如果您要从头开始制作 AMP 网页或广告，请访问以下资源：
 
-继续阅读: 详细了解 AMP 网页[支持的 CSS](/zh_cn/docs/design/responsive/style_pages.html)。
+*   [教程：制作您的首个 AMP 网页](/zh_cn/docs/tutorials/create.html)
+*   [教程：添加高级 AMP 功能](/zh_cn/docs/tutorials/add_advanced.html)
+*   [AMP HTML 规范](/zh_cn/docs/reference/spec.html#the-amp-html-format)：包含样板、必需的标记和允许的 HTML
+*   [AMPHTML 广告格式](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md)：详细介绍了如何在 AMP 中制作效果出色的广告
+*   [YouTube 视频：AMP 中允许使用和不允许使用的内容](https://youtu.be/Gv8A4CktajQ)
+*   [AMP Start 中的模板](https://www.ampstart.com/)：试用一些现成的 AMP 网页模板
 
-### 第 4 步：验证 AMP HTML
+#### 转换现有内容？
 
-请使用 [AMP 验证工具](https://validator.ampproject.org/)验证您的 AMP 网页，以确保您的网页是有效的 AMP HTML。
+如果您要将现有的 HTML 网页转换为 AMPHTML，请访问以下资源：
 
-要想了解您可以使用的其他验证工具，请参阅[验证 AMP 网页](/zh_cn/docs/fundamentals/validate.html)。
+*   [教程：将 HTML 网页转换成 AMP 网页](/zh_cn/docs/tutorials/converting.html)
+*   [YouTube 视频：将 AMP HTML 用于现有网站](https://youtu.be/OO9oKhs80aI)
 
-### 后续步骤
+### 验证和测试 AMP 网页
 
-要想深入了解 AMP 网页的基本知识，请访问[创建您的首个 AMP 网页](/zh_cn/docs/getting_started/create.html)教程。
+在发布内容之前，请确保您的 AMP 网页有效。以下是一些可供使用的资源：
 
-下面这些资源也有助于您打造出色的体验：
+*   [验证 AMP 网页](/zh_cn/docs/guides/validate.html)：提供了一系列验证工具及相关说明，以帮助您验证网页
+*   [YouTube 视频：如何验证和调试 AMP 网页](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
+*   [测试 AMP 中的 CORS](/zh_cn/docs/guides/amp-cors-requests.html#testing-cors-in-amp)
 
-* [使您的网页可被轻松发现](/zh_cn/docs/fundamentals/discovery.html)
-* [向您的网页添加分析工具](/zh_cn/docs/analytics/analytics_amp.html)
-* [提高用户互动度](/zh_cn/docs/fundamentals/engagement.html)
-* [AMP BY Example](https://ampbyexample.com/) 上的在线演示
+### 使您的内容可被轻松发现
 
+确保用户可在第三方平台（例如 Twitter、Google、Bing 等）上发现您的内容。以下是一些有用的资源：
 
+*   [使您的网页可被轻松发现](/zh_cn/docs/guides/discovery.html)：与如何关联 AMP 网页和使用元数据相关的提示
+*   [针对 AMP 网页的 Google 搜索准则](https://support.google.com/webmasters/answer/6340290)
+
+<hr>
+
+## AMP 日常资源
+
+这些资源可帮助您顺利完成日常的 AMP 之旅：
+
+*   将 [AMP 组件列表](/zh_cn/docs/reference/components.html)保存在触手可及之处。每个组件的参考页面都详细介绍了如何在 AMP 网页上集成和使用该组件。
+*   想查看示例和演示？请访问 [AMP By Example](https://ampbyexample.com/)，其中就如何使用 AMP 组件提供了实例和场景。
+*   需要汲取灵感？
+    *   [AMP Start](https://www.ampstart.com/) 提供了已预设样式的模板和组件，可供您用于从头开始创建特定样式的 AMP 网站。
+    *   我们的 [Showcase](zh_cn/learn/showcases/) 着重展示了整个网络范围内引人注目的 AMP 网页。
+*   需要获取支持？请参阅[获取支持](zh_cn/support/developer/get_support.html)页面中提及的资源。
+*   及时了解最新的 AMP 资讯：
+    *   订阅[我们的播客](https://amphtml.wordpress.com/)
+    *   订阅 [YouTube 上的 AMP 频道](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw)
+    *   在 Twitter 上关注我们 [@AMPhtml](https://twitter.com/amphtml)
+ 
