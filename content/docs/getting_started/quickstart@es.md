@@ -1,90 +1,104 @@
 ---
-$title: Empezando
+$title: Inicio rápido
 ---
+
 [TOC]
 
-Esta es una guía de inicio rápido para ponerlo en marcha con AMP.
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 
-Para obtener instrucciones más detalladas, visite el tutorial [Crea tu primera página AMP](/es/docs/getting_started/create.html).
+En esta guía se ofrecen recursos clave para que puedas empezar a utilizar páginas AMP rápidamente.  Para obtener más información, consulta la [documentación sobre páginas AMP](/es/docs/) o nuestro [canal de YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw). 
 
-### Paso 1: Obtenga la plantilla HTML de AMP
+<hr>
 
-Este es el código HTML básico que necesitas para una página AMP:
+## Empezar a utilizar páginas AMP
 
-```html
-<!doctype html>
-<html ⚡>
-  <head>
-    <meta charset="utf-8">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Hola mundo AMP</title>
-    <link rel="canonical" href="hola-mundo.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  </head>
-  <body>
-    <h1>¡Hola Mundo AMP!</h1>
-  </body>
-</html>
-```
+Sigue estos pasos para empezar a utilizar páginas AMP:
 
-Leer más: Aprende más sobre el [markup requerido](/es/docs/fundamentals/spec.html#required-markup) para páginas AMP.
+1.  [Crea tus páginas AMP](#create-your-amp-pages)
+2.  [Valida tus páginas AMP](#validate-and-test-amp-pages)
+3.  [Haz que tu contenido sea visible](#make-your-content-discoverable)
 
-### Paso 2: Agrega componentes a tu página
+## Usar páginas AMP de forma habitual
 
-Construya su página AMP agregando componentes, como una imagen:
+Saca partido a todos los recursos disponibles sobre páginas AMP para seguir fomentando su uso.
 
-```html
-<amp-img src="https://www.ampproject.org/examples/images/amp.jpg"
-  width="900" height="508" layout="responsive"></amp-img>
-```
+<a class="button" href="#amp-day-to-day-resources"> Ver recursos</a>
 
-O bien, un video de YouTube:
+<hr>
 
-```html
-<!-- este script es requerido para amp-youtube y debe ser agregado en la sección <head> de tu página AMP  -->
-<script async custom-element="amp-youtube"
-      src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+### Crear páginas AMP
 
-...
+A continuación, puedes consultar las secciones relevantes sobre cómo [utilizar un CMS](#using-a-cms?), [empezar desde cero](#starting-from-scratch?) o [convertir contenido actual](#converting-existing-content?).
 
-<amp-youtube data-videoid="9Cfxm7cikMY"
-    layout="responsive"
-    width="480" height="270"></amp-youtube>
-```
+#### Utilizar un CMS
 
-Y mucho más. Mira la lista completa de [componentes disponibles para AMP](/es/docs/reference/components.html).
+Las páginas AMP pueden integrarse con muchas plataformas de publicación de terceros. Consulta la documentación de tu plataforma de publicación para saber cómo se crean páginas AMP.
 
-### Paso 3: Estilo de los elementos
+<div>
+  {% for section in who.tech_companies.sections %}
+    {% if section.title == 'CMS' %}
+      <ul>
+        {% for item in section.section_items %}
+          <li class="item">
+            {% if item.link %}
+              <a href="{{item.link}}">{{item.title}}</a>
+            {% else %}
+              {{item.title}}
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+  {% endfor %}
+</div>
 
-Para darle estilo a tus elementos en una página AMP, agrega CSS directamente a una hoja de estilo denominada `<style amp-custom>` en el  `<head>` de tu página:
+#### Empezar desde cero
 
-```html
-<style amp-custom>
-  amp-img {
-    margin: 0.5em;
-  }
-  body {
-    max-width: 900px;
-  }
-</style>
-```
+Si creas páginas AMP o creatividades desde cero, consulta estos recursos:
 
-Leer más: Aprende más sobre el [CSS soportado](/es/docs/design/responsive/style_pages.html) en páginas AMP.
+*   [Tutorial: Crear tu primera página AMP](/es/docs/tutorials/create.html)
+*   [Tutorial: Añadir funciones avanzadas de AMP](/es/docs/tutorials/add_advanced.html)
+*   [Especificación AMP HTML](/es/docs/reference/spec.html#the-amp-html-format): *incluye una plantilla, las etiquetas necesarias y el texto HTML permitido*
+*   [Formato de los anuncios AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): *incluye detalles sobre cómo crear anuncios eficaces en páginas AMP*
+*   [Vídeo de YouTube: ¿Qué se puede y qué no se puede usar en las páginas AMP?](https://youtu.be/Gv8A4CktajQ)
+*   [Plantillas de AMP Start](https://www.ampstart.com/): *prueba a usar plantillas de páginas AMP predefinidas*
 
-### Paso 4: Valida tu página AMP HTML
+#### Convertir el contenido actual
 
-Asegúrate que tu página AMP tiene un AMP HTML válido verificando la misma a través del [Validador AMP](https://validator.ampproject.org/).
+Si quieres convertir páginas HTML actuales en páginas AMP HTML, consulta estos recursos:
 
-Para otras herramientas de validación, lee las [páginas para validar AMP](/es/docs/fundamentals/validate.html).
+*   [Tutorial: Convertir HTML en AMP](/es/docs/tutorials/converting.html)
+*   [Vídeo de YouTube: Usar AMP HTML en un sitio web actual](https://youtu.be/OO9oKhs80aI)
 
-### Próximos pasos
+### Validar y probar páginas AMP
 
-Para sumergirte en lo básico sobre páginas AMPm visita el tutorial [Crea tu primera página AMP](/es/docs/getting_started/create.html).
+Antes de publicar tu contenido, comprueba que las páginas AMP sean válidas.  Puedes utilizar estos recursos:
 
-Aquí tienes otros recursos que pueden ayudarte con tu experiencia:
+*   [Validar páginas AMP](/es/docs/guides/validate.html): *incluye una lista de herramientas de validación e instrucciones para validar las páginas*
+*   [Vídeo de YouTube: Cómo validar y depurar páginas AMP](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
+*   [Probar solicitudes CORS en páginas AMP](/es/docs/guides/amp-cors-requests.html#testing-cors-in-amp)
 
-* [Hacer que una página sea visible](/es/docs/fundamentals/discovery.html)
-* [Agregar analytics a tu página](/es/docs/analytics/analytics_amp.html)
-* [Mejora la fidelización del usuario](/es/docs/fundamentals/engagement.html)
-* Ejemplos en [AMP BY Example](https://ampbyexample.com/)
+### Hacer que el contenido sea visible
+
+Asegúrate de que los usuarios puedan encontrar tu contenido en plataformas de terceros, como Twitter, Google, Bing, etc. A continuación te indicamos algunos recursos útiles:
+
+*   [Hacer que una página sea reconocible](/es/docs/guides/discovery.html): *consejos para enlazar páginas AMP y utilizar metadatos*
+*   [Directrices de AMP en la Búsqueda de Google](https://support.google.com/webmasters/answer/6340290)
+
+<hr>
+
+## Recursos cotidianos para utilizar páginas AMP
+
+Estos recursos te ayudarán a gestionar el día a día de tus páginas AMP:
+
+*   Mantén la [lista de componentes de las páginas AMP](/es/docs/reference/components.html) a mano.  En la página de referencia de cada componente se ofrece información detallada sobre cómo integrarlo y usarlo en las páginas AMP.
+*   ¿Necesitas ejemplos y vídeos de demostración?  Consulta el sitio web [AMP By Example](https://ampbyexample.com/), que incluye ejemplos prácticos y permite hacer pruebas con componentes de páginas AMP.
+*   ¿Necesitas inspiración?
+    *   En el sitio web [AMP Start](https://www.ampstart.com/) encontrarás componentes y plantillas predefinidas que puedes usar para crear sitios web AMP desde cero.
+    *   En nuestro [escaparate](/es/learn/showcases/) se muestran algunas páginas AMP destacadas.
+*   ¿Necesitas ayuda? Consulta los recursos de la página [Obtener ayuda](/es/support/developer/get_support.html).
+*   Estate al día de las últimas novedades sobre páginas AMP:
+    *   Suscríbete a [nuestro blog](https://amphtml.wordpress.com/)
+    *   Suscríbete al canal de YouTube [The AMP Channel](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw)
+    *   Síguenos en Twitter  [@AMPhtml](https://twitter.com/amphtml)
+ 
