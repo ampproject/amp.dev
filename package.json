@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@octokit/rest": "15.9.4",
-    "eslint": "^5.5.0",
+    "eslint": "5.6.0",
     "feedparser": "2.2.9",
     "gulp": "4.0.0",
     "gulp-autoprefixer": "5.0.0",
@@ -14,7 +14,7 @@
     "gulp-sass": "4.0.1",
     "gulp-svg-sprite": "1.4.0",
     "moment": "2.22.2",
-    "octonode": "0.9.2",
+    "octonode": "0.9.4",
     "request": "2.88.0"
   },
   "devDependencies": {
