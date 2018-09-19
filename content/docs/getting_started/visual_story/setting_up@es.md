@@ -1,7 +1,5 @@
 ---
 $title: Configuración
-$order: 0
-$parent: /content/docs/design/visual_story.md
 ---
 
 ## Requisitos
