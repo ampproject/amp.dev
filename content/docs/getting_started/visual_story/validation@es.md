@@ -1,6 +1,5 @@
 ---
 $title: Validar el código AMP HTML 
-$order: 7
 ---
 
 Siempre que crees una página AMP, debes comprobar que el código AMP HTML sea correcto. Puedes [validar tus páginas AMP de varias formas](/es/docs/fundamentals/validate.html).  En este tutorial, habilitaremos el validador AMP activando el modo desarrollador. Para hacerlo, añade el siguiente identificador de fragmento a tu URL y vuelve a cargar la página:
