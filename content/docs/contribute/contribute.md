@@ -32,3 +32,6 @@ Documentation is important for the entire AMP community, and we would appreciate
 [ampbyexample.com](https://ampbyexample.com) provides examples of how to use AMP.  You can improve it at the [amp-by-example GitHub project](https://github.com/ampproject/amp-by-example/).
 
 You can also help make things better for other contributors to the AMP Project by improving our documentation in the [amphtml GitHub project](https://github.com/ampproject/amphtml).
+
+#### Helping with translations
+AMP strives to make the world wide web a better experience for everyone. To truly make AMP a global possibility, we need translation volunteers for guides, tutorials, blogs and all things written for AMP. To get involved with localizing AMP documentation for your community, check out the [AMP Translation Initiative](https://github.com/ampproject/docs/TRANSLATIONS.md).  

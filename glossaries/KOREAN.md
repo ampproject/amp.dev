@@ -19,4 +19,4 @@
 "In this tutorial, you'll learn how to create an AMPHTML ad from scratch."
 
 ### Tutorial
-"In this tutorial, you’ll learn how to create a basic AMP HTML page."
+"In this **tutorial**, you’ll learn how to create a basic AMP HTML page."
