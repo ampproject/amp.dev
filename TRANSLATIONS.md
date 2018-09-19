@@ -21,18 +21,18 @@ AMP has an ongoing internal translation process for documentation. We are workin
 
   1. Find a file to translate.
   1. Create a [GitHub Issue](https://github.com/ampproject/docs/issues/new).
-  1. Declare which language you are translating the document.
-  1. Name which file you wish to translate or update.
-  1. Give a rough estimation of how much of the file you are translating.
-    * Full File
-    * Partial File
-    * Few Terms
-  1. Provide a general estimation of how much time it will take to complete the translation task.
-  1. Add [@CrystalFaith](https://github.com/CrystalFaith) to give document status:
-    * Yes! Please translate this!
-    * Thanks for your interest, but the internal team or a volunteer is currently working on this document. You will be added as a reviewer before it goes live.
+    * Declare into which language you're translating the document.
+    * Name which file you wish to translate or update.
+    * Give a rough estimation of how much of the file you are translating.
+      * Full File
+      * Partial File
+      * Few Terms
+    * Provide a general estimation of how much time it will take to complete the translation task.
+    * Add [@CrystalFaith](https://github.com/CrystalFaith) so she can triage the localization request and inform you in case there's already somebody working on the same translation:
+      * Yes! Please translate this!
+      * Thanks for your interest, but the internal team or a volunteer is currently working on this document. You will be added as a reviewer before it goes live.
 
-Some languages have created channels on Slack where a localized documentation tracker has been created. We encourage you to join and introduce yourself! We encourage you to participate [AMP Slack Channel](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877).
+Some volunteer translators have created channels on Slack where a localized documentation tracker has been created. We encourage you to join and introduce yourself! Join the [AMP Slack Channel here](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877).
 
 ### Creating localized files
 
