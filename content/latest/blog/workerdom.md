@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2018/08/21/workerdom/amp/"
 excerpt: "We are happy to announce the alpha release of WorkerDOM – a JavaScript library that makes the Document Object Model (DOM) available to Web Workers. This allows web developers to take advantage of pervasive multi-core processor architectures when programming their web pages to make them more performant. While the WorkerDOM library is designed for general [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-08-21T23:15:43+00:00
+date_data: 2018-08-21T16:15:43-07:00
 $date: August 21, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
