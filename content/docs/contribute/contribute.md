@@ -32,6 +32,3 @@ Documentation is important for the entire AMP community, and we would appreciate
 [ampbyexample.com](https://ampbyexample.com) provides examples of how to use AMP.  You can improve it at the [amp-by-example GitHub project](https://github.com/ampproject/amp-by-example/).
 
 You can also help make things better for other contributors to the AMP Project by improving our documentation in the [amphtml GitHub project](https://github.com/ampproject/amphtml).
-
-
-
