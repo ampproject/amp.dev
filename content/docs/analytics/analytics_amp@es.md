@@ -1,50 +1,52 @@
 ---
-$title: Configurar Analytics
+$title: Configurar analíticas
 ---
 
-## Decide antes de comenzar
+## Decisiones que hay que tomar antes de empezar
 
-Todas las soluciones de análisis se crean en función de los datos que necesitas
-y de cómo quieres analizar esos datos. Decide antes de comenzar:
+Para integrar una solución de analíticas, primero tienes que saber qué datos necesitas
+y cómo quieres analizarlos. Antes de empezar, responde a estas preguntas:
 
-* Para analizar la captación de usuarios, ¿usarás herramientas de análisis de terceros
-o una solución propia?
-* ¿Qué comportamientos de los usuarios medirás para comprender la captación de estos?
+* ¿Analizarás las interacciones de los usuarios con herramientas de terceros
+o con una propia?
+* ¿Qué comportamientos de los usuarios medirás para comprender cómo interaccionan con tu página?
 
-### ¿Enviarás datos al proveedor o te los enviarás a ti mismo?
+### Enviar datos a un proveedor o usarlos directamente
 
-Si tienes una solución propia para medir la captación de usuarios,
-lo único que necesitarás para integrar el análisis de AMP a esa solución es una URL.
-Allí enviarás los datos.
-También puedes enviar datos a varias direcciones URL.
-Por ejemplo, puedes enviar datos de visualización de la página a una URL
-y datos de captación de redes sociales a otra.
+Si decides medir las interacciones de los usuarios con una herramienta propia,
+lo único que necesitas para integrar las analíticas de AMP con la herramienta es una URL,
+que será la ubicación a la que enviar los datos.
+También puedes enviar datos a varias URL;
+por ejemplo, puedes enviar datos de páginas vistas a una URL
+y datos de interacciones de usuarios a otra.
 
-AMP analytics se diseñó específicamente para realizar mediciones una vez y enviar varios informes.
-Si ya trabajas con uno o más proveedores de herramientas de análisis,
-consulta los [Proveedores Analytics](/es/docs/analytics/analytics-vendors.html)
-para averiguar si integraron su solución con AMP.
-Si lo hicieron, simplemente establece un vínculo con sus documentos desde la especificación
-y comienza a seguir las instrucciones.
+La analítica de AMP está especialmente diseñada para medir los datos una sola vez, pero puede enviarlos a muchas partes interesadas.
+Si ya trabajas con uno o varios proveedores de servicios de analítica,
+echa un vistazo a la lista de [proveedores](/es/docs/analytics/analytics-vendors.html) para ver si han integrado sus herramientas con AMP.
+Si es así, consulta la información de configuración y sigue las instrucciones pertinentes.
 
-Si el proveedor de herramientas de análisis no estableció una integración con AMP,
-comunícate con él para solicitarle soporte.
-También te recomendamos [reportar el asunto en el proyecto de AMP](https://github.com/ampproject/amphtml/issues/new)
-para solicitar la adición del proveedor.
-Consulta también
-[Integración de tus herramientas de análisis en AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+En el caso de que no lo hayan hecho,
+ponte en contacto con los proveedores y pídeles ayuda.
+También te animamos a [crear una incidencia en el proyecto AMP](https://github.com/ampproject/amphtml/issues/new)
+para solicitar que se añada a los proveedores en cuestión.
+Consulta cómo
+[integrar tus herramientas de analítica con AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
 
-### ¿Qué datos necesitas?
+### Datos que necesitas
 
-¿Qué datos acerca de los usuarios recopilarás para medir la captación?
-Debes identificar esos datos para poder configurarlos.
+¿Qué datos de tus usuarios quieres registrar para medir la interacción con tu página?
+Para hacer la configuración necesaria, primero tienes que identificar estos datos.
 
-Puntos de datos claves que debes considerar:
+Puntos clave que hay que tener en cuenta:
 
-* ¿Realizarás un seguimiento solo de las vistas de la página o de otros patrones de captación de usuarios?
-(Consulta también la sección [¿amp-pixel o amp-analytics?](/es/docs/analytics/analytics_basics.html#¿se-debe-utilizar-amp-pixel-o-amp-analytics?)).
-* ¿Qué tipos de datos puedes capturar acerca de tus usuarios, tu contenido,
-el dispositivo o el navegador (consulta también la sección sobre [sustitución de variables](/es/docs/analytics/analytics_basics.html#sustitución-de-variables))?
-* ¿Cómo identificarás a tus usuarios (consulta también [Identificación de usuarios](/es/docs/analytics/analytics_basics.html#identificación-del-usuario))?
+* ¿Registrarás solo las páginas vistas o tienes pensado supervisar más patrones de interacción?
+Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics](/es/docs/analytics/analytics_basics#¿se-debe-utilizar-amp-pixel-o-amp-analytics?).
+* ¿Qué tipos de datos quieres capturar de tus usuarios? ¿El contenido,
+el dispositivo o el navegador? Consulta información sobre la [sustitución de variables](/es/docs/analytics/analytics_basics#sustitución-de-variables).
+* ¿Cómo identificarás a tus usuarios? Consulta información sobre cómo [identificar usuarios](/es/docs/analytics/analytics_basics#identificación-del-usuario).
 
-Leer Más: Continúa el aprendizaje sobre analytics with [Analytics: aspectos básicos](/es/docs/analytics/analytics_basics.html).
+
+{% call callout('Más información', type='read') %}
+Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos](/es/docs/analytics/analytics_basics.html).
+{% endcall %}
+ 

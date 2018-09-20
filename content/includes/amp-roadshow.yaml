@@ -1,11 +1,17 @@
 nextstop:
-  title: São Paulo
-  link: https://events.withgoogle.com/amp-roadshow-in-sao-paulo
+  title: Bangalore
+  link: https://events.withgoogle.com/amp-roadshow-bangalore/
 
 cities:
-  - title: Seoul
-    date: 2018-09-11
-    link: https://events.withgoogle.com/amp-roadshow-seoul/schedule/
+  - title: Bangalore
+    date: 2018-10-23
+    link: https://events.withgoogle.com/amp-roadshow-bangalore/
+  - title: Mumbai
+    date: 2018-10-26
+    link: https://events.withgoogle.com/amp-roadshow-mumbai/
+  - title: Gurgaon
+    date: 2018-10-30
+    link: https://events.withgoogle.com/amp-roadshow-gurgaon
 
 agenda:
   - title: Intro + Keynote
