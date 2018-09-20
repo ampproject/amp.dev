@@ -35,5 +35,10 @@ frontend/partials
 frontend/views
 frontend/macros
 
+/templates
+/partials
+/views
+/macros
+
 # Ignore static files as they will either be built or gathered by gulp
 frontend/static/static/css

@@ -1,6 +1,0 @@
-$title@: Troubleshooting
-$view: /views/doc.html
-$path: /docs/troubleshooting/{base}.html
-$localization:
-  path: /{locale}/docs/troubleshooting/{base}.html
-index_path: /content/docs/troubleshooting.md

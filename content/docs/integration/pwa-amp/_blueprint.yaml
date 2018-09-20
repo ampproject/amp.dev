@@ -1,4 +1,0 @@
-$path: /docs/integration/pwa-amp/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/integration/pwa-amp/{base}.html

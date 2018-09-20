@@ -1,5 +1,0 @@
-$path: /docs/design/amp-html-layout/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/design/amp-html-layout/{base}.html
-$title@: Layouts

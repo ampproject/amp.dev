@@ -1,8 +1,0 @@
-https://localhost:8081  {
-    bind {$ADDRESS}
-    proxy / http://localhost:8080 {
-        insecure_skip_verify
-        transparent
-    }
-    tls self_signed
-}

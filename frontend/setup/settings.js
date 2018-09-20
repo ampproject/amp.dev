@@ -10,7 +10,7 @@ const settings = {
     'styles': {
         'src': 'source/scss/bundles/*.scss',
         'dest': [
-            './static/static/css/',
+            '../static/static/css/',
         ],
         'options': {
             'outputStyle': 'compact'
@@ -18,7 +18,7 @@ const settings = {
     },
     'templates': {
       'src': 'source/j2/**/*.j2',
-      'dest': './'
+      'dest': '../'
     },
     'icons': {
       'src': 'source/svg/icons/**/*.svg',

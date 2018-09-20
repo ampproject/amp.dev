@@ -1,43 +1,28 @@
 grow_version: ">=0.0.66"
-home: /content/pages/home.html
+
+root: /styleguide/index.html
+
+static_dirs:
+- static_dir: /static/static/
+  serve_at: /static/
+- static_dir: /static/root/
+  serve_at: /
 
 localization:
   default_locale: en
-  locales:
-  - ar
-  - en
-  - es
-  - fr
-  - id
-  - it
-  - ja
-  - ko
-  - pt_BR
-  - ru
-  - tr
-  - zh_CN
-  aliases:
-    en_UK: en_GB
-
-static_dirs:
-- static_dir: /assets/
-  serve_at: /static/
-- static_dir: /pwa/
-  serve_at: /
 
 preprocessors:
 - kind: gulp
-
-markdown:
-  extensions:
-  - kind: sourcecode
-    classes: true
-  - kind: markdown.extensions.codehilite
-    classes: true
+  build_task: '--production'
+  run_task: 'develop'
 
 deployments:
-  review:
-    destination: webreview
-    server: googwebreview.appspot.com
-    project: search/amp
-    name: amp
+  default:
+    destination: git
+    repo: https://github.com/jungvonmatt/amp.dev.git
+    branch: gh-pages
+    env:
+      name: gh-pages
+      host: jungvonmatt.github.io
+      port: 80
+      scheme: https

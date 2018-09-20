@@ -1,5 +1,0 @@
-$path: /docs/interaction_dynamic/login_requiring/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/interaction_dynamic/login_requiring/{base}.html
-$title@: Create a login-requiring AMP page

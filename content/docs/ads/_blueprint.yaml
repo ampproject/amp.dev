@@ -1,6 +1,0 @@
-$title@: Advertising
-$view: /views/doc.html
-$path: /docs/ads/{base}.html
-$localization:
-  path: /{locale}/docs/ads/{base}.html
-index_path: /content/docs/ads.md

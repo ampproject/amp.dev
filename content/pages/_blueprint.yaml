@@ -1,5 +1,0 @@
-path: /{base}/
-view: /views/base.html
-
-localization:
-  path: /{locale}/{base}/

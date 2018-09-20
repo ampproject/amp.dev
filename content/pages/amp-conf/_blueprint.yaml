@@ -1,5 +1,0 @@
-path: /amp-conf/{base}/
-view: /views/base.html
-$localization:
-  locales:
-    - en
