@@ -1,0 +1,3 @@
+path: /styleguide/organisms/{base}.html
+view: /views/styleguide/news-teaser-page.j2
+$category: Templates

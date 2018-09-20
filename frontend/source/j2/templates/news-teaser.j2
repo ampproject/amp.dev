@@ -10,13 +10,9 @@ it and then get in other components that may have been referenced #}
 {% endblock %}
 
 {% block style %}
-{% if env.name == 'dev' %}
-<link href="{{ g.static('/static/static/css/styleguide.css').url|relative }}" rel="stylesheet">
-{% else %}
 <style amp-custom>
-{% include '/static/static/css/styleguide.css' %}
+{% include '/static/static/css/ntTemplate.css' %}
 </style>
-{% endif %}
 {% endblock %}
 
 {% block icons %}
@@ -30,7 +26,7 @@ it and then get in other components that may have been referenced #}
 {% block header %}
 <header class="styleguide__header">
   <button class="styleguide__toggle" on="tap:sidebar.toggle">
-     {{ atoms.icon('logo', size=3) }}
+     {{ atoms.icon('amp', size=3) }}
   </button>
 
   <h1>{{ doc.title }}</h1>
