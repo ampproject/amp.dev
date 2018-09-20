@@ -66,6 +66,6 @@ Don’t see a channel for your language? Join the general [AMP-Translation chann
 
 ## Term Translation Glossaries
 
-#### [Korean Glossary](https://github.com/ampproject/docs/glossaries/KOREAN.md)
+#### [Korean Glossary](https://github.com/ampproject/docs/blob/master/glossaries/KOREAN.md)
 
 Don't see a term glossary for your language? File an issue and start one!
