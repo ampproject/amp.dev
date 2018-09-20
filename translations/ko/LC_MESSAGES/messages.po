@@ -300,7 +300,7 @@ msgstr "캘린더에 추가하기"
 
 #: /content/learn/about/benefits.yaml
 msgid ""
-"Adopting the AMP format allows you to retain your own branding and "
+"Adopting the AMP format allows you to retain your own branding and tooling"
 "while taking advantage of AMP's optimized web components. You can use CSS to "
 "customize your styling, dynamic data to fetch the freshest data where needed,"
 " and A/B testing to experiment and build the best possible user experience "
