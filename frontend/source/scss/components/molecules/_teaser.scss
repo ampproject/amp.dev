@@ -59,21 +59,58 @@ white
 		background-color: white;
 	}
 
-	&-headline {
-		position: relative;
-		padding-right: 30px;
+	&-icon {
+		@include ico-2;
+		@include ico-river-bed;
 
-		.#{atom('ico')} {
-			position: absolute;
-			right: 0;
-			top: 25%;
-			opacity: 0.2;
-			transform: translateY(-50%);
-		}
+		position: absolute;
+		right: 0;
+		top: 25%;
+		opacity: 0.2;
+		transform: translateY(-50%);
 	}
 
-	.#{molecule('lnk')} {
+	&-headline {
+		@include txt;
+		@include txt-hl;
+		@include txt-accent-1;
+		@include txt-strong;
+		@include txt-font-accent;
+		@include txt-black;
+
+		position: relative;
+		padding-right: 30px;
+	}
+
+	&-subline {
+		@include txt;
+		@include txt-hl;
+		@include txt-accent-3;
+		@include txt-strong;
+		@include txt-uppercase;
+		@include txt-gray-chateau;
+	}
+
+	&-copy {
+		@include txt;
+		@include txt-3;
+		@include txt-p;
+	}
+
+	&-link {
+		@include link;
 		padding-bottom: 0;
 		margin-bottom: 0;
+
+		&-label {
+			@include txt;
+			@include txt-accent-2;
+			@include txt-strong;
+			@include txt-blue-ribbon;
+		}
+
+		&-icon {
+			@include ico-1;
+		}
 	}
 }
