@@ -13,7 +13,7 @@ Existen varias formas de validar un documento AMP. Todas ellas
 producen exactamente el mismo resultado, por lo que puedes utilizar la que más se ajuste
 a tu estilo de desarrollo.
 
-Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible](/es/docs/guides/discovery.html) para las plataformas de terceros.
+Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible](/es/docs/fundamentals/discovery.html) para las plataformas de terceros.
 
 ### Developers Console para el navegador
 
@@ -166,8 +166,8 @@ Como era de esperar, esta página AMP HTML es válida. Vamos a intentarlo con un
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/es/docs/reference/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/es/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/es/docs/reference/components/amp-img.html)
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/es/docs/reference/components/amp-ad.html)
 …
 [/sourcecode]
 
@@ -264,7 +264,7 @@ Cada herramienta ofrece varios fragmentos de información:
 Al leer de nuevo la [especificación](/es/docs/fundamentals/spec.html) atentamente, nos damos cuenta de que utilizamos una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
 
 Para entender mejor la lista completa de los posibles errores,
-consulta la [guía Errores de validación de AMP](https://www.ampproject.org/es/docs/reference/validation_errors.html).
+consulta la [guía Errores de validación de AMP](https://www.ampproject.org/es/docs/troubleshooting/validation_errors.html).
 Si sigues sin encontrar la solución después de evaluar los errores atentamente,
 [pregúntanos](http://stackoverflow.com/questions/tagged/amp-html) e intentaremos
 ayudarte.
