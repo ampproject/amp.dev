@@ -1,22 +1,24 @@
 ---
-$title: 눈이 즐거운 AMP 스토리 제작하기
+$title: 시각적 AMP 스토리 작성하기
 ---
 
 {{ video('/static/video/tut_pets-story-complete.mp4', 374, 667, '/static/img/docs/tutorials/amp_story/story_poster.png', caption='완성된 AMP 스토리', align='right third', autoplay='true', loop='true' ) }}
 
-이 튜토리얼은 눈길을 끄는 이야기를 만들도록 도와주는 [amp-story](/ko/docs/reference/components/amp-story.html) 컴포넌트를 소개합니다. 튜토리얼을 끝내면 정보와 시각효과가 잘 어우러져서 독자들이 읽기편한 “애완동물이 주는 기쁨”이라는 이야기가 완성되어 있을 것입니다.
+이 가이드에서는 AMP에서 시각적으로 눈길을 끄는 스토리를 작성하는 데 사용할 수 있는 [amp-story](/ko/docs/reference/components/amp-story.html) 구성요소를 소개합니다. 이 가이드를 마치면 독자에게 즐거움과 몰입감을 선사하는 간단한 정보와 시각 요소가 포함된 '반려동물 기르기의 즐거움'에 관한 스토리를 만들 수 있을 것입니다.
 
-## 학습목표
+## 학습할 내용:
 
-- [amp-story](/ko/docs/reference/components/amp-story.html) 컴포넌트를 가지고 여러 페이지로 구성된 이야기를 제작할 수 있습니다.
-- 페이지 안에서 여러 개의 레이어로 시각효과를 구현할 수 있습니다.
-- 레이어 템플릿으로 한 페이지 안에서 다수의 요소(element)를 배치할 수 있습니다.
-- 페이지가 보여질때 자동재생되는 오디오를 추가할 수 있습니다.
-- 페이지 안에서 애니메이션 효과를 줄 수 있습니다.
-- 이야기가 끝나면 독자들이 관심있을만한 다른 콘텐츠로 가는 링크를 추가할 수 있습니다.
+- [amp-story](/ko/docs/reference/components/amp-story.html) 구성요소를 사용하여 여러 페이지로 된 스토리 작성
+- 한 페이지에 여러 레이어를 사용하여 시각 효과 만들기
+- 레이어 템플릿을 사용하여 페이지에 요소 배열
+- 페이지를 볼 때 재생되는 오디오 추가
+- 페이지의 요소를 애니메이션으로 표시
+- 스토리 마지막 부분에 관련 링크를 추가하여 독자의 콘텐츠 몰입도 유지
 
-{% call callout('노트', type='note') %} [amp-story](/ko/docs/reference/components/amp-story.html) 컴포넌트는 현재 **실험 상태**입니다. {% endcall %}
+{% call callout('참고', type='note') %} [amp-story](/ko/docs/reference/components/amp-story.html) 구성요소는 아직 **실험 단계**에 있습니다. 이 구성요소를 사용하여 페이지를 게시하기 위한 Origin 평가판에 가입하려면 <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>을 방문하세요. {% endcall %}
+
 
 <div class="start-button">
 <a class="button" href="/ko/docs/getting_started/visual_story/setting_up.html"><span class="arrow-next">시작하기</span></a>
 </div>
+ 
