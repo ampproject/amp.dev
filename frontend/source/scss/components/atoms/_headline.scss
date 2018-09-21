@@ -27,7 +27,7 @@ light
 */
 // TODO: implement mono font and modifier
 
-.#{atom('hl')} {
+@mixin hl {
   display: block;
   margin-top: 0;
   margin-bottom: 0.75em;

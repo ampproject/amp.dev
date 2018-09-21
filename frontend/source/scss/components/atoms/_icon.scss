@@ -28,49 +28,56 @@ square
 
 */
 
-.#{atom('ico')} {
+@mixin ico {
 	display: flex;
 	font-size: initial;
+}
 
-	&-#{map-get($sizes, xs)} {
-		width: 1em;
-		height: 1em;
-	}
+@mixin ico-1 {
+	width: 1em;
+	height: 1em;
+}
 
-	&-#{map-get($sizes, sm)} {
-		width: 1.375em;
-		height: 1.375em;
-	}
+@mixin ico-2 {
+	width: 1.375em;
+	height: 1.375em;
+}
 
-	&-#{map-get($sizes, md)} {
-		width: 2.5em;
-		height: 2.5em;
-	}
+@mixin ico-3 {
+	width: 2.5em;
+	height: 2.5em;
+}
 
-	&-#{map-get($sizes, lg)} {
-		width: 4em;
-		height: 4em;
-	}
+@mixin ico-4 {
+	width: 4em;
+	height: 4em;
+}
 
-	&-#{map-get($sizes, xl)} {
-		width: 5em;
-		height: 5em;
-	}
+@mixin ico-5 {
+	width: 5em;
+	height: 5em;
+}
 
-	&-blue-ribbon {
-		fill: color('blue-ribbon');
-	}
+@mixin ico-blue-ribbon {
+	fill: color('blue-ribbon');
+}
 
-	&-white {
-		fill: color('white');
-	}
+@mixin ico-white {
+	fill: color('white');
+}
 
-	&-river-bed {
-		fill: color('river-bed');
-	}
+@mixin ico-river-bed {
+	fill: color('river-bed');
+}
 
-	&-square {
-		fill: color('white');
-		background-color: color('blue-ribbon');
-	}
+@mixin ico-square {
+	fill: color('white');
+	background-color: color('blue-ribbon');
+}
+
+// Default icon styling
+.#{atom('ico')} {
+	@include ico;
+	@include ico-3;
+	@include ico-blue-ribbon;
 }

@@ -26,14 +26,22 @@ none
 
 */
 
-.#{molecule('lnk')} {
+@mixin link {
 	display: flex;
 	align-items: center;
 	text-decoration: none;
 	padding: 0.813em 0;
 	margin: 0.813em 0;
+}
+
+// Default link styling
+.#{molecule('lnk')} {
+	@include link;
 
 	.#{atom('ico')} {
+		@include ico-1;
+		@include ico-blue-ribbon;
+
 		padding: 0.438em 0;
 		margin-bottom: auto;
 		margin-right: 0.625em;
