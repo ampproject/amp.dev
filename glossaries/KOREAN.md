@@ -4,7 +4,7 @@
 for the translated documents in Korean is hapsyo-che (합쇼체 or formally polite style),
 for example, ~하십시오, ~합니다. {% endcall %}
 
-### Built-in: 빌트인
+### Built-in: 빌트인 or 내장
 "AMP has many **built-in** components!"
 "AMP는 **빌트인** 컴포넌트가 많습니다!"
 
@@ -22,7 +22,7 @@ for example, ~하십시오, ~합니다. {% endcall %}
 
 ### Reference: 레퍼런스
 "The AMP **reference** documentation provides highly technical guidance on how to use components."
-"AMP 레퍼런스 문서는 컴포넌트 사용법에 대한 수준높은 기술 정보를 안내합니다."
+"AMP 레퍼런스 문서는 컴포넌트 사용법에 대한 수준 높은 기술 정보를 안내합니다."
 
 ### From scratch: (아주) 처음부터 
 "In this tutorial, you'll learn how to create an AMPHTML ad from scratch."
