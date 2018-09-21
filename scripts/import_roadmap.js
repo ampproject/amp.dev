@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const path = require('path');
 const clientSecret = process.argv[2] || process.env.AMP_DOC_SECRET;
 const clientId = process.argv[3] || process.env.AMP_DOC_ID;
 const clientToken = process.env.AMP_DOC_TOKEN;
@@ -13,9 +12,9 @@ const templateSource = fs.readFileSync('../content/latest/roadmap.html', 'utf8')
 function slugify(text) {
   return text.toString().toLowerCase()
     .replace(/\s+/g, '-')           // Replace spaces with -
-    .replace(/[\/\&]/g, '-')           // Replace \ and & with dash
-    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/[/&]/g, '-')           // Replace \ and & with dash
+    .replace(/[^\w-]+/g, '')       // Remove all non-word chars
+    .replace(/--+/g, '-')         // Replace multiple - with single -
     .replace(/^-+/, '')             // Trim - from start of text
     .replace(/-+$/, '');            // Trim - from end of text
 }
@@ -53,7 +52,7 @@ async function importRoadmap() {
   const columns = await Promise.all(result.data.map(column => octokit.projects.getProjectCards({ column_id: column.id }).then(result => {
 
     // strip out stuff we don't need
-    const cards = result.data.map(card => ({
+    let cards = result.data.map(card => ({
       url: card.url,
       /*id: card.id,
       creator: {
@@ -66,15 +65,18 @@ async function importRoadmap() {
       issueUrl: card.content_url
     }));
 
+    // filter cards that don't have attached issues
+    cards = cards.filter(card => card.issueUrl);
+
     return { cards: cards, id: column.id, name: column.name };
   })));
 
   // create a flattened cards array
-  const cards = columns.reduce((accumulator, currentValue) => [...accumulator, ...currentValue.cards], []);
+  const cards = columns.reduce((accumulator, currentValue) => [ ...accumulator, ...currentValue.cards ], []);
 
   // fetch all related issues
   const issues = await Promise.all(cards.map(card => {
-    const issue = card.issueUrl.match(/repos\/([^\/]+)\/([^\/]+)\/issues\/(\d+)/)
+    const issue = card.issueUrl.match(/repos\/([^/]+)\/([^/]+)\/issues\/(\d+)/);
     return octokit.issues.get({ owner: issue[1], repo: issue[2], number: issue[3] }).then(result => {
       result.url = card.issueUrl;
       return result;

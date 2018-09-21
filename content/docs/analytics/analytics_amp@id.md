@@ -1,49 +1,52 @@
 ---
-$title: Mengonfigurasi Analytics
+$title: Mengonfigurasi analisis
 ---
 
-## Putuskan sebelum Anda memulai
+## Putuskan sebelum Anda mulai
 
-Semua solusi analisis dibangun berdasarkan pengetahuan mengenai data yang Anda butuhkan,
-dan bagaimana Anda ingin menganalisis data tersebut. Putuskan sebelum Anda memulai:
+Semua solusi analisis dibuat berdasarkan data yang Anda butuhkan,
+dan cara Anda ingin menganalisis data tersebut. Putuskan sebelum Anda mulai:
 
-* Akankah Anda memakai alat analisis pihak ketiga untuk menganalisis keterlibatan pengguna,
-atau solusi internal Anda sendiri?
-* Perilaku pengguna apakah yang akan Anda ukur untuk memahami keterlibatan pengguna?
+* Apakah Anda akan menggunakan fitur analisis pihak ketiga untuk menganalisis interaksi pengguna,
+atau menggunakan solusi internal sendiri?
+* Apa perilaku pengguna yang akan Anda ukur untuk memahami interaksinya?
 
-### Mengirim data ke vendor atau ke sendiri?
+### Kirim data ke vendor atau diri sendiri?
 
-Jika Anda memiliki solusi internal sendiri untuk mengukur keterlibatan pengguna,
-satu-satunya hal yang Anda akan butuhkan untuk mengintegrasikan analisis AMP dengan solusi tersebut adalah URL.
-Di sinilah Anda akan mengirimkan data.
-Anda juga bisa mengirim data ke berbagai URL.
-Misalnya, Anda bisa mengirim data tampilan halaman ke satu URL,
-dan data keterlibatan sosial ke URL yang lain.
+Jika Anda memiliki solusi internal sendiri untuk mengukur interaksi pengguna,
+Anda hanya memerlukan URL untuk mengintegrasikan analisis AMP dengan solusi tersebut.
+Di sinilah Anda akan mengirim data.
+Anda juga dapat mengirim data ke berbagai URL.
+Misalnya, Anda dapat mengirim data tampilan halaman ke satu URL,
+dan data interaksi sosial ke URL lain.
 
-Analisis AMP didesain khusus untuk mengukur sekali dan melaporkan ke banyak.
-Jika Anda sudah bekerja dengan satu atau beberapa vendor analisis,
-periksa
-[spesifikasi amp-analytics](/id/docs/reference/components/amp-analytics.html)
-untuk mengetahui apakah mereka telah mengintegrasikan solusi mereka dengan AMP.
-Jika mereka telah mengintegrasikannya, cukup tautkan ke dokumen mereka dari spesifikasi
-dan mulailah mengikuti petunjuknya.
+Analisis AMP dirancang khusus untuk mengukur sekali dan melaporkan hasilnya ke banyak pihak.
+Jika Anda sudah bekerja dengan satu vendor analisis atau lebih,
+periksa daftar [Vendor Analisis](/id/docs/analytics/analytics-vendors.html) untuk melihat apakah mereka telah mengintegrasikan solusinya dengan AMP.
+Jika mereka sudah melakukannya, tinjau detail konfigurasinya lalu ikuti petunjuknya.
 
-Jika vendor analisis belum mengintegrasikan dengan AMP,
-hubungi vendor untuk meminta dukungan mereka.
-Kami juga mendorong Anda untuk [melaporkan adanya masalah dalam proyek AMP](https://github.com/ampproject/amphtml/issues/new)
-yang meminta ditambahkannya vendor tersebut.
+Jika vendor analisis belum terintegrasi dengan AMP,
+hubungi vendor tersebut untuk meminta dukungan.
+Sebaiknya Anda juga [mengajukan masalah di project AMP](https://github.com/ampproject/amphtml/issues/new)
+dan meminta agar vendor tersebut ditambahkan.
 Lihat juga
-[Mengintegrasikan alat analisis Anda di AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+[Mengintegrasikan fitur analisis di HTML AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
 
-### Data apakah yang Anda butuhkan?
+### Data apa yang Anda butuhkan?
 
-Data tentang pengguna apakah yang akan Anda tangkap untuk mengukur keterlibatan?
-Anda harus mengidentifikasi data ini sebelum Anda bisa mengonfigurasikannya.
+Apa data tentang pengguna yang akan Anda ambil untuk mengukur interaksi?
+Anda harus mengidentifikasi data ini sebelum dapat mengkonfigurasinya.
 
-Butir-butir data utama yang harus dipertimbangkan:
+Titik data utama yang perlu dipertimbangkan:
 
-* Akankah Anda hanya melacak tampilan halaman saja, atau pola keterlibatan pengguna tambahan
-(lihat juga [amp-pixel atau amp-analytics](/id/docs/analytics/analytics_basics.html#menggunakan-amp-pixel-atau-amp-analytics?))?
-* Jenis data apakah yang akan Anda tangkap dari pengguna, materi, 
-perangkat atau browser (lihat juga [Penggantian variabel](/id/docs/analytics/analytics_basics.html#penggantian-variabel)?
-* Bagaimana Anda akan mengidentifikasi pengguna Anda (lihat juga [Identifikasi pengguna](/id/docs/analytics/analytics_basics.html#identifikasi-pengguna))?
+* Apakah Anda hanya akan melacak tampilan halaman, atau pola interaksi pengguna tambahan
+(lihat juga [amp-pixel atau amp-analytics](/id/docs/analytics/analytics_basics#menggunakan-amp-pixel-atau-amp-analytics?))?
+* Jenis data apa yang akan Anda ambil tentang pengguna, konten,
+perangkat, atau browser (lihat juga [Penggantian variabel](/id/docs/analytics/analytics_basics#penggantian-variabel))?
+* Bagaimana cara Anda mengidentifikasi pengguna (lihat juga [Identifikasi pengguna](/id/docs/analytics/analytics_basics.html#user-identification))?
+
+
+{% call callout('Pelajari lebih lanjut', type='read') %}
+Lanjutkan untuk mempelajari analisis dengan [Analisis: Dasar-Dasar](/id/docs/analytics/analytics_basics.html).
+{% endcall %}
+ 
