@@ -95,8 +95,8 @@ AMP 支持与许多第三方发布平台集成。要了解如何制作 AMP 网�
 *   想查看示例和演示？请访问 [AMP By Example](https://ampbyexample.com/)，其中就如何使用 AMP 组件提供了实例和场景。
 *   需要汲取灵感？
     *   [AMP Start](https://www.ampstart.com/) 提供了已预设样式的模板和组件，可供您用于从头开始创建特定样式的 AMP 网站。
-    *   我们的 [Showcase](zh_cn/learn/showcases/) 着重展示了整个网络范围内引人注目的 AMP 网页。
-*   需要获取支持？请参阅[获取支持](zh_cn/support/developer/get_support.html)页面中提及的资源。
+    *   我们的 [Showcase](/zh_cn/learn/showcases/) 着重展示了整个网络范围内引人注目的 AMP 网页。
+*   需要获取支持？请参阅[获取支持](/zh_cn/support/developer/get_support.html)页面中提及的资源。
 *   及时了解最新的 AMP 资讯：
     *   订阅[我们的播客](https://amphtml.wordpress.com/)
     *   订阅 [YouTube 上的 AMP 频道](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw)
