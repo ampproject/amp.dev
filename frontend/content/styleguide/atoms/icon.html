@@ -55,7 +55,7 @@ icons:
 </div>
 {% for ico in doc.icons %}
   <div class="ad-o-container icon-demo-container {% if ico.final %}final{% endif %} col-span-2">
-    {{ atoms.icon(ico.name, size=4, fill='river-bed') }}
+    {{ atoms.icon(ico.name) }}
     <span class="ad-a-txt ad-a-txt-hl ad-a-txt-3 ad-a-txt-center">{{ ico.name }}</span><br>
   </div>
 {% endfor %}

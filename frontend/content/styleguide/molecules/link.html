@@ -28,7 +28,7 @@ links2:
 <div class="ad-o-container ad-o-container col-4-5">
 {% for link in doc.links1 %}
   <a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
-    {{ atoms.icon(link.type, size=1, bg='square') }}
+    {{ atoms.icon(link.type) }}
     <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black ad-a-txt-font-accent">{{ link.text }}</span>
   </a>
   <span class="ad-a-divider ad-a-divider-desktop"></span>
@@ -41,7 +41,7 @@ links2:
 <div class="ad-o-container ad-o-container col-4-5">
 {% for link in doc.links2 %}
   <a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
-    {{ atoms.icon(link.type, size=1) }}
+    {{ atoms.icon(link.type) }}
     <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ link.text }}</span>
   </a>
   <span class="ad-a-divider ad-a-divider-desktop"></span>

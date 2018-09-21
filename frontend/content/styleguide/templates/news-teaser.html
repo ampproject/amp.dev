@@ -43,8 +43,8 @@ items:
       <span class="ad-a-txt ad-a-txt-hl ad-a-txt-2 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black">{{ article.headline }}</span>
       <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">{{ article.text }}</p>
       <a href={{ article.link }} class="ad-m-lnk">
-        {{ atoms.icon('internal', size=1) }}
         <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ article.label }}</span>
+        {{ atoms.icon('internal') }}
       </a>
     </article>
   </div>
@@ -60,12 +60,12 @@ items:
       <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-gray-chateau">{{ item.subline }}</span>
       <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-1 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black ad-m-teaser-headline">
         {{ item.headline }}
-        {{ atoms.icon(item.icon, size=2, fill='river-bed') }}
+        {{ atoms.icon(item.icon) }}
       </span>
       <p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">{{ lipsum(n=1, html=False, min=15, max=16) }}</p>
       <a href={{ item.link }} class="ad-m-lnk">
-        {{ atoms.icon('internal', size=1) }}
         <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ item.label }}</span>
+        {{ atoms.icon('internal') }}
       </a>
     </div>
   </div>

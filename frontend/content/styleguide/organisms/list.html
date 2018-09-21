@@ -46,7 +46,7 @@ teasers:
     <li class="ad-o-list-item ad-o-list-item-col-3" aria-labelledby="KPI item">
       <div class="ad-m-kpi ad-m-kpi-{{ kpi.type }}">
         <div class="ad-m-kpi-content">
-    			{{ atoms.icon( kpi.icon , size=2, fill="white") }}
+    			{{ atoms.icon( kpi.icon ) }}
     			<span class="ad-a-txt ad-a-txt-strong ad-a-txt-light ad-m-kpi-number">{{ kpi.title }}</span>
     			<p class="ad-a-txt ad-a-txt-p ad-a-txt-3 ad-a-txt-light ad-m-kpi-text">{{ kpi.text }}</p>
     		</div>
@@ -67,11 +67,11 @@ teasers:
         <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-gray-chateau">{{ teaser.subline }}</span>
         <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-1 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black ad-m-teaser-headline">
           {{ teaser.headline }}
-          {{ atoms.icon(teaser.icon, size=2, fill='river-bed') }}
+          {{ atoms.icon(teaser.icon) }}
         </span>
         <p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">{{ lipsum(n=1, html=False, min=15, max=16) }}</p>
         <a href={{ teaser.link }} class="ad-m-lnk">
-          {{ atoms.icon('internal', size=1) }}
+          {{ atoms.icon('internal') }}
           <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ teaser.label }}</span>
         </a>
       </div>
