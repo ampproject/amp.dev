@@ -1,6 +1,17 @@
 blogs:
 
 - type: Blog
+  title: "Are you leaving revenue on the table with AMP?"
+  id: ads-are-you-leaving-revenue-on-the-table-with-amp
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/08/28/are-you-leaving-revenue-on-the-table-with-amp/amp/"
+  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google I’m a product manager working on AMP and we strive to make advertising better on the web while helping publishers thrive. I’m writing this to give you some background on design choices we made for advertising in AMP [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-08-28T08:08:11-07:00
+  date: "August 28, 2018"
+
+- type: Blog
   title: "AddThis is Now Available for AMP"
   id: ads-addthis-is-now-available-for-amp
   author: Chad Edmonds
@@ -8,7 +19,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/30/addthis-is-now-available-for-amp/amp/"
   excerpt: "Editor&#8217;s note: the following was originally posted on AddThis&#8217; blog by Chad Edmonds, Sr. Marketing Manager, AddThis Just because AddThis is now free, doesn’t mean we’re slowing down on pushing out more great features and functionalities! We recently rolled out AddThis Inline Share Buttons for AMP and it is ready for you to integrate into your AMP compatible [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-30T14:50:10+00:00
+  datedata: 2018-07-30T07:50:10-07:00
   date: "July 30, 2018"
 
 - type: Blog
@@ -19,7 +30,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/23/privacy-and-user-choice-in-amps-software-architecture/amp/"
   excerpt: "Early choices in designing the AMP HTML JavaScript library have made it uniquely suited for publishers to implement effective privacy controls for users. In web pages, resource requests and browser storage access that may have privacy impact can be initiated through a multitude of mechanisms, many of which are often controlled by third parties. This [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-23T17:36:25+00:00
+  datedata: 2018-07-23T10:36:25-07:00
   date: "July 23, 2018"
 
 - type: Blog
@@ -30,7 +41,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/19/track-development-with-the-new-amp-roadmap/amp/"
   excerpt: "As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each. Starting today, you can head over to the AMP roadmap and see an updated view of feature development across the project. We hope this is easy [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-19T21:42:43+00:00
+  datedata: 2018-07-19T14:42:43-07:00
   date: "July 19, 2018"
 
 - type: Blog
@@ -41,7 +52,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/16/new-in-amp-stories-monetization-revamped-bookends-and-metadata/amp/"
   excerpt: "We announced the developer preview of AMP stories in February at AMP Conf. Since then, publishers have authored thousands of stories, experimenting with the format and providing valuable feedback to the AMP team. Based on this input, we recently released new capabilities in AMP stories v1.0, open to all developers without origin trials or a [&#8230;]"
   avatar: https://videos.files.wordpress.com/pqK8yXrk/amp_blog_story_ad_hd.mp4
-  datedata: 2018-07-16T22:03:22+00:00
+  datedata: 2018-07-16T15:03:22-07:00
   date: "July 16, 2018"
 
 - type: Blog
@@ -52,16 +63,5 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/07/11/serverless-amp-solution-on-aws/amp/"
   excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit. You can see their site featured on the showcase page of AMPproject.org It all started when we realized our website gets outdated very fast and we are always so busy with our customers we forget about ourselves. We had to build something [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-11T20:09:31+00:00
+  datedata: 2018-07-11T13:09:31-07:00
   date: "July 11, 2018"
-
-- type: Blog
-  title: "The Shadow Reader, Improved"
-  id: ads-the-shadow-reader-improved
-  author: Ben Morss
-  role:  Developer Advocate, Google
-  origin: "https://amphtml.wordpress.com/2018/06/19/the-shadow-reader-improved/amp/"
-  excerpt: "We made the Shadow Reader even faster &#8211; and friendlier to search engines! We created the Shadow Reader to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site repurposes existing articles from The Guardian into an immersive news reader experience. More than [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-06-19T18:22:01+00:00
-  date: "June 19, 2018"

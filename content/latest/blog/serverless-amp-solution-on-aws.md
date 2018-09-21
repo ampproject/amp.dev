@@ -8,7 +8,7 @@ role:
 origin: "https://amphtml.wordpress.com/2018/07/11/serverless-amp-solution-on-aws/amp/"
 excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit. You can see their site featured on the showcase page of AMPproject.org It all started when we realized our website gets outdated very fast and we are always so busy with our customers we forget about ourselves. We had to build something [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-07-11T20:09:31+00:00
+date_data: 2018-07-11T13:09:31-07:00
 $date: July 11, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

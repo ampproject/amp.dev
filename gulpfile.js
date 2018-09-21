@@ -149,9 +149,9 @@ gulp.task('sass', function() {
 gulp.task('watch', function() {
   gulp.watch(Path.CSS_SOURCES, gulp.series('sass'));
   gulp.watch([
-    './assets\/img\/*.{svg,png,jpg}',
-    './assets\/img\/nav/*.{svg,png,jpg}',
-    './assets\/img\/footer/*.{svg,png,jpg}'
+    './assets/img/*.{svg,png,jpg}',
+    './assets/img/nav/*.{svg,png,jpg}',
+    './assets/img/footer/*.{svg,png,jpg}'
   ], gulp.series('generate-asset-manifest'));
 });
 
@@ -160,7 +160,11 @@ gulp.task('build',
   gulp.parallel(
     'update-blog-links',
     /*'update-tweets',*/ //TODO: endpoint is broken, fix with proper Twitter API
-    gulp.series('import-docs', 'import-roadmap', 'update-platforms-page'),
+    gulp.series(
+      'import-docs',
+      'import-roadmap',
+      'update-platforms-page'
+    ),
     'optimize-images',
     'sass',
     'build-examples',
@@ -172,10 +176,25 @@ gulp.task('default',
   gulp.series(
     gulp.parallel(
       gulp.series(
-        'import-docs', 'import-roadmap', 'update-platforms-page'),
+        'import-roadmap',
+        'update-platforms-page'
+      ),
       'sass',
       'generate-asset-manifest'
     ),
     'watch'
+  )
+);
+
+gulp.task('import',
+  gulp.series(
+    gulp.parallel(
+      'update-blog-links',
+      gulp.series(
+        'import-docs',
+        'import-roadmap',
+        'update-platforms-page'
+      )
+    )
   )
 );

@@ -5,16 +5,17 @@
     "preinstall": "node build_scripts/check-package-manager.js"
   },
   "dependencies": {
-    "@octokit/rest": "15.9.4",
+    "@octokit/rest": "15.12.0",
+    "eslint": "5.6.0",
     "feedparser": "2.2.9",
     "gulp": "4.0.0",
-    "gulp-autoprefixer": "5.0.0",
+    "gulp-autoprefixer": "6.0.0",
     "gulp-plumber": "1.2.0",
     "gulp-sass": "4.0.1",
-    "gulp-svg-sprite": "1.4.0",
+    "gulp-svg-sprite": "1.5.0",
     "moment": "2.22.2",
-    "octonode": "0.9.2",
-    "request": "2.87.0"
+    "octonode": "0.9.4",
+    "request": "2.88.0"
   },
   "devDependencies": {
     "amp-by-example": "*",
