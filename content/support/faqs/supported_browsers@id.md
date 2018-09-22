@@ -1,7 +1,7 @@
 ---
 $title@: Browser yang Didukung
 ---
-{% set who = g.doc('/id/content/includes/who.yaml', locale=doc.locale) %}
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 
 <div class="browser-container">
 {% for browser in who.browsers %}
