@@ -1,7 +1,7 @@
 ---
 $title@: Navegadores compatíveis
 ---
-{% set who = g.doc('/pt_br_/content/includes/who.yaml', locale=doc.locale) %}
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 
 <div class="browser-container">
 {% for browser in who.browsers %}
