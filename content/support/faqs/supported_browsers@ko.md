@@ -1,7 +1,7 @@
 ---
 $title@: 지원되는 브라우저
 ---
-{% set who = g.doc('/ko/content/includes/who.yaml', locale=doc.locale) %}
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 
 <div class="browser-container">
 {% for browser in who.browsers %}
