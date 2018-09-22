@@ -1,18 +1,18 @@
 {
   "labels": [
     "Runtime",
-    "Analytics",
-    "Ads",
     "PWA",
+    "Ads",
     "Email",
     "AMP Story",
+    "Analytics",
     "Audio&Video",
     "Dynamic/Personalized Content",
     "Presentation",
     "Tooling",
+    "User Input",
     "AMP Caches",
-    "Validator",
-    "User Input"
+    "Validator"
   ],
   "columns": [
     {
@@ -34,22 +34,6 @@
           }
         },
         {
-          "createdAt": "2018-07-16T21:37:04Z",
-          "updatedAt": "2018-07-16T21:37:05Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16737",
-            "title": "AMP ID link decoration ",
-            "description": "We intend to implement a link decoration based solution for AMP pages to sync IDs across domains.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Analytics",
-                "name": "Analytics",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-16T17:05:02Z",
           "updatedAt": "2018-07-16T17:05:02Z",
           "issue": {
@@ -57,27 +41,6 @@
             "title": "Leaner AMP",
             "description": "Gradually JavaScript payloads for libraries tend to increase in size as features and capabilities are expanded. Occasionally, these increases pass thresholds where devices take a noticeably longer time to parse and evaluate code leading to lower boot up performance.",
             "labels": []
-          }
-        },
-        {
-          "createdAt": "2018-07-16T16:48:26Z",
-          "updatedAt": "2018-07-16T16:48:26Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/15653",
-            "title": "Support IAB Consent Framework using amp-consent ",
-            "description": "At the moment, consent within amp-consent is binary. Either the user can accept consent for all vendors on the page or reject consent for all vendors on the page. \r\nThis feature provides the ability for a user to accept or reject consent on a per vendor basis. Further, this could also be enhanced to support consent on a per vendor *and* per purpose basis. \r\nfor e.g. a user should be able to give consent at a granular level to Vendor A for the purpose of analytics but reject consent to Vendor A for the purpose of ads. \r\nMaster issue is #15651 ",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
-                "name": "Ads",
-                "color": "1d76db"
-              },
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Analytics",
-                "name": "Analytics",
-                "color": "1d76db"
-              }
-            ]
           }
         },
         {
@@ -107,44 +70,12 @@
           }
         },
         {
-          "createdAt": "2018-07-03T22:15:28Z",
-          "updatedAt": "2018-07-03T22:15:29Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16559",
-            "title": "Support HTML5 ads in AMP Stories",
-            "description": "AMP Stories currently supports publishers to deliver direct sold native story ads. This feature captures the work involved for delivering \"regular\", non-native programmatic and direct sold ads. \r\nThis allows publishers and advertisers to use existing ad demand instead of having to develop natively for stories. ",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
-                "name": "Ads",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-03T21:58:45Z",
           "updatedAt": "2018-07-03T21:58:45Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16558",
             "title": "Create an onboarding developer portal for ads  ",
             "description": "The feature captures the development of a portal that would help developers understand the tools available to them both for ads being served to AMP pages and non-AMP Pages, including when the ads are legacy ads (ads with JS in them) vs when they are AMPHTML ads.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
-                "name": "Ads",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
-          "createdAt": "2018-07-03T21:48:30Z",
-          "updatedAt": "2018-07-03T21:48:31Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16557",
-            "title": "Rewrite the AMP Runtime for ads",
-            "description": "When an AMPHTML ad is inside an non-AMP page context, it loads the entire AMP runtime. Although the AMP runtime is performant, it still has a lot of functionality that is irrelevant for rendering an ad. (e.g. scheduling)\r\nThis feature captures the effort to rewrite the AMP runtime in a way that's specifically catered for ads and in the process, reduce the ad runtime size to 50% that of the AMP runtime and also decrease ad render time. In addition, this feature will also include additional ad specific library compliance like SafeFrame and MRAID out of the box. \r\n",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
@@ -245,44 +176,12 @@
           }
         },
         {
-          "createdAt": "2018-07-02T22:55:52Z",
-          "updatedAt": "2018-07-02T22:55:53Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/11647",
-            "title": "Support RTL for amp-story",
-            "description": "Right now, everything is designed as LTR.  This is a cover bug for enabling RTL support.  We should consider the story to be RTL if:",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
-                "name": "AMP Story",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-02T22:54:28Z",
           "updatedAt": "2018-07-02T22:54:29Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/16533",
             "title": "Design/test a new desktop experience for stories",
             "description": "-  Create a prototype of a new desktop experience\r\n-  Test the prototype\r\n-  Integrate feedback\r\n-  Design a launch/rollout plan\r\n-  Roll out the new desktop experience",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
-                "name": "AMP Story",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
-          "createdAt": "2018-07-02T22:50:37Z",
-          "updatedAt": "2018-07-02T22:50:37Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/15562",
-            "title": "Improve audio UX for amp-story",
-            "description": "Right now it is unclear which story pages have audio and which do not.  We should improve the audio experience by only showing the audio icon when it makes sense (#13652) and adding callouts as necessary.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
@@ -447,60 +346,28 @@
           }
         },
         {
-          "createdAt": "2018-04-02T20:00:30Z",
-          "updatedAt": "2018-04-02T20:00:31Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14366",
-            "title": "Implement support for ad server served ads in AMP Stories",
-            "description": "Related to #12381. Background here: https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md\r\nProvide the ability for ad servers to return single page or sponsored story ad from an ad server so that it's spliced in real time into the organic story. ",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
-                "name": "Ads",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
-          "createdAt": "2018-04-02T19:56:47Z",
-          "updatedAt": "2018-04-02T19:56:48Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14365",
-            "title": "Support AMPHTML ads in mobile apps",
-            "description": "This will require the ads SDK that renders the ad to recognize and deliver the AMPHTML ad to get information like view-ability and getting scroll bound animations to work. ",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
-                "name": "Ads",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
-          "createdAt": "2018-04-02T17:19:24Z",
-          "updatedAt": "2018-04-02T17:19:25Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14355",
-            "title": "Support Viewability and Spam Detection instrumentation in AMPHTML ads ",
-            "description": "Unlike regular ads where viewability and spam detection services can run custom JavaScript, AMPHTML ads don't allow that. This feature enhances amp-analytics in a way that 3rd parties can integrate to instrument viewability and collect signals for spam detection.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
-                "name": "Ads",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-04-02T13:35:45Z",
           "updatedAt": "2018-04-02T13:35:45Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/14346",
             "title": "Instrument and speed up non-AMPHTML ads ",
             "description": "AMPHTML ads are given preference over non-AMPHTML ads on AMP pages. This is because we don't know how non-AMPHTML ads can affect performance of the AMP page. The degree to which they are throttled should be instrumented and ensured that there are no idle cycles being spent after page load and before the ads are being loaded.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-04-02T13:25:11Z",
+          "updatedAt": "2018-04-02T13:25:11Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14344",
+            "title": "Ads - Add Auto-Ad support for all ad networks",
+            "description": "AdSense currently support auto ads. Make it generically available for any network to implement auto ads support. ",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
@@ -517,21 +384,69 @@
     {
       "cards": [
         {
-          "createdAt": "2018-07-14T02:09:35Z",
-          "updatedAt": "2018-07-14T02:10:57Z",
+          "createdAt": "2018-04-02T17:19:24Z",
+          "updatedAt": "2018-08-16T20:22:24Z",
           "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16738",
-            "title": "Support signed exchanges",
-            "description": "Vision: https://www.ampproject.org/latest/blog/a-first-look-at-using-web-packaging-to-improve-amp-urls/",
+            "url": "https://github.com/ampproject/amphtml/issues/14355",
+            "title": "Support Viewability and Spam Detection instrumentation in AMPHTML ads ",
+            "description": "Unlike regular ads where viewability and spam detection services can run custom JavaScript, AMPHTML ads don't allow that. This feature enhances amp-analytics in a way that 3rd parties can integrate to instrument viewability and collect signals for spam detection.",
             "labels": [
               {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Caches",
-                "name": "AMP Caches",
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-04-02T19:56:47Z",
+          "updatedAt": "2018-08-16T20:22:57Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14365",
+            "title": "Support AMPHTML ads in mobile apps",
+            "description": "This will require the ads SDK that renders the ad to recognize and deliver the AMPHTML ad to get information like view-ability and getting scroll bound animations to work. ",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-07-03T21:48:30Z",
+          "updatedAt": "2018-08-16T20:20:59Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/16557",
+            "title": "Rewrite the AMP Runtime for ads",
+            "description": "When an AMPHTML ad is inside an non-AMP page context, it loads the entire AMP runtime. Although the AMP runtime is performant, it still has a lot of functionality that is irrelevant for rendering an ad. (e.g. scheduling)\r\nThis feature captures the effort to rewrite the AMP runtime in a way that's specifically catered for ads and in the process, reduce the ad runtime size to 50% that of the AMP runtime and also decrease ad render time. In addition, this feature will also include additional ad specific library compliance like SafeFrame and MRAID out of the box. \r\n",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-07-16T16:48:26Z",
+          "updatedAt": "2018-08-16T20:07:52Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/15653",
+            "title": "Support IAB Consent Framework using amp-consent ",
+            "description": "At the moment, consent within amp-consent is binary. Either the user can accept consent for all vendors on the page or reject consent for all vendors on the page. \r\nThis feature provides the ability for a user to accept or reject consent on a per vendor basis. Further, this could also be enhanced to support consent on a per vendor *and* per purpose basis. \r\nfor e.g. a user should be able to give consent at a granular level to Vendor A for the purpose of analytics but reject consent to Vendor A for the purpose of ads. \r\nMaster issue is #15651 ",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
                 "color": "1d76db"
               },
               {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Validator",
-                "name": "Validator",
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Analytics",
+                "name": "Analytics",
                 "color": "1d76db"
               }
             ]
@@ -564,22 +479,6 @@
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Audio&Video",
                 "name": "Audio&Video",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
-          "createdAt": "2018-03-16T18:53:43Z",
-          "updatedAt": "2018-07-02T16:42:46Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14071",
-            "title": "amp-compare-slider",
-            "description": "Implement a common image-slider pattern for publications comparing two different but related images: celebrities then and now; maps of geographic regions before and after a significant change; documents before and after editing.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
-                "name": "Presentation",
                 "color": "1d76db"
               }
             ]
@@ -662,16 +561,6 @@
                 "color": "1d76db"
               }
             ]
-          }
-        },
-        {
-          "createdAt": "2018-04-02T13:17:30Z",
-          "updatedAt": "2018-04-02T13:36:02Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14343",
-            "title": "Ads- Launch Real Time Config 2.0",
-            "description": "Publishers often have the need to enhance an ad request with targeting or audience information. Real Time Config is a publisher configurable end point that's invoked before the ad request to the ad request is made, so the end point and respond with targeting information that is attached along with the ad request. ",
-            "labels": []
           }
         },
         {
@@ -834,6 +723,133 @@
     },
     {
       "cards": [
+        {
+          "createdAt": "2018-04-02T13:17:30Z",
+          "updatedAt": "2018-09-17T18:36:29Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14343",
+            "title": "Ads- Launch Real Time Config 2.0",
+            "description": "Publishers often have the need to enhance an ad request with targeting or audience information. Real Time Config is a publisher configurable end point that's invoked before the ad request to the ad request is made, so the end point and respond with targeting information that is attached along with the ad request. ",
+            "labels": []
+          }
+        },
+        {
+          "createdAt": "2018-07-16T21:37:04Z",
+          "updatedAt": "2018-09-19T17:42:15Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/16737",
+            "title": "AMP Linker",
+            "description": "We intend to implement a link decoration based solution for AMP pages to sync IDs across domains.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Analytics",
+                "name": "Analytics",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-07-14T02:09:35Z",
+          "updatedAt": "2018-08-30T01:08:57Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/16738",
+            "title": "Support signed exchanges",
+            "description": "Vision: https://www.ampproject.org/latest/blog/a-first-look-at-using-web-packaging-to-improve-amp-urls/",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Caches",
+                "name": "AMP Caches",
+                "color": "1d76db"
+              },
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Validator",
+                "name": "Validator",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-07-02T22:50:37Z",
+          "updatedAt": "2018-08-23T00:17:09Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/15562",
+            "title": "Improve audio UX for amp-story",
+            "description": "Right now it is unclear which story pages have audio and which do not.  We should improve the audio experience by only showing the audio icon when it makes sense (#13652) and adding callouts as necessary.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
+                "name": "AMP Story",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-03-16T18:53:43Z",
+          "updatedAt": "2018-09-19T17:43:34Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14071",
+            "title": "amp-compare-slider",
+            "description": "Implement a common image-slider pattern for publications comparing two different but related images: celebrities then and now; maps of geographic regions before and after a significant change; documents before and after editing.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
+                "name": "Presentation",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-04-02T20:00:30Z",
+          "updatedAt": "2018-09-19T17:41:43Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14366",
+            "title": "Implement support for ad server served ads in AMP Stories",
+            "description": "Related to #12381. Background here: https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md\r\nProvide the ability for ad servers to return single page or sponsored story ad from an ad server so that it's spliced in real time into the organic story. ",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-07-03T22:15:28Z",
+          "updatedAt": "2018-08-16T20:20:32Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/16559",
+            "title": "Support HTML5 ads in AMP Stories",
+            "description": "AMP Stories currently supports publishers to deliver direct sold native story ads. This feature captures the work involved for delivering \"regular\", non-native programmatic and direct sold ads. \r\nThis allows publishers and advertisers to use existing ad demand instead of having to develop natively for stories. ",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
+                "name": "Ads",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-07-02T22:55:52Z",
+          "updatedAt": "2018-08-08T16:38:27Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/11647",
+            "title": "Support RTL for amp-story",
+            "description": "Right now, everything is designed as LTR.  This is a cover bug for enabling RTL support.  We should consider the story to be RTL if:",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
+                "name": "AMP Story",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
         {
           "createdAt": "2018-03-16T18:46:16Z",
           "updatedAt": "2018-08-04T00:36:23Z",
