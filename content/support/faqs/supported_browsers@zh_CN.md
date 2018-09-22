@@ -1,7 +1,7 @@
 ---
 $title@: 支持的浏览器
 ---
-{% set who = g.doc('/zh_cn/content/includes/who.yaml', locale=doc.locale) %}
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 
 <div class="browser-container">
 {% for browser in who.browsers %}
