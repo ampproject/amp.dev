@@ -1,92 +1,104 @@
 ---
-$title: はじめに
+$title: クイックスタート
 ---
+
 [TOC]
 
-これは AMP の使用を開始するためのクイックスタート ガイドです。
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 
-詳しい手順については、「[初めての AMP ページを作成する](/ja/docs/getting_started/create.html)」チュートリアルをご覧ください。
+このガイドでは、AMP を今すぐ使い始めるのに役立つ主な関連資料をご紹介します。さらに詳しい情報については、[AMP のドキュメント](/ja/docs/)または AMP プロジェクトの [YouTube チャンネル](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw)をご確認ください。
 
-### ステップ 1: AMP HTML テンプレートを取得する
+<hr>
 
-これは AMP ページに必要な基本の HTML です。
+## AMP スタートガイド
 
-```html
-<!doctype html>
-<html ⚡>
-  <head>
-    <meta charset="utf-8">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Hello AMP world</title>
-    <link rel="canonical" href="hello-world.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  </head>
-  <body>
-    <h1>Hello AMP World!</h1>
-  </body>
-</html>
-```
+AMP の使用を開始する主な手順は次のとおりです。
 
-詳細情報: 詳しくは、AMP ページの[必須のマークアップ](/ja/docs/fundamentals/spec.html#required-markup)についてご覧ください。
+1. [AMP ページを作成する](#create-your-amp-pages)
+2. [AMP ページを検証する](#validate-and-test-amp-pages)
+3. [コンテンツが検出されるようにする](#make-your-content-discoverable)
 
-### ステップ 2: ページにコンポーネントを追加する
+## 日常的に AMP を使用する
 
-画像などのコンポーネントを追加して AMP ページを構築します。
+AMP が提供するすべてのリソースを駆使して、日常的に AMP を使用します。
 
-```html
-<amp-img src="https://www.ampproject.org/examples/images/amp.jpg"
-  width="900" height="508" layout="responsive"></amp-img>
-```
+<a class="button" href="#amp-day-to-day-resources"> リソースを確認する</a>
 
-YouTube 動画の場合:
+<hr>
 
-```html
-<!-- this script is required for amp-youtube and must be in the <head> section  -->
-<script async custom-element="amp-youtube"
-      src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+### AMP ページを作成する
 
-...
+[CMS の使用方法](#using-a-cms?)、[ゼロから始める方法](#starting-from-scratch?)、[既存のコンテンツを変換する方法](#converting-existing-content?)に関する以下のセクションをご確認ください。
 
-<amp-youtube data-videoid="9Cfxm7cikMY"
-    layout="responsive"
-    width="480" height="270"></amp-youtube>
-```
+#### CMS を使用する
 
-詳しくは、[AMP で使用可能なコンポーネント](/ja/docs/reference/components.html)のリストをご覧ください。
+AMP は、サードパーティが提供するさまざまなパブリッシング プラットフォームとの統合に対応しています。お使いのパブリッシング プラットフォームで AMP ページを作成する方法については、各プラットフォームのドキュメントをご確認ください。
 
-### ステップ 3: 要素のスタイルを設定する
+<div>
+  {% for section in who.tech_companies.sections %}
+    {% if section.title == 'CMS' %}
+      <ul>
+        {% for item in section.section_items %}
+          <li class="item">
+            {% if item.link %}
+              <a href="{{item.link}}">{{item.title}}</a>
+            {% else %}
+              {{item.title}}
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+  {% endfor %}
+</div>
 
-AMP ページの要素のスタイルを設定するには、ドキュメントの `<head>` 内で `<style amp-custom>` というインライン スタイルシートに CSS を追加します。
+#### ゼロから始める
 
-```html
-<style amp-custom>
-  amp-img {
-    margin: 0.5em;
-  }
-  body {
-    max-width: 900px;
-  }
-</style>
-```
+AMP ページや AMP 広告をゼロから作成する場合は、次の関連資料をご確認ください。
 
-詳細情報: 詳しくは、AMP ページで[サポートされる CSS](/ja/docs/design/responsive/style_pages.html) をご覧ください。
+*   [チュートリアル: 初めての AMP ページを作成する](/ja/docs/getting_started/create.html)
+*   [チュートリアル: 高度な AMP 機能を追加する](/ja/docs/fundamentals/add_advanced.html)
+*   [AMP HTML の仕様](/ja/docs/fundamentals/spec.html#the-amp-html-format): ボイラープレート、必須のマークアップ、使用できる HTML など
+*   [AMP HTML 広告のフォーマット](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): AMP で効果的な広告を作成する方法の詳細
+*   [YouTube 動画: AMP でできること、できないこと](https://youtu.be/Gv8A4CktajQ)
+*   [AMP Start のテンプレート](https://www.ampstart.com/): すぐに使える既製の AMP ページ テンプレート
 
-### ステップ 4: AMP HTML を検証する
+#### 既存のコンテンツを変換する
 
-ページを [AMP Validator](https://validator.ampproject.org/) で検証して、AMP ページが有効な AMP HTML であることを確認します。
+既存の HTML ページを AMP HTML に変換する場合は、次の関連資料をご確認ください。
 
-使用できる他の検証ツールについては、[AMP ページを検証する](/ja/docs/fundamentals/validate.html)をご覧ください。
+*   [チュートリアル: HTML を AMP に変換する](/ja/docs/fundamentals/converting.html)
+*   [YouTube 動画: 既存のサイトで AMP HTML を使用する](https://youtu.be/OO9oKhs80aI)
 
-### 次のステップ
+### AMP ページを検証、テストする
 
-AMP ページの基本をさらに理解するには、「[初めての AMP ページを作成する](/ja/docs/getting_started/create.html)」チュートリアルをご覧ください。
+コンテンツを公開する前に、AMP ページが有効かどうかを確認する必要があります。次の関連資料をご確認ください。
 
-役立つその他のリソースを以下にご紹介します。
+*   [AMP ページを検証する](/ja/docs/fundamentals/validate.html): 検証ツールの一覧とページを検証する手順
+*   [YouTube 動画: AMP ページを検証、デバッグする方法](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
+*   [AMP の CORS をテストする](/ja/docs/fundamentals/amp-cors-requests.html#testing-cors-in-amp)
 
-* [ページを検出可能にする](/ja/docs/fundamentals/discovery.html)
-* [ページにアナリティクスを追加する](/ja/docs/analytics/analytics_amp.html)
-* [ユーザー エンゲージメントを向上させる](/ja/docs/fundamentals/engagement.html)
-* [AMP BY Example](https://ampbyexample.com/) ライブデモ
+### コンテンツが検出されるようにする
 
+ユーザーが Twitter や Google、Bing などのサードパーティ プラットフォーム上でコンテンツを検出できるようにします。次の関連資料をご確認ください。
 
+*   [ページが検出されるようにする](/ja/docs/fundamentals/discovery.html): AMP ページをリンクする方法、メタデータを使用する方法のヒント
+*   [Google 検索での AMP ページに関するガイドライン](https://support.google.com/webmasters/answer/6340290)
+
+<hr>
+
+## 日常的に AMP を使用するための関連資料
+
+日常的に AMP を使用する際には、次の関連資料をご確認ください。
+
+*   [AMP コンポーネントの一覧](/ja/docs/reference/components.html): 各コンポーネントのリファレンス ページには、AMP ページにコンポーネントを組み込み、使用する方法の詳細がまとめられています。
+*   例とデモ: AMP コンポーネントの具体的な使用例がまとめられ、実際に試すことのできる [AMP By Example](https://ampbyexample.com/) をご覧ください。
+*   ヒントが必要な場合は次の関連資料をご確認ください。
+    *   [AMP Start](https://www.ampstart.com/): あらかじめスタイルが設定されたテンプレートとコンポーネントを使用して、デザインされた AMP サイトをゼロから構築できます。
+    *   AMP プロジェクトの[ショーケース](/ja/learn/showcases/): 一般に公開されている優れた AMP ページをご紹介します。
+*   サポートが必要な場合は、[サポートのご案内](/ja/support/developer/get_support.html)のリソースをご利用ください。
+*   AMP の最新ニュースは、次の方法で入手できます。
+    *   [AMP プロジェクトのブログ](https://amphtml.wordpress.com/)に登録する
+    *   [YouTube の AMP Channel](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw) に登録する
+    *   AMP プロジェクトの Twitter アカウント [@AMPhtml](https://twitter.com/amphtml) をフォローする
+ 

@@ -199,7 +199,7 @@ The `amp-story` extension provides a new format for displaying visual content th
 
 An [AMP story](#story:-amp-story) is a complete AMP HTML document that is comprised of [pages](#pages:-amp-story-page), within the pages are [layers](#layers:-amp-story-grid-layer), within the layers are AMP & HTML elements, like media, analytics, text, and so on.
 
-<amp-img alt="AMP story tag hierarchy" layout="fixed" src="https://github.com/ampproject/docs/raw/master/assets/img/docs/amp-story-tag-hierarchy.png" width="591" height="358">
+<amp-img alt="AMP story tag hierarchy" layout="fixed" src="https://github.com/ampproject/docs/raw/master/assets/img/docs/amp-story-tag-hierarchy.png" width="557" height="355">
   <noscript>
     <img alt="AMP story tag hierarchy" src="https://github.com/ampproject/docs/raw/master/assets/img/docs/amp-story-tag-hierarchy.png" />
   </noscript>
@@ -421,7 +421,7 @@ The `small` component can be used to link to related articles. This component re
 [/sourcecode]
 
 <amp-img alt="Bookend small component" layout="fixed"
-src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-story/img/amp-story-bookend-component-small.png" width="379" height="192">
+src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-story/img/amp-story-bookend-component-small.png" width="379" height="162">
   <noscript>
     <img alt="Bookend small component" src="img/amp-story-bookend-component-small.png" />
   </noscript>
@@ -463,7 +463,7 @@ The `portrait` component can be used to link to other stories. This component re
 [/sourcecode]
 
 <amp-img alt="Bookend portrait component" layout="fixed"
-src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-story/img/amp-story-bookend-component-portrait.png" width="382" height="522">
+src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-story/img/amp-story-bookend-component-portrait.png" width="383" height="547">
   <noscript>
     <img alt="Bookend portrait component" src="img/amp-story-bookend-component-portrait.png" />
   </noscript>
@@ -513,7 +513,7 @@ The `textbox` component lets you specify text inside the bookend (for example, p
 [/sourcecode]
 
 <amp-img alt="Bookend textbox component" layout="fixed"
-src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-story/img/amp-story-bookend-component-textbox.png" width="591" height="358">
+src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-story/img/amp-story-bookend-component-textbox.png" width="379" height="178">
   <noscript>
     <img alt="Bookend textbox component" src="img/amp-story-bookend-component-textbox.png" />
   </noscript>
