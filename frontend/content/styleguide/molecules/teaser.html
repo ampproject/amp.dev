@@ -24,15 +24,15 @@ items:
   </div>
   <div class="ad-o-container col-3-4">
     <div class="ad-m-teaser {% if item.modifier %}ad-m-teaser-{{item.modifier}}{% endif %}">
-      <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-gray-chateau">{{ item.subline }}</span>
-      <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-1 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black ad-m-teaser-headline">
+      <span class="ad-m-teaser-subline">{{ item.subline }}</span>
+      <span class="ad-m-teaser-headline">
         {{ item.headline }}
-        {{ atoms.icon(item.icon) }}
+        {{ atoms.icon(item.icon, 'ad-m-teaser-icon') }}
       </span>
-      <p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">{{ lipsum(n=1, html=False, min=15, max=16) }}</p>
-      <a href={{ item.link }} class="ad-m-lnk">
-        {{ atoms.icon('internal') }}
-        <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ item.label }}</span>
+      <p class="ad-m-teaser-copy">{{ lipsum(n=1, html=False, min=15, max=16) }}</p>
+      <a href={{ item.link }} class="ad-m-lnk ad-m-teaser-link">
+        {{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+        <span class="ad-m-lnk-text">{{ item.label }}</span>
       </a>
     </div>
   </div>
