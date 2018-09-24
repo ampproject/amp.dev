@@ -78,6 +78,5 @@ square
 // Default icon styling
 .#{atom('ico')} {
 	@include ico;
-	@include ico-3;
-	@include ico-blue-ribbon;
+	@include ico-1;
 }
