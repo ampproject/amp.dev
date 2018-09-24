@@ -45,9 +45,6 @@ none
 	}
 
 	&-icon {
-		@include ico-1;
-		@include ico-blue-ribbon;
-
 		padding: 0.438em 0;
 		margin-bottom: auto;
 		margin-right: 0.625em;
@@ -74,6 +71,10 @@ none
 	.#{molecule('lnk')} {
 		&-text {
 			@include txt-blue-ribbon;
+		}
+
+		&-icon {
+			@include ico-blue-ribbon;
 		}
 	}
 }
