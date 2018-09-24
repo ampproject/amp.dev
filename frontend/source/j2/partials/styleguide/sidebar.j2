@@ -66,21 +66,4 @@
     </ul>
   </section>
   {% endif %}
-
-	{% set templates = g.collection('/content/styleguide/templates') %}
-  {% if templates %}
-  <section>
-    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Templates</p>
-    <ul>
-      {% for doc in templates %}
-      <li>
-        <a class="ad-m-lnk" href="{{ doc.url|relative }}">
-					{{ atoms.icon('internal') }}
-					<span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-river-bed">{{ doc.title }}</span>
-				</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
 </amp-sidebar>
