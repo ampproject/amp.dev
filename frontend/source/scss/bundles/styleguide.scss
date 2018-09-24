@@ -114,21 +114,29 @@ a {
 			margin: 0 0 2em;
 
 			li {
-				a {
+				.#{molecule('lnk')} {
 					margin: 0;
 					padding: 0.375em 0;
 
-					.ad-a-txt,
-					.ad-a-ico {
-						transition: all 0.25s cubic-bezier(.55,0,.1,1);
+					&-text {
+						@include txt;
+						@include txt-accent-2;
+						@include txt-strong;
 					}
 
-					&:hover {
-						.ad-a-txt {
+					&-text,
+					&-icon {
+						transition: all 0.25s cubic-bezier(.55,0,.1,1);
+					}
+				}
+
+				&:hover {
+					.#{molecule('lnk')} {
+						&-text {
 							color: color('blue-ribbon');
 						}
 
-						.ad-a-ico {
+						&-icon {
 							fill: color('blue-ribbon');
 							transform: translateX(0.313em);
 						}
