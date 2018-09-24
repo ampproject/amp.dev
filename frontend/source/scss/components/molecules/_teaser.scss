@@ -98,19 +98,7 @@ white
 	}
 
 	&-link {
-		@include link;
 		padding-bottom: 0;
 		margin-bottom: 0;
-
-		&-label {
-			@include txt;
-			@include txt-accent-2;
-			@include txt-strong;
-			@include txt-blue-ribbon;
-		}
-
-		&-icon {
-			@include ico-1;
-		}
 	}
 }
