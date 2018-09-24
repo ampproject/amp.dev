@@ -35,11 +35,19 @@ none
 		padding: 0;
 	}
 
-	.#{atom('hl')} {
+	&-headline {
+		@include hl;
+		@include hl-h4;
 		margin: 0 0 0.375em;
 	}
 
-	.#{atom('ico')} {
+	&-copy {
+		@include txt;
+		@include txt-3;
+		@include txt-p;
+	}
+
+	&-icon {
 		position: absolute;
 		left: 0;
 		top: 0;
