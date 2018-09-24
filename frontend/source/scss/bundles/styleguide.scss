@@ -108,6 +108,12 @@ a {
       padding: 20px;
     }
 
+		&-title {
+			@include txt;
+			@include txt-strong;
+			@include txt-blue-ribbon;
+		}
+
     ul {
       list-style: none;
       padding: 0;

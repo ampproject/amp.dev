@@ -2,7 +2,7 @@
   {% set demoAtoms = g.collection('/content/styleguide/atoms') %}
   <section>
     {% if demoAtoms %}
-    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Atoms</p>
+    <p class="styleguide__sidebar-title">Atoms</p>
     <ul>
       {% for doc in demoAtoms %}
       <li>
@@ -19,7 +19,7 @@
   {% set demoMolecules = g.collection('/content/styleguide/molecules') %}
   {% if demoMolecules %}
   <section>
-    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Molecules</p>
+    <p class="styleguide__sidebar-title">Molecules</p>
     <ul>
       {% for doc in demoMolecules %}
       <li>
@@ -36,7 +36,7 @@
   {% set demoOrganisms = g.collection('/content/styleguide/organisms') %}
   {% if demoOrganisms %}
   <section>
-    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Organisms</p>
+    <p class="styleguide__sidebar-title">Organisms</p>
     <ul>
       {% for doc in demoOrganisms %}
       <li>
@@ -53,7 +53,7 @@
   {% set prototypes = g.collection('/content/styleguide/prototypes') %}
   {% if prototypes %}
   <section>
-    <p class="ad-a-txt ad-a-txt-strong ad-a-txt-blue-ribbon">Prototypes</p>
+    <p class="styleguide__sidebar-title">Prototypes</p>
     <ul>
       {% for doc in prototypes %}
       <li>
