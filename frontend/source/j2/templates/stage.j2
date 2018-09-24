@@ -1,0 +1,21 @@
+{% extends '/templates/default.j2' %}
+
+{% import '/source/j2/macros/atoms.j2' as atoms %}
+
+{% block style %}
+<style amp-custom>
+{% include '/static/static/css/stage.css' %}
+</style>
+{% endblock %}
+
+
+{% block main %}
+
+{% block content %}
+<main class="styleguide__content">
+  <div class="container">
+    {{ doc.html|render|safe }}
+  </div>
+</main>
+{% endblock content %}
+{% endblock main %}

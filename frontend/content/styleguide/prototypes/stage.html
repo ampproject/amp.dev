@@ -1,160 +1,18 @@
+---
+$view: /views/styleguide/stage.j2
 $title: Stage Rolling Animation
 ---
-
-<!doctype html>
-<html ⚡>
-<head>
-    <meta charset="utf-8">
-    <title>{{ doc.title }}</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-		<link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
-
-		<script async src="https://cdn.ampproject.org/v0.js"></script>
-		<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
-		<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400|Poppins:700" rel="stylesheet">
-
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <style amp-custom>
-
-			@keyframes roll {
-				0% {
-					transform: translateY(0%);
-				}
-
-				10% {
-					transform: translateY(-20%);
-				}
-
-				20% {
-					transform: translateY(-20%);
-				}
-
-				30% {
-					transform: translateY(-20%);
-				}
-
-				40% {
-					transform: translateY(-40%);
-				}
-
-				50% {
-					transform: translateY(-40%);
-				}
-
-				60% {
-					transform: translateY(-60%);
-				}
-
-				70% {
-					transform: translateY(-60%);
-				}
-
-				80% {
-					transform: translateY(-80%);
-				}
-
-				100% {
-					transform: translateY(-80%);
-				}
-			}
-
-			.hero {
-				width: 100%;
-				height: 100vh;
-				z-index: 1;
-				position: absolute;
-			}
-
-			.content {
-				position: relative;
-				padding: 10% 0 0 5%;
-				z-index: 10;
-				max-width: 250px;
-			}
-
-			@media screen and (min-width: 768px) {
-				.content {
-					max-width: 550px;
-				}
-			}
-
-			.headline {
-				margin: 0;
-				display: inline;
-				font-size: 2em;
-				font-family: Poppins;
-				padding-right: 12px;
-				color: #ffffff;
-			}
-
-			.stage-list-viewbox {
-				height: 50px;
-				overflow: hidden;
-			}
-
-			.stage-list {
-				padding: 0;
-				margin: 0;
-			}
-
-			.stage-list-animate {
-				animation: roll 10s cubic-bezier(0.4, 0, 0, 1) infinite both;
-				animation-delay: 1s;
-			}
-
-			{# default list item #}
-
-			.stage-list-item {
-				font-family: Poppins;
-				font-size: 32px;
-				outline: #ffffff;
-				color: #ffffff;
-				padding: 1px 20px 1px 0px;
-			}
-
-			{# stage-list-item font colors #}
-
-			.websites {
-				background: linear-gradient(45deg,  #21C1FA, #005AF0);
-			}
-
-			.stories {
-				background: linear-gradient(45deg, #FFE100, #FF8F00);
-			}
-
-			.ads {
-				background: linear-gradient(45deg, #FF8F00, #EF0000);
-			}
-
-			.email {
-				background: linear-gradient(45deg, #38CA71,#00CD3C);
-			}
-
-			{# hero gradients #}
-
-			.hero-websites {
-				background: linear-gradient(45deg,  #21C1FA, #005AF0);
-			}
-
-    </style>
-</head>
 <body>
 	<div class="stage">
 		<div class="hero hero-websites"></div>
 		<div class="content">
 			<h3 class="headline">AMP is a web component based framework for easily creating user first </h3>
-			<div style="display:inline; position: absolute; height: 50px;">
-				<div class="stage-list-viewbox">
-						<ul class="stage-list stage-list-animate" [class]="stages.currentStage == 'default' ? 'stage-list stage-list-animate' : 'stage-list'">
-							<li class="stage-list-item websites">websites</li>
-							<li class="stage-list-item stories">stories</li>
-							<li class="stage-list-item ads">ads</li>
-							<li class="stage-list-item email">emails</li>
-							<li class="stage-list-item stage-list-item-repeat websites" [class]="stage.currentStage == 'default' ? 'stage-list-item websites': 'stage-list-item stage-list-item-repeat websites'">websites</li>
-						</ul>
+				<div class="stage-list-view-box">
+					<span class="stage-list-item websites">websites</span>
+					<span class="stage-list-item stories">stories</span>
+					<span class="stage-list-item ads">ads</span>
+					<span class="stage-list-item email">emails</span>
 				</div>
-			</div>
 		</div>
 	</div>
 </body>

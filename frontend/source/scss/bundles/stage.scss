@@ -1,0 +1,155 @@
+
+@keyframes gradientChange {
+
+	0% {
+		background-position: 0% 0%
+	}
+
+	24% {
+		background-position: 0% 0%
+	}
+
+	28% {
+		background-position: 24% 0%;
+	}
+
+	50% {
+		background-position: 24% 0%;
+	}
+
+	54% {
+		background-position: 48% 0%;
+	}
+
+	76% {
+		background-position: 48% 0%;
+	}
+
+	80% {
+		background-position: 72% 0%;
+	}
+
+	98% {
+		background-position: 72% 0%;
+	}
+
+	100% {
+		background-position: 100% 0%;
+	}
+}
+
+
+@keyframes roll {
+
+	0% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+
+	6% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+
+	24% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	32% {
+		opacity: 1;
+		transform: translateY(100%);
+	}
+
+	42% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+}
+
+.hero {
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	position: absolute;
+}
+
+.content {
+	position: relative;
+	padding: 10% 0 0 5%;
+	z-index: 10;
+	max-width: 250px;
+
+	@media screen and (min-width: 768px) {
+		max-width: 550px;
+	}
+}
+
+.headline {
+	margin: 0;
+	display: inline;
+	font-size: 2em;
+	font-family: Poppins;
+	padding-right: 12px;
+	color: #ffffff;
+}
+
+.stage-list-view-box {
+	display: inline;
+	height: 50px;
+	width: 200px;
+	overflow: hidden;
+	position: absolute;
+	background: linear-gradient(45deg,#00DCC0, #0388F7,  #C8114D, #FF8F00, #5500D7, #FF52E1, #FF8F00, #FFF300, #00DCC0, #0388F7);
+	background-size: 1200% 100%;
+	background-position: 0% 0%;
+	animation: gradientChange 12.8s ease infinite;
+}
+
+// default list item
+
+.stage-list-item {
+	font-family: Poppins;
+	font-size: 32px;
+	outline: #ffffff;
+	color: #ffffff;
+	padding: 1px 20px 1px 10px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+// stage-list-item animation delays
+
+.websites {
+	animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+	animation-delay: 0s;
+}
+
+.stories {
+	opacity: 0;
+	animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+	animation-delay: 3.2s;
+}
+
+.ads {
+	opacity: 0;
+	animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+	animation-delay: 6.4s;
+}
+
+.email {
+	opacity: 0;
+	animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+	animation-delay: 9.6s;
+}
+
+.hero-websites {
+		background: linear-gradient(45deg,  #21C1FA, #005AF0);
+}
