@@ -38,7 +38,13 @@ none
 .#{molecule('lnk')} {
 	@include link;
 
-	.#{atom('ico')} {
+	&-text {
+		@include txt;
+		@include txt-accent-2;
+		@include txt-strong;
+	}
+
+	&-icon {
 		@include ico-1;
 		@include ico-blue-ribbon;
 
@@ -46,10 +52,28 @@ none
 		margin-bottom: auto;
 		margin-right: 0.625em;
 		box-sizing: initial;
+	}
+}
 
-		&-square {
+.link-preview-1 {
+	.#{molecule('lnk')} {
+		&-text {
+			@include txt-black;
+			@include txt-font-accent;
+		}
+
+		&-icon {
+			@include ico-square;
 			padding: 0.438em;
 			@include box-shadow;
+		}
+	}
+}
+
+.link-preview-2 {
+	.#{molecule('lnk')} {
+		&-text {
+			@include txt-blue-ribbon;
 		}
 	}
 }
