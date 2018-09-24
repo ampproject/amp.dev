@@ -35,61 +35,61 @@ light
   font-weight: bold;
   line-height: 1.25em;
   color: color('black');
+}
 
-  &-h1 {
-    font-size: 3em;
+@mixin hl-h1 {
+  font-size: 3em;
 
-    @media screen and (min-width: 768px) {
-      font-size: 3.25em;
-    }
+  @media screen and (min-width: 768px) {
+    font-size: 3.25em;
   }
+}
 
-  &-h2 {
-    font-size: 2.25em;
+@mixin hl-h2 {
+  font-size: 2.25em;
 
-    @media screen and (min-width: 768px) {
-      font-size: 2.625em;
-    }
+  @media screen and (min-width: 768px) {
+    font-size: 2.625em;
   }
+}
 
-  &-h3 {
-    font-size: 1.5em;
+@mixin hl-h3 {
+  font-size: 1.5em;
 
-    @media screen and (min-width: 768px) {
-      font-size: 1.75em;
-    }
+  @media screen and (min-width: 768px) {
+    font-size: 1.75em;
   }
+}
 
-  &-h4 {
-    font-size: 1em;
+@mixin hl-h4 {
+  font-size: 1em;
+}
+
+@mixin hl-h5 {
+  font-size: 0.875em;
+}
+
+@mixin hl-silver {
+  color: color('silver');
+  font-size: 0.625em;
+}
+
+@mixin hl-blue-ribbon {
+  color: color('blue-ribbon');
+}
+
+@mixin hl-h4 {
+  font-size: 1em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.25em;
   }
+}
 
-  &-h5 {
-    font-size: 0.875em;
-  }
+@mixin hl-light {
+  color: color('white');
+}
 
-  &-silver {
-    color: color('silver');
-    font-size: 0.625em;
-  }
-
-  &-blue-ribbon {
-    color: color('blue-ribbon');
-  }
-
-  &-h4 {
-    font-size: 1em;
-
-    @media screen and (min-width: 768px) {
-      font-size: 1.25em;
-    }
-  }
-
-  &-light {
-    color: color('white');
-  }
-
-  &-mono {
-    font-family: monospace;
-  }
+@mixin hl-mono {
+  font-family: monospace;
 }
