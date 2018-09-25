@@ -89,7 +89,12 @@ a {
       margin-right: 7px;
       border-radius: 50%;
       background: none;
-      border: none;
+			border: none;
+
+			.ad-a-ico {
+				@include ico-blue-ribbon;
+				@include ico-3;
+			}
 
 			.#{atom('ico')} {
 				@include ico-3;
@@ -141,11 +146,11 @@ a {
 				&:hover {
 					.#{molecule('lnk')} {
 						&-text {
-							color: color('blue-ribbon');
+							@include txt-blue-ribbon;
 						}
 
 						&-icon {
-							fill: color('blue-ribbon');
+							@include ico-blue-ribbon;
 							transform: translateX(0.313em);
 						}
 					}
