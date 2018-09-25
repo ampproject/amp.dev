@@ -44,16 +44,61 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4 {
+	@include hl;
+}
+
+h1 {
+	@include hl-h1;
+}
+
+h2 {
+	@include hl-h2;
+}
+
+h3 {
+	@include hl-h3;
+}
+
+h4 {
+	@include hl-h4;
+}
+
 ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
+p {
+  @include txt;
+  @include txt-p;
+  @include txt-2;
+
+	small {
+		@include txt-accent-2;
+	}
+
+	big {
+		@include txt-1;
+	}
+}
+
 a {
 	font-weight: bold;
 	text-decoration: none;
 	color: color('blue-ribbon');
+}
+
+code {
+	@include txt-mono-inline;
+}
+
+pre code {
+	@include txt-mono-block;
 }
 
 .styleguide {
@@ -82,6 +127,14 @@ a {
       height: 100%;
       justify-content: center;
     }
+
+		h1 {
+			@include hl-h3;
+			@include txt;
+			@include txt-strong;
+			@include txt-light;
+			margin: 0;
+		}
   }
 
     &__toggle {
@@ -283,6 +336,7 @@ a {
 
 .icon-demo-container {
 	margin-bottom: 2em !important;
+	@include txt-center;
 
 	.ad-a-ico {
 		@include ico-4;
@@ -292,12 +346,5 @@ a {
 
 	&:not(.final) .ad-a-ico {
 		background-color: rgba(color('red'), 0.25);
-	}
-
-	span {
-		@include txt;
-		@include txt-hl;
-		@include txt-3;
-		@include txt-center;
 	}
 }

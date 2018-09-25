@@ -20,7 +20,7 @@ items:
 
 {% for item in doc.items %}
   <div class="ad-o-container col-2-1">
-    <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">{{ item.description }}</p>
+    <p><small>{{ item.description }}</small></p>
   </div>
   <div class="ad-o-container col-3-4">
     <div class="ad-m-teaser {% if item.modifier %}ad-m-teaser-{{item.modifier}}{% endif %}">

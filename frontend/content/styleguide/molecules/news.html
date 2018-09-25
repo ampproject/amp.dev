@@ -20,7 +20,7 @@ articles:
 
 {% for article in doc.articles %}
   <div class="ad-o-container col-2-1">
-    <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">{{ article.description }}</p>
+    <p><small>{{ article.description }}</small></p>
   </div>
   <div class="ad-o-container col-4-4">
     <article class="ad-m-news {% if article.modifier %}ad-m-news-{{article.modifier}} {% endif %}">
