@@ -109,3 +109,9 @@
     display: none;
   }
 }
+
+:lang(ko) {
+  .toc a {
+    font-weight: 400;
+  }
+}

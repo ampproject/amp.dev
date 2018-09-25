@@ -334,3 +334,13 @@
     }
   }
 }
+
+:lang(ko) {
+  .header {
+    font-weight: 400;
+
+    div.tab .list-container>ul li a {
+      font-weight: 400;
+    }
+  }
+}

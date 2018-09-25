@@ -105,3 +105,11 @@
 .toc {
   top: 80px + 60px;
 }
+
+:lang(ko) {
+  .promo {
+    .left, .right {
+      font-weight: 400;
+    }
+  }
+}

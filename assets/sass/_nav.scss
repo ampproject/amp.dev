@@ -47,3 +47,9 @@ nav.breadcrumb {
     }
   }
 }
+
+:lang(ko) {
+  nav.breadcrumb li, nav.breadcrumb a {
+    font-weight: 400;
+  }
+}
