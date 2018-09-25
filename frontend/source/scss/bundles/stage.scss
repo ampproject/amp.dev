@@ -105,10 +105,11 @@
 	width: 200px;
 	overflow: hidden;
 	position: absolute;
-	background: linear-gradient(45deg,#00DCC0, #0388F7,  #C8114D, #FF8F00, #5500D7, #FF52E1, #FF8F00, #FFF300, #00DCC0, #0388F7);
+	background: linear-gradient(-220deg, #0388F7 ,#00DCC0, #FF8F00, #FFF300,  #C8114D, #FF8F00, #5500D7, #FF52E1, #0388F7, #00DCC0);
 	background-size: 1200% 100%;
 	background-position: 0% 0%;
 	animation: gradientChange 12.8s ease infinite;
+	box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
 }
 
 // default list item
@@ -136,18 +137,21 @@
 	opacity: 0;
 	animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 	animation-delay: 3.2s;
+	color: #180CA4;
 }
 
 .ads {
 	opacity: 0;
 	animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 	animation-delay: 6.4s;
+	color: #CEE8FC;
 }
 
 .email {
 	opacity: 0;
 	animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 	animation-delay: 9.6s;
+	color: #B6FF92;
 }
 
 .hero-websites {
