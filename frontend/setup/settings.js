@@ -7,10 +7,19 @@ import yargs from 'yargs';
  * @type {Object}
  */
 const settings = {
+    'clean': {
+      'src': [
+        '../macros/**/*',
+        '../partials/**/*',
+        '../templates/**/*',
+        '../views/**/*',
+        '../css/**'
+      ]
+    },
     'styles': {
         'src': 'source/scss/bundles/*.scss',
         'dest': [
-            '../static/static/css/',
+            '../css/',
         ],
         'options': {
             'outputStyle': 'compact'
