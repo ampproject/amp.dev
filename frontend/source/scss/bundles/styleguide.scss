@@ -91,9 +91,11 @@ a {
       background: none;
       border: none;
 
-      svg {
-        cursor: pointer;
-      }
+			.#{atom('ico')} {
+				@include ico-3;
+				@include ico-blue-ribbon;
+				cursor: pointer;
+			}
     }
 
     &__title, &__hint {
@@ -278,10 +280,19 @@ a {
 	margin-bottom: 2em !important;
 
 	.ad-a-ico {
+		@include ico-4;
+		@include ico-river-bed;
 		margin: 0 auto 1.5em;
 	}
 
 	&:not(.final) .ad-a-ico {
 		background-color: rgba(color('red'), 0.25);
+	}
+
+	span {
+		@include txt;
+		@include txt-hl;
+		@include txt-3;
+		@include txt-center;
 	}
 }

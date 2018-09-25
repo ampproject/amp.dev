@@ -115,6 +115,8 @@ none
 		}
 
 		.#{atom('ico')} {
+  		@include ico-blue-ribbon;
+
 			width: 0.875em;
 			height: 0.875em;
 			position: absolute;

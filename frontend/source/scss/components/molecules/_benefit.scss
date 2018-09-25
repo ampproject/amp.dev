@@ -48,6 +48,9 @@ none
 	}
 
 	&-icon {
+		@include ico-3;
+		@include ico-blue-ribbon;
+
 		position: absolute;
 		left: 0;
 		top: 0;
