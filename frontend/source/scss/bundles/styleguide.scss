@@ -89,7 +89,12 @@ a {
       margin-right: 7px;
       border-radius: 50%;
       background: none;
-      border: none;
+			border: none;
+
+			.ad-a-ico {
+				@include ico-blue-ribbon;
+				@include ico-3;
+			}
 
       svg {
         cursor: pointer;
