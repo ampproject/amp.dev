@@ -8,6 +8,11 @@
 </style>
 {% endblock %}
 
+{% block icons %}
+{% for ico in ['logo', 'code', 'edit', 'discussion', 'lego', 'lock', 'magazine', 'map', 'money', 'browser', 'search', 'stories', 'template', 'time', 'user', 'flask', 'internal', 'external', 'download', 'arrow-down-thick', 'arrow-down-thin', 'bookmark', 'basket'] %}
+{% include 'partials/icons/' + ico + '.svg' %}
+{% endfor %}
+{% endblock %}
 
 {% block main %}
 
