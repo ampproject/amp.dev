@@ -1,0 +1,321 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+@import '../functions.scss';
+
+
+@import '../components/atoms/icon';
+
+
+@keyframes growRight {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+
+@keyframes gradientChange {
+
+	0% {
+		background-position: 0% 0%
+	}
+
+	24% {
+		background-position: 0% 0%
+	}
+
+	28% {
+		background-position: 24% 0%;
+	}
+
+	50% {
+		background-position: 24% 0%;
+	}
+
+	54% {
+		background-position: 48% 0%;
+	}
+
+	76% {
+		background-position: 48% 0%;
+	}
+
+	80% {
+		background-position: 72% 0%;
+	}
+
+	98% {
+		background-position: 72% 0%;
+	}
+
+	100% {
+		background-position: 100% 0%;
+	}
+}
+
+
+@keyframes roll {
+
+	0% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+
+	6% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+
+	24% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	32% {
+		opacity: 1;
+		transform: translateY(100%);
+	}
+
+	42% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+}
+
+.content {
+	position: relative;
+	padding: 10% 0 0 5%;
+	z-index: 10;
+	max-width: 250px;
+
+	@media screen and (min-width: 768px) {
+		max-width: 550px;
+	}
+}
+
+.headline {
+	margin: 0;
+	display: inline;
+	font-size: 2em;
+	font-family: Poppins;
+	padding-right: 12px;
+	color: #ffffff;
+}
+
+.stage-list-view-box {
+	display: inline;
+	height: 50px;
+	width: 250px;
+	overflow: hidden;
+	position: absolute;
+	background: linear-gradient(-220deg, #0388F7 ,#00DCC0, #FF8F00, #FFF300,  #C8114D, #FF8F00, #5500D7, #FF52E1, #0388F7, #00DCC0);
+	background-size: 1200% 100%;
+	background-position: 0% 0%;
+	animation: gradientChange 12.8s ease infinite;
+	box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
+
+	&-no-animation {
+		animation: none;
+	}
+
+	&-transparent {
+		background: transparent;
+		box-shadow: none;
+	}
+
+	&:hover {
+		height: 215px;
+		transition: height 0.5s ease;
+		background: transparent;
+		animation: none;
+
+		[option][selected] {
+			border: none;
+			outline: #fff;
+		}
+
+		.ad-a-ico {
+			transform: rotate(180deg);
+		}
+
+		.stage-list {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.stage-list-rolling-item {
+			display: none;
+			animation-play-state: paused;
+		}
+	}
+}
+
+.stage-list {
+	display: none;
+	padding: 0;
+	list-style: none;
+	margin: 0;
+
+	&-display {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&:hover {
+
+		.ad-a-ico {
+			transform: rotate(100deg);
+		}
+
+		.stage-list-view-box {
+			animation: none;
+		}
+
+		.stage-list-rolling-item {
+			display: none;
+			animation-play-state: paused;
+		}
+
+	}
+}
+
+// default list item
+
+.stage-list-item {
+	font-family: Poppins;
+	font-size: 32px;
+	outline: #ffffff;
+	color: #ffffff;
+	padding: 1px 20px 1px 10px;
+	width: 100%;
+	height: 100%;
+	order: 2;
+}
+
+[option][selected] {
+	order: 1;
+}
+
+.stage-list-drop-down-item {
+	margin-bottom: 5px;
+
+	&:hover {
+		margin-left: 2px;
+	}
+
+	&.websites {
+		background: linear-gradient(-220deg, #0388F7 ,#00DCC0);
+	}
+
+	&.stories {
+		background: linear-gradient(-220deg, #FF8F00, #FFF300);
+	}
+
+	&.ads {
+		background: linear-gradient(-220deg, #C8114D, #FF8F00);
+	}
+
+	&.email {
+		background: linear-gradient(-220deg, #5500D7, #FF52E1);
+	}
+}
+
+.stories {
+	color: #180CA4;
+}
+
+.ads {
+	color: #CEE8FC;
+}
+
+.email {
+	color: #B6FF92;
+}
+
+// ROLLING ANIMATION STYLES AND DELAYS
+
+.stage-list-rolling-item {
+	position: absolute;
+
+	&-hide {
+		display: none;
+		animation: none;
+	}
+
+	&.websites {
+		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+		animation-delay: 0s;
+	}
+
+	&.stories {
+		opacity: 0;
+		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+		animation-delay: 3.2s;
+	}
+
+	&.ads {
+		opacity: 0;
+		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+		animation-delay: 6.4s;
+	}
+
+	&.email {
+		opacity: 0;
+		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+		animation-delay: 9.6s;
+	}
+
+	&.white {
+		color: #fff;
+	}
+}
+
+// BACKGROUND STYLES
+
+.hero {
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	position: absolute;
+
+	&-default {
+		z-index: 10;
+	}
+
+	&-active {
+		animation: growRight 1s ease-in-out;
+		z-index: 10;
+	}
+
+	&-websites {
+		background: linear-gradient(-220deg, #0388F7 ,#00DCC0);
+	}
+
+	&-stories {
+		background: linear-gradient(-220deg, #FF8F00, #FFF300);
+	}
+
+	&-ads {
+		background: linear-gradient(-220deg, #C8114D, #FF8F00);
+	}
+
+	&-email {
+		background: linear-gradient(-220deg, #5500D7, #FF52E1);
+	}
+}
+
+
+.ad-a-ico {
+	position: absolute;
+	right: 0;
+	z-index: 10;
+	padding: 14px 14px;
+	transition: transform 0.5s ease;
+}
