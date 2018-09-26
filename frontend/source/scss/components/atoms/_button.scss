@@ -22,9 +22,9 @@ none
 */
 
 .#{atom('btn')} {
-	@extend .#{atom('hl')} !optional;
-	@extend .#{atom('hl-h3')} !optional;
-	@extend .#{atom('hl-light')} !optional;
+	@include hl;
+	@include hl-h3;
+	@include hl-light;
 
 	display: inline-block;
 	max-width: 100%;

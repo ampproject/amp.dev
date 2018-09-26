@@ -37,18 +37,16 @@ teasers:
   modifier: white
 ---
 <div class="ad-o-container col-2-1">
-  <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">
-    List organism with <span class="ad-a-txt ad-a-txt-strong">scroll</span> modifier.
-  </p>
+  <p><small>List organism with <strong>scroll</strong> modifier.</small></p>
 </div>
 <ul class="ad-o-container ad-o-list ad-o-list-scroll col-9-4" aria-labelledby="KPI list">
   {% for kpi in doc.kpis %}
     <li class="ad-o-list-item ad-o-list-item-col-3" aria-labelledby="KPI item">
       <div class="ad-m-kpi ad-m-kpi-{{ kpi.type }}">
         <div class="ad-m-kpi-content">
-    			{{ atoms.icon( kpi.icon , size=2, fill="white") }}
-    			<span class="ad-a-txt ad-a-txt-strong ad-a-txt-light ad-m-kpi-number">{{ kpi.title }}</span>
-    			<p class="ad-a-txt ad-a-txt-p ad-a-txt-3 ad-a-txt-light ad-m-kpi-text">{{ kpi.text }}</p>
+    			{{ atoms.icon(kpi.icon, 'ad-m-kpi-icon') }}
+    			<span class="ad-m-kpi-number">{{ kpi.title }}</span>
+    			<p class="ad-m-kpi-text">{{ kpi.text }}</p>
     		</div>
       </div>
     </li>
@@ -56,23 +54,21 @@ teasers:
 </ul>
 
 <div class="ad-o-container col-2-1">
-  <p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">
-    List organism with <span class="ad-a-txt ad-a-txt-strong">scroll</span> modifier.
-  </p>
+  <p><small>List organism with <strong>scroll</strong> modifier.</small></p>
 </div>
 <ul class="ad-o-container ad-o-list ad-o-list-scroll col-9-4" aria-labelledby="Teaser list">
   {% for teaser in doc.teasers %}
     <li class="ad-o-list-item ad-o-list-item-col-2" aria-labelledby="Teaser item">
       <div class="ad-m-teaser {% if teaser.modifier %}ad-m-teaser-{{teaser.modifier}}{% endif %}">
-        <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-gray-chateau">{{ teaser.subline }}</span>
-        <span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-1 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black ad-m-teaser-headline">
+        <span class="ad-m-teaser-subline">{{ teaser.subline }}</span>
+        <span class="ad-m-teaser-headline">
           {{ teaser.headline }}
-          {{ atoms.icon(teaser.icon, size=2, fill='river-bed') }}
+          {{ atoms.icon(teaser.icon, 'ad-m-teaser-icon') }}
         </span>
-        <p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">{{ lipsum(n=1, html=False, min=15, max=16) }}</p>
+        <p class="ad-m-teaser-copy">{{ lipsum(n=1, html=False, min=15, max=16) }}</p>
         <a href={{ teaser.link }} class="ad-m-lnk">
-          {{ atoms.icon('internal', size=1) }}
-          <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ teaser.label }}</span>
+          {{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+          <span class="ad-m-lnk-text">{{ teaser.label }}</span>
         </a>
       </div>
     </li>

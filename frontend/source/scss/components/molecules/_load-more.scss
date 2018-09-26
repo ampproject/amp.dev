@@ -30,7 +30,16 @@ none
 .#{molecule('load-more')} {
 	text-align: center;
 
-	.#{atom('ico')} {
+	&-text {
+		@include txt;
+		@include txt-accent-1;
+		@include txt-strong;
+		@include txt-black;
+		@include txt-font-accent;
+	}
+
+	&-icon {
+		@include ico-2;
 		margin: 0 auto 0.375em;
 	}
 }

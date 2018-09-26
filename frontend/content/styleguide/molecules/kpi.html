@@ -18,16 +18,14 @@ kpis:
 ---
 {% for kpi in doc.kpis %}
 	<div class="ad-o-container col-2-1">
-		<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">
-			Single KPI molecule with <span class="ad-a-txt ad-a-txt-strong">{{ kpi.type }}</span> modifier.
-		</p>
+		<p><small>Single KPI molecule with <strong>{{ kpi.type }}</strong> modifier.</small></p>
 	</div>
 	<div class="ad-o-container col-2-4">
 		<div class="ad-m-kpi ad-m-kpi-{{ kpi.type }}">
       <div class="ad-m-kpi-content">
-  			{{ atoms.icon( kpi.icon , size=2, fill="white") }}
-  			<span class="ad-a-txt ad-a-txt-strong ad-a-txt-light ad-m-kpi-number">{{ kpi.title }}</span>
-  			<p class="ad-a-txt ad-a-txt-p ad-a-txt-3 ad-a-txt-light ad-m-kpi-text">{{ kpi.text }}</p>
+  			{{ atoms.icon(kpi.icon, 'ad-m-kpi-icon') }}
+  			<span class="ad-m-kpi-number">{{ kpi.title }}</span>
+  			<p class="ad-m-kpi-text">{{ kpi.text }}</p>
   		</div>
     </div>
 	</div>

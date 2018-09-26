@@ -23,26 +23,26 @@ links2:
   href: '#'
 ---
 <div class="ad-o-container col-2-1">
-	<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">Three link molecules with square icon modifier.</p>
+	<p><small>Three link molecules with square icon modifier.</small></p>
 </div>
-<div class="ad-o-container ad-o-container col-4-5">
+<div class="ad-o-container link-preview-1 col-4-5">
 {% for link in doc.links1 %}
   <a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
-    {{ atoms.icon(link.type, size=1, bg='square') }}
-    <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black ad-a-txt-font-accent">{{ link.text }}</span>
+    {{ atoms.icon(link.type, 'ad-m-lnk-icon') }}
+    <span class="ad-m-lnk-text">{{ link.text }}</span>
   </a>
   <span class="ad-a-divider ad-a-divider-desktop"></span>
 {% endfor %}
 </div>
 
 <div class="ad-o-container col-2-1">
-	<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">Three link molecules without modifiers.</p>
+	<p><small>Three link molecules without modifiers.</small></p>
 </div>
-<div class="ad-o-container ad-o-container col-4-5">
+<div class="ad-o-container link-preview-2 col-4-5">
 {% for link in doc.links2 %}
   <a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
-    {{ atoms.icon(link.type, size=1) }}
-    <span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">{{ link.text }}</span>
+    {{ atoms.icon(link.type, 'ad-m-lnk-icon') }}
+    <span class="ad-m-lnk-text">{{ link.text }}</span>
   </a>
   <span class="ad-a-divider ad-a-divider-desktop"></span>
 {% endfor %}
