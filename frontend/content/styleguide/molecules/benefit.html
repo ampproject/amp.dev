@@ -13,14 +13,14 @@ items:
   icon: browser
 ---
 <div class="col-2-1">
-	<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">Three benefit molecules with different contents.</p>
+	<p><small>Three benefit molecules with different contents.</small></p>
 </div>
 <div class="col-span-1"></div>
 {% for item in doc.items %}
 <div class="ad-m-benefit col-span-2">
-	{{ atoms.icon(item.icon, size=3) }}
-	<h4 class="ad-a-hl ad-a-hl-h4">{{ item.title }}</h4>
-	<p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">{{ item.text }}</p>
+	{{ atoms.icon(item.icon, 'ad-m-benefit-icon') }}
+	<h4 class="ad-m-benefit-headline">{{ item.title }}</h4>
+	<p class="ad-m-benefit-copy">{{ item.text }}</p>
 </div>
 {% if item != doc.items|last() %}
 <span class="ad-a-divider"></span>

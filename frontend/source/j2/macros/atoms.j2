@@ -1,12 +1,12 @@
-{% macro icon(name, size=3, fill='blue-ribbon', bg='transparent') -%}
-	<div class="ad-a-ico ad-a-ico-{{ size }} ad-a-ico-{{ fill }} ad-a-ico-{{ bg }}">
+{% macro icon(name, class) -%}
+	<div class="ad-a-ico {{ class }}">
 	  <svg>
 	    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ name }}"></use>
 	  </svg>
 	</div>
 {%- endmacro %}
 
-{% macro image(modifiers, src='../../../static/img/amp-img-01.png', layout='responsive', width='300', height='300', alt='Image', type='static') -%}
+{% macro image(modifiers, src, layout='responsive', width='300', height='300', alt='Image', type='static') -%}
 	<div
     class="ad-a-img {% for modifier in modifiers %}ad-a-img-{{ modifier }} {% endfor %}"
     {% if type == 'parallax' %}

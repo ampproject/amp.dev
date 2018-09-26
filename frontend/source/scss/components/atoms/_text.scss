@@ -28,105 +28,105 @@ TODO: mono (inline, block)
 
 */
 
-.#{atom('txt')} {
+@mixin txt {
 	font-family: 'Noto Sans';
 	line-height: 1.6em;
 	font-weight: normal;
 	color: color('river-bed');
+}
 
-	&-1 {
-		font-size: 1em;
+@mixin txt-1 {
+	font-size: 1em;
 
-		@media screen and (min-width: 768px) {
-			font-size: 1.25em;
-		}
+	@media screen and (min-width: 768px) {
+		font-size: 1.25em;
 	}
+}
 
-	&-2 {
-		font-size: 0.875em;
+@mixin txt-2 {
+	font-size: 0.875em;
 
-		@media screen and (min-width: 768px) {
-			font-size: 1em;
-		}
-	}
-
-	&-3 {
-		font-size: 0.75em;
-	}
-
-	&-accent-1 {
+	@media screen and (min-width: 768px) {
 		font-size: 1em;
 	}
+}
 
-	&-accent-2 {
-		font-size: 0.875em;
-	}
+@mixin txt-3 {
+	font-size: 0.75em;
+}
 
-	&-accent-3 {
-		font-size: 0.625em;
-	}
+@mixin txt-accent-1 {
+	font-size: 1em;
+}
 
-	&-font-accent {
-		font-family: 'Poppins', sans-serif;
-	}
+@mixin txt-accent-2 {
+	font-size: 0.875em;
+}
 
-	&-hl {
-		display: block;
-		margin-top: 0;
-		margin-bottom: 0.75em;
-		line-height: 1.25em;
-	}
+@mixin txt-accent-3 {
+	font-size: 0.625em;
+}
 
-	&-p {
-		display: block;
-		margin-top: 0;
-		margin-bottom: 0.75em;
-	}
+@mixin txt-font-accent {
+	font-family: 'Poppins', sans-serif;
+}
 
-	&-mono-inline {
-		display: inline-block;
-		padding: 0 4px;
-		font-weight: bold;
-		font-family: monospace;
-		color: color('black');
-		background-color: #eee;
-	}
+@mixin txt-hl {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+	line-height: 1.25em;
+}
 
-	&-mono-block {
-		display: block;
-		font-family: monospace;
-		background-color: color('whisper');
-	}
+@mixin txt-p {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
 
-	&-strong {
-		font-weight: bold;
-	}
+@mixin txt-mono-inline {
+	display: inline-block;
+	padding: 0 4px;
+	font-weight: bold;
+	font-family: monospace;
+	color: color('black');
+	background-color: #eee;
+}
 
-	&-center {
-		text-align: center;
-	}
+@mixin txt-mono-block {
+	display: block;
+	font-family: monospace;
+	background-color: color('whisper');
+}
 
-	&-uppercase {
-		text-transform: uppercase;
-	}
+@mixin txt-strong {
+	font-weight: bold;
+}
 
-	&-black {
-		color: color('black');
-	}
+@mixin txt-center {
+	text-align: center;
+}
 
-	&-blue-ribbon {
-		color: color('blue-ribbon');
-	}
+@mixin txt-uppercase {
+	text-transform: uppercase;
+}
 
-	&-silver {
-		color: color('silver');
-	}
+@mixin txt-black {
+	color: color('black');
+}
 
-	&-gray-chateau {
-		color: color('gray-chateau');
-	}
+@mixin txt-blue-ribbon {
+	color: color('blue-ribbon');
+}
 
-	&-light {
-		color: color('white');
-	}
+@mixin txt-silver {
+	color: color('silver');
+}
+
+@mixin txt-gray-chateau {
+	color: color('gray-chateau');
+}
+
+@mixin txt-light {
+	color: color('white');
 }

@@ -3,8 +3,6 @@ $view: /views/styleguide/component.j2
 $title: Float Image
 
 components:
-- name: amp-img
-  src: https://cdn.ampproject.org/v0.js
 - name: amp-fx-collection
   src: https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js
 
@@ -18,12 +16,12 @@ copies:
   {% endfor %}
 </div>
 <div class="ad-o-container col-2-1">
-	<p class="ad-a-txt ad-a-txt-p ad-a-txt-accent-2">Floating image molecule with one static and one parallax image.</p>
+	<p><small>Floating image molecule with one static and one parallax image.</small></p>
 </div>
 <div class="ad-o-container col-6-4">
   <div class="ad-m-float-image">
-    {{atoms.image(['static'], src='../../../static/img/amp-img-02.png', layout='fill', alt='Alt of static image.')}}
-		{{atoms.image(['shadow-static', 'parallax'], src='../../../static/img/amp-img-03.png', layout='fill', alt='Alt for floating image.', type='parallax')}}
+    {{atoms.image(['static'], src=g.static('/static/static/img/amp-img-02.png').url|relative, layout='fill', alt='Alt of static image.')}}
+		{{atoms.image(['shadow-static', 'parallax'], src=g.static('/static/static/img/amp-img-03.png').url|relative, layout='fill', alt='Alt for floating image.', type='parallax')}}
 	</div>
 </div>
 <div class="ad-o-container col-6-4">
