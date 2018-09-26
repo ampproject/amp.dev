@@ -89,13 +89,6 @@
 	}
 }
 
-.hero {
-	width: 100%;
-	height: 100vh;
-	z-index: 1;
-	position: absolute;
-}
-
 .content {
 	position: relative;
 	padding: 10% 0 0 5%;
@@ -132,6 +125,11 @@
 		animation: none;
 	}
 
+	&-transparent {
+		background: transparent;
+		box-shadow: none;
+	}
+
 	&:hover {
 		height: 215px;
 		transition: height 0.5s ease;
@@ -152,14 +150,6 @@
 			flex-direction: column;
 		}
 
-		.stage-list-item {
-			position: relative;
-
-			.websites {
-				background: linear-gradient(-220deg, #0388F7 ,#00DCC0);
-			}
-		}
-
 		.stage-list-rolling-item {
 			display: none;
 			animation-play-state: paused;
@@ -169,11 +159,9 @@
 
 .stage-list {
 	display: none;
-	background: transparent;
 	padding: 0;
 	list-style: none;
 	margin: 0;
-	height: 100%;
 
 	&-display {
 		display: flex;
@@ -193,10 +181,6 @@
 		.stage-list-rolling-item {
 			display: none;
 			animation-play-state: paused;
-		}
-
-		.stage-list-item {
-			position: relative;
 		}
 
 	}
@@ -232,21 +216,30 @@
 
 	&.stories {
 		background: linear-gradient(-220deg, #FF8F00, #FFF300);
-		color: #180CA4;
 	}
 
 	&.ads {
 		background: linear-gradient(-220deg, #C8114D, #FF8F00);
-		color: #CEE8FC;
 	}
 
 	&.email {
 		background: linear-gradient(-220deg, #5500D7, #FF52E1);
-		color: #B6FF92;
 	}
 }
 
-// stage-list-item animation delays
+.stories {
+	color: #180CA4;
+}
+
+.ads {
+	color: #CEE8FC;
+}
+
+.email {
+	color: #B6FF92;
+}
+
+// ROLLING ANIMATION STYLES AND DELAYS
 
 .stage-list-rolling-item {
 	position: absolute;
@@ -265,52 +258,57 @@
 		opacity: 0;
 		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 		animation-delay: 3.2s;
-		color: #180CA4;
 	}
 
 	&.ads {
 		opacity: 0;
 		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 		animation-delay: 6.4s;
-		color: #CEE8FC;
 	}
 
 	&.email {
 		opacity: 0;
 		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 		animation-delay: 9.6s;
-		color: #B6FF92;
+	}
+
+	&.white {
+		color: #fff;
 	}
 }
+
+// BACKGROUND STYLES
 
 .hero {
 	width: 100%;
 	height: 100vh;
 	z-index: 1;
 	position: absolute;
-}
 
-.hero-active {
-	animation: growRight 1s ease-in-out;
-	z-index: 10;
-}
+	&-default {
+		z-index: 10;
+	}
 
-//hero gradients
+	&-active {
+		animation: growRight 1s ease-in-out;
+		z-index: 10;
+	}
 
-.hero-websites {
-	background: linear-gradient(-220deg, #0388F7 ,#00DCC0);
-}
+	&-websites {
+		background: linear-gradient(-220deg, #0388F7 ,#00DCC0);
+	}
 
-.hero-stories {
-	background: linear-gradient(-220deg, #FF8F00, #FFF300);
-}
+	&-stories {
+		background: linear-gradient(-220deg, #FF8F00, #FFF300);
+	}
 
-.hero-ads {
-	background: linear-gradient(-220deg, #C8114D, #FF8F00);
-}
+	&-ads {
+		background: linear-gradient(-220deg, #C8114D, #FF8F00);
+	}
 
-.hero-email {
-	background: linear-gradient(-220deg, #5500D7, #FF52E1);
+	&-email {
+		background: linear-gradient(-220deg, #5500D7, #FF52E1);
+	}
 }
 
 
