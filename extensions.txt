@@ -1,0 +1,2 @@
+git+git://github.com/jungvonmatt/grow-ext-amp-dependency-injector
+git+git://github.com/jungvonmatt/grow-ext-dynamic-css-bundles

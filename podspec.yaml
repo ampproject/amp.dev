@@ -1,12 +1,10 @@
 grow_version: ">=0.0.66"
 
-root: /styleguide/index.html
+root: /index.html
 
 static_dirs:
-- static_dir: /static/static/
+- static_dir: /static/
   serve_at: /static/
-- static_dir: /static/root/
-  serve_at: /
 
 localization:
   default_locale: en
@@ -16,13 +14,17 @@ preprocessors:
   build_task: '--production'
   run_task: 'develop'
 
-deployments:
-  default:
-    destination: git
-    repo: https://github.com/jungvonmatt/amp.dev.git
-    branch: gh-pages
-    env:
-      name: gh-pages
-      host: jungvonmatt.github.io
-      port: 80
-      scheme: https
+ext:
+- extensions.amp_dependency_injector.AmpDependencyInjectorExtension
+- extensions.dynamic_css_bundles.DynamicCssBundlesExtension
+
+# deployments:
+#   default:
+#     destination: git
+#     repo: https://github.com/jungvonmatt/amp.dev.git
+#     branch: gh-pages
+#     env:
+#       name: gh-pages
+#       host: jungvonmatt.github.io
+#       port: 80
+#       scheme: https
