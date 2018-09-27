@@ -4,7 +4,7 @@ $title: AMP 살펴보기
 cta:
   title: 다음 FAQ
   link_text: 플랫폼 및 기술 업체의 참여
-  link_url: /ko/support/faqs/platform-involvement.md
+  link_url: /content/support/faqs/platform-involvement.md
 
 faq:
  faq:
