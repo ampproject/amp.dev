@@ -1,0 +1,215 @@
+/*
+
+######################
+### MOLECULE: dropdown-switch ###
+######################
+
+### SAMPLE MARKUP:
+
+	see /source/j2/macros/molecules.j2 for macro markup
+
+### INFO:
+
+The dropdown switch is a more complex version of the rolling switch. It includes the rolling switch with
+a gradient animation for the view box and multiple text colors for each text atom. It also includes a
+dropdown list visible on hover and also an icon atom.
+
+requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.scss
+
+### MODIFIERS:
+
+*/
+
+@import '../../mixins.scss';
+
+@import '../components/atoms/icon';
+
+@import '../components/atoms/headline';
+@import '../components/atoms/text';
+@import '../components/atoms/destination';
+
+
+@include rollingAnimation;
+@include viewboxGradientAnimation;
+
+
+.destination-list-view-box {
+	display: inline;
+	height: 50px;
+	width: 250px;
+	overflow: hidden;
+	position: absolute;
+
+
+	&-gradient {
+		background: linear-gradient(-220deg,
+				color('azure-radiance'),color('robins-egg'),
+				color('pizazz'), color('yellow'),
+				color('crimson'), color('pizazz'),
+				color('electric-violet'), color('pink-flamingo'),
+				color('azure-radiance'), color('robins-egg'));
+		background-size: 1200% 100%;
+		background-position: 0% 0%;
+		animation: gradientChange 12.8s ease infinite;
+		box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
+	}
+
+	&-no-animation {
+		animation: none;
+	}
+
+	&:hover {
+		height: 232px;
+		transition: height 0.5s ease;
+		background: transparent;
+		animation: none;
+
+		[option][selected] {
+			border: none;
+			outline: #fff;
+		}
+
+		.ad-a-ico {
+			transform: rotate(180deg);
+		}
+
+		.destination-list {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.destination-list-rolling-item {
+			display: none;
+			animation-play-state: paused;
+		}
+	}
+}
+
+
+.ad-a-ico {
+	position: absolute;
+	right: 0;
+	z-index: 10;
+	padding: 14px 14px;
+	transition: transform 0.5s ease;
+
+	@include ico-white;
+	@include ico-2;
+}
+
+// DROP DPOWN LIST
+
+.destination-list {
+	display: none;
+	padding: 0;
+	list-style: none;
+	margin: 0;
+
+	&-display {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&:hover {
+
+		.ad-a-ico {
+			transform: rotate(100deg);
+		}
+
+		.destination-list-view-box {
+			animation: none;
+		}
+
+		.destination-list-rolling-item {
+			display: none;
+			animation-play-state: paused;
+		}
+
+	}
+}
+
+// default list item
+
+.destination-list-item {
+	@include hl;
+	@include hl-h2;
+	@include hl-light;
+	outline: color('white');
+	padding: 1px 20px 1px 10px;
+	order: 2;
+}
+
+[option][selected] {
+	order: 1;
+}
+
+.destination-list-drop-down-item {
+	margin-bottom: 5px;
+
+	&:hover {
+		margin-left: 2px;
+	}
+}
+
+.websites {
+	@include destination-websites;
+	@include txt-light;
+}
+
+.stories {
+	@include destination-stories;
+	@include txt-stories;
+}
+
+.ads {
+	@include destination-ads;
+	@include txt-ads;
+}
+
+.email {
+	@include destination-email;
+	@include txt-email;
+}
+
+// ROLLING ANIMATION STYLES AND DELAYS
+
+.destination-list-rolling-item {
+	position: absolute;
+
+	&-hide {
+		display: none;
+		animation: none;
+	}
+
+	&-websites {
+		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+		animation-delay: 0s;
+	}
+
+	&-stories {
+		opacity: 0;
+		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+		animation-delay: 3.2s;
+		@include txt-stories;
+	}
+
+	&-ads {
+		opacity: 0;
+		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+		animation-delay: 6.4s;
+		@include txt-ads;
+	}
+
+	&-email {
+		opacity: 0;
+		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+		animation-delay: 9.6s;
+		@include txt-email;
+	}
+
+	&-light {
+		color: color('white');
+	}
+}
+
+
