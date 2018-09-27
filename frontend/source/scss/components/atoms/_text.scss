@@ -130,3 +130,15 @@ TODO: mono (inline, block)
 @mixin txt-light {
 	color: color('white');
 }
+
+@mixin txt-stories {
+	color: color('ultramarine');
+}
+
+@mixin txt-ads {
+	color: color('hawkes-blue');
+}
+
+@mixin txt-email {
+	color: color('reef');
+}

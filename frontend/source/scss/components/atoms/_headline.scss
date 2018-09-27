@@ -22,7 +22,10 @@ h1 - h6
   All values in em depending on base font-size of 16 px.
 
 light
-  Changes the text color to light (default is dark).
+	Changes the text color to light (default is dark).
+
+stories-home
+  Changes text color depending on the destination. Websites text color is white, which has already been delcared with the -light modifier
 
 */
 // TODO: implement mono font and modifier
@@ -92,4 +95,16 @@ light
 
 @mixin hl-mono {
   font-family: monospace;
+}
+
+@mixin hl-stories {
+	color: color('ultramarine');
+}
+
+@mixin hl-ads {
+	color: color('hawkes-blue');
+}
+
+@mixin hl-email {
+	color: color('reef');
 }
