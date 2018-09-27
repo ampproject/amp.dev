@@ -9,28 +9,25 @@ components:
 ---
 <body>
 	<div class="stage">
-		<div [class]="stages.currentStage == 0 ? 'hero hero-websites hero-active' : 'hero hero-websites'" class="hero hero-default hero-websites"></div>
-		<div [class]="stages.currentStage == 1 ? 'hero hero-stories hero-active' : 'hero hero-stories'" class="hero hero-stories"></div>
-		<div [class]="stages.currentStage == 2 ? 'hero hero-ads hero-active' : 'hero hero-ads'"  class="hero hero-ads"></div>
-		<div [class]="stages.currentStage == 3 ? 'hero hero-email hero-active' : 'hero hero-email'"class="hero hero-email"></div>
+		<div [class]="stages.currentStage != 'default' ? 'hero ' + stages.currentStage + ' hero-active' : 'hero'" class="hero hero-default hero-active websites"></div>
 		<div class="content">
-			<h3 class="headline">AMP is a web component based framework for easily creating user first </h3>
-				<div class="stage-list-view-box" [class]="stages.currentStage == 'default' ? 'stage-list-view-box' : 'stage-list-view-box stage-list-view-box-no-animation'">
-					<span class="stage-list-item stage-list-rolling-item websites"
-					[class]="stages.currentStage == 'default' ? 'stage-list-item stage-list-rolling-item websites' : 'stage-list-item stage-list-rolling-item-hide websites'">websites</span>
-					<span class="stage-list-item stage-list-rolling-item stories"
-					[class]="stages.currentStage == 'default' ? 'stage-list-item stage-list-rolling-item stories' : 'stage-list-item stage-list-rolling-item-hide stories'">stories</span>
-					<span class="stage-list-item stage-list-rolling-item ads"
-					[class]="stages.currentStage == 'default' ? 'stage-list-item stage-list-rolling-item ads' : 'stage-list-item stage-list-rolling-item-hide ads'">ads</span>
-					<span class="stage-list-item stage-list-rolling-item email"
-					[class]="stages.currentStage == 'default' ? 'stage-list-item stage-list-rolling-item email' : 'stage-list-item stage-list-rolling-item-hide email'">emails</span>
+			<h3 class="hl" [class]="stages.currentStage != 'default' ? 'hl hl-'+stages.currentStage : 'hl' ">AMP is a web component based framework for easily creating user first </h3>
+				<div class="stage-list-view-box stage-list-view-box-gradient" [class]="stages.currentStage == 'default' ? 'stage-list-view-box stage-list-view-box-gradient' : 'stage-list-view-box stage-list-view-box-no-animation'">
+					<span class="stage-list-item stage-list-rolling-item stage-list-rolling-item-websites"
+					[class]="stages.currentStage == 'default' ? 'stage-list-item stage-list-rolling-item stage-list-rolling-item-websites' : 'stage-list-item stage-list-rolling-item stage-list-rolling-item-hide stage-list-rolling-item-websites'">websites</span>
+					<span class="stage-list-item stage-list-rolling-item stage-list-rolling-item-stories"
+					[class]="stages.currentStage == 'default' ? 'stage-list-item stage-list-rolling-item stage-list-rolling-item-stories' : 'stage-list-item stage-list-rolling-item stage-list-rolling-item-hide stage-list-rolling-item-stories'">stories</span>
+					<span class="stage-list-item stage-list-rolling-item stage-list-rolling-item-ads"
+					[class]="stages.currentStage == 'default' ? 'stage-list-item stage-list-rolling-item stage-list-rolling-item-ads' : 'stage-list-item stage-list-rolling-item stage-list-rolling-item-hide stage-list-rolling-item-ads'">ads</span>
+					<span class="stage-list-item stage-list-rolling-item stage-list-rolling-item-email"
+					[class]="stages.currentStage == 'default' ? 'stage-list-item stage-list-rolling-item stage-list-rolling-item-email' : 'stage-list-item stage-list-rolling-item tage-list-rolling-item-hide stage-list-rolling-item-email'">emails</span>
 					{{ atoms.icon('arrow-down-thick') }}
 					<amp-selector layout="container" on="select:AMP.setState({stages:{currentStage: event.targetOption}})">
 						<ul class="stage-list" [class]="stages.currentStage != 'default' ? 'stage-list stage-list-display': 'stage-list'">
-							<li option="0" class="stage-list-item stage-list-drop-down-item websites">websites</li>
-							<li option="1" class="stage-list-item stage-list-drop-down-item stories">stories</li>
-							<li option="2" class="stage-list-item stage-list-drop-down-item ads">ads</li>
-							<li option="3" class="stage-list-item stage-list-drop-down-item email">emails</li>
+							<li option="websites" class="stage-list-item stage-list-drop-down-item websites">websites</li>
+							<li option="stories" class="stage-list-item stage-list-drop-down-item stories">stories</li>
+							<li option="ads" class="stage-list-item stage-list-drop-down-item ads">ads</li>
+							<li option="email" class="stage-list-item stage-list-drop-down-item email">emails</li>
 						</ul>
 					</amp-selector>
 				</div>
