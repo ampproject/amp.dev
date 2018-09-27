@@ -108,12 +108,12 @@ $title: 페이지를 검색할 수 있도록 설정
 구조화된 데이터가 유효하면 **오류 0개** 및 **경고 0개**가 표시됩니다.
 
 {% call callout('읽어보기', type='read') %}
-페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기](/ko/docs/fundamentals/discovery.html) 가이드를 참조하세요.
+페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 {% endcall %}
 
 훌륭합니다.  이제 AMP 뉴스 기사가 완성되었습니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/fundamentals/converting/congratulations.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

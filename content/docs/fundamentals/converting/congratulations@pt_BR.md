@@ -16,4 +16,4 @@ Neste tutorial, você aprendeu a:
 
 ## Próximas etapas
 
-Continue seu aprendizado sobre AMP criando recursos mais avançados em suas páginas AMP com o tutorial [Adicionar recursos de AMP avançados](/pt_br/docs/fundamentals/add_advanced.html).
+Continue seu aprendizado sobre AMP criando recursos mais avançados em suas páginas AMP com o tutorial [Adicionar recursos de AMP avançados]({{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}}).

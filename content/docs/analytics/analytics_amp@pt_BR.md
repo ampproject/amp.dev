@@ -22,7 +22,7 @@ e dados de envolvimento com redes sociais a outro.
 
 O AMP Analytics foi criado especialmente para fazer a avaliação uma vez e gerar relatórios para vários destinos.
 Se você já estiver trabalhando com um ou mais fornecedores de análise,
-verifique a lista de [fornecedores de análise](/pt_br/docs/analytics/analytics-vendors.html) para ver se eles integraram a solução com as AMP.
+verifique a lista de [fornecedores de análise]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) para ver se eles integraram a solução com as AMP.
 Em caso afirmativo, veja os dados de configuração e siga as instruções.
 
 Se o fornecedor de análise não tiver feito a integração com as AMP,
@@ -49,4 +49,4 @@ o dispositivo ou o navegador (consulte também [Substituição de variáveis](pt
 {% call callout('Saiba mais', type='read') %}
 Conheça os recursos de análise no artigo [Analytics: conceitos básicos](/pt_br/docs/analytics/analytics_basics.html).
 {% endcall %}
- 
+

@@ -30,9 +30,9 @@ Berikutnya, mari sematkan carousel gambar yang sederhana dengan tata letak respo
 
 Komponen `amp-carousel` dapat dikonfigurasikan dalam berbagai cara.  Mari kita ubah UI agar hanya menampilkan gambar satu per satu dan membuat tata letak carousel menjadi responsif.
 
-Untuk melakukannya, pertama-tama, **ubah** `type` `amp-carousel` dari `carousel` menjadi `slides`, **ubah** `layout` menjadi `responsive` dan **tetapkan** `width` ke 300 (pastikan `height` dan `width` sudah ditentukan).  **Tambahkan ** atribut `"layout=responsive"` ke `amp-img` turunan `amp-carousel`. 
+Untuk melakukannya, pertama-tama, **ubah** `type` `amp-carousel` dari `carousel` menjadi `slides`, **ubah** `layout` menjadi `responsive` dan **tetapkan** `width` ke 300 (pastikan `height` dan `width` sudah ditentukan).  **Tambahkan ** atribut `"layout=responsive"` ke `amp-img` turunan `amp-carousel`.
 
-**Muat ulang** halaman. Kini, Anda akan melihat elemen satu per satu, bukannya daftar elemen yang dapat di-scroll secara berulang. Coba **geser** secara horizontal untuk berpindah antar-elemen. Jika Anda menggeser elemen ketiga, Anda tidak akan dapat menggeser lebih jauh lagi. 
+**Muat ulang** halaman. Kini, Anda akan melihat elemen satu per satu, bukannya daftar elemen yang dapat di-scroll secara berulang. Coba **geser** secara horizontal untuk berpindah antar-elemen. Jika Anda menggeser elemen ketiga, Anda tidak akan dapat menggeser lebih jauh lagi.
 
 Berikutnya, **tambahkan** atribut `loop`. **Refresh** halaman dan coba geser ke kiri dengan segera. Carousel akan terus mengalami pengulangan.
 
@@ -91,6 +91,6 @@ Untuk mempelajari lebih lanjut, lihat dokumentasi referensi komponen [amp-carous
 Catatan: Pada contoh terakhir, Anda mungkin menyadari bahwa komponen `amp-ad` menyertakan elemen `div` turunan dengan atribut `placeholder`. Sebelumnya pada tutorial ini, kita menghadapi skenario serupa terkait `amp-ad` yang menggunakan `fallback`. Apa perbedaan antara placeholder dan fallback? Elemen `Fallback` muncul ketika elemen induk gagal dimuat, misalnya, jika tidak ada iklan yang tersedia. Elemen `placeholder` muncul di tempat elemen induk, saat elemen induk sedang dimuat. Artinya, elemen ini menandai berakhirnya proses pemuatan elemen induk. Anda dapat mempelajari lebih lanjut di panduan [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

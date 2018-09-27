@@ -7,7 +7,7 @@ $title: 设置
 在开始学习本教程之前，您需要做好以下准备：
 
 - 掌握基本的 HTML、CSS 和 JavaScript 知识
-- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”](/zh_cn/docs/fundamentals/converting.html)教程）
+- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}})教程）
 - 选择一种浏览器
 - 选择一种文本编辑器
 
@@ -45,4 +45,4 @@ http://localhost:8000/pets-completed.html
   <a class="button prev-button" href="/zh_cn/docs/getting_started/visual_story.html"><span class="arrow-prev">上一页</span></a>
   <a class="button next-button" href="/zh_cn/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">下一页</span></a>
 </div>
- 
+

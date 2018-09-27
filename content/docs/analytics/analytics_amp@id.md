@@ -22,7 +22,7 @@ dan data interaksi sosial ke URL lain.
 
 Analisis AMP dirancang khusus untuk mengukur sekali dan melaporkan hasilnya ke banyak pihak.
 Jika Anda sudah bekerja dengan satu vendor analisis atau lebih,
-periksa daftar [Vendor Analisis](/id/docs/analytics/analytics-vendors.html) untuk melihat apakah mereka telah mengintegrasikan solusinya dengan AMP.
+periksa daftar [Vendor Analisis]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) untuk melihat apakah mereka telah mengintegrasikan solusinya dengan AMP.
 Jika mereka sudah melakukannya, tinjau detail konfigurasinya lalu ikuti petunjuknya.
 
 Jika vendor analisis belum terintegrasi dengan AMP,
@@ -49,4 +49,4 @@ perangkat, atau browser (lihat juga [Penggantian variabel](/id/docs/analytics/an
 {% call callout('Pelajari lebih lanjut', type='read') %}
 Lanjutkan untuk mempelajari analisis dengan [Analisis: Dasar-Dasar](/id/docs/analytics/analytics_basics.html).
 {% endcall %}
- 
+

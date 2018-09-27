@@ -22,7 +22,7 @@ URL さえあれば、AMP アナリティクスをそのソリューションと
 
 AMP アナリティクスでは、1 回の測定で得たデータを複数の URL に送信できます。
 すでに 1 社以上のアナリティクス ベンダーを利用している場合は、
-[アナリティクス ベンダー](/ja/docs/analytics/analytics-vendors.html)の一覧で、該当のソリューションが AMP と統合されているかどうかをご確認ください。
+[アナリティクス ベンダー]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}})の一覧で、該当のソリューションが AMP と統合されているかどうかをご確認ください。
 統合済みの場合は、設定の詳細情報を確認し、その手順に沿って対応してください。
 
 アナリティクス ベンダーが AMP を統合していない場合は、
@@ -49,4 +49,4 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 {% call callout('詳細', type='read') %}
 アナリティクスのさらに詳しい内容については、[アナリティクス: 基本](/ja/docs/analytics/analytics_basics.html)をご覧ください。
 {% endcall %}
- 
+

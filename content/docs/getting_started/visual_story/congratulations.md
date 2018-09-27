@@ -19,6 +19,6 @@ In this tutorial, you learned to:
 Learn more about AMP story from these resources:
 
 - [amp-story reference documentation](/docs/reference/components/amp-story.html)
-- [AMP story best practices](/docs/fundamentals/amp_story_best_practices.html)
+- [AMP story best practices]({{g.doc('/content/docs/fundamentals/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 Note: The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**. To sign up for the origin trial to publish pages with this component, please visit <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.

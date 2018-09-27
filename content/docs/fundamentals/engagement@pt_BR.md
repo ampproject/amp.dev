@@ -8,7 +8,7 @@ Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as AMP
 
 - **Reflita sua marca nas páginas AMP.** Use o mesmo cabeçalho e esquema de design (por exemplo, cores, espaçamento, estilos de fonte) das páginas não AMP para que todo o conteúdo seja reconhecível e legítimo.
 
-- **Mostre o melhor do seu conteúdo** ao converter suas páginas. Inclua elementos importantes da página, como imagens, vídeos, conteúdos incorporados, dados estruturados, comentários e mídias sociais. Saiba como [incluir conteúdo de terceiros](/pt_br/docs/fundamentals/third_party_components.html).
+- **Mostre o melhor do seu conteúdo** ao converter suas páginas. Inclua elementos importantes da página, como imagens, vídeos, conteúdos incorporados, dados estruturados, comentários e mídias sociais. Saiba como [incluir conteúdo de terceiros]({{g.doc('/content/docs/fundamentals/third_party_components.md', locale=doc.locale).url.path}}).
 
 - **Mantenha as páginas AMP atualizadas.** Faça atualizações dinâmicas de blogs ativos com [`amp-live-list`](/pt_br/docs/reference/components/amp-live-list.html).
 

@@ -3,7 +3,7 @@ $title: Errores de validación de AMP
 ---
 
 Los documentos de AMP no pueden tener errores de validación.
-La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP](/es/docs/fundamentals/validate.html).
+La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 Para obtener una visión general completa de los errores de validación, consulta la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -39,7 +39,7 @@ Todos los documentos de AMP deben contener las siguientes etiquetas:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](/es/docs/fundamentals/spec.html).
+Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}).
 
 ### Falta una etiqueta requerida por otra etiqueta
 
@@ -80,7 +80,7 @@ Para corregir estos errores, ve a la página de referencia del componente amplia
   </tr>
 </table>
 
-Las etiquetas se incluyen en una lista blanca, por lo que no hay ninguna lista que incluya todas las etiquetas no permitidas. Sin embargo, en la [especificación de AMP](/es/docs/fundamentals/spec.html) se define en términos generales el conjunto de etiquetas no permitidas.
+Las etiquetas se incluyen en una lista blanca, por lo que no hay ninguna lista que incluya todas las etiquetas no permitidas. Sin embargo, en la [especificación de AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}) se define en términos generales el conjunto de etiquetas no permitidas.
 
 ### Falta un atributo obligatorio
 
@@ -620,7 +620,7 @@ Si no estás seguro de lo que está provocando el error, intenta ejecutar el CSS
 </table>
 
 Este error se refiere a las reglas de CSS que contienen @, para las que AMP solo permite una serie de reglas
-(consulta también la [especificación de AMP](/es/docs/fundamentals/spec.html)).
+(consulta también la [especificación de AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})).
 Por ejemplo, la regla `@import` no está permitida.
 En el error de validación se indica cuál es concretamente la regla no válida para que puedas corregirla más fácilmente.
 

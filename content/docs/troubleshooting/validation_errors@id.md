@@ -21,7 +21,7 @@ limitations under the License.
 Tidak boleh ada kesalahan validasi apa pun dalam dokumen AMP yang valid.
 Tujuan dokumen ini adalah untuk membantu Anda memahami
 dengan lebih baik dan memperbaiki kesalahan validasi yang dihadapi
-ketika [memvalidasi laman AMP](/id/docs/fundamentals/validate.html).
+ketika [memvalidasi laman AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 Untuk ringkasan lengkap kesalahan validasi,
 lihat [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -59,7 +59,7 @@ Tag berikut harus ada di semua dokumen AMP:
 * <a name="body"></a>`body`
 
 Tag wajib ini termasuk bidang `mandatory: true` di [spek validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii);
-juga dirujuk dalam [spesifikasi AMP](/docs/fundamentals/spec.html).
+juga dirujuk dalam [spesifikasi AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}).
 
 ### Tag yang dibutuhkan oleh tag lain tidak tersedia
 
@@ -105,7 +105,7 @@ salin skrip yang dibutuhkan, dan tempel ke dokumen AMP `<head>`.
 </table>
 
 Tag dimasukkan ke daftar putih, sehingga tidak ada daftar definitif semua tag terlarang;
-namun, [spesifikasi AMP](/docs/fundamentals/spec.html)
+namun, [spesifikasi AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})
 mendefinisikan secara luas kumpulan tag terlarang.
 
 ### Atribut wajib tidak tersedia
@@ -704,7 +704,7 @@ lewat validator CSS online, misalnya,
 
 Kesalahan ini mengacu pada @-aturan dalam CSS,
 untuk setiap AMP yang hanya mengizinkan beberapa aturan.
-(lihat juga [spesifikasi AMP ](/docs/fundamentals/spec.html)).
+(lihat juga [spesifikasi AMP ]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})).
 Misalnya, `@import` tidak diizinkan.
 Kesalahan validasi secara khusus
 memberi tahu Anda aturan yang tidak valid,

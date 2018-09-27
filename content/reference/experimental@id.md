@@ -2,7 +2,7 @@
 $title: Fitur eksperimental
 ---
 
-[Komponen eksperimental AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) 
+[Komponen eksperimental AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
 merupakan fitur yang dirilis namun belum siap untuk digunakan secara umum, jadi fitur ini dilindungi oleh
 status eksperimental.
 
@@ -35,7 +35,7 @@ Untuk konten yang ditayangkan dari domain lainnya, fitur eksperimen dapat diakti
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-File AMP apa pun yang menyertakan fitur eksperimental akan gagal saat 
-[validasi AMP](/id/docs/fundamentals/validate.html). 
+File AMP apa pun yang menyertakan fitur eksperimental akan gagal saat
+[validasi AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 Hapus komponen eksperimental ini pada dokumen AMP yang siap diproduksi.
 

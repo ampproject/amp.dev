@@ -7,7 +7,7 @@ $title: Configuração
 Para usar este tutorial, você precisará do seguinte:
 
 - conhecimento básico de HTML, CSS e JavaScript
-- entendimento básico dos principais conceitos da tecnologia AMP (consulte o tutorial ["Converter HTML para AMP"](/pt_br/docs/fundamentals/converting.html))
+- entendimento básico dos principais conceitos da tecnologia AMP (consulte o tutorial ["Converter HTML para AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}))
 - um navegador de sua preferência
 - um editor de texto de sua preferência
 
@@ -45,4 +45,4 @@ Clique para ver a história concluída e ter uma ideia do resultado.
   <a class="button prev-button" href="/pt_br/docs/getting_started/visual_story.html"><span class="arrow-prev">Anterior</span></a>
   <a class="button next-button" href="/pt_br/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">Próxima</span></a>
 </div>
- 
+

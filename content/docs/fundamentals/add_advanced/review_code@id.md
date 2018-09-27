@@ -94,11 +94,11 @@ Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman [article.amp.htm
 </html>
 ```
 
-Ini adalah halaman AMP sederhana yang lolos [validasi AMP](/id/docs/fundamentals/validate.html) dan validasi data terstruktur [schema.org](http://schema.org/). Jika halaman ini diterapkan di situs berita, pengguna dapat menemukan halaman melalui pengalaman yang kaya di Halaman Hasil Mesin Telusur (misalnya, Carousel cerita teratas di Google Penelusuran).
+Ini adalah halaman AMP sederhana yang lolos [validasi AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) dan validasi data terstruktur [schema.org](http://schema.org/). Jika halaman ini diterapkan di situs berita, pengguna dapat menemukan halaman melalui pengalaman yang kaya di Halaman Hasil Mesin Telusur (misalnya, Carousel cerita teratas di Google Penelusuran).
 
 ## Mengaktifkan Validator AMP
 
-Sebelum mengubah halaman, mari kita aktifkan [validator AMP](/id/docs/fundamentals/validate.html) sehingga kita tahu bahwa kita menggunakan HTML AMP yang valid.  **Tambahkan** ID fragmen berikut ke URL Anda:
+Sebelum mengubah halaman, mari kita aktifkan [validator AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) sehingga kita tahu bahwa kita menggunakan HTML AMP yang valid.  **Tambahkan** ID fragmen berikut ke URL Anda:
 
 ```text
 #development=1
@@ -120,7 +120,7 @@ Anda dapat menggunakan berbagai fitur lainnya untuk memvalidasi halaman AMP, sep
 - [Antarmuka Web Validator AMP](https://validator.ampproject.org/)
 - ... dan masih banyak lagi
 
-Pelajari lebih lanjut di panduan [Memvalidasi halaman AMP](/id/docs/fundamentals/validate.html).
+Pelajari lebih lanjut di panduan [Memvalidasi halaman AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 {% endcall %}
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulated on a Nexus 5X device') }}
@@ -132,6 +132,6 @@ Kami mendesain halaman ini untuk perangkat seluler, jadi mari kita **buat simula
 Sekarang, kita dapat mulai bekerja di halaman itu sendiri. Mari kita tambahkan beberapa komponen AMP di halaman.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

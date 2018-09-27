@@ -20,7 +20,7 @@ Untuk sebagian besar solusi analitik, gunakan `amp-analytics`. Pelacakan tampila
 Pelajari lebih lanjut: Lihat [Mendalami Analitik AMP](/id/docs/analytics/deep_dive_analytics.html).
 
 Sebagai bagian dari proses integrasi dengan platform AMP, penyedia telah menawarkan konfigurasi `amp-analytics`
-yang telah ditentukan sehingga mempermudah pengambilan dan pemrosesan data ke fitur pelacakannya. Buka dokumentasi vendor dari daftar [Vendor Analitik](/id/docs/analytics/analytics-vendors.html).
+yang telah ditentukan sehingga mempermudah pengambilan dan pemrosesan data ke fitur pelacakannya. Buka dokumentasi vendor dari daftar [Vendor Analitik]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Anda dapat menggunakan `amp-pixel` dan `amp-analytics`
 di halaman Anda: `amp-pixel` untuk pelacakan tampilan halaman sederhana, dan `amp-analytics` untuk pelacakan lainnya. Anda juga dapat menambahkan beberapa konfigurasi untuk setiap tag. Jika bekerja sama dengan beberapa penyedia analitik, Anda memerlukan 1 tag untuk setiap solusi. Perlu diperhatikan bahwa halaman AMP yang lebih sederhana lebih disarankan untuk pengguna, sehingga apabila Anda tidak memerlukan tag tambahan, jangan gunakan tag tersebut.

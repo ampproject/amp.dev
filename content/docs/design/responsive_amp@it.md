@@ -103,4 +103,4 @@ Esempio di errore nella console relativo a una pagina i cui elementi CSS superan
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Leggi ulteriori informazioni su come [convalidare le tue pagine AMP](/it/docs/fundamentals/validate.html), incluse informazioni su come trovare gli errori di stile e risolverli.
+Leggi ulteriori informazioni su come [convalidare le tue pagine AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}), incluse informazioni su come trovare gli errori di stile e risolverli.

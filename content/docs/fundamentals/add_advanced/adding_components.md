@@ -14,7 +14,7 @@ AMP’s component system allows you to quickly build efficient and responsive fe
 
 - **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released.  Learn more in [Experimental features](/docs/reference/experimental.html).
 
-Our sample already uses a built-in component, [amp-img](/docs/reference/components/amp-img.html), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"](/docs/fundamentals/converting.html) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
+Our sample already uses a built-in component, [amp-img](/docs/reference/components/amp-img.html), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
 
 ## Monetize with ads
 
@@ -86,7 +86,7 @@ The two `amp-ad`s below provide an example of the flexibility `amp-ad` provides 
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
-Note: You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks](/docs/fundamentals/responsive/placeholders.html).
+Note: You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks]({{g.doc('/content/docs/fundamentals/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 Read on: To see the latest supported ad networks, read the reference documentation for the [amp-ad](/docs/reference/components/amp-ad.html#supported-ad-networks) component.
 
@@ -215,6 +215,6 @@ You can learn more about `amp-fit-text` from [AMP by Example's live demo](https:
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

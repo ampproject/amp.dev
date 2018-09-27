@@ -7,7 +7,7 @@ Aquí hay algunos consejos rápidos para mejorar la fidelización del usuario co
 
 - **Refleje su marca en las páginas de AMP.** Utilice el mismo esquema y diseño (es decir, colores, espaciado, tipos de estilo) tanto en sus páginas AMP como en sus páginas no AMP para asegurarse de que sus páginas son reconocibles y legítimas.
 
-- **Represente el contenido más atractivo** al convertir sus páginas. Incluya elementos clave como imágenes, videos, datos incorporados, datos estructurados, comentarios y medios sociales. Obtenga información sobre [Incluir contenido de terceros](/es/docs/fundamentals/third_party_components.html).
+- **Represente el contenido más atractivo** al convertir sus páginas. Incluya elementos clave como imágenes, videos, datos incorporados, datos estructurados, comentarios y medios sociales. Obtenga información sobre [Incluir contenido de terceros]({{g.doc('/content/docs/fundamentals/third_party_components.md', locale=doc.locale).url.path}}).
 
 - **Mantenga actualizadas las páginas de AMP.** Puedes actualizar dinámicamente los blogs en vivo con [`amp-live-list`](/es/docs/reference/components/amp-live-list.html).
 

@@ -59,7 +59,7 @@ $title: 构建一个常规的 HTML 网页
 Powered by AMP ⚡ HTML
 ```
 
-AMP 库中含有 [AMP 验证工具](https://www.ampproject.org/zh_cn/docs/fundamentals/validate.html)，它会显示是否存在任何会导致您的网页无法成为有效 AMP 文档的问题。要**启用** AMP 验证工具，请将以下分段标识符添加到您的文档网址中：
+AMP 库中含有 [AMP 验证工具](https://www.ampproject.org{{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})，它会显示是否存在任何会导致您的网页无法成为有效 AMP 文档的问题。要**启用** AMP 验证工具，请将以下分段标识符添加到您的文档网址中：
 
 ```text
 #development=1
@@ -86,6 +86,6 @@ http://localhost:8000/article.amp.html#development=1
 现在，我们可以开始修正错误了！我们将逐个查看各项验证错误，并弄清楚它们与 AMP 的关系。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/fundamentals/converting/setting-up.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

@@ -2,7 +2,7 @@
 $title: 包括图像
 ---
 
-大多数 HTML 标记都可在 AMP HTML 中直接使用，但某些标记（例如 `<img>` 标记）被替换为等效标记或略微增强的自定义 AMP HTML 标记（少数存在问题的标记会被完全禁止使用，请参阅[规范中的 HTML 标记](/zh_cn/docs/fundamentals/spec.html)）。
+大多数 HTML 标记都可在 AMP HTML 中直接使用，但某些标记（例如 `<img>` 标记）被替换为等效标记或略微增强的自定义 AMP HTML 标记（少数存在问题的标记会被完全禁止使用，请参阅[规范中的 HTML 标记]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})）。
 
 以下是在页面中嵌入图像所需的代码，用于演示其他标记是什么样的：
 

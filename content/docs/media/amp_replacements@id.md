@@ -14,7 +14,7 @@ Isi. Pelajari perbedaan mengenai fitur yang setara dengan AMP dan pelajari cara 
 *  Kami perlu memahami tata letak halaman sebelum aset dimuat, karena ini penting untuk [mendukung prapemuatan viewport pertama](/id/learn/about-how/#size-all-resources-statically)
 *  Kami perlu mengontrol permintaan jaringan agar [konten diprioritaskan dan dimuat secara perlahan dan efektif](/id/learn/about-how/#prioritize-resource-loading)
 
-Perhatian: Meski tidak didukung, pasangan HTML default*akan*  dirender, tetapi AMP tidak akan [memvalidasi halaman Anda](/id/docs/fundamentals/validate.html) dan Anda tidak akan mendapatkan semua manfaat dari yang diberikan AMP.
+Perhatian: Meski tidak didukung, pasangan HTML default*akan*  dirender, tetapi AMP tidak akan [memvalidasi halaman Anda]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) dan Anda tidak akan mendapatkan semua manfaat dari yang diberikan AMP.
 
 ## Gambar
 

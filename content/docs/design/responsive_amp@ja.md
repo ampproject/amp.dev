@@ -87,4 +87,4 @@ CSS が上限の 50,000 バイトを超えた場合、コンソールには次�
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-参照: 詳細はこちら: [AMP ページの検証と修正](/ja/docs/fundamentals/validate.html)
+参照: 詳細はこちら: [AMP ページの検証と修正]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})

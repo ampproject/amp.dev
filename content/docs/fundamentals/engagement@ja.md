@@ -7,7 +7,7 @@ $title: ユーザー エンゲージメントを向上させる
 
 - **AMP ページにブランドを反映する。** 非 AMP ページと同じヘッダーやデザイン（色、間隔、書体など）を使用することで、そのブランドのページであることをすぐに認識できるようにします。
 
-- **最も魅力的なコンテンツで目を引く。**  AMP ページに変換する際は、画像、動画、埋め込み、構造化データ、コメント、ソーシャル メディアなど、目を引くページ要素を含めます。詳しくは、[サードパーティ コンテンツを含める](/ja/docs/fundamentals/third_party_components.html)をご覧ください。
+- **最も魅力的なコンテンツで目を引く。**  AMP ページに変換する際は、画像、動画、埋め込み、構造化データ、コメント、ソーシャル メディアなど、目を引くページ要素を含めます。詳しくは、[サードパーティ コンテンツを含める]({{g.doc('/content/docs/fundamentals/third_party_components.md', locale=doc.locale).url.path}})をご覧ください。
 
 - **AMP ページを常に最新にする。**  ライブブログを、[`amp-live-list`](/ja/docs/reference/components/amp-live-list.html) を使って動的に更新します。
 
@@ -29,7 +29,7 @@ $title: ユーザー エンゲージメントを向上させる
 
 - **広告タイプを検討してエクスペリエンスを高める。**  AMP 広告フォーマットとして、[`amp-sticky-ad`](/ja/docs/reference/components/amp-sticky-ad.html) や [`amp-fx-flying-carpet`](/ja/docs/reference/components/amp-fx-flying-carpet.html) を使用してエクスペリエンスを高めます。収益化の[ヒント](/ja/docs/ads/monetization.html)を参考にしてください。
 
-- **アプリのダウンロードを促進する。** 
+- **アプリのダウンロードを促進する。**
  [`amp-app-banner`](/ja/docs/reference/components/amp-app-banner.html) を使って、バナーにアプリ インストール リンクを追加します。
 
 - **遷移を高速化する。**  非 AMP プログレッシブ ウェブアプリ（PWA）サイトへの遷移を高速化するため、[`amp-install-serviceworker`](/ja/docs/reference/components/amp-install-serviceworker.html) を使ってキャッシュにデータを書き込みます。

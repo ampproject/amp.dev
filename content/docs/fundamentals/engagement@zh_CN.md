@@ -8,7 +8,7 @@ $title: 提高用户互动度
 
 - **在 AMP 网页上树立您的品牌。** 使用与非 AMP 网页相同的标题和设计方案（例如，颜色，间距和类型样式，确保您的网页易于识别且显示得当。
 
-- **主推最具吸引力的内容**（转换网页时）。 请纳入图片，视频，嵌入式内容，结构化数据，评论和社交媒体等关键网页元素。 了解如何[纳入第三方内容](/zh_cn/docs/fundamentals/third_party_components.html)。
+- **主推最具吸引力的内容**（转换网页时）。 请纳入图片，视频，嵌入式内容，结构化数据，评论和社交媒体等关键网页元素。 了解如何[纳入第三方内容]({{g.doc('/content/docs/fundamentals/third_party_components.md', locale=doc.locale).url.path}})。
 
 - **确保 AMP 网页保持最新状态。** 借助 [`amp-live-list`](/zh_cn/docs/reference/components/amp-live-list.html) 动态更新博客实况。
 
@@ -38,7 +38,7 @@ $title: 提高用户互动度
 
 - **查看 AMP 路线图**，了解最新动态和功能：[ampproject.org/roadmap](https://www.ampproject.org/zh_cn/roadmap)。
 
-- **积极参与。** 
+- **积极参与。**
 在 [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)上贡献源代码，提交错误或提供反馈。 要分享您对 AMP 的想法，请访问 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)。
 
 - **了解**如何使用 AMP 组件：[AMP by Example](https://ampbyexample.com/)。

@@ -14,7 +14,7 @@ Ardından, AMP sayfanızın **gerçekten geçerli bir AMP olduğundan** ya da Go
   1. URL›ye "`#development=1`" ekleyin; örneğin, `http://localhost:8000/released.amp.html#development=1`.
   1. [Chrome DevTools konsolu](https://developers.google.com/web/tools/chrome-devtools/debug/console/) açın ve doğrulama hataları olup olmadığına göz atın.
 
-[Doğrulama hakkında daha fazla bilgi](/tr/docs/fundamentals/validate.html) ve hata aldığınızda ne yapacağınızı öğrenin.
+[Doğrulama hakkında daha fazla bilgi]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) ve hata aldığınızda ne yapacağınızı öğrenin.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/tr/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">Önceki</span></a>

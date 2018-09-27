@@ -103,11 +103,11 @@ Para verificar se os dados estruturados estão corretos, várias plataformas ofe
 
 Se os dados estruturados forem válidos, você verá **0 erros** e **0 avisos**.
 
-Leia mais: Para saber mais sobre detecção de página, consulte o guia [Torne sua página detectável](/pt_br/docs/fundamentals/discovery.html).
+Leia mais: Para saber mais sobre detecção de página, consulte o guia [Torne sua página detectável]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}).
 
 Bom trabalho!  Seu artigo em AMP está pronto!
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/fundamentals/converting/congratulations.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>

@@ -57,7 +57,7 @@ AMP は、サードパーティが提供するさまざまなパブリッシン�
 AMP ページや AMP 広告をゼロから作成する場合は、次の関連資料をご確認ください。
 
 *   [チュートリアル: 初めての AMP ページを作成する](/ja/docs/getting_started/create.html)
-*   [チュートリアル: 高度な AMP 機能を追加する](/ja/docs/fundamentals/add_advanced.html)
+*   [チュートリアル: 高度な AMP 機能を追加する]({{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}})
 *   [AMP HTML の仕様](/ja/docs/fundamentals/spec.html#the-amp-html-format): ボイラープレート、必須のマークアップ、使用できる HTML など
 *   [AMP HTML 広告のフォーマット](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): AMP で効果的な広告を作成する方法の詳細
 *   [YouTube 動画: AMP でできること、できないこと](https://youtu.be/Gv8A4CktajQ)
@@ -67,14 +67,14 @@ AMP ページや AMP 広告をゼロから作成する場合は、次の関連�
 
 既存の HTML ページを AMP HTML に変換する場合は、次の関連資料をご確認ください。
 
-*   [チュートリアル: HTML を AMP に変換する](/ja/docs/fundamentals/converting.html)
+*   [チュートリアル: HTML を AMP に変換する]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}})
 *   [YouTube 動画: 既存のサイトで AMP HTML を使用する](https://youtu.be/OO9oKhs80aI)
 
 ### AMP ページを検証、テストする
 
 コンテンツを公開する前に、AMP ページが有効かどうかを確認する必要があります。次の関連資料をご確認ください。
 
-*   [AMP ページを検証する](/ja/docs/fundamentals/validate.html): 検証ツールの一覧とページを検証する手順
+*   [AMP ページを検証する]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}): 検証ツールの一覧とページを検証する手順
 *   [YouTube 動画: AMP ページを検証、デバッグする方法](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
 *   [AMP の CORS をテストする](/ja/docs/fundamentals/amp-cors-requests.html#testing-cors-in-amp)
 
@@ -82,7 +82,7 @@ AMP ページや AMP 広告をゼロから作成する場合は、次の関連�
 
 ユーザーが Twitter や Google、Bing などのサードパーティ プラットフォーム上でコンテンツを検出できるようにします。次の関連資料をご確認ください。
 
-*   [ページが検出されるようにする](/ja/docs/fundamentals/discovery.html): AMP ページをリンクする方法、メタデータを使用する方法のヒント
+*   [ページが検出されるようにする]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}): AMP ページをリンクする方法、メタデータを使用する方法のヒント
 *   [Google 検索での AMP ページに関するガイドライン](https://support.google.com/webmasters/answer/6340290)
 
 <hr>
@@ -101,4 +101,4 @@ AMP ページや AMP 広告をゼロから作成する場合は、次の関連�
     *   [AMP プロジェクトのブログ](https://amphtml.wordpress.com/)に登録する
     *   [YouTube の AMP Channel](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw) に登録する
     *   AMP プロジェクトの Twitter アカウント [@AMPhtml](https://twitter.com/amphtml) をフォローする
- 
+

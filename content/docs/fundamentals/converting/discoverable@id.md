@@ -103,11 +103,11 @@ Untuk memverifikasi bahwa data terstruktur Anda benar, banyak platform menyediak
 
 Jika data terstruktur valid, Anda seharusnya melihat **0 error** dan **0 peringatan**.
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang kemampuan halaman untuk ditemukan, lihat panduan [Membuat halaman Anda dapat ditemukan](/id/docs/fundamentals/discovery.html).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang kemampuan halaman untuk ditemukan, lihat panduan [Membuat halaman Anda dapat ditemukan]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}).
 
 Kerja bagus!  Anda telah menyelesaikan artikel berita AMP.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/fundamentals/converting/congratulations.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

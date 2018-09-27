@@ -53,7 +53,7 @@ and sends the analytics data to the third-party provider,
 </amp-analytics>
 ```
 
-The above example code is to help you learn, but it's by no means a realistic sample. If you are working with analytics providers, it's likely that the above sample won't make sense; provider configurations remove complexity. Consult your [analytics provider's documentation](/docs/analytics/analytics-vendors.html) for sample configurations.
+The above example code is to help you learn, but it's by no means a realistic sample. If you are working with analytics providers, it's likely that the above sample won't make sense; provider configurations remove complexity. Consult your [analytics provider's documentation]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) for sample configurations.
 
 ## Where to send analytics data: type attribute
 
@@ -66,7 +66,7 @@ AMP is designed to support two common patterns of data collection:
 To send analytics data to an analytics provider,
 include the `type` attribute in the `amp-analytics` tag and set its value
 to the appropriate vendor, as defind in the
-[Analytics Vendors](/docs/analytics/analytics-vendors.html) list.
+[Analytics Vendors]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) list.
 
 For example: `<amp-analytics type="googleanalytics">` sends analytics data
 to the third-party analytics provider, Google Analytics.
@@ -82,7 +82,7 @@ help resources for further guidance.
 As previously mentioned,
 the list of vendors who’ve already integrated with AMP, as well as links
 to their specific documentation can be found in the
-[Analytics Vendors](/docs/analytics/analytics-vendors.html) list.
+[Analytics Vendors]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) list.
 
 If you’re an analytics vendor,
 learn more about

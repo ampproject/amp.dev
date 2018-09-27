@@ -74,7 +74,7 @@ Tip: There are easier ways to deal with a Service Worker. Take a look at the [Se
 
 ## Make all links on an AMP Page navigate to the PWA
 
-Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP](/docs/fundamentals/discovery.html):
+Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}):
 
 ### 1. If you pair your canonical pages with AMP pages
 

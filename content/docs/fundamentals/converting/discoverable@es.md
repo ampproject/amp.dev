@@ -99,11 +99,11 @@ Para verificar que sus datos estructurados son correctos, muchas plataformas pro
 
 Si los datos estructurados son válidos, debería ver **0 errors** y **0 warnings**.
 
-Leer más: Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible](/es/docs/fundamentals/discovery.html).
+Leer más: Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}).
 
 ¡Impresionante trabajo! Has completado tu artículo de noticias de AMP.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/fundamentals/converting/congratulations.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

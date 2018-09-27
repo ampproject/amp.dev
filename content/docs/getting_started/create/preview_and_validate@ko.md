@@ -14,7 +14,7 @@ $title: 미리보기 및 유효성 검사
   1. "`#development=1`"을 URL에 추가합니다(예: `http://localhost:8000/released.amp.html#development=1`).
   1. [Chrome DevTools 콘솔](https://developers.google.com/web/tools/chrome-devtools/debug/console/)을 열고 유효성 검사 오류를 확인합니다.
 
-[유효성 검사에 대해 알아보고](/ko/docs/fundamentals/validate.html), 오류가 발생할 경우 수행할 작업에 대해 알아보세요.
+[유효성 검사에 대해 알아보고]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}), 오류가 발생할 경우 수행할 작업에 대해 알아보세요.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/ko/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">이전</span></a>

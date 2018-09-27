@@ -22,7 +22,7 @@ y datos de interacciones de usuarios a otra.
 
 La analítica de AMP está especialmente diseñada para medir los datos una sola vez, pero puede enviarlos a muchas partes interesadas.
 Si ya trabajas con uno o varios proveedores de servicios de analítica,
-echa un vistazo a la lista de [proveedores](/es/docs/analytics/analytics-vendors.html) para ver si han integrado sus herramientas con AMP.
+echa un vistazo a la lista de [proveedores]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) para ver si han integrado sus herramientas con AMP.
 Si es así, consulta la información de configuración y sigue las instrucciones pertinentes.
 
 En el caso de que no lo hayan hecho,
@@ -49,4 +49,4 @@ el dispositivo o el navegador? Consulta información sobre la [sustitución de v
 {% call callout('Más información', type='read') %}
 Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos](/es/docs/analytics/analytics_basics.html).
 {% endcall %}
- 
+

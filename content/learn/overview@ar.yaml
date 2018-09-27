@@ -48,7 +48,7 @@ core:
         <p>وهناك إصدار آخر من أداة التحقق من الصحة يأتي مرفقًا بكل صفحة AMP. هذا الإصدار يمكنه تسجيل أخطاء التحقق من الصحة مباشرةً في وحدة التحكم بالمتصفح عند عرض الصفحة،
         مما يتيح لك مشاهدة كيف قد تؤثر التغييرات المعقّدة في الشفرة
         على الأداء وانطباع المستخدم.
-        <p>تعرّف على المزيد بشأن [اختبار صفحات <span dir="ltr" class="nowrap">AMP HTML</span>](/ar/docs/fundamentals/validate.html).
+        <p>تعرّف على المزيد بشأن [اختبار صفحات <span dir="ltr" class="nowrap">AMP HTML</span>]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 
 video:
   id: 5Yjoe54vzwE

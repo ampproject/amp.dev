@@ -48,7 +48,7 @@ core:
         <p>Un’altra versione dello strumento di convalida viene fornita in dotazione con ogni pagina AMP. Questa versione è in grado di registrare gli errori di convalida direttamente nella console del browser quando viene eseguito il rendering della pagina,
         per consentire di vedere in che modo eventuali modifiche complesse del codice
         possono ripercuotersi sulle prestazioni e sull’esperienza utente.
-        <p>Per ulteriori informazioni consulta la sezione sul [testing delle pagine HTML AMP](/it/docs/fundamentals/validate.html).
+        <p>Per ulteriori informazioni consulta la sezione sul [testing delle pagine HTML AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 
 video:
   id: 7eq_k_ykGm0

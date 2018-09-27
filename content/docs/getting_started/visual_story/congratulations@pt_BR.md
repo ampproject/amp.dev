@@ -18,9 +18,9 @@ Neste tutorial, você aprendeu a:
 Saiba mais sobre as histórias AMP com estes recursos:
 
 - [documentação de referência do amp-story](/pt_br/docs/reference/components/amp-story.html)
-- [práticas recomendadas das histórias AMP](/pt_br/docs/fundamentals/amp_story_best_practices.html)
+- [práticas recomendadas das histórias AMP]({{g.doc('/content/docs/fundamentals/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 {% call callout('Observação', type='note') %}
 O componente [amp-story](/pt_br/docs/reference/components/amp-story.html) é **experimental**. Se você quiser se inscrever no teste para publicar páginas com esse componente, acesse <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.
 {% endcall %}
- 
+

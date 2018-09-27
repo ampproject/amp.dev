@@ -107,7 +107,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 Using this technique, you can amend your AMP Page will all sorts of additional
-functionality that would otherwise fail [AMP validation](/docs/fundamentals/validate.html), for example:
+functionality that would otherwise fail [AMP validation]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}), for example:
 
 * Dynamic features that require custom JS.
 * Components that are customized/only relevant for your site.

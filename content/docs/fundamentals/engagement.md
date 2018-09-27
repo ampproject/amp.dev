@@ -8,7 +8,7 @@ Here are some quick tips to improve user engagement with AMP.
 
 - **Reflect your brand in AMP pages.** Use the same header and design scheme (e.g. colors, spacing, type styles) as in your non-AMP pages to ensure your pages are recognizable and appear legitimate.
 
-- **Feature your most engaging content** when converting your pages. Include key page elements like images, videos, embeds, structured data, comments and social media. Learn how to [include 3rd-party content](/docs/fundamentals/third_party_components.html).
+- **Feature your most engaging content** when converting your pages. Include key page elements like images, videos, embeds, structured data, comments and social media. Learn how to [include 3rd-party content]({{g.doc('/content/docs/fundamentals/third_party_components.md', locale=doc.locale).url.path}}).
 
 - **Keep AMP pages current.** Dynamically update live blogs with [`amp-live-list`](/docs/reference/components/amp-live-list.html).
 

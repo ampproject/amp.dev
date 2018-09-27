@@ -22,7 +22,7 @@ $title: 분석 설정
 
 AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별히 설계되었습니다.
 이미 하나 이상의 분석 공급업체와 협력 중이라면,
-[분석 공급업체](/ko/docs/analytics/analytics-vendors.html) 목록에서 공급업체가 솔루션을 AMP와 통합했는지 확인하세요.
+[분석 공급업체]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) 목록에서 공급업체가 솔루션을 AMP와 통합했는지 확인하세요.
 통합한 경우, 설정 세부정보를 검토하고 안내를 따르세요.
 
 분석 공급업체가 AMP와 통합하지 않은 경우,
@@ -49,4 +49,4 @@ AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별
 {% call callout('자세히 알아보기', type='read') %}
 [애널리틱스: 기본사항](/ko/docs/analytics/analytics_basics.html)에서 애널리틱스에 대해 계속해서 자세히 알아보세요.
 {% endcall %}
- 
+

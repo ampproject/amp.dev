@@ -120,7 +120,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 ## 使用 AMP 缓存
 
-[AMP 缓存](/zh_cn/docs/fundamentals/how_cached.html)是一种
+[AMP 缓存]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}})是一种
 基于代理的内容分发网络 (CDN)，用于分发有效的 AMP 文档。
 AMP 缓存旨在：
 
@@ -192,4 +192,4 @@ AMP 项目的理念是平台应该要选择
 在与不同平台分享时，应该分享规范版本
 （而不是 AMP 版本），然后让目标平台做出
 正确的选择。
- 
+

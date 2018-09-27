@@ -15,7 +15,7 @@ include them in your pages.
 *  Precisamos entender o layout da página antes de carregar os recursos, algo crucial para [oferecer suporte ao pré-carregamento da janela de visualização primária.](/pt_br/learn/about-how/#size-all-resources-statically)
 *  Precisamos controlar as solicitações de rede para [carregamento lento e priorizar os recursos de maneira efetiva.](/pt_br/learn/about-how/#prioritize-resource-loading)
 
-Cuidado: Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas](/pt_br/docs/fundamentals/validate.html) e não será possível aproveitar todos os benefícios que as AMP oferecem.
+Cuidado: Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) e não será possível aproveitar todos os benefícios que as AMP oferecem.
 
 ## Imagens
 

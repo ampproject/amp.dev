@@ -22,7 +22,7 @@ $title: 配置分析工具
 
 AMP 分析的设计宗旨是“一次衡量，多方报告”。
 如果您已在与一个或多个分析服务供应商合作，
-请查阅[分析服务供应商](/zh_cn/docs/analytics/analytics-vendors.html)列表，看看他们是否已将自己的解决方案与 AMP 集成。
+请查阅[分析服务供应商]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}})列表，看看他们是否已将自己的解决方案与 AMP 集成。
 如果已与 AMP 集成，请查看相应供应商的配置详情并按照说明操作。
 
 倘若分析服务供应商未与 AMP 集成，
@@ -49,4 +49,4 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。
 {% call callout('了解详情', type='read') %}
 若想进一步了解与分析相关的信息，请参阅[分析：基础知识](/zh_cn/docs/analytics/analytics_basics.html)。
 {% endcall %}
- 
+

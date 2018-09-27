@@ -12,7 +12,7 @@ Com o sistema de componentes AMP, é fácil e rápido criar recursos eficientes 
 
 - **Experimentais**: são componentes que foram lançados, mas não estão prontos para uso geral. Os desenvolvedores podem optar por usar esses recursos antes que eles estejam totalmente disponíveis para o público.  Saiba mais em [Recursos experimentais](/pt_br/docs/reference/experimental.html).
 
-Nosso exemplo já usa um componente incorporado, [amp-img](/pt_br/docs/reference/components/amp-img.html), e mostramos como esse componente se relaciona com o sistema de layout AMP neste tutorial de [conversão de HTML para AMP](/pt_br/docs/fundamentals/converting.html).  Agora, adicione alguns componentes AMP **estendidos** de uso comum ao artigo de notícias.
+Nosso exemplo já usa um componente incorporado, [amp-img](/pt_br/docs/reference/components/amp-img.html), e mostramos como esse componente se relaciona com o sistema de layout AMP neste tutorial de [conversão de HTML para AMP]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}).  Agora, adicione alguns componentes AMP **estendidos** de uso comum ao artigo de notícias.
 
 ## Gerar receita com anúncios
 
@@ -82,7 +82,7 @@ Observação: Não é permitido exibir JavaScript fornecido pela rede de publici
 
 Agora nosso documento AMP inclui texto, uma imagem e um anúncio incorporado na página, os principais ingredientes para contar uma história e gerar receita com seu conteúdo. No entanto, os sites modernos geralmente incluem outros recursos além de imagens e texto.
 
-Para criar um documento AMP completo, inclua recursos da Web mais avançados que costumam ser encontrados em artigos de notícias, como estes: 
+Para criar um documento AMP completo, inclua recursos da Web mais avançados que costumam ser encontrados em artigos de notícias, como estes:
 
 - vídeos do YouTube
 - tweets
@@ -203,6 +203,6 @@ Saiba mais sobre o `amp-fit-text` com a [demonstração ao vivo da AMP](https://
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>

@@ -18,7 +18,7 @@ AMP는 분석 및 측정용으로 [amp-pixel](/ko/docs/reference/components/amp-
 자세히 알아보기: AMP 애널리틱스 [심도 있게 알아보기](/ko/docs/analytics/deep_dive_analytics.html)
 
 AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp-analytics`
-구성을 제공하여 데이터를 손쉽게 캡처하고 이를 추적 도구로 간편하게 전송할 수 있도록 했습니다. 업체 문서에 액세스하려면 [애널리틱스 공급업체](/ko/docs/analytics/analytics-vendors.html) 목록을 참조하세요.
+구성을 제공하여 데이터를 손쉽게 캡처하고 이를 추적 도구로 간편하게 전송할 수 있도록 했습니다. 업체 문서에 액세스하려면 [애널리틱스 공급업체]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) 목록을 참조하세요.
 
 페이지에서 `amp-pixel`  및 `amp-analytics`
 둘 다 사용 가능합니다. `amp-pixel` 은 간단한 페이지 조회수를 추적하는 데 사용할 수 있으며 `amp-analytics` 는 기타 모든 용도로 사용 가능합니다. 또한 각 태그를 여러 개 추가할 수도 있습니다. 여러 애널리틱스 제공업체와 함께 일하는 경우 솔루션마다 별도의 태그가 필요합니다. AMP 페이지가 단순할수록 사용자가 사용하기에 편리하므로 여분의 태그가 필요 없는 경우 사용하지 않는 것이 좋습니다.

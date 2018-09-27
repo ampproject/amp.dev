@@ -24,7 +24,7 @@ and social engagement data to another URL.
 
 AMP analytics is specifically designed to measure once and report to many.
 If you are already working with one or more analytics vendors,
-check the list of [Analytics Vendors](/docs/analytics/analytics-vendors.html) to see if they’ve integrated their solution with AMP.
+check the list of [Analytics Vendors]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) to see if they’ve integrated their solution with AMP.
 If they have, review their configuration details and follow the instructions.
 
 If the analytics vendor hasn’t integrated with AMP,

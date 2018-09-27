@@ -96,6 +96,6 @@ Catatan: `“UA-YYYY-Y”` adalah contoh akun Google Analytics; contoh ini akan 
 Tips: Jika tertarik pada sistem pelacakan yang lebih sederhana, Anda mungkin ingin melihat [amp-pixel](/id/docs/reference/components/amp-pixel.html). Jika hanya perlu melacak pageview, amp-pixel adalah solusi yang lebih sederhana daripada amp-analytics karena hanya bertujuan untuk menyelesaikan persyaratan pelacakan piksel tradisional. Pelajari lebih lanjut di [Analytics: panduan dasar-dasar](/id/docs/analytics/analytics_basics.html).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

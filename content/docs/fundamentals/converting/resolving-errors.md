@@ -35,7 +35,7 @@ Now, let's look at the following error:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Every AMP document needs to have a link referencing the "canonical" version of that document.  We'll learn more about what canonical pages are and different approaches to canonical linking in the [Making your page discoverable](/docs/fundamentals/converting/discoverable.html) step of this tutorial.
+Every AMP document needs to have a link referencing the "canonical" version of that document.  We'll learn more about what canonical pages are and different approaches to canonical linking in the [Making your page discoverable]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}) step of this tutorial.
 
 For this tutorial we'll consider the original HTML article that we're converting to be the canonical page.
 
@@ -339,6 +339,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

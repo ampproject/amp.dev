@@ -2,7 +2,7 @@
 $title: Bir Görüntü Ekleyin
 ---
 
-HTML etiketlerinin birçoğu AMP HTML›de kullanılabilir, ancak `<img>` etiketi gibi bazı etiketler eşdeğeri ya da biraz geliştirilmiş özel AMP HTML etiketleri ile değiştirilir (ve sorunlu etiketlerden birkaçı tamamen yasaklanır, bkz.[Spesifikasyondaki HTML Etiketleri](/tr/docs/fundamentals/spec.html)).
+HTML etiketlerinin birçoğu AMP HTML›de kullanılabilir, ancak `<img>` etiketi gibi bazı etiketler eşdeğeri ya da biraz geliştirilmiş özel AMP HTML etiketleri ile değiştirilir (ve sorunlu etiketlerden birkaçı tamamen yasaklanır, bkz.[Spesifikasyondaki HTML Etiketleri]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})).
 
 Ek işaretlerin nasıl görüneceğini örneklendirmek için, sayfaya bir görüntü yerleştirmek için gerekli kod burada verilmiştir:
 

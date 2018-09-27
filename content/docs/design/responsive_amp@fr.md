@@ -103,4 +103,4 @@ Exemple d'erreur dans la console pour une page avec un CSS qui dépasse la limit
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Apprenez-en davantage sur la façon de [valider vos pages AMP](/fr/docs/fundamentals/validate.html), y compris comment détecter les erreurs de style et les corriger.
+Apprenez-en davantage sur la façon de [valider vos pages AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}), y compris comment détecter les erreurs de style et les corriger.

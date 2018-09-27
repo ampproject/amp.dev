@@ -18,7 +18,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[amp-pi
 
 了解详情: 请参阅[深入了解 AMP 分析](/zh_cn/docs/analytics/deep_dive_analytics.html)。
 
-在与 AMP 平台集成的过程中，各个提供商均提供了预定义的 `amp-analytics` 配置，以便能够轻松地捕获数据并推送到其跟踪工具。您可以通过[分析供应商](/zh_cn/docs/analytics/analytics-vendors.html)列表访问各个供应商文档。
+在与 AMP 平台集成的过程中，各个提供商均提供了预定义的 `amp-analytics` 配置，以便能够轻松地捕获数据并推送到其跟踪工具。您可以通过[分析供应商]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}})列表访问各个供应商文档。
 
 您可以在网页中同时使用 `amp-pixel` 和 `amp-analytics` ：`amp-pixel` 用于简单的网页浏览跟踪，`amp-analytics` 则用于所有其他跟踪。此外，您还可以多次添加各个标记。如果您与多家分析提供商合作，则需要为每个解决方案都添加一个标记。请注意，AMP 网页越简单，越可以为用户带来出色的体验。因此，如果您不需要额外标记，就不要使用。
 

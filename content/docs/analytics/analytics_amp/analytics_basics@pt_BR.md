@@ -18,7 +18,7 @@ Na maioria das soluções de análise, use `amp-analytics`. O rastreamento de ex
 Saiba mais: Consulte [Informações detalhadas sobre o AMP Analytics](/pt_br/docs/analytics/deep_dive_analytics.html).
 
 Como parte da integração com a plataforma AMP, os fornecedores ofereceram configurações predefinidas de `amp-analytics`
-para que seja mais fácil coletar dados e movê-los para suas ferramentas de rastreamento. Acesse a documentação de fornecedores na lista [Fornecedores de análise](/pt_br/docs/analytics/analytics-vendors.html).
+para que seja mais fácil coletar dados e movê-los para suas ferramentas de rastreamento. Acesse a documentação de fornecedores na lista [Fornecedores de análise]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Você pode usar `amp-pixel` e `amp-analytics`
 nas suas páginas: `amp-pixel` para rastreamento simples de exibições de página e `amp-analytics` para todo o restante. Também é possível adicionar várias instâncias de cada tag. Se estiver trabalhando com vários fornecedores de análise, será necessário usar uma tag por solução. As páginas AMP mais simples são melhores para os usuários, portanto se você não precisar de tags adicionais, não as use.

@@ -33,7 +33,7 @@ Sekarang, mari kita lihat error berikut:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Setiap dokumen AMP harus memiliki link yang merujuk pada versi "kanonis" dokumen tersebut.  Kita akan mempelajari lebih lanjut apa itu halaman kanonis dan berbagai pendekatan terhadap penautan kanonis dalam langkah [Membuat halaman Anda dapat ditemukan](/id/docs/fundamentals/converting/discoverable.html) di tutorial ini.
+Setiap dokumen AMP harus memiliki link yang merujuk pada versi "kanonis" dokumen tersebut.  Kita akan mempelajari lebih lanjut apa itu halaman kanonis dan berbagai pendekatan terhadap penautan kanonis dalam langkah [Membuat halaman Anda dapat ditemukan]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}) di tutorial ini.
 
 Untuk tutorial ini, kita akan menggunakan artikel HTML asli yang dikonversi menjadi halaman kanonis.
 
@@ -337,6 +337,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

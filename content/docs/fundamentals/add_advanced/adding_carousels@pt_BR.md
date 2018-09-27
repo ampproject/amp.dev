@@ -30,9 +30,9 @@ Em seguida, vamos incorporar um carrossel simples de imagens com um esquema adap
 
 O componente `amp-carousel` pode ser configurado de várias formas.  Vamos alterar a IU para mostrar apenas uma imagem de cada vez e tornar o esquema do carrossel adaptável.
 
-Para o fazer, primeiro, **altere** o `type` do `amp-carousel` de `carousel` para `slides`, **altere** o `layout` para `responsive` e **defina** a `width` para 300 (assegure-se de que são definidas a `height` e a `width`).  **Adicione** o atributo `"layout=responsive"` aos elementos secundários `amp-img` secundário do `amp-carousel`. 
+Para o fazer, primeiro, **altere** o `type` do `amp-carousel` de `carousel` para `slides`, **altere** o `layout` para `responsive` e **defina** a `width` para 300 (assegure-se de que são definidas a `height` e a `width`).  **Adicione** o atributo `"layout=responsive"` aos elementos secundários `amp-img` secundário do `amp-carousel`.
 
-**Atualize** a página. Agora, em vez de uma lista de elementos para percorrer, verá um elemento de cada vez. Experimente **deslizar rapidamente** na horizontal para percorrer os elementos. Se deslizar rapidamente para o terceiro elemento, não poderá deslizar mais. 
+**Atualize** a página. Agora, em vez de uma lista de elementos para percorrer, verá um elemento de cada vez. Experimente **deslizar rapidamente** na horizontal para percorrer os elementos. Se deslizar rapidamente para o terceiro elemento, não poderá deslizar mais.
 
 Em seguida, **adicione** o atributo `loop`. **Atualize** a página e tente deslizar rapidamente para a esquerda de imediato. O carrossel repete-se infinitamente.
 
@@ -91,6 +91,6 @@ Para saber mais, consulte a documentação de referência do componente [amp-car
 Nota: No nosso último exemplo, deverá ter reparado que o componente `amp-ad` incluía um elemento `div` secundário com o atributo `placeholder`. Anteriormente, no tutorial, deparámo-nos com um cenário semelhante com o `amp-ad` a utilizar um `fallback`. Qual é a diferença entre um marcador de posição e um alternativo? Os elementos `fallback` surgem quando ocorre uma falha ao carregar o elemento superior, ou seja, se não houver nenhum anúncio disponível. Os elementos `placeholder` aparecem em vez do elemento superior, enquanto este é carregado. De certo modo, estes elementos suportam o processo de carregamento do elemento superior. Pode saber mais no guia [Marcadores de posição e alternativos](pt_pt/docs/design/responsive/placeholders.html).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">Seguinte</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Seguinte</span></a>
 </div>

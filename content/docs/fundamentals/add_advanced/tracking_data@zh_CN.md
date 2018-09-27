@@ -100,6 +100,6 @@ ga('send', 'pageview');
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

@@ -18,9 +18,9 @@ Dalam tutorial ini, Anda mempelajari cara:
 Pelajari artikel AMP lebih lanjut dari referensi berikut:
 
 - [dokumen referensi amp-story](/id/docs/reference/components/amp-story.html)
-- [praktik terbaik artikel AMP](/id/docs/fundamentals/amp_story_best_practices.html)
+- [praktik terbaik artikel AMP]({{g.doc('/content/docs/fundamentals/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 {% call callout('Catatan', type='note') %}
 Komponen [amp-story](/id/docs/reference/components/amp-story.html) masih bersifat **eksperimental**. Untuk mendaftar ke uji coba asli agar dapat memublikasikan halaman dengan komponen ini, silakan kunjungi <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.
 {% endcall %}
- 
+

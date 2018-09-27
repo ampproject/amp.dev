@@ -13,7 +13,7 @@ AMP は、メディアの表示に使用されるデフォルトの HTML タグ�
 *  アセットの読み込み前にページのレイアウトを把握しなければならない（[最初のビューポートのプリロードに対応](/ja/learn/about-how/#size-all-resources-statically) するために不可欠）
 *  ネットワーク リクエストを管理して、[リソースの遅延読み込みと優先順位付けを効果的に行えるように](/ja/learn/about-how/#prioritize-resource-loading) しなければならない
 
-注: こうしたタグの使用は、非対応ですが、*will* 表示には有効です。ただし、AMP で [ページの検証](/ja/docs/fundamentals/validate.html) が行われないので、AMP のメリットをすべて利用することはできなくなります。
+注: こうしたタグの使用は、非対応ですが、*will* 表示には有効です。ただし、AMP で [ページの検証]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) が行われないので、AMP のメリットをすべて利用することはできなくなります。
 
 ## 画像
 

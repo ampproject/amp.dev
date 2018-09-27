@@ -103,4 +103,4 @@ Ayrıca buradaki [Stil ve düzen hatalarının](/tr/docs/reference/validation_er
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız](/tr/docs/fundamentals/validate.html) konusunda daha fazla bilgi edinin.
+Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) konusunda daha fazla bilgi edinin.

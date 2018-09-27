@@ -13,7 +13,7 @@ $title: 이미지 및 동영상 삽입
 *  애셋이 로드되기 전에 페이지의 레이아웃을 파악해야 하며, 이는 [첫 표시 영역을 미리 로드하는 데 필수적입니다.](/ko/learn/about-how/#size-all-resources-statically)
 *  네트워크의 레이지 로드 요청을 제어하고 [리소스의 우선순위를 효과적으로 지정해야 합니다.](/ko/learn/about-how/#prioritize-resource-loading)
 
-주의:  지원되지 않는 &lt;img&gt;, &lt;video&gt;, &lt;audio&gt; 도 렌더링이 됩니다. 하지만 AMP 에서 [페이지를 확인하지](/ko/docs/fundamentals/validate.html) 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다.
+주의:  지원되지 않는 &lt;img&gt;, &lt;video&gt;, &lt;audio&gt; 도 렌더링이 됩니다. 하지만 AMP 에서 [페이지를 확인하지]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다.
 
 ## 이미지
 

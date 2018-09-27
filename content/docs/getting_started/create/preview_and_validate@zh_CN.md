@@ -14,7 +14,7 @@ $title: 预览和验证
   1. 向 URL 中添加“`#development=1`”，例如，`http://localhost:8000/released.amp.html#development=1`。
   1. 打开 [Chrome DevTools 控制台](https://developers.google.com/web/tools/chrome-devtools/debug/console/)，并检查是否有验证错误。
 
-[详细了解验证](/zh_cn/docs/fundamentals/validate.html)，以及在出现错误时要执行的操作。
+[详细了解验证]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})，以及在出现错误时要执行的操作。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="/zh_cn/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">以前</span></a>

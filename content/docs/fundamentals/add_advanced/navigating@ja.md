@@ -99,7 +99,7 @@ article {
 ```css
 .hamburger {
   padding-left: 10px;
-}      
+}
 .sidebar {
   padding: 10px;
   margin: 0;
@@ -124,6 +124,6 @@ article {
 ページの見栄えがよくなりました。では、仕上げとしてフォントをカスタマイズします。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/fonts.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

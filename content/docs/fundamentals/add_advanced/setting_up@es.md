@@ -7,7 +7,7 @@ $title: Configuración
 **Antes de comenzar** este tutorial, necesitará lo siguiente:
 
 - Conocimiento básico de HTML, CSS, y JavaScript
-- Una comprensión básica de los conceptos básicos de AMP (consulte el tutorial ["Convertir HTML en AMP"](/es/docs/fundamentals/converting.html))
+- Una comprensión básica de los conceptos básicos de AMP (consulte el tutorial ["Convertir HTML en AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}))
 - Un navegador de su elección que puede inspeccionar la consola de JavaScript
 - Un editor de texto de su elección
 
@@ -47,6 +47,6 @@ http://localhost:8000/article.amp.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/fundamentals/add_advanced.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

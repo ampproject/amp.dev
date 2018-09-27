@@ -134,10 +134,10 @@ For details on valid inputs and fields, see [amp-form rules](https://github.com/
 
 ## Actions
 
-The `amp-form` element exposes the following actions: 
+The `amp-form` element exposes the following actions:
 
 | Action | Description |
-|--------|-------------| 
+|--------|-------------|
 | `submit` | Allows you to trigger the form submission on a specific action, for example, tapping a link, or [submitting a form on input change](#input-events). |
 | `clear` | Empties the values from each input in the form. This can allow users to quickly fill out forms a second time. |
 
@@ -150,7 +150,7 @@ Learn more about [Actions and Events in AMP](https://www.ampproject.org/docs/int
 The `amp-form` exposes the following events:
 
 | Event | Fired when |
-|-------|-------------| 
+|-------|-------------|
 | `submit` | The form is submitted and before the submission is complete. |
 | `submit-success` | The form submission is done and the response is a success. |
 | `submit-error` | The form submission is done and the response is an error. |
@@ -195,7 +195,7 @@ See the [full example here](https://github.com/ampproject/amphtml/blob/master/ex
 The `amp-form` extension triggers the following events that you can track in your [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics) config:
 
 | Event                     | Fired when                        |
-|---------------------------|-----------------------------------| 
+|---------------------------|-----------------------------------|
 | `amp-form-submit`         | A form request is initiated.      |
 | `amp-form-submit-success` | A successful response is received (i.e, when the response has a status of `2XX`). |
 | `amp-form-submit-error`   | An unsuccessful response is received (i.e, when the response doesn't have a status of `2XX`). |
@@ -273,7 +273,7 @@ To render responses:
 <a id="example-submitting"></a>
 ##### Example: Form displays success, error, and submitting messages
 
-In the following example, the responses are rendered in an inline template inside the form. 
+In the following example, the responses are rendered in an inline template inside the form.
 
 [sourcecode:html]
 {% raw %}<form ...>
@@ -308,7 +308,7 @@ In the following example, the responses are rendered in an inline template insid
 
 The publisher's `action-xhr` endpoint returns the following JSON responses:
 
-On success: 
+On success:
 
 [sourcecode:json]
 {
@@ -318,7 +318,7 @@ On success:
 }
 [/sourcecode]
 
-On error: 
+On error:
 [sourcecode:json]
 {
   "name": "Jane Miller",
@@ -563,7 +563,7 @@ Visit [AMP Start](https://ampstart.com/components#form-elements) for responsive,
 ## Security considerations
 
 ### Protecting against XSRF
-In addition to following the details in the [AMP CORS spec](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html), please pay extra attention to the section on ["Processing state changing requests" ](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) to protect against [XSRF attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery) where an attacker can execute unauthorized commands using the current user session without the user knowledge.
+In addition to following the details in the [AMP CORS spec](https://www.ampproject.org{{g.doc('/content/docs/fundamentals/amp-cors-requests.md', locale=doc.locale).url.path}}), please pay extra attention to the section on ["Processing state changing requests" ](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) to protect against [XSRF attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery) where an attacker can execute unauthorized commands using the current user session without the user knowledge.
 
 In general, keep in mind the following points when accepting input from the user:
 

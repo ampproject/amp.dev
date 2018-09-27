@@ -2,7 +2,7 @@
 $title: 글꼴 추가
 ---
 
-문서를 가능한 한 빨리 로드하기 위해 AMP에는 외부 스타일시트를 포함할 수 없습니다. 하지만 이 규칙에는 **글꼴**이라는 한 가지 예외가 있습니다.  
+문서를 가능한 한 빨리 로드하기 위해 AMP에는 외부 스타일시트를 포함할 수 없습니다. 하지만 이 규칙에는 **글꼴**이라는 한 가지 예외가 있습니다.
 
 AMP 페이지에 맞춤 글꼴을 삽입하는 방법은 다음과 같이 2가지가 있습니다.
 
@@ -40,6 +40,6 @@ amp-font를 사용하여 글꼴이 완전히 로드될 때까지 텍스트를 �
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/fundamentals/add_advanced/congratulations.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

@@ -97,4 +97,4 @@ Ejemplo de error en la consola de una página con CSS que excede el límite de 5
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Leer más: Aprende más sobre cómo [validar las páginas de AMP](/es/docs/fundamentals/validate.html).
+Leer más: Aprende más sobre cómo [validar las páginas de AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).

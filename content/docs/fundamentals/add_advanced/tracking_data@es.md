@@ -94,6 +94,6 @@ Nota: En todos estos ejemplos de análisis, `“UA-YYYY-Y”` debe reemplazarse 
 Tip: Si está interesado en un sistema de seguimiento más simple, puede que desee echar un vistazo a [amp-pixel](/es/docs/reference/components/amp-pixel.html). Si sólo necesita realizar el seguimiento de las vistas de página, amp-pixel es una solución más ligera que amp-analytics porque sólo tiene como objetivo resolver los requisitos del seguimiento de píxeles tradicional. Obtenga más información en [Analytics: aspectos básicos](/es/docs/analytics/analytics_basics.html).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

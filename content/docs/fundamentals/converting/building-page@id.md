@@ -56,7 +56,7 @@ Saat memeriksa output JavaScript di Developer Console (pastikan Anda telah memil
 Diberdayakan oleh AMP ⚡ HTML
 ```
 
-Library AMP menyertakan [validator AMP](https://www.ampproject.org/id/docs/fundamentals/validate.html) yang akan memberi tahu Anda jika ada sesuatu yang mencegah halaman Anda menjadi dokumen AMP yang valid.  **Aktifkan** validator AMP dengan menambahkan ID fragmen berikut ke URL dokumen Anda:
+Library AMP menyertakan [validator AMP](https://www.ampproject.org{{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) yang akan memberi tahu Anda jika ada sesuatu yang mencegah halaman Anda menjadi dokumen AMP yang valid.  **Aktifkan** validator AMP dengan menambahkan ID fragmen berikut ke URL dokumen Anda:
 
 ```text
 #development=1
@@ -83,6 +83,6 @@ Anda akan melihat resolusi simulasi seluler di browser seperti berikut:
 Sekarang kita siap untuk mulai bekerja! Mari periksa error validasi satu per satu dan lihat bagaimana mereka berkaitan dengan AMP.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/fundamentals/converting/setting-up.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

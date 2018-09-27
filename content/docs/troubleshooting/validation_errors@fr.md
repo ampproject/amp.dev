@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 Pour être valides, les documents AMP ne doivent comprendre aucune erreur de validation.
-Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP](/fr/docs/fundamentals/validate.html).
+Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 Pour un aperçu complet des erreurs de validation, consultez les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -55,7 +55,7 @@ Les balises suivantes doivent être présentes dans tous les documents AMP :
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Ces balises obligatoires comprennent un champ `mandatory: true` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Elles sont également référencées dans la [spécifications AMP](/docs/fundamentals/spec.html).
+Ces balises obligatoires comprennent un champ `mandatory: true` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Elles sont également référencées dans la [spécifications AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}).
 
 ### Absence d'une balise requise par une autre balise
 
@@ -96,7 +96,7 @@ Pour corriger ces erreurs, accédez à la page de référence du composant éten
   </tr>
 </table>
 
-Les balises sont ajoutées à la liste blanche. Il n'existe donc pas de liste définitive de toutes les balises interdites, toutefois les [spécifications AMP](/docs/fundamentals/spec.html) définissent dans les grandes lignes l'ensemble de balises non autorisées.
+Les balises sont ajoutées à la liste blanche. Il n'existe donc pas de liste définitive de toutes les balises interdites, toutefois les [spécifications AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}) définissent dans les grandes lignes l'ensemble de balises non autorisées.
 
 ### Attribut obligatoire manquant
 
@@ -639,7 +639,7 @@ Si vous ne parvenez pas à identifier la source de l'erreur, essayez d'exécuter
   </tr>
 </table>
 
-Cette erreur renvoie aux règles CSS de type @. AMP n'accepte que certaines de ces règles (voir aussi les [spécifications AMP](/docs/fundamentals/spec.html)).
+Cette erreur renvoie aux règles CSS de type @. AMP n'accepte que certaines de ces règles (voir aussi les [spécifications AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})).
 Par exemple, `@import` est interdit.
 L'erreur de validation vous indique précisément la règle incorrecte, ce qui permet de corriger plus facilement la règle concernée.
 

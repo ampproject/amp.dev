@@ -1,5 +1,5 @@
 ---
-$title: Navigating your site 
+$title: Navigating your site
 $order: 5
 toc: true
 ---
@@ -101,7 +101,7 @@ Finally, **add** these style rules to your inline CSS:
 ```css
 .hamburger {
   padding-left: 10px;
-}      
+}
 .sidebar {
   padding: 10px;
   margin: 0;
@@ -126,6 +126,6 @@ Okay, let's see our sidebar. **Refresh** and reload your AMP page.  You should s
 Our page is looking great!  Let's add one final touch&mdash;a custom font.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/fundamentals/add_advanced/fonts.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

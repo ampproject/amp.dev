@@ -3,7 +3,7 @@ $title: Create the shell for the ad
 $order: 0
 ---
 
-The [HTML required for an AMPHTML ad](/docs/ads/a4a_spec.html) is a variant of the [required AMPHTML for an AMP page](/docs/fundamentals/spec.html). Let's get familiar with the required code by creating the shell of our AMPHTML ad.
+The [HTML required for an AMPHTML ad](/docs/ads/a4a_spec.html) is a variant of the [required AMPHTML for an AMP page]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}). Let's get familiar with the required code by creating the shell of our AMPHTML ad.
 
 Using your favorite text editor, create an HTML file named **`my-amphtml-ad.html`**. Copy the following HTML markup into that file:
 

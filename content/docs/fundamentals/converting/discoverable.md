@@ -105,11 +105,11 @@ To verify that your structured data is correct, many platforms provide validatio
 
 If your structured data is valid, you should see **0 errors**, and **0 warnings**.
 
-Read on: To learn more about page discoverability, see the [Make your page discoverable](/docs/fundamentals/discovery.html) guide.
+Read on: To learn more about page discoverability, see the [Make your page discoverable]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}) guide.
 
 Awesome work!  You've completed your AMP news article.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/fundamentals/converting/congratulations.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

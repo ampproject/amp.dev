@@ -95,6 +95,6 @@ amp-fit-text {
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

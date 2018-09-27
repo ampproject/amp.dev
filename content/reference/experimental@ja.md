@@ -12,7 +12,7 @@ $title: 試験運用機能
 
 AMP Dev チャンネルは、ブラウザで最新版の AMP JS ライブラリを有効にするための手段です。
 
-AMP Dev チャンネル リリースは **安定性に欠ける可能性があり** 、まだ一般公開されていない新機能が含まれている場合があります。新しい 
+AMP Dev チャンネル リリースは **安定性に欠ける可能性があり** 、まだ一般公開されていない新機能が含まれている場合があります。新しい
 AMP を試す、バグを報告する、まだ一般公開されていない新機能を必要とするドキュメントを作成するなどの目的がある場合に、このリリースを選択
 してください。
 
@@ -36,6 +36,6 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 試験運用機能が含まれている AMP ファイルは、
-[AMP の検証](/ja/docs/fundamentals/validate.html)でエラーになります。
+[AMP の検証]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})でエラーになります。
 実用段階の AMP ドキュメントでは、試験運用コンポーネントを削除してください。
 

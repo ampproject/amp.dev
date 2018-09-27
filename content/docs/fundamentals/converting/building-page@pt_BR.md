@@ -56,7 +56,7 @@ Quando você verificar a saída do JavaScript no Developers Console, tendo selec
 Powered by AMP ⚡ HTML
 ```
 
-Um [validador de AMP](https://www.ampproject.org/pt_br/docs/fundamentals/validate.html) está incluído na biblioteca AMP. Ele mostrará se há algo impedindo sua página de ser um documento AMP válido.  **Ative** o validador ao adicionar este identificador de fragmento ao URL do seu documento:
+Um [validador de AMP](https://www.ampproject.org{{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) está incluído na biblioteca AMP. Ele mostrará se há algo impedindo sua página de ser um documento AMP válido.  **Ative** o validador ao adicionar este identificador de fragmento ao URL do seu documento:
 
 ```text
 #development=1
@@ -83,6 +83,6 @@ Uma resolução simulada em dispositivo móvel, como a mostrada abaixo, aparecer
 Agora podemos começar! Vamos analisar cada erro de validação e ver como eles estão relacionados a AMP.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/fundamentals/converting/setting-up.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>

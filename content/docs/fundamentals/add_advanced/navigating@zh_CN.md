@@ -99,7 +99,7 @@ article {
 ```css
 .hamburger {
   padding-left: 10px;
-}      
+}
 .sidebar {
   padding: 10px;
   margin: 0;
@@ -124,6 +124,6 @@ article {
 我们的网页看起来很不错！下面，我们来执行最后一道工序&mdash;添加自定义字体。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/fundamentals/add_advanced/fonts.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

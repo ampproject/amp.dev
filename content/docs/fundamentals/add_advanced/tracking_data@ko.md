@@ -100,6 +100,6 @@ AMP에서 이 기능을 복제하려면 먼저 문서의 `<head>`에 [amp-analyt
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

@@ -108,12 +108,12 @@ $title: 使您的网页可被轻松发现
 如果您的结构化数据是有效的，您应该会看到 **0 个错误**和 **0 条警告**。
 
 {% call callout('继续阅读', type='read') %}
-要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现](/zh_cn/docs/fundamentals/discovery.html)指南。
+要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}})指南。
 {% endcall %}
 
 真棒！至此，您的 AMP 新闻报道便已完成了。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/fundamentals/converting/congratulations.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

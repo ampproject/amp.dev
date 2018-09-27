@@ -33,7 +33,7 @@ AMP でテキストを正しく表示するには、ページの文字セット�
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-すべての AMP ドキュメントで、そのドキュメントの「正規（canonical）」バージョンを参照するリンクを指定する必要があります。正規ページの概要と正規リンクのさまざまな手法については、このチュートリアルの[ページが検出されるようにする](/ja/docs/fundamentals/converting/discoverable.html)の手順で詳しく取り上げます。
+すべての AMP ドキュメントで、そのドキュメントの「正規（canonical）」バージョンを参照するリンクを指定する必要があります。正規ページの概要と正規リンクのさまざまな手法については、このチュートリアルの[ページが検出されるようにする]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}})の手順で詳しく取り上げます。
 
 このチュートリアルでは、正規ページに変換する元の HTML 記事を検討しましょう。
 
@@ -343,6 +343,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

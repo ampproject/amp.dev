@@ -13,7 +13,7 @@ AMP 문서의 유효성을 검사하는 방법에는 여러 가지가 있습니�
 모두 동일하므로 내 개발 스타일에 맞는 방법을
 사용하세요.
 
-AMP 유효성을 검사할 뿐만 아니라 AMP 문서가 타사 플랫폼에서 [검색되는지](/ko/docs/fundamentals/discovery.html) 확인하고 싶을 수도 있습니다.
+AMP 유효성을 검사할 뿐만 아니라 AMP 문서가 타사 플랫폼에서 [검색되는지]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}) 확인하고 싶을 수도 있습니다.
 
 ### 브라우저 개발용 콘솔
 
@@ -261,13 +261,13 @@ AMP 유효성 검사 서비스에서 페이지의 오류를 감지한 경우 타
      `<amp-img>` 태그에 대한 문서입니다. 일부 오류는 문서 링크를
      생성하지 않습니다.
 
-[spec](/ko/docs/fundamentals/spec.html)을 신중히 다시 읽으면 `<amp-img>` 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 알 수 있습니다.
+[spec]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})을 신중히 다시 읽으면 `<amp-img>` 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 알 수 있습니다.
 
 발생할 수 있는 오류의 전체 목록에 대해 자세히 알아보려면
 [AMP 유효성 오류 가이드](https://www.ampproject.org/ko/docs/troubleshooting/validation_errors.html)를 참조하세요.
 신중한 평가 후에도 문제가 해결되지 않는 경우
 [문의해 주시면](http://stackoverflow.com/questions/tagged/amp-html) 도움을
 드리겠습니다.
- 
- 
- 
+
+
+

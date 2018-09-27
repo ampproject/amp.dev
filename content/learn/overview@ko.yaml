@@ -17,8 +17,8 @@
         효율적인 방식으로 일반 패턴을 쉽게 구현하도록 해줍니다.
         <p>예를 들어, [`amp-img`](/ko/docs/reference/components/amp-img) 태그는
         아직 지원되지 않는 브라우저에서도 `srcset` 지원을 완벽하게 제공합니다.
-        [첫 번째 AMP HTML 페이지 만들기](/ko/docs/getting_started/create.html) 방법에 대해 알아보세요. 
-        <p>AMP 페이지는 `<link rel="">` HTML 태그를 통해 검색 엔진 및 다른 플랫폼에서 조회됩니다. AMP가 아닌 버전의 페이지와 AMP 버전의 페이지를 사용할 수도 있고 AMP 버전 페이지만 사용할 수도 있습니다. [페이지가 쉽게 발견되도록 하는 방법](/ko/docs/fundamentals/discovery.html)에 관해 자세히 알아보세요.
+        [첫 번째 AMP HTML 페이지 만들기](/ko/docs/getting_started/create.html) 방법에 대해 알아보세요.
+        <p>AMP 페이지는 `<link rel="">` HTML 태그를 통해 검색 엔진 및 다른 플랫폼에서 조회됩니다. AMP가 아닌 버전의 페이지와 AMP 버전의 페이지를 사용할 수도 있고 AMP 버전 페이지만 사용할 수도 있습니다. [페이지가 쉽게 발견되도록 하는 방법]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}})에 관해 자세히 알아보세요.
 
     - title: AMP JS
       subtitle: |
@@ -30,7 +30,7 @@
         리소스 로드를 관리하며, 위에 언급된 사용자 지정 태그를 제공합니다.
         <p>최적화의 최대 난제 중 하나는, 외부 리소스에서 들어오는 모든 것들을 비동기화하기 때문에, 페이지에 있는 어느 것도 렌더링되는 것을 막을 수 없다는 점입니다.
         <p>기타 성능 기법에는 모든 iframe의 샌드박싱, 리소스가 로드되기 전에 페이지에 있는 모든 요소의 레이아웃 미리 계산, 느린 CSS 선택기의 비활성화가 포함됩니다.
-        <p>[최적화](/ko/learn/about-how/) 뿐만 아니라 제한에 대해 자세히 알아보려면, [AMP HTML 사양](/ko/docs/fundamentals/spec.html)을 참조하세요.
+        <p>[최적화](/ko/learn/about-how/) 뿐만 아니라 제한에 대해 자세히 알아보려면, [AMP HTML 사양]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})을 참조하세요.
 
     - title: AMP Cache
       subtitle: |
@@ -51,7 +51,7 @@
         <p>또 다른 버전의 유효성 검사기에는 모든 AMP 페이지가 번들로 제공됩니다. 이 버전에서는 페이지가
         렌더링될 때 유효성 검사 오류를 브라우저 콘솔에 직접 기록할 수 있으므로, 코드의 복잡한 변경이 성능과 사용자 경험에
         얼마나 영향을 미치는지 확인할 수 있습니다.
-        <p>[AMP HTML 페이지 테스트](/ko/docs/fundamentals/debug/validate.html)에 대해 자세히 알아보세요.
+        <p>[AMP HTML 페이지 테스트]({{g.doc('/content/docs/fundamentals/debug/validate.md', locale=doc.locale).url.path}})에 대해 자세히 알아보세요.
 
 video:
   description: 입문 동영상으로 AMP 프로젝트에 대해 더 알아보세요

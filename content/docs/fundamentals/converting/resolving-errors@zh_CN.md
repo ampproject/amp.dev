@@ -33,7 +33,7 @@ The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-每个 AMP 文档都必须拥有引用此文档“权威”版本的链接。在本教程的[使您的网页可被轻松发现](/zh_cn/docs/fundamentals/converting/discoverable.html)步骤中，我们将详细了解权威网页的定义，以及实现权威关联的不同方法。
+每个 AMP 文档都必须拥有引用此文档“权威”版本的链接。在本教程的[使您的网页可被轻松发现]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}})步骤中，我们将详细了解权威网页的定义，以及实现权威关联的不同方法。
 
 对于本教程，我们将要转换的原始 HTML 文章视为权威网页。
 
@@ -343,6 +343,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

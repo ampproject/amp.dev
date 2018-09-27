@@ -54,7 +54,7 @@ Cuando inspecciona la salida de JavaScript en la Consola del programador (asegú
 Powered by AMP ⚡ HTML
 ```
 
-**Habilite** el [AMP validator](/es/docs/fundamentals/validate.html) agregando este identificador de fragmento a su URL:
+**Habilite** el [AMP validator]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) agregando este identificador de fragmento a su URL:
 
 ```text
 #development=1
@@ -81,6 +81,6 @@ Debería ver una resolución móvil simulada en su navegador como la siguiente:
 ¡Ahora estamos listos para trabajar! Paso a paso a través de los errores de validación, uno por uno y la dirección de cómo se relacionan con AMP.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/fundamentals/converting/setting-up.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>
