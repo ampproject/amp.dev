@@ -14,9 +14,10 @@ destinations:
 - name: email
 ---
 <body>
-	<div class="stage">
-		<div [class]="stages.currentStage != 'default' ? 'hero ' + stages.currentStage + ' hero-active' : 'hero'" class="hero hero-default hero-active websites"></div>
-		<div class="content">
+	<div class="destination-stage">
+		<div [class]="stages.currentStage != 'default' ? 'destination-stage-hero ' + stages.currentStage + ' destination-stage-hero destination-stage-hero-active' : 'destination-stage-hero'"
+		class="destination-stage-hero destination-stage-hero-active websites"></div>
+		<div class="destination-stage-content">
 			<h3 class="hl" [class]="stages.currentStage != 'default' ? 'hl hl-'+stages.currentStage : 'hl' ">AMP is a web component based framework for easily creating user first </h3>
 			{% call molecules.dropdownSwitch( doc.destinations ) %} {{ atoms.icon('arrow-down-thick' ) }} {% endcall %}
 		</div>

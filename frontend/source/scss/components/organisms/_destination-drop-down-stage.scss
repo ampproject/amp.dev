@@ -3,46 +3,49 @@
 
 @include heroEnterAnimation;
 
-.content {
-	position: relative;
-	padding: 10% 0 0 5%;
-	z-index: 10;
-	max-width: 250px;
+.destination-stage {
 
-	@media screen and (min-width: 768px) {
-		max-width: 550px;
-	}
-}
+	&-hero {
+		width: 100%;
+		height: 100vh;
+		z-index: 1;
+		position: absolute;
 
-.hl {
-	@include hl;
-	@include hl-h2;
-	@include hl-light;
-	margin: 0;
-	display: inline;
-	padding-right: 12px;
-
-	&-stories {
-		@include hl-stories;
+		&-active {
+			animation: growRight 1s ease-in-out;
+			z-index: 10;
+		}
 	}
 
-	&-ads {
-		@include hl-ads;
-	}
-
-	&-email {
-		@include hl-email;
-	}
-}
-
-.hero {
-	width: 100%;
-	height: 100vh;
-	z-index: 1;
-	position: absolute;
-
-	&-active {
-		animation: growRight 1s ease-in-out;
+	&-content {
+		position: relative;
+		padding: 10% 0 0 5%;
 		z-index: 10;
+		max-width: 250px;
+
+		@media screen and (min-width: 768px) {
+			max-width: 550px;
+		}
+	}
+
+	.hl {
+		@include hl;
+		@include hl-h2;
+		@include hl-light;
+		margin: 0;
+		display: inline;
+		padding-right: 12px;
+
+		&-stories {
+			@include hl-stories;
+		}
+
+		&-ads {
+			@include hl-ads;
+		}
+
+		&-email {
+			@include hl-email;
+		}
 	}
 }
