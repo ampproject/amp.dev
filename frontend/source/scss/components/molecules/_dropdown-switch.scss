@@ -171,6 +171,54 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
 	order: 2;
+
+
+	&-drop-down {
+		margin-bottom: 5px;
+
+		&:hover {
+			margin-left: 2px;
+		}
+	}
+
+	&-rolling {
+		position: absolute;
+
+		&-hide {
+			display: none;
+			animation: none;
+		}
+
+		&-websites {
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 0s;
+		}
+
+		&-stories {
+			opacity: 0;
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 3.2s;
+			@include txt-stories;
+		}
+
+		&-ads {
+			opacity: 0;
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 6.4s;
+			@include txt-ads;
+		}
+
+		&-email {
+			opacity: 0;
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 9.6s;
+			@include txt-email;
+		}
+
+		&-light {
+			color: color('white');
+		}
+	}
 }
 
 [option][selected] {
@@ -178,14 +226,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
-}
-
-.destination-list-drop-down-item {
-	margin-bottom: 5px;
-
-	&:hover {
-		margin-left: 2px;
-	}
 }
 
 .websites {
@@ -207,46 +247,4 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	@include destination-email;
 	@include txt-email;
 }
-
-// ROLLING ANIMATION STYLES AND DELAYS
-
-.destination-list-rolling-item {
-	position: absolute;
-
-	&-hide {
-		display: none;
-		animation: none;
-	}
-
-	&-websites {
-		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-		animation-delay: 0s;
-	}
-
-	&-stories {
-		opacity: 0;
-		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-		animation-delay: 3.2s;
-		@include txt-stories;
-	}
-
-	&-ads {
-		opacity: 0;
-		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-		animation-delay: 6.4s;
-		@include txt-ads;
-	}
-
-	&-email {
-		opacity: 0;
-		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-		animation-delay: 9.6s;
-		@include txt-email;
-	}
-
-	&-light {
-		color: color('white');
-	}
-}
-
 

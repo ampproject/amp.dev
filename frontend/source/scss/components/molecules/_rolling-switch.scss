@@ -43,38 +43,37 @@ Rolling switch requires the rollingAnimation defined in /source/scss/mixins.scss
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
 	order: 2;
-}
 
-.destination-list-rolling-item {
-	position: absolute;
-	@include txt-light;
+	&-rolling {
+		position: absolute;
+		@include txt-light;
 
-	&-hide {
-		display: none;
-		animation: none;
+		&-hide {
+			display: none;
+			animation: none;
+		}
+
+		&-websites {
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 0s;
+		}
+
+		&-stories {
+			opacity: 0;
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 3.2s;
+		}
+
+		&-ads {
+			opacity: 0;
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 6.4s;
+		}
+
+		&-email {
+			opacity: 0;
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 9.6s;
+		}
 	}
-
-	&-websites {
-		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-		animation-delay: 0s;
-	}
-
-	&-stories {
-		opacity: 0;
-		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-		animation-delay: 3.2s;
-	}
-
-	&-ads {
-		opacity: 0;
-		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-		animation-delay: 6.4s;
-	}
-
-	&-email {
-		opacity: 0;
-		animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-		animation-delay: 9.6s;
-	}
-
 }
