@@ -148,6 +148,6 @@ Puedes aprender más sobre el componente bookend. Para obtener más información
 Nuestra historia está casi terminada.  Antes de poder publicar nuestro contenido, comprobaremos que el HTML de nuestro AMP es válido.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/design/visual_story/animating_elements.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/design/visual_story/validation.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="/es/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="/es/docs/getting_started/visual_story/validation.html"><span class="arrow-next">Siguiente</span></a>
 </div>
