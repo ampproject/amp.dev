@@ -80,7 +80,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 			flex-direction: column;
 		}
 
-		.destination-list-rolling-item {
+		.destination-list-item-rolling{
 			display: none;
 			animation-play-state: paused;
 		}
