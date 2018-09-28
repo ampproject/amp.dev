@@ -28,7 +28,7 @@ Rolling switch requires the rollingAnimation defined in /source/scss/mixins.scss
 @include rollingAnimation;
 
 
-.stage-list-view-box {
+.destination-list-view-box {
 	display: inline;
 	height: 50px;
 	width: 250px;
@@ -36,7 +36,16 @@ Rolling switch requires the rollingAnimation defined in /source/scss/mixins.scss
 	position: absolute;
 }
 
-.stage-list-rolling-item {
+.destination-list-item {
+	@include hl;
+	@include hl-h2;
+	@include hl-light;
+	outline: color('white');
+	padding: 1px 20px 1px 10px;
+	order: 2;
+}
+
+.destination-list-rolling-item {
 	position: absolute;
 	@include txt-light;
 
