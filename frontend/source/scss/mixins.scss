@@ -23,12 +23,12 @@ amp-accordion > h1 {
 }
 
 @mixin heroEnterAnimation {
-	@keyframes growRight {
+	@keyframes growDown {
 		from {
-			width: 0%;
+			padding-top: 0%;
 		}
 		to {
-			width: 100%;
+			padding-top: 29.29%;
 		}
 	}
 }
