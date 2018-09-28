@@ -65,10 +65,14 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		[option][selected] {
 			border: none;
 			outline: #fff;
+			background-clip: border-box;
+			-webkit-background-clip: border-box;
+			color: inherit;
 		}
 
 		.ad-a-ico {
 			transform: rotate(180deg);
+			fill: color('white');
 		}
 
 		.destination-list {
@@ -79,6 +83,38 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		.destination-list-rolling-item {
 			display: none;
 			animation-play-state: paused;
+		}
+	}
+
+	&-websites {
+		background-color: color('white');
+
+		.ad-a-ico {
+			fill: color('robins-egg');
+		}
+	}
+
+	&-stories {
+		background: color('ultramarine');
+
+		.ad-a-ico {
+			fill: color('turbo');
+		}
+	}
+
+	&-ads {
+		background: color('hawkes-blue');
+
+		.ad-a-ico {
+			fill: color('pizazz');
+		}
+	}
+
+	&-email {
+		background: color('reef');
+
+		.ad-a-ico {
+			fill: color('pink-flamingo');
 		}
 	}
 }
@@ -139,6 +175,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 [option][selected] {
 	order: 1;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
 }
 
 .destination-list-drop-down-item {
