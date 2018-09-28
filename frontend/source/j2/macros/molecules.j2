@@ -7,7 +7,7 @@
 {%- endmacro %}
 
 {% macro dropdownSwitch(destinations) -%}
-	<div class="destination-list-view-box destination-list-view-box-gradient" [class]="stages.currentStage == 'default' ? 'destination-list-view-box destination-list-view-box-gradient' : 'destination-list-view-box destination-list-view-box-no-animation'">
+	<div class="destination-list-view-box destination-list-view-box-gradient" [class]="stages.currentStage == 'default' ? 'destination-list-view-box destination-list-view-box-gradient' : 'destination-list-view-box destination-list-view-box-no-animation destination-list-view-box-' + stages.currentStage">
 		{% for dest in destinations %}
 			<span class="destination-list-item destination-list-rolling-item destination-list-rolling-item-{{ dest.name }}"
 			[class]="stages.currentStage == 'default' ? 'destination-list-item destination-list-rolling-item destination-list-rolling-item-{{ dest.name }}' :
@@ -15,7 +15,7 @@
 		{% endfor %}
 		{{ caller() }}
 		<amp-selector layout="container" on="select:AMP.setState({stages:{currentStage: event.targetOption}})">
-			<ul class="destination-list" [class]="stages.currentStage != 'default' ? 'destination-list destination-list-display': 'destination-list'">
+			<ul class="destination-list" [class]="stages.currentStage != 'default' ? 'destination-list destination-list-display destination-list-' + stages.currentStage: 'destination-list'">
 			{% for dest in destinations %}
 				<li option={{ dest.name }} class="destination-list-item destination-list-drop-down-item {{ dest.name }}">{{ dest.name }}</li>
 			{% endfor %}
