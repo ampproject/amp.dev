@@ -1,0 +1,60 @@
+/* A project prefix that is added by using the prefix() function. Abbreviation
+of the project name amp.dev */
+/* All category codes which are prepended to selector by using either atom(selector),
+molecule(selector) or organism(selector) */
+/* The following map contains every color that is used inside the project. The
+names are identified by using the http://chir.ag/projects/name-that-color to
+prevent double colors and/or hirarchy dicussions */
+/**
+/// Pulls a name out of the $colors array by key and throws a warning
+/// if the specified color name does not exist
+/// @param  {String} $name A color name inside that is inside $colors
+/// @return {String}       The matching color or null
+*/
+/**
+/// Prefixes a given string with the $projectPrefix and a category prefix out
+/// of $categoryPrefixes by the key $category
+/// @param  {String} $category A category name in $categoryPrefixes
+/// @param  {String} $selector The selector that gets prefixed
+/// @return {String}           The prefixed selector
+*/
+/**
+/// Pulls a name out of the $shadows array by key and throws a warning
+/// if the specified shadow name does not exist
+/// @param  {String} $name A shadow name inside that is inside $shadows
+/// @return {String}       The matching shadow or null
+*/
+amp-accordion > h1 { background: white; }
+
+html, body { padding: 0; margin: 0; min-width: 320px; color: #20202A; background: #FFFFFF; font-size: 16px; font-family: sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/** This file only contains styles that are required in (nearly) any page like text, headline and grid styling. Everything else belongs in dedicated component files */
+p { display: block; margin: 0; line-height: 1.45em; font-style: normal; font-family: sans-serif; }
+
+/*
+
+####################
+### ATOM: button ###
+####################
+
+### SAMPLE MARKUP:
+
+<a class="ad-a-btn" href="#">
+	The Button Text
+</a>
+
+### INFO:
+
+The regular button has only one size and no modifiers yet.
+The text style is always extended from light headline 3 but in uppercase letters.
+
+### MODIFIERS:
+
+none
+
+*/
+.ad-a-btn { display: inline-block; max-width: 100%; min-width: 230px; width: auto; height: auto; padding: .813rem 1.626rem; margin: 0; text-transform: uppercase; text-decoration: none; text-align: center; background-color: #005AF0; border: 3px solid #005AF0; }
+
+.ad-a-btn:hover { background-color: #48525C; border: 3px solid #48525C; }
+
+@media screen and (min-width: 768px) { .ad-a-btn { min-width: 280px; } }

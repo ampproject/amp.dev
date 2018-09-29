@@ -1,0 +1,49 @@
+---
+$view: /views/styleguide/component.j2
+$title: Link
+links1:
+- text: Internal Link
+  type: 'internal'
+  href: '#'
+- text: External Website
+  type: 'external'
+  href: '#'
+- text: Download
+  type: 'download'
+  href: '#'
+links2:
+- text: Internal Link
+  type: 'internal'
+  href: '#'
+- text: External Website
+  type: 'external'
+  href: '#'
+- text: Download
+  type: 'download'
+  href: '#'
+---
+<div class="ad-o-container col-2-1">
+	<p><small>Three link molecules with square icon modifier.</small></p>
+</div>
+<div class="ad-o-container link-preview-1 col-4-5">
+{% for link in doc.links1 %}
+  <a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
+    {{ atoms.icon(link.type, 'ad-m-lnk-icon') }}
+    <span class="ad-m-lnk-text">{{ link.text }}</span>
+  </a>
+  <span class="ad-a-divider ad-a-divider-desktop"></span>
+{% endfor %}
+</div>
+
+<div class="ad-o-container col-2-1">
+	<p><small>Three link molecules without modifiers.</small></p>
+</div>
+<div class="ad-o-container link-preview-2 col-4-5">
+{% for link in doc.links2 %}
+  <a class="ad-m-lnk" href="{{ link.href }}" {% if link.type == 'external' %}target="_blank"{% endif %}>
+    {{ atoms.icon(link.type, 'ad-m-lnk-icon') }}
+    <span class="ad-m-lnk-text">{{ link.text }}</span>
+  </a>
+  <span class="ad-a-divider ad-a-divider-desktop"></span>
+{% endfor %}
+</div>

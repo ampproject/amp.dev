@@ -1,0 +1,32 @@
+---
+$view: /views/styleguide/component.j2
+$title: Float Image
+
+components:
+- name: amp-fx-collection
+  src: https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js
+
+copies:
+- headline: Placeholder copy text
+---
+<div class="ad-o-container col-6-4">
+  {% for copy in doc.copies %}
+  <h3 class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</h3>
+	<p class="ad-a-txt ad-a-txt-2">{{ lipsum(n=4, html=False) }}</p>
+  {% endfor %}
+</div>
+<div class="ad-o-container col-2-1">
+	<p><small>Floating image molecule with one static and one parallax image.</small></p>
+</div>
+<div class="ad-o-container col-6-4">
+  <div class="ad-m-float-image">
+    {{atoms.image(['static'], src=g.static('/static/static/img/amp-img-02.png').url|relative, layout='fill', alt='Alt of static image.')}}
+		{{atoms.image(['shadow-static', 'parallax'], src=g.static('/static/static/img/amp-img-03.png').url|relative, layout='fill', alt='Alt for floating image.', type='parallax')}}
+	</div>
+</div>
+<div class="ad-o-container col-6-4">
+	{% for copy in doc.copies %}
+  <h3 class="ad-a-hl ad-a-hl-h3">{{ copy.headline }}</h3>
+	<p class="ad-a-txt ad-a-txt-2">{{ lipsum(n=4, html=False) }}</p>
+  {% endfor %}
+</div>

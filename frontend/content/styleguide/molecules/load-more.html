@@ -1,0 +1,18 @@
+---
+$view: /views/styleguide/component.j2
+$title: Load More
+
+text: Load More
+icon: arrow-down-thin
+---
+
+<div class="ad-o-container col-2-1">
+	<p><small>Load-more molecule with divider.</small></p>
+</div>
+<div class="ad-o-container col-6-4">
+	<div class="ad-m-load-more">
+		<span class="ad-m-load-more-text">{{doc.text}}</span>
+		{{ atoms.icon(doc.icon, 'ad-m-load-more-icon') }}
+		<span class="ad-a-divider ad-a-divider-desktop"></span>
+	</div>
+</div>

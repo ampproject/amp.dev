@@ -1,0 +1,32 @@
+---
+$view: /views/styleguide/component.j2
+$title: KPI
+
+kpis:
+- title: 63%
+  text: Increase in CTR on ads in AMP Stories
+  type: emerald-doger
+  icon: stories
+- title: 455
+  text: Code examples
+  type: river-ebony
+  icon: code
+- title: 1226
+  text: Active Discussions
+  type: turbo-pizazz
+  icon: user
+---
+{% for kpi in doc.kpis %}
+	<div class="ad-o-container col-2-1">
+		<p><small>Single KPI molecule with <strong>{{ kpi.type }}</strong> modifier.</small></p>
+	</div>
+	<div class="ad-o-container col-2-4">
+		<div class="ad-m-kpi ad-m-kpi-{{ kpi.type }}">
+      <div class="ad-m-kpi-content">
+  			{{ atoms.icon(kpi.icon, 'ad-m-kpi-icon') }}
+  			<span class="ad-m-kpi-number">{{ kpi.title }}</span>
+  			<p class="ad-m-kpi-text">{{ kpi.text }}</p>
+  		</div>
+    </div>
+	</div>
+{% endfor %}

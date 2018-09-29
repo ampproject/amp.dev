@@ -1,0 +1,35 @@
+---
+$view: /views/styleguide/component.j2
+$title: Copy
+---
+
+<div class="ad-o-container col-2-1">
+  <p><small>Headline 2 with big text.</small></p>
+</div>
+<div class="ad-o-container col-6-4">
+  <div class="ad-m-copy ad-m-copy-large">
+    <h2>Section Big Headline</h2>
+    <p>{{ lipsum(n=1, html=False) }}</p>
+  </div>
+</div>
+
+<div class="ad-o-container col-2-1">
+  <p><small>Headline 3 with regular text.</small></p>
+</div>
+<div class="ad-o-container col-6-4">
+  <div class="ad-m-copy">
+    <h3>Headline ipsum</h3>
+    <p>{{ lipsum(n=1, html=False) }}</p>
+  </div>
+</div>
+
+<div class="ad-o-container col-2-1">
+  <p><small>Regular text with links and inline code modifiers.</small></p>
+</div>
+<div class="ad-o-container col-6-4">
+  <div class="ad-m-copy">
+    <p>
+      <code>amp-accordion</code> adds the expanded attribute to any expanded element. You can use <a href="#">Hyperlinks selectors</a> to style an accordion section based on whether it's expanded or collapsed. Use <code>section[expanded]</code> to style the expanded <code><a href="#">hyperlink inline code</a></code> to style the collapsed state.
+    </p>
+  </div>
+</div>
