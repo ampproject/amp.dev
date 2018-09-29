@@ -1,13 +1,8 @@
-$title: AMP 面向的对象
-$order: 1
-class: about-who
-$view: /views/about-who.html
-$parent: /content/learn/overview.yaml
-$path: /learn/who-uses-amp/
+$title: 哪些人可以使用 AMP？
 
 hero:
-  title: AMP 面向的对象
-  subtitle: 加入由使用 AMP 的 850000 个网域和领先平台以及 100 多家技术提供商构成的生态系统。
+  title: 哪些人可以使用 AMP？
+  subtitle: 目前已有 85 万个网域、众多领先平台以及 100 多个技术提供商在使用 AMP。欢迎加入这个生态系统！
   hero_img_base: /static/img/about/who-use-amp/who_phones_hero
   line_img: who_lines1.svg
   triangle_img: hero_triangle.png
@@ -18,12 +13,12 @@ cards:
     cta: 了解详情
     icon: who_icon_publishers.svg
 
-  - name: 广告客户
+  - name: 广告主
     filename: advertisers
     cta: 了解详情
     icon: who_icon_advertisers.svg
 
-  - name: Ecommerce
+  - name: 电子商务网站
     filename: ecommerce
     cta: 了解详情
     icon: who_icon_ecomm.svg
@@ -37,3 +32,4 @@ cta:
   title: 成功案例
   link_text: 阅读案例研究
   link_url: /content/learn/case-studies.html
+ 

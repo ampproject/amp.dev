@@ -366,3 +366,10 @@
     }
   }
 }
+
+:lang(ko) {
+  .doc-sidebar li.top-level>a.section-name,
+  .doc-sidebar li.top-level.expandable .section-name {
+    font-weight: 400;
+  }
+}
