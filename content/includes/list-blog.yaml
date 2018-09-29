@@ -1,5 +1,60 @@
 blogs:
 
+- type: Blog
+  title: "Introducing Bing AMP viewer and Bing AMP cache"
+  id: introducing-bing-amp-viewer-and-bing-amp-cache
+  author: Fabrice Canel
+  role:  Principal Program Manager, Microsoft Bing
+  origin: "https://amphtml.wordpress.com/2018/09/19/introducing-bing-amp-viewer-and-bing-amp-cache/amp/"
+  excerpt: "The below was originally posted on Microsoft Bing&#8217;s blog by Fabrice Canel, Principal Program Manager, Microsoft Bing In 2016, Bing joined the Accelerated Mobile Pages (AMP for short) open-source effort to help you “find” and “do” searches faster, regardless of where you are and on any device when you are looking for information. Today, we are pleased to announce the release [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-09-19T13:05:52-07:00
+  date: "September 19, 2018"
+
+- type: Blog
+  title: "An open governance model for the AMP Project"
+  id: governance
+  author: Malte Ubl
+  role:  Tech Lead for the AMP Project at Google
+  origin: "https://amphtml.wordpress.com/2018/09/18/governance/amp/"
+  excerpt: "Over the last 2 years AMP has grown from a tiny open source project with just 2 contributors to a much larger one with over 700 folks contributing over 10,000 commits running on many millions of websites. When choosing a governance model (a system that describes how decisions are made) for AMP,  we initially focused [&#8230;]"
+  avatar: https://amphtml.files.wordpress.com/2018/09/amp-contributions.png
+  datedata: 2018-09-18T08:56:46-07:00
+  date: "September 18, 2018"
+
+- type: Blog
+  title: "Measuring user journeys across the AMP Cache and your website"
+  id: measuring-user-journeys-across-the-amp-cache-and-your-website
+  author: Jeff Jose
+  role:  Product Manager, AMP Project at Google
+  origin: "https://amphtml.wordpress.com/2018/09/17/measuring-user-journeys-across-the-amp-cache-and-your-website/amp/"
+  excerpt: "“If you can’t measure it, you can’t manage it.” &#8212; Peter Drucker As users demand better privacy controls, browser vendors have started responding with defaults that partition cookies. This means traditional approaches of relying on third-party cookies for measurement won’t work going forward. AMP pages are often served from an AMP Cache and the ability [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-09-17T16:34:00-07:00
+  date: "September 17, 2018"
+
+- type: Blog
+  title: "Compare images on AMP pages with amp-image-slider"
+  id: compare-images-on-amp-pages-with-amp-image-slider
+  author: Naina Raisinghani
+  role:  AMP Engineer at Google
+  origin: "https://amphtml.wordpress.com/2018/09/14/compare-images-on-amp-pages-with-amp-image-slider/amp/"
+  excerpt: "Earlier this month we announced the experimental release of &#60;amp-image-slider&#62;, an overlaid slider that allows you to compare 2 images that are superimposed on each other. We are now excited to fully launch this component in production. The benefits of using include: An interoperable interaction model across all devices and platforms. Built-in accessibility &#8211; like [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-09-14T10:07:34-07:00
+  date: "September 14, 2018"
+
+- type: Blog
+  title: "Ensure Ad Density is equal on AMP & non-AMP pages"
+  id: ensure-ad-density-is-equal-on-amp-non-amp-pages
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/09/11/ensure-ad-density-is-equal-on-amp-non-amp-pages/amp/"
+  excerpt: "Editor’s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google. This post is part of a larger AMP monetization series. Avoid common pitfalls to ensure total area of ads is the same This is an easy optimization, but is important because it’s one of the most common mistakes and is easy to [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-09-11T12:34:37-07:00
+  date: "September 11, 2018"
+
 - type: Video
   title: "AMP HTML Layout System"
   id: v0BVLgEEuMY
@@ -17,66 +72,3 @@ Subscribe to the AMP channel! → http://bit.ly/AMPchannel1"
   avatar: 
   datedata: 2018-08-30T13:14:13-07:00
   date: "August 30, 2018"
-
-- type: Blog
-  title: "Are you leaving revenue on the table with AMP?"
-  id: are-you-leaving-revenue-on-the-table-with-amp
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/08/28/are-you-leaving-revenue-on-the-table-with-amp/amp/"
-  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google I’m a product manager working on AMP and we strive to make advertising better on the web while helping publishers thrive. I’m writing this to give you some background on design choices we made for advertising in AMP [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-08-28T08:08:11-07:00
-  date: "August 28, 2018"
-
-- type: Blog
-  title: "WorkerDOM: Concurrency for JavaScript programming with the DOM"
-  id: workerdom
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/08/21/workerdom/amp/"
-  excerpt: "We are happy to announce the alpha release of WorkerDOM – a JavaScript library that makes the Document Object Model (DOM) available to Web Workers. This allows web developers to take advantage of pervasive multi-core processor architectures when programming their web pages to make them more performant. While the WorkerDOM library is designed for general [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-08-21T16:15:43-07:00
-  date: "August 21, 2018"
-
-- type: Video
-  title: "Best practices for creating an AMP story"
-  id: 2WjFBnCj2ew
-  author: The AMP Channel
-  role: 
-  origin: "https://www.youtube.com/watch?v=2WjFBnCj2ew"
-  excerpt: "AMP stories are a new and dynamic form of visual storytelling that are specifically designed for mobile. In this episode of Amplify, Paul Bakaus (@pbakaus) explores some of the best practices for creating visually rich, tap-through AMP stories. Subscribe to the channel to stay up to date with the latest from the AMP team!
-
-See AMP stories in action → http://bit.ly/2n1MaiE
-AMP stories blog article → http://bit.ly/2LHE6Cr
-Telling Stories with AMP (AMP Conf 2018) → http://bit.ly/2KmQ3YC
-
-Watch more Amplify episodes → http://bit.ly/2LHsFX3
-Subscribe to the The AMP Channel→ http://bit.ly/AMPchannel1"
-  thumbnail: "https://i3.ytimg.com/vi/2WjFBnCj2ew/hqdefault.jpg"
-  avatar: 
-  datedata: 2018-08-02T13:49:46-07:00
-  date: "August 2, 2018"
-
-- type: Blog
-  title: "AddThis is Now Available for AMP"
-  id: addthis-is-now-available-for-amp
-  author: Chad Edmonds
-  role:  Sr. Marketing Manager, AddThis
-  origin: "https://amphtml.wordpress.com/2018/07/30/addthis-is-now-available-for-amp/amp/"
-  excerpt: "Editor&#8217;s note: the following was originally posted on AddThis&#8217; blog by Chad Edmonds, Sr. Marketing Manager, AddThis Just because AddThis is now free, doesn’t mean we’re slowing down on pushing out more great features and functionalities! We recently rolled out AddThis Inline Share Buttons for AMP and it is ready for you to integrate into your AMP compatible [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-30T07:50:10-07:00
-  date: "July 30, 2018"
-
-- type: Blog
-  title: "Privacy and user choice in AMP’s software architecture"
-  id: privacy-and-user-choice-in-amps-software-architecture
-  author: Malte Ubl
-  role:  Tech Lead of the AMP Project.
-  origin: "https://amphtml.wordpress.com/2018/07/23/privacy-and-user-choice-in-amps-software-architecture/amp/"
-  excerpt: "Early choices in designing the AMP HTML JavaScript library have made it uniquely suited for publishers to implement effective privacy controls for users. In web pages, resource requests and browser storage access that may have privacy impact can be initiated through a multitude of mechanisms, many of which are often controlled by third parties. This [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-23T10:36:25-07:00
-  date: "July 23, 2018"

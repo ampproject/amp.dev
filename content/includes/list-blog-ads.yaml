@@ -1,6 +1,17 @@
 blogs:
 
 - type: Blog
+  title: "Ensure Ad Density is equal on AMP & non-AMP pages"
+  id: ads-ensure-ad-density-is-equal-on-amp-non-amp-pages
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/09/11/ensure-ad-density-is-equal-on-amp-non-amp-pages/amp/"
+  excerpt: "Editor’s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google. This post is part of a larger AMP monetization series. Avoid common pitfalls to ensure total area of ads is the same This is an easy optimization, but is important because it’s one of the most common mistakes and is easy to [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-09-11T12:34:37-07:00
+  date: "September 11, 2018"
+
+- type: Blog
   title: "Are you leaving revenue on the table with AMP?"
   id: ads-are-you-leaving-revenue-on-the-table-with-amp
   author: amphtml
@@ -54,14 +65,3 @@ blogs:
   avatar: https://videos.files.wordpress.com/pqK8yXrk/amp_blog_story_ad_hd.mp4
   datedata: 2018-07-16T15:03:22-07:00
   date: "July 16, 2018"
-
-- type: Blog
-  title: "Serverless AMP solution on AWS"
-  id: ads-serverless-amp-solution-on-aws
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/07/11/serverless-amp-solution-on-aws/amp/"
-  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Artūrs Krūze, CEO, Magebit. You can see their site featured on the showcase page of AMPproject.org It all started when we realized our website gets outdated very fast and we are always so busy with our customers we forget about ourselves. We had to build something [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-11T13:09:31-07:00
-  date: "July 11, 2018"

@@ -1,13 +1,8 @@
-$title: Untuk Siapa AMP Dibuat?
-$order: 1
-class: about-who
-$view: /views/about-who.html
-$parent: /content/learn/overview.yaml
-$path: /learn/who-uses-amp/
+$title: Untuk siapa AMP?
 
 hero:
-  title: Untuk Siapa AMP Dibuat?
-  subtitle: Bergabunglah dengan 850.000 domain, platform populer, dan lebih dari 100 penyedia teknologi yang menggunakan AMP.
+  title: Untuk siapa AMP?
+  subtitle: Bergabunglah dengan ekosistem yang terdiri dari 850.000 domain, platform terkemuka, dan lebih dari 100 penyedia teknologi yang menggunakan AMP.
   hero_img_base: /static/img/about/who-use-amp/who_phones_hero
   line_img: who_lines1.svg
   triangle_img: hero_triangle.png
@@ -23,8 +18,8 @@ cards:
     cta: Pelajari Lebih Lanjut
     icon: who_icon_advertisers.svg
 
-  - name: Ecommerce
-    filename: ecommerce
+  - name: E-commerce
+    filename: e-commerce
     cta: Pelajari Lebih Lanjut
     icon: who_icon_ecomm.svg
 
@@ -37,3 +32,4 @@ cta:
   title: Kisah sukses
   link_text: Baca studi kasus
   link_url: /content/learn/case-studies.html
+ 
