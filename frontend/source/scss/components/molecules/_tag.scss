@@ -1,0 +1,44 @@
+/*
+
+#####################
+### MOLECULE: tag ###
+#####################
+
+### INFO:
+
+TODO: Add info text to this molecule.
+
+*/
+
+.#{molecule('tag')} {
+	@include txt;
+	@include txt-accent-2;
+	@include txt-strong;
+	@include txt-center;
+	@include txt-uppercase;
+
+	display: inline-block;
+	min-width: 80px;
+	line-height: 30px;
+	padding: 0 5px;
+
+	&-websites {
+		color: color('whisper');
+		@include gradient-websites;
+	}
+
+	&-stories {
+		color: color('ultramarine');
+		@include gradient-stories;
+	}
+
+	&-ads {
+		color: color('hawkes-blue');
+		@include gradient-ads;
+	}
+
+	&-e-mails {
+		color: color('pigment-indigo');
+		@include gradient-e-mails;
+	}
+}
