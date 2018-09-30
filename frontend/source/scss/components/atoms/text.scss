@@ -1,0 +1,20 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '_text.scss';
+
+p {
+  @include txt;
+  @include txt-p;
+  @include txt-2;
+
+	small {
+		@include txt-accent-2;
+	}
+
+	big {
+		@include txt-1;
+	}
+}

@@ -1,0 +1,19 @@
+@mixin box-shadow {
+  box-shadow: 0 5px 25px 0 rgba(72,82,92,0.30);
+}
+
+@mixin drop-shadow {
+  filter: drop-shadow(0px 2px 5px rgba(72, 82, 92, 0.3));
+}
+
+@mixin turbo-pizazz {
+	background: linear-gradient(45deg, color('pizazz'), color('turbo'));
+}
+
+@mixin emerald-doger {
+	background: linear-gradient(45deg, color('emerald'), color('doger-blue'));
+}
+
+@mixin river-ebony {
+	background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+}

@@ -1,3 +1,12 @@
+@import '_variables.scss';
+@import '_functions.scss';
+@import '_extends.scss';
+@import '_mixins.scss';
+
+* {
+  box-sizing: border-box;
+}
+
 html, body {
     padding: 0;
     margin: 0;
@@ -11,9 +20,8 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/**
- * This file only contains styles that are required in (nearly) any page
- * like text, headline and grid styling. Everything else belongs in dedicated
- * component files
-**/
-@import 'base/text.scss';
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px;
+}

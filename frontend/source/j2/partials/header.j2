@@ -1,0 +1,35 @@
+{% do doc.styles.addCssFile('css/components/organisms/header.css') %}
+
+<header class="ad-o-header">
+  <nav class="ad-o-header-main-nav">
+    {% set home = g.doc('/content/amp-dev/index.md') %}
+    <a class="ad-o-header-nav-item ad-o-header-nav-item-main" href="{{ home.url }}">{{ home.title }}</a>
+
+    {% for collection in g.collection('amp-dev').collections() %}
+    {% for _doc in g.docs(collection.collection_path) %}
+    {# Check if collection contains a index document and if so
+    treat as navigation item #}
+    {% if _doc.base == 'index' %}
+    {% if _doc == doc %}
+    <a class="ad-o-header-nav-item ad-o-header-nav-item-main ad-o-header-nav-item-active" href="{{ _doc.url }}">
+      {{ _doc.title }}
+    </a>
+    {% else %}
+    <a class="ad-o-header-nav-item ad-o-header-nav-item-main" href="{{ _doc.url }}">{{ _doc.title }}</a>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </nav>
+</header>
+
+{% if doc.collection.collection_path != 'amp-dev' %}
+{# Check if there are items for a sub-navigation #}
+<nav>
+  {% for _doc in doc.collection %}
+  {% if _doc.base != 'index' %}
+  <a href="{{ _doc.url }}">{{ _doc.title }}</a>
+  {% endif %}
+  {% endfor %}
+</nav>
+{% endif %}

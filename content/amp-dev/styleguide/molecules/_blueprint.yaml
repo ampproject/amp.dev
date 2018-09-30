@@ -1,0 +1,5 @@
+path: /styleguide/molecules/{base}.html
+view: /views/default.j2
+
+localization:
+  path: /{locale}/styleguide/molecules/{base}.html

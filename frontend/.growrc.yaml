@@ -1,8 +1,0 @@
-grow:
-  build:
-    deployment: null
-    preprocess: true
-    clear-cache: false
-    locate-untranslated: false
-    re-route: false
-    out-dir: '../docs/'

@@ -1,6 +1,5 @@
 grow_version: ">=0.0.66"
-
-root: /index.html
+home: /content/amp-dev/index.html
 
 static_dirs:
 - static_dir: /static/
@@ -17,6 +16,7 @@ preprocessors:
 ext:
 - extensions.amp_dependency_injector.AmpDependencyInjectorExtension
 - extensions.dynamic_css_bundles.DynamicCssBundlesExtension
+- extensions.shortcodes.ShortcodesExtension
 
 # deployments:
 #   default:

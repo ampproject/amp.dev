@@ -1,0 +1,29 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '_headline.scss';
+
+h1,
+h2,
+h3,
+h4 {
+	@include hl;
+}
+
+h1 {
+	@include hl-h1;
+}
+
+h2 {
+	@include hl-h2;
+}
+
+h3 {
+	@include hl-h3;
+}
+
+h4 {
+	@include hl-h4;
+}

@@ -1,0 +1,33 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+
+.#{organism('header')} {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  padding: 0 30px;
+  border: 1px solid color('whisper');
+  background-color: color('white');
+
+  &-main-nav {
+    padding: 15px 0;
+  }
+
+  &-nav-item {
+    @include txt-black;
+
+    &-active {
+      @include txt-blue-ribbon;
+    }
+
+    &-main {
+      @include txt-font-accent;
+      padding-right: 15px;
+    }
+  }
+}
