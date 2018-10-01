@@ -1,9 +1,5 @@
 ---
 $title: AMP 레이아웃 살펴보기
-$order: 1
-stylesheet: pages/layouts.css
-components:
-    - selector
 ---
 
 이 페이지는 서로 다른 [AMP 안의 레이아웃](/docs/design/amp-html-layout.html#layout)과 스크린이 리사이즈될 때 어떻게 동작하는 지 보여줍니다.
