@@ -862,7 +862,7 @@ msgstr "더 고성능에 대한 경험을 통해 참여와 전환율을 확대�
 
 #: /content/includes/menu.yaml
 msgid "Guides & Tutorials"
-msgstr "가이드 및 자습서"
+msgstr "가이드 및 튜토리얼"
 
 #: /content/includes/stories.yaml
 msgid "Harry & Meghan A to Z"
