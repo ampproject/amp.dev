@@ -107,4 +107,18 @@ amp-accordion > h1 {
 			transform: translateY(100%);
 		}
 	}
+@mixin gradient-e-mails {
+  background: linear-gradient(45deg, color('forest-green'), color('manz'));
+}
+
+@mixin gradient-ads {
+  background: linear-gradient(45deg, color('crimson'), color('pizazz'));
+}
+
+@mixin gradient-stories {
+  background: linear-gradient(45deg, color('pizazz'), color('yellow'));
+}
+
+@mixin gradient-websites {
+  background: linear-gradient(45deg, color('azure-radiance'), color('robins-egg-blue'));
 }

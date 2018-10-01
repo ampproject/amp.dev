@@ -10,8 +10,10 @@
 @import '../components/atoms/divider';
 
 @import '../components/molecules/link';
+@import '../components/molecules/tag';
 @import '../components/molecules/tip';
-@import '../components/molecules/teaser';
+@import '../components/molecules/teaser-obsolete';
+@import '../components/molecules/teaser-usecase';
 @import '../components/molecules/copy';
 @import '../components/molecules/load-more';
 @import '../components/molecules/float-image';
@@ -218,11 +220,11 @@ pre code {
 
     .container {
       display: grid;
-      grid-gap: 15px;
+      grid-gap: 30px;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
       width: 100%;
-      max-width: 1260px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 30px;
 
