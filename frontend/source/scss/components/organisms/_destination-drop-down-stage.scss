@@ -30,12 +30,13 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 */
 
 @import '../components/atoms/headline';
+@import '../components/atoms/divider';
 @import '../molecules/dropdown-switch';
 
 @include heroEnterAnimation;
 
 .destination-stage {
-	height: 100vh;
+	height: 90vh;
 	width: 100vw;
 	position: relative;
 
@@ -51,19 +52,35 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 
 	&-content {
 		position: absolute;
-		top: 0;
-		padding: 10% 0 0 5%;
+		bottom: 0;
 		z-index: 10;
+		padding: 0 0 30% 5%;
 		max-width: 50%;
+
+		@media screen and (min-width: 768px){
+			top: 0;
+			padding: 5% 0 0 5%;
+		}
 }
 
 	.hl {
 		@include hl;
-		@include hl-h2;
+		@include hl-h1;
 		@include hl-light;
 		margin: 0;
 		display: inline;
 		padding-right: 12px;
+
+		&-sub {
+			@include hl;
+			@include hl-h3;
+			@include hl-light;
+		}
+
+		&-divider {
+			@include divider;
+			@include divider-stage;
+		}
 
 		&-stories {
 			@include hl-stories;
