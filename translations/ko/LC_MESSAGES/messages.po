@@ -994,7 +994,7 @@ msgstr "더 알아보기"
 
 #: /content/includes/home.yaml
 msgid "Learn about AMP"
-msgstr "AMP 에 대해 알아보기"
+msgstr "AMP에 대해 알아보기"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
