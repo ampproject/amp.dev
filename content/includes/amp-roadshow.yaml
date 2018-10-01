@@ -13,6 +13,85 @@ cities:
     date: 2018-10-30
     link: https://events.withgoogle.com/amp-roadshow-gurgaon
 
+past:
+  - title: Toronto
+    date: 2017-08-30
+    link: https://events.withgoogle.com/amp-roadshow-toronto/
+  - title: Singapore
+    date: 2017-10-06
+    link: https://events.withgoogle.com/amp-roadshow-singapore-oct2017/
+  - title: Jakarta
+    date: 2017-10-09
+    link: https://events.withgoogle.com/amp-roadshow-jakarta/
+  - title: Sydney
+    date: 2017-10-13
+    link: https://events.withgoogle.com/amp-roadshow-sydney-oct2017/
+  - title: Munich
+    date: 2017-11-07
+    link: https://events.withgoogle.com/amp-roadshow-munich/
+  - title: Paris
+    date: 2017-11-10
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: Madrid
+    date: 2017-11-14
+    link: https://events.withgoogle.com/amp-roadshow-madrid/
+  - title: London
+    date: 2017-11-16
+    link: https://events.withgoogle.com/amp-roadshow-london/
+  - title: Beijing
+    date: 2017-12-05
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: Shanghai
+    date: 2017-12-08
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: Buenos Aires
+    date: 2018-03-13
+    link: https://events.withgoogle.com/splatam-amp-2018/buenos-aires/#content
+  - title: Bogota  
+    date: 2018-03-16
+    link: https://events.withgoogle.com/splatam-amp-2018/bogota/#content
+  - title: Mexico City
+    date: 2018-03-21
+    link: https://events.withgoogle.com/splatam-amp-2018/mexico-city/#content
+  - title: Chicago
+    date: 2018-03-27
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: Sunnyvale
+    date: 2018-04-04
+    link: https://www.ampproject.org/amp-roadshow/ 
+  - title: Taipei
+    date: 2018-04-24
+    link: https://events.withgoogle.com/amp-roadshow-taiwan/  
+  - title: Tokyo
+    date: 2018-04-27
+    link: https://events.withgoogle.com/amp-roadshow-tokyo/    
+  - title: Los Angeles
+    date: 2018-06-06
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: Seattle
+    date: 2018-06-12
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: Austin
+    date: 2018-07-11
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: New York
+    date: 2018-07-24
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: Cambridge
+    date: 2018-08-07
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: São Paulo
+    date: 2018-08-21
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: Porto Alegre 
+    date: 2018-08-23
+    link: https://www.ampproject.org/amp-roadshow/
+  - title: Seoul
+    date: 2018-09-11
+    link: https://events.withgoogle.com/amp-roadshow-seoul/
+    
+
+
 agenda:
   - title: Intro + Keynote
     time: "0930"
