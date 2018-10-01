@@ -12,7 +12,7 @@ gulp.task('templates', templates);
 gulp.task('icons', icons);
 gulp.task('styles', styles);
 
-gulp.task('default', gulp.series(templates, icons, styles));
+gulp.task('default', gulp.series(clean, templates, icons, styles));
 
 // Use develop to watch files and automatically run corresponding tasks
 gulp.task('develop', gulp.series('default', function watch() {
