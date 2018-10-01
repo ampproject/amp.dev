@@ -38,6 +38,11 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	overflow: hidden;
 	position: absolute;
 
+	@media screen and (min-width: 768px){
+		width: 324px;
+		height: 70px;
+	}
+
 
 	&-gradient {
 		background: linear-gradient(-220deg,
@@ -57,7 +62,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 
 	&:hover {
-		height: 232px;
+		height: 282px;
 		transition: height 0.5s ease;
 		background: transparent;
 		animation: none;
@@ -124,7 +129,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	position: absolute;
 	right: 0;
 	z-index: 10;
-	padding: 14px 14px;
+	padding: 24px 24px;
 	transition: transform 0.5s ease;
 
 	@include ico-white;
@@ -166,7 +171,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .destination-list-item {
 	@include hl;
-	@include hl-h2;
+	@include hl-h1;
 	@include hl-light;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;

@@ -34,11 +34,16 @@ Rolling switch requires the rollingAnimation defined in /source/scss/mixins.scss
 	width: 250px;
 	overflow: hidden;
 	position: absolute;
+
+	@media screen and (min-width: 768px){
+		width: 324px;
+		height: 70px;
+	}
 }
 
 .destination-list-item {
 	@include hl;
-	@include hl-h2;
+	@include hl-h1;
 	@include hl-light;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
