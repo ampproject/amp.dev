@@ -1,33 +1,213 @@
+
+/*
+
+#############################
+### ORGANISM: header ###
+#############################
+
+*/
+
 @import '../../extends';
 @import '../../functions';
 @import '../../mixins';
 @import '../../variables';
 
 @import '../atoms/_text.scss';
+@import '../atoms/_icon.scss';
+
+@import '../molecules/_link.scss';
 
 .#{organism('header')} {
   position: fixed;
   z-index: 1;
   top: 0;
-  width: 100%;
-  padding: 0 30px;
-  border: 1px solid color('whisper');
-  background-color: color('white');
+  width: 100vw;
+
+
+  &-list {
+    display: flex;
+    padding: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  &-lnk {
+    margin: 0 20px;
+    white-space: nowrap;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+
+    &-mobile {
+      display: block;
+
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    &-home {
+      display: block;
+    }
+
+    &-lang {
+      margin-left: auto;
+      position: absolute;
+      bottom: 0;
+      padding-bottom: 50px;
+
+      @media screen and (min-width: 768px) {
+        position: relative;
+        padding-bottom: 0;
+      }
+    }
+
+    .ad-m-lnk {
+      color: color('river-bed');
+    }
+
+    &-selected {
+      margin: 0;
+      display: block;
+
+      @media screen and (min-width: 768px) {
+        margin: 0 20px;
+      }
+
+      .ad-m-lnk {
+        color: color('blue-ribbon');
+      }
+    }
+
+    &-subnav {
+      display: block;
+    }
+  }
+
 
   &-main-nav {
-    padding: 15px 0;
+    background-color: color('white');
   }
 
-  &-nav-item {
-    @include txt-black;
 
-    &-active {
-      @include txt-blue-ribbon;
+  &-subnav {
+    background-color: color('wild-sand');
+  }
+
+  &-subnav-logo {
+    display: none;
+
+    @media screen and (min-width: 768px){
+      display: block;
+      opacity: 0;
+      z-index: -1;
     }
 
-    &-main {
-      @include txt-font-accent;
-      padding-right: 15px;
+  }
+
+  // TODO: Clean up mobile list css
+
+  &-search {
+    display: none;
+    background-color: #F0F0F0;
+    border-radius: 10%/50%;
+    padding: 5px 10px;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      margin-left: auto;
+    }
+
+    &-icon {
+      background: transparent;
+      border: none;
+      padding-right: 2px;
+    }
+
+    &-mobile {
+      display: flex;
+      max-width: 125px;
     }
   }
+
+  input {
+    border: none;
+    outline: #fff;
+    background: none;
+    width: 75px;
+    font-size: 12px;
+    font-family: Poppins;
+  }
+
+  &-burger-menu {
+    position: fixed;
+    top: calc(18px);
+    padding: 15px;
+    right: 0;
+    z-index: 100;
+
+    @media screen and (min-width: 768px){
+      display: none;
+    }
+
+    &-btn {
+      display: none;
+
+      &:checked ~ .ad-o-header-list-mobile {
+        height: 100vh;
+      }
+    }
+  }
+
+
+  &-list-mobile {
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    list-style: none;
+    transition: height 0.2s ease-in-out;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+
+// TODO remove bar styling as this will become and svg
+.bar {
+  height: 3px;
+  width: 30px;
+  background-color: color('river-bed');
+  position: relative;
+  margin-bottom: 3px;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+.ad-a-ico {
+  @include ico;
+  @include ico-blue-ribbon;
+  @include ico-3;
+
+  &-search {
+    @include ico-1;
+  }
+}
+
+##{organism('header')}-content-indicator {
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 100vh);
+  top: calc(100vh + 2px);
+  left: 0;
+  pointer-events: none;
 }

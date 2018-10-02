@@ -1,0 +1,5 @@
+path: /languages/{base}.html
+view: /views/default.j2
+
+localization:
+  path: /{locale}/languages/{base}.html
