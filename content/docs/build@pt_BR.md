@@ -4,15 +4,15 @@ $title@: Documentos
 start_cards:
   - name: Introdução à AMP
     desc: Saiba mais sobre a AMP e os principais componentes da tecnologia.
-    link: ../pt_br/learn/overview/
+    link: https://www.ampproject.org/pt_br/learn/overview/
 
   - name: Como a AMP funciona
     desc: Conheça as otimizações que deixam as páginas AMP rápidas.
-    link: ../pt_br/learn/about-how/
+    link: https://www.ampproject.org/pt_br/learn/about-how/
 
   - name: Está começando do zero?
     desc: Crie sua primeira página AMP com este tutorial para iniciantes.
-    link: /pt_br/getting_started/create.html
+    link: https://www.ampproject.org/pt_br/docs/getting_started/create
 
   - name: Demonstrações e exemplos
     desc: Aprenda na prática com exemplos e demonstrações ao vivo de páginas AMP.
@@ -58,23 +58,23 @@ doc_cards:
 
   - name: Anúncios HTML para AMP
     desc: Saiba mais sobre os anúncios HTML para AMP e veja como criar páginas AMP para suas campanhas e sites.
-    link: /pt_br/ads/amphtml_ads.html
+    link: https://www.ampproject.org/pt_br/docs/ads/amphtml_ads
 
   - name: Análises
     desc: Integre análises às suas páginas AMP para avaliar a atividade e o engajamento do usuário.
-    link: /pt_br/analytics/analytics_amp.html
+    link: https://www.ampproject.org/pt_br/docs/analytics/analytics_amp
 
   - name: Compartilhamento de recursos de várias origens (CORS, na sigla em inglês) na AMP
     desc: Saiba por que você precisa de CORS para o conteúdo AMP dinâmico.
-    link: /pt_br/fundamentals/amp-cors-requests.html
+    link: https://www.ampproject.org/pt_br/docs/fundamentals/amp-cors-requests
 
   - name: PWA e AMP
     desc: Veja tudo o que os Progressive Web Apps e as páginas AMP podem fazer juntos.
-    link: /pt_br/integration/pwa-amp.html
+    link: https://www.ampproject.org/pt_br/docs/integration/pwa-amp
 
   - name: Páginas AMP responsivas
     desc: Saiba como criar páginas da Web responsivas com a tecnologia AMP.
-    link: /pt_br/design/responsive/responsive_design.html
+    link: https://www.ampproject.org/pt_br/docs/design/responsive/responsive_design
 
 ---
  
