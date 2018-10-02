@@ -6,9 +6,9 @@
 	</div>
 {%- endmacro %}
 
-{% macro image(modifiers, src, layout='responsive', width='300', height='300', alt='Image', type='static') -%}
+{% macro image(class, src, layout='responsive', width='300', height='300', alt='Image', type='static') -%}
 	<div
-    class="ad-a-img {% for modifier in modifiers %}ad-a-img-{{ modifier }} {% endfor %}"
+    class="ad-a-img {{ class }}"
     {% if type == 'parallax' %}
       amp-fx="parallax"
 		  data-parallax-factor="1.1"

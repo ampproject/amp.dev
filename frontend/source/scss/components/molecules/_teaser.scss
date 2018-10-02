@@ -4,101 +4,105 @@
 ### MOLECULE: teaser ###
 ########################
 
-### SAMPLE MARKUP:
-
-<div class="ad-m-teaser ad-m-teaser-white">
-	<span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-3 ad-a-txt-strong ad-a-txt-uppercase ad-a-txt-gray-chateau">
-		The teaser subline
-	</span>
-
-	<span class="ad-a-txt ad-a-txt-hl ad-a-txt-accent-1 ad-a-txt-strong ad-a-txt-font-accent ad-a-txt-black ad-m-teaser-headline">
-		The teaser headline
-
-		<div class="ad-a-ico ad-a-ico-2 ad-a-ico-river-bed ad-a-ico-transparent">
-			<svg>
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#flask"></use>
-			</svg>
-		</div>
-	</span>
-
-	<p class="ad-a-txt ad-a-txt-3 ad-a-txt-p">
-		The teaser copy text.
-	</p>
-
-	<a href="#" class="ad-m-lnk">
-		<div class="ad-a-ico ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
-			<svg>
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-			</svg>
-		</div>
-		<span class="ad-a-txt ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-blue-ribbon">
-			The link text
-		</span>
-	</a>
-</div>
-
 ### INFO:
 
-The teaser molecule includes link molecule and text and icon atoms.
-There is one modifier that enables a white background color with shadow.
-By default the teaser background is transparent and has no padding or shadows.
-
-### MODIFIERS:
-
-white
-	Gaves the teaser a white background, padding and drop-shadow. (Default is transparent)
+The teaser molecule is a collection of mixins that could be included in specific
+teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 
 */
 
-.#{molecule('teaser')} {
+@mixin teaser-list {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	width: 100%;
+
+	@media screen and (min-width: 575px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media screen and (min-width: 991px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@mixin teaser {
+	position: relative;
 	margin-bottom: 2em;
+}
 
-	&-white {
-		@include box-shadow;
-		padding: 1.5em 1.25em;
-		background-color: white;
-	}
+@mixin teaser-linking {
+	position: relative;
+	display: block;
+}
 
-	&-icon {
-		@include ico-2;
-		@include ico-river-bed;
+@mixin teaser-tag {
+	position: absolute;
+	right: 16px;
+	top: -15px;
+	z-index: 1;
+}
 
+@mixin teaser-card {
+	overflow: hidden;
+	position: relative;
+	background-color: white;
+	border-radius: 10px;
+	@include box-shadow;
+}
+
+@mixin teaser-content {
+	padding: 1.5em 1.25em;
+}
+
+@mixin teaser-image {
+	position: relative;
+
+	&:before {
+		content: '';
 		position: absolute;
-		right: 0;
-		top: 25%;
-		opacity: 0.2;
-		transform: translateY(-50%);
+		left: -1px;
+		bottom: 0;
+		width: calc(100% + 2px);
+		height: 150px;
+		background: linear-gradient(0deg, rgba(0,0,0,0.12), rgba(0,0,0,0));
+		z-index: 1;
 	}
+}
 
-	&-headline {
-		@include txt;
-		@include txt-hl;
-		@include txt-accent-1;
-		@include txt-strong;
-		@include txt-font-accent;
-		@include txt-black;
+@mixin teaser-kpi {
+	box-shadow: none;
+}
 
-		position: relative;
-		padding-right: 30px;
-	}
+@mixin teaser-kpi-e-mails {
+	@include gradient-e-mails;
+}
 
-	&-subline {
-		@include txt;
-		@include txt-hl;
-		@include txt-accent-3;
-		@include txt-strong;
-		@include txt-uppercase;
-		@include txt-gray-chateau;
-	}
+@mixin teaser-kpi-ads {
+	@include gradient-ads;
+}
 
-	&-copy {
-		@include txt;
-		@include txt-3;
-		@include txt-p;
-	}
+@mixin teaser-kpi-stories {
+	@include gradient-stories;
+}
 
-	&-link {
-		padding-bottom: 0;
-		margin-bottom: 0;
-	}
+@mixin teaser-kpi-websites {
+	@include gradient-websites;
+}
+
+@mixin teaser-headline {
+	@include txt;
+	@include txt-hl;
+	@include txt-1;
+	@include txt-strong;
+	@include txt-font-accent;
+	@include txt-black;
+	margin: 0;
+}
+
+@mixin teaser-copy {
+	@include txt;
+	@include txt-accent-2;
+	margin: 0;
 }
