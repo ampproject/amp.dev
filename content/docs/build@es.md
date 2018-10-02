@@ -4,15 +4,15 @@ $title@: Documentación
 start_cards:
   - name: Introducción a AMP
     desc: Consulta información sobre AMP y sus componentes principales.
-    link: ../learn/overview/
+    link: https://www.ampproject.org/es/learn/overview/
 
   - name: Cómo funciona AMP
     desc: Descubre las optimizaciones que hacen que las páginas AMP sean rápidas.
-    link: ../learn/about-how/
+    link: https://www.ampproject.org/es/learn/about-how/
 
   - name: ¿Empiezas desde cero?
     desc: Crea tu primera página AMP con este tutorial para principiantes.
-    link: getting_started/create.html
+    link: https://www.ampproject.org/es/docs/getting_started/create
 
   - name: Demostraciones y ejemplos
     desc: Aprende con los ejemplos y demostraciones en directo de AMP By Example.
@@ -58,23 +58,23 @@ doc_cards:
 
   - name: Anuncios AMP HTML
     desc: Obtén más información sobre los anuncios AMP HTML y consulta cómo diseñar páginas AMP para tus campañas y sitios web.
-    link: ads/amphtml_ads.html
+    link: https://www.ampproject.org/es/docs/ads/amphtml_ads
 
   - name: Analíticas
     desc: Integra servicios de analítica en tus páginas AMP para medir la actividad y las interacciones de los usuarios.
-    enlace: analytics/analytics_amp.html
+    enlace: https://www.ampproject.org/es/docs/analytics/analytics_amp
 
   - nombre: Solicitudes CORS en AMP
     desc: Descubre por qué necesitas usar solicitudes CORS en el contenido dinámico AMP.
-    link: fundamentals/amp-cors-requests.html
+    link: https://www.ampproject.org/es/docs/fundamentals/amp-cors-requests
 
   - name: PWA y AMP
     desc: Consulta cómo se complementan las aplicaciones web progresivas (PWA) y las páginas AMP.
-    link: integration/pwa-amp.html
+    link: https://www.ampproject.org/es/docs/integration/pwa-amp
 
   - name: AMP adaptable
     desc: Consulta cómo crear páginas AMP adaptables de forma sencilla.
-    link: design/responsive/responsive_design.html
+    link: https://www.ampproject.org/es/docs/design/responsive/responsive_design
 
 ---
  
