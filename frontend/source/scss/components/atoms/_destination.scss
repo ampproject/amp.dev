@@ -1,0 +1,43 @@
+/*
+
+#####################
+### ATOM: destination ###
+#####################
+
+### SAMPLE MARKUP:
+
+<div class="ad-a-destionation ad-a-destionation-stories"></div>
+
+### INFO:
+
+A simple element that sets a background gradient depending on the destionation that is defined.
+
+
+### MODIFIERS:
+	Modifiers are defined based on their destionation, currently our destinations are:
+			- websites
+			- stories
+			- ads
+			- email
+			- home
+*/
+
+@mixin destination-websites {
+	background: linear-gradient(-220deg, color('azure-radiance'),color('robins-egg'));
+}
+
+@mixin destination-stories {
+	background: linear-gradient(-220deg, color('pizazz'), color('yellow'));
+}
+
+@mixin destination-ads {
+	background: linear-gradient(-220deg, color('crimson'), color('pizazz'));
+}
+
+@mixin destination-email {
+	background: linear-gradient(-220deg, color('electric-violet'), color('pink-flamingo'));
+}
+
+@mixin destination-home {
+	background: linear-gradient(-220deg, color('azure-radiance'),color('robins-egg'));
+}

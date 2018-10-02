@@ -17,3 +17,106 @@
 @mixin river-ebony {
 	background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
 }
+
+@mixin heroEnterAnimation {
+	@keyframes growDown {
+		from {
+			padding-top: 0%;
+		}
+		to {
+			padding-top: 29.29%;
+		}
+	}
+}
+
+@mixin viewboxGradientAnimation {
+	@keyframes gradientChange {
+
+		0% {
+			background-position: 0% 0%
+		}
+
+		24% {
+			background-position: 0% 0%
+		}
+
+		28% {
+			background-position: 24% 0%;
+		}
+
+		50% {
+			background-position: 24% 0%;
+		}
+
+		54% {
+			background-position: 48% 0%;
+		}
+
+		76% {
+			background-position: 48% 0%;
+		}
+
+		80% {
+			background-position: 72% 0%;
+		}
+
+		98% {
+			background-position: 72% 0%;
+		}
+
+		100% {
+			background-position: 100% 0%;
+		}
+	}
+}
+
+@mixin rollingAnimation {
+	@keyframes roll {
+
+		0% {
+			opacity: 0;
+			transform: translateY(-100%);
+		}
+
+		6% {
+			opacity: 1;
+			transform: translateY(0%);
+		}
+
+		24% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		32% {
+			opacity: 1;
+			transform: translateY(100%);
+		}
+
+		42% {
+			opacity: 0;
+			transform: translateY(100%);
+		}
+
+		100% {
+			opacity: 0;
+			transform: translateY(100%);
+		}
+  }
+}
+
+@mixin gradient-emails {
+  background: linear-gradient(45deg, color('forest-green'), color('manz'));
+}
+
+@mixin gradient-ads {
+  background: linear-gradient(45deg, color('crimson'), color('pizazz'));
+}
+
+@mixin gradient-stories {
+  background: linear-gradient(45deg, color('pizazz'), color('yellow'));
+}
+
+@mixin gradient-websites {
+  background: linear-gradient(45deg, color('azure-radiance'), color('robins-egg'));
+}
