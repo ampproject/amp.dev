@@ -1,0 +1,44 @@
+/*
+
+##################################
+### ORGANISM: teaser templates ###
+##################################
+
+### INFO:
+
+*/
+
+.#{organism('teaser-templates')} {
+
+	&-list {
+		@include teaser-list;
+	}
+
+	.#{molecule('teaser')} {
+		@include teaser;
+
+		a {
+			@include teaser-linking;
+		}
+
+		&-tag {
+			@include teaser-tag;
+		}
+
+		&-card {
+			@include teaser-card;
+		}
+
+		&-content {
+			@include teaser-content;
+		}
+
+		&-image {
+			@include teaser-image;
+		}
+
+		&-headline {
+			@include teaser-headline;
+		}
+	}
+}
