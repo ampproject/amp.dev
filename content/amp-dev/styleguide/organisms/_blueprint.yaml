@@ -1,4 +1,4 @@
-path: /styleguide/organisms/{base}.html
+path: /{locale}/styleguide/organisms/{base}.html
 view: /views/default.j2
 
 localization:

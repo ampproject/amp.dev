@@ -6,6 +6,7 @@ static_dirs:
   serve_at: /static/
 
 localization:
+  root_path: /{locale}/
   default_locale: en
 
 preprocessors:

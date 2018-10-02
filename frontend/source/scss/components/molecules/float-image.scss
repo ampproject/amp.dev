@@ -31,6 +31,11 @@ parallax
 
 */
 
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
 .#{molecule('float-image')} {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

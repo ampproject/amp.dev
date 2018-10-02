@@ -1,0 +1,10 @@
+{% do doc.styles.addCssFile('css/components/molecules/float-image.css') %}
+
+<div class="ad-m-float-image">
+  <div class="ad-a-img ad-a-img-static">
+    <amp-img src="{{ images.0 }}" layout="fill" alt="The Alt Text"></amp-img>
+  </div>
+  <div class="ad-a-img ad-a-img-shadow-static ad-a-img-parallax" amp-fx="parallax" data-parallax-factor="1.1">
+    <amp-img src="{{ images.1 }}" layout="fill" alt="The Alt Text"></amp-img>
+  </div>
+</div>
