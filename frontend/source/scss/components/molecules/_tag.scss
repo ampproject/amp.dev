@@ -22,6 +22,11 @@ TODO: Add info text to this molecule.
 	line-height: 30px;
 	padding: 0 5px;
 
+	&:empty {
+		min-width: 26px;
+		padding: 4px 0;
+	}
+
 	&-websites {
 		color: color('whisper');
 		@include gradient-websites;
