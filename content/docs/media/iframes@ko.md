@@ -47,13 +47,13 @@ Preview:
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
 </amp-iframe>
 
-## 자리표시자 사용하기
+## 플레이스홀더 사용하기
 
-'amp-iframe'에 속성이 'placeholder'인 요소(예: 'amp-img' 요소)가 포함되어 있는 경우, 문서 상단에 'amp-iframe'을 표시할 수 있습니다. 이러한 요소는 iframe을 표시할 준비가 될 때까지 자리표시자로 렌더링됩니다.
+'amp-iframe'에 속성이 'placeholder'인 요소(예: 'amp-img' 요소)가 포함되어 있는 경우, 문서 상단에 'amp-iframe'을 표시할 수 있습니다. 이러한 요소는 iframe을 표시할 준비가 될 때까지 플레이스홀더로 렌더링됩니다.
 
-읽어보기: [자리표시자가 포함된 iframe](/ko/docs/reference/components/amp-iframe.html#iframe-with-placeholder)에서 자리표시자에 관해 자세히 알아보세요.
+읽어보기: [플레이스홀더가 포함된 iframe](/ko/docs/reference/components/amp-iframe.html#iframe-with-placeholder)에서 플레이스홀더에 대해 자세히 알아보세요.
 
-자리표시자 사용 예:
+플레이스홀더 사용 예:
 
 ```html
 <amp-iframe width="400" height="225"
