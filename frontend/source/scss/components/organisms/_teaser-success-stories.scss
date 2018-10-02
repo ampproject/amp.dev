@@ -43,10 +43,10 @@
 
 		&-card {
 			@include teaser-card;
+		}
 
-			&-content {
-				@include teaser-card-content;
-			}
+		&-content {
+			@include teaser-content;
 		}
 
 		&-kpi {

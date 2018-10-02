@@ -41,7 +41,7 @@ items:
           <div class="ad-m-tag ad-m-tag-{{ item.tag }} ad-m-teaser-tag">{{ item.tag }}</div>
           <div class="ad-m-teaser-card">
             {{ atoms.image('ad-m-teaser-image', src=g.static(item.image).url|relative, layout='responsive', width=item.ratioX, height=item.ratioY, alt=item.headline, type='static') }}
-            <div class="ad-m-teaser-card-content">
+            <div class="ad-m-teaser-content">
               <h4 class="ad-m-teaser-headline">{{ item.headline }}</h4>
             </div>
           </div>
