@@ -100,3 +100,9 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	@include txt-black;
 	margin: 0;
 }
+
+@mixin teaser-copy {
+	@include txt;
+	@include txt-accent-2;
+	margin: 0;
+}
