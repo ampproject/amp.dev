@@ -125,7 +125,7 @@ $title: 반응형 AMP 페이지 만들기
 
 HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재할 수 있습니다.  AMP에서는 `picture` 태그가 지원되지 않지만 `fallback` 속성을 사용하여 다른 이미지를 게재할 수 있습니다.
 
-읽어보기: fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback](/ko/docs/design/responsive/placeholders.html) 가이드를 참조하세요.
+읽어보기: fallback에 관해 자세히 알아보려면 [플레이스홀더 및 폴백](/ko/docs/design/responsive/placeholders.html) 가이드를 참조하세요.
 
 ##### 예: 다른 이미지 형식 게재
 

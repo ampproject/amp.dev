@@ -77,7 +77,7 @@ AMP 광고는 [amp-ad](/ko/docs/reference/components/amp-ad.html) 구성요소�
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
 {% call callout('참고', type='note') %}
-이 amp-ad 태그 내에 `fallback`이라는 속성이 있는 `div` 태그가 추가되었음을 알 수 있습니다. `fallback` 속성이 무엇을 의미하는지 짐작할 수 있으신가요? 이 속성에서는 상위 요소가 로드되지 않았을 때 이 속성의 콘텐츠만 표시하도록 AMP의 로딩 시스템에 알려줍니다. [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html)에서 자세히 알아보세요.
+이 amp-ad 태그 내에 `fallback`이라는 속성이 있는 `div` 태그가 추가되었음을 알 수 있습니다. `fallback` 속성이 무엇을 의미하는지 짐작할 수 있으신가요? 이 속성에서는 상위 요소가 로드되지 않았을 때 이 속성의 콘텐츠만 표시하도록 AMP의 로딩 시스템에 알려줍니다. [플레이스홀더 및 폴백](/ko/docs/design/responsive/placeholders.html)에서 자세히 알아보세요.
 {% endcall %}
 
 {% call callout('읽어보기', type='read') %}

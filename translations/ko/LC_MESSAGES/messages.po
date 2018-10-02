@@ -231,8 +231,8 @@ msgid ""
 "AMPHTML ads are 6x faster than regular ads on AMP pages, making them more "
 "viewable, more effective and more likely to perform&nbsp;well."
 msgstr ""
-"AMP HTML 광고는 AMP 페이지에서 일반 광고보다 6배 빠르기 때문에 "
-"조회 가능성이 높고, 더 효과적이며, 더 우수한 성과를 낼 가능성이 높습니다."
+"AMPHTML 광고는 AMP 페이지에서 일반 광고보다 6배 빠르기 때문에 "
+"조회 가능성이 높고 더 효과적이며, 더 우수한 성과를 낼 가능성이 높습니다."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -241,7 +241,7 @@ msgid ""
 "create and serve ads that are faster, lighter and more effective. Creative "
 "developer tools like Google Web Designer will soon support AMP ads as well."
 msgstr ""
-"AMP HTML 광고는 HTML과 CSS를 사용하여 제작되는 광고 소재 형식으로, "
+"AMPHTML 광고는 HTML과 CSS를 사용하여 제작되는 광고 소재 형식으로, "
 "완전히 새로운 기술이 아닙니다. 그러므로 기존의 개발 리소스를 사용하여 더 빠르고 "
 "가벼우면서 효과적인 광고를 만들고 게재할 수 있습니다. Google Web Designer와 "
 "같은 광고 소재 개발자 도구에서도 곧 AMP 광고가 지원될 예정입니다."
@@ -255,11 +255,11 @@ msgid ""
 "that they’re free of malware. Most of all, these ads can be delivered "
 "anywhere on the web, not just on AMP pages."
 msgstr ""
-"AMP HTML 광고는 빠르고 가벼우며 더욱 안전한 광고를 새롭고 효과적인 방식으로 "
-"만들고 게재하고 측정할 수 있게 해 줍니다. AMP HTML 광고는 AMP HTML을 "
+"AMPHTML 광고는 빠르고 가벼우며 더욱 안전한 광고를 새롭고 효과적인 방식으로 "
+"만들고 게재하고 측정할 수 있게 해 줍니다. AMPHTML 광고는 AMP-HTML을 "
 "사용하여 제작되는 광고로, AMP 페이지의 속도를 높여주는 여러 스마트 구성요소를 "
-"사용합니다(예: amp-analytics). AMP HTML 광고는 유효성을 검사하여 멀웨어가 "
-"없는 것으로 확인된 경우에만 게재됩니다. 또한 AMP HTML 광고는 AMP 페이지뿐만 "
+"사용합니다(예: amp-analytics). AMPHTML 광고는 유효성을 검사하여 멀웨어가 "
+"없는 것으로 확인된 경우에만 게재됩니다. 또한 AMPHTML 광고는 AMP 페이지뿐만 "
 "아니라 웹의 모든 위치에 게재할 수 있습니다."
 
 #: /content/learn/who/amp-ads.yaml
@@ -267,15 +267,15 @@ msgid ""
 "AMPHTML ads can serve on both AMP and non-AMP pages so you can build your "
 "AMPHTML ad once and deliver a fast, memorable brand experience everywhere."
 msgstr ""
-"AMP HTML 광고는 AMP 페이지와 AMP가 아닌 페이지에 모두 게재할 수 있으므로 "
-"AMP HTML 광고를 한 번만 제작하여 어디서나 빠르게 로드되고 기억에 남는 브랜드 경험을 제공할 수 있습니다."
+"AMPHTML 광고는 AMP 페이지와 AMP가 아닌 페이지에 모두 게재할 수 있으므로 "
+"AMPHTML 광고를 한 번만 제작하여 어디서나 빠르게 로드되고 기억에 남는 브랜드 경험을 제공할 수 있습니다."
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
 "AMPHTML ads need to be validated before they’re served, eliminating the risk "
 "of malware and building trust in the brands users are engaging&nbsp;with."
 msgstr ""
-"AMP HTML 광고는 멀웨어의 위험을 차단하고 사용자와 상호작용 중인 "
+"AMPHTML 광고는 멀웨어의 위험을 차단하고 사용자와 상호작용 중인 "
 "브랜드의 신뢰를 높이기 위해 게재 전에 유효성 검사를 완료해야 합니다."
 
 #: /content/learn/who/amp-ads.yaml
@@ -288,7 +288,7 @@ msgstr ""
 
 #: /content/includes/menu.yaml
 msgid "About"
-msgstr "AMP 에 대하여"
+msgstr "AMP에 대하여"
 
 #: /content/docs/fundamentals/add_advanced/_blueprint.yaml
 msgid "Add advanced AMP features"
@@ -345,7 +345,7 @@ msgid ""
 "Signed ads reduce the risk of malware and increase confidence in ads for "
 "consumers."
 msgstr ""
-"Firebolt에서 AMP HTML 광고를 위해 게재하는 모든 광고 콘텐츠는 필수 형식 "
+"Firebolt에서 AMPHTML 광고를 위해 게재하는 모든 광고 콘텐츠는 필수 형식 "
 "및 보안 기준을 충족할 수 있도록 암호화된 방식으로 서명됩니다."
 "서명된 광고는 멀웨어 위험 요소를 줄이고 소비자로부터 광고의 신뢰도를 "
 "높입니다."
@@ -409,7 +409,7 @@ msgstr ""
 
 #: /content/learn/who/advertisers.yaml
 msgid "Boost your campaign performance with AMPHTML ads"
-msgstr "AMP HTML 광고로 캠페인 실적 높이기"
+msgstr "AMPHTML 광고로 캠페인 실적 높이기"
 
 #: /content/includes/menu.yaml
 msgid "Brand Guidelines"
@@ -433,7 +433,7 @@ msgstr "단 한번의 빌드를 통해 어디에나 서비스하세요."
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Build your AMPHTML ad today"
-msgstr "지금 바로 AMP HTML 광고 만들기"
+msgstr "지금 바로 AMPHTML 광고 만들기"
 
 #: /content/learn/about/benefits.yaml
 msgid ""
@@ -838,7 +838,7 @@ msgstr "구현 시작하기"
 
 #: /content/includes/home.yaml /content/learn/who/advertisers.yaml
 msgid "Get started with AMP"
-msgstr "AMP 로 시작하기"
+msgstr "AMP로 시작하기"
 
 #: /content/includes/home.yaml
 msgid "Get the latest news and tips from our newsletter:"
@@ -900,7 +900,7 @@ msgstr "더 빠른 성능과 인게이지먼트"
 #: /content/learn/about-how@ru.yaml /content/learn/about-how@tr.yaml
 #: /content/learn/about-how@zh_CN.yaml
 msgid "How AMP Works"
-msgstr "AMP 는 어떻게 동작하는가"
+msgstr "AMP는 어떻게 동작하는가"
 
 #: /content/learn/who/ecommerce.yaml
 msgid "How AMP can help ecommerce"
@@ -994,7 +994,7 @@ msgstr "더 알아보기"
 
 #: /content/includes/home.yaml
 msgid "Learn about AMP"
-msgstr "AMP 에 대해 알아보기"
+msgstr "AMP에  대해 알아보기"
 
 #: /content/learn/who/advertisers.yaml
 msgid ""
@@ -1011,7 +1011,7 @@ msgstr ""
 #: /content/learn/about-how@pt_BR.yaml /content/learn/about-how@ru.yaml
 #: /content/learn/about-how@tr.yaml /content/learn/about-how@zh_CN.yaml
 msgid "Learn who uses AMP"
-msgstr "누가 AMP 를 사용하는 지 살펴봅시다"
+msgstr "누가 AMP를 사용하는 지 살펴봅시다"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Lighter ads lead to better ad&nbsp;experiences"
@@ -1027,7 +1027,7 @@ msgstr "Mashable"
 
 #: /content/learn/who/advertisers.yaml
 msgid "Maximize ROI everywhere"
-msgstr "어디서나 ROI 를 극대화하세요"
+msgstr "어디서나 ROI를 극대화하세요"
 
 #: /content/learn/who/ecommerce.yaml
 msgid "Maximize sales"
@@ -1188,7 +1188,7 @@ msgid ""
 "often improving key performance indicators, such as time spent on page, "
 "return visits, viewability, CTRs and more."
 msgstr ""
-"AMP 로 구현하는 게시자는 페이지 소비 시간, 재방문수, 가시성, 클릭수 등 핵심 성과 지표를 유지 및 관리,개선하면서 어떤 기술 업체를"
+"AMP로 구현하는 게시자는 페이지 소비 시간, 재방문수, 가시성, 클릭수 등 핵심 성과 지표를 유지 및 관리,개선하면서 어떤 기술 업체를"
 " 사용할 지, 어떤 비즈니스 모델을 사용할 지, 어떤 콘텐츠를 제시할 지 등을결정할 수 있습니다."
 
 #: /content/learn/who/amp-ads.yaml
@@ -1263,7 +1263,7 @@ msgstr "모든 동영상 보기"
 
 #: /content/learn/who/publishers.yaml
 msgid "See how other publishers have found success with AMP"
-msgstr "AMP 를 이용한 다른 게시자가 성공한 사례를 확인하세요"
+msgstr "AMP를 이용한 다른 게시자가 성공한 사례를 확인하세요"
 
 #: /views/partials/grid-showcase.html:61
 msgid "See it in action"
@@ -1276,7 +1276,7 @@ msgstr "실제 작동 모습 확인하기"
 #: /content/learn/about-how@pt_BR.yaml /content/learn/about-how@ru.yaml
 #: /content/learn/about-how@tr.yaml /content/learn/about-how@zh_CN.yaml
 msgid "See what AMP can do for you"
-msgstr "AMP 로 무엇을 할 수 있을까요"
+msgstr "AMP로 무엇을 할 수 있을까요"
 
 #: /content/support/developer.md
 msgid "Send Feedback"
@@ -1326,7 +1326,7 @@ msgid ""
 "that. Only compromise when lack of support for something would stop AMP from "
 "being widely used and deployed."
 msgstr ""
-"속도가 개선되어도 사용자 경험은 여전히 좋지 않은 경우도 있습니다. AMP 는 환상적인 사용자 경험을 제공하며 속도는 단지 그 일부일 "
+"속도가 개선되어도 사용자 경험은 여전히 좋지 않은 경우도 있습니다. AMP는 환상적인 사용자 경험을 제공하며 속도는 단지 그 일부일 "
 "뿐입니다. 특정 지원의 부족으로 인해 AMP의 광범위한 사용과 배포가 저해될 것으로 우려되는 경우에만 성능을 낮춥니다."
 
 #: /content/includes/stories.yaml
@@ -1424,7 +1424,7 @@ msgstr "빠른 동영상, 이미지 처리를 기본으로 제공하면서 풍�
 
 #: /content/includes/who.yaml
 msgid "Technology Companies using AMP"
-msgstr "AMP 를 사용하는 기술 기업"
+msgstr "AMP를 사용하는 기술 기업"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "Technology Platforms:<br>Boost your business"
@@ -1552,7 +1552,7 @@ msgid ""
 "load fast, this has a very positive impact on their perception and advertiser"
 " performance."
 msgstr ""
-"AMP 광고는 훨씬 빨리 로드됩니다. 사용자는 광고 로드 속도가 조금만 늦어도 금방 알아채기 때문에 로드 속도가 빠르다는 장점은 소비자의 "
+"AMP 광고는 훨씬 빠르게 로드됩니다. 사용자는 광고 로드 속도가 조금만 늦어도 금방 알아채기 때문에 로드 속도가 빠르다는 장점은 소비자의 "
 "인식 및 광고주 실적에 매우 긍정적인 영향을 미칩니다."
 
 #: /content/includes/menu.yaml
@@ -1659,7 +1659,7 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "What AMP Provides"
-msgstr "AMP 가 제공하는 것"
+msgstr "AMP가 제공하는 것"
 
 #: /content/learn/who/amp-ads.yaml
 msgid "What are AMPHTML ads?"
@@ -1717,7 +1717,7 @@ msgstr "AMPHTML 광고는 누구에게 적합한가요?"
 
 #: /content/includes/menu.yaml
 msgid "Who is AMP for?"
-msgstr "AMP 는 어떤 이들을 위해 존재할까요?"
+msgstr "AMP는 어떤 이들을 위해 존재할까요?"
 
 #: /content/includes/stories.yaml
 msgid "Why AMP stories?"
@@ -1773,7 +1773,7 @@ msgid ""
 "“AMP was the perfect addition to our business, giving us a new level of "
 "impact for our e-commerce clients.”"
 msgstr ""
-"\"AMP 를 추가한 것은 우리 비즈니스에 완벽한 선택이었습니다. 덕분에 전자상거래 고객에게 새로운 수준의 영향력을 발휘할 수 있게 "
+"\"AMP를 추가한 것은 우리 비즈니스에 완벽한 선택이었습니다. 덕분에 전자상거래 고객에게 새로운 수준의 영향력을 발휘할 수 있게 "
 "되었습니다.\""
 
 #: /content/includes/home.yaml
