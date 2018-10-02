@@ -1,6 +1,6 @@
 ---
 $view: /views/styleguide/component.j2
-$title: Teaser Use Case
+$title: Teaser Use Cases
 
 items:
 - tag: 'websites'
@@ -29,25 +29,31 @@ items:
   link: '#'
 ---
 
-<div class="ad-o-container col-4-3">
+<div class="ad-o-container col-12 ad-o-teaser-use-cases">
+
   <h2>Explore use cases of AMP</h2>
-</div>
-<div class="col-12"></div>
-{% for item in doc.items %}
-  <div class="ad-m-teaser-usecase col-span-3">
-    <a href="{{ item.link }}">
-      <div class="ad-m-tag ad-m-tag-{{ item.tag }} ad-m-teaser-usecase-tag">{{ item.tag }}</div>
-      <div class="ad-m-teaser-usecase-card">
-        {{ atoms.image('ad-m-teaser-usecase-image', src=g.static(item.image).url|relative, layout='responsive', width=item.ratioX, height=item.ratioY, alt=item.headline, type='static') }}
-        <h4 class="ad-m-teaser-usecase-headline">{{ item.headline }}</h4>
+
+  <div class="ad-o-teaser-use-cases-list">
+    {% for item in doc.items %}
+      <div class="ad-m-teaser">
+        <a href="{{ item.link }}">
+
+          <div class="ad-m-tag ad-m-tag-{{ item.tag }} ad-m-teaser-tag">{{ item.tag }}</div>
+          <div class="ad-m-teaser-card">
+            {{ atoms.image('ad-m-teaser-image', src=g.static(item.image).url|relative, layout='responsive', width=item.ratioX, height=item.ratioY, alt=item.headline, type='static') }}
+            <div class="ad-m-teaser-content">
+              <h4 class="ad-m-teaser-headline">{{ item.headline }}</h4>
+            </div>
+          </div>
+
+        </a>
       </div>
-    </a>
+    {% endfor %}
   </div>
-{% endfor %}
-<div class="ad-o-container col-12"></div>
-<div class="ad-o-container link-preview-1 col-4-5">
+
   <a class="ad-m-lnk" href="#">
     {{ atoms.icon('internal', 'ad-m-lnk-icon') }}
     <span class="ad-m-lnk-text">See all use cases</span>
   </a>
+
 </div>

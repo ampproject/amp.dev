@@ -12,8 +12,6 @@
 @import '../components/molecules/link';
 @import '../components/molecules/tag';
 @import '../components/molecules/tip';
-@import '../components/molecules/teaser-obsolete';
-@import '../components/molecules/teaser-usecase';
 @import '../components/molecules/copy';
 @import '../components/molecules/load-more';
 @import '../components/molecules/float-image';
@@ -22,7 +20,13 @@
 @import '../components/molecules/event';
 @import '../components/molecules/quote';
 @import '../components/molecules/news';
+@import '../components/molecules/teaser';
+@import '../components/molecules/teaser-obsolete';
 
+@import '../components/organisms/teaser-use-cases';
+@import '../components/organisms/teaser-success-stories';
+@import '../components/organisms/teaser-templates';
+@import '../components/organisms/teaser-guides-tutorials';
 @import '../components/organisms/list';
 
 /* The following styles only define the styles needed to make the styleguide
