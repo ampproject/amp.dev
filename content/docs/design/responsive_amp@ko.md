@@ -5,7 +5,7 @@ $title: Style & Layout
 
 AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매우 유사합니다. 두 가지 경우 모두 CSS 를 사용합니다.
 
- 하지만 AMP 는 성능 및 사용성을 위해 일부 CSS의 사용이 제한됩니다. 대신 [자리표시자 및 대체](/ko/docs/design/responsive/placeholders.html)
+ 하지만 AMP 는 성능 및 사용성을 위해 일부 CSS의 사용이 제한됩니다. 대신 [플레이스홀더 및 대체](/ko/docs/design/responsive/placeholders.html)
 , [srcset을 통한 고급 아트 디렉션](/ko/docs/design/responsive/art_direction.html) , [레이아웃 속성](/ko/docs/design/responsive/control_layout.html) 과 같은 기능으로 반응형 디자인 기능을 확장하여 요소 표시 방법을 더 효과적으로 관리할 수 있습니다.
 
 도움말:  AMP 에서 요소를 반응형으로 만드는 것은 아주 쉽습니다. `layout="responsive"` 만 추가하면 됩니다. AMP 의 반응형 디자인을 자세히 알아보려면 [반응형 AMP 페이지 만들기](/ko/docs/design/responsive/responsive_design) 를 참조하세요.
@@ -64,11 +64,11 @@ AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매�
 
 읽어보기: [AMP 에서 지원되는 요소](/ko/docs/design/responsive/control_layout.html) 를 자세히 알아보세요.
 
-## 자리표시자 및 대체 제공
+## 플레이스홀더 및 폴백 제공
 
-자리표시자 및 대체가 내장되어 지원되므로 사용자에게 빈 화면이 표시되지 않습니다.
+플레이스홀더 및 폴백이 내장되어 지원되므로 사용자에게 빈 화면이 표시되지 않습니다.
 
-읽어보기:  자리표시자 및 대체 [자세히 알아보기](/ko/docs/design/responsive/placeholders.html)
+읽어보기:  플레이스홀더 및 폴백 [자세히 알아보기](/ko/docs/design/responsive/placeholders.html)
 
 ## 이미지 아트 디렉션
 
