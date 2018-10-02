@@ -42,7 +42,7 @@ Pastikan URL ditayangkan dari `localhost`; jika tidak, artikel AMP mungkin tidak
 Klik pada artikel yang sudah jadi dan pahami apa yang akan kita buat.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/design/visual_story.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/design/visual_story/parts_of_story.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="/id/docs/getting_started/visual_story.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">Berikutnya</span></a>
 </div>
  
