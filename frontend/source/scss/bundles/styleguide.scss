@@ -20,10 +20,11 @@
 @import '../components/molecules/event';
 @import '../components/molecules/quote';
 @import '../components/molecules/news';
+@import '../components/molecules/teaser';
 @import '../components/molecules/teaser-obsolete';
-@import '../components/molecules/teaser-usecase';
-@import '../components/molecules/teaser-success';
 
+@import '../components/organisms/teaser-use-cases';
+@import '../components/organisms/teaser-success-stories';
 @import '../components/organisms/list';
 
 /* The following styles only define the styles needed to make the styleguide
