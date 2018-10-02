@@ -1,0 +1,75 @@
+---
+$view: /views/styleguide/component.j2
+$title: Teaser Success Stories
+
+items:
+- tag: 'websites'
+  kpi:
+  - title: 25 Mio
+    text: websited with 678 new websites today
+    icon: flask
+  headline: Stories with rich visuals and native videos
+  logo: '/static/static/img/logo-dummy-teads.png'
+  link: '#'
+- tag: 'stories'
+  image: '/static/static/img/teaser-dummy-1x1-1.jpg'
+  ratioX: '1'
+  ratioY: '1'
+  headline: Stories with rich visuals and native videos
+  logo: '/static/static/img/logo-dummy-teads.png'
+  link: '#'
+- tag: 'stories'
+  kpi:
+  - title: 25 Mio
+    text: websited with 678 new websites today
+    icon: flask
+  headline: Stories with rich visuals and native videos
+  logo: '/static/static/img/logo-dummy-teads.png'
+  link: '#'
+- tag: 'e-mails'
+  image: '/static/static/img/teaser-dummy-1x1-1.jpg'
+  ratioX: '1'
+  ratioY: '1'
+  headline: Stories with rich visuals and native videos
+  logo: '/static/static/img/logo-dummy-teads.png'
+  link: '#'
+---
+
+<div class="ad-o-container col-4-3">
+  <h2>Explore AMP success stories</h2>
+</div>
+<div class="col-12"></div>
+{% for item in doc.items %}
+  <div class="ad-m-teaser-success col-span-3">
+    <a href="{{ item.link }}">
+      <div class="ad-m-tag ad-m-tag-{{ item.tag }} ad-m-teaser-success-tag">{{ item.tag }}</div>
+      <div class="ad-m-teaser-success-card">
+        {% if item.image %}
+          {{ atoms.image('ad-m-teaser-success-image', src=g.static(item.image).url|relative, layout='responsive', width=item.ratioX, height=item.ratioY, alt=item.headline, type='static') }}
+        {% endif %}
+        {% if item.kpi %}
+          {% for kpiitem in item.kpi %}
+          <div class="ad-m-kpi ad-m-teaser-success-kpi ad-m-teaser-success-kpi-{{ item.tag }}">
+            <div class="ad-m-kpi-content">
+              {{ atoms.icon(kpiitem.icon, 'ad-m-kpi-icon') }}
+              <span class="ad-m-kpi-number">{{ kpiitem.title }}</span>
+              <p class="ad-m-kpi-text">{{ kpiitem.text }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        {% endif %}
+        <div class="ad-m-teaser-success-card-content">
+          {{ atoms.image('ad-m-teaser-success-logo', src=g.static(item.logo).url|relative, layout='fixed', width=153, height=38, alt=item.headline, type='static') }}
+          <h4 class="ad-m-teaser-success-headline">{{ item.headline }}</h4>
+        </div>
+      </div>
+    </a>
+  </div>
+{% endfor %}
+<div class="ad-o-container col-12"></div>
+<div class="ad-o-container link-preview-1 col-4-5">
+  <a class="ad-m-lnk" href="#">
+    {{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+    <span class="ad-m-lnk-text">See all success stories</span>
+  </a>
+</div>

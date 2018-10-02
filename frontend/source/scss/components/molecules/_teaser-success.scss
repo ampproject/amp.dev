@@ -1,0 +1,102 @@
+/*
+
+################################
+### MOLECULE: teaser success ###
+################################
+
+### INFO:
+
+The success teaser molecule includes the tag molecule, an image and a headline.
+There is no copy text or logo included.
+
+*/
+
+.#{molecule('teaser-success')} {
+	position: relative;
+	margin-bottom: 2em;
+
+	&:nth-child(3n) {
+		transform: translateY(40px);
+	}
+
+	&:nth-child(3n+1) {
+		transform: translateY(80px);
+	}
+
+	&:nth-child(3n+2) {
+		transform: translateY(0);
+	}
+
+	&-kpi {
+		box-shadow: none;
+
+		&-e-mails {
+			@include gradient-e-mails;
+		}
+
+		&-ads {
+			@include gradient-ads;
+		}
+
+		&-stories {
+			@include gradient-stories;
+		}
+
+		&-websites {
+			@include gradient-websites;
+		}
+	}
+
+	a {
+		display: block;
+		transition: transform 0.25s ease-out;
+
+		&:hover {
+			transform: translateY(-10px);
+		}
+	}
+
+	&-tag {
+		position: absolute;
+		right: 16px;
+		top: -15px;
+		z-index: 1;
+	}
+
+	&-card {
+		overflow: hidden;
+		position: relative;
+		background-color: white;
+		border-radius: 10px;
+		@include box-shadow;
+
+		&-content {
+			padding: 1.5em 1.25em;
+		}
+	}
+
+	&-image {
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: -1px;
+			bottom: 0;
+			width: calc(100% + 2px);
+			height: 150px;
+			background: linear-gradient(0deg, rgba(0,0,0,0.12), rgba(0,0,0,0));
+			z-index: 1;
+		}
+	}
+
+	&-headline {
+		@include txt;
+		@include txt-hl;
+		@include txt-1;
+		@include txt-strong;
+		@include txt-font-accent;
+		@include txt-black;
+		margin: 0;
+	}
+}
