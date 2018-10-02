@@ -1,16 +1,16 @@
 ---
-$title: srcset, sizes & heights를 이용한 미적 이미지 처리
+$title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 ---
 [TOC]
 
 
 ## srcset
 
-여러 미디어 표현식을 기준으로 요소 자원을 제어하기 위해 `srcset` 속성을 사용할 수 있습니다.
-특히, 여러 스크린 사이즈별 이미지 자원을 정의하기 위해,
+여러 미디어 표현식을 기준으로 요소의 에셋을 제어하기 위해 `srcset` 속성을 사용할 수 있습니다.
+특히 다양한 스크린 사이즈별 이미지 에셋을 정의하기 위해,
 모든 [`amp-img`](/docs/reference/components/amp-img.html) 태그에서 사용합니다.
 
-아래의 간단한 예제에서,
+다음 간단한 예제에서,
 `srcset`은 화면 너비(screen width)를 기준으로 image를 정의합니다.
 `w` 설명자는 브라우저에서 리스트 내 각 이미지의 width를 말해줍니다.
 
@@ -34,8 +34,8 @@ $title: srcset, sizes & heights를 이용한 미적 이미지 처리
 ## 사이즈
 
 `srcset`과 함께 `sizes` 속성을 사용할 수 있습니다.
-`sizes` 속성은 미디어 표현을 기준으로 요소 사이즈를 어떻게 게산할 지 설명합니다.
-요소의 계산된 사이즈를 기준으로, 유저 에이전트는 `srcset` 속성에서 제공하는 자원 중 가장 적절한 자원을 선택합니다.
+`sizes` 속성은 미디어 표현식을 기준으로 요소 사이즈를 어떻게 게산할 지 설명합니다.
+요소의 계산된 사이즈를 기준으로, 유저 에이전트는 `srcset` 속성에서 제공하는 에셋 중 가장 적절한 에셋을 선택합니다.
 
 아래 예제를 참고하길 바랍니다:
 
@@ -51,14 +51,14 @@ $title: srcset, sizes & heights를 이용한 미적 이미지 처리
 </amp-iframe>
 </div>
 
-`sizes` 속성은 뷰포트가 650px 이상인 경우,
+`sizes` 속성은 viewport가 650px이거나 그 이상인 경우,
 요소의 너비를 viewport 사이즈의 50%로 정의합니다.
 예를 들어, viewport가 800px인 경우,
 요소의 너비는 400px입니다.
 이 경우 브라우저에서는 `srcset` 리소스 중 가장 400px과 가까우며,
 디바이스 픽셀 해상도를 1로 가정하여, `narrow.jpg`(320px)를 불러옵니다
 
-중요: sizes 속성이 width와 height와 함께 정의된 경우, 기본 layout은 `responsive`로 정의합니다.
+중요: sizes 속성이 width 및 height와 함께 정의된 경우, 기본 layout은 `responsive`로 정의합니다.
 
 `sizes`와 `srcset` 속성이 미디어 쿼리에 비교하여 어떻게 동작하는 지에 대한 더 상세한 정보는,
 [Srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/) 블로그 글을 참고하길 바랍니다.
@@ -90,4 +90,4 @@ $title: srcset, sizes & heights를 이용한 미적 이미지 처리
 </div>
 
 이 예제에서 요소의 height는 width의 80%로 정의되어있지만,
-viewport가 `500px`보다보다 큰 경우 `200px`이 됩니다.
+viewport가 `500px`보다 큰 경우 `200px`이 됩니다.
