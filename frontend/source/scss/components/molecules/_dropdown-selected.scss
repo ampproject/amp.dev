@@ -130,7 +130,11 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		.destination-list-rolling-item {
 			display: none;
 			animation-play-state: paused;
-		}
+    }
+
+    [option][selected] a {
+      color: inherit;
+    }
 
 	}
 }
@@ -143,7 +147,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	@include hl-light;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
-	order: 2;
+  order: 2;
 
 
 	&-drop-down {
@@ -156,29 +160,45 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 }
 
 [option][selected] {
-	// order: 1;
-	// background-clip: text;
-	// -webkit-background-clip: text;
-	// color: transparent;
+	order: 1;
+	background-clip: text;
+  -webkit-background-clip: text;
+
+  a {
+  	color: transparent;
+  }
 }
 
 .websites {
-	@include destination-websites;
-	@include txt-light;
+  @include txt-light;
+  background: transparent;
+
+  &-background {
+	  @include destination-websites;
+  }
 }
 
 .stories {
-	@include destination-stories;
-	@include txt-stories;
+  @include txt-stories;
+
+  &-background {
+	  @include destination-stories;
+  }
 }
 
 .ads {
-	@include destination-ads;
-	@include txt-ads;
+  @include txt-ads;
+
+  &-background {
+	  @include destination-ads;
+  }
 }
 
 .emails {
-	@include destination-email;
-	@include txt-email;
+  @include txt-email;
+
+  &-background {
+	  @include destination-email;
+  }
 }
 
