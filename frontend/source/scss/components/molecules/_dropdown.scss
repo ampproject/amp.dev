@@ -24,6 +24,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 @import '../atoms/_text.scss';
 @import '../atoms/_destination.scss';
 
+
 @include rollingAnimation;
 @include viewboxGradientAnimation;
 
@@ -54,10 +55,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
 	}
 
-	&-no-animation {
-		animation: none;
-	}
-
 	&:hover {
 		height: 185px;
 		transition: height 0.5s ease;
@@ -77,38 +74,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		.destination-list-item-rolling{
 			display: none;
 			animation-play-state: paused;
-		}
-	}
-
-	&-websites {
-		background-color: color('white');
-
-		.ad-a-ico {
-			fill: color('robins-egg');
-		}
-	}
-
-	&-stories {
-		background: color('ultramarine');
-
-		.ad-a-ico {
-			fill: color('turbo');
-		}
-	}
-
-	&-ads {
-		background: color('hawkes-blue');
-
-		.ad-a-ico {
-			fill: color('pizazz');
-		}
-	}
-
-	&-emails {
-		background: color('reef');
-
-		.ad-a-ico {
-			fill: color('pink-flamingo');
 		}
 	}
 }
@@ -185,29 +150,29 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 		&-websites {
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-			animation-delay: 0s;
+      animation-delay: 0s;
 		}
 
 		&-stories {
 			opacity: 0;
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 			animation-delay: 3.2s;
-			@include txt-stories;
+      @include txt-stories;
 		}
 
 		&-ads {
 			opacity: 0;
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 			animation-delay: 6.4s;
-			@include txt-ads;
+      @include txt-ads;
 		}
 
 		&-emails {
 			opacity: 0;
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 			animation-delay: 9.6s;
-			@include txt-email;
-		}
+      @include txt-email;
+    }
 
 		&-light {
 			color: color('white');
@@ -217,22 +182,35 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 
 .websites {
-	@include destination-websites;
-	@include txt-light;
+
+  @include txt-light;
+
+  &-background {
+	  @include destination-websites;
+  }
 }
 
 .stories {
-	@include destination-stories;
-	@include txt-stories;
+  @include txt-stories;
+
+  &-background {
+	  @include destination-stories;
+  }
 }
 
 .ads {
-	@include destination-ads;
-	@include txt-ads;
+  @include txt-ads;
+
+  &-background {
+	  @include destination-ads;
+  }
 }
 
 .emails {
-	@include destination-email;
-	@include txt-email;
+  @include txt-email;
+
+  &-background {
+	  @include destination-email;
+  }
 }
 
