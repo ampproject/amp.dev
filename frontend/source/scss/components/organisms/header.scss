@@ -158,6 +158,7 @@
 
       &:checked ~ .ad-o-header-list-mobile {
         height: 100vh;
+        z-index: 10;
       }
     }
   }

@@ -30,20 +30,20 @@ Rolling switch requires the rollingAnimation defined in /source/scss/mixins.scss
 
 .destination-list-view-box {
 	display: inline;
-	height: 50px;
+	height: 32px;
 	width: 250px;
 	overflow: hidden;
 	position: absolute;
 
 	@media screen and (min-width: 768px){
-		width: 324px;
-		height: 70px;
+    width: 324px;
+	  height: 42px;
 	}
 }
 
 .destination-list-item {
 	@include hl;
-	@include hl-h1;
+	@include hl-stage;
 	@include hl-light;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
