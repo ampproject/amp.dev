@@ -6,7 +6,7 @@
 	<div class="destination-stage-content">
 		<span class="hl-sub">What is Amp?</span>
     <div class="hl-divider"></div>
-		<h1 class="hl" >AMP is a web component based framework for easily creating user first </h1>
+		<h2 class="hl" >AMP is a web component based framework for easily creating user first </h2>
     <div class="destination-list-view-box">
 		  {% for dest in ['websites', 'stories', 'ads', 'emails'] %}
 			  <span class="destination-list-item destination-list-item-rolling destination-list-item-rolling-{{ dest }}">{{ dest }}</span>
@@ -22,7 +22,7 @@ class="destination-stage websites">
   <div class="destination-stage-content">
 		<span class="hl-sub">What is Amp?</span>
 		<span class="hl-divider"></span>
-		<h1 class="hl" [class]="stages.currentStage != 'default' ? 'hl hl-'+stages.currentStage : 'hl' ">AMP is a web component based framework for easily creating user first </h1>
+		<h2 class="hl" [class]="stages.currentStage != 'default' ? 'hl hl-'+stages.currentStage : 'hl' ">AMP is a web component based framework for easily creating user first </h2>
     <div class="destination-list-view-box destination-list-view-box-gradient" [class]="stages.currentStage == 'default' ? 'destination-list-view-box destination-list-view-box-gradient' : 'destination-list-view-box destination-list-view-box-no-animation destination-list-view-box-' + stages.currentStage">
 		  {% for dest in ['websites', 'stories', 'ads', 'emails'] %}
 			  <span class="destination-list-item destination-list-item-rolling destination-list-item-rolling-{{ dest }}"
@@ -41,7 +41,7 @@ class="destination-stage websites">
 	</div>
 
 {% elif options.type == 'selected' %}
-{% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-selected.css') %}
 
 <div class="destination-stage destination-stage-active {{ doc.title }}">
   <div class="destination-stage-content">
@@ -49,9 +49,6 @@ class="destination-stage websites">
 		<span class="hl-{{ doc.title }} hl-divider"></span>
 		<h1 class="hl hl-{{ doc.title }}">AMP is a web component based framework for easily creating user first </h1>
     <div class="destination-list-view-box destination-list-view-box-no-animation destination-list-view-box-{{ doc.title }}">
-		  {% for dest in ['websites', 'stories', 'ads', 'emails'] %}
-			  <span class="destination-list-item destination-list-item-rolling-hide destination-list-item-rolling destination-list-item-rolling-{{ dest }}">{{ dest }}</span>
-		  {% endfor %}
 		  <amp-selector layout="container" on="select:AMP.setState({stages:{currentStage: event.targetOption}})">
 			  <ul class="destination-list destination-list-display destination-list-{{doc.title}}">
 			  {% for dest in ['websites', 'stories', 'ads', 'emails'] %}

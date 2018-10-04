@@ -29,15 +29,15 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 
 .destination-list-view-box {
-	display: inline;
-	height: 50px;
+  display: inline;
+	height: 32px;
 	width: 250px;
 	overflow: hidden;
 	position: absolute;
 
 	@media screen and (min-width: 768px){
-		width: 324px;
-		height: 70px;
+    width: 324px;
+	  height: 42px;
 	}
 
 
@@ -59,18 +59,10 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 
 	&:hover {
-		height: 282px;
+		height: 185px;
 		transition: height 0.5s ease;
 		background: transparent;
 		animation: none;
-
-		[option][selected] {
-			border: none;
-			outline: #fff;
-			background-clip: border-box;
-			-webkit-background-clip: border-box;
-			color: inherit;
-		}
 
 		.ad-a-ico {
 			transform: rotate(180deg);
@@ -168,7 +160,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .destination-list-item {
 	@include hl;
-	@include hl-h1;
+	@include hl-stage;
 	@include hl-light;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
@@ -223,12 +215,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 }
 
-[option][selected] {
-	// order: 1;
-	// background-clip: text;
-	// -webkit-background-clip: text;
-	// color: transparent;
-}
 
 .websites {
 	@include destination-websites;
