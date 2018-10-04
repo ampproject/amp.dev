@@ -56,13 +56,23 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	display: flex;
 	align-items: center;
 	height: 50px;
+	padding: 0 1.25em;
 	@include river-ebony;
+}
+
+@mixin teaser-header-title {
+	@include txt;
+	@include txt-hl;
+	@include txt-1;
+	@include txt-strong;
+	@include txt-light;
+	@include hl-mono;
+	margin: 0;
 }
 
 @mixin teaser-header-icon {
 	@include ico-3;
 	@include ico-white;
-	margin-left: 1.25em;
 }
 
 @mixin teaser-content {

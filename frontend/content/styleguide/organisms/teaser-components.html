@@ -1,0 +1,79 @@
+---
+$view: /views/styleguide/component.j2
+$title: Teaser Components
+
+items:
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  title: amp-accordion
+  text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. dolor in hendrerit in vulputate velit esse molestie
+  link: '#'
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  image: '/static/static/img/teaser-placeholder-5x3.jpg'
+  title: amp-accordion
+  text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. dolor in hendrerit in vulputate velit esse molestie
+  link: '#'
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  image: '/static/static/img/teaser-dummy-5x3-1.jpg'
+  title: amp-accordion
+  text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. dolor in hendrerit in vulputate velit esse molestie
+  link: '#'
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  image: '/static/static/img/teaser-dummy-5x3-2.jpg'
+  title: amp-accordion
+  text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. dolor in hendrerit in vulputate velit esse molestie
+  link: '#'
+---
+
+<div class="ad-o-container col-12 ad-o-teaser-components">
+
+  <h2>Components</h2>
+
+  <div class="ad-o-teaser-components-list">
+    {% for item in doc.items %}
+      <div class="ad-m-teaser">
+        <a href="{{ item.link }}">
+
+          <div class="ad-m-teaser-card">
+
+            <div class="ad-m-teaser-tags">
+              {% for tag in item.tags %}
+              <div class="ad-m-tag ad-m-tag-{{ tag }} ad-m-teaser-tag"></div>
+              {% endfor %}
+            </div>
+
+            <div class="ad-m-teaser-header">
+              <h4 class="ad-m-teaser-header-title">{{ item.title }}</h4>
+            </div>
+
+            <div class="ad-m-teaser-content">
+              <p class="ad-m-teaser-copy">{{ lipsum(n=1, html=False, min=17, max=18) }}</p>
+            </div>
+          </div>
+
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <a class="ad-m-lnk" href="#">
+    {{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+    <span class="ad-m-lnk-text">See all components</span>
+  </a>
+
+</div>
