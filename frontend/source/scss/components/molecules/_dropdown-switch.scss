@@ -20,7 +20,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 */
 
-@import '../atoms/_icon.scss';
 @import '../atoms/_headline.scss';
 @import '../atoms/_text.scss';
 @import '../atoms/_destination.scss';
@@ -113,7 +112,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		}
 	}
 
-	&-email {
+	&-emails {
 		background: color('reef');
 
 		.ad-a-ico {
@@ -130,8 +129,8 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	padding: 24px 24px;
 	transition: transform 0.5s ease;
 
-	@include ico-white;
-	@include ico-2;
+	// @include ico-white;
+	// @include ico-2;
 }
 
 // DROP DPOWN LIST
@@ -211,7 +210,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 			@include txt-ads;
 		}
 
-		&-email {
+		&-emails {
 			opacity: 0;
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 			animation-delay: 9.6s;
@@ -225,10 +224,10 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 }
 
 [option][selected] {
-	order: 1;
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
+	// order: 1;
+	// background-clip: text;
+	// -webkit-background-clip: text;
+	// color: transparent;
 }
 
 .websites {
@@ -246,7 +245,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	@include txt-ads;
 }
 
-.email {
+.emails {
 	@include destination-email;
 	@include txt-email;
 }

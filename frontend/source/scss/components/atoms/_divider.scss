@@ -49,6 +49,7 @@ desktop
 
 @mixin divider-stage {
 	width: 60px;
-	height: 4px;
+  height: 4px;
+  background-color: color('white');
 	margin-bottom: 3em;
 }

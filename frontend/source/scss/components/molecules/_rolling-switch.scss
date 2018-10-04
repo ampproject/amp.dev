@@ -22,7 +22,7 @@ Rolling switch requires the rollingAnimation defined in /source/scss/mixins.scss
 
 @import '../../mixins.scss';
 
-@import '../components/atoms/text';
+@import '../atoms/_text';
 
 
 @include rollingAnimation;
@@ -75,7 +75,7 @@ Rolling switch requires the rollingAnimation defined in /source/scss/mixins.scss
 			animation-delay: 6.4s;
 		}
 
-		&-email {
+		&-emails {
 			opacity: 0;
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 			animation-delay: 9.6s;
