@@ -38,6 +38,7 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 	height: 90vh;
 	width: 100vw;
 	position: relative;
+	margin-top: 137px;
 
 	@media screen and (min-width: 768px) {
 		height: 0%;
@@ -89,7 +90,7 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 			@include hl-ads;
 		}
 
-		&-email {
+		&-emails {
 			@include hl-email;
 		}
 	}

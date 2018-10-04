@@ -22,22 +22,24 @@ The destination-rolling-stage organism contains the rolling switch molecule alon
 
 */
 
-@import '../components/atoms/destination';
-@import '../components/atoms/headline';
-@import '../components/atoms/divider';
+@import '../atoms/_destination';
+@import '../atoms/_headline';
+@import '../atoms/_divider';
 
 @import '../molecules/rolling-switch';
 
 
 .destination-stage {
 	height: 90vh;
-	width: 100vw;
+  width: 100vw;
+  margin-top: 137px;
 	position: relative;
 
 	@media screen and (min-width: 768px) {
 		height: 0%;
 		width: 100%;
-		padding-top: 29.29%;
+    padding-top: 29.29%;
+    margin-top: 137px;
 	}
 
 	&-content {
@@ -61,11 +63,10 @@ The destination-rolling-stage organism contains the rolling switch molecule alon
 		@include hl;
 		@include hl-h3;
 		@include hl-light;
-		margin-right: 100%;
 	}
 
 	&-divider {
-		@include divider;
+    @include divider-stage;
 	}
 }
 
