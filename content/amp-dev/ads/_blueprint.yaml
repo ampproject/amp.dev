@@ -1,5 +1,0 @@
-path: /ads/{base}.html
-view: /views/default.j2
-
-localization:
-  path: /{locale}/ads/{base}.html
