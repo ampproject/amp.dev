@@ -37,3 +37,19 @@ desktop
 		}
 	}
 }
+
+
+@mixin divider {
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-bottom: 0.813em;
+	background-color: color('whisper');
+}
+
+@mixin divider-stage {
+	width: 60px;
+  height: 4px;
+  background-color: color('white');
+	margin-bottom: 3em;
+}

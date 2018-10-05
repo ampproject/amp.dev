@@ -1,0 +1,95 @@
+/*
+
+##################
+### Organism: Destination Drop Down Selected ###
+##################
+
+### SAMPLE MARKUP:
+
+<div [class]="stages.currentStage != 'default' ? 'destination-stage ' + stages.currentStage + ' destination-stage destination-stage-active' : 'destination-stage'"
+class="destination-stage websites">
+	<div class="destination-stage-content">
+		<h1 class="hl" [class]="stages.currentStage != 'default' ? 'hl hl-'+stages.currentStage : 'hl' ">
+			AMP is a web component based framework for easily creating user first
+		</h1>
+		{% call molecules.dropdownSwitch( doc.destinations ) %} {{ atoms.icon('arrow-down-thick' ) }} {% endcall %}
+	</div>
+</div>
+
+### INFO:
+
+The destination-rolling-stage organism contains the drop down switch molecule along with a headline.
+
+The background of the destination-stage requires the heroEnterAnimation mixin.
+
+### MODIFIERS:
+
+ - active
+		triggers the heroEnterAnimation mixin.
+
+*/
+
+@import '../molecules/dropdown-selected';
+@import '../atoms/_divider.scss';
+
+@include heroEnterAnimation;
+
+.destination-stage {
+	height: 90vh;
+	width: 100vw;
+	position: relative;
+
+	@media screen and (min-width: 768px) {
+		height: 0%;
+		width: 100%;
+		padding-top: 45%;
+	}
+
+	&-active {
+		animation: growDown 0.5s ease-in-out;
+	}
+
+	&-content {
+		position: absolute;
+		bottom: 0;
+		padding: 0 0 5% 5%;
+		max-width: 50%;
+
+		@media screen and (min-width: 768px){
+			top: 0;
+			padding: 15% 0 0 5%;
+		}
+}
+
+	.hl {
+		@include hl;
+		@include hl-stage;
+		@include hl-light;
+		margin: 0;
+		display: inline;
+		padding-right: 12px;
+
+		&-sub {
+			@include hl;
+			@include hl-h3;
+			@include hl-light;
+		}
+
+		&-divider {
+			@include divider;
+			@include divider-stage;
+		}
+
+		&-stories {
+			@include hl-stories;
+		}
+
+		&-ads {
+			@include hl-ads;
+		}
+
+		&-emails {
+			@include hl-email;
+		}
+	}
+}

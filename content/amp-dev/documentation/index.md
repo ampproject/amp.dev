@@ -1,4 +1,4 @@
 ---
-$title: Documentation
-$order: 2
+$title: Guides and Tutorials
+$order: 1
 ---

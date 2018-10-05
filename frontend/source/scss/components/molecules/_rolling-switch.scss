@@ -1,0 +1,84 @@
+/*
+
+######################
+### MOLECULE: rolling-switch ###
+######################
+
+### SAMPLE MARKUP:
+
+	see /source/j2/macros/molecules.j2 for macro markup
+
+### INFO:
+
+Rolling switch is a molecule containing a view box and multiple text atoms for each page destination.
+Each text atom has a rolling animation tied to them, however, there is no dropdown menu list
+or gradients to the view box, these stylings can be found in the more complex moleucule, dropdown-menu.
+
+Rolling switch requires the rollingAnimation defined in /source/scss/mixins.scss
+
+### MODIFIERS:
+
+*/
+
+@import '../../mixins.scss';
+
+@import '../atoms/_text';
+
+
+@include rollingAnimation;
+
+
+.destination-list-view-box {
+	display: inline;
+	height: 32px;
+	width: 250px;
+	overflow: hidden;
+	position: absolute;
+
+	@media screen and (min-width: 768px){
+    width: 324px;
+	  height: 42px;
+	}
+}
+
+.destination-list-item {
+	@include hl;
+	@include hl-stage;
+	@include hl-light;
+	outline: color('white');
+	padding: 1px 20px 1px 10px;
+	order: 2;
+
+	&-rolling {
+		position: absolute;
+		@include txt-light;
+
+		&-hide {
+			display: none;
+			animation: none;
+		}
+
+		&-websites {
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 0s;
+		}
+
+		&-stories {
+			opacity: 0;
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 3.2s;
+		}
+
+		&-ads {
+			opacity: 0;
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 6.4s;
+		}
+
+		&-emails {
+			opacity: 0;
+			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+			animation-delay: 9.6s;
+		}
+	}
+}

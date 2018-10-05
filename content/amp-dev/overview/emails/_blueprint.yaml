@@ -1,0 +1,5 @@
+path: /overview/emails/{base}.html
+view: /views/default.j2
+
+localization:
+  path: /{locale}/overview/emails/{base}.html
