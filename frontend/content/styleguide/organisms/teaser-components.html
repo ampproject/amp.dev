@@ -1,6 +1,6 @@
 ---
 $view: /views/styleguide/component.j2
-$title: Teaser Guides & Tutorials
+$title: Teaser Components
 
 items:
 - tags:
@@ -8,7 +8,8 @@ items:
     - 'stories'
     - 'ads'
     - 'e-mails'
-  headline: Combine AMP with Progressive Web Apps
+  title: amp-accordion
+  text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. dolor in hendrerit in vulputate velit esse molestie
   link: '#'
 - tags:
     - 'websites'
@@ -16,7 +17,8 @@ items:
     - 'ads'
     - 'e-mails'
   image: '/static/static/img/teaser-placeholder-5x3.jpg'
-  headline: Combine AMP with Progressive Web Apps
+  title: amp-accordion
+  text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. dolor in hendrerit in vulputate velit esse molestie
   link: '#'
 - tags:
     - 'websites'
@@ -24,7 +26,8 @@ items:
     - 'ads'
     - 'e-mails'
   image: '/static/static/img/teaser-dummy-5x3-1.jpg'
-  headline: Combine AMP with Progressive Web Apps
+  title: amp-accordion
+  text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. dolor in hendrerit in vulputate velit esse molestie
   link: '#'
 - tags:
     - 'websites'
@@ -32,22 +35,19 @@ items:
     - 'ads'
     - 'e-mails'
   image: '/static/static/img/teaser-dummy-5x3-2.jpg'
-  headline: Combine AMP with Progressive Web Apps
+  title: amp-accordion
+  text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. dolor in hendrerit in vulputate velit esse molestie
   link: '#'
 ---
 
 <div class="ad-o-container col-12 ad-o-teaser-grid">
 
-  <h2>Guides & Tutorials</h2>
+  <h2>Components</h2>
 
   <div class="ad-o-teaser-grid-list">
     {% for item in doc.items %}
-      <div class="ad-m-teaser ad-m-teaser-guide-tutorial">
+      <div class="ad-m-teaser ad-m-teaser-component">
         <a href="{{ item.link }}">
-
-          {% if item.image %}
-          {{ atoms.image('ad-m-teaser-image', src=g.static(item.image).url|relative, layout='responsive', width=5, height=3, alt=item.headline, type='static') }}
-          {% endif %}
 
           <div class="ad-m-teaser-card">
 
@@ -57,8 +57,11 @@ items:
               {% endfor %}
             </div>
 
+            <div class="ad-m-teaser-header">
+              <h4 class="ad-m-teaser-header-title">{{ item.title }}</h4>
+            </div>
+
             <div class="ad-m-teaser-content">
-              <h4 class="ad-m-teaser-headline">{{ item.headline }}</h4>
               <p class="ad-m-teaser-copy">{{ lipsum(n=1, html=False, min=17, max=18) }}</p>
             </div>
           </div>
@@ -70,7 +73,7 @@ items:
 
   <a class="ad-m-lnk" href="#">
     {{ atoms.icon('internal', 'ad-m-lnk-icon') }}
-    <span class="ad-m-lnk-text">See all guides & tutorials</span>
+    <span class="ad-m-lnk-text">See all components</span>
   </a>
 
 </div>

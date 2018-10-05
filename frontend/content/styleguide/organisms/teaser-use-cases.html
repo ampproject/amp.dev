@@ -29,13 +29,13 @@ items:
   link: '#'
 ---
 
-<div class="ad-o-container col-12 ad-o-teaser-use-cases">
+<div class="ad-o-container col-12 ad-o-teaser-grid">
 
   <h2>Explore use cases of AMP</h2>
 
-  <div class="ad-o-teaser-use-cases-list">
+  <div class="ad-o-teaser-grid-list">
     {% for item in doc.items %}
-      <div class="ad-m-teaser">
+      <div class="ad-m-teaser ad-m-teaser-use-case">
         <a href="{{ item.link }}">
 
           <div class="ad-m-tag ad-m-tag-{{ item.tag }} ad-m-teaser-tag">{{ item.tag }}</div>

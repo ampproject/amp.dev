@@ -1,6 +1,6 @@
 ---
 $view: /views/styleguide/component.j2
-$title: Teaser Guides & Tutorials
+$title: Teaser Examples
 
 items:
 - tags:
@@ -8,7 +8,8 @@ items:
     - 'stories'
     - 'ads'
     - 'e-mails'
-  headline: Combine AMP with Progressive Web Apps
+  headline: Geolocation with amp-list
+  text: If you need more fine-grained geolocation support than provided by the amp-geo extension, you can implement geo-based features with geolocation logic on …
   link: '#'
 - tags:
     - 'websites'
@@ -16,7 +17,8 @@ items:
     - 'ads'
     - 'e-mails'
   image: '/static/static/img/teaser-placeholder-5x3.jpg'
-  headline: Combine AMP with Progressive Web Apps
+  headline: How to publish AMPs
+  text: Here is a quick getting started guide for creating e- commerce webpages with AMP.
   link: '#'
 - tags:
     - 'websites'
@@ -24,7 +26,8 @@ items:
     - 'ads'
     - 'e-mails'
   image: '/static/static/img/teaser-dummy-5x3-1.jpg'
-  headline: Combine AMP with Progressive Web Apps
+  headline: Geolocation with amp-list
+  text: If you need more fine-grained geolocation support than provided by the amp-geo extension, you can implement geo-based features with geolocation logic on …
   link: '#'
 - tags:
     - 'websites'
@@ -32,22 +35,19 @@ items:
     - 'ads'
     - 'e-mails'
   image: '/static/static/img/teaser-dummy-5x3-2.jpg'
-  headline: Combine AMP with Progressive Web Apps
+  headline: How to publish AMPs
+  text: Here is a quick getting started guide for creating e- commerce webpages with AMP.
   link: '#'
 ---
 
 <div class="ad-o-container col-12 ad-o-teaser-grid">
 
-  <h2>Guides & Tutorials</h2>
+  <h2>Examples</h2>
 
   <div class="ad-o-teaser-grid-list">
     {% for item in doc.items %}
-      <div class="ad-m-teaser ad-m-teaser-guide-tutorial">
+      <div class="ad-m-teaser ad-m-teaser-example">
         <a href="{{ item.link }}">
-
-          {% if item.image %}
-          {{ atoms.image('ad-m-teaser-image', src=g.static(item.image).url|relative, layout='responsive', width=5, height=3, alt=item.headline, type='static') }}
-          {% endif %}
 
           <div class="ad-m-teaser-card">
 
@@ -55,6 +55,10 @@ items:
               {% for tag in item.tags %}
               <div class="ad-m-tag ad-m-tag-{{ tag }} ad-m-teaser-tag"></div>
               {% endfor %}
+            </div>
+
+            <div class="ad-m-teaser-header">
+              {{ atoms.icon('example', 'ad-m-teaser-header-icon') }}
             </div>
 
             <div class="ad-m-teaser-content">
@@ -70,7 +74,7 @@ items:
 
   <a class="ad-m-lnk" href="#">
     {{ atoms.icon('internal', 'ad-m-lnk-icon') }}
-    <span class="ad-m-lnk-text">See all guides & tutorials</span>
+    <span class="ad-m-lnk-text">See all examples</span>
   </a>
 
 </div>

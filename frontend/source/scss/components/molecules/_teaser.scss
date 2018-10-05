@@ -11,22 +11,6 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 
 */
 
-@mixin teaser-list {
-	display: grid;
-	grid-gap: 30px;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto;
-	width: 100%;
-
-	@media screen and (min-width: 575px) {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	@media screen and (min-width: 991px) {
-		grid-template-columns: repeat(4, 1fr);
-	}
-}
-
 @mixin teaser {
 	position: relative;
 	margin-bottom: 2em;
@@ -50,6 +34,29 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	background-color: white;
 	border-radius: 10px;
 	@include box-shadow;
+}
+
+@mixin teaser-header {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	padding: 0 1.25em;
+	@include river-ebony;
+}
+
+@mixin teaser-header-title {
+	@include txt;
+	@include txt-hl;
+	@include txt-1;
+	@include txt-strong;
+	@include txt-light;
+	@include hl-mono;
+	margin: 0;
+}
+
+@mixin teaser-header-icon {
+	@include ico-3;
+	@include ico-white;
 }
 
 @mixin teaser-content {
