@@ -57,15 +57,38 @@ components:
                     </div>
                 {% endif %}
                 {% endfor %}
+                {% for city in conf.past %}
+                    <div class="city city-{{ city.title | lower }} {% if not city.link %}city-past{% endif %}">
+                        <div class="dot">
+                            <div class="past-circle"></div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
 
-            <div class="check-back">Your city not on the list? Check back soon for additional dates and cities.</div>
-
+            <h3 id="cities-up" class="margin-room">Where we're going</h3>
+            
             <ul class="list-cities">
                 {% for city in conf.cities %}
                 <li>
                     <div class="group">
                         <a{% if city.link %} href="{{city.link}}" target="_blank"{% endif %}>
+                        {{ city.title }}
+                        </a>
+                        <div class="text-label">
+                            {{ city.date | date() }}
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="check-back">Your city not on the list? Check back soon for additional dates and cities.</div>
+            <h3 id="cities-down" class="margin-room">Where we've been</h3>
+            <ul class="list-cities">
+                {% for city in conf.past %}
+                <li>
+                    <div class="group">
+                        <a>
                         {{ city.title }}
                         </a>
                         <div class="text-label">

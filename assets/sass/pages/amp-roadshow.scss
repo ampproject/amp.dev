@@ -19,6 +19,9 @@
         margin-top: 6px;
         text-align: center;
       }
+      .margin-room {
+        margin-top: 1em;
+      }
     }
 
     .list-cities {
@@ -266,6 +269,16 @@
                   left: 8.5px;
                 }
 
+                .past-circle {
+                  width: 10px;
+                  height: 10px;
+                  background-color: #003c63;
+                  border-radius: 50%;
+                  position: absolute;
+                  top: 8.5px;
+                  left: 8.5px
+                }
+
                 .ringring {
                   border: 3px solid #1c79c0;
                   border-radius: 30px;
@@ -378,6 +391,55 @@
               left: 67%;
             }
 
+            .city-porto {
+              top: 82%;
+              left: 26%
+            }
+
+            .city-shanghai {
+              top: 34%;
+              left: 79%
+            }
+
+            .city-beijing {
+              top: 28%;
+              left: 77%
+            }
+
+            .city-sydney {
+              top: 83%;
+              left: 89%
+            }
+            .city-munich {
+              top: 20%;
+              left: 46%
+            }
+            .city-paris {
+              top: 23%;
+              left: 44%
+            }
+            .city-madrid {
+              top: 27%;
+              left: 41%
+            }
+            .city-london {
+              top: 21%;
+              left: 40%
+            }
+
+            .city-singapore {
+              top: 56%;
+              left: 75%
+            }
+            .city-jakarta {
+              top: 64%;
+              left: 78%
+            }
+
+            .city-toronto {
+              top: 19%;
+              left: 21%
+            }
           }
         }
 
