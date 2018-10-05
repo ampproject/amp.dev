@@ -1,27 +1,24 @@
 /*
 
-###################################
-### ORGANISM: teaser components ###
-###################################
+################################
+### ORGANISM: teaser example ###
+################################
 
 ### INFO:
 
 */
 
-.#{organism('teaser-components')} {
-
-	&-list {
-		@include teaser-list;
-	}
-
-	.#{molecule('teaser')} {
+.#{molecule('teaser-example')} {
+	&.#{molecule('teaser')} {
 		@include teaser;
 
-		a {
+		& > a {
 			@include teaser-linking;
 			height: 100%;
 		}
+	}
 
+	.#{molecule('teaser')} {
 		&-tags {
 			font-size: 0;
 			position: absolute;
@@ -38,10 +35,9 @@
 
 		&-header {
 			@include teaser-header;
-			height: 90px;
 
-			&-title {
-				@include teaser-header-title;
+			&-icon {
+				@include teaser-header-icon;
 			}
 		}
 

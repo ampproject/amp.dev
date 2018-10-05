@@ -11,22 +11,6 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 
 */
 
-@mixin teaser-list {
-	display: grid;
-	grid-gap: 30px;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto;
-	width: 100%;
-
-	@media screen and (min-width: 575px) {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	@media screen and (min-width: 991px) {
-		grid-template-columns: repeat(4, 1fr);
-	}
-}
-
 @mixin teaser {
 	position: relative;
 	margin-bottom: 2em;

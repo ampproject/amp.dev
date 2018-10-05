@@ -1,26 +1,23 @@
 /*
 
-##################################
-### ORGANISM: teaser templates ###
-##################################
+#################################
+### ORGANISM: teaser template ###
+#################################
 
 ### INFO:
 
 */
 
-.#{organism('teaser-templates')} {
+.#{molecule('teaser-template')} {
+	&.#{molecule('teaser')} {
+		@include teaser;
 
-	&-list {
-		@include teaser-list;
+		& > a {
+			@include teaser-linking;
+		}
 	}
 
 	.#{molecule('teaser')} {
-		@include teaser;
-
-		a {
-			@include teaser-linking;
-		}
-
 		&-tag {
 			@include teaser-tag;
 		}

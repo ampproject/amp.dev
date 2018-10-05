@@ -1,20 +1,15 @@
 /*
 
-##################################
-### ORGANISM: teaser use cases ###
-##################################
+#################################
+### ORGANISM: teaser use case ###
+#################################
 
 ### INFO:
 
 */
 
-.#{organism('teaser-use-cases')} {
-
-	&-list {
-		@include teaser-list;
-	}
-
-	.#{molecule('teaser')} {
+.#{molecule('teaser-use-case')} {
+	&.#{molecule('teaser')} {
 		@include teaser;
 
 		&:nth-child(1),
@@ -30,10 +25,12 @@
 			padding-top: 0;
 		}
 
-		a {
+		& > a {
 			@include teaser-linking;
 		}
+	}
 
+	.#{molecule('teaser')} {
 		&-tag {
 			@include teaser-tag;
 		}

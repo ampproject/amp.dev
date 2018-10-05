@@ -22,13 +22,14 @@
 @import '../components/molecules/news';
 @import '../components/molecules/teaser';
 @import '../components/molecules/teaser-obsolete';
+@import '../components/molecules/teaser-use-cases';
+@import '../components/molecules/teaser-success-story';
+@import '../components/molecules/teaser-template';
+@import '../components/molecules/teaser-guide-tutorial';
+@import '../components/molecules/teaser-example';
+@import '../components/molecules/teaser-component';
 
-@import '../components/organisms/teaser-use-cases';
-@import '../components/organisms/teaser-success-stories';
-@import '../components/organisms/teaser-templates';
-@import '../components/organisms/teaser-guides-tutorials';
-@import '../components/organisms/teaser-examples';
-@import '../components/organisms/teaser-components';
+@import '../components/organisms/teaser-grid';
 @import '../components/organisms/list';
 
 /* The following styles only define the styles needed to make the styleguide

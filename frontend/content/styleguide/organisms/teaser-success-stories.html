@@ -31,12 +31,13 @@ items:
   link: '#'
 ---
 
-<div class="ad-o-container ad-o-teaser-success-stories col-12">
+<div class="ad-o-container col-12 ad-o-teaser-grid">
+
   <h2>Explore AMP success stories</h2>
 
-  <div class="ad-o-teaser-success-stories-list">
+  <div class="ad-o-teaser-grid-list">
     {% for item in doc.items %}
-      <div class="ad-m-teaser">
+      <div class="ad-m-teaser ad-m-teaser-success-story">
         <a href="{{ item.link }}">
 
           <div class="ad-m-tag ad-m-tag-{{ item.tag }} ad-m-teaser-tag">{{ item.tag }}</div>

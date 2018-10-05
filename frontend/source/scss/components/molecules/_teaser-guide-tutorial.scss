@@ -1,27 +1,23 @@
 /*
 
-##########################################
-### ORGANISM: teaser guides & tuorials ###
-##########################################
+########################################
+### ORGANISM: teaser guide & tuorial ###
+########################################
 
 ### INFO:
 
 */
 
-.#{organism('teaser-guides-tutorials')} {
+.#{molecule('teaser-guide-tutorial')} {
+	&.#{molecule('teaser')} {
+		@include teaser;
 
-	&-list {
-		@include teaser-list;
+		& > a {
+			@include teaser-linking;
+		}
 	}
 
 	.#{molecule('teaser')} {
-		@include teaser;
-
-		a {
-			@include teaser-linking;
-			// height: 100%;
-		}
-
 		&-tags {
 			font-size: 0;
 			position: absolute;
@@ -32,7 +28,6 @@
 
 		&-card {
 			@include teaser-card;
-			// height: 100%;
 			border-radius: 0;
 		}
 

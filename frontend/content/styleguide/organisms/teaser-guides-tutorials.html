@@ -36,13 +36,13 @@ items:
   link: '#'
 ---
 
-<div class="ad-o-container col-12 ad-o-teaser-guides-tutorials">
+<div class="ad-o-container col-12 ad-o-teaser-grid">
 
   <h2>Guides & Tutorials</h2>
 
-  <div class="ad-o-teaser-guides-tutorials-list">
+  <div class="ad-o-teaser-grid-list">
     {% for item in doc.items %}
-      <div class="ad-m-teaser">
+      <div class="ad-m-teaser ad-m-teaser-guide-tutorial">
         <a href="{{ item.link }}">
 
           {% if item.image %}
