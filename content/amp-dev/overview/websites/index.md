@@ -1,7 +1,5 @@
 ---
 $title: websites
-$order: 4
-
 $category: Stage
 ---
 

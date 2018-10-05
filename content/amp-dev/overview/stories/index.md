@@ -1,6 +1,5 @@
 ---
 $title: stories
-$order: 5
 $category: "stage"
 ---
 
