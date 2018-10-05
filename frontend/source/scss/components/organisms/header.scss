@@ -22,6 +22,8 @@
   z-index: 1;
   top: 0;
   width: 100vw;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+
 
 
   &-list {
@@ -64,7 +66,12 @@
     }
 
     .ad-m-lnk {
-      color: color('river-bed');
+      @include txt-font-accent;
+      @include txt-accent-1;
+      @include txt-black;
+
+      padding: 12.5px 0;
+      margin: 0;
     }
 
     &-selected {
@@ -102,6 +109,7 @@
 
 
   &-main-nav {
+    border-bottom: 1px solid color('whisper');
     background-color: color('white');
   }
 
@@ -147,12 +155,14 @@
   }
 
   input {
+    @include txt-3;
+    @include txt;
+    @include txt-silver;
+
     border: none;
     outline: #fff;
     background: none;
     width: 75px;
-    font-size: 12px;
-    font-family: Poppins;
   }
 
   &-burger-menu {
