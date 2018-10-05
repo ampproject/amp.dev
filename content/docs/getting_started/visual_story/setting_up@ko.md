@@ -7,7 +7,7 @@ $title: 설정
 이 가이드를 시작하기에 앞서 다음이 필요합니다.
 
 - HTML, CSS, 자바스크립트 기본 지식
-- AMP의 핵심 개념에 관한 기본적인 이해(['HTML을 AMP로 변환하기'](/ko/docs/fundamentals/converting.html) 가이드 참조)
+- AMP의 핵심 개념에 관한 기본적인 이해(['HTML을 AMP로 변환하기']({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}) 가이드 참조)
 - 원하는 브라우저
 - 원하는 텍스트 에디터
 
@@ -41,6 +41,7 @@ URL이 `localhost`에서 제공되는지 확인하십시오. 그렇지 않으면
 완성된 스토리를 클릭해 보면서 어떤 스토리를 만들게 될지 파악해 보십시오.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/getting_started/visual_story.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>
+

@@ -71,6 +71,6 @@ amp-story 컴포넌트는 최소한 하나 이상의 페이지를 갖고 있어�
 페이지를 만들어보겠습니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/ko/docs/getting_started/visual_story/create_cover_page.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

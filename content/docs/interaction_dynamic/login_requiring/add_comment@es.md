@@ -61,8 +61,8 @@ Cuando añades un comentario y haces clic en el botón para enviarlo, aparece al
 <amp-img src="/static/img/logout-button.png" alt="Comentario añadido" height="352" width="300"></amp-img>
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/interaction_dynamic/login_requiring/logout.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/logout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
 </div>
  
  

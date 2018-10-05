@@ -33,7 +33,7 @@ AMP에서 텍스트를 올바르게 표시하려면 페이지의 문자 집합�
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-모든 AMP 문서에는 해당 문서의 '표준' 버전을 참조하는 링크가 있어야 합니다.  이 가이드에 포함되어 있는 [페이지를 검색할 수 있도록 설정](/ko/docs/fundamentals/converting/discoverable.html) 단계에서 표준 페이지란 무엇이며 표준 연결에 사용할 수 있는 접근방식으로는 어떤 것이 있는지 자세히 알아보겠습니다.
+모든 AMP 문서에는 해당 문서의 '표준' 버전을 참조하는 링크가 있어야 합니다.  이 가이드에 포함되어 있는 [페이지를 검색할 수 있도록 설정]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}) 단계에서 표준 페이지란 무엇이며 표준 연결에 사용할 수 있는 접근방식으로는 어떤 것이 있는지 자세히 알아보겠습니다.
 
 이 가이드에서는 변환 중인 원본 HTML 문서를 표준 페이지로 간주합니다.
 
@@ -134,7 +134,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 {% endcall %}
 
 {% call callout('중요', type='caution') %}
-전체 AMP 문서에 대해 스타일 태그를 1개만 사용할 수 있습니다. AMP 페이지에서 참조하는 외부 스타일시트가 여러 개인 경우 이러한 스타일시트를 하나의 규칙 세트로 조합해야 합니다. AMP에서 어떤 CSS 규칙이 유효한지 알아보려면 [지원되는 CSS](/ko/docs/design/responsive/style_pages.html)를 확인하세요.
+전체 AMP 문서에 대해 스타일 태그를 1개만 사용할 수 있습니다. AMP 페이지에서 참조하는 외부 스타일시트가 여러 개인 경우 이러한 스타일시트를 하나의 규칙 세트로 조합해야 합니다. AMP에서 어떤 CSS 규칙이 유효한지 알아보려면 [지원되는 CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})를 확인하세요.
 {% endcall %}
 
 ## 타사 자바스크립트 제외
@@ -266,7 +266,7 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption='이미지가 반응합니다!') }}
 
 {% call callout('읽어보기', type='read') %}
-[AMP 레이아웃 사양](/ko/docs/design/amp-html-layout.html)에서 AMP 레이아웃 시스템에 관해 자세하게 알아보세요.
+[AMP 레이아웃 사양]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})에서 AMP 레이아웃 시스템에 관해 자세하게 알아보세요.
 {% endcall %}
 
 ## 성공입니다.
@@ -343,6 +343,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

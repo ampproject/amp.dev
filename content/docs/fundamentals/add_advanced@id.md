@@ -19,8 +19,8 @@ Dalam tutorial ini, Anda akan meningkatkan pemahaman tentang dasar-dasar AMP dan
 
 Halaman artikel berita yang sesuai dengan spesifikasi AMP dan menyertakan iklan, analisis, video tersemat, media sosial tersemat, carousel, dan menu navigasi situs.
 
-Catatan: Tutorial ini merupakan lanjutan dari konsep yang diperkenalkan dalam tutorial ["Mengonversi HTML menjadi AMP"](/id/docs/fundamentals/converting.html). Jika Anda belum memiliki pemahaman dasar tentang konsep inti AMP, cobalah tutorial ["Mengonversi HTML menjadi AMP"](/id/docs/fundamentals/converting.html).
+Catatan: Tutorial ini merupakan lanjutan dari konsep yang diperkenalkan dalam tutorial ["Mengonversi HTML menjadi AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}). Jika Anda belum memiliki pemahaman dasar tentang konsep inti AMP, cobalah tutorial ["Mengonversi HTML menjadi AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}).
 
 <div class="start-button">
-<a class="button" href="/id/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-next">Mulai</span></a>
+<a class="button" href="{{g.doc('/content/docs/fundamentals/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Mulai</span></a>
 </div>

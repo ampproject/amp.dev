@@ -1,12 +1,12 @@
 ---
-$title: Integrar AMP ao seu aplicativo 
+$title: Integrar AMP ao seu aplicativo
 ---
 
 Este guia é voltado a desenvolvedores de apps da Web e para dispositivos móveis que queiram integrar e vincular aplicativos a páginas AMP. Um exemplo disso seria um aplicativo de bate-papo para dispositivos móveis que carrega a versão AMP de um URL compartilhado para proporcionar uma experiência mais rápida aos usuários.
 
 [TOC]
 
-## Transformar links em AMP  
+## Transformar links em AMP
 
 Com as AMP, é possível renderizar sites externos quase instantaneamente no seu
 app nativo ou da Web para dispositivos móveis. Você pode fazer isso vinculando os URLs no seu conteúdo
@@ -59,24 +59,24 @@ Há três maneiras programáticas de transformar os links:
     AMP URL API do Google do cliente. Use essa abordagem caso a transformação do URL
     no servidor não seja possível (por exemplo, para aplicativos de mensagens que usam
     criptografia de ponta a ponta). Acione a transformação do URL assim que
-    o conteúdo estiver disponível, antes de qualquer interação com o usuário. 
+    o conteúdo estiver disponível, antes de qualquer interação com o usuário.
 
 {% call callout('Importante', type='caution') %}
 Nunca solicite URLs de AMP usando a AMP API do Google como resultado da interação
 com um usuário, porque isso compromete o desempenho do seu aplicativo devido à introdução
-de uma solicitação de rede adicional. Em vez disso, use uma das três abordagens 
+de uma solicitação de rede adicional. Em vez disso, use uma das três abordagens
 descritas acima.
 {% endcall %}
 
 
-#### AMP URL API do Google  
+#### AMP URL API do Google
 
 O Google fornece a AMP URL API para recuperar os URLs de HTML para AMP correspondentes para uma
 determinada lista de URLs ([documentação oficial](https://developers.google.com/amp/cache/use-amp-url) /
 [demonstração](https://ampbyexample.com/advanced/using_the_amp_url_api/)). Os URLs não
 precisam ser versões canônicas. Se houver uma versão AMP, a resposta
 incluirá o URL de AMP original e o URL da página AMP armazenada no cache
-de AMP do Google. 
+de AMP do Google.
 
 Por exemplo, para uma determinada lista de URLs:
 
@@ -120,7 +120,7 @@ retornado (ampURL).
 
 ## Usar caches de AMP
 
-Um [cache de AMP](/pt_br/docs/fundamentals/how_cached.html) é uma
+Um [cache de AMP]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}}) é uma
 rede de fornecimento de conteúdo (CDN, na sigla em inglês) baseada em proxy que tem a função de exibir documentos AMP válidos.
 Os caches de AMP servem para:
 
@@ -135,7 +135,7 @@ No momento, há dois provedores de cache de AMP:
 
 Assim, você tem duas opções para exibir um arquivo AMP em um aplicativo:
 
-1.  a versão hospedada pelo editor 
+1.  a versão hospedada pelo editor
 1.  a versão hospedada em um cache de AMP
 
 Recomendamos usar o cache de AMP pelos seguintes motivos:
@@ -169,7 +169,7 @@ de tempo de execução de AMP. Saiba mais sobre a API de visualizador de AMP no 
 e [para iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) estão
 disponíveis no [GitHub](https://github.com/ampproject/amp-viewer). Ainda não há
 um visualizador disponível para Android. Confira [esta resposta](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038) (em inglês)
-no Stack Overflow para saber qual a melhor configuração de um WebView para exibir páginas AMP. 
+no Stack Overflow para saber qual a melhor configuração de um WebView para exibir páginas AMP.
 
 Veja algumas práticas recomendadas gerais para implementar um visualizador de AMP:
 
@@ -192,4 +192,4 @@ versão de um documento apresentar ao usuário. Por isso, faz mais
 sentido compartilhar a versão canônica (e não a versão AMP) ao
 fazer o compartilhamento em outra plataforma para depois esperar que a plataforma de destino faça a
 escolha certa.
- 
+

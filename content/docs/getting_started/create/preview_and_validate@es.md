@@ -19,9 +19,9 @@ A continuación, asegúrate de que tu página AMP **sea válida**; de lo contrar
   1. Agrega “`#development=1`” a la URL; por ejemplo, `http://localhost:8000/released.amp.html#development=1`.
   1. Abre la [consola DevTools de Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) y busca errores de validación.
 
-Leer más: [Obtén más información acerca de la validación](/es/docs/fundamentals/validate.html) y de lo que debes hacer cuando encuentres errores.
+Leer más: [Obtén más información acerca de la validación]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) y de lo que debes hacer cuando encuentres errores.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/getting_started/create/prepare_for_discovery.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
 </div>

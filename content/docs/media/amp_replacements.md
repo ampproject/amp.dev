@@ -22,7 +22,7 @@ We provide equivalent components for the following reasons:
 * We need to control network requests to [lazy load and prioritize resources
 effectively](/learn/about-how/#prioritize-resource-loading)
 
-Caution: While they're not supported, they *will* render, but AMP won't [validate your pages](/docs/fundamentals/validate.html) and you won't get all the benefits AMP provides.
+Caution: While they're not supported, they *will* render, but AMP won't [validate your pages]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) and you won't get all the benefits AMP provides.
 
 ## Images
 
@@ -77,7 +77,7 @@ images. In its most basic form, all you have to do is to add `layout="responsive
 </amp-iframe>
 </div>
 
-Read on: Learn more about [advanced layout techniques](/docs/design/responsive/control_layout.html).
+Read on: Learn more about [advanced layout techniques]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
 
 ### Behavior and placeholders
 
@@ -85,7 +85,7 @@ The AMP HTML runtime can effectively manage image resources,
 choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
-Read on: Learn how to [provide fallbacks and placeholders for images](/docs/design/responsive/placeholders.html).
+Read on: Learn how to [provide fallbacks and placeholders for images]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 ## Animated images
 

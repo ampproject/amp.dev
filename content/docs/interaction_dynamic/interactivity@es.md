@@ -16,5 +16,5 @@ Construirá una página de producto de comercio electrónico que:
 
 
 <div class="prev-next-buttons">
-<a class="button" href="/es/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-next">Comenzar</span></a>
+<a class="button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/prereqs-setup.md', locale=doc.locale).url.path}}"><span class="arrow-next">Comenzar</span></a>
 </div>

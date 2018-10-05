@@ -1,12 +1,12 @@
 ---
-$title: 앱과 AMP 통합 
+$title: 앱과 AMP 통합
 ---
 
 이 가이드는 AMP 페이지를 통합하고 연결하려는 모바일 및 웹 앱 개발자를 위해 작성되었습니다. AMP 버전의 공유 URL을 로드하여 더 빠른 사용자 환경을 제공하는 모바일 채팅 앱을 예로 들어 보겠습니다.
 
 [TOC]
 
-## 링크를 AMP로 변환  
+## 링크를 AMP로 변환
 
 AMP를 사용하면 기본 앱 또는 모바일 웹 앱 내에서 외부 웹사이트를
 거의 즉각적으로 렌더링할 수 있습니다. 콘텐츠의 URL을 상응하는
@@ -59,24 +59,24 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
     Google AMP URL API를 통해 AMP URL을 가져옵니다. 서버측 URL 변환이 불가능한 경우(예:
     엔드 투 엔드 암호화를 사용하는 메시지 앱)에는
     이 접근법을 사용하세요. 콘텐츠가 제공되는 즉시 사용자 상호작용이 이루어지기 전에
-    URL 변환을 실행해야 합니다. 
+    URL 변환을 실행해야 합니다.
 
 {% call callout('중요', type='caution') %}
 사용자 상호작용의 결과로 Google AMP API를 통해 AMP URL을
 요청하지 마세요. 그러면 네트워크에 추가적인 요청이 발생하므로
-앱 성능이 저하됩니다. 대신에 위에서 설명한 세 가지 접근법 중 하나를 
+앱 성능이 저하됩니다. 대신에 위에서 설명한 세 가지 접근법 중 하나를
 사용하세요.
 {% endcall %}
 
 
-#### Google AMP URL API  
+#### Google AMP URL API
 
 Google에서 제공하는 AMP URL API를 사용하면
 주어진 URL 목록([공식 문서](https://developers.google.com/amp/cache/use-amp-url)/
 [데모](https://ampbyexample.com/advanced/using_the_amp_url_api/))과 일치하는 AMP HTML URL을 가져올 수 있습니다. 여기서 URL은
 표준 버전이 아니어도 됩니다. AMP 버전이 있는 경우 원래 AMP URL과
 Google AMP 캐시에 있는 캐시된 AMP 페이지 URL이 응답에
-포함됩니다. 
+포함됩니다.
 
 예를 들어, 아래와 같은 URL 목록이 주어질 경우:
 
@@ -120,7 +120,7 @@ Google이 아닌 타사 AMP 캐시에 있는 AMP 페이지의 URL은 AMP URL API
 
 ## AMP 캐시 사용
 
-[AMP 캐시](/ko/docs/fundamentals/how_cached.html)는
+[AMP 캐시]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}})는
 유효한 AMP 문서를 전송하기 위한 프록시 기반의 콘텐츠 전송 네트워크(CDN)입니다.
 AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
 
@@ -135,7 +135,7 @@ AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
 
 다음 두 가지 옵션 중 하나를 사용하여 앱에 AMP 파일을 표시할 수 있습니다.
 
-1.  게시자가 호스팅하는 버전 
+1.  게시자가 호스팅하는 버전
 1.  AMP 캐시에 호스팅되는 버전
 
 다음 이유로 인해 AMP 캐시를 사용하는 것이 좋습니다.
@@ -169,7 +169,7 @@ AMP 문서 사전 렌더링, 스와이프하여 기사 간 이동, AMP 런타임
 및 [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios)용 뷰어 구현 방식은
 [GitHub](https://github.com/ampproject/amp-viewer)에서 확인할 수 있습니다. Android용
 뷰어는 아직 제공되지 않습니다. Stack Overflow에 게시된 [이 답변](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038)에서
-AMP 페이지를 표시하기 위한 WebView를 설정하는 가장 좋은 방법을 참조하세요. 
+AMP 페이지를 표시하기 위한 WebView를 설정하는 가장 좋은 방법을 참조하세요.
 
 다음은 AMP 뷰어를 구현할 때 일반적으로 권장되는 사항입니다.
 
@@ -192,4 +192,4 @@ AMP 프로젝트의 철학입니다. 따라서
 다른 플랫폼과 공유할 때는 AMP 버전이 아닌 표준 버전을
 공유한 다음 대상 플랫폼에서 적절한 형식을 선택하게 하는 것이
 가장 좋습니다.
- 
+

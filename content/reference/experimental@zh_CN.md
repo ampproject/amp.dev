@@ -32,7 +32,7 @@ AMP 开发者版**可能不太稳定，** 而且可能包含尚未面向所有�
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-包含实验性功能的所有 AMP 文件均无法成功通过 
-[AMP 验证](/zh_cn/docs/fundamentals/validate.html)。
+包含实验性功能的所有 AMP 文件均无法成功通过
+[AMP 验证]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})。
 对于可直接在生产环境中使用的 AMP 文档，请移除此类实验性组件。
 

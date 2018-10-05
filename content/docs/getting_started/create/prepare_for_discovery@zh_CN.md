@@ -29,6 +29,6 @@ $title: 准备页面以供发现和分发
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">以前</span></a>
-  <a class="button next-button" href="/zh_cn/docs/getting_started/create/publish.html"><span class="arrow-next">下一个</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">以前</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一个</span></a>
 </div>

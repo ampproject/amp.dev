@@ -16,6 +16,6 @@ $title: 创建互动式 AMP 网页
 
 
 <div class="prev-next-buttons">
-<a class="button" href="/zh_cn/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-next">开始</span></a>
+<a class="button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/prereqs-setup.md', locale=doc.locale).url.path}}"><span class="arrow-next">开始</span></a>
 </div>
 

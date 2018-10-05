@@ -148,7 +148,7 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 편집기에서 [bookend
 스토리가 거의 완성되었습니다.  콘텐츠를 게시하기 전에 AMP HTML이 유효한지 확인하세요.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/getting_started/visual_story/validation.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>
  
