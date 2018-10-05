@@ -15,7 +15,7 @@ Neste tutorial, veremos o componente [amp-story](/pt_br/docs/reference/component
 - aplicar animações a elementos da página;
 - manter os leitores engajados com seu conteúdo por meio de links relacionados ao final da história.
 
-{% call callout('Observação', type='note') %} O componente [amp-story](/pt_br/docs/reference/components/amp-story.html) é **experimental**. Se você quiser se inscrever no teste para publicar páginas com esse componente, acesse <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>. {% endcall %}
+{% call callout('Observação', type='note') %} O componente [amp-story](/pt_br/docs/reference/components/amp-story.html) é **experimental**. {% endcall %}
 
 
 <div class="start-button">

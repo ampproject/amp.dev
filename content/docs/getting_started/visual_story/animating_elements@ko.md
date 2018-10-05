@@ -272,7 +272,7 @@ Pets can lower your stress levels!</p>
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
 이제 여러개의 효과를 섞거나 잇는 등 다양한 방법으로 애니메이션을 만들수 있게
-되었습니다. 본 자습서는 기본적인 것만 다루어봤는데,
+되었습니다. 본 튜토리얼에서는 기본적인 것만 다루어봤는데,
 [AMP 스토리 레퍼런스 문서](/ko/docs/reference/components/amp-story.html#animations)에
 더 자세한 내용이 있으니 참고하십시오.
 

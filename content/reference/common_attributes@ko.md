@@ -22,6 +22,7 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 
 자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
 
+
 ## heights
 
 `responsive` 레이아웃을 지원하는 모든 AMP 요소는 `heights` 속성도 지원합니다. 이 속성의 값은 미디어 표현에 따른 크기 표현이며, [`img` 태그의 sizes 속성](https://developer.mozilla.org/ko-KR/docs/Web/HTML/Element/img)과 비슷하지만 2가지 중요한 차이점이 있습니다.
@@ -123,7 +124,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 ## placeholder
 
-`placeholder` 속성은 이 속성으로 표시된 요소가 상위 AMP 요소의 자리표시자 역할을 한다는 것을 나타냅니다. 이 속성은 placeholder를 지원하는 AMP 요소의 직접 하위 요소인 모든 HTML 요소에 배치할 수 있습니다. 기본적으로 AMP 요소의 리소스가 다운로드되거나 초기화되지 않은 경우에도 AMP 요소의 자리표시자가 즉시 표시됩니다. 준비가 완료되면 AMP 요소는 일반적으로 자리표시자를 숨기고 콘텐츠를 표시합니다. placeholder 속성과 관련된 정확한 작동은 요소의 구현에 따라 달라집니다.
+`placeholder` 속성은 이 속성으로 표시된 요소가 상위 AMP 요소의 플레이스홀더 역할을 한다는 것을 나타냅니다. 이 속성은 placeholder를 지원하는 AMP 요소의 직접 하위 요소인 모든 HTML 요소에 배치할 수 있습니다. 기본적으로 AMP 요소의 리소스가 다운로드되거나 초기화되지 않은 경우에도 AMP 요소의 플레이스홀더가 즉시 표시됩니다. 준비가 완료되면 AMP 요소는 일반적으로 플레이스홀더를 숨기고 콘텐츠를 표시합니다. placeholder 속성과 관련된 정확한 작동은 요소의 구현에 따라 달라집니다.
 
 일반적으로 함께 사용되는 항목: 이미지, 애니메이션, 동영상, 광고
 
@@ -136,6 +137,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 [/sourcecode]
 
 자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
+
 
 ## sizes
 

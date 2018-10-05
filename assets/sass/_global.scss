@@ -315,3 +315,9 @@ amp-youtube, amp-vimeo {
 /* Styles used on all pages */
 @import '_consent.scss';
 
+/* Styles for Locale */
+:lang(ko) {
+  body {
+    font-weight: 400;
+  }
+}
