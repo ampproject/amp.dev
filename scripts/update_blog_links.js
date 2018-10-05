@@ -75,6 +75,10 @@ function writeBlogPage(item, directory, parent) {
 
     request(item.origin, function (error, response, body) {
 
+      if (error) {
+        return reject('error', new Error('Unknown HTTP error trying to import blog'));
+      }
+
       // collect possible inline styles
       var inlineStyles = body.match(/\/\* Inline styles \*\/([^\<]+)/);
       inlineStyles = inlineStyles ? inlineStyles[1].trim() : false;
