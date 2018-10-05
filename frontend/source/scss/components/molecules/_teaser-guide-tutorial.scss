@@ -1,0 +1,52 @@
+/*
+
+########################################
+### ORGANISM: teaser guide & tuorial ###
+########################################
+
+### INFO:
+
+*/
+
+.#{molecule('teaser-guide-tutorial')} {
+	&.#{molecule('teaser')} {
+		@include teaser;
+
+		& > a {
+			@include teaser-linking;
+		}
+	}
+
+	.#{molecule('teaser')} {
+		&-tags {
+			font-size: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 1;
+		}
+
+		&-card {
+			@include teaser-card;
+			border-radius: 0;
+		}
+
+		&-content {
+			@include teaser-content;
+			padding: 2.25em 1.25em;
+		}
+
+		&-image {
+			@include teaser-image;
+		}
+
+		&-headline {
+			@include teaser-headline;
+			margin-bottom: 0.65em;
+		}
+
+		&-copy {
+			@include teaser-copy;
+		}
+	}
+}

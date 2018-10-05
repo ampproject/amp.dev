@@ -1,0 +1,115 @@
+/*
+
+########################
+### MOLECULE: teaser ###
+########################
+
+### INFO:
+
+The teaser molecule is a collection of mixins that could be included in specific
+teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
+
+*/
+
+@mixin teaser {
+	position: relative;
+	margin-bottom: 2em;
+}
+
+@mixin teaser-linking {
+	position: relative;
+	display: block;
+}
+
+@mixin teaser-tag {
+	position: absolute;
+	right: 16px;
+	top: -15px;
+	z-index: 1;
+}
+
+@mixin teaser-card {
+	overflow: hidden;
+	position: relative;
+	background-color: white;
+	border-radius: 10px;
+	@include box-shadow;
+}
+
+@mixin teaser-header {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	padding: 0 1.25em;
+	@include river-ebony;
+}
+
+@mixin teaser-header-title {
+	@include txt;
+	@include txt-hl;
+	@include txt-1;
+	@include txt-strong;
+	@include txt-light;
+	@include hl-mono;
+	margin: 0;
+}
+
+@mixin teaser-header-icon {
+	@include ico-3;
+	@include ico-white;
+}
+
+@mixin teaser-content {
+	padding: 1.5em 1.25em;
+}
+
+@mixin teaser-image {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: -1px;
+		bottom: 0;
+		width: calc(100% + 2px);
+		height: 150px;
+		background: linear-gradient(0deg, rgba(0,0,0,0.12), rgba(0,0,0,0));
+		z-index: 1;
+	}
+}
+
+@mixin teaser-kpi {
+	box-shadow: none;
+}
+
+@mixin teaser-kpi-e-mails {
+	@include gradient-e-mails;
+}
+
+@mixin teaser-kpi-ads {
+	@include gradient-ads;
+}
+
+@mixin teaser-kpi-stories {
+	@include gradient-stories;
+}
+
+@mixin teaser-kpi-websites {
+	@include gradient-websites;
+}
+
+@mixin teaser-headline {
+	@include txt;
+	@include txt-hl;
+	@include txt-1;
+	@include txt-strong;
+	@include txt-font-accent;
+	@include txt-black;
+	margin: 0;
+}
+
+@mixin teaser-copy {
+	@include txt;
+	@include txt-accent-2;
+	margin: 0;
+}

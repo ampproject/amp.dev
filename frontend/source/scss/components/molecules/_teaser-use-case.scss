@@ -1,0 +1,55 @@
+/*
+
+#################################
+### ORGANISM: teaser use case ###
+#################################
+
+### INFO:
+
+*/
+@import './_teaser.scss';
+
+.#{molecule('teaser-use-case')} {
+	&.#{molecule('teaser')} {
+		@include teaser;
+
+		&:nth-child(1),
+		&:nth-child(4) {
+			padding-top: 40px;
+		}
+
+		&:nth-child(2) {
+			padding-top: 80px;
+		}
+
+		&:nth-child(3) {
+			padding-top: 0;
+		}
+
+		& > a {
+			@include teaser-linking;
+		}
+	}
+
+	.#{molecule('teaser')} {
+		&-tag {
+			@include teaser-tag;
+		}
+
+		&-card {
+			@include teaser-card;
+		}
+
+		&-content {
+			@include teaser-content;
+		}
+
+		&-image {
+			@include teaser-image;
+		}
+
+		&-headline {
+			@include teaser-headline;
+		}
+	}
+}
