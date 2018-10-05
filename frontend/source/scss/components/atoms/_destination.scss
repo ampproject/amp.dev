@@ -41,3 +41,7 @@ A simple element that sets a background gradient depending on the destionation t
 @mixin destination-home {
 	background: linear-gradient(-220deg, color('azure-radiance'),color('robins-egg'));
 }
+
+@mixin destination-overview {
+	background: color('white');
+}
