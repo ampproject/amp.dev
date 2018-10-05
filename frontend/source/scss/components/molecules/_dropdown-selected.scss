@@ -28,7 +28,8 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	height: 32px;
 	width: 250px;
 	overflow: hidden;
-	position: absolute;
+  position: absolute;
+  box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
 
 	@media screen and (min-width: 768px){
     width: 324px;
@@ -36,7 +37,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 
 	&:hover {
-		height: 185px;
+		height: 230px;
 		transition: height 0.5s ease;
 		background: transparent;
 
@@ -110,7 +111,11 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	display: none;
 	padding: 0;
 	list-style: none;
-	margin: 0;
+  margin: 0;
+  
+   li {
+     order: 2;
+  }
 
 	&-display {
 		display: flex;
@@ -163,10 +168,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	order: 1;
 	background-clip: text;
   -webkit-background-clip: text;
-
-  a {
-  	color: transparent;
-  }
+  outline: 1px solid #fff;
 }
 
 .websites {
@@ -200,5 +202,13 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   &-background {
 	  @include destination-email;
   }
+}
+
+.Overview {
+  @include txt-overview;
+
+	&-background {
+		@include destination-overview;
+	}
 }
 

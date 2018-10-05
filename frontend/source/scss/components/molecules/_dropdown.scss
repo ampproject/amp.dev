@@ -34,7 +34,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	height: 32px;
 	width: 250px;
 	overflow: hidden;
-	position: absolute;
+  position: absolute;
 
 	@media screen and (min-width: 768px){
     width: 324px;
@@ -56,10 +56,14 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 
 	&:hover {
-		height: 185px;
-		transition: height 0.5s ease;
+    height: 143px;
+    transition: height 0.5s ease;
 		background: transparent;
 		animation: none;
+
+    @media screen and (min-width: 768px) {
+		  height: 183px;
+    }
 
 		.ad-a-ico {
 			transform: rotate(180deg);
@@ -129,7 +133,12 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	@include hl-light;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
-	order: 2;
+  order: 2;
+
+  [option][selected] {
+    order: 1;
+    outline: 1px solid #fff;
+  }
 
 
 	&-drop-down {
@@ -182,7 +191,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 
 .websites {
-
+  order: 1;
   @include txt-light;
 
   &-background {
@@ -190,15 +199,8 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   }
 }
 
-.stories {
-  @include txt-stories;
-
-  &-background {
-	  @include destination-stories;
-  }
-}
-
 .ads {
+  order: 2;
   @include txt-ads;
 
   &-background {
@@ -206,7 +208,17 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   }
 }
 
+.stories {
+  order: 3;
+  @include txt-stories;
+
+  &-background {
+	  @include destination-stories;
+  }
+}
+
 .emails {
+  order: 4;
   @include txt-email;
 
   &-background {
