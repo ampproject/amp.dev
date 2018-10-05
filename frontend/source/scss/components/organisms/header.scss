@@ -84,6 +84,12 @@
 
     &-subnav {
       display: block;
+
+      &-selected {
+        .ad-m-lnk {
+          color: color('blue-ribbon');
+        }
+      }
     }
   }
 
