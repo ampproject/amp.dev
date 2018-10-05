@@ -38,12 +38,11 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 	height: 90vh;
 	width: 100vw;
 	position: relative;
-	margin-top: 137px;
 
 	@media screen and (min-width: 768px) {
 		height: 0%;
 		width: 100%;
-		padding-top: 29.29%;
+		padding-top: 45%;
 	}
 
 	&-active {
@@ -53,12 +52,12 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 	&-content {
 		position: absolute;
 		bottom: 0;
-		padding: 0 0 30% 5%;
+		padding: 0 0 5% 5%;
 		max-width: 50%;
 
 		@media screen and (min-width: 768px){
 			top: 0;
-			padding: 5% 0 0 5%;
+			padding: 15% 0 0 5%;
 		}
 }
 

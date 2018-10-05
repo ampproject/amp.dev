@@ -32,20 +32,18 @@ The destination-rolling-stage organism contains the rolling switch molecule alon
 .destination-stage {
 	height: 90vh;
   width: 100vw;
-  margin-top: 137px;
 	position: relative;
 
 	@media screen and (min-width: 768px) {
 		height: 0%;
 		width: 100%;
-    padding-top: 29.29%;
-    margin-top: 137px;
+    padding-top: 45%;
 	}
 
 	&-content {
 		position: absolute;
 		top: 0;
-		padding: 5% 0 0 5%;
+		padding: 20% 0 0 5%;
 		max-width: 50%;
 	}
 }

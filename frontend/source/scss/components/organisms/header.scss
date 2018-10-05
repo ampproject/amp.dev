@@ -42,6 +42,7 @@
     }
 
     &-mobile {
+      margin: 0;
       display: block;
 
       @media screen and (min-width: 768px) {
@@ -54,10 +55,7 @@
     }
 
     &-lang {
-      margin-left: auto;
-      position: absolute;
       bottom: 0;
-      padding-bottom: 50px;
 
       @media screen and (min-width: 768px) {
         position: relative;
@@ -87,9 +85,18 @@
 
       &-selected {
         .ad-m-lnk {
+          margin-bottom: 0;
+          padding-bottom: 5px;
           color: color('blue-ribbon');
         }
       }
+    }
+
+    &-divider {
+      height: 2px;
+      width: 100%;
+      background-color: color('blue-ribbon');
+      margin-bottom: 18px;
     }
   }
 
@@ -173,6 +180,7 @@
   &-list-mobile {
     height: 0;
     margin: 0;
+    padding: 2em 0 0 2em;
     overflow: hidden;
     list-style: none;
     transition: height 0.2s ease-in-out;
