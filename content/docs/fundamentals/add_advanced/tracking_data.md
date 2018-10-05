@@ -94,7 +94,7 @@ If you have a custom tracking platform that you want to integrate with, you can 
 
 Note: `“UA-YYYY-Y”` is an example Google Analytics account; it should be replaced with your own website’s Google Analytics tracking code if you are using this example on your site.
 
-Tip: If you are interested in a simpler tracking system, you might want to take a look at [amp-pixel](/docs/reference/components/amp-pixel.html). If you only need to track pageviews, amp-pixel it is a lighter-weight solution than amp-analytics because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](/docs/analytics/analytics_basics.html).
+Tip: If you are interested in a simpler tracking system, you might want to take a look at [amp-pixel](/docs/reference/components/amp-pixel.html). If you only need to track pageviews, amp-pixel it is a lighter-weight solution than amp-analytics because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}}).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>

@@ -8,7 +8,7 @@ En esta guía se exponen los pasos que se deben seguir para integrar redes publi
 
 ## Descripción general
 
-Como servidor de anuncios, puedes integrar AMP para publicar anuncios HTML tradicionales en páginas AMP, así como publicar anuncios [AMP HTML](/es/docs/ads/amphtml_ads.html).
+Como servidor de anuncios, puedes integrar AMP para publicar anuncios HTML tradicionales en páginas AMP, así como publicar anuncios [AMP HTML]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}).
 
 ##### ¿Quieres publicar anuncios HTML tradicionales?
 
@@ -62,6 +62,6 @@ Para obtener más información sobre cómo crear una integración Fast Fetch, co
 ## Recursos relacionados
 
 *   [Directorio GitHub de todas las extensiones amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [Lista de los proveedores de anuncios compatibles](es/docs/ads/ads_vendors.html)
+*   [Lista de los proveedores de anuncios compatibles](es{{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
 *   [Entrada de blog que describe el lanzamiento de Fast Fetch](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)
  

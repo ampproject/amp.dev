@@ -41,6 +41,6 @@ Important: Make sure the URL serves from `localhost` otherwise the AMP story mig
 Click through the completed story and get a sense of what we'll be creating.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/getting_started/visual_story.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

@@ -42,7 +42,7 @@ URL이 `localhost`에서 제공되는지 확인하세요. 그렇지 않으면 AM
 완성된 스토리를 클릭해 보면서 어떤 스토리를 만들게 될지 파악해 보세요.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/getting_started/visual_story.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>
 

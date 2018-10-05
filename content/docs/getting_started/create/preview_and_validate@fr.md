@@ -17,6 +17,6 @@ Ensuite, vérifiez que votre page AMP **est une page AMP valide**. Dans le cas c
 [En savoir plus sur la validation]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) et la procédure à suivre en cas d'erreurs.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/fr/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">Précédent</span></a>
-  <a class="button next-button" href="/fr/docs/getting_started/create/prepare_for_discovery.html"><span class="arrow-next">Prochain</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Précédent</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">Prochain</span></a>
 </div>

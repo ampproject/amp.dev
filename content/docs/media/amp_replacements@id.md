@@ -66,13 +66,13 @@ Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan t
 </amp-iframe>
 </div>
 
-Baca juga: Pelajari lebih lanjut tentang [teknik tata letak lanjutan](/id/docs/design/responsive/control_layout.html).
+Baca juga: Pelajari lebih lanjut tentang [teknik tata letak lanjutan]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
 
 ### Perilaku dan placeholder
 
 Waktu proses HTML AMP dapat mengelola konten gambar secara efektif, dengan memilih antara pemuatan konten yang diprioritaskan atau yang mengalami penundaan berdasarkan pada posisi viewport, sumber daya sistem, bandwidth koneksi, atau faktor lainnya.
 
-Baca juga: Pelajari cara [memberikan penggantian dan placeholder untuk gambar](/id/docs/design/responsive/placeholders.html).
+Baca juga: Pelajari cara [memberikan penggantian dan placeholder untuk gambar]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 ## Gambar animasi
 

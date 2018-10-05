@@ -619,8 +619,8 @@ Daftar lengkap tag unik yang diketahui:
 
 Sebelum mendalami kesalahan gaya dan tata letak,
 Anda perlu memahami cara kerja
-[pemberian gaya](/id/docs/design/responsive/style_pages.html) dan
-[tata letak](/id/docs/design/responsive/control_layout.html) di AMP.
+[pemberian gaya]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}) dan
+[tata letak]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) di AMP.
 Karena laman AMP adalah laman HTML, pemberian gaya kurang lebih sama seperti pada laman HTML.
 Tetapi ada beberapa pembatasan untuk memastikan laman dimuat dengan cepat,
 dan validator AMP memberlakukan pembatasan ini.
@@ -734,7 +734,7 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui lebih banyak tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak](/id/docs/design/responsive/control_layout.html) dan
+lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) dan
 [Spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 **Catatan:** Jika tata letak tidak ditentukan,
@@ -792,7 +792,7 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui lebih banyak tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak](/id/docs/design/responsive/control_layout.html) dan
+lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) dan
 [Spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
 
 ### Atribut tidak diizinkan oleh tata letak tertentu
@@ -838,7 +838,7 @@ Atribut terlarang untuk jenis tata letak dijelaskan di
 Kesalahan ini terjadi jika nilai atribut tata letak tertentu tidak valid.
 Untuk memahami hal yang memicu kesalahan ini,
 Anda perlu membiasakan diri dengan
-[perilaku tata letak yang berbeda](/id/docs/design/responsive/control_layout.html).
+[perilaku tata letak yang berbeda]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
 
 Anggap tata letak ditetapkan ke `fixed-height` dan
 Anda menyertakan nilai numerik `height` dan `width`.
@@ -882,7 +882,7 @@ dirancang khusus untuk menyertakan template, misalnya,
 Diperbolehkan menyertakan template di file sumber,
 selama keluaran yang dihasilkan file tersebut tidak berisi template
 (lihat juga
-[Menggunakan prapemrosesan CSS](/id/docs/design/responsive/style_pages.html)).
+[Menggunakan prapemrosesan CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})).
 
 ### Atribut berisi sintaksis template
 

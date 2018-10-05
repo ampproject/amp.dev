@@ -56,7 +56,7 @@ AMP は、サードパーティが提供するさまざまなパブリッシン�
 
 AMP ページや AMP 広告をゼロから作成する場合は、次の関連資料をご確認ください。
 
-*   [チュートリアル: 初めての AMP ページを作成する](/ja/docs/getting_started/create.html)
+*   [チュートリアル: 初めての AMP ページを作成する]({{g.doc('/content/docs/getting_started/create.md', locale=doc.locale).url.path}})
 *   [チュートリアル: 高度な AMP 機能を追加する]({{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}})
 *   [AMP HTML の仕様](/ja/docs/fundamentals/spec.html#the-amp-html-format): ボイラープレート、必須のマークアップ、使用できる HTML など
 *   [AMP HTML 広告のフォーマット](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): AMP で効果的な広告を作成する方法の詳細

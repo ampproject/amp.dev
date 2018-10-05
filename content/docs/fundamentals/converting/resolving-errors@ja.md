@@ -134,7 +134,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 {% endcall %}
 
 {% call callout('重要', type='caution') %}
-AMP ドキュメント全体で style タグは 1 つだけ指定できます。AMP ページで複数の外部スタイルシートを参照している場合は、これらのスタイルシートを 1 セットのルールにまとめる必要があります。AMP で有効な CSS ルールについて詳しくは、[サポートされる CSS](/ja/docs/design/responsive/style_pages.html) をご覧ください。
+AMP ドキュメント全体で style タグは 1 つだけ指定できます。AMP ページで複数の外部スタイルシートを参照している場合は、これらのスタイルシートを 1 セットのルールにまとめる必要があります。AMP で有効な CSS ルールについて詳しくは、[サポートされる CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}) をご覧ください。
 {% endcall %}
 
 ## サードパーティの JavaScript を除外する
@@ -266,7 +266,7 @@ AMP では、指定された幅と高さから要素のアスペクト比を算�
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="画像がレスポンシブになった") }}
 
 {% call callout('詳細情報', type='read') %}
-AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様](/ja/docs/design/amp-html-layout.html)をご覧ください。
+AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})をご覧ください。
 {% endcall %}
 
 ## 完了

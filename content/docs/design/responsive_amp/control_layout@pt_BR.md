@@ -8,7 +8,7 @@ A AMP é compatível com**consultas de mídia**  e**consultas de elementos** e t
 
 ## Imagens responsivas mais fáceis
 
-Crie imagens responsivas especificando `width` e `height`, definindo o layout para `responsive` e indicando com [`srcset`](/pt/docs/design/responsive/art_direction.html) qual recurso de imagem usar com base em diferentes tamanhos de tela:
+Crie imagens responsivas especificando `width` e `height`, definindo o layout para `responsive` e indicando com [`srcset`]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) qual recurso de imagem usar com base em diferentes tamanhos de tela:
 
 [sourcecode:html]
 <amp-img

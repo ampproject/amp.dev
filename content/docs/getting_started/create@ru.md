@@ -7,5 +7,5 @@ $title: Создание первой страницы AMP
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/ru/docs/getting_started/create/basic_markup.html"><span class="arrow-next">Начало работы</span></a>
+<a class="button" href="{{g.doc('/content/docs/getting_started/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-next">Начало работы</span></a>
 </div>

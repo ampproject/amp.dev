@@ -277,6 +277,6 @@ Pets can lower your stress levels!</p>
 더 자세한 내용이 있으니 참고하십시오.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/getting_started/visual_story/create_bookend.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

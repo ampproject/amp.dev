@@ -766,7 +766,7 @@ Por ejemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` 
 
 Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [amp-mustache](/es/docs/reference/components/amp-mustache.html).
 
-Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS](/es/docs/design/responsive/style_pages.html)).
+Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})).
 
 ### El atributo contiene sintaxis de la plantilla
 

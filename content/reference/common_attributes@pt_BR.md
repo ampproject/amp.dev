@@ -20,7 +20,7 @@ Por exemplo:
 </amp-anim>
 [/sourcecode]
 
-Para saber mais, consulte [Marcadores e substitutos](/pt_br/docs/design/responsive/placeholders.html).
+Para saber mais, consulte [Marcadores e substitutos]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 ## alturas
 
@@ -41,7 +41,7 @@ Por exemplo:
 </amp-img>
 [/sourcecode]
 
-Para saber mais, consulte [Imagens responsivas com os atributos "srcset", "sizes" e "heights"](/pt_br/docs/design/responsive/art_direction.html).
+Para saber mais, consulte [Imagens responsivas com os atributos "srcset", "sizes" e "heights"]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
 
 ## layout
 
@@ -58,7 +58,7 @@ Por exemplo:
 </amp-img>
 [/sourcecode]
 
-Para saber mais, consulte [Consultas de mídia e layout](/pt_br/docs/design/responsive/control_layout.html) e a [Especificação de layout](/pt_br/docs/design/amp-html-layout.html).
+Para saber mais, consulte [Consultas de mídia e layout]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) e a [Especificação de layout]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## mídia
 
@@ -119,7 +119,7 @@ Por exemplo:
 </amp-lightbox>
 [/sourcecode]
 
-Para saber mais, consulte [Ações e eventos em AMP](/pt_br/docs/interaction_dynamic/amp-actions-and-events.html).
+Para saber mais, consulte [Ações e eventos em AMP]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 
 ## marcador
 
@@ -135,7 +135,7 @@ Por exemplo:
 </amp-anim>
 [/sourcecode]
 
-Para saber mais, consulte [Marcadores e substitutos](/pt_br/docs/design/responsive/placeholders.html).
+Para saber mais, consulte [Marcadores e substitutos]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 ## tamanhos
 
@@ -151,7 +151,7 @@ Por exemplo:
 </amp-img>
 [/sourcecode]
 
-Para saber mais, consulte [Imagens responsivas com os atributos "srcset", "sizes" e "heights"](/pt_br/docs/design/responsive/art_direction.html).
+Para saber mais, consulte [Imagens responsivas com os atributos "srcset", "sizes" e "heights"]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
 
 ## largura e altura
 
@@ -167,4 +167,4 @@ Por exemplo:
 </amp-anim>
 [/sourcecode]
 
-Para saber mais, consulte [Consultas de mídia e layout](/pt_br/docs/design/responsive/control_layout.html) e a [Especificação de layout](/pt_br/docs/design/amp-html-layout.html).
+Para saber mais, consulte [Consultas de mídia e layout]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) e a [Especificação de layout]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).

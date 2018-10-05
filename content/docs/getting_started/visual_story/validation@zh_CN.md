@@ -21,7 +21,7 @@ AMP validation successful.
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/getting_started/visual_story/create_bookend.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/getting_started/visual_story/congratulations.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
 

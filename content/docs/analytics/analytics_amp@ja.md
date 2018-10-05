@@ -47,6 +47,6 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 
 
 {% call callout('詳細', type='read') %}
-アナリティクスのさらに詳しい内容については、[アナリティクス: 基本](/ja/docs/analytics/analytics_basics.html)をご覧ください。
+アナリティクスのさらに詳しい内容については、[アナリティクス: 基本]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}})をご覧ください。
 {% endcall %}
 

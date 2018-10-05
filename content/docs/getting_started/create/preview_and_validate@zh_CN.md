@@ -17,6 +17,6 @@ $title: 预览和验证
 [详细了解验证]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})，以及在出现错误时要执行的操作。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">以前</span></a>
-  <a class="button next-button" href="/zh_cn/docs/getting_started/create/prepare_for_discovery.html"><span class="arrow-next">下一个</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">以前</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一个</span></a>
 </div>

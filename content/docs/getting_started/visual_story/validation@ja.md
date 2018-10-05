@@ -21,7 +21,7 @@ AMP の検証に成功しました。
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/getting_started/visual_story/create_bookend.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/getting_started/visual_story/congratulations.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>
 

@@ -36,7 +36,7 @@ comment support with [`amp-form`](/docs/reference/components/amp-form.html).
 
 - **Aim for ad types that offer a good reader experience.** Explore AMP ad
 formats such as [`amp-sticky-ad`](/docs/reference/components/amp-sticky-ad.html) and [`amp-fx-flying-carpet`](/docs/reference/components/amp-fx-flying-carpet.html). Follow ads
-monetization [best practices](/docs/ads/monetization.html).
+monetization [best practices]({{g.doc('/content/docs/ads/monetization.md', locale=doc.locale).url.path}}).
 
 - **Drive app downloads.** Include an app install link in a banner with
 [`amp-app-banner`](/docs/reference/components/amp-app-banner.html).

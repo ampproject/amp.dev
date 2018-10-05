@@ -21,7 +21,7 @@ Validasi AMP berhasil.
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/getting_started/visual_story/create_bookend.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/getting_started/visual_story/congratulations.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
 

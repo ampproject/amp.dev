@@ -93,7 +93,7 @@ AMP でこの機能を再現するには、まず、対象ドキュメントの 
 
 注: `“UA-YYYY-Y”` は Google アナリティクス アカウントの例です。このサンプルをご自身のサイトで使用する場合は、実際のウェブサイトの Google アナリティクス トラッキング コードに置き換える必要があります。
 
-ヒント: より単純なトラッキング システムについては、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) の記事を参照してください。amp-pixel は従来のピクセル トラッキングの要件を満たすことのみを目的としているため、ページビューのトラッキングのみが必要な場合は、amp-pixel の方が amp-analytics よりも軽量なソリューションです。詳しくは、[アナリティクス: 基本ガイド](/ja/docs/analytics/analytics_basics.html)をご覧ください。
+ヒント: より単純なトラッキング システムについては、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) の記事を参照してください。amp-pixel は従来のピクセル トラッキングの要件を満たすことのみを目的としているため、ページビューのトラッキングのみが必要な場合は、amp-pixel の方が amp-analytics よりも軽量なソリューションです。詳しくは、[アナリティクス: 基本ガイド]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}})をご覧ください。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>

@@ -131,7 +131,7 @@ Mais uma vez, **atualize** a página e verifique se o erro das folhas de estilo 
 
 Observação: O estilo in-line é obrigatório. Além disso, há um limite de tamanho de arquivo de 50 kilobytes para todas as informações de estilo. Use pré-processadores de CSS, como o [SASS](http://sass-lang.com/) (em inglês), para reduzir o CSS antes de realizar a inserção in-line dele nas páginas AMP.
 
-Importante: É possível ter somente uma tag de estilo em todo o documento AMP. Se várias folhas de estilo externas forem referenciadas pelas páginas AMP, será necessário agrupá-las em um único conjunto de regras. Para saber quais regras de CSS são válidas na AMP, leia [CSS compatível](/pt_br/docs/design/responsive/style_pages.html).
+Importante: É possível ter somente uma tag de estilo em todo o documento AMP. Se várias folhas de estilo externas forem referenciadas pelas páginas AMP, será necessário agrupá-las em um único conjunto de regras. Para saber quais regras de CSS são válidas na AMP, leia [CSS compatível]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}).
 
 ## Excluir JavaScript de terceiros
 
@@ -261,7 +261,7 @@ Pronto! A imagem está na proporção correta e preenche responsivamente a largu
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Agora a imagem é responsiva!") }}
 
-Leia mais: Saiba mais sobre o sistema de layout AMP na [especificação de layout AMP](/pt_br/docs/design/amp-html-layout.html).
+Leia mais: Saiba mais sobre o sistema de layout AMP na [especificação de layout AMP]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## Pronto!
 

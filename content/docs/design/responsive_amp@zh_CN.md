@@ -5,8 +5,8 @@ $title: 样式和布局
 
 AMP HTML 网页的样式和布局与普通的 HTML 网页非常类似，均采用 CSS。
 
- 不过，出于性能和易用性方面的考虑，AMP 限制在某些情况下使用 CSS，但扩展了一些自适应设计功能（例如 [占位符和备用行为](/zh_cn/docs/design/responsive/placeholders.html)
-、 [通过 srcset 实现的高级艺术指导](/zh_cn/docs/design/responsive/art_direction.html)以及 [layout 属性](/zh_cn/docs/design/responsive/control_layout.html) 等功能），以更好地控制您元素的显示方式。
+ 不过，出于性能和易用性方面的考虑，AMP 限制在某些情况下使用 CSS，但扩展了一些自适应设计功能（例如 [占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})
+、 [通过 srcset 实现的高级艺术指导]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})以及 [layout 属性]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) 等功能），以更好地控制您元素的显示方式。
 
 提示: 在 AMP 中制作自适应元素非常简单：只需在其中添加 `layout="responsive"` 即可。要详细了解 AMP 中的自适应设计，请转到[制作自适应 AMP 网页](/zh_cn/docs/design/responsive/responsive_design)。
 
@@ -56,7 +56,7 @@ layout="responsive">
 </body>
 [/sourcecode]
 
-重要提示: 检查 AMP 是否支持您的样式；出于性能方面的考虑，AMP 不支持某些样式（另请参阅[支持的 CSS](/zh_cn/docs/design/responsive/style_pages.html)）。
+重要提示: 检查 AMP 是否支持您的样式；出于性能方面的考虑，AMP 不支持某些样式（另请参阅[支持的 CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})）。
 
 ## 将布局样式设为自适应
 
@@ -64,19 +64,19 @@ layout="responsive">
 
 将布局设置为自适应。这样一来，元素的宽度将根据其容器元素的宽度来设定，高度则根据由宽度和高度属性确定的宽高比自动重新调整。
 
-阅读: 详细了解 [AMP 中支持的布局](/zh_cn/docs/design/responsive/control_layout.html)
+阅读: 详细了解 [AMP 中支持的布局]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}})
 
 ## 提供占位符和备用行为
 
 AMP 内置了对占位符和备用行为的支持，您的用户再也不用呆呆看着空白的屏幕了。
 
-阅读: 详细了解[占位符和备用行为](/zh_cn/docs/design/responsive/placeholders.html)
+阅读: 详细了解[占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})
 
 ## 对图片进行艺术指导
 
 AMP 支持 `srcset` 和 `sizes` 属性，以便您能够更加精确地控制要在哪种情景下加载哪些图片。
 
-阅读: 详细了解如何[通过 srcset 和 sizes 进行艺术指导](/zh_cn/docs/design/responsive/art_direction.html)
+阅读: 详细了解如何[通过 srcset 和 sizes 进行艺术指导]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})
 
 ## 验证样式和布局
 

@@ -15,7 +15,7 @@ AMP는 분석 및 측정용으로 [amp-pixel](/ko/docs/reference/components/amp-
 
 대부분의 애널리틱스 솔루션의 경우 `amp-analytics` 를 사용할 수 있습니다. 페이지 조회수 추적은 `amp-analytics` 에서도 작동합니다. 한편 링크 및 버튼 클릭 등 모든 유형의 페이지 콘텐츠를 대상으로 한 사용자 참여도 추적할 수 있습니다. 또한 사용자가 페이지를 얼마나 스크롤했는지와 사용자의 소셜 미디어 참여 여부도 측정할 수 있습니다.
 
-자세히 알아보기: AMP 애널리틱스 [심도 있게 알아보기](/ko/docs/analytics/deep_dive_analytics.html)
+자세히 알아보기: AMP 애널리틱스 [심도 있게 알아보기]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})
 
 AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp-analytics`
 구성을 제공하여 데이터를 손쉽게 캡처하고 이를 추적 도구로 간편하게 전송할 수 있도록 했습니다. 업체 문서에 액세스하려면 [애널리틱스 공급업체]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) 목록을 참조하세요.
@@ -139,5 +139,5 @@ AMP 에서 이 쿠키가 설정되었다는 사실이 확인된 경우 클라이
 
 사용자 알림 ID 추가 (선택사항) 등 클라이언트 ID 치환에 관해 자세히 알아보려면 [AMP 애널리틱스에서 지원되는 변수](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) 를 확인하세요.
 
-자세히 알아보기: 애널리틱스에 관해 자세히 알아보려면 계속해서 [AMP 애널리틱스 심도 있게 알아보기](/ko/docs/analytics/deep_dive_analytics.html)  및 [사용 사례](/ko/docs/analytics/use_cases.html) 를 확인하세요.
+자세히 알아보기: 애널리틱스에 관해 자세히 알아보려면 계속해서 [AMP 애널리틱스 심도 있게 알아보기]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})  및 [사용 사례]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}) 를 확인하세요.
 

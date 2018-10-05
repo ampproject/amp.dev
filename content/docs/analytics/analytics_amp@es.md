@@ -47,6 +47,6 @@ el dispositivo o el navegador? Consulta información sobre la [sustitución de v
 
 
 {% call callout('Más información', type='read') %}
-Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos](/es/docs/analytics/analytics_basics.html).
+Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}}).
 {% endcall %}
 

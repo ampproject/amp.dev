@@ -74,7 +74,7 @@ $title: 制作自适应 AMP 网页
 
 ### 显示自适应图片
 
-图片会占据网页的很大一部分幅面（约占[网页字节数的 65%](http://httparchive.org/interesting.php#bytesperpage)）。最起码，您的图片在各种屏幕尺寸和方向上都应处于可见状态（即用户无需滚动屏幕或张合手指便可看到完整图片）。在 AMP 中，这可通过 `"layout=responsive"` 属性轻松实现（请参阅[在 AMP 中添加图片](/zh_cn/docs/media/amp_replacements.html)）。除了基本的自适应图片之外，您可能会想添加多种图片资源以便：
+图片会占据网页的很大一部分幅面（约占[网页字节数的 65%](http://httparchive.org/interesting.php#bytesperpage)）。最起码，您的图片在各种屏幕尺寸和方向上都应处于可见状态（即用户无需滚动屏幕或张合手指便可看到完整图片）。在 AMP 中，这可通过 `"layout=responsive"` 属性轻松实现（请参阅[在 AMP 中添加图片]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}})）。除了基本的自适应图片之外，您可能会想添加多种图片资源以便：
 
 - [提供分辨率合适的清晰图片](#提供分辨率合适的清晰图片)
 - [更改图片的艺术设计](#更改图片的艺术设计)
@@ -99,7 +99,7 @@ $title: 制作自适应 AMP 网页
 
 例如，假设我们的某部设备的视口宽度为 412 像素，DPR 为 2.6。根据上面的代码，图片必须以 75% 的视口宽度显示，因此浏览器会选择一张接近 803 像素 (412 * .75 * 2.6) 的图片，而 `apple-800.jpg` 正好符合条件。
 
-继续阅读: 要详细了解如何在 AMP 中使用 srcset 和 sizes，请参阅[借助 srcset、sizes 和 heights 进行艺术设计](/zh_cn/docs/design/responsive/art_direction.html)指南。
+继续阅读: 要详细了解如何在 AMP 中使用 srcset 和 sizes，请参阅[借助 srcset、sizes 和 heights 进行艺术设计]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})指南。
 
 #### 更改图片的艺术设计
 
@@ -117,7 +117,7 @@ $title: 制作自适应 AMP 网页
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
 
-继续阅读: 要详细了解 AMP 中的艺术设计，请参阅[借助 srcset、sizes 和 heights 进行艺术设计](/zh_cn/docs/design/responsive/art_direction.html)指南。
+继续阅读: 要详细了解 AMP 中的艺术设计，请参阅[借助 srcset、sizes 和 heights 进行艺术设计]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})指南。
 
 #### 提供经过优化的图片
 
@@ -125,7 +125,7 @@ $title: 制作自适应 AMP 网页
 
 在 HTML 中，您可以使用 `picture` 标记来提供不同格式的图片。在 AMP 中，虽然 `picture` 标记不受支持，但您可以使用 `fallback` 属性来提供不同的图片。
 
-继续阅读: 要详细了解备用行为，请参阅[占位符和备用行为](/zh_cn/docs/design/responsive/placeholders.html)指南。
+继续阅读: 要详细了解备用行为，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})指南。
 
 ##### 示例：提供不同格式的图片
 

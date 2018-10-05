@@ -586,7 +586,13 @@
             "url": "https://github.com/ampproject/amphtml/issues/14088",
             "title": "Land redesign of AMP layout system (Layers)",
             "description": "Land the redesign of AMP's layout system to support nested and horizontal scrolling AKA \"Layers\".",
-            "labels": []
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Runtime",
+                "name": "Runtime",
+                "color": "1d76db"
+              }
+            ]
           }
         },
         {

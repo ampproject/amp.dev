@@ -17,6 +17,6 @@ $title: المعاينة والتحقق
 [تعرّف على المزيد بشأن التحقق]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})، وما يتعين فعله عند مصادفة أخطاء.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ar/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">سابق</span></a>
-  <a class="button next-button" href="/ar/docs/getting_started/create/prepare_for_discovery.html"><span class="arrow-next">التالى</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">سابق</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">التالى</span></a>
 </div>

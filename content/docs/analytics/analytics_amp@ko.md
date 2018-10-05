@@ -47,6 +47,6 @@ AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별
 
 
 {% call callout('자세히 알아보기', type='read') %}
-[애널리틱스: 기본사항](/ko/docs/analytics/analytics_basics.html)에서 애널리틱스에 대해 계속해서 자세히 알아보세요.
+[애널리틱스: 기본사항]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}})에서 애널리틱스에 대해 계속해서 자세히 알아보세요.
 {% endcall %}
 

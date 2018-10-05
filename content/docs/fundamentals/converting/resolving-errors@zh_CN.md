@@ -134,7 +134,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 {% endcall %}
 
 {% call callout('重要提示', type='caution') %}
-整个 AMP 文档中只能有 1 个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS](/zh_cn/docs/design/responsive/style_pages.html)。
+整个 AMP 文档中只能有 1 个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})。
 {% endcall %}
 
 ## 排除第三方 JavaScript
@@ -266,7 +266,7 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="我们的图片现在是自适应图片了！") }}
 
 {% call callout('继续阅读', type='read') %}
-要详细了解 AMP 布局系统，请参阅 [AMP 布局规范](/zh_cn/docs/design/amp-html-layout.html)。
+要详细了解 AMP 布局系统，请参阅 [AMP 布局规范]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})。
 {% endcall %}
 
 ## 成功了！

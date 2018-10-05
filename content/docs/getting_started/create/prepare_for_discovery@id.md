@@ -29,6 +29,6 @@ Jika Anda hanya menautkan satu halaman, dan halaman itu adalah halaman AMP, Anda
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/getting_started/create/publish.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

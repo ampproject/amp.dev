@@ -148,7 +148,7 @@ $title: 创建结束画面
 我们的故事就快完成了。我们需要先检查 AMP HTML 是否有效，然后才能发布内容。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/getting_started/visual_story/validation.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
  

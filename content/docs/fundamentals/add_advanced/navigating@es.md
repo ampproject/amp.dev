@@ -75,7 +75,7 @@ A continuación, queremos mostrar un icono de menú. Cuando se pulsa el icono, s
 </header>
 ```
 
-En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`](/es/docs/interaction_dynamic/amp-actions-and-events.html) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
+En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}}) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
 
 **Agregue** el siguiente HTML justo después del `</header>`:
 

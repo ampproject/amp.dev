@@ -113,4 +113,4 @@ AMP solves this with something called [shell URL rewriting](/docs/reference/comp
 
 With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
 
-Read on: You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](/docs/integration/pwa-amp/amp-in-pwa.html).
+Read on: You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).

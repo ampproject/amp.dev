@@ -42,7 +42,7 @@ O URL precisa ser disponibilizado por `localhost`. Caso contrário, a história 
 Clique para ver a história concluída e ter uma ideia do resultado.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/getting_started/visual_story.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
 

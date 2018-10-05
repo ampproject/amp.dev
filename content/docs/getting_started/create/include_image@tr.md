@@ -10,10 +10,10 @@ Ek işaretlerin nasıl görüneceğini örneklendirmek için, sayfaya bir görü
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-`<img>` gibi etiketleri `<amp-img>` ile neden değiştirdiğimizi ve kaç tane mevcut olduğunu öğrenmek için, [Bilgi İletim Birimleri ve Medya Ekle](/tr/docs/media/amp_replacements.html) bölümüne gidin.
+`<img>` gibi etiketleri `<amp-img>` ile neden değiştirdiğimizi ve kaç tane mevcut olduğunu öğrenmek için, [Bilgi İletim Birimleri ve Medya Ekle]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}}) bölümüne gidin.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/tr/docs/getting_started/create/basic_markup.html"><span class="arrow-prev">Önceki</span></a>
-  <a class="button next-button" href="/tr/docs/getting_started/create/presentation_layout.html"><span class="arrow-next">Sonraki</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Önceki</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Sonraki</span></a>
 </div>
 

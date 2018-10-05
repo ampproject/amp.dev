@@ -21,7 +21,7 @@ AMP 유효성 검사에 성공했습니다.
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/create_bookend.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/getting_started/visual_story/congratulations.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>
 
