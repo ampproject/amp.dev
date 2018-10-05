@@ -15,6 +15,6 @@ Masing-masing bahan tersebut diubah menjadi komponen AMP, tempat artikel diwakil
 Mari mulai membuat artikel kita dengan penampung `amp-story`.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/getting_started/visual_story/setting_up.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/getting_started/visual_story/start_story.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

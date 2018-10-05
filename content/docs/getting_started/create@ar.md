@@ -7,5 +7,5 @@ $title: إنشاء صفحتك الأولى في AMP
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/ar/docs/getting_started/create/basic_markup.html"><span class="arrow-next">البدء</span></a>
+<a class="button" href="{{g.doc('/content/docs/getting_started/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-next">البدء</span></a>
 </div>

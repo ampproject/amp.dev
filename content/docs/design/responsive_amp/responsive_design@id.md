@@ -74,7 +74,7 @@ Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailny
 
 ### Menampilkan gambar responsif
 
-Gambar menghasilkan byte paling besar dari keseluruhan halaman (sekitar [65% dari byte halaman](http://httparchive.org/interesting.php#bytesperpage)).  Setidaknya, gambar harus terlihat di berbagai orientasi dan ukuran layar (misalnya, pengguna tidak perlu melakukan scrolling, mencubit/melakukan zoom untuk melihat keseluruhan gambar).  Hal ini dapat dilakukan di AMP dengan mudah menggunakan atribut  `"layout=responsive"` (lihat [Menyertakan Gambar di AMP](/id/docs/media/amp_replacements.html)).  Selain gambar responsif dasar, Anda mungkin ingin menampilkan beberapa resource gambar untuk:
+Gambar menghasilkan byte paling besar dari keseluruhan halaman (sekitar [65% dari byte halaman](http://httparchive.org/interesting.php#bytesperpage)).  Setidaknya, gambar harus terlihat di berbagai orientasi dan ukuran layar (misalnya, pengguna tidak perlu melakukan scrolling, mencubit/melakukan zoom untuk melihat keseluruhan gambar).  Hal ini dapat dilakukan di AMP dengan mudah menggunakan atribut  `"layout=responsive"` (lihat [Menyertakan Gambar di AMP]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}})).  Selain gambar responsif dasar, Anda mungkin ingin menampilkan beberapa resource gambar untuk:
 
 - [Menayangkan gambar tajam untuk resolusi yang sesuai](#menayangkan-gambar-tajam-untuk-resolusi-yang-sesuai)
 - [Mengubah gambar responsif dari suatu gambar](#mengubah-gambar-responsif-dari-suatu-gambar)
@@ -99,7 +99,7 @@ Pada contoh berikut, ada beberapa file gambar yang memiliki rasio tinggi lebar y
 
 Misalnya, ada perangkat yang memiliki lebar viewport 412 piksel dan DPR 2,6. Berdasarkan kode di atas, gambar harus ditampilkan 75% dari lebar viewport, jadi browser akan memilih gambar yang ukurannya mendekati 803 piksel  (412 * 0,75 * 2,6), yang akan disimpan sebagai `apple-800.jpg`.
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/design/responsive/art_direction.html).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
 
 #### Mengubah gambar responsif dari suatu gambar
 
@@ -117,7 +117,7 @@ Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Tampilkan kode penuh</div><div placeholder></div></amp-iframe></div>
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](/id/docs/design/responsive/art_direction.html).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
 
 #### Memberikan format gambar yang dioptimalkan
 
@@ -125,7 +125,7 @@ Menampilkan halaman yang dimuat dengan cepat memerlukan gambar yang dioptimalkan
 
 Di HTML, Anda dapat menampilkan format gambar yang berbeda menggunakan tag `picture`.  Di AMP, meskipun tag `picture` tidak didukung, Anda dapat menampilkan gambar yang berbeda menggunakan atribut `fallback`.
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback](/id/docs/design/responsive/placeholders.html).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 ##### Contoh: Menampilkan format gambar yang berbeda
 

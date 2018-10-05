@@ -15,6 +15,6 @@ Cada uno de estos elementos tiene asociado un componente AMP concreto: la histor
 Empecemos a crear nuestra historia con el contenedor `amp-story`.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/getting_started/visual_story/setting_up.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/getting_started/visual_story/start_story.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
 </div>

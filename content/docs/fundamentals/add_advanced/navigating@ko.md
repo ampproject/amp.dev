@@ -1,5 +1,5 @@
 ---
-$title: 사이트 탐색 
+$title: 사이트 탐색
 ---
 
 [TOC]
@@ -99,7 +99,7 @@ article {
 ```css
 .hamburger {
   padding-left: 10px;
-}      
+}
 .sidebar {
   padding: 10px;
   margin: 0;
@@ -124,6 +124,6 @@ article {
 멋진 페이지가 완성되었습니다.  이제 맞춤 글꼴을 추가하여 마무리하겠습니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/fundamentals/add_advanced/fonts.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

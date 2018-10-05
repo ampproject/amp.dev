@@ -44,8 +44,8 @@ node app.js
 然后，您只需在自己的网络浏览器中转到 <a href="http://localhost:3000">http://localhost:3000</a>，即可查看您的 AMP 网页的运行状况！
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/interaction_dynamic/interactivity.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
  
  

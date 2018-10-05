@@ -2,20 +2,20 @@
 $title: Recursos experimentais
 ---
 
-[Os componentes experimentais de AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) 
-são recursos lançados que não estão prontos para uso geral. Por isso, eles são protegidos por um status 
+[Os componentes experimentais de AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+são recursos lançados que não estão prontos para uso geral. Por isso, eles são protegidos por um status
 experimental.
 
-Os desenvolvedores e usuários podem ativar esses recursos antes do lançamento completo. No entanto, esses 
+Os desenvolvedores e usuários podem ativar esses recursos antes do lançamento completo. No entanto, esses
 recursos devem ser usados ​​com cautela, pois podem ter bugs ou efeitos colaterais inesperados.
 
 ## Ativar o Canal Dev das AMP
 
-O Canal Dev das AMP é uma forma de fazer com que o navegador use uma versão mais recente das bibliotecas de 
+O Canal Dev das AMP é uma forma de fazer com que o navegador use uma versão mais recente das bibliotecas de
 JavaScript AMP.
 
-Talvez a versão do Canal Dev das AMP **seja mais instável** e tenha recursos indisponíveis para alguns 
-usuários. Ative essa opção se quiser testar as novas versões da AMP, informar bugs ou criar documentos 
+Talvez a versão do Canal Dev das AMP **seja mais instável** e tenha recursos indisponíveis para alguns
+usuários. Ative essa opção se quiser testar as novas versões da AMP, informar bugs ou criar documentos
 vinculados a recursos novos que ainda não estejam disponíveis para todos.
 
 Ativar o Canal Dev é ideal para:
@@ -37,7 +37,7 @@ Para o conteúdo veiculado a partir de outros domínios, use o modo desenvolvedo
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-Nenhum arquivo AMP que inclua recursos experimentais passará na 
-[validação de AMP](/pt_br/docs/fundamentals/validate.html). 
+Nenhum arquivo AMP que inclua recursos experimentais passará na
+[validação de AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 Remova os componentes experimentais de documentos AMP prontos para produção.
 

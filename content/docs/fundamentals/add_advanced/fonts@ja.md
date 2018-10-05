@@ -40,6 +40,6 @@ amp-font を使用して、フォントが完全に読み込まれるまでテ�
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/navigating.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/congratulations.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

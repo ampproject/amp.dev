@@ -105,7 +105,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 通过这种方法，您可以修改您的 AMP 网页以及相关的各种附加功能
-（如果不修改，则会无法顺利通过 [AMP 验证](/zh_cn/docs/fundamentals/validate.html)），例如：
+（如果不修改，则会无法顺利通过 [AMP 验证]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})），例如：
 
 * 需要使用自定义 JS 的动态功能。
 * 专为您的网站定制/仅与您的网站相关的组件。

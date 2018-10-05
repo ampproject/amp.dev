@@ -7,5 +7,5 @@ Vous ne savez pas par où commencer ? Dans ce didacticiel, vous allez découvrir
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/fr/docs/getting_started/create/basic_markup.html"><span class="arrow-next">Commencer</span></a>
+<a class="button" href="{{g.doc('/content/docs/getting_started/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-next">Commencer</span></a>
 </div>

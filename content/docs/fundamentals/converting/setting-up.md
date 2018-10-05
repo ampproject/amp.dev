@@ -48,6 +48,6 @@ http://localhost:8000/article.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/converting.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/fundamentals/converting/building-page.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

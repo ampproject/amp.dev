@@ -67,7 +67,7 @@ Os estilos a seguir são permitidos. Contudo, há restrições em relação à c
 
 As páginas AMP não podem incluir folhas de estilos externas, exceto fontes personalizadas.
 
-Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP](/pt_br/docs/design/responsive/custom_fonts.html).
+Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP]({{g.doc('/content/docs/design/responsive/custom_fonts.md', locale=doc.locale).url.path}}).
 
 ## Como usar pré-processadores de CSS
 

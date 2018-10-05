@@ -25,7 +25,7 @@ $title: スターター コードを確認する
       }
 
       header {
-        background: tomato; 
+        background: tomato;
         color: white;
         font-size: 2em;
         text-align: center;
@@ -94,11 +94,11 @@ $title: スターター コードを確認する
 </html>
 ```
 
-これは、[AMP 検証](/ja/docs/fundamentals/validate.html)と [schema.org](http://schema.org/) の構造化データ検証の両方を渡す、単純な AMP ページです。ニュースのウェブサイトにこのページを掲載した場合、ユーザーは検索エンジンの結果ページのリッチ エクスペリエンス（Google 検索のトップニュース カルーセルなど）からこのページを見つけることができます。
+これは、[AMP 検証]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})と [schema.org](http://schema.org/) の構造化データ検証の両方を渡す、単純な AMP ページです。ニュースのウェブサイトにこのページを掲載した場合、ユーザーは検索エンジンの結果ページのリッチ エクスペリエンス（Google 検索のトップニュース カルーセルなど）からこのページを見つけることができます。
 
 ## AMP 検証ツールを有効にする
 
-ページを変更する前に、有効な AMP HTML を扱っていることがわかるように、[AMP 検証ツール](/ja/docs/fundamentals/validate.html)を有効にしましょう。URL に次のフラグメント識別子を**追加**します。
+ページを変更する前に、有効な AMP HTML を扱っていることがわかるように、[AMP 検証ツール]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})を有効にしましょう。URL に次のフラグメント識別子を**追加**します。
 
 ```text
 #development=1
@@ -120,7 +120,7 @@ AMP ページを検証するには、他のツールも使用できます。次�
 - [AMP 検証ツール ウェブ インターフェース](https://validator.ampproject.org/)
 その他
 
-詳しくは、[AMP ページを検証する](/ja/docs/fundamentals/validate.html)のガイドをご覧ください。
+詳しくは、[AMP ページを検証する]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})のガイドをご覧ください。
 {% endcall %}
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Nexus 5X 端末でのシミュレーション') }}
@@ -132,6 +132,6 @@ AMP ページを検証するには、他のツールも使用できます。次�
 これで、ページの操作を開始できるようになりました。AMP コンポーネントをページに追加してみましょう。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

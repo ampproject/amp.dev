@@ -27,7 +27,7 @@ compresi i clic sui link e i pulsanti.
 Inoltre, puoi determinare di quanto è avanzato l’utente con lo scorrimento della pagina,
 se l’utente è impegnato o meno sui social media e tanto altro ancora
 (vedi
-[Immersione nel mondo di AMP Analytics](/it/docs/analytics/deep_dive_analytics.html)).
+[Immersione nel mondo di AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})).
 
 Nell’ambito dell’integrazione con la piattaforma AMP,
 i fornitori hanno offerto configurazioni `amp-analytics` predefinite

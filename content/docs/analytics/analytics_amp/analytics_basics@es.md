@@ -14,9 +14,9 @@ Si lo que buscas es un comportamiento como el de un [píxel de seguimiento senci
 
 En la mayor parte de las soluciones de análisis se debe utilizar `amp-analytics`. El seguimiento de páginas vistas también funciona con `amp-analytics`. También puedes hacer el seguimiento de la interacción de los usuarios con cualquier tipo de contenido de la página, incluidos los clics en los enlaces y en los botones. Además, permite medir hasta qué punto de la página llegó el usuario o saber si el usuario utilizó los medios sociales, entre otros datos.
 
-Más información: Consulta el artículo [Información detallada de AMP Analytics](/es/docs/analytics/deep_dive_analytics.html)
+Más información: Consulta el artículo [Información detallada de AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})
 
-Como parte de la integración en la plataforma AMP, los proveedores han ofrecido configuraciones de `amp-analytics` predefinidas, con lo que es más fácil captar datos y enviarlos a las herramientas de seguimiento. Se puede acceder a la documentación del proveedor desde la lista [de proveedores de Analytics](/es/docs/analytics/analytics-vendors.html).
+Como parte de la integración en la plataforma AMP, los proveedores han ofrecido configuraciones de `amp-analytics` predefinidas, con lo que es más fácil captar datos y enviarlos a las herramientas de seguimiento. Se puede acceder a la documentación del proveedor desde la lista [de proveedores de Analytics]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 En lo que respecta a tus páginas, puedes utilizar tanto `amp-pixel` como `amp-analytics` en ellas: `amp-pixel` para realizar un seguimiento sencillo de páginas vistas y `amp-analytics` para todo lo demás. También puedes añadir varias veces la misma etiqueta. Si estás trabajando con varios proveedores de Analytics, necesitarás una etiqueta por cada solución. Ten en cuenta que los usuarios prefieren páginas AMP más sencillas, así que no utilices etiquetas adicionales si no son necesarias.
 
@@ -138,4 +138,4 @@ Si AMP detecta que esta cookie está definida, la sustitución del ID de cliente
 
 Si quieres obtener más información acerca de la sustitución del ID de cliente y de cómo añadir una ID de notificación del usuario opcional, consulta el artículo sobre [variables compatibles con las analíticas de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
-Más información: Obtén más información sobre Analytics en [Información detallada de AMP Analytics](/es/docs/analytics/deep_dive_analytics.html) y [Casos de uso](/es/docs/analytics/use_cases.html).
+Más información: Obtén más información sobre Analytics en [Información detallada de AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) y [Casos de uso]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}).

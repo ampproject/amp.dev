@@ -29,6 +29,6 @@ Se la tua pagina è in un solo formato e stai usando una pagina AMP, devi comunq
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/it/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">Precedente</span></a>
-  <a class="button next-button" href="/it/docs/getting_started/create/publish.html"><span class="arrow-next">Prossimo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Precedente</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">Prossimo</span></a>
 </div>

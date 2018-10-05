@@ -8,7 +8,7 @@ Panduan ini diperuntukkan bagi jaringan iklan yang ingin berintegrasi dengan AMP
 
 ## Ringkasan
 
-Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan HTML biasa ke halaman AMP, serta menayangkan iklan [AMPHTML](/id/docs/ads/amphtml_ads.html).
+Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan HTML biasa ke halaman AMP, serta menayangkan iklan [AMPHTML]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}).
 
 ##### Ingin menayangkan iklan HTML biasa?
 
@@ -62,6 +62,6 @@ Untuk mempelajari cara membuat integrasi Fast Fetch, lihat [Panduan Implementasi
 ## Referensi terkait
 
 *   [Direktori GitHub untuk semua ekstensi amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [Daftar vendor iklan yang didukung](/id/docs/ads/ads_vendors.html)
+*   [Daftar vendor iklan yang didukung]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
 *   [Postingan blog yang menjelaskan peluncuran Fast Fetch](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)
  

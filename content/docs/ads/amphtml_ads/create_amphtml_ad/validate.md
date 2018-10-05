@@ -12,6 +12,6 @@ In your browser, open the [AMP Validator](https://validator.ampproject.org/#html
 If your code is valid, you'll see **Validation Status: <span class="success-text">PASS</span>**.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/ads/amphtml_ads/track_views.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/ads/amphtml_ads/summary.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/ads/amphtml_ads/track_views.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/ads/amphtml_ads/summary.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

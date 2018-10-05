@@ -12,7 +12,7 @@ El sistema de componentes de AMP le permite crear rápidamente características 
 
 - **experimental**: Estos son los componentes que se liberan, pero aún no están listos para un uso amplio. Los desarrolladores pueden elegir optar por utilizar estas características antes de que se liberen completamente. Más información en [Experimental features](/es/docs/reference/experimental.html).
 
-Nuestra muestra ya utiliza un componente incorporado, [amp-img](/es/docs/reference/components/amp-img.html), y exploramos cómo este componente se relaciona con el sistema de diseño AMP en el tutorial ["Convertir HTML a AMP"](/es/docs/fundamentals/converting.html). Ahora, vamos a **agregar** algunos componentes de AMP extendidos comúnmente usados a nuestro artículo de noticias.
+Nuestra muestra ya utiliza un componente incorporado, [amp-img](/es/docs/reference/components/amp-img.html), y exploramos cómo este componente se relaciona con el sistema de diseño AMP en el tutorial ["Convertir HTML a AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}). Ahora, vamos a **agregar** algunos componentes de AMP extendidos comúnmente usados a nuestro artículo de noticias.
 
 ## Monetizar con anuncios
 
@@ -78,7 +78,7 @@ Desafortunadamente, la segmentación geográfica no puede controlarse desde el c
 
 El ejemplo de orientación geográfica anterior muestra cómo `amp-ad` es lo suficientemente flexible para todo tipo de características de la plataforma de anuncios.
 
-Nota: Es posible que observe que dentro de estas etiquetas de amp-ad se encuentran etiquetas `div` adicionales con un atributo denominado `fallback` en ellas. ¿Puedes adivinar qué representa el atributo `fallback`? Se informa al sistema de carga de AMP para mostrar sólo el contenido de ese elemento cuando el elemento padre no se carga correctamente. Lo que significa que el elemento padre recae en el elemento hijo, de ahí el término ‘fallback’. Obtenga más información sobre [Placeholders & fallbacks](/es/docs/design/responsive/placeholders.html).
+Nota: Es posible que observe que dentro de estas etiquetas de amp-ad se encuentran etiquetas `div` adicionales con un atributo denominado `fallback` en ellas. ¿Puedes adivinar qué representa el atributo `fallback`? Se informa al sistema de carga de AMP para mostrar sólo el contenido de ese elemento cuando el elemento padre no se carga correctamente. Lo que significa que el elemento padre recae en el elemento hijo, de ahí el término ‘fallback’. Obtenga más información sobre [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 Leer más: Para ver las últimas redes publicitarias compatibles, lea la documentación de referencia del componente [amp-ad](/es/docs/reference/components/amp-ad.html#supported-ad-networks).
 
@@ -207,6 +207,6 @@ Puede obtener más información sobre el amplificador de ajuste de texto de la d
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>
