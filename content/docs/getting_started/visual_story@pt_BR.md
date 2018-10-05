@@ -19,6 +19,6 @@ Neste tutorial, veremos o componente [amp-story](/pt_br/docs/reference/component
 
 
 <div class="start-button">
-<a class="button" href="/pt_br/docs/getting_started/visual_story/setting_up.html"><span class="arrow-next">Primeiros passos</span></a>
+<a class="button" href="{{g.doc('/content/docs/getting_started/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Primeiros passos</span></a>
 </div>
  

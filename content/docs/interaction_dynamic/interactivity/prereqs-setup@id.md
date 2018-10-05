@@ -44,8 +44,8 @@ node app.js
 Kemudian, buka <a href="http://localhost:3000">http://localhost:3000</a> di browser web Anda untuk melihat halaman AMP yang dijalankan!
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/interaction_dynamic/interactivity.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
  
  

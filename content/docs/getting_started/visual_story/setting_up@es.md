@@ -7,7 +7,7 @@ $title: Configuración
 Antes de comenzar este tutorial, necesitas lo siguiente:
 
 - Nociones básicas sobre HTML, CSS y JavaScript
-- Conocimientos de los conceptos básicos de AMP (consulta el tutorial ["Convertir HTML en AMP"](/es/docs/fundamentals/converting.html))
+- Conocimientos de los conceptos básicos de AMP (consulta el tutorial ["Convertir HTML en AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}))
 - Un navegador
 - Un editor de texto
 
@@ -41,7 +41,7 @@ Asegúrate de que la URL se sirve desde "localhost"; de lo contrario, es posible
 Haz clic en la historia completa para tener una idea de lo que crearemos.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/getting_started/visual_story.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
 </div>
- 
+

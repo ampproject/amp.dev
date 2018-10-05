@@ -11,5 +11,5 @@ En la [sección de comentarios de muestra](https://ampbyexample.com/samples_temp
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/es/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-next">Empezar</span></a>
+<a class="button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">Empezar</span></a>
 </div>

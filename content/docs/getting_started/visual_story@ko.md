@@ -19,6 +19,6 @@ $title: 시각적 AMP 스토리 작성하기
 
 
 <div class="start-button">
-<a class="button" href="/ko/docs/getting_started/visual_story/setting_up.html"><span class="arrow-next">시작하기</span></a>
+<a class="button" href="{{g.doc('/content/docs/getting_started/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">시작하기</span></a>
 </div>
  

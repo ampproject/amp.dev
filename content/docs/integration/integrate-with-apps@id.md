@@ -1,12 +1,12 @@
 ---
-$title: Mengintegrasikan AMP dengan aplikasi Anda 
+$title: Mengintegrasikan AMP dengan aplikasi Anda
 ---
 
 Panduan ini ditujukan untuk developer aplikasi seluler dan web yang ingin mengintegrasikan dan menautkan aplikasi ke halaman AMP. Sebagai contoh, pertimbangkan aplikasi chat seluler yang memuat versi AMP dari sebuah URL bersama untuk memberikan pengalaman yang lebih cepat kepada pengguna.
 
 [TOC]
 
-## Mentransformasi link ke AMP  
+## Mentransformasi link ke AMP
 
 Dengan AMP, Anda dapat merender situs eksternal di dalam aplikasi
 native atau web seluler nyaris seketika. Anda dapat mencapainya dengan mencocokkan URL di konten Anda
@@ -59,24 +59,24 @@ Ada tiga cara untuk mentransformasi link secara terprogram:
     AMP URL API Google dari klien. Gunakan pendekatan ini jika transformasi URL sisi-server
     tidak memungkinkan (misalnya, untuk aplikasi messaging yang menggunakan
     enkripsi menyeluruh). Pastikan untuk memicu transformasi URL segera setelah
-    konten tersedia, sebelum terjadi interaksi pengguna. 
+    konten tersedia, sebelum terjadi interaksi pengguna.
 
 {% call callout('Penting', type='caution') %}
 Jangan minta URL AMP melalui AMP API Google sebagai hasil dari interaksi
 pengguna karena hal itu akan menurunkan performa aplikasi Anda saat
-memasukkan permintaan jaringan tambahan. Sebaliknya, gunakan salah satu dari tiga pendekatan yang 
+memasukkan permintaan jaringan tambahan. Sebaliknya, gunakan salah satu dari tiga pendekatan yang
 dijelaskan di atas.
 {% endcall %}
 
 
-#### AMP URL API Google  
+#### AMP URL API Google
 
 Google menyediakan AMP URL API untuk mengambil URL HTML AMP yang cocok untuk
 daftar URL tertentu ([dokumentasi resmi](https://developers.google.com/amp/cache/use-amp-url) /
 [demo](https://ampbyexample.com/advanced/using_the_amp_url_api/)). URL ini
 tidak harus merupakan versi kanonis. Jika ada versi AMP, maka responsnya
 akan mencakup URL AMP asli dan URL untuk halaman AMP yang tersimpan di
-Cache AMP Google. 
+Cache AMP Google.
 
 Misalnya, untuk daftar URL tertentu:
 
@@ -120,7 +120,7 @@ AMP URL API. Namun, Anda dapat mengambil URL tersimpan dari URL AMP
 
 ## Menggunakan Cache AMP
 
-[Cache AMP](/id/docs/fundamentals/how_cached.html) adalah
+[Cache AMP]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}}) adalah
 jaringan penayangan konten (CDN) berbasis proxy untuk menayangkan dokumen AMP yang valid.
 Cache AMP didesain untuk:
 
@@ -135,7 +135,7 @@ Saat ini, ada 2 penyedia Cache AMP:
 
 Hal ini memberikan dua pilihan untuk menampilkan file AMP dalam aplikasi dengan menggunakan:
 
-1.  versi yang dihosting oleh penayang, atau 
+1.  versi yang dihosting oleh penayang, atau
 2.  versi yang dihosting di Cache AMP
 
 Kami merekomendasikan penggunaan Cache AMP dengan alasan berikut:
@@ -169,7 +169,7 @@ instrumentasi AMP Runtime. Anda dapat mempelajari AMP Viewer API lebih lanjut da
 dan [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios)
 tersedia di [GitHub](https://github.com/ampproject/amp-viewer). Viewer Android
 belum tersedia, lihat [jawaban ini](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038)
-di Stack Overflow untuk mengetahui cara terbaik dalam mengonfigurasi WebView untuk menampilkan halaman AMP. 
+di Stack Overflow untuk mengetahui cara terbaik dalam mengonfigurasi WebView untuk menampilkan halaman AMP.
 
 Berikut ini beberapa praktik terbaik umum untuk mengimplementasikan AMP Viewer:
 
@@ -192,4 +192,4 @@ ditampilkan ke pengguna. Karena alasan ini, membagikan versi kanonis
 (bukan versi AMP) merupakan pendekatan yang paling masuk akal saat
 membagikan ke platform yang berbeda, lalu platform target diharapkan membuat
 pilihan yang tepat.
- 
+

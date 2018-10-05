@@ -59,7 +59,7 @@ AMP ライブラリを追加するには、`<head>` タグの末尾に次の行�
 Powered by AMP ⚡ HTML
 ```
 
-AMP ライブラリに含まれる [AMP 検証ツール](/ja/docs/fundamentals/validate.html)を使用すると、有効な AMP ドキュメントへの変換が行われない原因となっている箇所を確認できます。AMP 検証ツールを**有効**にするため、次のフラグメント識別子をドキュメント URL に追加します。
+AMP ライブラリに含まれる [AMP 検証ツール]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})を使用すると、有効な AMP ドキュメントへの変換が行われない原因となっている箇所を確認できます。AMP 検証ツールを**有効**にするため、次のフラグメント識別子をドキュメント URL に追加します。
 
 ```text
 #development=1
@@ -86,6 +86,6 @@ http://localhost:8000/article.amp.html#development=1
 これで、修正作業を行う準備が整いました。検証エラーを 1 つずつ見ていきながら、AMP との関連性を確認していきましょう。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/fundamentals/converting/setting-up.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

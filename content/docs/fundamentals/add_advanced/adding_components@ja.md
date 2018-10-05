@@ -74,7 +74,7 @@ AMP ページに広告を掲載するには、[amp-ad](/ja/docs/reference/compon
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='テスト広告') }}
 
-注: 上記の amp-ad タグには `div` タグが追加されており、そこには `fallback` という属性が指定されています。この `fallback` 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、[プレースホルダとフォールバック](/ja/docs/design/responsive/placeholders.html)をご覧ください。
+注: 上記の amp-ad タグには `div` タグが追加されており、そこには `fallback` という属性が指定されています。この `fallback` 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
 
 詳細情報: サポートされる広告ネットワークの最新リストについては、[amp-ad](/ja/docs/reference/components/amp-ad.html#supported-ad-networks) コンポーネントの関連ドキュメントをご覧ください。
 
@@ -203,6 +203,6 @@ AMP には、この問題を解決するための専用のコンポーネント�
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

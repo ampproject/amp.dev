@@ -8,7 +8,7 @@ $title: レイアウトとメディアクエリ
 
 ## レスポンシブな画像を手軽に作成
 
- レスポンシブな画像を作成するには、`width` と `height` を指定し、レイアウトを `responsive` に設定します。さらに、[srcset](ja/docs/design/responsive/art_direction.html) を使って、さまざまな画面サイズに基づいて使用される画像アセットを指定します。
+ レスポンシブな画像を作成するには、`width` と `height` を指定し、レイアウトを `responsive` に設定します。さらに、[srcset](ja{{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) を使って、さまざまな画面サイズに基づいて使用される画像アセットを指定します。
 
 [sourcecode:html]
 <amp-img

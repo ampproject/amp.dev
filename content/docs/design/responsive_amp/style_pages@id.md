@@ -68,7 +68,7 @@ Gaya berikut diizinkan, namun dibatasi dalam hal nilai yang didukung:
 
 Halaman AMP tidak dapat menyertakan stylesheet eksternal, dengan pengecualian font kustom.
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP](/id/docs/design/responsive/custom_fonts.html).
+Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP]({{g.doc('/content/docs/design/responsive/custom_fonts.md', locale=doc.locale).url.path}}).
 
 ## Menggunakan praprosesor CSS
 

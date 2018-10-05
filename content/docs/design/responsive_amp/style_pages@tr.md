@@ -6,7 +6,7 @@ $title: Desteklenen CSS
 Tüm web sayfaları gibi AMP sayfalarının stili de CSS ile belirlenir, ancak ([özel yazı tipleri](#özel-yazı-tipleri-istisnası) haricinde) harici stil sayfalarını referans alamazsınız.
 Ayrıca, performans üzerindeki etkilerinden dolayı belirli stillere izin verilmez; satır içi stil özniteliklerine izin verilmemektedir.
 
-Tüm stiller, dokümanın head bölümünde yer almalıdır (bkz. [Sayfaya stil ekleme](/tr/docs/fundamentals/validate.html)).
+Tüm stiller, dokümanın head bölümünde yer almalıdır (bkz. [Sayfaya stil ekleme]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})).
 Ancak, içeriğinizi daha iyi yönetmek amacıyla statik sayfalar oluşturmak için CSS ön işlemcilerini ve şablonlarını kullanabilirsiniz.
 
 **Not:** Duyarlı sayfaları yazmayı makul bir düzeyde kolaylaştırmak için AMP bileşenleri varsayılan stillerle birlikte gelir.
@@ -24,7 +24,7 @@ Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/am
 Örneğin, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) kodu gerekli tüm AMP biçimlendirmesini ve `*.scss` kaynak dosyalarındaki satır içi CSS'yi içerir.
 Diğerlerinin yanı sıra [`amp-youtube`](/docs/reference/extended/amp-youtube.html) için özel öğe komut dosyasını da içerir. Böylece, sitedeki birçok sayfaya yerleşik YouTube videoları eklenebilir.
 
-[sourcecode:html] {% raw %} 
+[sourcecode:html] {% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">

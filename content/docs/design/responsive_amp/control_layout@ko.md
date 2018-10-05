@@ -8,7 +8,7 @@ $title: 레이아웃 및 미디어 쿼리
 
 ## 간편한 반응형 이미지
 
- `width` 및 `height`를 지정하고 레이아웃을 `responsive` 로 설정한 다음 [`srcset`](/ja/docs/design/responsive/art_direction.html) 를 사용하여 다양한 화면 크기에 따라 사용할 광고 애셋을 지정합니다.
+ `width` 및 `height`를 지정하고 레이아웃을 `responsive` 로 설정한 다음 [`srcset`]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) 를 사용하여 다양한 화면 크기에 따라 사용할 광고 애셋을 지정합니다.
 
 [sourcecode:html]
 <amp-img

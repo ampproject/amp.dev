@@ -358,7 +358,7 @@ Make sure to update your `Access-Control-Expose-Headers` response header to incl
 
 [sourcecode:text]
 AMP-Redirect-To: https://example.com/forms/thank-you
-Access-Control-Expose-Headers: AMP-Redirect-To, Another-Header, And-Some-More
+Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redirect-To
 [/sourcecode]
 
 

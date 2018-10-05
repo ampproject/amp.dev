@@ -13,7 +13,7 @@ Contenido. Descubre cómo incluir las versiones AMP equivalentes en tus páginas
 *  Conocer el diseño de la página antes de que se carguen los recursos es fundamental para [admitir las ventanas gráficas iniciales precargadas.](/es/learn/about-how/#size-all-resources-statically)
 *  Debemos controlar las solicitudes de red para [realizar cargas diferidas y priorizar los recursos de un modo efectivo.](/es/learn/about-how/#prioritize-resource-loading)
 
-Precaución: Aunque no se admitan, se *renderizarán*, pero AMP no [validará tus páginas](/es/docs/fundamentals/validate.html)
+Precaución: Aunque no se admitan, se *renderizarán*, pero AMP no [validará tus páginas]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})
 y no podrás aprovechar todas las ventajas que aporta AMP.
 
 ## Imágenes
@@ -66,13 +66,13 @@ En este ejemplo muy básico, la imagen se mostrará con la altura y anchura fija
 </amp-iframe>
 </div>
 
-Leer más: Consulta más información sobre [las técnicas de diseño avanzadas](/es/docs/design/responsive/control_layout.html).
+Leer más: Consulta más información sobre [las técnicas de diseño avanzadas]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
 
 ### Comportamiento y marcadores de posición
 
 El tiempo de ejecución de HTML en AMP permite gestionar recursos de imagen de una forma muy eficaz porque puedes elegir si retrasar o priorizar la carga de recursos en función de la posición de la ventana gráfica, los recursos del sistema, el ancho de banda de la conexión y otros factores.
 
-Leer más: Descubre cómo [proporcionar alternativas y marcadores de posición para imágenes](/es/docs/design/responsive/placeholders.html).
+Leer más: Descubre cómo [proporcionar alternativas y marcadores de posición para imágenes]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 ## Imágenes animadas
 

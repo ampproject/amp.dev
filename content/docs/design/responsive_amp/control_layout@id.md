@@ -8,7 +8,7 @@ AMP mendukung **kueri media** & **kueri elemen**, juga dilengkapi dengan cara ya
 
 ## Memudahkan pembuatan gambar yang responsif
 
-Buat gambar yang responsif dengan menetapkan `width` dan `height`, menyetel tata letak ke `responsive`, dan menunjukkan dengan [`srcset`](/id/docs/design/responsive/art_direction.html) aset gambar mana yang digunakan berdasarkan berbagai ukuran layar:
+Buat gambar yang responsif dengan menetapkan `width` dan `height`, menyetel tata letak ke `responsive`, dan menunjukkan dengan [`srcset`]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) aset gambar mana yang digunakan berdasarkan berbagai ukuran layar:
 
 [sourcecode:html]
 <amp-img

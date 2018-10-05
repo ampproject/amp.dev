@@ -10,5 +10,5 @@ O [exemplo de uma seção de comentários](https://ampbyexample.com/samples_temp
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/pt_br/docs/interaction_dynamic/login_requiring/login.html"><span class="arrow-next">Primeiros passos</span></a>
+<a class="button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">Primeiros passos</span></a>
 </div>

@@ -33,7 +33,7 @@ Sekarang, mari kita lihat error berikut:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Setiap dokumen AMP harus memiliki link yang merujuk pada versi "kanonis" dokumen tersebut.  Kita akan mempelajari lebih lanjut apa itu halaman kanonis dan berbagai pendekatan terhadap penautan kanonis dalam langkah [Membuat halaman Anda dapat ditemukan](/id/docs/fundamentals/converting/discoverable.html) di tutorial ini.
+Setiap dokumen AMP harus memiliki link yang merujuk pada versi "kanonis" dokumen tersebut.  Kita akan mempelajari lebih lanjut apa itu halaman kanonis dan berbagai pendekatan terhadap penautan kanonis dalam langkah [Membuat halaman Anda dapat ditemukan]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}) di tutorial ini.
 
 Untuk tutorial ini, kita akan menggunakan artikel HTML asli yang dikonversi menjadi halaman kanonis.
 
@@ -131,7 +131,7 @@ Sekali lagi, **muat ulang** halaman dan verifikasi bahwa error stylesheet sudah 
 
 Catatan: Tidak hanya gaya inline yang diperlukan tetapi ada batas ukuran file sebesar 50 kilobyte untuk semua informasi gaya. Anda harus menggunakan prapemrosesan CSS seperti [SASS](http://sass-lang.com/) untuk memperkecil CSS sebelum membuat CSS di halaman AMP menjadi inline.
 
-Penting: Anda hanya dapat memiliki 1 tag gaya di seluruh dokumen AMP. Jika Anda memiliki beberapa stylesheet eksternal yang dirujuk oleh halaman AMP, Anda harus menyusun stylesheet ini menjadi 1 kumpulan aturan. Untuk mempelajari tentang aturan CSS apa yang berlaku di AMP, baca [CSS yang Didukung](/id/docs/design/responsive/style_pages.html).
+Penting: Anda hanya dapat memiliki 1 tag gaya di seluruh dokumen AMP. Jika Anda memiliki beberapa stylesheet eksternal yang dirujuk oleh halaman AMP, Anda harus menyusun stylesheet ini menjadi 1 kumpulan aturan. Untuk mempelajari tentang aturan CSS apa yang berlaku di AMP, baca [CSS yang Didukung]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}).
 
 ## Jangan sertakan JavaScript pihak ketiga
 
@@ -261,7 +261,7 @@ Bagus! Gambar kita memiliki aspek tinggi lebar yang benar dan secara responsif m
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Gambar kini menjadi responsif!") }}
 
-Baca selengkapnya: Pelajari lebih lanjut Sistem Tata Letak AMP di [Spesifikasi Tata Letak AMP](/id/docs/design/amp-html-layout.html).
+Baca selengkapnya: Pelajari lebih lanjut Sistem Tata Letak AMP di [Spesifikasi Tata Letak AMP]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## Berhasil!
 
@@ -337,6 +337,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

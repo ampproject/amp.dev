@@ -33,7 +33,7 @@ The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-每个 AMP 文档都必须拥有引用此文档“权威”版本的链接。在本教程的[使您的网页可被轻松发现](/zh_cn/docs/fundamentals/converting/discoverable.html)步骤中，我们将详细了解权威网页的定义，以及实现权威关联的不同方法。
+每个 AMP 文档都必须拥有引用此文档“权威”版本的链接。在本教程的[使您的网页可被轻松发现]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}})步骤中，我们将详细了解权威网页的定义，以及实现权威关联的不同方法。
 
 对于本教程，我们将要转换的原始 HTML 文章视为权威网页。
 
@@ -134,7 +134,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 {% endcall %}
 
 {% call callout('重要提示', type='caution') %}
-整个 AMP 文档中只能有 1 个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS](/zh_cn/docs/design/responsive/style_pages.html)。
+整个 AMP 文档中只能有 1 个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})。
 {% endcall %}
 
 ## 排除第三方 JavaScript
@@ -266,7 +266,7 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="我们的图片现在是自适应图片了！") }}
 
 {% call callout('继续阅读', type='read') %}
-要详细了解 AMP 布局系统，请参阅 [AMP 布局规范](/zh_cn/docs/design/amp-html-layout.html)。
+要详细了解 AMP 布局系统，请参阅 [AMP 布局规范]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})。
 {% endcall %}
 
 ## 成功了！
@@ -343,6 +343,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
