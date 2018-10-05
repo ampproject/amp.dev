@@ -63,9 +63,9 @@
 			  {% endfor %}
         {% for collection in g.collection('amp-dev/overview') %}
           {% if collection.collection_path == '/index.md' %}
-           <li option={{ collection.title }}>
+           <li option={{ collection.category }}>
               <a href="{{ collection.url.path}}"
-                class="destination-list-item destination-list-item-drop-down {{ collection.title }} {{ collection.title }}-background">{{ collection.title }}</a>
+                class="destination-list-item destination-list-item-drop-down {{ collection.category }} {{ collection.category }}-background">{{ collection.category }}</a>
             </li>
           {% endif %}
         {% endfor %}
