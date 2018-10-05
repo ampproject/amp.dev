@@ -1,0 +1,76 @@
+---
+$view: /views/styleguide/component.j2
+$title: Teaser Guides & Tutorials
+
+items:
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  headline: Combine AMP with Progressive Web Apps
+  link: '#'
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  image: '/static/static/img/teaser-placeholder-5x3.jpg'
+  headline: Combine AMP with Progressive Web Apps
+  link: '#'
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  image: '/static/static/img/teaser-dummy-5x3-1.jpg'
+  headline: Combine AMP with Progressive Web Apps
+  link: '#'
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  image: '/static/static/img/teaser-dummy-5x3-2.jpg'
+  headline: Combine AMP with Progressive Web Apps
+  link: '#'
+---
+
+<div class="ad-o-container col-12 ad-o-teaser-grid">
+
+  <h2>Guides & Tutorials</h2>
+
+  <div class="ad-o-teaser-grid-list">
+    {% for item in doc.items %}
+      <div class="ad-m-teaser ad-m-teaser-guide-tutorial">
+        <a href="{{ item.link }}">
+
+          {% if item.image %}
+          {{ atoms.image('ad-m-teaser-image', src=g.static(item.image).url|relative, layout='responsive', width=5, height=3, alt=item.headline, type='static') }}
+          {% endif %}
+
+          <div class="ad-m-teaser-card">
+
+            <div class="ad-m-teaser-tags">
+              {% for tag in item.tags %}
+              <div class="ad-m-tag ad-m-tag-{{ tag }} ad-m-teaser-tag"></div>
+              {% endfor %}
+            </div>
+
+            <div class="ad-m-teaser-content">
+              <h4 class="ad-m-teaser-headline">{{ item.headline }}</h4>
+              <p class="ad-m-teaser-copy">{{ lipsum(n=1, html=False, min=17, max=18) }}</p>
+            </div>
+          </div>
+
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <a class="ad-m-lnk" href="#">
+    {{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+    <span class="ad-m-lnk-text">See all guides & tutorials</span>
+  </a>
+
+</div>

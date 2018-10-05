@@ -1,20 +1,15 @@
 /*
 
-########################################
-### ORGANISM: teaser success stories ###
-########################################
+######################################
+### ORGANISM: teaser success story ###
+######################################
 
 ### INFO:
 
 */
 
-.#{organism('teaser-success-stories')} {
-
-	&-list {
-		@include teaser-list;
-	}
-
-	.#{molecule('teaser')} {
+.#{molecule('teaser-success-story')} {
+	&.#{molecule('teaser')} {
 		@include teaser;
 
 		&:nth-child(1) {
@@ -33,10 +28,12 @@
 			padding-top: 0;
 		}
 
-		a {
+		& > a {
 			@include teaser-linking;
 		}
+	}
 
+	.#{molecule('teaser')} {
 		&-tag {
 			@include teaser-tag;
 		}

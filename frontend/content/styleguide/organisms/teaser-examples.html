@@ -1,0 +1,80 @@
+---
+$view: /views/styleguide/component.j2
+$title: Teaser Examples
+
+items:
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  headline: Geolocation with amp-list
+  text: If you need more fine-grained geolocation support than provided by the amp-geo extension, you can implement geo-based features with geolocation logic on …
+  link: '#'
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  image: '/static/static/img/teaser-placeholder-5x3.jpg'
+  headline: How to publish AMPs
+  text: Here is a quick getting started guide for creating e- commerce webpages with AMP.
+  link: '#'
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  image: '/static/static/img/teaser-dummy-5x3-1.jpg'
+  headline: Geolocation with amp-list
+  text: If you need more fine-grained geolocation support than provided by the amp-geo extension, you can implement geo-based features with geolocation logic on …
+  link: '#'
+- tags:
+    - 'websites'
+    - 'stories'
+    - 'ads'
+    - 'e-mails'
+  image: '/static/static/img/teaser-dummy-5x3-2.jpg'
+  headline: How to publish AMPs
+  text: Here is a quick getting started guide for creating e- commerce webpages with AMP.
+  link: '#'
+---
+
+<div class="ad-o-container col-12 ad-o-teaser-grid">
+
+  <h2>Examples</h2>
+
+  <div class="ad-o-teaser-grid-list">
+    {% for item in doc.items %}
+      <div class="ad-m-teaser ad-m-teaser-example">
+        <a href="{{ item.link }}">
+
+          <div class="ad-m-teaser-card">
+
+            <div class="ad-m-teaser-tags">
+              {% for tag in item.tags %}
+              <div class="ad-m-tag ad-m-tag-{{ tag }} ad-m-teaser-tag"></div>
+              {% endfor %}
+            </div>
+
+            <div class="ad-m-teaser-header">
+              {{ atoms.icon('example', 'ad-m-teaser-header-icon') }}
+            </div>
+
+            <div class="ad-m-teaser-content">
+              <h4 class="ad-m-teaser-headline">{{ item.headline }}</h4>
+              <p class="ad-m-teaser-copy">{{ lipsum(n=1, html=False, min=17, max=18) }}</p>
+            </div>
+          </div>
+
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <a class="ad-m-lnk" href="#">
+    {{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+    <span class="ad-m-lnk-text">See all examples</span>
+  </a>
+
+</div>
