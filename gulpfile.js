@@ -161,8 +161,8 @@ gulp.task('import',
       'update-blog-links',
       gulp.series(
         'import-docs',
-        'import-roadmap',
-        'update-platforms-page'
+        'import-roadmap'//,
+        //'update-platforms-page'
       )
     )
   )
@@ -183,7 +183,7 @@ gulp.task('default',
     gulp.parallel(
       gulp.series(
         'import-roadmap'
-        //'update-platforms-page'
+        'update-platforms-page'
       ),
       'sass',
       'generate-asset-manifest'
