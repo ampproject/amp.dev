@@ -1,0 +1,12 @@
+<div class="ad-o-teaser-grid-list">
+  <h1>{{ headline }}</h1>
+  <hr>
+  <ul>
+    {% for teaser in teasers %}
+    <li>{{ teaser.doc.title }}</li>
+    {% endfor %}
+  </ul>
+  {% if cta %}
+  <a href="#">{{ cta.text }}</a>
+  {% endif %}
+</div>
