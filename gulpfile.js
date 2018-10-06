@@ -157,14 +157,9 @@ gulp.task('watch', function() {
 
 gulp.task('import',
   gulp.series(
-    gulp.parallel(
-      'update-blog-links',
-      gulp.series(
-        'import-docs',
-        'import-roadmap'//,
-        //'update-platforms-page'
-      )
-    )
+    'import-docs',
+    'import-roadmap',
+    'update-platforms-page'
   )
 );
 
