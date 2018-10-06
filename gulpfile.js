@@ -182,7 +182,7 @@ gulp.task('default',
   gulp.series(
     gulp.parallel(
       gulp.series(
-        'import-roadmap'
+        'import-roadmap',
         'update-platforms-page'
       ),
       'sass',
