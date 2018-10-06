@@ -155,16 +155,22 @@ gulp.task('watch', function() {
   ], gulp.series('generate-asset-manifest'));
 });
 
+gulp.task('import',
+  gulp.series(
+    gulp.parallel(
+      'update-blog-links',
+      gulp.series(
+        'import-docs',
+        'import-roadmap',
+        'update-platforms-page'
+      )
+    )
+  )
+);
 
 gulp.task('build',
   gulp.parallel(
-    'update-blog-links',
-    /*'update-tweets',*/ //TODO: endpoint is broken, fix with proper Twitter API
-    gulp.series(
-      'import-docs',
-      'import-roadmap',
-      'update-platforms-page'
-    ),
+    'import',
     'optimize-images',
     'sass',
     'build-examples',
@@ -176,25 +182,12 @@ gulp.task('default',
   gulp.series(
     gulp.parallel(
       gulp.series(
-        'import-roadmap',
-        'update-platforms-page'
+        'import-roadmap'
+        //'update-platforms-page'
       ),
       'sass',
       'generate-asset-manifest'
     ),
     'watch'
-  )
-);
-
-gulp.task('import',
-  gulp.series(
-    gulp.parallel(
-      'update-blog-links',
-      gulp.series(
-        'import-docs',
-        'import-roadmap',
-        'update-platforms-page'
-      )
-    )
   )
 );
