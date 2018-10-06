@@ -10,7 +10,8 @@ class FloatImageShortcode(Shortcode):
 
     def transform(self, value, options):
         """Get the src attributes from contained images"""
-        dom = minidom.parseString(value)
+        # Create fake root element to make sure there is one
+        dom = minidom.parseString('<html>{}</html>'.format(value))
         images = dom.getElementsByTagName('img')
 
         self.context['images'] = []
