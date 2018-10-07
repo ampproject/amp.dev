@@ -1,10 +1,10 @@
 ---
 $view: /views/component.j2
-$path: /styleguide/molecules/teaser-grid/component-2.html
-$title: amp-example
-$titles:
-  teaser: The amp-example component
+$path: /styleguide/organisms/teaser-grid/component.html
+$title: amp-sample-component
 destinations:
+  - 'stories'
+  - 'ads'
   - 'websites'
 teaser:
   image:
@@ -12,7 +12,7 @@ teaser:
     width: 5
     height: 3
     alt: A placeholder image
-  text: Another sample AMP component for you to use.
+  text: An extraordinary AMP component for your pages.
 ---
 [tip]
 This is just a demo page to showcase the teaser grid.

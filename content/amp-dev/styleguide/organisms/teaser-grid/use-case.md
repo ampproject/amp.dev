@@ -1,6 +1,6 @@
 ---
 $view: /views/use-case.j2
-$path: /styleguide/molecules/teaser-grid/use-case.html
+$path: /styleguide/organisms/teaser-grid/use-case.html
 $title: Use case
 $titles:
   teaser: Using various fonts with in an AMP site

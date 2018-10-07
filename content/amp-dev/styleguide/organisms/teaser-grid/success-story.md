@@ -1,6 +1,6 @@
 ---
 $view: /views/success-story.j2
-$path: /styleguide/molecules/teaser-grid/success-story.html
+$path: /styleguide/organisms/teaser-grid/success-story.html
 $title: Success Story
 $titles:
   teaser: Other stories with rich visuals

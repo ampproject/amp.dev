@@ -1,7 +1,7 @@
 ---
 $view: /views/example.j2
 $title: A second example
-$path: /styleguide/molecules/teaser-grid/example-2.html
+$path: /styleguide/organisms/teaser-grid/example-2.html
 $titles:
   teaser: Example No 2
 destinations:

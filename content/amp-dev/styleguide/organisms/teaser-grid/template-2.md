@@ -1,6 +1,6 @@
 ---
 $view: /views/template.j2
-$path: /styleguide/molecules/teaser-grid/template-2.html
+$path: /styleguide/organisms/teaser-grid/template-2.html
 $title: Template
 $titles:
   teaser: Another template

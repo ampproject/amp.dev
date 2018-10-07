@@ -1,6 +1,6 @@
 ---
 $view: /views/use-case.j2
-$path: /styleguide/molecules/teaser-grid/use-case-2.html
+$path: /styleguide/organisms/teaser-grid/use-case-2.html
 $title: Use case
 $titles:
   teaser: Stories with rich visuals and native videos

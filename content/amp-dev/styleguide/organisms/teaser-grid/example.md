@@ -1,6 +1,6 @@
 ---
 $view: /views/example.j2
-$path: /styleguide/molecules/teaser-grid/example.html
+$path: /styleguide/organisms/teaser-grid/example.html
 $title: Example
 $titles:
   teaser: How to publish AMPs

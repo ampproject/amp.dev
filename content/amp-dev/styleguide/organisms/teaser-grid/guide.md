@@ -1,6 +1,6 @@
 ---
 $view: /views/guide.j2
-$path: /styleguide/molecules/teaser-grid/guide.html
+$path: /styleguide/organisms/teaser-grid/guide.html
 $title: Guide
 $titles:
   teaser: Another guide
