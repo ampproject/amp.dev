@@ -51,6 +51,6 @@ TODO: Add info text to this molecule.
 
 	&-e-mails {
 		color: color('pigment-indigo');
-		@include gradient-emails;
+		@include gradient-e-mails;
 	}
 }
