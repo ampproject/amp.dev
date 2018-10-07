@@ -1,20 +1,26 @@
 /*
 
-##################################
-### ORGANISM: teaser component ###
-##################################
+########################################
+### ORGANISM: teaser guide & tuorial ###
+########################################
 
 ### INFO:
 
 */
 
-.#{molecule('teaser-component')} {
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import 'teaser';
+
+.#{molecule('teaser-guide-tutorial')} {
 	&.#{molecule('teaser')} {
 		@include teaser;
 
 		& > a {
 			@include teaser-linking;
-			height: 100%;
 		}
 	}
 
@@ -29,21 +35,12 @@
 
 		&-card {
 			@include teaser-card;
-			height: 100%;
 			border-radius: 0;
-		}
-
-		&-header {
-			@include teaser-header;
-			height: 90px;
-
-			&-title {
-				@include teaser-header-title;
-			}
 		}
 
 		&-content {
 			@include teaser-content;
+			padding: 2.25em 1.25em;
 		}
 
 		&-image {

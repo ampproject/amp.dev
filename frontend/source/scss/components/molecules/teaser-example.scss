@@ -8,6 +8,13 @@
 
 */
 
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import 'teaser';
+
 .#{molecule('teaser-example')} {
 	&.#{molecule('teaser')} {
 		@include teaser;
