@@ -1,0 +1,20 @@
+---
+$view: /views/styleguide/stage.j2
+$title: Stage Rolling Animation
+
+destinations:
+- name: websites
+- name: stories
+- name: ads
+- name: email
+---
+<body>
+	<div class="destination-stage websites">
+		<div class="destination-stage-content">
+			<span class="hl">What is Amp?</span>
+			<h1 class="hl" >AMP is a web component based framework for easily creating user first </h1>
+			{{ molecules.rollingSwitch(doc.destinations) }}
+		</div>
+	</div>
+</body>
+</html>

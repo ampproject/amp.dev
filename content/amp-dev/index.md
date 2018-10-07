@@ -1,7 +1,9 @@
 ---
 $title: Start
 ---
-# Welcome!
+
+[stage type="default"]
+[/stage]
 
 [tip]
 #### Mind your step!

@@ -1,0 +1,84 @@
+/*
+
+##################
+### Organism: Destination Rolling Stage ###
+##################
+
+### SAMPLE MARKUP:
+
+<div class="destination-stage">
+		<div class="destination-stage-hero websites"></div>
+		<div class="destination-stage-content">
+			<h3 class="hl" >AMP is a web component based framework for easily creating user first </h3>
+			{{ molecules.rollingSwitch() }}
+		</div>
+	</div>
+
+### INFO:
+
+The destination-rolling-stage organism contains the rolling switch molecule along with a headline and a background.
+
+### MODIFIERS:
+
+*/
+
+@import '../atoms/_destination';
+@import '../atoms/_headline';
+@import '../atoms/_divider';
+
+@import '../molecules/rolling-switch';
+
+
+.destination-stage {
+	height: 90vh;
+  width: 100vw;
+	position: relative;
+
+	@media screen and (min-width: 768px) {
+		height: 0%;
+		width: 100%;
+    padding-top: 45%;
+	}
+
+	&-content {
+		position: absolute;
+		top: 0;
+		padding: 20% 0 0 5%;
+		max-width: 50%;
+	}
+}
+
+.hl {
+	@include hl;
+	@include hl-stage;
+	@include hl-light;
+	margin: 0;
+	display: inline;
+	padding-right: 12px;
+
+	&-sub {
+		@include hl;
+		@include hl-h3;
+		@include hl-light;
+	}
+
+	&-divider {
+    @include divider-stage;
+	}
+}
+
+.websites {
+	@include destination-websites;
+}
+
+.stories {
+	@include destination-stories;
+}
+
+.ads {
+	@include destination-ads;
+}
+
+.email {
+	@include destination-email;
+}
