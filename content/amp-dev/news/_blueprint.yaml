@@ -1,0 +1,6 @@
+path: /news/{base}.html
+view: /views/default.j2
+title: News
+
+localization:
+  path: /{locale}/news/{base}.html

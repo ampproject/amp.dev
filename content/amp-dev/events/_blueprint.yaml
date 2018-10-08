@@ -1,0 +1,6 @@
+path: /events/{base}.html
+view: /views/default.j2
+title: Events
+
+localization:
+  path: /{locale}/events/{base}.html

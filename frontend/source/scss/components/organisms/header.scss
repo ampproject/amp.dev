@@ -22,6 +22,8 @@
   z-index: 1;
   top: 0;
   width: 100vw;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+
 
 
   &-list {
@@ -64,7 +66,16 @@
     }
 
     .ad-m-lnk {
-      color: color('river-bed');
+      @include txt-font-accent;
+      @include txt-accent-1;
+      @include txt-black;
+
+      padding: 12.5px 0;
+      margin: 0;
+
+      &:hover {
+        @include txt-blue-ribbon;
+      }
     }
 
     &-selected {
@@ -83,8 +94,15 @@
     &-subnav {
       display: block;
 
+      .ad-m-lnk {
+        @include txt;
+        @include txt-3;
+        padding: 13px 0;
+      }
+
       &-selected {
         .ad-m-lnk {
+          @include txt-strong;
           margin-bottom: 0;
           padding-bottom: 5px;
           color: color('blue-ribbon');
@@ -96,18 +114,19 @@
       height: 2px;
       width: 100%;
       background-color: color('blue-ribbon');
-      margin-bottom: 18px;
+      margin-bottom: 4px;
     }
   }
 
 
   &-main-nav {
+    border-bottom: 1px solid color('wild-sand');
     background-color: color('white');
   }
 
 
   &-subnav {
-    background-color: color('wild-sand');
+    background-color: color('white');
   }
 
   &-subnav-logo {
@@ -147,12 +166,14 @@
   }
 
   input {
+    @include txt-3;
+    @include txt;
+    @include txt-silver;
+
     border: none;
     outline: #fff;
     background: none;
     width: 75px;
-    font-size: 12px;
-    font-family: Poppins;
   }
 
   &-burger-menu {

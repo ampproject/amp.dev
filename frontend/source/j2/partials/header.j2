@@ -45,7 +45,7 @@
         {% if _doc.base == 'index' %}
         {% if _doc == doc %}
           <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
-            <a class="link-preview-1 ad-m-lnk ad-m-lnk-text" href="{{ _doc.url.path }}">{{ _doc.title }}</a>
+            <a class="link-preview-1 ad-m-lnk " href="{{ _doc.url.path }}">{{ _doc.title }}</a>
           </li>
         {% else %}
           <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
@@ -57,7 +57,7 @@
       {% endfor %}
        {% set languages = g.doc('/content/languages/index.md')%}
         <li class="ad-o-header-lnk ad-o-header-lnk-mobile ad-o-header-lnk-lang">
-          <a class="ad-m-lnk ad-m-lnk-text" href="{{ languages.url.path }}">EN</a>
+          <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
         </li>
     </ul>
 
@@ -72,7 +72,7 @@
       {% for subNavItem in g.docs(mainNav.collection_path) %}
        {% if subNavItem.base == 'index' %}
         <li class="ad-o-header-lnk {% if subNavItem.title == doc.title or subNavItem.collection.title == doc.collection.title %} ad-o-header-lnk-selected {% endif %}">
-          <a class="ad-m-lnk ad-m-lnk-text" href="{{ subNavItem.url.path }}">{{ subNavItem.collection.title }}</a>
+          <a class="ad-m-lnk" href="{{ subNavItem.url.path }}">{{ subNavItem.collection.title }}</a>
         </li>
        {% endif %}
       {% endfor %}
@@ -92,7 +92,7 @@
     </li>
     {% set languages = g.doc('/content/languages/index.md')%}
     <li class="ad-o-header-lnk ad-o-header-lnk-lang">
-      <a class="ad-m-lnk ad-m-lnk-text" href="{{ languages.url.path }}">EN</a>
+      <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
     </li>
   </ul>
   </nav>
