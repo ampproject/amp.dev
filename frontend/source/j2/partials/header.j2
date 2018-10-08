@@ -45,11 +45,11 @@
         {% if _doc.base == 'index' %}
         {% if _doc == doc %}
           <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
-            <a class="link-preview-1 ad-m-lnk " href="{{ _doc.url.path }}">{{ _doc.title }}</a>
+            <a class="link-preview-1 ad-m-lnk " href="{{ _doc.url.path }}">{{ collection.title }}</a>
           </li>
         {% else %}
           <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
-            <a class="ad-m-lnk" href="{{ _doc.url.path }}">{{ _doc.title }}</a>
+            <a class="ad-m-lnk" href="{{ _doc.url.path }}">{{ collection.title }}</a>
           </li>
         {% endif %}
         {% endif %}
