@@ -15,10 +15,10 @@ Se você quiser um comportamento semelhante ao de um simples [pixel de rastreame
 
 Na maioria das soluções de análise, use `amp-analytics`. O rastreamento de exibições de página também funciona em `amp-analytics`. No entanto, também é possível rastrear o engajamento dos usuários com qualquer tipo de conteúdo da página, incluindo cliques em links e botões. Além disso, você pode medir até onde o usuário rolou a página, se ele interagiu ou não com mídias sociais e muito mais.
 
-Saiba mais: Consulte [Informações detalhadas sobre o AMP Analytics](/pt_br/docs/analytics/deep_dive_analytics.html).
+Saiba mais: Consulte [Informações detalhadas sobre o AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
 Como parte da integração com a plataforma AMP, os fornecedores ofereceram configurações predefinidas de `amp-analytics`
-para que seja mais fácil coletar dados e movê-los para suas ferramentas de rastreamento. Acesse a documentação de fornecedores na lista [Fornecedores de análise](/pt_br/docs/analytics/analytics-vendors.html).
+para que seja mais fácil coletar dados e movê-los para suas ferramentas de rastreamento. Acesse a documentação de fornecedores na lista [Fornecedores de análise]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Você pode usar `amp-pixel` e `amp-analytics`
 nas suas páginas: `amp-pixel` para rastreamento simples de exibições de página e `amp-analytics` para todo o restante. Também é possível adicionar várias instâncias de cada tag. Se estiver trabalhando com vários fornecedores de análise, será necessário usar uma tag por solução. As páginas AMP mais simples são melhores para os usuários, portanto se você não precisar de tags adicionais, não as use.
@@ -135,5 +135,5 @@ Se a AMP descobrir que o cookie está definido, a substituição do código de c
 
 Saiba mais sobre a substituição do código de cliente, incluindo como adicionar um código de notificação de usuário opcional em [Variáveis ​​permitidas na análise de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
-Saiba mais: Continue seu aprendizado sobre análises em [Informações detalhadas sobre o AMP Analytics](/pt_br/docs/analytics/deep_dive_analytics.html) e [Casos de uso](/pt_br/docs/analytics/use_cases.html).
+Saiba mais: Continue seu aprendizado sobre análises em [Informações detalhadas sobre o AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) e [Casos de uso]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}).
 

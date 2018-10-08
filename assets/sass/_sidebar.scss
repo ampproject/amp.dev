@@ -161,3 +161,12 @@ amp-sidebar {
     transform: translateX(-100%);
   }
 }
+
+:lang(ko) {
+  amp-sidebar {
+    .item-layer-2,
+    .item-layer-3 {
+      font-weight: 400;
+    }
+  }
+}

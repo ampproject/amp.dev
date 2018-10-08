@@ -202,7 +202,7 @@ selected.slide // 0으로 평가합니다.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>
 

@@ -200,4 +200,4 @@ to be shown if no ad is available:
 
 AMP supports a wide range of ad networks. See the [amp-ad reference documentation](/docs/reference/components/amp-ad.html#supported-ad-networks)  for a full list.
 
-Read on: Learn more about ads in the [Serving Ads on AMP](/docs/ads/monetization.html) guide.
+Read on: Learn more about ads in the [Serving Ads on AMP]({{g.doc('/content/docs/ads/monetization.md', locale=doc.locale).url.path}}) guide.

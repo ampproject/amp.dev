@@ -5,7 +5,7 @@ $title: CSS compatibles
 Comme toutes les pages Web, les pages AMP utilisent le langage CSS pour les styles, mais vous ne pouvez pas référencer des feuilles de style externes (à l'exception des [polices personnalisées](#exception-:-les-polices-personnalisées)).
 Certains styles sont également interdits en raison de conséquences sur les performances ; les attributs de style intégrés ne sont pas autorisés.
 
-Tous les styles doivent se trouver dans l'en-tête du document (voir [Ajouter des styles à une page](/fr/docs/fundamentals/validate.html)).
+Tous les styles doivent se trouver dans l'en-tête du document (voir [Ajouter des styles à une page]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})).
 Cependant, vous pouvez utiliser des préprocesseurs CSS et des modèles pour créer des pages statiques afin de mieux gérer votre contenu.
 
 **Remarque** : Les composants AMP ont des styles par défaut pour faciliter la création de pages responsives.

@@ -202,7 +202,7 @@ Catatan: Dalam praktiknya, setiap gambar di carousel kemungkinan akan memiliki `
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
 

@@ -21,6 +21,6 @@ That's it, you've created your AMPHTML ad!
 Before uploading your ad to your ad server, there's one last step you should take&mdash;ensuring your syntax is valid.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/ads/amphtml_ads/image_ad.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/ads/amphtml_ads/validate.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/ads/amphtml_ads/image_ad.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/ads/amphtml_ads/validate.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

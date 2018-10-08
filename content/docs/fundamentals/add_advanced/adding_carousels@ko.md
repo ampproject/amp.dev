@@ -30,9 +30,9 @@ $title: 캐러셀 추가
 
 `amp-carousel` 구성요소는 다양한 방법으로 구성될 수 있습니다.  UI를 변경하여 한 번에 하나의 이미지만 표시되는 반응형 캐러셀의 레아이웃을 만들어 보겠습니다.
 
-이렇게 하려면 먼저 `amp-carousel`의 `type`을 `carousel`에서 `slides`로 **변경**하고, `layout`을 `responsive`로 **변경**한 다음, `width`를 300으로 **설정**합니다. 이때 `height`와 `width`가 모두 설정되어 있어야 합니다.  `"layout=responsive"` 속성을 `amp-carousel`의 `amp-img` 하위 요소에 **추가**합니다. 
+이렇게 하려면 먼저 `amp-carousel`의 `type`을 `carousel`에서 `slides`로 **변경**하고, `layout`을 `responsive`로 **변경**한 다음, `width`를 300으로 **설정**합니다. 이때 `height`와 `width`가 모두 설정되어 있어야 합니다.  `"layout=responsive"` 속성을 `amp-carousel`의 `amp-img` 하위 요소에 **추가**합니다.
 
-페이지를 **새로고침**합니다. 이제 요소 목록이 스크롤되는 대신 한 번에 한 개의 요소만 표시됩니다. 요소 간에 이동하려면 수평으로 **스와이프**해 보세요. 세 번째 요소로 스와이프하면 더 이상 스와이프할 수 없습니다. 
+페이지를 **새로고침**합니다. 이제 요소 목록이 스크롤되는 대신 한 번에 한 개의 요소만 표시됩니다. 요소 간에 이동하려면 수평으로 **스와이프**해 보세요. 세 번째 요소로 스와이프하면 더 이상 스와이프할 수 없습니다.
 
 이제 `loop` 속성을 **추가**합니다. 페이지를 **새로고침**한 다음, 즉시 왼쪽으로 스와이프해 보세요. 캐러셀이 끝없이 계속됩니다.
 
@@ -91,10 +91,12 @@ amp-fit-text {
 자세히 알아보려면 [amp-carousel](/ko/docs/reference/components/amp-carousel.html) 구성요소 참조 문서를 확인하세요.
 
 {% call callout('참고', type='note') %}
-마지막 예를 보면 `amp-ad` 구성요소에 하위 `div` 요소와 `placeholder` 속성이 포함되어 있습니다. 이전 가이드에서 `fallback`을 사용한 `amp-ad`가 포함된 비슷한 시나리오를 본 적이 있습니다. placeholder와 fallback 요소의 차이는 무엇일까요? `Fallback` 요소는 상위 요소를 로드할 수 없을 때(예: 표시할 광고가 없는 경우) 표시됩니다. 반면에 `placeholder` 요소는 상위 요소를 로드하는 중에 상위 요소 대신 표시됩니다. 어떤 의미에서 이러한 요소는 상위 요소의 로드 과정 전후에 표시됩니다. [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html) 가이드에서 자세히 알아볼 수 있습니다.
+
+마지막 예를 보면 `amp-ad` 구성요소에 하위 `div` 요소와 `placeholder` 속성이 포함되어 있습니다. 이전 가이드에서 `fallback`을 사용한 `amp-ad`가 포함된 비슷한 시나리오를 본 적이 있습니다. placeholder와 fallback 요소의 차이는 무엇일까요? `Fallback` 요소는 상위 요소를 로드할 수 없을 때(예: 표시할 광고가 없는 경우) 표시됩니다. 반면에 `placeholder` 요소는 상위 요소를 로드하는 중에 상위 요소 대신 표시됩니다. 어떤 의미에서 이러한 요소는 상위 요소의 로드 과정 전후에 표시됩니다. [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) 가이드에서 자세히 알아볼 수 있습니다.
+
 {% endcall %}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

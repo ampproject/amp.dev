@@ -158,6 +158,6 @@ Refresh your browser and review your work.  Our cover page is complete.
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Completed cover page' ) }}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/getting_started/visual_story/start_story.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

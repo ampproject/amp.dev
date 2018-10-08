@@ -27,7 +27,7 @@ AMP предоставляет два компонента для удовлет
 Вы можете узнать, насколько далеко пользователь выполнил прокрутку страницы,
 связан ли он с социальными сетями и многое другое
 (см.
-[Погружение в AMP Analytics](/ru/docs/analytics/deep_dive_analytics.html)).
+[Погружение в AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})).
 
 В процессе интеграции платформы AMP
 поставщики предлагают предварительно заданные конфигурации `amp-analytics`,

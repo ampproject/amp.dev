@@ -1,92 +1,104 @@
 ---
-$title: Memulai
+$title: Panduan mulai cepat
 ---
+
 [TOC]
 
-Ini adalah panduan memulai cepat untuk membantu Anda agar dapat bekerja dengan AMP tanpa kendala.
+{% set who = g.doc('/content/includes/who.yaml', locale=doc.locale) %}
 
-Untuk petunjuk lebih mendetail, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/getting_started/create.html).
+Panduan ini berisi referensi utama untuk membantu Anda agar dapat menggunakan AMP tanpa kendala.  Untuk informasi yang mendalam, silakan baca [Dokumentasi AMP](/id/docs/) atau [channel YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw) kami. 
 
-### Langkah 1: Dapatkan template HTML AMP
+<hr>
 
-Ini adalah template HTML biasa yang Anda butuhkan untuk halaman AMP:
+## Memulai penggunaan AMP
 
-```html
-<!doctype html>
-<html ⚡>
-  <head>
-    <meta charset="utf-8">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Halo dunia AMP</title>
-    <link rel="canonical" href="hello-world.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  </head>
-  <body>
-    <h1>Halo dunia AMP!</h1>
-  </body>
-</html>
-```
+Terapkan langkah-langkah utama berikut untuk membantu Anda agar dapat menggunakan AMP tanpa kendala:
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [markup yang diperlukan](/id/docs/fundamentals/spec.html#required-markup) untuk halaman AMP.
+1.  [Buat halaman AMP](#create-your-amp-pages)
+2.  [Validasi halaman AMP Anda](#validate-and-test-amp-pages)
+3  [Buat agar konten Anda dapat ditemukan](#make-your-content-discoverable)
 
-### Langkah 2: Tambahkan komponen ke halaman Anda
+## Menggunakan AMP sehari-hari
 
-Lanjutkan pembuatan halaman AMP Anda dengan menambahkan komponen, misalnya gambar:
+Jaga momentum AMP Anda dengan semua referensi yang ditawarkan oleh AMP.
 
-```html
-<amp-img src="https://www.ampproject.org/examples/images/amp.jpg"
-  width="900" height="508" layout="responsive"></amp-img>
-```
+<a class="button" href="#amp-day-to-day-resources"> Lihat referensi</a>
 
-Atau video YouTube:
+<hr>
 
-```html
-<!-- skrip ini diperlukan untuk amp-youtube dan harus berada di bagian <head>  -->
-<script async custom-element="amp-youtube"
-      src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+### Buat halaman AMP
 
-...
+Lihat bagian yang relevan di bawah untuk: [menggunakan CMS](#using-a-cms?), [memulai dari awal](#starting-from-scratch?), atau [mengonversi konten yang sudah ada](#converting-existing-content?).
 
-<amp-youtube data-videoid="9Cfxm7cikMY"
-    layout="responsive"
-    width="480" height="270"></amp-youtube>
-```
+#### Menggunakan CMS?
 
-Dan masih banyak lagi. Lihat daftar [komponen yang tersedia di AMP](/id/docs/reference/components.html).
+AMP mendukung integrasi dengan banyak platform publikasi pihak ketiga. Lihat cara membuat halaman AMP pada dokumentasi untuk platform publikasi Anda.
 
-### Langkah 3: Sesuaikan gaya elemen Anda
+<div>
+  {% for section in who.tech_companies.sections %}
+    {% if section.title == 'CMS' %}
+      <ul>
+        {% for item in section.section_items %}
+          <li class="item">
+            {% if item.link %}
+              <a href="{{item.link}}">{{item.title}}</a>
+            {% else %}
+              {{item.title}}
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+  {% endfor %}
+</div>
 
-Untuk menyesuaikan gaya elemen di halaman AMP, tambahkan CSS ke lembar gaya inline dengan nama `<style amp-custom>` di bagian `<head>` dokumen Anda:
+#### Memulai dari awal?
 
-```html
-<style amp-custom>
-  amp-img {
-    margin: 0.5em;
-  }
-  body {
-    max-width: 900px;
-  }
-</style>
-```
+Jika Anda membuat halaman AMP atau materi iklan dari awal, lihat referensi berikut:
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [CSS yang didukung](/id/docs/design/responsive/style_pages.html) untuk halaman AMP.
+*   [Tutorial: Membuat halaman AMP pertama Anda](/id/docs/tutorials/create.html)
+*   [Tutorial: Menambahkan fitur AMP lanjutan](/id/docs/tutorials/add_advanced.html)
+*   [Spesifikasi HTML AMP](/id/docs/reference/spec.html#the-amp-html-format): *meliputi boilerplate, markup yang diperlukan, HTML yang diizinkan*
+*   [Format Iklan AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): *memberikan detail tentang cara membuat iklan dengan performa bagus di AMP*
+*   [Video YouTube: Apa yang diizinkan dan tidak diizinkan di AMP?](https://youtu.be/Gv8A4CktajQ)
+*   [Template dari AMP Start](https://www.ampstart.com/): *Coba beberapa template halaman AMP yang siap pakai*
 
-### Langkah 4: Lakukan validasi HTML AMP
+#### Mengonversi konten yang sudah ada?
 
-Pastikan halaman AMP Anda adalah HTML AMP yang valid dengan memverifikasi halaman menggunakan [Validator AMP](https://validator.ampproject.org/).
+Jika Anda mengonversi halaman HTML yang sudah ada ke AMPHTML, buka referensi berikut:
 
-Untuk fitur validasi lainnya yang dapat Anda gunakan, lihat [Memvalidasi halaman AMP](/id/docs/fundamentals/validate.html).
+*   [Tutorial: Mengonversi HTML menjadi AMP](/id/docs/tutorials/converting.html)
+*   [Video YouTube: Menggunakan HTML AMP untuk situs Anda yang sudah ada](https://youtu.be/OO9oKhs80aI)
 
-### Langkah Berikutnya
+### Validasi dan uji halaman AMP
 
-Untuk mempelajari lebih lanjut tentang dasar-dasar halaman AMP, buka tutorial [Membuat halaman AMP pertama Anda](/id/docs/getting_started/create.html).
+Sebelum memublikasikan konten, pastikan halaman AMP Anda sudah valid.  Berikut beberapa referensi yang dapat digunakan:
 
-Berikut referensi lain untuk meningkatkan pengalaman Anda:
+*   [Memvalidasi halaman AMP](/id/docs/guides/validate.html): *memberikan daftar petunjuk dan fitur validasi untuk memvalidasi halaman Anda*
+*   [Video YouTube: Cara memvalidasi & men-debug halaman AMP](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
+*   [Menguji CORS di AMP](/id/docs/guides/amp-cors-requests.html#testing-cors-in-amp)
 
-* [Membuat halaman mudah ditemukan](/id/docs/fundamentals/discovery.html)
-* [Menambahkan analytics ke halaman](/id/docs/analytics/analytics_amp.html)
-* [Meningkatkan interaksi pengguna](/id/docs/fundamentals/engagement.html)
-* Demo langsung di [AMP BY Example](https://ampbyexample.com/)
+### Buat agar konten Anda dapat ditemukan
 
+Pastikan pengguna dapat menemukan konten Anda di platform pihak ketiga (misalnya, Twitter, Google, Bing, dll.). Berikut ini beberapa referensi yang bermanfaat:
 
+*   [Membuat halaman dapat ditemukan](/id/docs/guides/discovery.html): *tips untuk menautkan halaman AMP dan menggunakan metadata*
+*   [Panduan Google Penelusuran untuk halaman AMP](https://support.google.com/webmasters/answer/6340290)
+
+<hr>
+
+## Referensi AMP sehari-hari
+
+Referensi berikut akan membantu Anda dalam menggunakan AMP sehari-hari:
+
+*   Pastikan [daftar komponen AMP](/id/docs/reference/components.html) selalu tersedia.  Setiap halaman referensi komponen berisi informasi terperinci tentang cara mengintegrasikan dan menggunakan komponen pada halaman AMP Anda.
+*   Ingin melihat contoh dan demonya?  Buka [AMP By Example](https://ampbyexample.com/), yang memberikan contoh langsung dan peragaan tentang cara menggunakan komponen AMP.
+*   Perlu inspirasi?
+    *   [AMP Start](https://www.ampstart.com/) memberikan komponen dan template yang telah diberi gaya sebelumnya, yang dapat digunakan untuk membuat situs AMP bergaya mulai dari awal.
+    *   [Showcase](/learn/showcases/) kami menyoroti halaman AMP yang perlu diperhatikan dalam praktiknya.
+*   Perlu bantuan? Lihat referensi [Mendapatkan Dukungan](/support/developer/get_support.html).
+*   Ikuti terus kabar terbaru tentang AMP:
+    *   Silakan berlangganan [blog kami](https://amphtml.wordpress.com/)
+    *   Silakan berlangganan [AMP Channel di YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw)
+    *   Ikuti kami di Twitter  [@AMPhtml](https://twitter.com/amphtml)
+ 

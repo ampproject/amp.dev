@@ -22,7 +22,7 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Placeholders & fallbacks](/docs/design/responsive/placeholders.html).
+For more information, see [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 ## heights
 
@@ -43,7 +43,7 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Art direction with srcset, sizes & heights](/docs/design/responsive/art_direction.html).
+For more information, see [Art direction with srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
 
 ## layout
 
@@ -60,7 +60,7 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html) and the [Layout Spec](/docs/design/amp-html-layout.html).
+For more information, see [Layout & Media queries]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) and the [Layout Spec]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## media
 
@@ -121,7 +121,7 @@ Example:
 </amp-lightbox>
 ```
 
-For more information, see  [Actions and Events in AMP](/docs/interaction_dynamic/amp-actions-and-events.html).
+For more information, see  [Actions and Events in AMP]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 
 ## placeholder
 
@@ -137,7 +137,7 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Placeholders & fallbacks](/docs/design/responsive/placeholders.html).
+For more information, see [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 ## sizes
 
@@ -153,7 +153,7 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Art direction with srcset, sizes & heights](/docs/design/responsive/art_direction.html).
+For more information, see [Art direction with srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
 
 ## width and height
 
@@ -169,6 +169,6 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html) and the [Layout Spec](/docs/design/amp-html-layout.html).
+For more information, see [Layout & Media queries]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) and the [Layout Spec]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 

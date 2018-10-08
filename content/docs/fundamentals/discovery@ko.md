@@ -1,58 +1,50 @@
 ---
-$title: 페이지를 더 발견할 수 있게 만들기
+$title: 페이지를 검색할 수 있도록 설정
 ---
 [TOC]
 
 
-뉴스 기사같은 몇가지 케이스에서, 같은 페이지가 AMP인 버전과 AMP가 아닌 버전을 원할 수 있습니다.
-고려하기: 만약 Google 검색이 AMP가 아닌 페이지를 찾았다면, AMP 버전 페이지를 어떻게 찾을 수 있을까요?
+뉴스 기사처럼 동일한 페이지의 AMP 버전과 AMP가 아닌 버전을 모두 갖추고 싶을 수도 있습니다. 하지만 이 경우를 생각해 보세요. Google 검색에서 AMP가 아닌 버전의 페이지를 찾았을 때 이 페이지가 AMP 버전도 있는지 어떻게 알 수 있을까요?
 
-### &lt;link&gt;를 이용한 연결
+### &lt;link&gt;로 페이지 연결
 
-이러한 문제를 해결하기 위해,
-`<head>` 요소 내 `<link>` 태그를 넣는 형태로
-AMP 페이지에 AMP가 아닌 페이지에 대한 정보를 추가하고,
-AMP가 아닌 페이지에 AMP 페이지에 대한 정보를 추가합니다.
+이 문제를 해결하기 위해 `<head>`에 `<link>` 태그의 형태로 AMP가 아닌 페이지에 AMP 페이지에 관한 정보를 추가하며 반대의 경우도 마찬가지입니다.
 
-AMP가 아닌 페이지에는 다음과 같이 추가합니다:
+AMP가 아닌 페이지에 다음을 추가합니다.
 
 [sourcecode:html]
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-AMP 페이지에는 다음과 같이 추가합니다:
+AMP 페이지에 다음을 추가합니다.
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
-### 페이지가 하나인 경우에는 어떻게 해야하나요?
+### 페이지가 하나만 있는 경우
 
-만약 AMP 페이지 하나만 가지고 있다면,
-단순히 자기 자신을 가리키는 `canonical` 링크를 추가해야합니다.
+페이지가 하나만 있고 그 페이지가 AMP 페이지인 경우에도 정식 링크를 추가해야 합니다. 이 경우 자기 자신을 가리키게 됩니다.
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-## 추가 메타데이터를 통한 서드 파티 플랫폼 통합
+{% call callout('읽어보기', type='read') %}
+[AMP 페이지용 Google 검색 가이드라인](https://support.google.com/webmasters/answer/6340290)에서 Google이 AMP 페이지를 확인하는 방법을 자세히 알아보세요.
+{% endcall %}
 
-종종 (AMP 페이지를 포함하거나 링크를 가져가는) 서드 파티 사이트에서 AMP 페이지라는 사실 외에 페이지에 대한 다른 정보를 알 필요가 있을 수 있습니다.
-플랫폼에서 물어볼만한 것들은 "뉴스 기사야?", "비디오야?", "스크린샷이나 간단한 소개 가지고있어?" 같은 류의 것들입니다.
+## 추가 메타데이터를 통해 타사 플랫폼으로 통합
 
-이는 AMP 페이지뿐만 아니라 모든 웹 페이지와 관련되어있습니다.
-몇가지 플랫폼에서, 이런 메타데이터는 부가적이며, 다른 경우 필수이며,
-이 경우 **올바른 메타데이터를 포함하지 않으면 콘텐츠로의 링크를 보여주고 싶지 않다** 라는 의미를 가집니다.
-콘텐츠가 나타나게 하기 위해 플랫폼을 위한 올바른 메타데이터를 포함하기 바랍니다.
+내 AMP 페이지가 삽입되어 있거나 AMP 페이지의 링크가 포함된 타사 사이트에서 관련 페이지가 AMP 페이지라는 것 이외의 정보를 필요로 하는 경우도 있습니다. 플랫폼에서 페이지에 대해 던질 수 있는 질문은 '뉴스 기사인가요?', '동영상인가요?', '스크린샷과 짧은 설명이 있나요?' 등이 있습니다.
 
+이는 AMP 페이지뿐 아니라 모든 웹페이지와 관련이 있습니다. 이 메타데이터는 플랫폼에 따라 추가사항일 수도 있고 요구사항일 수도 있습니다. 메타데이터가 요구사항인 경우 **정확한 메타데이터를 포함하지 않으면 콘텐츠의 링크가 표시되지 않습니다**. 콘텐츠를 표시하고자 하는 플랫폼에 정확한 메타데이터를 포함했는지 확인하세요.
 
-### 대부분의 검색엔진을 위한 Schema.org 사용
+### 대부분의 검색엔진에 Schema.org 사용하기
 
-[Schema.org](http://schema.org/)는 여러 물건에 메타데이터를 추가할 수 있는 오픈 문법을 제안합니다.
-AMP같은 경우, 콘텐츠 타입 정의를 포함하는 콘텍스트의 이해를 위해 속성을 사용하며 (예를 들면, `news article`),
-헤드라인, 발행일 및 관련된 미리보기 이미지 등을 정의할 수 있습니다.
+[Schema.org](http://schema.org/)는 공개 어휘를 제공하여 모든 종류의 항목에 메타데이터를 추가할 수 있습니다. AMP의 경우 상황에 따른 속성으로 특정 콘텐츠 유형(예: '뉴스 기사'), 제목, 게시 날짜, 관련 미리보기 이미지가 있습니다.
 
-예시:
+예
 
 [sourcecode:html]
 <script type="application/ld+json">
@@ -88,13 +80,16 @@ AMP같은 경우, 콘텐츠 타입 정의를 포함하는 콘텍스트의 이해
 </script>
 [/sourcecode]
 
-대체 HTML 속성 문법을 포함한 더 많은 예제는
-[ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)에서 찾을 수 있습니다.
+대체 HTML 속성 구문을 포함한 더 많은 예시는 [AMP 프로젝트 예시 폴더](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)에서 찾아볼 수 있습니다.
 
-노트: 이 Schema.org 정의는 [Google Search news carousel (try on mobile)](https://g.co/ampdemo) 데모와 같이 콘텐츠를 나타내기 위한 필수 요건입니다.
-[Top Stories with AMP](https://developers.google.com/structured-data/carousels/top-stories) 및 [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)을 살펴보길 바랍니다.
+{% call callout('읽어보기', type='read') %} 구조화된 데이터에 관한 자세한 내용은 다음 리소스에서 확인하세요.
 
-### 더 많은 플랫폼을 위한 다른 메타데이터
+* 주요뉴스 캐러셀, 레시피 카드 등 [Google 검색 리치 결과에 콘텐츠가 구조적으로 표시되도록 구성](https://developers.google.com/search/docs/guides/mark-up-content)하는 방법을 알아보세요.
+* [Google 구조화된 데이터용 테스트 도구](https://developers.google.com/structured-data/testing-tool/)로 구조화된 데이터를 테스트하세요.
+{% endcall %}
 
-[Social Discovery guide at Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/)에서
-컨텐츠를 발견하고 배포하도록 준비하는 다른 방법을 모두 배울 수 있습니다.
+### 더 많은 플랫폼의 기타 데이터
+
+[웹 기초의 소셜 검색 가이드](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/)로 이동하여 콘텐츠가 검색되고 배포될 수 있도록 준비하는 여러 방법을 알아보세요.
+ 
+ 

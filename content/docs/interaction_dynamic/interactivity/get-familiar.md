@@ -54,6 +54,6 @@ The starter code offers some basic interactivity:
 **Try it out**: Swipe the image carousel and tap the "Add to cart" button.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/prereqs-setup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

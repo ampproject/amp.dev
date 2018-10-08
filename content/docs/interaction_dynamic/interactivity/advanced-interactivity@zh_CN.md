@@ -202,6 +202,6 @@ selected.slide // Evaluates to 0.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

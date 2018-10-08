@@ -7,5 +7,5 @@ $title: 创建您的第一个 AMP 页面
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/zh_cn/docs/getting_started/create/basic_markup.html"><span class="arrow-next">开始吧</span></a>
+<a class="button" href="{{g.doc('/content/docs/getting_started/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-next">开始吧</span></a>
 </div>

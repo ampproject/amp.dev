@@ -11,9 +11,9 @@ To demonstrate what additional markup could look like, here’s the code require
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Read on: To learn why we’re replacing tags like `<img>` with `<amp-img>`, and how many are available, visit [Include Images & Video](/docs/media/amp_replacements.html).
+Read on: To learn why we’re replacing tags like `<img>` with `<amp-img>`, and how many are available, visit [Include Images & Video]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}}).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/getting_started/create/basic_markup.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/getting_started/create/presentation_layout.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

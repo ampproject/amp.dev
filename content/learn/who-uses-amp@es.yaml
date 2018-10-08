@@ -1,9 +1,4 @@
 $title: ¿Para quién es AMP?
-$order: 1
-class: about-who
-$view: /views/about-who.html
-$parent: /content/learn/overview.yaml
-$path: /learn/who-uses-amp/
 
 hero:
   title: ¿Para quién es AMP?
@@ -15,25 +10,26 @@ hero:
 cards:
   - name: Editores
     filename: publishers
-    cta: Aprender Más
+    cta: Más información
     icon: who_icon_publishers.svg
 
   - name: Anunciantes
     filename: advertisers
-    cta: Aprender Más
+    cta: Más información
     icon: who_icon_advertisers.svg
 
-  - name: Ecommerce
+  - name: Comercio electrónico
     filename: ecommerce
-    cta: Aprender Más
+    cta: Más información
     icon: who_icon_ecomm.svg
 
-  - name: Plataformas Tecnológicas de Anuncios
+  - name: Plataformas de tecnología publicitaria
     filename: ad-tech-platforms
-    cta: Aprender Más
+    cta: Más información
     icon: who_icon_adtech.svg
 
 cta:
-  title: Historias de Éxito
-  link_text: Leer casos de estudio
+  title: Casos de éxito
+  link_text: Consultar casos de éxito
   link_url: /content/learn/case-studies.html
+ 

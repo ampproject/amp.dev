@@ -20,7 +20,8 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html)을 참조하세요.
+자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
+
 
 ## heights
 
@@ -41,7 +42,7 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리](/ko/docs/design/responsive/art_direction.html)를 참조하세요.
+자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})를 참조하세요.
 
 ## layout
 
@@ -58,7 +59,7 @@ AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지�
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리](/ko/docs/design/responsive/control_layout.html) 및 [레이아웃 사양](/ko/docs/design/amp-html-layout.html)을 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) 및 [레이아웃 사양]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})을 참조하세요.
 
 ## media
 
@@ -119,11 +120,11 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-lightbox>
 [/sourcecode]
 
-자세한 내용은 [AMP 작업 및 이벤트](/ko/docs/interaction_dynamic/amp-actions-and-events.html)를 참조하세요.
+자세한 내용은 [AMP 작업 및 이벤트]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}})를 참조하세요.
 
 ## placeholder
 
-`placeholder` 속성은 이 속성으로 표시된 요소가 상위 AMP 요소의 자리표시자 역할을 한다는 것을 나타냅니다. 이 속성은 placeholder를 지원하는 AMP 요소의 직접 하위 요소인 모든 HTML 요소에 배치할 수 있습니다. 기본적으로 AMP 요소의 리소스가 다운로드되거나 초기화되지 않은 경우에도 AMP 요소의 자리표시자가 즉시 표시됩니다. 준비가 완료되면 AMP 요소는 일반적으로 자리표시자를 숨기고 콘텐츠를 표시합니다. placeholder 속성과 관련된 정확한 작동은 요소의 구현에 따라 달라집니다.
+`placeholder` 속성은 이 속성으로 표시된 요소가 상위 AMP 요소의 플레이스홀더 역할을 한다는 것을 나타냅니다. 이 속성은 placeholder를 지원하는 AMP 요소의 직접 하위 요소인 모든 HTML 요소에 배치할 수 있습니다. 기본적으로 AMP 요소의 리소스가 다운로드되거나 초기화되지 않은 경우에도 AMP 요소의 플레이스홀더가 즉시 표시됩니다. 준비가 완료되면 AMP 요소는 일반적으로 플레이스홀더를 숨기고 콘텐츠를 표시합니다. placeholder 속성과 관련된 정확한 작동은 요소의 구현에 따라 달라집니다.
 
 일반적으로 함께 사용되는 항목: 이미지, 애니메이션, 동영상, 광고
 
@@ -135,7 +136,8 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html)을 참조하세요.
+자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
+
 
 ## sizes
 
@@ -151,7 +153,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리](/ko/docs/design/responsive/art_direction.html)를 참조하세요.
+자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})를 참조하세요.
 
 ## width 및 height
 
@@ -167,4 +169,4 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리](/ko/docs/design/responsive/control_layout.html) 및 [레이아웃 사양](/ko/docs/design/amp-html-layout.html)을 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) 및 [레이아웃 사양]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})을 참조하세요.

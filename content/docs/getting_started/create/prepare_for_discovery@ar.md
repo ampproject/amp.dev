@@ -29,6 +29,6 @@ $title: تحضير صفحتك للاكتشاف والتوزيع
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ar/docs/getting_started/create/preview_and_validate.html"><span class="arrow-prev">سابق</span></a>
-  <a class="button next-button" href="/ar/docs/getting_started/create/publish.html"><span class="arrow-next">التالى</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">سابق</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">التالى</span></a>
 </div>
