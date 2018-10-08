@@ -3,25 +3,31 @@ import { spawn } from 'child_process'
 import express from 'express'
 import requestProxy from 'express-request-proxy';
 
-// TODO(matthiasrohmer): Maybe move configuration to dedicated files
+// TODO(matthiasrohmer): Get configuration from ~setup/settings.js
 const GROW_HOST = 'http://localhost:8080'
 const STATIC_DIRECTORY = '/static'
 
 // TODO(matthiasrohmer): Wrap spawn() calls in promises and only start
 // express server if running gulp and grow was successful
-// Run pre-processing and watching of files
-const gulp = spawn('gulp', [], {'stdio': [process.stdin, process.stdout, process.stderr]});
-
-// Start grow to vend the content
-const grow = spawn('grow', ['run'], {'stdio': [process.stdin, process.stdout, process.stderr]});
-
-// Start express server as proxy and orchestrator
+const gulp = spawn('gulp', [],
+  {'stdio': [process.stdin, process.stdout, process.stderr]});
+const grow = spawn('grow',
+  ['run', '--no-preprocess'],
+  {'stdio': [process.stdin, process.stdout, process.stderr]});
 const app = express();
+
+// Special case for example $paths postfixed with /source.html
+// TODO(matthiasrohmer): Try to clean this mess up
+app.get(/\/.*examples.*-source.html/, function(req, res) {
+  let examplePath = req.path.replace('-source.html', '.html');
+  examplePath = examplePath.replace('/documentation/', '/');
+
+  res.sendFile(__dirname + examplePath);
+});
 
 // Basically proxy all requests over to `grow run`
 app.get('/*', requestProxy({'url': GROW_HOST + '/*'}));
 
-// Except for static files as they are coming from STATIC_DIRECTORY
 app.use('/static', express.static('static'));
 
 app.listen(8888);
