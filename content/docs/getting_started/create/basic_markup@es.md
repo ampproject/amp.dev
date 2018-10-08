@@ -44,10 +44,10 @@ Los documentos AMP HTML DEBEN:
 | Comenzar con el tipo de documento `<!doctype html>`. | Estándar para HTML. |
 | Contener la etiqueta `<html ⚡>` en el nivel superior <br>(también se acepta `<html amp>`). | Identifica la página como contenido AMP. |
 | Contener las etiquetas `<head>` y `<body>`. | Opcional en HTML pero requerido en AMP.
-| Contener la etiqueta `<meta charset="utf-8">` como el primer hijo de su etiqueta `<head>`. | Identifica la codificación de la página. | 
+| Contener la etiqueta `<meta charset="utf-8">` como el primer hijo de su etiqueta `<head>`. | Identifica la codificación de la página. |
 | Contener la etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` como el segundo hijo de su etiqueta `<head>`. | Incluye y carga la librería AMP JS. |
-| Contener una etiqueta `<link rel="canonical" href="$SOME_URL">` en la etiqueta `<head>`. | Apunta a la versión regular en HTML de la página AMP, o bien apunta a sí mmisma si dicha versión no existe. Aprende más en [Hacer que tu página sea visible](/es/docs/fundamentals/discovery.html).
-| Contener una etiqueta `<meta name="viewport" content="width=device-width,minimum-scale=1">` en la etiqueta `<head>`. También se recomienda incluir `initial-scale=1`. | Especifica un `viewport` responsivo. Aprende más en [Crear páginas AMP responsivas](/es/docs/design/responsive/responsive_design.html). |
+| Contener una etiqueta `<link rel="canonical" href="$SOME_URL">` en la etiqueta `<head>`. | Apunta a la versión regular en HTML de la página AMP, o bien apunta a sí mmisma si dicha versión no existe. Aprende más en [Hacer que tu página sea visible]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}).
+| Contener una etiqueta `<meta name="viewport" content="width=device-width,minimum-scale=1">` en la etiqueta `<head>`. También se recomienda incluir `initial-scale=1`. | Especifica un `viewport` responsivo. Aprende más en [Crear páginas AMP responsivas]({{g.doc('/content/docs/design/responsive/responsive_design.md', locale=doc.locale).url.path}}). |
 | Contener el [código AMP boilerplate](/docs/reference/spec/amp-boilerplate.html) en la etiqueta `<head>`.  | CSS para ocultar inicialmente el contenido hasta que se carga AMP JS. |
 
 
@@ -66,6 +66,6 @@ Además de los requisitos básicos, en nuestro ejemplo también se incluye una d
 ¡Buenas noticias! Eso es todo lo que necesitamos para crear nuestra primera página AMP, aunque por supuesto falta especificar el `<body>`. En la próxima sección, veremos la manera de agregar componentes básicos, como imágenes, elementos de AMP personalizados, dar estilo a tu página y definir un diseño responsivo.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/getting_started/create.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/getting_started/create/include_image.html"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
 </div>

@@ -148,7 +148,7 @@ Veja mais informações sobre o componente de bookend. Acesse a documentação d
 Nossa história está quase pronta.  Antes de publicar o conteúdo, vamos verificar se o HTML para AMP é válido.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/getting_started/visual_story/validation.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
  

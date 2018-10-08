@@ -90,9 +90,9 @@ Now, **replace** your simple carousel with this:
 
 To learn more, see the [amp-carousel](/docs/reference/components/amp-carousel.html) component reference documentation.
 
-Note: In our last example you may have noticed the `amp-ad` component included a child `div` element with the `placeholder` attribute. Earlier in the tutorial, we encountered a similar scenario with `amp-ad` using a `fallback`. What’s the difference between placeholder and fallback? `Fallback` elements appear when the parent element fails to load, i.e. if there was no ad available. `placeholder` elements appear in place of the parent element, while it is loading. In a sense, these elements bookend the loading process of the parent element. You can learn more in [Placeholders & fallbacks](/docs/design/responsive/placeholders.html) guide.
+Note: In our last example you may have noticed the `amp-ad` component included a child `div` element with the `placeholder` attribute. Earlier in the tutorial, we encountered a similar scenario with `amp-ad` using a `fallback`. What’s the difference between placeholder and fallback? `Fallback` elements appear when the parent element fails to load, i.e. if there was no ad available. `placeholder` elements appear in place of the parent element, while it is loading. In a sense, these elements bookend the loading process of the parent element. You can learn more in [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) guide.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

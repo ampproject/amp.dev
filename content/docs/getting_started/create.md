@@ -10,5 +10,5 @@ Not sure how to get started? In this tutorial, you’ll learn how to create a ba
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="/docs/getting_started/create/basic_markup.html"><span class="arrow-next">Get started</span></a>
+<a class="button" href="{{g.doc('/content/docs/getting_started/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
 </div>

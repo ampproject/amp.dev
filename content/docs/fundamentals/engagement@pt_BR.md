@@ -8,7 +8,7 @@ Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as AMP
 
 - **Reflita sua marca nas páginas AMP.** Use o mesmo cabeçalho e esquema de design (por exemplo, cores, espaçamento, estilos de fonte) das páginas não AMP para que todo o conteúdo seja reconhecível e legítimo.
 
-- **Mostre o melhor do seu conteúdo** ao converter suas páginas. Inclua elementos importantes da página, como imagens, vídeos, conteúdos incorporados, dados estruturados, comentários e mídias sociais. Saiba como [incluir conteúdo de terceiros](/pt_br/docs/fundamentals/third_party_components.html).
+- **Mostre o melhor do seu conteúdo** ao converter suas páginas. Inclua elementos importantes da página, como imagens, vídeos, conteúdos incorporados, dados estruturados, comentários e mídias sociais. Saiba como [incluir conteúdo de terceiros]({{g.doc('/content/docs/fundamentals/third_party_components.md', locale=doc.locale).url.path}}).
 
 - **Mantenha as páginas AMP atualizadas.** Faça atualizações dinâmicas de blogs ativos com [`amp-live-list`](/pt_br/docs/reference/components/amp-live-list.html).
 
@@ -28,7 +28,7 @@ Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as AMP
 
 - **Cultive novas interações,** como a geração de leads, a inscrição em boletins informativos e o suporte nos comentários com [`amp-form`](/pt_br/docs/reference/components/amp-form.html).
 
-- **Dê preferência para tipos de anúncio que ofereçam uma boa experiência ao leitor.** Explore os formatos de anúncios AMP, como [`amp-sticky-ad`](/pt_br/docs/reference/components/amp-sticky-ad.html) e [`amp-fx-flying-carpet`](/pt_br/docs/reference/components/amp-fx-flying-carpet.html). Siga as [práticas recomendadas](/pt_br/docs/ads/monetization.html) para monetização de anúncios.
+- **Dê preferência para tipos de anúncio que ofereçam uma boa experiência ao leitor.** Explore os formatos de anúncios AMP, como [`amp-sticky-ad`](/pt_br/docs/reference/components/amp-sticky-ad.html) e [`amp-fx-flying-carpet`](/pt_br/docs/reference/components/amp-fx-flying-carpet.html). Siga as [práticas recomendadas]({{g.doc('/content/docs/ads/monetization.md', locale=doc.locale).url.path}}) para monetização de anúncios.
 
 - **Aumente os downloads de aplicativos.**
 Inclua um banner com um link para a instalação do aplicativo usando [`amp-app-banner`](/pt_br/docs/reference/components/amp-app-banner.html).

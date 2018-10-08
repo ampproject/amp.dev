@@ -28,7 +28,7 @@ To opt your browser into the AMP Dev Channel, go to [the AMP experiments page](h
 
 #### Served from cdn.ampproject.org
 
-For content served from [https://cdn.ampproject.org](https://cdn.ampproject.org), 
+For content served from [https://cdn.ampproject.org](https://cdn.ampproject.org),
 go to the [AMP experiments page](https://cdn.ampproject.org/experiments.html)
 and enable (or disable) any experimental component by toggling them on (or off). Opting in will set a cookie on your browser that will enable the experiment on all AMP pages served through the Google AMP Cache.
 
@@ -41,7 +41,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 Any AMP file that includes experimental features will fail
-[AMP validation](/docs/fundamentals/validate.html).
+[AMP validation]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 Remove these experimental components for production-ready AMP documents.
 
 ## Enable an experiment for a particular document

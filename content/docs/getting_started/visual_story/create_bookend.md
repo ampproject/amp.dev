@@ -149,6 +149,6 @@ There's more to learn about the bookend component. For details, see the [amp-sto
 Our story is nearly complete.  Before we can publish our content, let's check that our AMP HTML is valid.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/getting_started/visual_story/validation.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

@@ -9,7 +9,7 @@ $parent: /content/docs/getting_started/visual_story.md
 Before starting this tutorial, you'll need the following:
 
 - A basic knowledge of HTML, CSS, and JavaScript
-- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"](/docs/fundamentals/converting.html) tutorial)
+- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}) tutorial)
 - A browser of your choice
 - A text editor of your choice
 
@@ -41,6 +41,6 @@ Important: Make sure the URL serves from `localhost` otherwise the AMP story mig
 Click through the completed story and get a sense of what we'll be creating.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/docs/getting_started/visual_story.html"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="/docs/getting_started/visual_story/parts_of_story.html"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

@@ -94,11 +94,11 @@ Antes de começar a adicionar código, revise a página de exemplo [article.amp.
 </html>
 ```
 
-Essa é uma página AMP simples que passa tanto pela [validação da AMP](/pt_br/docs/fundamentals/validate.html) quanto pela validação de dados estruturados de [schema.org](http://schema.org/). Se essa página fosse implementada em um site de notícias, os usuários poderiam descobri-la por meio de experiências avançadas nas páginas de resultados do mecanismo de pesquisa. Por exemplo, no carrossel de notícias principais da Pesquisa Google.
+Essa é uma página AMP simples que passa tanto pela [validação da AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) quanto pela validação de dados estruturados de [schema.org](http://schema.org/). Se essa página fosse implementada em um site de notícias, os usuários poderiam descobri-la por meio de experiências avançadas nas páginas de resultados do mecanismo de pesquisa. Por exemplo, no carrossel de notícias principais da Pesquisa Google.
 
 ## Ativar o validador de AMP
 
-Antes de alterar a página, ative o [validador de AMP](/pt_br/docs/fundamentals/validate.html) para ter certeza de que está trabalhando com um HTML para AMP válido.  **Adicione** este identificador de fragmento ao URL:
+Antes de alterar a página, ative o [validador de AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) para ter certeza de que está trabalhando com um HTML para AMP válido.  **Adicione** este identificador de fragmento ao URL:
 
 ```text
 #development=1
@@ -120,7 +120,7 @@ Abra o [Developers Console](https://developer.chrome.com/devtools/docs/console) 
 - a [interface da Web do validador de AMP](https://validator.ampproject.org/);
 - … e muito mais.
 
-Saiba mais no guia [Validar páginas AMP](/pt_br/docs/fundamentals/validate.html).
+Saiba mais no guia [Validar páginas AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 {% endcall %}
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulated on a Nexus 5X device') }}
@@ -132,6 +132,6 @@ A página é projetada para dispositivos móveis, então, **simule** a experiên
 Agora, é possível começar a trabalhar na página. Adicione alguns componentes de AMP à página.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/fundamentals/add_advanced/adding_components.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>

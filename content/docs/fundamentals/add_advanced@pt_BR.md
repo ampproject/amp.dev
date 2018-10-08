@@ -19,9 +19,9 @@ Neste tutorial, você desenvolverá seu conhecimento dos princípios básicos da
 
 Você criará uma página de artigo de notícias em conformidade com as especificações de AMP, incluindo publicidade, análises, vídeos e mídia social incorporados, carrosséis e um menu de navegação do site.
 
-Observação: Este tutorial é uma continuação dos conceitos apresentados no tutorial ["Converter seu HTML para AMP"](/pt_br/docs/fundamentals/converting.html). Se você ainda não tiver um conhecimento básico dos principais conceitos de AMP, acesse ["Converter seu HTML para AMP"](/pt_br/docs/fundamentals/converting.html).
+Observação: Este tutorial é uma continuação dos conceitos apresentados no tutorial ["Converter seu HTML para AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}). Se você ainda não tiver um conhecimento básico dos principais conceitos de AMP, acesse ["Converter seu HTML para AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}).
 
 <div class="start-button">
-<a class="button" href="/pt_br/docs/fundamentals/add_advanced/setting_up.html"><span class="arrow-next">Primeiros passos</span></a>
+<a class="button" href="{{g.doc('/content/docs/fundamentals/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Primeiros passos</span></a>
 </div>
 

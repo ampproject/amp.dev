@@ -8,7 +8,7 @@ $title: AMP와 통합하여 디스플레이 광고 게재
 
 ## 개요
 
-광고 서버에서는 AMP와 통합하여 기본 HTML 광고를 AMP 페이지에 게재할 뿐 아니라 [AMP HTML](/ko/docs/ads/amphtml_ads.html) 광고를 게재할 수 있습니다.
+광고 서버에서는 AMP와 통합하여 기본 HTML 광고를 AMP 페이지에 게재할 뿐 아니라 [AMP HTML]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}) 광고를 게재할 수 있습니다.
 
 ##### 기본 HTML 광고를 게재하고 싶나요?
 
@@ -62,6 +62,6 @@ $title: AMP와 통합하여 디스플레이 광고 게재
 ## 관련 리소스
 
 *   [모든 AMP 광고 확장에 대한 GitHub 디렉토리](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [지원되는 광고 공급업체 목록](/ko/docs/ads/ads_vendors.html)
+*   [지원되는 광고 공급업체 목록]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
 *   [빠른 가져오기 출시 관련 블로그 항목](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)
  

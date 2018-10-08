@@ -202,7 +202,7 @@ Observação: Na prática, é provável que cada imagem do carrossel tenha um "s
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/interactivity/remote-data.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
 

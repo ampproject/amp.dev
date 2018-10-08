@@ -49,8 +49,10 @@ faq:
       간략히 말씀드리면 많은 작업을 요구하지 않습니다. 'AMP HTML'은 전부 기존의 웹 기술로 개발되었기 때문에 AMP 개발 과정은 게시자와 광고주가 오늘날 사용하고 있는 과정을 미러링합니다. 게시자와 광고주는 GitHub에서 [AMP HTML 사양](/ko/docs/reference/spec.html)을 숙지할 수 있습니다. 현재의 개발 과정에 익숙한 분이시라면 사용 방법을 배우는 데 어려움이 전혀 없을 것입니다.
   - title: 게시자나 광고주가 콘텐츠를 AMP HTML로 어떻게 변환할 수 있나요?
     answer: |
-      게시자 및 콘텐츠 관리 시스템(CMS) 공급자는 자신들이 사용하는 CMS와의 통합을 통해 AMP 콘텐츠를 만들어 낼 수 있습니다. Automattic에서는 이미 [WordPress AMP 플러그인](https://wordpress.org/plugins/amp/)을 발표한 바 있으며 우리는 모든 콘텐츠 관리 시스템에 AMP HTML 페이지 지원 기능이 추가되길 희망합니다.
-  - title: AMP는 모바일 전용인가요?
+      간단히 말해, 그렇게까진 아닙니다. “AMP HTML”은 완전히 기존 웹 기술로 만들어졌기 때문에, 개발 프로세스는 퍼블리셔가 이미 사용하고 있는 기술을 반영합니다.
+      퍼블리셔는 GitHub의 [AMP HTML specification]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})을 숙지할 수 있습니다.
+      현재 프로세스에 익숙한 사용자에게는, 상당한 러닝 커브가 필요하지 않습니다.
+  - title: 퍼블리셔가 어떻게 AMP HTML 내 콘텐츠를 가져옵니까?
     answer: |
       AMP는 *모든* 화면 크기에서 작동할 수 있도록 반응성을 염두에 두고 설계되었습니다.  하지만 제3자 플랫폼의 일부 기능(예: Google 주요뉴스 캐러셀)은 모바일 환경 전용으로 제작되기도 합니다.  제3자 플랫폼에서 AMP를 사용하는 방법을 확인해 보세요.  모바일 및 데스크톱 AMP 페이지에 관해 자세히 알아보려면 Paul Bakaus가 작성한 [Accelerated Mobile Pages의 '모바일' 정보](https://paulbakaus.com/2016/07/01/about-that-mobile-in-accelerated-mobile-pages/) 블로그 게시물을 참조하세요.
 
