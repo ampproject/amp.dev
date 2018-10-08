@@ -8,6 +8,11 @@
 
 */
 
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
 .#{organism('teaser-grid')} {
 	&-list {
 		display: grid;

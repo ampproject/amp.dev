@@ -10,6 +10,13 @@ TODO: Add info text to this molecule.
 
 */
 
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+
 .#{molecule('tag')} {
 	@include txt;
 	@include txt-accent-2;
@@ -44,6 +51,6 @@ TODO: Add info text to this molecule.
 
 	&-e-mails {
 		color: color('pigment-indigo');
-		@include gradient-emails;
+		@include gradient-e-mails;
 	}
 }
