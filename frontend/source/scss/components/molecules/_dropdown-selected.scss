@@ -19,9 +19,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 */
 
+@import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 @import '../atoms/_text.scss';
-@import '../atoms/_destination.scss';
 
 .destination-list-view-box {
   display: inline;
@@ -149,7 +149,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .destination-list-item {
 	@include hl;
 	@include hl-stage;
-	@include hl-light;
+	@include color-white;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
   order: 2;
@@ -172,43 +172,43 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 }
 
 .websites {
-  @include txt-light;
+  @include color-websites;
   background: transparent;
 
   &-background {
-	  @include destination-websites;
+	  @include gradient-websites;
   }
 }
 
 .stories {
-  @include txt-stories;
+  @include color-stories;
 
   &-background {
-	  @include destination-stories;
+	  @include gradient-stories;
   }
 }
 
 .ads {
-  @include txt-ads;
+  @include color-ads;
 
   &-background {
-	  @include destination-ads;
+	  @include gradient-ads;
   }
 }
 
 .emails {
-  @include txt-email;
+  @include color-e-mails;
 
   &-background {
-	  @include destination-email;
+	  @include gradient-e-mails;
   }
 }
 
 .overview {
-  @include txt-overview;
+  @include color-overview;
 
 	&-background {
-		@include destination-overview;
+		@include gradient-overview;
 	}
 }
 
