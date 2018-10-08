@@ -14,6 +14,7 @@
 
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
+@import '../atoms/_headline.scss';
 
 @import '../molecules/_link.scss';
 
@@ -28,10 +29,14 @@
 
   &-list {
     display: flex;
-    padding: 0;
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     align-items: center;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 auto;
+    }
   }
 
   &-lnk {
@@ -76,6 +81,11 @@
       &:hover {
         @include txt-blue-ribbon;
       }
+
+      &-mobile {
+        @include hl-nav;
+        padding: 8px 0;
+      }
     }
 
     &-selected {
@@ -96,7 +106,7 @@
 
       .ad-m-lnk {
         @include txt;
-        @include txt-3;
+        @include txt-2;
         padding: 13px 0;
       }
 
@@ -122,10 +132,15 @@
   &-main-nav {
     border-bottom: 1px solid color('wild-sand');
     background-color: color('white');
+
+    & .ad-o-header-list {
+      padding: 5px 0px;
+    }
   }
 
 
   &-subnav {
+    height: 50px;
     background-color: color('white');
   }
 
@@ -179,7 +194,7 @@
   &-burger-menu {
     position: fixed;
     top: calc(18px);
-    padding: 15px;
+    padding: 0px 20px;
     right: 0;
     z-index: 100;
 
@@ -201,7 +216,7 @@
   &-list-mobile {
     height: 0;
     margin: 0;
-    padding: 2em 0 0 2em;
+    // padding: 2em 0 0 2em;
     overflow: hidden;
     list-style: none;
     transition: height 0.2s ease-in-out;

@@ -34,7 +34,7 @@
         </form>
       </li>
        <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
-        <a class="ad-m-lnk" href="{{ home.url.path }}">
+        <a class="ad-m-lnk ad-m-lnk-mobile" href="{{ home.url.path }}">
           <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong">{{ home.title }}</span>
         </a>
       </li>
@@ -45,11 +45,11 @@
         {% if _doc.base == 'index' %}
         {% if _doc == doc %}
           <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
-            <a class="link-preview-1 ad-m-lnk " href="{{ _doc.url.path }}">{{ collection.title }}</a>
+            <a class="link-preview-1 ad-m-lnk ad-m-lnk-mobile" href="{{ _doc.url.path }}">{{ collection.title }}</a>
           </li>
         {% else %}
           <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
-            <a class="ad-m-lnk" href="{{ _doc.url.path }}">{{ collection.title }}</a>
+            <a class="ad-m-lnk ad-m-lnk-mobile" href="{{ _doc.url.path }}">{{ collection.title }}</a>
           </li>
         {% endif %}
         {% endif %}
@@ -57,7 +57,7 @@
       {% endfor %}
        {% set languages = g.doc('/content/languages/index.md')%}
         <li class="ad-o-header-lnk ad-o-header-lnk-mobile ad-o-header-lnk-lang">
-          <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
+          <a class="ad-m-lnk" href="{{ languages.url.path }}">EN</a>
         </li>
     </ul>
 
