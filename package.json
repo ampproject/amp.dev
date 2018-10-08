@@ -5,7 +5,8 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "grow run",
+    "start": "babel-node index.js",
+    "debug": "DEBUG=express:* babel-node index.js",
     "build": "grow build",
     "deploy": "gulp build && grow build && gulp optimize"
   },
@@ -23,19 +24,23 @@
     "url": "https://github.com/jungvonmatt/amp.dev/issues"
   },
   "homepage": "https://github.com/jungvonmatt/amp.dev#readme",
-  "devDependencies": {
-    "babel-plugin-root-import": "^6.0.0",
+  "dependencies": {
+		"babel-plugin-root-import": "^6.0.0",
+    "amp-by-example": "^0.2.0",
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "babelify": "^8.0.0",
     "del": "^3.0.0",
-    "gulp": "^4.0.0",
+    "express-request-proxy": "^2.2.2",
+    "express": "^4.16.3",
+    "gitmoji-cli": "^1.9.2",
+    "gulp-changed": "^3.2.0",
     "gulp-multi-dest": "^1.3.7",
     "gulp-sass": "^4.0.1",
     "gulp-strip-css-comments": "^2.0.0",
+    "gulp": "^4.0.0",
+    "through2": "^2.0.3",
     "yargs": "^12.0.1"
-  },
-  "dependencies": {
-    "gitmoji-cli": "^1.9.2"
   }
 }
