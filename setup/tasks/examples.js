@@ -18,14 +18,13 @@ export default function examples(done) {
 
     // stream.pipe(changed(settings.examples.dest));
     // TODO(matthiasrohmer): Transform samples and create vinyls for all three types
-    stream.pipe(through.obj(function(html, encoding, callback) {
-      console.log('Transforming example', html.path, html.relative);
+    stream = stream.pipe(through.obj(function(html, encoding, callback) {
+      console.log('Transforming example:', html.relative);
       loadExample(html.path).then((example) => {
         // Write data source JSON to Grow pod
         let json = html.clone();
         json.contents = Buffer.from(JSON.stringify(example));
         json.extname = '.json';
-
         stream.push(json);
 
         // And also write Markdown file referencing the JSON data source
@@ -36,7 +35,7 @@ export default function examples(done) {
           '$title: ' + example.document.title,
           '$view: ' + settings.examples.grow.view,
           '$path: ' + settings.examples.grow.basePath + html.relative,
-          'example:  !g.json ' + settings.examples.dest + '/' + json.relative,
+          'example: !g.json ' + settings.examples.dest + '/' + json.relative,
           '---'
         ].join('\n'));
         markdown.extname = '.md';
