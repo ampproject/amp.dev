@@ -25,6 +25,14 @@ const settings = {
             'outputStyle': 'compact'
         }
     },
+    'examples': {
+        'src': 'examples/**/*.html',
+        'dest': 'content/amp-dev/documentation/examples',
+        'grow': {
+          'view': 'views/example.j2',
+          'basePath': '/documentation/examples/'
+        }
+    },
     'templates': {
       'src': 'frontend/source/j2/**/*.j2',
       'dest': './'

@@ -1,0 +1,13 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>{{ doc.title }}</title>
+</head>
+<body>
+  {% for section in doc.example.document.sections %}
+  {{ section.doc|markdown|safe }}
+  {% endfor %}
+</body>
+</html>
