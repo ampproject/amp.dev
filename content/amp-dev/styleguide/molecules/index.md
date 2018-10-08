@@ -1,6 +1,8 @@
 ---
-$title: Float image
+$title: Float-image
+teaser_type: component
 ---
+
 # Float image
 
 [float-image]
