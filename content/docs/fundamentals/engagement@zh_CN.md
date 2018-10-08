@@ -8,7 +8,7 @@ $title: 提高用户互动度
 
 - **在 AMP 网页上树立您的品牌。** 使用与非 AMP 网页相同的标题和设计方案（例如，颜色，间距和类型样式，确保您的网页易于识别且显示得当。
 
-- **主推最具吸引力的内容**（转换网页时）。 请纳入图片，视频，嵌入式内容，结构化数据，评论和社交媒体等关键网页元素。 了解如何[纳入第三方内容](/zh_cn/docs/fundamentals/third_party_components.html)。
+- **主推最具吸引力的内容**（转换网页时）。 请纳入图片，视频，嵌入式内容，结构化数据，评论和社交媒体等关键网页元素。 了解如何[纳入第三方内容]({{g.doc('/content/docs/fundamentals/third_party_components.md', locale=doc.locale).url.path}})。
 
 - **确保 AMP 网页保持最新状态。** 借助 [`amp-live-list`](/zh_cn/docs/reference/components/amp-live-list.html) 动态更新博客实况。
 
@@ -28,7 +28,7 @@ $title: 提高用户互动度
 
 - **吸引用户进行新的互动**（如潜在客户发掘，简报注册和评论支持，通过 [`amp-form`](/zh_cn/docs/reference/components/amp-form.html)）。
 
-- **努力找到能够提供满意阅读体验的广告类型。** 探索 AMP 广告格式，如 [`amp-sticky-ad`](/zh_cn/docs/reference/components/amp-sticky-ad.html) 和 [`amp-fx-flying-carpet`](/zh_cn/docs/reference/components/amp-fx-flying-carpet.html)。 遵循广告获利[最佳做法](/zh_cn/docs/ads/monetization.html)。
+- **努力找到能够提供满意阅读体验的广告类型。** 探索 AMP 广告格式，如 [`amp-sticky-ad`](/zh_cn/docs/reference/components/amp-sticky-ad.html) 和 [`amp-fx-flying-carpet`](/zh_cn/docs/reference/components/amp-fx-flying-carpet.html)。 遵循广告获利[最佳做法]({{g.doc('/content/docs/ads/monetization.md', locale=doc.locale).url.path}})。
 
 - **提升应用下载量。** 使用 [`amp-app-banner`](/zh_cn/docs/reference/components/amp-app-banner.html)，在横幅广告中纳入应用安装链接。
 
@@ -38,7 +38,7 @@ $title: 提高用户互动度
 
 - **查看 AMP 路线图**，了解最新动态和功能：[ampproject.org/roadmap](https://www.ampproject.org/zh_cn/roadmap)。
 
-- **积极参与。** 
+- **积极参与。**
 在 [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)上贡献源代码，提交错误或提供反馈。 要分享您对 AMP 的想法，请访问 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)。
 
 - **了解**如何使用 AMP 组件：[AMP by Example](https://ampbyexample.com/)。

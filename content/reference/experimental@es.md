@@ -3,12 +3,12 @@ $title: Componentes experimentales
 $order: 5
 ---
 
-[Los componentes experimentales de AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) 
-son funciones que no están listas para usarse de forma generalizada; de ahí que se califiquen como experimentales 
+[Los componentes experimentales de AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+son funciones que no están listas para usarse de forma generalizada; de ahí que se califiquen como experimentales
 para que quienes las utilicen estén sobre aviso.
 
 Los desarrolladores y los usuarios pueden habilitar el uso de estas funciones antes de que se publiquen
-definitivamente, pero deben usarlas con precaución, ya que pueden contener errores o efectos secundarios que no se 
+definitivamente, pero deben usarlas con precaución, ya que pueden contener errores o efectos secundarios que no se
 habían previsto.
 
 ## Habilitar el canal para desarrolladores de AMP
@@ -28,8 +28,8 @@ Para habilitar el canal para desarrolladores de AMP en tu navegador, ve a [la p�
 
 ## Habilitar un componente experimental
 
-Si el contenido se ha publicado desde [https://cdn.ampproject.org](https://cdn.ampproject.org), 
-accede a la [página de experimentos de AMP](https://cdn.ampproject.org/experiments.html) 
+Si el contenido se ha publicado desde [https://cdn.ampproject.org](https://cdn.ampproject.org),
+accede a la [página de experimentos de AMP](https://cdn.ampproject.org/experiments.html)
 y habilita los componentes experimentales activándolos, o inhabilítalos desactivándolos si es lo que quieres. Al habilitar esta opción, se creará una cookie en tu navegador que habilitará el experimento en todas las páginas AMP que se publiquen a través de Google AMP Cache.
 
 Si el contenido se ha publicado desde cualquier otro dominio, los experimentos se podrán activar desde la consola DevTools cuando el modo de desarrollo se haya habilitado mediante:
@@ -39,6 +39,6 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 Los archivos de AMP que incluyan funciones experimentales no superarán
-[la validación de AMP](/es/docs/fundamentals/validate.html). 
+[la validación de AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 Retira estos componentes experimentales de los documentos de AMP listos para producirse.
 

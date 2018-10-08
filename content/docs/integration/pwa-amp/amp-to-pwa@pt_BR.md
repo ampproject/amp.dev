@@ -72,7 +72,7 @@ Dica: existem maneiras mais fáceis de lidar com o service worker. Confira as [b
 
 ## Fazer todos os links de uma página AMP navegarem para o PWA
 
-Provavelmente, a maioria dos links nas suas páginas AMP leva a outras páginas de conteúdo. Há duas estratégias que podem ser usadas para garantir que os cliques em links subsequentes façam o "upgrade" para o Progressive Web App, [dependendo da forma como você usa as AMP](/pt_br/docs/fundamentals/discovery.html):
+Provavelmente, a maioria dos links nas suas páginas AMP leva a outras páginas de conteúdo. Há duas estratégias que podem ser usadas para garantir que os cliques em links subsequentes façam o "upgrade" para o Progressive Web App, [dependendo da forma como você usa as AMP]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}):
 
 ### 1. Caso você faça o pareamento das páginas canônicas com as páginas AMP
 

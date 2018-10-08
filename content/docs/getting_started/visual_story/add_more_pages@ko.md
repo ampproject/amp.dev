@@ -123,6 +123,6 @@ $title: 페이지 추가
 “Joy of Pets”이야기는 거의 마무리 단계에 왔습니다. 이제는 마지막 페이지를 만들텐데 지금까지 나온 애완동물을 모두 보여주는 애니메이션을 넣을 계획입니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/create_cover_page.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

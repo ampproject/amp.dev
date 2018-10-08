@@ -109,12 +109,12 @@ AMP ドキュメントの側には `<head>` に正規ページを指す下記の
 構造化データに問題がなければ、「**エラーなし**」、「**警告なし**」と表示されます。
 
 {% call callout('詳細情報', type='read') %}
-ページを検出可能にする方法について詳しくは、[ページを検出可能にする](/ja/docs/fundamentals/discovery.html)をご覧ください。
+ページを検出可能にする方法について詳しくは、[ページを検出可能にする]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}})をご覧ください。
 {% endcall %}
 
 おつかれさまでした。これで AMP のニュース記事は完成です。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/fundamentals/converting/resolving-errors.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/fundamentals/converting/congratulations.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

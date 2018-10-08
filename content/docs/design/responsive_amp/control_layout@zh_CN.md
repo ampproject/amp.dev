@@ -8,7 +8,7 @@ $title: 布局和媒体查询
 
 ## 轻松创建自适应图片
 
- 您可以通过以下方法创建自适应图片 - 指定 `width` 和 `height`，将布局设置为 `responsive`，然后使用 [`srcset`](/zh_cn/docs/design/responsive/art_direction.html) 指定不同的屏幕尺寸下使用哪个图片素材资源：
+ 您可以通过以下方法创建自适应图片 - 指定 `width` 和 `height`，将布局设置为 `responsive`，然后使用 [`srcset`]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) 指定不同的屏幕尺寸下使用哪个图片素材资源：
 
 [sourcecode:html]
 <amp-img

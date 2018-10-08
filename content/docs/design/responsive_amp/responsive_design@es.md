@@ -76,7 +76,7 @@ Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más de
 
 ### Mostrando imágenes responsivas
 
-Las imágenes forman una gran parte de una página web (aproximadamente el [65% de los bytes de la página](http://httparchive.org/interesting.php#bytesperpage)). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP](/es/docs/media/amp_replacements.html)). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
+Las imágenes forman una gran parte de una página web (aproximadamente el [65% de los bytes de la página](http://httparchive.org/interesting.php#bytesperpage)). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}})). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
 
 - [Mostrando imágenes nítidas para la resolución correcta](#mostrando-imágenes-nítidas-para-la-resolución-correcta)
 - [Cambiando la dirección de arte de una imagen](#cambiando-la-dirección-artística-de-una-imagen)
@@ -101,7 +101,7 @@ En el siguiente ejemplo tenemos varias imágenes que tienen el mismo radio de as
 
 Por ejemplo, digamos que tenemos un dispositivo que tiene un ancho de ventana de 412 px y un DPR de 2.6. Basándose en el código anterior, la imagen debe mostrarse al 75% del ancho de la ventana de visualización, por lo que el navegador elige una imagen cercana a 803 px (412 * .75 * 2.6), que pasa a ser `apple-800.jpg`.
 
-Leer más: Para aprender más sobre el `srcset` y `sizes` en AMP, see the [Imágenes adaptativas con srcset, sizes & heights](/es/docs/design/responsive/art_direction.html) guide.
+Leer más: Para aprender más sobre el `srcset` y `sizes` en AMP, see the [Imágenes adaptativas con srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) guide.
 
 #### Cambiando la dirección artística de una imagen
 
@@ -119,7 +119,7 @@ Nota: Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no se
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
-Leer más: Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights](/es/docs/design/responsive/art_direction.html).
+Leer más: Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
 
 #### Proporcionar imágenes optimizadas
 
@@ -127,7 +127,7 @@ La entrega de páginas de carga rápida requiere imágenes optimizadas: en tama�
 
 En HTML, puede servir diferentes formatos de imagen utilizando la etiqueta `picture`. En AMP, aunque la etiqueta `picture` no es compatible, puede servir a diferentes imágenes mediante el atributo de `fallback`.
 
-Leer más: Para aprender más acerca de los fallbacks, lee la guía [Placeholders & Fallbacks](/es/docs/design/responsive/placeholders.html).
+Leer más: Para aprender más acerca de los fallbacks, lee la guía [Placeholders & Fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 ##### Ejemplo: Sirva diferentes formatos de imagen
 

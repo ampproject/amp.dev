@@ -14,9 +14,9 @@ Berikutnya, pastikan bahwa halaman AMP Anda **benar-benar merupakan halaman AMP 
   1. Tambahkan "`#development=1`" ke URL, misalnya, `http://localhost:8000/released.amp.html#development=1`.
   1. Buka [konsol Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) dan periksa kesalahan validasi.
 
-[Ketahui selengkapnya mengenai validasi](/id/docs/fundamentals/validate.html), dan tindakan yang harus Anda lakukan jika menjumpai kesalahan.
+[Ketahui selengkapnya mengenai validasi]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}), dan tindakan yang harus Anda lakukan jika menjumpai kesalahan.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/getting_started/create/presentation_layout.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/getting_started/create/prepare_for_discovery.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

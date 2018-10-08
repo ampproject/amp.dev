@@ -198,6 +198,6 @@ amp-img가 반응형(responsive)임을 `layout=”responsive”`속성으로 알
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Completed cover page' ) }}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/start_story.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="/ko/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

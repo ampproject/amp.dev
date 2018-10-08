@@ -17,10 +17,10 @@ Jika Anda mencari perilaku seperti [piksel pelacakan sederhana](https://en.wikip
 
 Untuk sebagian besar solusi analitik, gunakan `amp-analytics`. Pelacakan tampilan halaman juga dapat berfungsi di `amp-analytics`. Namun, Anda juga dapat melacak interaksi pengguna dengan jenis konten halaman apa pun, termasuk klik pada link dan tombol. Selain itu, Anda dapat mengukur seberapa jauh halaman yang di-scroll oleh pengguna, apakah pengguna berinteraksi dengan media sosial atau tidak, dan aktivitas lainnya.
 
-Pelajari lebih lanjut: Lihat [Mendalami Analitik AMP](/id/docs/analytics/deep_dive_analytics.html).
+Pelajari lebih lanjut: Lihat [Mendalami Analitik AMP]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
 Sebagai bagian dari proses integrasi dengan platform AMP, penyedia telah menawarkan konfigurasi `amp-analytics`
-yang telah ditentukan sehingga mempermudah pengambilan dan pemrosesan data ke fitur pelacakannya. Buka dokumentasi vendor dari daftar [Vendor Analitik](/id/docs/analytics/analytics-vendors.html).
+yang telah ditentukan sehingga mempermudah pengambilan dan pemrosesan data ke fitur pelacakannya. Buka dokumentasi vendor dari daftar [Vendor Analitik]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Anda dapat menggunakan `amp-pixel` dan `amp-analytics`
 di halaman Anda: `amp-pixel` untuk pelacakan tampilan halaman sederhana, dan `amp-analytics` untuk pelacakan lainnya. Anda juga dapat menambahkan beberapa konfigurasi untuk setiap tag. Jika bekerja sama dengan beberapa penyedia analitik, Anda memerlukan 1 tag untuk setiap solusi. Perlu diperhatikan bahwa halaman AMP yang lebih sederhana lebih disarankan untuk pengguna, sehingga apabila Anda tidak memerlukan tag tambahan, jangan gunakan tag tersebut.
@@ -144,5 +144,5 @@ Jika AMP menemukan bahwa cookie tersebut ditetapkan, penggantian ID klien akan m
 
 Pelajari lebih lanjut tentang penggantian ID klien, termasuk cara menambahkan ID pemberitahuan pengguna opsional, di [Variabel yang didukung dalam analitik AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
-Pelajari lebih lanjut: Lanjutkan untuk mempelajari tentang analitik dengan [Mendalami Analitik AMP](/id/docs/analytics/deep_dive_analytics.html) dan [Kasus Penggunaan](/id/docs/analytics/use_cases.html).
+Pelajari lebih lanjut: Lanjutkan untuk mempelajari tentang analitik dengan [Mendalami Analitik AMP]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) dan [Kasus Penggunaan]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}).
 
