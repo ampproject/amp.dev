@@ -99,4 +99,4 @@ Make clear to the user that the email is an AMPHTML email and offer the regular 
 If an invalid AMPHTML email is sent, render the HTML version as a standard fallback. For older emails, you may need to store and use older versions of the AMP runtime when new ones are released for breaking changes.
 
 ##Current AMPHTML Email Support
-Gmail will support AMPHTML emails on iOS, Android, and Web. We're working with other email providers and clients to have their Web and mobile apps support it as well. Please reach out if you’re interested in including AMPHTML Emails in your service. 
+Gmail will support AMPHTML emails on iOS, Android, and Web. We're working with other email providers and clients to have their Web and mobile apps support it as well. Please reach out by [filing an issue on GitHub](https://github.com/ampproject/amphtml/issues/new) if you’re interested in including AMPHTML Emails in your service. 
