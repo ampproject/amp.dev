@@ -129,7 +129,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .destination-list-item {
 	@include hl;
-	@include hl-stage;
+	@include hl-h3;
 	@include color-white;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
