@@ -15,6 +15,7 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
 @import '../atoms/_headline.scss';
+@import '../atoms/divider';
 
 @import '../molecules/_link.scss';
 
@@ -84,7 +85,7 @@
 
       &-mobile {
         @include hl-nav;
-        padding: 8px 0;
+        padding-top: 8px;
       }
     }
 
@@ -158,15 +159,7 @@
   // TODO: Clean up mobile list css
 
   &-search {
-    display: none;
-    background-color: #F0F0F0;
-    border-radius: 10%/50%;
-    padding: 5px 10px;
-
-    @media screen and (min-width: 768px) {
-      display: flex;
-      margin-left: auto;
-    }
+    display: block;
 
     &-icon {
       background: transparent;
@@ -174,10 +167,6 @@
       padding-right: 2px;
     }
 
-    &-mobile {
-      display: flex;
-      max-width: 125px;
-    }
   }
 
   input {
@@ -215,8 +204,8 @@
 
   &-list-mobile {
     height: 0;
-    margin: 0;
-    // padding: 2em 0 0 2em;
+    padding: 0;
+    margin: 0 0 0 20px;
     overflow: hidden;
     list-style: none;
     transition: height 0.2s ease-in-out;
@@ -225,6 +214,18 @@
       display: none;
     }
   }
+
+  &-support-lang-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-right: 20px;
+
+    &-divider {
+      @include divider-header-mobile;
+    }
+  }
+
 }
 
 
