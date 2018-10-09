@@ -132,7 +132,7 @@ The list of available components are listed below in related categories.
 | [`amp-facebook`](components/amp-facebook.html) | Displays a Facebook post or video. |
 | [`amp-gfycat`](components/amp-gfycat.html) | Displays a [Gfycat](https://gfycat.com) video GIF. |
 | [`amp-instagram`](components/amp-instagram.html) | Displays an Instagram embed. |
-| [`amp-pinterest`](components/amp-pinterest.html) | Displays a Pinterest widget or Pin It button. |
+| [`amp-pinterest`](components/amp-pinterest.html) | Displays a Pinterest widget or Save button. |
 | [`amp-reddit`](components/amp-reddit.html) |  Displays a Reddit comment or post embed. |
 | [`amp-riddle-quiz`](components/amp-riddle-quiz.html) |  Displays [Riddle](https://www.riddle.com/) content (e.g., quiz, list, poll, etc.). |
 | [`amp-social-share`](components/amp-social-share.html) | Displays a social share button. |
