@@ -5,6 +5,7 @@
 .podcache.yaml
 .vscode
 *.pyc
+*.log
 node_modules
 
 build
