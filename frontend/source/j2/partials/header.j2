@@ -80,31 +80,43 @@
       </a>
     </li>
     {% for mainNav in g.collection('amp-dev').collections() %}
-      {% for subNavItem in g.docs(mainNav.collection_path) %}
-       {% if subNavItem.base == 'index' %}
-        <li class="ad-o-header-lnk {% if subNavItem.title == doc.title or subNavItem.collection.title == doc.collection.title %} ad-o-header-lnk-selected {% endif %}">
-          <a class="ad-m-lnk" href="{{ subNavItem.url.path }}">{{ subNavItem.collection.title }}</a>
-        </li>
-       {% endif %}
-      {% endfor %}
+      {% if not loop.last %}
+        {% for subNavItem in g.docs(mainNav.collection_path) %}
+         {% if subNavItem.base == 'index' %}
+          <li class="ad-o-header-lnk {% if subNavItem.title == doc.title or subNavItem.collection.title == doc.collection.title %} ad-o-header-lnk-selected {% endif %}">
+            <a class="ad-m-lnk" href="{{ subNavItem.url.path }}">{{ subNavItem.collection.title }}</a>
+          </li>
+         {% endif %}
+        {% endfor %}
+      {% else %}
+        <ul class="ad-o-header-support-lang-list">
+         <li class="ad-o-header-search">
+            <button class="ad-o-header-search-icon" name="search" type="submit">
+              <a class="ad-a-ico ad-a-ico-search" href="">
+                {{ atoms.icon('search') }}
+              </a>
+            </button>
+            <form method="GET"
+            id="ampsearch"
+            action="//www.google.com/search"
+            target="_top">
+            </form>
+          </li>
+          {% for subNavItem in g.docs(mainNav.collection_path) %}
+            {% if subNavItem.base == 'index' %}
+              <li class="ad-o-header-lnk {% if subNavItem.title == doc.title or subNavItem.collection.title == doc.collection.title %} ad-o-header-lnk-selected {% endif %}">
+                <a class="ad-m-lnk" href="{{ subNavItem.url.path }}">{{ subNavItem.collection.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          {% set languages = g.doc('/content/languages/index.md')%}
+          <li class="ad-o-header-lnk ad-o-header-lnk-lang">
+            <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
+          </li>
+        </ul>
+      {% endif %}
     {% endfor %}
-    <li class="ad-o-header-search">
-      <button class="ad-o-header-search-icon" name="search" type="submit">
-        <a class="ad-a-ico ad-a-ico-search" href="">
-          {{ atoms.icon('search') }}
-        </a>
-      </button>
-      <form method="GET"
-      id="ampsearch"
-      action="//www.google.com/search"
-      target="_top">
-      </form>
-    </li>
-    {% set languages = g.doc('/content/languages/index.md')%}
-    <li class="ad-o-header-lnk ad-o-header-lnk-lang">
-      <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
-    </li>
-  </ul>
+    </ul>
   </nav>
 
 {% if doc.collection.collection_path != 'amp-dev' %}
