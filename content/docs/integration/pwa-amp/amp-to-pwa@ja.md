@@ -72,7 +72,7 @@ self.addEventListener('install', function(event) {
 
 ## AMP ページ上のすべてのリンクで PWA に誘導する
 
-おそらく、AMP ページ上の大部分のリンクは多くのコンテンツ ページにつながっていることでしょう。初回以降のリンクのクリックがプログレッシブ ウェブアプリに「アップグレード」されるようにする場合、[AMP の使用方法に応じて](/ja/docs/fundamentals/discovery.html)次の 2 つの方法があります。
+おそらく、AMP ページ上の大部分のリンクは多くのコンテンツ ページにつながっていることでしょう。初回以降のリンクのクリックがプログレッシブ ウェブアプリに「アップグレード」されるようにする場合、[AMP の使用方法に応じて]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}})次の 2 つの方法があります。
 
 ### 1. 正規ページと AMP ページを組み合わせている場合
 

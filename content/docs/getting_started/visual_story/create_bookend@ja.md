@@ -148,7 +148,7 @@ $title: ブックエンドを作成する
 ストーリーは完成間近です。コンテンツを公開する前に、AMP HTML が有効かどうかを確認してみましょう。
 
 <div class="prev-next-buttons">
-<a class="button prev-button" href="/ja/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-prev">前へ</span></a>
-<a class="button next-button" href="/ja/docs/getting_started/visual_story/validation.html"><span class="arrow-next">次へ</span></a>
+<a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+<a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>
  

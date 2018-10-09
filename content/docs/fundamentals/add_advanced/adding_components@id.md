@@ -12,7 +12,7 @@ Sistem komponen AMP memungkinkan Anda membuat fitur yang efisien dan responsif k
 
 - **eksperimental**: Ini adalah komponen yang dirilis, namun belum siap untuk digunakan secara luas. Developer dapat memilih untuk menggunakan fitur ini sebelum dirilis sepenuhnya.  Pelajari lebih lanjut di [Fitur eksperimental](/id/docs/reference/experimental.html).
 
-Sampel kami sudah menggunakan komponen bawaan, [amp-img](/id/docs/reference/components/amp-img.html), dan kami telah mempelajari hubungan antara komponen tersebut dengan sistem tata letak AMP dalam tutorial ["Mengonversi HTML menjadi AMP"](/id/docs/fundamentals/converting.html).  Sekarang, mari tambahkan beberapa komponen AMP **diperpanjang** yang umum digunakan di artikel berita.
+Sampel kami sudah menggunakan komponen bawaan, [amp-img](/id/docs/reference/components/amp-img.html), dan kami telah mempelajari hubungan antara komponen tersebut dengan sistem tata letak AMP dalam tutorial ["Mengonversi HTML menjadi AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}).  Sekarang, mari tambahkan beberapa komponen AMP **diperpanjang** yang umum digunakan di artikel berita.
 
 ## Monetisasi dengan iklan
 
@@ -74,7 +74,7 @@ Dua `amp-ad` di bawah memberikan contoh fleksibilitas yang dimiliki `amp-ad` unt
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Iklan pengujian') }}
 
-Catatan: Anda mungkin mengetahui bahwa yang ada dalam tag amp-ad ini adalah tag `div` tambahan dengan atribut yang diberi nama `fallback`. Dapatkah Anda menebak apa yang ditunjukkan oleh atribut `fallback`? Atribut ini memberi tahu sistem pemuatan AMP agar hanya menampilkan konten elemen tersebut saat elemen induk gagal dimuat. Pelajari lebih lanjut di [Placeholder & fallback](/id/docs/design/responsive/placeholders.html).
+Catatan: Anda mungkin mengetahui bahwa yang ada dalam tag amp-ad ini adalah tag `div` tambahan dengan atribut yang diberi nama `fallback`. Dapatkah Anda menebak apa yang ditunjukkan oleh atribut `fallback`? Atribut ini memberi tahu sistem pemuatan AMP agar hanya menampilkan konten elemen tersebut saat elemen induk gagal dimuat. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
 
 Baca lebih lanjut: Untuk melihat jaringan iklan yang didukung baru-baru ini, baca dokumentasi referensi untuk komponen [amp-ad](/id/docs/reference/components/amp-ad.html#supported-ad-networks).
 
@@ -82,7 +82,7 @@ Catatan: Tidak ada JavaScript yang disediakan jaringan iklan yang diizinkan untu
 
 Dokumen AMP kami kini menyertakan teks, gambar, dan iklan yang disematkan di halaman, yang semuanya merupakan komponen utama untuk menceritakan kisah dan memonetisasi konten Anda. Namun, situs modern sering kali menyertakan lebih banyak fungsi daripada sekadar gambar dan teks.
 
-Tingkatkan dokumen AMP dan tambahkan fungsi web lanjutan lainnya yang umumnya ditemukan di artikel berita, seperti: 
+Tingkatkan dokumen AMP dan tambahkan fungsi web lanjutan lainnya yang umumnya ditemukan di artikel berita, seperti:
 
 - Video YouTube
 - Tweet
@@ -203,6 +203,6 @@ Anda dapat mempelajari lebih lanjut tentang `amp-fit-text` dari [Demo langsung A
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

@@ -15,6 +15,6 @@ AMP ストーリーに含まれる基本的な構成要素は個々の**ペー�
 それでは、`amp-story` コンテナを使用してストーリーを作成してみましょう。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/getting_started/visual_story/setting_up.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/getting_started/visual_story/start_story.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

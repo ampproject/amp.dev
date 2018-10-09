@@ -15,7 +15,7 @@ The AMP Translation Initiative is working to create a network of native speakers
 
 ## Get Started
 
-AMP has an ongoing internal translation process for documentation. We are working with volunteers to form a communication line that describes what files are being translated and which ones require external assistance.
+AMP has an ongoing internal translation process for documentation. We are working with contributors to form a communication line that describes what files are being translated and which ones require external assistance.
 
 ### Currently, our process is:
 

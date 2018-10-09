@@ -7,7 +7,7 @@ $title: Menyiapkan
 **Sebelum memulai** tutorial ini, Anda memerlukan hal-hal berikut:
 
 - Pengetahuan dasar tentang HTML, CSS, dan JavaScript
-- Pemahaman dasar tentang konsep inti AMP (lihat tutorial ["Mengonversi HTML menjadi AMP"](/id/docs/fundamentals/converting.html))
+- Pemahaman dasar tentang konsep inti AMP (lihat tutorial ["Mengonversi HTML menjadi AMP"]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}))
 - Browser pilihan Anda yang dapat memeriksa konsol JavaScript
 - Editor teks pilihan Anda
 
@@ -47,6 +47,6 @@ http://localhost:8000/article.amp.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/fundamentals/add_advanced.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
   <a class="button next-button" href="/id/docs/fundamentals/add_advanced/review_code"><span class="arrow-next">Berikutnya</span></a>
 </div>

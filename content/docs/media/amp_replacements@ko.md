@@ -13,7 +13,7 @@ $title: 이미지 및 동영상 삽입
 *  애셋이 로드되기 전에 페이지의 레이아웃을 파악해야 하며, 이는 [첫 표시 영역을 미리 로드하는 데 필수적입니다.](/ko/learn/about-how/#size-all-resources-statically)
 *  네트워크의 레이지 로드 요청을 제어하고 [리소스의 우선순위를 효과적으로 지정해야 합니다.](/ko/learn/about-how/#prioritize-resource-loading)
 
-주의:  지원되지 않는 &lt;img&gt;, &lt;video&gt;, &lt;audio&gt; 도 렌더링이 됩니다. 하지만 AMP 에서 [페이지를 확인하지](/ko/docs/fundamentals/validate.html) 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다.
+주의:  지원되지 않는 &lt;img&gt;, &lt;video&gt;, &lt;audio&gt; 도 렌더링이 됩니다. 하지만 AMP 에서 [페이지를 확인하지]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다.
 
 ## 이미지
 
@@ -65,14 +65,15 @@ $title: 이미지 및 동영상 삽입
 </amp-iframe>
 </div>
 
-읽어보기: Learn more about [고급 레이아웃 기술](/ko/docs/design/responsive/control_layout.html)
+읽어보기: Learn more about [고급 레이아웃 기술]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}})
 에 관해 자세히 알아보세요.
 
-### 동작 및 자리표시자
+### 동작 및 플레이스홀더
 
 AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시 영역 위치, 시스템 리소스, 연결 대역폭 등과 같은 요인을 바탕으로 리소스 로드를 지연시킬지 우선할지 선택할 수 있습니다.
 
-읽어보기: [이미지의 대체 내용 및 자리표시자를 제공](/ko/docs/design/responsive/placeholders.html) 하는 방법에 관해 자세히 알아보세요.
+읽어보기: [이미지의 대체 내용 및 자리표시자를 제공]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) 하는 방법에 관해 자세히 알아보세요.
+
 
 ## 애니메이션 이미지
 
@@ -98,7 +99,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
  직접 HTML5 동영상 파일 삽입에만 이 요소를 사용하세요. 이 요소는 `src` 속성으로 지정한 비디오 리소스를 AMP 가 결정한 시간에 레이지 로드합니다.
 
-동영상이 시작하기 전에 자리표시자를 삽입하고, 브라우저에서 HTML5 동영상을 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
+동영상이 시작하기 전에 플레이스홀더를 삽입하고, 브라우저에서 HTML5 동영상을 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
 <!--embedded video example  -->
 <div>
@@ -118,7 +119,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
  직접 HTML5 오디오 파일 삽입에만 이 요소를 사용하세요. AMP 페이지에 삽입되는 모든 외부 리소스와 같이, 이 요소는 `src` 속성으로 지정한 오디오 리소스를 AMP가 결정한 시간에 레이지 로드합니다.
 
-오디오가 시작하기 전에 자리표시자를 삽입하고, 브라우저에서 HTML5 오디오를 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
+오디오가 시작하기 전에 플레이스홀더를 삽입하고, 브라우저에서 HTML5 오디오를 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
 <!--embedded audio example  -->
 <div>

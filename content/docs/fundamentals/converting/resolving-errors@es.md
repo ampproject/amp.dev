@@ -32,7 +32,7 @@ Ahora, echemos un vistazo al siguiente error:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Cada documento de AMP necesita tener un vínculo que haga referencia a la página canónica. La página canónica puede ser la propia página de AMP o una página que no sea de AMP. En este tutorial, el artículo HTML original es la página canónica. Aprenderemos más acerca de la vinculación canónica en cómo [hacer que tu página sea detectable](/es/docs/fundamentals/converting/discoverable.html).
+Cada documento de AMP necesita tener un vínculo que haga referencia a la página canónica. La página canónica puede ser la propia página de AMP o una página que no sea de AMP. En este tutorial, el artículo HTML original es la página canónica. Aprenderemos más acerca de la vinculación canónica en cómo [hacer que tu página sea detectable]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}).
 
 Adelante, **agregue** el siguiente código debajo de la etiqueta `<meta charset="utf-8" />`:
 
@@ -126,7 +126,7 @@ Una vez más, **vuelva a cargar** la página y verifique que el error stylesheet
 
 Nota: No sólo se requiere estilo en línea, sino que hay un límite de tamaño de archivo de 50 kilobytes para toda la información de estilo. Debe utilizar preprocesadores CSS como [SASS](http://sass-lang.com/) para minimizar su CSS antes de insertar el CSS en sus páginas AMP.
 
-Importante: Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido](/es/docs/design/responsive/style_pages.html).
+Importante: Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}).
 
 ## Excluir JavaScript de terceros
 
@@ -247,7 +247,7 @@ Voila! Nuestra imagen está en la relación de aspecto correcta y responde respo
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Nuestra imagen es ahora responsive!") }}
 
-Leer más: Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification](/es/docs/design/amp-html-layout.html).
+Leer más: Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## ¡Éxito!
 
@@ -323,6 +323,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/fundamentals/converting/building-page.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/fundamentals/converting/discoverable.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

@@ -55,8 +55,8 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
     URL API を介して AMP URL を取得します。上で述べたように、
     共有のために元の URL が必要となる場合があるため、両方の URL（AMP と非 AMP）をクライアントに
     渡します。この手法は、ファンアウトがあまり行われないサービスに適しています。
-1. **クライアント側で変換（サーバー側で実行できない場合）**: クライアント側で 
-    Google の AMP URL API を介して AMP URL を取得します。この手法は、サーバー側で URL 
+1. **クライアント側で変換（サーバー側で実行できない場合）**: クライアント側で
+    Google の AMP URL API を介して AMP URL を取得します。この手法は、サーバー側で URL
     変換を実行できない場合（エンドツーエンドの暗号化を
     使用するメッセージング アプリなど）に使用します。コンテンツが利用できるようになったら、ユーザーの操作が行われる前に
     すぐに URL 変換を開始してください。
@@ -75,7 +75,7 @@ Google では、AMP URL API を提供して、リストに指定された URL
 （[公式ドキュメント](https://developers.google.com/amp/cache/use-amp-url) /
 [デモ](https://ampbyexample.com/advanced/using_the_amp_url_api/)）と一致する AMP HTML URL を取得します。URL は
 正規バージョンである必要はありません。AMP バージョンが存在する場合、レスポンスには
-元の AMP URL と Google AMP キャッシュ上にキャッシュされている AMP ページの 
+元の AMP URL と Google AMP キャッシュ上にキャッシュされている AMP ページの
 URL が含まれます。
 
 たとえば、URL のリストは次のようになります。
@@ -120,7 +120,7 @@ AMP URL API で取得できません。ただし、返された AMP URL（ampURL
 
 ## AMP キャッシュの使用
 
-[AMP キャッシュ](/ja/docs/fundamentals/how_cached.html)は、
+[AMP キャッシュ]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}})は、
 有効な AMP ドキュメントを配信するための、プロキシベースのコンテンツ配信ネットワーク（CDN）です。
 AMP キャッシュは次のような目的で設計されています。
 
@@ -192,4 +192,4 @@ AMP プロジェクトの理念は、ユーザーに提示するドキュメン�
 別のプラットフォームに共有する場合は（AMP バージョンではなく）正規バージョンを共有し、
 ターゲット プラットフォームで適切なバージョンが選択されるのを期待するのが
 最も理にかなっています。
- 
+

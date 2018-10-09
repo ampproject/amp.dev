@@ -29,13 +29,13 @@ including clicks on links and buttons.
 And you can measure how far on the page the user scrolled,
 whether or not the user engaged with social media, and more.
 
-Learn more: See [Deep Dive into AMP Analytics](/docs/analytics/deep_dive_analytics.html).
+Learn more: See [Deep Dive into AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
 As part of integrating with the AMP platform,
 providers have offered pre-defined `amp-analytics` configurations
 so that it's easy to capture data and push to their tracking tools.
 Access vendor documentation from the
-[Analytics Vendors](/docs/analytics/analytics-vendors.html) list.
+[Analytics Vendors]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) list.
 
 You can use both `amp-pixel` and `amp-analytics` in your pages:
 `amp-pixel` for simple page view tracking,
@@ -239,4 +239,4 @@ Learn more about client ID substitution,
 including how to add an optional user notification ID, in
 [Variables supported in AMP analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
-Learn more: Continue to learn about analytics with [Deep Dive into AMP Analytics](/docs/analytics/deep_dive_analytics.html) and [Use Cases](/docs/analytics/use_cases.html).
+Learn more: Continue to learn about analytics with [Deep Dive into AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) and [Use Cases]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}).

@@ -12,7 +12,7 @@ $title: 添加 AMP 扩展组件
 
 - **实验**：此类组件是指已发布但尚不可广泛使用的组件。开发者可以选择使用这些尚未全面发布的功能。有关详情，请参阅[实验性功能](/zh_cn/docs/reference/experimental.html)。
 
-我们已在示例中使用了内置组件 [amp-img](/zh_cn/docs/reference/components/amp-img.html)，另外还在[“将 HTML 转换成 AMP”](/zh_cn/docs/fundamentals/converting.html)教程中探讨了该组件与 AMP 布局系统之间的关系。现在，我们将向新闻报道中添加一些常用的 AMP **扩展**组件。
+我们已在示例中使用了内置组件 [amp-img](/zh_cn/docs/reference/components/amp-img.html)，另外还在[“将 HTML 转换成 AMP”]({{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}})教程中探讨了该组件与 AMP 布局系统之间的关系。现在，我们将向新闻报道中添加一些常用的 AMP **扩展**组件。
 
 ## 通过广告获利
 
@@ -77,7 +77,7 @@ AMP 网页中的广告是使用 [amp-ad](/zh_cn/docs/reference/components/amp-ad
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='测试广告') }}
 
 {% call callout('注意', type='note') %}
-您可能会注意到，这些 amp-ad 标记中有包含 `fallback` 属性的额外 `div` 标记。您能猜出 `fallback` 属性是何用意吗？它会指示 AMP 的加载系统仅在父级元素未能成功加载时显示该元素的内容。有关详情，请参阅[占位符和备用行为](/zh_cn/docs/design/responsive/placeholders.html)。
+您可能会注意到，这些 amp-ad 标记中有包含 `fallback` 属性的额外 `div` 标记。您能猜出 `fallback` 属性是何用意吗？它会指示 AMP 的加载系统仅在父级元素未能成功加载时显示该元素的内容。有关详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})。
 {% endcall %}
 
 {% call callout('继续阅读', type='read') %}
@@ -217,6 +217,6 @@ AMP 提供了另一个组件来专门应对这种情况，即 [amp-fit-text](/zh
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/zh_cn/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/zh_cn/docs/fundamentals/add_advanced/adding_carousels.html"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

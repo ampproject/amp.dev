@@ -10,7 +10,7 @@ This guide is for ad networks that want to integrate with AMP to serve display a
 
 ## Overview
 
-As an ad server, you can integrate with AMP to serve traditional HTML ads to AMP pages, as well as serving [AMPHTML](/docs/ads/amphtml_ads.html) ads.
+As an ad server, you can integrate with AMP to serve traditional HTML ads to AMP pages, as well as serving [AMPHTML]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}) ads.
 
 ##### Want to serve traditional HTML ads?
 
@@ -61,5 +61,5 @@ For instructions on creating a Fast Fetch integration, see the [Fast Fetch Netwo
 ## Related resources
 
 *   [GitHub directory for all amp-ad extensions](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [List of supported ad vendors](/docs/ads/ads_vendors.html)
+*   [List of supported ad vendors]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
 *   [Blog entry describing launch of Fast Fetch](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)

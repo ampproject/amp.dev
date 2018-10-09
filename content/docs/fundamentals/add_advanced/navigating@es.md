@@ -75,7 +75,7 @@ A continuación, queremos mostrar un icono de menú. Cuando se pulsa el icono, s
 </header>
 ```
 
-En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`](/es/docs/interaction_dynamic/amp-actions-and-events.html) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
+En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}}) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
 
 **Agregue** el siguiente HTML justo después del `</header>`:
 
@@ -97,7 +97,7 @@ Finalmente, **agregue** estas reglas de estilo a su CSS:
 ```css
 .hamburger {
   padding-left: 10px;
-}      
+}
 .sidebar {
   padding: 10px;
   margin: 0;
@@ -122,6 +122,6 @@ Bueno, veamos nuestra barra lateral. **Actualiza** y vuelve a cargar tu página 
 Nuestra página se ve muy bien! Añadamos un toque final: una fuente personalizada!
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/fundamentals/add_advanced/tracking_data.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/fundamentals/add_advanced/fonts.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

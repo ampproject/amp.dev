@@ -1,82 +1,67 @@
 blogs:
 
-- type: Video
-  title: "AMP HTML Layout System"
-  id: v0BVLgEEuMY
-  author: The AMP Channel
-  role: 
-  origin: "https://www.youtube.com/watch?v=v0BVLgEEuMY"
-  excerpt: "Did you know about AMP’s HTML layout system? If you’re looking for greater flexibility than standard HTML when layouting your pages, then you’ve come to the right place! Watch this video to find out why AMP lays out its web components in a certain way, and see all the attributes you will need to get started. 
-
-Placeholders →  http://bit.ly/2MZD2tC
-AMPs HTML layout system → http://bit.ly/2PcsIfg
-
-Watch other videos in series here → http://bit.ly/2Pbk0O7
-Subscribe to the AMP channel! → http://bit.ly/AMPchannel1"
-  thumbnail: "https://i3.ytimg.com/vi/v0BVLgEEuMY/hqdefault.jpg"
-  avatar: 
-  datedata: 2018-08-30T13:14:13-07:00
-  date: "August 30, 2018"
-
 - type: Blog
-  title: "Are you leaving revenue on the table with AMP?"
-  id: are-you-leaving-revenue-on-the-table-with-amp
+  title: "Setka provides beautiful post design with AMP"
+  id: setka-provides-beautiful-post-design-with-amp
   author: amphtml
   role: 
-  origin: "https://amphtml.wordpress.com/2018/08/28/are-you-leaving-revenue-on-the-table-with-amp/amp/"
-  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google I’m a product manager working on AMP and we strive to make advertising better on the web while helping publishers thrive. I’m writing this to give you some background on design choices we made for advertising in AMP [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-08-28T08:08:11-07:00
-  date: "August 28, 2018"
+  origin: "https://amphtml.wordpress.com/2018/09/26/setka-provides-beautiful-post-design-with-amp/amp/"
+  excerpt: "Editor’s note: The following was originally posted on Setka&#8217;s blog. Setka has integrated its WordPress plugin with the AMP WP plugin Technology company Setka creates products that help publishers and brands easily make beautiful and engaging content. Setka is a WordPress VIP Technical partner. One of those products, Setka Editor, is a WYSIWYG editor that allows [&#8230;]"
+  avatar: https://videos.files.wordpress.com/5UIUM5fg/amp-video3_hd.mp4
+  datedata: 2018-09-26T10:59:17-07:00
+  date: "September 26, 2018"
 
 - type: Blog
-  title: "WorkerDOM: Concurrency for JavaScript programming with the DOM"
-  id: workerdom
+  title: "Optimize your AMP pages for high ad viewability rate or high ads served"
+  id: optimize-your-amp-pages-for-high-ad-viewability-rate-or-high-ads-served
   author: amphtml
   role: 
-  origin: "https://amphtml.wordpress.com/2018/08/21/workerdom/amp/"
-  excerpt: "We are happy to announce the alpha release of WorkerDOM – a JavaScript library that makes the Document Object Model (DOM) available to Web Workers. This allows web developers to take advantage of pervasive multi-core processor architectures when programming their web pages to make them more performant. While the WorkerDOM library is designed for general [&#8230;]"
+  origin: "https://amphtml.wordpress.com/2018/09/24/optimize-your-amp-pages-for-high-ad-viewability-rate-or-high-ads-served/amp/"
+  excerpt: "Editor’s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google. This post is part of a larger AMP monetization series. I’m endlessly fascinated that an advertiser would pay for an ad impression that a user never saw. Yet, that’s how most default ad contracts are written. Many brands are changing how they negotiate [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-08-21T16:15:43-07:00
-  date: "August 21, 2018"
-
-- type: Video
-  title: "Best practices for creating an AMP story"
-  id: 2WjFBnCj2ew
-  author: The AMP Channel
-  role: 
-  origin: "https://www.youtube.com/watch?v=2WjFBnCj2ew"
-  excerpt: "AMP stories are a new and dynamic form of visual storytelling that are specifically designed for mobile. In this episode of Amplify, Paul Bakaus (@pbakaus) explores some of the best practices for creating visually rich, tap-through AMP stories. Subscribe to the channel to stay up to date with the latest from the AMP team!
-
-See AMP stories in action → http://bit.ly/2n1MaiE
-AMP stories blog article → http://bit.ly/2LHE6Cr
-Telling Stories with AMP (AMP Conf 2018) → http://bit.ly/2KmQ3YC
-
-Watch more Amplify episodes → http://bit.ly/2LHsFX3
-Subscribe to the The AMP Channel→ http://bit.ly/AMPchannel1"
-  thumbnail: "https://i3.ytimg.com/vi/2WjFBnCj2ew/hqdefault.jpg"
-  avatar: 
-  datedata: 2018-08-02T13:49:46-07:00
-  date: "August 2, 2018"
+  datedata: 2018-09-24T12:27:38-07:00
+  date: "September 24, 2018"
 
 - type: Blog
-  title: "AddThis is Now Available for AMP"
-  id: addthis-is-now-available-for-amp
-  author: Chad Edmonds
-  role:  Sr. Marketing Manager, AddThis
-  origin: "https://amphtml.wordpress.com/2018/07/30/addthis-is-now-available-for-amp/amp/"
-  excerpt: "Editor&#8217;s note: the following was originally posted on AddThis&#8217; blog by Chad Edmonds, Sr. Marketing Manager, AddThis Just because AddThis is now free, doesn’t mean we’re slowing down on pushing out more great features and functionalities! We recently rolled out AddThis Inline Share Buttons for AMP and it is ready for you to integrate into your AMP compatible [&#8230;]"
+  title: "The Action Network goes “All In” on AMP"
+  id: the-action-network-goes-all-in-on-amp
+  author: André Bandarra
+  role:  Developer Advocate at Google
+  origin: "https://amphtml.wordpress.com/2018/09/20/the-action-network-goes-all-in-on-amp/amp/"
+  excerpt: "Editor&#8217;s Note: This post is a summary of an article from The Action Network by André Bandarra, Developer Advocate at Google. I&#8217;ve been working for a few months with The Action Network, a publisher focused on covering legalized sports betting in the U.S., to help them implement and serve AMP pages across their site. The new [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-30T07:50:10-07:00
-  date: "July 30, 2018"
+  datedata: 2018-09-20T13:14:04-07:00
+  date: "September 20, 2018"
 
 - type: Blog
-  title: "Privacy and user choice in AMP’s software architecture"
-  id: privacy-and-user-choice-in-amps-software-architecture
+  title: "Introducing Bing AMP viewer and Bing AMP cache"
+  id: introducing-bing-amp-viewer-and-bing-amp-cache
+  author: Fabrice Canel
+  role:  Principal Program Manager, Microsoft Bing
+  origin: "https://amphtml.wordpress.com/2018/09/19/introducing-bing-amp-viewer-and-bing-amp-cache/amp/"
+  excerpt: "The below was originally posted on Microsoft Bing&#8217;s blog by Fabrice Canel, Principal Program Manager, Microsoft Bing In 2016, Bing joined the Accelerated Mobile Pages (AMP for short) open-source effort to help you “find” and “do” searches faster, regardless of where you are and on any device when you are looking for information. Today, we are pleased to announce the release [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-09-19T13:05:52-07:00
+  date: "September 19, 2018"
+
+- type: Blog
+  title: "An open governance model for the AMP Project"
+  id: governance
   author: Malte Ubl
-  role:  Tech Lead of the AMP Project.
-  origin: "https://amphtml.wordpress.com/2018/07/23/privacy-and-user-choice-in-amps-software-architecture/amp/"
-  excerpt: "Early choices in designing the AMP HTML JavaScript library have made it uniquely suited for publishers to implement effective privacy controls for users. In web pages, resource requests and browser storage access that may have privacy impact can be initiated through a multitude of mechanisms, many of which are often controlled by third parties. This [&#8230;]"
+  role:  Tech Lead for the AMP Project at Google
+  origin: "https://amphtml.wordpress.com/2018/09/18/governance/amp/"
+  excerpt: "Over the last 2 years AMP has grown from a tiny open source project with just 2 contributors to a much larger one with over 700 folks contributing over 10,000 commits running on many millions of websites. When choosing a governance model (a system that describes how decisions are made) for AMP,  we initially focused [&#8230;]"
+  avatar: https://amphtml.files.wordpress.com/2018/09/amp-contributions.png
+  datedata: 2018-09-18T08:56:46-07:00
+  date: "September 18, 2018"
+
+- type: Blog
+  title: "Measuring user journeys across the AMP Cache and your website"
+  id: measuring-user-journeys-across-the-amp-cache-and-your-website
+  author: Jeff Jose
+  role:  Product Manager, AMP Project at Google
+  origin: "https://amphtml.wordpress.com/2018/09/17/measuring-user-journeys-across-the-amp-cache-and-your-website/amp/"
+  excerpt: "“If you can’t measure it, you can’t manage it.” &#8212; Peter Drucker As users demand better privacy controls, browser vendors have started responding with defaults that partition cookies. This means traditional approaches of relying on third-party cookies for measurement won’t work going forward. AMP pages are often served from an AMP Cache and the ability [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-23T10:36:25-07:00
-  date: "July 23, 2018"
+  datedata: 2018-09-17T16:34:00-07:00
+  date: "September 17, 2018"

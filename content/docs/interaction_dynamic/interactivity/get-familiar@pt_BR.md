@@ -52,7 +52,7 @@ O código inicial oferece alguns elementos de interatividade básica:
 **Faça um teste**: deslize o carrossel de imagens e toque no botão "Adicionar ao carrinho".
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/interactivity/prereqs-setup.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/prereqs-setup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
  

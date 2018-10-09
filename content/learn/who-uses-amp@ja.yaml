@@ -1,13 +1,8 @@
 $title: AMP の利用者
-$order: 1
-class: about-who
-$view: /views/about-who.html
-$parent: /content/learn/overview.yaml
-$path: /learn/who-uses-amp/
 
 hero:
   title: AMP の利用者
-  subtitle: AMP は、850,000 件のドメイン、大手プラットフォーム、100 社を超える技術プロバイダで構成されるエコシステムです。
+  subtitle: 85 万のドメイン、大手プラットフォーム、100 社以上のテクノロジー プロバイダが AMP を採用しています。
   hero_img_base: /static/img/about/who-use-amp/who_phones_hero
   line_img: who_lines1.svg
   triangle_img: hero_triangle.png
@@ -23,7 +18,7 @@ cards:
     cta: 詳細
     icon: who_icon_advertisers.svg
 
-  - name: Ecommerce
+  - name: e コマース
     filename: ecommerce
     cta: 詳細
     icon: who_icon_ecomm.svg
@@ -37,3 +32,4 @@ cta:
   title: 成功事例
   link_text: 事例紹介を読む
   link_url: /content/learn/case-studies.html
+ 

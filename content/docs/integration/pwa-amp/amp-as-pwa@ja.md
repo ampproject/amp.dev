@@ -105,7 +105,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 この方法を使うと、AMP ページを修正して、あらゆる追加機能について
-[AMP の検証](/ja/docs/fundamentals/validate.html) に失敗するのを防ぐことができます。たとえば次のような機能です。
+[AMP の検証]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) に失敗するのを防ぐことができます。たとえば次のような機能です。
 
 * カスタム JS を必要とする動的な機能
 * サイト向けにカスタマイズされたコンポーネントやサイトにのみ関連するコンポーネント

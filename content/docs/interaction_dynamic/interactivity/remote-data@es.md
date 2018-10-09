@@ -171,6 +171,6 @@ Y tenemos precios correctos! Pruébalo.
 **Pruébalo**:  si selecciona un tamaño que no está disponible, no puede agregarlo al carrito.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/interaction_dynamic/interactivity/advanced-interactivity.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/interaction_dynamic/interactivity/wrapping-up.html"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

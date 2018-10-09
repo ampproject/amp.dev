@@ -69,6 +69,6 @@ AMPByExample サーバーがログインページから POST リクエストを�
 ヒント: このフローの詳細については、[amp-access ドキュメント](/ja/docs/reference/components/amp-access#login-flow)をご覧ください。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/interaction_dynamic/login_requiring.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/interaction_dynamic/login_requiring/add_comment.html"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

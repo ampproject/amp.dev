@@ -15,10 +15,10 @@ Dalam tutorial ini, kami akan memperkenalkan Anda dengan komponen [amp-story](/i
 - Menjalankan animasi elemen pada halaman
 - Mempertahankan interaksi pembaca dengan konten melalui penambahan link terkait ke akhir artikel
 
-{% call callout('Catatan', type='note') %} Komponen [amp-story](/id/docs/reference/components/amp-story.html) masih bersifat **eksperimental**. Untuk mendaftar ke uji coba asli agar dapat memublikasikan halaman dengan komponen ini, silakan kunjungi <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>. {% endcall %}
+{% call callout('Catatan', type='note') %} Komponen [amp-story](/id/docs/reference/components/amp-story.html) masih bersifat **eksperimental**. {% endcall %}
 
 
 <div class="start-button">
-<a class="button" href="/id/docs/getting_started/visual_story/setting_up.html"><span class="arrow-next">Mulai</span></a>
+<a class="button" href="{{g.doc('/content/docs/getting_started/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Mulai</span></a>
 </div>
  

@@ -148,7 +148,7 @@ Masih ada lagi yang bisa dipelajari tentang komponen bookend. Untuk informasi se
 Artikel kita hampir jadi.  Sebelum kita memublikasikannya, mari pastikan bahwa HTML AMP kita valid.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/getting_started/visual_story/validation.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
  

@@ -44,8 +44,8 @@ node app.js
 Depois disso, acesse <a href="http://localhost:3000">http://localhost:3000</a> no seu navegador da Web para ver a página AMP em funcionamento.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/interaction_dynamic/interactivity.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/interaction_dynamic/interactivity/get-familiar.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
  
  

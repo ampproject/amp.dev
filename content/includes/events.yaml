@@ -17,18 +17,18 @@ upcoming_events:
     title: AMP Roadshow Bangalore
     href: https://events.withgoogle.com/amp-roadshow-bangalore/
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: October 23, 2018
+    date: October 24, 2018
     event_time: 20180911/20180912
-    event_time_text: Oct 23
+    event_time_text: Oct 24
     location: Bangalore, India
     participant: Developers
   - type: Event
     title: AMP Roadshow Mumbai
     href: https://events.withgoogle.com/amp-roadshow-mumbai/
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: October 26, 2018
+    date: October 27, 2018
     event_time: 20180911/20180912
-    event_time_text: Oct 26
+    event_time_text: Oct 27
     location: Mumbai, India
     participant: Developers
   - type: Event
@@ -37,7 +37,7 @@ upcoming_events:
     excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
     date: October 30, 2018
     event_time: 20180911/20180912
-    event_time_text: Oct 26
+    event_time_text: Oct 30
     location: Gurgaon, India
     participant: Developers
 
