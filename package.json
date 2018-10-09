@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node index.js",
-    "debug": "DEBUG=express:* babel-node index.js",
-    "build": "grow build",
-    "deploy": "gulp build && grow build && gulp optimize"
+    "develop": "DEBUG=express:* babel-node index.js"
   },
   "repository": {
     "type": "git",
