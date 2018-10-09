@@ -14,14 +14,14 @@ gulp.task('icons', icons);
 gulp.task('styles', styles);
 gulp.task('examples', examples);
 
-gulp.task('default', gulp.series(clean, templates, icons, styles));
+gulp.task('default', gulp.series(clean, templates, icons, styles, examples));
 
 // Use develop to watch files and automatically run corresponding tasks
 gulp.task('develop', gulp.series('default', function watch() {
   gulp.watch('frontend/source/j2/**/*', templates);
   gulp.watch('frontend/source/svg/**/*', icons);
   gulp.watch('frontend/source/scss/**/*', styles);
-  // gulp.watch(settings.examples.src, examples);
+  gulp.watch(settings.examples.src, examples);
 
   console.log('Watching files for changes ...');
 }));
