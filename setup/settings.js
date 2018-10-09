@@ -31,8 +31,8 @@ const settings = {
         'dest': 'content/amp-dev/documentation/examples',
         'grow': {
           'views': {
-            'documentation': 'views/example.j2',
-            'preview': 'views/example-preview.j2',
+            'documentation': 'views/examples/documentation.j2',
+            'preview': 'views/examples/preview.j2',
           },
           'basePath': '/documentation/examples/'
         }

@@ -21,7 +21,7 @@ export default function examples(done) {
     stream = stream.pipe(through.obj(function(html, encoding, callback) {
       console.log('Transforming example:', html.relative);
       loadExample(html.path).then((example) => {
-        // Write data source JSON to Grow pod
+        // Write data for documentation page to Grow pod
         let json = html.clone();
         json.contents = Buffer.from(JSON.stringify(example));
         json.extname = '.json';
@@ -41,15 +41,16 @@ export default function examples(done) {
         markdown.extname = '.md';
         stream.push(markdown);
 
-        // ... and write the document for previewing the example
+        // ... write the document for previewing the example
         let preview = html.clone();
         preview.contents = Buffer.from([
           '---',
-          '$title: ' + example.document.title + '(Preview)',
+          '$title: ' + example.document.title + ' (Preview)',
           '$view: ' + settings.examples.grow.views.preview,
           '$path: ' + settings.examples.grow.basePath
                     + html.relative.replace('.html', '-preview.html'),
-          'example: !g.doc ' + settings.examples.dest + '/' + markdown.relative,
+          'example: ' + settings.examples.grow.basePath
+                      + html.relative.replace('.html', '-source.html'),
           '---'
         ].join('\n'));
         preview.extname = '-preview.md';
