@@ -89,6 +89,10 @@ TODO: mono (inline, block)
 	margin-bottom: 0.75em;
 }
 
+@mixin txt-mono {
+	font-family: monospace;
+}
+
 @mixin txt-mono-inline {
 	display: inline-block;
 	padding: 0 4px;
