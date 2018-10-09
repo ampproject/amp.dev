@@ -27,13 +27,13 @@ export default function examples(done) {
         json.extname = '.json';
         stream.push(json);
 
-        // And also write Markdown file referencing the JSON data source
+        // ... write markdown file referencing the JSON data source
         let markdown = html.clone();
         // TODO(matthiasrohmer): Move frontmatter creation to own method
         markdown.contents = Buffer.from([
           '---',
           '$title: ' + example.document.title,
-          '$view: ' + settings.examples.grow.view,
+          '$view: ' + settings.examples.grow.views.documentation,
           '$path: ' + settings.examples.grow.basePath + html.relative,
           'example: !g.json ' + settings.examples.dest + '/' + json.relative,
           '---'
@@ -41,7 +41,21 @@ export default function examples(done) {
         markdown.extname = '.md';
         stream.push(markdown);
 
-        // Signal to stream that processing is finished
+        // ... and write the document for previewing the example
+        let preview = html.clone();
+        preview.contents = Buffer.from([
+          '---',
+          '$title: ' + example.document.title + '(Preview)',
+          '$view: ' + settings.examples.grow.views.preview,
+          '$path: ' + settings.examples.grow.basePath
+                    + html.relative.replace('.html', '-preview.html'),
+          'example: !g.doc ' + settings.examples.dest + '/' + markdown.relative,
+          '---'
+        ].join('\n'));
+        preview.extname = '-preview.md';
+        stream.push(preview);
+
+        // Signal to stream that processing for current file is finished
         callback();
       });
     }));

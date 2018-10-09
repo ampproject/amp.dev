@@ -13,7 +13,8 @@ const settings = {
         'partials/**/*',
         'templates/**/*',
         'views/**/*',
-        'css/**'
+        'css/**',
+        'content/amp-dev/documentation/examples/**/*'
       ]
     },
     'styles': {
@@ -29,7 +30,10 @@ const settings = {
         'src': 'examples/**/*.html',
         'dest': 'content/amp-dev/documentation/examples',
         'grow': {
-          'view': 'views/example.j2',
+          'views': {
+            'documentation': 'views/example.j2',
+            'preview': 'views/example-preview.j2',
+          },
           'basePath': '/documentation/examples/'
         }
     },
