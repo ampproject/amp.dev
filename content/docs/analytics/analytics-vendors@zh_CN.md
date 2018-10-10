@@ -194,6 +194,12 @@ type 属性值：`piano`
 
  添加对 Piano 的支持。有关配置的详情，请访问 [vx.piano.io](http://vx.piano.io/javascript-tracking-amp)。
 
+### Pressboard
+
+type 属性值：`pressboard`
+
+ 添加对 Pressboard 的支持。有关配置的详情，请访问 [pressboardmedia.com](https://www.pressboardmedia.com/google-amp).
+
 ### Quantcast Measurement
 
 type 属性值：`quantcast`

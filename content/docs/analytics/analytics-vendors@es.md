@@ -195,6 +195,12 @@ Valor del atributo type: `piano`
 
 Agrega soporte para Piano.  Puedes encontrar detalles sobre configuración en [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
 
+### Pressboard
+
+Valor del atributo type: `pressboard`
+
+Agrega soporte para Pressboard. Puedes encontrar detalles sobre configuración en [pressboardmedia.com](https://www.pressboardmedia.com/google-amp).
+
 ### Quantcast Measurement
 
 Valor del atributo type: `quantcast`

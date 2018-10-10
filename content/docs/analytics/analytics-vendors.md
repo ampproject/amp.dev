@@ -146,7 +146,7 @@ Adds support for Google Analytics. More details for adding Google Analytics supp
 
 Type attribute value: N/A
 
-Unlike other analytics vendors, Google Tag Manager is a tag management service, and does not require the `type` attribute. Google Tag Manager is [supported](https://developers.google.com/google-ads/amp/landing-pages#google_tag_manager) in AMP.  Consult the Google Tag Manager documentation for [supported tags](https://support.google.com/tagmanager/answer/6106924) and for instructions on [adding Google Tag Manager to your AMP page](https://support.google.com/tagmanager/answer/6103696). 
+Unlike other analytics vendors, Google Tag Manager is a tag management service, and does not require the `type` attribute. Google Tag Manager is [supported](https://developers.google.com/google-ads/amp/landing-pages#google_tag_manager) in AMP.  Consult the Google Tag Manager documentation for [supported tags](https://support.google.com/tagmanager/answer/6106924) and for instructions on [adding Google Tag Manager to your AMP page](https://support.google.com/tagmanager/answer/6103696).
 
 ### INFOnline / IVW
 
@@ -260,6 +260,12 @@ Adds support for Parsely. Configuration details can be found at [parsely.com/doc
 Type attribute value: `piano`
 
 Adds support for Piano.  Configuration details can be found at [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+
+### Pressboard
+
+Type attribute value: `pressboard`
+
+Adds support for Pressboard. Configuration details can be found at [pressboardmedia.com](https://www.pressboardmedia.com/google-amp).
 
 ### Quantcast Measurement
 
