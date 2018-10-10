@@ -1,0 +1,69 @@
+<amp-sidebar class="styleguide__sidebar" id="sidebar" layout="nodisplay" side="left">
+  {% set demoAtoms = g.collection('/content/styleguide/atoms') %}
+  <section>
+    {% if demoAtoms %}
+    <p class="styleguide__sidebar-title">Atoms</p>
+    <ul>
+      {% for doc in demoAtoms %}
+      <li>
+        <a class="ad-m-lnk" href="{{ doc.url|relative }}">
+					{{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+					<span class="ad-m-lnk-text">{{ doc.title }}</span>
+				</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% set demoMolecules = g.collection('/content/styleguide/molecules') %}
+  {% if demoMolecules %}
+  <section>
+    <p class="styleguide__sidebar-title">Molecules</p>
+    <ul>
+      {% for doc in demoMolecules %}
+      <li>
+        <a class="ad-m-lnk" href="{{ doc.url|relative }}">
+					{{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+					<span class="ad-m-lnk-text">{{ doc.title }}</span>
+				</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% set demoOrganisms = g.collection('/content/styleguide/organisms') %}
+  {% if demoOrganisms %}
+  <section>
+    <p class="styleguide__sidebar-title">Organisms</p>
+    <ul>
+      {% for doc in demoOrganisms %}
+      <li>
+        <a class="ad-m-lnk" href="{{ doc.url|relative }}">
+					{{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+					<span class="ad-m-lnk-text">{{ doc.title }}</span>
+				</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% set prototypes = g.collection('/content/styleguide/prototypes') %}
+  {% if prototypes %}
+  <section>
+    <p class="styleguide__sidebar-title">Prototypes</p>
+    <ul>
+      {% for doc in prototypes %}
+      <li>
+        <a class="ad-m-lnk" href="{{ doc.url|relative }}">
+					{{ atoms.icon('internal', 'ad-m-lnk-icon') }}
+					<span class="ad-m-lnk-text">{{ doc.title }}</span>
+				</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</amp-sidebar>

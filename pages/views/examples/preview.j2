@@ -1,0 +1,8 @@
+{% extends '/templates/default.j2' %}
+
+{% block main %}
+<amp-iframe src="{{ podspec.meta.example_host }}{{ doc.example }}" sandbox="allow-scripts allow-same-origin" layout="responsive" width="1920" height="1080">
+  <div placeholder>Example is loading ...</div>
+  <div overflow><button>See full example</button></div>
+</amp-iframe>
+{% endblock %}

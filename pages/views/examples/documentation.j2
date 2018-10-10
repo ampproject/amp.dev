@@ -1,0 +1,7 @@
+{% extends '/templates/default.j2' %}
+
+{% block main %}
+{% for section in doc.example.document.sections %}
+{{ section.doc|markdown|safe }}
+{% endfor %}
+{% endblock %}
