@@ -198,7 +198,7 @@ type 属性值：`piano`
 
 type 属性值：`pressboard`
 
- 添加对 Pressboard 的支持。有关配置的详情，请访问 [pressboardmedia.com](https://www.pressboardmedia.com/google-amp).
+ 添加对 Pressboard 的支持。有关配置的详情，请访问 [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
 
 ### Quantcast Measurement
 

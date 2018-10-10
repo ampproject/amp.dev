@@ -198,7 +198,7 @@ Valor do atributo de tipo: `piano`
 
 Valor do atributo de tipo: `pressboard`
 
- Adiciona compatibilidade com o Pressboard. Veja mais detalhes sobre a configuração em [pressboardmedia.com](https://www.pressboardmedia.com/google-amp).
+ Adiciona compatibilidade com o Pressboard. Veja mais detalhes sobre a configuração em [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
 
 ### Quantcast Measurement
 

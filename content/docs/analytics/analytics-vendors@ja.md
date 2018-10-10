@@ -198,7 +198,7 @@ type 属性の値: `piano`
 
 type 属性の値: `pressboard`
 
-この値を指定すると、Pressboard を利用できるようになります。設定の詳細については、[pressboardmedia.com](https://www.pressboardmedia.com/google-amp) をご覧ください。
+この値を指定すると、Pressboard を利用できるようになります。設定の詳細については、[help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp) をご覧ください。
 
 ### Quantcast Measurement
 

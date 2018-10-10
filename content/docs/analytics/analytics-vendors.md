@@ -265,7 +265,7 @@ Adds support for Piano.  Configuration details can be found at [vx.piano.io](htt
 
 Type attribute value: `pressboard`
 
-Adds support for Pressboard. Configuration details can be found at [pressboardmedia.com](https://www.pressboardmedia.com/google-amp).
+Adds support for Pressboard. Configuration details can be found at [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
 
 ### Quantcast Measurement
 

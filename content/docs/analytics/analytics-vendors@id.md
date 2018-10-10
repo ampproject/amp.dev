@@ -197,7 +197,7 @@ Menambahkan dukungan untuk Piano. Konfigurasi selengkapnya dapat ditemukan di [v
 
 Nilai atribut type: `pressboard`
 
-Menambahkan dukungan untuk Pressboard. Konfigurasi selengkapnya dapat ditemukan di [pressboardmedia.com](https://www.pressboardmedia.com/google-amp).
+Menambahkan dukungan untuk Pressboard. Konfigurasi selengkapnya dapat ditemukan di [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
 
 ### Quantcast Measurement
 

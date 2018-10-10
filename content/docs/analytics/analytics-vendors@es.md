@@ -199,7 +199,7 @@ Agrega soporte para Piano.  Puedes encontrar detalles sobre configuración en [v
 
 Valor del atributo type: `pressboard`
 
-Agrega soporte para Pressboard. Puedes encontrar detalles sobre configuración en [pressboardmedia.com](https://www.pressboardmedia.com/google-amp).
+Agrega soporte para Pressboard. Puedes encontrar detalles sobre configuración en [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
 
 ### Quantcast Measurement
 
