@@ -34,7 +34,7 @@ download: "case-studies/greenslips.pdf"
 
 ## Solution
 
-In 2016, Treacey embarked on a ground-up rebuild of the website. A new design, experience, platform and code. A major focus was to improve the greenslips.com.au mobile experience by designing a faster, friendlier, more responsive website. He had learned about AMP through his company’s digital agency and Google Premier Partner, acidgreen. In fact, acidgreen recommended that the entire re-build be based on AMP, not just the mobile version. “Imposing AMP structure and discipline means that everything is brand new,” Treacey says. “It's ultra clean, it's ultra light, and it's very fast. iven the move to mobile first indexing, going with AMP was an easy decision.”
+In 2016, Treacey embarked on a ground-up rebuild of the website. A new design, experience, platform and code. A major focus was to improve the greenslips.com.au mobile experience by designing a faster, friendlier, more responsive website. He had learned about AMP through his company’s digital agency and Google Premier Partner, acidgreen. In fact, acidgreen recommended that the entire re-build be based on AMP, not just the mobile version. “Imposing AMP structure and discipline means that everything is brand new,” Treacey says. “It's ultra clean, it's ultra light, and it's very fast. Given the move to mobile first indexing, going with AMP was an easy decision.”
  
 A dedicated team worked on strategy, research, content, UI, and UX. A single developer took on the task of understanding the AMP structure and requirements. The new site was built from a zero base, using AMP.
 
