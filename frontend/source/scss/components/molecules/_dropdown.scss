@@ -25,7 +25,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 @import '../atoms/_destination.scss';
 
 
-@include rollingAnimation;
 @include viewboxGradientAnimation;
 
 

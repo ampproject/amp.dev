@@ -33,6 +33,7 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 @import '../atoms/_divider.scss';
 
 @include heroEnterAnimation;
+@include rollingAnimation;
 
 .destination-stage {
 	height: 90vh;
@@ -59,18 +60,12 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 }
 
 	.hl {
-		@include hl;
+		@include hl-h4;
 		@include hl-stage;
 		@include hl-light;
 		margin: 0;
 		display: inline;
 		padding-right: 12px;
-
-		&-sub {
-			@include hl;
-			@include hl-h3;
-			@include hl-light;
-		}
 
 		&-divider {
 			@include divider;
