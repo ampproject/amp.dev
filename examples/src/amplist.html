@@ -34,11 +34,15 @@
       z-index: 2;
       padding: 16px;
     }
+    amp-list div[role="list"] {
+      display: grid;
+      grid-gap: 0.5em;
+    } 
   </style>
 </head>
 <body>
   <!-- basic -->
-  <amp-list width="auto" height="100" layout="fixed-height"
+  <amp-list id="testclass" width="auto" height="100" layout="fixed-height"
       src="https://ampproject-b5f4c.firebaseapp.com/examples/data/amp-list-urls.json">
     <template type="amp-mustache">
       <div class="url-entry"><a href="{{url}}">{{title}}</a></div>
