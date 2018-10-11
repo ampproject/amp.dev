@@ -29,17 +29,12 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 
 .destination-list-view-box {
-  display: inline;
-	height: 32px;
-	width: 250px;
 	overflow: hidden;
+  height: 42px;
+  overflow: hidden;
   position: absolute;
-
-	@media screen and (min-width: 768px){
-    width: 324px;
-	  height: 42px;
-	}
-
+  margin-top: 20px;
+  z-index: 10;
 
 	&-gradient {
 		background: linear-gradient(-220deg,
@@ -57,7 +52,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     height: 143px;
     transition: height 0.5s ease;
 		background: transparent;
-		animation: none;
 
     @media screen and (min-width: 768px) {
 		  height: 183px;
@@ -66,17 +60,8 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		.ad-a-ico {
 			transform: rotate(180deg);
 			fill: color('white');
-		}
+    }
 
-		.destination-list {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.destination-list-item-rolling{
-			display: none;
-			animation-play-state: paused;
-		}
 	}
 }
 
@@ -95,10 +80,10 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 // DROP DPOWN LIST
 
 .destination-list {
-	display: none;
+  display: flex;
+  flex-direction: column;
 	padding: 0;
-	list-style: none;
-	margin: 0;
+  margin: 0;
 
 	&-display {
 		display: flex;
@@ -106,20 +91,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 
 	&:hover {
-
 		.ad-a-ico {
 			transform: rotate(100deg);
-		}
-
-		.destination-list-view-box {
-			animation: none;
-		}
-
-		.destination-list-rolling-item {
-			display: none;
-			animation-play-state: paused;
-		}
-
+    }
 	}
 }
 
@@ -138,53 +112,13 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     outline: 1px solid #fff;
   }
 
-
 	&-drop-down {
 		margin-bottom: 5px;
 
 		&:hover {
 			margin-left: 2px;
 		}
-	}
-
-	&-rolling {
-		position: absolute;
-
-		&-hide {
-			display: none;
-			animation: none;
-		}
-
-		&-websites {
-			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-      animation-delay: 0s;
-		}
-
-		&-stories {
-			opacity: 0;
-			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-			animation-delay: 3.2s;
-      @include txt-stories;
-		}
-
-		&-ads {
-			opacity: 0;
-			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-			animation-delay: 6.4s;
-      @include txt-ads;
-		}
-
-		&-emails {
-			opacity: 0;
-			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-			animation-delay: 9.6s;
-      @include txt-email;
-    }
-
-		&-light {
-			color: color('white');
-		}
-	}
+  }
 }
 
 
