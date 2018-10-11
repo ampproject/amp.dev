@@ -194,6 +194,12 @@ $title: "애널리틱스 공급업체"
 
  Piano 지원을 추가합니다. 구성 관련 세부정보는 [vx.piano.io](http://vx.piano.io/javascript-tracking-amp) 에서 확인할 수 있습니다.
 
+### Pressboard
+
+속성값 유형: `pressboard`
+
+ Pressboard 지원을 추가합니다. 구성 관련 세부정보는 [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp) 에서 확인할 수 있습니다.
+
 ### Quantcast Measurement
 
 속성값 유형: `quantcast`
