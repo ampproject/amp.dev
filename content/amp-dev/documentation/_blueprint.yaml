@@ -2,5 +2,11 @@ path: /documentation/{base}.html
 view: /views/default.j2
 title: Documentation
 
+categories:
+  - Get Started
+  - Fundamentals
+  - Design & Layout
+  - Interactivity & dynamic content
+
 localization:
   path: /{locale}/documentation/{base}.html
