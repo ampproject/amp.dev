@@ -75,4 +75,31 @@
     </div>
 	</div>
 
+  {% elif options.type == 'sidebar' %}
+  {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-sidebar.css') %}
+
+  <div class="destination-stage websites websites-background">
+    <div class="destination-stage-content">
+		  <span class="hl-sub">Select your topic:</span>
+      <div class="destination-list-view-box destination-list-view-box-gradient">
+		    {% for collection in g.collection('amp-dev/overview').collections() %}
+          {% for doc in g.docs(collection.collection_path) %}
+			      <span class="destination-list-item destination-list-item-rolling destination-list-item-rolling-{{ doc.title }}">{{ doc.title }}</span>
+		      {% endfor %}
+        {% endfor %}
+		    <amp-selector layout="container">
+			  <ul class="destination-list">
+		    {% for collection in g.collection('amp-dev/overview').collections() %}
+          {% for doc in g.docs(collection.collection_path) %}
+			 	    <li option={{ doc.title }} class="{{ doc.title }}">
+              <a href="{{ doc.url.path }}" class="destination-list-item destination-list-item-drop-down {{ doc.title }} {{doc.title}}-background">{{ doc.title }}</a>
+            </li>
+			    {% endfor %}
+        {% endfor %}
+			  </ul>
+		  </amp-selector>
+	  </div>
+    </div>
+	</div>
+
 {% endif %}
