@@ -1,0 +1,43 @@
+{% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-sidebar.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
+
+<div class="ad-o-sidebar">
+  <div class="destination-stage websites websites-background">
+    <div class="destination-stage-content">
+		  <span class="hl">Select your topic:</span>
+      <div class="destination-list-view-box destination-list-view-box-gradient">
+		    <amp-selector layout="container">
+			  <ul class="destination-list">
+		    {% for collection in g.collection('amp-dev/overview').collections() %}
+          {% for doc in g.docs(collection.collection_path) %}
+			 	    <li option={{ doc.title }} class="{{ doc.title }}">
+              <a href="{{ doc.url.path }}" class="destination-list-item destination-list-item-drop-down {{ doc.title }} {{doc.title}}-background">{{ doc.title }}</a>
+            </li>
+			    {% endfor %}
+        {% endfor %}
+			  </ul>
+		  </amp-selector>
+	  </div>
+    </div>
+	</div>
+
+
+  <div class="ad-o-sidebar-list-main">
+    <amp-accordion animate>
+      {% for category in g.collection('amp-dev/documentation').categories %}
+        <section>
+          <h4 class="ad-o-sidebar-list-item">{{ category }}</h4>
+          <ul class="ad-o-sidebar-list">
+            {% for _docs in g.collection('amp-dev/documentation') %}
+              {% if _docs.category == category %}
+                <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
+                  <a href="{{ _docs.url.path }}" class="ad-o-sidebar-list-item-lnk">{{ _docs.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </section>
+      {% endfor %}
+    </amp-accordion>
+  </div>
+</div>
