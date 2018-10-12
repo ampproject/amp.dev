@@ -163,7 +163,7 @@ Detail selengkapnya tentang menambahkan dukungan INFOnline / IVW dapat dilihat d
 
 Nilai atribut type: `krux`
 
-Menambahkan dukungan untuk Krux.  Detail konfigurasi dapat dilihat di [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
+Menambahkan dukungan untuk Krux. Detail konfigurasi dapat dilihat di [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
 
 ### Linkpulse
 
@@ -175,7 +175,7 @@ Menambahkan dukungan untuk Linkpulse. Detail konfigurasi dapat dilihat di [docs.
 
 Nilai atribut type: `lotame`
 
-Menambahkan dukungan untuk Lotame.  Informasi lebih lanjut dan detail konfigurasi dapat dilihat di [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
+Menambahkan dukungan untuk Lotame. Informasi lebih lanjut dan detail konfigurasi dapat dilihat di [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
 
 ### Médiamétrie
 
@@ -269,7 +269,7 @@ Menambahkan dukungan untuk [SOASTA mPulse](https://www.soasta.com/mPulse). Detai
 
 Nilai atribut type: `simplereach`
 
-Menambahkan dukungan untuk SimpleReach.  Detail konfigurasi dapat dilihat di [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation).
+Menambahkan dukungan untuk SimpleReach. Detail konfigurasi dapat dilihat di [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation).
 
 ### Snowplow Analytics
 
@@ -311,5 +311,5 @@ Menambahkan dukungan untuk Webtrekk. Detail konfigurasi dapat dilihat di [suppor
 
 Nilai atribut type: `metrika`
 
-Menambahkan dukungan untuk Yandex Metrica.  Detail konfigurasi dapat dilihat di [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
+Menambahkan dukungan untuk Yandex Metrica. Detail konfigurasi dapat dilihat di [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
  
