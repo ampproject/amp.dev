@@ -194,6 +194,12 @@ Valor do atributo de tipo: `piano`
 
  Adiciona compatibilidade com o Piano. Veja mais detalhes sobre a configuração em [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
 
+### Pressboard
+
+Valor do atributo de tipo: `pressboard`
+
+ Adiciona compatibilidade com o Pressboard. Veja mais detalhes sobre a configuração em [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
+
 ### Quantcast Measurement
 
 Valor do atributo de tipo: `quantcast`

@@ -193,6 +193,12 @@ Nilai atribut type: `piano`
 
 Menambahkan dukungan untuk Piano. Konfigurasi selengkapnya dapat ditemukan di [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
 
+### Pressboard
+
+Nilai atribut type: `pressboard`
+
+Menambahkan dukungan untuk Pressboard. Konfigurasi selengkapnya dapat ditemukan di [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
+
 ### Quantcast Measurement
 
 Nilai atribut type: `quantcast`

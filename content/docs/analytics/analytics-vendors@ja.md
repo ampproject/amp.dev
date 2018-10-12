@@ -194,6 +194,12 @@ type 属性の値: `piano`
 
 この値を指定すると、Piano を利用できるようになります。設定の詳細については、[vx.piano.io](http://vx.piano.io/javascript-tracking-amp) をご覧ください。
 
+### Pressboard
+
+type 属性の値: `pressboard`
+
+この値を指定すると、Pressboard を利用できるようになります。設定の詳細については、[help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp) をご覧ください。
+
 ### Quantcast Measurement
 
 type 属性の値: `quantcast`
