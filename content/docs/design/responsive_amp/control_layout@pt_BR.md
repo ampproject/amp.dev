@@ -1,14 +1,16 @@
 ---
-$title: Consultas de layout e mídia
+$title: Consultas de mídia e layout
 ---
-
 [TOC]
 
-A AMP é compatível com**consultas de mídia**  e**consultas de elementos** e também conta com um modo avançado e integrado de controlar o**layout** de elementos individuais. O atributo `layout` facilita muito o uso e a criação de design totalmente responsivo em comparação com o uso de somente CSS.
 
-## Imagens responsivas mais fáceis
+A tecnologia AMP é compatível com **consultas de mídia** e **consultas de elemento**, além de ter um recurso integrado e eficiente para controlar o **layout** de elementos individuais. O atributo `layout` facilita muito o uso e a criação de design completamente responsivo em comparação com a aplicação somente de CSS.
 
-Crie imagens responsivas especificando `width` e `height`, definindo o layout para `responsive` e indicando com [`srcset`]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) qual recurso de imagem usar com base em diferentes tamanhos de tela:
+## Imagens responsivas simplificadas
+
+Crie imagens responsivas especificando `width` e `height`, ajustando o layout para `responsive`
+e indicando com [`srcset`](/pt_br/docs/guides/responsive/art_direction.html)
+qual recurso de imagem será usado conforme diferentes tamanhos de tela:
 
 [sourcecode:html]
 <amp-img
@@ -22,77 +24,96 @@ Crie imagens responsivas especificando `width` e `height`, definindo o layout pa
 </amp-img>
 [/sourcecode]
 
-Esse elemento `amp-img` se ajusta automaticamente à largura do elemento contêiner, e a altura é automaticamente definida de acordo com a proporção determinada pela largura e a altura. Teste o recurso redimensionando essa janela de navegador:
+Este `amp-img` se ajusta automaticamente à largura
+do próprio elemento contêiner,
+e sua altura é automaticamente definida para a proporção
+determinada pela largura e pela altura fornecidas. Faça um teste redimensionando esta janela do navegador:
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-Dica: Confira nossa demonstração lado a lado de `amp-img` ao vivo para ver um exemplo básico e um avançado: [Demonstração ao vivo](https://ampbyexample.com/components/amp-img/)
+{% call callout('Dica', type='success') %}
+Veja demonstrações ao vivo lado a lado de `amp-img`: [Demonstrações ao vivo no site AMP By Example](https://ampbyexample.com/components/amp-img/).
+{% endcall %}
 
-## Atributo de layout
+## O atributo layout
 
-O atributo `layout` dá a você controle fácil e por elemento sobre como seu elemento deve ser renderizado na tela. Muitas dessas opções são possíveis com CSS puro, mas são muito mais complicadas e exigem diversas modificações. Em vez disso, use o atributo `layout`.
+Com o atributo `layout`, é fácil controlar a forma que cada elemento
+será exibido na tela. Vários desses recursos podem ser usados com CSS puro. No entanto,
+isso é muito mais difícil e requer uma infinidade de gambiarras. Em vez disso, use o atributo `layout`.
 
 ### Valores compatíveis com o atributo `layout`
 
-Os valores a seguir podem ser usados no atributo `layout`:
+Estes valores podem ser usados no atributo `layout`:
 
 <table>
   <thead>
     <tr>
-      <th data-th="Layout type" class="col-twenty">Tipo de layout</th>
-      <th data-th="Width/height required" class="col-twenty">Largura/altura necessárias</th>
+      <th data-th="Layout type" class="col-thirty">Tipo de layout</th>
+      <th data-th="Width/height required" class="col-twenty">Largura/<br>altura necessárias</th>
       <th data-th="Behavior">Comportamento</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td data-th="Layout type" class="col-twenty"><code>nodisplay</code></td>
-      <td data-th="Description" class="col-twenty">Não</td>
-      <td data-th="Behavior"> O elemento não é exibido. Esse layout pode ser aplicado a todos os elementos da AMP. O componente não ocupa espaço na tela, pois não tem estilo de exibição. Presume-se que o elemento pode exibir a si mesmo por uma ação do usuário, como<a href="/docs/reference/amp-lightbox.html"><code> amp-lightbox</code></a>.</td>
+      <td data-th="Layout type"><code>nodisplay</code></td>
+      <td data-th="Description">Não</td>
+      <td data-th="Behavior">O elemento não é exibido. Pode ser aplicado a cada elemento de AMP. O componente não ocupa espaço na tela, como se o seu estilo de exibição fosse "none". A ação esperada é que o elemento seja exibido mediante ação do usuário, por exemplo, <a href="/pt_br/docs/reference/components/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
-      <td data-th="Layout type" class="col-twenty"><code>fixed</code></td>
-      <td data-th="Description" class="col-twenty">Sim</td>
-      <td data-th="Behavior"> O elemento tem uma largura e uma altura sem responsividade compatível. As únicas exceções são os elementos<a href="/docs/reference/amp-pixel.html"><code> amp-pixel</code></a>  e<a href="/docs/reference/amp-audio.html"><code> amp-audio</code></a>.</td>
+      <td data-th="Layout type"><code>fixed</code></td>
+      <td data-th="Description">Sim</td>
+      <td data-th="Behavior">O elemento tem largura e altura fixas sem compatibilidade com a responsividade. As únicas exceções são <a href="/pt_br/docs/reference/components/amp-pixel.html">elementos <code>amp-pixel</code></a> e <a href="/pt_br/docs/reference/components/amp-audio.html"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
-      <td data-th="Layout type" class="col-twenty"><code>responsive</code></td>
-      <td data-th="Description" class="col-twenty">Sim</td>
-      <td data-th="Behavior"> O elemento é dimensionado seguindo a largura do contêiner dele e redimensiona a altura automaticamente de acordo com a proporção determinada pelos atributos de largura e altura. Esse layout funciona muito bem com a maioria dos elementos da AMP, incluindo<a href="/docs/reference/amp-img.html"><code> amp-img</code></a> e<a href="/docs/reference/amp-video.html"><code> amp-video</code></a>. O espaço disponível depende do elemento pai e também pode ser personalizado usando CSS<code> max-width</code>.</td>
+      <td data-th="Layout type"><code>responsive</code></td>
+      <td data-th="Description">Sim</td>
+      <td data-th="Behavior">O elemento é redimensionado para a largura do seu elemento contêiner e redimensiona sua altura automaticamente de acordo com a proporção determinada pelos atributos de largura e altura. Esse layout funciona bem para a maior parte dos elementos de AMP, incluindo <a href="/pt_br/docs/reference/components/amp-img.html"><code>amp-img</code></a> e <a href="/pt_br/docs/reference/components/amp-video.html"><code>amp-video</code></a>. O espaço disponível depende do elemento pai e também pode ser personalizado com o CSS <code>max-width</code>.<p><strong>Observação</strong>: os elementos com <code>"layout=responsive"</code> não têm valor intrínseco. O tamanho do elemento é determinado a partir do elemento contêiner correspondente. Para garantir que o elemento de AMP seja exibido, você precisa especificar a altura e a largura do elemento contêiner. Não especifique <code>"display:table"</code> no elemento contêiner, porque isso modifica a exibição do elemento de AMP, que é renderizado invisível.</p></td>
     </tr>
     <tr>
-      <td data-th="Layout type" class="col-twenty"><code>fixed-height</code></td>
-      <td data-th="Description" class="col-twenty">Somente altura</td>
-      <td data-th="Behavior"> O elemento ocupa o espaço disponível, mas mantém a altura inalterada. Esse layout funciona bem para elementos como<a href="/docs/reference/amp-carousel.html"><code> amp-carousel</code></a>  ,que envolve conteúdo posicionado horizontalmente. Se o atributo <code> width</code>  estiver presente, precisa ser igual a<code> auto</code>.</td>
+      <td data-th="Layout type"><code>fixed-height</code></td>
+      <td data-th="Description">Somente altura</td>
+      <td data-th="Behavior">O elemento ocupa o espaço disponibilizado para ele, mas mantém a altura inalterada. Este layout funciona bem para elementos como <a href="/pt_br/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a>, que envolvem conteúdo posicionado horizontalmente. O atributo <code>width</code> não pode estar presente ou precisa ser igual a <code>auto</code>.</td>
     </tr>
     <tr>
-      <td data-th="Layout type" class="col-twenty"><code>fill</code></td>
-      <td data-th="Description" class="col-twenty">Não</td>
-      <td data-th="Behavior">O elemento ocupa o espaço disponível na largura e na altura. Em outras palavras, o layout de um elemento de preenchimento corresponde ao pai dele.</td>
+      <td data-th="Layout type"><code>fill</code></td>
+      <td data-th="Description">Não</td>
+      <td data-th="Behavior">O elemento ocupa o espaço disponibilizado para ele, tanto em largura quanto em altura. Em outras palavras, o layout de um elemento de preenchimento corresponde ao layout pai dele. Para que um elemento preencha o contêiner pai correspondente, o contêiner pai deve especificar `position:relative` ou `position:absolute`.</td>
     </tr>
     <tr>
-      <td data-th="Layout type" class="col-twenty"><code>container</code></td>
-      <td data-th="Description" class="col-twenty">Não</td>
-      <td data-th="Behavior"> O elemento permite que o filho defina o tamanho, como um HTML normal <code>div</code>. Presume-se que o componente não tenha um layout específico, mas somente aja como um contêiner. Os filhos são renderizados imediatamente.</td>
+      <td data-th="Layout type"><code>container</code></td>
+      <td data-th="Description">Não</td>
+      <td data-th="Behavior">O elemento permite que os filhos definam o próprio tamanho, como um <code>div</code> de HTML normal. Supõe-se que o componente não tem um layout próprio específico e atua apenas como um contêiner. Os filhos dele são renderizados imediatamente.</td>
     </tr>
     <tr>
-      <td data-th="Layout type" class="col-twenty"><code>flex-item</code></td>
-      <td data-th="Description" class="col-twenty">Não</td>
-      <td data-th="Behavior"> O elemento e outros elementos no pai dele ocupam o espaço restante no contêiner do pai quando este é um contêiner flexível (ou seja,<code> display:flex</code> ). O tamanho do elemento é determinado pelo elemento pai, e o número de elementos dentro do pai pelo layout CSS<code> display:flex</code>.</td>
+      <td data-th="Layout type"><code>flex-item</code></td>
+      <td data-th="Description">Não</td>
+      <td data-th="Behavior">O elemento e outros elementos presentes no pai usam o espaço restante do contêiner pai quando ele é flexível (ou seja, <code>display:flex</code>). O tamanho do elemento é determinado pelo pai e pelo número de outros elementos dentro do pai de acordo com o layout de CSS de <code>display:flex</code>.</td>
+    </tr>
+    <tr>
+      <td data-th="Layout type"><code>intrinsic</code></td>
+      <td data-th="Description">Sim</td>
+      <td data-th="Behavior">O elemento ocupa o espaço disponível para ele e redimensiona a própria altura automaticamente conforme a proporção determinada pelos atributos <code>width</code> e <code>height</code> <em>até</em> atingir o tamanho natural do elemento ou uma restrição de CSS (por exemplo, max-width). Os atributos de altura e largura precisam estar presentes. Esse layout funciona bem com a maior parte dos elemento de AMP, incluindo <code>amp-img</code>, <code>amp-carousel</code> etc. O espaço disponível depende do elemento pai e pode ser personalizado com CSS de <code>max-width</code>. Esse layout é diferente de <code>responsive</code> porque tem largura e altura intrínsecas. Isso fica mais aparente dentro de um elemento flutuante em que o layout <code>responsive</code> renderizará 0 x 0 e um layout <code>intrinsic</code> aumentará para o menor tamanho natural ou qualquer restrição de CSS. </td>
     </tr>
   </tbody>
 </table>
 
-### O que acontece se largura e a altura não estiverem definidas?
+{% call callout('Dica', type='success') %}
+Acesse a página [Demonstração de layouts AMP](/pt_br/docs/design/amp-html-layout/layouts_demonstrated.html) para ver como diferentes layouts respondem ao redimensionamento de tela. Você também encontra mais informações no site [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
+{% endcall %}
 
-Em alguns casos, se `width` ou `height` não forem especificados, o tempo de execução da AMP pode usar o padrão desses valores, como mostrado a seguir:
 
-* [`amp-pixel`](/pt/docs/reference/amp-pixel.html): a largura e a altura estão definidas como o padrão de 0.
-* [`amp-audio`](/pt/docs/reference/amp-audio.html): a largura e a altura padrão são inferidas do navegador.
+### O que acontece se a largura e a altura não estiverem definidas?
 
-###  O que acontece se o atributo <code>layout</code> não estiver especificado?
+Em alguns casos, se o atributo `width` ou `height` não estiver especificado,
+o ambiente de tempo de execução de AMP poderá usar o seguinte padrão para esses valores:
 
-Se o atributo<code>layout</code> não estiver especificado, a AMP tenta inferir ou adivinhar o valor adequado:
+* [`amp-pixel`](/pt_br/docs/reference/components/amp-pixel.html): o valor padrão da largura e da altura será 0.
+* [`amp-audio`](/pt_br/docs/reference/components/amp-audio.html): o valor padrão da largura e da altura é inferido a partir do navegador.
+
+### E se o atributo <code>layout</code> não estiver definido?
+
+Se o atributo <code>layout</code> não tiver sido especificado, a página AMP tentará inferir ou adivinhar
+o valor adequado:
 
 <table>
   <thead>
@@ -103,37 +124,46 @@ Se o atributo<code>layout</code> não estiver especificado, a AMP tenta inferir 
   </thead>
   <tbody>
     <tr>
-      <td data-th="Rule"><code>height</code>  está presente e<code>width</code>  está ausente ou é igual a<code>auto</code>.</td>
+      <td data-th="Rule"><code>height</code> está presente, e <code>width</code> está ausente ou é igual a <code>auto</code></td>
       <td data-th="Inferred layout"><code>fixed-height</code></td>
     </tr>
     <tr>
-      <td data-th="Rule">Os atributos <code>width</code>  ou<code>height</code>  estão presentes com o atributo<code>sizes</code> .</td>
+      <td data-th="Rule">Os atributos <code>width</code> ou <code>height</code> estão presentes com o atributo <code>sizes</code></td>
       <td data-th="Inferred layout"><code>responsive</code></td>
     </tr>
     <tr>
-      <td data-th="Rule">Os atributos <code>width</code>  ou<code>height</code> estão presentes.</td>
+      <td data-th="Rule">O atributo <code>width</code> ou <code>height</code> está presente</td>
       <td data-th="Inferred layout"><code>fixed</code></td>
     </tr>
     <tr>
-      <td data-th="Rule"><code>width</code>  e<code>height</code> não estão presentes.</td>
+      <td data-th="Rule"><code>width</code> e <code>height</code> não estão presentes</td>
       <td data-th="Inferred layout"><code>container</code></td>
     </tr>
   </tbody>
 </table>
 
-## Uso de consultas de mídia
+## Como usar consultas de mídia
 
 ### Consultas de mídia CSS
 
-Use [`@media`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/@media) para controlar a aparência e o comportamento do layout da página, como em qualquer outro website. Quando o tamanho ou a orientação da janela do navegador mudam, as consultas de mídia são reavaliadas, e os elementos são ocultos e exibidos com base nos novos resultados.
+Use [`@media`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/@media)
+para controlar a aparência e o comportamento do layout da página, como em qualquer outro site.
+Quando o tamanho ou a orientação da janela do navegador mudar,
+as consultas de mídia serão avaliadas outra vez e os elementos serão ocultos e exibidos
+com base nos novos resultados.
 
-Dica: Saiba mais sobre como controlar o layout aplicando consultas de mídia em [Usar consultas de mídia CSS para responsividade](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
+{% call callout('Leia mais', type='read') %}
+Saiba mais sobre como controlar o layout aplicando consultas de mídia em [Usar consultas de mídia CSS para gerar responsividade](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=pt-BR).
+{% endcall %}
 
-### Consultas de mídia de elementos
+### Consultas de mídia do elemento
 
-Um recurso adicional para design responsivo disponível na AMP é o atributo `media`. O atributo pode ser usado em todos os elementos da AMP. Ele funciona de modo semelhante às consultas de mídia na folha de estilo global, mas só impacta o elemento específico em uma única página.
+Outro recurso extra para a geração de um design responsivo disponibilizado na AMP é o atributo `media`.
+Esse atributo pode ser usado em cada elemento de AMP.
+Ele funciona de modo semelhante às consultas de mídia em sua folha de estilo global,
+mas impacta apenas esse determinado elemento em uma única página.
 
-Por exemplo, aqui temos duas imagens com consultas de mídia mutuamente excludentes.
+Por exemplo, aqui temos duas imagens com consultas de mídia que se excluem mutuamente.
 
 [sourcecode:html]
 <amp-img
@@ -145,7 +175,7 @@ Por exemplo, aqui temos duas imagens com consultas de mídia mutuamente excluden
 </amp-img>
 [/sourcecode]
 
-Dependendo da largura da tela, uma ou a outra será buscada e renderizada.
+Dependendo da largura da tela, uma ou outra será buscada e processada.
 
 [sourcecode:html]
 <amp-img
@@ -156,3 +186,4 @@ Dependendo da largura da tela, uma ou a outra será buscada e renderizada.
     layout="responsive">
 </amp-img>
 [/sourcecode]
+ 
