@@ -4,16 +4,10 @@
 @import '../../variables';
 @import '../atoms/_text.scss';
 
-main {
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  grid-gap: 30px;
-}
 
 .#{organism('sidebar')} {
   @include box-shadow;
-  margin-top: 100px;
-  grid-column: 10 / span 5;
+  grid-column: 1 / span 4;
 
   &-list {
     list-style: none;
