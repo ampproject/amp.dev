@@ -1,0 +1,7 @@
+path: /{locale}/styleguide/templates/docs/{base}.html
+view: /views/default.j2
+title: Templates
+
+
+localization:
+  path: /{locale}/styleguide/templates/docs/{base}.html
