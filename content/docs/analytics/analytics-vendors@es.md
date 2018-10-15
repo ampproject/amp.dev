@@ -1,245 +1,315 @@
 ---
-$title: "Proveedores Analytics"
+$title: Proveedores de Analytics
 ---
 [TOC]
 
-En este documento se enumeran los proveedores de Analytics que tienen configuraciones integradas para su uso con el componente [`amp-analytics`](/es/docs/reference/components/amp-analytics.html).
+En este documento se enumeran los proveedores de analíticas que cuentan con configuraciones integradas que se pueden usar con el componente [`amp-analytics`](/es/docs/reference/components/amp-analytics.html).
 
-Al especificar el nombre de un proveedor de análisis con el atributo `type`, puede configurar rápidamente `amp-analytics` para utilizar el producto respectivo. La configuración adicional (como su ID de usuario) puede seguir siendo necesaria.
+Para enviar datos de analíticas a un proveedor tercero, sigue estos pasos:
 
-Puede consultar la documentación de su proveedor si está vinculada en las secciones siguientes.
+1. En la etiqueta [`<amp-analytics> `](/es/docs/reference/components/amp-analytics.html), añade el atributo `type` y establece su valor en el proveedor especificado tal y como se describe en la sección [*Proveedores*](#vendors) a continuación.
+2. Define qué datos quieres registrar y supervisar, y especifica estos detalles en los datos de configuración. Consulta la documentación del proveedor para obtener instrucciones sobre cómo registrar datos de analíticas.
 
-Tip: Si se siente cómodo explorando el código, puede explorar las configuraciones sin procesar del archivo [vendors.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) -en inglés.
-
-**Ejemplo:**
-
-Aquí hay un fragmento que especifica el tipo (`type`) de un proveedor de analytics llamado `XYZ`:
+En el ejemplo siguiente, enviamos datos de páginas vistas a [Google Analytics](#google-analytics), un proveedor de analíticas tercero con una configuración integrada para amp-analytics:
 
 ```html
-<amp-analytics type="XYZ"> ... </amp-analytics>
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+  "vars": {
+    "account": "UA-XXXXX-Y" 
+  },
+  "triggers": {
+    "trackPageview": { 
+      "on": "visible",
+      "request": "pageview"
+    }
+  }
+}
+</script>
+</amp-analytics>
 ```
 
-Leer más: Aprende más acerca del seguimiento de analytics con [`amp-analytics`](/es/docs/reference/components/amp-analytics.html).
+{% call callout('Nota', type='success') %}
+Si se te da bien leer código, puedes consultar las configuraciones sin procesar del archivo [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js).
+{% endcall %}
+
+{% call callout('Nota', type='note') %}
+Los proveedores que quieran integrar su servicio con [`<amp-analytics>`](/es/docs/reference/components/amp-analytics.html) deben consultar los detalles en [Integrar tus herramientas de analíticas con AMP](/es/docs/analytics/integrating-analytics.html).
+{% endcall %}
+
+<hr>
 
 ## Proveedores
 
 ### Acquia Lift
 
-Valor del atributo type: `acquialift`
+Escribe el valor de atributo: `acquialift`
 
-Agrega soporte para Acquia Lift. Debe especificarse `decisionApiUrl`, `accountId` y `siteId`. Más información sobre Acquia Lift se puede encontrar en [https://docs.acquia.com/lift](https://docs.acquia.com/lift).
+Permite añadir compatibilidad con Acquia Lift. Se deben especificar los valores `decisionApiUrl`, `accountId` y `siteId`. Puedes encontrar más información sobre Acquia Lift en [https://docs.acquia.com/lift](https://docs.acquia.com/lift).
 
 ### Adobe Analytics
 
-Valor del atributo type: `adobeanalytics`
+Escribe el valor de atributo: `adobeanalytics`
 
-Agrega soporte para Adobe Analytics. Más detalles para agregar soporte de Adobe Analytics en [marketing.adobe.com](https://marketing.adobe.com/resources/help/es_ES/sc/implement/accelerated-mobile-pages.html).
+Permite añadir compatibilidad con Adobe Analytics. Puedes encontrar más información sobre cómo añadir compatibilidad con Adobe Analytics en [marketing.adobe.com](https://marketing.adobe.com/resources/help/es_ES/sc/implement/accelerated-mobile-pages.html).
 
 ### AFS Analytics
 
-Valor del atributo type: `afsanalytics`
+Escribe el valor de atributo: `afsanalytics`
 
-Agrega soporte para AFS Analytics. Adicionalmente, las variables `websiteid` y `server` deben ser definidas. Más información en [afsanalytics.com](https://www.afsanalytics.com/articles/developers/).
+Permite añadir compatibilidad con AFS Analytics. Además, debes especificar las variables `websiteid` y `server`. Puedes encontrar más información sobre cómo añadir compatibilidad con AFS Analytics en [afsanalytics.com](https://www.afsanalytics.com/articles/developers/).
+
+### Alexa Internet
+
+Escribe el valor de atributo: `alexametrics`
+
+Permite añadir compatibilidad con las métricas de sitio web certificadas de Alexa. Debes especificar las variables `atrk_acct` y `domain`. Puedes encontrar más información en las [Preguntas frecuentes sobre las métricas certificadas de Alexa](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
 
 ### AT Internet
 
-Valor del atributo type: `atinternet`
+Escribe el valor de atributo: `atinternet`
 
-Agrega soporte para AT Internet. Más información en [developers.atinternet-solutions.com](http://developers.atinternet-solutions.com/javascript-en/advanced-features-javascript-en/accelerated-mobile-pages-amp-javascript-en/).
+Permite añadir compatibilidad con AT Internet. Puedes encontrar más información sobre cómo añadir compatibilidad con AT Internet en [developers.atinternet-solutions.com](http://developers.atinternet-solutions.com/javascript-en/advanced-features-javascript-en/accelerated-mobile-pages-amp-javascript-en/).
 
 ### Baidu Analytics
 
-Valor del atributo type: `baiduanalytics`
+Escribe el valor de atributo: `baiduanalytics`
 
-Agrega soporte para Baidu Analytics. Más información en [tongji.baidu.com/](http://tongji.baidu.com/web/help/article?id=268&type=0).
+Permite añadir compatibilidad con Baidu Analytics. Puedes encontrar más información sobre cómo añadir compatibilidad con Baidu Analytics en [tongji.baidu.com/](http://tongji.baidu.com/web/help/article?id=268&type=0).
 
 ### Burt
 
-Valor del atributo type: `burt`
+Escribe el valor de atributo: `burt`
 
-Agrega soporte para Burt. Adicionalmente, la variable `trackingKey` debe ser definida. También es posible especificar variables opcionales `category` y `subCategory`. Más información en [burtcorp.com](http://burtcorp.com).
+Permite añadir compatibilidad con Burt. Además, debes especificar la variable `trackingKey`. También es posible especificar las variables opcionales `category` y `subCategory`. Puedes encontrar más información en [burtcorp.com](http://burtcorp.com).
 
 ### Chartbeat
 
-Valor del atributo type: `chartbeat`
+Escribe el valor de atributo: `chartbeat`
 
-Agrega soporte para Chartbeat. Más información en [support.chartbeat.com](http://support.chartbeat.com/docs/integrations.html#amp).
+Permite añadir compatibilidad con Chartbeat. Puedes encontrar más información sobre cómo añadir compatibilidad con Chartbeat en [support.chartbeat.com](http://support.chartbeat.com/docs/integrations.html#amp).
 
 ### Clicky Web Analytics
 
-Valor del atributo type: `clicky`
+Escribe el valor de atributo: `clicky`
 
-Agrega soporte para Clicky Web Analytics. Más información en [clicky.com](https://clicky.com/help/apps-plugins).
+Permite añadir compatibilidad con Clicky Web Analytics. Puedes encontrar más información sobre cómo añadir compatibilidad con Clicky en [clicky.com](https://clicky.com/help/apps-plugins).
 
 ### comScore
 
-Valor del atributo type: `comscore`
+Escribe el valor de atributo: `comscore`
 
-Agrega soporte para comScore Unified Digital Measurement™ pageview analytics. Requiere definir *var* `c2` con comScore-provided *c2 id*. Más información en [comscore.com](http://www.comscore.com).
+Permite añadir compatibilidad con las analíticas de página vista de Medición digital unificada de comScore™. Requiere la definición de la *variable* `c2` con el valor *c2 id* proporcionado por comScore. Puedes encontrar más información en [comscore.com](http://www.comscore.com).
 
-### Cxense
+Cxense
 
-Valor del atributo type: `cxense`
+Escribe el valor de atributo: `cxense`
 
-Agrega soporte para Cxense Insight analytics. Requiere definir *var* `siteId` con Cxense-provided *siteId*. Más información en [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Permite añadir compatibilidad con las analíticas de Cxense Insight. Requiere la definición de la *variable* `siteId` con el *ID de sitio web* proporcionado por Cxense. Puedes encontrar más información en [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Dynatrace
 
-Valor del atributo type: `dynatrace`
+Escribe el valor de atributo: `dynatrace`
 
-Agrega soporte para Dynatrace. Requiere definir *var* `app` con *application id* y *var* `tenant` con *environment identifier*. Más información en [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Permite añadir compatibilidad con la supervisión de usuarios reales de Dynatrace. Requiere la definición de la *variable* `app` con el *ID de aplicación* proporcionado por Dynatrace y la *variable* `tenant` con el *identificador de entorno* proporcionado por Dynatrace. Puedes encontrar más información sobre cómo añadir la supervisión de usuarios reales de Dynatrace en [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### Eulerian Analytics
 
-Valor del atributo type: `euleriananalytics`
+Escribe el valor de atributo: `euleriananalytics`
 
-Agrega soporte para Eulerian Technologies Analytics. Requiere definir *var* `analyticsHost` con dominio Eulerian delegado. Puedes encontrar más detalles en [eulerian.wiki](https://eulerian.wiki).
+Permite añadir compatibilidad con Eulerian Technologies Analytics. Requiere la definición de la *variable* `analyticsHost` con el dominio delegado por Eulerian. Puedes encontrar más información en [eulerian.wiki](https://eulerian.wiki).
+
+### Facebook Pixel
+
+Escribe el valor de atributo: `facebookpixel`
+
+Permite añadir compatibilidad con [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Debes definir tu ID de Pixel como `pixelId: TU-PIXEL-ID` en tu configuración de amp-analytics. Puedes encontrar los eventos compatibles junto con los valores de evento correspondientes que se pueden especificar en la [documentación del desarrollador de Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius
 
-Valor del atributo type: `gemius`
+Escribe el valor de atributo: `gemius`
 
-Agrega soporte para Gemius Audience/Prism analytics. Adicionalmente, las variables `prefix` e `identifier` deben ser especificadas. También es posible especificar la variable opcional `extraparams` (key1=value1|key2=value2). Más detalles pueden ser encontrados en  [gemius.com](https://www.gemius.com).
+Permite añadir compatibilidad con las analíticas de Gemius Audience/Prism. Además, debes especificar las variables `prefix` e `identifier` proporcionadas por gemius. También es posible especificar la variable opcional `extraparams` (clave1=valor1|clave2=valor2). Puedes encontrar más información en [gemius.com](https://www.gemius.com).
 
 ### Google AdWords
 
-Valor del atributo type: `googleadwords`
+Escribe el valor de atributo: `googleadwords`
 
-Agrega soporte para Google AdWords para el seguimiento de conversion y remarketing. Para ver más detalles consulta la página de ayuda de AdWords para [conversion tracking](https://support.google.com/adwords/answer/1722054?hl=en) y [remarketing](https://support.google.com/adwords/answer/2453998?hl=en). Ambos tags pueden ser usados independientemente uno de otro.
+Permite añadir compatibilidad con el seguimiento de conversiones y el remarketing de Google AdWords. Puedes encontrar más información en el Centro de Ayuda de AdWords para el [seguimiento de conversiones](https://support.google.com/adwords/answer/1722054?hl=es) y [remarketing](https://support.google.com/adwords/answer/2453998?hl=es). Se pueden utilizar ambas etiquetas de forma independiente.
 
 ### Google Analytics
 
-Valor del atributo type: `googleanalytics`
+Escribe el valor de atributo: `googleanalytics`
 
-Agrega soporte para Google Analytics. Puedes encontrar más detalles de Google Analytics en [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Permite añadir compatibilidad con Google Analytics. Puedes encontrar más información sobre cómo añadir compatibilidad con Google Analytics en [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### INFOnline / IVW
 
-Valor del atributo type: `infonline`
+Escribe el valor de atributo: `infonline`
 
-Agrega soporte para [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Requiere una copia de [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) en un subdominio diferente al que está alojada la página AMP ([¿por qué?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). El archivo debe ser servido vía HTTPS. Por ejemplo, si las páginas AMP están alojadas en `www.example.com`, entonces `amp-analytics-infonline.html` necesita ser alojado en otro subdominio como `iframe.example.com` o `assets.example.com`.
+Permite añadir compatibilidad con [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Requiere una copia de [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) en un subdominio diferente del que incluye el archivo AMP [¿por qué?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md). El archivo se debe servir a través de HTTPS. Por ejemplo, si tus archivos AMP están alojados en `www.example.com`, entonces `amp-analytics-infonline.html` debe estar en otro subdominio, como `iframe.example.com` o `assets.example.com`.
 
-Adicionalmente, las siguientes variables deben ser definidas:
+Además, debes definir estas variables:
 
-* `st`: Angebotskennung
-* `co`: comment
-* `cp`: code
-* `url`: dirección HTTPS para `amp-analytics-infonline.html`
+* `st`: ID de oferta
+* `co`: comentario
+* `cp`: código
+* `url`: ubicación HTTPS de `amp-analytics-infonline.html`
 
-Más detalles para agregar el soporte INFOnline / IVW puede ser encontrado en [www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/).
+Puedes obtener más información sobre cómo añadir compatibilidad con INFOnline / IVW en [www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/).
 
 ### Krux
 
-Valor del atributo type: `krux`
+Escribe el valor de atributo: `krux`
 
-Agrega soporte para Krux.  Puedes encontrar más información en [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
+Permite añadir compatibilidad con Krux.  Puedes encontrar información sobre la configuración en [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
 
 ### Linkpulse
 
-Valor del atributo type: `linkpulse`
+Escribe el valor de atributo: `linkpulse`
 
-Agrega soporte para Linkpulse. Puedes encontrar detalles de configuración en [docs.linkpulse.com](http://docs.linkpulse.com).
+Permite añadir compatibilidad con Linkpulse. Puedes encontrar información sobre la configuración en [docs.linkpulse.com](http://docs.linkpulse.com).
 
 ### Lotame
 
-Valor del atributo type: `lotame`
+Escribe el valor de atributo: `lotame`
 
-Agrega soporte para Lotame.  Puedes encontrar más información y detalles de configuración en [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
+Permite añadir compatibilidad con Lotame.  Puedes encontrar más información y detalles sobre la configuración en [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
 
 ### Médiamétrie
 
-Valor del atributo type: `mediametrie`
+Escribe el valor de atributo: `mediametrie`
 
-Agrega soporte para Médiamétrie tracking pages. Requiere definir la *var* `serial`. Variables de `level1` al `level4` son opcionales.  Más información puede ser encontrada en [mediametrie.com](http://www.mediametrie.com/).
+Permite añadir compatibilidad con las páginas de seguimiento de Médiamétrie. Requiere la definición de la *variable* `serial`. Las variables de `level1` a `level4` son opcionales.  Puedes encontrar más información en [mediametrie.com](http://www.mediametrie.com/).
+
+### mediarithmics
+
+Escribe el valor de atributo: `mediarithmics`
+
+Permite añadir compatibilidad con mediarithmics. Puedes encontrar más información y detalles sobre la configuración en [developer.mediarithmics.com](https://developer.mediarithmics.com/).
 
 ### mParticle
 
-Valor del atributo type: `mparticle`
+Escribe el valor de atributo: `mparticle`
 
-Agrega soporte para mParticle. Más detalles para agregar soporte a mParticle en [docs.mparticle.com](http://docs.mparticle.com/?javascript#amp).
+Permite añadir compatibilidad con mParticle. Puedes encontrar más información sobre cómo añadir compatibilidad con mParticle en [docs.mparticle.com](http://docs.mparticle.com/?javascript#amp).
+
+### New Relic
+
+Escribe el valor de atributo: `newrelic`
+
+Permite añadir compatibilidad con New Relic Browser para medir el rendimiento y funcionamiento de AMP. Si añades el valor de atributo `newrelic`, tendrás que añadir los valores `app ID` y `license key` de tu cuenta de New Relic Browser para poder empezar a registrar datos. Puedes encontrar más información en la página de documentos AMP de New Relic Browser en [docs.newrelic.com](https://docs.newrelic.com/docs/browser/new-relic-browser/installation/monitor-amp-pages-new-relic-browser).
 
 ### Nielsen
 
-Valor del atributo type: `nielsen`
+Escribe el valor de atributo: `nielsen`
 
-Agrega soporte para Nielsen DCR. Por favor contacte a su representante de Nielsen para recibir asistencia y configurar tu `apid` y la definición de los parámetros en la sección `vars`. Para más información, leer [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
+Permite añadir compatibilidad con Nielsen DCR. Ponte en contacto con tu representante de Nielsen para obtener la configuración de `apid`, así como para obtener ayuda para definir los parámetros restantes en la sección `vars`. Para obtener más información, consulta la [documentación de asistencia de Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
+
+### Nielsen Marketing Cloud
+
+Escribe el valor de atributo: `nielsen-marketing-cloud`
+
+Permite añadir compatibilidad con Nielsen Marketing Cloud. Puedes encontrar más información en [Nielsen Marketing Cloud](http://www.nielsen.com/us/en/solutions/capabilities/nielsen-marketing-cloud.html).
 
 ### OEWA
 
-Valor del atributo type: `oewa`
+Escribe el valor de atributo: `oewa`
 
-Agrega soporte para [OEWA](https://www.oewa.at). Requiere una copia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) en un subdominio diferente al que incluye el archivo AMP ([¿por qué?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). El archivo debe ser alojado vía HTTPS. Por ejemplo, si tu página AMP está alojada en `www.example.com`, entonces el `amp-analytics-oewa.html` necesita ser alojado en otro subdominio como por ejemplo `oewa-amp.example.com`. Para más detalles sobre cómo agregar soporte de OEWA puedes leer [aquí](http://www.oewa.at/basic/implementierung).
+Permite añadir compatibilidad con [OEWA](https://www.oewa.at). Requiere una copia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) en un subdominio diferente del que incluye el archivo AMP [¿por qué?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md). El archivo se debe servir a través de HTTPS. Por ejemplo, si tus archivos AMP están alojados en `www.example.com`, entonces `amp-analytics-oewa.html` debe estar en otro subdominio, como `oewa-amp.example.com`. Puedes encontrar más información sobre cómo añadir compatibilidad con OEWA [aquí](http://www.oewa.at/basic/implementierung).
 
-Adicionalmente, las siguientes variables deben ser definidas:
+Además, debes definir estas variables:
 
 En la sección `vars`:
 
 - `s`: oferta
-- `cp`: ruta de categoría
+- `cp`: ruta de la categoría
 
 En la sección `requests`:
 
-- `url`: dirección HTTPS para `amp-analytics-oewa.html`
+- `url`: ubicación HTTPS de `amp-analytics-oewa.html`
 
-Nota: Existe una variación denominada `oewadirect` que no utiliza la solución iframe-ping y tiene una mejor detección de cliente mediante `AMP CLIENT_ID`. Esto es actualmente EXPERIMENTAL, y está prohibido por el OEWA porque no usa `oewa2.js`.
+{% call callout('Nota', type='note') %}
+Existe una variación denominada `oewadirect` que no utiliza la solución iframe-ping y tiene una mejor detección de clientes mediante `AMP CLIENT_ID`.  Actualmente, es una versión EXPERIMENTAL y está prohibida en OEWA porque no utiliza `oewa2.js`.
+{% endcall %}
 
 ### Parsely
 
-Valor del atributo type: `parsely`
+Escribe el valor de atributo: `parsely`
 
-Agrega soporte para Parsely. Puedes encontrar detalles sobre configuración en [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
+Permite añadir compatibilidad con Parsely. Puedes encontrar información sobre la configuración en [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
 
 ### Piano
 
-Valor del atributo type: `piano`
+Escribe el valor de atributo: `piano`
 
-Agrega soporte para Piano.  Puedes encontrar detalles sobre configuración en [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+Permite añadir compatibilidad con Piano.  Puedes encontrar información sobre la configuración en [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
 
-### Quantcast Measurement
+### Medición de Quantcast
 
-Valor del atributo type: `quantcast`
+Escribe el valor de atributo: `quantcast`
 
-Agrega soporte para Quantcast Measurement. Puedes encontrar más detalles para agregar Quantcast Measurement en [quantcast.com](https://www.quantcast.com/help/guides/)
+Permite añadir compatibilidad con la medición de Quantcast. Puedes encontrar más información sobre cómo añadir compatibilidad con Medición de Quantcast en [quantcast.com](https://www.quantcast.com/help/guides/).
 
 ### Segment
 
-Valor del atributo type: `segment`
+Escribe el valor de atributo: `segment`
 
-Agrega soporte para segment.
-Para leer la lista completa de campos que puedes usar, lee [Segment Spec](https://segment.com/docs/spec/).
+Permite añadir compatibilidad con las páginas vistas y los eventos de Segment.
+Puedes encontrar una lista completa de los campos que puedes enviar en [Segment Spec](https://segment.com/docs/spec/).
 
 ### SOASTA mPulse
 
-Valor del atributo type: `mpulse`
+Escribe el valor de atributo: `mpulse`
 
-Agrega soporte para [SOASTA mPulse](https://www.soasta.com/mPulse). Puedes encontrar detalles sobre configuración en [docs.soasta.com](http://docs.soasta.com/).
+Permite añadir compatibilidad con [SOASTA mPulse](https://www.soasta.com/mPulse). Puedes encontrar información sobre la configuración en [docs.soasta.com](http://docs.soasta.com/).
 
 ### SimpleReach
 
-Valor del atributo type: `simplereach`
+Escribe el valor de atributo: `simplereach`
 
-Agrega soporte para SimpleReach.  Puedes encontrar detalles sobre configuración en [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation).
+Permite añadir compatibilidad con SimpleReach.  Puedes encontrar información sobre la configuración en [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation).
 
 ### Snowplow Analytics
 
-Valor del atributo type: `snowplow`
+Escribe el valor de atributo: `snowplow`
 
-Agrega soporte para Snowplow Analytics. Puedes encontrar detalles para agregar soporte a Snowplow Analytics en  [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
+Permite añadir compatibilidad con Snowplow Analytics. Puedes encontrar más información sobre cómo añadir compatibilidad con Snowplow Analytics en [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
 
 ### Rambler/TOP-100
 
-Valor del atributo type: `top100`
+Escribe el valor de atributo: `top100`
 
-Agrega soporte para Rambler/TOP-100.  Puedes encontrar detalles sobre configuración en [top100.rambler.ru](https://top100.rambler.ru/docs).
+Permite añadir compatibilidad con Rambler/TOP-100. Puedes encontrar información sobre la configuración en [top100.rambler.ru](https://top100.rambler.ru/docs).
+
+### Top.Mail.Ru
+
+Escribe el valor de atributo: `topmailru`
+
+Permite añadir compatibilidad con Top.Mail.Ru. Puedes encontrar información sobre la configuración en la [ayuda de Top.Mail.Ru](https://help.mail.ru/top/amp-analytics).
+
+### Umeng+ Analytics
+
+Escribe el valor de atributo: `umenganalytics`
+
+Permite añadir compatibilidad con Umeng+ Analytics. Puedes encontrar más detalles sobre cómo añadir compatibilidad con Umeng+ Analytics en [dev.umeng.com](http://dev.umeng.com/udplus/js-sdkdoc#5).
+
+### Treasure Data
+
+Escribe el valor de atributo: `treasuredata`
+
+Permite añadir compatibilidad con Treasure Data. Puedes encontrar información sobre la configuración en [treasuredata.com](https://docs.treasuredata.com/articles/javascript-sdk-google-amp).
 
 ### Webtrekk
 
-Valor del atributo type: `webtrekk`
+El valor de atributo ~~`webtrekk`~~ está obsoleto (se eliminará el 31/12/2018); utiliza `webtrekk_2` en su lugar.
 
-Agrega soporte para Webtrekk. Puedes encontrar detalles sobre configuración en [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/en/public/amp-analytics.html).
+Permite añadir compatibilidad con Webtrekk. Puedes encontrar información sobre la configuración en [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/es/public/amp-analytics.html).
 
-### Yandex Metrica
+### Yandex.Metrica
 
-Valor del atributo type: `metrika`
+Escribe el valor de atributo: `metrika`
 
-Agrega soporte para Yandex Metrica.  Puedes encontrar detalles sobre configuración en [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
+Permite añadir compatibilidad con Yandex.Metrica.  Puedes encontrar información sobre la configuración en la [página de asistencia de Yandex](https://yandex.com/support/metrica/code/install-counter-amp.xml).
+ 
