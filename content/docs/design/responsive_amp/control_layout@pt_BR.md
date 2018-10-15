@@ -9,7 +9,7 @@ A tecnologia AMP é compatível com **consultas de mídia** e **consultas de ele
 ## Imagens responsivas simplificadas
 
 Crie imagens responsivas especificando `width` e `height`, ajustando o layout para `responsive`
-e indicando com [`srcset`](/pt_br/docs/guides/responsive/art_direction.html)
+e indicando com [`srcset`]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})
 qual recurso de imagem será usado conforme diferentes tamanhos de tela:
 
 [sourcecode:html]
