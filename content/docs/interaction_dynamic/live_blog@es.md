@@ -1,71 +1,98 @@
 ---
 $title: Crear un blog en directo
 ---
+
 [TOC]
 
-Los blogs en directo son páginas web que se actualizan con frecuencia durante el transcurso de un evento, como la Super Bowl.
 
- Un blog en directo se puede implementar en una AMP mediante el componente `amp-live-list` si se utilizan etiquetas LiveBlogPosting. Para ver una implementación de ejemplo que puedes utilizar como punto de partida, consulta el [ejemplo de blog en directo](https://www.ampbyexample.com/samples_templates/live_blog/)  que se encuentra en [ampbyexample.com](https://www.ampbyexample.com).
 
-En este tutorial se ofrece una breve descripción general del componente `amp-live-list` y nos centramos en detalles de la implementación, como la paginación y los enlaces profundos, usando el ejemplo de blog en directo como muestra.
+Los blogs en directo son páginas web que se actualizan frecuentemente durante el desarrollo de eventos como competiciones deportivas o días de elecciones. En AMP, puedes implementar un blog en directo usando el componente [`amp-live-list`](/es/docs/reference/components/amp-live-list.html).
 
-## Descripción general de amp-live-list
+Este tutorial ofrece información general sobre el componente `amp-live-list` y se centra en algunos detalles de la implementación para blogs en directo, como la [paginación](#pagination) y los [enlaces profundos](#deeplinking). Usaremos el [blog en directo de ejemplo] de AMP By Example (https://www.ampbyexample.com/samples_templates/live_blog/) para mostrar cómo implementar blogs en AMP.
 
-El componente `amp-live-list` sondea regularmente el documento del host en busca de contenido actualizado y, a medida que van apareciendo nuevos elementos, actualiza el navegador del usuario final. Esto significa que cada vez que se debe añadir una publicación en un blog, el CMS tiene que actualizar el documento del host para incluir la actualización en el cuerpo y en la sección de metadatos.
+{% call callout('Nota', type='success') %}
+Usa la etiqueta de metadatos [LiveBlogPosting](http://schema.org/LiveBlogPosting) para que tu blog pueda integrarse con funciones de plataforma de terceros.
+{% endcall %}
 
-Este es el aspecto que podría tener un blog inicial:
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
 
-[sourcecode:html]
-<amp-live-list id="my-live-list" data-poll-interval="15000" data-max-items-per-page="5">
-    <button update on="tap:my-live-list.update">¡Nuevas actualizaciones!</button>
-    <div items></div>
+## Descripción general de `amp-live-list`
+
+El componente [`amp-live-list`](/es/docs/reference/components/amp-live-list.html) busca contenido nuevo en el documento del host periódicamente y actualiza el navegador del usuario si hay elementos nuevos disponibles. Esto significa que cada vez que sea necesario añadir una entrada al blog, el CMS debe actualizar el documento del host para incluir la actualización en el cuerpo y en la sección [metadata](https://ampbyexample.com/samples_templates/live_blog/#metadata) de la página.
+
+
+El código inicial del blog podría tener el siguiente aspecto:
+
+```html
+<amp-live-list id="my-live-list"
+    data-poll-interval="15000"
+    data-max-items-per-page="5">
+  <button update on="tap:my-live-list.update">You have updates</button>
+  <div items></div>
 </amp-live-list>
-[/sourcecode]
+```
 
-El atributo `data-poll-interval` permite determinar la frecuencia con la que se realizan los sondeos; si se actualiza el documento del host, el usuario debe poder acceder a la actualización tras el siguiente intervalo de tiempo.
+Echemos un vistazo al código:
 
-Cada vez que se añade un elemento nuevo al documento del host, el elemento `<button update on="tap:my-live-list.update">` muestra un botón. Al hacer clic en él, la página se activa y muestra las entradas más recientes.
+Cada componente `amp-live-list` necesita un ID único porque podría haber más de un componente en la página. En este ejemplo, hemos establecido `my-live-list` como ID único.
 
-Añadir demasiados blogs en directo puede hacer que la página sea demasiado larga; el atributo `data-max-items-per-page` permite determinar la cantidad de elementos que se pueden añadir a la página del blog en directo. Si, tras una actualización, el número de elementos supera los determinados en `data-max-items-per-page`, se eliminarán las actualizaciones más antiguas hasta que se deje de superar este número. Por ejemplo, si la página ahora contiene nueve elementos, `data-max-items-per-page` es diez y llegan tres nuevos elementos en la última actualización, los dos elementos más antiguos se eliminarán de la página cuando se realice la actualización.
+El atributo `data-poll-interval` especifica cada cuánto tiempo debe realizarse la búsqueda. Si el documento del host se actualiza, la nueva versión debería estar disponible para el usuario después del siguiente intervalo.
 
-`amp-live-list` requiere que todas las entradas sean elementos secundarios de la etiqueta `<div items></div>`. Al hacer referencia a cada entrada como si se tratara de un elemento, cada uno de ellos debe tener un `id` y un `data-sort-time` únicos.
+Cuando se añade un elemento nuevo al documento del host, el elemento `<button update on="tap:my-live-list.update">` muestra el botón "You have updates" (Tienes actualizaciones), que abre la página con las últimas entradas al pulsarlo.
 
-## Detalles de la implementación de blogs en directo
+Los blogs en directo pueden aumentar de tamaño y hacer que la página se alargue demasiado. El atributo `data-max-items-per-page` te permite especificar cuántos elementos se pueden añadir. Si el número de elementos es mayor que `data-max-items-per-page` después de la actualización, se quitarán los elementos más antiguos que superen este número. Por ejemplo, si el valor de `data-max-items-per-page` es 10, la página tiene 9 elementos y la última actualización tiene 3 nuevos, los 2 más antiguos se quitarán de la página al actualizar.
 
-Ahora que ya conoces el componente `amp-live-list`, vamos a aprender a implementar un blog en directo más complejo. Sigue leyendo para obtener más información sobre cómo implementar la paginación y conocer el funcionamiento de los enlaces profundos.
+Todas las entradas de blog en `amp-live-list` deben ser secundarias de `<div items></div>`. Si nos referimos a las entradas como elementos, todos ellos deben tener un `id` y un `data-sort-time` únicos.
 
-## Paginación
+## Detalles de la implementación
 
-Los blogs largos pueden utilizar la paginación para mejorar su rendimiento limitando el número de elementos del blog que se pueden mostrar en una misma página. Para implementar la paginación, añade el elemento `<div pagination></div>` al componente `amp-live-list`; a continuación, inserta las etiquetas que sean necesarias (por ejemplo, un número de página o enlaces a la página anterior y a la siguiente).
+Ahora que te has familiarizado con el componente `amp-live-list`, vamos a descubrir cómo podemos implementar un blog en directo más complejo. Sigue leyendo para obtener más información sobre cómo implementar la paginación y cómo funcionan los enlaces profundos.
 
-Al utilizar la paginación, el código simple que hemos utilizado anteriormente pasa a tener el siguiente aspecto:
+### Paginación
 
-[sourcecode:html]
-<amp-live-list id="my-live-list" data-poll-interval="15000" data-max-items-per-page="5">
-    <button update on="tap:my-live-list.update">¡Nuevas actualizaciones!</button>
-    <div items></div>
-    <div pagination>
+Los blogs con páginas largas pueden usar la paginación para limitar el número de elementos que se muestran en una página y aumentar así el rendimiento. Para implementar la paginación, añade `<div pagination></div>` al componente `amp-live-list`. Después, inserta cualquier etiqueta que necesites para la paginación (por ejemplo, un número de página o un enlace a la página siguiente y a la anterior).
+
+Con la paginación, el código de antes se convierte en lo siguiente:
+
+```html
+<amp-live-list id="my-live-list"
+    data-poll-interval="15000"
+    data-max-items-per-page="5">
+  <button update on="tap:my-live-list.update">You have updates</button>
+  <div items></div>
+  <div pagination>
     <nav>
-        <ul>
-            <li>1</li>
-            <li>Próximamente</li>
-        </ul>
-    </nav>
+      <ul>
+        <li>1</li>
+        <li>Next</li>
+      </ul>
+     </nav>
    </div>
 </amp-live-list>
-[/sourcecode]
+```
 
-Es responsabilidad tuya actualizar la página alojada para que se rellenen correctamente los elementos de navegación. Por ejemplo, en el [ejemplo de blog en directo](https://www.ampbyexample.com/samples_templates/live_blog/) renderizamos la página mediante una plantilla del servidor y empleamos un parámetro de consulta para determinar cuál debe ser el primer elemento del blog de la página. Limitamos el tamaño de la página a cinco elementos, de modo que si el servidor ha generado más de cinco elementos, cuando un usuario accede a la página principal, debe aparecer en el área de navegación el elemento Siguiente.
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}  
 
-<amp-img src="/static/img/liveblog-pagination.png" alt="Live blog pagination" height="526" width="300"></amp-img>
+Eres tú quien tiene que rellenar los elementos de navegación correctamente actualizando la página alojada. Por ejemplo, en el [blog en directo de ejemplo](https://www.ampbyexample.com/samples_templates/live_blog/) nosotros procesamos la página mediante una plantilla de servidor y usamos un parámetro de consulta para especificar cuál debe ser el primer elemento del blog en la página. Limitamos el tamaño de la página a 5 elementos. Así, si el servidor genera más de 5 elementos cuando un usuario llega a la primera página, la página muestra el elemento "Next" (Siguiente) en el área de navegación. Para obtener más información, consulta [amp-live-list.go](https://github.com/ampproject/amp-by-example/blob/master/backend/amp-live-list.go#L182) y [Live_Blog.html](https://github.com/ampproject/amp-by-example/blob/master/src/60_Samples_%2526_Templates/Live_Blog.html).
 
-Cuando el tamaño de las entradas del blog supera el número máximo de elementos determinados en `data-max-items-per-page`, los elementos más antiguos del blog aparecerán en las páginas "Siguiente", en la página 2, por ejemplo. Dado que `amp-live-list` sondea el servidor regularmente para ver si se ha producido algún cambio en los elementos, no es necesario comprobarlo si el usuario no se encuentra en la primera página.
+Cuando la cantidad de entradas del blog sea superior al número máximo de elementos establecidos en `data-max-items-per-page`, los elementos más antiguos del blog se mostrarán en las páginas siguientes; por ejemplo, en la página 2. El componente `amp-live-list` busca en el servidor a intervalos para ver si hay algún cambio en los elementos, pero no es necesario buscar en el servidor si el usuario no está en la primera página.
 
-Puedes añadir el atributo disabled a la página alojada para evitar que la sondee. En el ejemplo de blog en directo, realizamos este procedimiento en una plantilla del servidor; si la página solicitada no es la primera, añadimos el atributo disabled al componente amp-live-list.
+Puedes añadir a la página el atributo inhabilitado para desactivar el mecanismo de búsqueda. En el blog en directo de ejemplo, hemos generado este comportamiento en una plantilla de servidor: cuando la página solicitada no es la primera, el atributo inhabilitado se añade al componente `amp-live-list`.
 
-## Enlaces profundos
+### Enlaces profundos
 
-Al publicar una entrada de blog, es importante realizar un enlace profundo con la entrada para permitir que se comparta, entre otras funciones. Con `amp-live-list`, los enlaces profundos se pueden habilitar simplemente utilizando el ID de cada elemento del blog. Por ejemplo, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) permite que te desplaces directamente hasta la entrada de blog con el ID "post3".
+Cuando publicas una entrada en el blog, es importante poder enlazarla de forma profunda para habilitar funciones (por ejemplo, para poder compartirla). Con `amp-live-list`, solo hay que usar el atributo `id` del elemento del blog para realizar enlaces profundos. Por ejemplo, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) te permite navegar directamente a la entrada del blog con el ID `post3`.
 
-En el [ejemplo de blog en directo](https://www.ampbyexample.com/samples_templates/live_blog/) empleamos una técnica que se basa en una cookie para generar contenido nuevo (consulta la sección Más información sobre los blogs en directo para obtener más datos sobre este tema), así que si se trata de la primera vez que accedes a la página, es posible que la entrada con el ID "post3" no esté disponible; en tal caso, te redirigiremos a la primera entrada.
+AMP By Example usa una cookie en el [blog en directo de ejemplo](https://www.ampbyexample.com/samples_templates/live_blog/) para generar contenido actualizado, así que si es la primera vez que llegas a la página, la entrada con el ID `post3` quizá no esté disponible. En ese caso, serás redirigido a la primera entrada.
 
+
+## Recursos
+
+Consulta los siguientes recursos para obtener más información:
+
+- Documentación de referencia de [amp-live-list](/es/docs/reference/components/amp-live-list.html)
+- [Ejemplo amp-live-list de AMP By Example](https://ampbyexample.com/components/amp-live-list/)
+- [Ejemplo de blog en directo de AMP By Example](https://www.ampbyexample.com/samples_templates/live_blog/)
+ 
+ 
+ 
