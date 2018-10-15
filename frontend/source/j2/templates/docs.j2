@@ -17,6 +17,8 @@
     {% do doc.styles.addCssFile('css/components/atoms/text.css') %}
     {% do doc.styles.addCssFile('css/components/atoms/anchor.css') %}
 
+    {% do doc.styles.addCssFile('css/components/templates/docs-details.css') %}
+
     <style amp-custom>
      {{ doc.styles.emit() }}
     </style>
@@ -29,17 +31,15 @@
       </defs>
     </svg>
 
-    {% include 'partials/header.j2' %}
-    {% include 'partials/sidebar.j2' %}
-
-
-    <main>
-    {% block main %}
-
-    {{ doc.html|safe }}
-
-    {% endblock %}
-    </main>
+    <div class="ad-t-docs-details">
+      {% include 'partials/header.j2' %}
+      {% include 'partials/sidebar.j2' %}
+      <main>
+        {% block main %}
+        {{ doc.html|safe }}
+        {% endblock %}
+      </main>
+    </div>
 
     <amp-font layout="nodisplay" font-family="Noto Sans" timeout="3000"></amp-font>
     <amp-font layout="nodisplay" font-family="Poppins" timeout="3000"></amp-font>
