@@ -264,6 +264,9 @@ request({
   headers: {
     'User-Agent': 'request'
   },
+  qs: {
+    'access_token': clientToken
+  },
   json: true
 }, function (error, response, body) {
 
