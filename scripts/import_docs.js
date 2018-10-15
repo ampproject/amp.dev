@@ -269,7 +269,7 @@ request({
 
   latestReleaseTag = body.tag_name; // updates global var, used in the other functions
   if (!latestReleaseTag) {
-    throw 'Error: Could not retrieve latest release from Github.';
+    throw 'Error: Could not retrieve latest release from Github due to:' + error + '(body: ' + body + ')';
   }
 
   importSpecialPages();
