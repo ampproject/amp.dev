@@ -269,7 +269,7 @@ Adiciona compatibilidade com o [SOASTA mPulse](https://www.soasta.com/mPulse). V
 
 Valor do atributo de tipo: `simplereach`
 
-Adiciona compatibilidade com o SimpleReach.  Veja mais detalhes sobre a configuração em [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation) (em inglês).
+Adiciona compatibilidade com o SimpleReach. Veja mais detalhes sobre a configuração em [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation) (em inglês).
 
 ### Snowplow Analytics
 
