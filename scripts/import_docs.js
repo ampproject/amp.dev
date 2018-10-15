@@ -26,7 +26,7 @@ const client = github.client(
   });
 
 const ghrepo = client.repo('ampproject/amphtml');
-var latestReleaseTag = null;
+let latestReleaseTag = null;
 
 /*
  *  Downloads a markdown page from a Github repo folder.
@@ -268,6 +268,9 @@ request({
 }, function (error, response, body) {
 
   latestReleaseTag = body.tag_name; // updates global var, used in the other functions
+  if (!latestReleaseTag) {
+    throw 'Error: Could not retrieve latest release from Github.';
+  }
 
   importSpecialPages();
   downloadBuiltins();
