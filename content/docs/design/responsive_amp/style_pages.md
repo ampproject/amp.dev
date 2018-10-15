@@ -31,7 +31,7 @@ The following styles aren’t allowed in AMP pages:
   <tbody>
     <tr>
       <td data-th="Banned style"><code>!important</code> qualifier </td>
-      <td data-th="Description">Usage is not allowed.
+      <td data-th="Description">Use and reference to <code>!important</code> is not allowed.
       This is a necessary requirement to enable AMP to enforce its element sizing rules.</td>
     </tr>
     <tr>
