@@ -1,6 +1,6 @@
 ---
 $title: "amp-yotpo"
-$order: 97
+$order: 96
 ---
 <!--
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.

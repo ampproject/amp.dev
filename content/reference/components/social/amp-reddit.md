@@ -1,6 +1,6 @@
 ---
 $title: "amp-reddit"
-$order: 73
+$order: 72
 toc: true
 ---
 

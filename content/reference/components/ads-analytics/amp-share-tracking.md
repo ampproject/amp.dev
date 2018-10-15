@@ -1,6 +1,6 @@
 ---
 $title: "amp-share-tracking"
-$order: 76
+$order: 75
 ---
 
 <!---

@@ -1,6 +1,6 @@
 ---
 $title: "amp-soundcloud"
-$order: 79
+$order: 78
 toc: true
 ---
 

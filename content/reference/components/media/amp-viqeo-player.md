@@ -1,6 +1,6 @@
 ---
 $title: "amp-viqeo-player"
-$order: 92
+$order: 91
 toc: true
 ---
 

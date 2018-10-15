@@ -1,6 +1,6 @@
 ---
 $title: "amp-sidebar"
-$order: 77
+$order: 76
 toc: true
 ---
 

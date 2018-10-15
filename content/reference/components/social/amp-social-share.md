@@ -1,6 +1,6 @@
 ---
 $title: "amp-social-share"
-$order: 78
+$order: 77
 toc: true
 ---
 

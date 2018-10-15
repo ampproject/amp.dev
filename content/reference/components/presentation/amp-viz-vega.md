@@ -1,6 +1,6 @@
 ---
 $title: "amp-viz-vega"
-$order: 93
+$order: 92
 toc: true
 ---
 

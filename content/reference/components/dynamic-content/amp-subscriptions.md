@@ -1,6 +1,6 @@
 ---
 $title: "amp-subscriptions"
-$order: 84
+$order: 83
 toc: true
 ---
 

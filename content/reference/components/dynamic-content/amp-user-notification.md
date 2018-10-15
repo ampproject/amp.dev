@@ -1,6 +1,6 @@
 ---
 $title: "amp-user-notification"
-$order: 87
+$order: 86
 toc: true
 ---
 <!--

@@ -1,6 +1,6 @@
 ---
 $title: "amp-springboard-player"
-$order: 80
+$order: 79
 toc: true
 ---
 

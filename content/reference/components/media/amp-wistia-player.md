@@ -1,6 +1,6 @@
 ---
 $title: "amp-wistia-player"
-$order: 96
+$order: 95
 toc: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 $title: "amp-web-push"
-$order: 95
+$order: 94
 ---
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.

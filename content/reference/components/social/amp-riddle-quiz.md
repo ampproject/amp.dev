@@ -1,6 +1,6 @@
 ---
 $title: "amp-riddle-quiz"
-$order: 74
+$order: 73
 ---
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.

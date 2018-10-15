@@ -1,6 +1,6 @@
 ---
 $title: "amp-story"
-$order: 82
+$order: 81
 toc: true
 
 components:

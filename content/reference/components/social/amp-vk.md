@@ -1,6 +1,6 @@
 ---
 $title: "amp-vk"
-$order: 94
+$order: 93
 ---
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.

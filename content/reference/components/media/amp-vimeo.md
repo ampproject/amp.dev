@@ -1,6 +1,6 @@
 ---
 $title: "amp-vimeo"
-$order: 90
+$order: 89
 toc: true
 ---
 

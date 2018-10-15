@@ -1,6 +1,6 @@
 ---
 $title: "amp-video"
-$order: 89
+$order: 88
 toc: true
 
 components:

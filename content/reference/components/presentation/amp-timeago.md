@@ -1,6 +1,6 @@
 ---
 $title: "amp-timeago"
-$order: 85
+$order: 84
 toc: true
 ---
 <!--

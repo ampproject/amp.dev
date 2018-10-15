@@ -1,6 +1,6 @@
 ---
 $title: "amp-sticky-ad"
-$order: 81
+$order: 80
 toc: true
 ---
 

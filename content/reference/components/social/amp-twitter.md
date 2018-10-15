@@ -1,6 +1,6 @@
 ---
 $title: "amp-twitter"
-$order: 86
+$order: 85
 toc: true
 
 components:

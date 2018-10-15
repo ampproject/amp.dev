@@ -1,6 +1,6 @@
 ---
 $title: "amp-selector"
-$order: 75
+$order: 74
 toc: true
 ---
 
