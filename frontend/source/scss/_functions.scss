@@ -41,6 +41,10 @@
   @return prefix('organism', $selector);
 }
 
+@function template($selector) {
+  @return prefix('template', $selector);
+}
+
 /**
 /// Pulls a name out of the $shadows array by key and throws a warning
 /// if the specified shadow name does not exist
