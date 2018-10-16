@@ -1,128 +1,130 @@
 ---
-$title: 페이지 추가
+$title: 페이지 추가하기
+$order: 4
 ---
 
-이제 AMP 스토리에 페이지를 추가하는 것은 어렵지 않을 것입니다. “The Joy of Pets” 이야기에 몇 페이지를 더 추가할텐데 특별히 어렵지는 않습니다. 아래의 설명을 바탕으로 **남은 페이지를 만들어보십시오**. 하다가 막혀도 걱정할 필요가 없습니다. 최종 완성본(<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>)을 보고 따라하면 됩니다.
+이전 페이지에서는 AMP 스토리에 페이지를 추가하는 방법을 익혔습니다. '애완동물이 주는 기쁨' 스토리에 다음 페이지를 추가하는 것도 지금까지 배운 방법과 아주 비슷합니다. 아래에 제공된 정보에 따라 학습한 내용을 활용하여 **남은 페이지를 만들어 보세요**.  잘 모르는 내용이 있으면 완성된(<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) 코드를 살펴보세요.
 
-{% call callout('팁', type='success') %}
-페이지마다 고유한 “id” 속성을 추가하는 것을 잊지 마십시오. 예) `id=”page1”`
+{% call callout('도움말', type='success') %}
+각 페이지에는 고유 'id' 속성(예: `id="page1"`)이 필요합니다.
 {% endcall %}
 
-## 페이지 1: Cats
+## 1페이지: 고양이
 
-하나의 레이어에 이미지와 텍스트를 어떻게 배치하는지 보여줍니다.
+단일 레이어에 이미지와 텍스트를 추가하는 방법을 보여줍니다.
 
 <table class="noborder pages">
   <tr>
     <td width="60%">
       <ul>
-        <li>하나의 레이어를 사용합니다:
+        <li>레이어 1개 포함:
       <ul>
-        <li><a href="/ko/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> 템플릿을 사용합니다.</li>
-        <li>3개의 요소를 사용합니다:
+        <li><a href="/ko/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> 템플릿을 구현합니다.</li>
+        <li>요소 3개 포함:
           <ul>
-            <li>제목 <em>Cats</em>를 나타내기 위한 <code>&lt;h1></code> 요소</li>
-            <li>반응형 <a href="/ko/docs/reference/components/amp-img">amp-img</a> (<code class="filename">cat.jpg</code>, 720 x 1280px)</li>
-            <li>다음의 명언을 보여줄 <code>&lt;q></code> 요소: <em>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</em></li>
+            <li>제목이 <em>고양이</em></li>인 <code>&lt;h1></code> 요소
+            <li>반응형 <a href="https://www.ampproject.org/docs/reference/components/amp-img">amp-img</a>(<code class="filename">cat.jpg</code>, 720 x 1280px)</li>
+            <li>다음 인용문의 <code>&lt;q></code> 요소: <em>개는 사람이 부르면 옵니다. 고양이는 뭔가 할 말이 있으면 사람에게 옵니다. --Mary Bly</em></li>
           </ul>
         </li>
       </ul></li></ul>
     </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/pg1-cats.png', 720, 1280, alt='Page 1 - Cats' ) }}</td>
+    <td>{{ image('/static/img/docs/tutorials/amp_story/pg1-cats.png', 720, 1280, alt='1페이지 - 고양이' ) }}</td>
   </tr>
 </table>
 
-## 페이지 2: Dogs
+## 2페이지: 개
 
-두 개의 레이어를 두고 화면을 꽉 채우는 이미지와 그 위에 텍스트를 어떻게 배치하는지 보여줍니다.
+텍스트를 정렬하고 레이어 두 개로 화면을 채우는 이미지를 표시하는 방법을 보여줍니다.
 
 <table class="noborder">
   <tr>
     <td width="60%">
       <ul>
-        <li>2개의 레이어를 사용합니다:
+        <li>레이어 2개 포함:
       <ul>
-        <li><b>레이어 1</b>: <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> 템플릿을 사용하고, 반응형 전체 이미지 <a href="/ko/docs/reference/components/amp-img">amp-img</a> (<code class="filename">dog.jpg</code>, 720 x 1280px) 요소를 포함합니다.</li>
-        <li><b>레이어 2</b>: <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>thirds</code></a> 템플릿을 사용하고 두 개의 요소를 사용합니다:
+        <li><b>레이어 1</b>: <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="https://www.ampproject.org/docs/reference/components/amp-img">amp-img</a>(<code class="filename">dog.jpg</code>, 720 x 1280px)</li>를 포함합니다.
+        <li><b>레이어 2</b>:  <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>thirds</code></a> 템플릿을 구현하고 요소 2개를 포함합니다.
           <ul>
-            <li>제목 <em>Dogs</em>를 나타내기 위한 <code>&lt;h1></code> 요소.</li>
-            <li><code>&lt;p></code> 요소에 <a href="/ko/docs/getting_started/visual_story/create_cover_page.htm#thirds"><code>grid-area</code></a>를 <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>lower-third</code></a>로 지정하고 다음의 문구를 넣습니다: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em></li>
+            <li>제목이 <em>개</em></li>인 <code>&lt;h1></code> 요소
+            <li><a href="/ko/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>lower-third</code></a>를 차지하는 <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>grid-area</code></a>를 지정하고 다음 텍스트를 포함하는 <code><p></code> 요소: <em>개는 처음으로 길들여진 동물이라고 합니다. 약 10,000년 동안 사람들과 함께 지내왔습니다. 몇몇 과학자들은 애완동물이든 야생동물이든 모든 개가 작은 남아시아 늑대라는 공통 조상을 공유한다고 주장합니다.</em></li>
           </ul>
         </li>
       </ul></li></ul>
     </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/pg2-dogs.png', 720, 1280, alt='Page 2 - Dogs' ) }}</td>
+    <td>{{ image('/static/img/docs/tutorials/amp_story/pg2-dogs.png', 720, 1280, alt='2페이지 - 개' ) }}</td>
   </tr>
 </table>
 
-## 페이지 3: Birds
+## 3페이지: 새
 
-화면을 꽉 채우는 이미지와 그 위에 텍스트를 배치하고 배경 음악을 어떻게 넣는지 보여줍니다.
+텍스트를 정렬하고 화면을 채우는 이미지를 표시하며 페이지에 백그라운드 오디오를 넣는 방법을 보여줍니다.
 
 <table class="noborder">
   <tr>
     <td width="60%">
       <ul>
-      <li>3개의 레이어를 사용합니다:
+      <li>레이어 3개 포함:
       <ul>
-        <li><b>레이어 1</b>: <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> 템플릿을 사용하고, 반응형 전체 이미지 <a href="/ko/docs/reference/components/amp-img">amp-img</a> (<code class="filename">bird.jpg</code>, 720 x 1280px) 요소를 포함합니다.</li>
-        <li><b>레이어 2</b>: <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> 템플릿을 쓰고 하나의 요소를 사용:
+        <li><b>레이어 1</b>: <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="https://www.ampproject.org/docs/reference/components/amp-img">amp-img</a>(<code class="filename">bird.jpg</code>, 720 x 1280px)</li>를 포함합니다.
+        <li><b>레이어 2</b>:  <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> 템플릿을 구현하고 요소 한 개를 포함합니다.
           <ul>
-            <li>제목 <em>Birds</em>를 나타내기 위한 <code>&lt;h1></code></li>
+            <li>제목이 <em>새</em></li>인 <code>&lt;h1></code> 요소
           </ul>
         </li>
-        <li><b>레이어 3</b>: <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> 템플릿을 쓰고 하나의 요소를 사용: 
+        <li><b>레이어 3</b>:  <a href="/ko/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> 템플릿을 구현하고 요소 한 개를 포함합니다.
           <ul>
-            <li>다음의 인용구를 보여주는 <code>&lt;q></code> 요소: <em>A bird is three things: Feathers, flight and song, And feathers are the least of these.--Marjorie Allen Seiffert</em></li>
-            <li>이번 레이어는 <code>class="bottom"</code>을 써서 화면의 아랫부분에 문구를 배치합니다.</li>
+            <li>다음 인용문의 <code>&lt;q></code> 요소: <em>새는 깃털이 있고 날 수 있고 노래할 수 있습니다. 그중에 가장 중요하지 않은 것은 깃털입니다. --Marjorie Allen Seiffert</em></li>
+            <li>세 번째 레이어가 <code>class="bottom"</code>을 지정하여 하위 요소를 화면 하단에 정렬합니다.</li>
           </ul>
         </li>
       </ul></li>
-      <li>페이지가 보여지는 동안 배경 음악을 재생합니다. 배경 음악을 사용하려면 <code>&lt;amp-story-page></code> 컴포넌트의 background-audio 속성을 설정하면 됩니다. 예를 들어, <code>background-audio="assets/bird-singing.mp3"</code></li>
+      <li>페이지가 표시되는 동안 백그라운드에서 오디오 파일을 재생합니다. 전체 스토리나 페이지 한 개의 백그라운드에서 오디오를 재생할 수 있습니다.  페이지의 오디오를 재생하려면 <code>background-audio="assets/bird-singing.mp3"</code> 속성을 <code>&lt;amp-story-page></code> 요소에 추가합니다.</li>
       </ul>
     </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/pg3-birds.png', 720, 1280, alt='Page 3 - Birds' ) }}</td>
+    <td>{{ image('/static/img/docs/tutorials/amp_story/pg3-birds.png', 720, 1280, alt='3페이지 - 새' ) }}</td>
   </tr>
 </table>
 
-## 페이지 4: Rabbits
+## 4페이지 - 토끼
 
-텍스트와 전체화면 동영상을 어떻게 배치하는지 보여줍니다.
+텍스트를 정렬하고 페이지에 화면을 채우는 동영상을 표시하는 방법을 보여줍니다.
 
 <table class="noborder">
   <tr>
     <td width="60%">
       <ul>
-      <li>3개의 레이어를 사용합니다:
+      <li>레이어 3개 포함:
       <ul>
-        <li><b>레이어 1</b>: <code>fill</code> 템플릿을 사용하고 반응형 <a href="/ko/docs/reference/components/amp-video">amp-video</a> (<code class="filename">rabbit.mp4</code>)를 포함합니다.
+        <li><b>레이어 1</b>: <code>fill</code> 템플릿을 구현하고 반응형 <a href="https://www.ampproject.org/docs/reference/components/amp-video">amp-video</a>(<code class="filename">rabbit.mp4</code>)를 포함합니다.
           <ul>
-            <li><code>&lt;head></code> 섹션에 <a href="/ko/docs/reference/components/amp-video">amp-video</a> 컴포넌트를 제공하는 <strong>script를 꼭 추가해야 합니다</strong>.</li>
-            <li><code>poster</code> 이미지 (<code class="filename">rabbit.jpg</code>)를 amp-video의 속성으로 <strong>꼭 넣습니다</strong>. AMP 스토리 유효성 검사를 통과하려면 반드시 설정해야 합니다.</li>
-            <li>동영상이 자동재생되도록 <code>autoplay</code> 속성을 넣습니다. 이 속성은 AMP 스토리 유효성 검사를 위한 <strong>필수 사항</strong>입니다.</li>
-            <li><code>loop</code> 속성을 설정하면 자동으로 반복 재생합니다.</li>
-            <li>크기는 <code>width="720"</code> <code>height="1280"</code> 으로 넣고 <code>layout="responsive"</code>으로 설정합니다.</li>
+            <li>동영상이 표시되도록 <code><head></code> 섹션에 <a href="https://www.ampproject.org/docs/reference/components/amp-video">amp-video</a> 구성요소의 <strong>필수 스크립트</strong>를 추가합니다.</li>
+            <li><code>poster</code> 이미지(<code class="filename">rabbit.jpg</code>)를 지정합니다. 이 속성은 유효한 AMP 스토리를 위해 <strong>필요</strong>합니다.</li>
+            <li><code>autoplay</code> 속성으로 동영상이 자동 재생되도록 설정합니다. 이 속성은 유효한 AMP 스토리를 위해 <strong>필요</strong>합니다.</li>
+            <li><code>loop</code> 속성으로 동영상이 자동 루프백되도록 설정합니다.</li>
+            <li>크기를 <code>width="720"</code> <code>height="1280"</code>, <code>layout="responsive"</code>로 설정합니다.</li>
           </ul></li>
-        <li><b>레이어 2</b>: <code>vertical</code> 템플릿을 쓰고 하나의 요소를 사용:
+        <li><b>레이어 2</b>:  <code>vertical</code> 템플릿을 구현하고 요소 한 개를 포함합니다.
           <ul>
-            <li>제목 <em>Rabbits</em>을 나타내기 위한 <code>&lt;h1></code></li>
+            <li>제목이 <em>토끼</em></li>인 <code>&lt;h1></code> 요소
           </ul>
         </li>
-        <li><b>레이어 3</b>: <code>vertical</code> 템플릿을 쓰고 하나의 요소를 사용:
+        <li><b>레이어 3</b>:  <code>vertical</code> 템플릿을 구현하고 요소 한 개를 포함합니다.
           <ul>
-            <li><code>&lt;p></code> 요소에 다음의 문구를 넣습니다: <em>Rabbits can learn to follow simple voice commands and come when called by name, and are curious and playful</em>.</li>
-            <li>이번 레이어는 <code>bottom</code> CSS class를 써서 화면의 아랫부분에 문구를 놓습니다.</li>
+            <li>다음 텍스트를 포함하는 <code>&lt;p></code> 요소: <em>토끼는 간단한 음성 명령을 배울 수 있어 이름을 부르면 다가오고 호기심이 많으며 장난기가 많습니다</em>.</li>
+            <li>레이어에 <code>bottom</code> CSS 클래스를 적용하여 하위 요소를 화면 하단에 정렬합니다.</li>
           </ul>
         </li></ul></li>
       </ul>
     </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/pg4-rabbits.png', 720, 1280, alt='Page 4 - Rabbits' ) }}</td>
+    <td>{{ image('/static/img/docs/tutorials/amp_story/pg4-rabbits.png', 720, 1280, alt='4페이지 - 토끼' ) }}</td>
   </tr>
 </table>
 
-“Joy of Pets”이야기는 거의 마무리 단계에 왔습니다. 이제는 마지막 페이지를 만들텐데 지금까지 나온 애완동물을 모두 보여주는 애니메이션을 넣을 계획입니다.
+'애완동물이 주는 기쁨' 스토리가 거의 완성되었습니다. 마지막 페이지에서는 애니메이션을 사용하여 모든 애완동물을 한곳에 모을 것입니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/create_cover_page.html"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="/ko/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-next">다음</span></a>
 </div>
+ 
