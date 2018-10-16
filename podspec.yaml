@@ -17,7 +17,10 @@ preprocessors:
 markdown:
   extensions:
   - kind: sourcecode
-    classes: true
+    classes: True
+    class_name: ad-m-code-snippet
+  - kind: markdown.extensions.codehilite
+    classes: True
     class_name: ad-m-code-snippet
 
 ext:
