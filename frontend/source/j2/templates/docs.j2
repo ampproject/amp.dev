@@ -17,7 +17,8 @@
     {% do doc.styles.addCssFile('css/components/atoms/headline.css') %}
     {% do doc.styles.addCssFile('css/components/atoms/text.css') %}
     {% do doc.styles.addCssFile('css/components/atoms/anchor.css') %}
-    {% do doc.styles.addCssFile('css/components/templates/docs-details.css') %}
+
+    {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
 
     {% do doc.styles.addCssFile('css/components/templates/docs-details.css') %}
 
@@ -38,7 +39,7 @@
       {% include 'partials/sidebar.j2' %}
       <main>
         {% block main %}
-        {{ doc.html|safe }}
+        {{ doc.html|render|safe }}
         {% endblock %}
       </main>
     </div>
