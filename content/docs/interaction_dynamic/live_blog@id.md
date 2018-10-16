@@ -1,72 +1,98 @@
 ---
-$title: Membuat Live Blog
+$title: Membuat blog langsung
 ---
 
 [TOC]
 
-Live blog adalah halaman yang diupdate secara berkala selama peristiwa yang sedang berlangsung, seperti Super Bowl.
 
-Live blog dapat diterapkan di AMP melalui komponen `amp-live-list` menggunakan markup LiveBlogPosting. Untuk melihat contoh penerapan yang dapat Anda gunakan sebagai titik awal, kunjungi [contoh live blog](https://www.ampbyexample.com/samples_templates/live_blog/) di [ampbyexample.com](https://www.ampbyexample.com).
 
-Tutorial ini memberikan ringkasan singkat terkait komponen `amp-live-list` dan berfokus pada beberapa detail penerapan seperti pemberian nomor halaman dan deep link, semuanya menggunakan sampel live blog sebagai contohnya.
+Blog langsung adalah halaman yang sering diperbarui sepanjang acara yang sedang berlangsung, seperti acara olahraga atau pemilu. Di AMP, Anda dapat menerapkan blog langsung menggunakan komponen [`amp-live-list`](/id/docs/reference/components/amp-live-list.html).
 
-## Ringkasan amp-live-list
+Tutorial ini memberikan gambaran singkat tentang komponen `amp-live-list` dan berfokus pada beberapa detail implementasi untuk blog langsung, seperti [paginasi] (#pagination) dan [deep linking] (#deeplinking). Kami akan menggunakan [contoh blog langsung] (https://www.ampbyexample.com/samples_templates/live_blog/) AMP By Example untuk mengilustrasikan implementasi blog langsung di AMP.
 
-Komponen `amp-live-list` secara reguler mengecek dokumen host untuk menemukan konten yang diupdate dan mengupdate browser pengguna akhir jika ada item baru yang tersedia. Artinya, setiap kali sebuah entri blog perlu ditambahkan, dokumen host harus diupdate oleh CMS agar menyertakan update di bagian isi maupun metadata.
+{% call callout('Tips', type='success') %}
+Gunakan markup metadata [LiveBlogPosting](http://schema.org/LiveBlogPosting) agar blog Anda dapat diintegrasikan dengan fitur platform pihak ketiga.
+{% endcall %}
 
-Berikut adalah tampilan awal blog:
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
 
-[sourcecode:html]
-<amp-live-list id="my-live-list" data-poll-interval="15000" data-max-items-per-page="5">
-    <button update on="tap:my-live-list.update">Anda memiliki update!</button>
-    <div items></div>
+## Ringkasan tentang `amp-live-list`
+
+Komponen [`amp-live-list`](/id/docs/reference/components/amp-live-list.html) secara teratur memeriksa apa ada konten baru di dokumen host dan memberikan info terbaru ke browser pengguna saat item baru tersedia. Ini berarti bahwa setiap kali postingan blog baru perlu ditambahkan, dokumen host harus diperbarui oleh CMS untuk menyertakan item baru di bagian isi dan [metadata] (https://ampbyexample.com/samples_templates/live_blog/#metadata) pada halaman.
+
+
+Kode awal untuk blog dapat terlihat seperti berikut:
+
+```html
+<amp-live-list id="my-live-list"
+    data-poll-interval="15000"
+    data-max-items-per-page="5">
+  <button update on="tap:my-live-list.update">Anda memiliki item baru</button>
+  <div items></div>
 </amp-live-list>
-[/sourcecode]
+```
 
-Atribut `data-poll-interval` memungkinkan Anda untuk menentukan seberapa sering pengecekan dilakukan. Jika dokumen host diupdate, update harus tersedia untuk pengguna setelah interval waktu berikutnya.
+Mari kita lihat kode ini:
 
-Setiap kali item baru ditambahkan ke dokumen host, elemen `<button update on="tap:my-live-list.update">` akan menampilkan tombol yang, jika diklik, akan memicu halaman agar menampilkan postingan terbaru.
+Setiap komponen `amp-live-list` membutuhkan ID unik karena mungkin ada lebih dari satu ID pada halaman.  Dalam contoh ini, kami menetapkan `my-live-list` sebagai ID unik.
 
-Live blog dapat berkembang dan membuat halaman menjadi terlalu panjang. Atribut `data-max-items-per-page` memungkinkan Anda menentukan jumlah item yang dapat ditambahkan ke halaman live blog. Jika jumlah item yang ditambahkan setelah update melebihi `data-max-items-per-page`, update paling lama yang melebihi jumlah ini akan dihapus. Misalnya, jika saat ini halaman memiliki 9 item, `data-max-items-per-page` disetel ke 10, dan 3 item baru muncul di update terbaru, 2 item yang paling lama akan dihapus dari halaman dengan update terbaru.
+Atribut `data-poll-interval` menentukan seberapa sering pemeriksaan akan terjadi; jika dokumen host diperbarui, item baru akan tersedia bagi pengguna setelah interval waktu berikutnya.
 
-`amp-live-list` mengharuskan semua postingan menjadi turunan tag `<div items></div>`. Dengan mengacu pada setiap postingan sebagai item, setiap item harus memiliki `id` unik dan `data-sort-time`.
+Setiap kali item baru ditambahkan ke dokumen host, elemen `<button update on="tap:my-live-list.update">` menampilkan tombol "Anda memiliki item baru" yang jika diklik akan memicu halaman untuk menampilkan postingan terbaru.
 
-## Detail penerapan Live Blog
+Blog langsung dapat menjadi semakin besar dan membuat halaman terlalu panjang. Anda dapat menggunakan atribut `data-max-items-per-page` untuk menentukan berapa banyak item yang dapat ditambahkan ke blog langsung. Jika jumlah item setelah diperbarui melebihi `data-max-item-per-page`, item terlama yang melebihi jumlah ini akan dihapus. Misalnya, jika halaman saat ini memiliki 9 item dan `data-max-item-per-page` disetel ke 10, kemudian 3 item baru disertakan dalam pembaruan, dua item terlama akan dihapus dari halaman dan digantikan item terbaru.
 
-Setelah Anda memahami komponen `amp-live-list`, mari kita cari tahu cara menerapkan live blog yang lebih rumit. Baca terus untuk mempelajari lebih lanjut tentang cara menerapkan pemberian nomor halaman dan cara kerja deep link.
+Semua postingan blog dalam `amp-live-list` harus berupa turunan `<div items></div>`. Dengan merujuk pada setiap postingan sebagai item, setiap item harus memiliki `id` dan `data-sort-time` yang unik.
 
-## Pemberian nomor halaman
+## Detail implementasi
 
-Blog yang panjang dapat menggunakan pemberian nomor halaman untuk meningkatkan performa dengan membatasi jumlah item blog yang ditampilkan dalam satu halaman. Untuk menerapkan pemberian nomor halaman, tambahkan elemen `<div pagination></div>` dalam komponen `amp-live-list`, lalu sisipkan markup yang dibutuhkan untuk pemberian nomor halaman (misalnya, nomor halaman atau link ke halaman sebelumnya dan berikutnya).
+Sekarang Anda telah memahami komponen `amp-live-list`. Selanjutnya, ayo kita cari tahu cara menerapkan blog langsung yang lebih kompleks. Baca terus untuk mempelajari lebih lanjut cara menerapkan paginasi dan cara kerja deep linking.
 
-Saat menggunakan pemberian nomor halaman, kode sederhana yang digunakan sebelumnya menjadi:
+### Paginasi
 
-[sourcecode:html]
-<amp-live-list id="my-live-list" data-poll-interval="15000" data-max-items-per-page="5">
-    <button update on="tap:my-live-list.update">Anda memiliki update!</button>
-    <div items></div>
-    <div pagination>
-        <nav>
-            <ul>
-                <li>1</li>
-                <li>Berikutnya</li>
-            </ul>
-        </nav>
+Blog yang panjang dapat menggunakan paginasi untuk meningkatkan performa dengan membatasi jumlah item blog yang akan ditampilkan pada halaman. Untuk menerapkan paginasi, di komponen `amp-live-list`, tambahkan `<div pagination></div>`, lalu masukkan markup apa pun yang diperlukan untuk paginasi (misalnya, nomor halaman atau link ke halaman berikutnya dan sebelumnya).
+
+Dengan paginasi, kode sederhana yang kami gunakan sebelumnya menjadi:
+
+```html
+<amp-live-list id="my-live-list"
+    data-poll-interval="15000"
+    data-max-items-per-page="5">
+  <button update on="tap:my-live-list.update">Anda memiliki item baru</button>
+  <div items></div>
+  <div pagination>
+    <nav>
+      <ul>
+        <li>1</li>
+        <li>Berikutnya</li>
+      </ul>
+     </nav>
    </div>
 </amp-live-list>
-[/sourcecode]
+```
 
-Anda harus memasukkan item navigasi secara tepat dengan mengupdate halaman yang dihosting. Misalnya, di [contoh live blog](https://www.ampbyexample.com/samples_templates/live_blog/) kami merender halaman melalui template sisi server dan menggunakan parameter kueri untuk menentukan item blog pertama. Kami membatasi ukuran halaman menjadi 5 item, sehingga jika server telah membuat lebih dari 5 item, saat pengguna berada di halaman utama, halaman seharusnya menampilkan elemen Berikutnya di area navigasi.
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}  
 
-<amp-img src="/static/img/liveblog-pagination.png" alt="Live blog pagination" height="526" width="300"></amp-img>
+Anda bertanggung jawab untuk mengisi item navigasi dengan benar, dengan memperbarui halaman yang dihosting. Misalnya, dalam [contoh blog langsung](https://www.ampbyexample.com/samples_templates/live_blog/), kami merender halaman melalui template sisi server dan menggunakan parameter kueri untuk menetapkan item blog pertama apa yang seharusnya ditampilkan pada halaman. Kami membatasi ukuran halaman menjadi 5 item, jadi jika server telah membuat lebih dari 5 item, elemen "Berikutnya" akan muncul di area navigasi saat pengguna membuka halaman utama. Lihat [amp-live-list.go](https://github.com/ampproject/amp-by-example/blob/master/backend/amp-live-list.go#L182) dan [Live_Blog.html](https://github.com/ampproject/amp-by-example/blob/master/src/60_Samples_%2526_Templates/Live_Blog.html) untuk mengetahui detailnya.
 
-Setelah entri blog telah melebihi jumlah maksimum item yang ditentukan oleh `data-max-items-per-page`, item blog yang lebih lama ditampilkan di halaman "Berikutnya", misalnya di halaman 2. Mengingat `amp-live-list` mengecek server pada interval tertentu untuk melihat apakah ada perubahan pada item, Anda tidak perlu mengecek server jika pengguna tidak berada di halaman pertama.
+Setelah ukuran postingan blog melampaui jumlah maksimum item yang ditetapkan oleh `data-max-items-per-page`, item blog yang lebih lama akan ditampilkan di halaman "Berikutnya", misalnya di halaman 2. Mengingat bahwa `amp-live-list` memeriksa server pada interval waktu tertentu untuk melihat apakah ada perubahan pada item, pemeriksaan server tidak perlu dilakukan jika pengguna tidak membuka halaman pertama.
 
-Anda dapat menambahkan atribut nonaktif ke halaman yang dihosting untuk mencegah mekanisme pengecekan. Pada contoh live blog, kami menerapkan perilaku ini di template sisi server. Jika halaman yang diminta bukan halaman yang pertama, kami menambahkan atribut nonaktif ke komponen amp-live-list.
+Anda dapat menambahkan atribut yang dinonaktifkan ke halaman yang dihosting untuk mencegah mekanisme pemeriksaan. Dalam contoh blog langsung, kami melakukan perilaku ini dalam template sisi server; ketika yang diminta bukan halaman pertama, kami menambahkan atribut yang dinonaktifkan ke komponen amp-live-list.
 
-## Deeplinking
+### Deeplinking
 
-Saat memublikasikan entri blog, penting untuk mengaktifkan deep link ke postingan guna mengaktifkan fitur seperti berbagi. Dengan `amp-live-list`, deep link dapat dilakukan hanya dengan menggunakan ID item blog. Misalnya, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) memungkinkan Anda untuk menavigasi langsung ke entri blog dengan ID "post3".
+Saat Anda mempublikasikan entri blog, penting untuk menempatkan deep link ke postingan untuk mengaktifkan fitur seperti berbagi. Dengan `amp-live-list`, deep linking dapat dilakukan dengan hanya menggunakan` id` dari item blog. Misalnya, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) mengizinkan Anda membuka postingan blog secara langsung dengan ID `post3`.
 
-Pada [contoh live blog](https://www.ampbyexample.com/samples_templates/live_blog/) kami menggunakan teknik berdasarkan cookie untuk membuat konten baru (lihat di bagian Selengkapnya tentang Contoh Live Blog untuk detailnya), sehingga jika ini pertama kalinya Anda berada di halaman, postingan dengan ID "post3" mungkin tidak tersedia. Dalam hal ini kami mengarahkan Anda kembali ke postingan pertama.
+AMP By Example menggunakan cookie di [contoh blog langsung](https://www.ampbyexample.com/samples_templates/live_blog/) untuk membuat konten terkini. Karena itu, jika ini pertama kalinya Anda membuka halaman, postingan dengan ID “post3” mungkin tidak tersedia, dan Anda akan diarahkan ke postingan pertama.
 
+
+## Referensi
+
+Pelajari lebih lanjut dari referensi berikut:
+
+- Dokumentasi referensi [amp-live-list](/id/docs/reference/components/amp-live-list.html)
+- [Contoh amp-live-list di AMP By Example](https://ampbyexample.com/components/amp-live-list/)
+- [Contoh blog langsung di AMP By Example](https://www.ampbyexample.com/samples_templates/live_blog/)
+ 
+ 
+ 

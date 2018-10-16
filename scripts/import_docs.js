@@ -3,6 +3,7 @@
 const github = require('octonode');
 const fs = require('fs');
 const path = require('path');
+const request = require('request');
 
 const clientSecret = process.argv[2] || process.env.AMP_DOC_SECRET;
 const clientId = process.argv[3] || process.env.AMP_DOC_ID;
@@ -25,6 +26,7 @@ const client = github.client(
   });
 
 const ghrepo = client.repo('ampproject/amphtml');
+let latestReleaseTag = null;
 
 /*
  *  Downloads a markdown page from a Github repo folder.
@@ -55,7 +57,7 @@ function downloadPage(filePath, headingToStrip) {
     if (localPath) {
       fs.readFile(path.resolve(localPath, filePath), process);
     } else {
-      ghrepo.contents(filePath, process);
+      ghrepo.contents(filePath, latestReleaseTag, process);
     }
 
   });
@@ -166,7 +168,7 @@ async function importSpecialPages() {
  */
 async function downloadBuiltins() {
 
-  const response = await ghrepo.contentsAsync('builtins', 'master');
+  const response = await ghrepo.contentsAsync('builtins', latestReleaseTag);
   const data = response[0];
   const components = data.filter(obj => /amp-.*\.md/.test(obj.name));
 
@@ -200,14 +202,14 @@ async function downloadBuiltins() {
  */
 async function downloadExtensions() {
 
-  let response = await ghrepo.contentsAsync('extensions', 'master');
+  let response = await ghrepo.contentsAsync('extensions', latestReleaseTag);
   const components = response[0].filter(obj => obj.type === 'dir');
 
   var index = 0;
   for (const component of components) {
 
     let order = index;
-    let response = await ghrepo.contentsAsync(component.path, 'master');
+    let response = await ghrepo.contentsAsync(component.path, latestReleaseTag);
     let data = response[0];
 
     // fish out the markdown file from the folder
@@ -255,7 +257,28 @@ async function downloadExtensions() {
 
 }
 
+// before we download content, we first have to figure out the latest release tag,
+// to make sure our docs always match the latest released AMP version.
+request({
+  url: 'https://api.github.com/repos/ampproject/amphtml/releases/latest',
+  headers: {
+    'User-Agent': 'request'
+  },
+  qs: {
+    'access_token': clientToken
+  },
+  json: true
+}, function (error, response, body) {
 
-importSpecialPages();
-downloadBuiltins();
-downloadExtensions();
+  latestReleaseTag = body.tag_name; // updates global var, used in the other functions
+  if (!latestReleaseTag) {
+    throw 'Error: Could not retrieve latest release from Github:' + '(body: ' + JSON.stringify(body) + ')';
+  }
+
+  importSpecialPages();
+  downloadBuiltins();
+  downloadExtensions();
+});
+
+
+
