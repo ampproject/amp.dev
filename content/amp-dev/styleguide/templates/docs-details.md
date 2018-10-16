@@ -1,6 +1,6 @@
 ---
 $title: Documentation Details Template
-$view: /views/docs.j2
+$view: /views/docs/detail.j2
 ---
 
 ## Validate AMP pages
