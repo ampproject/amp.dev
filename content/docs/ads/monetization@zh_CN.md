@@ -26,7 +26,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 2 步：将 amp-ad 标记添加到 AMP 网页中
 
-超过 100 个[广告服务商和广告网络](/zh_cn/docs/ads/ads_vendors.html)提供与 AMP 的内置集成。要为指定广告网络添加广告，请添加 `<amp-ad>` 标记，然后在 `type` 属性中指定广告网络。
+超过 100 个[广告服务商和广告网络]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})提供与 AMP 的内置集成。要为指定广告网络添加广告，请添加 `<amp-ad>` 标记，然后在 `type` 属性中指定广告网络。
 
 在本例中，我们添加一个广告位来投放 a9 网络中的广告：
 
@@ -60,7 +60,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 5 步：（可选）指定占位符
 
-根据具体的广告网络，您可以选择在广告可供查看前显示占位符。这样做可防止出现空白，从而提供更好的用户体验。要指定占位符，请通过 `placeholder` 属性添加一个子元素。有关详情请参阅[占位符和后备行为](/zh_cn/docs/design/responsive/placeholders.html)。
+根据具体的广告网络，您可以选择在广告可供查看前显示占位符。这样做可防止出现空白，从而提供更好的用户体验。要指定占位符，请通过 `placeholder` 属性添加一个子元素。有关详情请参阅[占位符和后备行为]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}})。
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 6 步：（可选）指定后备行为
 
-根据具体的广告网络，您可以选择在没有广告可投放时显示后备元素。要指定后备行为，请通过 `fallback` 属性添加一个子元素。有关详情请参阅[占位符和后备行为](/zh_cn/docs/design/responsive/placeholders.html)。
+根据具体的广告网络，您可以选择在没有广告可投放时显示后备元素。要指定后备行为，请通过 `fallback` 属性添加一个子元素。有关详情请参阅[占位符和后备行为]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}})。
 
 ```html hl_lines="6"
 <amp-ad type="a9"
