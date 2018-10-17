@@ -43,7 +43,6 @@ table {
 
   @media screen and (min-width: 768px) {
     margin: 0;
-    left: 25%;
   }
 
   th {
@@ -77,10 +76,6 @@ tbody {
   td {
     padding: 20px;
     text-align: left;
-
-    @media screen and (min-width: 768px) {
-      white-space: nowrap;
-    }
 
     code {
       @include txt-mono-inline;
