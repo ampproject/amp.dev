@@ -1,16 +1,39 @@
+/*
+
+##############################
+### TEMPLATE: docs details ###
+##############################
+
+### INFO:
+
+*/
+
 @import '../../extends';
 @import '../../functions';
 @import '../../mixins';
 @import '../../variables';
 
-.ad-t-docs-details {
+.#{template('docs-details')} {
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
   grid-gap: 30px;
-  margin-top: 100px;
-}
+  grid-gap: 1.786555555vw;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 100%;
+  max-width: 1250px;
+  padding: 96px 30px 0;
+  margin: 0 auto;
 
-.ad-o-video {
-  position: relative;
-  grid-column: 8 / span 12;
+  @media screen and (min-width: 1024px){
+    grid-template-columns: repeat(24, 1fr);
+  }
+
+  main {
+    grid-column: 1;
+
+    @media screen and (min-width: 1024px){
+      grid-column-start: 7;
+      grid-column-end: 19;
+    }
+  }
 }

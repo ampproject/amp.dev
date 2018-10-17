@@ -4,10 +4,19 @@
 @import '../../variables';
 @import '../atoms/_text.scss';
 
-
 .#{organism('sidebar')} {
   @include box-shadow;
-  grid-column: 1 / span 4;
+  order: 2;
+  grid-column: auto;
+  margin-right: -30px;
+
+  @media screen and (min-width: 1024px) {
+    order: inherit;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    margin-right: 0;
+    margin-left: -30px;
+  }
 
   &-list {
     list-style: none;
