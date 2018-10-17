@@ -254,7 +254,7 @@ As histórias AMP oferecem muitas possibilidades de animações (por exemplo, co
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/getting_started/visual_story/create_bookend.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.html', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
  
