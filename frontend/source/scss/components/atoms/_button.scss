@@ -24,7 +24,7 @@ none
 .#{atom('btn')} {
 	@include hl;
 	@include hl-h3;
-	@include hl-light;
+	@include color-white;
 
 	display: inline-block;
 	max-width: 100%;

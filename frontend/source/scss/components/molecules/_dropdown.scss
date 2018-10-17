@@ -20,9 +20,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 */
 
+@import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 @import '../atoms/_text.scss';
-@import '../atoms/_destination.scss';
 
 
 @include viewboxGradientAnimation;
@@ -129,7 +129,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .destination-list-item {
 	@include hl;
 	@include hl-stage;
-	@include hl-light;
+	@include color-white;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
   order: 2;
@@ -165,21 +165,21 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 			opacity: 0;
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 			animation-delay: 3.2s;
-      @include txt-stories;
+      @include color-stories;
 		}
 
 		&-ads {
 			opacity: 0;
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 			animation-delay: 6.4s;
-      @include txt-ads;
+      @include color-ads;
 		}
 
 		&-emails {
 			opacity: 0;
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 			animation-delay: 9.6s;
-      @include txt-email;
+      @include color-e-mails;
     }
 
 		&-light {
@@ -191,37 +191,37 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .websites {
   order: 1;
-  @include txt-light;
+  @include color-white;
 
   &-background {
-	  @include destination-websites;
+	  @include gradient-websites;
   }
 }
 
 .ads {
   order: 2;
-  @include txt-ads;
+  @include color-ads;
 
   &-background {
-	  @include destination-ads;
+	  @include gradient-ads;
   }
 }
 
 .stories {
   order: 3;
-  @include txt-stories;
+  @include color-stories;
 
   &-background {
-	  @include destination-stories;
+	  @include gradient-stories;
   }
 }
 
 .emails {
   order: 4;
-  @include txt-email;
+  @include color-e-mails;
 
   &-background {
-	  @include destination-email;
+	  @include gradient-e-mails;
   }
 }
 
