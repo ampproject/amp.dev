@@ -60,8 +60,8 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 }
 
 	.hl {
-		@include hl-h4;
-		@include hl-stage;
+		@include hl;
+		@include hl-h3;
 		@include color-white;
 		margin: 0;
 		display: inline;

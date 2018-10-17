@@ -8,7 +8,8 @@
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
 	@include hl;
 }
 
@@ -26,4 +27,8 @@ h3 {
 
 h4 {
 	@include hl-h4;
+}
+
+h5 {
+	@include hl-h5;
 }
