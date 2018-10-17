@@ -24,6 +24,7 @@ example markup:
 @import '../../mixins';
 @import '../../functions';
 @import '../../variables';
+@import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 
 main {
@@ -66,7 +67,7 @@ tbody {
   }
 
   tr {
-    border-bottom: 1px solid color('mystic');
+    border-bottom: 1px solid color('silver');
 
     td:nth-child(1) {
       border-right: 1px solid color('silver');
@@ -79,7 +80,7 @@ tbody {
 
     code {
       @include txt-mono-inline;
-      @include txt-blue-ribbon;
+      @include color-blue-ribbon;
     }
   }
 }

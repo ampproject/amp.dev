@@ -12,6 +12,7 @@
 @import '../../mixins';
 @import '../../variables';
 
+@import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
 
@@ -65,13 +66,13 @@
     .ad-m-lnk {
       @include txt-font-accent;
       @include txt-accent-1;
-      @include txt-black;
+      @include color-black;
 
       padding: 12.5px 0;
       margin: 0;
 
       &:hover {
-        @include txt-blue-ribbon;
+        @include color-blue-ribbon;
       }
     }
 
@@ -167,7 +168,7 @@
   input {
     @include txt-3;
     @include txt;
-    @include txt-silver;
+    @include color-silver;
 
     border: none;
     outline: #fff;

@@ -41,7 +41,7 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 	.hl {
     @include txt;
     @include txt-accent-2;
-    @include txt-light;
+    @include color-white;
     @include txt-strong;
 		margin: 0;
     display: inline;
@@ -52,15 +52,15 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 		}
 
 		&-stories {
-			@include hl-stories;
+			@include color-stories;
 		}
 
 		&-ads {
-			@include hl-ads;
+			@include color-ads;
 		}
 
 		&-emails {
-			@include hl-email;
+			@include color-e-mails;
 		}
 	}
 }
