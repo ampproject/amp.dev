@@ -53,7 +53,8 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
     Google AMP URL API를 통해 AMP URL을 가져옵니다. 위에서 언급한 대로
     공유하는 데 원본 URL이 필요할 수 있으므로 두 URL(AMP 및 비 AMP)을 모두
     클라이언트에 전달합니다. 이 방법은 확산성(fan-out)이 낮은 서비스(예를 들어, 문서의
-    저장 빈도보다 읽기 빈도가 높을 경우 읽을 때 마다 매번 API를 호출한다면 비효율적임)에 적합합니다.
+    저장 빈도보다 읽기 빈도가 높을 경우 읽을 때 마다 매번 API를 호출하므로 비효율적임)에
+    적합합니다.
 1.  **클라이언트측(서버측을 이용할 수 없는 경우)**: 클라이언트에서
     Google AMP URL API를 통해 AMP URL을 가져옵니다. 서버측 URL 변환이 불가능한 경우(예:
     엔드 투 엔드 암호화를 사용하는 메시지 앱)에는
