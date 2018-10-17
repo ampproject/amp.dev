@@ -264,12 +264,15 @@ request({
   headers: {
     'User-Agent': 'request'
   },
+  qs: {
+    'access_token': clientToken
+  },
   json: true
 }, function (error, response, body) {
 
   latestReleaseTag = body.tag_name; // updates global var, used in the other functions
   if (!latestReleaseTag) {
-    throw 'Error: Could not retrieve latest release from Github.';
+    throw 'Error: Could not retrieve latest release from Github:' + '(body: ' + JSON.stringify(body) + ')';
   }
 
   importSpecialPages();
