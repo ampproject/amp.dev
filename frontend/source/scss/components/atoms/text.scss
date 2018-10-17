@@ -17,4 +17,25 @@ p {
 	big {
 		@include txt-1;
 	}
+  
+  code {
+    @include txt-mono-inline;
+  }
+}
+
+ul,
+ol {
+  @include txt;
+  @include txt-p;
+  @include txt-2;
+  padding-left: 1.325em;
+  margin: 1.5em 0 2.5em;
+
+  li {
+    padding-left: 1em;
+
+    code {
+      @include txt-mono-inline;
+    }
+  }
 }
