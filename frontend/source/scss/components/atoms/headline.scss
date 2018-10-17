@@ -11,6 +11,11 @@ h3,
 h4,
 h5 {
 	@include hl;
+	margin-top: 2em;
+	
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 h1 {
