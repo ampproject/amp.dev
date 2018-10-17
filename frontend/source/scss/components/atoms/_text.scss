@@ -89,6 +89,10 @@ TODO: mono (inline, block)
 	margin-bottom: 0.75em;
 }
 
+@mixin txt-mono {
+	font-family: monospace;
+}
+
 @mixin txt-mono-inline {
 	display: inline-block;
 	padding: 0 4px;
@@ -114,40 +118,4 @@ TODO: mono (inline, block)
 
 @mixin txt-uppercase {
 	text-transform: uppercase;
-}
-
-@mixin txt-black {
-	color: color('black');
-}
-
-@mixin txt-blue-ribbon {
-	color: color('blue-ribbon');
-}
-
-@mixin txt-silver {
-	color: color('silver');
-}
-
-@mixin txt-gray-chateau {
-	color: color('gray-chateau');
-}
-
-@mixin txt-light {
-	color: color('white');
-}
-
-@mixin txt-stories {
-	color: color('ultramarine');
-}
-
-@mixin txt-ads {
-	color: color('hawkes-blue');
-}
-
-@mixin txt-email {
-	color: color('reef');
-}
-
-@mixin txt-overview {
-  color: color('mine-shaft');
 }
