@@ -10,7 +10,7 @@ $title: 앱과 AMP 통합
 
 AMP를 사용하면 기본 앱 또는 모바일 웹 앱 내에서 외부 웹사이트를
 거의 즉각적으로 렌더링할 수 있습니다. 콘텐츠의 URL을 상응하는
-AMP URL(있는 경우)과 일치시키고, 원래 버전 대신 AMP 버전을
+AMP URL(있는 경우)로 대치하고, 원래 버전 대신 AMP 버전을
 열면 됩니다. 이때
 [Google AMP URL API](https://developers.google.com/amp/cache/use-amp-url)와 같은 도구를 사용하면
 도움이 됩니다.
@@ -27,7 +27,6 @@ This is a message with links to an <a href="http://www.example.org/a">
 article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
 
-
 변환된 메시지:
 
 ```text
@@ -42,23 +41,23 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 ### 링크 변환 방법
 
-프로그래매틱 방식으로 링크를 변환하는 방법에는 세 가지가 있습니다.
+프로그래밍 방식으로 링크를 변환하는 방법에는 세 가지가 있습니다.
 
-1.  **쓰기 시간 서버측(권장)**: URL의 쓰기 시간에 Google AMP URL API를 통해
-    AMP URL을 가져오고 서버측에 AMP URL를 저장합니다. 공유하는 데
+1.  **서버측 저장시(권장)**: 서버측에 URL을 저장할 때 Google AMP URL API를 통해
+    AMP URL을 가져오고 AMP URL과 함께 서버에 저장합니다. 공유하는 데
     원본 URL이 필요할 수 있으므로 두 URL을 모두 클라이언트에 전달합니다.
-    클라이언트측 네트워크 요청이 감소되므로 권장되는
-    방식입니다. AMP 형식을 채택하는 웹사이트가 늘어나고 있으므로
-    이 접근법을 따를 경우 AMP 버전 링크를 주기적으로(예: 매일)
-    검사해야 합니다.
-1.  **읽기 시간 서버측(일부 용례)**: 콘텐츠를 클라이언트에 전달하기 이전에
+    클라이언트측 네트워크 요청이 감소되므로 권장하는 방식입니다.
+    AMP 형식을 채택하는 웹사이트가 늘어나고 있으므로 이 접근법을 따를 경우
+    AMP 버전 링크를 주기적으로(예: 매일) 검사해야 합니다.
+1.  **서버에서 제공시(경우에 따라 사용 가능)**: 콘텐츠를 클라이언트에 전달하기 이전에
     Google AMP URL API를 통해 AMP URL을 가져옵니다. 위에서 언급한 대로
     공유하는 데 원본 URL이 필요할 수 있으므로 두 URL(AMP 및 비 AMP)을 모두
-    클라이언트에 전달합니다. 이 방법은 로우 팬아웃 서비스에 적합합니다.
+    클라이언트에 전달합니다. 이 방법은 확산성(fan-out)이 낮은 서비스(예를 들어, 문서의
+    저장 빈도보다 읽기 빈도가 높을 경우 읽을 때 마다 매번 API를 호출한다면 비효율적임)에 적합합니다.
 1.  **클라이언트측(서버측을 이용할 수 없는 경우)**: 클라이언트에서
     Google AMP URL API를 통해 AMP URL을 가져옵니다. 서버측 URL 변환이 불가능한 경우(예:
     엔드 투 엔드 암호화를 사용하는 메시지 앱)에는
-    이 접근법을 사용하세요. 콘텐츠가 제공되는 즉시 사용자 상호작용이 이루어지기 전에
+    이 접근법을 사용하십시오. 콘텐츠가 제공되는 즉시 사용자 상호작용이 이루어지기 전에
     URL 변환을 실행해야 합니다.
 
 {% call callout('중요', type='caution') %}
@@ -67,7 +66,6 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 앱 성능이 저하됩니다. 대신에 위에서 설명한 세 가지 접근법 중 하나를
 사용하세요.
 {% endcall %}
-
 
 #### Google AMP URL API
 
@@ -80,7 +78,6 @@ Google AMP 캐시에 있는 캐시된 AMP 페이지 URL이 응답에
 
 예를 들어, 아래와 같은 URL 목록이 주어질 경우:
 
-
 ```json
 {"urls": [
   "https://www.example.org/article-with-amp-version",
@@ -88,9 +85,7 @@ Google AMP 캐시에 있는 캐시된 AMP 페이지 URL이 응답에
 ]}
 ```
 
-
 응답 본문에 JSON 형식의 AMP URL 매핑이 포함됩니다.
-
 
 ```json
 {
@@ -116,7 +111,6 @@ Google이 아닌 타사 AMP 캐시에 있는 AMP 페이지의 URL은 AMP URL API
 가져올 수 없습니다. 하지만 반환되는 AMP URL(ampURL)에서 캐시된 URL을
 쉽게 추출할 수 있습니다.
 {% endcall %}
-
 
 ## AMP 캐시 사용
 
@@ -179,7 +173,6 @@ AMP 페이지를 표시하기 위한 WebView를 설정하는 가장 좋은 방�
     섹션 참조)
 *   WebView 기반 뷰어에서 타사 쿠키 활성화
 *   플랫폼/앱에 대한 리퍼러 설정
-
 
 ### AMP 콘텐츠 공유
 
