@@ -9,7 +9,7 @@ $view: /views/docs.j2
   [/sidebar]
   <div class="ad-o-video">
   [video]
-  [](lBTCB7yLs8Y)
+  [](https://www.youtube.com/watch?v=OO9oKhs80aI)
   [/video]
   </div>
 
