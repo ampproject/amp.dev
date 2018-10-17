@@ -26,7 +26,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 ### 2단계: AMP 페이지에 amp-ad 태그 추가
 
-100개가 넘는 [광고 서버와 네트워크](/ko/docs/ads/ads_vendors.html)에서는 AMP와의 통합을 기본으로 제공합니다.  광고 네트워크의 광고를 추가하려면 `<amp-ad>` 태그를 추가하고 `type` 속성에 네트워크를 지정하세요.
+100개가 넘는 [광고 서버와 네트워크]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})에서는 AMP와의 통합을 기본으로 제공합니다.  광고 네트워크의 광고를 추가하려면 `<amp-ad>` 태그를 추가하고 `type` 속성에 네트워크를 지정하세요.
 
 이 예에서는 a9 네트워크의 광고를 게재하기 위해 광고 슬롯을 추가합니다. 
 
@@ -60,7 +60,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 ### 5단계: (선택사항) 자리표시자 지정 
 
-광고 네트워크에 따라 광고가 없는 경우 자리표시자를 표시하도록 선택할 수 있습니다. 이렇게 하면 공백을 방지함으로써 사용자 환경이 개선됩니다.  자리표시자를 지정하려면 `placeholder` 속성으로 하위 요소를 추가하세요. [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html)에서 자세히 알아보세요.
+광고 네트워크에 따라 광고가 없는 경우 자리표시자를 표시하도록 선택할 수 있습니다. 이렇게 하면 공백을 방지함으로써 사용자 환경이 개선됩니다.  자리표시자를 지정하려면 `placeholder` 속성으로 하위 요소를 추가하세요. [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 ### 6단계: (선택사항) 대체 동작 지정 
 
-광고 네트워크에 따라서는 게재할 수 있는 광고가 없는 경우 대체 요소를 표시하도록 선택할 수 있습니다. 대체 동작을 지정하려면 `fallback` 속성으로 하위 요소를 추가하세요. [자리표시자 및 대체 동작](/ko/docs/design/responsive/placeholders.html)에서 자세히 알아보세요.
+광고 네트워크에 따라서는 게재할 수 있는 광고가 없는 경우 대체 요소를 표시하도록 선택할 수 있습니다. 대체 동작을 지정하려면 `fallback` 속성으로 하위 요소를 추가하세요. [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
 ```html hl_lines="6"
 <amp-ad type="a9"
