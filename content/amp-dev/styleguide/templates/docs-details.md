@@ -54,42 +54,11 @@ a browser extension. As you browse, it will automatically validate each AMP page
 visited and gives a visual indication of the validity of the page as a colored
 icon.
 
-<table>
-  <tr>
-    <td>
-      <amp-img src="/static/img/docs/validator_icon_invalid.png"
-               width="20" height="20" layout="fixed"
-               alt="Red AMP icon indicating invalid AMP document.">
-      </amp-img>
-    </td>
-    <td>When there are errors within an AMP page the extension’s icon
-      shows in a red color and displays the number of errors encountered.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <amp-img src="/static/img/docs/validator_icon_valid.png"
-               width="20" height="20" layout="fixed"
-               alt="Green AMP icon indicating valid AMP document.">
-      </amp-img>
-    </td>
-    <td>When there are no errors within an AMP page, the icon shows in a
-      green color and displays the number of warnings, if any exist.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <amp-img src="/static/img/docs/validator_icon_link.png"
-               width="20" height="20" layout="fixed"
-               alt="Blue AMP icon indicating AMP HTML variant if clicked.">
-      </amp-img>
-    </td>
-    <td>When the page isn’t AMP but the page indicates that an AMP version is
-      available, the icon shows in a blue color with a link icon, and clicking on
-      the extension will redirect the browser to the AMP version.
-    </td>
-  </tr>
-</table>
+|||
+|--- |--- |
+|<amp-img src="/static/img/docs/validator_icon_invalid.png" width="20" height="20" layout="fixed" alt="Red AMP icon indicating invalid AMP document."></amp-img>|When there are errors within an AMP page the extension’s icon shows in a red color and displays the number of errors encountered.|
+|<amp-img src="/static/img/docs/validator_icon_valid.png" width="20" height="20" layout="fixed" alt="Green AMP icon indicating valid AMP document."></amp-img>|When there are no errors within an AMP page, the icon shows in a green color and displays the number of warnings, if any exist.|
+|<amp-img src="/static/img/docs/validator_icon_link.png" width="20" height="20" layout="fixed" alt="Blue AMP icon indicating AMP HTML variant if clicked."></amp-img>|When the page isn’t AMP but the page indicates that an AMP version is available, the icon shows in a blue color with a link icon, and clicking on the extension will redirect the browser to the AMP version.|
 
 AMP Validator Extension for
 [Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) and [Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/).
@@ -99,11 +68,11 @@ AMP Validator Extension for
 As part of your build and test pipelines, you can integrate AMP validation through the AMP Validator NPM packages: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) or [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (a gulp plugin).  For example, you can use the AMP Validator NPM package for integration tests or in a scheduled task to verify production AMP pages.
 
 
-##### Example: Validating an AMP HTML file
+#### Example: Validating an AMP HTML file
 
 In this example, we validate an AMP HTML file by using the [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) NPM package.  The validation status is piped out to the console.
 
-```javascript
+```js
 'use strict';
 var amphtmlValidator = require('amphtml-validator');
 var fs = require('fs');
@@ -123,11 +92,11 @@ amphtmlValidator.getInstance().then(function (validator) {
 });
 ```
 
-#####Example: Using a gulp task to validate AMP HTML
+#### Example: Using a gulp task to validate AMP HTML
 
 In this example, we have a gulp task that validates all AMP HTML files.  If there's an AMP validation error, the task exits with an error code (1).
 
-```javascript
+```js
 const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
@@ -152,28 +121,27 @@ You can validate AMP HTML files by using the [AMP HTML validator command line to
 
 Getting Started:
 
-1.  Make sure you have [Node.js with its package manager
-'npm'](https://docs.npmjs.com/getting-started/installing-node) on your system.
+1.  Make sure you have [Node.js with its package manager 'npm'](https://docs.npmjs.com/getting-started/installing-node) on your system.
 2.  Install the  [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator) by running the following command: `npm install -g amphtml-validator`.
 
 Now let's validate a real AMP HTML page:
 
-[sourcecode:console]
+```js
 $ amphtml-validator https://www.ampproject.org/
 https://www.ampproject.org/: PASS
-[/sourcecode]
+```
 
 Unsurprisingly this page is valid AMP HTML. Let's try a page that is not valid:
 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). To run the `amphtml-validator` command, you can either provide the URL of the page or a local file name. Download and save [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) into a file, then run:
 
-[sourcecode:console]
+```js
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
 several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
 several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
 ...
-[/sourcecode]
+```
 
 The format of the error messages consists of file name, line, column, and message,
 often followed by a link to the AMP HTML reference. Some editors, including Emacs, can interpret this format and let
@@ -181,16 +149,16 @@ you jump to the errors in the original file.
 
 For a good starting point to make your own AMP page consider [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
 
-[sourcecode:console]
+```js
 $ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
-[/sourcecode]
+```
 
 The command line tool offers additional features including switching off
 the color, printing JSON output, or running a specific version of the
 validator Javascript (by default it runs the latest published script).
 
-[sourcecode:console]
+```js
 $ amphtml-validator --help
 
   Usage: index [options] <fileOrUrlOrMinus...>
@@ -213,7 +181,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
-[/sourcecode]
+```
 
 ## What happens if my page isn’t valid?
 
@@ -227,7 +195,7 @@ Most validation errors are easy to address and fix. Consider this HTML tag:
 
 [sourcecode:html]
 <img src="cat.png">
-[/sourcecode]
+```
 
 Which generates this AMP validation error, shown in these different tools:
 
@@ -264,7 +232,7 @@ Each tool gives several pieces of information:
      documentation for the `<amp-img>` tag. Not all errors generate
      documentation links.
 
-Carefully re-reading the [spec]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
+Carefully re-reading the [spec](#), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
 
 To better understand the complete list of potential errors,
 see the [AMP Validation Errors guide](https://www.ampproject.org/docs/reference/validation_errors.html).
