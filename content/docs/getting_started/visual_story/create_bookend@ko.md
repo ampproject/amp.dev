@@ -14,11 +14,11 @@ $title: 북엔드 만들기
 </amp-story>
 ```
 
-브라우저를 새로 고치고 마지막 화면으로 이동하면 북엔드가 다음과 같이 표시됩니다.
+브라우저를 새로고침을 하고 마지막 화면으로 이동하면 북엔드가 다음과 같이 표시됩니다.
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='북엔드' ) }}
 
-JSON 파일에 대해 살펴보겠습니다.  텍스트 편집기에서 [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) 파일을 엽니다.
+JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) 파일을 엽니다.
 
 모든 북엔드 화면에는 `bookendVersion`(이 가이드의 경우 `v1.0`)이 필요합니다.
 
@@ -26,7 +26,7 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 편집기에서 [bookend
 "bookendVersion": "v1.0",
 ```
 
-리더는 소셜 공유 버튼을 사용하여 Twitter, Facebook, Pinterest 등 소셜 플랫폼을 통해 콘텐츠를 공유할 수 있습니다. shareProviders 개체에서 소셜 공유 제공업체를 지정하고, 각 소셜 플랫폼에 대한 [유형 이름](/ko/docs/reference/components/amp-social-share.html#pre-configured-providers)을 포함하는 배열을 만듭니다.
+독자들이 여러분의 콘텐츠를 소셜 공유 버튼을 사용하여 트위터와 페이스북 그리고 핀터레스트 등의 소셜 네트워크 플랫폼에 공유할 수 있습니다. shareProviders 객체에서 소셜 공유 제공업체를 지정하고, 각 소셜 플랫폼에 대한 [타입명](/ko/docs/reference/components/amp-social-share.html#pre-configured-providers)을 포함하는 배열을 만듭니다.
 
 이 가이드에서는 Facebook, Twitter 및 공유 제공업체의 이메일을 선택했습니다.
 
@@ -42,16 +42,16 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 편집기에서 [bookend
 
 북엔드 화면의 나머지는 관련 콘텐츠를 위한 부분입니다.  모든 관련 콘텐츠는 `components` 개체에 포함되어 있습니다. 
 
-관련 콘텐츠와 링크를 표시하는 데 사용할 수 있는 다양한 구성 요소가 있습니다. 각 구성 요소는 유형 속성으로 지정됩니다. 사용 가능한 구성 요소에 대해 살펴보겠습니다.
+관련 콘텐츠와 링크를 표시하는 데 사용할 수 있는 다양한 구성 요소가 있습니다. 각 구성 요소는 타입 속성으로 지정됩니다. 사용 가능한 구성 요소에 대해 살펴보겠습니다.
 
 <table>
 <thead>
 <tr>
-  <th width="20%">유형</th>
+  <th width="20%">타입</th>
   <th>설명</th>
 </tr>
 <tr>
-  <td>제목</td>
+  <td>heading</td>
   <td>자료를 그룹화할 제목을 지정할 수 있습니다.
 <pre class="nopreline">
 {
@@ -66,7 +66,7 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 편집기에서 [bookend
   </td>
 </tr>
 <tr>
-  <td>작게</td>
+  <td>small</td>
   <td>연결된 작은 이미지를 포함하는 옵션을 사용하여 관련 자료에 연결할 수 있습니다.
 <pre class="nopreline">
 {
@@ -83,8 +83,8 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 편집기에서 [bookend
 </td>
 </tr>
 <tr>
-  <td>가로 모드</td>
-  <td>동영상 같은 다른 콘텐츠나 자료에 연결할 수 있습니다. 가로 모드 유형에 연결된 이미지는 가로로 더 큰 형식으로 되어 있습니다.
+  <td>landscape</td>
+  <td>동영상 같은 다른 콘텐츠나 자료에 연결할 수 있습니다. 가로 모드 타입에 연결된 이미지는 가로로 더 큰 형식으로 되어 있습니다.
 <pre class="nopreline">
 {
   "type": "landscape",
@@ -101,8 +101,8 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 편집기에서 [bookend
   </td>
 </tr>
 <tr>
-  <td>세로 모드</td>
-  <td>스토리 또는 다른 콘텐츠에 연결할 수 있습니다.  세로 모드 유형에 연결된 이미지는 세로로 더 큰 형식으로 되어 있습니다.
+  <td>portrait</td>
+  <td>스토리 또는 다른 콘텐츠에 연결할 수 있습니다.  세로 모드 타입에 연결된 이미지는 세로로 더 큰 형식으로 되어 있습니다.
 <pre class="nopreline">
 {
   "type": "portrait",
