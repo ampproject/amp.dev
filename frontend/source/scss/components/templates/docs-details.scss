@@ -12,6 +12,8 @@
 @import '../../functions';
 @import '../../mixins';
 @import '../../variables';
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
 
 .#{template('docs-details')} {
   display: grid;
@@ -31,10 +33,45 @@
   main {
     width: 100%;
     grid-column: 1;
+    position: relative;
 
     @media screen and (min-width: 1024px){
       grid-column-start: 7;
       grid-column-end: 19;
     }
   }
+}
+
+.toc {
+  position: fixed;
+  width: 42%;
+  padding-left: 30px;
+  left: 70%;
+
+  &:before {
+    @include txt;
+    @include txt-2;
+    @include txt-strong;
+    content: 'On this page:';
+  }
+
+  h4 {
+    display: none;
+  }
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    & > li > a {
+      @include txt;
+      @include txt-3;
+
+      &:hover {
+        @include color-blue-ribbon;
+      }
+    }
+  }
+
 }
