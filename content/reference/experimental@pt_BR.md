@@ -2,42 +2,60 @@
 $title: Recursos experimentais
 ---
 
-[Os componentes experimentais de AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
-são recursos lançados que não estão prontos para uso geral. Por isso, eles são protegidos por um status
-experimental.
+Os [componentes experimentais de AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+são recursos lançados que ainda não estão prontos para uso geral. Por isso, esses componentes são protegidos por um status **experimental**.
 
-Os desenvolvedores e usuários podem ativar esses recursos antes do lançamento completo. No entanto, esses
-recursos devem ser usados ​​com cautela, pois podem ter bugs ou efeitos colaterais inesperados.
+Os desenvolvedores e os usuários podem optar por usar esses recursos antes que eles estejam totalmente disponíveis para o público.
+No entanto, eles precisam ser usados com cautela, porque podem apresentar bugs ou causar efeitos inesperados.
 
-## Ativar o Canal Dev das AMP
+## Ativar o Canal Dev AMP
 
-O Canal Dev das AMP é uma forma de fazer com que o navegador use uma versão mais recente das bibliotecas de
-JavaScript AMP.
+O Canal Dev AMP é uma forma de fazer com que o navegador use uma versão mais recente das bibliotecas de JavaScript para AMP.
 
-Talvez a versão do Canal Dev das AMP **seja mais instável** e tenha recursos indisponíveis para alguns
-usuários. Ative essa opção se quiser testar as novas versões da AMP, informar bugs ou criar documentos
-vinculados a recursos novos que ainda não estejam disponíveis para todos.
+Talvez a versão do Canal Dev AMP seja **mais instável** e tenha recursos indisponíveis para alguns usuários. Ative essa opção se quiser testar as novas versões AMP, informar bugs ou criar documentos usando recursos novos que ainda não estão disponíveis para todos.
 
 Ativar o Canal Dev é ideal para:
 
 - testar e analisar recursos novos que ainda não estão disponíveis para todos os usuários;
-- usar garantia da qualidade para garantir que seu site seja compatível com a próxima versão das AMP.
+- fazer o controle de qualidade para verificar se o site está compatível com a próxima versão AMP.
 
-Se você encontrar um problema que pareça ocorrer somente na versão do Canal Dev das AMP, [comunique esse problema](https://github.com/ampproject/amphtml/issues/new) com uma descrição. Sempre inclua o URL de uma página que reproduza o problema.
+Se você encontrar um problema que pareça ocorrer somente na versão do Canal Dev AMP, [envie um relatório do problema](https://github.com/ampproject/amphtml/issues/new) com uma descrição. Sempre inclua o URL de uma página que mostre esse problema.
 
-Para ativar o Canal Dev das AMP no navegador, acesse [a página de experimentos de AMP](https://cdn.ampproject.org/experiments.html) e ative o experimento "Canal Dev das AMP". Para receber notificações sobre alterações importantes/novidades das AMP, inscreva-se na lista de e-mails [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Para ativar o Canal Dev AMP no navegador, acesse [a página de experimentos de AMP](https://cdn.ampproject.org/experiments.html) e ative o experimento "AMP Dev Channel" (Canal Dev AMP, em inglês). Para receber notificações sobre alterações/novidades importantes das AMP, inscreva-se na lista de e-mails [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Ativar um componente experimental
 
-Para o conteúdo veiculado a partir de [https://cdn.ampproject.org](https://cdn.ampproject.org), acesse a [página de experimentos de AMP](https://cdn.ampproject.org/experiments.html) e ative (ou desative) qualquer componente experimental clicando nos controles correspondentes. A ativação definirá um cookie no navegador que ativará o experimento em todas as páginas AMP veiculadas pelo cache de AMP do Google.
+#### Disponibilizado por cdn.ampproject.org
 
-Para o conteúdo veiculado a partir de outros domínios, use o modo desenvolvedor e ative os experimentos nos controles do console de ferramentas do desenvolvedor com isto:
+Para conteúdo disponibilizado por [https://cdn.ampproject.org](https://cdn.ampproject.org), 
+acesse a [página de experimentos de AMP](https://cdn.ampproject.org/experiments.html)
+e ative (ou desative) qualquer componente experimental clicando nos controles correspondentes. A ativação de um experimento definirá um cookie no seu navegador para ativar o experimento em todas as páginas AMP disponibilizadas por meio do cache de AMP do Google.
 
-[sourcecode:js]
+#### Disponibilizado por outros domínios
+
+Para conteúdo disponibilizado por qualquer outro domínio, é possível ativar ou desativar os experimentos no console de ferramentas do desenvolvedor quando o modo de desenvolvimento estiver ativado. Para isso, use:
+
+```js
 AMP.toggleExperiment('experiment')
-[/sourcecode]
+```
 
-Nenhum arquivo AMP que inclua recursos experimentais passará na
-[validação de AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+Se o arquivo AMP incluir recursos experimentais, será reprovado na
+[validação de AMP](/pt_br/docs/fundamentals/validate.html).
 Remova os componentes experimentais de documentos AMP prontos para produção.
 
+## Ativar um experimento para um documento específico
+
+O documento pode ativar alguns experimentos. Para fazer isso, basta colocar uma metatag do nome `amp-experiments-opt-in` no cabeçalho do documento HTML antes do script AMP (`https://cdn.ampproject.org/v0.js`). O valor do conteúdo é uma string com os códigos dos experimentos que serão ativados, separados por vírgula.
+
+```html
+<head>
+  …
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <!-- The meta tag needs to be placed before the AMP runtime script.-->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  …
+</head>
+```
+
+Ao fazer isso, os experimentos especificados serão ativados para todos os visitantes do documento. No entanto, nem todos os experimentos podem ser ativados no nível do documento. Para ver todos os experimentos na lista de permissões, verifique o atributo `allow-doc-opt-in` no arquivo` prod-config.json` do projeto. O recurso ativado no documento pode ser desativado pelo usuário.
+ 
