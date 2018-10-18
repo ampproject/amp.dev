@@ -44,9 +44,10 @@
 
 .toc {
   position: fixed;
-  width: 42%;
+  width: 625px;
+  transform: translateX(50%);
+  left: 50%;
   padding-left: 30px;
-  left: 70%;
 
   &:before {
     @include txt;
