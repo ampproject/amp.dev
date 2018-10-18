@@ -21,7 +21,7 @@ AMP를 사용하려면 다음 세 단계를 따라가십시오.
 
 ## 매일 AMP 사용하기
 
-AMP 프로젝트에서 제공하는 자료를 토대로 꾸준하게 AMP를 사용하십시오.
+AMP 프로젝트에서 제공하는 자료를 토대로 꾸준하게 AMP를 사용해 보십시오.
 
 <a class="button" href="#amp-day-to-day-resources">자료 보기</a>
 
