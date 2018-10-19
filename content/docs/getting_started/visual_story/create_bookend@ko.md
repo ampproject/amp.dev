@@ -14,7 +14,7 @@ $title: 북엔드 만들기
 </amp-story>
 ```
 
-브라우저를 새로고침을 하고 마지막 화면으로 이동하면 북엔드가 다음과 같이 표시됩니다.
+브라우저에서 새로고침을 하고 마지막 화면으로 이동하면 북엔드가 다음과 같이 표시됩니다.
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='북엔드' ) }}
 
