@@ -1,6 +1,7 @@
 path: /documentation/{base}.html
 view: /views/default.j2
 title: Documentation
+filter: all
 
 categories:
   - Get Started

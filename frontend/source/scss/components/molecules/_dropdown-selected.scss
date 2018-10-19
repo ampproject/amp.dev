@@ -115,6 +115,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
    li {
      order: 2;
+     padding-left: 0;
     }
 
 	&-display {
@@ -151,9 +152,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	@include hl-h3;
 	@include color-white;
 	outline: color('white');
-	padding: 1px 20px 1px 10px;
+	padding: 1px 20px 5px 10px;
   order: 2;
-
+  display: block;
 
 	&-drop-down {
 		margin-bottom: 5px;
