@@ -1,16 +1,15 @@
 ---
-$title: Mendalami AMP Analytics
+$title: Mendalami analisis AMP
 ---
 [TOC]
 
-
-Panduan ini mendalami
+Panduan ini menjelaskan lebih jauh tentang
 [komponen amp-analytics](/id/docs/reference/components/amp-analytics.html),
-menguraikan konfigurasi `amp-analytics` contoh ke dalam blok pembangun utama ini:
+dengan memecah sampel konfigurasi `amp-analytics` ke dalam elemen-elemen penyusun berikut:
 
-Bagian selanjutnya dari panduan ini memakai contoh konfigurasi ini,
-yang melacak tampilan halaman dan klik pengguna pada tautan
-dan mengirim data analisis ke penyedia pihak ketiga,
+Bagian lain dalam panduan ini menggunakan sampel konfigurasi ini,
+yang melacak jumlah kunjungan halaman dan klik pengguna pada link
+serta mengirim data analisis ke penyedia pihak ketiga,
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
 
 ```html
@@ -52,80 +51,81 @@ dan mengirim data analisis ke penyedia pihak ketiga,
 </amp-analytics>
 ```
 
-**Catatan:** Kode contoh di atas adalah untuk membantu Anda belajar, namun bukan berarti contoh itu realistis. Jika Anda bekerja dengan penyedia analisis, ada kemungkinan bahwa sampel di atas tidak masuk akal, konfigurasi penyedia akan meniadakan kerumitan. Rujuklah dokumen penyedia analisis untuk melihat konfigurasi contoh.
+{% call callout('Catatan', type='note') %}
+Contoh kode di atas hanya digunakan untuk membantu Anda belajar, bukan sampel kode sebenarnya. Jika Anda bekerja dengan penyedia analisis, sampel di atas kemungkinan tidak akan digunakan; konfigurasi penyedia menghilangkan kerumitan. Lihat [dokumentasi penyedia analisis](/id/docs/analytics/analytics-vendors.html) untuk mengetahui sampel konfigurasi.{% endcall %}
 
-## Tempat mengirim data analisis: atribut tipe
+## Ke mana data analisis dikirim: atribut type
 
-AMP didesain untuk mendukung dua pola umum pengumpulan data:
+AMP dirancang untuk mendukung dua pola pengumpulan data yang umum:
 
-* Penyerapan oleh endpoint yang dipublikasikan pemilik untuk sistem analisis internal.
-* Penyerapan oleh endpoint yang dimiliki oleh vendor untuk interoperabilitas dengan solusi vendor
+* Penyerapan data oleh endpoint milik penayang untuk sistem analisis internal.
+* Penyerapan data oleh endpoint milik vendor untuk interoperabilitas dengan solusi vendor
 (misalnya, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
 Untuk mengirim data analisis ke penyedia analisis,
-sertakan atribut `type` dalam tag `amp-analytics` dan atur nilainya
-ke vendor yang sesuai, sebagaimana didefinisikan dalam
-[spesifikasi amp-analytics](/docs/reference/extended/amp-analytics.html).
+sertakan atribut `type` ke dalam tag `amp-analytics` dan tetapkan nilainya
+ke vendor yang sesuai, seperti dijelaskan pada
+daftar [Vendor Analisis](/id/docs/analytics/analytics-vendors.html).
 
 Misalnya: `<amp-analytics type="googleanalytics">` mengirim data analisis
-ke penyedia analisis pihak ketiga, Google Analytics,
-Untuk mengirim data ke endpoint yang dimiliki penerbit,
-cukup jangan sertakan atribut `type`;
-data analisis dikirim ke endpoint yang didefinisikan untuk masing-masing
-[permintaan](/id/docs/analytics/deep_dive_analytics.html#data-apa-yang-dikirimkan:-meminta-atribut).
+ke penyedia analisis pihak ketiga, Google Analytics.
+Untuk mengirim data ke endpoint milik penayang,
+jangan sertakan atribut `type`;
+data analisis dikirim ke endpoint yang ditentukan untuk masing-masing
+[permintaan](/id/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
 
-Konfigurasi vendor Analytics merupakan cara cepat
-untuk memulai `amp-analytics`.
-Anda harus merujuk pada dokumentasi vendor dan
-sumber daya bantuan untuk panduan lebih lanjut.
-Sebagaimana yang dijelaskan sebelumnya,
-daftar vendor yang sudah terintegrasi dengan AMP, serta tautan
-ke dokumentasi spesifik bisa ditemukan dalam
-[spesifikasi amp-analytics](/id/docs/reference/components/amp-analytics.html).
+Konfigurasi vendor analisis adalah cara cepat
+untuk mulai menggunakan `amp-analytics`.
+Sebaiknya Anda pelajari dokumentasi vendor dan
+referensi bantuan untuk mendapatkan panduan lebih lanjut.
+Seperti disebutkan sebelumnya,
+daftar vendor yang telah berintegrasi dengan AMP, serta link
+ke dokumentasi spesifik mereka, dapat ditemukan di
+daftar [Vendor Analisis](/id/docs/analytics/analytics-vendors.html).
 
 Jika Anda adalah vendor analisis,
-ketahui selengkapnya tentang
-[mengintegrasikan konfigurasi analisis sendiri ke dalam AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+pelajari lebih lanjut cara
+[mengintegrasikan konfigurasi analisis Anda ke AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
 
 ## Memuat konfigurasi jarak jauh: atribut config
 
-Anda tidak harus menyertakan semua konfigurasi
-untuk `amp-analytics` secara menyeluruh di halaman AMP Anda.
-Sebaliknya, Anda bisa memanggil URL jarak jauh
-untuk semua atau sebagian konfigurasi.
+Anda tidak perlu menyertakan semua konfigurasi
+untuk `amp-analytics` seluruhnya di halaman AMP.
+Sebagai gantinya, Anda dapat memanggil URL jarak jauh
+untuk semua atau sebagian konfigurasi tersebut.
 
-Hal ini memungkinkan Anda untuk melakukan berbagai hal seperti memvariasikan konfigurasi
-berdasarkan permintaan spesifik
-Jika Anda sebagai penerbit memiliki kontrol atas file jarak jauh,
-Anda bisa melakukan pemrosesan sisi server yang diperlukan
-untuk membuat data konfigurasi.
+Dengan begitu Anda dapat melakukan beberapa hal seperti memvariasikan konfigurasi
+berdasarkan permintaan spesifik.
+Jika Anda sebagai penayang memiliki kontrol atas file jarak jauh,
+Anda dapat melakukan semua pemrosesan sisi server yang diperlukan
+untuk menyusun konfigurasi data.
 
 Langkah pertama untuk memuat konfigurasi jarak jauh adalah
-menyertakan atribut config dalam tag `amp-analytics`:
+dengan menyertakan atribut config ke dalam tag `amp-analytics`:
 
-```js
+```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-Langkah berikutnya adalah membuat materi JSON yang berada dalam URL jarak jauh.
+Langkah selanjutnya adalah membuat konten JSON yang berada di URL jarak jauh.
 Dalam contoh sederhana ini,
-konfigurasi yang terkandung dalam objek JSON hanyalah merupakan nilai variabel untuk akun analisis.
+konfigurasi yang berada dalam objek JSON hanya berupa nilai variabel untuk akun analisis.
 
-Contoh materi dalam `https://example.com/analytics.account.config.json`:
+Contoh konten di `https://example.com/analytics.account.config.json`:
 
 ```js
 {
   "vars": {
-    "account": "UA-XXXXX-Y"  // Replace with your property ID.
+    "account": "UA-XXXXX-Y"  // Ganti dengan ID properti Anda.
   }
 }
 ```
 
-Langkah terakhir adalah untuk memastikan apa yang diambil dari file jarak jauh
-ke dalam tempat yang sesuai dalam konfigurasi `amp-analytics`.
-Baik dalam permintaan `pageview` maupun `event` di sini,
-nilai variabel `account` secara otomatis diatur
-ke nilai akun dalam URL jarak jauh (`"account": "UA-XXXXX-Y"`):
+Langkah terakhir adalah memastikan data apa dalam file jarak jauh yang ditarik
+ke tempat yang sesuai dalam konfigurasi `amp-analytics`.
+Dalam kedua permintaan `pageview` dan `event` di sini,
+nilai variabel `account` otomatis ditetapkan
+ke nilai akun pada URL jarak jauh (`"account": "UA-XXXXX-Y"`):
 
 ```js
 "requests": {
@@ -134,34 +134,36 @@ ke nilai akun dalam URL jarak jauh (`"account": "UA-XXXXX-Y"`):
 }
 ```
 
-**Penting:** AMP tidak memvalidasi terhadap lebih dari satu penggunaan dari variabel yang sama.
-Nilai-nilai diisikan mengikuti urutan prioritas penggantian variabel,
-dan nilai dalam URL jarak jauh berada di prioritas teratas dari urutan tersebut
-(lihat [Pengurutan penggantian variabel](/id/docs/analytics/deep_dive_analytics.html#pengurutan-penggantian-variabel)).
 
-## Permintaan, pemicu, & transport
+{% call callout('Penting', type='caution') %}
+AMP tidak memvalidasi penggunaan ganda dari variabel yang sama.
+Nilai diisikan sesuai urutan preferensi substitusi variabel,
+dan nilai dalam URL jarak jauh menempati urutan teratas (lihat [Pengurutan substitusi variabel](/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+{% endcall %}
 
-Atribut `requests` mendefinisikan 'data apa yang dikirimkan'
+## Atribut requests, triggers & transport
+
+Atribut `requests` menetapkan ‘data apa yang dikirim’
 (misalnya, `pageviews`, `events`),
-dan tempat data tersebut dikirimkan (URL yang digunakan untuk mentransmisikan data).
+dan ke mana data tersebut dikirim (URL yang digunakan untuk mengirim data).
 
-Atribut `triggers` menjelaskan kapan data analisis harus dikirimkan,
-misalnya, ketika pengguna melihat halaman, ketika pengguna mengeklik tautan.
+Atribut `triggers` menjelaskan kapan data analisis harus dikirim,
+misalnya, saat pengguna melihat halaman, saat pengguna mengklik link.
 
-Atribut `transport` menetapkan cara mengirim permintaan,
-atau secara lebih spesifik lagi, protokolnya.
+Atribut `transport` menentukan cara mengirim permintaan,
+lebih tepatnya, protokol pengirimannya.
 
-Teruskan membaca untuk mengetahui selengkapnya tentang konfigurasi ini.
-(Anda juga bisa membaca tentang konfigurasi ini dalam
+Baca terus untuk mempelajari lebih lanjut tentang konfigurasi ini.
+(Anda juga bisa membaca tentang konfigurasi ini di
 [referensi amp-analytics](/id/docs/reference/components/amp-analytics.html).)
 
-### Data apa yang dikirimkan: meminta atribut
+### Data apa yang dikirim: atribut requests
 
-`request-name` digunakan dalam konfigurasi pemicu untuk menetapkan
-permintaan apa yang harus dikirim sebagai respons terhadap suatu kejadian tertentu.
-`request-value` merupakan URL `https`.
-Nilai-nilai ini bisa meliputi token placeholder
-yang bisa merujuk permintaan atau variabel lain.
+Atribut `request-name` digunakan dalam konfigurasi pemicu untuk menentukan
+permintaan apa yang harus dikirim sebagai respons atas peristiwa tertentu.
+Atribut `request-value` berupa URL `https`.
+Nilai ini dapat mencakup token placeholder
+yang dapat merujuk ke permintaan atau variabel lain.
 
 ```js
 "requests": {
@@ -171,37 +173,37 @@ yang bisa merujuk permintaan atau variabel lain.
 ```
 
 Beberapa penyedia analisis (termasuk Google Analytics)
-sudah memberikan konfigurasi,
-yang Anda gunakan lewat atribut `type`.
-Jika Anda menggunakan penyedia analisis,
-Anda tidak perlu menyertakan informasi `requests`.
-Lihat dokumentasi vendor untuk mengetahui
-jika `requests` perlu dikonfigurasi, dan cara melakukannya.
+telah menyediakan konfigurasi,
+yang Anda gunakan melalui atribut `type`.
+Jika menggunakan penyedia analisis,
+Anda mungkin tidak perlu menyertakan informasi `requests`.
+Lihat dokumentasi vendor Anda untuk mencari tahu
+perlu tidaknya mengonfigurasi atribut `requests` dan cara melakukannya.
 
-#### Menambahkan URL permintaan: Extra URL Params
+#### Menambahkan URL permintaan: Parameter URL Tambahan
 
 Atribut [extraUrlParams](/id/docs/reference/components/amp-analytics.html#extra-url-params)
-atribut menetapkan parameter tambahan untuk ditambahkan ke </string> kueri dari URL permintaan lewat konvensi "&foo=baz" yang biasa.
+menentukan parameter tambahan yang akan ditambahkan ke akhir string kueri URL permintaan melalui konvensi "&foo=baz" biasa.
 
-Contoh `amp-analytics` menambahkan parameter tambahan <code>cd1</code>
-ke permintaan dan mengatur nilai parameter ke "AMP":
+Contoh `amp-analytics` menambahkan parameter tambahan `cd1`
+ke permintaan dan menetapkan nilai parameter ke "AMP":
 
 ```js
-"extraUrlParams": {
-  "cd1": "AMP"
-}
+  "extraUrlParams": {
+    "cd1": "AMP"
+  }
 ```
 
-### Ketika data dikirimkan: memicu atribut
+### Kapan data dikirim: atribut triggers
 
-Atribut `triggers` menjelaskan kapan permintaan analisis harus dikirimkan.
-Atribut ini berisi pasangan nilai-kunci dari nama pemicu dan konfigurasi pemicu.
-Nama pemicu bisa berupa sembarang </string> yang terdiri
-karakter alfanumerik (a-zA-Z0-9).
+Atribut `triggers` menjelaskan kapan permintaan analisis harus dikirim.
+Atribut ini berisi key-value pair yaitu nama pemicu dan konfigurasi pemicu.
+Nama pemicu dapat berupa string apa saja yang terdiri
+dari karakter alfanumerik (a-zA-Z0-9).
 
 Misalnya,
 elemen `amp-analytics` berikut dikonfigurasi untuk mengirim permintaan ke
-`https://example.com/analytics` ketika dokumen dimuat pertama kali,
+`https://example.com/analytics` saat dokumen pertama kali dimuat,
 dan setiap kali tag `a` diklik:
 
 ```js
@@ -222,91 +224,93 @@ dan setiap kali tag `a` diklik:
 }
 ```
 
+{% call callout('Penting', type='caution') %} Pendekatan di atas hanya direkomendasikan untuk halaman AMP dan bukan untuk iklan AMPHTML. Karena prioritas analisis lebih rendah dibandingkan konten pada halaman, direkomendasikan untuk melacak klik menggunakan pengalihan browser untuk menghindari kehilangan klik. {% endcall %}
+
 AMP mendukung konfigurasi pemicu berikut:
 
 <table>
   <thead>
     <tr>
       <th data-th="Trigger Config" class="col-thirty">Konfigurasi Pemicu</th>
-      <th data-th="Description">Keterangan</th>
+      <th data-th="Description">Deskripsi</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td data-th="Trigger Config"><code>on</code> (diperlukan)</td>
-      <td data-th="Description">Kejadian untuk pendengar. Nilai yang valid adalah <code>click</code>, <code>scroll</code>, <code>timer</code>, dan <code>visible</code>.</td>
+      <td data-th="Trigger Config"><code>on</code> (wajib)</td>
+      <td data-th="Description">Peristiwa yang perlu dideteksi. Nilai yang valid meliputi <code>click</code>, <code>scroll</code>, <code>timer</code>, dan <code>visible</code>.</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>request</code> (diperlukan)</td>
-      <td data-th="Description">Nama permintaan untuk dikirim (seperti yang ditetapkan dalam <a href="/id/docs/analytics/deep_dive_analytics.html#data-apa-yang-dikirimkan:-meminta-atribut">permintaan</a>).</td>
+      <td data-th="Trigger Config"><code>request</code> (wajib)</td>
+      <td data-th="Description">Nama permintaan yang akan dikirim (seperti ditentukan dalam <a href="/id/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">permintaan</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Objek yang berisi pasangan nilai-kunci yang digunakan untuk mengganti <code>vars</code> didefinisikan dalam config di tingkat teratas, atau untuk menetapkan <code>vars</code> sebagai unik bagi pemicu ini (lihat juga <a href="/id/docs/analytics/deep_dive_analytics.html#pengurutan-penggantian-variabel">Pengurutan penggantian variabel</a>).</td>
+      <td data-th="Description">Objek yang berisi key-value pair yang digunakan untuk menggantikan <code>vars</code> yang ditetapkan dalam konfigurasi level teratas, atau untuk menentukan <code>vars</code> yang unik bagi pemicu ini (lihat juga <a href="/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Pengurutan substitusi variabel</a>).</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>selector</code> (diperlukan ketika <code>on</code> diatur ke <code>click</code>)</td>
-      <td data-th="Description">Pemilih CSS digunakan untuk menyaring elemen yang harus dilacak. Gunakan nilai <code>*</code> untuk melacak semua elemen. Konfigurasi ini digunakan bersama pemicu <code>click</code>. Ketahui cara menggunakan pemilih untuk <a href="/id/docs/analytics/use_cases.html#melacak-klik-halaman">melacak klik halaman</a> dan <a href="/id/docs/analytics/use_cases.html#melacak-interaksi-sosial">interaksi sosial</a>.</td>
+      <td data-th="Trigger Config"><code>selector</code> (wajib jika <code>on</code> ditetapkan ke <code>click</code>)</td>
+      <td data-th="Description">Selektor CSS yang digunakan untuk menyaring elemen mana yang harus dilacak. Gunakan nilai <code>*</code> untuk melacak semua elemen. Konfigurasi ini digunakan bersamaan dengan pemicu <code>click</code>. Pelajari cara menggunakan selektor untuk <a href="/id/docs/analytics/use_cases.html#tracking-page-clicks">melacak klik halaman</a> dan <a href="/id/docs/analytics/use_cases.html#tracking-social-interactions">interaksi sosial</a>.</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>scrollSpec</code> (diperlukan ketika <code>on</code> diatur ke <code>scroll</code>)</td>
-      <td data-th="Description">Mengontrol berdasarkan kondisi ketika halaman digulirkan kejadian <code>scroll</code> akan dipicu. Objek ini bisa berisi <code>verticalBoundaries</code> dan <code>horizontalBoundaries</code>. Sekurangnya satu dari dua properti diperlukan agar kejadian <code>scroll</code> dipicu. Nilai-nilai untuk kedua properti tersebut harus larik angkat yang berisi batasan sebuah kejadian gulir akan dihasilkan. Lihat contoh ini dalam <a href="/id/docs/analytics/use_cases.html#melacak-pengguliran">melacak pengguliran</a>.</td>
+      <td data-th="Trigger Config"><code>scrollSpec</code> (wajib jika <code>on</code> ditetapkan ke <code>scroll</code>)</td>
+      <td data-th="Description">Mengontrol dalam kondisi apa peristiwa <code>scroll</code> akan diaktifkan saat halaman di-scroll. Objek ini dapat berisi <code>verticalBoundaries</code> dan <code>horizontalBoundaries</code>. Setidaknya satu dari dua properti tersebut diperlukan untuk mengaktifkan peristiwa <code>scroll</code>. Nilai untuk kedua properti harus berupa array angka yang berisi batasan kapan peristiwa scroll akan dibuat. Lihat contoh ini di <a href="/id/docs/analytics/use_cases.html#tracking-scrolling">melacak scroll</a>.</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>timerSpec</code> (diperlukan ketika <code>on</code> diatur ke <code>timer</code>)</td>
-      <td data-th="Description">Mengontrol ketika kejadian <code>timer</code> dipicu. Timer akan langsung dipicu dan kemudian pada interval yang telah ditetapkan. Konfigurasi ini digunakan bersama pemicu <code>timer</code>.</td>
+      <td data-th="Trigger Config"><code>timerSpec</code> (wajib jika <code>on</code> ditetapkan ke <code>timer</code>)</td>
+      <td data-th="Description">Mengontrol kapan peristiwa <code>timer</code> diaktifkan. Timer akan segera dipicu, dan dipicu lagi pada interval tertentu setelahnya. Konfigurasi ini digunakan bersamaan dengan pemicu <code>timer</code>.</td>
     </tr>
   </tbody>
 </table>
 
-**Penting:** Pemicu dari konfigurasi yang berprioritas lebih rendah dikesampingkan
-oleh pemicu dengan nama yang sama dari konfigurasi dengan prioritas lebih tinggi
-(lihat [Pengurutan penggantian variabel](/id/docs/analytics/deep_dive_analytics.html#pengurutan-penggantian-variabel)).
+{% call callout('Penting', type='caution') %}
+Pemicu dari konfigurasi yang prioritasnya lebih rendah akan digantikan oleh pemicu dengan nama yang sama dari konfigurasi yang prioritasnya lebih tinggi (lihat [Pengurutan substitusi variabel](/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+{% endcall %}
 
-### Bagaimana data dikirimkan: atribut transport
+### Bagaimana data dikirim: atribut transport
 
-Atribut `transport` menetapkan cara mengirim permintaan.
-Ketiga metode berikut ini diaktifkan secara default:
+Atribut `transport` menentukan cara mengirim permintaan.
+Tiga metode berikut diaktifkan secara default:
 
 <table>
   <thead>
     <tr>
       <th data-th="Transport Method" class="col-thirty">Metode Transport</th>
-      <th data-th="Description">Keterangan</th>
+      <th data-th="Description">Deskripsi</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td data-th="Transport Method"><code>beacon</code></td>
-      <td data-th="Description">Menunjukkan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a> bisa digunakan untuk mentransmisikan permintaan. Ini akan mengirimkan permintaan <code>POST</code>, dengan kredensial, dan bagian badan yang kosong.</td>
+      <td data-th="Description">Menunjukkan bahwa <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a> dapat digunakan untuk mengirim permintaan. Ini akan mengirimkan permintaan <code>POST</code>, beserta kredensial, dan bagian utama halaman yang kosong.</td>
     </tr>
     <tr>
       <td data-th="Transport Method"><code>xhrpost</code></td>
-      <td data-th="Description">Menunjukkan <code>XMLHttpRequest</code> bisa digunakan untuk mentransmisikan permintaan tersebut. Ini akan mengirimkan permintaan <code>POST</code>, dengan kredensial, dan badan teks yang kosong.</td>
+      <td data-th="Description">Menunjukkan bahwa <code>XMLHttpRequest</code> dapat digunakan untuk mengirim permintaan. Ini akan mengirimkan permintaan <code>POST</code>, beserta kredensial, dan bagian utama halaman yang kosong.</td>
     </tr>
     <tr>
       <td data-th="Transport Method"><code>image</code></td>
-      <td data-th="Description">Menunjukkan permintaan bisa dikirimkan dengan menghasilkan tag <code>Image</code>. Ini akan mengirimkan permintaan <code>GET</code>.</td>
+      <td data-th="Description">Menunjukkan bahwa permintaan dapat dikirim dengan membuat tag <code>Image</code>. Ini akan mengirim permintaan <code>GET</code>.</td>
     </tr>
   </tbody>
 </table>
 
 Hanya satu metode transport yang digunakan,
-dan hanya yang memiliki prioritas lebih tinggi
+yaitu metode dengan prioritas paling tinggi
 yang diaktifkan, diizinkan, dan tersedia.
-Prioritasnya adalah `beacon` > `xhrpost` > `image`.
-Jika agen-pengguna klien tidak mendukung sebuah metode,
-metode prioritas tertinggi berikutnya yang diaktifkan akan digunakan.
+Urutan prioritasnya adalah `beacon` > `xhrpost` > `image`.
+Jika agen pengguna klien tidak mendukung salah satu metode,
+maka metode aktif dengan prioritas tertinggi berikutnya yang akan digunakan.
 
-Sertakan atribut `transport` dalam konfigurasi Anda
-hanya jika Anda ingin membatasi opsi transport,
+Sertakan atribut `transport` dalam konfigurasi
+hanya jika Anda ingin membatasi opsi transport;
 jika tidak, Anda bisa menghentikan permintaan.
 
-Dalam contoh di bawah ini,
-`beacon` dan `xhrpost` diatur ke false,
-sehingga tidak akan digunakan meski prioritasnya lebih tinggi daripada `image`.
-Jika agen-pengguna klien mendukung metode `image`,
-maka ia akan digunakan; jika tidak, tidak ada permintaan yang akan dikirimkan.
+Pada contoh di bawah ini,
+`beacon` dan `xhrpost` ditetapkan ke false,
+sehingga keduanya tidak akan digunakan meskipun memiliki prioritas yang lebih tinggi daripada `image`.
+Jika agen pengguna klien mendukung metode `image`,
+maka metode tersebut akan digunakan; jika tidak, tidak ada permintaan yang dikirim.
 
 ```js
 'transport': {
@@ -316,17 +320,17 @@ maka ia akan digunakan; jika tidak, tidak ada permintaan yang akan dikirimkan.
 }
 ```
 
-## Pengurutan penggantian variabel
+## Pengurutan substitusi variabel
 
-AMP mengisi variabel dengan nilai berdasarkan urutan prioritas:
+AMP mengisi variabel dengan nilai dalam urutan prioritas:
 
-1. Konfigurasi jarak jauh (lewat `config`).
-2. `vars` disarangkan di dalam pemicu di dalam `triggers`.
-3. `vars` di tingkat teratas disarangkan di dalam `amp-analytics`.
-4. Nilai yang disediakan oleh platform.
+1. Konfigurasi jarak jauh (melalui `config`).
+2. `vars` yang disarangkan di dalam pemicu dalam `triggers`.
+3. `vars` di level teratas yang disarangkan dalam `amp-analytics`.
+4. Nilai yang disediakan platform.
 
-Dalam contoh ini, ada konfigurasi jarak jauh,
-variabel yang didefinisikan di tingkat teratas, dalam pemicu, dan di tingkat platform:
+Dalam contoh ini, terdapat konfigurasi jarak jauh,
+variabel yang ditentukan di level teratas, pada pemicu, dan di tingkat platform:
 
 ```html
 <amp-analytics config="http://example.com/config.json">
@@ -353,17 +357,17 @@ variabel yang didefinisikan di tingkat teratas, dalam pemicu, dan di tingkat pla
 </amp-analytics>
 ```
 
-Ketika `var` yang sama didefinisikan di lebih dari satu lokasi,
-urutan prioritas variabel mengatur nilainya satu kali.
-Sehingga jika dalam contoh di atas konfigurasi jarak jauh mendefinisikan `account` sebagai UA-XXXXX-Y,
-maka nilai dari berbagai vars akan menjadi sebagai berikut:
+Saat `var` yang sama ditentukan di beberapa lokasi,
+urutan prioritas variabel menetapkan nilainya satu kali.
+Sehingga, jika konfigurasi jarak jauh menetapkan `account` sebagai UA-XXXXX-Y pada contoh di atas,
+maka nilai dari berbagai variabelnya adalah sebagai berikut:
 
 <table>
   <thead>
     <tr>
       <th data-th="var" class="col-thirty"><code>var</code></th>
       <th data-th="Value">Nilai</th>
-      <th data-th="Defined By" class="col-thirty">Didefinisikan Oleh</th>
+      <th data-th="Defined By" class="col-thirty">Ditentukan Oleh</th>
     </tr>
   </thead>
   <tbody>
@@ -374,7 +378,7 @@ maka nilai dari berbagai vars akan menjadi sebagai berikut:
     </tr>
     <tr>
       <td data-th="var"><code>title</code></td>
-      <td data-th="Value">My homepage</td>
+      <td data-th="Value">Halaman beranda saya</td>
       <td data-th="Defined By">Pemicu</td>
     </tr>
     <tr>
@@ -384,8 +388,9 @@ maka nilai dari berbagai vars akan menjadi sebagai berikut:
     </tr>
     <tr>
       <td data-th="var"><code>clientId</code></td>
-      <td data-th="Value">my user</td>
+      <td data-th="Value">pengguna saya</td>
       <td data-th="Defined By">Pemicu</td>
     </tr>
   </tbody>
 </table>
+ 
