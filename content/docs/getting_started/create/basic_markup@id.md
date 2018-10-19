@@ -1,15 +1,16 @@
 ---
-$title: Membuat Halaman AMP HTML
+$title: Membuat halaman HTML AMP
 ---
 
-Markup berikut merupakan titik awal yang sesuai atau boilerplate.
-Salin yang berikut ini dan simpanlah ke file dengan ekstensi .html.
+Markup berikut merupakan titik awal atau boilerplate yang baik.
+Salin dan simpan ke dalam file berekstensi .html.
 
 [sourcecode:html]
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -25,7 +26,6 @@ Salin yang berikut ini dan simpanlah ke file dengan ekstensi .html.
       }
     </script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     <h1>Welcome to the mobile web</h1>
@@ -33,33 +33,43 @@ Salin yang berikut ini dan simpanlah ke file dengan ekstensi .html.
 </html>
 [/sourcecode]
 
-Materi dalam badan teks sejauh ini tidak sulit dipahami. Namun ada banyak kode tambahan dalam kepala halaman yang mungkin tidak langsung bisa dipahami. Mari kita uraikan markup wajib ini:
+Sejauh ini, konten pada isi halaman ini cukup mudah dipahami. Namun, ada banyak kode tambahan di bagian kepala yang mungkin tidak bisa langsung dipahami. Mari kita dekonstruksi markup yang diperlukan.
+
+{% call callout('Gunakan HTTPS', type='note') %}
+Saat membuat konten dan halaman AMP, sebaiknya Anda memprioritaskan penggunaan protokol HTTPS (bukan HTTP). Meskipun HTTPS tidak wajib digunakan untuk dokumen AMP itu sendiri atau untuk gambar dan font, ada banyak fitur AMP yang mewajibkan penggunaan HTTPS (misalnya video, iframe, dan banyak lagi). Untuk memastikan halaman AMP Anda memanfaatkan sepenuhnya semua fitur AMP, gunakan protokol HTTPS.  Anda dapat mempelajari HTTPS lebih lanjut dalam ["Perlunya Menggunakan HTTPS"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+{% endcall %}
 
 ## Markup wajib
 
-Dokumen AMP HTML HARUS:
+Dokumen HTML AMP HARUS:
 
-  - Mulai dengan tipe dokumen `<!doctype html>`.
-  - Berisi tag `<html ⚡>` tingkat atas (`<html amp>` juga berterima).
-  - Berisi tag `<head>` dan `<body>` (Keduanya opsional dalam HTML).
-  - Berisi tag `<link rel="canonical" href="$SOME_URL">` dalam bagian kepala yang menunjuk pada versi HTML reguler dari dokumen AMP HTML atau menunjuk pada dirinya sendiri jika tidak ada versi HTML seperti itu.
-  - Berisi tag `<meta charset="utf-8">` sebagai anak pertama dari tag kepalanya.
-  - Berisi tag `<meta name="viewport" content="width=device-width,minimum-scale=1">` di dalam tag kepalanya. Juga disarankan untuk menyertakan initial-scale=1.
-  - Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` sebagai elemen terakhir dalam kepalanya (ini mencakup dan memuat pustaka AMP JS).
-  - Berisi yang berikut dalam tag `<head>`-nya:
-    `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+| Aturan      | Deskripsi |
+| --------- | ----------- |
+| Mulai dengan doctype `<!doctype html>`. | Standar untuk HTML. |
+| Berisi tag `<html ⚡>` level teratas <br>(`<html amp>` juga diterima). | Mengidentifikasi halaman sebagai konten AMP. |
+| Berisi tag `<head>` dan `<body>`. | Opsional pada HTML tetapi tidak pada AMP.
+| Berisi tag `<meta charset="utf-8">` sebagai turunan pertama dari tag `<head>`. | Mengidentifikasi encoding untuk halaman. |
+| Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` sebagai turunan kedua dari tag `<head>`. | Menyertakan dan memuat library JS AMP. |
+| Berisi tag `<link rel="canonical" href="$SOME_URL">` di dalam `<head>`. | Mengarah ke versi HTML reguler dari dokumen HTML AMP, atau ke dokumen HTML AMP itu sendiri jika tidak ada versi HTML seperti itu. Pelajari lebih lanjut di [Membuat Halaman Anda Mudah Ditemukan](/id/docs/fundamentals/discovery.html).
+| Berisi tag `<meta name="viewport" content="width=device-width,minimum-scale=1">` di dalam tag `<head>`. Juga direkomendasikan untuk memasukkan `initial-scale=1`. | Menentukan viewport yang responsif. Pelajari lebih lanjut di [Membuat Halaman AMP Responsif](/id/docs/design/responsive/responsive_design.html). |
+| Berisi [Kode boilerplate AMP](/id/docs/fundamentals/spec/amp-boilerplate.html) di tag `<head>`.  | Boilerplate CSS untuk mula-mula menyembunyikan konten hingga JS AMP dimuat. |
 
-## Meta-data opsional
+## Metadata opsional
 
-Selain persyaratan yang tak mendetail, sampel kami juga menyertakan definisi Schema.org pada bagian kepalanya, yang bukan merupakan persyaratan ketat bagi AMP, namun diwajibkan agar materi Anda didistribusikan di beberapa tempat, misalnya dalam [Demo menu korsel berita Google Penelusuran (cobalah pada ponsel Anda)](https://g.co/ampdemo).
+Selain persyaratan dasar, contoh kita juga mencakup definisi Schema.org di bagian kepala, yang bukan merupakan persyaratan wajib untuk AMP, tetapi diperlukan untuk mendistribusikan konten di tempat-tempat tertentu (misalnya carousel berita teratas di Google Penelusuran).
 
-Untuk mengetahui selengkapnya tentang meta-data yang akan Anda butuhkan di berbagai tempat berbeda, misalnya Twitter, [jelajahilah sampel kami](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) Untuk mempelajari secara khusus tentang AMP dalam Google Penelusuran, lihat [Cerita Teratas dengan AMP](https://developers.google.com/structured-data/carousels/top-stories).
+{% call callout('Baca selengkapnya', type='read') %} Lihat referensi berikut untuk mempelajari lebih lanjut:
+
+* [Memulai AMP di Google Penelusuran](https://developers.google.com/amp/docs) - pelajari cara menyiapkan halaman AMP untuk Google Penelusuran.
+  * [Contoh metadata](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - pelajari lebih lanjut semua metadata yang diperlukan di berbagai tempat lain (misalnya Twitter).
+{% endcall %}
 
 <hr>
 
-Kabar gembira! Itulah semua yang kita perlukan untuk membuat halaman AMP kita yang pertama, belum banyak yang terjadi di dalam bagian badan. Dalam bagian berikutnya, kita akan membahas mengenai cara menambahkan hal-hal dasar seperti gambar, elemen AMP khusus, cara menggayakan halaman Anda dan mengerjakan layout responsif.
+Kabar baik! Itu saja yang diperlukan untuk membuat halaman AMP pertama kita, tetapi tentu saja, belum banyak yang masuk ke isi halaman. Di bagian selanjutnya, kita akan membahas cara menambahkan elemen dasar seperti gambar, elemen AMP kustom, cara menata halaman, dan menyusun tata letak yang responsif.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="/id/docs/getting_started/create.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="/id/docs/getting_started/create/include_image.html"><span class="arrow-next">Berikutnya</span></a>
 </div>
+ 
