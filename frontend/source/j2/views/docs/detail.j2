@@ -1,0 +1,17 @@
+{% extends '/templates/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/templates/docs-details.css') %}
+{% endblock %}
+
+{% block main %}
+<div class="ad-t-docs-details">
+  {% include 'partials/header.j2' %}
+  {% include 'partials/sidebar.j2' %}
+  <main>
+    {{ doc.html|render|safe }}
+  </main>
+</div>
+{% endblock %}

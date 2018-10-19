@@ -26,6 +26,8 @@ none
 
 */
 
+@import '../atoms/_color.scss';
+
 @mixin link {
 	display: flex;
 	align-items: center;
@@ -42,7 +44,7 @@ none
 		@include txt;
 		@include txt-accent-2;
 		@include txt-strong;
-		@include txt-blue-ribbon;
+		@include color-blue-ribbon;
 	}
 
 	&-icon {
@@ -57,8 +59,8 @@ none
 .link-preview-1 {
 	.#{molecule('lnk')} {
 		&-text {
-			@include txt-black;
 			@include txt-font-accent;
+			@include color-black;
 		}
 
 		&-icon {
@@ -72,7 +74,7 @@ none
 .link-preview-2 {
 	.#{molecule('lnk')} {
 		&-text {
-			@include txt-blue-ribbon;
+			@include color-blue-ribbon;
 		}
 
 		&-icon {

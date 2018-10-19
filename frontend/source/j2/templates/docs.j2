@@ -16,6 +16,7 @@
     {% do doc.styles.addCssFile('css/components/atoms/headline.css') %}
     {% do doc.styles.addCssFile('css/components/atoms/text.css') %}
     {% do doc.styles.addCssFile('css/components/atoms/anchor.css') %}
+    {% do doc.styles.addCssFile('css/components/templates/docs-details.css') %}
 
     <style amp-custom>
      {{ doc.styles.emit() }}
@@ -30,8 +31,6 @@
     </svg>
 
     {% include 'partials/header.j2' %}
-    {% include 'partials/sidebar.j2' %}
-
 
     <main>
     {% block main %}

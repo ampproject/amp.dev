@@ -52,7 +52,7 @@ shadow
 		@include txt-strong;
 		@include txt-uppercase;
 		@include txt-font-accent;
-		@include txt-blue-ribbon;
+		@include color-blue-ribbon;
 	}
 
 	&-headline {
@@ -61,7 +61,7 @@ shadow
 		@include txt-2;
 		@include txt-strong;
 		@include txt-font-accent;
-		@include txt-black;
+		@include color-black;
 	}
 
 	&-copy {

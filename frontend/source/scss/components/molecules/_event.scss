@@ -75,7 +75,7 @@ none
       @include txt-font-accent;
       @include txt-accent-2;
       @include txt-strong;
-      @include txt-silver;
+      @include color-silver;
       @include txt-hl;
 
       margin-bottom: 0.5em;
@@ -86,7 +86,7 @@ none
       @include txt-font-accent;
       @include txt-accent-2;
       @include txt-strong;
-      @include txt-black;
+      @include color-black;
     }
 	}
 
@@ -98,7 +98,7 @@ none
       @include txt-font-accent;
       @include txt-accent-2;
       @include txt-strong;
-      @include txt-black;
+      @include color-black;
       @include txt-hl;
 
       margin-bottom: 0.5em;

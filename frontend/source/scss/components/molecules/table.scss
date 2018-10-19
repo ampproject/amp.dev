@@ -24,6 +24,7 @@ example markup:
 @import '../../mixins';
 @import '../../functions';
 @import '../../variables';
+@import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 
 main {
@@ -43,7 +44,6 @@ table {
 
   @media screen and (min-width: 768px) {
     margin: 0;
-    left: 25%;
   }
 
   th {
@@ -67,7 +67,7 @@ tbody {
   }
 
   tr {
-    border-bottom: 1px solid color('mystic');
+    border-bottom: 1px solid color('silver');
 
     td:nth-child(1) {
       border-right: 1px solid color('silver');
@@ -78,13 +78,9 @@ tbody {
     padding: 20px;
     text-align: left;
 
-    @media screen and (min-width: 768px) {
-      white-space: nowrap;
-    }
-
     code {
       @include txt-mono-inline;
-      @include txt-blue-ribbon;
+      @include color-blue-ribbon;
     }
   }
 }

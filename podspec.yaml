@@ -14,9 +14,23 @@ preprocessors:
   build_task: '--production'
   run_task: 'develop'
 
+markdown:
+  extensions:
+  - kind: sourcecode
+    classes: True
+    class_name: ad-m-code-snippet
+  - kind: markdown.extensions.codehilite
+    classes: True
+    class_name: ad-m-code-snippet
+
 ext:
 - extensions.amp_dependency_injector.AmpDependencyInjectorExtension
-- extensions.dynamic_css_bundles.DynamicCssBundlesExtension
+- extensions.inline_text_assets.InlineTextAssetsExtension:
+    bundles:
+        - name: 'styles'
+          method: 'addCssFile'
+        - name: 'icons'
+          method: 'useIcon'
 - extensions.shortcodes.ShortcodesExtension
 
 # deployments:

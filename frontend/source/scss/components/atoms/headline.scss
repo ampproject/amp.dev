@@ -8,8 +8,14 @@
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
 	@include hl;
+	margin-top: 2em;
+	
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 h1 {
@@ -26,4 +32,8 @@ h3 {
 
 h4 {
 	@include hl-h4;
+}
+
+h5 {
+	@include hl-h5;
 }
