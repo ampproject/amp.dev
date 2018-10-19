@@ -49,12 +49,12 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 
 	&:hover {
-    height: 143px;
+    height: 235px;
     transition: height 0.5s ease;
 		background: transparent;
 
     @media screen and (min-width: 768px) {
-		  height: 183px;
+		  height: 235px;
     }
 
 		.ad-a-ico {
@@ -164,3 +164,10 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   }
 }
 
+.all {
+  color: color('azure-radiance');
+
+	&-background {
+		@include gradient-overview;
+	}
+}
