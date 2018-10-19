@@ -3,8 +3,7 @@ $title: Documentation Details Template
 $view: /views/docs/detail.j2
 ---
 
-[TOC]
-## Validate AMP pages
+# Validate AMP pages
 
 [video]
 [](https://www.youtube.com/watch?v=OO9oKhs80aI)
