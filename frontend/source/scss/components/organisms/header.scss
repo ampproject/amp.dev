@@ -14,6 +14,8 @@
 
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/divider';
 
 @import '../molecules/_link.scss';
 
@@ -22,14 +24,20 @@
   z-index: 1;
   top: 0;
   width: 100vw;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+
 
 
   &-list {
     display: flex;
-    padding: 0;
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     align-items: center;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 auto;
+    }
   }
 
   &-lnk {
@@ -64,7 +72,21 @@
     }
 
     .ad-m-lnk {
-      color: color('river-bed');
+      @include txt-font-accent;
+      @include txt-accent-1;
+      @include txt-black;
+
+      padding: 12.5px 0;
+      margin: 0;
+
+      &:hover {
+        @include txt-blue-ribbon;
+      }
+
+      &-mobile {
+        @include hl-nav;
+        padding-top: 8px;
+      }
     }
 
     &-selected {
@@ -83,8 +105,15 @@
     &-subnav {
       display: block;
 
+      .ad-m-lnk {
+        @include txt;
+        @include txt-2;
+        padding: 13px 0;
+      }
+
       &-selected {
         .ad-m-lnk {
+          @include txt-strong;
           margin-bottom: 0;
           padding-bottom: 5px;
           color: color('blue-ribbon');
@@ -96,18 +125,24 @@
       height: 2px;
       width: 100%;
       background-color: color('blue-ribbon');
-      margin-bottom: 18px;
+      margin-bottom: 4px;
     }
   }
 
 
   &-main-nav {
+    border-bottom: 1px solid color('wild-sand');
     background-color: color('white');
+
+    & .ad-o-header-list {
+      padding: 5px 0px;
+    }
   }
 
 
   &-subnav {
-    background-color: color('wild-sand');
+    height: 50px;
+    background-color: color('white');
   }
 
   &-subnav-logo {
@@ -124,15 +159,7 @@
   // TODO: Clean up mobile list css
 
   &-search {
-    display: none;
-    background-color: #F0F0F0;
-    border-radius: 10%/50%;
-    padding: 5px 10px;
-
-    @media screen and (min-width: 768px) {
-      display: flex;
-      margin-left: auto;
-    }
+    display: block;
 
     &-icon {
       background: transparent;
@@ -140,25 +167,23 @@
       padding-right: 2px;
     }
 
-    &-mobile {
-      display: flex;
-      max-width: 125px;
-    }
   }
 
   input {
+    @include txt-3;
+    @include txt;
+    @include txt-silver;
+
     border: none;
     outline: #fff;
     background: none;
     width: 75px;
-    font-size: 12px;
-    font-family: Poppins;
   }
 
   &-burger-menu {
     position: fixed;
     top: calc(18px);
-    padding: 15px;
+    padding: 0px 20px;
     right: 0;
     z-index: 100;
 
@@ -179,8 +204,8 @@
 
   &-list-mobile {
     height: 0;
-    margin: 0;
-    padding: 2em 0 0 2em;
+    padding: 0;
+    margin: 0 0 0 20px;
     overflow: hidden;
     list-style: none;
     transition: height 0.2s ease-in-out;
@@ -189,6 +214,19 @@
       display: none;
     }
   }
+
+  &-support-lang-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-right: 20px;
+    margin-left: auto;
+
+    &-divider {
+      @include divider-header-mobile;
+    }
+  }
+
 }
 
 

@@ -71,6 +71,18 @@ stories-home
 
 @mixin hl-h4 {
   font-size: 1em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.25em;
+  }
+}
+
+@mixin hl-nav {
+  font-size: 1.25em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.5em;
+  }
 }
 
 @mixin hl-h5 {
@@ -86,13 +98,7 @@ stories-home
   color: color('blue-ribbon');
 }
 
-@mixin hl-h4 {
-  font-size: 1em;
 
-  @media screen and (min-width: 768px) {
-    font-size: 1.25em;
-  }
-}
 
 @mixin  hl-stage {
   font-size: 1.5em;
