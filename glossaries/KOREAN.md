@@ -1,8 +1,7 @@
 # Korean Translation Term Glossary
 
-{% call callout('노트', type='note') %} Throughout the documentation in AMP, the speech level
-for the translated documents in Korean is hapsyo-che (합쇼체 or formally polite style),
-for example, ~하십시오, ~합니다. {% endcall %}
+*Throughout the documentation in AMP, the speech level for the translated documents in Korean
+is hapsyo-che (합쇼체 or formally polite style), for example, ~하십시오, ~합니다.*
 
 ### Built-in: 빌트인
 "AMP has many **built-in** components!"
