@@ -29,7 +29,7 @@ is hapsyo-che (합쇼체 or formally polite style), for example, ~하십시오, 
 
 ### Landscape: 가로 방향
 "The image associated with this type is larger and in landscape format."
-"landscape 타입에 쓰이는 이미지는 더 크고 가로가 더 긴 이미지입니다.
+"landscape 타입에 쓰이는 이미지는 더 크고 가로 방향 이미지입니다.
 
 Reference: 국어순화용어자료집(1997), 전산기 용어
 
@@ -39,7 +39,7 @@ Reference: 국어순화용어자료집(1997), 전산기 용어
 
 #### Portrait: 세로 방향
 "The image associated with this type is larger and in portrait format."
-"portrait 타입에 쓰이는 이미지는 더 크고 세로가 더 긴 이미지입니다."
+"portrait 타입에 쓰이는 이미지는 더 크고 세로 방향 이미지입니다."
 
 Reference: 국어순화용어자료집(1997), 전산기 용어
 
