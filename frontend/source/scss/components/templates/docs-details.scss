@@ -13,6 +13,8 @@
 @import '../../mixins';
 @import '../../variables';
 
+@import '../atoms/_headline.scss';
+
 .#{template('docs-details')} {
   display: grid;
   grid-gap: 30px;
@@ -26,6 +28,10 @@
 
   @media screen and (min-width: 1024px){
     grid-template-columns: repeat(24, 1fr);
+  }
+  
+  h1:first-child {
+    @include hl-h2;
   }
 
   main {
