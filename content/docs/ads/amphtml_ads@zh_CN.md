@@ -8,7 +8,7 @@ $title: AMPHTML 广告
 
 AMPHTML 广告是一种更快速、更精简且更安全地在网页上投放广告的方式。虽然 AMP 网页支持传统的 HTML 广告，但这些广告的加载速度可能很慢。要让广告本身与 AMP 网页的其余内容一样快速显示，您可以制作 AMPHTML 格式的广告。AMPHTML 广告仅在经过验证后才会投放，可确保广告的安全性和良好表现。最重要的是，此类广告可以在网络上的任何位置（而不只是在 AMP 网页上）投放。
 
-AMPHTML 广告是按照 [AMPHTML 广告规范](/zh_cn/docs/ads/a4a_spec.html)使用 AMP HTML 编写的（AMP HTML 的一种变体 + CSS）。这意味着广告无法再运行任意 JavaScript，而任意 JavaScript 正是导致传统广告表现很差的首要原因。因此，与核心 AMP 一样，核心广告 JavaScript 用例也内置于 AMP 开放源代码项目中，以保证广告实现良好行为。
+AMPHTML 广告是按照 [AMPHTML 广告规范]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}})使用 AMP HTML 编写的（AMP HTML 的一种变体 + CSS）。这意味着广告无法再运行任意 JavaScript，而任意 JavaScript 正是导致传统广告表现很差的首要原因。因此，与核心 AMP 一样，核心广告 JavaScript 用例也内置于 AMP 开放源代码项目中，以保证广告实现良好行为。
 
 ### 优势
 
@@ -16,7 +16,7 @@ AMPHTML 广告比传统广告更好的原因何在？
 
 1. **更快速**：AMPHTML 广告的加载速度更快，因为系统会在网页呈现过程的早期请求广告，并在用户即将查看广告之前立即展示广告。此外，AMPHTML 广告文件更小，可提升加载速度。
 1. **更精简**：AMPHTML 广告捆绑了常用的广告功能，可让广告的文件更小。投放到网页中以后，AMPHTML 广告消耗的资源也更少。例如，常规广告中有 10 个跟踪器分别请求各自所需的信息；而 AMPHTML 广告会一次性收集所有数据，并将这些数据分发到任意数量的相关跟踪器。
-1. **协调性**：在 AMP 网页上，[AMP runtime](https://www.ampproject.org/zh_cn/docs/fundamentals/spec#amp-runtime) 可在正确的时间将手机有限的资源协调给正确的组件，以提供最佳的用户体验。例如，如果包含动画的 AMPHTML 广告不在当前视口中，则广告会暂停。
+1. **协调性**：在 AMP 网页上，[AMP runtime]({{g.doc('/content/docs/fundamentals/spec#amp-runtime', locale=doc.locale).url.path}}) 可在正确的时间将手机有限的资源协调给正确的组件，以提供最佳的用户体验。例如，如果包含动画的 AMPHTML 广告不在当前视口中，则广告会暂停。
 1. **更具吸引力**：用户无法与系统不显示的广告进行互动。更快的广告加载速度使可见度更高，继而产生更高的点击率，最终带来更好的广告效果。
 1. **免受恶意软件侵害**：谁都无法通过 AMPHTML 广告传播恶意软件，因为广告需要先经过验证才能投放。因此，广告主可以确保安全的用户体验，并打造正面的品牌形象。
 1. **更灵活**：AMPHTML 广告适用于 AMP 网页和非 AMP 网页以及任何设备。
@@ -58,7 +58,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 发布商
 
-要投放 AMPHTML 格式的直销型广告，您必须按照 [AMPHTML 广告规范](/zh_cn/docs/ads/a4a_spec.html)制作广告，并使用支持 AMPHTML 广告投放的广告服务器投放广告。目前，以下广告服务器支持 AMPHTML 广告：
+要投放 AMPHTML 格式的直销型广告，您必须按照 [AMPHTML 广告规范]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}})制作广告，并使用支持 AMPHTML 广告投放的广告服务器投放广告。目前，以下广告服务器支持 AMPHTML 广告：
 
 *   DFP 广告管理系统
 *   TripleLift
@@ -66,7 +66,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 *   Adzerk
 *   Google AdSense
 
-要通过间接渠道（例如广告交易平台、SSP 等）投放 AMPHTML 广告，请使用[相关列表](/zh_cn/docs/ads/ads_vendors.html)中列出的支持 AMPHTML 广告的广告网络/广告服务器。
+要通过间接渠道（例如广告交易平台、SSP 等）投放 AMPHTML 广告，请使用[相关列表]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})中列出的支持 AMPHTML 广告的广告网络/广告服务器。
 
 ### 广告代理机构
 
@@ -78,11 +78,11 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 广告网络/广告服务器
 
-要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[快速获取广告请求实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)的 `amp-ad` 扩展组件（除非您已拥有此扩展组件）。有关详情，请参阅[与 AMP 集成以投放展示广告](/zh_cn/docs/ads/adnetwork_integration.html)。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
+要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[快速获取广告请求实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)的 `amp-ad` 扩展组件（除非您已拥有此扩展组件）。有关详情，请参阅[与 AMP 集成以投放展示广告]({{g.doc('/content/docs/ads/adnetwork_integration.html', locale=doc.locale).url.path}})。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
 
 ## 制作 AMPHTML 广告
 
-**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范](/zh_cn/docs/ads/a4a_spec.html)的要求。要查看演示和示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) 中的开放源代码 AMPHTML 广告模板。
+**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}})的要求。要查看演示和示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) 中的开放源代码 AMPHTML 广告模板。
 
 **使用工具**：您可以使用以下任一工具制作 AMPHTML 广告：
 
