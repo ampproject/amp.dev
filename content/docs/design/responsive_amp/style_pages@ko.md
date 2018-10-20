@@ -22,16 +22,12 @@ $title: 지원되는 CSS
   </thead>
   <tbody>
     <tr>
-      <td data-th="Banned style">인라인 스타일 속성</td>
-      <td data-th="Description"> 모든 스타일은 페이지에서 <code>&lt;head&gt;</code> 의 <code>&lt;style amp-custom&gt;</code> 태그 내에 정의되어야 합니다.</td>
-    </tr>
-    <tr>
       <td data-th="Banned style"><code>!important</code> 한정자 </td>
-      <td data-th="Description">사용할 수 없습니다. AMP 에서 요소 크기 조정 규칙을 시행하기 위한 필수 요구사항입니다.</td>
+      <td data-th="Description"><code>!important</code> 한정자를 style 작성에 사용하거나 <code>!important</code> 한정자가 적용된 style을 HTML 엘리먼트에서 사용할 수도 없습니다. AMP 에서 엘리먼트 크기 조정 규칙을 시행하기 위한 필수 요구사항입니다.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
-      <td data-th="Description"> Disallowed with the exception of <a href="#the-custom-fonts-exception">맞춤 글꼴 </a>이외의 경우에는 사용할 수 없습니다.</td>
+      <td data-th="Description"><a href="#the-custom-fonts-exception">맞춤 글꼴</a> 이외의 경우에는 사용할 수 없습니다.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>-amp-</code> 클래스 및 <code>i-amp-</code> 태그 이름</td>
@@ -74,7 +70,7 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 �
 전처리기로 생성된 출력은 다른 웹페이지에서와 마찬가지로 AMP에서도 제대로 작동합니다. 예를 들어, [ampproject.org](https://www.ampproject.org/) 사이트는 [Sass](http://sass-lang.com/) 를 사용합니다. ([Grow](http://grow.io/) 를 통해 [ampproject.org](https://www.ampproject.org/) 를 구성하는 정적 AMP 페이지가 생성됩니다.)
 
 
-전처리기를 사용할 때는 포함하는 항목에 특히 주의해야 합니다. 페이지에서 사용하는 항목만 로드하세요. 예를 들어, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) 에는 모든 필수 AMP 마크업과 `*.scss` 소스 파일의 인라인 CSS가 포함됩니다. 또한 [`amp-youtube`](/ko/docs/reference/extended/amp-youtube.html) 의 맞춤 요소 스크립트를 포함하므로 삽입된 YouTube 동영상을 사이트의 여러 페이지에 포함할 수 있습니다.
+전처리기를 사용할 때는 포함하는 항목에 특히 주의해야 합니다. 페이지에서 사용하는 항목만 로드하세요. 예를 들어, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) 에는 모든 필수 AMP 마크업과 `*.scss` 소스 파일의 인라인 CSS가 포함됩니다. 또한 [`amp-youtube`](/ko/docs/reference/extended/amp-youtube.html) 등의 커스텀 엘리먼트용 스크립트를 포함하여 YouTube 동영상 등을 사이트의 여러 페이지에 넣을 수 있도록 했습니다.
 
 [sourcecode:html]{% raw %}
 <head>
@@ -102,4 +98,4 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 �
 </head>
 {% endraw %}[/sourcecode]
 
-위의 예시가 AMP HTML 형식에서 어떻게 표시되는지 확인하려면 [ampproject.org](https://www.ampproject.org/) 에서 아무 페이지나 소스를 확인해보세요. (Chrome에서는 마우스 오른쪽 버튼 클릭 후 `View Page Source`).
+위의 예시가 AMP HTML 형식에서 어떻게 표시되는지 확인하려면 [ampproject.org](https://www.ampproject.org/) 에서 아무 페이지나 소스를 확인해보세요. (Chrome에서는 마우스 오른쪽 버튼 클릭 후 `페이지 소스 보기`).
