@@ -36,7 +36,7 @@ none
     &-year {
       @include txt;
       @include txt-font-accent;
-      @include txt-accent-2;
+      @include txt-2;
       @include txt-strong;
       @include color-silver;
       @include txt-hl;
@@ -47,7 +47,7 @@ none
     &-month {
       @include txt;
       @include txt-font-accent;
-      @include txt-accent-2;
+      @include txt-2;
       @include txt-strong;
       @include color-black;
     }
@@ -59,7 +59,7 @@ none
     &-city {
       @include txt;
       @include txt-font-accent;
-      @include txt-accent-2;
+      @include txt-2;
       @include txt-strong;
       @include color-black;
       @include txt-hl;

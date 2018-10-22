@@ -40,7 +40,7 @@ white
 	&-headline {
 		@include txt;
 		@include txt-hl;
-		@include txt-accent-1;
+		@include txt-1;
 		@include txt-strong;
 		@include txt-font-accent;
 		@include color-black;
@@ -52,7 +52,7 @@ white
 	&-subline {
 		@include txt;
 		@include txt-hl;
-		@include txt-accent-3;
+		@include txt-4;
 		@include txt-strong;
 		@include txt-uppercase;
 		@include txt-gray-chateau;

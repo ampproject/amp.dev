@@ -40,7 +40,7 @@
 
   &-list-item {
     @include txt;
-    @include txt-accent-1;
+    @include txt-1;
     @include txt-strong;
     padding: 10px 20px;
     border: none;
@@ -56,7 +56,7 @@
 
     &-lnk {
       @include txt;
-      @include txt-accent-2;
+      @include txt-2;
       display: block;
       padding: 3px 0;
 

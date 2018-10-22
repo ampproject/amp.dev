@@ -5,37 +5,35 @@
 
 @import '_text.scss';
 
-p {
-  @include txt;
-  @include txt-p;
-  @include txt-2;
+main {
+  p {
+    @include txt;
+    @include txt-p;
+    @include txt-2;
 
-	small {
-		@include txt-accent-2;
-	}
-
-	big {
-		@include txt-1;
-	}
-  
-  code {
-    @include txt-mono-inline;
-  }
-}
-
-ul,
-ol {
-  @include txt;
-  @include txt-p;
-  @include txt-2;
-  padding-left: 2em;
-  margin: 1.5em 0 2.5em;
-
-  li {
-    padding-left: 0.5em;
-
+  	small {
+  		@include txt-2;
+  	}
+    
     code {
       @include txt-mono-inline;
+    }
+  }
+
+  ul,
+  ol {
+    @include txt;
+    @include txt-p;
+    @include txt-2;
+    padding-left: 2em;
+    margin: 1.5em 0 2.5em;
+
+    li {
+      padding-left: 0.5em;
+
+      code {
+        @include txt-mono-inline;
+      }
     }
   }
 }

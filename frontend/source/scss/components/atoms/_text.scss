@@ -35,35 +35,19 @@ TODO: mono (inline, block)
 }
 
 @mixin txt-1 {
-	font-size: 1em;
-
-	@media screen and (min-width: 768px) {
-		font-size: 1.25em;
-	}
+	font-size: 1em; //16px
 }
 
 @mixin txt-2 {
-	font-size: 0.875em;
-
-	@media screen and (min-width: 768px) {
-		font-size: 1em;
-	}
+	font-size: 0.875em; //14px
 }
 
 @mixin txt-3 {
-	font-size: 0.75em;
+	font-size: 0.75em; //12px
 }
 
-@mixin txt-accent-1 {
-	font-size: 1em;
-}
-
-@mixin txt-accent-2 {
-	font-size: 0.875em;
-}
-
-@mixin txt-accent-3 {
-	font-size: 0.625em;
+@mixin txt-4 {
+	font-size: 0.625em; //10px
 }
 
 @mixin txt-font-accent {

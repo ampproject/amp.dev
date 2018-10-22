@@ -28,7 +28,7 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 
 	.hl {
     @include txt;
-    @include txt-accent-2;
+    @include txt-2;
     @include color-white;
     @include txt-strong;
 		margin: 0;

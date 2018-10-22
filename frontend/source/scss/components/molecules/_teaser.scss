@@ -120,6 +120,6 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 
 @mixin teaser-copy {
 	@include txt;
-	@include txt-accent-2;
+	@include txt-2;
 	margin: 0;
 }
