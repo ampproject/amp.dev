@@ -156,8 +156,8 @@ Refresh browser dan lihat hasil kerja Anda.  Halaman sampul kita sudah jadi.
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Halaman sampul jadi' ) }}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/getting_started/visual_story/start_story.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.html', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
  
  
