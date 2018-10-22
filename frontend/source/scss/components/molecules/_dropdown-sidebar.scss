@@ -18,6 +18,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
+@import '../atoms/_icon.scss';
 @import '../atoms/_text.scss';
 
 
@@ -53,25 +54,13 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		  height: 235px;
     }
 
-		.ad-a-ico {
+		.destination-list-icon {
 			transform: rotate(180deg);
-			fill: color('white');
     }
 
 	}
 }
 
-
-.ad-a-ico {
-	position: absolute;
-	right: 0;
-	z-index: 10;
-	padding: 24px 24px;
-	transition: transform 0.5s ease;
-
-	// @include ico-white;
-	// @include ico-2;
-}
 
 // DROP DPOWN LIST
 
@@ -83,6 +72,21 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
   li {
     padding-left: 0;
+  }
+
+  &-icon {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    transition: transform 0.5s ease;
+    padding: 10px;
+
+    & svg {
+      @include ico;
+      @include ico-2;
+      @include ico-blue-ribbon;
+    }
+
   }
 
 
