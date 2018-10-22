@@ -4,81 +4,95 @@ $title: 라이브 블로그 만들기
 
 [TOC]
 
-라이브 블로그는 슈퍼 볼같이, 진행 중인 이벤트에서 자주 업데이트 되는 웹사이트입니다.
 
-LiveBlogPosting 마크업을 이용한 `amp-live-list` 컴포넌트를 통해 AMP로 라이브 블로그를 구현할 수 있습니다.
-스타팅 포인트로 할만한 샘플 구현을 보고싶다면, [ampbyexample.com](https://www.ampbyexample.com)의[live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/)를 살펴보길 바랍니다. 
 
-이 튜토리얼은 `amp-live-list` 컴포넌트에 대한 간략한 개요와 라이브 블로그 샘플을 예제로 페이지네이션이나 딥링크와 같은 몇가지 상세한 구현 사항들을 살펴보는데 중점을 둡니다.
+라이브 블로그는 스포츠 행사나 선거 같은 이벤트가 진행되는 동안 수시로 업데이트되는 웹페이지입니다. AMP에서는 [`amp-live-list`](/ko/docs/reference/components/amp-live-list.html) 구성요소를 사용하여 라이브 블로그를 구현할 수 있습니다.
 
-## Amp-live-list 개요
+이 가이드에서는 `amp-live-list` 구성요소를 간단히 설명하고 [페이지 매기기](#pagination) 및 [딥 링크](#deeplinking)와 같은 몇 가지 라이브 블로그용 구현 세부정보에 중점을 둡니다. AMP By Example의 [라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)을 사용하여 AMP에서 라이브 블로그를 구현하는 방법을 설명합니다.
 
-`amp-live-list` 컴포넌트는 정기적으로 호스트 문서를 폴링하여 업데이트 된 콘텐츠를 확인하고 사용 가능한 새 아이템이 있다면 유저의 브라우저를 업데이트합니다.
-즉, 새 블로그 포스트를 추가할 때마다, CMS에서 본문 및 메타데이터 섹션을 업데이트하여 호스트 문서를 업데이트해야합니다.
+{% call callout('도움말', type='success') %}
+블로그가 제3자 플랫폼 기능과 통합될 수 있도록 [LiveBlogPosting](http://schema.org/LiveBlogPosting) 메타데이터 마크업을 사용하세요.
+{% endcall %}
 
-다음은 기본적인 블로그의 모습입니다:
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
 
-[sourcecode:html]
-<amp-live-list id="my-live-list" data-poll-interval="15000" data-max-items-per-page="5">
-  <button update on="tap:my-live-list.update">You have updates!</button>
+## `amp-live-list` 개요
+
+[`amp-live-list`](/ko/docs/reference/components/amp-live-list.html) 구성요소는 새 콘텐츠의 호스트 문서를 주기적으로 폴링하고, 새 항목을 사용할 수 있게 되면 사용자의 브라우저를 업데이트합니다. 즉, 새 블로그 게시물을 추가해야 할 때마다 CMS로 호스트 문서를 업데이트하여 페이지 본문과 [메타데이터](https://ampbyexample.com/samples_templates/live_blog/#metadata) 섹션에 업데이트를 포함해야 합니다.
+
+
+블로그의 초기 코드는 다음과 같습니다.
+
+```html
+<amp-live-list id="my-live-list"
+    data-poll-interval="15000"
+    data-max-items-per-page="5">
+  <button update on="tap:my-live-list.update">업데이트가 있습니다</button>
   <div items></div>
 </amp-live-list>
-[/sourcecode]
+```
 
-`data-poll-interval` 속성으로 폴링 발생 빈도를 정할 수 있습니다; 만약 호스트 문서가 업데이트되면 다음 시간 인터벌 후에 사용자가 업데이트된 걸 사용할 수 있어야합니다.
-호스트 문서에 새 아이템이 추가될 때마다, `<button update on="tap:my-live-list.update">` 요소가 버튼으로 보이고, 버튼을 클릭하면 최신 포스트를 보여주는 트리거가 페이지에 걸립니다.
+초기 코드를 살펴보겠습니다.
 
-라이브 블로그가 페이지를 너무 길게 만든다면, `data-max-items-per-page` 속성으로 라이브 블로그 페이지에 얼마나 많은 아이템을 가져올 지 정할 수 있습니다.
-만약 아이템의 갯수가 `data-max-items-per-page`를 넘어선다면, 숫자를 초과하는 가장 오래된 업데이트가 삭제됩니다.
-예를 들어, 현재 페이지에 9개 아이템이 있고, `data-max-items-per-page`가 10개로 세트되었을 때, 3개의 새로운 아이템이 추가되었다면, 최신 업데이트와 함께 페이지에서 2개의 가장 오래된 아이템은 삭제됩니다.
+각 `amp-live-list` 구성요소는 한 페이지에 두 개 이상 있을 수 있기 때문에 고유 ID가 필요합니다.  이 예에서는 `my-live-list`를 고유 ID로 지정했습니다.
 
-`amp-live-list`는 포스트가 `<div items></div>` 태그의 자식이어야합니다. 각 게시물을 아이템으로 참조하면, 각 아이템에 유니크한 `id`와 `data-sort-time`을 가지고 있어야합니다.
+`data-poll-interval` 속성은 폴링 빈도를 지정합니다. 호스트 문서가 업데이트되면 다음 시간 간격 이후 사용자가 업데이트할 수 있습니다.
 
-## 라이브 블로그의 세부 구현
+호스트 문서에 새로운 항목이 추가될 때마다 `<button update on="tap:my-live-list.update">` 요소가 '업데이트가 있습니다' 버튼을 표시하고, 이 버튼을 클릭하면 최신 게시물이 표시되는 페이지가 실행됩니다.
 
-이제 `amp-live-list` 컴포넌트에 익숙해졌으니, 더 복잡한 라이브 블로그를 구현하는 방법을 알아봅시다. 여기서는 페이지네이션을 어떻게 구현할 지, 딥링크가 어떻게 동작하는 지 배울 수 있습니다.
+라이브 블로그가 성장해 감에 따라 페이지 길이가 너무 길어질 수 있습니다. `data-max-items-per-page` 속성을 사용하여 라이브 블로그에 추가될 수 있는 항목의 수를 지정하세요. 업데이트 이후 항목 수가 `data-max-items-per-page`를 초과하면 항목 수를 초과하는 가장 오래된 업데이트 순으로 삭제됩니다. 예를 들어 페이지에 있는 항목이 9개이고 `data-max-items-per-page`가 10으로 설정되어 있는데 새 항목 3개가 최신 업데이트에 추가되면 최신 업데이트가 있는 페이지에서 가장 오래된 항목 2개가 삭제됩니다.
 
-## 페이지네이션
+`amp-live-list의 모든 블로그 게시물은 `<div items></div>`의 하위 항목이어야 합니다. 각 게시물을 항목으로 참조하면 모든 항목에는 고유 `id`와 `data-sort-time`이 있어야 합니다.
 
-긴 블로그에서 성능을 향상시키기 위해 페이지에 표시할 블로그 아이템의 수를 제한하고 페이지네이션을 사용할 수 있습니다.
-페이지네이션을 구현하려면, `<div pagination></div>` 요소를 `amp-live-list` 컴포넌트에 넣고, 페이지네이션을 위해 필요한 아무 마크업이나 넣으면 됩니다. (페이지 넘버나, 이전 or 다음 페이지로 가는 링크같은 것들)
+## 구현 세부정보
 
-페이지네이션을 사용할 때, 위에서 본 간단한 코드를 사용해보겠습니다:
+이제 `amp-live-list` 구성요소에 익숙해졌으므로 더 복잡한 라이브 블로그를 구현하는 방법을 알아보겠습니다. 페이지 매기기 구현 방법 및 딥 링크 작동 방식을 읽어 보세요.
 
-[sourcecode:html]
-<amp-live-list id="my-live-list" data-poll-interval="15000" data-max-items-per-page="5">
-  <button update on="tap:my-live-list.update">You have updates!</button>
+### 페이지 매기기
+
+긴 블로그는 페이지 매기기를 사용하여 페이지에 표시할 블로그 항목의 수를 제한함으로써 성능을 개선할 수 있습니다. 페이지 매기기를 구현하려면 `amp-live-list` 구성요소에 `<div pagination></div>`를 추가한 다음 페이지 매기기에 필요한 마크업(예: 페이지 번호, 다음 및 이전 페이지 링크)을 삽입합니다.
+
+페이지 매기기를 사용하면 앞에서 사용했던 단순한 코드가 다음과 같이 변합니다.
+
+```html
+<amp-live-list id="my-live-list"
+    data-poll-interval="15000"
+    data-max-items-per-page="5">
+  <button update on="tap:my-live-list.update">업데이트가 있습니다</button>
   <div items></div>
   <div pagination>
-  	<nav>
+    <nav>
       <ul>
         <li>1</li>
-        <li>Next</li>
+        <li>다음</li>
       </ul>
-    </nav>
+     </nav>
    </div>
 </amp-live-list>
-[/sourcecode]
+```
 
-호스팅 페이지를 업데이트 하여 네비게이션 아이템을 채우는 건 당신의 몫입니다.
-예를 들어, [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/)에서는 서버사이드 템플릿을 이용해 페이지를 렌더링하고, 쿼리 파라미터를 이용하여 페이지의 첫번째 블로그 아이템을 지정했습니다.
-우리는 페이지를 5개 아이템으로 제한하였고, 서버가 5개 이상의 아이템을 생성하는 경우, 유저가 기본페이지에 도착하면 네비게이션 영역에 Next 요소가 보입니다.
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}  
 
-<amp-img src="/static/img/liveblog-pagination.png" alt="Live blog pagination" height="526" width="300"></amp-img>
+호스팅된 페이지를 업데이트하여 탐색 항목을 올바르게 게재해야 합니다. 예를 들어 [라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)에서는 서버 측 템플릿을 통해 페이지를 렌더링하고 쿼리 매개변수를 사용하여 페이지의 첫 블로그 항목을 지정했습니다. 페이지 크기는 항목 5개로 제한되므로 서버에서 항목을 6개 이상 생성한 경우 사용자가 메인 페이지에 방문하면 탐색 영역에 '다음' 요소가 표시됩니다. 자세한 내용은 [amp-live-list.go](https://github.com/ampproject/amp-by-example/blob/master/backend/amp-live-list.go#L182) 및 [Live_Blog.html](https://github.com/ampproject/amp-by-example/blob/master/src/60_Samples_%2526_Templates/Live_Blog.html)을 참조하세요.
 
-블로그 포스트의 사이즈가 `data-max-items-per-page`로 정의한 최대 갯수를 넘은 경우.
-더 오래된 블로그 아이템은 2번째 페이지 같은 "Next" 페이지에서 보여집니다.
-`amp-live-list`는 주기적으로 서버를 폴링하여 아이템에 변경이 있는 지 확인하므로, 사용자가 첫번째 페이지에 있지 않다면 서버를 폴링할 필요가 없습니다.
+블로그 게시물의 크기가 `data-max-items-per-page`로 지정한 최대 항목 수를 초과했다면 오래된 블로그 항목은 2페이지와 같이 '다음' 페이지에 표시됩니다. `amp-live-list`가 주기적으로 서버를 폴링하여 항목이 변경되지 않았는지 확인하므로 사용자가 첫 번째 페이지에 있지 않으면 서버를 폴링하지 않아도 됩니다.
 
-폴링 메커니즘을 방지하기 위해 호스트 페이지에 disabled 속성을 추가할 수 있습니다.
-라이브 블로그 샘플에서는 서버사이드 플랫폼에서 이 동작을 수행합니다.
-요청한 페이지가 첫번쨰 페이지가 아닌 경우, `amp-live-list` 컴포넌트에 disabled 속성을 추가합니다.
+호스팅된 페이지에 사용 중지된 속성을 추가하여 폴링 메커니즘을 방지할 수 있습니다. 라이브 블로그 샘플에서는 서버 측 템플릿으로 속성 추가 동작을 실행했습니다. 요청된 페이지가 첫 번째 페이지가 아니면 amp-live-list 구성요소에 사용 중지됨 속성을 추가합니다.
 
-## 딥링크
+### 딥 링크
 
-블로그 포스트를 발행할 때, 공유 같은 기능을 사용하려면 포스트에 딥 링크할 수 있어야합니다.
-`amp-live-list`를 사용하면 블로그 아이템의 id를 이용하여 간단하게 딥링크할 수 있습니다.
-예를 들어, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3)는 "post3" id를 가진 블로그 포스트로 연결하여 바로 그 포스트로 이동합니다.
+블로그 게시물을 게시하면 게시물로 딥 링크를 실행하여 공유 같은 기능을 사용할 수 있어야 합니다. `amp-live-list`를 사용하면 블로그 항목의 `id`를 사용하여 딥 링크를 실행할 수 있습니다. 예를 들어 [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3)를 통해 ID가 `post3`인 블로그 게시물로 바로 이동할 수 있습니다.
 
-[라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)에서는 쿠키를 기반으로 한 테크닉을 사용하여 새로운 콘텐츠를 생성합니다. (자세한 내용은 라이브 블로그 샘플 섹션의 추가 정보 참고)
-페이지에 최초로 방문했을 때, "post3"란 id를 가진 포스트를 사용할 수 없으면 첫번째 게시물로 리디렉트합니다.
+AMP By Example에서는 [라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)에서 쿠키를 사용하여 새 콘텐츠를 생성하므로 페이지에 처음 방문한 경우 ID가 'post3'인 게시물은 사용하지 못할 수 있으며, 이 경우 첫 번째 게시물로 리디렉션됩니다.
+
+
+## 리소스
+
+다음 리소스에서 자세히 알아보세요.
+
+- [amp-live-list](/ko/docs/reference/components/amp-live-list.html) 참조 문서
+- [AMP By Example의 amp-live-list 샘플](https://ampbyexample.com/components/amp-live-list/)
+- [AMP By Example의 라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)
+ 
+ 
+ 
