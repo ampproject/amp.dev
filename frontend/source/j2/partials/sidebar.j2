@@ -1,11 +1,15 @@
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-sidebar.css') %}
 {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
+{% do doc.icons.useIcon('partials/icons/arrow-down-thick.svg') %}
 
 <div class="ad-o-sidebar">
   <div class="destination-stage websites websites-background">
     <div class="destination-stage-content">
 		  <span class="hl">Select your topic:</span>
       <div class="destination-list-view-box destination-list-view-box-gradient">
+        <div class="destination-list-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down-thick"></use></svg>
+        </div>
 		    <amp-selector layout="container">
 			    <ul class="destination-list">
           {% set documentation = g.collection('amp-dev/documentation') %}

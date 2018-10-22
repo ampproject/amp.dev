@@ -55,7 +55,7 @@
 
     &-home {
       display: block;
-      text-transform: uppercase;
+      padding: 5px 0;
     }
 
     &-lang {
@@ -154,19 +154,21 @@
 
     & svg {
       @include ico;
-      @include ico-blue-ribbon;
       @include ico-1;
       @include drop-shadow;
     }
 
     &-text {
-      padding-left: 10px;
+      text-transform: uppercase;
+      padding-left: 5px;
     }
 
     &-logo {
 
       & svg {
+        @include ico;
         @include ico-3;
+        @include ico-blue-ribbon;
       }
     }
   }
