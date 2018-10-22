@@ -34,7 +34,7 @@ parallax
 @import '../../extends';
 @import '../../functions';
 @import '../../mixins';
-@import '../../_variables';
+@import '../../variables';
 
 .#{molecule('float-image')} {
 	display: grid;
@@ -53,6 +53,7 @@ parallax
 	}
 
 	.#{atom('img')} {
+		padding-top: 100%;
 		margin-right: 0;
 
 		img {

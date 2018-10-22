@@ -1,1 +1,0 @@
-Please read the <a href="https://github.com/getgrav/grav/blob/develop/CONTRIBUTING.md" target="_blank">Contributing Guidelines of the Grav Project</a>

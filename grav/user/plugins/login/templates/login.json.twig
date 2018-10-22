@@ -1,5 +1,0 @@
-{%- if not grav.user.authenticated -%}
-{"code":401,"status":"unauthenticated","error":{"message":"Authentication required","login":{{ include('partials/login-form.html.twig')|trim|json_encode }}}}
-{%- else -%}
-{"code":200,"status":"authenticated","message":"You have been authenticated"}
-{%- endif -%}

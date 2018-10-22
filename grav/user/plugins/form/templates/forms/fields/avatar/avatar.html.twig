@@ -1,5 +1,0 @@
-{% if form.data.avatar %}
-    <label><img style="max-width:200px;" src="{{ base_url_simple ~ '/' ~ (form.data.avatar|first).path }}" /></label>
-{% else %}
-    <label><img src="https://www.gravatar.com/avatar/{{ form.data.email|md5 }}?s=200" /></label>
-{% endif %}

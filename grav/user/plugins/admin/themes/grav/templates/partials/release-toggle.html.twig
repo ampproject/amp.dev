@@ -1,9 +1,0 @@
-<form id="gpm-release-toggle">
-    <div class="switch-toggle switch-grav" data-url="{{ base_url }}/ajax.json/task:gpmRelease">
-        <input type="radio" value="stable" id="stable" name="channel-switch" class="highlight" {% if config.system.gpm.releases == 'stable' %} checked="checked"{% endif %}>
-        <label for="stable">{{ "PLUGIN_ADMIN.STABLE"|tu }}</label>
-        <input type="radio" value="testing" id="testing" name="channel-switch" class="highlight" {% if config.system.gpm.releases == 'testing' %} checked="checked"{% endif %}>
-        <label for="testing">{{ "PLUGIN_ADMIN.TESTING"|tu }}</label>
-        <a></a>
-    </div>
-</form>

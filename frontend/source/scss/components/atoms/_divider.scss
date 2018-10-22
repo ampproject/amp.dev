@@ -6,29 +6,37 @@
 
 ### SAMPLE MARKUP:
 
-<hr>
+<span class="ad-a-divider ad-a-divider-desktop"></span>
 
 ### INFO:
 
 A simple element that can be used anywhere.
 More modifiers can be added below.
 
+### MODIFIERS:
+
+desktop
+	Displays the divider also on desktop resolution. Default is just for mobile.
+
 */
 
-hr {
+.#{atom('divider')} {
 	display: block;
 	width: 100%;
-  border: none;
-	background-color: color('whisper');
 	height: 1px;
-	margin: 1.5em 0;
-}
+	margin-bottom: 0.813em;
+	background-color: color('whisper');
 
 	@media screen and (min-width: 768px) {
 		display: none;
 	}
 
-
+	&-desktop {
+		@media screen and (min-width: 768px) {
+			display: block;
+		}
+	}
+}
 
 
 @mixin divider {
