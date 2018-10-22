@@ -1,6 +1,7 @@
 {% do doc.styles.addCssFile('css/components/organisms/header.css') %}
 {% do doc.icons.useIcon('partials/icons/logo.svg') %}
 {% do doc.icons.useIcon('partials/icons/search.svg') %}
+{% do doc.icons.useIcon('partials/icons/globe.svg') %}
 
 {% import '/macros/atoms.j2' as atoms %}
 {% set home = g.doc('/content/amp-dev/index.md') %}
@@ -21,7 +22,6 @@
         <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
           <span class="ad-o-header-icon-text">amp</span>
-      </a>
         </a>
       </li>
       <li class="ad-o-header-lnk ad-o-header-lnk-mobile ad-o-header-search-mobile">
@@ -61,6 +61,7 @@
       {% endfor %}
        {% set languages = g.doc('/content/languages/index.md')%}
         <li class="ad-o-header-lnk ad-o-header-lnk-mobile ad-o-header-lnk-lang">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use></svg>
           <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
         </li>
     </ul>
@@ -96,7 +97,9 @@
     </li>
     {% set languages = g.doc('/content/languages/index.md')%}
     <li class="ad-o-header-lnk ad-o-header-lnk-lang">
-      <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
+      <a class="ad-o-header-icon ad-m-lnk" href="{{ languages.url.path }}">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use></svg>
+      <span class="ad-o-header-icon-text">en</span></a>
     </li>
   </ul>
   </nav>
