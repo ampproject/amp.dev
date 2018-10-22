@@ -11,7 +11,9 @@ $view: /views/docs/detail.j2
 [](https://www.youtube.com/watch?v=OO9oKhs80aI)
 [/video]
 
+[intro]
 The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be *validated*. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
+[/intro]
 
 ## How do I check if my page is valid AMP?
 
