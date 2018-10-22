@@ -66,7 +66,7 @@ Please refer to mixins.scss to see gradients.
 	&-number {
 		@include txt;
 		@include txt-strong;
-		@include txt-light;
+		@include color-white;
 
 		font-size: 3em;
 		line-height: 1;
@@ -77,7 +77,7 @@ Please refer to mixins.scss to see gradients.
 		@include txt;
 		@include txt-p;
 		@include txt-3;
-		@include txt-light;
+		@include color-white;
 
 		display: block; /* Fallback for non-webkit */
 		display: -webkit-box;

@@ -89,16 +89,9 @@ stories-home
   font-size: 0.875em;
 }
 
-@mixin hl-silver {
-  color: color('silver');
-  font-size: 0.625em;
+@mixin hl-h4 {
+  font-size: 1em;
 }
-
-@mixin hl-blue-ribbon {
-  color: color('blue-ribbon');
-}
-
-
 
 @mixin  hl-stage {
   font-size: 1.5em;
@@ -108,22 +101,7 @@ stories-home
   }
 }
 
-@mixin hl-light {
-  color: color('white');
-}
-
 @mixin hl-mono {
   font-family: monospace;
 }
 
-@mixin hl-stories {
-	color: color('ultramarine');
-}
-
-@mixin hl-ads {
-	color: color('hawkes-blue');
-}
-
-@mixin hl-email {
-	color: color('reef');
-}

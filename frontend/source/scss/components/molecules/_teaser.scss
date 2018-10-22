@@ -16,6 +16,7 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 @import '../../mixins';
 @import '../../variables';
 
+@import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
@@ -58,8 +59,8 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	@include txt-hl;
 	@include txt-1;
 	@include txt-strong;
-	@include txt-light;
 	@include hl-mono;
+	@include color-white;
 	margin: 0;
 }
 
@@ -113,7 +114,7 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	@include txt-1;
 	@include txt-strong;
 	@include txt-font-accent;
-	@include txt-black;
+	@include color-black;
 	margin: 0;
 }
 
