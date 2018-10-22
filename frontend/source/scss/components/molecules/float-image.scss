@@ -4,17 +4,6 @@
 ### MOLECULE: float-image ###
 #############################
 
-### SAMPLE MARKUP:
-
-<div class="ad-m-float-image">
-  <div class="ad-a-img ad-a-img-static">
-    <amp-img src="source/to/img.jpg" layout="fill" alt="The Alt Text"></amp-img>
-  </div>
-  <div class="ad-a-img ad-a-img-shadow-static ad-a-img-parallax" amp-fx="parallax" data-parallax-factor="1.1">
-    <amp-img src="source/to/img.jpg" layout="fill" alt="The Alt Text"></amp-img>
-  </div>
-</div>
-
 ### INFO:
 
 The float-image molecule uses amp-fx-collection to animate one image while scrolling.

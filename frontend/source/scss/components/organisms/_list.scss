@@ -4,29 +4,6 @@
 ### ORGANISM: list ###
 ######################
 
-### SAMPLE MARKUP:
-
-<ul class="ad-o-list ad-o-list-scroll col-5-4"  aria-labelledby="KPI list">
-	<li class="ad-o-list-item" aria-labelledby="KPI item">
-		<div class="ad-m-kpi">
-			<svg class="ad-a-ico ad-a-ico-stories ad-a-ico-3 ad-a-ico-blue-ribbon ad-a-ico-transparent">
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stories"></use>
-			</svg>
-			<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">title</span>
-			<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">text</p>
-		</div>
-	</li>
-	<li class="ad-o-list-item" aria-labelledby="KPI item">
-		<div class="ad-m-kpi">
-			<svg class="ad-a-ico ad-a-ico-stories ad-a-ico-3 ad-a-ico-blue-ribbon ad-a-ico-transparent">
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stories"></use>
-			</svg>
-			<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">title</span>
-			<p class="ad-a-txt ad-a-txt-4 ad-a-txt-light">text</p>
-		</div>
-	</li>
-</ul>
-
 ### INFO:
 
 The teaser-list organism includes multiple teaser molecules.

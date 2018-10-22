@@ -4,18 +4,6 @@
 ### Organism: Destination Drop Down Stage ###
 ##################
 
-### SAMPLE MARKUP:
-
-<div [class]="stages.currentStage != 'default' ? 'destination-stage ' + stages.currentStage + ' destination-stage destination-stage-active' : 'destination-stage'"
-class="destination-stage websites">
-	<div class="destination-stage-content">
-		<h1 class="hl" [class]="stages.currentStage != 'default' ? 'hl hl-'+stages.currentStage : 'hl' ">
-			AMP is a web component based framework for easily creating user first
-		</h1>
-		{% call molecules.dropdownSwitch( doc.destinations ) %} {{ atoms.icon('arrow-down-thick' ) }} {% endcall %}
-	</div>
-</div>
-
 ### INFO:
 
 The background of the destination-stage requires the heroEnterAnimation mixin.
