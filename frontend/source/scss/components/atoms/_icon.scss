@@ -31,6 +31,7 @@ square
 @mixin ico {
 	display: flex;
 	font-size: initial;
+	box-sizing: initial;
 }
 
 @mixin ico-1 {
