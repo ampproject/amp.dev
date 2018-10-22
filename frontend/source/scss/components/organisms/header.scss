@@ -77,6 +77,10 @@
       &:hover {
         @include color-blue-ribbon;
       }
+
+      &-mobile {
+        padding-top: 8px;
+      }
     }
 
     &-selected {
@@ -129,6 +133,7 @@
 
   &-subnav {
     padding: 0 30px;
+    height: 50px;
     background-color: color('white');
   }
 
