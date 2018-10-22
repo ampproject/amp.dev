@@ -1,0 +1,74 @@
+{% set gumroad_loaded = false %}
+<div class="grav-update plugins"></div>
+{% if installing %}
+    {% include 'partials/release-toggle.html.twig' %}
+{% endif %}
+{% include 'partials/list-sort.html.twig' with { list_view: 'plugins' } %}
+<h1>
+    {{ installing ? "PLUGIN_ADMIN.AVAILABLE_PLUGINS"|tu : "PLUGIN_ADMIN.INSTALLED_PLUGINS"|tu }}
+</h1>
+<form>
+    <div class="gpm-search">
+        <input type="text" placeholder="{{ "PLUGIN_ADMIN.RESOURCE_FILTER"|tu }}" data-gpm-filter>
+    </div>
+</form>
+
+<table>
+    {% for slug, plugin in admin.plugins(not installing).toArray|ksort %}
+        {% set data = admin.data('plugins/' ~ slug) %}
+        {% set isTestingRelease = admin.gpm.isTestingRelease(slug) %}
+        {% set releaseDate = plugin.date ?: admin.gpm.findPackage(slug, true).date %}
+
+        <tr data-gpm-plugin="{{ slug|url_encode }}" data-gpm-name="{{ plugin.name }}" data-gpm-release-date="{{ releaseDate }}" data-gpm-author="{{ plugin.author.name }}" data-gpm-official="{{ admin.isTeamGrav(plugin) ? '1' : '2' }}" data-gpm-updatable="{{ admin.gpm.isUpdatable(slug) ? '1' : '2' }}" data-gpm-enabled="{{ data.get('enabled') ? '1' : '2' }}" data-gpm-testing="{{ isTestingRelease ? '1' : '2' }}">
+            <td class="gpm-name quadruple">
+                <i class="fa fa-fw fa-{{ plugin.icon }}"></i>
+                <a href="{{ base_url_relative }}/plugins/{{ slug|url_encode }}">{{ plugin.name }}</a>
+                {% if admin.isTeamGrav(plugin) %}
+                    <small><span class="info-reverse"><i class="fa fa-check-circle" title="{{ "PLUGIN_ADMIN.GRAV_OFFICIAL_PLUGIN"|tu }}"></i></span></small>
+                {% endif %}
+                {% if admin.isPremiumProduct(plugin) %}
+                    {% if not gumroad_loaded %}
+                        {% set gumroad_loaded = true %}
+                        <script src="//gumroad.com/js/gumroad.js"></script>
+                    {% endif %}
+                    <small><span class="badge warning premium"><i class="fa fa-star-o"></i> {{ "PLUGIN_ADMIN.PREMIUM_PRODUCT"|tu }}</span></small>
+                {% endif %}
+                {% if plugin.symlink %}
+                <span class="hint--bottom"  data-hint="{{ "PLUGIN_ADMIN.PLUGIN_SYMBOLICALLY_LINKED"|tu }}">
+                    <i class="fa fa-fw fa-link"></i>
+                </span>
+                {% endif %}
+                <span class="gpm-version">v{{ plugin.version }}</span>
+                {% if isTestingRelease %}<span class="gpm-testing">test release</span>{% endif %}
+            </td>
+            <td class="gpm-actions">
+                {% if (not installing and (plugin.form.fields.enabled.type != 'hidden' and plugin.form.fields.tabs.fields.login.fields.enabled.type != 'hidden')) %}
+                    <a class="{{ data.get('enabled') ? 'enabled' : 'disabled' }}" href="{{ uri.addNonce(base_url_relative ~ '/plugins/' ~ slug ~ '/task' ~ config.system.param_sep ~ (data.get('enabled') ? 'disable' : 'enable'), 'admin-form', 'admin-nonce') }}">
+                        <i class="fa fa-fw fa-toggle-{{ data.get('enabled') ? 'on' : 'off' }}"></i>
+                    </a>
+                {% elseif (installing) %}
+                    {% if (plugin.premium and not admin.license(plugin.slug)) %}
+                        {% if not gumroad_loaded %}
+                            {% set gumroad_loaded = true %}
+                            <script src="//gumroad.com/js/gumroad.js"></script>
+                        {% endif %}
+                        <a class="gumroad-button button" href="https://gum.co/{{ plugin.premium.permalink }}" target="_blank" data-gumroad-single-product="true"><i class="fa fa-shopping-cart"></i> {{ "Buy Now"|tu }}</a>
+                    {% else %}
+                <a class="button" href="#" data-remodal-target="add-package" data-packages-slugs="{{ plugin.slug }}" data-plugin-action="start-package-installation"><i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.INSTALL"|tu }}</a>
+                    {% endif %}
+                {% endif %}
+                <span class="gpm-details-expand"><i class="fa fa-chevron-down"></i></span>
+            </td>
+            <td class="gpm-details">
+                <div class="table-wrapper">
+                    {% include 'partials/plugin-data.html.twig' with { plugin: plugin } %}
+                </div>
+            </td>
+        </tr>
+    {% else %}
+        <tr><td>{{ "PLUGIN_ADMIN.OFFLINE_WARNING"|tu }}</td></tr>
+    {% endfor %}
+</table>
+
+{% include 'partials/modal-add-package.html.twig' with { type: 'plugin' } %}
+{% include 'partials/modal-update-packages.html.twig' with { type: 'plugin' } %}

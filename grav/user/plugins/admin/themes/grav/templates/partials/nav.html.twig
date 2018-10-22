@@ -1,0 +1,95 @@
+{% if authorize(['admin.login', 'admin.super']) %}
+    <nav id="admin-sidebar" data-quickopen="{{ config.plugins.admin.sidebar.activate == 'hover' ? 'true' : 'false' }}" data-quickopen-delay="{{ config.plugins.admin.sidebar.hover_delay }}">
+        {% if config.plugins.admin.sidebar.activate != 'hover' %}
+            <div id="open-handle" data-sidebar-toggle><i class="fa fa-angle-right"></i></div>
+        {% endif %}
+
+        <div id="admin-logo">
+            {% include 'partials/logo.html.twig' %}
+        </div>
+
+        {% include 'partials/nav-user-details.html.twig' %}
+
+        {% include 'partials/nav-quick-tray.html.twig' %}
+
+        <div class="admin-menu-wrapper">
+            <ul id="admin-menu">
+                <li class="{{ (location == 'dashboard') ? 'selected' : '' }}">
+                    <a href="{{ base_url_relative }}"><i class="fa fa-fw fa-th"></i><em>{{ "PLUGIN_ADMIN.DASHBOARD"|tu }}</em></a>
+                </li>
+                {% if authorize(['admin.configuration', 'admin.super']) %}
+                    <li class="{{ (location == 'system' or location == 'site' or location == 'config') ? 'selected' : '' }}">
+                        <a href="{{ base_url_relative }}/config/system"><i class="fa fa-fw fa-wrench"></i><em>{{ "PLUGIN_ADMIN.CONFIGURATION"|tu }}</em></a>
+                    </li>
+                {% endif %}
+                {% if authorize(['admin.pages', 'admin.super']) %}
+                    <li class="{{ (location == 'pages') ? 'selected' : '' }}">
+                        <a href="{{ base_url_relative }}/pages">
+                            <i class="fa fa-fw fa-file-text-o"></i>
+                            <em>{{ "PLUGIN_ADMIN.PAGES"|tu }}</em>
+                            <span class="badges">
+                                <span class="badge count">{{ admin.pagesCount }}</span>
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if grav.twig.plugins_hooked_nav %}
+                    {% for label, item in grav.twig.plugins_hooked_nav %}
+                        {% if authorize((item.authorize is defined and item.authorize is iterable) ? item.authorize : [item.authorize ?: ('admin.' ~ (item.location ?: item.route)), 'admin.super']) %}
+                            <li class="{{ (location == (item.location ?: item.route)) ? 'selected' : '' }}">
+                                <a href="{{ base_url_relative }}/{{ item.route ?: item.location }}">
+                                    <i class="fa fa-fw {{ item.icon }}"></i>
+                                    <em>{{ label|tu }}</em>
+                                    {% if item.badge %}
+                                    <span class="badges {% if item.badge.updates is defined %}with-updates{% endif %}">
+                                        {% if item.badge.updates is defined %}<span class="badge updates">{{ item.badge.updates }}</span>{% endif %}
+                                        <span class="badge count">{{ item.badge.count }}</span>
+                                    </span>
+                                    {% endif %}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if authorize(['admin.plugins', 'admin.super']) %}
+                    <li class="{{ (location == 'plugins') ? 'selected' : '' }}">
+                        <a href="{{ base_url_relative }}/plugins">
+                            <i class="fa fa-fw fa-plug"></i>
+                            <em>{{ "PLUGIN_ADMIN.PLUGINS"|tu }}</em>
+                            <span class="badges">
+                                <span class="badge updates"></span>
+                                <span class="badge count">{{ admin.plugins|length }}</span>
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if authorize(['admin.themes', 'admin.super']) %}
+                    <li class="{{ (location == 'themes') ? 'selected' : '' }}">
+                        <a href="{{ base_url_relative }}/themes">
+                            <i class="fa fa-fw fa-tint"></i>
+                            <em>{{ "PLUGIN_ADMIN.THEMES"|tu }}</em>
+                            <span class="badges">
+                                <span class="badge updates"></span>
+                                <span class="badge count">{{ admin.themes|length }}</span>
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if authorize(['admin.tools', 'admin.super']) %}
+                    <li class="{{ (location == 'tools') ? 'selected' : '' }}">
+                        <a href="{{ base_url_relative }}/tools">
+                            <i class="fa fa-fw fa-briefcase"></i>
+                            <em>{{ "PLUGIN_ADMIN.TOOLS"|tu }}</em>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% include 'partials/nav-pro.html.twig' ignore missing %}
+
+                <li>
+                    <a href="{{ uri.addNonce(base_url_relative ~ '/task' ~ config.system.param_sep ~ 'logout', 'logout-form', 'logout-nonce') }}"><i class="fa fa-fw fa-sign-out"></i><em>{{ "PLUGIN_ADMIN.LOGOUT"|tu }}</em></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endif %}

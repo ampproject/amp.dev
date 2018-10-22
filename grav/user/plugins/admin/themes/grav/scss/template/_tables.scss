@@ -1,0 +1,158 @@
+table,
+tbody,
+thead {
+    display: inline-block;
+    width: 100%;
+}
+
+.gpm-details {
+    width: 100%;
+    @include flex(auto);
+}
+
+td {
+    border: 0;
+}
+
+tr {
+    @include transition(all 0.2s ease);
+
+    @include display(flex);
+    @include flex-wrap(wrap);
+
+    th, td {
+        display: block;
+        @include flex(1);
+
+        &.shrink {
+            @include flex(0);
+        }
+
+        &.double {
+            @include flex(2);
+        }
+
+        &.triple {
+            @include flex(3);
+        }
+
+        &.quadruple {
+            @include flex(4);
+        }
+
+        &.quintuple {
+            @include flex(5);
+        }
+
+        &.sextuple {
+            @include flex(6);
+        }
+
+        &.septuple {
+            @include flex(7);
+        }
+
+        &.octuple {
+            @include flex(8);
+        }
+
+        &.nontuple {
+            @include flex(9);
+        }
+
+        &.dectuple {
+            @include flex(10);
+        }
+
+        &:first-child {
+            padding-left: $padding-default;
+
+            @include breakpoint(mobile-only) {
+                padding-left: 1rem;
+            }
+        }
+
+        &:last-child {
+            padding-right: $padding-default;
+
+            @include breakpoint(mobile-only) {
+                padding-right: 1rem;
+            }
+        }
+
+        &.left {
+            text-align: left;
+        }
+
+        &.center {
+            text-align: center;
+        }
+
+        &.right {
+            text-align: right;
+        }
+
+        &.ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &.rtl {
+                text-align: left;
+            }
+        }
+
+        &.rtl {
+            direction: rtl;
+        }
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    td {
+
+        &.gpm-actions {
+            padding-right: $padding-default + 1rem;
+        }
+
+        &.gpm-actions {
+            line-height: 1;
+            text-align: right;
+            position: relative;
+
+            .gpm-details-expand {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+        }
+
+        &.gpm-details {
+            margin: 0;
+            padding: 0;
+
+            @include breakpoint(mobile-only){
+                word-wrap: break-word;
+            }
+
+            > .table-wrapper {
+                display: none;
+
+                td {
+                    border-bottom: 0;
+                }
+            }
+
+            tbody {
+                width: 100%;
+            }
+        }
+    }
+
+    &:last-child {
+        td {
+            border-bottom: 0;
+        }
+    }
+}

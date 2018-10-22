@@ -1,0 +1,19 @@
+{% set index = uri.param('index') %}
+
+{% for file in admin.files(true, index) %}
+    {% set the_file = file.file %}
+
+    {% if the_file.exists and the_file.display() is not empty %}
+    <div class="card-item">
+        <div class="admin-media-details">
+            <a href="{% if is_modal %}#{% else %}{{ base_url_relative }}/media-manager/{{base64_encode(the_file.filepath)}}{% endif %}" class="js__media-element" data-file-url="{{ file.page_route ~ '/' ~ file.title }}">
+                {% set thumbnail = the_file.display(the_file.extension == 'svg' ? 'source' : 'thumbnail') %}
+                {% if thumbnail %}
+                <img src="{{thumbnail.cropZoom(250, 250).url}}" />
+                <h4 class="admin-media-title">{{ file.title }}</h4>
+                {% endif %}
+            </a>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}

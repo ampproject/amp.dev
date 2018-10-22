@@ -1,0 +1,26 @@
+{% extends "forms/field.html.twig" %}
+
+{% block input %}
+    <div class="form-input-wrapper {{ field.size }}">
+        <input
+                type="text"
+                value="{{ value|e('html_attr')|join(', ') }}"
+                data-key-observe="{{ (scope ~ field.name)|fieldName }}"
+                {% block input_attributes %}
+                    {% if field.classes is defined %}class="{{ field.classes }}" {% endif %}
+                    {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
+                    {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
+                    {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+                    {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+                    {% if field.autofocus in ['on', 'true', 1] %}autofocus="autofocus"{% endif %}
+                    {% if field.novalidate in ['on', 'true', 1] %}novalidate="novalidate"{% endif %}
+                    {% if field.readonly in ['on', 'true', 1] %}readonly="readonly"{% endif %}
+                    {% if field.autocomplete in ['on', 'off'] %}autocomplete="{{ field.autocomplete }}"{% endif %}
+                    {% if field.validate.required in ['on', 'true', 1] %}required="required"{% endif %}
+                    {% if field.validate.pattern %}pattern="{{ field.validate.pattern }}"{% endif %}
+                    {% if field.validate.message %}title="{{ field.validate.message|e|t }}"
+                    {% elseif field.title is defined %}title="{{ field.title|e|t }}" {% endif %}
+                {% endblock %}
+        />
+    </div>
+{% endblock %}

@@ -1,0 +1,194 @@
+{% extends "forms/field.html.twig" %}
+
+{% set value = (value is null ? field.default : value) %}
+{% set name = field.name %}
+{% set btnLabel = field.btnLabel is defined ? field.btnLabel : "PLUGIN_ADMIN.ADD_ITEM" %}
+{% set btnSortLabel = field.btnSortLabel is defined ? field.btnSortLabel : "PLUGIN_ADMIN.SORT_BY" %}
+{% set fieldControls = field.controls|default('bottom') %}
+
+{% block contents %}
+    <div class="form-label{% if not vertical %} block size-1-3 pure-u-1-3{% endif %}">
+        {% if field.toggleable %}
+            <span class="checkboxes toggleable" data-grav-field="toggleable" data-grav-field-name="{{ (scope ~ field.name)|fieldName }}">
+                <input type="checkbox"
+                       id="toggleable_{{ field.name }}"
+                       {% if toggleableChecked %}value="1"{% endif %}
+                       name="toggleable_{{ (scope ~ field.name)|fieldName }}"
+                       {% if toggleableChecked %}checked="checked"{% endif %}
+                >
+                <label for="toggleable_{{ field.name }}"></label>
+            </span>
+        {% endif %}
+        <label{{ (field.toggleable ? ' class="toggleable" for="toggleable_' ~ field.name ~ '"')|raw }}>
+            {% if field.help %}
+            <span class="hint--bottom" data-hint="{{ field.help|e|tu }}">{{ field.label|tu }}</span>
+            {% else %}
+            {{ field.label|tu }}
+            {% endif %}
+            {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}
+        </label>
+    </div>
+    <div class="form-data{% if not vertical %} block size-2-3 pure-u-2-3{% endif %}"
+        {% block global_attributes %}
+        data-grav-field="{{ field.type }}"
+        data-grav-disabled="{{ toggleableChecked }}"
+        data-grav-default="{{ field.default|json_encode|e('html_attr') }}"
+        {% endblock %}
+    >
+
+        <div class="form-list-wrapper {{ field.size }}" data-type="collection"
+             {% if field.selectunique %}
+                 data-select-unique="{{ field.selectunique|json_encode|e('html_attr') }}"
+                 data-max="{{ field.selectunique|length }}"
+             {% endif %}
+            {% if field.min is defined %}data-min="{{ field.min }}"{% endif %}
+            {% if field.max is defined and not field.selectunique %}data-max="{{ field.max }}"{% endif %}
+        >
+            {% if fieldControls in ['top', 'both'] %}
+                <div class="collection-actions">
+                    {% if collapsible %}
+                        <button class="button" type="button" data-action="expand_all"
+                                {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}><i class="fa fa-chevron-circle-down"></i> {{ "PLUGIN_ADMIN.EXPAND_ALL"|e|tu }}</button>
+                        <button class="button" type="button" data-action="collapse_all"
+                                {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}><i class="fa fa-chevron-circle-right"></i> {{ "PLUGIN_ADMIN.COLLAPSE_ALL"|e|tu }}</button>
+                    {% endif %}
+                    {% if field.sortby %}
+                        <button class="button{{ not value|length ? ' hidden' : '' }}" type="button" data-action="sort" data-action-sort="{{ field.sortby }}" data-action-sort-dir="{{ field.sortby_dir|default('asc') }}"
+                                {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}><i class="fa fa-sort-amount-{{ field.sortby_dir|default('asc') }}"></i> {{ btnSortLabel|e|tu }} '{{ field.sortby }}'</button>
+                    {% endif %}
+                    <button class="button" type="button" data-action="add" data-action-add="bottom"
+                            {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}><i class="fa fa-plus"></i> {{ btnLabel|e|tu }}</button>
+                </div>
+            {% endif %}
+            <ul  {% if field.classes is defined %}class="{{ field.classes }}"{% endif %} data-collection-holder="{{ name }}"
+                {% if field.sort is same as(false) %}
+                    data-collection-nosort
+                {% endif %}>
+                {% if field.fields %}
+                {% set collapsible = field.fields|length > 1 and (field.collapsible is not defined or field.collapsible)  %}
+                {% for key, val in value %}
+                    {% set itemName = name ? name ~ '.' ~ key : key %}
+                    <li data-collection-item="{{ itemName }}" data-collection-key="{{ key }}" class="{{ collapsible and field.collapsed ? 'collection-collapsed' : '' }}">
+                        <div class="collection-sort"><i class="fa fa-fw fa-bars"></i></div>
+                        {% for childName, child in field.fields %}
+                            {%- if childName == 'value' -%}
+                                {% set childKey = '' %}
+                                {% set childValue = val %}
+                                {% set childName = itemName -%}
+                            {%- elseif childName starts with '.' -%}
+                                {% set childKey = childName|trim('.') %}
+                                {% set childValue = val[childName[1:]] %}
+                                {% set childName = itemName ~ childName %}
+                            {% else %}
+                                {% set childKey = childName %}
+                                {% set childValue = data.value(scope ~ childName) %}
+                                {% set childName = childName|replace({'*': key}) %}
+                            {% endif %}
+                            {% set child = child|merge({ name: childName }) %}
+
+                            {% if child.type == 'key' %}
+                                {%
+                                    include 'forms/fields/key/key.html.twig'
+                                    with { field: child, value: key }
+                                %}
+                            {% elseif child.key == true %}
+                                {% include [
+                                        "forms/fields/#{child.type}/#{child.type}.html.twig",
+                                        'forms/fields/key/key.html.twig'
+                                    ] with { field: child, value: key }
+                                %}
+                            {% elseif child.type %}
+                                {% set originalValue = childValue %}
+                                {%
+                                    include [
+                                        "forms/fields/#{child.type}/#{child.type}.html.twig",
+                                        'forms/fields/text/text.html.twig'
+                                    ] with { field: child, value: childValue }
+                                %}
+                            {% endif %}
+                        {% endfor %}
+                        <div class="item-actions">
+                            {% if collapsible %}
+                                <i class="fa fa-chevron-circle-{{ field.collapsed ? 'right' : 'down' }}" data-action="{{ field.collapsed ? 'expand' : 'collapse' }}"></i>
+                                <br />
+                            {% endif %}
+                            <i class="fa fa-trash-o" data-action="delete"></i>
+                        </div>
+                    </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+            {% if fieldControls in ['bottom', 'both'] %}
+            <div class="collection-actions">
+                {% if collapsible %}
+                    <button class="button" type="button" data-action="expand_all"
+                            {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}><i class="fa fa-chevron-circle-down"></i> {{ "PLUGIN_ADMIN.EXPAND_ALL"|e|tu }}</button>
+                    <button class="button" type="button" data-action="collapse_all"
+                            {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}><i class="fa fa-chevron-circle-right"></i> {{ "PLUGIN_ADMIN.COLLAPSE_ALL"|e|tu }}</button>
+                {% endif %}
+                {% if field.sortby %}
+                    <button class="button{{ not value|length ? ' hidden' : '' }}" type="button" data-action="sort" data-action-sort="{{ field.sortby }}" data-action-sort-dir="{{ field.sortby_dir|default('asc') }}"
+                            {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}><i class="fa fa-sort-amount-{{ field.sortby_dir|default('asc') }}"></i> {{ btnSortLabel|e|tu }} '{{ field.sortby }}'</button>
+                {% endif %}
+                <button class="button" type="button" data-action="add" data-action-add="bottom"
+                        {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}><i class="fa fa-plus"></i> {{ btnLabel|e|tu }}</button>
+            </div>
+            {% endif %}
+
+            {%- set itemName = name ? name ~ '.*' : '*' -%}
+            <div style="display: none;" data-collection-template="new" data-collection-template-html="{%- filter replace({'   ': ' ', '\n': ' '})|e('html_attr') -%}
+                <li data-collection-item="{{ itemName }}">
+                    {% if field.sort is not same as(false) %}
+                    <div class="collection-sort"><i class="fa fa-fw fa-bars"></i></div>
+                    {% endif %}
+                    {%- if field.fields -%}
+                    {%- for childName, child in field.fields -%}
+                        {%- if childName == 'value' -%}
+                            {%- set childKey = '' -%}
+                            {%- set childName = itemName -%}
+                        {%- elseif childName starts with '.' -%}
+                            {%- set childKey = childName|trim('.') -%}
+                            {%- set childName = itemName ~ childName -%}
+                        {%- else %}
+                            {%- set childKey = childName -%}
+                            {%- set childName = childName|replace({'*': key}) -%}
+                        {%- endif %}
+                        {%- set child = child|merge({ name: childName }) -%}
+
+                        {%- if child.type == 'key' -%}
+                            {%-
+                                include 'forms/fields/key/key.html.twig'
+                                with { field: child, value: null }
+                            -%}
+                        {%- elseif child.key == true -%}
+                            {%-
+                            include [
+                                "forms/fields/#{child.type}/#{child.type}.html.twig",
+                                'forms/fields/key/key.html.twig'
+                                ] with { field: child, value: null }
+                            -%}
+                        {%- elseif child.type -%}
+                            {%-
+                                include [
+                                    "forms/fields/#{child.type}/#{child.type}.html.twig",
+                                    'forms/fields/text/text.html.twig'
+                                ] with { field: child, value: null }
+                            -%}
+                        {%- endif -%}
+                    {%- endfor %}
+                    <div class="item-actions">
+                        {% if collapsible %}
+                            <i class="fa fa-chevron-circle-down" data-action="collapse"></i>
+                            <br />
+                        {% endif %}
+                        <i class="fa fa-trash-o" data-action="delete"></i>
+                    </div>
+                    {%- endif -%}
+                </li>
+            {%- endfilter -%}"></div>
+
+            <div style="display: none;" data-collection-config="{{ name }}"></div>
+        </div>
+    </div>
+{% endblock %}
+

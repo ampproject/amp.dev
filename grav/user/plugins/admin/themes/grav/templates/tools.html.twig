@@ -1,0 +1,33 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set tools_slug = uri.basename|e %}
+{% if tools_slug == 'tools' %}{% set tools_slug = 'direct-install' %}{% endif %}
+{% set title = "PLUGIN_ADMIN.TOOLS"|tu ~ ": " ~ ("PLUGIN_ADMIN." ~ tools_slug|underscorize|upper)|tu %}
+
+{% block titlebar %}
+    <h1><i class="fa fa-fw fa-briefcase"></i> {{ "PLUGIN_ADMIN.TOOLS"|tu }} - {{ ("PLUGIN_ADMIN." ~ tools_slug|underscorize|upper)|tu }}</h1>
+{% endblock %}
+
+{% block content_top %}
+
+    {% if admin.tools|length > 1 %}
+
+    <div class="form-tabs">
+        <div class="tabs-nav">
+        {% for tool in admin.tools %}
+            <a href="{{ base_url_relative }}/tools/{{tool|hyphenize}}" {% if tools_slug == tool|hyphenize %}class="active"{% endif %}>
+                {{ tool|tu|capitalize }}
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if authorize(['admin.tools', 'admin.super']) %}
+        {% include 'partials/tools-' ~ tools_slug ~ '.html.twig' ignore missing %}
+    {% endif %}
+{% endblock %}
+

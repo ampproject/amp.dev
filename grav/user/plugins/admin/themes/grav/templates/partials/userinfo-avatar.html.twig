@@ -1,0 +1,5 @@
+{% if data.avatar %}
+    <label><img src="{{ base_url_simple ~ '/' ~ (data.avatar|first).path }}" /></label>
+{% else %}
+    <label><img src="https://www.gravatar.com/avatar/{{ data.email|md5 }}?s=200" /></label>
+{% endif %}

@@ -1,0 +1,1190 @@
+$topbar-height: 4.2rem;
+$update-height: 3rem;
+$sidebar-width-large: 240px;
+$sidebar-width-small: $topbar-height;
+$sidebar-padding: 2rem;
+$content-padding: 1.5rem;
+
+// Special cases
+.sidebar-closed:not(.sidebar-quickopen) {
+    #admin-sidebar {
+        float: left;
+        visibility: visible;
+        opacity: 1;
+        width: $sidebar-width-small;
+
+        #admin-logo {
+            h3 {
+                font-size: 0;
+                &:first-letter {
+                    font-size: 2.5rem;
+                }
+            }
+
+
+        }
+
+        #grav-logo-small {
+            display: inline-block;
+        }
+
+        #grav-logo-large {
+            display: none;
+        }
+
+        .front-end {
+            display: none;
+        }
+
+        #admin-user-details {
+            padding: 15px 0 15px 10px;
+            text-align: left;
+        }
+
+        .admin-user-names {
+            display: none;
+        }
+
+        #admin-menu {
+            em {
+                display: none;
+            }
+
+            li {
+                .badges {
+                    .updates {
+                        border-radius: 100%;
+                        position: absolute;
+                        top: 4px;
+                        right: 10px;
+                        font-size: 9px;
+                        line-height: 12px;
+                        padding: 1px 3px;
+                        min-width: 15px;
+                    }
+                    .count {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        #open-handle {
+            @include breakpoint(large-desktop-plus) {
+                .fa-angle-right:before {
+                    content: "\f105";
+                }
+            }
+        }
+    }
+    #admin-main {
+        margin-left: $sidebar-width-small;
+    }
+}
+
+.sidebar-open {
+    #admin-sidebar {
+        z-index: 10001;
+        float: left;
+        visibility: visible;
+        opacity: 1;
+        width: $sidebar-width-large;
+
+        h3 {
+            font-size: 1.2rem;
+            &:first-letter {
+                font-size: 1.2rem;
+            }
+        }
+
+        #grav-logo-small {
+            display: none;
+        }
+
+        #grav-logo-large {
+            display: inline-block;
+        }
+
+        #admin-user-details {
+            padding: 15px 10px;
+            text-align: left;
+        }
+
+        .admin-user-names {
+            display: block;
+        }
+
+        .front-end {
+            display: inline-block;
+        }
+
+        #admin-menu {
+            em {
+                display: inline;
+            }
+
+            li {
+                .badges {
+                    .updates {
+                        border-bottom-right-radius: 0;
+                        border-top-right-radius: 0;
+                        position: relative;
+                        top: auto;
+                        right: auto;
+                        @extend .badge;
+                    }
+                    .count {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        #open-handle {
+            @include breakpoint(mini-nav-range) {
+                .fa-angle-right:before {
+                    content: "\f104";
+                }
+            }
+        }
+    }
+}
+
+#admin-sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 100vh;
+    opacity: 0;
+    z-index: 3;
+    //transition: opacity 0.2s 0s, visibility 0s 0.2s;
+
+    #open-handle {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right:0;
+        top: 0;
+        width: 15px;
+        height: $topbar-height;
+        text-align: center;
+        line-height: $topbar-height;
+        font-size: 12px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+
+
+        @include breakpoint(large-desktop-plus) {
+            .fa-angle-right:before {
+                content: "\f104";
+            }
+        }
+    }
+
+    &.sidebar-is-visible {
+        opacity: 1;
+        visibility: visible;
+        //transition: opacity 0.2s 0s, visibility 0s 0s
+    }
+
+    @include breakpoint(mobile-only) {
+        z-index: 5;
+    }
+
+    @include breakpoint(tablet-plus) {
+        float: left;
+        visibility: visible;
+        opacity: 1;
+        width: $sidebar-width-small;
+    }
+
+    @include breakpoint(large-desktop-plus) {
+        float: left;
+        visibility: visible;
+        opacity: 1;
+        width: $sidebar-width-large;
+    }
+
+}
+
+#admin-logo {
+    height: $topbar-height;
+    text-align: center;
+
+    .admin-logo {
+        a:not(.front-end) {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20%;
+            padding-right: 1rem;
+
+            &:first-child {
+                width: 70%;
+                padding-right: 0;
+                @include breakpoint(mobile-only) {
+                    width: 100%;
+                }
+            }
+
+            .fa {
+                display: block;
+                margin-top: -5px;
+            }
+        }
+    }
+
+    .front-end {
+
+        @include breakpoint(mobile-only) {
+            display: none;
+        }
+
+        @include breakpoint(tablet-plus) {
+            display: none;
+        }
+
+        @include breakpoint(large-desktop-plus) {
+            display: inline-block;
+        }
+
+    }
+
+    #grav-logo-small {
+        max-width: 100%;
+        height: 30px;
+        display: none;
+        margin: 18px 0;
+
+        @include breakpoint(tablet-plus) {
+            display: inline-block;
+        }
+
+        @include breakpoint(large-desktop-plus) {
+            display: none;
+        }
+    }
+
+    #grav-logo-large {
+        max-width: 100%;
+        height: 30px;
+        margin: 18px 0;
+
+        @include breakpoint(tablet-plus) {
+            display: none;
+        }
+
+        @include breakpoint(large-desktop-plus) {
+            display: inline-block;
+        }
+    }
+
+    h3 {
+        margin: 0 15px 0 0;
+        @extend %vertical-align;
+        text-align: center;
+        font-size: 1.5rem;
+
+
+        @include breakpoint(tablet-plus) {
+            font-size: 0;
+            &:first-letter {
+                font-size: 2.5rem;
+            }
+        }
+
+        @include breakpoint(large-desktop-plus) {
+            font-size: 1.5rem;
+            &:first-letter {
+                font-size: 1.5rem;
+            }
+        }
+
+        i {
+            font-size: 1rem;
+            vertical-align: middle;
+            margin-top: -1px;
+        }
+    }
+}
+
+.block-userinfo {
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    & ~ .block-file {
+        margin-top: -5rem !important;
+    }
+}
+
+#offline-status {
+    padding: .2rem 1rem;
+    text-align: center;
+    display: none;
+
+    .fa-plane {
+        @include transform(rotate(45deg));
+    }
+}
+
+#admin-user-details {
+    img {
+        width: 47px;
+        height: 47px;
+        object-fit: cover;
+    }
+}
+
+#admin-user-details, .admin-user-details {
+    padding: 15px 10px;
+    min-height: 80px;
+    overflow: hidden;
+    text-align: left;
+
+    @include breakpoint(mini-nav-range) {
+        padding: 1rem 10px;
+        text-align: center;
+    }
+
+    img {
+        @include transition(all 0.5s ease);
+        border-radius: 100%;
+        float: left;
+    }
+
+    .admin-user-names {
+        margin-left: 60px;
+        margin-top: 5px;
+        display: block;
+
+        @include breakpoint(mini-nav-range) {
+            display: none;
+        }
+
+        h4, h5 {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+
+        .badge {
+            font-size: 0.8rem;
+        }
+
+        h5 {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+#admin-nav-quick-tray {
+    margin: 0;
+    list-style: none;
+    padding-left: 26px;
+    padding-right: 10px;
+
+
+    li {
+        cursor: pointer;
+        width: 24px;
+        margin: 3px 0 5px;
+    }
+
+    i {
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.content-padding {
+    #messages.default-box-shadow {
+        margin-bottom: $content-padding;
+
+        @include breakpoint(mobile-only) {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+
+.admin-menu-wrapper {
+    height: calc(100vh - 180px);
+    overflow: hidden;
+
+    @include breakpoint(mini-nav-range) {
+        height: calc(100vh - 136px);
+    }
+}
+
+#admin-menu {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    em {
+        font-style: normal;
+
+        @include breakpoint(mini-nav-range) {
+            display: none;
+        }
+    }
+
+    li {
+        .badges {
+            float: right;
+            margin-right: 1rem;
+
+            .badge {
+                display: inline-block;
+                margin-right: -5px;
+            }
+
+            .updates {
+                display: none;
+            }
+
+            .count {
+                @include breakpoint(mini-nav-range) {
+                    display: none;
+                }
+            }
+
+            &.with-updates {
+                .count {
+                    border-bottom-left-radius: 0;
+                    border-top-left-radius: 0;
+                }
+
+                .updates {
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+                    display: inline-block;
+
+                    @include breakpoint(mini-nav-range) {
+                        border-radius: 100%;
+                        position: absolute;
+                        top: 4px;
+                        right: 10px;
+                        font-size: 9px;
+                        line-height: 12px;
+                        padding: 1px 3px;
+                        min-width: 15px;
+                    }
+                }
+            }
+        }
+
+        a {
+            @include transition(all 0.2s ease);
+            display: block;
+            padding-left: 25px;
+            padding-top: 0.7rem;
+            padding-bottom: 0.7rem;
+            position: relative;
+
+            .fa {
+                @include transition(all 0.2s ease);
+                margin-right: 8px;
+            }
+
+        }
+
+        &.selected {
+            a {
+                padding-left: 16px;
+            }
+        }
+    }
+}
+
+body.sidebar-quickopen #admin-main {
+    @include breakpoint(large-desktop-plus) {
+         margin-left: $sidebar-width-small;
+    }
+}
+
+#admin-main {
+
+    @include breakpoint(tablet-plus) {
+        margin-left: $sidebar-width-small;
+    }
+
+    @include breakpoint(large-desktop-plus) {
+        margin-left: $sidebar-width-large;
+    }
+
+    .hint:after, [data-hint]:after {
+        font-size: 0.9rem;
+        width: 300px;
+        line-height: inherit;
+        white-space: normal;
+
+        @include breakpoint(mobile-only) {
+            font-size: 0.5rem;
+        }
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 1.3rem;
+        text-align: left;
+        letter-spacing: -1px;
+        line-height: 1.5;
+    }
+
+    .padding {
+        padding: $padding-default;
+    }
+
+    .lines-button {
+        display: none;
+        margin-left: $padding-default / 4;
+        &:focus {
+            outline:none;
+        }
+
+        @include breakpoint(mobile-only) {
+            display: inline-block;
+
+        }
+
+    }
+
+    .button {
+        white-space: nowrap;
+    }
+
+    .titlebar {
+        position: relative;
+        height: $topbar-height;
+        padding: 0 $padding-default;
+        z-index: 4;
+
+        box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+
+        @include breakpoint(mobile-only) {
+            padding: 0 ($padding-default / 4) 0 ($padding-default + 2.5);
+        }
+
+        h1 {
+            @extend %vertical-align;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+
+            @include breakpoint(mobile-only) {
+                font-size: 18px;
+                i {
+                    display: none;
+                }
+            }
+        }
+
+        .button-bar {
+            @extend %vertical-align;
+            padding: 0;
+            white-space: nowrap;
+            z-index: 4;
+        }
+
+        .preview {
+            font-size: 90%;
+        }
+
+        .button {
+            padding: 0.5rem 0.4rem;
+            vertical-align: top;
+            margin-right: -2px;
+
+            @include breakpoint(mobile-only) {
+                font-size: 0;
+                padding: 0.5rem 0.5rem;
+                min-height: 36px;
+                i {
+                    font-size: 20px;
+                    margin-right: 0;
+                }
+            }
+
+            @media only all and (max-width: 20.875em) {
+                padding: 0.5rem 0.2rem;
+            }
+        }
+
+
+
+        @include breakpoint(mobile-only) {
+            .dropdown-menu .button {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .admin-block .alert {
+        margin-top: -2rem;
+        margin-bottom: 2rem;
+    }
+
+    .alert {
+        &:before {
+            font-family: FontAwesome;
+            margin-right: 5px;
+        }
+        &.info:before {
+            content: "\f0a1";
+        }
+        &.warning:before {
+            content: "\f071";
+        }
+        &.note:before {
+            content: "\f24a";
+        }
+
+        &.grav:before {
+            font-family: rockettheme-apps;
+            content: "\62";
+            vertical-align: bottom;
+        }
+        &.grav {
+            #grav-update-button {
+                float: right;
+            }
+        }
+    }
+
+    .grav-update {
+        @include clearfix;
+        padding: 0 $padding-default;
+        margin-top: -2rem;
+        margin-bottom: 1rem;
+        display: none;
+
+        @include breakpoint(mobile-only) {
+            padding: 0 1rem;
+        }
+
+        .button {
+            float: right;
+            margin-top: 0.6rem;
+            margin-left: 1rem;
+            line-height: 1.5;
+        }
+
+        p {
+            line-height: $update-height;
+            margin: 0;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+        }
+
+        span[class="hint--left"]::after {
+            line-height: 1.5;
+        }
+
+        i {
+            padding-right: 0.5rem;
+        }
+
+    }
+
+    .grav-update.grav + .content-wrapper {
+        height: calc(100vh - #{$topbar-height} - #{$update-height});
+    }
+
+    .content-wrapper {
+        position: relative;
+        overflow-y: hidden;
+        height: calc(100vh - #{$topbar-height});
+        //z-index: 0;
+
+        .gm-scrollbar.-vertical {
+            right: 5px;
+            top: 5px;
+            width: 8px;
+            border-radius: 4px;
+        }
+    }
+
+    .content-padding {
+        padding: $content-padding;
+
+        @include breakpoint(mobile-only) {
+            padding: 0;
+        }
+    }
+
+    .admin-block {
+        padding: 1rem 0;
+
+        &:empty {
+            padding: 0;
+        }
+
+        h1 {
+            padding: 0 $padding-default 0.5rem;
+            margin: 0 0 1rem;
+
+            @include breakpoint(mobile-only) {
+                padding: 0 1rem 0.5rem;
+            }
+
+            &.no_underline {
+                border-bottom: 0;
+            }
+        }
+
+        .button-bar {
+            margin: 0 $padding-default;
+
+            @include breakpoint(mobile-only) {
+                margin: -1rem 0 1rem 0;
+                width: 100%;
+                padding: 0 1rem;
+                text-align: center;
+
+                .button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .flush-bottom {
+        &.button-bar {
+            margin: 1rem (-$padding-default) -1rem;
+            height: 70px;
+            padding: 1rem;
+            float: none;
+
+            .button {
+                @extend %vertical-align;
+                margin: 0;
+            }
+        }
+    }
+
+    .danger, .success {
+        position: relative;
+
+        &.button-bar {
+            margin: 2rem 0 -1rem;
+            height: 70px;
+            padding: 1rem;
+            float: none;
+            .button {
+                @extend %vertical-align;
+            }
+        }
+    }
+}
+
+.content-padding {
+    #admin-dashboard {
+
+        .dashboard-item-flex {
+            &:nth-of-type(2n) .dashboard-item {
+                margin-right: 0;
+                margin-left: $content-padding / 2;
+            }
+
+            &:nth-of-type(2n+1) .dashboard-item {
+                margin-left: 0;
+                margin-right: $content-padding / 2;
+            }
+        }
+
+        .dashboard-item {
+            margin-bottom: $content-padding;
+        }
+
+    }
+}
+
+#admin-dashboard {
+
+    @include display(flex);
+    @include flex-flow(row wrap);
+
+    .dashboard-item-flex {
+        @include display(flex);
+        @include flex-flow(column nowrap);
+
+        width: 50%;
+
+
+
+        @include breakpoint(mobile-only) {
+            width: 100%;
+            .dashboard-item {
+                margin-right: 0px !important;
+                margin-left: 0px !important;
+                margin-bottom: 10px !important;
+            }
+        }
+    }
+
+    .dashboard-item {
+
+        > div:not(.widget-content) {
+            padding: 1rem $padding-default;
+        }
+
+        h1 .right {
+            float: right;
+        }
+
+        &.admin-block {
+            padding: 1rem 0;
+
+            ul {
+                margin: 0 0 1rem 0;
+                padding: 0;
+                list-style: none;
+            }
+            li {
+                margin: 0;
+                padding: 0.425rem $padding-default 0.2rem $padding-default;
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .chart-loader {
+        position: relative;
+
+        .fa {
+            display: block;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 4rem;
+            margin-top: -2rem;
+            @extend %vertical-align;
+        }
+
+        text-align: center;
+    }
+
+    .widget-content {
+        position: relative;
+        min-height: 335px;
+        padding: 0;
+    }
+
+    .widget-loader {
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+
+        .fa {
+            font-size: 4rem;
+        }
+    }
+
+    #updates {
+
+        p {
+            text-align: center;
+            margin: 0;
+        }
+
+        .updates-chart {
+            width: 50%;
+            float: left;
+
+        }
+
+        .chart-wrapper {
+            position: relative;
+        }
+
+        .backups-chart {
+            position: relative;
+            width: 50%;
+            float: left;
+        }
+
+        .ct-chart {
+            min-height: 157px;
+        }
+
+        .numeric {
+            display: block;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1;
+            @extend %vertical-align;
+
+            em {
+                display: block;
+                font-style: normal;
+                font-size: 1rem;
+            }
+
+        }
+
+        .admin-update-charts {
+            @include clearfix;
+            min-height: 191px;
+        }
+
+        .button {
+
+        }
+    }
+
+    #popularity {
+
+        .admin-statistics-chart {
+            position: relative;
+        }
+
+        .ct-chart {
+            min-height: 171px;
+        }
+
+        p {
+            text-align: center;
+            margin: 0;
+        }
+
+        .button-bar {
+            height: 100px;
+            padding: 0 1rem;
+
+        }
+        .stat {
+            @extend %vertical-align;
+            display: block;
+            float: left;
+            width: 33%;
+            text-align: center;
+            b {
+                display: block;
+                font-size: 2.5rem;
+                line-height: 1;
+                font-weight: 300;
+            }
+            i {
+                display: block;
+                font-style: normal;
+            }
+        }
+    }
+
+    #news-feed {
+        .date {
+            float: right;
+            z-index: 1;
+        }
+        li {
+
+
+            a {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                -ms-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                z-index: 0;
+
+                &:before {
+                    font-family: FontAwesome;
+                    margin-right: 10px;
+                    content: "\f1ea";
+                }
+            }
+
+
+        }
+    }
+}
+
+.no-flick {
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.card-row {
+    @include justify-content(space-between);
+}
+
+.card-item {
+    @extend .no-flick;
+    overflow: hidden;
+    padding: 1rem;
+    margin: 0;
+    position: relative;
+    width: 31%;
+    max-width: 21rem;
+
+    @include breakpoint(tablet-range) {
+        width: 48%;
+    }
+    @include breakpoint(mobile-only) {
+        width: 100%;
+    }
+
+    margin-bottom: 2rem;
+
+    h4 {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+}
+
+.user-details {
+    text-align: left;
+    img {
+        border-radius: 100%;
+
+    }
+    h2 {
+        margin: 0;
+        font-size: 2.1rem !important;
+        margin: 1rem 0 0 !important;
+        line-height: 1.5;
+
+        span {
+            font-size: 1.2rem;
+        }
+    }
+    h5 {
+        font-size: 1.1rem;
+        margin: 0;
+        linep-height: 1.2;
+    }
+
+    .gravatar {
+        font-size: 0.9rem;
+        padding: 0;
+    }
+
+    @include breakpoint(mobile-only) {
+        text-align: center;
+    }
+}
+
+#footer {
+    text-align: center;
+    padding: 3rem 0 1rem;
+}
+
+// Chart overrides
+.ct-chart {
+    .ct-series {
+        .ct-bar {
+            stroke-width: 20px;
+        }
+    }
+}
+
+#popularity .ct-chart {
+    margin: 0 -10px -10px;
+    .ct-chart-bar {
+        padding: 6px 6px 6px 10px;
+    }
+}
+
+#latest {
+    .page-title, .page-route {
+        overflow: auto;
+    }
+}
+
+#overlay {
+    position: fixed;
+    width: 25%;
+    height: 100%;
+    z-index: 999999;
+    left: 75%;
+    top: 0;
+    display: none;
+
+    @include breakpoint(mobile-only) {
+        display: none!important;
+    }
+}
+
+// Fix tabs spacing in plugin / theme options
+.gpm-item-info + #blueprints .block-tabs {
+    padding-top: 16px;
+}
+
+.plugins-notifications-container,
+.themes-notifications-container {
+    margin-bottom: 2rem;
+}
+
+.package-dependencies-container {
+    li {
+        height: 35px;
+
+        .button {
+            height: 30px;
+            float: right;
+            margin-right: 10px;
+            line-height: 20px;
+        }
+    }
+}
+
+.pointer-events-disabled {
+    pointer-events: none;
+}
+
+// Direct install
+
+.direct-install-content {
+    padding: 30px;
+
+    .button {
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+}
+
+// Reinstall packages
+.updates-checked {
+    .button-reinstall-package {
+        display: inline-block!important;
+    }
+
+    &.has-updates {
+        .button-reinstall-package {
+            display: none!important;
+        }
+    }
+}
+
+// Preview
+.preview-wrapper {
+    .content-padding {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}

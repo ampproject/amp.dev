@@ -1,0 +1,64 @@
+.sc-notice {
+    margin: 30px 0;
+    position: relative;
+}
+
+.sc-notice > div {
+    padding: 5px 20px;
+    display: block;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    color: #666;
+}
+
+.sc-notice > div:before {
+     position: absolute;
+     top: 2px;
+     color: #fff;
+     font-family: FontAwesome;
+     content: '';
+     left: 10px;
+}
+
+.sc-notice > div:first-child:after {
+     position: absolute;
+     top: 2px;
+     color: #fff;
+     left: 30px;
+}
+
+.sc-notice.info > div:first-child {
+    border-top: 30px solid #F0B37E;
+    background: #FFF2DB;
+}
+
+.sc-notice.info > div:first-child:after {
+    content: 'Info';
+}
+
+.sc-notice.warning > div:first-child {
+    border-top: 30px solid #DF6F6C;
+    background: #FAE2E2;
+}
+
+.sc-notice.warning > div:first-child:after {
+    content: 'Warning';
+}
+
+.sc-notice.note > div:first-child {
+    border-top: 30px solid #6AB0DE;
+    background: #E7F2FA;
+}
+
+.sc-notice.note > div:first-child:after {
+    content: 'Note';
+}
+
+.sc-notice.tip > div:first-child {
+    border-top: 30px solid #77C577;
+    background: #E6F9E6;
+}
+
+.sc-notice.tip > div:first-child:after {
+    content: 'Tip';
+}

@@ -1,0 +1,15 @@
+{% set scope = field.nest_id ? scope ~ field.name ~ '.' : scope %}
+<fieldset {% if field.id is defined %}id="{{ field.id }}"{% endif %} {% if field.classes is defined %}class="{{ field.classes }}" {% endif %}>
+{% if field.legend %}
+    <legend>{% if grav.twig.twig.filters['tu'] is defined %}{{ field.legend|tu }}{% else %}{{ field.legend|t }}{% endif %}</legend>
+{% endif %}
+
+{% if field.fields %}
+    {% for field in field.fields %}
+        {% if field.type %}
+            {% set value = form.value(field.name) %}
+            {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</fieldset>

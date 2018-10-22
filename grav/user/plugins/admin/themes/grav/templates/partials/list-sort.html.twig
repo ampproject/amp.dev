@@ -1,0 +1,12 @@
+<div class="sort-actions" data-grav-selectize="true">
+    <select>
+        <option value="name" selected>{{ "PLUGIN_ADMIN.NAME"|tu }}</option>
+        <option value="author">{{ "PLUGIN_ADMIN.AUTHOR"|tu }}</option>
+        <option value="official">GravTeam</option>
+        <option value="release-date">{{ "PLUGIN_ADMIN.RELEASE_DATE"|tu }}</option>
+        {% if list_view == 'plugins' and not installing %}<option value="enabled">{{ "PLUGIN_ADMIN.ENABLED"|tu }}</option>{% endif %}
+        {% if not installing %}<option value="updatable">{{ "PLUGIN_ADMIN.UPDATES_AVAILABLE"|tu }}</option>{% endif %}
+        {% if config.system.gpm.releases == 'testing' %}<option value="testing">{{ "PLUGIN_ADMIN.TESTING"|tu }}</option>{% endif %}
+    </select>
+    <div class="sort-icon"><i class="fa fa-fw fa-sort-amount-asc"></i></div>
+</div>

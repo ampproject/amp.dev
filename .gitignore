@@ -34,6 +34,9 @@ frontend/templates
 frontend/partials
 frontend/views
 frontend/macros
+grav/user/themes/amp-dev/templates
+grav/user/themes/amp-dev/css
+grav/user/themes/amp-dev/icons
 
 /templates
 /partials

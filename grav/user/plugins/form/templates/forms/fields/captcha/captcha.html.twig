@@ -1,0 +1,32 @@
+{% extends "forms/field.html.twig" %}
+
+{% block input %}
+    <script>
+        var captchaOnloadCallback = function captchaOnloadCallback() {
+            grecaptcha.render('g-recaptcha', {
+                'sitekey': "{{field.recaptcha_site_key ?: field.recaptcha_site_key ?: config.plugins.form.recaptcha.site_key }}",
+                'callback': captchaValidatedCallback,
+                'expired-callback': captchaExpiredCallback
+            });
+        };
+
+        var captchaValidatedCallback = function captchaValidatedCallback() {
+
+        };
+
+        var captchaExpiredCallback = function captchaExpiredCallback() {
+            grecaptcha.reset();
+        };
+
+        $('form').submit(function(event) {
+            if ($(this).has("#g-recaptcha-response").length && $("#g-recaptcha-response").val() === '') {
+                event.preventDefault();
+                alert("{{grav.language.translate('PLUGIN_FORM.ERROR_VALIDATING_CAPTCHA')}}");
+            }
+        });
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=captchaOnloadCallback&render=explicit&hl={{ grav.language.language }}"
+        async defer>
+    </script>
+    <div class="g-recaptcha" id="g-recaptcha"></div>
+{% endblock %}

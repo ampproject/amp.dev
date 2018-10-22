@@ -1,0 +1,68 @@
+{% extends "forms/field.html.twig" %}
+
+{% set value = (value is null ? field.default : value) %}
+{% set value = (value is same as(false) ? 0 : value) %}
+
+{% block global_attributes %}
+    data-grav-disabled="{{ originalValue is null ? 'true' : 'false' }}"
+    data-grav-default="{{ field.default|json_encode()|e('html_attr') }}"
+{% endblock %}
+
+{% macro spanToggle(input, length) %}
+    {% set space = repeat('&nbsp;&nbsp;', (length - input|length) / 2) %}
+    {{ (space ~ input ~ space)|raw }}
+{% endmacro %}
+
+{% block input %}
+    <div class="permissions-container">
+        {% set permissions = admin.getPermissions %}
+        {% for index_existing_permission, value_existing_permission in value %}
+            {% for index_segment1, value_segment1 in value_existing_permission %}
+                {% set permissions = permissions|merge({ (index_existing_permission ~ "." ~ index_segment1): "boolean"}) %}
+            {% endfor %}
+        {% endfor %}
+
+        {% for permission, type in permissions %}
+            <div class="permission-container">
+                {% set permission_segments = permission|split('.') %}
+                {% set permission_value = value[permission_segments[0]][permission_segments[1]] %}
+                {% if permission_value in ['on', 'true', 1] %}
+                    {% set permission_value = 'true' %}
+                {% endif %}
+
+                <input type="text" class="medium permission-value" value="{{ permission }}" />
+
+                <div class="switch-toggle switch-grav medium switch-3">
+                    {% set options = { true: 'PLUGIN_ADMIN.YES', false: 'PLUGIN_ADMIN.NO', '': 'PLUGIN_ADMIN.NOT_SET' } %}
+
+                    {% set maxLen = 0 %}
+                    {% for value, text in options %}
+                        {% set translation = grav.twig.twig.filters['tu'] is defined ? text|tu : text|t %}
+                        {% set maxLen = max(translation|length, maxLen) %}
+                    {% endfor %}
+
+                    {% for key, text in options %}
+                        {% set id = "toggle_" ~ field.name ~ "." ~ permission ~ key %}
+                        {% set translation = (grav.twig.twig.filters['tu'] is defined ? text|tu : text|t)|trim %}
+
+                        <input type="radio"
+                            value="{{ key }}"
+                            id="{{ id }}"
+                            name="{{ (scope ~ field.name ~ "." ~ permission)|fieldName }}"
+                            class="{{ 'true' == '' ~ key ? 'highlight' : '' }}"
+                            {% if key|fieldName == '' ~ permission_value|fieldName %}
+                                checked="checked"
+                            {% endif %}
+                            {% if field.validate.required in ['on', 'true', 1] %}required="required"{% endif %}
+                        />
+
+                        <label for="{{ id }}">{{ (_self.spanToggle(translation, maxLen)|trim)|raw }}</label>
+                    {% endfor %}
+                    <a></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,22 @@
+
+.switch-toggle {
+    display: inline-block;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: $form-border-radius;
+    line-height: 35px;
+
+    input[type=radio] {
+        position: absolute;
+        visibility: hidden;
+        display: none;
+    }
+
+    label {
+        display: inline-block;
+        cursor: pointer;
+        padding: 0 15px;
+        white-space: nowrap;
+    }
+
+}

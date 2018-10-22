@@ -1,0 +1,18 @@
+{
+    "require": {
+        "composer/semver": "^1.4",
+        "fguillot/picofeed": "@stable"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.1",
+        "fzaninotto/faker": "^1.5",
+        "symfony/yaml": "~2.8",
+        "symfony/console": "~2.8",
+        "symfony/finder": "~2.8",
+        "symfony/event-dispatcher": "~2.8"
+    },
+    "scripts": {
+        "test": "vendor/bin/codecept run unit",
+        "test-windows": "vendor\\bin\\codecept run unit"
+    }
+}

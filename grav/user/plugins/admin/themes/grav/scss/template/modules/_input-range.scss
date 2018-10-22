@@ -1,0 +1,87 @@
+$ir_slider_width: 230px;
+$ir_slider_height: 20px;
+$ir_counter_width: 60px;
+$ir_margin: 10px 0;
+
+input[type=range].rangefield {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    margin: $ir_margin;
+    width: $ir_slider_width;
+    background: none;
+
+    &:focus {
+        outline: none;
+    }
+    &::-webkit-slider-runnable-track {
+        width: $ir_slider_width;
+        height: $ir_slider_height;
+        cursor: pointer;
+        animate: 0.2s;
+        border-radius: 25px;
+    }
+    &::-webkit-slider-thumb {
+        height: 24px;
+        width: 35px;
+        border-radius: 6px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -3px;
+    }
+    &::-moz-focus-outer {
+        border: 0;
+    }
+    &::-moz-range-track {
+        width: $ir_slider_width;
+        height: $ir_slider_height;
+        cursor: pointer;
+        animate: 0.2s;
+        border-radius: 25px;
+    }
+    &::-moz-range-progress {
+        height: $ir_slider_height;
+        border-radius: 25px;
+    }
+    &::-moz-range-thumb {
+        height: 24px;
+        width: 35px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    &::-ms-track {
+        width: $ir_slider_width;
+        height: $ir_slider_height;
+        cursor: pointer;
+        animate: 0.2s;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+    &::-ms-fill-lower, input[type=range]::-ms-fill-upper {
+        border-radius: 50px;
+    }
+    &::-ms-thumb {
+        height: 24px;
+        width: 35px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    & ~ input[type=number].rangefield {
+        background: none;
+        display: inline-block;
+        width: $ir_counter_width;
+        text-align: right;
+        border: 0;
+        line-height: 16px;
+        vertical-align: middle;
+        padding: 0 0 0 5px;
+    }
+  }
+
+span.range-append {
+    display: inline-block;
+    line-height: 20px;
+    vertical-align: middle;
+    margin-left: -3px;
+}

@@ -1,0 +1,310 @@
+/* The MIT License */
+
+$preview-width: 200px;
+$preview-height: 150px;
+
+.dropzone {
+    position: relative;
+    border-radius: $form-border-radius;
+    min-height: 4rem;
+
+    &.dz-clickable {
+        cursor: pointer;
+    }
+    &.dz-drag-hover {
+        border-color: rgba(0,0,0,0.15);
+        background: rgba(0,0,0,0.04);
+    }
+    &.dz-started .dz-message {
+        display: none;
+    }
+    .dz-message {
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+    }
+    .dz-preview {
+        position: relative;
+        display: inline-block;
+        margin: 1rem 1rem 1.5rem 1rem;
+        vertical-align: top;
+
+        &.dz-file-preview [data-dz-thumbnail] {
+            display: none;
+        }
+
+        &.dz-error .dz-error-mark {
+            display: block;
+        }
+
+        &.dz-success .dz-success-mark {
+            display: block;
+        }
+
+        .dz-success-mark, .dz-error-mark {
+            font-family: FontAwesome;
+            display: none;
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 100%;
+            text-align: center;
+            right: 2px;
+            top: 2px;
+            span {
+                display: none;
+            }
+        }
+        &:hover {
+            .dz-success-mark, .dz-error-mark {
+                display: none;
+            }
+        }
+
+        .dz-success-mark {
+            &::after {
+                content: '\f00c';
+            }
+        }
+
+        .dz-error-mark {
+            &::after {
+                content: '\f12a';
+            }
+        }
+
+        .dz-progress {
+            position: absolute;
+            top: $preview-height;
+            left: 0px;
+            right: 0px;
+            height: 4px;
+            display: none;
+
+            .dz-upload {
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+            }
+        }
+
+        .dz-error-message {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            font-size: 0.9rem;
+            line-height: 1.2;
+            padding: 8px 10px;
+            z-index: 500;
+        }
+
+        &.dz-processing .dz-progress {
+            display: block;
+        }
+
+        &:hover {
+            .dz-remove, .dz-unset, .dz-view, .dz-insert, .dz-metadata {
+                display: block;
+            }
+
+        }
+
+        &:hover.dz-error .dz-error-message {
+            display: block;
+        }
+
+        //.dz-remove, .dz-unset, .dz-insert {
+        //    display: none;
+        //}
+
+        .dz-filename {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            width: 100%;
+            padding: 0 5px;
+            background: rgba(0,0,0,0.3);
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dz-remove, .dz-unset, .dz-view, .dz-insert, .dz-metadata {
+            display: none;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -25px;
+            font-size: 0;
+            cursor: pointer;
+
+            &:hover {
+                &:after {
+                    color: #fff;
+                }
+            }
+
+            &:after {
+                text-align: center;
+                display: block;
+                color: #999;
+                font-family: FontAwesome;
+                font-size: 18px;
+                line-height: 25px;
+            }
+        }
+
+        .dz-insert {
+            top: -1px;
+            border-top-right-radius: 4px;
+            &:after {
+                content: '\f055';
+            }
+        }
+
+        .dz-view {
+            top: 24px;
+            &:after {
+                content: '\f06e';
+            }
+        }
+
+        .dz-remove {
+            top: 72px;
+            &:after {
+                content: '\f1f8';
+            }
+        }
+
+        .dz-unset {
+            top: 96px;
+            border-bottom-right-radius: 4px;
+            &:after {
+                content: '\f00d';
+            }
+        }
+        
+        .dz-metadata {
+            top: 49px;
+            &:after {
+                content: '\f05a';
+            }
+        }
+
+        &.dz-no-editor {
+            .dz-view {
+                top: -1px;
+                border-top-right-radius: 4px;
+            }
+            .dz-remove {
+                top: 24px;
+            }
+            .dz-unset {
+                top: 72px;
+            }
+        }
+
+
+        //&:hover .dz-remove, .dz-unset:not(.file-thumbnail-remove), &:hover .dz-insert {
+        //    display: block;
+        //    position: absolute;
+        //    left: 0;
+        //    right: 0;
+        //    bottom: 22px;
+        //    width: 50%;
+        //    text-align: center;
+        //    cursor: pointer;
+        //    font-size: 0.8rem;
+        //}
+
+        &:hover .dz-remove, &:hover .dz-unset {
+            &.file-thumbnail-remove {
+                display: block;
+            }
+
+            &:not(.file-thumbnail-remove) {
+                left: inherit;
+                border-left: 0;
+            }
+        }
+
+        //&:hover .dz-insert {
+        //    right: inherit;
+        //}
+        //
+        //&.hide-backface:hover {
+        //    .dz-remove, .dz-unset, .dz-insert {
+        //        display: none;
+        //    }
+        //}
+
+        &.dz-processing {
+            .dz-details {
+                overflow: hidden;
+
+                img {
+                    //position: absolute;
+                    //left: 50%;
+                    //top: 50%;
+                    //height: auto;
+                    //width: 100%;
+                    //-webkit-transform: translate(-50%,-50%);
+                    //-ms-transform: translate(-50%,-50%);
+                    //transform: translate(-50%,-50%);
+                }
+            }
+        }
+
+        .dz-details {
+            width: $preview-width;
+            height: $preview-height;
+            position: relative;
+            font-size: 0.8rem;
+
+            img {
+                position: absolute;
+                object-fit: contain;
+                top: 0;
+                left: 0;
+                width: $preview-width;
+                height: $preview-height;
+            }
+
+            .dz-size {
+                position: absolute;
+                bottom: -28px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                font-size: 0.8rem;
+                height: 28px;
+                line-height: 28px;
+            }
+        }
+
+
+    }
+
+
+    &.dz-clickable {
+        .dz-message, .dz-message span {
+            cursor: pointer;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            margin: 1rem 0;
+        }
+    }
+    * {
+        cursor: default;
+    }
+}

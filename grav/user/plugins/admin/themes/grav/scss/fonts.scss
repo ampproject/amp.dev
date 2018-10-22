@@ -1,0 +1,15 @@
+$fonts-header: 'Josefin Slab' !default;
+$fonts-default: 'Roboto' !default;
+$fonts-mono: 'Inconsolata' !default;
+
+$font-definitions: (
+    Josefin+Slab: 400,
+    Roboto: '300,400,500',
+    Inconsolata: '400,700'
+);
+
+@import "configuration/fonts/support";
+
+
+
+

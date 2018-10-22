@@ -1,0 +1,55 @@
+%button {
+	display: inline-block;
+	padding: 0.3rem 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+
+    &:active {
+        margin: 1px 0 -1px 0;
+    }
+
+    i {
+        margin-right: 5px;
+    }
+
+    &.button-small {
+        padding: 2px 10px;
+        font-size: 1rem;
+    }
+
+    &.button-x-small {
+        padding: 2px 8px 2px 5px;
+        font-size: 0.9rem;
+    }
+
+}
+
+@mixin button-color($color, $text:$white, $lighter:null) {
+	color: rgba($text, 0.85);
+	border-radius: $border-radius;
+    background: $color;
+
+    @if ($lighter == null) {
+        $lighter: lightness($color) > 50;
+    }
+
+    @if ($lighter) {
+        &:hover {
+            background: shade($color,15%);
+            color: $text;
+        }
+        &.dropdown-toggle {
+            border-left: 1px solid lighten($color, 5%);
+        }
+    } @else {
+        &:hover {
+            background: tint($color,15%);
+            color: $text;
+        }
+        &.dropdown-toggle {
+            border-left: 1px solid darken($color, 5%);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<section id="grav-login">
+    {{ content|raw }}
+
+    <form method="post" action="{{ (base_url_relative ~ uri.path)|e }}">
+        {% for field in form.fields %}
+            {% if field.type %}
+                <div>
+                    {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="form-actions secondary-accent">
+            <button type="submit" class="button primary" name="task" value="login.forgot"><i class="fa fa-paper-plane"></i> {{ "PLUGIN_LOGIN.BTN_SEND_INSTRUCTIONS"|t }}</button>
+        </div>
+
+        {{ nonce_field('forgot-form', 'forgot-form-nonce')|raw }}
+    </form>
+</section>

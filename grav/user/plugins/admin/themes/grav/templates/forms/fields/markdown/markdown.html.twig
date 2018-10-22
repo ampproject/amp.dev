@@ -1,0 +1,10 @@
+{# Deprecated field. Alias to editor/editor.html.twig #}
+
+{% extends "forms/fields/editor/editor.html.twig" %}
+{% set codemirrorOptions = {'mode': 'gfm', 'ignore': []}|merge(field.codemirror|default({})) %}
+
+{# backward compatibility #}
+{% if field.showPreview %}
+    {% set codemirrorOptions = codemirrorOptions|merge({'ignore': []}) %}
+{% endif %}
+{# end backward compatibility #}

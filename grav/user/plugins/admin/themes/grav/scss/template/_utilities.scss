@@ -1,0 +1,5 @@
+@include breakpoint(mobile-only) {
+    .hidden-mobile {
+        display: none!important;
+    }
+}

@@ -1,0 +1,7 @@
+enabled: true
+active: true
+active_admin: false
+parser: regex
+fontawesome:
+  load: false
+  url: //maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css

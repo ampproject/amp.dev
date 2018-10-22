@@ -1,0 +1,62 @@
+{% set gpm = admin.gpm() %}
+{% set installed = gpm.isPluginInstalled(admin.route) %}
+{% set isTestingRelease = gpm.isTestingRelease(plugin.slug) %}
+{% set gumroad_loaded = false %}
+
+<div class="grav-update plugin" data-gpm-plugin="{{ admin.route }}">
+</div>
+
+<h1>
+    {{ plugin.name|e }}
+    {% if admin.isTeamGrav(plugin) %}
+        <small><span class="info-reverse"><i class="fa fa-check-circle" title="{{ "PLUGIN_ADMIN.GRAV_OFFICIAL_PLUGIN"|tu }}"></i></span></small>
+    {% endif %}
+    {% if admin.isPremiumProduct(plugin) %}
+        <small><span class="badge warning premium"><i class="fa fa-star-o"></i> {{ "PLUGIN_ADMIN.PREMIUM_PRODUCT"|tu }}</span></small>
+    {% endif %}
+    {% if plugin.symlink %}
+    <small class="hint--bottom" data-hint="{{ "PLUGIN_ADMIN.PLUGIN_SYMBOLICALLY_LINKED"|tu }}">
+        <i class="fa fa-fw fa-link"></i>
+    </small>
+    {% endif %}
+    <small>{{ plugin.version ? 'v' ~ plugin.version|e }}</small>
+    {% if isTestingRelease %}<span class="gpm-testing">test release</span>{% endif %}
+</h1>
+<div class="gpm-item-info">
+    <i class="gpm-item-icon fa fa-fw fa-{{ plugin.icon }}"></i>
+    {% include 'partials/plugin-data.html.twig' with { plugin: plugin } %}
+</div>
+
+{% if (installed) %}
+    {% set data = admin.data('plugins/' ~ admin.route) %}
+    {% include 'partials/blueprints.html.twig' with { data: data, blueprints: data.blueprints } %}
+
+    {% if (plugin.form.fields.enabled.type != 'hidden' and plugin.form.fields.tabs.fields.login.fields.enabled.type != 'hidden') %}
+        <div class="button-bar danger">
+            <span class="danger-zone"></span>
+            {% if not plugin.symlink %}
+                <a class="button button-reinstall-package hidden" href="#" data-remodal-target="reinstall-package"><i class="fa fa-fw fa-repeat"></i> {{ "PLUGIN_ADMIN.REINSTALL_PLUGIN"|tu }}</a>
+            {% endif %}
+            <a class="button" href="#" data-remodal-target="remove-package"><i class="fa fa-fw fa-warning"></i> {{ "PLUGIN_ADMIN.REMOVE_PLUGIN"|tu }}</a>
+        </div>
+    {% endif %}
+
+{% else %}
+    <div class="button-bar success">
+        {% if (plugin.premium and not admin.license(plugin.slug)) %}
+            {% if not gumroad_loaded %}
+                {% set gumroad_loaded = true %}
+                <script src="//gumroad.com/js/gumroad.js"></script>
+            {% endif %}
+            <a class="gumroad-button button" href="https://gum.co/{{ plugin.premium.permalink }}" target="_blank" data-gumroad-single-product="true"><i class="fa fa-shopping-cart"></i> {{ "Buy Now"|tu }}</a>
+        {% else %}
+            <a class="button" href="#" data-remodal-target="add-package" data-packages-slugs="{{ plugin.slug }}" data-plugin-action="start-package-installation"><i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.INSTALL_PLUGIN"|tu }}</a>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% include 'partials/modal-changes-detected.html.twig' %}
+{% include 'partials/modal-add-package.html.twig' with { type: 'plugin' } %}
+{% include 'partials/modal-update-packages.html.twig' with { type: 'plugin' } %}
+{% include 'partials/modal-remove-package.html.twig' with { type: 'plugin', package: plugin } %}
+{% include 'partials/modal-reinstall-package.html.twig' with { type: 'plugin', package: plugin } %}

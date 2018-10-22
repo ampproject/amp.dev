@@ -1,0 +1,123 @@
+{% if uri.extension() == 'json' %}{% include 'default.json.twig' %}{% else %}
+    {% set icon_style = config.plugins.admin.admin_icons %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    {% block head %}
+        <meta charset="utf-8" />
+        <title>{% if title %}{{ title }} | {% else %}{% if header.title %}{{ header.title }} | {% endif %}{% endif %}{{ site.title }}</title>
+        {% if header.description %}
+            <meta name="description" content="{{ header.description }}">
+        {% else %}
+            <meta name="description" content="{{ site.description }}">
+        {% endif %}
+        {% if header.robots %}
+            <meta name="robots" content="{{ header.robots }}">
+        {% else %}
+            <meta name="robots" content="noindex, nofollow">
+        {% endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{{ base_url_simple }}{{ theme_url }}/images/favicon.png">
+
+        {% block stylesheets %}
+            {% include 'partials/stylesheets.html.twig' %}
+            {{ assets.css()|raw }}
+        {% endblock %}
+
+        {% include 'partials/javascript-config.html.twig' %}
+        {% block javascripts %}
+            {% include 'partials/javascripts.html.twig' %}
+            {{ assets.js()|raw }}
+        {% endblock %}
+    {% endblock %}
+    </head>
+    {% block body %}
+    <body class="ga-theme-17x {{ config.plugins.admin.sidebar.size == 'small' ? 'sidebar-closed' : '' }} {{ config.plugins.admin.body_classes }} {{ body_classes }}">
+        {% block page %}
+        <div class="remodal-bg">
+
+            {% block navigation %}
+                {% include 'partials/nav.html.twig' %}
+            {% endblock %}
+
+            <main id="admin-main" >
+                {% include 'partials/nav-toggle.html.twig' %}
+                <div id="titlebar" class="titlebar">
+                    {% block titlebar %}{% endblock %}
+                </div>
+
+                {% block content_wrapper %}
+                <div class="content-wrapper">
+                    <div class="{% if config.plugins.admin.content_padding %}content-padding{% endif %}">
+                        {% block messages %}
+                            {% include 'partials/messages.html.twig' %}
+                        {% endblock %}
+
+                        {% block widgets %}{% endblock %}
+                        <div class="default-box-shadow">
+                            {% block content_top %}{% endblock %}
+                            <div class="admin-block">
+                                {%- block content %}{% endblock -%}
+                            </div>
+                            {% if config.plugins.admin.show_github_msg %}
+                            <div class="notice alert"><i class="fa fa-github"></i> <a href="https://github.com/getgrav/grav-plugin-admin/issues" target="_blank">{{ 'PLUGIN_ADMIN.ADMIN_REPORT_ISSUE'|tu }}</a></div>
+                            {% endif %}
+                            {% block content_bottom %}{% endblock %}
+                        </div>
+                        {% block footer %}
+                        <footer id="footer">
+                             <a href="http://getgrav.org">Grav</a> v<span class="grav-version">{{ constant('GRAV_VERSION') }}</span> - Admin v{{ admin_version }} - {{ "PLUGIN_ADMIN.WAS_MADE_WITH"|tu|lower }} <i class="fa fa-heart-o pulse"></i> {{ "PLUGIN_ADMIN.BY"|tu|lower }} <a href="https://trilby.media">Trilby Media</a>.
+                        </footer>
+                        {% endblock %}
+                    </div>
+                </div>
+                {% endblock %}
+
+                {% block modals %}
+                <div class="remodal" data-remodal-id="generic" data-remodal-options="hashTracking: false">
+                    <form>
+                        <h1>{{ "PLUGIN_ADMIN.ERROR"|tu }}</h1>
+                        <div class="error-content"></div>
+                        <div class="button-bar">
+                            <a class="button remodal-cancel" data-remodal-action="cancel" href="#">{{ "PLUGIN_ADMIN.CLOSE"|tu }}</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="remodal" data-remodal-id="metadata" data-remodal-options="hashTracking: false">
+                    <form>
+                        <h1><span>{{ "PLUGIN_ADMIN.METADATA"|tu }} for</span> <strong></strong></h1>
+                        <div class="metadata-preview">
+                            <div class="meta-preview"></div>
+                            <div class="meta-content"></div>
+                        </div>
+                        <div class="button-bar">
+                            <a class="button remodal-cancel" data-remodal-action="cancel" href="#">{{ "PLUGIN_ADMIN.CLOSE"|tu }}</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="remodal" data-remodal-id="delete-media" data-remodal-options="hashTracking: false">
+                    <form>
+                        <h1>{{ "PLUGIN_ADMIN.MODAL_DELETE_FILE_CONFIRMATION_REQUIRED_TITLE"|tu }}</h1>
+                        <p class="bigger">
+                            {{ "PLUGIN_ADMIN.MODAL_DELETE_FILE_CONFIRMATION_REQUIRED_DESC"|tu }}
+                        </p>
+                        <br>
+                        <div class="button-bar">
+                            <button data-remodal-action="cancel" class="button secondary remodal-cancel"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</button>
+                            <button data-remodal-action="confirm" class="button remodal-confirm disable-after-click"><i class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONTINUE"|tu }}</button>
+                        </div>
+                    </form>
+                </div>
+                {% endblock %}
+
+            </main>
+            <div id='overlay'></div>
+        </div>
+        {% endblock page %}
+    {% block bottom %}
+        {{ assets.js('bottom')|raw }}
+    {% endblock %}
+    </body>
+    {% endblock body %}
+    </html>
+{% endif %}

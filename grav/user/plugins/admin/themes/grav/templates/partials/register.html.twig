@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+{% set scope = scope ?: 'data.' %}
+
+{% block body %}
+<body id="admin-login-wrapper">
+    <section id="admin-login" class="default-glow-shadow {{ classes }}">
+        <h1>
+            {{ title }}
+        </h1>
+
+        {% include 'partials/messages.html.twig' %}
+
+        {% block instructions %}{% endblock %}
+
+        <form method="post" action="{{ base_url_relative }}">
+            <div class="padding">
+            {% block form %}{% endblock %}
+
+            {{ nonce_field('form', 'form-nonce')|raw }}
+            </div>
+        </form>
+    </section>
+</body>
+{% endblock %}

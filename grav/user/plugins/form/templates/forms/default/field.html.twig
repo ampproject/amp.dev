@@ -1,0 +1,113 @@
+{% set originalValue = originalValue is defined ? originalValue : value %}
+{% set toggleableChecked = field.toggleable and (originalValue is not null and originalValue is not empty) %}
+{% set isDisabledToggleable = field.toggleable and not toggleableChecked %}
+{% set value = (is_object(value) or value is null ? field.default : value) %}
+{% set cookie_name = 'forms-' ~ form.name ~ '-' ~ field.name %}
+{% set value = (is_object(value) or value is null ? (get_cookie(cookie_name) is null ? field.default : get_cookie(cookie_name)) : value) %}
+{% set errors = attribute(form.messages, field.name) %}
+{% set required = client_side_validation and field.validate.required in ['on', 'true', 1] %}
+{% set autofocus = (inline_errors == false) and field.autofocus in ['on', 'true', 1] %}
+
+{% if inline_errors and errors %}
+    {% set autofocus = true %}
+{% endif %}
+
+{% block field %}
+    <div class="{{ form_field_outer_classes ?: 'form-field' }} {{ field.outerclasses }} {% if errors %} has-errors{% endif %} {% block outer_field_classes %}{% endblock %}">
+        {% block contents %}
+            {% if field.label is not same as(false) and field.display_label is not same as(false) %}
+                <div class="{{ form_field_outer_label_classes ?: 'form-label' }} {{ field.labelclasses }}">
+                    <label class="{{ form_field_label_classes ?: 'inline' }}" {% if field.id is defined %}for="{{ field.id|e }}" {% endif %} >
+                    {% block label %}
+                        {% if field.help %}
+                            {% if field.markdown %}
+                                <span class="tooltip" data-asTooltip-position="w" title="{{ field.help|t|markdown(false)|e }}">{{ field.label|markdown(false)|default(field.name|capitalize)|t }}</span>
+                            {% else %}
+                                <span class="tooltip" data-asTooltip-position="w" title="{{ field.help|t|e }}">{{ field.label|default(field.name|capitalize)|t }}</span>
+                            {% endif %}
+                        {% else %}
+                            {% if field.markdown %}
+                                {{ field.label|markdown(false)|default(field.name|capitalize)|t|e('html_attr') }}
+                            {% else %}
+                                {{ field.label|default(field.name|capitalize)|t|e('html_attr') }}
+                            {% endif %}
+                        {% endif %}
+
+                        {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}
+                    {% endblock %}
+                    </label>
+                </div>
+            {% endif %}
+            <div class="{{ form_field_outer_data_classes ?: 'form-data' }} {{ field.dataclasses }}"
+                {% block global_attributes %}
+                data-grav-field="{{ field.type }}"
+                data-grav-disabled="{{ originalValue is null ? 'true' : 'false' }}"
+                data-grav-default="{{ field.default|json_encode()|e('html_attr') }}"
+                {% endblock %}
+            >
+                {% block group %}
+                    {% block input %}
+                        <div class="{{ form_field_wrapper_classes ?: 'form-input-wrapper' }} {{ field.size }} {{ field.wrapper_classes }}">
+                            {% block prepend %}{% endblock prepend %}
+                            <input
+                                {# required attribute structures #}
+                                name="{{ (scope ~ field.name)|fieldName }}"
+                                value="{{ value|join(', ')|e('html_attr') }}"
+                                {# input attribute structures #}
+                                {% block input_attributes %}
+                                    class="{{ form_field_input_classes }} {{ field.classes }}"
+                                    {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
+                                    {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
+                                    {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+                                    {% if field.placeholder %}placeholder="{{ field.placeholder|t|e('html_attr') }}"{% endif %}
+                                    {% if autofocus %}autofocus="autofocus"{% endif %}
+                                    {% if field.novalidate in ['on', 'true', 1] %}novalidate="novalidate"{% endif %}
+                                    {% if field.readonly in ['on', 'true', 1] %}readonly="readonly"{% endif %}
+                                    {% if field.autocomplete is defined %}autocomplete="{{ field.autocomplete }}"{% endif %}
+                                    {% if field.autocapitalize in ['off', 'characters', 'words', 'sentences'] %}autocapitalize="{{ field.autocapitalize }}"{% endif %}
+                                    {% if field.inputmode in ['none', 'text', 'decimal', 'numeric', 'tel', 'search', 'email', 'url'] %}inputmode="{{ field.inputmode }}"{% endif %}
+                                    {% if field.spellcheck in ['true', 'false'] %}spellcheck="{{ field.spellcheck }}"{% endif %}
+
+                                    {% if field.attributes is defined %}
+                                      {% for attribute in field.attributes %}
+                                          {{ attribute.name }}="{{ attribute.value|e }}"
+                                      {% endfor %}
+                                    {% endif %}
+                                    {% if required %}required="required"{% endif %}
+                                    {% if field.validate.pattern %}pattern="{{ field.validate.pattern|e }}"{% endif %}
+                                    {% if field.validate.message %}title="{{ field.validate.message|t|e }}"
+                                    {% elseif field.title is defined %}title="{{ field.title|t|e }}" {% endif %}
+                                    {% if field.datasets %}
+                                        {% for datakey, datavalue in field.datasets %}
+                                            data-{{ datakey }}="{{ datavalue|e('html_attr') }}"
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endblock %}
+                            />
+                            {% block append %}{% endblock append %}
+                            {% if inline_errors and errors %}
+                                <div class="{{ form_errors_classes ?: 'form-errors' }}">
+                                    {% for error in errors %}
+                                        <p class="form-message"><i class="fa fa-exclamation-circle"></i> {{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endblock %}
+                {% endblock %}
+                {% if field.description %}
+                    <div class="form-extra-wrapper {{ field.size|e }} {{ field.wrapper_classes }}">
+                        <span class="form-description">
+                            {% if field.markdown %}
+                                {{ field.description|t|markdown(false)|raw }}
+                            {% else %}
+                                {{ field.description|t|raw }}
+                            {% endif %}
+                        </span>
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

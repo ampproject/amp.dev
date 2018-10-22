@@ -1,0 +1,30 @@
+<h1>{{ "PLUGIN_ADMIN.TOOLS_DIRECT_INSTALL_TITLE"|tu }}</h1>
+
+<div class="direct-install-content">
+
+	<h2>{{ "PLUGIN_ADMIN.TOOLS_DIRECT_INSTALL_UPLOAD_TITLE"|tu }}</h2>
+	<p>{{ "PLUGIN_ADMIN.TOOLS_DIRECT_INSTALL_UPLOAD_DESC"|tu|raw }}</p>
+
+	<form action="{{ base_url_relative }}/tools/task:directInstall" method="post" enctype="multipart/form-data">
+	    <input type="file" name="uploaded_file" id="uploaded_file" required accept="application/zip, application/octet-stream">
+	    <input type="submit" value="{{ "PLUGIN_ADMIN.TOOLS_DIRECT_INSTALL_UPLOAD_BUTTON"|tu }}" name="submit" class="button">
+	    <input type="hidden" name="task" value="directInstall" />
+
+		{{ nonce_field('admin-form', 'admin-nonce')|raw }}
+	</form>
+
+
+	<h2>{{ "PLUGIN_ADMIN.TOOLS_DIRECT_INSTALL_URL_TITLE"|tu }}</h2>
+	<p>{{ "PLUGIN_ADMIN.TOOLS_DIRECT_INSTALL_URL_DESC"|tu|raw }}</p>
+
+	<form action="{{ base_url_relative }}/tools/task:directInstall" method="post">
+		<input type="text" name="file_path" class="large" required />
+	    <input type="submit" value="{{ "PLUGIN_ADMIN.INSTALL"|tu }}" name="submit" class="button">
+        <input type="hidden" name="task" value="directInstall" />
+
+	    {{ nonce_field('admin-form', 'admin-nonce')|raw }}
+	</form>
+
+
+</div>
+

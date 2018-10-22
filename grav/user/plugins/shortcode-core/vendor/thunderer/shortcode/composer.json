@@ -1,0 +1,29 @@
+{
+    "name": "thunderer/shortcode",
+    "description": "Advanced shortcode (BBCode) parser and engine for PHP",
+    "keywords": ["shortcode", "bbcode", "parser", "engine", "library"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomasz Kowalczyk",
+            "email": "tomasz@kowalczyk.cc"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.1|^5.0"
+    },
+    "suggest": {
+        "symfony/yaml": "if you want to use YAML serializer",
+        "ext-dom": "if you want to use XML serializer",
+        "ext-json": "if you want to use JSON serializer"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thunder\\Shortcode\\": "src/",
+            "Thunder\\Shortcode\\Tests\\": "tests/"
+        }
+    }
+}

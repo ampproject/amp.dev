@@ -1,0 +1,110 @@
+{% extends "forms/field.html.twig" %}
+{% set defaults = config.plugins.form %}
+{% set files = defaults.files|merge(field|default([])) %}
+{% set limit = not field.multiple ? 1 : files.limit %}
+
+{% do config.set('forms.dropzone.enabled', true) %}
+
+{% macro bytesToSize(bytes) -%}
+    {% spaceless %}
+        {% set kilobyte = 1024 %}
+        {% set megabyte = kilobyte * 1024 %}
+        {% set gigabyte = megabyte * 1024 %}
+        {% set terabyte = gigabyte * 1024 %}
+
+        {% if bytes < kilobyte %}
+            {{ bytes ~ ' B' }}
+        {% elseif bytes < megabyte %}
+            {{ (bytes / kilobyte)|number_format(2, '.') ~ ' KB' }}
+        {% elseif bytes < gigabyte %}
+            {{ (bytes / megabyte)|number_format(2, '.') ~ ' MB' }}
+        {% elseif bytes < terabyte %}
+            {{ (bytes / gigabyte)|number_format(2, '.') ~ ' GB' }}
+        {% else %}
+            {{ (bytes / terabyte)|number_format(2, '.') ~ ' TB' }}
+        {% endif %}
+    {% endspaceless %}
+{%- endmacro %}
+
+{% macro preview(path, value, global) %}
+    {% if value %}
+        {% set uri = global.grav.uri %}
+        {% set files = global.files %}
+        {% set config = global.grav.config %}
+        {% set route = global.context.route() %}
+        {% set type =  global.context.content() is not null ? 'pages' : global.plugin ? 'plugins' : global.theme ? 'themes' : 'config' %}
+        {% set blueprint_name = global.blueprints.getFilename %}
+        {% if type == 'pages' %}
+            {% set blueprint_name = type ~ '/' ~ blueprint_name %}
+        {% endif %}
+        {% set blueprint = base64_encode(blueprint_name) %}
+        {% set real_path = global.form.getPagePathFromToken(path) %}
+        {% set remove = uri.addNonce(global.base_url_relative ~
+        '/media.json' ~
+        '/route' ~ config.system.param_sep ~ base64_encode(global.base_path ~ '/' ~ real_path) ~
+        '/task' ~ config.system.param_sep ~ 'removeFileFromBlueprint' ~
+        '/proute' ~ config.system.param_sep ~ base64_encode(route) ~
+        '/blueprint' ~ config.system.param_sep ~ blueprint ~
+        '/type' ~ config.system.param_sep ~ type ~
+        '/field' ~ config.system.param_sep ~ files.name ~
+        '/path' ~ config.system.param_sep ~ base64_encode(value.path), 'admin-form', 'admin-nonce') %}
+
+        {% set file = value|merge({remove: remove, path: (uri.rootUrl == '/' ? '/' : uri.rootUrl ~ '/' ~ real_path) }) %}
+        <div class="hidden" data-file="{{ file|json_encode|e('html_attr') }}"></div>
+    {% endif %}
+{% endmacro %}
+
+{% block input %}
+    {% set page_can_upload = exists or (type == 'page' and not exists and not (field.destination starts with '@self' or field.destination starts with 'self@')) %}
+
+
+    {% set settings = {name: field.name, paramName: (scope ~ field.name)|fieldName ~ (files.multiple ? '[]' : ''), limit: limit, filesize: form_max_filesize, accept: files.accept, resolution: files.resolution, resizeWidth: files.resizeWidth, resizeHeight: files.resizeHeight, resizeQuality: files.resizeQuality } %}
+    {% set dropzoneSettings = field.dropzone %}
+    <div class="{{ form_field_wrapper_classes ?: 'form-input-wrapper' }} dropzone files-upload form-input-file {{ field.size }}" data-grav-file-settings="{{ settings|json_encode|e('html_attr') }}" data-dropzone-options="{{ dropzoneSettings|json_encode|e('html_attr') }}">
+        <input
+                {# required attribute structures #}
+                {% block input_attributes %}
+                    type="file"
+                    {% if files.multiple %}multiple="multiple"{% endif %}
+                    {% if files.accept %}accept="{{ files.accept|join(',') }}"{% endif %}
+                    {% if field.disabled %}disabled="disabled"{% endif %}
+                    {% if field.random_name %}random="true"{% endif %}
+                    {% if required %}required="required"{% endif %}
+                    {{ parent() }}
+                {% endblock %}
+        />
+
+        {% for path, file in value %}
+            {{ _self.preview(path, file, _context) }}
+        {% endfor %}
+        {% include 'forms/fields/hidden/hidden.html.twig' with {field: {name: '_json.' ~ field.name}, value:value|json_encode|e('html_attr')} %}
+    </div>
+
+    {% do assets.addJs('jquery', 101) %}
+    {% do assets.addJs('plugin://form/assets/form.vendor.js', { 'loading': 'defer', 'group': 'bottom'  }) %}
+    {% do assets.addJs('plugin://form/assets/form.min.js', { 'loading': 'defer', 'group': 'bottom'  }) %}
+    {% do assets.addCss('plugin://form/assets/dropzone.min.css', { 'group': 'form'}) %}
+    {{ assets.css('form')|raw }}
+    {% do assets.addInlineJs("
+    window.GravForm = window.GravForm || {};
+    window.GravForm = jQuery.extend({}, window.GravForm, {
+        translations: {
+            PLUGIN_FORM: {
+                'DROPZONE_CANCEL_UPLOAD': " ~ 'PLUGIN_FORM.DROPZONE_CANCEL_UPLOAD'|t|json_encode ~ ",
+                'DROPZONE_CANCEL_UPLOAD_CONFIRMATION': " ~ 'PLUGIN_FORM.DROPZONE_CANCEL_UPLOAD_CONFIRMATION'|t|json_encode ~ ",
+                'DROPZONE_DEFAULT_MESSAGE': " ~ 'PLUGIN_FORM.DROPZONE_DEFAULT_MESSAGE'|t|json_encode ~ ",
+                'DROPZONE_FALLBACK_MESSAGE': " ~ 'PLUGIN_FORM.DROPZONE_FALLBACK_MESSAGE'|t|json_encode ~ ",
+                'DROPZONE_FALLBACK_TEXT': " ~ 'PLUGIN_FORM.DROPZONE_FALLBACK_TEXT'|t|json_encode ~ ",
+                'DROPZONE_FILE_TOO_BIG': " ~ 'PLUGIN_FORM.DROPZONE_FILE_TOO_BIG'|t|json_encode ~ ",
+                'DROPZONE_INVALID_FILE_TYPE': " ~ 'PLUGIN_FORM.DROPZONE_INVALID_FILE_TYPE'|t|json_encode ~ ",
+                'DROPZONE_MAX_FILES_EXCEEDED': " ~ 'PLUGIN_FORM.DROPZONE_MAX_FILES_EXCEEDED'|t|json_encode ~ ",
+                'DROPZONE_REMOVE_FILE': " ~ 'PLUGIN_FORM.DROPZONE_REMOVE_FILE'|t|json_encode ~ ",
+                'DROPZONE_REMOVE_FILE_CONFIRMATION': " ~ 'PLUGIN_FORM.DROPZONE_REMOVE_FILE_CONFIRMATION'|t|json_encode ~ ",
+                'DROPZONE_RESPONSE_ERROR': " ~ 'PLUGIN_FORM.DROPZONE_RESPONSE_ERROR'|t|json_encode ~ ",
+                'RESOLUTION_MIN': " ~ 'PLUGIN_FORM.RESOLUTION_MIN'|t|json_encode ~ ",
+                'RESOLUTION_MAX': " ~ 'PLUGIN_FORM.RESOLUTION_MAX'|t|json_encode ~ "
+            }
+        }
+    });
+    ", { 'group': 'bottom' }) %}
+{% endblock %}
