@@ -1,4 +1,6 @@
 {% do doc.styles.addCssFile('css/components/organisms/header.css') %}
+{% do doc.icons.useIcon('partials/icons/logo.svg') %}
+{% do doc.icons.useIcon('partials/icons/search.svg') %}
 {% import '/macros/atoms.j2' as atoms %}
 {% set home = g.doc('/content/amp-dev/index.md') %}
 
@@ -15,14 +17,14 @@
 
     <ul class="ad-o-header-list-mobile">
       <li class="ad-o-header-list-lnk ad-o-header-list-lnk-home">
-        <a class="ad-a-ico" href="{{ home.url.path }}">
-        {{ atoms.icon('logo') }}
+        <a class="ad-a-ico ad-a-ico-logo" href="{{ home.url.path }}">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
         </a>
       </li>
       <li class="ad-o-header-search ad-o-header-search-mobile">
         <button class="ad-o-header-search-icon" name="search" type="submit">
           <a class="ad-a-ico ad-a-ico-search" href="{{ home.url.path }}">
-            {{ atoms.icon('search') }}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
           </a>
         </button>
         {# {% do assets.addAmpComponent('amp-form') %} #}
@@ -75,8 +77,8 @@
   <ul class="ad-o-header-list">
     {% set home = g.doc('/content/amp-dev/index.md') %}
     <li class="ad-o-header-lnk ad-o-header-lnk-home">
-      <a class="" href="{{ home.url.path }}">
-        {{ atoms.icon('logo') }}
+      <a class="ad-a-ico ad-a-ico-logo" href="{{ home.url.path }}">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
       </a>
     </li>
     {% for mainNav in g.collection('amp-dev').collections() %}
@@ -93,7 +95,7 @@
          <li class="ad-o-header-search">
             <button class="ad-o-header-search-icon" name="search" type="submit">
               <a class="ad-a-ico ad-a-ico-search" href="">
-                {{ atoms.icon('search') }}
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
               </a>
             </button>
             <form method="GET"
@@ -154,7 +156,9 @@
   <nav class="ad-o-header-subnav">
     <ul class="ad-o-header-list">
       <li class="ad-o-header-lnk ad-o-header-subnav-logo">
-        <a class="ad-a-ico" href="{{ home.url.path }}">{{ atoms.icon('logo') }}</a>
+        <a class="ad-a-ico ad-a-ico-logo" href="{{ home.url.path }}">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+        </a>
       </li>
       {% for _doc in doc.collection %}
           <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if _doc.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
