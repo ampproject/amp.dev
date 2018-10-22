@@ -23,5 +23,7 @@ none
 */
 
 .#{molecule('copy')} {
-  // no custom styling required yet
+  &-large p {
+    @include txt-1;
+  }
 }

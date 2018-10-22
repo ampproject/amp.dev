@@ -1,0 +1,28 @@
+$title: Stage drop down
+$view: /views/styleguide/stage.j2
+
+components:
+- name: amp-selector
+  src: https://cdn.ampproject.org/v0/amp-selector-0.1.js
+- name: amp-bind
+  src: https://cdn.ampproject.org/v0/amp-bind-0.1.js
+
+destinations:
+- name: websites
+- name: stories
+- name: ads
+- name: email
+---
+<body>
+	<div [class]="stages.currentStage != 'default' ? 'destination-stage ' + stages.currentStage + ' destination-stage destination-stage-active' : 'destination-stage'"
+	class="destination-stage websites">
+		<div class="destination-stage-content">
+			<span class="hl-sub">What is Amp?</span>
+			<span class="hl-divider"></span>
+			<h1 class="hl" [class]="stages.currentStage != 'default' ? 'hl hl-'+stages.currentStage : 'hl' ">
+			  AMP is a web component based framework for easily creating user first
+			</h1>
+			{% call molecules.dropdownSwitch( doc.destinations ) %} {{ atoms.icon('arrow-down-thick' ) }} {% endcall %}
+		</div>
+	</div>
+</body>

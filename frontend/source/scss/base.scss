@@ -1,16 +1,25 @@
-*, *:after, *:before {
+@import '_variables.scss';
+@import '_functions.scss';
+@import '_extends.scss';
+@import '_mixins.scss';
+
+* {
   box-sizing: border-box;
 }
 
 html, body {
-  padding: 0;
-  margin: 0;
-  min-width: 320px;
-  color: color('black');
-  background: color('white');
-  font-size: 16px;
-  font-family: sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+    margin: 0;
+    min-width: 320px;
+    color: color('black');
+    background: color('white');
+    font-size: 16px;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  margin: 0 auto;
 }

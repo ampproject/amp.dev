@@ -1,15 +1,15 @@
-@import '../../variables.scss';
+@import '../../_variables.scss';
 @import '../../mixins.scss';
 @import '../../functions.scss';
 
 @import '../../base.scss';
 
-@import '../atoms/headline';
-@import '../atoms/text';
-@import '../atoms/button';
-@import '../atoms/icon';
-@import '../atoms/image';
-@import '../atoms/divider';
+@import '../atoms/_headline';
+@import '../atoms/_text';
+@import '../atoms/_button';
+@import '../atoms/_icon';
+@import '../atoms/_image';
+@import '../atoms/_divider';
 
 @import '../molecules/link';
 @import '../molecules/tip';
@@ -24,7 +24,7 @@
 
 @import '../organisms/container';
 @import '../organisms/list';
-@import '../organisms/header';
+@import '../organisms/_header';
 @import '../organisms/stage';
 
 main#content {

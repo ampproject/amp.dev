@@ -1,0 +1,131 @@
+/*
+
+#####################
+### MOLECULE: tip ###
+#####################
+
+### SAMPLE MARKUP:
+
+<div class="ad-m-tip-container">
+	<div class="ad-m-tip ad-m-tip-default">
+		<h4 class="ad-a-hl ad-a-hl-h4">
+			The Headline Text
+		</h4>
+		<p class="ad-a-txt ad-a-txt-3  ad-a-txt-p">
+			The Copy Text
+		</p>
+	</div>
+</div>
+
+### INFO:
+
+The tip molecule includes headline and text atoms.
+It has 4 different modifiers for different use-cases.
+
+### MODIFIERS:
+
+default
+	Green border on the right and triangle outside the lower left corner.
+
+note
+	Blue border on the right and triangle inside the lower right corner.
+
+important
+	Red border on the right and cutted triangles inside the left corners.
+
+read-on
+	Yellow border on the right and ribbon shape outside the lower right corner.
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../_variables';
+
+.#{molecule('tip')} {
+  width: 100%;
+  background: color('white');
+  border-right: 5px solid color('malachite');
+  padding: 25px 30px 70px 25px;
+  grid-row: span 1;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    width: auto;
+    padding: 25px 55px 55px 40px;
+  }
+
+  &-default {
+    clip-path: polygon(0px 0px, 100% 0px, 100% calc(100% - 30px), 30px calc(100% - 30px), 0px 100%);
+  }
+
+  &-read-on {
+    border-right: 5px solid color('turbo');
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: calc(100% + 32px);
+      width: 37px;
+      top: 0;
+      left: calc(100% - 32px);
+      z-index: -1;
+      background-color: color('turbo');
+      -webkit-clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
+      clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
+    }
+
+  }
+
+  &-important {
+    border-right: 5px solid color('red');
+    -webkit-clip-path: polygon(0% 20px, 20px 0%, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
+    clip-path: polygon(0% 20px, 20px 0%, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
+  }
+
+  &-note {
+    border: none;
+		width: calc(100% - 25px);
+    padding: 25px 10px 20px 25px;
+    @media screen and (min-width: 768px) {
+      padding: 25px 0px 35px 40px;
+    }
+
+
+    &:before {
+      content: '';
+      position: absolute;
+      border-bottom: 32px solid transparent;
+      border-left: 25px solid color('blue-ribbon');
+      left: 100%;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0px;
+      height: calc(100% - 32px);
+      left: 100%;
+      width: 25px;
+      background-color: color('white');
+      border-right: 5px solid color('blue-ribbon');
+
+    }
+  }
+
+  &-container {
+    @include drop-shadow;
+    grid-column: 1 / span 1;
+    padding: 0;
+    margin-bottom: 3em;
+
+    @media screen and (min-width: 768px) {
+      grid-column: 2 / span 1;
+      padding: 0;
+    }
+  }
+}

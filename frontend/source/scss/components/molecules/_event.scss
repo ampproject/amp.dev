@@ -69,23 +69,54 @@ none
 			display: block;
 			line-height: 1.4em;
 		}
+
+    &-year {
+      @include txt;
+      @include txt-font-accent;
+      @include txt-accent-2;
+      @include txt-strong;
+      @include txt-silver;
+      @include txt-hl;
+
+      margin-bottom: 0.5em;
+    }
+
+    &-month {
+      @include txt;
+      @include txt-font-accent;
+      @include txt-accent-2;
+      @include txt-strong;
+      @include txt-black;
+    }
 	}
 
 	&-content {
 		flex-grow: 1;
-	}
 
-	.#{atom('txt-hl')} {
-		margin-bottom: 0.5em;
+    &-city {
+      @include txt;
+      @include txt-font-accent;
+      @include txt-accent-2;
+      @include txt-strong;
+      @include txt-black;
+      @include txt-hl;
+
+      margin-bottom: 0.5em;
+    }
 	}
 
 	ul {
 		li {
+      @include txt;
+      @include txt-3;
+
 			position: relative;
 			padding-left: 20px;
 		}
 
 		.#{atom('ico')} {
+  		@include ico-blue-ribbon;
+
 			width: 0.875em;
 			height: 0.875em;
 			position: absolute;

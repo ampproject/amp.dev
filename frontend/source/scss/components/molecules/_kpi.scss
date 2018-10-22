@@ -58,13 +58,27 @@ Please refer to mixins.scss to see gradients.
 		padding: 1.5em;
 	}
 
+	&-icon {
+		@include ico-2;
+		@include ico-white;
+	}
+
 	&-number {
+		@include txt;
+		@include txt-strong;
+		@include txt-light;
+
 		font-size: 3em;
 		line-height: 1;
 		margin: 0.25em 0 0;
 	}
 
 	&-text {
+		@include txt;
+		@include txt-p;
+		@include txt-3;
+		@include txt-light;
+
 		display: block; /* Fallback for non-webkit */
 		display: -webkit-box;
 		height: 100%;

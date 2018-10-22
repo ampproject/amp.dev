@@ -1,0 +1,10 @@
+@import '../../_extends';
+@import '../../_functions';
+@import '../../_mixins';
+@import '../../_variables';
+
+a {
+	font-weight: bold;
+	text-decoration: none;
+	color: color('blue-ribbon');
+}

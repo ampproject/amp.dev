@@ -1,0 +1,6 @@
+path: /overview/{base}.html
+view: /views/default.j2
+title: "Overview"
+
+localization:
+  path: /{locale}/overview/{base}.html

@@ -1,0 +1,214 @@
+/*
+
+######################
+### MOLECULE: dropdown-selected ###
+######################
+
+### SAMPLE MARKUP:
+
+	see /source/j2/partials/stage.j2 for markup
+
+### INFO:
+
+The dropdown selected stage is a variation of dropdown stage, but without the rolling and gradient animations.
+Viewbox background color should be the same as the headline text, but with background-clip: text effect.
+
+requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.scss
+
+### MODIFIERS:
+
+*/
+
+@import '../atoms/_headline.scss';
+@import '../atoms/_text.scss';
+@import '../atoms/_destination.scss';
+
+.destination-list-view-box {
+  display: inline;
+	height: 32px;
+	width: 250px;
+	overflow: hidden;
+  position: absolute;
+  box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
+
+	@media screen and (min-width: 768px){
+    width: 324px;
+	  height: 42px;
+	}
+
+	&:hover {
+		height: 230px;
+		transition: height 0.5s ease;
+		background: transparent;
+
+		[option][selected] {
+			border: none;
+			outline: #fff;
+			background-clip: border-box;
+			-webkit-background-clip: border-box;
+			color: inherit;
+		}
+
+		.ad-a-ico {
+			transform: rotate(180deg);
+			fill: color('white');
+		}
+
+		.destination-list {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&-websites {
+		background-color: color('white');
+
+		.ad-a-ico {
+			fill: color('robins-egg');
+		}
+	}
+
+	&-stories {
+		background: color('ultramarine');
+
+		.ad-a-ico {
+			fill: color('turbo');
+		}
+	}
+
+	&-ads {
+		background: color('hawkes-blue');
+
+		.ad-a-ico {
+			fill: color('pizazz');
+		}
+	}
+
+	&-emails {
+		background: color('reef');
+
+		.ad-a-ico {
+			fill: color('pink-flamingo');
+		}
+	}
+}
+
+
+.ad-a-ico {
+	position: absolute;
+	right: 0;
+	z-index: 10;
+	padding: 24px 24px;
+	transition: transform 0.5s ease;
+
+	// @include ico-white;
+	// @include ico-2;
+}
+
+// DROP DPOWN LIST
+
+.destination-list {
+	display: none;
+	padding: 0;
+	list-style: none;
+  margin: 0;
+
+   li {
+     order: 2;
+    }
+
+	&-display {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&:hover {
+
+		.ad-a-ico {
+			transform: rotate(100deg);
+		}
+
+		.destination-list-view-box {
+			animation: none;
+		}
+
+		.destination-list-rolling-item {
+			display: none;
+			animation-play-state: paused;
+    }
+
+    [option][selected] a {
+      color: inherit;
+    }
+
+	}
+}
+
+// default list item
+
+.destination-list-item {
+	@include hl;
+	@include hl-stage;
+	@include hl-light;
+	outline: color('white');
+	padding: 1px 20px 1px 10px;
+  order: 2;
+
+
+	&-drop-down {
+		margin-bottom: 5px;
+
+		&:hover {
+			margin-left: 2px;
+		}
+	}
+}
+
+[option][selected] {
+	order: 1;
+	background-clip: text;
+  -webkit-background-clip: text;
+  outline: 1px solid #fff;
+}
+
+.websites {
+  @include txt-light;
+  background: transparent;
+
+  &-background {
+	  @include destination-websites;
+  }
+}
+
+.stories {
+  @include txt-stories;
+
+  &-background {
+	  @include destination-stories;
+  }
+}
+
+.ads {
+  @include txt-ads;
+
+  &-background {
+	  @include destination-ads;
+  }
+}
+
+.emails {
+  @include txt-email;
+
+  &-background {
+	  @include destination-email;
+  }
+}
+
+.overview {
+  @include txt-overview;
+
+	&-background {
+		@include destination-overview;
+	}
+}
+

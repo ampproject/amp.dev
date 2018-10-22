@@ -1,0 +1,6 @@
+path: /community/{base}.html
+view: /views/default.j2
+title: Community
+
+localization:
+  path: /{locale}/community/{base}.html
