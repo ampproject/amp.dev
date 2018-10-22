@@ -5,12 +5,16 @@
 @import '../atoms/_text.scss';
 
 .#{organism('sidebar')} {
-  @include box-shadow;
+  position: static;
   order: 2;
   grid-column: auto;
+  padding: 0;
   margin-right: -30px;
 
   @media screen and (min-width: 1024px) {
+    position: sticky;
+    top: 114px;
+    height: 100vh;
     order: inherit;
     grid-column-start: 1;
     grid-column-end: 6;
@@ -22,7 +26,9 @@
     list-style: none;
 
     &-main {
-      margin: 20px 0px;
+      margin: 0;
+      overflow-y: scroll;
+      max-height: calc(100vh - 135px - 114px);
     }
 
   }
@@ -38,7 +44,7 @@
     @include txt-strong;
     padding: 10px 20px;
     border: none;
-    background-color: color('white');
+    background-color: transparent;
 
     &-sub {
       padding: 0;
