@@ -17,14 +17,16 @@
     </label>
 
     <ul class="ad-o-header-list-mobile">
-      <li class="ad-o-header-list-lnk ad-o-header-list-lnk-home">
-        <a class="ad-a-ico ad-a-ico-logo" href="{{ home.url.path }}">
+      <li class="ad-o-header-lnk ad-o-header-lnk-mobile ad-o-header-lnk-home">
+        <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+          <span class="ad-o-header-icon-text">amp</span>
+      </a>
         </a>
       </li>
-      <li class="ad-o-header-search ad-o-header-search-mobile">
-        <button class="ad-o-header-search-icon" name="search" type="submit">
-          <a class="ad-a-ico ad-a-ico-search" href="{{ home.url.path }}">
+      <li class="ad-o-header-lnk ad-o-header-lnk-mobile ad-o-header-search-mobile">
+        <button class="ad-o-header-search-button" name="search" type="submit">
+          <a class="ad-o-header-icon ad-o-header-icon-search" href="{{ home.url.path }}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
           </a>
         </button>
@@ -33,7 +35,6 @@
         id="ampsearch"
         action="//www.google.com/search"
         target="_top">
-          <input type="text" placeholder="Search..." on="submit:ampsearch.submit"/>
         </form>
       </li>
        <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
@@ -67,22 +68,23 @@
   <ul class="ad-o-header-list">
     {% set home = g.doc('/content/amp-dev/index.md') %}
     <li class="ad-o-header-lnk ad-o-header-lnk-home">
-      <a class="ad-a-ico ad-a-ico-logo" href="{{ home.url.path }}">
+      <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+        <span class="ad-o-header-icon-text">amp</span>
       </a>
     </li>
     {% for mainNav in g.collection('amp-dev').collections() %}
-      {% for subNavItem in g.docs(mainNav.collection_path) %}
-       {% if subNavItem.base == 'index' %}
-        <li class="ad-o-header-lnk {% if subNavItem.title == doc.title or subNavItem.collection.title == doc.collection.title %} ad-o-header-lnk-selected {% endif %}">
-          <a class="ad-m-lnk" href="{{ subNavItem.url.path }}">{{ subNavItem.collection.title }}</a>
+      {% for mainNavItem in g.docs(mainNav.collection_path) %}
+       {% if mainNavItem.base == 'index'%}
+        <li class="ad-o-header-lnk {% if mainNavItem.title == doc.title or mainNavItem.collection.title == doc.collection.title %} ad-o-header-lnk-selected {% endif %}">
+          <a class="ad-m-lnk" href="{{ mainNavItem.url.path }}">{{ mainNavItem.collection.title }}</a>
         </li>
        {% endif %}
       {% endfor %}
     {% endfor %}
     <li class="ad-o-header-search">
-      <button class="ad-o-header-search-icon" name="search" type="submit">
-        <a class="ad-a-ico ad-a-ico-search" href="">
+      <button class="ad-o-header-search-button" name="search" type="submit">
+        <a class="ad-o-header-icon" href="">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
         </a>
       </button>
@@ -90,7 +92,6 @@
       id="ampsearch"
       action="//www.google.com/search"
       target="_top">
-        <input type="text" placeholder="Search..." on="submit:ampsearch.submit"/>
       </form>
     </li>
     {% set languages = g.doc('/content/languages/index.md')%}
@@ -135,8 +136,9 @@
   <nav class="ad-o-header-subnav">
     <ul class="ad-o-header-list">
       <li class="ad-o-header-lnk ad-o-header-subnav-logo">
-        <a class="ad-a-ico ad-a-ico-logo" href="{{ home.url.path }}">
+        <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+          <span class="ad-o-header-icon-text">amp</span>
         </a>
       </li>
       {% for _doc in doc.collection %}
