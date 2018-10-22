@@ -30,36 +30,47 @@
         id="ampsearch"
         action="//www.google.com/search"
         target="_top">
-          <input type="text" placeholder="Search..." on="submit:ampsearch.submit"/>
         </form>
       </li>
        <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
-        <a class="ad-m-lnk" href="{{ home.url.path }}">
+        <a class="ad-m-lnk ad-m-lnk-mobile" href="{{ home.url.path }}">
           <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong">{{ home.title }}</span>
         </a>
       </li>
 
     {% for collection in g.collection('amp-dev').collections() %}
-      {% for _doc in g.docs(collection.collection_path) %}
-        {# Check if collection contains a index document and if so treat as navigation item #}
-        {% if _doc.base == 'index' %}
-        {% if _doc == doc %}
-          <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
-            <a class="link-preview-1 ad-m-lnk " href="{{ _doc.url.path }}">{{ _doc.title }}</a>
-          </li>
-        {% else %}
-          <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
-            <a class="ad-m-lnk" href="{{ _doc.url.path }}">{{ _doc.title }}</a>
-          </li>
-        {% endif %}
-        {% endif %}
-      {% endfor %}
-      {% endfor %}
-       {% set languages = g.doc('/content/languages/index.md')%}
-        <li class="ad-o-header-lnk ad-o-header-lnk-mobile ad-o-header-lnk-lang">
-          <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
+      {# last items in list are aligned together in a row, check for last items #}
+      {% if not loop.last %}
+        {% for _doc in g.docs(collection.collection_path) %}
+          {# Check if collection contains a index document and if so treat as navigation item #}
+          {% if _doc.base == 'index'%}
+            {% if _doc == doc %}
+              <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
+                <a class="link-preview-1 ad-m-lnk ad-m-lnk-mobile" href="{{ _doc.url.path }}">{{ collection.title }}</a>
+              </li>
+            {% else %}
+              <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
+                <a class="ad-m-lnk ad-m-lnk-mobile" href="{{ _doc.url.path }}">{{ collection.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% else %}
+      <span class="ad-o-header-support-lang-list-divider"></span>
+      <ul class="ad-o-header-support-lang-list">
+       {% for _doc in g.docs(collection.collection_path) %}
+        <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
+          <a class="ad-m-lnk ad-m-lnk-mobile" href="{{ _doc.url.path }}">{{ collection.title }}</a>
         </li>
-    </ul>
+        {% endfor %}
+        {% set languages = g.doc('/content/languages/index.md')%}
+          <li class="ad-o-header-lnk ad-o-header-lnk-mobile ad-o-header-lnk-lang">
+            <a class="ad-m-lnk ad-m-lnk-mobile" href="{{ languages.url.path }}">EN</a>
+          </li>
+        </ul>
+      {% endif %}
+    {% endfor %}
+  </ul>
 
   <ul class="ad-o-header-list">
     {% set home = g.doc('/content/amp-dev/index.md') %}
@@ -69,32 +80,43 @@
       </a>
     </li>
     {% for mainNav in g.collection('amp-dev').collections() %}
-      {% for subNavItem in g.docs(mainNav.collection_path) %}
-       {% if subNavItem.base == 'index' %}
-        <li class="ad-o-header-lnk {% if subNavItem.title == doc.title or subNavItem.collection.title == doc.collection.title %} ad-o-header-lnk-selected {% endif %}">
-          <a class="ad-m-lnk" href="{{ subNavItem.url.path }}">{{ subNavItem.collection.title }}</a>
-        </li>
-       {% endif %}
-      {% endfor %}
+      {% if not loop.last %}
+        {% for subNavItem in g.docs(mainNav.collection_path) %}
+         {% if subNavItem.base == 'index' %}
+          <li class="ad-o-header-lnk {% if subNavItem.title == doc.title or subNavItem.collection.title == doc.collection.title %} ad-o-header-lnk-selected {% endif %}">
+            <a class="ad-m-lnk" href="{{ subNavItem.url.path }}">{{ subNavItem.collection.title }}</a>
+          </li>
+         {% endif %}
+        {% endfor %}
+      {% else %}
+        <ul class="ad-o-header-support-lang-list">
+         <li class="ad-o-header-search">
+            <button class="ad-o-header-search-icon" name="search" type="submit">
+              <a class="ad-a-ico ad-a-ico-search" href="">
+                {{ atoms.icon('search') }}
+              </a>
+            </button>
+            <form method="GET"
+            id="ampsearch"
+            action="//www.google.com/search"
+            target="_top">
+            </form>
+          </li>
+          {% for subNavItem in g.docs(mainNav.collection_path) %}
+            {% if subNavItem.base == 'index' %}
+              <li class="ad-o-header-lnk {% if subNavItem.title == doc.title or subNavItem.collection.title == doc.collection.title %} ad-o-header-lnk-selected {% endif %}">
+                <a class="ad-m-lnk" href="{{ subNavItem.url.path }}">{{ subNavItem.collection.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          {% set languages = g.doc('/content/languages/index.md')%}
+          <li class="ad-o-header-lnk ad-o-header-lnk-lang">
+            <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
+          </li>
+        </ul>
+      {% endif %}
     {% endfor %}
-    <li class="ad-o-header-search">
-      <button class="ad-o-header-search-icon" name="search" type="submit">
-        <a class="ad-a-ico ad-a-ico-search" href="">
-          {{ atoms.icon('search') }}
-        </a>
-      </button>
-      <form method="GET"
-      id="ampsearch"
-      action="//www.google.com/search"
-      target="_top">
-        <input type="text" placeholder="Search..." on="submit:ampsearch.submit"/>
-      </form>
-    </li>
-    {% set languages = g.doc('/content/languages/index.md')%}
-    <li class="ad-o-header-lnk ad-o-header-lnk-lang">
-      <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
-    </li>
-  </ul>
+    </ul>
   </nav>
 
 {% if doc.collection.collection_path != 'amp-dev' %}

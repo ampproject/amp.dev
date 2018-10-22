@@ -15,6 +15,8 @@
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/divider';
 
 @import '../molecules/_link.scss';
 
@@ -33,6 +35,10 @@
     padding: 0;
     margin: 0 auto;
     align-items: center;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 auto;
+    }
   }
 
   &-lnk {
@@ -77,6 +83,10 @@
       &:hover {
         @include color-blue-ribbon;
       }
+
+      &-mobile {
+        padding-top: 8px;
+      }
     }
 
     &-selected {
@@ -97,7 +107,7 @@
 
       .ad-m-lnk {
         @include txt;
-        @include txt-3;
+        @include txt-2;
         padding: 13px 0;
       }
 
@@ -129,6 +139,7 @@
 
   &-subnav {
     padding: 0 30px;
+    height: 50px;
     background-color: color('white');
   }
 
@@ -162,10 +173,6 @@
       padding-right: 2px;
     }
 
-    &-mobile {
-      display: flex;
-      max-width: 125px;
-    }
   }
 
   input {
@@ -182,7 +189,7 @@
   &-burger-menu {
     position: fixed;
     top: calc(18px);
-    padding: 15px;
+    padding: 0px 20px;
     right: 0;
     z-index: 100;
 
@@ -203,8 +210,8 @@
 
   &-list-mobile {
     height: 0;
-    margin: 0;
-    padding: 2em 0 0 2em;
+    padding: 0;
+    margin: 0 0 0 20px;
     overflow: hidden;
     list-style: none;
     transition: height 0.2s ease-in-out;
@@ -213,6 +220,19 @@
       display: none;
     }
   }
+
+  &-support-lang-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-right: 20px;
+    margin-left: auto;
+
+    &-divider {
+      @include divider-header-mobile;
+    }
+  }
+
 }
 
 
