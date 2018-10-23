@@ -17,7 +17,7 @@
       <div class="bar"></div>
     </label>
 
-    <ul class="ad-o-header-list-mobile">
+    {# <ul class="ad-o-header-list-mobile">
       <li class="ad-o-header-lnk ad-o-header-lnk-mobile ad-o-header-lnk-home">
         <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
@@ -30,7 +30,7 @@
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
           </a>
         </button>
-        {# {% do assets.addAmpComponent('amp-form') %} #}
+        {% do assets.addAmpComponent('amp-form') %}
         <form method="GET"
         id="ampsearch"
         action="//www.google.com/search"
@@ -41,12 +41,12 @@
         <a class="ad-m-lnk" href="{{ home.url.path }}">
           <span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong">{{ home.title }}</span>
         </a>
-      </li>
+      </li> #}
 
-    {% for collection in g.collection('amp-dev').collections() %}
-      {% for _doc in g.docs(collection.collection_path) %}
+    {# {% for collection in g.collection('amp-dev').collections() %}
+      {% for _doc in g.docs(collection.collection_path) %} #}
         {# Check if collection contains a index document and if so treat as navigation item #}
-        {% if _doc.base == 'index' %}
+        {# {% if _doc.base == 'index' %}
         {% if _doc == doc %}
           <li class="ad-o-header-lnk ad-o-header-lnk-mobile">
             <a class="link-preview-1 ad-m-lnk " href="{{ _doc.url.path }}">{{ _doc.title }}</a>
@@ -64,7 +64,7 @@
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use></svg>
           <a class="ad-m-lnk " href="{{ languages.url.path }}">EN</a>
         </li>
-    </ul>
+    </ul> #}
 
   <ul class="ad-o-header-list">
     {% set home = g.doc('/content/amp-dev/index.md') %}
