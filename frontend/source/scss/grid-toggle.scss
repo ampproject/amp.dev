@@ -1,0 +1,113 @@
+@import 'components/atoms/_color.scss';
+
+$columnCount: 24;
+$columnColor: rgba(#aaa, 0.15);
+$gutterWidth: 30px;
+$gutterColor: transparent;
+
+@mixin grid {
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    $gutterColor,
+    $gutterColor,
+    $gutterWidth,
+    $columnColor,
+    0,
+    $columnColor
+    100%/$columnCount
+  );
+  background-position: -($gutterWidth/2) 0;
+}
+
+@mixin toggle {
+  position: fixed;
+  left: 5px;
+  top: 101px;
+  width: 26px;
+  height: 56px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.grid-toggle {
+  pointer-events: none;
+
+  .toggle {
+    @include toggle;
+    @include gradient-websites;
+    text-align: left;
+    border-radius: 20px;
+    z-index: 1;
+    
+    &:before {
+      content: 'Toggle grid';
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translate(-5px, -50%);
+      padding: 2px 5px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      background: color('gray-chateau');
+      border-radius: 3px;
+      transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+    }
+  }
+
+  .dot {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    opacity: 0.5;
+    background: #fff;
+    border-radius: 10px;
+    transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1), opacity 0.3s ease-out;
+  }
+  
+  .grid {
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 1250px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 9999;
+    @include grid;
+    transition: opacity 0.15s ease-out;
+  }
+
+  input[type="checkbox"]{
+    @include toggle;
+    margin: 0;
+    opacity: 0;
+    z-index: 2;
+
+    &:checked {
+      & + .toggle .dot {
+        opacity: 1;
+        transform: translateY(30px);
+      }
+
+      & ~ .grid {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    
+    &:hover + .toggle:before {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+  }
+}
