@@ -1,5 +1,5 @@
 ---
 $title: Quickstart
-$category: Get Started
+$category: Get started
 $order: 1
 ---

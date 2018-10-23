@@ -1,5 +1,5 @@
 ---
-$title: Amp HTML Specs
+$title: AMP HTML Specs
 $category: Fundamentals
 $order: 1
 ---

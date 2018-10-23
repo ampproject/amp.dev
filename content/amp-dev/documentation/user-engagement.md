@@ -1,5 +1,5 @@
 ---
-$title: Improve user engagement
+$title: Improve user engagement CORS in AMP
 $category: Fundamentals
 $order: 5
 ---

@@ -1,5 +1,5 @@
 ---
-$title: Create your first AMP page
-$category: Get Started
+$title: Create your first AMP
+$category: Get started
 $order: 2
 ---
