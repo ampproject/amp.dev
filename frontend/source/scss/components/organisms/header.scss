@@ -109,6 +109,7 @@
     }
 
     &-home {
+      margin: 0 45px 0 0;
 
       a  {
         @include color-blue-ribbon;
@@ -177,8 +178,9 @@
 
       & svg {
         @include ico;
-        @include ico-3;
         @include ico-blue-ribbon;
+        height: 30px;
+        width: 30px;
       }
     }
   }
