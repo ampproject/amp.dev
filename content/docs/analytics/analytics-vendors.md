@@ -304,6 +304,12 @@ Type attribute value: `top100`
 
 Adds support for Rambler/TOP-100. Configuration details can be found at [top100.rambler.ru](https://top100.rambler.ru/docs).
 
+### TEA Analytics
+
+Type attribute value: `teaanalytics`
+
+Adds support for TEA Analytics. More details for adding TEA Analytics support can contact with Kimberly (wuqian56@gmail.com).
+
 ### Top.Mail.Ru
 
 Type attribute value: `topmailru`
