@@ -58,9 +58,12 @@
         display: block;
         position: absolute;
         right: 15px;
-        top: 8px;
-        @include txt-font-accent;
-        color: rgba(color('black'), 0.5);
+        top: 10px;
+        color: #20202A;
+
+        &.open {
+          color: #B5B2B2;
+        }
       }
     }
 
@@ -78,7 +81,7 @@
       padding-top: 0;
       
       span {
-        top: -2px;
+        top: 0;
       }
     }
   }
