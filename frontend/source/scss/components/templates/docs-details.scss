@@ -32,8 +32,20 @@
     grid-template-columns: repeat(24, 1fr);
   }
   
-  h1:first-child {
+  h1 {
     @include hl-h2;
+  }
+  
+  h2 {
+    @include hl-h3;
+  }
+  
+  h3 {
+    @include hl-h4;
+  }
+  
+  h4 {
+    @include hl-h5;
   }
 
   main {

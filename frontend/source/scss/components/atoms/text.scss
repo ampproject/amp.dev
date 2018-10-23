@@ -6,6 +6,14 @@
 @import '_text.scss';
 
 main {
+  .intro {
+    @include txt-1;
+    
+    * {
+      font-size: inherit;
+    }
+  }
+
   p {
     @include txt;
     @include txt-p;
@@ -14,10 +22,14 @@ main {
   	small {
   		@include txt-2;
   	}
-    
-    code {
-      @include txt-mono-inline;
-    }
+  }
+
+  code {
+    @include txt-mono-inline;
+  }
+  
+  pre {
+    @include txt-2;
   }
 
   ul,
@@ -30,10 +42,6 @@ main {
 
     li {
       padding-left: 0.5em;
-
-      code {
-        @include txt-mono-inline;
-      }
     }
   }
 }
