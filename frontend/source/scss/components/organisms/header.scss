@@ -32,30 +32,47 @@
   }
 
   &-list {
-    display: flex;
+    height: 50px;
     padding: 0;
-    margin: 0 auto;
-    height: 0;
-    min-height: 50px;
+    margin: 0;
     transition: height 0.2s ease-in-out;
     list-style: none;
     align-items: center;
+
+    &-desktop {
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        margin: 0 auto;
+        display: flex;
+      }
+    }
+
+    &-mobile {
+      display: flex;
+
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    &-subnav {
+      display: flex;
+      overflow: hidden;
+    }
+
   }
 
   &-lnk {
     margin: 0 20px;
     white-space: nowrap;
-
-    @media screen and (min-width: 1024px) {
-      display: block;
-    }
+    padding: 12.5px 0;
 
     a {
       @include txt-font-accent;
       @include txt-1;
       @include color-black;
 
-      padding: 12.5px 0;
       margin: 0;
 
       &:hover {
@@ -64,14 +81,11 @@
     }
 
     &-selected {
-      margin: 0;
-      display: block;
+      @include txt-strong;
+      margin-bottom: 0;
+      color: color('blue-ribbon');
 
-      @media screen and (min-width: 1024px) {
-        margin: 0 20px;
-      }
-
-      .ad-m-lnk {
+      a {
         color: color('blue-ribbon');
       }
     }
@@ -81,40 +95,57 @@
       a {
         @include txt;
         @include txt-3;
-        padding: 13px 0;
       }
 
       &-selected {
+        padding-top: 22.5px;
+
         a {
           @include txt-strong;
           margin-bottom: 0;
-          padding-bottom: 5px;
           color: color('blue-ribbon');
         }
       }
     }
 
+    &-home {
+
+      a  {
+        @include color-blue-ribbon;
+      }
+    }
+
+    &-support {
+      margin-right: 0;
+    }
+
     &-divider {
       height: 2px;
       width: 100%;
+      margin-top: 5px;
       background-color: color('blue-ribbon');
-      margin-bottom: 4px;
     }
   }
 
 
   &-main-nav {
-    padding: 0 30px;
     background-color: color('white');
     border-bottom: 1px solid color('wild-sand');
+
+    @media screen and (min-width: 768px) {
+      padding: 0 30px;
+    }
   }
 
 
   &-subnav {
     display: block;
-    padding: 0 30px;
     height: 50px;
     background-color: color('white');
+
+    @media screen and (min-width: 768px) {
+      padding: 0 30px;
+    }
   }
 
   &-subnav-logo {
@@ -123,7 +154,7 @@
     @media screen and (min-width: 1024px){
       display: block;
       opacity: 0;
-      z-index: -1;
+      z-index: -10;
     }
   }
 
@@ -154,10 +185,10 @@
 
 
   &-search {
-    order: 1;
+    margin-right: 0;
+    padding: 17.5px 0 12.5px 0;
 
     @media screen and (min-width: 768px) {
-      display: flex;
       margin-left: auto;
     }
 
@@ -168,16 +199,6 @@
     }
   }
 
-  input {
-    @include txt-3;
-    @include txt;
-    @include color-silver;
-
-    border: none;
-    outline: #fff;
-    background: none;
-    width: 75px;
-  }
 
   &-burger-menu {
     position: fixed;
@@ -192,18 +213,21 @@
     &-btn {
       display: none;
 
-      &:checked ~.ad-o-header-list {
+      &:checked ~.ad-o-header-list-desktop {
         height: 100vh;
         z-index: 10;
         padding: 2em 0;
         flex-direction: column;
         align-items: flex-start;
+        display: flex;
       }
 
+      &:checked ~.ad-o-header-list-mobile {
+        display: none;
+      }
     }
   }
 }
-
 
 // TODO remove bar styling as this will become and svg
 .bar {
