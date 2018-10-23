@@ -39,10 +39,7 @@
     min-height: 50px;
     transition: height 0.2s ease-in-out;
     list-style: none;
-
-    @media screen and (min-width: 768px) {
-      align-items: center;
-    }
+    align-items: center;
   }
 
   &-lnk {
@@ -53,30 +50,7 @@
       display: block;
     }
 
-    &-mobile {
-      margin: 0;
-      display: block;
-
-      @media screen and (min-width: 1024px) {
-        display: none;
-      }
-    }
-
-    &-home {
-      display: block;
-      padding: 5px 0;
-    }
-
-    &-lang {
-      bottom: 0;
-
-      @media screen and (min-width: 1024px) {
-        position: relative;
-        padding-bottom: 0;
-      }
-    }
-
-    .ad-m-lnk {
+    a {
       @include txt-font-accent;
       @include txt-1;
       @include color-black;
@@ -86,10 +60,6 @@
 
       &:hover {
         @include color-blue-ribbon;
-      }
-
-      &-mobile {
-        padding-top: 8px;
       }
     }
 
@@ -107,16 +77,15 @@
     }
 
     &-subnav {
-      display: block;
 
-      .ad-m-lnk {
+      a {
         @include txt;
         @include txt-3;
         padding: 13px 0;
       }
 
       &-selected {
-        .ad-m-lnk {
+        a {
           @include txt-strong;
           margin-bottom: 0;
           padding-bottom: 5px;
@@ -183,10 +152,9 @@
     }
   }
 
-  // TODO: Clean up mobile list css
 
   &-search {
-    display: none;
+    order: 1;
 
     @media screen and (min-width: 768px) {
       display: flex;
@@ -197,15 +165,6 @@
       background: transparent;
       border: none;
       padding: 0;
-    }
-
-    &-mobile {
-      display: flex;
-    }
-
-    &-mobile {
-      display: flex;
-      max-width: 125px;
     }
   }
 
@@ -236,29 +195,11 @@
       &:checked ~.ad-o-header-list {
         height: 100vh;
         z-index: 10;
-        padding: 2em 0 0 2em;
+        padding: 2em 0;
         flex-direction: column;
+        align-items: flex-start;
       }
 
-
-      // &:checked ~ .ad-o-header-list-mobile {
-      //   height: 100vh;
-      //   z-index: 10;
-      //   padding: 2em 0 0 2em;
-      // }
-    }
-  }
-
-
-  &-list-mobile {
-    height: 0;
-    margin: 0;
-    overflow: hidden;
-    list-style: none;
-    transition: height 0.2s ease-in-out;
-
-    @media screen and (min-width: 1024px) {
-      display: none;
     }
   }
 }
