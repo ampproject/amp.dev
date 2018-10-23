@@ -27,15 +27,17 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .destination-list-view-box {
 	overflow: hidden;
-  height: 42px;
+	width: calc(100% - 30px);
+  height: 43px;
   overflow: hidden;
   position: absolute;
-  margin-top: 20px;
+	left: 15px;
+  margin-top: 14px;
   z-index: 10;
 
 	&-gradient {
 		background: linear-gradient(-220deg,
-				color('azure-radiance'),color('robins-egg'),
+				color('blue-ribbon'),color('robins-egg'),
 				color('pizazz'), color('yellow'),
 				color('crimson'), color('pizazz'),
 				color('electric-violet'), color('pink-flamingo'),
@@ -165,7 +167,8 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 }
 
 .all {
-  color: color('azure-radiance');
+	text-transform: capitalize;
+  color: color('blue-ribbon');
 
 	&-background {
 		@include gradient-overview;

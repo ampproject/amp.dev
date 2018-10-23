@@ -2,6 +2,7 @@
 @import '../../functions';
 @import '../../mixins';
 @import '../../variables';
+@import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 
 .#{organism('sidebar')} {
@@ -19,44 +20,102 @@
     grid-column-start: 1;
     grid-column-end: 6;
     margin-right: 0;
-    margin-left: -30px;
+    margin-left: 0;
   }
 
   &-list {
     list-style: none;
 
     &-main {
-      margin: 0;
       overflow-y: scroll;
       max-height: calc(100vh - 135px - 114px);
-    }
+      margin: 34px 0 0;
 
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+
+      &::-webkit-scrollbar-track {
+        box-shadow: inset -1px 0 rgba(color('black'), 0.10);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #979797;
+      }
+    }
+    
+    &-sub {
+      padding-left: 15px;
+      margin-bottom: 10px;
+    }
   }
 
-  section:focus {
-    border: none;
-    outline: none;
+  section {
+    header {
+      position: relative;
+
+      span {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 8px;
+        @include txt-font-accent;
+        color: rgba(color('black'), 0.5);
+      }
+    }
+
+    &[expanded] .open,
+    &:not([expanded]) .close {
+      display: none;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+    &:first-child > header {
+      padding-top: 0;
+      
+      span {
+        top: -2px;
+      }
+    }
   }
 
   &-list-item {
     @include txt;
     @include txt-1;
     @include txt-strong;
-    padding: 10px 20px;
+    @include color-black;
+    padding: 10px 35px 10px 15px;
+    margin: 0;
     border: none;
     background-color: transparent;
 
     &-sub {
       padding: 0;
+      margin: 0;
+      
+      a {
+        padding: 7px 15px 8px;
+      }
+      
+      &:first-child {
+        a {
+          padding-top: 0;
+        }
+      }
     }
 
     &:focus {
-      outline: 1px solid color('white');
+      outline: none;
     }
 
     &-lnk {
       @include txt;
       @include txt-2;
+      color: rgba(color('black'), 0.75);
       display: block;
       padding: 3px 0;
 
