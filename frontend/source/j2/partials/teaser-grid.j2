@@ -11,7 +11,7 @@
   <h2>{{ headline }}</h2>
   {% endif %}
 
-  <div class="ad-o-teaser-grid-list">
+  <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-{{ teasers|count }}-col">
     {% for teaser in teasers %}
     {# Teaser for guides and tutorial pages #}
     {% if teaser.type == 'guide' %}
