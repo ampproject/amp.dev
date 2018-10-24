@@ -31,6 +31,7 @@ $gutterColor: transparent;
 }
 
 .grid-toggle {
+  display: none;
   pointer-events: none;
 
   .toggle {
@@ -39,7 +40,7 @@ $gutterColor: transparent;
     text-align: left;
     border-radius: 20px;
     z-index: 1;
-    
+
     &:before {
       content: 'Toggle grid';
       display: block;
@@ -70,7 +71,7 @@ $gutterColor: transparent;
     border-radius: 10px;
     transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1), opacity 0.3s ease-out;
   }
-  
+
   .grid {
     visibility: hidden;
     opacity: 0;
@@ -103,7 +104,7 @@ $gutterColor: transparent;
         opacity: 1;
       }
     }
-    
+
     &:hover + .toggle:before {
       visibility: visible;
       opacity: 1;

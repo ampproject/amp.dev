@@ -50,6 +50,10 @@ TODO: mono (inline, block)
 	font-size: 0.625em; //10px
 }
 
+@mixin txt-logo {
+  font-size: 18px;
+}
+
 @mixin txt-font-accent {
 	font-family: 'Poppins', sans-serif;
 }

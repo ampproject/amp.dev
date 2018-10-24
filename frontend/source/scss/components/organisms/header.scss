@@ -14,6 +14,7 @@
 
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
+@import '../atoms/_headline.scss';
 @import '../atoms/_icon.scss';
 
 @import '../molecules/_link.scss';
@@ -35,12 +36,16 @@
     height: 50px;
     padding: 0;
     margin: 0;
-    transition: height 0.2s ease-in-out;
     list-style: none;
     align-items: center;
 
     &-desktop {
-      display: none;
+      height: 0vh;
+      overflow: hidden;
+      transition: height 0.3s ease-in;
+      flex-direction: column;
+      align-items: flex-start;
+      display: flex;
 
       @media screen and (min-width: 768px) {
         margin: 0 auto;
@@ -50,6 +55,7 @@
 
     &-mobile {
       display: flex;
+      height: 60px;
 
       @media screen and (min-width: 768px) {
         display: none;
@@ -59,18 +65,27 @@
     &-subnav {
       display: flex;
       overflow: hidden;
+      height: 60px;
+
+      @media screen and (min-width: 768px) {
+        height: 45px;
+      }
     }
 
   }
 
   &-lnk {
-    margin: 0 20px;
     white-space: nowrap;
-    padding: 12.5px 0;
+    margin: 0 5px;
+    order: 3;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 20px;
+    }
 
     a {
       @include txt-font-accent;
-      @include txt-1;
+      @include hl-h4;
       @include color-black;
 
       margin: 0;
@@ -78,10 +93,16 @@
       &:hover {
         @include color-blue-ribbon;
       }
+
+      @media screen and (min-width: 768px) {
+        @include txt-1;
+      }
     }
 
     &-selected {
       @include txt-strong;
+      @include txt-font-accent;
+      @include txt-1;
       margin-bottom: 0;
       color: color('blue-ribbon');
 
@@ -91,14 +112,16 @@
     }
 
     &-subnav {
+      margin: 0;
+      margin-left: 20px;
 
       a {
         @include txt;
-        @include txt-3;
+        @include txt-2;
+        @include color-black;
       }
 
       &-selected {
-        padding-top: 22.5px;
 
         a {
           @include txt-strong;
@@ -109,7 +132,11 @@
     }
 
     &-home {
-      margin: 0;
+      margin: 10px 0px 10px 20px;
+
+      @media screen and (min-width: 768px) {
+        margin: 10px 40px 10px 0;
+      }
 
       a  {
         @include color-blue-ribbon;
@@ -117,13 +144,16 @@
     }
 
     &-support {
-      margin-right: 0;
+      margin: 0 30px 0 30px;
+    }
+
+    &-lang {
+      margin: 0;
     }
 
     &-divider {
-      height: 2px;
+      height: 1px;
       width: 100%;
-      margin-top: 5px;
       background-color: color('blue-ribbon');
     }
   }
@@ -141,17 +171,18 @@
 
   &-subnav {
     display: block;
-    height: 50px;
+    height: 60px;
     background-color: color('white');
 
     @media screen and (min-width: 768px) {
       padding: 0 30px;
+      height: 45px;
     }
   }
 
   &-subnav-logo {
     display: none;
-    margin: 0;
+    margin: 10px 45px 10px 0;
 
     @media screen and (min-width: 1024px){
       display: block;
@@ -164,14 +195,22 @@
     display: flex;
     align-items: center;
 
+
     & svg {
       @include ico;
       @include ico-1;
     }
 
     &-text {
-      text-transform: uppercase;
-      padding-left: 5px;
+      margin-left: 4px;
+
+      @media screen and (min-width: 768px) {
+        @include txt-logo;
+      }
+
+      &-uppercase {
+        text-transform: uppercase;
+      }
     }
 
     &-logo {
@@ -179,9 +218,10 @@
       & svg {
         @include ico;
         @include ico-blue-ribbon;
-        height: 50px;
-        width: 6em;
-        padding-top: 20px;
+        @include drop-shadow;
+        height: 30px;
+        width: 30px;
+        margin-right: 6px;
       }
     }
   }
@@ -189,6 +229,7 @@
 
   &-search {
     margin-right: 0;
+    order: 2;
     padding: 17.5px 0 12.5px 0;
 
     @media screen and (min-width: 768px) {
@@ -205,7 +246,7 @@
 
   &-burger-menu {
     position: fixed;
-    padding: 15px;
+    padding: 10px;
     right: 0;
     z-index: 100;
 
@@ -213,38 +254,43 @@
       display: none;
     }
 
+    & svg {
+      height: 40px;
+      width: 40px;
+    }
+
     &-btn {
       display: none;
 
       &:checked ~.ad-o-header-list-desktop {
         height: 100vh;
+        overflow: visible;
         z-index: 10;
-        padding: 2em 0;
-        flex-direction: column;
-        align-items: flex-start;
-        display: flex;
+        opacity: 1;
+        transition: height 0.5s ease-in;
+
+        .ad-o-header-lnk{
+          margin: 10px 0 10px 20px;
+        }
+
+        .ad-o-header-lnk-home {
+          order: 1;
+          margin: 15px 0px 80px 20px;
+        }
+
+        .ad-o-header-lnk-support {
+          margin-top: auto;
+        }
+
+        .ad-o-header-lnk-lang {
+          margin-bottom: 30px;
+        }
       }
 
       &:checked ~.ad-o-header-list-mobile {
         display: none;
       }
     }
-  }
-}
-
-// TODO remove bar styling as this will become and svg
-.bar {
-  height: 3px;
-  width: 30px;
-  background-color: color('river-bed');
-  position: relative;
-  margin-bottom: 3px;
-
-  &:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
   }
 }
 
