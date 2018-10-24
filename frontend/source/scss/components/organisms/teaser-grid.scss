@@ -13,6 +13,13 @@
 @import '../../mixins';
 @import '../../variables';
 
+section.#{organism('teaser-grid')} {
+	@media screen and (min-width: 1024px){
+		grid-column-start: 4;
+		grid-column-end: 22;
+	}
+}
+
 .#{organism('teaser-grid')} {
 	&-list {
 		display: grid;
