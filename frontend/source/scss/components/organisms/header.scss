@@ -109,7 +109,7 @@
     }
 
     &-home {
-      margin: 0 45px 0 0;
+      margin: 0;
 
       a  {
         @include color-blue-ribbon;
@@ -151,6 +151,7 @@
 
   &-subnav-logo {
     display: none;
+    margin: 0;
 
     @media screen and (min-width: 1024px){
       display: block;
@@ -166,7 +167,6 @@
     & svg {
       @include ico;
       @include ico-1;
-      @include drop-shadow;
     }
 
     &-text {
@@ -179,8 +179,9 @@
       & svg {
         @include ico;
         @include ico-blue-ribbon;
-        height: 30px;
-        width: 30px;
+        height: 50px;
+        width: 6em;
+        padding-top: 20px;
       }
     }
   }
