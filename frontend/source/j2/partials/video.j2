@@ -1,9 +1,13 @@
-{% if type == "youtube" %}
+{% do doc.styles.addCssFile('css/components/atoms/video.css') %}
 
-<amp-youtube data-videoid={{ youtube_id }} layout="responsive" width="16" height="9"></amp-youtube>
+<div class="ad-a-video">
+  {% if type == "youtube" %}
 
-{% else %}
-<amp-video src="{{ src }}" layout="responsive" width="16" height="9"></amp-video>
+  <amp-youtube data-videoid={{ youtube_id }} layout="responsive" width="16" height="9"></amp-youtube>
+
+  {% else %}
+  <amp-video src="{{ src }}" layout="responsive" width="16" height="9"></amp-video>
 
 {% endif %}
+</div>
 
