@@ -40,16 +40,18 @@
     align-items: center;
 
     &-desktop {
-      height: 0vh;
-      overflow: hidden;
-      transition: height 0.3s ease-in;
-      flex-direction: column;
-      align-items: flex-start;
-      display: flex;
+      display: none;
+      // overflow: hidden;
+      // flex-direction: column;
+      // align-items: flex-start;
+      // display: flex;
 
       @media screen and (min-width: 768px) {
         margin: 0 auto;
         display: flex;
+        overflow: visible;
+        flex-direction: row;
+        align-items: center;
       }
     }
 
@@ -81,6 +83,7 @@
 
     @media screen and (min-width: 768px) {
       margin: 0 20px;
+      order: 1;
     }
 
     a {
@@ -229,11 +232,12 @@
 
   &-search {
     margin-right: 0;
-    order: 2;
+    // order: 2;
     padding: 17.5px 0 12.5px 0;
 
     @media screen and (min-width: 768px) {
       margin-left: auto;
+      order: 1;
     }
 
     &-button {
@@ -264,10 +268,10 @@
 
       &:checked ~.ad-o-header-list-desktop {
         height: 100vh;
-        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         z-index: 10;
-        opacity: 1;
-        transition: height 0.5s ease-in;
 
         .ad-o-header-lnk{
           margin: 10px 0 10px 20px;
