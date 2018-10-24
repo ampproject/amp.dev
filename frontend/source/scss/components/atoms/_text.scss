@@ -72,8 +72,8 @@ TODO: mono (inline, block)
 }
 
 @mixin txt-mono-inline {
-	display: inline-block;
-	padding: 0 4px;
+	display: inline;
+	padding: 2px 4px;
 	font-weight: bold;
 	font-family: monospace;
 	color: color('black');
