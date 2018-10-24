@@ -9,8 +9,8 @@
 {% block main %}
 <div class="ad-t-docs-details">
   {% include 'partials/sidebar.j2' %}
-  <main>
+  <section class="main">
     {{ doc.html|render|safe }}
-  </main>
+  </section>
 </div>
 {% endblock %}

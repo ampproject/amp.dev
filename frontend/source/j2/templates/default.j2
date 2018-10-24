@@ -42,7 +42,7 @@
     {% include 'partials/header.j2' %}
 
     {% block main %}
-    <main>
+    <section class="main">
       {% if not doc.html %}
       <h1>{{ doc.title }}</h1>
       <p>Nothing here yet ...</p>
@@ -50,7 +50,7 @@
       {% else %}
       {{ doc.html|render|safe }}
       {% endif %}
-    </main>
+    </section>
     {% endblock %}
 
     {% block fonts %}
