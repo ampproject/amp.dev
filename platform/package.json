@@ -2,15 +2,22 @@
   "name": "backend",
   "version": "1.0.1",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "deploy": "gcloud app deploy",
-    "start": "node app.js"
+    "develop": "node index.js",
+    "start": "NODE_ENV=staging node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express-request-proxy": "^2.2.2",
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "loglevel": "^1.6.1"
   }
 }

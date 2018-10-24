@@ -13,9 +13,3 @@ ext:
 - extensions.amp_dependency_injector.AmpDependencyInjectorExtension
 - extensions.dynamic_css_bundles.DynamicCssBundlesExtension
 - extensions.shortcodes.ShortcodesExtension
-
-env:
-  name: development
-  host: localhost
-  port: 8081
-  scheme: http
