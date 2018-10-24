@@ -1,5 +1,10 @@
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 
+{% if doc.view == '/views/docs/detail.j2' %}
+</section>
+<section class="ad-o-teaser-grid">
+{% endif %}
+
 <div class="ad-o-teaser-grid">
 
   {% if headline %}
@@ -202,3 +207,8 @@
   </a>
   {% endif %}
 </div>
+
+{% if doc.view == '/views/docs/detail.j2' %}
+</section>
+<section class="main">
+{% endif %}
