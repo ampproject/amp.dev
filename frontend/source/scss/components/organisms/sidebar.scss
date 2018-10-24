@@ -15,7 +15,7 @@
   @media screen and (min-width: 1024px) {
     position: sticky;
     top: 114px;
-    height: 100vh;
+    height: calc(100vh - 115px);
     order: inherit;
     grid-column-start: 1;
     grid-column-end: 6;
@@ -23,12 +23,35 @@
     margin-left: -15px;
   }
 
+  &:before,
+  &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      width: calc(100% - 2px);
+      height: 16px;
+      background: transparent;
+      pointer-events: none;
+      z-index: 11;
+  }
+
+  &:before {
+      top: 149px;
+      background: linear-gradient(0deg, rgba(color('whisper'), 0), color('whisper'));
+  }
+
+  &:after {
+      bottom: 0;
+      background: linear-gradient(0deg, color('whisper'), rgba(color('whisper'), 0));
+  }
+
   &-list {
     list-style: none;
 
     &-main {
       overflow-y: scroll;
-      max-height: calc(100vh - 135px - 114px);
+      max-height: calc(100vh - 264px);
       margin: 34px 0 0;
 
       &::-webkit-scrollbar {
@@ -75,14 +98,6 @@
     &:focus {
       border: none;
       outline: none;
-    }
-
-    &:first-child > header {
-      padding-top: 0;
-      
-      span {
-        top: 0;
-      }
     }
   }
 
