@@ -243,3 +243,17 @@ see the [AMP Validation Errors guide](https://www.ampproject.org/docs/reference/
 If you’re still stuck after careful evaluation, [ask a
 question](http://stackoverflow.com/questions/tagged/amp-html) and we'll try to
 help.
+
+[teaser-grid]
+# Related Guides & Tutorials
+[](content/amp-dev/styleguide/organisms/teaser-grid/guide.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/guide.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/guide.md)
+[/teaser-grid]
+
+[teaser-grid]
+# Related Examples
+[](content/amp-dev/styleguide/organisms/teaser-grid/example-2.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/example-2.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/example-2.md)
+[/teaser-grid]
