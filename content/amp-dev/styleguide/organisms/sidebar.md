@@ -1,0 +1,7 @@
+---
+$title: Sidebar
+---
+
+[sidebar]
+  #
+[/sidebar]

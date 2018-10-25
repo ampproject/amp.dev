@@ -4,43 +4,6 @@
 ### MOLECULE: event ###
 #######################
 
-### SAMPLE MARKUP:
-
-<div class="ad-m-event">
-  <div class="ad-m-event-date">
-    <span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-silver ad-a-txt-hl">
-			2018
-		</span>
-    <span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black">
-      Jul<br>
-      11
-    </span>
-  </div>
-  <div class="ad-m-event-content">
-    <span class="ad-a-txt ad-a-txt-font-accent ad-a-txt-accent-2 ad-a-txt-strong ad-a-txt-black ad-a-txt-hl">
-			Austin, TX
-		</span>
-    <ul aria-labelledby="Details about the event">
-      <li class="ad-a-txt ad-a-txt-3">
-        <div class="ad-a-ico ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use>
-          </svg>
-        </div>
-        Google Building
-      </li>
-      <li class="ad-a-txt ad-a-txt-3">
-        <div class="ad-a-ico ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time"></use>
-          </svg>
-        </div>
-        08/01/18 12:00
-      </li>
-    </ul>
-  </div>
-</div>
-
 ### INFO:
 
 The event molecule is a combination of icon, headline and text atoms. The event molecule also creates a list for the event details (location, registration).
@@ -73,9 +36,9 @@ none
     &-year {
       @include txt;
       @include txt-font-accent;
-      @include txt-accent-2;
+      @include txt-2;
       @include txt-strong;
-      @include txt-silver;
+      @include color-silver;
       @include txt-hl;
 
       margin-bottom: 0.5em;
@@ -84,9 +47,9 @@ none
     &-month {
       @include txt;
       @include txt-font-accent;
-      @include txt-accent-2;
+      @include txt-2;
       @include txt-strong;
-      @include txt-black;
+      @include color-black;
     }
 	}
 
@@ -96,9 +59,9 @@ none
     &-city {
       @include txt;
       @include txt-font-accent;
-      @include txt-accent-2;
+      @include txt-2;
       @include txt-strong;
-      @include txt-black;
+      @include color-black;
       @include txt-hl;
 
       margin-bottom: 0.5em;

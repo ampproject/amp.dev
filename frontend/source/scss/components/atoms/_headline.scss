@@ -9,18 +9,6 @@
 ### ATOM: headline ###
 ######################
 
-### SAMPLE MARKUP:
-
-<h2 class="ad-a-hl ad-a-hl-h1">
-  The Headline Text
-</h2>
-
-### INFO:
-
-This is a regular headline.
-It should be never overwritten in any other file.
-New modifiers can be added below.
-
 ### MODIFIERS:
 
 h1 - h6
@@ -36,28 +24,27 @@ stories-home
 // TODO: implement mono font and modifier
 
 @mixin hl {
-  display: block;
   margin-top: 0;
   margin-bottom: 0.75em;
   font-family: 'Poppins';
-  font-weight: bold;
-  line-height: 1.25em;
+  font-weight: 700;
+  line-height: 1.3em;
   color: color('black');
 }
 
 @mixin hl-h1 {
-  font-size: 3em;
+  font-size: 2.125em;
 
   @media screen and (min-width: 768px) {
-    font-size: 3.25em;
+    font-size: 2.625em;
   }
 }
 
 @mixin hl-h2 {
-  font-size: 2.25em;
+  font-size: 1.75em;
 
   @media screen and (min-width: 768px) {
-    font-size: 2.625em;
+    font-size: 2em;
   }
 }
 
@@ -70,54 +57,13 @@ stories-home
 }
 
 @mixin hl-h4 {
-  font-size: 1em;
+  font-size: 1.25em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.375em;
+  }
 }
 
 @mixin hl-h5 {
-  font-size: 0.875em;
-}
-
-@mixin hl-silver {
-  color: color('silver');
-  font-size: 0.625em;
-}
-
-@mixin hl-blue-ribbon {
-  color: color('blue-ribbon');
-}
-
-@mixin hl-h4 {
-  font-size: 1em;
-
-  @media screen and (min-width: 768px) {
-    font-size: 1.25em;
-  }
-}
-
-@mixin  hl-stage {
-  font-size: 1.5em;
-
-  @media screen and (min-width: 768px) {
-    font-size: 2em;
-  }
-}
-
-@mixin hl-light {
-  color: color('white');
-}
-
-@mixin hl-mono {
-  font-family: monospace;
-}
-
-@mixin hl-stories {
-	color: color('ultramarine');
-}
-
-@mixin hl-ads {
-	color: color('hawkes-blue');
-}
-
-@mixin hl-email {
-	color: color('reef');
+  font-size: 1.125em;
 }

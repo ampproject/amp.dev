@@ -9,12 +9,6 @@
 ### ATOM: text ###
 ##################
 
-### SAMPLE MARKUP:
-
-<p class="ad-a-txt ad-a-txt-p">
-  The Text
-</p>
-
 ### INFO:
 
 Text atom could be used almost everywhere.
@@ -41,35 +35,23 @@ TODO: mono (inline, block)
 }
 
 @mixin txt-1 {
-	font-size: 1em;
-
-	@media screen and (min-width: 768px) {
-		font-size: 1.25em;
-	}
+	font-size: 1em; //16px
 }
 
 @mixin txt-2 {
-	font-size: 0.875em;
-
-	@media screen and (min-width: 768px) {
-		font-size: 1em;
-	}
+	font-size: 0.875em; //14px
 }
 
 @mixin txt-3 {
-	font-size: 0.75em;
+	font-size: 0.75em; //12px
 }
 
-@mixin txt-accent-1 {
-	font-size: 1em;
+@mixin txt-4 {
+	font-size: 0.625em; //10px
 }
 
-@mixin txt-accent-2 {
-	font-size: 0.875em;
-}
-
-@mixin txt-accent-3 {
-	font-size: 0.625em;
+@mixin txt-logo {
+  font-size: 18px;
 }
 
 @mixin txt-font-accent {
@@ -89,9 +71,13 @@ TODO: mono (inline, block)
 	margin-bottom: 0.75em;
 }
 
+@mixin txt-mono {
+	font-family: monospace;
+}
+
 @mixin txt-mono-inline {
-	display: inline-block;
-	padding: 0 4px;
+	display: inline;
+	padding: 2px 4px;
 	font-weight: bold;
 	font-family: monospace;
 	color: color('black');
@@ -114,40 +100,4 @@ TODO: mono (inline, block)
 
 @mixin txt-uppercase {
 	text-transform: uppercase;
-}
-
-@mixin txt-black {
-	color: color('black');
-}
-
-@mixin txt-blue-ribbon {
-	color: color('blue-ribbon');
-}
-
-@mixin txt-silver {
-	color: color('silver');
-}
-
-@mixin txt-gray-chateau {
-	color: color('gray-chateau');
-}
-
-@mixin txt-light {
-	color: color('white');
-}
-
-@mixin txt-stories {
-	color: color('ultramarine');
-}
-
-@mixin txt-ads {
-	color: color('hawkes-blue');
-}
-
-@mixin txt-email {
-	color: color('reef');
-}
-
-@mixin txt-overview {
-  color: color('mine-shaft');
 }

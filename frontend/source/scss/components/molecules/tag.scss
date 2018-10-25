@@ -15,11 +15,12 @@ TODO: Add info text to this molecule.
 @import '../../mixins';
 @import '../../variables';
 
+@import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 
 .#{molecule('tag')} {
 	@include txt;
-	@include txt-accent-2;
+	@include txt-2;
 	@include txt-strong;
 	@include txt-center;
 	@include txt-uppercase;

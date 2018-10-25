@@ -3,6 +3,8 @@
 @import '_extends.scss';
 @import '_mixins.scss';
 
+@import 'grid-toggle.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -12,7 +14,7 @@ html, body {
     margin: 0;
     min-width: 320px;
     color: color('black');
-    background: color('white');
+    background: color('whisper');
     font-size: 16px;
     font-family: sans-serif;
     overflow-x: hidden;
@@ -20,6 +22,6 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-main {
+section.main {
   margin: 0 auto;
 }

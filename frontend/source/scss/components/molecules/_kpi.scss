@@ -4,14 +4,6 @@
 ### MOLECULE: KPI ###
 ######################
 
-### SAMPLE MARKUP:
-
-<div class="ad-m-kpi ad-m-kpi-emerald-doger col-3-6">
-	{{ atoms.icon('stories', size=2, fill="white") }}
-	<span class="ad-a-hl ad-a-hl-h1 ad-a-hl-light">63%</span>
-	<span class="ad-a-txt ad-a-txt-4 ad-a-txt-light">Lorem ipsum dolor sit amet</span>
-</div>
-
 ### INFO:
 
 The KPI molecule is a combination of icon, headline and text atoms.
@@ -66,7 +58,7 @@ Please refer to mixins.scss to see gradients.
 	&-number {
 		@include txt;
 		@include txt-strong;
-		@include txt-light;
+		@include color-white;
 
 		font-size: 3em;
 		line-height: 1;
@@ -77,7 +69,7 @@ Please refer to mixins.scss to see gradients.
 		@include txt;
 		@include txt-p;
 		@include txt-3;
-		@include txt-light;
+		@include color-white;
 
 		display: block; /* Fallback for non-webkit */
 		display: -webkit-box;

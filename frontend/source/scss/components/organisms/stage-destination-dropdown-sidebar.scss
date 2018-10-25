@@ -1,0 +1,55 @@
+/*
+
+##################
+### Organism: Destination Drop Down Stage ###
+##################
+
+### INFO:
+
+The background of the destination-stage requires the heroEnterAnimation mixin.
+
+### MODIFIERS:
+
+ - active
+		triggers the heroEnterAnimation mixin.
+
+*/
+
+@import '../molecules/dropdown-sidebar.scss';
+@import '../atoms/_divider.scss';
+
+
+.destination-stage {
+  position: relative;
+
+	&-content {
+    padding: 14px 15px 79px;
+    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.10);
+  }
+
+	.hl {
+    @include txt;
+    @include txt-2;
+    @include color-white;
+    @include txt-strong;
+		margin: 0;
+    display: inline;
+
+		&-divider {
+			@include divider;
+			@include divider-stage;
+		}
+
+		&-stories {
+			@include color-stories;
+		}
+
+		&-ads {
+			@include color-ads;
+		}
+
+		&-emails {
+			@include color-e-mails;
+		}
+	}
+}

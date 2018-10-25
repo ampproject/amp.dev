@@ -42,7 +42,7 @@ const settings = {
       'dest': './'
     },
     'icons': {
-      'src': 'source/svg/icons/**/*.svg',
+      'src': 'frontend/source/svg/icons/**/*.svg',
       'dest': 'partials/icons/'
     }
 };

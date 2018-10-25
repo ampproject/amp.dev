@@ -4,18 +4,6 @@
 ### Organism: Destination Drop Down Stage ###
 ##################
 
-### SAMPLE MARKUP:
-
-<div [class]="stages.currentStage != 'default' ? 'destination-stage ' + stages.currentStage + ' destination-stage destination-stage-active' : 'destination-stage'"
-class="destination-stage websites">
-	<div class="destination-stage-content">
-		<h1 class="hl" [class]="stages.currentStage != 'default' ? 'hl hl-'+stages.currentStage : 'hl' ">
-			AMP is a web component based framework for easily creating user first
-		</h1>
-		{% call molecules.dropdownSwitch( doc.destinations ) %} {{ atoms.icon('arrow-down-thick' ) }} {% endcall %}
-	</div>
-</div>
-
 ### INFO:
 
 The destination-rolling-stage organism contains the drop down switch molecule along with a headline.
@@ -33,6 +21,7 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 @import '../atoms/_divider.scss';
 
 @include heroEnterAnimation;
+@include rollingAnimation;
 
 .destination-stage {
 	height: 90vh;
@@ -60,8 +49,8 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 
 	.hl {
 		@include hl;
-		@include hl-stage;
-		@include hl-light;
+		@include hl-h3;
+		@include color-white;
 		margin: 0;
 		display: inline;
 		padding-right: 12px;
@@ -69,7 +58,7 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 		&-sub {
 			@include hl;
 			@include hl-h3;
-			@include hl-light;
+			@include color-white;
 		}
 
 		&-divider {
@@ -78,15 +67,15 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 		}
 
 		&-stories {
-			@include hl-stories;
+			@include color-stories;
 		}
 
 		&-ads {
-			@include hl-ads;
+			@include color-ads;
 		}
 
 		&-emails {
-			@include hl-email;
+			@include color-e-mails;
 		}
 	}
 }

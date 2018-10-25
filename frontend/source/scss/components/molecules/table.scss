@@ -1,0 +1,82 @@
+/*
+
+#####################
+### MOLECULE: table ###
+#####################
+
+### INFO:
+
+Markdown generated table.
+
+example markup:
+
+| | Amp | Vue.js | React | Angluar | Misc |
+|-|-|-|-|-|-|
+|Requirement <br/> Lorem ipsum|
+|Requirement <br/> Lorem ipsum|
+|Requirement <br/> Lorem ipsum|
+|Requirement <br/> Lorem ipsum|
+|Requirement <br/> Lorem ipsum|
+
+*/
+
+@import '../../extends';
+@import '../../mixins';
+@import '../../functions';
+@import '../../variables';
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+
+section.main {
+  margin: 35% auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 15% auto;
+  }
+}
+
+table {
+  position: relative;
+  border-collapse: collapse;
+  margin: 1.5em 0 2em;
+  @include txt;
+  @include txt-2;
+
+  th {
+    padding: 20px;
+    border-bottom: 1px solid color('silver');
+  }
+
+}
+
+thead {
+  @include txt-strong;
+
+  tr {
+    text-align: left;
+  }
+}
+
+tbody {
+  tr:nth-child(odd) {
+    background-color: color('whisper');
+  }
+
+  tr {
+    border-bottom: 1px solid color('silver');
+
+    td:nth-child(1) {
+      border-right: 1px solid color('silver');
+    }
+  }
+
+  td {
+    padding: 20px;
+    text-align: left;
+
+    code {
+      @include txt-mono-inline;
+      @include color-blue-ribbon;
+    }
+  }
+}

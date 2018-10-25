@@ -1,0 +1,176 @@
+/*
+
+######################
+### MOLECULE: dropdown-switch ###
+######################
+
+### INFO:
+
+The dropdown switch is a more complex version of the rolling switch. It includes the rolling switch with
+a gradient animation for the view box and multiple text colors for each text atom. It also includes a
+dropdown list visible on hover and also an icon atom.
+
+requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.scss
+
+### MODIFIERS:
+
+*/
+
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/_icon.scss';
+@import '../atoms/_text.scss';
+
+
+@include viewboxGradientAnimation;
+
+
+.destination-list-view-box {
+	overflow: hidden;
+	width: calc(100% - 36px);
+  height: 43px;
+  overflow: hidden;
+  position: absolute;
+	left: 15px;
+  margin-top: 14px;
+  z-index: 10;
+
+	&-gradient {
+		background: linear-gradient(-220deg,
+				color('blue-ribbon'),color('robins-egg'),
+				color('pizazz'), color('yellow'),
+				color('crimson'), color('pizazz'),
+				color('electric-violet'), color('pink-flamingo'),
+				color('azure-radiance'), color('robins-egg'));
+		background-size: 1200% 100%;
+		background-position: 0% 0%;
+		box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
+	}
+
+	&:hover {
+    height: 235px;
+    transition: height 0.5s ease;
+		background: transparent;
+
+    @media screen and (min-width: 768px) {
+		  height: 235px;
+    }
+
+		.destination-list-icon {
+			transform: rotate(180deg);
+    }
+
+	}
+}
+
+
+// DROP DPOWN LIST
+
+.destination-list {
+  display: flex;
+  flex-direction: column;
+	padding: 0;
+  margin: 0;
+
+  li {
+    padding-left: 0;
+  }
+
+  &-icon {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    transition: transform 0.5s ease;
+    padding: 10px;
+
+    & svg {
+      @include ico;
+      @include ico-2;
+      @include ico-blue-ribbon;
+    }
+
+  }
+
+
+	&-display {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&:hover {
+		.ad-a-ico {
+			transform: rotate(100deg);
+    }
+	}
+}
+
+// default list item
+
+.destination-list-item {
+	@include hl;
+	@include hl-h2;
+	@include color-white;
+	outline: color('white');
+	padding: 1px 20px 1px 10px;
+  order: 2;
+  display: block;
+
+  [option][selected] {
+    order: 1;
+    outline: 1px solid #fff;
+  }
+
+	&-drop-down {
+		margin-bottom: 5px;
+
+		&:hover {
+			padding-left: 12px;
+		}
+  }
+}
+
+
+.websites {
+  order: 1;
+  @include color-white;
+
+  &-background {
+	  @include gradient-websites;
+  }
+}
+
+.ads {
+  order: 2;
+  @include color-ads;
+
+  &-background {
+	  @include gradient-ads;
+  }
+}
+
+.stories {
+  order: 3;
+  @include color-stories;
+
+  &-background {
+	  @include gradient-stories;
+  }
+}
+
+.e-mails {
+  order: 4;
+  @include color-e-mails;
+
+  &-background {
+	  @include gradient-e-mails;
+  }
+}
+
+.all {
+	text-transform: capitalize;
+  color: color('blue-ribbon');
+
+	&-background {
+		@include gradient-overview;
+	}
+}

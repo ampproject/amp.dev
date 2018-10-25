@@ -4,12 +4,6 @@
 ### ATOM: divider ###
 #####################
 
-### SAMPLE MARKUP:
-
-<span class="ad-a-divider ad-a-divider-desktop"></span>
-
-### INFO:
-
 A simple element that can be used anywhere.
 More modifiers can be added below.
 
@@ -52,4 +46,11 @@ desktop
   height: 4px;
   background-color: color('white');
 	margin-bottom: 3em;
+}
+
+@mixin divider-header-mobile {
+  display: block;
+  background-color: color('wild-sand');
+  height: 1px;
+  margin: 30px 20px 30px 0px;
 }

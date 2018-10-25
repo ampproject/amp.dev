@@ -13,6 +13,13 @@
 @import '../../mixins';
 @import '../../variables';
 
+section.#{organism('teaser-grid')} {
+	@media screen and (min-width: 1024px){
+		grid-column-start: 4;
+		grid-column-end: 22;
+	}
+}
+
 .#{organism('teaser-grid')} {
 	&-list {
 		display: grid;
@@ -20,13 +27,31 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: auto;
 		width: 100%;
-
-		@media screen and (min-width: 575px) {
-			grid-template-columns: repeat(2, 1fr);
+		
+		&-2-col {
+			@media screen and (min-width: 575px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
 		}
+		
+		&-3-col {
+			@media screen and (min-width: 575px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
 
-		@media screen and (min-width: 991px) {
-			grid-template-columns: repeat(4, 1fr);
+			@media screen and (min-width: 991px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+		
+		&-4-col {
+			@media screen and (min-width: 575px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media screen and (min-width: 991px) {
+				grid-template-columns: repeat(4, 1fr);
+			}
 		}
 	}
 }

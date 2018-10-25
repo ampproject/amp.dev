@@ -4,17 +4,6 @@
 ### MOLECULE: link ###
 ######################
 
-### SAMPLE MARKUP:
-
-<a class="ad-m-lnk" href="#" target="_blank">
-	<svg class="ad-a-ico ad-a-ico-external ad-a-ico-1 ad-a-ico-blue-ribbon ad-a-ico-transparent">
-		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
-	</svg>
-	<span class="ad-a-txt ad-a-txt-3 ad-a-txt-strong ad-a-txt-blue-ribbon">
-		The Link Text
-	</span>
-</a>
-
 ### INFO:
 
 The link molecule is a combination of icon and text atom.
@@ -25,6 +14,8 @@ The size of the icon should be 1 (xsmall) and text should be 3 (medium).
 none
 
 */
+
+@import '../atoms/_color.scss';
 
 @mixin link {
 	display: flex;
@@ -40,9 +31,9 @@ none
 
 	&-text {
 		@include txt;
-		@include txt-accent-2;
+		@include txt-2;
 		@include txt-strong;
-		@include txt-blue-ribbon;
+		@include color-blue-ribbon;
 	}
 
 	&-icon {
@@ -57,8 +48,8 @@ none
 .link-preview-1 {
 	.#{molecule('lnk')} {
 		&-text {
-			@include txt-black;
 			@include txt-font-accent;
+			@include color-black;
 		}
 
 		&-icon {
@@ -72,7 +63,7 @@ none
 .link-preview-2 {
 	.#{molecule('lnk')} {
 		&-text {
-			@include txt-blue-ribbon;
+			@include color-blue-ribbon;
 		}
 
 		&-icon {

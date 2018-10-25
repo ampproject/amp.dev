@@ -45,6 +45,7 @@ class TeaserGridShortcode(Shortcode):
         # Try to fill more complex teaser attributes
         teaser_fields = teaser_doc.fields.get('teaser', {})
         teaser['image'] = teaser_fields.get('image', None)
+        teaser['kpi'] = teaser_fields.get('kpi', None)
         # TODO: Build excerpt from document if not maintained
         teaser['text'] = teaser_fields.get('text', '')
 

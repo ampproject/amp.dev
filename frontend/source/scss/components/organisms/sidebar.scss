@@ -1,0 +1,153 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+
+section.sidebar {
+  order: 2;
+  grid-column: auto;
+  padding: 0;
+  margin-right: -30px;
+
+  @media screen and (min-width: 1024px) {
+    order: inherit;
+    grid-column-start: 1 !important;
+    grid-column-end: 6 !important;
+    margin-right: 0;
+    margin-left: -15px;
+  }
+}
+
+.#{organism('sidebar')} {
+  position: static;
+
+  @media screen and (min-width: 1024px) {
+    position: sticky;
+    top: 114px;
+    height: calc(100vh - 115px);
+  }
+
+  &:before,
+  &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      width: calc(100% - 2px);
+      height: 16px;
+      background: transparent;
+      pointer-events: none;
+      z-index: 1;
+  }
+
+  &:before {
+      top: 149px;
+      background: linear-gradient(0deg, rgba(color('whisper'), 0), color('whisper'));
+  }
+
+  &:after {
+      bottom: 0;
+      background: linear-gradient(0deg, color('whisper'), rgba(color('whisper'), 0));
+  }
+
+  &-list {
+    list-style: none;
+
+    &-main {
+      overflow-y: scroll;
+      max-height: calc(100vh - 264px);
+      margin: 34px 0 0;
+
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+
+      &::-webkit-scrollbar-track {
+        box-shadow: inset -1px 0 rgba(color('black'), 0.10);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #979797;
+      }
+    }
+    
+    &-sub {
+      padding-left: 15px;
+      margin-bottom: 10px;
+    }
+  }
+
+  section {
+    header {
+      position: relative;
+
+      span {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        color: #20202A;
+
+        &.open {
+          color: #B5B2B2;
+        }
+      }
+    }
+
+    &[expanded] .open,
+    &:not([expanded]) .close {
+      display: none;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  &-list-item {
+    @include txt;
+    @include txt-1;
+    @include txt-strong;
+    @include color-black;
+    padding: 10px 35px 10px 15px;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+
+    &-sub {
+      padding: 0;
+      margin: 0;
+      
+      a {
+        padding: 7px 15px 8px;
+      }
+      
+      &:first-child {
+        a {
+          padding-top: 0;
+        }
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &-lnk {
+      @include txt;
+      @include txt-2;
+      color: rgba(color('black'), 0.75);
+      display: block;
+      padding: 3px 0;
+
+      &:hover {
+        color: color('blue-ribbon');
+      }
+    }
+
+  }
+}
+

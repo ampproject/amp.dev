@@ -4,12 +4,6 @@
 ### ATOM: button ###
 ####################
 
-### SAMPLE MARKUP:
-
-<a class="ad-a-btn" href="#">
-	The Button Text
-</a>
-
 ### INFO:
 
 The regular button has only one size and no modifiers yet.
@@ -24,7 +18,7 @@ none
 .#{atom('btn')} {
 	@include hl;
 	@include hl-h3;
-	@include hl-light;
+	@include color-white;
 
 	display: inline-block;
 	max-width: 100%;

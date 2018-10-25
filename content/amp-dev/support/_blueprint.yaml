@@ -1,0 +1,6 @@
+path: /support/{base}.html
+view: /views/default.j2
+title: Support
+
+localization:
+  path: /{locale}/support/{base}.html
