@@ -3,12 +3,11 @@
 {% block styles %}
 {{ super() }}
 
-{% do doc.styles.addCssFile('css/components/templates/docs-detail.css') %}
+{% do doc.styles.addCssFile('css/components/templates/home.css') %}
 {% endblock %}
 
 {% block main %}
-<div class="ad-t-container ad-t-docs-detail">
-  {% include 'partials/sidebar.j2' %}
+<div class="ad-t-home">
   <section class="main">
     {{ doc.html|render|safe }}
   </section>

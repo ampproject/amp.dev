@@ -9,30 +9,31 @@ section.sidebar {
   order: 2;
   grid-column: auto;
   padding: 0;
-  margin-right: -30px;
 
   @media screen and (min-width: 1024px) {
     order: inherit;
     grid-column-start: 1 !important;
     grid-column-end: 6 !important;
     margin-right: 0;
-    margin-left: -15px;
   }
 }
 
 .#{organism('sidebar')} {
   position: static;
+  margin-right: -30px;
 
   @media screen and (min-width: 1024px) {
     position: sticky;
     top: 114px;
     height: calc(100vh - 115px);
+    margin-right: 0;
+    margin-left: -15px;
   }
 
   &:before,
   &:after {
       content: '';
-      display: block;
+      display: none;
       position: absolute;
       left: 0;
       width: calc(100% - 2px);
@@ -40,6 +41,10 @@ section.sidebar {
       background: transparent;
       pointer-events: none;
       z-index: 1;
+      
+      @media screen and (min-width: 1024px) {
+        display: block;
+      }
   }
 
   &:before {
@@ -56,9 +61,12 @@ section.sidebar {
     list-style: none;
 
     &-main {
-      overflow-y: scroll;
-      max-height: calc(100vh - 264px);
       margin: 34px 0 0;
+
+      @media screen and (min-width: 1024px){
+        overflow-y: scroll;
+        max-height: calc(100vh - 264px);
+      }
 
       &::-webkit-scrollbar {
         width: 2px;
@@ -72,7 +80,7 @@ section.sidebar {
         background-color: #979797;
       }
     }
-    
+
     &-sub {
       padding-left: 15px;
       margin-bottom: 10px;
@@ -120,11 +128,11 @@ section.sidebar {
     &-sub {
       padding: 0;
       margin: 0;
-      
+
       a {
         padding: 7px 15px 8px;
       }
-      
+
       &:first-child {
         a {
           padding-top: 0;
@@ -145,6 +153,11 @@ section.sidebar {
 
       &:hover {
         color: color('blue-ribbon');
+      }
+
+      &-selected {
+        @include txt-strong;
+        @include color-blue-ribbon;
       }
     }
 

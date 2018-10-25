@@ -33,9 +33,13 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 
 	&:hover {
-		height: 230px;
+		height: 180px;
 		transition: height 0.5s ease;
-		background: transparent;
+    background: transparent;
+
+    @media screen and (min-width: 768px){
+		  height: 230px;
+    }
 
 		[option][selected] {
 			border: none;
@@ -86,7 +90,52 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		.ad-a-ico {
 			fill: color('pink-flamingo');
 		}
-	}
+  }
+
+  // DROP DPOWN LIST
+
+  .destination-list {
+  	display: none;
+  	padding: 0;
+  	list-style: none;
+    margin: 0;
+
+    li {
+      order: 2;
+      padding-left: 0;
+    }
+
+    [option][selected] {
+      order: 1;
+    }
+
+
+  	&-display {
+  		display: flex;
+  		flex-direction: column;
+  	}
+
+  	&:hover {
+
+  		.ad-a-ico {
+  			transform: rotate(100deg);
+  		}
+
+  		.destination-list-view-box {
+  			animation: none;
+  		}
+
+  		.destination-list-rolling-item {
+  			display: none;
+  			animation-play-state: paused;
+      }
+
+      [option][selected] a {
+        color: inherit;
+      }
+
+  	}
+  }
 }
 
 
@@ -99,46 +148,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 	// @include ico-white;
 	// @include ico-2;
-}
-
-// DROP DPOWN LIST
-
-.destination-list {
-	display: none;
-	padding: 0;
-	list-style: none;
-  margin: 0;
-
-   li {
-     order: 2;
-     padding-left: 0;
-    }
-
-	&-display {
-		display: flex;
-		flex-direction: column;
-	}
-
-	&:hover {
-
-		.ad-a-ico {
-			transform: rotate(100deg);
-		}
-
-		.destination-list-view-box {
-			animation: none;
-		}
-
-		.destination-list-rolling-item {
-			display: none;
-			animation-play-state: paused;
-    }
-
-    [option][selected] a {
-      color: inherit;
-    }
-
-	}
 }
 
 // default list item
@@ -158,15 +167,17 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		&:hover {
 			padding-left: 12px;
 		}
-	}
+  }
+
+  [option][selected] {
+    order: 1;
+    background-clip: text;
+    -webkit-background-clip: text;
+    outline: 1px solid #fff;
+  }
 }
 
-[option][selected] {
-	order: 1;
-	background-clip: text;
-  -webkit-background-clip: text;
-  outline: 1px solid #fff;
-}
+
 
 .websites {
   @include color-websites;

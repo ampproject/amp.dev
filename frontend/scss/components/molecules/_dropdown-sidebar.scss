@@ -27,13 +27,23 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .destination-list-view-box {
 	overflow: hidden;
-	width: calc(100% - 36px);
-  height: 43px;
+	width: auto;
+  height: 34px;
   overflow: hidden;
   position: absolute;
-	left: 15px;
-  margin-top: 14px;
-  z-index: 10;
+	top: 0;
+	right: 30px;
+  margin-top: 11px;
+  z-index: 2;
+
+	@media screen and (min-width: 1024px) {
+		width: calc(100% - 36px);
+		height: 40px;
+		top: auto;
+		right: auto;
+		left: 15px;
+		margin-top: 14px;
+	}
 
 	&-gradient {
 		background: linear-gradient(-220deg,
@@ -45,79 +55,102 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		background-size: 1200% 100%;
 		background-position: 0% 0%;
 		box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
-	}
+  }
 
-	&:hover {
-    height: 235px;
+  &-expand {
+    height: 190px;
     transition: height 0.5s ease;
 		background: transparent;
 
-    @media screen and (min-width: 768px) {
-		  height: 235px;
-    }
+		@media screen and (min-width: 1024px) {
+			height: 210px;
+		}
 
 		.destination-list-icon {
 			transform: rotate(180deg);
     }
-
-	}
-}
-
-
-// DROP DPOWN LIST
-
-.destination-list {
-  display: flex;
-  flex-direction: column;
-	padding: 0;
-  margin: 0;
-
-  li {
-    padding-left: 0;
   }
 
-  &-icon {
-    position: absolute;
-    right: 0;
-    z-index: 10;
-    transition: transform 0.5s ease;
-    padding: 10px;
+  @media screen and (min-width: 768px) {
+    &:hover {
+      height: 235px;
+      transition: height 0.5s ease;
+      background: transparent;
 
-    & svg {
-      @include ico;
-      @include ico-2;
-      @include ico-blue-ribbon;
+      .destination-list-icon {
+        transform: rotate(180deg);
+      }
     }
-
   }
 
+  // DROP DPOWN LIST
 
-	&-display {
-		display: flex;
-		flex-direction: column;
-	}
+  .destination-list {
+    display: flex;
+    flex-direction: column;
+  	padding: 0;
+    margin: 0;
 
-	&:hover {
-		.ad-a-ico {
-			transform: rotate(100deg);
+    li {
+      padding-left: 0;
     }
-	}
+
+    &-icon {
+      position: absolute;
+      right: 0;
+      z-index: 2;
+      transition: transform 0.5s ease;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      outline: none;
+
+      & svg {
+        @include ico;
+        @include ico-1;
+        @include ico-blue-ribbon;
+
+				@media screen and (min-width: 1024px) {
+					@include ico-2;
+				}
+      }
+    }
+
+
+  	&-display {
+  		display: flex;
+  		flex-direction: column;
+  	}
+
+  	&:hover {
+  		.ad-a-ico {
+  			transform: rotate(100deg);
+      }
+  	}
+  }
 }
+
 
 // default list item
 
 .destination-list-item {
 	@include hl;
-	@include hl-h2;
+	@include hl-h4;
 	@include color-white;
 	outline: color('white');
-	padding: 1px 20px 1px 10px;
-  order: 2;
+	padding: 4px 20px 4px 10px;
   display: block;
+
+	@media screen and (min-width: 1024px) {
+		@include hl-h2;
+		padding: 1px 20px 1px 10px;
+	}
 
   [option][selected] {
     order: 1;
     outline: 1px solid #fff;
+    margin-bottom: 0px;
+    pointer-events: none;
   }
 
 	&-drop-down {
@@ -169,6 +202,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .all {
 	text-transform: capitalize;
   color: color('blue-ribbon');
+  pointer-events: none;
 
 	&-background {
 		@include gradient-overview;

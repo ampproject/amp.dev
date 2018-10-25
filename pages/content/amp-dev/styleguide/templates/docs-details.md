@@ -197,7 +197,7 @@ If the AMP validation service detects that there’s something wrong with your p
 
 Most validation errors are easy to address and fix. Consider this HTML tag:
 
-[sourcecode:html]
+``` html
 <img src="cat.png">
 ```
 
