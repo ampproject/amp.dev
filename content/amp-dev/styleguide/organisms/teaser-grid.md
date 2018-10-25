@@ -1,5 +1,6 @@
 ---
 $title: Teaser grid
+$view: /views/styleguide.j2
 $path: /styleguide/organisms/teaser-grid.html
 
 localization:

@@ -25,6 +25,10 @@
       grid-column-start: 7;
       grid-column-end: 19;
     }
+    
+    &.main {
+      padding-top: 60px;
+    }
   }
   
   .toc {
