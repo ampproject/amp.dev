@@ -47,6 +47,8 @@
     &-mobile {
       display: flex;
       height: 60px;
+      opacity: 1;
+      transition: opacity 0.5s ease;
 
       @media screen and (min-width: 1024px) {
         display: none;
@@ -64,7 +66,7 @@
         position: fixed;
         background: #fff;
         list-style: none;
-        transition: height 0.5s ease-in;
+        transition: height 0.5s ease-in, width 0.5s ease-in;
 
         @media screen and (min-width: 1024px) {
           display: none;
@@ -75,11 +77,12 @@
 
     &-subnav {
       display: flex;
-      overflow: hidden;
       height: 60px;
+      overflow: scroll;
 
       @media screen and (min-width: 1024px) {
         height: 45px;
+        overflow: hidden;
       }
     }
 
@@ -150,11 +153,6 @@
 
       a  {
         @include color-blue-ribbon;
-      }
-
-      &-expanded {
-        display: none;
-        margin: 15px 0px 80px 20px;
       }
     }
 
@@ -258,6 +256,11 @@
     }
   }
 
+  &-title {
+    opacity: 1;
+    margin-left: 4px;
+    transition: opacity 0.5s ease;
+  }
 
   &-search {
     margin-right: 0;
@@ -294,17 +297,19 @@
       display: none;
 
       &:checked ~.ad-o-header-list-mobile-expanded {
-        height: 100vh;
-        width: 100vw;
-        transition: height 0.5s ease-out;
+        height: calc(100vh - 60px);
+        transition: height 0.5s ease-in;
 
         .ad-o-header-lnk-home-expanded {
           display: block;
         }
       }
 
-      &:checked ~ .ad-o-header-list-mobile {
-        display: none;
+      &:checked ~.ad-o-header-list-mobile {
+        .ad-o-header-title {
+          opacity: 0;
+          transition: opacity 0.5s ease;
+        }
       }
 
     }
