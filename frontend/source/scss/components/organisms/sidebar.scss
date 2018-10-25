@@ -16,7 +16,6 @@ section.sidebar {
     grid-column-start: 1 !important;
     grid-column-end: 6 !important;
     margin-right: 0;
-    margin-left: -15px;
   }
 }
 
@@ -27,6 +26,7 @@ section.sidebar {
     position: sticky;
     top: 114px;
     height: calc(100vh - 115px);
+    margin-left: -15px;
   }
 
   &:before,
