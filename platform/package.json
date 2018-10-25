@@ -6,6 +6,7 @@
   "scripts": {
     "deploy": "gcloud app deploy",
     "develop": "node index.js",
+		"build": "NODE_ENV=staging node index.js",
     "start": "NODE_ENV=staging node index.js"
   },
   "keywords": [],

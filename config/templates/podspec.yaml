@@ -13,3 +13,8 @@ ext:
 - extensions.amp_dependency_injector.AmpDependencyInjectorExtension
 - extensions.dynamic_css_bundles.DynamicCssBundlesExtension
 - extensions.shortcodes.ShortcodesExtension
+
+deployments:
+  default:
+    destination: local
+    out_dir: ../platform/pages

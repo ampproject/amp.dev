@@ -27,7 +27,12 @@ let pipeline = new Pipeline();
 
 pipeline.clean();
 
-pipeline.generatePages().then(() => {
-  // let platform = new Platform();
-  console.log('Finished bitch!');
-});
+(async () => {
+  await pipeline.buildPagesFrontend();
+  await pipeline.generatePages();
+})();
+
+// .then(() => {
+//   // let platform = new Platform();
+//   console.log('Finished bitch!');
+// });

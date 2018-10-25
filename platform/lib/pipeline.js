@@ -34,6 +34,8 @@ const TRANSPILE_PAGES_SCSS_DEST = '../pages/css';
 const PAGES_TEMPLATES_SRC = '../frontend/source/j2/**/*';
 const PAGES_TEMPLATES_DEST = '../pages'
 
+const PAGES_DEST = '../pages';
+
 class Pipeline {
 
   constructor() {
@@ -42,7 +44,7 @@ class Pipeline {
 
   /**
    * Cleans remainings from previous builds
-   * @return {Promise}
+   * @return {Array} Containing deleted paths.
    */
   clean() {
     del.sync([
@@ -61,9 +63,10 @@ class Pipeline {
    * @return {Promise}
    */
   buildPagesFrontend() {
-    // Build styles
     this._transpilePagesScss();
     this._movePagesTemplates();
+
+    // TODO(matthiasrohmer): Watch for changes
   }
 
   _transpilePagesScss() {
@@ -158,7 +161,34 @@ class Pipeline {
   }
 
   _buildPages() {
+    log.info('Building pages ...', '\n');
 
+    return new Promise((resolve, reject) => {
+      let grow = spawn('grow',
+        ['build', '--no-preprocess'],
+        {
+          'stdio': 'pipe',
+          // TODO(matthiasrohmer): Move this path to configuration
+          'cwd': '../pages'
+        }
+      );
+
+      function growStdIo(data) {
+        data = data.toString();
+
+        if (log.getLevel() <= log.levels.INFO) {
+          process.stdout.write(data);
+        }
+
+        if (data.indexOf(GROW_SERVER_READY_STDOUT) !== -1) {
+          resolve();
+          log.info('\nStarted Grow development server.');
+        }
+      }
+
+      grow.stdout.on('data', growStdIo);
+      grow.stderr.on('data', growStdIo);
+    });
   }
 
   samples() {

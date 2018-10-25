@@ -12,36 +12,11 @@ build
 assets/css/*
 .depcache.json
 
-content/includes/who.yaml
-
-# Ignore imported files
-content/docs/contribute/governance.md
-content/docs/fundamentals/spec.md
-content/docs/fundamentals/spec/*.md
-content/docs/fundamentals/amp-cors-requests.md
-content/docs/design/amp-html-layout.md
-content/docs/interaction_dynamic/amp-actions-and-events.md
-content/docs/troubleshooting/amp-cache-debugging.md
-content/reference/components/**/*.md
-content/support/developer/get_support.md
-content/docs/ads/integration-guide.md
-content/docs/ads/amphtml_ads/a4a_spec.md
-content/docs/analytics/integrating-analytics.md
-content/docs/analytics/amp-managing-user-state.md
-content/docs/interaction_dynamic/amp-email-format.md
-
-# Ignore files generated or gathered by gulp
-frontend/templates
-frontend/partials
-frontend/views
-frontend/macros
-
-/templates
-/partials
-/views
-/macros
-/extensions
-
-frontend/static/static/css
-/css
-content/amp-dev/documentation/examples
+# Ignore dynamically built and collected files
+pages/content/amp-dev/documentation/examples
+pages/podspec.yaml
+pages/css
+pages/macros
+pages/partials
+pages/templates
+pages/views
