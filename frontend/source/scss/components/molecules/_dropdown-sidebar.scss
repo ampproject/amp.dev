@@ -28,7 +28,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .destination-list-view-box {
 	overflow: hidden;
 	width: calc(100% - 36px);
-  height: 43px;
+  height: 40px;
   overflow: hidden;
   position: absolute;
 	left: 15px;
@@ -47,7 +47,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
   }
 
-  &:focus {
+  &-expand {
     height: 210px;
     transition: height 0.5s ease;
 		background: transparent;
@@ -94,6 +94,12 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
         @include ico-blue-ribbon;
       }
 
+      & button {
+        background: transparent;
+        border: none;
+        outline: none;
+      }
+
     }
 
 
@@ -119,12 +125,13 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	@include color-white;
 	outline: color('white');
 	padding: 1px 20px 1px 10px;
-  order: 2;
   display: block;
 
   [option][selected] {
     order: 1;
     outline: 1px solid #fff;
+    margin-bottom: 0px;
+    pointer-events: none;
   }
 
 	&-drop-down {
@@ -176,6 +183,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .all {
 	text-transform: capitalize;
   color: color('blue-ribbon');
+  pointer-events: none;
 
 	&-background {
 		@include gradient-overview;
