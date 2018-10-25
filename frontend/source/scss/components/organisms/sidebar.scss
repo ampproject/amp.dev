@@ -5,19 +5,6 @@
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 
-section.sidebar {
-  order: 2;
-  grid-column: auto;
-  padding: 0;
-
-  @media screen and (min-width: 1024px) {
-    order: inherit;
-    grid-column-start: 1 !important;
-    grid-column-end: 6 !important;
-    margin-right: 0;
-  }
-}
-
 .#{organism('sidebar')} {
   position: static;
   margin-right: -30px;
@@ -41,7 +28,7 @@ section.sidebar {
       background: transparent;
       pointer-events: none;
       z-index: 1;
-      
+
       @media screen and (min-width: 1024px) {
         display: block;
       }
@@ -163,4 +150,3 @@ section.sidebar {
 
   }
 }
-
