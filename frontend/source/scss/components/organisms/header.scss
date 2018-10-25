@@ -272,6 +272,9 @@
         flex-direction: column;
         align-items: flex-start;
         z-index: 10;
+        position: fixed;
+        background: color('white');
+        width: 100vw;
 
         .ad-o-header-lnk{
           margin: 10px 0 10px 20px;
