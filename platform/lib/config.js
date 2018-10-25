@@ -10,7 +10,7 @@ const GROW_OUT_DIR = '../platform/pages';
 class Config {
 
   constructor(environment = 'development') {
-    const config = require(`${CONFIG_BASE_PATH}/${environment}`);
+    const config = require(`${CONFIG_BASE_PATH}/${environment}.json`);
 
     // Set log level for the overall application
     log.setLevel(config.logLevel);
