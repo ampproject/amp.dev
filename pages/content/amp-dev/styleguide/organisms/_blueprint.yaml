@@ -1,0 +1,6 @@
+path: /{locale}/styleguide/organisms/{base}.html
+view: /views/default.j2
+title: Organisms
+
+localization:
+  path: /{locale}/styleguide/organisms/{base}.html

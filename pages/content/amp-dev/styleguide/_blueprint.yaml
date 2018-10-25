@@ -1,0 +1,6 @@
+path: /styleguide/{base}.html
+view: /views/default.j2
+title: Styleguide
+
+localization:
+  path: /{locale}/styleguide/{base}.html

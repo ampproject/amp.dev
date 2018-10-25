@@ -20,8 +20,8 @@
 
 const log = require('loglevel');
 
-const Platform = require('./lib/platform');
 const Pipeline = require('./lib/pipeline');
+const Platform = require('./lib/platform');
 
 let pipeline = new Pipeline();
 
