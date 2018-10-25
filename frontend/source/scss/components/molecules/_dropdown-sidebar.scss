@@ -45,62 +45,69 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		background-size: 1200% 100%;
 		background-position: 0% 0%;
 		box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
-	}
+  }
 
-	&:hover {
-    height: 235px;
+  &:focus {
+    height: 210px;
     transition: height 0.5s ease;
 		background: transparent;
-
-    @media screen and (min-width: 768px) {
-		  height: 235px;
-    }
 
 		.destination-list-icon {
 			transform: rotate(180deg);
     }
+  }
 
+  @media screen and (min-width: 768px) {
+    &:hover {
+      height: 235px;
+      transition: height 0.5s ease;
+      background: transparent;
+
+      .destination-list-icon {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   // DROP DPOWN LIST
 
-.destination-list {
-  display: flex;
-  flex-direction: column;
-	padding: 0;
-  margin: 0;
+  .destination-list {
+    display: flex;
+    flex-direction: column;
+  	padding: 0;
+    margin: 0;
 
-  li {
-    padding-left: 0;
-  }
-
-  &-icon {
-    position: absolute;
-    right: 0;
-    z-index: 10;
-    transition: transform 0.5s ease;
-    padding: 10px;
-
-    & svg {
-      @include ico;
-      @include ico-2;
-      @include ico-blue-ribbon;
+    li {
+      padding-left: 0;
     }
 
-  }
+    &-icon {
+      position: absolute;
+      right: 0;
+      z-index: 10;
+      transition: transform 0.5s ease;
+      padding: 10px;
 
+      & svg {
+        @include ico;
+        @include ico-2;
+        @include ico-blue-ribbon;
+      }
 
-	&-display {
-		display: flex;
-		flex-direction: column;
-	}
-
-	&:hover {
-		.ad-a-ico {
-			transform: rotate(100deg);
     }
-	}
-}
+
+
+  	&-display {
+  		display: flex;
+  		flex-direction: column;
+  	}
+
+  	&:hover {
+  		.ad-a-ico {
+  			transform: rotate(100deg);
+      }
+  	}
+  }
 }
 
 

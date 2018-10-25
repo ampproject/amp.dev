@@ -94,21 +94,40 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       flex-direction: column;
     }
 
-    &:hover {
+    &:focus {
 
-      .ad-a-ico {
-        transform: rotate(100deg);
+        .ad-a-ico {
+          transform: rotate(100deg);
+        }
+
+        .destination-list-view-box {
+          animation: none;
+        }
+
+        .destination-list-rolling-item {
+          display: none;
+          animation-play-state: paused;
+        }
+
+    }
+
+    @media screen and (min-width: 768px) {
+      &:hover {
+
+        .ad-a-ico {
+          transform: rotate(100deg);
+        }
+
+        .destination-list-view-box {
+          animation: none;
+        }
+
+        .destination-list-rolling-item {
+          display: none;
+          animation-play-state: paused;
+        }
+
       }
-
-      .destination-list-view-box {
-        animation: none;
-      }
-
-      .destination-list-rolling-item {
-        display: none;
-        animation-play-state: paused;
-      }
-
     }
   }
 }
@@ -128,6 +147,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 // default list item
 
 .destination-list-item {
+
+
+
 	@include hl;
 	@include hl-h3;
 	@include color-white;
