@@ -9,152 +9,139 @@
 
 
 <header class="ad-o-header">
-  <nav class="ad-o-header-main-nav">
-    <input id="burger-menu-state" class="ad-o-header-burger-menu-btn" type="checkbox" />
-     <label class="ad-o-header-burger-menu" for="burger-menu-state">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
-    </label>
+  <div class="ad-o-header-wrapper">
+    <nav class="ad-o-header-nav ad-o-header-mainnav">
+      <input id="burger-menu-state" class="ad-o-header-burger-menu-btn" type="checkbox" />
+       <label class="ad-o-header-burger-menu" for="burger-menu-state">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
+      </label>
 
-  <ul class="ad-o-header-list ad-o-header-list-mobile">
-   <li class="ad-o-header-lnk ad-o-header-lnk-home">
-      <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-        <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">amp</span>
-        <span class="ad-o-header-icon-text ad-o-header-lnk">{{ doc.collection.title }}</span>
-      </a>
-    </li>
-  </ul>
+      <ul class="ad-o-header-list ad-o-header-list-mobile">
+       <li class="ad-o-header-lnk ad-o-header-lnk-home">
+          <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+            <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">amp</span>
+            <span class="ad-o-header-icon-text ad-o-header-lnk">{{ doc.collection.title }}</span>
+          </a>
+        </li>
+      </ul>
 
-  <ul class="ad-o-header-list ad-o-header-list-desktop">
-    {% set home = g.doc('/content/amp-dev/index.md') %}
-    <li class="ad-o-header-lnk ad-o-header-lnk-home">
-      <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-        <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">amp</span>
-      </a>
-    </li>
-    {% for mainNav in g.collection('amp-dev').collections() %}
-      {% if not loop.last %}
-        {% for mainNavItem in g.docs(mainNav.collection_path) %}
-            {% if mainNavItem.base == 'index' %}
-              <li class="ad-o-header-lnk {% if doc.collection.parent.title == mainNav.title or doc.collection.title == mainNav.title %} ad-o-header-lnk-selected {% endif %}">
-                <a href="{{ mainNavItem.url.path }}">{{ mainNav.title }}</a>
+      <ul class="ad-o-header-list ad-o-header-list-desktop">
+        {% set home = g.doc('/content/amp-dev/index.md') %}
+        <li class="ad-o-header-lnk ad-o-header-lnk-home">
+          <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+            <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">amp</span>
+          </a>
+        </li>
+        {% for mainNav in g.collection('amp-dev').collections() %}
+          {% if not loop.last %}
+            {% for mainNavItem in g.docs(mainNav.collection_path) %}
+                {% if mainNavItem.base == 'index' %}
+                  <li class="ad-o-header-lnk {% if doc.collection.parent.title == mainNav.title or doc.collection.title == mainNav.title %} ad-o-header-lnk-selected {% endif %}">
+                    <a href="{{ mainNavItem.url.path }}">{{ mainNav.title }}</a>
+                  </li>
+              {% endif %}
+            {% endfor %}
+
+            {% else %}
+              <li class="ad-o-header-lnk ad-o-header-search">
+                <button class="ad-o-header-search-button" name="search" type="submit">
+                  <a class="ad-o-header-icon" href="">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+                  </a>
+                </button>
+                <form method="GET"
+                id="ampsearch"
+                action="//www.google.com/search"
+                target="_top">
+                </form>
+              </li>
+              <li class="ad-o-header-lnk ad-o-header-lnk-support">
+                <a href="">{{ mainNav.title }}</a>
+              </li>
+              {% set languages = g.doc('/content/languages/index.md')%}
+              <li class="ad-o-header-lnk ad-o-header-lnk-lang">
+                <a class="ad-o-header-icon" href="{{ languages.url.path }}">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use></svg>
+                <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">en</span></a>
               </li>
           {% endif %}
         {% endfor %}
+      </ul>
+    </nav>
 
-        {% else %}
-          <li class="ad-o-header-lnk ad-o-header-search">
-            <button class="ad-o-header-search-button" name="search" type="submit">
-              <a class="ad-o-header-icon" href="">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+  {% if doc.collection.collection_path != 'amp-dev' %}
+  {# Check if there are items for a sub-navigation #}
+    <amp-animation id="header-animation" layout="nodisplay">
+      <script type="application/json">
+        {
+          "duration": "0.5s",
+          "fill": "both",
+          "media": "(min-width: 1024px)",
+          "animations": [
+            {
+              "selector": ".ad-o-header-wrapper",
+              "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+              "keyframes": [
+                { "transform": "translateY(0%)" },
+                { "transform": "translateY(-50%)" }
+              ]
+            },
+            {
+              "selector": ".ad-o-header-lnk-home",
+              "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+              "keyframes": [
+                { "transform": "translateY(0%)"},
+                { "transform": "translateY(45px)"}
+              ]
+            }
+          ]
+        }
+      </script>
+    </amp-animation>
+
+    <amp-position-observer intersection-ratios="0 1" target="ad-o-header-content-indicator" on="enter:header-animation.start;exit:header-animation.start,header-animation.reverse" layout="nodisplay"></amp-position-observer>
+
+    <nav class="ad-o-header-nav ad-o-header-subnav">
+      <ul class="ad-o-header-list ad-o-header-list-subnav">
+        <li class="ad-o-header-lnk ad-o-header-subnav-logo">
+          <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+            <span class="ad-o-header-icon-text">amp</span>
+          </a>
+        </li>
+        {% for _doc in doc.collection %}
+            <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if _doc.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
+              <a href="{{ _doc.url.path }}">
+              {{ _doc.title }}
               </a>
-            </button>
-            <form method="GET"
-            id="ampsearch"
-            action="//www.google.com/search"
-            target="_top">
-            </form>
-          </li>
-          <li class="ad-o-header-lnk ad-o-header-lnk-support">
-            <a href="">{{ mainNav.title }}</a>
-          </li>
-          {% set languages = g.doc('/content/languages/index.md')%}
-          <li class="ad-o-header-lnk ad-o-header-lnk-lang">
-            <a class="ad-o-header-icon" href="{{ languages.url.path }}">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use></svg>
-            <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">en</span></a>
-          </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</nav>
-
-{% if doc.collection.collection_path != 'amp-dev' %}
-{# Check if there are items for a sub-navigation #}
-  <amp-animation id="header-animation" layout="nodisplay">
-    <script type="application/json">
-      {
-        "duration": "0.5s",
-        "fill": "both",
-        "media": "(min-width: 768px)",
-        "animations": [
-          {
-            "selector": ".ad-o-header",
-            "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-            "keyframes": [
-              { "transform": "translateY(0%)" },
-              { "transform": "translateY(-50%)" }
-            ]
-          },
-          {
-            "selector": ".ad-o-header-lnk-home",
-            "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-            "keyframes": [
-              { "transform": "translateY(0%)"},
-              { "transform": "translateY(45px)"}
-            ]
-          }
-        ]
-      },
-      {
-        "duration": "0.5s",
-        "fill": "both",
-        "media": "(min-width: 1280px)",
-        "animations": [
-          {
-            "selector": ".ad-o-header",
-            "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-            "keyframes": [
-              { "transform": "translate(-50%, 0%)" },
-              { "transform": "translate(-50%, -50%)" }
-            ]
-          },
-        ]
-      }
-    </script>
-  </amp-animation>
-
-  <amp-position-observer intersection-ratios="0 1" target="ad-o-header-content-indicator" on="enter:header-animation.start;exit:header-animation.start,header-animation.reverse" layout="nodisplay"></amp-position-observer>
-
-  <nav class="ad-o-header-subnav">
-    <ul class="ad-o-header-list ad-o-header-list-subnav">
-      <li class="ad-o-header-lnk ad-o-header-subnav-logo">
-        <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-          <span class="ad-o-header-icon-text">amp</span>
-        </a>
-      </li>
-      {% for _doc in doc.collection %}
-          <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if _doc.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
-            <a href="{{ _doc.url.path }}">
-            {{ _doc.title }}
-            </a>
-             {% if _doc.title == doc.title %}
-            <div class="ad-o-header-lnk-divider"></div>
-          {% endif %}
-          </li>
-      {% endfor %}
-
-      {# TODO: Remove styleguide section in production #}
-
-      {% if doc.title == 'Styleguide' %}
-        {% for guides in g.collection('amp-dev/styleguide').collections() %}
-          <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if guides.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
-            {% for _doc in guides %}
-              {% if _doc.base == 'index' %}
-              <a href="{{ _doc.url.path }}">{{ guides.title }}</a>
-              {% endif %}
-              {% if _doc.title == doc.title %}
-                <div class="ad-o-header-lnk-divider"></div>
-              {% endif %}
-            {% endfor %}
-          </li>
+               {% if _doc.title == doc.title %}
+              <div class="ad-o-header-lnk-divider"></div>
+            {% endif %}
+            </li>
         {% endfor %}
-      {% endif %}
-    </ul>
-  </nav>
-{% endif %}
+
+        {# TODO: Remove styleguide section in production #}
+
+        {% if doc.title == 'Styleguide' %}
+          {% for guides in g.collection('amp-dev/styleguide').collections() %}
+            <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if guides.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
+              {% for _doc in guides %}
+                {% if _doc.base == 'index' %}
+                <a href="{{ _doc.url.path }}">{{ guides.title }}</a>
+                {% endif %}
+                {% if _doc.title == doc.title %}
+                  <div class="ad-o-header-lnk-divider"></div>
+                {% endif %}
+              {% endfor %}
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+  </div>
 </header>
 
 

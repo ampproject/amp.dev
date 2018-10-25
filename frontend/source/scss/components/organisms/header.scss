@@ -24,14 +24,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
   z-index: 10;
-
-  @media screen and (min-width: 1280px) {
-    max-width: 1280px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-  }
 
   &-list {
     height: 50px;
@@ -43,8 +36,7 @@
     &-desktop {
       display: none;
 
-
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 1024px) {
         margin: 0 auto;
         display: flex;
         overflow: visible;
@@ -57,7 +49,7 @@
       display: flex;
       height: 60px;
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 1024px) {
         display: none;
       }
     }
@@ -67,7 +59,7 @@
       overflow: hidden;
       height: 60px;
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 1024px) {
         height: 45px;
       }
     }
@@ -79,7 +71,7 @@
     margin: 0 5px;
     order: 3;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       margin: 0 20px;
       order: 1;
     }
@@ -95,7 +87,7 @@
         @include color-blue-ribbon;
       }
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 1024px) {
         @include txt-1;
       }
     }
@@ -135,7 +127,7 @@
     &-home {
       margin: 10px 0px 10px 20px;
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 1024px) {
         margin: 10px 40px 10px 0;
       }
 
@@ -159,12 +151,17 @@
     }
   }
 
+  &-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+  }
 
-  &-main-nav {
+  &-mainnav {
     background-color: color('white');
     border-bottom: 1px solid color('wild-sand');
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       padding: 0 30px;
     }
   }
@@ -175,7 +172,7 @@
     height: 60px;
     background-color: color('white');
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       padding: 0 30px;
       height: 45px;
     }
@@ -205,7 +202,7 @@
     &-text {
       margin-left: 4px;
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 1024px) {
         @include txt-logo;
       }
 
@@ -233,7 +230,7 @@
     // order: 2;
     padding: 17.5px 0 12.5px 0;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       margin-left: auto;
       order: 1;
     }
