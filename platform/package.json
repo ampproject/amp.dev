@@ -4,11 +4,13 @@
   "description": "",
   "main": "serve.js",
   "scripts": {
-    "deploy": "gcloud app deploy",
-
 		"develop": "node build.js",
     "build:local": "NODE_ENV=local node build.js",
 		"build:staging": "NODE_ENV=staging node build.js",
+
+		"deploy": "gcloud app deploy",
+
+		"start:local": "NODE_ENV=local node serve.js",
     "start": "NODE_ENV=staging node serve.js"
   },
   "keywords": [],
