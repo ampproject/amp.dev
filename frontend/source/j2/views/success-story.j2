@@ -1,1 +1,16 @@
 {% extends '/templates/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/templates/sucess-story.css') %}
+{% endblock %}
+
+{% block main %}
+<div class="ad-t-container ad-t-sucess-story">
+  {% include 'partials/sidebar.j2' %}
+  <section class="main">
+    {{ doc.html|render|safe }}
+  </section>
+</div>
+{% endblock %}
