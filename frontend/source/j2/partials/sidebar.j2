@@ -51,7 +51,9 @@
             {% for _docs in g.collection('amp-dev/documentation') %}
             {% if _docs.category == category %}
             <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
-              <a href="{{ _docs.url.path }}" class="ad-o-sidebar-list-item-lnk">{{ _docs.title }}</a>
+              <a href="{{ _docs.url.path }}" class="ad-o-sidebar-list-item-lnk {% if doc.title == _docs.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
+                {{ _docs.title }}
+              </a>
             </li>
             {% endif %}
             {% endfor %}
