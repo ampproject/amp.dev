@@ -39,7 +39,6 @@
       @media screen and (min-width: 1024px) {
         margin: 0 auto;
         display: flex;
-        overflow: visible;
         flex-direction: row;
         align-items: center;
       }
@@ -51,6 +50,26 @@
 
       @media screen and (min-width: 1024px) {
         display: none;
+      }
+
+      &-expanded {
+        height: 0;
+        width: 100vw;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 10;
+        position: fixed;
+        background: #fff;
+        list-style: none;
+        transition: height 0.5s ease-in;
+
+        @media screen and (min-width: 1024px) {
+          display: none;
+        }
+
       }
     }
 
@@ -69,11 +88,9 @@
   &-lnk {
     white-space: nowrap;
     margin: 0 5px;
-    order: 3;
 
     @media screen and (min-width: 1024px) {
       margin: 0 20px;
-      order: 1;
     }
 
     a {
@@ -134,14 +151,31 @@
       a  {
         @include color-blue-ribbon;
       }
+
+      &-expanded {
+        display: none;
+        margin: 15px 0px 80px 20px;
+      }
+    }
+
+    &-expanded {
+      margin: 10px 0 10px 20px;
     }
 
     &-support {
       margin: 0 30px 0 30px;
+
+      &-expanded {
+        margin-top: auto;
+      }
     }
 
     &-lang {
       margin: 0;
+
+      &-expanded {
+        margin-bottom: 30px;
+      }
     }
 
     &-divider {
@@ -227,12 +261,10 @@
 
   &-search {
     margin-right: 0;
-    // order: 2;
     padding: 17.5px 0 12.5px 0;
 
     @media screen and (min-width: 1024px) {
       margin-left: auto;
-      order: 1;
     }
 
     &-button {
@@ -261,37 +293,20 @@
     &-btn {
       display: none;
 
-      &:checked ~.ad-o-header-list-desktop {
+      &:checked ~.ad-o-header-list-mobile-expanded {
         height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        z-index: 10;
-        position: fixed;
-        background: color('white');
         width: 100vw;
+        transition: height 0.5s ease-out;
 
-        .ad-o-header-lnk{
-          margin: 10px 0 10px 20px;
-        }
-
-        .ad-o-header-lnk-home {
-          order: 1;
-          margin: 15px 0px 80px 20px;
-        }
-
-        .ad-o-header-lnk-support {
-          margin-top: auto;
-        }
-
-        .ad-o-header-lnk-lang {
-          margin-bottom: 30px;
+        .ad-o-header-lnk-home-expanded {
+          display: block;
         }
       }
 
-      &:checked ~.ad-o-header-list-mobile {
+      &:checked ~ .ad-o-header-list-mobile {
         display: none;
       }
+
     }
   }
 }

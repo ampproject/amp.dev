@@ -34,8 +34,8 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	top: 0;
 	right: 30px;
   margin-top: 11px;
-  z-index: 10;
-	
+  z-index: 2;
+
 	@media screen and (min-width: 1024px) {
 		width: calc(100% - 36px);
 		height: 40px;
@@ -61,7 +61,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     height: 190px;
     transition: height 0.5s ease;
 		background: transparent;
-		
+
 		@media screen and (min-width: 1024px) {
 			height: 210px;
 		}
@@ -98,7 +98,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     &-icon {
       position: absolute;
       right: 0;
-      z-index: 10;
+      z-index: 2;
       transition: transform 0.5s ease;
       padding: 10px;
       background: transparent;
@@ -109,7 +109,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
         @include ico;
         @include ico-1;
         @include ico-blue-ribbon;
-				
+
 				@media screen and (min-width: 1024px) {
 					@include ico-2;
 				}
@@ -140,7 +140,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	outline: color('white');
 	padding: 4px 20px 4px 10px;
   display: block;
-	
+
 	@media screen and (min-width: 1024px) {
 		@include hl-h2;
 		padding: 1px 20px 1px 10px;
