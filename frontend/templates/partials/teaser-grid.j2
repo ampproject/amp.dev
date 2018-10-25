@@ -18,7 +18,7 @@
     {% do doc.styles.addCssFile('css/components/molecules/teaser-guide-tutorial.css') %}
 
     <div class="ad-m-teaser ad-m-teaser-guide-tutorial">
-      <a href="{{ teaser.doc.url }}">
+      <a href="{{ teaser.doc.url|relative }}">
 
         {% if teaser.image %}
         <div class="ad-a-img ad-m-teaser-image">
@@ -51,7 +51,7 @@
     {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
 
     <div class="ad-m-teaser ad-m-teaser-success-story">
-      <a href="{{ teaser.doc.url }}">
+      <a href="{{ teaser.doc.url|relative }}">
 
         {% if teaser.destination %}
         {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
@@ -94,7 +94,7 @@
     {% do doc.styles.addCssFile('css/components/molecules/teaser-template.css') %}
 
     <div class="ad-m-teaser ad-m-teaser-template">
-      <a href="{{ teaser.doc.url }}">
+      <a href="{{ teaser.doc.url|relative }}">
         {% if teaser.destination %}
         {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
         <div class="ad-m-tag ad-m-tag-{{ teaser.destination }} ad-m-teaser-tag">{{ teaser.destination }}</div>
@@ -116,7 +116,7 @@
     {% do doc.styles.addCssFile('css/components/molecules/teaser-use-case.css') %}
 
     <div class="ad-m-teaser ad-m-teaser-use-case">
-      <a href="{{ teaser.doc.url }}">
+      <a href="{{ teaser.doc.url|relative }}">
         {% if teaser.destination %}
         {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
         <div class="ad-m-tag ad-m-tag-{{ teaser.destination }} ad-m-teaser-tag">{{ teaser.destination }}</div>
@@ -142,7 +142,7 @@
     {% do doc.icons.useIcon('icons/example.svg') %}
 
     <div class="ad-m-teaser ad-m-teaser-example">
-      <a href="{{ teaser.doc.url }}">
+      <a href="{{ teaser.doc.url|relative }}">
         <div class="ad-m-teaser-card">
           {% if teaser.destinations %}
           {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
@@ -172,7 +172,7 @@
     {% do doc.styles.addCssFile('css/components/molecules/teaser-component.css') %}
 
     <div class="ad-m-teaser ad-m-teaser-component">
-      <a href="{{ teaser.doc.url }}">
+      <a href="{{ teaser.doc.url|relative }}">
         <div class="ad-m-teaser-card">
           {% if teaser.destinations %}
           {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}

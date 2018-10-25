@@ -16,17 +16,18 @@
 
 'use strict';
 
-const { spawn } = require('child_process');
+const { spawn, exec } = require('child_process');
 const log = require('loglevel');
 const del = require('del');
 const config = require('./config.js');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const crass = require('crass');
 const stripCssComments = require('gulp-strip-css-comments');
+const through = require('through2');
+const minifyHtml = require('html-minifier').minify;
 
 const GROW_PODSPEC_PATH = '../pages/podspec.yaml';
-const GROW_SERVER_READY_STDOUT = 'Server ready.';
-const GROW_TRACEBACK_STDOUT = 'Traceback (most recent call last):';
 
 const TRANSPILE_PAGES_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
 const TRANSPILE_PAGES_SCSS_DEST = '../pages/css';
@@ -36,6 +37,8 @@ const PAGES_TEMPLATES_DEST = '../pages'
 
 const ICONS_SRC = '../frontend/icons/**/*';
 const ICONS_DEST = '../pages/icons';
+
+const PAGES_DEST = '../platform/pages';
 
 class Pipeline {
 
@@ -55,7 +58,9 @@ class Pipeline {
       `${PAGES_TEMPLATES_DEST}/macros`,
       `${PAGES_TEMPLATES_DEST}/partials`,
       `${PAGES_TEMPLATES_DEST}/templates`,
-      `${PAGES_TEMPLATES_DEST}/views`
+      `${PAGES_TEMPLATES_DEST}/views`,
+
+      PAGES_DEST
     ], {'force': true});
   }
 
@@ -97,6 +102,13 @@ class Pipeline {
     });
   }
 
+  /**
+   * Promisified gulp.src/gulp.dest pipeline to move around files
+   * @param  {String} entity Simple description of files moved for logging
+   * @param  {Array} src    Glob style path
+   * @param  {Array} dest   Destination path
+   * @return {Promise}
+   */
   _collect(entity, src, dest) {
     log.info(`Collecting ${entity} from ${src} ...`);
 
@@ -135,17 +147,19 @@ class Pipeline {
     config.writeGrowConfig();
 
     if (config.environment === 'development') {
-      return this._startGrowDevServer();
+      return this._startDevelopmentServer();
     } else {
       return this._buildPages();
     }
   }
 
-  _startGrowDevServer() {
-    log.info('Starting Grow development server ...', '\n');
+  _startDevelopmentServer() {
+    let pending = true;
 
+    log.info('Starting Grow development server ...');
     return new Promise((resolve, reject) => {
-      let grow = spawn('grow',
+      let grow = spawn(
+        'grow',
         ['run', '--port', `${config.hosts.pages.port}`, '--no-preprocess'],
         {
           'stdio': 'pipe',
@@ -161,50 +175,96 @@ class Pipeline {
           process.stdout.write(data);
         }
 
-        if (data.indexOf(GROW_SERVER_READY_STDOUT) !== -1) {
-          resolve();
-          log.info('\nStarted Grow development server.');
+        if (data.indexOf('Server ready.') !== -1 && pending) {
+          pending = false;
+          resolve(data);
         }
       }
 
       grow.stdout.on('data', growStdIo);
       grow.stderr.on('data', growStdIo);
+    }).then(() => {
+      log.info('Started Grow development server.');
+    }).catch(() => {
+      log.error('Grow dev server could not be started.');
     });
   }
 
   _buildPages() {
-    log.info('Building pages ...', '\n');
+    log.info('Building pages via Grow ...');
 
     return new Promise((resolve, reject) => {
-      let grow = spawn('grow',
-        ['build', '--no-preprocess'],
-        {
-          'stdio': 'pipe',
-          // TODO(matthiasrohmer): Move this path to configuration
-          'cwd': '../pages'
+      let grow = exec(
+        'grow deploy --noconfirm',
+        {'cwd': '../pages'},
+        (error, stdout, stderr) => {
+          error ? reject(error, stdout, stderr) : resolve(stdout, stderr);
         }
       );
-
-      function growStdIo(data) {
-        data = data.toString();
-
-        if (log.getLevel() <= log.levels.INFO) {
-          process.stdout.write(data);
-        }
-
-        if (data.indexOf(GROW_SERVER_READY_STDOUT) !== -1) {
-          resolve();
-          log.info('\nStarted Grow development server.');
-        }
-      }
-
-      grow.stdout.on('data', growStdIo);
-      grow.stderr.on('data', growStdIo);
+    }).then((stdout, stderr) => {
+      log.info('Built pages.');
+    }).catch(() => {
+      log.error('Something went wrong building the pages.');
     });
   }
 
   samples() {
     log.warn('Building samples is not yet supported.')
+  }
+
+  async optimizeBuild() {
+    log.info('Optimizing built pages ...');
+
+    await this._minifyPages();
+  }
+
+  _minifyCss(css, type) {
+    if (type !== 'inline') {
+      let cssOm = crass.parse(css);
+      cssOm = cssOm.optimize();
+
+      return cssOm.toString();
+    }
+
+    return css;
+  }
+
+  _minifyPages() {
+    log.info('Minifying page\'s source ...');
+
+    return new Promise((resolve, reject) => {
+      const minifyCss = this._minifyCss;
+
+      let stream = gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
+                   .pipe(through.obj(function (page, encoding, callback) {
+                     let html = page.contents.toString();
+
+                     log.debug(`Minifying page ${page.path} ...`);
+                     html = minifyHtml(html, {
+                       'minifyCSS': minifyCss,
+                       'minifyJS': true,
+                       'collapseWhitespace': true,
+                       'removeEmptyElements': false,
+                       'removeRedundantAttributes': true,
+                     });
+
+                     page.contents = Buffer.from(html);
+
+                     this.push(page);
+                     callback();
+                   }))
+                   .pipe(gulp.dest('./'));
+
+      stream.on('error', (error) => {
+        log.error(`Something went wrong while minifying HTML: ${error}`);
+        reject(error);
+      });
+
+      stream.on('end', () => {
+        log.info(`Minified page's HTML.`);
+        resolve();
+      });
+    });
   }
 };
 

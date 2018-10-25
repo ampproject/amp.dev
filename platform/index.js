@@ -20,6 +20,7 @@
 
 const log = require('loglevel');
 
+const config = require('./lib/config.js');
 const Pipeline = require('./lib/pipeline');
 const Platform = require('./lib/platform');
 
@@ -30,9 +31,10 @@ pipeline.clean();
 (async () => {
   await pipeline.buildPagesFrontend();
   await pipeline.generatePages();
-})();
 
-// .then(() => {
-//   // let platform = new Platform();
-//   console.log('Finished bitch!');
-// });
+  if (config.environment !== 'development') {
+    await pipeline.optimizeBuild();
+  }
+})().then(() => {
+  let platform = new Platform();
+});

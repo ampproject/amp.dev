@@ -23,8 +23,3 @@ ext:
         - name: 'icons'
           method: 'useIcon'
 - extensions.shortcodes.ShortcodesExtension
-
-deployments:
-  default:
-    destination: local
-    out_dir: ../platform/pages

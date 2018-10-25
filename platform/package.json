@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "deploy": "gcloud app deploy",
-    "develop": "node index.js",
-		"build": "NODE_ENV=staging node index.js",
+		"develop": "node index.js",
+    "test": "NODE_ENV=local node index.js",
     "start": "NODE_ENV=staging node index.js"
   },
   "keywords": [],
@@ -17,8 +17,10 @@
     "express": "^4.16.3"
   },
   "devDependencies": {
+    "crass": "^0.12.3",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
+    "html-minifier": "^3.5.21",
     "loglevel": "^1.6.1"
   }
 }
