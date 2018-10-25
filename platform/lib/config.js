@@ -45,6 +45,5 @@ class Config {
 }
 
 let config = new Config(process.env.NODE_ENV);
-config.writeGrowConfig();
 
 module.exports = config;
