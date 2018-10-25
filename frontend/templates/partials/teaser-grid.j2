@@ -66,7 +66,7 @@
           {% elif teaser.kpi %}
           <div class="ad-m-kpi ad-m-teaser-kpi ad-m-teaser-kpi-{{ teaser.destination }}">
             <div class="ad-m-kpi-content">
-              {% do doc.icons.useIcon('icons/' + teaser.kpi.icon + '.svg') %}
+              {% do doc.icons.useIcon('partials/icons/' + teaser.kpi.icon + '.svg') %}
               <div class="ad-a-ico ad-m-kpi-icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.kpi.icon }}"></use></svg>
               </div>
@@ -139,7 +139,7 @@
     {# Teaser for examples #}
     {% elif teaser.type == 'example' %}
     {% do doc.styles.addCssFile('css/components/molecules/teaser-example.css') %}
-    {% do doc.icons.useIcon('icons/example.svg') %}
+    {% do doc.icons.useIcon('partials/icons/example.svg') %}
 
     <div class="ad-m-teaser ad-m-teaser-example">
       <a href="{{ teaser.doc.url|relative }}">
@@ -198,7 +198,7 @@
   </div>
 
   {% if cta %}
-  {% do doc.icons.useIcon('icons/internal.svg') %}
+  {% do doc.icons.useIcon('partials/icons/internal.svg') %}
   <a class="ad-m-lnk" href="{{ cta.doc.url }}">
     <div class="ad-a-ico ad-m-lnk-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
