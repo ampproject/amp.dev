@@ -30,14 +30,20 @@ class Platform {
     log.debug(`Creating platform with environment ${config.environment} ...`);
     this.server = express();
 
-    this.registerRouters();
+    this._checkPrerequisites();
+    this._registerRouters();
 
     this.server.listen(config.hosts.platform.port, () => {
       log.info(`amp.dev available on port ${config.hosts.platform.port}!`);
     });
   }
 
-  registerRouters() {
+  _checkPrerequisites() {
+      // TODO: Check (dependening on environment) if all needed files are
+      // there and otherwise only vend a static error page
+  }
+
+  _registerRouters() {
     this.server.use('/who-am-i', routers.whoAmI);
 
     // Register the following router at last as it works as a catch-all

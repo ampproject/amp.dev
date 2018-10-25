@@ -2,12 +2,14 @@
   "name": "backend",
   "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "serve.js",
   "scripts": {
     "deploy": "gcloud app deploy",
-		"develop": "node index.js",
-    "test": "NODE_ENV=local node index.js",
-    "start": "NODE_ENV=staging node index.js"
+
+		"develop": "node build.js",
+    "build:local": "NODE_ENV=local node build.js",
+		"build:staging": "NODE_ENV=staging node build.js",
+    "start": "NODE_ENV=staging node serve.js"
   },
   "keywords": [],
   "author": "",

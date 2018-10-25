@@ -30,11 +30,16 @@ pipeline.clean();
 
 (async () => {
   await pipeline.buildPagesFrontend();
+  // Generate pages does not statically build the pages for development
+  // but instead starts the development server
   await pipeline.generatePages();
 
   if (config.environment !== 'development') {
     await pipeline.optimizeBuild();
   }
 })().then(() => {
-  let platform = new Platform();
+  // For development we want also to directly serve the current build
+  if (config.environment == 'development') {
+    let platform = new Platform();
+  }
 });
