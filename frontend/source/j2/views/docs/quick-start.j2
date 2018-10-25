@@ -1,0 +1,14 @@
+{% extends '/templates/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+{% endblock %}
+
+{% block main %}
+<div class="ad-t-docs-details">
+  {% include 'partials/sidebar.j2' %}
+  <section class="main">
+    {{ doc.html|render|safe }}
+  </section>
+</div>
+{% endblock %}
