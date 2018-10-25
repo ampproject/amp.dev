@@ -17,12 +17,15 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 
 .#{molecule('code-snippet')} {
   overflow: scroll;
-  margin-top: 0;
-  margin-bottom: 1em;
+  margin: 0 -20px 1em 0;
   padding: 0 1em;
   color: color('white');
   font-weight: bold;
   background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+
+  @media screen and (min-width: 1024px) {
+    margin-right: 0;
+  }
 
   .hll { background-color: #49483e }
   .c { color: #75715e } /* Comment */
