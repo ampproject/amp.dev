@@ -28,13 +28,14 @@ const GROW_PODSPEC_PATH = '../pages/podspec.yaml';
 const GROW_SERVER_READY_STDOUT = 'Server ready.';
 const GROW_TRACEBACK_STDOUT = 'Traceback (most recent call last):';
 
-const TRANSPILE_PAGES_SCSS_SRC = '../frontend/source/scss/**/[^_]*.scss';
+const TRANSPILE_PAGES_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
 const TRANSPILE_PAGES_SCSS_DEST = '../pages/css';
 
-const PAGES_TEMPLATES_SRC = '../frontend/source/j2/**/*';
+const PAGES_TEMPLATES_SRC = '../frontend/templates/**/*';
 const PAGES_TEMPLATES_DEST = '../pages'
 
-const PAGES_DEST = '../pages';
+const ICONS_SRC = '../frontend/icons/**/*';
+const ICONS_DEST = '../pages/icons';
 
 class Pipeline {
 
@@ -64,7 +65,8 @@ class Pipeline {
    */
   buildPagesFrontend() {
     this._transpilePagesScss();
-    this._movePagesTemplates();
+    this._collectPagesTemplates();
+    this._collectIcons();
 
     // TODO(matthiasrohmer): Watch for changes
   }
@@ -95,22 +97,32 @@ class Pipeline {
     });
   }
 
-  _movePagesTemplates() {
-    log.info(`Moving templates from ${TRANSPILE_PAGES_SCSS_SRC} ...`);
+  _collect(entity, src, dest) {
+    log.info(`Collecting ${entity} from ${src} ...`);
 
     return new Promise((resolve, reject) => {
-      let stream = gulp.src(PAGES_TEMPLATES_SRC)
-                   .pipe(gulp.dest(PAGES_TEMPLATES_DEST));
+      let stream = gulp.src(src)
+                   .pipe(gulp.dest(dest));
 
       stream.on('error', () => {
-        log.error('There was an error moving the pages templates.');
+        log.error(`There was an error moving ${entity}`);
+        reject();
       });
 
       stream.on('end', () => {
-        log.info(`Moved page templates to ${PAGES_TEMPLATES_SRC}.`);
+        log.info(`Moved ${entity} to ${dest}.`);
         resolve();
       });
     });
+
+  }
+
+  _collectPagesTemplates() {
+      return this._collect('pages templates', PAGES_TEMPLATES_SRC, PAGES_TEMPLATES_DEST);
+  }
+
+  _collectIcons() {
+    return this._collect('icons', ICONS_SRC, ICONS_DEST);
   }
 
   /**
