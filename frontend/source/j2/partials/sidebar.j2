@@ -8,9 +8,12 @@
     <div class="destination-stage websites websites-background">
       <div class="destination-stage-content">
         <span class="hl">Select your topic:</span>
-        <div class="destination-list-view-box destination-list-view-box-gradient">
+        <div class="destination-list-view-box destination-list-view-box-gradient"
+          [class]="toggle ? 'destination-list-view-box destination-list-view-box-gradient destination-list-view-box-expand': 'destination-list-view-box destination-list-view-box-gradient'">
           <div class="destination-list-icon">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down-thick"></use></svg>
+            <button on="tap:AMP.setState({ toggle: !toggle })">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down-thick"></use></svg>
+            </button>
           </div>
           <amp-selector layout="container">
             <ul class="destination-list">
@@ -20,7 +23,7 @@
                   {{ documentation.filter }}
                 </a>
               </li>
-              
+
               {% for collection in g.collection('amp-dev/documentation').collections() %}
               {% for _doc in g.docs(collection.collection_path) %}
               <li class="{{ collection.title }}" option="{{ collection.title }}">
@@ -35,7 +38,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="ad-o-sidebar-list-main">
       <amp-accordion animate>
 
