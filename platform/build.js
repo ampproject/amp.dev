@@ -29,6 +29,8 @@ let pipeline = new Pipeline();
 pipeline.clean();
 
 (async () => {
+  pipeline.collectStatics();
+
   await pipeline.buildPagesFrontend();
   // Generate pages does not statically build the pages for development
   // but instead starts the development server

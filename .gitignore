@@ -12,15 +12,18 @@ build
 assets/css/*
 .depcache.json
 
-# Ignore dynamically built and collected files
+# Ignore dynamically built and collected files that are only
+# used during development
 pages/podspec.yaml
 pages/extensions
-
-pages/content/amp-dev/documentation/examples
-
 pages/css
 pages/icons
 pages/macros
 pages/partials
 pages/templates
 pages/views
+pages/content/amp-dev/documentation/examples
+
+# Ignore files created during build process
+platform/pages
+platform/static

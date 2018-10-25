@@ -40,6 +40,9 @@ const ICONS_DEST = '../pages/icons';
 
 const PAGES_DEST = '../platform/pages';
 
+const STATICS_SRC = ['../pages/static/**/*'];
+const STATIC_DEST = '../platform/static';
+
 class Pipeline {
 
   constructor() {
@@ -60,7 +63,8 @@ class Pipeline {
       `${PAGES_TEMPLATES_DEST}/templates`,
       `${PAGES_TEMPLATES_DEST}/views`,
 
-      PAGES_DEST
+      PAGES_DEST,
+      STATIC_DEST
     ], {'force': true});
   }
 
@@ -265,6 +269,10 @@ class Pipeline {
         resolve();
       });
     });
+  }
+
+  collectStatics() {
+    return this._collect('static files', STATICS_SRC, STATIC_DEST);
   }
 };
 
