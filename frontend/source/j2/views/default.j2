@@ -9,7 +9,9 @@
 {% block main %}
 <div class="ad-t-container ad-t-default">
   <section class="main">
+    {% if doc.html %}
     {{ doc.html|render|safe }}
+    {% endif %}
   </section>
 </div>
 {% endblock %}
