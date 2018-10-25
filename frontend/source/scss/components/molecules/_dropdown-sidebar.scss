@@ -27,13 +27,23 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .destination-list-view-box {
 	overflow: hidden;
-	width: calc(100% - 36px);
-  height: 40px;
+	width: auto;
+  height: 34px;
   overflow: hidden;
   position: absolute;
-	left: 15px;
-  margin-top: 14px;
+	top: 0;
+	right: 30px;
+  margin-top: 11px;
   z-index: 10;
+	
+	@media screen and (min-width: 1024px) {
+		width: calc(100% - 36px);
+		height: 40px;
+		top: auto;
+		right: auto;
+		left: 15px;
+		margin-top: 14px;
+	}
 
 	&-gradient {
 		background: linear-gradient(-220deg,
@@ -48,9 +58,13 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   }
 
   &-expand {
-    height: 210px;
+    height: 190px;
     transition: height 0.5s ease;
 		background: transparent;
+		
+		@media screen and (min-width: 1024px) {
+			height: 210px;
+		}
 
 		.destination-list-icon {
 			transform: rotate(180deg);
@@ -93,8 +107,12 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
       & svg {
         @include ico;
-        @include ico-2;
+        @include ico-1;
         @include ico-blue-ribbon;
+				
+				@media screen and (min-width: 1024px) {
+					@include ico-2;
+				}
       }
     }
 
@@ -117,11 +135,16 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .destination-list-item {
 	@include hl;
-	@include hl-h2;
+	@include hl-h4;
 	@include color-white;
 	outline: color('white');
-	padding: 1px 20px 1px 10px;
+	padding: 4px 20px 4px 10px;
   display: block;
+	
+	@media screen and (min-width: 1024px) {
+		@include hl-h2;
+		padding: 1px 20px 1px 10px;
+	}
 
   [option][selected] {
     order: 1;

@@ -9,7 +9,6 @@ section.sidebar {
   order: 2;
   grid-column: auto;
   padding: 0;
-  margin-right: -30px;
 
   @media screen and (min-width: 1024px) {
     order: inherit;
@@ -21,18 +20,20 @@ section.sidebar {
 
 .#{organism('sidebar')} {
   position: static;
+  margin-right: -30px;
 
   @media screen and (min-width: 1024px) {
     position: sticky;
     top: 114px;
     height: calc(100vh - 115px);
+    margin-right: 0;
     margin-left: -15px;
   }
 
   &:before,
   &:after {
       content: '';
-      display: block;
+      display: none;
       position: absolute;
       left: 0;
       width: calc(100% - 2px);
@@ -40,6 +41,10 @@ section.sidebar {
       background: transparent;
       pointer-events: none;
       z-index: 1;
+      
+      @media screen and (min-width: 1024px) {
+        display: block;
+      }
   }
 
   &:before {
