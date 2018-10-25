@@ -1,6 +1,5 @@
 ---
 $title: Table
-$view: /frontend/source/j2/partials/styleguide/table.j2
 ---
 
 
