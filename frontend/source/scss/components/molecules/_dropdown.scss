@@ -74,7 +74,43 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 			display: none;
 			animation-play-state: paused;
 		}
-	}
+  }
+
+
+  // DROP DPOWN LIST
+
+  .destination-list {
+    display: none;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+
+    li {
+      padding-left: 0;
+    }
+
+    &-display {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &:hover {
+
+      .ad-a-ico {
+        transform: rotate(100deg);
+      }
+
+      .destination-list-view-box {
+        animation: none;
+      }
+
+      .destination-list-rolling-item {
+        display: none;
+        animation-play-state: paused;
+      }
+
+    }
+  }
 }
 
 
@@ -87,41 +123,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 	// @include ico-white;
 	// @include ico-2;
-}
-
-// DROP DPOWN LIST
-
-.destination-list {
-	display: none;
-	padding: 0;
-	list-style: none;
-  margin: 0;
-
-  li {
-    padding-left: 0;
-  }
-
-	&-display {
-		display: flex;
-		flex-direction: column;
-	}
-
-	&:hover {
-
-		.ad-a-ico {
-			transform: rotate(100deg);
-		}
-
-		.destination-list-view-box {
-			animation: none;
-		}
-
-		.destination-list-rolling-item {
-			display: none;
-			animation-play-state: paused;
-		}
-
-	}
 }
 
 // default list item

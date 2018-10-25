@@ -86,22 +86,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		.ad-a-ico {
 			fill: color('pink-flamingo');
 		}
-	}
-}
+  }
 
-
-.ad-a-ico {
-	position: absolute;
-	right: 0;
-	z-index: 10;
-	padding: 24px 24px;
-	transition: transform 0.5s ease;
-
-	// @include ico-white;
-	// @include ico-2;
-}
-
-// DROP DPOWN LIST
+  // DROP DPOWN LIST
 
 .destination-list {
 	display: none;
@@ -139,6 +126,19 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     }
 
 	}
+}
+}
+
+
+.ad-a-ico {
+	position: absolute;
+	right: 0;
+	z-index: 10;
+	padding: 24px 24px;
+	transition: transform 0.5s ease;
+
+	// @include ico-white;
+	// @include ico-2;
 }
 
 // default list item

@@ -60,11 +60,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 			transform: rotate(180deg);
     }
 
-	}
-}
+  }
 
-
-// DROP DPOWN LIST
+  // DROP DPOWN LIST
 
 .destination-list {
   display: flex;
@@ -103,6 +101,8 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     }
 	}
 }
+}
+
 
 // default list item
 
