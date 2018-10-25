@@ -2,7 +2,7 @@ const log = require('loglevel');
 const fs = require('fs');
 const path = require('path');
 
-const CONFIG_BASE_PATH = '../../config';
+const CONFIG_BASE_PATH = '../config';
 const GROW_CONFIG_TEMPLATE_PATH = `${CONFIG_BASE_PATH}/templates/podspec.yaml`;
 const GROW_CONFIG_DEST = '../../pages/podspec.yaml';
 const GROW_OUT_DIR = '../platform/pages';
