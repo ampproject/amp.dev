@@ -10,11 +10,9 @@
         <span class="hl">Select your topic:</span>
         <div class="destination-list-view-box destination-list-view-box-gradient"
           [class]="toggle ? 'destination-list-view-box destination-list-view-box-gradient destination-list-view-box-expand': 'destination-list-view-box destination-list-view-box-gradient'">
-          <div class="destination-list-icon">
-            <button on="tap:AMP.setState({ toggle: !toggle })">
+            <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-list-icon">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down-thick"></use></svg>
             </button>
-          </div>
           <amp-selector layout="container">
             <ul class="destination-list">
               {% set documentation = g.collection('amp-dev/documentation') %}

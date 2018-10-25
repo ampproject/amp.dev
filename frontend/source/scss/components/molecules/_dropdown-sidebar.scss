@@ -87,19 +87,15 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       z-index: 10;
       transition: transform 0.5s ease;
       padding: 10px;
+      background: transparent;
+      border: none;
+      outline: none;
 
       & svg {
         @include ico;
         @include ico-2;
         @include ico-blue-ribbon;
       }
-
-      & button {
-        background: transparent;
-        border: none;
-        outline: none;
-      }
-
     }
 
 
