@@ -223,7 +223,8 @@ class Pipeline {
   }
 
   _minifyCss(css, type) {
-    if (type !== 'inline') {
+    // Leave alone inline styles and the AMP boilerplate
+    if (type !== 'inline' && css.indexOf('-webkit-animation:-amp-start') == -1) {
       let cssOm = crass.parse(css);
       cssOm = cssOm.optimize();
 
