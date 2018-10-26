@@ -14,6 +14,15 @@ The command line tool offers additional features including switching off
 the color, printing JSON output, or running a specific version of the
 validator Javascript (by default it runs the latest published script).
 
+```yaml
+grow_version: ">=0.0.66"
+home: /content/amp-dev/index.html
+
+localization:
+  root_path: /{locale}/
+  default_locale: en
+```
+
 ```js
 var test = 'das ist ein string';
 const konstante = undefined;
