@@ -41,6 +41,9 @@
 		&-content {
 			@include teaser-content;
 			padding: 2.25em 1.25em;
+		
+		&-video-length {
+			@include video-length;
 		}
 
 		&-image {
