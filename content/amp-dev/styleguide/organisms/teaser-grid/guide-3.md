@@ -1,12 +1,13 @@
 ---
 $view: /views/guide.j2
-$path: /styleguide/organisms/teaser-grid/guide-2.html
+$path: /styleguide/organisms/teaser-grid/guide-3.html
 $title: Guide
 $titles:
   teaser: Best practices for creating an AMP story
 destinations:
   - 'websites'
   - 'stories'
+  - 'e-mails'
 teaser:
   text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. Dolor in hendrerit in vulputate velit esse molestie.
 ---

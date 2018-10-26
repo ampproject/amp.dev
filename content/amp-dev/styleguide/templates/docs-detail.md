@@ -246,9 +246,9 @@ help.
 
 [teaser-grid]
 # Related Guides & Tutorials
-[](content/amp-dev/styleguide/organisms/teaser-grid/guide.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/guide.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/guide.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/guide-1.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/guide-2.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/guide-3.md)
 [/teaser-grid]
 
 [teaser-grid]
