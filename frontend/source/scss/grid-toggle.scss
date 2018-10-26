@@ -95,8 +95,8 @@ $gutterColor: transparent;
   .grid {
     visibility: hidden;
     opacity: 0;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 30px);
+    height: 100vh;
     max-width: 1250px;
     position: absolute;
     left: 50%;
