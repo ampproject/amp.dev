@@ -21,6 +21,7 @@
 
 		& > a {
 			@include teaser-linking;
+			height: 100%;
 		}
 	}
 
@@ -36,11 +37,13 @@
 		&-card {
 			@include teaser-card;
 			border-radius: 0;
+			height: 100%;
 		}
 
 		&-content {
 			@include teaser-content;
-			padding: 2.25em 1.25em;
+			padding-top: 39px;
+		}
 		
 		&-video-length {
 			@include video-length;

@@ -78,7 +78,7 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 }
 
 @mixin teaser-content {
-	padding: 1.5em 1.25em;
+	padding: 25px;
 }
 
 @mixin teaser-image {
@@ -117,18 +117,15 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 }
 
 @mixin teaser-headline {
-	@include txt;
-	@include txt-hl;
-	@include txt-1;
-	@include txt-strong;
-	@include txt-font-accent;
-	@include color-black;
+	@include hl;
+	@include hl-h5;
 	margin: 0;
 }
 
 @mixin teaser-copy {
 	@include txt;
-	@include txt-2;
+	@include txt-3;
+	line-height: 1.867em;
 	margin: 0;
 }
 
