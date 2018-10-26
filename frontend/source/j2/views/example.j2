@@ -3,11 +3,11 @@
 {% block styles %}
 {{ super() }}
 
-{% do doc.styles.addCssFile('css/components/templates/styleguide.css') %}
+{% do doc.styles.addCssFile('css/components/templates/default.css') %}
 {% endblock %}
 
 {% block main %}
-<div class="ad-t-container ad-t-styleguide">
+<div class="ad-t-container ad-t-example">
   <section class="main">
     {% if doc.html %}
     {{ doc.html|render|safe }}
