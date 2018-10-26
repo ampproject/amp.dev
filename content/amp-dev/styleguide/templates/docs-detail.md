@@ -1,5 +1,5 @@
 ---
-$title: Documentation Details Template
+$title: Documentation Detail Template
 $view: /views/docs/detail.j2
 ---
 
