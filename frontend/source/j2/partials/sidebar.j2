@@ -1,6 +1,8 @@
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-sidebar.css') %}
 {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
 {% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
+{% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+{% do doc.icons.useIcon('icons/angle-down-light.svg') %}
 
 <section class="sidebar">
   <div class="ad-o-sidebar">
@@ -37,15 +39,16 @@
       </div>
     </div>
 
-    <div class="ad-o-sidebar-list-main">
+    <div class="ad-o-sidebar-list ad-o-sidebar-list-main">
       <amp-accordion animate>
 
         {% for category in g.collection('amp-dev/documentation').categories %}
-        <section>
-          <header class="ad-o-sidebar-list-item">
+        <section class="ad-o-sidebar-list-section">
+          <header class="ad-o-sidebar-list-item ad-o-sidebar-list-header">
             {{ category }}
-            <span class="open">+</span>
-            <span class="close">–</span>
+            <div class="ad-a-ico ad-o-sidebar-list-icon">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+            </div>
           </header>
           <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
             {% for _docs in g.collection('amp-dev/documentation') %}
