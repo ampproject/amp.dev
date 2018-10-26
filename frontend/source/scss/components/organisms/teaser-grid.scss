@@ -22,6 +22,7 @@ section.#{organism('teaser-grid')} {
 
 .#{organism('teaser-grid')} {
 	&-list {
+		scroll-snap-type: x mandatory;
 		overflow-y: hidden;
 		overflow-x: scroll;
 		width: auto;
