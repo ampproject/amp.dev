@@ -69,7 +69,7 @@ Selain persyaratan dasar, contoh kita juga mencakup definisi Schema.org di bagia
 Kabar baik! Itu saja yang diperlukan untuk membuat halaman AMP pertama kita, tetapi tentu saja, belum banyak yang masuk ke isi halaman. Di bagian selanjutnya, kita akan membahas cara menambahkan elemen dasar seperti gambar, elemen AMP kustom, cara menata halaman, dan menyusun tata letak yang responsif.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/id/docs/getting_started/create.html"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/getting_started/create/include_image.html"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>	  <a class="button prev-button" href="/id/docs/getting_started/create.html"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
  
