@@ -1,17 +1,16 @@
 ---
-$title: AMP アナリティクスについて深く学ぶ
+$title: AMP アナリティクスについて詳しく知る
 ---
 [TOC]
 
+このガイドでは、
+[amp-analytics コンポーネント](/ja/docs/reference/components/amp-analytics.html)
+について詳しく説明するため、`amp-analytics` の設定サンプルをパートごとに分けて解説します。
 
-このガイドでは
-[amp-analytics コンポーネント](/ja/docs/reference/components/amp-analytics.html)について詳しく学ぶため、
-以下のように `amp-analytics` 設定のサンプルを主要な構成要素に分割します。
-
-このガイドページでは以下のサンプルを使用して説明を進めます。
-このサンプルはページビューとユーザーによるリンクのクリックをトラッキングして、
-アナリティクス データをサードパーティのプロバイダーである
-[Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/) に送信します。
+このガイドで使用するのは、以下の設定サンプルです。
+このサンプルは、ページビューとユーザーによるリンククリックをトラッキングして、
+サードパーティのプロバイダである 
+[Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)にアナリティクス データを送信します。
 
 ```html
 <amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
@@ -52,66 +51,67 @@ $title: AMP アナリティクスについて深く学ぶ
 </amp-analytics>
 ```
 
-**注:** 上のコード例は学習用のサンプルなので、実用的ではありません。このサンプルではプロバイダ設定を簡略化しているので、アナリティクス プロバイダーと連動している場合は、あまり意味がないかもしれません。サンプル設定についてはアナリティクス プロバイダーのドキュメントを参照するようにしてください。
+{% call callout('注', type='note') %}
+上記のコードは学習用のサンプルであり、そのまま実際の環境で使用することはできません。特に、アナリティクス プロバイダの設定を簡略化している点は、プロバイダを利用しているユーザーにとって問題になるかもしれません。特定のアナリティクス プロバイダの設定サンプルについては、[各プロバイダのドキュメント](/ja/docs/analytics/analytics-vendors.html)をご確認ください。{% endcall %}
 
 ## アナリティクス データの送信先: type 属性
 
-AMP でサポートしている一般的なデータ収集方法は、以下の 2 つです。
+AMP は、一般的なデータ収集方法として次の 2 つをサポートしています。
 
-* 社内アナリティクス システム用にサイトオーナーが所有しているエンドポイントでの収集
-* ベンダー ソリューションと相互運用するためにベンダーが所有しているエンドポイントでの収集
-（ベンダーソリューションは、[Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)、[Chartbeat](http://support.chartbeat.com/docs/)、[Google アナリティクス] (https://developers.google.com/analytics/devguides/collection/amp-analytics/)などです）
+* サイト運営者所有のエンドポイントによる収集（アナリティクス システムを社内で運用している場合）
+* ベンダー所有のエンドポイントによる収集（
+[Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)、[Chartbeat](http://support.chartbeat.com/docs/)、[Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)などのベンダー ソリューションと相互運用する場合）
 
-アナリティクス データをアナリティクス プロバイダーに送信するには、
-`amp-analytics` タグの中に `type` 属性を含めます。
+アナリティクス データをアナリティクス プロバイダに送信するには、
+`amp-analytics` タグに `type` 属性を指定します。
 値は、
-[amp-analytics 仕様](/ja/docs/reference/components/amp-analytics.html)に定義されているように、適切なベンダーに設定します。
+[アナリティクス ベンダー](/ja/docs/analytics/analytics-vendors.html)の一覧に記載されている各ベンダーの値を指定します。
 
-たとえば `<amp-analytics type="googleanalytics">` とすると、アナリティクス データは
-サードパーティのアナリティクス プロバイダー である Google アナリティクスに送信されます。
-サイトオーナーが所有するエンドポイントにデータを送信する場合は、
-`type` 属性を含めないようにするだけです。
-そうすると、アナリティクス データは
-[リクエスト](/ja/docs/analytics/deep_dive_analytics.html#送信データの内容:-requests-属性)ごとに指定のエンドポイントに送信されます。
+たとえば、`<amp-analytics type="googleanalytics">` とすると、
+サードパーティのアナリティクス プロバイダである Google アナリティクスにアナリティクス データが送信されます。
+サイト運営者所有のエンドポイントにデータを送信する場合は、
+`type` 属性の指定を省略します。
+このようにすると、アナリティクス データは
+[リクエスト](/ja/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)ごとに指定のエンドポイントに送信されます。
 
-アナリティクス ベンダーの設定を行うと、
-簡単に `amp-analytics` を使い始めることができます。
-詳細についてはベンダーのドキュメントや
-ヘルプ リソースをご覧ください。
-上述のとおり、
-AMP を統合済みのベンダーと
-その仕様書へのリンクの一覧は、
-[amp-analytics 仕様](/ja/docs/reference/components/amp-analytics.html)に定義されているように、適切なベンダーに設定します。
+アナリティクス ベンダーの設定を行うと、手早く 
+`amp-analytics` を使い始めることができます。
+詳細については、ご利用のベンダーのドキュメントや
+ヘルプリソースをご確認ください。
+AMP を統合済みのベンダーの一覧と、
+各ベンダーのドキュメントへのリンクは、
+前述の
+[アナリティクス ベンダー](/ja/docs/analytics/analytics-vendors.html)の一覧をご覧ください。
 
-アナリティクス ベンダーの方は
-、
-[自身のアナリティクス設定を AMP HTML に統合する](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)で詳細をご確認ください。
+アナリティクス ベンダーの
+方は、
+[自身のアナリティクス設定を AMP HTML に統合する](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)方法についての説明をご確認ください。
 
 ## リモート設定を読み込む: config 属性
 
-AMP ページに `amp-analytics` 用の設定をすべて含める必要はありません。
+`amp-analytics` のすべての設定を 
+AMP ページに記述する必要はありません。
+代わりに、設定の一部またはすべてを記述した
+リモート URL を呼び出すこともできます。
 
-その代わりに、一部またはすべての設定用のリモート URL を
-呼び出すことができます。
+リモート URL を使用すると、特定のリクエストに基づいて
+設定を変更するといった処理もできるようになります。
+サイト運営者としてリモート ファイルを管理している場合は、
+設定データの構成に必要なすべての
+サーバー側処理を実施できます。
 
-これにより、特定のリクエストを元に設定を変えるような処理も
-可能になります。
-サイトオーナーとしてリモート ファイルを管理している場合は、
-設定データを構築するために必要な処理をサーバー側で
-すべて行うことができます。
-
-リモート設定を読み込むには、
-まず `amp-analytics` タグに config 属性を含めます。
+リモート設定を読み込むには、まず、
+`amp-analytics` タグに config 属性を指定します。
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-次にリモート URL で動作する JSON コンテンツを作成します。
-このシンプルな例では、
-JSON オブジェクトに含まれる設定は、アナリティクス アカウント用の変数値だけです。
+次に、リモート URL に設置する JSON コンテンツを作成します。
+この簡潔なサンプルで使用している 
+JSON オブジェクトには、アナリティクス アカウントの変数値だけが含まれています。
 
-以下は `https://example.com/analytics.account.config.json` のコンテンツの例です。
+サンプルで使用している `https://example.com/analytics.account.config.json` の中身は次のようになっています。
 
 ```js
 {
@@ -121,11 +121,11 @@ JSON オブジェクトに含まれる設定は、アナリティクス アカ�
 }
 ```
 
-最後にリモートファイルの内容が
-`amp-analytics` 設定の適切な位置に入っていることを確認します。
-ここでは、`pageview` と `event` のどちらのリクエストでも、
-`account` 変数の値が
-リモート URL 内のアカウント値に自動で設定されます（`"account": "UA-XXXXX-Y"`）。
+最後に、リモート ファイルの内容が 
+`amp-analytics` 設定の適切な場所に読み込まれるようにします。
+以下では、`pageview` リクエストと `event` リクエストの 
+`account` 変数の値が、自動的にリモート URL の
+アカウント値（`"account": "UA-XXXXX-Y"`）に設定されます。
 
 ```js
 "requests": {
@@ -134,34 +134,36 @@ JSON オブジェクトに含まれる設定は、アナリティクス アカ�
 }
 ```
 
-**重要:** AMP では同じ変数の重複使用については検証しません。
-値は以下の変数置換の優先順位に従って追加されます。
-その中で最も優先度が高いのがリモート URL 内の値です
-（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#変数置換の順序)をご覧ください）。
 
-## リクエスト、トリガー、転送
+{% call callout('重要', type='caution') %}
+AMP では、同じ変数が複数使用されていないかどうかの検証は行われません。
+値は、変数置換の優先順位に基づいて設定され、
+リモート URL の値が最優先されます（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)についての説明をご確認ください）。
+{% endcall %}
 
-`requests` 属性は送信データの内容
-（`pageviews`、`events` など）と
-データの送信先（データ転送に使用する URL）を定義します。
+## requests、triggers、transport
 
-`triggers` 属性はアナリティクス データの送信タイミング
-（ユーザーがページを表示したとき、リンクをクリックしたときなど）を定義します。
+`requests` 属性では、送信するデータの種類
+（`pageviews` や `events` など）
+とデータの送信先（データ転送に使用する URL）を指定します。
 
-`transport` 属性はリクエストの送信方法
-（具体的にはプロトコル）を定義します。
+`triggers` 属性では、アナリティクス データを送信するタイミングを指定します。
+たとえば、ユーザーがページを表示したときやリンクをクリックしたときなどです。
 
-これらの設定の詳細については、このページの続きをご覧ください
-（こちらの
-[amp-analytics リファレンス](/ja/docs/reference/components/amp-analytics.html)もあわせてご確認ください）。
+`transport` 属性では、リクエストの送信方法、
+つまり使用するプロトコルを指定します。
 
-### 送信データの内容: requests 属性
+これらの設定の詳細については後述します
+（あわせて、
+[amp-analytics リファレンス](/ja/docs/reference/components/amp-analytics.html)の該当する項目をご確認ください）。
 
-`request-name` はトリガー設定に使用され、
-特定のイベントが発生したときに、どのリクエストを送信するかを指定します。
-`request-value` は `https` URL です。
-これらの値には、他のリクエストや変数を参照するためのプレースホルダーのトークンが
-含まれる場合があります。
+### 送信するデータ: requests 属性
+
+トリガー設定では、`request-name` を使用して、
+特定のイベントの発生時に送信するリクエストを指定します。
+`request-value` には、`https` の URL を指定します。
+これらの値には、他のリクエストや変数を参照する
+プレースホルダ トークンを含めることができます。
 
 ```js
 "requests": {
@@ -170,39 +172,39 @@ JSON オブジェクトに含まれる設定は、アナリティクス アカ�
 }
 ```
 
-一部のアナリティクス プロバイダー（Google アナリティクスを含む）は、
-すでに
- `type` 属性で使用する設定を公開しています。
-アナリティクス プロバイダーを使用する場合は、
-`requests` 情報を含める必要がない場合もあります。
-ベンダーのドキュメントを参照して、
-`requests` の設定が必要かどうか、必要であればその設定方法をご確認ください。
+Google アナリティクスなど一部のアナリティクス プロバイダは
+設定を提供しており、
+`type` 属性を介してその設定を使用できます。
+またアナリティクス プロバイダを利用している場合は、
+`requests` 情報の設定が不要な場合があります。
+`requests` の設定が必要かどうかや、
+その方法については、ベンダーのドキュメントをご確認ください。
 
-#### 追加リクエストの URL: 追加の URL パラメータ
+#### リクエスト URL への追記: extraUrlParams
 
-[extraUrlParams](/ja/docs/reference/components/amp-analytics.html#extra-url-params)
-属性は、通常「&foo=baz」経由のリクエスト URL のクエリ文字列につける追加パラメータを指定します。
+[extraUrlParams](/ja/docs/reference/components/amp-analytics.html#extra-url-params) 
+属性では、リクエスト URL のクエリ文字列に追記する追加のパラメータを指定できます。指定したパラメータは、一般的な「&foo=baz」の表記規則に基づいて追記されます。
 
-`amp-analytics` の例ではリクエストに追加パラメータ  <code>cd1</code> をつけて、
-パラメータの値を「AMP」に設定しています。
+この `amp-analytics` のサンプルでは、追加パラメータ `cd1` を
+リクエストに追記し、値を「AMP」に設定しています。
 
 ```js
-"extraUrlParams": {
-  "cd1": "AMP"
-}
+  "extraUrlParams": {
+    "cd1": "AMP"
+  }
 ```
 
-### リクエストの送信タイミング: triggers 属性
+### データを送信するタイミング: triggers 属性
 
-`triggers` 属性はトリガー名とトリガー設定のキー値ペアから成り、
-アナリティクス リクエストの送信タイミングを指定します。
-トリガー名には任意の文字列を指定でき、大文字および小文字の英字、数字が
-使用できます。
+`triggers` 属性では、アナリティクス リクエストを送信するタイミングを指定します。
+この属性は、トリガー名とトリガー設定というキーと値のペアで構成されます。
+トリガー名には、英数字（a-zA-Z0-9）からなる
+任意の文字列を使用できます。
 
 たとえば、
-以下の `amp-analytics` 要素は
-`https://example.com/analytics` に、ドキュメントの初回読み込み時と
-`a` タグのクリック時に毎回リクエストを送信するよう設定されています。
+次の `amp-analytics` の抜粋では、ドキュメントが最初に読み込まれたときと、
+`a` タグがクリックされるたびに、リクエストを `https://example.com/analytics` に
+送信するよう設定しています。
 
 ```js
 "triggers": {
@@ -222,7 +224,9 @@ JSON オブジェクトに含まれる設定は、アナリティクス アカ�
 }
 ```
 
-AMP では以下のトリガー設定をサポートしています。
+{% call callout('重要', type='caution') %} 上記の方法は、AMP ページについてのみ推奨され、AMP HTML 広告には推奨されません。アナリティクスの優先度はページのコンテンツよりも低いため、クリックのトラッキングには、クリックのロスを回避できるブラウザ リダイレクトを使用することをおすすめします。{% endcall %}
+
+AMP では次のトリガー設定をサポートしています。
 
 <table>
   <thead>
@@ -234,39 +238,39 @@ AMP では以下のトリガー設定をサポートしています。
   <tbody>
     <tr>
       <td data-th="Trigger Config"><code>on</code>（必須）</td>
-      <td data-th="Description">リッスンするイベントです。値は <code>click</code>、<code>scroll</code>、<code>timer</code>、<code>visible</code>を取ります。</td>
+      <td data-th="Description">リッスンするイベントです。指定できる値は、<code>click</code>、<code>scroll</code>、<code>timer</code>、<code>visible</code> です。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code>（必須）</td>
-      <td data-th="Description">（<a href="/ja/docs/analytics/deep_dive_analytics.html#送信データの内容:-requests-属性">リクエスト</a>の指定どおりに）送信するリクエスト名です。</td>
+      <td data-th="Description">送信するリクエストの名前（<a href="/ja/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">requests</a> で指定した名前）です。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">最上位の設定で定義された <code>vars</code> をオーバーライドしたり、このトリガー固有の <code>vars</code> を指定したりするためのキー値ペアを含むオブジェクトです（<a href="/ja/docs/analytics/deep_dive_analytics.html#変数置換の順序">変数置換の順序</a>についてもご覧ください）。</td>
+      <td data-th="Description">キーと値のペアを含むオブジェクトで、最上位の設定で指定された <code>vars</code> をオーバーライドするため、またはこのトリガーに固有の <code>vars</code> を指定するために使用します（<a href="/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">変数置換の順序</a>についての説明もご覧ください）。</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>selector</code>（<code>on</code> が <code>click</code> に設定されているときは必須）</td>
-      <td data-th="Description">トラッキングする要素を絞り込む CSS セレクターです。すべての要素をトラッキングするには <code>*</code> という値を使います。この設定は <code>click</code> トリガーとあわせて使用します。<a href="/ja/docs/analytics/use_cases.html#ページクリックをトラッキングする">ページクリック</a>と<a href="/ja/docs/analytics/use_cases.html#ソーシャル-インタラクションをトラッキングする">ソーシャル インタラクション</a>をトラッキングするためのセレクターの使用方法について、ご確認ください。</td>
+      <td data-th="Trigger Config"><code>selector</code>（<code>on</code> が <code>click</code> に設定されている場合は必須）</td>
+      <td data-th="Description">トラッキングする要素を絞り込む CSS セレクタです。すべての要素をトラッキングする場合は、値を <code>*</code> に設定します。この設定は、<code>click</code> トリガーと組み合わせて使用します。セレクタを使用して<a href="/ja/docs/analytics/use_cases.html#tracking-page-clicks">ページクリックをトラッキングする方法</a>と<a href="/ja/docs/analytics/use_cases.html#tracking-social-interactions">ソーシャル インタラクションをトラッキングする方法</a>についてご確認ください。</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>scrollSpec</code>（<code>on</code> が <code>scroll</code> に設定されているときは必須）</td>
-      <td data-th="Description">どのような状況でページがスクロールされた場合に <code>scroll</code> イベントを発生させるかを制御します。このオブジェクトには <code>verticalBoundaries</code> と <code>horizontalBoundaries</code> が含まれます。<code>scroll</code> イベントを発生させるには、この 2 つの属性のうち少なくとも 1 つが必要です。属性の値はどちらも、スクロール イベントが発生する境界値を含む数値の配列にする必要があります。<a href="/ja/docs/analytics/use_cases.html#スクロールをトラッキングする">スクロールをトラッキングする</a>の例をご覧ください。</td>
+      <td data-th="Trigger Config"><code>scrollSpec</code>（<code>on</code> が <code>scroll</code> に設定されている場合は必須）</td>
+      <td data-th="Description">どのような状況でページがスクロールされた場合に <code>scroll</code> イベントを発生させるかを管理します。このオブジェクトには、<code>verticalBoundaries</code> と <code>horizontalBoundaries</code> を含めることができます。<code>scroll</code> イベントを発生させるには、この 2 つのプロパティのうち少なくとも 1 つが必要です。両プロパティの値は、スクロール イベントが発生する境界を囲む数値の配列にする必要があります。<a href="/ja/docs/analytics/use_cases.html#tracking-scrolling">スクロールをトラッキングする方法</a>の例をご確認ください。</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>timerSpec</code>（<code>on</code> が <code>timer</code> に設定されているときは必須）</td>
-      <td data-th="Description">どのタイミングで <code>timer</code> イベントを発生させるかを制御します。タイマーはイベント発生時と、それ以降は指定した間隔でトリガーされます。この設定は <code>timer</code> トリガーと一緒に使用します。</td>
+      <td data-th="Trigger Config"><code>timerSpec</code>（<code>on</code> が <code>timer</code> に設定されている場合は必須）</td>
+      <td data-th="Description"><code>timer</code> イベントを発生させるタイミングを管理します。タイマーは、イベント発生時と、それ以降の指定の間隔でトリガーされます。この設定は、<code>timer</code> トリガーと組み合わせて使用します。</td>
     </tr>
   </tbody>
 </table>
 
-**重要:** 同じ名称のトリガーがある場合、
-優先度の低い設定トリガーは優先度の高い設定トリガーに上書きされます
-（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#変数置換の順序)をご覧ください）。
+{% call callout('重要', type='caution') %}
+優先順位の低い設定に記述されたトリガーは、優先順位の高い設定に記述された同名のトリガーによってオーバーライドされます（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご確認ください）。
+{% endcall %}
 
 ### データの送信方法: transport 属性
 
-`transport` 属性はリクエストの送信方法を指定します。
-デフォルトで有効な方法は以下の 3 つです。
+`transport` 属性では、リクエストの送信方法を指定します。
+デフォルトでは、次の 3 つの方法が有効になっています。
 
 <table>
   <thead>
@@ -278,32 +282,35 @@ AMP では以下のトリガー設定をサポートしています。
   <tbody>
     <tr>
       <td data-th="Transport Method"><code>beacon</code></td>
-      <td data-th="Description">リクエストの送信に <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a> が使えるよう指定します。<code>POST</code> リクエストは、認証情報と空のボディと一緒に送信されます。</td>
+      <td data-th="Description">リクエストの送信に <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a> が使用できることを示します。この方法では、<code>POST</code> リクエストが認証情報および空のボディとともに送信されます。</td>
     </tr>
     <tr>
       <td data-th="Transport Method"><code>xhrpost</code></td>
-      <td data-th="Description">リクエストの送信に <code>XMLHttpRequest</code> が使えるよう指定します。<code>POST</code> リクエストは、認証情報と空のボディと一緒に送信されます。</td>
+      <td data-th="Description">リクエストの送信に <code>XMLHttpRequest</code> が使用できることを示します。この方法では、<code>POST</code> リクエストが認証情報および空のボディとともに送信されます。</td>
     </tr>
     <tr>
       <td data-th="Transport Method"><code>image</code></td>
-      <td data-th="Description"><code>Image</code> タグを生成することで、リクエストが送信できるよう指定します。これにより <code>GET</code> リクエストが送信されます。</td>
+      <td data-th="Description"><code>Image</code> タグを生成することでリクエストを送信できることを示します。この方法では、<code>GET</code> リクエストが送信されます。</td>
     </tr>
   </tbody>
 </table>
 
-有効かつ使用が許可された利用可能な転送メソッドのうち、最も優先度の高いものが 1 つだけ使用されます。
+転送方法は、有効かつ使用が許可され、
+利用できるもののうち、
+最も優先度の高い方法が 1 つだけ使用されます。
+転送方法の優先順位は、`beacon` > `xhrpost` > `image` です。
+クライアントのユーザー エージェントが最も優先順位の高い方法をサポートしていない場合は、
+有効な方法のうち、次に優先順位の高い方法が使用されます。
 
+`transport` 属性を指定すると、リクエストが
+送信されなくなる場合があります。このため、
+転送方法を限定したい場合にのみ使用するようにしてください。
 
-優先順位は `beacon` > `xhrpost` > `image` の順です。
-クライアントのユーザー エージェントがそのメソッドをサポートしていない場合は、その次に優先度の高いメソッドで有効になっているもの使われます。
-
-
-`transport` 属性を設定に含めるとリクエストが送信されない場合があるので、転送オプションを制限したい場合のみ使うようにしてください。
-
-以下の例では `beacon` と `xhrpost` が false に設定されているので、これらは `image` よりも優先度が高いにもかかわらず使用されません。
-
-クライアントのユーザー エージェントが `image` メソッドに対応していれば、このメソッドが使用されますが、非対応の場合はリクエストが送信されません。
-
+次の例では、
+`beacon` と `xhrpost` を false に設定しているため、
+`image` より優先順位が高いにもかかわらず、どちらの方法も使用されません。
+クライアントのユーザー エージェントが `image` をサポートしている場合は
+この方法が使用され、サポートしていない場合、リクエストは送信されません。
 
 ```js
 'transport': {
@@ -315,15 +322,15 @@ AMP では以下のトリガー設定をサポートしています。
 
 ## 変数置換の順序
 
-AMP では以下の優先順位に従って変数に値を設定します。
+AMP では、次の優先順位に沿って変数に値が設定されます。
 
-1. （`config` による）リモート設定
-2. `triggers` 内のトリガーにネストされた `vars`
-3. `amp-analytics` 内の最上位にネストされた `vars`
+1. リモート設定（`config` で指定）
+2. `triggers` のトリガー内にネストされた `vars`
+3. `amp-analytics` の最上位にネストされた `vars`
 4. プラットフォームが提供する値
 
-この例には、リモート設定、最上位に定義された変数、トリガー内に定義された変数、プラットフォーム レベルで定義された変数が含まれています。
-
+次の例には、リモート設定、
+最上位に定義された変数、トリガー内に定義された変数、プラットフォーム レベルで定義された変数が含まれています。
 
 ```html
 <amp-analytics config="http://example.com/config.json">
@@ -350,10 +357,10 @@ AMP では以下の優先順位に従って変数に値を設定します。
 </amp-analytics>
 ```
 
-`var` は複数の場所で定義されていますが、変数の優先順位に従い、この値は一度だけ設定されます。
-
-つまり上記の例で、`account` がリモート設定で UA-XXXXX-Y と定義されている場合、各変数の値は以下のようになります。
-
+同じ `var` が複数の場所で定義されている場合、
+その変数の値は、変数の優先順位に沿って一度だけ設定されます。
+そのため、上記の例において、リモート設定で `account` が UA-XXXXX-Y と定義されている場合、
+各変数の値は次のようになります。
 
 <table>
   <thead>
@@ -386,3 +393,4 @@ AMP では以下の優先順位に従って変数に値を設定します。
     </tr>
   </tbody>
 </table>
+ 
