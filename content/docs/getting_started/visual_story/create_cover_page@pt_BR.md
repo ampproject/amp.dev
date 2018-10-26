@@ -156,8 +156,8 @@ Atualize o navegador e revise seu trabalho.  A página de abertura está pronta.
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Página de capa, pronta' ) }}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/getting_started/visual_story/start_story.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/getting_started/visual_story/add_more_pages.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
  
  
