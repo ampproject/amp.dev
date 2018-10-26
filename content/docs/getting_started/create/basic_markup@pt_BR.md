@@ -1,16 +1,17 @@
 ---
-$title: Criar sua página em AMP HTML
+$title: Criar páginas HTML para AMP
 ---
 
-A marcação a seguir é um ponto de partida ou texto clichê aceitável.
-Copie e salve-a em um arquivo de extensão .html.
+A marcação a seguir é um bom ponto de partida ou modelo.
+Copie e salve o código em um arquivo com extensão .html.
 
 [sourcecode:html]
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Hello, AMPs</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Hello, AMP</title>
     <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
@@ -25,41 +26,50 @@ Copie e salve-a em um arquivo de extensão .html.
       }
     </script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <h1>Welcome to the mobile web</h1>
+    <h1>Bem-vindo à internet móvel</h1>
   </body>
 </html>
 [/sourcecode]
 
-O conteúdo do corpo, até agora, é bastante simples. No então, há muito código adicional no cabeçalho da página que pode não ser imediatamente óbvio. Vamos desconstruir a marcação obrigatória.
+Até agora, o conteúdo no corpo da página é bem simples. No entanto, talvez alguns códigos adicionais no cabeçalho da página não sejam tão óbvios. Vamos analisar a marcação obrigatória.
+
+{% call callout('Usar HTTPS', type='note') %}
+Ao criar páginas e conteúdos AMP, é recomendado usar o protocolo HTTPS em vez de HTTP. O HTTPS não é obrigatório para documentos AMP, imagens nem fontes. No entanto, muitos recursos das AMP exigem HTTPS (por exemplo, vídeos, iframes e muito mais). Para garantir que suas páginas AMP aproveitem todos os recursos disponíveis, use o protocolo HTTPS.  Se quiser saber mais sobre o HTTPS, leia o artigo [Por que usar o HTTPS?](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+{% endcall %}
 
 ## Marcação obrigatória
 
-Documentos em AMP HTML DEVEM:
+Os documentos HTML para AMP PRECISAM seguir estas regras:
 
-  - Ser iniciados pelo doctype `<!doctype html>`.
-  - Conter uma tag `<html ⚡>` de nível superior (`<html amp>` também é aceita).
-  - Conter as tags `<head>` e `<body>` (elas são opcionais em HTML).
-  - Conter uma tag `<link rel="canonical" href="$SOME_URL">` dentro do cabeçalho que aponte para a versão em HTML comum do documento em AMP HTML, ou para o próprio documento se a versão em HTML não existir.
-  - Conter uma tag `<meta charset="utf-8">` como primeira filha da tag do cabeçalho.
-  - Conter uma tag `<meta name="viewport" content="width=device-width,minimum-scale=1">`dentro da tag do cabeçalho. Também é recomendável incluir initial-scale=1.
-  - Conter uma tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` como o último elemento do cabeçalho (isso inclui e carrega a biblioteca de AMP JS).
-  - Conter o seguinte na tag `<head>`:
-    `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+| Regra      | Descrição |
+| --------- | ----------- |
+| Começar com o doctype `<!doctype html>` | É o padrão para HTML. |
+| Conter uma tag `<html ⚡>` de nível superior <br>(também é possível usar a tag `<html amp>`) | Identifica a página como conteúdo AMP. |
+| Conter as tags `<head>` e `<body>` | É opcional para HTML, mas obrigatório em páginas AMP.
+| Conter uma tag `<meta charset="utf-8">` que seja a primeira dentro da tag `<head>` | Identifica a codificação da página. |
+| Conter uma tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` como segunda filha da tag `<head>` | Inclui e carrega a biblioteca JavaScript AMP. |
+| Conter uma tag `<link rel="canonical" href="$ALGUM_URL">` dentro de `<head>` | Direciona para a versão em HTML comum do documento HTML para AMP. Caso essa versão não exista, essa tag redirecionará para o próprio documento atual. Saiba mais em [Torne sua página detectável](/pt_br/docs/fundamentals/discovery.html).
+| Conter uma tag `<meta name="viewport" content="width=device-width,minimum-scale=1">` dentro de `<head>` (recomendado: incluir também `initial-scale=1`) | Especifica uma janela de visualização responsiva. Saiba mais em [Criar páginas AMP responsivas](/pt_br/docs/design/responsive/responsive_design.html). |
+| Conter uma tag de [código de modelo AMP](/pt_br/docs/fundamentals/spec/amp-boilerplate.html) em `<head>`  | O modelo de CSS deve ocultar inicialmente o conteúdo até que a biblioteca de JavaScript AMP seja carregada. |
 
 ## Metadados opcionais
 
-Além dos requisitos básicos, nosso exemplo também inclui uma definição de Schema.org no cabeçalho, o que não é um requisito obrigatório para o AMP, mas é necessário para que seu conteúdo seja distribuído para certos lugares, como a [demonstração do carrossel de notícias da Pesquisa do Google (experimente no seu telefone)](https://g.co/ampdemo).
+Além dos requisitos básicos, nosso exemplo também inclui a definição da Schema.org dentro do cabeçalho. Essa definição não é obrigatória para páginas AMP, mas é um requisito para que seu conteúdo seja distribuído em certos locais, como no carrossel de notícias principais da Pesquisa Google.
 
-Para saber mais sobre todos os metadados necessários para outros locais, como o Twitter, [explore nossos exemplos](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). Para saber especificamente sobre o AMP na Pesquisa do Google, consulte [Principais histórias com o AMP](https://developers.google.com/structured-data/carousels/top-stories).
+{% call callout('Leia mais', type='read') %} Acesse estes recursos para saber mais:
+
+* [Primeiros passos com as AMP na Pesquisa Google](https://developers.google.com/amp/docs): aprenda a preparar as páginas AMP para a Pesquisa Google.
+  * [Amostras de metadados](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) (em inglês): saiba mais sobre todos os metadados necessários em outros lugares, por exemplo, no Twitter.
+{% endcall %}
 
 <hr>
 
-Boa notícia! Isso é tudo de que precisamos para criar nossa primeira página AMP, mas é claro que ainda falta muita coisa no corpo. Na próxima seção, abordaremos como adicionar itens básicos como imagens, elementos AMP personalizados, como compor o estilo da sua página e desenvolver um layout responsivo.
+Temos boas notícias! Isso é tudo que você precisa para criar sua primeira página AMP. Claro que, a essa altura, ela ainda não tem muito conteúdo no corpo. Na próxima seção, veremos como adicionar recursos básicos, como imagens e elementos AMP personalizados, estilizar a página e criar um layout responsivo.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create.html', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/create/include_image.html', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
+ 
