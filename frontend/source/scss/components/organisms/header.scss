@@ -21,7 +21,13 @@
 
 .#{organism('header')} {
   width: 100%;
+  position: sticky;
+  top: 0;
   z-index: 10;
+  
+  @media screen and (min-width: 1024px) {
+    top: -50px;
+  }
 
   &-list {
     height: 50px;
