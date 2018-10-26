@@ -16,6 +16,10 @@ h5 {
 	&:first-child {
 		margin-top: 0;
 	}
+	
+	.toc + & {
+		margin-top: 0;
+	}
 }
 
 h1 {

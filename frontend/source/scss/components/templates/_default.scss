@@ -15,7 +15,7 @@
     grid-template-columns: repeat(24, 1fr);
     padding: 96px 30px 0;
   }
-  
+
   section {
     width: 100%;
     grid-column: 1;
@@ -25,8 +25,25 @@
       grid-column-start: 7;
       grid-column-end: 19;
     }
+
+    &.main {
+      padding-top: 60px;
+    }
+
+    &.sidebar {
+      order: 2;
+      grid-column: auto;
+      padding: 0;
+
+      @media screen and (min-width: 1024px) {
+        order: inherit;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        margin-right: 0;
+      }
+    }
   }
-  
+
   .toc {
     position: fixed;
     width: 625px;

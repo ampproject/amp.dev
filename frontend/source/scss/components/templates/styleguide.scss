@@ -20,4 +20,11 @@
 
 .#{template('styleguide')} {
   @include container;
+
+  section {
+    @media screen and (min-width: 1024px){
+      grid-column-start: 1;
+      grid-column-end: 25;
+    }
+  }
 }

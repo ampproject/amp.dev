@@ -10,7 +10,9 @@
 <div class="ad-t-container ad-t-use-case">
   {% include 'partials/sidebar.j2' %}
   <section class="main">
+    {% if doc.html %}
     {{ doc.html|render|safe }}
+    {% endif %}
   </section>
 </div>
 {% endblock %}
