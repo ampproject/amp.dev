@@ -1,17 +1,14 @@
 ---
-$title: 에니메이션 적용하기
+$title: 요소에 애니메이션 효과 추가
 ---
 
-페이지안의 요소에 애니메이션을 적용하여 AMP 스토리를 더 멋지게 만들수 있습니다.
-예를 들면, 왼쪽에서 제목이 날아온다든지 페이지로 떨어지는 동작이라든지
-페이드인(fade-in) 효과 등을 넣을 수 있습니다. AMP 스토리 프레임웍에서는 다음과 같이
-미리 정의된 애니메이션을 제공합니다:
+페이지 내부 요소에 애니메이션을 적용하여 AMP 스토리를 더욱 개선할 수 있습니다. 예를 들어 제목을 페이지 왼쪽에서 날아오게 하거나 위쪽에서 떨어지거나 페이드 인하는 등의 애니메이션 효과를 줄 수 있습니다.  AMP 스토리 프레임워크는 다음과 같은 사전 설정된 애니메이션을 제공합니다.
 
 <table>
 <thead>
 <tr>
-  <th width="50%">애니메이션 프리셋</th>
-  <th width="25%">기본 지속 시간(ms)</th>
+  <th width="50%">애니메이션 사전 설정</th>
+  <th width="25%">기본 실행 시간(ms)</th>
   <th width="25%">기본 지연 시간(ms)</th>
 </tr>
 </thead>
@@ -109,10 +106,7 @@ $title: 에니메이션 적용하기
 </tbody>
 </table>
 
-어떤 요소에 애니메이션을 적용하려면, 위의 애니메이션 프리셋 중에서 선택하여
-<code>animate-in="<em>&lt;animation preset></em>"</code> 속성을 넣습니다.
-예를 들어, 어떤 구절을 페이지에 떨어뜨리는 애니메이션을 넣으려면
-`animate-in="drop"` 속성을 텍스트 요소에 사용합니다.
+페이지 요소에 애니메이션 효과를 적용하려면 애니메이션 사전 설정 값 중 하나를 사용하여 <code>animate-in="<em>&lt;animation preset></em>"</code> 을 지정해야 합니다.  예를 들어 텍스트를 페이지에 떨어뜨리려면 `animate-in="drop"`을 텍스트 요소에 추가합니다.
 
 ```html
 <amp-story-page id="page3">
@@ -122,24 +116,18 @@ $title: 에니메이션 적용하기
 </amp-story-page>
 ```
 
-{% call callout('재미를 위해', type='success') %}
-`animate-in="<animation preset>"` 속성으로 다른 요소에도 여러가지 효과를
-적용해보십시오.
+{% call callout('참고', type='success') %}
+스토리 페이지의 요소에 `animate-in="<animation preset>"` 속성을 추가하여 다양한 애니메이션 효과를 살펴보세요.
 {% endcall %}
 
-## 애니메이션 타이밍
+## 애니메이션 시간
 
-애니메이션 프리셋은 몇 가지 타이밍 변수에 대해서 기본값을 갖고 있습니다:
+각 애니메이션 사전 설정에는 다음에 대한 기본 시간 값이 지정되어 있습니다.
 
-* **delay**: 애니메이션 시작전에 얼마만큼 지체할지에 대한 변수. 예를 들어, .3s는
-  해당 페이지로 전환 후 0.3초 이후에 애니메이션을 시작한다는 뜻입니다. 0s는
-  애니메이션을 바로 시작한다는 뜻입니다.
-* **duration**: 애니메이션이 얼마나 계속되는지에 대한 변수. 예를 들어, fade-in
-  애니메이션을 시작부터 끝까지 500ms 정도 걸립니다.
+* **지연 시간**: 애니메이션 시작이 지연되는 시간입니다.  예를 들어 지연 시간이 .3s이면 애니메이션이 0.3초 후에 페이지에서 시작됩니다. 지연 시간이 0s이면 애니메이션이 바로 시작됩니다.
+* **실행 시간**: 애니메이션이 재생되는 시간입니다.  예를 들어 페이드 인 애니메이션이 시작되어 끝날 때까지 500ms가 걸립니다.
 
-`animate-in-delay`와 `animate-in-duration` 속성으로 delay와 duration을 조정할 수
-있습니다. 다음 예는 `my-element`가 0.3초 이후에 페이지의 왼쪽에서부터 날아와서
-0.5초안에 애니메이션이 끝나는 코드입니다.
+`animate-in-delay` 및 `animate-in-duration` 속성을 통해 지연 시간 또는 실행 시간을 변경하여 애니메이션 시간을 맞춤설정할 수 있습니다. 다음 예에서는 `my-element`가 0.3초 후에 페이지 왼쪽에서 날아오기 시작하여 0.5초 이내에 애니메이션이 종료됩니다.
 
 ```html
 <amp-story-page id="my-page">
@@ -153,11 +141,9 @@ $title: 에니메이션 적용하기
 </amp-story-page>
 ```
 
-## 마지막 페이지를 애니메이션으로 장식하기
+## 마지막 페이지에 애니메이션 효과 추가
 
-이번에 작성할 페이지는 두 개의 레이어로 구성됩니다. 첫 번째 레이어는 동물 사진의
-콜라쥬고 두 번째 레이어는 배너 텍스트를 보여줍니다. 다음의 코드를 이전 스토리
-페이지 뒤에 넣습니다:
+마지막 AMP 스토리 페이지는 두 개 레이어로 구성됩니다. 첫 번째 레이어는 동물 이미지의 콜라주이고 두 번째 레이어는 배너 텍스트입니다.  이 페이지를 만들려면 이전 스토리 페이지 바로 뒤에 다음 코드를 **추가**합니다.
 
 ```html
 <amp-story-page id="page5">
@@ -186,16 +172,13 @@ $title: 에니메이션 적용하기
   </amp-story-grid-layer>
 </amp-story-page>
 ```
-
-웹브라우저에서 AMP 스토리를 새로고침하십시오. 방금 만든 마지막 페이지가 잘
-보이는지 확인합니다. 이런식으로 보입니까:
+브라우저에서 AMP 스토리를 새로고침하고 페이지가 올바르게 렌더링되고 다음과 같이 표시되는지 확인합니다.
 
 {{ image('/static/img/docs/tutorials/amp_story/pg5-collage.png', 720, 1280, align='center third', alt='Static page 5' ) }}
 
-이 정도만으로도 괜찮지만 모두 정적입니다. 이제 살아 움직이는 페이지를
-만들어보겠습니다. 우선 “whoosh in” 효과로 페이지의 초기에 배너 텍스트가
-오른쪽에서부터 흘러들어오도록 하겠습니다. <p> 요소의 속성에
-`animate-in="whoosh-in-right"`을 추가합니다.
+제대로 표시되지만 모든 것이 정적입니다. 이제 애니메이션 효과를 넣어보겠습니다.
+
+먼저 배너 텍스트에 애니메이션 효과를 주어 페이지 오른쪽에서 빠르게 표시되도록 하겠습니다. 다음과 같이 'animate-in="whoosh-in-right"`를 '<p>` 요소에 추가합니다.
 
 ```html hl_lines="2"
 <p class="banner-text"
@@ -203,9 +186,9 @@ $title: 에니메이션 적용하기
 Pets can lower your stress levels!</p>
 ```
 
-스토리 페이지를 새로고침하여 배너가 흘러들어오는지 확인하십시오. 다음으로 이미지
-모두에 fade in 효과를 줍니다. 각 `amp-img` 요소에 `animate-in="fade-in"` 속성을
-추가합니다. 코드는 다음과 같습니다:
+브라우저에서 페이지를 새로고침하고 배너가 빠르게 표시되는지 확인합니다. 
+
+이제 모든 이미지를 페이드 인해 보겠습니다. 코드가 다음과 같이 표시되도록 'animate-in="fade-in"`를 각 `amp-img` 요소에 추가합니다.
 
 ```html hl_lines="4 9 14 19"
 <amp-img src="assets/cat.jpg"
@@ -230,25 +213,22 @@ Pets can lower your stress levels!</p>
 </amp-img>
 ```
 
-자, 새로고침을 하고 해당 페이지로 이동하면 이미지가 fade in 하는 것을 볼 수 있을
-것입니다. 그런데 모든 이미지가 똑같이 fade in을 하기 때문에 썩 그럴듯한 효과는
-아닙니다. 각 애니메이션의 타이밍을 조정해서 좀 더 보기좋게 만들 수 있습니다.
 
-텍스터 배너가 끝나는 얼추 0.4초 지점까지 첫번째 이미지의 애니메이션을 delay
-하겠습니다. 다른 이미지는 0.2초씩 순서대로 나오도록 하겠습니다. amp-img 요소에
-`animate-in-delay=""` 속성을 설정하면 됩니다.
+페이지를 새로고침하면 각 이미지가 페이드 인됩니다.  하지만, 모든 이미지가 동시에 페이드 인되므로 애니메이션 효과를 제대로 알아차릴 수 없습니다. 각 이미지의 애니메이션 시간을 변경하여 시각 효과를 개선할 수 있습니다.
+
+첫 번째 이미지의 등장을 지연시켜 텍스트 배너가 완전히 등장한 후 0.4초 뒤에 나타나도록 해보겠습니다. 그 뒤에 나머지 이미지 세 개를 0.2초 간격으로 표시되게 할 수 있습니다. 각 amp-img 요소에 `animate-in-delay=""`를 추가하고 적절한 지연 시간 값을 지정합니다. 코드는 다음과 같습니다.
 
 ```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in"
+    animate-in="fade-in" 
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in"
+    animate-in="fade-in" 
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
@@ -266,17 +246,15 @@ Pets can lower your stress levels!</p>
 
 ```
 
-새로고침하고 다시 해당 페이지로 넘겨보십시오. 다음과 같은 그럴듯한 애니메이션이
-만들어졌습니까?
+스토리를 새로고치면  아래와 같은 페이지가 표시됩니다.
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-이제 여러개의 효과를 섞거나 잇는 등 다양한 방법으로 애니메이션을 만들수 있게
-되었습니다. 본 튜토리얼에서는 기본적인 것만 다루어봤는데,
-[AMP 스토리 레퍼런스 문서](/ko/docs/reference/components/amp-story.html#animations)에
-더 자세한 내용이 있으니 참고하십시오.
+AMP 스토리에 애니메이션 효과를 추가하는 방법은 다양합니다(예: 애니메이션 결합, 애니메이션 연결). 이 가이드에서는 기본적인 내용만 설명합니다. 자세한 애니메이션 관련 내용을 알아보려면 [amp-story](/ko/docs/reference/components/amp-story.html#animations) 참조 문서를 확인하세요.
+
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.html', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>
+ 
