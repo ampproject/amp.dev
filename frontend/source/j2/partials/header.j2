@@ -118,12 +118,6 @@
 </nav>
     <nav class="ad-o-header-nav ad-o-header-subnav">
       <ul class="ad-o-header-list ad-o-header-list-subnav">
-        <li class="ad-o-header-lnk ad-o-header-subnav-logo">
-          <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-            <span class="ad-o-header-icon-text">amp</span>
-          </a>
-        </li>
         {% for _doc in doc.collection %}
             <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if _doc.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
               <a href="{{ _doc.url.path }}">

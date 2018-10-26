@@ -207,17 +207,6 @@
     }
   }
 
-  &-subnav-logo {
-    display: none;
-    margin: 10px 45px 10px 0;
-
-    @media screen and (min-width: 1024px){
-      display: block;
-      opacity: 0;
-      z-index: -10;
-    }
-  }
-
   &-icon {
     display: flex;
     align-items: center;
