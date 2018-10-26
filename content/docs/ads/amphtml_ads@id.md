@@ -8,7 +8,7 @@ $title: Iklan AMPHTML
 
 Iklan AMPHTML adalah cara yang lebih cepat, ringan, dan aman untuk beriklan di internet. Meskipun halaman AMP mendukung iklan HTML tradisional, iklan ini dapat dimuat dengan lambat. Agar iklan dapat dimuat secepat elemen lain di halaman AMP, Anda dapat membuat iklan dalam AMPHTML. Iklan AMPHTML hanya ditayangkan setelah divalidasi, untuk memastikan iklan sudah aman dan memiliki performa baik. Yang terpenting, iklan ini dapat ditayangkan di mana pun di internet, _tidak hanya di halaman AMP_.
 
-Iklan AMPHTML ditulis dalam HTML AMP sesuai dengan [spesifikasi iklan AMPHTML](/id/docs/ads/a4a_spec.html) (variasi HTML AMP + CSS). Ini berarti bahwa iklan tidak lagi dapat menjalankan JavaScript secara acak, yang secara tradisional menjadi penyebab utama performa iklan yang buruk. Oleh karena itu, seperti halnya AMP inti, kasus penggunaan JavaScript iklan inti dibuat langsung ke project Open Source AMP yang menjamin perilaku iklan yang baik.
+Iklan AMPHTML ditulis dalam HTML AMP sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}}) (variasi HTML AMP + CSS). Ini berarti bahwa iklan tidak lagi dapat menjalankan JavaScript secara acak, yang secara tradisional menjadi penyebab utama performa iklan yang buruk. Oleh karena itu, seperti halnya AMP inti, kasus penggunaan JavaScript iklan inti dibuat langsung ke project Open Source AMP yang menjamin perilaku iklan yang baik.
 
 ### Manfaat
 
@@ -16,7 +16,7 @@ Mengapa iklan AMPHTML lebih baik daripada iklan tradisional?
 
 1.  **Lebih cepat**: Iklan AMPHTML lebih cepat karena iklan diminta sebelumnya dalam proses rendering halaman, dan segera ditampilkan tepat sebelum pengguna akan melihat iklan. Ukuran file iklan AMPHTML yang lebih kecil juga meningkatkan kecepatan.
 2.  **Lebih ringan**: Iklan AMPHTML menggabungkan fungsi iklan yang biasa digunakan, yang dapat mengurangi ukuran file iklan. Setelah berada di halaman, iklan AMPHTML juga menggunakan lebih sedikit resource. Misalnya, 10 pelacak pada iklan biasa akan meminta informasi mereka sendiri, namun iklan AMPHTML mengumpulkan semua data sekali dan mendistribusikannya ke sejumlah pelacak yang tertarik.
-3.  **Terkoordinasikan**: Di halaman AMP, [AMP runtime](https://www.ampproject.org/id/docs/fundamentals/spec#amp-runtime) dapat mengkoordinasikan resource yang terbatas di ponsel ke komponen yang tepat di waktu yang tepat, sehingga dapat memberikan pengalaman yang terbaik bagi pengguna. Misalnya, iklan AMPHTML dengan animasi dijeda saat iklan tidak berada di viewport saat ini.
+3.  **Terkoordinasikan**: Di halaman AMP, [AMP runtime]({{g.doc('/content/docs/fundamentals/spec#amp-runtime', locale=doc.locale).url.path}}) dapat mengkoordinasikan resource yang terbatas di ponsel ke komponen yang tepat di waktu yang tepat, sehingga dapat memberikan pengalaman yang terbaik bagi pengguna. Misalnya, iklan AMPHTML dengan animasi dijeda saat iklan tidak berada di viewport saat ini.
 4.  **Lebih Menarik**: Pengguna tidak dapat berinteraksi dengan iklan yang tidak dapat dilihat. Iklan yang lebih cepat mendorong visibilitas yang lebih tinggi, yang kemudian membuat rasio klik-tayang jadi lebih tinggi, sehingga akan menghasilkan performa iklan yang lebih baik.
 5.  **Aman dari Malware**: Penyebaran malware dengan iklan AMPHTML tidak akan dapat dilakukan karena iklan telah diverifikasi sebelum ditayangkan. Karena itulah, pengiklan dapat memastikan pengalaman pengguna yang aman dan memberikan persepsi merek yang positif. 
 6.  **Lebih Fleksibel**: Iklan AMPHTML dirancang agar berfungsi pada halaman AMP dan non-AMP, serta di semua jenis perangkat.
@@ -58,7 +58,7 @@ Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak forma
 
 ### Penayang
 
-Untuk menayangkan format iklan yang dijual langsung di AMPHTML, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML](/id/docs/ads/a4a_spec.html) dan menayangkannya menggunakan server iklan yang mendukung penayangan iklan AMPHTML.  Untuk saat ini, berikut ini server iklan yang mendukung iklan AMPHTML:
+Untuk menayangkan format iklan yang dijual langsung di AMPHTML, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}}) dan menayangkannya menggunakan server iklan yang mendukung penayangan iklan AMPHTML.  Untuk saat ini, berikut ini server iklan yang mendukung iklan AMPHTML:
 
 *   DoubleClick for Publishers
 *   TripleLift
@@ -66,11 +66,11 @@ Untuk menayangkan format iklan yang dijual langsung di AMPHTML, Anda harus membu
 *   Adzerk
 *   Google AdSense
 
-Untuk menayangkan iklan AMPHTML melalui saluran tidak langsung (mis., exchange, SSP, dll.), gunakan server iklan/jaringan iklan pendukung pada [daftar berikut](/id/docs/ads/ads_vendors.html).
+Untuk menayangkan iklan AMPHTML melalui saluran tidak langsung (mis., exchange, SSP, dll.), gunakan server iklan/jaringan iklan pendukung pada [daftar berikut]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}}).
 
 ### Agensi kreatif
 
-Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML](/id/docs/ads/a4a_spec.html). Untuk mengetahui contoh dan inspirasi, lihat template iklan AMPHTML open source di [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads). Selain itu, gunakan salah satu fitur berikut untuk membuat iklan AMPHTML:
+Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}}). Untuk mengetahui contoh dan inspirasi, lihat template iklan AMPHTML open source di [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads). Selain itu, gunakan salah satu fitur berikut untuk membuat iklan AMPHTML:
 
 *  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -78,11 +78,11 @@ Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifi
 
 ### Jaringan/server iklan
 
-Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi `amp-ad` untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display](/id/docs/ads/adnetwork_integration.html).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
+Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi `amp-ad` untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display]({{g.doc('/content/docs/ads/adnetwork_integration.html', locale=doc.locale).url.path}}).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
 
 ## Membuat iklan AMPHTML
 
-**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML](/id/docs/ads/a4a_spec.html).  Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
+**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}}).  Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
 
 **Menggunakan fitur**: Anda dapat menggunakan salah satu fitur berikut untuk membuat materi iklan AMPHTML:
 
