@@ -1,6 +1,6 @@
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-sidebar.css') %}
 {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
-{% do doc.icons.useIcon('icons/arrow-down-thick.svg') %}
+{% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
 
 <section class="sidebar">
   <div class="ad-o-sidebar">
@@ -11,7 +11,7 @@
         <div class="destination-list-view-box destination-list-view-box-gradient"
           [class]="toggle ? 'destination-list-view-box destination-list-view-box-gradient destination-list-view-box-expand': 'destination-list-view-box destination-list-view-box-gradient'">
             <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-list-icon">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down-thick"></use></svg>
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
             </button>
           <amp-selector layout="container">
             <ul class="destination-list">
