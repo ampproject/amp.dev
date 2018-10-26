@@ -3,39 +3,59 @@ $title: Fitur eksperimental
 ---
 
 [Komponen eksperimental AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
-merupakan fitur yang dirilis namun belum siap untuk digunakan secara umum, jadi fitur ini dilindungi oleh
-status eksperimental.
+adalah fitur rilis yang masih belum siap untuk digunakan secara luas, sehingga komponen ini dilindungi dengan status **eksperimental**.
 
-Developer dan pengguna dapat memilih untuk ikut serta menggunakan fitur ini sebelum dirilis sepenuhnya.
-Namun, fitur harus digunakan dengan hati-hati, karena mungkin mengandung bug atau efek samping yang tidak
-diduga.
+Developer dan pengguna dapat ikut serta menggunakan fitur ini sebelum dirilis sepenuhnya.
+Namun, fitur ini harus digunakan secara hati-hati, karena mungkin terdapat bug di dalamnya atau memiliki efek samping yang tidak terduga.
 
 ## Ikut serta dalam Saluran Dev AMP
 
-Saluran Dev AMP merupakan cara untuk mengikutsertakan browser agar menggunakan versi pustaka JS AMP terbaru.
+Saluran Dev AMP adalah cara untuk mengikutsertakan browser agar menggunakan versi library JS AMP yang lebih baru.
 
-Rilis Saluran Dev AMP **mungkin kurang stabil** dan mungkin berisi fitur yang tidak tersedia untuk semua pengguna. Ikut serta dalam opsi ini jika ingin membantu menguji versi AMP baru, melaporkan bug, atau membuat dokumen yang memerlukan fitur baru yang belum tersedia untuk semua orang.
+Rilis Saluran Dev AMP **mungkin kurang stabil** dan berisi fitur tertentu yang tidak dapat diakses oleh semua pengguna. Pilih opsi ini jika Anda ingin membantu menguji AMP versi baru, melaporkan bug, atau membuat dokumen yang memerlukan fitur baru yang belum tersedia untuk semua orang.
 
-Ikut serta dalam Saluran Dev sangat bermanfaat untuk:
+Dengan ikut serta dalam Saluran Dev, Anda dapat:
 
-- menguji dan mencoba fitur baru yang belum tersedia untuk semua pengguna.
-- menggunakan kualitas asuransi (QA), untuk memastikan bahwa situs Anda kompatibel dengan versi AMP selanjutnya.
+- menguji dan mencoba fitur baru yang belum dirilis untuk semua pengguna.
+- menggunakannya dalam jaminan mutu (QA) untuk memastikan situs Anda kompatibel dengan versi AMP berikutnya.
 
-Jika menemukan masalah yang tampaknya hanya muncul di Saluran Dev versi AMP, [harap ajukan masalah](https://github.com/ampproject/amphtml/issues/new) beserta deskripsi mengenai masalah tersebut. Selalu sertakan URL ke halaman bermasalah tersebut, untuk mereka ulang masalahnya.
+Jika Anda menemukan masalah hanya pada AMP versi Saluran Dev, [ajukan masalah](https://github.com/ampproject/amphtml/issues/new) dengan menyertakan penjelasannya. Selalu sertakan URL ke halaman yang memiliki masalah.
 
-Untuk mengikutsertakan browser ke Saluran Dev AMP, buka [halaman eksperimen AMP](https://cdn.ampproject.org/experiments.html)  dan aktifkan eksperimen "Saluran Dev AMP". Untuk mendapatkan notifikasi mengenai perubahan penting/yang merusak tentang AMP, berlanggananlah ke [milis](https://groups.google.com/forum/#!forum/amphtml-announce) amphtml-announce.
+Untuk mengikutsertakan browser ke Saluran Dev AMP, buka [halaman eksperimen AMP](https://cdn.ampproject.org/experiments.html) lalu aktifkan eksperimen "Saluran Dev AMP". Untuk mendapatkan notifikasi tentang perubahan penting/breaking change mengenai AMP, silakan berlangganan milis [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
-## Mengaktifkan komponen eksperimental
+## Aktifkan komponen eksperimental
 
-Untuk konten yang ditayangkan dari [https://cdn.ampproject.org](https://cdn.ampproject.org), buka [halaman eksperimen AMP](https://cdn.ampproject.org/experiments.html) dan aktifkan (atau nonaktifkan) komponen eksperimental dengan mengalihkan tombol ke aktif (atau nonaktif). Jika Anda memilih untuk ikut serta, tindakan itu akan menyetel cookie di browser yang akan mengaktifkan eksperimen di semua halaman AMP yang ditayangkan melalui Google AMP Cache.
+#### Ditampilkan dari cdn.ampproject.org
 
-Untuk konten yang ditayangkan dari domain lainnya, fitur eksperimen dapat diaktifkan melalui konsol devtools saat mode pengembangan diaktifkan menggunakan:
+Untuk konten yang ditampilkan dari [https://cdn.ampproject.org](https://cdn.ampproject.org), 
+buka [halaman eksperimental AMP](https://cdn.ampproject.org/experiments.html)
+dan aktifkan (atau nonaktifkan) komponen eksperimental dengan mengalihkan pengalih ke aktif (atau nonaktif). Ikut serta akan menetapkan cookie di browser yang akan mengaktifkan eksperimen pada semua halaman AMP yang ditampilkan melalui Cache Google AMP.
 
-[sourcecode:js]
+#### Ditampilkan dari domain lain
+
+Untuk konten yang ditampilkan dari domain lain, eksperimen dapat dialihkan di konsol devtools jika mode pengembangan aktif menggunakan:
+
+```js
 AMP.toggleExperiment('experiment')
-[/sourcecode]
+```
 
-File AMP apa pun yang menyertakan fitur eksperimental akan gagal saat
-[validasi AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
-Hapus komponen eksperimental ini pada dokumen AMP yang siap diproduksi.
+File AMP apa pun yang menyertakan fitur eksperimental akan gagal
+saat [validasi AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+Hapus komponen eksperimental ini dari dokumen AMP yang siap produksi.
 
+## Aktifkan eksperimen untuk dokumen tertentu
+
+Dokumen dapat memilih untuk ikut serta dalam eksperimen tertentu. Untuk melakukannya, cukup cantumkan tag meta nama `amp-experiments-opt-in` di bagian kepala dokumen HTML sebelum skrip AMP (`https://cdn.ampproject.org/v0.js`). Nilai kontennya adalah string ID eksperimen untuk dipilih yang dipisahkan koma.
+
+```html
+<head>
+  ...
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <!-- The meta tag needs to be placed before the AMP runtime script.-->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  ...
+</head>
+```
+
+Dengan demikian, eksperimen yang ditentukan akan diaktifkan untuk semua pengunjung dokumen. Namun, tidak semua eksperimen mengizinkan penyertaan dokumen. Untuk mengetahui daftar lengkap eksperimen yang diizinkan, lihat atribut `allow-doc-opt-in` dalam file` prod-config.json` di project. Perhatikan bahwa penyertaan dokumen dapat diganti dengan ketidakikutsertaan pengguna.
+ 
