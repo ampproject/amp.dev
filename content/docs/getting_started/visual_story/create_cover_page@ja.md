@@ -157,7 +157,7 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.html', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}"><span class="arrow-next">次へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>
  
  
