@@ -198,13 +198,12 @@
     background-color: color('white');
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
   }
-  
+
   &-nav {
     flex: 1 1 auto;
   }
 
   &-mainnav {
-    border-bottom: 1px solid color('wild-sand');
 
     @media screen and (min-width: 1024px) {
       padding: 0 30px;
@@ -215,6 +214,8 @@
   &-subnav {
     display: block;
     height: 60px;
+    border-top: 1px solid color('wild-sand');
+
 
     @media screen and (min-width: 1024px) {
       padding: 0 30px;
