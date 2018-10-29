@@ -6,6 +6,7 @@ $gutterWidth: 30px;
 $gutterColor: transparent;
 
 @mixin grid {
+  position: fixed;
   pointer-events: none;
   background: repeating-linear-gradient(
     90deg,
