@@ -1,6 +1,0 @@
-path: /documentation/stories/{base}.html
-view: /views/default.j2
-title: stories
-
-localization:
-  path: /{locale}/documentation/stories/{base}.html
