@@ -1,61 +1,74 @@
 {% do doc.styles.addCssFile('css/components/organisms/footer.css') %}
+{% do doc.icons.useIcon('icons/internal.svg') %}
+{% do doc.icons.useIcon('icons/twitter.svg') %}
+{% do doc.icons.useIcon('icons/youtube.svg') %}
+{% do doc.icons.useIcon('icons/wordpress.svg') %}
+{% do doc.icons.useIcon('icons/github.svg') %}
+{% do doc.icons.useIcon('icons/slack.svg') %}
 
 <footer class="ad-o-footer" role="content-info">
   <div class="ad-o-footer-container">
-    <div class="line-top">
-      <p>Of course, this site is made with AMP!</p>
-      <div class="social">
-        Follow us: twitter, youtube, wordpress, github, slack
+    <div class="ad-o-footer-line-top">
+      <p class="ad-o-footer-hint">Of course, this site is made with AMP!</p>
+      <div class="ad-o-footer-follow">
+        <h5 class="ad-o-footer-follow-title">Follow us</h5>
+        <ul class="ad-o-footer-follow-menu">
+          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></li>
+          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wordpress"></use></svg></a></li>
+          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use></svg></a></li>
+          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#slack"></use></svg></a></li>
+        </ul>
       </div>
     </div>
     <div class="ad-o-footer-nav">
       <div class="ad-o-footer-nav-column">
-        <h4>Overview</h4>
+        <h5 class="ad-o-footer-nav-title">Overview</h5>
         <ul class="ad-o-footer-nav-menu">
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">AMP Framework</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Benefits</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Use Cases</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Success stories</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Functionality</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>AMP Framework</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Benefits</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Use Cases</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Success stories</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Functionality</a></li>
         </ul>
       </div>
       <div class="ad-o-footer-nav-column">
-        <h4>Docs</h4>
+        <h5 class="ad-o-footer-nav-title">Docs</h5>
         <ul class="ad-o-footer-nav-menu">
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Get Started</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Guides and Tutorials</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Components</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Examples</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Design Templates</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Tools</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Get Started</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Guides and Tutorials</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Components</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Examples</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Design Templates</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Tools</a></li>
         </ul>
       </div>
       <div class="ad-o-footer-nav-column">
-        <h4>Community</h4>
+        <h5 class="ad-o-footer-nav-title">Community</h5>
         <ul class="ad-o-footer-nav-menu">
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">The AMP Team</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Platform and Vendor Partners</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Contribute</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Roadmap</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>The AMP Team</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Platform and Vendor Partners</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Contribute</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Roadmap</a></li>
         </ul>
       </div>
       <div class="ad-o-footer-nav-column">
-        <h4>Events</h4>
+        <h5 class="ad-o-footer-nav-title">Events</h5>
         <ul class="ad-o-footer-nav-menu">
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">AMP Roadshow</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">AMP Conf</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">AMP Contributor Summit</a></li>
-          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link">Additional Events</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>AMP Roadshow</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>AMP Conf</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>AMP Contributor Summit</a></li>
+          <li class="ad-o-footer-nav-item"><a href="#" class="ad-o-footer-nav-link"><div class="ad-a-ico ad-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>Additional Events</a></li>
         </ul>
       </div>
     </div>
-    <div class="line-bottom">
-      <ul class="legal-nav">
-        <li class="legal-nav-item><a class="legal-nav-link" href="#">Privacy Policy</a></li>
-        <li class="legal-nav-item><a class="legal-nav-link" href="#">Legal Disclaimer</a></li>
-        <li class="legal-nav-item><a class="legal-nav-link" href="#">Legal Disclaimer</a></li>
+    <div class="ad-o-footer-line-bottom">
+      <ul class="ad-o-footer-legal-nav-menu">
+        <li class="ad-o-footer-legal-nav-item"><a class="ad-o-footer-legal-nav-link" href="#">Privacy Policy</a></li>
+        <li class="ad-o-footer-legal-nav-item"><a class="ad-o-footer-legal-nav-link" href="#">Legal Disclaimer</a></li>
+        <li class="ad-o-footer-legal-nav-item"><a class="ad-o-footer-legal-nav-link" href="#">Lorem Ipsum</a></li>
       </ul>
-      <p class="copyright">© 2018 AMP Open Source Project</p>
+      <p class="ad-o-footer-copyright">© 2018 AMP Open Source Project</p>
     </div>
   </div>
 </footer>
