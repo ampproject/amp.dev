@@ -1,2 +1,3 @@
 path: /documentation/guides-and-tutorials/develop/{base}.html
 view: /views/default.j2
+title: Develop
