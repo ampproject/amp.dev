@@ -1,7 +1,0 @@
-path: /documentation/e-mails/{base}.html
-view: /views/default.j2
-title: e-mails
-
-
-localization:
-  path: /{locale}/documentation/e-mails/{base}.html
