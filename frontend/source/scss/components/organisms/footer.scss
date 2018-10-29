@@ -105,6 +105,12 @@
         flex: 0 0 auto;
         margin: 0 16px;
       }
+      
+      &:last-child {
+        @media screen and (min-width: 1024px) {
+          margin-right: 0;
+        }
+      }
     }
     
     &-icon.#{atom('ico')} {
