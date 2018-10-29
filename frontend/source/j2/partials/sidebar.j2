@@ -17,21 +17,20 @@
             </button>
           <amp-selector layout="container">
             <ul class="destination-list">
-              {% set documentation = g.collection('amp-dev/documentation') %}
-              <li class="{{ documentation.filter }}" option="{{ documentation.filter }}">
-                <a href="#" class="destination-list-item destination-list-item-drop-down {{ documentation.filter }} {{ documentation.filter }}-background">
-                  {{ documentation.filter }}
+              {% set allCollection = g.collection('amp-dev/documentation') %}
+              <li class="{{ allCollection.filter }}" option="{{ allCollection.filter }}">
+                <a href="#" class="destination-list-item destination-list-item-drop-down {{ allCollection.filter }} {{ allCollection.filter }}-background">
+                  {{ allCollection.filter }}
                 </a>
               </li>
-
-              {% for collection in g.collection('amp-dev/documentation').collections() %}
-              {% for _doc in g.docs(collection.collection_path) %}
-              <li class="{{ collection.title }}" option="{{ collection.title }}">
-                <a href="{{ _doc.url.path }}" class="destination-list-item destination-list-item-drop-down {{ collection.title }} {{ collection.title }}-background">
-                  {{ collection.title }}
-                </a>
-              </li>
-              {% endfor %}
+              {% for collections in g.collection('amp-dev/documentation').collections() %}
+                {% if collections.filter  %}
+                  <li class="{{ collections.filter }}" option="{{ collections.filter }}">
+                    <a href="#" class="destination-list-item destination-list-item-drop-down {{ collections.filter }} {{ collections.filter }}-background">
+                      {{ collections.filter }}
+                    </a>
+                  </li>
+                {% endif %}
               {% endfor %}
             </ul>
           </amp-selector>
