@@ -1,4 +1,4 @@
 ---
-$title: Use Case
+$title: Use Cases
 $order: 3
 ---
