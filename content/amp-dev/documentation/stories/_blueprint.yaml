@@ -1,6 +1,9 @@
 path: /documentation/stories/{base}.html
 view: /views/default.j2
-title: stories
+title: Documentation
+filter: stories
+
+
 
 localization:
   path: /{locale}/documentation/stories/{base}.html

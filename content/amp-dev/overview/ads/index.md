@@ -1,6 +1,6 @@
 ---
-$title: ads
-$category: "stage"
+$title: Amp Framework
+order: 1
 ---
 
 [stage type="selected"]

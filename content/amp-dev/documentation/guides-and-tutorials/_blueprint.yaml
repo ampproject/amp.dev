@@ -1,0 +1,7 @@
+path: /documentation/guides-and-tutorials/{base}.html
+view: /views/default.j2
+
+categories:
+  - Get Started
+  - Core Concepts
+  - Develop
