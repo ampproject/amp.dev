@@ -1,0 +1,50 @@
+/*
+
+########################
+### ORGANISM: footer ###
+########################
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+.#{organism('footer')} {
+  @include river-ebony;
+  
+  &-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  &-nav {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(24, 1fr);
+    }
+
+    &-column {
+      flex: 1 1 100%;
+      
+      @media screen and (min-width: 768px) {
+        grid-column: span 12;
+      }
+      
+      @media screen and (min-width: 1024px) {
+        grid-column: span 6;
+      }
+    }
+  }
+}
