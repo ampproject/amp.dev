@@ -11,7 +11,7 @@
 
   @media screen and (min-width: 1024px) {
     position: sticky;
-    top: 114px;
+    top: 64px;
     height: calc(100vh - 115px);
     margin-right: 0;
     margin-left: -15px;
@@ -46,6 +46,17 @@
 
   &-list {
     list-style: none;
+    
+    &-section {
+      &[expanded] .ad-a-ico {
+        transform: rotate(180deg);
+      }
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
 
     &-main {
       margin: 34px 0 0;
@@ -72,45 +83,31 @@
       padding-left: 15px;
       margin-bottom: 10px;
     }
-  }
-
-  section {
-    header {
+    
+    &-header {
       position: relative;
-
-      span {
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 10px;
-        color: #20202A;
-
-        &.open {
-          color: #B5B2B2;
-        }
-      }
-    }
-
-    &[expanded] .open,
-    &:not([expanded]) .close {
-      display: none;
-    }
-
-    &:focus {
+      @include txt;
+      @include txt-1;
+      @include txt-strong;
+      @include color-black;
+      padding: 10px 25px 10px 0;
+      margin: 0 30px 0 15px;
       border: none;
-      outline: none;
+      background-color: transparent;
+      border-top: 1px solid rgba(color('black'), 0.15);
+    }
+    
+    &-icon.ad-a-ico {
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      right: 0;
+      top: 16px;
     }
   }
 
   &-list-item {
-    @include txt;
-    @include txt-1;
-    @include txt-strong;
-    @include color-black;
-    padding: 10px 35px 10px 15px;
-    margin: 0;
-    border: none;
-    background-color: transparent;
+    
 
     &-sub {
       padding: 0;

@@ -1,8 +1,4 @@
 ---
-$title: Amp Framework
-$order: 1
-$category: overview
+$title: Overview
 ---
 
-[stage type="dropdown"]
-[/stage]

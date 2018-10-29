@@ -1,6 +1,5 @@
 ---
-$title: websites
-$category: Stage
+$title: Amp Framework
 ---
 
 [stage type="selected"]

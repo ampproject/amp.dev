@@ -30,6 +30,7 @@ $colors: (
   'river-bed':       #48525C,
   'silver':          #CCCCCC,
   'gray-chateau':    #A3A8AD,
+  'athens-gray':     #EBEBF0,
   'wild-sand':       #F4F4F4,
   'whisper':         #FAFAFC,
   'white':           #FFFFFF,
@@ -55,6 +56,6 @@ $colors: (
 );
 
 $shadows: (
-  'regular': 0 5px 25px 0 rgba(72,82,92,0.30),
-  'drop': 0px 2px 5px rgba(72, 82, 92, 0.3),
+  'regular': 0 30px 30px -15px rgba(0, 0, 0, 0.25),
+  'drop': 0 30px 30px -15px rgba(0, 0, 0, 0.25),
 )

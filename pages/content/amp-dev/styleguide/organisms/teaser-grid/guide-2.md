@@ -3,16 +3,12 @@ $view: /views/guide.j2
 $path: /styleguide/organisms/teaser-grid/guide-2.html
 $title: Guide
 $titles:
-  teaser: A sample guide
+  teaser: Best practices for creating an AMP story
 destinations:
   - 'websites'
+  - 'stories'
 teaser:
-  image:
-    src: '/static/img/teaser-placeholder-5x3.jpg'
-    alt: A placeholder image
-    width: 5
-    height: 3
-  text: This for sure is a helpful guide.
+  text: Duis dolor in hendrerit in vulputate velit esse molestie consequat. Dolor in hendrerit in vulputate velit esse molestie.
 ---
 [tip]
 This is just a demo page to showcase the teaser grid.

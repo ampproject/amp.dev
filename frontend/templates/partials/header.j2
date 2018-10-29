@@ -10,27 +10,23 @@
 
 <header class="ad-o-header">
   <div class="ad-o-header-wrapper">
-    <nav class="ad-o-header-nav ad-o-header-mainnav">
-      <input id="burger-menu-state" class="ad-o-header-burger-menu-btn" type="checkbox" />
-       <label class="ad-o-header-burger-menu" for="burger-menu-state">
+   <input id="burger-menu-state" class="ad-o-header-burger-menu-btn" type="checkbox" />
+      <label class="ad-o-header-burger-menu" for="burger-menu-state">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
-      </label>
-
-
+    </label>
+    {% set home = g.doc('/content/amp-dev/index.md') %}
+    <div class="ad-o-header-lnk ad-o-header-lnk-home">
+      <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+        <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">amp</span>
+        <span class="ad-o-header-title">{{ doc.collection.title }}</span>
+      </a>
+    </div>
+    <nav class="ad-o-header-nav ad-o-header-mainnav">
 
   {# Do to the UX design and behavior of the menu, two versions fo the navigation list are needed #}
 
   {# Mobile version #}
-
-    <ul class="ad-o-header-list ad-o-header-list-mobile">
-     <li class="ad-o-header-lnk ad-o-header-lnk-home">
-        <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-          <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">amp</span>
-          <span class="ad-o-header-title">{{ doc.collection.title }}</span>
-        </a>
-      </li>
-    </ul>
 
     <ul class="ad-o-header-list-mobile-expanded">
       <li class="ad-o-header-lnk ad-o-header-lnk-expanded ad-o-header-search ad-o-header-search-expanded">
@@ -72,14 +68,8 @@
 
   {# Desktop list #}
 
+
     <ul class="ad-o-header-list ad-o-header-list-desktop">
-      {% set home = g.doc('/content/amp-dev/index.md') %}
-      <li class="ad-o-header-lnk ad-o-header-lnk-home">
-        <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-          <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">amp</span>
-        </a>
-      </li>
       {% for mainNav in g.collection('amp-dev').collections() %}
         {% if not loop.last %}
           {% for mainNavItem in g.docs(mainNav.collection_path) %}
@@ -116,47 +106,8 @@
       {% endfor %}
     </ul>
 </nav>
-
-  {% if doc.collection.collection_path != 'amp-dev' %}
-  {# Check if there are items for a sub-navigation #}
-    <amp-animation id="header-animation" layout="nodisplay">
-      <script type="application/json">
-        {
-          "duration": "0.5s",
-          "fill": "both",
-          "media": "(min-width: 1024px)",
-          "animations": [
-            {
-              "selector": ".ad-o-header-wrapper",
-              "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-              "keyframes": [
-                { "transform": "translateY(0%)" },
-                { "transform": "translateY(-50%)" }
-              ]
-            },
-            {
-              "selector": ".ad-o-header-lnk-home",
-              "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-              "keyframes": [
-                { "transform": "translateY(0%)"},
-                { "transform": "translateY(45px)"}
-              ]
-            }
-          ]
-        }
-      </script>
-    </amp-animation>
-
-    <amp-position-observer intersection-ratios="0 1" target="ad-o-header-content-indicator" on="enter:header-animation.start;exit:header-animation.start,header-animation.reverse" layout="nodisplay"></amp-position-observer>
-
     <nav class="ad-o-header-nav ad-o-header-subnav">
       <ul class="ad-o-header-list ad-o-header-list-subnav">
-        <li class="ad-o-header-lnk ad-o-header-subnav-logo">
-          <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-            <span class="ad-o-header-icon-text">amp</span>
-          </a>
-        </li>
         {% for _doc in doc.collection %}
             <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if _doc.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
               <a href="{{ _doc.url.path }}">
@@ -186,13 +137,5 @@
         {% endif %}
       </ul>
     </nav>
-  {% endif %}
   </div>
 </header>
-
-
-{% if doc.collection.collection_path != 'amp-dev' %}
-{# The following element is the target used for the position observer - as <thead>
-  header itself is fixed it needs to be outside of <header> #}
-<div id="ad-o-header-content-indicator"></div>
-{% endif %}

@@ -1,6 +1,5 @@
 ---
-$title: emails
-$category: "stage"
+$title: Amp Framework
 ---
 
 [stage type="selected"]

@@ -21,10 +21,13 @@
 
 .#{organism('header')} {
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   z-index: 10;
+
+  @media screen and (min-width: 1024px) {
+    top: -50px;
+  }
 
   &-list {
     height: 50px;
@@ -56,17 +59,16 @@
 
       &-expanded {
         height: 0;
-        width: 100vw;
         padding: 0;
+        margin: 0;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         z-index: 10;
-        position: fixed;
         background: #fff;
         list-style: none;
-        transition: height 0.5s ease-in, width 0.5s ease-in;
+        transition: height 0.5s ease-in;
 
         @media screen and (min-width: 1024px) {
           display: none;
@@ -82,6 +84,7 @@
 
       @media screen and (min-width: 1024px) {
         height: 45px;
+        padding-left: 100px;
         overflow: hidden;
       }
     }
@@ -145,10 +148,13 @@
     }
 
     &-home {
+      position: sticky;
+      top: 10px;
       margin: 10px 0px 10px 20px;
+      display: flex;
 
       @media screen and (min-width: 1024px) {
-        margin: 10px 40px 10px 0;
+        margin: 10px 0 10px 30px;
       }
 
       a  {
@@ -186,38 +192,41 @@
   &-wrapper {
     max-width: 1280px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: color('white');
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  &-nav {
+    flex: 1 1 auto;
   }
 
   &-mainnav {
-    background-color: color('white');
-    border-bottom: 1px solid color('wild-sand');
 
     @media screen and (min-width: 1024px) {
       padding: 0 30px;
+      position: relative;
+      height: auto;
     }
   }
 
 
   &-subnav {
     display: block;
+    flex: 1 1 100%;
     height: 60px;
-    background-color: color('white');
+    border-top: 1px solid color('wild-sand');
+
 
     @media screen and (min-width: 1024px) {
       padding: 0 30px;
       height: 45px;
-    }
-  }
-
-  &-subnav-logo {
-    display: none;
-    margin: 10px 45px 10px 0;
-
-    @media screen and (min-width: 1024px){
-      display: block;
-      opacity: 0;
-      z-index: -10;
     }
   }
 
@@ -245,6 +254,7 @@
 
     &-logo {
 
+
       & svg {
         @include ico;
         @include ico-blue-ribbon;
@@ -260,6 +270,10 @@
     opacity: 1;
     margin-left: 4px;
     transition: opacity 0.5s ease;
+
+    @media screen and (min-width: 1024px ){
+      display: none;
+    }
   }
 
   &-search {
@@ -280,7 +294,7 @@
 
   &-burger-menu {
     position: fixed;
-    padding: 10px;
+    padding: 4px 10px;
     right: 0;
     z-index: 100;
 
@@ -296,8 +310,9 @@
     &-btn {
       display: none;
 
-      &:checked ~.ad-o-header-list-mobile-expanded {
+      &:checked ~ .ad-o-header-mainnav .ad-o-header-list-mobile-expanded {
         height: calc(100vh - 60px);
+        width: 100vw;
         transition: height 0.5s ease-in;
 
         .ad-o-header-lnk-home-expanded {
@@ -305,13 +320,10 @@
         }
       }
 
-      &:checked ~.ad-o-header-list-mobile {
-        .ad-o-header-title {
+      &:checked ~ .ad-o-header-lnk .ad-o-header-title {
           opacity: 0;
           transition: opacity 0.5s ease;
         }
-      }
-
     }
   }
 }

@@ -1,0 +1,5 @@
+path: /documentation/reference/{base}.html
+view: /views/default.j2
+
+categories:
+  - Components

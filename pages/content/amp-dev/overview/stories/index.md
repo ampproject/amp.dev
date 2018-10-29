@@ -1,6 +1,5 @@
 ---
-$title: stories
-$category: "stage"
+$title: Amp Framework
 ---
 
 [stage type="selected"]

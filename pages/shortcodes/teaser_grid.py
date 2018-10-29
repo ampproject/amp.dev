@@ -48,6 +48,7 @@ class TeaserGridShortcode(Shortcode):
         teaser['kpi'] = teaser_fields.get('kpi', None)
         # TODO: Build excerpt from document if not maintained
         teaser['text'] = teaser_fields.get('text', '')
+        teaser['video'] = teaser_fields.get('video', '')
 
         # Build teaser-specific fields: get destinations
         if teaser['type'] in [TEASER_TYPE_SUCCESS_STORY, TEASER_TYPE_USE_CASE, TEASER_TYPE_TEMPLATE]:
