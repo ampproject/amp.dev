@@ -1,0 +1,3 @@
+---
+$title: Validate AMP pages
+---
