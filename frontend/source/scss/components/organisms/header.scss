@@ -153,6 +153,10 @@
       margin: 10px 0px 10px 20px;
       display: flex;
 
+      @media screen and (min-width: 768px) {
+        margin-left: 30px;
+      }
+
       @media screen and (min-width: 1024px) {
         margin: 10px 0 10px 30px;
       }
@@ -164,6 +168,10 @@
 
     &-expanded {
       margin: 10px 0 10px 20px;
+      
+      @media screen and (min-width: 768px) {
+        margin-left: 30px;
+      }
     }
 
     &-support {
@@ -223,6 +231,9 @@
     height: 60px;
     border-top: 1px solid color('wild-sand');
 
+    @media screen and (min-width: 768px) {
+      padding-left: 10px;
+    }
 
     @media screen and (min-width: 1024px) {
       padding: 0 30px;
@@ -253,8 +264,6 @@
     }
 
     &-logo {
-
-
       & svg {
         @include ico;
         @include ico-blue-ribbon;

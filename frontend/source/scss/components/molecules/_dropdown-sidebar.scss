@@ -37,12 +37,17 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   z-index: 2;
 
 	@media screen and (min-width: 768px) {
-		width: calc(100% - 36px);
+		width: calc(100% - 45px);
 		height: 40px;
 		top: auto;
 		right: auto;
-		left: 15px;
+		left: 30px;
 		margin-top: 14px;
+	}
+
+	@media screen and (min-width: 1024px) {
+		width: calc(100% - 30px);
+		left: 15px;
 	}
 
 	&-gradient {

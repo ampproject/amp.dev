@@ -14,13 +14,12 @@
     top: 132px;
     height: calc(100vh - 132px);
     margin-right: 0;
-    margin-left: -30px;
+    margin-left: -15px;
   }
 
   @media screen and (min-width: 1024px) {
     top: 64px;
     height: calc(100vh - 115px);
-    margin-left: -15px;
   }
 
   &:before,
