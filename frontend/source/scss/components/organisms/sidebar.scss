@@ -92,7 +92,7 @@
 
     &-sub {
       padding-left: 15px;
-      margin-bottom: 10px;
+      margin: 0 30px 10px 0;
     }
     
     &-header {
@@ -118,20 +118,12 @@
   }
 
   &-list-item {
-    
-
     &-sub {
       padding: 0;
       margin: 0;
 
       a {
         padding: 7px 15px 8px;
-      }
-
-      &:first-child {
-        a {
-          padding-top: 0;
-        }
       }
     }
 
@@ -142,6 +134,7 @@
     &-lnk {
       @include txt;
       @include txt-2;
+      line-height: 1.3;
       color: rgba(color('black'), 0.75);
       display: block;
       padding: 3px 0;
