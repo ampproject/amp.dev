@@ -37,13 +37,18 @@
         </div>
       </div>
     </div>
-
     <div class="ad-o-sidebar-list ad-o-sidebar-list-main">
       <amp-accordion animate>
+
         {% for collections in g.collection('amp-dev/documentation').collections() %}
-        {# get all collections inside of documentation, split its path and render only the collections related to current document #}
+
+          {# get all collections inside of documentation, split its path and render only the collections related to current document #}
           {% set collectionName = collections.collection_path.split('/')[2] %}
-          {% if collectionName == doc.base %}
+
+          {# if a document is nested deeper than one collection, get the name of its parent collection #}
+          {% set currenctDocCollection = doc.url.path.split('/')[2] %}
+
+          {% if collectionName == doc.base or collectionName == currenctDocCollection %}
             {% for category in collections.categories %}
               <section class="ad-o-sidebar-list-section">
                 <header class="ad-o-sidebar-list-item ad-o-sidebar-list-header">
