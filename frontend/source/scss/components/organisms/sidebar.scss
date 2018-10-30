@@ -10,6 +10,7 @@
   margin-right: -30px;
 
   @media screen and (min-width: 768px) {
+    position: -webkit-sticky;
     position: sticky;
     top: 132px;
     height: calc(100vh - 132px);
