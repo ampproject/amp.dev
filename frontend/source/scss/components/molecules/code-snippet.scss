@@ -23,6 +23,10 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
   font-weight: bold;
   background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
 
+  @media screen and (min-width: 768px) {
+    margin-right: -30px;
+  }
+
   @media screen and (min-width: 1024px) {
     margin-right: 0;
   }
