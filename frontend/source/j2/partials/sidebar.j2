@@ -17,20 +17,13 @@
             </button>
           <amp-selector layout="container">
             <ul class="destination-list">
-              {% set allCollection = g.collection('amp-dev/documentation') %}
-              <li class="{{ allCollection.filter }}" option="{{ allCollection.filter }}">
-                <a href="#" class="destination-list-item destination-list-item-drop-down {{ allCollection.filter }} {{ allCollection.filter }}-background">
-                  {{ allCollection.filter }}
-                </a>
-              </li>
-              {% for collections in g.collection('amp-dev/documentation').collections() %}
-                {% if collections.filter  %}
-                  <li class="{{ collections.filter }}" option="{{ collections.filter }}">
-                    <a href="#" class="destination-list-item destination-list-item-drop-down {{ collections.filter }} {{ collections.filter }}-background">
-                      {{ collections.filter }}
-                    </a>
-                  </li>
-                {% endif %}
+              {% set filters = ['all', 'websites', 'ads', 'stories', 'e-mails'] %}
+              {% for filter in filters %}
+                <li class="{{ filter }}" option="{{ filter }}">
+                  <a href="#" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter }}-background">
+                    {{ filter }}
+                  </a>
+                </li>
               {% endfor %}
             </ul>
           </amp-selector>
