@@ -51,7 +51,8 @@
                   </div>
                 </header>
                 <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
-                {% for subCollections in  g.collection(collections.collection_path).collections() %}
+                {% for subCollections in g.collection(collections.collection_path).collections() %}
+                {% if subCollections.category == category %}
                   {% for subDocs in g.docs(subCollections.collection_path) %}
                     <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
                       <a href="{{ subDocs.url.path }}" class="ad-o-sidebar-list-item-lnk {% if subDocs.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
@@ -59,6 +60,7 @@
                       </a>
                     </li>
                   {% endfor %}
+                  {% endif %}
                 {% endfor %}
                 </ul>
               </section>

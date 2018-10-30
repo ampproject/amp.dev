@@ -1,4 +1,4 @@
 ---
 $title: Create your first amp page
-order: 1
+order: 2
 ---
