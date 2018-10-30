@@ -14,6 +14,11 @@
 @import '../../variables';
 
 section.#{organism('teaser-grid')} {
+	@media screen and (min-width: 768px){
+		grid-column-start: 1;
+		grid-column-end: 25;
+	}
+
 	@media screen and (min-width: 1024px){
 		grid-column-start: 4;
 		grid-column-end: 22;
@@ -53,7 +58,7 @@ section.#{organism('teaser-grid')} {
 				grid-template-columns: repeat(2, 1fr);
 			}
 
-			@media screen and (min-width: 991px) {
+			@media screen and (min-width: 768px) {
 				grid-template-columns: repeat(3, 1fr);
 			}
 		}
@@ -63,7 +68,7 @@ section.#{organism('teaser-grid')} {
 				grid-template-columns: repeat(2, 1fr);
 			}
 
-			@media screen and (min-width: 991px) {
+			@media screen and (min-width: 768px) {
 				grid-template-columns: repeat(4, 1fr);
 			}
 		}
