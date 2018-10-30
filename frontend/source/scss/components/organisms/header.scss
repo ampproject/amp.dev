@@ -291,10 +291,9 @@
     }
   }
 
-
   &-burger-menu {
     position: fixed;
-    padding: 4px 10px;
+    padding: 0;
     right: 0;
     z-index: 100;
 
@@ -302,9 +301,14 @@
       display: none;
     }
 
-    & svg {
-      height: 40px;
-      width: 40px;
+    &-icon.#{atom('ico')} {
+      width: 30px;
+      height: 30px;
+      padding: 12px 20px;
+      
+      @media screen and (min-width: 768px){
+        padding: 12px 30px;
+      }
     }
 
     &-btn {
