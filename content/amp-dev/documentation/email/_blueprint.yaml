@@ -1,9 +1,0 @@
-path: /documentation/e-mail/{base}.html
-view: /views/default.j2
-title: Documentation
-filter: e-mails
-
-
-
-localization:
-  path: /{locale}/documentation/e-mail/{base}.html
