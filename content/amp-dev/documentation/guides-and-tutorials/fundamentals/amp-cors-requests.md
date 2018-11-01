@@ -1,6 +1,6 @@
 ---
-$title: Quickstart
+$title: CORS in AMP
 $view: /views/docs/detail.j2
 
-order: 1
+order: 6
 ---
