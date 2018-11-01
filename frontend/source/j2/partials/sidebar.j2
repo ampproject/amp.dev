@@ -17,52 +17,53 @@
             </button>
           <amp-selector layout="container">
             <ul class="destination-list">
-              {% set allCollection = g.collection('amp-dev/documentation') %}
-              <li class="{{ allCollection.filter }}" option="{{ allCollection.filter }}">
-                <a href="#" class="destination-list-item destination-list-item-drop-down {{ allCollection.filter }} {{ allCollection.filter }}-background">
-                  {{ allCollection.filter }}
-                </a>
-              </li>
-              {% for collections in g.collection('amp-dev/documentation').collections() %}
-                {% if collections.filter  %}
-                  <li class="{{ collections.filter }}" option="{{ collections.filter }}">
-                    <a href="#" class="destination-list-item destination-list-item-drop-down {{ collections.filter }} {{ collections.filter }}-background">
-                      {{ collections.filter }}
-                    </a>
-                  </li>
-                {% endif %}
+              {% set filters = ['all', 'websites', 'ads', 'stories', 'e-mails'] %}
+              {% for filter in filters %}
+                <li class="{{ filter }}" option="{{ filter }}">
+                  <a href="#" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter }}-background">
+                    {{ filter }}
+                  </a>
+                </li>
               {% endfor %}
             </ul>
           </amp-selector>
         </div>
       </div>
     </div>
-
     <div class="ad-o-sidebar-list ad-o-sidebar-list-main">
       <amp-accordion animate>
+
         {% for collections in g.collection('amp-dev/documentation').collections() %}
+
+          {# get all collections inside of documentation, split its path and render only the collections related to current document #}
           {% set collectionName = collections.collection_path.split('/')[2] %}
-          {% if collectionName == doc.base %}
+
+          {# if a document is nested deeper than one collection, get the name of its parent collection #}
+          {% set currenctDocCollection = doc.url.path.split('/')[2] %}
+
+          {% if collectionName == doc.base or collectionName == currenctDocCollection %}
             {% for category in collections.categories %}
-               <section class="ad-o-sidebar-list-section">
+              <section class="ad-o-sidebar-list-section">
                 <header class="ad-o-sidebar-list-item ad-o-sidebar-list-header">
                   {{ category }}
-                <div class="ad-a-ico ad-o-sidebar-list-icon">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-              </div>
-            </header>
-            <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
-            {% for subCollections in  g.collection(collections.collection_path).collections() %}
-              {% for subDocs in g.docs(subCollections.collection_path) %}
-                <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
-                  <a href="{{ subDocs.url.path }}" class="ad-o-sidebar-list-item-lnk {% if subDocs.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
-                    {{ subDocs.title }}
-                  </a>
-                </li>
+                  <div class="ad-a-ico ad-o-sidebar-list-icon">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+                  </div>
+                </header>
+                <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
+                {% for subCollections in g.collection(collections.collection_path).collections() %}
+                {% if subCollections.category == category %}
+                  {% for subDocs in g.docs(subCollections.collection_path) %}
+                    <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
+                      <a href="{{ subDocs.url.path }}" class="ad-o-sidebar-list-item-lnk {% if subDocs.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
+                        {{ subDocs.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                  {% endif %}
                 {% endfor %}
-              {% endfor %}
-            </ul>
-          </section>
+                </ul>
+              </section>
             {% endfor %}
           {% endif %}
         {% endfor %}

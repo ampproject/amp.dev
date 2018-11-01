@@ -1,9 +1,0 @@
-path: /documentation/websites/{base}.html
-view: /views/default.j2
-title: Documentation
-filter: websites
-
-
-
-localization:
-  path: /{locale}/documentation/websites/{base}.html

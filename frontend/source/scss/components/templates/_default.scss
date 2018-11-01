@@ -7,7 +7,7 @@
   padding: 120px 20px 0;
   margin: 0 auto;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 1fr;
@@ -20,6 +20,11 @@
     width: 100%;
     grid-column: 1;
     position: relative;
+
+    @media screen and (min-width: 768px){
+      grid-column-start: 9;
+      grid-column-end: 25;
+    }
 
     @media screen and (min-width: 1024px){
       grid-column-start: 7;
@@ -35,11 +40,16 @@
       grid-column: auto;
       padding: 0;
 
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 768px) {
         order: inherit;
         grid-column-start: 1;
-        grid-column-end: 6;
+        grid-column-end: 8;
         margin-right: 0;
+      }
+
+      @media screen and (min-width: 1024px) {
+        grid-column-start: 1;
+        grid-column-end: 6;
       }
     }
   }

@@ -1,0 +1,4 @@
+path: /documentation/guides-and-tutorials/media/{base}.html
+view: /views/default.j2
+
+category: Multimedia & Animations

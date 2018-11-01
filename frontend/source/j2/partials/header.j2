@@ -12,8 +12,10 @@
   <div class="ad-o-header-wrapper">
    <input id="burger-menu-state" class="ad-o-header-burger-menu-btn" type="checkbox" />
       <label class="ad-o-header-burger-menu" for="burger-menu-state">
+        <div class="ad-a-ico ad-o-header-burger-menu-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
-    </label>
+        </div>
+      </label>
     {% set home = g.doc('/content/amp-dev/index.md') %}
     <div class="ad-o-header-lnk ad-o-header-lnk-home">
       <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">

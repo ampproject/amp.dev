@@ -2,6 +2,13 @@ path: /documentation/guides-and-tutorials/{base}.html
 view: /views/default.j2
 
 categories:
-  - Get Started
-  - Core Concepts
-  - Develop
+  - Getting Started
+  - Fundamentals
+  - Design & Layout
+  - Interactivity & Dynamic Content
+  - Multimedia & Animations
+  - Advertising
+  - Analytics
+  - Integration
+  - Troubleshooting
+  - Contribute

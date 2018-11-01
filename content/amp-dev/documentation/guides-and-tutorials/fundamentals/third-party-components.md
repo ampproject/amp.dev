@@ -1,0 +1,6 @@
+---
+$title: Include third-party contents
+$view: /views/docs/detail.j2
+
+order: 2
+---

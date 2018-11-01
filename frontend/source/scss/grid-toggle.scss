@@ -6,6 +6,7 @@ $gutterWidth: 30px;
 $gutterColor: transparent;
 
 @mixin grid {
+  position: fixed;
   pointer-events: none;
   background: repeating-linear-gradient(
     90deg,
@@ -23,7 +24,7 @@ $gutterColor: transparent;
 @mixin toggle {
   position: fixed;
   left: 1px;
-  top: 113px;
+  top: 99px;
   width: 13px;
   height: 28px;
   cursor: pointer;
@@ -40,7 +41,7 @@ $gutterColor: transparent;
   display: none;
   pointer-events: none;
   
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     display: block;
   }
 
@@ -49,7 +50,7 @@ $gutterColor: transparent;
     @include gradient-websites;
     text-align: left;
     border-radius: 20px;
-    z-index: 1;
+    z-index: 98;
 
     &:before {
       content: 'Toggle grid';
@@ -111,7 +112,7 @@ $gutterColor: transparent;
     @include toggle;
     margin: 0;
     opacity: 0;
-    z-index: 2;
+    z-index: 99;
 
     &:checked {
       & + .toggle .dot {
