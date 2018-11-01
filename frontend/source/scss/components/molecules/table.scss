@@ -27,14 +27,6 @@ example markup:
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 
-section.main {
-  margin: 35% auto;
-
-  @media screen and (min-width: 768px) {
-    margin: 15% auto;
-  }
-}
-
 table {
   position: relative;
   border-collapse: collapse;
