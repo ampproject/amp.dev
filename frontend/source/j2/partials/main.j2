@@ -2,6 +2,7 @@
   {% set has_toc = 'class="toc"' in doc.html %}
   {% if has_toc %}
 
+    {% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
     {% set first_div = doc.html.find('</div>') %}
     <section class="toc-column">
       <div class="ad-o-toc">
