@@ -1,0 +1,46 @@
+{% if doc.html %}
+  {% set has_toc = 'class="toc"' in doc.html %}
+  {% if has_toc %}
+
+    {% set first_div = doc.html.find('</div>') %}
+    <section class="toc-column">
+      <div class="ad-o-toc">
+        <b>On this page:</b>
+        {{doc.html[0:first_div + 6] | safe}}
+      </div>
+    </section>
+
+    <section class="main">
+      {% set docNoToc = doc.html.split('</div>', 1) %}
+      {{ docNoToc[1]|render|safe }}
+    </section>
+
+  {% else %}
+  
+    <section class="main">
+      {{ doc.html|render|safe }}
+    </section>
+
+  {% endif %}
+
+{% else %}
+
+  {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+  <section class="main">
+    <h1>{{ doc.title }}</h1>
+    <div class="ad-m-tip-container">
+      <div class="ad-m-tip ad-m-tip-default">
+        <h4>We are setting things up!</h4>
+        <p>For now this page is purposefully empty. We are going to take care of adding the content for this one soon.<br><br>In the meantime you might find the technical information about this document below helpful.</p>
+
+        <div class="ad-m-code-snippet">
+          <pre>
+            <span class="l l-Scalar l-Scalar-Plain">view</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.view }}"</span>
+            <span class="l l-Scalar l-Scalar-Plain">collection_path</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.collection.collection_path }}{{ doc.collection_path }}"</span>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+{% endif %}
