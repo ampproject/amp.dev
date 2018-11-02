@@ -4,3 +4,7 @@ $view: /views/docs/detail.j2
 
 order: 3
 ---
+
+[TOC]
+
+#Preload your Progressive Web App from your AMP pages
