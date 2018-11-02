@@ -2,5 +2,5 @@
 $title: Combine AMP with Progressive Web Apps
 $view: /views/docs/detail.j2
 
-order: 3
+order: 1
 ---

@@ -1,0 +1,3 @@
+---
+$title: Demonstrating AMP layouts
+---

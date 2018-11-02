@@ -51,18 +51,20 @@
                   </div>
                 </header>
                 <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
+
                 {% for subCollections in g.collection(collections.collection_path).collections() %}
                 {% if subCollections.category == category %}
                   {% for subDocs in g.docs(subCollections.collection_path) %}
-                    <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
+                     <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
                       <a href="{{ subDocs.url.path }}" class="ad-o-sidebar-list-item-lnk {% if subDocs.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
                         {{ subDocs.title }}
                       </a>
                     </li>
+
                     {# start of third level content rendering #}
                     {% for subDocsCollections in g.collection(subCollections.collection_path).collections() %}
                       {% if subDocsCollections.category == subDocs.title %}
-                        <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
+                      <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
                         {% for thirdLevelDocuments in  g.docs(subDocsCollections.collection_path) %}
                          <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
                             <a href="{{ thirdLevelDocuments.url.path }}" class="ad-o-sidebar-list-item-lnk {% if thirdLevelDocuments.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
