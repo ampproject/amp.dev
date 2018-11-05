@@ -1,5 +1,5 @@
 ---
-$title: Kesalahan Validasi AMP
+$title: Error validasi AMP
 ---
 
 <!---
@@ -18,115 +18,144 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Tidak boleh ada kesalahan validasi apa pun dalam dokumen AMP yang valid.
-Tujuan dokumen ini adalah untuk membantu Anda memahami
-dengan lebih baik dan memperbaiki kesalahan validasi yang dihadapi
-ketika [memvalidasi laman AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
-Untuk ringkasan lengkap kesalahan validasi,
+Tidak boleh ada error validasi apa pun dalam dokumen AMP yang valid.
+Tujuan dokumen ini adalah untuk membantu Anda memahami dengan lebih baik
+dan memperbaiki error validasi apa pun yang dihadapi
+saat Anda [memvalidasi halaman AMP](/id/docs/fundamentals/validate.html).
+Untuk ringkasan lengkap mengenai error validasi,
 lihat [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
 
-## Kesalahan atribut dan tag HTML AMP
+## Error atribut dan tag HTML AMP
 
 ### Tag wajib tidak tersedia
 
 <table>
    <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>MANDATORY_TAG_MISSING</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>MANDATORY_TAG_MISSING</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The mandatory tag '%1' is missing or incorrect."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The mandatory tag '%1' is missing or incorrect."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Tambahkan (atau perbaiki) tag HTML wajib.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Tambahkan (atau perbaiki) tag HTML wajib.</td>
   </tr>
 </table>
 
 Tag berikut harus ada di semua dokumen AMP:
 
 * <a name="doctype"></a>`<!doctype html>`
-* <a name="html"></a>`<html amp> or <html ⚡>`
+* <a name="html"></a>`<html amp> atau <html ⚡>`
 * <a name="head"></a>`<head>`
 * <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
 * <a name="utf"></a>`<meta charset="utf-8">`
 * <a name="viewport"></a>`<meta name="viewport" content="...">`
 * <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
-* <a name="body"></a>`body`
+* <a name="body"></a>`<body>`
 
-Tag wajib ini termasuk bidang `mandatory: true` di [spek validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii);
-juga dirujuk dalam [spesifikasi AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}).
+Tag wajib ini mencakup kolom `mandatory: true` dalam <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">spesifikasi validator AMP</a>;
+tag tersebut juga dirujuk dalam [spesifikasi AMP](/id/docs/fundamentals/spec.html).
 
 ### Tag yang dibutuhkan oleh tag lain tidak tersedia
 
 <table>
-   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>TAG_REQUIRED_BY_MISSING</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The '%1' tag is missing or incorrect, but required by '%2'."</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>TAG_REQUIRED_BY_MISSING</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Tambahkan (atau perbaiki) tag HTML yang dibutuhkan.</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The '%1' tag is missing or incorrect, but required by '%2'."</td>
+  </tr>
+   <tr>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Tambahkan (atau perbaiki) tag HTML yang diperlukan.</td>
   </tr>
 </table>
 
-Validator memunculkan kesalahan `TAG_REQUIRED_BY_MISSING`
-ketika menemukan komponen yang diperpanjang di dokumen AMP,
-tetapi tidak menemukan persamaannya `<script>`.
+Validator menampilkan error `TAG_REQUIRED_BY_MISSING`
+ketika menemukan komponen yang diperpanjang dalam dokumen AMP,
+tapi tidak menemukan `<script>` yang setara.
 
-[Komponen yang diperpanjang](/docs/reference/components.html)
-harus disertakan dalam dokumen AMP sebagai komponen khusus.
-Untuk memperbaiki kesalahan ini, navigasikan ke laman referensi komponen yang diperpanjang,
-salin skrip yang dibutuhkan, dan tempel ke dokumen AMP `<head>`.
+[Komponen yang diperpanjang](/id/docs/reference/components.html)
+harus disertakan secara eksplisit dalam dokumen AMP sebagai elemen kustom.
+Untuk memperbaiki error ini, buka halaman referensi komponen yang diperpanjang,
+salin skrip yang diperlukan, lalu tempel ke `<head>` dokumen AMP.
 
-### Tag terlarang
+### Tag tidak diizinkan
 
 <table>
    <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>DISALLOWED_TAG</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>DISALLOWED_TAG</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The tag '%1' is disallowed."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The tag '%1' is disallowed."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus tag terlarang.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus tag yang tidak diizinkan.</td>
   </tr>
 </table>
 
-Tag dimasukkan ke daftar putih, sehingga tidak ada daftar definitif semua tag terlarang;
-namun, [spesifikasi AMP]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})
-mendefinisikan secara luas kumpulan tag terlarang.
+Tag disertakan dalam daftar yang disetujui, sehingga tidak ada daftar definitif semua tag yang tidak diizinkan;
+namun, [spesifikasi AMP](/id/docs/fundamentals/spec.html)
+secara luas mendefinisikan kumpulan tag yang tidak diizinkan.
+
+### JavaScript kustom tidak diizinkan
+
+<table>
+   <tr>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>DISALLOWED_SCRIPT_TAG</td>
+  </tr>
+   <tr>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"Custom JavaScript is not allowed."</td>
+  </tr>
+   <tr>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus tag javascript.</td>
+  </tr>
+</table>
+
+Format AMP tidak mengizinkan penambahan JavaScript kustom ke halaman, kecuali untuk file JavaScript
+yang disediakan oleh Project AMP itu sendiri. Kebanyakan penggunaan umum JavaScript memiliki
+implementasi setara library HTML AMP. Lihat [komponen
+AMP](/id/docs/reference/components) untuk mengetahui kumpulan komponen yang dapat
+digunakan untuk menyempurnakan halaman HTML AMP.
+
+Jika kasus penggunaan Anda tidak tercakup, Anda juga dapat menyertakan komponen
+baru ke Project AMP. Lihat dokumen
+[berkontribusi](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)
+Project AMP untuk informasi selengkapnya.
 
 ### Atribut wajib tidak tersedia
 
 <table>
    <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>MANDATORY_ATTR_MISSING</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>MANDATORY_ATTR_MISSING</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The mandatory attribute '%1' is missing in tag '%2'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The mandatory attribute '%1' is missing in tag '%2'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Tambahkan atribut wajib ke tag.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Tambahkan atribut wajib ke tag.</td>
   </tr>
 </table>
 
 Atribut wajib tag AMP didefinisikan dalam
-[spek validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+[spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 Cukup telusuri tag,
 lihat atribut yang tercantum,
 dan periksa `mandatory: true`.
@@ -137,162 +166,162 @@ dalam spesifikasi tag.
 
 <table>
    <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>INVALID_ATTR_VALUE</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>INVALID_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The attribute '%1' in tag '%2' is set to the invalid value '%3'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The attribute '%1' in tag '%2' is set to the invalid value '%3'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Perbaiki nilai atribut menjadi nilai yang valid.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Perbaiki nilai atribut menjadi nilai yang valid.</td>
   </tr>
 </table>
 
-Kesalahan ini menunjukkan bahwa tag HTML memiliki atribut dengan nama yang diizinkan,
-tetapi nilainya terlarang.
-Misalnya, pemicu umum kesalahan ini adalah nilai yang tidak valid untuk URL.
-Semua nilai URL (di atribut `href` dan `src`) harus cocok dengan salah satu
-[nilai atribut yang mungkin](http://www.w3schools.com/tags/att_a_href.asp) berikut.
+Error ini menunjukkan bahwa tag HTML memiliki atribut dengan nama yang dibolehkan,
+tetapi bukan nilai yang diizinkan.
+Misalnya, satu pemicu umum kesalahan ini adalah nilai yang tidak valid untuk URL.
+Semua nilai URL (di atribut `href` dan `src`) harus cocok dengan salah satu dari
+[nilai atribut yang memungkinkan](http://www.w3schools.com/tags/att_a_href.asp).
 
-<strong>PENTING:</strong> Banyak nilai URL di AMP membutuhkan HTTPS.
-Jika Anda mendapati kesalahan ini, dan tidak yakin tentang penyebabnya,
+<strong>PENTING:</strong> Banyak nilai URL di AMP memerlukan HTTPS.
+Jika Anda mendapati error ini, dan tidak yakin dengan alasan error tersebut,
 periksa spesifikasi tag AMP yang relevan
-untuk melihat atribut yang membutuhkan HTTPS.
+untuk melihat apakah atribut membutuhkan HTTPS.
 
-### Atribut terlarang
+### Atribut tidak diizinkan
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>DISALLOWED_ATTR</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>DISALLOWED_ATTR</td>
   </tr>
   <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The attribute '%1' may not appear in tag '%2'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The attribute '%1' may not appear in tag '%2'."</td>
   </tr>
   <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus atribut dari tag HTML.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus atribut dari tag HTML.</td>
   </tr>
 </table>
 
-Atribut dimasukkan ke daftar putih, sehingga tidak ada daftar definitif atribut terlarang.
+Atribut disertakan dalam daftar yang disetujui, sehingga tidak ada daftar definitif semua atribut yang tidak diizinkan.
 Untuk memeriksa atribut yang didukung untuk setiap tag tertentu,
-telusuri tag HTML, kemudian `attrs`
-di [spek validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+telusuri tag HTML, lalu `attrs`
+di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
-Selain daftar putih atribut tertentu untuk setiap tag,
-semua tag AMP dapat menggunakan atribut apa pun yang tercantum dalam daftar putih di `$GLOBAL_ATTRS`;
-semua atribut dengan awalan `"data-"` juga dimasukkan dalam daftar putih.
+Selain daftar atribut tertentu yang disetujui untuk setiap tag,
+semua tag AMP dapat menggunakan salah satu atribut dalam daftar yang disetujui di `$GLOBAL_ATTRS`;
+semua atribut dengan awalan `"data-"` juga tercantum dalam daftar yang disetujui.
 
 ### Teks wajib tidak tersedia atau salah
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>MANDATORY_CDATA_MISSING_OR_INCORRECT</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>MANDATORY_CDATA_MISSING_OR_INCORRECT</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The mandatory text (CDATA) inside tag '%1' is missing or incorrect."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The mandatory text (CDATA) inside tag '%1' is missing or incorrect."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Tambahkan atau perbaiki teks wajib dalam tag.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Tambahkan atau perbaiki teks wajib dalam tag.</td>
   </tr>
 </table>
 
 CDATA adalah data konten antara tag HTML awal dan akhir
-serta saat ini dievaluasi dengan daftar putih dan daftar hitam.
+serta saat ini dievaluasi dengan daftar yang diizinkan dan tidak diizinkan.
 Tag dengan CDATA wajib termasuk:
 
-[sourcecode:YKL]
+[sourcecode:html]
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 [/sourcecode]
 
 Dan:
 
-[sourcecode:YKL]
+[sourcecode:html]
 <style amp-custom>
 [/sourcecode]
 
-Pesan mendetail kesalahan ini dapat berupa salah satu dari yang berikut:
+Pesan mendetail error ini dapat berupa salah satu dari yang berikut:
 
 * "Gaya wajib yang diulang (js diaktifkan)"
 * "Gaya wajib yang diulang (noscript)"
-* "Awalan nama kelas CSS -amp- terlarang"
-* "Atribut penting terlarang di CSS!"
-* "@charset terlarang di CSS"
-* "@import terlarang di CSS"
-* "@namespace terlarang di CSS"
-* "@support terlarang di CSS"
-* "@document terlarang di CSS"
-* "@page terlarang di CSS"
-* "@viewport terlarang di CSS"
+* "Awalan nama kelas CSS -amp- yang tidak diizinkan"
+* "Atribut !important yang tidak diizinkan di CSS!"
+* "@charset yang tidak diizinkan di CSS"
+* "@import yang tidak diizinkan di CSS"
+* "@namespace yang tidak diizinkan di CSS"
+* "@support yang tidak diizinkan di CSS"
+* "@document yang tidak diizinkan di CSS"
+* "@page yang tidak diizinkan di CSS"
+* "@viewport yang tidak diizinkan di CSS"
 
-### Teks terlarang dalam tag
+### Teks tidak diizinkan dalam tag
 
 <table>
    <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>CDATA_VIOLATES_BLACKLIST</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>CDATA_VIOLATES_BLACKLIST</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The text (CDATA) inside tag '%1' matches '%2', which is disallowed."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The text (CDATA) inside tag '%1' matches '%2', which is disallowed."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus teks terlarang.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus teks yang tidak diizinkan.</td>
   </tr>
 </table>
 
-Data CSS tertentu dimasukkan ke daftar hitam
+Data CSS tertentu dimasukkan ke daftar yang tidak diizinkan
 untuk memvalidasi aturan AMP CSS yang penting.
 
-Berikut adalah daftar data CSS yang dimasukkan ke daftar hitam
-(lihat juga <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`blacklisted_cdata_regex` di spek validator AMP</a>):
+Berikut adalah daftar data CSS yang tidak diizinkan
+(lihat juga [`blacklisted_cdata_regex` di spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("Awalan nama kelas -amp- CSS")
 * `"!important"`
 * `"charset"`
-* `"@import"`
+* `"&#64;import"`
 * `"@namespace"`
 * `"@document"`
 * `"@page"`
 * `"@viewport"`
 
-### Properti terlarang dalam atribut di tag
+### Properti tidak diizinkan dalam atribut di tag
 
 <table>
    <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>DISALLOWED_PROPERTY_IN_ATTR_VALUE</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>DISALLOWED_PROPERTY_IN_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The property '%1' in attribute '%2' in tag '%3' is disallowed."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The property '%1' in attribute '%2' in tag '%3' is disallowed."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus properti terlarang di atribut tertentu.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus properti yang tidak diizinkan di atribut tertentu.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi ketika nama properti dalam atribut tidak diperbolehkan.
-Properti istilah dalam konteks ini berarti data kunci/nilai terstruktur dalam atribut.
-Misalnya, di
+Error ini terjadi ketika nama properti dalam atribut tidak diizinkan.
+Istilah properti dalam konteks ini berarti data kunci/nilai terstruktur dalam atribut.
+Misalnya, dalam
 `<meta name="viewport content="width=device-width;minimum-scale=1">`,
 `width` dan `minimum-scale` adalah nama properti.
 
-Berikut ini yang menyebabkan kesalahan DISALLOWED_PROPERTY_IN_ATTR_VALUE:
+Berikut ini yang menyebabkan error DISALLOWED_PROPERTY_IN_ATTR_VALUE:
 
 `<meta name="viewport content="width=device-width;invalidfoo=1">`
 
 Contoh lainnya,
-yang berikut akan menyebabkan kesalahan:
+yang berikut akan menyebabkan error:
 
 `<meta http-equiv="X-UA-Compatible" content="invalidfoo=edge">`
 
@@ -302,35 +331,30 @@ Seharusnya: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
 
 <table>
    <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>INVALID_PROPERTY_VALUE_IN_ATTR_VALUE</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>INVALID_PROPERTY_VALUE_IN_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The property '%1' in attribute '%2' in tag '%3' is set to '%4', which is invalid."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The property '%1' in attribute '%2' in tag '%3' is set to '%4', which is invalid."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Perbaiki nilai properti yang tidak valid.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Perbaiki nilai properti yang tidak valid.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika nilai properti dalam atribut tidak valid.
-Properti istilah dalam konteks ini berarti data kunci/nilai terstruktur dalam atribut.
-Misalnya, di
+Error ini terjadi jika nilai properti dalam atribut tidak valid.
+Istilah properti dalam konteks ini berarti data kunci/nilai terstruktur dalam atribut.
+Misalnya, dalam
 `<meta name="viewport content="width=device-width;minimum-scale=1">`,
 `device-width` dan `1` adalah nilai properti.
 
-Berikut ini yang menyebabkan kesalahan INVALID_PROPERTY_VALUE_IN_ATTR_VALUE:
+Berikut ini yang menyebabkan error INVALID_PROPERTY_VALUE_IN_ATTR_VALUE:
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-Contoh lainnya,
-yang berikut akan menyebabkan kesalahan:
-
-`<meta http-equiv="X-UA-Compatible" content="ie=invalidfoo">`
-
-Seharusnya: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
+Perhatikan bahwa jika Anda mencoba membuat atribut yang tidak bernilai (misalnya, atribut seperti `autoplay`, `controls`, atau `loop` untuk komponen `<amp-video>`), tapi proses pembuatan HTML menghasilkan nilai default (tapi tidak valid) seperti `true` (misalnya, React akan menghasilkan `<amp-video autoplay="true" ...>` [secara default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), solusinya adalah membuat nama atribut sebagai nilai. Misalnya, `<amp-video autoplay="autoplay" ...>`.
 
 ### URL tidak tersedia
 
@@ -344,12 +368,12 @@ Seharusnya: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
     <td>"Missing URL for attribute '%1' in tag '%2'."</td>
   </tr>
    <tr>
-    <td class="col-thirty"><strong>Perbaikan</strong></td>
+    <td class="col-thirty"><strong>Perbaiki</strong></td>
     <td>Tambahkan URL yang valid.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika URL yang dibutuhkan atribut tidak tersedia,
+Error ini terjadi jika URL yang dibutuhkan atribut tidak tersedia,
 misalnya, atribut `href` atau `src` kosong.
 
 ### URL tidak valid
@@ -364,13 +388,13 @@ misalnya, atribut `href` atau `src` kosong.
     <td>"Malformed URL '%3' for attribute '%1' in tag '%2'"</td>
   </tr>
    <tr>
-    <td class="col-thirty"><strong>Perbaikan</strong></td>
+    <td class="col-thirty"><strong>Perbaiki</strong></td>
     <td>Perbaiki URL yang rusak.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika atribut memiliki URL,
-tetapi URL-nya tidak valid.
+Error ini terjadi jika atribut memiliki URL,
+tetapi URL tersebut tidak valid.
 
 ### Protokol URL tidak valid
 
@@ -384,33 +408,33 @@ tetapi URL-nya tidak valid.
     <td>Invalid URL protocol '%3:' for attribute '%1' in tag '%2'.</td>
   </tr>
    <tr>
-    <td class="col-thirty"><strong>Perbaikan</strong></td>
-    <td>Ubah ke protokol yang valid, misalnya, `http` mungkin perlu diubah ke `https`.</td>
+    <td class="col-thirty"><strong>Perbaiki</strong></td>
+    <td>Ubah ke protokol yang valid, misalnya, `http` mungkin perlu diubah menjadi `https`.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi karena tag yang memiliki `href` atau `src`
+Error ini terjadi karena tag yang memiliki `href` atau `src`
 harus ditetapkan ke protokol tertentu.
-Misalnya, banyak tag yang memerlukan `https`.
+Misalnya, banyak tag yang memerlukan 'https'.
 
 ### Properti wajib tidak tersedia di atribut
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>MANDATORY_PROPERTY_MISSING_FROM_ATTR_VALUE</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>MANDATORY_PROPERTY_MISSING_FROM_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The property '%1' is missing from attribute '%2' in tag '%3'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The property '%1' is missing from attribute '%2' in tag '%3'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Tambahkan properti yang tidak tersedia.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Tambahkan properti yang tidak tersedia.</td>
   </tr>
 </table>
 
-Saat ini, kesalahan ini terjadi jika properti wajib berikut tidak tersedia:
+Saat ini, error ini terjadi jika properti wajib berikut tidak tersedia:
 
 * `content="...ie=..."`
 * `content="...width=..."`
@@ -425,72 +449,70 @@ Properti tersebut mengacu pada tag yang diharapkan:
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>MUTUALLY_EXCLUSIVE_ATTRS</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>MUTUALLY_EXCLUSIVE_ATTRS</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"Mutually exclusive attributes encountered in tag '%1' - pick one of %2."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"Mutually exclusive attributes encountered in tag '%1' - pick one of %2."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus salah satu atribut yang saling lepas.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus salah satu atribut yang saling lepas.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika tag memiliki atribut yang saling lepas.
+Error ini terjadi jika tag memiliki atribut yang saling lepas.
 Misalnya, hanya satu yang diizinkan dari tag berikut:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` atau `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` atau `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` atau `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` atau `data-videoid`
+* [amp-iframe](/id/docs/reference/components/amp-iframe.html): `src` atau `srcdoc`
+* [amp-jwplayer](/id/docs/reference/components/amp-jwplayer.html): `data-media-id` atau `data-playlist-id`
 
-### Atribut wajib di daftar tidak tersedia
+### Atribut wajib tidak tersedia di daftar
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>MANDATORY_ONEOF_ATTR_MISSING</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>MANDATORY_ONEOF_ATTR_MISSING</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The tag '%1' is missing a mandatory attribute - pick one of %2." </td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The tag '%1' is missing a mandatory attribute - pick one of %2." </td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Tambahkan atribut wajib yang tidak tersedia dari pilihan atribut yang tersedia.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Tambahkan atribut wajib yang tidak tersedia dari pilihan atribut yang tersedia.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika atribut yang dibutuhkan tag tidak tersedia
+Error ini terjadi jika atribut yang dibutuhkan tag tidak tersedia
 di pilihan.
-Misalnya, tag berikut memerlukan salah satu atribut dari pilihan yang tersedia:
+Misalnya, tag berikut memerlukan salah satu atribut dari dua pilihan yang tersedia:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` atau `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.htm): `data-shortcode` atau `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` atau `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` atau `data-videoid`
+* [amp-twitter](/id/docs/reference/components/amp-twitter.html): `data-tweetid` atau `src`
+* [amp-instagram](/id/docs/reference/components/amp-instagram.html): `data-shortcode` atau `src`
+* [amp-iframe](/id/docs/reference/components/amp-iframe.html): `src` atau `srcdoc`
+* [amp-youtube](/id/docs/reference/components/amp-youtube.html): `src` atau `data-videoid`
 
 ### Tag induk salah
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>WRONG_PARENT_TAG</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>WRONG_PARENT_TAG</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The parent tag of tag '%1' is '%2', but it can only be '%3'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The parent tag of tag '%1' is '%2', but it can only be '%3'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Buat tag turunan langsung dari tag induk yang dibutuhkan.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Buat tag turunan langsung dari tag induk yang dibutuhkan.</td>
   </tr>
 </table>
 
 Tag tertentu memerlukan induk langsung (bukan induk jauh).
-Berikut daftar tag tertentu yang membutuhkan induk
+Berikut ini daftar tag tertentu yang membutuhkan induk
 (tag, induk):
 
 * `!doctype` membutuhkan tag induk `root`.
@@ -505,42 +527,42 @@ Berikut daftar tag tertentu yang membutuhkan induk
 * `script` membutuhkan tag induk `head`.
 * `source` membutuhkan tag media (`amp-audio`, `amp-video`, dll.).
 
-### Induk tag terlarang
+### Induk tag tidak diizinkan
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>DISALLOWED_TAG_ANCESTOR</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>DISALLOWED_TAG_ANCESTOR</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The tag '%1' may not appear as a descendant of tag '%2'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The tag '%1' may not appear as a descendant of tag '%2'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus (atau pindahkan) tag bertingkat terlarang.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus (atau pindahkan) tag bertingkat yang tidak diizinkan.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika tag merupakan turunan dari tag lain
+Error ini terjadi jika tag merupakan turunan dari tag lain
 yang tidak memvalidasi.
-Saat ini, contohnya hanya tag `template`,
-yang tidak dapat bertingkat di tag `template` lain.
+Saat ini, contohnya hanya tag <code>template</code>,
+yang tidak dapat bertingkat di bawah tag <code>template</code> lain.
 
 ### Induk tag wajib
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>MANDATORY_TAG_ANCESTOR</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>MANDATORY_TAG_ANCESTOR</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The tag '%1' may only appear as a descendant of tag '%2'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The tag '%1' may only appear as a descendant of tag '%2'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus tag atau buat turunan tag tertentu.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus tag atau jadikan tag itu sebagai turunan tag tertentu.</td>
   </tr>
 </table>
 
@@ -548,7 +570,7 @@ Turunan wajib didefinisikan di
 [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)
 sebagai `mandatory_ancestor`.
 
-Kesalahan ini terjadi saat tag berikut
+Error ini terjadi saat tag berikut
 tidak memiliki `mandatory_ancestor` (tag, induk):
 
 * `img` harus berupa turunan dari `noscript`.
@@ -560,21 +582,21 @@ tidak memiliki `mandatory_ancestor` (tag, induk):
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>MANDATORY_TAG_ANCESTOR_WITH_HINT</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>MANDATORY_TAG_ANCESTOR_WITH_HINT</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The tag '%1' may only appear as a descendant of tag '%2'. Did you mean '%3'?"</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The tag '%1' may only appear as a descendant of tag '%2'. Did you mean '%3'?"</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus tag, buat turunan tag tertentu, atau ganti tag dengan tag yang diberi petunjuk.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus tag, jadikan tag itu sebagai turunan tag tertentu, atau ganti tag dengan tag yang diberi petunjuk.</td>
   </tr>
 </table>
 
-Kesalahan terjadi jika salah satu tag berikut ditemukan di dokumen AMP,
-dan tidak bertumpuk dengan benar di induk wajibnya:
+Error tersebut terjadi ketika salah satu tag berikut ditemukan di dokumen AMP,
+dan tidak bertumpuk dengan benar pada induk wajibnya:
 
 * `img` tidak dalam induk `noscript`.
 * `video` tidak dalam induk `noscript`.
@@ -585,21 +607,21 @@ dan tidak bertumpuk dengan benar di induk wajibnya:
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>DUPLICATE_UNIQUE_TAG</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>DUPLICATE_UNIQUE_TAG</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The tag '%1' appears more than once in the document."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The tag '%1' appears more than once in the document."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus salah satu tag duplikat dari dokumen AMP.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus salah satu tag duplikat dari dokumen AMP.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika hanya satu kemunculan tag yang diizinkan,
-dan ditemukan diplikatnya.
+Error ini terjadi jika hanya satu kemunculan tag yang diizinkan,
+dan ditemukan duplikatnya.
 
 Daftar lengkap tag unik yang diketahui:
 
@@ -615,135 +637,135 @@ Daftar lengkap tag unik yang diketahui:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Kesalahan gaya dan tata letak
+## Error gaya dan tata letak
 
-Sebelum mendalami kesalahan gaya dan tata letak,
-Anda perlu memahami cara kerja
-[pemberian gaya]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}) dan
-[tata letak]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) di AMP.
-Karena laman AMP adalah laman HTML, pemberian gaya kurang lebih sama seperti pada laman HTML.
-Tetapi ada beberapa pembatasan untuk memastikan laman dimuat dengan cepat,
+Sebelum mendalami error gaya dan tata letak,
+penting untuk memahami cara kerja
+[pengaturan gaya](/id/docs/design/responsive/style_pages.html) dan
+[tata letak](/id/docs/design/responsive/control_layout.html) di AMP.
+Karena halaman AMP adalah halaman HTML, pengaturan gaya kurang lebih sama seperti pada halaman HTML.
+Tetapi ada beberapa pembatasan untuk memastikan halaman dimuat dengan cepat,
 dan validator AMP memberlakukan pembatasan ini.
 
-Tata letak lebih terkontrol di laman AMP.
-Setiap tag yang ditampilkan pada laman
+Tata letak jadi lebih terkontrol di halaman AMP.
+Tag apa pun yang ditampilkan pada halaman
 membutuhkan tinggi dan lebar yang telah ditetapkan sebelumnya,
-untuk mengurangi perenderan dan pengguliran yang tidak perlu secara signifikan.
+untuk mengurangi rendering dan scroll yang tidak perlu secara signifikan.
 Hal ini tidak berarti Anda perlu menyertakan atribut ini secara manual.
 Untuk jenis tata letak tertentu,
-validator AMP tidak akan menampilkan kesalahan
+validator AMP tidak akan menampilkan error
 karena nilai default telah diasumsikan.
 
 Setiap tag AMP memiliki akhiran `supported_layouts`,
 seperti yang didefinisikan dalam
 [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
-Validator akan menampilkan kesalahan untuk tata letak yang tidak didukung,
-dan akan memeriksa aturan validasi tata letak yang telah didefinisikan sebelumnya.
+Validator akan menampilkan error untuk tata letak yang tidak didukung,
+dan akan memeriksa aturan validasi untuk tata letak yang telah didefinisikan sebelumnya.
 
 ### Stylesheet terlalu panjang
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>STYLESHEET_TOO_LONG</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>STYLESHEET_TOO_LONG</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The author stylesheet specified in tag 'style' is too long - we saw %1 bytes whereas the limit is %2 bytes."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The author stylesheet specified in tag 'style' is too long - we saw %1 bytes whereas the limit is %2 bytes."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Kurangi ukuran stylesheet menjadi di bawah 50.000 byte.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Kurangi ukuran stylesheet menjadi di bawah 50.000 byte.</td>
   </tr>
 </table>
 
-Kesalahan ini akan ditampilkan
-jika validator AMP mengukur konten gaya
+Error ini akan ditampilkan jika validator AMP
+mengukur ukuran konten gaya
 dalam `<style amp-custom>` dan ukurannya melebihi batas 50.000 byte.
 
-### Kesalahan sintaksis CSS
+### Error sintaks CSS
 
 <table>
    <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>CSS_SYNTAX</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>CSS_SYNTAX</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"CSS syntax error in tag '%1' - %2."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"CSS syntax error in tag '%1' - %2."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Perbaiki kesalahan sintaksis CSS.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Perbaiki error sintaks CSS.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika Anda memiliki kesalahan sintaksis CSS
+Error ini terjadi jika Anda memiliki error sintaks CSS
 di tag tertentu.
-Jika tidak yakin penyebab kesalahan,
+Jika tidak yakin penyebab error,
 coba jalankan CSS
 lewat validator CSS online, misalnya,
 [csslint](http://csslint.net/).
 
-### Kesalahan sintaksis CSS pada aturan tertentu
+### Error sintaks CSS pada aturan tertentu
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>CSS_SYNTAX_INVALID_AT_RULE</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>CSS_SYNTAX_INVALID_AT_RULE</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"CSS syntax error in tag '%1' - saw invalid at rule '%2'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"CSS syntax error in tag '%1' - saw invalid at rule '%2'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Perbaiki kesalahan sintaksis CSS tertentu.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Perbaiki error sintaks CSS tertentu.</td>
   </tr>
 </table>
 
-Kesalahan ini mengacu pada @-aturan dalam CSS,
-untuk setiap AMP yang hanya mengizinkan beberapa aturan.
-(lihat juga [spesifikasi AMP ]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})).
-Misalnya, `@import` tidak diizinkan.
-Kesalahan validasi secara khusus
+Error ini mengacu pada @-rules dalam CSS,
+untuk AMP yang hanya mengizinkan beberapa aturan.
+(lihat juga [spesifikasi AMP](/id/docs/fundamentals/spec.html)).
+Misalnya, <code>@import</code> tidak diizinkan.
+Error validasi secara spesifik
 memberi tahu Anda aturan yang tidak valid,
-memudahkan untuk memperbaiki aturan.
+sehingga memudahkan perbaikan aturan tersebut.
 
-### Tata letak tersirat tidak didukung tag AMP
+### Tata letak tersirat tidak didukung oleh tag AMP
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>IMPLIED_LAYOUT_INVALID</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>IMPLIED_LAYOUT_INVALID</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The implied layout '%1' is not supported by tag '%2'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The implied layout '%1' is not supported by tag '%2'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Berikan atribut tata letak yang valid kepada tag.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Berikan atribut tata letak yang valid untuk tag tersebut.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika Anda tidak menentukan tata letak untuk tag AMP,
+Error ini terjadi jika Anda tidak menentukan tata letak untuk tag AMP,
 dan tata letak tersirat (berdasarkan lebar, tinggi, dan ukuran) tidak didukung.
 Periksa nilai `supported_layout` untuk tag
 di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
-Untuk mengetahui lebih banyak tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) dan
-[Spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
+Untuk mengetahui selengkapnya tentang cara kerja tata letak,
+lihat [Cara Mengontrol Tata Letak](/id/docs/design/responsive/control_layout.html) dan
+[spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
 
-**Catatan:** Jika tata letak tidak ditentukan,
-serta nilai `width` dan `height` tidak disertakan,
-default tata letak menjadi PENAMPUNG.
-Validator menampilkan kesalahan
-karena PENAMPUNG tidak didukung di tag AMP mana pun.
-Tentukan tata letak selain PENAMPUNG,
-atau tambahkan nilai `width` dan/atau `height`, maka kesalahan akan hilang.
+**Catatan:** Jika Anda tidak menentukan tata letak,
+serta tidak menyertakan nilai `width` dan `height`,
+tata letak akan ditetapkan secara default ke CONTAINER.
+Validator menampilkan error
+karena CONTAINER tidak didukung di tag AMP apa pun.
+Tentukan tata letak selain CONTAINER,
+atau tambahkan nilai `width` dan/atau `height`, maka error akan hilang.
 
 ### Atribut tidak diizinkan oleh tata letak tersirat
 
@@ -757,43 +779,43 @@ atau tambahkan nilai `width` dan/atau `height`, maka kesalahan akan hilang.
     <td>"The attribute '%1' in tag '%2' is disallowed by implied layout '%3'."</td>
   </tr>
    <tr>
-    <td class="col-thirty"><strong>Perbaikan</strong></td>
-    <td>Hapus atribut terlarang dari tag,
-      atau tentukan tata letak lain yang mengizinkannya.</td>
+    <td class="col-thirty"><strong>Perbaiki</strong></td>
+    <td>Hapus atribut yang tidak diizinkan dari tag,
+      atau tentukan tata letak yang mengizinkannya.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika Anda tidak menentukan tata letak untuk tag AMP,
-dan tata letak tersirat berisi atribut terlarang.
-Atribut terlarang untuk jenis tata letak dijelaskan di
-[spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
+Error ini terjadi jika Anda tidak menentukan tata letak untuk tag AMP,
+dan tata letak tersirat berisi atribut yang tidak diizinkan.
+Atribut yang tidak diizinkan untuk jenis tata letak dijelaskan di
+[spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
 
 ### Tata letak yang ditentukan tidak didukung oleh tag AMP
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>SPECIFIED_LAYOUT_INVALID</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>SPECIFIED_LAYOUT_INVALID</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The specified layout '%1' is not supported by tag '%2'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The specified layout '%1' is not supported by tag '%2'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Tentukan tata letak yang didukung oleh tag.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Tentukan tata letak yang didukung oleh tag.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika tata letak yang ditentukan
+Error ini terjadi jika tata letak yang ditentukan
 untuk tag tidak didukung.
 Periksa nilai `supported_layout` untuk tag
 di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
-Untuk mengetahui lebih banyak tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) dan
-[Spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
+Untuk mengetahui selengkapnya tentang cara kerja tata letak,
+lihat [Cara Mengontrol Tata Letak](/id/docs/design/responsive/control_layout.html) dan
+[spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
 
 ### Atribut tidak diizinkan oleh tata letak tertentu
 
@@ -807,42 +829,42 @@ lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/docs/design/responsive/cont
     <td>"The attribute '%1' in tag '%2' is disallowed by implied layout '%3'."</td>
   </tr>
    <tr>
-    <td class="col-thirty"><strong>Perbaikan</strong></td>
-    <td>Hapus atribut terlarang dari tag,
-      atau tentukan tata letak lain yang mengizinkannya.</td>
+    <td class="col-thirty"><strong>Perbaiki</strong></td>
+    <td>Hapus atribut yang tidak diizinkan dari tag,
+      atau tentukan tata letak yang mengizinkannya.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika Anda menentukan tata letak untuk tag AMP,
-dan tata letak berisi atribut terlarang.
-Atribut terlarang untuk jenis tata letak dijelaskan di
-[spesifikasi sistem tata letak HTML AMP](/docs/reference/spec/amp-html-layout.html).
+Error ini terjadi jika Anda menentukan tata letak untuk tag AMP,
+dan tata letak tersebut berisi atribut yang tidak diizinkan.
+Atribut yang tidak diizinkan untuk jenis tata letak dijelaskan di
+[spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
 
-### Nilai yang dibutuhkan tata letak tidak valid
+### Nilai untuk atribut yang dibutuhkan tata letak tidak valid
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>ATTR_VALUE_REQUIRED_BY_LAYOUT</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>ATTR_VALUE_REQUIRED_BY_LAYOUT</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"Invalid value '%1' for attribute '%2' in tag '%3' - for layout '%4', set the attribute '%2' to value '%5'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"Invalid value '%1' for attribute '%2' in tag '%3' - for layout '%4', set the attribute '%2' to value '%5'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Tentukan atribut ke nilai tertentu.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Tetapkan atribut ke nilai tertentu.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi jika nilai atribut tata letak tertentu tidak valid.
-Untuk memahami hal yang memicu kesalahan ini,
-Anda perlu membiasakan diri dengan
-[perilaku tata letak yang berbeda]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
+Error ini terjadi jika nilai atribut tata letak tertentu tidak valid.
+Untuk memahami hal yang memicu error ini,
+Anda perlu memahami
+[perilaku tata letak yang berbeda](/id/docs/design/responsive/control_layout.html#size-and-position-elements).
 
-Anggap tata letak ditetapkan ke `fixed-height` dan
-Anda menyertakan nilai numerik `height` dan `width`.
-Tata letak `fixed-height` bernilai `height`.
+Anggap saja tata letak ditetapkan ke `fixed-height` dan
+Anda menyertakan nilai numerik untuk `height` dan `width`.
+Tata letak `fixed-height` memiliki nilai `height`.
 Atribut `width` tidak boleh ada, atau setel ke `auto`.
 Validator menampilkan ATTR_VALUE_REQUIRED_BY_LAYOUT.
 
@@ -850,119 +872,119 @@ Validator menampilkan ATTR_VALUE_REQUIRED_BY_LAYOUT.
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>INCONSISTENT_UNITS_FOR_WIDTH_AND_HEIGHT</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>INCONSISTENT_UNITS_FOR_WIDTH_AND_HEIGHT</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"Inconsistent units for width and height in tag '%1' - width is specified in '%2' whereas height is specified in '%3'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"Inconsistent units for width and height in tag '%1' - width is specified in '%2' whereas height is specified in '%3'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Berikan unit lebar dan tinggi yang konsisten.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Berikan unit lebar dan tinggi yang konsisten.</td>
   </tr>
 </table>
 
-Dengan pengecualian `layout=fixed`,
+Dengen pengecualian `layout=fixed`,
 atribut lebar dan tinggi harus dinyatakan dalam unit yang sama.
-Jika tidak, hal ini akan memicu kesalahan.
+Jika tidak, hal ini akan memicu error.
 
 Misalnya, `<amp-img src="" layout="responsive" width="42px" height="42rem">`,
-menyebabkan pesan kesalahan:
+akan menyebabkan pesan error ini:
 
-"Unit lebar dan tinggi pada tag 'amp-img' tidak konsisten- lebar ditentukan dalam 'px' sedangkan tinggi ditentukan dalam 'rem'."
+"Inconsistent units for width and height in tag 'amp-img' - width is specified in 'px' whereas height is specified in 'rem'."
 
-## Kesalahan pemberian template
+## Error pemberian template
 
-Laman AMP tidak dapat menyertakan sintaksis pemberian template,
-kecuali sintaksis tersebut dalam tag AMP yang
+Halaman AMP tidak dapat menyertakan sintaks pemberian template,
+kecuali sintaks tersebut dalam tag AMP yang
 dirancang khusus untuk menyertakan template, misalnya,
-[amp-mustache](/docs/reference/components/amp-mustache.html).
+[amp-mustache](/id/docs/reference/components/amp-mustache.html).
 
 Diperbolehkan menyertakan template di file sumber,
 selama keluaran yang dihasilkan file tersebut tidak berisi template
 (lihat juga
-[Menggunakan prapemrosesan CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})).
+[Menggunakan prapemrosesan CSS](/id/docs/design/responsive/style_pages.html#use-css-preprocessors)).
 
-### Atribut berisi sintaksis template
+### Atribut berisi sintaks template
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>TEMPLATE_IN_ATTR_NAME</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>TEMPLATE_IN_ATTR_NAME</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"Mustache template syntax in attribute name '%1' in tag '%2'."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"Mustache template syntax in attribute name '%1' in tag '%2'."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus sintaksis template Mustache dari atribut.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus sintaks template Mustache dari atribut.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi kapan pun validator menemukan
-[sintaksis template Mustache](https://mustache.github.io/mustache.5.html)
-di nilai atribut.
+Error ini terjadi kapan saja validator menemukan
+[Sintaks template Mustache](https://mustache.github.io/mustache.5.html)
+dalam nilai atribut.
 
 ### Atribut berisi sintaksis template yang tidak dapat lolos
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>UNESCAPED_TEMPLATE_IN_ATTR_VALUE</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>UNESCAPED_TEMPLATE_IN_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The attribute '%1' in tag '%2' is set to '%3', which contains unescaped Mustache template syntax."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The attribute '%1' in tag '%2' is set to '%3', which contains unescaped Mustache template syntax."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Loloskan template Mustache.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Loloskan template Mustache.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi kapan pun validator menemukan
-[sintaksis template Mustache yang tidak dapat lolos](https://mustache.github.io/mustache.5.html)
-di nilai atribut.
+Error ini terjadi kapan saja validator menemukan
+[sintaks template Mustache yang tidak dapat lolos](https://mustache.github.io/mustache.5.html)
+dalam nilai atribut.
 
 ### Atribut berisi sebagian template
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>TEMPLATE_PARTIAL_IN_ATTR_VALUE</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>TEMPLATE_PARTIAL_IN_ATTR_VALUE</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The attribute '%1' in tag '%2' is set to '%3', which contains a Mustache template partial."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The attribute '%1' in tag '%2' is set to '%3', which contains a Mustache template partial."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus sebagian mustache.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus Mustache sebagian.</td>
   </tr>
 </table>
 
-Kesalahan ini terjadi kapan saja validator menemukan
+Error ini terjadi kapan saja validator menemukan
 [Mustache sebagian](https://mustache.github.io/mustache.5.html)
-di nilai atribut.
+dalam nilai atribut.
 
-## Kesalahan penghentian
+## Error penghentian penggunaan
 
-### Tag tidak berlaku lagi
+### Tag sudah tidak berlaku
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>DEPRECATED_TAG</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>DEPRECATED_TAG</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>No error message defined as yet (no deprecated tags).</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>Belum ada pesan error yang ditentukan saat ini (tidak ada tag yang tidak berlaku).</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Hapus tag yang tidak berlaku lagi.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Hapus tag yang tidak berlaku.</td>
   </tr>
 </table>
 
@@ -970,28 +992,27 @@ Peringatan ini terjadi jika tag AMP yang sebelumnya valid ditemukan di dokumen A
 Ini hanya peringatan; dokumen AMP dengan peringatan ini masih tetap valid.
 Saat ini tidak ada tag yang tidak berlaku; peringatan ini dipesan untuk penghentian mendatang.
 
-### Atribut tidak berlaku lagi
+### Atribut sudah tidak berlaku
 
 <table>
   <tr>
-  	<td class="col-thirty"><strong>Kode</strong></td>
-  	<td>DEPRECATED_ATTR</td>
+                <td class="col-thirty"><strong>Kode</strong></td>
+                <td>DEPRECATED_ATTR</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Format</strong></td>
-  	<td>"The attribute '%1' in tag '%2' is deprecated - use '%3' instead."</td>
+                <td class="col-thirty"><strong>Format</strong></td>
+                <td>"The attribute '%1' in tag '%2' is deprecated - use '%3' instead."</td>
   </tr>
    <tr>
-  	<td class="col-thirty"><strong>Perbaikan</strong></td>
-  	<td>Sebagai praktik yang baik, hapus atribut yang tidak berlaku lagi.</td>
+                <td class="col-thirty"><strong>Perbaiki</strong></td>
+                <td>Sebagai praktik yang baik, hapus atribut yang sudah tidak berlaku.</td>
   </tr>
 </table>
 
 Peringatan ini terjadi jika atribut AMP yang sebelumnya valid ditemukan di dokumen AMP.
 Ini hanya peringatan; dokumen AMP dengan peringatan ini masih tetap valid.
 
-Identifikasikan atribut setiap tag AMP yang tidak berlaku lagi
+Identifikasi atribut yang sudah tidak berlaku untuk setiap tag AMP
 dengan menelusuri `deprecation` di
 [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
-</body>
-</html>
+ 

@@ -3,15 +3,14 @@ $title: Informações detalhadas sobre o AMP Analytics
 ---
 [TOC]
 
+Neste guia, você verá os detalhes do
+[componente amp-analytics](/pt_br/docs/reference/components/amp-analytics.html).
+Para isso, dividiremos um exemplo de configuração `amp-analytics` nos principais elementos básicos:
 
-Este guia fornece informações detalhadas sobre o
-[componente amp-analytics](/pt_br/docs/reference/components/amp-analytics.html),
-dividindo uma configuração de exemplo do `amp-analytics` nestas três categorias básicas:
-
-O restante deste guia usa esse exemplo de configuração,
-que rastreia as visualizações de páginas e os cliques de usuários em links
+O restante do guia usa este exemplo de configuração,
+que rastreia as exibições de página e os cliques de usuários em links
 e envia os dados de análise ao provedor de terceiros,
-[Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
+o [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
 
 ```html
 <amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
@@ -52,66 +51,67 @@ e envia os dados de análise ao provedor de terceiros,
 </amp-analytics>
 ```
 
-**Observação:** o exemplo de código acima tem por objetivo ajudá-lo a aprender, mas não é de forma alguma um exemplo realista. Se você estiver trabalhando com provedores de análise, é provável que o exemplo acima não faça sentido; as configurações dos provedores removem a complexidade. Consulte a documentação do seu provedor de análises para obter exemplos de configurações.
+{% call callout('Observação', type='note') %}
+O código de exemplo acima serve para mostrar como funciona o processo, mas não é uma amostra realista. Se você estiver trabalhando com provedores de análise, talvez essa amostra não faça sentido, já que as configurações do provedor são menos complexas. Consulte a [documentação do provedor de análise](/pt_br/docs/analytics/analytics-vendors.html) para saber mais sobre as configurações de exemplo.{% endcall %}
 
-## Onde enviar dados de análise: atributo type
+## Para onde devo enviar os dados de análise: atributo "type"
 
-O AMP foi projetado para oferecer suporte a dois padrões comuns de coleta de dados:
+A tecnologia AMP é compatível com dois padrões comuns de coleta de dados:
 
-* Ingestão por um endpoint de propriedade do editor para sistemas de análise internos.
-* Ingestão por um endpoint de propriedade de um fornecedor para interoperabilidade com uma solução desse fornecedor
-(por exemplo, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
+* o processamento feito por um ponto de extremidade do editor para sistemas de análise internos
+* o processamento feito por um ponto de extremidade do fornecedor para interoperabilidade com uma solução própria,
+como o [Adobe Analytics](https://helpx.adobe.com/br/support/analytics.html), o [Chartbeat](http://support.chartbeat.com/docs/) (em inglês) e o [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)
 
-Para enviar dados de análise a um provedor de análises,
-inclua o atributo `type` na tag `amp-analytics` e defina seu valor
-para o fornecedor adequado, segundo definido na
-[especificação do amp-analytics](/pt_br/docs/reference/components/amp-analytics.html).
+Para enviar dados a um provedor de análise,
+inclua o atributo `type` na tag `amp-analytics` e defina o valor dele de acordo com
+o fornecedor, conforme a lista de
+[fornecedores de análise](/pt_br/docs/analytics/analytics-vendors.html).
 
-Por exemplo: `<amp-analytics type="googleanalytics">` envia dados de análise
-ao provedor de análise de terceiros, Google Analytics.
-Para enviar dados para um endpoint de propriedade do editor,
-basta não incluir o atributo `type`;
-os dados de análise são enviados para endpoints definidos para cada
-[solicitação](/pt_br/docs/analytics/deep_dive_analytics.html#quais-dados-são-enviados:-atributo-requests).
+Por exemplo: `<amp-analytics type="googleanalytics">` envia dados
+ao Google Analytics, provedor de análise de terceiros.
+Para enviar dados a um ponto de extremidade do editor,
+basta não incluir o atributo `type`.
+Os dados de análise serão enviados aos pontos de extremidade definidos para
+[cada solicitação](/pt_br/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
 
-As configurações de fornecedores de análises são uma forma rápida
-de dar os primeiros passos com o `amp-analytics`.
-Você deve consultar a documentação e os recursos de ajuda
-do fornecedor para obter mais orientações.
-Como mencionado anteriormente,
-a lista de fornecedores que já foram integrados ao AMP, assim como os links
-para suas documentações específicas, pode ser encontrada na
-[especificação do amp-analytics](/pt_br/docs/reference/components/amp-analytics.html).
+As configurações do fornecedor de análise são uma maneira rápida
+de dar os primeiros passos com a tag `amp-analytics`.
+Consulte a documentação
+e os recursos de ajuda do seu fornecedor para mais informações.
+Como mencionamos antes,
+os nomes dos fornecedores que têm integração com a tecnologia AMP e os links
+para a documentação específica a cada um deles estão na lista de
+[fornecedores de análise](/pt_br/docs/analytics/analytics-vendors.html).
 
-Se você é um fornecedor de análises,
+Se você for um fornecedor de análise,
 saiba mais sobre
-[como integrar sua própria configuração de análise no AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+[como integrar sua própria configuração de análise ao HTML para AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) (em inglês).
 
-## Carregar configuração remota: atributo config
+## Como carregar uma configuração remota: atributo "config"
 
-Você não precisa incluir toda a configuração
-para `amp-analytics` inteiramente na sua página AMP.
-Em vez disso, você pode chamar um URL remoto
-para toda a configuração ou parte dela.
+Não é preciso incluir todas as configurações
+de `amp-analytics` na sua página AMP.
+Você pode chamar um URL remoto
+para usar essas configurações ou uma parte delas.
 
-Isso permite que você faça coisas como variar a configuração
-com base em uma solicitação específica.
-Se você, como editor, tem controle sobre o arquivo remoto,
-é possível realizar qualquer procedimento necessário no lado do servidor
-para construir os dados de configuração.
+Isso permite variar a configuração
+com base em uma solicitação específica, por exemplo.
+Se você, como editor, tiver controle sobre o arquivo remoto,
+poderá fazer todo o processamento de servidor necessário
+para definir os dados de configuração.
 
-O primeiro passo para carregar configurações remotas é
-incluir o atributo config na tag `amp-analytics`:
+Para carregar as configurações remotas, primeiro
+inclua o atributo "config" na tag `amp-analytics`:
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-O próximo passo é criar o conteúdo JSON que reside no URL remoto.
+Depois disso, crie o conteúdo JSON do URL remoto.
 Neste exemplo simples,
-a configuração contida no objeto JSON é exatamente o valor da variável para a conta de análise.
+a configuração do objeto JSON é somente o valor da variável referente à conta de análise.
 
-Conteúdo de exemplo em `https://example.com/analytics.account.config.json`:
+Veja o conteúdo de exemplo em `https://example.com/analytics.account.config.json`:
 
 ```js
 {
@@ -121,11 +121,11 @@ Conteúdo de exemplo em `https://example.com/analytics.account.config.json`:
 }
 ```
 
-A etapa final é assegurar-se de que o arquivo remoto tenha sido extraído
-para o lugar adequado na configuração do `amp-analytics`.
-Nas duas solicitações de `pageview` e `event` do exemplo,
+Por fim, verifique se o conteúdo do arquivo remoto é inserido
+no local adequado na configuração de `amp-analytics`.
+Nas solicitações `pageview` e `event`,
 o valor da variável `account` é definido automaticamente
-para o valor de conta no URL remoto (`"account": "UA-XXXXX-Y"`):
+como o valor da conta no URL remoto (`"account": "UA-XXXXX-Y"`):
 
 ```js
 "requests": {
@@ -134,34 +134,36 @@ para o valor de conta no URL remoto (`"account": "UA-XXXXX-Y"`):
 }
 ```
 
-**Importante:** o AMP não realiza a validação em relação a diversos usos da mesma variável.
-Os valores são preenchidos seguindo uma ordem de preferência de substituição de variável
-e os valores nos URLs remotos estão no topo dessa ordem
-(consulte [Ordem de substituição de variáveis](/pt_br/docs/analytics/deep_dive_analytics.html#ordem-de-substituição-de-variáveis)).
 
-## Solicitações, acionamento e transportes
+{% call callout('Importante', type='caution') %}
+A AMP não valida diversos usos da mesma variável.
+Os valores são preenchidos seguindo uma ordem de preferência da substituição de variáveis,
+e os valores nos URLs remotos têm prioridade. Consulte [Ordem da substituição de variáveis](/pt_br/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+{% endcall %}
 
-O atributo `requests` define “quais dados são enviados”
-(por exemplo, `pageviews`, `events`),
-e para onde os dados são enviados (os URLs usados para transmitir dados).
+## Solicitações, acionadores e transportes
 
-O atributo `triggers` descreve quando dados de análise devem ser enviados,
-por exemplo, quando um usuário visualiza uma página ou clica em um link.
+O atributo `requests` define quais dados são enviados
+(por exemplo, `pageviews` e `events`)
+e onde isso acontece (os URLs usados para transmitir os dados).
 
-O atributo `transport` especifica como enviar a solicitação,
-mais especificamente, o protocolo.
+O atributo `triggers` descreve quando os dados de análise são enviados,
+seja a partir da visualização de uma página ou do clique em um link, por exemplo.
+
+O atributo `transport` especifica como enviar uma solicitação,
+ou seja, define o protocolo.
 
 Continue lendo para saber mais sobre essas configurações.
-(Você também pode ler sobre essas configurações na
-[referência do amp-analytics](/pt_br/docs/reference/components/amp-analytics.html).)
+Veja outras informações na
+[referência de amp-analytics](/pt_br/docs/reference/components/amp-analytics.html).
 
-### Quais dados são enviados: atributo requests
+### Quais dados são enviados: atributo "requests"
 
-O `request-name` é usado na configuração de acionamento para especificar
-que solicitação deve ser enviada em resposta a um evento específico.
-O `request-value` é um URL `https`.
-Esses valores podem incluir tokens de marcadores de posição
-que podem fazer referência a outras solicitações ou variáveis.
+O atributo `request-name` é usado na configuração do acionador para especificar
+qual solicitação é enviada como resposta a um evento específico.
+O atributo `request-value` é um URL `https`.
+Esses valores podem incluir tokens de marcadores
+com referências a outras solicitações ou variáveis.
 
 ```js
 "requests": {
@@ -171,38 +173,38 @@ que podem fazer referência a outras solicitações ou variáveis.
 ```
 
 Alguns provedores de análise (incluindo o Google Analytics)
-já forneceram configurações,
-que você usará por meio do atributo `type`.
-Se você estiver usando um provedor de análises,
-pode ser que não precise incluir informações de `requests`.
-Consulte a documentação do seu fornecedor para descobrir
-se `requests` precisa ser configurado, e como.
+já fornecem configurações,
+e você as usa com o atributo `type`.
+Se você estiver usando um provedor de análise,
+não será preciso incluir a informação de `requests`.
+Consulte a documentação do seu fornecedor para ver
+se é necessário configurar `requests` e como fazer isso.
 
-#### Anexar o URL de solicitação: parâmetros de URL adicionais
+#### Como anexar um URL de solicitação: parâmetros de URL adicionais
 
 O atributo [extraUrlParams](/pt_br/docs/reference/components/amp-analytics.html#extra-url-params)
-especifica parâmetros adicionais para anexar à string de consulta do URL da solicitação por meio da convenção habitual "&foo=baz".
+especifica parâmetros adicionais para anexar à string de consulta do URL da solicitação com uma convenção "&foo=baz" comum.
 
-O exemplo `amp-analytics` adiciona um parâmetro adicional <code>cd1</code>
-à solicitação e define o valor do parâmetro para “AMP”:
+O exemplo de `amp-analytics` adiciona outro parâmetro, `cd1`,
+à solicitação e define o valor do parâmetro como "AMP":
 
 ```js
-"extraUrlParams": {
-  "cd1": "AMP"
-}
+  "extraUrlParams": {
+    "cd1": "AMP"
+  }
 ```
 
-### Quando os dados são enviados: atributo trigger
+### Quando os dados são enviados: atributo "triggers"
 
-O atributo `triggers` descreve quando uma solicitação de análise deve ser enviada.
-Ele contém um par de valores-chave de trigger-name e trigger-configuration.
-O nome do trigger pode ser qualquer string composta
-por caracteres alfanuméricos (a-zA-Z0-9).
+O atributo `triggers` descreve quando uma solicitação de análise é enviada.
+Ele contém um par de chave-valor de "trigger-name" e "trigger-configuration".
+O nome do acionador pode ser qualquer string de
+caracteres alfanuméricos (a-z A-Z 0-9).
 
-Por exemplo,
-o seguinte elemento `amp-analytics` está configurado para enviar uma solicitação para
-`https://example.com/analytics` quando o documento for carregado pela primeira vez,
-e cada vez que uma tag `a` for clicada:
+Por exemplo:
+o elemento `amp-analytics` a seguir é configurado para enviar uma solicitação a
+`https://example.com/analytics` quando o documento é carregado pela primeira vez
+e cada vez que uma tag `a` recebe um clique:
 
 ```js
 "triggers": {
@@ -222,51 +224,53 @@ e cada vez que uma tag `a` for clicada:
 }
 ```
 
-O AMP oferece suporte às seguintes configurações de acionamento:
+{% call callout('Importante', type='caution') %} A abordagem acima só é recomendada para páginas AMP, e não para anúncios HTML para AMP. Como a prioridade da análise é menor que a do conteúdo da página, recomendamos rastrear os cliques usando um redirecionamento do navegador para evitar perdas. {% endcall %}
+
+A tecnologia AMP é compatível com as seguintes configurações de acionador:
 
 <table>
   <thead>
     <tr>
-      <th data-th="Trigger Config" class="col-thirty">Configuração de acionamento</th>
+      <th data-th="Trigger Config" class="col-thirty">Configuração do acionador</th>
       <th data-th="Description">Descrição</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td data-th="Trigger Config"><code>on</code> (obrigatório)</td>
-      <td data-th="Description">O evento a ouvir. Os valores válidos são <code>click</code>, <code>scroll</code>, <code>timer</code> e <code>visible</code>.</td>
+      <td data-th="Description"> É o evento do listener. Os valores válidos são <code>click</code>, <code>scroll</code>, <code>timer</code> e <code>visible</code>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obrigatório)</td>
-      <td data-th="Description">Nome da solicitação a enviar (segundo especificado nas <a href="/pt_br/docs/analytics/deep_dive_analytics.html#quais-dados-são-enviados:-atributo-requests">solicitações</a>).</td>
+      <td data-th="Description">É o nome da solicitação a ser enviada, conforme <a href="/pt_br/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">especificado nas solicitações</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Um objeto que contém pares de valor-chave usados para modificar<code>vars</code> definidas na configuração de nível superior ou para especificar <code>vars</code> exclusivas para esse acionamento (consulte também <a href="/pt_br/docs/analytics/deep_dive_analytics.html#ordem-de-substituição-de-variáveis">Ordem da substituição de variáveis</a>).</td>
+      <td data-th="Description">É um objeto que tem pares de chave-valor usados para modificar <code>vars</code> definidos na configuração de nível superior ou para especificar <code>vars</code> exclusivos a esse acionador. Consulte também <a href="/pt_br/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Ordem da substituição de variáveis</a>.</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>selector</code> (obrigatório quando <code>on</code> for definido como <code>click</code>)</td>
-      <td data-th="Description">Um seletor CSS usado para refinar quais elementos devem ser rastreados. Use o valor <code>*</code> para rastrear todos os elementos. Essa configuração é usada em conjunto com o acionamento <code>click</code>. Saiba como usar o seletor para <a href="/pt_br/docs/analytics/use_cases.html#rastrear-cliques-de-páginas">rastrear cliques de página</a> e <a href="/pt_br/docs/analytics/use_cases.html#rastrear-interações-sociais">interações sociais</a>.</td>
+      <td data-th="Trigger Config"><code>selector</code> (obrigatório quando <code>on</code> está definido como <code>click</code>)</td>
+      <td data-th="Description">É um seletor de CSS usado para definir quais elementos serão rastreados. Use o valor <code>*</code> para rastrear todos os elementos. Essa configuração é usada junto com o acionador <code>click</ code>. Saiba como usar o seletor para <a href="/pt_br/docs/analytics/use_cases.html#tracking-page-clicks">rastrear cliques na página</a> e <a href="/pt_br/docs/analytics/use_cases.html#tracking-social-interactions">interações sociais</a>.</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>scrollSpec</code> (obrigatório quando <code>on</code> for definido como <code>scroll</code>)</td>
-      <td data-th="Description">Controla sob que condições o evento <code>scroll</code> é acionado quando a página é rolada. Esse objeto pode conter<code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Pelo menos uma das duas propriedades é obrigatória para que um evento <code>scroll</code> seja acionado. Os valores para ambas as propriedades devem ser matrizes de números que contenham os limites nos quais um evento de rolagem é gerado. Consulte exemplos em <a href="/pt_br/docs/analytics/use_cases.html#rastrear-rolagem">rastrear rolagem</a>.</td>
+      <td data-th="Trigger Config"><code>scrollSpec</code> (obrigatório quando <code>on</code> é definido como <code>scroll</code>)</td>
+      <td data-th="Description">Controla as condições de acionamento do evento <code>scroll</code> na rolagem da página. Esse objeto pode conter <code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Pelo menos uma das duas propriedades é necessária para que um evento <code>scroll</code> seja acionado. Os valores das duas propriedades precisam ser matrizes de números com os limites para a geração de eventos de rolagem. Veja este exemplo sobre <a href="/pt_br/docs/analytics/use_cases.html#tracking-scrolling">como rastrear a rolagem</a>.</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>timerSpec</code> (obrigatório quando <code>on</code> for definido como <code>timer</code>)</td>
-      <td data-th="Description">Controla quando o evento <code>timer</code> é acionado. O temporizador será acionado imediatamente e, depois, a um intervalo especificado. Essa configuração é usada em conjunto com o acionamento <code>timer</code>.</td>
+      <td data-th="Trigger Config"><code>timerSpec</code> (obrigatório quando <code>on</code> é definido como <code>timer</code>)</td>
+      <td data-th="Description">Controla quando o evento <code>timer</code> é acionado. O evento será acionado imediatamente, e depois disso, em um intervalo especificado. Essa configuração é usada junto com o acionador <code>timer</code>.</td>
     </tr>
   </tbody>
 </table>
 
-**Importante:** acionamentos de uma configuração com menor precedência são sobrepostos
-por acionamentos com os mesmos nomes de uma configuração com maior precedência.
-(consulte [Ordem de substituição de variáveis](/pt_br/docs/analytics/deep_dive_analytics.html#ordem-de-substituição-de-variáveis)).
+{% call callout('Importante', type='caution') %}
+Os acionadores de uma configuração com menor precedência serão substituídos por outros de mesmo nome que venham de uma configuração com maior precedência. Consulte [Ordem da substituição de variáveis](/pt_br/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering).
+{% endcall %}
 
-### Como os dados são enviados: atributo transport
+### Como os dados são enviados: atributo "transport"
 
-O atributo `transport` especifica como enviar a solicitação.
-Os três seguintes métodos são ativados por padrão:
+O atributo `transport` especifica como enviar uma solicitação.
+Os três métodos a seguir são ativados por padrão:
 
 <table>
   <thead>
@@ -278,11 +282,11 @@ Os três seguintes métodos são ativados por padrão:
   <tbody>
     <tr>
       <td data-th="Transport Method"><code>beacon</code></td>
-      <td data-th="Description">Indica que <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a> pode ser usado para transmitir a solicitação. Isso enviará uma solicitação de <code>POST</code> com credenciais e o corpo vazio.</td>
+      <td data-th="Description">Indica que <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a> (em inglês) pode ser usado para transmitir a solicitação. Isso enviará uma solicitação <code>POST</code> com credenciais e um corpo vazio.</td>
     </tr>
     <tr>
       <td data-th="Transport Method"><code>xhrpost</code></td>
-      <td data-th="Description">Indica que <code>XMLHttpRequest</code> pode ser usado para transmitir a solicitação. Isso enviará uma solicitação de <code>POST</code> com credenciais e corpo vazio.</td>
+      <td data-th="Description">Indica que <code>XMLHttpRequest</code> pode ser usado para transmitir a solicitação. Isso enviará uma solicitação <code>POST</code> com credenciais e um corpo vazio.</td>
     </tr>
     <tr>
       <td data-th="Transport Method"><code>image</code></td>
@@ -291,22 +295,22 @@ Os três seguintes métodos são ativados por padrão:
   </tbody>
 </table>
 
-Somente um método de transporte é usado:
-aquele com a precedência mais alta
-que esteja ativado, autorizado e disponível.
+Somente um método de transporte é usado,
+e aquele com maior precedência
+é ativado, permitido e disponibilizado.
 A precedência é `beacon` > `xhrpost` > `image`.
-Se o user agent do cliente não oferecer suporte a um método,
-o próximo método de precedência mais alta ativado será usado.
+Se o user agent do cliente não for compatível com um método,
+o próxima opção ativada de maior precedência será usada.
 
-Somente inclua o atributo `transport` em sua configuração
-se quiser limitar as opções de transporte,
-caso contrário, você poderá interromper as solicitações.
+Só inclua o atributo `transport` na sua configuração
+se você quiser limitar as opções de transporte.
+Caso contrário, isso poderá interromper as solicitações.
 
 No exemplo abaixo,
-`beacon` e `xhrpost` são definidos como falsos,
-de forma que não serão usados, mesmo que tenham precedência mais alta do que `image`.
-Se o user agent do cliente oferecer suporte ao método `image`,
-ele será usado; caso contrário, a solicitação não será enviada.
+`beacon` e `xhrpost` são definidos como "false".
+Por isso, eles não serão usados mesmo que tenham precedência superior a `image`.
+Se o user agent do cliente for compatível com o método `image`,
+ele será usado. Caso contrário, nenhuma solicitação será enviada.
 
 ```js
 'transport': {
@@ -316,17 +320,17 @@ ele será usado; caso contrário, a solicitação não será enviada.
 }
 ```
 
-## Ordem de substituição de variáveis
+## Ordem da substituição de variáveis
 
-O AMP preenche as variáveis com valores em uma ordem de precedência:
+A tecnologia AMP preenche variáveis com valores em uma ordem de precedência:
 
-1. Configurações remotas (via `config`).
-2. `vars` aninhadas em um acionamento dentro de `triggers`.
-3. `vars` no nível superior aninhadas dentro de `amp-analytics`.
-4. Valores fornecidos pela plataforma.
+1. configurações remotas (via `config`)
+2. `vars` aninhado em um acionador em `triggers`
+3. `vars` no nível superior aninhado em `amp-analytics`
+4. valores fornecidos pela plataforma
 
-Neste exemplo, há uma configuração remota,
-variáveis definidas no nível superior, em acionamentos e no nível de plataforma:
+Neste exemplo, há uma configuração remota
+e variáveis definidas no nível superior, nos acionadores e no nível da plataforma:
 
 ```html
 <amp-analytics config="http://example.com/config.json">
@@ -353,39 +357,40 @@ variáveis definidas no nível superior, em acionamentos e no nível de platafor
 </amp-analytics>
 ```
 
-Quando a mesma `var` é definida em vários locais,
-a ordem de precedência da variável define seu valor uma vez.
-Assim, se a configuração remota definiu `account` como UA-XXXXX-Y no exemplo acima,
-os valores de várias variáveis serão os seguintes:
+Quando o mesmo `var` é definido em vários locais,
+a ordem de precedência das variáveis define o valor dele uma vez.
+Assim, se a configuração remota tiver definido `account` como UA-XXXXX-Y no exemplo acima,
+os valores de diversos "vars" serão os seguintes:
 
 <table>
   <thead>
     <tr>
       <th data-th="var" class="col-thirty"><code>var</code></th>
-      <th data-th="Value">Valor</th>
-      <th data-th="Defined By" class="col-thirty">Definido por</th>
+      <th data-th="Value">Value</th>
+      <th data-th="Defined By" class="col-thirty">Defined By</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td data-th="var"><code>canonicalUrl</code></td>
       <td data-th="Value"><code>http://example.com/path/to/the/page</code></td>
-      <td data-th="Defined By">Plataforma</td>
+      <td data-th="Defined By">Platform</td>
     </tr>
     <tr>
       <td data-th="var"><code>title</code></td>
       <td data-th="Value">My homepage</td>
-      <td data-th="Defined By">Acionamento</td>
+      <td data-th="Defined By">Trigger</td>
     </tr>
     <tr>
       <td data-th="var"><code>account</code></td>
       <td data-th="Value"><code>UA-XXXXX-Y</code></td>
-      <td data-th="Defined By">Configurações remotas</td>
+      <td data-th="Defined By">Remote configuration</td>
     </tr>
     <tr>
       <td data-th="var"><code>clientId</code></td>
       <td data-th="Value">my user</td>
-      <td data-th="Defined By">Acionamento</td>
+      <td data-th="Defined By">Trigger</td>
     </tr>
   </tbody>
 </table>
+ 

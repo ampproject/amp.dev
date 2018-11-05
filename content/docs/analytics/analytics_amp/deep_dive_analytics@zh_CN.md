@@ -1,17 +1,16 @@
 ---
-$title: 深入了解 AMP Analytics
+$title: 深入了解 AMP 分析
 ---
 [TOC]
 
-
-本指南将深入探讨
+本指南深入介绍了
 [amp-analytics 组件](/zh_cn/docs/reference/components/amp-analytics.html)，
-将示例 `amp-analytics` 配置分解为以下关键构建基块：
+将一个 `amp-analytics` 配置样例拆分成下面这些关键组成要素逐个讲解：
 
-本指南的其余部分均使用此配置示例，
-此示例跟踪页面视图和用户的链接点击，
-并将分析数据发送到第三方提供程序
-[Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)：
+本指南的其余部分会使用此配置样例
+来跟踪网页浏览量和用户点击链接的次数
+并将分析数据发送给第三方提供商
+[Google Analytics（分析）](https://developers.google.com/analytics/devguides/collection/amp-analytics/)：
 
 ```html
 <amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
@@ -52,61 +51,67 @@ $title: 深入了解 AMP Analytics
 </amp-analytics>
 ```
 
-**注：** 上面的示例代码是为了帮助您学习，绝不是一个真实示例。如果您使用分析提供程序，上面的示例可能没有意义；提供程序配置会降低复杂性。有关示例配置，请查阅分析提供程序的文档。
+{% call callout('注意', type='note') %}
+上面的示例代码纯粹是为了帮助您学习，绝不是真实的样例。如果您正在与分析服务提供商合作，上面的样例便很可能没什么意义；提供商的配置不会这么复杂。请查阅您的[分析服务提供商的文档](/zh_cn/docs/analytics/analytics-vendors.html)，了解其配置样例。{% endcall %}
 
-## 在何处发送分析数据：类型属性
+## 将分析数据发送到何处：type 属性
 
-AMP 设计为可支持两种常见数据集合模式：
+AMP 支持两种常见的数据收集模式：
 
-* 发布者拥有的端点针对内部分析系统的获取。
-* 供应商拥有的端点针对与供应商解决方案
-（例如，[Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)、[Chartbeat](http://support.chartbeat.com/docs/)、[Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)）的互操作性的获取。
+* 对于内部分析系统，由发布商拥有的端点获取。
+* 对于采用供应商解决方案（例如，[Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)、
+[Chartbeat](http://support.chartbeat.com/docs/) 和 [Google Analytics（分析）](https://developers.google.com/analytics/devguides/collection/amp-analytics/)）的网页，由供应商拥有的端点获取。
 
-如需将分析数据发送到分析提供程序，
-请在 `amp-analytics` 标记中包括 `type` 属性，并将其值设置为相应的供应商（如
-[amp-analytics 规范](/zh_cn/docs/reference/components/amp-analytics.html)中所定义）。
+要将分析数据发送到分析服务提供商，
+请在 `amp-analytics` 标记中添加 `type` 属性，并将其值设为
+相应的供应商，如
+[分析服务供应商](/zh_cn/docs/analytics/analytics-vendors.html)列表中所定义。
 
-例如：`<amp-analytics type="googleanalytics">` 将分析数据发送给
-第三方分析提供程序 Google Analytics。
-如需将数据发送到发布者拥有的端点，
-只需不包括 `type` 属性即可；
-系统会将分析数据发送到每个[请求](/zh_cn/docs/analytics/deep_dive_analytics.html#发送什么数据：requests-属性)对应的已定义端点。
+例如：`<amp-analytics type="googleanalytics">` 这一标记会将分析数据
+发送到第三方分析服务提供商“Google Analytics（分析）”。
+要将数据发送到发布商拥有的端点，
+只需不添加 `type` 属性即可；
+如此一来，
+对于每项[请求](/zh_cn/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)，系统都会将分析数据发送到请求中指定的端点。
 
-可以通过分析供应商配置快速开始使用 `amp-analytics`。
+借助分析服务供应商的配置，
+您可以快速开始使用 `amp-analytics`。
+您应查阅供应商的文档及
+帮助资源，以获取进一步的指导。
+如前所述，
+倘若您想了解哪些供应商已与 AMP 集成
+并获取指向他们各自的文档的链接，
+请查看[分析服务供应商](/zh_cn/docs/analytics/analytics-vendors.html)列表。
 
-您应查阅供应商的文档和
-帮助资源以获得进一步的指导。
-如前所述，已与 AMP 集成的供应商的列表以及指向其特定文档的链接可在
-[amp-analytics 规范](/zh_cn/docs/reference/components/amp-analytics.html)中找到。
-
-如果您是分析供应商，
-请详细了解[将自己的分析配置集成到 AMP HTML 中](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)。
-
+如果您是分析服务供应商，
+请详细了解
+[如何将您自己的分析配置集成到 AMP HTML 中](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)。
 
 ## 加载远程配置：config 属性
 
-您不必在 APM 页面上完全包括
-`amp-analytics` 的所有配置。
-取而代之的是，您可以调用一个远程 URL
-来获取所有或部分配置。
+您不必将所有的
+`amp-analytics` 配置全都添加到 AMP 网页中。
+您可以改为针对所有配置或部分配置
+调用远程网址。
 
-这样您就可以执行各种操作，例如根据特定请求修改配置。
-
-如果您是发布者，可以控制远程文件，
-则可执行任何必要的服务器处理
+这样，您便能执行一些
+诸如根据具体请求改变配置之类的操作。
+如果身为发布商的您可以控制远程文件，
+您就能执行任何必要的服务器端处理
 来构建配置数据。
 
-加载远程配置的第一步是在 `amp-analytics` 标记中包括 config 属性：
+加载远程配置的第一步是
+向 `amp-analytics` 标记添加 config 属性：
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-下一步是创建位于远程 URL 中的 JSON 内容。
+下一步是创建位于远程网址上的 JSON 内容。
 在这个简单的示例中，
-JSON 对象中包含的配置只是分析帐户的变量值。
+JSON 对象中包含的配置仅仅是分析工具帐号的变量值。
 
-`https://example.com/analytics.account.config.json` 中的示例内容：
+`https://example.com/analytics.account.config.json` 中的内容示例：
 
 ```js
 {
@@ -116,42 +121,11 @@ JSON 对象中包含的配置只是分析帐户的变量值。
 }
 ```
 
-最后一步是确保已将远程文件中的内容拉取到 `amp-analytics` 配置中的适当位置。
-
-在此处的 `pageview` 和 `event` 请求中，`account` 变量值自动设置为远程 URL 中的帐户值 (`"account": "UA-XXXXX-Y"`)：
-
-```js
-"requests": {
-  "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-  "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-}
-```
-
-**重要说明：** AMP 不会对多次使用同一变量进行验证。
-将按照变量替代优先顺序来填充值，远程 URL 中的值拥有最高优先顺序（请参阅[变量替代顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#变量替代顺序)）。
-
-## 请求、触发器和传输
-
-`requests` 属性定义“发送什么数据”
-（例如，`pageviews`、`events`），
-以及在何处发送数据（用于传输数据的 URL）。
-
-`triggers` 属性描述应在何时发送分析数据，
-例如，在用户查看页面时，在用户点击链接时。
-
-`transport` 属性指定发送请求的方式，
-更具体地说，就是协议。
-
-请继续阅读以了解有关这些配置的详细信息。
-（您也可以在
-[amp-analytics 参考](/zh_cn/docs/reference/components/amp-analytics.html)中阅读有关这些配置的信息。）
-
-### 发送什么数据：requests 属性
-
-`request-name` 在触发器配置中使用，用于指定应发送什么请求来响应特定事件。
-
-`request-value` 是一个 `https` URL。
-这些值可能包括可引用其他请求或变量的占位符标记。
+最后一步是确保将远程文件中的内容
+提取到 `amp-analytics` 配置中的相应位置。
+在此处的 `pageview` 和 `event` 请求中，
+`account` 变量值都自动设为
+远程网址中的帐号值 (`"account": "UA-XXXXX-Y"`)：
 
 ```js
 "requests": {
@@ -160,37 +134,77 @@ JSON 对象中包含的配置只是分析帐户的变量值。
 }
 ```
 
-某些分析提供程序（包括 Google Analytics）
-已经提供了配置，
-您可通过 `type` 属性来使用该配置。
-如果您要使用分析提供程序，
-则可能无需包括 `requests` 信息。
-请参阅供应商文档，了解是否需要配置 `requests` 以及如何配置。
 
+{% call callout('重要提示', type='caution') %}
+AMP 不会验证同一变量的多种用法。
+值的填充会遵循变量替换优先顺序，
+远程网址中的值在该顺序中列在首位（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+{% endcall %}
 
-#### 追加请求 URL：额外的 URL 参数
+## requests、triggers 和 transports
+
+`requests` 属性定义了“发送哪些数据”
+（例如 `pageviews`、`events`）
+以及将这些数据发送到何处（用于传输数据的网址）。
+
+`triggers` 属性描述了应在何时发送分析数据。
+例如，当用户浏览网页时或当用户点击链接时。
+
+`transport` 属性指定了如何发送请求，
+更具体地说，即指定了协议。
+
+请继续往下读，以详细了解这些配置。
+（您也可
+在 [amp-analytics 参考信息](/zh_cn/docs/reference/components/amp-analytics.html)中了解这些配置。）
+
+### 发送哪些数据：requests 属性
+
+`request-name` 用于在触发器配置中指定
+应发送什么请求来响应特定的事件。
+`request-value` 是 `https` 网址。
+这些值可能会包含
+可引用其他请求或变量的占位符令牌。
+
+```js
+"requests": {
+  "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+  "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+}
+```
+
+某些分析服务提供商（包括 Google Analytics（分析））
+已提供了
+可供您通过 `type` 属性使用的配置。
+如果您正与某个分析服务提供商合作，
+那么您可能无需添加 `requests` 信息。
+请参阅您的供应商文档，以查明是否
+需要配置 `requests` 以及如何配置。
+
+#### 附加请求网址：extraUrlParams
 
 [extraUrlParams](/zh_cn/docs/reference/components/amp-analytics.html#extra-url-params)
-属性指定要通过常用“&foo=baz”约定追加到请求 URL 查询字符串的附加参数。
+属性会通过常见的“&foo=baz”惯例指定要向请求网址的查询字符串附加的额外参数。
 
-`amp-analytics` 示例将附加参数  <code>cd1</code>
-添加到请求，并将参数值设置为“AMP”：
+本指南所用的 `amp-analytics` 示例向请求添加了
+额外参数 `cd1` 并将参数值设为“AMP”：
 
 ```js
-"extraUrlParams": {
-  "cd1": "AMP"
-}
+  "extraUrlParams": {
+    "cd1": "AMP"
+  }
 ```
 
 ### 何时发送数据：triggers 属性
 
-`triggers` 属性描述应在何时发送分析请求。
-它包含 trigger-name 和 trigger-configuration 的键值对。
-触发器名称可以是由
-字母数字字符 (a-zA-Z0-9) 组成的任何字符串。
+`triggers` 属性描述了何时应发送分析请求。
+它包含一个由触发器名称和触发器配置构成的键值对。
+触发器名称可以是由字母数字字符
+(a-zA-Z0-9) 组成的任何字符串。
 
 例如，
-以下 `amp-analytics` 元素配置为在第一次加载文档以及每次点击 `a` 标记时将请求发送到 `https://example.com/analytics`：
+下面这个 `amp-analytics` 元素被配置为
+在首次加载文档时以及每次点击 `a` 标记时
+向 `https://example.com/analytics` 发送请求：
 
 ```js
 "triggers": {
@@ -210,6 +224,8 @@ JSON 对象中包含的配置只是分析帐户的变量值。
 }
 ```
 
+{% call callout('重要提示', type='caution') %} 我们建议仅对 AMP 网页（不对 AMPHTML 广告）采用上述方法。由于 amp-analytics 的优先级低于网页内容的优先级，因此您最好使用浏览器重定向来跟踪点击次数，以免在统计点击次数的过程中发生遗漏。{% endcall %}
+
 AMP 支持以下触发器配置：
 
 <table>
@@ -222,37 +238,39 @@ AMP 支持以下触发器配置：
   <tbody>
     <tr>
       <td data-th="Trigger Config"><code>on</code>（必需）</td>
-      <td data-th="Description">要侦听的事件。有效值为 <code>click</code>、<code>scroll</code>、<code>timer</code> 和 <code>visible</code>。</td>
+      <td data-th="Description">要监听的事件。有效值包括 <code>click</code>、<code>scroll</code>、<code>timer</code> 和 <code>visible</code>。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code>（必需）</td>
-      <td data-th="Description">要发送的请求的名称（在 <a href="/zh_cn/docs/analytics/deep_dive_analytics.html#发送什么数据：requests-属性">请求中指定</a>）。</td>
+      <td data-th="Description">要发送的请求的名称（如<a href="/zh_cn/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">请求</a>中所指定）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">包含键值对的对象，用于重写顶级配置中定义的 <code>vars</code>，或用于指定对于此触发器唯一的 <code>vars</code>（另请参阅<a href="/zh_cn/docs/analytics/deep_dive_analytics.html#变量替代顺序">变量替代顺序</a>）。</td>
+      <td data-th="Description">一个包含特定键值对（用于替换在顶层配置中定义的 <code>vars</code> 或指定此触发器独有的 <code>vars</code>）的对象（另请参阅<a href="/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">变量替换顺序</a>）。</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>selector</code>（当 <code>on</code> 设置为 <code>click</code> 时为必需）</td>
-      <td data-th="Description">CSS 选择器用于细化应跟踪哪些元素。使用值 <code>*</code> 来跟踪所有元素。此配置与 <code>click</code> 触发器结合使用。了解如何使用选择器来<a href="/zh_cn/docs/analytics/use_cases.html#跟踪页面点击s">跟踪页面点击</a>和<a href="/zh_cn/docs/analytics/use_cases.html#跟踪社交互动">社交互动</a>。</td>
+      <td data-th="Trigger Config"><code>selector</code>（当 <code>on</code> 设为 <code>click</code> 时的必需配置）</td>
+      <td data-th="Description">一种 CSS 选择器，用于优化应跟踪哪些元素。使用值 <code>*</code> 可跟踪所有元素。此配置需与 <code>click</code> 触发器结合使用。了解如何使用选择器来<a href="/zh_cn/docs/analytics/use_cases.html#tracking-page-clicks">跟踪网页点击次数</a>和<a href="/zh_cn/docs/analytics/use_cases.html#tracking-social-interactions">社交互动</a>。</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>scrollSpec</code>（当 <code>on</code> 设置为 <code>scroll</code> 时为必需）</td>
-      <td data-th="Description">控制在哪些条件下页面滚动时将触发 <code>scroll</code> 事件。此对象可包含 <code>verticalBoundaries</code> 和 <code>horizontalBoundaries</code>。至少需要其中一个属性才能触发 <code>scroll</code> 事件。两个属性的值都应该是数字数组，其中包含作为滚动事件生成依据的边界。请参阅这个有关<a href="/zh_cn/docs/analytics/use_cases.html#跟踪滚动">跟踪滚动</a>的示例。</td>
+      <td data-th="Trigger Config"><code>scrollSpec</code>（当 <code>on</code> 设为 <code>scroll</code> 时的必需配置）</td>
+      <td data-th="Description">控制在哪些条件下滚动网页时会触发 <code>scroll</code> 事件。此对象可以包含 <code>verticalBoundaries</code> 和 <code>horizontalBoundaries</code>，而且必须至少包含其一才能触发 <code>scroll</code> 事件。这两个属性的值都应是包含边界的数字数组（据此才能生成滚动事件）。请参阅此<a href="/zh_cn/docs/analytics/use_cases.html#tracking-scrolling">跟踪滚动操作</a>的示例。</td>
     </tr>
     <tr>
-      <td data-th="Trigger Config"><code>timerSpec</code>（当 <code>on</code> 设置为 <code>timer</code> 时为必需）</td>
-      <td data-th="Description">控制何时触发 <code>timer</code> 事件。定时器将立即触发，并在之后按指定的间隔触发。此配置与 <code>timer</code> 触发器结合使用。</td>
+      <td data-th="Trigger Config"><code>timerSpec</code>（当 <code>on</code> 设为 <code>timer</code> 时的必需配置）</td>
+      <td data-th="Description">控制何时触发 <code>timer</code> 事件。定时器会立即触发，之后会按照指定的时间间隔触发。此配置需与 <code>timer</code> 触发器结合使用。</td>
     </tr>
   </tbody>
 </table>
 
-**重要说明：** 配置中优先级较低的触发器将被配置中优先级较高的同名触发器覆盖（请参阅[变量替代顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#变量替代顺序)）。
+{% call callout('重要提示', type='caution') %}
+来自优先级较低的配置的触发器会被来自优先级较高的配置的同名触发器替换（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+{% endcall %}
 
 ### 如何发送数据：transport 属性
 
-`transport` 属性指定发送请求的方式，
-默认情况下会启用以下三种方法：
+`transport` 属性指定了如何发送请求。
+系统会默认启用下面这三种方法：
 
 <table>
   <thead>
@@ -264,29 +282,35 @@ AMP 支持以下触发器配置：
   <tbody>
     <tr>
       <td data-th="Transport Method"><code>beacon</code></td>
-      <td data-th="Description">指明可使用 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a> 来传输请求。这将发送一个 <code>POST</code> 请求，其中包含凭据和空的正文。</td>
+      <td data-th="Description">表示 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon">navigator.sendBeacon</a> 可用于传输请求。此方法会发送 <code>POST</code> 请求以及凭据和空正文。</td>
     </tr>
     <tr>
       <td data-th="Transport Method"><code>xhrpost</code></td>
-      <td data-th="Description">指明可使用 <code>XMLHttpRequest</code> 来传输请求。这将发送一个 <code>POST</code> 请求，其中包含凭据和空的正文。</td>
+      <td data-th="Description">表示 <code>XMLHttpRequest</code> 可用于传输请求。此方法会发送 <code>POST</code> 请求以及凭据和空正文。</td>
     </tr>
     <tr>
       <td data-th="Transport Method"><code>image</code></td>
-      <td data-th="Description">指明可通过生成 <code>Image</code> 标记来发送请求。这将发送 <code>GET</code> 请求。</td>
+      <td data-th="Description">表示可通过生成 <code>Image</code> 标记来发送请求。此方法会发送 <code>GET</code> 请求。</td>
     </tr>
   </tbody>
 </table>
 
-只会使用一种传输方法，并且该方法是已启用、获允许并且可用的最高优先级方法。
+系统仅会使用一种传输方法，
+即已启用、已获准、可用
+且优先级最高的方法。
+优先顺序为 `beacon` > `xhrpost` > `image`。
+如果客户端的用户代理不支持某种方法，
+则系统会使用已启用且优先级次高的方法。
 
-优先级为 `beacon` > `xhrpost` > `image`。
-如果客户端的用户代理不支持某种方法，则使用已启用的下一最高优先级方法。
+仅当您想限制传输选项时，才应在
+配置中添加 `transport` 属性；
+否则，可能会致使请求停止。
 
-只有在想要限制传输选项时才需要在配置中包括 `transport` 属性，否则您可能会停止请求。
-
-在下面的示例中，`beacon` 和 `xhrpost` 设置为 false，因此，即使这些方法的优先级高于 `image`，也不会使用它们。
-
-如果客户端的用户代理支持 `image` 方法，则会使用该方法；否则不会发送任何请求。
+在下面的示例中，
+`beacon` 和 `xhrpost` 均设为 false，
+所以，虽然这两种方法的优先级均高于 `image`，但系统不会使用它们。
+如果客户端的用户代理支持 `image` 方法，
+系统便会使用这种方法；否则，不会发送任何请求。
 
 ```js
 'transport': {
@@ -296,16 +320,17 @@ AMP 支持以下触发器配置：
 }
 ```
 
-## 变量替代顺序
+## 变量替换顺序
 
-AMP 按以下优先顺序使用值填充变量：
+AMP 会按照优先顺序使用相应值来填充变量：
 
 1. 远程配置（通过 `config`）。
-2. 嵌套在 `triggers` 内的触发器内部的`vars`。
-3. 嵌套在 `amp-analytics` 内的顶级 `vars`。
+2. 嵌套在 `triggers` 中某个触发器内的 `vars`。
+3. 嵌套在 `amp-analytics` 中的顶层 `vars`。
 4. 平台提供的值。
 
-此示例中有一个远程配置，变量在顶级中、触发器中以及平台级别中定义：
+在下面的示例中，既有远程配置，
+也有在顶层、在触发器中以及在平台级别定义的变量：
 
 ```html
 <amp-analytics config="http://example.com/config.json">
@@ -332,9 +357,10 @@ AMP 按以下优先顺序使用值填充变量：
 </amp-analytics>
 ```
 
-如果在多个位置定义了同一 `var`，则将根据变量优先顺序设置一次该变量的值。
-
-因此，如果远程配置将 `account` 定义为上面示例中的 UA-XXXXX-Y，则各个 var 的值将如下所示：
+当在多个位置定义了同一个 `var` 时，
+变量的优先顺序将设置其值一次。
+因此，在上面的示例中，如果远程配置将 `account` 定义为 UA-XXXXX-Y，
+则不同 vars 的值将如下所示：
 
 <table>
   <thead>
@@ -367,3 +393,4 @@ AMP 按以下优先顺序使用值填充变量：
     </tr>
   </tbody>
 </table>
+ 
