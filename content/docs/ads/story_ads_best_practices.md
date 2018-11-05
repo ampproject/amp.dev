@@ -2,8 +2,6 @@
 $title: Best practices for creating an AMP Story ad 
 $order: 7
 toc: true
-components:
- - anim
 ---
 
 [TOC]
