@@ -249,7 +249,7 @@ class Pipeline {
                        'minifyCSS': minifyCss,
                        'minifyJS': true,
                        'collapseWhitespace': true,
-                       'removeEmptyElements': false,
+                       'removeEmptyElements': true,
                        'removeRedundantAttributes': true,
                      });
 
