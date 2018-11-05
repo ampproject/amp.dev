@@ -949,6 +949,11 @@
         "type": 301
       },
       {
+        "source": "/docs/design/style_pages?(.html)",
+        "destination": "/docs/design/responsive/style_pages.html",
+        "type": 301
+      },
+      {
         "source": "/docs/guides/third_party_components?(.html)",
         "destination": "/docs/fundamentals/third_party_components.html",
         "type": 301
