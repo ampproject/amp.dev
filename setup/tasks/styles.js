@@ -12,12 +12,13 @@ export default function styles(done) {
     let stream = gulp.src(settings.styles.src)
                      .pipe(sass(settings.styles.options).on('error', sass.logError));
 
-    stream.pipe(stripCssComments());
+    stream = stream.pipe(stripCssComments());
 
     // Write the compiled styles to all destination folders. Optimizations like
     // minifying, combining of media queries should be done in a additional task
     // TODO: Implement optimize task
-    stream.pipe(multiDest(settings.styles.dest));
+    stream = stream.pipe(multiDest(settings.styles.dest));
 
     done();
+    return stream;
 }
