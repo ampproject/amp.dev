@@ -50,6 +50,15 @@ class Pipeline {
   }
 
   /**
+   * Checks that all dependencies needed for the build are met
+   * @return {Promise}
+   */
+  check() {
+    // TODO(matthiasrohmer): Check node verison
+    // TODO(matthiasrohmer): Run `grow install` in pod
+  }
+
+  /**
    * Cleans remainings from previous builds
    * @return {Array} Containing deleted paths.
    */
@@ -66,6 +75,15 @@ class Pipeline {
       PAGES_DEST,
       STATIC_DEST
     ], {'force': true});
+  }
+
+
+  /**
+   * Simply copies the various static files from examples and pages ...
+   * @return {Promise}
+   */
+  collectStatics() {
+    return this._collect('static files', STATICS_SRC, STATIC_DEST);
   }
 
   /**
@@ -138,6 +156,7 @@ class Pipeline {
   }
 
   _collectIcons() {
+    // TODO(matthiasrohmer): Pipe icons through SVGO
     return this._collect('icons', ICONS_SRC, ICONS_DEST);
   }
 
@@ -216,6 +235,10 @@ class Pipeline {
     log.warn('Building samples is not yet supported.')
   }
 
+  /**
+   * Takes care of generally minimzing the output of previously run tasks
+   * @return {undefined}
+   */
   async optimizeBuild() {
     log.info('Optimizing built pages ...');
 
@@ -249,7 +272,7 @@ class Pipeline {
                        'minifyCSS': minifyCss,
                        'minifyJS': true,
                        'collapseWhitespace': true,
-                       'removeEmptyElements': true,
+                       'removeEmptyElements': false,
                        'removeRedundantAttributes': true,
                      });
 
@@ -272,9 +295,6 @@ class Pipeline {
     });
   }
 
-  collectStatics() {
-    return this._collect('static files', STATICS_SRC, STATIC_DEST);
-  }
 };
 
 module.exports = Pipeline;

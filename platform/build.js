@@ -29,6 +29,7 @@ let pipeline = new Pipeline();
 pipeline.clean();
 
 (async () => {
+  pipeline.check();
   pipeline.collectStatics();
 
   await pipeline.buildPagesFrontend();
