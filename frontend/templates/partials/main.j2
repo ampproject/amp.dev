@@ -17,7 +17,7 @@
     </section>
 
   {% else %}
-  
+
     <section class="main">
       {{ doc.html|render|safe }}
     </section>
@@ -36,12 +36,12 @@
 
         <div class="ad-m-code-snippet">
           <pre>
-            <span class="l l-Scalar l-Scalar-Plain">view</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.view }}"</span>
-            <span class="l l-Scalar l-Scalar-Plain">collection_path</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.collection.collection_path }}{{ doc.collection_path }}"</span>
+<span class="l l-Scalar l-Scalar-Plain">view</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.view }}"</span>
+<span class="l l-Scalar l-Scalar-Plain">collection_path</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.collection.collection_path }}{{ doc.collection_path }}"</span>
           </pre>
         </div>
       </div>
     </div>
   </section>
-  
+
 {% endif %}
