@@ -17,7 +17,8 @@
 'use strict';
 
 const { spawn, exec } = require('child_process');
-const log = require('loglevel');
+const signale = require('signale');
+const { Signale } = require('signale');
 const del = require('del');
 const config = require('./config.js');
 const gulp = require('gulp');
@@ -46,7 +47,7 @@ const STATIC_DEST = '../platform/static';
 class Pipeline {
 
   constructor() {
-    log.info(`Starting pipeline for environment ${config.environment} ...`);
+    signale.log(`Starting pipeline for environment ${config.environment} ...`);
   }
 
   /**
@@ -99,7 +100,8 @@ class Pipeline {
   }
 
   _transpilePagesScss() {
-    log.info(`Transpiling SCSS from ${TRANSPILE_PAGES_SCSS_SRC} ...`);
+    const log = signale.scope(`Transpile pages SCSS`);
+    log.start(`Transpiling SCSS from ${TRANSPILE_PAGES_SCSS_SRC} ...`);
 
     let options = {
       'outputStyle': 'compact' ? config.environment === 'development' : 'compressed'
@@ -107,18 +109,17 @@ class Pipeline {
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src(TRANSPILE_PAGES_SCSS_SRC)
-                   .pipe(sass(options)
-                   .on('error', sass.logError))
+                   .pipe(sass(options).on('error', log.error))
                    .pipe(stripCssComments())
                    .pipe(gulp.dest(TRANSPILE_PAGES_SCSS_DEST));
 
-      stream.on('error', () => {
-        log.error('There was an error transpiling the pages SCSS.');
+      stream.on('error', (error) => {
+        log.fatal('There was an error transpiling the pages SCSS.', error);
         reject();
       });
 
       stream.on('end', () => {
-        log.info(`Transpiled SCSS files to ${TRANSPILE_PAGES_SCSS_DEST}.`);
+        log.success(`Transpiled SCSS files to ${TRANSPILE_PAGES_SCSS_DEST}.`);
         resolve();
       });
     });
@@ -132,7 +133,8 @@ class Pipeline {
    * @return {Promise}
    */
   _collect(entity, src, dest) {
-    log.info(`Collecting ${entity} from ${src} ...`);
+    const log = signale.scope(`Collect ${entity}`);
+    log.start(`Collecting ${entity} from ${src} ...`);
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src(src)
@@ -144,7 +146,7 @@ class Pipeline {
       });
 
       stream.on('end', () => {
-        log.info(`Moved ${entity} to ${dest}.`);
+        log.success(`Moved ${entity} to ${dest}.`);
         resolve();
       });
     });
@@ -179,7 +181,7 @@ class Pipeline {
   _startDevelopmentServer() {
     let pending = true;
 
-    log.info('Starting Grow development server ...');
+    signale.info('Starting Grow development server ...');
     return new Promise((resolve, reject) => {
       let grow = spawn(
         'grow',
@@ -194,7 +196,7 @@ class Pipeline {
       function growStdIo(data) {
         data = data.toString();
 
-        if (log.getLevel() <= log.levels.INFO) {
+        if (signale.getLevel() <= signale.levels.INFO) {
           process.stdout.write(data);
         }
 
@@ -207,14 +209,14 @@ class Pipeline {
       grow.stdout.on('data', growStdIo);
       grow.stderr.on('data', growStdIo);
     }).then(() => {
-      log.info('Started Grow development server.');
+      signale.info('Started Grow development server.');
     }).catch(() => {
-      log.error('Grow dev server could not be started.');
+      signale.error('Grow dev server could not be started.');
     });
   }
 
   _buildPages() {
-    log.info('Building pages via Grow ...');
+    signale.info('Building pages via Grow ...');
 
     return new Promise((resolve, reject) => {
       let grow = exec(
@@ -225,14 +227,14 @@ class Pipeline {
         }
       );
     }).then((stdout, stderr) => {
-      log.info('Built pages.');
+      signale.info('Built pages.');
     }).catch(() => {
-      log.error('Something went wrong building the pages.');
+      signale.error('Something went wrong building the pages.');
     });
   }
 
   samples() {
-    log.warn('Building samples is not yet supported.')
+    signale.warn('Building samples is not yet supported.')
   }
 
   /**
@@ -240,7 +242,7 @@ class Pipeline {
    * @return {undefined}
    */
   async optimizeBuild() {
-    log.info('Optimizing built pages ...');
+    signale.info('Optimizing built pages ...');
 
     await this._minifyPages();
   }
@@ -258,7 +260,8 @@ class Pipeline {
   }
 
   _minifyPages() {
-    log.info('Minifying page\'s source ...');
+    const log = new Signale({'interactive': true, 'scope': 'Minify pages'});
+    log.await('Minifying page\'s ...');
 
     return new Promise((resolve, reject) => {
       const minifyCss = this._minifyCss;
@@ -267,7 +270,7 @@ class Pipeline {
                    .pipe(through.obj(function (page, encoding, callback) {
                      let html = page.contents.toString();
 
-                     log.debug(`Minifying page ${page.path} ...`);
+                     log.await(`Minifying page ${page.path} ...`);
                      html = minifyHtml(html, {
                        'minifyCSS': minifyCss,
                        'minifyJS': true,
@@ -284,12 +287,12 @@ class Pipeline {
                    .pipe(gulp.dest('./'));
 
       stream.on('error', (error) => {
-        log.error(`Something went wrong while minifying HTML: ${error}`);
+        log.fatal(`Something went wrong while minifying HTML: ${error}`);
         reject(error);
       });
 
       stream.on('end', () => {
-        log.info(`Minified page's HTML.`);
+        log.success(`Minified page's HTML.`);
         resolve();
       });
     });
