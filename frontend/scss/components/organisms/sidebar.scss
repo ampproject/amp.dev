@@ -9,12 +9,18 @@
   position: static;
   margin-right: -30px;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
+    position: -webkit-sticky;
     position: sticky;
-    top: 64px;
-    height: calc(100vh - 115px);
+    top: 132px;
+    height: calc(100vh - 132px);
     margin-right: 0;
     margin-left: -15px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 64px;
+    height: calc(100vh - 115px);
   }
 
   &:before,
@@ -29,7 +35,7 @@
       pointer-events: none;
       z-index: 1;
 
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 768px) {
         display: block;
       }
   }
@@ -61,6 +67,11 @@
     &-main {
       margin: 34px 0 0;
 
+      @media screen and (min-width: 768px){
+        overflow-y: scroll;
+        max-height: calc(100vh - 281px);
+      }
+
       @media screen and (min-width: 1024px){
         overflow-y: scroll;
         max-height: calc(100vh - 264px);
@@ -81,7 +92,7 @@
 
     &-sub {
       padding-left: 15px;
-      margin-bottom: 10px;
+      margin: 0 30px 10px 0;
     }
     
     &-header {
@@ -107,20 +118,12 @@
   }
 
   &-list-item {
-    
-
     &-sub {
       padding: 0;
       margin: 0;
 
       a {
         padding: 7px 15px 8px;
-      }
-
-      &:first-child {
-        a {
-          padding-top: 0;
-        }
       }
     }
 
@@ -131,6 +134,7 @@
     &-lnk {
       @include txt;
       @include txt-2;
+      line-height: 1.3;
       color: rgba(color('black'), 0.75);
       display: block;
       padding: 3px 0;

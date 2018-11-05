@@ -21,6 +21,7 @@
 
 .#{organism('header')} {
   width: 100%;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -148,10 +149,15 @@
     }
 
     &-home {
+      position: -webkit-sticky;
       position: sticky;
       top: 10px;
       margin: 10px 0px 10px 20px;
       display: flex;
+
+      @media screen and (min-width: 768px) {
+        margin-left: 30px;
+      }
 
       @media screen and (min-width: 1024px) {
         margin: 10px 0 10px 30px;
@@ -164,6 +170,10 @@
 
     &-expanded {
       margin: 10px 0 10px 20px;
+      
+      @media screen and (min-width: 768px) {
+        margin-left: 30px;
+      }
     }
 
     &-support {
@@ -223,6 +233,9 @@
     height: 60px;
     border-top: 1px solid color('wild-sand');
 
+    @media screen and (min-width: 768px) {
+      padding-left: 10px;
+    }
 
     @media screen and (min-width: 1024px) {
       padding: 0 30px;
@@ -253,8 +266,6 @@
     }
 
     &-logo {
-
-
       & svg {
         @include ico;
         @include ico-blue-ribbon;
@@ -291,10 +302,9 @@
     }
   }
 
-
   &-burger-menu {
     position: fixed;
-    padding: 4px 10px;
+    padding: 0;
     right: 0;
     z-index: 100;
 
@@ -302,9 +312,14 @@
       display: none;
     }
 
-    & svg {
-      height: 40px;
-      width: 40px;
+    &-icon.#{atom('ico')} {
+      width: 30px;
+      height: 30px;
+      padding: 12px 20px;
+      
+      @media screen and (min-width: 768px){
+        padding: 12px 30px;
+      }
     }
 
     &-btn {

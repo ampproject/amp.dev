@@ -9,10 +9,6 @@
 {% block main %}
 <div class="ad-t-container ad-t-component">
   {% include 'partials/sidebar.j2' %}
-  <section class="main">
-    {% if doc.html %}
-    {{ doc.html|render|safe }}
-    {% endif %}
-  </section>
+  {% include 'partials/main.j2' %}
 </div>
 {% endblock %}
