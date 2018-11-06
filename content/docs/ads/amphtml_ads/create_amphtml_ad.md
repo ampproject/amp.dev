@@ -1,6 +1,6 @@
 ---
 $title: Create an AMPHTML ad
-$order: 5
+$order: 6
 tutorial: true
 ---
 

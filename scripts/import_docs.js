@@ -259,16 +259,7 @@ async function downloadExtensions() {
 
 // before we download content, we first have to figure out the latest release tag,
 // to make sure our docs always match the latest released AMP version.
-request({
-  url: 'https://api.github.com/repos/ampproject/amphtml/releases/latest',
-  headers: {
-    'User-Agent': 'request'
-  },
-  qs: {
-    'access_token': clientToken
-  },
-  json: true
-}, function (error, response, body) {
+client.get('/repos/ampproject/amphtml/releases/latest', {}, function (err, status, body) {
 
   latestReleaseTag = body.tag_name; // updates global var, used in the other functions
   if (!latestReleaseTag) {

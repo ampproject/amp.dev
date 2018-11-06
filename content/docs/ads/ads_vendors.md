@@ -1,6 +1,6 @@
 ---
 $title: Advertising vendors
-$order: 6
+$order: 8
 ---
 
 This document lists advertising vendors and platforms that provide a built-in configuration for use with the [`amp-ad`](/docs/reference/components/amp-ad.html) component. To see configuration details for the specific vendor, click the vendor's link.
