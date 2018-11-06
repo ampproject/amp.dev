@@ -5,8 +5,8 @@
     "preinstall": "node build_scripts/check-package-manager.js"
   },
   "dependencies": {
-    "@octokit/rest": "15.13.1",
-    "eslint": "5.7.0",
+    "@octokit/rest": "15.16.1",
+    "eslint": "5.8.0",
     "feedparser": "2.2.9",
     "gulp": "4.0.0",
     "gulp-autoprefixer": "6.0.0",
