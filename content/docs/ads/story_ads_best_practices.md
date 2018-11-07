@@ -62,7 +62,7 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
 </html>
 [/sourcecode]
 
-The `amp-cta-type` tag must include one of the [available options](http://localhost:8080/docs/ads/story_ads_best_practices.html#call-to-action-button-text-enum) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers. 
+The `amp-cta-type` tag must include one of the [available options]({{g.doc('/content/docs/ads/story_ads_best_practices.html#call-to-action-button-text-enum', locale=doc.locale).url.path}}) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers. 
 
 ##Call to action button text enum 
 The call to action button must be configured from a predefined set of choices:

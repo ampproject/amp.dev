@@ -68,7 +68,7 @@ The easiest way to include ads in your AMP Story is by serving ads from a suppor
 
 Ad servers that currently support AMP Story ads:
 
-* [Google Ad Manager (previously  DoubleClick)](http://localhost:8080/docs/ads/advertise_amp_stories.html#google-ad-manager)
+* [Google Ad Manager (previously  DoubleClick)]({{g.doc('/content/docs/ads/advertise_amp_stories.html#google-ad-manager', locale=doc.locale).url.path}})
 
 If you are an add server interested in serving story adds please contact us by filing a [GitHub Issue](https://github.com/ampproject/amphtml/issues/new). The AMP team will happily get in touch! 
 
