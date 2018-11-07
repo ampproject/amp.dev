@@ -8,7 +8,11 @@
 
 {% block main %}
 <div class="ad-t-container ad-t-docs-overview">
-  {% include 'partials/sidebar.j2' %}
+  {% if doc.title  == 'Components' or doc.collection_path.split('/')[1] == 'components' %}
+    {% include 'partials/component-sidebar.j2' %}
+  {% else %}
+    {% include 'partials/sidebar.j2' %}
+  {% endif %}
   {% include 'partials/main.j2' %}
 </div>
 {% endblock %}
