@@ -42,30 +42,35 @@
           {% set currenctDocCollection = doc.url.path.split('/')[2] %}
 
           {% if collectionName == doc.base or collectionName == currenctDocCollection %}
-            {% for category in collections.categories %}
+
+          {# TODO: toplevelDocs are not in the correct order and passing order into blueprint.yaml doesn't work  #}
+
+            {% for topLevelDocs in g.collection(collections.collection_path).collections() %}
+              {% set topLevelCategory = topLevelDocs.category %}
               <section class="ad-o-sidebar-list-section">
                 <header class="ad-o-sidebar-list-item ad-o-sidebar-list-header">
-                  {{ category }}
+                  {{ topLevelDocs.category }}
                   <div class="ad-a-ico ad-o-sidebar-list-icon">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
                   </div>
                 </header>
                 <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
 
-                {% for subCollections in g.collection(collections.collection_path).collections() %}
-                {% if subCollections.category == category %}
-                  {% for subDocs in g.docs(subCollections.collection_path) %}
+                {# start of second level navigation #}
+
+                  {% for secondLevelDocs in g.docs(topLevelDocs.collection_path) %}
                      <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
-                      <a href="{{ subDocs.url.path }}" class="ad-o-sidebar-list-item-lnk {% if subDocs.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
-                        {{ subDocs.title }}
+                      <a href="{{ secondLevelDocs.url.path }}" class="ad-o-sidebar-list-item-lnk {% if secondLevelDocs.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
+                        {{ secondLevelDocs.title }}
                       </a>
                     </li>
 
                     {# start of third level content rendering #}
-                    {% for subDocsCollections in g.collection(subCollections.collection_path).collections() %}
-                      {% if subDocsCollections.category == subDocs.title %}
+                    {% for secondLevelCollections in g.collection(topLevelDocs.collection_path).collections() %}
+                      {% set secondLevelCategory = secondLevelCollections.category %}
+                      {% if secondLevelCategory == secondLevelDocs.title %}
                       <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
-                        {% for thirdLevelDocuments in  g.docs(subDocsCollections.collection_path) %}
+                        {% for thirdLevelDocuments in g.docs(secondLevelCollections.collection_path) %}
                          <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
                             <a href="{{ thirdLevelDocuments.url.path }}" class="ad-o-sidebar-list-item-lnk {% if thirdLevelDocuments.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
                               {{ thirdLevelDocuments.title }}
@@ -78,8 +83,7 @@
                     {# end of third level content rendering #}
                   {% endfor %}
                   {# end of second level content rendering #}
-                  {% endif %}
-                {% endfor %}
+
                 </ul>
               </section>
             {% endfor %}
