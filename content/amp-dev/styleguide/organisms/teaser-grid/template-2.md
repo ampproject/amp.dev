@@ -1,5 +1,5 @@
 ---
-$view: /views/template.j2
+$view: /views/detail/template-detail.j2
 $path: /styleguide/organisms/teaser-grid/template-2.html
 $title: Template
 $titles:
