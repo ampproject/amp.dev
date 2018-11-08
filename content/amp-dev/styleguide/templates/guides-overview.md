@@ -1,6 +1,6 @@
 ---
 $title: Documentation Overview Template
-$view: /views/docs/overview.j2
+$view: /views/overview/guides-overview.j2
 ---
 
 # Overview
