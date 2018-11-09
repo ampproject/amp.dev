@@ -1,4 +1,7 @@
 path: /documentation/guides-and-tutorials/integration/{base}.html
 view: /views/default.j2
 
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/integration/{base}.html
+
 category: Integration

@@ -1,4 +1,7 @@
 path: /documentation/guides-and-tutorials/core-concepts/develop/animation-in-amp/{base}.html
 view: /views/default.j2
 
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/core-concepts/develop/animation-in-amp/{base}.html
+
 category: Animations in AMP (WIP)

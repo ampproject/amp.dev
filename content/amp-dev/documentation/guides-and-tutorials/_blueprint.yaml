@@ -1,4 +1,7 @@
 path: /documentation/start/{base}.html
 view: /views/default.j2
 
+localization:
+  path: /{locale}/documentation/start/{base}.html
+
 title: Start

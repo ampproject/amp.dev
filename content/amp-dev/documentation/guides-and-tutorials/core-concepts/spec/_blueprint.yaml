@@ -1,4 +1,7 @@
 path: /documentation/guides-and-tutorials/core-concepts/spec/{base}.html
 view: /views/default.j2
 
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/core-concepts/spec/{base}.html
+
 category: Amp HTML Specification

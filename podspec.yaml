@@ -8,6 +8,15 @@ static_dirs:
 localization:
   root_path: /{locale}/
   default_locale: en
+  locales:
+  - en
+  - de
+  - fr
+  - it
+  - id
+  - ja
+  - ko
+  - ru
 
 preprocessors:
 - kind: gulp
