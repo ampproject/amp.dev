@@ -31,6 +31,38 @@
       </div>
     </div>
     <div class="ad-o-sidebar-list ad-o-sidebar-list-main">
+      
+      {% macro nav_tree(root, iteration=0, depth=None) -%}
+      <ul>
+          {% set collections = root.collections() %}
+          {% set documents = root.list_docs(order_by='order') %}
+        
+          {% if not depth or iteration <= depth - 1 %}
+          {% for collection in collections %}
+          <li>
+            {% set collection_index = g.doc('content/' + collection.collection_path + '/index.md') %}
+            {% if collection_index.exists %}
+            <a href="{{ collection_index.url }}">{{ collection.title }}</a>
+            {% else %}
+            <b>{{ collection.title }}</b>
+            {% endif %}
+            {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
+          </li>
+          {% endfor %}
+
+          {% for document in documents %}
+          <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+          {% endfor %}
+          {% endif %}
+      </ul>
+      {%- endmacro %}
+
+      <div style="background-color: yellow;">
+        {% set split_path = doc.collection.collection_path.split('/') %}
+        {% set current_path = '/'.join(split_path[:3]) %}
+        {{ nav_tree(root=g.collection(current_path)) }}
+      </div>
+
       <amp-accordion animate>
 
         {% for collections in g.collection('amp-dev/documentation').collections() %}
