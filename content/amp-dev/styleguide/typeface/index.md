@@ -1,5 +1,6 @@
 ---
 $title: Typeface Demo
+$path: /styleguide/typeface.html
 $order: 101
 ---
 # Typeface Demo
