@@ -170,7 +170,7 @@
 
     &-expanded {
       margin: 10px 0 10px 20px;
-      
+
       @media screen and (min-width: 768px) {
         margin-left: 30px;
       }
@@ -181,14 +181,6 @@
 
       &-expanded {
         margin-top: auto;
-      }
-    }
-
-    &-lang {
-      margin: 0;
-
-      &-expanded {
-        margin-bottom: 30px;
       }
     }
 
@@ -240,6 +232,16 @@
     @media screen and (min-width: 1024px) {
       padding: 0 30px;
       height: 45px;
+    }
+  }
+
+  &-lang-list {
+    height: 20px;
+    overflow: hidden;
+    list-style: none;
+
+    &:hover {
+      overflow: visible;
     }
   }
 
@@ -316,7 +318,7 @@
       width: 30px;
       height: 30px;
       padding: 12px 20px;
-      
+
       @media screen and (min-width: 768px){
         padding: 12px 30px;
       }

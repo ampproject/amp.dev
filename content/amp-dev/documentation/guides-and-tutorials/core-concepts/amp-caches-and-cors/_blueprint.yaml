@@ -1,4 +1,7 @@
 path: /documentation/guides-and-tutorials/core-concepts/amp-caches-and-core/{base}.html
 view: /views/default.j2
 
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/core-concepts/amp-caches-and-core/{base}.html
+
 category: AMP Caches and CORS

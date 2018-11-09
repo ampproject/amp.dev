@@ -1,17 +1,7 @@
 path: /documentation/start/{base}.html
 view: /views/default.j2
 
-categories:
-  - Start
-  - Core concepts
-  - Design & Layout
-  - Develop
-  - Integration
-  - Optimize & Measure
-  - Interactivity & Dynamic Content
-  - Multimedia & Animations
-  - Advertising
-  - Analytics
-  - Integration
-  - Troubleshooting
-  - Contribute
+localization:
+  path: /{locale}/documentation/start/{base}.html
+
+title: Start

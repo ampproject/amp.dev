@@ -1,5 +1,5 @@
 ---
-$view: /views/success-story.j2
+$view: /views/detail/success-story-detail.j2
 $path: /styleguide/organisms/teaser-grid/success-story-2.html
 $title: Success Story - 2
 $titles:

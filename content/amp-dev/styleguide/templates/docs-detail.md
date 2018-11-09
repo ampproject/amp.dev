@@ -1,6 +1,6 @@
 ---
 $title: Documentation Detail Template
-$view: /views/docs/detail.j2
+$view: /views/detail/docs-detail.j2
 ---
 
 [TOC]

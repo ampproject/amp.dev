@@ -1,5 +1,5 @@
 ---
-$view: /views/use-case.j2
+$view: /views/detail/use-case-detail.j2
 $path: /styleguide/organisms/teaser-grid/use-case.html
 $title: Use case
 $titles:
