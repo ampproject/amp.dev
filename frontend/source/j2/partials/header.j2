@@ -111,6 +111,7 @@
     <nav class="ad-o-header-nav ad-o-header-subnav">
       <ul class="ad-o-header-list ad-o-header-list-subnav">
         {% for _doc in doc.collection %}
+          {% if _doc.locale == doc.locale %}
             <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if _doc.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
               <a href="{{ _doc.url.path }}">
               {{ _doc.title }}
@@ -119,6 +120,7 @@
               <div class="ad-o-header-lnk-divider"></div>
             {% endif %}
             </li>
+          {% endif %}
         {% endfor %}
 
         {# TODO: Remove styleguide section in production #}
@@ -127,7 +129,7 @@
           {% for guides in g.collection('amp-dev/styleguide').collections() %}
             <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if guides.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
               {% for _doc in guides %}
-                {% if _doc.base == 'index' %}
+                {% if _doc.base == 'index' and _doc.locale == doc.locale %}
                 <a href="{{ _doc.url.path }}">{{ guides.title }}</a>
                 {% endif %}
                 {% if _doc.title == doc.title %}
