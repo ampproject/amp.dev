@@ -1,4 +1,8 @@
 ---
 $title: Templates
-$order: 5
+$view: /views/overview/template-overview.j2
+$order: 4
 ---
+
+[stage type="dropdown"]
+[/stage]

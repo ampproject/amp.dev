@@ -25,7 +25,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 @include viewboxGradientAnimation;
 
 
-.destination-list-view-box {
+.destination-list-view-box-sidebar {
 	overflow: hidden;
 	width: auto;
   height: 34px;
@@ -78,7 +78,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
   @media screen and (min-width: 768px) {
     &:hover {
-      height: 235px;
+      height: 230px;
       transition: height 0.5s ease;
       background: transparent;
 
@@ -142,7 +142,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	@include hl;
 	@include hl-h4;
 	@include color-white;
-	outline: color('white');
 	padding: 4px 20px 4px 10px;
   display: block;
 
@@ -165,12 +164,28 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 			padding-left: 12px;
 		}
   }
+
+  &.all {
+    @include color-blue-ribbon;
+  }
+
+  &.ads {
+    @include color-ads;
+  }
+
+  &.stories {
+    @include color-stories;
+  }
+
+  &.e-mails {
+    @include color-e-mails;
+  }
+
 }
 
 
 .websites {
   order: 1;
-  @include color-white;
 
   &-background {
 	  @include gradient-websites;
@@ -179,7 +194,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .ads {
   order: 2;
-  @include color-ads;
 
   &-background {
 	  @include gradient-ads;
@@ -188,7 +202,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .stories {
   order: 3;
-  @include color-stories;
 
   &-background {
 	  @include gradient-stories;
@@ -197,7 +210,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .e-mails {
   order: 4;
-  @include color-e-mails;
 
   &-background {
 	  @include gradient-e-mails;
@@ -205,8 +217,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 }
 
 .all {
-  color: color('blue-ribbon');
-  pointer-events: none;
+  @include color-blue-ribbon;
 
 	&-background {
 		@include gradient-overview;

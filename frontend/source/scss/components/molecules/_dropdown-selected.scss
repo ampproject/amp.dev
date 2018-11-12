@@ -84,7 +84,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		}
 	}
 
-	&-emails {
+	&-e-mails {
 		background: color('reef');
 
 		.ad-a-ico {
@@ -204,7 +204,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   }
 }
 
-.emails {
+.e-mails {
   @include color-e-mails;
 
   &-background {
@@ -214,9 +214,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .overview {
   @include color-overview;
+  pointer-events: none;
 
 	&-background {
 		@include gradient-overview;
 	}
 }
-

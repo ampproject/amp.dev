@@ -19,13 +19,13 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 @import '../atoms/_divider.scss';
 
 
-.destination-stage {
+.destination-stage-sidebar {
   position: relative;
-  
+
   @media screen and (min-width: 768px) {
     margin-left: -15px;
   }
-  
+
   @media screen and (min-width: 1024px) {
     margin-left: 0;
   }
@@ -33,11 +33,9 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 	&-content {
     padding: 19px 20px;
     box-shadow: 0 10px 25px 0 rgba(0,0,0,0.10);
-    
     @media screen and (min-width: 768px) {
       padding: 14px 15px 79px 30px;
     }
-    
     @media screen and (min-width: 1024px) {
       padding: 14px 15px 79px;
     }
@@ -64,8 +62,12 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 			@include color-ads;
 		}
 
-		&-emails {
+		&-e-mails {
 			@include color-e-mails;
-		}
+    }
+
+    &-all {
+      @include color-blue-ribbon;
+    }
 	}
 }

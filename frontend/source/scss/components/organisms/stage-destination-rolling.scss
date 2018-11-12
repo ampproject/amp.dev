@@ -21,12 +21,11 @@ The destination-rolling-stage organism contains the rolling switch molecule alon
 .destination-stage {
 	height: 90vh;
   width: 100vw;
-	position: relative;
+  position: relative;
 
 	@media screen and (min-width: 768px) {
-		height: 0%;
+		height: 50vh;
 		width: 100%;
-    padding-top: 45%;
 	}
 
 	&-content {
@@ -68,6 +67,6 @@ The destination-rolling-stage organism contains the rolling switch molecule alon
 	@include gradient-ads;
 }
 
-.email {
+.e-mails {
 	@include gradient-e-mails;
 }

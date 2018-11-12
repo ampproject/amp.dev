@@ -19,6 +19,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 @import '../atoms/_text.scss';
+@import '../atoms/_icon.scss';
 
 
 @include viewboxGradientAnimation;
@@ -57,11 +58,11 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		animation: none;
 
     @media screen and (min-width: 768px) {
-		  height: 183px;
+		  height: 210px;
     }
 
 		.ad-a-ico {
-			transform: rotate(180deg);
+			transform: rotate(100deg);
 			fill: color('white');
 		}
 
@@ -70,7 +71,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 			flex-direction: column;
 		}
 
-		.destination-list-item-rolling{
+		.destination-list-item-rolling {
 			display: none;
 			animation-play-state: paused;
 		}
@@ -114,10 +115,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     @media screen and (min-width: 768px) {
       &:hover {
 
-        .ad-a-ico {
-          transform: rotate(100deg);
-        }
-
         .destination-list-view-box {
           animation: none;
         }
@@ -127,6 +124,27 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
           animation-play-state: paused;
         }
 
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      right: 0;
+      z-index: 2;
+      transition: transform 0.5s ease;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      outline: none;
+
+      & svg {
+        @include ico;
+        @include ico-1;
+        @include ico-white;
+
+				@media screen and (min-width: 768px) {
+					@include ico-2;
+				}
       }
     }
   }
@@ -147,8 +165,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 // default list item
 
 .destination-list-item {
-
-
 
 	@include hl;
 	@include hl-h3;
@@ -199,7 +215,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       @include color-ads;
 		}
 
-		&-emails {
+		&-e-mails {
 			opacity: 0;
 			animation: roll 12.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 			animation-delay: 9.6s;
@@ -240,7 +256,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   }
 }
 
-.emails {
+.e-mails {
   order: 4;
   @include color-e-mails;
 
@@ -249,3 +265,13 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   }
 }
 
+
+.overview {
+  order: 5;
+  @include color-blue-ribbon;
+  pointer-events: none;
+
+	&-background {
+		@include gradient-overview;
+	}
+}

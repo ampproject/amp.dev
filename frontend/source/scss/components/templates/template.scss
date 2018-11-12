@@ -20,4 +20,28 @@
 
 .#{template('template')} {
   @include container;
+  padding: 120px 0 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 19px 0 0 30px;
+  }
+
+
+  section {
+    &.main {
+      grid-column: 1;
+      padding-top: 0;
+
+      @media screen and (min-width: 768px) {
+        grid-column-start: 9;
+        grid-column-end: -1;
+      }
+
+      @media screen and (min-width: 1024px) {
+        grid-column-start: 7;
+        grid-column-end: -1;
+      }
+    }
+  }
+
 }
