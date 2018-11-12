@@ -33,6 +33,7 @@ class Grow {
       'interactive': true,
       'scope': 'Grow',
       'types': {
+        // Just for goodliness, add custom logger as .watch is a bit off
         'running': {
           'badge': '…',
           'color': 'cyan',
@@ -40,9 +41,6 @@ class Grow {
         }
       }
     });
-
-    // Just for goodliness, add custom logger as .watch is a bit off
-
   }
 
   /**

@@ -17,7 +17,7 @@
 'use strict';
 
 const { spawn, spawnSync, exec } = require('child_process');
-const Signale = require('signale');
+const { Signale } = require('signale');
 const signale = require('signale');
 const del = require('del');
 const gulp = require('gulp');
@@ -183,7 +183,15 @@ class Pipeline {
       // During development start Grow's dev server
       return grow.run().when('Server ready.');
     } else {
-      return grow.deploy().when('Deploying:');
+      return grow.deploy().when('Deploying:').then(() => {
+        // There is no "easy" way to determine when
+        // Grow has finished putting the files in place
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve();
+          }, 1000)
+        });
+      });
     }
   }
 
@@ -223,8 +231,7 @@ class Pipeline {
       let stream = gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
                    .pipe(through.obj(function (page, encoding, callback) {
                      let html = page.contents.toString();
-
-                     log.await(`Minifying page ${page.path} ...`);
+                     log.await(`Minifying page ${page.relative} ...`);
                      html = minifyHtml(html, {
                        'minifyCSS': minifyCss,
                        'minifyJS': true,
@@ -250,6 +257,20 @@ class Pipeline {
         resolve();
       });
     });
+  }
+
+  /**
+   * Validates the built release
+   * @return {undefined}
+   */
+  async testBuild() {
+    signale.info('Testing build ...');
+
+    await this._minifyPages();
+  }
+
+  _validatePages() {
+    signale.info('Testing build ...');
   }
 
 };

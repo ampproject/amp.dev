@@ -18,8 +18,6 @@
 
 'use strict';
 
-const log = require('loglevel');
-
 const config = require('./lib/config.js');
 const Platform = require('./lib/platform');
 

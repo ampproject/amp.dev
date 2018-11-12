@@ -31,7 +31,7 @@ class Platform {
     signale.await(`Starting platform with environment ${config.environment} ...`);
     this.server = express();
 
-    this._checkPrerequisites();
+    this._check();
     this._registerRouters();
 
     this.server.listen(config.hosts.platform.port, () => {
@@ -39,7 +39,7 @@ class Platform {
     });
   }
 
-  _checkPrerequisites() {
+  _check() {
       // TODO: Check (dependening on environment) if all needed files are
       // there and otherwise only vend a static error page
   }
