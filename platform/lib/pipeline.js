@@ -16,11 +16,10 @@
 
 'use strict';
 
-const { spawn, exec } = require('child_process');
+const { spawn, spawnSync, exec } = require('child_process');
+const Signale = require('signale');
 const signale = require('signale');
-const { Signale } = require('signale');
 const del = require('del');
-const config = require('./config.js');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const crass = require('crass');
@@ -28,26 +27,26 @@ const stripCssComments = require('gulp-strip-css-comments');
 const through = require('through2');
 const minifyHtml = require('html-minifier').minify;
 
-const GROW_PODSPEC_PATH = '../pages/podspec.yaml';
+const config = require('./config.js');
+const Grow = require('./pipeline/grow.js');
 
-const TRANSPILE_PAGES_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
-const TRANSPILE_PAGES_SCSS_DEST = '../pages/css';
-
-const PAGES_TEMPLATES_SRC = '../frontend/templates/**/*';
-const PAGES_TEMPLATES_DEST = '../pages'
-
+const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
+const TRANSPILE_SCSS_WATCH_SRC = '../frontend/scss/**/*.scss';
+const TRANSPILE_SCSS_DEST = '../pages/css';
+const TEMPLATES_SRC = '../frontend/templates/**/*';
+const TEMPLATES_WATCH_SRC = TEMPLATES_SRC;
+const TEMPLATES_DEST = '../pages'
 const ICONS_SRC = '../frontend/icons/**/*';
+const ICONS_WATCH_SRC = ICONS_SRC;
 const ICONS_DEST = '../pages/icons';
-
 const PAGES_DEST = '../platform/pages';
-
 const STATICS_SRC = ['../pages/static/**/*'];
 const STATIC_DEST = '../platform/static';
 
 class Pipeline {
 
   constructor() {
-    signale.log(`Starting pipeline for environment ${config.environment} ...`);
+    signale.await(`Starting pipeline for environment ${config.environment} ...`);
   }
 
   /**
@@ -56,7 +55,8 @@ class Pipeline {
    */
   check() {
     // TODO(matthiasrohmer): Check node verison
-    // TODO(matthiasrohmer): Run `grow install` in pod
+    let grow = new Grow();
+    return grow.install().when('Finished: Extensions');
   }
 
   /**
@@ -65,13 +65,12 @@ class Pipeline {
    */
   clean() {
     del.sync([
-      GROW_PODSPEC_PATH,
-      TRANSPILE_PAGES_SCSS_DEST,
+      TRANSPILE_SCSS_DEST,
 
-      `${PAGES_TEMPLATES_DEST}/macros`,
-      `${PAGES_TEMPLATES_DEST}/partials`,
-      `${PAGES_TEMPLATES_DEST}/templates`,
-      `${PAGES_TEMPLATES_DEST}/views`,
+      `${TEMPLATES_DEST}/macros`,
+      `${TEMPLATES_DEST}/partials`,
+      `${TEMPLATES_DEST}/templates`,
+      `${TEMPLATES_DEST}/views`,
 
       PAGES_DEST,
       STATIC_DEST
@@ -91,27 +90,37 @@ class Pipeline {
    * Transpiles SCSS files to CSS, moves templates icons and more
    * @return {Promise}
    */
-  buildPagesFrontend() {
-    this._transpilePagesScss();
-    this._collectPagesTemplates();
+  buildFrontend() {
+    this._transpileScss();
+    this._collectTemplates();
     this._collectIcons();
 
-    // TODO(matthiasrohmer): Watch for changes
+    if (config.environment === 'development') {
+      this._watchFrontendChanges();
+      signale.watch(`Watching frontend source for changes ...`);
+    }
   }
 
-  _transpilePagesScss() {
-    const log = signale.scope(`Transpile pages SCSS`);
-    log.start(`Transpiling SCSS from ${TRANSPILE_PAGES_SCSS_SRC} ...`);
+  _watchFrontendChanges() {
+    gulp.watch(TEMPLATES_WATCH_SRC, this._collectTemplates);
+    gulp.watch(ICONS_WATCH_SRC, this._collectIcons);
+    gulp.watch(TRANSPILE_SCSS_WATCH_SRC, this._transpileScss);
+    // TODO(matthiasrohmer): Watch for changes in example src
+  }
+
+  _transpileScss() {
+    const log = signale.scope(`Transpile SCSS`);
+    log.start(`Transpiling SCSS from ${TRANSPILE_SCSS_SRC} ...`);
 
     let options = {
       'outputStyle': 'compact' ? config.environment === 'development' : 'compressed'
     };
 
     return new Promise((resolve, reject) => {
-      let stream = gulp.src(TRANSPILE_PAGES_SCSS_SRC)
+      let stream = gulp.src(TRANSPILE_SCSS_SRC)
                    .pipe(sass(options).on('error', log.error))
                    .pipe(stripCssComments())
-                   .pipe(gulp.dest(TRANSPILE_PAGES_SCSS_DEST));
+                   .pipe(gulp.dest(TRANSPILE_SCSS_DEST));
 
       stream.on('error', (error) => {
         log.fatal('There was an error transpiling the pages SCSS.', error);
@@ -119,7 +128,7 @@ class Pipeline {
       });
 
       stream.on('end', () => {
-        log.success(`Transpiled SCSS files to ${TRANSPILE_PAGES_SCSS_DEST}.`);
+        log.success(`Transpiled SCSS files to ${TRANSPILE_SCSS_DEST}.`);
         resolve();
       });
     });
@@ -153,8 +162,9 @@ class Pipeline {
 
   }
 
-  _collectPagesTemplates() {
-      return this._collect('pages templates', PAGES_TEMPLATES_SRC, PAGES_TEMPLATES_DEST);
+  _collectTemplates() {
+    // TODO(matthiasrohmer): Eventually preminify templates
+    return this._collect('templates', TEMPLATES_SRC, TEMPLATES_DEST);
   }
 
   _collectIcons() {
@@ -168,69 +178,13 @@ class Pipeline {
    * @return {Promise}
    */
   generatePages() {
-    // Write podspec for Grow to run flawlessly
-    config.writeGrowConfig();
-
+    let grow = new Grow();
     if (config.environment === 'development') {
-      return this._startDevelopmentServer();
+      // During development start Grow's dev server
+      return grow.run().when('Server ready.');
     } else {
-      return this._buildPages();
+      return grow.deploy().when('Deploying:');
     }
-  }
-
-  _startDevelopmentServer() {
-    let pending = true;
-
-    signale.info('Starting Grow development server ...');
-    return new Promise((resolve, reject) => {
-      let grow = spawn(
-        'grow',
-        ['run', '--port', `${config.hosts.pages.port}`, '--no-preprocess'],
-        {
-          'stdio': 'pipe',
-          // TODO(matthiasrohmer): Move this path to configuration
-          'cwd': '../pages'
-        }
-      );
-
-      function growStdIo(data) {
-        data = data.toString();
-
-        if (signale.getLevel() <= signale.levels.INFO) {
-          process.stdout.write(data);
-        }
-
-        if (data.indexOf('Server ready.') !== -1 && pending) {
-          pending = false;
-          resolve(data);
-        }
-      }
-
-      grow.stdout.on('data', growStdIo);
-      grow.stderr.on('data', growStdIo);
-    }).then(() => {
-      signale.info('Started Grow development server.');
-    }).catch(() => {
-      signale.error('Grow dev server could not be started.');
-    });
-  }
-
-  _buildPages() {
-    signale.info('Building pages via Grow ...');
-
-    return new Promise((resolve, reject) => {
-      let grow = exec(
-        'grow deploy --noconfirm',
-        {'cwd': '../pages'},
-        (error, stdout, stderr) => {
-          error ? reject(error, stdout, stderr) : resolve(stdout, stderr);
-        }
-      );
-    }).then((stdout, stderr) => {
-      signale.info('Built pages.');
-    }).catch(() => {
-      signale.error('Something went wrong building the pages.');
-    });
   }
 
   samples() {
@@ -242,7 +196,7 @@ class Pipeline {
    * @return {undefined}
    */
   async optimizeBuild() {
-    signale.info('Optimizing built pages ...');
+    signale.info('Optimizing build ...');
 
     await this._minifyPages();
   }

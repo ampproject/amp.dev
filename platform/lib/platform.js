@@ -16,8 +16,9 @@
 
 'use strict';
 
-const log = require('loglevel');
+const signale = require('signale');
 const express = require('express');
+
 const config = require('./config.js');
 const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
@@ -27,14 +28,14 @@ const routers = {
 class Platform {
 
   constructor() {
-    log.debug(`Creating platform with environment ${config.environment} ...`);
+    signale.await(`Starting platform with environment ${config.environment} ...`);
     this.server = express();
 
     this._checkPrerequisites();
     this._registerRouters();
 
     this.server.listen(config.hosts.platform.port, () => {
-      log.info(`amp.dev available on port ${config.hosts.platform.port}!`);
+      signale.success(`amp.dev available on port ${config.hosts.platform.port}!`);
     });
   }
 

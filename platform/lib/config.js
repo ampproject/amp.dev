@@ -1,4 +1,4 @@
-const log = require('loglevel');
+const signale = require('signale');
 const fs = require('fs');
 const path = require('path');
 
@@ -12,21 +12,21 @@ class Config {
   constructor(environment = 'development') {
     const config = require(`${CONFIG_BASE_PATH}/${environment}.json`);
 
-    // Set log level for the overall application
-    log.setLevel(config.logLevel);
-
     this.environment = environment;
     this.hosts = config.hosts;
+
+    // Synchronously write podspec for Grow to run flawlessly later in pipeline
+    this._writeGrowConfig();
   }
 
-  writeGrowConfig() {
+  _writeGrowConfig() {
     let template = fs.readFileSync(path.join(__dirname, GROW_CONFIG_TEMPLATE_PATH));
     let podspec = `${template}\n`
                 + `env:\n`
-                + `  name: ${config.environment}\n`
-                + `  host: ${config.hosts.pages.host}\n`
-                + `  port: ${config.hosts.pages.port}\n`
-                + `  scheme: ${config.hosts.pages.scheme}\n`
+                + `  name: ${this.environment}\n`
+                + `  host: ${this.hosts.pages.host}\n`
+                + `  port: ${this.hosts.pages.port}\n`
+                + `  scheme: ${this.hosts.pages.scheme}\n`
                 + `\n`
                 + `deployments:\n`
                 + `  default:\n`
@@ -34,13 +34,13 @@ class Config {
                 + `    destination: local\n`
                 + `    out_dir: ${GROW_OUT_DIR}\n`
                 + `    env:\n`
-                + `      name: ${config.environment}\n`
-                + `      host: ${config.hosts.pages.host}\n`
-                + `      port: ${config.hosts.pages.port}\n`
-                + `      scheme: ${config.hosts.pages.scheme}`;
+                + `      name: ${this.environment}\n`
+                + `      host: ${this.hosts.pages.host}\n`
+                + `      port: ${this.hosts.pages.port}\n`
+                + `      scheme: ${this.hosts.pages.scheme}`;
 
     fs.writeFileSync(path.join(__dirname, GROW_CONFIG_DEST), podspec);
-    log.debug(`Wrote podspec to ${GROW_CONFIG_DEST}`);
+    signale.info(`Wrote podspec to ${GROW_CONFIG_DEST}`);
   }
 }
 

@@ -18,7 +18,7 @@
 
 'use strict';
 
-const log = require('loglevel');
+const signale = require('signale');
 
 const config = require('./lib/config.js');
 const Pipeline = require('./lib/pipeline');
@@ -29,10 +29,10 @@ let pipeline = new Pipeline();
 pipeline.clean();
 
 (async () => {
-  pipeline.check();
+  await pipeline.check();
   pipeline.collectStatics();
 
-  await pipeline.buildPagesFrontend();
+  await pipeline.buildFrontend();
   // Generate pages does not statically build the pages for development
   // but instead starts the development server
   await pipeline.generatePages();
@@ -41,7 +41,7 @@ pipeline.clean();
     await pipeline.optimizeBuild();
   }
 })().then(() => {
-  // For development we want also to directly serve the current build
+  // For development we also want to directly serve the current build
   if (config.environment == 'development') {
     let platform = new Platform();
   }
