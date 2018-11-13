@@ -1,0 +1,4 @@
+path: /documentation/components/d/{base}.html
+view: /views/overview/components-overview.j2
+
+category: D
