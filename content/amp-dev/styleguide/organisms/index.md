@@ -1,4 +1,4 @@
 ---
 $title: List
-$path: /styleguide/organisms/teaser-grid.html
+$path: /styleguide/organisms.html
 ---
