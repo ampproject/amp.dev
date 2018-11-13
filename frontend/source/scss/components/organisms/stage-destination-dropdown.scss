@@ -30,34 +30,45 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
   animation: growDown 0.5s ease-in-out;
 
 	@media screen and (min-width: 768px) {
-		height: 50vh;
-		width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    width: 100%;
+    animation: none;
 	}
 
 	&-content {
-		position: absolute;
-		bottom: 0;
-		padding: 0 0 5% 5%;
-		max-width: 50%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
 
 		@media screen and (min-width: 768px){
-			top: 0;
-			padding: 15% 0 0 5%;
+      padding: 10% 5%;
 		}
 }
 
 	.hl {
 		@include hl;
-		@include hl-h3;
+		@include hl-h5;
 		@include color-white;
 		margin: 0;
 		display: inline;
-		padding-right: 12px;
+    padding-right: 12px;
+
+    @media screen and (min-width: 1024px) {
+      @include hl-h3;
+    }
 
 		&-sub {
 			@include hl;
-			@include hl-h3;
-			@include color-white;
+			@include hl-h5;
+      @include color-white;
+
+      @media screen and (min-width: 1024px) {
+        @include hl-h3;
+      }
 		}
 
 		&-divider {

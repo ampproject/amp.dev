@@ -41,6 +41,16 @@
         grid-column-start: 7;
         grid-column-end: -1;
       }
+
+      &.ad-o-teaser-grid {
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fill, min-max(150px, 1fr));
+      }
+
+      &.ad-m-teaser-success-story {
+        padding-top: 0;
+      }
     }
   }
 

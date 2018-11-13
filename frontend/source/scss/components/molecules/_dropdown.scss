@@ -27,14 +27,15 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .destination-list-view-box {
   display: inline;
-	height: 32px;
-	width: 250px;
+  padding: 0;
+  height: 32px;
+  padding-right: 150px;
 	overflow: hidden;
   position: absolute;
 
-	@media screen and (min-width: 768px){
-    width: 324px;
-	  height: 42px;
+	@media screen and (min-width: 1024px){
+    height: 42px;
+    padding-right: 200px;
 	}
 
 
@@ -52,13 +53,14 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 
 	&:hover {
-    height: 143px;
+    height: 170px;
+    padding-right: 0px;
     transition: height 0.5s ease;
 		background: transparent;
 		animation: none;
 
-    @media screen and (min-width: 768px) {
-		  height: 210px;
+    @media screen and (min-width: 1024px) {
+		  height: 225px;
     }
 
 		.ad-a-ico {
@@ -69,7 +71,11 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		.destination-list {
 			display: flex;
 			flex-direction: column;
-		}
+    }
+
+    .destination-list-item {
+      padding-right: 75px;
+    }
 
 		.destination-list-item-rolling {
 			display: none;
@@ -132,18 +138,22 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       right: 0;
       z-index: 2;
       transition: transform 0.5s ease;
-      padding: 10px;
+      padding: 8px;
       background: transparent;
       border: none;
       outline: none;
+
+      @media screen and (min-width: 1024px) {
+        padding: 10px;
+      }
 
       & svg {
         @include ico;
         @include ico-1;
         @include ico-white;
 
-				@media screen and (min-width: 768px) {
-					@include ico-2;
+				@media screen and (min-width: 1024px) {
+          @include ico-2;
 				}
       }
     }
@@ -157,9 +167,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	z-index: 10;
 	padding: 24px 24px;
 	transition: transform 0.5s ease;
-
-	// @include ico-white;
-	// @include ico-2;
 }
 
 // default list item
@@ -167,12 +174,16 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .destination-list-item {
 
 	@include hl;
-	@include hl-h3;
+	@include hl-h5;
 	@include color-white;
 	outline: color('white');
-	padding: 1px 20px 5px 10px;
+	padding: 5px 20px 5px 10px;
   order: 2;
   display: block;
+
+  @media screen and (min-width: 1024px) {
+    @include hl-h3;
+  }
 
   [option][selected] {
     order: 1;
