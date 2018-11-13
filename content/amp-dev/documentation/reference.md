@@ -1,6 +1,6 @@
 ---
-$title: Include iframes
+$title: Reference
 $view: /views/detail/docs-detail.j2
-
-order: 6
+$order: 3
 ---
+

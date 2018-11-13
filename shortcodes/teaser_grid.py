@@ -10,12 +10,12 @@ TEASER_TYPE_TEMPLATE = 'template'
 TEASER_TYPE_USE_CASE = 'use-case'
 
 TYPE_TEMPLATES = {
-    '/views/component.j2': TEASER_TYPE_COMPONENT,
-    '/views/example.j2': TEASER_TYPE_EXAMPLE,
-    '/views/guide.j2': TEASER_TYPE_GUIDE,
-    '/views/success-story.j2': TEASER_TYPE_SUCCESS_STORY,
-    '/views/template.j2': TEASER_TYPE_TEMPLATE,
-    '/views/use-case.j2': TEASER_TYPE_USE_CASE,
+    '/views/detail/component-detail.j2': TEASER_TYPE_COMPONENT,
+    '/views/detail/example-detail.j2': TEASER_TYPE_EXAMPLE,
+    '/views/detail/guide-detail.j2': TEASER_TYPE_GUIDE,
+    '/views/detail/success-story-detail.j2': TEASER_TYPE_SUCCESS_STORY,
+    '/views/detail/template-detail.j2': TEASER_TYPE_TEMPLATE,
+    '/views/detail/use-case-detail.j2': TEASER_TYPE_USE_CASE,
 }
 
 

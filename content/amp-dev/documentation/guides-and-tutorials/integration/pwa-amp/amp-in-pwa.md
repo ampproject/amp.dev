@@ -1,6 +1,6 @@
 ---
 $title: Embed & use AMP as a data source
-$view: /views/docs/detail.j2
+$view: /views/detail/docs-detail.j2
 
 order: 2
 ---

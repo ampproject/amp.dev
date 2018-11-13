@@ -1,5 +1,5 @@
 ---
 $title: Documentation
 $path: /documentation.html
-$view: /views/docs/detail.j2
+$view: /views/detail/docs-detail.j2
 ---

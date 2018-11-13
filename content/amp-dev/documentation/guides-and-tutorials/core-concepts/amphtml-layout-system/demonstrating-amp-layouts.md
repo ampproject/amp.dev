@@ -1,6 +1,6 @@
 ---
 $title: Demonstrating AMP layouts
-$view: /views/docs/detail.j2
+$view: /views/detail/docs-detail.j2
 ---
 
 [TOC]
