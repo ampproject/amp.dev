@@ -1,6 +1,10 @@
 
 {% if options.type =='default' %}
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-rolling.css') %}
+{% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
+{% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+{% do doc.icons.useIcon('icons/angle-down-light.svg') %}
+
 
 <div class="destination-stage websites">
 	<div class="destination-stage-content">
@@ -25,7 +29,6 @@
   <div class="destination-stage-content">
 		<span class="hl-sub">What is Amp?</span>
 		<span class="hl-divider"></span>
-    <div class="destintation-stage-inline-content-wrapper">
 		  <h2 class="hl">AMP is a web component based framework for easily creating user first </h2>
         <div class="destination-list-view-box destination-list-view-box-gradient"
         [class]="toggle ? 'destination-list-view-box destination-list-view-box-gradient destination-list-view-box-expand': 'destination-list-view-box destination-list-view-box-gradient'">
@@ -50,7 +53,6 @@
         {% endfor %}
 			  </ul>
 		  </amp-selector>
-	  </div>
     </div>
     </div>
 	</div>
