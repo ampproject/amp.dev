@@ -1,5 +1,5 @@
 ---
-$view: /views/example.j2
+$view: /views/detail/example-detail.j2
 $title: A second example
 $path: /styleguide/organisms/teaser-grid/example-2.html
 $titles:
