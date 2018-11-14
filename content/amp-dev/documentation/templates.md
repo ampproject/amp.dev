@@ -13,10 +13,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex
 
 [teaser-grid]
 
-[](content/amp-dev/styleguide/organisms/teaser-grid/success-story-2.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/success-story-2.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/success-story-2.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/success-story-2.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/template.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/template-3.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/template-2.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/template-4.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/template.md)
+[](content/amp-dev/styleguide/organisms/teaser-grid/template-3.md)
+
 
 
 [/teaser-grid]
