@@ -115,7 +115,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
           display: none;
           animation-play-state: paused;
         }
-
     }
 
     @media screen and (min-width: 768px) {
@@ -138,22 +137,18 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       right: 0;
       z-index: 2;
       transition: transform 0.5s ease;
-      padding: 8px;
+      padding: 10px;
       background: transparent;
       border: none;
       outline: none;
-
-      @media screen and (min-width: 1024px) {
-        padding: 10px;
-      }
 
       & svg {
         @include ico;
         @include ico-1;
         @include ico-white;
 
-				@media screen and (min-width: 1024px) {
-          @include ico-2;
+				@media screen and (min-width: 768px) {
+					@include ico-2;
 				}
       }
     }

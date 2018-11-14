@@ -31,21 +31,23 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 
 	@media screen and (min-width: 768px) {
     height: 0;
-    padding-top: 56.25%;
+    padding-top: 35%;
     width: 100%;
     animation: none;
 	}
 
 	&-content {
     position: absolute;
+    padding: 10% 5%;
     bottom: 0;
-    top: 0;
     left: 0;
     right: 0;
-    width: 50%;
+    width: 100%;
 
 		@media screen and (min-width: 768px){
       padding: 10% 5%;
+      top: 0;
+      width: 50%;
 		}
 }
 
