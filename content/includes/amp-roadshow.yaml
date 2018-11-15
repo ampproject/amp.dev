@@ -3,15 +3,9 @@ nextstop:
   link: https://events.withgoogle.com/amp-roadshow-bangalore/
 
 cities:
-  - title: Bangalore
-    date: 2018-10-24
-    link: https://events.withgoogle.com/amp-roadshow-bangalore/
-  - title: Mumbai
-    date: 2018-10-27
-    link: https://events.withgoogle.com/amp-roadshow-mumbai/
-  - title: Gurgaon
-    date: 2018-10-30
-    link: https://events.withgoogle.com/amp-roadshow-gurgaon
+  - title: Ho Chi Minh
+    date: 2018-12-14
+    link: https://events.withgoogle.com/amp-roadshow-hcm/
 
 past:
   - title: Toronto
@@ -89,6 +83,15 @@ past:
   - title: Seoul
     date: 2018-09-11
     link: https://events.withgoogle.com/amp-roadshow-seoul/
+  - title: Bangalore
+    date: 2018-10-24
+    link: https://events.withgoogle.com/amp-roadshow-bangalore/
+  - title: Mumbai
+    date: 2018-10-27
+    link: https://events.withgoogle.com/amp-roadshow-mumbai/
+  - title: Gurgaon
+    date: 2018-10-30
+    link: https://events.withgoogle.com/amp-roadshow-gurgaon
     
 
 
