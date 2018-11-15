@@ -1,10 +1,10 @@
 ---
 $view: /views/detail/template-detail.j2
-$path: /styleguide/organisms/teaser-grid/template-3.html
+$path: /styleguide/organisms/teaser-grid/template-2.html
 $title: Template
 $titles:
-  teaser: Template name
-destination: e-mails
+  teaser: Template Name
+destination: ads
 teaser:
   image:
     src: '/static/img/teaser-dummy-5x3-1.jpg'

@@ -5,9 +5,9 @@ $title: Template
 destination: websites
 teaser:
   image:
-    src: '/static/img/teaser-dummy-4x5-1.jpg'
-    width: 4
-    height: 5
+    src: '/static/img/teaser-dummy-1x1-1.jpg'
+    width: 1
+    height: 1
     alt: A placeholder image
 ---
 [tip]
