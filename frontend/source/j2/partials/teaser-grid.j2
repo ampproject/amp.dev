@@ -102,7 +102,7 @@
     {% elif teaser.type == 'template' %}
     {% do doc.styles.addCssFile('css/components/molecules/teaser-template.css') %}
 
-    <div class="ad-m-teaser ad-m-teaser-template">
+    <div class="ad-m-teaser ad-m-teaser-template ad-m-teaser-template-{{ teaser.destination }}">
       <a href="{{ teaser.doc.url|relative }}">
         {% if teaser.destination %}
         {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
