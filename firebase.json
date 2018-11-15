@@ -954,6 +954,31 @@
         "type": 301
       },
       {
+        "source": "/docs/design/art_directions?(.html)",
+        "destination": "/docs/design/responsive/art_direction.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/design/control_layouts?(.html)",
+        "destination": "/docs/design/responsive/control_layout.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/design/custom_fonts?(.html)",
+        "destination": "/docs/design/responsive/custom_fonts.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/design/placeholders?(.html)",
+        "destination": "/docs/design/responsive/placeholders.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/design/responsive_designs?(.html)",
+        "destination": "/docs/design/responsive/responsive_design.html",
+        "type": 301
+      },
+      {
         "source": "/docs/guides/third_party_components?(.html)",
         "destination": "/docs/fundamentals/third_party_components.html",
         "type": 301
