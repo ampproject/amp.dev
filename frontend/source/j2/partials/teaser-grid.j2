@@ -1,8 +1,8 @@
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 
-{% if doc.view == '/views/docs/detail.j2' %}
+{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
 </section>
-<section class="ad-o-teaser-grid">
+<section class="teaser-grid">
 {% endif %}
 
 <div class="ad-o-teaser-grid">
@@ -217,7 +217,7 @@
   {% endif %}
 </div>
 
-{% if doc.view == '/views/docs/detail.j2' %}
+{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
 </section>
 <section class="main">
 {% endif %}
