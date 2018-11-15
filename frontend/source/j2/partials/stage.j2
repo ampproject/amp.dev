@@ -1,9 +1,14 @@
-
-{% if options.type =='default' %}
-{% do doc.styles.addCssFile('css/components/organisms/stage-destination-rolling.css') %}
 {% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
 {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
 {% do doc.icons.useIcon('icons/angle-down-light.svg') %}
+
+{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
+</section>
+<section class="stage">
+{% endif %}
+
+{% if options.type =='default' %}
+{% do doc.styles.addCssFile('css/components/organisms/stage-destination-rolling.css') %}
 
 
 <div class="destination-stage websites">
@@ -114,5 +119,9 @@
 	  </div>
     </div>
 	</div>
+  {% endif %}
 
+{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
+</section>
+<section class="main">
 {% endif %}
