@@ -2,6 +2,18 @@
 $title: amp-accordion
 $view: /views/overview/components-overview.j2
 
+destinations:
+  - 'stories'
+  - 'ads'
+  - 'websites'
+teaser:
+  image:
+    src: '/static/img/teaser-placeholder-5x3.jpg'
+    width: 5
+    height: 3
+    alt: A placeholder image
+  text: An extraordinary AMP component for your pages.
+
 order: 2
 ---
 

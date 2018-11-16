@@ -1,0 +1,33 @@
+/*
+
+#############################
+### TEMPLATE: docs detail ###
+#############################
+
+### INFO:
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../templates/_default.scss';
+
+.#{template('component-overview')} {
+  @include container;
+  
+  section {
+    &.main {
+      @media screen and (min-width: 1024px){
+        grid-column-start: 7;
+        grid-column-end: 25;
+      }
+    }
+  }
+}
