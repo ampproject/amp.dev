@@ -3,6 +3,7 @@
 {% do doc.icons.useIcon('icons/search.svg') %}
 {% do doc.icons.useIcon('icons/globe.svg') %}
 {% do doc.icons.useIcon('icons/menu.svg') %}
+{% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
 
 {% import '/macros/atoms.j2' as atoms %}
 {% set home = g.doc('/content/amp-dev/index.md') %}
@@ -98,12 +99,19 @@
             <li class="ad-o-header-lnk ad-o-header-lnk-support">
               <a href="">{{ mainNav.title }}</a>
             </li>
+
             {% set languages = g.doc('/content/amp-dev/languages.md')%}
-            <ul class="ad-o-header-lang-list">
+            <div class="ad-o-header-lang-box">
+                <ul class="ad-o-header-lang-list">
               {% for locale in doc.locales%}
-                <li class="ad-o-header-lang-list-item">{{ locale }}</li>
+                <li class="ad-o-header-lang-list-item"><a href="#">{{ locale }}</a></li>
               {% endfor %}
             </ul>
+            <div class="ad-a-ico ad-o-langicon">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+            </div>
+</div>
+
 
             {# <li class="ad-o-header-lnk ad-o-header-lnk-lang">
               <a class="ad-o-header-icon" href="{{ languages.url.path }}">
