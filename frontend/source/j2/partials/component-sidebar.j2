@@ -40,7 +40,7 @@
           {% set allCollectionPaths = collection.collection_path.split('/') %}
           {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
           <li id="{{ collection.category }}" class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
-            <a class="nav-link" href="#{{ collection.category }}">{{ collection.category }}</a>
+            <span class="nav-link">{{ collection.category }}</span>
             {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
           </li>
           {% endfor %}
