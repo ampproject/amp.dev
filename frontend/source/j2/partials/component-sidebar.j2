@@ -1,0 +1,61 @@
+{% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-sidebar.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/component-sidebar.css') %}
+{% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
+
+<section class="sidebar">
+  <div class="ad-o-component-sidebar">
+
+    <div class="destination-stage websites websites-background">
+      <div class="destination-stage-content">
+        <span class="hl">Select your topic:</span>
+        <div class="destination-list-view-box destination-list-view-box-gradient"
+          [class]="toggle ? 'destination-list-view-box destination-list-view-box-gradient destination-list-view-box-expand': 'destination-list-view-box destination-list-view-box-gradient'">
+            <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-list-icon">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
+            </button>
+          <amp-selector layout="container">
+            <ul class="destination-list">
+              {% set filters = ['all', 'websites', 'ads', 'stories', 'e-mails'] %}
+              {% for filter in filters %}
+                <li class="{{ filter }}" option="{{ filter }}">
+                  <a href="#" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter }}-background">
+                    {{ filter }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </amp-selector>
+        </div>
+      </div>
+    </div>
+    <div class="nav">
+      {% macro nav_tree(root, iteration=1, depth=None) -%}
+      <ul class="nav-list level-{{ iteration }}">
+          {% set collections = root.collections() %}
+          {% set documents = root.list_docs(order_by='order') %}
+        
+          {% if not depth or iteration <= depth %}
+          {% for collection in collections %}
+          {% set currentCollectionPaths = doc.collection.collection_path.split('/') %}
+          {% set allCollectionPaths = collection.collection_path.split('/') %}
+          {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
+          <li id="{{ collection.category }}" class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
+            <a class="nav-link" href="#{{ collection.category }}">{{ collection.category }}</a>
+            {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
+          </li>
+          {% endfor %}
+
+          {% for document in documents %}
+          {% set activeDocument = true if document.url == doc.url %}
+          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}"><a class="nav-link" href="{{ document.url }}">{{ document.title }}</a></li>
+          {% endfor %}
+          {% endif %}
+      </ul>
+      {%- endmacro %}
+
+      {% set split_path = doc.collection.collection_path.split('/') %}
+      {% set current_path = '/'.join(split_path[:3]) %}
+      {{ nav_tree(root=g.collection(current_path)) }}
+    </div>
+  </div>
+</section>
