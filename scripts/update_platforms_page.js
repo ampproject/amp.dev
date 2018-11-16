@@ -111,6 +111,8 @@ function addCMS() {
           link: https://atenea.marfeel.com/atn/product/marfeel-press/360-platform/google-amp/marfeel-s-accelerated-mobile-pages-google-amp-solution
         - title: Rabbit
           link: https://gomobile.jp/rabbit/
+        - title: Sitefinity
+          link: https://www.progress.com/documentation/sitefinity-cms/mobile-formats
         - title: Squarespace
           link: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
         - title: Textpattern
