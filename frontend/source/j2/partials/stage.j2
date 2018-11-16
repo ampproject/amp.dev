@@ -30,6 +30,9 @@
 {% elif options.type == 'dropdown' %}
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown.css') %}
 
+{% set pathEnd = doc.url.path.split('/')|last %}
+{% set pathStart = doc.url.path.split('/')[1] %}
+
 <div class="destination-stage websites websites-background">
   <div class="destination-stage-content">
 		<span class="hl-sub">What is Amp?</span>
@@ -51,9 +54,15 @@
         {% set filters = ['overview', 'websites', 'ads', 'stories', 'e-mails'] %}
         {% for filter in filters %}
 			 	  <li option="{{ filter }}" class="{{ filter }}">
-            <a href="" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
+           {% if filter == 'overview' %}
+              <a href="{{ doc.url.path }}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
+                {{ filter }}
+              </a>
+            {% else %}
+             <a href="/{{pathStart}}/{{filter}}/{{pathEnd}}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
                 {{ filter }}
             </a>
+           {% endif %}
           </li>
         {% endfor %}
 			  </ul>
