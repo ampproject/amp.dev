@@ -1,4 +1,0 @@
-path: /documentation/guides-and-tutorials/interaction_dynamic/login-requiring/{base}.html
-view: /views/default.j2
-
-category: Create a login-requiring AMP page
