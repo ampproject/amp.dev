@@ -256,22 +256,6 @@
           }
         },
         {
-          "createdAt": "2018-07-02T20:39:23Z",
-          "updatedAt": "2018-07-02T20:39:23Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16521",
-            "title": "Allow tapping on elements in amp-story-grid-layer",
-            "description": "For any clickable element outside of amp-story-cta-layer, we should show a tooltip that defers the action until after the user has clicked on the tooltip.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
-                "name": "AMP Story",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-04-05T20:02:57Z",
           "updatedAt": "2018-04-05T20:02:57Z",
           "issue": {
@@ -751,6 +735,22 @@
     },
     {
       "cards": [
+        {
+          "createdAt": "2018-07-02T20:39:23Z",
+          "updatedAt": "2018-11-07T22:35:42Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/16521",
+            "title": "Allow tapping on elements in amp-story-grid-layer",
+            "description": "For any clickable element outside of amp-story-cta-layer, we should show a tooltip that defers the action until after the user has clicked on the tooltip.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
+                "name": "AMP Story",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
         {
           "createdAt": "2018-04-02T20:00:30Z",
           "updatedAt": "2018-10-15T02:38:20Z",
