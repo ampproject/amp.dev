@@ -1,6 +1,28 @@
 blogs:
 
 - type: Blog
+  title: "Developer Preview of better AMP URLs in Google Search"
+  id: developer-preview-of-better-amp-urls-in-google-search
+  author: Greg Grothaus
+  role:  Software Engineer, AMP at Google
+  origin: "https://amphtml.wordpress.com/2018/11/13/developer-preview-of-better-amp-urls-in-google-search/amp/"
+  excerpt: "AMP users and publishers have told us that they prefer that the original domain names be used anywhere their AMP pages are displayed. Earlier this year, we demonstrated a technology named Signed HTTP Exchanges that supports transforming cached AMP URLs on any AMP Cache. Google Chrome has since started an origin trial for Signed Exchanges [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-11-13T10:10:09-08:00
+  date: "November 13, 2018"
+
+- type: Blog
+  title: "So your AMP test doesn’t perform — now what?"
+  id: so-your-amp-test-doesnt-perform%e2%80%8a-%e2%80%8anow-what
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/11/08/so-your-amp-test-doesnt-perform%e2%80%8a-%e2%80%8anow-what/amp/"
+  excerpt: "Editor&#8217;s note: The following was posted on Medium by Martin Schierle, Mobile Solutions Consultant at Google.  Accelerated Mobile Pages (AMP) are a great and easy way to build very fast pages, and as we know speed is key — for every second delay in mobile page load, conversions can fall by up to 20%. So obviously the first thing people [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-11-08T13:46:36-08:00
+  date: "November 8, 2018"
+
+- type: Blog
   title: "Streaming in the Shadow Reader"
   id: streaming-in-the-shadow-reader
   author: Ben Morss
@@ -43,25 +65,3 @@ blogs:
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
   datedata: 2018-10-23T09:47:44-07:00
   date: "October 23, 2018"
-
-- type: Blog
-  title: "Three Years of AMP!"
-  id: three-years-of-amp
-  author: David Besbris
-  role:  VP of Search at Google
-  origin: "https://amphtml.wordpress.com/2018/10/22/three-years-of-amp/amp/"
-  excerpt: "Not long ago the mobile web was sluggish, clunky and at risk of being closed off by apps. Many publishers were concerned how this would affect their future and the promise of the open web. News publishers approached us at Google to help ensure their content was easy to distribute and read across the web. [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-10-22T09:16:38-07:00
-  date: "October 22, 2018"
-
-- type: Blog
-  title: "What’s new in AMP, Q4 2018"
-  id: whats-new-in-amp-q4-2018
-  author: Eric Lindley
-  role:  Product Manager, AMP Project at Google
-  origin: "https://amphtml.wordpress.com/2018/10/18/whats-new-in-amp-q4-2018/amp/"
-  excerpt: "A new, open governance model for AMP In a separate blog post, we discussed our intent to move to a new governance model for the AMP Project. AMP Linker For browsers that restrict third-party cookie access, AMP Linker is a new way to keep user sessions in sync. See our announcement blog post for details [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-10-18T14:47:36-07:00
-  date: "October 18, 2018"
