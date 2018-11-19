@@ -1,0 +1,36 @@
+/*
+
+#############################
+### MOLECULE: filter-bubbles ###
+#############################
+
+### INFO:
+
+The filter-bubble molecule is a simple button used to filter content based on their respected category. It contains a simple text atom with a  box-shadow
+
+### MODIFIERS:
+  currently no modifiers.
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+@import '../atoms/_text';
+
+.#{molecule('filter-bubble')} {
+  @include txt;
+  @include txt-3;
+  @include txt-font-accent;
+  @include box-shadow;
+  border-radius: 25px;
+  border: none;
+  padding: 5px 20px;
+  background: color('white');
+  cursor: pointer;
+
+  &:hover {
+    background: color('blue-ribbon');
+    color: color('white');
+  }
+}

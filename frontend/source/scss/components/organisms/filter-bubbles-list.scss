@@ -1,0 +1,26 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+@import '../molecules/filter-bubble.scss';
+
+/*
+
+#############################
+### ORGANSIM: filter-bubbles-list ###
+#############################
+
+### INFO:
+
+Filter-bubble-list is a list of filter-bubble molecules. For reference see documentation/template overview
+
+### MODIFIERS:
+  currently no modifiers.
+*/
+
+.#{organism('filter-bubbles-list')} {
+  grid-column: 7 / 19;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}

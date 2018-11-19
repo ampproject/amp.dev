@@ -10,13 +10,14 @@ $order: 4
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex. Vivamus eget est nec lorem semper ultrices eu eu elit. Ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex.
 [/intro]
 
-[filter-bubble]
+
+[filter-bubbles]
   - All
   - E-Commerce
   - News & Blogs
-  - Art & Design
+  - Art & Desgin
   - Food & Drinks
-[/filter-bubble]
+[/filter-bubbles]
 
 [teaser-grid]
 
