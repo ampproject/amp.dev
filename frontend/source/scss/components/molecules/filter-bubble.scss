@@ -21,15 +21,17 @@ The filter-bubble molecule is a simple button used to filter content based on th
 .#{molecule('filter-bubble')} {
   @include txt;
   @include txt-3;
-  @include txt-font-accent;
-  @include box-shadow;
+  @include txt-strong;
+  @include filter-bubble-shadow-regular;
   border-radius: 25px;
   border: none;
   padding: 5px 20px;
   background: color('white');
+  color: color('oslo-gray');
   cursor: pointer;
 
   &:hover {
+    @include filter-bubble-shadow-selected;
     background: color('blue-ribbon');
     color: color('white');
   }
