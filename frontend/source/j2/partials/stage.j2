@@ -11,7 +11,8 @@
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-rolling.css') %}
 
 
-<div class="destination-stage websites">
+<div class="destination-stage">
+  <div class="destination-stage-clipped-background websites"></div>
 	<div class="destination-stage-content">
 		<span class="hl-sub">What is Amp?</span>
     <div class="hl-divider"></div>
@@ -33,7 +34,8 @@
 {% set pathEnd = doc.url.path.split('/')|last %}
 {% set pathStart = doc.url.path.split('/')[1] %}
 
-<div class="destination-stage websites websites-background">
+<div class="destination-stage">
+  <div class="destination-stage-clipped-background websites-background"></div>
   <div class="destination-stage-content">
 		<span class="hl-sub">What is Amp?</span>
 		<span class="hl-divider"></span>
@@ -74,7 +76,8 @@
 {% elif options.type == 'selected' %}
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-selected.css') %}
 
-<div class="destination-stage destination-stage-active {{ doc.title }} {{doc.title}}-background">
+<div class="destination-stage destination-stage-active ">
+  <div class="destination-stage-clipped-background {{ doc.title }} {{doc.title}}-background"></div>
   <div class="destination-stage-content">
 		<span class="hl-{{ doc.title }} hl-sub">What is Amp?</span>
 		<span class="hl-{{ doc.title }} hl-divider"></span>
