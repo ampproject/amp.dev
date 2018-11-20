@@ -26,15 +26,13 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 
 .destination-list-view-box {
-  display: inline;
   padding: 0;
-  height: 32px;
-  padding-right: 150px;
-	overflow: hidden;
+  height: 38px;
+  padding-right: 180px;
+  overflow: hidden;
   position: absolute;
 
 	@media screen and (min-width: 1024px){
-    height: 42px;
     padding-right: 200px;
 	}
 
@@ -53,7 +51,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	}
 
 	&:hover {
-    height: 190px;
+    height: 210px;
     padding-right: 0px;
     transition: height 0.5s ease;
 		background: transparent;
@@ -138,7 +136,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       right: 0;
       z-index: 2;
       transition: transform 0.5s ease;
-      padding: 5px;
+      padding: 11px;
       background: transparent;
       border: none;
       outline: none;
@@ -174,10 +172,10 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .destination-list-item {
 
 	@include hl;
-	@include hl-h5;
+	@include hl-h2;
 	@include color-white;
 	outline: color('white');
-	padding: 5px 20px 5px 10px;
+	padding: 1px 20px 1px 10px;
   order: 2;
   display: block;
 

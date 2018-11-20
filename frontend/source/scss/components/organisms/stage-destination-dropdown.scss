@@ -24,69 +24,77 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 @include rollingAnimation;
 
 .destination-stage {
-	height: 90vh;
-	width: 100vw;
-  position: relative;
-  animation: growDown 0.5s ease-in-out;
+  width: 100%;
+  height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  // animation: growDown 0.5s ease-in-out;
 
 
 	@media screen and (min-width: 768px) {
-    height: 0;
-    padding-top: 35%;
+    height: auto;
+    flex-direction: row-reverse;
     width: 100%;
     animation: none;
-    border-bottom-left-radius: 130px;
   }
 
   &-clipped-background {
-    @media screen and (min-width: 768px) {
       position: absolute;
       height: 100%;
       width: 100%;
       top: 0;
-      border-bottom-left-radius: 130px;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
-    }
+
+      @media screen and (min-width: 768px) {
+        border-bottom-left-radius: 80px;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
+      }
+
+      @media screen and (min-width: 1080px) {
+        border-bottom-left-radius: 100px;
+      }
   }
 
 	&-content {
-    position: absolute;
     padding: 10% 5%;
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 5;
 
 		@media screen and (min-width: 768px){
-      padding: 10% 5%;
-      top: 0;
+      padding: 5%;
       width: 50%;
 		}
 }
 
 	.hl {
-		@include hl;
-		@include hl-h5;
+    @include hl;
+    @include hl-h2;
 		@include color-white;
 		margin: 0;
-		display: inline;
     padding-right: 12px;
 
     @media screen and (min-width: 1024px) {
       @include hl-h3;
     }
 
-		&-sub {
-			@include hl;
-			@include hl-h5;
-      @include color-white;
 
-      @media screen and (min-width: 1024px) {
-        @include hl-h3;
+		&-sub {
+      @include txt;
+      @include txt-2;
+      @include txt-strong;
+      @include color-white;
+    }
+
+    &-inline {
+      height: 38px;
+      display: inline-block;
+      width: 180px;
+
+      @media screen and (min-width: 768px) {
+        width: 200px;
       }
-		}
+    }
 
 		&-divider {
 			@include divider;

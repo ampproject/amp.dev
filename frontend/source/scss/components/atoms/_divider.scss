@@ -42,7 +42,7 @@ desktop
 }
 
 @mixin divider-stage {
-	width: 60px;
+  width: 60px;
   height: 4px;
   background-color: color('white');
   @media screen and (min-width: 1024px) {
