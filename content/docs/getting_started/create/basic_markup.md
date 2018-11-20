@@ -39,6 +39,9 @@ The content in the body, so far, is pretty straightforward. But there’s a lot 
 
 Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
+ {% call callout('Tooling Tip', type='tip') %} Use the [AMP Boilerplate Generator](https://ampbyexample.com/boilerplate/) to quickly get started with creating new AMP pages.
+{% endcall %}
+
 ## Required mark-up
 
 AMP HTML documents MUST:

@@ -1,6 +1,6 @@
 ---
 $title: Integrating with AMP to serve display ads
-$order: 4
+$order: 5
 toc: true
 ---
 
