@@ -112,6 +112,13 @@ Type attribute value: `dynatrace`
 
 Adds support for Dynatrace real user monitoring. Requires defining *var* `app` with a Dynatrace provided *application id* and *var* `tenant` with a Dynatrace provided *environment identifier*. More details for adding Dynatrace real user monitoring can be found at [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
+### EPICA
+
+Type attribute value: `epica`
+
+Adds support for EPICA page views and events.
+More details can be found at [EPICA docs](https://www.epica.ai/docs/spec/).
+
 ### Eulerian Analytics
 
 Type attribute value: `euleriananalytics`
