@@ -29,12 +29,26 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
   position: relative;
   animation: growDown 0.5s ease-in-out;
 
+
 	@media screen and (min-width: 768px) {
     height: 0;
     padding-top: 35%;
     width: 100%;
     animation: none;
-	}
+    border-bottom-left-radius: 130px;
+  }
+
+  &-clipped-background {
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      border-bottom-left-radius: 130px;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
+    }
+  }
 
 	&-content {
     position: absolute;
@@ -43,6 +57,7 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
     left: 0;
     right: 0;
     width: 100%;
+    z-index: 10;
 
 		@media screen and (min-width: 768px){
       padding: 10% 5%;

@@ -20,11 +20,11 @@
 
 .#{template('template')} {
   @include container;
-  background: color('wild-sand');
 
   @media screen and (min-width: 768px) {
     padding-top: 0;
   }
+
 
   p:empty {
     display: none;
@@ -36,8 +36,18 @@
   }
 
   section {
+
     &.stage {
       grid-column: 1 / -1;
+
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 150vh;
+        background: color('wild-sand');
+      }
     }
 
     &.main {

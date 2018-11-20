@@ -25,13 +25,26 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 .destination-stage {
 	height: 90vh;
 	width: 100vw;
-	position: relative;
+  position: relative;
 
 	@media screen and (min-width: 768px) {
 		height: 0%;
 		width: 100%;
-		padding-top: 45%;
-	}
+    padding-top: 45%;
+    border-bottom-left-radius: 130px;
+  }
+
+  &-clipped-background {
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      border-bottom-left-radius: 130px;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
+    }
+  }
 
 	&-active {
 		animation: growDown 0.5s ease-in-out;
