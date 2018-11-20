@@ -17,10 +17,10 @@ $title: 分析工具供应商
 <script type="application/json">
 {
   "vars": {
-    "account": "UA-XXXXX-Y" 
+    "account": "UA-XXXXX-Y"
   },
   "triggers": {
-    "trackPageview": { 
+    "trackPageview": {
       "on": "visible",
       "request": "pageview"
     }
@@ -283,6 +283,12 @@ type 属性值：`top100`
 
 添加对 Rambler/TOP-100 的支持。有关配置详情，请访问 [top100.rambler.ru](https://top100.rambler.ru/docs)。
 
+### TEA Analytics
+
+type 属性值：`teaanalytics`
+
+添加对 TEA Analytics 的支持。有关配置详情，请联系 Kimberly (wuqian56@gmail.com)。
+
 ### Top.Mail.Ru
 
 type 属性值：`topmailru`
@@ -312,4 +318,4 @@ type 属性值：`treasuredata`
 type 属性值：`metrika`
 
 添加对 Yandex Metrica 的支持。有关配置详情，请参阅 [Yandex 支持](https://yandex.com/support/metrica/code/install-counter-amp.xml)。
- 
+

@@ -1,67 +1,67 @@
 blogs:
 
 - type: Blog
-  title: "Optimize your AMP pages for high ad viewability rate or high ads served"
-  id: ads-optimize-your-amp-pages-for-high-ad-viewability-rate-or-high-ads-served
+  title: "So your AMP test doesn’t perform — now what?"
+  id: ads-so-your-amp-test-doesnt-perform%e2%80%8a-%e2%80%8anow-what
   author: amphtml
   role: 
-  origin: "https://amphtml.wordpress.com/2018/09/24/optimize-your-amp-pages-for-high-ad-viewability-rate-or-high-ads-served/amp/"
-  excerpt: "Editor’s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google. This post is part of a larger AMP monetization series. I’m endlessly fascinated that an advertiser would pay for an ad impression that a user never saw. Yet, that’s how most default ad contracts are written. Many brands are changing how they negotiate [&#8230;]"
+  origin: "https://amphtml.wordpress.com/2018/11/08/so-your-amp-test-doesnt-perform%e2%80%8a-%e2%80%8anow-what/amp/"
+  excerpt: "Editor&#8217;s note: The following was posted on Medium by Martin Schierle, Mobile Solutions Consultant at Google.  Accelerated Mobile Pages (AMP) are a great and easy way to build very fast pages, and as we know speed is key — for every second delay in mobile page load, conversions can fall by up to 20%. So obviously the first thing people [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-09-24T12:27:38-07:00
-  date: "September 24, 2018"
+  datedata: 2018-11-08T13:46:36-08:00
+  date: "November 8, 2018"
 
 - type: Blog
-  title: "Ensure Ad Density is equal on AMP & non-AMP pages"
-  id: ads-ensure-ad-density-is-equal-on-amp-non-amp-pages
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/09/11/ensure-ad-density-is-equal-on-amp-non-amp-pages/amp/"
-  excerpt: "Editor’s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google. This post is part of a larger AMP monetization series. Avoid common pitfalls to ensure total area of ads is the same This is an easy optimization, but is important because it’s one of the most common mistakes and is easy to [&#8230;]"
+  title: "Streaming in the Shadow Reader"
+  id: ads-streaming-in-the-shadow-reader
+  author: Ben Morss
+  role:  Developer Advocate for AMP, at Google
+  origin: "https://amphtml.wordpress.com/2018/11/05/streaming-in-the-shadow-reader/amp/"
+  excerpt: "What did we do? We made The Shadow Reader faster again! We created The Shadow Reader (https://amp.cards) to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site folds real articles from The Guardian into an immersive news reader experience. It&#8217;s a demo, but [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-09-11T12:34:37-07:00
-  date: "September 11, 2018"
+  datedata: 2018-11-05T13:42:20-08:00
+  date: "November 5, 2018"
 
 - type: Blog
-  title: "Are you leaving revenue on the table with AMP?"
-  id: ads-are-you-leaving-revenue-on-the-table-with-amp
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/08/28/are-you-leaving-revenue-on-the-table-with-amp/amp/"
-  excerpt: "Editor&#8217;s note: The following was originally posted on Medium by Vamsee Jasti, AMP Product Manager at Google. Find topic specific posts from this series below: Ad Density Prefer Viewability over Views Multi-size ads &#38; fluid Header Bidding &#38; AMP Video monetization using AMP IMA Video I’m a product manager working on AMP and we strive [&#8230;]"
+  title: "The latest from AMP Analytics providers"
+  id: ads-the-latest-from-amp-analytics-providers
+  author: Jeff Jose
+  role:  Product Manager, AMP, at Google
+  origin: "https://amphtml.wordpress.com/2018/10/25/the-latest-from-amp-analytics-providers/amp/"
+  excerpt: "As AMP turns three, we can&#8217;t help but look back with nostalgia on how far along we’ve come along in our mission &#8211; Build the best open web technology that lets publishers create fast and secure pages without compromising on user-experience. That is why we built the analytics infrastructure in AMP that allows for “collect [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-08-28T08:08:11-07:00
-  date: "August 28, 2018"
+  datedata: 2018-10-25T14:06:47-07:00
+  date: "October 25, 2018"
 
 - type: Blog
-  title: "AddThis is Now Available for AMP"
-  id: ads-addthis-is-now-available-for-amp
+  title: "AMP story learnings and best practices"
+  id: ads-amp-story-learnings-and-best-practices
+  author: Lisa Lehman
+  role:  AMP story Partnerships, Google
+  origin: "https://amphtml.wordpress.com/2018/10/25/amp-story-learnings-and-best-practices/amp/"
+  excerpt: "Since we announced the developer preview of AMP Stories, we’ve been focused on ensuring the format is an easy and compelling way for publishers to create visual content on the web. It’s been exciting to see the experimentation and direction that some early testers have taken with the product. Naturally we’ve also had a lot [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-10-25T09:47:15-07:00
+  date: "October 25, 2018"
+
+- type: Blog
+  title: "Child Mind Institute boosts social shares on AMP pages with AddThis"
+  id: ads-child-mind-institute-boosts-social-shares-on-amp-pages-with-addthis
   author: Chad Edmonds
-  role:  Sr. Marketing Manager, AddThis
-  origin: "https://amphtml.wordpress.com/2018/07/30/addthis-is-now-available-for-amp/amp/"
-  excerpt: "Editor&#8217;s note: the following was originally posted on AddThis&#8217; blog by Chad Edmonds, Sr. Marketing Manager, AddThis Just because AddThis is now free, doesn’t mean we’re slowing down on pushing out more great features and functionalities! We recently rolled out AddThis Inline Share Buttons for AMP and it is ready for you to integrate into your AMP compatible [&#8230;]"
+  role:  Director of Product Marketing, AddThis 
+  origin: "https://amphtml.wordpress.com/2018/10/23/child-mind-institute-boosts-social-shares-on-amp-pages-with-addthis/amp/"
+  excerpt: "Posted by Chad Edmonds, Director of Product Marketing, AddThis  AddThis has been excited to work with the AMP project over the past year, to ensure the web is fast and user-friendly for everyone. As AMP turns 3 years old this month, we&#8217;re celebrating the project&#8217;s progress with a recent case study showing increased shares and [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-30T07:50:10-07:00
-  date: "July 30, 2018"
+  datedata: 2018-10-23T09:47:44-07:00
+  date: "October 23, 2018"
 
 - type: Blog
-  title: "Privacy and user choice in AMP’s software architecture"
-  id: ads-privacy-and-user-choice-in-amps-software-architecture
-  author: Malte Ubl
-  role:  Tech Lead of the AMP Project.
-  origin: "https://amphtml.wordpress.com/2018/07/23/privacy-and-user-choice-in-amps-software-architecture/amp/"
-  excerpt: "Early choices in designing the AMP HTML JavaScript library have made it uniquely suited for publishers to implement effective privacy controls for users. In web pages, resource requests and browser storage access that may have privacy impact can be initiated through a multitude of mechanisms, many of which are often controlled by third parties. This [&#8230;]"
+  title: "Three Years of AMP!"
+  id: ads-three-years-of-amp
+  author: David Besbris
+  role:  VP of Search at Google
+  origin: "https://amphtml.wordpress.com/2018/10/22/three-years-of-amp/amp/"
+  excerpt: "Not long ago the mobile web was sluggish, clunky and at risk of being closed off by apps. Many publishers were concerned how this would affect their future and the promise of the open web. News publishers approached us at Google to help ensure their content was easy to distribute and read across the web. [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-23T10:36:25-07:00
-  date: "July 23, 2018"
-
-- type: Blog
-  title: "Track development with the new AMP Roadmap"
-  id: ads-track-development-with-the-new-amp-roadmap
-  author: Vamsee Jasti
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2018/07/19/track-development-with-the-new-amp-roadmap/amp/"
-  excerpt: "As the AMP project grows, we want to ensure that the community has a clear understanding of the features the team is working on and the status of each. Starting today, you can head over to the AMP roadmap and see an updated view of feature development across the project. We hope this is easy [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-07-19T14:42:43-07:00
-  date: "July 19, 2018"
+  datedata: 2018-10-22T09:16:38-07:00
+  date: "October 22, 2018"
