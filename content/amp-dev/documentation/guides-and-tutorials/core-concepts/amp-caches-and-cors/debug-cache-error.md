@@ -3,8 +3,8 @@ $title: Debug AMP Cache errors
 $view: /views/detail/docs-detail.j2
 
 order: 3
-author: Sebil Satici
-translator: Prince Adam
+author: ampproject
+translator: ampproject
 $date: 11-09-2018
 ---
 

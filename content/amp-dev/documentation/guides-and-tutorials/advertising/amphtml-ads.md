@@ -3,7 +3,7 @@ $title: AMPHTML ads
 $view: /views/detail/docs-detail.j2
 
 order: 5
-author: Andrew McKeever
-translator: Tex Avery
+author: ampproject
+translator: ampproject
 $date: 11-09-2018
 ---

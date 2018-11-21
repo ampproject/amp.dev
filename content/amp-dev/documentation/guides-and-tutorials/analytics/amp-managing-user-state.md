@@ -3,7 +3,7 @@ $title: Managing non-authenticated user state with AMP
 
 order: 6
 
-author: Andrew McKeever
-translator: Tex Avery
+author: ampproject
+translator: ampproject
 $date: 11-09-2018
 ---

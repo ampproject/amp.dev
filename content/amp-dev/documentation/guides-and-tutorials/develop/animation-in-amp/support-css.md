@@ -2,7 +2,7 @@
 $title: 1
 order: 1
 
-author: Matthias Rohmer
-translator: Leisure Larry
+author: ampproject
+translator: ampproject
 $date: 11-09-2018
 ---

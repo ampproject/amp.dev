@@ -1,7 +1,7 @@
 ---
 $title: Convert HTML to AMP
 
-author: Sebil Satici
-translator: Leisure Larry
+author: ampproject
+translator: ampproject
 $date: 11-09-2018
 ---

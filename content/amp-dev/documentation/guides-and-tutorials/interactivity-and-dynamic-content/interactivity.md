@@ -2,7 +2,7 @@
 $title: Create interactive AMP pages
 
 order: 3
-author: Sebil Satici
-translator: Eren Jaeger
+author: ampproject
+translator: ampproject
 $date: 11-09-2018
 ---

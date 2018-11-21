@@ -9,10 +9,14 @@
 <footer class="ad-o-footer" role="content-info">
   <div class="ad-o-footer-container">
     <div class="ad-o-footer-line-top">
-      <p class="ad-o-footer-hint">Of course, this site is made with AMP!</p>
-
-      <p class="ad-o-footer-doc-data">This site was written by {{doc.author}}
-         and translated by {{doc.translator}}. Last edited on {{doc.date}}.</p>
+      <div class="ad-o-footer-hints">
+        {# Always assume doc.author and doc.translator are GitHub handles #}
+        <p class="ad-o-footer-hint">Of course, this site is made with AMP!</p>
+        {% if doc.author %}
+        <p class="ad-o-footer-hint ad-o-footer-hint-meta">This particular document was written by <a href="https://github.com/{{ doc.author }}" target="_blank" rel="nofollow">@{{ doc.author }}</a>{% if doc.translator %} and translated by <a href="https://github.com/{{ doc.translator }}" target="_blank" rel="nofollow">@{{ doc.translator }}</a>{% endif %}.</p>
+        {% endif %}
+        </p>
+      </div>
 
       <div class="ad-o-footer-follow">
         <h5 class="ad-o-footer-follow-title">Follow us</h5>

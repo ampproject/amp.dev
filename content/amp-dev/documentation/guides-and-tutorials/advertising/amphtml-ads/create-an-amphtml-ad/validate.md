@@ -2,7 +2,7 @@
 $title: Validate AMPHTML syntax
 
 order: 4
-author: Andrew McKeever
-translator: Tex Avery
+author: ampproject
+translator: ampproject
 $date: 11-09-2018
 ---

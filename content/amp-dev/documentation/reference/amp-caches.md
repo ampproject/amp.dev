@@ -1,7 +1,7 @@
 ---
 $title: Amp caches
 
-author: Sebil Satici
-translator: Eren Jaeger
+author: ampproject
+translator: ampproject
 $date: 11-09-2018
 ---

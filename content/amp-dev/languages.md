@@ -1,8 +1,8 @@
 ---
 $title: Languages
 
-author: Matthias Rohmer
-translator: Longo
+author: ampproject
+translator: ampproject
 $date: 2018-11-08
 ---
 

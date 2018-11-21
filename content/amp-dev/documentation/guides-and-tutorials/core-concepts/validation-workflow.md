@@ -3,8 +3,8 @@ $title: Validation Workflow
 $view: /views/detail/docs-detail.j2
 
 order: 6
-author: Matthias Rohmer
-translator: Prince Adam
+author: ampproject
+translator: ampproject
 $date: 11-09-2018
 ---
 
