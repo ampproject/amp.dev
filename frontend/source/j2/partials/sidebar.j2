@@ -35,12 +35,13 @@
       <ul class="nav-list level-{{ iteration }}">
           {% set collections = root.collections() %}
           {% set documents = root.list_docs(order_by='order') %}
-        
+
           {% if not depth or iteration <= depth %}
           {% for collection in collections %}
           {% set currentCollectionPaths = doc.collection.collection_path.split('/') %}
           {% set allCollectionPaths = collection.collection_path.split('/') %}
           {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
+
           <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
             {% set collection_index = g.doc('content/' + collection.collection_path + '/index.md') %}
             {% if collection_index.exists %}
@@ -61,8 +62,11 @@
           {% endfor %}
 
           {% for document in documents %}
+          {# Only list the document if it matches the current locale #}
+          {% if doc.locale == document.locale %}
           {% set activeDocument = true if document.url == doc.url %}
           <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}"><a class="nav-link" href="{{ document.url }}">{{ document.title }}</a></li>
+          {% endif %}
           {% endfor %}
           {% endif %}
       </ul>
