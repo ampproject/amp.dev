@@ -1,0 +1,7 @@
+path: /documentation/guides-and-tutorials/core-concepts/develop/style-and-layout/{base}.html
+view: /views/default.j2
+
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/core-concepts/develop/style-and-layout/{base}.html
+
+category: Style & Layout

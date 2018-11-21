@@ -1,5 +1,5 @@
 ---
-$view: /views/component.j2
+$view: /views/detail/component-detail.j2
 $path: /styleguide/organisms/teaser-grid/component-2.html
 $title: amp-example
 $titles:

@@ -1,0 +1,7 @@
+path: /documentation/guides-and-tutorials/design/amp-html-layout/{base}.html
+view: /views/default.j2
+
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/design/amp-html-layout/{base}.html
+
+category: AMP HTML Layout System

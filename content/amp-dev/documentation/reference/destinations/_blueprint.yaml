@@ -1,2 +1,5 @@
 path: /documentation/reference/destinations/{base}.html
 view: /views/default.j2
+
+localization:
+  path: /{locale}/documentation/reference/destinations/{base}.html

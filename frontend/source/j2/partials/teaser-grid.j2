@@ -1,8 +1,8 @@
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 
-{% if doc.view == '/views/docs/detail.j2' %}
+{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
 </section>
-<section class="ad-o-teaser-grid">
+<section class="teaser-grid">
 {% endif %}
 
 <div class="ad-o-teaser-grid">
@@ -13,6 +13,7 @@
 
   <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-{{ teasers|count }}-col">
     {% for teaser in teasers %}
+
     {# Teaser for guides and tutorial pages #}
     {% if teaser.type == 'guide' %}
     {% do doc.styles.addCssFile('css/components/molecules/teaser-guide-tutorial.css') %}
@@ -38,9 +39,6 @@
 
           <div class="ad-m-teaser-content">
             <h4 class="ad-m-teaser-headline">{{ teaser.headline }}</h4>
-            {% if teaser.text %}
-            <p class="ad-m-teaser-copy">{{ teaser.text }}</p>
-            {% endif %}
             {% if teaser.video %}
             <div class="ad-m-teaser-video-length">
               {% do doc.icons.useIcon('icons/play.svg') %}
@@ -49,7 +47,7 @@
               </div>
               <span class="ad-m-teaser-video-length-text">{{ teaser.video.length }}</span>
             </div>
-            {% endif %}
+          {% endif %}
           </div>
         </div>
       </a>
@@ -102,7 +100,7 @@
     {% elif teaser.type == 'template' %}
     {% do doc.styles.addCssFile('css/components/molecules/teaser-template.css') %}
 
-    <div class="ad-m-teaser ad-m-teaser-template">
+    <div class="ad-m-teaser ad-m-teaser-template ad-m-teaser-template-{{ teaser.destination }}">
       <a href="{{ teaser.doc.url|relative }}">
         {% if teaser.destination %}
         {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
@@ -217,7 +215,7 @@
   {% endif %}
 </div>
 
-{% if doc.view == '/views/docs/detail.j2' %}
+{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
 </section>
 <section class="main">
 {% endif %}

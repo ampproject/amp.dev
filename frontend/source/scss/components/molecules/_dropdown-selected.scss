@@ -20,25 +20,26 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 @import '../atoms/_text.scss';
 
 .destination-list-view-box {
-  display: inline;
-	height: 32px;
-	width: 250px;
-	overflow: hidden;
+  padding: 0;
+  height: 38px;
+  padding-right: 180px;
+  overflow: hidden;
   position: absolute;
-  box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
 
-	@media screen and (min-width: 768px){
-    width: 324px;
-	  height: 42px;
+	@media screen and (min-width: 1024px){
+    padding-right: 200px;
 	}
 
 	&:hover {
-		height: 180px;
-		transition: height 0.5s ease;
-    background: transparent;
+    height: 210px;
+    padding-right: 0px;
+    transition: height 0.5s ease;
+		background: transparent;
+    animation: none;
+    z-index: 10;
 
-    @media screen and (min-width: 768px){
-		  height: 230px;
+    @media screen and (min-width: 1024px) {
+      height: 245px;
     }
 
 		[option][selected] {
@@ -84,7 +85,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		}
 	}
 
-	&-emails {
+	&-e-mails {
 		background: color('reef');
 
 		.ad-a-ico {
@@ -204,7 +205,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   }
 }
 
-.emails {
+.e-mails {
   @include color-e-mails;
 
   &-background {
@@ -214,9 +215,9 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .overview {
   @include color-overview;
+  pointer-events: none;
 
 	&-background {
 		@include gradient-overview;
 	}
 }
-

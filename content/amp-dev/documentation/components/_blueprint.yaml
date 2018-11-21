@@ -1,2 +1,6 @@
 path: /documentation/components/{base}.html
 view: /views/overview/components-overview.j2
+
+
+localization:
+  path: /{locale}/documentation/components/{base}.html

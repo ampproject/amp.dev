@@ -1,6 +1,5 @@
 ---
 $title: amp-font
-$view: /views/overview/components-overview.j2
 
 order: 1
 ---

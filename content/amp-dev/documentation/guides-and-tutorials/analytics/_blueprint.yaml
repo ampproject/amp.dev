@@ -1,0 +1,7 @@
+path: /documentation/guides-and-tutorials/analytics/{base}.html
+view: /views/default.j2
+
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/analytics/{base}.html
+
+category:  Analytics

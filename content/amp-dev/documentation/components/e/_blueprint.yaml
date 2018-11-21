@@ -1,4 +1,4 @@
 path: /documentation/components/e/{base}.html
-view: /views/overview/components-overview.j2
+view: /views/detail/component-detail.j2
 
 category: E

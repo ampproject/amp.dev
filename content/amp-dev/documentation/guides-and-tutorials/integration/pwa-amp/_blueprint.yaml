@@ -1,0 +1,7 @@
+path: /documentation/guides-and-tutorials/integration/pwa-amp/{base}.html
+view: /views/default.j2
+
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/integration/pwa-amp/{base}.html
+
+category: Combine AMP with Progressive Web Apps

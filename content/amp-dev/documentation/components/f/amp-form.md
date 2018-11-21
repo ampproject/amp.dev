@@ -1,6 +1,5 @@
 ---
 $title: amp-form
-$view: /views/overview/components-overview.j2
 
 order: 2
 ---

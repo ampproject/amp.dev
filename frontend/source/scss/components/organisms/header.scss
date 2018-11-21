@@ -19,6 +19,7 @@
 
 @import '../molecules/_link.scss';
 
+
 .#{organism('header')} {
   width: 100%;
   position: -webkit-sticky;
@@ -69,7 +70,7 @@
         z-index: 10;
         background: #fff;
         list-style: none;
-        transition: height 0.5s ease-in;
+        transition: height 0.5s ease-out;
 
         @media screen and (min-width: 1024px) {
           display: none;
@@ -170,7 +171,7 @@
 
     &-expanded {
       margin: 10px 0 10px 20px;
-      
+
       @media screen and (min-width: 768px) {
         margin-left: 30px;
       }
@@ -181,14 +182,6 @@
 
       &-expanded {
         margin-top: auto;
-      }
-    }
-
-    &-lang {
-      margin: 0;
-
-      &-expanded {
-        margin-bottom: 30px;
       }
     }
 
@@ -238,8 +231,62 @@
     }
 
     @media screen and (min-width: 1024px) {
-      padding: 0 30px;
+      padding: 0 40px;
       height: 45px;
+    }
+  }
+
+.ad-o-header-lang-box {
+  display: flex;
+  height: 25px;
+  cursor: pointer;
+
+  &:hover {
+    .ad-o-header-lang-list {
+      :nth-child(n+2) {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+.ad-o-langicon {
+  width:10px;
+  height:10px;
+  padding: 8px 0;
+  position: relative;
+}
+
+  &-lang-list {
+    list-style: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left:0;
+
+    :nth-child(n+2) {
+      opacity:0;
+    }
+
+    :last-child{
+      padding-bottom:10px;
+    }
+
+    a {
+      @include txt-font-accent;
+      @include color-black;
+    }
+
+    li {
+      padding:0 5px;
+      background-color: color('white');
+      &:hover{
+        background-color: color('whisper');
+        a {
+          font-weight:bolder;
+          @include color-blue-ribbon;
+        }
+      }
     }
   }
 
@@ -316,7 +363,7 @@
       width: 30px;
       height: 30px;
       padding: 12px 20px;
-      
+
       @media screen and (min-width: 768px){
         padding: 12px 30px;
       }

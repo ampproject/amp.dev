@@ -1,6 +1,5 @@
 ---
 $title: amp-access-laterpay
-$view: /views/overview/components-overview.j2
 
 order: 1
 ---

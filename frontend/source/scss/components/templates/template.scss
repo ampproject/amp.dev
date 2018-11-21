@@ -20,4 +20,96 @@
 
 .#{template('template')} {
   @include container;
+  padding: 0;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 0;
+  }
+
+
+  p:empty {
+    display: none;
+  }
+
+  p {
+    @include txt;
+    @include txt-1;
+  }
+
+  section {
+
+    &.stage {
+      grid-column: 1 / -1;
+    }
+
+    &.main {
+      @media screen and (min-width: 768px ){
+        grid-column: 7 / 19;
+      }
+    }
+
+    &.teaser-grid {
+      grid-column: 1 / -1;
+
+      .ad-o-teaser-grid-list {
+        grid-column: 4 / -1;
+        display: grid;
+        margin: 0 40px;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+
+        @media screen and (min-width: 768px) {
+          grid-template-columns: repeat(24, 1fr);
+          grid-auto-flow: dense;
+          margin: 0;
+        }
+
+        :nth-child(3n+1) {
+          grid-column: 1;
+
+          @media screen and (min-width: 768px) {
+            grid-column: 4 / 10;
+          }
+        }
+
+        :nth-child(3n+2) {
+          grid-column: 1;
+
+          @media screen and (min-width: 768px) {
+            grid-column: 10 / 16;
+          }
+        }
+
+        :nth-child(3n+3) {
+          grid-column: 1;
+
+          @media screen and (min-width: 768px) {
+            grid-column: 16 / 22;
+          }
+        }
+
+        .ad-m-teaser-template {
+          margin: 0;
+        }
+
+        .ad-m-teaser-template-websites {
+          grid-row: span 4;
+        }
+
+        .ad-m-teaser-template-stories {
+          grid-row: span 6;
+        }
+
+        .ad-m-teaser-template-ads {
+          grid-row: span 3;
+        }
+
+        .ad-m-teaser-template-e-mails {
+          grid-row: span 5;
+        }
+
+      }
+    }
+  }
+
 }

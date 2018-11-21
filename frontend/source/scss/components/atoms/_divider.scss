@@ -42,10 +42,12 @@ desktop
 }
 
 @mixin divider-stage {
-	width: 60px;
+  width: 60px;
   height: 4px;
   background-color: color('white');
-	margin-bottom: 3em;
+  @media screen and (min-width: 1024px) {
+	  margin-bottom: 3em;
+  }
 }
 
 @mixin divider-header-mobile {
