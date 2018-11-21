@@ -1,6 +1,5 @@
 ---
 $title: Components
-$order: 2
-
+$path: /documentation/components.html
 $view: /views/overview/components-overview.j2
 ---

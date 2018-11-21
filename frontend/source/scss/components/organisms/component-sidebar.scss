@@ -4,11 +4,16 @@
 @import '../../variables';
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
+@import '../atoms/_headline.scss';
 
 @import '_sidebar.scss';
 
-.#{organism('sidebar')} {
+.#{organism('component-sidebar')} {
   @include sidebar;
+  
+  &:before {
+    z-index: 2;
+  }
 
   .nav {
     @include sidebar-nav;
@@ -22,17 +27,46 @@
       
       .nav-list {
         @include sidebar-nav-list-sublevels;
+        display: block;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
       }
     }
 
     &-item {
-      @include sidebar-nav-item
+      @include sidebar-nav-item;
       
       &.level-1 {
-        @include sidebar-nav-item-level-1;
-        
+        pointer-events: none;
+
         .nav-link {
-          @include sidebar-nav-link-level-1;
+          position: sticky;
+          top: 0;
+          @include hl;
+          @include hl-h2;
+          padding: 0;
+          margin: 0;
+          line-height: 1;
+          word-break: break-all;
+          pointer-events: auto;
+          color: color('alto');
+        }
+        
+        & > .nav-link {
+          padding-top: 10px;
+          background: #FAFAFC;
+          background: linear-gradient(0deg, rgba(color('whisper'), 0) 0%, color('whisper') 25%);
+          pointer-events: none;
+          z-index: 1;
+          transition: color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        &.active > .nav-link {
+          color: color('gray-chateau');
+        }
+
+        &:hover > .nav-link {
+          color: color('gray-chateau');
         }
 
         .nav-trigger,
@@ -48,6 +82,8 @@
       &.level-2 {
         .nav-link {
           @include sidebar-nav-link-level-2;
+          padding: 3px 25px 3px 0;
+          margin: 0;
         }
         
         .nav-trigger,
@@ -61,9 +97,7 @@
       }
       
       &.level-3 {
-        .nav-link {
-          @include sidebar-nav-link-level-3;
-        }
+        @include sidebar-nav-link-level-3;
       }
       
       &.active > .nav-link {
