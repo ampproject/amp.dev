@@ -1,13 +1,12 @@
 /*
 
-#############################
-### TEMPLATE: docs detail ###
-#############################
+####################################
+### TEMPLATE: component overview ###
+####################################
 
 ### INFO:
 
 */
-
 @import '../../extends';
 @import '../../functions';
 @import '../../mixins';
@@ -23,7 +22,8 @@
   @include container;
   
   section {
-    &.main {
+    &.main,
+    &.teaser-grid {
       @media screen and (min-width: 1024px){
         grid-column-start: 7;
         grid-column-end: 25;
