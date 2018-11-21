@@ -1,6 +1,5 @@
 ---
 $title: amp-beopinion
-$view: /views/overview/components-overview.j2
 
 order: 1
 ---

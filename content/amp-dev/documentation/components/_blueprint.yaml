@@ -1,5 +1,5 @@
 path: /documentation/components/{base}.html
-view: /views/default.j2
+view: /views/overview/components-overview.j2
 
 
 localization:

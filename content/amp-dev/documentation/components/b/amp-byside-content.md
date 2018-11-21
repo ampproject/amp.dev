@@ -1,6 +1,5 @@
 ---
 $title: amp-byside-content
-$view: /views/overview/components-overview.j2
 
 order: 2
 ---

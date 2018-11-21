@@ -1,6 +1,5 @@
 ---
 $title: amp-date-countdown
-$view: /views/overview/components-overview.j2
 
 order: 2
 ---

@@ -1,6 +1,5 @@
 ---
 $title: amp-accordion
-$view: /views/overview/components-overview.j2
 
 destinations:
   - 'stories'
