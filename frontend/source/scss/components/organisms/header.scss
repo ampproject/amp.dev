@@ -236,18 +236,29 @@
     }
   }
 
-.ad-o-header-lang-box{
-  display:flex;
-  align-items: center;
+.ad-o-header-lang-box {
+  display: flex;
+  height: 25px;
+  cursor: pointer;
+
+  &:hover {
+    .ad-o-header-lang-list {
+      :nth-child(n+2) {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+    }
+  }
 }
 
 .ad-o-langicon {
   width:10px;
   height:10px;
+  padding: 8px 0;
+  position: relative;
 }
 
   &-lang-list {
-    height: 25px;
     list-style: none;
     text-transform: uppercase;
     text-align: center;
@@ -255,21 +266,11 @@
 
     :nth-child(n+2) {
       opacity:0;
-      visibility: hidden;
     }
 
     :last-child{
       padding-bottom:10px;
     }
-
-      &:hover {
-        :nth-child(n+2) {
-        opacity:1;
-        visibility:visible;
-        cursor:pointer;
-        transition: opacity .5s ease-in-out;
-      }
-   }
 
     a {
       @include txt-font-accent;
@@ -277,7 +278,7 @@
     }
 
     li {
-      padding:0 15px;
+      padding:0 5px;
       background-color: color('white');
       &:hover{
         background-color: color('whisper');
