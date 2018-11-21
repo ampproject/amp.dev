@@ -84,6 +84,12 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
       @include txt-2;
       @include txt-strong;
       @include color-white;
+
+      &:after {
+        content: '';
+        display: block;
+        margin-bottom: 30px;
+      }
     }
 
     &-inline {

@@ -5,6 +5,8 @@ $path: /documentation/stories/templates.html
 $order: 4
 ---
 [stage type="dropdown"]
+
+
 [/stage]
 
 [intro]

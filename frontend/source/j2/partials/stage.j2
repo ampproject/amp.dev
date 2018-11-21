@@ -7,11 +7,11 @@
 <section class="stage">
 {% endif %}
 
-{% if options.type =='default' %}
-{% do doc.styles.addCssFile('css/components/organisms/stage-destination-rolling.css') %}
+{# {% if options.type =='default' %} #}
+{# {% do doc.styles.addCssFile('css/components/organisms/stage-destination-rolling.css') %} #}
 
 
-<div class="destination-stage">
+{# <div class="destination-stage">
   <div class="destination-stage-clipped-background websites"></div>
 	<div class="destination-stage-content">
 		<span class="hl-sub">What is Amp?</span>
@@ -26,9 +26,9 @@
 			  <span class="destination-list-item destination-list-item-rolling destination-list-item-rolling-{{ dest }}">{{ dest }}</span>
 		  {% endfor %}
 	</div>
-</div>
+</div> #}
 
-{% elif options.type == 'dropdown' %}
+{# {% elif options.type == 'dropdown' %} #}
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown.css') %}
 
 {% set pathEnd = doc.url.path.split('/')|last %}
@@ -37,57 +37,61 @@
 <div class="destination-stage">
   <div class="destination-stage-clipped-background websites-background"></div>
   <div class="destination-stage-content">
-		  <span class="hl-sub">How to Build with AMP without knowing how to code? </span>
-      <div class="hl-divider"></div>
-		  <span class="hl">Easily build user first </span>
+		  <span class="hl-sub">{{ subHeadline }}</span>
+		  <span class="hl"> {{ headline }}</span>
       <div class="hl-inline">
-        <div class="destination-list-view-box destination-list-view-box-gradient"
+      {# <div class="destination-list-view-box destination-list-view-box-gradient"
         [class]="toggle ? 'destination-list-view-box destination-list-view-box-gradient destination-list-view-box-expand': 'destination-list-view-box destination-list-view-box-gradient'">
-      <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-list-icon">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
-      </button>
-      {% set filters = ['websites', 'ads', 'stories', 'e-mails'] %}
-        {% for filter in filters %}
-			  <span class="destination-list-item destination-list-item-rolling destination-list-item-rolling-{{ filter }}">
-          {{ filter }}
-        </span>
-      {% endfor %}
-		  <amp-selector layout="container">
-			  <ul class="destination-list">
-        {% set filters = ['overview', 'websites', 'ads', 'stories', 'e-mails'] %}
-        {% for filter in filters %}
-			 	  <li option="{{ filter }}" class="{{ filter }}">
-           {% if filter == 'overview' %}
-              <a href="{{ doc.url.path }}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
+        <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-list-icon">
+         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
+        </button>
+        {% set filters = ['websites', 'ads', 'stories', 'e-mails'] %}
+          {% for filter in filters %}
+			    <span class="destination-list-item destination-list-item-rolling destination-list-item-rolling-{{ filter }}">
+           {{ filter }}
+          </span>
+        {% endfor %}
+		    <amp-selector layout="container">
+			    <ul class="destination-list">
+            {% set filters = ['overview', 'websites', 'ads', 'stories', 'e-mails'] %}
+            {% for filter in filters %}
+			 	    <li option="{{ filter }}" class="{{ filter }}">
+              {% if filter == 'overview' %}
+                <a href="{{ doc.url.path }}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
+                  {{ filter }}
+                </a>
+              {% else %}
+              <a href="/{{pathStart}}/{{filter}}/{{pathEnd}}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
                 {{ filter }}
               </a>
-            {% else %}
-             <a href="/{{pathStart}}/{{filter}}/{{pathEnd}}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
-                {{ filter }}
-            </a>
-           {% endif %}
-          </li>
-        {% endfor %}
+            {% endif %}
+            </li>
+          {% endfor %}
 			  </ul>
 		  </amp-selector>
+    </div> #}
     </div>
-    </div>
-		<span class="hl">with our templates</span>
+    {% if headlineTwo %}
+		  <span class="hl">{{headlineTwo}}</span>
+    {% endif %}
+    {% if linkForDoc %}
+      <a href="{{ g.doc(linkForDoc).url }}">{{ linkTitle }}</a>
+    {% endif %}
     </div>
 	</div>
 
-{% elif options.type == 'selected' %}
+{# {% elif options.type == 'selected' %}
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-selected.css') %}
 
 <div class="destination-stage destination-stage-active ">
-  <div class="destination-stage-clipped-background {{ doc.title }} {{doc.title}}-background"></div>
+  <div class="destination-stage-clipped-background  stories stories-background"></div>
   <div class="destination-stage-content">
 		<span class="hl-{{ doc.title }} hl-sub">What is Amp?</span>
 		<span class="hl-{{ doc.title }} hl-divider"></span>
 		<h1 class="hl hl-{{ doc.title }}">AMP is a web component based framework for easily creating user first </h1>
-    <div class="destination-list-view-box destination-list-view-box-no-animation destination-list-view-box-{{ doc.title }}">
+    <div class="destination-list-view-box destination-list-view-box-no-animation destination-list-view-box-stories">
 		  <amp-selector layout="container">
-			  <ul class="destination-list destination-list-display destination-list-{{doc.title}}">
+			  <ul class="destination-list destination-list-display destination-list-stories">
         {% set filters = ['overview', 'websites', 'ads', 'stories', 'e-mails'] %}
           {% for filter in filters %}
 			 	    <li option="{{ fitler }} {% if filter == doc.title %} selected {% endif %}">
@@ -107,34 +111,7 @@
 	  </div>
     </div>
 	</div>
-
-  {% elif options.type == 'sidebar' %}
-  {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-sidebar.css') %}
-
-  <div class="destination-stage websites websites-background">
-    <div class="destination-stage-content destination-stage-content-sidebar">
-		  <span class="hl-sub">Select your topic:</span>
-      <div class="destination-list-view-box destination-list-view-box-gradient">
-		    {% for collection in g.collection('amp-dev/overview').collections() %}
-          {% for doc in g.docs(collection.collection_path) %}
-			      <span class="destination-list-item destination-list-item-rolling destination-list-item-rolling-{{ doc.title }}">{{ doc.title }}</span>
-		      {% endfor %}
-        {% endfor %}
-		    <amp-selector layout="container">
-			  <ul class="destination-list">
-		    {% for collection in g.collection('amp-dev/overview').collections() %}
-          {% for doc in g.docs(collection.collection_path) %}
-			 	    <li option={{ doc.title }} class="{{ doc.title }}">
-              <a href="{{ doc.url.path }}" class="destination-list-item destination-list-item-drop-down {{ doc.title }} {{doc.title}}-background">{{ doc.title }}</a>
-            </li>
-			    {% endfor %}
-        {% endfor %}
-			  </ul>
-		  </amp-selector>
-	  </div>
-    </div>
-	</div>
-  {% endif %}
+{% endif %} #}
 
 {% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
 </section>
