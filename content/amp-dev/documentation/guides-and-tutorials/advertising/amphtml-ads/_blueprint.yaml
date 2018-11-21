@@ -1,8 +1,0 @@
-path: /documentation/guides-and-tutorials/ads/amphtml-ads/{base}.html
-view: /views/default.j2
-
-
-localization:
-  path: /{locale}/documentation/guides-and-tutorials/ads/amphtml-ads/{base}.html
-
-category: AMPHTML ads
