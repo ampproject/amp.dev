@@ -170,7 +170,7 @@
 
     &-expanded {
       margin: 10px 0 10px 20px;
-      
+
       @media screen and (min-width: 768px) {
         margin-left: 30px;
       }
@@ -238,7 +238,7 @@
     }
 
     @media screen and (min-width: 1024px) {
-      padding: 0 30px;
+      padding: 0 40px;
       height: 45px;
     }
   }
@@ -316,7 +316,7 @@
       width: 30px;
       height: 30px;
       padding: 12px 20px;
-      
+
       @media screen and (min-width: 768px){
         padding: 12px 30px;
       }
