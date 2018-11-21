@@ -1,8 +1,8 @@
 /*
 
-###########################
-### TEMPLATE: component ###
-###########################
+##################################
+### TEMPLATE: component detail ###
+##################################
 
 ### INFO:
 
@@ -18,6 +18,6 @@
 
 @import '../templates/_default.scss';
 
-.#{template('component')} {
+.#{template('component-detail')} {
   @include container;
 }
