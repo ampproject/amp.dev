@@ -19,6 +19,7 @@
 
 @import '../molecules/_link.scss';
 
+
 .#{organism('header')} {
   width: 100%;
   position: -webkit-sticky;
@@ -69,7 +70,7 @@
         z-index: 10;
         background: #fff;
         list-style: none;
-        transition: height 0.5s ease-in;
+        transition: height 0.5s ease-out;
 
         @media screen and (min-width: 1024px) {
           display: none;
@@ -184,14 +185,6 @@
       }
     }
 
-    &-lang {
-      margin: 0;
-
-      &-expanded {
-        margin-bottom: 30px;
-      }
-    }
-
     &-divider {
       height: 1px;
       width: 100%;
@@ -240,6 +233,59 @@
     @media screen and (min-width: 1024px) {
       padding: 0 40px;
       height: 45px;
+    }
+  }
+
+.ad-o-header-lang-box{
+  display:flex;
+  align-items: center;
+}
+
+.ad-o-langicon {
+  width:10px;
+  height:10px;
+}
+
+  &-lang-list {
+    height: 25px;
+    list-style: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left:0;
+
+    :nth-child(n+2) {
+      opacity:0;
+      visibility: hidden;
+    }
+
+    :last-child{
+      padding-bottom:10px;
+    }
+
+      &:hover {
+        :nth-child(n+2) {
+        opacity:1;
+        visibility:visible;
+        cursor:pointer;
+        transition: opacity .5s ease-in-out;
+      }
+   }
+
+    a {
+      @include txt-font-accent;
+      @include color-black;
+    }
+
+    li {
+      padding:0 15px;
+      background-color: color('white');
+      &:hover{
+        background-color: color('whisper');
+        a {
+          font-weight:bolder;
+          @include color-blue-ribbon;
+        }
+      }
     }
   }
 

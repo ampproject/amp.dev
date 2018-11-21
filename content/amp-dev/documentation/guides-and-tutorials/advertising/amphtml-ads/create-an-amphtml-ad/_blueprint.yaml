@@ -1,4 +1,7 @@
 path: /documentation/guides-and-tutorials/ads/amphtml-ads/create-amphtml-ad/{base}.html
 view: /views/default.j2
 
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/ads/amphtml-ads/create-amphtml-ad/{base}.html
+
 category: Create an AMPHTML ad

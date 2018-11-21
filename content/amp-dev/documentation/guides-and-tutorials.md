@@ -3,6 +3,10 @@ $title: Guides and Tutorials
 
 $view: /views/detail/docs-detail.j2
 $order: 1
+
+author: Andrew McKeever
+translator: Mister Bojangles
+$date: 11-09-2018
 ---
 
 

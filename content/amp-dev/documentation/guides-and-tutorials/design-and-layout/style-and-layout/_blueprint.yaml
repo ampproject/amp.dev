@@ -1,4 +1,7 @@
 path: /documentation/guides-and-tutorials/design/responsive/{base}.html
 view: /views/default.j2
 
+localization:
+  path: /{locale}/documentation/guides-and-tutorials/design/responsive/{base}.html
+
 category: Style & layout
