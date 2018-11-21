@@ -19,7 +19,7 @@ cards:
     icon: who_icon_advertisers.svg
 
   - name: E-commerce
-    filename: e-commerce
+    filename: ecommerce
     cta: Pelajari Lebih Lanjut
     icon: who_icon_ecomm.svg
 

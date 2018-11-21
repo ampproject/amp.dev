@@ -22,7 +22,7 @@ Berikut adalah contoh respons JSON:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-Komponen formulir hanya akan menampilkan nilai di dalam halaman menggunakan [amp-mustache](/id/docs/reference/components/amp-mustache) template:
+Komponen formulir hanya akan menampilkan nilai di dalam halaman menggunakan [amp-mustache](/id/docs/reference/components/amp-mustache.html) template:
 
 [sourcecode:html]
 <div submit-success>

@@ -22,7 +22,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 ## シンプルなアナリティクス設定にする
 
-次に、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) と [amp-analytics](/ja/ocs/reference/components/amp-analytics.html) のシンプルな設定方法を説明します。
+次に、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) と [amp-analytics](/ja/docs/reference/components/amp-analytics.html) のシンプルな設定方法を説明します。
 
 ### シンプルな amp-pixel 設定
 

@@ -99,7 +99,7 @@ $title: 반응형 AMP 페이지 만들기
 
 표시 영역의 너비가 412px이고 DPR이 2.6인 기기가 있다고 가정해 보겠습니다. 위의 코드에 따라 이미지가 표시 영역 너비의 75%로 표시되어야 하므로 브라우저에서는 803px(412 * .75 * 2.6)에 가까운 `apple-800.jpg` 이미지를 선택합니다.
 
-읽어보기: AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+읽어보기: AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 
 #### 이미지의 아트 디렉션 변경
 
@@ -117,7 +117,7 @@ $title: 반응형 AMP 페이지 만들기
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
 
-읽어보기: AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+읽어보기: AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 
 #### 최적화된 이미지 제공
 
@@ -126,7 +126,7 @@ $title: 반응형 AMP 페이지 만들기
 HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재할 수 있습니다.  AMP에서는 `picture` 태그가 지원되지 않지만 `fallback` 속성을 사용하여 다른 이미지를 게재할 수 있습니다.
 
 
-읽어보기: fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+읽어보기: fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 
 ##### 예: 다른 이미지 형식 게재
 

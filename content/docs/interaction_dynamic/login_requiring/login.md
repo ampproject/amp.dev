@@ -67,7 +67,7 @@ As a quick recap:
 - The AMP runtime closes the login page and redirects to the page specified by the return URL parameter
 - The server should orchestrate the response once the user clicks on the login button
 
-Tip: A more detailed explanation about this flow can also be found in the [amp-access documentation](/docs/reference/components/amp-access#login-flow).
+Tip: A more detailed explanation about this flow can also be found in the [amp-access documentation](/docs/reference/components/amp-access.html#login-flow).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>

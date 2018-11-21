@@ -16,7 +16,7 @@ $title: إنشاء صفحات AMP تفاعلية
 يمكنك إنشاء صور تفاعلية
 عن طريق تحديد العرض والارتفاع،
 وتعيين التنسيق ليكون تفاعليًا،
-واستخدام [`srcset`]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}) لتوضيح
+واستخدام [`srcset`]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) لتوضيح
 مادة عرض الصور المُراد استخدامها بناءً على أحجام الشاشة المتنوعة:
 
 [sourcecode:html]
@@ -95,7 +95,7 @@ $title: إنشاء صفحات AMP تفاعلية
 **مهم:**
 تحقق من توافق أنماطك في AMP؛
 فبعض الأنماط غير متوافقة لأسباب تتعلق بالأداء
-(راجع أيضًا [CSS المتوافقة]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})).
+(راجع أيضًا [CSS المتوافقة]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
 
 ## عناصر الحجم والموضع
 
@@ -111,7 +111,7 @@ $title: إنشاء صفحات AMP تفاعلية
 ويؤدي هذا إلى تغيير حجم العنصر ليلائم عرض عنصر الحاوية الخاص به
 كما يغيّر حجم ارتفاعه تلقائيًا ليلائم نسبة العرض إلى الارتفاع المحددة من خلال سمتي العرض والارتفاع.
 
-تعرّف على المزيد حول [التنسيقات المتوافقة في AMP]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
+تعرّف على المزيد حول [التنسيقات المتوافقة في AMP]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
 
 ## التحقق من صحة الأنماط والتنسيق
 
@@ -121,7 +121,7 @@ $title: إنشاء صفحات AMP تفاعلية
 تعمل أداة التحقق من الصحة على التأكد من عدم تجاوز لغة CSS للصفحة حد 50000 بايت،
 وتتحقق من الأنماط الغير مسموح بها، كما تتأكد من توافق
 تنسيق الصفحة وصحته.
-راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات](/ar/docs/reference/validation_errors.html#أخطاء-الأنماط-والتنسيقات).
+راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات](/ar/docs/troubleshooting/validation_errors.html#أخطاء-الأنماط-والتنسيقات).
 
 نموذج لخطأ في وحدة التحكم لصفحة بها لغة CSS تتجاوز حد 50000 بايت:
 

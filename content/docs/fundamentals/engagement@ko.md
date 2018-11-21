@@ -13,7 +13,7 @@ $title: 사용자 참여 향상하기
 
 ### 사용자의 참여 및 유지 최적화
 
-- AMP 페이지에서 **인터렉티브한 경험을 제공하십시오.** 이미지 캐러셀을 만드는 [`amp-carousel`](/ko/docs/reference/components/amp-carousel) 및 AMP가 기본으로 제공하지 않는 인터렉티브 요소를 통합할 수 있는 [`amp-iframe`](/ko/docs/reference/components/amp-iframe.html)같은 게 있습니다.
+- AMP 페이지에서 **인터렉티브한 경험을 제공하십시오.** 이미지 캐러셀을 만드는 [`amp-carousel`](/ko/docs/reference/components/amp-carousel.html) 및 AMP가 기본으로 제공하지 않는 인터렉티브 요소를 통합할 수 있는 [`amp-iframe`](/ko/docs/reference/components/amp-iframe.html)같은 게 있습니다.
 
 - **맞춤형 사용자 여정을 만드십시오.** 로그인 버튼을 제공하고 유료 결제 기반의 콘텐츠라면 [`amp-access`](/ko/docs/reference/components/amp-access.html)를 사용하여 규칙과 제안을 구현하십시오.
 
@@ -36,7 +36,7 @@ $title: 사용자 참여 향상하기
 
 ### AMP의 발전을 도우려면 AMP 오픈소스 프로젝트에 참여하세요.
 
-- [ampproject.org/roadmap](https://www.ampproject.org/roadmap)에서 업데이트 및 기능에 대한 **AMP 로드맵을 살펴보세요.**
+- [ampproject.org/roadmap](/roadmap/)에서 업데이트 및 기능에 대한 **AMP 로드맵을 살펴보세요.**
 
 - **참여하세요.** 소스 코드에 기여하거나, 버그를 신고하거나, [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)에 피드백을 주세요. [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)에서 AMP에 대한 의견을 공유해주세요.
 

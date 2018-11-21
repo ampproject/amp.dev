@@ -131,7 +131,7 @@ Mais uma vez, **atualize** a página e verifique se o erro das folhas de estilo 
 
 Observação: O estilo in-line é obrigatório. Além disso, há um limite de tamanho de arquivo de 50 kilobytes para todas as informações de estilo. Use pré-processadores de CSS, como o [SASS](http://sass-lang.com/) (em inglês), para reduzir o CSS antes de realizar a inserção in-line dele nas páginas AMP.
 
-Importante: É possível ter somente uma tag de estilo em todo o documento AMP. Se várias folhas de estilo externas forem referenciadas pelas páginas AMP, será necessário agrupá-las em um único conjunto de regras. Para saber quais regras de CSS são válidas na AMP, leia [CSS compatível]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}).
+Importante: É possível ter somente uma tag de estilo em todo o documento AMP. Se várias folhas de estilo externas forem referenciadas pelas páginas AMP, será necessário agrupá-las em um único conjunto de regras. Para saber quais regras de CSS são válidas na AMP, leia [CSS compatível]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}).
 
 ## Excluir JavaScript de terceiros
 
@@ -333,7 +333,7 @@ AMP validation successful.
 
 - [O que é o reflow DOM?](http://stackoverflow.com/a/27637245)
 - [O que acontece se o atributo layout não estiver especificado?](/pt_br/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [O que acontece se largura e a altura não estiverem definidas?](https://www.ampproject.org/pt_br/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [O que acontece se largura e a altura não estiverem definidas?](/pt_br/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
 
 
 <div class="prev-next-buttons">

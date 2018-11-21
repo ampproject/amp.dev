@@ -92,7 +92,7 @@
 <nav class="doc-sidebar">
 
     <div class="current-header">
-      <h1 class="title"><a href="/{% if doc.locale == 'en' %}docs/{% else %}{{doc.locale}}/docs/{% endif %}">{{_(secondaryCollection.title)}}</a></h1>
+      <h1 class="title"><a href="/{% if doc.locale == 'en' %}docs/{% else %}{{doc.locale|lower}}/docs/{% endif %}">{{_(secondaryCollection.title)}}</a></h1>
     </div>
 
     <div class="current-sections">

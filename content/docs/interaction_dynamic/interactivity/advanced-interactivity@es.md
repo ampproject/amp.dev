@@ -69,7 +69,7 @@ Ahora, siempre que la diapositiva mostrada para el `<amp-carousel>` cambie, la a
 
 La expresión `event.index` se evalúa al nuevo índice de diapositivas y la acción `AMP.setState()` fusiona este literal de objeto en el estado actual. Esto reemplaza el valor actual de `selected.slide` con el valor de `event.index`.
 
-Tip: `AMP.setState()` realiza una fusión profunda de literales de objetos anidados. Para obtener más detalles, consulte la documentación [`<amp-bind>`](https://www.ampproject.org/docs/reference/components/amp-bind.html).
+Tip: `AMP.setState()` realiza una fusión profunda de literales de objetos anidados. Para obtener más detalles, consulte la documentación [`<amp-bind>`](/docs/reference/components/amp-bind.html).
 
 ### Vincular los elementos indicadores
 

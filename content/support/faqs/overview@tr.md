@@ -29,7 +29,7 @@ faq:
       Projede yer alan şirketler, mobil web'i yalnızca bir platform, bir teknoloji grubu veya bir yayıncı grubu için değil, herkes için daha iyi bir hale getirmeyi istemektedir. Projenin açık kaynak halinde yapılması, insanların mobil web'i hızlandıracak fikirlerini ve kodlarını paylaşıp katkıda bulunabilmelerini sağlamaktadır. Bu yolculuğun henüz başındayız ve yol boyunca diğer yayıncıların ve teknoloji şirketlerinin katılmasını bekliyoruz.
   - title: Accelerated Mobile Pages'ı kimler kullanabilir?
     answer: |
-      Proje, ekosistemdeki tüm oyunculara yani yayıncılara, tüketici platformlarına ve içerik oluşturanlara açıktır. AMP'yi hangi şirketlerin ve sitelerin kullandığına dair bir fikir edinmek için [Kim sayfasına](/tr/support/faqs/supported-platforms.htmlo) gidin.
+      Proje, ekosistemdeki tüm oyunculara yani yayıncılara, tüketici platformlarına ve içerik oluşturanlara açıktır. AMP'yi hangi şirketlerin ve sitelerin kullandığına dair bir fikir edinmek için [Kim sayfasına](/tr/support/faqs/supported-platforms.html) gidin.
   - title: Accelerated Mobile Pages kullanımının sonuçları nelerdir?
     answer: |
       AMP biçimini kullanarak, içerik üreticileri AMP dosyalarını üçüncü taraflar için taranabilir, dizine eklenebilir, görüntülenebilir (robot hariç tutma protokolüne tabidir) ve önbelleğe alınabilir hale getirmektedir.

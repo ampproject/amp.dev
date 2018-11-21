@@ -58,9 +58,9 @@ AMP는 많은 퍼블리싱 플랫폼과 통합되어 있습니다. 실제 AMP �
 
 AMP 페이지 또는 광고를 처음부터 새로 만들 경우 다음 자료를 참고하십시오.
 
-*   [튜토리얼: 첫 번째 AMP 페이지 만들기](/ko/docs/tutorials/create.html)
-*   [튜토리얼: 고급 AMP 기능 추가](/ko/docs/tutorials/add_advanced.html)
-*   [AMP HTML 사양](/ko/docs/reference/spec.html#the-amp-html-format): *보일러플레이트, 필수 마크업, 허용되는 HTML 포함*
+*   [튜토리얼: 첫 번째 AMP 페이지 만들기](/ko/docs/getting_started/create.html)
+*   [튜토리얼: 고급 AMP 기능 추가](/ko/docs/fundamentals/add_advanced.html)
+*   [AMP HTML 사양](/ko/docs/fundamentals/spec.html#the-amp-html-format): *보일러플레이트, 필수 마크업, 허용되는 HTML 포함*
 *   [AMP HTML 광고 포맷](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): *AMP에서 성능 기준에 적합한 광고를 만드는 방법에 대한 설명*
 *   [YouTube 동영상: AMP에서 허용되는 항목과 허용되지 않는 항목](https://youtu.be/Gv8A4CktajQ)
 *   [AMP Start 템플릿](https://www.ampstart.com/): *미리 준비된 AMP 페이지 템플릿 제공*
@@ -69,23 +69,23 @@ AMP 페이지 또는 광고를 처음부터 새로 만들 경우 다음 자료�
 
 기존 HTML 페이지를 AMP HTML로 변환하려면 다음 자료를 참고하십시오.
 
-*   [튜토리얼: HTML을 AMP로 변환](/ko/docs/tutorials/converting.html)
+*   [튜토리얼: HTML을 AMP로 변환](/ko/docs/fundamentals/converting.html)
 *   [YouTube 동영상: 기존 사이트에 AMP HTML 사용](https://youtu.be/OO9oKhs80aI)
 
 ### AMP 페이지 유효성 검사 및 테스트
 
 콘텐츠를 게시하기 전에 AMP 페이지가 유효한지 확인하십시오.  여기서 다음과 같은 자료를 사용할 수 있습니다.
 
-*   [AMP 페이지 유효성 검사](/ko/docs/guides/validate.html): *페이지 유효성 검사를 위한 유효성 검사 도구 목록과 안내 제공*
+*   [AMP 페이지 유효성 검사](/ko/docs/fundamentals/validate.html): *페이지 유효성 검사를 위한 유효성 검사 도구 목록과 안내 제공*
 *   [YouTube 동영상: AMP 페이지 유효성 검사 및 디버그 방법](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
-*   [AMP의 CORS 테스트](/ko/docs/guides/amp-cors-requests.html#testing-cors-in-amp)
+*   [AMP의 CORS 테스트](/ko/docs/fundamentals/amp-cors-requests.html#testing-cors-in-amp)
 
 ### 콘텐츠를 검색 가능하게 만들기
 
 사용자가 타사 플랫폼(예: Twitter, Google, Bing 등)에서 여러분의 콘텐츠를 검색할 수 있는지 확인하십시오.
 다음은 도움이 될 만한 자료입니다.
 
-*   [페이지를 검색 가능하게 만들기](/ko/docs/guides/discovery.html): *AMP 페이지를 연결하고 메타데이터를 사용하는 데 유용한 도움말*
+*   [페이지를 검색 가능하게 만들기](/ko/docs/fundamentals/discovery.html): *AMP 페이지를 연결하고 메타데이터를 사용하는 데 유용한 도움말*
 *   [AMP 페이지에 대한 Google 검색 가이드라인](https://support.google.com/webmasters/answer/6340290)
 
 <hr>

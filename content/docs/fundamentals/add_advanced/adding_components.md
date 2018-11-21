@@ -86,7 +86,7 @@ The two `amp-ad`s below provide an example of the flexibility `amp-ad` provides 
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
-Note: You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks]({{g.doc('/content/docs/fundamentals/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Note: You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 Read on: To see the latest supported ad networks, read the reference documentation for the [amp-ad](/docs/reference/components/amp-ad.html#supported-ad-networks) component.
 

@@ -10,7 +10,7 @@ Dans le cas d'éléments AMP, c'est facile, il suffit de leur ajouter le code `l
 
 Toutes les ressources chargées en externe, y compris les images, doivent avoir une taille et un emplacement précis. Ainsi, au fil de leur chargement, la page ne saute pas et est redisposée de manière dynamique.
 
-Créez des images responsives en indiquant leur largeur et leur hauteur, en définissant la mise en page comme responsive et en indiquant, au moyen de [`srcset`]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}), quelle ressource d'image utiliser en fonction des différentes tailles d'écran :
+Créez des images responsives en indiquant leur largeur et leur hauteur, en définissant la mise en page comme responsive et en indiquant, au moyen de [`srcset`]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}), quelle ressource d'image utiliser en fonction des différentes tailles d'écran :
 
 [sourcecode:html]
 <amp-img
@@ -78,7 +78,7 @@ Définissez des styles de composants avec des sélecteurs de classe ou d'éléme
 </body>
 [/sourcecode]
 
-**Important** : Assurez-vous que vos styles sont compatibles avec les pages AMP ; certains ne le sont pas pour des raisons de performance (voir aussi [CSS compatibles]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})).
+**Important** : Assurez-vous que vos styles sont compatibles avec les pages AMP ; certains ne le sont pas pour des raisons de performance (voir aussi [CSS compatibles]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
 
 ## Éléments de taille et d'emplacement
 
@@ -90,14 +90,14 @@ Ces attributs définissent le format de l'élément, qui peut être mis à l'éc
 Définissez la mise en page comme responsive.
 Cela ajuste la taille de l'élément à la largeur de son élément conteneur, et redimensionne automatiquement sa hauteur au format donné par les attributs de largeur et de hauteur.
 
-Renseignez-vous sur les [mises en page compatibles avec les pages AMP]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
+Renseignez-vous sur les [mises en page compatibles avec les pages AMP]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
 
 ## Valider vos styles et votre mise en page
 
 Utilisez le validateur AMP pour tester les valeurs du CSS et de la mise en page de votre page.
 
 Le validateur confirme que le CSS de votre page n'excède pas la limite de 50 000 octets, vérifie qu'il ne contient pas de styles interdits et s'assure de la compatibilité de la mise en page de votre page ainsi que de son bon formatage.
-Consultez aussi la liste complète des [erreurs de style et de mise en page](/fr/docs/reference/validation_errors.html#erreurs-de-style-et-de-mise-en-page).
+Consultez aussi la liste complète des [erreurs de style et de mise en page](/fr/docs/troubleshooting/validation_errors.html#erreurs-de-style-et-de-mise-en-page).
 
 Exemple d'erreur dans la console pour une page avec un CSS qui dépasse la limite de 50 000 octets :
 

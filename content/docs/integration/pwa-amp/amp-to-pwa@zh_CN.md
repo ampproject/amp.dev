@@ -6,7 +6,7 @@ $title: 通过 AMP 网页预加载渐进式网页应用
 推荐采取的策略：**将一个 AMP 网页作为您网站的进入点**，然后**让 PWA 在后台做好准备**并切换到 PWA 以便用户继续进行浏览之旅。
 
 * 将所有的叶级内容页（包含具体内容的页面，而非概览页）发布为 AMP 网页，以便提供几乎即时交付的加载体验。
-* 当用户浏览您的内容时，这些 AMP 网页会使用 AMP 的专用元素 [`<amp-install-serviceworker>`](/zh_cn/docs/reference/components/amp-install-serviceworker) 让缓存和 PWA Shell 做好准备。
+* 当用户浏览您的内容时，这些 AMP 网页会使用 AMP 的专用元素 [`<amp-install-serviceworker>`](/zh_cn/docs/reference/components/amp-install-serviceworker.html) 让缓存和 PWA Shell 做好准备。
 * 当用户点击您网站上的另一个链接（例如，点击底部的号召性用语，以便获得与应用更相似的体验）时，Service Worker 会拦截相应请求、接管相应网页并改为加载 PWA Shell。
 
 若想了解为何要使用此开发模式以及如何使用它，请继续阅读下文。
@@ -30,7 +30,7 @@ AMP 技术能够从 AMP 网页内安装渐进式网页应用的 Service Worker -
 
 提示: 如果您还不熟悉 Service Worker，我们强烈建议您学习一下 Jake Archibald 的 [Udacity 课程](https://www.udacity.com/course/offline-web-applications--ud899)。
 
-首先，使用 [`<amp-install-serviceworker>`](/zh_cn/docs/reference/components/amp-install-serviceworker) 在您的所有 AMP 网页上安装 Service Worker；为此，请先通过相应脚本在您网页的 `<head>` 中添加该组件：
+首先，使用 [`<amp-install-serviceworker>`](/zh_cn/docs/reference/components/amp-install-serviceworker.html) 在您的所有 AMP 网页上安装 Service Worker；为此，请先通过相应脚本在您网页的 `<head>` 中添加该组件：
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -98,7 +98,7 @@ self.addEventListener('fetch', event => {
 
 关于这种方法，特别有趣的是，您在采用渐进增强的方式从 AMP 跳转到 PWA。不过，这也意味着（其实现状正是如此），尚不支持 Service Worker 的浏览器只会从 AMP 跳转到 AMP，并且永远无法实际导航到 PWA。
 
-AMP 采用一种名为 [Shell 网址重写](/zh_cn/docs/reference/components/amp-install-serviceworker#shell-url-rewrite) 的方法来解决此问题。通过向 [`<amp-install-serviceworker>`](/zh_cn/docs/reference/components/amp-install-serviceworker) 标记添加后备网址格式，您可以指示 AMP 在检测不到任何对 Service Worker 的支持时重写相应网页上的所有匹配链接，以便改为跳转到另一个旧版 Shell 网址：
+AMP 采用一种名为 [Shell 网址重写](/zh_cn/docs/reference/components/amp-install-serviceworker.html#shell-url-rewrite) 的方法来解决此问题。通过向 [`<amp-install-serviceworker>`](/zh_cn/docs/reference/components/amp-install-serviceworker.html) 标记添加后备网址格式，您可以指示 AMP 在检测不到任何对 Service Worker 的支持时重写相应网页上的所有匹配链接，以便改为跳转到另一个旧版 Shell 网址：
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -111,4 +111,4 @@ AMP 采用一种名为 [Shell 网址重写](/zh_cn/docs/reference/components/amp
 
 待您设置好上述属性后，在相应 AMP 网页上发生的所有后续点击都会跳转到您的 PWA，而无论采用何种 Service Worker。
 
-继续阅读: 您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作](/zh_cn/docs/integration/pwa-amp/amp-in-pwa)。
+继续阅读: 您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作](/zh_cn/docs/integration/pwa-amp/amp-in-pwa.html)。

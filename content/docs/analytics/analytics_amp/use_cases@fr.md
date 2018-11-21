@@ -9,7 +9,7 @@ Vous aimeriez ajouter un cas d'utilisation ?
 [Dites-le nous.](https://github.com/ampproject/docs/issues/new)
 
 Vous pouvez également partager vos propres cas d'utilisation ;
-voir [Comment contribuer](/fr/docs/support/contribute.html).
+voir [Comment contribuer](/fr/contribute/).
 
 ## Suivi des vues de page
 
@@ -18,7 +18,7 @@ Découvrez comment suivre les vues de page avec `amp-pixel` et `amp-analytics`.
 ### Utilisation du composant amp-pixel
 
 Envoyez des données sur les vues de page à une URL spécifiée
-en utilisant [amp-pixel](/frdocs/reference/components/amp-pixel.html) :
+en utilisant [amp-pixel](/fr/docs/reference/components/amp-pixel.html) :
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>

@@ -129,7 +129,7 @@ definem amplamente o conjunto de tags não permitidas.
 O formato AMP não permite que JavaScript personalizado seja adicionado às páginas, exceto os arquivos JavaScript
 fornecidos pelo próprio Projeto AMP. Muitos usos comuns de JavaScript têm
 implementações equivalentes na biblioteca de HTML para AMP. Consulte os [componentes
-AMP](/pt_br/docs/reference/components) para conhecer o conjunto de componentes que podem ser
+AMP](/pt_br/docs/reference/components.html) para conhecer o conjunto de componentes que podem ser
 usados para aprimorar as páginas HTML para AMP.
 
 Nos casos de uso que não estão previstos aqui, também é possível contribuir com novos

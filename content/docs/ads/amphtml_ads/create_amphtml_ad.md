@@ -22,7 +22,7 @@ AMPHTML ads are similar to traditional HTML ads, but instead of coding them in t
 * A browser and text editor of your choice
 
 <div class="start-button">
-<a class="button" href="{{g.doc('/content/docs/ads/amphtml_ads/create_shell.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
+<a class="button" href="{{g.doc('/content/docs/ads/amphtml_ads/create_amphtml_ad/create_shell.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
 </div>
 
 {% call callout('Tip', type='success') %}

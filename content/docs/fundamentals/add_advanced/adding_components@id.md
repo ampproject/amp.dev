@@ -74,7 +74,7 @@ Dua `amp-ad` di bawah memberikan contoh fleksibilitas yang dimiliki `amp-ad` unt
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Iklan pengujian') }}
 
-Catatan: Anda mungkin mengetahui bahwa yang ada dalam tag amp-ad ini adalah tag `div` tambahan dengan atribut yang diberi nama `fallback`. Dapatkah Anda menebak apa yang ditunjukkan oleh atribut `fallback`? Atribut ini memberi tahu sistem pemuatan AMP agar hanya menampilkan konten elemen tersebut saat elemen induk gagal dimuat. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Catatan: Anda mungkin mengetahui bahwa yang ada dalam tag amp-ad ini adalah tag `div` tambahan dengan atribut yang diberi nama `fallback`. Dapatkah Anda menebak apa yang ditunjukkan oleh atribut `fallback`? Atribut ini memberi tahu sistem pemuatan AMP agar hanya menampilkan konten elemen tersebut saat elemen induk gagal dimuat. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 Baca lebih lanjut: Untuk melihat jaringan iklan yang didukung baru-baru ini, baca dokumentasi referensi untuk komponen [amp-ad](/id/docs/reference/components/amp-ad.html#supported-ad-networks).
 

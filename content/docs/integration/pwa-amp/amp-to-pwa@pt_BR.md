@@ -6,7 +6,7 @@ $title: Pré-carregar Progressive Web App a partir de páginas AMP
 Uma boa estratégia é fazer com que o **ponto de entrada do seu site seja uma página AMP**, **carregar o PWA em segundo plano** e mudar para ele durante a navegação:
 
 * Todas as páginas de detalhes com conteúdo (aquelas que têm material específico, e não páginas de visão geral) são publicadas como AMP para proporcionar uma experiência de carregamento quase instantâneo.
-* Essas AMP usam o elemento especial [`<amp-install-serviceworker>`](/pt_br/docs/reference/components/amp-install-serviceworker) para carregar um cache e o shell do PWA enquanto o usuário navega pelo conteúdo.
+* Essas AMP usam o elemento especial [`<amp-install-serviceworker>`](/pt_br/docs/reference/components/amp-install-serviceworker.html) para carregar um cache e o shell do PWA enquanto o usuário navega pelo conteúdo.
 * Quando o usuário clicar em outro link no site (por exemplo, a call-to-action na parte inferior, que cria uma experiência mais semelhante a um aplicativo), o service worker interceptará a solicitação, assumirá o controle da página e carregará o shell do PWA.
 
 Leia mais para saber como e por que usar esse padrão de desenvolvimento.
@@ -30,7 +30,7 @@ Por sua vez, os Progressive Web Apps possibilitam muito mais interatividade e en
 
 Dica: Caso você ainda não esteja familiarizado com o service worker, recomendamos o [curso da Udacity](https://www.udacity.com/course/offline-web-applications--ud899) de Jake Archibald (em inglês).
 
-Primeiro, instale o service worker em todas as suas páginas AMP usando [`<amp-install-serviceworker>`](/pt_br/docs/reference/components/amp-install-serviceworker). Para isso, inclua antes o componente por meio do script correspondente na seção `<head>` da página:
+Primeiro, instale o service worker em todas as suas páginas AMP usando [`<amp-install-serviceworker>`](/pt_br/docs/reference/components/amp-install-serviceworker.html). Para isso, inclua antes o componente por meio do script correspondente na seção `<head>` da página:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -98,7 +98,7 @@ self.addEventListener('fetch', event => {
 
 O interessante dessa técnica é o uso do aprimoramento progressivo para trocar de AMP para PWA. No entanto, isso também significa que os navegadores que ainda não são compatíveis com os service workers navegarão pelas AMP sem nunca acessar o PWA.
 
-As AMP resolvem isso com um recurso chamado [reescrita do URL do shell](/pt_br/docs/reference/components/amp-install-serviceworker#shell-url-rewrite). Com a adição de um padrão de URL substituto na tag [`<amp-install-serviceworker>`](/pt_br/docs/reference/components/amp-install-serviceworker), você pode instruir a AMP a reescrever todos os links correspondentes em uma determinada página para que eles levem a outro URL de shell legado caso a compatibilidade com o service worker não seja detectada:
+As AMP resolvem isso com um recurso chamado [reescrita do URL do shell](/pt_br/docs/reference/components/amp-install-serviceworker.html#shell-url-rewrite). Com a adição de um padrão de URL substituto na tag [`<amp-install-serviceworker>`](/pt_br/docs/reference/components/amp-install-serviceworker.html), você pode instruir a AMP a reescrever todos os links correspondentes em uma determinada página para que eles levem a outro URL de shell legado caso a compatibilidade com o service worker não seja detectada:
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -111,4 +111,4 @@ As AMP resolvem isso com um recurso chamado [reescrita do URL do shell](/pt_br/d
 
 Com esses atributos, todos os cliques subsequentes em uma AMP direcionarão para o PWA, independentemente de qualquer service worker.
 
-Leia mais: Se você já chegou até aqui, que tal reutilizar as páginas AMP existentes para criar seu PWA? [Saiba como fazer isso](/pt_br/docs/integration/pwa-amp/amp-in-pwa).
+Leia mais: Se você já chegou até aqui, que tal reutilizar as páginas AMP existentes para criar seu PWA? [Saiba como fazer isso](/pt_br/docs/integration/pwa-amp/amp-in-pwa.html).

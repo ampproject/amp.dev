@@ -51,14 +51,14 @@ points:
       description: |
         AMP doesn’t let extension mechanisms block page rendering.
         AMP supports extensions for things like
-        [lightboxes](/docs/reference/extended/amp-lightbox.html),
-        [instagram embeds](/docs/reference/extended/amp-instagram.html),
-        [tweets](/docs/reference/extended/amp-twitter.html), etc.
+        [lightboxes](/docs/reference/components/amp-lightbox.html),
+        [instagram embeds](/docs/reference/components/amp-instagram.html),
+        [tweets](/docs/reference/components/amp-twitter.html), etc.
         While these require additional HTTP requests,
         those requests do not block page layout and rendering.
         <p>Any page that uses a custom script must tell the AMP system
         that it will eventually have a custom tag.
-        For example, the [`amp-iframe`](/docs/reference/extended/amp-iframe.html)
+        For example, the [`amp-iframe`](/docs/reference/components/amp-iframe.html)
         script tells the system that there will be an `amp-iframe` tag.
         AMP creates the iframe box before it even knows what it will include:
       example: /content/includes/amp-iframe.md
@@ -156,7 +156,7 @@ points:
       description: |
         AMP is an open-source effort.
         We need your help to make AMP even faster.
-        Learn [how to contribute](/docs/support/contribute.html).
+        Learn [how to contribute](/contribute/).
 
 
 cta:

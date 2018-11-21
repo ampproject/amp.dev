@@ -58,7 +58,7 @@ Veja a lista de componentes disponíveis abaixo, nas categorias relacionadas.
 | [`amp-fx-collection`](components/amp-fx-collection.html) | Oferece uma coleção de efeitos visuais predefinidos, como paralaxe. |
 | [`amp-iframe`](components/amp-iframe.html) | Exibe um iframe. |
 | [`amp-image-lightbox`](components/amp-image-lightbox.html) | Atribui um efeito lightbox a uma imagem específica. |
-| [`amp-layout`](components/amp-layout.html) | Atribui um elemento de contêiner genérico e multifuncional que permite adicionar os [layouts avançados da AMP](https://www.ampproject.org/pt_br/docs/guides/responsive/control_layout#the-layout-attribute) a qualquer elemento. |
+| [`amp-layout`](components/amp-layout.html) | Atribui um elemento de contêiner genérico e multifuncional que permite adicionar os [layouts avançados da AMP](/pt_br/docs/design/responsive/control_layout.html#the-layout-attribute) a qualquer elemento. |
 | [`amp-lightbox`](components/amp-lightbox.html) | Exibe elementos em um modal "lightbox" que ocupa toda a janela de visualização. |
 | [`amp-lightbox-gallery`](components/amp-lightbox-gallery.html) | Resulta em uma experiência "lightbox". Com a interação do usuário, um componente de IU se expande para preencher a janela de visualização até ser fechado pelo usuário. |
 | [`amp-position-observer`](components/amp-position-observer.html) | Monitora a posição de um elemento na janela de visualização conforme o usuário rola a página e envia eventos que podem ser usados com outros componentes. |
@@ -78,7 +78,7 @@ Veja a lista de componentes disponíveis abaixo, nas categorias relacionadas.
 | [`amp-brid-player`](components/amp-brid-player.html) | Exibe um player do [Brid.tv](https://www.brid.tv/) (em inglês). |
 | [`amp-brightcove`](components/amp-brightcove.html) | Exibe um player [Video Cloud](https://www.brightcove.com/en/online-video-platform) ou [Perform](https://www.brightcove.com/en/perform) do Brightcove (páginas indisponíveis em português). |
 | [`amp-dailymotion`](components/amp-dailymotion.html) | Exibe um vídeo do [Dailymotion](https://www.dailymotion.com). |
-| [`amp-google-vrview-image`](components/amp-google-vrview-image) | Exibe uma imagem em RV. |
+| [`amp-google-vrview-image`](components/amp-google-vrview-image.html) | Exibe uma imagem em RV. |
 | [`amp-hulu`](components/amp-hulu.html) | Exibe um vídeo incorporado simples do [Hulu](http://www.hulu.com/) (em inglês). |
 | [`amp-ima-video`](components/amp-ima-video.html) | Incorpora um player para anúncios em vídeo InStream integrados com o [SDK do IMA](https://developers.google.com/interactive-media-ads/docs/sdks/html5/). |
 | [`amp-img`](components/amp-img.html) | Substitui a tag HTML5 `img`. |

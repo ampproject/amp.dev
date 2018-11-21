@@ -20,7 +20,7 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ## heights
 
@@ -41,7 +41,7 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
 
 ## layout
 
@@ -58,7 +58,7 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## media
 
@@ -135,7 +135,7 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ## sizes
 
@@ -151,7 +151,7 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
 
 ## width dan height
 
@@ -167,4 +167,4 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).

@@ -24,7 +24,7 @@ In this guide, we'll show you how you can easily implement these responsive fund
 
 To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.
 
-But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup](/docs/reference/spec#required-markup.html) for AMP pages, you need to specify the following viewport:
+But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup](/docs/fundamentals/spec.html#required-markup) for AMP pages, you need to specify the following viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -77,7 +77,7 @@ In the following example, we want to display an embedded YouTube video that resp
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div> <div placeholder></div> </amp-iframe></div>
 
-There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components](/docs/reference/components#media).
+There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components](/docs/reference/components.html#media).
 
 ### Displaying responsive images
 
@@ -106,7 +106,7 @@ In the following example we have several image files that are of the same aspect
 
 For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px  (412 * .75 * 2.6), which happens to be `apple-800.jpg`.
 
-Read on: To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) guide.
+Read on: To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) guide.
 
 #### Changing the art direction of an image
 
@@ -124,7 +124,7 @@ Note: As we wanted the images to be fixed sizes (i.e., not skew), we didn't spec
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
-Read on: To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) guide.
+Read on: To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) guide.
 
 #### Providing optimized images
 
@@ -132,7 +132,7 @@ Delivering fast loading pages requires optimized images--in size, quality, and f
 
 In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.
 
-Read on: To learn more about fallbacks, see the [Placeholders & Fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) guide.
+Read on: To learn more about fallbacks, see the [Placeholders & Fallbacks]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}) guide.
 
 ##### Example: Serve different image formats
 

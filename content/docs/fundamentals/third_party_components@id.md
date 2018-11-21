@@ -41,7 +41,7 @@ Tip: Lihat lebih banyak contoh `amp-twitter` di [AMP Menurut Contoh](https://amp
 ## Menyematkan Instagram
 
 Sematkan Instagram di laman
-menggunakan elemen [`amp-instagram`](/id/docs/reference/extended/amp-instagram.html)
+menggunakan elemen [`amp-instagram`](/id/docs/reference/components/amp-instagram.html)
 
 Untuk menyertakan Instagram,
 sertakan dahulu skrip berikut di `<head>`:

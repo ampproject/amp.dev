@@ -7,7 +7,7 @@ toc: true
 
 Este guia mostra um conjunto de casos de uso comuns do rastreamento de engajamento do usuário:
 
-Observação: Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos. Veja [como contribuir](/pt_br/docs/support/contribute.html).
+Observação: Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos. Veja [como contribuir](/pt_br/contribute/).
 
 ## Rastrear visualizações de página
 

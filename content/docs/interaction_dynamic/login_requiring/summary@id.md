@@ -6,6 +6,6 @@ Dalam tutorial ini, kita telah mempelajari cara menggabungkan `amp-access` dan `
 
 Untuk mempelajari lebih lanjut, buka referensi berikut:
 
-- [amp-access](/id/docs/reference/components/amp-access)
-- [amp-form](/id/docs/reference/components/amp-form)
+- [amp-access](/id/docs/reference/components/amp-access.html)
+- [amp-form](/id/docs/reference/components/amp-form.html)
 - [Contoh "Bagian Komentar"](https://ampbyexample.com/samples_templates/comment_section/)

@@ -21,7 +21,7 @@ Demonstrates how to display an image and text in a single layer.
         <li>Contains 3 elements:
           <ul>
             <li>An <code>&lt;h1></code> element with the title: <em>Cats</em></li>
-            <li>A responsive <a href="/docs/reference/components/amp-img">amp-img</a> (<code class="filename">cat.jpg</code>, 720 x 1280px)</li>
+            <li>A responsive <a href="/docs/reference/components/amp-img.html">amp-img</a> (<code class="filename">cat.jpg</code>, 720 x 1280px)</li>
             <li>A <code>&lt;q></code> element for the following quotation: <em>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</em></li>
           </ul>
         </li>
@@ -41,7 +41,7 @@ Demonstrates how to arrange text and display a screen-filling image with two lay
       <ul>
         <li>Contains 2 layers:
       <ul>
-        <li><b>Layer 1</b>: Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> template, and contains a responsive <a href="/docs/reference/components/amp-img">amp-img</a> (<code class="filename">dog.jpg</code>, 720 x 1280px).</li>
+        <li><b>Layer 1</b>: Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> template, and contains a responsive <a href="/docs/reference/components/amp-img.html">amp-img</a> (<code class="filename">dog.jpg</code>, 720 x 1280px).</li>
         <li><b>Layer 2</b>:  Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>thirds</code></a> template and contains 2 elements:
           <ul>
             <li>An <code>&lt;h1></code> element with the title: <em>Dogs</em></li>
@@ -64,7 +64,7 @@ Demonstrates how to arrange text, display a screen-filling image, and provide ba
       <ul>
       <li>Contains 3 layers:
       <ul>
-        <li><b>Layer 1</b>: Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> template, and contains a responsive <a href="/docs/reference/components/amp-img">amp-img</a> (<code class="filename">bird.jpg</code>, 720 x 1280px).</li>
+        <li><b>Layer 1</b>: Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> template, and contains a responsive <a href="/docs/reference/components/amp-img.html">amp-img</a> (<code class="filename">bird.jpg</code>, 720 x 1280px).</li>
         <li><b>Layer 2</b>  Implements the <a href="/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> template and contains one element:
           <ul>
             <li>An <code>&lt;h1></code> element with the title: <em>Birds</em></li>
@@ -94,9 +94,9 @@ Demonstrates how to arrange text and display a screen-filling video for the page
       <ul>
       <li>Contains 3 layers:
       <ul>
-        <li><b>Layer 1</b>: Implements the <code>fill</code> template, and contains a responsive <a href="/docs/reference/components/amp-video">amp-video</a> (<code class="filename">rabbit.mp4</code>).
+        <li><b>Layer 1</b>: Implements the <code>fill</code> template, and contains a responsive <a href="/docs/reference/components/amp-video.html">amp-video</a> (<code class="filename">rabbit.mp4</code>).
           <ul>
-            <li>Remember to add the <strong>required script</strong> for the <a href="/docs/reference/components/amp-video">amp-video</a> component in your <code>&lt;head></code> section so the video appears.</li>
+            <li>Remember to add the <strong>required script</strong> for the <a href="/docs/reference/components/amp-video.html">amp-video</a> component in your <code>&lt;head></code> section so the video appears.</li>
             <li>Specify a <code>poster</code> image (<code class="filename">rabbit.jpg</code>). This attribute is <strong>required</strong> for valid AMP stories.</li>
             <li>Set the video to play automatically with the <code>autoplay</code> attribute. This attribute is <strong>required</strong> for valid AMP stories.</li>
             <li>Set the video to automatically loop back with the <code>loop</code> attribute.</li>

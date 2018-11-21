@@ -92,7 +92,7 @@ amp-fit-text {
 
 {% call callout('참고', type='note') %}
 
-마지막 예를 보면 `amp-ad` 구성요소에 하위 `div` 요소와 `placeholder` 속성이 포함되어 있습니다. 이전 가이드에서 `fallback`을 사용한 `amp-ad`가 포함된 비슷한 시나리오를 본 적이 있습니다. placeholder와 fallback 요소의 차이는 무엇일까요? `Fallback` 요소는 상위 요소를 로드할 수 없을 때(예: 표시할 광고가 없는 경우) 표시됩니다. 반면에 `placeholder` 요소는 상위 요소를 로드하는 중에 상위 요소 대신 표시됩니다. 어떤 의미에서 이러한 요소는 상위 요소의 로드 과정 전후에 표시됩니다. [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) 가이드에서 자세히 알아볼 수 있습니다.
+마지막 예를 보면 `amp-ad` 구성요소에 하위 `div` 요소와 `placeholder` 속성이 포함되어 있습니다. 이전 가이드에서 `fallback`을 사용한 `amp-ad`가 포함된 비슷한 시나리오를 본 적이 있습니다. placeholder와 fallback 요소의 차이는 무엇일까요? `Fallback` 요소는 상위 요소를 로드할 수 없을 때(예: 표시할 광고가 없는 경우) 표시됩니다. 반면에 `placeholder` 요소는 상위 요소를 로드하는 중에 상위 요소 대신 표시됩니다. 어떤 의미에서 이러한 요소는 상위 요소의 로드 과정 전후에 표시됩니다. [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}) 가이드에서 자세히 알아볼 수 있습니다.
 
 {% endcall %}
 

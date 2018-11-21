@@ -4,15 +4,15 @@ $title@: 文档
 start_cards:
   - name: AMP 简介
     desc: 了解 AMP 及其核心组件。
-    link: https://www.ampproject.org/zh_cn/learn/overview/
+    link: /zh_cn/learn/overview/
 
   - name: AMP 的运作原理
     desc: 了解可让 AMP 网页快速加载的优化措施。
-    link: https://www.ampproject.org/zh_cn/learn/about-how/
+    link: /zh_cn/learn/about-how/
 
   - name: 从头开始创建？
     desc: 参考这门新手教程来创建您的首个 AMP 网页。
-    link: https://www.ampproject.org/zh_cn/docs/getting_started/create
+    link: /zh_cn/docs/getting_started/create.html
 
   - name: 演示和示例
     desc: 按照 AMP By Example 的示例和在线演示，边做边学。
@@ -58,23 +58,23 @@ doc_cards:
 
   - name: AMPHTML 广告
     desc: 了解 AMPHTML 广告以及如何为您的广告系列和网站构建 AMP 网页。
-    link: https://www.ampproject.org/zh_cn/docs/ads/amphtml_ads
+    link: /zh_cn/docs/ads/amphtml_ads.html
 
   - name: AMP 分析
     desc: 将分析工具集成到 AMP 网页中，以衡量活动和用户互动情况。
-    link: https://www.ampproject.org/zh_cn/docs/analytics/analytics_amp
+    link: /zh_cn/docs/analytics/analytics_amp.html
 
   - name: AMP 中的 CORS
     desc: 了解为何需要在动态 AMP 内容中使用 CORS。
-    link: https://www.ampproject.org/zh_cn/docs/fundamentals/amp-cors-requests
+    link: /zh_cn/docs/fundamentals/amp-cors-requests.html
 
   - name: PWA 与 AMP
     desc: 了解如何才能让渐进式网页应用与 AMP 网页完美结合。
-    link: https://www.ampproject.org/zh_cn/docs/integration/pwa-amp
+    link: /zh_cn/docs/integration/pwa-amp.html
 
   - name: 自适应 AMP 网页
     desc: 了解如何在 AMP 中轻松创建自适应网页。
-    link: https://www.ampproject.org/zh_cn/docs/design/responsive/responsive_design
+    link: /zh_cn/docs/design/responsive/responsive_design.html
 
 ---
  

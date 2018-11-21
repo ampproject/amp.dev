@@ -1,7 +1,7 @@
 ---
 $title: Criar uma página AMP que requer login
 ---
-Algumas interações do usuário com a página, como a postagem de um comentário, podem ser condicionadas por um fluxo de login. Você pode implementar um fluxo de login com AMP usando o componente [amp-access](/pt_br/docs/reference/components/amp-access) junto com o [amp-form](/pt_br/docs/reference/components/amp-form).
+Algumas interações do usuário com a página, como a postagem de um comentário, podem ser condicionadas por um fluxo de login. Você pode implementar um fluxo de login com AMP usando o componente [amp-access](/pt_br/docs/reference/components/amp-access.html) junto com o [amp-form](/pt_br/docs/reference/components/amp-form.html).
 
 Dica: Para uma amostra de implementação, acesse o [exemplo de uma seção de comentários](https://ampbyexample.com/samples_templates/comment_section/) no site [ampbyexample.com](https://ampbyexample.com).
 

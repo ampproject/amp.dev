@@ -8,7 +8,7 @@ $title: О проверке AMP-страниц
 
 AMP-документ можно проверить несколькими способами, однако все они приводят к одному и тому же результату. Вы можете выбрать самый подходящий вариант.
 
-Также вы можете проверить, [находят](/ru/docs/guides/discovery.html) ли AMP-документ сторонние платформы.
+Также вы можете проверить, [находят](/ru/docs/fundamentals/discovery.html) ли AMP-документ сторонние платформы.
 
 ### Консоль разработчика браузера
 
@@ -83,7 +83,7 @@ https://www.ampproject.org/: PASS
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
 several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
 ...
 [/sourcecode]
@@ -157,5 +157,5 @@ AMP Validator не просто инструмент, который упрощ�
 
 Из спецификации можно узнать, что проблема заключается в использовании тега `<img>` вместо `<amp-img>`.
 
-Полный список потенциальных ошибок представлен в [этом руководстве](/ru/docs/reference/validation_errors.html).
+Полный список потенциальных ошибок представлен в [этом руководстве](/ru/docs/troubleshooting/validation_errors.html).
 Если вы не смогли обнаружить и устранить ошибку, [задайте нам вопрос](http://stackoverflow.com/questions/tagged/amp-html).

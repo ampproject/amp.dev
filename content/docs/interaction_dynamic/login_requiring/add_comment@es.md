@@ -22,7 +22,7 @@ Este es un ejemplo de respuesta JSON:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-Esos valores sencillamente se mostrarán en la página utilizando la plantilla [amp-mustache](/es/docs/reference/components/amp-mustache):
+Esos valores sencillamente se mostrarán en la página utilizando la plantilla [amp-mustache](/es/docs/reference/components/amp-mustache.html):
 
 [sourcecode:html]
 <div submit-success>

@@ -26,7 +26,7 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 
 `async` 속성을 사용하여 그림자 AMP 라이브러리를 로드하는 것이 좋습니다. 이 경우 언제 라이브러리가 완전히 로드되고 사용할 준비가 되는지 이해하기 위해 특별한 접근방식을 사용해야 합니다.
 
-전역 `AMP` 변수를 사용할 수 있는지, 그리고 그림자 AMP에서 이 변수 사용에 도움을 줄 수 있는 '[비동기 함수 로드 접근방식](http://ko/mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)'을 사용하는지 확인해야 합니다. 다음 코드를 살펴보세요.
+전역 `AMP` 변수를 사용할 수 있는지, 그리고 그림자 AMP에서 이 변수 사용에 도움을 줄 수 있는 '[비동기 함수 로드 접근방식](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)'을 사용하는지 확인해야 합니다. 다음 코드를 살펴보세요.
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
@@ -112,7 +112,7 @@ ampedDoc.close();
 
 {{ video('/static/img/docs/pwamp_react_demo.mp4', 620, 1100, align='right third', loop='true', autoplay='true', controls='') }}
 
-Google에서 제작한 [React 샘플](https://ko/github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)에서 'PWA에 삽입된 AMP'가 실제로 작동되는 모습을 확인할 수 있습니다. 이 샘플을 보면 탐색 중 전환이 부드럽게 이루어지는 것을 확인할 수 있으며, 위에서 설명한 단계가 포함된 간단한 반응 구성요소도 함께 제공됩니다. 프로그레시브 웹 앱의 유연한 맞춤형 자바스크립트와 콘텐츠를 신속하게 로드하기 위한 AMP가 같이 사용되어 두 가지의 장점을 모두 활용할 수 있습니다.
+Google에서 제작한 [React 샘플](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)에서 'PWA에 삽입된 AMP'가 실제로 작동되는 모습을 확인할 수 있습니다. 이 샘플을 보면 탐색 중 전환이 부드럽게 이루어지는 것을 확인할 수 있으며, 위에서 설명한 단계가 포함된 간단한 반응 구성요소도 함께 제공됩니다. 프로그레시브 웹 앱의 유연한 맞춤형 자바스크립트와 콘텐츠를 신속하게 로드하기 위한 AMP가 같이 사용되어 두 가지의 장점을 모두 활용할 수 있습니다.
 
 * 소스 코드 받기: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
 * npm을 통해 단독으로 React 구성요소 사용하기: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)

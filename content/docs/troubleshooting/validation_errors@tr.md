@@ -389,10 +389,10 @@ Bunlar beklenen etiketlere başvuruda bulunur:
 Bu hata, bir etiket aynı anda kullanılamayan (ayrışık) özniteliklerin her ikisine de sahip olduğunda ortaya çıkar.
 Örneğin, aşağıdaki etiketler için yalnızca birine izin verilir:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` veya `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` veya `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` veya `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` veya `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` veya `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` veya `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` veya `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` veya `data-videoid`
 
 ### Listede zorunlu öznitelik eksik
 
@@ -414,10 +414,10 @@ Bu hata, bir etiket aynı anda kullanılamayan (ayrışık) özniteliklerin her 
 Bu hata, bir etikette birden çok seçenek arasından gerekli bir öznitelik eksik olduğunda ortaya çıkar.
 Örneğin, şu etiketler iki olası seçenekten bir özniteliğin bulunmasını gerektirir:
 
-* [amp-twitter](/docs/reference/extended/amp-twitter.html): `data-tweetid` veya `src`
-* [amp-instagram](/docs/reference/extended/amp-instagram.html): `data-shortcode` veya `src`
-* [amp-iframe](/docs/reference/extended/amp-iframe.html): `src` veya `srcdoc`
-* [amp-youtube](/docs/reference/extended/amp-youtube.html): `src` veya `data-videoid`
+* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` veya `src`
+* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` veya `src`
+* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` veya `srcdoc`
+* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` veya `data-videoid`
 
 ### Yanlış üst etiket
 
@@ -556,7 +556,7 @@ Benzersiz etiketlerin tam listesi bilinmektedir:
 
 ## Stil ve düzen hataları
 
-Stil ve düzen hatalarına ayrıntılı bir şekilde girmeden önce, [stil]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}) ve [düzenin]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) AMP'de nasıl çalıştığının anlaşılması iyi olur. AMP sayfaları birer HTML sayfası olduğundan stil, herhangi bir HTML sayfasıyla büyük ölçüde aynıdır.
+Stil ve düzen hatalarına ayrıntılı bir şekilde girmeden önce, [stil]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) ve [düzenin]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) AMP'de nasıl çalıştığının anlaşılması iyi olur. AMP sayfaları birer HTML sayfası olduğundan stil, herhangi bir HTML sayfasıyla büyük ölçüde aynıdır.
 Ancak, sayfaların hızlı yüklenmesini sağlayan bazı kısıtlamalar söz konusudur ve AMP doğrulayıcı, bu kısıtlamaları uygular.
 
 Düzen, AMP sayfalarında daha fazla denetlenir.
@@ -649,7 +649,7 @@ Bu hata, AMP etiketi için bir düzen belirtmediğinizde ve işaret edilen düze
 [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
 
 Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
-Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?]{{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](/docs/reference/spec/amp-html-layout.html) bakın.
+Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?]{{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](/docs/reference/spec/amp-html-layout.html) bakın.
 
 **Not:** Düzeni belirtmezseniz ve `width` ile `height` değerlerini dahil etmezseniz düzen, varsayılan olarak CONTAINER değerine ayarlanır. CONTAINER hiçbir AMP etiketinde desteklenmediğinden doğrulayıcı bir hata bildirir.
 CONTAINER dışında bir düzen belirtir veya bir `width` ve/veya `height` değeri bildirirseniz hata kaybolur.
@@ -695,7 +695,7 @@ Bu hata, etiket için belirtilen düzen desteklenmediğinde ortaya çıkar.
 [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
 
 Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
-Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](/docs/reference/spec/amp-html-layout.html) bakın.
+Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](/docs/reference/spec/amp-html-layout.html) bakın.
 
 ### Belirtilen düzen, özniteliğe izin vermiyor
 
@@ -735,7 +735,7 @@ Düzen türleri için izin verilmeyen öznitelikler [AMP HTML düzeni sistem spe
 </table>
 
 Bu hata, öznitelik değeri belirtilen düzen için geçersiz olduğunda ortaya çıkar.
-Bu hatayı neyin tetiklediğini anlamak için [düzenlerin farklı davranışları]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) hakkında bilgi sahibi olmanız gerekir.
+Bu hatayı neyin tetiklediğini anlamak için [düzenlerin farklı davranışları]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) hakkında bilgi sahibi olmanız gerekir.
 
 Örneğin, düzeni `fixed-height` olacak şekilde ayarladığınızı ve hem `height` hem de `width` için sayısal değerler eklediğinizi düşünelim.
 `fixed-height` düzeni, bir `height` değeri alır.
@@ -768,9 +768,9 @@ Aynı birimlerde ifade edilmediklerinde bu hata tetiklenir.
 
 ## Şablon oluşturma hataları
 
-AMP sayfaları şablon oluşturma sözdizimini içeremez. Bunun için, sözdiziminin [amp-mustache](/docs/reference/extended/amp-mustache.html) gibi özellikle şablonları içermek üzere tasarlanmış bir AMP etiketi içinde olması gerekir.
+AMP sayfaları şablon oluşturma sözdizimini içeremez. Bunun için, sözdiziminin [amp-mustache](/docs/reference/components/amp-mustache.html) gibi özellikle şablonları içermek üzere tasarlanmış bir AMP etiketi içinde olması gerekir.
 
-Şablonları kaynak dosyalarınıza dahil etmeniz bir sıkıntı oluşturmaz, ancak sorun olmaması için bu dosyaların oluşturulan çıktısının şablonları içermemesi gerekir ([CSS ön işlemcilerini kullanma]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}) konusuna da bakın).
+Şablonları kaynak dosyalarınıza dahil etmeniz bir sıkıntı oluşturmaz, ancak sorun olmaması için bu dosyaların oluşturulan çıktısının şablonları içermemesi gerekir ([CSS ön işlemcilerini kullanma]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) konusuna da bakın).
 
 ### Öznitelik, şablon sözdizimi içeriyor
 

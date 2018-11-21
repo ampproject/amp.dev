@@ -12,7 +12,7 @@ $title: 拡張 AMP コンポーネントを追加する
 
 - **試験運用コンポーネント**: リリースされているが、まだ一般公開する前の段階にあるコンポーネント。デベロッパーは、完全リリースされる前のこれらの機能を使用するかどうか、ご自身の意思で選択できます。詳しくは、[試験運用機能](/ja/docs/reference/experimental.html)をご覧ください。
 
-「[HTML を AMP に変換する](/ja/docs/tutorials/converting.html)」チュートリアルのサンプルでは、組み込みコンポーネントの [amp-img](/ja/docs/reference/components/amp-img.html) を使用し、このコンポーネントと AMP レイアウト システムの関係について解説しました。ここでは、一般に広く使用されているいくつかの**拡張** AMP コンポーネントを新しい記事に追加してみます。
+「[HTML を AMP に変換する](/ja/docs/fundamentals/converting.html)」チュートリアルのサンプルでは、組み込みコンポーネントの [amp-img](/ja/docs/reference/components/amp-img.html) を使用し、このコンポーネントと AMP レイアウト システムの関係について解説しました。ここでは、一般に広く使用されているいくつかの**拡張** AMP コンポーネントを新しい記事に追加してみます。
 
 ## 広告で収益化する
 
@@ -74,7 +74,7 @@ AMP ページに広告を掲載するには、[amp-ad](/ja/docs/reference/compon
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='テスト広告') }}
 
-注: 上記の amp-ad タグには `div` タグが追加されており、そこには `fallback` という属性が指定されています。この `fallback` 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
+注: 上記の amp-ad タグには `div` タグが追加されており、そこには `fallback` という属性が指定されています。この `fallback` 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
 
 詳細情報: サポートされる広告ネットワークの最新リストについては、[amp-ad](/ja/docs/reference/components/amp-ad.html#supported-ad-networks) コンポーネントの関連ドキュメントをご覧ください。
 

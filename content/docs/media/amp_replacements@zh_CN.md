@@ -67,13 +67,13 @@ $title: 添加图片和视频
 </amp-iframe>
 </div>
 
-阅读: 详细了解 [高级布局技术]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}})。
+阅读: 详细了解 [高级布局技术]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})。
 
 ### 行为和占位符
 
 AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位置、系统资源、连接带宽或其他因素，选择延迟资源加载或排定资源加载的优先顺序。
 
-阅读: 了解如何 [提供后备图片和占位符]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})。
+阅读: 了解如何 [提供后备图片和占位符]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})。
 
 ## 动画图片
 

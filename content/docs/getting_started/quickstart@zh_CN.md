@@ -56,9 +56,9 @@ AMP 支持与许多第三方发布平台集成。要了解如何制作 AMP 网�
 
 如果您要从头开始制作 AMP 网页或广告，请访问以下资源：
 
-*   [教程：制作您的首个 AMP 网页](/zh_cn/docs/tutorials/create.html)
-*   [教程：添加高级 AMP 功能](/zh_cn/docs/tutorials/add_advanced.html)
-*   [AMP HTML 规范](/zh_cn/docs/reference/spec.html#the-amp-html-format)：包含样板、必需的标记和允许的 HTML
+*   [教程：制作您的首个 AMP 网页](/zh_cn/docs/getting_started/create.html)
+*   [教程：添加高级 AMP 功能](/zh_cn/docs/fundamentals/add_advanced.html)
+*   [AMP HTML 规范](/zh_cn/docs/fundamentals/spec.html#the-amp-html-format)：包含样板、必需的标记和允许的 HTML
 *   [AMPHTML 广告格式](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md)：详细介绍了如何在 AMP 中制作效果出色的广告
 *   [YouTube 视频：AMP 中允许使用和不允许使用的内容](https://youtu.be/Gv8A4CktajQ)
 *   [AMP Start 中的模板](https://www.ampstart.com/)：试用一些现成的 AMP 网页模板
@@ -67,22 +67,22 @@ AMP 支持与许多第三方发布平台集成。要了解如何制作 AMP 网�
 
 如果您要将现有的 HTML 网页转换为 AMPHTML，请访问以下资源：
 
-*   [教程：将 HTML 网页转换成 AMP 网页](/zh_cn/docs/tutorials/converting.html)
+*   [教程：将 HTML 网页转换成 AMP 网页](/zh_cn/docs/fundamentals/converting.html)
 *   [YouTube 视频：将 AMP HTML 用于现有网站](https://youtu.be/OO9oKhs80aI)
 
 ### 验证和测试 AMP 网页
 
 在发布内容之前，请确保您的 AMP 网页有效。以下是一些可供使用的资源：
 
-*   [验证 AMP 网页](/zh_cn/docs/guides/validate.html)：提供了一系列验证工具及相关说明，以帮助您验证网页
+*   [验证 AMP 网页](/zh_cn/docs/fundamentals/validate.html)：提供了一系列验证工具及相关说明，以帮助您验证网页
 *   [YouTube 视频：如何验证和调试 AMP 网页](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
-*   [测试 AMP 中的 CORS](/zh_cn/docs/guides/amp-cors-requests.html#testing-cors-in-amp)
+*   [测试 AMP 中的 CORS](/zh_cn/docs/fundamentals/amp-cors-requests.html#testing-cors-in-amp)
 
 ### 使您的内容可被轻松发现
 
 确保用户可在第三方平台（例如 Twitter、Google、Bing 等）上发现您的内容。以下是一些有用的资源：
 
-*   [使您的网页可被轻松发现](/zh_cn/docs/guides/discovery.html)：与如何关联 AMP 网页和使用元数据相关的提示
+*   [使您的网页可被轻松发现](/zh_cn/docs/fundamentals/discovery.html)：与如何关联 AMP 网页和使用元数据相关的提示
 *   [针对 AMP 网页的 Google 搜索准则](https://support.google.com/webmasters/answer/6340290)
 
 <hr>

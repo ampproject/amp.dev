@@ -23,7 +23,7 @@ Here's an example of JSON response:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-The form component will simply display those values inside the page using the [amp-mustache](/docs/reference/components/amp-mustache) template:
+The form component will simply display those values inside the page using the [amp-mustache](/docs/reference/components/amp-mustache.html) template:
 
 [sourcecode:html]
 <div submit-success>

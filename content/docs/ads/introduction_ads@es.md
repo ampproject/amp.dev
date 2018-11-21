@@ -8,7 +8,7 @@ Publicar anuncios en páginas AMP no difiere mucho de publicar anuncios tradicio
 
 {{ image('/static/img/docs/ads/ads_in_amp.svg', 647, 263, alt='publicar anuncios en páginas AMP', align='' ) }}
 
-1.  En una página AMP, el editor crea un espacio en el que aparecerán anuncios. Antes se hacía insertando un fragmento de JavaScript, pero en el caso de las páginas AMP, los editores añaden una etiqueta ['<amp-ad>'](es/docs/reference/components/amp-ad) de una red publicitaria concreta. Para obtener más información, consulta la guía [Monetizar tu página AMP con anuncios]({{g.doc('/content/docs/ads/monetization.md', locale=doc.locale).url.path}}).
+1.  En una página AMP, el editor crea un espacio en el que aparecerán anuncios. Antes se hacía insertando un fragmento de JavaScript, pero en el caso de las páginas AMP, los editores añaden una etiqueta ['<amp-ad>'](/es/docs/reference/components/amp-ad.html) de una red publicitaria concreta. Para obtener más información, consulta la guía [Monetizar tu página AMP con anuncios]({{g.doc('/content/docs/ads/monetization.md', locale=doc.locale).url.path}}).
 
 2.  Cuando el usuario carga una página AMP, la etiqueta '<amp-ad>' envía una solicitud de anuncio a la red publicitaria. Para devolver un anuncio a la página AMP, las redes publicitarias crean una implementación 'amp-ad'. Para obtener más información, consulta la guía [Integrar redes publicitarias en páginas AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
