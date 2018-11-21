@@ -1,5 +1,6 @@
 ---
-$title: Guides and Tutorials
+$title: Guides & Tutorials
+$path: /documentation/guides-and-tutorials.html
 
 $view: /views/detail/docs-detail.j2
 $order: 1

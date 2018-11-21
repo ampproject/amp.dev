@@ -1,5 +1,6 @@
 ---
 $title: Amp Framework
+$path: /overview/ads.html
 order: 1
 ---
 

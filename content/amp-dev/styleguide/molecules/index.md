@@ -1,5 +1,6 @@
 ---
 $title: Float-image
+$path: /styleguide/molecules.html
 teaser_type: component
 ---
 

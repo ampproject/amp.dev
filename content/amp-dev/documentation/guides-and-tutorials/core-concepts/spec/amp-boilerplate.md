@@ -1,6 +1,6 @@
 ---
 $title: AMP Boilerplate Code
-$view: /views/docs/detail.j2
+$view: /views/detail/docs-detail.j2
 
 author: Sebil Satici
 translator: Prince Adam
