@@ -1,6 +1,7 @@
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 
-{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
+{% set is_detail_page = doc.view.endswith('-detail.j2') %}
+{% if is_detail_page %}
 </section>
 <section class="teaser-grid">
 {% endif %}
@@ -215,7 +216,7 @@
   {% endif %}
 </div>
 
-{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
+{% if is_detail_page %}
 </section>
 <section class="main">
 {% endif %}
