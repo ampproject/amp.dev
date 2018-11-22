@@ -1,5 +1,5 @@
-path: /ads/overview/{base}.html
+path: /overview/ads/{base}.html
 view: /views/default.j2
 
 localization:
-  path: /ads/{locale}/overview/{base}.html
+  path: /{locale}/overview/ads/{base}.html

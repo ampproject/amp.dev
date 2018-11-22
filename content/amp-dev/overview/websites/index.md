@@ -27,8 +27,8 @@ Sanjay Nagpal, India Today’s Head of Technology
 
 LOGO INDIA TODAY
 
-## Explore benefits of AMP websites
-# Benefits for developers
+# Explore benefits of AMP websites
+## Benefits for developers
 IMAGE/ICON 1-3
 
 - Reduced development effort and maintenance
@@ -43,7 +43,7 @@ IMAGE/ICON 1-3
 - and Distribution across popular platforms like Google, Bing, and Twitter.
 
 
-# Explore use cases of AMP
+## Explore use cases of AMP
 TM_USE_CASE_TEASER 1
 TM_USE_CASE_TEASER 2
 TM_USE_CASE_TEASER 3
@@ -51,7 +51,7 @@ TM_USE_CASE_TEASER 4
 
 All use cases
 
-# Explore AMP success stories
+## Explore AMP success stories
 
 All success stories
 

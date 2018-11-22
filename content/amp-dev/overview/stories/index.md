@@ -26,9 +26,9 @@ Best Practices for creating an AMP Story
 []https://www.youtube.com/watch?v=2WjFBnCj2ew
 [/video]
 
-# The benefits of AMP stories
+## The benefits of AMP stories
 
-# Benefits for developers
+## Benefits for developers
 IMAGE/ICON
 
 1. Easy to create
@@ -37,7 +37,7 @@ IMAGE/ICON
 
 IMAGE/ICON
 
-Benefits for your business
+## Benefits for your business
 
 IMAGE/ICON
 
@@ -49,7 +49,7 @@ IMAGE/ICON
 
 See more benefits
 
-# AMP stories are built using 3 core components:
+## AMP stories are built using 3 core components:
 IMAGE: A MOBILE SCREEN WHERE VARIOUS STORY PAGES ARE ADDED IN AN EXPLODED VIEW
 
 Images, videos and GIFs
@@ -64,7 +64,7 @@ Convey facts and figures via bite-sized chunks of one or two sentences – ideal
 
 IMAGE LOOP: STORY PAGES PUSH THROUGH THE SCREEN AND ANIMATED TEXT ELEMENTS APPEAR
 
-### Animations and interactions
+## Animations and interactions
 
 It’s easy to create visual effects and tappable interactions that keep readers engaged. Titles can fly  drop, fade in, or animate onto the page. Configure your story to automatically progress to the next page when a video snippet is finished. Provide social sharing and related links at the end of your story, so users can share it or dive further into other content on your site.
 

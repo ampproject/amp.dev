@@ -4,7 +4,7 @@ $path: /overview/ads.html
 order: 1
 ---
 
-[stage]
+[stage color="light-blue"]
 ## What is AMP?
 # AMP is a web component framework to easily create user first Ads.
 [/stage]
@@ -29,8 +29,7 @@ Ads created with AMPHTML are served on both AMP and non-AMP pages. By building a
 [Join the AMP Project to improve performance and grow your revenue.](https://github.com/)
 
 # Explore benefits of AMP Ads
-
-# Benefits for developers
+## Benefits for developers
 IMAGE/ICON 1-3
 
 1. End to end experience is controlled
@@ -44,9 +43,7 @@ IMAGE/ICON 1-3
 2. Maximize your revenue
 3. Maximize your ROI
 
-
-
-[All benefits]()
+[All benefits](Link)
 
 
 # AMP for advertisers
@@ -68,7 +65,7 @@ AMP offers a way for you to give users a faster experience everywhere: on ads, l
 }
 ```
 
-# Explore use cases of AMP
+## Explore use cases of AMP
 - TM_USE_CASE_TEASER 1
 - TM_USE_CASE_TEASER 2
 - TM_USE_CASE_TEASER 3
@@ -76,7 +73,7 @@ AMP offers a way for you to give users a faster experience everywhere: on ads, l
 
 All use cases
 
-# Explore AMP success stories
+## Explore AMP success stories
 All success stories
 
 - SUCCESS STORY 1
