@@ -1,9 +1,9 @@
 ---
 $view: /views/detail/example-detail.j2
 $path: /styleguide/organisms/teaser-grid/example.html
-$title: Example
+$title: Exemplary example
 $titles:
-  teaser: How to publish AMPs
+  teaser: Exemplary example teaser
 destinations:
   - 'websites'
   - 'stories'
@@ -15,8 +15,6 @@ teaser:
     width: 5
     height: 3
     alt: A placeholder image
-  text: Here is a quick getting started guide for creating e-commerce webpages with AMP.
+  text: An examplary example teaser.
 ---
-[tip]
-This is just a demo page to showcase the teaser grid.
-[/tip]
+[include('/content/shared/hints/needs-to-be-removed.md')]

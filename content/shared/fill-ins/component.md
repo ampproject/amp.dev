@@ -1,19 +1,19 @@
 ---
 $view: /views/detail/component-detail.j2
-$path: /styleguide/organisms/teaser-grid/component.html
-$title: amp-sample-component
+$title: Sample amp-component
+$titles:
+  teaser: Example component teaser
 destinations:
   - 'stories'
   - 'ads'
   - 'websites'
+  - 'e-mails'
 teaser:
   image:
     src: '/static/img/teaser-placeholder-5x3.jpg'
     width: 5
     height: 3
     alt: A placeholder image
-  text: An extraordinary AMP component for your pages.
+  text: An example component teaser.
 ---
-[tip]
-This is just a demo page to showcase the teaser grid.
-[/tip]
+[include('/content/shared/hints/needs-to-be-removed.md')]

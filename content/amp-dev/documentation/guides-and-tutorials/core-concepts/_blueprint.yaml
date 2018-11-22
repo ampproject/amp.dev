@@ -4,4 +4,4 @@ view: /views/default.j2
 localization:
   path: /{locale}/documentation/guides-and-tutorials/core-concepts/{base}.html
 
-category:  Core concepts
+category: Core concepts

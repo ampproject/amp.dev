@@ -1,9 +1,8 @@
 ---
 $view: /views/detail/use-case-detail.j2
-$path: /styleguide/organisms/teaser-grid/use-case.html
-$title: Use case
+$title: Sample use case
 $titles:
-  teaser: Using various fonts with in an AMP site
+  teaser: Sample use case teaser
 destination: 'websites'
 teaser:
   image:
@@ -12,6 +11,4 @@ teaser:
     height: 5
     alt: A placeholder image
 ---
-[tip]
-This is just a demo page to showcase the teaser grid.
-[/tip]
+[include('/content/shared/hints/needs-to-be-removed.md')]

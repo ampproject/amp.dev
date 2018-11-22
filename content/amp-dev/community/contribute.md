@@ -1,11 +1,9 @@
 ---
 $title: Contributing
 ---
-# Contributing to AMP HTML
+[include('/content/shared/hints/manually-imported.md')]
 
-[tip important]
-This document has been manually copied from the amphtml repository. It will later be imported automatically.
-[/tip]
+# Contributing to AMP HTML
 
 The AMP HTML project strongly encourages technical [contributions](https://www.ampproject.org/contribute/)!
 

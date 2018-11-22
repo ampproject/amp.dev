@@ -1,9 +1,8 @@
 ---
 $view: /views/detail/success-story-detail.j2
-$path: /styleguide/organisms/teaser-grid/success-story-2.html
-$title: Success Story - 2
+$title: Sample Success Story
 $titles:
-  teaser: Stories with rich visuals and native videos
+  teaser: Sample success story
 destination: 'stories'
 teaser:
   image:
@@ -16,8 +15,6 @@ teaser:
     width: 153
     height: 38
     alt: Teads
-  text: Lorem ipsum dolor sit amet.
+  text: A sample success story teaser with image.
 ---
-[tip]
-This is just a demo page to showcase the teaser grid.
-[/tip]
+[include('/content/shared/hints/needs-to-be-removed.md')]

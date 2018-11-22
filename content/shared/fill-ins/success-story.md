@@ -1,9 +1,8 @@
 ---
 $view: /views/detail/success-story-detail.j2
-$path: /styleguide/organisms/teaser-grid/success-story.html
-$title: Success Story
+$title: Sample Success Story
 $titles:
-  teaser: Other stories with rich visuals
+  teaser: Sample success story
 destination: stories
 teaser:
   kpi:
@@ -14,8 +13,6 @@ teaser:
     src: /static/img/logo-dummy-mic.png
     width: 153
     height: 38
-  text: Lorem ipsum dolor sit amet.
+  text: A sample success story with KPI.
 ---
-[tip]
-This is just a demo page to showcase the teaser grid.
-[/tip]
+[include('/content/shared/hints/needs-to-be-removed.md')]
