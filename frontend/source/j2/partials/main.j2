@@ -17,7 +17,7 @@
     </section>
 
   {% else %}
-  
+
     <section class="main">
       {{ doc.html|render|safe }}
     </section>
@@ -31,17 +31,17 @@
     <h1>{{ doc.title }}</h1>
     <div class="ad-m-tip-container">
       <div class="ad-m-tip ad-m-tip-default">
-        <h4>We are setting things up!</h4>
-        <p>For now this page is purposefully empty. We are going to take care of adding the content for this one soon.<br><br>In the meantime you might find the technical information about this document below helpful.</p>
+        <h4>Empty space.</h4>
+        <p>For now this page is purposefully empty. Its only purpose is to have something to link to if the real content does not yet exist.</p>
 
         <div class="ad-m-code-snippet">
           <pre>
-            <span class="l l-Scalar l-Scalar-Plain">view</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.view }}"</span>
-            <span class="l l-Scalar l-Scalar-Plain">collection_path</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.collection.collection_path }}{{ doc.collection_path }}"</span>
+<span class="l l-Scalar l-Scalar-Plain">view</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.view }}"</span>
+<span class="l l-Scalar l-Scalar-Plain">collection_path</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.collection.collection_path }}{{ doc.collection_path }}"</span>
           </pre>
         </div>
       </div>
     </div>
   </section>
-  
+
 {% endif %}
