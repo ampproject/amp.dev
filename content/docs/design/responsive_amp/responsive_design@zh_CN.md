@@ -99,7 +99,7 @@ $title: 制作自适应 AMP 网页
 
 例如，假设我们的某部设备的视口宽度为 412 像素，DPR 为 2.6。根据上面的代码，图片必须以 75% 的视口宽度显示，因此浏览器会选择一张接近 803 像素 (412 * .75 * 2.6) 的图片，而 `apple-800.jpg` 正好符合条件。
 
-继续阅读: 要详细了解如何在 AMP 中使用 srcset 和 sizes，请参阅[借助 srcset、sizes 和 heights 进行艺术设计]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})指南。
+继续阅读: 要详细了解如何在 AMP 中使用 srcset 和 sizes，请参阅[借助 srcset、sizes 和 heights 进行艺术设计]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})指南。
 
 #### 更改图片的艺术设计
 
@@ -117,7 +117,7 @@ $title: 制作自适应 AMP 网页
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
 
-继续阅读: 要详细了解 AMP 中的艺术设计，请参阅[借助 srcset、sizes 和 heights 进行艺术设计]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})指南。
+继续阅读: 要详细了解 AMP 中的艺术设计，请参阅[借助 srcset、sizes 和 heights 进行艺术设计]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})指南。
 
 #### 提供经过优化的图片
 
@@ -125,7 +125,7 @@ $title: 制作自适应 AMP 网页
 
 在 HTML 中，您可以使用 `picture` 标记来提供不同格式的图片。在 AMP 中，虽然 `picture` 标记不受支持，但您可以使用 `fallback` 属性来提供不同的图片。
 
-继续阅读: 要详细了解备用行为，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})指南。
+继续阅读: 要详细了解备用行为，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})指南。
 
 ##### 示例：提供不同格式的图片
 

@@ -264,7 +264,7 @@ Setiap fitur memberikan beberapa informasi:
 Dengan membaca ulang [spek]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}) secara cermat, kita akan tahu bahwa kita menggunakan tag`<img>`, saat seharusnya menggunakan tag `<amp-img>`.
 
 Untuk memahami daftar lengkap potensi error dengan lebih baik,
-baca [panduan Error Validasi AMP](https://www.ampproject.org{{g.doc('/content/docs/troubleshooting/validation_errors.md', locale=doc.locale).url.path}}).
+baca [panduan Error Validasi AMP]({{g.doc('/content/docs/troubleshooting/validation_errors.md', locale=doc.locale).url.path}}).
 Jika masih mengalami masalah setelah menjalankan evaluasi dengan cermat, [ajukan
 pertanyaan](http://stackoverflow.com/questions/tagged/amp-html) dan kami akan
 mencoba untuk membantu.

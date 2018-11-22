@@ -21,7 +21,7 @@ AMP validation successful.
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="/pt_br/docs/design/getting_started/create_bookend.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/pt_br/docs/design/getting_started/congratulations.html"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
 

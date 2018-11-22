@@ -58,7 +58,7 @@ AMP HTML ライブラリで提供されるコンポーネントは、次のよ�
 | [`amp-fx-collection`](components/amp-fx-collection.html) | パララックスなど、一連のプリセットの視覚効果を提供します。|
 | [`amp-iframe`](components/amp-iframe.html) | iframe を表示します。|
 | [`amp-image-lightbox`](components/amp-image-lightbox.html) | 指定された画像に対してライトボックス効果を提供します。|
-| [`amp-layout`](components/amp-layout.html) | 任意の要素に AMP の便利な[レイアウト](https://www.ampproject.org/ja/docs/guides/responsive/control_layout#the-layout-attribute)機能を適用する、汎用的で多目的なコンテナ要素を提供します。|
+| [`amp-layout`](components/amp-layout.html) | 任意の要素に AMP の便利な[レイアウト](/ja/docs/design/responsive/control_layout.html#the-layout-attribute)機能を適用する、汎用的で多目的なコンテナ要素を提供します。|
 | [`amp-lightbox`](components/amp-lightbox.html) | フルビューポートの「ライトボックス」モーダルで要素を表示します。|
 | [`amp-lightbox-gallery`](components/amp-lightbox-gallery.html) | 「ライトボックス」エクスペリエンスを提供します。ユーザーの操作に応じて、ユーザー インターフェース コンポーネントがビューポート全体に拡大されます。ユーザーがビューポートを閉じるまでその状態が維持されます。|
 | [`amp-position-observer`](components/amp-position-observer.html) | ユーザーがスクロールするときのビューポート内の要素の位置を監視し、他のコンポーネントとともに使用できるイベントをディスパッチします。|
@@ -78,7 +78,7 @@ AMP HTML ライブラリで提供されるコンポーネントは、次のよ�
 | [`amp-brid-player`](components/amp-brid-player.html) | [Brid.tv](https://www.brid.tv/) プレーヤーを表示します。|
 | [`amp-brightcove`](components/amp-brightcove.html) | Brightcove [Video Cloud](https://www.brightcove.com/en/online-video-platform) または [Perform](https://www.brightcove.com/en/perform) プレーヤーを表示します。|
 | [`amp-dailymotion`](components/amp-dailymotion.html) | [Dailymotion](https://www.dailymotion.com) の動画を表示します。|
-| [`amp-google-vrview-image`](components/amp-google-vrview-image) | VR イメージを表示します。|
+| [`amp-google-vrview-image`](components/amp-google-vrview-image.html) | VR イメージを表示します。|
 | [`amp-hulu`](components/amp-hulu.html) | [Hulu](http://www.hulu.com/) のシンプルな埋め込み動画を表示します。|
 | [`amp-ima-video`](components/amp-ima-video.html) | [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/) に統合されたインストリーム動画広告用の動画プレーヤーを埋め込みます。|
 | [`amp-img`](components/amp-img.html) | HTML5 の `img` タグを置き換えます。|

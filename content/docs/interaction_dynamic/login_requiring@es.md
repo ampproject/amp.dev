@@ -2,7 +2,7 @@
 $title: Crear páginas AMP que requieran iniciar sesión
 ---
 
-Quizás te interese que los usuarios tengan que iniciar sesión para realizar determinadas acciones en una página, como dejar comentarios. Con AMP, puedes implementar un flujo de inicio de sesión combinando el componente [amp-access](/es/docs/reference/components/amp-access) con el componente [amp-form](/es/docs/reference/components/amp-form).
+Quizás te interese que los usuarios tengan que iniciar sesión para realizar determinadas acciones en una página, como dejar comentarios. Con AMP, puedes implementar un flujo de inicio de sesión combinando el componente [amp-access](/es/docs/reference/components/amp-access.html) con el componente [amp-form](/es/docs/reference/components/amp-form.html).
 
 Tip: Para consultar un ejemplo de implementación, echa un vistazo a una [sección de comentarios de muestra](https://ampbyexample.com/samples_templates/comment_section/), en [ampbyexample.com](https://ampbyexample.com).
 

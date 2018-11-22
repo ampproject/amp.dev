@@ -9,7 +9,7 @@ AMP admite **media queries** y **media queries de elementos** y tiene un potente
 ## Crea imágenes adaptables fácilmente
 
 Para crear imágenes adaptables, solo tienes que proporcionar valores de `width` (anchura) y `width` (altura), asignar el valor `responsive` al atributo "layout",
-e indicar con [`srcset`](/es/docs/guides/responsive/art_direction.html)
+e indicar con [`srcset`](/es/docs/design/responsive/art_direction.html)
 qué recurso de imagen se debe usar en función de cada tamaño de pantalla:
 
 [sourcecode:html]

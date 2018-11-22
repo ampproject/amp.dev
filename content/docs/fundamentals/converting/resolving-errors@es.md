@@ -126,7 +126,7 @@ Una vez más, **vuelva a cargar** la página y verifique que el error stylesheet
 
 Nota: No sólo se requiere estilo en línea, sino que hay un límite de tamaño de archivo de 50 kilobytes para toda la información de estilo. Debe utilizar preprocesadores CSS como [SASS](http://sass-lang.com/) para minimizar su CSS antes de insertar el CSS en sus páginas AMP.
 
-Importante: Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}).
+Importante: Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}).
 
 ## Excluir JavaScript de terceros
 
@@ -319,7 +319,7 @@ AMP validation successful.
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
 - [¿Qué ocurre si el atributo layout no está definido?](/es/docs/design/responsive/control_layout.html#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
-- [¿Qué ocurre si width y height no están definidos?](/es/docs/design/responsive/control_layout#¿qué-ocurre-si-width-y-height-no-están-definidos?)
+- [¿Qué ocurre si width y height no están definidos?](/es/docs/design/responsive/control_layout.html#¿qué-ocurre-si-width-y-height-no-están-definidos?)
 
 
 <div class="prev-next-buttons">

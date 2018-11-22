@@ -68,7 +68,7 @@ Gaya berikut diizinkan, namun dibatasi dalam hal nilai yang didukung:
 
 Halaman AMP tidak dapat menyertakan stylesheet eksternal, dengan pengecualian font kustom.
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP]({{g.doc('/content/docs/design/responsive/custom_fonts.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}}).
 
 ## Menggunakan praprosesor CSS
 
@@ -77,7 +77,7 @@ menggunakan [Sass](http://sass-lang.com/) . (Kami menggunakan [Grow](http://grow
 
 
 Jika menggunakan praprosesor, selalu perhatikan hal yang Anda sertakan. Muatlah hanya yang digunakan halaman Anda. Misalnya, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-menyertakan semua markup AMP yang diperlukan dan CSS yang disisipkan dari file sumber `*.scss`. Juga disertakan skrip elemen kustom untuk [`amp-youtube`](/id/docs/reference/extended/amp-youtube.html), di antara lainnya, agar banyak halaman di seluruh situs dapat menyertakan video YouTube yang disematkan.
+menyertakan semua markup AMP yang diperlukan dan CSS yang disisipkan dari file sumber `*.scss`. Juga disertakan skrip elemen kustom untuk [`amp-youtube`](/id/docs/reference/components/amp-youtube.html), di antara lainnya, agar banyak halaman di seluruh situs dapat menyertakan video YouTube yang disematkan.
 
 [sourcecode:html]{% raw %}
 <head>

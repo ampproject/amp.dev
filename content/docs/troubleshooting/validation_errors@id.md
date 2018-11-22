@@ -129,7 +129,7 @@ secara luas mendefinisikan kumpulan tag yang tidak diizinkan.
 Format AMP tidak mengizinkan penambahan JavaScript kustom ke halaman, kecuali untuk file JavaScript
 yang disediakan oleh Project AMP itu sendiri. Kebanyakan penggunaan umum JavaScript memiliki
 implementasi setara library HTML AMP. Lihat [komponen
-AMP](/id/docs/reference/components) untuk mengetahui kumpulan komponen yang dapat
+AMP](/id/docs/reference/components.html) untuk mengetahui kumpulan komponen yang dapat
 digunakan untuk menyempurnakan halaman HTML AMP.
 
 Jika kasus penggunaan Anda tidak tercakup, Anda juga dapat menyertakan komponen

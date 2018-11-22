@@ -27,7 +27,7 @@ core:
         [AMP 规范中的 HTML 标记](/zh_cn/docs/fundamentals/spec.html)）。
         借助这些自定义元素（称为 AMP HTML 组件），
         您可以既轻松又高效地实现各种常见模式。
-        <p>例如，[`amp-img`](/zh_cn/docs/reference/amp-img.html) 标记
+        <p>例如，[`amp-img`](/zh_cn/docs/reference/components/amp-img.html) 标记
         可提供完整的 `srcset` 支持，即使在尚不支持该标记的浏览器中也是如此。
         了解如何[创建您的首个 AMP HTML 网页](/zh_cn/docs/getting_started/create.html)。
         <p>搜索引擎和其他平台

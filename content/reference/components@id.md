@@ -58,7 +58,7 @@ Daftar komponen yang tersedia dicantumkan di bawah ini sesuai kategorinya.
 | [`amp-fx-collection`](components/amp-fx-collection.html) | Menyediakan kumpulan efek visual bawaan, seperti paralaks. |
 | [`amp-iframe`](components/amp-iframe.html) | Menampilkan iframe. |
 | [`amp-image-lightbox`](components/amp-image-lightbox.html) | Menyediakan efek lightbox untuk gambar yang ditentukan. |
-| [`amp-layout`](components/amp-layout.html) | Menyediakan elemen penampung serbaguna generik yang menghadirkan [tata letak] (https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) AMP yang canggih ke semua elemen. |
+| [`amp-layout`](components/amp-layout.html) | Menyediakan elemen penampung serbaguna generik yang menghadirkan [tata letak] (/docs/design/responsive/control_layout.html#the-layout-attribute) AMP yang canggih ke semua elemen. |
 | [`amp-lightbox`](components/amp-lightbox.html) | Menampilkan elemen dalam modal "lightbox" viewport penuh. |
 | [`amp-lightbox-gallery`](components/amp-lightbox-gallery.html) | Memberikan pengalaman "lightbox". Setelah ada interaksi dari pengguna, komponen UI diperluas untuk mengisi viewport sampai ditutup oleh pengguna. |
 | [`amp-position-observer`](components/amp-position-observer.html) | Memantau posisi elemen dalam viewport sembari pengguna scroll dan mengirim acara yang dapat digunakan dengan komponen lainnya. |
@@ -78,7 +78,7 @@ Daftar komponen yang tersedia dicantumkan di bawah ini sesuai kategorinya.
 | [`amp-brid-player`](components/amp-brid-player.html) | Menampilkan pemutar [Brid.tv](https://www.brid.tv/). |
 | [`amp-brightcove`](components/amp-brightcove.html) | Menampilkan pemutar [Video Cloud](https://www.brightcove.com/en/online-video-platform) atau [Perform](https://www.brightcove.com/en/perform) Brightcove. |
 | [`amp-dailymotion`](components/amp-dailymotion.html) | Menampilkan video [Dailymotion](https://www.dailymotion.com). |
-| [`amp-google-vrview-image`](components/amp-google-vrview-image) | Menampilkan gambar VR. |
+| [`amp-google-vrview-image`](components/amp-google-vrview-image.html) | Menampilkan gambar VR. |
 | [`amp-hulu`](components/amp-hulu.html) | Menampilkan video [Hulu](http://www.hulu.com/) yang disematkan secara sederhana. |
 | [`amp-ima-video`](components/amp-ima-video.html) | Menyematkan pemutar video untuk iklan video instream yang terintegrasi dengan [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/). |
 | [`amp-img`](components/amp-img.html) | Mengganti tag `img` HTML5. |

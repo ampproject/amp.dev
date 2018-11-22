@@ -22,7 +22,7 @@ Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/am
 
 Ön işlemcileri kullanırken neleri eklediğinize ayrıca dikkat etmeniz gerekir; yalnızca sayfalarınızın kullandığı öğeleri ekleyin.
 Örneğin, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) kodu gerekli tüm AMP biçimlendirmesini ve `*.scss` kaynak dosyalarındaki satır içi CSS'yi içerir.
-Diğerlerinin yanı sıra [`amp-youtube`](/docs/reference/extended/amp-youtube.html) için özel öğe komut dosyasını da içerir. Böylece, sitedeki birçok sayfaya yerleşik YouTube videoları eklenebilir.
+Diğerlerinin yanı sıra [`amp-youtube`](/docs/reference/components/amp-youtube.html) için özel öğe komut dosyasını da içerir. Böylece, sitedeki birçok sayfaya yerleşik YouTube videoları eklenebilir.
 
 [sourcecode:html] {% raw %}
 <head>

@@ -4,15 +4,15 @@ $title@: Documentos
 start_cards:
   - name: Introdução à AMP
     desc: Saiba mais sobre a AMP e os principais componentes da tecnologia.
-    link: https://www.ampproject.org/pt_br/learn/overview/
+    link: /pt_br/learn/overview/
 
   - name: Como a AMP funciona
     desc: Conheça as otimizações que deixam as páginas AMP rápidas.
-    link: https://www.ampproject.org/pt_br/learn/about-how/
+    link: /pt_br/learn/about-how/
 
   - name: Está começando do zero?
     desc: Crie sua primeira página AMP com este tutorial para iniciantes.
-    link: https://www.ampproject.org/pt_br/docs/getting_started/create
+    link: /pt_br/docs/getting_started/create.html
 
   - name: Demonstrações e exemplos
     desc: Aprenda na prática com exemplos e demonstrações ao vivo de páginas AMP.
@@ -58,23 +58,23 @@ doc_cards:
 
   - name: Anúncios HTML para AMP
     desc: Saiba mais sobre os anúncios HTML para AMP e veja como criar páginas AMP para suas campanhas e sites.
-    link: https://www.ampproject.org/pt_br/docs/ads/amphtml_ads
+    link: /pt_br/docs/ads/amphtml_ads.html
 
   - name: Análises
     desc: Integre análises às suas páginas AMP para avaliar a atividade e o engajamento do usuário.
-    link: https://www.ampproject.org/pt_br/docs/analytics/analytics_amp
+    link: /pt_br/docs/analytics/analytics_amp.html
 
   - name: Compartilhamento de recursos de várias origens (CORS, na sigla em inglês) na AMP
     desc: Saiba por que você precisa de CORS para o conteúdo AMP dinâmico.
-    link: https://www.ampproject.org/pt_br/docs/fundamentals/amp-cors-requests
+    link: /pt_br/docs/fundamentals/amp-cors-requests.html
 
   - name: PWA e AMP
     desc: Veja tudo o que os Progressive Web Apps e as páginas AMP podem fazer juntos.
-    link: https://www.ampproject.org/pt_br/docs/integration/pwa-amp
+    link: /pt_br/docs/integration/pwa-amp.html
 
   - name: Páginas AMP responsivas
     desc: Saiba como criar páginas da Web responsivas com a tecnologia AMP.
-    link: https://www.ampproject.org/pt_br/docs/design/responsive/responsive_design
+    link: /pt_br/docs/design/responsive/responsive_design.html
 
 ---
  

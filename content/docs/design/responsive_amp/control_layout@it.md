@@ -24,22 +24,22 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>nodisplay</code></td>
       <td class="col-twenty" data-th="Description">No</td>
-      <td data-th="Behavior">Elemento non visualizzato. Questo layout può essere applicato a ogni elemento AMP. Il componente non occupa spazio sullo schermo, come non ci fosse alcuno stile di visualizzazione applicato. Si presume che l'elemento possa visualizzarsi automaticamente in seguito all'azione dell'utente, ad esempio <a href="/docs/reference/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
+      <td data-th="Behavior">Elemento non visualizzato. Questo layout può essere applicato a ogni elemento AMP. Il componente non occupa spazio sullo schermo, come non ci fosse alcuno stile di visualizzazione applicato. Si presume che l'elemento possa visualizzarsi automaticamente in seguito all'azione dell'utente, ad esempio <a href="/docs/reference/components/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed</code></td>
       <td class="col-twenty" data-th="Description">Sì</td>
-      <td data-th="Behavior">L'elemento ha larghezza e altezza fisse; la reattività non è supportata. Le uniche eccezioni sono gli elementi <a href="/docs/reference/amp-pixel.html"><code>amp-pixel</code></a> e <a href="/docs/reference/amp-audio.html"><code>amp-audio</code></a>.</td>
+      <td data-th="Behavior">L'elemento ha larghezza e altezza fisse; la reattività non è supportata. Le uniche eccezioni sono gli elementi <a href="/docs/reference/components/amp-pixel.html"><code>amp-pixel</code></a> e <a href="/docs/reference/components/amp-audio.html"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>responsive</code></td>
       <td class="col-twenty" data-th="Description">Sì</td>
-      <td data-th="Behavior">L'elemento viene adattato alla larghezza del relativo elemento contenitore, mentre la sua altezza viene ridimensionata automaticamente in base alle proporzioni stabilite dagli attributi di larghezza e altezza. Questo layout è adatto per la maggior parte degli elementi AMP, inclusi <a href="/docs/reference/amp-img.html"><code>amp-img</code></a> e <a href="/docs/reference/amp-video.html"><code>amp-video</code></a>. Lo spazio disponibile dipende dall'elemento principale e può anche essere personalizzato utilizzando l'elemento CSS <code>max-width</code>.</td>
+      <td data-th="Behavior">L'elemento viene adattato alla larghezza del relativo elemento contenitore, mentre la sua altezza viene ridimensionata automaticamente in base alle proporzioni stabilite dagli attributi di larghezza e altezza. Questo layout è adatto per la maggior parte degli elementi AMP, inclusi <a href="/docs/reference/components/amp-img.html"><code>amp-img</code></a> e <a href="/docs/reference/components/amp-video.html"><code>amp-video</code></a>. Lo spazio disponibile dipende dall'elemento principale e può anche essere personalizzato utilizzando l'elemento CSS <code>max-width</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Solo l'altezza</td>
-      <td data-th="Behavior">L'elemento occupa lo spazio a sua disposizione, ma la sua altezza rimane invariata. Questo layout è adatto per elementi quali <a href="/docs/reference/amp-carousel.html"><code>amp-carousel</code></a>, che prevede contenuti in posizione orizzontale. L'attributo <code>width</code> non deve essere presente o deve essere impostato su <code>auto</code>.</td>
+      <td data-th="Behavior">L'elemento occupa lo spazio a sua disposizione, ma la sua altezza rimane invariata. Questo layout è adatto per elementi quali <a href="/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a>, che prevede contenuti in posizione orizzontale. L'attributo <code>width</code> non deve essere presente o deve essere impostato su <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>
@@ -58,8 +58,8 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
 
 Se i valori `width` o `height` non vengono specificati, in alcuni casi il runtime AMP può stabilire i seguente valori predefiniti:
 
-* [`amp-pixel`](/docs/reference/amp-pixel.html): per larghezza e altezza viene impostato il valore predefinito 0.
-* [`amp-audio`](/docs/reference/amp-audio.html): la larghezza e l'altezza predefinite vengono dedotte dal browser.
+* [`amp-pixel`](/docs/reference/components/amp-pixel.html): per larghezza e altezza viene impostato il valore predefinito 0.
+* [`amp-audio`](/docs/reference/components/amp-audio.html): la larghezza e l'altezza predefinite vengono dedotte dal browser.
 
 ### Che cosa succede se non viene definito l'attributo layout?
 
@@ -106,7 +106,7 @@ L'immagine da recuperare e visualizzare viene scelta in base alla larghezza dell
 ## Utilizzare gli attributi srcset e sizes
 
 Utilizza l'attributo `srcset` per stabilire gli asset di un elemento in base alle varie espressioni di supporto.
-Utilizzalo in particolare nei tag [`amp-img`](/docs/reference/amp-img.html) per specificare gli asset immagine da utilizzare a seconda delle dimensioni dello schermo.
+Utilizzalo in particolare nei tag [`amp-img`](/docs/reference/components/amp-img.html) per specificare gli asset immagine da utilizzare a seconda delle dimensioni dello schermo.
 
 In questo semplice esempio, `srcset` specifica l'immagine da utilizzare in base alla larghezza dello schermo.
 Il descrittore `w` indica al browser la larghezza di ogni immagine nell'elenco:

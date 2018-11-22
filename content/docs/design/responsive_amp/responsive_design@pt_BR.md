@@ -99,7 +99,7 @@ No exemplo a seguir, há diversos arquivos de imagem que têm a mesma proporçã
 
 Por exemplo, digamos que você tenha um dispositivo com a largura da janela de visualização de 412 pixels e um DPR de 2,6. Com base no código acima, a imagem precisa ser exibida em 75% da largura da janela de visualização. Assim, o navegador escolherá uma imagem de tamanho próximo a 803 pixels (412 * ,75 * 2,6), que é `apple-800.jpg`.
 
-Leia mais: Para saber mais sobre o uso de srcset e tamanhos em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
+Leia mais: Para saber mais sobre o uso de srcset e tamanhos em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
 
 #### Como alterar a direção de arte de uma imagem
 
@@ -117,7 +117,7 @@ Observação: Como queríamos que as imagens tivessem tamanhos fixos (ou seja, s
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Mostrar mais">Mostrar código completo</div><div placeholder></div></amp-iframe></div>
 
-Leia mais: Para saber mais sobre a direção de arte em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
+Leia mais: Para saber mais sobre a direção de arte em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
 
 #### Como fornecer imagens otimizadas
 
@@ -125,7 +125,7 @@ Para exibir páginas de carregamento rápido, é preciso ter imagens otimizadas 
 
 Em HTML, você pode veicular diferentes formatos de imagem usando a tag `picture`.  Em AMP, embora a tag `picture` não seja compatível, é possível veicular diferentes imagens com o atributo `fallback`.
 
-Leia mais: Para saber mais sobre substitutos, consulte o guia [Substitutos e marcadores]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Leia mais: Para saber mais sobre substitutos, consulte o guia [Substitutos e marcadores]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ##### Exemplo: como veicular diferentes formatos de imagem
 

@@ -66,7 +66,7 @@ $title: 登录
 - AMP 运行时会关闭登录页面，并会重定向到由返回网址参数指定的页面
 - 一旦用户点击了“登录”按钮，服务器即应编排响应
 
-提示: 您可在 [amp-access 文档](/zh_cn/docs/reference/components/amp-access#login-flow) 中找到有关此流程的更详细的说明。
+提示: 您可在 [amp-access 文档](/zh_cn/docs/reference/components/amp-access.html#login-flow) 中找到有关此流程的更详细的说明。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>

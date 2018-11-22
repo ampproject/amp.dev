@@ -6,7 +6,7 @@ $title: AMP ページからプログレッシブ ウェブアプリを事前に�
 **サイトの入り口を AMP ページに**して、**その裏側でプログレッシブ ウェブアプリ（PWA）を準備**し、以降のページでは PWA に切り替えるという効果的な使い方をご紹介します。
 
 * 全コンテンツの「末端」ページ（概要ページではなく、特定のコンテンツが含まれているページ）は AMP として公開され、ほぼ一瞬で読み込まれます。
-* こうした AMP では AMP の特別な要素 [`<amp-install-serviceworker>`](/ja/docs/reference/components/amp-install-serviceworker) を使用して、ユーザーがコンテンツを楽しんでいる間に、キャッシュと PWA シェルを使用できるようにします。
+* こうした AMP では AMP の特別な要素 [`<amp-install-serviceworker>`](/ja/docs/reference/components/amp-install-serviceworker.html) を使用して、ユーザーがコンテンツを楽しんでいる間に、キャッシュと PWA シェルを使用できるようにします。
 * ユーザーがウェブサイト上の別のリンク（たとえば、下部に設置した、アプリのように使うためのカスタム外部リンク）をクリックすると、Service Worker がそのリクエストを検出し、ページを引き継いで、代わりに PWA シェルを読み込みます。
 
 この開発パターンを使用する理由とその方法について、以下に説明します。
@@ -30,7 +30,7 @@ AMP では、プログレッシブ ウェブアプリの Service Worker を AMP 
 
 ヒント: Service Worker についてよく知らないという方は、Jake Archibald の [Udacity のコース](https://www.udacity.com/course/offline-web-applications--ud899)を受講することをおすすめします。
 
-まず、[`<amp-install-serviceworker>`](/ja/docs/reference/components/amp-install-serviceworker) を使用してすべての AMP ページに Service Worker をインストールします。つまり、次のようにスクリプトを使って、このコンポーネントをページの `<head>` に追加します。
+まず、[`<amp-install-serviceworker>`](/ja/docs/reference/components/amp-install-serviceworker.html) を使用してすべての AMP ページに Service Worker をインストールします。つまり、次のようにスクリプトを使って、このコンポーネントをページの `<head>` に追加します。
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -98,7 +98,7 @@ self.addEventListener('fetch', event => {
 
 この方法で特に注目したいのは、AMP から PWA に移動するためにプログレッシブ エンハンスメントを使用している点です。ただし、Service Worker に未対応のブラウザの場合は、AMP から PWA には移動できず、AMP から AMP に移動することになります。
 
-AMP では、[シェル URL の書き換え](/ja/docs/reference/components/amp-install-serviceworker#shell-url-rewrite)と呼ばれる方法でこの問題に対処します。フォールバック URL パターンを [`<amp-install-serviceworker>`](/ja/docs/reference/components/amp-install-serviceworker) タグに追加することにより、Service Worker に非対応であることが検出された場合に、特定のページ上の一致するすべてのリンクを書き換えて、代わりに従来からある別のシェル URL に移動するよう AMP に指示することができます。
+AMP では、[シェル URL の書き換え](/ja/docs/reference/components/amp-install-serviceworker.html#shell-url-rewrite)と呼ばれる方法でこの問題に対処します。フォールバック URL パターンを [`<amp-install-serviceworker>`](/ja/docs/reference/components/amp-install-serviceworker.html) タグに追加することにより、Service Worker に非対応であることが検出された場合に、特定のページ上の一致するすべてのリンクを書き換えて、代わりに従来からある別のシェル URL に移動するよう AMP に指示することができます。
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -111,4 +111,4 @@ AMP では、[シェル URL の書き換え](/ja/docs/reference/components/amp-i
 
 これらの属性を指定することで、Service Worker 対応かどうかにかかわらず、AMP ページで発生する初回以降のすべてのクリックで PWA に移動できるようになります。
 
-詳細情報: ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](/ja/docs/integration/pwa-amp/amp-in-pwa)。
+詳細情報: ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](/ja/docs/integration/pwa-amp/amp-in-pwa.html)。

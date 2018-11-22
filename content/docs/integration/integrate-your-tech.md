@@ -50,5 +50,5 @@ If you have questions or suggestions, please don't hesitate to [file an issue](h
 
 - [AMP Project Site](https://www.ampproject.org/)
 - [AMP GitHub Project](https://github.com/ampproject/amphtml)
-- [AMP Blog](https://www.ampproject.org/latest/blog)
-- [AMP Project Roadmap](https://www.ampproject.org/roadmap/)
+- [AMP Blog](/latest/blog)
+- [AMP Project Roadmap](/roadmap/)

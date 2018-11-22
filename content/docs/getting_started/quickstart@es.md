@@ -56,9 +56,9 @@ Las páginas AMP pueden integrarse con muchas plataformas de publicación de ter
 
 Si creas páginas AMP o creatividades desde cero, consulta estos recursos:
 
-*   [Tutorial: Crear tu primera página AMP](/es/docs/tutorials/create.html)
-*   [Tutorial: Añadir funciones avanzadas de AMP](/es/docs/tutorials/add_advanced.html)
-*   [Especificación AMP HTML](/es/docs/reference/spec.html#the-amp-html-format): *incluye una plantilla, las etiquetas necesarias y el texto HTML permitido*
+*   [Tutorial: Crear tu primera página AMP](/es/docs/getting_started/create.html)
+*   [Tutorial: Añadir funciones avanzadas de AMP](/es/docs/fundamentals/add_advanced.html)
+*   [Especificación AMP HTML](/es/docs/fundamentals/spec.html#the-amp-html-format): *incluye una plantilla, las etiquetas necesarias y el texto HTML permitido*
 *   [Formato de los anuncios AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): *incluye detalles sobre cómo crear anuncios eficaces en páginas AMP*
 *   [Vídeo de YouTube: ¿Qué se puede y qué no se puede usar en las páginas AMP?](https://youtu.be/Gv8A4CktajQ)
 *   [Plantillas de AMP Start](https://www.ampstart.com/): *prueba a usar plantillas de páginas AMP predefinidas*
@@ -67,22 +67,22 @@ Si creas páginas AMP o creatividades desde cero, consulta estos recursos:
 
 Si quieres convertir páginas HTML actuales en páginas AMP HTML, consulta estos recursos:
 
-*   [Tutorial: Convertir HTML en AMP](/es/docs/tutorials/converting.html)
+*   [Tutorial: Convertir HTML en AMP](/es/docs/fundamentals/converting.html)
 *   [Vídeo de YouTube: Usar AMP HTML en un sitio web actual](https://youtu.be/OO9oKhs80aI)
 
 ### Validar y probar páginas AMP
 
 Antes de publicar tu contenido, comprueba que las páginas AMP sean válidas.  Puedes utilizar estos recursos:
 
-*   [Validar páginas AMP](/es/docs/guides/validate.html): *incluye una lista de herramientas de validación e instrucciones para validar las páginas*
+*   [Validar páginas AMP](/es/docs/fundamentals/validate.html): *incluye una lista de herramientas de validación e instrucciones para validar las páginas*
 *   [Vídeo de YouTube: Cómo validar y depurar páginas AMP](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
-*   [Probar solicitudes CORS en páginas AMP](/es/docs/guides/amp-cors-requests.html#testing-cors-in-amp)
+*   [Probar solicitudes CORS en páginas AMP](/es/docs/fundamentals/amp-cors-requests.html#testing-cors-in-amp)
 
 ### Hacer que el contenido sea visible
 
 Asegúrate de que los usuarios puedan encontrar tu contenido en plataformas de terceros, como Twitter, Google, Bing, etc. A continuación te indicamos algunos recursos útiles:
 
-*   [Hacer que una página sea reconocible](/es/docs/guides/discovery.html): *consejos para enlazar páginas AMP y utilizar metadatos*
+*   [Hacer que una página sea reconocible](/es/docs/fundamentals/discovery.html): *consejos para enlazar páginas AMP y utilizar metadatos*
 *   [Directrices de AMP en la Búsqueda de Google](https://support.google.com/webmasters/answer/6340290)
 
 <hr>

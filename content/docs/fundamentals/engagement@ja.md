@@ -36,7 +36,7 @@ $title: ユーザー エンゲージメントを向上させる
 
 ### オープンソース AMP プロジェクトに参加して開発に貢献する
 
-- **AMP のロードマップを確認する。**  更新や機能に関するロードマップは [ampproject.org/roadmap](https://www.ampproject.org/ja/roadmap) で確認できます。
+- **AMP のロードマップを確認する。**  更新や機能に関するロードマップは [ampproject.org/roadmap](/roadmap/) で確認できます。
 
 - **参加する。**  ソースコードの提供、バグ報告、フィードバックは [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) からお願いします。AMP に関する意見交換は [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html) で行っています。
 

@@ -175,7 +175,7 @@ AMP ドキュメントのプリレンダリング、スワイプによる記事�
 
 *   AMP ページを AMP キャッシュから提供します（読み込み時間が 1 秒超速くなります）。
 *   記事の公開元を表示します（折りたためるヘッダーなどを使用します）。
-*   共有アクションを提供します（下記の「[AMP コンテンツの共有](/ja/docs/integration/integrate-with-apps#sharing-amp-content)」
+*   共有アクションを提供します（下記の「[AMP コンテンツの共有](/ja/docs/integration/integrate-with-apps.html#sharing-amp-content)」
     もご覧ください）。
 *   WebView ベースのビューアでは、サードパーティの Cookie を有効にします。
 *   使用するプラットフォーム / アプリの参照 URL を設定します。

@@ -20,7 +20,7 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})。
 
 ## heights
 
@@ -41,7 +41,7 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})。
 
 ## layout
 
@@ -58,7 +58,7 @@ AMP 提供了一系列[布局](/zh_cn/docs/design/responsive/control_layout.html
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[布局和媒体查询]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})。
 
 ## media
 
@@ -135,7 +135,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})。
 
 ## sizes
 
@@ -151,7 +151,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})。
 
 ## width 和 height
 
@@ -167,7 +167,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[布局和媒体查询]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})。
 
 
 

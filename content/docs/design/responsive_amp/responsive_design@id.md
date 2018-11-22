@@ -99,7 +99,7 @@ Pada contoh berikut, ada beberapa file gambar yang memiliki rasio tinggi lebar y
 
 Misalnya, ada perangkat yang memiliki lebar viewport 412 piksel dan DPR 2,6. Berdasarkan kode di atas, gambar harus ditampilkan 75% dari lebar viewport, jadi browser akan memilih gambar yang ukurannya mendekati 803 piksel  (412 * 0,75 * 2,6), yang akan disimpan sebagai `apple-800.jpg`.
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
 
 #### Mengubah gambar responsif dari suatu gambar
 
@@ -113,11 +113,11 @@ Pada contoh berikut, kami memiliki 3 gambar kucing yang di-crop berbeda, yang in
 - 470-669 piksel,  tampilkan `cat-medium.jpg`  (450x340 piksel)
 - 469 piksel atau lebih kecil, tampilkan `cat-small.jpg` (226x340 piksel)
 
-Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"](/id/docs/design/responsive/control_layout#bagaimana-jika-atributlayout-tidak-ditetapkan?).
+Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"](/id/docs/design/responsive/control_layout.html#bagaimana-jika-atributlayout-tidak-ditetapkan?).
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Tampilkan kode penuh</div><div placeholder></div></amp-iframe></div>
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
 
 #### Memberikan format gambar yang dioptimalkan
 
@@ -125,7 +125,7 @@ Menampilkan halaman yang dimuat dengan cepat memerlukan gambar yang dioptimalkan
 
 Di HTML, Anda dapat menampilkan format gambar yang berbeda menggunakan tag `picture`.  Di AMP, meskipun tag `picture` tidak didukung, Anda dapat menampilkan gambar yang berbeda menggunakan atribut `fallback`.
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ##### Contoh: Menampilkan format gambar yang berbeda
 

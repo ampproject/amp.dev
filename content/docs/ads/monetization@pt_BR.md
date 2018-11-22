@@ -60,7 +60,7 @@ Cada rede exige atributos de dados específicos para veicular os anúncios.  Con
 
 ### Etapa 5: (opcional) especifique um marcador 
 
-Dependendo da rede de publicidade, você pode optar por mostrar um marcador até que o anúncio esteja disponível para visualização. Isso evita espaços em branco, melhorando a experiência do usuário.  Para especificar um marcador, adicione um elemento filho com o atributo `placeholder`. Saiba mais no artigo sobre [marcadores e substitutos]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}}).
+Dependendo da rede de publicidade, você pode optar por mostrar um marcador até que o anúncio esteja disponível para visualização. Isso evita espaços em branco, melhorando a experiência do usuário.  Para especificar um marcador, adicione um elemento filho com o atributo `placeholder`. Saiba mais no artigo sobre [marcadores e substitutos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ Dependendo da rede de publicidade, você pode optar por mostrar um marcador até
 
 ### Etapa 6: (opcional) especifique um substituto 
 
-Dependendo da rede de publicidade, você pode optar por mostrar um elemento substituto se não houver um anúncio disponível para veiculação. Para especificar um substituto, adicione um elemento filho com o atributo `fallback`. Saiba mais no artigo sobre [marcadores e substitutos]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}}).
+Dependendo da rede de publicidade, você pode optar por mostrar um elemento substituto se não houver um anúncio disponível para veiculação. Para especificar um substituto, adicione um elemento filho com o atributo `fallback`. Saiba mais no artigo sobre [marcadores e substitutos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html hl_lines="6"
 <amp-ad type="a9"

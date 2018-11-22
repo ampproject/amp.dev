@@ -175,7 +175,7 @@ AMP runtime 提供了一个 Viewer API，后者提供了
 
 *   从 AMP 缓存提供 AMP 网页（加载时间缩短 1 秒以上）。
 *   显示文章的发布商来源（例如，在可收起标头中）。
-*   提供分享操作（另请参阅下方的“[分享 AMP 内容](/zh_cn/docs/integration/integrate-with-apps#sharing-amp-content)”
+*   提供分享操作（另请参阅下方的“[分享 AMP 内容](/zh_cn/docs/integration/integrate-with-apps.html#sharing-amp-content)”
     一节）。
 *   在基于 WebView 的查看工具中，启用第三方 Cookie。
 *   为您的平台/应用设置引荐来源网址。

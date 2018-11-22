@@ -74,7 +74,7 @@ Os dois `amp-ad` a seguir são um exemplo da compatibilidade flexível do compon
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Anúncios de teste') }}
 
-Observação: Dentro dessas tags amp-ad existem tags `div` adicionais com um atributo chamado `fallback`. Você sabe o que o atributo `fallback` indica? Ele informa ao sistema de carregamento AMP que somente os conteúdos desse elemento são mostrados quando o elemento principal não é carregado. Saiba mais em [Marcadores e substitutos]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Observação: Dentro dessas tags amp-ad existem tags `div` adicionais com um atributo chamado `fallback`. Você sabe o que o atributo `fallback` indica? Ele informa ao sistema de carregamento AMP que somente os conteúdos desse elemento são mostrados quando o elemento principal não é carregado. Saiba mais em [Marcadores e substitutos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 Leia mais: Para ver as redes de publicidade compatíveis mais recentes, leia a documentação de referência do componente [amp-ad](/pt_br/docs/reference/components/amp-ad.html#supported-ad-networks).
 

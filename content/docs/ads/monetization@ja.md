@@ -60,7 +60,7 @@ AMP ページで広告を表示するためのコンポーネントを追加す�
 
 ### 手順 5: （省略可）プレースホルダを指定する
 
-広告ネットワークによっては、広告が表示されるようになるまでの間プレースホルダを表示できます。プレースホルダを指定することで、空白のスペースが表示されるのを防ぎ、ユーザーの利便性を向上させることができます。プレースホルダを指定するには、`placeholder` 属性が設定された子要素を追加します。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}})をご覧ください。
+広告ネットワークによっては、広告が表示されるようになるまでの間プレースホルダを表示できます。プレースホルダを指定することで、空白のスペースが表示されるのを防ぎ、ユーザーの利便性を向上させることができます。プレースホルダを指定するには、`placeholder` 属性が設定された子要素を追加します。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ AMP ページで広告を表示するためのコンポーネントを追加す�
 
 ### 手順 6: （省略可）フォールバックを指定する
 
-広告ネットワークによっては、利用できる広告がない場合にフォールバック要素を表示することができます。フォールバックを指定するには、`fallback` 属性が設定された子要素を追加します。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}})をご覧ください。
+広告ネットワークによっては、利用できる広告がない場合にフォールバック要素を表示することができます。フォールバックを指定するには、`fallback` 属性が設定された子要素を追加します。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
 
 ```html hl_lines="6"
 <amp-ad type="a9"

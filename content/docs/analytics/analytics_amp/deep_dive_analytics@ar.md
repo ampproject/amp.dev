@@ -64,7 +64,7 @@ $title: نظرة عميقة على AMP Analytics
 لإرسال بيانات التحليلات إلى مزوّد تحليلات،
 ضمّن السمة `type` في العلامة <span dir="ltr" class="nowrap">`amp-analytics`</span> وعيّن قيمتها
 على المورّد المناسب، وذلك على النحو المحدّد في
-[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>](/docs/reference/extended/amp-analytics.html).
+[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>](/docs/reference/components/amp-analytics.html).
 
 على سبيل المثال: يرسل <span dir="ltr" class="nowrap">`<amp-analytics type="googleanalytics">`</span> بيانات التحليلات
 إلى مزوّد التحليلات الذي يمثل جهة خارجية، وهو <span dir="ltr" class="nowrap">Google Analytics</span>.

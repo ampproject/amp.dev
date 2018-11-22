@@ -157,7 +157,7 @@ AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 `<amp-story>`
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="/{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
  
  

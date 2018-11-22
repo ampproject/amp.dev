@@ -10,7 +10,7 @@ Vuoi aggiungere una tipologia di utilizzo?
 [Comunicacelo.](https://github.com/ampproject/docs/issues/new)
 
 Puoi anche contribuire condividendo la tua casistica personale,
-scopri [Come dare il tuo contributo](/it/docs/support/contribute.html).
+scopri [Come dare il tuo contributo](/it/contribute/).
 
 ## Come monitorare le visualizzazioni di pagina
 

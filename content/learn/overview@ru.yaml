@@ -15,9 +15,9 @@ core:
         [Теги HTML в спецификации AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         С помощью этих персонализированных элементов, которые называются компонентами AMP HTML,
         можно легко создать стандартные шаблоны для реализации эффективного способа представления страниц.
-        <p>Например, тег [`amp-img`](/ru/docs/reference/components/amp-img)
+        <p>Например, тег [`amp-img`](/ru/docs/reference/components/amp-img.html)
         обеспечивает полную поддержку атрибута `srcset` даже в тех браузерах, которые пока его не поддерживают.
-        Узнайте, как [создать свою первую страницу AMP HTML]({{g.doc('/content/docs/getting_started/create.md', locale=doc.locale).url.path}}).
+        Узнайте, как [создать свою первую страницу AMP HTML](/ru/docs/getting_started/create.html).
     - title: AMP JS
       subtitle: |
         Библиотека **AMP JS** обеспечивает быструю визуализацию страниц AMP HTML.
@@ -48,7 +48,7 @@ core:
         <p>Другая версия проверки входит в состав каждой страницы AMP. Эта версия может регистрировать ошибки проверки непосредственно в консоли браузера при визуализации страницы,
         что позволяет увидеть, как сложные изменения кода
         могут повлиять на производительность и интерфейс пользователя.
-        <p>Ознакомьтесь с дополнительной информацией о [тестировании страниц AMP HTML]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+        <p>Ознакомьтесь с дополнительной информацией о [тестировании страниц AMP HTML](/ru/docs/fundamentals/validate.html).
 
 video:
   id: 5Yjoe54vzwE

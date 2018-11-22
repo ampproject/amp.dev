@@ -65,13 +65,13 @@ As `<amp-img>` は JavaScript に依存するので、ユーザーがスクリ�
 </amp-iframe>
 </div>
 
-参考情報: 詳しくは、[高度なレイアウトの手法]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
+参考情報: 詳しくは、[高度なレイアウトの手法]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
 
 ### 動作とプレースホルダ
 
 AMP HTML のランタイムでは、画像のリソースを効果的に管理でき、ビューポートの位置、システム リソース、接続の帯域幅などの要素に基づいて、リソースの読み込みを遅らせるか優先させるかを選べます。
 
-参考情報: 方法は、[画像のフォールバックやプレースホルダの指定]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
+参考情報: 方法は、[画像のフォールバックやプレースホルダの指定]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
 
 ## アニメーション画像
 

@@ -6,6 +6,6 @@ $title: 요약
 
 자세한 내용은 다음 리소스를 참조하십시오:
 
-- [amp-access](/ko/docs/reference/components/amp-access)
-- [amp-form](/ko/docs/reference/components/amp-form)
+- [amp-access](/ko/docs/reference/components/amp-access.html)
+- [amp-form](/ko/docs/reference/components/amp-form.html)
 - ["댓글 영역" 예제](https://ampbyexample.com/samples_templates/comment_section/)

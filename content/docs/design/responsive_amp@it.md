@@ -10,7 +10,7 @@ $title: Creare pagine AMP reattive
 
 Tutte le risorse caricate esternamente, incluse le immagini, devono avere posizione e dimensioni specifiche in modo che, quando vengono caricate, la pagina non salti e non si adatti dinamicamente.
 
-Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il layout reattivo e utilizza [`srcset`]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}) per indicare quale asset di immagine utilizzare in base alle dimensioni dello schermo:
+Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il layout reattivo e utilizza [`srcset`]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) per indicare quale asset di immagine utilizzare in base alle dimensioni dello schermo:
 
 [sourcecode:html]
 <amp-img
@@ -78,7 +78,7 @@ Definisci gli stili dei componenti con i selettori di classe o di elemento utili
 </body>
 [/sourcecode]
 
-**Importante.** Verifica che gli stili siano supportati nel formato AMP perché alcuni non sono supportati per motivi di rendimento (leggi anche la pagina [Stili CSS supportati]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})).
+**Importante.** Verifica che gli stili siano supportati nel formato AMP perché alcuni non sono supportati per motivi di rendimento (leggi anche la pagina [Stili CSS supportati]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
 
 ## Specificare le dimensioni e la posizione degli elementi
 
@@ -90,14 +90,14 @@ Questi attributi connotano le proporzioni dell'elemento, che potrà ridimensiona
 Imposta il layout reattivo.
 In questo modo l'elemento si adatta alla larghezza del relativo elemento contenitore, mentre la sua altezza viene ridimensionata automaticamente in base alle proporzioni stabilite dagli attributi di larghezza e altezza.
 
-Leggi ulteriori informazioni sui [layout supportati in AMP]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
+Leggi ulteriori informazioni sui [layout supportati in AMP]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
 
 ## Convalidare stili e layout
 
 Utilizza lo strumento di convalida AMP per testare i valori CSS e di layout della tua pagina.
 
 Lo strumento di convalida verifica che gli elementi CSS della pagina non superino il limite di 50.000 byte, controlla se ci sono stili non consentiti e si assicura che il layout della pagina sia supportato e formattato correttamente.
-Consulta anche questo elenco completo di [errori di stile e layout](/it/docs/reference/validation_errors.html#errori-di-stile-e-layout).
+Consulta anche questo elenco completo di [errori di stile e layout](/it/docs/troubleshooting/validation_errors.html#errori-di-stile-e-layout).
 
 Esempio di errore nella console relativo a una pagina i cui elementi CSS superano il limite di 50.000 byte:
 

@@ -46,7 +46,7 @@ $title: AMP との統合でディスプレイ広告を掲載する
 
 ## 高速フェッチ統合を作成する
 
-[高速フェッチ](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)は、広告リクエストと広告レスポンスを分離する AMP のメカニズムです。これにより、ページ ライフサイクルの通常よりも早い段階で広告リクエストを実施し、ユーザーが見る可能性が高い場合にのみ広告を表示できるようになります。高速フェッチでは、通常の HTML 広告よりも検証済みの AMP HTML 広告が優先されます。検証に失敗した広告は、クロスドメインの iFrame にラップされ、AMP ドキュメントの他の要素からは隔離されます。これに対し、検証を通過した AMP HTML 広告は、直接ページに書き込まれます。高速フェッチは、AMP 広告と通常の広告の両方を扱うことができます。検証に失敗した広告についても、追加で広告リクエストを行う必要は必要ありません。
+[高速フェッチ](/latest/blog/even-faster-loading-ads-in-amp/)は、広告リクエストと広告レスポンスを分離する AMP のメカニズムです。これにより、ページ ライフサイクルの通常よりも早い段階で広告リクエストを実施し、ユーザーが見る可能性が高い場合にのみ広告を表示できるようになります。高速フェッチでは、通常の HTML 広告よりも検証済みの AMP HTML 広告が優先されます。検証に失敗した広告は、クロスドメインの iFrame にラップされ、AMP ドキュメントの他の要素からは隔離されます。これに対し、検証を通過した AMP HTML 広告は、直接ページに書き込まれます。高速フェッチは、AMP 広告と通常の広告の両方を扱うことができます。検証に失敗した広告についても、追加で広告リクエストを行う必要は必要ありません。
 
 {{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='高速フェッチの統合フロー', caption='高速フェッチの統合フロー' ) }}
 
@@ -63,5 +63,5 @@ $title: AMP との統合でディスプレイ広告を掲載する
 
 *   [amp-ad の全拡張機能の GitHub ディレクトリ](https://github.com/ampproject/amphtml/tree/master/ads)
 *   [対応広告ベンダーの一覧]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
-*   [高速フェッチのリリースに関するブログ記事](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)
+*   [高速フェッチのリリースに関するブログ記事](/latest/blog/even-faster-loading-ads-in-amp/)
  

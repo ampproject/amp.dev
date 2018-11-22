@@ -27,7 +27,7 @@ Hay más de 90 proveedores de anuncios que han añadido soporte para funciones p
 
 Si proporciona servicios de medición de seguimiento de llamadas, su caso de uso puede ser compatible con la nueva extensión [amp-call-tracking](/es/docs/reference/components/amp-call-tracking.html). Esta extensión reemplaza dinámicamente un número de teléfono en un hipervínculo para habilitar el seguimiento de llamadas, ejecutando una petición de CORS para sustituir el número.
 
-Para obtener más información sobre cómo esta extensión podría funcionar para usted, consulte el sitio [AMP by Example](https://ampbyexample.com/components/amp-call-tracking.html) o lea acerca de la [documentación](/es/docs/reference/components/amp-call-tracking).
+Para obtener más información sobre cómo esta extensión podría funcionar para usted, consulte el sitio [AMP by Example](https://ampbyexample.com/components/amp-call-tracking.html) o lea acerca de la [documentación](/es/docs/reference/components/amp-call-tracking.html).
 
 ## 4. Agregar una nueva extensión o incrustar
 
@@ -50,4 +50,4 @@ Si tiene alguna pregunta o sugerencia, no dude en [reportar un problema](https:/
 - [AMP Project Site](https://www.ampproject.org/)
 - [AMP GitHub Project](https://github.com/ampproject/amphtml)
 - [AMP Blog](https://amphtml.wordpress.com/)
-- [AMP Project Roadmap](https://www.ampproject.org/roadmap/)
+- [AMP Project Roadmap](/roadmap/)

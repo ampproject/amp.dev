@@ -40,10 +40,10 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。
 关于数据，您需要考虑以下几个要点：
 
 * 您是想仅跟踪网页浏览量，还是也要跟踪用户互动模式
-（另请参阅 [amp-pixel 或 amp-analytics](/zh_cn/docs/analytics/analytics_basics#使用-amp-pixel-还是-amp-analytics）？
+（另请参阅 [amp-pixel 或 amp-analytics](/zh_cn/docs/analytics/analytics_basics.html#使用-amp-pixel-还是-amp-analytics）？
 * 您要获取与您的用户、您的内容、
-设备或浏览器相关的哪些类型的数据（另请参阅[变量替换](/zh_cn/docs/analytics/analytics_basics#变量替换)）？
-* 您将如何识别您的用户（另请参阅[用户识别](/zh_cn/docs/analytics/analytics_basics#用户识别)）？
+设备或浏览器相关的哪些类型的数据（另请参阅[变量替换](/zh_cn/docs/analytics/analytics_basics.html#变量替换)）？
+* 您将如何识别您的用户（另请参阅[用户识别](/zh_cn/docs/analytics/analytics_basics.html#用户识别)）？
 
 
 {% call callout('了解详情', type='read') %}

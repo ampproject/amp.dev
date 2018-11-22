@@ -552,7 +552,7 @@ La lista completa de etiquetas únicas es la siguiente:
 
 ## Errores de estilo y de diseño
 
-Antes de entrar en los errores de [estilo](/es/docs/design/responsive/style_pages) y de [diseño](/es/docs/design/responsive/control_layout), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
+Antes de entrar en los errores de [estilo](/es/docs/design/responsive/style_pages.html) y de [diseño](/es/docs/design/responsive/control_layout.html), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
 Sin embargo, para garantizar que las páginas se carguen rápidamente, presentan algunas restricciones que el validador de AMP se encarga de hacer cumplir.
 
 El diseño está más controlado en las páginas de AMP.
@@ -645,7 +645,7 @@ Este error se produce cuando no se especifica ningún diseño para la etiqueta d
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/design/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/design/responsive/control_layout.html) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 **Nota:** Si no se especifica el diseño y no se incluyen los valores de `width` y `height`, el valor predeterminado del diseño es CONTAINER. El validador devuelve un error porque ninguna de las etiquetas de AMP admite CONTAINER.
 Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añade un valor `width` y/o `height`.
@@ -766,7 +766,7 @@ Por ejemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` 
 
 Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [amp-mustache](/es/docs/reference/components/amp-mustache.html).
 
-Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})).
+Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
 
 ### El atributo contiene sintaxis de la plantilla
 

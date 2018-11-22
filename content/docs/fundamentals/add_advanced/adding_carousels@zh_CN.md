@@ -91,7 +91,7 @@ amp-fit-text {
 要想了解详情，请参阅 [amp-carousel](/zh_cn/docs/reference/components/amp-carousel.html) 组件参考文档。
 
 {% call callout('注意', type='note') %}
-在最后一个示例中，您可能已经注意到，`amp-ad` 组件包含一个属性为 `placeholder` 的子级 `div` 元素。在本教程中，我们曾遇到过一个类似（`amp-ad` 使用 `fallback`）的情形。placeholder 和 fallback 有什么区别呢？`fallback` 元素会在父级元素加载失败（即没有可用广告）时替之显示，`placeholder` 元素则会在父级元素正在加载时替之显示。从某种意义上说，这些元素标志着父级元素加载过程的开始和结束。要想了解详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})指南。
+在最后一个示例中，您可能已经注意到，`amp-ad` 组件包含一个属性为 `placeholder` 的子级 `div` 元素。在本教程中，我们曾遇到过一个类似（`amp-ad` 使用 `fallback`）的情形。placeholder 和 fallback 有什么区别呢？`fallback` 元素会在父级元素加载失败（即没有可用广告）时替之显示，`placeholder` 元素则会在父级元素正在加载时替之显示。从某种意义上说，这些元素标志着父级元素加载过程的开始和结束。要想了解详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})指南。
 {% endcall %}
 
 <div class="prev-next-buttons">

@@ -27,7 +27,7 @@ core:
         [Tag HTML dalam spesifikasi AMP](/id/docs/fundamentals/spec.html)).
         Elemen kustom ini, yang disebut komponen HTML AMP,
         membuat pola umum jadi mudah diterapkan dengan cara yang baik.
-        <p>Misalnya, tag [`amp-img`](/id/docs/reference/amp-img.html)
+        <p>Misalnya, tag [`amp-img`](/id/docs/reference/components/amp-img.html)
         memberikan dukungan `srcset` penuh, bahkan di browser yang belum mendukungnya.
         Pelajari cara [membuat halaman HTML AMP pertama Anda](/id/docs/getting_started/create.html).
         <p>Halaman AMP ditemukan oleh mesin telusur dan platform lainnya

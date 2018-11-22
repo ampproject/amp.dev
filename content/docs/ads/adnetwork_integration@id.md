@@ -46,7 +46,7 @@ Untuk mempelajari cara membuat integrasi `amp-ad`, lihat [Mengintegrasikan jarin
 
 ## Membuat integrasi Fast Fetch
 
-[Fast Fetch](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/) adalah mekanisme AMP yang memisahkan permintaan iklan dari respons iklan, sehingga permintaan iklan dapat muncul lebih awal dalam siklus proses halaman, dan hanya merender iklan yang kemungkinan akan dilihat oleh pengguna. Fast Fetch memberikan perlakuan khusus pada iklan AMPHTML terverifikasi, dibandingkan pada iklan HTML biasa. Dalam Fast Fetch, jika gagal dalam validasi, iklan akan digabungkan dalam iframe lintas-domain untuk membatasi aksesnya dari elemen lain dalam dokumen AMP. Sebaliknya, iklan AMPHTML yang lolos validasi langsung ditulis ke halaman. Fast Fetch menangani iklan AMP dan non-AMP; tidak ada permintaan iklan tambahan yang dibutuhkan untuk iklan yang gagal validasi. 
+[Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/) adalah mekanisme AMP yang memisahkan permintaan iklan dari respons iklan, sehingga permintaan iklan dapat muncul lebih awal dalam siklus proses halaman, dan hanya merender iklan yang kemungkinan akan dilihat oleh pengguna. Fast Fetch memberikan perlakuan khusus pada iklan AMPHTML terverifikasi, dibandingkan pada iklan HTML biasa. Dalam Fast Fetch, jika gagal dalam validasi, iklan akan digabungkan dalam iframe lintas-domain untuk membatasi aksesnya dari elemen lain dalam dokumen AMP. Sebaliknya, iklan AMPHTML yang lolos validasi langsung ditulis ke halaman. Fast Fetch menangani iklan AMP dan non-AMP; tidak ada permintaan iklan tambahan yang dibutuhkan untuk iklan yang gagal validasi. 
 
 {{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='Fast Fetch Integration flow', caption='Alur Integrasi Fast Fetch' ) }}
 
@@ -63,5 +63,5 @@ Untuk mempelajari cara membuat integrasi Fast Fetch, lihat [Panduan Implementasi
 
 *   [Direktori GitHub untuk semua ekstensi amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
 *   [Daftar vendor iklan yang didukung]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
-*   [Postingan blog yang menjelaskan peluncuran Fast Fetch](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)
+*   [Postingan blog yang menjelaskan peluncuran Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/)
  

@@ -22,7 +22,7 @@ Veja um exemplo de resposta JSON:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-O componente do formulário exibirá esses valores dentro da página usando o modelo [amp-mustache](/pt_br/docs/reference/components/amp-mustache):
+O componente do formulário exibirá esses valores dentro da página usando o modelo [amp-mustache](/pt_br/docs/reference/components/amp-mustache.html):
 
 [sourcecode:html]
 <div submit-success>

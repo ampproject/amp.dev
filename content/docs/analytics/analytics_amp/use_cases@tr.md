@@ -10,7 +10,7 @@ Bir kullanım durumu eklemek istiyor musunuz?
 [Bize bildirin.](https://github.com/ampproject/docs/issues/new)
 
 Kendi kullanım durumlarınızla da katkı da bulunabilirsiniz;
-bkz. [Katkı Sağlama](/tr/docs/support/contribute.html).
+bkz. [Katkı Sağlama](/tr/contribute/).
 
 ## Sayfa görünümlerini izleme
 

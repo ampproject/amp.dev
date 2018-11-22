@@ -60,7 +60,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 5 步：（可选）指定占位符
 
-根据具体的广告网络，您可以选择在广告可供查看前显示占位符。这样做可防止出现空白，从而提供更好的用户体验。要指定占位符，请通过 `placeholder` 属性添加一个子元素。有关详情请参阅[占位符和后备行为]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}})。
+根据具体的广告网络，您可以选择在广告可供查看前显示占位符。这样做可防止出现空白，从而提供更好的用户体验。要指定占位符，请通过 `placeholder` 属性添加一个子元素。有关详情请参阅[占位符和后备行为]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})。
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 6 步：（可选）指定后备行为
 
-根据具体的广告网络，您可以选择在没有广告可投放时显示后备元素。要指定后备行为，请通过 `fallback` 属性添加一个子元素。有关详情请参阅[占位符和后备行为]({{g.doc('/content/docs/design/responsive/placeholders.html', locale=doc.locale).url.path}})。
+根据具体的广告网络，您可以选择在没有广告可投放时显示后备元素。要指定后备行为，请通过 `fallback` 属性添加一个子元素。有关详情请参阅[占位符和后备行为]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})。
 
 ```html hl_lines="6"
 <amp-ad type="a9"

@@ -4,15 +4,15 @@ $title@: Documentación
 start_cards:
   - name: Introducción a AMP
     desc: Consulta información sobre AMP y sus componentes principales.
-    link: https://www.ampproject.org/es/learn/overview/
+    link: /es/learn/overview/
 
   - name: Cómo funciona AMP
     desc: Descubre las optimizaciones que hacen que las páginas AMP sean rápidas.
-    link: https://www.ampproject.org/es/learn/about-how/
+    link: /es/learn/about-how/
 
   - name: ¿Empiezas desde cero?
     desc: Crea tu primera página AMP con este tutorial para principiantes.
-    link: https://www.ampproject.org/es/docs/getting_started/create
+    link: /es/docs/getting_started/create.html
 
   - name: Demostraciones y ejemplos
     desc: Aprende con los ejemplos y demostraciones en directo de AMP By Example.
@@ -58,23 +58,23 @@ doc_cards:
 
   - name: Anuncios AMP HTML
     desc: Obtén más información sobre los anuncios AMP HTML y consulta cómo diseñar páginas AMP para tus campañas y sitios web.
-    link: https://www.ampproject.org/es/docs/ads/amphtml_ads
+    link: /es/docs/ads/amphtml_ads.html
 
   - name: Analíticas
     desc: Integra servicios de analítica en tus páginas AMP para medir la actividad y las interacciones de los usuarios.
-    enlace: https://www.ampproject.org/es/docs/analytics/analytics_amp
+    enlace: /es/docs/analytics/analytics_amp.html
 
   - nombre: Solicitudes CORS en AMP
     desc: Descubre por qué necesitas usar solicitudes CORS en el contenido dinámico AMP.
-    link: https://www.ampproject.org/es/docs/fundamentals/amp-cors-requests
+    link: /es/docs/fundamentals/amp-cors-requests.html
 
   - name: PWA y AMP
     desc: Consulta cómo se complementan las aplicaciones web progresivas (PWA) y las páginas AMP.
-    link: https://www.ampproject.org/es/docs/integration/pwa-amp
+    link: /es/docs/integration/pwa-amp.html
 
   - name: AMP adaptable
     desc: Consulta cómo crear páginas AMP adaptables de forma sencilla.
-    link: https://www.ampproject.org/es/docs/design/responsive/responsive_design
+    link: /es/docs/design/responsive/responsive_design.html
 
 ---
  

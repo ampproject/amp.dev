@@ -27,7 +27,7 @@ core:
         a las [etiquetas HTML en la especificación de AMP](/es/docs/fundamentals/spec.html)).
         Estos elementos personalizados, denominados componentes AMP HTML,
         permiten implementar fácilmente patrones habituales de una manera eficaz.
-        <p>Por ejemplo, la etiqueta [`amp-img`](/es/docs/reference/amp-img.html)
+        <p>Por ejemplo, la etiqueta [`amp-img`](/es/docs/reference/components/amp-img.html)
         es totalmente compatible con `srcset`, incluso en navegadores que todavía no la admiten.
         Consulta cómo [crear tu primera página AMP HTML](/es/docs/getting_started/create.html).
         <p>Los buscadores y otras plataformas descubren las páginas AMP

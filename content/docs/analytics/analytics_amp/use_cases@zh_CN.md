@@ -5,7 +5,7 @@ $title: 使用情形
 
 本指南提供了一系列跟踪用户互动的常见使用情形：
 
-备注: 想要添加使用情形？[请告诉我们。](https://github.com/ampproject/docs/issues/new) 或者您也可以提供自己的使用情形，请参见[如何贡献自己的力量](/zh_cn/docs/support/contribute.html)
+备注: 想要添加使用情形？[请告诉我们。](https://github.com/ampproject/docs/issues/new) 或者您也可以提供自己的使用情形，请参见[如何贡献自己的力量](/zh_cn/contribute/)
 
 ## 跟踪网页浏览量
 
@@ -14,7 +14,7 @@ $title: 使用情形
 ### 使用 amp-pixel
 
 
-使用 [amp-pixel 将网页浏览量数据发送到指定网址](/zh_cn/docs/reference/amp-pixel.html)：
+使用 [amp-pixel 将网页浏览量数据发送到指定网址](/zh_cn/docs/reference/components/amp-pixel.html)：
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
