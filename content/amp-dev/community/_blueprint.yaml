@@ -1,6 +1,7 @@
 path: /community/{base}.html
 view: /views/default.j2
 title: Community
+filter: all
 
 localization:
   path: /{locale}/community/{base}.html
