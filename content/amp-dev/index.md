@@ -1,7 +1,4 @@
 ---
 $title: Start
-$view: /views/home.j2
+$view: /views/default.j2
 ---
-
-[stage type="default"]
-[/stage]
