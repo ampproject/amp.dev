@@ -65,7 +65,9 @@
           {# Only list the document if it matches the current locale #}
           {% if doc.locale == document.locale %}
           {% set activeDocument = true if document.url == doc.url %}
-          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}"><a class="nav-link" href="{{ document.url }}">{{ document.title }}</a></li>
+          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}">
+            <a class="nav-link" href="{{ document.url }}">{{ document.title }}</a>
+          </li>
           {% endif %}
           {% endfor %}
           {% endif %}
