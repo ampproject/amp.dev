@@ -13,7 +13,7 @@
 @import '../../mixins';
 @import '../../variables';
 
-section.#{organism('teaser-grid')} {
+section.teaser-grid {
 	@media screen and (min-width: 768px){
 		grid-column-start: 1;
 		grid-column-end: 25;
