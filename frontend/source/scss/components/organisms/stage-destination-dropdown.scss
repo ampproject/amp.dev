@@ -19,6 +19,8 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 
 @import '../molecules/dropdown';
 @import '../atoms/_divider.scss';
+@import '../atoms/_color.scss';
+
 
 @include heroEnterAnimation;
 @include rollingAnimation;
@@ -118,5 +120,26 @@ The background of the destination-stage requires the heroEnterAnimation mixin.
 		&-emails {
 			@include color-e-mails;
 		}
-	}
+  }
+
+
+  .dark-blue {
+    @include gradient-default;
+  }
+
+  .light-blue {
+    @include gradient-websites;
+  }
+
+  .orange {
+    @include gradient-stories;
+  }
+
+  .purple {
+    @include gradient-ads;
+  }
+
+  .green {
+    @include gradient-e-mails;
+  }
 }

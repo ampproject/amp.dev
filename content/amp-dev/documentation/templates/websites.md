@@ -2,9 +2,13 @@
 $title: Websites
 $view: /views/overview/template-overview.j2
 ---
+<<<<<<< HEAD:content/amp-dev/documentation/templates/websites.md
 [stage]
 ## Get started quickly with a ready-made design.
 # Templates
+=======
+[stage color="purple"]
+>>>>>>> feature/stage:content/amp-dev/documentation/templates-ads.md
 [/stage]
 
 [intro]

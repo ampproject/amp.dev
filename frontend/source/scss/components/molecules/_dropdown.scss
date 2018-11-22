@@ -228,37 +228,22 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .websites {
   order: 1;
   @include color-white;
-
-  &-background {
-	  @include gradient-websites;
-  }
 }
 
 .ads {
   order: 2;
   @include color-ads;
 
-  &-background {
-	  @include gradient-ads;
-  }
 }
 
 .stories {
   order: 3;
   @include color-stories;
-
-  &-background {
-	  @include gradient-stories;
-  }
 }
 
 .e-mails {
   order: 4;
   @include color-e-mails;
-
-  &-background {
-	  @include gradient-e-mails;
-  }
 }
 
 
