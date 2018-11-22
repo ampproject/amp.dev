@@ -4,9 +4,7 @@ $view: /views/overview/template-overview.j2
 $path: /documentation/stories/templates.html
 $order: 4
 ---
-[stage type="dropdown"]
-
-
+[stage color="orange"]
 [/stage]
 
 [intro]

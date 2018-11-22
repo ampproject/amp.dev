@@ -35,9 +35,9 @@
 {% set pathStart = doc.url.path.split('/')[1] %}
 
 <div class="destination-stage">
-  <div class="destination-stage-clipped-background websites-background"></div>
+  <div class="destination-stage-clipped-background {{ stage_background_color }}"></div>
   <div class="destination-stage-content">
-		  <span class="hl-sub">{{ subHeadline }}</span>
+		  <span class="hl-sub">{{ sub_headline }}</span>
 		  <span class="hl"> {{ headline }}</span>
       <div class="hl-inline">
       {# <div class="destination-list-view-box destination-list-view-box-gradient"
@@ -71,11 +71,11 @@
 		  </amp-selector>
     </div> #}
     </div>
-    {% if headlineTwo %}
-		  <span class="hl">{{headlineTwo}}</span>
+    {% if headline_part_two %}
+		  <span class="hl">{{ headline_part_two }}</span>
     {% endif %}
-    {% if linkForDoc %}
-      <a href="{{ g.doc(linkForDoc).url }}">{{ linkTitle }}</a>
+    {% if button_link %}
+      <a href="{{ g.doc(button_link).url }}">{{ button_title }}</a>
     {% endif %}
     </div>
 	</div>

@@ -3,7 +3,7 @@ $title: Templates
 $view: /views/overview/template-overview.j2
 $order: 4
 ---
-[stage ]
+[stage color="dark-blue" ]
 ## How to Build with AMP without knowing how to code?
 # Easily build user first
 
