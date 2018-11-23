@@ -1,33 +1,51 @@
-<div class="ad-m-destination-switch destination-list-view-box destination-list-view-box-gradient"
-  [class]="toggle ? 'destination-list-view-box destination-list-view-box-gradient destination-list-view-box-expand': 'destination-list-view-box destination-list-view-box-gradient'">
-    {# <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-list-icon">
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
-    </button>
-    {% set filters = ['websites', 'ads', 'stories', 'e-mails'] %}
-      {% for filter in filters %}
-			  <span class="destination-list-item destination-list-item-rolling destination-list-item-rolling-{{ filter }}">
-           {{ filter }}
-        </span>
+{% do doc.styles.addCssFile('css/components/molecules/dropdown.css') %}
+
+{% if switch_type == 'selected' %}
+  {% set filter = doc.url.path.split('/')[2] %}
+{% endif %}
+
+<div class="ad-m-destination-switch {{ switch_type }}{% if switch_type == 'selected' or switch_type == 'dropdown' %} menu-list {% endif %}"
+  [class]="toggle ? 'ad-m-destination-switch {{ switch_type }} ad-m-destination-switch-expand': 'ad-m-destination-switch {{ switch_type }}'">
+    {% if switch_type == 'selected' or switch_type == 'dropdown' %}
+      <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-switch-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
+      </button>
+    {% endif %}
+
+    {# default and dropdown switch_types get an animated list #}
+
+    {% if switch_type != 'selected' %}
+      {% for destination in destinations %}
+        {% if destination.text != 'overview' %}
+			    <span class="destination-list-item destination-list-item-animated destination-list-item-animated-{{destination.text}}
+          {% if switch_type == 'dropdown' %}{{ destination.text }}{% endif %}">
+            {{ destination.text }}
+          </span>
+        {% endif %}
       {% endfor %}
+    {% endif %}
+
+    {# selected and dropdown switch_types have a dropdown list  #}
+    {% if switch_type == 'selected' or switch_type == 'dropdown' %}
 		  <amp-selector layout="container">
-			  <ul class="destination-list">
-          {% set filters = ['overview', 'websites', 'ads', 'stories', 'e-mails'] %}
-          {% for filter in filters %}
-			 	    <li option="{{ filter }}" class="{{ filter }}">
-              {% if filter == 'overview' %}
-                <a href="{{ doc.url.path }}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
-                  {{ filter }}
+			  <ul class="destination-list {% if filter %} selected {{ filter }}{% endif %}">
+          {% for destination in destinations %}
+            {% if filter %}
+                <li option="{{ destination.text }}" {% if filter == destination.text %} selected {% endif %} class="{{ destination.text }}">
+                  <a href="{{ g.doc(destination.link).url }}"
+                  class="destination-list-item {{ destination.text}} {{ destination.text}}-{% if filter == destination.text %}selected{% else %}background{% endif %}">
+                    {{ destination.text }}
+                  </a>
+                </li>
+            {% else %}
+			 	      <li option="{{ destination.text }}" class="{{ destination.text }}">
+                <a href="{{ g.doc(destination.link).url }}" class="destination-list-item {{ destination.text}} {{ destination.text}}-background">
+                  {{ destination.text }}
                 </a>
-              {% else %}
-              <a href="/{{pathStart}}/{{filter}}/{{pathEnd}}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
-                {{ filter }}
-              </a>
+              </li>
             {% endif %}
-            </li>
           {% endfor %}
 			  </ul>
-		</amp-selector> #}
-    {% for destination in destinations %}
-      {{ destination.text }}
-    {% endfor %}
+		</amp-selector>
+    {% endif %}
 </div>
