@@ -1,0 +1,86 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../molecules/_kpi.scss';
+
+.#{molecule('kpi')} {
+  @include kpi;
+
+  &-content {
+    @include kpi-content;
+  }
+
+  &-icon {
+    @include kpi-icon;
+  }
+
+  &-text {
+    @include kpi-text;
+  }
+
+  &-number {
+    @include kpi-number;
+  }
+  
+  &-websites {
+    @include gradient-websites;
+
+    .#{molecule('kpi')} {
+      &-icon {
+        @include fill-websites;
+      }
+
+      &-text,
+      &-number {
+        @include color-websites;
+      }
+    }
+  }
+
+  &-stories {
+    @include gradient-stories;
+    
+    .#{molecule('kpi')} {
+      &-icon {
+        @include fill-stories;
+      }
+
+      &-text,
+      &-number {
+        @include color-stories;
+      }
+    }
+  }
+
+  &-ads {
+    @include gradient-ads;
+    
+    .#{molecule('kpi')} {
+      &-icon {
+        @include fill-ads;
+      }
+
+      &-text,
+      &-number {
+        @include color-ads;
+      }
+    }
+  }
+
+  &-e-mails {
+    @include gradient-e-mails;
+    
+    .#{molecule('kpi')} {
+      &-icon {
+        @include fill-e-mails;
+      }
+
+      &-text,
+      &-number {
+        @include color-e-mails;
+      }
+    }
+  }
+}
