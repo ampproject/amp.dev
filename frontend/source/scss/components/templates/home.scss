@@ -18,13 +18,21 @@
 
 @import '../templates/_default.scss';
 
-.#{template('default')} {
+.#{template('home')} {
   @include container;
 
   section {
     @media screen and (min-width: 1024px){
       grid-column-start: 1;
       grid-column-end: 25;
+    }
+
+    &.stage {
+      grid-column: 1 / -1;
+    }
+
+    &.main {
+      grid-column: 1 / -1;
     }
   }
 }
