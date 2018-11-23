@@ -31,45 +31,16 @@
 {# {% elif options.type == 'dropdown' %} #}
 {% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown.css') %}
 
-{% set pathEnd = doc.url.path.split('/')|last %}
-{% set pathStart = doc.url.path.split('/')[1] %}
 
 <div class="destination-stage">
   <div class="destination-stage-clipped-background {{ stage_background_color }}"></div>
   <div class="destination-stage-content">
-		  <span class="hl-sub">{{ sub_headline }}</span>
-		  <span class="hl"> {{ headline }}</span>
-      <div class="hl-inline">
-      {# <div class="destination-list-view-box destination-list-view-box-gradient"
-        [class]="toggle ? 'destination-list-view-box destination-list-view-box-gradient destination-list-view-box-expand': 'destination-list-view-box destination-list-view-box-gradient'">
-        <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-list-icon">
-         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
-        </button>
-        {% set filters = ['websites', 'ads', 'stories', 'e-mails'] %}
-          {% for filter in filters %}
-			    <span class="destination-list-item destination-list-item-rolling destination-list-item-rolling-{{ filter }}">
-           {{ filter }}
-          </span>
-        {% endfor %}
-		    <amp-selector layout="container">
-			    <ul class="destination-list">
-            {% set filters = ['overview', 'websites', 'ads', 'stories', 'e-mails'] %}
-            {% for filter in filters %}
-			 	    <li option="{{ filter }}" class="{{ filter }}">
-              {% if filter == 'overview' %}
-                <a href="{{ doc.url.path }}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
-                  {{ filter }}
-                </a>
-              {% else %}
-              <a href="/{{pathStart}}/{{filter}}/{{pathEnd}}" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter}}-background">
-                {{ filter }}
-              </a>
-            {% endif %}
-            </li>
-          {% endfor %}
-			  </ul>
-		  </amp-selector>
-    </div> #}
+		<span class="hl-sub">{{ sub_headline }}</span>
+		<span class="hl"> {{ headline }}</span>
+    <div class="hl-inline">
+      {% if destination_switch %}
+        {{ destination_switch|safe }}
+      {% endif %}
     </div>
     {% if headline_part_two %}
 		  <span class="hl">{{ headline_part_two }}</span>
