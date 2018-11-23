@@ -58,8 +58,8 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       animation: none;
       z-index: 10;
 
-      .ad-a-ico {
-        transform: rotate(100deg);
+      .destination-switch-icon {
+        transform: rotate(180deg);
         fill: color('white');
       }
 
