@@ -21,8 +21,6 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
 
-@import '../molecules/_kpi.scss';
-
 @mixin teaser {
 	position: relative;
 	margin: 0 20px 2em 0;
@@ -104,26 +102,6 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 		background: linear-gradient(0deg, rgba(0,0,0,0.12), rgba(0,0,0,0));
 		z-index: 1;
 	}
-}
-
-@mixin teaser-kpi {
-	box-shadow: none;
-}
-
-@mixin teaser-kpi-e-mails {
-	@include gradient-e-mails;
-}
-
-@mixin teaser-kpi-ads {
-	@include gradient-ads;
-}
-
-@mixin teaser-kpi-stories {
-	@include gradient-stories;
-}
-
-@mixin teaser-kpi-websites {
-	@include gradient-websites;
 }
 
 @mixin teaser-headline {

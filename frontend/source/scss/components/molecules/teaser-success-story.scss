@@ -61,26 +61,6 @@
 			@include teaser-content;
 		}
 
-		&-kpi {
-			@include teaser-kpi;
-
-			&-e-mails {
-				@include teaser-kpi-e-mails;
-			}
-
-			&-ads {
-				@include teaser-kpi-ads;
-			}
-
-			&-stories {
-				@include teaser-kpi-stories;
-			}
-
-			&-websites {
-				@include teaser-kpi-websites;
-			}
-		}
-
 		&-image {
 			@include teaser-image;
 		}
