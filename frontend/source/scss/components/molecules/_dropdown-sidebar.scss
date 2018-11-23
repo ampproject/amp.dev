@@ -192,19 +192,19 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   }
 }
 
-.ads {
+.stories {
   order: 2;
 
   &-background {
-	  @include gradient-ads;
+	  @include gradient-stories;
   }
 }
 
-.stories {
+.ads {
   order: 3;
 
   &-background {
-	  @include gradient-stories;
+	  @include gradient-ads;
   }
 }
 
