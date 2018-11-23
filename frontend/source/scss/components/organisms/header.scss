@@ -19,7 +19,6 @@
 
 @import '../molecules/_link.scss';
 
-
 .#{organism('header')} {
   width: 100%;
   position: -webkit-sticky;
@@ -75,7 +74,6 @@
         @media screen and (min-width: 1024px) {
           display: none;
         }
-
       }
     }
 
@@ -90,7 +88,6 @@
         overflow: hidden;
       }
     }
-
   }
 
   &-lnk {
@@ -105,7 +102,6 @@
       @include txt-font-accent;
       @include hl-h4;
       @include color-black;
-
       margin: 0;
 
       &:hover {
@@ -139,7 +135,6 @@
       }
 
       &-selected {
-
         a {
           @include txt-strong;
           margin-bottom: 0;
@@ -152,7 +147,7 @@
       position: -webkit-sticky;
       position: sticky;
       top: 10px;
-      margin: 10px 0px 10px 20px;
+      margin: 10px 0 10px 20px;
       display: flex;
 
       @media screen and (min-width: 768px) {
@@ -163,7 +158,7 @@
         margin: 10px 0 10px 30px;
       }
 
-      a  {
+      a {
         @include color-blue-ribbon;
       }
     }
@@ -177,7 +172,7 @@
     }
 
     &-support {
-      margin: 0 30px 0 30px;
+      margin: 0 30px;
 
       &-expanded {
         margin-top: auto;
@@ -218,7 +213,6 @@
     }
   }
 
-
   &-subnav {
     display: block;
     flex: 1 1 100%;
@@ -239,14 +233,14 @@
     &-switcher {
       display: flex;
       position: relative;
-      
+
       &:hover {
         .#{atom('ico')} {
           transform: rotate(180deg);
         }
       }
     }
-    
+
     &-current {
       display: flex;
       align-items: center;
@@ -260,13 +254,13 @@
         text-transform: uppercase;
       }
     }
-    
+
     &-icon.#{atom('ico')} {
       width: 10px;
       height: 10px;
       margin-left: 5px;
     }
-    
+
     &-list {
       overflow: hidden;
       max-height: 0;
@@ -277,7 +271,7 @@
       margin: 0;
       padding: 0;
       background-color: color('white');
-      
+
       &-item {
         a {
           @include txt-font-accent;
@@ -286,14 +280,14 @@
           padding: 2px 15px 2px 10px;
           text-transform: uppercase;
         }
-        
+
         &:hover a {
           @include color-blue-ribbon;
           background-color: color('whisper');
         }
       }
     }
-    
+
     &-current:hover + ul,
     &-list:hover {
       max-height: 250px;
@@ -305,7 +299,6 @@
   &-icon {
     display: flex;
     align-items: center;
-
 
     & svg {
       @include ico;
@@ -341,14 +334,14 @@
     margin-left: 4px;
     transition: opacity 0.5s ease;
 
-    @media screen and (min-width: 1024px ){
+    @media screen and (min-width: 1024px) {
       display: none;
     }
   }
 
   &-search {
     margin-right: 0;
-    padding: 17.5px 0 12.5px 0;
+    padding: 17.5px 0 12.5px;
 
     @media screen and (min-width: 1024px) {
       margin-left: auto;
@@ -367,7 +360,7 @@
     right: 0;
     z-index: 100;
 
-    @media screen and (min-width: 1024px){
+    @media screen and (min-width: 1024px) {
       display: none;
     }
 
@@ -376,7 +369,7 @@
       height: 30px;
       padding: 12px 20px;
 
-      @media screen and (min-width: 768px){
+      @media screen and (min-width: 768px) {
         padding: 12px 30px;
       }
     }
@@ -395,9 +388,9 @@
       }
 
       &:checked ~ .ad-o-header-lnk .ad-o-header-title {
-          opacity: 0;
-          transition: opacity 0.5s ease;
-        }
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
     }
   }
 }
