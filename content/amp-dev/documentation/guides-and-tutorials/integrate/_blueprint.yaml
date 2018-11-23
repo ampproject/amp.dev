@@ -1,7 +1,8 @@
-path: /documentation/guides-and-tutorials/integration/{base}.html
-view: /views/default.j2
+$title@: Integrate
+$path: /documentation/guides-and-tutorials/integrate/{base}.html
+$view: /views/detail/docs-detail.j2
 
-localization:
-  path: /{locale}/documentation/guides-and-tutorials/integration/{base}.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/integrate/{base}.html
 
-category: Integration
+$order: 4
