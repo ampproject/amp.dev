@@ -59,12 +59,6 @@
             <li class="ad-o-header-lnk ad-o-header-lnk-expanded ad-o-header-lnk-support-expanded">
               <a href="">{{ mainNav.title }}</a>
             </li>
-            {% set languages = g.doc('/content/amp-dev/languages.md') %}
-            <li class="ad-o-header-lnk ad-o-header-lnk-expanded ad-o-header-lnk-lang-expanded">
-              <a class="ad-o-header-icon" href="{{ languages.url.path }}">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use></svg>
-              <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">en</span></a>
-            </li>
         {% endif %}
       {% endfor %}
     </ul>
