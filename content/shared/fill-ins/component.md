@@ -1,5 +1,6 @@
 ---
 $view: /views/detail/component-detail.j2
+$path: /shared/fill-ins/component.html
 $title: Sample amp-component
 $titles:
   teaser: Example component teaser

@@ -1,5 +1,6 @@
 ---
 $view: /views/detail/template-detail.j2
+$path: /shared/fill-ins/template.html
 $title: Sample website template
 $titles:
   teaser: Sample template

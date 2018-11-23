@@ -1,5 +1,6 @@
 ---
 $view: /views/detail/success-story-detail.j2
+$path: /shared/fill-ins/success-story-2.html
 $title: Sample Success Story
 $titles:
   teaser: Sample success story
