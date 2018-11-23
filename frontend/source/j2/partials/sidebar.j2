@@ -33,7 +33,7 @@
     <div class="nav">
       {% macro nav_tree(root, iteration=1, depth=None) -%}
       <ul class="nav-list level-{{ iteration }}">
-          {% set collections = root.collections() %}
+          {% set collections = root.collections()|sort(attribute='order') %}
           {% set documents = root.list_docs(order_by='order') %}
 
           {% if not depth or iteration <= depth %}

@@ -1,7 +1,6 @@
-path: /documentation/start/{base}.html
-view: /views/default.j2
+$title@: Guides & Tutorials
+$path: /documentation/guides-and-tutorials/{base}.html
+$view: /views/detail/docs-detail.j2
 
 localization:
-  path: /{locale}/documentation/start/{base}.html
-
-title: Start
+  path: /{locale}/documentation/guides-and-tutorials/{base}.html
