@@ -96,17 +96,21 @@
               <a href="">{{ mainNav.title }}</a>
             </li>
 
-            <div class="ad-o-header-lang-box">
+            <div class="ad-o-header-lang-switcher">
+              <div class="ad-o-header-lang-current">
+                <span>{{ doc.locale }}</span>
+                <div class="ad-a-ico ad-o-header-lang-icon">
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+                </div>
+              </div>
               <ul class="ad-o-header-lang-list">
-                <li class="ad-o-header-lang-list-item"><a href="#">{{ doc.locale.get_language_name() }}</a></li>
                 {% for locale in doc.locales if not locale == doc.locale  %}
                 {% set localized_doc = doc.localize(locale) %}
-                <li class="ad-o-header-lang-list-item"><a href="{{ localized_doc.url.path }}">{{ locale.get_language_name() }}</a></li>
+                <li class="ad-o-header-lang-list-item">
+                  <a href="{{ localized_doc.url.path }}">{{ locale }}</a>
+                </li>
                 {% endfor %}
               </ul>
-              <div class="ad-a-ico ad-o-langicon">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-              </div>
             </div>
 
             {# <li class="ad-o-header-lnk ad-o-header-lnk-lang">
