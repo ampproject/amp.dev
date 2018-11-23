@@ -86,7 +86,7 @@
 
       @media screen and (min-width: 1024px) {
         height: 45px;
-        padding-left: 100px;
+        padding-left: 105px;
         overflow: hidden;
       }
     }
@@ -130,8 +130,7 @@
     }
 
     &-subnav {
-      margin: 0;
-      margin-left: 20px;
+      margin: 0 15px;
 
       a {
         @include txt;
