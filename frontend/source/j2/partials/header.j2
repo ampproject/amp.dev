@@ -130,23 +130,6 @@
             </li>
           {% endif %}
         {% endfor %}
-
-        {# TODO: Remove styleguide section in production #}
-
-        {% if doc.title == 'Styleguide' %}
-          {% for guides in g.collection('amp-dev/styleguide').collections() %}
-            <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if guides.title == doc.title %} ad-o-header-lnk-subnav-selected {% endif %}">
-              {% for _doc in guides %}
-                {% if _doc.base == 'index' and _doc.locale == doc.locale %}
-                <a href="{{ _doc.url.path }}">{{ guides.title }}</a>
-                {% endif %}
-                {% if _doc.title == doc.title %}
-                  <div class="ad-o-header-lnk-divider"></div>
-                {% endif %}
-              {% endfor %}
-            </li>
-          {% endfor %}
-        {% endif %}
       </ul>
     </nav>
   </div>
