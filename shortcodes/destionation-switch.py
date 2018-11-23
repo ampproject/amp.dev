@@ -20,7 +20,7 @@ class DestinationSwitchShortcode(Shortcode):
   def _set_destinations(self, dom):
     self.context['destinations'] = []
     links = dom.getElementsByTagName('a')
-    destinations = ['websites', 'ads', 'stories', 'e-mails']
+    destinations = ['websites', 'stories', 'ads', 'e-mails']
 
     # if links are given, get links and their destinations
     if len(links):

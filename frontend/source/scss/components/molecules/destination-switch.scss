@@ -6,9 +6,8 @@
 
 ### INFO:
 
-The dropdown switch is a more complex version of the rolling switch. It includes the rolling switch with
-a gradient animation for the view box and multiple text colors for each text atom. It also includes a
-dropdown list visible on hover and also an icon atom.
+Destination switch is the switch found inside the stage. It can include either an animated list with no dropdown which is default, an animated list including a gradient
+and with a seperate dropdown list, or a dropdown list without animations and gradient.
 
 requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.scss
 
@@ -39,11 +38,11 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
   &.dropdown {
 		background: linear-gradient(-220deg,
-				color('azure-radiance'),color('robins-egg'),
-				color('pizazz'), color('yellow'),
-				color('crimson'), color('pizazz'),
-				color('electric-violet'), color('pink-flamingo'),
-				color('azure-radiance'), color('robins-egg'));
+				color('blue-ribbon'),color('robins-egg'),
+				color('pizazz'), color('school-bus'),
+				color('electric-violet'), color('lavender-magenta'),
+				color('forest-green'), color('confetti'),
+				color('blue-ribbon'), color('robins-egg'));
 		background-size: 1200% 100%;
 		background-position: 0% 0%;
 		animation: gradientChange 12.8s ease infinite;
@@ -215,7 +214,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 
 .websites {
-  order: 1;
   @include color-white;
 
   &-background {
@@ -230,7 +228,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 }
 
 .ads {
-  order: 2;
   @include color-ads;
 
   &-background {
@@ -244,7 +241,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 }
 
 .stories {
-  order: 3;
   @include color-stories;
 
   &-background {
@@ -258,7 +254,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 }
 
 .e-mails {
-  order: 4;
   @include color-e-mails;
 
   &-background {

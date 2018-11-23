@@ -8,8 +8,8 @@ $order: 4
 # Easily build user first
 [destination-switch type="dropdown"]
 - [websites](/content/amp-dev/documentation/templates-websites.md)
-- [ads](/content/amp-dev/documentation/templates-ads.md)
 - [stories](/content/amp-dev/documentation/templates-stories.md)
+- [ads](/content/amp-dev/documentation/templates-ads.md)
 - [e-mails](/content/amp-dev/documentation/templates-e-mails.md)
 - [overview](/content/amp-dev/documentation/templates.md)
 [/destination-switch]
