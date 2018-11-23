@@ -59,13 +59,12 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 				color('azure-radiance'), color('robins-egg'));
 		background-size: 1200% 100%;
 		background-position: 0% 0%;
-		box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
   }
 
   &-expand {
     height: 190px;
     transition: height 0.5s ease;
-		background: transparent;
+		background: #fff;
 
 		@media screen and (min-width: 768px) {
 			height: 210px;
@@ -168,13 +167,13 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   &.all {
     @include color-blue-ribbon;
   }
+	
+	&.stories {
+		@include color-stories;
+	}
 
   &.ads {
     @include color-ads;
-  }
-
-  &.stories {
-    @include color-stories;
   }
 
   &.e-mails {
