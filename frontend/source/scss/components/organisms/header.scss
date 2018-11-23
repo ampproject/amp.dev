@@ -259,6 +259,7 @@
       width: 10px;
       height: 10px;
       margin-left: 5px;
+      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     &-list {
@@ -271,8 +272,17 @@
       margin: 0;
       padding: 0;
       background-color: color('white');
+      transition: max-height 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
       &-item {
+        &:first-child {
+          padding-top: 7px;
+        }
+
+        &:last-child {
+          padding-bottom: 7px;
+        }
+
         a {
           @include txt-font-accent;
           @include color-black;
@@ -291,7 +301,6 @@
     &-current:hover + ul,
     &-list:hover {
       max-height: 250px;
-      padding: 7px 0;
       transition: max-height 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
   }
