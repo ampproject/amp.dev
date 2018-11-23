@@ -2,6 +2,7 @@ from xml.dom import minidom
 
 from shortcodes import Shortcode
 
+
 class DestinationSwitchShortcode(Shortcode):
   name = 'destination-switch'
   render_empty = True
