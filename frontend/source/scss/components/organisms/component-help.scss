@@ -50,7 +50,7 @@ currently none
     display: flex;
     align-items: center;
 
-    & .#{atom(img)} {
+    & .#{atom('img')} {
       height: 100px;
       width: 100px;
       @include img-circle;
@@ -60,12 +60,5 @@ currently none
 
   &-divider {
     @include divider-header-mobile;
-  }
-
-  .#{molecule(lnk)} {
-    &-icon {
-      height: 2em;
-      width: 2em;
-    }
   }
 }
