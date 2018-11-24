@@ -1,13 +1,13 @@
 ---
 $title: Guides & Tutorials
-$path: /documentation/guides-and-tutorials.html
-
 $view: /views/overview/guides.j2
+$path: /documentation/guides-and-tutorials.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials.html
 $order: 1
+$hidden: true
 
 author: ampproject
-translator: ampproject
-$date: 11-09-2018
 ---
 # Learn AMP with Guides and tutorials
 [include('/content/shared/hints/content-missing.md')]
