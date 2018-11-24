@@ -117,8 +117,6 @@
       @include txt-strong;
       @include txt-font-accent;
       @include txt-1;
-      margin-bottom: 0;
-      color: color('blue-ribbon');
 
       a {
         color: color('blue-ribbon');
@@ -137,7 +135,6 @@
       &-selected {
         a {
           @include txt-strong;
-          margin-bottom: 0;
           color: color('blue-ribbon');
         }
       }
@@ -177,12 +174,6 @@
       &-expanded {
         margin-top: auto;
       }
-    }
-
-    &-divider {
-      height: 1px;
-      width: 100%;
-      background-color: color('blue-ribbon');
     }
   }
 
@@ -320,10 +311,6 @@
       @media screen and (min-width: 1024px) {
         @include txt-logo;
       }
-
-      &-uppercase {
-        text-transform: uppercase;
-      }
     }
 
     &-logo {
@@ -402,13 +389,4 @@
       }
     }
   }
-}
-
-##{organism('header')}-content-indicator {
-  position: absolute;
-  width: 1px;
-  height: calc(100% - 100vh);
-  top: calc(100vh + 2px);
-  left: 0;
-  pointer-events: none;
 }
