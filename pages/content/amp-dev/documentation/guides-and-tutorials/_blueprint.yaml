@@ -1,17 +1,8 @@
-path: /documentation/start/{base}.html
-view: /views/default.j2
+$title@: Guides & Tutorials
+$path: /documentation/guides-and-tutorials/{base}.html
+$view: /views/detail/docs-detail.j2
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/{base}.html
+$order: 1
 
-categories:
-  - Start
-  - Core concepts
-  - Design & Layout
-  - Develop
-  - Integration
-  - Optimize & Measure
-  - Interactivity & Dynamic Content
-  - Multimedia & Animations
-  - Advertising
-  - Analytics
-  - Integration
-  - Troubleshooting
-  - Contribute
+index: /content/amp-dev/documentation/guides-and-tutorials/index.md

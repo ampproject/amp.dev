@@ -1,4 +1,8 @@
-path: /documentation/guides-and-tutorials/optimize-measure/{base}.html
-view: /views/default.j2
+$title@: Optimize & Measure
+$path: /documentation/guides-and-tutorials/optimize-and-measure/{base}.html
+$view: /views/detail/docs-detail.j2
 
-category: Optimize & Measure
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/optimize-and-measure/{base}.html
+
+$order: 5

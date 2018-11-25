@@ -1,0 +1,11 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '_icon.scss';
+
+.#{atom('ico')} {
+	@include ico;
+	@include ico-1;
+}

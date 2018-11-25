@@ -1,0 +1,4 @@
+path: /documentation/components/c/{base}.html
+view: /views/detail/component-detail.j2
+
+category: C

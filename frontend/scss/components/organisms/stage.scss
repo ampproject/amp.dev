@@ -1,0 +1,125 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/_divider.scss';
+
+.#{organism('stage')} {
+  width: 100%;
+  height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+	@media screen and (min-width: 768px) {
+    height: auto;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+
+  &-clipped-background {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+
+      @media screen and (min-width: 768px) {
+        border-bottom-left-radius: 80px;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
+      }
+
+      @media screen and (min-width: 1080px) {
+        border-bottom-left-radius: 100px;
+      }
+  }
+
+	&-content {
+    padding: 10% 5%;
+    width: 100%;
+    z-index: 5;
+
+		@media screen and (min-width: 768px){
+      padding: 5%;
+      width: 50%;
+		}
+}
+
+	.hl {
+    @include hl;
+    @include hl-h2;
+		@include color-white;
+		margin: 0;
+    padding-right: 12px;
+
+    @media screen and (min-width: 1024px) {
+      @include hl-h3;
+    }
+
+
+		&-sub {
+      @include txt;
+      @include txt-2;
+      @include txt-strong;
+      @include color-white;
+
+      &:after {
+        content: '';
+        display: block;
+        margin-bottom: 30px;
+      }
+    }
+
+    &-inline {
+      height: 38px;
+      display: inline-block;
+      width: 180px;
+
+      @media screen and (min-width: 768px) {
+        width: 200px;
+      }
+    }
+
+		&-divider {
+			@include divider;
+			@include divider-stage;
+		}
+
+		&-stories {
+			@include color-stories;
+		}
+
+		&-ads {
+			@include color-ads;
+		}
+
+		&-emails {
+			@include color-e-mails;
+		}
+  }
+
+
+  .dark-blue {
+    @include gradient-default;
+  }
+
+  .light-blue {
+    @include gradient-websites;
+  }
+
+  .orange {
+    @include gradient-stories;
+  }
+
+  .purple {
+    @include gradient-ads;
+  }
+
+  .green {
+    @include gradient-e-mails;
+  }
+}

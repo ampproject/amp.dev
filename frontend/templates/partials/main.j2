@@ -14,12 +14,22 @@
     <section class="main">
       {% set docNoToc = doc.html.split('</div>', 1) %}
       {{ docNoToc[1]|render|safe }}
+      
+      {# Always assume doc.author and doc.translator are GitHub handles #}
+      {% if doc.author %}
+      <p class="ad-o-footer-hint ad-o-footer-hint-meta">This particular document was written by <a href="https://github.com/{{ doc.author }}" target="_blank" rel="nofollow">@{{ doc.author }}</a>{% if doc.translator %} and translated by <a href="https://github.com/{{ doc.translator }}" target="_blank" rel="nofollow">@{{ doc.translator }}</a>{% endif %}.</p>
+      {% endif %}
     </section>
 
   {% else %}
 
     <section class="main">
       {{ doc.html|render|safe }}
+      
+      {# Always assume doc.author and doc.translator are GitHub handles #}
+      {% if doc.author %}
+      <p class="ad-o-footer-hint ad-o-footer-hint-meta">This particular document was written by <a href="https://github.com/{{ doc.author }}" target="_blank" rel="nofollow">@{{ doc.author }}</a>{% if doc.translator %} and translated by <a href="https://github.com/{{ doc.translator }}" target="_blank" rel="nofollow">@{{ doc.translator }}</a>{% endif %}.</p>
+      {% endif %}
     </section>
 
   {% endif %}
@@ -31,8 +41,8 @@
     <h1>{{ doc.title }}</h1>
     <div class="ad-m-tip-container">
       <div class="ad-m-tip ad-m-tip-default">
-        <h4>We are setting things up!</h4>
-        <p>For now this page is purposefully empty. We are going to take care of adding the content for this one soon.<br><br>In the meantime you might find the technical information about this document below helpful.</p>
+        <h4>Empty space.</h4>
+        <p>For now this page is purposefully empty. Its only purpose is to have something to link to if the real content does not yet exist.</p>
 
         <div class="ad-m-code-snippet">
           <pre>

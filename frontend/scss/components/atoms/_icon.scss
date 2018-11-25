@@ -69,9 +69,3 @@ square
 	fill: color('white');
 	background-color: color('blue-ribbon');
 }
-
-// Default icon styling
-.#{atom('ico')} {
-	@include ico;
-	@include ico-1;
-}

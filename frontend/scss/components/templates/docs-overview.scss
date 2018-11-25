@@ -21,4 +21,14 @@
 
 .#{template('docs-overview')} {
   @include container;
+  
+  section {
+    &.main,
+    &.teaser-grid {
+      @media screen and (min-width: 1024px){
+        grid-column-start: 7;
+        grid-column-end: 25;
+      }
+    }
+  }
 }

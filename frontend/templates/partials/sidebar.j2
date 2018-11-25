@@ -7,20 +7,20 @@
 <section class="sidebar">
   <div class="ad-o-sidebar">
 
-    <div class="destination-stage websites websites-background">
-      <div class="destination-stage-content">
+    <div class="destination-stage-sidebar websites websites-background">
+      <div class="destination-stage-sidebar-content">
         <span class="hl">Select your topic:</span>
-        <div class="destination-list-view-box destination-list-view-box-gradient"
-          [class]="toggle ? 'destination-list-view-box destination-list-view-box-gradient destination-list-view-box-expand': 'destination-list-view-box destination-list-view-box-gradient'">
+        <div class="destination-list-view-box-sidebar destination-list-view-box-sidebar-gradient"
+          [class]="toggle ? 'destination-list-view-box-sidebar destination-list-view-box-sidebar-gradient destination-list-view-box-expand': 'destination-list-view-box-sidebar destination-list-view-box-sidebar-gradient'">
             <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-list-icon">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
             </button>
           <amp-selector layout="container">
             <ul class="destination-list">
-              {% set filters = ['all', 'websites', 'ads', 'stories', 'e-mails'] %}
+              {% set filters = ['all', 'websites', 'stories', 'ads', 'e-mails'] %}
               {% for filter in filters %}
                 <li class="{{ filter }}" option="{{ filter }}">
-                  <a href="#" class="destination-list-item destination-list-item-drop-down {{ filter }} {{ filter }}-background">
+                  <a href="#" class="destination-list-item-sidebar destination-list-item-sidebar-drop-down {{ filter }} {{ filter }}-background">
                     {{ filter }}
                   </a>
                 </li>
@@ -30,64 +30,53 @@
         </div>
       </div>
     </div>
-    <div class="ad-o-sidebar-list ad-o-sidebar-list-main">
-      <amp-accordion animate>
+    <div class="nav">
+      {% macro nav_tree(root, iteration=1, depth=None) -%}
+      <ul class="nav-list level-{{ iteration }}">
+          {% set collections = root.collections()|sort(attribute='order') %}
+          {% set documents = root.list_docs(order_by='order') %}
 
-        {% for collections in g.collection('amp-dev/documentation').collections() %}
+          {% if not depth or iteration <= depth %}
+          {% for collection in collections %}
+          {% set currentCollectionPaths = doc.collection.collection_path.split('/') %}
+          {% set allCollectionPaths = collection.collection_path.split('/') %}
+          {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
 
-          {# get all collections inside of documentation, split its path and render only the collections related to current document #}
-          {% set collectionName = collections.collection_path.split('/')[2] %}
+          <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
+            {% set collection_index = g.doc('content/' + collection.collection_path + '/index.md') %}
+            {% if collection_index.exists %}
+            <a class="nav-link" href="{{ collection_index.url }}">{{ collection.title }}</a>
+            {% else %}
+            <span class="nav-link">{{ collection.title }}</span>
+            {% endif %}
+            <input class="nav-trigger" {% if activeCollection %}checked {% endif %} type="checkbox">
+            <div class="nav-icon">
+              {% if iteration==1 %}
+              <svg class="ad-a-ico solid"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+              {% else %}
+              <svg class="ad-a-ico light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-light"></use></svg>
+              {% endif %}
+            </div>
+            {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
+          </li>
+          {% endfor %}
 
-          {# if a document is nested deeper than one collection, get the name of its parent collection #}
-          {% set currenctDocCollection = doc.url.path.split('/')[2] %}
-
-          {% if collectionName == doc.base or collectionName == currenctDocCollection %}
-            {% for category in collections.categories %}
-              <section class="ad-o-sidebar-list-section">
-                <header class="ad-o-sidebar-list-item ad-o-sidebar-list-header">
-                  {{ category }}
-                  <div class="ad-a-ico ad-o-sidebar-list-icon">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-                  </div>
-                </header>
-                <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
-
-                {% for subCollections in g.collection(collections.collection_path).collections() %}
-                {% if subCollections.category == category %}
-                  {% for subDocs in g.docs(subCollections.collection_path) %}
-                     <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
-                      <a href="{{ subDocs.url.path }}" class="ad-o-sidebar-list-item-lnk {% if subDocs.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
-                        {{ subDocs.title }}
-                      </a>
-                    </li>
-
-                    {# start of third level content rendering #}
-                    {% for subDocsCollections in g.collection(subCollections.collection_path).collections() %}
-                      {% if subDocsCollections.category == subDocs.title %}
-                      <ul class="ad-o-sidebar-list ad-o-sidebar-list-sub">
-                        {% for thirdLevelDocuments in  g.docs(subDocsCollections.collection_path) %}
-                         <li class="ad-o-sidebar-list-item ad-o-sidebar-list-item-sub">
-                            <a href="{{ thirdLevelDocuments.url.path }}" class="ad-o-sidebar-list-item-lnk {% if thirdLevelDocuments.title == doc.title %} ad-o-sidebar-list-item-lnk-selected {% endif %}">
-                              {{ thirdLevelDocuments.title }}
-                            </a>
-                          </li>
-                        {% endfor %}
-                        </ul>
-                      {% endif %}
-                    {% endfor %}
-                    {# end of third level content rendering #}
-                  {% endfor %}
-                  {# end of second level content rendering #}
-                  {% endif %}
-                {% endfor %}
-                </ul>
-              </section>
-            {% endfor %}
+          {% for document in documents %}
+          {# Only list the document if it matches the current locale #}
+          {% if doc.locale == document.locale %}
+          {% set activeDocument = true if document.url == doc.url %}
+          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}">
+            <a class="nav-link" href="{{ document.url }}">{{ document.title }}</a>
+          </li>
           {% endif %}
-        {% endfor %}
+          {% endfor %}
+          {% endif %}
+      </ul>
+      {%- endmacro %}
 
-      </amp-accordion>
+      {% set split_path = doc.collection.collection_path.split('/') %}
+      {% set current_path = '/'.join(split_path[:3]) %}
+      {{ nav_tree(root=g.collection(current_path)) }}
     </div>
-
   </div>
 </section>

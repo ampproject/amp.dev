@@ -1,5 +1,0 @@
-path: /overview/websites/{base}.html
-view: /views/default.j2
-
-localization:
-  path: /{locale}/overview/websites/{base}.html

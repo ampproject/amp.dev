@@ -34,13 +34,13 @@ read-on
   width: 100%;
   background: color('white');
   border-right: 5px solid color('malachite');
-  padding: 25px 30px 70px 25px;
+  padding: 25px 30px 25px 25px;
   grid-row: span 1;
   position: relative;
 
   @media screen and (min-width: 768px) {
     width: auto;
-    padding: 25px 55px 55px 40px;
+    padding: 25px 55px 25px 40px;
   }
 
   &-default {

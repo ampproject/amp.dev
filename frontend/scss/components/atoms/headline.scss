@@ -14,7 +14,9 @@ h5 {
 	margin-top: 2em;
 	
 	&:first-child {
-		margin-top: 0;
+		section.main & {
+			margin-top: 0;
+		}
 	}
 	
 	.toc + & {
