@@ -107,14 +107,27 @@
 
     <nav class="ad-o-header-nav ad-o-header-subnav">
       <ul class="ad-o-header-list ad-o-header-list-subnav">
-        {% for sub_section in active_section.collections()|sort(attribute='order') %}
+      {# Check if the document or collections defines its own sub navigation #}
+      {% if doc.collection.sub_navigation or doc.sub_navigation %}
+      {% set sub_navigation_items = doc.collection.sub_navigation or doc.sub_navigation %}
+      {% for item in sub_navigation_items %}
+      <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if doc == item %}ad-o-header-lnk-subnav-selected{% endif %}">
+        <a href="{{ item }}">{{ item }}</a>
+      </li>
+      {% endfor %}
+
+      {# Otherwise fallback to sub collections and their indexes #}
+      {% else %}
+      {% set sub_sections = active_section.collections()|sort(attribute='order') %}
+        {% for sub_section in sub_sections %}
         {% if sub_section.index %}
         {% set section_index = g.doc(sub_section.index, locale=doc.locale) %}
         <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if section_index == doc %}ad-o-header-lnk-subnav-selected{% endif %}">
-          <a href="{{ section_index.url.path }}">{{ section_index.title }}</a>
+          <a href="{{ section_index.url.path }}">{{ section_index.titles('header') }}</a>
         </li>
         {% endif %}
         {% endfor %}
+      {% endif %}
       </ul>
     </nav>
   </div>
