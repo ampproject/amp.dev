@@ -1,44 +1,24 @@
-/*
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
 
-##################
-### Organism: Destination Drop Down Stage ###
-##################
-
-### INFO:
-
-The destination-rolling-stage organism contains the drop down switch molecule along with a headline.
-
-The background of the destination-stage requires the heroEnterAnimation mixin.
-
-### MODIFIERS:
-
- - active
-		triggers the heroEnterAnimation mixin.
-
-*/
-
-@import '../molecules/destination-switch';
-@import '../atoms/_divider.scss';
 @import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/_divider.scss';
 
-
-@include heroEnterAnimation;
-@include rollingAnimation;
-
-.destination-stage {
+.#{organism('stage')} {
   width: 100%;
   height: calc(100vh - 110px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  // animation: growDown 0.5s ease-in-out;
-
 
 	@media screen and (min-width: 768px) {
     height: auto;
     flex-direction: row-reverse;
     width: 100%;
-    animation: none;
   }
 
   &-clipped-background {

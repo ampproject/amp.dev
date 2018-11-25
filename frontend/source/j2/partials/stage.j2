@@ -2,33 +2,22 @@
 {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
 {% do doc.icons.useIcon('icons/angle-down-light.svg') %}
 
-{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
-</section>
-<section class="stage">
-{% endif %}
+{% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
-{% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown.css') %}
-
-<div class="destination-stage">
-  <div class="destination-stage-clipped-background {{ stage_background_color }}"></div>
-  <div class="destination-stage-content">
+<section class="ad-o-stage">
+  <div class="ad-o-stage-clipped-background {{ background_color }}"></div>
+  <div class="ad-o-stage-content">
 		<span class="hl-sub">{{ sub_headline }}</span>
 		<span class="hl"> {{ headline }}</span>
-    <div class="hl-inline">
-      {% if destination_switch %}
-        {{ destination_switch|safe }}
-      {% endif %}
-    </div>
+    {% if destination_switch %}
+    <div class="hl-inline">{{ destination_switch|safe }}</div>
+    {% endif %}
     {% if headline_part_two %}
-		  <span class="hl">{{ headline_part_two }}</span>
+    <span class="hl">{{ headline_part_two }}</span>
     {% endif %}
-    {% if button_link %}
-      <a href="{{ g.doc(button_link).url }}">{{ button_title }}</a>
-    {% endif %}
-    </div>
-	</div>
 
-{% if doc.view == '/views/detail/docs-detail.j2' or '/views/overview/template-overview.j2' %}
+    {% if button.link and button.text %}
+    <a href="{{ g.doc(button.link).url.path }}">{{ button.text }}</a>
+    {% endif %}
+	</div>
 </section>
-<section class="main">
-{% endif %}
