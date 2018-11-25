@@ -1,6 +1,8 @@
-path: /overview/{base}.html
-view: /views/default.j2
-title: "Overview"
-
-localization:
+$path: /overview/{base}.html
+$view: /views/default.j2
+$title: Overview
+$localization:
   path: /{locale}/overview/{base}.html
+$order: 1
+
+index: /content/amp-dev/overview/websites/index.md

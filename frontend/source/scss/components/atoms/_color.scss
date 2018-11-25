@@ -15,72 +15,28 @@ Text atom could be used almost everywhere.
 It has multiple size modifiers (more could be added below).
 
 */
+@mixin color-black { color: color('black'); }
+@mixin color-blue-ribbon { color: color('blue-ribbon'); }
+@mixin color-silver { color: color('silver'); }
+@mixin color-gray-chateau { color: color('gray-chateau'); }
+@mixin color-white { color: color('white'); }
 
-@mixin color-black {
-	color: color('black');
-}
+@mixin color-websites { color: color('white'); }
+@mixin color-stories { color: color('ultramarine'); }
+@mixin color-ads { color: color('white'); }
+@mixin color-e-mails { color: color('ultramarine'); }
+@mixin color-overview { color: color('mine-shaft'); }
 
-@mixin color-blue-ribbon {
-	color: color('blue-ribbon');
-}
+@mixin fill-websites { fill: color('white'); }
+@mixin fill-stories { fill: color('ultramarine'); }
+@mixin fill-ads { fill: color('white'); }
+@mixin fill-e-mails { fill: color('ultramarine'); }
+@mixin fill-overview { fill: color('mine-shaft'); }
 
-@mixin color-silver {
-	color: color('silver');
-}
-
-@mixin color-gray-chateau {
-	color: color('gray-chateau');
-}
-
-@mixin color-white {
-	color: color('white');
-}
-
-@mixin color-websites {
-	@include color-white;
-}
-
-@mixin color-stories {
-	color: color('ultramarine');
-}
-
-@mixin color-ads {
-	color: color('hawkes-blue');
-}
-
-@mixin color-e-mails {
-	color: color('reef');
-}
-
-@mixin color-overview {
-  color: color('mine-shaft');
-}
-
-@mixin gradient-default {
-  background: linear-gradient(45deg, color('blue-ribbon'), color('robins-egg'));
-}
-
-@mixin gradient-websites {
-  background: linear-gradient(45deg, color('robins-egg'), color('blue-ribbon'));
-
-}
-
-@mixin gradient-stories {
-	background: linear-gradient(45deg,  color('pizazz'), color('school-bus'));
-}
-
-@mixin gradient-ads {
-	background: linear-gradient(45deg,  color('electric-violet'), color('lavender-magenta'));
-}
-
-@mixin gradient-e-mails {
-	background: linear-gradient(45deg, color('forest-green'), color('confetti'));
-}
-
-@mixin gradient-e-mails-alt {
-	background: linear-gradient(45deg, color('forest-green'), color('manz'));
-}
-
-@mixin gradient-overview {
-	background: color('white');
-}
+@mixin gradient-default { background: linear-gradient(45deg, color('blue-ribbon'), color('robins-egg')); }
+@mixin gradient-websites { background: linear-gradient(45deg, color('robins-egg'), color('blue-ribbon')); }
+@mixin gradient-stories { background: linear-gradient(45deg,  color('pizazz'), color('school-bus')); }
+@mixin gradient-ads { background: linear-gradient(45deg,  color('electric-violet'), color('lavender-magenta')); }
+@mixin gradient-e-mails { background: linear-gradient(45deg, color('forest-green'), color('confetti')); }
+@mixin gradient-e-mails-alt { background: linear-gradient(45deg, color('forest-green'), color('manz')); }
+@mixin gradient-overview { background: color('white'); }

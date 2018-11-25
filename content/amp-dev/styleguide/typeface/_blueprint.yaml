@@ -1,6 +1,0 @@
-path: /styleguide/typeface/{base}.html
-view: /views/default.j2
-title: Typeface
-
-localization:
-  path: /{locale}/styleguide/typeface/{base}.html

@@ -2,12 +2,12 @@
 $title: Validate AMP pages
 $order: 7
 toc: true
-components:
-    - youtube
 ---
 [TOC]
 
-{{ youtube('npum8JsITQE', 480, 270, caption='Watch our video about the various validation options.') }}
+[video]
+[](https://www.youtube.com/watch?v=npum8JsITQE)
+[/video]
 
 The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be *validated*. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
 
@@ -264,11 +264,10 @@ Each tool gives several pieces of information:
      documentation for the `<amp-img>` tag. Not all errors generate
      documentation links.
 
-Carefully re-reading the [spec]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
+Carefully re-reading the spec, we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
 
 To better understand the complete list of potential errors,
 see the [AMP Validation Errors guide](https://www.ampproject.org/docs/reference/validation_errors.html).
 If you’re still stuck after careful evaluation, [ask a
 question](http://stackoverflow.com/questions/tagged/amp-html) and we'll try to
 help.
-

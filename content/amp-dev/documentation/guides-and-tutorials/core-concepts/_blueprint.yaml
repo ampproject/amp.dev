@@ -1,7 +1,8 @@
-path: /documentation/guides-and-tutorials/core-concepts/{base}.html
-view: /views/default.j2
+$title@: Core Concepts
+$path: /documentation/guides-and-tutorials/core-concepts/{base}.html
+$view: /views/detail/docs-detail.j2
 
-localization:
+$localization:
   path: /{locale}/documentation/guides-and-tutorials/core-concepts/{base}.html
 
-category:  Core concepts
+$order: 2

@@ -19,7 +19,6 @@
 
 @import '../molecules/_link.scss';
 
-
 .#{organism('header')} {
   width: 100%;
   position: -webkit-sticky;
@@ -75,7 +74,6 @@
         @media screen and (min-width: 1024px) {
           display: none;
         }
-
       }
     }
 
@@ -86,11 +84,10 @@
 
       @media screen and (min-width: 1024px) {
         height: 45px;
-        padding-left: 100px;
+        padding-left: 105px;
         overflow: hidden;
       }
     }
-
   }
 
   &-lnk {
@@ -105,7 +102,6 @@
       @include txt-font-accent;
       @include hl-h4;
       @include color-black;
-
       margin: 0;
 
       &:hover {
@@ -121,8 +117,6 @@
       @include txt-strong;
       @include txt-font-accent;
       @include txt-1;
-      margin-bottom: 0;
-      color: color('blue-ribbon');
 
       a {
         color: color('blue-ribbon');
@@ -130,8 +124,7 @@
     }
 
     &-subnav {
-      margin: 0;
-      margin-left: 20px;
+      margin: 0 15px;
 
       a {
         @include txt;
@@ -140,10 +133,8 @@
       }
 
       &-selected {
-
         a {
           @include txt-strong;
-          margin-bottom: 0;
           color: color('blue-ribbon');
         }
       }
@@ -153,7 +144,7 @@
       position: -webkit-sticky;
       position: sticky;
       top: 10px;
-      margin: 10px 0px 10px 20px;
+      margin: 10px 0 10px 20px;
       display: flex;
 
       @media screen and (min-width: 768px) {
@@ -164,7 +155,7 @@
         margin: 10px 0 10px 30px;
       }
 
-      a  {
+      a {
         @include color-blue-ribbon;
       }
     }
@@ -178,17 +169,11 @@
     }
 
     &-support {
-      margin: 0 30px 0 30px;
+      margin: 0 30px;
 
       &-expanded {
         margin-top: auto;
       }
-    }
-
-    &-divider {
-      height: 1px;
-      width: 100%;
-      background-color: color('blue-ribbon');
     }
   }
 
@@ -219,7 +204,6 @@
     }
   }
 
-
   &-subnav {
     display: block;
     flex: 1 1 100%;
@@ -236,64 +220,85 @@
     }
   }
 
-.ad-o-header-lang-box {
-  display: flex;
-  height: 25px;
-  cursor: pointer;
+  &-lang {
+    &-switcher {
+      display: flex;
+      position: relative;
 
-  &:hover {
-    .ad-o-header-lang-list {
-      :nth-child(n+2) {
-        opacity: 1;
-        transition: opacity 0.5s ease-in-out;
-      }
-    }
-  }
-}
-
-.ad-o-langicon {
-  width:10px;
-  height:10px;
-  padding: 8px 0;
-  position: relative;
-}
-
-  &-lang-list {
-    list-style: none;
-    text-transform: uppercase;
-    text-align: center;
-    padding-left:0;
-
-    :nth-child(n+2) {
-      opacity:0;
-    }
-
-    :last-child{
-      padding-bottom:10px;
-    }
-
-    a {
-      @include txt-font-accent;
-      @include color-black;
-    }
-
-    li {
-      padding:0 5px;
-      background-color: color('white');
-      &:hover{
-        background-color: color('whisper');
-        a {
-          font-weight:bolder;
-          @include color-blue-ribbon;
+      &:hover {
+        .#{atom('ico')} {
+          transform: rotate(180deg);
         }
       }
+    }
+
+    &-current {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        @include txt-font-accent;
+        @include color-black;
+        display: block;
+        padding: 0 0 0 10px;
+        text-transform: uppercase;
+      }
+    }
+
+    &-icon.#{atom('ico')} {
+      width: 10px;
+      height: 10px;
+      margin-left: 5px;
+      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    &-list {
+      overflow: hidden;
+      max-height: 0;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: color('white');
+      transition: max-height 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+      &-item {
+        &:first-child {
+          padding-top: 7px;
+        }
+
+        &:last-child {
+          padding-bottom: 7px;
+        }
+
+        a {
+          @include txt-font-accent;
+          @include color-black;
+          display: block;
+          padding: 2px 15px 2px 10px;
+          text-transform: uppercase;
+        }
+
+        &:hover a {
+          @include color-blue-ribbon;
+          background-color: color('whisper');
+        }
+      }
+    }
+
+    &-current:hover + ul,
+    &-list:hover {
+      max-height: 250px;
+      transition: max-height 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
   }
 
   &-icon {
     display: flex;
     align-items: center;
-
 
     & svg {
       @include ico;
@@ -305,10 +310,6 @@
 
       @media screen and (min-width: 1024px) {
         @include txt-logo;
-      }
-
-      &-uppercase {
-        text-transform: uppercase;
       }
     }
 
@@ -329,14 +330,14 @@
     margin-left: 4px;
     transition: opacity 0.5s ease;
 
-    @media screen and (min-width: 1024px ){
+    @media screen and (min-width: 1024px) {
       display: none;
     }
   }
 
   &-search {
     margin-right: 0;
-    padding: 17.5px 0 12.5px 0;
+    padding: 17.5px 0 12.5px;
 
     @media screen and (min-width: 1024px) {
       margin-left: auto;
@@ -355,7 +356,7 @@
     right: 0;
     z-index: 100;
 
-    @media screen and (min-width: 1024px){
+    @media screen and (min-width: 1024px) {
       display: none;
     }
 
@@ -364,7 +365,7 @@
       height: 30px;
       padding: 12px 20px;
 
-      @media screen and (min-width: 768px){
+      @media screen and (min-width: 768px) {
         padding: 12px 30px;
       }
     }
@@ -383,18 +384,9 @@
       }
 
       &:checked ~ .ad-o-header-lnk .ad-o-header-title {
-          opacity: 0;
-          transition: opacity 0.5s ease;
-        }
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
     }
   }
-}
-
-##{organism('header')}-content-indicator {
-  position: absolute;
-  width: 1px;
-  height: calc(100% - 100vh);
-  top: calc(100vh + 2px);
-  left: 0;
-  pointer-events: none;
 }
