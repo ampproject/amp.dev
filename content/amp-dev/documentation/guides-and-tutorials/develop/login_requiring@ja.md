@@ -10,5 +10,5 @@ $title: ログインが必要な AMP ページを作成する
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">始める</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login.md locale=doc.locale).url.path}}"><span class="arrow-next">始める</span></a>
 </div>

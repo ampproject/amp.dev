@@ -127,7 +127,7 @@ La entrega de páginas de carga rápida requiere imágenes optimizadas: en tama�
 
 En HTML, puede servir diferentes formatos de imagen utilizando la etiqueta `picture`. En AMP, aunque la etiqueta `picture` no es compatible, puede servir a diferentes imágenes mediante el atributo de `fallback`.
 
-Leer más: Para aprender más acerca de los fallbacks, lee la guía [Placeholders & Fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Leer más: Para aprender más acerca de los fallbacks, lee la guía [Placeholders & Fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/placeholders.md', locale=doc.locale).url.path}}).
 
 ##### Ejemplo: Sirva diferentes formatos de imagen
 

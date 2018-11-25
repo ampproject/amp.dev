@@ -124,6 +124,6 @@ article {
 ページの見栄えがよくなりました。では、仕上げとしてフォントをカスタマイズします。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
   <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

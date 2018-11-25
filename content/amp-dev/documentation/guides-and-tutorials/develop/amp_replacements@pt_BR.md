@@ -73,7 +73,7 @@ Leia mais Saiba mais sobre [técnicas de layout avançadas]({{g.doc('/content/do
 
 O tempo de execução das AMP em HTML pode gerenciar recursos de imagens de maneira eficiente, escolhendo atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na conexão de largura de banda ou em outros fatores.
 
-Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/placeholders.md', locale=doc.locale).url.path}}).
 
 ## Imagens animadas
 

@@ -72,7 +72,7 @@ Leer más: Consulta más información sobre [las técnicas de diseño avanzadas]
 
 El tiempo de ejecución de HTML en AMP permite gestionar recursos de imagen de una forma muy eficaz porque puedes elegir si retrasar o priorizar la carga de recursos en función de la posición de la ventana gráfica, los recursos del sistema, el ancho de banda de la conexión y otros factores.
 
-Leer más: Descubre cómo [proporcionar alternativas y marcadores de posición para imágenes]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Leer más: Descubre cómo [proporcionar alternativas y marcadores de posición para imágenes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/placeholders.md', locale=doc.locale).url.path}}).
 
 ## Imágenes animadas
 

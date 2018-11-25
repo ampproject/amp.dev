@@ -125,7 +125,7 @@ Menampilkan halaman yang dimuat dengan cepat memerlukan gambar yang dioptimalkan
 
 Di HTML, Anda dapat menampilkan format gambar yang berbeda menggunakan tag `picture`.  Di AMP, meskipun tag `picture` tidak didukung, Anda dapat menampilkan gambar yang berbeda menggunakan atribut `fallback`.
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/placeholders.md', locale=doc.locale).url.path}}).
 
 ##### Contoh: Menampilkan format gambar yang berbeda
 

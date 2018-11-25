@@ -132,7 +132,7 @@ Delivering fast loading pages requires optimized images--in size, quality, and f
 
 In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.
 
-Read on: To learn more about fallbacks, see the [Placeholders & Fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) guide.
+Read on: To learn more about fallbacks, see the [Placeholders & Fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/placeholders.md', locale=doc.locale).url.path}}) guide.
 
 ##### Example: Serve different image formats
 

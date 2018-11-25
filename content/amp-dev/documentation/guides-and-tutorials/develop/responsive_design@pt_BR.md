@@ -125,7 +125,7 @@ Para exibir páginas de carregamento rápido, é preciso ter imagens otimizadas 
 
 Em HTML, você pode veicular diferentes formatos de imagem usando a tag `picture`.  Em AMP, embora a tag `picture` não seja compatível, é possível veicular diferentes imagens com o atributo `fallback`.
 
-Leia mais: Para saber mais sobre substitutos, consulte o guia [Substitutos e marcadores]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Leia mais: Para saber mais sobre substitutos, consulte o guia [Substitutos e marcadores]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/placeholders.md', locale=doc.locale).url.path}}).
 
 ##### Exemplo: como veicular diferentes formatos de imagem
 

@@ -125,7 +125,7 @@ $title: 制作自适应 AMP 网页
 
 在 HTML 中，您可以使用 `picture` 标记来提供不同格式的图片。在 AMP 中，虽然 `picture` 标记不受支持，但您可以使用 `fallback` 属性来提供不同的图片。
 
-继续阅读: 要详细了解备用行为，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})指南。
+继续阅读: 要详细了解备用行为，请参阅[占位符和备用行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/placeholders.md', locale=doc.locale).url.path}})指南。
 
 ##### 示例：提供不同格式的图片
 

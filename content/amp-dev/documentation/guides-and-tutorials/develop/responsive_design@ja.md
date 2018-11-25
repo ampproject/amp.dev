@@ -125,7 +125,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 HTML では `picture` タグを使うことで、異なる画像形式を配信できます。AMP では `picture` タグはサポートされていませんが、`fallback` 属性を使うことで、異なる画像を配信できます。
 
-詳細情報: フォールバックについて詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
+詳細情報: フォールバックについて詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
 
 ##### 例: 異なる画像形式を配信する
 

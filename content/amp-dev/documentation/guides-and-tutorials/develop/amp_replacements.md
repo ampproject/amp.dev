@@ -85,7 +85,7 @@ The AMP HTML runtime can effectively manage image resources,
 choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
-Read on: Learn how to [provide fallbacks and placeholders for images]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Read on: Learn how to [provide fallbacks and placeholders for images]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/placeholders.md', locale=doc.locale).url.path}}).
 
 ## Animated images
 

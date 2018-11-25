@@ -45,7 +45,7 @@ Kemudian, buka <a href="http://localhost:3000">http://localhost:3000</a> di brow
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
  
  
