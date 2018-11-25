@@ -1,12 +1,20 @@
 ---
-$title: Benefits
-$order: 2
+$title: Benefits when using AMP for stories
+$titles:
+  header: Benefits
 ---
-
-[stage color="light-blue"]
+[stage color="orange"]
 ## Why should I use AMP?
-# Improve user engagement with rich and immersive AMP stories
+# Improve user engagement with rich and immersive AMP
+[destination-switch type="selected" selected="stories"]
+- [websites](/content/amp-dev/overview/benefits/websites.md)
+- [stories](/content/amp-dev/overview/benefits/stories.md)
+- [ads](/content/amp-dev/overview/benefits/ads.md)
+- [e-mails](/content/amp-dev/overview/benefits/emails.md)
+[/destination-switch]
 [/stage]
+
+[include('/content/shared/hints/content-missing.md')]
 
 AMP stories provides content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. AMP stories offer design flexibility, are quick and easy to build and are specifically designed for mobile consumption. Worry less about tech, and have more time to make fast and captivating user-first stories that will go viral.
 
@@ -84,10 +92,11 @@ IMAGE/ICON
 
 All AMP stories
 
-## Explore AMP stories success stories
-TM_SUCCESS_STORY_TEASER HEADLINE
-SUCCESS STORY 1
-SUCCESS STORY 2
-SUCCESS STORY 3
+[teaser-grid]
+# Explore AMP success stories
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story.md)
 
-All success stories
+[See more success stories](#)
+[/teaser-grid]

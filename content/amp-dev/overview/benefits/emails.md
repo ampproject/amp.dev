@@ -1,12 +1,20 @@
 ---
-$title: Benefits
-$order: 2
+$title: Benefits when using AMP for email
+$titles:
+  header: Benefits
 ---
-
-[stage color="light-blue"]
+[stage color="green"]
 ## Why should I use AMP?
-# Improve user engagement with rich and immersive AMP email
+# Improve user engagement with rich and immersive AMP
+[destination-switch type="selected" selected="e-mails"]
+- [websites](/content/amp-dev/overview/benefits/websites.md)
+- [stories](/content/amp-dev/overview/benefits/stories.md)
+- [ads](/content/amp-dev/overview/benefits/ads.md)
+- [e-mails](/content/amp-dev/overview/benefits/emails.md)
+[/destination-switch]
 [/stage]
+
+[include('/content/shared/hints/content-missing.md')]
 
 More than 270 billion emails are sent every day, it is the pillar of many consumer and enterprise workflows. However the content that is sent in an email message is still limited – messages are static, can become out of date, and are not actionable without opening a browser. AMPHTML email seeks to enhance and modernize the email experience through added support for dynamic content and interactivity while keeping users safe. AMPHTML for email makes modern App functionality available within email.
 
@@ -93,10 +101,11 @@ IMAGE/ICON
 Duis dolor
 IMAGE/ICON
 
-## Explore AMP success stories
-TM_SUCCESS_STORY_TEASER HEADLINE
-SUCCESS STORY 1
-SUCCESS STORY 2
-SUCCESS STORY 3
+[teaser-grid]
+# Explore AMP success stories
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story.md)
 
-See more success stories
+[See more success stories](#)
+[/teaser-grid]

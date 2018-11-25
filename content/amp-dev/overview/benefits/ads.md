@@ -1,12 +1,20 @@
 ---
-$title: Benefits
-$order: 2
+$title: Benefits when using AMP for ads
+$titles:
+  header: Benefits
 ---
-
-[stage color="light-blue"]
+[stage color="purple"]
 ## Why should I use AMP?
-# Improve user engagement with rich and immersive AMP ads
+# Improve user engagement with rich and immersive AMP
+[destination-switch type="selected" selected="ads"]
+- [websites](/content/amp-dev/overview/benefits/websites.md)
+- [stories](/content/amp-dev/overview/benefits/stories.md)
+- [ads](/content/amp-dev/overview/benefits/ads.md)
+- [e-mails](/content/amp-dev/overview/benefits/emails.md)
+[/destination-switch]
 [/stage]
+
+[include('/content/shared/hints/content-missing.md')]
 
 Advertising continues to be the cornerstone of every publisher’s business model; AMP is fundamentally changing the way ads are built and delivered on the web by supporting ads that are fast, safe, compelling and effective for users.
 
@@ -103,13 +111,11 @@ IMAGE/ICON
 Duis dolor
 IMAGE/ICON
 
-See more use cases
+[teaser-grid]
+# Explore AMP success stories
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story.md)
 
-## Explore AMP success stories
-
-TM_SUCCESS_STORY_TEASER HEADLINE
-SUCCESS STORY 1
-SUCCESS STORY 2
-SUCCESS STORY 3
-
-See more success stories
+[See more success stories](#)
+[/teaser-grid]

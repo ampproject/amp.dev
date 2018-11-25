@@ -1,14 +1,20 @@
 ---
-$title: Amp Framework
-$path: /overview/ads.html
-order: 1
+$title: What is AMP for ads
+$titles:
+  header: Framework
 ---
-
-[stage color="light-blue"]
+[stage color="purple"]
 ## What is AMP?
-# AMP is a web component framework to easily create user first Ads.
+# AMP is a web component framework to easily create user first
+[destination-switch type="selected" selected="ads"]
+- [websites](/content/amp-dev/overview/framework/websites.md)
+- [stories](/content/amp-dev/overview/framework/stories.md)
+- [ads](/content/amp-dev/overview/framework/ads.md)
+- [e-mails](/content/amp-dev/overview/framework/emails.md)
+[/destination-switch]
 [/stage]
 
+[include('/content/shared/hints/content-missing.md')]
 
 [video]
 []https://www.youtube.com/watch?v=9Cfxm7cikMY
@@ -65,19 +71,19 @@ AMP offers a way for you to give users a faster experience everywhere: on ads, l
 }
 ```
 
-## Explore use cases of AMP
-- TM_USE_CASE_TEASER 1
-- TM_USE_CASE_TEASER 2
-- TM_USE_CASE_TEASER 3
-- TM_USE_CASE_TEASER 4
+[teaser-grid]
+# Explore the possibilities of AMP ads
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case.md)
 
-All use cases
+[See more use cases](#)
+[/teaser-grid]
 
-## Explore AMP success stories
-All success stories
+[teaser-grid]
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story.md)
 
-- SUCCESS STORY 1
-- SUCCESS STORY 2
-- SUCCESS STORY 3
-
-See more ad success stories
+[See more success stories](#)
+[/teaser-grid]

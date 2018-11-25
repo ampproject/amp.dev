@@ -1,12 +1,20 @@
 ---
-$title: Amp Framework
-$path: /overview/emails.html
+$title: What is AMP for email
+$titles:
+  header: Framework
 ---
-
-[stage]
+[stage color="green"]
 ## Why should I use AMP?
-# Improve user engagement with rich and immersive AMP email
+# Improve user engagement with rich and immersive
+[destination-switch type="selected" selected="e-mails"]
+- [websites](/content/amp-dev/overview/framework/websites.md)
+- [stories](/content/amp-dev/overview/framework/stories.md)
+- [ads](/content/amp-dev/overview/framework/ads.md)
+- [e-mails](/content/amp-dev/overview/framework/emails.md)
+[/destination-switch]
 [/stage]
+
+[include('/content/shared/hints/content-missing.md')]
 
 More than 270 billion emails are sent every day, it is the pillar of many consumer and enterprise workflows. However the content that is sent in an email message is still limited – messages are static, can become out of date, and are not actionable without opening a browser. AMPHTML email seeks to enhance and modernize the email experience through added support for dynamic content and interactivity while keeping users safe. AMPHTML for email makes modern App functionality available within email.
 

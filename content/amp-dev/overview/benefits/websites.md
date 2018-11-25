@@ -1,12 +1,20 @@
 ---
-$title: Benefits
-$order: 2
+$title: Benefits when using AMP for websites
+$titles:
+  header: Benefits
 ---
-
 [stage color="light-blue"]
 ## Why should I use AMP?
-# Improve user engagement with rich and immersive AMP websites
+# Improve user engagement with rich and immersive AMP
+[destination-switch type="selected" selected="websites"]
+- [websites](/content/amp-dev/overview/benefits/websites.md)
+- [stories](/content/amp-dev/overview/benefits/stories.md)
+- [ads](/content/amp-dev/overview/benefits/ads.md)
+- [e-mails](/content/amp-dev/overview/benefits/emails.md)
+[/destination-switch]
 [/stage]
+
+[include('/content/shared/hints/content-missing.md')]
 
 AMP recognizes the need to deliver fast and compelling user experiences across all screens. The reason websites made using AMP are so fast is the combined optimizations which make them appear to load almost instantly. AMP components are carefully designed for a better user experience with a responsive design to make sure they don’t cause performance degradation, ensuring your ability to monetize, optimize, and track the performance of your revenue streams.
 
@@ -96,10 +104,11 @@ IMAGE/ICON
 
 All AMP websites
 
-## Explore AMP website success stories
-TM_SUCCESS_STORY_TEASER HEADLINE
-SUCCESS STORY 1
-SUCCESS STORY 2
-SUCCESS STORY 3
+[teaser-grid]
+# Explore AMP success stories
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story.md)
 
-All success stories
+[See more success stories](#)
+[/teaser-grid]

@@ -1,16 +1,23 @@
 ---
-$title: Amp Framework
-$path: /overview/websites.html
+$title: What is AMP for websites
+$titles:
+  header: Framework
 ---
-
 [stage color="light-blue"]
 ## What is AMP on the web?
-# AMP is a web component framework to easily create user-first websites.
+# AMP is a web component framework to easily create user-first
+[destination-switch type="selected" selected="websites"]
+- [websites](/content/amp-dev/overview/framework/websites.md)
+- [stories](/content/amp-dev/overview/framework/stories.md)
+- [ads](/content/amp-dev/overview/framework/ads.md)
+- [e-mails](/content/amp-dev/overview/framework/emails.md)
+[/destination-switch]
 [/stage]
 
-AUTOPLAY VIDEO 7 Ways AMP Makes your pages fast:
+[include('/content/shared/hints/content-missing.md')]
+
 [video]
-[]https://www.youtube.com/watch?v=9Cfxm7cikMY
+[](https://www.youtube.com/watch?v=9Cfxm7cikMY)
 [/video]
 
 AMP websites load nearly instantly and thus support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.
@@ -42,21 +49,20 @@ IMAGE/ICON 1-3
 - Ensures your website will always be fast and smooth
 - and Distribution across popular platforms like Google, Bing, and Twitter.
 
+[teaser-grid]
+# Explore use cases of AMP
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case.md)
 
-## Explore use cases of AMP
-TM_USE_CASE_TEASER 1
-TM_USE_CASE_TEASER 2
-TM_USE_CASE_TEASER 3
-TM_USE_CASE_TEASER 4
+[All use cases](#)
+[/teaser-grid]
 
-All use cases
+[teaser-grid]
+# Explore AMP success stories
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story.md)
 
-## Explore AMP success stories
-
-All success stories
-
-
-- SUCCESS STORY 1
-- SUCCESS STORY 2
-- SUCCESS STORY 3
-See more success stories
+[See more success stories](#)
+[/teaser-grid]

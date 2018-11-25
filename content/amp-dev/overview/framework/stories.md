@@ -1,12 +1,20 @@
 ---
-$title: Amp Framework
-$path: /overview/stories.html
+$title: What is AMP for stories
+$titles:
+  header: Framework
 ---
-
-[stage color="dark-blue"]
+[stage color="orange"]
 ## What is AMP?
-# AMP is a web component framework for easily creating  user first stories.
+# AMP is a web component framework for easily creating user first
+[destination-switch type="selected" selected="stories"]
+- [websites](/content/amp-dev/overview/framework/websites.md)
+- [stories](/content/amp-dev/overview/framework/stories.md)
+- [ads](/content/amp-dev/overview/framework/ads.md)
+- [e-mails](/content/amp-dev/overview/framework/emails.md)
+[/destination-switch]
 [/stage]
+
+[include('/content/shared/hints/content-missing.md')]
 
 # AMP stories: visual storytelling for the open web
 AMP stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. AMP stories are part of the open web, which means they can be shared and embedded across the web without being confined to a closed ecosystem or platform.
@@ -68,14 +76,19 @@ IMAGE LOOP: STORY PAGES PUSH THROUGH THE SCREEN AND ANIMATED TEXT ELEMENTS APPEA
 
 It’s easy to create visual effects and tappable interactions that keep readers engaged. Titles can fly  drop, fade in, or animate onto the page. Configure your story to automatically progress to the next page when a video snippet is finished. Provide social sharing and related links at the end of your story, so users can share it or dive further into other content on your site.
 
-Explore the possibilities of AMP stories
+[teaser-grid]
+# Explore the possibilities of AMP stories
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case.md)
 
-USE CASE TEASER 1
-USE CASE TEASER 2
-USE CASE TEASER 3
-See more use cases
+[See more use cases](#)
+[/teaser-grid]
 
-SUCCESS STORY 1
-SUCCESS STORY 2
-SUCCESS STORY 3
-See more success stories
+[teaser-grid]
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story.md)
+
+[See more success stories](#)
+[/teaser-grid]

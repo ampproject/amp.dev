@@ -4,6 +4,7 @@ $view: /views/overview/components-overview.j2
 $path: /documentation/components.html
 $hidden: true
 ---
+[include('/content/shared/hints/dummy-content.md')]
 
 # Component Overview
 
