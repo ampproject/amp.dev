@@ -1,11 +1,13 @@
 ---
-$title: Websites
+$title: Template for AMP websites
+$titles:
+  header: Templates
 $view: /views/overview/template-overview.j2
 ---
 [stage color="light-blue"]
 ## Get started quickly with a ready-made design.
 # Templates
-[destination-switch type="selected"]
+[destination-switch type="selected" selected="websites"]
 - [websites](/content/amp-dev/documentation/templates/websites.md)
 - [stories](/content/amp-dev/documentation/templates/stories.md)
 - [ads](/content/amp-dev/documentation/templates/ads.md)
@@ -19,8 +21,8 @@ Build responsive, lightning-fast AMP pages with our templates and components
 [/intro]
 
 [teaser-grid]
-[](content/amp-dev/styleguide/organisms/teaser-grid/template-ads.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/template-ads.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/template-ads.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/template-ads.md)
+[](/content/shared/fill-ins/template.md)
+[](/content/shared/fill-ins/template.md)
+[](/content/shared/fill-ins/template.md)
+[](/content/shared/fill-ins/template.md)
 [/teaser-grid]

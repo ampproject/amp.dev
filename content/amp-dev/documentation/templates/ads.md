@@ -2,7 +2,7 @@
 $title: Templates
 $view: /views/overview/template-overview.j2
 ---
-[stage color="light-blue"]
+[stage color="purple" selected="ads"]
 ## What is AMP?
 # Amp is a web component framework for easily creating user first
 [destination-switch type="selected"]
@@ -20,10 +20,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex
 
 
 [teaser-grid]
-
-[](content/amp-dev/styleguide/organisms/teaser-grid/template-websites.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/template-websites.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/template-websites.md)
-[](content/amp-dev/styleguide/organisms/teaser-grid/template-websites.md)
-
+[](/content/shared/fill-ins/template.md)
+[](/content/shared/fill-ins/template.md)
+[](/content/shared/fill-ins/template.md)
+[](/content/shared/fill-ins/template.md)
 [/teaser-grid]

@@ -4,4 +4,4 @@ $title: Templates
 $localization:
   path: /{locale}/documentation/templates/{base}.html
 
-index: /content/amp-dev/documentation/templates/websites.md
+index: /content/amp-dev/documentation/templates/overview.md
