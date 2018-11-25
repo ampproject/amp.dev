@@ -62,9 +62,7 @@ class StageShortcode(Shortcode):
         # Destinations will be inside a list - so only elements outside
         # the list should taken into consideration as button
         anchor = dom.cssselect('a:last-of-type')
-        print(anchor)
         if len(anchor):
-          print(anchor[0].getparent())
           return {
             'link': anchor[0].attrib.get('href'),
             'text': anchor[0].text_content()
