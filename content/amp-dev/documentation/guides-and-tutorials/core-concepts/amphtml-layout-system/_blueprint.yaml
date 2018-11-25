@@ -1,7 +1,5 @@
-path: /documentation/guides-and-tutorials/core-concepts/amphtml-layout-system/{base}.html
-view: /views/default.j2
-
-localization:
+$title@: Layout system
+$path: /documentation/guides-and-tutorials/core-concepts/amphtml-layout-system/{base}.html
+$view: /views/default.j2
+$localization:
   path: /{locale}/documentation/guides-and-tutorials/core-concepts/amphtml-layout-system/{base}.html
-
-category: Amp Layout System

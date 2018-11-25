@@ -1,7 +1,5 @@
-path: /documentation/guides-and-tutorials/core-concepts/validation-workflow/{base}.html
-view: /views/default.j2
-
-localization:
+$title: Validation
+$path: /documentation/guides-and-tutorials/core-concepts/validation-workflow/{base}.html
+$view: /views/default.j2
+$localization:
   path: /{locale}/documentation/guides-and-tutorials/core-concepts/validation-workflow/{base}.html
-
-category: Validation Workflow
