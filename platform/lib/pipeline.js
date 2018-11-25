@@ -16,7 +16,6 @@
 
 'use strict';
 
-const { spawn, spawnSync, exec } = require('child_process');
 const { Signale } = require('signale');
 const signale = require('signale');
 const del = require('del');
@@ -27,8 +26,9 @@ const stripCssComments = require('gulp-strip-css-comments');
 const through = require('through2');
 const minifyHtml = require('html-minifier').minify;
 
-const config = require('./config.js');
-const Grow = require('./pipeline/grow.js');
+const config = require('./config');
+const Grow = require('./pipeline/grow');
+const ReferenceImporter = require('./pipeline/import/referenceImporter');
 
 const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
 const TRANSPILE_SCSS_WATCH_SRC = '../frontend/scss/**/*.scss';
@@ -54,7 +54,9 @@ class Pipeline {
    * @return {Promise}
    */
   check() {
-    // TODO(matthiasrohmer): Check node verison
+    // TODO: Check node verison
+
+    // Install/Update dependencies needed for Grow
     let grow = new Grow();
     return grow.install().when('Finished: Extensions');
   }
@@ -172,6 +174,15 @@ class Pipeline {
     return this._collect('icons', ICONS_SRC, ICONS_DEST);
   }
 
+  async importReference() {
+    let importer = new ReferenceImporter();
+    await importer.initialize();
+
+    // TODO: Define condition for importing reference - for example if it
+    // has been already imported and isn't outdated
+    await importer.import();
+  }
+
   /**
    * Starts a Grow instance that either builds all pages to the configured
    * path or starts a Grow development server
@@ -264,13 +275,8 @@ class Pipeline {
    * @return {undefined}
    */
   async testBuild() {
-    signale.info('Testing build ...');
-
-    await this._minifyPages();
-  }
-
-  _validatePages() {
-    signale.info('Testing build ...');
+    // TODO: Run AMP validator over generated pages
+    signale.warn('Testing of build is not yet implemented!');
   }
 
 };

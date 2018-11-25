@@ -10,10 +10,13 @@ const GROW_OUT_DIR = '../platform/pages';
 class Config {
 
   constructor(environment = 'development') {
-    const config = require(`${CONFIG_BASE_PATH}/${environment}.json`);
+    const environmentConfig = require(`${CONFIG_BASE_PATH}/environments/${environment}.json`);
 
     this.environment = environment;
-    this.hosts = config.hosts;
+    this.hosts = environmentConfig.hosts;
+
+    // Import the configs for importing stuff - basically only used in
+    // platform/lib/pipeline/import/reference.js
 
     // Synchronously write podspec for Grow to run flawlessly later in pipeline
     this._writeGrowConfig();

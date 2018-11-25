@@ -35,7 +35,7 @@ class Platform {
     this._registerRouters();
 
     this.server.listen(config.hosts.platform.port, () => {
-      signale.success(`amp.dev available on port ${config.hosts.platform.port}!`);
+      signale.success(`amp.dev available on ${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}!`);
     });
   }
 
