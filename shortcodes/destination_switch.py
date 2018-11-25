@@ -2,56 +2,59 @@ from xml.dom import minidom
 
 from shortcodes import Shortcode
 
+# Used as a fallback to if no destinations are maintained
+DEFAULT_DESTINATIONS = ['websites', 'stories', 'ads', 'e-mails']
+
+# To make sure that the template always gets a valid type
+ALLOWED_SWITCH_TYPES = ['rolling', 'dropdown', 'selected']
+
 
 class DestinationSwitchShortcode(Shortcode):
-  name = 'destination-switch'
-  render_empty = True
-  prerender_markdown = True
-  template = 'partials/destination-switch.j2'
+    name = 'destination-switch'
+    render_empty = True
+    prerender_markdown = True
+    template = 'partials/destination-switch.j2'
 
-  def _get_switch_type(self, options, dom):
-    if len(options):
-      self.context['switch_type'] = options.values()[0]
-      return self.context['switch_type']
-    else:
-      self.context['switch_type'] = 'rolling'
-      return self.context['switch_type']
-    return ''
+    def _get_switch_type(self, options):
+        # Switch type might be defined by shortcode option otherwise fallback
+        switch_type = options.get('type', None)
+        if switch_type not in ALLOWED_SWITCH_TYPES:
+            switch_type = ALLOWED_SWITCH_TYPES[0]
 
-  def _set_destinations(self, dom):
-    self.context['destinations'] = []
-    links = dom.getElementsByTagName('a')
-    destinations = ['websites', 'stories', 'ads', 'e-mails']
+        return switch_type
 
-    # if links are given, get links and their destinations
-    if len(links):
-      for link in links:
-        href = link.getAttribute('href')
-        text = link.childNodes[0].nodeValue
-        destination = {
-          'link': href,
-          'text': text
-        }
-        self.context['destinations'].append(destination)
+    def _get_destinations(self, dom):
+        destinations = []
 
-    # if no links are provided, return only destinations
-    else:
-      for destination in destinations:
-        destination = {
-          'text': destination
-        }
-        self.context['destinations'].append(destination)
+        # If links are given, get links and their destinations
+        links = dom.getElementsByTagName('a')
+        if len(links):
+            for link in links:
+                destinations.append({
+                  'link': link.getAttribute('href'),
+                  'text': link.childNodes[0].nodeValue,
+                })
+        else:
+            # If no links are provided, return default destinations
+            for destination in DEFAULT_DESTINATIONS:
+                destination = {
+                    'link': '#',
+                    'text': destination,
+                }
+                destinations.append(destination)
+        return destinations
 
-    return self.context['destinations']
+    def _get_selected_destination(self, options):
+        return options.get('selected', None)
 
-  def transform(self, value, options):
-    dom = minidom.parseString('<html>{}</html>'.format(value))
+    def transform(self, value, options):
+        dom = minidom.parseString('<html>{}</html>'.format(value))
 
-    self.context['desinations'] = self._set_destinations(dom)
+        self.context['switch_type'] = self._get_switch_type(options)
+        self.context['selected'] = self._get_selected_destination(options)
+        self.context['destinations'] = self._get_destinations(dom)
 
-    self.context['switch_type'] = self._get_switch_type(options, dom)
+        return value
 
-
-    return value
 
 shortcode = DestinationSwitchShortcode

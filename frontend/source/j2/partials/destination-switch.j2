@@ -1,9 +1,5 @@
 {% do doc.styles.addCssFile('css/components/molecules/destination-switch.css') %}
 
-{% if switch_type == 'selected' %}
-  {% set filter = doc.url.path.split('/')[2] %}
-{% endif %}
-
 <div class="ad-m-destination-switch {{ switch_type }}{% if switch_type == 'selected' or switch_type == 'dropdown' %} menu-list {% endif %}"
   [class]="toggle ? 'ad-m-destination-switch {{ switch_type }} ad-m-destination-switch-expand': 'ad-m-destination-switch {{ switch_type }}'">
     {% if switch_type == 'selected' or switch_type == 'dropdown' %}
@@ -12,8 +8,7 @@
       </button>
     {% endif %}
 
-    {# default and dropdown switch_types get an animated list #}
-
+    {# Default and dropdown types get an animated, rolling list #}
     {% if switch_type != 'selected' %}
       {% for destination in destinations %}
         {% if destination.text != 'overview' %}
@@ -25,21 +20,22 @@
       {% endfor %}
     {% endif %}
 
-    {# selected and dropdown switch_types have a dropdown list  #}
+    {# Selected and dropdown types have a dropdown list  #}
     {% if switch_type == 'selected' or switch_type == 'dropdown' %}
 		  <amp-selector layout="container">
-			  <ul class="destination-list {% if filter %} selected {{ filter }}{% endif %}">
+			  <ul class="destination-list {% if selected %} selected {{ selected }}{% endif %}">
           {% for destination in destinations %}
-            {% if filter %}
-                <li option="{{ destination.text }}" {% if filter == destination.text %} selected {% endif %} class="{{ destination.text }}">
-                  <a href="{{ g.doc(destination.link).url }}"
-                  class="destination-list-item {{ destination.text}} {{ destination.text}}-{% if filter == destination.text %}selected{% else %}background{% endif %}">
+            {% set link = g.doc(destination.link).url.path if destination.link else '#' %}
+            {% if selected %}
+                <li option="{{ destination.text }}" {% if selected == destination.text %} selected {% endif %} class="{{ destination.text }}">
+                  <a href="{{ link }}"
+                  class="destination-list-item {{ destination.text}} {{ destination.text}}-{% if selected == destination.text %}selected{% else %}background{% endif %}">
                     {{ destination.text }}
                   </a>
                 </li>
             {% else %}
 			 	      <li option="{{ destination.text }}" class="{{ destination.text }}">
-                <a href="{{ g.doc(destination.link).url }}" class="destination-list-item {{ destination.text}} {{ destination.text}}-background">
+                <a href="{{ link }}" class="destination-list-item {{ destination.text}} {{ destination.text}}-background">
                   {{ destination.text }}
                 </a>
               </li>
