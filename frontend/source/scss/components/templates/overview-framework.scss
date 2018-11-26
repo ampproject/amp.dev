@@ -87,6 +87,10 @@
         @include gradient-stories;
       }
 
+      &.e-mails {
+        @include gradient-e-mails;
+      }
+
       h1 {
         @include hl;
         @include hl-h4;

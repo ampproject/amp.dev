@@ -83,7 +83,7 @@ $titles:
 </section>
 
 <section class="main core-components">
-  <h1>AMP Stories are built with 3 core components:</h1>
+  <h2>AMP Stories are built with 3 core components:</h2>
   <div class="component image">
     <div class="image-container">
       <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
