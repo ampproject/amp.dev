@@ -5,6 +5,7 @@ $titles:
   header: Framework
 ---
 [stage color="orange"]
+<amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
 ## What is AMP?
 # AMP is a web component framework for easily creating user first
 [destination-switch type="selected" selected="stories"]
@@ -16,81 +17,82 @@ $titles:
 [/destination-switch]
 [/stage]
 
-[include('/content/shared/hints/content-missing.md')]
+<section class="main intro">
+  [video]
+  [](https://www.youtube.com/watch?v=9Cfxm7cikMY)
+  [/video]
 
-# AMP stories: visual storytelling for the open web
-AMP stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. AMP stories are part of the open web, which means they can be shared and embedded across the web without being confined to a closed ecosystem or platform.
+  <div class="intro">
+    <h1>Visual storytelling for the open web</h1>
+    <p>AMP stories immerse your readers in fast-loading full-screen experiences. Easily spread long stories over bite-sized chapters, with engaging animations and tappable interactions. AMP stories are part of the open web, which means they can be shared and embedded across sites and apps without being confined to a single ecosystem.</p>
+  </div>
+</section>
 
-[video]
-[]https://www.youtube.com/watch?v=9Cfxm7cikMY
-[/video]
+<section class="main quote">
+  <div class="ad-m-quote">
+    <blockquote>
+      <p class="ad-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage</p>
+    </blockquote>
+    <p>Greg Manifold, Design Director of The Washington Post</p>
+  </div>
+  <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+    <div class="ad-a-ico ad-m-lnk-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    </div>
+    <span class="ad-m-lnk-text">Read Success Story</span>
+  </a>
+</section>
 
-> “As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.”
+<section class="main benefits">
+  <h1>Explore benefits of AMP websites</h1>
 
-Greg Manifold, Design Director of The Washington Post
+  <div class="main benefit-cards">
+    <div class="benefit-card-left">
+      <h2>Benefits for developers</h2>
+      <p>IMAGE/ICON 1-3</p>
+      <ul>
+        <li>Reduced development effort and maintenance</li>
+        <li>Inherently secure code</li>
+        <li>Community support and collaboration</li>
+      </ul>
+    </div>
+    <div class="benefit-card-right">
+      <h2>Benefits for your business</h2>
+      <p>IMAGE/ICON 1-3</p>
+      <ul>
+        <li>Reliable speed measurements</li>
+        <li>Ensures your website will always be fast and smooth</li>
+        <li>and Distribution across popular platforms like Google, Bing, and Twitter.</li>
+      </ul>
+    </div>
+  </div>
 
-LOGO THE WASHINGTON POST
+  <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    </div>
+    <span class="ad-m-lnk-text">All benefits</span>
+  </a>
 
-Best Practices for creating an AMP Story
-[video]
-[]https://www.youtube.com/watch?v=2WjFBnCj2ew
-[/video]
-
-## The benefits of AMP stories
-
-## Benefits for developers
-IMAGE/ICON
-
-1. Easy to create
-2. Creative flexibility
-3. Sharable and linkable on the open web
-
-IMAGE/ICON
-
-## Benefits for your business
-
-IMAGE/ICON
-
-1. Immersive storytelling
-2. Fast loading times
-3. Supports analytics
-
-IMAGE/ICON
-
-See more benefits
-
-## AMP stories are built using 3 core components:
-IMAGE: A MOBILE SCREEN WHERE VARIOUS STORY PAGES ARE ADDED IN AN EXPLODED VIEW
-
-Images, videos and GIFs
-
-AMP stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you.  Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities.
-
-IMAGE: TEXT IS ADDED TO THE VISIBLE STORY PAGE ON THE MOBILE SCREEN
-
-Text and audio
-
-Convey facts and figures via bite-sized chunks of one or two sentences – ideal for mobile devices. Choose from different font colors for basic readability. Or add visual elements like subtle black transparent gradient overlays to ensure readability even on random background imagery, for example user generated content. On top of this, you can use short audio files on every page to provide spoken information or background music.
-
-IMAGE LOOP: STORY PAGES PUSH THROUGH THE SCREEN AND ANIMATED TEXT ELEMENTS APPEAR
-
-## Animations and interactions
-
-It’s easy to create visual effects and tappable interactions that keep readers engaged. Titles can fly  drop, fade in, or animate onto the page. Configure your story to automatically progress to the next page when a video snippet is finished. Provide social sharing and related links at the end of your story, so users can share it or dive further into other content on your site.
+</section>
 
 [teaser-grid]
-# Explore the possibilities of AMP stories
+# Explore possibilities of AMP websites
 [](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case-2.md)
 [](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case-3.md)
 
-[See more use cases](#)
+[See more use cases](content/shared/fill-ins/use-case.md)
 [/teaser-grid]
 
 [teaser-grid]
+# Explore AMP success stories
 [](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-3.md)
 [](content/shared/fill-ins/success-story-2.md)
 [](content/shared/fill-ins/success-story.md)
 
-[See more success stories](#)
+[See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]
+

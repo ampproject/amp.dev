@@ -15,18 +15,35 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
+@import '../molecules/quote';
 
 @import '../templates/_default.scss';
 
 .#{template('overview-framework')} {
   @include container;
-  
+
   section {
     &.#{organism('stage')},
     &.teaser-grid {
       @media screen and (min-width: 1024px){
         grid-column-start: 1;
         grid-column-end: 25;
+      }
+    }
+
+    &.intro {
+      &.intro h1 {
+        @include hl;
+        @include hl-h4;
+      }
+    }
+
+    &.quote {
+      grid-column-start: 10;
+      grid-column-end: 19;
+
+      .#{molecule('quote')} {
+        margin-top: 75px;
       }
     }
 
@@ -44,11 +61,11 @@
       grid-column-start: 5;
       grid-column-end: 15;
     }
-    
+
     &.benefits {
       grid-column-start: 4;
       grid-column-end: 22;
-      
+
       .benefit-cards {
         display: flex;
       }

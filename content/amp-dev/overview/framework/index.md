@@ -5,7 +5,7 @@ $view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
 ---
-[stage color="light-blue"]
+[stage color="dark-blue"]
 ## What is AMP on the web?
 # AMP is a web component framework to easily create user-first
 [destination-switch type="selected" selected="websites"]
@@ -103,7 +103,7 @@ $titles:
       </ul>
     </div>
   </div>
-  
+
   <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/use-case.html">
     <div class="ad-a-ico ad-m-lnk-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>

@@ -1,8 +1,8 @@
 .#{molecule('quote')} {
 
 	blockquote {
-		margin: 0;
-	}
+    margin: 0;
+  }
 
 	blockquote p::before {
     content: '\201C';
@@ -13,8 +13,9 @@
 	}
 
 	& .ad-a-txt {
-		display: block;
-		padding-left: 95px;
+    @include hl;
+    @include hl-h4;
+    display: block;
 	}
 
 	& .ad-m-blockquote {

@@ -14,7 +14,7 @@
     <section class="main">
       {% set docNoToc = doc.html.split('</div>', 1) %}
       {{ docNoToc[1]|render|safe }}
-      
+
       {# Always assume doc.author and doc.translator are GitHub handles #}
       {% if doc.author %}
       <p class="ad-o-footer-hint ad-o-footer-hint-meta">This particular document was written by <a href="https://github.com/{{ doc.author }}" target="_blank" rel="nofollow">@{{ doc.author }}</a>{% if doc.translator %} and translated by <a href="https://github.com/{{ doc.translator }}" target="_blank" rel="nofollow">@{{ doc.translator }}</a>{% endif %}.</p>
@@ -25,7 +25,7 @@
 
     <section class="main">
       {{ doc.html|render|safe }}
-      
+
       {# Always assume doc.author and doc.translator are GitHub handles #}
       {% if doc.author %}
       <p class="ad-o-footer-hint ad-o-footer-hint-meta">This particular document was written by <a href="https://github.com/{{ doc.author }}" target="_blank" rel="nofollow">@{{ doc.author }}</a>{% if doc.translator %} and translated by <a href="https://github.com/{{ doc.translator }}" target="_blank" rel="nofollow">@{{ doc.translator }}</a>{% endif %}.</p>
