@@ -22,7 +22,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 
 @include viewboxGradientAnimation;
-
+@include rollingAnimation;
 
 .#{molecule(destination-switch)} {
   padding: 0;
