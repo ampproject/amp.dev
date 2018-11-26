@@ -37,7 +37,7 @@ class MarkdownDocument {
 
   set contents(contents) {
     contents = this._convertSyntax(content);
-    this._contents =
+    this._contents = contents;
   }
 
   _convertSyntax(contents) {
@@ -61,4 +61,4 @@ class MarkdownDocument {
   }
 }
 
-module.exports = Document;
+module.exports = MarkdownDocument;

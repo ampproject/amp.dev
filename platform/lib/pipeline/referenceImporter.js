@@ -20,8 +20,8 @@ const path = require('path');
 const request = require('request');
 const { Signale } = require('signale');
 
-const config = require('../../config');
-const Document = require('./document');
+const config = require('../config');
+const Document = require('./markdownDocument');
 const Collection = require('./collection');
 
 // TODO: Eventually make it possible to pass these in as a) command line args

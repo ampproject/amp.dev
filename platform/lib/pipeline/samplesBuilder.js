@@ -17,7 +17,7 @@
 const gulp = require('gulp');
 const { loadExample } = require('amp-by-example');
 const through = require('through2');
-const Document = require('./document');
+const Document = require('./markdownDocument');
 const Collection = require('./collection');
 
 
@@ -45,8 +45,6 @@ class SamplesBuilder {
       // Create vinyls for all needed files and push them to the stream
 
     }).bind(this)));
-
-    stream = stream.pipe(through.obj(await _buildSample.bind(this));
 
     return new Promise.all([]);
   }
