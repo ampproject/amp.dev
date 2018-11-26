@@ -83,8 +83,20 @@
         }
       }
 
+      &.websites {
+        @include gradient-websites;
+      }
+
       &.stories {
         @include gradient-stories;
+      }
+
+      &.ads {
+        @include gradient-ads;
+      }
+
+      &.e-mails {
+        @include gradient-e-mails;
       }
 
       h1 {
