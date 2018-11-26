@@ -15,6 +15,7 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
+
 @import '../molecules/quote';
 @import '../molecules/benefit';
 @import '../molecules/link';
@@ -25,6 +26,9 @@
   @include container;
 
   section {
+    position: relative;
+    z-index: 1;
+
     &.#{organism('stage')},
     &.teaser-grid {
       @media screen and (min-width: 1024px){
@@ -41,12 +45,8 @@
     }
 
     &.quote {
-      grid-column-start: 10;
+      grid-column-start: 5;
       grid-column-end: 19;
-
-      .#{molecule('quote')} {
-        margin-top: 75px;
-      }
     }
 
     &.kpi-grid {
@@ -83,8 +83,16 @@
         }
       }
 
+      &.websites {
+        @include gradient-websites;
+      }
+
       &.stories {
         @include gradient-stories;
+      }
+
+      &.ads {
+        @include gradient-ads;
       }
 
       &.e-mails {

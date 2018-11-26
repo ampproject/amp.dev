@@ -1,6 +1,6 @@
 ---
 $view: /views/detail/use-case-detail.j2
-$path: /shared/fill-ins/use-case-2.html
+$path: /shared/fill-ins/use-case-4.html
 $title: Sample use case
 $titles:
   teaser: Stories with rich visuals and native videos

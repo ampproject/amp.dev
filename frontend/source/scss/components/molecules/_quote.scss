@@ -1,41 +1,38 @@
 .#{molecule('quote')} {
-
-	blockquote {
-    margin: 0;
+  display: flex;
+  padding: 75px 0;
+  
+  &-source {
+    flex: 0 0 30%;
+    
+    .#{atom('ico')} {
+      width: 100px;
+      height: 100px;
+      margin-left: auto;
+      fill: color('blue-ribbon');
+    }
   }
-
-	blockquote p::before {
-    content: '\201C';
-	}
-
-	blockquote p::after {
-    content: '\201D';
-	}
-
-	& .ad-a-txt {
-    @include hl;
-    @include hl-h4;
-    display: block;
-	}
-
-	& .ad-m-blockquote {
-		padding: 20px 50px;
-	}
-
-	& .ad-a-img-circle {
-		height: 70px;
-		width: 70px;
-		position: absolute;
-	}
-
-	& .ad-a-img-source {
-		height: 28px;
-		width: 60px;
-		position: relative;
-		margin-left: 95px;
-	}
-
-	&-bio {
-		padding: 0 50px;
-	}
+  
+  &-quote {
+    padding: 50px 0 0 30px;
+    
+    blockquote {
+      flex: 0 0 70%;
+      margin: 0;
+      
+      p.#{atom('txt')} {
+        @include hl;
+        @include hl-h4;
+        display: block;
+        
+        &:before {
+          content: '\201C';
+        }
+        
+        &:after {
+          content: '\201D';
+        }
+      }
+    }
+  }
 }
