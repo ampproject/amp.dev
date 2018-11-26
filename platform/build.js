@@ -20,7 +20,7 @@
 
 const signale = require('signale');
 
-const config = require('./lib/config.js');
+const config = require('./lib/config');
 const Pipeline = require('./lib/pipeline');
 const Platform = require('./lib/platform');
 
@@ -28,17 +28,29 @@ let pipeline = new Pipeline();
 
 pipeline.clean();
 
+// TODO(matthiasrohmer): Use task runner (like gulp.series/gulp.parallel) to
+// execute tasks to better handle flow
 (async () => {
-  await pipeline.check();
+  // await pipeline.check();
+
+  // Collection of static files does not need to be waited for as it happens
+  // real quick and no other task depends on them
   pipeline.collectStatics();
 
   await pipeline.buildFrontend();
+
+  // Before pages can be built all needed documents need to be imported
+  // await pipeline.importReference();
+
   // Generate pages does not statically build the pages for development
   // but instead starts the development server
   await pipeline.generatePages();
 
+  // In all other environments than development the build should be optimized
+  // and tested to ensure it is working
   if (config.environment !== 'development') {
     await pipeline.optimizeBuild();
+    await pipeline.testBuild();
   }
 })().then(() => {
   // For development we also want to directly serve the current build
