@@ -47,7 +47,18 @@
       padding: 5%;
       width: 50%;
 		}
-}
+  }
+
+  &-image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+
+    @media screen and (min-width: 768px) {
+      width: 50%;
+      right: 0;
+    }
+  }
 
 	.hl {
     @include hl;
