@@ -31,6 +31,46 @@ $titles:
   </div>
 </section>
 
+<section class="main kpi-grid">
+  <div class="ad-o-teaser-grid">
+    <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-3">
+
+      <div class="ad-m-kpi ad-m-kpi-ads">
+        <div class="ad-m-kpi-content">
+          {% do doc.icons.useIcon('icons/bookmark.svg') %}
+          <div class="ad-a-ico ad-m-kpi-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
+          </div>
+          <span class="ad-m-kpi-number">25 Mio</span>
+          <span class="ad-m-kpi-text">websites with 678 new Websites today</span>
+        </div>
+      </div>
+
+      <div class="ad-m-kpi ad-m-kpi-ads">
+        <div class="ad-m-kpi-content">
+          {% do doc.icons.useIcon('icons/bookmark.svg') %}
+          <div class="ad-a-ico ad-m-kpi-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
+          </div>
+          <span class="ad-m-kpi-number">567</span>
+          <span class="ad-m-kpi-text">contributors with 356 commits this month</span>
+        </div>
+      </div>
+
+      <div class="ad-m-kpi ad-m-kpi-ads">
+        <div class="ad-m-kpi-content">
+          {% do doc.icons.useIcon('icons/bookmark.svg') %}
+          <div class="ad-a-ico ad-m-kpi-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
+          </div>
+          <span class="ad-m-kpi-number">123 </span>
+          <span class="ad-m-kpi-text">platform & vendor partners with 22 million users reached</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section class="main copy">
   <h1>A faster way to grow your business</h1>
