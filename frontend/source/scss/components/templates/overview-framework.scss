@@ -15,6 +15,7 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
+
 @import '../molecules/quote';
 
 @import '../templates/_default.scss';
@@ -39,12 +40,8 @@
     }
 
     &.quote {
-      grid-column-start: 10;
+      grid-column-start: 5;
       grid-column-end: 19;
-
-      .#{molecule('quote')} {
-        margin-top: 75px;
-      }
     }
 
     &.kpi-grid {
