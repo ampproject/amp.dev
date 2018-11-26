@@ -5,6 +5,7 @@ $titles:
   header: Framework
 ---
 [stage color="light-blue"]
+<amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
 ## What is AMP on the web?
 # AMP is a web component framework to easily create user-first
 [destination-switch type="selected" selected="websites"]
