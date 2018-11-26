@@ -17,11 +17,15 @@ section.teaser-grid {
     grid-column-start: 1;
     grid-column-end: 25;
   }
-  
+
   @media screen and (min-width: 1024px){
     grid-column-start: 4;
     grid-column-end: 22;
   }
+}
+
+.#{molecule(lnk-square)} {
+  justify-content: center;
 }
 
 .#{organism('teaser-grid')} {
@@ -36,7 +40,7 @@ section.teaser-grid {
     flex-wrap: nowrap;
     padding: 20px 0;
     margin: 0 -20px;
-    
+
     @media screen and (min-width: 575px) {
       overflow: visible;
       width: 100%;
@@ -48,11 +52,11 @@ section.teaser-grid {
       padding: 0;
       margin: 0;
     }
-    
+
     @media screen and (min-width: 768px) {
       grid-template-columns: repeat(3, 1fr);
     }
-    
+
     &-count-4,
     &-count-8,
     &-count-16 {

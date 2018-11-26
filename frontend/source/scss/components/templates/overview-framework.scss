@@ -102,5 +102,42 @@
         }
       }
     }
+
+    &.core-components {
+      grid-column: 7 / -1;
+
+      .image-container {
+        width: 100%;
+        padding-bottom: 20px;
+
+        @media screen and (min-width: 768px) {
+          width: 50%;
+        }
+      }
+
+      .component {
+        &.image {
+          margin: 50px 0;
+
+          @media screen and (min-width: 768px) {
+            display: flex;
+          }
+        }
+
+        &.text {
+          padding: 0 20px;
+          width: 100%;
+          @media screen and (min-width: 768px) {
+            width: 50%;
+          }
+        }
+
+        h2 {
+          @include hl;
+          @include hl-h4;
+        }
+
+      }
+    }
   }
 }

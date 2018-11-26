@@ -82,11 +82,37 @@ $titles:
 
 </section>
 
+<section class="main core-components">
+  <h1>AMP Stories are built with 3 core components:</h1>
+  <div class="component image">
+    <div class="image-container">
+      <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
+    </div>
+    <div class="component text">
+      <h2>Images, videos and GIFs</h2>
+      <p>Fascinate your readers with entertaining mobile-first full-screen content. Whether you use pictures, videos or GIFs is entirely up to you. Split long videos over multiple pages for excellent performance. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities.<p>
+    </div>
+  </div>
+  <div class="component image">
+    <div class="image-container">
+      <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
+    </div>
+    <div class="component text">
+      <h2>Text and audio</h2>
+      <p>Convey facts and figures via bite-sized chunks of one or two sentences – ideal for mobile devices. Choose from different font colors for basic readability. Or add visual elements like subtle black transparent gradient overlays to ensure readability even on random background imagery, for example user generated content. On top of this, you can use short audio files on every page to provide spoken information or background music.<p>
+    </div>
+  </div>
+  <div class="component">
+    <h2>Animations and interactions</h2>
+    <p>To keep readers engaged, easily create visual effects and tappable interactions. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on. Or configure your story to automatically progress to the next page when a video snippet is finished. Plus: provide social sharing and related links at the end of your story, so users can share it or dive further into other content on your site.<p>
+  </div>
+</section>
+
 [teaser-grid]
-# Explore possibilities of AMP websites
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case-2.md)
-[](content/shared/fill-ins/use-case.md)
+# Explore the possibilities of AMP stories
+[](content/shared/fill-ins/use-case-3.md)
+[](content/shared/fill-ins/use-case-3.md)
+[](content/shared/fill-ins/use-case-3.md)
 [](content/shared/fill-ins/use-case-3.md)
 
 [See more use cases](content/shared/fill-ins/use-case.md)
@@ -95,10 +121,10 @@ $titles:
 
 [teaser-grid]
 # Explore AMP success stories
-[](content/shared/fill-ins/success-story.md)
-[](content/shared/fill-ins/success-story-3.md)
 [](content/shared/fill-ins/success-story-2.md)
-[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-2.md
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story-2.md)
 
 [See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]
