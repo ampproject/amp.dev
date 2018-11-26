@@ -4,6 +4,7 @@
 
 {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
+</section>
 <section class="ad-o-stage">
   <div class="ad-o-stage-clipped-background {{ background_color }}"></div>
   <div class="ad-o-stage-content">
@@ -19,5 +20,6 @@
     {% if button.link and button.text %}
     <a href="{{ g.doc(button.link).url.path }}">{{ button.text }}</a>
     {% endif %}
-	</div>
+  </div>
 </section>
+<section class="main">
