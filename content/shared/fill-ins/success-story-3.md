@@ -1,13 +1,13 @@
 ---
 $view: /views/detail/success-story-detail.j2
-$path: /shared/fill-ins/success-story-2.html
+$path: /shared/fill-ins/success-story-3.html
 $title: Sample Success Story
 $titles:
   teaser: Stories with rich visuals and native videos
-destination: 'stories'
+destination: 'ads'
 teaser:
   image:
-    src: '/static/img/teaser-dummy-5x3-2.jpg'
+    src: '/static/img/teaser-dummy-1x1-3.jpg'
     width: 1
     height: 1
     alt: A placeholder image
