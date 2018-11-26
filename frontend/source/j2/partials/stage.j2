@@ -7,6 +7,11 @@
 </section>
 <section class="ad-o-stage">
   <div class="ad-o-stage-clipped-background {{ background_color }}"></div>
+    {% if image %}
+      <div class="ad-o-stage-image">
+        {{ image|safe }}
+      </div>
+    {% endif %}
   <div class="ad-o-stage-content">
 		<span class="hl-sub">{{ sub_headline }}</span>
 		<span class="hl"> {{ headline }}</span>
