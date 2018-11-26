@@ -75,13 +75,9 @@
     }
 
     &-inline {
-      height: 38px;
+      height: 28px;
       display: inline-block;
       width: 180px;
-
-      @media screen and (min-width: 768px) {
-        width: 200px;
-      }
     }
 
 		&-divider {
@@ -117,7 +113,7 @@
     cursor: pointer;
 
     & a {
-      padding: 18px 55px;
+      padding: 10px 45px;
     }
   }
 
