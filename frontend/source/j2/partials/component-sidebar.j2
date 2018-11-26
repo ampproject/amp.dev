@@ -41,7 +41,7 @@
           {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
 
           <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
-            <span class="nav-link">{{ collection.category }}</span>
+            <span class="nav-link">{{ collection.title }}</span>
             {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
           </li>
           {% endfor %}

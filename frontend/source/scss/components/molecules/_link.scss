@@ -45,29 +45,18 @@ none
 	}
 }
 
-.link-preview-1 {
-	.#{molecule('lnk')} {
-		&-text {
-			@include txt-font-accent;
-			@include color-black;
-		}
+.#{molecule('lnk-square')} {
+	@include link;
 
-		&-icon {
-			@include ico-square;
-			padding: 0.438em;
-			@include box-shadow;
-		}
-	}
-}
+	&-text {
+		@include txt-font-accent;
+    @include color-black;
+    padding-left: 10px;
+  }
 
-.link-preview-2 {
-	.#{molecule('lnk')} {
-		&-text {
-			@include color-blue-ribbon;
-		}
-
-		&-icon {
-			@include ico-blue-ribbon;
-		}
+	&-icon {
+		@include ico-square;
+		padding: 0.438em;
+		@include box-shadow;
 	}
 }
