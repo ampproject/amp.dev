@@ -1,5 +1,6 @@
 ---
 $title: What is AMP for email
+$view: /views/overview/overview-framework-emails.j2
 $titles:
   header: Framework
 ---

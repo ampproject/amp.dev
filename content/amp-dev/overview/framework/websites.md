@@ -1,5 +1,6 @@
 ---
 $title: What is AMP for websites
+$view: /views/overview/overview-framework-websites.j2
 $titles:
   header: Framework
 ---

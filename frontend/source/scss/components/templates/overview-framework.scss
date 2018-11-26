@@ -1,0 +1,33 @@
+/*
+
+#############################################
+### TEMPLATE: overview framework websites ###
+#############################################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../templates/_default.scss';
+
+.#{template('overview-framework-websites')} {
+  @include container;
+  
+  section {
+    &.#{organism('stage')},
+    &.teaser-grid {
+      @media screen and (min-width: 1024px){
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 ---
 $title: What is AMP for ads
+$view: /views/overview/overview-framework-ads.j2
 $titles:
   header: Framework
 ---

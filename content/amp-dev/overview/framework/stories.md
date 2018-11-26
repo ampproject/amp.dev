@@ -1,5 +1,6 @@
 ---
 $title: What is AMP for stories
+$view: /views/overview/overview-framework-stories.j2
 $titles:
   header: Framework
 ---
