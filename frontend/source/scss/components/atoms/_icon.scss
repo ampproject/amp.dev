@@ -61,6 +61,18 @@ square
 	fill: color('white');
 }
 
+@mixin ico-stories {
+  fill: color('school-bus');
+}
+
+@mixin ico-e-mails {
+  fill: color('forest-green');
+}
+
+@mixin ico-ads {
+  fill: color('ultramarine');
+}
+
 @mixin ico-river-bed {
 	fill: color('river-bed');
 }

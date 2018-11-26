@@ -35,7 +35,7 @@ $titles:
   <div class="ad-o-teaser-grid">
     <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-3">
 
-      <div class="ad-m-kpi ad-m-kpi-ads">
+      <div class="ad-m-kpi ad-m-kpi-websites">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
@@ -46,7 +46,7 @@ $titles:
         </div>
       </div>
 
-      <div class="ad-m-kpi ad-m-kpi-ads">
+      <div class="ad-m-kpi ad-m-kpi-websites">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
@@ -57,7 +57,7 @@ $titles:
         </div>
       </div>
 
-      <div class="ad-m-kpi ad-m-kpi-ads">
+      <div class="ad-m-kpi ad-m-kpi-websites">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
@@ -72,6 +72,7 @@ $titles:
   </div>
 </section>
 
+
 <section class="main copy">
   <h1>A faster way to grow your business</h1>
   <p>A growing number of publishers and advertisers are adopting AMP to deliver faster and more engaging content to their users. As your clients embrace the speed of AMP and more users consume content on AMP pages, ensure that your business is positioned for the future and integrate your technology with AMP. Speeding up ads is the fastest way to boost performance. </p>
@@ -81,7 +82,7 @@ $titles:
   <p>With AMPHTML ads, your ads can serve on both AMP and non-AMP pages, meaning you can build your AMPHTML ads once and deliver a memorable brand experience everywhere. Similarly, AMP pages can be built once and distributed across a wide variety of distribution platforms simultaneously.</p>
 
   <a href="">Join the AMP Project to improve performance and grow your revenue</a>
-</section> 
+</section>
 
 <section class="main benefits ads">
   <h1>Explore benefits of AMP stories</h1>
@@ -142,7 +143,7 @@ $titles:
       <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
     </div>
   </div>
-  
+
 </section>
 
 [teaser-grid]
