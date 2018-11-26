@@ -27,6 +27,7 @@ $titles:
   </div>
 </section>
 
+[bevel]
 
 <section class="main quote">
   <div class="ad-m-quote">

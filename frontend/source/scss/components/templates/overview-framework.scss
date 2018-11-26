@@ -24,6 +24,9 @@
   @include container;
 
   section {
+    position: relative;
+    z-index: 1;
+
     &.#{organism('stage')},
     &.teaser-grid {
       @media screen and (min-width: 1024px){
