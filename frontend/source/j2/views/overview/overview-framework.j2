@@ -8,6 +8,6 @@
 
 {% block main %}
 <div class="ad-t-container ad-t-overview-framework">
-  {% include 'partials/main.j2' %}
+  {{ doc.html|render|safe }}
 </div>
 {% endblock %}

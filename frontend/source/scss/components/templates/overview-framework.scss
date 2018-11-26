@@ -29,5 +29,29 @@
         grid-column-end: 25;
       }
     }
+
+    &.kpi-grid {
+      grid-column-start: 4;
+      grid-column-end: 22;
+    }
+
+    &.col-7-19 {
+      grid-column-start: 7;
+      grid-column-end: 19;
+    }
+
+    &.col-5-15 {
+      grid-column-start: 5;
+      grid-column-end: 15;
+    }
+    
+    &.benefits {
+      grid-column-start: 4;
+      grid-column-end: 22;
+      
+      .benefit-cards {
+        display: flex;
+      }
+    }
   }
 }
