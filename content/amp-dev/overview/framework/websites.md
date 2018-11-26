@@ -26,10 +26,6 @@ $titles:
   </div>
 </section>
 
-<section class="main col-5-15">
-  <h1>Create great AMP experiences for all open web touchpoints</h1>
-  <p>AMP websites are consistently fast, beautiful and high-performing across devices and distribution platforms. Publishers and advertisers completely own the content on their AMP pages all while maintaining a user-first experience.</p>
-</section>
 
 <section class="main quote">
   <div class="ad-m-quote">
