@@ -50,6 +50,15 @@ desktop
   }
 }
 
+@mixin divider-benefit {
+  width: 60px;
+  height: 4px;
+  background-color: color('blue-ribbon');
+  @media screen and (min-width: 1024px) {
+	  margin-bottom: 3em;
+  }
+}
+
 @mixin divider-header-mobile {
   display: block;
   background-color: color('wild-sand');

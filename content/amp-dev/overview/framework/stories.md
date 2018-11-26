@@ -43,35 +43,41 @@ $titles:
   </a>
 </section>
 
-<section class="main benefits">
-  <h1>Explore benefits of AMP websites</h1>
+<section class="main benefits stories">
+  <h1>Explore benefits of AMP stories</h1>
 
   <div class="main benefit-cards">
-    <div class="benefit-card-left">
-      <h2>Benefits for developers</h2>
-      <p>IMAGE/ICON 1-3</p>
-      <ul>
-        <li>Reduced development effort and maintenance</li>
-        <li>Inherently secure code</li>
-        <li>Community support and collaboration</li>
-      </ul>
+    <div class="ad-m-benefit-card ad-m-benefit-card-left">
+      <div class="ad-m-benefit-card-content">
+        <h2>Benefits for developers</h2>
+        <div class="ad-a-divider-benefit"></div>
+        <p>IMAGE/ICON 1-3</p>
+        <ul>
+          <li>Reduced development effort and maintenance</li>
+          <li>Inherently secure code</li>
+          <li>Community support and collaboration</li>
+        </ul>
+      </div>
     </div>
-    <div class="benefit-card-right">
-      <h2>Benefits for your business</h2>
-      <p>IMAGE/ICON 1-3</p>
-      <ul>
-        <li>Reliable speed measurements</li>
-        <li>Ensures your website will always be fast and smooth</li>
-        <li>and Distribution across popular platforms like Google, Bing, and Twitter.</li>
-      </ul>
+    <div class="ad-m-benefit-card  ad-m-benefit-card-right">
+      <div class="ad-m-benefit-card-content">
+        <h2>Benefits for your business</h2>
+        <div class="ad-a-divider-benefit"></div>
+        <p>IMAGE/ICON 1-3</p>
+        <ul>
+          <li>Reliable speed measurements</li>
+          <li>Ensures your website will always be fast and smooth</li>
+          <li>and Distribution across popular platforms like Google, Bing, and Twitter.</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/use-case.html">
-    <div class="ad-a-ico ad-m-lnk-icon">
+  <a class="ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-square-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </div>
-    <span class="ad-m-lnk-text">All benefits</span>
+    <span class="ad-m-lnk-square-text">All benefits</span>
   </a>
 
 </section>
@@ -84,6 +90,7 @@ $titles:
 [](content/shared/fill-ins/use-case-3.md)
 
 [See more use cases](content/shared/fill-ins/use-case.md)
+
 [/teaser-grid]
 
 [teaser-grid]

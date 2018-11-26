@@ -16,6 +16,8 @@
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 @import '../molecules/quote';
+@import '../molecules/benefit';
+@import '../molecules/link';
 
 @import '../templates/_default.scss';
 
@@ -63,11 +65,41 @@
     }
 
     &.benefits {
-      grid-column-start: 4;
-      grid-column-end: 22;
+      grid-column: 4 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+
+      @media screen and (min-width: 768px) {
+        padding: 20px 140px 20px 50px;
+      }
+
+      & h1 {
+        align-self: flex-start;
+
+        @media screen and (min-width: 768px) {
+          padding-left: 150px;
+        }
+      }
+
+      &.stories {
+        @include gradient-stories;
+      }
+
+      h1 {
+        @include hl;
+        @include hl-h4;
+        margin-bottom: 75px;
+      }
 
       .benefit-cards {
         display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+          flex-wrap: wrap;
+        }
       }
     }
   }
