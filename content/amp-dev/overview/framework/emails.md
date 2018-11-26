@@ -18,6 +18,7 @@ $titles:
 [/stage]
 
 <section class="main intro">
+
   [video]
   [](https://www.youtube.com/watch?v=9Cfxm7cikMY)
   [/video]
@@ -27,19 +28,32 @@ $titles:
   </div>
 </section>
 
+[bevel]
+
 <section class="main quote">
   <div class="ad-m-quote">
-    <blockquote>
-      <p class="ad-a-txt">It’s the biggest thing happening to email since the creation of email.</p>
-    </blockquote>
-    <p>Antony Malone, Senior Product Owner Direct Marketing at Booking.com</p>
-  </div>
-  <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
-    <div class="ad-a-ico ad-m-lnk-icon">
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    <div class="ad-m-quote-source">
+      <div class="ad-a-ico">
+        {% do doc.icons.useIcon('icons/quote.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+      </div>
+      <div class="ad-a-img ad-a-img-static">
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="153" height="38" alt="Image" />
+      </div>
     </div>
-    <span class="ad-m-lnk-text">Read Success Story</span>
-  </a>
+    <div class="ad-m-quote-quote">
+      <blockquote>
+        <p class="ad-a-txt">It’s the biggest thing happening to email since the creation of email.</p>
+      </blockquote>
+      <p>Antony Malone, Senior Product Owner Direct Marketing at Booking.com</p>
+      <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ad-m-lnk-text">Read Success Story</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <section class="main core-components">

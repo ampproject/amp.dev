@@ -28,19 +28,33 @@ $titles:
   </div>
 </section>
 
+[bevel]
+
+
 <section class="main quote">
   <div class="ad-m-quote">
-    <blockquote>
-      <p class="ad-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage</p>
-    </blockquote>
-    <p>Greg Manifold, Design Director of The Washington Post</p>
-  </div>
-  <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
-    <div class="ad-a-ico ad-m-lnk-icon">
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    <div class="ad-m-quote-source">
+      <div class="ad-a-ico">
+        {% do doc.icons.useIcon('icons/quote.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+      </div>
+      <div class="ad-a-img ad-a-img-static">
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="153" height="38" alt="Image" />
+      </div>
     </div>
-    <span class="ad-m-lnk-text">Read Success Story</span>
-  </a>
+    <div class="ad-m-quote-quote">
+      <blockquote>
+        <p class="ad-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.</p>
+      </blockquote>
+      <p>Greg Manifold, Design Director of The Washington Post</p>
+      <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ad-m-lnk-text">Read Success Story</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <section class="main benefits stories">
