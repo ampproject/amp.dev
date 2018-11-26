@@ -110,9 +110,10 @@
       {# Check if the document or collections defines its own sub navigation #}
       {% if doc.collection.sub_navigation or doc.sub_navigation %}
       {% set sub_navigation_items = doc.collection.sub_navigation or doc.sub_navigation %}
-      {% for item in sub_navigation_items %}
-      <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if doc == item %}ad-o-header-lnk-subnav-selected{% endif %}">
-        <a href="{{ item }}">{{ item }}</a>
+      {% for path in sub_navigation_items %}
+      {% set path_doc = g.doc(path) %}
+      <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if doc == path_doc %}ad-o-header-lnk-subnav-selected{% endif %}">
+        <a href="{{ path_doc.url.path }}">{{ path_doc.titles('header') }}</a>
       </li>
       {% endfor %}
 

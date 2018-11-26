@@ -3,6 +3,9 @@ $title: What is AMP for ads
 $view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
+sub_navigation:
+  - /content/amp-dev/overview/framework/ads.md
+  - /content/amp-dev/overview/benefits/ads.md
 ---
 [stage color="purple"]
 <amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
@@ -14,7 +17,7 @@ $titles:
 - [websites](/content/amp-dev/overview/framework/websites.md)
 - [stories](/content/amp-dev/overview/framework/stories.md)
 - [e-mails](/content/amp-dev/overview/framework/emails.md)
-- [overview](/content/amp-dev/overview/framework/index.md)
+- [overview](/content/amp-dev/overview/framework/overview.md)
 [/destination-switch]
 [/stage]
 
@@ -31,6 +34,46 @@ $titles:
   </div>
 </section>
 
+<section class="main kpi-grid">
+  <div class="ad-o-teaser-grid">
+    <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-3">
+
+      <div class="ad-m-kpi ad-m-kpi-ads">
+        <div class="ad-m-kpi-content">
+          {% do doc.icons.useIcon('icons/bookmark.svg') %}
+          <div class="ad-a-ico ad-m-kpi-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
+          </div>
+          <span class="ad-m-kpi-number">25 Mio</span>
+          <span class="ad-m-kpi-text">websites with 678 new Websites today</span>
+        </div>
+      </div>
+
+      <div class="ad-m-kpi ad-m-kpi-ads">
+        <div class="ad-m-kpi-content">
+          {% do doc.icons.useIcon('icons/bookmark.svg') %}
+          <div class="ad-a-ico ad-m-kpi-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
+          </div>
+          <span class="ad-m-kpi-number">567</span>
+          <span class="ad-m-kpi-text">contributors with 356 commits this month</span>
+        </div>
+      </div>
+
+      <div class="ad-m-kpi ad-m-kpi-ads">
+        <div class="ad-m-kpi-content">
+          {% do doc.icons.useIcon('icons/bookmark.svg') %}
+          <div class="ad-a-ico ad-m-kpi-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
+          </div>
+          <span class="ad-m-kpi-number">123 </span>
+          <span class="ad-m-kpi-text">platform & vendor partners with 22 million users reached</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section class="main copy">
   <h1>A faster way to grow your business</h1>
@@ -41,7 +84,7 @@ $titles:
   <p>With AMPHTML ads, your ads can serve on both AMP and non-AMP pages, meaning you can build your AMPHTML ads once and deliver a memorable brand experience everywhere. Similarly, AMP pages can be built once and distributed across a wide variety of distribution platforms simultaneously.</p>
 
   <a href="">Join the AMP Project to improve performance and grow your revenue</a>
-</section> 
+</section>
 
 <section class="main benefits ads">
   <h1>Explore benefits of AMP stories</h1>
@@ -102,7 +145,7 @@ $titles:
       <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
     </div>
   </div>
-  
+
 </section>
 
 [teaser-grid]

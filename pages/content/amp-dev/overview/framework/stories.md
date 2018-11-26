@@ -3,6 +3,9 @@ $title: What is AMP for stories
 $view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
+sub_navigation:
+  - /content/amp-dev/overview/framework/stories.md
+  - /content/amp-dev/overview/benefits/stories.md
 ---
 [stage color="orange"]
 <amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
@@ -13,7 +16,7 @@ $titles:
 - [websites](/content/amp-dev/overview/framework/websites.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)
 - [e-mails](/content/amp-dev/overview/framework/emails.md)
-- [overview](/content/amp-dev/overview/framework/index.md)
+- [overview](/content/amp-dev/overview/framework/overview.md)
 [/destination-switch]
 [/stage]
 
@@ -142,4 +145,3 @@ $titles:
 
 [See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]
-
