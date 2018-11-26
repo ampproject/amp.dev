@@ -26,15 +26,10 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
 .#{molecule(destination-switch)} {
   padding: 0;
-  margin: 10px 0;
   height: 38px;
   padding-right: 180px;
   overflow: hidden;
   position: absolute;
-
-  @media screen and (min-width: 1024px){
-    padding-right: 200px;
-  }
 
   &.dropdown {
 		background: linear-gradient(-220deg,
