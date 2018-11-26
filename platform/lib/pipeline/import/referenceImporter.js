@@ -23,12 +23,22 @@ const { Signale } = require('signale');
 
 const config = require('../../config');
 const Document = require('./document');
+const Collection = require('./collection');
 
+// TODO: Eventually make it possible to pass these in as a) command line args
+// or inside of config aswell
 const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
 const CLIENT_SECRET = process.argv[2] || process.env.AMP_DOC_SECRET;
 const CLIENT_ID = process.argv[3] || process.env.AMP_DOC_ID;
 // TODO: Make it possible to pass in a local repository path with argv
 const LOCAL_AMPHTML_REPOSITORY = false;
+
+// The view that the collections should define in their frontmatter
+const DOCUMENT_VIEW = '/views/detail/component-detail.j2';
+// Where to save the documents/collection to
+const DESTINATION_BASE_PATH = '../pages/content/amp-dev/documentation/components';
+// Base to define the request path for Grow
+const PATH_BASE = '/documentation/components'
 
 class ReferenceImporter {
 
@@ -84,7 +94,7 @@ class ReferenceImporter {
   /**
    * Collects all needed documents from across the repository that should
    * be downloaded and put into collections
-   * @return {[type]} [description]
+   * @return {undefined}
    */
   async _importExtensionsDocs() {
     // Gives the contents of ampproject/amphtml/extensions
@@ -94,14 +104,55 @@ class ReferenceImporter {
     // down by directory
     extensions = extensions[0].filter((doc) => doc.type === 'dir');
 
-    let documents = []
+    // Keep track of all saved documents (as promises) to complete function
+    let savedDocuments = [];
     for (const extension of extensions) {
       let document = await this._findExtensionDoc(extension);
-      if (document) {
-        this._log.await(`No matching document for component: ${extension.name}`);
-        console.log(`Found document for ${extension.name}`, document._path, document._title);
+      if(!document) {
+        this._log.warn(`No matching document for component: ${extension.name}`);
+      } else {
+        savedDocuments.push(this._saveDocument(extension.name, document));
       }
     }
+
+    return Promise.all(savedDocuments);
+  }
+
+  /**
+   * Builds the destination path from the document's file name and
+   * @param  {Document} document The component's reference
+   * @return {undefined}
+   */
+  _saveDocument(extensionName, document) {
+    let initial = extensionName.replace('amp-', '')[0];
+    // Check if initial is numeric as those will all be grouped
+    initial = !isNaN(initial) ? '1-9' : initial;
+
+    // Make sure that the collection the document is put in to is defined
+    this._ensureCollection(initial);
+
+    let documentPath = `${DESTINATION_BASE_PATH}/${initial}/${extensionName}.md`;
+
+    return document.save(documentPath).then(() => {
+      this._log.success('Saved document to ' + documentPath);
+    }).catch((e) => {
+      this._log.success('There was an error saving the document to ' + documentPath);
+      throw e;
+    });
+  }
+
+  /**
+   * Checks that the folder (collection) the document is saved to
+   * has a Grow compatible blueprint
+   * @param  {String}  initial The first letter of the extension
+   * @return {Promise}
+   */
+  async _ensureCollection(initial) {
+    let destination = `${DESTINATION_BASE_PATH}/${initial}`;
+    let path = `${PATH_BASE}/${initial}/{base}.html`;
+
+    let collection = new Collection(destination, initial, DOCUMENT_VIEW, path);
+    return collection.create(false);
   }
 
   /**

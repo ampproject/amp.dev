@@ -24,36 +24,41 @@ const config = require('../../config');
 class Document {
 
   constructor(path, title, contents) {
-    this._path = path;
+    this.path = path;
     this._frontmatter = {
-      'title': title
+      '$title': title
     };
 
-    this._contents = contents;
+    this._contents = this._convertSyntax(contents);
   }
 
   set title(title) {
-    this._frontmatter['title'] = title;
+    this._frontmatter['$title'] = title;
   }
 
-  _convertSyntax() {
+  set contents(contents) {
+    contents = this._convertSyntax(content);
+    this._contents =
+  }
 
+  _convertSyntax(contents) {
+    return contents;
   }
 
   /**
    * Writes the file to the specified path or the relative one
    * if none is set
-   * @return {[type]} [description]
+   * @return {Promise}
    */
   save(path) {
     let frontmatter = '---\n';
-    for (key in this._frontmatter) {
+    for (let key in this._frontmatter) {
       frontmatter += `${key}: ${this._frontmatter[key]}\n`;
     }
-    frontmatter = '---\n\n';
+    frontmatter += '---\n\n';
 
     path = path ? path : this._path;
-    return writeFile(path, frontmatter + this._contents);
+    return writeFile.promise(path, frontmatter + this._contents);
   }
 }
 

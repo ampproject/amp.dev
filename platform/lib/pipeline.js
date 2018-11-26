@@ -175,12 +175,13 @@ class Pipeline {
   }
 
   async importReference() {
+    // TODO: Define condition for importing reference - for example if it
+    // has been already imported and isn't outdated don't do it
+
     let importer = new ReferenceImporter();
     await importer.initialize();
 
-    // TODO: Define condition for importing reference - for example if it
-    // has been already imported and isn't outdated
-    await importer.import();
+    return importer.import();
   }
 
   /**
