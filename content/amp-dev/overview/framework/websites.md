@@ -15,8 +15,6 @@ $titles:
 [/destination-switch]
 [/stage]
 
-[include('/content/shared/hints/content-missing.md')]
-
 [video]
 [](https://www.youtube.com/watch?v=9Cfxm7cikMY)
 [/video]
@@ -51,19 +49,21 @@ IMAGE/ICON 1-3
 - and Distribution across popular platforms like Google, Bing, and Twitter.
 
 [teaser-grid]
-# Explore use cases of AMP
+# Explore possibilities of AMP websites
 [](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case-2.md)
 [](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case-3.md)
 
-[All use cases](#)
+[See more use cases](content/shared/fill-ins/use-case.md)
 [/teaser-grid]
 
 [teaser-grid]
 # Explore AMP success stories
 [](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-3.md)
 [](content/shared/fill-ins/success-story-2.md)
 [](content/shared/fill-ins/success-story.md)
 
-[See more success stories](#)
+[See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]
