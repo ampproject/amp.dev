@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /**
  * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
  *
@@ -56,6 +55,8 @@ class ReferenceImporter {
   }
 
   async initialize() {
+    this._log.start('Beginning to import reference docs ...');
+
     this._github = octonode.client(CLIENT_TOKEN || {
        'id': CLIENT_ID,
        'secret': CLIENT_SECRET

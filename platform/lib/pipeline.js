@@ -28,7 +28,8 @@ const minifyHtml = require('html-minifier').minify;
 
 const config = require('./config');
 const Grow = require('./pipeline/grow');
-const ReferenceImporter = require('./pipeline/import/referenceImporter');
+const ReferenceImporter = require('./pipeline/referenceImporter');
+const SamplesBuilder = require('./pipeline/samplesBuilder');
 
 const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
 const TRANSPILE_SCSS_WATCH_SRC = '../frontend/scss/**/*.scss';
@@ -107,7 +108,6 @@ class Pipeline {
     gulp.watch(TEMPLATES_WATCH_SRC, this._collectTemplates);
     gulp.watch(ICONS_WATCH_SRC, this._collectIcons);
     gulp.watch(TRANSPILE_SCSS_WATCH_SRC, this._transpileScss);
-    // TODO(matthiasrohmer): Watch for changes in example src
   }
 
   _transpileScss() {
@@ -207,8 +207,10 @@ class Pipeline {
     }
   }
 
-  samples() {
-    signale.warn('Building samples is not yet supported.')
+  async samples() {
+    let builder = new SamplesBuilder();
+
+    return builder.import();
   }
 
   /**

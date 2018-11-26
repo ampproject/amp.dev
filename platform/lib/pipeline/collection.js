@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /**
  * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
  *
@@ -19,7 +18,7 @@ const fs = require('fs');
 const path = require('path');
 const writeFile = require('write');
 
-const config = require('../../config');
+const config = require('../config');
 
 class Collection {
 
