@@ -3,6 +3,9 @@ $title: What is AMP for websites
 $view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
+sub_navigation:
+  - /content/amp-dev/overview/framework/websites.md
+  - /content/amp-dev/overview/benefits/websites.md
 ---
 [stage color="light-blue"]
 <amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
@@ -13,7 +16,7 @@ $titles:
 - [stories](/content/amp-dev/overview/framework/stories.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)
 - [e-mails](/content/amp-dev/overview/framework/emails.md)
-- [overview](/content/amp-dev/overview/framework/index.md)
+- [overview](/content/amp-dev/overview/framework/overview.md)
 [/destination-switch]
 [/stage]
 
