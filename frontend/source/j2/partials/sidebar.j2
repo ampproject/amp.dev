@@ -34,7 +34,7 @@
       {% macro nav_tree(root, iteration=1, depth=None) -%}
       <ul class="nav-list level-{{ iteration }}">
           {% set collections = root.collections()|sort(attribute='order') %}
-          {% set documents = root.list_docs(order_by='order') %}
+          {% set documents = root.list_docs(order_by='order', locale=doc.locale) %}
 
           {% if not depth or iteration <= depth %}
           {% for collection in collections %}
@@ -45,7 +45,7 @@
           <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
             {% set collection_index = g.doc('content/' + collection.collection_path + '/index.md') %}
             {% if collection_index.exists %}
-            <a class="nav-link" href="{{ collection_index.url }}">{{ collection.title }}</a>
+            <a class="nav-link" href="{{ collection_index.url.path }}">{{ collection.title }}</a>
             {% else %}
             <span class="nav-link">{{ collection.title }}</span>
             {% endif %}
@@ -62,13 +62,10 @@
           {% endfor %}
 
           {% for document in documents %}
-          {# Only list the document if it matches the current locale #}
-          {% if doc.locale == document.locale %}
           {% set activeDocument = true if document.url == doc.url %}
           <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}">
-            <a class="nav-link" href="{{ document.url }}">{{ document.title }}</a>
+            <a class="nav-link" href="{{ document.url.path }}">{{ document.title }}</a>
           </li>
-          {% endif %}
           {% endfor %}
           {% endif %}
       </ul>
