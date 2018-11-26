@@ -1,5 +1,6 @@
 ---
 $title: What is AMP for websites
+$path: /overview/framework.html
 $view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
@@ -12,7 +13,6 @@ $titles:
 - [stories](/content/amp-dev/overview/framework/stories.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)
 - [e-mails](/content/amp-dev/overview/framework/emails.md)
-- [overview](/content/amp-dev/overview/framework/index.md)
 [/destination-switch]
 [/stage]
 
@@ -23,6 +23,8 @@ $titles:
 AMP websites load nearly instantly and thus support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.
 
 AMP’s intelligent preloading features create websites that load near instantaneously, giving users a smooth browsing experience. Users return to websites they love, and users love web experiences built with AMP! Ecommerce vendors, publishers, and advertisers all benefit from a fast, enjoyable web browsing experience that put the user first.
+
+
 
 # Create great AMP experiences for all open web touchpoints
 

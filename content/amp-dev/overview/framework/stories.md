@@ -1,6 +1,6 @@
 ---
 $title: What is AMP for stories
-$view: /views/overview/overview-framework-stories.j2
+$view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
 ---
@@ -8,10 +8,11 @@ $titles:
 ## What is AMP?
 # AMP is a web component framework for easily creating user first
 [destination-switch type="selected" selected="stories"]
-- [websites](/content/amp-dev/overview/framework/websites.md)
 - [stories](/content/amp-dev/overview/framework/stories.md)
+- [websites](/content/amp-dev/overview/framework/websites.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)
 - [e-mails](/content/amp-dev/overview/framework/emails.md)
+- [overview](/content/amp-dev/overview/framework/index.md)
 [/destination-switch]
 [/stage]
 

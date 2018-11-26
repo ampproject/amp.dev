@@ -1,6 +1,6 @@
 ---
 $title: What is AMP for email
-$view: /views/overview/overview-framework-emails.j2
+$view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
 ---
@@ -8,10 +8,11 @@ $titles:
 ## Why should I use AMP?
 # Improve user engagement with rich and immersive
 [destination-switch type="selected" selected="e-mails"]
+- [e-mails](/content/amp-dev/overview/framework/emails.md)
 - [websites](/content/amp-dev/overview/framework/websites.md)
 - [stories](/content/amp-dev/overview/framework/stories.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)
-- [e-mails](/content/amp-dev/overview/framework/emails.md)
+- [overview](/content/amp-dev/overview/framework/index.md)
 [/destination-switch]
 [/stage]
 
