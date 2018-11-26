@@ -8,4 +8,6 @@ $view: /views/home.j2
 # Amp is a web component framework for easily creating user first
 [destination-switch]
 [/destination-switch]
+
+[Get Started](/content/amp-dev/documentation/guides-and-tutorials/index.md)
 [/stage]

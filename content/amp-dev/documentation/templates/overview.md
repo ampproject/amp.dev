@@ -13,8 +13,6 @@ $view: /views/overview/template-overview.j2
 - [overview](/content/amp-dev/documentation/templates/overview.md)
 [/destination-switch]
 # with our templates
-
-[Get Started](/content/amp-dev/documentation/index.md)
 [/stage]
 
 [intro]
