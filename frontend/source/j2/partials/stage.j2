@@ -17,7 +17,9 @@
     {% endif %}
 
     {% if button.link and button.text %}
-    <a href="{{ g.doc(button.link).url.path }}">{{ button.text }}</a>
+    <button class="ad-o-stage-button">
+      <a href="{{ g.doc(button.link).url.path }}">{{ button.text }}</a>
+    </button>
     {% endif %}
 	</div>
 </section>

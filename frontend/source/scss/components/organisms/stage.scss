@@ -102,6 +102,25 @@
 		}
   }
 
+  &-button {
+    border: none;
+    outline: none;
+    background: none;
+    display: flex;
+    padding: 0;
+    @include txt;
+    @include txt-1;
+    @include txt-font-accent;
+    @include stage-button-shadow-regular;
+    background: linear-gradient(-24deg, color('athens-gray'), color('white'));
+    margin: 15px 0;
+    cursor: pointer;
+
+    & a {
+      padding: 18px 55px;
+    }
+  }
+
 
   .dark-blue {
     @include gradient-default;
