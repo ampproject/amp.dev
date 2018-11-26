@@ -8,7 +8,7 @@ $titles:
 [stage color="dark-blue"]
 ## What is AMP on the web?
 # AMP is a web component framework to easily create user-first
-[destination-switch type="selected" selected="websites"]
+[destination-switch type="dropdown"]
 - [websites](/content/amp-dev/overview/framework/websites.md)
 - [stories](/content/amp-dev/overview/framework/stories.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)

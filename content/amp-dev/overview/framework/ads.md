@@ -3,6 +3,9 @@ $title: What is AMP for ads
 $view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
+sub_navigation:
+  - /content/amp-dev/overview/framework/ads.md
+  - /content/amp-dev/overview/benefits/ads.md
 ---
 [stage color="purple"]
 <amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
@@ -14,7 +17,7 @@ $titles:
 - [websites](/content/amp-dev/overview/framework/websites.md)
 - [stories](/content/amp-dev/overview/framework/stories.md)
 - [e-mails](/content/amp-dev/overview/framework/emails.md)
-- [overview](/content/amp-dev/overview/framework/index.md)
+- [overview](/content/amp-dev/overview/framework/overview.md)
 [/destination-switch]
 [/stage]
 

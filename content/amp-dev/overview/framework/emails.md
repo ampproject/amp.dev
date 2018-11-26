@@ -3,6 +3,9 @@ $title: What is AMP for email
 $view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
+sub_navigation:
+  - /content/amp-dev/overview/framework/emails.md
+  - /content/amp-dev/overview/benefits/emails.md
 ---
 [stage color="green"]
 <amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
@@ -13,7 +16,7 @@ $titles:
 - [websites](/content/amp-dev/overview/framework/websites.md)
 - [stories](/content/amp-dev/overview/framework/stories.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)
-- [overview](/content/amp-dev/overview/framework/index.md)
+- [overview](/content/amp-dev/overview/framework/overview.md)
 [/destination-switch]
 [/stage]
 
