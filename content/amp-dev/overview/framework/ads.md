@@ -1,6 +1,6 @@
 ---
 $title: What is AMP for ads
-$view: /views/overview/overview-framework-ads.j2
+$view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
 ---
@@ -8,10 +8,11 @@ $titles:
 ## What is AMP?
 # AMP is a web component framework to easily create user first
 [destination-switch type="selected" selected="ads"]
+- [ads](/content/amp-dev/overview/framework/ads.md)
 - [websites](/content/amp-dev/overview/framework/websites.md)
 - [stories](/content/amp-dev/overview/framework/stories.md)
-- [ads](/content/amp-dev/overview/framework/ads.md)
 - [e-mails](/content/amp-dev/overview/framework/emails.md)
+- [overview](/content/amp-dev/overview/framework/index.md)
 [/destination-switch]
 [/stage]
 
