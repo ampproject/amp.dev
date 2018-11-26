@@ -16,38 +16,56 @@ none
 */
 
 // TODO: implement mono font and modifier
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/_icon.scss';
+@import '../atoms/divider';
 
 .#{molecule('benefit')} {
 	position: relative;
-	padding-left: 4em;
+  padding-left: 4em;
 
 	@media screen and (min-width: 768px) {
 		padding: 0;
 	}
 
 	&-headline {
-		@include hl;
-		@include hl-h4;
 		margin: 0 0 0.375em;
-	}
+  }
 
-	&-copy {
-		@include txt;
-		@include txt-3;
-		@include txt-p;
-	}
+  &-card {
+    @include gradient-overview;
 
-	&-icon {
-		@include ico-3;
-		@include ico-blue-ribbon;
+    &-left {
+      @include benefit-card-left-shadow;
+      z-index: 1;
 
-		position: absolute;
-		left: 0;
-		top: 0;
+      @media screen and (min-width: 768px) {
+        margin-left: 55px;
+      }
+    }
 
-		@media screen and (min-width: 768px) {
-			position: static;
-			margin-bottom: 0.75em;
-		}
-	}
+    &-right {
+      @include benefit-card-right-shadow;
+    }
+
+    &-content {
+      padding: 45px 50px;
+    }
+
+    h2 {
+      @include hl;
+      @include hl-h4;
+    }
+  }
+}
+
+.#{atom('divider-benefit')} {
+  @include divider-benefit;
 }

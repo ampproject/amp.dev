@@ -19,6 +19,7 @@
     height: auto;
     flex-direction: row-reverse;
     width: 100%;
+    margin-bottom: 200px;
   }
 
   &-clipped-background {
@@ -47,7 +48,18 @@
       padding: 5%;
       width: 50%;
 		}
-}
+  }
+
+  &-image {
+    width: 100%;
+    top: 0;
+
+    @media screen and (min-width: 768px) {
+      width: 50%;
+      margin-bottom: -200px;
+      right: 0;
+    }
+  }
 
 	.hl {
     @include hl;
@@ -75,13 +87,9 @@
     }
 
     &-inline {
-      height: 38px;
+      height: 28px;
       display: inline-block;
       width: 180px;
-
-      @media screen and (min-width: 768px) {
-        width: 200px;
-      }
     }
 
 		&-divider {
@@ -100,6 +108,25 @@
 		&-emails {
 			@include color-e-mails;
 		}
+  }
+
+  &-button {
+    border: none;
+    outline: none;
+    background: none;
+    display: flex;
+    padding: 0;
+    @include txt;
+    @include txt-1;
+    @include txt-font-accent;
+    @include stage-button-shadow-regular;
+    background: linear-gradient(-24deg, color('athens-gray'), color('white'));
+    margin: 15px 0;
+    cursor: pointer;
+
+    & a {
+      padding: 10px 45px;
+    }
   }
 
 

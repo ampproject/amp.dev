@@ -1,0 +1,62 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '_color.scss';
+
+.#{atom('bevel')} {
+	position: relative;
+	width: 100%;
+	z-index: 0;
+	
+	@media screen and (min-width: 768px){
+		grid-column-start: 1;
+		grid-column-end: 25;
+	}
+	
+	&:before,
+	&:after {
+		content: '';
+		width: 100%;
+		position: absolute;
+	}
+	
+	&:before {
+		height: 1000px;
+		top: 0;
+	}
+	
+	&:after {
+		height: 1000px;
+		background: color('whisper');
+	}
+
+	&-right {
+		&:before {
+			right: 0;
+			background: linear-gradient(30deg, color('whisper') 30%, color('athens-gray') 100%);
+		}
+
+		&:after {
+			top: 400px;
+			left: 100%;
+			transform-origin: left top;
+			transform: rotate(30deg);
+		}
+  }
+
+	&-left {
+		&:before {
+			left: 0;
+			background: linear-gradient(210deg, color('whisper') 30%, color('athens-gray') 100%);
+		}
+
+		&:after {
+			top: calc(100% - 400px);
+			right: 100%;
+			transform-origin: right bottom;
+			transform: rotate(30deg);
+		}
+  }
+}

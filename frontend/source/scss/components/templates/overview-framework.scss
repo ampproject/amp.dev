@@ -1,0 +1,155 @@
+/*
+
+#############################################
+### TEMPLATE: overview framework websites ###
+#############################################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../molecules/quote';
+@import '../molecules/benefit';
+@import '../molecules/link';
+
+@import '../templates/_default.scss';
+
+.#{template('overview-framework')} {
+  @include container;
+
+  section {
+    position: relative;
+    z-index: 1;
+
+    &.#{organism('stage')},
+    &.teaser-grid {
+      @media screen and (min-width: 1024px){
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
+    }
+
+    &.intro {
+      &.intro h1 {
+        @include hl;
+        @include hl-h4;
+      }
+    }
+
+    &.quote {
+      grid-column-start: 5;
+      grid-column-end: 19;
+    }
+
+    &.kpi-grid {
+      grid-column-start: 4;
+      grid-column-end: 22;
+    }
+
+    &.col-7-19 {
+      grid-column-start: 7;
+      grid-column-end: 19;
+    }
+
+    &.col-5-15 {
+      grid-column-start: 5;
+      grid-column-end: 15;
+    }
+
+    &.benefits {
+      grid-column: 4 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+
+      @media screen and (min-width: 768px) {
+        padding: 20px 140px 20px 50px;
+      }
+
+      & h1 {
+        align-self: flex-start;
+
+        @media screen and (min-width: 768px) {
+          padding-left: 150px;
+        }
+      }
+
+      &.websites {
+        @include gradient-websites;
+      }
+
+      &.stories {
+        @include gradient-stories;
+      }
+
+      &.ads {
+        @include gradient-ads;
+      }
+
+      &.e-mails {
+        @include gradient-e-mails;
+      }
+
+      h1 {
+        @include hl;
+        @include hl-h4;
+        margin-bottom: 75px;
+      }
+
+      .benefit-cards {
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+    &.core-components {
+      grid-column: 7 / -1;
+
+      .image-container {
+        width: 100%;
+        padding-bottom: 20px;
+
+        @media screen and (min-width: 768px) {
+          width: 50%;
+        }
+      }
+
+      .component {
+        &.image {
+          margin: 50px 0;
+
+          @media screen and (min-width: 768px) {
+            display: flex;
+          }
+        }
+
+        &.text {
+          padding: 0 20px;
+          width: 100%;
+          @media screen and (min-width: 768px) {
+            width: 50%;
+          }
+        }
+
+        h2 {
+          @include hl;
+          @include hl-h4;
+        }
+
+      }
+    }
+  }
+}

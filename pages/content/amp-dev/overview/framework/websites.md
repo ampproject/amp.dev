@@ -1,9 +1,11 @@
 ---
 $title: What is AMP for websites
+$view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
 ---
 [stage color="light-blue"]
+<amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
 ## What is AMP on the web?
 # AMP is a web component framework to easily create user-first
 [destination-switch type="selected" selected="websites"]
@@ -11,58 +13,103 @@ $titles:
 - [stories](/content/amp-dev/overview/framework/stories.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)
 - [e-mails](/content/amp-dev/overview/framework/emails.md)
+- [overview](/content/amp-dev/overview/framework/index.md)
 [/destination-switch]
 [/stage]
 
-[include('/content/shared/hints/content-missing.md')]
+<section class="main intro">
+  [video]
+  [](https://www.youtube.com/watch?v=9Cfxm7cikMY)
+  [/video]
 
-[video]
-[](https://www.youtube.com/watch?v=9Cfxm7cikMY)
-[/video]
+  <div class="intro">
+    <p>AMP websites load nearly instantly and thus support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
+  </div>
+</section>
 
-AMP websites load nearly instantly and thus support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.
+[bevel]
 
-AMP’s intelligent preloading features create websites that load near instantaneously, giving users a smooth browsing experience. Users return to websites they love, and users love web experiences built with AMP! Ecommerce vendors, publishers, and advertisers all benefit from a fast, enjoyable web browsing experience that put the user first.
+<section class="main quote">
+  <div class="ad-m-quote">
+    <div class="ad-m-quote-source">
+      <div class="ad-a-ico">
+        {% do doc.icons.useIcon('icons/quote.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+      </div>
+      <div class="ad-a-img ad-a-img-static">
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="153" height="38" alt="Image" />
+      </div>
+    </div>
+    <div class="ad-m-quote-quote">
+      <blockquote>
+        <p class="ad-a-txt">AMP provides an open standard for publishers to quickly load pages on mobile. This improves the user experience by giving them a lighter version of the content.</p>
+      </blockquote>
+      <p>Sanjay Nagpal, India Today’s Head of Technology</p>
+      <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ad-m-lnk-text">Read Success Story</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-# Create great AMP experiences for all open web touchpoints
+<section class="main benefits websites">
+  <h1>Explore benefits of AMP stories</h1>
 
-AMP websitesare consistently fast, beautiful and high-performing across devices and distribution platforms. Publishers and advertisers completely own the content on their AMP pages all while maintaining a user-first experience.
+  <div class="main benefit-cards">
+    <div class="ad-m-benefit-card ad-m-benefit-card-left">
+      <div class="ad-m-benefit-card-content">
+        <h2>Benefits for developers</h2>
+        <div class="ad-a-divider-benefit"></div>
+        <p>IMAGE/ICON 1-3</p>
+        <ul>
+          <li>Reduced development effort and maintenance</li>
+          <li>Inherently secure code</li>
+          <li>Community support and collaboration</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ad-m-benefit-card  ad-m-benefit-card-right">
+      <div class="ad-m-benefit-card-content">
+        <h2>Benefits for your business</h2>
+        <div class="ad-a-divider-benefit"></div>
+        <p>IMAGE/ICON 1-3</p>
+        <ul>
+          <li>Reliable speed measurements</li>
+          <li>Ensures your website will always be fast and smooth</li>
+          <li>and Distribution across popular platforms like Google, Bing, and Twitter.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-> AMP provides an open standard for publishers to quickly load pages on mobile. This improves the user experience by giving them a lighter version of the content.
+  <a class="ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-square-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    </div>
+    <span class="ad-m-lnk-square-text">All benefits</span>
+  </a>
 
-Sanjay Nagpal, India Today’s Head of Technology
-
-LOGO INDIA TODAY
-
-# Explore benefits of AMP websites
-## Benefits for developers
-IMAGE/ICON 1-3
-
-- Reduced development effort and maintenance
-- Inherently secure code
-- Community support and collaboration
-
-## Benefits for your business
-IMAGE/ICON 1-3
-
-- Reliable speed measurements
-- Ensures your website will always be fast and smooth
-- and Distribution across popular platforms like Google, Bing, and Twitter.
+</section>
 
 [teaser-grid]
-# Explore use cases of AMP
+# Explore possibilities of AMP websites
 [](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case-2.md)
 [](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case-3.md)
 
-[All use cases](#)
+[See more use cases](content/shared/fill-ins/use-case.md)
 [/teaser-grid]
 
 [teaser-grid]
 # Explore AMP success stories
 [](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-3.md)
 [](content/shared/fill-ins/success-story-2.md)
 [](content/shared/fill-ins/success-story.md)
 
-[See more success stories](#)
+[See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]

@@ -6,6 +6,11 @@
 
 <section class="ad-o-stage">
   <div class="ad-o-stage-clipped-background {{ background_color }}"></div>
+    {% if image %}
+      <div class="ad-o-stage-image">
+        {{ image|safe }}
+      </div>
+    {% endif %}
   <div class="ad-o-stage-content">
 		<span class="hl-sub">{{ sub_headline }}</span>
 		<span class="hl"> {{ headline }}</span>
@@ -17,7 +22,9 @@
     {% endif %}
 
     {% if button.link and button.text %}
-    <a href="{{ g.doc(button.link).url.path }}">{{ button.text }}</a>
+    <button class="ad-o-stage-button">
+      <a href="{{ g.doc(button.link).url.path }}">{{ button.text }}</a>
+    </button>
     {% endif %}
-	</div>
+  </div>
 </section>

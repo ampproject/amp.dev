@@ -1,94 +1,145 @@
 ---
 $title: What is AMP for stories
+$view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
 ---
 [stage color="orange"]
+<amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
 ## What is AMP?
 # AMP is a web component framework for easily creating user first
 [destination-switch type="selected" selected="stories"]
-- [websites](/content/amp-dev/overview/framework/websites.md)
 - [stories](/content/amp-dev/overview/framework/stories.md)
+- [websites](/content/amp-dev/overview/framework/websites.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)
 - [e-mails](/content/amp-dev/overview/framework/emails.md)
+- [overview](/content/amp-dev/overview/framework/index.md)
 [/destination-switch]
 [/stage]
 
-[include('/content/shared/hints/content-missing.md')]
+<section class="main intro">
+  [video]
+  [](https://www.youtube.com/watch?v=9Cfxm7cikMY)
+  [/video]
 
-# AMP stories: visual storytelling for the open web
-AMP stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. AMP stories are part of the open web, which means they can be shared and embedded across the web without being confined to a closed ecosystem or platform.
+  <div class="intro">
+    <h1>Visual storytelling for the open web</h1>
+    <p>AMP stories immerse your readers in fast-loading full-screen experiences. Easily spread long stories over bite-sized chapters, with engaging animations and tappable interactions. AMP stories are part of the open web, which means they can be shared and embedded across sites and apps without being confined to a single ecosystem.</p>
+  </div>
+</section>
 
-[video]
-[]https://www.youtube.com/watch?v=9Cfxm7cikMY
-[/video]
+[bevel]
 
-> “As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.”
 
-Greg Manifold, Design Director of The Washington Post
+<section class="main quote">
+  <div class="ad-m-quote">
+    <div class="ad-m-quote-source">
+      <div class="ad-a-ico">
+        {% do doc.icons.useIcon('icons/quote.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+      </div>
+      <div class="ad-a-img ad-a-img-static">
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="153" height="38" alt="Image" />
+      </div>
+    </div>
+    <div class="ad-m-quote-quote">
+      <blockquote>
+        <p class="ad-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.</p>
+      </blockquote>
+      <p>Greg Manifold, Design Director of The Washington Post</p>
+      <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ad-m-lnk-text">Read Success Story</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-LOGO THE WASHINGTON POST
+<section class="main benefits stories">
+  <h1>Explore benefits of AMP stories</h1>
 
-Best Practices for creating an AMP Story
-[video]
-[]https://www.youtube.com/watch?v=2WjFBnCj2ew
-[/video]
+  <div class="main benefit-cards">
+    <div class="ad-m-benefit-card ad-m-benefit-card-left">
+      <div class="ad-m-benefit-card-content">
+        <h2>Benefits for developers</h2>
+        <div class="ad-a-divider-benefit"></div>
+        <p>IMAGE/ICON 1-3</p>
+        <ul>
+          <li>Reduced development effort and maintenance</li>
+          <li>Inherently secure code</li>
+          <li>Community support and collaboration</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ad-m-benefit-card  ad-m-benefit-card-right">
+      <div class="ad-m-benefit-card-content">
+        <h2>Benefits for your business</h2>
+        <div class="ad-a-divider-benefit"></div>
+        <p>IMAGE/ICON 1-3</p>
+        <ul>
+          <li>Reliable speed measurements</li>
+          <li>Ensures your website will always be fast and smooth</li>
+          <li>and Distribution across popular platforms like Google, Bing, and Twitter.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-## The benefits of AMP stories
+  <a class="ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-square-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    </div>
+    <span class="ad-m-lnk-square-text">All benefits</span>
+  </a>
 
-## Benefits for developers
-IMAGE/ICON
+</section>
 
-1. Easy to create
-2. Creative flexibility
-3. Sharable and linkable on the open web
-
-IMAGE/ICON
-
-## Benefits for your business
-
-IMAGE/ICON
-
-1. Immersive storytelling
-2. Fast loading times
-3. Supports analytics
-
-IMAGE/ICON
-
-See more benefits
-
-## AMP stories are built using 3 core components:
-IMAGE: A MOBILE SCREEN WHERE VARIOUS STORY PAGES ARE ADDED IN AN EXPLODED VIEW
-
-Images, videos and GIFs
-
-AMP stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you.  Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities.
-
-IMAGE: TEXT IS ADDED TO THE VISIBLE STORY PAGE ON THE MOBILE SCREEN
-
-Text and audio
-
-Convey facts and figures via bite-sized chunks of one or two sentences – ideal for mobile devices. Choose from different font colors for basic readability. Or add visual elements like subtle black transparent gradient overlays to ensure readability even on random background imagery, for example user generated content. On top of this, you can use short audio files on every page to provide spoken information or background music.
-
-IMAGE LOOP: STORY PAGES PUSH THROUGH THE SCREEN AND ANIMATED TEXT ELEMENTS APPEAR
-
-## Animations and interactions
-
-It’s easy to create visual effects and tappable interactions that keep readers engaged. Titles can fly  drop, fade in, or animate onto the page. Configure your story to automatically progress to the next page when a video snippet is finished. Provide social sharing and related links at the end of your story, so users can share it or dive further into other content on your site.
+<section class="main core-components">
+  <h2>AMP Stories are built with 3 core components:</h2>
+  <div class="component image">
+    <div class="image-container">
+      <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
+    </div>
+    <div class="component text">
+      <h2>Images, videos and GIFs</h2>
+      <p>Fascinate your readers with entertaining mobile-first full-screen content. Whether you use pictures, videos or GIFs is entirely up to you. Split long videos over multiple pages for excellent performance. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities.<p>
+    </div>
+  </div>
+  <div class="component image">
+    <div class="image-container">
+      <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
+    </div>
+    <div class="component text">
+      <h2>Text and audio</h2>
+      <p>Convey facts and figures via bite-sized chunks of one or two sentences – ideal for mobile devices. Choose from different font colors for basic readability. Or add visual elements like subtle black transparent gradient overlays to ensure readability even on random background imagery, for example user generated content. On top of this, you can use short audio files on every page to provide spoken information or background music.<p>
+    </div>
+  </div>
+  <div class="component">
+    <h2>Animations and interactions</h2>
+    <p>To keep readers engaged, easily create visual effects and tappable interactions. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on. Or configure your story to automatically progress to the next page when a video snippet is finished. Plus: provide social sharing and related links at the end of your story, so users can share it or dive further into other content on your site.<p>
+  </div>
+</section>
 
 [teaser-grid]
 # Explore the possibilities of AMP stories
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case-3.md)
+[](content/shared/fill-ins/use-case-3.md)
+[](content/shared/fill-ins/use-case-3.md)
+[](content/shared/fill-ins/use-case-3.md)
 
-[See more use cases](#)
+[See more use cases](content/shared/fill-ins/use-case.md)
+
 [/teaser-grid]
 
 [teaser-grid]
-[](content/shared/fill-ins/success-story.md)
+# Explore AMP success stories
 [](content/shared/fill-ins/success-story-2.md)
-[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-2.md
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story-2.md)
 
-[See more success stories](#)
+[See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]
+

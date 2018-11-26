@@ -3,15 +3,15 @@ $view: /views/detail/success-story-detail.j2
 $path: /shared/fill-ins/success-story.html
 $title: Sample Success Story
 $titles:
-  teaser: Sample success story
-destination: stories
+  teaser: Stories with rich visuals and native videos
+destination: websites
 teaser:
   kpi:
-    title: 25 Mio
-    text: With 678 new websites today
+    title: +1 Mil
+    text: AMP pages puplished
     icon: flask
   logo:
-    src: /static/img/logo-dummy-mic.png
+    src: /static/img/logo-dummy-time.png
     width: 153
     height: 38
   text: A sample success story with KPI.

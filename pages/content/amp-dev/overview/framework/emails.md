@@ -1,53 +1,138 @@
 ---
 $title: What is AMP for email
+$view: /views/overview/overview-framework.j2
 $titles:
   header: Framework
 ---
 [stage color="green"]
+<amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
 ## Why should I use AMP?
 # Improve user engagement with rich and immersive
 [destination-switch type="selected" selected="e-mails"]
+- [e-mails](/content/amp-dev/overview/framework/emails.md)
 - [websites](/content/amp-dev/overview/framework/websites.md)
 - [stories](/content/amp-dev/overview/framework/stories.md)
 - [ads](/content/amp-dev/overview/framework/ads.md)
-- [e-mails](/content/amp-dev/overview/framework/emails.md)
+- [overview](/content/amp-dev/overview/framework/index.md)
 [/destination-switch]
 [/stage]
 
-[include('/content/shared/hints/content-missing.md')]
+<section class="main intro">
 
-More than 270 billion emails are sent every day, it is the pillar of many consumer and enterprise workflows. However the content that is sent in an email message is still limited – messages are static, can become out of date, and are not actionable without opening a browser. AMPHTML email seeks to enhance and modernize the email experience through added support for dynamic content and interactivity while keeping users safe. AMPHTML for email makes modern App functionality available within email.
+  [video]
+  [](https://www.youtube.com/watch?v=9Cfxm7cikMY)
+  [/video]
 
-## Benefits for developers
+  <div class="intro">
+    <p>AMP for email allows senders to include AMP components inside rich engaging emails, making modern app functionality available within email. The AMPHTML Email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMPHTML emails to interact dynamically with content directly in the message.</p>
+  </div>
+</section>
 
-### Increased capabilities
-AMPHTML email is an expansion of the already existing blazingly fast and high-performing AMPHTML project and opens up a whole new world of possibilities for users to engage with content. AMP for email can integrate with existing compatible apps like Doodle, Booking.com and Pinterest.
+[bevel]
 
-The AMPHTML email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMPHTML emails to interact dynamically with content directly in the message. AMP for email is intended to work safely with all web-based clients.
+<section class="main quote">
+  <div class="ad-m-quote">
+    <div class="ad-m-quote-source">
+      <div class="ad-a-ico">
+        {% do doc.icons.useIcon('icons/quote.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+      </div>
+      <div class="ad-a-img ad-a-img-static">
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="153" height="38" alt="Image" />
+      </div>
+    </div>
+    <div class="ad-m-quote-quote">
+      <blockquote>
+        <p class="ad-a-txt">It’s the biggest thing happening to email since the creation of email.</p>
+      </blockquote>
+      <p>Antony Malone, Senior Product Owner Direct Marketing at Booking.com</p>
+      <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ad-m-lnk-text">Read Success Story</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-#### Guides & Tutorials:
-[AMP for Email specifications](Link)
+<section class="main core-components">
+  <h2>A whole new world of possibilities</h2>
+  <div class="component image">
+    <div class="image-container">
+      <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="0.65" width="1"></amp-img>
+    </div>
+    <div class="component text">
+      <h2>Modernize email with the power of AMP</h2>
+      <p>Expand business through unprecedented in-mail features. Senders can include AMP components inside rich, engaging emails, making them dynamic and interactive. Users can engage with content and quickly take action such as RSVP to events, fill out questionnaires and personalize their content. AMP emails are always up to date and can function like digests, with fewer clicks necessary to achieve efficient results.<p>
+    </div>
+  </div>
+  <div class="component image">
+    <div class="component text">
+      <h2>Modern app functionality available within email</h2>
+      <p>AMP for email has no arbitrary 3rdparty features to limit security issues, and far surpasses the capabilities currently provided by third party providers. Ad components are not allowed in AMP email, keeping users safe.<p>
+    </div>
+    <div class="image-container">
+      <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="0.65" width="1"></amp-img>
+    </div>
+  </div>
+</section>
 
-### Easy to develop
+<section class="main benefits e-mails">
+  <h1>Explore benefits of AMP stories</h1>
 
-AMPHTML for email is being developed as part of the AMP Project and is simple and straightforward to use. Embedding AMP within an email is simple, add a new MIME part with a content type of text/x-amp-html as a descendant of multipart/alternative. It should live alongside the existing text/html or text/plain parts. This ensures that the email message works on all clients.
+  <div class="main benefit-cards">
+    <div class="ad-m-benefit-card ad-m-benefit-card-left">
+      <div class="ad-m-benefit-card-content">
+        <h2>Benefits for developers</h2>
+        <div class="ad-a-divider-benefit"></div>
+        <p>IMAGE/ICON 1-3</p>
+        <ul>
+          <li>Reduced development effort and maintenance</li>
+          <li>Inherently secure code</li>
+          <li>Community support and collaboration</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ad-m-benefit-card  ad-m-benefit-card-right">
+      <div class="ad-m-benefit-card-content">
+        <h2>Benefits for your business</h2>
+        <div class="ad-a-divider-benefit"></div>
+        <p>IMAGE/ICON 1-3</p>
+        <ul>
+          <li>Reliable speed measurements</li>
+          <li>Ensures your website will always be fast and smooth</li>
+          <li>and Distribution across popular platforms like Google, Bing, and Twitter.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-AMP by example:
-[Link to relevant doc](Link)
+  <a class="ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-square-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    </div>
+    <span class="ad-m-lnk-square-text">All benefits</span>
+  </a>
 
-### Consistency and scalability
+</section>
 
-The fast and rich user experience that is the goal of AMP is also available. Developers can use AMP to create more expressive and engaging experiences in Email. Compared to websites, email is a different user context with different models of privacy and security. For example, phishing is a major concern for email. To maintain users’ expectations of security and privacy, we’ll only allow a conservative subset of AMP functionality. To enforce this, we propose adding a new AMPHTML email validation spec identified by a new attribute on the document element: amp4email. This is similar to the technique used by the AMPHTML Ads project which introduced its own spec that uses the attribute amp4ads.
+<section class="main core-components">
+  <h2>AMP for Email</h2>
+  <div class="component image">
+    <div class="image-container">
+      <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
+    </div>
+  </div>
+</section>
 
-#### Guides & Tutorials:
-[Documentation](Link)
+[teaser-grid]
+# Explore the possibilities of AMP stories
+[](content/shared/fill-ins/use-case-4.md)
+[](content/shared/fill-ins/use-case-4.md)
+[](content/shared/fill-ins/use-case-4.md)
+[](content/shared/fill-ins/use-case-4.md)
 
-## Benefits for your business
+[See more use cases](content/shared/fill-ins/use-case.md)
 
-### Increased personalization
-AMPHTML for email allows exciting smarter user engagement, as customers can take action directly within their email such as managing their subscriptions, responding to polls, doodles, and bookings. This is possible because the server retrieves fresh content from remote endpoints, keeping email up to date. Because fewer steps are needed to personalize results, it is easier to please and keep customers engaged.
-
-[Duis dolor](Link)
-
-### Interactive customer experience
-AMP Email’s expanding capabilities allows you to take action right inside your Inbox. This includes carousels and accordions, and taking user input on forms and questionnaires. Ad components are not allowed allowed in AMP for email, keeping users safe.
+[/teaser-grid]

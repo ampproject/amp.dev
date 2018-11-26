@@ -4,5 +4,3 @@ $view: /views/default.j2
 $localization:
   path: /{locale}/overview/framework/{base}.html
 $order: 1
-
-index: /content/amp-dev/overview/framework/websites.md
