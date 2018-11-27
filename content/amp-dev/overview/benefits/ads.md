@@ -9,9 +9,9 @@ $titles:
 ## Why should I use AMP?
 # Improve user engagement with rich and immersive AMP
 [destination-switch type="selected" selected="ads"]
+- [ads](/content/amp-dev/overview/benefits/ads.md)
 - [websites](/content/amp-dev/overview/benefits/websites.md)
 - [stories](/content/amp-dev/overview/benefits/stories.md)
-- [ads](/content/amp-dev/overview/benefits/ads.md)
 - [e-mails](/content/amp-dev/overview/benefits/emails.md)
 - [overview](/content/amp-dev/overview/benefits/overview.md)
 [/destination-switch]
