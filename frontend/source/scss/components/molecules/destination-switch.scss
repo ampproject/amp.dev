@@ -27,7 +27,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .#{molecule(destination-switch)} {
   padding: 0;
   height: 38px;
-  padding-right: 198.95px;
+  width: 210px;
   overflow: hidden;
   position: absolute;
 
@@ -41,7 +41,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		background-size: 1200% 100%;
 		background-position: 0% 0%;
 		animation: gradientChange 12.8s ease infinite;
-    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
+    // box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
   }
 
   &.menu-list {
