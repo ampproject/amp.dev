@@ -118,11 +118,11 @@ sub_navigation:
     </div>
   </div>
 
-  <a class="ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
-    <div class="ad-a-ico ad-m-lnk-square-icon">
+  <a class="ad-m-lnk ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </div>
-    <span class="ad-m-lnk-square-text">All benefits</span>
+    <span class="ad-m-lnk-text">All benefits</span>
   </a>
 
 </section>
