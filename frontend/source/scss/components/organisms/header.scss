@@ -100,12 +100,16 @@
 
     a {
       @include txt-font-accent;
-      @include hl-h4;
+      @include hl-h3;
       @include color-black;
       margin: 0;
 
       &:hover {
         @include color-blue-ribbon;
+      }
+
+      @media screen and (min-width: 768px) {
+        @include hl-h4;
       }
 
       @media screen and (min-width: 1024px) {
@@ -161,7 +165,7 @@
     }
 
     &-expanded {
-      margin: 10px 0 10px 20px;
+      margin: 7px 0 8px;
 
       @media screen and (min-width: 768px) {
         margin-left: 30px;
@@ -172,7 +176,7 @@
       margin: 0 30px;
 
       &-expanded {
-        margin-top: auto;
+        margin-top: 40px;
       }
     }
   }
@@ -202,6 +206,14 @@
       position: relative;
       height: auto;
     }
+    
+    & > ul {
+      padding: 0 20px;
+
+      @media screen and (min-width: 1024px) {
+        padding: 0;
+      }
+    }
   }
 
   &-subnav {
@@ -222,8 +234,22 @@
 
   &-lang {
     &-switcher {
+      opacity: 0;
       display: flex;
-      position: relative;
+      position: absolute;
+      right: 85px;
+      top: 9px;
+      z-index: 1;
+      @include hl-h3;
+      transition: opacity 0.5s ease;
+      
+      @media screen and (min-width: 1024px) {
+        opacity: 1;
+        position: relative;
+        right: auto;
+        top: auto;
+        @include txt-1;
+      }
 
       &:hover {
         .#{atom('ico')} {
@@ -291,8 +317,12 @@
 
     &-current:hover + ul,
     &-list:hover {
-      max-height: 250px;
+      max-height: 100vh;
       transition: max-height 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      
+      @media screen and (min-width: 1024px) {
+        max-height: 250px;
+      }
     }
   }
 
@@ -302,13 +332,19 @@
 
     & svg {
       @include ico;
-      @include ico-1;
+      @include ico-2;
+      
+      @media screen and (min-width: 1024px) {
+        @include ico-1;
+      }
     }
 
     &-text {
+      display: none;
       margin-left: 4px;
 
       @media screen and (min-width: 1024px) {
+        display: block;
         @include txt-logo;
       }
     }
@@ -336,17 +372,45 @@
   }
 
   &-search {
-    margin-right: 0;
-    padding: 17.5px 0 12.5px;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 70px 0 35px;
 
     @media screen and (min-width: 1024px) {
-      margin-left: auto;
+      width: auto;
+      margin: 0 0 0 auto;
+      padding: 17.5px 0 12.5px;
+    }
+    
+    &-input {
+      display: block;
+      width: 100%;
+      @include txt-font-accent;
+      @include hl-h3;
+      @include color-black;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid color('alto');
+
+      &::placeholder {
+        color: color('alto');
+      }
     }
 
     &-button {
+      position: absolute;
+      right: 14px;
+      top: 2px;
       background: transparent;
       border: none;
       padding: 0;
+      
+      @media screen and (min-width: 1024px) {
+        position: static;
+      }
     }
   }
 
@@ -374,12 +438,16 @@
       display: none;
 
       &:checked ~ .ad-o-header-mainnav .ad-o-header-list-mobile-expanded {
-        height: calc(100vh - 60px);
         width: 100vw;
+        height: calc(100vh - 60px);
         transition: height 0.5s ease-in;
 
         .ad-o-header-lnk-home-expanded {
           display: block;
+        }
+
+        .ad-o-header-lang-switcher {
+          opacity: 1;
         }
       }
 
