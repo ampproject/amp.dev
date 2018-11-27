@@ -187,7 +187,8 @@ $titles:
 
 
 <section class="main copy left">
-  <h2>AMP works for all browsers</h2>
+  <h4>AMP works for all browsers</h4>
+  <amp-img src="/static/img/browser-icons.png" width="283" height="44" layout="fixed"></amp-img>
   <p>In general AMP supports the latest two versions of major browsers like Chrome, Firefox, Edge, Safari, Opera and UC Browser. We support desktop, phone, tablet and the webview version of these respective browsers.</p>
 
   <p>Beyond that, the core AMP library and built-in elements should aim for very wide browser support and we accept fixes for all browsers with market share greater than 1 percent.</p>
@@ -196,7 +197,8 @@ $titles:
 </section>
 
 <section class="main copy right">
-  <h2>AMP is supported by many different platforms and vendors</h2>
+  <h4>AMP is supported by many different platforms and vendors</h4>
+  <amp-img src="/static/img/plattform-logos.png" width="753" height="98" layout="responsive"></amp-img>
   <p>A growing number of platforms, vendors, and partners support the AMP project by providing custom components or offering integration with AMP pages within their platforms. This includes over 150 advertising platforms, nearly 45 Analytics, Audio/Videos services, major Content Platforms, and Content Managers System providers.</p>
 
   <a class="ad-m-lnk ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
