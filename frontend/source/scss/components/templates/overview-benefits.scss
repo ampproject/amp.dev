@@ -41,6 +41,11 @@
       }
     }
 
+    &.quote {
+      grid-column-start: 5;
+      grid-column-end: 19;
+    }
+
     &.intro {
       grid-column: 8 / 18;
       margin-bottom: 150px;
@@ -53,7 +58,7 @@
 
       &.first {
         @media screen and (min-width: 768px) {
-          grid-column: 1 / 22;           
+          grid-column: 1 / 22;
         }
       }
 
@@ -71,7 +76,7 @@
       .benefit-cards {
         display: flex;
         flex-wrap: wrap;
-        
+
         @media screen and (min-width: 768px) {
           flex-wrap: nowrap;
         }
