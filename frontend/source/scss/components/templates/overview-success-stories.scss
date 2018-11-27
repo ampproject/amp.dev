@@ -1,0 +1,41 @@
+/*
+
+#############################################
+### TEMPLATE: overview benefits ###
+#############################################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../templates/_default.scss';
+
+.#{template('overview-success-stories')} {
+  @include container;
+
+  section {
+    position: relative;
+    z-index: 1;
+
+    &.#{organism('stage')} {
+      grid-column: 1 / -1;
+    }
+
+    &.main {
+      padding: 20px;
+      grid-column: 1 / -1;
+
+      @media screen and (min-width: 768px) {
+        grid-column: 7 / 19;
+      }
+    }
+  }
+}
