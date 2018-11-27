@@ -41,7 +41,7 @@ sub_navigation:
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
       </div>
       <div class="ad-a-img ad-a-img-static">
-        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="153" height="38" alt="Image" />
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="630" height="96" alt="Image" />
       </div>
     </div>
     <div class="ad-m-quote-quote">
