@@ -1,8 +1,8 @@
 $title@: AMP Use Cases
-$path: /overview/usecases/{base}.html
+$path: /overview/use-cases/{base}.html
 $view: /views/default.j2
 $localization:
-  path: /{locale}/overview/usecases/{base}.html
+  path: /{locale}/overview/use-cases/{base}.html
 $order: 3
 
 index: /content/amp-dev/overview/use-cases/overview.md

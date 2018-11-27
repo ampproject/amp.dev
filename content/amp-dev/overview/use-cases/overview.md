@@ -1,7 +1,7 @@
 ---
 $title: Benefits when using AMP
 $path: /overview/use-cases.html
-$view: /views/overview/overview-uses-cases.j2
+$view: /views/overview/overview-use-cases.j2
 $titles:
   header: Use Cases
 ---
