@@ -82,7 +82,7 @@ sub_navigation:
 </section>
 
 <section class="main benefits e-mails">
-  <h1>Explore benefits of AMP stories</h1>
+  <h3>Explore benefits of AMP stories</h3>
 
   <div class="benefit-cards">
     <div class="ad-m-benefit-card ad-m-benefit-card-left">

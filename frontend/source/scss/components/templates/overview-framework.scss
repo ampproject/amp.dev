@@ -65,18 +65,18 @@
     }
 
     &.benefits {
-      grid-column: 4 / -1;
+      grid-column: 2 / -1;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 20px;
-      margin-bottom: 40px;
+      margin: 0 -30px 40px 0;
 
       @media screen and (min-width: 768px) {
-        padding: 20px 140px 20px 50px;
+        padding: 40px 140px 40px 50px;
       }
 
-      & h1 {
+      h3 {
         align-self: flex-start;
 
         @media screen and (min-width: 768px) {
@@ -109,6 +109,7 @@
       .benefit-cards {
         display: flex;
         align-items: center;
+        margin: 50px 0;
 
         @media screen and (max-width: 768px) {
           flex-wrap: wrap;
