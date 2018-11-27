@@ -3,6 +3,7 @@ $title: Templates
 $view: /views/overview/template-overview.j2
 ---
 [stage color="dark-blue"]
+<amp-img src="/static/img/browser-websites.png" height="300" width="450" layout="responsive" />
 ## How to Build with AMP without knowing how to code?
 # Easily build user first
 [destination-switch type="dropdown"]
