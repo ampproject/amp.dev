@@ -27,7 +27,7 @@ $titles:
 <section class="main benefits first">
   <h2>Benefits for Developers</h2>
 
-  <div class="main benefit-cards">
+  <div class="benefit-cards">
 
      <div class="ad-m-benefit">
       <div class="ad-a-ico ad-m-benefit-icon">
@@ -87,7 +87,7 @@ $titles:
 
 <section class="main benefits second">
 
-  <div class="main benefit-cards">
+  <div class="benefit-cards">
 
      <div class="ad-m-benefit">
       <div class="ad-a-ico ad-m-benefit-icon">

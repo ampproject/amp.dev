@@ -63,7 +63,7 @@ sub_navigation:
 <section class="main benefits stories">
   <h1>Explore benefits of AMP stories</h1>
 
-  <div class="main benefit-cards">
+  <div class="benefit-cards">
     <div class="ad-m-benefit-card ad-m-benefit-card-left">
       <div class="ad-m-benefit-card-content">
         <h2>Benefits for developers</h2>

@@ -84,7 +84,7 @@ $titles:
 <section class="main benefits">
   <h1>Explore benefits of AMP websites</h1>
 
-  <div class="main benefit-cards">
+  <div class="benefit-cards">
     <div class="benefit-card-left">
       <h2>Benefits for developers</h2>
       <p>IMAGE/ICON 1-3</p>
