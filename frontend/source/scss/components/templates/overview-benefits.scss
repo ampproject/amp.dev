@@ -30,7 +30,10 @@
     position: relative;
     z-index: 1;
 
-    &.#{organism('stage')},
+    &.#{organism('stage')} {
+      grid-column: 1 / -1;
+    }
+
     &.teaser-grid {
       @media screen and (min-width: 1024px){
         grid-column-start: 1;
@@ -49,11 +52,15 @@
       align-items: center;
 
       &.first {
-        grid-column: 1 / 22;
+        @media screen and (min-width: 768px) {
+          grid-column: 1 / 22;           
+        }
       }
 
       &.second {
-        grid-column: 4 / -1;
+        @media screen and (min-width: 768px) {
+          grid-column: 4 / -1;
+        }
       }
 
       & h2 {
@@ -63,6 +70,11 @@
 
       .benefit-cards {
         display: flex;
+        flex-wrap: wrap;
+        
+        @media screen and (min-width: 768px) {
+          flex-wrap: nowrap;
+        }
       }
     }
 

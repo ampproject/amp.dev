@@ -30,11 +30,12 @@ none
 .#{molecule('benefit')} {
   position: relative;
   display: flex;
-  padding-left: 4em;
+  margin: 0 20px;
 
 	@media screen and (min-width: 768px) {
     padding: 0;
-    margin: 0 20px;
+    margin: 0;
+    padding-left: 4em;
   }
 
   .ad-a-ico {
