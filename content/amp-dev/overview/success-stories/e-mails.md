@@ -5,7 +5,7 @@ $titles:
   header: Use Cases
 ---
 [stage color="green"]
-<amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
+<amp-img src="/static/img/browser-websites.png" height="300" width="450" layout="responsive" />
 ## Why should I use AMP?
 # Improve user engagement with rich and immersive AMP
 [destination-switch type="selected" selected="e-mails"]
