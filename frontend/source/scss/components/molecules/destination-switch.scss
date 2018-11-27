@@ -27,7 +27,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 .#{molecule(destination-switch)} {
   padding: 0;
   height: 38px;
-  padding-right: 180px;
+  padding-right: 198.95px;
   overflow: hidden;
   position: absolute;
 
@@ -66,9 +66,11 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       .destination-list-item {
         padding: 1px 60px 1px 10px;
         margin-bottom: 5px;
+        transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
 
         &:hover {
           padding-left: 15px;
+          padding-right: 55px;
         }
       }
 
