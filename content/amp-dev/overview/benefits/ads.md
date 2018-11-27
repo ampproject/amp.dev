@@ -203,7 +203,7 @@ $titles:
 </section>
 
 [teaser-grid]
-# Explore possibilities of AMP websites
+# Explore possibilities of AMP for ads
 [](content/shared/fill-ins/use-case-2.md)
 [](content/shared/fill-ins/use-case-2.md)
 [](content/shared/fill-ins/use-case-2.md)
