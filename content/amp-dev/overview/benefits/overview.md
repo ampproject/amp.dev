@@ -1,27 +1,29 @@
 ---
-$title: Benefits when using AMP for websites
+$title: Benefits when using AMP
+$path: /overview/benefits.html
 $view: /views/overview/overview-benefits.j2
 $titles:
   header: Benefits
 ---
-[stage color="light-blue"]
+
+[stage color="dark-blue"]
 <amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
 ## Why should I use AMP?
 # Improve user engagement with rich and immersive AMP
-[destination-switch type="selected" selected="websites"]
+[destination-switch type="dropdown"]
 - [websites](/content/amp-dev/overview/benefits/websites.md)
 - [stories](/content/amp-dev/overview/benefits/stories.md)
 - [ads](/content/amp-dev/overview/benefits/ads.md)
 - [e-mails](/content/amp-dev/overview/benefits/emails.md)
-- [overview](/content/amp-dev/overview/benefits/overview.md)
 [/destination-switch]
 [/stage]
 
 [bevel]
 
 <section class="main intro">
-  <p>AMP recognizes the need to deliver fast and compelling user experiences across all screens. The reason websites made using AMP are so fast is the combined optimizations which make them appear to load almost instantly. AMP components are carefully designed for a better user experience with a responsive design to make sure they don’t cause performance degradation, ensuring your ability to monetize, optimize, and track the performance of your revenue streams.</p>
+  <p>Web page speed improves the user experience and core business metrics. AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms that link to AMP pages including Google, Bing, LinkedIn and more. These performance gains often translate into improvements in the numbers that matter, such as time spent on page, return visits and click through rates</p>
 </section>
+
 
 <section class="main benefits first">
   <h2>Benefits for Developers</h2>
@@ -138,31 +140,19 @@ $titles:
   </div>
 </section>
 
-<section class="main quote">
-  <div class="ad-m-quote">
-    <div class="ad-m-quote-source">
-      <div class="ad-a-ico">
-        {% do doc.icons.useIcon('icons/quote.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
-      </div>
-      <div class="ad-a-img ad-a-img-static">
-        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="153" height="38" alt="Image" />
-      </div>
-    </div>
-    <div class="ad-m-quote-quote">
-      <blockquote>
-        <p class="ad-a-txt">The fast-growing AMP ecosystem supported all the key advertising and analytics requirements to run our business.</p>
-      </blockquote>
-      <p>Phil Wiser, Chief Technology Officer Hearst Media</p>
-      <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
-        <div class="ad-a-ico ad-m-lnk-icon">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ad-m-lnk-text">Read Success Story</span>
-      </a>
-    </div>
-  </div>
+<section class="main">
+  <h2>Compare AMP with other frameworks</h2>
+  <p>AMP is a collaborative effort among publishers and technology companies to create and design pages that work across the web. AMP improves the content ecosystem for everyone by making pages and content load near instantaneously, especially on mobile devices. The need to monetize has created bad user experiences, and AMP enables fast, functional and beautiful pages that still monetize well</p>
 </section>
+
+|AMP        |Vue.js   |React  |Angular |
+|-----------|---------|-------|--------|
+|Requirement|         |       |        |
+|Requirement|         |       |        |
+|Requirement|         |       |        |
+
+
+[bevel]
 
 <section class="main copy left">
   <h2>AMP works for all browsers</h2>
@@ -186,22 +176,24 @@ $titles:
 
 </section>
 
+
 [teaser-grid]
-# Explore possibilities of AMP websites
+# Explore the use cases of AMP stories
 [](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case-3.md)
+[](content/shared/fill-ins/use-case-2.md)
 [](content/shared/fill-ins/use-case.md)
 
 [See more use cases](content/shared/fill-ins/use-case.md)
+
 [/teaser-grid]
 
 [teaser-grid]
 # Explore AMP success stories
+[](content/shared/fill-ins/success-story-3.md)
+[](content/shared/fill-ins/success-story-2.md)
 [](content/shared/fill-ins/success-story.md)
-[](content/shared/fill-ins/success-story.md)
-[](content/shared/fill-ins/success-story.md)
-[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-3.md)
 
 [See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]
