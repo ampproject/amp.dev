@@ -7,7 +7,7 @@ $titles:
 ---
 
 [stage color="dark-blue"]
-<amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
+<amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
 ## Why should I use AMP?
 # Improve user engagement with rich and immersive AMP
 [destination-switch type="dropdown"]
