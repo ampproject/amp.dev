@@ -150,6 +150,8 @@ sub_navigation:
 
 </section>
 
+[bevel]
+
 [teaser-grid]
 # Explore possibilities of AMP websites
 [](content/shared/fill-ins/use-case-2.md)

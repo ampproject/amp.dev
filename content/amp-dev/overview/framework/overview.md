@@ -6,6 +6,7 @@ $titles:
   header: Framework
 ---
 [stage color="dark-blue"]
+<amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
 ## What is AMP on the web?
 # AMP is a web component framework to easily create user-first
 [destination-switch type="dropdown"]
@@ -30,7 +31,7 @@ $titles:
   <div class="ad-o-teaser-grid">
     <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-3">
 
-      <div class="ad-m-kpi ad-m-kpi-websites">
+      <div class="ad-m-kpi ad-m-kpi-fluid ad-m-kpi-websites">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
@@ -41,7 +42,7 @@ $titles:
         </div>
       </div>
 
-      <div class="ad-m-kpi ad-m-kpi-websites">
+      <div class="ad-m-kpi ad-m-kpi-fluid ad-m-kpi-websites">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
@@ -52,7 +53,7 @@ $titles:
         </div>
       </div>
 
-      <div class="ad-m-kpi ad-m-kpi-websites">
+      <div class="ad-m-kpi ad-m-kpi-fluid ad-m-kpi-websites">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
