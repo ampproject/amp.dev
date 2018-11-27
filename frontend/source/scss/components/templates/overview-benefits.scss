@@ -19,6 +19,7 @@
 @import '../molecules/quote';
 @import '../molecules/benefit';
 @import '../molecules/link';
+@import '../molecules/table.scss';
 
 @import '../templates/_default.scss';
 
@@ -46,7 +47,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      grid-column: 1 / -1;
+
+      &.first {
+        grid-column: 1 / 22;
+      }
+
+      &.second {
+        grid-column: 4 / -1;
+      }
 
       & h2 {
         @include hl;
@@ -58,5 +66,21 @@
       }
     }
 
+    &.copy {
+      margin-bottom: 150px;
+      &.left {
+        grid-column: 4 / 14;
+      }
+
+      &.right {
+        grid-column: 12 / 22;
+      }
+    }
+
+  }
+
+  table {
+    grid-column: 4 / 22;
   }
 }
+

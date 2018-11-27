@@ -25,7 +25,7 @@ $titles:
 </section>
 
 
-<section class="main benefits">
+<section class="main benefits first">
   <h2>Benefits for Developers</h2>
 
   <div class="main benefit-cards">
@@ -81,6 +81,9 @@ $titles:
       </div>
     </div>
   </div>
+</section>
+
+<section class="main benefits second">
 
   <div class="main benefit-cards">
 
@@ -135,5 +138,62 @@ $titles:
       </div>
     </div>
   </div>
+</section>
+
+<section class="main">
+  <h2>Compare AMP with other frameworks</h2>
+  <p>AMP is a collaborative effort among publishers and technology companies to create and design pages that work across the web. AMP improves the content ecosystem for everyone by making pages and content load near instantaneously, especially on mobile devices. The need to monetize has created bad user experiences, and AMP enables fast, functional and beautiful pages that still monetize well</p>
+</section>
+
+|AMP        |Vue.js   |React  |Angular |
+|-----------|---------|-------|--------|
+|Requirement|         |       |        |
+|Requirement|         |       |        |
+|Requirement|         |       |        |
+
+
+[bevel]
+
+<section class="main copy left">
+  <h2>AMP works for all browsers</h2>
+  <p>In general AMP supports the latest two versions of major browsers like Chrome, Firefox, Edge, Safari, Opera and UC Browser. We support desktop, phone, tablet and the webview version of these respective browsers.</p>
+
+  <p>Beyond that, the core AMP library and built-in elements should aim for very wide browser support and we accept fixes for all browsers with market share greater than 1 percent.</p>
+
+  <p>In particular, we try to maintain “it might not be perfect but isn’t broken”-support for the Android 4.0 system browser and Chrome 28+ on phones.</p>
+</section>
+
+<section class="main copy right">
+  <h2>AMP is supported by many different platforms and vendors</h2>
+  <p>A growing number of platforms, vendors, and partners support the AMP project by providing custom components or offering integration with AMP pages within their platforms. This includes over 150 advertising platforms, nearly 45 Analytics, Audio/Videos services, major Content Platforms, and Content Managers System providers.</p>
+
+  <a class="ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-square-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    </div>
+    <span class="ad-m-lnk-square-text">Explore our partners</span>
+  </a>
 
 </section>
+
+
+[teaser-grid]
+# Explore the use cases of AMP stories
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case-3.md)
+[](content/shared/fill-ins/use-case-2.md)
+[](content/shared/fill-ins/use-case.md)
+
+[See more use cases](content/shared/fill-ins/use-case.md)
+
+[/teaser-grid]
+
+[teaser-grid]
+# Explore AMP success stories
+[](content/shared/fill-ins/success-story-3.md)
+[](content/shared/fill-ins/success-story-2.md)
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-3.md)
+
+[See more success stories](content/shared/fill-ins/success-story.md)
+[/teaser-grid]
