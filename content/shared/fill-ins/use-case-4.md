@@ -7,9 +7,9 @@ $titles:
 destination: 'e-mails'
 teaser:
   image:
-    src: '/static/img/teaser-dummy-1x1-3.jpg'
-    width: 1
-    height: 1
+    src: '/static/img/teaser-dummy-5x7-1.jpg'
+    width: 5
+    height: 7
     alt: A placeholder image
 ---
 [include('/content/shared/hints/needs-to-be-removed.md')]

@@ -7,7 +7,7 @@ $titles:
 destination: 'stories'
 teaser:
   image:
-    src: '/static/img/teaser-dummy-1x1-3.jpg'
+    src: '/static/img/teaser-dummy-1x1-1.jpg'
     width: 1
     height: 1
     alt: A placeholder image
