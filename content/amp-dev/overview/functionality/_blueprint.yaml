@@ -1,0 +1,8 @@
+$title@: AMP Success Stories
+$path: /overview/functionality/{base}.html
+$view: /views/default.j2
+$localization:
+  path: /{locale}/overview/functionality/{base}.html
+$order: 5
+
+index: /content/amp-dev/overview/functionality/overview.md
