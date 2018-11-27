@@ -34,12 +34,12 @@ none
 
 	@media screen and (min-width: 768px) {
     padding: 0;
-    margin: 0;
-    padding-left: 4em;
+    margin: 0 0 0 40px;
+    flex: 0 0 calc(33.333333333% - 40px);
   }
 
-  .ad-a-ico {
-    @include ico-2;
+  &-icon {
+    @include ico-3;
     @include ico-blue-ribbon;
     margin-right: 10px;
   }
@@ -57,10 +57,13 @@ none
     &-copy {
       @include txt;
       @include txt-2;
+      margin-bottom: 10px;
+    }
+    
+    b {
+      @include txt-2;
     }
   }
-
-
 
   &-card {
     @include gradient-overview;

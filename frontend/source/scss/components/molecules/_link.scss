@@ -23,7 +23,6 @@ none
 	text-decoration: none;
 	padding: 0 0 1.5em;
 	margin: 0;
-	border-bottom: 1px solid color('athens-gray');
 }
 
 // Default link styling
@@ -32,7 +31,7 @@ none
 
 	&-text {
 		@include txt;
-		@include txt-1;
+		@include txt-2;
 		@include txt-strong;
 		@include color-blue-ribbon;
 		line-height: 1.3;
@@ -47,8 +46,11 @@ none
 	}
 	
 	&-square {
+		border-bottom: 1px solid color('athens-gray');
+
 		.#{molecule('lnk')} {
 			&-text {
+				@include txt-1;
 				@include txt-font-accent;
 				@include color-black;
 				padding-left: 10px;
