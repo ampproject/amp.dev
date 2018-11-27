@@ -36,22 +36,22 @@ TODO: Add info text to this molecule.
 	}
 
 	&-websites {
-		color: color('whisper');
+		@include color-websites;
 		@include gradient-websites;
 	}
 
 	&-stories {
-		color: color('ultramarine');
+		@include color-stories;
 		@include gradient-stories;
 	}
 
 	&-ads {
-		color: color('hawkes-blue');
+		@include color-ads;
 		@include gradient-ads;
 	}
 
 	&-e-mails {
-		color: color('pigment-indigo');
+		@include color-e-mails;
 		@include gradient-e-mails;
 	}
 }
