@@ -8,7 +8,7 @@ sub_navigation:
   - /content/amp-dev/overview/benefits/stories.md
 ---
 [stage color="orange"]
-<amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
+<amp-img src="/static/img/story.png" height="1500" width="1450" layout="responsive" />
 ## What is AMP?
 # AMP is a web component framework for easily creating user first
 [destination-switch type="selected" selected="stories"]
