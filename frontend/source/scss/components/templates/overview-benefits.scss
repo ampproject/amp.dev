@@ -1,0 +1,62 @@
+/*
+
+#############################################
+### TEMPLATE: overview benefits ###
+#############################################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../molecules/quote';
+@import '../molecules/benefit';
+@import '../molecules/link';
+
+@import '../templates/_default.scss';
+
+.#{template('overview-benefits')} {
+  @include container;
+
+  section {
+    position: relative;
+    z-index: 1;
+
+    &.#{organism('stage')},
+    &.teaser-grid {
+      @media screen and (min-width: 1024px){
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
+    }
+
+    &.intro {
+      grid-column: 8 / 18;
+      margin-bottom: 150px;
+    }
+
+    &.benefits {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-column: 1 / -1;
+
+      & h2 {
+        @include hl;
+        @include hl-h4;
+      }
+
+      .benefit-cards {
+        display: flex;
+      }
+    }
+
+  }
+}

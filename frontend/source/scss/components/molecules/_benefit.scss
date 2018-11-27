@@ -28,16 +28,38 @@ none
 @import '../atoms/divider';
 
 .#{molecule('benefit')} {
-	position: relative;
+  position: relative;
+  display: flex;
   padding-left: 4em;
 
 	@media screen and (min-width: 768px) {
-		padding: 0;
-	}
-
-	&-headline {
-		margin: 0 0 0.375em;
+    padding: 0;
+    margin: 0 20px;
   }
+
+  .ad-a-ico {
+    @include ico-2;
+    @include ico-blue-ribbon;
+    margin-right: 10px;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+
+    &-headline {
+      @include hl;
+      @include hl-h5;
+      margin-bottom: 0.3em;
+    }
+
+    &-copy {
+      @include txt;
+      @include txt-2;
+    }
+  }
+
+
 
   &-card {
     @include gradient-overview;
