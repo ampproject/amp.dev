@@ -24,14 +24,30 @@ section.teaser-grid {
   }
 }
 
-.#{molecule(lnk-square)} {
-  justify-content: center;
-}
-
 .#{organism('teaser-grid')} {
   margin-bottom: 30px;
 
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(24, 1fr);
+  }
+  
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    grid-column: 3 / 23;
+  }
+  
+  .#{molecule('lnk')} {
+    grid-column: 10 / 16;
+  }
+
   &-list {
+    grid-column: 1 / 25;
     scroll-snap-type: x mandatory;
     overflow-y: hidden;
     overflow-x: scroll;
