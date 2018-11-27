@@ -183,11 +183,11 @@ $titles:
   <h2>AMP is supported by many different platforms and vendors</h2>
   <p>A growing number of platforms, vendors, and partners support the AMP project by providing custom components or offering integration with AMP pages within their platforms. This includes over 150 advertising platforms, nearly 45 Analytics, Audio/Videos services, major Content Platforms, and Content Managers System providers.</p>
 
-  <a class="ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
-    <div class="ad-a-ico ad-m-lnk-square-icon">
+  <a class="ad-m-lnk ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </div>
-    <span class="ad-m-lnk-square-text">Explore our partners</span>
+    <span class="ad-m-lnk-text">Explore our partners</span>
   </a>
 
 </section>
