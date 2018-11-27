@@ -18,8 +18,11 @@ class Config {
     // Import the configs for importing stuff - basically only used in
     // platform/lib/pipeline/import/reference.js
 
-    // Synchronously write podspec for Grow to run flawlessly later in pipeline
-    this._writeGrowConfig();
+    // Synchronously write podspec for Grow to run flawlessly later in pipeline.
+    // Check if running inside GAE as writes are not permitted there
+    if (!process.env.GAE_SERVICE) {
+      this._writeGrowConfig();
+    }
   }
 
   _writeGrowConfig() {
