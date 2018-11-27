@@ -24,7 +24,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 @include viewboxGradientAnimation;
 @include rollingAnimation;
 
-.#{molecule(destination-switch)} {
+.#{molecule('destination-switch')} {
   padding: 0;
   height: 38px;
   width: 210px;
@@ -61,6 +61,10 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       .destination-list {
         display: flex;
         flex-direction: column;
+        
+        li:focus {
+          outline: none;
+        }
       }
 
       .destination-list-item {

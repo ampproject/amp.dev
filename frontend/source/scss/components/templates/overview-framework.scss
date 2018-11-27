@@ -29,6 +29,10 @@
     position: relative;
     z-index: 1;
 
+    &.#{organism('stage')} {
+      z-index: 2;
+    }
+
     &.#{organism('stage')},
     &.teaser-grid {
       @media screen and (min-width: 1024px){
