@@ -32,14 +32,15 @@ $titles:
   <div class="main benefit-cards">
 
      <div class="ad-m-benefit">
-      <div class="ad-a-ico">
+      <div class="ad-a-ico ad-m-benefit-icon">
         {% do doc.icons.useIcon('icons/lego.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lego"></use></svg>
       </div>
       <div class="ad-m-benefit-text">
         <span class="ad-m-benefit-text-headline">Maintain flexibility and control</span>
         <span class="ad-m-benefit-text-copy">Adopting the AMP format allows you to retain your own branding and tooling while taking advantage of AMP's optimized web components. You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, and A/B testing to experiment and build the best possible user experience for your customers.</span>
-        <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
           <div class="ad-a-ico ad-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
@@ -49,31 +50,33 @@ $titles:
     </div>
 
      <div class="ad-m-benefit">
-      <div class="ad-a-ico">
+      <div class="ad-a-ico ad-m-benefit-icon">
         {% do doc.icons.useIcon('icons/code.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
       </div>
       <div class="ad-m-benefit-text">
         <span class="ad-m-benefit-text-headline">Reduce complexity in your operations</span>
         <span class="ad-m-benefit-text-copy">Building AMP pages is simple and straightforward. You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal. Your teams do not need any special skills nor worry about optimizing your code for each distribution platform as the AMP format isfully portable and AMP pages are consistently fast no matter how a user gets to them.</span>
-        <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
           <div class="ad-a-ico ad-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ad-m-lnk-text">Style and Layout</span>
+          <span class="ad-m-lnk-text">Integrate your technology with AMP</span>
         </a>
       </div>
     </div>
 
     <div class="ad-m-benefit">
-      <div class="ad-a-ico">
+      <div class="ad-a-ico ad-m-benefit-icon">
         {% do doc.icons.useIcon('icons/template.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#template"></use></svg>
       </div>
       <div class="ad-m-benefit-text">
         <span class="ad-m-benefit-text-headline">Build for a sustainable future</span>
         <span class="ad-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster user experience. Build a sustainable future for your business on an open, faster web by joining the AMP Project.</span>
-        <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
           <div class="ad-a-ico ad-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
@@ -89,14 +92,15 @@ $titles:
   <div class="main benefit-cards">
 
      <div class="ad-m-benefit">
-      <div class="ad-a-ico">
+      <div class="ad-a-ico ad-m-benefit-icon">
         {% do doc.icons.useIcon('icons/lego.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lego"></use></svg>
       </div>
       <div class="ad-m-benefit-text">
         <span class="ad-m-benefit-text-headline">Maintain flexibility and control</span>
         <span class="ad-m-benefit-text-copy">Adopting the AMP format allows you to retain your own branding and tooling while taking advantage of AMP's optimized web components. You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, and A/B testing to experiment and build the best possible user experience for your customers.</span>
-        <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
           <div class="ad-a-ico ad-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
@@ -106,14 +110,15 @@ $titles:
     </div>
 
      <div class="ad-m-benefit">
-      <div class="ad-a-ico">
+      <div class="ad-a-ico ad-m-benefit-icon">
         {% do doc.icons.useIcon('icons/code.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
       </div>
       <div class="ad-m-benefit-text">
         <span class="ad-m-benefit-text-headline">Reduce complexity in your operations</span>
         <span class="ad-m-benefit-text-copy">Building AMP pages is simple and straightforward. You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal. Your teams do not need any special skills nor worry about optimizing your code for each distribution platform as the AMP format isfully portable and AMP pages are consistently fast no matter how a user gets to them.</span>
-        <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
           <div class="ad-a-ico ad-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
@@ -123,14 +128,15 @@ $titles:
     </div>
 
     <div class="ad-m-benefit">
-      <div class="ad-a-ico">
+      <div class="ad-a-ico ad-m-benefit-icon">
         {% do doc.icons.useIcon('icons/template.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#template"></use></svg>
       </div>
       <div class="ad-m-benefit-text">
         <span class="ad-m-benefit-text-headline">Build for a sustainable future</span>
         <span class="ad-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster user experience. Build a sustainable future for your business on an open, faster web by joining the AMP Project.</span>
-        <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
           <div class="ad-a-ico ad-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
