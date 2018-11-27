@@ -16,9 +16,18 @@ $view: /views/overview/template-overview.j2
 [/destination-switch]
 [/stage]
 
-[intro]
-Build responsive, lightning-fast AMP pages with our templates and components
-[/intro]
+<section class="main intro">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex. Vivamus eget est nec lorem semper ultrices eu eu elit. Ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex.</p>
+</section>
+
+
+[filter-bubbles]
+  - All
+  - E-Commerce
+  - News & Blogs
+  - Art & Desgin
+  - Food & Drinks
+[/filter-bubbles]
 
 [teaser-grid]
 [](/content/shared/fill-ins/template.md)

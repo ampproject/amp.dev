@@ -1,6 +1,6 @@
 {% do doc.styles.addCssFile('css/components/molecules/destination-switch.css') %}
 
-<div class="ad-m-destination-switch {{ switch_type }}{% if switch_type == 'selected' or switch_type == 'dropdown' %} menu-list{% endif %}" [class]="toggle ? 'ad-m-destination-switch {{ switch_type }} ad-m-destination-switch-expand': 'ad-m-destination-switch {{ switch_type }}'">
+<div class="ad-m-destination-switch {{ switch_type }}{% if switch_type == 'selected' or switch_type == 'dropdown' %} menu-list{% endif %}">
   {% if switch_type == 'selected' or switch_type == 'dropdown' %}
   <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-switch-icon {{ selected }}">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
