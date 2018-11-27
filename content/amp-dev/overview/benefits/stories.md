@@ -13,13 +13,14 @@ $titles:
 - [stories](/content/amp-dev/overview/benefits/stories.md)
 - [ads](/content/amp-dev/overview/benefits/ads.md)
 - [e-mails](/content/amp-dev/overview/benefits/emails.md)
+- [overview](/content/amp-dev/overview/benefits/overview.md)
 [/destination-switch]
 [/stage]
 
 [bevel]
 
 <section class="main intro">
-  <p>Web page speed improves the user experience and core business metrics. AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms that link to AMP pages including Google, Bing, LinkedIn and more. These performance gains often translate into improvements in the numbers that matter, such as time spent on page, return visits and click through rates</p>
+  <p>AMP stories provides content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. AMP stories offer design flexibility, are quick and easy to build and are specifically designed for mobile consumption. Worry less about tech, and have more time to make fast and captivating user-first stories that will go viral.AMP stories are available for everyone to try on their websites. As part of the AMP Project, the AMP story format is free and open for anyone to use.</p>
 </section>
 
 <section class="main benefits first">
