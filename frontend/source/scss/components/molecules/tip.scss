@@ -30,89 +30,149 @@ read-on
 @import '../../mixins';
 @import '../../variables';
 
+@import '../atoms/_text.scss';
+@import '../atoms/_icon.scss';
+
+$cornerSize: 40px;
+$borderSize: 5px;
+
+%pseudo-base {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
 .#{molecule('tip')} {
   width: 100%;
-  background: color('white');
-  border-right: 5px solid color('malachite');
-  padding: 25px 30px 25px 25px;
-  grid-row: span 1;
+  height: auto;
   position: relative;
-
-  @media screen and (min-width: 768px) {
-    width: auto;
-    padding: 25px 55px 25px 40px;
+  padding: $cornerSize/2 ($cornerSize - 10px);
+  margin-bottom: 50px;
+  background-color: color('white');
+  filter: drop-shadow(0 2px 25px rgba(0, 0, 0, 0.1));
+  
+  .#{molecule('tip')}-content {
+    h4 {
+      @include txt-1;
+      margin: 0 0 0.75em;
+    }
+    
+    p {
+      margin-bottom: 0;
+      @include txt-3;
+    }
   }
-
+  
+  &-icon {
+    @include ico;
+    @include ico-1;
+    float: left;
+    margin-right: 5px;
+  }
+  
   &-default {
-    clip-path: polygon(0px 0px, 100% 0px, 100% calc(100% - 30px), 30px calc(100% - 30px), 0px 100%);
-  }
-
-  &-read-on {
-    border-right: 5px solid color('turbo');
-
+    border-right: $borderSize solid color('malachite');
+    border-radius: 0 $borderSize $borderSize 0;
+    
     &:before {
-      content: '';
-      position: absolute;
-      height: calc(100% + 32px);
-      width: 37px;
-      top: 0;
-      left: calc(100% - 32px);
-      z-index: -1;
-      background-color: color('turbo');
-      -webkit-clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
-      clip-path: polygon(0% 0%, 0 100%, 50% 90%, 100% 100%, 100% 0%);
+      @extend %pseudo-base;
+      left: 0;
+      top: 100%;
+      border-top: $cornerSize solid white;
+      border-left: 0px solid white;
+      border-right: $cornerSize solid transparent;
     }
-
   }
-
-  &-important {
-    border-right: 5px solid color('red');
-    -webkit-clip-path: polygon(0% 20px, 20px 0%, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
-    clip-path: polygon(0% 20px, 20px 0%, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
-  }
-
+  
   &-note {
-    border: none;
-		width: calc(100% - 25px);
-    padding: 25px 10px 20px 25px;
-    @media screen and (min-width: 768px) {
-      padding: 25px 0px 35px 40px;
-    }
-
-
+    width: calc(100% - #{$cornerSize});
+    
     &:before {
-      content: '';
-      position: absolute;
-      border-bottom: 32px solid transparent;
-      border-left: 25px solid color('blue-ribbon');
+      @extend %pseudo-base;
       left: 100%;
-      right: 0;
       bottom: 0;
+      border-top: $cornerSize solid color('blue-ribbon');
+      border-left: 0px solid color('blue-ribbon');
+      border-right: $cornerSize solid transparent;
     }
-
+    
     &:after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0px;
-      height: calc(100% - 32px);
+      @extend %pseudo-base;
+      width: $cornerSize - $borderSize;
+      height: calc(100% - #{$cornerSize});
       left: 100%;
-      width: 25px;
+      top: 0;
       background-color: color('white');
-      border-right: 5px solid color('blue-ribbon');
-
+      border-right: $borderSize solid color('blue-ribbon');
+      border-radius: 0 $borderSize 0 0;
     }
   }
-
-  &-container {
-    @include drop-shadow;
-    grid-column: 1 / span 1;
-    padding: 0;
-    margin-bottom: 3em;
-
-    @media screen and (min-width: 768px) {
-      grid-column: 2 / span 1;
-      padding: 0;
+  
+  &-important {
+    width: calc(100% - #{$cornerSize/2});
+    margin-left: $cornerSize/2;
+    padding-left: ($cornerSize/2 - 10px);
+    border-right: $borderSize solid color('red');
+    border-radius: 0 $borderSize $borderSize 0;
+    
+    h4 {
+      color: color('red')
+    }
+    
+    .#{molecule('tip')} {
+      &-content:before {
+        @extend %pseudo-base;
+        width: $cornerSize/2;
+        height: calc(100% - #{$cornerSize});
+        right: 100%;
+        top: $cornerSize/2;
+        background-color: color('white');
+      }
+      
+      &-icon {
+        fill: red;
+      }
+    }
+    
+    &:before,
+    &:after {
+      @extend %pseudo-base;
+      right: 100%;
+      top: 0;
+      border-top: $cornerSize/2 solid transparent;
+      border-left: 0px solid transparent;
+      border-right: $cornerSize/2 solid white;
+    }
+    
+    &:after {
+      top: auto;
+      bottom: 0;
+      border-top: none;
+      border-bottom: $cornerSize/2 solid transparent;
+      border-left: 0px solid transparent;
+      border-right: $cornerSize/2 solid white;
+    }
+  }
+  
+  &-read-on {
+    border-right: $borderSize solid color('turbo');
+    border-radius: 0 $borderSize 0 0;
+    
+    &:before,
+    &:after {
+      @extend %pseudo-base;
+      top: 100%;
+      right: -$borderSize;
+      border-top: $cornerSize solid color('turbo');
+      border-left: 0px solid color('turbo');
+      border-right: $cornerSize solid transparent;
+    }
+    
+    &:after {
+      border-top: $cornerSize solid color('turbo');
+      border-right: 0px solid color('turbo');
+      border-left: $cornerSize solid transparent;
     }
   }
 }
