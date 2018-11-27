@@ -38,42 +38,43 @@ sub_navigation:
   <div class="ad-o-teaser-grid">
     <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-3">
 
-      <div class="ad-m-kpi ad-m-kpi-websites">
+      <div class="ad-m-kpi ad-m-kpi-fluid ad-m-kpi-ads">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
           </div>
-          <span class="ad-m-kpi-number">25 Mio</span>
-          <span class="ad-m-kpi-text">websites with 678 new Websites today</span>
+          <span class="ad-m-kpi-number">3x</span>
+          <span class="ad-m-kpi-text">lighter - Boost performance </span>
         </div>
       </div>
 
-      <div class="ad-m-kpi ad-m-kpi-websites">
+      <div class="ad-m-kpi ad-m-kpi-fluid ad-m-kpi-ads">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
           </div>
-          <span class="ad-m-kpi-number">567</span>
-          <span class="ad-m-kpi-text">contributors with 356 commits this month</span>
+          <span class="ad-m-kpi-number">6x</span>
+          <span class="ad-m-kpi-text">fast - amplify your impact</span>
         </div>
       </div>
 
-      <div class="ad-m-kpi ad-m-kpi-websites">
+      <div class="ad-m-kpi ad-m-kpi-fluid ad-m-kpi-ads">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
           </div>
-          <span class="ad-m-kpi-number">123 </span>
-          <span class="ad-m-kpi-text">platform & vendor partners with 22 million users reached</span>
+          <span class="ad-m-kpi-number">13%</span>
+          <span class="ad-m-kpi-text">more viewable - maximize your revenue</span>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+{% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
 
 
 <section class="main copy">

@@ -11,6 +11,14 @@
   &-content {
     @include kpi-content;
   }
+  
+  &-fluid {
+    @include kpi-fluid;
+    
+    .#{molecule('kpi-content')} {
+      @include kpi-fluid-content;
+    }
+  }
 
   &-icon {
     @include kpi-icon;
