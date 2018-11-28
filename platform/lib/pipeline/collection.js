@@ -16,7 +16,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const writeFile = require('write');
+const writeYaml = require('write-yaml');
 
 const config = require('../config');
 
@@ -35,30 +35,27 @@ class Collection {
     this._blueprint = {
       '$title': title,
       '$view': view,
-      '$path': path
+      '$path': path,
+      '$localization': {
+        'path': '{locale}/' + path
+      }
     };
   }
 
   /**
    * Creates the necessary blueprint for the collection
-   * @return {Promise} [description]
+   * @return {Boolean} Flag defining if file was written or not
    */
   create(path, overwrite=false) {
     // Check if the collection already exists and only write (new) blueprint
     // if overwrite is set to true
     let blueprintPath = this.destination + '/_blueprint.yaml'
     if (fs.existsSync(blueprintPath) && !overwrite) {
-      // Return noop promise for consistent API
-      return new Promise((resolve, reject) => { resolve(blueprintPath); });
+      return false;
     }
 
-    let blueprint = '';
-    // TODO: Maybe move functionality to build YAML to utils
-    for (let key in this._blueprint) {
-      blueprint += `${key}: ${this._blueprint[key]}\n`;
-    }
-
-    return writeFile.promise(blueprintPath, blueprint);
+    writeYaml.sync(this._blueprint, blueprintPath);
+    return true;
   }
 }
 

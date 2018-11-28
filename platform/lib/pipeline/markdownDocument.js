@@ -20,6 +20,8 @@ const writeFile = require('write');
 
 const config = require('../config');
 
+TOC_MARKER = '[TOC]';
+
 class MarkdownDocument {
 
   constructor(path, title, contents) {
@@ -29,6 +31,16 @@ class MarkdownDocument {
     };
 
     this._contents = this._convertSyntax(contents);
+  }
+
+  set toc(active) {
+    // Remove markers from document to have them in a defined spot
+    this._contents.replace(TOC_MARKER, '');
+
+    // And if TOC should be rendered put it directly in front of content
+    if (active) {
+      this._contents = TOC_MARKER + '\n' + this._contents;
+    }
   }
 
   set title(title) {
