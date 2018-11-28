@@ -208,7 +208,7 @@ $titles:
 [teaser-grid]
 # Explore AMP success stories
 [](content/shared/fill-ins/success-story-2.md)
-[](content/shared/fill-ins/success-story-2.md
+[](content/shared/fill-ins/success-story-2.md)
 [](content/shared/fill-ins/success-story-2.md)
 [](content/shared/fill-ins/success-story-2.md)
 
