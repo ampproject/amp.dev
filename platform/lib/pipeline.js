@@ -246,12 +246,24 @@ class Pipeline {
                    .pipe(through.obj(function (page, encoding, callback) {
                      let html = page.contents.toString();
                      log.await(`Minifying page ${page.relative} ...`);
+
+                     // Clean up common markup fuck ups before minfying as
+                     // it would break the tree otherwise
+                     html = html.replace('<p></section>', '</section>');
+                     html = html.replace(/(<section [^>]*>)<\/p>/, '$1');
+
+                     // As minifyHtml's removeEmptyElements would be a bit to
+                     // radical, cleanup frequent empty tags ourselves
+                     html = html.replace(/<section .*><\/section>/, '');
+                     html = html.replace('<p></p>', '');
+
                      html = minifyHtml(html, {
                        'minifyCSS': minifyCss,
                        'minifyJS': true,
                        'collapseWhitespace': true,
                        'removeEmptyElements': false,
                        'removeRedundantAttributes': true,
+                       'ignoreCustomFragments': [/<use.*<\/use>/]
                      });
 
                      page.contents = Buffer.from(html);
