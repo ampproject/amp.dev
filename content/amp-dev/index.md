@@ -98,7 +98,7 @@ $view: /views/home.j2
 <p>Since AMP’s inception over 4 billion AMP pages have been created and an independent study found that AMP leads to a 10% increase in website traffic with a 2x increase in time spent on page. For e-commerce websites using AMP, the study also found a 20% increase in sales conversions compared to non-AMP pages. Advertisers are also seeing better performance on AMP pages, with publishers seeing higher viewability and click-through rates compared to non-AMP pages.</p>
 </section>
 
-
+<section class="main copy">
 [teaser-grid]
 [](content/shared/fill-ins/success-story.md)
 [](content/shared/fill-ins/success-story-2.md)
@@ -106,6 +106,7 @@ $view: /views/home.j2
 
 [All success stories](#)
 [/teaser-grid]
+</section>
 
 <section class="main copy">
 <h3>AMP is supported by many platform partners and contributors</h3>
