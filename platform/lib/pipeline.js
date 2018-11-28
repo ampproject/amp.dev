@@ -201,7 +201,7 @@ class Pipeline {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             resolve();
-          }, 1000)
+          }, 2500)
         });
       });
     }
