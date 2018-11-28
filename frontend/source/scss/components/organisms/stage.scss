@@ -132,21 +132,46 @@
 
   .dark-blue {
     @include gradient-default;
+    
+    & ~ .ad-o-stage-content .hl,
+    & ~ .ad-o-stage-content .hl-sub {
+      @include color-websites;
+    }
   }
 
   .light-blue {
     @include gradient-websites;
+    
+    & ~ .ad-o-stage-content .hl,
+    & ~ .ad-o-stage-content .hl-sub {
+      @include color-websites;
+    }
   }
 
   .orange {
     @include gradient-stories;
+    
+    & ~ .ad-o-stage-content .hl,
+    & ~ .ad-o-stage-content .hl-sub {
+      @include color-stories;
+    }
   }
 
   .purple {
     @include gradient-ads;
+    
+    & ~ .ad-o-stage-content .hl,
+    & ~ .ad-o-stage-content .hl-sub {
+      @include color-ads;
+    }
   }
 
   .green {
     @include gradient-e-mails;
+    
+    & ~ .ad-o-stage-content .hl,
+    & ~ .ad-o-stage-content .hl-sub {
+      @include color-e-mails;
+    }
   }
 }

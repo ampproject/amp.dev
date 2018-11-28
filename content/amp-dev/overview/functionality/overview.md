@@ -6,7 +6,7 @@ $titles:
   header: Functionality
 ---
 [stage color="dark-blue"]
-<amp-img src="/static/img/browser-websites.png" height="300" width="450" layout="responsive" />
+<amp-img src="/static/img/browser-websites.png" height="1258" width="1258" layout="responsive" />
 ## Why should I use AMP?
 # Improve user engagement with rich and immersive AMP
 [destination-switch type="dropdown"]
