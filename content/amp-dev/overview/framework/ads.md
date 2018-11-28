@@ -6,6 +6,9 @@ $titles:
 sub_navigation:
   - /content/amp-dev/overview/framework/ads.md
   - /content/amp-dev/overview/benefits/ads.md
+  - /content/amp-dev/overview/use-cases/ads.md
+  - /content/amp-dev/overview/success-stories/ads.md
+  - /content/amp-dev/overview/functionality/overview.md
 ---
 [stage color="purple"]
 <amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />

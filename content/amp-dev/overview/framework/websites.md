@@ -6,6 +6,9 @@ $titles:
 sub_navigation:
   - /content/amp-dev/overview/framework/websites.md
   - /content/amp-dev/overview/benefits/websites.md
+  - /content/amp-dev/overview/use-cases/websites.md
+  - /content/amp-dev/overview/success-stories/websites.md
+  - /content/amp-dev/overview/functionality/overview.md
 ---
 [stage color="light-blue"]
 <amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />

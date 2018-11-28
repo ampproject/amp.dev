@@ -3,6 +3,12 @@ $title: Benefits when using AMP for stories
 $view: /views/overview/overview-benefits.j2
 $titles:
   header: Benefits
+sub_navigation:
+  - /content/amp-dev/overview/framework/stories.md
+  - /content/amp-dev/overview/benefits/stories.md
+  - /content/amp-dev/overview/use-cases/stories.md
+  - /content/amp-dev/overview/success-stories/stories.md
+  - /content/amp-dev/overview/functionality/overview.md
 ---
 [stage color="orange"]
 <amp-img src="/static/img/story.png" height="1218" width="1160" layout="responsive" />

@@ -2,7 +2,13 @@
 $title: Benefits when using AMP
 $view: /views/overview/overview-success-stories.j2
 $titles:
-  header: Use Cases
+  header: Success Stories
+sub_navigation:
+  - /content/amp-dev/overview/framework/ads.md
+  - /content/amp-dev/overview/benefits/ads.md
+  - /content/amp-dev/overview/use-cases/ads.md
+  - /content/amp-dev/overview/success-stories/ads.md
+  - /content/amp-dev/overview/functionality/overview.md
 ---
 [stage color="purple"]
 <amp-img src="/static/img/browser-websites.png" height="1258" width="1258" layout="responsive" />

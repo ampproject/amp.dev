@@ -4,6 +4,12 @@ $view: /views/overview/overview-benefits.j2
 
 $titles:
   header: Benefits
+sub_navigation:
+  - /content/amp-dev/overview/framework/emails.md
+  - /content/amp-dev/overview/benefits/emails.md
+  - /content/amp-dev/overview/use-cases/emails.md
+  - /content/amp-dev/overview/success-stories/emails.md
+  - /content/amp-dev/overview/functionality/overview.md
 ---
 [stage color="green"]
 <amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
@@ -219,4 +225,3 @@ $titles:
 
 [See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]
-
