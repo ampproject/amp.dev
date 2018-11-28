@@ -22,7 +22,7 @@ pages/macros
 pages/partials
 pages/templates
 pages/views
-pages/content/amp-dev/documentation/examples
+pages/content/amp-dev/documentation/examples/*/**
 pages/content/amp-dev/documentation/components/*/**
 
 # Ignore files created during build process
