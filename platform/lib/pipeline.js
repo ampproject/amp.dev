@@ -207,10 +207,10 @@ class Pipeline {
     }
   }
 
-  async samples() {
-    let builder = new SamplesBuilder();
+  async buildSamples() {
+    let samplesBuilder = new SamplesBuilder();
 
-    return builder.import();
+    return samplesBuilder.build();
   }
 
   /**

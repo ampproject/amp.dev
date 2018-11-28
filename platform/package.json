@@ -23,6 +23,7 @@
     "signale": "^1.3.0"
   },
   "devDependencies": {
+    "amp-by-example": "^0.2.4",
     "crass": "^0.12.3",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
@@ -32,6 +33,6 @@
     "octonode": "^0.9.5",
     "request": "^2.88.0",
     "write": "^1.0.3",
-		"amp-by-example": "^0.2.4"
+    "write-yaml": "^1.0.0"
   }
 }
