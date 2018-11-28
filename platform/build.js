@@ -31,7 +31,7 @@ pipeline.clean();
 // TODO(matthiasrohmer): Use task runner (like gulp.series/gulp.parallel) to
 // execute tasks to better handle flow
 (async () => {
-  // await pipeline.check();
+  await pipeline.check();
 
   // Collection of static files does not need to be waited for as it happens
   // real quick and no other task depends on them
@@ -41,6 +41,9 @@ pipeline.clean();
 
   // Before pages can be built all needed documents need to be imported
   // await pipeline.importReference();
+
+  // Create sample sources which get used while generating the pages
+  await pipeline.buildSamples();
 
   // Generate pages does not statically build the pages for development
   // but instead starts the development server
