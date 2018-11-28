@@ -109,6 +109,10 @@ class ReferenceImporter {
     let savedDocuments = [];
     for (const extension of extensions) {
       let document = await this._findExtensionDoc(extension);
+
+      // Ensure that the document has a TOC
+      document.toc = true;
+
       if(!document) {
         this._log.warn(`No matching document for component: ${extension.name}`);
       } else {
