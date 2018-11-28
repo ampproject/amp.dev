@@ -23,6 +23,8 @@
       p.#{atom('txt')} {
         @include hl;
         @include hl-h4;
+        line-height: 2;
+        font-style: italic;
         display: block;
         
         &:before {

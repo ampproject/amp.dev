@@ -20,25 +20,12 @@
 
 .#{template('template')} {
   @include container;
-  padding: 0;
-
-  @media screen and (min-width: 768px) {
-    padding-top: 0;
-  }
-
-
-  p:empty {
-    display: none;
-  }
-
-  p {
-    @include txt;
-    @include txt-1;
-  }
 
   section {
+    position: relative;
+    z-index: 1;
 
-    &.stage {
+    &.#{organism('stage')} {
       grid-column: 1 / -1;
     }
 
@@ -46,13 +33,17 @@
       @media screen and (min-width: 768px ){
         grid-column: 7 / 19;
       }
+
+      p {
+        @include txt;
+        @include txt-1;
+      }
     }
 
     &.teaser-grid {
       grid-column: 1 / -1;
 
       .ad-o-teaser-grid-list {
-        grid-column: 4 / -1;
         display: grid;
         margin: 0 40px;
         grid-template-columns: 1fr;

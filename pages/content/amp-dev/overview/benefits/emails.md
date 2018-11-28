@@ -1,111 +1,227 @@
 ---
 $title: Benefits when using AMP for email
+$view: /views/overview/overview-benefits.j2
+
 $titles:
   header: Benefits
+sub_navigation:
+  - /content/amp-dev/overview/framework/emails.md
+  - /content/amp-dev/overview/benefits/emails.md
+  - /content/amp-dev/overview/use-cases/emails.md
+  - /content/amp-dev/overview/success-stories/emails.md
+  - /content/amp-dev/overview/functionality/overview.md
 ---
 [stage color="green"]
+<amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
 ## Why should I use AMP?
 # Improve user engagement with rich and immersive AMP
 [destination-switch type="selected" selected="e-mails"]
+- [e-mails](/content/amp-dev/overview/benefits/emails.md)
 - [websites](/content/amp-dev/overview/benefits/websites.md)
 - [stories](/content/amp-dev/overview/benefits/stories.md)
 - [ads](/content/amp-dev/overview/benefits/ads.md)
-- [e-mails](/content/amp-dev/overview/benefits/emails.md)
+- [overview](/content/amp-dev/overview/benefits/overview.md)
 [/destination-switch]
 [/stage]
 
-[include('/content/shared/hints/content-missing.md')]
+[bevel]
 
-More than 270 billion emails are sent every day, it is the pillar of many consumer and enterprise workflows. However the content that is sent in an email message is still limited – messages are static, can become out of date, and are not actionable without opening a browser. AMPHTML email seeks to enhance and modernize the email experience through added support for dynamic content and interactivity while keeping users safe. AMPHTML for email makes modern App functionality available within email.
+<section class="main intro">
+  <p>More than 270 billion emails are sent every day, it is the pillar of many consumer and enterprise workflows. However the content that is sent in an email message is still limited – messages are static, can become out of date, and are not actionable without opening a browser. AMPHTML for email seeks to enhance and modernize the email experience through added support for dynamic content and interactivity while keeping users safe. AMPHTML for email makes modern App functionality available within email.</p>
+</section>
 
-## Benefits for developers
-### Increased capabilities
-AMPHTML email is an expansion of the already existing blazingly fast and high-performing AMPHTML project and opens up a whole new world of possibilities for users to engage with content. AMP for email can integrate with existing compatible apps like Doodle, Booking.com and Pinterest.
+<section class="main benefits first">
+  <h2>Benefits for Developers</h2>
 
-The AMPHTML email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMPHTML emails to interact dynamically with content directly in the message. AMP for email is intended to work safely with all web-based clients.
+  <div class="benefit-cards">
 
-#### Guides & Tutorials:
-[AMP for Email specifications](Link)
+     <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/lego.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lego"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Maintain flexibility and control</span>
+        <span class="ad-m-benefit-text-copy">Adopting the AMP format allows you to retain your own branding and tooling while taking advantage of AMP's optimized web components. You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, and A/B testing to experiment and build the best possible user experience for your customers.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
 
-### Easy to develop
-AMPHTML for email is being developed as part of the AMP Project and is simple and straightforward to use. Embedding AMP within an email is simple, add a new MIME part with a content type of text/x-amp-html as a descendant of multipart/alternative. It should live alongside the existing text/html or text/plain parts. This ensures that the email message works on all clients.
+     <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/code.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Reduce complexity in your operations</span>
+        <span class="ad-m-benefit-text-copy">Building AMP pages is simple and straightforward. You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal. Your teams do not need any special skills nor worry about optimizing your code for each distribution platform as the AMP format isfully portable and AMP pages are consistently fast no matter how a user gets to them.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Integrate your technology with AMP</span>
+        </a>
+      </div>
+    </div>
 
-### AMP by example:
-[Link to relevant doc](Link)
+    <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/template.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#template"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Build for a sustainable future</span>
+        <span class="ad-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster user experience. Build a sustainable future for your business on an open, faster web by joining the AMP Project.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-### Consistency and scalability
-The fast and rich user experience that is the goal of AMP is also available. Developers can use AMP to create more expressive and engaging experiences in Email. Compared to websites, email is a different user context with different models of privacy and security. For example, phishing is a major concern for email. To maintain users’ expectations of security and privacy, we’ll only allow a conservative subset of AMP functionality. To enforce this, we propose adding a new AMPHTML email validation spec identified by a new attribute on the document element: amp4email. This is similar to the technique used by the AMPHTML Ads project which introduced its own spec that uses the attribute amp4ads.
+<section class="main benefits second">
 
-#### Guides & Tutorials:
-[Documentation](Link)
+  <div class="benefit-cards">
 
-## Benefits for your business
-### Increased personalization
-AMPHTML for email allows exciting smarter user engagement, as customers can take action directly within their email such as managing their subscriptions, responding to polls, doodles, and bookings. This is possible because the server retrieves fresh content from remote endpoints, keeping email up to date. Because fewer steps are needed to personalize results, it is easier to please and keep customers engaged.
+     <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/lego.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lego"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Maintain flexibility and control</span>
+        <span class="ad-m-benefit-text-copy">Adopting the AMP format allows you to retain your own branding and tooling while taking advantage of AMP's optimized web components. You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, and A/B testing to experiment and build the best possible user experience for your customers.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
 
-#### Guides & Tutorials:
-[Duis dolor](Link)
+     <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/code.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Reduce complexity in your operations</span>
+        <span class="ad-m-benefit-text-copy">Building AMP pages is simple and straightforward. You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal. Your teams do not need any special skills nor worry about optimizing your code for each distribution platform as the AMP format isfully portable and AMP pages are consistently fast no matter how a user gets to them.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
 
-### Interactive customer experience
-AMP Email’s expanding capabilities allows you to take action right inside your Inbox. This includes carousels and accordions, and taking user input on forms and questionnaires. Ad components are not allowed allowed in AMP for email, keeping users safe.
+    <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/template.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#template"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Build for a sustainable future</span>
+        <span class="ad-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster user experience. Build a sustainable future for your business on an open, faster web by joining the AMP Project.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-#### Guides & Tutorials:
-[Duis dolor](Link)
+<section class="main quote">
+  <div class="ad-m-quote">
+    <div class="ad-m-quote-source">
+      <div class="ad-a-ico">
+        {% do doc.icons.useIcon('icons/quote.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+      </div>
+      <div class="ad-a-img ad-a-img-static">
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="630" height="96" alt="Image" />
+      </div>
+    </div>
+    <div class="ad-m-quote-quote">
+      <blockquote>
+        <p class="ad-a-txt">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      </blockquote>
+      <p>name, lorem ipsum.</p>
+      <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ad-m-lnk-text">Read Success Story</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-### Improved and smarter service
-AMP email allows an attractive option for promotional and subscriber-list emails. Through smarter engagement you can improve customer satisfaction through hassle-free feedback and subscription management all within their inbox.
-Join the hundreds of technology platforms currently supporting the open source AMP ecosystem.
+<section class="main">
+  <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
+  <p>Check out the latest from the AMP 2018 Conference, and watch AMP developers discuss how using AMP can improve monetization</p>
+</section>
 
-#### Guides & Tutorials:
-[Duis dolor](Link)
+<section class="main copy left">
+  <h4>AMP works for all browsers</h4>
+  <amp-img src="/static/img/browser-icons.png" width="283" height="44" layout="fixed"></amp-img>
+  <p>In general AMP supports the latest two versions of major browsers like Chrome, Firefox, Edge, Safari, Opera and UC Browser. We support desktop, phone, tablet and the webview version of these respective browsers.</p>
 
-> duis dolor
+  <p>Beyond that, the core AMP library and built-in elements should aim for very wide browser support and we accept fixes for all browsers with market share greater than 1 percent.</p>
 
-Name and Company
+  <p>In particular, we try to maintain “it might not be perfect but isn’t broken”-support for the Android 4.0 system browser and Chrome 28+ on phones.</p>
+</section>
 
-Brand Logo Image
+<section class="main copy right">
+  <h4>AMP is supported by many different platforms and vendors</h4>
+  <amp-img src="/static/img/plattform-logos.png" width="753" height="98" layout="responsive"></amp-img>
+  <p>A growing number of platforms, vendors, and partners support the AMP project by providing custom components or offering integration with AMP pages within their platforms. This includes over 150 advertising platforms, nearly 45 Analytics, Audio/Videos services, major Content Platforms, and Content Managers System providers.</p>
 
-Check out the latest from the AMP 2018 Conference, and watch AMP developers discuss how using AMP can improve monetization.
+  <a class="ad-m-lnk ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    </div>
+    <span class="ad-m-lnk-text">Explore our partners</span>
+  </a>
 
-[video]
-[]https://www.youtube.com/watch?v=9Cfxm7cikMY
-[/video]
+</section>
 
-### AMP Ads works for all browsers
-IMAGE/ICON Browser Logos
+[teaser-grid]
+# Explore possibilities of AMP for e-mail
+[](content/shared/fill-ins/use-case-4.md)
+[](content/shared/fill-ins/use-case-4.md)
+[](content/shared/fill-ins/use-case-4.md)
+[](content/shared/fill-ins/use-case-4.md)
 
-In general we support the latest two versions of major browsers like Chrome, Firefox, Edge, Safari, Opera and UC Browser. We support desktop, phone, tablet and the webview version of these respective browsers.
-
-Beyond that, the core AMP library and built-in elements should aim for very wide browser support and we accept fixes for all browsers with market share greater than 1 percent.
-In particular, we try to maintain “it might not be perfect but isn’t broken”-support for the Android 4.0 system browser and Chrome 28+ on phones.
-
-### AMP is supported by many different platforms and vendors
-IMAGE/ICON Platform and Vendor Partners
-
-A growing number of platforms, vendors, and partners support the AMP project is supported by providing custom components or offering integration with AMP pages within their platforms. This includes over 150 Ads platforms, nearly 45 Analytics and Audio Videos services, and major Content Platforms, and CMS providers.
-
-Get started by leveraging the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
-
-Explore our Partners
-
-## Explore use cases of AMP for Email
-### duis dolor
-Duis dolor
-IMAGE/ICON
-
-### duis dolor
-Duis dolor
-IMAGE/ICON
-
-### duis dolor
-Duis dolor
-IMAGE/ICON
+[See more use cases](content/shared/fill-ins/use-case.md)
+[/teaser-grid]
 
 [teaser-grid]
 # Explore AMP success stories
-[](content/shared/fill-ins/success-story.md)
-[](content/shared/fill-ins/success-story-2.md)
-[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-4.md)
+[](content/shared/fill-ins/success-story-4.md)
+[](content/shared/fill-ins/success-story-4.md)
+[](content/shared/fill-ins/success-story-4.md)
 
-[See more success stories](#)
+[See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]

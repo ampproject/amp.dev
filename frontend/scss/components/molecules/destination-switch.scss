@@ -24,10 +24,10 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 @include viewboxGradientAnimation;
 @include rollingAnimation;
 
-.#{molecule(destination-switch)} {
+.#{molecule('destination-switch')} {
   padding: 0;
   height: 38px;
-  padding-right: 180px;
+  width: 210px;
   overflow: hidden;
   position: absolute;
 
@@ -41,7 +41,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 		background-size: 1200% 100%;
 		background-position: 0% 0%;
 		animation: gradientChange 12.8s ease infinite;
-    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
+    // box-shadow: 0 10px 25px 0 rgba(0,0,0,0.21);
   }
 
   &.menu-list {
@@ -61,14 +61,20 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
       .destination-list {
         display: flex;
         flex-direction: column;
+        
+        li:focus {
+          outline: none;
+        }
       }
 
       .destination-list-item {
         padding: 1px 60px 1px 10px;
         margin-bottom: 5px;
+        transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
 
         &:hover {
           padding-left: 15px;
+          padding-right: 55px;
         }
       }
 
@@ -119,6 +125,30 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
         @include ico-2;
       }
     }
+
+    &.stories {
+      & svg {
+        @include ico-stories;
+      }
+    }
+
+    &.websites {
+      & svg {
+        @include ico-blue-ribbon;
+      }
+    }
+
+    &.ads {
+      & svg {
+        @include ico-ads;
+      }
+    }
+
+    &.e-mails {
+      & svg {
+        @include ico-e-mails;
+      }
+    }
   }
 
   .destination-list {
@@ -130,31 +160,6 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     &-display {
       display: flex;
       flex-direction: column;
-    }
-
-    &-icon {
-      position: absolute;
-      right: 0;
-      z-index: 2;
-      transition: transform 0.5s ease;
-      padding: 11px;
-      background: transparent;
-      border: none;
-      outline: none;
-
-      @media screen and (min-width: 1024px) {
-        padding: 10px;
-      }
-
-      & svg {
-        @include ico;
-        @include ico-1;
-        @include ico-white;
-
-				@media screen and (min-width: 768px) {
-					@include ico-2;
-				}
-      }
     }
   }
 }

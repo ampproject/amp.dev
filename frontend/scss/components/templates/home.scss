@@ -21,14 +21,23 @@
 .#{template('home')} {
   @include container;
 
+  .ad-m-tip-container {
+    grid-column: 1 / -1;
+  }
+
   section {
-    @media screen and (min-width: 1024px){
-      grid-column-start: 1;
-      grid-column-end: 25;
+    position: relative;
+    z-index: 1;
+
+    &.#{organism('stage')} {
+       grid-column: 1 / -1;
     }
 
-    &.stage {
-      grid-column: 1 / -1;
+    &.teaser-grid {
+      @media screen and (min-width: 1024px){
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
     }
 
     &.main {

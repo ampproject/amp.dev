@@ -1,25 +1,21 @@
 from shortcodes import Shortcode
 
-ALLOWED_TYPES = ['read-on', 'important', 'note']
+ALLOWED_TYPES = ['default', 'important', 'note', 'read-on']
 
 class TipShortcode(Shortcode):
   name = 'tip'
   prerender_markdown = True
   template = 'partials/tip.j2'
 
+  def _get_type(self, options):
+      type = options.get('type', None)
+      if type not in ALLOWED_TYPES:
+          type = ALLOWED_TYPES[0]
+      return type
+
   def transform(self, value, options):
-    # Only the first option key might define the type
-    options = options.items()
-    try:
-      type = options[0][0]
-    except IndexError as error:
-      type = None
+      self.context['type'] = self._get_type(options)
 
-    if type not in ALLOWED_TYPES:
-      type = 'default'
-
-    self.context['type'] = type
-
-    return value
+      return value
 
 shortcode = TipShortcode

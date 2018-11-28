@@ -6,6 +6,9 @@ $titles:
 sub_navigation:
   - /content/amp-dev/overview/framework/ads.md
   - /content/amp-dev/overview/benefits/ads.md
+  - /content/amp-dev/overview/use-cases/ads.md
+  - /content/amp-dev/overview/success-stories/ads.md
+  - /content/amp-dev/overview/functionality/overview.md
 ---
 [stage color="purple"]
 <amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
@@ -38,42 +41,44 @@ sub_navigation:
   <div class="ad-o-teaser-grid">
     <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-3">
 
-      <div class="ad-m-kpi ad-m-kpi-ads">
+      <div class="ad-m-kpi ad-m-kpi-fluid ad-m-kpi-ads">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
           </div>
-          <span class="ad-m-kpi-number">25 Mio</span>
-          <span class="ad-m-kpi-text">websites with 678 new Websites today</span>
+          <span class="ad-m-kpi-number">3x</span>
+          <span class="ad-m-kpi-text">lighter - Boost performance </span>
         </div>
       </div>
 
-      <div class="ad-m-kpi ad-m-kpi-ads">
+      <div class="ad-m-kpi ad-m-kpi-fluid ad-m-kpi-ads">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
           </div>
-          <span class="ad-m-kpi-number">567</span>
-          <span class="ad-m-kpi-text">contributors with 356 commits this month</span>
+          <span class="ad-m-kpi-number">6x</span>
+          <span class="ad-m-kpi-text">fast - amplify your impact</span>
         </div>
       </div>
 
-      <div class="ad-m-kpi ad-m-kpi-ads">
+      <div class="ad-m-kpi ad-m-kpi-fluid ad-m-kpi-ads">
         <div class="ad-m-kpi-content">
           {% do doc.icons.useIcon('icons/bookmark.svg') %}
           <div class="ad-a-ico ad-m-kpi-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
           </div>
-          <span class="ad-m-kpi-number">123 </span>
-          <span class="ad-m-kpi-text">platform & vendor partners with 22 million users reached</span>
+          <span class="ad-m-kpi-number">13%</span>
+          <span class="ad-m-kpi-text">more viewable - maximize your revenue</span>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+{% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
+
 
 <section class="main copy">
   <h1>A faster way to grow your business</h1>
@@ -87,9 +92,9 @@ sub_navigation:
 </section>
 
 <section class="main benefits ads">
-  <h1>Explore benefits of AMP stories</h1>
+  <h3>Explore benefits of AMP stories</h3>
 
-  <div class="main benefit-cards">
+  <div class="benefit-cards">
     <div class="ad-m-benefit-card ad-m-benefit-card-left">
       <div class="ad-m-benefit-card-content">
         <h2>Benefits for developers</h2>
@@ -116,11 +121,11 @@ sub_navigation:
     </div>
   </div>
 
-  <a class="ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
-    <div class="ad-a-ico ad-m-lnk-square-icon">
+  <a class="ad-m-lnk ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </div>
-    <span class="ad-m-lnk-square-text">All benefits</span>
+    <span class="ad-m-lnk-text">All benefits</span>
   </a>
 
 </section>
@@ -147,6 +152,8 @@ sub_navigation:
   </div>
 
 </section>
+
+[bevel]
 
 [teaser-grid]
 # Explore possibilities of AMP websites

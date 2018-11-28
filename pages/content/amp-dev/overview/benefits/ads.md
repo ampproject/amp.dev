@@ -1,121 +1,237 @@
 ---
 $title: Benefits when using AMP for ads
+$view: /views/overview/overview-benefits.j2
 $titles:
   header: Benefits
+sub_navigation:
+  - /content/amp-dev/overview/framework/ads.md
+  - /content/amp-dev/overview/benefits/ads.md
+  - /content/amp-dev/overview/use-cases/ads.md
+  - /content/amp-dev/overview/success-stories/ads.md
+  - /content/amp-dev/overview/functionality/overview.md
 ---
 [stage color="purple"]
+<amp-img src="/static/img/stage_placeholder.png" height="1500" width="1450" layout="responsive" />
 ## Why should I use AMP?
 # Improve user engagement with rich and immersive AMP
 [destination-switch type="selected" selected="ads"]
+- [ads](/content/amp-dev/overview/benefits/ads.md)
 - [websites](/content/amp-dev/overview/benefits/websites.md)
 - [stories](/content/amp-dev/overview/benefits/stories.md)
-- [ads](/content/amp-dev/overview/benefits/ads.md)
 - [e-mails](/content/amp-dev/overview/benefits/emails.md)
+- [overview](/content/amp-dev/overview/benefits/overview.md)
 [/destination-switch]
 [/stage]
 
-[include('/content/shared/hints/content-missing.md')]
+[bevel]
 
-Advertising continues to be the cornerstone of every publisher’s business model; AMP is fundamentally changing the way ads are built and delivered on the web by supporting ads that are fast, safe, compelling and effective for users.
+<section class="main intro">
+  <p>Advertising continues to be the cornerstone of every publisher’s business model, AMP is fundamentally changing the way ads are built and delivered on the web by supporting ads that are fast, safe, compelling and effective for users. </p>
 
-AMP ads greatly improve the mobile internet through their intelligent design and pre-loading features. This leads to increased traffic,higher sales conversion rates and more pages per visit – delivering the value you’re looking for in your ads.
+  <p>AMP ads greatly improve the mobile internet through their intelligent design and pre-loading features. This leads to increased traffic,higher sales conversion rates and more pages per visit – delivering the value you’re looking for in your ads.</p>
+</section>
 
-## Benefits for developers
-### End to end experience is controlled
 
-As the owner of your AMP website and ads, no other parties can modify or add things, ensuring you are in control of the user experience and there won’t be any unexpected surprises. AMP ads are part of a user-first ecosystem and function the way a reasonable user would expect them to.
+<section class="main benefits first">
+  <h2>Benefits for Developers</h2>
 
-Optimized AMP ads don’t drain the battery life of mobile devices, and clicking on them will lead to AMP pages, which are equally as fast and streamlined.
+  <div class="benefit-cards">
 
-#### Guides & Tutorials:
-[Best practices for creating AMP ads](Link)
+     <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/lego.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lego"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Maintain flexibility and control</span>
+        <span class="ad-m-benefit-text-copy">Adopting the AMP format allows you to retain your own branding and tooling while taking advantage of AMP's optimized web components. You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, and A/B testing to experiment and build the best possible user experience for your customers.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
 
-### Reduce complexity in your operations
-AMP is simple and straightforward and quickly becoming the turnkey solution for building pages. AMP supports both traditional ads, and the faster, more secure AMPHTML ads. Ads on AMP pages are like any external resource and must play within the same constraints placed on all resources in AMP.
+     <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/code.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Reduce complexity in your operations</span>
+        <span class="ad-m-benefit-text-copy">Building AMP pages is simple and straightforward. You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal. Your teams do not need any special skills nor worry about optimizing your code for each distribution platform as the AMP format isfully portable and AMP pages are consistently fast no matter how a user gets to them.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Integrate your technology with AMP</span>
+        </a>
+      </div>
+    </div>
 
-[AMP by example:](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+    <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/template.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#template"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Build for a sustainable future</span>
+        <span class="ad-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster user experience. Build a sustainable future for your business on an open, faster web by joining the AMP Project.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-Get started by leveraging the open-source AMPHTML ad templates.
+<section class="main benefits second">
 
-### Quick and easy to build
-The AMP Project has a vast network of resources for getting started in the Documentation section including great-looking ad templates, demos and examples. AMPHTML ads are flexible and dynamic, allowing for many creative formats like carousel, parallax, and lightbox, to name a few.
+  <div class="benefit-cards">
 
-#### Guides & Tutorials:
-[Documentation – Advertising](Link)
+     <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/lego.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lego"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Maintain flexibility and control</span>
+        <span class="ad-m-benefit-text-copy">Adopting the AMP format allows you to retain your own branding and tooling while taking advantage of AMP's optimized web components. You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, and A/B testing to experiment and build the best possible user experience for your customers.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
 
-## Benefits for your business
-#### Measure viewability
-AMPHTML ads are 6x faster than regular ads on AMP pages, making them more viewable, more effective and more likely to perform well. You can monitor performance and adjust pricing accordingly, and offer the most engaging ad products to optimize your ad placements. In AMP, tweaking your pages to drive higher viewability rate or views is easy for publishers using the ‘data-loading-strategy’ attribute on the `amp-ad` component.
+     <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/code.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Reduce complexity in your operations</span>
+        <span class="ad-m-benefit-text-copy">Building AMP pages is simple and straightforward. You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal. Your teams do not need any special skills nor worry about optimizing your code for each distribution platform as the AMP format isfully portable and AMP pages are consistently fast no matter how a user gets to them.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
 
-[Guides & Tutorials:]()
+    <div class="ad-m-benefit">
+      <div class="ad-a-ico ad-m-benefit-icon">
+        {% do doc.icons.useIcon('icons/template.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#template"></use></svg>
+      </div>
+      <div class="ad-m-benefit-text">
+        <span class="ad-m-benefit-text-headline">Build for a sustainable future</span>
+        <span class="ad-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster user experience. Build a sustainable future for your business on an open, faster web by joining the AMP Project.</span>
+        <b>Guides & tutorials</b>
+        <a class="ad-m-lnk ad-m-benefit-link" href="http://localhost:8080/shared/fill-ins/success-story.html">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Style and Layout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-### Maximize your revenue
-In order to engage with your brand and improve the performance of your campaigns, you have to speed things up. AMP Ads load on average 5x faster than the non-AMP version, leading to higher conversion rates. Because AMPHTML ads are 3x lighter, the AMP framework guarantees that these ads only behave as intended so users always have a positive experience with your brand.
+<section class="main quote">
+  <div class="ad-m-quote">
+    <div class="ad-m-quote-source">
+      <div class="ad-a-ico">
+        {% do doc.icons.useIcon('icons/quote.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+      </div>
+      <div class="ad-a-img ad-a-img-static">
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="630" height="96" alt="Image" />
+      </div>
+    </div>
+    <div class="ad-m-quote-quote">
+      <blockquote>
+        <p class="ad-a-txt">AMPHTML ads represent an opportunity to fix key issues with ad experiences on the web.</p>
+      </blockquote>
+      <p>KAVATA MBONDO, Vice President of Digital Revenue Strategy and Operations, Time Inc.</p>
+      <a class="ad-m-lnk" href="http://localhost:8080/shared/fill-ins/success-story.html">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ad-m-lnk-text">Read Success Story</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-#### Guides & Tutorials:
-[Duis dolor](Link)
+<section class="main compare-ads">
+  <h2>What’s the difference between an AMPHTML ad and a regular ad? Seconds.</h2>
+  <amp-img src="/static/img/teaser-placeholder-1x1.jpg" layout="responsive" height="1" width="1"></amp-img>
+</section>
 
-### Maximize your ROI
-AMP ads are safe from malware because AMPHTML ads are verified before being served, thus, advertisers can ensure a safe user experience and building trust in the brands users are engaging with. Establish yourself as the adtech platform for the fast web and join the hundreds of technology platforms currently supporting the open source AMP ecosystem.
-
-#### Guides & Tutorials:
-[Duis dolor]()
-
->“AMPHTML ads represent an opportunity to fix key issues with ad experiences on the web.”
-
-KAVATA MBONDO, Vice President of Digital Revenue Strategy and Operations, Time Inc.
-
-Brand Logo Image
-
-## What’s the difference between an AMPHTML ad and a regular ad? Seconds.
-### AMPHTML AD
-IMAGE: Animation Loop
-
-### REGULAR AD
-IMAGE: Animation Loop
-
-Check out the latest from the AMP 2018 Conference, and watch AMP developers discuss how using AMP can improve monetization.
-
+<section class="main video">
 [video]
-[]https://www.youtube.com/watch?v=mvAmvKiWPfA
+[](https://www.youtube.com/watch?v=9Cfxm7cikMY)
 [/video]
+<p>Check out the latest from the AMP 2018 Conference, and watch AMP developers discuss how using AMP can improve monetization.</p>
+</section>
 
-## AMP Ads works for all browsers
-IMAGE/ICON Browser Logos
 
-In general we support the latest two versions of major browsers like Chrome, Firefox, Edge, Safari, Opera and UC Browser. We support desktop, phone, tablet and the webview version of these respective browsers.
+<section class="main copy left">
+  <h4>AMP works for all browsers</h4>
+  <amp-img src="/static/img/browser-icons.png" width="283" height="44" layout="fixed"></amp-img>
+  <p>In general AMP supports the latest two versions of major browsers like Chrome, Firefox, Edge, Safari, Opera and UC Browser. We support desktop, phone, tablet and the webview version of these respective browsers.</p>
 
-Beyond that, the core AMP library and built-in elements should aim for very wide browser support and we accept fixes for all browsers with market share greater than 1 percent.
-In particular, we try to maintain “it might not be perfect but isn’t broken”-support for the Android 4.0 system browser and Chrome 28+ on phones.
+  <p>Beyond that, the core AMP library and built-in elements should aim for very wide browser support and we accept fixes for all browsers with market share greater than 1 percent.</p>
 
-## AMP is supported by many different platforms and vendors
+  <p>In particular, we try to maintain “it might not be perfect but isn’t broken”-support for the Android 4.0 system browser and Chrome 28+ on phones.</p>
+</section>
 
-IMAGE/ICON Platform and Vendor Partners
+<section class="main copy right">
+  <h4>AMP is supported by many different platforms and vendors</h4>
+  <amp-img src="/static/img/plattform-logos.png" width="753" height="98" layout="responsive"></amp-img>
+  <p>A growing number of platforms, vendors, and partners support the AMP project by providing custom components or offering integration with AMP pages within their platforms. This includes over 150 advertising platforms, nearly 45 Analytics, Audio/Videos services, major Content Platforms, and Content Managers System providers.</p>
 
-A growing number of platforms, vendors, and partners support the AMP project is supported by providing custom components or offering integration with AMP pages within their platforms. This includes over 150 Ads platforms, nearly 45 Analytics and Audio Videos services, and major Content Platforms, and CMS providers.
+  <a class="ad-m-lnk ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    </div>
+    <span class="ad-m-lnk-text">Explore our partners</span>
+  </a>
 
-Get started by leveraging the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+</section>
 
-Explore our Partners
+[teaser-grid]
+# Explore possibilities of AMP for ads
+[](content/shared/fill-ins/use-case-2.md)
+[](content/shared/fill-ins/use-case-2.md)
+[](content/shared/fill-ins/use-case-2.md)
+[](content/shared/fill-ins/use-case-2.md)
 
-## Explore use cases of AMP
-### E-commerce check out process
-Duis dolor
-IMAGE/ICON
-
-### Stories with rich visuals and native videos
-Duis dolor
-IMAGE/ICON
-
-### Scrollbound Animation Ad
-Duis dolor
-IMAGE/ICON
+[See more use cases](content/shared/fill-ins/use-case.md)
+[/teaser-grid]
 
 [teaser-grid]
 # Explore AMP success stories
-[](content/shared/fill-ins/success-story.md)
-[](content/shared/fill-ins/success-story-2.md)
-[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story-3.md)
+[](content/shared/fill-ins/success-story-3.md)
+[](content/shared/fill-ins/success-story-3.md)
+[](content/shared/fill-ins/success-story-3.md)
 
-[See more success stories](#)
+[See more success stories](content/shared/fill-ins/success-story.md)
 [/teaser-grid]

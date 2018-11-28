@@ -1,0 +1,8 @@
+$title@: Examples
+$path: /documentation/examples/{base}.html
+$view: /views/overview/components-overview.j2
+$localization:
+  path: /{locale}/documentation/examples/{base}.html
+$order: 3
+
+index: /content/amp-dev/documentation/examples/index.md

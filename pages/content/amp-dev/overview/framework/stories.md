@@ -6,9 +6,12 @@ $titles:
 sub_navigation:
   - /content/amp-dev/overview/framework/stories.md
   - /content/amp-dev/overview/benefits/stories.md
+  - /content/amp-dev/overview/use-cases/stories.md
+  - /content/amp-dev/overview/success-stories/stories.md
+  - /content/amp-dev/overview/functionality/overview.md
 ---
 [stage color="orange"]
-<amp-img src="/static/img/stage_placeholder.png" height="500" width="450" layout="responsive" />
+<amp-img src="/static/img/story.png" height="1218" width="1160" layout="responsive" />
 ## What is AMP?
 # AMP is a web component framework for easily creating user first
 [destination-switch type="selected" selected="stories"]
@@ -42,7 +45,7 @@ sub_navigation:
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
       </div>
       <div class="ad-a-img ad-a-img-static">
-        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="153" height="38" alt="Image" />
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" width="630" height="96" alt="Image" />
       </div>
     </div>
     <div class="ad-m-quote-quote">
@@ -61,9 +64,9 @@ sub_navigation:
 </section>
 
 <section class="main benefits stories">
-  <h1>Explore benefits of AMP stories</h1>
+  <h3>Explore benefits of AMP stories</h3>
 
-  <div class="main benefit-cards">
+  <div class="benefit-cards">
     <div class="ad-m-benefit-card ad-m-benefit-card-left">
       <div class="ad-m-benefit-card-content">
         <h2>Benefits for developers</h2>
@@ -90,11 +93,11 @@ sub_navigation:
     </div>
   </div>
 
-  <a class="ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
-    <div class="ad-a-ico ad-m-lnk-square-icon">
+  <a class="ad-m-lnk ad-m-lnk-square" href="http://localhost:8080/shared/fill-ins/use-case.html">
+    <div class="ad-a-ico ad-m-lnk-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </div>
-    <span class="ad-m-lnk-square-text">All benefits</span>
+    <span class="ad-m-lnk-text">All benefits</span>
   </a>
 
 </section>

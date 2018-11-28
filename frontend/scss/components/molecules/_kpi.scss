@@ -42,6 +42,14 @@ Please refer to mixins.scss to see gradients.
   padding: 1.5em;
 }
 
+@mixin kpi-fluid {
+  padding-bottom: 0;
+}
+
+@mixin kpi-fluid-content {
+  position: static;
+}
+
 @mixin kpi-icon {
   @include ico-2;
   @include ico-white;

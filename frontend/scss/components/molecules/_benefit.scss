@@ -27,16 +27,64 @@ none
 @import '../atoms/_icon.scss';
 @import '../atoms/divider';
 
+section.main.benefits {
+  &.websites,
+  &.ads {
+    h3,
+    .ad-m-lnk-text {
+      color: color('white');
+    }
+    .ad-m-lnk-icon {
+      fill: color('blue-ribbon');
+      background: color('white');
+    }
+  }
+
+  &.stories,
+  &.e-mails {
+    h3,
+    .ad-m-lnk-text {
+      color: color('black');
+    }
+  }
+}
+
 .#{molecule('benefit')} {
-	position: relative;
-  padding-left: 4em;
+  position: relative;
+  display: flex;
+  margin: 0 20px;
 
 	@media screen and (min-width: 768px) {
-		padding: 0;
-	}
+    padding: 0;
+    margin: 0 0 0 40px;
+    flex: 0 0 calc(33.333333333% - 40px);
+  }
 
-	&-headline {
-		margin: 0 0 0.375em;
+  &-icon {
+    @include ico-3;
+    @include ico-blue-ribbon;
+    margin-right: 10px;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+
+    &-headline {
+      @include hl;
+      @include hl-h5;
+      margin-bottom: 0.3em;
+    }
+
+    &-copy {
+      @include txt;
+      @include txt-2;
+      margin-bottom: 10px;
+    }
+    
+    b {
+      @include txt-2;
+    }
   }
 
   &-card {
@@ -57,11 +105,6 @@ none
 
     &-content {
       padding: 45px 50px;
-    }
-
-    h2 {
-      @include hl;
-      @include hl-h4;
     }
   }
 }

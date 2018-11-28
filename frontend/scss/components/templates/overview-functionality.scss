@@ -1,0 +1,70 @@
+/*
+
+#############################################
+### TEMPLATE: overview functionality ###
+#############################################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../templates/_default.scss';
+
+
+.#{template('overview-functionality')} {
+  @include container;
+
+  section {
+    position: relative;
+    z-index: 1;
+
+    &.#{organism('stage')} {
+      grid-column: 1 / -1;
+      z-index: 2;
+    }
+
+
+    &.intro {
+        h1 {
+          @include hl;
+          @include hl-h3;
+        }
+    }
+
+    &.links {
+      grid-column: 12 / -1;
+      .link-list {
+        @include txt;
+        text-decoration: underline;
+        list-style: none;
+
+        & li {
+          padding-bottom: 25px;
+        }
+      }
+    }
+
+    &.copy {
+      grid-column: 2 / -1;
+      display: flex;
+
+      .image-container {
+        width: 50%;
+        padding-right: 30px;
+      }
+
+      .text {
+        width: 50%;
+        padding-right: 30px;
+      }
+    }
+  }
+}
