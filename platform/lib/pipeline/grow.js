@@ -19,10 +19,12 @@ const { Signale } = require('signale');
 const stream = require('stream');
 const config = require('../config.js');
 const fs = require('fs');
+const os = require('os');
+const path = require('path');
 
 const GROW_POD_PATH = '../pages';
 
-const GROW_DEFAULT_PATH = '~/bin/grow';
+const GROW_DEFAULT_PATH = path.join(os.homedir(), './bin/grow');
 
 /**
  * A wrapper class to simplify interactions with a Grow process
@@ -32,7 +34,7 @@ class Grow {
 
   constructor() {
     this._log = new Signale({
-      'interactive': true,
+      'interactive': false,
       'scope': 'Grow',
       'types': {
         // Just for goodliness, add custom logger as .watch is a bit off
