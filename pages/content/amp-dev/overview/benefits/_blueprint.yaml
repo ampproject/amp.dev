@@ -1,0 +1,8 @@
+$title@: Benefits
+$path: /overview/benefits/{base}.html
+$view: /views/default.j2
+$localization:
+  path: /{locale}/overview/benefits/{base}.html
+$order: 2
+
+index: /content/amp-dev/overview/benefits/overview.md

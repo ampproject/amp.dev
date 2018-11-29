@@ -1,0 +1,20 @@
+{
+	"logLevel": 2,
+	"hosts": {
+		"pages": {
+			"scheme": "http",
+			"host": "localhost",
+			"port": "8080"
+		},
+		"samples": {
+			"scheme": "http",
+			"host": "localhost",
+			"port": "8082"
+		},
+		"platform": {
+			"scheme": "http",
+			"host": "localhost",
+			"port": "8080"
+		}
+	}
+}

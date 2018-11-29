@@ -1,0 +1,27 @@
+/*
+
+###################
+### ATOM: video ###
+###################
+
+### INFO:
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+.#{atom('video')} {
+  @include box-shadow;
+  margin: 0 -20px 32px 0;
+  
+  @media screen and (min-width: 768px) {
+    margin-right: -30px;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    margin-right: 0;
+  }
+}

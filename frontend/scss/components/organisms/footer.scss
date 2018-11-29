@@ -1,0 +1,248 @@
+/*
+
+########################
+### ORGANISM: footer ###
+########################
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/_icon.scss';
+
+.#{organism('footer')} {
+  padding: 75px 0 20px;
+  @include txt;
+  @include txt-1;
+  @include color-white;
+  @include river-ebony;
+
+  @media screen and (min-width: 1024px) {
+    padding: 35px 0 30px;
+  }
+
+  &-container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+      padding: 0 30px;
+    }
+  }
+
+  &-line-top {
+    padding-bottom: 100px;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  &-hints {
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 1024px) {
+      margin: 0;
+    }
+  }
+
+    &-hint {
+      margin: 0;
+    }
+
+  &-follow {
+    @media screen and (min-width: 768px) {
+      text-align: center;
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin-left: auto;
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      display: inline-block;
+      vertical-align: middle;
+      @include color-white;
+
+      @media screen and (min-width: 1024px) {
+        margin: 0 30px 0;
+      }
+    }
+
+    &-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: 0;
+
+      @media screen and (min-width: 768px) {
+        margin-left: auto;
+      }
+    }
+
+    &-item {
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+
+      @media screen and (min-width: 768px) {
+        flex: 0 0 auto;
+        margin: 0 16px;
+      }
+
+      &:last-child {
+        @media screen and (min-width: 1024px) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-icon.#{atom('ico')} {
+      @include ico-3;
+      @include ico-white;
+    }
+  }
+
+  &-nav {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    &-column {
+      flex: 1 1 100%;
+
+      &:nth-child(2n+1) {
+        @media screen and (min-width: 768px) {
+          grid-column: 2 / 7;
+        }
+
+        @media screen and (min-width: 1024px) {
+          grid-column: span 3;
+        }
+      }
+
+      &:nth-child(2n+2) {
+        @media screen and (min-width: 768px) {
+          grid-column: 7 / 12;
+        }
+
+        @media screen and (min-width: 1024px) {
+          grid-column: span 3;
+        }
+      }
+    }
+
+    &-title {
+      @include color-white;
+    }
+
+    &-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px;
+
+      @media screen and (min-width: 1024px) {
+        margin: 0;
+      }
+    }
+
+    &-item {
+      position: relative;
+    }
+
+    &-link {
+      padding-left: 35px;
+      @include txt-3;
+      @include color-white;
+    }
+
+    &-icon.#{atom('ico')} {
+      position: absolute;
+      left: 10px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      @include ico-white;
+    }
+  }
+
+  &-line-bottom {
+    padding-top: 20px;
+
+    @media screen and (min-width: 768px) {
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 80px;
+    }
+  }
+
+  &-legal-nav {
+    &-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-item {
+      display: inline-block;
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-link {
+      @include txt-3;
+      font-weight: 400;
+      @include color-white;
+    }
+  }
+
+  &-copyright {
+    margin-top: 6px;
+    @include txt-2;
+    @include txt-strong;
+
+    @media screen and (min-width: 1024px) {
+      padding-left: 30px;
+      margin: 0;
+    }
+  }
+}

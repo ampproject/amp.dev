@@ -1,0 +1,20 @@
+{
+	"logLevel": 2,
+	"hosts": {
+		"pages": {
+			"scheme": "https",
+			"host": "amp-dev-staging.appspot.com",
+			"port": ""
+		},
+		"samples": {
+			"scheme": "https",
+			"host": "api.amp-dev-staging.appspot.com",
+			"port": ""
+		},
+		"platform": {
+			"scheme": "https",
+			"host": "amp-dev-staging.appspot.com",
+			"port": "8080"
+		}
+	}
+}

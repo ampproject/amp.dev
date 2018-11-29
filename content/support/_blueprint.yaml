@@ -1,5 +1,0 @@
-$title@: Support
-$path: /support/{base}/
-$view: /views/section_page.html
-$localization:
-  path: /{locale}/support/{base}/

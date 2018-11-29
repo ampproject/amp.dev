@@ -1,6 +1,0 @@
-$title@: Integrate with AMP
-$path: /docs/integration/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/integration/{base}.html
-index_path: /content/docs/integration.md

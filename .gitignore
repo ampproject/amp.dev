@@ -4,33 +4,27 @@
 .idea
 .podcache.yaml
 .vscode
-node_modules
 *.pyc
+*.log
+node_modules
 
 build
 assets/css/*
 .depcache.json
 
-# Ignore generated files
-content/includes/who.yaml
+# Ignore dynamically built and collected files that are only
+# used during development
+pages/podspec.yaml
+pages/extensions
+pages/css
+pages/icons
+pages/macros
+pages/partials
+pages/templates
+pages/views
+pages/content/amp-dev/documentation/examples/*/**
+pages/content/amp-dev/documentation/components/*/**
 
-# Ignore imported files
-# see scripts/import_docs.json for special cases
-content/docs/fundamentals/spec.md
-content/docs/fundamentals/spec/*.md
-content/docs/contribute/governance.md
-content/docs/interaction_dynamic/amp-email-format.md
-content/docs/fundamentals/spec/amp-boilerplate.md
-content/docs/design/amp-html-layout.md
-content/docs/interaction_dynamic/amp-actions-and-events.md
-content/docs/troubleshooting/amp-cache-debugging.md
-content/docs/fundamentals/amp-cors-requests.md
-content/support/developer/get_support.md
-content/docs/ads/integration-guide.md
-content/docs/ads/amphtml_ads/a4a_spec.md
-content/docs/analytics/integrating-analytics.md
-content/docs/analytics/amp-managing-user-state.md
-
-# Ignore imported reference files
-content/reference/components/**/*.md
-content/reference/components/ads-analytics/amp-share-tracking.md
+# Ignore files created during build process
+platform/pages
+platform/static

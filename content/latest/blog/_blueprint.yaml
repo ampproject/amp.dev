@@ -1,5 +1,0 @@
-$title@: Blog
-$path: /latest/blog/{base}/
-$view: /views/blog_detail.html
-$localization:
-  path: /{locale}/latest/blog/{base}/

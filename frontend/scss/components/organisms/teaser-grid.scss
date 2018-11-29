@@ -1,0 +1,84 @@
+/*
+
+#############################
+### ORGANISM: teaser grid ###
+#############################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+section.teaser-grid {
+  @media screen and (min-width: 768px){
+    grid-column-start: 1;
+    grid-column-end: 25;
+  }
+
+  @media screen and (min-width: 1024px){
+    grid-column-start: 4;
+    grid-column-end: 22;
+  }
+}
+
+.#{organism('teaser-grid')} {
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(24, 1fr);
+  }
+  
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    grid-column: 3 / 14;
+  }
+  
+  .#{molecule('lnk')} {
+    grid-column: 16 / 22;
+  }
+
+  &-list {
+    grid-column: 1 / 25;
+    scroll-snap-type: x mandatory;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px 0;
+    margin: 0 -20px;
+
+    @media screen and (min-width: 575px) {
+      overflow: visible;
+      width: 100%;
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      padding: 0;
+      margin: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-count-4,
+    &-count-8,
+    &-count-16 {
+      @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}

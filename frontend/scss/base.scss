@@ -1,0 +1,37 @@
+@import '_variables.scss';
+@import '_functions.scss';
+@import '_extends.scss';
+@import '_mixins.scss';
+
+@import 'grid-toggle.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    min-width: 320px;
+    color: color('black');
+    background: color('whisper');
+    font-size: 16px;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:target::before {
+  content: '';
+  display: block;
+  height: 145px;
+  margin-top: -145px;
+  visibility: hidden
+}
+@media screen and (min-width: 1024px) {
+  :target::before {
+    height: 80px;
+    margin-top: -80px;
+  }
+}

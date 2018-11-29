@@ -1,0 +1,48 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '_text.scss';
+
+section.main {
+  .intro {
+    @include txt-1;
+    padding: 0;
+
+    * {
+      font-size: inherit;
+    }
+  }
+
+  p {
+    @include txt;
+    @include txt-p;
+    @include txt-2;
+
+  	small {
+  		@include txt-2;
+  	}
+  }
+
+  code {
+    @include txt-mono-inline;
+  }
+
+  pre {
+    @include txt-2;
+  }
+
+  ul,
+  ol {
+    @include txt;
+    @include txt-p;
+    @include txt-2;
+    padding-left: 2em;
+    margin: 1.5em 0 2.5em;
+
+    li {
+      padding-left: 0.5em;
+    }
+  }
+}

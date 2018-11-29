@@ -1,6 +1,0 @@
-$title@: Fundamentals
-$view: /views/doc.html
-$path: /docs/fundamentals/{base}.html
-$localization:
-  path: /{locale}/docs/fundamentals/{base}.html
-index_path: /content/docs/fundamentals.md

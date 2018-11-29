@@ -1,7 +1,0 @@
-$title@: Docs
-$path: /docs/{base}/
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/{base}/
-build_root: true
-index_path: /content/docs/build.md

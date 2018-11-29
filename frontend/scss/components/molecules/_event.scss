@@ -1,0 +1,90 @@
+/*
+
+#######################
+### MOLECULE: event ###
+#######################
+
+### INFO:
+
+The event molecule is a combination of icon, headline and text atoms. The event molecule also creates a list for the event details (location, registration).
+Positioning of the atoms (eg. padding, margin) are defined in this style sheet.
+The size of the icon should be 1 (xsmall) and text should be 2 (small).
+
+### MODIFIERS:
+
+none
+
+*/
+
+.#{molecule('event')} {
+  display: flex;
+	padding: 0.875em 1.25em;
+	margin-bottom: 2.750em;
+	background-color: color('white');
+	@include box-shadow;
+
+	&-date {
+		flex-grow: 0;
+		margin-right: 1.4em;
+		text-align: right;
+
+		span:last-child {
+			display: block;
+			line-height: 1.4em;
+		}
+
+    &-year {
+      @include txt;
+      @include txt-font-accent;
+      @include txt-2;
+      @include txt-strong;
+      @include color-silver;
+      @include txt-hl;
+
+      margin-bottom: 0.5em;
+    }
+
+    &-month {
+      @include txt;
+      @include txt-font-accent;
+      @include txt-2;
+      @include txt-strong;
+      @include color-black;
+    }
+	}
+
+	&-content {
+		flex-grow: 1;
+
+    &-city {
+      @include txt;
+      @include txt-font-accent;
+      @include txt-2;
+      @include txt-strong;
+      @include color-black;
+      @include txt-hl;
+
+      margin-bottom: 0.5em;
+    }
+	}
+
+	ul {
+		li {
+      @include txt;
+      @include txt-3;
+
+			position: relative;
+			padding-left: 20px;
+		}
+
+		.#{atom('ico')} {
+  		@include ico-blue-ribbon;
+
+			width: 0.875em;
+			height: 0.875em;
+			position: absolute;
+			left: 1px;
+			top: 3px;
+		}
+	}
+}

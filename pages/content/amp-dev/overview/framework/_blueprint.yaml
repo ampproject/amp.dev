@@ -1,0 +1,8 @@
+$title@: AMP Framework
+$path: /overview/framework/{base}.html
+$view: /views/default.j2
+$localization:
+  path: /{locale}/overview/framework/{base}.html
+$order: 1
+
+index: /content/amp-dev/overview/framework/overview.md

@@ -1,0 +1,22 @@
+/*
+
+######################
+### MOLECULE: copy ###
+######################
+
+### INFO:
+
+The copy molecule is a combination of headline and text atom.
+Currently no custom styles are required here.
+
+### MODIFIERS:
+
+none
+
+*/
+
+.#{molecule('copy')} {
+  &-large p {
+    @include txt-1;
+  }
+}

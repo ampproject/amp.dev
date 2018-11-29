@@ -1,0 +1,73 @@
+/*
+
+########################################
+### ORGANISM: teaser guide & tuorial ###
+########################################
+
+### INFO:
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import 'teaser';
+
+.#{molecule('teaser-guide-tutorial')} {
+	&.#{molecule('teaser')} {
+		@include teaser;
+
+		& > a {
+			@include teaser-linking;
+			height: 100%;
+			
+			&:hover {
+				@include teaser-linking-hover;
+
+				.#{molecule('teaser')}-card {
+					@include teaser-card-hover;
+				}
+			}
+		}
+	}
+
+	.#{molecule('teaser')} {
+		&-tags {
+			font-size: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 1;
+		}
+
+		&-card {
+			@include teaser-card;
+			border-radius: 0;
+			height: 100%;
+		}
+
+		&-content {
+			@include teaser-content;
+			padding-top: 39px;
+		}
+		
+		&-video-length {
+			@include video-length;
+		}
+
+		&-image {
+			@include teaser-image;
+		}
+
+		&-headline {
+			@include teaser-headline;
+			margin-bottom: 0.65em;
+		}
+
+		&-copy {
+			@include teaser-copy;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+git+git://github.com/jungvonmatt/grow-ext-amp-dependency-injector
+git+git://github.com/jungvonmatt/grow-ext-inline-text-assets
+git+git://github.com/jungvonmatt/grow-ext-shortcodes
+lxml
+cssselect

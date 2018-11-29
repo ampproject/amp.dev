@@ -1,0 +1,7 @@
+{% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+
+<div class="ad-o-filter-bubbles-list">
+  {% for button in buttons %}
+    <button class="ad-m-filter-bubble">{{button}}</button>
+  {% endfor %}
+</div>

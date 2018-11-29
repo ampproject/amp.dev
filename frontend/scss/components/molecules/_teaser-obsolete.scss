@@ -1,0 +1,71 @@
+/*
+
+########################
+### MOLECULE: teaser ###
+########################
+
+### INFO:
+
+The teaser molecule includes link molecule and text and icon atoms.
+There is one modifier that enables a white background color with shadow.
+By default the teaser background is transparent and has no padding or shadows.
+
+### MODIFIERS:
+
+white
+	Gaves the teaser a white background, padding and drop-shadow. (Default is transparent)
+
+*/
+
+.#{molecule('teaser-obsolete')} {
+	margin-bottom: 2em;
+
+	&-white {
+		@include box-shadow;
+		padding: 1.5em 1.25em;
+		background-color: white;
+	}
+
+	&-icon {
+		@include ico-2;
+		@include ico-river-bed;
+
+		position: absolute;
+		right: 0;
+		top: 25%;
+		opacity: 0.2;
+		transform: translateY(-50%);
+	}
+
+	&-headline {
+		@include txt;
+		@include txt-hl;
+		@include txt-1;
+		@include txt-strong;
+		@include txt-font-accent;
+		@include color-black;
+
+		position: relative;
+		padding-right: 30px;
+	}
+
+	&-subline {
+		@include txt;
+		@include txt-hl;
+		@include txt-4;
+		@include txt-strong;
+		@include txt-uppercase;
+		@include txt-gray-chateau;
+	}
+
+	&-copy {
+		@include txt;
+		@include txt-3;
+		@include txt-p;
+	}
+
+	&-link {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+}

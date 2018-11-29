@@ -1,0 +1,14 @@
+{% extends '/templates/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/templates/guide.css') %}
+{% endblock %}
+
+{% block main %}
+<div class="ad-t-container ad-t-guide">
+  {% include 'partials/sidebar.j2' %}
+  {% include 'partials/main.j2' %}
+</div>
+{% endblock %}

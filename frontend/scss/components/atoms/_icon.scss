@@ -1,0 +1,83 @@
+/*
+
+##################
+### ATOM: icon ###
+##################
+
+### INFO:
+
+An icon could have fice different sizes and multiple (background)colors.
+New colors can be added below.
+
+### MODIFIERS:
+
+sizes
+  Selector names of the sizes could be changed globally in variables.
+
+colors
+  Color of icons are based on original color names.
+
+square
+  Gaves the icon a square shape with background color (default is transparent).
+
+*/
+
+@mixin ico {
+	display: flex;
+	font-size: initial;
+	box-sizing: initial;
+}
+
+@mixin ico-1 {
+	width: 1em;
+	height: 1em;
+}
+
+@mixin ico-2 {
+	width: 1.375em;
+	height: 1.375em;
+}
+
+@mixin ico-3 {
+	width: 2.5em;
+	height: 2.5em;
+}
+
+@mixin ico-4 {
+	width: 4em;
+	height: 4em;
+}
+
+@mixin ico-5 {
+	width: 5em;
+	height: 5em;
+}
+
+@mixin ico-blue-ribbon {
+	fill: color('blue-ribbon');
+}
+
+@mixin ico-white {
+	fill: color('white');
+}
+
+@mixin ico-stories {
+  fill: color('school-bus');
+}
+
+@mixin ico-e-mails {
+  fill: color('forest-green');
+}
+
+@mixin ico-ads {
+  fill: color('ultramarine');
+}
+
+@mixin ico-river-bed {
+	fill: color('river-bed');
+}
+
+@mixin ico-square {
+	fill: color('white');
+	background-color: color('blue-ribbon');
+}

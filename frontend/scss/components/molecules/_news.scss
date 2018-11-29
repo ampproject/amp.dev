@@ -1,0 +1,58 @@
+/*
+
+######################
+### MOLECULE: news ###
+######################
+
+### INFO:
+
+The news molecule is a combination of text atoms and link molecule.
+There is one modifier for setting a shadow.
+The default has always a white background color but without shadow.
+
+### MODIFIERS:
+
+shadow
+	Adds a box shadow to the molecule.
+
+*/
+
+.#{molecule('news')} {
+	padding: 1.5em 1.25em;
+	margin-bottom: 2em;
+	background-color: white;
+
+	&-date {
+		@include txt;
+		@include txt-hl;
+		@include txt-4;
+		@include txt-strong;
+		@include txt-uppercase;
+		@include txt-font-accent;
+		@include color-blue-ribbon;
+	}
+
+	&-headline {
+		@include txt;
+		@include txt-hl;
+		@include txt-2;
+		@include txt-strong;
+		@include txt-font-accent;
+		@include color-black;
+	}
+
+	&-copy {
+		@include txt;
+		@include txt-p;
+		@include txt-2;
+	}
+
+	&-link {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+
+	&-shadow {
+		@include box-shadow;
+	}
+}

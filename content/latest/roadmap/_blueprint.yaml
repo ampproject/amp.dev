@@ -1,5 +1,0 @@
-$title@: Roadmap
-$path: /roadmap/{base}/
-$view: /views/base.html
-$localization:
-  path: /{locale}/roadmap/{base}/

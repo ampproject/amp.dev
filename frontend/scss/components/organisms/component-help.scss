@@ -1,0 +1,64 @@
+/*
+
+##################
+### Organism: Component help ###
+##################
+
+### INFO:
+
+Component help contains the headline atom, paragraph text, a stack overflow image along with link.
+
+### MODIFIERS:
+
+currently none
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+@import '../atoms/_headline.scss';
+@import '../atoms/_text.scss';
+@import '../atoms/_image.scss';
+@import '../atoms/_icon.scss';
+@import '../molecules/_link.scss';
+@import '../atoms/_divider.scss';
+
+
+.#{organism('component-help')} {
+
+  &-hl {
+    @include hl;
+    @include hl-h2;
+    padding: 20px 0;
+
+    &-lnk {
+      @include hl;
+      @include hl-h4;
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+  }
+
+  &-copy {
+    @include txt;
+    @include txt-1;
+  }
+
+  &-lnk-img {
+    display: flex;
+    align-items: center;
+
+    & .#{atom('img')} {
+      height: 100px;
+      width: 100px;
+      @include img-circle;
+      @include box-shadow;
+    }
+  }
+
+  &-divider {
+    @include divider-header-mobile;
+  }
+}

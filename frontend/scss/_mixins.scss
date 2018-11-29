@@ -1,0 +1,127 @@
+@mixin box-shadow {
+  box-shadow: 0 30px 30px -15px rgba(0, 0, 0, 0.25);
+}
+
+@mixin drop-shadow {
+  filter: drop-shadow(0 30px 30px -15px rgba(0, 0, 0, 0.25));
+}
+
+@mixin benefit-card-left-shadow {
+  box-shadow: 0 50px 100px 0 rgba(0,0,0,0.25);
+}
+
+@mixin benefit-card-right-shadow {
+box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
+}
+
+
+@mixin stage-button-shadow-regular {
+  box-shadow: 0 15px 25px 0 rgba(0,0,0,0.25);
+}
+
+@mixin filter-bubble-shadow-regular {
+  box-shadow: 0 10px 25px 0px rgba(0, 0, 0, 0.15);
+}
+
+@mixin filter-bubble-shadow-selected {
+  box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+@mixin turbo-pizazz {
+	background: linear-gradient(45deg, color('pizazz'), color('turbo'));
+}
+
+@mixin emerald-doger {
+	background: linear-gradient(45deg, color('emerald'), color('doger-blue'));
+}
+
+@mixin river-ebony {
+	background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+}
+
+@mixin heroEnterAnimation {
+	@keyframes growDown {
+		from {
+			padding-top: 0%;
+		}
+		to {
+			padding-top: 45%;
+		}
+	}
+}
+
+@mixin viewboxGradientAnimation {
+	@keyframes gradientChange {
+
+		0% {
+			background-position: 0% 0%
+		}
+
+		24% {
+			background-position: 0% 0%
+		}
+
+		28% {
+			background-position: 24% 0%;
+		}
+
+		50% {
+			background-position: 24% 0%;
+		}
+
+		54% {
+			background-position: 48% 0%;
+		}
+
+		76% {
+			background-position: 48% 0%;
+		}
+
+		80% {
+			background-position: 72% 0%;
+		}
+
+		98% {
+			background-position: 72% 0%;
+		}
+
+		100% {
+			background-position: 100% 0%;
+		}
+	}
+}
+
+@mixin rollingAnimation {
+	@keyframes roll {
+
+		0% {
+			opacity: 0;
+			transform: translateY(-100%);
+		}
+
+		6% {
+			opacity: 1;
+			transform: translateY(0%);
+		}
+
+		24% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		32% {
+			opacity: 1;
+			transform: translateY(100%);
+		}
+
+		42% {
+			opacity: 0;
+			transform: translateY(100%);
+		}
+
+		100% {
+			opacity: 0;
+			transform: translateY(100%);
+		}
+  }
+}

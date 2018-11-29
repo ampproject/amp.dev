@@ -1,5 +1,0 @@
-$title@: Learn
-$path: /learn/{base}/
-$view: /views/section_page.html
-$localization:
-  path: /{locale}/learn/{base}/

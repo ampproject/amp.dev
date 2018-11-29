@@ -1,0 +1,8 @@
+$title@: Components
+$path: /documentation/components/{base}.html
+$view: /views/overview/components-detail.j2
+$localization:
+  path: /{locale}/documentation/components/{base}.html
+$order: 2
+
+index: /content/amp-dev/documentation/components/index.md

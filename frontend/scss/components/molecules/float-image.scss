@@ -1,0 +1,53 @@
+/*
+
+#############################
+### MOLECULE: float-image ###
+#############################
+
+### INFO:
+
+The float-image molecule uses amp-fx-collection to animate one image while scrolling.
+The grid is builded up with two on the corner overlaying squares.
+The images that are inside this squares will contained, it doesn't matter which aspect ratio they have.
+
+### MODIFIERS:
+
+static
+	This image is the static one. It is positioned in the lower left corner.
+
+parallax
+	This image is floating over the static one. Is is positioned in the upper right corner.
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+.#{molecule('float-image')} {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	padding-top: 6em;
+
+	&-static {
+		grid-column: 1 / 3;
+		grid-row: 2 / 4;
+	}
+
+	&-parallax {
+		grid-column: 2 / 4;
+		grid-row: 1 / 3;
+	}
+
+	.#{atom('img')} {
+		padding-top: 100%;
+		margin-right: 0;
+
+		img {
+			object-fit: contain;
+			object-position: left bottom;
+		}
+	}
+}

@@ -1,0 +1,34 @@
+/*
+
+###########################
+### MOLECULE: load-more ###
+###########################
+
+### INFO:
+
+The load-more molecule is a combination of headline and icon atom.
+The size of the icon should be 1 and headline should be h4.
+The icon should be chevron-down-light.
+
+### MODIFIERS:
+
+none
+
+*/
+
+.#{molecule('load-more')} {
+	text-align: center;
+
+	&-text {
+		@include txt;
+		@include txt-1;
+		@include txt-strong;
+		@include color-black;
+		@include txt-font-accent;
+	}
+
+	&-icon {
+		@include ico-2;
+		margin: 0 auto 0.375em;
+	}
+}

@@ -1,0 +1,44 @@
+/*
+
+####################
+### ATOM: button ###
+####################
+
+### INFO:
+
+The regular button has only one size and no modifiers yet.
+The text style is always extended from light headline 3 but in uppercase letters.
+
+### MODIFIERS:
+
+none
+
+*/
+
+.#{atom('btn')} {
+	@include hl;
+	@include hl-h3;
+	@include color-white;
+
+	display: inline-block;
+	max-width: 100%;
+	min-width: 230px;
+	width: auto;
+	height: auto;
+	padding: .813rem 1.626rem;
+	margin: 0;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	background-color: color('blue-ribbon');
+	border: 3px solid color('blue-ribbon');
+
+	&:hover {
+		background-color: color('river-bed');
+		border: 3px solid color('river-bed');
+	}
+
+	@media screen and (min-width: 768px) {
+		min-width: 280px;
+	}
+}

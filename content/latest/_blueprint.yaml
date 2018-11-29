@@ -1,6 +1,0 @@
-$title@: The Latest
-$path: /latest/{base}/
-$view: /views/list_page.html
-$localization:
-  path: /{locale}/latest/{base}/
-index_path: /content/latest/latest.html

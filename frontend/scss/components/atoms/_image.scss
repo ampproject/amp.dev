@@ -1,0 +1,62 @@
+/*
+
+###################
+### ATOM: image ###
+###################
+
+### INFO:
+
+Some basic styling for images.
+If using images in stages, no modifiers should be applied.
+Image atoms are implemented by a macro.
+Give the image macro the parameter "parallax" to add the amp-parallax-fx to it.
+
+### MODIFIERS:
+
+pull-edge
+	Just for mobile: pulls the image to the edge with a negative margin.
+
+circle
+  Sets a border-radius 50% to the image (make sure it is a sqaure).
+
+shadow-static
+  Adds a simple static drop-shadow to the image.
+
+*/
+
+// TODO: make decissions about how to implement animated shadow modifier
+
+@mixin img {
+	position: relative;
+}
+
+@mixin img-pull-edge {
+	margin-right: -30px;
+
+	@media screen and (min-width: 768px) {
+		margin-right: 0;
+	}
+}
+
+@mixin img-circle {
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+// Default image styling
+.#{atom('img')} {
+	@include img;
+}
+
+.image-preview-1 {
+	.#{atom('img')} {
+		@include img-circle;
+	}
+}
+
+.image-preview-2 {
+	.#{atom('img')} {
+		@include img-pull-edge;
+		@include drop-shadow;
+	}
+}

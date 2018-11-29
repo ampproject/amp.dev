@@ -1,0 +1,67 @@
+/*
+
+#####################
+### ATOM: divider ###
+#####################
+
+A simple element that can be used anywhere.
+More modifiers can be added below.
+
+### MODIFIERS:
+
+desktop
+	Displays the divider also on desktop resolution. Default is just for mobile.
+
+*/
+
+.#{atom('divider')} {
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-bottom: 0.813em;
+	background-color: color('whisper');
+
+	@media screen and (min-width: 768px) {
+		display: none;
+	}
+
+	&-desktop {
+		@media screen and (min-width: 768px) {
+			display: block;
+		}
+	}
+}
+
+
+@mixin divider {
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-bottom: 0.813em;
+	background-color: color('whisper');
+}
+
+@mixin divider-stage {
+  width: 60px;
+  height: 4px;
+  background-color: color('white');
+  @media screen and (min-width: 1024px) {
+	  margin-bottom: 3em;
+  }
+}
+
+@mixin divider-benefit {
+  width: 60px;
+  height: 4px;
+  background-color: color('blue-ribbon');
+  @media screen and (min-width: 1024px) {
+	  margin-bottom: 3em;
+  }
+}
+
+@mixin divider-header-mobile {
+  display: block;
+  background-color: color('wild-sand');
+  height: 1px;
+  margin: 30px 20px 30px 0px;
+}

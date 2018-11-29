@@ -1,6 +1,0 @@
-$title@: Interactivity & dynamic content
-$view: /views/doc.html
-$path: /docs/interaction_dynamic/{base}.html
-$localization:
-  path: /{locale}/docs/interaction_dynamic/{base}.html
-index_path: /content/docs/interaction_dynamic.md

@@ -1,0 +1,178 @@
+/*
+
+#####################
+### MOLECULE: tip ###
+#####################
+
+### INFO:
+
+The tip molecule includes headline and text atoms.
+It has 4 different modifiers for different use-cases.
+
+### MODIFIERS:
+
+default
+	Green border on the right and triangle outside the lower left corner.
+
+note
+	Blue border on the right and triangle inside the lower right corner.
+
+important
+	Red border on the right and cutted triangles inside the left corners.
+
+read-on
+	Yellow border on the right and ribbon shape outside the lower right corner.
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_icon.scss';
+
+$cornerSize: 40px;
+$borderSize: 5px;
+
+%pseudo-base {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.#{molecule('tip')} {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: $cornerSize/2 ($cornerSize - 10px);
+  margin-bottom: 50px;
+  background-color: color('white');
+  filter: drop-shadow(0 2px 25px rgba(0, 0, 0, 0.1));
+  
+  .#{molecule('tip')}-content {
+    h4 {
+      @include txt-1;
+      margin: 0 0 0.75em;
+    }
+    
+    p {
+      margin-bottom: 0;
+      @include txt-3;
+    }
+  }
+  
+  &-icon {
+    @include ico;
+    @include ico-1;
+    float: left;
+    margin-right: 5px;
+  }
+  
+  &-default {
+    border-right: $borderSize solid color('malachite');
+    border-radius: 0 $borderSize $borderSize 0;
+    
+    &:before {
+      @extend %pseudo-base;
+      left: 0;
+      top: 100%;
+      border-top: $cornerSize solid white;
+      border-left: 0px solid white;
+      border-right: $cornerSize solid transparent;
+    }
+  }
+  
+  &-note {
+    width: calc(100% - #{$cornerSize});
+    
+    &:before {
+      @extend %pseudo-base;
+      left: 100%;
+      bottom: 0;
+      border-top: $cornerSize solid color('blue-ribbon');
+      border-left: 0px solid color('blue-ribbon');
+      border-right: $cornerSize solid transparent;
+    }
+    
+    &:after {
+      @extend %pseudo-base;
+      width: $cornerSize - $borderSize;
+      height: calc(100% - #{$cornerSize});
+      left: 100%;
+      top: 0;
+      background-color: color('white');
+      border-right: $borderSize solid color('blue-ribbon');
+      border-radius: 0 $borderSize 0 0;
+    }
+  }
+  
+  &-important {
+    width: calc(100% - #{$cornerSize/2});
+    margin-left: $cornerSize/2;
+    padding-left: ($cornerSize/2 - 10px);
+    border-right: $borderSize solid color('red');
+    border-radius: 0 $borderSize $borderSize 0;
+    
+    h4 {
+      color: color('red')
+    }
+    
+    .#{molecule('tip')} {
+      &-content:before {
+        @extend %pseudo-base;
+        width: $cornerSize/2;
+        height: calc(100% - #{$cornerSize});
+        right: 100%;
+        top: $cornerSize/2;
+        background-color: color('white');
+      }
+      
+      &-icon {
+        fill: red;
+      }
+    }
+    
+    &:before,
+    &:after {
+      @extend %pseudo-base;
+      right: 100%;
+      top: 0;
+      border-top: $cornerSize/2 solid transparent;
+      border-left: 0px solid transparent;
+      border-right: $cornerSize/2 solid white;
+    }
+    
+    &:after {
+      top: auto;
+      bottom: 0;
+      border-top: none;
+      border-bottom: $cornerSize/2 solid transparent;
+      border-left: 0px solid transparent;
+      border-right: $cornerSize/2 solid white;
+    }
+  }
+  
+  &-read-on {
+    border-right: $borderSize solid color('turbo');
+    border-radius: 0 $borderSize 0 0;
+    
+    &:before,
+    &:after {
+      @extend %pseudo-base;
+      top: 100%;
+      right: -$borderSize;
+      border-top: $cornerSize solid color('turbo');
+      border-left: 0px solid color('turbo');
+      border-right: $cornerSize solid transparent;
+    }
+    
+    &:after {
+      border-top: $cornerSize solid color('turbo');
+      border-right: 0px solid color('turbo');
+      border-left: $cornerSize solid transparent;
+    }
+  }
+}

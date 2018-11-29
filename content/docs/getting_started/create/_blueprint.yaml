@@ -1,5 +1,0 @@
-$path: /docs/getting_started/create/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/getting_started/create/{base}.html
-$title@: Create Your First AMP Page

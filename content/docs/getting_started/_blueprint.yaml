@@ -1,6 +1,0 @@
-$title@: Getting Started
-$path: /docs/getting_started/{base}.html
-$view: /views/doc.html
-$localization:
-  path: /{locale}/docs/getting_started/{base}.html
-index_path: /content/docs/getting_started.md

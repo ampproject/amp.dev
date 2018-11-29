@@ -1,6 +1,0 @@
-$title@: Design & Layout
-$view: /views/doc.html
-$path: /docs/design/{base}.html
-$localization:
-  path: /{locale}/docs/design/{base}.html
-index_path: /content/docs/design.md

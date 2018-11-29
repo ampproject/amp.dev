@@ -1,0 +1,7 @@
+$path: /documentation/{base}.html
+$view: /views/default.j2
+$title: Documentation
+$localization:
+  path: /{locale}/documentation/{base}.html
+$order: 2
+index: /content/amp-dev/documentation/guides-and-tutorials/index.md

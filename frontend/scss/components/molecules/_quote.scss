@@ -1,0 +1,40 @@
+.#{molecule('quote')} {
+  display: flex;
+  padding: 75px 0;
+  
+  &-source {
+    flex: 0 0 30%;
+    
+    .#{atom('ico')} {
+      width: 100px;
+      height: 100px;
+      margin-left: auto;
+      fill: color('blue-ribbon');
+    }
+  }
+  
+  &-quote {
+    padding: 50px 0 0 30px;
+    
+    blockquote {
+      flex: 0 0 70%;
+      margin: 0;
+      
+      p.#{atom('txt')} {
+        @include hl;
+        @include hl-h4;
+        line-height: 2;
+        font-style: italic;
+        display: block;
+        
+        &:before {
+          content: '\201C';
+        }
+        
+        &:after {
+          content: '\201D';
+        }
+      }
+    }
+  }
+}

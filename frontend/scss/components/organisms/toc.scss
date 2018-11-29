@@ -1,0 +1,46 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+
+.#{organism('toc')} {
+  
+  @media screen and (min-width: 1024px){
+    position: -webkit-sticky;
+    position: sticky;
+    height: auto;
+    top: 80px;
+  }
+  
+  b {
+    display: block;
+    margin-bottom: 13px;
+    @include txt;
+    @include txt-2;
+    @include txt-strong;
+    @include color-black;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      display: block;
+
+      a {
+        display: block;
+        @include txt;
+        @include txt-3;
+        padding: 6px 0 7px;
+        
+        &:hover {
+          @include color-blue-ribbon;
+        }
+      }
+    }
+  }
+}
