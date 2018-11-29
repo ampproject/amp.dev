@@ -18,6 +18,7 @@ const { spawn, spawnSync, exec } = require('child_process');
 const { Signale } = require('signale');
 const stream = require('stream');
 const config = require('../config.js');
+const fs = require('fs');
 
 const GROW_POD_PATH = '../pages';
 
@@ -30,8 +31,6 @@ const GROW_DEFAULT_PATH = '~/bin/grow';
 class Grow {
 
   constructor() {
-    this._command = this._determineCommand();
-
     this._log = new Signale({
       'interactive': true,
       'scope': 'Grow',
@@ -44,6 +43,8 @@ class Grow {
         }
       }
     });
+
+    this._command = this._determineCommand();
   }
 
   /**
@@ -52,10 +53,10 @@ class Grow {
    * @return {[type]} [description]
    */
   _determineCommand() {
-    if (fs.existsSync(GROW_DEFAULT_INSTALLATION) {
-      this._log.info(`Using Grow installation from ${GROW_DEFAULT_INSTALLATION}`);
-      return GROW_DEFAULT_INSTALLATION;
-    }) else {
+    if (fs.existsSync(GROW_DEFAULT_PATH)) {
+      this._log.info(`Using Grow installation from ${GROW_DEFAULT_PATH}`);
+      return GROW_DEFAULT_PATH;
+    } else {
       this._log.info(`Using global Grow if present.`);
       return 'grow';
     }
