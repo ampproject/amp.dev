@@ -170,6 +170,17 @@ Additionally, the following variables must be defined:
 
 More details for adding INFOnline / IVW support can be found at [www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/).
 
+### Keen
+
+Type attribute value: `keen`
+
+Adds support for Keen. Additionally, the following `vars` must be defined:
+
+* `projectId`: your project id
+* `writeKey`: your write key
+
+Use `extraUrlParams` to add more data. Configuration details can be found at [keen.io/docs/api](https://keen.io/docs/api/).
+
 ### Krux
 
 Type attribute value: `krux`
@@ -337,7 +348,7 @@ Adds support for Treasure Data. Configuration details can be found at [treasured
 
 ### Webtrekk
 
-The attribute value ~~`webtrekk`~~ is deprecated (will remove on 31/12/2018) - use `webtrekk_2` instead
+The attribute value ~~`webtrekk`~~ is deprecated (will remove on 31/12/2018) - use `webtrekk_v2` instead
 
 Adds support for Webtrekk. Configuration details can be found at [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/en/public/amp-analytics.html).
 
