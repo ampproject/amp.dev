@@ -55,11 +55,8 @@ class Pipeline {
    * @return {Promise}
    */
   check() {
-    // TODO: Check node verison
-
-    // Install/Update dependencies needed for Grow
-    let grow = new Grow();
-    return grow.install().when('Finished: Extensions');
+    // TODO: Maybe Check node verison, so long just return a noop promise
+    return Promise.all([]);
   }
 
   /**
