@@ -15,7 +15,6 @@ assets/css/*
 # Ignore dynamically built and collected files that are only
 # used during development
 pages/podspec.yaml
-pages/extensions
 pages/css
 pages/icons
 pages/macros
