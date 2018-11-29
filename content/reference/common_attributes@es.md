@@ -20,7 +20,7 @@ Ejemplo:
 </amp-anim>
 [/sourcecode]
 
-Para obtener más información, consulta [Marcadores de posición y respaldos]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Marcadores de posición y respaldos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ## heights
 
@@ -41,7 +41,7 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
 
 ## layout
 
@@ -58,7 +58,7 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) y las [especificaciones de diseño]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Diseño y media queries]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) y las [especificaciones de diseño]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## media
 
@@ -135,11 +135,11 @@ Ejemplo:
 </amp-anim>
 [/sourcecode]
 
-Para obtener más información, consulta [Marcadores de posición y respaldos]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Marcadores de posición y respaldos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ## sizes
 
-Todos los elementos AMP compatibles con el diseño `responsive` también admiten el atributo `sizes`. El valor de este atributo es una expresión de tamaño, tal como se describe en el [atributo sizes de las etiquetas `img`](https://developer.mozilla.org/es/docs/Web/HTML/Element/img), pero se aplica a todo tipo de elementos y no solo a imágenes.
+Todos los elementos AMP compatibles con el diseño `responsive` también admiten el atributo `sizes`. El valor de este atributo es una expresión de tamaño, tal como se describe en el [atributo sizes de las etiquetas `img`](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/img), pero se aplica a todo tipo de elementos y no solo a imágenes.
 
 Ejemplo:
 
@@ -151,7 +151,7 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
 
 ## width y height
 
@@ -167,4 +167,4 @@ Ejemplo:
 </amp-anim>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) y las [especificaciones de diseño]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Diseño y media queries]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) y las [especificaciones de diseño]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).

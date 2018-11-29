@@ -6,7 +6,7 @@ $title: AMP 페이지에서 프로그레시브 웹 앱 미리 로드하기
 **AMP 페이지를 사이트의 진입점으로 만든 다음**, 향후 사용자 여정을 위해 **보이지 않는 곳에서 PWA를 준비**한 후 전환하는 것이 좋습니다.
 
 * 모든 콘텐츠 '리프' 페이지(개요 페이지가 아닌 특정 콘텐츠가 포함된 페이지)는 AMP로 게시되어 거의 즉각적으로 로드됩니다.
-* 이러한 AMP에서는 사용자가 콘텐츠를 즐기는 동안 AMP의 특별 요소인 [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker)를 사용하여 캐시 및 PWA 셸을 준비합니다.
+* 이러한 AMP에서는 사용자가 콘텐츠를 즐기는 동안 AMP의 특별 요소인 [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker.html)를 사용하여 캐시 및 PWA 셸을 준비합니다.
 * 사용자가 웹사이트에서 다른 링크(예: 앱과 더욱 비슷한 환경을 제공하기 위한 하단의 클릭 유도문안)를 클릭하면 서비스 워커가 그 요청을 가로채어 페이지를 넘겨받고 PWA 셸을 대신 로드합니다.
 
 계속 읽어나가며 이 개발 패턴을 사용하는 이유와 방법을 알아보세요.
@@ -30,7 +30,7 @@ AMP를 사용하면 AMP 캐시에서 AMP 페이지가 게시되는 경우에도 
 
 도움말: 아직 서비스 워커에 익숙하지 않다면 Jake Archibald의 [Udacity 교육 과정](https://www.udacity.com/course/offline-web-applications--ud899)을 추천해 드립니다.
 
-먼저 스크립트를 통해 페이지의 `<head>`에 구성요소를 포함하여 [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker)를 사용하는 방법으로 모든 AMP 페이지에 서비스 워커를 설치합니다.
+먼저 스크립트를 통해 페이지의 `<head>`에 구성요소를 포함하여 [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker.html)를 사용하는 방법으로 모든 AMP 페이지에 서비스 워커를 설치합니다.
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -98,7 +98,7 @@ self.addEventListener('fetch', event => {
 
 이 기술에서 특히 재미있는 점은 이제 점진적 개선을 사용하여 AMP에서 PWA로 이동한다는 것입니다. 하지만 다른 말로 하면 아직 서비스 워커가 지원되지 않는 브라우저를 사용하는 경우 AMP에서 AMP로 이동하고 PWA로 이동하지 않는다는 의미이기도 합니다.
 
-AMP에서는 이 문제를 [셸 URL 재작성](/ko/docs/reference/components/amp-install-serviceworker#shell-url-rewrite)이라는 방법으로 해결합니다. [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker) 태그에 대체 URL 패턴을 추가하면 서비스 워커가 지원되지 않는 경우 AMP가 페이지에서 일치하는 링크를 모두 재작성하여 다른 이전 셸 URL로 연결하도록 할 수 있습니다.
+AMP에서는 이 문제를 [셸 URL 재작성](/ko/docs/reference/components/amp-install-serviceworker.html#shell-url-rewrite)이라는 방법으로 해결합니다. [`<amp-install-serviceworker>`](/ko/docs/reference/components/amp-install-serviceworker.html) 태그에 대체 URL 패턴을 추가하면 서비스 워커가 지원되지 않는 경우 AMP가 페이지에서 일치하는 링크를 모두 재작성하여 다른 이전 셸 URL로 연결하도록 할 수 있습니다.
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -111,4 +111,4 @@ AMP에서는 이 문제를 [셸 URL 재작성](/ko/docs/reference/components/amp
 
 이러한 속성이 있다면 AMP에서 첫 로드 이후 클릭되는 모든 링크는 서비스 워커에 관계없이 PWA로 연결됩니다.
 
-자세히 알아보기: 여기까지 읽어 보셨으니, 기존 AMP 페이지를 재사용하여 PWA를 구축해 보면 어떨까요? 방법은 [이 문서](/ko/docs/integration/pwa-amp/amp-in-pwa)를 참조하세요.
+자세히 알아보기: 여기까지 읽어 보셨으니, 기존 AMP 페이지를 재사용하여 PWA를 구축해 보면 어떨까요? 방법은 [이 문서](/ko/docs/integration/pwa-amp/amp-in-pwa.html)를 참조하세요.

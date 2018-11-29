@@ -7,12 +7,12 @@ Within AMPHTML ads, you can track metrics by using the [`amp-pixel`](/docs/refer
 
 ```html hl_lines="7"
 <body>
-  <a target="_blank" href="https://www.ampproject.org">
+  <a target="_blank" href="https://www.amp.dev">
     <amp-img width="300" height="250"
         alt="Learn amp"
-        src="https://www.ampproject.org/static/img/docs/ads/amp-300x250.png"></amp-img>
+        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
   </a>
-<amp-pixel src="https://www.ampproject.org/tracker/foo"></amp-pixel>
+<amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
 </body>
 ```
 
@@ -21,6 +21,6 @@ That's it, you've created your AMPHTML ad!
 Before uploading your ad to your ad server, there's one last step you should take&mdash;ensuring your syntax is valid.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/ads/amphtml_ads/image_ad.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/ads/amphtml_ads/validate.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/ads/amphtml_ads/create_amphtml_ad/image_ad.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/ads/amphtml_ads/create_amphtml_ad/validate.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

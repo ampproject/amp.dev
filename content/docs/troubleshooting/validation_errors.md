@@ -131,7 +131,7 @@ broadly defines the set of disallowed tags.
 The AMP format does not allow custom JavaScript to be added to pages, except for JavaScript files
 provided by the AMP Project itself. Many common uses of JavaScript have AMP
 HTML library equivalent implementations. See [AMP
-components](/docs/reference/components) for the set of components that can be
+components](/docs/reference/components.html) for the set of components that can be
 used to enhance AMP HTML pages.
 
 If your use case is not covered, you may also consider contributing new
@@ -643,8 +643,8 @@ The full list of unique tags is known:
 
 Before diving into style and layout errors,
 it's worth understanding how
-[styling]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}) and
-[layout]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) work in AMP.
+[styling]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) and
+[layout]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) work in AMP.
 Since AMP pages are HTML pages, styling is very much the same as any HTML page.
 But there are some restrictions to ensure pages load fast,
 and the AMP validator enforces these restrictions.
@@ -758,7 +758,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
-see [How to Control Layout]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) and
+see [How to Control Layout]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) and
 the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 **Note:** If you don't specify the layout,
@@ -816,7 +816,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
-see [How to Control Layout]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) and
+see [How to Control Layout]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) and
 the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 ### Attribute not allowed by specified layout

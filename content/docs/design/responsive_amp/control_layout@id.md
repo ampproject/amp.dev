@@ -9,7 +9,7 @@ AMP mendukung **kueri media** &amp; **kueri elemen**, juga disertai cara bawaan 
 ## Membuat gambar responsif dengan mudah
 
 Buat gambar responsif dengan menetapkan atribut `width` dan `height`, menyetel tata letak ke `responsive`,
-dan menunjukkan dengan [`srcset`](/id/docs/guides/responsive/art_direction.html)
+dan menunjukkan dengan [`srcset`](/id/docs/design/responsive/art_direction.html)
 aset gambar mana yang akan digunakan berdasarkan ukuran layar yang berbeda-beda:
 
 [sourcecode:html]

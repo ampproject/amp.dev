@@ -175,7 +175,7 @@ Veja algumas práticas recomendadas gerais para implementar um visualizador de A
 
 *   Disponibilize a página AMP a partir de um cache de AMP. Isso diminui o tempo de carregamento em mais de 1s.
 *   Exiba a origem do editor do artigo (por exemplo, em um cabeçalho que pode ser recolhido).
-*   Forneça uma ação de compartilhamento (veja também a seção "[Compartilhar conteúdo AMP](/pt_br/docs/integration/integrate-with-apps#sharing-amp-content)"
+*   Forneça uma ação de compartilhamento (veja também a seção "[Compartilhar conteúdo AMP](/pt_br/docs/integration/integrate-with-apps.html#sharing-amp-content)"
     abaixo).
 *   Nos visualizadores baseados em WebView, permita cookies de terceiros.
 *   Defina um referenciador para sua plataforma ou seu aplicativo.

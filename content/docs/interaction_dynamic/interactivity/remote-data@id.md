@@ -7,7 +7,7 @@ $title: Bekerja dengan data jarak jauh
 Bagaimana jika data Anda yang dapat diikat terlalu besar atau kompleks untuk diambil saat pemuatan halaman? Atau, bagaimana jika setiap SKU memiliki harga yang butuh waktu lama untuk dicari? Mencari harga SKU untuk item yang tidak dilihat adalah pekerjaan yang sia-sia.
 
 {% call callout('Tips', type='success') %}
-`<amp-state>` mendukung pengambilan data jarak jauh melalui atribut [`src`](/id/docs/reference/components/amp-bind.htmlamp-bind#attributes) miliknya, yang mengambil JSON dari titik akhir CORS. Pengambilan ini dilakukan sekali saat pemuatan halaman, dan berguna untuk memastikan baru tidaknya data (khususnya jika ditayangkan dari cache).
+`<amp-state>` mendukung pengambilan data jarak jauh melalui atribut [`src`](/id/docs/reference/components/amp-bind.html#attributes) miliknya, yang mengambil JSON dari titik akhir CORS. Pengambilan ini dilakukan sekali saat pemuatan halaman, dan berguna untuk memastikan baru tidaknya data (khususnya jika ditayangkan dari cache).
 
 Anda juga dapat mengikat atribut `src` untuk elemen `<amp-state>`. Hal ini berarti tindakan pengguna dapat memicu pengambilan data JSON jarak jauh ke status halaman yang dapat diikat.
 {% endcall %}

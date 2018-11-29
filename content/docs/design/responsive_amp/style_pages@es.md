@@ -67,7 +67,7 @@ Los siguientes estilos están permitidos, pero están restringidos en lo que res
 
 Las páginas AMP no pueden incluir hojas de estilo externas, salvo en el caso de las fuentes personalizadas.
 
-Más artículos: Consulta más información [sobre las fuentes personalizadas en AMP]({{g.doc('/content/docs/design/responsive/custom_fonts.md', locale=doc.locale).url.path}}).
+Más artículos: Consulta más información [sobre las fuentes personalizadas en AMP]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}}).
 
 ## Usar preprocesadores CSS
 
@@ -76,7 +76,7 @@ emplea [Sass](http://sass-lang.com/). Nosotros utilizamos [Grow](http://grow.io/
 
 
 Cuando utilices preprocesadores, presta especial atención a los elementos que incluyes. Debes cargar solo lo que utilicen tus páginas. Por ejemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`](/es/docs/reference/extended/amp-youtube.html), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.
+incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`](/es/docs/reference/components/amp-youtube.html), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.
 
 [sourcecode:html]{% raw %}
 <head>

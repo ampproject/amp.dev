@@ -8,7 +8,7 @@ Il punto di forza di AMP non sta semplicemente nel fatto che velocizza le pagine
 
 Per convalidare un documento AMP esistono diversi modi che consentono di ottenere lo stesso risultato, quindi puoi utilizzare il metodo più adatto al tuo stile di sviluppo.
 
-Oltre alla validità delle tue pagine AMP, potresti voler verificare che il tuo documento AMP sia [rilevabile](/it/docs/guides/discovery.html) per le piattaforme di terze parti.
+Oltre alla validità delle tue pagine AMP, potresti voler verificare che il tuo documento AMP sia [rilevabile](/it/docs/fundamentals/discovery.html) per le piattaforme di terze parti.
 
 ### Console per sviluppatori del browser
 
@@ -83,7 +83,7 @@ Come prevedibile, questa è una pagina HTML AMP valida. Ora proviamo con una pag
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
 several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
 ...
 [/sourcecode]
@@ -157,5 +157,5 @@ Ogni strumento fornisce diverse informazioni:
 
 Rileggendo con attenzione la specifica, ci siamo accorti di avere utilizzato un tag `<img>`, quando invece avremmo dovuto utilizzare un tag `<amp-img>`.
 
-Per comprendere meglio l'elenco completo di potenziali errori, leggi la [guida agli errori di convalida AMP](/it/docs/reference/validation_errors.html).
+Per comprendere meglio l'elenco completo di potenziali errori, leggi la [guida agli errori di convalida AMP](/it/docs/troubleshooting/validation_errors.html).
 Se dopo un'attenta valutazione hai ancora difficoltà, [pubblica una domanda](http://stackoverflow.com/questions/tagged/amp-html) e cercheremo di aiutarti.

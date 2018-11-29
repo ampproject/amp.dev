@@ -48,7 +48,7 @@ faq:
       The goal is for all content, from news stories to videos and from blogs to commerce pages and GIFs, to work using Accelerated Mobile Pages.
   - title: Does making my content work for Accelerated Mobile Pages entail more work?
     answer: |
-      In short, not much. Since “AMP HTML” is built entirely out of existing web technologies, the development process mirrors the one publishers  and advertisers are already using today. Publishers  and advertisers can familiarize themselves with the [AMP HTML specification]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}) on GitHub. For those used to the current process, we don’t expect a significant learning curve.
+      In short, not much. Since “AMP HTML” is built entirely out of existing web technologies, the development process mirrors the one publishers  and advertisers are already using today. Publishers  and advertisers can familiarize themselves with the [AMP HTML specification](/docs/fundamentals/spec.html) on GitHub. For those used to the current process, we don’t expect a significant learning curve.
   - title: How can a publisher or advertiser get content into AMP HTML?
     answer: |
       Publishers and Content Management System (CMS) providers can develop an integration with their CMS to generate AMP content. Automattic has already published a [WordPress AMP plugin](https://wordpress.org/plugins/amp/) and we hope that all content management systems will add support for AMP HTML pages.

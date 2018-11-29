@@ -66,7 +66,7 @@ Sebagai rangkuman singkat:
 - Waktu proses AMP menutup halaman login dan mengalihkan ke halaman yang ditentukan oleh parameter URL respons
 - Server harus mengatur respons setelah pengguna mengklik tombol login
 
-Tip: Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation](/id/docs/reference/components/amp-access#login-flow).
+Tip: Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation](/id/docs/reference/components/amp-access.html#login-flow).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>

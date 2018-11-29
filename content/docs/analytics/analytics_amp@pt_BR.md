@@ -40,10 +40,10 @@ Você pretende coletar que dados sobre seus usuários para avaliar o engajamento
 Principais pontos a serem considerados:
 
 Você pretende rastrear somente as exibições de página ou outros padrões de engajamento do usuário
-(consulte também [amp-pixel ou amp-analytics](/pt_br/docs/analytics/analytics_basics#usar-amp-pixel-ou-amp-analytics))?
+(consulte também [amp-pixel ou amp-analytics](/pt_br/docs/analytics/analytics_basics.html#usar-amp-pixel-ou-amp-analytics))?
 Que tipos de dados você pretende coletar sobre seus usuários, seu conteúdo,
-o dispositivo ou o navegador (consulte também [Substituição de variáveis](pt_br/docs/analytics/analytics_basics#substituição-de-variáveis))?
-* Como você pretende identificar seus usuários (consulte também [Identificação de usuários](/pt_br/docs/analytics/analytics_basics#identificação-do-usuário))?
+o dispositivo ou o navegador (consulte também [Substituição de variáveis](/pt_br/docs/analytics/analytics_basics.html#substituição-de-variáveis))?
+* Como você pretende identificar seus usuários (consulte também [Identificação de usuários](/pt_br/docs/analytics/analytics_basics.html#identificação-do-usuário))?
 
 
 {% call callout('Saiba mais', type='read') %}

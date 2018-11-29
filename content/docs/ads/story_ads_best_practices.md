@@ -62,7 +62,7 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
 </html>
 [/sourcecode]
 
-The `amp-cta-type` tag must include one of the [available options]({{g.doc('/content/docs/ads/story_ads_best_practices.html#call-to-action-button-text-enum', locale=doc.locale).url.path}}) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers. 
+The `amp-cta-type` tag must include one of the [available options]({{g.doc('/content/docs/ads/story_ads_best_practices.html', locale=doc.locale).url.path}}#call-to-action-button-text-enum) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers. 
 
 ##Call to action button text enum 
 The call to action button must be configured from a predefined set of choices:
@@ -98,7 +98,7 @@ If support is needed for a new CTA button text enum, please open a [GitHub issue
 ##Ad Landing Page 
 You can specify one of three options for an AMP Story ad landing page.
 
-* `STORY`: Landing page is a [sponsored story]({{g.doc('/content/docs/ads/story_ads_best_practices.html#sponsored-story', locale=doc.locale).url.path}}). 
+* `STORY`: Landing page is a [sponsored story]({{g.doc('/content/docs/ads/story_ads_best_practices.html', locale=doc.locale).url.path}}#sponsored-story). 
 * `AMP`: Landing page is a valid AMP Page.
 * `NONAMP`: Any other type of webpage. 
 
@@ -116,7 +116,7 @@ The CTA sits 32px from the bottom and is centered horizontally. It is 120px by 3
 {{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Demonstration of the CTA Button', caption='The CTA Button sits near the bottom', align='' ) }}
 
 ##Images and video
-Images and video included in an AMP Story ad should be 4:3 standard full-screen. Ads that include video should use a [poster](/docs/reference/components/amp-video#poster). The recommended dimensions for a poster image are 720p (720w x 1280h) .
+Images and video included in an AMP Story ad should be 4:3 standard full-screen. Ads that include video should use a [poster](/docs/reference/components/amp-video.html#poster). The recommended dimensions for a poster image are 720p (720w x 1280h) .
 
 [sourcecode:html]
 <amp-video controls
@@ -154,7 +154,7 @@ Background images can be scaled to full screen. The following CSS is a successfu
 ###Video 
 
 ####Specify `<source>` vs `src`
-When specifying the source for an [`amp-video`](/docs/reference/components/amp-video), use `<source>`child elements instead of the `src` attribute. By using the `<source>` element, you can specify the video type, as well as add more video sources. In the `<source>` element, specify the MIME type via the `"type"` attribute. For HLS videos, you must specify one of the following MIME types: `application/x-mpegurl` or `application/vnd.apple.mpegurl`. For all other videos, specify the `video/` MIME prefix and the video format (e.g., `"video/mp4"`).
+When specifying the source for an [`amp-video`](/docs/reference/components/amp-video.html), use `<source>`child elements instead of the `src` attribute. By using the `<source>` element, you can specify the video type, as well as add more video sources. In the `<source>` element, specify the MIME type via the `"type"` attribute. For HLS videos, you must specify one of the following MIME types: `application/x-mpegurl` or `application/vnd.apple.mpegurl`. For all other videos, specify the `video/` MIME prefix and the video format (e.g., `"video/mp4"`).
 
 Example: Specifying multiple source files
 

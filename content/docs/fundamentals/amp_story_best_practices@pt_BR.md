@@ -4,7 +4,7 @@ $title: Práticas recomendadas para criar uma história AMP
 
 [TOC]
 
-Este guia mostra práticas recomendadas que precisam ser implementadas ao criar uma [história AMP](/pt_br/docs/docs/reference/components/amp-story).
+Este guia mostra práticas recomendadas que precisam ser implementadas ao criar uma [história AMP](/pt_br/docs/reference/components/amp-story.html).
 
 
 ## Cor do plano de fundo  

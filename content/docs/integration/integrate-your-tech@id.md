@@ -49,7 +49,7 @@ Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk [mengajukannya](http
 
 - [Situs AMP Project](https://www.ampproject.org/id/)
 - [GitHub AMP Project](https://github.com/ampproject/amphtml)
-- [Blog AMP](https://www.ampproject.org/id/latest/blog)
-- [Panduan AMP Project](https://www.ampproject.org/roadmap/)
+- [Blog AMP](/id/latest/blog)
+- [Panduan AMP Project](/roadmap/)
  
  

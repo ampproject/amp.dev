@@ -35,7 +35,7 @@ Native ad tech firm Triplelift takes advertising assets such as images, video an
 
 When the Accelerated Mobile Pages (AMP) Project launched in October 2015, Triplelift promptly enabled support for their native ads on AMP pages. “We were very excited about the AMP Project because it aligns really well with the way we do business, our mission, and the vision of more respectful, integrated advertising,” says Shaun Zacharia, Triplelift’s co-founder. 
 
-So when the [AMP Ads Initiative](https://www.ampproject.org/learn/who-uses-amp/amp-ads/) was announced, Triplelift was among the first ad tech platforms to join. AMP Ads applies the AMP framework and principles to advertising, making ads faster, lighter and more secure.
+So when the [AMP Ads Initiative](/learn/who-uses-amp/amp-ads/) was announced, Triplelift was among the first ad tech platforms to join. AMP Ads applies the AMP framework and principles to advertising, making ads faster, lighter and more secure.
 
 While Triplelift integrated its core ad serving technology to deliver AMP Ads, one piece was still missing: an AMP Ads signing solution. For AMP Ads to be fast and secure, they must be validated by an authorized signing service that verifies the ad is in AMP HTML and doesn’t contain malware.
 

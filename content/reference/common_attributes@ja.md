@@ -20,7 +20,7 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 </amp-anim>
 [/sourcecode]
 
-詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) をご覧ください。
+詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ## heights
 
@@ -41,7 +41,7 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 </amp-img>
 [/sourcecode]
 
-詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) をご覧ください。
+詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ## layout
 
@@ -58,7 +58,7 @@ AMP では、一連の [レイアウト](/ja/docs/design/responsive/control_layo
 </amp-img>
 [/sourcecode]
 
-詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) および [レイアウトの仕様]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}) をご覧ください。
+詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) および [レイアウトの仕様]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ## media
 
@@ -135,7 +135,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) をご覧ください。
+詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ## sizes
 
@@ -151,7 +151,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 [/sourcecode]
 
-詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}}) をご覧ください。
+詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ## width と height
 
@@ -167,4 +167,4 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) および [レイアウトの仕様]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}) をご覧ください。
+詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) および [レイアウトの仕様]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}) をご覧ください。

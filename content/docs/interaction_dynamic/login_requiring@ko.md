@@ -3,7 +3,7 @@ $title: 로그인이 필요한 AMP 페이지 만들기
 ---
 
 댓글 남기기 같은 사용자의 페이지 인터랙션은 로그인 흐름이 필요할 수 있습니다
-[amp-form](/ko/docs/reference/components/amp-form) 컴포넌트와 [amp-access](/ko/docs/reference/components/amp-access) 컴포넌트를 함께 사용하여 AMP로 로그인 흐름을 구현할 수 있습니다.
+[amp-form](/ko/docs/reference/components/amp-form.html) 컴포넌트와 [amp-access](/ko/docs/reference/components/amp-access.html) 컴포넌트를 함께 사용하여 AMP로 로그인 흐름을 구현할 수 있습니다.
 
 도움말: 구현 샘플을 보고싶다면,[ampbyexample.com](https://ampbyexample.com)의 [댓글 영역 예제](https://ampbyexample.com/samples_templates/comment_section/)을 방문하세요.
 

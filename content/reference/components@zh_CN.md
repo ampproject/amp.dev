@@ -58,7 +58,7 @@ AMP HTML 库提供的组件可划分为：
 | [`amp-fx-collection`](components/amp-fx-collection.html) | 提供一系列预设视觉效果，例如视差。|
 | [`amp-iframe`](components/amp-iframe.html) | 显示 iframe。|
 | [`amp-image-lightbox`](components/amp-image-lightbox.html) | 为指定图片提供灯箱效果。|
-| [`amp-layout`](components/amp-layout.html) | 提供一个常规的多用途容器元素，将 AMP 功能强大的[布局](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute)运用到任何元素中。|
+| [`amp-layout`](components/amp-layout.html) | 提供一个常规的多用途容器元素，将 AMP 功能强大的[布局](/docs/design/responsive/control_layout.html#the-layout-attribute)运用到任何元素中。|
 | [`amp-lightbox`](components/amp-lightbox.html) | 以完整视口“灯箱”模式显示元素。|
 | [`amp-lightbox-gallery`](components/amp-lightbox-gallery.html) | 提供“灯箱”体验。在用户进行互动时，界面组件会展开以填充视口，直到用户将其关闭为止。|
 | [`amp-position-observer`](components/amp-position-observer.html) | 在用户滚动屏幕并调度可与其他组件一起使用的事件时，监控视口内某个元素的位置。|
@@ -78,7 +78,7 @@ AMP HTML 库提供的组件可划分为：
 | [`amp-brid-player`](components/amp-brid-player.html) | 显示 [Brid.tv](https://www.brid.tv/) 播放器。|
 | [`amp-brightcove`](components/amp-brightcove.html) | 显示 Brightcove [视频云](https://www.brightcove.com/en/online-video-platform)或[执行](https://www.brightcove.com/en/perform)播放器。|
 | [`amp-dailymotion`](components/amp-dailymotion.html) | 显示 [Dailymotion](https://www.dailymotion.com) 视频。|
-| [`amp-google-vrview-image`](components/amp-google-vrview-image) | 显示 VR 图片。|
+| [`amp-google-vrview-image`](components/amp-google-vrview-image.html) | 显示 VR 图片。|
 | [`amp-hulu`](components/amp-hulu.html) | 显示简单的嵌入式 [Hulu](http://www.hulu.com/) 视频。|
 | [`amp-ima-video`](components/amp-ima-video.html) | 为与 [IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/) 集成的插播视频广告嵌入一个视频播放器。|
 | [`amp-img`](components/amp-img.html) | 替换 HTML5 `img` 标记。|

@@ -15,9 +15,9 @@ core:
         [AMP spesifikasyonundaki HTML Etiketleri](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         AMP HTML bileşenleri olarak adlandırılan bu özel ögeler,
         yaygın desenlerin başarılı bir şekilde uygulanmasını kolaylaştırmıştır.
-        <p>Örneğin, [`amp-img`](/tr/docs/reference/components/amp-img) etiketi
+        <p>Örneğin, [`amp-img`](/tr/docs/reference/components/amp-img.html) etiketi
         bu özelliği henüz desteklemeyen tarayıcılarda bile tam `srcset` desteği sağlamaktadır.
-        [İlk AMP HTML sayfanızı nasıl oluşturacağınızı] öğrenin({{g.doc('/content/docs/getting_started/create.md', locale=doc.locale).url.path}}).
+        [İlk AMP HTML sayfanızı nasıl oluşturacağınızı] öğrenin(/tr/docs/getting_started/create.html).
     - title: AMP JS
       subtitle: |
         **AMP JS** kitaplığı AMP HTML sayfalarının hızlı sonuç vermesini sağlar.
@@ -48,7 +48,7 @@ core:
         <p>Bir diğer onaylayıcı sürümü her AMP sayfasıyla paket halinde gelir. Bu sürüm, sayfa işlendiğinde validasyon hatalarını doğrudan tarayıcı konsoluna kaydeder,
         bu sayede kodunuzdaki karmaşık değişikliklerin
         performansı ve kullanıcı deneyimini nasıl etkilediğini görmenizi sağlar.
-        <p>[AMP HTML sayfalarınızı test etme]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) ile ilgili daha fazla öğrenin.
+        <p>[AMP HTML sayfalarınızı test etme](/tr/docs/fundamentals/validate.html) ile ilgili daha fazla öğrenin.
 
 video:
   id: 5Yjoe54vzwE

@@ -9,7 +9,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 ## レスポンシブな画像を簡単に作成
 
 レスポンシブな画像を作成するには、`width` と `height` を指定し、layout を `responsive` に設定します。
-また、[`srcset`](/ja/docs/guides/responsive/art_direction.html) を使って、
+また、[`srcset`](/ja/docs/design/responsive/art_direction.html) を使って、
 さまざまな画面サイズに基づいて使用される画像アセットを指定します。
 
 [sourcecode:html]

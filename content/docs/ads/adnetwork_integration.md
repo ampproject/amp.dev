@@ -45,7 +45,7 @@ For instructions on creating an `amp-ad` integration, see [Integrating ad networ
 
 ## Creating a Fast Fetch integration
 
-[Fast Fetch](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/) is an AMP mechanism that separates the ad request from the ad response, allowing ad requests to occur earlier in the page lifecycle, and rendering ads only when they are likely to be viewed by users. Fast Fetch provides preferential treatment to verified AMPHTML ads over traditional HTML ads. Within Fast Fetch, if an ad fails validation, that ad is wrapped in a cross-domain iframe to sandbox it from the rest of the AMP document. Conversely, an AMPHTML ad passing validation is written directly into the page. Fast Fetch handles both AMP and non-AMP ads; no additional ad requests are required for ads that fail validation.
+[Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/) is an AMP mechanism that separates the ad request from the ad response, allowing ad requests to occur earlier in the page lifecycle, and rendering ads only when they are likely to be viewed by users. Fast Fetch provides preferential treatment to verified AMPHTML ads over traditional HTML ads. Within Fast Fetch, if an ad fails validation, that ad is wrapped in a cross-domain iframe to sandbox it from the rest of the AMP document. Conversely, an AMPHTML ad passing validation is written directly into the page. Fast Fetch handles both AMP and non-AMP ads; no additional ad requests are required for ads that fail validation.
 
 {{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='Fast Fetch Integration flow', caption='Fast Fetch Integration flow' ) }}
 
@@ -62,4 +62,4 @@ For instructions on creating a Fast Fetch integration, see the [Fast Fetch Netwo
 
 *   [GitHub directory for all amp-ad extensions](https://github.com/ampproject/amphtml/tree/master/ads)
 *   [List of supported ad vendors]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
-*   [Blog entry describing launch of Fast Fetch](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)
+*   [Blog entry describing launch of Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/)

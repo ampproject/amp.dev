@@ -67,14 +67,14 @@ Os estilos a seguir são permitidos. Contudo, há restrições em relação à c
 
 As páginas AMP não podem incluir folhas de estilos externas, exceto fontes personalizadas.
 
-Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP]({{g.doc('/content/docs/design/responsive/custom_fonts.md', locale=doc.locale).url.path}}).
+Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}}).
 
 ## Como usar pré-processadores de CSS
 
 O resultado gerado pelos pré-processadores é tão bom nas AMP como em qualquer outra página da Web. Por exemplo, o site [ampproject.org](https://www.ampproject.org/) usa [Sass](http://sass-lang.com/). Usamos [Grow](http://grow.io/) para criar as páginas AMP estáticas que compõem o site [ampproject.org](https://www.ampproject.org/).
 
 
-Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue somente aquilo que as páginas usam. Por exemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclui toda a marcação das AMP necessária e a CSS in-line dos arquivos de origem `*.scss`. Isso também inclui o script do elemento personalizado para [`amp-youtube`](/pt_br/docs/reference/extended/amp-youtube.html), entre outros, fazendo com que diversas páginas do site possam incluir vídeos incorporados do YouTube.
+Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue somente aquilo que as páginas usam. Por exemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclui toda a marcação das AMP necessária e a CSS in-line dos arquivos de origem `*.scss`. Isso também inclui o script do elemento personalizado para [`amp-youtube`](/pt_br/docs/reference/components/amp-youtube.html), entre outros, fazendo com que diversas páginas do site possam incluir vídeos incorporados do YouTube.
 
 [sourcecode:html]{% raw %}
 <head>

@@ -11,7 +11,7 @@ AMP の主な長所は、単にページの読み込み時間を短縮するだ�
 
 AMP ドキュメントを検証するにはいくつかの方法があります。どの方法でも結果は同じになるため、自分の開発スタイルに最適なものを使用してください。
 
-AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能](/ja/docs/guides/discovery.html)かどうかを確認することもおすすめします。
+AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能](/ja/docs/fundamentals/discovery.html)かどうかを確認することもおすすめします。
 
 ### ブラウザの Developer Console
 
@@ -151,7 +151,7 @@ https://www.ampproject.org/: PASS
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
 several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
 ...
 [/sourcecode]
@@ -237,4 +237,4 @@ AMP 検証サービスでページに問題があることが検出されると�
 
 [仕様]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}) をよく確認したところ、`<img>` タグが使用されているところで、本来は `<amp-img>` タグを使用すべきであることがわかりました。
 
-表示される可能性のあるエラーの一覧は、[AMP 検証エラーガイド](https://www.ampproject.org/ja/docs/reference/validation_errors.html)で詳しくご覧いただけます。慎重に評価しても引き続きエラーが発生する場合は、[質問を投稿](http://stackoverflow.com/questions/tagged/amp-html)してください。サポートいたします。
+表示される可能性のあるエラーの一覧は、[AMP 検証エラーガイド](/ja/docs/troubleshooting/validation_errors.html)で詳しくご覧いただけます。慎重に評価しても引き続きエラーが発生する場合は、[質問を投稿](http://stackoverflow.com/questions/tagged/amp-html)してください。サポートいたします。

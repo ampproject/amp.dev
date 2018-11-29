@@ -5,7 +5,7 @@ $title: Casos prácticos
 
 Esta guía presenta un conjunto de casos prácticos que se utilizan con frecuencia al realizar el seguimiento de las interacciones de los usuarios:
 
-Note: ¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones](/es/docs/support/contribute.html).
+Note: ¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones](/es/contribute/).
 
 ## Seguimiento de páginas vistas
 
@@ -13,7 +13,7 @@ Obtén información sobre cómo controlar las páginas vistas mediante `amp-pixe
 
 ### Con amp-pixel
 
-Envía los datos de páginas vistas a una URL específica mediante [amp-pixel](/es/docs/reference/amp-pixel.html):
+Envía los datos de páginas vistas a una URL específica mediante [amp-pixel](/es/docs/reference/components/amp-pixel.html):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>

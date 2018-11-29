@@ -66,7 +66,7 @@ A grandes rasgos, las funciones de ambos elementos son las siguientes:
 - El tiempo de ejecución de AMP cierra la página de inicio de sesión y redirige a los usuarios a la página que se haya especificado en el parámetro "returnURL".
 - El servidor debe organizar la respuesta cuando el usuario haga clic en el botón para iniciar sesión.
 
-Consejo: Para obtener una explicación más detallada sobre este tema, consulta la [documentación de amp-access](/es/docs/reference/components/amp-access#login-flow).
+Consejo: Para obtener una explicación más detallada sobre este tema, consulta la [documentación de amp-access](/es/docs/reference/components/amp-access.html#login-flow).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>

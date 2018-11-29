@@ -73,7 +73,7 @@ they support:
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 
-Read on: Learn more about [custom fonts in AMP]({{g.doc('/content/docs/design/responsive/custom_fonts.md', locale=doc.locale).url.path}}).
+Read on: Learn more about [custom fonts in AMP]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}}).
 
 ## Using CSS preprocessors
 
@@ -89,7 +89,7 @@ For example, the
 [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 includes all required AMP mark-up and the inlined CSS from the `*.scss` source files.
 It also includes the custom element script for
-[`amp-youtube`](/docs/reference/extended/amp-youtube.html), among others,
+[`amp-youtube`](/docs/reference/components/amp-youtube.html), among others,
 so that many pages across the site can include embedded youtube videos.
 
 [sourcecode:html]{% raw %}

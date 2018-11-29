@@ -7,7 +7,7 @@ $title: Menyiapkan
 Sebelum memulai tutorial ini, Anda akan memerlukan hal berikut:
 
 - Pengetahuan dasar tentang HTML, CSS, dan JavaScript
-- Pemahaman dasar tentang konsep inti AMP (lihat tutorial ["Mengonversi HTML menjadi AMP"](/id/docs/tutorials/converting.html))
+- Pemahaman dasar tentang konsep inti AMP (lihat tutorial ["Mengonversi HTML menjadi AMP"](/id/docs/fundamentals/converting.html))
 - Browser pilihan Anda
 - Editor teks pilihan Anda
 

@@ -41,14 +41,14 @@ points:
       description: |
         El sistema AMP no permite que los mecanismos de extensión bloqueen la representación de páginas.
         Admite extensiones para recursos como
-        [lightbox](/es/docs/reference/components/amp-lightbox),
-        [inserciones de Instagram](/es/docs/reference/components/amp-instagram),
-        [tuits](/es/docs/reference/components/amp-twitter), etc.
+        [lightbox](/es/docs/reference/components/amp-lightbox.html),
+        [inserciones de Instagram](/es/docs/reference/components/amp-instagram.html),
+        [tuits](/es/docs/reference/components/amp-twitter.html), etc.
         Si bien estos recursos necesitan de solicitudes HTTP adicionales,
         estas no bloquean el diseño ni la representación de páginas.
         <p>Todas las páginas en las que se use un script personalizado deben indicarle al sistema AMP
         que eventualmente tendrá una etiqueta personalizada.
-        Por ejemplo, el script [`amp-iframe`](/es/docs/reference/components/amp-iframe)
+        Por ejemplo, el script [`amp-iframe`](/es/docs/reference/components/amp-iframe.html)
         le indica que habrá una etiqueta `amp-iframe`.
         Las páginas AMP crean el cuadro de iframe antes de determinar lo que incluirá:
       example: /content/includes/amp-iframe.md

@@ -35,7 +35,7 @@ Aquí hay algunos consejos rápidos para mejorar la fidelización del usuario co
 
 ### Participe en el proyecto AMP de código abierto para ayudar a dar forma a su desarrollo
 
-- **Mira el AMP roadmap** para actualizaciones y características en [ampproject.org/roadmap](https://www.ampproject.org/roadmap).
+- **Mira el AMP roadmap** para actualizaciones y características en [ampproject.org/roadmap](/roadmap).
 
 - **Involúcrese**. Contribuya con el código fuente, errores de archivos o comentarios en [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Comparta su opinión sobre AMP en [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 

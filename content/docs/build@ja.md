@@ -4,15 +4,15 @@ $title@: ドキュメント
 start_cards:
   - name: AMP とは
     desc: AMP の概要と主なコンポーネントについて解説します。
-    link: https://www.ampproject.org/ja/learn/overview/
+    link: /ja/learn/overview/
 
   - name: AMP の仕組み
     desc: AMP ページを高速化する最適化の仕組みについて解説します。
-    link: https://www.ampproject.org/ja/learn/about-how/
+    link: /ja/learn/about-how/
 
   - name: 初めての AMP ページを作成する
     desc: 初心者向けのチュートリアルで、初めての AMP ページを作成します。
-    link: https://www.ampproject.org/ja/docs/getting_started/create
+    link: /ja/docs/getting_started/create.html
 
   - name: デモとサンプル
     desc: AMP By Example のサンプルとライブデモを使用して、AMP ページの作り方を学びます。
@@ -58,23 +58,23 @@ doc_cards:
 
   - name: AMP HTML 広告
     desc: AMP HTML 広告の概要と、特定のキャンペーンやウェブサイトに適した AMP ページの作成方法について解説します。
-    link: https://www.ampproject.org/ja/docs/ads/amphtml_ads
+    link: /ja/docs/ads/amphtml_ads.html
 
   - name: アナリティクス
     desc: AMP ページにアナリティクスを組み込むと、ページ上でのアクティビティやユーザー エンゲージメントを測定できます。
-    link: https://www.ampproject.org/ja/docs/analytics/analytics_amp
+    link: /ja/docs/analytics/analytics_amp.html
 
   - name: AMP の CORS
     desc: 動的な AMP コンテンツに CORS が必要である理由を解説します。
-    link: https://www.ampproject.org/ja/docs/fundamentals/amp-cors-requests
+    link: /ja/docs/fundamentals/amp-cors-requests.html
 
   - name: PWA と AMP
     desc: プログレッシブ ウェブアプリ（PWA）と AMP ページを効果的に連携させる方法について解説します。
-    link: https://www.ampproject.org/ja/docs/integration/pwa-amp
+    link: /ja/docs/integration/pwa-amp.html
 
   - name: レスポンシブ AMP
     desc: AMP を使用して、レスポンシブなウェブページを簡単に作成する方法について解説します。
-    link: https://www.ampproject.org/ja/docs/design/responsive/responsive_design
+    link: /ja/docs/design/responsive/responsive_design.html
 
 ---
  

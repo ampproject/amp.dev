@@ -10,7 +10,7 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 
 `width`와 `height`를 지정하고 레이아웃을 `responsive`로 설정한 다음
 이미지 애셋이 다양한 화면 크기에 맞게 사용될 수 있도록
-[`srcset`](/ko/docs/guides/responsive/art_direction.html)로 지정하여 반응형 이미지를 만듭니다.
+[`srcset`](/ko/docs/design/responsive/art_direction.html)로 지정하여 반응형 이미지를 만듭니다.
 
 [sourcecode:html]
 <amp-img

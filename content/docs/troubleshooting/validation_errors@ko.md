@@ -129,7 +129,7 @@ limitations under the License.
 AMP 형식에서는 AMP 프로젝트에서 자체 제공하는 자바스크립트 파일이 아닌
 맞춤 자바스크립트를 페이지에 추가할 수 없습니다. 일반적으로 필요한 자바스크립트는
 대부분 HTML 라이브러리에서 상응하는 구현 방식을 찾을 수 있습니다. [AMP
-구성요소](/ko/docs/reference/components)에서 AMP HTML 페이지를
+구성요소](/ko/docs/reference/components.html)에서 AMP HTML 페이지를
 향상하는 데 사용할 수 있는 구성요소를 확인하세요.
 
 필요한 자바스크립트 사용 사례를 찾을 수 없다면 AMP 프로젝트에

@@ -20,7 +20,7 @@ Ad esempio, il sito [ampproject.org](https://www.ampproject.org/) utilizza il li
 
 Se utilizzi i preprocessori, presta particolare attenzione a ciò che includi; carica soltanto gli elementi utilizzati nelle pagine.
 Ad esempio, nella sezione [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) sono inclusi tutti gli elementi di markup AMP e gli stili CSS in linea necessari recuperati dai file sorgente `*.scss`.
-È incluso, tra gli altri, anche lo script di elementi personalizzati per [`amp-youtube`](/docs/reference/extended/amp-youtube.html), per consentire di includere video di YouTube incorporati in tante pagine del sito.
+È incluso, tra gli altri, anche lo script di elementi personalizzati per [`amp-youtube`](/docs/reference/components/amp-youtube.html), per consentire di includere video di YouTube incorporati in tante pagine del sito.
 
 [sourcecode:html] {% raw %}
 <head>

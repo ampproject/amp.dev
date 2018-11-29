@@ -77,7 +77,7 @@ AMP 网页中的广告是使用 [amp-ad](/zh_cn/docs/reference/components/amp-ad
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='测试广告') }}
 
 {% call callout('注意', type='note') %}
-您可能会注意到，这些 amp-ad 标记中有包含 `fallback` 属性的额外 `div` 标记。您能猜出 `fallback` 属性是何用意吗？它会指示 AMP 的加载系统仅在父级元素未能成功加载时显示该元素的内容。有关详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})。
+您可能会注意到，这些 amp-ad 标记中有包含 `fallback` 属性的额外 `div` 标记。您能猜出 `fallback` 属性是何用意吗？它会指示 AMP 的加载系统仅在父级元素未能成功加载时显示该元素的内容。有关详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})。
 {% endcall %}
 
 {% call callout('继续阅读', type='read') %}

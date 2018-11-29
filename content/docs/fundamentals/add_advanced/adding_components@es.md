@@ -78,7 +78,7 @@ Desafortunadamente, la segmentación geográfica no puede controlarse desde el c
 
 El ejemplo de orientación geográfica anterior muestra cómo `amp-ad` es lo suficientemente flexible para todo tipo de características de la plataforma de anuncios.
 
-Nota: Es posible que observe que dentro de estas etiquetas de amp-ad se encuentran etiquetas `div` adicionales con un atributo denominado `fallback` en ellas. ¿Puedes adivinar qué representa el atributo `fallback`? Se informa al sistema de carga de AMP para mostrar sólo el contenido de ese elemento cuando el elemento padre no se carga correctamente. Lo que significa que el elemento padre recae en el elemento hijo, de ahí el término ‘fallback’. Obtenga más información sobre [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Nota: Es posible que observe que dentro de estas etiquetas de amp-ad se encuentran etiquetas `div` adicionales con un atributo denominado `fallback` en ellas. ¿Puedes adivinar qué representa el atributo `fallback`? Se informa al sistema de carga de AMP para mostrar sólo el contenido de ese elemento cuando el elemento padre no se carga correctamente. Lo que significa que el elemento padre recae en el elemento hijo, de ahí el término ‘fallback’. Obtenga más información sobre [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 Leer más: Para ver las últimas redes publicitarias compatibles, lea la documentación de referencia del componente [amp-ad](/es/docs/reference/components/amp-ad.html#supported-ad-networks).
 

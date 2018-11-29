@@ -16,7 +16,7 @@ AMP HTML 광고는 [AMP HTML 광고 사양]({{g.doc('/content/docs/ads/a4a_spec.
 
 1.  **속도 향상**: AMP HTML 광고는 페이지 렌더링 프로세스 초기에 광고가 요청되고 사용자가 광고를 보기 직전에 바로 표시되므로 속도가 더 빠릅니다. AMP HTML 광고가 파일 크기가 작은 점도 속도 향상에 한몫합니다.
 1.  **크기 감소**: 일반적으로 AMP HTML 광고 번들에는 광고의 파일 크기를 줄이는 광고 기능이 사용됩니다. 또한 페이지에 게재된 AMP HTML 광고는 리소스를 더 적게 소비합니다. 예를 들어 일반 광고에서는 추적기 10개가 각각 고유 정보를 요청하지만, AMP HTML 광고에서는 모든 데이터를 한 번에 수집하여 개수에 상관없이 필요한 추적기에 배포합니다.
-1.  **조정 가능**: AMP 페이지에서 [AMP 런타임]({{g.doc('/content/docs/fundamentals/spec#amp-runtime', locale=doc.locale).url.path}})은 휴대전화의 제한된 리소스를 적합한 구성요소로 시기적절하게 조정하여 최고의 사용자 환경을 제공할 수 있습니다. 예를 들어, 광고가 현재 표시 영역에 나타나지 않을 때는 애니메이션이 포함된 AMP HTML 광고가 일시중지됩니다.
+1.  **조정 가능**: AMP 페이지에서 [AMP 런타임]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}#amp-runtime)은 휴대전화의 제한된 리소스를 적합한 구성요소로 시기적절하게 조정하여 최고의 사용자 환경을 제공할 수 있습니다. 예를 들어, 광고가 현재 표시 영역에 나타나지 않을 때는 애니메이션이 포함된 AMP HTML 광고가 일시중지됩니다.
 1.  **사용자 상호작용 증가**: 사용자는 자신이 볼 수 있는 광고와만 상호작용할 수 있습니다. 광고 속도가 빨라지면 조회가능성이 증가하고 클릭률이 높아져 광고 실적이 향상됩니다.
 1.  **멀웨어로부터 안전하게 보호**: AMP HTML 광고는 게재되기 전에 확인 절차를 거치므로 AMP HTML을 통해 멀웨어가 확산될 수 없습니다. 따라서 광고주는 안전한 사용자 환경과 긍정적인 브랜드 인식을 확보할 수 있습니다. 
 1.  **높은 유연성**: AMP HTML 광고는 모든 기기뿐만 아니라 AMP와 비 AMP 웹페이지에서도 작동하도록 설계되었습니다.
@@ -66,7 +66,7 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 * Adzerk
 * Google 애드센스
 
-간접 채널(예: Exchange, SSP 등)을 통해 AMP HTML 광고를 게재하려면 [이 목록]({{g.doc('/content/docs/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})에 있는 지원 광고 네트워크/광고 서버를 사용하세요.
+간접 채널(예: Exchange, SSP 등)을 통해 AMP HTML 광고를 게재하려면 [이 목록]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})에 있는 지원 광고 네트워크/광고 서버를 사용하세요.
 
 ### 광고 회사
 

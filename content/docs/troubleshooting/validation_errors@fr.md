@@ -572,7 +572,7 @@ Voici la liste complète des balises uniques :
 
 ## Erreurs de style et de mise en page
 
-Avant de différencier les erreurs de style et de mise en page, il est important de comprendre comment le [style]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}) et la [mise en page]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}) fonctionnent dans AMP. Étant donné que les pages AMP sont des pages HTML, les styles ressemblent beaucoup à ceux de n'importe quelle page HTML.
+Avant de différencier les erreurs de style et de mise en page, il est important de comprendre comment le [style]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) et la [mise en page]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) fonctionnent dans AMP. Étant donné que les pages AMP sont des pages HTML, les styles ressemblent beaucoup à ceux de n'importe quelle page HTML.
 Il existe toutefois certaines restrictions visant à assurer un chargement rapide des pages, et le validateur AMP vise à les faire respecter.
 
 La mise en page est plus contrôlée dans les pages AMP.
@@ -664,7 +664,7 @@ Cette erreur se produit lorsque vous ne spécifiez pas de mise en page pour la b
 Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Le comportement de la mise en page est déterminé par l'attribut `layout`.
-Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 **Remarque** : Si vous ne spécifiez pas de mise en page et si vous n'incluez pas les valeurs `width` et `height`, la mise en page par défaut est de type CONTAINER. Le validateur génère une erreur, car le format CONTAINER n'est compatible avec aucune balise AMP.
 Spécifiez une mise en page autre que CONTAINER, ou ajoutez une valeur `width` ou `height` pour corriger l'erreur.
@@ -710,7 +710,7 @@ Cette erreur se produit lorsque la mise en page spécifiée pour la balise n'est
 Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Le comportement de la mise en page est déterminé par l'attribut `layout`.
-Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### Attribut non autorisé par la mise en page spécifiée
 
@@ -750,7 +750,7 @@ Les attributs interdits selon les types de mises en page sont décrits dans la [
 </table>
 
 Cette erreur se produit lorsque la valeur de l'attribut est incorrecte pour la mise en page spécifiée.
-Pour comprendre ce qui déclenche cette erreur, vous devez vous familiariser avec les [différents comportements des mises en page]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
+Pour comprendre ce qui déclenche cette erreur, vous devez vous familiariser avec les [différents comportements des mises en page]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
 
 Par exemple, vous définissez la mise en page sur `fixed-height` et vous intégrez des valeurs numériques pour `height` et `width`.
 La mise en page `fixed-height` utilise une valeur `height`.
@@ -785,7 +785,7 @@ Par exemple, `<amp-img src="" layout="responsive" width="42px" height="42rem">` 
 
 Les pages AMP ne peuvent pas inclure de syntaxe de création de modèles, sauf si cette syntaxe est comprise dans une balise AMP spécialement conçue pour intégrer des modèles, par exemple [amp-mustache](/docs/reference/components/amp-mustache.html).
 
-Vous pouvez inclure des modèles dans vos fichiers source, tant que le fichier de sortie ne contient pas les modèles (voir aussi [Utiliser des préprocesseurs CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})).
+Vous pouvez inclure des modèles dans vos fichiers source, tant que le fichier de sortie ne contient pas les modèles (voir aussi [Utiliser des préprocesseurs CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
 
 ### L'attribut contient une syntaxe de modèle
 

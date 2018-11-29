@@ -5,7 +5,7 @@ $title: Imagens responsivas com os atributos "srcset", "sizes" e "heights"
 
 ## srcset
 
- Use o atributo `srcset` para controlar os recursos de um elemento com base em várias expressões de mídia. Use esse atributo principalmente para todas as tags [`amp-img`](pt_br/docs/reference/amp-img.html) a fim de especificar quais recursos de imagem usar com base nos vários tamanhos de tela.
+ Use o atributo `srcset` para controlar os recursos de um elemento com base em várias expressões de mídia. Use esse atributo principalmente para todas as tags [`amp-img`](/pt_br/docs/reference/components/amp-img.html) a fim de especificar quais recursos de imagem usar com base nos vários tamanhos de tela.
 
 Neste exemplo simples, o `srcset` especifica qual imagem usar com base na largura da tela. O descritor `w` informa ao navegador a largura de cada imagem na lista:
 
