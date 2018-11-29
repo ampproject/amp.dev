@@ -1,4 +1,4 @@
-import lxml.html
+# import lxml.html
 from shortcodes import Shortcode
 
 # Used to pluck out the destination switch to put it in between headlines
@@ -45,7 +45,7 @@ class StageShortcode(Shortcode):
     def _get_destination_switch(self, dom):
         destination_switch = dom.cssselect(DESTINATION_SWITCH_CLASSNAME)
         if len(destination_switch):
-            html = lxml.etree.tostring(destination_switch[0])
+            # html = lxml.etree.tostring(destination_switch[0])
             # Also remove destination switch from dom to easily pluck out
             # a CTA if there is one
             destination_switch[0].clear()
@@ -73,14 +73,18 @@ class StageShortcode(Shortcode):
     def _get_image(self, dom):
         image = dom.cssselect('amp-img')
         if len(image):
-          html = lxml.etree.tostring(image[0])
+          # html = lxml.etree.tostring(image[0])
 
           return html
 
         return None
 
     def transform(self, value, options):
-        dom = lxml.html.fromstring('<html>{}</html>'.format(value))
+        # dom = lxml.html.fromstring('<html>{}</html>'.format(value))
+        # TODO: Bring back actual transforming of stage after we succesfully
+        # removed the dependency to PIP
+        self.template = None
+        return value
 
         self.context['sub_headline'] = self._get_sub_headline(dom)
         self.context['headline'] = self._get_headline(dom)
