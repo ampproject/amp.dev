@@ -83,17 +83,6 @@ class Grow {
     });
   }
 
-  install() {
-    let options = {
-      'stdio': 'pipe',
-      'cwd': GROW_POD_PATH
-    };
-
-    this._spawn('grow', ['install'], options);
-
-    return this;
-  }
-
   run() {
     let args = [
       'run', '--port', `${config.hosts.pages.port}`, '--no-preprocess'
