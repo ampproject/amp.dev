@@ -18,20 +18,20 @@ The AMP HTML library provides components that are classified as: 
 
 [teaser-grid]
 # Newest Components
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
 [/teaser-grid]
 
 [teaser-grid]
 # Explore all components by popularity
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
-[](/content/amp-dev/documentation/components/a/amp-accordion.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
+[](/content/shared/fill-ins/component.md)
 [/teaser-grid]

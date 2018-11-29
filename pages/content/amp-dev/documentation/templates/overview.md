@@ -3,7 +3,6 @@ $title: Templates
 $view: /views/overview/template-overview.j2
 ---
 [stage color="dark-blue"]
-<amp-img src="/static/img/browser-websites.png" height="1258" width="1258" layout="responsive" />
 ## How to Build with AMP without knowing how to code?
 # Easily build user first
 [destination-switch type="dropdown"]
@@ -11,13 +10,14 @@ $view: /views/overview/template-overview.j2
 - [stories](/content/amp-dev/documentation/templates/stories.md)
 - [ads](/content/amp-dev/documentation/templates/ads.md)
 - [e-mails](/content/amp-dev/documentation/templates/e-mails.md)
+- [overview](/content/amp-dev/documentation/templates/overview.md)
 [/destination-switch]
 # with our templates
 [/stage]
 
-<section class="main intro">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex. Vivamus eget est nec lorem semper ultrices eu eu elit. Ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex.</p>
-</section>
+[intro]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex. Vivamus eget est nec lorem semper ultrices eu eu elit. Ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex.
+[/intro]
 
 
 [filter-bubbles]

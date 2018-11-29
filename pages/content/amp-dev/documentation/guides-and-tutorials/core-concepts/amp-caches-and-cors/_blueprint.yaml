@@ -1,5 +1,0 @@
-$title: Caches & CORS
-$path: /documentation/guides-and-tutorials/core-concepts/amp-caches-and-cors/{base}.html
-$view: /views/default.j2
-$localization:
-  path: /{locale}/documentation/guides-and-tutorials/core-concepts/amp-caches-and-cors/{base}.html
