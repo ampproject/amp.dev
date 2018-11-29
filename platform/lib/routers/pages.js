@@ -26,6 +26,7 @@ if (config.environment === 'development') {
   // During development all requests should be proxied over
   // to Grow and handled there
   let growHost = `${config.hosts.pages.scheme}://${config.hosts.pages.host}:${config.hosts.pages.port}`
+  pages.use('/static/', express.static('static'));
   pages.get('/*', requestProxy({'url': growHost + '/*'}));
 } else {
   pages.use('/', express.static('pages'));
