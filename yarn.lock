@@ -28,28 +28,28 @@
     universal-user-agent "^2.0.1"
     url-template "^2.0.8"
 
-"@octokit/request@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-2.1.1.tgz#2c6c6356f2bced33fb6352df8d44f9f50e076e76"
-  integrity sha512-N0I01iWwbogadLyCbVJ048hDMet3uGrB93VeJgB+jeuugRUr1DXncEu2tpiWgSk1azGDFPe5RTRvfx4Uadf+Fw==
+"@octokit/request@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-2.2.0.tgz#f4b2d1ad7c4c8a0b148193610c912046961f8be5"
+  integrity sha512-4P9EbwKZ4xfyupVMb3KVuHmM+aO2fye3nufjGKz/qDssvdJj9Rlx44O0FdFvUp4kIzToy3AHLTOulEIDAL+dpg==
   dependencies:
     "@octokit/endpoint" "^3.0.0"
     is-plain-object "^2.0.4"
+    node-fetch "^2.3.0"
     universal-user-agent "^2.0.1"
 
-"@octokit/rest@16.0.1":
-  version "16.0.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.0.1.tgz#053c1a80aca11c096ad6e09626ba5a18576c1aa0"
-  integrity sha512-4Vbn3TtKADUOSk9usbfJ6XsEErt9h6Thms6EejI/MWMeVqdY5a3NevbAp7rVSXBl2xYIw3erPLkeFpGg+RmkoQ==
+"@octokit/rest@16.1.0":
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.1.0.tgz#43bee0f58821b6c6a4c9d63e14919a1fb67a71b5"
+  integrity sha512-/D1XokSycOE+prxxI2r9cxssiLMqcr+BsEUjdruC67puEEjNJjJoRIkuA1b20jOkX5Ue3Rz99Mu9rTnNmjetUA==
   dependencies:
-    "@octokit/request" "2.1.1"
+    "@octokit/request" "2.2.0"
     before-after-hook "^1.2.0"
     btoa-lite "^1.0.0"
     lodash.get "^4.4.2"
     lodash.pick "^4.4.0"
     lodash.set "^4.3.2"
     lodash.uniq "^4.5.0"
-    node-fetch "^2.1.1"
     octokit-pagination-methods "^1.1.0"
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
@@ -5185,10 +5185,10 @@ node-fetch-npm@^2.0.2:
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
 
-node-fetch@^2.1.1:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
-  integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
+node-fetch@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
+  integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
 
 node-gyp@^3.3.1:
   version "3.7.0"
