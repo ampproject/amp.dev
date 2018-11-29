@@ -22,7 +22,7 @@ logo:
   src: "case-studies/toi_logo.png"
   width: 200
   height: 20
-download: "case-studies/times_of_india.pdf"
+download: "case-studies/Times_of_India.pdf"
 
 ---
 
