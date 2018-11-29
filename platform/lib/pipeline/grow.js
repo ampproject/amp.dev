@@ -21,6 +21,8 @@ const config = require('../config.js');
 
 const GROW_POD_PATH = '../pages';
 
+const GROW_DEFAULT_PATH = '~/bin/grow';
+
 /**
  * A wrapper class to simplify interactions with a Grow process
  * running in parallel to the JavaScript based pipeline
@@ -28,7 +30,8 @@ const GROW_POD_PATH = '../pages';
 class Grow {
 
   constructor() {
-    this._command = '';
+    this._command = this._determineCommand();
+
     this._log = new Signale({
       'interactive': true,
       'scope': 'Grow',
@@ -41,6 +44,21 @@ class Grow {
         }
       }
     });
+  }
+
+  /**
+   * Checks if Grow has been installed by default method and if so
+   * uses this before trying to just call it by `grow`
+   * @return {[type]} [description]
+   */
+  _determineCommand() {
+    if (fs.existsSync(GROW_DEFAULT_INSTALLATION) {
+      this._log.info(`Using Grow installation from ${GROW_DEFAULT_INSTALLATION}`);
+      return GROW_DEFAULT_INSTALLATION;
+    }) else {
+      this._log.info(`Using global Grow if present.`);
+      return 'grow';
+    }
   }
 
   /**
@@ -92,7 +110,7 @@ class Grow {
       'cwd': GROW_POD_PATH
     };
 
-    this._spawn('grow', args, options);
+    this._spawn(this._command, args, options);
 
     return this;
   }
@@ -106,7 +124,7 @@ class Grow {
       'cwd': GROW_POD_PATH
     };
 
-    this._spawn('grow', args, options);
+    this._spawn(this._command, args, options);
 
     return this;
   }
