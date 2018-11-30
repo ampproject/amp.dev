@@ -12,7 +12,7 @@
     "start": "NODE_ENV=staging node serve.js"
   },
   "keywords": [],
-  "author": "",
+  "author": ['Andrew McKeever'],
   "license": "ISC",
   "signale": {
     "displayTimestamp": true
