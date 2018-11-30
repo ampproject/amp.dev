@@ -1,6 +1,8 @@
 ---
 $title: Configure analytics
 $order: 0
+formats:
+- ads
 ---
 
 ## Decide before you start

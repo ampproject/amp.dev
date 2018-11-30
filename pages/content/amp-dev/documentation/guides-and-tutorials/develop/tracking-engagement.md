@@ -1,6 +1,8 @@
 ---
 $title: Tracking engagement with analytics
 $order: 4
+formats:
+- stories
 ---
 # Tracking engagement with analytics
 

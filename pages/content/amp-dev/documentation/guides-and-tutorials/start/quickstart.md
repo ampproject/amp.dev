@@ -1,6 +1,8 @@
 ---
 $title: Quickstart
 $order: 0
+formats:
+- email
 ---
 
 [TOC]
