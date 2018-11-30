@@ -46,22 +46,22 @@
   }
 
   &:after {
-      bottom: 34px;
+      bottom: 0;
       background: linear-gradient(0deg, color('whisper'), rgba(color('whisper'), 0));
   }
 }
 
 @mixin sidebar-nav {
-  margin: 34px 0;
+  margin: 34px 0 0;
   
   @media screen and (min-width: 768px){
     overflow-y: scroll;
-    max-height: calc(100vh - 315px);
+    max-height: calc(100vh - 281px);
   }
   
   @media screen and (min-width: 1024px){
     overflow-y: scroll;
-    max-height: calc(100vh - 298px);
+    max-height: calc(100vh - 264px);
   }
   
   &::-webkit-scrollbar {
