@@ -1,0 +1,8 @@
+$title@: What is AMP?
+$path: /what-is-amp/{base}.html
+$view: /views/default.j2
+$localization:
+  path: /{locale}/what-is-amp/{base}.html
+$order: 1
+
+index: /content/amp-dev/what-is-amp/websites.md
