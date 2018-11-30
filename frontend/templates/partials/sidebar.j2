@@ -31,7 +31,7 @@
             {% else %}
             <span class="nav-link">{{ collection.title }}</span>
             {% endif %}
-            <input class="nav-trigger" checked type="checkbox">
+            <input class="nav-trigger" {% if activeCollection or iteration == 1  %}checked {% endif %} type="checkbox">
             <div class="nav-icon">
               {% if iteration==1 %}
               <svg class="ad-a-ico solid"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
