@@ -108,7 +108,7 @@
         {# Language switcher #}
         <li class="ad-o-header-lang-switcher">
           <div class="ad-o-header-lang-current">
-            <span>{{ doc.locale }}</span>
+            <span>{{ doc.locale.language }}</span>
             <div class="ad-a-ico ad-o-header-lang-icon">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
             </div>
@@ -117,7 +117,7 @@
             {% for locale in doc.locales if not locale == doc.locale  %}
             {% set localized_doc = doc.localize(locale) %}
             <li class="ad-o-header-lang-list-item">
-              <a href="{{ localized_doc.url.path }}">{{ locale }}</a>
+              <a href="{{ localized_doc.url.path }}">{{ locale.get_language_name() }}</a>
             </li>
             {% endfor %}
           </ul>

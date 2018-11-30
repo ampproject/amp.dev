@@ -280,16 +280,17 @@
     }
 
     &-list {
-      overflow: hidden;
-      max-height: 0;
+      opacity: 0;
       position: absolute;
-      left: 0;
+      right: 0;
+      text-align: right;
       top: 100%;
       list-style: none;
       margin: 0;
       padding: 0;
       background-color: color('white');
-      transition: max-height 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      transform: translateY(-20px);
 
       &-item {
         &:first-child {
@@ -317,12 +318,8 @@
 
     &-current:hover + ul,
     &-list:hover {
-      max-height: 100vh;
-      transition: max-height 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-      
-      @media screen and (min-width: 1024px) {
-        max-height: 250px;
-      }
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
 
