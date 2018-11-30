@@ -1,6 +1,8 @@
 ---
 $title: Validate AMP pages
 $order: 7
+formats:
+- websites
 ---
 [TOC]
 

@@ -1,7 +1,9 @@
 ---
 $title: Combine AMP with Progressive Web Apps
 $order: 5
-toc: true
+formats:
+- websites
+- stories
 ---
 [TOC]
 
