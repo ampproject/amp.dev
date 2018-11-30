@@ -20,6 +20,7 @@ pages/icons
 pages/macros
 pages/partials
 pages/templates
+pages/layouts
 pages/views
 pages/content/amp-dev/documentation/examples/*/**
 pages/content/amp-dev/documentation/components/*/**
