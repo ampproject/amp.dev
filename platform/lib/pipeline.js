@@ -102,9 +102,9 @@ class Pipeline {
   }
 
   _watchFrontendChanges() {
-    gulp.watch(TEMPLATES_WATCH_SRC, this._collectTemplates);
-    gulp.watch(ICONS_WATCH_SRC, this._collectIcons);
-    gulp.watch(TRANSPILE_SCSS_WATCH_SRC, this._transpileScss);
+    gulp.watch(TEMPLATES_WATCH_SRC, this._collectTemplates.bind(this));
+    gulp.watch(ICONS_WATCH_SRC, this._collectIcons.bind(this));
+    gulp.watch(TRANSPILE_SCSS_WATCH_SRC, this._transpileScss.bind(this));
   }
 
   _transpileScss() {
