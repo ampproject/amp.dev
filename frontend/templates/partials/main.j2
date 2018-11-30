@@ -14,6 +14,10 @@
 {% endif %}
 
 <section class="main">
+  {% if doc.title and doc.view in ["/views/detail/docs-detail.j2", ] %}
+  <h1>{{ doc.title }}</h1>
+  {% endif %}
+
   {% set content = doc.html.split('</div>', 1)[1] if has_toc else doc.html %}
   {{ content|render|safe }}
 

@@ -4,8 +4,6 @@ $order: 4
 formats:
 - stories
 ---
-# Tracking engagement with analytics
-
 Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system. AMP provides a flexible JSON configuration syntax to replicate this process for several analytics partners.
 
 The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [amp-analytics](/docs/reference/components/amp-analytics.html) JSON format but first, let's look at the traditional approach:

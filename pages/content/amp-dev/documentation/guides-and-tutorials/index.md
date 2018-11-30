@@ -1,5 +1,5 @@
 ---
-$title: Guides & Tutorials
+$title: Learn AMP with Guides and tutorials
 $view: /views/overview/guides.j2
 $path: /documentation/guides-and-tutorials.html
 $localization:
@@ -9,7 +9,6 @@ $hidden: true
 
 author: ampproject
 ---
-# Learn AMP with Guides and tutorials
 [include('/content/shared/hints/content-missing.md')]
 
 [teaser-grid]
