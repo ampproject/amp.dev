@@ -21,7 +21,7 @@ The documents inside the *pages* package are Grow documents that use the [built-
 - draft [default: true]
   - true
   - false
-- tags
+- tags [default: '']
   - ads-analytics
   - dynamic-content
   - layout
