@@ -82,19 +82,19 @@ $title: 페이지를 검색할 수 있도록 설정
 ```
 
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 콘텐츠는 동일해야 합니다. 뉴스 기사에는 'NewsArticle' 유형을 지정하세요. 제목은 기사 제목과 일치해야 합니다. 이미지 객체는 기사의 히어로 이미지를 참조합니다.
-{% endcall %}
+[/tip]
 
 
 브라우저에서 페이지를 **다시 로드**하고 AMP 유효성 검사 오류가 없는지 확인합니다.
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 검색엔진 및 소셜 미디어 네트워크에서는 schema.org 구조화된 데이터 형식 외에도 다른 형식을 지원합니다. 지원되는 문서를 참조하세요.
 
 - [Twitter 카드 메타태그](https://dev.twitter.com/cards/overview)
 - [Facebook 오픈 그래프 메타태그](https://developers.facebook.com/docs/sharing/webmasters)
-{% endcall %}
+[/tip]
 
 ### 구조화된 데이터 유효성 검사
 
@@ -107,9 +107,9 @@ $title: 페이지를 검색할 수 있도록 설정
 
 구조화된 데이터가 유효하면 **오류 0개** 및 **경고 0개**가 표시됩니다.
 
-{% call callout('읽어보기', type='read') %}
+[tip type="read-on"]
 페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
-{% endcall %}
+[/tip]
 
 훌륭합니다.  이제 AMP 뉴스 기사가 완성되었습니다.
 

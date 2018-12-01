@@ -48,9 +48,9 @@ AMP 网页中的广告是使用 [amp-ad](/zh_cn/docs/reference/components/amp-ad
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='测试广告') }}
 
-{% call callout('重要提示', type='caution') %}
+[tip type="important"]
 您的开发者控制台中可能会存在一些错误，例如`Mixed Content`或 `XMLHttpRequest cannot load`。前面那个错误可能与 A9 广告相关，因为它加载的所有内容并非都是安全的。对于在 AMP 网页上投放的所有广告而言，这是一项值得注意的要求。
-{% endcall %}
+[/tip]
 
 下文中的这两个 `amp-ad` 很好地例证了 `amp-ad` 组件为支持广告平台功能而提供的灵活性。在本例中，我们（使用 DoubleClick 信息中心）将两个 DoubleClick 测试广告配置为仅在某些国家/地区展示 - 第一个广告仅在英国展示，第二个广告仅在美国展示。请尝试在 AMP 文档中**添加**这两项地理位置定位广告配置（将其放在您先前添加的广告下方）：
 
@@ -76,17 +76,17 @@ AMP 网页中的广告是使用 [amp-ad](/zh_cn/docs/reference/components/amp-ad
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='测试广告') }}
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 您可能会注意到，这些 amp-ad 标记中有包含 `fallback` 属性的额外 `div` 标记。您能猜出 `fallback` 属性是何用意吗？它会指示 AMP 的加载系统仅在父级元素未能成功加载时显示该元素的内容。有关详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})。
-{% endcall %}
+[/tip]
 
-{% call callout('继续阅读', type='read') %}
+[tip type="read-on"]
 要想查看最新的受支持广告网络，请参阅 [amp-ad](/zh_cn/docs/reference/components/amp-ad.html#supported-ad-networks) 组件的参考文档。
-{% endcall %}
+[/tip]
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AMP runtime 会（通过 iframe 沙盒）将来自另一来源的 iframe 加载为 AMP 文档，并会在该 iframe 沙盒内执行相应广告网络的 JS。
-{% endcall %}
+[/tip]
 
 现在，我们的 AMP 文档已包含一些文字、一张图片和一则内嵌于网页中的广告，这些都是讲述故事以及通过内容获利的关键要素。不过，新型网站往往包含更多功能，而不仅仅是图片和文字。
 
@@ -117,9 +117,9 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 
 请注意，并非所有组件都是位于 AMP 库的核心 JavaScript 文件中。我们需要为“YouTube”组件添加一项额外的 JavaScript 请求。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 如果您的开发者控制台仍处于打开状态且您的网址中仍包含 `#development=1`，此时您会看到一条 AMP 验证工具错误消息（该消息会提醒您添加 `amp-youtube` JavaScript）以及一个指向相关文档（该文档会告知您应添加哪个 `script` 标记）的链接。
-{% endcall %}
+[/tip]
 
 将以下脚本**添加**到 `<head>` 标记中：
 
@@ -135,9 +135,9 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 
 要想详细了解如何嵌入 YouTube 视频，请参阅 [amp-youtube](/zh_cn/docs/reference/components/amp-youtube.html) 组件文档。要想了解更多视频组件和媒体组件，请查看 [AMP 媒体组件列表](/zh_cn/docs/reference/components.html#media)。
 
-{% call callout('提示', type='success') %}
+[tip]
 如果某个组件无法正常加载或在浏览器中不受支持，请使用 [`fallback`](/zh_cn/docs/design/responsive/placeholders.html#fallbacks) 属性通知用户。
-{% endcall %}
+[/tip]
 
 ## 显示 Twitter 微博
 嵌入已预先设定格式的 Twitter 微博是新闻报道中的一项常见功能。[amp-twitter](/zh_cn/docs/reference/components/amp-twitter.html) 组件可轻松地提供此功能。
@@ -167,9 +167,9 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 
 要想详细了解如何嵌入 Twitter 微博，请参阅 [amp-twitter](/zh_cn/docs/reference/components/amp-twitter.html) 组件文档。
 
-{% call callout('提示', type='success') %}
+[tip]
 AMP 还提供了更多用于嵌入社交网络内容的组件。请参阅最新的 [AMP 社交组件](/zh_cn/docs/reference/components.html#social)。
-{% endcall %}
+[/tip]
 
 ## 突出显示报道中的精彩语段
 

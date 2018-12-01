@@ -40,13 +40,13 @@ Adelante, **agregue** el siguiente código debajo de la etiqueta `<meta charset=
 <link rel="canonical" href="/article.html">
 ```
 
-{% call callout('Nota', type='note') %}
+[tip]
 Puede crear una página AMP canónica autónoma. El vínculo canónico sigue siendo necesario, pero debe señalar el propio artículo AMP:
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
-{% endcall %}
+[/tip]
 
 Ahora, **vuelva a cargar** la página. Aunque todavía hay un montón de errores para corregir, el error de enlace canónico ya no está presente.
 
@@ -67,13 +67,13 @@ Los errores anteriores se pueden resolver simplemente agregando el `⚡ `attribu
 
 Ahora, adelante, vuelva a cargar la página y compruebe que ambos errores se han ido.
 
-{% call callout('Note', type='note') %}
+[tip type="note"]
 Aunque la especificación de `⚡` es el enfoque recomendado, también es posible utilizar el atributo `amp` en lugar del atributo `⚡`, así:
 
 ```html
 <html amp lang="es">
 ```
-{% endcall %}
+[/tip]
 
 ## Especificar un viewport
 

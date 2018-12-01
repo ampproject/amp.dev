@@ -43,13 +43,13 @@ Neste tutorial, o artigo HTML original que estamos convertendo será a página c
 <link rel="canonical" href="/article.html">
 ```
 
-{% call callout('Observação', type='note') %}
+[tip type="note"]
 É possível criar uma página AMP canônica independente. Nesse caso, o link canônico ainda é necessário, mas precisa levar ao próprio artigo AMP:
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
-{% endcall %}
+[/tip]
 
 Agora, **atualize** a página. Embora ainda haja muitos erros para corrigir, o erro do link canônico não está mais presente.
 
@@ -70,13 +70,13 @@ Para corrigir os erros acima, basta adicionar o atributo `⚡` à tag `<html>` d
 
 Agora, atualize a página e verifique se os erros desapareceram.
 
-{% call callout('Observação', type='note') %}
+[tip type="note"]
 A abordagem recomendada é especificar `⚡`, mas também é possível usar o atributo `amp` no lugar do atributo `⚡`. Veja este exemplo:
 
 ```html
 <html amp lang="en">
 ```
-{% endcall %}
+[/tip]
 
 ## Especificar uma janela de visualização
 
@@ -148,12 +148,12 @@ Em geral, os scripts só são permitidos na AMP quando cumprem dois requisitos p
 
 Isso exclui efetivamente o uso de todo JavaScript gerado por usuários/terceiros na AMP, exceto no caso indicado abaixo.
 
-{% call callout('Observação', type='note') %}
+[tip type="note"]
 As únicas exceções à restrição a scripts gerados por usuários/terceiros são:
 
 1.  Scripts que adicionam metadados à página ou configuram componentes AMP: terão o atributo de tipo `application/ld+json` ou `application/json`.
 2.  Scripts incluídos em iframes:  só inclua JavaScript em um iframe em último caso. Sempre que possível, substitua os recursos JavaScript usando os [Componentes AMP](/pt_br/docs/reference/components.html). Veremos nosso primeiro componente AMP na próxima seção.
-{% endcall %}
+[/tip]
 
 Tente abrir o arquivo externo [`base.js`] (https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js). O que você vê? O arquivo deverá estar vazio, sem qualquer código JavaScript, e incluir apenas um comentário com informações como esta:
 

@@ -43,13 +43,13 @@ The mandatory tag 'link rel=canonical' is missing or incorrect.
 <link rel="canonical" href="/article.html">
 ```
 
-{% call callout('注', type='note') %}
+[tip type="note"]
 単独の正規の AMP ページを作成できます。その場合でも正規リンクは必要ですが、AMP 記事自体を指すようにしてください。
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
-{% endcall %}
+[/tip]
 
 ここで、ページを**再読み込み**します。まだ修正すべき多数のエラーがありますが、正規リンクのエラーは表示されなくなりました。
 
@@ -70,13 +70,13 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 ページを再読み込みして、両方のエラーがなくなったことを確認しましょう。
 
-{% call callout('注', type='note') %}
+[tip type="note"]
 `⚡` を指定するのがおすすめの方法ですが、次のように、`⚡` 属性の代わりに `amp` 属性を使用することもできます。
 
 ```html
 <html amp lang="en">
 ```
-{% endcall %}
+[/tip]
 
 ## ビューポートを指定する
 
@@ -129,13 +129,13 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 ここで再び、ページを**再読み込み**して、スタイルシートに関するエラーが消えたことを確認しましょう。
 
-{% call callout('注', type='note') %}
+[tip type="note"]
 インラインのスタイル指定が必須なだけでなく、すべてのスタイル情報について 50 KB というファイルサイズの制限もあります。AMP ページで CSS をインライン化する前に、[SASS](http://sass-lang.com/) などの CSS プリプロセッサを使用して CSS を圧縮してください。
-{% endcall %}
+[/tip]
 
-{% call callout('重要', type='caution') %}
+[tip type="important"]
 AMP ドキュメント全体で style タグは 1 つだけ指定できます。AMP ページで複数の外部スタイルシートを参照している場合は、これらのスタイルシートを 1 セットのルールにまとめる必要があります。AMP で有効な CSS ルールについて詳しくは、[サポートされる CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) をご覧ください。
-{% endcall %}
+[/tip]
 
 ## サードパーティの JavaScript を除外する
 
@@ -152,12 +152,12 @@ The tag 'script' is disallowed except in specific forms.
 
 つまり、実際には、以下の場合を除いて、ユーザーが作成した JavaScript やサードパーティの JavaScript は AMP では使用できません。
 
-{% call callout('注', type='note') %}
+[tip type="note"]
 ユーザーが作成したスクリプトやサードパーティのスクリプトに対する制限には、次のような例外があります。
 
 1. ページにメタデータを追加するスクリプトや、AMP コンポーネントを設定するスクリプト。これらには、type 属性 `application/ld+json` または `application/json` を指定します。
 2. iframe に含まれるスクリプト。iframe に JavaScript を含める方法は、最後の手段と考えてください。可能な限り、[AMP コンポーネント](/ja/docs/reference/components.html)を使用して JavaScript の機能を置き換えてください。次のセクションでは、最初の AMP コンポーネントについて検討します。
-{% endcall %}
+[/tip]
 
 外部の [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) ファイルを開いてみましょう。どのようになっていますか。このファイルでは JavaScript コードは空になっていて、次のような情報のコメントのみが含まれているはずです。
 
@@ -265,9 +265,9 @@ AMP では、指定された幅と高さから要素のアスペクト比を算�
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="画像がレスポンシブになった") }}
 
-{% call callout('詳細情報', type='read') %}
+[tip type="read-on"]
 AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})をご覧ください。
-{% endcall %}
+[/tip]
 
 ## 完了
 

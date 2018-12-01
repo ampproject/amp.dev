@@ -112,7 +112,7 @@ http://localhost:8000/article.amp.html#development=1
 
 Chrome（または任意のブラウザ）で [Developer Console](https://developer.chrome.com/devtools/docs/console) を開いて、AMP エラーがないことを確認します。
 
-{% call callout('ヒント', type='success') %}
+[tip]
 AMP ページを検証するには、他のツールも使用できます。次のようなツールがあります。
 
 - [AMP 検証ツール拡張機能（Chrome 用）](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
@@ -121,7 +121,7 @@ AMP ページを検証するには、他のツールも使用できます。次�
 その他
 
 詳しくは、[AMP ページを検証する]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})のガイドをご覧ください。
-{% endcall %}
+[/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Nexus 5X 端末でのシミュレーション') }}
 

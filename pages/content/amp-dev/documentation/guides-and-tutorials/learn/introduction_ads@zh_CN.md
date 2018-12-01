@@ -18,9 +18,9 @@ AMP 项目的目标是帮助提高网页加载速度，让用户获得最佳体�
 
 AMP 支持很多[广告服务器和网络]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 希望将您的广告技术与 AMP 集成？请参阅这些[指南]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}})。
-{% endcall %}
+[/tip]
 
 ## 支持的广告
 

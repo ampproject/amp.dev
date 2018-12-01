@@ -35,9 +35,9 @@ $title: 制作 AMP HTML 网页
 
 到目前为止，正文中的内容非常简单易懂。但是，网页标头中有很多额外代码可能并不容易理解。我们来详细分析下该必需标记。
 
-{% call callout('使用 HTTPS', type='note') %}
+[tip type="note"]
 在制作 AMP 网页和内容时，强烈建议您使用 HTTPS 协议（而非 HTTP）。虽然 AMP 文档本身或者图片和字体并不需要使用 HTTPS，但是很多 AMP 功能（例如视频、iframe 等）都需要使用 HTTPS。为确保您的 AMP 网页能够充分利用所有 AMP 功能，请使用 HTTPS 协议。要详细了解 HTTPS，请参阅[“为什么说 HTTPS 很重要”](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)。
-{% endcall %}
+[/tip]
 
 ## 必需标记
 
@@ -58,11 +58,11 @@ AMP HTML 文档必须：
 
 除了最基本的要求之外，我们的示例还在标头中添加了 Schema.org 定义，这对于 AMP 来说并不是一项严格的要求，但若要在特定位置（例如，在 Google 搜索“焦点新闻”轮换展示区）分发内容，则是必须满足的要求。
 
-{% call callout('继续阅读', type='read') %} 请访问以下资源以了解详情：
+[tip type="read-on"] 请访问以下资源以了解详情：
 
 * [针对 Google 搜索开始增强 AMP 内容](https://developers.google.com/amp/docs) - 了解如何使 AMP 网页符合在 Google 搜索结果中显示的条件。
   * [元数据示例](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - 详细了解您会在其他各个位置（例如 Twitter）中用到的所有元数据。
-{% endcall %}
+[/tip]
 
 <hr>
 

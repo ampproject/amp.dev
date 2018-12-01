@@ -91,13 +91,13 @@ ga('send', 'pageview');
 
 如果您想与某个自定义跟踪平台集成，则仍可使用 `amp-analytics` 组件并指定要将跟踪数据发送到的个性化网址端点。有关详情，请参阅 [amp-analytics](/zh_cn/docs/reference/components/amp-analytics.html) 组件参考文档。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 `“UA-YYYY-Y”` 是一个示例 Google Analytics（分析）帐号；如果您要在自己的网站上使用此示例，则应将其替换为您网站的 Google Analytics（分析）跟踪代码。
-{% endcall %}
+[/tip]
 
-{% call callout('提示', type='success') %}
+[tip]
 如果您想使用一种更简单的跟踪系统，不妨了解一下 [amp-pixel](/zh_cn/docs/reference/components/amp-pixel.html)。如果您只需要跟踪网页浏览情况，amp-pixel 无疑是一种比 amp-analytics 更简便的解决方案，因为它的唯一目标就是满足传统像素跟踪的需求。有关详情，请参阅[“分析：基础知识”指南]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}})。
-{% endcall %}
+[/tip]
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>

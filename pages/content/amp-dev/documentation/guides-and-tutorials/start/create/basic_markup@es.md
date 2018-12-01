@@ -35,9 +35,9 @@ Cópialo y guárdalo en un archivo con extensión .html.
 
 Hasta ahora, el contenido del cuerpo es bastante claro, pero en el encabezado de la página hay mucho código adicional que no resulta tan obvio. Vamos a desglosar el código necesario.
 
-{% call callout('Usar HTTPS', type='note') %}
+[tip type="note"]
 Cuando crees contenido y páginas AMP, valora de forma importante utilizar el protocolo HTTPS en lugar del HTTP. Si bien no es obligatorio tener HTTPS en el propio documento AMP ni en las imágenes o fuentes, hay muchas funciones de AMP que requieren HTTPS (por ejemplo, los vídeos, los iframes, etc). Por tanto, para asegurarte de que tus páginas AMP aprovechen al máximo todas las funciones de AMP, utiliza el protocolo HTTPS.  Puedes consultar más información sobre HTTPS en el artículo [Por qué HTTPS es importante](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
-{% endcall %}
+[/tip]
 
 ## Código obligatorio
 
@@ -58,11 +58,12 @@ Los documentos de AMP HTML deben:
 
 Además de los requisitos básicos, nuestra muestra también incluye una definición de Schema.org en el encabezado, la cual no es un requisito obligatorio para AMP, pero sí un requisito para que el contenido se distribuya en determinados lugares (por ejemplo, en el carrusel de noticias destacadas de la Búsqueda de Google).
 
-{% call callout('Más información', type='read') %} Consulta estos recursos para obtener más información:
+[tip type="read-on"]
+Consulta estos recursos para obtener más información:
 
 * [Empezar a utilizar AMP en la Búsqueda de Google](https://developers.google.com/amp/docs): descubre cómo preparar tus páginas AMP para que se muestren en la Búsqueda de Google.
   * [Muestras de metadatos](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples): consulta más información sobre los metadatos que necesitarás en otros lugares (por ejemplo, Twitter).
-{% endcall %}
+[/tip]
 
 <hr>
 

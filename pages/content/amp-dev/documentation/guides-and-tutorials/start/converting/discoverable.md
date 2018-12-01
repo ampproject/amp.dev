@@ -87,12 +87,12 @@ Note: The content should always be the same. For news articles, specify the “N
 
 **Reload** the page in your browser and verify that no AMP Validation errors were introduced.
 
-{% call callout('Note', type='note') %}
+[tip type="note"]
 In addition to the schema.org structured data format, there are other formats supported by search engines and social media networks. See the supported documentation:
 
 - [Twitter Cards meta tags](https://dev.twitter.com/cards/overview)
 - [Facebook Open Graph meta tags](https://developers.facebook.com/docs/sharing/webmasters)
-{% endcall %}
+[/tip]
 
 ### Validate the structured data
 

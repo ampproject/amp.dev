@@ -50,9 +50,9 @@ $title: 添加轮换展示内容
 
 **刷新**网页即可开始轮换展示！
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 您可能已经注意到，当 `amp-carousel` 的类型为 `carousel` 时，我们使用了 `fixed-height` 这种布局类型。`carousel` 类型支持的布局类型非常有限；例如，`carousel` 类型不支持 `responsive` 布局。顾名思义，当采用固定高度的元素占用可用的空间时，它们的高度依然会保持不变。对于这类元素，您必须指定 `height` 属性，同时还应将 `width` 属性设为 `auto` 或不予设置。
-{% endcall %}
+[/tip]
 
 ## 轮换展示内容组合
 
@@ -90,9 +90,9 @@ amp-fit-text {
 
 要想了解详情，请参阅 [amp-carousel](/zh_cn/docs/reference/components/amp-carousel.html) 组件参考文档。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 在最后一个示例中，您可能已经注意到，`amp-ad` 组件包含一个属性为 `placeholder` 的子级 `div` 元素。在本教程中，我们曾遇到过一个类似（`amp-ad` 使用 `fallback`）的情形。placeholder 和 fallback 有什么区别呢？`fallback` 元素会在父级元素加载失败（即没有可用广告）时替之显示，`placeholder` 元素则会在父级元素正在加载时替之显示。从某种意义上说，这些元素标志着父级元素加载过程的开始和结束。要想了解详情，请参阅[占位符和备用行为]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})指南。
-{% endcall %}
+[/tip]
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>

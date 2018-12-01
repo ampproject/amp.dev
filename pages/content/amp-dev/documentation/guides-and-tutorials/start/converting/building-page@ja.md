@@ -7,9 +7,9 @@ $title: 通常の HTML ページを作成する
 1.  `article.html` ファイルに記述されているすべてのコードを**コピー**して、新しいファイルに貼り付けます。
 2.  新しいファイルを `article.amp.html` として**保存**します。
 
-{% call callout('注', type='note') %}
+[tip type="note"]
 AMP ファイルの名前は、必ずしも `.amp.html` とする必要はありません。AMP ファイルには任意の拡張子を設定できます。AMP ページを正規バージョンと区別する方法としては、URL にパラメータを追加するのが一般的です。たとえば、`http://publisher.com/article.html?amp` のようにします。
-{% endcall %}
+[/tip]
 
 
 `article.amp.html` ファイルは、次のような内容になっているはずです。

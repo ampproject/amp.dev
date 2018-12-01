@@ -7,9 +7,9 @@ $title: 构建一个常规的 HTML 网页
 1.  从 `article.html` 文件中**复制**完整代码，并将其粘贴到一个新文件中。
 2.  将这个新文件**保存**为 `article.amp.html`。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 您无需将 AMP 文件命名为 `.amp.html`。实际上，AMP 文件可使用您想要的任何扩展名。发布商往往会通过在网址中使用参数来区分 AMP 网页和其权威版本。例如：`http://publisher.com/article.html?amp`。
-{% endcall %}
+[/tip]
 
 
 您的 `article.amp.html` 文件应该大致如下：

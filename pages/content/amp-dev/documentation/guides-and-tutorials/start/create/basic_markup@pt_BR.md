@@ -35,9 +35,9 @@ Copie e salve o código em um arquivo com extensão .html.
 
 Até agora, o conteúdo no corpo da página é bem simples. No entanto, talvez alguns códigos adicionais no cabeçalho da página não sejam tão óbvios. Vamos analisar a marcação obrigatória.
 
-{% call callout('Usar HTTPS', type='note') %}
+[tip type="note"]
 Ao criar páginas e conteúdos AMP, é recomendado usar o protocolo HTTPS em vez de HTTP. O HTTPS não é obrigatório para documentos AMP, imagens nem fontes. No entanto, muitos recursos das AMP exigem HTTPS (por exemplo, vídeos, iframes e muito mais). Para garantir que suas páginas AMP aproveitem todos os recursos disponíveis, use o protocolo HTTPS.  Se quiser saber mais sobre o HTTPS, leia o artigo [Por que usar o HTTPS?](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
-{% endcall %}
+[/tip]
 
 ## Marcação obrigatória
 
@@ -58,11 +58,11 @@ Os documentos HTML para AMP PRECISAM seguir estas regras:
 
 Além dos requisitos básicos, nosso exemplo também inclui a definição da Schema.org dentro do cabeçalho. Essa definição não é obrigatória para páginas AMP, mas é um requisito para que seu conteúdo seja distribuído em certos locais, como no carrossel de notícias principais da Pesquisa Google.
 
-{% call callout('Leia mais', type='read') %} Acesse estes recursos para saber mais:
+[tip type="read-on"] Acesse estes recursos para saber mais:
 
 * [Primeiros passos com as AMP na Pesquisa Google](https://developers.google.com/amp/docs): aprenda a preparar as páginas AMP para a Pesquisa Google.
   * [Amostras de metadados](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) (em inglês): saiba mais sobre todos os metadados necessários em outros lugares, por exemplo, no Twitter.
-{% endcall %}
+[/tip]
 
 <hr>
 

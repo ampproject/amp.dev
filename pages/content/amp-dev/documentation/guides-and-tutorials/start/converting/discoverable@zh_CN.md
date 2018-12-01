@@ -82,19 +82,19 @@ $title: 使您的网页可被轻松发现
 ```
 
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 这些内容应始终相同。对于新闻报道，请指定“NewsArticle”类型。标题应与您报道的标题一致。图片对象是指报道的主打图片。
-{% endcall %}
+[/tip]
 
 
 在浏览器中**重新加载**网页，验证并确保未引入任何 AMP 验证错误。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 除了 schema.org 结构化数据格式外，搜索引擎和社交媒体网络还支持其他格式。请参阅支持的文档：
 
 - [Twitter 卡片元标记](https://dev.twitter.com/cards/overview)
 - [Facebook 开放图谱元标记](https://developers.facebook.com/docs/sharing/webmasters)
-{% endcall %}
+[/tip]
 
 ### 验证结构化数据
 
@@ -107,9 +107,9 @@ $title: 使您的网页可被轻松发现
 
 如果您的结构化数据是有效的，您应该会看到 **0 个错误**和 **0 条警告**。
 
-{% call callout('继续阅读', type='read') %}
+[tip type="read-on"]
 要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}})指南。
-{% endcall %}
+[/tip]
 
 真棒！至此，您的 AMP 新闻报道便已完成了。
 

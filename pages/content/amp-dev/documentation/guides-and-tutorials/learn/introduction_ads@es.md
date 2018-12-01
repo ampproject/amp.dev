@@ -18,9 +18,9 @@ Publicar anuncios en páginas AMP no difiere mucho de publicar anuncios tradicio
 
 Las páginas AMP admiten una gran cantidad de [servidores de anuncios y redes publicitarias]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}}).
 
-{% call callout('Nota', type='note') %}
+[tip]
 ¿Quieres integrar tu tecnología publicitaria con las páginas AMP? Consulta estas [directrices]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}).
-{% endcall %}
+[/tip]
 
 ## Anuncios compatibles
 

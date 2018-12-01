@@ -39,9 +39,9 @@ cd accelerated-mobile-pages-foundations
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 프로덕션 환경에서는 HTTPS를 사용하는 것이 좋습니다. HTTPS는 보안상의 장점 외에도 검색엔진 최적화 등의 여러 다른 장점이 있습니다. [Google 웹마스터 블로그 게시물](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)에서 이 주제에 관해 자세히 읽어 볼 수 있습니다.
-{% endcall %}
+[/tip]
 
 로컬 웹 서버를 설정하고 나면 브라우저에서 [이 URL](http://localhost:8000/article.html)을 통해 샘플 기사에 액세스하세요.
 

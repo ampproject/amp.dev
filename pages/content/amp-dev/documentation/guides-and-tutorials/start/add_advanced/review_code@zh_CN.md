@@ -112,7 +112,7 @@ http://localhost:8000/article.amp.html#development=1
 
 在 Chrome（或您喜爱的浏览器）中打开 [Developer Console]，然后验证并确保此网页中没有任何 AMP 错误。
 
-{% call callout('提示', type='success') %}
+[tip]
 您也可以使用其他工具验证您的 AMP 网页，例如：
 
 - [适用于 Chrome 的 AMP 验证工具扩展程序](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
@@ -121,7 +121,7 @@ http://localhost:8000/article.amp.html#development=1
 - ... 等等
 
 要想了解详情，请参阅[验证 AMP 网页]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})指南。
-{% endcall %}
+[/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='在 Nexus 5X 设备上模拟') }}
 

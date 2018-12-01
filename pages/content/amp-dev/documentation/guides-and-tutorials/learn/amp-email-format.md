@@ -143,9 +143,9 @@ All CSS in any AMP document must be included in a `<style amp-custom>` tag withi
 </head>
 [/sourcecode]
 
-{% call callout('Note', type='note') %}
+[tip type="note"]
 The entire `<style>` tag cannot exceed 50,000 bytes. The validator will check for this.
-{% endcall %}
+[/tip]
 
 ## Document dimensions
 

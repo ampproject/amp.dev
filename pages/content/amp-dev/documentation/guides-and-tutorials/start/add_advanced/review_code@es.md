@@ -112,7 +112,7 @@ http://localhost:8000/article.amp.html#development=1
 
 Abra la [Consola del programador en Chrome](https://developer.chrome.com/devtools/docs/console) (o su navegador preferido) y verifique que no haya errores de AMP.
 
-{% call callout('Tip', type='success') %}
+[tip]
 Puede utilizar varias otras herramientas para validar su página AMP, como:
 
 - La [extensión de validación AMP para Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
@@ -121,7 +121,7 @@ Puede utilizar varias otras herramientas para validar su página AMP, como:
 - ... y muchos más.
 
 Obtenga más información en la guía de páginas de [Validación AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
-{% endcall %}
+[/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulado en un dispositivo Nexus 5X') }}
 

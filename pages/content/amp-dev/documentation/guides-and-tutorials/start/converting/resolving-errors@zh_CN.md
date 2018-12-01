@@ -43,13 +43,13 @@ The mandatory tag 'link rel=canonical' is missing or incorrect.
 <link rel="canonical" href="/article.html">
 ```
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 您可以创建独立的权威 AMP 网页。在这种情况下，权威链接仍是必需的，但应指向 AMP 文章本身：
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
-{% endcall %}
+[/tip]
 
 现在，**重新加载**网页。虽然仍有很多错误需要修正，但权威链接错误已不复存在。
 
@@ -70,13 +70,13 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 现在，请重新加载网页并检查这两个错误是否已消失。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 虽然建议您指定 `⚡`，但您也可以使用 `amp` 属性来替代 `⚡` 属性，如下所示：
 
 ```html
 <html amp lang="en">
 ```
-{% endcall %}
+[/tip]
 
 ## 指定视口
 
@@ -129,13 +129,13 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 和之前一样，**重新加载**网页并验证样式表错误是否已消失。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 除了必须采用内嵌样式以外，所有样式信息的文件大小还不能超过 50 千字节的上限。您应该先使用 [SASS](http://sass-lang.com/) 等 CSS 预处理器压缩您的 CSS，然后再将 CSS 内嵌到 AMP 网页中。
-{% endcall %}
+[/tip]
 
-{% call callout('重要提示', type='caution') %}
+[tip type="important"]
 整个 AMP 文档中只能有 1 个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})。
-{% endcall %}
+[/tip]
 
 ## 排除第三方 JavaScript
 
@@ -152,12 +152,12 @@ The tag 'script' is disallowed except in specific forms.
 
 这样实际上排除了在 AMP 中使用任何由用户生成的 JavaScript/第三方 JavaScript 的行为，如下所述的情况除外。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
 关于由用户生成的脚本/第三方脚本的限制只存在以下例外情况：
 
 1.  将元数据添加到网页或配置 AMP 组件的脚本。这些脚本将具有类型属性 `application/ld+json` 或 `application/json`。
 2.  iframe 中包含的脚本。在 iframe 中包含 JavaScript 应该是在万不得已时才使用的措施。应尽可能地将 JavaScript 功能替换为使用 [AMP 组件](/zh_cn/docs/reference/components.html)。在下一部分中，我们将探索我们的第一个 AMP 组件。
-{% endcall %}
+[/tip]
 
 尝试打开外部 [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) 文件。发现了什么？此文件应该不含任何 JavaScript 代码，并且只包含如下所示的信息注释：
 
@@ -265,9 +265,9 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="我们的图片现在是自适应图片了！") }}
 
-{% call callout('继续阅读', type='read') %}
+[tip type="read-on"]
 要详细了解 AMP 布局系统，请参阅 [AMP 布局规范]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})。
-{% endcall %}
+[/tip]
 
 ## 成功了！
 

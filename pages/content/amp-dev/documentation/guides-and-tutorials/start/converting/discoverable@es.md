@@ -81,12 +81,12 @@ Nota: El contenido siempre debe ser el mismo. Para artículos de noticias, espec
 
 **Vuelva a cargar** la página en su navegador y verifique que no se hayan introducido errores de validación de AMP.
 
-{% call callout('Nota', type='note') %}
+[tip]
 Además del formato de datos estructurado schema.org, existen otros formatos compatibles con los motores de búsqueda y redes de redes sociales. Consulte la documentación admitida:
 
 - [Meta tags de Twitter](https://dev.twitter.com/cards/overview)
 - [Meta tags de Facebook Open Graph](https://developers.facebook.com/docs/sharing/webmasters)
-{% endcall %}
+[/tip]
 
 ### Validar los datos estructurados
 

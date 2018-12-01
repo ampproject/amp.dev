@@ -43,13 +43,13 @@ Lanjutkan dan **tambahkan** kode berikut di bawah tag `<meta charset="utf-8" />`
 <link rel="canonical" href="/article.html">
 ```
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
 Anda dapat membuat halaman AMP kanonis mandiri. Link kanonis masih diperlukan, tetapi harus mengarah ke artikel AMP itu sendiri:
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
-{% endcall %}
+[/tip]
 
 Sekarang, **muat ulang** halaman. Meskipun masih ada banyak error yang perlu diperbaiki, error pada link kanonis sudah tidak ada.
 
@@ -70,13 +70,13 @@ Error di atas dapat diatasi hanya dengan menambahkan atribut `⚡` ke tag `<html
 
 Sekarang, lanjutkan, muat ulang halaman, dan pastikan kedua error sudah tidak ada.
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
 Meskipun direkomendasikan untuk menentukan `⚡`, kita juga dapat menggunakan atribut `amp` untuk menggantikan atribut `⚡`, seperti yang berikut:
 
 ```html
 <html amp lang="en">
 ```
-{% endcall %}
+[/tip]
 
 ## Tentukan viewport
 
@@ -148,12 +148,12 @@ Secara umum, skrip di AMP hanya diizinkan jika mengikuti 2 persyaratan utama:
 
 Ini secara efektif mengesampingkan penggunaan semua JavaScript buatan pengguna/pihak ketiga dalam AMP, kecuali seperti disebutkan di bawah.
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
 Pembatasan pada skrip buatan pengguna/pihak ketiga tidak berlaku untuk skrip berikut:
 
 1.  Skrip yang menambahkan metadata ke halaman atau yang mengonfigurasi komponen AMP. Skrip ini akan memiliki atribut jenis `application/ld+json` atau `application/json`.
 2.  Skrip yang disertakan dalam iframe.  Menyertakan JavaScript dalam iframe harus dianggap sebagai upaya terakhir. Jika memungkinkan, fungsi JavaScript harus diganti menggunakan [Komponen AMP](/id/docs/reference/components.html). Kita akan mempelajari komponen AMP pertama di bagian selanjutnya.
-{% endcall %}
+[/tip]
 
 Coba buka file [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) eksternal. Apa yang Anda lihat? File tidak boleh berisi kode JavaScript sama sekali dan hanya boleh menyertakan komentar informasi sebagaimana berikut:
 
