@@ -6,7 +6,7 @@ from shortcodes import Shortcode
 class FloatImageShortcode(Shortcode):
     name = 'float-image'
     prerender_markdown = True
-    template = 'partials/float-image.j2'
+    template = 'views/partials/float-image.j2'
 
     def transform(self, value, options):
         """Get the src attributes from contained images"""

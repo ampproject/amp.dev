@@ -8,7 +8,7 @@ class BevelShortcode(Shortcode):
     same_tag_closes = True
     standalone = True
     render_empty = True
-    template = 'partials/bevel.j2'
+    template = 'views/partials/bevel.j2'
 
     def _get_position(self, options):
         position = options.get('position', None)

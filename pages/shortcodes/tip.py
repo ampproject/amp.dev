@@ -5,7 +5,7 @@ ALLOWED_TYPES = ['default', 'important', 'note', 'read-on']
 class TipShortcode(Shortcode):
   name = 'tip'
   prerender_markdown = True
-  template = 'partials/tip.j2'
+  template = 'views/partials/tip.j2'
 
   def _get_type(self, options):
       type = options.get('type', None)

@@ -7,7 +7,7 @@ from shortcodes import Shortcode
 class VideoShortcode(Shortcode):
     name = 'video'
     prerender_markdown = True
-    template = 'partials/video.j2'
+    template = 'views/partials/video.j2'
 
     def transform(self, value, options):
         """Get the video id from contained video"""
