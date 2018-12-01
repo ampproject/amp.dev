@@ -54,7 +54,7 @@ class Collection {
       return false;
     }
 
-    writeYaml.sync(this._blueprint, blueprintPath);
+    writeYaml.sync(blueprintPath, this._blueprint);
     return true;
   }
 }
