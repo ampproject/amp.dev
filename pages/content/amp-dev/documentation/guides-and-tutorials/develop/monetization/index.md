@@ -1,9 +1,8 @@
 ---
 $title: Monetizing your AMP page with ads
-$order: 1
+$order: 0
 toc: true
-components:
-    - youtube
+$path: /documentation/guides-and-tutorials/develop/monetization/monetization.html
 ---
 
 [TOC]
