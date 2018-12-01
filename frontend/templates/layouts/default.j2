@@ -47,13 +47,13 @@
         <div class="grid"></div>
     </div>
 
-    {% include 'partials/header.j2' %}
+    {% include 'views/partials/header.j2' %}
 
     {% block main %}
-    {% include 'partials/main.j2' %}
+    {% include 'views/partials/main.j2' %}
     {% endblock %}
 
-    {% include 'partials/footer.j2' %}
+    {% include 'views/partials/footer.j2' %}
 
     {% block fonts %}
     <amp-font layout="nodisplay" font-family="Noto Sans" timeout="3000"></amp-font>
