@@ -1,7 +1,7 @@
 ---
 $title: Setting up
 $order: 0
-$parent: /content/docs/fundamentals/converting.md
+$parent: /documentation/guides-and-tutorials/start/converting/setting-up.md
 ---
 
 ## Prerequisites

@@ -1,7 +1,7 @@
 ---
 $title: Convert HTML to AMP
 $order: 0
-$path: /documentation/guides-and-tutorials/start/converting.html
+$path: /documentation/guides-and-tutorials/start/converting/converting.html
 tutorial: true
 ---
 
@@ -22,5 +22,5 @@ In this tutorial, you’ll learn the key concepts of AMP and how AMP documents d
 A simple news article page that conforms to AMP specifications and incorporates common features found on mobile news sites.
 
 <div class="start-button">
-<a class="button" href="{{g.doc('/content/docs/fundamentals/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
+<a class="button" href="{{g.doc('/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
 </div>
