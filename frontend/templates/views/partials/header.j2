@@ -22,7 +22,7 @@
       <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
         <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">AMP</span>
-        <span class="ad-o-header-title">{{ active_section.title }}</span>
+        <span class="ad-o-header-title">{{ _(active_section.title) }}</span>
       </a>
     </div>
 
@@ -66,7 +66,7 @@
         {% set section_index = g.doc(section.index, locale=doc.locale) %}
         {% set section_name = section.pod_path.split('/')[3] %}
         <li class="ad-o-header-lnk ad-o-header-lnk-expanded {% if section_name == active_section %}ad-o-header-lnk-selected{% endif %}">
-          <a href="{{ section_index.url.path }}">{{ section.title }}</a>
+          <a href="{{ section_index.url.path }}">{{ _(section.title) }}</a>
         </li>
         {% endif %}
         {% endfor %}
@@ -74,7 +74,7 @@
         {# Link to the support section #}
         {% set support = g.doc('/content/amp-dev/support/index.md') %}
         <li class="ad-o-header-lnk ad-o-header-lnk-expanded ad-o-header-lnk-support-expanded">
-          <a href="{{ support.url.path }}">{{ support.title }}</a>
+          <a href="{{ support.url.path }}">{{ _(support.title) }}</a>
         </li>
       </ul>
 
@@ -85,7 +85,7 @@
         {% if section.index %}
         {% set section_index = g.doc(section.index, locale=doc.locale) %}
         <li class="ad-o-header-lnk {% if section == active_section %}ad-o-header-lnk-selected{% endif %}">
-          <a href="{{ section_index.url.path }}">{{ section.title }}</a>
+          <a href="{{ section_index.url.path }}">{{ _(section.title) }}</a>
         </li>
         {% endif %}
         {% endfor %}
@@ -102,7 +102,7 @@
         {# Link to the support section #}
         {% set support = g.doc('/content/amp-dev/support/index.md') %}
         <li class="ad-o-header-lnk ad-o-header-lnk-support">
-          <a href="{{ support.url.path }}">{{ support.title }}</a>
+          <a href="{{ support.url.path }}">{{ _(support.title) }}</a>
         </li>
 
         {# Language switcher #}
@@ -133,7 +133,7 @@
       {% for path in sub_navigation_items %}
       {% set path_doc = g.doc(path) %}
       <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if doc == path_doc %}ad-o-header-lnk-subnav-selected{% endif %}">
-        <a href="{{ path_doc.url.path }}">{{ path_doc.titles('header') }}</a>
+        <a href="{{ path_doc.url.path }}">{{ _(path_doc.titles('header')) }}</a>
       </li>
       {% endfor %}
 
@@ -144,7 +144,7 @@
         {% if sub_section.index %}
         {% set section_index = g.doc(sub_section.index, locale=doc.locale) %}
         <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if section_index == doc %}ad-o-header-lnk-subnav-selected{% endif %}">
-          <a href="{{ section_index.url.path }}">{{ section_index.titles('header') }}</a>
+          <a href="{{ section_index.url.path }}">{{ _(section_index.titles('header')) }}</a>
         </li>
         {% endif %}
         {% endfor %}
