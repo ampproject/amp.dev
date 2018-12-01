@@ -1,6 +1,6 @@
 $path: /documentation/{base}.html
 $view: /views/default.j2
-$title: Documentation
+$title@: Documentation
 $localization:
   path: /{locale}/documentation/{base}.html
 $order: 2
