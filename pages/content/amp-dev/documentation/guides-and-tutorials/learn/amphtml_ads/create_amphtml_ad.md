@@ -25,10 +25,10 @@ AMPHTML ads are similar to traditional HTML ads, but instead of coding them in t
 <a class="button" href="{{g.doc('/content/docs/ads/amphtml_ads/create_amphtml_ad/create_shell.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
 </div>
 
-{% call callout('Tip', type='success') %}
+[tip]
 *Don't want to create an ad from scratch?*  Use one of the following tools to create your AMPHTML ad:
 
 * [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 * [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 * Adobe Animate (*coming soon*)
-{% endcall %}
+[/tip]

@@ -112,7 +112,7 @@ http://localhost:8000/article.amp.html#development=1
 
 Buka [Developer Console](https://developer.chrome.com/devtools/docs/console) di Chrome (atau browser pilihan Anda), dan verifikasi bahwa tidak ada error pada halaman AMP.
 
-{% call callout('Tips', type='success') %}
+[tip]
 Anda dapat menggunakan berbagai fitur lainnya untuk memvalidasi halaman AMP, seperti:
 
 - [Ekstensi Validator AMP untuk Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
@@ -121,7 +121,7 @@ Anda dapat menggunakan berbagai fitur lainnya untuk memvalidasi halaman AMP, sep
 - ... dan masih banyak lagi
 
 Pelajari lebih lanjut di panduan [Memvalidasi halaman AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
-{% endcall %}
+[/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulated on a Nexus 5X device') }}
 

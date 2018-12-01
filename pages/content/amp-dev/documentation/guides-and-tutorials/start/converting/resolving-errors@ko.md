@@ -43,13 +43,13 @@ The mandatory tag 'link rel=canonical' is missing or incorrect.
 <link rel="canonical" href="/article.html">
 ```
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 독립된 표준 AMP 페이지도 만들 수 있습니다. 여전히 표준 링크는 필요하며 AMP 문서 자체를 가리켜야 합니다.
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
-{% endcall %}
+[/tip]
 
 이제 페이지를 **새로고침**합니다. 아직 수정해야 할 오류가 많지만 표준 링크 오류는 모두 사라졌습니다.
 
@@ -70,13 +70,13 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 이제 페이지를 새로고침하고 두 오류가 모두 사라졌는지 확인합니다.
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 `⚡`을 지정하는 것이 권장되는 방법이지만 다음과 같이 `⚡` 속성 자리에 `amp` 속성을 사용할 수도 있습니다.
 
 ```html
 <html amp lang="en">
 ```
-{% endcall %}
+[/tip]
 
 ## 표시 영역 지정
 
@@ -129,13 +129,13 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 다시 한번 페이지를 **새로고침**하고 스타일시트 오류가 사라졌는지 확인합니다.
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 인라인 스타일링이 필요할 뿐 아니라 모든 스타일링 정보의 파일 크기가 50KB로 제한됩니다. AMP 페이지에 CSS를 인라인 처리하기 전에 [SASS](http://sass-lang.com/)와 같은 CSS 사전 처리기를 사용하여 CSS를 축소해야 합니다.
-{% endcall %}
+[/tip]
 
-{% call callout('중요', type='caution') %}
+[tip type="important"]
 전체 AMP 문서에 대해 스타일 태그를 1개만 사용할 수 있습니다. AMP 페이지에서 참조하는 외부 스타일시트가 여러 개인 경우 이러한 스타일시트를 하나의 규칙 세트로 조합해야 합니다. AMP에서 어떤 CSS 규칙이 유효한지 알아보려면 [지원되는 CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})를 확인하세요.
-{% endcall %}
+[/tip]
 
 ## 타사 자바스크립트 제외
 
@@ -152,12 +152,12 @@ The tag 'script' is disallowed except in specific forms.
 
 이와 같은 요구사항으로 인해 다음에 명시된 경우를 제외하고는 AMP에서 모든 사용자 생성/타사 자바스크립트의 사용이 사실상 배제됩니다.
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 사용자 생성/타사 스크립트 사용 제한의 유일한 예외는 다음과 같습니다.
 
 1.  스크립트가 페이지에 메타데이터를 추가하거나 AMP 구성요소를 구성합니다. 이러한 스크립트에는 `application/ld+json` 또는 `application/json` 유형 속성이 포함됩니다.
 2.  스크립트가 iframes에 포함되어 있습니다.  iframe에 자바스크립트를 포함하는 일은 최후의 수단으로 생각해야 합니다. 가능하다면 자바스크립트 기능은 [AMP 구성요소](/ko/docs/reference/components.html)를 사용하여 대체해야 합니다. 다음 섹션에서 첫 번째 AMP 구성요소를 살펴보겠습니다.
-{% endcall %}
+[/tip]
 
 외부 [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) 파일을 열어 보세요. 무엇이 표시되나요? 이 파일에는 자바스크립트 코드가 없어야 하며 다음과 같은 정보의 주석만 포함되어 있어야 합니다.
 
@@ -265,9 +265,9 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption='이미지가 반응합니다!') }}
 
-{% call callout('읽어보기', type='read') %}
+[tip type="read-on"]
 [AMP 레이아웃 사양]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})에서 AMP 레이아웃 시스템에 관해 자세하게 알아보세요.
-{% endcall %}
+[/tip]
 
 ## 성공입니다.
 

@@ -18,9 +18,9 @@ AMP プロジェクトは、ウェブページの表示を高速化して、最�
 
 AMP は、幅広い[広告サーバーと広告ネットワーク]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})に対応しています。
 
-{% call callout('注', type='note') %}
+[tip type="note"]
 独自の広告技術と AMP を統合する方法については、こちらの[ガイドライン]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}})をご覧ください。
-{% endcall %}
+[/tip]
 
 ## 対応する広告
 

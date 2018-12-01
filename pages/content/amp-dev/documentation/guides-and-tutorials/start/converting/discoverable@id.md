@@ -85,12 +85,12 @@ Catatan: Konten harus selalu sama. Untuk artikel berita, tentukan jenis “NewsA
 
 **Muat ulang** halaman di browser dan verifikasi bahwa tidak ada error Validasi AMP yang ditunjukkan.
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
 Selain format data terstruktur schema.org, ada format lain yang didukung oleh mesin telusur dan jaringan media sosial. Lihat dokumentasi yang didukung:
 
 - [Tag meta Twitter Cards](https://dev.twitter.com/cards/overview)
 - [Tag meta Facebook Open Graph](https://developers.facebook.com/docs/sharing/webmasters)
-{% endcall %}
+[/tip]
 
 ### Validasi data terstruktur
 

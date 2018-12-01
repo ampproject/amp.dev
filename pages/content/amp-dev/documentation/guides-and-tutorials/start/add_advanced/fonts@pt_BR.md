@@ -28,11 +28,11 @@ body {
 
 **Atualize** a página e confira a nova aparência. Além disso, inspecione a saída do validador de AMP.  Essa solicitação da folha de estilo externa não pode ter erros.
 
-{% call callout('Observação', type='note') %}
+[tip type="note"]
 Não são necessários componentes adicionais para incluir uma fonte no documento. Dito isso, há um componente chamado [`amp-font`](/pt_br/docs/reference/components/amp-font.html). Esse componente não é usado para carregar fontes da Web, mas para detectar se determinada fonte foi carregada ou não e tomar as providências necessárias se for o caso.
 
 Você pode usar o amp-font para ocultar o texto até que a fonte seja totalmente carregada. Assim, o usuário não verá a transição da fonte temporária para a final. Caso ocorra uma falha no carregamento da fonte, você tem a opção de exibir a temporária. Afinal, pior seria se o usuário não conseguisse ver o texto. Para saber mais, leia a documentação de referência do [`amp-font`](/pt_br/docs/reference/components/amp-font.html).
-{% endcall %}
+[/tip]
 
 Seu artigo de notícias AMP está pronto! Ele terá esta aparência:
 

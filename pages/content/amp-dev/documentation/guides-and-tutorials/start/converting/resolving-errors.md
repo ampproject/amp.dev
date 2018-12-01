@@ -45,13 +45,13 @@ Go ahead and **add** the following code below the `<meta charset="utf-8" />` tag
 <link rel="canonical" href="/article.html">
 ```
 
-{% call callout('Note', type='note') %}
+[tip type="note"]
 You can create a standalone canonical AMP page. The canonical link is still required, but should point to the AMP article itself:
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
-{% endcall %}
+[/tip]
 
 Now, **reload** the page. Although there are still plenty of errors to fix, the  canonical link error is no longer present.
 
@@ -72,13 +72,13 @@ The above errors can be resolved by simply adding the `⚡ `attribute to the `<h
 
 Now, go ahead, reload the page and check that both errors are gone.
 
-{% call callout('Note', type='note') %}
+[tip type="note"]
 Although specifying the `⚡` is the recommended approach, it's also possible to use the `amp` attribute in place of the `⚡` attribute, like so:
 
 ```html
 <html amp lang="en">
 ```
-{% endcall %}
+[/tip]
 
 ## Specify a viewport
 
@@ -150,12 +150,12 @@ In general, scripts in AMP are only allowed if they follow two major requirement
 
 This effectively rules out the use of all user-generated/third-party JavaScript in AMP except as noted below.
 
-{% call callout('Note', type='note') %}
+[tip type="note"]
 The only exceptions to the restriction on user-generated/third-party scripts are:
 
 1.  Script that adds metadata to the page or that configures AMP components. These will have the type attribute  `application/ld+json` or `application/json`.
 2.  Script included in iframes.  Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components](/docs/reference/components.html). We will explore our first AMP component in the next section.
-{% endcall %}
+[/tip]
 
 Try opening the external [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) file. What do you see? The file should be empty of any JavaScript code and only include a comment of information such as this:
 

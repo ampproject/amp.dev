@@ -83,19 +83,19 @@ AMP ドキュメントの側には `<head>` に正規ページを指す下記の
 ```
 
 
-{% call callout('注', type='note') %}
+[tip type="note"]
 2 つのコンテンツは常に同じである必要があります。ニュース記事の場合は、「NewsArticle」タイプを指定します。headline は、記事のタイトルと一致している必要があります。画像オブジェクトには、記事のヒーロー画像を指定します。
-{% endcall %}
+[/tip]
 
 
 ブラウザでページを**再読み込み**し、AMP 検証エラーが発生していないことを確認します。
 
-{% call callout('注', type='note') %}
+[tip type="note"]
 検索エンジンやソーシャル メディア ネットワークでは、schema.org の構造化データ以外の形式もサポートされています。詳しくは、サポートされている形式のドキュメントをご覧ください。
 
 - [Twitter カード メタタグ](https://dev.twitter.com/cards/overview)
 - [Facebook Open Graph メタタグ](https://developers.facebook.com/docs/sharing/webmasters)
-{% endcall %}
+[/tip]
 
 ### 構造化データを検証する
 
@@ -108,9 +108,9 @@ AMP ドキュメントの側には `<head>` に正規ページを指す下記の
 
 構造化データに問題がなければ、「**エラーなし**」、「**警告なし**」と表示されます。
 
-{% call callout('詳細情報', type='read') %}
+[tip type="read-on"]
 ページを検出可能にする方法について詳しくは、[ページを検出可能にする]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}})をご覧ください。
-{% endcall %}
+[/tip]
 
 おつかれさまでした。これで AMP のニュース記事は完成です。
 

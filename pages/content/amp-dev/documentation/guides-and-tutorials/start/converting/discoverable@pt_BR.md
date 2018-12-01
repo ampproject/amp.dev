@@ -85,12 +85,12 @@ Observação: O conteúdo deve ser sempre o mesmo. Para artigos, especifique o t
 
 **Atualize** a página no seu navegador e verifique se não há erros de validação de AMP.
 
-{% call callout('Observação', type='note') %}
+[tip type="note"]
 Além do formato de dados estruturados schema.org, há outros formatos compatíveis com mecanismos de pesquisa e redes de mídia social. Consulte a documentação de compatibilidade:
 
 - [Metatags de cards do Twitter](https://dev.twitter.com/cards/overview)
 - [Metatags de Open Graph do Facebook](https://developers.facebook.com/docs/sharing/webmasters)
-{% endcall %}
+[/tip]
 
 ### Validar os dados estruturados
 

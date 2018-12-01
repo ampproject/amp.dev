@@ -37,9 +37,9 @@ cd accelerated-mobile-pages-foundations
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-{% call callout('注', type='note') %}
+[tip type="note"]
 本番環境では HTTPS を使用することを強くおすすめします。HTTPS には SEO など、セキュリティ以外のメリットもあります。このトピックについては、こちらの [Google ウェブマスター向け公式ブログの投稿](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)をご覧ください。
-{% endcall %}
+[/tip]
 
 ローカル ウェブサーバーを設定したら、ブラウザで[こちらの URL](http://localhost:8000/article.html) からサンプルの記事にアクセスします。
 

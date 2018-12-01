@@ -35,9 +35,9 @@ $title: AMP HTML 페이지 만들기
 
 지금까지 본문의 콘텐츠는 상당히 간단했습니다. 하지만 페이지 헤드에 있는 추가 코드는 한눈에 명확하지 않은 경우도 많습니다. 지금부터 필수 마크업을 분석하겠습니다.
 
-{% call callout('HTTPS 사용하기', type='note') %}
+[tip type="note"]
 AMP 페이지 및 콘텐츠를 만들 때는 HTTPS 프로토콜(vs. HTTP) 사용을 고려해 봐야 합니다. HTTPS는 AMP 문서 자체나 이미지/글꼴에 필수는 아니지만 여러 AMP 기능(예: 동영상, iframes 등)에서 HTTPS가 필요합니다. AMP 페이지에서 모든 AMP 기능을 최대한 활용하려면 HTTPS 프로토콜을 사용하세요.  ['HTTPS가 중요한 이유'](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)에서 HTTPS에 관해 자세히 알아보세요.
-{% endcall %}
+[/tip]
 
 ## 필수 마크업
 
@@ -58,11 +58,11 @@ AMP HTML 문서는 다음 규칙을 준수해야 합니다.
 
 기본적인 요구사항 외에도 샘플에는 헤드에 Schema.org 정의가 포함되어 있습니다. AMP에서 반드시 준수해야 하는 요구사항은 아니지만, 콘텐츠가 특정 장소(예: Google 검색 주요뉴스 캐러셀)에 배포될 수 있게 하려면 필수입니다.
 
-{% call callout('읽어보기', type='read') %} 자세히 알아보려면 리소스를 방문하세요.
+[tip type="read-on"] 자세히 알아보려면 리소스를 방문하세요.
 
 * [Google 검색에서 AMP 시작하기](https://developers.google.com/amp/docs) - Google 검색용으로 AMP 페이지를 준비하는 방법을 알아보세요.
   * [메타데이터 샘플](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - 여러 다른 장소(예: Twitter)에서 필요한 모든 메타데이터를 자세히 알아보세요.
-{% endcall %}
+[/tip]
 
 <hr>
 

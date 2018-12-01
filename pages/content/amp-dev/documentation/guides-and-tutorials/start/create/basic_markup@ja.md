@@ -35,9 +35,9 @@ $title: AMP HTML ページを作成する
 
 この例では body 内のコンテンツはとてもシンプルですが、ページの head 内には一見わかりづらいコードが多数あります。では、必要なマークアップを分解してみましょう。
 
-{% call callout('HTTPS を使用する', type='note') %}
+[tip type="note"]
 AMP ページとコンテンツを作成するときは、（HTTP ではなく）HTTPS プロトコルの使用をぜひ検討してください。AMP ドキュメント自体や画像、フォントには HTTPS は必須ではありませんが、HTTPS を必要とする AMP 機能は数多くあります（動画、iframe など）。AMP ページですべての AMP 機能を最大限に活用するためには、HTTPS プロトコルを使用してください。HTTPS の詳細については、[HTTPS を使用する理由](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)をご覧ください。
-{% endcall %}
+[/tip]
 
 ## 必要なマークアップ
 
@@ -58,11 +58,11 @@ AMP HTML ドキュメントに関するルール
 
 このサンプルには、最低限の要件に加えて、head 内に Schema.org の定義も含まれています。これは AMP においては必須ではありませんが、コンテンツを特定の場所（Google 検索のトップニュース カルーセル内など）に配信する際に必要となります。
 
-{% call callout('詳細情報', type='read') %} 詳しくは、次のリソースを参照してください。
+[tip type="read-on"] 詳しくは、次のリソースを参照してください。
 
 * [Google 検索用の AMP の準備方法](https://developers.google.com/amp/docs) - AMP ページを Google 検索用に準備する方法について説明します。
 * [メタデータのサンプル](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - 他のさまざまな場所（Twitter など）で必要となる全メタデータについて詳しく説明します。
-{% endcall %}
+[/tip]
 
 <hr>
 

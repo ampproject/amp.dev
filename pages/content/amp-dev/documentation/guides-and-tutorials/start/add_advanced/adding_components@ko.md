@@ -48,9 +48,9 @@ AMP 광고는 [amp-ad](/ko/docs/reference/components/amp-ad.html) 구성요소�
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Test ads') }}
 
-{% call callout('중요', type='caution') %}
+[tip type="important"]
 개발자 콘솔에서 `Mixed Content` 또는 `XMLHttpRequest cannot load` 등의 오류가 생길 수 있습니다. `Mixed Content` 오류는 A9 광고와 관련이 있을 수 있으며 로드된 모든 콘텐츠가 안전하지 않기 때문에 생깁니다. 이러한 사항은 AMP에 광고를 게재할 때 항상 주의해야 합니다.
-{% endcall %}
+[/tip]
 
 아래 두 개의 `amp-ad`를 통해 `amp-ad`에서 광고 플랫폼 기능을 지원할 수 있도록 제공하는 유연성의 예를 확인할 수 있습니다.  여기에서는 DoubleClick의 대시보드를 사용하여 특정 국가에서만 표시되는 두 개의 DoubleClick 테스트 광고를 구성했습니다. 첫 번째 광고는 영국에서만 표시되고 두 번째 광고는 미국에서만 표시됩니다.  AMP 문서에서 앞서 추가한 광고 아래에 이 두 개의 지역 타겟팅 광고 구성을 **추가**해 보세요.
 
@@ -76,19 +76,19 @@ AMP 광고는 [amp-ad](/ko/docs/reference/components/amp-ad.html) 구성요소�
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 
 이 amp-ad 태그 내에 `fallback`이라는 속성이 있는 `div` 태그가 추가되었음을 알 수 있습니다. `fallback` 속성이 무엇을 의미하는지 짐작할 수 있으신가요? 이 속성에서는 상위 요소가 로드되지 않았을 때 이 속성의 콘텐츠만 표시하도록 AMP의 로딩 시스템에 알려줍니다. [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
-{% endcall %}
+[/tip]
 
-{% call callout('읽어보기', type='read') %}
+[tip type="read-on"]
 지원되는 최신 광고 네트워크를 확인하려면 [amp-ad](/ko/docs/reference/components/amp-ad.html#supported-ad-networks) 구성요소 참조 문서를 읽어보세요.
-{% endcall %}
+[/tip]
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 광고 네트워크에서 제공하는 자바스크립트는 AMP 문서 내에서 실행할 수 없습니다. AMP 런타임에서는 대신 iframe 샌드박스를 통해 다른 출처에서 AMP 문서로 iframe을 로드하고 이 iframe 샌드박스 내에서는 광고 네트워크의 JS를 실행합니다.
-{% endcall %}
+[/tip]
 
 이제 AMP 문서에는 텍스트, 이미지 및 페이지에 삽입된 광고가 포함되어 있으며 모두 스토리를 전달하고 콘텐츠로 수익을 창출하는 데 중요한 요소입니다. 그러나 오늘날의 웹사이트에는 대부분 사진이나 텍스트 외에도 다양한 기능이 포함됩니다.
 
@@ -119,9 +119,9 @@ AMP 광고는 [amp-ad](/ko/docs/reference/components/amp-ad.html) 구성요소�
 
 핵심 AMP 라이브러리 자바스크립트 파일에 모든 구성요소가 포함되어 있지는 않다는 점을 기억하세요. YouTube 구성요소를 위한 자바스크립트 요청을 추가해야 합니다.
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
 아직 개발자 콘솔이 열려 있고 URL에 `#development=1`이 있으면 이 시점에 `amp-youtube` 자바스크립트를 추가하라는 AMP 유효성 검사 오류와 어떤 `script` 태그를 추가해야 하는지 알 수 있는 문서의 링크가 표시됩니다.
-{% endcall %}
+[/tip]
 
 `<head>` 태그에 아래 스크립트를 **추가**하세요.
 
@@ -137,9 +137,9 @@ AMP 광고는 [amp-ad](/ko/docs/reference/components/amp-ad.html) 구성요소�
 
 YouTube 동영상 삽입에 관해 자세히 알아보려면 [amp-youtube](/ko/docs/reference/components/amp-youtube.html) 구성요소 문서를 읽어보세요. 더 많은 동영상 및 미디어 구성요소는 [미디어 AMP 구성요소 목록](/ko/docs/reference/components.html#media)에서 확인하세요.
 
-{% call callout('팁', type='success') %}
+[tip]
 구성요소가 로드되지 않거나 브라우저에서 구성요소가 지원되지 않으면 [`fallback`](/ko/docs/design/responsive/placeholders.html#fallbacks) 속성을 사용하여 사용자에게 알리세요.
-{% endcall %}
+[/tip]
 
 ## 트윗 표시하기
 사전에 서식이 지정된 트위터의 트윗을 삽입하는 기능은 뉴스 기사에서 널리 쓰입니다. [amp-twitter](/ko/docs/reference/components/amp-twitter.html) 구성요소로 이 기능을 간편하게 사용할 수 있습니다.
@@ -169,9 +169,9 @@ YouTube 동영상 삽입에 관해 자세히 알아보려면 [amp-youtube](/ko/d
 
 트위터에서 트윗을 삽입하는 방법에 관해 자세히 알아보려면 [amp-twitter](/ko/docs/reference/components/amp-twitter.html) 구성요소 문서를 읽어보세요.
 
-{% call callout('팁', type='success') %}
+[tip]
 AMP에서는 소셜 네트워크의 콘텐츠를 삽입하는 데 필요한 더 많은 구성요소를 제공합니다. 최신 [소셜 AMP 구성요소](/ko/docs/reference/components.html#social)를 참조하세요.
-{% endcall %}
+[/tip]
 
 ## 기사 인용문 강조표시하기
 

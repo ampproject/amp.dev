@@ -112,7 +112,7 @@ http://localhost:8000/article.amp.html#development=1
 
 Chrome이나 선호하는 브라우저에서 [개발자 콘솔](https://developer.chrome.com/devtools/docs/console)을 열고 AMP 오류가 없는지 확인하세요.
 
-{% call callout('팁', type='success') %}
+[tip]
 다음과 같은 다양한 도구를 사용하여 AMP 페이지의 유효성을 검사할 수 있습니다.
 
 - [Chrome용 AMP 유효성 검사 도구 확장 프로그램](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
@@ -121,7 +121,7 @@ Chrome이나 선호하는 브라우저에서 [개발자 콘솔](https://develope
 - 그 외 다수
 
 [AMP 페이지 유효성 검사]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) 가이드에서 자세한 내용을 알아보세요.
-{% endcall %}
+[/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Nexus 5X 기기 시뮬레이션') }}
 

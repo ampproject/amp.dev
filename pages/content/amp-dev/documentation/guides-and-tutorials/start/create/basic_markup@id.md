@@ -35,9 +35,9 @@ Salin dan simpan ke dalam file berekstensi .html.
 
 Sejauh ini, konten pada isi halaman ini cukup mudah dipahami. Namun, ada banyak kode tambahan di bagian kepala yang mungkin tidak bisa langsung dipahami. Mari kita dekonstruksi markup yang diperlukan.
 
-{% call callout('Gunakan HTTPS', type='note') %}
+[tip type="note"]
 Saat membuat konten dan halaman AMP, sebaiknya Anda memprioritaskan penggunaan protokol HTTPS (bukan HTTP). Meskipun HTTPS tidak wajib digunakan untuk dokumen AMP itu sendiri atau untuk gambar dan font, ada banyak fitur AMP yang mewajibkan penggunaan HTTPS (misalnya video, iframe, dan banyak lagi). Untuk memastikan halaman AMP Anda memanfaatkan sepenuhnya semua fitur AMP, gunakan protokol HTTPS.  Anda dapat mempelajari HTTPS lebih lanjut dalam ["Perlunya Menggunakan HTTPS"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
-{% endcall %}
+[/tip]
 
 ## Markup wajib
 
@@ -58,11 +58,11 @@ Dokumen HTML AMP HARUS:
 
 Selain persyaratan dasar, contoh kita juga mencakup definisi Schema.org di bagian kepala, yang bukan merupakan persyaratan wajib untuk AMP, tetapi diperlukan untuk mendistribusikan konten di tempat-tempat tertentu (misalnya carousel berita teratas di Google Penelusuran).
 
-{% call callout('Baca selengkapnya', type='read') %} Lihat referensi berikut untuk mempelajari lebih lanjut:
+[tip type="read-on"] Lihat referensi berikut untuk mempelajari lebih lanjut:
 
 * [Memulai AMP di Google Penelusuran](https://developers.google.com/amp/docs) - pelajari cara menyiapkan halaman AMP untuk Google Penelusuran.
   * [Contoh metadata](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - pelajari lebih lanjut semua metadata yang diperlukan di berbagai tempat lain (misalnya Twitter).
-{% endcall %}
+[/tip]
 
 <hr>
 

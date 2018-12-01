@@ -28,11 +28,11 @@ body {
 
 **Muat ulang** halaman dan lihat tampilan serta nuansa baru halaman Anda. Selain itu, periksa keluaran validator AMP.  Seharusnya tidak ada error untuk permintaan stylesheet eksternal ini.
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
 Menyertakan font di dokumen tidak memerlukan komponen tambahan apa pun. Meskipun demikian, ada komponen yang disebut [`amp-font`](/id/docs/reference/components/amp-font.html). Komponen `amp-font` tidak digunakan untuk memuat font web, sebagai gantinya Anda dapat menggunakannya untuk mendeteksi apakah font web berhasil dimuat atau tidak dan memberikan respons sesuai, jika perlu.
 
 Anda dapat menggunakan amp-font untuk menyembunyikan teks sampai font dimuat sepenuhnya sehingga pengguna tidak akan melihat perubahan teks dari font sementara ke font aslinya. Jika font gagal dimuat, sebaiknya Anda menampilkan font sementara. Bagaimanapun, kemungkinan terburuknya adalah jika pengguna tidak membaca teks apa pun! Pelajari lebih lanjut dengan membaca dokumentasi referensi [`amp-font`](/id/docs/reference/components/amp-font.html).
-{% endcall %}
+[/tip]
 
 Anda telah menyelesaikan artikel berita AMP! AMP akan terlihat seperti ini:
 

@@ -18,9 +18,9 @@ Menayangkan iklan ke halaman AMP tidak jauh berbeda dengan menayangkan iklan tra
 
 AMP mendukung sejumlah besar [server dan jaringan iklan]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}}).
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
 Ingin mengintegrasikan teknologi iklan Anda dengan AMP? Lihat [panduan]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}) ini.
-{% endcall %}
+[/tip]
 
 ## Iklan yang didukung
 
