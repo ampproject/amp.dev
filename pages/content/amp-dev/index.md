@@ -11,8 +11,6 @@ $view: /views/home.j2
 [Get Started](/content/amp-dev/documentation/guides-and-tutorials/index.md)
 [/stage]
 
-[include('/content/shared/hints/content-missing.md')]
-
 <section class="main intro">
   <h2>Build rich and immersive experiences in no time</h2>
   <p>AMP has drastically improved how people consume and interact with content on the mobile web. As a free open-source library for building first-class websites, it provides a straightforward way to create web pages that are compelling, smooth, and load near instantaneously for users. Building on your existing skill sets and frameworks, AMP pages can be websites, ads, stories and soon emails. AMP is supported by many different platforms, and is compatible across browsers.</p>

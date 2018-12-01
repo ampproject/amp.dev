@@ -51,9 +51,6 @@ class StageShortcode(Shortcode):
 
     def transform(self, value, options):
         dom = minidom.parseString('<html>{}</html>'.format(value))
-        # TODO: Bring back actual transforming of stage after we succesfully
-        # removed the dependency to PIP
-        self.template = None
 
         self.context['sub_headline'] = self._get_sub_headline(dom)
         self.context['headline'] = self._get_headline(dom)
