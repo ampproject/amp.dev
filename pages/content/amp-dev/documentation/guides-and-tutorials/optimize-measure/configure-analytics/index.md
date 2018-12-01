@@ -1,6 +1,8 @@
 ---
+$path: /documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html
 $title: Configure analytics
 $order: 0
+$hidden: true
 formats:
 - ads
 ---
@@ -25,7 +27,7 @@ and social engagement data to another URL.
 
 AMP analytics is specifically designed to measure once and report to many.
 If you are already working with one or more analytics vendors,
-check the list of [Analytics Vendors](#) to see if they’ve integrated their solution with AMP.
+check the list of [Analytics Vendors]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) to see if they’ve integrated their solution with AMP.
 If they have, review their configuration details and follow the instructions.
 
 If the analytics vendor hasn’t integrated with AMP,
@@ -48,4 +50,4 @@ Key data points to consider:
 the device or browser (see also [Variable substitution](/docs/analytics/analytics_basics.html#variable-substitution))?
 * How will you identify your users (see also [User identification](/docs/analytics/analytics_basics.html#user-identification))?
 
-Learn more: Continue to learn about analytics with [Analytics: the Basics](#).
+Learn more: Continue to learn about analytics with [Analytics: the Basics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
