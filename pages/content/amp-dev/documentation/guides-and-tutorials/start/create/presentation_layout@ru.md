@@ -19,7 +19,7 @@ $title: Изменение представления и макета
 </style>
 [/sourcecode]
 
-Каждая страница AMP может иметь только одну встроенную таблицу стилей, в которой не разрешается использовать некоторые селекторы. [См. дополнительную информацию о настройке стиля]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}).
+Каждая страница AMP может иметь только одну встроенную таблицу стилей, в которой не разрешается использовать некоторые селекторы. [См. дополнительную информацию о настройке стиля]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
 
 ## Управление макетом
 

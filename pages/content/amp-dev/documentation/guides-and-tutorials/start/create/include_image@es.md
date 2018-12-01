@@ -11,7 +11,7 @@ Para demostrar el aspecto que tendría el marcado adicional, a continuación te 
 <amp-img src="bienvenido.jpg" alt="Bienvenido" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Leer más: Para saber por qué reemplazamos etiquetas como `<img>` por `<amp-img>` y cuántas hay disponibles, consulta [Incluir imágenes y videos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.html', locale=doc.locale).url.path}}).
+Leer más: Para saber por qué reemplazamos etiquetas como `<img>` por `<amp-img>` y cuántas hay disponibles, consulta [Incluir imágenes y videos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.md', locale=doc.locale).url.path}}).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>

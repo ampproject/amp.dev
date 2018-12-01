@@ -15,7 +15,7 @@ AMP 缓存是一种基于代理的内容传送网络 (CDN)，用于传送有效�
 
 要想详细了解 AMP 缓存，请观看下方的 YouTube 视频，或参阅博文 [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456)。
 
-{{ youtube('n8n7fj60lds', 480, 270, caption='观看这个视频，了解“AMP 缓存”存在的意义。') }}
+[video src='https://www.youtube.com/watch?v=n8n7fj60lds' caption='观看这个视频，了解“AMP 缓存”存在的意义。']
 
 ## 可用的 AMP 缓存有哪些？
 目前，有 2 个 AMP 缓存提供商：
@@ -39,7 +39,7 @@ AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓�
 
 ## 谁会请求访问缓存的 AMP 网页？
 
-缓存的 AMP 网页会被各类平台（如 Google 搜索、Google 新闻和 Cloudflare）和移动应用访问。移动应用可通过网址（请参阅 Google 的 [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)）或通过渐进式网页应用中的跨源 XHR（详情请见[嵌入 AMP 网页并将其用作数据源]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})）关联到缓存的 AMP 内容。
+缓存的 AMP 网页会被各类平台（如 Google 搜索、Google 新闻和 Cloudflare）和移动应用访问。移动应用可通过网址（请参阅 Google 的 [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)）或通过渐进式网页应用中的跨源 XHR（详情请见[嵌入 AMP 网页并将其用作数据源]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})）关联到缓存的 AMP 内容。
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"

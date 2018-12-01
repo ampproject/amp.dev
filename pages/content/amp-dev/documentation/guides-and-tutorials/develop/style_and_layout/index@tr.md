@@ -10,7 +10,7 @@ AMP'de duyarlı öğeleri son derece kolay bir şekilde oluşturabilirsiniz. Bun
 
 Resimler de dahil olmak üzere harici olarak yüklenen tüm kaynakların belirli bir boyutunun ve konumunun olması gerekir. Böylece, kaynaklar yüklendikçe sayfa atlamaz ve yeniden düzenlenmez.
 
-Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzeni duyarlı olarak ayarlayın ve [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) ile değişen ekran boyutlarına göre kullanılacak resim öğesini belirtin:
+Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzeni duyarlı olarak ayarlayın ve [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) ile değişen ekran boyutlarına göre kullanılacak resim öğesini belirtin:
 
 [sourcecode:html]
 <amp-img
@@ -78,7 +78,7 @@ Ortak CSS özelliklerini kullanarak sınıf veya öğe seçicilerle bileşen sti
 </body>
 [/sourcecode]
 
-**Önemli:** Stillerinizin AMP'de desteklendiğinden emin olun. Bazı stiller performans nedeniyle desteklenmemektedir (ayrıca bkz. [Desteklenen CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})).
+**Önemli:** Stillerinizin AMP'de desteklendiğinden emin olun. Bazı stiller performans nedeniyle desteklenmemektedir (ayrıca bkz. [Desteklenen CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 
 ## Boyut ve konum öğeleri
 
@@ -103,4 +103,4 @@ Ayrıca buradaki [Stil ve düzen hatalarının](/tr/docs/troubleshooting/validat
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) konusunda daha fazla bilgi edinin.
+Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) konusunda daha fazla bilgi edinin.

@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 I documenti AMP validi non devono contenere errori di convalida.
-Questo documento ha lo scopo di aiutarti a comprendere meglio e a correggere gli eventuali errori riscontrati durante la [convalida delle tue pagine AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+Questo documento ha lo scopo di aiutarti a comprendere meglio e a correggere gli eventuali errori riscontrati durante la [convalida delle tue pagine AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
 Per una panoramica completa degli errori di convalida, leggi la [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -583,7 +583,7 @@ L'elenco completo di tag univoci è noto ed è riportato di seguito:
 
 ## Errori di stile e layout
 
-Prima di approfondire gli errori di stile e layout, è opportuno capire come funzionano [l'applicazione di stili]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) e il [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) in AMP. Poiché le pagine AMP sono pagine HTML, l'applicazione di stili è molto simile a quella delle pagine HTML.
+Prima di approfondire gli errori di stile e layout, è opportuno capire come funzionano [l'applicazione di stili]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) e il [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) in AMP. Poiché le pagine AMP sono pagine HTML, l'applicazione di stili è molto simile a quella delle pagine HTML.
 Esistono però alcune limitazioni per garantire il rapido caricamento delle pagine; tali limitazioni vengono applicate dallo strumento di convalida AMP.
 
 Il layout è più contenuto nelle pagine AMP.
@@ -796,7 +796,7 @@ Ad esempio, `<amp-img src="" layout="responsive" width="42px" height="42rem">` g
 
 Le pagine AMP non possono includere sintassi dei modelli, a meno che la sintassi sia all'interno di un tag AMP ideato appositamente per includere i modelli, ad esempio [amp-mustache](/docs/reference/components/amp-mustache.html).
 
-È possibile includere modelli nei file di origine, purché l'output generato da tali file non contenga i modelli (leggi anche la pagina relativa all'[utilizzo dei preprocessori CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})).
+È possibile includere modelli nei file di origine, purché l'output generato da tali file non contenga i modelli (leggi anche la pagina relativa all'[utilizzo dei preprocessori CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 
 ### L'attributo contiene la sintassi di un modello
 

@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 Pour être valides, les documents AMP ne doivent comprendre aucune erreur de validation.
-Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
 Pour un aperçu complet des erreurs de validation, consultez les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -572,7 +572,7 @@ Voici la liste complète des balises uniques :
 
 ## Erreurs de style et de mise en page
 
-Avant de différencier les erreurs de style et de mise en page, il est important de comprendre comment le [style]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) et la [mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) fonctionnent dans AMP. Étant donné que les pages AMP sont des pages HTML, les styles ressemblent beaucoup à ceux de n'importe quelle page HTML.
+Avant de différencier les erreurs de style et de mise en page, il est important de comprendre comment le [style]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) et la [mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) fonctionnent dans AMP. Étant donné que les pages AMP sont des pages HTML, les styles ressemblent beaucoup à ceux de n'importe quelle page HTML.
 Il existe toutefois certaines restrictions visant à assurer un chargement rapide des pages, et le validateur AMP vise à les faire respecter.
 
 La mise en page est plus contrôlée dans les pages AMP.
@@ -785,7 +785,7 @@ Par exemple, `<amp-img src="" layout="responsive" width="42px" height="42rem">` 
 
 Les pages AMP ne peuvent pas inclure de syntaxe de création de modèles, sauf si cette syntaxe est comprise dans une balise AMP spécialement conçue pour intégrer des modèles, par exemple [amp-mustache](/docs/reference/components/amp-mustache.html).
 
-Vous pouvez inclure des modèles dans vos fichiers source, tant que le fichier de sortie ne contient pas les modèles (voir aussi [Utiliser des préprocesseurs CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})).
+Vous pouvez inclure des modèles dans vos fichiers source, tant que le fichier de sortie ne contient pas les modèles (voir aussi [Utiliser des préprocesseurs CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 
 ### L'attribut contient une syntaxe de modèle
 

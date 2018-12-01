@@ -3,7 +3,7 @@ $title: AMP Doğrulama Hataları
 ---
 
 Geçerli AMP dokümanları hiçbir doğrulama hatası içermemelidir.
-Bu dokümanın amacı, [AMP sayfalarınızı doğrularken]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) karşılaştığınız doğrulama hatalarını daha iyi anlamanıza ve düzeltmenize yardımcı olmaktır.
+Bu dokümanın amacı, [AMP sayfalarınızı doğrularken]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) karşılaştığınız doğrulama hatalarını daha iyi anlamanıza ve düzeltmenize yardımcı olmaktır.
 Doğrulama hatalarıyla ilgili eksiksiz bir genel bakış için [AMP doğrulayıcı spesifikasyonuna](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
 
 [TOC]
@@ -556,7 +556,7 @@ Benzersiz etiketlerin tam listesi bilinmektedir:
 
 ## Stil ve düzen hataları
 
-Stil ve düzen hatalarına ayrıntılı bir şekilde girmeden önce, [stil]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) ve [düzenin]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) AMP'de nasıl çalıştığının anlaşılması iyi olur. AMP sayfaları birer HTML sayfası olduğundan stil, herhangi bir HTML sayfasıyla büyük ölçüde aynıdır.
+Stil ve düzen hatalarına ayrıntılı bir şekilde girmeden önce, [stil]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) ve [düzenin]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) AMP'de nasıl çalıştığının anlaşılması iyi olur. AMP sayfaları birer HTML sayfası olduğundan stil, herhangi bir HTML sayfasıyla büyük ölçüde aynıdır.
 Ancak, sayfaların hızlı yüklenmesini sağlayan bazı kısıtlamalar söz konusudur ve AMP doğrulayıcı, bu kısıtlamaları uygular.
 
 Düzen, AMP sayfalarında daha fazla denetlenir.
@@ -770,7 +770,7 @@ Aynı birimlerde ifade edilmediklerinde bu hata tetiklenir.
 
 AMP sayfaları şablon oluşturma sözdizimini içeremez. Bunun için, sözdiziminin [amp-mustache](/docs/reference/components/amp-mustache.html) gibi özellikle şablonları içermek üzere tasarlanmış bir AMP etiketi içinde olması gerekir.
 
-Şablonları kaynak dosyalarınıza dahil etmeniz bir sıkıntı oluşturmaz, ancak sorun olmaması için bu dosyaların oluşturulan çıktısının şablonları içermemesi gerekir ([CSS ön işlemcilerini kullanma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) konusuna da bakın).
+Şablonları kaynak dosyalarınıza dahil etmeniz bir sıkıntı oluşturmaz, ancak sorun olmaması için bu dosyaların oluşturulan çıktısının şablonları içermemesi gerekir ([CSS ön işlemcilerini kullanma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) konusuna da bakın).
 
 ### Öznitelik, şablon sözdizimi içeriyor
 

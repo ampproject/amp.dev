@@ -19,7 +19,7 @@ AMP는 웹페이지이며, 페이지와 그 요소의 스타일링은 공통 CSS
 </style>
 [/sourcecode]
 
-모든 AMP 페이지에는 하나의 스타일시트만 삽입될 수 있으며, 특정 선택기는 사용이 허용되지 않습니다. [스타일링에 대해 자세히 알아보세요]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}).
+모든 AMP 페이지에는 하나의 스타일시트만 삽입될 수 있으며, 특정 선택기는 사용이 허용되지 않습니다. [스타일링에 대해 자세히 알아보세요]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
 
 ## 레이아웃 제어
 

@@ -10,7 +10,7 @@ $title: Creare pagine AMP reattive
 
 Tutte le risorse caricate esternamente, incluse le immagini, devono avere posizione e dimensioni specifiche in modo che, quando vengono caricate, la pagina non salti e non si adatti dinamicamente.
 
-Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il layout reattivo e utilizza [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) per indicare quale asset di immagine utilizzare in base alle dimensioni dello schermo:
+Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il layout reattivo e utilizza [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) per indicare quale asset di immagine utilizzare in base alle dimensioni dello schermo:
 
 [sourcecode:html]
 <amp-img
@@ -78,7 +78,7 @@ Definisci gli stili dei componenti con i selettori di classe o di elemento utili
 </body>
 [/sourcecode]
 
-**Importante.** Verifica che gli stili siano supportati nel formato AMP perché alcuni non sono supportati per motivi di rendimento (leggi anche la pagina [Stili CSS supportati]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})).
+**Importante.** Verifica che gli stili siano supportati nel formato AMP perché alcuni non sono supportati per motivi di rendimento (leggi anche la pagina [Stili CSS supportati]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 
 ## Specificare le dimensioni e la posizione degli elementi
 
@@ -103,4 +103,4 @@ Esempio di errore nella console relativo a una pagina i cui elementi CSS superan
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Leggi ulteriori informazioni su come [convalidare le tue pagine AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}), incluse informazioni su come trovare gli errori di stile e risolverli.
+Leggi ulteriori informazioni su come [convalidare le tue pagine AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}), incluse informazioni su come trovare gli errori di stile e risolverli.

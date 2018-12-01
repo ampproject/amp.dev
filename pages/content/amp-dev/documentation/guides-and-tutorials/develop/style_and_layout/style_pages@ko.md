@@ -63,7 +63,7 @@ $title: 지원되는 CSS
 
 AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 글꼴은 예외입니다.
 
-읽어보기: [AMP의 맞춤 글꼴]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}}) 에 관해 자세히 알아보세요.
+읽어보기: [AMP의 맞춤 글꼴]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md', locale=doc.locale).url.path}}) 에 관해 자세히 알아보세요.
 
 ## CSS 전처리기 사용하기
 

@@ -18,10 +18,7 @@ An AMP Cache is a proxy-based content delivery network (CDN) for delivering vali
 
 Learn more about AMP Caches in the YouTube video below, or in the [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456) blog post.
 
-[video caption='Watch this video to learn why AMP Caches exist.']
-[](https://www.youtube.com/watch?v=n8n7fj60lds)
-[/video]
-
+[video src='https://www.youtube.com/watch?v=n8n7fj60lds' caption='Watch this video to learn why AMP Caches exist.']
 
 ## What AMP Caches are available?
 Currently, there are two AMP Cache providers:
@@ -45,7 +42,7 @@ Should you desire not to have your document cached, one option is to remove the 
 
 ## Who requests cached AMP pages?
 
-Cached AMP pages are accessed by platforms (like Google Search, Google News, and Cloudflare) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})).
+Cached AMP pages are accessed by platforms (like Google Search, Google News, and Cloudflare) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"

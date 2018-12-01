@@ -95,11 +95,11 @@ Before we start adding code, let's review the sample [article.amp.html](https://
 </html>
 ```
 
-This is a simple AMP page that passes both [AMP validation]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) and the [schema.org](http://schema.org/) structured data validation. If this page were deployed on a news website, users can discover the page through rich experiences in Search Engine Result Pages (e.g., the Top stories carousel in Google Search).
+This is a simple AMP page that passes both [AMP validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) and the [schema.org](http://schema.org/) structured data validation. If this page were deployed on a news website, users can discover the page through rich experiences in Search Engine Result Pages (e.g., the Top stories carousel in Google Search).
 
 ## Enabling AMP Validator
 
-Before we alter the page, let's enable the [AMP validator]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) so that we know we are working with valid AMP HTML.  **Add** this fragment identifier to your URL:
+Before we alter the page, let's enable the [AMP validator]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) so that we know we are working with valid AMP HTML.  **Add** this fragment identifier to your URL:
 
 ```text
 #development=1
@@ -121,7 +121,7 @@ You can use several other tools to validate your AMP page, like:
 - The [AMP Validator Web Interface](https://validator.ampproject.org/)
 - ... and much more
 
-Learn more in the [Validate AMP pages]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) guide.
+Learn more in the [Validate AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) guide.
 [/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulated on a Nexus 5X device') }}

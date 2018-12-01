@@ -15,7 +15,7 @@ include them in your pages.
 *  Precisamos entender o layout da página antes de carregar os recursos, algo crucial para [oferecer suporte ao pré-carregamento da janela de visualização primária.](/pt_br/learn/about-how/#size-all-resources-statically)
 *  Precisamos controlar as solicitações de rede para [carregamento lento e priorizar os recursos de maneira efetiva.](/pt_br/learn/about-how/#prioritize-resource-loading)
 
-Cuidado: Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) e não será possível aproveitar todos os benefícios que as AMP oferecem.
+Cuidado: Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) e não será possível aproveitar todos os benefícios que as AMP oferecem.
 
 ## Imagens
 
@@ -73,7 +73,7 @@ Leia mais Saiba mais sobre [técnicas de layout avançadas]({{g.doc('/content/am
 
 O tempo de execução das AMP em HTML pode gerenciar recursos de imagens de maneira eficiente, escolhendo atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na conexão de largura de banda ou em outros fatores.
 
-Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
+Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ## Imagens animadas
 

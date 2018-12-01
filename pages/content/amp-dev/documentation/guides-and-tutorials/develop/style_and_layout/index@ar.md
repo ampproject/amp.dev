@@ -16,7 +16,7 @@ $title: إنشاء صفحات AMP تفاعلية
 يمكنك إنشاء صور تفاعلية
 عن طريق تحديد العرض والارتفاع،
 وتعيين التنسيق ليكون تفاعليًا،
-واستخدام [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) لتوضيح
+واستخدام [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) لتوضيح
 مادة عرض الصور المُراد استخدامها بناءً على أحجام الشاشة المتنوعة:
 
 [sourcecode:html]
@@ -95,7 +95,7 @@ $title: إنشاء صفحات AMP تفاعلية
 **مهم:**
 تحقق من توافق أنماطك في AMP؛
 فبعض الأنماط غير متوافقة لأسباب تتعلق بالأداء
-(راجع أيضًا [CSS المتوافقة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})).
+(راجع أيضًا [CSS المتوافقة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 
 ## عناصر الحجم والموضع
 
@@ -127,5 +127,5 @@ $title: إنشاء صفحات AMP تفاعلية
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-تعرّف على المزيد من المعلومات حول كيفية [التحقق من صحة صفحات AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})،
+تعرّف على المزيد من المعلومات حول كيفية [التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})،
 بما في ذلك كيفية تتبع أخطاء الأنماط وإصلاحها.

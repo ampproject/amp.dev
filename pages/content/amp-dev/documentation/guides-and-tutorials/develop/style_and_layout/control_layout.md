@@ -11,7 +11,7 @@ AMP supports both **media queries** &amp; **element queries**, plus comes with a
 ## Responsive images, made easy
 
 Create responsive images by specifying the `width` and `height`, setting layout to `responsive`,
-and indicating with [`srcset`]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})
+and indicating with [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
 which image asset to use based on varying screen sizes:
 
 [sourcecode:html]
@@ -97,7 +97,7 @@ The following values can be used in the `layout` attribute:
   </tbody>
 </table>
 
-Tip: Visit the [Demonstrating AMP layouts]({{g.doc('/content/docs/design/amp-html-layout/layouts_demonstrated.md', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
+Tip: Visit the [Demonstrating AMP layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.md', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
 
 
 ### What if width and height are undefined?

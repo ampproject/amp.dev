@@ -3,7 +3,7 @@ $title: Ошибки на AMP-страницах
 ---
 
 В AMP-документах не должно быть ошибок кода.
-В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
 Полный список неполадок приведен в [спецификации](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -556,7 +556,7 @@ CDATA – это контент между открывающим и закры
 
 ## Ошибки стиля и дизайна
 
-Прежде чем переходить к разбору ошибок, следует понять, как на AMP-страницах работают [стили]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) и [шаблоны]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}). Поскольку AMP-страницы имеют формат HTML, они во многом похожи на обычные HTML-страницы.
+Прежде чем переходить к разбору ошибок, следует понять, как на AMP-страницах работают [стили]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) и [шаблоны]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}). Поскольку AMP-страницы имеют формат HTML, они во многом похожи на обычные HTML-страницы.
 Но существует ряд ограничений, которые обеспечивают быструю загрузку контента.
 
 Шаблоны для AMP-страниц более строгие.
@@ -770,7 +770,7 @@ CDATA – это контент между открывающим и закры
 
 AMP-страницы не могут содержать синтаксис шаблонов, если он не включен в тег, специально созданный для таких случаев, например [amp-mustache](/docs/reference/components/amp-mustache.html).
 
-Вы можете включать шаблоны в исходные файлы, если при выходе контент отображается без них (см. раздел об использовании [препроцессоров CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})).
+Вы можете включать шаблоны в исходные файлы, если при выходе контент отображается без них (см. раздел об использовании [препроцессоров CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 
 ### Атрибут содержит синтаксис шаблона
 

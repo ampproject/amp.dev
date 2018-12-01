@@ -21,7 +21,7 @@ limitations under the License.
 有效的 AMP 文档不得包含任何验证错误。
 本文档旨在帮助您更好地了解
 并更正在[验证 AMP 网页]
-({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})时遇到的任何验证错误。
+({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})时遇到的任何验证错误。
 有关验证错误的完整概述，
 请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
 
@@ -641,7 +641,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 在深入了解样式和布局错误之前，
 有必要先了解一下 AMP 中
-[样式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})和
+[样式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})和
 [布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})的运作方式。
 由于 AMP 网页是 HTML 网页，因此样式与任何 HTML 网页都非常相似。
 不过，有些限制有助于确保网页能够快速加载，
@@ -904,7 +904,7 @@ AMP 网页不能包含模板语法，
 您的源文件中可以包含模板，
 但前提是此类文件生成的输出内容中不包含模板
 （另请参阅
-[使用 CSS 预处理器]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}#use-css-preprocessors))）。
+[使用 CSS 预处理器]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors))）。
 
 ### 属性包含模板语法
 

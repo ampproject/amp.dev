@@ -3,13 +3,13 @@ $title: Combinar AMP con aplicaciones web progresivas
 ---
 [TOC]
 
-{{ youtube('Yllbfu3JE2Y', 480, 270, caption='Introducción a la combinación de páginas AMP y PWA.') }}
+[video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Introducción a la combinación de páginas AMP y PWA.']
 
 Las aplicaciones web progresivas (PWA) y las páginas AMP se complementan muy bien. De hecho, casi siempre se mejoran mutuamente de alguna manera. Descubre cómo:
 
 1. [Habilitar las funciones de las PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}}) en tus páginas AMP.
 2. Crear una [transición superrápida y atractiva para el usuario]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}}) de las páginas AMP a las PWA.
-3. [Simplificar tus PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) aprovechando la potencia de la tecnología AMP.
+3. [Simplificar tus PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) aprovechando la potencia de la tecnología AMP.
 
 {% call callout('¿Qué son las aplicaciones web progresivas?', type='note') %}
 Consulta más información sobre las [aplicaciones web progresivas](https://developers.google.com/web/progressive-web-apps/) en Web Fundamentals.
@@ -35,4 +35,4 @@ Una de las características principales de las páginas AMP es que insertarlas e
 
 Si estás creando una aplicación web progresiva, puedes obtener los mismos beneficios y reducir de forma radical la complejidad del backend y del cliente si **reutilizas tus páginas AMP como fuente de datos de tus PWA**.
 
-Más información: Descubre cómo [utilizar páginas AMP en una PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).
+Más información: Descubre cómo [utilizar páginas AMP en una PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).

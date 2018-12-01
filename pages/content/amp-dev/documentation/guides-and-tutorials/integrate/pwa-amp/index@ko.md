@@ -3,13 +3,13 @@ $title: AMP와 프로그레시브 웹 앱 통합하기
 ---
 [TOC]
 
-{{ youtube('Yllbfu3JE2Y', 480, 270, caption='AMP와 PWA를 통합하는 방법을 소개하는 동영상을 시청하세요.') }}
+[video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='AMP와 PWA를 통합하는 방법을 소개하는 동영상을 시청하세요.']
 
 프로그레시브 웹 앱과 AMP 페이지는 서로 원활하게 연동됩니다. 사실 이 둘은 여러 가지 방식으로 서로를 보완해 줄 때가 많습니다. 다음 도움말을 확인해 보세요.
 
 1. AMP 페이지에서 [PWA 기능 사용 설정]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}})
 2. 사용자가 AMP에서 PWA로 [빠르고 자연스럽게 이동]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}})하도록 연결하기
-3. AMP 기능을 활용한 [PWA 간소화]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
+3. AMP 기능을 활용한 [PWA 간소화]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
 
 {% call callout('프로그레시브 웹 앱이란?', type='note') %}
 웹 기초에서 [프로그레시브 웹 앱](https://developers.google.com/web/progressive-web-apps/)에 대해 자세히 알아보세요.
@@ -35,4 +35,4 @@ AMP 페이지의 핵심 기능 중 하나는 쉽고 안전하게 삽입할 수 �
 
 프로그레시브 웹 앱을 개발하는 경우 같은 이점을 활용할 수 있으며, **AMP 페이지를 PWA의 데이터 소스로 재사용**하여 백엔드 및 클라이언트의 복잡성을 크게 줄일 수 있습니다.
 
-계속 읽어 보기: [PWA 내에서 AMP 페이지를 사용]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})하는 방법을 자세히 알아보세요.
+계속 읽어 보기: [PWA 내에서 AMP 페이지를 사용]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})하는 방법을 자세히 알아보세요.

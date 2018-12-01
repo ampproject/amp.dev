@@ -56,7 +56,7 @@ Saat memeriksa output JavaScript di Developer Console (pastikan Anda telah memil
 Diberdayakan oleh AMP ⚡ HTML
 ```
 
-Library AMP menyertakan [validator AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) yang akan memberi tahu Anda jika ada sesuatu yang mencegah halaman Anda menjadi dokumen AMP yang valid.  **Aktifkan** validator AMP dengan menambahkan ID fragmen berikut ke URL dokumen Anda:
+Library AMP menyertakan [validator AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) yang akan memberi tahu Anda jika ada sesuatu yang mencegah halaman Anda menjadi dokumen AMP yang valid.  **Aktifkan** validator AMP dengan menambahkan ID fragmen berikut ke URL dokumen Anda:
 
 ```text
 #development=1

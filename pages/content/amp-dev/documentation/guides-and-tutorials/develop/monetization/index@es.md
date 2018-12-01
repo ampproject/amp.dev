@@ -60,7 +60,7 @@ Cada red utiliza atributos de datos específicos que requieren para servir anunc
 
 ### Paso 5 (opcional): Utiliza un marcador de posición 
 
-En función de la red publicitaria, puedes optar por mostrar un marcador de posición hasta que el anuncio esté disponible para publicarse. Este marcador evita que se muestren espacios en blanco, por lo que mejora la experiencia de usuario.  Para especificar un marcador de posición, añade un elemento secundario con el atributo `placeholder`. [Más información sobre marcadores de posición y respaldos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})
+En función de la red publicitaria, puedes optar por mostrar un marcador de posición hasta que el anuncio esté disponible para publicarse. Este marcador evita que se muestren espacios en blanco, por lo que mejora la experiencia de usuario.  Para especificar un marcador de posición, añade un elemento secundario con el atributo `placeholder`. [Más información sobre marcadores de posición y respaldos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ En función de la red publicitaria, puedes optar por mostrar un marcador de posi
 
 ### Paso 6 (opcional): Utiliza un respaldo 
 
-En función de la red publicitaria, puedes optar por mostrar un elemento de respaldo en caso de que no haya ningún anuncio disponible. Para especificar un respaldo, añade un elemento secundario con el atributo `fallback`. [Más información sobre marcadores de posición y respaldos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})
+En función de la red publicitaria, puedes optar por mostrar un elemento de respaldo en caso de que no haya ningún anuncio disponible. Para especificar un respaldo, añade un elemento secundario con el atributo `fallback`. [Más información sobre marcadores de posición y respaldos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -98,7 +98,7 @@ El mecanismo de servicio de anuncios Fast Fetch incluye la función Real‑Time 
 
 Mira este vídeo de YouTube para obtener más información sobre RTC:
 
-{{ youtube('mvAmvKiWPfA', 480, 270, caption='Mira el vídeo sobre monetización eficaz con AMP mediante las pujas por encabezado.') }}
+[video src='https://www.youtube.com/watch?v=mvAmvKiWPfA' caption='Mira el vídeo sobre monetización eficaz con AMP mediante las pujas por encabezado.']
 
 También puedes utilizar estos recursos para consultar más información sobre RTC:
 

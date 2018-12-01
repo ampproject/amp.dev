@@ -3,7 +3,7 @@ $title: 验证 AMP 网页
 ---
 [TOC]
 
-{{ youtube('npum8JsITQE', 480, 270, caption='观看我们的视频，了解各种验证选项。') }}
+[video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='观看我们的视频，了解各种验证选项。']
 
 AMP 的强大之处在于它不仅能提升网页加载速度，还能以可验证的方式让网页快速加载。这样一来，Twitter、Instagram 或 Google 搜索等第三方就能够放心地通过越来越有趣的方式向读者呈现 AMP 网页。
 

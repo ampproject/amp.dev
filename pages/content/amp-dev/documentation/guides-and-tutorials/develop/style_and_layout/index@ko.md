@@ -5,12 +5,12 @@ $title: Style & Layout
 
 AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매우 유사합니다. 두 가지 경우 모두 CSS 를 사용합니다.
 
- 하지만 AMP 는 성능 및 사용성을 위해 일부 CSS의 사용이 제한됩니다. 대신 [자리표시자 및 대체]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})
-, [srcset을 통한 고급 아트 디렉션]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) , [레이아웃 속성]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 과 같은 기능으로 반응형 디자인 기능을 확장하여 요소 표시 방법을 더 효과적으로 관리할 수 있습니다.
+ 하지만 AMP 는 성능 및 사용성을 위해 일부 CSS의 사용이 제한됩니다. 대신 [자리표시자 및 대체]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+, [srcset을 통한 고급 아트 디렉션]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) , [레이아웃 속성]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 과 같은 기능으로 반응형 디자인 기능을 확장하여 요소 표시 방법을 더 효과적으로 관리할 수 있습니다.
 
 도움말:  AMP 에서 요소를 반응형으로 만드는 것은 아주 쉽습니다. `layout="responsive"` 만 추가하면 됩니다. AMP 의 반응형 디자인을 자세히 알아보려면 [반응형 AMP 페이지 만들기](/ko/docs/design/responsive/responsive_design.html) 를 참조하세요.
 
-{{ youtube('y6kA3u3GIws', 480, 270, caption='AMP를 처음 사용할 때 어려운 점을 비롯하여 새롭게 설계된 AMP 프로젝트 사이트에 관한 UpperQuad의 이야기를 들어보세요.') }}
+[video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='AMP를 처음 사용할 때 어려운 점을 비롯하여 새롭게 설계된 AMP 프로젝트 사이트에 관한 UpperQuad의 이야기를 들어보세요.']
 
 ## 페이지에 스타일 추가
 
@@ -54,7 +54,7 @@ AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매�
 </body>
 [/sourcecode]
 
-중요: 내 스타일이 AMP 에서 지원되는지 확인하세요. 일부 스타일은 성능상의 이유로 지원되지 않습니다([지원되는 CSS ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) 참조).
+중요: 내 스타일이 AMP 에서 지원되는지 확인하세요. 일부 스타일은 성능상의 이유로 지원되지 않습니다([지원되는 CSS ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) 참조).
 
 ## 반응형 요소 레이아웃
 
@@ -68,14 +68,14 @@ AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매�
 
 플레이스홀더 및 폴백이 내장되어 지원되므로 사용자에게 빈 화면이 표시되지 않습니다.
 
-읽어보기:  자리표시자 및 대체 [자세히 알아보기]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})
+읽어보기:  자리표시자 및 대체 [자세히 알아보기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
 
 
 ## 이미지 아트 디렉션
 
 AMP 는 `srcset` 과 `sizes` 속성을 모두 지원하여 어떤 이미지가 어떤 시나리오에서 로드될지 세밀하게 제어할 수 있습니다.
 
-읽어보기: [크기 및 srcset으로 아트 디렉션하는 방법]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) 자세히 알아보기
+읽어보기: [크기 및 srcset으로 아트 디렉션하는 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) 자세히 알아보기
 
 ## 스타일 및 레이아웃 확인
 
@@ -87,5 +87,5 @@ AMP 검사기를 사용하여 페이지의 CSS 와 레이아웃 값을 테스트
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-읽어보기: [AMP 페이지 확인 및 오류 수정 ]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) 방법 자세히 알아보기
+읽어보기: [AMP 페이지 확인 및 오류 수정 ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) 방법 자세히 알아보기
 

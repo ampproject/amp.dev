@@ -23,7 +23,7 @@ limitations under the License.
 Valid AMP documents must not include any validation errors.
 The purpose of this document is to help you better understand
 and fix any validation errors you encounter
-when you [validate your AMP pages]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+when you [validate your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
 For a complete overview of the validation errors,
 see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -643,7 +643,7 @@ The full list of unique tags is known:
 
 Before diving into style and layout errors,
 it's worth understanding how
-[styling]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) and
+[styling]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) and
 [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) work in AMP.
 Since AMP pages are HTML pages, styling is very much the same as any HTML page.
 But there are some restrictions to ensure pages load fast,
