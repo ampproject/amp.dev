@@ -49,15 +49,6 @@ class StageShortcode(Shortcode):
         else:
           return {}
 
-    def _get_image(self, dom):
-        image = dom.getElementsByTagName('amp-img')
-        if len(image):
-          html = dom.toString(image[0])
-
-          return html
-
-        return None
-
     def transform(self, value, options):
         dom = minidom.parseString('<html>{}</html>'.format(value))
         # TODO: Bring back actual transforming of stage after we succesfully
@@ -66,7 +57,6 @@ class StageShortcode(Shortcode):
 
         self.context['sub_headline'] = self._get_sub_headline(dom)
         self.context['headline'] = self._get_headline(dom)
-        self.context['image'] = self._get_image(dom)
 
         # Only try to get button after destination switch has been plucked
         # out as it also contains links that might interfer
