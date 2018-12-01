@@ -12,11 +12,11 @@ Exibir anúncios em páginas AMP não é muito diferente de veicular anúncios t
 
 2.  Quando um usuário carrega uma página AMP, a tag `<amp-ad>` envia uma solicitação de anúncio para a rede de publicidade. Para retornar um anúncio à página AMP, as redes de publicidade criam uma implementação `amp-ad`. Para saber mais detalhes, consulte o guia de [integração de redes de publicidade em AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md) (em inglês).
 
-3.  As redes de publicidade fornecem os criativos gerados pelos anunciantes. Os anunciantes podem gerar criativos usando o HTML tradicional ou o novo formato, [HTML para AMP]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}). 
+3.  As redes de publicidade fornecem os criativos gerados pelos anunciantes. Os anunciantes podem gerar criativos usando o HTML tradicional ou o novo formato, [HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}). 
 
 ## Redes de publicidade compatíveis
 
-As AMP são compatíveis com um grande número de [servidores de anúncios e redes de publicidade]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}}).
+As AMP são compatíveis com um grande número de [servidores de anúncios e redes de publicidade]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
 
 [tip type="note"]
 Precisa integrar sua tecnologia de anúncio às AMP? [Confira estas diretrizes]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}).
@@ -30,7 +30,7 @@ As AMP são compatíveis com anúncios tradicionais e com anúncios HTML para AM
 
 Os anúncios HTML para AMP são uma maneira mais rápida, leve e segura de anunciar na Web. Embora as páginas AMP sejam compatíveis com anúncios HTML tradicionais, o carregamento deles pode demorar. Para exibir anúncios tão rápidos quanto a página AMP, use o formato HTML para AMP. Os anúncios HTML para AMP só serão exibidos após serem validados. Isso garante que eles estejam livres de malware. Além do mais, esses anúncios podem ser exibidos em qualquer lugar na Web, não apenas nas páginas AMP.
 
-Saiba mais sobre os anúncios HTML para AMP [neste guia]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}).
+Saiba mais sobre os anúncios HTML para AMP [neste guia]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}).
 
 
 ## Primeiros passos
@@ -39,5 +39,5 @@ Acesse estes guias para começar a exibir anúncios AMP:
 
 * [Monetizar páginas AMP com anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})
 * [Integrar com AMP para veicular anúncios gráficos]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
-* [Anúncios HTML para AMP]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}})
+* [Anúncios HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  

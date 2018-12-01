@@ -235,6 +235,6 @@ AMP 検証サービスでページに問題があることが検出されると�
 1. エラーに関する説明。このケースでは、`<img>` タグが使用されていますが、本来は `<amp-img>` タグを使用すべきであることが示されています。
 1. エラーに関連するドキュメントへのリンク。このケースでは、`<amp-img>` タグに関するドキュメントです。すべてのエラーにドキュメントのリンクが表示されるわけではありません。
 
-[仕様]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}) をよく確認したところ、`<img>` タグが使用されているところで、本来は `<amp-img>` タグを使用すべきであることがわかりました。
+[仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) をよく確認したところ、`<img>` タグが使用されているところで、本来は `<amp-img>` タグを使用すべきであることがわかりました。
 
 表示される可能性のあるエラーの一覧は、[AMP 検証エラーガイド](/ja/docs/troubleshooting/validation_errors.html)で詳しくご覧いただけます。慎重に評価しても引き続きエラーが発生する場合は、[質問を投稿](http://stackoverflow.com/questions/tagged/amp-html)してください。サポートいたします。

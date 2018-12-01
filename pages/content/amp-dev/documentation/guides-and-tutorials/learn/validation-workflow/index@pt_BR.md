@@ -13,7 +13,7 @@ Há várias formas de validar um documento AMP. Todas elas
 terão o mesmo resultado. Por isso, use a opção mais adequada ao
 seu estilo de desenvolvimento.
 
-Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}) por plataformas de terceiros.
+Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) por plataformas de terceiros.
 
 ### Console do navegador para desenvolvedores
 
@@ -261,7 +261,7 @@ Cada ferramenta fornece várias informações:
      leva à documentação da tag `<amp-img>`. Nem todos os erros geram
      links de documentação.
 
-Se relermos com atenção o [artigo de especificações]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag `<amp-img>`.
+Se relermos com atenção o [artigo de especificações]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag `<amp-img>`.
 
 Para entender melhor a lista completa de possíveis erros,
 consulte o [guia sobre erros de validação de AMP]({{g.doc('/content/docs/troubleshooting/validation_errors.md', locale=doc.locale).url.path}}).

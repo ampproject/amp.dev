@@ -13,11 +13,11 @@ Delivering ads to AMP pages is not much different than serving traditional ads o
 
 2.  When the user loads an AMP page, the `<amp-ad>` tag sends an ad request to the ad network. To return an ad to the AMP page, ad networks build an `amp-ad` implementation. To learn the details, see the [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md) guide.
 
-3.  Ad networks supply creatives built by advertisers. Advertisers can build creatives using traditional HTML, or in the new format, [AMPHTML]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}).
+3.  Ad networks supply creatives built by advertisers. Advertisers can build creatives using traditional HTML, or in the new format, [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}).
 
 ## Supported ad networks
 
-AMP supports a large number of [ad servers and networks]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}}).
+AMP supports a large number of [ad servers and networks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
 
 Note: Looking to integrate your ad technology with AMP? See these [guidelines]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}).
 
@@ -29,7 +29,7 @@ AMP supports both traditional ads, and the faster, more secure AMPHTML ads.  Reg
 
 AMPHTML ads are a faster, lighter and more secure way to advertise on the web. Although AMP pages support traditional HTML ads, these ads can be slow to load. To make ads themselves as fast as the rest of the AMP page, you can build ads in AMPHTML. AMPHTML ads are only delivered after being validated, ensuring that the ads are free of malware. Most of all, these ads can be delivered anywhere on the web, not just on AMP pages.
 
-Learn more about AMPHTML ads in the [AMPHTML ads]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}) guide.
+Learn more about AMPHTML ads in the [AMPHTML ads]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}) guide.
 
 
 ## Get started
@@ -38,4 +38,4 @@ Visit these resources to get started with ads in AMP:
 
 * [Monetizing your AMP page with ads]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})
 * [Integrating with AMP to serve display ads]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
-* [AMPHTML ads]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}})
+* [AMPHTML ads]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})

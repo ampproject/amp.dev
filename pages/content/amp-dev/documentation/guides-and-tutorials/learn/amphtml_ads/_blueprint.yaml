@@ -1,5 +1,5 @@
-$view: /views/doc.html
-$path: /docs/ads/{base}.html
+$path: /documentation/guides-and-tutorials/learn/amphtml_ads/{base}.html
+$view: /views/detail/docs-detail.j2
 $localization:
-  path: /{locale}/docs/ads/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/learn/amphtml_ads/{base}.html
 $title@: AMPHTML ads
