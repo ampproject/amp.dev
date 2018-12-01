@@ -3,13 +3,13 @@ $title: Combinar AMP com Progressive Web Apps
 ---
 [TOC]
 
-{{ youtube('Yllbfu3JE2Y', 480, 270, caption='Assista o vídeo de introdução sobre como combinar AMP e PWA.') }}
+[video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Assista o vídeo de introdução sobre como combinar AMP e PWA.']
 
 Os Progressive Web Apps e as páginas AMP funcionam muito bem juntos. Em muitos casos, eles se complementam de uma forma ou de outra. Saiba como:
 
 1. [ativar recursos de PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}}) para suas páginas AMP;
 2. criar uma [navegação super-rápida e atrativa]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}}) das AMP para o PWA;
-3. [simplificar seu PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) usando o poder das AMP.
+3. [simplificar seu PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) usando o poder das AMP.
 
 {% call callout('Progressive Web App?', type='note') %}
 Saiba mais sobre os [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) no Web Fundamentals.
@@ -35,4 +35,4 @@ Um dos principais recursos das páginas AMP é a incorporação fácil e segura.
 
 Ao criar um Progressive Web App, você pode ter os mesmos benefícios e reduzir drasticamente a complexidade do cliente e do seu back-end **reutilizando suas páginas AMP como fonte de dados para seu PWA**.
 
-Leia mais: Saiba como [usar páginas AMP em um PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).
+Leia mais: Saiba como [usar páginas AMP em um PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).

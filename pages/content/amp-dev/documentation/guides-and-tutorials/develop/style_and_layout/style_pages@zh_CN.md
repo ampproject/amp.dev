@@ -67,7 +67,7 @@ AMP 网页中不允许出现以下样式：
 
 AMP 网页不能包含外部样式表，但是自定义字体除外。
 
-其他资料: 详细了解 [AMP 中的自定义字体]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}})。
+其他资料: 详细了解 [AMP 中的自定义字体]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md', locale=doc.locale).url.path}})。
 
 ## 使用 CSS 预处理器
 

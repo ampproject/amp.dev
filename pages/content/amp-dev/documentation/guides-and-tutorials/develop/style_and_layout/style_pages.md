@@ -73,7 +73,7 @@ they support:
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 
-Read on: Learn more about [custom fonts in AMP]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}}).
+Read on: Learn more about [custom fonts in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md', locale=doc.locale).url.path}}).
 
 ## Using CSS preprocessors
 

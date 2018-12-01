@@ -52,8 +52,9 @@ $title: レスポンシブな AMP ページを作成する
 詳細情報: AMP のさまざまなレイアウトについて詳しくは、[レイアウトとメディアクエリ](/ja/docs/design/responsive/control_layout.html#layout-属性)をご覧ください。
 
 <a id="fn1"></a>
-{% call callout2(type='none') %}*** "width=100%" スタイルを使って要素を簡単にサイズ変更できるのに、要素をサイズ変更して画面にフィットさせる処理が複雑である理由: **  レスポンシブな要素を、パフォーマンス指標やユーザーの利便性に悪影響を与えずにページに表示する処理が、複雑な部分になります。"width=100%" を指定すれば簡単に画像を画面にフィットさせることができますが、パフォーマンスへの影響が生じます。ブラウザは、まず画像をダウンロードして画像のサイズを取得し、次に画面サイズに合わせて画像をサイズ変更したうえで、ページをリフローおよび再描画する必要があります。AMP ではレンダリング パスが最適化されており、まずページのレイアウトが行われ、その際に amp-img で指定されたサイズに基づいて画像のプレースホルダが確保され（その値を使用してアスペクト比を算出）、次にリソースがダウンロードされて、ページが描画されます。リフローは不要となっています。
-{% endcall %}
+[tip type="note"]
+*** "width=100%" スタイルを使って要素を簡単にサイズ変更できるのに、要素をサイズ変更して画面にフィットさせる処理が複雑である理由: **  レスポンシブな要素を、パフォーマンス指標やユーザーの利便性に悪影響を与えずにページに表示する処理が、複雑な部分になります。"width=100%" を指定すれば簡単に画像を画面にフィットさせることができますが、パフォーマンスへの影響が生じます。ブラウザは、まず画像をダウンロードして画像のサイズを取得し、次に画面サイズに合わせて画像をサイズ変更したうえで、ページをリフローおよび再描画する必要があります。AMP ではレンダリング パスが最適化されており、まずページのレイアウトが行われ、その際に amp-img で指定されたサイズに基づいて画像のプレースホルダが確保され（その値を使用してアスペクト比を算出）、次にリソースがダウンロードされて、ページが描画されます。リフローは不要となっています。
+[/tip]
 
 ## ページに合わせたメディアの拡大縮小
 
@@ -74,7 +75,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 ### レスポンシブな画像を表示する
 
-画像はウェブページの大部分（[ページのデータ量の約 65%](http://httparchive.org/interesting.php#bytesperpage)）を構成しています。少なくとも、どのような画面サイズや画面の向きでも画像が表示される（つまり、スクロール、ピンチ、ズームをしなくても画像全体を見られる）ようにする必要があります。AMP では `"layout=responsive"` 属性を使ってこれを簡単に実現できます（[画像や動画を含める]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}})をご覧ください）。基本となるレスポンシブの画像に加えて、複数の画像リソースを配信して次のようにすることをおすすめします。
+画像はウェブページの大部分（[ページのデータ量の約 65%](http://httparchive.org/interesting.php#bytesperpage)）を構成しています。少なくとも、どのような画面サイズや画面の向きでも画像が表示される（つまり、スクロール、ピンチ、ズームをしなくても画像全体を見られる）ようにする必要があります。AMP では `"layout=responsive"` 属性を使ってこれを簡単に実現できます（[画像や動画を含める]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.md', locale=doc.locale).url.path}})をご覧ください）。基本となるレスポンシブの画像に加えて、複数の画像リソースを配信して次のようにすることをおすすめします。
 
 - [解像度に合った鮮明な画像を配信する](#解像度に合った鮮明な画像を配信する)
 - [画像のアート ディレクションを変更する](#例:%2D画面にフィットするくっきりした画像を表示する)
@@ -99,7 +100,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 たとえば、端末のビューポートの幅が 412 px で DPR が 2.6 の場合、上記のコードに基づいて画像をビューポートの幅の 75% で表示する必要があるため、ブラウザは 803 px（412 * 0.75 * 2.6）に近い画像である `apple-800.jpg` を選択します。
 
-詳細情報: AMP での srcset と sizes の使用について詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})をご覧ください。
+詳細情報: AMP での srcset と sizes の使用について詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/art_direction.md', locale=doc.locale).url.path}})をご覧ください。
 
 #### 画像のアート ディレクションを変更する
 
@@ -117,7 +118,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="さらに表示">コードをすべて表示</div><div placeholder></div></amp-iframe></div>
 
-詳細情報: AMP でのアート ディレクションについて詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})をご覧ください。
+詳細情報: AMP でのアート ディレクションについて詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/art_direction.md', locale=doc.locale).url.path}})をご覧ください。
 
 #### 最適な画像を配信する
 
@@ -125,7 +126,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 HTML では `picture` タグを使うことで、異なる画像形式を配信できます。AMP では `picture` タグはサポートされていませんが、`fallback` 属性を使うことで、異なる画像を配信できます。
 
-詳細情報: フォールバックについて詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
+詳細情報: フォールバックについて詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
 
 ##### 例: 異なる画像形式を配信する
 

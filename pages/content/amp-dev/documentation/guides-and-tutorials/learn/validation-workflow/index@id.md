@@ -3,7 +3,7 @@ $title: Memvalidasi halaman AMP
 ---
 [TOC]
 
-{{ youtube('npum8JsITQE', 480, 270, caption='Tonton video kami tentang berbagai opsi validasi.') }}
+[video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Tonton video kami tentang berbagai opsi validasi.']
 
 Keunggulan utama AMP terletak bukan hanya pada membuat halaman cepat dimuat, namun juga membuat halaman cepat dimuat dengan cara yang dapat *divalidasi*. Dengan begitu, pihak ketiga seperti Twitter, Instagram, atau Google Penelusuran dapat merasa puas dengan penayangan halaman AMP kepada pembaca melalui cara yang semakin menarik.
 

@@ -10,7 +10,7 @@ $title: Как создать адаптивные AMP-страницы
 
 Все сторонние ресурсы, в том числе изображения, должны иметь указанный размер и положение, чтобы при их загрузке не происходила перекомпоновка страницы.
 
-Чтобы создать адаптивное изображение, задайте его ширину и высоту, выберите адаптивный макет и с помощью атрибута [`srcset`]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) укажите, какое изображение следует использовать в зависимости от размеров экрана:
+Чтобы создать адаптивное изображение, задайте его ширину и высоту, выберите адаптивный макет и с помощью атрибута [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) укажите, какое изображение следует использовать в зависимости от размеров экрана:
 
 [sourcecode:html]
 <amp-img
@@ -78,7 +78,7 @@ $title: Как создать адаптивные AMP-страницы
 </body>
 [/sourcecode]
 
-**Внимание!** Проверьте, поддерживаются ли выбранные вами стили в AMP, поскольку некоторые из них недоступны из соображений производительности. [Подробнее...]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})
+**Внимание!** Проверьте, поддерживаются ли выбранные вами стили в AMP, поскольку некоторые из них недоступны из соображений производительности. [Подробнее...]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/style_pages.md', locale=doc.locale).url.path}})
 
 ## Размеры и положение элементов
 
@@ -90,7 +90,7 @@ AMP разделяет процессы обработки макета доку
 Создайте адаптивный макет,
 у которого ширина элемента равна ширине контейнера, а высота автоматически меняется в соответствии с соотношением сторон, заданным атрибутами width и height.
 
-Подробнее о том, [какие стили поддерживаются в AMP]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})...
+Подробнее о том, [какие стили поддерживаются в AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}})...
 
 ## Как проверить стили и макет
 
@@ -103,4 +103,4 @@ AMP разделяет процессы обработки макета доку
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Подробнее [о проверке AMP-страниц, в том числе о выявлении и устранении ошибок в стилях]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}})...
+Подробнее [о проверке AMP-страниц, в том числе о выявлении и устранении ошибок в стилях]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})...

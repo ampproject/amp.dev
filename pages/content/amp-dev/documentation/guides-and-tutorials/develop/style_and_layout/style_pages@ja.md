@@ -67,7 +67,7 @@ $title: サポートされる CSS
 
 AMP ページでは外部のスタイルシートを使用できませんが、カスタム フォントは例外です。
 
-詳細情報: 詳しくは、[AMP のカスタム フォント]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}}) をご覧ください。
+詳細情報: 詳しくは、[AMP のカスタム フォント]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ## CSS プリプロセッサを使用する
 

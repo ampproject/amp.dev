@@ -3,13 +3,13 @@ $title: Mengombinasikan AMP dengan Progressive Web App
 ---
 [TOC]
 
-{{ youtube('Yllbfu3JE2Y', 480, 270, caption='Tonton pengantar tentang menggabungkan AMP dan PWA.') }}
+[video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Tonton pengantar tentang menggabungkan AMP dan PWA.']
 
 Progressive Web App dan halaman AMP bekerja sama dengan baik. Bahkan, dalam banyak kasus, keduanya saling melengkapi. Pelajari cara:
 
 1. [Mengaktifkan fitur PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}}) untuk halaman AMP Anda
 2. Membuat [perjalanan pengguna yang super cepat dan menarik]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}}) dari AMP ke PWA
-3. [Menyederhanakan PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) dengan menggunakan kecanggihan AMP
+3. [Menyederhanakan PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) dengan menggunakan kecanggihan AMP
 
 {% call callout('Progressive Web App?', type='note') %}
 Pelajari lebih lanjut tentang [Progressive Web App](https://developers.google.com/web/progressive-web-apps/) di Dasar-Dasar Web.
@@ -35,4 +35,4 @@ Salah satu fitur utama Halaman AMP adalah kemudahan dan keamanan penyematannya, 
 
 Jika membuat Progressive Web App, Anda dapat menerima keuntungan yang sama dan mengurangi kerumitan klien serta backend secara drastis dengan **menggunakan kembali Halaman AMP sebagai sumber data untuk PWA**.
 
-Baca lebih lanjut: Pelajari cara [melihat halaman AMP dalam PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Pelajari cara [melihat halaman AMP dalam PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).

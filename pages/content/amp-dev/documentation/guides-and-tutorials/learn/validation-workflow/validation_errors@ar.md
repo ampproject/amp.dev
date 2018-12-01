@@ -21,7 +21,7 @@ limitations under the License.
 يجب ألا تتضمن مستندات AMP الصالحة أي أخطاء تتعلق بالتحقق من الصحة.
 والغرض من هذا المستند هو مساعدتك في فهم أفضل
 لأي أخطاء تتعلق بالتحقق من الصحة قد تصادفها عند
-[التحقق من صحة صفحات AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) وإصلاح هذه الأخطاء.
+[التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) وإصلاح هذه الأخطاء.
 للحصول على نظرة عامة حول أخطاء التحقق من الصحة،
 راجع [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -616,8 +616,8 @@ limitations under the License.
 
 قبل مراجعة أخطاء الأنماط والتنسيقات،
 يجدر بنا التعرف على كيفية عمل
-[الأنماط]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) و
-[التنسيقات]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) في AMP.
+[الأنماط]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) و
+[التنسيقات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) في AMP.
 ونظرًا لأن صفحات AMP هي صفحات HTML، فإن الأنماط تشبه كثيرًا أي صفحات HTML.
 ولكن هناك بعض القيود لضمان سرعة تحميل الصفحات،
 وتعمل أداة التحقق من صحة صفحات AMP على تفعيل هذه القيود.
@@ -730,7 +730,7 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) و
+راجع [كيفية التحكم في التنسيق]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) و
 [مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 **ملاحظة:** إذا لم تحدد التنسيق،
@@ -788,7 +788,7 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) و
+راجع [كيفية التحكم في التنسيق]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) و
 [مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 ### السمة غير مسموح بها من تنسيق محدد
@@ -834,7 +834,7 @@ limitations under the License.
 يحدث هذا الخطأ عندما تكون قيمة السمة غير صالحة للتنسيق المحدد.
 لاستيعاب سبب ظهور هذا الخطأ،
 ينبغي التعرّف على
-[السلوكيات المختلفة للتنسيقات]{{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
+[السلوكيات المختلفة للتنسيقات]{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
 لنفرض أنك عيّنت التنسيق ليكون `fixed-height` و
 وضمّنت القيم الرقمية لكل من `height` و`width`.
@@ -878,7 +878,7 @@ limitations under the License.
 يمكن تضمين النماذج في ملفات المصدر،
 طالما أن الناتج الناشئ عن هذه الملفات لا يحتوي على النماذج
 (راجع أيضًا
-[استخدام معالجات CSS التمهيدية]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
+[استخدام معالجات CSS التمهيدية]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 
 ### تحتوي السمة على بنية نموذج
 

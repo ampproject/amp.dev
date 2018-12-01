@@ -3,13 +3,13 @@ $title: AMP とプログレッシブ ウェブアプリを組み合わせる
 ---
 [TOC]
 
-{{ youtube('Yllbfu3JE2Y', 480, 270, caption='AMP と PWA の併用に関する動画をご覧ください。') }}
+[video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='AMP と PWA の併用に関する動画をご覧ください。']
 
 プログレッシブ ウェブアプリ（PWA）と AMP ページは効果的に連携します。多くの場合、さまざまな点で補完し合います。以下の手法をご覧ください。
 
 1. AMP ページで [PWA 機能を有効にする]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}})
 2. AMP から PWA への[円滑で超高速なユーザー エクスペリエンス]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}})を実現する
-3. AMP の機能を活用して [PWA を簡素化する]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
+3. AMP の機能を活用して [PWA を簡素化する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
 
 {% call callout('プログレッシブ ウェブアプリとは', type='note') %}
 詳しくは、Web Fundamentals の[プログレッシブ ウェブアプリについての説明](https://developers.google.com/web/progressive-web-apps/)をご覧ください。
@@ -35,4 +35,4 @@ AMP ページの基本的な特徴は、簡単で安全に埋め込みできる�
 
 プログレッシブ ウェブアプリを作成する場合は、**AMP ページを PWA のデータソースとして再利用する**ことで、AMP のメリットを享受しながら、バックエンドとクライアントの複雑さを大幅に緩和することができます。
 
-詳細情報: [PWA 内で AMP ページを消費する方法]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})についてご覧ください。
+詳細情報: [PWA 内で AMP ページを消費する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})についてご覧ください。

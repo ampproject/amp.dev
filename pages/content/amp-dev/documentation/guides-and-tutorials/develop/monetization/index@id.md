@@ -60,7 +60,7 @@ Setiap jaringan memiliki atribut data spesifik yang dibutuhkan untuk menayangkan
 
 ### Langkah 5: (Opsional) Tentukan placeholder 
 
-Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan placeholder sampai iklan tersedia untuk ditayangkan. Hal ini memberikan pengalaman pengguna yang lebih baik dengan mencegah ruang kosong.  Untuk menentukan placeholder, tambahkan elemen turunan dengan atribut `placeholder`. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
+Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan placeholder sampai iklan tersedia untuk ditayangkan. Hal ini memberikan pengalaman pengguna yang lebih baik dengan mencegah ruang kosong.  Untuk menentukan placeholder, tambahkan elemen turunan dengan atribut `placeholder`. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan placehol
 
 ### Langkah 6: (Opsional) Tentukan fallback 
 
-Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan elemen fallback jika tidak ada iklan yang tersedia untuk ditayangkan. Untuk menentukan fallback, tambahkan elemen turunan dengan atribut `fallback`. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
+Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan elemen fallback jika tidak ada iklan yang tersedia untuk ditayangkan. Untuk menentukan fallback, tambahkan elemen turunan dengan atribut `fallback`. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -98,7 +98,7 @@ Sebagai bagian dari mekanisme penayangan Fast Fetch, fitur Real-Time Config (RTC
 
 Anda dapat mempelajari lebih lanjut tentang RTC dari video YouTube ini:
 
-{{ youtube('mvAmvKiWPfA', 480, 270, caption='Tonton video tentang Monetisasi AMP yang Efektif dengan Header Bidding.') }}
+[video src='https://www.youtube.com/watch?v=mvAmvKiWPfA' caption='Tonton video tentang Monetisasi AMP yang Efektif dengan Header Bidding.']
 
 Atau, pelajari lebih lanjut dari referensi RTC ini:
 

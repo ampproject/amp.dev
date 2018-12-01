@@ -3,7 +3,7 @@ $title: Validar páginas AMP
 ---
 [TOC]
 
-{{ youtube('npum8JsITQE', 480, 270, caption='Mira nuestro vídeo sobre las diversas opciones de validación.') }}
+[video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Mira nuestro vídeo sobre las diversas opciones de validación.']
 
 La ventaja principal de AMP no es solo que aumenta la velocidad de tus páginas, sino que las hace rápidas de una forma que se puede *validar*. De este modo, las plataformas de terceros, como Twitter, Instagram o la Búsqueda de Google, pueden mostrar más predisposición a la hora de ofrecer páginas AMP a los lectores de formas cada vez más interesantes.
 

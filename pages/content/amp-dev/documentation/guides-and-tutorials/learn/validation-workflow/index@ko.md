@@ -3,7 +3,7 @@ $title: AMP 페이지 유효성 검사
 ---
 [TOC]
 
-{{ youtube('npum8JsITQE', 480, 270, caption='동영상을 시청하여 다양한 유효성 검사 옵션을 확인해 보세요.') }}
+[video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='동영상을 시청하여 다양한 유효성 검사 옵션을 확인해 보세요.']
 
 AMP의 주요 강점은 페이지 속도를 향상할 뿐만 아니라 향상된 페이지 속도의 *유효성*을 검사할 수 있다는 것입니다. 따라서 Twitter, Instagram과 같은 타사나 Google 검색에서 부담 없이 더욱 흥미롭게 사용자에게 AMP 페이지를 게재할 수 있습니다.
 

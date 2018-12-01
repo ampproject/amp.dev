@@ -3,7 +3,7 @@ $title: Ошибки на AMP-страницах
 ---
 
 В AMP-документах не должно быть ошибок кода.
-В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
 Полный список неполадок приведен в [спецификации](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 [TOC]
@@ -556,7 +556,7 @@ CDATA – это контент между открывающим и закры
 
 ## Ошибки стиля и дизайна
 
-Прежде чем переходить к разбору ошибок, следует понять, как на AMP-страницах работают [стили]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) и [шаблоны]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}). Поскольку AMP-страницы имеют формат HTML, они во многом похожи на обычные HTML-страницы.
+Прежде чем переходить к разбору ошибок, следует понять, как на AMP-страницах работают [стили]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) и [шаблоны]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}). Поскольку AMP-страницы имеют формат HTML, они во многом похожи на обычные HTML-страницы.
 Но существует ряд ограничений, которые обеспечивают быструю загрузку контента.
 
 Шаблоны для AMP-страниц более строгие.
@@ -649,7 +649,7 @@ CDATA – это контент между открывающим и закры
 Допустимые значения атрибута `supported_layout` для тегов приведены в [спецификации для валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Поведение макета определяется атрибутом `layout`.
-Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации](/docs/reference/spec/amp-html-layout.html).
+Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации](/docs/reference/spec/amp-html-layout.html).
 
 **Примечание.** Если макет не указан или в нем отсутствуют значения `width` и `height`, по умолчанию используется вариант CONTAINER. Валидатор выдает ошибку, поскольку этот вариант не поддерживается тегами AMP.
 Чтобы устранить ошибку, укажите другой макет либо значение атрибутов `width` и/или `height`.
@@ -695,7 +695,7 @@ CDATA – это контент между открывающим и закры
 Допустимые значения атрибута `supported_layout` для тегов приведены в [спецификации для валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Поведение макета определяется атрибутом `layout`.
-Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации](/docs/reference/spec/amp-html-layout.html).
+Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации](/docs/reference/spec/amp-html-layout.html).
 
 ### Указанный макет не поддерживает атрибут
 
@@ -735,7 +735,7 @@ CDATA – это контент между открывающим и закры
 </table>
 
 Эта ошибка возникает, когда значение атрибута не поддерживается указанным макетом.
-Чтобы понять, в чем проблема, ознакомьтесь с [вариантами поведения макетов]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
+Чтобы понять, в чем проблема, ознакомьтесь с [вариантами поведения макетов]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
 Допустим, вы используете макет `fixed-height` и указали числовые значения для атрибутов `height` и `width`.
 Макет `fixed-height` принимает значение `height`.
@@ -770,7 +770,7 @@ CDATA – это контент между открывающим и закры
 
 AMP-страницы не могут содержать синтаксис шаблонов, если он не включен в тег, специально созданный для таких случаев, например [amp-mustache](/docs/reference/components/amp-mustache.html).
 
-Вы можете включать шаблоны в исходные файлы, если при выходе контент отображается без них (см. раздел об использовании [препроцессоров CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
+Вы можете включать шаблоны в исходные файлы, если при выходе контент отображается без них (см. раздел об использовании [препроцессоров CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 
 ### Атрибут содержит синтаксис шаблона
 

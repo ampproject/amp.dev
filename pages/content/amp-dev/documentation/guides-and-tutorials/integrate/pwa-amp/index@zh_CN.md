@@ -3,13 +3,13 @@ $title: 将 AMP 与渐进式网页应用相结合
 ---
 [TOC]
 
-{{ youtube('Yllbfu3JE2Y', 480, 270, caption='欢迎观看这个简介性视频，了解如何将 AMP 与 PWA 相结合。') }}
+[video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='欢迎观看这个简介性视频，了解如何将 AMP 与 PWA 相结合。']
 
 渐进式网页应用和 AMP 网页可完美结合。事实上，在很多情况下，这两者都会以这样或那样的方式达到相得益彰的效果。了解如何执行以下操作：
 
 1. 为 AMP 网页[启用 PWA 功能]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}})
 2. 打造从 AMP 到 PWA 的[超快且极具吸引力的用户之旅]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}})
-3. 利用 AMP 的强大功能[简化 PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
+3. 利用 AMP 的强大功能[简化 PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
 
 {% call callout('渐进式网页应用？', type='note') %}
 在“网页基础知识”网站上详细了解[渐进式网页应用](https://developers.google.com/web/progressive-web-apps/)。
@@ -35,4 +35,4 @@ AMP 网页的核心特征之一是易于嵌入且嵌入过程很安全，这也�
 
 如果您要构建渐进式网页应用，则可享受到同样的便利，并可通过**将 AMP 网页重复用作 PWA 的数据源**来大幅降低后端和客户端的复杂性。
 
-继续阅读: 了解如何[在 PWA 中使用 AMP 网页]({{g.doc('/content/docs/integration/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})。
+继续阅读: 了解如何[在 PWA 中使用 AMP 网页]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})。

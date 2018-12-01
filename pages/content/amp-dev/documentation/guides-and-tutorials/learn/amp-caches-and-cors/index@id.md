@@ -15,7 +15,7 @@ Cache AMP adalah jaringan penayangan konten (CDN/content delivery network) berba
 
 Pelajari lebih lanjut tentang Cache AMP di video YouTube di bawah, atau pada entri blog [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456).
 
-{{ youtube('n8n7fj60lds', 480, 270, caption='Tonton video ini untuk mempelajari alasan dibuatnya Cache AMP.') }}
+[video src='https://www.youtube.com/watch?v=n8n7fj60lds' caption='Tonton video ini untuk mempelajari alasan dibuatnya Cache AMP.']
 
 ## Cache AMP apa saja yang tersedia?
 Saat ini, ada 2 penyedia Cache AMP:
