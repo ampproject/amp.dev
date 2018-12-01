@@ -19,15 +19,15 @@ $title: تعديل المظهر والتنسيق
 </style>
 [/sourcecode]
 
-يمكن لكل صفحة AMP أن تحتوي فقط على ورقة أنماط واحدة مضمّنة، وهناك محدّدات معينة ليس مسموح لك باستخدامها. [تعرّف على كل المعلومات بخصوص التحكم في الأنماط]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}).
+يمكن لكل صفحة AMP أن تحتوي فقط على ورقة أنماط واحدة مضمّنة، وهناك محدّدات معينة ليس مسموح لك باستخدامها. [تعرّف على كل المعلومات بخصوص التحكم في الأنماط]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}).
 
 ## التحكم في التنسيق
 
 تتبع AMP قواعد أكثر صرامة عند تنسيق العناصر في الصفحة. في صفحة HTML عادية، أنت تقريبًا تستخدم CSS حصريًا لتنسيق العناصر. لكن لأسباب تتعلق بالأداء، يتطلب AMP أن تتميز كل العناصر بحجم واضح محدّد منذ البداية.
 
-تعرّف على كيفية عرض AMP للصفحة وتنسيقها وكيف يمكنك تعديل التنسيق في [كيفية التحكم في التنسيق]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
+تعرّف على كيفية عرض AMP للصفحة وتنسيقها وكيف يمكنك تعديل التنسيق في [كيفية التحكم في التنسيق]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-prev">سابق</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-next">التالى</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-prev">سابق</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-next">التالى</span></a>
 </div>

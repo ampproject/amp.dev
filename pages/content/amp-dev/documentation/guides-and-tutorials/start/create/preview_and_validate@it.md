@@ -17,6 +17,6 @@ Successivamente assicurati che la pagina AMP **sia effettivamente valida**, in c
 [Consulta ulteriori informazioni sulla convalida]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) e scopri cosa fare se vengono rilevati errori.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Precedente</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Precedente</span></a>
   <a class="button next-button" href="{{g.doc('/content/docs/start/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">Prossimo</span></a>
 </div>

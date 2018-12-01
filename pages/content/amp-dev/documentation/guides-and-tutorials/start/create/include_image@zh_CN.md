@@ -10,9 +10,9 @@ $title: 包括图像
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-阅读: 如需了解我们为何要将诸如 `<img>` 等标记替换为 `<amp-img>` 以及有多少标记可用，请查看[添加图片和视频]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}})。
+阅读: 如需了解我们为何要将诸如 `<img>` 等标记替换为 `<amp-img>` 以及有多少标记可用，请查看[添加图片和视频]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.html', locale=doc.locale).url.path}})。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">以前</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一个</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">以前</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一个</span></a>
 </div>

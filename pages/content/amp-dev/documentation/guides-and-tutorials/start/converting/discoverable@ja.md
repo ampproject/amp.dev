@@ -109,7 +109,7 @@ AMP ドキュメントの側には `<head>` に正規ページを指す下記の
 構造化データに問題がなければ、「**エラーなし**」、「**警告なし**」と表示されます。
 
 [tip type="read-on"]
-ページを検出可能にする方法について詳しくは、[ページを検出可能にする]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}})をご覧ください。
+ページを検出可能にする方法について詳しくは、[ページを検出可能にする]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}})をご覧ください。
 [/tip]
 
 おつかれさまでした。これで AMP のニュース記事は完成です。

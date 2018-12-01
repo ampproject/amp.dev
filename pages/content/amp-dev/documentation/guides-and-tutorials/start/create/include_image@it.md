@@ -10,10 +10,10 @@ Per illustrare il possibile aspetto del markup supplementare, ecco il codice nec
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Per capire perché stiamo sostituendo tag come `<img>` con `<amp-img>` e quanti di essi sono disponibili, vai alla sezione [Includere Iframe ed elementi multimediali]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}}).
+Per capire perché stiamo sostituendo tag come `<img>` con `<amp-img>` e quanti di essi sono disponibili, vai alla sezione [Includere Iframe ed elementi multimediali]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.html', locale=doc.locale).url.path}}).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Precedente</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Prossimo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Precedente</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Prossimo</span></a>
 </div>
 

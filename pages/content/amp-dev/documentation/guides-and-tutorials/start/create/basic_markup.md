@@ -1,7 +1,6 @@
 ---
 $title: Create your AMP HTML page
 $order: 1
-$parent: /content/docs/start/create.md
 ---
 
 The following markup is a decent starting point or boilerplate.
@@ -54,8 +53,8 @@ AMP HTML documents MUST:
 | Contain `<head>` and `<body>` tags. | Optional in HTML but not in AMP.
 | Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag. | Identifies the encoding for the page. |
 | Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>` tag. As a best practice, you should include the script as early as possible in the `<head>`.| Includes and loads the AMP JS library. |
-| Contain a `<link rel="canonical" href="$SOME_URL">` tag inside their `<head>`. | Points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. Learn more in [Make Your Page Discoverable]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}).
-| Contain a `<meta name="viewport" content="width=device-width,minimum-scale=1">` tag inside their `<head>` tag. It's also recommended to include `initial-scale=1`. | Specifies a responsive viewport. Learn more in [Create Responsive AMP Pages]({{g.doc('/content/docs/design/responsive_amp/responsive_design.md', locale=doc.locale).url.path}}). |
+| Contain a `<link rel="canonical" href="$SOME_URL">` tag inside their `<head>`. | Points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. Learn more in [Make Your Page Discoverable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}).
+| Contain a `<meta name="viewport" content="width=device-width,minimum-scale=1">` tag inside their `<head>` tag. It's also recommended to include `initial-scale=1`. | Specifies a responsive viewport. Learn more in [Create Responsive AMP Pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}). |
 | Contain the [AMP boilerplate code](/docs/fundamentals/spec/amp-boilerplate.html) in their `<head>` tag.  | CSS boilerplate to initially hide the content until AMP JS is loaded. |
 
 ## Optional metadata
@@ -73,6 +72,6 @@ In addition to the bare requirements, our sample also includes a Schema.org defi
 Good news! That’s all we need to create our first AMP page, but of course, there’s not a lot going on in the body yet. In the next section, we’ll cover how to add basics like images, custom AMP elements, how to style your page and work out a responsive layout.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/create.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

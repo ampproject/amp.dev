@@ -74,7 +74,7 @@ Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailny
 
 ### Menampilkan gambar responsif
 
-Gambar menghasilkan byte paling besar dari keseluruhan halaman (sekitar [65% dari byte halaman](http://httparchive.org/interesting.php#bytesperpage)).  Setidaknya, gambar harus terlihat di berbagai orientasi dan ukuran layar (misalnya, pengguna tidak perlu melakukan scrolling, mencubit/melakukan zoom untuk melihat keseluruhan gambar).  Hal ini dapat dilakukan di AMP dengan mudah menggunakan atribut  `"layout=responsive"` (lihat [Menyertakan Gambar di AMP]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}})).  Selain gambar responsif dasar, Anda mungkin ingin menampilkan beberapa resource gambar untuk:
+Gambar menghasilkan byte paling besar dari keseluruhan halaman (sekitar [65% dari byte halaman](http://httparchive.org/interesting.php#bytesperpage)).  Setidaknya, gambar harus terlihat di berbagai orientasi dan ukuran layar (misalnya, pengguna tidak perlu melakukan scrolling, mencubit/melakukan zoom untuk melihat keseluruhan gambar).  Hal ini dapat dilakukan di AMP dengan mudah menggunakan atribut  `"layout=responsive"` (lihat [Menyertakan Gambar di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.html', locale=doc.locale).url.path}})).  Selain gambar responsif dasar, Anda mungkin ingin menampilkan beberapa resource gambar untuk:
 
 - [Menayangkan gambar tajam untuk resolusi yang sesuai](#menayangkan-gambar-tajam-untuk-resolusi-yang-sesuai)
 - [Mengubah gambar responsif dari suatu gambar](#mengubah-gambar-responsif-dari-suatu-gambar)

@@ -99,7 +99,7 @@ Para verificar que sus datos estructurados son correctos, muchas plataformas pro
 
 Si los datos estructurados son válidos, debería ver **0 errors** y **0 warnings**.
 
-Leer más: Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}).
+Leer más: Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}).
 
 ¡Impresionante trabajo! Has completado tu artículo de noticias de AMP.
 

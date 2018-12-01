@@ -17,6 +17,6 @@ $title: 미리보기 및 유효성 검사
 [유효성 검사에 대해 알아보고]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}), 오류가 발생할 경우 수행할 작업에 대해 알아보세요.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
   <a class="button next-button" href="{{g.doc('/content/docs/start/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

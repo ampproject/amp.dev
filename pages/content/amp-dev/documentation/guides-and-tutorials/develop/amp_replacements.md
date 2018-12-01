@@ -77,7 +77,7 @@ images. In its most basic form, all you have to do is to add `layout="responsive
 </amp-iframe>
 </div>
 
-Read on: Learn more about [advanced layout techniques]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
+Read on: Learn more about [advanced layout techniques]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
 ### Behavior and placeholders
 

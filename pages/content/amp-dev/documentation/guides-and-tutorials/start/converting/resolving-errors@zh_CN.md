@@ -134,7 +134,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 [/tip]
 
 [tip type="important"]
-整个 AMP 文档中只能有 1 个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})。
+整个 AMP 文档中只能有 1 个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})。
 [/tip]
 
 ## 排除第三方 JavaScript

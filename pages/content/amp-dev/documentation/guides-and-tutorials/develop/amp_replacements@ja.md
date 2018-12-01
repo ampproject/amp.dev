@@ -65,7 +65,7 @@ As `<amp-img>` は JavaScript に依存するので、ユーザーがスクリ�
 </amp-iframe>
 </div>
 
-参考情報: 詳しくは、[高度なレイアウトの手法]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
+参考情報: 詳しくは、[高度なレイアウトの手法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
 
 ### 動作とプレースホルダ
 

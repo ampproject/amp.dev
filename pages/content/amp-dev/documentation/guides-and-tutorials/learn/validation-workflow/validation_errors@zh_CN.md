@@ -641,8 +641,8 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 在深入了解样式和布局错误之前，
 有必要先了解一下 AMP 中
-[样式]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})和
-[布局]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})的运作方式。
+[样式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})和
+[布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})的运作方式。
 由于 AMP 网页是 HTML 网页，因此样式与任何 HTML 网页都非常相似。
 不过，有些限制有助于确保网页能够快速加载，
 而 AMP 验证工具则会强制实施这些限制。
@@ -756,7 +756,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
-请参阅[如何控制布局]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})和 
+请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和 
 [AMP HTML 布局系统规范]({{g.doc('/content/docs/design/amp-html-layout.html', locale=doc.locale).url.path}})。
 
 **注意**：如果您没有指定布局，
@@ -814,7 +814,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
-请参阅[如何控制布局]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})和 
+请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和 
 [AMP HTML 布局系统规范]({{g.doc('/content/docs/design/amp-html-layout.html', locale=doc.locale).url.path}})。
 
 ### 指定的布局不允许的属性
@@ -860,7 +860,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 当指定布局的属性值无效时，就会出现这种错误。
 要了解触发此错误的原因，
 您需要熟悉
-[不同的布局行为]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements)。
+[不同的布局行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements)。
 
 假设您将布局设为 `fixed-height`，
 并同时为 `height` 和 `width` 添加了数字值。
@@ -904,7 +904,7 @@ AMP 网页不能包含模板语法，
 您的源文件中可以包含模板，
 但前提是此类文件生成的输出内容中不包含模板
 （另请参阅
-[使用 CSS 预处理器]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors))）。
+[使用 CSS 预处理器]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}#use-css-preprocessors))）。
 
 ### 属性包含模板语法
 

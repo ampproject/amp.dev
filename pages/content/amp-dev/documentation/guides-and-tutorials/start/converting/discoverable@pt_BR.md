@@ -103,7 +103,7 @@ Para verificar se os dados estruturados estão corretos, várias plataformas ofe
 
 Se os dados estruturados forem válidos, você verá **0 erros** e **0 avisos**.
 
-Leia mais: Para saber mais sobre detecção de página, consulte o guia [Torne sua página detectável]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}).
+Leia mais: Para saber mais sobre detecção de página, consulte o guia [Torne sua página detectável]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}).
 
 Bom trabalho!  Seu artigo em AMP está pronto!
 

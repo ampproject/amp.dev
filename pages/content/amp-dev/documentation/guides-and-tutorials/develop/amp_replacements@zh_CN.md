@@ -67,7 +67,7 @@ $title: 添加图片和视频
 </amp-iframe>
 </div>
 
-阅读: 详细了解 [高级布局技术]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})。
+阅读: 详细了解 [高级布局技术]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})。
 
 ### 行为和占位符
 

@@ -13,7 +13,7 @@ Ada beberapa cara untuk memvalidasi dokumen AMP. Semua cara akan
 memberikan hasil yang sama persis, jadi gunakan cara mana saja yang paling sesuai
 dengan gaya pengembangan Anda.
 
-Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP Anda [dapat ditemukan]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}) oleh platform pihak ketiga.
+Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP Anda [dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) oleh platform pihak ketiga.
 
 ### Developer Console Browser
 

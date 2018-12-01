@@ -5,7 +5,7 @@ $title: Estilo e layout
 
 O estilo e o layout nas páginas AMP em HTML são muito semelhantes aos de páginas HTML normais. Nos dois casos, você usará CSS.
 
-No entanto, as AMP limitam o uso de CSS por motivos de desempenho e usabilidade ao mesmo tempo em que ampliam os recursos do design responsivo com recursos como [marcadores e substitutos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}), [direção artística avançada por meio de srcset]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) e o [atributo de layout]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) para controlar melhor a forma que os elementos são exibidos.
+No entanto, as AMP limitam o uso de CSS por motivos de desempenho e usabilidade ao mesmo tempo em que ampliam os recursos do design responsivo com recursos como [marcadores e substitutos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}), [direção artística avançada por meio de srcset]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) e o [atributo de layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) para controlar melhor a forma que os elementos são exibidos.
 
 Dica: É muito fácil tornar os elementos responsivos nas AMP. Simplesmente coloque `layout="responsive"` neles. Para saber mais sobre o design responsivo nas AMP, acesse [Criar páginas AMP responsivas](/pt_br/docs/design/responsive/responsive_design.html).
 
@@ -56,7 +56,7 @@ Defina os estilos de componentes com seletores de classe ou elemento usando prop
 </body>
 [/sourcecode]
 
-Importante: Verifique se os seus estilos são compatíveis com as AMP. Alguns estilos não são por motivos de desempenho (veja também [CSS compatível]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
+Importante: Verifique se os seus estilos são compatíveis com as AMP. Alguns estilos não são por motivos de desempenho (veja também [CSS compatível]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})).
 
 ## Elementos de layout responsivos
 
@@ -64,7 +64,7 @@ Especifique o tamanho e a posição de todos os elementos AMP visíveis fornecen
 
 Defina o layout como responsivo. Isso dimensionará o elemento para a largura do seu elemento de contêiner e redimensionará a altura automaticamente para a proporção indicada nos atributos de largura e altura.
 
-Leia mais: Saiba mais sobre [os layouts compatíveis com as AMP]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})
+Leia mais: Saiba mais sobre [os layouts compatíveis com as AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
 
 ## Use marcadores e substitutos
 

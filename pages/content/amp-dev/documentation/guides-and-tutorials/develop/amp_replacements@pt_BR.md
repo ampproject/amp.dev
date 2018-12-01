@@ -67,7 +67,7 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
 </amp-iframe>
 </div>
 
-Leia mais Saiba mais sobre [técnicas de layout avançadas]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
+Leia mais Saiba mais sobre [técnicas de layout avançadas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
 ### Comportamento e marcadores de posição
 

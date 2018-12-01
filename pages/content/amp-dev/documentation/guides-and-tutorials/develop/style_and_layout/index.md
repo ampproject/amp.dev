@@ -13,7 +13,7 @@ both cases, you'll use CSS.
 
 However, AMP limits some use of CSS for performance and usability reasons, while
 expanding responsive design capabilities with features like [placeholders & fallbacks]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}),
-[advanced art direction via srcset]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) and the [layout attribute]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) for better control over how your elements display.
+[advanced art direction via srcset]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) and the [layout attribute]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) for better control over how your elements display.
 
 Tip: It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](/docs/design/responsive/responsive_design.html).
 
@@ -65,7 +65,7 @@ using common CSS properties. For example:
 </body>
 [/sourcecode]
 
-Important: Check that your styles are supported in AMP; some styles aren't for performance reasons (see also [Supported CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
+Important: Check that your styles are supported in AMP; some styles aren't for performance reasons (see also [Supported CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})).
 
 If needed, AMP also allows inline styles. For example:
 
@@ -86,7 +86,7 @@ Set the layout to responsive.
 This sizes the element to the width of its container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
-Read on: Learn more about [supported layouts in AMP]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})
+Read on: Learn more about [supported layouts in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
 
 ## Provide placeholders & fallbacks
 

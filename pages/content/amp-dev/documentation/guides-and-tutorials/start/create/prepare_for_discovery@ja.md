@@ -29,6 +29,6 @@ $title: ページの検出、配信の準備をする
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
   <a class="button next-button" href="{{g.doc('/content/docs/start/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

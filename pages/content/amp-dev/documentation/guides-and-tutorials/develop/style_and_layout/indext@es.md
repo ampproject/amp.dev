@@ -5,7 +5,7 @@ $title: Estilo y Layout
 
 Dar diseño y mejorar el layout de las páginas AMP HTML es muy similar al HTML de páginas normales – en ambos casos, usarás CSS.
 
-Sin embargo, AMP limita el uso del CSS por razones de performance y usabilidad, mientras expande algunas capacidades de diseño responsivo con caracteristicas como [placeholders & fallbacks]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}), [uso avanzado vía srcset]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) y los [atributos del layout]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) para un mejor control sobre cómo se muestran los elementos en la página.
+Sin embargo, AMP limita el uso del CSS por razones de performance y usabilidad, mientras expande algunas capacidades de diseño responsivo con caracteristicas como [placeholders & fallbacks]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}), [uso avanzado vía srcset]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}) y los [atributos del layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) para un mejor control sobre cómo se muestran los elementos en la página.
 
 Tip: Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables](/es/docs/design/responsive/responsive_design.html)
 
@@ -57,7 +57,7 @@ usando propiedades comunes de CSS. Por ejemplo:
 </body>
 [/sourcecode]
 
-Importante: Comprueba que los estilos estén admitidos en AMP, ya que algunos estilos no lo están por cuestiones de rendimiento (consulta también [CSS compatibles]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})).
+Importante: Comprueba que los estilos estén admitidos en AMP, ya que algunos estilos no lo están por cuestiones de rendimiento (consulta también [CSS compatibles]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}})).
 
 ## Diseña elementos de forma responsive
 
@@ -70,7 +70,7 @@ Configure el diseño como adaptable (responsive).
 Esto ajusta el tamaño del elemento a la anchura del elemento contenedor
 y cambia la altura automáticamente a la relación de aspecto determinada por los atributos de anchura y altura.
 
-Leer más: Aprende más acerca de [los diseños compatibles con AMP]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})
+Leer más: Aprende más acerca de [los diseños compatibles con AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
 
 ## Proporcionar placeholders & fallbacks
 

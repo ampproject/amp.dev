@@ -643,8 +643,8 @@ The full list of unique tags is known:
 
 Before diving into style and layout errors,
 it's worth understanding how
-[styling]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) and
-[layout]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) work in AMP.
+[styling]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) and
+[layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) work in AMP.
 Since AMP pages are HTML pages, styling is very much the same as any HTML page.
 But there are some restrictions to ensure pages load fast,
 and the AMP validator enforces these restrictions.
@@ -758,7 +758,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
-see [How to Control Layout]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) and
+see [How to Control Layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and
 the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 **Note:** If you don't specify the layout,
@@ -816,7 +816,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
-see [How to Control Layout]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) and
+see [How to Control Layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and
 the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
 ### Attribute not allowed by specified layout

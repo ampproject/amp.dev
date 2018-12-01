@@ -65,7 +65,7 @@ $title: 이미지 및 동영상 삽입
 </amp-iframe>
 </div>
 
-읽어보기: Learn more about [고급 레이아웃 기술]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})
+읽어보기: Learn more about [고급 레이아웃 기술]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
 에 관해 자세히 알아보세요.
 
 ### 동작 및 플레이스홀더

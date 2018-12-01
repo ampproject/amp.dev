@@ -74,7 +74,7 @@ $title: 制作自适应 AMP 网页
 
 ### 显示自适应图片
 
-图片会占据网页的很大一部分幅面（约占[网页字节数的 65%](http://httparchive.org/interesting.php#bytesperpage)）。最起码，您的图片在各种屏幕尺寸和方向上都应处于可见状态（即用户无需滚动屏幕或张合手指便可看到完整图片）。在 AMP 中，这可通过 `"layout=responsive"` 属性轻松实现（请参阅[在 AMP 中添加图片]({{g.doc('/content/docs/media/amp_replacements.md', locale=doc.locale).url.path}})）。除了基本的自适应图片之外，您可能会想添加多种图片资源以便：
+图片会占据网页的很大一部分幅面（约占[网页字节数的 65%](http://httparchive.org/interesting.php#bytesperpage)）。最起码，您的图片在各种屏幕尺寸和方向上都应处于可见状态（即用户无需滚动屏幕或张合手指便可看到完整图片）。在 AMP 中，这可通过 `"layout=responsive"` 属性轻松实现（请参阅[在 AMP 中添加图片]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.html', locale=doc.locale).url.path}})）。除了基本的自适应图片之外，您可能会想添加多种图片资源以便：
 
 - [提供分辨率合适的清晰图片](#提供分辨率合适的清晰图片)
 - [更改图片的艺术设计](#更改图片的艺术设计)

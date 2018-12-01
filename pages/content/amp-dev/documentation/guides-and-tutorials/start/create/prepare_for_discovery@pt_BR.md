@@ -29,6 +29,6 @@ Se você só tiver uma página, e essa página for AMP, ainda assim deverá adic
 [/sourcecode]
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
   <a class="button next-button" href="{{g.doc('/content/docs/start/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>

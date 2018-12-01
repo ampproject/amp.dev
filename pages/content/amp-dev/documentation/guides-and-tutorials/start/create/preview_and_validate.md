@@ -22,6 +22,6 @@ Next, make sure that your AMP page **is actually valid AMP**, or it won’t get 
 Read on: [Learn more about validation]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}), and what to do when you get errors.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
   <a class="button next-button" href="{{g.doc('/content/docs/start/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

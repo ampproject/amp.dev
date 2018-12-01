@@ -55,7 +55,7 @@ layout="responsive">
 </body>
 [/sourcecode]
 
-重要: 使用するスタイルが AMP でサポートされているかどうかを確認してください。一部のスタイルは、パフォーマンス上の理由でサポートされていません（[サポートされる CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) もご覧ください）。
+重要: 使用するスタイルが AMP でサポートされているかどうかを確認してください。一部のスタイルは、パフォーマンス上の理由でサポートされていません（[サポートされる CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) もご覧ください）。
 
 ## 要素をレスポンシブにレイアウトする
 
@@ -63,7 +63,7 @@ layout="responsive">
 
 レイアウトはレスポンシブに設定してください。これにより、要素の幅がコンテナ要素に合わせて調整され、width 属性と height 属性で決まったアスペクト比に応じて高さが調整されます。
 
-参照: 詳しくはこちら: [AMP でサポートされるレイアウト]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})
+参照: 詳しくはこちら: [AMP でサポートされるレイアウト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
 
 ## プレースホルダとフォールバックを提供する
 

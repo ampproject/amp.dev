@@ -134,7 +134,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 [/tip]
 
 [tip type="important"]
-AMP ドキュメント全体で style タグは 1 つだけ指定できます。AMP ページで複数の外部スタイルシートを参照している場合は、これらのスタイルシートを 1 セットのルールにまとめる必要があります。AMP で有効な CSS ルールについて詳しくは、[サポートされる CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}) をご覧ください。
+AMP ドキュメント全体で style タグは 1 つだけ指定できます。AMP ページで複数の外部スタイルシートを参照している場合は、これらのスタイルシートを 1 セットのルールにまとめる必要があります。AMP で有効な CSS ルールについて詳しくは、[サポートされる CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.html', locale=doc.locale).url.path}}) をご覧ください。
 [/tip]
 
 ## サードパーティの JavaScript を除外する

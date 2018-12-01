@@ -66,7 +66,7 @@ Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan t
 </amp-iframe>
 </div>
 
-Baca juga: Pelajari lebih lanjut tentang [teknik tata letak lanjutan]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
+Baca juga: Pelajari lebih lanjut tentang [teknik tata letak lanjutan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
 ### Perilaku dan placeholder
 

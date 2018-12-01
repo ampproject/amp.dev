@@ -17,6 +17,6 @@ Ardından, AMP sayfanızın **gerçekten geçerli bir AMP olduğundan** ya da Go
 [Doğrulama hakkında daha fazla bilgi]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}) ve hata aldığınızda ne yapacağınızı öğrenin.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Önceki</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Önceki</span></a>
   <a class="button next-button" href="{{g.doc('/content/docs/start/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">Sonraki</span></a>
 </div>
