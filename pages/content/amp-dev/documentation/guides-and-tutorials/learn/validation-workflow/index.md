@@ -265,7 +265,7 @@ Each tool gives several pieces of information:
      documentation for the `<amp-img>` tag. Not all errors generate
      documentation links.
 
-Carefully re-reading the [spec]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
+Carefully re-reading the [spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
 
 To better understand the complete list of potential errors,
 see the [AMP Validation Errors guide](/docs/troubleshooting/validation_errors.html).

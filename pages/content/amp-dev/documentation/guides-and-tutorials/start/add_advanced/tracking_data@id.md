@@ -93,7 +93,7 @@ Jika memiliki platform pelacakan kustom yang ingin diintegrasikan, Anda tetap da
 
 Catatan: `“UA-YYYY-Y”` adalah contoh akun Google Analytics; contoh ini akan diganti dengan kode pelacakan Google Analytics situs Anda, jika Anda menerapkan contoh ini di situs.
 
-Tips: Jika tertarik pada sistem pelacakan yang lebih sederhana, Anda mungkin ingin melihat [amp-pixel](/id/docs/reference/components/amp-pixel.html). Jika hanya perlu melacak pageview, amp-pixel adalah solusi yang lebih sederhana daripada amp-analytics karena hanya bertujuan untuk menyelesaikan persyaratan pelacakan piksel tradisional. Pelajari lebih lanjut di [Analytics: panduan dasar-dasar]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}}).
+Tips: Jika tertarik pada sistem pelacakan yang lebih sederhana, Anda mungkin ingin melihat [amp-pixel](/id/docs/reference/components/amp-pixel.html). Jika hanya perlu melacak pageview, amp-pixel adalah solusi yang lebih sederhana daripada amp-analytics karena hanya bertujuan untuk menyelesaikan persyaratan pelacakan piksel tradisional. Pelajari lebih lanjut di [Analytics: panduan dasar-dasar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>

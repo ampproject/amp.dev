@@ -27,7 +27,7 @@ The `<amp-ad>` component is a custom ad extension to the AMP library. Under the 
 
 ### Step 2: Add the amp-ad tag to your AMP page
 
-Over 100+ [ad servers and networks]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}}) provide built-in integrations with AMP.  To add an ad for a given ad network, add the `<amp-ad>` tag, and specify the network in the `type` attribute.
+Over 100+ [ad servers and networks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) provide built-in integrations with AMP.  To add an ad for a given ad network, add the `<amp-ad>` tag, and specify the network in the `type` attribute.
 
 In this example, we are adding an ad slot to serve ads from the a9 network:
 
@@ -91,7 +91,7 @@ Congratulations! You are now serving ads on your AMP page!
 
 ## Serving direct-sold AMPHTML ads
 
-The [`amp-ad`](/docs/reference/components/amp-ad.html) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}}) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+The [`amp-ad`](/docs/reference/components/amp-ad.html) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Augmenting targeting data on ad requests
 

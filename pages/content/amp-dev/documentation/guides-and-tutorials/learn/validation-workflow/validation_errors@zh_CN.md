@@ -59,7 +59,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 在 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 验证工具规范</a>中，这些必需的标记包含 `mandatory: true` 字段；
-[AMP 规范]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})中也提到了这些标记。
+[AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})中也提到了这些标记。
 
 ### 缺少其他标记所需的标记
 
@@ -106,7 +106,7 @@ limitations under the License.
 </table>
 
 可用的标记都已列入白名单，因此目前还没有列表将所有不允许使用的标记明确列出；
-不过，[AMP 规范]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})
+不过，[AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})
 粗略地定义了一组不允许使用的标记。
 
 ### 不允许使用自定义 JavaScript
@@ -726,7 +726,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 此错误指的是 CSS 中的 @-rules。
 对于 CSS 中的 @-rules，AMP 仅允许少量规则
-（另请参阅 [AMP 规范]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}})）。
+（另请参阅 [AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})）。
 例如，不允许使用 <code>@import</code>。
 验证错误消息会明确
 告诉您哪个规则无效，

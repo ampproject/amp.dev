@@ -1,5 +1,5 @@
-$view: /views/doc.html
-$path: /docs/ads/amphtml_ads/{base}.html
+$path: /documentation/guides-and-tutorials/learn/amphtml_ads/create_amphtml_ad/{base}.html
+$view: /views/detail/docs-detail.j2
 $localization:
-  path: /{locale}/docs/ads/amphtml_ads/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/learn/amphtml_ads/create_amphtml_ad/{base}.html
 $title@: Create an AMPHTML ad
