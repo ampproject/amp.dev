@@ -1,0 +1,175 @@
+#: /views/partials/footer.j2:60
+msgid "AMP Conf"
+msgstr ""
+
+#: /views/partials/footer.j2:61
+msgid "AMP Contributor Summit"
+msgstr ""
+
+#: /views/partials/footer.j2:29
+msgid "AMP Framework"
+msgstr ""
+
+#: /views/partials/footer.j2:59
+msgid "AMP Roadshow"
+msgstr ""
+
+#: /views/partials/footer.j2:62
+msgid "Additional Events"
+msgstr ""
+
+#: /views/partials/footer.j2:30
+msgid "Benefits"
+msgstr ""
+
+#: /content/amp-dev/community/_blueprint.yaml /views/partials/footer.j2:48
+msgid "Community"
+msgstr ""
+
+#: /content/amp-dev/documentation/components/_blueprint.yaml
+#: /views/partials/footer.j2:41
+msgid "Components"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/contribute/_blueprint.yaml
+#: /views/partials/footer.j2:52
+msgid "Contribute"
+msgstr ""
+
+#: /views/partials/footer.j2:43
+msgid "Design Templates"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/develop/_blueprint.yaml
+msgid "Develop"
+msgstr ""
+
+#: /views/partials/footer.j2:37
+msgid "Docs"
+msgstr ""
+
+#: /content/amp-dev/documentation/_blueprint.yaml
+msgid "Documentation"
+msgstr ""
+
+#: /views/partials/footer.j2:57
+msgid "Events"
+msgstr ""
+
+#: /content/amp-dev/documentation/examples/_blueprint.yaml
+#: /views/partials/footer.j2:42
+msgid "Examples"
+msgstr ""
+
+#: /views/partials/footer.j2:15
+msgid "Follow us"
+msgstr ""
+
+#: /views/partials/footer.j2:33
+msgid "Functionality"
+msgstr ""
+
+#: /views/partials/footer.j2:39
+msgid "Get Started"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/_blueprint.yaml
+msgid "Guides & Tutorials"
+msgstr ""
+
+#: /views/partials/footer.j2:40
+msgid "Guides and Tutorials"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/integrate/_blueprint.yaml
+msgid "Integrate"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/learn/_blueprint.yaml
+msgid "Learn"
+msgstr ""
+
+#: /views/partials/footer.j2:69
+msgid "Legal Disclaimer"
+msgstr ""
+
+#: /views/partials/footer.j2:70
+msgid "Lorem Ipsum"
+msgstr ""
+
+#: /views/partials/footer.j2:12
+msgid "Of course, this site is made with AMP!"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/_blueprint.yaml
+msgid "Optimize & Measure"
+msgstr ""
+
+#: /views/partials/footer.j2:27
+msgid "Overview"
+msgstr ""
+
+#: /views/partials/footer.j2:51
+msgid "Platform and Vendor Partners"
+msgstr ""
+
+#: /views/partials/footer.j2:68
+msgid "Privacy Policy"
+msgstr ""
+
+#: /views/partials/footer.j2:53
+msgid "Roadmap"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/start/_blueprint.yaml
+msgid "Start"
+msgstr ""
+
+#: /views/partials/footer.j2:32
+msgid "Success stories"
+msgstr ""
+
+#: /views/partials/footer.j2:50
+msgid "The AMP Team"
+msgstr ""
+
+#: /views/partials/footer.j2:44
+msgid "Tools"
+msgstr ""
+
+#: /views/partials/footer.j2:31
+msgid "Use Cases"
+msgstr ""
+
+#: /content/amp-dev/what-is-amp/_blueprint.yaml
+msgid "What is AMP?"
+msgstr ""
+
+#: /content/amp-dev/documentation/components/_blueprint.yaml
+msgid "ads-analytics"
+msgstr ""
+
+#: /content/amp-dev/documentation/components/_blueprint.yaml
+msgid "dynamic-content"
+msgstr ""
+
+#: /content/amp-dev/documentation/components/_blueprint.yaml
+msgid "layout"
+msgstr ""
+
+#: /content/amp-dev/documentation/components/_blueprint.yaml
+msgid "media"
+msgstr ""
+
+#: /content/amp-dev/documentation/components/_blueprint.yaml
+msgid "presentation"
+msgstr ""
+
+#: /content/amp-dev/documentation/components/_blueprint.yaml
+msgid "social"
+msgstr ""
+
+#: /views/partials/footer.j2:72
+msgid "© 2018 AMP Open Source Project"
+msgstr ""
+
