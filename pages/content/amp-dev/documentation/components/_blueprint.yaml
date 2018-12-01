@@ -4,5 +4,12 @@ $view: /views/overview/components-detail.j2
 $localization:
   path: /{locale}/documentation/components/{base}.html
 $order: 2
+categories@:
+  - ads-analytics
+  - dynamic-content
+  - layout
+  - media
+  - presentation
+  - social
 
 index: /content/amp-dev/documentation/components/index.md
