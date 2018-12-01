@@ -281,6 +281,7 @@
 
     &-list {
       opacity: 0;
+      pointer-events: none;
       position: absolute;
       right: 0;
       text-align: right;
@@ -320,6 +321,7 @@
     &-list:hover {
       opacity: 1;
       transform: translateY(0px);
+      pointer-events: all;
     }
   }
 
