@@ -9,7 +9,7 @@ class VideoShortcode(Shortcode):
     same_tag_closes = True
     standalone = True
     render_empty = True
-    template = 'partials/video.j2'
+    template = 'views/partials/video.j2'
 
     def _get_caption(self, options):
         caption = options.get('caption', None)

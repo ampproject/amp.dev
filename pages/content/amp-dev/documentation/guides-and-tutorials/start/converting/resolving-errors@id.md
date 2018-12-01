@@ -131,7 +131,7 @@ Sekali lagi, **muat ulang** halaman dan verifikasi bahwa error stylesheet sudah 
 
 Catatan: Tidak hanya gaya inline yang diperlukan tetapi ada batas ukuran file sebesar 50 kilobyte untuk semua informasi gaya. Anda harus menggunakan prapemrosesan CSS seperti [SASS](http://sass-lang.com/) untuk memperkecil CSS sebelum membuat CSS di halaman AMP menjadi inline.
 
-Penting: Anda hanya dapat memiliki 1 tag gaya di seluruh dokumen AMP. Jika Anda memiliki beberapa stylesheet eksternal yang dirujuk oleh halaman AMP, Anda harus menyusun stylesheet ini menjadi 1 kumpulan aturan. Untuk mempelajari tentang aturan CSS apa yang berlaku di AMP, baca [CSS yang Didukung]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
+Penting: Anda hanya dapat memiliki 1 tag gaya di seluruh dokumen AMP. Jika Anda memiliki beberapa stylesheet eksternal yang dirujuk oleh halaman AMP, Anda harus menyusun stylesheet ini menjadi 1 kumpulan aturan. Untuk mempelajari tentang aturan CSS apa yang berlaku di AMP, baca [CSS yang Didukung]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
 
 ## Jangan sertakan JavaScript pihak ketiga
 

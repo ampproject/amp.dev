@@ -11,7 +11,7 @@ class StageShortcode(Shortcode):
     name = 'stage'
     render_empty = True
     prerender_markdown = True
-    template = 'partials/stage.j2'
+    template = 'views/partials/stage.j2'
 
     # If stage includes a subheadline, retrieve and return it
     def _get_sub_headline(self, dom):

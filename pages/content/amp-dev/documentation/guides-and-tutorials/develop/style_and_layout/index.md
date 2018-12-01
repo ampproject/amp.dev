@@ -11,8 +11,8 @@ Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
 both cases, you'll use CSS.
 
 However, AMP limits some use of CSS for performance and usability reasons, while
-expanding responsive design capabilities with features like [placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/placeholders.md', locale=doc.locale).url.path}}),
-[advanced art direction via srcset]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) and the [layout attribute]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) for better control over how your elements display.
+expanding responsive design capabilities with features like [placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}),
+[advanced art direction via srcset]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) and the [layout attribute]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) for better control over how your elements display.
 
 Tip: It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](/docs/design/responsive/responsive_design.html).
 
@@ -64,7 +64,7 @@ using common CSS properties. For example:
 </body>
 [/sourcecode]
 
-Important: Check that your styles are supported in AMP; some styles aren't for performance reasons (see also [Supported CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+Important: Check that your styles are supported in AMP; some styles aren't for performance reasons (see also [Supported CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 
 If needed, AMP also allows inline styles. For example:
 
@@ -85,19 +85,19 @@ Set the layout to responsive.
 This sizes the element to the width of its container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
-Read on: Learn more about [supported layouts in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
+Read on: Learn more about [supported layouts in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
 
 ## Provide placeholders & fallbacks
 
 The built-in support for placeholders and fallbacks means your users never have to stare at a blank screen again.
 
-Read on: Learn more about [Placeholders and fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+Read on: Learn more about [Placeholders and fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
 
 ## Art direct your images
 
 AMP supports both `srcset` and `sizes` attributes to give you fine grained control, of which images to load in which scenario.
 
-Read on: Learn more about [art direction with srcset and sizes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
+Read on: Learn more about [art direction with srcset and sizes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
 
 ## Validate your styles and layout
 

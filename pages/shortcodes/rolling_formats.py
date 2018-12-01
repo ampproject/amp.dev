@@ -9,7 +9,7 @@ class RollingFormatsShortcode(Shortcode):
     name = 'rolling-formats'
     render_empty = True
     prerender_markdown = True
-    template = 'partials/destination-switch.j2'
+    template = 'views/partials/destination-switch.j2'
 
     def _get_formats(self, dom):
         formats = []

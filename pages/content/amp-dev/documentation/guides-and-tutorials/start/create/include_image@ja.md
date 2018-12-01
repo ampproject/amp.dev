@@ -13,6 +13,6 @@ $title: イメージを含める
 参照: `<img>` タグの代わりに `<amp-img>` タグを使っている理由や、使用できるタグの種類については、[画像や動画を含める]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.md', locale=doc.locale).url.path}})をご覧ください。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

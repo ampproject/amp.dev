@@ -105,7 +105,11 @@ To verify that your structured data is correct, many platforms provide validatio
 
 If your structured data is valid, you should see **0 errors**, and **0 warnings**.
 
+<<<<<<< HEAD
+Read on: To learn more about page discoverability, see the [Make your page discoverable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) guide.
+=======
 Read on: To learn more about page discoverability, see the [Make your page discoverable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) guide.
+>>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 Awesome work!  You've completed your AMP news article.
 

@@ -13,7 +13,7 @@ class DestinationSwitchShortcode(Shortcode):
     name = 'destination-switch'
     render_empty = True
     prerender_markdown = True
-    template = 'partials/destination-switch.j2'
+    template = 'views/partials/destination-switch.j2'
 
     def _get_switch_type(self, options):
         # Switch type might be defined by shortcode option otherwise fallback

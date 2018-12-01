@@ -13,7 +13,11 @@ AMP 문서의 유효성을 검사하는 방법에는 여러 가지가 있습니�
 모두 동일하므로 내 개발 스타일에 맞는 방법을
 사용하세요.
 
+<<<<<<< HEAD
+AMP 유효성을 검사할 뿐만 아니라 AMP 문서가 타사 플랫폼에서 [검색되는지]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) 확인하고 싶을 수도 있습니다.
+=======
 AMP 유효성을 검사할 뿐만 아니라 AMP 문서가 타사 플랫폼에서 [검색되는지]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 확인하고 싶을 수도 있습니다.
+>>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### 브라우저 개발용 콘솔
 

@@ -67,13 +67,13 @@ Neste exemplo mais básico, a imagem será exibida com a altura e largura fixas 
 </amp-iframe>
 </div>
 
-Leia mais Saiba mais sobre [técnicas de layout avançadas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+Leia mais Saiba mais sobre [técnicas de layout avançadas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
 ### Comportamento e marcadores de posição
 
 O tempo de execução das AMP em HTML pode gerenciar recursos de imagens de maneira eficiente, escolhendo atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na conexão de largura de banda ou em outros fatores.
 
-Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ## Imagens animadas
 

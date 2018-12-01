@@ -19,15 +19,15 @@ AMP 是一些网页；页面及其元素的任何样式设置操作都是使用�
 </style>
 [/sourcecode]
 
-每个 AMP 页面都只有一个嵌入的样式表，并且还有一些不允许您使用的选择器。[了解所有样式设置相关信息]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/style_pages.md', locale=doc.locale).url.path}})。
+每个 AMP 页面都只有一个嵌入的样式表，并且还有一些不允许您使用的选择器。[了解所有样式设置相关信息]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})。
 
 ## 控制布局
 
 在页面上进行元素布局时，AMP 遵循更严格的规则。在常规 HTML 页面上，您几乎完全使用 CSS 来设置元素布局。但是，出于性能原因，AMP 要求所有元素从一开始就必须设置显式的大小。
 
-如需详细了解 AMP 如何渲染页面和设置页面布局，以及如何修改布局，请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}})。
+如需详细了解 AMP 如何渲染页面和设置页面布局，以及如何修改布局，请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-prev">以前</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一个</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-prev">以前</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一个</span></a>
 </div>

@@ -21,7 +21,7 @@ TYPE_TEMPLATES = {
 
 class TeaserGridShortcode(Shortcode):
     name = 'teaser-grid'
-    template = 'partials/teaser-grid.j2'
+    template = 'views/partials/teaser-grid.j2'
     prerender_markdown = True
     render_empty = True
 

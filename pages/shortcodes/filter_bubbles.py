@@ -4,7 +4,7 @@ from shortcodes import Shortcode
 class FilterBubbleShortcode(Shortcode):
     name = 'filter-bubbles'
     prerender_markdown = True
-    template = 'partials/filter-bubbles.j2'
+    template = 'views/partials/filter-bubbles.j2'
 
     def transform(self, value, options):
         dom = minidom.parseString('<html>{}</html>'.format(value))

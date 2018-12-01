@@ -27,9 +27,9 @@
           <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
             {% set collection_index = g.doc('content/' + collection.collection_path + '/index.md') %}
             {% if collection_index.exists %}
-            <a class="nav-link" href="{{ collection_index.url.path }}">{{ collection.title }}</a>
+            <a class="nav-link" href="{{ collection_index.url.path }}">{{ _(collection.title) }}</a>
             {% else %}
-            <span class="nav-link">{{ collection.title }}</span>
+            <span class="nav-link">{{ _(collection.title) }}</span>
             {% endif %}
             <input class="nav-trigger" {% if activeCollection or iteration == 1  %}checked {% endif %} type="checkbox">
             <div class="nav-icon">
@@ -48,7 +48,7 @@
           {% set formats = ' '.join(document.formats or []) %}
           {% set activeDocument = true if document.url == doc.url %}
           <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {{ formats }}">
-            <a class="nav-link" href="{{ document.url.path }}">{{ document.title }}</a>
+            <a class="nav-link" href="{{ document.url.path }}">{{ _(document.title) }}</a>
           </li>
           {% endfor %}
           {% endif %}

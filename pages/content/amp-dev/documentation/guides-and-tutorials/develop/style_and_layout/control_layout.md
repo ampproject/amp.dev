@@ -11,7 +11,7 @@ AMP supports both **media queries** &amp; **element queries**, plus comes with a
 ## Responsive images, made easy
 
 Create responsive images by specifying the `width` and `height`, setting layout to `responsive`,
-and indicating with [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
+and indicating with [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
 which image asset to use based on varying screen sizes:
 
 [sourcecode:html]

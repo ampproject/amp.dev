@@ -77,7 +77,7 @@ images. In its most basic form, all you have to do is to add `layout="responsive
 </amp-iframe>
 </div>
 
-Read on: Learn more about [advanced layout techniques]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+Read on: Learn more about [advanced layout techniques]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
 ### Behavior and placeholders
 
@@ -85,7 +85,7 @@ The AMP HTML runtime can effectively manage image resources,
 choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
-Read on: Learn how to [provide fallbacks and placeholders for images]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Read on: Learn how to [provide fallbacks and placeholders for images]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ## Animated images
 
