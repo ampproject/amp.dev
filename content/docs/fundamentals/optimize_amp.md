@@ -127,7 +127,7 @@ The good thing is that `link rel=preload` also supports media queries. So we can
     media="(min-width: 416px)">
 [/sourcecode]
 
-By the way, the same approach works for `[amp-video](/docs/reference/components/amp-video.html)` poster images:
+By the way, the same approach works for [`amp-video`](/docs/reference/components/amp-video.html) poster images:
 
 [sourcecode:html]
 <link rel="preload" href="/images/poster.jpg" as="image">
