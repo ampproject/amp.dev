@@ -1,7 +1,8 @@
 {
   "name": "amp-dev",
   "version": "1.0.1",
-  "description": "",
+  "description": "The successor of the former ampproject.org: the all-new amp.dev",
+  "repository": "git@github.com:ampproject/docs.git",
   "main": "serve.js",
   "scripts": {
     "develop": "node build.js",
@@ -11,8 +12,12 @@
     "start:local": "NODE_ENV=local node serve.js",
     "start": "NODE_ENV=staging node serve.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "amphtml",
+    "framework",
+    "documentation"
+  ],
+  "author": "The AMP HTML Authors",
   "license": "ISC",
   "signale": {
     "displayTimestamp": true
