@@ -28,5 +28,50 @@ The documents inside the *pages* package are Grow documents that use the [built-
   - media
   - presentation
   - social
-  - personalization 
+  - personalization
 ```
+
+### Shortcodes
+The project enables various shortcodes to extend the basic functionality of markdown.
+
+**Tip**
+```md
+[tip type="default|important|note|read-on"]
+# Headline
+Text.
+[/tip]
+```
+
+The `type=default` can be omitted.
+
+**Video**
+```md
+[video src="https://www.youtube.com/watch?v=npum8JsITQE" caption="This is the caption text."]
+```
+
+The video ID (`npum8JsITQE` in the above example) will be extracted automatically.
+
+**Stage**
+```md
+[stage color="dark-blue|light-blue|orange|purple|green"]
+## What is AMP?
+# Amp is a web component framework for easily creating user first
+
+[Get Started](/content/amp-dev/documentation/guides-and-tutorials/index.md)
+[/stage]
+```
+
+The Link is optional and will create a button inside the stage.
+
+**Teaser grid**
+```md
+[teaser-grid]
+[](/content/shared/fill-ins/success-story.md)
+[](/content/shared/fill-ins/success-story-2.md)
+[](/content/shared/fill-ins/success-story.md)
+
+[All success stories](#)
+[/teaser-grid]
+```
+
+A list of links that will expand to a row of cards that link to the document.
