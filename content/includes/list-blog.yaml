@@ -1,6 +1,17 @@
 blogs:
 
 - type: Blog
+  title: "The Official AMP Plugin for WordPress"
+  id: the-official-amp-plugin-for-wordpress
+  author: Alberto Medina
+  role:  AMP and WordPress Developer Advocate, Google
+  origin: "https://amphtml.wordpress.com/2018/12/07/the-official-amp-plugin-for-wordpress/amp/"
+  excerpt: "Posted by Alberto Medina, AMP and WordPress Developer Advocate, Google Enabling a first-class AMP experience on WordPress is one of the ways the AMP Project aims to bring a user-first experience to websites and content on the web. There has been a lot of work over the last year to improve the quality of the [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-12-07T08:10:29-06:00
+  date: "December 7, 2018"
+
+- type: Blog
   title: "Contributing to WebKit for a more predictable web platform"
   id: contributing-to-webkit-for-a-more-predictable-web-platform
   author: amphtml
@@ -54,14 +65,3 @@ blogs:
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
   datedata: 2018-11-14T13:41:40-06:00
   date: "November 14, 2018"
-
-- type: Blog
-  title: "Developer Preview of better AMP URLs in Google Search"
-  id: developer-preview-of-better-amp-urls-in-google-search
-  author: Greg Grothaus
-  role:  Software Engineer, AMP at Google
-  origin: "https://amphtml.wordpress.com/2018/11/13/developer-preview-of-better-amp-urls-in-google-search/amp/"
-  excerpt: "AMP users and publishers have told us that they prefer that the original domain names be used anywhere their AMP pages are displayed. Earlier this year, we demonstrated a technology named Signed HTTP Exchanges that supports transforming cached AMP URLs on any AMP Cache. Google Chrome has since started an origin trial for Signed Exchanges [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-11-13T12:10:09-06:00
-  date: "November 13, 2018"
