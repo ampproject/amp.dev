@@ -8,7 +8,7 @@ role:  Software Engineer, AMP at Google
 origin: "https://amphtml.wordpress.com/2018/11/13/developer-preview-of-better-amp-urls-in-google-search/amp/"
 excerpt: "AMP users and publishers have told us that they prefer that the original domain names be used anywhere their AMP pages are displayed. Earlier this year, we demonstrated a technology named Signed HTTP Exchanges that supports transforming cached AMP URLs on any AMP Cache. Google Chrome has since started an origin trial for Signed Exchanges [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-11-13T10:10:09-08:00
+date_data: 2018-11-13T12:10:09-06:00
 $date: November 13, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

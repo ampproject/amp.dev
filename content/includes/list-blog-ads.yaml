@@ -1,6 +1,50 @@
 blogs:
 
 - type: Blog
+  title: "Contributing to WebKit for a more predictable web platform"
+  id: ads-contributing-to-webkit-for-a-more-predictable-web-platform
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/12/06/contributing-to-webkit-for-a-more-predictable-web-platform/amp/"
+  excerpt: "Over the past two years, the AMP Project has been working with Igalia to identify bugs and missing features within iOS WebKit and then fix them. We create repro cases, write web platform tests, perform debugging and analysis, and, of course, write patches to actually fix things. We think this is particular rewarding work, because [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-12-06T10:41:19-06:00
+  date: "December 6, 2018"
+
+- type: Blog
+  title: "Use AMPHTML ads for better ad performance, page usability and user safety"
+  id: ads-use-amphtml-ads-for-better-ad-performance-page-usability-and-user-safety
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2018/12/04/use-amphtml-ads-for-better-ad-performance-page-usability-and-user-safety/amp/"
+  excerpt: "This is part of a larger AMP monetization series on Medium that includes the below topics: Ensure Ad Density is equal on AMP &#38; non-AMP pages Optimize your AMP pages for high ad viewability or views Take advantage of more ad competition with multi-size ads &#38; fluid Better than header bidding → AMP RTC Take [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-12-04T09:58:54-06:00
+  date: "December 4, 2018"
+
+- type: Blog
+  title: "Progressively AMPlify EC-CUBE"
+  id: ads-progressively-amplify-ec-cube
+  author: Yusuke Utsunomiya
+  role:  Mobile Solutions Consultant and Monisha Varadan, Global Product Partnerships at Google
+  origin: "https://amphtml.wordpress.com/2018/11/20/progressively-amplify-ec-cube/amp/"
+  excerpt: "EC-CUBE, one of the largest open source ecommerce CMSes in Japan, has released a beta plugin to use AMP for their ecommerce stores. The plugin was built by EC-CUBE’s well known partner SUNDAY SYSTEMS, Inc. in collaboration with Mobile Solutions Consultants from Google, in just one month 😲. For websites who use EC-CUBE, you can [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-11-20T09:45:09-06:00
+  date: "November 20, 2018"
+
+- type: Blog
+  title: "Launching Ad Monetization for AMP stories"
+  id: ads-launching-ad-monetization-for-amp-stories
+  author: Vamsee Jasti
+  role:  Product Manager, AMP Project
+  origin: "https://amphtml.wordpress.com/2018/11/14/launching-ad-monetization-for-amp-stories/amp/"
+  excerpt: "We’ve seen steady growth over the past year in AMP Stories and we are delighted to see the various ways content creators have taken advantage of the rich, immersive canvas for storytelling. We’ve been testing this with a handful for pilot partners and today, we are excited to give all content creators an opportunity to [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2018-11-14T13:41:40-06:00
+  date: "November 14, 2018"
+
+- type: Blog
   title: "So your AMP test doesn’t perform — now what?"
   id: ads-so-your-amp-test-doesnt-perform%e2%80%8a-%e2%80%8anow-what
   author: amphtml
@@ -8,7 +52,7 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/11/08/so-your-amp-test-doesnt-perform%e2%80%8a-%e2%80%8anow-what/amp/"
   excerpt: "Editor&#8217;s note: The following was posted on Medium by Martin Schierle, Mobile Solutions Consultant at Google.  Accelerated Mobile Pages (AMP) are a great and easy way to build very fast pages, and as we know speed is key — for every second delay in mobile page load, conversions can fall by up to 20%. So obviously the first thing people [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-11-08T13:46:36-08:00
+  datedata: 2018-11-08T15:46:36-06:00
   date: "November 8, 2018"
 
 - type: Blog
@@ -19,49 +63,5 @@ blogs:
   origin: "https://amphtml.wordpress.com/2018/11/05/streaming-in-the-shadow-reader/amp/"
   excerpt: "What did we do? We made The Shadow Reader faster again! We created The Shadow Reader (https://amp.cards) to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site folds real articles from The Guardian into an immersive news reader experience. It&#8217;s a demo, but [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-11-05T13:42:20-08:00
+  datedata: 2018-11-05T15:42:20-06:00
   date: "November 5, 2018"
-
-- type: Blog
-  title: "The latest from AMP Analytics providers"
-  id: ads-the-latest-from-amp-analytics-providers
-  author: Jeff Jose
-  role:  Product Manager, AMP, at Google
-  origin: "https://amphtml.wordpress.com/2018/10/25/the-latest-from-amp-analytics-providers/amp/"
-  excerpt: "As AMP turns three, we can&#8217;t help but look back with nostalgia on how far along we’ve come along in our mission &#8211; Build the best open web technology that lets publishers create fast and secure pages without compromising on user-experience. That is why we built the analytics infrastructure in AMP that allows for “collect [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-10-25T14:06:47-07:00
-  date: "October 25, 2018"
-
-- type: Blog
-  title: "AMP story learnings and best practices"
-  id: ads-amp-story-learnings-and-best-practices
-  author: Lisa Lehman
-  role:  AMP story Partnerships, Google
-  origin: "https://amphtml.wordpress.com/2018/10/25/amp-story-learnings-and-best-practices/amp/"
-  excerpt: "Since we announced the developer preview of AMP Stories, we’ve been focused on ensuring the format is an easy and compelling way for publishers to create visual content on the web. It’s been exciting to see the experimentation and direction that some early testers have taken with the product. Naturally we’ve also had a lot [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-10-25T09:47:15-07:00
-  date: "October 25, 2018"
-
-- type: Blog
-  title: "Child Mind Institute boosts social shares on AMP pages with AddThis"
-  id: ads-child-mind-institute-boosts-social-shares-on-amp-pages-with-addthis
-  author: Chad Edmonds
-  role:  Director of Product Marketing, AddThis 
-  origin: "https://amphtml.wordpress.com/2018/10/23/child-mind-institute-boosts-social-shares-on-amp-pages-with-addthis/amp/"
-  excerpt: "Posted by Chad Edmonds, Director of Product Marketing, AddThis  AddThis has been excited to work with the AMP project over the past year, to ensure the web is fast and user-friendly for everyone. As AMP turns 3 years old this month, we&#8217;re celebrating the project&#8217;s progress with a recent case study showing increased shares and [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-10-23T09:47:44-07:00
-  date: "October 23, 2018"
-
-- type: Blog
-  title: "Three Years of AMP!"
-  id: ads-three-years-of-amp
-  author: David Besbris
-  role:  VP of Search at Google
-  origin: "https://amphtml.wordpress.com/2018/10/22/three-years-of-amp/amp/"
-  excerpt: "Not long ago the mobile web was sluggish, clunky and at risk of being closed off by apps. Many publishers were concerned how this would affect their future and the promise of the open web. News publishers approached us at Google to help ensure their content was easy to distribute and read across the web. [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-10-22T09:16:38-07:00
-  date: "October 22, 2018"

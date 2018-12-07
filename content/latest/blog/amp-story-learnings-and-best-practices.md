@@ -8,7 +8,7 @@ role:  AMP story Partnerships, Google
 origin: "https://amphtml.wordpress.com/2018/10/25/amp-story-learnings-and-best-practices/amp/"
 excerpt: "Since we announced the developer preview of AMP Stories, we’ve been focused on ensuring the format is an easy and compelling way for publishers to create visual content on the web. It’s been exciting to see the experimentation and direction that some early testers have taken with the product. Naturally we’ve also had a lot [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-10-25T09:47:15-07:00
+date_data: 2018-10-25T11:47:15-05:00
 $date: October 25, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
