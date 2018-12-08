@@ -1,7 +1,7 @@
 ---
 $title: 설정
 $order: 0
-$parent: /content/docs/fundamentals/converting.md
+$parent: /content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md
 ---
 
 ## 기본 요건
@@ -50,6 +50,6 @@ http://localhost:8000/article.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
   <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>
