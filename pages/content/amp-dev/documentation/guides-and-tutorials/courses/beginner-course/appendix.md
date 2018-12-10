@@ -32,7 +32,7 @@ And the AMP document contained a link to the non-AMP document, like this:
 {% raw %}<link rel="canonical" href="https://www.site.com/document.html">
 {% endraw %}[/sourcecode]
 
-Now that AMP is more full-featured, unless you require additional features on your desktop page, it's easier to use AMP for both mobile and desktop. That way, you’re only maintaining one page instead of two! Nonetheless, the <link> is still required. In this case, you simply link the page to itself, like this:
+Now that AMP is more full-featured, unless you require additional features on your desktop page, it's easier to use AMP for both mobile and desktop. That way, you’re only maintaining one page instead of two! Nonetheless, the `<link>` is still required. In this case, you simply link the page to itself, like this:
 
 [sourcecode:html]
 {% raw %}<link rel="canonical" href="https://www.site.com/amp/document.html">
@@ -42,7 +42,7 @@ Using a single AMP page for all devices is called “canonical AMP”. That’s 
 
 ### The amp-boilerplate <style> tag
 
-All AMP HTML pages must also contain some default styles within the <head> tag. This styling affects the look and feel of the page until the AMP library is fully loaded. What it does, essentially, is it initially hides the content until the page is ready, that is all elements of the page are ready and AMP knows where they go and how much space they are taking up. Once this is complete, the page fades in. This way the users view the page in its final form straight away, leaving them with the perception that the page was loaded instantly. 
+All AMP HTML pages must also contain some default styles within the `<head>` tag. This styling affects the look and feel of the page until the AMP library is fully loaded. What it does, essentially, is it initially hides the content until the page is ready, that is all elements of the page are ready and AMP knows where they go and how much space they are taking up. Once this is complete, the page fades in. This way the users view the page in its final form straight away, leaving them with the perception that the page was loaded instantly. 
 
 ### Why the viewport <meta> tag?
 
@@ -61,7 +61,7 @@ You should see a simulation of how the page would look for the selected device i
 Notice the content doesn't fit well on the mobile device's screen. The “viewport” meta tag takes care of that. This tag scales our page to create the best view in the given screen size.
 Since we want our AMP pages to be optimized for mobile devices, and also be responsive, it goes without saying that this tag is required by the AMP validator.
 
-So, the following tag must be placed within the <head> tag of our AMP page. Add it below the shortcut icon link.
+So, the following tag must be placed within the `<head>` tag of our AMP page. Add it below the shortcut icon link.
 
 [sourcecode:html]
 {% raw %}<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
