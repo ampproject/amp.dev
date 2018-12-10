@@ -5,473 +5,278 @@ toc: true
 ---
 [TOC]
 
-<!---
-Copyright 2016 The AMP HTML Authors. All Rights Reserved.
+## What are components?
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+AMP is component-based web library. But what actually are components? How do they differ from HTML tags we already know about?
 
-      http://www.apache.org/licenses/LICENSE-2.0
+Components are the building blocks of websites. They represent the combination of some structure (HTML), styling (CSS), and behavior (JavaScript) with an interface that makes it easy to use in your site and share with others. Components have:
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS-IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
+* A name (eg. “amp-img”) used as the tag name to identify the component
+* Custom attributes that change the behavior, style or contents of a component (width/height, src, attribution, etc)
+* Events that can capture user inputs to the component (“on” attribute)
+* Optionally, components have “children”. This is content (text, HTML tags, or other components) that is placed between the opening and closing tags of the component. The way that these children are displayed on the page is different for each component.
+
+AMP’s component system helps you quickly build efficient and responsive features into your pages with minimal effort. The AMP library provides a list of components for you to use. There are components for building forms and carousels, for integrating page analytics, for making XHR requests to servers, and for much more. You can see the full list of available components at the the [AMP Components reference](https://www.ampproject.org/docs/reference/components).
 
 
+| `<amp-img src="IMG-URL" layout="responsive" width="640" height="480"></amp-img>` | `<amp-twitter width="486" height="657" layout="responsive" data-tweetid="ID"></amp-twitter>` | `<amp-youtube data-videoid="ID" layout="responsive" width="480" height="270"></amp-youtube>`|
+| --------- | ----------- | ----------- |
+| {{ image('/static/img/courses/beginner/image8.png', 194, 340, caption='amp-img') }} | {{ image('/static/img/courses/beginner/image6.png', 194, 340, caption='amp-twitter') }} | {{ image('/static/img/courses/beginner/image7.png', 194, 340, caption='amp-youtube') }} |
 
-Many AMP components and extensions take advantage of remote endpoints by using
-Cross-Origin Resource Sharing (CORS) requests.  This document explains the key
-aspects of using CORS in AMP.  To learn about CORS itself, see the
-[W3 CORS Spec](https://www.w3.org/TR/cors/). 
+The goal when building out your AMP sites is to use AMP components whenever possible. This maximizes the performance benefits of building an AMP page, because you don’t have to reinvent the wheel, and you can leverage the work of the AMP library authors.
 
-<div class="noshowtoc">
+Almost all AMP components are run by at least some JavaScript. For some AMP components (like the `<amp-img>`), the JavaScript is built directly into the AMP script you included in the top of your page. But for most AMP components, you need to include a separate JavaScript file in order to use the component. The purpose of requiring you to include scripts separately is that you only include the scripts you actually use in your site, and your users then only have to download the scripts necessary to browse your page. Less code to download means that your site will load quicker for your customers!
 
-* [Why do I need CORS for my own origin?](#why-do-i-need-cors-for-my-own-origin-)
-* [Utilizing cookies for CORS requests](#utilizing-cookies-for-cors-requests)
-* [CORS security in AMP](#cors-security-in-amp)
-    * [Verify CORS requests](#verify-cors-requests)
-      - [1) Allow requests for specific CORS origins](#1-allow-requests-for-specific-cors-origins)
-      - [2) Allow same-origin requests](#2-allow-same-origin-requests)
-      - [3) Restrict requests to source origins](#3-restrict-requests-to-source-origins)
-    + [Send CORS response headers](#send-cors-response-headers)
+## Our first AMP component: `<amp-img>`
 
-        * [Access-Control-Allow-Origin: &lt;origin&gt;](#access-control-allow-origin-origin)
-        * [AMP-Access-Control-Allow-Source-Origin: &lt;source-origin&gt;](#amp-access-control-allow-source-origin-source-origin)
-        * [Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin](#access-control-expose-headers-amp-access-control-allow-source-origin)
-    + [Processing state changing requests](#processing-state-changing-requests)
+Most HTML tags can be used directly in AMP, but certain tags, such as the `<img>` tag, are replaced with equivalent AMP components. The reason for this is that these components have accessibility, responsiveness and performance best practices built right in.
 
-  * [Example walkthrough: Handing CORS requests and responses](#example-walkthrough-handing-cors-requests-and-responses)
-  * [Testing CORS in AMP](#testing-cors-in-amp)
+For example, in the case of amp-img, AMP requires us to specify the dimensions of the image. The reason for this is that AMP needs to understand the layout of the page before assets (eg. images) load. This improves the user experience when your page is loading but before the image assets have been downloaded. When the images are downloaded, they can be inserted into the page without causing any existing content on the page to be moved around. This gives the AMP runtime more leeway in deciding when to load image assets based on the capabilities of the user’s device and internet connection.
 
-</div>
-
-## Why do I need CORS for my own origin?
-
-You might be confused as to why you'd need CORS for requests to your own origin,
-let's dig into that.
- 
-AMP components that fetch dynamic data (e.g., amp-form, amp-list, etc.) make
-CORS requests to remote endpoints to retrieve the data.  If your AMP page
-includes such components, you'll need to handle CORS so that those requests do
-not fail.
- 
-Let's illustrate this with an example:
- 
-Let's say you have an AMP page that lists products with prices. To update the
-prices on the page, the user clicks a button, which retrieves the latest prices
-from a JSON endpoint (done via the amp-list component). The JSON is on your
-domain.
- 
-Okay, so the page is *on my domain* and the JSON is *on my domain*.  I see no
-problem!
- 
-Ah, but how did your user get to your AMP page?  Is it a cached page they
-access? It's quite likely that your user did not access your AMP page directly,
-but instead they discovered your page through another platform. For example,
-Google Search uses the Google AMP Cache to render AMP pages quickly; these are
-cached pages that are served from the Google AMP Cache, which is a *different*
-domain. When your user clicks the button to update the prices on your page, the
-cached AMP page sends a request to your origin domain to get the prices, which
-is a mismatch between origins (cache -> origin domain). To allow for such
-cross-origin requests, you need to handle CORS, otherwise, the request fails.
-
-<amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
-  <noscript>
-    <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" />
-  </noscript>
-</amp-img>
-
-**Okay, what should I do?**
- 
-
-1.  For AMP pages that fetch dynamic data, make sure you test the cached version
-    of those pages; *don't just test on your own domain*. (See [Testing CORS in AMP](#testing-cors-in-amp) section below)
-2.  Follow the instructions in this document for handling CORS requests and
-    responses.
-
-
-## Utilizing cookies for CORS requests
-
-Most AMP components that use CORS requests either automatically set the
-[credentials mode](https://fetch.spec.whatwg.org/#concept-request-credentials-mode)
-or allow the author to optionally enable it. For example, the
-[`amp-list`](https://www.ampproject.org/docs/reference/components/amp-list)
-component fetches dynamic content from a CORS JSON endpoint, and allows the
-author to set the credential mode through the `credentials` attribute.
-
-*Example: Including personalized content in an amp-list via cookies*
-
-[sourcecode:html]
-{% raw %}<amp-list credentials="include" 
-    src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-  <template type="amp-mustache">
-    Your personal offer: ${{price}}
-  </template>
-</amp-list>
-{% endraw %}[/sourcecode]
-
-By specifying the credentials mode, the origin can include cookies in the CORS
-request and also set cookies in the response (subject to
-[third-party cookie restrictions](#third-party-cookie-restrictions)).
-
-### Third-party cookie restrictions
-
-The same third-party cookie restrictions specified in the browser also apply to
-the credentialed CORS requests in AMP. These restrictions depend on the browser
-and the platform, but for some browsers, the origin can only set cookies if the
-user has previously visited the origin in a 1st-party (top) window. Or, in other
-words, only after the user has directly visited the origin website itself. Given
-this, a service accessed via CORS cannot assume that it will be able to set
-cookies by default.
-
-## CORS security in AMP
-
-To ensure valid and secure requests and responses for your AMP pages, you must:
-
-1. [Verify the request](#verify-cors-requests).
-2. [Send the appropriate response headers](#send-cors-response-headers).
-
-
-### Verify CORS requests
-
-When your endpoint receives a CORS request:
- 
-
-1. [Verify that the CORS <code>Origin</code> header is an allowed origin (publisher's origin + AMP caches)](#verify-cors-header).
-2.  [If there isn't an Origin header, check that the request is from the same origin (via `AMP-Same-Origin`)](#allow-same-origin-requests). 
-3.  [If the request is a state change (e.g., POST), check that the origin is from the source origin (via `__amp_source_origin`)](#restrict-requests-to-source-origins).
-
-
-#### 1) Allow requests for specific CORS origins
-<span id="verify-cors-header"></span>
-
-CORS endpoints receive the requesting origin via the `Origin` HTTP header.
-Endpoints should restrict requests to allow only the following origins:
-
-*  From AMP caches:
-      *  Google AMP Cache subdomain: `https://<publisher's subdomain>.cdn.ampproject.org` <br>(for example, `https://nytimes-com.cdn.ampproject.org`)
-      *  Google AMP Cache (legacy): `https://cdn.ampproject.org`
-      *  Cloudflare AMP Cache: `https://<publisher's domain>.amp.cloudflare.com`
-*  From the publisher’s own origins
-
+You can really see why AMP is so powerful! It’s taking a lot of factors into account on your behalf, so all you have to worry about is building out the page that’s best for your users.
 
 [tip type="read-on"]
-For information on AMP Cache URL formats, see these resources:
-
-- [Google AMP Cache Overview](https://developers.google.com/amp/cache/overview)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+If you want to know more about AMP’s automatic optimizations, you can read about lazy-loading and pre-rendering in AMP in the appendix.
 [/tip]
 
+To use the component and to resolve the `<amp-img>` validation error from earlier, we need to replace the existing img tag in our page with the AMP equivalent. To do that, instead of `<img …>` write `<amp-img…>` and give your image fixed dimensions. Give the image a `width` of `640` and a `height` of `480`.
 
-#### 2) Allow same-origin requests
-<span id="allow-same-origin-requests"></span>
+The result should look like this:
 
-For same-origin requests where the `Origin` header is missing, AMP sets the
-following custom header: 
+[sourcecode:html]
+{% raw %}<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fricotta-racer.jpg?1540228217746" width=”640” height="480"></amp-img>
+{% endraw %}[/sourcecode]
 
-[sourcecode:text]
-AMP-Same-Origin: true
-[/sourcecode]
+Look at the live page. The AMP Validator should now report no validation errors!
 
-This custom header is sent by the AMP Runtime when an XHR request is made on
-the same origin (i.e., document served from a non-cache URL). Allow requests
-that contain the `AMP-Same-Origin:true` header.
+## Arranging and Sizing Components in AMP
 
-#### 3) Restrict requests to source origins
-<span id="restrict-requests-to-source-origins"></span>
+However, now there is a problem with how our page looks. You won’t notice it on a large desktop monitor, but it is instantly apparent what’s wrong when we look at the site on a mobile device.
 
-In all fetch requests, the AMP Runtime passes the `"__amp_source_origin"` query
-parameter, which contains the value of the source origin (for example,
-`"https://publisher1.com"`). 
- 
-To restrict requests to only source origins, check that the value of the
-`"__amp_source_origin"` parameter is within a set of the Publisher's own
-origins. 
+{{ image('/static/img/courses/beginner/image15.png', 194, 340, caption='The image of the bicycle runs off the edge of the screen') }}
 
-### Send CORS response headers
+Notice that the image doesn’t shrink to fit smaller screens; it simply runs off the side of the page. This is because if we do not specify a strategy for laying out the image and resizing it, it’s going to default to a fixed width and height as we specified in our code. We can fix this issue using AMP's layout system.
 
-After verifying the CORS request, the resulting HTTP response must contain the following headers:
- 
-##### Access-Control-Allow-Origin: &lt;origin&gt;
+We are going to give our image a `layout` of type `responsive` so that it automatically scales as the window is resized. The responsive layout causes the image to assume the dimensions of the parent container, all while respecting the original aspect ratio. If the parent container is only 320 pixels wide, then the image will maintain its aspect ratio and be resized to 320x240 (instead of 640x480). Add the layout attribute to our images. If done correctly, it will looks something like this:
 
-This header is a <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a> requirement, where <code>origin</code> refers to the requesting origin that was allowed via the CORS <code>Origin</code> request header (for example, <code>"https://&lt;publisher's subdomain>.cdn.ampproject.org"</code>).
+[sourcecode:html]
+{% raw %}<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fricotta-racer.jpg?1540228217746" layout="responsive" width="640" height="480"></amp-img>
+{% endraw %}[/sourcecode]
 
-Although the W3 CORS spec allows the value of <code>*</code> to be returned in the response, for improved security, you should:
+After you have made the changes, look at your page. Voila! Our image has the correct aspect ratio and responsively fills the width of the screen.
 
+{{ image('/static/img/courses/beginner/image14.png', 194, 340, caption='Image of bicycle with correct aspect ratio') }}
 
-* If the `Origin` header is present, validate and echo the value of the <code>`Origin`</code> header.
-* If the `Origin` header isn't present, validate and echo the value of the <code>"__amp_source_origin"</code>.
+Learning how to use layout system is critical to becoming a successful AMP developer. All of the layouts that AMP gives you to choose between can be implemented using plain CSS, but often they can be difficult to implement or have tricky edge cases that require deep knowledge to work around. AMP exposes many of these layout options to be used on any element in your AMP page. Check out the [official documentation](https://www.ampproject.org/docs/design/responsive_amp) for more information about the layout system.
 
-##### AMP-Access-Control-Allow-Source-Origin: &lt;source-origin&gt;
+[tip type="tip"]
+Try selecting different mobile devices from the dropdown menu (see screenshot below) to see how the image adapts to different screen sizes. It is good practice to test your site on different screen sizes. Browsers on actual mobile devices may behave differently, so, when possible, test your webpage on real devices.
 
-This header allows the specified <code>source-origin</code> to read the authorization response. The <code>source-origin</code> is the value specified and verified in the <code>"__amp_source_origin"</code> URL parameter (for example, <code>"https://publisher1.com"</code>).
-
-##### Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
-
-This header simply allows the CORS response to contain the <code>AMP-Access-Control-Allow-Source-Origin</code> header.</dd>
-
-### Processing state changing requests
-
-[tip type="important"]
-Perform these validation checks *before* you process the request. This validation helps to provide protection against CSRF attacks, and avoids processing untrusted sources requests.
+{{ image('/static/img/courses/beginner/image18.png', 200, 200, caption='Dropdown list of devices in Chrome') }}
 [/tip]
- 
-Before processing requests that could change the state of your system (for
-example, a user subscribes to or unsubscribes from a mailing list), check the
-following:
-
-**If the `Origin` header is set**:
- 
-
-1.  If the origin does not match one of the following values, stop and return an error
-    response:
-
-    - `*.ampproject.org`
-    - `*.amp.cloudflare.com`
-    - the publisher's origin (aka yours)
-    
-    where `*` represents a wildcard match, and not an actual asterisk ( * ).
-    
-2.  If the value of the `__amp_source_origin` query parameter is not the
-    publisher's origin, stop and return an error response.
-3.  If the two checks above pass, process the request. 
-
-**If the `Origin` header is NOT set**:
- 
-
-1.  Verify that the request contains the `AMP-Same-Origin: true` header. If the
-    request does not contain this header, stop and return an error response.
-2.  Otherwise, process the request.
-
-## Example walkthrough: Handing CORS requests and responses
-
-There are two scenarios to account for in CORS requests to your endpoint:
-
-1.  A request from the same origin.
-2.  A request from a cached origin (from an AMP Cache).
-
-Let's walk though these scenarios with an example. In our example, we manage the `example.com` site that hosts an AMP page named `article-amp.html.`The AMP page contains an `amp-list` to retrieve dynamic data from a `data.json` file that is also hosted on `example.com`.  We want to process requests to our `data.json` file that come from our AMP page.  These requests could be from the AMP page on the same origin (non-cached) or from the AMP page on a different origin (cached).
-
-<amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
-  <noscript>
-    <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" />
-  </noscript>
-</amp-img>
-
-### Allowed origins
-
-Based on what we know about CORS and AMP (from [Verify CORS requests](#verify-cors-requests) above), for our example we will allow requests from the following domains:
-
-* `example.com` ---  Publisher's domain
-* `example-com.cdn.ampproject.org` --- Google AMP Cache subdomain
-* `example.com.amp.cloudflare.com`--- Cloudflare AMP Cache subdomain
-* `cdn.ampproject.org` --- Google's legacy AMP Cache domain
-
-### Response headers for allowed requests
-
-For requests from the allowed origins, our response will contain the following headers:
-
-[sourcecode:text]
-Access-Control-Allow-Origin: <origin>
-AMP-Access-Control-Allow-Source-Origin: <source-origin>
-Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
-[/sourcecode]
-
-These are additional response headers we might include in our CORS response:
-
-[sourcecode:text]
-Access-Control-Allow-Credentials: true
-Content-Type: application/json
-Access-Control-Max-Age: <delta-seconds>
-Cache-Control: private, no-cache
-[/sourcecode]
-
-### Pseudo CORS logic
-
-Our logic for handling CORS requests and responses can be simplified into the following pseudo code:
-
-[sourcecode:text]
-IF CORS header present
-   IF origin IN allowed-origins AND sourceOrigin = publisher
-      allow request & send response
-   ELSE
-      deny request
-ELSE
-   IF "AMP-Same-Origin: true"
-      allow request & send response
-   ELSE
-      deny request
-[/sourcecode]
-
-#### CORS sample code
-
-Here's a sample JavaScript function that we could use to handle CORS requests and responses:
-
-[sourcecode:javascript]
-function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var origin;
-  var allowedOrigins = [
-     "https://example.com",
-     "https://example-com.cdn.ampproject.org",
-     "https://example.com.amp.cloudflare.com",
-     "https://cdn.ampproject.org" ];
-  var allowedSourceOrigin = "https://example.com";  //publisher's origin
-  var sourceOrigin = req.query.__amp_source_origin;
 
+## Cycling through images using <amp-carousel>
+A carousel is an element containing a set of items that can be scrolled through like a slideshow. 
+The AMP implementation of a carousel is the component, amp-carousel. This component is not built-in, so you will need to add it’s script in the page's `<head>`.
+
+Look at the documentation of `<amp-carousel>` for a moment. You will notice a few things:
+* The required script tag - This is the tag that we need to add to the head, so that it works!
+* The supported layouts - We briefly discussed the layout attribute in a previous section. It controls the way the element is rendered on the screen and makes our life easier.
+* The list of attributes - We talked about custom attributes in the previous section on web components. These allow us to customize our AMP component in certain ways.
+
+You are going to see each of these things in documentation for almost all AMP components. Let’s explore the documentation using one its examples:
+
+[sourcecode:html]
+{% raw %} <amp-carousel id="carousel-with-preview"
+    width="450"
+    height="300"
+    layout="responsive"
+    type="slides">
+    <amp-img src="images/image1.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="apples"></amp-img>
+    <amp-img src="images/image2.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="lemons"></amp-img>
+    <amp-img src="images/image3.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="blueberries"></amp-img>
+  </amp-carousel>
+{% endraw %}[/sourcecode]
+
+We see that this carousel has three images inside of it that users can slide between. The attributes of this carousel component instance (id, width, height, layout, and type) are split into three groups: [attributes common to all HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) (id), [attributes common to all AMP components](https://www.ampproject.org/docs/reference/common_attributes) (width, height, layout), and attributes unique to the carousel component (type).
+
+In the documentation for amp-carousel, we see a listing for “type” in the list of attributes for the component. It shows that the valid inputs for type include “slides” and “carousel”. Notice that the default value for type is “carousel”. That means that `<amp-carousel>...</amp-carousel>` and `<amp-carousel type=”carousel”>...</amp-carousel>` are equivalent expressions. This is useful, because with components that have many attributes, you don’t need to include every one of them if you just want to use the default value!
 
-  // If same origin
-  if (req.headers['amp-same-origin'] == 'true') {
-      origin = sourceOrigin;
-  // If allowed CORS origin & allowed source origin
-  } else if (allowedOrigins.indexOf(req.headers.origin) != -1 &&
-      sourceOrigin == allowedSourceOrigin) {
-      origin = req.headers.origin;
-  } else {
-      res.statusCode = 401;
-      res.end(JSON.stringify({message: unauthorized}));
-      throw unauthorized;
-  }
+[tip type="read-on"]
+ Some attributes do not require a value at all. These are called [boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes). In these cases, the attribute has a default value of false and has a value of true when attached to an element or component. For example, `<input type=”checkbox” disabled>` means that the disabled attribute has a value of true, indicating the checkbox should be disabled. Absence of the disabled attribute gives it the default value of false and means the input is enabled.
+[/tip]
 
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', origin);
-  res.setHeader('Access-Control-Expose-Headers',
-      ['AMP-Access-Control-Allow-Source-Origin']
-          .concat(opt_exposeHeaders || []).join(', '));
-  res.setHeader('AMP-Access-Control-Allow-Source-Origin', sourceOrigin);
+There are many other custom attributes that can be used with the amp-carousel component. It’s useful when using an AMP component for the first time to spend some time looking through the documentation to see all the ways that you can customize the appearance or behavior of the component through attributes.
 
-}
-[/sourcecode]
+Let’s practice using the documentation to add an amp-carousel to our project. In our project, add a carousel under the `<p class="main-text">` element with the following settings:
 
-**Note**: For a working code sample, see [app.js](https://github.com/ampproject/amphtml/blob/master/build-system/app.js#L1199).
+* Give the carousel a responsive layout
+* Give the carousel a type of slides
+* Add three images to the carousel: assets/cheddar-chaser.jpg, assets/cheese.jpg, and assets/mouse.jpg
+* Make the carousel images able to loop back to the beginning if a user tries to advance beyond the last slide
+* Give each image a responsive layout
 
-### Scenario 1:  Get request from AMP page on same origin
+Recommended style guidelines:
+* Give the carousel a width of 412 and a height of 309
+* Give each image a width of 412 and a height of 309
+
+After you have made the changes, look at the live page and see how you did!
+
+You should be looking at something like this:
+
+{{ image('/static/img/courses/beginner/image13.png', 194, 340, caption='The carousel in our page') }}
 
-In the following scenario, the `article-amp.html` page requests the `data.json` file; the origins are the same.
+Here is how the code you added might look in your project:
 
-<amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
-  <noscript>
-    <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" />
-  </noscript>
-</amp-img>
+[sourcecode:html]
+{% raw %}<amp-carousel layout="responsive" width="412" height="309" 
+        type="slides" loop>
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366" width="412" height="309"
+        layout="responsive"></amp-img>
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785" width="412" height="309"
+        layout="responsive"></amp-img>
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963" width="412" height="309"
+        layout="responsive"></amp-img>
+</amp-carousel>
+{% endraw %}[/sourcecode]
 
-If we examine the request, we'll find:
+Remember to include the `amp-carousel` script in the `<head>`:
 
-[sourcecode:text]
-Request URL: https://example.com/data.json?__amp_source_origin=https%3A%2F%2Fexample.com
-Request Method: GET
-AMP-Same-Origin: true
-[/sourcecode]
+[sourcecode:html]
+{% raw %}<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<link rel="canonical" href="https://www.site.com/amp/document.html">
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+{% endraw %}[/sourcecode]
 
-As this request is from the same origin, there is no `Origin` header but the custom AMP request header of `AMP-Same-Origin: true` is present.  In the request URL, we can find the source origin through the `__amp_source_origin` query parameter.  We can allow this request as it's from the same origin.
+## Embedding YouTube videos with `<amp-youtube>`
 
-Our response headers would be:
+Let’s embed a YouTube video in the document to get people excited about our site! The procedure will be similar to the way we added `<amp-carousel>`. Use the [amp-youtube documentation](https://www.ampproject.org/docs/reference/components/amp-youtube) to embed a YouTube video under the carousel element with the following settings (again, don't forget to add the script to the `<head>`):
+* Set the video id to `BlpMQ7fMCzA`
+* Make the video layout responsive
 
-[sourcecode:text]
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Origin: https://example.com
-Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
-AMP-Access-Control-Allow-Source-Origin: https://example.com
-[/sourcecode]
+Recommended style guidelines:
+* Set the element width to 480 and the height to 270
 
-### Scenario 2:  Get request from cached AMP page
+After you have made the changes, look at your page. You should now see the YouTube video:
 
-In the following scenario, the `article-amp.html` page cached on the Google AMP Cache requests the `data.json` file; the origins differ.
+{{ image('/static/img/courses/beginner/image9.png', 194, 340, caption='Image of the YouTube video in the page') }}
 
-<amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
-  <noscript>
-    <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" />
-  </noscript>
-</amp-img>
+[sourcecode:html]
+{% raw %}<amp-youtube data-videoid="BlpMQ7fMCzA" layout="responsive" width="480" height="270"></amp-youtube>
+{% endraw %}[/sourcecode]
 
-If we examine this request, we'll find:
+Remember to include the `amp-youtube` script in the `<head>`:
 
-[sourcecode:text]
-Request URL: https://example.com/data.json?__amp_source_origin=https%3A%2F%2Fexample.com
-origin: https://example-com.cdn.ampproject.org
-Request Method: GET
-[/sourcecode]
+[sourcecode:html]
+{% raw %}<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<link rel="canonical" href="https://www.site.com/amp/document.html">
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+{% endraw %}[/sourcecode]
 
-As this request contains an `Origin` header, we'll verify that it's from an allowed origin.  In the request URL, we can find the source origin through the `__amp_source_origin` query parameter.  We can allow this request as it's from an allowed origin.
+[tip type="read-on"]
+In addition to the <amp-youtube> component, AMP also includes support for other video players. Check out "[Integrating Videos in AMP an Overview](https://ampbyexample.com/advanced/integrating_videos_in_amp_an_overview/)" on AMP by Example.
+[/tip]
 
-Our response headers would be:
+## Displaying social media posts with <amp-twitter>
 
-[sourcecode:text]
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org
-Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
-AMP-Access-Control-Allow-Source-Origin: https://example.com
-[/sourcecode]
+You should, by now, start to feel comfortable adding simple AMP components to your application. We’re going to keep going by adding a Twitter post callout to our site.
 
-## Testing CORS in AMP
+First let's make a new heading to organize the page nicely. Add the following snippet just below the `amp-youtube` component:
 
-When you are testing your AMP pages, make sure to include tests from the cached versions of your AMP pages.
+[sourcecode:html]
+{% raw %}<h2 class="main-heading">Chico's Cheese Bicycles says</h2>{% endraw %}[/sourcecode]
 
-### Verify the page via the cache URL
+Using your experience so far and the [amp-twitter documentation](https://www.ampproject.org/docs/reference/components/amp-twitter), embed a tweet below the new heading with the following settings:
+* Set the tweet id to `944269037327892481`
+* Make the tweet responsive
 
-To ensure your cached AMP page renders and functions correctly:
+Recommended style guidelines:
+* Set the `width` to `486` and the `height` to `657`
 
-1.  From your browser, open the URL that the AMP Cache would use to access your AMP page. You can determine the cache URL format from this [tool on AMP By Example](https://ampbyexample.com/advanced/using_the_google_amp_cache/).
+After you have made the changes look at the live version of your page. You should see the tweet appear:
 
-    For example:
+{{ image('/static/img/courses/beginner/image4.png', 194, 340, caption='Image of tweet embedded in the page') }}
 
-    * URL: `https://www.ampproject.org/docs/tutorials/create.html`
-    * AMP Cache URL format: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
+Solution:
 
-1.  Open your browser's development tools and verify that there are no errors and that all resources loaded correctly.
+[sourcecode:html]
+{% raw %}<h2 class="main-heading">Chico's Cheese Bicycles says</h2>
+<amp-twitter width="486" height="657" layout="responsive"
+  data-tweetid="944269037327892481">
+</amp-twitter>
+{% endraw %}[/sourcecode]
 
-### Verify your server response headers
+Remember to include the `amp-twitter` script in the `<head>`:
 
-You can use the `curl` command to verify that your server is sending the correct HTTP response headers.  In the `curl` command, provide the request URL and any custom headers you wish to add.
+[sourcecode:html]
+{% raw %}<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<link rel="canonical" href="https://www.site.com/amp/document.html">
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+{% endraw %}[/sourcecode]
 
-**Syntax**:  `curl <request-url> -H <custom-header> - I`
+## Adding social sharing buttons
 
-For CORS requests in AMP, be sure to add the  `__amp_source_origin=` query parameter to the request URL, which emulates what the AMP system does.
+Social media links are present in many web pages we visit today. AMP provides us with ready-made link-buttons that, once configured, will allow users to share your page on their social media with a single click, helping you grow your user engagement.
 
-#### Test request from same origin
+As we have been doing, using the AMP documentation, your task is now to add buttons below the amp-twitter component that let the user share our page with a single click. The twist is that instead of linking to the specific component we’re going to use, you will need to navigate and search within the [AMP Components Reference](https://www.ampproject.org/docs/reference/components) to find the relevant AMP component (Hint: the title of this section should help you find what you’re looking for).
 
-In a same-origin request, the AMP system adds the custom `AMP-Same-Origin:true` header.
+Once you have located the correct component, click the name of the component to access its documentation, and use that documentation to add components that:
+* Gives the user the option to share your page on the following platforms: Email, Facebook, Google Plus, and Twitter.
+* Has the Facebook `data-param-app_id` of `533464587051336`
 
-Here's our curl command for testing a request from `https://ampbyexample.com` to the `examples.json` file (on the same domain):
+Recommended style guidelines:
+* Wrap the AMP components in a `div` with a `social-bar` class
+* Give each AMP component a `width` and `height` of `44`
 
-[sourcecode:shell]
-curl 'https://ampbyexample.com/json/examples.json?__amp_source_origin=https%3A%2F%2Fampbyexample.com' -H 'AMP-Same-Origin: true' -I
-[/sourcecode]
+After you have completed this task, your page should contain buttons for the user to share your site:
 
-The results from the command show the correct response headers (note: extra information was trimmed):
+{{ image('/static/img/courses/beginner/image16.png', 194, 340, caption='Social media buttons embedded in the page') }}
 
-[sourcecode:text]
-HTTP/2 200
-access-control-allow-headers: Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token
-access-control-allow-credentials: true
-access-control-allow-origin: https://ampbyexample.com
-amp-access-control-allow-source-origin: https://ampbyexample.com
-access-control-allow-methods: POST, GET, OPTIONS
-access-control-expose-headers: AMP-Access-Control-Allow-Source-Origin
-[/sourcecode]
+Solution:
 
-#### Test request from cached AMP page
+[sourcecode:html]
+{% raw %}<div class="social-bar">
+  <amp-social-share type="email" width="44" height="44"></amp-social-share>
+  <amp-social-share type="facebook" width="44" height="44"
+      data-param-app_id="533464587051336"></amp-social-share>
+  <amp-social-share type="gplus" width="44" height="44"></amp-social-share>
+  <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
+</div>
+{% endraw %}[/sourcecode]
 
-In a CORS request not from the same domain (i.e., cache), the `origin` header is part of the request.
+Remember to include the `amp-social-share` script in the `<head>`:
 
-Here's our curl command for testing a request from the cached AMP page on the Google AMP Cache to the `examples.json` file:
+[sourcecode:html]
+{% raw %}<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<link rel="canonical" href="https://www.site.com/amp/document.html">
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+{% endraw %}[/sourcecode]
 
-[sourcecode:shell]
-curl 'https://ampbyexample.com/json/examples.json?__amp_source_origin=https%3A%2F%2Fampbyexample.com' -H 'origin: https://ampbyexample-com.cdn.ampproject.org' -I
-[/sourcecode]
 
-The results from the command show the correct response headers:
 
-[sourcecode:text]
-HTTP/2 200
-access-control-allow-headers: Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token
-access-control-allow-credentials: true
-access-control-allow-origin: https://ampbyexample-com.cdn.ampproject.org
-amp-access-control-allow-source-origin: https://ampbyexample.com
-access-control-allow-methods: POST, GET, OPTIONS
-access-control-expose-headers: AMP-Access-Control-Allow-Source-Origin
-[/sourcecode]
