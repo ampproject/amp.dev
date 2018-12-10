@@ -20,3 +20,8 @@ So far, we’ve mentioned that it’s important for our sites to have no AMP val
 The AMP cache is a content-delivery network (CDN) that helps your users get quicker, more reliable access to your AMP content. This means that your pages are stored under a new URL belonging to an [AMP Cache provider](https://www.ampproject.org/docs/fundamentals/how_cached), which will serve your page faster. Additionally, pages that are stored in the AMP cache are processed through several additional automatic performance optimizations that improve the performance of your sites even more.
 
 For your AMP page to be hosted in an [AMP Cache](https://developers.google.com/amp/cache/overview), it must pass validation. Making sure your AMP pages are valid is crucial to the optimization of your pages’ performance. After your site is deployed and discovered by the web crawlers that look for pages on behalf of search engines, AMP pages that have no validation errors are automatically discovered and cached by the AMP caching system. You don’t have to do anything to get these powerful performance optimizations! That’s the power of the AMP system!
+
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/thinking-in-components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/what-comes-next.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+</div>

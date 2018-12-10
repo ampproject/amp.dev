@@ -22,3 +22,15 @@ The following are some additional topics and links you might want to explore to 
 * [Restricted CSS Rules & Animations](https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles)
 * [The AMP CDN](https://www.ampproject.org/docs/get_started/about-amp.html#amp-cdn)
 * [List of available AMP Components](https://www.ampproject.org/docs/reference/extended.html)
+
+### Got Questions?
+
+<div class="prev-next-buttons">
+  <a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/frequently-asked-questions.md', locale=doc.locale).url.path}}"><span class="arrow-next">Read our FAQ</span></a>
+</div>
+
+### Want to try your new skills? 
+
+<div class="prev-next-buttons">
+  <a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/exercises.md', locale=doc.locale).url.path}}"><span class="arrow-next">Jump to our exercises!</span></a>
+</div>

@@ -125,3 +125,8 @@ This is a really important error! Some HTML tags are not allowed in AMP document
 [tip type="tip"]
 If our page was empty, we would now have a valid AMP site. You can start all your future AMP pages using this HTML here as a starting point. It contains all the required tags and elements we talked about.
 [/tip]
+
+<div class="prev-next-buttons">
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/course-introduction.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/thinking-in-components.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+</div>
