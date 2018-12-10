@@ -1,6 +1,6 @@
 ---
 $title: Advanced Course
-$path: /documentation/guides-and-tutorials/courses/spec/amp-html-layout.html
+$path: /documentation/guides-and-tutorials/courses/advanced-course/index.html
 $order: 0
 toc: true
 ---
