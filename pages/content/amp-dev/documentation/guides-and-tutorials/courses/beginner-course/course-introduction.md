@@ -66,7 +66,9 @@ You can click on [this link](https://nice-consonant.glitch.me/) to see a live pr
 
 This site is a collection of features we see on many sites online today. This site was built entirely using AMP, and over the course of these lessons, you’re going to build this site yourself as well.
 
-Let’s dive in!
+<div class="prev-next-buttons">
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/our-first-amp-page.md', locale=doc.locale).url.path}}"><span class="arrow-next">Let’s dive in!</span></a>
+</div>
 
 
 [tip type="important"]

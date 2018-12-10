@@ -36,4 +36,8 @@ AMP provides tools to handle many of the challenges of building modern websites,
 
 The skills acquired and patterns learned while building AMP pages can be transferred to building websites in any other format or framework. Like most modern frameworks, AMP is a component-based approach to designing and building websites. There is a large library of existing AMP components that help developers rapidly build performant web experiences without having to write a lot of custom code. Developers will learn to develop websites with recognized best practices for using HTML and CSS, start thinking in components, and will learn to avoid bad habits - skills that will be effective when building sites in any other framework.
 
-So, what are you waiting for? Let’s get started!
+So, what are you waiting for? 
+
+<div class="prev-next-buttons">
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/course-introduction.md', locale=doc.locale).url.path}}"><span class="arrow-next">Let’s get started!</span></a>
+</div>
