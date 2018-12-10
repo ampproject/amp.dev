@@ -109,7 +109,7 @@ The `amp-carousel` component is designed to be performant; it lazy-loads images 
 
 ## More on the AMP Cache
 
-A quick explanation of AMP Cache is the following “[The Google AMP Cache serves cached copies of valid AMP content published to the web.](https://developers.google.com/amp/cache/overview)” In short, once Google (or another search engine which has an AMP cache, like Microsoft and Bing) discovers a valid AMP page, then it stores a copy of it in its cache.
+A quick explanation of AMP Cache is the following “[The Google AMP Cache serves cached copies of valid AMP content published to the web.](https://developers.google.com/amp/cache/overview)” In short, once Google (or another search engine which has an AMP cache, like Microsoft and Bing) discovers a valid AMP page, then it stores a copy of it in its cache.@Bilal how is the open source website for applitools? can we get it published now?
 
 Doing this, it passes your page through an number of optimization functions. In short, after it validates your content, it caches images, fonts and AMP documents. It then limits maximum image dimensions and does some transformations to your images via the amp-img tag, like removing metadata, converting images to smaller, mobile-friendlier formats, generating alternate versions for different screen sizes. Finally, it also sanitizes your HTML and CSS.
 
