@@ -1,6 +1,6 @@
 $view: /views/detail/docs-detail.j2
-$path: /documentation/guides-and-tutorials/courses/amp-caches-and-cors/{base}.html
+$path: /documentation/guides-and-tutorials/courses/beginner-course/{base}.html
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/courses/amp-caches-and-cors/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/courses/beginner-course/{base}.html
 $title@: Beginner Course
 $order: 0

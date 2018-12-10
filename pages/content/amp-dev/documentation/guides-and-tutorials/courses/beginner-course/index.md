@@ -1,7 +1,7 @@
 ---
 $title: Beginner Course
 $order: 0
-$path: /documentation/guides-and-tutorials/courses/amp-caches-and-cors/how-cached.html
+$path: /documentation/guides-and-tutorials/courses/beginner-course/index.html
 toc: true
 ---
 

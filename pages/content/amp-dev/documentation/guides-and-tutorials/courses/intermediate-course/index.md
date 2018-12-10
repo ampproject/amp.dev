@@ -1,5 +1,5 @@
 ---
-$path: /documentation/guides-and-tutorials/courses/amphtml_ads/index.html
+$path: /documentation/guides-and-tutorials/courses/intermediate-course/index.html
 $title: Intermediate Course
 $order: 0
 toc: true
