@@ -1,6 +1,6 @@
 ---
-$title: "AMPHTML ad specification"
-$order: 3
+$title: Intermediate Course Exercises
+$order: 2
 toc: true
 ---
 [TOC]

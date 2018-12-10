@@ -1,5 +1,5 @@
 ---
-$title: "AMP HTML Layout System"
+$title: Advanced Course
 $path: /documentation/guides-and-tutorials/courses/spec/amp-html-layout.html
 $order: 0
 toc: true

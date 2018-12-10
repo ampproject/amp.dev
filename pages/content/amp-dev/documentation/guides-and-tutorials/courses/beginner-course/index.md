@@ -1,5 +1,5 @@
 ---
-$title: How AMP pages are cached
+$title: Beginner Course
 $order: 0
 $path: /documentation/guides-and-tutorials/courses/amp-caches-and-cors/how-cached.html
 toc: true

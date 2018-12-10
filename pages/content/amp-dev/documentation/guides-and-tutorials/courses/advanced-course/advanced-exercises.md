@@ -1,15 +1,19 @@
 ---
-$title: AMP 레이아웃 살펴보기
+$title: Advanced Course Exercises
+$order: 1
+stylesheet: pages/layouts.css
+components:
+    - selector
 ---
 
-이 페이지는 서로 다른 [AMP 안의 레이아웃](/docs/design/amp-html-layout.html#layout)과 스크린이 리사이즈될 때 어떻게 동작하는 지 보여줍니다.
-
+This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layout.html#layout), and how they work when a screen is resized.
+ 
 <div class="layouts">
 
   <!-- fill -->
   <div class="layout-item">
     <h3>fill</h3>
-     <div class="description"><code>fill</code> 레이아웃을 사용하면 요소는 width와 height 모두 사용할 수 있는 공간을 사용합니다. 즉 fill 요소의 레이아웃과 크기는 해당 부모와 일치합니다.</div>
+     <div class="description">With a <code>fill</code> layout, the element takes the space available to it—both width and height. In other words, the layout and size of a fill element matches its parent.</div>
     <div class="fixed-container">
       <div class="parent">
         <div class="wrapper">
@@ -22,7 +26,7 @@ $title: AMP 레이아웃 살펴보기
   <!-- fixed -->
   <div class="layout-item">
     <h3>fixed</h3> 
-    <div class="description"><code>fixed</code> 레이아웃을 사용하면 요소는 요소의 width 및 height 속성을 기반으로 고정된 크기를 유지합니다. (반응형 없음)</div>
+    <div class="description">With a <code>fixed</code> layout, the element retains its fixed dimensions based on the element's width and height attributes (no responsiveness).</div>
     <div class="fixed-container">
       <div class="parent">
         <div class="wrapper">
@@ -38,7 +42,7 @@ $title: AMP 레이아웃 살펴보기
   <!-- fixed-height -->
   <div class="layout-item">
     <h3>fixed-height</h3>
-    <div class="description"><code>fixed-height</code> 레이아웃을 사용하면 요소는 사용 가능한 공간을 사용하지만 높이는 변경되지 않습니다. 이 레이아웃은 콘텐츠를 수평으로 배치해야하는 요소에 적합합니다. (예: <code>amp-carousel</code>)</div>
+    <div class="description">With a <code>fixed-height</code> layout, the element takes the space available to it but keeps the height unchanged. This layout works well for elements that need to position content horizontally (e.g., <code>amp-carousel</code>).</div>
     <div class="fixed-container">
       <div class="parent">
         <div class="wrapper">
@@ -53,7 +57,7 @@ $title: AMP 레이아웃 살펴보기
   <!-- flex-item -->
   <div class="layout-item">
     <h3>flex-item</h3> 
-    <div class="description"><code>flex-item</code> 레이아웃을 사용하면 부모 요소 내의 요소 및 다른 요소가 플렉스박스 모델 기반으로 사용 가능한 공간을 차지합니다.</div>
+    <div class="description">With a <code>flex-item</code> layout, the element and other elements in its parent will take the available space based on the flexbox model.</div>
     <div class="fixed-container">
       <div class="parent">
         <div class="wrapper">
@@ -70,7 +74,7 @@ $title: AMP 레이아웃 살펴보기
   <!-- responsive -->
   <div class="layout-item">
     <h3>responsive</h3>
-    <div class="description"><code>responsive</code> 레이아웃을 사용하면 요소가 사용할 수 있는 공간을 사용하고 요소의 width 및 height 속성으로 지정된 종횡비로 높이를 자동으로 조정합니다.</div>
+    <div class="description">With a <code>responsive</code> layout, the element takes the space available to it and resizes its height automatically to the aspect ratio specified by the element's width and height attributes.</div>
     <div class="fixed-container">
       <div class="parent">
         <div class="wrapper">
@@ -86,7 +90,7 @@ $title: AMP 레이아웃 살펴보기
   <!-- intrinsic-->
   <div class="layout-item">
     <h3>intrinsic</h3> 
-    <div class="description"><code>intrinsic</code> 레이아웃을 사용하면 요소의 width 및 height 속성으로 정의된 종횡비에 따라 요소의 원래 크기에 도달하거나 CSS 제약 조건에 도달할 때까지 요소의 사용 가능한 공간을 가져와서 크기를 자동으로 조정합니다.</div>
+    <div class="description">With an <code>intrinsic</code> layout, the element takes the space available to and resizes its height automatically to the aspect ratio given by the width and height attributes <em>until</em> it reaches the element's natural size or reaches a CSS constraint.</div>
     <div class="fixed-container">
       <div class="parent">
         <div class="wrapper">
@@ -102,7 +106,7 @@ $title: AMP 레이아웃 살펴보기
   <!-- container -->
   <div class="layout-item">
     <h3>container</h3> 
-    <div class="description"><code>container</code> 레이아웃을 사용하면 일반 HTML <code>div</code> 태그처럼 그 자식요소로 크기를 정합니다. 요소가 특정한 레이아웃을 가지고 있다고 가정했을 때 container처럼 동작합니다.</div>
+    <div class="description">With a <code>container</code> layout, the element lets its children define its size, much like a normal HTML <code>div</code> tag. The element is assumed to not have specific layout itself but only acts as a container.</div>
     <div class="fixed-container">
       <div class="parent">
         <div class="wrapper">
@@ -119,7 +123,7 @@ $title: AMP 레이아웃 살펴보기
   <!-- nodisplay -->
   <div class="layout-item">
     <h3>nodisplay</h3>
-    <div class="description"><code>nodisplay</code> 레이아웃을 사용하면 요소가 보이지 않습니다. 요소는 공간을 가지지 않으며 display 스타일이 <code>none</code>인 것 처럼 동작합니다.</div>
+    <div class="description">With a <code>nodisplay</code> layout, the element doesn't displayed. The element takes up zero space on the screen as if its display style was <code>none</code>.</div>
     <div class="fixed-container">
       <div class="parent">
         <div class="wrapper">
