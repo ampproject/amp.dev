@@ -25,11 +25,7 @@ To complete the code examples included in these courses, we will be using [Glitc
 
 The Glitch code editor environment looks like this:
 
-<amp-img alt="Glitch Environment" layout="responsive" src="https://lh5.googleusercontent.com/wQBsOaI64fDJTh5D3Ah9k37_MibgM2ZmQ-PXt1RQOtLxnQNXKKqNM82XVIu9t_0c-GB1hjkVBrcAJwInyIgM=w1334-h888-rw" width="1024" height="768">
-  <noscript>
-    <img alt="Glitch Environment" src="https://lh5.googleusercontent.com/wQBsOaI64fDJTh5D3Ah9k37_MibgM2ZmQ-PXt1RQOtLxnQNXKKqNM82XVIu9t_0c-GB1hjkVBrcAJwInyIgM=w1334-h888-rw" />
-  </noscript>
-</amp-img>
+{{ image('/static/img/courses/beginner/image3.png', 1024, 768, caption='Glitch environment') }}
 
 The **red** box above indicates the online editor where you will be actually typing all your HTML and CSS. The **green** box indicates the button that will take you to the live version of the page you are creating. The **yellow** box is a button that lets you create a copy of this project and edit it. The blue box indicates all the files that you have available. In the assets folder, you can find all of your images.
 
@@ -64,12 +60,12 @@ For example, your URL
 
 Throughout this and the following two courses, you will build a website for Chico’s Cheese Bicycles Shop. Chico has developed a revolutionary bicycle made entirely out of cheese! Demand for the new bicycles is so high that Chico needs to get a website up as quickly as possible to handle orders and market their new products! When we’re finished with these courses, Chico’s site will look very much like this:
 
+{{ image('/static/img/courses/beginner/image12.png', 311, 550, caption='Completed AMP page for this tutorial') }}
 
+You can click on [this link](https://nice-consonant.glitch.me/) to see a live preview. Play around with the site. We have videos, embedded tweets, a login form, an image carousel, and ways to share our site on social media! Open the navigation menu by clicking on the icon made of three lines in the upper-left corner (also called a ‘hamburger menu icon’). Once the menu expands, click on the link to view the list of products. Notice how the list of products can be both sorted by price and filtered by category. Click on any of the products. Notice how more details about that product pop up on the screen?
+This site is a collection of features we see on many sites online today. This site was built entirely using AMP, and over the course of these lessons, you’re going to build this site yourself as well.
 
-
-
-
-
+Let’s dive in!
 
 
 [tip type="important"]
