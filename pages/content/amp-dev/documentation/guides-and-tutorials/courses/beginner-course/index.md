@@ -1,5 +1,5 @@
 ---
-$title: Beginner Course
+$title: Welcome to the AMP community!
 $order: 0
 $path: /documentation/guides-and-tutorials/courses/beginner-course/index.html
 toc: true
@@ -7,63 +7,33 @@ toc: true
 
 [TOC]
 
-In this document, you'll learn about the role of the AMP Cache in the AMP ecosystem, and how your AMP page gets cached.
+## Why AMP?
 
-## What is an AMP Cache?
-An AMP Cache is a proxy-based content delivery network (CDN) for delivering valid AMP documents. AMP Caches are designed to:
+On the Internet, performance matters. Especially now that the majority of users browse using a mobile device. The users of sites that load faster tend to have longer browsing sessions and higher engagement. Conversely, over half of mobile users give up on websites if they do not load within three seconds.
 
-1.  Serve only valid AMP pages.
-2.  Allow AMP pages to be preloaded efficiently and safely.
-3.  Perform additional user-beneficial performance optimizations to content.
+So, if performance is so important, then why are so many modern website loading and running so slowly for mobile users? The truth is, it’s often complicated to build fast websites that are also full of features, look good on all device sizes, and are intuitive to use. We believe that developers want to make fast sites, but many libraries and frameworks make it too easy to do the wrong things. Therefore, AMP was created to make it easy for developers to do the right things, so those developers can focus on building better features without customers having a poor user experience!
 
-Learn more about AMP Caches in the YouTube video below, or in the [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456) blog post.
+## How AMP helps
 
-[video src='https://www.youtube.com/watch?v=n8n7fj60lds' caption='Watch this video to learn why AMP Caches exist.']
+AMP (Accelerated Mobile Pages) is a set of best practices and an accompanying library that make it easy to do the right things when developing a website. Using AMP is a great way to learn web development, because AMP sites are:
 
-## What AMP Caches are available?
-Currently, there are two AMP Cache providers:
+* Built using standard HTML, CSS, and JavaScript
+* Compatible with all modern browsers
+* Not dependent on special build tools or servers in order to get a site up and running
 
-- [Google AMP Cache](https://developers.google.com/amp/cache/)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+AMP helps developers create fast web experiences that are easy to maintain. AMP introduces a set of requirements (and a validation tool that helps enforce those requirements) that, when followed, help pages load quickly, consume fewer system resources, reflect best practices for accessibility and performance, and help other typical features like ads run smoothly.
 
-AMP is an open ecosystem and the AMP Project actively encourages the development of more AMP Caches.  To learn about creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+In exchange for these performance gains, AMP places some restrictions on developers, such as limiting the ways that custom JavaScript can be executed and restricting which HTML tags may be used on your sites. However, these restrictions allow for powerful and automatic performance optimizations and caching that help your pages load fast and help you avoid many of the biggest and most harmful user experience and performance pitfalls. Pages delivered from such caches get downloaded in the background on sites like Google and can be loaded in less than half a second from when the site is requested.
 
-## How do I choose an AMP Cache?
+## A*M*P is not just for *M*obile
 
-As a publisher, you don't choose an AMP Cache, it's *actually the platform* that links to your content that chooses the AMP Cache (if any) to use.
+AMP is not just for building static content pages, and despite the name, nor is it just for mobile websites. The AMP format is useful for building performant desktop web experiences as well. Despite limitations on the usage of JavaScript on AMP pages, AMP components can be combined together to build feature-rich websites that respond in real time to user input and display dynamic content from remote servers.
 
-This is an inversion of the typical model where content delivery is the responsibility of the publisher.  However, this model allows platforms to provide their users with predictable load performance and among other things allows them to ensure required security and privacy invariants during AMP’s pre-rendering phase. To learn about the strict guidelines for creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+AMP provides tools to handle many of the challenges of building modern websites, such as component-based design, state management and dynamic content generation, in a way that prevents the type of code bloat that negatively affects performance. If some of these concepts of building websites don’t sound familiar to you, don’t worry! Throughout this and future trainings, you will learn about many of these concepts. You don’t need to know all of these concepts in order to start building great AMP experiences for your users.
 
-## Can I opt out of caching?
 
-Caching is a core part of the AMP ecosystem. Publishing a valid AMP document automatically opts it into cache delivery.
+## Learning AMP to learn web development
 
-Should you desire not to have your document cached, one option is to remove the `amp` attribute from the HTML tag. This makes the document technically invalid AMP, while not impacting the functionality of the document.
+The skills acquired and patterns learned while building AMP pages can be transferred to building websites in any other format or framework. Like most modern frameworks, AMP is a component-based approach to designing and building websites. There is a large library of existing AMP components that help developers rapidly build performant web experiences without having to write a lot of custom code. Developers will learn to develop websites with recognized best practices for using HTML and CSS, start thinking in components, and will learn to avoid bad habits - skills that will be effective when building sites in any other framework.
 
-## Who requests cached AMP pages?
-
-Cached AMP pages are accessed by platforms (like Google Search, Google News, and Cloudflare) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})).
-
-<amp-img src="/static/img/docs/platforms_accessing_cache.png"
-         width="1054" height="356" layout="responsive"
-         alt="platforms and mobile apps access cached AMP pages">
-</amp-img>
-
-## How does my AMP page get cached?
-By using the AMP format, you are making your content available to be cached by AMP Caches. There are a few ways that your AMP page can end up in an AMP Cache:
-
-* **Platform discovery**:  Platforms discover your AMP content via the `<html ⚡>` or `<html amp>` tag and cache the content. For example, Google Search crawls content; for any identified and valid AMP pages, the content is added to the Google AMP Cache.
-
-* **Cache URL request**: Platforms can specifically request an AMP page by using the AMP Cache URL format.  The AMP Cache acts as a reverse proxy, therefore, when the platform accesses the page, it results in the page being cached automatically.
-    - Cloudflare AMP Cache URL example: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
-    - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
-
-Note: The AMP Cache URL is not a user-facing URL, that is, users wouldn't typically request content via those URLs.
-
-* **Publisher addition**: Publishers can specifically add the AMP page to the AMP Cache.  This option is applicable only to the Google AMP Cache (see [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache)).
-
-## Additional resources
-
-* [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
-* [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
-* [Cloudflare AMP Cache documentation](https://amp.cloudflare.com/)
+So, what are you waiting for? Let’s get started!

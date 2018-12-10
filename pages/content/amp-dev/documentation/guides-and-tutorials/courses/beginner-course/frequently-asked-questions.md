@@ -1,6 +1,6 @@
 ---
-$title: Beginner Course Exercises
-$order: 1
+$title: Frequently Asked Questions
+$order: 6
 toc: true
 ---
 [TOC]
