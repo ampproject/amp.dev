@@ -63,6 +63,7 @@ Throughout this and the following two courses, you will build a website for Chic
 {{ image('/static/img/courses/beginner/image12.png', 311, 550, caption='Completed AMP page for this tutorial') }}
 
 You can click on [this link](https://nice-consonant.glitch.me/) to see a live preview. Play around with the site. We have videos, embedded tweets, a login form, an image carousel, and ways to share our site on social media! Open the navigation menu by clicking on the icon made of three lines in the upper-left corner (also called a ‘hamburger menu icon’). Once the menu expands, click on the link to view the list of products. Notice how the list of products can be both sorted by price and filtered by category. Click on any of the products. Notice how more details about that product pop up on the screen?
+
 This site is a collection of features we see on many sites online today. This site was built entirely using AMP, and over the course of these lessons, you’re going to build this site yourself as well.
 
 Let’s dive in!
