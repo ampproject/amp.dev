@@ -1,0 +1,8 @@
+$title@: Courses
+$path: /documentation/guides-and-tutorials/courses/{base}.html
+$view: /views/detail/docs-detail.j2
+
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/courses/{base}.html
+
+$order: 7
