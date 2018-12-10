@@ -1,5 +1,0 @@
-$view: /views/detail/docs-detail.j2
-$path: /documentation/guides-and-tutorials/courses/spec/{base}.html
-$localization:
-  path: /{locale}/documentation/guides-and-tutorials/courses/{base}.html
-$title@: AMP HTML Specification

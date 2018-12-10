@@ -1,5 +1,5 @@
 ---
-$title: "CORS in AMP"
+$title: Beginner Course Exercises
 $order: 1
 toc: true
 ---

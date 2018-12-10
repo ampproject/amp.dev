@@ -1,7 +1,7 @@
 ---
 $path: /documentation/guides-and-tutorials/courses/amphtml_ads/index.html
-$title: AMPHTML ads
-$hidden: true
+$title: Intermediate Course
+$order: 0
 toc: true
 ---
 

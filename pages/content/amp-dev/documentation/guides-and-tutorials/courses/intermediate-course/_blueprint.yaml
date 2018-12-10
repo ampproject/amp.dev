@@ -2,4 +2,5 @@ $path: /documentation/guides-and-tutorials/courses/amphtml_ads/{base}.html
 $view: /views/detail/docs-detail.j2
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/courses/amphtml_ads/{base}.html
-$title@: AMPHTML ads
+$title@: Intermediate Course
+$order: 2

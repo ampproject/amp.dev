@@ -2,4 +2,5 @@ $view: /views/detail/docs-detail.j2
 $path: /documentation/guides-and-tutorials/courses/amp-caches-and-cors/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/courses/amp-caches-and-cors/{base}.html
-$title@: AMP Caches & CORS
+$title@: Beginner Course
+$order: 0
