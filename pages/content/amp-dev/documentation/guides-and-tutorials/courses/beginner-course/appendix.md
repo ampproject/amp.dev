@@ -40,19 +40,19 @@ Now that AMP is more full-featured, unless you require additional features on yo
 
 Using a single AMP page for all devices is called “canonical AMP”. That’s what we’re doing for our cheese bike shop!
 
-### The amp-boilerplate <style> tag
+### The amp-boilerplate `<style>` tag
 
 All AMP HTML pages must also contain some default styles within the `<head>` tag. This styling affects the look and feel of the page until the AMP library is fully loaded. What it does, essentially, is it initially hides the content until the page is ready, that is all elements of the page are ready and AMP knows where they go and how much space they are taking up. Once this is complete, the page fades in. This way the users view the page in its final form straight away, leaving them with the perception that the page was loaded instantly. 
 
-### Why the viewport <meta> tag?
+### Why the viewport `<meta>` tag?
 
 AMP works on mobile and desktop devices alike. Since a user may experience your webpage on either, it's best to check your webpage on both devices while developing. To simulate a mobile device experience in Chrome DevTools, click the mobile phone device icon here:
 
-{{ image('/static/img/courses/beginner/image5.png', 30, 100, caption='Mobile preview in DevTools') }}
+{{ image('/static/img/courses/beginner/image5.png', 80, 30, caption='Mobile preview in DevTools') }}
 
 Now select a mobile device (for example a "Nexus 5X") from this menu:
 
-{{ image('/static/img/courses/beginner/image1.png', 30, 300, caption='Select a mobile device') }}
+{{ image('/static/img/courses/beginner/image1.png', 300, 20, caption='Select a mobile device') }}
 
 You should see a simulation of how the page would look for the selected device in your browser such as this:
 
@@ -75,7 +75,7 @@ You will not notice much of a difference now, apart from the title, but you can 
 
 ## Explaining Validation errors
 
-### Notice the AMP <script> tag
+### Notice the AMP `<script>` tag
 
 [sourcecode:html]
 {% raw %}<script async src="https://cdn.ampproject.org/v0.js"></script>
