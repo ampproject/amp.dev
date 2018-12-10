@@ -1,0 +1,6 @@
+$path: /documentation/guides-and-tutorials/courses/beginner-course/practice/exercises/{base}.html
+$view: /views/detail/docs-detail.j2
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/courses/beginner-course/practice/exercises/{base}.html
+$title@: Exercises
+$order: 9
