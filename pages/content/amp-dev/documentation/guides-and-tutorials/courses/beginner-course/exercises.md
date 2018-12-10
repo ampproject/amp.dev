@@ -6,80 +6,50 @@ toc: true
 
 [TOC]
 
-## Draft for reference
+## Draft for reference - Playground
 
 [tip type="important"]
 Tip of type important
-
-Perform these validation checks _before_ you process the request. This validation helps to provide protection against CSRF attacks, and avoids processing untrusted sources requests.
 [/tip]
 
 [tip type="read-on"]
 Tip of type read on
+[/tip]
 
-For information on AMP Cache URL formats, see these resources:
+[tip type="note"]
+Tip of type note
+[/tip]
 
-- [Google AMP Cache Overview](https://developers.google.com/amp/cache/overview)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
-  [/tip]
+[tip type="default"]
+Tip of type default
+[/tip]
 
 [sourcecode:html]
-{% raw %}<amp-list credentials="include" 
+{% raw %}
+<amp-list credentials="include" 
     src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-<template type="amp-mustache">
-Your personal offer: \${{price}}
-
-Source Code: html
-
-  </template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
 [sourcecode:text]
 Source-code: text
-AMP-Same-Origin: true
 [/sourcecode]
 
 [sourcecode:javascript]
 /_Source code javascript_/
-function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
-var unauthorized = 'Unauthorized Request';
-var origin;
-var allowedOrigins = [
-"https://example.com",
-"https://example-com.cdn.ampproject.org",
-"https://example.com.amp.cloudflare.com",
-"https://cdn.ampproject.org" ];
-var allowedSourceOrigin = "https://example.com"; //publisher's origin
-var sourceOrigin = req.query.\_\_amp_source_origin;
+function katerina() {
+return;
 }
 [/sourcecode]
 
 [sourcecode:shell]
 source code shell
-curl 'https://ampbyexample.com/json/examples.json?__amp_source_origin=https%3A%2F%2Fampbyexample.com' -H 'AMP-Same-Origin: true' -I
 [/sourcecode]
 
-[tip type="note"]
-Tip of type note
-For information on AMP Cache URL formats, see these resources:
-
-- [Google AMP Cache Overview](https://developers.google.com/amp/cache/overview)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
-  [/tip]
-
-[tip type="default"]
-Tip of type default
-For information on AMP Cache URL formats, see these resources:
-
-- [Google AMP Cache Overview](https://developers.google.com/amp/cache/overview)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
-  [/tip]
-
-  <amp-iframe
+<amp-iframe
     width="400" height="300"
       sandbox="allow-scripts allow-same-origin"
       layout="responsive"
       frameborder="0"
       src="https://glitch.com/embed/#!/embed/full-venom?path=README.md&previewSize=0">
-  </amp-iframe>
+</amp-iframe>

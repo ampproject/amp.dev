@@ -76,7 +76,7 @@ Try selecting different mobile devices from the dropdown menu (see screenshot be
 {{ image('/static/img/courses/beginner/image18.png', 200, 200, caption='Dropdown list of devices in Chrome') }}
 [/tip]
 
-## Cycling through images using <amp-carousel>
+## Cycling through images using `<amp-carousel>`
 A carousel is an element containing a set of items that can be scrolled through like a slideshow. 
 The AMP implementation of a carousel is the component, amp-carousel. This component is not built-in, so you will need to add it’s script in the page's `<head>`.
 
@@ -192,10 +192,10 @@ Remember to include the `amp-youtube` script in the `<head>`:
 {% endraw %}[/sourcecode]
 
 [tip type="read-on"]
-In addition to the <amp-youtube> component, AMP also includes support for other video players. Check out "[Integrating Videos in AMP an Overview](https://ampbyexample.com/advanced/integrating_videos_in_amp_an_overview/)" on AMP by Example.
+In addition to the `<amp-youtube>` component, AMP also includes support for other video players. Check out "[Integrating Videos in AMP an Overview](https://ampbyexample.com/advanced/integrating_videos_in_amp_an_overview/)" on AMP by Example.
 [/tip]
 
-## Displaying social media posts with <amp-twitter>
+## Displaying social media posts with `<amp-twitter>`
 
 You should, by now, start to feel comfortable adding simple AMP components to your application. We’re going to keep going by adding a Twitter post callout to our site.
 
