@@ -19,9 +19,10 @@ Components are the building blocks of websites. They represent the combination o
 AMP’s component system helps you quickly build efficient and responsive features into your pages with minimal effort. The AMP library provides a list of components for you to use. There are components for building forms and carousels, for integrating page analytics, for making XHR requests to servers, and for much more. You can see the full list of available components at the the [AMP Components reference](https://www.ampproject.org/docs/reference/components).
 
 
-| `<amp-img src="IMG-URL" layout="responsive" width="640" height="480"></amp-img>` | `<amp-twitter width="486" height="657" layout="responsive" data-tweetid="ID"></amp-twitter>` | `<amp-youtube data-videoid="ID" layout="responsive" width="480" height="270"></amp-youtube>`|
-| --------- | ----------- | ----------- |
-| {{ image('/static/img/courses/beginner/image8.png', 194, 340, caption='amp-img') }} | {{ image('/static/img/courses/beginner/image6.png', 194, 340, caption='amp-twitter') }} | {{ image('/static/img/courses/beginner/image7.png', 194, 340, caption='amp-youtube') }} |
+| `<amp-img src="IMG-URL" layout="responsive" width="640" height="480"></amp-img>` | {{ image('/static/img/courses/beginner/image8.png', 194, 340, caption='amp img') }} |
+| ---------- | ---------- |
+| `<amp-twitter width="486" height="657" layout="responsive" data-tweetid="ID"></amp-twitter>` | {{ image('/static/img/courses/beginner/image6.png', 194, 340, caption='amp twitter') }} |
+| `<amp-youtube data-videoid="ID" layout="responsive" width="480" height="270"></amp-youtube>` | {{ image('/static/img/courses/beginner/image7.png', 194, 340, caption='amp youtube') }} |
 
 The goal when building out your AMP sites is to use AMP components whenever possible. This maximizes the performance benefits of building an AMP page, because you don’t have to reinvent the wheel, and you can leverage the work of the AMP library authors.
 
