@@ -52,11 +52,11 @@ section.main.benefits {
 .#{molecule('benefit')} {
   position: relative;
   display: flex;
-  margin: 0 20px;
+  margin: 20px;
 
 	@media screen and (min-width: 768px) {
     padding: 0;
-    margin: 0 0 0 40px;
+    margin: 50px 0;
     flex: 0 0 calc(33.333333333% - 40px);
   }
 
@@ -71,8 +71,8 @@ section.main.benefits {
     flex-direction: column;
 
     &-headline {
-      @include hl;
-      @include hl-h5;
+      @include txt;
+      @include txt-strong;
       margin-bottom: 0.3em;
     }
 
