@@ -1,5 +1,5 @@
 ---
-$title: Ads
+$title: Amp Ads
 $view: /views/default.j2
 ---
 

@@ -6,3 +6,11 @@ $localization:
 $order: 1
 
 index: /content/amp-dev/what-is-amp/websites.md
+
+sub_navigation:
+    - /content/amp-dev/what-is-amp/websites.md
+    - /content/amp-dev/what-is-amp/stories.md
+    - /content/amp-dev/what-is-amp/ads.md
+    - /content/amp-dev/what-is-amp/email.md
+    - /content/amp-dev/what-is-amp/how-amp-works.md
+    - /content/amp-dev/what-is-amp/mission-and-vision.md

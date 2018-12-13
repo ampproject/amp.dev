@@ -1,5 +1,5 @@
 ---
-$title: Stories
+$title: Amp Stories
 $view: /views/default.j2
 ---
 
