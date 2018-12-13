@@ -1,0 +1,38 @@
+/*
+
+######################
+### MOLECULE: headline-icon ###
+######################
+
+### INFO:
+
+The link molecule is a combination of icon and headline atom.
+
+### MODIFIERS:
+
+none
+
+*/
+
+
+@import '../atoms/_icon.scss';
+@import '../atoms/_headline.scss';
+
+
+.#{molecule('headline-icon')} {
+  display: flex;
+
+  &-icon {
+    @include ico;
+    @include ico-10;
+  }
+
+  &-hl {
+    @include hl;
+    @include hl-lrg;
+    padding-top: 80px;
+    margin-bottom: 0;
+    margin-left: -1em;
+  }
+
+}
