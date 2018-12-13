@@ -1,0 +1,239 @@
+/*
+
+#############################################
+### TEMPLATE: overview benefits ###
+#############################################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../molecules/quote';
+@import '../molecules/benefit';
+@import '../molecules/link';
+@import '../molecules/table.scss';
+@import '../molecules/headline-icon.scss';
+
+@import '../templates/_default.scss';
+
+.#{template('what-is-amp')} {
+  @include container;
+
+  section {
+    position: relative;
+    z-index: 1;
+
+    &.#{organism('stage')} {
+      grid-column: 1 / -1;
+      z-index: 2;
+    }
+
+    &.main {
+      grid-column: 1 / 9;
+
+      &.intro {
+        grid-column: 4 / span 8;
+        padding-right: 80px;
+      }
+
+      &.intro-image {
+        width: 100%;
+
+        @media screen and (min-width: 768px) {
+          grid-column: 11 / -1;
+          margin-top: -100px;
+        }
+
+      }
+
+      &.image-gallery {
+
+        @media screen and (min-width: 768px) {
+          grid-column: 4 / -1;
+          display: flex;
+          align-items: flex-end;
+          flex-direction: column;
+          margin-bottom: 200px;
+        }
+
+        .images {
+          width: 100%;
+        }
+
+        .gallery-cta {
+          margin-right: 150px;
+        }
+      }
+
+      &.quote {
+        grid-column-start: 3;
+        grid-column-end: 18;
+      }
+
+      &.what {
+        grid-column: 1 / -1;
+        margin-bottom: 250px;
+
+        .h5 {
+          @include hl;
+          @include hl-h5;
+        }
+
+        p {
+          @include txt;
+        }
+      }
+
+      &.why {
+        margin-bottom: 40px;
+        grid-column: 2 / 22;
+
+        .benefits-cta {
+          display: flex;
+          justify-content: center;
+          margin-top: 50px;
+
+          @media screen and (min-width: 768px) {
+            margin-top: 200px;
+            justify-content: flex-end;
+          }
+        }
+
+        .benefits {
+          display: flex;
+          flex-direction: column;
+
+          @media screen and (min-width: 768px) {
+            flex-direction: row;
+          }
+
+          &-left {
+
+            @media screen and (min-width: 768px) {
+              width: 50%;
+              margin-right: 25px;
+            }
+
+          }
+
+          &-right {
+            @media screen and (min-width: 768px) {
+              width: 50%;
+              margin-left: 25px;
+              margin-top: 80px;
+            }
+          }
+        }
+      }
+
+      &.gallery-copy {
+        grid-column: 4 / 16;
+        margin-bottom: 150px;
+
+        p {
+          @include txt;
+        }
+      }
+
+      &.made {
+        grid-column: 4 / 14;
+
+        &.copy-center {
+          grid-column: 4 / 18;
+          margin-top: 120px;
+
+          h2 {
+            @include hl;
+            @include hl-xlrg;            
+          }
+
+          p {
+            @include txt;
+            @include txt-2;
+          }
+        }
+
+        &.copy-right {
+          grid-column: 12 / -1;
+          margin-top: 120px;
+
+          h2 {
+            @include hl;
+            @include hl-xlrg;
+          }
+
+          p {
+            @include txt;
+            @include txt-2;
+          }
+
+          .made-cta {
+            margin-top: 100px;
+          }
+        }
+      }
+
+      &.made-sourcecode {
+        grid-column: 1 / -1;
+        display: flex;
+
+        .made-headline {
+          @include hl;
+          font-size: 140px;
+          width: 50%;
+          margin-bottom: 0;
+          opacity: 0.1;
+          line-height: 1em;
+        }
+
+        .ad-m-code-snippet {
+          width: 50%;
+        }
+      }
+
+      &.usecase-headline {
+        grid-column:  4 / 18;
+        margin-top: 300px;
+
+        h2 {
+          @include hl;
+          @include hl-xlrg;
+        }
+      }
+
+      &.usecase-list {
+        grid-column: 1 / -1;
+
+        .usecases {
+          width: 100%;
+          display: flex;
+        }
+      }
+
+      &.success-headline {
+        grid-column:  4 / 18;
+        margin-top: 300px;
+
+        h2 {
+          @include hl;
+          @include hl-xlrg;
+        }
+      }
+    }
+    
+    .teaser-grid {
+      grid-column: 1 / -1;
+    }
+
+  }
+
+}
+
