@@ -1,6 +1,11 @@
 .#{molecule('quote')} {
   display: flex;
+  flex-direction: column;
   padding: 75px 0;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
   
   &-source {
     flex: 0 0 30%;
