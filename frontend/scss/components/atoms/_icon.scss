@@ -53,6 +53,11 @@ square
 	height: 5em;
 }
 
+@mixin ico-10 {
+	width: 10em;
+	height: 10em;
+}
+
 @mixin ico-blue-ribbon {
 	fill: color('blue-ribbon');
 }
