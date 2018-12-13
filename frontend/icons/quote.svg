@@ -1,0 +1,18 @@
+<svg id="quote" viewBox="0 0 103 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <defs>
+        <linearGradient x1="84.1246862%" y1="-17.8831793%" x2="15.6428894%" y2="100%" id="linearGradient">
+            <stop stop-color="#00DCC0" offset="0%"></stop>
+            <stop stop-color="#005AF0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+
+    <g id="quote" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-457.000000, -5212.000000)" fill="url(#linearGradient)">
+            <g id="Quote" transform="translate(351.000000, 5212.000000)">
+                <path d="M106.5,45.7 C106.5,32.099932 110.099964,21.1500415 117.3,12.85 C124.500036,4.5499585 134.999931,0.4 148.8,0.4 L148.8,19.3 C138.199947,19.3 132.9,26.099932 132.9,39.7 L132.9,44.2 L152.1,44.2 L152.1,81.4 L112.8,81.4 C108.599979,69.39994 106.5,57.500059 106.5,45.7 Z M163.5,45.7 C163.5,32.099932 167.049964,21.1500415 174.15,12.85 C181.250035,4.5499585 191.699931,0.4 205.5,0.4 L205.5,19.3 C195.099948,19.3 189.9,26.099932 189.9,39.7 L189.9,44.2 L208.8,44.2 L208.8,81.4 L169.5,81.4 C165.49998,69.199939 163.5,57.300058 163.5,45.7 Z" id="quote"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+

@@ -1,0 +1,14 @@
+<svg id="build" viewBox="0 0 49 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <g id="build" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Artboard" transform="translate(-180.000000, -4517.000000)" stroke="#005AF0" stroke-width="2">
+            <g id="Group-5" transform="translate(109.000000, 3629.000000)">
+                <g id="Path-2" transform="translate(72.000000, 889.000000)">
+                    <polyline id="Path" points="23.4825 43 1.42108547e-14 43 1.42108547e-14 0 19.6 0 32 12.7407407 32 31.7277778"></polyline>
+                    <polyline id="Path" points="19 0 19 13 32 13"></polyline>
+                    <path d="M41.4875776,22 L25.4161491,38.81875 L22,48 L30.8509317,44.50625 L47,27.6875 L41.4875776,22 Z M25.4161491,38.81875 L30.8509317,44.50625 L25.4161491,38.81875 Z" id="build"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

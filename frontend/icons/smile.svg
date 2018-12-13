@@ -1,0 +1,13 @@
+<svg id="smile" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Artboard" transform="translate(-180.000000, -4053.000000)" stroke="#005AF0" stroke-width="2">
+            <g id="Group-5" transform="translate(109.000000, 3629.000000)">
+                <g id="Oval-3" transform="translate(72.000000, 425.000000)">
+                    <circle id="Oval" cx="22" cy="22" r="22"></circle>
+                    <path d="M34,28.5965064 C31.5825448,32.6036898 27.17758,35.0430962 22.4379154,34.9994233 C17.6982507,34.9557503 13.3405924,32.435602 11,28.3845763 M12.4375,18 C12.4375,19.5606104 13.7246813,20.825735 15.3125,20.825735 C16.9003187,20.825735 18.1875,19.5606104 18.1875,18 M26.8125,18 C26.8125,19.5606104 28.0996813,20.825735 29.6875,20.825735 C31.2753187,20.825735 32.5625,19.5606104 32.5625,18" id="smile"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

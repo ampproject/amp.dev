@@ -1,0 +1,15 @@
+<svg id="exclamation" viewBox="0 0 248 249" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-108.000000, -3628.000000)">
+            <g id="Group-5" transform="translate(109.000000, 3629.000000)">
+                <g id="exclamation">
+                    <circle id="Oval" stroke="#EAEAEA" stroke-width="2" fill-rule="nonzero" cx="123" cy="123.200005" r="123"></circle>
+                    <text id="!" font-family="Poppins-Bold, Poppins" font-size="200" font-weight="bold" fill="#EAEAEA">
+                        <tspan x="81" y="204.200005">!</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
