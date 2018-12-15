@@ -8,7 +8,7 @@
     {% set formats = ['websites', 'stories', 'ads', 'email'] %}
     <ul>
       {% for format in formats %}
-      <li><button>{{ format }}</button></li>
+      <li><a href="?format={{ format }}">{{ format }}</a></li>
       {% endfor %}
     </ul>
 

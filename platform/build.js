@@ -26,7 +26,7 @@ const Platform = require('./lib/platform');
 
 let pipeline = new Pipeline();
 
-pipeline.clean();
+// pipeline.clean();
 
 // TODO(matthiasrohmer): Use task runner (like gulp.series/gulp.parallel) to
 // execute tasks to better handle flow
@@ -35,7 +35,7 @@ pipeline.clean();
 
   // Collection of static files does not need to be waited for as it happens
   // real quick and no other task depends on them
-  pipeline.collectStatics();
+  // pipeline.collectStatics();
 
   await pipeline.buildFrontend();
 
@@ -43,7 +43,7 @@ pipeline.clean();
   // await pipeline.importReference();
 
   // Create sample sources which get used while generating the pages
-  await pipeline.buildSamples();
+  // await pipeline.buildSamples();
 
   // Generate pages does not statically build the pages for development
   // but instead starts the development server
