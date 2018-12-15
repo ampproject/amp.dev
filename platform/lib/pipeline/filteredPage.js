@@ -25,6 +25,10 @@ const BODY_CLASSES = {
   'email': 'ad--email'
 };
 
+const FILTERED_ROUTES = [
+  /\/documentation\/.*/
+];
+
 class FilteredPage {
 
   constructor(activeFilter, content) {
@@ -32,11 +36,13 @@ class FilteredPage {
     this._content = content;
 
     this._addClassToBody();
+    this._rewriteUrls();
   }
 
   /**
    * Adds a class to the <body> element that marks the current filtered format
    * to be able to apply styles based on filter
+   * @return {undefined}
    */
   _addClassToBody() {
     this._content = htmlFindReplaceElementAttrs.replace(this._content, (attribute) => {
@@ -44,6 +50,24 @@ class FilteredPage {
     }, {
       'tag': 'body',
       'attr': 'class'
+    });
+  }
+
+  /**
+   * Appends the currently active filter to all of the links
+   * on the page
+   * @return {undefined}
+   */
+  _rewriteUrls() {
+    this._content = htmlFindReplaceElementAttrs.replace(this._content, (attribute) => {
+      // Check if the current link already has a query parameter
+      if (attribute.value.indexOf('?') == -1) {
+
+      }
+      return attribute.value + ' ' + BODY_CLASSES[this._activeFilter];
+    }, {
+      'tag': 'a',
+      'attr': 'href'
     });
   }
 
