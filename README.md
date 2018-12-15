@@ -13,7 +13,6 @@ that makes a merge over to the original repository beneficial.
 
 1.  Install libyaml alongside with [Grow](http://grow.io) as it heavily increases performance while running `grow build`:
     ```sh
-    $ brew install libyaml
     $ pip install grow
     ```
 
