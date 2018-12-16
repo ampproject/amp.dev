@@ -20,9 +20,6 @@ localization:
 
 markdown:
   extensions:
-  - kind: toc
-    marker: [TOC]
-    baselevel: 1
   - kind: sourcecode
     classes: True
     class_name: ad-m-code-snippet
