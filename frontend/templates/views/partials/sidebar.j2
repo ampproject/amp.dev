@@ -5,10 +5,10 @@
 
 <section class="sidebar">
   <div class="ad-o-sidebar">
-    {% set formats = ['websites', 'stories', 'ads', 'email'] %}
-    <ul>
+    {% set formats = ['Websites', 'Stories', 'Ads', 'Email'] %}
+    <ul class="format-list">
       {% for format in formats %}
-      <li><button>{{ format }}</button></li>
+      <li class="format-list-item"><button class={{format}}>{{ format }}</button></li>
       {% endfor %}
     </ul>
 
