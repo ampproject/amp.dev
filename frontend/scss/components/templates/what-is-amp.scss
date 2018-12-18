@@ -27,7 +27,15 @@
 .#{template('what-is-amp')} {
   @include container;
 
+
+  h2 {
+    @include hl-xlrg;
+    margin-top: 0;
+    grid-column: 4 / 16;
+  }
+
   section {
+
     position: relative;
     z-index: 1;
 
@@ -37,96 +45,106 @@
     }
 
     &.main {
-      grid-column: 1 / 9;
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 50px 0;
 
-      &.intro {
-        grid-column: 4 / span 8;
-        padding-right: 80px;
+      @media screen and (min-width: 768px) {
+        grid-column: 4 / -1;
       }
 
-      &.intro-image {
+      .intro-image {
         width: 100%;
+        margin-bottom: 50px;
 
         @media screen and (min-width: 768px) {
-          grid-column: 11 / -1;
-          margin-top: -100px;
+          width: 60%;
+          margin-left: auto;
         }
-
       }
 
-      &.image-gallery {
+      .gallery {
+        margin: 50px 0;
+      }
+
+      .copy {
+        width: 100%;
+        margin: 50px 0;
 
         @media screen and (min-width: 768px) {
-          grid-column: 4 / -1;
-          display: flex;
-          align-items: flex-end;
-          flex-direction: column;
-          margin-bottom: 200px;
+          width: 65%;
         }
 
-        .images {
+        &.intro {
           width: 100%;
+          margin-bottom: 0;
+
+          @media screen and (min-width: 768px) {
+            width: 50%;
+          }
         }
 
-        .gallery-cta {
-          margin-right: 150px;
-        }
-      }
-
-      &.quote {
-        grid-column-start: 3;
-        grid-column-end: 18;
-      }
-
-      &.what {
-        grid-column: 1 / -1;
-        margin-bottom: 250px;
-
-        .h5 {
+        h1 {
           @include hl;
-          @include hl-h5;
+          font-size: 64px;
+
+          @media screen and (min-width: 768px) {
+            font-size: 72px;
+          }
+        }
+
+        h2 {
+          @include hl;
+          @include hl-xlrg;
         }
 
         p {
           @include txt;
+          @include txt-2;
+        }
+
+        &-right {
+          margin-left: auto;
         }
       }
 
-      &.why {
-        margin-bottom: 40px;
-        grid-column: 2 / 22;
+      .cta {
+        @media screen and (min-width: 768px) {
+          margin-left: auto;
+        }
+      }
 
-        .benefits-cta {
-          display: flex;
-          justify-content: center;
-          margin-top: 50px;
+      .ad-m-headline-icon {
+        @media screen and (min-width: 768px) {
+          margin-right: 50%;
+        }
+      }
 
-          @media screen and (min-width: 768px) {
-            margin-top: 200px;
-            justify-content: flex-end;
-          }
+      .benefits {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 768px) {
+          flex-direction: row;
         }
 
-        .benefits {
-          display: flex;
-          flex-direction: column;
+        &-list {
+          width: 100%;
 
           @media screen and (min-width: 768px) {
-            flex-direction: row;
+            width: 50%;
           }
 
-          &-left {
-
+          &.left {
             @media screen and (min-width: 768px) {
-              width: 50%;
               margin-right: 25px;
             }
-
           }
 
-          &-right {
+          &.right {
             @media screen and (min-width: 768px) {
-              width: 50%;
               margin-left: 25px;
               margin-top: 80px;
             }
@@ -134,102 +152,67 @@
         }
       }
 
-      &.gallery-copy {
-        grid-column: 4 / 16;
-        margin-bottom: 150px;
-
-        p {
-          @include txt;
-        }
+      &.quote {
+        grid-column: 6 / 20;
+        margin-top: 0;
       }
+
 
       &.made {
-        grid-column: 4 / 14;
-
-        &.copy-center {
-          grid-column: 4 / 18;
-          margin-top: 120px;
-
-          h2 {
-            @include hl;
-            @include hl-xlrg;            
-          }
-
-          p {
-            @include txt;
-            @include txt-2;
-          }
-        }
-
-        &.copy-right {
-          grid-column: 12 / -1;
-          margin-top: 120px;
-
-          h2 {
-            @include hl;
-            @include hl-xlrg;
-          }
-
-          p {
-            @include txt;
-            @include txt-2;
-          }
-
-          .made-cta {
-            margin-top: 100px;
-          }
-        }
-      }
-
-      &.made-sourcecode {
         grid-column: 1 / -1;
         display: flex;
 
+        @media screen and (min-width: 768px) {
+          flex-direction: row;
+        }
+
         .made-headline {
           @include hl;
-          font-size: 140px;
+          font-size: 100px;
           width: 50%;
           margin-bottom: 0;
           opacity: 0.1;
           line-height: 1em;
+
+          @media screen and (min-width: 768px) {
+            font-size: 100px;
+          }
         }
 
         .ad-m-code-snippet {
           width: 50%;
         }
       }
+    }
 
-      &.usecase-headline {
-        grid-column:  4 / 18;
-        margin-top: 300px;
+    &.usecases {
+      grid-column: 1 / -1;
+      width: 100%;
 
-        h2 {
-          @include hl;
-          @include hl-xlrg;
+      .usecases-list {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 768px) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
         }
       }
 
-      &.usecase-list {
-        grid-column: 1 / -1;
+      .usecase-image {
+        width: 100%;
+        margin: 20px 0px;
 
-        .usecases {
-          width: 100%;
-          display: flex;
-        }
-      }
-
-      &.success-headline {
-        grid-column:  4 / 18;
-        margin-top: 300px;
-
-        h2 {
-          @include hl;
-          @include hl-xlrg;
+        @media screen and (min-width: 768px) {
+          width: 30%;
+          margin: 20px;
         }
       }
     }
-    
-    .teaser-grid {
+
+
+    &.teaser-grid {
       grid-column: 1 / -1;
     }
 
