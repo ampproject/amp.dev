@@ -61,10 +61,10 @@ class FilteredPage {
   _rewriteUrls() {
     this._content = htmlFindReplaceElementAttrs.replace(this._content, (attribute) => {
       // Check if the current link already has a query parameter
-      if (attribute.value.indexOf('?') == -1) {
-
+      if (attribute.value.indexOf('?') > -1) {
+        return attribute.value;
       }
-      return attribute.value + ' ' + BODY_CLASSES[this._activeFilter];
+      return attribute.value + '?format=' + this._activeFilter;
     }, {
       'tag': 'a',
       'attr': 'href'
