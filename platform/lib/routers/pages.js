@@ -77,7 +77,7 @@ if (config.environment === 'development') {
           log.await(`Filtering the ongoing request by format: ${activeFormat}`);
 
           let filteredPage = new FilteredPage(activeFormat, body);
-          return `<h1>${activeFormat}</h1>` + filteredPage.content;
+          return filteredPage.content;
         }
 
         return body;
