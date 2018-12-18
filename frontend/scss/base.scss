@@ -22,15 +22,15 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Used to jump before an anchor and not beneath it */
 :target::before {
   content: '';
   display: block;
   height: 145px;
   margin-top: -145px;
-  visibility: hidden
-}
-@media screen and (min-width: 1024px) {
-  :target::before {
+  visibility: hidden;
+
+  @media screen and (min-width: 1024px) {
     height: 80px;
     margin-top: -80px;
   }
