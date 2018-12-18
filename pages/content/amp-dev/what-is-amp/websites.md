@@ -3,11 +3,20 @@ $title: AMP Websites
 $view: /views/overview/what-is-amp.j2
 ---
 
-[Stage icon="logo-white"]
-## Compeling, smooth and instant
-# Easily create user first websites with Amp
-[/Stage]
-
+<section class="ad-o-stage">
+{% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
+{% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+{% do doc.icons.useIcon('icons/angle-down-light.svg') %}
+{% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+  <div class="ad-o-stage-clipped-background dark-blue"></div>
+    <div class="ad-o-stage-image">
+      <amp-img src="/static/img/stage-image.png" layout="responsive" height="1" width="1.33" />
+    </div>
+  <div class="ad-o-stage-content">
+		<span class="hl-sub">Compeling, smooth and instant</span>
+		<span class="hl"> Easily create user first websites with Amp </span>
+  </div>
+</section>
 
 
 <section class="main">

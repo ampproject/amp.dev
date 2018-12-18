@@ -53,9 +53,11 @@
   &-image {
     width: 100%;
     top: 0;
+    margin-bottom: 100px;
 
     @media screen and (min-width: 768px) {
       width: 50%;
+      margin-top: 100px;
       margin-bottom: -200px;
       right: 0;
     }
