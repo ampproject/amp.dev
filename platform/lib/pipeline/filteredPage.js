@@ -26,7 +26,9 @@ const BODY_CLASSES = {
 };
 
 const FILTERED_ROUTES = [
-  /\/documentation\/.*/
+  /\/documentation\/guides-and-tutorials.*/,
+  /\/documentation\/components.*/,
+  /\/documentation\/examples.*/,
 ];
 
 class FilteredPage {
@@ -60,10 +62,19 @@ class FilteredPage {
    */
   _rewriteUrls() {
     this._content = htmlFindReplaceElementAttrs.replace(this._content, (attribute) => {
-      // Check if the current link already has a query parameter
-      if (attribute.value.indexOf('?') > -1) {
+      // Check if the link is pointing to a filtered route
+      // and if the link already has a query parameter
+      let filteredRoute = false;
+      for (let expression of FILTERED_ROUTES) {
+        if (expression.test(attribute.value)) {
+          filteredRoute = true;
+        }
+      }
+
+      if (attribute.value.indexOf('?') > -1 || !filteredRoute) {
         return attribute.value;
       }
+
       return attribute.value + '?format=' + this._activeFilter;
     }, {
       'tag': 'a',
