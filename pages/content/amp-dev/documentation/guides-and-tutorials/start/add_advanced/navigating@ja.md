@@ -76,7 +76,7 @@ article {
 </header>
 ```
 
-上記のコードではサイドバーを `toggle`（切り替える）のに、`amp-sidebar` 要素の [`on`]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}}) アクション属性を使用しています。サイドバー要素は `sidebar1` ID で識別されます。では、サイドバーを追加しましょう。
+上記のコードではサイドバーを `toggle`（切り替える）のに、`amp-sidebar` 要素の [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) アクション属性を使用しています。サイドバー要素は `sidebar1` ID で識別されます。では、サイドバーを追加しましょう。
 
 
 下記の HTML を `</header>` のすぐ後に**追加**します。

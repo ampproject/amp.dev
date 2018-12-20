@@ -7,7 +7,7 @@ $title: AMP とプログレッシブ ウェブアプリを組み合わせる
 
 プログレッシブ ウェブアプリ（PWA）と AMP ページは効果的に連携します。多くの場合、さまざまな点で補完し合います。以下の手法をご覧ください。
 
-1. AMP ページで [PWA 機能を有効にする]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}})
+1. AMP ページで [PWA 機能を有効にする]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}})
 2. AMP から PWA への[円滑で超高速なユーザー エクスペリエンス]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}})を実現する
 3. AMP の機能を活用して [PWA を簡素化する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
 

@@ -7,7 +7,7 @@ $title: AMP와 프로그레시브 웹 앱 통합하기
 
 프로그레시브 웹 앱과 AMP 페이지는 서로 원활하게 연동됩니다. 사실 이 둘은 여러 가지 방식으로 서로를 보완해 줄 때가 많습니다. 다음 도움말을 확인해 보세요.
 
-1. AMP 페이지에서 [PWA 기능 사용 설정]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}})
+1. AMP 페이지에서 [PWA 기능 사용 설정]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}})
 2. 사용자가 AMP에서 PWA로 [빠르고 자연스럽게 이동]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}})하도록 연결하기
 3. AMP 기능을 활용한 [PWA 간소화]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
 

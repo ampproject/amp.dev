@@ -14,7 +14,7 @@ terão o mesmo resultado. Por isso, use a opção mais adequada ao
 seu estilo de desenvolvimento.
 
 <<<<<<< HEAD
-Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) por plataformas de terceiros.
+Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) por plataformas de terceiros.
 =======
 Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) por plataformas de terceiros.
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f

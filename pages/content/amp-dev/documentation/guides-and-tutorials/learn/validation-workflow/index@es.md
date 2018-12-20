@@ -14,7 +14,7 @@ producen exactamente el mismo resultado, por lo que puedes utilizar la que más 
 a tu estilo de desarrollo.
 
 <<<<<<< HEAD
-Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) para las plataformas de terceros.
+Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) para las plataformas de terceros.
 =======
 Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) para las plataformas de terceros.
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f

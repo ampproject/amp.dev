@@ -7,7 +7,7 @@ $title: Mengombinasikan AMP dengan Progressive Web App
 
 Progressive Web App dan halaman AMP bekerja sama dengan baik. Bahkan, dalam banyak kasus, keduanya saling melengkapi. Pelajari cara:
 
-1. [Mengaktifkan fitur PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}}) untuk halaman AMP Anda
+1. [Mengaktifkan fitur PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}}) untuk halaman AMP Anda
 2. Membuat [perjalanan pengguna yang super cepat dan menarik]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}}) dari AMP ke PWA
 3. [Menyederhanakan PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) dengan menggunakan kecanggihan AMP
 

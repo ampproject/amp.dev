@@ -8,7 +8,7 @@ $title: AMPHTML 广告
 
 AMPHTML 广告是一种更快速、更精简且更安全地在网页上投放广告的方式。虽然 AMP 网页支持传统的 HTML 广告，但这些广告的加载速度可能很慢。要让广告本身与 AMP 网页的其余内容一样快速显示，您可以制作 AMPHTML 格式的广告。AMPHTML 广告仅在经过验证后才会投放，可确保广告的安全性和良好表现。最重要的是，此类广告可以在网络上的任何位置（而不只是在 AMP 网页上）投放。
 
-AMPHTML 广告是按照 [AMPHTML 广告规范]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}})使用 AMP HTML 编写的（AMP HTML 的一种变体 + CSS）。这意味着广告无法再运行任意 JavaScript，而任意 JavaScript 正是导致传统广告表现很差的首要原因。因此，与核心 AMP 一样，核心广告 JavaScript 用例也内置于 AMP 开放源代码项目中，以保证广告实现良好行为。
+AMPHTML 广告是按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})使用 AMP HTML 编写的（AMP HTML 的一种变体 + CSS）。这意味着广告无法再运行任意 JavaScript，而任意 JavaScript 正是导致传统广告表现很差的首要原因。因此，与核心 AMP 一样，核心广告 JavaScript 用例也内置于 AMP 开放源代码项目中，以保证广告实现良好行为。
 
 ### 优势
 

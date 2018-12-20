@@ -9,7 +9,7 @@ Delivering ads to AMP pages is not much different than serving traditional ads o
 
 {{ image('/static/img/docs/ads/ads_in_amp.svg', 647, 263, alt='delivering ads to AMP pages', align='' ) }}
 
-1.  Starting with an AMP page, publishers creates a slot on the page to display ads. Traditionally, this is done by inserting a snippet of JavaScript, but in AMP, publishers add an [`<amp-ad>`](/docs/reference/components/amp-ad.html) tag to their AMP page for a particular ad network. To learn the details, see the [Monetizing your AMP page with ads]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}}) guide.
+1.  Starting with an AMP page, publishers creates a slot on the page to display ads. Traditionally, this is done by inserting a snippet of JavaScript, but in AMP, publishers add an [`<amp-ad>`](/docs/reference/components/amp-ad.html) tag to their AMP page for a particular ad network. To learn the details, see the [Monetizing your AMP page with ads]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}}) guide.
 
 2.  When the user loads an AMP page, the `<amp-ad>` tag sends an ad request to the ad network. To return an ad to the AMP page, ad networks build an `amp-ad` implementation. To learn the details, see the [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md) guide.
 

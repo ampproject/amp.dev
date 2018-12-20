@@ -109,7 +109,7 @@ $title: 페이지를 검색할 수 있도록 설정
 
 [tip type="read-on"]
 <<<<<<< HEAD
-페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 =======
 페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f

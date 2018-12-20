@@ -33,7 +33,7 @@ Agora, veja este erro:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Todo documento AMP precisa ter um link que faça referência à respectiva versão "canônica".  Veja mais sobre o que é uma página canônica e quais são as diferentes abordagens para vincular o conteúdo canônico na etapa deste tutorial sobre [como fazer com que a página seja detectável]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}).
+Todo documento AMP precisa ter um link que faça referência à respectiva versão "canônica".  Veja mais sobre o que é uma página canônica e quais são as diferentes abordagens para vincular o conteúdo canônico na etapa deste tutorial sobre [como fazer com que a página seja detectável]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}).
 
 Neste tutorial, o artigo HTML original que estamos convertendo será a página canônica.
 

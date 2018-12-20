@@ -26,7 +26,7 @@ El componente `<amp-ad>` es una extensión de anuncio personalizada de la biblio
 
 ### Paso 2: Añade la etiqueta "amp-ad" a la página AMP
 
-Hay más de 100 [servidores de anuncios y redes publicitarias]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}}) que ofrecen integraciones con AMP integradas.  Para añadir un anuncio de una red publicitaria concreta, utiliza la etiqueta `<amp-ad>` y especifica la red con el atributo `type`.
+Hay más de 100 [servidores de anuncios y redes publicitarias]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) que ofrecen integraciones con AMP integradas.  Para añadir un anuncio de una red publicitaria concreta, utiliza la etiqueta `<amp-ad>` y especifica la red con el atributo `type`.
 
 En este ejemplo, vamos a añadir un espacio publicitario para servir anuncios de la red a9: 
 

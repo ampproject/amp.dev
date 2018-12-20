@@ -26,7 +26,7 @@ Komponen `<amp-ad>` adalah ekstensi iklan kustom untuk library AMP. Di bawah `<a
 
 ### Langkah 2: Tambahkan tag amp-ad ke halaman AMP
 
-Lebih dari 100 [server dan jaringan iklan]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}}) menyediakan integrasi bawaan dengan AMP.  Untuk menambahkan iklan pada jaringan iklan tertentu, tambahkan tag `<amp-ad>`, dan tentukan jaringannya dalam atribut `type`.
+Lebih dari 100 [server dan jaringan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) menyediakan integrasi bawaan dengan AMP.  Untuk menambahkan iklan pada jaringan iklan tertentu, tambahkan tag `<amp-ad>`, dan tentukan jaringannya dalam atribut `type`.
 
 Pada contoh ini, kita akan menambahkan slot iklan untuk menayangkan iklan dari jaringan a9: 
 

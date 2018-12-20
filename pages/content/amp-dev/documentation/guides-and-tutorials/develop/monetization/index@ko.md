@@ -26,7 +26,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 ### 2단계: AMP 페이지에 amp-ad 태그 추가
 
-100개가 넘는 [광고 서버와 네트워크]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})에서는 AMP와의 통합을 기본으로 제공합니다.  광고 네트워크의 광고를 추가하려면 `<amp-ad>` 태그를 추가하고 `type` 속성에 네트워크를 지정하세요.
+100개가 넘는 [광고 서버와 네트워크]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})에서는 AMP와의 통합을 기본으로 제공합니다.  광고 네트워크의 광고를 추가하려면 `<amp-ad>` 태그를 추가하고 `type` 속성에 네트워크를 지정하세요.
 
 이 예에서는 a9 네트워크의 광고를 게재하기 위해 광고 슬롯을 추가합니다. 
 

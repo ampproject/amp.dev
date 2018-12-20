@@ -7,7 +7,7 @@ $title: 将 AMP 与渐进式网页应用相结合
 
 渐进式网页应用和 AMP 网页可完美结合。事实上，在很多情况下，这两者都会以这样或那样的方式达到相得益彰的效果。了解如何执行以下操作：
 
-1. 为 AMP 网页[启用 PWA 功能]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}})
+1. 为 AMP 网页[启用 PWA 功能]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}})
 2. 打造从 AMP 到 PWA 的[超快且极具吸引力的用户之旅]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}})
 3. 利用 AMP 的强大功能[简化 PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
 

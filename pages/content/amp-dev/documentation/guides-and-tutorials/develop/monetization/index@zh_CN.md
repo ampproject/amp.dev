@@ -26,7 +26,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 2 步：将 amp-ad 标记添加到 AMP 网页中
 
-超过 100 个[广告服务商和广告网络]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})提供与 AMP 的内置集成。要为指定广告网络添加广告，请添加 `<amp-ad>` 标记，然后在 `type` 属性中指定广告网络。
+超过 100 个[广告服务商和广告网络]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})提供与 AMP 的内置集成。要为指定广告网络添加广告，请添加 `<amp-ad>` 标记，然后在 `type` 属性中指定广告网络。
 
 在本例中，我们添加一个广告位来投放 a9 网络中的广告：
 

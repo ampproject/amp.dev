@@ -14,7 +14,7 @@ AMP 的强大之处在于它不仅能提升网页加载速度，还能以可验�
 方法。
 
 <<<<<<< HEAD
-除了 AMP 有效性之外，您可能还需要确认 AMP 文档能被第三方平台[发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}})。
+除了 AMP 有效性之外，您可能还需要确认 AMP 文档能被第三方平台[发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})。
 =======
 除了 AMP 有效性之外，您可能还需要确认 AMP 文档能被第三方平台[发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})。
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f

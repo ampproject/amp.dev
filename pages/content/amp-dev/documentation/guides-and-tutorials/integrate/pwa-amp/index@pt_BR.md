@@ -7,7 +7,7 @@ $title: Combinar AMP com Progressive Web Apps
 
 Os Progressive Web Apps e as páginas AMP funcionam muito bem juntos. Em muitos casos, eles se complementam de uma forma ou de outra. Saiba como:
 
-1. [ativar recursos de PWA]({{g.doc('/content/docs/integration/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}}) para suas páginas AMP;
+1. [ativar recursos de PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}}) para suas páginas AMP;
 2. criar uma [navegação super-rápida e atrativa]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}}) das AMP para o PWA;
 3. [simplificar seu PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) usando o poder das AMP.
 

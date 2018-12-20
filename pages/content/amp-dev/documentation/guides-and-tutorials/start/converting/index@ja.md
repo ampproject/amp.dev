@@ -19,5 +19,5 @@ $title: HTML を AMP に変換する
 AMP 仕様に準拠し、モバイル向けニュースサイトの一般的な機能を備えたシンプルなニュース記事のページを作成します。
 
 <div class="start-button">
-<a class="button" href="{{g.doc('/content/docs/fundamentals/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">開始する</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">開始する</span></a>
 </div>

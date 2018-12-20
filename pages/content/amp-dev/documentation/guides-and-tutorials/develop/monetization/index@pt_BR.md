@@ -26,7 +26,7 @@ O componente `<amp-ad>` é uma extensão de anúncio personalizada para a biblio
 
 ### Etapa 2: adicione a tag amp-ad à página AMP
 
-Mais de cem [redes de publicidade e servidores de anúncios]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}}) oferecem integrações incorporadas às AMP.  Para adicionar um anúncio de uma determinada rede de publicidade, adicione a tag `<amp-ad>` e especifique a rede no atributo `type`.
+Mais de cem [redes de publicidade e servidores de anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) oferecem integrações incorporadas às AMP.  Para adicionar um anúncio de uma determinada rede de publicidade, adicione a tag `<amp-ad>` e especifique a rede no atributo `type`.
 
 Neste exemplo, adicionaremos um local de anúncio para veicular anúncios da rede a9: 
 

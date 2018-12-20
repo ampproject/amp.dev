@@ -109,7 +109,7 @@ $title: 使您的网页可被轻松发现
 
 [tip type="read-on"]
 <<<<<<< HEAD
-要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}})指南。
+要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})指南。
 =======
 要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})指南。
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f

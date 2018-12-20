@@ -12,7 +12,7 @@ $title: 添加 AMP 扩展组件
 
 - **实验**：此类组件是指已发布但尚不可广泛使用的组件。开发者可以选择使用这些尚未全面发布的功能。有关详情，请参阅[实验性功能](/zh_cn/docs/reference/experimental.html)。
 
-我们已在示例中使用了内置组件 [amp-img](/zh_cn/docs/reference/components/amp-img.html)，另外还在[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})教程中探讨了该组件与 AMP 布局系统之间的关系。现在，我们将向新闻报道中添加一些常用的 AMP **扩展**组件。
+我们已在示例中使用了内置组件 [amp-img](/zh_cn/docs/reference/components/amp-img.html)，另外还在[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})教程中探讨了该组件与 AMP 布局系统之间的关系。现在，我们将向新闻报道中添加一些常用的 AMP **扩展**组件。
 
 ## 通过广告获利
 

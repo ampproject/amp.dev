@@ -33,7 +33,7 @@ AMP でテキストを正しく表示するには、ページの文字セット�
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-すべての AMP ドキュメントで、そのドキュメントの「正規（canonical）」バージョンを参照するリンクを指定する必要があります。正規ページの概要と正規リンクのさまざまな手法については、このチュートリアルの[ページが検出されるようにする]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}})の手順で詳しく取り上げます。
+すべての AMP ドキュメントで、そのドキュメントの「正規（canonical）」バージョンを参照するリンクを指定する必要があります。正規ページの概要と正規リンクのさまざまな手法については、このチュートリアルの[ページが検出されるようにする]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}})の手順で詳しく取り上げます。
 
 このチュートリアルでは、正規ページに変換する元の HTML 記事を検討しましょう。
 

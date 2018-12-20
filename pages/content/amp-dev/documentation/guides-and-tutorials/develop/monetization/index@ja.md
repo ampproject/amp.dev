@@ -26,7 +26,7 @@ AMP ページで広告を表示するためのコンポーネントを追加す�
 
 ### 手順 2: AMP ページに amp-ad タグを追加する
 
-100 以上の[広告サーバーとネットワーク]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})で、AMP との統合機能が組み込み込まれています。特定の広告ネットワークの広告を追加するには、`<amp-ad>` タグを追加して、`type` 属性でネットワークを指定します。
+100 以上の[広告サーバーとネットワーク]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})で、AMP との統合機能が組み込み込まれています。特定の広告ネットワークの広告を追加するには、`<amp-ad>` タグを追加して、`type` 属性でネットワークを指定します。
 
 この例では、a9 ネットワークの広告を配信するための広告スロットを追加します。
 

@@ -73,7 +73,7 @@ self.addEventListener('install', function(event) {
 ## AMP 페이지의 모든 링크를 PWA로 연결하기
 
 <<<<<<< HEAD
-AMP 페이지에 있는 링크는 대부분 더 많은 콘텐츠를 담은 페이지로 연결될 가능성이 높습니다. 첫 로드 이후의 링크 클릭이 프로그레시브 웹 앱으로의 '업그레이드'로 확실하게 이어지도록 하는 데에는 [AMP 사용 방식에 따라]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) 두 가지 전략이 있습니다.
+AMP 페이지에 있는 링크는 대부분 더 많은 콘텐츠를 담은 페이지로 연결될 가능성이 높습니다. 첫 로드 이후의 링크 클릭이 프로그레시브 웹 앱으로의 '업그레이드'로 확실하게 이어지도록 하는 데에는 [AMP 사용 방식에 따라]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 두 가지 전략이 있습니다.
 =======
 AMP 페이지에 있는 링크는 대부분 더 많은 콘텐츠를 담은 페이지로 연결될 가능성이 높습니다. 첫 로드 이후의 링크 클릭이 프로그레시브 웹 앱으로의 '업그레이드'로 확실하게 이어지도록 하는 데에는 [AMP 사용 방식에 따라]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 두 가지 전략이 있습니다.
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f

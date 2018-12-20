@@ -8,7 +8,7 @@ AMP 프로젝트의 목표는 웹페이지를 빠르게 제공함으로써 사�
 
 {{ image('/static/img/docs/ads/ads_in_amp.svg', 647, 263, alt='AMP 페이지에 광고 게재', align='' ) }}
 
-1.  AMP 페이지를 시작하면 게시자가 페이지에서 광고를 표시할 슬롯을 만듭니다. 기존에는 이를 위해 JavaScript 코드를 삽입했지만, AMP에서는 게시자가 특정 광고 네트워크의 AMP 페이지에 [`<amp-ad>`](/ko/docs/reference/components/amp-ad.html) 태그를 추가합니다. 자세한 내용은 [AMP 페이지에서 광고로 수익 창출]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+1.  AMP 페이지를 시작하면 게시자가 페이지에서 광고를 표시할 슬롯을 만듭니다. 기존에는 이를 위해 JavaScript 코드를 삽입했지만, AMP에서는 게시자가 특정 광고 네트워크의 AMP 페이지에 [`<amp-ad>`](/ko/docs/reference/components/amp-ad.html) 태그를 추가합니다. 자세한 내용은 [AMP 페이지에서 광고로 수익 창출]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 
 2.  사용자가 AMP 페이지를 로드하면 `<amp-ad>` 태그에서 광고 네트워크에 광고 요청을 보냅니다. 광고 네트워크에서는 광고를 AMP 페이지에 반환하기 위해 `amp-ad` 구현을 작성합니다. 자세한 내용은 [AMP에 광고 네트워크 통합](https://github.com/ampproject/amphtml/blob/master/ads/README.md) 가이드를 참조하세요.
 

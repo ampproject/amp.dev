@@ -14,7 +14,7 @@ AMP’s component system allows you to quickly build efficient and responsive fe
 
 - **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released.  Learn more in [Experimental features](/docs/reference/experimental.html).
 
-Our sample already uses a built-in component, [amp-img](/docs/reference/components/amp-img.html), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}}) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
+Our sample already uses a built-in component, [amp-img](/docs/reference/components/amp-img.html), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
 
 ## Monetize with ads
 
