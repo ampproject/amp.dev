@@ -54,6 +54,6 @@ El código de inicio ofrece alguna interactividad básica:
 **Pruébalo**: Desliza el carrusel de imágenes y toca el botón "Añadir al carrito".
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/prereqs-setup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/prereqs-setup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

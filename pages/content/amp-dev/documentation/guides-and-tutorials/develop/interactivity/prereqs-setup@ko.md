@@ -45,5 +45,5 @@ node app.js
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

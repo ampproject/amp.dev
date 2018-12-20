@@ -13,5 +13,5 @@ $title: 로그인이 필요한 AMP 페이지 만들기
 {% include "/views/partials/sub_nav.html" %}
 
 <div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">시작하기</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">시작하기</span></a>
 </div>

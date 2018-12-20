@@ -71,5 +71,5 @@ Tip: A more detailed explanation about this flow can also be found in the [amp-a
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

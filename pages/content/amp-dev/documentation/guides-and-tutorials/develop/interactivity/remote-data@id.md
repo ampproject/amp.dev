@@ -169,6 +169,6 @@ Kita hampir selesai. Mari nonaktifkan tombol "Tambahkan ke keranjang" jika ukura
 **Cobalah**:  Jika memilih ukuran yang tidak tersedia, Anda tidak dapat menambahkannya ke keranjang.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

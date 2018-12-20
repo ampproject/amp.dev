@@ -204,6 +204,6 @@ Note: In practice, each image in the carousel would likely have a different `src
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

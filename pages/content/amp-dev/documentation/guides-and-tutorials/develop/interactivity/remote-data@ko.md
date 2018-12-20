@@ -169,7 +169,7 @@ AMPPAREL 매장은 특이하게도 색상과 사이즈에 따라 셔츠 가격�
 **시도해 보기**: 주문할 수 없는 사이즈를 선택하면 장바구니에 추가할 수 없습니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>
 

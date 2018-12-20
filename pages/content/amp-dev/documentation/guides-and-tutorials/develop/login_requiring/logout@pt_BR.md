@@ -22,6 +22,6 @@ Quando você clica no botão "Sair", é direcionado ao URL especificado na confi
 Assim como no caso do login, quando o servidor AMPByExample recebe uma solicitação de saída, ele usa o parâmetro de consulta do URL de retorno incluído automaticamente pela biblioteca AMP e faz o redirecionamento para ele, adicionando `#success=true`. Nesse momento, você volta à página inicial. O cookie AMPByExample criado anteriormente para a página de login (chamado de `ABE_LOGGED_IN`) é apagado.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/summary.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/summary.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>

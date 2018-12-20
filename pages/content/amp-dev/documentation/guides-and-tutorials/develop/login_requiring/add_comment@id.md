@@ -61,8 +61,8 @@ Saat menambahkan komentar dan mengklik tombol kirim, Anda kini harusnya melihat 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/logout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/logout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
  
  

@@ -23,6 +23,6 @@ When you click the Logout button, you are directed to the URL that you specified
 Similar to the login, when the AMPByExample server receives a logout request, it uses the return URL query parameter automatically added by the AMP library and redirects to it, adding `#success=true`. By this time, you are back on the initial page; the AMPByExample cookie previously created for the login page (called `ABE_LOGGED_IN`) would be cleared at this point.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/summary.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/summary.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

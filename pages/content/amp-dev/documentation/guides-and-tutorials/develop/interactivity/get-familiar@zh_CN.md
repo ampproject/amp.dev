@@ -52,7 +52,7 @@ AMP 组件可提供额外的功能和界面组件，为 AMP 网页增添丰富�
 **试试看**：滑动图片轮换展示内容，然后点按“加入购物车”按钮。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/prereqs-setup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/prereqs-setup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
  
