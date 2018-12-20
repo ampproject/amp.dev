@@ -39,7 +39,9 @@
     "http-proxy-middleware": "^0.19.1",
     "http-proxy-response-rewrite": "0.0.1",
     "octonode": "^0.9.5",
+    "recursive-search": "^1.0.1",
     "request": "^2.88.0",
+    "through2": "^3.0.0",
     "write": "^1.0.3",
     "write-yaml": "^1.0.0"
   }
