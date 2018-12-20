@@ -28,9 +28,13 @@ const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tuto
 // The location to search for documents in
 const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials';
 // The pattern used by Grow to make up references
-const REFERENCE_PATTERN = /g.doc\('(.*?)'/;
+const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
 // Contains manual hints for double filenames etc.
 const LOOKUP_TABLE = {
+  '/content/docs/fundamentals/add_advanced/congratulations.md': '/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/congratulations.md',
+  '/documentation/guides-and-tutorials/start/add_advanced/setting_up.md': '/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md',
+  '/content/docs/fundamentals/add_advanced/setting_up.md': '/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md',
+  '/content/docs/fundamentals/converting/congratulations.md': '../../../pages/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md'
 };
 
 /**
@@ -64,9 +68,7 @@ class GrowReferenceChecker {
 
       stream = stream.pipe(through.obj((function(doc, encoding, callback) {
         this._log.await(`Checking ${doc.relative} ...`);
-        this._log.config({'interactive': true});
-        stream.push(this._check(doc));
-        this._log.config({'interactive': false});
+        stream.push(this._check(doc, callback));
         callback();
       }).bind(this)));
 
@@ -90,7 +92,7 @@ class GrowReferenceChecker {
           for (let documentPath in this._multipleMatches) {
             this._log.pending(`${documentPath}`);
             for (let possibleMatch of this._multipleMatches[documentPath]) {
-              this._log.pending(`-- ${possibleMatch}`);
+              this._log.pending(`-- ${possibleMatch.replace(POD_BASE_PATH, '/')}`);
             }
           }
         }
