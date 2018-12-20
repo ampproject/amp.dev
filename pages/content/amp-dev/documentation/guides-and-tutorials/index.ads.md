@@ -36,6 +36,6 @@ Learn more about AMPHTML ads in the [AMPHTML ads]({{g.doc('/content/amp-dev/docu
 
 Visit these resources to get started with ads in AMP:
 
-* [Monetizing your AMP page with ads]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})
+* [Monetizing your AMP page with ads]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
 * [Integrating with AMP to serve display ads]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [AMPHTML ads]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})

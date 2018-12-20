@@ -96,6 +96,6 @@ AMP でこの機能を再現するには、まず、対象ドキュメントの 
 ヒント: より単純なトラッキング システムについては、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) の記事を参照してください。amp-pixel は従来のピクセル トラッキングの要件を満たすことのみを目的としているため、ページビューのトラッキングのみが必要な場合は、amp-pixel の方が amp-analytics よりも軽量なソリューションです。詳しくは、[アナリティクス: 基本ガイド]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})をご覧ください。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

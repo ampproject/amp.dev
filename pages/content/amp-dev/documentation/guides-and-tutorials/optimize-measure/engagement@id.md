@@ -39,7 +39,7 @@ dengan [`amp-form`](/id/docs/reference/components/amp-form.html).
 - **Incar jenis iklan yang menawarkan pengalaman yang baik bagi pembaca.** Jelajahi format iklan AMP seperti
 [`amp-sticky-ad`](/id/docs/reference/components/amp-sticky-ad.html) dan
 [`amp-fx-flying-carpet`](/id/docs/reference/components/amp-fx-flying-carpet.html).
-Ikuti praktik terbaik [monetisasi iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}}).
+Ikuti praktik terbaik [monetisasi iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}}).
 
 - **Download aplikasi Drive.** Sertakan link instal aplikasi di banner dengan [`amp-app-banner`](/id/docs/reference/components/amp-app-banner.html).
 

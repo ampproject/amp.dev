@@ -28,7 +28,7 @@ $title: 提高用户互动度
 
 - **吸引用户进行新的互动**（如潜在客户发掘，简报注册和评论支持，通过 [`amp-form`](/zh_cn/docs/reference/components/amp-form.html)）。
 
-- **努力找到能够提供满意阅读体验的广告类型。** 探索 AMP 广告格式，如 [`amp-sticky-ad`](/zh_cn/docs/reference/components/amp-sticky-ad.html) 和 [`amp-fx-flying-carpet`](/zh_cn/docs/reference/components/amp-fx-flying-carpet.html)。 遵循广告获利[最佳做法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})。
+- **努力找到能够提供满意阅读体验的广告类型。** 探索 AMP 广告格式，如 [`amp-sticky-ad`](/zh_cn/docs/reference/components/amp-sticky-ad.html) 和 [`amp-fx-flying-carpet`](/zh_cn/docs/reference/components/amp-fx-flying-carpet.html)。 遵循广告获利[最佳做法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})。
 
 - **提升应用下载量。** 使用 [`amp-app-banner`](/zh_cn/docs/reference/components/amp-app-banner.html)，在横幅广告中纳入应用安装链接。
 

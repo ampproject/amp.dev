@@ -37,7 +37,7 @@ Saiba mais sobre os anúncios HTML para AMP [neste guia]({{g.doc('/content/amp-d
 
 Acesse estes guias para começar a exibir anúncios AMP:
 
-* [Monetizar páginas AMP com anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})
+* [Monetizar páginas AMP com anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
 * [Integrar com AMP para veicular anúncios gráficos]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [Anúncios HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  

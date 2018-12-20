@@ -27,7 +27,7 @@ $title: ユーザー エンゲージメントを向上させる
 
 - **双方向性を追加する。**  見込み顧客の発掘、ニュースレターの登録、コメントのサポートなどを、[`amp-form`](/ja/docs/reference/components/amp-form.html) を使って追加します。
 
-- **広告タイプを検討してエクスペリエンスを高める。**  AMP 広告フォーマットとして、[`amp-sticky-ad`](/ja/docs/reference/components/amp-sticky-ad.html) や [`amp-fx-flying-carpet`](/ja/docs/reference/components/amp-fx-flying-carpet.html) を使用してエクスペリエンスを高めます。収益化の[ヒント]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})を参考にしてください。
+- **広告タイプを検討してエクスペリエンスを高める。**  AMP 広告フォーマットとして、[`amp-sticky-ad`](/ja/docs/reference/components/amp-sticky-ad.html) や [`amp-fx-flying-carpet`](/ja/docs/reference/components/amp-fx-flying-carpet.html) を使用してエクスペリエンスを高めます。収益化の[ヒント]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})を参考にしてください。
 
 - **アプリのダウンロードを促進する。**
  [`amp-app-banner`](/ja/docs/reference/components/amp-app-banner.html) を使って、バナーにアプリ インストール リンクを追加します。

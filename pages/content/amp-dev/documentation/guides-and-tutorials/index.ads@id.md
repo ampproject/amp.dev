@@ -37,7 +37,7 @@ Pelajari lebih lanjut iklan AMPHTML di panduan [Iklan AMPHTML]({{g.doc('/content
 
 Kunjungi referensi berikut untuk mulai menggunakan iklan di AMP:
 
-* [Memonetasi halaman AMP dengan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})
+* [Memonetasi halaman AMP dengan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
 * [Mengintegrasikan dengan AMP untuk menayangkan iklan display]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [Iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  

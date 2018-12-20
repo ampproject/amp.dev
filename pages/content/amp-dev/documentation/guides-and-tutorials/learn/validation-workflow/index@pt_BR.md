@@ -268,7 +268,7 @@ Cada ferramenta fornece várias informações:
 Se relermos com atenção o [artigo de especificações]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag `<amp-img>`.
 
 Para entender melhor a lista completa de possíveis erros,
-consulte o [guia sobre erros de validação de AMP]({{g.doc('/content/docs/troubleshooting/validation_errors.md', locale=doc.locale).url.path}}).
+consulte o [guia sobre erros de validação de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 Se você ainda tiver dúvidas após uma análise detalhada, [faça uma
 pergunta](http://stackoverflow.com/questions/tagged/amp-html) (em inglês) para receber
 ajuda.

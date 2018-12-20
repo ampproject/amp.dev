@@ -91,6 +91,6 @@ Untuk mempelajari lebih lanjut, lihat dokumentasi referensi komponen [amp-carous
 Catatan: Pada contoh terakhir, Anda mungkin menyadari bahwa komponen `amp-ad` menyertakan elemen `div` turunan dengan atribut `placeholder`. Sebelumnya pada tutorial ini, kita menghadapi skenario serupa terkait `amp-ad` yang menggunakan `fallback`. Apa perbedaan antara placeholder dan fallback? Elemen `Fallback` muncul ketika elemen induk gagal dimuat, misalnya, jika tidak ada iklan yang tersedia. Elemen `placeholder` muncul di tempat elemen induk, saat elemen induk sedang dimuat. Artinya, elemen ini menandai berakhirnya proses pemuatan elemen induk. Anda dapat mempelajari lebih lanjut di panduan [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
