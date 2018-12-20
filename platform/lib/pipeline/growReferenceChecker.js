@@ -21,20 +21,16 @@ const search = require('recursive-search');
 const path = require('path');
 const fs = require('fs');
 
+// Where to look for existing documents
 const POD_BASE_PATH = '../../../pages/';
-// The location to search for documents in
-const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials';
 // Which documents to check for broken references
 const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/**/*.md';
+// The location to search for documents in
+const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials';
 // The pattern used by Grow to make up references
 const REFERENCE_PATTERN = /g.doc\('(.*?)'/;
 // Contains manual hints for double filenames etc.
 const LOOKUP_TABLE = {
-  '/content/docs/interaction_dynamic/login_requiring.md': '/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/index.md',
-  '/content/docs/ads/ads_vendors.html': '/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md',
-  '/content/docs/ads/a4a_spec.html': '/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md',
-  '/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html': '/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md',
-  '/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md': '/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md'
 };
 
 /**
@@ -86,14 +82,15 @@ class GrowReferenceChecker {
           }
         }
 
-        this._log.info('\n');
+        this._log.info('');
 
-        if (this._multipleMatches.length) {
-          this._log.info(`Encountered multiple possible matches for ${this._multipleMatches.length} documents:`);
+        let multipleMatchesCount = Object.keys(this._multipleMatches).length;
+        if (multipleMatchesCount !== 0) {
+          this._log.info(`Encountered multiple possible matches for ${multipleMatchesCount} documents:`);
           for (let documentPath in this._multipleMatches) {
-            this._log.pending(`- ${documentPath}`);
+            this._log.pending(`${documentPath}`);
             for (let possibleMatch of this._multipleMatches[documentPath]) {
-              this._log.pending(`--- ${possibleMatch}`);
+              this._log.pending(`-- ${possibleMatch}`);
             }
           }
         }
@@ -127,7 +124,8 @@ class GrowReferenceChecker {
    */
   _verifyReference(documentPath) {
     this._log.await(`Checking if ${documentPath} exists ...`);
-    if (fs.existsSync(PAGES_BASE_PATH + documentPath)) {
+
+    if (fs.existsSync(POD_BASE_PATH + documentPath)) {
       this._log.success(`Document ${documentPath} exists.`);
       return documentPath;
     }
