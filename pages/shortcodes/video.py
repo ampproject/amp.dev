@@ -1,5 +1,5 @@
-from xml.dom import minidom
 import re
+from xml.dom import minidom
 
 from shortcodes import Shortcode
 
@@ -16,7 +16,7 @@ class VideoShortcode(Shortcode):
         return caption
 
     def _get_src(self, options):
-        src = options.get('src', None)
+        src = options.get('src', '')
         return src
 
     def transform(self, value, options):
