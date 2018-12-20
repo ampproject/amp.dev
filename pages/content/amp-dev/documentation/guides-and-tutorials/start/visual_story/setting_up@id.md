@@ -34,9 +34,11 @@ Setelah menyiapkan server web lokal, lihat tampilan artikel yang sudah jadi pada
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('Penting', type='caution') %}
+[tip type="important"]
+
 Pastikan URL ditayangkan dari `localhost`; jika tidak, artikel AMP mungkin tidak akan dimuat dengan benar, dan Anda mungkin akan menemukan error seperti `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost`.
-{% endcall %}
+
+[/tip]
 
 
 Klik pada artikel yang sudah jadi dan pahami apa yang akan kita buat.

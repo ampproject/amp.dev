@@ -99,9 +99,11 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 *   使用 [AMP 验证工具](https://validator.ampproject.org/)进行一次性测试。
 *   与 [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) 合作并使用其公共验证工具端点。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
+
 要在 AMP 网页上快速呈现 AMPHTML 广告（即，使用快速获取中的优先呈现功能），则语法必须正确无误。如果语法无效，则广告仍会呈现，只是加载速度不会那么快。
-{% endcall %}
+
+[/tip]
 
 ## 在 RTB 中支持 AMPHTML 广告
 

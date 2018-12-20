@@ -75,9 +75,11 @@ Saat menentukan sumber untuk [amp-video](/id/docs/reference/components/amp-video
 
 Jika Anda hanya dapat menyediakan satu format video, sediakan **MP4**.  Namun, jika mungkin, gunakan video **HLS** dan tentukan MP4 sebagai fallback untuk browser yang belum mendukung video HLS. HLS menjalankan streaming kecepatan bit adaptif, yang dapat menyesuaikan kualitas video dengan kecepatan sambungan internet pengguna.
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
+
 Format video HLS tidak didukung pada browser Chrome untuk Desktop (bahkan melalui emulasi sekalipun), sehingga fallback MP4 harus ditentukan untuk semua traffic desktop ke halaman Anda. Untuk men-debug video HLS, Anda harus menggunakan perangkat seluler sebenarnya melalui proses debug USB.
-{% endcall %}
+
+[/tip]
 
 ### Resolusi video
 
@@ -103,9 +105,11 @@ Video artikel AMP selalu ditampilkan vertikal (tampilan potret) dengan rasio tin
 </table>
 
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
+
 Untuk perangkat seluler yang rasio tinggi lebarnya tidak 16:9, video mungkin akan di-crop secara vertikal atau horizontal agar pas dengan viewport.
-{% endcall %}
+
+[/tip]
 
 
 ### Codec video

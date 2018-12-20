@@ -10,9 +10,11 @@ Panduan ini memberikan petunjuk dan praktik terbaik untuk menampilkan iklan di h
 
 Di halaman non-AMP (HTML biasa), jika ingin menampilkan iklan di halaman, Anda perlu menyertakan cuplikan JavaScript untuk menayangkan iklan dari jaringan iklan Anda.  Karena alasan performa dan keamanan, Anda tidak dapat menyertakan JavaScript pihak ketiga di halaman AMP.  Oleh karena itu, untuk menampilkan iklan di AMP, Anda perlu menambahkan komponen [`<amp-ad>`](/id/docs/reference/components/amp-ad.html) kustom ke halaman AMP.
 
-{% call callout('Tips', type='success') %}
+[tip type="success"]
+
 Lihat [AMP By Example untuk demo langsung](https://ampbyexample.com/components/amp-ad/) yang menunjukkan cara menambahkan tag amp-ad ke halaman AMP.
-{% endcall %}
+
+[/tip]
 
 Mari kita ikuti langkah-langkah dalam menambahkan komponen ini agar Anda dapat menampilkan iklan di halaman AMP.
 

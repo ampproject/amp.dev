@@ -99,9 +99,11 @@ Después de crear el anuncio AMP HTML, debes asegurarte de que utiliza la sintax
 *   Utiliza el [validador de AMP](https://validator.ampproject.org/) para realizar pruebas específicas.
 *   Utiliza el punto de conexión al validador público de [Cloudflare](https://blog.cloudflare.com/amp-validator-api/).
 
-{% call callout('Nota', type='note') %}
+[tip type="note"]
+
 Para que los anuncios AMP HTML se publiquen rápidamente en las páginas AMP (es decir, mediante el renderizado preferencial en Fast Fetch), la sintaxis debe ser correcta.  Si esta no es válida, el anuncio se seguirá publicando, pero no tan rápido.
-{% endcall %}
+
+[/tip]
 
 ## Compatibilidad de los anuncios AMP HTML en RTB
 

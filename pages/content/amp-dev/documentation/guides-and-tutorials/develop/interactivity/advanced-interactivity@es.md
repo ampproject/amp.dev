@@ -98,9 +98,11 @@ Cambiando la diapositiva del carrusel:
 
 ¡Excelente! Ahora tenemos un indicador de deslizamiento trabajando.
 
-{% call callout('Extra', type='success') %}
+[tip type="success"]
+
 Compruebe si puede agregar funcionalidad para que cuando un usuario toque en el punto indicador de una diapositiva, actualice el carrusel de imagen con el elemento seleccionado. Como sugerencia, utilice el evento `tap` y el enlace `[slide]` en [`<amp-carousel>`](/docs/reference/components/amp-carousel.html).
-{% endcall %}
+
+[/tip]
 
 ## Cambiar las imágenes en el carrusel
 

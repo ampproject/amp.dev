@@ -51,8 +51,10 @@ $title: AMP 애널리틱스 심층 분석
 </amp-analytics>
 ```
 
-{% call callout('참고', type='note') %}
-위의 예제는 이해를 돕기 위한 코드이지만, 현실성 있는 샘플은 아닙니다. 분석 제공업체와 함께 작업하는 경우에는 위의 샘플이 의미가 없을 수도 있습니다. 제공업체 구성에서는 복잡성이 제거됩니다. 샘플 구성과 관련해서는 [분석 제공업체의 문서](/ko/docs/analytics/analytics-vendors.html)를 참조하세요.{% endcall %}
+[tip type="note"]
+
+위의 예제는 이해를 돕기 위한 코드이지만, 현실성 있는 샘플은 아닙니다. 분석 제공업체와 함께 작업하는 경우에는 위의 샘플이 의미가 없을 수도 있습니다. 제공업체 구성에서는 복잡성이 제거됩니다. 샘플 구성과 관련해서는 [분석 제공업체의 문서](/ko/docs/analytics/analytics-vendors.html)를 참조하세요.
+[/tip]
 
 ## 분석 데이터를 보낼 위치: type 속성
 
@@ -135,11 +137,13 @@ JSON 개체에 포함된 구성은 분석 계정의 변수 값일 뿐입니다.
 ```
 
 
-{% call callout('중요', type='caution') %}
+[tip type="important"]
+
 AMP는 동일한 변수의 여러 가지 용도에 대한 유효성을 검사하지 않습니다.
 값은 선호하는 변수 대체 순위에 따라 채워지며
 원격 URL의 값은 순위의 맨 위에 있습니다([변수 대체 순위](/ko/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering) 참조).
-{% endcall %}
+
+[/tip]
 
 ## Requests, triggers 및 transports
 
@@ -224,7 +228,9 @@ Google 애널리틱스를 포함한 일부 분석 제공업체에서는
 }
 ```
 
-{% call callout('중요', type='caution') %} 위의 방법은 AMP 페이지에서만 권장되며 AMP HTML 광고에는 권장되지 않습니다. 페이지의 콘텐츠보다 분석 우선순위가 낮으므로 클릭 손실을 방지하려면 브라우저 리디렉션을 사용하여 클릭을 추적하는 것이 좋습니다. {% endcall %}
+[tip type="important"]
+ 위의 방법은 AMP 페이지에서만 권장되며 AMP HTML 광고에는 권장되지 않습니다. 페이지의 콘텐츠보다 분석 우선순위가 낮으므로 클릭 손실을 방지하려면 브라우저 리디렉션을 사용하여 클릭을 추적하는 것이 좋습니다. 
+[/tip]
 
 AMP는 다음 트리거 구성을 지원합니다.
 
@@ -263,9 +269,11 @@ AMP는 다음 트리거 구성을 지원합니다.
   </tbody>
 </table>
 
-{% call callout('중요', type='caution') %}
+[tip type="important"]
+
 우선순위가 낮은 구성의 트리거는 우선순위가 높은 구성의 동일한 이름을 가진 트리거에 의해 재정의됩니다([변수 대체 순위](/ko/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering) 참조).
-{% endcall %}
+
+[/tip]
 
 ### 데이터가 전송되는 방식: transport 속성
 

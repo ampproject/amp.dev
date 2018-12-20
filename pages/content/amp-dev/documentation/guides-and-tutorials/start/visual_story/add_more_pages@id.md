@@ -4,9 +4,11 @@ $title: Menambahkan lebih banyak halaman
 
 Setelah menguasai cara menambahkan halaman ke artikel AMP, halaman berikutnya dalam artikel "The Joy of Pets" dapat ditambahkan dengan cara yang hampir sama. Berdasarkan informasi yang diberikan di bawah, **lanjutkan membuat halaman lainnya** dengan memanfaatkan pengetahuan yang telah Anda pelajari sejauh ini.  Jika menemui kesulitan, lihat kode (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) yang telah jadi.
 
-{% call callout('Tips', type='success') %}
+[tip type="success"]
+
 Ingatlah bahwa setiap halaman memerlukan atribut "id" unik (misalnya `id="page1"`).
-{% endcall %}
+
+[/tip]
 
 ## Halaman 1: Kucing
 

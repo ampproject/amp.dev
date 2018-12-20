@@ -99,9 +99,11 @@ Depois de criar seu anúncio HTML para AMP, certifique-se de que ele está usand
 *   Use o [validador de AMP](https://validator.ampproject.org/) para fazer um teste isolado.
 *   Estabeleça uma parceria com o [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) (em inglês) e use o ponto de extremidade público do validador que ele oferece.
 
-{% call callout('Observação', type='note') %}
+[tip type="note"]
+
 Para renderizar rapidamente os anúncios HTML para AMP em páginas AMP (ou seja, usando a renderização preferencial no Fast Fetch), a sintaxe precisa estar correta.  Se ela não for válida, o anúncio ainda será renderizado, mas isso não acontecerá tão rápido.
-{% endcall %}
+
+[/tip]
 
 ## Compatibilidade com anúncios HTML para AMP em RTB
 

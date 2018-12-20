@@ -11,9 +11,11 @@ $title: AMP とプログレッシブ ウェブアプリを組み合わせる
 2. AMP から PWA への[円滑で超高速なユーザー エクスペリエンス]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}})を実現する
 3. AMP の機能を活用して [PWA を簡素化する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
 
-{% call callout('プログレッシブ ウェブアプリとは', type='note') %}
+[tip type="note"]
+
 詳しくは、Web Fundamentals の[プログレッシブ ウェブアプリについての説明](https://developers.google.com/web/progressive-web-apps/)をご覧ください。
-{% endcall %}
+
+[/tip]
 
 ## PWA の機能を取り入れた AMP ページ
 

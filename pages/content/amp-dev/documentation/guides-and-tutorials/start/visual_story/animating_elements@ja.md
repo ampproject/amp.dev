@@ -116,9 +116,11 @@ $title: 要素をアニメーション化する
 </amp-story-page>
 ```
 
-{% call callout('関連情報', type='success') %}
+[tip type="success"]
+
 ストーリー ページ上の要素に `animate-in="<アニメーション プリセット>"` 属性を追加することで、さまざまなアニメーション効果を確認できます。
-{% endcall %}
+
+[/tip]
 
 ## アニメーションのタイミング
 

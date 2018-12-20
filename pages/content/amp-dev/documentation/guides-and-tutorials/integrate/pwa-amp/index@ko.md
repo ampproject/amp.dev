@@ -11,9 +11,11 @@ $title: AMP와 프로그레시브 웹 앱 통합하기
 2. 사용자가 AMP에서 PWA로 [빠르고 자연스럽게 이동]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}})하도록 연결하기
 3. AMP 기능을 활용한 [PWA 간소화]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
 
-{% call callout('프로그레시브 웹 앱이란?', type='note') %}
+[tip type="note"]
+
 웹 기초에서 [프로그레시브 웹 앱](https://developers.google.com/web/progressive-web-apps/)에 대해 자세히 알아보세요.
-{% endcall %}
+
+[/tip]
 
 ## PWA 기능을 갖춘 AMP 페이지
 

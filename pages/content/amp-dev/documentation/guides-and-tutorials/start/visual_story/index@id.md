@@ -15,7 +15,9 @@ Dalam tutorial ini, kami akan memperkenalkan Anda dengan komponen [amp-story](/i
 - Menjalankan animasi elemen pada halaman
 - Mempertahankan interaksi pembaca dengan konten melalui penambahan link terkait ke akhir artikel
 
-{% call callout('Catatan', type='note') %} Komponen [amp-story](/id/docs/reference/components/amp-story.html) masih bersifat **eksperimental**. {% endcall %}
+[tip type="note"]
+ Komponen [amp-story](/id/docs/reference/components/amp-story.html) masih bersifat **eksperimental**. 
+[/tip]
 
 
 <div class="start-button">

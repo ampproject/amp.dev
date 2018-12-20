@@ -31,9 +31,11 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('도움말', type='success') %}
+[tip type="success"]
+
 `amp-img`의 비교 라이브 데모를 확인해 보세요. [AMP By Example의 라이브 데모](https://ampbyexample.com/components/amp-img/)
-{% endcall %}
+
+[/tip]
 
 ## 레이아웃 속성
 
@@ -97,9 +99,11 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
   </tbody>
 </table>
 
-{% call callout('도움말', type='success') %}
+[tip type="success"]
+
 [AMP 레이아웃 시연](/ko/docs/design/amp-html-layout/layouts_demonstrated.html) 페이지를 방문하여 다양한 레이아웃이 화면 크기 조절에 어떻게 반응하는지 알아보세요. [AMP By Example](https://ampbyexample.com/advanced/layout_system/)에서도 자세히 알아볼 수 있습니다.
-{% endcall %}
+
+[/tip]
 
 
 ### 너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?
@@ -152,9 +156,11 @@ AMP 런타임이 다음과 같이 기본값을 설정할 수 있습니다.
 새로운 검색결과에 따라 미디어 쿼리가 재평가되어
 요소가 숨겨지고 표시됩니다.
 
-{% call callout('읽어보기', type='read') %}
+[tip type="read-on"]
+
 [반응성을 위한 CSS 미디어 쿼리 사용](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=ko)에서 미디어 쿼리를 적용하여 레이아웃을 관리하는 방법을 자세히 알아보세요.
-{% endcall %}
+
+[/tip]
 
 ### 요소 미디어 쿼리
 

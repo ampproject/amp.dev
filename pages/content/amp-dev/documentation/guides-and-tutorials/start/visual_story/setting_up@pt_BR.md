@@ -34,9 +34,11 @@ Após configurar seu servidor da Web local, <a href="http://localhost:8000/pets-
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('Importante', type='caution') %}
+[tip type="important"]
+
 O URL precisa ser disponibilizado por `localhost`. Caso contrário, a história AMP não será carregada corretamente, e talvez você veja erros como `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
-{% endcall %}
+
+[/tip]
 
 
 Clique para ver a história concluída e ter uma ideia do resultado.

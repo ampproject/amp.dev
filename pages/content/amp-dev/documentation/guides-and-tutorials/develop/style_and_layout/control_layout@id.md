@@ -31,9 +31,11 @@ yang ditetapkan oleh atribut width dan height yang ditentukan. Cobalah dengan me
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('Tips', type='success') %}
+[tip type="success"]
+
 Lihat demo langsung berdampingan tentang `amp-img`: [Demo Langsung AMP by Example](https://ampbyexample.com/components/amp-img/).
-{% endcall %}
+
+[/tip]
 
 ## Atribut layout
 
@@ -97,9 +99,11 @@ Nilai berikut dapat digunakan untuk atribut `layout`:
   </tbody>
 </table>
 
-{% call callout('Tips', type='success') %}
+[tip type="success"]
+
 Kunjungi halaman [Mendemonstrasikan tata letak AMP](/id/docs/design/amp-html-layout/layouts_demonstrated.html) untuk melihat bagaimana berbagai tata letak merespons perubahan ukuran layar. Anda juga dapat menemukan lebih banyak informasi di [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
-{% endcall %}
+
+[/tip]
 
 
 ### Bagaimana jika atribut width dan height tidak ditentukan?
@@ -152,9 +156,11 @@ Jika jendela browser berubah ukuran atau orientasi,
 kueri media akan dievaluasi ulang dan elemen disembunyikan atau ditampilkan
 berdasarkan hasil baru.
 
-{% call callout('Baca selengkapnya', type='read') %}
+[tip type="read-on"]
+
 Pelajari lebih lanjut cara mengontrol tata letak dengan menerapkan kueri media di [Menggunakan kueri media CSS untuk meningkatkan respons](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=id).
-{% endcall %}
+
+[/tip]
 
 ### Kueri media elemen
 

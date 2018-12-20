@@ -35,10 +35,12 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-{% call callout('Dica', type='success') %}
+[tip type="success"]
+
 Considere oferecer aos usuários também a opção de visualizar a versão não AMP
 por meio das configurações de preferências no aplicativo.
-{% endcall %}
+
+[/tip]
 
 ### Maneiras de transformar os links
 
@@ -61,12 +63,14 @@ Há três maneiras programáticas de transformar os links:
     criptografia de ponta a ponta). Acione a transformação do URL assim que
     o conteúdo estiver disponível, antes de qualquer interação com o usuário.
 
-{% call callout('Importante', type='caution') %}
+[tip type="important"]
+
 Nunca solicite URLs de AMP usando a AMP API do Google como resultado da interação
 com um usuário, porque isso compromete o desempenho do seu aplicativo devido à introdução
 de uma solicitação de rede adicional. Em vez disso, use uma das três abordagens
 descritas acima.
-{% endcall %}
+
+[/tip]
 
 
 #### AMP URL API do Google
@@ -111,11 +115,13 @@ O corpo da resposta contém o mapeamento do URL de AMP no formato JSON:
 }
 ```
 
-{% call callout('Observação', type='note') %}
+[tip type="note"]
+
 URLs de páginas AMP armazenadas em caches de AMP que não forem do Google não podem ser recuperados com a
 AMP URL API. No entanto, é fácil derivar o URL em cache do URL de AMP
 retornado (ampURL).
-{% endcall %}
+
+[/tip]
 
 
 ## Usar caches de AMP
@@ -152,11 +158,13 @@ Recomendamos usar o cache de AMP pelos seguintes motivos:
     AMP e para seus usuários. Usar um cache de AMP garante que os usuários
     sempre vejam o mesmo arquivo AMP que está no cache.
 
-{% call callout('Importante', type='caution') %}
+[tip type="important"]
+
 Ao disponibilizar páginas AMP por meio do cache de AMP, ofereça uma experiência de visualização que
 mostre claramente a origem do AMP e que ofereça aos usuários a possibilidade de compartilhar o
 URL canônico (veja também as duas seções a seguir para saber mais).
-{% endcall %}
+
+[/tip]
 
 ## Implementar um visualizador de AMP
 

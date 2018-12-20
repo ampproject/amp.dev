@@ -10,9 +10,11 @@ En esta guía, se incluyen instrucciones y prácticas recomendadas para mostrar 
 
 En las páginas que no son AMP (HTML tradicional), si quieres mostrar anuncios, debes incluir un fragmento de JavaScript para servir anuncios de tu red publicitaria.  Por motivos de rendimiento y seguridad, no puedes incluir código JavaScript de terceros en las páginas AMP.  Por lo tanto, para mostrar anuncios en AMP, debes añadir el componente personalizado [`<amp-ad>`](/es/docs/reference/components/amp-ad.html) a tu página AMP.
 
-{% call callout('Nota', type='success') %}
+[tip type="success"]
+
 Consulta la página [AMP By Example para ver una demostración en directo](https://ampbyexample.com/components/amp-ad/) de cómo añadir una etiqueta "amp-ad" a una página AMP.
-{% endcall %}
+
+[/tip]
 
 Veamos los pasos para añadir este componente, que te permitirá mostrar anuncios en tu página AMP.
 

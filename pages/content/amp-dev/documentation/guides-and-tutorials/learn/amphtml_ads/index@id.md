@@ -99,9 +99,11 @@ Setelah membuat iklan AMPHTML, Anda harus memastikan bahwa iklan telah menggunak
 *   Gunakan [validator AMP](https://validator.ampproject.org/) untuk pengujian satu kali.
 *   Berpartnerlah dengan [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) dan gunakan titik akhir validator publiknya.
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
+
 Untuk merender iklan AMPHTML dengan cepat di halaman AMP (yaitu, menggunakan rendering istimewa di Fast Fetch), sintaksnya harus tepat.  Jika sintaksnya tidak valid, iklan akan tetap ditampilkan, hanya saja tidak secepat itu.
-{% endcall %}
+
+[/tip]
 
 ## Mendukung iklan AMPHTML di RTB
 

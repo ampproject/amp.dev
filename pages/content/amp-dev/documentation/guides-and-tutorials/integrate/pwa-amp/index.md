@@ -16,9 +16,11 @@ Progressive Web Apps and AMP pages work great together. In fact, in many cases, 
 2. Create a [compelling, super-fast user journey]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}}) from AMP to PWA
 3. [Simplify your PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) by using the power of AMP
 
-{% call callout('Progressive Web App?', type='note') %}
+[tip type="note"]
+
 Learn more about [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) at Web Fundamentals.
-{% endcall %}
+
+[/tip]
 
 ## AMP pages with PWA features
 

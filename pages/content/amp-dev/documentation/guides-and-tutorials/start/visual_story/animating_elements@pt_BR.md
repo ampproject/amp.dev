@@ -116,9 +116,11 @@ Para aplicar uma entrada com animação a um elemento, é preciso especificar <c
 </amp-story-page>
 ```
 
-{% call callout('Para se divertir', type='success') %}
+[tip type="success"]
+
 Adicione o atributo `animate-in="<animação predefinida>"` a elementos das suas páginas de histórias para aplicar vários efeitos de animação.
-{% endcall %}
+
+[/tip]
 
 ## Tempo de animação
 

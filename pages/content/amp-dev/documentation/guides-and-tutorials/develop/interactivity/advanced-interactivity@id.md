@@ -97,9 +97,11 @@ Dengan mengubah slide di carousel, perubahan ini:
 
 Bagus. Sekarang kita memiliki indikator slide yang dapat dijalankan.
 
-{% call callout('Pelajaran tambahan', type='success') %}
+[tip type="success"]
+
 Lihat apakah Anda dapat menambahkan fungsi sehingga jika pengguna menge-tap titik indikator slide, titik tersebut akan mengudate carousel gambar dengan item yang dipilih. Sebagai petunjuk, gunakan peristiwa `tap` dan pengikatan `[slide]` di [`<amp-carousel>`](/id/docs/reference/components/amp-carousel.html).
-{% endcall %}
+
+[/tip]
 
 ## Mengubah gambar di carousel
 

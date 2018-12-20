@@ -11,9 +11,11 @@ $title: 将 AMP 与渐进式网页应用相结合
 2. 打造从 AMP 到 PWA 的[超快且极具吸引力的用户之旅]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}})
 3. 利用 AMP 的强大功能[简化 PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})
 
-{% call callout('渐进式网页应用？', type='note') %}
+[tip type="note"]
+
 在“网页基础知识”网站上详细了解[渐进式网页应用](https://developers.google.com/web/progressive-web-apps/)。
-{% endcall %}
+
+[/tip]
 
 ## 支持 PWA 功能的 AMP 网页
 

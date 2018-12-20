@@ -4,9 +4,11 @@ $title: ページを追加する
 
 ここまでで、AMP ストーリーにページを追加する方法を説明しました。同じようにして「ペットとの楽しい時間」のストーリーに続きのページを追加してみましょう。これまでに学んだ内容を思い出しながら、以下の手順に沿って**残りのページを作成してみてください**。途中でわからなくなったら、完成版のコード（<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>）を参考にしてください。
 
-{% call callout('ヒント', type='success') %}
+[tip type="success"]
+
 各ページには、`id="page1"` などの形式で固有の「id」属性を設定する必要があります。
-{% endcall %}
+
+[/tip]
 
 ## ページ 1: 猫
 

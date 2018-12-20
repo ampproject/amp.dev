@@ -31,9 +31,11 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('提示', type='success') %}
+[tip type="success"]
+
 查看并排显示的 `amp-img` 在线演示：[AMP By Example 上的在线演示](https://ampbyexample.com/components/amp-img/)。
-{% endcall %}
+
+[/tip]
 
 ## layout 属性
 
@@ -97,9 +99,11 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
   </tbody>
 </table>
 
-{% call callout('提示', type='success') %}
+[tip type="success"]
+
 请访问[演示 AMP 布局](/zh_cn/docs/design/amp-html-layout/layouts_demonstrated.html)页面，了解各种布局如何随屏幕尺寸的调整而变化。此外，您还可访问 [AMP By Example](https://ampbyexample.com/advanced/layout_system/) 以了解更多详情。
-{% endcall %}
+
+[/tip]
 
 
 ### 如果未定义宽度和高度，会怎样？
@@ -152,9 +156,11 @@ AMP runtime 会将这些值默认如下：
 系统就会重新评估媒体查询，
 并会根据所得出的新结果来隐藏和显示各元素。
 
-{% call callout('继续阅读', type='read') %}
+[tip type="read-on"]
+
 要详细了解如何通过应用媒体查询来控制布局，请参阅[将 CSS 媒体查询用于自适应设计](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=zh-CN)。
-{% endcall %}
+
+[/tip]
 
 ### 元素媒体查询
 

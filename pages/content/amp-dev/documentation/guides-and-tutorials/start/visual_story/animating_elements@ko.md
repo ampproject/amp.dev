@@ -116,9 +116,11 @@ $title: 요소에 애니메이션 효과 추가
 </amp-story-page>
 ```
 
-{% call callout('참고', type='success') %}
+[tip type="success"]
+
 스토리 페이지의 요소에 `animate-in="<animation preset>"` 속성을 추가하여 다양한 애니메이션 효과를 살펴보세요.
-{% endcall %}
+
+[/tip]
 
 ## 애니메이션 시간
 

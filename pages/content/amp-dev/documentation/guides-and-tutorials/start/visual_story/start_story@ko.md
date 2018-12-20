@@ -56,7 +56,8 @@ $title: 본격적으로 스토리 시작하기
 `amp-story` 레퍼런스 문서의 [attributes](/ko/docs/reference/components/amp-story.html#attributes)
 섹션을 참고하십시오.
 
-{% call callout('노트', type='note') %}
+[tip type="note"]
+
 여기에서 설명한 메타데이터 속성은 해당 페이지의 Structured Data (예를 들면
 JSON-LD)를 대체하는 것은 아닙니다. amp-story에 들어가는 title, publisher 등이
 페이지에 이미 있는 Structured Data와 중복된다고 Structured Data를 없애면
@@ -64,7 +65,8 @@ JSON-LD)를 대체하는 것은 아닙니다. amp-story에 들어가는 title, p
 참고로, [Structured Data](/ko/docs/fundamentals/discovery.html#integrate-with-third-party-platforms-through-additional-metadata)는
 AMP 문서(AMP 스토리를 포함하여)를 여러 플랫폼이나 서비스에서 문서가 잘 보여줄 수
 있게하는 메타데이터 포맷입니다.
-{% endcall %}
+
+[/tip]
 
 여기까지 왔으면 껍데기만 만들어진 셈인데 아직 유효(valid)한 문서는 아닙니다.
 amp-story 컴포넌트는 최소한 하나 이상의 페이지를 갖고 있어야합니다. 그럼 이제

@@ -97,9 +97,11 @@ Mudar o slide no carrossel fará o seguinte:
 
 Muito bem! Agora o indicador de slides já está funcionando.
 
-{% call callout('Crédito extra', type='success') %}
+[tip type="success"]
+
 Tente adicionar uma funcionalidade para que, quando o usuário tocar no ponto indicador de slide, o carrossel de imagens seja atualizado com o item selecionado. Uma dica: use o evento `tap` e a vinculação `[slide]` em [`<amp-carousel>`](/pt_br/docs/reference/components/amp-carousel.html).
-{% endcall %}
+
+[/tip]
 
 ## Mudar as imagens no carrossel
 

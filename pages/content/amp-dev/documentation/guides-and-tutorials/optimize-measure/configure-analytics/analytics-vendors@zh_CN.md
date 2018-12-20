@@ -30,13 +30,17 @@ $title: 分析工具供应商
 </amp-analytics>
 ```
 
-{% call callout('提示', type='success') %}
-如果您喜欢研究代码，可以在 [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) 文件中探索原始配置。
-{% endcall %}
+[tip type="success"]
 
-{% call callout('注意', type='note') %}
+如果您喜欢研究代码，可以在 [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) 文件中探索原始配置。
+
+[/tip]
+
+[tip type="note"]
+
 对于希望将其服务与 [`<amp-analytics>`](/zh_cn/docs/reference/components/amp-analytics.html) 集成的供应商，请参阅[将分析工具与 AMP 集成](/zh_cn/docs/analytics/integrating-analytics.html)一文中的详细信息。
-{% endcall %}
+
+[/tip]
 
 <hr>
 
@@ -230,9 +234,11 @@ type 属性值：`oewa`
 
 - `url`：`amp-analytics-oewa.html` 的 HTTPS 位置
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
+
 有一个名为 `oewadirect` 的变量，它不使用 iframe-ping 解决方案，但可以使用 `AMP CLIENT_ID` 更高效地检测客户端。该变量目前仍处于试验阶段，而且由于它不使用 `oewa2.js`，已被 OEWA 禁用。
-{% endcall %}
+
+[/tip]
 
 ### Parsely
 

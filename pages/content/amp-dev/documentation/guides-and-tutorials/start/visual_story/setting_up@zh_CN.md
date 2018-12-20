@@ -34,9 +34,11 @@ $title: 设置
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('重要提示', type='caution') %}
+[tip type="important"]
+
 请确保该网址是从 `localhost` 提供的，否则 AMP 故事可能会无法正确加载，而且您可能会遇到诸如此类的错误：`"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
-{% endcall %}
+
+[/tip]
 
 
 点击浏览故事的完成版，了解我们将要创作什么样的内容。

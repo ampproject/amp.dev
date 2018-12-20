@@ -30,13 +30,17 @@ $title: 애널리틱스 공급업체
 </amp-analytics>
 ```
 
-{% call callout('팁', type='success') %}
-코드 사용에 익숙한 경우 [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) 파일에서 환경설정과 관련한 소스코드를 확인할 수 있습니다.
-{% endcall %}
+[tip type="success"]
 
-{% call callout('참고', type='note') %}
+코드 사용에 익숙한 경우 [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) 파일에서 환경설정과 관련한 소스코드를 확인할 수 있습니다.
+
+[/tip]
+
+[tip type="note"]
+
 서비스를 [`<amp-analytics>`](/ko/docs/reference/components/amp-analytics.html)와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합](/ko/docs/analytics/integrating-analytics.html) 세부정보를 참조하세요.
-{% endcall %}
+
+[/tip]
 
 <hr>
 
@@ -230,9 +234,11 @@ Nielsen Marketing Cloud 지원을 추가합니다. 자세한 내용은 [Nielsen 
 
 - `url`: `amp-analytics-oewa.html`의 HTTPS 위치
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
+
 iframe-ping 솔루션을 사용하지 않고 `AMP CLIENT_ID`를 사용하여 클라이언트 감지 기능을 개선한 `oewadirect`라는 변형 버전이 있습니다.  현재 실험실 기능으로서, `oewa2.js`를 사용하지 않으므로 OEWA에서 사용을 금지하고 있습니다.
-{% endcall %}
+
+[/tip]
 
 ### Parsely
 

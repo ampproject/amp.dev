@@ -11,9 +11,11 @@ Progressive Web App dan halaman AMP bekerja sama dengan baik. Bahkan, dalam bany
 2. Membuat [perjalanan pengguna yang super cepat dan menarik]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}}) dari AMP ke PWA
 3. [Menyederhanakan PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) dengan menggunakan kecanggihan AMP
 
-{% call callout('Progressive Web App?', type='note') %}
+[tip type="note"]
+
 Pelajari lebih lanjut tentang [Progressive Web App](https://developers.google.com/web/progressive-web-apps/) di Dasar-Dasar Web.
-{% endcall %}
+
+[/tip]
 
 ## Halaman AMP dengan fitur PWA
 

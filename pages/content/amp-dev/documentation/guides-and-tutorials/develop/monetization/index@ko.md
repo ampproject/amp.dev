@@ -10,9 +10,11 @@ $title: AMP 페이지에서 광고로 수익 창출하기
 
 AMP가 아닌 페이지(기존 HTML 페이지)에 광고를 게재하려면 자바스크립트 스니펫을 포함하여 광고 네트워크에서 광고가 게재되도록 해야 합니다.  성능 및 보안상의 이유로 AMP 페이지에는 타사 자바스크립트를 포함할 수 없습니다.  따라서 AMP에 광고를 게재하려면 AMP 페이지에 맞춤 [`<amp-ad>`](/ko/docs/reference/components/amp-ad.html) 구성요소를 추가해야 합니다.
 
-{% call callout('팁', type='success') %}
+[tip type="success"]
+
 [AMP By Example 라이브 데모](https://ampbyexample.com/components/amp-ad/)에서 AMP 페이지에 amp-ad 태그를 추가하는 방법을 알아보세요.
-{% endcall %}
+
+[/tip]
 
 AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단계를 살펴보겠습니다.
 

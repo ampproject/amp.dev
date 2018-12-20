@@ -99,9 +99,11 @@ AMP HTML 広告を作成したら、広告が正しい AMP HTML 構文に基づ�
 *   1 回限りのテストには、[AMP 検証ツール](https://validator.ampproject.org/)を使用します。
 *   [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) とのパートナーシップを通じて、パブリックな検証用エンドポイントを使用できます。
 
-{% call callout('注', type='note') %}
+[tip type="note"]
+
 高速フェッチの優先表示機能などを使用して、AMP HTML 広告を AMP ページで高速に表示するには、構文が正しく記述されている必要があります。構文が有効でなくても広告は表示されますが、高速化効果は得られません。
-{% endcall %}
+
+[/tip]
 
 ## RTB での AMP HTML 広告のサポート
 

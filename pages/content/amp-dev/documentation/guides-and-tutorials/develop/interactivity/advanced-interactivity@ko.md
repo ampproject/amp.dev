@@ -97,9 +97,11 @@ selected.slide // 0으로 평가합니다.
 
 좋습니다! 이제 슬라이드 표시기가 작동합니다.
 
-{% call callout('추가 크레딧', type='success') %}
+[tip type="success"]
+
 기능을 추가하여 사용자가 슬라이드의 표시기 점을 탭하면 선택된 항목으로 이미지 캐러셀을 업데이트할 수 있는지 확인합니다. 참고로 [`<amp-carousel>`](/ko/docs/reference/components/amp-carousel.html)에서 `tap` 이벤트와 `[slide]` 바인딩을 사용합니다.
-{% endcall %}
+
+[/tip]
 
 ## 캐러셀의 이미지 변경
 

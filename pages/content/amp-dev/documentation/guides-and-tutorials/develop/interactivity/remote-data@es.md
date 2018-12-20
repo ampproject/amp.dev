@@ -6,11 +6,13 @@ $title: Trabajar con datos remotos
 
 ¿Qué sucede si los datos enlazables son demasiado grandes o complejos para recuperarse al cargar la página? ¿O qué pasa si cada SKU tiene un precio que toma mucho tiempo para buscar? Buscar precios de SKU para artículos no vistos es un trabajo desperdiciado.
 
-{% call callout('Tip', type='success') %}
+[tip type="success"]
+
 `<amp-state>` admite la obtención de datos remotos a través de su atributo `src`, que obtiene JSON desde un extremo de CORS. Esta búsqueda se realiza una vez y en la carga de la página y es útil para garantizar la frescura de los datos (especialmente cuando se sirve desde una caché).
 
 También puede vincular el atributo `src` para el elemento `<amp-state>`. Esto significa que una acción del usuario puede activar una recuperación de datos JSON remotos en el estado vinculable de la página.
-{% endcall %}
+
+[/tip]
 
 ## Recogiendo los tamaños disponibles para una camiseta
 

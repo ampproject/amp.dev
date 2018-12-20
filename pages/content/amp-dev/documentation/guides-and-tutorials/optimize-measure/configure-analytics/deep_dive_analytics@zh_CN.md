@@ -51,8 +51,10 @@ $title: 深入了解 AMP 分析
 </amp-analytics>
 ```
 
-{% call callout('注意', type='note') %}
-上面的示例代码纯粹是为了帮助您学习，绝不是真实的样例。如果您正在与分析服务提供商合作，上面的样例便很可能没什么意义；提供商的配置不会这么复杂。请查阅您的[分析服务提供商的文档](/zh_cn/docs/analytics/analytics-vendors.html)，了解其配置样例。{% endcall %}
+[tip type="note"]
+
+上面的示例代码纯粹是为了帮助您学习，绝不是真实的样例。如果您正在与分析服务提供商合作，上面的样例便很可能没什么意义；提供商的配置不会这么复杂。请查阅您的[分析服务提供商的文档](/zh_cn/docs/analytics/analytics-vendors.html)，了解其配置样例。
+[/tip]
 
 ## 将分析数据发送到何处：type 属性
 
@@ -135,11 +137,13 @@ JSON 对象中包含的配置仅仅是分析工具帐号的变量值。
 ```
 
 
-{% call callout('重要提示', type='caution') %}
+[tip type="important"]
+
 AMP 不会验证同一变量的多种用法。
 值的填充会遵循变量替换优先顺序，
 远程网址中的值在该顺序中列在首位（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
-{% endcall %}
+
+[/tip]
 
 ## requests、triggers 和 transports
 
@@ -224,7 +228,9 @@ AMP 不会验证同一变量的多种用法。
 }
 ```
 
-{% call callout('重要提示', type='caution') %} 我们建议仅对 AMP 网页（不对 AMPHTML 广告）采用上述方法。由于 amp-analytics 的优先级低于网页内容的优先级，因此您最好使用浏览器重定向来跟踪点击次数，以免在统计点击次数的过程中发生遗漏。{% endcall %}
+[tip type="important"]
+ 我们建议仅对 AMP 网页（不对 AMPHTML 广告）采用上述方法。由于 amp-analytics 的优先级低于网页内容的优先级，因此您最好使用浏览器重定向来跟踪点击次数，以免在统计点击次数的过程中发生遗漏。
+[/tip]
 
 AMP 支持以下触发器配置：
 
@@ -263,9 +269,11 @@ AMP 支持以下触发器配置：
   </tbody>
 </table>
 
-{% call callout('重要提示', type='caution') %}
+[tip type="important"]
+
 来自优先级较低的配置的触发器会被来自优先级较高的配置的同名触发器替换（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
-{% endcall %}
+
+[/tip]
 
 ### 如何发送数据：transport 属性
 

@@ -99,9 +99,11 @@ AMP HTML 광고를 만든 후 광고가 적절한 AMP HTML 구문을 사용하�
 *   [AMP 유효성 검사 도구](https://validator.ampproject.org/)를 사용하여 일회성 검사를 실행합니다.
 *   [Cloudflare](https://blog.cloudflare.com/amp-validator-api/)와 파트너 관계를 맺어 공용 유효성 검사 도구 엔드포인트를 사용합니다.
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
+
 AMP 페이지에서 AMP HTML 광고를 빠르게 렌더링하려면(즉, 빠른 가져오기에서 우선적으로 렌더링) 정확한 구문을 사용해야 합니다.ㅏ  구문이 유효하지 않은 경우에도 광고가 계속 렌더링되지만, 이 경우 속도가 빠르지는 않습니다.
-{% endcall %}
+
+[/tip]
 
 ## RTB의 AMP HTML 광고 지원
 

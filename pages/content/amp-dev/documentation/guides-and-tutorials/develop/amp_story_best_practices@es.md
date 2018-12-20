@@ -75,9 +75,11 @@ Al indicar la fuente de un componente [amp-video](/es/docs/reference/components/
 
 Si solo puedes ofrecer un solo formato de vídeo, que sea **MP4**.  Sin embargo, cuando sea posible, utiliza vídeos **HLS** e incluye una versión MP4 como respaldo para que se muestre en los navegadores que todavía no admiten los vídeos HLS. HLS realiza streaming con una tasa de bits flexible que permite adaptar la calidad de vídeo a la conexión de red de los usuarios.
 
-{% call callout('Nota', type='note') %}
+[tip type="note"]
+
 El formato de vídeo HLS no se admite en el navegador de escritorio Chrome (ni siquiera mediante simulación), por lo que es obligatorio proporcionar un vídeo de respaldo en formato MP4 para que se muestre a todo el tráfico de ordenadores de tu página. Para depurar vídeos HLS, tienes que usar un dispositivo móvil real a través de la depuración por USB.
-{% endcall %}
+
+[/tip]
 
 ### Resolución de vídeo
 
@@ -103,9 +105,11 @@ Los vídeos de una historia de AMP siempre son verticales (es decir, vista verti
 </table>
 
 
-{% call callout('Nota', type='note') %}
+[tip type="note"]
+
 En el caso de los dispositivos móviles que tengan una proporción distinta a 16:9, los vídeos pueden recortarse horizontal o verticalmente para adaptarlos al viewport.
-{% endcall %}
+
+[/tip]
 
 
 ### Códecs de vídeo

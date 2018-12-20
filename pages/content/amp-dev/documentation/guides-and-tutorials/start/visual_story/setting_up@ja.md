@@ -34,9 +34,11 @@ $title: 設定
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('重要', type='caution') %}
+[tip type="important"]
+
 URL は必ず `localhost` から提供されるようにしてください。そうでない場合、AMP ストーリーが正しく読み込まれず、次のようなエラーが発生する可能性があります: `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
-{% endcall %}
+
+[/tip]
 
 
 クリックしながら完成したストーリー全体を見返し、このコンポーネントの仕組みを把握するようにしてください。

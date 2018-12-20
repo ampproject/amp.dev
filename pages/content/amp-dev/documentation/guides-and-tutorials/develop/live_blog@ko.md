@@ -10,9 +10,11 @@ $title: 라이브 블로그 만들기
 
 이 가이드에서는 `amp-live-list` 구성요소를 간단히 설명하고 [페이지 매기기](#pagination) 및 [딥 링크](#deeplinking)와 같은 몇 가지 라이브 블로그용 구현 세부정보에 중점을 둡니다. AMP By Example의 [라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)을 사용하여 AMP에서 라이브 블로그를 구현하는 방법을 설명합니다.
 
-{% call callout('도움말', type='success') %}
+[tip type="success"]
+
 블로그가 제3자 플랫폼 기능과 통합될 수 있도록 [LiveBlogPosting](http://schema.org/LiveBlogPosting) 메타데이터 마크업을 사용하세요.
-{% endcall %}
+
+[/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
 

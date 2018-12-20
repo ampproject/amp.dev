@@ -116,9 +116,11 @@ Untuk menerapkan penggunaan animasi pada elemen, Anda harus menetapkan <code>ani
 </amp-story-page>
 ```
 
-{% call callout('Tips seru', type='success') %}
+[tip type="success"]
+
 Cari tahu efek animasi yang berbeda dengan menambahkan atribut `animate-in="<animation preset>"` ke elemen di halaman artikel Anda.
-{% endcall %}
+
+[/tip]
 
 ## Pengaturan waktu animasi
 

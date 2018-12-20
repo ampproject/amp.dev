@@ -30,13 +30,17 @@ $title: アナリティクス ベンダー
 </amp-analytics>
 ```
 
-{% call callout('ヒント', type='success') %}
-コードを詳しく調べる場合は、[`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) ファイルで元の設定を確認できます。
-{% endcall %}
+[tip type="success"]
 
-{% call callout('注', type='note') %}
+コードを詳しく調べる場合は、[`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) ファイルで元の設定を確認できます。
+
+[/tip]
+
+[tip type="note"]
+
 自社の提供するサービスへの [`<amp-analytics>`](/ja/docs/reference/components/amp-analytics.html) の統合を検討しているベンダーの方は、[アナリティクス ツールに AMP を統合する](/ja/docs/analytics/integrating-analytics.html)で詳細をご参照ください。
-{% endcall %}
+
+[/tip]
 
 <hr>
 
@@ -230,9 +234,11 @@ type 属性の値: `oewa`
 
 - `url`: `amp-analytics-oewa.html` の場所（HTTPS）
 
-{% call callout('注', type='note') %}
+[tip type="note"]
+
 iframe-ping のソリューションを使用しない `oewadirect` というバリエーションもあります。こちらは、`AMP CLIENT_ID` を使うことでクライアントが検出されやすくなりますが、現在のところ試験運用中であり、`oewa2.js` を使用しないため OEWA により禁止されています。
-{% endcall %}
+
+[/tip]
 
 ### Parsely
 

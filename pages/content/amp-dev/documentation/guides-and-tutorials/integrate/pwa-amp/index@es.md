@@ -11,9 +11,11 @@ Las aplicaciones web progresivas (PWA) y las páginas AMP se complementan muy bi
 2. Crear una [transición superrápida y atractiva para el usuario]({{g.doc('/content/docs/integration/pwa-amp/amp-to-pwa.md', locale=doc.locale).url.path}}) de las páginas AMP a las PWA.
 3. [Simplificar tus PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}) aprovechando la potencia de la tecnología AMP.
 
-{% call callout('¿Qué son las aplicaciones web progresivas?', type='note') %}
+[tip type="note"]
+
 Consulta más información sobre las [aplicaciones web progresivas](https://developers.google.com/web/progressive-web-apps/) en Web Fundamentals.
-{% endcall %}
+
+[/tip]
 
 ## Páginas AMP con funciones de PWA
 

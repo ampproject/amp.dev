@@ -46,7 +46,9 @@ o dispositivo ou o navegador (consulte também [Substituição de variáveis](/p
 * Como você pretende identificar seus usuários (consulte também [Identificação de usuários](/pt_br/docs/analytics/analytics_basics.html#identificação-do-usuário))?
 
 
-{% call callout('Saiba mais', type='read') %}
+[tip type="read-on"]
+
 Conheça os recursos de análise no artigo [Analytics: conceitos básicos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
-{% endcall %}
+
+[/tip]
 

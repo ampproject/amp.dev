@@ -51,8 +51,10 @@ $title: AMP アナリティクスについて詳しく知る
 </amp-analytics>
 ```
 
-{% call callout('注', type='note') %}
-上記のコードは学習用のサンプルであり、そのまま実際の環境で使用することはできません。特に、アナリティクス プロバイダの設定を簡略化している点は、プロバイダを利用しているユーザーにとって問題になるかもしれません。特定のアナリティクス プロバイダの設定サンプルについては、[各プロバイダのドキュメント](/ja/docs/analytics/analytics-vendors.html)をご確認ください。{% endcall %}
+[tip type="note"]
+
+上記のコードは学習用のサンプルであり、そのまま実際の環境で使用することはできません。特に、アナリティクス プロバイダの設定を簡略化している点は、プロバイダを利用しているユーザーにとって問題になるかもしれません。特定のアナリティクス プロバイダの設定サンプルについては、[各プロバイダのドキュメント](/ja/docs/analytics/analytics-vendors.html)をご確認ください。
+[/tip]
 
 ## アナリティクス データの送信先: type 属性
 
@@ -135,11 +137,13 @@ JSON オブジェクトには、アナリティクス アカウントの変数�
 ```
 
 
-{% call callout('重要', type='caution') %}
+[tip type="important"]
+
 AMP では、同じ変数が複数使用されていないかどうかの検証は行われません。
 値は、変数置換の優先順位に基づいて設定され、
 リモート URL の値が最優先されます（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)についての説明をご確認ください）。
-{% endcall %}
+
+[/tip]
 
 ## requests、triggers、transport
 
@@ -224,7 +228,9 @@ Google アナリティクスなど一部のアナリティクス プロバイダ
 }
 ```
 
-{% call callout('重要', type='caution') %} 上記の方法は、AMP ページについてのみ推奨され、AMP HTML 広告には推奨されません。アナリティクスの優先度はページのコンテンツよりも低いため、クリックのトラッキングには、クリックのロスを回避できるブラウザ リダイレクトを使用することをおすすめします。{% endcall %}
+[tip type="important"]
+ 上記の方法は、AMP ページについてのみ推奨され、AMP HTML 広告には推奨されません。アナリティクスの優先度はページのコンテンツよりも低いため、クリックのトラッキングには、クリックのロスを回避できるブラウザ リダイレクトを使用することをおすすめします。
+[/tip]
 
 AMP では次のトリガー設定をサポートしています。
 
@@ -263,9 +269,11 @@ AMP では次のトリガー設定をサポートしています。
   </tbody>
 </table>
 
-{% call callout('重要', type='caution') %}
+[tip type="important"]
+
 優先順位の低い設定に記述されたトリガーは、優先順位の高い設定に記述された同名のトリガーによってオーバーライドされます（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご確認ください）。
-{% endcall %}
+
+[/tip]
 
 ### データの送信方法: transport 属性
 

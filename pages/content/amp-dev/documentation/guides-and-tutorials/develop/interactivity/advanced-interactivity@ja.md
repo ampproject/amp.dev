@@ -97,9 +97,11 @@ selected.slide // Evaluates to 0.
 
 これで、スライドのインジケーターが機能します。
 
-{% call callout('演習', type='success') %}
+[tip type="success"]
+
 ユーザーがスライドのインジケーターのドットをタップしたときに、選択された項目で画像カルーセルを更新する、という機能を追加できるかどうか考えてみましょう。ヒントとしては、[`<amp-carousel>`](/ja/docs/reference/components/amp-carousel.html) で `tap` イベントと `[slide]` バインドを使用します。
-{% endcall %}
+
+[/tip]
 
 ## カルーセルの画像の変更
 

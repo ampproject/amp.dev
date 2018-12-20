@@ -46,7 +46,9 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。
 * 您将如何识别您的用户（另请参阅[用户识别](/zh_cn/docs/analytics/analytics_basics.html#用户识别)）？
 
 
-{% call callout('了解详情', type='read') %}
+[tip type="read-on"]
+
 若想进一步了解与分析相关的信息，请参阅[分析：基础知识]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})。
-{% endcall %}
+
+[/tip]
 

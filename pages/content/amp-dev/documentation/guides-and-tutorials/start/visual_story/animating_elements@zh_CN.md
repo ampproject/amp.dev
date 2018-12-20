@@ -116,9 +116,11 @@ $title: 为元素添加动画效果
 </amp-story-page>
 ```
 
-{% call callout('趣味体验', type='success') %}
+[tip type="success"]
+
 只需为您的故事网页上的元素添加 `animate-in="<animation preset>"` 属性，即可探索各种不同的动画效果。
-{% endcall %}
+
+[/tip]
 
 ## 动画时间设置
 
