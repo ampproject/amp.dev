@@ -2,7 +2,7 @@
 $title: 验证您的 AMP HTML
 ---
 
-每次创建 AMP 网页时，您都应验证您的 AMP HTML 是否正确。[您可以使用多种方法来验证 AMP 网页]({{g.doc('/content/documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.md', locale=doc.locale).url.path}})。在本教程中，我们将通过开启开发者模式来启用 AMP 验证工具。为了开启开发者模式，请将以下分段标识符添加到您的网址中，然后重新加载相应网页：
+每次创建 AMP 网页时，您都应验证您的 AMP HTML 是否正确。[您可以使用多种方法来验证 AMP 网页]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})。在本教程中，我们将通过开启开发者模式来启用 AMP 验证工具。为了开启开发者模式，请将以下分段标识符添加到您的网址中，然后重新加载相应网页：
 
 ```text
 #development=1

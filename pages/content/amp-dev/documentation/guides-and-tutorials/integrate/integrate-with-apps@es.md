@@ -103,7 +103,7 @@ Nota: Las URL de las páginas de AMP almacenadas en caché en los cachés de AMP
 
 ## Usando cachés AMP
 
-Un [caché AMP]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}}) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
+Un [caché AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md', locale=doc.locale).url.path}}) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
 
 *   Entregar solo páginas válidas de AMP.
 *   Permitir que las páginas de AMP se carguen de manera eficiente y segura.

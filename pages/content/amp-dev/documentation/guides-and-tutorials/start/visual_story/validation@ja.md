@@ -2,7 +2,7 @@
 $title: AMP HTML の検証
 ---
 
-AMP ページを作成する際には、AMP HTML が正しいことを必ず検証してください。[AMP ページを検証するにはいくつかの方法]({{g.doc('/content/documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.md', locale=doc.locale).url.path}})があります。このチュートリアルでは、デベロッパー モードをオンにして AMP 検証ツールを有効にします。デベロッパー モードをオンにするには、URL に次のフラグメント識別子を追加してページを再読み込みします。
+AMP ページを作成する際には、AMP HTML が正しいことを必ず検証してください。[AMP ページを検証するにはいくつかの方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})があります。このチュートリアルでは、デベロッパー モードをオンにして AMP 検証ツールを有効にします。デベロッパー モードをオンにするには、URL に次のフラグメント識別子を追加してページを再読み込みします。
 
 ```text
 #development=1
