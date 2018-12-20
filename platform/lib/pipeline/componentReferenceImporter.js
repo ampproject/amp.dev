@@ -14,78 +14,25 @@
  * limitations under the License.
  */
 
-const octonode = require('octonode');
 const fs = require('fs');
 const path = require('path');
-const request = require('request');
 const { Signale } = require('signale');
 
 const config = require('../config');
+const GitHubImporter = require('./gitHubImporter');
 const Document = require('./markdownDocument');
 const Collection = require('./collection');
-
-// TODO: Eventually make it possible to pass these in as a) command line args
-// or inside of config aswell
-const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
-const CLIENT_SECRET = process.argv[2] || process.env.AMP_DOC_SECRET;
-const CLIENT_ID = process.argv[3] || process.env.AMP_DOC_ID;
-// TODO: Make it possible to pass in a local repository path with argv
-const LOCAL_AMPHTML_REPOSITORY = false;
 
 // The view that the collections should define in their frontmatter
 const DOCUMENT_VIEW = '/views/detail/component-detail.j2';
 // Where to save the documents/collection to
-const DESTINATION_BASE_PATH = '../pages/content/amp-dev/documentation/components';
+const DESTINATION_BASE_PATH = __dirname + '/../../../pages/content/amp-dev/documentation/components';
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/components'
+// TODO: Make it possible to pass in a local repository path with argv
+const LOCAL_AMPHTML_REPOSITORY = false;
 
-class ReferenceImporter {
-
-  constructor() {
-    this._log = new Signale({
-      'interactive': true,
-      'scope': 'Reference import'
-    });
-
-    if (!(CLIENT_TOKEN || (CLIENT_SECRET && CLIENT_ID))) {
-      this._log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more information.');
-
-      throw 'Error: No GitHub credentials provided.';
-    }
-  }
-
-  async initialize() {
-    this._log.start('Beginning to import reference docs ...');
-
-    this._github = octonode.client(CLIENT_TOKEN || {
-       'id': CLIENT_ID,
-       'secret': CLIENT_SECRET
-     });
-
-    this._repository = this._github.repo('ampproject/amphtml');
-    this._latestReleaseTag = await this._fetchLatestReleaseTag();
-  }
-
-  _fetchLatestReleaseTag() {
-    this._log.await('Fetching latest release tag ...');
-
-    return new Promise((resolve, reject) => {
-      this._github.get('/repos/ampproject/amphtml/releases/latest', {}, (err, status, body) => {
-        if (body.tag_name) {
-          resolve(body.tag_name);
-        } else {
-          this._log.fatal('Was not able to retrieve latest AMP release from GitHub.');
-          reject(err);
-        }
-      });
-    }).then((latestReleaseTag) => {
-      this._log.success(`Fetched latest release tag: ${latestReleaseTag}`);
-      return latestReleaseTag;
-    }).catch((err) => {
-      this._log.fatal(err);
-      return null;
-    });
-  }
+class ComponentReferenceImporter extends GitHubImporter {
 
   async import() {
     this._log.start('Beginning to import extension docs ...');
@@ -224,4 +171,14 @@ class ReferenceImporter {
   }
 }
 
-module.exports = ReferenceImporter;
+// If not required, run directly
+if (!module.parent) {
+  let importer = new ComponentReferenceImporter();
+
+  (async () => {
+    await importer.initialize();
+    await importer.import();
+  })();
+}
+
+module.exports = ComponentReferenceImporter;
