@@ -16,4 +16,4 @@ $title: 恭喜！
 
 ## 后续步骤
 
-继续学习 AMP 相关知识：按照[添加高级 AMP 功能]({{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}})教程，在您的 AMP 网页中构建更高级的功能。
+继续学习 AMP 相关知识：按照[添加高级 AMP 功能]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}})教程，在您的 AMP 网页中构建更高级的功能。

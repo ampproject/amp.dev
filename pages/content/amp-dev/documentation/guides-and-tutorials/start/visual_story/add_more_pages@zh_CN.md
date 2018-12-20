@@ -19,7 +19,7 @@ $order: 4
       <ul>
         <li>包含 1 个图层：
       <ul>
-        <li>实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 模板。</li>
+        <li>实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 模板。</li>
         <li>包含 3 个元素：
           <ul>
             <li>1 个 <code><h1></code> 元素，标题为：猫咪</li>

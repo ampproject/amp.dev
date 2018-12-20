@@ -11,7 +11,7 @@ There are 4 primary ways you can integrate with AMP:
 
 
 ## 1. Add your support to the amp-analytics extension
-AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide]({{g.doc('/content/docs/analytics/integrating-analytics.md', locale=doc.locale).url.path}}) to get you started.
+AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) to get you started.
 
 If you simply need to add a tracking pixel with dynamic parameters to your tracking URL, check out [amp-pixel](/docs/reference/components/amp-pixel.html). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
 

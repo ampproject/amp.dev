@@ -18,7 +18,7 @@ Menunjukkan cara menampilkan gambar dan teks dalam satu lapisan.
       <ul>
         <li>Memuat 1 lapisan:
       <ul>
-        <li>Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
+        <li>Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
         <li>Memuat 3 elemen:
           <ul>
             <li>Elemen <code>&lt;h1></code> dengan judul: <em>Kucing</em></li>

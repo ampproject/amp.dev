@@ -18,7 +18,7 @@ Explica cómo mostrar una imagen y texto en una sola capa.
       <ul>
         <li>Contiene 1 capa:
       <ul>
-        <li>Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
+        <li>Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
         <li>Contiene 3 elementos:
           <ul>
             <li>Un elemento <code>&lt;h1></code> con el título <em>Cats</em>.</li>

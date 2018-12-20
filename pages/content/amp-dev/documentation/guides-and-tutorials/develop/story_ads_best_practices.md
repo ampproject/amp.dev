@@ -19,7 +19,7 @@ AMP Story ads conform to the following principles:
 * Same interaction model: User can continue to the next screen just like they would with an organic story page.
 * Fast: The ad never appears to a user in a half-loaded state.
 
-To be consistent with these principles, the AMP Story runtime determines the right placement of an ad page amidst the AMP Story. Read more about ad placement mechanics in [Advertise in AMP Stories]({{g.doc('/content/docs/ads/advertise_amp_stories.html', locale=doc.locale).url.path}}).
+To be consistent with these principles, the AMP Story runtime determines the right placement of an ad page amidst the AMP Story. Read more about ad placement mechanics in [Advertise in AMP Stories]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/advertise_amp_stories.md', locale=doc.locale).url.path}}).
 
 ##Sample Story ad
 AMP Story ads are AMPHTML ads, but have required meta tag data, meet defined layout specifications and required UI elements. An AMP Story ad will always include a call to action(CTA) button and an ad label displayed as a text disclaimer at the top of the page. 

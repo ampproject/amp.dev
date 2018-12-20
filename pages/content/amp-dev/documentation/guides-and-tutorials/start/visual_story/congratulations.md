@@ -19,6 +19,6 @@ In this tutorial, you learned to:
 Learn more about AMP story from these resources:
 
 - [amp-story reference documentation](/docs/reference/components/amp-story.html)
-- [AMP story best practices]({{g.doc('/content/docs/fundamentals/amp_story_best_practices.md', locale=doc.locale).url.path}})
+- [AMP story best practices]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 Note: The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**.

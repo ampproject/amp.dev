@@ -10,7 +10,7 @@ AMP を統合するには主に 4 つの方法があります。
 
 
 ## 1. amp-analytics 拡張機能のサポートを追加する
-AMP アナリティクスを使用すると、貴社で設定したトリガーに基づいてサーバーにイベントを返送することができます。使用を開始する際は、[アナリティクス統合ガイド]({{g.doc('/content/docs/analytics/integrating-analytics.md', locale=doc.locale).url.path}})をご覧ください。
+AMP アナリティクスを使用すると、貴社で設定したトリガーに基づいてサーバーにイベントを返送することができます。使用を開始する際は、[アナリティクス統合ガイド]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}})をご覧ください。
 
 動的パラメータを含むトラッキング ピクセルをトラッキング URL に追加する必要がある場合は、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) をご確認ください。貴社のテクノロジーと AMP を併用したいデベロッパーに向けて、サポートページに使用方法を掲載するようおすすめします。
 

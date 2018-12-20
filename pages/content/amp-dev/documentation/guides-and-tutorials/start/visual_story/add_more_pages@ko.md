@@ -19,7 +19,7 @@ $order: 4
       <ul>
         <li>레이어 1개 포함:
       <ul>
-        <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 템플릿을 구현합니다.</li>
+        <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 템플릿을 구현합니다.</li>
         <li>요소 3개 포함:
           <ul>
             <li>제목이 <em>고양이</em></li>인 <code>&lt;h1></code> 요소

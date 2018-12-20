@@ -19,7 +19,7 @@ Demonstra como exibir imagem e texto em uma única camada.
       <ul>
         <li>Contém uma camada:
       <ul>
-        <li>Implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
+        <li>Implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
         <li>Contém três elementos:
           <ul>
             <li>um elemento <code>&lt;h1></code> com o título: <em>Cats</em></li>
