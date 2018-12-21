@@ -233,7 +233,7 @@ class Pipeline {
   }
 
   _minifyPages() {
-    const log = new Signale({'interactive': true, 'scope': 'Minify pages'});
+    const log = new Signale({'interactive': false, 'scope': 'Minify pages'});
     log.await('Minifying page\'s ...');
 
     return new Promise((resolve, reject) => {
@@ -254,14 +254,18 @@ class Pipeline {
                      html = html.replace(/<section .*><\/section>/, '');
                      html = html.replace('<p></p>', '');
 
-                     html = minifyHtml(html, {
-                       'minifyCSS': minifyCss,
-                       'minifyJS': true,
-                       'collapseWhitespace': true,
-                       'removeEmptyElements': false,
-                       'removeRedundantAttributes': true,
-                       'ignoreCustomFragments': [/<use.*<\/use>/]
-                     });
+                     try {
+                       html = minifyHtml(html, {
+                         'minifyCSS': minifyCss,
+                         'minifyJS': true,
+                         'collapseWhitespace': true,
+                         'removeEmptyElements': false,
+                         'removeRedundantAttributes': true,
+                         'ignoreCustomFragments': [/<use.*<\/use>/]
+                       });
+                     } catch(e) {
+                       log.error(`Could not minify ${page.relative}. Invalid markup.`);
+                     }
 
                      page.contents = Buffer.from(html);
 
