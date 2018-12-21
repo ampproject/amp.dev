@@ -18,6 +18,8 @@
 
 const htmlFindReplaceElementAttrs = require('html-find-replace-element-attrs');
 
+const FORMATS = ['websites', 'stories', 'ads', 'email'];
+
 const BODY_CLASSES = {
   'websites': 'ad--websites',
   'stories': 'ad--stories',
@@ -31,10 +33,22 @@ const FILTERED_ROUTES = [
   /\/documentation\/examples.*/,
 ];
 
+function isFilterableRoute(route) {
+  let filterableRoute = false;
+  for (let expression of FILTERED_ROUTES) {
+    if (expression.test(route)) {
+      filterableRoute = true;
+      break;
+    }
+  }
+
+  return filterableRoute;
+}
+
 class FilteredPage {
 
-  constructor(activeFilter, content) {
-    this._activeFilter = activeFilter;
+  constructor(format, content) {
+    this._format = format;
     this._content = content;
 
     this._addClassToBody();
@@ -48,7 +62,7 @@ class FilteredPage {
    */
   _addClassToBody() {
     this._content = htmlFindReplaceElementAttrs.replace(this._content, (attribute) => {
-      return attribute.value + ' ' + BODY_CLASSES[this._activeFilter];
+      return attribute.value + ' ' + BODY_CLASSES[this._format];
     }, {
       'tag': 'body',
       'attr': 'class'
@@ -64,18 +78,12 @@ class FilteredPage {
     this._content = htmlFindReplaceElementAttrs.replace(this._content, (attribute) => {
       // Check if the link is pointing to a filtered route
       // and if the link already has a query parameter
-      let filteredRoute = false;
-      for (let expression of FILTERED_ROUTES) {
-        if (expression.test(attribute.value)) {
-          filteredRoute = true;
-        }
-      }
 
-      if (attribute.value.indexOf('?') > -1 || !filteredRoute) {
+      if (attribute.value.indexOf('?') > -1 || !isFilterableRoute(attribute.value)) {
         return attribute.value;
       }
 
-      return attribute.value + '?format=' + this._activeFilter;
+      return attribute.value + '?format=' + this._format;
     }, {
       'tag': 'a',
       'attr': 'href'
@@ -87,4 +95,6 @@ class FilteredPage {
   }
 }
 
-module.exports = FilteredPage;
+module.exports.FilteredPage = FilteredPage;
+module.exports.isFilterableRoute = isFilterableRoute;
+module.exports.FORMATS = FORMATS;
