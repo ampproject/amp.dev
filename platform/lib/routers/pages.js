@@ -37,8 +37,8 @@ function getFilteredFormat(request) {
   const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
   const FILTERABLE_ROUTES = [];
 
-  let activeFormat = request.query[QUERY_PARAMETER_NAME];
-  if (ALLOWED_FORMATS.indexOf(activeFormat) == -1) {
+  let activeFormat = request.query[QUERY_PARAMETER_NAME] || '';
+  if (ALLOWED_FORMATS.indexOf(activeFormat.toLowerCase()) == -1) {
     // If the format that should be filtered by isn't valid go on
     return;
   }
