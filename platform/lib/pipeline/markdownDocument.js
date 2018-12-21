@@ -65,6 +65,14 @@ class MarkdownDocument {
 
   _convertSyntax(contents) {
     contents = this._rewriteCalloutToTip(contents);
+    contents = this._rewriteCodeBlocks(contents);
+
+    // Rewrite mustache style parts
+    contents = contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
+
+    // Replace dividers (---) as they will break front matter
+    contents = contents.replace(/\n---\n/gm, '\n***\n');
+
     return contents;
   }
 
@@ -85,6 +93,25 @@ class MarkdownDocument {
 
     contents = contents.replace(CALLOUT_PATTERN, (match, type, text) => {
       return `[tip type="${AVAILABLE_CALLOUT_TYPES[type]}"]\n${text}\n[/tip]`;
+    });
+
+    return contents;
+  }
+
+  /**
+   * Rewrites code fences to python-markdown syntax while also checking
+   * if {{ }} need to be fenced to not interfer with jinja2
+   * @param  {String} contents
+   * @return {String}          The rewritten content
+   */
+  _rewriteCodeBlocks(contents) {
+    // replace code blocks
+    contents = contents.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```\n)/gm, (match, p1, p2, p3, p4) => {
+      // Fence curly braces to not mess with Grow/jinja2
+      if (p4.indexOf('{{') > -1) {
+        p4 = '{% raw %}' + p4 + '{% endraw %}';
+      }
+      return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
     });
 
     return contents;
