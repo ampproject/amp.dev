@@ -24,20 +24,13 @@ const fs = require('fs');
 // Where to look for existing documents
 const POD_BASE_PATH = '../../../pages/';
 // Which documents to check for broken references
-const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/**/*.md';
+const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.md';
 // The location to search for documents in
-const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials';
+const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation';
 // The pattern used by Grow to make up references
 const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
 // Contains manual hints for double filenames etc.
 const LOOKUP_TABLE = {
-  '/content/docs/integration/pwa-amp.md': '/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md',
-  '/documentation/guides-and-tutorials/start/converting/converting.md': '/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md',
-  '/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md': '/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md',
-  '/content/docs/fundamentals/add_advanced.md': '/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md',
-  '/content/amp-dev/documentation/guides-and-tutorials/start/create/create.md': '/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md',
-  '/content/docs/start/create.md': '/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md',
-  '/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md': '/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md'
 };
 
 /**
