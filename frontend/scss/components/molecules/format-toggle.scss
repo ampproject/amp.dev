@@ -1,0 +1,59 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text';
+
+.#{molecule('format-toggle')} {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 15px;
+  padding: 10px 0px;
+
+  :nth-child(1) {
+    margin-left: 0;
+  }
+
+  :nth-child(3) {
+    margin-left: 10px;
+  }
+
+  &-format {
+    text-transform: capitalize;
+  }
+
+    &-link {
+      @include txt;
+      @include txt-strong;
+      @include txt-3;
+      @include format-bubble-shadow;
+      display: flex;
+      line-height: 12px;
+      padding: 8px;
+      min-width: 80px;
+      border-radius: 30px;
+      background-color: color('white');
+
+      &.websites {
+        border: 2px solid color('blue-ribbon');
+        color: color('blue-ribbon');
+      }
+
+      &.stories {
+        border: 2px solid color('pizazz');
+        color: color('pizazz');
+      }
+
+      &.ads {
+        border: 2px solid color('pink-flamingo');
+        color: color('pink-flamingo');
+      }
+
+      &.email {
+        border: 2px solid color('malachite');
+        color: color('malachite');
+      }
+    }
+}
