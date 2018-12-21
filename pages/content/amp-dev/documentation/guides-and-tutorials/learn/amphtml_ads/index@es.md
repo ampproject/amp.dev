@@ -8,7 +8,7 @@ $title: Anuncios AMP HTML
 
 Los anuncios AMP HTML son la forma más rápida, ligera y segura de anunciarse en Internet. Aunque las páginas AMP los admiten, los anuncios HTML tradicionales pueden tardar más en cargarse. Para que los anuncios se carguen a la misma velocidad que el resto de la página AMP, puedes crearlos en formato AMP HTML. Los anuncios AMP HTML no se publican hasta que no se han validado para garantizar que son seguros y ofrecen un buen rendimiento. Y lo más importante: estos anuncios pueden publicarse en cualquier lugar de la Web, _no solo en páginas AMP_.
 
-Los anuncios AMP HTML se escriben en lenguaje AMP HTML, de acuerdo con las [especificaciones de anuncios AMP HTML]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}}), (una variante de AMP HTML y CSS). Esto significa que los anuncios ya no pueden ejecutar JavaScript de forma arbitraria, que suele ser la causa principal de que los anuncios ofrezcan un rendimiento deficiente. En consecuencia, los casos prácticos principales de anuncios JavaScript, al igual que los AMP más importantes, se desarrollan en el proyecto de software libre de AMP, lo que garantiza el buen rendimiento de los anuncios.
+Los anuncios AMP HTML se escriben en lenguaje AMP HTML, de acuerdo con las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}), (una variante de AMP HTML y CSS). Esto significa que los anuncios ya no pueden ejecutar JavaScript de forma arbitraria, que suele ser la causa principal de que los anuncios ofrezcan un rendimiento deficiente. En consecuencia, los casos prácticos principales de anuncios JavaScript, al igual que los AMP más importantes, se desarrollan en el proyecto de software libre de AMP, lo que garantiza el buen rendimiento de los anuncios.
 
 ### Ventajas
 
@@ -58,7 +58,7 @@ Los anuncios AMP HTML son flexibles y dinámicos, lo que te permite utilizar div
 
 ### Editores
 
-Para publicar tus formatos de anuncio de venta directa en AMP HTML, debes crear los anuncios de acuerdo con las [especificaciones de AMP HTML]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}}) y publicarlos mediante un servidor de anuncios compatible con el servicio de anuncios AMP HTML.  Estos son los servidores de anuncios que actualmente admiten el formato AMP HTML:
+Para publicar tus formatos de anuncio de venta directa en AMP HTML, debes crear los anuncios de acuerdo con las [especificaciones de AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) y publicarlos mediante un servidor de anuncios compatible con el servicio de anuncios AMP HTML.  Estos son los servidores de anuncios que actualmente admiten el formato AMP HTML:
 
 *   DoubleClick for Publishers
 *   TripleLift
@@ -99,9 +99,11 @@ Después de crear el anuncio AMP HTML, debes asegurarte de que utiliza la sintax
 *   Utiliza el [validador de AMP](https://validator.ampproject.org/) para realizar pruebas específicas.
 *   Utiliza el punto de conexión al validador público de [Cloudflare](https://blog.cloudflare.com/amp-validator-api/).
 
-{% call callout('Nota', type='note') %}
+[tip type="note"]
+
 Para que los anuncios AMP HTML se publiquen rápidamente en las páginas AMP (es decir, mediante el renderizado preferencial en Fast Fetch), la sintaxis debe ser correcta.  Si esta no es válida, el anuncio se seguirá publicando, pero no tan rápido.
-{% endcall %}
+
+[/tip]
 
 ## Compatibilidad de los anuncios AMP HTML en RTB
 

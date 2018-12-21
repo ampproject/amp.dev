@@ -10,9 +10,11 @@ Panduan ini memberikan petunjuk dan praktik terbaik untuk menampilkan iklan di h
 
 Di halaman non-AMP (HTML biasa), jika ingin menampilkan iklan di halaman, Anda perlu menyertakan cuplikan JavaScript untuk menayangkan iklan dari jaringan iklan Anda.  Karena alasan performa dan keamanan, Anda tidak dapat menyertakan JavaScript pihak ketiga di halaman AMP.  Oleh karena itu, untuk menampilkan iklan di AMP, Anda perlu menambahkan komponen [`<amp-ad>`](/id/docs/reference/components/amp-ad.html) kustom ke halaman AMP.
 
-{% call callout('Tips', type='success') %}
+[tip type="success"]
+
 Lihat [AMP By Example untuk demo langsung](https://ampbyexample.com/components/amp-ad/) yang menunjukkan cara menambahkan tag amp-ad ke halaman AMP.
-{% endcall %}
+
+[/tip]
 
 Mari kita ikuti langkah-langkah dalam menambahkan komponen ini agar Anda dapat menampilkan iklan di halaman AMP.
 
@@ -26,7 +28,7 @@ Komponen `<amp-ad>` adalah ekstensi iklan kustom untuk library AMP. Di bawah `<a
 
 ### Langkah 2: Tambahkan tag amp-ad ke halaman AMP
 
-Lebih dari 100 [server dan jaringan iklan]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}}) menyediakan integrasi bawaan dengan AMP.  Untuk menambahkan iklan pada jaringan iklan tertentu, tambahkan tag `<amp-ad>`, dan tentukan jaringannya dalam atribut `type`.
+Lebih dari 100 [server dan jaringan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) menyediakan integrasi bawaan dengan AMP.  Untuk menambahkan iklan pada jaringan iklan tertentu, tambahkan tag `<amp-ad>`, dan tentukan jaringannya dalam atribut `type`.
 
 Pada contoh ini, kita akan menambahkan slot iklan untuk menayangkan iklan dari jaringan a9: 
 

@@ -110,7 +110,7 @@ De esta forma le indicas a AMP que no vas a utilizar más este documento y se li
 
 ## ¿Quieres verlo en acción?
 
-{{ video('/static/img/docs/pwamp_react_demo.mp4', 620, 1100, align='right third', loop='true', autoplay='true', controls='') }}
+[video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
 Puedes ver el funcionamiento del patrón de páginas AMP en una aplicación web progresiva en la página de demostración [Muestra de React](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) que hemos creado. Incluye transiciones fluidas durante la navegación y se presenta con un sencillo componente React que realiza los pasos que se han explicado anteriormente. Tiene las ventajas de ambas tecnologías: la flexibilidad y personalización de JavaScript en la aplicación web progresiva y la gestión de contenidos de AMP.
 
@@ -122,5 +122,3 @@ También puedes consultar una muestra de páginas AMP y PWA con un framework Pol
 
 * Toma el código fuente de este enlace: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp).
 * Mira cómo funciona en esta página: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/).
-
-

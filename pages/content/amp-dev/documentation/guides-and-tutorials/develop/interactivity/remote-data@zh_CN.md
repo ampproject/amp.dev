@@ -6,11 +6,13 @@ $title: 使用远程数据
 
 如果您的可绑定数据过大或过于复杂，以致无法在网页加载时检索，该怎么办？或者，如果每个库存量单位 (SKU) 的价格都需要系统花费很长时间才能完成查询，该怎么办？针对用户不想查看的商品查询 SKU 价格纯粹是徒劳。
 
-{% call callout('提示', type='success') %}
+[tip type="success"]
+
 `<amp-state>` 支持通过其 [`src`](/zh_cn/docs/reference/components/amp-bind.html#attributes) 属性提取远程数据，该属性会从 CORS 端点提取 JSON。此项提取操作会在网页加载时执行 1 次，因此有助于确保数据的新鲜度（尤其是当数据由缓存提供时）。
 
 您也可为 `<amp-state>` 元素绑定 `src` 属性。这意味着，用户操作会触发系统提取远程 JSON 数据，以将这些数据纳入相应网页的可绑定状态。
-{% endcall %}
+
+[/tip]
 
 ## 提取可用的衬衫尺寸
 
@@ -169,7 +171,7 @@ $title: 使用远程数据
 **试试看**：如果您选择的尺寸不可用，您便无法将其加入购物车。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
 

@@ -21,8 +21,8 @@ AMP의 주요 고급 구성요소를 살펴보는 '고급 AMP 기능 추가' 가
 
 AMP에 관한 전문 지식을 더욱 발전시키려면 다음 리소스를 확인하세요.
 
-- [대화형 AMP 페이지 만들기]({{g.doc('/content/docs/interaction_dynamic/interactivity.md', locale=doc.locale).url.path}}) 가이드: amp-bind를 사용하여 대화형 AMP 페이지를 만드는 방법 배우기
-- [AMP와 PWA 통합]({{g.doc('/content/docs/integration/pwa-amp.md', locale=doc.locale).url.path}}): 상호 보완적인 프로그레시브 웹 앱과 AMP 페이지 활용 방법 배우기
+- [대화형 AMP 페이지 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}) 가이드: amp-bind를 사용하여 대화형 AMP 페이지를 만드는 방법 배우기
+- [AMP와 PWA 통합]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md', locale=doc.locale).url.path}}): 상호 보완적인 프로그레시브 웹 앱과 AMP 페이지 활용 방법 배우기
 - [AMP Start](https://www.ampstart.com/): 미리 스타일이 지정된 템플릿과 구성요소를 사용하여 페이지에 스타일 지정하기
 - [AMP By Example](https://ampbyexample.com/): 실시간 샘플 및 데모를 통해 배우기
 - [YouTube의 AMP 채널](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): AMP 관련 동영상을 통해 배우기

@@ -4,9 +4,11 @@ $title: Menambahkan lebih banyak halaman
 
 Setelah menguasai cara menambahkan halaman ke artikel AMP, halaman berikutnya dalam artikel "The Joy of Pets" dapat ditambahkan dengan cara yang hampir sama. Berdasarkan informasi yang diberikan di bawah, **lanjutkan membuat halaman lainnya** dengan memanfaatkan pengetahuan yang telah Anda pelajari sejauh ini.  Jika menemui kesulitan, lihat kode (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) yang telah jadi.
 
-{% call callout('Tips', type='success') %}
+[tip type="success"]
+
 Ingatlah bahwa setiap halaman memerlukan atribut "id" unik (misalnya `id="page1"`).
-{% endcall %}
+
+[/tip]
 
 ## Halaman 1: Kucing
 
@@ -18,7 +20,7 @@ Menunjukkan cara menampilkan gambar dan teks dalam satu lapisan.
       <ul>
         <li>Memuat 1 lapisan:
       <ul>
-        <li>Mengimplementasikan template <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
+        <li>Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
         <li>Memuat 3 elemen:
           <ul>
             <li>Elemen <code>&lt;h1></code> dengan judul: <em>Kucing</em></li>
@@ -42,11 +44,11 @@ Menunjukkan cara menata teks dan menampilkan gambar pengisi layar dengan dua lap
       <ul>
         <li>Memuat 2 lapisan:
       <ul>
-        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat elemen <a href="{{g.doc('/content/docs/reference/components/media/amp-img.md', locale=doc.locale).url.path}}">amp-img</a> responsif (<code class="filename">dog.jpg</code>, 720 x 1280 piksel).</li>
-        <li><b>Lapisan 2</b>: Mengimplementasikan template <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> dan memuat 2 elemen:
+        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat elemen <a href="{{g.doc('/content/amp-dev/documentation/components/I/amp-img.md', locale=doc.locale).url.path}}">amp-img</a> responsif (<code class="filename">dog.jpg</code>, 720 x 1280 piksel).</li>
+        <li><b>Lapisan 2</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> dan memuat 2 elemen:
           <ul>
             <li>Elemen <code>&lt;h1></code> dengan judul: <em>Anjing</em></li>
-            <li>Elemen <code>&lt;p></code> yang menetapkan <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#thirds"><code>grid-area</code></a> (area petak) yang mengisi <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#thirds"><code>lower-third</code></a> (pertiga bawah) dan memuat teks berikut: <em>Bisa jadi anjing adalah binatang jinak pertama. Mereka telah menemani manusia selama sekitar 10.000 tahun. Beberapa ilmuwan berpendapat bahwa semua anjing, entah jinak maupun liar, memiliki nenek moyang yang sama, yaitu serigala kecil dari Asia Selatan.</em></li>
+            <li>Elemen <code>&lt;p></code> yang menetapkan <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>grid-area</code></a> (area petak) yang mengisi <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>lower-third</code></a> (pertiga bawah) dan memuat teks berikut: <em>Bisa jadi anjing adalah binatang jinak pertama. Mereka telah menemani manusia selama sekitar 10.000 tahun. Beberapa ilmuwan berpendapat bahwa semua anjing, entah jinak maupun liar, memiliki nenek moyang yang sama, yaitu serigala kecil dari Asia Selatan.</em></li>
           </ul>
         </li>
       </ul></li></ul>
@@ -65,13 +67,13 @@ Menunjukkan cara menata teks, menampilkan gambar pengisi layar, dan memberikan b
       <ul>
       <li>Memuat 3 lapisan:
       <ul>
-        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat komponen <a href="/id/docs/reference/components/amp-img.html">amp-img</a> responsif (<code class="filename">bird.jpg</code>, 720 x 1280 piksel).</li>
-        <li><b>Lapisan 2</b>: Mengimplementasikan template <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> dan memuat satu elemen:
+        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat komponen <a href="/id/docs/reference/components/amp-img.html">amp-img</a> responsif (<code class="filename">bird.jpg</code>, 720 x 1280 piksel).</li>
+        <li><b>Lapisan 2</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> dan memuat satu elemen:
           <ul>
             <li>Elemen <code>&lt;h1></code> dengan judul: <em>Burung</em></li>
           </ul>
         </li>
-        <li><b>Lapisan 3</b>: Mengimplementasikan template <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> dan memuat satu elemen:
+        <li><b>Lapisan 3</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> dan memuat satu elemen:
           <ul>
             <li>Elemen <code>&lt;q></code> untuk kutipan berikut: <em>Burung terdiri dari tiga hal: bulu, terbang, dan lagu. Dari ketiganya, bulu adalah yang paling tidak penting.--Marjorie Allen Seiffert</em></li>
             <li>Lapisan ketiga ini menetapkan <code>class="bottom"</code> untuk menyejajarkan elemen turunan dengan bagian bawah layar.</li>
@@ -123,7 +125,7 @@ Menunjukkan cara menata teks dan menampilkan video pengisi layar untuk halaman.
 Artikel "Joy of Pets" kita hampir selesai. Kita akan menggunakan animasi di halaman terakhir untuk menampilkan semua hewan peliharaan itu bersama-sama.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.html', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
  

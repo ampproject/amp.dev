@@ -110,7 +110,7 @@ ampedDoc.close();
 
 ## 실제 작동 모습 확인하기
 
-{{ video('/static/img/docs/pwamp_react_demo.mp4', 620, 1100, align='right third', loop='true', autoplay='true', controls='') }}
+[video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
 Google에서 제작한 [React 샘플](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)에서 'PWA에 삽입된 AMP'가 실제로 작동되는 모습을 확인할 수 있습니다. 이 샘플을 보면 탐색 중 전환이 부드럽게 이루어지는 것을 확인할 수 있으며, 위에서 설명한 단계가 포함된 간단한 반응 구성요소도 함께 제공됩니다. 프로그레시브 웹 앱의 유연한 맞춤형 자바스크립트와 콘텐츠를 신속하게 로드하기 위한 AMP가 같이 사용되어 두 가지의 장점을 모두 활용할 수 있습니다.
 

@@ -33,12 +33,12 @@ Users can progress past ads the same way as normal story pages; by tapping the r
 
 {{ image('/static/img/docs/stampads/story_ad_ui.png', 304, 512, layout='intrinsic', alt='Image showing the area users can tap to skip an ad', caption='Users can progress past ads by tapping the right two thirds of the screen.', align='' ) }}
 
-Users can interact directly with the ad by tapping the system rendered [call to action]({{g.doc('/content/docs/ads/story_ads_best_practices.html', locale=doc.locale).url.path}}#call-to-action-button-text-enum) button that appears in the bottom third of all AMP Story ads. Tapping on the button could send the user to one of the following locations, configured by the ad creator:
+Users can interact directly with the ad by tapping the system rendered [call to action]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md', locale=doc.locale).url.path}}#call-to-action-button-text-enum) button that appears in the bottom third of all AMP Story ads. Tapping on the button could send the user to one of the following locations, configured by the ad creator:
 
 * An AMP web page 
 * A non-AMP web page
 * The App Store or Google Play Store
-* [A Sponsored Story]({{g.doc('/content/docs/ads/story_ads_best_practices.html', locale=doc.locale).url.path}}#sponsored-story) 
+* [A Sponsored Story]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md', locale=doc.locale).url.path}}#sponsored-story) 
 
 {{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
 
@@ -68,7 +68,7 @@ The easiest way to include ads in your AMP Story is by serving ads from a suppor
 
 Ad servers that currently support AMP Story ads:
 
-* [Google Ad Manager (previously  DoubleClick)]({{g.doc('/content/docs/ads/advertise_amp_stories.html', locale=doc.locale).url.path}}#google-ad-manager)
+* [Google Ad Manager (previously  DoubleClick)]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/advertise_amp_stories.md', locale=doc.locale).url.path}}#google-ad-manager)
 
 If you are an add server interested in serving story adds please contact us by filing a [GitHub Issue](https://github.com/ampproject/amphtml/issues/new). The AMP team will happily get in touch! 
 

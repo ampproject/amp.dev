@@ -16,4 +16,4 @@ En este tutorial, aprendió a:
 
 ## Próximos pasos
 
-Continúe su aprendizaje de AMP mediante la creación de funciones más avanzadas en su página de AMP con el tutorial [Añadir funciones avanzadas de AMP]({{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}}).
+Continúe su aprendizaje de AMP mediante la creación de funciones más avanzadas en su página de AMP con el tutorial [Añadir funciones avanzadas de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}}).

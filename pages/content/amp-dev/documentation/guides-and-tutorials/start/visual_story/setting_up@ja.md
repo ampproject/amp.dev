@@ -7,7 +7,7 @@ $title: 設定
 このチュートリアルを始める前に、次のものが必要となります。
 
 - HTML、CSS、JavaScript の基本的な知識
-- AMP の中心となる概念についての基本的な理解（「[HTML を AMP に変換する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})」チュートリアルをご覧ください）
+- AMP の中心となる概念についての基本的な理解（「[HTML を AMP に変換する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})」チュートリアルをご覧ください）
 - お好みのブラウザ
 - 任意のテキスト エディタ
 
@@ -34,9 +34,11 @@ $title: 設定
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('重要', type='caution') %}
+[tip type="important"]
+
 URL は必ず `localhost` から提供されるようにしてください。そうでない場合、AMP ストーリーが正しく読み込まれず、次のようなエラーが発生する可能性があります: `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
-{% endcall %}
+
+[/tip]
 
 
 クリックしながら完成したストーリー全体を見返し、このコンポーネントの仕組みを把握するようにしてください。

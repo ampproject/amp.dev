@@ -51,8 +51,10 @@ o [Google Analytics](https://developers.google.com/analytics/devguides/collectio
 </amp-analytics>
 ```
 
-{% call callout('Observação', type='note') %}
-O código de exemplo acima serve para mostrar como funciona o processo, mas não é uma amostra realista. Se você estiver trabalhando com provedores de análise, talvez essa amostra não faça sentido, já que as configurações do provedor são menos complexas. Consulte a [documentação do provedor de análise](/pt_br/docs/analytics/analytics-vendors.html) para saber mais sobre as configurações de exemplo.{% endcall %}
+[tip type="note"]
+
+O código de exemplo acima serve para mostrar como funciona o processo, mas não é uma amostra realista. Se você estiver trabalhando com provedores de análise, talvez essa amostra não faça sentido, já que as configurações do provedor são menos complexas. Consulte a [documentação do provedor de análise](/pt_br/docs/analytics/analytics-vendors.html) para saber mais sobre as configurações de exemplo.
+[/tip]
 
 ## Para onde devo enviar os dados de análise: atributo "type"
 
@@ -135,11 +137,13 @@ como o valor da conta no URL remoto (`"account": "UA-XXXXX-Y"`):
 ```
 
 
-{% call callout('Importante', type='caution') %}
+[tip type="important"]
+
 A AMP não valida diversos usos da mesma variável.
 Os valores são preenchidos seguindo uma ordem de preferência da substituição de variáveis,
 e os valores nos URLs remotos têm prioridade. Consulte [Ordem da substituição de variáveis](/pt_br/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
-{% endcall %}
+
+[/tip]
 
 ## Solicitações, acionadores e transportes
 
@@ -224,7 +228,9 @@ e cada vez que uma tag `a` recebe um clique:
 }
 ```
 
-{% call callout('Importante', type='caution') %} A abordagem acima só é recomendada para páginas AMP, e não para anúncios HTML para AMP. Como a prioridade da análise é menor que a do conteúdo da página, recomendamos rastrear os cliques usando um redirecionamento do navegador para evitar perdas. {% endcall %}
+[tip type="important"]
+ A abordagem acima só é recomendada para páginas AMP, e não para anúncios HTML para AMP. Como a prioridade da análise é menor que a do conteúdo da página, recomendamos rastrear os cliques usando um redirecionamento do navegador para evitar perdas. 
+[/tip]
 
 A tecnologia AMP é compatível com as seguintes configurações de acionador:
 
@@ -263,9 +269,11 @@ A tecnologia AMP é compatível com as seguintes configurações de acionador:
   </tbody>
 </table>
 
-{% call callout('Importante', type='caution') %}
+[tip type="important"]
+
 Os acionadores de uma configuração com menor precedência serão substituídos por outros de mesmo nome que venham de uma configuração com maior precedência. Consulte [Ordem da substituição de variáveis](/pt_br/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering).
-{% endcall %}
+
+[/tip]
 
 ### Como os dados são enviados: atributo "transport"
 

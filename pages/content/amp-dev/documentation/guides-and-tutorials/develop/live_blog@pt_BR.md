@@ -10,9 +10,11 @@ Os blogs ao vivo são páginas da Web atualizadas com frequência durante evento
 
 Este tutorial oferece uma visão geral sobre o componente `amp-live-list` e se concentra em alguns detalhes de implementação dos blogs ao vivo, como a [paginação](#pagination) e os [links diretos](#deeplinking). A [amostra de blog ao vivo](https://www.ampbyexample.com/samples_templates/live_blog/) do AMP By Example será usada para ilustrar a implementação de blogs ao vivo nas AMP.
 
-{% call callout('Dica', type='success') %}
+[tip type="success"]
+
 Use a [marcação de metadados LiveBlogPosting](http://schema.org/LiveBlogPosting) (em inglês) para integrar seu blog a recursos de plataformas de terceiros.
-{% endcall %}
+
+[/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
 

@@ -2,7 +2,7 @@
 $title: Memvalidasi HTML AMP Anda
 ---
 
-Setiap kali membuat halaman AMP, Anda harus selalu memvalidasi bahwa HTML AMP sudah benar. Terdapat [beberapa metode yang dapat digunakan untuk memvalidasi halaman AMP]({{g.doc('/content/documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.md', locale=doc.locale).url.path}}).  Dalam tutorial ini, kita akan mengaktifkan Validator AMP dengan mengaktifkan mode developer.  Untuk mengaktifkan mode developer, tambahkan ID fragmen berikut ke URL Anda lalu muat ulang halaman:
+Setiap kali membuat halaman AMP, Anda harus selalu memvalidasi bahwa HTML AMP sudah benar. Terdapat [beberapa metode yang dapat digunakan untuk memvalidasi halaman AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).  Dalam tutorial ini, kita akan mengaktifkan Validator AMP dengan mengaktifkan mode developer.  Untuk mengaktifkan mode developer, tambahkan ID fragmen berikut ke URL Anda lalu muat ulang halaman:
 
 ```text
 #development=1

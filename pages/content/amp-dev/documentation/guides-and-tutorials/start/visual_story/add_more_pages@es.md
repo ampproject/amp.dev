@@ -4,9 +4,11 @@ $title: Añadir más páginas
 
 Ahora que ya sabes cómo añadir una página a una historia de AMP, verás que añadir las páginas siguientes a la historia de las mascotas es muy parecido. Basándote en la información que se incluye a continuación, **crea el resto de las páginas** aplicando lo que has aprendido.  Si te atascas, consulta el (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">código completo</a>).
 
-{% call callout('Nota', type='success') %}
+[tip type="success"]
+
 Recuerda que cada página necesita un atributo "id" único (por ejemplo, `id="page1"`).
-{% endcall %}
+
+[/tip]
 
 ## Página 1: Gatos
 
@@ -18,7 +20,7 @@ Explica cómo mostrar una imagen y texto en una sola capa.
       <ul>
         <li>Contiene 1 capa:
       <ul>
-        <li>Implementa la plantilla <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
+        <li>Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a>.</li>
         <li>Contiene 3 elementos:
           <ul>
             <li>Un elemento <code>&lt;h1></code> con el título <em>Cats</em>.</li>
@@ -42,11 +44,11 @@ Explica cómo organizar el texto y mostrar una imagen que ocupe toda la pantalla
       <ul>
         <li>Contiene 2 capas:
       <ul>
-        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="{{g.doc('/content/docs/reference/components/media/amp-img.md', locale=doc.locale).url.path}}">amp-img adaptable</a> (<code class="filename">dog.jpg</code>, 720x1280px).</li>
-        <li><b>Capa 2:</b> Implementa la plantilla <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> y contiene 2 elementos:
+        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="{{g.doc('/content/amp-dev/documentation/components/I/amp-img.md', locale=doc.locale).url.path}}">amp-img adaptable</a> (<code class="filename">dog.jpg</code>, 720x1280px).</li>
+        <li><b>Capa 2:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> y contiene 2 elementos:
           <ul>
             <li>Un elemento <code>&lt;h1></code> con el título <em>Dogs</em>.</li>
-            <li>Un elemento <code>&lt;p></code> que incluye el atributo <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#thirds"><code>grid-area</code></a> con el valor <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#thirds"><code>lower-third</code></a> y contiene el siguiente texto: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em></li>
+            <li>Un elemento <code>&lt;p></code> que incluye el atributo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>grid-area</code></a> con el valor <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>lower-third</code></a> y contiene el siguiente texto: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em></li>
           </ul>
         </li>
       </ul></li></ul>
@@ -65,13 +67,13 @@ Explica cómo organizar un texto, mostrar una imagen que ocupe toda la pantalla 
       <ul>
       <li>Contiene 3 capas:
       <ul>
-        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="/es/docs/reference/components/amp-img.html">amp-img</a> adaptable (<code class="filename">bird.jpg</code>, 720x1280px).</li>
-        <li><b>Capa 2:</b> Implementa la plantilla <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> y contiene un elemento:
+        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="/es/docs/reference/components/amp-img.html">amp-img</a> adaptable (<code class="filename">bird.jpg</code>, 720x1280px).</li>
+        <li><b>Capa 2:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> y contiene un elemento:
           <ul>
             <li>Un elemento <code><h1></code> con el título <em>Birds</em>.</li>
           </ul>
         </li>
-        <li><b>Capa 3:</b> Implementa la plantilla <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> y contiene un elemento:
+        <li><b>Capa 3:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> y contiene un elemento:
           <ul>
             <li>Un elemento <code>&lt;q></code> que incluya la siguiente cita: <em>A bird is three things: Feathers, flight and song, And feathers are the least of these. —Marjorie Allen Seiffert</em>.</li>
             <li>Esta tercera capa incluye <code>class="bottom"</code> para alinear los elementos secundarios en la parte inferior de la pantalla.</li>
@@ -123,7 +125,7 @@ Explica cómo organizar texto y mostrar un vídeo que ocupe toda la pantalla en 
 Ya casi hemos acabado la historia de las mascotas. Usaremos animaciones en la última página para reunir a todas las mascotas.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.html', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
 </div>
  

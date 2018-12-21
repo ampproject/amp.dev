@@ -15,10 +15,11 @@ En este tutorial te presentamos el componente [amp-story](/es/docs/reference/com
 - Crear elementos animados en una página
 - Mantener interesados a los lectores con enlaces relacionados al final de la historia
 
-{% call callout('Nota', type='note') %} El componente [amp-story](/es/docs/reference/components/amp-story.html) es **experimental**. {% endcall %}
+[tip type="note"]
+ El componente [amp-story](/es/docs/reference/components/amp-story.html) es **experimental**.
+[/tip]
 
 
 <div class="start-button">
-<a class="button" href="{{g.doc(/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Empezar</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Empezar</span></a>
 </div>
- 

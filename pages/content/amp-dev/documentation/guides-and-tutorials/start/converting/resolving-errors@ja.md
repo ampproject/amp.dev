@@ -33,7 +33,7 @@ AMP でテキストを正しく表示するには、ページの文字セット�
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-すべての AMP ドキュメントで、そのドキュメントの「正規（canonical）」バージョンを参照するリンクを指定する必要があります。正規ページの概要と正規リンクのさまざまな手法については、このチュートリアルの[ページが検出されるようにする]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}})の手順で詳しく取り上げます。
+すべての AMP ドキュメントで、そのドキュメントの「正規（canonical）」バージョンを参照するリンクを指定する必要があります。正規ページの概要と正規リンクのさまざまな手法については、このチュートリアルの[ページが検出されるようにする]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}})の手順で詳しく取り上げます。
 
 このチュートリアルでは、正規ページに変換する元の HTML 記事を検討しましょう。
 
@@ -266,7 +266,7 @@ AMP では、指定された幅と高さから要素のアスペクト比を算�
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="画像がレスポンシブになった") }}
 
 [tip type="read-on"]
-AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})をご覧ください。
+AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md', locale=doc.locale).url.path}})をご覧ください。
 [/tip]
 
 ## 完了
@@ -343,6 +343,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

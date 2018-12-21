@@ -30,10 +30,12 @@ De forma predeterminada, el marcador de posición de los elementos AMP se muestr
 aunque no se hayan descargado ni inicializado los recursos de estos elementos.
 Una vez que los recursos estén listos, los elementos AMP suelen ocultar su marcador de posición y mostrar el contenido.
 
-{% call callout('Nota', type='note') %}
+[tip type="note"]
+
 Los marcadores de posición no tienen por qué ser elementos AMP;
 pueden ser cualquier elemento HTML.
-{% endcall %}
+
+[/tip]
 
 ## Respaldos
 

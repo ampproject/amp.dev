@@ -8,7 +8,7 @@
     {% set formats = ['Websites', 'Stories', 'Ads', 'Email'] %}
     <ul class="format-list">
       {% for format in formats %}
-      <li class="format-list-item"><button class={{format}}>{{ format }}</button></li>
+      <li class="format-list-item"><a href="?format={{ format }}">{{ format }}</a></li>
       {% endfor %}
     </ul>
 
@@ -24,7 +24,8 @@
           {% set allCollectionPaths = collection.collection_path.split('/') %}
           {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
 
-          <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
+          {% set formats = collection.formats or [] %}
+          <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ad--{{ format }} {% endfor %}">
             {% set collection_index = g.doc('content/' + collection.collection_path + '/index.md') %}
             {% if collection_index.exists %}
             <a class="nav-link" href="{{ collection_index.url.path }}">{{ _(collection.title) }}</a>
@@ -45,9 +46,9 @@
 
           {% for document in documents %}
           {# Check if document has format to filter on #}
-          {% set formats = ' '.join(document.formats or []) %}
+          {% set formats = document.formats or document.collection.formats or [] %}
           {% set activeDocument = true if document.url == doc.url %}
-          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {{ formats }}">
+          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ad--{{ format }} {% endfor %}">
             <a class="nav-link" href="{{ document.url.path }}">{{ _(document.title) }}</a>
           </li>
           {% endfor %}

@@ -30,5 +30,5 @@ Se la tua pagina è in un solo formato e stai usando una pagina AMP, devi comunq
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Precedente</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">Prossimo</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">Prossimo</span></a>
 </div>

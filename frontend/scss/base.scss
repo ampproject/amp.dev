@@ -22,16 +22,48 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Used to jump before an anchor and not beneath it */
 :target::before {
   content: '';
   display: block;
   height: 145px;
   margin-top: -145px;
-  visibility: hidden
-}
-@media screen and (min-width: 1024px) {
-  :target::before {
+  visibility: hidden;
+
+  @media screen and (min-width: 1024px) {
     height: 80px;
     margin-top: -80px;
   }
+}
+
+/* The following selectors are used to filter the content on the page */
+.ad--websites, .ad--ads, .ad--stories, .ad--email {
+  display: none;
+}
+
+body.ad--websites {
+  display: inherit;
+  background: linear-gradient(45deg, color('whisper') 85%, lighten(color('doger-blue'), 25%));
+}
+
+body.ad--ads {
+  display: inherit;
+  background: linear-gradient(45deg, color('whisper') 85%, lighten(color('electric-violet'), 50%));
+}
+
+body.ad--stories {
+  display: inherit;
+  background: linear-gradient(45deg, color('whisper') 85%, lighten(color('school-bus'), 33%));
+}
+
+body.ad--email {
+  display: inherit;
+  background: linear-gradient(45deg, color('whisper') 85%, lighten(color('reef'), 10%));
+}
+
+.ad--websites .ad--websites,
+.ad--ads .ad--ads,
+.ad--stories .ad--stories,
+.ad--email .ad--email {
+  display: inherit;
 }

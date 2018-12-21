@@ -19,9 +19,9 @@ $title: 添加高级 AMP 功能
 
 一个新闻报道网页，该网页不仅要遵循 AMP 规范，还要囊括广告、数据分析、嵌入式视频、嵌入式社交媒体、轮换展示内容和网站导航菜单。
 
-注意: 本教程在[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})教程中所述概念的基础上进行延伸。如果您对 AMP 的核心概念尚无一个基本了解，请先学习[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})教程。
+注意: 本教程在[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})教程中所述概念的基础上进行延伸。如果您对 AMP 的核心概念尚无一个基本了解，请先学习[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})教程。
 
 <div class="start-button">
-<a class="button" href="{{g.doc('/content/docs/fundamentals/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">开始</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">开始</span></a>
 </div>
 

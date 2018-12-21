@@ -11,7 +11,7 @@ There are 4 primary ways you can integrate with AMP:
 
 
 ## 1. Add your support to the amp-analytics extension
-AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide]({{g.doc('/content/docs/analytics/integrating-analytics.md', locale=doc.locale).url.path}}) to get you started.
+AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) to get you started.
 
 If you simply need to add a tracking pixel with dynamic parameters to your tracking URL, check out [amp-pixel](/docs/reference/components/amp-pixel.html). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
 
@@ -20,7 +20,7 @@ There are 20+ analytics providers who have added support to amp-analytics. Here 
 
 ## 2. Using an amp-ad extension
 
-The amp-ad extension is reserved for serving display ads on AMP pages. Over 90 ad tech providers have added support to AMP.  To get started, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to the amp-ad extension. Depending on the ad technology your company provides, you might find these [integration instructions]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}) useful.
+The amp-ad extension is reserved for serving display ads on AMP pages. Over 90 ad tech providers have added support to AMP.  To get started, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to the amp-ad extension. Depending on the ad technology your company provides, you might find these [integration instructions]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}}) useful.
 
 There are 90+ ad providers who have added support for advertising related features like amp-ad. Here is a sample [pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 

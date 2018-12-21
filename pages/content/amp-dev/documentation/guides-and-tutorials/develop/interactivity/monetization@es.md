@@ -10,9 +10,11 @@ En esta guía, se incluyen instrucciones y prácticas recomendadas para mostrar 
 
 En las páginas que no son AMP (HTML tradicional), si quieres mostrar anuncios, debes incluir un fragmento de JavaScript para servir anuncios de tu red publicitaria.  Por motivos de rendimiento y seguridad, no puedes incluir código JavaScript de terceros en las páginas AMP.  Por lo tanto, para mostrar anuncios en AMP, debes añadir el componente personalizado [`<amp-ad>`](/es/docs/reference/components/amp-ad.html) a tu página AMP.
 
-{% call callout('Nota', type='success') %}
+[tip type="success"]
+
 Consulta la página [AMP By Example para ver una demostración en directo](https://ampbyexample.com/components/amp-ad/) de cómo añadir una etiqueta "amp-ad" a una página AMP.
-{% endcall %}
+
+[/tip]
 
 Veamos los pasos para añadir este componente, que te permitirá mostrar anuncios en tu página AMP.
 
@@ -26,7 +28,7 @@ El componente `<amp-ad>` es una extensión de anuncio personalizada de la biblio
 
 ### Paso 2: Añade la etiqueta "amp-ad" a la página AMP
 
-Hay más de 100 [servidores de anuncios y redes publicitarias]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}}) que ofrecen integraciones con AMP integradas.  Para añadir un anuncio de una red publicitaria concreta, utiliza la etiqueta `<amp-ad>` y especifica la red con el atributo `type`.
+Hay más de 100 [servidores de anuncios y redes publicitarias]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) que ofrecen integraciones con AMP integradas.  Para añadir un anuncio de una red publicitaria concreta, utiliza la etiqueta `<amp-ad>` y especifica la red con el atributo `type`.
 
 En este ejemplo, vamos a añadir un espacio publicitario para servir anuncios de la red a9: 
 

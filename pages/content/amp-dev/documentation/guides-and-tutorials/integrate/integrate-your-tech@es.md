@@ -11,7 +11,7 @@ Existen 4 maneras principales de integrarse con AMP:
 
 ## 1. Agregue su soporte a la extensión amp-analytics
 
-AMP Analytics le permite enviar eventos de vuelta a su servidor basado en disparadores configurados por usted. Hemos escrito una [guía de integración de análisis]({{g.doc('/content/docs/analytics/integrating-analytics.md', locale=doc.locale).url.path}}) para empezar.
+AMP Analytics le permite enviar eventos de vuelta a su servidor basado en disparadores configurados por usted. Hemos escrito una [guía de integración de análisis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) para empezar.
 
 Si solo necesita agregar un píxel de seguimiento con parámetros dinámicos a su URL de seguimiento, eche un vistazo a [amp-pixel](/es/docs/reference/components/amp-pixel.html). Asegúrese de documentar el uso en sus páginas de soporte para los desarrolladores que deseen utilizar su tecnología con AMP.
 
@@ -19,7 +19,7 @@ Hay más de 20 proveedores de análisis que han añadido soporte a amp-analytics
 
 ## 2. Usando la extensión amp-ad
 
-La extensión amp-ad está reservada para publicar anuncios de visualización en las páginas de AMP. Más de 90 proveedores de tecnología de anuncios han añadido soporte a AMP. Para empezar, lea la [descripción general del desarrollo](https://github.com/ampproject/amphtml/tree/master/ads#overview) o salte a las [instrucciones del desarrollador](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) para agregar su soporte a la extensión amp-ad. Dependiendo de la tecnología de anuncios que su empresa proporcione, es posible que encuentre útiles estas [instrucciones de integración]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}).
+La extensión amp-ad está reservada para publicar anuncios de visualización en las páginas de AMP. Más de 90 proveedores de tecnología de anuncios han añadido soporte a AMP. Para empezar, lea la [descripción general del desarrollo](https://github.com/ampproject/amphtml/tree/master/ads#overview) o salte a las [instrucciones del desarrollador](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) para agregar su soporte a la extensión amp-ad. Dependiendo de la tecnología de anuncios que su empresa proporcione, es posible que encuentre útiles estas [instrucciones de integración]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}}).
 
 Hay más de 90 proveedores de anuncios que han añadido soporte para funciones publicitarias relacionadas, como amp-ad. A continuación se muestra una [solicitud de extracción](https://github.com/ampproject/amphtml/pull/2299) de muestra de la red publicitaria [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 

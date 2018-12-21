@@ -191,4 +191,4 @@ para ser mostrado quando nenhum anúncio estiver disponível:
 
 A AMP é compatível com uma ampla gama de redes de anúncios. Consulte as [referências para ver a lista completa](/pt_br/docs/reference/components/amp-ad.html#supported-ad-networks).
 
-Leia Mais: Saiba mais sobre anúncios no guia [Como veicular anúncios em AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}}).
+Leia Mais: Saiba mais sobre anúncios no guia [Como veicular anúncios em AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}}).

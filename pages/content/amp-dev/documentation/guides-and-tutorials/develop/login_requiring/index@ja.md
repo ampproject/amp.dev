@@ -7,8 +7,8 @@ $title: ログインが必要な AMP ページを作成する
 
 [コメント欄の例](https://ampbyexample.com/samples_templates/comment_section/)では、`amp-access` と `amp-form` を組み合わせて、ユーザーがログインしているときのみ有効になるコメント欄を作成しています。このサンプルの仕組みを理解するため、ユーザーがページ上で行う操作を順番に見ていきましょう。
 
-{% include "/views/partials/sub_nav.html" %}
+
 
 <div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">始める</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">始める</span></a>
 </div>

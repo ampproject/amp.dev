@@ -3,10 +3,11 @@ import os
 import pkgutil
 import sys
 
-import bbcode
 from grow import extensions
 from grow.documents import document, static_document
 from grow.extensions import hooks
+
+import bbcode
 
 SHORTCODES_DIR = 'shortcodes'
 
@@ -17,7 +18,6 @@ class ShortcodesPreRenderHook(hooks.PreRenderHook):
     def should_trigger(self, previous_result, doc, original_body, *_args,
                        **_kwargs):
         """Only trigger for non-empty documents"""
-        # Do not run for empty documents
         content = previous_result if previous_result else original_body
         if content is None:
             return False
@@ -38,6 +38,34 @@ class ShortcodesPreRenderHook(hooks.PreRenderHook):
         return self.extension.parser.format(content, doc=doc)
 
 
+class ShortcodesPostRenderHook(hooks.PostRenderHook):
+    """ Handle the post-render hook."""
+
+    def should_trigger(self, previous_result, doc, original_body, *_args,**_kwargs):
+        """Only trigger for non-empty documents"""
+        content = previous_result if previous_result else original_body
+        if content is None:
+            return False
+
+        # Check that it's not a StaticDocument
+        if isinstance(doc, static_document.StaticDocument):
+            return False
+
+        return True
+
+    def trigger(self, previous_result, doc, raw_content, *_args, **_kwargs):
+        content = previous_result if previous_result else raw_content
+
+        # Replace placeholders with rendered shortcodes
+        for id, value in self.extension.values.iteritems():
+          content = content.replace('<!-- {} -->'.format(id), value)
+
+        # And then empty values dictionary for next document
+        self.extension.values = {}
+
+        return content
+
+
 class ShortcodesExtension(extensions.BaseExtension):
     """Shortcodes Extension."""
 
@@ -49,11 +77,14 @@ class ShortcodesExtension(extensions.BaseExtension):
             escape_html=False,
             replace_cosmetic=False,
             replace_links=False)
+        # Holds registered shortcodes
         self.shortcodes = []
+        # Stores the values of the rendered shortcodes for later replacement
+        self.values = {}
 
-        self.load_shortcodes()
+        self._load_shortcodes()
 
-    def load_shortcodes(self):
+    def _load_shortcodes(self):
         """Verifies the pod has a shortcode module and loads all shortcodes"""
         shortcodes_path = '{}/{}'.format(self.pod.root, SHORTCODES_DIR)
         if os.path.exists(shortcodes_path + '/__init__.py'):
@@ -64,16 +95,16 @@ class ShortcodesExtension(extensions.BaseExtension):
                 if full_package_name not in sys.modules:
                     module = importer.find_module(package_name).load_module(
                         package_name)
-                    self.register_shortcode(module)
+                    self._register_shortcode(module)
         else:
             self.pod.logger.warning(
                 'There is no shortcode package in this pod')
 
-    def register_shortcode(self, module):
+    def _register_shortcode(self, module):
         """Checks if a loaded module exports a shortcode class and if so instantiates
         one and tries to register it with the BBCode parser"""
         if module.shortcode:
-            shortcode = module.shortcode(self.pod)
+            shortcode = module.shortcode(self.pod, self)
             self.shortcodes.append(shortcode)
             shortcode.register(self.parser)
 
@@ -82,4 +113,5 @@ class ShortcodesExtension(extensions.BaseExtension):
         """Returns the available hook classes."""
         return [
             ShortcodesPreRenderHook,
+            ShortcodesPostRenderHook,
         ]

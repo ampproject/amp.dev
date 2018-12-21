@@ -35,10 +35,12 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-{% call callout('ヒント', type='success') %}
+[tip type="success"]
+
 アプリの環境設定で、AMP バージョンではなく AMP 以外のバージョンを
 表示するオプションを選択できるようにすることを検討してください。
-{% endcall %}
+
+[/tip]
 
 ### リンクを変換する方法
 
@@ -61,12 +63,14 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
     使用するメッセージング アプリなど）に使用します。コンテンツが利用できるようになったら、ユーザーの操作が行われる前に
     すぐに URL 変換を開始してください。
 
-{% call callout('重要', type='caution') %}
+[tip type="important"]
+
 Google の AMP API を介した AMP URL のリクエストを
 ユーザー操作の結果として行わないでください。追加のネットワーク リクエストが発生し、アプリのパフォーマンスが
 低下するためです。代わりに、上記の 3 つの手法のいずれかを
 使用してください。
-{% endcall %}
+
+[/tip]
 
 
 #### Google の AMP URL API
@@ -111,16 +115,18 @@ URL が含まれます。
 }
 ```
 
-{% call callout('注', type='note') %}
+[tip type="note"]
+
 Google 以外の AMP キャッシュ上にキャッシュされた AMP ページの URL は、
 AMP URL API で取得できません。ただし、返された AMP URL（ampURL）からキャッシュされた URL を簡単に派生させることが
 できます。
-{% endcall %}
+
+[/tip]
 
 
 ## AMP キャッシュの使用
 
-[AMP キャッシュ]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}})は、
+[AMP キャッシュ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md', locale=doc.locale).url.path}})は、
 有効な AMP ドキュメントを配信するための、プロキシベースのコンテンツ配信ネットワーク（CDN）です。
 AMP キャッシュは次のような目的で設計されています。
 
@@ -152,11 +158,13 @@ AMP キャッシュは次のような目的で設計されています。
     AMP キャッシュ クローラとユーザーに提供される可能性がある。AMP キャッシュを使用すると、常に
     キャッシュと同じ AMP ファイルを参照できます。
 
-{% call callout('重要', type='caution') %}
+[tip type="important"]
+
 AMP キャッシュを介して AMP ページを提供する場合、閲覧者が AMP の生成元を
 はっきりと確認でき、ユーザーが正規 URL を共有できるようにします
 （この詳細については、次の 2 つのセクションも参照してください）。
-{% endcall %}
+
+[/tip]
 
 ## AMP ビューアの実装
 

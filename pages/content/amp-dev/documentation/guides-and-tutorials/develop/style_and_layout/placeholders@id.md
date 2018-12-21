@@ -30,10 +30,12 @@ Secara default, placeholder langsung ditampilkan untuk elemen AMP,
 meskipun resource elemen AMP tersebut belum didownload atau diinisialisasi.
 Setelah siap, elemen AMP biasanya menyembunyikan placeholder-nya dan menampilkan kontennya.
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
+
 Placeholder tidak harus berupa elemen AMP;
 elemen HTML apa pun dapat berfungsi sebagai placeholder.
-{% endcall %}
+
+[/tip]
 
 ## Fallback
 

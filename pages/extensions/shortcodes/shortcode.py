@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import uuid
 
 from grow.templates import tags
 
@@ -36,8 +37,9 @@ class Shortcode(object):
     # Set to True to enable template rendering even with empty value
     render_empty = False
 
-    def __init__(self, pod):
+    def __init__(self, pod, extension):
         self._pod = pod
+        self._extension = extension
 
     def register(self, parser):
         """Adds a formatter for the shortcode to the BBCode parser"""
@@ -69,8 +71,11 @@ class Shortcode(object):
         if self.template:
             value = self._render_template(
                 doc=context['doc'], value=value, options=options)
-        # Make sure to bring some room between potential markdown elements
-        return value
+
+        # Store rendered shortcode in extension for replacement on output
+        id = uuid.uuid4()
+        self._extension.values[id] = value.strip()
+        return '<!-- {} -->'.format(id)
 
     def _render_template(self, doc, value, options):
         # Check if template exists

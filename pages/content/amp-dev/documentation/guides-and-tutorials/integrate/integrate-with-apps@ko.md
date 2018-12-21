@@ -34,10 +34,12 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-{% call callout('도움말', type='success') %}
+[tip type="success"]
+
 앱의 환경설정을 통해 AMP 버전 대신 비 AMP 버전을 볼 수 있는
 옵션을 제공하는 것도 고려해 보세요.
-{% endcall %}
+
+[/tip]
 
 ### 링크 변환 방법
 
@@ -61,12 +63,14 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
     이 접근법을 사용하십시오. 콘텐츠가 제공되는 즉시 사용자 상호작용이 이루어지기 전에
     URL 변환을 실행해야 합니다.
 
-{% call callout('중요', type='caution') %}
+[tip type="important"]
+
 사용자 상호작용의 결과로 Google AMP API를 통해 AMP URL을
 요청하지 마세요. 그러면 네트워크에 추가적인 요청이 발생하므로
 앱 성능이 저하됩니다. 대신에 위에서 설명한 세 가지 접근법 중 하나를
 사용하세요.
-{% endcall %}
+
+[/tip]
 
 #### Google AMP URL API
 
@@ -107,15 +111,17 @@ Google AMP 캐시에 있는 캐시된 AMP 페이지 URL이 응답에
 }
 ```
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
+
 Google이 아닌 타사 AMP 캐시에 있는 AMP 페이지의 URL은 AMP URL API를 통해
 가져올 수 없습니다. 하지만 반환되는 AMP URL(ampURL)에서 캐시된 URL을
 쉽게 추출할 수 있습니다.
-{% endcall %}
+
+[/tip]
 
 ## AMP 캐시 사용
 
-[AMP 캐시]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}})는
+[AMP 캐시]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md', locale=doc.locale).url.path}})는
 유효한 AMP 문서를 전송하기 위한 프록시 기반의 콘텐츠 전송 네트워크(CDN)입니다.
 AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
 
@@ -147,11 +153,13 @@ AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
     서로 다른 두 가지 문서를 게재할 수 있습니다. AMP 캐시를 사용하면
     항상 캐시와 동일한 AMP 파일이 사용자에게 표시됩니다.
 
-{% call callout('중요', type='caution') %}
+[tip type="important"]
+
 AMP 캐시를 통해 AMP 페이지를 게재하는 경우에는 AMP의 원본을 명시하여
 사용자가 표준 URL을 공유할 수 있는 뷰어 환경을
 제공하세요. 자세한 내용은 다음 두 섹션을 참조하시기 바랍니다.
-{% endcall %}
+
+[/tip]
 
 ## AMP 뷰어 구현
 

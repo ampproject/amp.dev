@@ -5,9 +5,11 @@ $order: 4
 
 现在，您已熟悉如何为 AMP 故事添加网页，为我们的故事“宠物的乐趣”添加后续网页的步骤与此非常相似。请根据下面提供的信息，利用您目前已掌握的知识**继续制作其余网页**。如果您遇到问题，请查看已完成的 (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) 代码。
 
-{% call callout('提示', type='success') %}
+[tip type="success"]
+
 请注意，每个网页都需要有唯一的“id”属性（例如 `id="page1"`）。
-{% endcall %}
+
+[/tip]
 
 ## 第 1 页：猫咪
 
@@ -19,7 +21,7 @@ $order: 4
       <ul>
         <li>包含 1 个图层：
       <ul>
-        <li>实施 <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 模板。</li>
+        <li>实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 模板。</li>
         <li>包含 3 个元素：
           <ul>
             <li>1 个 <code><h1></code> 元素，标题为：猫咪</li>
@@ -43,11 +45,11 @@ $order: 4
       <ul>
         <li>包含 2 个图层：
       <ul>
-        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="{{g.doc('/content/docs/reference/components/media/amp-img.md', locale=doc.locale).url.path}}">amp-img</a>（<code class="filename">dog.jpg</code>，大小为 720 x 1280px）。</li>
-        <li><b>第 2 个图层</b>：实施 <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> 模板，并包含 2 个元素：
+        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="{{g.doc('/content/amp-dev/documentation/components/I/amp-img.md', locale=doc.locale).url.path}}">amp-img</a>（<code class="filename">dog.jpg</code>，大小为 720 x 1280px）。</li>
+        <li><b>第 2 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> 模板，并包含 2 个元素：
           <ul>
             <li>1 个 <code><h1></code> 元素，标题为：狗狗</li>
-            <li>1 个 <code><p></code> 元素，用于指定 <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#thirds"><code>grid-area</code></a>（占据 <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#thirds"><code>lower-third</code></a>），并包含以下文字：犬类可能是最早被驯服的动物。数万年来，它们一直陪伴着人类。一些科学家认为，所有犬类（无论是家养的，还是野生的）都与南亚的小狼有着共同的祖先。</li>
+            <li>1 个 <code><p></code> 元素，用于指定 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>grid-area</code></a>（占据 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>lower-third</code></a>），并包含以下文字：犬类可能是最早被驯服的动物。数万年来，它们一直陪伴着人类。一些科学家认为，所有犬类（无论是家养的，还是野生的）都与南亚的小狼有着共同的祖先。</li>
           </ul>
         </li>
       </ul></li></ul>
@@ -66,13 +68,13 @@ $order: 4
       <ul>
       <li>包含 3 个图层：
       <ul>
-        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="/zh_cn/docs/reference/components/amp-img.html">amp-img</a>（<code class="filename">bird.jpg</code>，大小为 720 x 1280px）。</li>
-        <li><b>第 2 个图层</b>：实施 <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 模板，并包含 1 个元素：
+        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="/zh_cn/docs/reference/components/amp-img.html">amp-img</a>（<code class="filename">bird.jpg</code>，大小为 720 x 1280px）。</li>
+        <li><b>第 2 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 模板，并包含 1 个元素：
           <ul>
             <li>1 个 <code><h1></code> 元素，标题为：小鸟</li>
           </ul>
         </li>
-        <li><b>第 3 个图层</b>：实施 <a href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 模板，并包含 1 个元素：
+        <li><b>第 3 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 模板，并包含 1 个元素：
           <ul>
             <li>1 个 <code><q></code> 元素，用于引用以下语录：鸟有三宝：羽毛、飞行的本领和歌声，其中羽毛是最次要的。--玛乔丽·艾伦·塞弗特</li>
             <li>第三个图层指定 <code>class="bottom"</code>，以将子元素与屏幕底部对齐。
@@ -124,7 +126,7 @@ $order: 4
 我们的故事“宠物的乐趣”即将完成。最后一页，我们将使用动画来集中展示所有宠物。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_cover_page.html', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/animating_elements.html', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
  

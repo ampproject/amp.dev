@@ -32,7 +32,7 @@ Ahora, echemos un vistazo al siguiente error:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Cada documento de AMP necesita tener un vínculo que haga referencia a la página canónica. La página canónica puede ser la propia página de AMP o una página que no sea de AMP. En este tutorial, el artículo HTML original es la página canónica. Aprenderemos más acerca de la vinculación canónica en cómo [hacer que tu página sea detectable]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}).
+Cada documento de AMP necesita tener un vínculo que haga referencia a la página canónica. La página canónica puede ser la propia página de AMP o una página que no sea de AMP. En este tutorial, el artículo HTML original es la página canónica. Aprenderemos más acerca de la vinculación canónica en cómo [hacer que tu página sea detectable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}).
 
 Adelante, **agregue** el siguiente código debajo de la etiqueta `<meta charset="utf-8" />`:
 
@@ -247,7 +247,7 @@ Voila! Nuestra imagen está en la relación de aspecto correcta y responde respo
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Nuestra imagen es ahora responsive!") }}
 
-Leer más: Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
+Leer más: Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## ¡Éxito!
 
@@ -323,6 +323,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

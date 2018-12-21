@@ -97,9 +97,11 @@ selected.slide // Evaluates to 0.
 
 これで、スライドのインジケーターが機能します。
 
-{% call callout('演習', type='success') %}
+[tip type="success"]
+
 ユーザーがスライドのインジケーターのドットをタップしたときに、選択された項目で画像カルーセルを更新する、という機能を追加できるかどうか考えてみましょう。ヒントとしては、[`<amp-carousel>`](/ja/docs/reference/components/amp-carousel.html) で `tap` イベントと `[slide]` バインドを使用します。
-{% endcall %}
+
+[/tip]
 
 ## カルーセルの画像の変更
 
@@ -202,7 +204,7 @@ selected.slide // Evaluates to 0.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>
 

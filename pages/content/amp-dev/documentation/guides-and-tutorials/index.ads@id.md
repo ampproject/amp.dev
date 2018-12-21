@@ -8,7 +8,7 @@ Menayangkan iklan ke halaman AMP tidak jauh berbeda dengan menayangkan iklan tra
 
 {{ image('/static/img/docs/ads/ads_in_amp.svg', 647, 263, alt='menayangkan iklan ke halaman AMP', align='' ) }}
 
-1.  Dimulai dengan halaman AMP, penayang membuat slot di halaman untuk menampilkan iklan. Secara tradisional, tindakan ini dilakukan dengan memasukkan cuplikan JavaScript, namun di AMP, penayang menambahkan tag [`<amp-ad>`](/id/docs/reference/components/amp-ad.html) ke halaman AMP-nya untuk jaringan iklan tertentu. Untuk mempelajari detailnya, lihat panduan [Memonetasi halaman AMP dengan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}}).
+1.  Dimulai dengan halaman AMP, penayang membuat slot di halaman untuk menampilkan iklan. Secara tradisional, tindakan ini dilakukan dengan memasukkan cuplikan JavaScript, namun di AMP, penayang menambahkan tag [`<amp-ad>`](/id/docs/reference/components/amp-ad.html) ke halaman AMP-nya untuk jaringan iklan tertentu. Untuk mempelajari detailnya, lihat panduan [Memonetasi halaman AMP dengan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}}).
 
 2.  Ketika pengguna memuat halaman AMP, tag `<amp-ad>` akan mengirim permintaan iklan ke jaringan iklan. Untuk menampilkan iklan pada halaman AMP, jaringan iklan membuat implementasi `amp-ad`. Untuk mempelajari detailnya, lihat panduan [Mengintegrasikan jaringan iklan ke AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
@@ -19,7 +19,7 @@ Menayangkan iklan ke halaman AMP tidak jauh berbeda dengan menayangkan iklan tra
 AMP mendukung sejumlah besar [server dan jaringan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
 
 [tip type="note"]
-Ingin mengintegrasikan teknologi iklan Anda dengan AMP? Lihat [panduan]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}) ini.
+Ingin mengintegrasikan teknologi iklan Anda dengan AMP? Lihat [panduan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}}) ini.
 [/tip]
 
 ## Iklan yang didukung
@@ -37,7 +37,7 @@ Pelajari lebih lanjut iklan AMPHTML di panduan [Iklan AMPHTML]({{g.doc('/content
 
 Kunjungi referensi berikut untuk mulai menggunakan iklan di AMP:
 
-* [Memonetasi halaman AMP dengan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})
-* [Mengintegrasikan dengan AMP untuk menayangkan iklan display]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
+* [Memonetasi halaman AMP dengan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
+* [Mengintegrasikan dengan AMP untuk menayangkan iklan display]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [Iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  

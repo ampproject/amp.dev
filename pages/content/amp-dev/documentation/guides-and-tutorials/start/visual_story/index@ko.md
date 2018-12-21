@@ -15,7 +15,9 @@ $title: 시각적 AMP 스토리 작성하기
 - 페이지의 요소를 애니메이션으로 표시
 - 스토리 마지막 부분에 관련 링크를 추가하여 독자의 콘텐츠 몰입도 유지
 
-{% call callout('참고', type='note') %} [amp-story](/ko/docs/reference/components/amp-story.html) 구성요소는 아직 **실험 단계**에 있습니다. {% endcall %}
+[tip type="note"]
+ [amp-story](/ko/docs/reference/components/amp-story.html) 구성요소는 아직 **실험 단계**에 있습니다. 
+[/tip]
 
 
 <div class="start-button">

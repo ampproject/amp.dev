@@ -1,6 +1,0 @@
-path: /samples/{base}.html
-view: /views/default.j2
-title: Samples
-
-localization:
-  path: /{locale}/samples/{base}.html

@@ -18,9 +18,11 @@ $title: 恭喜！
 通过以下资源了解有关 AMP 故事的更多信息：
 
 - [amp-story 参考文档](/zh_cn/docs/reference/components/amp-story.html)
-- [AMP 故事最佳做法]({{g.doc('/content/docs/fundamentals/amp_story_best_practices.md', locale=doc.locale).url.path}})
+- [AMP 故事最佳做法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
+
 [amp-story](/zh_cn/docs/reference/components/amp-story.html) 组件是**实验性**组件。若想报名参加试用活动，以便使用此组件的原始试用版发布网页，请访问 <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>。
-{% endcall %}
+
+[/tip]
 

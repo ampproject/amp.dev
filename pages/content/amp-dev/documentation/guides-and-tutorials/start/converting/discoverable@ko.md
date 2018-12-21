@@ -109,7 +109,7 @@ $title: 페이지를 검색할 수 있도록 설정
 
 [tip type="read-on"]
 <<<<<<< HEAD
-페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 =======
 페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
@@ -118,6 +118,6 @@ $title: 페이지를 검색할 수 있도록 설정
 훌륭합니다.  이제 AMP 뉴스 기사가 완성되었습니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

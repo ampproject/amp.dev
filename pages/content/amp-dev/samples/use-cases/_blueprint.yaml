@@ -1,6 +1,0 @@
-path: /samples/use-cases/{base}.html
-view: /views/default.j2
-title: Use Cases
-
-localization:
-  path: /{locale}/samples/use-cases/{base}.html

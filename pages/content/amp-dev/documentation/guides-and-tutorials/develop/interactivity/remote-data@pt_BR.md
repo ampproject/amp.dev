@@ -6,11 +6,13 @@ $title: Como trabalhar com dados remotos
 
 E se os dados vinculáveis forem muito grandes ou complexos de recuperar no carregamento de página? E se levar muito tempo para pesquisar o preço de cada SKU? Não vale a pena pesquisar preços de SKUs para itens não visualizados.
 
-{% call callout('Dica', type='success') %}
+[tip type="success"]
+
 `<amp-state>` oferece suporte à busca de dados remotos por meio do atributo [`src`](/pt_br/docs/reference/components/amp-bind.html#attributes), que busca JSON em um ponto de extremidade CORS. Essa busca é executada uma vez no carregamento de página e é útil para garantir dados atualizados (especialmente quando exibidos de um cache).
 
 Também é possível vincular o atributo `src` do elemento `<amp-state>`. Assim, uma ação do usuário poderá acionar uma busca dos dados remotos JSON no estado vinculável da página.
-{% endcall %}
+
+[/tip]
 
 ## Buscar os tamanhos disponíveis de uma camiseta
 
@@ -169,7 +171,7 @@ Estamos quase terminando. Desative o botão "Adicionar ao carrinho" quando o tam
 **Faça um teste**: se você selecionar um tamanho indisponível, não será possível adicioná-lo ao carrinho.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
 

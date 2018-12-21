@@ -757,7 +757,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
 请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和 
-[AMP HTML 布局系统规范]({{g.doc('/content/docs/design/amp-html-layout.html', locale=doc.locale).url.path}})。
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md', locale=doc.locale).url.path}})。
 
 **注意**：如果您没有指定布局，
 并且没有添加 `width` 和 `height` 值，
@@ -815,7 +815,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
 请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和 
-[AMP HTML 布局系统规范]({{g.doc('/content/docs/design/amp-html-layout.html', locale=doc.locale).url.path}})。
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md', locale=doc.locale).url.path}})。
 
 ### 指定的布局不允许的属性
 

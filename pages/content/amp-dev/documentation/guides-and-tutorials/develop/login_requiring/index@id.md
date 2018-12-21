@@ -7,8 +7,8 @@ Tip: Untuk melihat contoh penerapan, buka [contoh bagian komentar](https://ampby
 
 [Contoh bagian komentar](https://ampbyexample.com/samples_templates/comment_section/) menggabungkan `amp-access` dan `amp-form` untuk membuat bagian komentar yang hanya diaktifkan jika pengguna telah login. Untuk mendapatkan penjelasan tentang cara kerja contoh ini, ikuti kumpulan tindakan yang akan dilakukan setelah Anda membuka halaman.
 
-{% include "/views/partials/sub_nav.html" %}
+
 
 <div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">Mulai</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">Mulai</span></a>
 </div>

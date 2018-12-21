@@ -35,10 +35,12 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-{% call callout('Tips', type='success') %}
+[tip type="success"]
+
 Pertimbangkan untuk memberi pengguna opsi untuk melihat versi non-AMP, bukan
 versi AMP, melalui setelan preferensi di aplikasi Anda.
-{% endcall %}
+
+[/tip]
 
 ### Cara mentransformasi link
 
@@ -61,12 +63,14 @@ Ada tiga cara untuk mentransformasi link secara terprogram:
     enkripsi menyeluruh). Pastikan untuk memicu transformasi URL segera setelah
     konten tersedia, sebelum terjadi interaksi pengguna.
 
-{% call callout('Penting', type='caution') %}
+[tip type="important"]
+
 Jangan minta URL AMP melalui AMP API Google sebagai hasil dari interaksi
 pengguna karena hal itu akan menurunkan performa aplikasi Anda saat
 memasukkan permintaan jaringan tambahan. Sebaliknya, gunakan salah satu dari tiga pendekatan yang
 dijelaskan di atas.
-{% endcall %}
+
+[/tip]
 
 
 #### AMP URL API Google
@@ -111,16 +115,18 @@ Bagian isi respons berisi pemetaan URL AMP dalam format JSON:
 }
 ```
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
+
 URL untuk halaman AMP yang tersimpan di Cache AMP non-Google tidak dapat diambil melalui
 AMP URL API. Namun, Anda dapat mengambil URL tersimpan dari URL AMP
 (ampURL) yang ditampilkan dengan mudah.
-{% endcall %}
+
+[/tip]
 
 
 ## Menggunakan Cache AMP
 
-[Cache AMP]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}}) adalah
+[Cache AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md', locale=doc.locale).url.path}}) adalah
 jaringan penayangan konten (CDN) berbasis proxy untuk menayangkan dokumen AMP yang valid.
 Cache AMP didesain untuk:
 
@@ -152,11 +158,13 @@ Kami merekomendasikan penggunaan Cache AMP dengan alasan berikut:
     crawler Cache AMP dan ke pengguna. Penggunaan Cache AMP menjamin bahwa
     pengguna akan selalu melihat file AMP yang sama dengan Cache.
 
-{% call callout('Penting', type='caution') %}
+[tip type="important"]
+
 Saat menayangkan halaman AMP melalui Cache AMP, berikan pengalaman yang
 menunjukkan dengan jelas asal AMP dan menawarkan kemungkinan bagi pengguna untuk
 membagikan URL kanonis (untuk mengetahui lebih lanjut tentang ini, lihat juga dua bagian berikut).
-{% endcall %}
+
+[/tip]
 
 ## Mengimplementasikan AMP Viewer
 

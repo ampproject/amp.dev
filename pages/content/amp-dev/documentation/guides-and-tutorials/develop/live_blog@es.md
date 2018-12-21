@@ -10,9 +10,11 @@ Los blogs en directo son páginas web que se actualizan frecuentemente durante e
 
 Este tutorial ofrece información general sobre el componente `amp-live-list` y se centra en algunos detalles de la implementación para blogs en directo, como la [paginación](#pagination) y los [enlaces profundos](#deeplinking). Usaremos el [blog en directo de ejemplo] de AMP By Example (https://www.ampbyexample.com/samples_templates/live_blog/) para mostrar cómo implementar blogs en AMP.
 
-{% call callout('Nota', type='success') %}
+[tip type="success"]
+
 Usa la etiqueta de metadatos [LiveBlogPosting](http://schema.org/LiveBlogPosting) para que tu blog pueda integrarse con funciones de plataforma de terceros.
-{% endcall %}
+
+[/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
 

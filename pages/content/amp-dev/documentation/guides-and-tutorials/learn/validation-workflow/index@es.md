@@ -14,7 +14,7 @@ producen exactamente el mismo resultado, por lo que puedes utilizar la que más 
 a tu estilo de desarrollo.
 
 <<<<<<< HEAD
-Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) para las plataformas de terceros.
+Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) para las plataformas de terceros.
 =======
 Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) para las plataformas de terceros.
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
@@ -268,7 +268,7 @@ Cada herramienta ofrece varios fragmentos de información:
 Al leer de nuevo la [especificación]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) atentamente, nos damos cuenta de que utilizamos una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta `<amp-img>`.
 
 Para entender mejor la lista completa de los posibles errores,
-consulta la [guía Errores de validación de AMP]({{g.doc('/content/docs/troubleshooting/validation_errors.md', locale=doc.locale).url.path}}).
+consulta la [guía Errores de validación de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 Si sigues sin encontrar la solución después de evaluar los errores atentamente,
 [pregúntanos](http://stackoverflow.com/questions/tagged/amp-html) e intentaremos
 ayudarte.

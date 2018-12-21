@@ -18,9 +18,11 @@ $title: 축하합니다!
 다음 리소스에서 AMP 스토리에 관해 자세히 알아보세요.
 
 - [amp-story 참조 문서](/ko/docs/reference/components/amp-story.html)
-- [AMP 스토리 권장사항]({{g.doc('/content/docs/fundamentals/amp_story_best_practices.md', locale=doc.locale).url.path}})
+- [AMP 스토리 권장사항]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
-{% call callout('참고', type='note') %}
+[tip type="note"]
+
 [amp-story](/ko/docs/reference/components/amp-story.html) 구성요소는 아직 **실험 단계**에 있습니다. 이 구성요소를 사용하여 페이지를 게시하기 위한 Origin Trial에 가입하려면 <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>을 방문하세요.
-{% endcall %}
+
+[/tip]
 

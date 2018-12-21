@@ -33,7 +33,7 @@ The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-每个 AMP 文档都必须拥有引用此文档“权威”版本的链接。在本教程的[使您的网页可被轻松发现]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}})步骤中，我们将详细了解权威网页的定义，以及实现权威关联的不同方法。
+每个 AMP 文档都必须拥有引用此文档“权威”版本的链接。在本教程的[使您的网页可被轻松发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}})步骤中，我们将详细了解权威网页的定义，以及实现权威关联的不同方法。
 
 对于本教程，我们将要转换的原始 HTML 文章视为权威网页。
 
@@ -266,7 +266,7 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="我们的图片现在是自适应图片了！") }}
 
 [tip type="read-on"]
-要详细了解 AMP 布局系统，请参阅 [AMP 布局规范]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})。
+要详细了解 AMP 布局系统，请参阅 [AMP 布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md', locale=doc.locale).url.path}})。
 [/tip]
 
 ## 成功了！
@@ -343,6 +343,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

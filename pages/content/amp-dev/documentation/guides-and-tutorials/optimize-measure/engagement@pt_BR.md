@@ -28,7 +28,7 @@ Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as AMP
 
 - **Cultive novas interações,** como a geração de leads, a inscrição em boletins informativos e o suporte nos comentários com [`amp-form`](/pt_br/docs/reference/components/amp-form.html).
 
-- **Dê preferência para tipos de anúncio que ofereçam uma boa experiência ao leitor.** Explore os formatos de anúncios AMP, como [`amp-sticky-ad`](/pt_br/docs/reference/components/amp-sticky-ad.html) e [`amp-fx-flying-carpet`](/pt_br/docs/reference/components/amp-fx-flying-carpet.html). Siga as [práticas recomendadas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}}) para monetização de anúncios.
+- **Dê preferência para tipos de anúncio que ofereçam uma boa experiência ao leitor.** Explore os formatos de anúncios AMP, como [`amp-sticky-ad`](/pt_br/docs/reference/components/amp-sticky-ad.html) e [`amp-fx-flying-carpet`](/pt_br/docs/reference/components/amp-fx-flying-carpet.html). Siga as [práticas recomendadas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}}) para monetização de anúncios.
 
 - **Aumente os downloads de aplicativos.**
 Inclua um banner com um link para a instalação do aplicativo usando [`amp-app-banner`](/pt_br/docs/reference/components/amp-app-banner.html).

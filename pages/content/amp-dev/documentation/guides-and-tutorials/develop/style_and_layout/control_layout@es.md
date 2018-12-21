@@ -31,9 +31,11 @@ determinada por la anchura y la altura especificadas. Puedes probarlo cambiando 
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('Nota', type='success') %}
+[tip type="success"]
+
 Puedes ver demostraciones comparativas en directo de `amp-img` en [AMP By Example](https://ampbyexample.com/components/amp-img/).
-{% endcall %}
+
+[/tip]
 
 ## El atributo "layout"
 
@@ -97,9 +99,11 @@ Se pueden asignar los siguientes valores al atributo `layout`:
   </tbody>
 </table>
 
-{% call callout('Nota', type='success') %}
+[tip type="success"]
+
 Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP](/es/docs/design/amp-html-layout/layouts_demonstrated.html). También encontrarás más información en [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
-{% endcall %}
+
+[/tip]
 
 
 ### ¿Qué ocurre si la altura y la anchura no están definidas?
@@ -152,9 +156,11 @@ Cuando la ventana del navegador cambia de tamaño o de orientación,
 las media queries se vuelven a evaluar y los elementos se ocultan o se muestran
 en función de los nuevos resultados.
 
-{% call callout('Más información', type='read') %}
+[tip type="read-on"]
+
 Obtén más información sobre cómo controlar el diseño con media queries en el artículo [Usa las media queries en CSS para una mayor receptividad](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=es).
-{% endcall %}
+
+[/tip]
 
 ### Media queries de elementos
 

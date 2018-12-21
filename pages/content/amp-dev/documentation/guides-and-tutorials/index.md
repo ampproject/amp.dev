@@ -1,5 +1,7 @@
 ---
 $title: Learn AMP with Guides and tutorials
+$titles:
+  header: Guides & Tutorials
 $view: /views/overview/guides.j2
 $path: /documentation/guides-and-tutorials.html
 $localization:

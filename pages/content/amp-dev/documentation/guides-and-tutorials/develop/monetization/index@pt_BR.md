@@ -10,9 +10,11 @@ Este guia oferece instruções e práticas recomendadas para a exibição de an�
 
 Quando você quer exibir anúncios em páginas não AMP (HTML tradicional), basta incluir um snippet de JavaScript para veicular anúncios da rede de publicidade.  Por motivos de segurança e desempenho, não é possível incluir JavaScript de terceiros em páginas AMP.  Portanto, para exibir anúncios nas AMP, é preciso adicionar o componente personalizado [`<amp-ad>`](/pt_br/docs/reference/components/amp-ad.html) à página AMP.
 
-{% call callout('Dica', type='success') %}
+[tip type="success"]
+
 Consulte o site [AMP By Example para ver uma demonstração ao vivo](https://ampbyexample.com/components/amp-ad/) de como adicionar uma tag de anúncio AMP a uma página AMP.
-{% endcall %}
+
+[/tip]
 
 Vamos ver as etapas necessárias para incluir o componente que permite exibir anúncios na página AMP.
 
@@ -26,7 +28,7 @@ O componente `<amp-ad>` é uma extensão de anúncio personalizada para a biblio
 
 ### Etapa 2: adicione a tag amp-ad à página AMP
 
-Mais de cem [redes de publicidade e servidores de anúncios]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}}) oferecem integrações incorporadas às AMP.  Para adicionar um anúncio de uma determinada rede de publicidade, adicione a tag `<amp-ad>` e especifique a rede no atributo `type`.
+Mais de cem [redes de publicidade e servidores de anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) oferecem integrações incorporadas às AMP.  Para adicionar um anúncio de uma determinada rede de publicidade, adicione a tag `<amp-ad>` e especifique a rede no atributo `type`.
 
 Neste exemplo, adicionaremos um local de anúncio para veicular anúncios da rede a9: 
 

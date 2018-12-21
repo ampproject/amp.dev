@@ -8,7 +8,7 @@ Exibir anúncios em páginas AMP não é muito diferente de veicular anúncios t
 
 {{ image('/static/img/docs/ads/ads_in_amp.svg', 647, 263, alt='exibir anúncios em páginas AMP', align='' ) }}
 
-1.  Em uma página AMP, os editores criam um local para exibir anúncios. No método tradicional, isso é feito com a inserção de um snippet de JavaScript, mas nas AMP, os editores adicionam uma tag [`<amp-ad>`](/pt_br/docs/reference/components/amp-ad.html) à página AMP referente a uma rede de publicidade específica. Para saber mais detalhes, consulte o guia sobre [monetização de páginas AMP com anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}}).
+1.  Em uma página AMP, os editores criam um local para exibir anúncios. No método tradicional, isso é feito com a inserção de um snippet de JavaScript, mas nas AMP, os editores adicionam uma tag [`<amp-ad>`](/pt_br/docs/reference/components/amp-ad.html) à página AMP referente a uma rede de publicidade específica. Para saber mais detalhes, consulte o guia sobre [monetização de páginas AMP com anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}}).
 
 2.  Quando um usuário carrega uma página AMP, a tag `<amp-ad>` envia uma solicitação de anúncio para a rede de publicidade. Para retornar um anúncio à página AMP, as redes de publicidade criam uma implementação `amp-ad`. Para saber mais detalhes, consulte o guia de [integração de redes de publicidade em AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md) (em inglês).
 
@@ -19,7 +19,7 @@ Exibir anúncios em páginas AMP não é muito diferente de veicular anúncios t
 As AMP são compatíveis com um grande número de [servidores de anúncios e redes de publicidade]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
 
 [tip type="note"]
-Precisa integrar sua tecnologia de anúncio às AMP? [Confira estas diretrizes]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}).
+Precisa integrar sua tecnologia de anúncio às AMP? [Confira estas diretrizes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Anúncios compatíveis
@@ -37,7 +37,7 @@ Saiba mais sobre os anúncios HTML para AMP [neste guia]({{g.doc('/content/amp-d
 
 Acesse estes guias para começar a exibir anúncios AMP:
 
-* [Monetizar páginas AMP com anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})
-* [Integrar com AMP para veicular anúncios gráficos]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
+* [Monetizar páginas AMP com anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
+* [Integrar com AMP para veicular anúncios gráficos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [Anúncios HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  

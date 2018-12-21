@@ -30,10 +30,12 @@ Por padrão, o marcador do elemento AMP é mostrado imediatamente,
 mesmo que os recursos desse elemento não tenham sido inicializados nem transferidos por download.
 Depois de pronto, o elemento AMP geralmente oculta o marcador e mostra o conteúdo.
 
-{% call callout('Observação', type='note') %}
+[tip type="note"]
+
 O marcador não precisa ser um elemento AMP.
 Qualquer elemento HTML pode ter essa função.
-{% endcall %}
+
+[/tip]
 
 ## Substitutos
 

@@ -21,8 +21,8 @@ En este tutorial, aprendiste a:
 
 Para avanzar más en su experiencia de AMP, eche un vistazo a estos recursos:
 
-- [Crear páginas AMP interactivas]({{g.doc('/content/docs/interaction_dynamic/interactivity.md', locale=doc.locale).url.path}}): Aprenda cómo utilizar el amp-bind para crear páginas AMP interactivas
-- [Combina AMP con Aplicaciones Web Progresivas]({{g.doc('/content/docs/integration/pwa-amp.md', locale=doc.locale).url.path}}): Conozca cómo las páginas Web progresivas y las páginas de AMP se complementan entre sí
+- [Crear páginas AMP interactivas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}): Aprenda cómo utilizar el amp-bind para crear páginas AMP interactivas
+- [Combina AMP con Aplicaciones Web Progresivas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md', locale=doc.locale).url.path}}): Conozca cómo las páginas Web progresivas y las páginas de AMP se complementan entre sí
 - [AMP Start](https://www.ampstart.com/): Diseñe sus páginas con plantillas y componentes predefinidos
 - [AMP By Example](https://ampbyexample.com/): Aprender de muestras y demostraciones en vivo
 - [AMP Channel on YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Aprenda viendo videos específicos de AMP

@@ -15,7 +15,9 @@ $title: 创建一个视觉效果丰富的 AMP 故事
 - 为网页上的元素添加动画效果
 - 在故事末尾添加相关链接，吸引浏览者关注您的内容
 
-{% call callout('注意', type='note') %} [amp-story](/zh_cn/docs/reference/components/amp-story.html) 组件是**实验性**组件。{% endcall %}
+[tip type="note"]
+ [amp-story](/zh_cn/docs/reference/components/amp-story.html) 组件是**实验性**组件。
+[/tip]
 
 
 <div class="start-button">

@@ -58,7 +58,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### サイト運営者
 
-直接販売の広告を AMP HTML で配信するには、[AMP HTML 広告仕様]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}})に沿って広告を作成し、AMP HTML 広告の配信に対応した広告サーバーから配信する必要があります。現時点で、AMP HTML 広告に対応している広告サーバーは次のとおりです。
+直接販売の広告を AMP HTML で配信するには、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成し、AMP HTML 広告の配信に対応した広告サーバーから配信する必要があります。現時点で、AMP HTML 広告に対応している広告サーバーは次のとおりです。
 
 *   DoubleClick for Publishers
 *   TripleLift
@@ -66,11 +66,11 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 *   Adzerk
 *   Google AdSense
 
-エクスチェンジや SSP など、間接チャネル経由で AMP HTML 広告を配信する場合は、[こちらの一覧]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})にある、AMP HTML 広告に対応した広告ネットワークや広告サーバーをご利用ください。
+エクスチェンジや SSP など、間接チャネル経由で AMP HTML 広告を配信する場合は、[こちらの一覧]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})にある、AMP HTML 広告に対応した広告ネットワークや広告サーバーをご利用ください。
 
 ### 広告会社
 
-広告会社では、[AMP HTML 広告仕様]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}})に沿って広告を作成する必要があります。ヒントとサンプルについては、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
+広告会社では、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成する必要があります。ヒントとサンプルについては、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
 
 *  [Celtra の AdCreator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -99,9 +99,11 @@ AMP HTML 広告を作成したら、広告が正しい AMP HTML 構文に基づ�
 *   1 回限りのテストには、[AMP 検証ツール](https://validator.ampproject.org/)を使用します。
 *   [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) とのパートナーシップを通じて、パブリックな検証用エンドポイントを使用できます。
 
-{% call callout('注', type='note') %}
+[tip type="note"]
+
 高速フェッチの優先表示機能などを使用して、AMP HTML 広告を AMP ページで高速に表示するには、構文が正しく記述されている必要があります。構文が有効でなくても広告は表示されますが、高速化効果は得られません。
-{% endcall %}
+
+[/tip]
 
 ## RTB での AMP HTML 広告のサポート
 

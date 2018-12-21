@@ -46,7 +46,9 @@ perangkat, atau browser (lihat juga [Penggantian variabel](/id/docs/analytics/an
 * Bagaimana cara Anda mengidentifikasi pengguna (lihat juga [Identifikasi pengguna](/id/docs/analytics/analytics_basics.html#user-identification))?
 
 
-{% call callout('Pelajari lebih lanjut', type='read') %}
+[tip type="read-on"]
+
 Lanjutkan untuk mempelajari analisis dengan [Analisis: Dasar-Dasar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
-{% endcall %}
+
+[/tip]
 

@@ -5,24 +5,21 @@ localization:
   root_path: /{locale}/
   default_locale: en
   locales:
-  - ar
+  # - ar
   - en
   - es
   - fr
-  - id
   - it
-  - ja
-  - ko
-  - pt_BR
-  - ru
-  - tr
-  - zh_CN
+  # - id
+  # - ja
+  # - ko
+  # - pt_BR
+  # - ru
+  # - tr
+  # - zh_CN
 
 markdown:
   extensions:
-  - kind: toc
-    marker: [TOC]
-    baselevel: 1
   - kind: sourcecode
     classes: True
     class_name: ad-m-code-snippet
@@ -31,7 +28,6 @@ markdown:
     class_name: ad-m-code-snippet
 
 ext:
-- extensions.amp_dependency_injector.AmpDependencyInjectorExtension
 - extensions.inline_text_assets.InlineTextAssetsExtension:
     bundles:
         - name: 'styles'
@@ -39,3 +35,4 @@ ext:
         - name: 'icons'
           method: 'useIcon'
 - extensions.shortcodes.ShortcodesExtension
+- extensions.amp_dependency_injector.AmpDependencyInjectorExtension

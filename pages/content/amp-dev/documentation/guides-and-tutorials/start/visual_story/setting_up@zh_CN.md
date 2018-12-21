@@ -7,7 +7,7 @@ $title: 设置
 在开始学习本教程之前，您需要做好以下准备：
 
 - 掌握基本的 HTML、CSS 和 JavaScript 知识
-- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})教程）
+- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})教程）
 - 选择一种浏览器
 - 选择一种文本编辑器
 
@@ -34,9 +34,11 @@ $title: 设置
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('重要提示', type='caution') %}
+[tip type="important"]
+
 请确保该网址是从 `localhost` 提供的，否则 AMP 故事可能会无法正确加载，而且您可能会遇到诸如此类的错误：`"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
-{% endcall %}
+
+[/tip]
 
 
 点击浏览故事的完成版，了解我们将要创作什么样的内容。

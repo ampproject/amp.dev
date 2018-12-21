@@ -116,9 +116,11 @@ $title: 为元素添加动画效果
 </amp-story-page>
 ```
 
-{% call callout('趣味体验', type='success') %}
+[tip type="success"]
+
 只需为您的故事网页上的元素添加 `animate-in="<animation preset>"` 属性，即可探索各种不同的动画效果。
-{% endcall %}
+
+[/tip]
 
 ## 动画时间设置
 
@@ -254,7 +256,7 @@ Pets can lower your stress levels!</p>
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.html', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
  

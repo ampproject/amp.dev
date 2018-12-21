@@ -112,7 +112,7 @@ This will tell AMP that you're not using this document any longer and will free 
 
 ## See it in action
 
-{{ video('/static/img/docs/pwamp_react_demo.mp4', 620, 1100, align='right third', loop='true', autoplay='true', controls='') }}
+[video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
 You can see the "AMP in PWA" pattern in action in the [React sample](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) we've built. It demonstrates smooth transitions during navigation and comes with a simple React component that wraps the above steps. It's the best of both worlds – flexible, custom JavaScript in the Progressive Web App, and AMP to drive the content.
 

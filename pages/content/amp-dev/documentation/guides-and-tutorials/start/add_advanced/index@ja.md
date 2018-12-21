@@ -19,8 +19,8 @@ $title: 高度な AMP 機能を追加する
 
 AMP 仕様に準拠し、広告、分析、埋め込み動画、ソーシャル メディアの埋め込み、カルーセル、サイト ナビゲーション メニューが含まれるニュース記事のページ。
 
-注: このチュートリアルは、「[HTML を AMP に変換する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})」チュートリアルで紹介された概念の続きです。AMP の中心的な概念について基本を十分に理解していない場合は、「[HTML を AMP に変換する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})」チュートリアルに取り組んでください。
+注: このチュートリアルは、「[HTML を AMP に変換する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})」チュートリアルで紹介された概念の続きです。AMP の中心的な概念について基本を十分に理解していない場合は、「[HTML を AMP に変換する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})」チュートリアルに取り組んでください。
 
 <div class="start-button">
-<a class="button" href="{{g.doc('/content/docs/fundamentals/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">開始する</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">開始する</span></a>
 </div>

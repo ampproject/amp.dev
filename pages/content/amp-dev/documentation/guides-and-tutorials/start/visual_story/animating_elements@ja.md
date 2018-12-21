@@ -116,9 +116,11 @@ $title: 要素をアニメーション化する
 </amp-story-page>
 ```
 
-{% call callout('関連情報', type='success') %}
+[tip type="success"]
+
 ストーリー ページ上の要素に `animate-in="<アニメーション プリセット>"` 属性を追加することで、さまざまなアニメーション効果を確認できます。
-{% endcall %}
+
+[/tip]
 
 ## アニメーションのタイミング
 
@@ -254,7 +256,7 @@ AMP ストーリーのアニメーションでは、アニメーションの組�
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.html', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>
  

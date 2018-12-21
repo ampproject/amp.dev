@@ -116,9 +116,11 @@ $title: 요소에 애니메이션 효과 추가
 </amp-story-page>
 ```
 
-{% call callout('참고', type='success') %}
+[tip type="success"]
+
 스토리 페이지의 요소에 `animate-in="<animation preset>"` 속성을 추가하여 다양한 애니메이션 효과를 살펴보세요.
-{% endcall %}
+
+[/tip]
 
 ## 애니메이션 시간
 
@@ -254,7 +256,7 @@ AMP 스토리에 애니메이션 효과를 추가하는 방법은 다양합니�
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.html', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>
  

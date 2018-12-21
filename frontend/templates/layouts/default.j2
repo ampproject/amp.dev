@@ -5,8 +5,14 @@
 </figure>
 {%- endmacro %}
 
-<!doctype html>
-<html amp lang="en">
+{% macro anim(src, width, height, poster, layout='responsive', alt='', align='', margin='') -%}
+<figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+  <amp-anim src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"><amp-img placeholder width="{{ width }}" height="{{ height }}" src="{{ poster }}"></amp-img></amp-anim>
+</figure>
+{%- endmacro %}
+
+<!DOCTYPE HTML>
+<html amp lang="{{ doc.locale }}">
 <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -34,7 +40,8 @@
      {{ doc.styles.emit() }}
     </style>
   </head>
-  <body>
+  {# The body tag needs an empty class attribute in order to add the filter class #}
+  <body class="">
 	  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
         {{ doc.icons.emit() }}

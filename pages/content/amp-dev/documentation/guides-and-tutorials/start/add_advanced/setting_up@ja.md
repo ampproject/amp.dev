@@ -7,7 +7,7 @@ $title: 設定
 このチュートリアルを**始める前に**、次のものが必要となります。
 
 - HTML、CSS、JavaScript の基本的な知識
-- AMP の中心的な概念についての基本的な理解（「[HTML を AMP に変換する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})」チュートリアルをご覧ください）
+- AMP の中心的な概念についての基本的な理解（「[HTML を AMP に変換する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})」チュートリアルをご覧ください）
 - JavaScript コンソールを確認できる任意のブラウザ
 - 任意のテキスト エディタ
 
@@ -47,6 +47,6 @@ http://localhost:8000/article.amp.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

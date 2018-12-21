@@ -110,7 +110,7 @@ ampedDoc.close();
 
 ## 了解实际运作方式
 
-{{ video('/static/img/docs/pwamp_react_demo.mp4', 620, 1100, align='right third', loop='true', autoplay='true', controls='') }}
+[video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
 您可在我们制作的 [React 样例](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)中了解“AMP in PWA”模式的实际运作方式。该样例演示了导航过程中的顺利过渡情形，并附有一个将上述各步骤囊括在内的简单 React 组件。在该模式中，这两者（渐进式网页应用中灵活的自定义 JavaScript，以及 AMP）实现了强强联合，因为它们都能最大限度地发挥各自对内容加载速度的积极影响。
 

@@ -31,9 +31,11 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('ヒント', type='success') %}
+[tip type="success"]
+
 [AMP By Example のライブデモ](https://ampbyexample.com/components/amp-img/)で、`amp-img` の動作を比較したライブデモをご覧ください。
-{% endcall %}
+
+[/tip]
 
 ## layout 属性
 
@@ -97,9 +99,11 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
   </tbody>
 </table>
 
-{% call callout('ヒント', type='success') %}
+[tip type="success"]
+
 [AMP レイアウトのデモ](/ja/docs/design/amp-html-layout/layouts_demonstrated.html)で、各種のレイアウトが画面のサイズ変更に応じてどのように変化するかをご覧ください。[AMP By Example](https://ampbyexample.com/advanced/layout_system/) でも詳細をご確認いただけます。
-{% endcall %}
+
+[/tip]
 
 
 ### width や height が定義されていない場合
@@ -152,9 +156,11 @@ AMP ランタイムはデフォルトで次の値を使用します。
 メディアクエリが再評価されて、その新しい結果を基に、要素が表示されるか非表示になるかが
 決まります。
 
-{% call callout('詳細情報', type='read') %}
+[tip type="read-on"]
+
 メディアクエリを適用してレイアウトを制御する方法について詳しくは、[CSS メディアクエリを使用してレスポンシブにする](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=ja)をご覧ください。
-{% endcall %}
+
+[/tip]
 
 ### 要素のメディアクエリ
 

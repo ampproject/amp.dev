@@ -7,7 +7,7 @@ $title: Configuração
 Para usar este tutorial, você precisará do seguinte:
 
 - conhecimento básico de HTML, CSS e JavaScript
-- entendimento básico dos principais conceitos da tecnologia AMP (consulte o tutorial ["Converter HTML para AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}}))
+- entendimento básico dos principais conceitos da tecnologia AMP (consulte o tutorial ["Converter HTML para AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}))
 - um navegador de sua preferência
 - um editor de texto de sua preferência
 
@@ -34,9 +34,11 @@ Após configurar seu servidor da Web local, <a href="http://localhost:8000/pets-
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('Importante', type='caution') %}
+[tip type="important"]
+
 O URL precisa ser disponibilizado por `localhost`. Caso contrário, a história AMP não será carregada corretamente, e talvez você veja erros como `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
-{% endcall %}
+
+[/tip]
 
 
 Clique para ver a história concluída e ter uma ideia do resultado.

@@ -14,7 +14,7 @@ memberikan hasil yang sama persis, jadi gunakan cara mana saja yang paling sesua
 dengan gaya pengembangan Anda.
 
 <<<<<<< HEAD
-Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP Anda [dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}) oleh platform pihak ketiga.
+Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP Anda [dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) oleh platform pihak ketiga.
 =======
 Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP Anda [dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) oleh platform pihak ketiga.
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
@@ -268,7 +268,7 @@ Setiap fitur memberikan beberapa informasi:
 Dengan membaca ulang [spek]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) secara cermat, kita akan tahu bahwa kita menggunakan tag`<img>`, saat seharusnya menggunakan tag `<amp-img>`.
 
 Untuk memahami daftar lengkap potensi error dengan lebih baik,
-baca [panduan Error Validasi AMP]({{g.doc('/content/docs/troubleshooting/validation_errors.md', locale=doc.locale).url.path}}).
+baca [panduan Error Validasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 Jika masih mengalami masalah setelah menjalankan evaluasi dengan cermat, [ajukan
 pertanyaan](http://stackoverflow.com/questions/tagged/amp-html) dan kami akan
 mencoba untuk membantu.

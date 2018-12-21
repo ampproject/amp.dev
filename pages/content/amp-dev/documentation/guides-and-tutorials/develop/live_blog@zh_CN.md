@@ -10,9 +10,11 @@ $title: 制作实时博客
 
 本教程简要概述了 `amp-live-list` 组件，并重点介绍了实时博客的一些实现细节，例如[分页](#pagination)和[深层链接](#deeplinking)。我们将使用 AMP By Example 的[实时博客示例](https://www.ampbyexample.com/samples_templates/live_blog/)来说明如何在 AMP 中实现实时博客。
 
-{% call callout('提示', type='success') %}
+[tip type="success"]
+
 请使用 [LiveBlogPosting](http://schema.org/LiveBlogPosting) 元数据标记，以便让您的博客能够与第三方平台功能集成。
-{% endcall %}
+
+[/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
 

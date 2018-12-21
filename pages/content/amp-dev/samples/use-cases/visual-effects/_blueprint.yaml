@@ -1,6 +1,0 @@
-path: /samples/use-cases/visual-effects/{base}.html
-view: /views/default.j2
-title: Visual Effects
-
-localization:
-  path: /{locale}/samples/use-cases/visual-effects/{base}.html

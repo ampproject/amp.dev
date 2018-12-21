@@ -69,7 +69,7 @@ AMP HTML ドキュメントに関するルール
 AMP ページを初めて作成するのに必要な情報は以上です。ただしもちろん、本文に表示されるコンテンツはまだ多くありません。次のセクションでは、画像などの基本要素やカスタム AMP 要素を追加する方法、ページのスタイルを設定する方法、レスポンシブなレイアウトを作成する方法について説明します。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/create.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/include_image.html', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>
  

@@ -20,8 +20,8 @@ $title: 고급 AMP 기능 추가
 
 AMP 사양에 부합하고 광고, 분석, 임베디드 비디오, 임베디드 소셜 미디어, 캐러셀 및 사이트 탐색 메뉴를 포함하는 뉴스 기사 페이지
 
-Nota: 이 튜토리얼은 ["HTML을 AMP로 변환"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})에서 소개된 개념들의 연장입니다. AMP의 핵심 개념에 대한 기본적인 이해가 없는 경우, ["HTML을 AMP로 변환"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})을 시도해보십시오.
+Nota: 이 튜토리얼은 ["HTML을 AMP로 변환"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})에서 소개된 개념들의 연장입니다. AMP의 핵심 개념에 대한 기본적인 이해가 없는 경우, ["HTML을 AMP로 변환"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})을 시도해보십시오.
 
 <div class="start-button">
-<a class="button" href="{{g.doc('/content/docs/fundamentals/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">시작하기</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">시작하기</span></a>
 </div>

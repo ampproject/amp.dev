@@ -6,11 +6,13 @@ $title: リモートデータの使用
 
 バインド可能なデータが大きすぎたり複雑すぎたりしてページの読み込み時に取得できない場合は、どうすればよいでしょうか。また、各 SKU の価格を調べるのに時間がかかってしまうときはどうでしょうか。表示されていない商品について SKU の価格を調べるのは、無駄な作業です。
 
-{% call callout('ヒント', type='success') %}
+[tip type="success"]
+
 `<amp-state>` では、その [`src`](/ja/docs/reference/components/amp-bind.html#attributes) 属性によってリモートデータを取得できます。この属性は CORS エンドポイントから JSON を取得します。こうした取得は、ページの読み込み時に一度行われるもので、（特にキャッシュから配信されるときに）データの鮮度を確保するのに役立ちます。
 
 また、`<amp-state>` 要素については、`src` 属性をバインドすることも可能です。つまり、ユーザーの操作により、リモート JSON データが取得されるようにして、該当のページをバインド可能な状態に変えることができます。
-{% endcall %}
+
+[/tip]
 
 ## シャツについて購入可能なサイズの取得
 
@@ -169,7 +171,7 @@ $title: リモートデータの使用
 **試してみる**: 購入できないサイズを選択した場合は、そのサイズの商品をカートに追加することはできません。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>
 

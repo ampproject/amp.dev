@@ -22,6 +22,6 @@ Saat mengklik tombol Logout, Anda akan diarahkan ke URL yang telah ditentukan da
 Mirip dengan permintaan login, saat server AMPByExample menerima permintaan logout, server tersebut menggunakan parameter kueri URL respons yang otomatis ditambahkan oleh library AMP, lalu mengalihkannya ke parameter tersebut dengan menambahkan `#success=true`. Setelah itu, Anda akan kembali ke halaman awal. Cookie AMPByExample yang sebelumnya dibuat untuk halaman login (disebut `ABE_LOGGED_IN`) akan dihapus pada tahap ini.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring/summary.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/summary.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>

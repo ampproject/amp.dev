@@ -16,4 +16,4 @@ Dalam tutorial ini, Anda mempelajari cara:
 
 ## Langkah berikutnya
 
-Lanjutkan pembelajaran AMP dengan membuat lebih banyak fitur lanjutan ke halaman AMP menggunakan tutorial [Menambahkan fitur AMP lanjutan]({{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}}).
+Lanjutkan pembelajaran AMP dengan membuat lebih banyak fitur lanjutan ke halaman AMP menggunakan tutorial [Menambahkan fitur AMP lanjutan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}}).

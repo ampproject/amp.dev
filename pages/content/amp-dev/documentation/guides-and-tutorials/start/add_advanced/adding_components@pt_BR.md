@@ -12,7 +12,7 @@ Com o sistema de componentes AMP, é fácil e rápido criar recursos eficientes 
 
 - **Experimentais**: são componentes que foram lançados, mas não estão prontos para uso geral. Os desenvolvedores podem optar por usar esses recursos antes que eles estejam totalmente disponíveis para o público.  Saiba mais em [Recursos experimentais](/pt_br/docs/reference/experimental.html).
 
-Nosso exemplo já usa um componente incorporado, [amp-img](/pt_br/docs/reference/components/amp-img.html), e mostramos como esse componente se relaciona com o sistema de layout AMP neste tutorial de [conversão de HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}}).  Agora, adicione alguns componentes AMP **estendidos** de uso comum ao artigo de notícias.
+Nosso exemplo já usa um componente incorporado, [amp-img](/pt_br/docs/reference/components/amp-img.html), e mostramos como esse componente se relaciona com o sistema de layout AMP neste tutorial de [conversão de HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}).  Agora, adicione alguns componentes AMP **estendidos** de uso comum ao artigo de notícias.
 
 ## Gerar receita com anúncios
 
@@ -203,6 +203,6 @@ Saiba mais sobre o `amp-fit-text` com a [demonstração ao vivo da AMP](https://
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>

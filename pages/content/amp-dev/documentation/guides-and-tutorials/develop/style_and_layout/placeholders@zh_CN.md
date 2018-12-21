@@ -30,10 +30,12 @@ $title: 占位符和后备行为
 与该 AMP 元素对应的占位符也会立即显示。
 准备就绪后，AMP 元素通常会隐藏其占位符并显示相关内容。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
+
 占位符不必是 AMP 元素；
 任何 HTML 元素都可充当占位符。
-{% endcall %}
+
+[/tip]
 
 ## 后备行为
 

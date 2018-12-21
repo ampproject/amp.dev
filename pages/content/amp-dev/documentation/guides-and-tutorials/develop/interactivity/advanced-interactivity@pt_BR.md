@@ -97,9 +97,11 @@ Mudar o slide no carrossel fará o seguinte:
 
 Muito bem! Agora o indicador de slides já está funcionando.
 
-{% call callout('Crédito extra', type='success') %}
+[tip type="success"]
+
 Tente adicionar uma funcionalidade para que, quando o usuário tocar no ponto indicador de slide, o carrossel de imagens seja atualizado com o item selecionado. Uma dica: use o evento `tap` e a vinculação `[slide]` em [`<amp-carousel>`](/pt_br/docs/reference/components/amp-carousel.html).
-{% endcall %}
+
+[/tip]
 
 ## Mudar as imagens no carrossel
 
@@ -202,7 +204,7 @@ Observação: Na prática, é provável que cada imagem do carrossel tenha um "s
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
 

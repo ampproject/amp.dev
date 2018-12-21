@@ -33,7 +33,7 @@ AMP에서 텍스트를 올바르게 표시하려면 페이지의 문자 집합�
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-모든 AMP 문서에는 해당 문서의 '표준' 버전을 참조하는 링크가 있어야 합니다.  이 가이드에 포함되어 있는 [페이지를 검색할 수 있도록 설정]({{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}) 단계에서 표준 페이지란 무엇이며 표준 연결에 사용할 수 있는 접근방식으로는 어떤 것이 있는지 자세히 알아보겠습니다.
+모든 AMP 문서에는 해당 문서의 '표준' 버전을 참조하는 링크가 있어야 합니다.  이 가이드에 포함되어 있는 [페이지를 검색할 수 있도록 설정]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}) 단계에서 표준 페이지란 무엇이며 표준 연결에 사용할 수 있는 접근방식으로는 어떤 것이 있는지 자세히 알아보겠습니다.
 
 이 가이드에서는 변환 중인 원본 HTML 문서를 표준 페이지로 간주합니다.
 
@@ -266,7 +266,7 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption='이미지가 반응합니다!') }}
 
 [tip type="read-on"]
-[AMP 레이아웃 사양]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})에서 AMP 레이아웃 시스템에 관해 자세하게 알아보세요.
+[AMP 레이아웃 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md', locale=doc.locale).url.path}})에서 AMP 레이아웃 시스템에 관해 자세하게 알아보세요.
 [/tip]
 
 ## 성공입니다.
@@ -343,6 +343,6 @@ AMP validation successful.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>

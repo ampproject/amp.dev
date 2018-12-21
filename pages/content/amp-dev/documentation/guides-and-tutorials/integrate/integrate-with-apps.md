@@ -110,7 +110,7 @@ Note: URLs for cached AMP pages on non-Google AMP Caches cannot be retrieved via
 
 ## Using AMP Caches
 
-An [AMP Cache]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}}) is a
+An [AMP Cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md', locale=doc.locale).url.path}}) is a
 proxy-based content delivery network (CDN) for delivering valid AMP documents.
 AMP Caches are designed to:
 

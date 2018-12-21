@@ -7,7 +7,7 @@ $title: 设置
 **在开始学习本教程之前**，您需要做好以下准备：
 
 - 掌握基本的 HTML、CSS 和 JavaScript 知识
-- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}})教程）
+- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})教程）
 - 选择一种可以查看 JavaScript 控制台的浏览器
 - 选择一种文本编辑器
 
@@ -47,6 +47,6 @@ http://localhost:8000/article.amp.html
 ```
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

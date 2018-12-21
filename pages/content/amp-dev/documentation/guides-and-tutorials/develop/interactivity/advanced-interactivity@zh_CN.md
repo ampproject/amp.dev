@@ -97,9 +97,11 @@ selected.slide // Evaluates to 0.
 
 好极了！现在，我们便拥有了一个可以正常运行的幻灯片指示器。
 
-{% call callout('友情提示', type='success') %}
+[tip type="success"]
+
 您不妨尝试添加相关功能，以便当用户点按幻灯片指示器中的某个点时，系统会使用所选商品更新图片轮换展示内容。提示一下：您可以针对 [`<amp-carousel>`](/zh_cn/docs/reference/components/amp-carousel.html) 使用 `tap` 事件和 `[slide]` 绑定关系。
-{% endcall %}
+
+[/tip]
 
 ## 更改轮换展示内容中的图片
 
@@ -202,6 +204,6 @@ selected.slide // Evaluates to 0.
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>

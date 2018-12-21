@@ -51,8 +51,10 @@ serta mengirim data analisis ke penyedia pihak ketiga,
 </amp-analytics>
 ```
 
-{% call callout('Catatan', type='note') %}
-Contoh kode di atas hanya digunakan untuk membantu Anda belajar, bukan sampel kode sebenarnya. Jika Anda bekerja dengan penyedia analisis, sampel di atas kemungkinan tidak akan digunakan; konfigurasi penyedia menghilangkan kerumitan. Lihat [dokumentasi penyedia analisis](/id/docs/analytics/analytics-vendors.html) untuk mengetahui sampel konfigurasi.{% endcall %}
+[tip type="note"]
+
+Contoh kode di atas hanya digunakan untuk membantu Anda belajar, bukan sampel kode sebenarnya. Jika Anda bekerja dengan penyedia analisis, sampel di atas kemungkinan tidak akan digunakan; konfigurasi penyedia menghilangkan kerumitan. Lihat [dokumentasi penyedia analisis](/id/docs/analytics/analytics-vendors.html) untuk mengetahui sampel konfigurasi.
+[/tip]
 
 ## Ke mana data analisis dikirim: atribut type
 
@@ -135,11 +137,13 @@ ke nilai akun pada URL jarak jauh (`"account": "UA-XXXXX-Y"`):
 ```
 
 
-{% call callout('Penting', type='caution') %}
+[tip type="important"]
+
 AMP tidak memvalidasi penggunaan ganda dari variabel yang sama.
 Nilai diisikan sesuai urutan preferensi substitusi variabel,
 dan nilai dalam URL jarak jauh menempati urutan teratas (lihat [Pengurutan substitusi variabel](/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
-{% endcall %}
+
+[/tip]
 
 ## Atribut requests, triggers & transport
 
@@ -224,7 +228,9 @@ dan setiap kali tag `a` diklik:
 }
 ```
 
-{% call callout('Penting', type='caution') %} Pendekatan di atas hanya direkomendasikan untuk halaman AMP dan bukan untuk iklan AMPHTML. Karena prioritas analisis lebih rendah dibandingkan konten pada halaman, direkomendasikan untuk melacak klik menggunakan pengalihan browser untuk menghindari kehilangan klik. {% endcall %}
+[tip type="important"]
+ Pendekatan di atas hanya direkomendasikan untuk halaman AMP dan bukan untuk iklan AMPHTML. Karena prioritas analisis lebih rendah dibandingkan konten pada halaman, direkomendasikan untuk melacak klik menggunakan pengalihan browser untuk menghindari kehilangan klik. 
+[/tip]
 
 AMP mendukung konfigurasi pemicu berikut:
 
@@ -263,9 +269,11 @@ AMP mendukung konfigurasi pemicu berikut:
   </tbody>
 </table>
 
-{% call callout('Penting', type='caution') %}
+[tip type="important"]
+
 Pemicu dari konfigurasi yang prioritasnya lebih rendah akan digantikan oleh pemicu dengan nama yang sama dari konfigurasi yang prioritasnya lebih tinggi (lihat [Pengurutan substitusi variabel](/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
-{% endcall %}
+
+[/tip]
 
 ### Bagaimana data dikirim: atribut transport
 

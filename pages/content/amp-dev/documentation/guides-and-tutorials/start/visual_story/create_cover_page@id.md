@@ -4,7 +4,7 @@ $title: Membuat halaman sampul
 
 [TOC]
 
-Halaman dalam artikel AMP diwakili oleh komponen `<amp-story-page>`. Dalam `<amp-story>`, Anda bisa memiliki satu atau beberapa komponen `<amp-story-page>`, yang masing-masing berisi layar individual dari sebuah artikel. Halaman pertama yang Anda tetapkan dalam urutan dokumen akan menjadi halaman pertama yang ditampilkan dalam artikel tersebut.  
+Halaman dalam artikel AMP diwakili oleh komponen `<amp-story-page>`. Dalam `<amp-story>`, Anda bisa memiliki satu atau beberapa komponen `<amp-story-page>`, yang masing-masing berisi layar individual dari sebuah artikel. Halaman pertama yang Anda tetapkan dalam urutan dokumen akan menjadi halaman pertama yang ditampilkan dalam artikel tersebut.
 
 Untuk membuat halaman, **tambahkan** elemen `<amp-story-page>` sebagai turunan dari `amp-story`. **Tetapkan** ID unik untuk halaman itu. Untuk halaman pertama, yang merupakan halaman sampul, mari kita tetapkan ID unik yaitu `cover`:
 
@@ -33,22 +33,22 @@ Halaman sampul kita ini terdiri dari dua lapisan:
 
 ### Membuat lapisan 1
 
-Mari kita tambahkan lapisan pertama ke halaman sampul. Lapisan ini berisi gambar yang akan mengisi layar.  
+Mari kita tambahkan lapisan pertama ke halaman sampul. Lapisan ini berisi gambar yang akan mengisi layar.
 
-Buat lapisan ini dengan menambahkan elemen `<amp-story-grid-layer>` sebagai turunan dari `<amp-story-page>`. Karena kita ingin gambar mengisi layar, tetapkan atribut `template="fill"` untuk `amp-story-grid-layer`. Di dalam lapisan ini, tambahkan elemen `<amp-image>` untuk file `cover.jpg`, dan pastikan responsif (artinya, `layout="responsive"`) dengan gambar berukuran 720 x 1280 piksel.  Beginilah tampilan lapisan kita: 
+Buat lapisan ini dengan menambahkan elemen `<amp-story-grid-layer>` sebagai turunan dari `<amp-story-page>`. Karena kita ingin gambar mengisi layar, tetapkan atribut `template="fill"` untuk `amp-story-grid-layer`. Di dalam lapisan ini, tambahkan elemen `<amp-image>` untuk file `cover.jpg`, dan pastikan responsif (artinya, `layout="responsive"`) dengan gambar berukuran 720 x 1280 piksel.  Beginilah tampilan lapisan kita:
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
     <amp-img src="assets/cover.jpg"
-        width="720" height="1280" 
+        width="720" height="1280"
         layout="responsive">
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
 ```
 
-Mari kita lihat bagaimana halaman ini ditampilkan.  Buka halaman ini di browser: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>. 
+Mari kita lihat bagaimana halaman ini ditampilkan.  Buka halaman ini di browser: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
 
 Seperti inilah hasilnya:
 
@@ -60,32 +60,32 @@ Setelah membuat tampilan latar, sekarang kita ingin membuat lapisan kedua yang m
 
 #### Mengatur tata letak elemen dengan template
 
-Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen turunannya dalam sebuah petak (didasarkan pada [petak CSS](https://www.w3.org/TR/css-grid-1/)).  Untuk menunjukkan cara pengaturan elemen turunan tersebut, tentukan salah satu template tata letak berikut: 
+Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen turunannya dalam sebuah petak (didasarkan pada [petak CSS](https://www.w3.org/TR/css-grid-1/)).  Untuk menunjukkan cara pengaturan elemen turunan tersebut, tentukan salah satu template tata letak berikut:
 
 <table class="noborder">
 <tr>
     <td colspan="2"><h5 id="fill">Template: Fill</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">Template <strong>fill</strong> akan mengisi layar dengan elemen turunan pertama pada lapisan ini. Elemen turunan lainnya tidak ditampilkan.
-    
+
     <p>Template fill berfungsi dengan baik untuk latar belakang, termasuk gambar dan video.</p>
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
   &lt;amp-img src="dog.png"
-      width="720" height="1280" 
+      width="720" height="1280"
       layout="responsive">
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
     </td>
-    <td>   
+    <td>
     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}
     </td>
 </tr>
 <tr>
     <td colspan="2"><h5 id="vertical">Template: Vertical</h5></td>
 </tr>
-<tr> 
-    <td width="65%">Template <strong>vertical</strong> menata elemen turunan di sepanjang sumbu Y. Elemen ini sejajar dengan bagian atas layar, dan memenuhi seluruh layar di sepanjang sumbu X. 
+<tr>
+    <td width="65%">Template <strong>vertical</strong> menata elemen turunan di sepanjang sumbu Y. Elemen ini sejajar dengan bagian atas layar, dan memenuhi seluruh layar di sepanjang sumbu X.
 
     <p>Template vertical berfungsi dengan baik jika Anda ingin menumpuk elemen secara vertikal satu di atas yang lain.</p>
 
@@ -101,7 +101,7 @@ Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen turunannya d
 <tr>
     <td colspan="2"><h5 id="horizontal">Template: Horizontal</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">Template <strong>horizontal</strong> menata elemen turunan di sepanjang sumbu X.  Elemen ini sejajar dengan bagian awal layar, dan memenuhi seluruh layar di sepanjang sumbu Y.
 
     <p>Template horizontal berfungsi dengan baik jika Anda ingin menumpuk elemen secara horizontal satu di sebelah yang lain.</p>
@@ -119,7 +119,7 @@ Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen turunannya d
 <tr>
     <td colspan="2"><h5 id="thirds">Template: Thirds</h5></td>
 </tr>
-<tr> 
+<tr>
 <td width="65%">
 Template <strong>thirds</strong> membagi layar menjadi tiga area berjarak sama, yang masing-masing dapat Anda isi dengan konten.
 
@@ -151,14 +151,11 @@ Untuk lapisan 2, kita ingin elemen judul dan subjudul terlihat di atas, serta mu
 </amp-story-grid-layer>
 ```
 
-Refresh browser dan lihat hasil kerja Anda.  Halaman sampul kita sudah jadi. 
+Refresh browser dan lihat hasil kerja Anda.  Halaman sampul kita sudah jadi.
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Halaman sampul jadi' ) }}
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/start_story.html', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
- 
- 
- 

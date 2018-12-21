@@ -75,7 +75,7 @@ A continuación, queremos mostrar un icono de menú. Cuando se pulsa el icono, s
 </header>
 ```
 
-En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}}) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
+En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
 
 **Agregue** el siguiente HTML justo después del `</header>`:
 
@@ -122,6 +122,6 @@ Bueno, veamos nuestra barra lateral. **Actualiza** y vuelve a cargar tu página 
 Nuestra página se ve muy bien! Añadamos un toque final: una fuente personalizada!
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

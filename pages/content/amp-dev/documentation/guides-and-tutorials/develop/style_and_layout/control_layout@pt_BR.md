@@ -31,9 +31,11 @@ determinada pela largura e pela altura fornecidas. Faça um teste redimensionand
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-{% call callout('Dica', type='success') %}
+[tip type="success"]
+
 Veja demonstrações ao vivo lado a lado de `amp-img`: [Demonstrações ao vivo no site AMP By Example](https://ampbyexample.com/components/amp-img/).
-{% endcall %}
+
+[/tip]
 
 ## O atributo layout
 
@@ -97,9 +99,11 @@ Estes valores podem ser usados no atributo `layout`:
   </tbody>
 </table>
 
-{% call callout('Dica', type='success') %}
+[tip type="success"]
+
 Acesse a página [Demonstração de layouts AMP](/pt_br/docs/design/amp-html-layout/layouts_demonstrated.html) para ver como diferentes layouts respondem ao redimensionamento de tela. Você também encontra mais informações no site [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
-{% endcall %}
+
+[/tip]
 
 
 ### O que acontece se a largura e a altura não estiverem definidas?
@@ -152,9 +156,11 @@ Quando o tamanho ou a orientação da janela do navegador mudar,
 as consultas de mídia serão avaliadas outra vez e os elementos serão ocultos e exibidos
 com base nos novos resultados.
 
-{% call callout('Leia mais', type='read') %}
+[tip type="read-on"]
+
 Saiba mais sobre como controlar o layout aplicando consultas de mídia em [Usar consultas de mídia CSS para gerar responsividade](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=pt-BR).
-{% endcall %}
+
+[/tip]
 
 ### Consultas de mídia do elemento
 

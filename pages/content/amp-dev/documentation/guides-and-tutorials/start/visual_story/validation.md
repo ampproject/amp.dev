@@ -3,7 +3,7 @@ $title: Validating your AMP HTML
 $order: 8
 ---
 
-Whenever you create an AMP page, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate your AMP pages]({{g.doc('/content/documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.md', locale=doc.locale).url.path}}).  In this tutorial, we'll enable the AMP Validator by turning on the developer mode.  To turn on the developer mode, add the following fragment identifier to your URL and reload the page:
+Whenever you create an AMP page, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).  In this tutorial, we'll enable the AMP Validator by turning on the developer mode.  To turn on the developer mode, add the following fragment identifier to your URL and reload the page:
 
 ```text
 #development=1

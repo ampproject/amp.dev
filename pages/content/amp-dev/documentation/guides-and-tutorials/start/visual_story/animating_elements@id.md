@@ -116,9 +116,11 @@ Untuk menerapkan penggunaan animasi pada elemen, Anda harus menetapkan <code>ani
 </amp-story-page>
 ```
 
-{% call callout('Tips seru', type='success') %}
+[tip type="success"]
+
 Cari tahu efek animasi yang berbeda dengan menambahkan atribut `animate-in="<animation preset>"` ke elemen di halaman artikel Anda.
-{% endcall %}
+
+[/tip]
 
 ## Pengaturan waktu animasi
 
@@ -254,7 +256,7 @@ Ada banyak kemungkinan yang bisa dilakukan pada animasi dalam artikel AMP (misal
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.html', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
  

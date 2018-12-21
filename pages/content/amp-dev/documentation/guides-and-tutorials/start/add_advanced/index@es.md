@@ -20,8 +20,8 @@ En este tutorial, se basará en su comprensión de las fundaciones de AMP y apre
 
 Una página de artículos de noticias que se ajusta a las especificaciones de AMP e incorpora publicidad, analítica, video incrustado, medios sociales incorporados, carruseles y un menú de navegación del sitio.
 
-Nota: Este tutorial es una continuación de los conceptos introducidos en el tutorial ["Convertir HTML en AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}}).
+Nota: Este tutorial es una continuación de los conceptos introducidos en el tutorial ["Convertir HTML en AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}).
 
 <div class="start-button">
-<a class="button" href="{{g.doc('/content/docs/fundamentals/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Comenzar</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Comenzar</span></a>
 </div>

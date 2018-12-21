@@ -166,4 +166,4 @@ AMP 文档中不得运行任何广告网络提供的 JavaScript。AMP 运行时�
 
 AMP 支持众多广告网络。请参阅[完整列表参考](/zh_cn/docs/reference/components/amp-ad.html#supported-ad-networks)。
 
-阅读: 要详细了解广告，请参阅[在 AMP 网页上投放广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})指南。
+阅读: 要详细了解广告，请参阅[在 AMP 网页上投放广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})指南。

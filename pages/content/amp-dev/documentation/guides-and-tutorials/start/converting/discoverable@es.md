@@ -100,7 +100,7 @@ Para verificar que sus datos estructurados son correctos, muchas plataformas pro
 Si los datos estructurados son válidos, debería ver **0 errors** y **0 warnings**.
 
 <<<<<<< HEAD
-Leer más: Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}}).
+Leer más: Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}).
 =======
 Leer más: Para obtener más información sobre la detección de páginas, consulte la guía [Hacer que tu página sea reconocible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}).
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
@@ -108,6 +108,6 @@ Leer más: Para obtener más información sobre la detección de páginas, consu
 ¡Impresionante trabajo! Has completado tu artículo de noticias de AMP.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

@@ -60,6 +60,6 @@ Per ulteriori informazioni su tutti i metadati che ti serviranno i svariate altr
 Buone notizie! Questo è tutto ciò che ci serve per creare la nostra prima pagina AMP, ma naturalmente il corpo della pagina non comprende ancora molte informazioni. Nella prossima sezione parleremo di come aggiungere componenti di base come immagini ed elementi AMP personalizzati, di come applicare uno stile alla pagina e di come definire un layout reattivo.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/create.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Precedente</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Precedente</span></a>
   <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">Prossimo</span></a>
 </div>

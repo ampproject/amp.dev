@@ -14,7 +14,7 @@ AMP 的强大之处在于它不仅能提升网页加载速度，还能以可验�
 方法。
 
 <<<<<<< HEAD
-除了 AMP 有效性之外，您可能还需要确认 AMP 文档能被第三方平台[发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}})。
+除了 AMP 有效性之外，您可能还需要确认 AMP 文档能被第三方平台[发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})。
 =======
 除了 AMP 有效性之外，您可能还需要确认 AMP 文档能被第三方平台[发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})。
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
@@ -268,7 +268,7 @@ AMP 验证工具不仅能在开发过程中为您提供便利，还可供将您�
 再次仔细阅读[规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})之后，我们意识到我们在本该使用 `<amp-img>` 标记的位置使用了 `<img>` 标记。
 
 要详细了解可能出现的错误的完整列表，
-请参阅 [AMP 验证错误指南]({{g.doc('/content/docs/troubleshooting/validation_errors.md', locale=doc.locale).url.path}})。
+请参阅 [AMP 验证错误指南]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}})。
 如果在认真评估之后仍有疑问，请[提出
 问题](http://stackoverflow.com/questions/tagged/amp-html)，我们将尽力提供
 帮助。

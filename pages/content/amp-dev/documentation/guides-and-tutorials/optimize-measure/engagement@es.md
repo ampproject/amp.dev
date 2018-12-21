@@ -27,7 +27,7 @@ Aquí hay algunos consejos rápidos para mejorar la fidelización del usuario co
 
 - **Cultive nuevas interacciones** como la generación de leads, la suscripción a boletines y el soporte de comentarios con [`amp-form`](/es/docs/reference/components/amp-form.html).
 
-- **Apunte a tipos de anuncios que ofrezcan una buena experiencia de lectura.** Explore los formatos de anuncios de AMP como, por ejemplo, el [`amp-sticky-ad`](/es/docs/reference/components/amp-sticky-ad.html) y el [`amp-fx-flying-carpet`](/es/docs/reference/components/amp-fx-flying-carpet.html). Siga las [mejores prácticas de monetización de anuncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}}).
+- **Apunte a tipos de anuncios que ofrezcan una buena experiencia de lectura.** Explore los formatos de anuncios de AMP como, por ejemplo, el [`amp-sticky-ad`](/es/docs/reference/components/amp-sticky-ad.html) y el [`amp-fx-flying-carpet`](/es/docs/reference/components/amp-fx-flying-carpet.html). Siga las [mejores prácticas de monetización de anuncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}}).
 
 - **Impulsa las descargas de la aplicación.** Incluir un enlace de instalación de aplicación en un banner con [`amp-app-banner`](/es/docs/reference/components/amp-app-banner.html).
 

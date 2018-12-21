@@ -10,9 +10,11 @@ $title: 広告で AMP ページを収益化する
 
 非 AMP ページ（通常の HTML）で広告を表示する場合、通常は広告ネットワークから広告を配信するための JavaScript のスニペットをページに追加します。AMP ページではパフォーマンスとセキュリティ上の理由から、第三者の提供する JavaScript を含めることはできません。そのため、AMP で広告を表示するには、AMP ページにカスタムの [`<amp-ad>`](/ja/docs/reference/components/amp-ad.html) コンポーネントを追加する必要があります。
 
-{% call callout('ヒント', type='success') %}
+[tip type="success"]
+
 [AMP By Example のライブデモ](https://ampbyexample.com/components/amp-ad/)で、AMP ページへ amp-ad タグを追加する方法をご覧いただけます。
-{% endcall %}
+
+[/tip]
 
 AMP ページで広告を表示するためのコンポーネントを追加する方法を、順を追って紹介します。
 
@@ -26,7 +28,7 @@ AMP ページで広告を表示するためのコンポーネントを追加す�
 
 ### 手順 2: AMP ページに amp-ad タグを追加する
 
-100 以上の[広告サーバーとネットワーク]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})で、AMP との統合機能が組み込み込まれています。特定の広告ネットワークの広告を追加するには、`<amp-ad>` タグを追加して、`type` 属性でネットワークを指定します。
+100 以上の[広告サーバーとネットワーク]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})で、AMP との統合機能が組み込み込まれています。特定の広告ネットワークの広告を追加するには、`<amp-ad>` タグを追加して、`type` 属性でネットワークを指定します。
 
 この例では、a9 ネットワークの広告を配信するための広告スロットを追加します。
 

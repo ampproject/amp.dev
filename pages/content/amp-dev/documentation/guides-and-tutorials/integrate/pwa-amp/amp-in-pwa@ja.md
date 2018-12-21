@@ -110,7 +110,7 @@ ampedDoc.close();
 
 ## サンプルアプリ
 
-{{ video('/static/img/docs/pwamp_react_demo.mp4', 620, 1100, align='right third', loop='true', autoplay='true', controls='') }}
+[video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
 AMP を埋め込んだ PWA の動作を実際にご覧いただくため、[React サンプル](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)を作成しました。ここで説明した手順をシンプルな React コンポーネントにまとめてあります。柔軟にカスタマイズできる JavaScript の PWA と、コンテンツを瞬時に提供できる AMP の長所を兼ね備えており、ナビゲーション時の遷移もスムーズです。
 

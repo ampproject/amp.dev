@@ -91,6 +91,6 @@ amp-fit-text {
 注: 最後の例では、`amp-ad` コンポーネントに `placeholder` 属性を持つ子要素 `div` が含まれていたことに気づいたかもしれません。このチュートリアルの前半では、`fallback` 属性を持つ `amp-ad` の同様のシナリオがありました。プレースホルダとフォールバックの違いは何でしょうか。`fallback` 要素は、親要素が読み込まれなかった場合、つまり利用可能な広告がない場合に表示されます。一方 `placeholder` 要素は、読み込み中に親要素の代わりに表示されます。いわば、これらは親要素の読み込みプロセスの前後に表示される要素です。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>

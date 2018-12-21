@@ -21,8 +21,8 @@ $title: おつかれさまでした
 
 AMP に関する知識をさらに深めるためには、次のリソースをご参照ください。
 
-- 「[インタラクティブな AMP ページを作成する]({{g.doc('/content/docs/interaction_dynamic/interactivity.md', locale=doc.locale).url.path}})」チュートリアル: amp-bind を使用してインタラクティブな AMP ページを作成する方法を学びます
-- [AMP と PWA を組み合わせる]({{g.doc('/content/docs/integration/pwa-amp.md', locale=doc.locale).url.path}}): プログレッシブ ウェブアプリと AMP ページがどのように相互補完するかについて学びます
+- 「[インタラクティブな AMP ページを作成する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}})」チュートリアル: amp-bind を使用してインタラクティブな AMP ページを作成する方法を学びます
+- [AMP と PWA を組み合わせる]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md', locale=doc.locale).url.path}}): プログレッシブ ウェブアプリと AMP ページがどのように相互補完するかについて学びます
 - [AMP Start](https://www.ampstart.com/): あらかじめスタイルが設定されたテンプレートとコンポーネントを使用して、ページにスタイルを適用します
 - [AMP By Example](https://ampbyexample.com/): 実際の例とデモから AMP を学ぶことができます
 - [YouTube の AMP Channel](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): AMP に特化した動画を見て学ぶことができます

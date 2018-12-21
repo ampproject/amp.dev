@@ -50,9 +50,9 @@ AMP HTML 문서는 다음 규칙을 준수해야 합니다.
 | `<head>` 및 `<body>` 태그를 포함해야 합니다. | HTML에서는 선택사항이지만 AMP에서는 아닙니다.
 | `<meta charset="utf-8">` 태그를 `<head>` 태그의 첫 번째 하위 요소로 포함해야 합니다. | 페이지 인코딩을 식별합니다. |
 | `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 `<head>` 태그의 두 번째 하위 요소로 포함해야 합니다. | AMP JS 라이브러리를 포함하고 로드합니다. |
-| `<head>` 내에 `<link rel="canonical" href="$SOME_URL">` 태그를 포함해야 합니다. | AMP HTML 문서의 일반 HTML 버전을 가리킵니다. HTML 버전이 존재하지 않으면 문서 자체를 가리킵니다. [페이지를 검색 가능하게 만들기]({{g.doc('/content/docs/fundamentals/discovery.html', locale=doc.locale).url.path}})에서 자세히 알아보세요.
+| `<head>` 내에 `<link rel="canonical" href="$SOME_URL">` 태그를 포함해야 합니다. | AMP HTML 문서의 일반 HTML 버전을 가리킵니다. HTML 버전이 존재하지 않으면 문서 자체를 가리킵니다. [페이지를 검색 가능하게 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 | `<head>` 태그 내에 `<meta name="viewport" content="width=device-width,minimum-scale=1">` 태그를 포함해야 합니다. `initial-scale=1`도 포함하는 것이 좋습니다. | 반응형 표시 영역을 지정합니다. [반응형 AMP 페이지 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}})에서 자세히 알아보세요. |
-| `<head>` 태그에 [AMP 상용구 코드]({{g.doc('/content/docs/fundamentals/spec/amp-boilerplate.html', locale=doc.locale).url.path}})를 포함해야 합니다.  | CSS 상용구는 AMP JS가 로드되기 전까지 우선 콘텐츠를 숨깁니다. |
+| `<head>` 태그에 [AMP 상용구 코드]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}})를 포함해야 합니다.  | CSS 상용구는 AMP JS가 로드되기 전까지 우선 콘텐츠를 숨깁니다. |
 
 ## 선택적 메타데이터
 
@@ -69,7 +69,7 @@ AMP HTML 문서는 다음 규칙을 준수해야 합니다.
 좋은 소식을 전해드립니다. 첫 AMP 페이지를 만드는 데 필요한 것은 이게 전부지만, 본문에는 더 많은 내용이 있습니다. 다음 섹션에서는 이미지, 맞춤 AMP 요소와 같은 기본사항을 추가하는 방법, 페이지 스타일을 지정하는 방법 및 반응형 레이아웃을 만드는 방법을 다루겠습니다.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create.html', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/include_image.html', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
 </div>
  

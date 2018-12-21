@@ -8,11 +8,13 @@ toc: true
 
 What if your bindable data is too large or complex to retrieve at page load? Or what if each SKU has a price that takes a long time to look up? Looking up prices for SKUs for non-viewed items is wasted work.
 
-{% call callout('Tip', type='success') %}
+[tip type="success"]
+
 `<amp-state>` supports fetching remote data via its [`src`](/docs/reference/components/amp-bind.html#attributes) attribute, which fetches JSON from a CORS endpoint. This fetch is performed once and at page load and is useful for ensuring freshness of data (especially when served from a cache).
 
 You can also bind the `src` attribute for the `<amp-state>` element. This means that a user action can trigger a fetch of remote JSON data into the page's bindable state.
-{% endcall %}
+
+[/tip]
 
 ## Fetching available sizes for a shirt
 
@@ -171,6 +173,6 @@ We're almost done! Let's disable the "Add to cart" button when the selected size
 **Try it out**:  If you select a size that's unavailable, you can't add it to the cart.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

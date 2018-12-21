@@ -10,9 +10,11 @@ $title: 在您的 AMP 网页中利用广告获利
 
 在非 AMP 网页（传统 HTML）中，若要展示广告，需要添加一段 JavaScript 代码，才能投放来自广告网络的广告。出于性能和安全原因，您不能在 AMP 网页中添加第三方 JavaScript。因此，要在 AMP 中展示广告，您需要将自定义 [`<amp-ad>`](/zh_cn/docs/reference/components/amp-ad.html) 组件添加到 AMP 网页中。
 
-{% call callout('提示', type='success') %}
+[tip type="success"]
+
 请参阅 [AMP By Example 在线演示](https://ampbyexample.com/components/amp-ad/)，了解如何将 amp-ad 标记添加到 AMP 网页中。
-{% endcall %}
+
+[/tip]
 
 我们先看看如何添加该组件，以便在 AMP 网页上展示广告。
 
@@ -26,7 +28,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 2 步：将 amp-ad 标记添加到 AMP 网页中
 
-超过 100 个[广告服务商和广告网络]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})提供与 AMP 的内置集成。要为指定广告网络添加广告，请添加 `<amp-ad>` 标记，然后在 `type` 属性中指定广告网络。
+超过 100 个[广告服务商和广告网络]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})提供与 AMP 的内置集成。要为指定广告网络添加广告，请添加 `<amp-ad>` 标记，然后在 `type` 属性中指定广告网络。
 
 在本例中，我们添加一个广告位来投放 a9 网络中的广告：
 

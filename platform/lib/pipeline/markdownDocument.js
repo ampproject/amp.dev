@@ -24,10 +24,11 @@ TOC_MARKER = '[TOC]';
 
 class MarkdownDocument {
 
-  constructor(path, title, contents) {
+  constructor(path, contents) {
     this.path = path;
+    this._toc = contents.indexOf(TOC_MARKER) == -1 ? false : true;
     this._frontmatter = {
-      '$title': title
+      '$title': ''
     };
 
     this._contents = this._convertSyntax(contents);
@@ -35,16 +36,26 @@ class MarkdownDocument {
 
   set toc(active) {
     // Remove markers from document to have them in a defined spot
-    this._contents.replace(TOC_MARKER, '');
+    this._contents = this._contents.replace(TOC_MARKER, '');
 
     // And if TOC should be rendered put it directly in front of content
     if (active) {
-      this._contents = TOC_MARKER + '\n' + this._contents;
+      this._contents = '\n' + TOC_MARKER + '\n\n' + this._contents;
     }
+
+    this._toc = active;
+  }
+
+  set path(path) {
+    this._path = path;
   }
 
   set title(title) {
     this._frontmatter['$title'] = title;
+  }
+
+  set order(order) {
+    this._frontmatter['$order'] = order;
   }
 
   set contents(contents) {
@@ -53,6 +64,56 @@ class MarkdownDocument {
   }
 
   _convertSyntax(contents) {
+    contents = this._rewriteCalloutToTip(contents);
+    contents = this._rewriteCodeBlocks(contents);
+
+    // Rewrite mustache style parts
+    contents = contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
+
+    // Replace dividers (---) as they will break front matter
+    contents = contents.replace(/\n---\n/gm, '\n***\n');
+
+    return contents;
+  }
+
+  /**
+   * Replaces the {% call callout ... %} syntax with the new BBCode styled
+   * [tip]...[/type] shortcode while mapping the types to the new ones
+   * @param  {String} contents
+   * @return {String}          The rewritten input
+   */
+  _rewriteCalloutToTip(contents) {
+    const CALLOUT_PATTERN = /{% call callout\('.*?', type='(.*?)'\) %}(.*?){% endcall %}/gs;
+    const AVAILABLE_CALLOUT_TYPES = {
+      'note': 'note',
+      'read': 'read-on',
+      'caution': 'important',
+      'success': 'success'
+    };
+
+    contents = contents.replace(CALLOUT_PATTERN, (match, type, text) => {
+      return `[tip type="${AVAILABLE_CALLOUT_TYPES[type]}"]\n${text}\n[/tip]`;
+    });
+
+    return contents;
+  }
+
+  /**
+   * Rewrites code fences to python-markdown syntax while also checking
+   * if {{ }} need to be fenced to not interfer with jinja2
+   * @param  {String} contents
+   * @return {String}          The rewritten content
+   */
+  _rewriteCodeBlocks(contents) {
+    // replace code blocks
+    contents = contents.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```\n)/gm, (match, p1, p2, p3, p4) => {
+      // Fence curly braces to not mess with Grow/jinja2
+      if (p4.indexOf('{{') > -1) {
+        p4 = '{% raw %}' + p4 + '{% endraw %}';
+      }
+      return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
+    });
+
     return contents;
   }
 

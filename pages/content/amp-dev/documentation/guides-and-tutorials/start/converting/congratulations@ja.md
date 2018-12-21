@@ -19,4 +19,4 @@ $title: お疲れ様でした
 
 ## 次のステップ
 
-引き続き「[高度な AMP 機能を追加する]({{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}})」チュートリアルを受講して、より高度な機能を AMP ページに組み込んでみましょう。
+引き続き「[高度な AMP 機能を追加する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}})」チュートリアルを受講して、より高度な機能を AMP ページに組み込んでみましょう。

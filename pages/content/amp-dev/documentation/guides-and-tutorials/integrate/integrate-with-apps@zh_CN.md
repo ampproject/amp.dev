@@ -35,10 +35,12 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-{% call callout('提示', type='success') %}
+[tip type="success"]
+
 建议在应用的偏好设置中给用户提供选项，以便其能够选择查看
 非 AMP 版本（而不是 AMP 版本）。
-{% endcall %}
+
+[/tip]
 
 ### 转换链接的方式
 
@@ -61,12 +63,14 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
     消息传递应用）。确保在内容可用后、发生任何用户互动之前
     立即触发网址转换。
 
-{% call callout('重要提示', type='caution') %}
+[tip type="important"]
+
 请勿在用户互动后通过 Google 的 AMP API 请求 AMP 网址，
 因为这样做会导致网络请求增加，
 进而降低应用性能。
 请使用如上所述的三种方法之一。
-{% endcall %}
+
+[/tip]
 
 
 #### Google 的 AMP URL API
@@ -111,16 +115,18 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 }
 ```
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
+
 您无法通过 AMP URL API 检索非 Google AMP Cache 中缓存的 AMP 网页
 对应的网址。但是，您可以从返回的 AMP
 网址 (ampURL) 轻松得出缓存的网址。
-{% endcall %}
+
+[/tip]
 
 
 ## 使用 AMP 缓存
 
-[AMP 缓存]({{g.doc('/content/docs/fundamentals/how_cached.md', locale=doc.locale).url.path}})是一种
+[AMP 缓存]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md', locale=doc.locale).url.path}})是一种
 基于代理的内容分发网络 (CDN)，用于分发有效的 AMP 文档。
 AMP 缓存旨在：
 
@@ -152,11 +158,13 @@ AMP 缓存旨在：
     提供两个不同的文档。使用 AMP 缓存可保证用户看到的
     AMP 文件始终与 AMP 缓存看到的相同。
 
-{% call callout('重要提示', type='caution') %}
+[tip type="important"]
+
 通过 AMP 缓存提供 AMP 网页时，提供的查看工具体验
 应清楚地显示 AMP 来源并使用户能够分享
 规范网址（要了解详情，另请参阅以下两节内容）。
-{% endcall %}
+
+[/tip]
 
 ## 实现 AMP 查看工具
 

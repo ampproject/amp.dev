@@ -17,4 +17,4 @@ In this tutorial, you learned to:
 
 ## Next steps
 
-Continue your AMP learning by building more advanced features into your AMP page with the [Add advanced AMP features]({{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}}) tutorial.
+Continue your AMP learning by building more advanced features into your AMP page with the [Add advanced AMP features]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}}) tutorial.

@@ -73,7 +73,7 @@ self.addEventListener('install', function(event) {
 ## 将 AMP 网页上的所有链接都指向 PWA
 
 <<<<<<< HEAD
-可能会发生的情况是：您的 AMP 网页上的大多数链接都会指向更多内容页。您可以采用两种策略来确保后续的链接点击能够将 AMP 网页“升级”为渐进式网页应用，[具体取决于您使用 AMP 的方式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.html', locale=doc.locale).url.path}})：
+可能会发生的情况是：您的 AMP 网页上的大多数链接都会指向更多内容页。您可以采用两种策略来确保后续的链接点击能够将 AMP 网页“升级”为渐进式网页应用，[具体取决于您使用 AMP 的方式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})：
 =======
 可能会发生的情况是：您的 AMP 网页上的大多数链接都会指向更多内容页。您可以采用两种策略来确保后续的链接点击能够将 AMP 网页“升级”为渐进式网页应用，[具体取决于您使用 AMP 的方式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})：
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f

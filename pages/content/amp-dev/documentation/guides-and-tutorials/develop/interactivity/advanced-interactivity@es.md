@@ -98,9 +98,11 @@ Cambiando la diapositiva del carrusel:
 
 ¡Excelente! Ahora tenemos un indicador de deslizamiento trabajando.
 
-{% call callout('Extra', type='success') %}
+[tip type="success"]
+
 Compruebe si puede agregar funcionalidad para que cuando un usuario toque en el punto indicador de una diapositiva, actualice el carrusel de imagen con el elemento seleccionado. Como sugerencia, utilice el evento `tap` y el enlace `[slide]` en [`<amp-carousel>`](/docs/reference/components/amp-carousel.html).
-{% endcall %}
+
+[/tip]
 
 ## Cambiar las imágenes en el carrusel
 
@@ -202,6 +204,6 @@ Nota: En la práctica, cada imagen en el carrusel probablemente tendría un `src
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
 </div>

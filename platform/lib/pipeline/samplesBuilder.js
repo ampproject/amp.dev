@@ -28,7 +28,7 @@ const EXAMPLE_DEST = `../pages/${POD_PATH}`;
 // What Grow template to use to render the sample's manual
 const MANUAL_TEMPLATE = 'views/detail/example-detail.j2';
 // Base to define the request path for Grow
-const PATH_BASE = '/documentation/examples';
+const PATH_BASE = '/documentation/examples/';
 
 class SamplesBuilder {
 
@@ -97,9 +97,9 @@ class SamplesBuilder {
       '---',
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
-      '$path: ' + PATH_BASE + sample.relative + '.html',
+      '$path: ' + PATH_BASE + sample.relative,
       '$localization: ',
-      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative + '.html' ,
+      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative,
       'example: !g.json ' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
       '---'
     ].join('\n'));
@@ -119,9 +119,9 @@ class SamplesBuilder {
     sample.contents = Buffer.from([
       '---',
       '$title: ' + parsedSample.document.title,
-      '$path: ' + PATH_BASE + sample.relative + '-preview.html',
+      '$path: ' + PATH_BASE + sample.relative.replace('.html', '-preview.html'),
       '$localization: ',
-      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative + '-preview.html' ,
+      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative.replace('.html', '-preview.html'),
       'example: !g.json ' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
       '---'
     ].join('\n'));

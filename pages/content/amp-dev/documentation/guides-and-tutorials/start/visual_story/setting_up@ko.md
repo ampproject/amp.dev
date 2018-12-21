@@ -7,7 +7,7 @@ $title: 설정
 이 가이드를 시작하기에 앞서 다음이 필요합니다.
 
 - HTML, CSS, 자바스크립트 기본 지식
-- AMP의 핵심 개념에 관한 기본적인 이해(['HTML을 AMP로 변환하기']({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path}}) 가이드 참조)
+- AMP의 핵심 개념에 관한 기본적인 이해(['HTML을 AMP로 변환하기']({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) 가이드 참조)
 - 원하는 브라우저
 - 원하는 텍스트 에디터
 
@@ -34,9 +34,11 @@ $title: 설정
 http://localhost:8000/pets-completed.html
 ```
 
-{% call callout('중요', type='caution') %}
+[tip type="important"]
+
 URL이 `localhost`에서 제공되는지 확인하십시오. 그렇지 않으면 AMP 스토리가 제대로 동작하지 않을 수 있으며 `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`라는 오류가 표시될 수 있습니다.
-{% endcall %}
+
+[/tip]
 
 완성된 스토리를 클릭해 보면서 어떤 스토리를 만들게 될지 파악해 보십시오.
 

@@ -27,7 +27,7 @@ $title: 사용자 참여 향상하기
 
 - [`amp-form`](/ko/docs/reference/components/amp-form.html)을 이용하여 리드 생성, 뉴스레터 가입 및 덧글과 같은 **새로운 인터렉션을 구현하십시오.**
 
-- **좋은 리더 경험을 제공하는 광고 유형을 찾으십시오.** [`amp-sticky-ad`](/ko/docs/reference/components/amp-sticky-ad.html) 및 [`amp-fx-flying-carpet`](/ko/docs/reference/components/amp-fx-flying-carpet.html) 같은 AMP 광고 포맷을 찾으십시오. 광고 수익창출 [모범 사례]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization.md', locale=doc.locale).url.path}})를 따르십시오.
+- **좋은 리더 경험을 제공하는 광고 유형을 찾으십시오.** [`amp-sticky-ad`](/ko/docs/reference/components/amp-sticky-ad.html) 및 [`amp-fx-flying-carpet`](/ko/docs/reference/components/amp-fx-flying-carpet.html) 같은 AMP 광고 포맷을 찾으십시오. 광고 수익창출 [모범 사례]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})를 따르십시오.
 
 - **앱 다운로드를 유도합니다.**
 [`amp-app-banner`](/ko/docs/reference/components/amp-app-banner.html)가 있는 배너에 앱 설치 링크를 포함하십시오..

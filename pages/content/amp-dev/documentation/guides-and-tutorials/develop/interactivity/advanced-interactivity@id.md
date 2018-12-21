@@ -97,9 +97,11 @@ Dengan mengubah slide di carousel, perubahan ini:
 
 Bagus. Sekarang kita memiliki indikator slide yang dapat dijalankan.
 
-{% call callout('Pelajaran tambahan', type='success') %}
+[tip type="success"]
+
 Lihat apakah Anda dapat menambahkan fungsi sehingga jika pengguna menge-tap titik indikator slide, titik tersebut akan mengudate carousel gambar dengan item yang dipilih. Sebagai petunjuk, gunakan peristiwa `tap` dan pengikatan `[slide]` di [`<amp-carousel>`](/id/docs/reference/components/amp-carousel.html).
-{% endcall %}
+
+[/tip]
 
 ## Mengubah gambar di carousel
 
@@ -202,7 +204,7 @@ Catatan: Dalam praktiknya, setiap gambar di carousel kemungkinan akan memiliki `
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/interaction_dynamic/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
 </div>
 

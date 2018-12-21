@@ -69,7 +69,7 @@ Além dos requisitos básicos, nosso exemplo também inclui a definição da Sch
 Temos boas notícias! Isso é tudo que você precisa para criar sua primeira página AMP. Claro que, a essa altura, ela ainda não tem muito conteúdo no corpo. Na próxima seção, veremos como adicionar recursos básicos, como imagens e elementos AMP personalizados, estilizar a página e criar um layout responsivo.
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/start/create.html', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/include_image.html', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>
  

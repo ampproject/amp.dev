@@ -116,9 +116,11 @@ Para aplicar una entrada de animación a un elemento, tienes que añadir <code>a
 </amp-story-page>
 ```
 
-{% call callout('Prúebalo', type='success') %}
+[tip type="success"]
+
 Añade el atributo `animate-in="<animation preset>"` a los elementos de las páginas de historias para explorar los diferentes efectos de animación.
-{% endcall %}
+
+[/tip]
 
 ## Duración de la animación
 
@@ -254,7 +256,7 @@ Las animaciones de las historias de AMP ofrecen muchísimas posibilidades (por e
 
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/visual_story/add_more_pages.html', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/getting_started/visual_story/create_bookend.html', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
 </div>
  

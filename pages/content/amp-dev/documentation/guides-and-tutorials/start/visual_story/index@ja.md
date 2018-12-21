@@ -15,7 +15,9 @@ $title: ビジュアルに訴える AMP ストーリーを作成する
 - ページ上の要素をアニメーション化する
 - ストーリーの最後に関連リンクを追加し、読者を別のコンテンツに誘導する
 
-{% call callout('注', type='note') %} [amp-story](/ja/docs/reference/components/amp-story.html) は**試験運用コンポーネント**です。{% endcall %}
+[tip type="note"]
+ [amp-story](/ja/docs/reference/components/amp-story.html) は**試験運用コンポーネント**です。
+[/tip]
 
 
 <div class="start-button">

@@ -51,8 +51,10 @@ Además, envía los datos de analíticas al proveedor externo,
 </amp-analytics>
 ```
 
-{% call callout('Nota', type='note') %}
-El código anterior solo es un ejemplo para ayudarte a aprender, pero no es una muestra realista. Si trabajas con proveedores de analíticas, es probable que este ejemplo no tenga sentido, ya que las configuraciones de los proveedores eliminan la complejidad. Consulta la [documentación de tu proveedor de analíticas](/es/docs/analytics/analytics-vendors.html) para ver configuraciones de ejemplo.{% endcall %}
+[tip type="note"]
+
+El código anterior solo es un ejemplo para ayudarte a aprender, pero no es una muestra realista. Si trabajas con proveedores de analíticas, es probable que este ejemplo no tenga sentido, ya que las configuraciones de los proveedores eliminan la complejidad. Consulta la [documentación de tu proveedor de analíticas](/es/docs/analytics/analytics-vendors.html) para ver configuraciones de ejemplo.
+[/tip]
 
 ## Dónde se enviarán los datos de analíticas: el atributo type
 
@@ -135,11 +137,13 @@ según el valor de la cuenta de la URL remota (`"account": "UA-XXXXX-Y"`):
 ```
 
 
-{% call callout('Importante', type='caution') %}
+[tip type="important"]
+
 AMP no realiza validaciones comparando diversos usos de una misma variable.
 Los valores se asignan siguiendo un orden de preferencia de sustitución de variables,
 y los valores de las URL remotas tienen prioridad (consulta [Orden de sustitución de variables](/es/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
-{% endcall %}
+
+[/tip]
 
 ## Los atributos requests, triggers y transports
 
@@ -224,7 +228,9 @@ y cada vez que se haga clic en una etiqueta `a`:
 }
 ```
 
-{% call callout('Importante', type='caution') %} El método anterior solo se recomienda para páginas AMP, no para anuncios AMPHTML. Como la prioridad de las analíticas es inferior a la del contenido de la página, se recomienda hacer un seguimiento de los clics mediante una redirección de navegador para evitar que se pierdan clics. {% endcall %}
+[tip type="important"]
+ El método anterior solo se recomienda para páginas AMP, no para anuncios AMPHTML. Como la prioridad de las analíticas es inferior a la del contenido de la página, se recomienda hacer un seguimiento de los clics mediante una redirección de navegador para evitar que se pierdan clics. 
+[/tip]
 
 AMP admite las siguientes configuraciones de activador:
 
@@ -263,9 +269,11 @@ AMP admite las siguientes configuraciones de activador:
   </tbody>
 </table>
 
-{% call callout('Importante', type='caution') %}
+[tip type="important"]
+
 Los activadores de una configuración de prioridad inferior quedan anulados por los activadores con los mismos nombres de una configuración que tenga una prioridad superior (consulta [Orden de sustitución de variables](/es/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
-{% endcall %}
+
+[/tip]
 
 ### Definir cómo se envían los datos mediante el atributo transport
 

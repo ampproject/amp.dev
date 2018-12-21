@@ -30,5 +30,5 @@ $title: 准备页面以供发现和分发
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">以前</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一个</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一个</span></a>
 </div>

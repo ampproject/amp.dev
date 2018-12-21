@@ -1,6 +1,0 @@
-path: /samples/component/{base}.html
-view: /views/default.j2
-title: Components
-
-localization:
-  path: /{locale}/samples/components/{base}.html
