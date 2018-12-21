@@ -86,7 +86,7 @@ class ComponentReferenceImporter extends GitHubImporter {
   _saveDocument(extensionName, document) {
     let initial = extensionName.replace('amp-', '')[0];
     // Check if initial is numeric as those will all be grouped
-    initial = !isNaN(initial) ? '#' : initial.toUpperCase();
+    initial = !isNaN(initial) ? '1-9' : initial.toUpperCase();
 
     // Make sure that the collection the document is put in to is defined
     this._ensureCollection(initial);
