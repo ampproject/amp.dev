@@ -10,6 +10,7 @@ from grow.extensions import hooks
 VALID_DEPENDENCIES = {
     'amp-access': True,
     'amp-animation': True,
+    'amp-anim': True,
     'amp-access-laterpay': True,
     'amp-accordion': True,
     'amp-ad': True,
