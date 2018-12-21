@@ -15,7 +15,7 @@ AMP 캐시는 유효한 AMP 문서들을 제공하기 위한 프록시 기반 CD
 
 아래의 유튜브 동영상 또는 [왜 AMP 캐시가 존재하는가](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456)를 통해 AMP 캐시에 대해 자세히 알아보십시오.
 
-{{ youtube('n8n7fj60lds', 480, 270, caption='Watch this video to learn why AMP Caches exist.') }}
+[video src="https://www.youtube.com/watch?v=n8n7fj60lds" width="480" height="270" caption="Watch this video to learn why AMP Caches exist."]
 
 ## 어떤 AMP 캐시가 이용가능한가요?
 

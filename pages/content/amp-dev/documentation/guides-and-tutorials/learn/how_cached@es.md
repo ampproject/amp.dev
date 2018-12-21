@@ -15,7 +15,7 @@ Una memoria caché AMP es una red de entrega de contenido (CDN) basada en proxy 
 
 Obtenga más información acerca de los cachés de AMP en el video de YouTube a continuación, o en la publicación del blog [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456).
 
-{{ youtube('n8n7fj60lds', 480, 270, caption='Watch this video to learn why AMP Caches exist.') }}
+[video src="https://www.youtube.com/watch?v=n8n7fj60lds" width="480" height="270" caption="Watch this video to learn why AMP Caches exist."]
 
 ## ¿Qué cachés de AMP están disponibles?
 Actualmente, hay dos proveedores de AMP Cache:

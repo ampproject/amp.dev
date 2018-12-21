@@ -15,7 +15,7 @@ AMP 缓存是一种基于代理的内容传送网络 (CDN)，用于传送有效�
 
 要想详细了解 AMP 缓存，请观看下方的 YouTube 视频，或参阅博文 [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456)。
 
-{{ youtube('n8n7fj60lds', 480, 270, caption='观看这个视频，了解“AMP 缓存”存在的意义。') }}
+[video src="https://www.youtube.com/watch?v=n8n7fj60lds" width="480" height="270" caption="观看这个视频，了解“AMP 缓存”存在的意义。"]
 
 ## 可用的 AMP 缓存有哪些？
 目前，有 2 个 AMP 缓存提供商：

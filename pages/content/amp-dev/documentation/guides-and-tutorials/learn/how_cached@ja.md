@@ -15,7 +15,7 @@ AMP キャッシュは、有効な AMP ドキュメントを配信するため�
 
 AMP キャッシュについて詳しくは、下記の YouTube 動画やブログ記事「[AMP キャッシュが存在する理由](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456)」をご覧ください。
 
-{{ youtube('n8n7fj60lds', 480, 270, caption='AMP キャッシュが存在する理由については、こちらの動画をご覧ください。') }}
+[video src="https://www.youtube.com/watch?v=n8n7fj60lds" width="480" height="270" caption="AMP キャッシュが存在する理由については、こちらの動画をご覧ください。"]
 
 ## 使用できる AMP キャッシュの種類
 現在、2 つの AMP キャッシュ プロバイダがあります。

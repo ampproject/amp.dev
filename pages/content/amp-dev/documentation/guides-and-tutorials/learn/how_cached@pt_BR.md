@@ -15,7 +15,7 @@ O cache de AMP é uma rede de fornecimento de conteúdo (CDN, na sigla em inglê
 
 Saiba mais sobre os caches de AMP neste vídeo do YouTube ou na postagem do blog [Por que existem caches de AMP](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456).
 
-{{ youtube('n8n7fj60lds', 480, 270, caption='Assista esse vídeo para saber por que existem caches de AMP.') }}
+[video src="https://www.youtube.com/watch?v=n8n7fj60lds" width="480" height="270" caption="Assista esse vídeo para saber por que existem caches de AMP."]
 
 ## Quais caches de AMP estão disponíveis?
 No momento, há dois provedores de cache de AMP:

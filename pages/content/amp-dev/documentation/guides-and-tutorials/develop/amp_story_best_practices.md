@@ -11,8 +11,7 @@ components:
 
 This guide provides recommended practices that you should implement when creating an [AMP story](/docs/reference/components/amp-story.html).
 
-{{ youtube('2WjFBnCj2ew', 480, 270, caption='Watch our video on creating delightful AMP story experiences.') }}
-
+[video src="https://www.youtube.com/watch?v=2WjFBnCj2ew" width="480" height="270" caption="Watch our video on creating delightful AMP story experiences."]
 
 ## Background color
 
