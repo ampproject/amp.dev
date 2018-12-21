@@ -37,7 +37,7 @@ class Collection {
       '$view': view,
       '$path': path,
       '$localization': {
-        'path': '{locale}/' + path
+        'path': '{locale}' + path
       }
     };
   }
