@@ -31,10 +31,13 @@ const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation/guides-an
 const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
 // Contains manual hints for double filenames etc.
 const LOOKUP_TABLE = {
-  '/content/docs/fundamentals/add_advanced/congratulations.md': '/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/congratulations.md',
-  '/documentation/guides-and-tutorials/start/add_advanced/setting_up.md': '/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md',
-  '/content/docs/fundamentals/add_advanced/setting_up.md': '/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md',
-  '/content/docs/fundamentals/converting/congratulations.md': '../../../pages/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md'
+  '/content/docs/integration/pwa-amp.md': '/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md',
+  '/documentation/guides-and-tutorials/start/converting/converting.md': '/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md': '/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md',
+  '/content/docs/fundamentals/add_advanced.md': '/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/start/create/create.md': '/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md',
+  '/content/docs/start/create.md': '/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md': '/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md'
 };
 
 /**
@@ -136,6 +139,8 @@ class GrowReferenceChecker {
 
     this._log.warn(`No document found for ${documentPath}`);
     this._log.info(`Trying to resolve new location from lookup table ...`);
+
+    // Check if there is a manual match for the path in the lookup table
     let lookedUpPath = LOOKUP_TABLE[documentPath.replace(POD_BASE_PATH, '/')]
     if (lookedUpPath) {
       this._log.success(`Found new path in lookup table: ${lookedUpPath}`);
@@ -145,11 +150,22 @@ class GrowReferenceChecker {
     let basename = path.basename(documentPath);
     this._log.info(`Trying to find new destination by basename ${basename}`);
     let results = search.recursiveSearchSync(basename, PAGES_BASE_PATH);
+
+    // If there is more than one match store all matches for the user to
+    // do the manual fixing
     if (results.length > 1) {
       this._log.error(`More than one possible match. Needs manual fixing.`);
       this._multipleMatches[documentPath] = results;
       return documentPath;
     } else if (results.length == 0) {
+      // If the reference was pointing to an HTML document look if there is
+      // a matching markdown document
+      if (basename.indexOf('.html') !== -1) {
+        this._log.warn(`No match for HTML document ${basename}, looking for markdown.`);
+        documentPath = documentPath.replace(path.extname(documentPath), '.md');
+        return this._verifyReference(documentPath);
+      }
+
       this._log.error(`No matching document found. Needs manual fixing.`);
       if (this._unfindableDocuments.indexOf(documentPath) == -1) {
         this._unfindableDocuments.push(documentPath);
@@ -165,8 +181,10 @@ class GrowReferenceChecker {
 
 }
 
-let referenceChecker = new GrowReferenceChecker();
-referenceChecker.start();
-
+// If not required, run directly
+if (!module.parent) {
+  let referenceChecker = new GrowReferenceChecker();
+  referenceChecker.start();
+}
 
 module.exports = GrowReferenceChecker;
