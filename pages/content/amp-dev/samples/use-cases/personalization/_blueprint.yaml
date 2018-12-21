@@ -1,6 +1,0 @@
-path: /samples/use-cases/personalization/{base}.html
-view: /views/default.j2
-title: Personalization
-
-localization:
-  path: /{locale}/samples/use-cases/personalization/{base}.html
