@@ -28,7 +28,7 @@ const minifyHtml = require('html-minifier').minify;
 
 const config = require('./config');
 const Grow = require('./pipeline/grow');
-const ReferenceImporter = require('./pipeline/referenceImporter');
+const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
 const SamplesBuilder = require('./pipeline/samplesBuilder');
 
 const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
@@ -175,7 +175,7 @@ class Pipeline {
     // TODO: Define condition for importing reference - for example if it
     // has been already imported and isn't outdated don't do it
 
-    let importer = new ReferenceImporter();
+    let importer = new ComponentReferenceImporter();
     await importer.initialize();
 
     return importer.import();
