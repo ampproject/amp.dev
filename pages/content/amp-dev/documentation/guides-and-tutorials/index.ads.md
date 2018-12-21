@@ -1,5 +1,8 @@
 ---
 $title: Introduction to advertising on AMP
+$path: /documentation/guides-and-tutorials.ads.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials.ads.html
 $order: 0
 ---
 
