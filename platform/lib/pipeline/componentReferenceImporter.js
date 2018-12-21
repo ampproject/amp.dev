@@ -29,8 +29,6 @@ const DOCUMENT_VIEW = '/views/detail/component-detail.j2';
 const DESTINATION_BASE_PATH = __dirname + '/../../../pages/content/amp-dev/documentation/components';
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/components'
-// TODO: Make it possible to pass in a local repository path with argv
-const LOCAL_AMPHTML_REPOSITORY = false;
 
 class ComponentReferenceImporter extends GitHubImporter {
 
@@ -77,11 +75,13 @@ class ComponentReferenceImporter extends GitHubImporter {
   _saveDocument(extensionName, document) {
     let initial = extensionName.replace('amp-', '')[0];
     // Check if initial is numeric as those will all be grouped
-    initial = !isNaN(initial) ? '1-9' : initial;
+    initial = !isNaN(initial) ? '#' : initial.toUpperCase();
 
     // Make sure that the collection the document is put in to is defined
     this._ensureCollection(initial);
 
+    // Set the documents title
+    document.title = extensionName;
     let documentPath = `${DESTINATION_BASE_PATH}/${initial}/${extensionName}.md`;
 
     return document.save(documentPath).then(() => {
@@ -131,44 +131,6 @@ class ComponentReferenceImporter extends GitHubImporter {
     return this._fetchDocument(documentPath);
   }
 
-  /**
-   * Downloads a path/document from GitHub and returns its contents
-   * @param  {String} path Path to the file
-   * @return {Document}    A document object containing all information
-   */
-  _fetchDocument(path) {
-    // TODO: This could be a module level function as it will be needed
-    // by other importers
-    return new Promise((resolve) => {
-      let process = (function (err, data) {
-        if (err) {
-          this._log.fatal(`Error while downloading ${path}`, err);
-          throw err;
-        }
-
-        if (data && data.content !== undefined && !data.content.length) {
-          this._log.info(`${path} is empty. Skipping ...`);
-          return;
-        }
-
-        let contents = new Buffer(data.content || data, 'base64');
-        contents = contents.toString();
-
-        let relativePath = path.substr(0, path.lastIndexOf('/'));
-
-        let title = contents.match(/^#{1}\s.+<\/a>\s(.+)/m);
-        title = title ? title[1].replace(/`/g, '') : null;
-
-        resolve(new Document(relativePath, title, contents));
-      }).bind(this);
-
-      if (LOCAL_AMPHTML_REPOSITORY) {
-        fs.readFile(path.resolve(LOCAL_AMPHTML_REPOSITORY, path), process);
-      } else {
-        this._repository.contents(path, this._latestReleaseTag, process);
-      }
-    });
-  }
 }
 
 // If not required, run directly
