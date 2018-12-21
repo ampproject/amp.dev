@@ -19,7 +19,7 @@ AMP 프로젝트의 목표는 웹페이지를 빠르게 제공함으로써 사�
 AMP는 다양한 [광고 서버 및 네트워크]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})를 지원합니다.
 
 [tip type="note"]
-광고 기술을 AMP와 통합하려고 하시나요? 이 [가이드라인]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}})을 참조하세요.
+광고 기술을 AMP와 통합하려고 하시나요? 이 [가이드라인]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}})을 참조하세요.
 [/tip]
 
 ## 지원되는 광고

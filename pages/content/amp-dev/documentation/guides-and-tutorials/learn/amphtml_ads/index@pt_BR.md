@@ -58,7 +58,7 @@ Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos forma
 
 ### Editores
 
-Para veicular seus formatos de anúncio de venda direta em HTML para AMP, é preciso criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}}) e exibi-los usando um servidor de anúncios que seja compatível com veiculação de anúncios HTML para AMP.  Atualmente, os servidores de anúncio compatíveis com anúncios HTML para AMP são os seguintes:
+Para veicular seus formatos de anúncio de venda direta em HTML para AMP, é preciso criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) e exibi-los usando um servidor de anúncios que seja compatível com veiculação de anúncios HTML para AMP.  Atualmente, os servidores de anúncio compatíveis com anúncios HTML para AMP são os seguintes:
 
 *   DoubleClick for Publishers
 *   TripleLift
@@ -66,7 +66,7 @@ Para veicular seus formatos de anúncio de venda direta em HTML para AMP, é pre
 *   Adzerk
 *   Google AdSense
 
-Para exibir anúncios HTML para AMP usando seus canais indiretos (por exemplo, exchange, SSP etc.), escolha uma rede de publicidade ou um servidor de anúncios compatível na [lista a seguir]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}}).
+Para exibir anúncios HTML para AMP usando seus canais indiretos (por exemplo, exchange, SSP etc.), escolha uma rede de publicidade ou um servidor de anúncios compatível na [lista a seguir]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
 
 ### Agências de criação
 
@@ -78,11 +78,11 @@ As agências de criação precisam criar os anúncios de acordo com as [Especifi
 
 ### Redes e servidores de anúncios
 
-Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma extensão `amp-ad` para sua rede que use a [implementação de solicitação de anúncio Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) se você ainda não tiver uma.  Consulte o artigo sobre [integração com AMP para veicular anúncios gráficos]({{g.doc('/content/docs/ads/adnetwork_integration.html', locale=doc.locale).url.path}}) para ver mais detalhes.  Tenha em mente que não é necessário fazer uma integração especial para veicular HTML para AMP em páginas não AMP.
+Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma extensão `amp-ad` para sua rede que use a [implementação de solicitação de anúncio Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) se você ainda não tiver uma.  Consulte o artigo sobre [integração com AMP para veicular anúncios gráficos]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}}) para ver mais detalhes.  Tenha em mente que não é necessário fazer uma integração especial para veicular HTML para AMP em páginas não AMP.
 
 ## Criar anúncios HTML para AMP
 
-**Do zero**: os anúncios HTML para AMP precisam seguir as [especificações de anúncios HTML para AMP]({{g.doc('/content/docs/ads/adnetwork_integration.html', locale=doc.locale).url.path}}).  Para ver demonstrações e exemplos, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
+**Do zero**: os anúncios HTML para AMP precisam seguir as [especificações de anúncios HTML para AMP]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}}).  Para ver demonstrações e exemplos, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
 
 **Usando ferramentas**: use qualquer uma das seguintes ferramentas se você quiser gerar criativos HTML para AMP:
 

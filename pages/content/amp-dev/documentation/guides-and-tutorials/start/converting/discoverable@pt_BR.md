@@ -113,5 +113,5 @@ Bom trabalho!  Seu artigo em AMP está pronto!
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/fundamentals/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
 </div>

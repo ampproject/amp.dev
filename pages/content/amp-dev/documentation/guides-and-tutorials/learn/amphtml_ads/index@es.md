@@ -58,7 +58,7 @@ Los anuncios AMP HTML son flexibles y dinámicos, lo que te permite utilizar div
 
 ### Editores
 
-Para publicar tus formatos de anuncio de venta directa en AMP HTML, debes crear los anuncios de acuerdo con las [especificaciones de AMP HTML]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}}) y publicarlos mediante un servidor de anuncios compatible con el servicio de anuncios AMP HTML.  Estos son los servidores de anuncios que actualmente admiten el formato AMP HTML:
+Para publicar tus formatos de anuncio de venta directa en AMP HTML, debes crear los anuncios de acuerdo con las [especificaciones de AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) y publicarlos mediante un servidor de anuncios compatible con el servicio de anuncios AMP HTML.  Estos son los servidores de anuncios que actualmente admiten el formato AMP HTML:
 
 *   DoubleClick for Publishers
 *   TripleLift

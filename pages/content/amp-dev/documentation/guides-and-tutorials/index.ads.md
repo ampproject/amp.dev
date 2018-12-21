@@ -19,7 +19,7 @@ Delivering ads to AMP pages is not much different than serving traditional ads o
 
 AMP supports a large number of [ad servers and networks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
 
-Note: Looking to integrate your ad technology with AMP? See these [guidelines]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}).
+Note: Looking to integrate your ad technology with AMP? See these [guidelines]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}}).
 
 ## Supported ads
 

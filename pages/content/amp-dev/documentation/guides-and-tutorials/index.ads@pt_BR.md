@@ -19,7 +19,7 @@ Exibir anúncios em páginas AMP não é muito diferente de veicular anúncios t
 As AMP são compatíveis com um grande número de [servidores de anúncios e redes de publicidade]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
 
 [tip type="note"]
-Precisa integrar sua tecnologia de anúncio às AMP? [Confira estas diretrizes]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}}).
+Precisa integrar sua tecnologia de anúncio às AMP? [Confira estas diretrizes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Anúncios compatíveis

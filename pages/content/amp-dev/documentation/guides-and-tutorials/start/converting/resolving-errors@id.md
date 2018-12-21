@@ -261,7 +261,7 @@ Bagus! Gambar kita memiliki aspek tinggi lebar yang benar dan secara responsif m
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Gambar kini menjadi responsif!") }}
 
-Baca selengkapnya: Pelajari lebih lanjut Sistem Tata Letak AMP di [Spesifikasi Tata Letak AMP]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
+Baca selengkapnya: Pelajari lebih lanjut Sistem Tata Letak AMP di [Spesifikasi Tata Letak AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## Berhasil!
 

@@ -19,7 +19,7 @@ AMP プロジェクトは、ウェブページの表示を高速化して、最�
 AMP は、幅広い[広告サーバーと広告ネットワーク]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})に対応しています。
 
 [tip type="note"]
-独自の広告技術と AMP を統合する方法については、こちらの[ガイドライン]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}})をご覧ください。
+独自の広告技術と AMP を統合する方法については、こちらの[ガイドライン]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}})をご覧ください。
 [/tip]
 
 ## 対応する広告

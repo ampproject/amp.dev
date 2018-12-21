@@ -19,7 +19,7 @@ AMP アナリティクスを使用すると、貴社で設定したトリガー�
 
 ## 2. amp-ad 拡張機能を使用する
 
-amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信するためのものです。90 社以上の広告テクノロジー プロバイダが AMP のサポートを導入しています。開始する際は、[開発の概要](https://github.com/ampproject/amphtml/tree/master/ads#overview)をお読みください。また、amp-ad 拡張機能のサポートの追加に関する[デベロッパー向けの手順](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)もご覧ください。提供している広告テクノロジーによっては、こちらの[統合の手順]({{g.doc('/content/docs/ads/integration-guide.md', locale=doc.locale).url.path}})も役立ちます。
+amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信するためのものです。90 社以上の広告テクノロジー プロバイダが AMP のサポートを導入しています。開始する際は、[開発の概要](https://github.com/ampproject/amphtml/tree/master/ads#overview)をお読みください。また、amp-ad 拡張機能のサポートの追加に関する[デベロッパー向けの手順](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)もご覧ください。提供している広告テクノロジーによっては、こちらの[統合の手順]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}})も役立ちます。
 
 90 社以上の広告プロバイダが amp-ad のような広告関連機能のサポートを導入しています。広告ネットワーク [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) による[プルリクエスト](https://github.com/ampproject/amphtml/pull/2299)の例をご覧ください。
 

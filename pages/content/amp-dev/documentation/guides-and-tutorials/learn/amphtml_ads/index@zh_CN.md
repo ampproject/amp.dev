@@ -58,7 +58,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 发布商
 
-要投放 AMPHTML 格式的直销型广告，您必须按照 [AMPHTML 广告规范]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}})制作广告，并使用支持 AMPHTML 广告投放的广告服务器投放广告。目前，以下广告服务器支持 AMPHTML 广告：
+要投放 AMPHTML 格式的直销型广告，您必须按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})制作广告，并使用支持 AMPHTML 广告投放的广告服务器投放广告。目前，以下广告服务器支持 AMPHTML 广告：
 
 *   DFP 广告管理系统
 *   TripleLift
@@ -66,7 +66,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 *   Adzerk
 *   Google AdSense
 
-要通过间接渠道（例如广告交易平台、SSP 等）投放 AMPHTML 广告，请使用[相关列表]({{g.doc('/content/docs/ads/ads_vendors.html', locale=doc.locale).url.path}})中列出的支持 AMPHTML 广告的广告网络/广告服务器。
+要通过间接渠道（例如广告交易平台、SSP 等）投放 AMPHTML 广告，请使用[相关列表]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})中列出的支持 AMPHTML 广告的广告网络/广告服务器。
 
 ### 广告代理机构
 
@@ -78,11 +78,11 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 广告网络/广告服务器
 
-要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[快速获取广告请求实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)的 `amp-ad` 扩展组件（除非您已拥有此扩展组件）。有关详情，请参阅[与 AMP 集成以投放展示广告]({{g.doc('/content/docs/ads/adnetwork_integration.html', locale=doc.locale).url.path}})。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
+要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[快速获取广告请求实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)的 `amp-ad` 扩展组件（除非您已拥有此扩展组件）。有关详情，请参阅[与 AMP 集成以投放展示广告]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
 
 ## 制作 AMPHTML 广告
 
-**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范]({{g.doc('/content/docs/ads/a4a_spec.html', locale=doc.locale).url.path}})的要求。要查看演示和示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) 中的开放源代码 AMPHTML 广告模板。
+**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})的要求。要查看演示和示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) 中的开放源代码 AMPHTML 广告模板。
 
 **使用工具**：您可以使用以下任一工具制作 AMPHTML 广告：
 

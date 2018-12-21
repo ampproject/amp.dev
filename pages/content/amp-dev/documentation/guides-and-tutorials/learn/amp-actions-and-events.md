@@ -1,7 +1,6 @@
 ---
-$title: "Actions and events in AMP"
+$title: Actions and events in AMP
 $order: 1
-toc: true
 ---
 
 <!---
@@ -20,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
+# Actions and events in AMP
 
 [TOC]
 
@@ -28,9 +27,9 @@ The `on` attribute is used to install event handlers on elements. The events tha
 
 The value for the syntax is a simple domain-specific language of the form:
 
-[sourcecode:javascript]
+```javascript
 eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+```
 
 See the table below for descriptions of each part of the syntax.
 
@@ -94,15 +93,17 @@ AMP defines a `tap` event globally that you can listen to on any HTML element (i
 AMP also defines the `hide`, `show` and `toggleVisibility` actions globally that you can trigger on any HTML element.
 
 [tip type="note"]
+
 An element can only be shown if it was previously hidden by a `hide` or `toggleVisibility` action, or by using the [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) attribute. The `show` action does not support elements hidden by CSS `display:none` or AMP's `layout=nodisplay`.
 
 For example, the following is possible in AMP:
 
-[sourcecode:html]
+```html
 <div id="warning-message">Warning...</div>
 
 <button on="tap:warning-message.hide">Cool, thanks!</button>
-[/sourcecode]
+```
+
 [/tip]
 
 ## Element-specific events
@@ -208,6 +209,24 @@ event.index</pre></td>
     <td><code>lightboxClose</code></td>
     <td>Fired when lightbox is fully closed.</td>
     <td>None</td>
+  </tr>
+</table>
+
+### amp-selector
+<table>
+  <tr>
+    <th width="25%">Event</th>
+    <th width="35%">Description</th>
+    <th width="40%">Data</th>
+  </tr>
+  <tr>
+    <td><code>select</code></td>
+    <td>Fired when an option is selected or deselected.</td>
+    <td><pre>// Target element's "option" attribute value.
+event.targetOption
+
+// Array of "option" attribute values of all selected elements.
+event.selectedOptions</pre></td>
   </tr>
 </table>
 
@@ -476,6 +495,18 @@ event.response</pre></td>
   </tr>
 </table>
 
+### amp-state
+<table>
+  <tr>
+    <th>Action</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>refresh</code></td>
+    <td>Refetches data at the `src` attribute while ignoring browser cache.</td>
+  </tr>
+</table>
+
 ### amp-user-notification
 <table>
   <tr>
@@ -490,7 +521,7 @@ event.response</pre></td>
 
 ### Video elements
 
-The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-ima-video`.
+The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
 
 <table>
   <tr>
@@ -550,8 +581,8 @@ actions that apply to the whole document.
     <th>Description</th>
   </tr>
   <tr>
-    <td><code>navigateTo(url=STRING)</code></td>
-    <td>Navigates current window to given URL. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</td>
+    <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
+    <td>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener<code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</td>
   </tr>
   <tr>
     <td><code>goBack</code></td>

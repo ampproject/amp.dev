@@ -70,6 +70,6 @@ AMP HTML 文档必须：
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/include_image.html', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
 </div>
  

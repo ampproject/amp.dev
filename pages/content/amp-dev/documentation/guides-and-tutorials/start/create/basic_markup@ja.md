@@ -70,6 +70,6 @@ AMP ページを初めて作成するのに必要な情報は以上です。た�
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/start/create/include_image.html', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>
  

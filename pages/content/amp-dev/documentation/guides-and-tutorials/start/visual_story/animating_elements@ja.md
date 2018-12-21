@@ -257,6 +257,6 @@ AMP ストーリーのアニメーションでは、アニメーションの組�
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.html', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
+  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
 </div>
  
