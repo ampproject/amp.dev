@@ -38,15 +38,15 @@ let pipeline = new Pipeline();
   pipeline.collectStatics();
   //
   await pipeline.buildFrontend();
-  //
-  // // Before pages can be built all needed documents need to be imported
-  // // await pipeline.importReference();
-  //
-  // // Create sample sources which get used while generating the pages
+
+  // Before pages can be built all needed documents need to be imported
+  // await pipeline.importReference();
+
+  // Create sample sources which get used while generating the pages
   await pipeline.buildSamples();
-  //
-  // // Generate pages does not statically build the pages for development
-  // // but instead starts the development server
+
+  // Generate pages does not statically build the pages for development
+  // but instead starts the development server
   await pipeline.generatePages();
 
   // In all other environments than development the build should be optimized
