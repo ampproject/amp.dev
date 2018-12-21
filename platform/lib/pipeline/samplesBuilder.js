@@ -97,9 +97,9 @@ class SamplesBuilder {
       '---',
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
-      '$path: ' + PATH_BASE + sample.relative + '.html',
+      '$path: ' + PATH_BASE + sample.relative,
       '$localization: ',
-      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative + '.html' ,
+      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative,
       'example: !g.json ' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
       '---'
     ].join('\n'));
