@@ -18,7 +18,6 @@
 
 const express = require('express');
 const config = require('../config');
-const formatFilter = require('../middlewares/formatFilter');
 const HttpProxy = require('http-proxy');
 const modifyResponse = require('http-proxy-response-rewrite');
 const { Signale } = require('signale');
