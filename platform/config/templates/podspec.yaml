@@ -5,11 +5,11 @@ localization:
   root_path: /{locale}/
   default_locale: en
   locales:
-  # - ar
   - en
-  - es
   - fr
-  - it
+  # - ar
+  # - es
+  # - it
   # - id
   # - ja
   # - ko
