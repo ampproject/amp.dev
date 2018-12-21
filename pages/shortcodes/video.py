@@ -28,9 +28,11 @@ class VideoShortcode(Shortcode):
           youtube_id = re.search(r'v=(\w*)', self.context['src']).group(1)
           self.context['youtube_id'] = youtube_id
         else:
-          self.context['type'] = 'unsupported'
-          self.context['src'] = self.context['src']
-          # TODO: Implement local videos with amp-video
+          self.context['type'] = 'amp-video'
+          self.context['muted'] = options.get('muted', False)
+          self.context['autoplay'] = options.get('autoplay', False)
+          self.context['loop'] = options.get('loop', False)
+          self.context['controls'] = options.get('controls', False)
 
         return value
 
