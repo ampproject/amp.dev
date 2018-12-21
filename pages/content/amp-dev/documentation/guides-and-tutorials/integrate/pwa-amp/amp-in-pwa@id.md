@@ -110,7 +110,7 @@ Cara ini akan memberi tahu AMP bahwa Anda tidak lagi menggunakan dokumen ini, da
 
 ## Lihat cara kerjanya
 
-{{ video('/static/img/docs/pwamp_react_demo.mp4', 620, 1100, align='right third', loop='true', autoplay='true', controls='') }}
+[video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
 Anda dapat melihat cara kerja pola "AMP di PWA" di [Contoh React](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) yang telah kami buat. Contoh tersebut menunjukkan transisi yang lancar saat navigasi dan disertai dengan komponen React yang simpel, yang menggabungkan langkah-langkah di atas. Jadi, Anda akan mendapatkan 2 manfaat sekaligus – JavaScript kustom yang fleksibel di Progressive Web App, serta AMP untuk mendorong konten.
 

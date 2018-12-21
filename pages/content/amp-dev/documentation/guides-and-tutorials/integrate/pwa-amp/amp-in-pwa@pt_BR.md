@@ -110,7 +110,7 @@ Isso dirá à AMP que você não está mais usando o documento e reduzirá o uso
 
 ## Veja na prática
 
-{{ video('/static/img/docs/pwamp_react_demo.mp4', 620, 1100, align='right third', loop='true', autoplay='true', controls='') }}
+[video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
 Veja na prática o padrão "AMP em PWA" na [amostra React](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) que criamos (em inglês). Ela demonstra o uso de transições suaves durante a navegação e tem um componente React simples que une as etapas acima. É o melhor dos dois mundos: JavaScript flexível e personalizado no Progressive Web App e AMP para administrar o conteúdo.
 
