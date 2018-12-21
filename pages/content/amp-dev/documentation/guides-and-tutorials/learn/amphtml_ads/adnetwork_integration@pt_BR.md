@@ -24,9 +24,11 @@ Este guia é voltado a redes de publicidade que pretendem fazer a integração c
 
 Assim como um servidor de anúncios, os editores compatíveis incluem uma biblioteca JavaScript fornecida por você e adicionam vários "snippets de anúncios". Esses snippets usam a biblioteca para buscar anúncios e renderizá-los no site do editor. Como a AMP não permite que os editores executem JavaScript arbitrário, será preciso contribuir para o código aberto da AMP se você quiser que a tag [`amp-ad`](/pt_br/docs/reference/components/amp-ad.html) solicite anúncios do seu servidor de anúncios.
 
-{% call callout('Observação', type='note') %}
+[tip type="note"]
+
 Use essa implementação amp-ad para exibir anúncios HTML tradicionais **e** HTML para AMP.
-{% endcall %}
+
+[/tip]
 
 
 Por exemplo, é possível chamar o servidor Amazon A9 usando esta sintaxe:

@@ -24,9 +24,11 @@ Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan
 
 Sebagai server iklan, penayang yang Anda dukung menyertakan library JavaScript yang Anda sediakan dan menempatkan berbagai "cuplikan iklan" yang mengandalkan library JavaScript untuk mengambil iklan dan merendernya di situs penayang. Karena AMP tidak mengizinkan penayang untuk menjalankan JavaScript arbitrer, Anda harus berkontribusi pada kode open-source AMP untuk mengizinkan tag [`amp-ad`](/id/docs/reference/components/amp-ad.html) meminta iklan dari server iklan.
 
-{% call callout('Catatan', type='note') %}
+[tip type="note"]
+
 Anda dapat menggunakan implementasi amp-ad ini untuk menampilkan iklan HTML biasa **dan** iklan AMPHTML.
-{% endcall %}
+
+[/tip]
 
 
 Misalnya, server Amazon A9 dapat dijalankan dengan menggunakan sintaks berikut:

@@ -24,9 +24,11 @@ Como servidor de anuncios, puedes integrar AMP para publicar anuncios HTML tradi
 
 Como servidor de anuncios, los editores admitidos incluyen una biblioteca JavaScript proporcionada por ti (el servidor) y colocan distintos "fragmentos de anuncios" que se basan en la biblioteca JavaScript para obtener anuncios y renderizarlos en el sitio web del editor. Dado que AMP no permite que los editores ejecuten JavaScript de forma arbitraria, deberás aportar el código AMP (de código abierto) para permitir que la etiqueta ['amp-ad'](/es/docs/reference/components/amp-ad.html) solicite anuncios de tu servidor de anuncios.
 
-{% call callout('Nota', type='note') %}
+[tip type="note"]
+
 Puedes utilizar esta implementación amp-ad para mostrar anuncios HTML tradicionales **y** anuncios AMP HTML.
-{% endcall %}
+
+[/tip]
 
 
 Por ejemplo, se puede invocar el servidor A9 de Amazon con esta sintaxis:

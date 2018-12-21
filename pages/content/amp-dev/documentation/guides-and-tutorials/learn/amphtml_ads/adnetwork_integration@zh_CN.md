@@ -24,9 +24,11 @@ $title: 与 AMP 集成以投放展示广告
 
 作为广告服务商，您支持的发布商会导入您提供的 JavaScript 库，并会在其网站上添加各种“广告代码段”，这些代码段要依赖该 JavaScript 库来获取并呈现这些广告。AMP 不允许发布商执行任意 JavaScript，因此您需要向 AMP 开放源代码贡献代码，以允许 [`amp-ad`](/zh_cn/docs/reference/components/amp-ad.html) 标记从您的广告服务器请求广告。
 
-{% call callout('注意', type='note') %}
+[tip type="note"]
+
 您可以使用此 amp-ad 实现来展示传统 HTML 广告**和** AMPHTML 广告。
-{% endcall %}
+
+[/tip]
 
 
 例如，可使用以下语法调用 Amazon A9 服务器：
