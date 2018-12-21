@@ -39,12 +39,22 @@ class MarkdownDocument {
 
     // And if TOC should be rendered put it directly in front of content
     if (active) {
-      this._contents = TOC_MARKER + '\n' + this._contents;
+      this._contents = '\n' + TOC_MARKER + '\n' + this._contents;
     }
+
+    this._toc = active;
+  }
+
+  set path(path) {
+    this._path = path;
   }
 
   set title(title) {
     this._frontmatter['$title'] = title;
+  }
+
+  set order(order) {
+    this._frontmatter['$order'] = order;
   }
 
   set contents(contents) {
@@ -53,6 +63,29 @@ class MarkdownDocument {
   }
 
   _convertSyntax(contents) {
+    contents = this._rewriteCalloutToTip(contents);
+    return contents;
+  }
+
+  /**
+   * Replaces the {% call callout ... %} syntax with the new BBCode styled
+   * [tip]...[/type] shortcode while mapping the types to the new ones
+   * @param  {String} contents
+   * @return {String}          The rewritten input
+   */
+  _rewriteCalloutToTip(contents) {
+    const CALLOUT_PATTERN = /{% call callout\('.*?', type='(.*?)'\) %}(.*?){% endcall %}/gs;
+    const AVAILABLE_CALLOUT_TYPES = {
+      'note': 'note',
+      'read': 'read-on',
+      'caution': 'important',
+      'success': 'success'
+    };
+
+    contents = contents.replace(CALLOUT_PATTERN, (match, type, text) => {
+      return `[tip type="${AVAILABLE_CALLOUT_TYPES[type]}"]\n${text}\n[/tip]`;
+    });
+
     return contents;
   }
 
