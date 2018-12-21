@@ -9,7 +9,7 @@
         "title": "AMP HTML Specification",
         "order": 2,
         "from": "spec/amp-html-format.md",
-        "to": "documentation/guides-and-tutorials/learn/spec.md"
+        "to": "documentation/guides-and-tutorials/learn/spec/index.md"
     },
     {
         "title": "AMP Boilerplate Code",
@@ -80,7 +80,7 @@
         "title": "AMPHTML email",
         "order": 2,
         "from": "spec/amp-email-format.md",
-        "to": "documentation/guides-and-tutorials/learn/amp-email-format.mdamp-email-format.md",
+        "to": "documentation/guides-and-tutorials/learn/amp-email-format.md",
         "toc": true
     }
 ]
