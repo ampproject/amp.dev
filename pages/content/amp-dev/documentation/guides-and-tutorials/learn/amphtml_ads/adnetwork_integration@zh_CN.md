@@ -8,7 +8,7 @@ $title: 与 AMP 集成以投放展示广告
 
 ## 概览
 
-作为广告服务商，您可以集成 AMP 以便向 AMP 网页投放传统 HTML 广告，还可以投放 [AMPHTML]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}) 广告。
+作为广告服务商，您可以集成 AMP 以便向 AMP 网页投放传统 HTML 广告，还可以投放 [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}) 广告。
 
 ##### 想要投放传统 HTML 广告？
 
@@ -62,6 +62,6 @@ $title: 与 AMP 集成以投放展示广告
 ## 相关资源
 
 *   [所有 amp-ad 扩展组件的 GitHub 目录](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [受支持的广告供应商列表]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
+*   [受支持的广告供应商列表]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
 *   [关于推出快速获取功能的博客文章](/zh_cn/latest/blog/even-faster-loading-ads-in-amp/)
  

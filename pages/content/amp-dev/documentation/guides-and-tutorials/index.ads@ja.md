@@ -38,6 +38,6 @@ AMP HTML 広告について詳しくは、[AMP HTML 広告に関するガイド]
 AMP ページで広告掲載を始めるには、次のリソースをご確認ください。
 
 * [広告で AMP ページを収益化する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
-* [AMP との統合でディスプレイ広告を掲載する]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
+* [AMP との統合でディスプレイ広告を掲載する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [AMP HTML 広告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  

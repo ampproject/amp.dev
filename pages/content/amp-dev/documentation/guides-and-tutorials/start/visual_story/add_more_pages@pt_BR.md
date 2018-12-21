@@ -45,7 +45,7 @@ Demonstra como definir a disposição do texto e exibir uma imagem com duas cama
       <ul>
         <li>Contém duas camadas:
       <ul>
-        <li><b>Camada 1</b>: implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> e contém um <a href="{{g.doc('/content/docs/reference/components/media/amp-img.md', locale=doc.locale).url.path}}">componente amp-img</a> responsivo (<code class="filename">dog.jpg</code>, 720 x 1280 px).</li>
+        <li><b>Camada 1</b>: implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> e contém um <a href="{{g.doc('/content/amp-dev/documentation/components/I/amp-img.md', locale=doc.locale).url.path}}">componente amp-img</a> responsivo (<code class="filename">dog.jpg</code>, 720 x 1280 px).</li>
         <li><b>Camada 2</b>: implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> e contém dois elementos:
           <ul>
             <li>um elemento <code>&lt;h1></code> com o título: <em>Dogs</em></li>

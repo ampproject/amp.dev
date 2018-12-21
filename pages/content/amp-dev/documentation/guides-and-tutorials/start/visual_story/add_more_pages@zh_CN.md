@@ -45,7 +45,7 @@ $order: 4
       <ul>
         <li>包含 2 个图层：
       <ul>
-        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="{{g.doc('/content/docs/reference/components/media/amp-img.md', locale=doc.locale).url.path}}">amp-img</a>（<code class="filename">dog.jpg</code>，大小为 720 x 1280px）。</li>
+        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="{{g.doc('/content/amp-dev/documentation/components/I/amp-img.md', locale=doc.locale).url.path}}">amp-img</a>（<code class="filename">dog.jpg</code>，大小为 720 x 1280px）。</li>
         <li><b>第 2 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> 模板，并包含 2 个元素：
           <ul>
             <li>1 个 <code><h1></code> 元素，标题为：狗狗</li>

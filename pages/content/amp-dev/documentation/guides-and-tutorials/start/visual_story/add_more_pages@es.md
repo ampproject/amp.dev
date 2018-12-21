@@ -44,7 +44,7 @@ Explica cómo organizar el texto y mostrar una imagen que ocupe toda la pantalla
       <ul>
         <li>Contiene 2 capas:
       <ul>
-        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="{{g.doc('/content/docs/reference/components/media/amp-img.md', locale=doc.locale).url.path}}">amp-img adaptable</a> (<code class="filename">dog.jpg</code>, 720x1280px).</li>
+        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="{{g.doc('/content/amp-dev/documentation/components/I/amp-img.md', locale=doc.locale).url.path}}">amp-img adaptable</a> (<code class="filename">dog.jpg</code>, 720x1280px).</li>
         <li><b>Capa 2:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> y contiene 2 elementos:
           <ul>
             <li>Un elemento <code>&lt;h1></code> con el título <em>Dogs</em>.</li>

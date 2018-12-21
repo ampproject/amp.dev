@@ -8,7 +8,7 @@ $title: AMP との統合でディスプレイ広告を掲載する
 
 ## 概要
 
-広告サーバーでは、AMP との統合により、[AMP HTML]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}) 広告と通常の HTML 広告の両方を AMP ページに配信できます。
+広告サーバーでは、AMP との統合により、[AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}) 広告と通常の HTML 広告の両方を AMP ページに配信できます。
 
 ##### 通常の HTML 広告を配信する
 
@@ -62,6 +62,6 @@ $title: AMP との統合でディスプレイ広告を掲載する
 ## 関連資料
 
 *   [amp-ad の全拡張機能の GitHub ディレクトリ](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [対応広告ベンダーの一覧]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
+*   [対応広告ベンダーの一覧]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
 *   [高速フェッチのリリースに関するブログ記事](/latest/blog/even-faster-loading-ads-in-amp/)
  

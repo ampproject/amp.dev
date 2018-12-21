@@ -38,6 +38,6 @@ Para obtener más información sobre los anuncios AMP HTML, consulta la guía [A
 Consulta estos recursos sobre cómo empezar a utilizar anuncios en páginas AMP:
 
 * [Monetizar tu página AMP con anuncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
-* [Integrar tu tecnología con las páginas AMP para publicar anuncios de display]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
+* [Integrar tu tecnología con las páginas AMP para publicar anuncios de display]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [Anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  

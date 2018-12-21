@@ -78,7 +78,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 广告网络/广告服务器
 
-要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[快速获取广告请求实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)的 `amp-ad` 扩展组件（除非您已拥有此扩展组件）。有关详情，请参阅[与 AMP 集成以投放展示广告]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
+要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[快速获取广告请求实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)的 `amp-ad` 扩展组件（除非您已拥有此扩展组件）。有关详情，请参阅[与 AMP 集成以投放展示广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}})。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
 
 ## 制作 AMPHTML 广告
 

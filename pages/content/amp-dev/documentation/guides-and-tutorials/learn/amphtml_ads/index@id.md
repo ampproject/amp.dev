@@ -78,7 +78,7 @@ Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifi
 
 ### Jaringan/server iklan
 
-Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi `amp-ad` untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}}).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
+Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi `amp-ad` untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}}).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
 
 ## Membuat iklan AMPHTML
 

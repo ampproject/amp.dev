@@ -78,7 +78,7 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 ### 광고 네트워크/서버
 
-AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 가져오기 광고 요청 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) 기능을 사용하는 `amp-ad` 확장자를 만들어야 합니다(없는 경우).  자세한 내용은 [AMP와 통합하여 디스플레이 광고 게재]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})를 참조하세요.  비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
+AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 가져오기 광고 요청 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) 기능을 사용하는 `amp-ad` 확장자를 만들어야 합니다(없는 경우).  자세한 내용은 [AMP와 통합하여 디스플레이 광고 게재]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}})를 참조하세요.  비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
 
 ## AMP HTML 광고 만들기
 

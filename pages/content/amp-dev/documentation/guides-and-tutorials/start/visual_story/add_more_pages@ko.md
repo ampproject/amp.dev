@@ -45,7 +45,7 @@ $order: 4
       <ul>
         <li>레이어 2개 포함:
       <ul>
-        <li><b>레이어 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="{{g.doc('/content/docs/reference/components/media/amp-img.md', locale=doc.locale).url.path}}">amp-img</a>(<code class="filename">dog.jpg</code>, 720 x 1280px)</li>를 포함합니다.
+        <li><b>레이어 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/I/amp-img.md', locale=doc.locale).url.path}}">amp-img</a>(<code class="filename">dog.jpg</code>, 720 x 1280px)</li>를 포함합니다.
         <li><b>레이어 2</b>:  <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> 템플릿을 구현하고 요소 2개를 포함합니다.
           <ul>
             <li>제목이 <em>개</em></li>인 <code>&lt;h1></code> 요소

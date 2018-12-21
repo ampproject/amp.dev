@@ -8,7 +8,7 @@ Este guia é voltado a redes de publicidade que pretendem fazer a integração c
 
 ## Visão geral
 
-É possível integrar um servidor de anúncios às AMP para veicular anúncios HTML tradicionais em páginas AMP, além dos anúncios [HTML para AMP]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}).
+É possível integrar um servidor de anúncios às AMP para veicular anúncios HTML tradicionais em páginas AMP, além dos anúncios [HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}).
 
 ##### Quer veicular anúncios HTML tradicionais?
 
@@ -62,6 +62,6 @@ Para ver instruções sobre como criar uma integração com o Fast Fetch, confir
 ## Recursos relacionados
 
 *   [diretório do GitHub para todas as extensões amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [lista de fornecedores de anúncios compatíveis]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
+*   [lista de fornecedores de anúncios compatíveis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
 *   [postagem de blog sobre o lançamento do Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/)
  

@@ -38,6 +38,6 @@ AMPHTML 广告是一种更快速、更精简且更安全地在网页上投放广
 请访问以下资源，开始了解 AMP 中的广告：
 
 * [在您的 AMP 网页中利用广告获利]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
-* [与 AMP 集成以投放展示广告]({{g.doc('/content/docs/ads/adnetwork_integration.md', locale=doc.locale).url.path}})
+* [与 AMP 集成以投放展示广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [AMPHTML 广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  
