@@ -5,18 +5,18 @@ localization:
   root_path: /{locale}/
   default_locale: en
   locales:
-  - ar
+  # - ar
   - en
   - es
   - fr
-  - id
   - it
-  - ja
-  - ko
-  - pt_BR
-  - ru
-  - tr
-  - zh_CN
+  # - id
+  # - ja
+  # - ko
+  # - pt_BR
+  # - ru
+  # - tr
+  # - zh_CN
 
 markdown:
   extensions:
