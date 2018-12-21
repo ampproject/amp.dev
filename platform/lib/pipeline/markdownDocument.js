@@ -40,7 +40,7 @@ class MarkdownDocument {
 
     // And if TOC should be rendered put it directly in front of content
     if (active) {
-      this._contents = '\n' + TOC_MARKER + '\n' + this._contents;
+      this._contents = '\n' + TOC_MARKER + '\n\n' + this._contents;
     }
 
     this._toc = active;
