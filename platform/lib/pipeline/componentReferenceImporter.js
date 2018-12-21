@@ -29,6 +29,10 @@ const DOCUMENT_VIEW = '/views/detail/component-detail.j2';
 const DESTINATION_BASE_PATH = __dirname + '/../../../pages/content/amp-dev/documentation/components';
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/components'
+// Names of the built-in components that need to be fetched from ...
+const BUILT_INS = ['amp-img', 'amp-pixel', 'amp-layout'];
+// ... this path
+const BUILT_IN_PATH = 'builtins'
 
 class ComponentReferenceImporter extends GitHubImporter {
 
@@ -50,6 +54,11 @@ class ComponentReferenceImporter extends GitHubImporter {
     // down by directory
     extensions = extensions[0].filter((doc) => doc.type === 'dir');
 
+    // Add built-in components to list to fetch them all in one go
+    for (let builtInExtension of BUILT_INS) {
+      extensions.push({'name': builtInExtension, 'path': BUILT_IN_PATH})
+    }
+
     // Keep track of all saved documents (as promises) to complete function
     let savedDocuments = [];
     for (const extension of extensions) {
@@ -63,6 +72,8 @@ class ComponentReferenceImporter extends GitHubImporter {
         savedDocuments.push(this._saveDocument(extension.name, document));
       }
     }
+
+
 
     return Promise.all(savedDocuments);
   }
