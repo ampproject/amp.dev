@@ -36,7 +36,7 @@ class MarkdownDocument {
 
   set toc(active) {
     // Remove markers from document to have them in a defined spot
-    this._contents.replace(TOC_MARKER, '');
+    this._contents = this._contents.replace(TOC_MARKER, '');
 
     // And if TOC should be rendered put it directly in front of content
     if (active) {
