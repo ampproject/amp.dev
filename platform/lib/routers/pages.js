@@ -21,7 +21,7 @@ const config = require('../config');
 const HttpProxy = require('http-proxy');
 const modifyResponse = require('http-proxy-response-rewrite');
 const { Signale } = require('signale');
-const FilteredPage = require('../pipeline/filteredPage');
+const { FilteredPage } = require('../pipeline/filteredPage');
 
 
 const pages = express.Router();
