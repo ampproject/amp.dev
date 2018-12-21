@@ -89,7 +89,7 @@ if (config.environment === 'development') {
     proxy.web(request, response, {
       'target': growHost
     }, next);
-  }, formatFilter);
+  });
 }
 
 if (config.environment !== 'development') {
