@@ -35,25 +35,28 @@ let pipeline = new Pipeline();
 
   // Collection of static files does not need to be waited for as it happens
   // real quick and no other task depends on them
-  // pipeline.collectStatics();
-
+  pipeline.collectStatics();
+  //
   await pipeline.buildFrontend();
-
-  // Before pages can be built all needed documents need to be imported
-  // await pipeline.importReference();
-
-  // Create sample sources which get used while generating the pages
-  // await pipeline.buildSamples();
-
-  // Generate pages does not statically build the pages for development
-  // but instead starts the development server
+  //
+  // // Before pages can be built all needed documents need to be imported
+  // // await pipeline.importReference();
+  //
+  // // Create sample sources which get used while generating the pages
+  await pipeline.buildSamples();
+  //
+  // // Generate pages does not statically build the pages for development
+  // // but instead starts the development server
   await pipeline.generatePages();
 
   // In all other environments than development the build should be optimized
   // and tested to ensure it is working
   if (config.environment !== 'development') {
     await pipeline.optimizeBuild();
-    await pipeline.testBuild();
+    // Only create filtered pages after optimizing build as the filtered ones
+    // do not need to be optimized individually (again)
+    await pipeline.createFilteredPages();
+    // await pipeline.testBuild();
   }
 })().then(() => {
   // For development we also want to directly serve the current build
