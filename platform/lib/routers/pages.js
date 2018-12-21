@@ -92,9 +92,17 @@ if (config.environment === 'development') {
   }, formatFilter);
 }
 
-if (!config.environment === 'development') {
-  pages.use('/', express.static('pages'));
+if (config.environment !== 'development') {
+  pages.use('/', (request, response, next) => {
+    // Check if this request should be filtered
+    let activeFormat = getFilteredFormat(request);
+    if (activeFormat) {
+      // And if it should be filtered rewrite to the correct file
+      request.url = request.url.replace('.html', `.${activeFormat}.html`);
+    }
 
+    next();
+  }, express.static('pages'));
 }
 
 module.exports = pages;
