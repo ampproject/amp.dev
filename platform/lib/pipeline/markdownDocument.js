@@ -25,13 +25,13 @@ TOC_MARKER = '[TOC]';
 class MarkdownDocument {
 
   constructor(path, contents) {
-    this.path = path;
-    this.toc = contents.indexOf(TOC_MARKER) == -1 ? false : true;
+    this._contents = this._convertSyntax(contents);
     this._frontmatter = {
       '$title': ''
     };
 
-    this._contents = this._convertSyntax(contents);
+    this.toc = contents.indexOf(TOC_MARKER) == -1 ? false : true;
+    this.path = path;
   }
 
   set toc(active) {
