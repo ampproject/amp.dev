@@ -1,9 +1,10 @@
 ---
-$title: "AMP HTML Specification"
-$path: /documentation/guides-and-tutorials/learn/spec/{base}.html
+$title: AMP HTML Specification
 $order: 2
-toc: true
 ---
+
+
+
 
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -21,16 +22,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+# AMP HTML ⚡
 
 
-[TOC]
 
 AMP HTML is a subset of HTML for authoring content pages such as news articles in a way that guarantees certain baseline performance characteristics.
 
 Being a subset of HTML, it puts some restrictions on the full set of tags and functionality available through HTML but it does not require the development of new rendering engines: existing user agents can render AMP HTML just like all other HTML.
 
 [tip type="read-on"]
+
 If you're primarily interested in what's allowed in AMP and what isn't, watch our [primer video on AMP's limitations](https://www.youtube.com/watch?v=Gv8A4CktajQ).
+
 [/tip]
 
 Also, AMP HTML documents can be uploaded to a web server and served just like any other HTML document; no special configuration for the server is necessary. However, they are also designed to be optionally served through specialized AMP serving systems that proxy AMP documents. These documents serve them from their own origin and are allowed to apply transformations to the document that provide additional performance benefits. An incomplete list of optimizations such a serving system might do is:
@@ -109,9 +112,9 @@ AMP HTML documents MUST
 - <a name="crps"></a>contain `<head>` and `<body>` tags (They are optional in HTML). [🔗](#crps)
 - <a name="canon"></a>contain a `<link rel="canonical" href="$SOME_URL">` tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. [🔗](#canon)
 - <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](#chrs)
-- <a name="vprt"></a>contain a `<meta name="viewport" content="width=device-width,minimum-scale=1">` tag inside their head tag. It's also recommended to include `initial-scale=1`. [🔗](#vprt)
+- <a name="vprt"></a>contain a `<meta name="viewport" content="width=device-width">` tag inside their head tag. It's also recommended to include `minimum-scale=1` and `initial-scale=1`. [🔗](#vprt)
 - <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
-- <a name="boilerplate"></a>contain the [AMP boilerplate code](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]`) in their head tag. [🔗](#boilerplate)
+- <a name="boilerplate"></a>contain the [AMP boilerplate code](amp-boilerplate.md) (`head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]`) in their head tag. [🔗](#boilerplate)
 
 ### Metadata
 
@@ -215,7 +218,7 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
 </table>
 
-Validator implementations should use a white list based on the HTML5 specification with the above tags removed. See [AMP Tag Addendum](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md).
+Validator implementations should use a white list based on the HTML5 specification with the above tags removed. See [AMP Tag Addendum](amp-tag-addendum.md).
 
 ### Comments
 
@@ -233,7 +236,7 @@ Internal AMP attributes prefixed with `i-amp-` are disallowed in AMP HTML.
 
 Internal AMP class names prefixed with `-amp-` and `i-amp-` are disallowed in AMP HTML.
 
-Consult [AMP documentation](https://github.com/ampproject/amphtml/blob/master/spec/amp-css-classes.md) for meaning of class names prefixed with `amp-`. The use of these classes is allowed and meant to allow customization of some features of AMP runtime and extensions.
+Consult [AMP documentation](amp-css-classes.md) for meaning of class names prefixed with `amp-`. The use of these classes is allowed and meant to allow customization of some features of AMP runtime and extensions.
 
 All other authored class names are allowed in AMP HTML markup.
 
@@ -257,7 +260,7 @@ Major semantic tags and the AMP custom elements come with default styles to make
 
 The following @-rules are allowed in stylesheets:
 
-`@font-face`, `@keyframes`, `@media`, `@supports`.
+`@font-face`, `@keyframes`, `@media`, `@page`, `@supports`.
 
 `@import` will not be allowed. Others may be added in the future.
 
@@ -297,7 +300,6 @@ It is a validation error if the author stylesheet or inline styles together are 
 In addition to the `<style amp-custom>`, authors may also add the `<style amp-keyframes>` tag, which is allowed specifically for keyframes animations.
 
 The following restrictions apply to the `<style amp-keyframes>` tag:
-
  1. May only be placed as the last child of the document's `<body>` element.
  2. May only contain `@keyframes`, `@media`, `@supports` rules and their combination.
  3. May not be larger than 500,000 bytes.
@@ -361,7 +363,7 @@ The AMP runtime may at any time decide to unload resources that are not currentl
 
 AMP HTML uses custom elements called “AMP components” to substitute built-in resource-loading tags such as `<img>` and `<video>` and to implement features with complex interactions such as image lightboxes or carousels.
 
-See the [AMP component spec](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) for details about supported components.
+See the [AMP component spec](./amp-html-components.md) for details about supported components.
 
 There are 2 types of supported AMP components:
 
@@ -378,7 +380,7 @@ These attributes define the layout of an element. The key goal here is to ensure
 the element can be displayed and its space can be properly reserved before any of the
 JavaScript or remote resources have been downloaded.
 
-See the [AMP Layout System](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) for details about the layout system.
+See the [AMP Layout System](./amp-html-layout.md) for details about the layout system.
 
 #### `on`
 
@@ -396,7 +398,6 @@ If `methodName` is omitted the default method is executed if defined for the ele
 Example: `on="tap:fooId"`
 
 Some actions, if documented, may accept arguments. The arguments are defined between parentheses in `key=value` notation. The accepted values are:
-
  - simple unquoted strings: `simple-value`;
  - quoted strings: `"string value"` or `'string value'`;
  - boolean values: `true` or `false`;
@@ -406,7 +407,7 @@ You can listen to multiple events on an element by separating the two events wit
 
 Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-Read more about [AMP Actions and Events](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md).
+Read more about [AMP Actions and Events](./amp-actions-and-events.md).
 
 ### Extended components
 
@@ -434,14 +435,14 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 ##### Versioning
 
-See the [AMP versioning policy](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md).
+See the [AMP versioning policy](amp-versioning-policy.md).
 
 
 ### Extended templates
 
 Templates render HTML content based on the language-specific template and provided JSON data.
 
-See the [AMP template spec](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md) for details about supported templates.
+See the [AMP template spec](./amp-html-templates.md) for details about supported templates.
 
 Extended templates are not shipped with the AMP runtime and have to be downloaded just as with extended elements.
 Extended components are loaded by including a `<script>` tag in the head of the document like this:
@@ -468,7 +469,7 @@ The `id` attribute is optional. Individual AMP elements discover their own templ
 
 The syntax within the template element depends on the specific template language. However, the template language could be restricted within AMP. For instance, in accordance with the "template" element, all productions have to be over a valid well-formed DOM. All of the template outputs are also subject to sanitizing to ensure AMP-valid output.
 
-To learn about the syntax and restrictions for an extended template, visit the [extended template's documentation](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates).
+To learn about the syntax and restrictions for an extended template, visit the [extended template's documentation](./amp-html-templates.md#templates).
 
 ##### URL
 

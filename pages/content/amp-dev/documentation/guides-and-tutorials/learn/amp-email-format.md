@@ -1,8 +1,9 @@
 ---
-$title: "AMPHTML email"
+$title: AMPHTML email
 $order: 2
-toc: true
 ---
+
+
 [TOC]
 
 <!---
@@ -21,7 +22,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
+# AMPHTML Email
 
 AMP is a technology commonly known for developing super fast web pages on mobile clients. AMP is in fact a set of HTML tags backed by JavaScript that allow all kinds of functionality with a focus on performance and security.
 
@@ -33,7 +34,6 @@ There are [AMP components](https://www.ampproject.org/docs/reference/components)
 
 * [The AMPHTML Email Format](#the-amphtml-email-format)
   + [Required markup](#required-markup)
-
 * [AMP Components](#amp-components)
   * [Dynamic Content](#dynamic-content)
   * [Layout](#layout)
@@ -47,6 +47,7 @@ There are [AMP components](https://www.ampproject.org/docs/reference/components)
 * [Examples](#examples)
 * [Adding AMP to existing emails](#adding-amp-to-existing-emails)
 * [Replying/forwarding semantics](#replyingforwarding-semantics)
+* [Authentication](#authentication)
 * [FAQ](#faq)
 * [Feedback & Support](#feedback--support)
 
@@ -144,7 +145,9 @@ All CSS in any AMP document must be included in a `<style amp-custom>` tag withi
 [/sourcecode]
 
 [tip type="note"]
+
 The entire `<style>` tag cannot exceed 50,000 bytes. The validator will check for this.
+
 [/tip]
 
 ## Document dimensions
@@ -274,7 +277,6 @@ Embedding AMP within an email is simple, add a new MIME part with a content type
 </amp-img>
 
 Important things to note:
-
 - The `text/x-amp-html` part must be nested under a `multipart/alternative` node, it will not be recognized by the email client otherwise.
 - Some email clients will only render the last MIME part, so we recommend placing the `text/x-amp-html` MIME part *before* the `text/html` MIME part.
 
@@ -315,6 +317,16 @@ Content-Type: text/html; charset="UTF-8"
 ## Replying/forwarding semantics
 
 To start, the email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message. This is why it is important that an email provide alternative content in the HTML part.
+
+## Authentication
+
+There is no authentication for outgoing XHR calls from AMP email messages.  Every XHR request is considered anonymous. Email senders should not rely on cookies to authenticate outgoing XHR requests from emails.
+
+[tip type="note"]
+
+There is also no plan to include things like OAuth tokens to authenticate a user to a request.
+
+[/tip]
 
 ## FAQ
 

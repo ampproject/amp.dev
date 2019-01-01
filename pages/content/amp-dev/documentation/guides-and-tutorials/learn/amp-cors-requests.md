@@ -5,6 +5,7 @@ $order: 12
 
 
 [TOC]
+
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -102,14 +103,14 @@ author to set the credential mode through the `credentials` attribute.
 
 *Example: Including personalized content in an amp-list via cookies*
 
-```html
-<amp-list credentials="include" 
+[sourcecode:html]
+{% raw %}<amp-list credentials="include" 
     src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
   <template type="amp-mustache">
     Your personal offer: ${{price}}
   </template>
 </amp-list>
-```
+{% endraw %}[/sourcecode]
 
 By specifying the credentials mode, the origin can include cookies in the CORS
 request and also set cookies in the response (subject to
@@ -171,9 +172,9 @@ For information on AMP Cache URL formats, see these resources:
 For same-origin requests where the `Origin` header is missing, AMP sets the
 following custom header: 
 
-```text
+[sourcecode:text]
 AMP-Same-Origin: true
-```
+[/sourcecode]
 
 This custom header is sent by the AMP Runtime when an XHR request is made on
 the same origin (i.e., document served from a non-cache URL). Allow requests
@@ -273,26 +274,26 @@ Based on what we know about CORS and AMP (from [Verify CORS requests](#verify-co
 
 For requests from the allowed origins, our response will contain the following headers:
 
-```text
+[sourcecode:text]
 Access-Control-Allow-Origin: <origin>
 AMP-Access-Control-Allow-Source-Origin: <source-origin>
 Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
-```
+[/sourcecode]
 
 These are additional response headers we might include in our CORS response:
 
-```text
+[sourcecode:text]
 Access-Control-Allow-Credentials: true
 Content-Type: application/json
 Access-Control-Max-Age: <delta-seconds>
 Cache-Control: private, no-cache
-```
+[/sourcecode]
 
 ### Pseudo CORS logic
 
 Our logic for handling CORS requests and responses can be simplified into the following pseudo code:
 
-```text
+[sourcecode:text]
 IF CORS header present
    IF origin IN allowed-origins AND sourceOrigin = publisher
       allow request & send response
@@ -303,13 +304,13 @@ ELSE
       allow request & send response
    ELSE
       deny request
-```
+[/sourcecode]
 
 #### CORS sample code
 
 Here's a sample JavaScript function that we could use to handle CORS requests and responses:
 
-```javascript
+[sourcecode:javascript]
 function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
   var unauthorized = 'Unauthorized Request';
   var origin;
@@ -343,7 +344,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
   res.setHeader('AMP-Access-Control-Allow-Source-Origin', sourceOrigin);
 
 }
-```
+[/sourcecode]
 
 **Note**: For a working code sample, see [app.js](https://github.com/ampproject/amphtml/blob/master/build-system/app.js#L1199).
 
@@ -359,22 +360,22 @@ In the following scenario, the `article-amp.html` page requests the `data.json` 
 
 If we examine the request, we'll find:
 
-```text
+[sourcecode:text]
 Request URL: https://example.com/data.json?__amp_source_origin=https%3A%2F%2Fexample.com
 Request Method: GET
 AMP-Same-Origin: true
-```
+[/sourcecode]
 
 As this request is from the same origin, there is no `Origin` header but the custom AMP request header of `AMP-Same-Origin: true` is present.  In the request URL, we can find the source origin through the `__amp_source_origin` query parameter.  We can allow this request as it's from the same origin.
 
 Our response headers would be:
 
-```text
+[sourcecode:text]
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: https://example.com
 Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
 AMP-Access-Control-Allow-Source-Origin: https://example.com
-```
+[/sourcecode]
 
 ### Scenario 2:  Get request from cached AMP page
 
@@ -388,22 +389,22 @@ In the following scenario, the `article-amp.html` page cached on the Google AMP 
 
 If we examine this request, we'll find:
 
-```text
+[sourcecode:text]
 Request URL: https://example.com/data.json?__amp_source_origin=https%3A%2F%2Fexample.com
 origin: https://example-com.cdn.ampproject.org
 Request Method: GET
-```
+[/sourcecode]
 
 As this request contains an `Origin` header, we'll verify that it's from an allowed origin.  In the request URL, we can find the source origin through the `__amp_source_origin` query parameter.  We can allow this request as it's from an allowed origin.
 
 Our response headers would be:
 
-```text
+[sourcecode:text]
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org
 Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
 AMP-Access-Control-Allow-Source-Origin: https://example.com
-```
+[/sourcecode]
 
 ## Testing CORS in AMP
 
@@ -435,13 +436,13 @@ In a same-origin request, the AMP system adds the custom `AMP-Same-Origin:true` 
 
 Here's our curl command for testing a request from `https://ampbyexample.com` to the `examples.json` file (on the same domain):
 
-```shell
+[sourcecode:shell]
 curl 'https://ampbyexample.com/json/examples.json?__amp_source_origin=https%3A%2F%2Fampbyexample.com' -H 'AMP-Same-Origin: true' -I
-```
+[/sourcecode]
 
 The results from the command show the correct response headers (note: extra information was trimmed):
 
-```text
+[sourcecode:text]
 HTTP/2 200
 access-control-allow-headers: Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token
 access-control-allow-credentials: true
@@ -449,7 +450,7 @@ access-control-allow-origin: https://ampbyexample.com
 amp-access-control-allow-source-origin: https://ampbyexample.com
 access-control-allow-methods: POST, GET, OPTIONS
 access-control-expose-headers: AMP-Access-Control-Allow-Source-Origin
-```
+[/sourcecode]
 
 #### Test request from cached AMP page
 
@@ -457,13 +458,13 @@ In a CORS request not from the same domain (i.e., cache), the `origin` header is
 
 Here's our curl command for testing a request from the cached AMP page on the Google AMP Cache to the `examples.json` file:
 
-```shell
+[sourcecode:shell]
 curl 'https://ampbyexample.com/json/examples.json?__amp_source_origin=https%3A%2F%2Fampbyexample.com' -H 'origin: https://ampbyexample-com.cdn.ampproject.org' -I
-```
+[/sourcecode]
 
 The results from the command show the correct response headers:
 
-```text
+[sourcecode:text]
 HTTP/2 200
 access-control-allow-headers: Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token
 access-control-allow-credentials: true
@@ -471,4 +472,4 @@ access-control-allow-origin: https://ampbyexample-com.cdn.ampproject.org
 amp-access-control-allow-source-origin: https://ampbyexample.com
 access-control-allow-methods: POST, GET, OPTIONS
 access-control-expose-headers: AMP-Access-Control-Allow-Source-Origin
-```
+[/sourcecode]

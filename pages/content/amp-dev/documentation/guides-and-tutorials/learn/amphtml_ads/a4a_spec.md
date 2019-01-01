@@ -5,6 +5,7 @@ $order: 3
 
 
 [TOC]
+
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -114,9 +115,9 @@ In addition, creatives must obey the following rules:
 
 AMPHTML ad creatives require a different, and considerably simpler, boilerplate style line than [general AMP documents do](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
 
-```html
+[sourcecode:html]
 <style amp4ads-boilerplate>body{visibility:hidden}</style>
-```
+[/sourcecode]
 
 _Rationale:_ The `amp-boilerplate` style hides body content until the AMP
 runtime is ready and can unhide it.  If Javascript is disabled or the AMP
@@ -187,23 +188,23 @@ The `transition` and `animation` properties are only allowed on selectors that:
    to deactivate animations, when necessary for page performance.
 
 **Good**
-```css
+[sourcecode:css]
 .box {
     transform: rotate(180deg);
     transition: transform 2s;
 }
-```
+[/sourcecode]
 
 **Bad**
 
 Property not allowed in CSS class.
-```css
+[sourcecode:css]
 .box {
     color: red;  // non-animation property not allowed in animation selector
     transform: rotate(180deg);
     transition: transform 2s;
 }
-```
+[/sourcecode]
 
 ##### Transitionable and animatable properties
 
@@ -211,17 +212,17 @@ The only properties that may be transitioned are opacity and transform.
 ([Rationale](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/))
 
 **Good**
-```css
+[sourcecode:css]
 transition: transform 2s;
-```
+[/sourcecode]
 
 **Bad**
-```css
+[sourcecode:css]
 transition: background-color 2s;
-```
+[/sourcecode]
 
 **Good**
-```css
+[sourcecode:css]
 @keyframes turn {
   from {
     transform: rotate(180deg);
@@ -231,10 +232,10 @@ transition: background-color 2s;
     transform: rotate(90deg);
   }
 }
-```
+[/sourcecode]
 
 **Bad**
-```css
+[sourcecode:css]
 @keyframes slidein {
   from {
     margin-left:100%;
@@ -246,7 +247,7 @@ transition: background-color 2s;
     width:100%;
   }
 }
-```
+[/sourcecode]
 
 
 ### Allowed AMP extensions and builtins

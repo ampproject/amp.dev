@@ -5,6 +5,7 @@ $order: 3
 
 
 [TOC]
+
 # Guidelines for Integrating with AMP
 
 If you are an ad technology provider looking to integrate with AMP HTML, please see the guidelines below.
@@ -20,14 +21,14 @@ Because AMP doesn’t allow publishers to execute arbitrary JavaScript, you will
 
 For example : Amazon A9 server can be invoked by using following syntax:
 
-```html
+[sourcecode:html]
 <amp-ad width=300 height=250
     type="a9"
     data-aax_size="300x250"
     data-aax_pubname="test123"
     data-aax_src="302">
 </amp-ad>
-```
+[/sourcecode]
 
 Note that each of the attributes that follow `type` are dependent on the parameters that the Amazon’s A9 server expects in order to deliver an ad. The [a9.js](./a9.js) file shows you how the parameters are mapped to making a JavaScript call which invokes the A9 server via the `https://c.amazon-adsystem.com/aax2/assoc.js` URL. The corresponding parameters passed by the AMP ad tag are appended to the URL to return an ad.
 
@@ -58,14 +59,14 @@ Brightcove has created a custom [amp-brightcove](https://github.com/ampproject/a
 
 A Brightcove player can be invoked by the following:
 
-```html
+[sourcecode:html]
 <amp-brightcove
       data-account="1290862519001"
       data-video-id="ref:amp-docs-sample"
       data-player="S1Tt8cgaM"
       layout="responsive" width="480" height="270">
   </amp-brightcove>
-```
+[/sourcecode]
 For instructions on how to develop an amp tag like Brightcove, see  [this pull request](https://github.com/ampproject/amphtml/pull/1052).
 
 ## Video Ad Network

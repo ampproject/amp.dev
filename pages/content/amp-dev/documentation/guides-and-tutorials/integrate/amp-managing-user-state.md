@@ -148,9 +148,9 @@ In walking through the technical guidance below, let's  assume that you’ll be 
 
 For clarity throughout the rest of this document, we’ll call various strings of characters that are identifiers by more readable names preceded by a dollar sign (`$`):
 
-```text
+[sourcecode:text]
 n34ic982n2386n30 ⇒ $sample_id
-```
+[/sourcecode]
 
 **Our use case:** Throughout this guide we will work on an example designed to achieve simple pageview tracking (i.e., analytics) in which we want to produce the most accurate user counting possible. This means that even if the user is accessing a particular publisher’s content from different contexts (including crossing between AMP and non-AMP pages), we want these visits to be counted toward a singular understanding of the user that is the same as if the user were browsing only on such publisher’s traditional non-AMP pages.
 
@@ -177,24 +177,24 @@ This means there are two cases for the state of non-AMP pages on the publisher o
 
 **Case #1: Initial visit.** Upon first landing on the non-AMP page, there will be no cookie. If you checked for the cookie before one was set, you’d see no values set in the cookie corresponding to the `uid`:
 
-```bash
+[sourcecode:bash]
 > document.cookie
   ""
-```
+[/sourcecode]
 
 Sometime in the initial load, the cookie should be set, so that if you do this once the page is loaded, you will see a value has been set:
 
-```bash
+[sourcecode:bash]
 > document.cookie
   "uid=$publisher_origin_identifier"
-```
+[/sourcecode]
 
 **Case #2: Non-initial visit.** There will be a cookie set. Thus, if you open the developer console on the page, you’d see:
 
-```bash
+[sourcecode:bash]
 > document.cookie
   "uid=$publisher_origin_identifier"
-```
+[/sourcecode]
 
 ##### Send analytics pings
 
@@ -202,15 +202,15 @@ Once you’ve set up an identifier, you can now incorporate it in analytics ping
 
 The specific implementation will depend on your desired configuration, but generally you’ll be looking to send pings (requests) to your analytics server, which include useful data within the URL of the request itself. Here’s an example, which also indicates how you’d include your cookie value inside of the request:
 
-```text
+[sourcecode:text]
 https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier
-```
+[/sourcecode]
 
 Note that in the above example the identifier for the user is indicated by a specific query param, `user_id`:
 
-```text
+[sourcecode:text]
 user_id=$publisher_origin_identifier
-```
+[/sourcecode]
 
 The use of “`user_id`” here should be determined by what your analytics server expects to process and is not specifically tied to what you call the cookie that stores the identifier locally.
 
@@ -311,9 +311,9 @@ Our mapping table will associate AMP Client ID values that are seen in the analy
 
 Immediately after determining that you were unsuccessful in reading the publisher origin identifier, check if the AMP Client ID contained within the analytics ping is already used in a mapping. To do this, first consult the incoming amp-analytics request to get the Client ID value. For example, from this request:
 
-```text
+[sourcecode:text]
 https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
-```
+[/sourcecode]
 
 we extract out the bolded portion corresponding to the AMP Client ID: `$amp_client_id`.
 
@@ -357,9 +357,9 @@ We’ll use the prospective publisher origin identifier as the analytics record 
 
 Now that you've figured out the analytics record identifier you can actually store the user state information (analytics data in this case) keyed by that identifier:
 
-```text
+[sourcecode:text]
 {analytics record identifier, analytics data ...}
-```
+[/sourcecode]
 
 <a id="task5"></a>
 ### Task 5: Using Client ID in linking and form submission
@@ -380,33 +380,33 @@ Our approach will take advantage of two types of [AMP variable substitutions](./
 
 **To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` (“referrer ID”), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
 
-```html
+[sourcecode:html]
 <a href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)" data-amp-replace="CLIENT_ID">
-```
+[/sourcecode]
 
 **Alternative solution for passing Client ID to the outgoing links:** Define the new query parameter `ref_id` as part of the data attribute `data-amp-addparams` and for queries that needs parameter substitution provide those details as part of `data-amp-replace`. With this approach the URL would look clean and the parameters specified on `data-amp-addparams` will be dynamically added
 
-```html
+[sourcecode:html]
 <a href="https://example.com/step2.html" data-amp-addparams="ref_id=CLIENT_ID(uid)" data-amp-replace="CLIENT_ID">
-```
+[/sourcecode]
 
 For passing multiple query parameters through `data-amp-addparams` have those `&` separated like
 
-```html
+[sourcecode:html]
 <a href="https://example.com/step2.html" data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123" data-amp-replace="CLIENT_ID">
-```
+[/sourcecode]
 
 **To update form inputs to use a Client ID substitution:** Define a name for the input field, such as `orig_user_id`. Specify the `default-value` of the form field to be the value of AMP’s Client ID substitution:
 
-```html
+[sourcecode:html]
 <input name="ref_id" type="hidden" value="CLIENT_ID(uid)" data-amp-replace="CLIENT_ID">
-```
+[/sourcecode]
 
 By taking these steps, the Client ID is available to the target server and/or as a URL parameter on the page the user lands on after the link click or form submission (the **destination context**). The name (or “key”) will be `ref_id` because that’s how we’ve defined it in the above implementations and will have an associated value equal to the Client ID. For instance, by following the link (`<a>` tag) defined above, the user will navigate to this URL:
 
-```text
+[sourcecode:text]
 https://example.com/step2.html?ref_id=$amp_client_id
-```
+[/sourcecode]
 
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
   <noscript>
@@ -443,28 +443,28 @@ To process on the landing page, the approach will vary depending on whether that
 
 *Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the “key” of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
 
-```text
+[sourcecode:text]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
-```
+[/sourcecode]
 
 When this gets transmitted across the network, actual values will be replaced:
 
-```text
+[sourcecode:text]
 https://analytics.example.com/ping?type=pageview&orig_user_id=$referrer_page_identifier&user_id=$current_page_identifier
-```
+[/sourcecode]
 
 Following through our examples above, we have:
 
-```text
+[sourcecode:text]
 $referrer_page_identifier is $amp_client_id
 $current_page_identifier is $publisher_origin_id
-```
+[/sourcecode]
 
 so the ping is actually:
 
-```text
+[sourcecode:text]
 https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&user_id=$publisher_origin_id
-```
+[/sourcecode]
 
 We recommend validating the authenticity of query parameter values by using the steps outlined in the [Parameter validation](#parameter-validation) section below.
 
@@ -562,15 +562,15 @@ Values contained in a URL can be maliciously changed, malformed, or somehow othe
 
 For instance, in the steps above, we constructed the following URL, intended for the user to click on and navigate to the corresponding page:
 
-```text
+[sourcecode:text]
 https://example.com/step2.html?orig_user_id=$amp_client_id
-```
+[/sourcecode]
 
 However, it’s just as possible that the user or some attacker change this URL to be:
 
-```text
+[sourcecode:text]
 https://example.com/step2.html?orig_user_id=$malicious_value
-```
+[/sourcecode]
 
 You want to ensure that you process only instances of `$amp_client_id` and avoid using instances of `$malicious_value`.
 

@@ -3,6 +3,9 @@ $title: Actions and events in AMP
 $order: 1
 ---
 
+
+
+
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -21,15 +24,15 @@ limitations under the License.
 
 # Actions and events in AMP
 
-[TOC]
+
 
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
 The value for the syntax is a simple domain-specific language of the form:
 
-```javascript
+[sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-```
+[/sourcecode]
 
 See the table below for descriptions of each part of the syntax.
 
@@ -98,11 +101,11 @@ An element can only be shown if it was previously hidden by a `hide` or `toggleV
 
 For example, the following is possible in AMP:
 
-```html
+[sourcecode:html]
 <div id="warning-message">Warning...</div>
 
 <button on="tap:warning-message.hide">Cool, thanks!</button>
-```
+[/sourcecode]
 
 [/tip]
 
