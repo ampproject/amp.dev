@@ -299,7 +299,7 @@ class Pipeline {
     log.await('Filtering pages by formats ...');
 
     return new Promise((resolve, reject) => {
-      let stream = gulp.src(`${PAGES_DEST}/**/documentation/*.html`, {'base': './'})
+      let stream = gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
                    .pipe(through.obj(function (page, encoding, callback) {
                      // Check if the page should even be filtered
                      if (!isFilterableRoute(page.relative)) {
