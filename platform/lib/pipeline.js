@@ -315,7 +315,7 @@ class Pipeline {
                      // then the other formats will be created from the unfiltered one
                      let manualFilter = page.relative.match(/\.(websites|ads|stories|emails)\.html/);
                      manualFilter = manualFilter ? manualFilter[1] : null;
-                     if (FORMATS.indexOf(manualFilter) !== -1) {
+                     if (manualFilter && FORMATS.indexOf(manualFilter) !== -1) {
                        log.warn(`${page.relative} is already a manual variant for ${manualFilter}.`);
 
                        let filteredPage = new FilteredPage(manualFilter, html);
