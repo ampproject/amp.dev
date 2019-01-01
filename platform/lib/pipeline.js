@@ -31,6 +31,7 @@ const minifyHtml = require('html-minifier').minify;
 const config = require('./config');
 const Grow = require('./pipeline/grow');
 const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
+const SpecImporter = require('./pipeline/specImporter');
 const SamplesBuilder = require('./pipeline/samplesBuilder');
 const { FilteredPage, isFilterableRoute, FORMATS } = require('./pipeline/filteredPage');
 
@@ -174,11 +175,24 @@ class Pipeline {
     return this._collect('icons', ICONS_SRC, ICONS_DEST);
   }
 
+  /**
+   * Imports the component reference (amp-accordion, amp-carousel, ...)
+   * to the documentation/components collection
+   * @return {Promise}
+   */
   async importReference() {
-    // TODO: Define condition for importing reference - for example if it
-    // has been already imported and isn't outdated don't do it
-
     let importer = new ComponentReferenceImporter();
+    await importer.initialize();
+
+    return importer.import();
+  }
+
+  /**
+   * Imports spec docs defeind in platform/imports/spec.json
+   * @return {Promise}
+   */
+  async importSpec() {
+    let importer = new SpecImporter();
     await importer.initialize();
 
     return importer.import();

@@ -24,11 +24,12 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "signale": "^1.3.0",
+    "html-find-replace-element-attrs": "^1.0.0",
     "http-proxy": "^1.17.0",
     "http-proxy-middleware": "^0.19.1",
     "http-proxy-response-rewrite": "0.0.1",
-    "html-find-replace-element-attrs": "^1.0.0"
+    "mri": "^1.1.4",
+    "signale": "^1.3.0"
   },
   "devDependencies": {
     "amp-by-example": "^0.2.4",

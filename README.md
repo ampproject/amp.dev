@@ -32,7 +32,14 @@ To start developing start a pipeline that takes care of building the frontend, c
 
 ```sh
 $ cd platform
-$ yarn run develop
+$ npm run develop
+```
+
+If you additionally want to import the needed documents pass in the `--import` option to the command and export a valid [GitHub access token](https://github.com/settings/tokens) beforehand like with
+
+```sh
+$ export AMP_DOC_TOKEN="c59f6..."
+$ npm run develop -- --import
 ```
 
 To run a local test build that does all the minifying and vends the static pages instead of
@@ -40,8 +47,8 @@ proxying them through to Grow you can run
 
 ```sh
 $ cd platform
-$ yarn run build:local
-$ yarn run start:local
+$ npm run build:local
+$ npm run start:local
 ```
 
 ## Build & Deploy
