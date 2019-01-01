@@ -26,7 +26,7 @@ class MarkdownDocument {
 
   constructor(path, contents) {
     this.path = path;
-    this._toc = contents.indexOf(TOC_MARKER) == -1 ? false : true;
+    this.toc = contents.indexOf(TOC_MARKER) == -1 ? false : true;
     this._frontmatter = {
       '$title': ''
     };
