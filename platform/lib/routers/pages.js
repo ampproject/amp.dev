@@ -22,9 +22,10 @@ const HttpProxy = require('http-proxy');
 const modifyResponse = require('http-proxy-response-rewrite');
 const { Signale } = require('signale');
 const { FilteredPage } = require('../pipeline/filteredPage');
-
+const got = require('got');
 
 const pages = express.Router();
+const growHost = `${config.hosts.pages.scheme}://${config.hosts.pages.host}:${config.hosts.pages.port}`;
 
 /**
  * Inspects a incoming request (either proxied or not) for its GET args
@@ -44,6 +45,20 @@ function getFilteredFormat(request) {
   }
 
   return activeFormat;
+}
+
+async function hasManualFormatVariant(request, format) {
+  let path = request.originalUrl.replace('.html', `.${format}.html`);
+
+  let page = await got(`${growHost}${path}`).catch(() => {
+    return {};
+  });
+
+  if (!page.error && page.body) {
+    return true;
+  }
+
+  return false;
 }
 
 
@@ -72,25 +87,35 @@ if (config.environment === 'development') {
 
   // As the filtering will happen on content from the proxy (which will end
   // expressjs' native middleware chain) we need to hook into the proxy
-  proxy.on('proxyRes', function (proxyResponse, request, response) {
+  proxy.on('proxyRes', async function (proxyResponse, request, response) {
     // Check if this response should be filtered
     let activeFormat = getFilteredFormat(request);
-    if (activeFormat) {
-      modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
-        if (body) {
-          log.await(`Filtering the ongoing request by format: ${activeFormat}`);
 
+    if (activeFormat) {
+      log.await(`Filtering the ongoing request by format: ${activeFormat}`);
+
+      modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
           let filteredPage = new FilteredPage(activeFormat, body);
           return filteredPage.content;
-        }
-
-        return body;
       });
     }
   });
 
-  let growHost = `${config.hosts.pages.scheme}://${config.hosts.pages.host}:${config.hosts.pages.port}`;
-  pages.get('/*', (request, response, next) => {
+  pages.get('/*', async (request, response, next) => {
+    // Check if there is a manually filtered variant of the requested page
+    // and if so rewrite the request to this URL
+    let activeFormat = getFilteredFormat(request);
+    if (activeFormat) {
+      log.info('Checking for manual variant of requested page ...');
+      if (await hasManualFormatVariant(request, activeFormat)) {
+        let url = request.url.replace('.html', `.${activeFormat}.html`);
+        log.success(`Manually filtered variant exists - rewriting request to ${url}`);
+        request.url = url;
+      }
+    }
+
+    next();
+  }, (request, response, next) => {
     proxy.web(request, response, {
       'target': growHost
     }, next);
