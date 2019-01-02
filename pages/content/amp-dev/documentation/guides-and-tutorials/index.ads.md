@@ -4,6 +4,7 @@ $path: /documentation/guides-and-tutorials.ads.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials.ads.html
 $order: 0
+$hidden: true
 ---
 
 The AMP Project's goals are to do what's best for the user by helping to deliver fast web pages. Advertising on AMP embraces those same goals by supporting ads that are fast, safe, compelling and effective for users. How does that get done?
