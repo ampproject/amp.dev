@@ -2,6 +2,7 @@
 This document holds all the information that is relevant to maintain and contribute the content for each if its packages.
 
 ## Documents
+
 ### Frontmatter
 The documents inside the *pages* package are Grow documents that use the [built-in fields](http://grow.io/docs/documents/#built-in-fields) and some additional ones that are used to categorize them:
 
@@ -30,6 +31,11 @@ The documents inside the *pages* package are Grow documents that use the [built-
   - social
   - personalization
 ```
+
+### Format filtering
+By the categorization via the `formats` list in the frontmatter the user is able to filter the documentation by one of the formats. The filtered variants of each page get generated during build time but you are also able to create custom filtered ones by duplicating the document you want to filter it and append the format it is going to be filtered by. So for example a filtered version of `index@es.md` becomes `index.ads.md`.
+
+If the document has a specific path that is not getting inherited from the `_blueprint.yaml` also make sure to set a matching path. Same example: `index.md` has `$path: /category.html` then `index.ads.md` needs to have `$path: /category.ads.html`. Otherwise the build process is not able to match the base and the filtered variant.
 
 ### Shortcodes
 The project enables various shortcodes to extend the basic functionality of markdown.
