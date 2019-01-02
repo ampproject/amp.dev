@@ -56,6 +56,11 @@ if (config.environment === 'development') {
     'scope': 'Format filter'
   });
 
+  // Grow has problems delivering the index.html on a root request
+  pages.get('/', (request, response, next) => {
+    response.redirect('/index.html');
+    next();
+  });
 
   // On production (Google App Engine) these files will be served
   // by what is defined inside app.yaml
