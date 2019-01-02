@@ -80,7 +80,7 @@
     &-subnav {
       display: flex;
       height: 60px;
-      overflow: scroll;
+      overflow-x: scroll;
 
       @media screen and (min-width: 1024px) {
         height: 45px;
@@ -207,7 +207,7 @@
       position: relative;
       height: auto;
     }
-    
+
     & > ul {
       padding: 0 20px;
 
@@ -243,7 +243,7 @@
       z-index: 1;
       @include hl-h3;
       transition: opacity 0.5s ease;
-      
+
       @media screen and (min-width: 1024px) {
         opacity: 1;
         position: relative;
@@ -334,7 +334,7 @@
     & svg {
       @include ico;
       @include ico-2;
-      
+
       @media screen and (min-width: 1024px) {
         @include ico-1;
       }
@@ -383,7 +383,7 @@
       margin: 0 0 0 auto;
       padding: 17.5px 0 12.5px;
     }
-    
+
     &-input {
       display: block;
       width: 100%;
@@ -408,7 +408,7 @@
       background: transparent;
       border: none;
       padding: 0;
-      
+
       @media screen and (min-width: 1024px) {
         position: static;
       }
