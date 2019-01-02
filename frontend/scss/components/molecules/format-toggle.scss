@@ -3,6 +3,7 @@
 @import '../../mixins';
 @import '../../variables';
 
+@import '../atoms/_color.scss';
 @import '../atoms/_text';
 
 .#{molecule('format-toggle')} {
@@ -12,48 +13,55 @@
   margin: 0 0 0 15px;
   padding: 10px 0px;
 
-  :nth-child(1) {
-    margin-left: 0;
-  }
-
-  :nth-child(3) {
-    margin-left: 10px;
-  }
-
   &-format {
-    text-transform: capitalize;
+    flex: 1 50%;
+    padding: 2px;
   }
 
     &-link {
-      @include txt;
-      @include txt-strong;
-      @include txt-3;
-      @include format-bubble-shadow;
-      display: flex;
-      line-height: 12px;
+      display: block;
+      position: relative;
       padding: 8px;
-      min-width: 80px;
-      border-radius: 30px;
-      background-color: color('white');
+      @include txt;
+      @include txt-font-accent;
+      text-transform: capitalize;
+      border-radius: 4px;
+      color: color('white');
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
 
-      &.websites {
-        border: 2px solid color('blue-ribbon');
-        color: color('blue-ribbon');
+      &-websites {
+        @include gradient-websites;
       }
 
-      &.stories {
-        border: 2px solid color('pizazz');
-        color: color('pizazz');
+      &-stories {
+        @include gradient-stories;
       }
 
-      &.ads {
-        border: 2px solid color('pink-flamingo');
-        color: color('pink-flamingo');
+      &-ads {
+        @include gradient-ads;
       }
 
-      &.email {
-        border: 2px solid color('malachite');
-        color: color('malachite');
+      &-email {
+        @include gradient-e-mails;
+      }
+
+      @each $format in websites, stories, ads, email {
+        .ad--#{$format} & {
+          opacity: 0.6;
+
+          &-#{$format} {
+            opacity: 1;
+          }
+        }
       }
     }
+
+  &:hover &-link {
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
