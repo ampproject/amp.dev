@@ -49,6 +49,10 @@ class StageShortcode(Shortcode):
         else:
           return {}
 
+    def _get_icon(self, options):
+        icon = options.get('icon')
+        return icon
+
     def transform(self, value, options):
         dom = minidom.parseString('<html>{}</html>'.format(value))
 
@@ -60,6 +64,10 @@ class StageShortcode(Shortcode):
         self.context['button'] = self._get_button(dom)
 
         self.context['background_color'] = self._get_background_color(options)
+
+        self.context['icon'] = self._get_icon(options)
+
+        print(self, options)
 
         return value
 
