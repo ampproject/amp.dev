@@ -9,6 +9,29 @@
 {% block main %}
 <div class="ad-t-container ad-t-docs-detail">
   {% include 'views/partials/sidebar.j2' %}
-  {% include 'views/partials/main.j2' %}
+
+  {# The examples manual template does not make use of the main partial
+  as it's content is rendered from the JSON loaded in doc.example #}
+  <section class="main">
+    <h1>{{ doc.example.document.title }}</h1>
+
+    {% for section in doc.example.document.sections %}
+    {{ section.doc|markdown|safe }}
+
+    {% if section.preview and not section.preview == '\n' %}
+    {# The following is a hack, as Grow's template markdown filter does not
+    support syntax highlighting. Will work with Grow 0.6.5. Also see:
+    https://github.com/grow/grow/issues/874
+
+    {{ doc.format._markdown|pprint }}
+    {% set md, html = doc.format._markdown %}
+    {{ md.convert('[sourcecode:html]\n' + section.preview + '\n[/sourcecode]')|safe }}
+    #}
+    <div class="ad-m-code-snippet">
+      <pre>{{ section.preview }}</pre>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </section>
 </div>
 {% endblock %}
