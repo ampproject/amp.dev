@@ -26,7 +26,7 @@ const POD_PATH = 'content/amp-dev/documentation/examples';
 // Where to store the samples inside the Grow pod in
 const EXAMPLE_DEST = `../pages/${POD_PATH}`;
 // What Grow template to use to render the sample's manual
-const MANUAL_TEMPLATE = 'views/detail/example-detail.j2';
+const MANUAL_TEMPLATE = '/views/examples/manual.j2';
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/examples/';
 
@@ -49,6 +49,8 @@ class SamplesBuilder {
         this._log.await(`Building sample ${sample.relative} ...`);
         let parsedSample = await parseSample(sample.path);
 
+        // Build various documents and sources that are needed for Grow
+        // to successfully render the example
         stream.push(this._createDataSource(sample, parsedSample));
         stream.push(this._createManualDoc(sample, parsedSample));
         stream.push(this._createPreviewDoc(sample, parsedSample));
