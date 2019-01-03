@@ -78,7 +78,6 @@ class FilteredPage {
     this._content = htmlFindReplaceElementAttrs.replace(this._content, (attribute) => {
       // Check if the link is pointing to a filtered route
       // and if the link already has a query parameter
-
       if (attribute.value.indexOf('?') > -1 || !isFilterableRoute(attribute.value)) {
         return attribute.value;
       }
@@ -88,6 +87,10 @@ class FilteredPage {
       'tag': 'a',
       'attr': 'href'
     });
+
+    // Rewrite the link of the toggle that matches the active format as it
+    // should bring the user back to the unfiltered state
+    this._content = this._content.replace(`ad-m-format-toggle-link-${this._format}" href="?format=${this._format}">${this._format}</a>`, `ad-m-format-toggle-link-${this._format}" href="?format=all">${this._format}</a>`)
   }
 
   get content() {
