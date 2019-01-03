@@ -119,9 +119,10 @@ class SamplesBuilder {
     sample.contents = Buffer.from([
       '---',
       '$title: ' + parsedSample.document.title,
-      '$path: ' + PATH_BASE + sample.relative.replace('.html', '-preview.html'),
+      '$path: ' + PATH_BASE + sample.relative.replace('.html', '/preview.html'),
       '$localization: ',
-      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative.replace('.html', '-preview.html'),
+      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative.replace('.html', '/preview.html'),
+      '$hidden: true',
       'example: !g.json ' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
       '---'
     ].join('\n'));
