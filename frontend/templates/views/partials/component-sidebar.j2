@@ -1,33 +1,10 @@
-{% do doc.styles.addCssFile('css/components/organisms/stage-destination-dropdown-sidebar.css') %}
 {% do doc.styles.addCssFile('css/components/organisms/component-sidebar.css') %}
 {% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
 
 <section class="sidebar">
   <div class="ad-o-component-sidebar">
+    {% include '/views/partials/format-toggle.j2' %}
 
-    <div class="destination-stage-sidebar websites websites-background">
-      <div class="destination-stage-sidebar-content">
-        <span class="hl">Select your topic:</span>
-        <div class="destination-list-view-box-sidebar destination-list-view-box-sidebar-gradient"
-          [class]="toggle ? 'destination-list-view-box-sidebar destination-list-view-box-sidebar-gradient destination-list-view-box-expand': 'destination-list-view-box-sidebar destination-list-view-box-sidebar-gradient'">
-            <button on="tap:AMP.setState({ toggle: !toggle })" class="destination-list-icon">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-solid"></use></svg>
-            </button>
-          <amp-selector layout="container">
-            <ul class="destination-list">
-              {% set filters = ['all', 'websites', 'stories', 'ads', 'e-mails'] %}
-              {% for filter in filters %}
-                <li class="{{ filter }}" option="{{ filter }}">
-                  <a href="#" class="destination-list-item-sidebar destination-list-item-sidebar-drop-down {{ filter }} {{ filter }}-background">
-                    {{ filter }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </amp-selector>
-        </div>
-      </div>
-    </div>
     <div class="nav">
       {% macro nav_tree(root, iteration=1, depth=None) -%}
       <ul class="nav-list level-{{ iteration }}">

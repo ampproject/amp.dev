@@ -1,0 +1,10 @@
+{% do doc.styles.addCssFile('css/components/molecules/format-toggle.css') %}
+
+{% set formats = ['websites', 'stories', 'ads', 'email'] %}
+<ul class="ad-m-format-toggle">
+  {% for format in formats %}
+  <li class="ad-m-format-toggle-format">
+    <a class="ad-m-format-toggle-link ad-m-format-toggle-link-{{ format }}" href="?format={{ format }}">{{ format }}</a>
+  </li>
+  {% endfor %}
+</ul>

@@ -1,4 +1,3 @@
-{% do doc.styles.addCssFile('css/components/molecules/format-toggle.css') %}
 {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
 
 {% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
@@ -7,14 +6,7 @@
 
 <section class="sidebar">
   <div class="ad-o-sidebar">
-    {% set formats = ['websites', 'stories', 'ads', 'email'] %}
-    <ul class="ad-m-format-toggle">
-      {% for format in formats %}
-      <li class="ad-m-format-toggle-format">
-        <a class="ad-m-format-toggle-link ad-m-format-toggle-link-{{ format }}" href="?format={{ format }}">{{ format }}</a>
-      </li>
-      {% endfor %}
-    </ul>
+    {% include '/views/partials/format-toggle.j2' %}
 
     <div class="nav">
       {% macro nav_tree(root, iteration=1, depth=None) -%}
