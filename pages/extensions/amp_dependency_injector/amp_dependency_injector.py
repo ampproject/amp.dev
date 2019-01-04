@@ -66,6 +66,7 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
     def should_trigger(self, previous_result, doc, raw_content, *_args, **_kwargs):
         """Should the hook trigger with current document?"""
         content = previous_result if previous_result else raw_content
+        content = content.encode('utf-8')
 
         # Do not run for empty documents
         if content is None:
