@@ -21,7 +21,8 @@
     {% for section in doc.example.document.sections %}
     {{ section.doc|markdown|safe }}
 
-    {% if section.preview and not section.preview == '\n' %}
+    {% set render_code = section.doc.strip() and section.code.strip() %}
+    {% if render_code %}
     {# The following is a hack, as Grow's template markdown filter does not
     support syntax highlighting. Will work with Grow 0.6.5. Also see:
     https://github.com/grow/grow/issues/874
@@ -30,8 +31,14 @@
     {% set md, html = doc.format._markdown %}
     {{ md.convert('[sourcecode:html]\n' + section.preview + '\n[/sourcecode]')|safe }}
     #}
-    <div class="ad-m-code-snippet">
-      <pre>{{ section.preview }}</pre>
+    <div class="ad-o-code-preview">
+      {% set show_preview = section.preview and section.inBody %}
+      {% if show_preview %}
+      {{ section.preview|safe }}
+      {% endif %}
+      <div class="ad-m-code-snippet">
+        <pre>{{ section.code }}</pre>
+      </div>
     </div>
     {% endif %}
     {% endfor %}
