@@ -27,6 +27,8 @@ const POD_PATH = 'content/amp-dev/documentation/examples';
 const EXAMPLE_DEST = `../pages/${POD_PATH}`;
 // What Grow template to use to render the sample's manual
 const MANUAL_TEMPLATE = '/views/examples/manual.j2';
+// What Grow template to use to render the preview
+const PREVIEW_TEMPLATE = '/views/examples/preview.j2';
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/examples/';
 
@@ -121,6 +123,7 @@ class SamplesBuilder {
     sample.contents = Buffer.from([
       '---',
       '$title: ' + parsedSample.document.title,
+      '$view: ' + PREVIEW_TEMPLATE,
       '$path: ' + PATH_BASE + sample.relative.replace('.html', '/preview.html'),
       '$localization: ',
       '  ' + 'path: /{locale}' + PATH_BASE + sample.relative.replace('.html', '/preview.html'),
