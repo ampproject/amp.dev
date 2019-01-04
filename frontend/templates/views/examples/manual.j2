@@ -23,20 +23,15 @@
 
     {% set render_code = section.doc.strip() and section.code.strip() %}
     {% if render_code %}
-    {# The following is a hack, as Grow's template markdown filter does not
-    support syntax highlighting. Will work with Grow 0.6.5. Also see:
-    https://github.com/grow/grow/issues/874
-
-    {{ doc.format._markdown|pprint }}
-    {% set md, html = doc.format._markdown %}
-    {{ md.convert('[sourcecode:html]\n' + section.preview + '\n[/sourcecode]')|safe }}
-    #}
+    {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
     <div class="ad-o-code-preview">
       {% set show_preview = section.preview and section.inBody %}
       {% if show_preview %}
-      {{ section.preview|safe }}
+      <div class="ad-o-code-preview-preview">
+        {{ section.preview|safe }}
+      </div>
       {% endif %}
-      <div class="ad-m-code-snippet">
+      <div class="ad-m-code-snippet ad-o-code-preview-code">
         <pre>{{ section.code }}</pre>
       </div>
     </div>

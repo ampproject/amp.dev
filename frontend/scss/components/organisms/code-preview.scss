@@ -1,0 +1,27 @@
+
+/*
+
+#############################
+### ORGANISM: header ###
+#############################
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+
+.#{organism('code-preview')} {
+  background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+
+  &-preview {
+    position: relative;
+    top: 1em;
+    margin: 1em;
+    background: color('white');
+  }
+}
