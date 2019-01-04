@@ -4,6 +4,9 @@
 {{ super() }}
 
 {% do doc.styles.addCssFile('css/components/templates/docs-detail.css') %}
+
+{# Add eventual specific sample styles to page #}
+{{ doc.example.document.styles|safe }}
 {% endblock %}
 
 {% block main %}
