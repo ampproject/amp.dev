@@ -18,6 +18,7 @@ VALID_DEPENDENCIES = {
     'amp-analytics': True,
     'amp-app-banner': True,
     'amp-auto-ads': True,
+    'amp-audio': True,
     'amp-bind': True,
     'amp-byside-content': True,
     'amp-call-tracking': True,
