@@ -29,6 +29,7 @@ VALID_DEPENDENCIES = {
     'amp-font': True,
     'amp-fx-collection': True,
     'amp-fx-flying-carpet': True,
+    'amp-fit-text': True,
     'amp-geo': True,
     'amp-gist': True,
     'amp-google-document-embed': True,
