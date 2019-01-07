@@ -8,8 +8,8 @@ role:
 origin: "https://amphtml.wordpress.com/2018/12/04/use-amphtml-ads-for-better-ad-performance-page-usability-and-user-safety/amp/"
 excerpt: "This is part of a larger AMP monetization series on Medium that includes the below topics: Ensure Ad Density is equal on AMP &#38; non-AMP pages Optimize your AMP pages for high ad viewability or views Take advantage of more ad competition with multi-size ads &#38; fluid Better than header bidding → AMP RTC Take [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-12-05T00:58:54+09:00
-$date: December 5, 2018
+date_data: 2018-12-04T07:58:54-08:00
+$date: December 4, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
 $localization:

@@ -8,8 +8,8 @@ role:  CEO, LaterPay
 origin: "https://amphtml.wordpress.com/2018/12/19/laterpay-lessons-learned/amp/"
 excerpt: "Posted by Cosmin-Gabriel Ene, CEO, LaterPay At LaterPay, our mission is to turn casual users into paying customers for digital content or services such as journalism, videos, and software. Our technology enables payments and micropayments without upfront registration and payment, facilitating the “use now, pay later” approach. This allows users to consume paid content and [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-12-20T01:12:01+09:00
-$date: December 20, 2018
+date_data: 2018-12-19T08:12:01-08:00
+$date: December 19, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
 $localization:

@@ -8,7 +8,7 @@ role:  AMP and WordPress Developer Advocate, Google
 origin: "https://amphtml.wordpress.com/2018/12/07/the-official-amp-plugin-for-wordpress/amp/"
 excerpt: "Posted by Alberto Medina, AMP and WordPress Developer Advocate, Google Enabling a first-class AMP experience on WordPress is one of the ways the AMP Project aims to bring a user-first experience to websites and content on the web. There has been a lot of work over the last year to improve the quality of the [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-12-07T23:10:29+09:00
+date_data: 2018-12-07T06:10:29-08:00
 $date: December 7, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
