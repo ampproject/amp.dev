@@ -38,6 +38,13 @@
       }
     }
 
+    .button {
+      transition: background-color 0.2s ease-out;
+      &:hover {
+        background-color: #4c78a7;
+      }
+    }
+
     .wrapper {
       margin: 0 auto;
       width: 80%;
