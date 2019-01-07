@@ -13,6 +13,24 @@
 <div class="ad-t-container ad-t-docs-detail">
   {% include 'views/partials/sidebar.j2' %}
 
+  {% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
+  <section class="toc-column">
+    <div class="ad-o-toc">
+      <b>Table of contents:</b>
+      <div class="toc">
+        <ul>
+          <li>
+            {% for section in doc.example.document.sections %}
+            {% for heading in section.headings %}
+            <a href="{{ heading.id }}">{{ heading.name }}</a>
+            {% endfor %}
+            {% endfor %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   {# The examples manual template does not make use of the main partial
   as it's content is rendered from the JSON loaded in doc.example #}
   <section class="main">
