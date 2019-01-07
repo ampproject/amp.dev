@@ -51,7 +51,23 @@ class StageShortcode(Shortcode):
 
     def _get_icon(self, options):
         icon = options.get('icon')
+        print(options)
+
+        if icon:
+          icon = icon
+        else:
+          icon = {}
+
         return icon
+
+    def _get_image(self, options):
+        image = options.get('image')
+        print(options)
+
+        if image:
+          return image
+        else:
+          return {}
 
     def transform(self, value, options):
         dom = minidom.parseString('<html>{}</html>'.format(value))
@@ -67,7 +83,7 @@ class StageShortcode(Shortcode):
 
         self.context['icon'] = self._get_icon(options)
 
-        print(self, options)
+        self.context['image'] = self._get_image(options)
 
         return value
 
