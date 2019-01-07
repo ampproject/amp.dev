@@ -28,16 +28,13 @@
 
   section.amp-conf-section {
     padding: 2em 0;
-    background: #fdf6ff;
+    background: #ffffff;
 
     &:nth-child(odd) {
-      background-color: #330000;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D18'/%3E%3Cstop offset='1' stop-color='%23330000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
-      background-attachment: fixed;
-      background-size: cover;
+      background-color: #fcf7fe;
       
         h3 {
-        color: #fff;
+        color: #222;
       }
     }
 
@@ -48,8 +45,13 @@
     }
 
     &.teaser {
+
+      background-image: url(/static/img/amp-conf/sakura.png);
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      background-size: contain;
+
       padding-bottom: 0;
-      text-align: right;
       @include max-screen(500px) {
         text-align: center;
       }
@@ -69,18 +71,24 @@
 
       h2 {
         font-size: 3.37em;
-        margin-top: 0;
+        display: inline-block;
         margin-bottom: 0;
-        padding-top: 1em;
+        margin-top: 1em;
         line-height: .9em;
-        color: #fff;
+        color: #3c3c3c;
+        background-color: white;
+        border-radius: 0.2em;
+        border: 0.3em solid white;
       }
 
       h3 {
-        color: #fff;
+        color: #3c3c3c;
         font-size: 26px;
         font-weight: 300;
         margin-bottom: 0.5em;
+        @include max-screen(1200px) {
+          display: none;
+        }
       }
 
       .menu {
@@ -91,7 +99,7 @@
         .wrapper {
           display: flex;
           align-items: center;
-          justify-content: flex-end;
+          justify-content: flex-start;
           @include max-screen(500px) {
             display: block;
           }
@@ -100,6 +108,7 @@
         ul {
 
           display: flex;
+          background-color: #fbf9fe;
 
           @include max-screen(500px) {
             margin: 0 -10%;
@@ -127,13 +136,14 @@
               top: -4px;
               bottom: -4px;
               left: 4px;
-              background-color: #b96bde;
+              background-color: #ea9687;
               transform: rotate(10deg);
               z-index: 1;
             }
 
             &:first-child {
               margin-left: 0;
+              padding-left: 0;
               &::after {
                 display: none;
               }
@@ -142,7 +152,8 @@
           }
 
           a {
-              color: #fff;
+            color: #ff7f68;
+            font-weight: 600;
           }
 
         }
@@ -170,8 +181,11 @@
       }
 
       p {
-        padding: 1.2em;
+        padding: 0;
         margin: 0 auto;
+        margin-bottom: 2em;
+        line-height: 1.6;
+        font-weight: 400;
       }
 
       ul {
@@ -454,16 +468,16 @@
       }
 
       h4 {
-        color: #fff;
+        color: #333;
         margin-top: 0;
       }
 
       p {
-        color: #fff;
+        color: #333;
       }
 
       a {
-        color: #fff;
+        color: #333;
         text-decoration: underline;
         font-size: inherit;
         text-transform: inherit;
