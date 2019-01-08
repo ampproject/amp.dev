@@ -47,7 +47,8 @@ class SamplesBuilder {
     del.sync([
       `${EXAMPLE_DEST}/**/*.json`,
       `${EXAMPLE_DEST}/**/*.html`,
-      `${EXAMPLE_DEST}/**/*.md`
+      `${EXAMPLE_DEST}/**/*.md`,
+      `!${EXAMPLE_DEST}/index.md`
     ], {'force': true});
 
     this._log.start('Starting to build samples ...');
