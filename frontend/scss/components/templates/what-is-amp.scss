@@ -55,13 +55,26 @@
         grid-column: 4 / -1;
       }
 
-      .intro-image {
-        width: 100%;
-        margin-bottom: 50px;
+      .code-image {
+        display: flex;
+        margin-top: 50px;
+        flex-direction: column-reverse;
 
         @media screen and (min-width: 768px) {
-          width: 60%;
-          margin-left: auto;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .copy {
+          width: auto;
+        }
+
+        .cta {
+          margin-top: 50px;
+        }
+
+        .image {
+          min-width: 60%;
         }
       }
 

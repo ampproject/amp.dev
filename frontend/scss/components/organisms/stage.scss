@@ -4,6 +4,7 @@
 @import '../../variables';
 
 @import '../atoms/_color.scss';
+@import '../atoms/_icon.scss';
 @import '../atoms/_text.scss';
 @import '../atoms/_headline.scss';
 @import '../atoms/_divider.scss';
@@ -175,5 +176,11 @@
     & ~ .ad-o-stage-content .hl-sub {
       @include color-e-mails;
     }
+  }
+
+  .ad-a-ico {
+    height: 5em;
+    width: 5em;
+    stroke: color('white');
   }
 }

@@ -3,21 +3,10 @@ $title: AMP Websites
 $view: /views/overview/what-is-amp.j2
 ---
 
-<section class="ad-o-stage">
-{% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
-{% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-{% do doc.icons.useIcon('icons/angle-down-light.svg') %}
-{% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-  <div class="ad-o-stage-clipped-background dark-blue"></div>
-    <div class="ad-o-stage-image">
-      <amp-img src="/static/img/stage-image.png" layout="responsive" height="1" width="1.33" />
-    </div>
-  <div class="ad-o-stage-content">
-		<span class="hl-sub">Compeling, smooth and instant</span>
-		<span class="hl"> Easily create user first websites with Amp </span>
-  </div>
-</section>
-
+[stage color="dark-blue" icon=True image="/static/img/stage-image.png"]
+##Compeling, smooth and instant
+#Easily create user first websites with Amp
+[/stage]
 
 <section class="main">
   <div class="copy intro">
@@ -26,9 +15,24 @@ $view: /views/overview/what-is-amp.j2
     <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
   </div>
 
-  <div class="intro-image">
-    <amp-img src="/static/img/the-blog.png" layout="responsive" height="0.78" width="1" />
+  <div class="code-image">
+    <div class="copy">
+      <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
+      <div class="cta">
+        <a href="#" class="ad-m-lnk ad-m-lnk-square">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Get Started</span>
+        </a>
+      </div>
+    </div>
+    <div class="image">
+      <amp-img src="/static/img/the-blog.png" layout="responsive" height="0.78" width="1" />
+    </div>
   </div>
+
 
    <div class="copy">
     <h3>Create great AMP experiences for all open web touchpoints</h3>
@@ -58,7 +62,7 @@ $view: /views/overview/what-is-amp.j2
      {% do doc.icons.useIcon('icons/exclamation.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exclamation"></use></svg>
     </div>
-    <span class="ad-m-headline-icon-hl">Why Shoud I use AMP?</h1>
+    <span class="ad-m-headline-icon-hl">Why Should I use AMP?</h1>
   </div>
 
   <div class="benefits">
