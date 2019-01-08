@@ -8,7 +8,7 @@ role:  VP of Search at Google
 origin: "https://amphtml.wordpress.com/2018/10/22/three-years-of-amp/amp/"
 excerpt: "Not long ago the mobile web was sluggish, clunky and at risk of being closed off by apps. Many publishers were concerned how this would affect their future and the promise of the open web. News publishers approached us at Google to help ensure their content was easy to distribute and read across the web. [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-10-22T09:16:38-07:00
+date_data: 2018-10-22T11:16:38-05:00
 $date: October 22, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

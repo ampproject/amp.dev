@@ -27,7 +27,7 @@ y compris les clics sur des liens et des boutons.
 Vous pouvez également mesurer jusqu'où l'utilisateur a fait défiler la page,
 savoir s'il a interagi ou non avec des réseaux sociaux et bien plus encore
 (voir
-[AMP Analytics dans le détail]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})).
+[AMP Analytics dans le détail]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}})).
 
 Dans le cadre de l'intégration avec la plateforme AMP,
 des fournisseurs ont proposé des configurations `amp-analytics` prédéfinies,

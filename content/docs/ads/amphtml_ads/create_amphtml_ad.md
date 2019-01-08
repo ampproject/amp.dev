@@ -8,11 +8,11 @@ tutorial: true
 
 In this tutorial, you'll learn how to create an [AMPHTML ad]({{g.doc('/content/docs/ads/amphtml_ads.md', locale=doc.locale).url.path}}) from scratch that can be served to AMP and non-AMP pages. The ad format used in this tutorial is a simple image ad.
 
-AMPHTML ads are similar to traditional HTML ads, but instead of coding them in traditional HTML, they are coded in AMPHTML, according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}}). By creating the ads in AMPHTML, the ads take advantage of the same optimizations and performance utilized in AMP pages, making them a faster, lighter and a more secure way to advertise on the web. Most of all, these ads can be delivered anywhere on the web, _not just on AMP pages_.
+AMPHTML ads are similar to traditional HTML ads, but instead of coding them in traditional HTML, they are coded in AMPHTML, according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}). By creating the ads in AMPHTML, the ads take advantage of the same optimizations and performance utilized in AMP pages, making them a faster, lighter and a more secure way to advertise on the web. Most of all, these ads can be delivered anywhere on the web, _not just on AMP pages_.
 
 ## You will learn to:
 
-* Create a valid AMPHTML ad according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}})
+* Create a valid AMPHTML ad according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})
 * Track ad views by using the [`amp-pixel`](/docs/reference/components/amp-pixel.html) component
 * Verify the AMPHTML ad syntax by using the [AMP validator](https://validator.ampproject.org/#htmlFormat=AMP4ADS)
 

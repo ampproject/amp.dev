@@ -12,7 +12,7 @@ cache:
     - node_modules
 
 install:
-  - pip install grow --user
+  - pip install grow==0.6.4 --user
   - grow --version
   - yarn global add gulp-cli
   - yarn

@@ -8,7 +8,7 @@ role:  Director of Product Marketing, AddThis 
 origin: "https://amphtml.wordpress.com/2018/10/23/child-mind-institute-boosts-social-shares-on-amp-pages-with-addthis/amp/"
 excerpt: "Posted by Chad Edmonds, Director of Product Marketing, AddThis  AddThis has been excited to work with the AMP project over the past year, to ensure the web is fast and user-friendly for everyone. As AMP turns 3 years old this month, we&#8217;re celebrating the project&#8217;s progress with a recent case study showing increased shares and [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-10-23T09:47:44-07:00
+date_data: 2018-10-23T11:47:44-05:00
 $date: October 23, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

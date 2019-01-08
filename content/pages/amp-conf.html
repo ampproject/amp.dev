@@ -1,9 +1,9 @@
 ---
-$title: AMP Conf 2018
+$title: AMP Conf 2019
 noglobalnote: 1
 class: amp-conf
 
-stylesheet: pages/amp-conf-2018.css
+stylesheet: pages/amp-conf-2019.css
 
 components:
   - iframe
@@ -18,8 +18,8 @@ components:
 <section class="teaser amp-conf-section">
 
   <div class="wrapper">
-    <h2>AMP Conf 2018</h2>
-    <h3>is turning Amsterdam into <strong>AMP</strong>sterdam.</h3>
+    <h2>AMP Conf 2019</h2>
+    <h3>ようこそ from Tokyo, Japan.</h3>
   </div>
 
   <div class="menu">
@@ -32,27 +32,24 @@ components:
             <li><a href="#faq">FAQ</a></li>
         </ul>
 
-      <a href="https://events.withgoogle.com/amp-conf-2018/registrations/new/" class="button">Join waitlist</a>
+      <a href="https://events.withgoogle.com/amp-conf-2019/registrations/new/" class="button">Request an invitation</a>
     </div>
   </div>
+
+
 </section>
+
 
 <section class="description amp-conf-section">
   <div class="wrapper">
 
-    <h4>Watch the live stream:</h4>
-    <amp-youtube
-    data-videoid="BUVzSV6jmXA"
-    layout="responsive"
-    width="480" height="270"></amp-youtube>
-
     <p>
-      The AMP team and community is bringing its yearly gathering to Amsterdam for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.
+      The AMP team and community is bringing its yearly gathering to Tokyo for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.
     </p>
 
     <ul class="facts">
-      <li class="card"><strong>When</strong>Feb 13 & 14, 2018</li>
-      <li class="card"><strong>Where</strong><a href="http://www.westergasfabriek.nl/">Westergasfabriek</a>, Amsterdam</li>
+      <li class="card"><strong>When</strong>April 17 & 18, 2018</li>
+      <li class="card"><strong>Where</strong><a href="http://forum.academyhills.com/roppongi/en/">Roppongi Academy Hills</a>, Tokyo</li>
       <li class="card"><strong>For</strong>Developers and designers</li>
     </ul>
   </div>
@@ -62,74 +59,9 @@ components:
   <div class="wrapper">
     <h3 id="schedule">Schedule</h3>
 
-    <p class="note">Note: This is a rough first cut of the agenda. More talks will be added in the upcoming days, and times are subject to change.</p>
+    <p>The schedule will be announced in February/March. The CfP has just opened and will run until Feb 14. We encourage everyone who has something great to share about AMP, regardless of speaking experience, to apply and submit a talk!</p>
 
-    {% macro render_session(item) -%}
-
-        {% if conf.speakers[item.speaker] %}
-        <span class="image">{% if conf.speakers[item.speaker].pic %}<amp-img src="{{ conf.speakers[item.speaker].pic }}" width="100" height="100"></amp-img>{% endif %}</span>
-        {% endif %}
-
-        {% if item.speakers %}
-            {% for speaker in item.speakers if conf.speakers[speaker]  %}
-            <span class="image multiple">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="60" height="60"></amp-img>{% endif %}</span>
-            {% endfor %}
-        {% endif %}
-
-        <time>{{ item.time }}</time>
-        <div>
-            <h5 class="{{ item.type }}">{{ item.title }}</h5>
-            {% if conf.speakers[item.speaker] %}
-            <small><a href="#{{ item.speaker }}">{{ conf.speakers[item.speaker].name }}, {{ conf.speakers[item.speaker].company }}</a></small>
-            {% endif %}
-            {% if item.speakers %}
-                {% if conf.speakers[item.moderator] %}
-                    <small><a href="#{{ item.moderator }}">{{ conf.speakers[item.moderator].name }}, {{ conf.speakers[item.moderator].company }} (Moderator)</a></small>
-                {% endif %}
-                {% for speaker in item.speakers %}
-                    {% if conf.speakers[speaker] %}
-                    <small><a href="#{{ speaker }}">{{ conf.speakers[speaker].name }}, {{ conf.speakers[speaker].company }}</a></small>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-            {% if item.description %}
-            <p>{{ item.description }}</p>
-            {% endif %}
-            {% if item.workshops %}
-                <ul class="workshops">
-                {% for workshop in item.workshops %}
-                    <li>
-                        <h6>{{ workshop.title }}</h6>
-                    </li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
-
-    {%- endmacro %}
-
-    <amp-selector role="tablist" layout="container" class="days">
-      <div role="tab" class="tab" selected option="a">Day 1</div>
-      <div role="tabpanel" class="day">
-        <ul class="schedule">
-          {% for item in conf.agenda.day_1 %}
-          <li class="{{ item.type }}">
-            {{ render_session(item) }}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div role="tab" class="tab" option="b">Day 2</div>
-      <div role="tabpanel" class="day">
-        <ul class="schedule">
-          {% for item in conf.agenda.day_2 %}
-          <li class="{{ item.type }}">
-            {{ render_session(item) }}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </amp-selector>
+    <p><a href="https://goo.gl/forms/bWdzWs28nUrC6Fq13" class="button">Submit a talk proposal</a></p>
 
   </div>
 </section>
@@ -138,26 +70,7 @@ components:
     <div class="wrapper">
       <h3 id="speakers">Speakers</h3>
 
-      <ul class="speakers">
-          {% set sortedSpeakers = conf.speakers|sort %}
-          {% for speaker in sortedSpeakers if conf.speakers[speaker].pic %}
-          <li class="card" on="tap:lightbox-{{ speaker }}" role="button" tabindex="0">
-              <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="400" height="400" layout="responsive"></amp-img>{% endif %}</span>
-              <div>
-                  <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}<small>{{ conf.speakers[speaker].company }}</small></h4>
-                  {{ conf.speakers[speaker].bio|markdown|safe }}
-              </div>
-          </li>
-          <amp-lightbox id="lightbox-{{ speaker }}" layout="nodisplay">
-            <div class="lightbox" on="tap:lightbox-{{ speaker }}.close" role="button" tabindex="0">
-              <div class="inner-lightbox">
-                <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}<small>{{ conf.speakers[speaker].company }}</small></h4>
-                {{ conf.speakers[speaker].bio|markdown|safe }}
-              </div>
-            </div>
-          </amp-lightbox>
-          {% endfor %}
-      </ul>
+      <p>The speakers will be announced soon.</p>
 
   </div>
 </section>
@@ -171,16 +84,16 @@ components:
               sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
               layout="responsive"
               frameborder="0"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9740.37396069197!2d4.8701157!3d52.3868555!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x90d5c4d6099268cb!2sTransformatorhuis!5e0!3m2!1sen!2sca!4v1513607379564">
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12966.682416981088!2d139.7288467!3d35.6604864!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x374cd67b22a9c8a5!2sAcademy+Hills+Roppongi+forum!5e0!3m2!1sen!2sus!4v1545397494682">
               <p placeholder>Loading..</p>
           </amp-iframe>
           <div>
-              <h4><a href="http://www.westergasfabriek.nl/en/locations/transformatorhuis/">Transformatorhuis, Westergasfabriek</a></h4>
+              <h4><a href="http://forum.academyhills.com/roppongi/en/">Roppongi Academy Hills, Tokyo</a></h4>
 
               <p>
-                  <span>Klönneplein 2</span>
-                  <span>1014 DD Amsterdam</span>
-                  <span>Netherlands</span>
+                  <span>〒106-6149 Tōkyō-to, Minato-ku, Roppongi</span>
+                  <span>6 Chome−6−10-1 六本木ヒルズ森タワー49階</span>
+                  <span>Japan</span>
               </p>
 
               <p>..and live-streamed around the world.</p>
@@ -197,8 +110,11 @@ components:
     <dt>Does it cost anything?</dt>
     <dd>No - tickets are free of charge.</dd>
 
+    <dt>What language will the talks be in?</dt>
+    <dd>All talks are being simultaneously presented and streamed in English and Japanese.</dd>
+
     <dt>Do I have to register for the live-stream?</dt>
-    <dd>No! The registration is only for on-site attendees that physically attend the conference. Come back here to this site on Feb 13th for a link and embed of the live-stream.</dd>
+    <dd>No! The registration is only for on-site attendees that physically attend the conference. Come back here to this site on April 17th for a link and embed of the live-stream.</dd>
 
     <dt>Who is the event for?</dt>
     <dd>Web developers and designers who have used AMP and want to create even better AMP experiences, who haven't used AMP and are curious or want to contribute to AMP to make it better for everyone, and the web at large.</dd>
@@ -213,7 +129,7 @@ components:
     <dd>The AMP Conf is a mainly developer and designer focused event (read: the people actually creating AMP experiences). If you're non-technical, you may still apply but you'll have a slimmer chance of getting through (and you'll enjoy the conf less!).</dd>
 
     <dt>When will the schedule be announced?</dt>
-    <dd>We'll announce a detailed schedule in the coming month.</dd>
+    <dd>We'll announce a detailed schedule in February.</dd>
     </dl>
   </div>
 </section>
@@ -222,6 +138,6 @@ components:
     <ul>
         <li><a href="/amp-conf/code-of-conduct">Code of Conduct</a></li>
         <li><a href="/amp-conf/accessibility">Accessibility</a></li>
-        <li><a href="mailto:amp-conf-2018@google.com">Contact</a></li>
+        <li><a href="mailto:amp-conf-support@google.com">Contact</a></li>
     </ul>
 </section>

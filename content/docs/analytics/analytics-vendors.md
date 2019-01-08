@@ -290,6 +290,12 @@ Type attribute value: `piano`
 
 Adds support for Piano.  Configuration details can be found at [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
 
+### Pinpoll
+
+Type attribute value: `pinpoll`
+
+Adds support for Pinpoll.  Configuration details can be found at [pinpoll.com](https://pinpoll.com/).
+
 ### Pressboard
 
 Type attribute value: `pressboard`
