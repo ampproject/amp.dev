@@ -224,7 +224,16 @@ class Pipeline {
   async buildSamples() {
     let samplesBuilder = new SamplesBuilder();
 
-    return samplesBuilder.build();
+    // Start the samples build
+    let build = samplesBuilder.build();
+
+    // And after the samples have been built start watching them in
+    // development mode
+    if (config.environment == 'development') {
+      await samplesBuilder.watch();
+    };
+
+    return build;
   }
 
   /**

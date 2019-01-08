@@ -148,6 +148,11 @@ class SamplesBuilder {
     return sample;
   }
 
+  watch() {
+    this._log.watch('Watching samples for changes ...');
+    gulp.watch(EXAMPLE_SRC, this.build.bind(this));
+  }
+
 }
 
 module.exports = SamplesBuilder;
