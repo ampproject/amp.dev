@@ -8,7 +8,7 @@ $title: Iklan AMPHTML
 
 Iklan AMPHTML adalah cara yang lebih cepat, ringan, dan aman untuk beriklan di internet. Meskipun halaman AMP mendukung iklan HTML tradisional, iklan ini dapat dimuat dengan lambat. Agar iklan dapat dimuat secepat elemen lain di halaman AMP, Anda dapat membuat iklan dalam AMPHTML. Iklan AMPHTML hanya ditayangkan setelah divalidasi, untuk memastikan iklan sudah aman dan memiliki performa baik. Yang terpenting, iklan ini dapat ditayangkan di mana pun di internet, _tidak hanya di halaman AMP_.
 
-Iklan AMPHTML ditulis dalam HTML AMP sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}}) (variasi HTML AMP + CSS). Ini berarti bahwa iklan tidak lagi dapat menjalankan JavaScript secara acak, yang secara tradisional menjadi penyebab utama performa iklan yang buruk. Oleh karena itu, seperti halnya AMP inti, kasus penggunaan JavaScript iklan inti dibuat langsung ke project Open Source AMP yang menjamin perilaku iklan yang baik.
+Iklan AMPHTML ditulis dalam HTML AMP sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/docs/ads/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) (variasi HTML AMP + CSS). Ini berarti bahwa iklan tidak lagi dapat menjalankan JavaScript secara acak, yang secara tradisional menjadi penyebab utama performa iklan yang buruk. Oleh karena itu, seperti halnya AMP inti, kasus penggunaan JavaScript iklan inti dibuat langsung ke project Open Source AMP yang menjamin perilaku iklan yang baik.
 
 ### Manfaat
 

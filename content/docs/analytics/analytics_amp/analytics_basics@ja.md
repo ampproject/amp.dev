@@ -14,7 +14,7 @@ AMP にはアナリティクスや測定に役立つ 2 つのコンポーネン�
 
 ほとんどのアナリティクス ソリューションでは、 `amp-analytics` を使用します。ページビュー トラッキングも `amp-analytics` で動作します。リンクやボタンのクリックなど、あらゆるページ コンテンツに対するユーザー エンゲージメントもトラッキングできます。ユーザーがページをどのくらいスクロールしたか、ソーシャル メディアを使用しているかなどもわかります。
 
-詳細: 詳しくは、[AMP アナリティクスについて深く学ぶ]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})をご覧ください。
+詳細: 詳しくは、[AMP アナリティクスについて深く学ぶ]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}})をご覧ください。
 
 AMP プラットフォームを統合するにあたり、データの取得やトラッキング ツールへの転送が簡単に行えるよう、プロバイダーはあらかじめ定義した `amp-analytics` 設定を提示しています。ベンダーのドキュメントは、[アナリティクス ベンダー]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}) リストからアクセスできます。
 
@@ -133,4 +133,4 @@ AMP で Cookie が設定済みと判断されると、クライアント ID は�
 
 クライアント ID の置換や任意のユーザー通知 ID の追加方法については、[AMP アナリティクスでサポートされる変数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)をご覧ください。
 
-詳細: 引き続き、[AMP アナリティクスについて深く学ぶ]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})と[ユースケース]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}) でアナリティクスの詳細をご覧ください。
+詳細: 引き続き、[AMP アナリティクスについて深く学ぶ]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}})と[ユースケース]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}) でアナリティクスの詳細をご覧ください。

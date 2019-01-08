@@ -8,8 +8,8 @@ role:  Product Lead, AddThis
 origin: "https://amphtml.wordpress.com/2018/12/13/why-addthis-chose-to-integrate-with-amp/amp/"
 excerpt: "Posted by Mike Brooks, Product Lead, AddThis Over the past year we&#8217;ve been extremely excited to share that AddThis released Share Buttons available as an AMP component. Our team has been tracking the AMP project since its announcement in 2016. As the web becomes increasingly mobile, it’s important for publishers to transform into this mobile era. [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-12-14T03:35:29+09:00
-$date: December 14, 2018
+date_data: 2018-12-13T10:35:29-08:00
+$date: December 13, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
 $localization:

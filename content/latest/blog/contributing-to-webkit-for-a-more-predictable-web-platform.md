@@ -8,8 +8,8 @@ role:
 origin: "https://amphtml.wordpress.com/2018/12/06/contributing-to-webkit-for-a-more-predictable-web-platform/amp/"
 excerpt: "Over the past two years, the AMP Project has been working with Igalia to identify bugs and missing features within iOS WebKit and then fix them. We create repro cases, write web platform tests, perform debugging and analysis, and, of course, write patches to actually fix things. We think this is particular rewarding work, because [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-12-07T01:41:19+09:00
-$date: December 7, 2018
+date_data: 2018-12-06T08:41:19-08:00
+$date: December 6, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
 $localization:
