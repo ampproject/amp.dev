@@ -42,16 +42,20 @@ class SamplesBuilder {
     });
   }
 
-  async build() {
-    this._log.await('Cleaning samples build destination ...');
-    del.sync([
-      `${EXAMPLE_DEST}/**/*.json`,
-      `${EXAMPLE_DEST}/**/*.html`,
-      `${EXAMPLE_DEST}/**/*.md`,
-      `!${EXAMPLE_DEST}/index.md`
-    ], {'force': true});
+  async build(watch) {
+    // Only clean if it is not a watch call
+    // TODO: Add something like gulp-changed to enable incremental builds
+    if (!watch) {
+      this._log.await('Cleaning samples build destination ...');
+      del.sync([
+        `${EXAMPLE_DEST}/**/*.json`,
+        `${EXAMPLE_DEST}/**/*.html`,
+        `${EXAMPLE_DEST}/**/*.md`,
+        `!${EXAMPLE_DEST}/index.md`
+      ], {'force': true});
 
-    this._log.start('Starting to build samples ...');
+      this._log.start('Starting to build samples ...');
+    }
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src(EXAMPLE_SRC, {'read': true});
@@ -150,7 +154,7 @@ class SamplesBuilder {
 
   watch() {
     this._log.watch('Watching samples for changes ...');
-    gulp.watch(EXAMPLE_SRC, this.build.bind(this));
+    gulp.watch(EXAMPLE_SRC, this.build.bind(this, true));
   }
 
 }
