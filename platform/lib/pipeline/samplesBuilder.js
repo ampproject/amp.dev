@@ -18,6 +18,7 @@ const { Signale } = require('signale');
 const gulp = require('gulp');
 const { parseSample } = require('amp-by-example');
 const through = require('through2');
+const del = require('del');
 
 // Where to import the samples from
 const EXAMPLE_SRC = '../examples/**/*.html';
@@ -43,6 +44,12 @@ class SamplesBuilder {
 
   async build() {
     this._log.start('Beginning to build samples ...');
+    this._log.await('Cleaning samples build destination ...');
+    del.sync([
+      `${EXAMPLE_DEST}/**/*.json`,
+      `${EXAMPLE_DEST}/**/*.html`,
+      `${EXAMPLE_DEST}/**/*.md`
+    ]);
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src(EXAMPLE_SRC, {'read': true});
