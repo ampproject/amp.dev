@@ -25,10 +25,12 @@
       @include txt;
       @include txt-font-accent;
       text-transform: capitalize;
+      text-overflow: ellipsis;
       border-radius: 4px;
       color: color('white');
       opacity: 0.9;
       transition: opacity 0.2s ease;
+      overflow: hidden;
 
       &-websites {
         @include gradient-websites;
