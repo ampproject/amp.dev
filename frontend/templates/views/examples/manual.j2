@@ -9,6 +9,11 @@
 {{ doc.example.document.styles|safe }}
 {% endblock %}
 
+{% block body %}
+{% set body_tag = doc.example.document.body %}
+{{ (body_tag.replace('<body', '<body class=""') if 'class="' not in body_tag else body_tag)|safe }}
+{% endblock %}
+
 {% block main %}
 <div class="ad-t-container ad-t-docs-detail">
   {% include 'views/partials/sidebar.j2' %}
