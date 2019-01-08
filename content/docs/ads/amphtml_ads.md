@@ -12,7 +12,7 @@ components:
 
 AMPHTML ads are a faster, lighter and more secure way to advertise on the web. Although AMP pages support traditional HTML ads, these ads can be slow to load. To make ads themselves as fast as the rest of the AMP page, you can build ads in AMPHTML. AMPHTML ads are only delivered after being validated, ensuring that the ads are secure and performant. Most of all, these ads can be delivered anywhere on the web, _not just on AMP pages_.
 
-AMPHTML ads are written in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}}) (a variant of AMP HTML + CSS). This means that ads no longer have the ability to run arbitrary JavaScript, which is traditionally the number one cause of poor ad performance. Therefore, just like core AMP, the core ads JavaScript use-cases are built right into the AMP Open Source project which guarantees good behavior from ads.
+AMPHTML ads are written in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) (a variant of AMP HTML + CSS). This means that ads no longer have the ability to run arbitrary JavaScript, which is traditionally the number one cause of poor ad performance. Therefore, just like core AMP, the core ads JavaScript use-cases are built right into the AMP Open Source project which guarantees good behavior from ads.
 
 ### Benefits
 
@@ -62,7 +62,7 @@ AMPHTML ads are flexible and dynamic, allowing for many creative formats like ca
 
 ### Publishers
 
-To serve your direct-sold ad formats in AMPHTML, you must create the ads according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}}) and deliver them using an ad server that supports AMPHTML ad serving.  Currently, the following ad servers support AMPHTML ads:
+To serve your direct-sold ad formats in AMPHTML, you must create the ads according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) and deliver them using an ad server that supports AMPHTML ad serving.  Currently, the following ad servers support AMPHTML ads:
 
 *   DoubleClick for Publishers
 *   TripleLift
@@ -74,7 +74,7 @@ To deliver AMPHTML ads through your indirect channels (e.g., exchange, SSP, etc.
 
 ### Creative agencies
 
-If you are a creative agency, you must create the ads in accordance with  the [AMPHTML ad spec]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}}). For inspiration and examples, see the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads). Alternatively, use one of the following tools to create AMPHTML ads:
+If you are a creative agency, you must create the ads in accordance with  the [AMPHTML ad spec]({{g.doc('/content/docs/ads/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}). For inspiration and examples, see the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads). Alternatively, use one of the following tools to create AMPHTML ads:
 
 *  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -86,7 +86,7 @@ To deliver AMPHTML ads to AMP pages, you need to create an `amp-ad` extension fo
 
 ## Creating AMPHTML ads
 
-**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}}).  For demos and examples, see the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
+**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec]({{g.doc('/content/docs/ads/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}).  For demos and examples, see the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
 
 **Using tools**: You can use any of the following tools to build AMPHTML creatives:
 

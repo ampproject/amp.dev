@@ -47,6 +47,6 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。
 
 
 {% call callout('了解详情', type='read') %}
-若想进一步了解与分析相关的信息，请参阅[分析：基础知识]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}})。
+若想进一步了解与分析相关的信息，请参阅[分析：基础知识]({{g.doc('/content/docs/analytics/analytics_amp/analytics_basics.md', locale=doc.locale).url.path}})。
 {% endcall %}
 

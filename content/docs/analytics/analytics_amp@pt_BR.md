@@ -47,6 +47,6 @@ o dispositivo ou o navegador (consulte também [Substituição de variáveis](/p
 
 
 {% call callout('Saiba mais', type='read') %}
-Conheça os recursos de análise no artigo [Analytics: conceitos básicos]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}}).
+Conheça os recursos de análise no artigo [Analytics: conceitos básicos]({{g.doc('/content/docs/analytics/analytics_amp/analytics_basics.md', locale=doc.locale).url.path}}).
 {% endcall %}
 

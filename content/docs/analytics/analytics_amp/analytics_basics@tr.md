@@ -26,7 +26,7 @@ bağlantılara ve düğmelere tıklama dahil, kullanıcı katılımını herhang
 Ayrıca, kullanıcının sayfayı ne kadar kaydırdığını,
 sosyal medyayla etkileşim kurup kurmadığını ve daha birçok özelliği ölçebilirsiniz
 (bkz.
-[AMP Analytics Derinlemesine Giriş]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})).
+[AMP Analytics Derinlemesine Giriş]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}})).
 
 AMP platformu entegrasyonunun bir parçası olarak,
 sağlayıcılar

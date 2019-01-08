@@ -47,6 +47,6 @@ perangkat, atau browser (lihat juga [Penggantian variabel](/id/docs/analytics/an
 
 
 {% call callout('Pelajari lebih lanjut', type='read') %}
-Lanjutkan untuk mempelajari analisis dengan [Analisis: Dasar-Dasar]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}}).
+Lanjutkan untuk mempelajari analisis dengan [Analisis: Dasar-Dasar]({{g.doc('/content/docs/analytics/analytics_amp/analytics_basics.md', locale=doc.locale).url.path}}).
 {% endcall %}
 
