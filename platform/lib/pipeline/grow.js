@@ -34,7 +34,7 @@ class Grow {
 
   constructor() {
     this._log = new Signale({
-      'interactive': false,
+      'interactive': true,
       'scope': 'Grow',
       'types': {
         // Just for goodliness, add custom logger as .watch is a bit off
@@ -52,7 +52,7 @@ class Grow {
   /**
    * Checks if Grow has been installed by default method and if so
    * uses this before trying to just call it by `grow`
-   * @return {[type]} [description]
+   * @return {String} Path for Grow command
    */
   _determineCommand() {
     if (fs.existsSync(GROW_DEFAULT_PATH)) {
