@@ -3,7 +3,7 @@ $title: AMP Websites
 $view: /views/overview/what-is-amp.j2
 ---
 
-[stage color="dark-blue" icon=True image="/static/img/stage-image.png"]
+[stage color="dark-blue" icon=True formats=True]
 ##Compeling, smooth and instant
 #Easily create user first websites with Amp
 [/stage]

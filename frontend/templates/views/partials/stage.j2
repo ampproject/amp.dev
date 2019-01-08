@@ -7,9 +7,16 @@
 
 <section class="ad-o-stage">
   <div class="ad-o-stage-clipped-background {{ background_color }}"></div>
+
   {% if image %}
     <div class="ad-o-stage-image">
       <amp-img src={{ image }} layout="responsive" height="1" width="1.33" />
+    </div>
+  {% endif %}
+
+  {% if formats %}
+    <div class="ad-o-stage-formats">
+      {% include 'views/partials/formats-visual.j2' %}
     </div>
   {% endif %}
 
