@@ -1,0 +1,65 @@
+/*
+
+#############################
+### MOLECULE: formats-visual ###
+#############################
+
+### INFO:
+
+formats-visual contains a code-snippet component along with two amp-img components. The component inside the the code-snippet should manipulate
+the border and format around the images.
+
+### MODIFIERS:
+
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+.#{molecule('formats-visual')} {
+  width: 100%;
+  position: relative;
+  display: flex;
+  perspective: 65em;
+  animation: bounce 5s ease-in-out infinite;
+
+  &-image {
+    z-index: 10;
+    width: 100%;
+    transform: rotate3d(-5, 5,-5 ,-40deg);
+  }
+
+  &-top-image {
+    border: 5px solid color('doger-blue');
+    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-50%);
+    animation: slide 3s ease-in-out 5s forwards;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-50%);
+  }
+
+  100% {
+    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%);
+  }
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(40px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
