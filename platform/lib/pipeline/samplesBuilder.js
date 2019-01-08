@@ -48,7 +48,7 @@ class SamplesBuilder {
       `${EXAMPLE_DEST}/**/*.json`,
       `${EXAMPLE_DEST}/**/*.html`,
       `${EXAMPLE_DEST}/**/*.md`
-    ]);
+    ], {'force': true});
 
     this._log.start('Starting to build samples ...');
 
