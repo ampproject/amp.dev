@@ -59,8 +59,8 @@ class Pipeline {
    * @return {Promise}
    */
   check() {
-    // TODO: Maybe Check node verison, so long just return a noop promise
-    return Promise.all([]);
+    // TODO: Maybe Check node and Grow verison, so long just return a noop promise
+    return Promise.resolve();
   }
 
   /**
