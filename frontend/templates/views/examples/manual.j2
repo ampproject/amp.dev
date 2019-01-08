@@ -12,6 +12,7 @@
 {% block body %}
 {% set body_tag = doc.example.document.body %}
 {{ (body_tag.replace('<body', '<body class=""') if 'class="' not in body_tag else body_tag)|safe }}
+{{ doc.example.document.elementsAfterBody|safe }}
 {% endblock %}
 
 {% block main %}
