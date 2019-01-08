@@ -1,9 +1,9 @@
 menu:
-  - href: /content/learn/overview.html
+  - href: /content/learn/overview.yaml
     copy@: About
     collection: learn
     children:
-      - href: /content/learn/overview.html
+      - href: /content/learn/overview.yaml
         copy@: "What is AMP?"
         collection: learn/about
       - href: /content/learn/about-how.yaml
