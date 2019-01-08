@@ -55,7 +55,7 @@
         grid-column: 4 / -1;
       }
 
-      .code-image {
+      .component-visual {
         display: flex;
         margin-top: 50px;
         flex-direction: column-reverse;
@@ -65,15 +65,15 @@
           align-items: center;
         }
 
-        .copy {
+        &-copy {
           width: auto;
         }
 
-        .cta {
+        &-cta {
           margin-top: 50px;
         }
 
-        .image {
+        &-image {
           min-width: 60%;
         }
       }
